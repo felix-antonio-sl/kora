@@ -1,0 +1,357 @@
+# KODA Knowledge Artifact: Categorical Audit Patterns
+# Domain: Category Theory / DIK Auditing & Diagnostics
+# Purpose: Formal patterns for auditing Data, Information, and Knowledge artifacts
+
+_manifest:
+  urn: "urn:kora:cat:audit-patterns:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/meta/audit_patterns.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:kora:kb:spec:1.0.0"
+      - urn: "urn:kora:cat:seven-sketches:1.0.0"
+      - urn: "urn:kora:cat:coalgebras:1.0.0"
+      - urn: "urn:kora:cat:mbse-consistency:1.0.0"
+      - urn: "urn:kora:cat:cql-data-integration:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-05"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-05"
+    signature: null
+
+ID: CAT-AUDIT-01
+Version: 1.0.0
+Status: Active
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-05
+Modification-Date: 2025-12-14
+Version-Notes: "Initial KODA/Spec for Categorical Audit Patterns."
+Ctx: "Patrones de auditoría categórica para artefactos DIK con rigor absoluto."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+    FIDELITY: Preserve meat (essential information) and skeleton (structure).
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: internal only. XRef: external URN only.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Proveer patrones formales para auditoría, diagnóstico y mejora de artefactos DIK."
+Obj: "Servir de fuente formal para CM-AUDIT-ENGINE del Arquitecto Categórico."
+
+Sources:
+  - Title: "Seven Sketches in Compositionality"
+    Authors: ["Brendan Fong", "David I. Spivak"]
+    Contribution: "Path equality, diagramas conmutativos, FDM."
+  - Title: "Categorical Data Integration for Computational Science"
+    Authors: ["K. Brown", "D.I. Spivak", "R. Wisnesky"]
+    Contribution: "Integridad por construcción, provenance funtorial."
+  - Title: "Coalgebra for the Working Software Engineer"
+    Authors: ["Luis S. Barbosa"]
+    Contribution: "Bisimulación como criterio de equivalencia comportamental."
+  - Title: "Category Theory for Consistency Between MBSE and Safety"
+    Authors: ["S2ML+Cat Authors"]
+    Contribution: "Catmodels, consistencia binaria, inyecciones."
+
+Related_Concepts:
+  XRef:
+    - "urn:kora:cat:seven-sketches:1.0.0#FDM-SCHEMA"
+    - "urn:kora:cat:coalgebras:1.0.0#BISIMULATION"
+    - "urn:kora:cat:mbse-consistency:1.0.0#MBSE-BINARY-CONSISTENCY"
+    - "urn:kora:cat:kb-category:1.0.0"
+    - "urn:kora:cat:constraint-logic:1.0.0"
+    - "urn:kora:cat:schema-evolution:1.0.0"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 1: CLASIFICACIÓN DIK DE ARTEFACTOS
+# ═══════════════════════════════════════════════════════════════════════════
+
+DIK_Classification:
+  - ID: AUDIT-DIK-DATA
+    Def: "Artefacto de nivel DATA = instancia I: S → Set sobre un esquema S."
+    Characteristics:
+      - "Valores concretos, filas, registros, observaciones."
+      - "Funtor que asigna conjuntos a objetos y funciones a morfismos."
+    Audit_Focus: "Integridad referencial, completitud, consistencia con esquema."
+    Ex: "Tabla SQL con datos, documento JSON, archivo CSV."
+    XRef: "urn:kora:cat:seven-sketches:1.0.0#FDM-INSTANCE"
+
+  - ID: AUDIT-DIK-INFORMATION
+    Def: "Artefacto de nivel INFORMATION = esquema S (categoría finitamente presentada)."
+    Characteristics:
+      - "Objetos = entidades/tipos, Morfismos = relaciones/atributos."
+      - "Ecuaciones de caminos = restricciones de negocio."
+    Audit_Focus: "Coherencia estructural, conmutatividad, completitud de relaciones."
+    Ex: "DDL SQL, JSON Schema, GraphQL Schema, .koda.yml."
+    XRef: "urn:kora:cat:seven-sketches:1.0.0#FDM-SCHEMA"
+
+  - ID: AUDIT-DIK-KNOWLEDGE
+    Def: "Artefacto de nivel KNOWLEDGE = transformaciones, migraciones, modelos abstractos."
+    Characteristics:
+      - "Funtores entre categorías."
+      - "Adjunciones (Δ/Σ/Π), Kan extensions."
+      - "Comportamientos (coálgebras), reglas de inferencia, Proc."
+    Audit_Focus: "Funtorialidad, preservación de estructura, validez de adjunciones, Proc completos."
+    Ex: "Funtor de migración F: S → T, especificación de agente, .koda.yml con Proc."
+    XRef: "urn:kora:cat:cql-data-integration:1.0.0#CQL-MIGRATION"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 2: DIMENSIONES DE AUDITORÍA
+# ═══════════════════════════════════════════════════════════════════════════
+
+Audit_Dimensions:
+  - ID: AUDIT-DIM-STRUCTURAL
+    Def: "Verificar que el artefacto forma una estructura categórica válida."
+    Checks:
+      - ID: CHECK-IDENTITY
+        Def: "¿Cada objeto tiene morfismo identidad?"
+        Severity_if_Fail: CRITICAL
+        Proc: |
+          1. Listar todos los objetos del artefacto.
+          2. Para cada objeto A, verificar existencia de id_A: A → A.
+          3. Si falta → CRITICAL: estructura categórica incompleta.
+      - ID: CHECK-COMPOSITION
+        Def: "¿Los morfismos componen correctamente?"
+        Severity_if_Fail: CRITICAL
+        Proc: |
+          1. Para cada par f: A→B, g: B→C, verificar existencia de g∘f: A→C.
+          2. Verificar cod(f) = dom(g).
+          3. Si falla → CRITICAL: composición rota.
+      - ID: CHECK-ASSOCIATIVITY
+        Def: "¿(h∘g)∘f = h∘(g∘f)?"
+        Severity_if_Fail: CRITICAL
+      - ID: CHECK-PATH-EQUALITY
+        Def: "¿Los caminos paralelos declarados conmutan?"
+        Severity_if_Fail: HIGH
+        Proc: |
+          1. Identificar ecuaciones de caminos en el esquema.
+          2. Para cada ecuación path₁ = path₂.
+          3. Verificar en toda instancia I: I(path₁) = I(path₂).
+          4. Si no conmuta → HIGH: diagrama no conmutativo.
+        Ex: "Employee.Mngr.WorksIn = Employee.WorksIn"
+        XRef: "urn:kora:cat:seven-sketches:1.0.0#PRINCIPLE-DIAGRAM-COMMUTES"
+
+  - ID: AUDIT-DIM-REFERENTIAL
+    Def: "Verificar integridad de referencias internas y externas."
+    Checks:
+      - ID: CHECK-REF-INTERNAL
+        Def: "¿Las Ref: apuntan a IDs existentes en el mismo documento?"
+        Severity_if_Fail: HIGH
+      - ID: CHECK-XREF-EXTERNAL
+        Def: "¿Las XRef: apuntan a URNs resolubles?"
+        Severity_if_Fail: HIGH
+        Proc: |
+          1. Extraer todos los XRef.
+          2. Resolver cada URN vía catálogo maestro.
+          3. Si tiene #ID, verificar que existe en target.
+          4. Si no resuelve → HIGH: referencia externa rota.
+      - ID: CHECK-FOREIGN-KEY
+        Def: "¿Las FK en instancias apuntan a registros existentes?"
+        Severity_if_Fail: CRITICAL
+        Proc: |
+          1. Para cada morfismo f: A→B en esquema.
+          2. Para cada v en I(A), verificar I(f)(v) ∈ I(B).
+          3. Si no existe → CRITICAL: integridad referencial violada.
+
+  - ID: AUDIT-DIM-COMPLETENESS
+    Def: "Verificar que el artefacto está completo según su nivel DIK."
+    Checks:
+      - ID: CHECK-DATA-COMPLETE
+        Def: "¿La instancia I está definida para todos los objetos del esquema?"
+        Level: DATA
+        Severity_if_Fail: MEDIUM
+      - ID: CHECK-INFO-COMPLETE
+        Def: "¿El esquema tiene objetos, morfismos y ecuaciones explícitas?"
+        Level: INFORMATION
+        Severity_if_Fail: MEDIUM
+      - ID: CHECK-KNOWLEDGE-PROC
+        Def: "¿Los conceptos clave tienen Proc operativos?"
+        Level: KNOWLEDGE
+        Severity_if_Fail: LOW
+
+  - ID: AUDIT-DIM-QUALITY
+    Def: "Evaluar calidad categórica avanzada."
+    Checks:
+      - ID: CHECK-UNIVERSAL-CONSTRUCTION
+        Def: "¿Se usan construcciones universales donde aplica?"
+        Severity_if_Fail: LOW
+        XRef: "urn:kora:cat:seven-sketches:1.0.0#PRINCIPLE-UNIVERSAL-PROPERTY"
+      - ID: CHECK-FUNCTORIALITY
+        Def: "¿Las transformaciones preservan estructura?"
+        Severity_if_Fail: MEDIUM
+      - ID: CHECK-BEHAVIORAL-EQUIVALENCE
+        Def: "¿Estados equivalentes están identificados (bisimulación)?"
+        Severity_if_Fail: LOW
+        XRef: "urn:kora:cat:coalgebras:1.0.0#BISIMULATION"
+
+  - ID: AUDIT-DIM-MIGRATION
+    Def: "Verificar migraciones como cuadrados funtoriales."
+    Checks:
+      - ID: CHECK-MIGRATION-FUNCTOR
+        Def: "¿El funtor F: S→T está bien definido?"
+        Severity_if_Fail: HIGH
+        Proc: |
+          1. Verificar F preserva identidades: F(id_A) = id_{F(A)}.
+          2. Verificar F preserva composición: F(g∘f) = F(g)∘F(f).
+          3. Si falla → HIGH: migración no funtorial.
+      - ID: CHECK-MIGRATION-SQUARE
+        Def: "¿El cuadrado de migración conmuta?"
+        Severity_if_Fail: HIGH
+        Proc: |
+          1. Dado F: S→T, I: S→Set, J: T→Set.
+          2. Verificar que la nat. transformation α hace conmutar:
+             J ∘ F = α ∘ I (naturalmente).
+          3. Si no conmuta → HIGH: migración inconsistente.
+      - ID: CHECK-CONSTRAINT-PRESERVATION
+        Def: "¿La migración preserva las constraints requeridas?"
+        Severity_if_Fail: HIGH
+        XRef: "urn:kora:cat:constraint-logic:1.0.0#CONSTRAINT-PRESERVATION"
+
+  - ID: AUDIT-DIM-BEHAVIORAL
+    Def: "Auditar comportamiento dinámico vía coálgebras."
+    Checks:
+      - ID: CHECK-INTERFACE-CONFORMANCE
+        Def: "¿El sistema implementa el funtor de interfaz F declarado?"
+        Severity_if_Fail: HIGH
+      - ID: CHECK-BISIMULATION
+        Def: "¿Componentes declarados equivalentes son bisimilares?"
+        Severity_if_Fail: MEDIUM
+        Proc: |
+          1. Identificar componentes c₁: U₁→F(U₁), c₂: U₂→F(U₂).
+          2. Verificar existencia de bisimulación R ⊆ U₁×U₂.
+          3. Alternativa: verificar beh(u₁) = beh(u₂) en coálgebra final.
+          4. Si no bisimilares pero declarados equivalentes → MEDIUM.
+        XRef: "urn:kora:cat:coalgebras:1.0.0#FINAL-COALGEBRA"
+      - ID: CHECK-ACTION-INDEX
+        Def: "¿Los episodios tienen acción como clave primaria?"
+        Severity_if_Fail: LOW
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 3: PATRONES DE PROBLEMAS Y MEJORA
+# ═══════════════════════════════════════════════════════════════════════════
+
+Improvement_Patterns:
+  - ID: PATTERN-BROKEN-DIAGRAM
+    Symptom: "Caminos paralelos no conmutan."
+    Proposal: "Añadir ecuación de path o corregir morfismos."
+    Justification: "Conmutatividad es requisito de coherencia categórica."
+
+  - ID: PATTERN-ORPHAN-OBJECT
+    Symptom: "Objeto sin morfismos (excepto identidad)."
+    Proposal: "Conectar al grafo o eliminar si redundante."
+
+  - ID: PATTERN-DANGLING-REFERENCE
+    Symptom: "Ref/XRef apunta a inexistente."
+    Proposal: "Corregir referencia o crear target."
+
+  - ID: PATTERN-MISSING-PROC
+    Symptom: "Concepto sin procedimiento operativo."
+    Proposal: "Añadir Proc con pasos ejecutables."
+    Justification: "Conocimiento sin Proc no es accionable."
+
+  - ID: PATTERN-VERSION-MISMATCH
+    Symptom: "Version != URN version."
+    Proposal: "Alinear Version con URN."
+
+  - ID: PATTERN-AD-HOC-CONSTRUCTION
+    Symptom: "Construcción ad-hoc donde existe universal."
+    Proposal: "Usar límite/colímite correspondiente."
+
+  - ID: PATTERN-NON-FUNCTORIAL-MIGRATION
+    Symptom: "Migración que no preserva composición."
+    Proposal: "Redefinir como funtor válido o usar Σ/Δ/Π."
+    XRef: "urn:kora:cat:schema-evolution:1.0.0#EVOLUTION-MIGRATION-CHAIN"
+
+  - ID: PATTERN-REDUNDANT-BISIMILAR
+    Symptom: "Componentes bisimilares tratados como distintos."
+    Proposal: "Identificar vía morfismo único a coálgebra final."
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 4: PROCEDIMIENTO DE AUDITORÍA COMPLETA
+# ═══════════════════════════════════════════════════════════════════════════
+
+Full_Audit_Procedure:
+  - ID: AUDIT-PROC-FULL
+    Def: "Procedimiento completo de auditoría de un artefacto DIK."
+    Proc: |
+      1. CLASIFICACIÓN DIK
+         a) Determinar nivel: DATA | INFORMATION | KNOWLEDGE.
+         b) Identificar tipo: SCHEMA | INSTANCE | ARTIFACT | MODEL | AGENT.
+         c) Registrar URN y dominio.
+      
+      2. AUDITORÍA ESTRUCTURAL (AUDIT-DIM-STRUCTURAL)
+         a) Ejecutar CHECK-IDENTITY, CHECK-COMPOSITION, CHECK-ASSOCIATIVITY.
+         b) Ejecutar CHECK-PATH-EQUALITY.
+         c) Registrar issues CRITICAL.
+      
+      3. AUDITORÍA REFERENCIAL (AUDIT-DIM-REFERENTIAL)
+         a) Ejecutar CHECK-REF-INTERNAL, CHECK-XREF-EXTERNAL.
+         b) Si instancia: CHECK-FOREIGN-KEY.
+         c) Registrar issues HIGH.
+      
+      4. AUDITORÍA DE COMPLETITUD (AUDIT-DIM-COMPLETENESS)
+         a) Según nivel DIK: DATA/INFO/KNOWLEDGE check.
+         c) Registrar issues MEDIUM.
+      
+      5. AUDITORÍA DE CALIDAD (AUDIT-DIM-QUALITY)
+         a) CHECK-UNIVERSAL-CONSTRUCTION, CHECK-FUNCTORIALITY.
+         b) CHECK-BEHAVIORAL-EQUIVALENCE si aplica.
+         c) Registrar issues LOW.
+      
+      6. AUDITORÍA DE MIGRACIONES (si aplica) (AUDIT-DIM-MIGRATION)
+         a) CHECK-MIGRATION-FUNCTOR, CHECK-MIGRATION-SQUARE.
+         b) CHECK-CONSTRAINT-PRESERVATION.
+      
+      7. AUDITORÍA COMPORTAMENTAL (si aplica) (AUDIT-DIM-BEHAVIORAL)
+         a) CHECK-INTERFACE-CONFORMANCE, CHECK-BISIMULATION.
+         b) CHECK-ACTION-INDEX para episodios.
+      
+      8. GENERACIÓN DE INFORME
+         a) Consolidar issues por severidad.
+         b) Asociar PATTERN de mejora a cada issue.
+         c) Generar propuestas con justificación categórica.
+    
+    Output_Format: |
+      ## Informe de Auditoría DIK
+      
+      ### 1. Clasificación
+      - **Nivel DIK**: [DATA | INFORMATION | KNOWLEDGE]
+      - **Tipo**: [SCHEMA | INSTANCE | ARTIFACT | MODEL | AGENT]
+      - **URN**: [urn si aplica]
+      
+      ### 2. Resumen de Diagnóstico
+      | Dimensión | Estado | Issues |
+      |-----------|--------|--------|
+      | Estructural | ✓/✗ | n CRITICAL |
+      | Referencial | ✓/✗ | n HIGH |
+      | Completitud | ✓/✗ | n MEDIUM |
+      | Calidad | ✓/✗ | n LOW |
+      | Migraciones | ✓/✗/NA | ... |
+      | Comportamiento | ✓/✗/NA | ... |
+      
+      ### 3. Issues Detectados
+      | # | Severidad | Dimensión | Descripción | Ubicación |
+      |---|-----------|-----------|-------------|-----------|
+      
+      ### 4. Propuestas de Mejora
+      | # | Issue | Patrón | Propuesta | Justificación |
+      |---|-------|--------|-----------|---------------|
+      
+      ### 5. Próximos Pasos
+      [Lista priorizada]
+
+

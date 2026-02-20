@@ -1,0 +1,142 @@
+_manifest:
+  urn: "urn:kora:cat:action-primary-key:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/dynamics/action_primary_key.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:kora:kb:spec:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-14"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-14"
+    signature: null
+
+ID: CAT-ACTION-PK-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-14
+Modification-Date: 2025-12-14
+Version-Notes: "Transformación inicial a KODA/Spec desde análisis técnico en sources/cat."
+Src:
+  - "file://sources/cat/action_first_key.md"
+Ctx: "Análisis Técnico: Action is the Primary Key (Fukada, 2024). Autor del análisis: Arquitecto Categórico (AGENT-ARQUITECTO-CATEGORICO-01). Fecha: 2025-12-04."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, formulas) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external only—must point to a URN (optionally with #ID fragment) in another artifact.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Formalizar el marco categórico donde la acción opera como clave primaria para descripción de episodios y razonamiento lógico."
+Obj: "Servir como base formal para implementación de sistemas de memoria episódica y modelamiento composicional de episodios."
+
+Referencia:
+  ID: CAT-ACTION-PK-REF-01
+  Ctx: "Fukada, S. (2024). Action is the primary key: a categorical framework for episode description and logical reasoning."
+
+Definiciones:
+  - ID: CAT-ACTION-PK-DEF-ACCION-PK
+    Def: "Tesis central: la acción no es un atributo de un estado o transición; es la clave primaria que indexa y estructura la memoria episódica."
+
+  - ID: CAT-ACTION-PK-DEF-MUNDO-CATEGORIA
+    Def: "Modelar el mundo como una categoría C. Enfoque propuesto: la estructura rica reside en los morfismos (acciones), y los objetos (estados) son secundarios o inferidos desde la red de acciones."
+
+  - ID: CAT-ACTION-PK-DEF-DB-FUNCTOR
+    Def: "Si se considera un esquema de base de datos S, los datos son un funtor I: S -> Set. Para cada objeto X en S, I(X) es el conjunto de instancias de datos."
+
+  - ID: CAT-ACTION-PK-DEF-SCHEMA
+    Def: "La información se representa mediante el esquema S, que es una categoría finitamente presentada. Objetos: tipos de entidades. Morfismos: relaciones estructurales."
+
+  - ID: CAT-ACTION-PK-DEF-GROTHENDIECK
+    Def: "La transición de Data a Info se modela por la categoría de elementos ∫I (Construcción de Grothendieck), donde los datos individuales se 'pegan' siguiendo la estructura del esquema."
+
+  - ID: CAT-ACTION-PK-DEF-KNOWLEDGE-LOGIC
+    Def: "El conocimiento se modela mediante la lógica interna de la categoría (típicamente un Topos o una categoría regular)."
+
+  - ID: CAT-ACTION-PK-DEF-CONSTRAINTS
+    Def: "Restricciones (constraints): se expresan como límites (pullbacks, equalizers) que deben conmutar; reglas de negocio como diagramas conmutativos para toda instancia válida."
+
+Introduccion:
+  ID: CAT-ACTION-PK-INTRO-01
+  Def:
+    Ref: CAT-ACTION-PK-DEF-ACCION-PK
+  Ctx: "Cambio de paradigma para describir episodios y razonar en sistemas inteligentes: la acción indexa episodios."
+  Modelado_Categorico:
+    Ref: CAT-ACTION-PK-DEF-MUNDO-CATEGORIA
+
+Marco_Categorico_DIK:
+  ID: CAT-ACTION-PK-DIK-01
+  Ctx: "Jerarquía DIK reinterpretada rigurosamente mediante teoría de categorías."
+
+  Data:
+    ID: CAT-ACTION-PK-DIK-DATA-01
+    Def: "Datos: observaciones crudas y eventos discretos; conjunto de hechos atómicos registrados."
+    Modelado_Categorico:
+      - "Los datos se modelan como una categoría discreta D o como objetos terminales en una categoría de instancias."
+      - "Cada episodio crudo es una instancia aislada antes de ser conectada por relaciones."
+      - Ref: CAT-ACTION-PK-DEF-DB-FUNCTOR
+
+  Information:
+    ID: CAT-ACTION-PK-DIK-INFO-01
+    Def: "Información: datos + relaciones (estructura); el 'cómo' se relacionan los datos."
+    Modelado_Categorico:
+      - Ref: CAT-ACTION-PK-DEF-SCHEMA
+      - Ref: CAT-ACTION-PK-DEF-GROTHENDIECK
+      - "Fórmula: Info ≅ ∫ I →π S"
+
+  Knowledge:
+    ID: CAT-ACTION-PK-DIK-KNOW-01
+    Def: "Conocimiento: información + reglas/lógica (semántica); razonamiento, inferencia y validación lógica."
+    Modelado_Categorico:
+      - Ref: CAT-ACTION-PK-DEF-KNOWLEDGE-LOGIC
+      - Ref: CAT-ACTION-PK-DEF-CONSTRAINTS
+      - "Inferencia: composición de morfismos. Si f: A -> B y g: B -> C, entonces se deriva g ∘ f: A -> C."
+      - "En el marco de Fukada: permite inferir el 'por qué' y el 'para qué' de una acción, conectando episodios disjuntos en una narrativa coherente."
+
+Modelamiento_de_Episodios_Action_as_Primary_Key:
+  ID: CAT-ACTION-PK-EPISODES-01
+  Def: "Aporte distintivo: situar la acción como el morfismo central."
+
+  Categoria_de_Acciones_A:
+    ID: CAT-ACTION-PK-A-01
+    Def: "Categoría A: objetos (estados del mundo o contextos), morfismos (acciones que transforman un contexto en otro)."
+
+  Funtor_de_Indexacion:
+    ID: CAT-ACTION-PK-IDX-01
+    Def: "La acción es la entidad indexadora; sugiere un funtor de indexación Idx: E -> A, donde E es la categoría de episodios. Cada episodio se mapea a una acción canónica."
+
+  Composicionalidad_de_Episodios:
+    ID: CAT-ACTION-PK-COMP-01
+    Def: "Si el episodio E1 termina en un estado que inicia E2, se componen: E1 ; E2."
+    Res: "Permite construir episodios complejos (historias, procesos) a partir de acciones atómicas, preservando estructura lógica."
+
+Conclusiones:
+  ID: CAT-ACTION-PK-CONC-01
+  Def: "El marco formaliza la intuición: la acción es el eje de la memoria episódica."
+  Res:
+    - "Rigor: elimina ambigüedad en qué constituye un episodio."
+    - "Interoperabilidad: modelar Data, Info y Knowledge como estructuras categóricas (funtores, esquemas, lógica) facilita integración con otros sistemas de conocimiento."
+    - "Razonamiento: la estructura de primary key en la acción permite consultas eficientes y deducciones lógicas robustas sobre comportamiento de agentes."
+  Just: "Base formal para implementación de sistemas de memoria episódica en arquitecturas cognitivas avanzadas."

@@ -1,0 +1,285 @@
+# KODA Knowledge Artifact: MBSE Consistency via Category Theory
+# Domain: Category Theory / MBSE & Safety
+
+_manifest:
+  urn: "urn:kora:cat:mbse-consistency:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/meta/mbse_consistency.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:kora:kb:spec:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-05"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-14"
+    signature: null
+
+ID: CAT-MBSE-01
+Version: 1.0.0
+Status: Active
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-05
+Modification-Date: 2025-12-14
+Version-Notes: "Initial KODA/Spec skeleton for Category-Theoretic MBSE Consistency (S2ML+Cat). Updated with missing foundations + S2ML+Cat formal statements from sources/cat."
+Src:
+  - "file://sources/cat/Category Theory for Consistency Betwee.md"
+Ctx: "Notas estructuradas sobre Catports, Catblocks, Catmodels y relaciones de consistencia."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Registrar el marco S2ML+Cat para consistencia entre modelos MBSE y Safety."
+Obj: "Servir de fuente formal para CM-STRUCTURE-ENGINE y análisis de consistencia entre modelos de sistemas."
+
+Source:
+  Title: "Category Theory for Consistency Between Multilevel System Modeling (MBSE) and Safety (MBSA)"
+  Authors: ["Autores S2ML+Cat"]
+  Ctx: "Uso de categorías para formalizar Catmodels y relaciones de consistencia."
+
+Foundations_of_Category_Theory:
+  - ID: MBSE-DEF-1-1-CATEGORY
+    Def: |
+      A category C is composed of:
+      - A class Ob(C) of objects.
+      - For x, y in Ob(C), a set Hom_C(x,y) of morphisms from x to y (often called arrows).
+
+      Such that:
+
+      1. Composition: If f in Hom_C(x,y) and g in Hom_C(y,z), then g ∘ f in Hom_C(x,z).
+      2. Associativity: If f,g,h are morphisms such that g ∘ f and h ∘ g exist, then (h ∘ g)∘ f = h∘(g ∘ f).
+      3. Identity: For each x in Ob(C), there exists an identity morphism id_x : x -> x.
+
+  - ID: MBSE-DEF-1-2-FUNCTOR
+    Def: |
+      Let C and D be categories. A functor F: C -> D consists of:
+      - A function F_Ob: Ob(C) -> Ob(D).
+      - For each x,y in Ob(C), a function F_{x,y}: Hom_C(x,y) -> Hom_D(F(x), F(y)).
+
+      Such that:
+
+      1. F(id_x) = id_{F(x)} for every object x in C.
+      2. F(g ∘ f) = F(g) ∘ F(f) whenever the composition g ∘ f is defined in C.
+
+  - ID: MBSE-DEF-1-3-NATURAL-TRANSFORMATION
+    Def: |
+      Let F,G : C-> D be two functors. A natural transformation α: F ⇒ G is given by assigning to each object x in Ob(C) a morphism α_x : F(x) -> G(x) in D such that for every morphism f : x -> y in C, the following diagram commutes:
+    Diagram: |
+      $$
+      \begin{array}{ccc}
+      F(x) & \xrightarrow{\,F(f)\,} & F(y) \\
+      \Big\downarrow{\alpha_x} & & \Big\downarrow{\alpha_y}\\
+      G(x) & \xrightarrow{\,G(f)\,} & G(y)
+      \end{array}
+      $$
+
+  - ID: MBSE-DEF-1-4-FULL-FAITHFUL
+    Def: |
+      Let F: C -> D be a functor.
+
+      - F is full if for any x,y in Ob(C), the map
+        F_{x,y}: Hom_C(x,y) -> Hom_D(F(x),F(y))
+        is surjective.
+
+      - F is faithful if this map is injective for all x,y.
+
+  - ID: MBSE-DEF-1-5-EQUIVALENCE-OF-CATEGORIES
+    Def: |
+      Two categories C and D are equivalent if there is a functor F: C -> D and a functor G: D -> C, together with natural transformations α: Id_C ⇒ G ∘ F and β: Id_D ⇒ F ∘ G.
+    Ref: MBSE-DEF-1-3-NATURAL-TRANSFORMATION
+
+  - ID: MBSE-DEF-1-6-CONE
+    Def: |
+      Let C be a category and D a diagram in C. A cone over D is an object Q of C along with morphisms from Q to each object of D such that all newly formed triangles commute.
+
+  - ID: MBSE-DEF-1-7-LIMIT
+    Def: |
+      A limit of a diagram is a universal cone: that is, a cone L such that for any other cone Q over the same diagram, there is a unique morphism Q -> L making all triangles commute.
+    Ref: MBSE-DEF-1-6-CONE
+
+  - ID: MBSE-DEF-1-8-PULLBACK
+    Def: |
+      Let A, B, C be three objects of a category, and f: A -> C, g: B -> C be morphisms. A pullback of A and B over C is the limit of the diagram formed by f and g. In other words, a pullback A ×_C B is an object with the usual universal property forming a commuting square with A, B, and C.
+    Ref: MBSE-DEF-1-7-LIMIT
+
+Related_Concepts:
+  XRef:
+    - "urn:kora:cat:mathematical-modelling:1.0.0#MM-COMPLEXITY-ORDER"
+    - "urn:kora:cat:categorical-systems-theory:1.0.0#WIRING-DEF"
+  Notes: |
+    - Catblocks son análogos a componentes en wiring diagrams.
+    - El poset de inyecciones es instancia del Model Poset de mathematical_modelling.
+    - La consistencia binaria es un tipo de pullback en la categoría de Catmodels.
+
+S2ML_Cat_Framework:
+  - ID: MBSE-CATPORT
+    Def: "Catport = categoría con un único objeto (símbolo) y morfismo identidad."
+    Interpretation: "Puerto/interfaz atómica de un sistema."
+
+  - ID: MBSE-CATCONNECTION
+    Def: "Catconnection = categoría cuyos objetos son Catports y morfismos son solo identidades."
+    Interpretation: "Conexión abstracta entre puertos."
+    Ref: MBSE-CATPORT
+
+  - ID: MBSE-CATBLOCK
+    Def: "Catblock = categoría cuyos objetos pueden ser Catblocks, Catports y Catconnections, con morfismos que describen composición/contención."
+    Interpretation: "Bloque de sistema (componente) con estructura interna."
+    Ref: [MBSE-CATPORT, MBSE-CATCONNECTION]
+
+  - ID: MBSE-CATMODEL
+    Def: "Catmodel = categoría con un conjunto finito de Catblocks, Catports y Catconnections, con un Catblock raíz único."
+    Interpretation: "Modelo completo de sistema en el marco S2ML+Cat."
+    Ref: MBSE-CATBLOCK
+
+Consistency_Relations:
+  - ID: MBSE-CATMODEL-INJECTION
+    Def: "Inyección entre Catmodels: f: M→N que preserva estructura (bloques, puertos, conexiones) de forma inyectiva."
+    Interpretation: "M es submodelo estructural de N."
+
+  - ID: MBSE-CATMODEL-EQUIVALENCE
+    Def: "Equivalencia de Catmodels basada en teorema tipo Cantor-Bernstein: si hay inyecciones M→N y N→M, entonces M y N son equivalentes."
+    Implication: "Tienen la misma complejidad estructural, pueden considerarse isomorfos."
+    Ref: MBSE-CATMODEL-INJECTION
+
+  - ID: MBSE-BINARY-CONSISTENCY
+    Def: "Consistencia binaria: dos Catmodels son consistentes si comparten un submodelo común."
+    Definition: "Existe Catmodel K y inyecciones K→M, K→N."
+    Use: "Verificar si dos modelos (p.ej., MBSE y Safety) son compatibles."
+    Proc: |
+      1. Dado dos Catmodels M (MBSE) y N (Safety), listar sus elementos:
+         - Bloques, puertos, conexiones de cada uno.
+      2. Identificar elementos comunes por nombre/tipo/semántica.
+      3. Construir candidato K con los elementos compartidos.
+      4. Verificar que K sea un Catmodel válido (Catblock raíz, conexiones cerradas).
+      5. Verificar que las inclusiones K→M y K→N preserven estructura.
+      6. Si K existe y es no trivial → M y N son consistentes.
+      7. Si K es vacío o solo tiene elementos triviales → inconsistencia.
+    Ex: |
+      -- MBSE Model M: {Controller, Sensor, Actuator, ctrl_to_sensor, ctrl_to_act}
+      -- Safety Model N: {Controller, SafetyMonitor, ctrl_to_monitor}
+      -- K común: {Controller} (solo el bloque Controller es compartido)
+      -- K→M: Controller ↦ Controller
+      -- K→N: Controller ↦ Controller
+      -- Resultado: Consistentes (comparten Controller como interfaz común)
+
+  - ID: MBSE-DICTIONARY-CONSISTENCY
+    Def: "Consistencia por diccionario: identificar un esqueleto común (diccionario) que relaciona elementos de distintos modelos."
+    Use: "Alinear terminología y estructura entre disciplinas (MBSE, MBSA, etc.)."
+
+Partial_Order:
+  - ID: MBSE-INJECTION-POSET
+    Def: "La relación de inyección define un orden parcial sobre Catmodels."
+    Use: "Comparar la complejidad estructural de distintos modelos de un mismo sistema."
+    Property: "Permite organizar modelos en un lattice de refinamientos/abstracciones."
+
+S2ML_Cat_Theorems_and_Definitions:
+  - ID: MBSE-DEF-4-1-CATPORT
+    Def: "Consider a countable set of symbols P. A Catport is a category C_P where Ob(C_P) is a singleton containing a symbol p in P and the only morphism is the identity on p."
+
+  - ID: MBSE-DEF-4-2-CATCONNECTION
+    Def: "A Catconnection is a category C_C where Ob(C_C) is a non-empty, finite set of Catports and the only morphisms in C_C are identities."
+    Ref: MBSE-DEF-4-1-CATPORT
+
+  - ID: MBSE-DEF-4-3-CATBLOCK
+    Def: "A Catblock C_B is a category with a finite set of objects consisting of Catblocks, Catports, and Catconnections, and morphisms specified to capture reference/containment between ports, connections, and parent blocks, with no other morphisms besides those implied by category axioms."
+    Conditions:
+      - "For each Catconnection C in Ob(C_B), if a Catport P1 in Ob(C_B) is such that P1 in Ob(C), then there exist morphisms r_{P1,C}: P1 -> C and r'_{P1,C}: C -> P1 in C_B with specific mappings (mapping objects/morphisms accordingly)."
+      - "For each Catblock B1 in Ob(C_B): every Catconnection/Catport/Catblock in B1 belongs to Ob(C_B), and there is a morphism mapping them up to B1."
+      - "For each X in Ob(B1), there is a unique Catblock B' in C_B such that no other Catblock in B' contains X."
+      - "Hom(x,y) in C_B refers to the set of morphisms between x and y."
+    Ref: [MBSE-DEF-4-1-CATPORT, MBSE-DEF-4-2-CATCONNECTION]
+
+  - ID: MBSE-PROP-4-1-CATBLOCK-IS-CATEGORY
+    Def: "A Catblock is a category."
+    Proof: "Verify identity morphisms, composition, and associativity. Morphisms are either identities over Catports/Catconnections (discrete categories) or morphisms mapping Catports/Catconnections to a parent Catblock; compositions exist and are associative as they arise from identities or compositions of discrete identities; hence C_B satisfies category axioms."
+    Ref: MBSE-DEF-4-3-CATBLOCK
+
+  - ID: MBSE-DEF-4-4-CATMODEL
+    Def: "A Catmodel M is a category such that Ob(M) is a finite set of Catblocks, Catports, Catconnections; there is a unique Catblock R in Ob(M) called the root; for each x,y in Ob(R), Hom_M(x,y) = Hom_R(x,y); all required morphisms from Catblocks hold, plus those from R to each object; no extra morphisms appear beyond those mandated by category axioms or Catblock composition."
+    Ref: MBSE-DEF-4-3-CATBLOCK
+
+  - ID: MBSE-PROP-4-2-S2ML-CAT-IS-CATEGORY
+    Def: "S2ML + Cat is a category."
+    Proof: "Objects are Catmodels and morphisms are injections between these models. Verify identities (trivially injections), closure under composition (composition of injections is an injection), and associativity (composition is associative)."
+    Ref: MBSE-CATMODEL-INJECTION
+
+  - ID: MBSE-THM-4-1-EQUIVALENCE-CATMODELS-S2ML
+    Def: "Any Catmodel in S2ML + Cat can be associated to a model in the standard S2ML quintuple definition, and conversely, up to the choice of symbols for blocks."
+    Proof: "Construct functions F (S2ML quintuple -> Catmodel) and G (Catmodel -> S2ML quintuple) mapping each port/connection/block, respecting containment and reference relations; show G ∘ F and F ∘ G are each the identity (modulo renaming of blocks), yielding a reversible mapping between formalisms."
+
+  - ID: MBSE-LEM-4-1-ROOTS-UNDER-INJECTIONS
+    Def: "Let M1,M2 be Catmodels and suppose there exist injections F: M1 -> M2 and G: M2 -> M1. Let R1,R2 be the roots of M1 and M2. Then R2 = F(R1) and R1 = G(R2)."
+
+  - ID: MBSE-LEM-4-2-ORDER-EQUALITY
+    Def: "Under the same assumptions, Order(M1) = Order(M2)."
+
+  - ID: MBSE-LEM-4-3-COUNT-BY-ORDER
+    Def: "Under the same assumptions, for each integer i in [0,k] (k the common order), M1 and M2 have the same number of objects of order i; moreover, every object of order i in M1 (resp. M2) is mapped to an object of order i in M2 (resp. M1)."
+
+  - ID: MBSE-LEM-4-4-CATCONNECTION-SIZE-PRESERVED
+    Def: "Under the same assumptions, the image by F_Ob (and G_Ob) of a Catconnection is a Catconnection with the same number of Catports."
+
+  - ID: MBSE-THM-4-2-CANTOR-BERNSTEIN
+    Def: "Let A,B be Catmodels and suppose there exist injections F: A -> B and G: B -> A. Then there is an injection G': B -> A such that G' ∘ F = id_A and F ∘ G' = id_B."
+    Proof: "Constructive proof by strong induction on the order of models, using that root blocks, numbers of Catports at each order, and Catconnections of the same size match; build the inverse piecewise on each Catblock/Catconnection and combine into a global injection G'."
+    Ref: [MBSE-LEM-4-1-ROOTS-UNDER-INJECTIONS, MBSE-LEM-4-2-ORDER-EQUALITY, MBSE-LEM-4-3-COUNT-BY-ORDER, MBSE-LEM-4-4-CATCONNECTION-SIZE-PRESERVED]
+
+  - ID: MBSE-COR-4-1-EQUIVALENCE
+    Def: "From Theorem 4.2, F is an equivalence of categories."
+    Ref: MBSE-THM-4-2-CANTOR-BERNSTEIN
+
+  - ID: MBSE-DEF-4-11-EQUIVALENCE-OF-CATMODELS
+    Def: "Let A,B in S2ML + Cat. A and B are equivalent if there exist injections F: A -> B and G: B -> A."
+    Ref: MBSE-CATMODEL-INJECTION
+
+  - ID: MBSE-THM-4-3-EQUIVALENCE-RELATION
+    Def: "The equivalence of Catmodels is an equivalence relation on the objects of S2ML + Cat (reflexive, symmetric, transitive)."
+    Proof: "Reflexivity: identity injection. Symmetry: reverse injections. Transitivity: composition of injections is an injection."
+    Ref: MBSE-DEF-4-11-EQUIVALENCE-OF-CATMODELS
+
+  - ID: MBSE-DEF-4-12-INJECTION-RELATION
+    Def: "For Catmodels A,B, A is injected into B if there exists an injection F: A -> B."
+    Ref: MBSE-CATMODEL-INJECTION
+
+  - ID: MBSE-THM-4-4-INJECTION-PARTIAL-ORDER
+    Def: "The injection relation is a partial order over the set of Catmodels (given equivalences between Catmodels)."
+    Proof: "Reflexive: identity injection. Antisymmetric: if A injected into B and B injected into A, then they are equivalent; Transitive: composition of injections is an injection."
+    Ref: MBSE-DEF-4-12-INJECTION-RELATION
+
+  - ID: MBSE-DEF-4-13-BINARY-CONSISTENCY
+    Def: "A binary consistency relation ~ over Catmodels satisfies: for A,B, A ~ B iff there exist A',B' and injections f_A: A' -> A, f_B: B' -> B, F: A' -> B', G: B' -> A' with F ∘ G = id_{B'} and G ∘ F = id_{A'}."
+
+  - ID: MBSE-PROP-4-3-ALL-CONSISTENT
+    Def: "Let ~_all be the binary relation imposing no restriction other than being a binary consistency relation. Then for any two Catmodels A,B, A ~_all B."
+    Proof: "Construct trivial Catmodels A',B' each containing a single root Catblock; define injections A' -> A and B' -> B and choose identity maps for F and G; then compositions are identities, hence any two Catmodels are in ~_all."
+    Ref: MBSE-DEF-4-13-BINARY-CONSISTENCY
+
+  - ID: MBSE-DEF-4-14-DICTIONARY-CONSISTENCY
+    Def: "A dictionary consistency relation ~_dic is a binary consistency relation such that for A ~_dic B, we identify a common skeleton in each model (typically involving elementary Catblocks and Catports). Elements not aligned (forgotten) are outside that skeleton."
+    Note: "This relation captures a user-provided alignment (a dictionary of matched elements) and restricts the matched skeleton to preserve the system’s structure."
+    Ref: MBSE-DEF-4-13-BINARY-CONSISTENCY
+
+

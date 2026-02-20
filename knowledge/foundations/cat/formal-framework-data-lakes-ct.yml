@@ -1,0 +1,159 @@
+_manifest:
+  urn: "urn:kora:cat:formal-framework-data-lakes-ct:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/integration/formal_framework_data_lakes_category_theory.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:kora:kb:spec:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-14"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-14"
+    signature: null
+
+ID: CAT-DL-FRAMEWORK-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-14
+Modification-Date: 2025-12-14
+Version-Notes: "Initial KODA/Spec transform from sources/cat."
+Src:
+  - "file://sources/cat/A Formal Framework for Data Lakes Base.md"
+Ctx: "A formal framework for data lakes based on category theory: modeling data lake functionalities as categories and linking them via functors for compositionality and lineage."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, formulas, code) with zero loss. Ignore fat.
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: internal only—must point to existing ID within THIS document. XRef/XRef_Required: external only—must point to a URN (optionally with #ID fragment) in another artifact.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Capture a category theory-based formal framework for data lakes (DL category, functors, surjectivity) covering ingestion, storage, maintenance, exploration, and lineage/compositionality."
+Obj: "Provide a formal reference for modeling and unifying data lake functionalities with category theory, including a DL category, functors from instance categories, and an illustrative enterprise example."
+
+Abstract:
+  ID: DLFW-ABS-01
+  Def: "The management of Big Data necessitates flexible systems capable of handling heterogeneous data models and complex analytical workflows. Traditional data warehouses are limited by their rigid schema-on-write paradigm. Data lakes offer a more flexible schema-on-read approach, storing raw data with metadata for on-demand processing. This framework leverages category theory to define and unify data lake functionalities, ensuring compositionality and lineage tracking through categories and functors."
+
+Introduction:
+  ID: DLFW-INTRO-01
+  Def: "Big Data management introduces challenges tied to Volume, Variety, Velocity, Veracity, and Value (5V). Data lakes address these by providing flexible storage and processing environments. However, existing architectures often lack a unified formal framework. This work proposes using category theory to formalize data lake functionalities, ensuring robustness and flexibility."
+
+State_of_the_Art_and_Discussion:
+  ID: DLFW-SOTA-01
+
+  Main_Functionalities_of_Data_Lakes:
+    ID: DLFW-FUNCS-01
+    Items:
+      - "Data Storage: Handles heterogeneous data and metadata storage."
+      - "Data Ingestion: Tools for loading data from various sources."
+      - "Data Maintenance: Organizes data, ensures quality, and simplifies schema-on-read."
+      - "Data Exploration: Enables data discovery and query processing."
+
+  Formalization_of_Data_Lakes:
+    ID: DLFW-FORMALIZATION-PRIOR-01
+    Def: "Previous works have formalized isolated aspects of data lakes using UML, graph theory, and set theory. However, a unified formal framework encompassing all functionalities is lacking."
+
+  Contributions_of_Category_Theory_to_Data_Lakes:
+    ID: DLFW-CT-CONTRIB-01
+    Def: "Category theory offers high abstraction and compositionality, making it suitable for formalizing data lakes. It has been applied to various computer science domains but not comprehensively to data lakes until now."
+
+Formalization:
+  ID: DLFW-FORMALIZATION-01
+
+  Category_Theory_in_a_Nutshell:
+    ID: DLFW-CT-NUTSHELL-01
+
+    Definition_1_Category:
+      ID: DLFW-DEF-1
+      Def: "A category C consists of objects Ob(C), morphisms Hom(C) between objects, an associative composition operation ∘, and for each object x an identity morphism id_x: x -> x."
+
+    Definition_2_Functor:
+      ID: DLFW-DEF-2
+      Def: "A functor F: C -> D maps objects in C to objects in D and morphisms in C to morphisms in D such that identities and compositions are preserved: F(id_x)=id_{F(x)} and F(g ∘ f)=F(g) ∘ F(f)."
+      Ref: DLFW-DEF-1
+
+    Definition_3_Constant_Functor:
+      ID: DLFW-DEF-3
+      Def: "A constant functor Δ_{C-D}: C -> D maps every object in C to a single object d in Ob(D) and every morphism to id_d."
+      Ref: DLFW-DEF-1
+
+    Definition_4_Surjective_Functor:
+      ID: DLFW-DEF-4
+      Def: "A functor F: C -> D is surjective if for every pair of objects x,y in Ob(D) and every morphism g: F(x) -> F(y) in D, there exists a morphism f: x' -> y' in C such that F(f)=g."
+      Ref: DLFW-DEF-2
+
+    Definition_5_Product_of_Categories:
+      ID: DLFW-DEF-5
+      Def: "Given categories C1 and C2, their product C1 × C2 has objects (x,y) with x in Ob(C1) and y in Ob(C2), and morphisms (f,g) with f in C1 and g in C2."
+
+  Categorical_Framework_for_Data_Lakes:
+    ID: DLFW-DL-FRAMEWORK-01
+
+    Definition_6_Data_Lake_Category_DL:
+      ID: DLFW-DEF-6
+      Def: "The data lake is modeled as a category DL with objects Data Storage, Data Ingestion, Data Exploration; and morphisms store: Ingestion -> Storage, explore: Storage -> Exploration, and maintenance: Storage × Storage -> Storage."
+      Objects: ["Data Storage", "Data Ingestion", "Data Exploration"]
+      Morphisms:
+        - "store: Ingestion -> Storage"
+        - "explore: Storage -> Exploration"
+        - "maintenance: Storage × Storage -> Storage"
+      Remark: "The maintenance morphism is a bifunctor allowing operations that improve datasets or metadata by combining existing storage functionalities."
+      Ref: DLFW-DEF-5
+
+    Functors_Linking_Functionalities:
+      ID: DLFW-FUNCTORS-01
+      Def: "Functors are employed to map instance categories to the high-level categories defined in DL."
+      Example:
+        - "Δ_{Storage-DL}: Storage -> DL"
+      Note: "Surjective functors ensure that every morphism in the high-level category DL has a corresponding morphism in the instance categories, maintaining structural integrity."
+      Ref: [DLFW-DEF-3, DLFW-DEF-4]
+
+Example:
+  ID: DLFW-EX-01
+  Def: "An enterprise manages customer data and online activity records using the categorical framework."
+
+  Ingestion_Categories:
+    ID: DLFW-EX-ING-01
+    Items:
+      - "Ing_ds1: Aggregates online activity data."
+      - "Ing_ds2: Directly stores customer data without transformation."
+
+  Storage_Categories:
+    ID: DLFW-EX-STR-01
+    Items:
+      - "Str_ds1: Stores activity data as time series in InfluxDB and metadata in Neo4j."
+      - "Str_ds2: Stores customer data in PostgreSQL and metadata as JSON in the file system."
+
+  Functor_Effects:
+    ID: DLFW-EX-FUNCTORS-01
+    Def: "Functors map objects and morphisms from ingestion and storage instance categories to the corresponding high-level categories, ensuring surjectivity and structural compliance."
+
+  Maintenance_Operation:
+    ID: DLFW-EX-MAINT-01
+    Def: "Enriches the activity dataset with customer data to enhance analysis, demonstrating the composition and flexibility of maintenance operations within the framework."
+
+Conclusion:
+  ID: DLFW-CONC-01
+  Def: "A unified formal framework for data lakes based on category theory has been proposed. This framework leverages functors and compositions to manage data lineage and maintain flexibility. It comprehensively covers main functionalities—Data Ingestion, Storage, Maintenance, and Exploration—while ensuring structural integrity through category theory principles. Future work includes extending the framework to handle complex workflows and integrating physical component mappings."

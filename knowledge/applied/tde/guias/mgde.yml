@@ -1,0 +1,454 @@
+# KODA TDE Lineamiento Técnico: Marco de Referencia de Gestión de Datos del Estado (MGDE)
+---
+_manifest:
+  urn: "urn:kora:gov:mgde:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Marco_Referencia_Gestion_Datos_MGDE"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosGuías/Guía_Técnica_aplicación_de_un_marco_de_referencia_de_gestión_de_datos_en_los_órganos_de_la_Administración_del_Estado.md"
+    source_url: "https://wikiguias.digital.gob.cl/guias/Gu%C3%ADa_MGDE"
+    source_updated_at: "2025-10-07T21:10:53.915Z"
+  status: draft
+
+ID: "TDE-LIN-MGDE-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía técnica para la aplicación del Marco de Referencia de Gestión de Datos del Estado (MGDE) en los órganos de la Administración del Estado, adaptando DAMA al contexto chileno"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Marco de referencia MGDE para gobernanza y gestión de datos en los OAEs"
+  objective: >-
+    Orientar a los OAEs en la adopción de buenas prácticas de gestión de datos mediante el MGDE,
+    alineando la gobernanza de datos con la estrategia institucional, la normativa vigente y los
+    marcos internacionales (DAMA, OCDE, Carta de Datos Abiertos).
+  usage_guidance:
+    - "Usar este artefacto para diseñar políticas de gobernanza de datos, modelos de madurez y hojas de ruta institucionales de gestión de datos."
+    - "Complementar con lineamientos de metadatos, anonimización, datos abiertos, seguridad de información, orientación TIC y metodologías de proyectos TD."
+    - "Aplicar el modelo de madurez y la herramienta de autoevaluación MGDE para priorizar dimensiones y planificar la implementación gradual."
+  style:
+    - "Responder en es-CL, tono técnico y orientado a gobernanza de datos y directivos/as."
+    - "Diferenciar requisitos (Req), recomendaciones (Rec) y descripciones de modelo (Def, Ctx)."
+
+Metadata_Original:
+  title: "Guía Técnica: aplicación de un marco de referencia de gestión de datos en los órganos de la Administración del Estado"
+  url: "https://wikiguias.digital.gob.cl/guias/Gu%C3%ADa_MGDE"
+  category: "Lineamientos Técnicos/Guías"
+  tags:
+    - "datos"
+    - "organos de la administración del estado"
+    - "guía técnica"
+    - "dama"
+  description: "Aplicación de un marco de referencia de gestión de datos en los órganos de la Administración del Estado mediante el MGDE."
+  updated_at: "2025-10-07T21:10:53.915Z"
+  last_updated_content_at: "2024-11-29"
+
+Contexto_y_Objetivos_de_la_Guia:
+  ID: "TDE_LIN_MGDE_CTX_001"
+  Ctx: >-
+    Las organizaciones dependen de sus activos de datos para decisiones estratégicas, tácticas y
+    operativas, para optimizar experiencia usuaria, crear nuevos productos y servicios y mejorar
+    la operación mediante ciclos de mejora continua.
+  Ctx_Optional:
+    - "El marco de políticas de Gobierno Digital de la OCDE define, entre otras, las dimensiones 'Impulsado por los datos' y 'Abierto por defecto', estrechamente ligadas a la gestión de datos."
+  Purp: >-
+    Orientar a los OAEs en la adopción de buenas prácticas de gestión de datos mediante el Marco
+    de Referencia de Gestión de Datos del Estado (MGDE).
+  Obj:
+    - "Alinear la gestión de datos con los objetivos estratégicos institucionales."
+    - "Mejorar calidad de servicios y eficiencia de procesos mediante uso estratégico de datos."
+    - "Optimizar costos de planificación, diseño, operación y mejora continua mediante un marco común."
+    - "Definir roles y responsabilidades en la gestión de datos."
+    - "Homogenizar la comprensión de la gestión de datos entre múltiples instituciones del Estado."
+
+Gestion_de_Datos_y_Beneficios:
+  ID: "TDE_LIN_MGDE_GESTION_001"
+  Def: >-
+    La gestión de datos busca una mirada transversal sobre desafíos de datos, abordándolos desde
+    comprensión, documentación, estandarización y usos, mediante políticas, estrategias y
+    prácticas organizadas en un marco de referencia especializado.
+  Beneficios:
+    - "Alinea objetivos de gestión de datos con objetivos estratégicos de la organización."
+    - "Mejora calidad de servicio y eficiencia de procesos."
+    - "Disminuye el tiempo de diseño y desarrollo de servicios."
+    - "Optimiza costos de planificación, diseño, operación y mejora."
+    - "Define mejor roles y responsabilidades en gestión de datos."
+    - "Genera sinergias entre personas, procesos, información y tecnología."
+    - "Homogeniza la comprensión de la gestión de datos entre instituciones."
+
+MGDE_Descripcion_General:
+  ID: "TDE_LIN_MGDE_DESC_001"
+  Ctx: >-
+    El MGDE es producto de la adaptación del marco de referencia DAMA a la realidad chilena y se
+    documenta como un marco nacional de gestión de datos para los OAEs.
+  Ctx_Required:
+    - "DAMA-DMBOK (DAMA Management Body of Knowledge) como marco global de gestión de datos."
+  Ex:
+    - "Caso del Ministerio de Desarrollo Social y Familia como referencia pública de adopción de gobierno de datos basado en DAMA/MGDE."
+  Consideraciones_Adaptacion:
+    - "Simplificar DAMA para un marco flexible aplicable a OAEs con distintas capacidades y realidades."
+    - "Complementar DAMA con dimensiones específicas al servicio público chileno y a la Ley 21.180 sobre Transformación Digital del Estado."
+
+Normativa_Relacionada:
+  ID: "TDE_LIN_MGDE_NORM_001"
+  Ctx: >-
+    La guía se asocia a la Ley N° 21.658 que crea la SGD, que debe proponer y coordinar la
+    Estrategia de Gobierno Digital, y coordinar el uso estratégico de tecnologías digitales,
+    datos e información pública para mejorar gestión y servicios de los OAEs.
+  Ctx_Required:
+    - "Ley N° 21.658 que crea la Secretaría de Gobierno Digital."
+    - "Ley N° 18.575 Orgánica constitucional de bases generales de la administración del Estado (definición de OAEs)."
+
+Principios_Orientadores_Gestion_Datos:
+  ID: "TDE_LIN_MGDE_PRINCIPIOS_001"
+  Def: >-
+    Principios base que orientan las prácticas de gestión de datos y deben suscribirse e
+    incorporarse en la política de gobernanza de datos institucional.
+  Principios:
+    - "La gestión de datos debe mejorar los servicios a las personas."
+    - "Los datos internos y externos son activos estratégicos para metas y objetivos institucionales (incluye documentos y otros contenidos digitales)."
+    - "Todo activo o conjunto de datos debe ser catalogado y documentado con metadatos."
+    - "Todo activo o conjunto de datos debe tener una persona responsable (administrador/custodio) que vele por su actualización, mantenimiento y calidad."
+    - "Se promoverá la digitalización, el uso analítico y el trabajo colaborativo en torno a los datos."
+    - "Se promoverá la evaluación de calidad de datos para contar con datos confiables o con grados de certeza conocidos."
+    - "Se promoverá la interoperabilidad de datos interna y externa."
+    - "Se procurará un uso ético de datos, cumpliendo normativa vigente, en especial protección de datos personales."
+    - "Todo acceso a datos debe tener roles y responsabilidades definidos y realizarse en el marco de las definiciones de seguridad institucionales."
+    - "La gestión de datos se planificará, implementará, evaluará y mejorará de manera integral y continua a lo largo del ciclo de vida de los datos."
+
+Ciclo_de_Vida_de_los_Datos:
+  ID: "TDE_LIN_MGDE_CICLO_001"
+  Def: >-
+    El ciclo de vida de los datos puede dividirse en 8 etapas: generación, recolección/captura,
+    procesamiento, almacenamiento, administración, análisis, visualización e interpretación
+    orientadas a la toma de decisiones.
+
+Dimensiones_y_Criterios_MGDE:
+  ID: "TDE_LIN_MGDE_DIM_001"
+  Def: >-
+    El MGDE se organiza en 12 dimensiones, evaluadas mediante criterios y preguntas que permiten
+    determinar niveles de madurez por dimensión y un nivel global institucional.
+  Tabla_Resumen:
+    - Dim: "Vision_estrategica"
+      Criterios: 7
+      Preguntas: 7
+    - Dim: "Gobernanza_de_datos"
+      Criterios: 7
+      Preguntas: 7
+    - Dim: "Arquitectura_disenho_documentacion"
+      Criterios: 4
+      Preguntas: 6
+    - Dim: "Almacenamiento_y_operacion"
+      Criterios: 1
+      Preguntas: 1
+    - Dim: "Seguridad_y_ciberseguridad_de_datos"
+      Criterios: 4
+      Preguntas: 6
+    - Dim: "Integracion_e_interoperabilidad"
+      Criterios: 2
+      Preguntas: 4
+    - Dim: "Documentos_y_contenidos"
+      Criterios: 4
+      Preguntas: 4
+    - Dim: "Datos_maestros_y_de_referencia"
+      Criterios: 3
+      Preguntas: 3
+    - Dim: "Analitica_e_inteligencia_de_negocios"
+      Criterios: 3
+      Preguntas: 3
+    - Dim: "Calidad_de_datos"
+      Criterios: 2
+      Preguntas: 2
+    - Dim: "Datos_abiertos"
+      Criterios: 3
+      Preguntas: 7
+    - Dim: "Aspectos_legales_y_normativos"
+      Criterios: 2
+      Preguntas: 2
+  Dimensiones_Descripcion_Breve:
+    - Name: "Vision_estrategica"
+      Ctx: >-
+        Compromiso institucional con la gestión de datos, alineado con objetivos estratégicos y
+        mandato de largo plazo (visión, estrategia, recursos, capacidades, gestión del cambio,
+        alianzas, medición y seguimiento).
+    - Name: "Gobernanza_de_datos"
+      Ctx: >-
+        Visión, políticas y estrategias para potenciar datos como activos (política, organización,
+        implementación, herramientas, capacitación, gestión de riesgos y ética de datos).
+    - Name: "Arquitectura_disenho_y_documentacion"
+      Ctx: >-
+        Modelos, documentos y metadatos que describen estructuras y conjuntos de datos (arquitectura
+        institucional de datos, catálogo, modelos, metadatos).
+    - Name: "Almacenamiento_y_operacion"
+      Ctx: "Implementación y operación de plataformas de gestión de datos (operación y almacenamiento)."
+    - Name: "Seguridad_y_ciberseguridad_de_datos"
+      Ctx: >-
+        Privacidad, confidencialidad y accesos apropiados a datos (seguridad, ciberseguridad,
+        protección de datos personales, recuperación ante desastres).
+    - Name: "Integracion_e_interoperabilidad"
+      Ctx: >-
+        Mecanismos de integración y transferencia de datos internos y externos (integración,
+        interoperabilidad).
+    - Name: "Documentos_y_contenidos"
+      Ctx: "Políticas y herramientas para datos no estructurados (definiciones, metadatos, expediente electrónico, repositorio documental)."
+    - Name: "Datos_maestros_y_de_referencia"
+      Ctx: "Estandarización de codificaciones y centralización de información clave (datos referenciales, maestros, herramientas)."
+    - Name: "Analitica_e_inteligencia_de_negocios"
+      Ctx: >-
+        Análisis descriptivo, diagnóstico, predictivo y prescriptivo (toma de decisiones basada en
+        información, información de gestión, herramientas como data mart, data lake, data warehouse).
+    - Name: "Calidad_de_datos"
+      Ctx: "Metodologías y herramientas para definir, controlar y mejorar calidad de datos."
+    - Name: "Datos_abiertos"
+      Ctx: >-
+        Definición e implementación de procedimientos y herramientas para publicación de datos
+        abiertos según la Carta Internacional de Datos Abiertos.
+    - Name: "Aspectos_legales_y_normativos"
+      Ctx: "Exigencias para el área jurídica en políticas, procedimientos y planes de cumplimiento normativo."
+
+Modelo_de_Madurez_MGDE:
+  ID: "TDE_LIN_MGDE_MADUREZ_001"
+  Def: >-
+    El modelo de madurez MGDE mide el grado de desarrollo de las dimensiones y criterios de
+    gestión de datos a nivel institucional, permitiendo definir niveles esperados y hojas de ruta.
+  Niveles:
+    - "Insuficiente: no se cumplen mínimos deseables."
+    - "Basico: se cumplen mínimos deseables (orientado a instituciones que requieren lo básico)."
+    - "Medio: profundización por dimensión (para instituciones con mayor necesidad de desarrollo)."
+    - "Avanzado: aborda a cabalidad cada dimensión (para instituciones con alta necesidad de desarrollo)."
+
+Metodo_de_Autoevaluacion:
+  ID: "TDE_LIN_MGDE_AUTOEVAL_001"
+  Def: >-
+    El método de autoevaluación se basa en una matriz de evaluación por dimensión, con preguntas
+    que caracterizan el nivel de madurez mediante respuestas asociadas a puntajes.
+  Puntajes:
+    - "0 = Insuficiente"
+    - "2 = Basico"
+    - "4 = Medio"
+    - "6 = Avanzado"
+  Calculo:
+    - "Pje(D) = suma de puntajes de preguntas de la dimensión."
+    - "% Pje(D) = Pje(D) / (6 x NP(D)), donde NP(D) es número de preguntas de la dimensión."
+    - "Niveles: [0,40%) Insuficiente, [40,60%) Basico, [60,80%) Medio, [80,100%] Avanzado."
+    - "Pje(OAE) = suma de Pje(Dj) * P(Dj), donde P(Dj) es ponderador de la dimensión (1/12=8,3% por defecto)."
+
+Hoja_de_Ruta_MGDE:
+  ID: "TDE_LIN_MGDE_HOJA_RUTA_001"
+  Def: >-
+    La hoja de ruta es un plan de acción por dimensión para alcanzar el nivel de madurez esperado,
+    enfocado en dimensiones más relevantes y prioritarias.
+  Rec:
+    - "Justificar nivel esperado por dimensión y priorización de prácticas."
+    - "Combinar estrategias top-down (directivos formalizan políticas) y bottom-up (profesionales mejoran operaciones)."
+
+Implementacion_y_Gestion_del_Cambio:
+  ID: "TDE_LIN_MGDE_IMPL_001"
+  Ctx: >-
+    La implementación del MGDE debe alinearse con la estrategia institucional y otros marcos de
+    trabajo, e incluir gestión del cambio como componente central.
+  Integracion_Con_Otros_Marcos:
+    Rec:
+      - "Integrar MGDE con gestión de procesos, gestión de calidad y mejora continua."
+      - "Alinear con gestión de TIC, Transformación Digital, gestión documental, arquitectura institucional/empresarial."
+  Gestion_del_Cambio:
+    Rec:
+      - "Implementar procesos formales de gestión del cambio proporcionales al tamaño y complejidad de la institución."
+      - "Mantener un documento que describa acciones de gestión del cambio y su comunicación."
+      - "Inscribir la gobernanza de datos en marcos más amplios cuando corresponda (calidad de servicios, seguridad de información, gobernanza TIC, etc.)."
+
+Plan_de_Implementacion_MGDE:
+  ID: "TDE_LIN_MGDE_PLAN_001"
+  Def: >-
+    La implementación de la gestión de datos es un proceso gradual de 24 a 48 meses (o más), con
+    tres etapas principales.
+  Etapas:
+    - Name: "Etapa 1 - Diagnostico_y_definiciones_estrategicas (4-8 meses)"
+      Act:
+        - "Establecer visión estratégica."
+        - "Concientizar equipos directivos."
+        - "Formar equipo(s) de gestión de datos."
+        - "Realizar capacitación inicial."
+        - "Redactar política de gestión de información."
+        - "Definir gobernanza de datos y gestión del cambio."
+        - "Realizar autoevaluación y generar hoja de ruta."
+    - Name: "Etapa 2 - Implementacion_basica (8-12 meses)"
+      Act:
+        - "Difusión y gestión del cambio."
+        - "Implementación inicial de gobernanza."
+        - "Capacitación enfocada en prácticas."
+        - "Definición e implementación de prácticas priorizadas."
+        - "Desarrollo de productos iniciales y proyectos piloto."
+        - "Evaluación y nueva hoja de ruta para la siguiente etapa."
+    - Name: "Etapa 3 - Implementacion_avanzada (12-28 meses)"
+      Act:
+        - "Profundizar difusión y gestión del cambio."
+        - "Consolidar gobernanza como práctica permanente."
+        - "Implementar mejores prácticas y actualizar políticas."
+        - "Completar implementación de dimensiones al menos en nivel básico."
+        - "Evaluar y generar planes de acción para oportunidades de mejora."
+
+Organizacion_y_Roles_Gobierno_Datos:
+  ID: "TDE_LIN_MGDE_ORG_ROLES_001"
+  Ctx: >-
+    La gobernanza de datos requiere estructuras orgánicas claras (comités, equipos, roles
+    dedicados), que pueden evolucionar desde esquemas compartidos hacia modelos dedicados o
+    mixtos.
+  Esquemas_Organizacion:
+    - "Equipos compartidos (descentralizado): responsabilidades distribuidas en líneas de negocio y TIC, con colaboración basada en comités."
+    - "Equipo dedicado (centralizado): unidad organizacional responsable de gestión de datos, con liderazgo claro."
+    - "Esquema mixto: modelo de red con responsabilidades definidas mediante matriz RACI (Responsible, Accountable, Consulted, Informed)."
+  Comite_Ejecutivo_Gestion_Datos:
+    Rec:
+      - "Crear un Comité Ejecutivo de Gestión de Datos con una persona encargada y un equipo multitarea."
+      - "Evolucionar hacia esquemas centralizados o mixtos según necesidades de gobernanza de datos."
+      - "Asegurar apoyo de alta dirección mediante un Comité Directivo (posiblemente coincidente con el Comité de TD)."
+  Roles_Claves:
+    - Name: "Director/a de Datos (Chief Data Officer, CDO)"
+      Def: >-
+        Responsable integral de la gestión de datos, de la estrategia y su ejecución, pudiendo
+        adoptar denominaciones como coordinador/a de gobernanza de datos o jefe/a de gestión de
+        datos.
+      responsabilidades:
+        - "Establecer estrategia organizacional de datos."
+        - "Definir estándares, políticas y procedimientos de gobierno de datos."
+        - "Alinear requerimientos de datos con recursos TI y del negocio."
+        - "Asesorar al negocio en iniciativas de datos (BI, analítica, calidad)."
+        - "Liderar con el ejemplo en gestión de la información y supervisar cumplimiento."
+    - Name: "Administrador/a o Custodio/a de datos (Data Steward)"
+      Def: >-
+        Experto/a funcional en datos del negocio, responsable de metadatos, reglas de negocio y
+        calidad de datos, normalmente ubicado/a en líneas de negocio.
+    - Name: "Analista de Datos (Data Analyst)"
+      Def: >-
+        Experto/a funcional en uso y análisis de datos, responsable de buen uso y explotación de
+        los datos en apoyo a decisiones.
+    - Name: "Arquitecto/a de Datos (Data Architect)"
+      Def: >-
+        Diseña los "planos" de gestión de datos (modelos, arquitecturas, flujos), traduciendo
+        requerimientos organizacionales en soluciones de datos.
+      responsabilidades:
+        - "Traducir requisitos en modelos, bases de datos, almacenes y flujos de datos."
+        - "Crear procedimientos para exactitud y accesibilidad de datos."
+        - "Definir marco de arquitectura de datos (seguridad, datos de referencia, metadatos, datos maestros)."
+        - "Crear e implementar procesos y procedimientos de gestión de datos."
+        - "Colaborar con otros equipos para idear estrategias de datos y modelos conceptuales."
+
+Ciclo_de_Mejora_Continua_Gestion_Datos:
+  ID: "TDE_LIN_MGDE_MEJORA_001"
+  Def: >-
+    La gestión de datos se organiza como un ciclo anual de planificación, implementación,
+    evaluación y evolución liderado por el Comité Ejecutivo y reportado al Comité Directivo.
+  Etapas:
+    - Name: "Planificacion"
+      Act:
+        - "El Comité Ejecutivo propone anualmente un Plan de Gestión de Datos con objetivos, alcance y recursos humanos/económicos."
+        - "Reportar avances al menos semestralmente al Comité Directivo."
+    - Name: "Implementacion"
+      Act:
+        - "Conformar mesas de trabajo por temas/dimensiones del MGDE para ejecutar el plan."
+        - "Transferir gradualmente responsabilidades a responsables de datos en las áreas."
+    - Name: "Evaluacion"
+      Act:
+        - "Realizar evaluación anual del avance del plan, recogiendo experiencias y oportunidades de mejora."
+    - Name: "Evolucion"
+      Act:
+        - "Revisar y mejorar periódicamente políticas, definiciones y procesos de gestión de información, adoptando buenas prácticas nacionales e internacionales."
+
+Herramientas_de_Apoyo_MGDE:
+  ID: "TDE_LIN_MGDE_HERRAMIENTAS_001"
+  Def: >-
+    La SGD pone a disposición de los OAEs una herramienta de autoevaluación automática MGDE para
+    identificar niveles de madurez y generar propuestas de hoja de ruta.
+  Componentes:
+    - "Formulario de ingreso en Google Forms con las preguntas de la pauta de evaluación distribuidas en secciones."
+    - "Codigo en Apps Script que registra respuestas y elabora/envía la planilla con resultados."
+    - "Reporte de resultados en Google Sheets con hojas de resultados globales y por dimensión, incluyendo gráficos (radar)."
+  Ctx_Required:
+    - "Formulario de autoevaluación MGDE y documentación asociada (Anexo N°1 de la guía)."
+
+Glosario_Local_Resumen:
+  Description: "Conceptos específicos destacados en el MGDE."
+  Terms:
+    - Term: "MGDE (Marco de Referencia de Gestión de Datos del Estado)"
+      Ctx: >-
+        Marco nacional adaptado de DAMA para gobernanza y gestión de datos en OAEs, compuesto por
+        principios, dimensiones, criterios, modelo de madurez y herramienta de autoevaluación."
+    - Term: "DAMA-DMBOK"
+      Ctx: >-
+        Cuerpo de conocimiento global de gestión de datos que sirve de base para el diseño del MGDE.
+    - Term: "Data mart"
+      Ctx: >-
+        Subconjunto de una bodega de datos enfocado en una línea de negocio, departamento o área
+        temática particular.
+    - Term: "Data lake"
+      Ctx: >-
+        Repositorio centralizado que almacena grandes volúmenes de datos en su forma original para
+        procesamiento y análisis."
+    - Term: "Data warehouse"
+      Ctx: >-
+        Repositorio centralizado que almacena datos estructurados y semiestructurados con fines de
+        informes y análisis."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos del MGDE apoyados en definiciones del Lexicon TDE."
+  Terms:
+    - Term: "Datos"
+      Ref_ID: "TDE_DEF_DATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS"
+    - Term: "Datos abiertos"
+      Ref_ID: "TDE_DEF_DATOS_ABIERTOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_ABIERTOS"
+    - Term: "Metadatos"
+      Ref_ID: "TDE_DEF_METADATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_METADATOS"
+    - Term: "Interoperar"
+      Ref_ID: "TDE_DEF_INTEROPERAR"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEROPERAR"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos TDE asociados al MGDE."
+  XRef_Required:
+    - "urn:knowledge:koda:gov:cpat_completa:1.0.0"
+    - "urn:knowledge:koda:gov:metadatos_documentos:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:anonimizacion_datos_v2:1.0.0"
+    - "urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0"
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+
+Referencias_Resumen:
+  Description: "Referencias normativas y de política usadas por el MGDE."
+  Sources:
+    - "DAMA-DMBOK como marco global de gestión de datos."
+    - "Marco de políticas de Gobierno Digital de la OCDE (dimensiones 'Impulsado por los datos' y 'Abierto por defecto')."
+    - "Ley N° 21.658 que crea la Secretaría de Gobierno Digital."
+    - "Ley N° 21.180 sobre Transformación Digital del Estado."
+    - "Ley N° 18.575 Orgánica constitucional de bases generales de la administración del Estado."
+    - "Carta Internacional de Datos Abiertos (Open Data Charter)."
+    - "Estudio de Gobierno de Datos en el Ministerio de Desarrollo Social y Familia (caso de referencia)."
+    - "Herramienta de autoevaluación MGDE y su documentación anexa."

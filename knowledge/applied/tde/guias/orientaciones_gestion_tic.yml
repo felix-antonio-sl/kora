@@ -1,0 +1,320 @@
+# KODA TDE Lineamiento Técnico: Orientaciones básicas para la gestión de las TIC
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Orientaciones_Basicas_Gestion_TIC"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosGuías/Orientaciones_básicas_para_la_gestión_de_las_TIC.md"
+    source_url: "https://wikiguias.digital.gob.cl/guias/orientaciones-TIC"
+    source_updated_at: "2025-10-07T22:58:19.804Z"
+  status: draft
+
+ID: "TDE-LIN-ORIENT-TIC-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía con orientaciones básicas para la gestión de sistemas de información y datos en nuevas instituciones públicas, alineada con la institucionalidad de Gobierno Digital y la Ley 21.180"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía de orientaciones básicas para la gestión de TIC en nuevas instituciones públicas"
+  objective: >-
+    Entregar lineamientos iniciales para que nuevas instituciones diseñen su estrategia TIC,
+    definan su estructura organizacional, implementen infraestructura digital básica, se
+    integren a plataformas transversales y gestionen proyectos y temas avanzados TIC de forma
+    alineada con la institucionalidad de Gobierno Digital.
+  usage_guidance:
+    - "Usar esta guía como referencia de arranque para equipos directivos y técnicos que deben instalar capacidades TIC en nuevas instituciones."
+    - "Complementar con la Guía EVALTIC y la Guía de Metodología de gestión de proyectos TIC para la formulación y gestión de iniciativas."
+    - "Consultar lineamientos específicos (seguridad, cloud, metadatos, anonimización, calidad web) según el tema en cuestión."
+  style:
+    - "Responder en es-CL, tono orientador y técnico, con foco en priorización y decisiones prácticas."
+    - "Destacar explícitamente requisitos mínimos (Req) versus recomendaciones (Rec)."
+
+Metadata_Original:
+  title: "Orientaciones básicas para la gestión de las TIC"
+  url: "https://wikiguias.digital.gob.cl/guias/orientaciones-TIC"
+  category: "Lineamientos Técnicos/Guías"
+  tags:
+    - "tic"
+    - "guías"
+    - "institucionalidad"
+  description: "Guía con orientaciones básicas para la implementación de una nueva institucionalidad: Sistemas de información y datos"
+  updated_at: "2025-10-07T22:58:19.804Z"
+
+Objetivo_General_Orientaciones_TIC:
+  ID: "TDE_LIN_ORIENT_TIC_OBJ_001"
+  Purp: >-
+    Proporcionar una guía con orientaciones básicas sobre la gestión de los sistemas de
+    información y los datos, para facilitar la implementación y el inicio del funcionamiento
+    de nuevas instituciones públicas.
+  Obj:
+    - "Alinear la gestión de TIC con los objetivos estratégicos institucionales."
+    - "Asegurar el cumplimiento de la normativa y los estándares técnicos aplicables."
+    - "Facilitar la entrega de servicios de calidad a las personas usuarias desde el inicio de operación."
+
+Desafios_TIC_Nuevas_Instituciones:
+  ID: "TDE_LIN_ORIENT_TIC_DESAFIOS_001"
+  Ctx: >-
+    Las nuevas instituciones deben lograr que la tecnología agregue valor a los objetivos
+    estratégicos, facilite la entrega de servicios a las personas usuarias y asegure el
+    cumplimiento de normativa y estándares técnicos.
+  Req:
+    - "Definir una estrategia TIC alineada con los objetivos estratégicos institucionales."
+    - "Implementar infraestructura tecnológica adecuada (on premise o nube)."
+    - "Gestionar datos con políticas y gobernanza claras."
+    - "Contar con personal calificado para diseñar, operar y mantener soluciones TIC."
+    - "Asegurar interoperabilidad con otras entidades del Estado."
+
+Marco_Institucional_Gobierno_Digital:
+  ID: "TDE_LIN_ORIENT_TIC_MARCO_INST_001"
+  Ctx: >-
+    La gestión TIC debe enmarcarse en la institucionalidad de Gobierno Digital y en la Ley de
+    Transformación Digital del Estado.
+  Institucionalidad_SGD:
+    Ctx: >-
+      La Ley N° 21.658 crea la Secretaría de Gobierno Digital (SGD) en la Subsecretaría de
+      Hacienda como órgano rector de la transformación digital de la Administración del Estado,
+      continuadora de la ex División de Gobierno Digital.
+    Funciones_Claves:
+      - "Proponer al Ministro/a de Hacienda la Estrategia de Gobierno Digital."
+      - "Coordinar la implementación de la Estrategia de Gobierno Digital con enfoque integrado de gobierno."
+      - "Coordinar, asesorar y apoyar el uso estratégico de tecnologías digitales, datos e información pública."
+      - "Desarrollar y operar plataformas y servicios compartidos, al menos de interoperabilidad e identidad digital."
+    Reglamentacion:
+      - "Definir mecanismos e instrumentos para implementar la Estrategia de Gobierno Digital y coordinar/asesorar a los OAEs."
+      - "Establecer medios para monitoreo, seguimiento y evaluación de medidas."
+      - "Regular la solicitud de información necesaria para el ejercicio de sus funciones."
+  Ley_Transformacion_Digital:
+    Ctx: >-
+      La Ley N° 21.180 (LTDE) obliga a los órganos del Estado (excepto empresas públicas) a
+      interoperar y gestionar trámites electrónicos antes de diciembre de 2027, mediante un
+      régimen gradual de 7 fases definido en el DFL N° 1 de 2020.
+    Normativa_Tecnica:
+      - "Reglamento aprobado por DS N° 4 de 2020 (SEGPRES) sobre tramitación electrónica de procedimientos administrativos."
+      - "Conjunto de normas técnicas sobre interoperabilidad, seguridad, documentos electrónicos, notificaciones, calidad y autenticación."
+
+Estrategia_TIC_Institucional:
+  ID: "TDE_LIN_ORIENT_TIC_ESTRATEGIA_001"
+  Ctx: >-
+    La definición de una Estrategia TIC permite alinear tecnología con objetivos institucionales,
+    planificar y evaluar servicios y aplicar buenas prácticas con indicadores de avance.
+  Elementos_Esenciales:
+    - "Objetivos estratégicos de TIC: definir objetivos de largo plazo, su relación con los objetivos institucionales y cómo los proyectos contribuyen a ellos."
+    - "Modelo de arquitectura institucional: describir componentes de la arquitectura de referencia (incluyendo si existe CMDB), infraestructura HW/SW/redes (on premise, cloud, IaaS, PaaS, SaaS)."
+    - "Modelo de planificación de TIC: describir cómo se identifican, priorizan y gestionan los proyectos TIC, incluyendo existencia, composición y funcionamiento del Comité TIC."
+    - "Evaluación de servicios TIC: definir KPIs y procesos de mejora continua para servicios TIC."
+
+Estructura_Organizacional_TIC:
+  ID: "TDE_LIN_ORIENT_TIC_ESTRUCTURA_001"
+  Ctx: >-
+    La definición de roles y equipos especializados en TIC asegura que decisiones técnicas y
+    estratégicas sean tomadas por personas competentes e idóneas, proporcionales al tamaño y
+    complejidad del OAE.
+  Roles_Claves:
+    - Name: "Comité TIC"
+      Rec: >-
+        Gestionar temas TIC estratégicos desde la alta dirección, ya sea mediante un Comité TIC o,
+        en instituciones pequeñas, a través del Comité de Calidad, Experiencia Usuaria y
+        Transformación Digital, conforme a la Guía Metodológica del PMG de Transformación Digital.
+      Ctx_Required:
+        - "Guía metodológica del Sistema de Transformación Digital (PMG TD)."
+    - Name: "Coordinador/a de Transformación Digital (CTD)"
+      Rec: >-
+        Nombrar formalmente un CTD como enlace institucional con la SGD, responsable de liderar la
+        transformación digital, registrar su designación (y subrogancia) en las plataformas
+        oficiales e inscribirse en capacitaciones.
+    - Name: "Jefatura TIC"
+      Rec: >-
+        Designar una jefatura TIC que lidere estrategias y proyectos tecnológicos, idealmente un/a
+        profesional de ingeniería o informática con experiencia en gestión de proyectos,
+        arquitectura de información y nube.
+    - Name: "Equipo TIC"
+      Rec: >-
+        Conformar un equipo TIC alineado a la estrategia (desarrollo externo, SaaS, on premise,
+        cloud), incorporando roles de infraestructura, operaciones, redes, telecomunicaciones,
+        seguridad, desarrollo, bases de datos, UX/UI y QA según complejidad.
+    - Name: "Oficial de Seguridad de la Información y Ciberseguridad"
+      Rec: >-
+        Nombrar un oficial responsable de definir políticas, gestionar riesgos e incidentes de
+        seguridad y coordinar con la Agencia Nacional de Ciberseguridad (ANCI).
+    - Name: "Encargado/a de Protección de Datos (DPO)"
+      Rec: >-
+        Designar una persona responsable de garantizar cumplimiento normativo en datos personales,
+        asesorar, capacitar, supervisar y actuar como enlace con autoridades.
+    - Name: "Contrapartes jurídicas y de compras TIC"
+      Rec: >-
+        Contar con un/a abogado/a experto/a en datos personales, tecnología y TD, y un/a
+        especialista en compras TIC que coordine inversiones con áreas técnicas y legales.
+
+Infraestructura_Digital_Basica:
+  ID: "TDE_LIN_ORIENT_TIC_INFRA_001"
+  Ctx: >-
+    Contar con infraestructura digital básica garantiza continuidad operacional, trazabilidad y
+    eficiencia, cubriendo objetivos documentales, transaccionales y de gestión.
+  Rec:
+    - "Contratar infraestructura en la nube (almacenamiento, procesamiento y servicios), asegurando escalabilidad, redundancia y disponibilidad, e incorporar un SIEM para monitoreo y alertas de seguridad."
+    - "Contratar una solución de aplicaciones de ofimática (por ejemplo Google Workspace o Microsoft 365)."
+    - "Definir estrategia y herramienta de gestión documental que garantice trazabilidad de trámites, considerando SaaS o soluciones públicas según urgencia y recursos, y consultar la pauta de evaluación de sistemas de gestión documental y expedientes electrónicos."
+    - "Implementar un sistema de información para la gestión transaccional de personas (idealmente SaaS) que cubra remuneraciones, asistencias, permisos, viáticos, vacaciones, etc."
+    - "Ocupar servicios normativos de la Biblioteca del Congreso Nacional para organizar y consultar regulación sectorial (Ley Chile)."
+    - "Implementar un gestor colaborativo de proyectos y tareas (por ejemplo ASANA, JIRA, Redmine)."
+    - "Para el desarrollo y contratación de sistemas de información, seguir lineamientos de diseño de sitios web y servicios digitales (Guía de uso del instrumento de evaluación de calidad en sitios web y servicios digitales del Estado)."
+    - "Implementar sistemas tipo CRM para cumplir con exigencias del Sistema de Información y Atención Ciudadana (SIAC)."
+
+Integracion_Plataformas_Transversales_SGD:
+  ID: "TDE_LIN_ORIENT_TIC_PLATAFORMAS_001"
+  Ctx: >-
+    Integrarse con plataformas transversales del Estado es esencial para cumplir normas,
+    estandarizar procesos, asegurar validez, facilitar interoperabilidad y ofrecer servicios
+    seguros y accesibles.
+  Req:
+    - "Completar el Catálogo de Procedimientos Administrativos y Otras Tramitaciones (CPAT) como herramienta oficial de identificación y caracterización de procedimientos y tramitaciones."
+  Rec:
+    - "Usar la guía rápida CPAT para apoyar la fase de preparación institucional."
+    - "Utilizar plataformas transversales de la SGD para interoperabilidad, autenticación, firma, comunicaciones oficiales y notificaciones."
+  Plataformas_Claves:
+    - Name: "ClaveÚnica"
+      Purp: "Autenticación de identidad digital de personas usuarias en plataformas y sistemas."
+    - Name: "FirmaGob"
+      Purp: "Firma electrónica avanzada de funcionarias/os para documentos oficiales."
+    - Name: "DocDigital"
+      Purp: "Gestión de comunicaciones oficiales entre OAEs (oficinas de partes interoperables)."
+    - Name: "SIMPLE"
+      Purp: "Digitalización de procesos orientados a personas usuarias."
+    - Name: "PISEE"
+      Purp: "Interoperabilidad de datos y documentos entre OAEs, evitando solicitar información que ya posee el Estado."
+    - Name: "Notificador"
+      Purp: "Plataforma oficial para notificaciones a un domicilio digital único."
+  Soporte:
+    Ctx_Optional:
+      - "Las consultas sobre estas plataformas pueden enviarse a la Mesa de Servicios de la SGD (https://gobdigitalcl.freshdesk.com/support/home)."
+
+Gestion_de_Proyectos_TIC:
+  ID: "TDE_LIN_ORIENT_TIC_PROY_001"
+  Ctx: >-
+    Una gestión eficaz de proyectos TIC permite priorizar iniciativas alineadas con objetivos
+    institucionales y optimizar el uso de recursos.
+  Rec:
+    - "Solicitar asesoría de la SGD en la formulación de proyectos para el proceso EVALTIC."
+    - "Usar la Guía EVALTIC para la inversión y gasto en TIC cuando corresponda."
+    - "Aplicar la Guía de Metodología de Gestión de Proyectos TIC para estructurar la vida del proyecto (inicio, planificación, ejecución, cierre)."
+  XRef_Required:
+    - "urn:kora:gov:evaltic:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0"
+
+Gestion_Temas_Avanzados_TIC:
+  ID: "TDE_LIN_ORIENT_TIC_AVANZADOS_001"
+  Ctx: >-
+    Gestionar temas avanzados TIC permite anticipar desafíos, asegurar la calidad de datos e
+    impulsar la innovación (estrategia de datos, analítica, IA, continuidad operacional, etc.).
+  Rec:
+    - "Definir una estrategia de datos que considere modelo, infraestructura tecnológica, estructura organizacional, datos críticos, uso de datos maestros, interoperabilidad, calidad y gestión del dato."
+    - "Seguir el marco de referencia SGD para gestión de datos en los OAEs."
+    - "Consultar la guía introductoria a la anonimización de datos cuando se requieran tareas de anonimización."
+    - "Usar el repositorio de algoritmos públicos para análisis de línea base en analítica y big data."
+    - "Desarrollar iniciativas de IA en el marco de la Política Nacional de Inteligencia Artificial y su plan de acciones."
+    - "Publicar en el portal de datos abiertos los datos que puedan ser requeridos por transparencia, reduciendo solicitudes y fomentando investigación con valor público."
+    - "Desarrollar un plan de continuidad operacional (BCP) y un plan de recuperación de desastres (DRP) para garantizar continuidad y recuperación de servicios TIC."
+    - "Facilitar paneles o dashboards interactivos con indicadores clave y visualización dinámica."
+  Ctx_Required:
+    - "Marco de referencia SGD para la gestión de datos en los OAEs."
+    - "Guía introductoria a la anonimización de datos."
+    - "Política Nacional de Inteligencia Artificial y su plan de acciones."
+    - "Repositorio de algoritmos públicos (https://www.algoritmospublicos.cl/repositorio)."
+    - "Portal de datos abiertos del Estado."
+
+Ruta_Implementacion_y_Priorizacion_TIC:
+  ID: "TDE_LIN_ORIENT_TIC_RUTA_001"
+  Ctx: >-
+    La gestión TIC debe priorizar acciones según el contexto institucional, definiendo etapas
+    entre lo esencial, estratégico y de largo plazo para una adopción tecnológica ordenada,
+    sostenible y alineada a los objetivos.
+  Rec:
+    - "Establecer una ruta de implementación que vaya desde condiciones básicas de funcionamiento hacia desarrollo y mejora continua."
+    - "Balancear urgencias operativas con objetivos estratégicos institucionales."
+
+Consideraciones_Priorizacion_Iniciativas_TIC:
+  ID: "TDE_LIN_ORIENT_TIC_PRIOR_001"
+  Rec:
+    - "Priorizar siempre primero el cumplimiento legal (Ley 21.180 y otras normativas obligatorias)."
+    - "Tratar seguridad y ciberseguridad como prioridad para proteger plataformas, servicios y datos."
+    - "Atender brechas que ponen en riesgo la continuidad de los servicios (riesgos operativos)."
+    - "Avanzar según capacidades internas disponibles, solicitando apoyo externo cuando sea necesario."
+    - "Mantener flexibilidad para adaptar la ruta sugerida según contexto, urgencia y necesidades particulares."
+
+Glosario_Local_Resumen:
+  Description: "Conceptos específicos usados en estas orientaciones."
+  Terms:
+    - Term: "CPAT (Catálogo de Procedimientos Administrativos y Otras Tramitaciones)"
+      Ctx: >-
+        Herramienta oficial para identificar y caracterizar procedimientos administrativos y
+        otras tramitaciones del Estado, base para la planificación de la transformación digital
+        y la interoperabilidad.
+    - Term: "SIAC (Sistema de Información y Atención Ciudadana)"
+      Ctx: >-
+        Sistema que articula los distintos canales de atención ciudadana, exigiendo registros y
+        capacidades de gestión de reclamos, solicitudes y consultas.
+    - Term: "CTD (Coordinador/a de Transformación Digital)"
+      Ctx: >-
+        Rol institucional responsable de liderar la transformación digital y articular la
+        relación con la SGD.
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de esta guía apoyados en definiciones del Lexicon TDE."
+  Terms:
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+    - Term: "Datos"
+      Ref_ID: "TDE_DEF_DATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS"
+    - Term: "Datos abiertos"
+      Ref_ID: "TDE_DEF_DATOS_ABIERTOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_ABIERTOS"
+
+Referencias_Resumen:
+  Description: "Referencias normativas y técnicas asociadas a la gestión básica de TIC."
+  Sources:
+    - "Ley N° 21.658 que crea la Secretaría de Gobierno Digital."
+    - "Ley N° 21.180 de Transformación Digital del Estado."
+    - "DFL N° 1 de 2020 que define las fases de implementación de la LTDE."
+    - "DS N° 4 de 2020 (SEGPRES) que regula la tramitación electrónica de procedimientos administrativos."
+    - "Normas técnicas de interoperabilidad, seguridad, documentos electrónicos, notificaciones, calidad y autenticación."
+    - "Guía metodológica del Sistema de Transformación Digital (PMG TD)."
+    - "Pauta de evaluación de sistemas de gestión documental y expedientes electrónicos en el Estado."
+    - "Guía de uso del instrumento de evaluación de calidad en sitios web y servicios digitales del Estado."
+    - "Marco de referencia SGD para la gestión de datos en los OAEs."
+    - "Guía introductoria a la anonimización de datos."
+    - "Política Nacional de Inteligencia Artificial y plan de acciones."
+    - "Repositorio de algoritmos públicos (algoritmospublicos.cl)."
+    - "Portal de datos abiertos del Estado."

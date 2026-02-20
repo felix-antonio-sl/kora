@@ -1,0 +1,320 @@
+# KODA Artifact: Introducción y Estatutos Jurídicos - Trabajo Médico Chile
+# URN: urn:knowledge:koda:legal:intro_estatutos:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre estatutos jurídicos aplicables a médicos en Chile"
+    primary_use: "Determinar qué normativa aplica según tipo de empleador y vínculo"
+    cross_reference: "Definiciones de leyes en kb_med_000_legislacion_index_koda.yml"
+
+  urn: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Módulo I: Introducción y Estatutos"
+    source_document: "Material Curso Legislación Trabajo Médico - UDELAM/COLMED"
+    source_lines: "120-869"
+    model_collaborators: ["IA-CLAUDE"]
+  dependencies:
+    - Ref: "urn:kora:legal:index:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: ESTATUTOS SECTOR PÚBLICO
+# ═══════════════════════════════════════════════════════════════════
+
+Estatutos_Sector_Publico:
+
+  Jerarquia_Normativa_Medicos_SNSS:
+    ID: JERARQ_SNSS
+    Desc: "Orden de aplicación normativa para médicos funcionarios Servicios de Salud"
+    Orden:
+      1: "Ref: CPR"
+      2: "Ref: LOC_18575"
+      3: "Ref: LEY_19664"  # Cargos 11, 22, 33, 44 hrs
+      4: "Ref: LEY_15076"  # Supletoria
+      5: "Ref: EA_18834"   # Supletoria de segundo orden
+      6: "Ref: COD_TRAB"   # Supletoria final
+
+  Principios_Constitucionales:
+    ID: PRINC_CPR
+    Fuente: "Ref: CPR"
+    Art_6:
+      Regla: "Órganos Estado someten acción a Constitución y normas dictadas conforme a ella"
+      Efecto: Primacía constitucional; obliga autoridades y ciudadanos directamente
+      Consecuencia: Médicos funcionarios = órganos del Estado; actúan en su nombre
+    Art_19_N16:
+      Libertad_Trabajo: Garantizada
+      Libre_Contratacion: Derecho empleador/trabajador elegir libremente
+      Justa_Retribucion: Concepto amplio (incluye trabajo dependiente e independiente)
+      No_Discriminacion: Solo admite distinción por capacidad/idoneidad personal
+      Prohib_Trabajo: Solo si opone a moral, seguridad, salubridad pública
+      Negociacion_Colectiva: Derecho trabajadores con empresa; ley establece modalidades
+      Huelga_Prohibida:
+        - Funcionarios Estado
+        - Funcionarios municipales
+        - Trabajadores servicios utilidad pública
+        - Trabajadores cuya paralización cause grave daño salud/economía/abastecimiento/seguridad nacional
+    Art_19_N17: Admisión funciones/empleos públicos sin más requisitos que Constitución y leyes
+    Art_19_N18: Derecho seguridad social; Estado garantiza prestaciones básicas uniformes
+    Art_19_N19: Libertad sindical; afiliación voluntaria; personalidad jurídica por registro estatutos
+
+  Principios_LOC_18575:
+    ID: PRINC_LOC
+    Fuente: "Ref: LOC_18575"
+    Servicialidad: "Administración al servicio persona humana; promueve bien común"
+    Eficiencia_Eficacia: "Velar por administración idónea medios públicos"
+    Jerarquia: "Régimen jerarquizado y disciplinado; control jerárquico permanente"
+    Probidad: "Función pública con transparencia; normas legales lo regulan"
+    Estatutos_Administrativos: "Personal se rige por normas estatutarias que establezca ley"
+    Responsabilidad: "Sujeto a responsabilidad administrativa, civil y penal"
+    Capacitacion: "Estado asegura capacitación y perfeccionamiento personal"
+
+  Doctrina_Confianza_Legitima:
+    ID: DOCTR_CONF_LEG
+    Fuente:
+      - "Jurisprudencia Corte Suprema 2022-2025 sobre término de contratas"
+      - "Noticia oficial del Poder Judicial que fija el criterio de 5 años para operar la confianza legítima"
+      - "Dictamen CGR N° E561358/2024"
+    Naturaleza: "Doctrina jurisprudencial, sin consagración legal expresa en una ley específica."
+    Contenido:
+      - "Opera respecto de funcionarios a contrata que han prestado servicios continuos por 5 años o más."
+      - "Bajo 5 años, la expiración de la contrata al 31 de diciembre (art. 10 EA 18.834) no requiere motivación especial distinta de la propia temporalidad del empleo."
+      - "Sobre 5 años, la Corte Suprema ha entendido que la Administración solo puede poner término al vínculo mediante sumario que culmine en destitución o por una calificación anual desfavorable."
+      - "El dictamen CGR N° E561358/2024 limita el rol de la Contraloría en esta materia, remitiendo los conflictos a los tribunales de justicia como asuntos litigiosos."
+    Cross_Reference:
+      - "Desarrollo detallado en kb_med_014_confianza_legitima_koda.yml."
+      - "Conectar con causales de término en kb_med_008_terminacion_koda.yml."
+
+  Ley_15076_Sintesis:
+    ID: L15076_SIN
+    Fuente: "Ref: LEY_15076"
+    Texto_Refundido: "DFL 1/2001 Ministerio Salud"
+    Reglamento: "DS 110/1963 Ministerio Salud"
+    Materias_Reguladas:
+      - Ingreso profesionales funcionarios a planta como titular
+      - Remuneraciones especiales
+      - Horario trabajo e incompatibilidades
+      - Calificaciones funcionarios
+      - Feriados, licencias, permisos
+      - Reemplazos, comisiones, traslados
+      - Otorgamiento becas
+      - Liberación guardia nocturna (complementa Ley 19.230)
+
+  Ley_19664_Sintesis:
+    ID: L19664_SIN
+    Fuente: "Ref: LEY_19664"
+    Ambito: "Médicos cargos 11, 22, 33, 44 horas en Servicios de Salud"
+    Tipo: "Modificatoria; lo no previsto -> Ref: LEY_15076"
+    Carrera_Funcionaria:
+      Etapa_1:
+        Nombre: "Destinación y Formación"
+        Contenido: Ingreso, especialización
+      Etapa_2:
+        Nombre: "Planta Superior"
+        Contenido: Desarrollo profesional
+    Materias:
+      - Acceso carrera funcionaria
+      - Programas especialización/subespecialización
+      - Remuneraciones y asignaciones especiales
+      - Acreditación por niveles
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: ESTATUTOS POR TIPO DE INSTITUCIÓN
+# ═══════════════════════════════════════════════════════════════════
+
+Estatutos_Por_Institucion:
+
+  APS_Municipal:
+    ID: EST_APS
+    Desc: "Médicos Atención Primaria Salud Municipal"
+    Jerarquia_Normativa:
+      1: "Ref: CPR"
+      2: "Ref: LOC_18575"
+      3: "Ref: LEY_19378"  # Estatuto APS Municipal
+      4: "Ref: LEY_18883"  # Supletoria
+      5: "Ref: LEY_18695"
+    Reglamento: "Decreto 2296/2007 Ministerio Salud"
+    Materias_Ley_19378:
+      - Normas generales régimen laboral APS
+      - Dotación y jornada trabajo
+      - Remuneraciones
+      - Carrera funcionarios salud sector municipal
+      - Misiones de estudio
+      - Obligaciones funcionarias
+      - Calificaciones
+      - Término relación laboral
+
+  Fuerzas_Armadas:
+    ID: EST_FFAA
+    Desc: "Médicos funcionarios FFAA"
+    Estatuto_Principal: "Ref: DFL_1_1997"
+    Contenido: "Vinculación jurídica Estado-personal FFAA desde ingreso hasta término carrera"
+    Jerarquia_Supletoria:
+      1: "Ref: LEY_15076"
+      2: "Ref: EA_18834"
+
+  Carabineros:
+    ID: EST_CARAB
+    Desc: "Médicos en Carabineros de Chile"
+    Normativa:
+      - Ref: CPR
+      - Ref: LOC_18575
+      - Ref: LEY_18961  # LOC Carabineros
+      - Ref: DEC_412_2019
+    Contratacion_Medicos:
+      Por_Horas:
+        Base_Legal: "Art 10 DFL 2/1968"
+        Regimen: "Ref: LEY_15076"
+        Req: Fondos Ley Presupuestos; necesidades servicio
+      Temporal:
+        Plazo_Max: 6 meses
+        Causales: Ausencia titulares por feriados, licencias, permisos, reposo preventivo
+        Efecto: No producen incompatibilidades; no integran planta
+      CPR_Resolucion:
+        Def: "Personal contratado por Resolución"
+        Caracteristica: Transitorio; sin escalafón; no ocupa plazas planta
+        Duracion_Max: 31 diciembre cada año
+        Exclusion: No afecto Código Trabajo salvo protección maternidad
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: SECTOR PRIVADO - FUENTES DEL DERECHO
+# ═══════════════════════════════════════════════════════════════════
+
+Sector_Privado:
+
+  Concepto_Fuentes:
+    ID: FUENT_CONCEPTO
+    Def: "Fuerza social con facultad normativa creadora; normas obligatorias independiente voluntad sujetos"
+    Tipos:
+      Materiales:
+        Def: "Elementos/factores que provocan aparición norma jurídica y determinan contenido"
+        Ejemplos: Fenómenos histórico-culturales, circunstancias políticas, creencias religiosas
+        Subtipos:
+          Indirectas: Religión, doctrina, filosofía, revoluciones, progreso tecnológico
+          Directas: Órganos legislativos, tribunales, poder ejecutivo, grupos sociales
+      Formales:
+        Def: "Actos por los cuales contenido alcanza formulación positiva; medios expresión derecho"
+        Subtipos:
+          Generales: Con incidencia en materia laboral
+          Propias: Específicas del Derecho del Trabajo
+
+  Fuentes_Generales:
+    ID: FUENT_GEN
+    Listado:
+      CPR:
+        Ref: CPR
+        Arts_Relevantes: [19_N16, 19_N17, 19_N18, 19_N19]
+      Ley:
+        Tipos: [Ley, DFL, DL]
+        Principal: "Ref: COD_TRAB"
+        Caracteristica: "Sistematiza relación laboral basada en prestación servicios por cuenta ajena bajo subordinación"
+      Reglamentos:
+        Origen: Potestad reglamentaria Poder Ejecutivo
+        Tipos: [Decretos, Circulares, Instrucciones]
+      Jurisprudencia:
+        Judicial:
+          Def: "Conjunto fallos altos tribunales; aplicación uniforme del derecho"
+          Instrumento: "Recurso unificación jurisprudencia (solo materia laboral) -> Corte Suprema"
+        Administrativa:
+          Organo: "Ref: DT"
+          Base_Legal: "DFL 2 art 1; CdT art 476"
+          Funcion: "Fijar de oficio o a petición por dictámenes sentido/alcance leyes trabajo"
+          Limites:
+            - Solo leyes laborales
+            - Asunto no sometido a tribunales
+            - No calificación relaciones jurídicas ni establecimiento derechos subjetivos
+      Costumbre:
+        Def: "Repetición conducta por generalidad sociedad, constante y uniforme, con fin cumplir imperativo jurídico"
+        Manifestacion_Laboral:
+          - Cláusulas tácitas
+          - Regla de la conducta
+        Efecto: Modifica lo establecido legalmente en contratos
+        Ejemplo: "Anticipos sueldo habituales = modalidad pago incorporada a contrato"
+      Doctrina:
+        Def: "Tesis y opiniones tratadistas que explican/fijan sentido leyes o sugieren soluciones"
+        Valor: Fuente mediata; influye en legislador e interpretación judicial
+
+  Fuentes_Propias_Derecho_Trabajo:
+    ID: FUENT_PROP
+    Condicion: "Respetando mínimos orden público laboral"
+    Listado:
+      Instrumentos_Colectivos:
+        Def: "Convención empleadores-trabajadores para condiciones comunes trabajo y remuneraciones"
+        Base_Legal: "Libro IV Código del Trabajo"
+        Tipos:
+          Contrato_Colectivo:
+            Base: "CdT art 6 inc 3"
+            Partes: Uno o más empleadores + organizaciones sindicales o trabajadores unidos
+            Objeto: Condiciones comunes trabajo/remuneraciones por tiempo determinado
+            Procedimiento: Reglas Libro IV CdT
+          Convenio_Colectivo:
+            Partes: Igual que contrato colectivo
+            Diferencia: Sin sujeción a negociación colectiva reglada
+          Laudo_Arbitral:
+            Base: "CdT art 320 inc 2"
+            Origen: Mediación voluntaria DT o tribunal arbitral
+      Reglamento_Interno:
+        Base_Legal: "CdT arts 153-157"
+        Obligatorio: Empresas ≥10 trabajadores permanentes
+        Contenido:
+          - Obligaciones y prohibiciones trabajadores
+          - Normas ambiente laboral digno y respeto mutuo
+        Origen: Potestad mando empleador
+        Control: DT (legalidad); trabajadores pueden impugnar
+        Complemento:
+          Otro_Reglamento: "Reglamento Interno Higiene y Seguridad"
+          Base: "Ley 16.744 art 67"
+          Obligatorio: Toda empresa sin importar número trabajadores
+          Contenido: Normas prevención, higiene, seguridad
+          Incumplimiento: Causal despido CdT art 160 N°5
+          Nota: Pueden consolidarse en un solo documento si empresa tiene ambas obligaciones
+      Contrato_Individual:
+        Base: "CdT art 7"
+        Def: "Convención empleador-trabajador; éste presta servicios personales bajo dependencia y subordinación; aquél paga remuneración"
+
+# ═══════════════════════════════════════════════════════════════════
+# RESUMEN EJECUTIVO
+# ═══════════════════════════════════════════════════════════════════
+
+Resumen:
+  Docentes:
+    - "Gabriel Nieto M. - Abogado Jefe UDELAM (Sector Público)"
+    - "Ignacio Avendaño L. - Abogado UDELAM (Sector Privado)"
+  
+  Opciones_Laborales_Medico:
+    Sector_Publico:
+      - Servicios de Salud (Ref: JERARQ_SNSS)
+      - APS Municipal (Ref: EST_APS)
+      - Fuerzas Armadas (Ref: EST_FFAA)
+      - Carabineros (Ref: EST_CARAB)
+    Sector_Privado:
+      - Contrato individual trabajo
+      - Sujeto a Ref: COD_TRAB y fuentes propias
+
+  Principio_Clave: |
+    Cada tipo de vínculo tiene jerarquía normativa específica.
+    Siempre: CPR -> LOC 18.575 -> Estatuto especial -> Estatuto general -> Código Trabajo

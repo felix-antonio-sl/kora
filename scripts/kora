@@ -1,0 +1,308 @@
+#!/usr/bin/env python3
+"""
+KORA CLI v2.0
+The official command-line interface for the Kora Monorepo.
+Commands:
+  index    - Dynamically rebuilds catalog_master_kora.yml
+  resolve  - Finds the physical path of a URN
+  health   - Checks for broken URN links in the monorepo
+  validate - Validates agents against KORA/Agent schemas
+"""
+
+import os
+import sys
+import re
+import argparse
+import yaml
+from pathlib import Path
+
+KORA_ROOT = Path(os.path.abspath(__file__)).parent.parent
+CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
+SCHEMA_PATH = (
+    KORA_ROOT / "knowledge" / "foundations" / "core" / "kora" / "agent-schema.json"
+)
+
+
+def load_yaml_safe(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            try:
+                return yaml.safe_load(f), None
+            except yaml.composer.ComposerError:
+                # File has multiple YAML documents separated by ---
+                f.seek(0)
+                docs = list(yaml.safe_load_all(f))
+                if docs:
+                    return docs[0], None  # Parse first document
+                return None, "Empty multi-document"
+    except Exception as e:
+        return None, str(e)
+
+
+def get_artifact_title(doc, file_path):
+    # Try to find a human readable title
+    if not isinstance(doc, dict):
+        return file_path.name
+
+    if "ID" in doc:
+        return str(doc["ID"])
+
+    try:
+        return doc["agent_identity_and_global_configuration"][
+            "primary_role_objective_and_audience"
+        ]["role"]
+    except (KeyError, TypeError):
+        pass
+
+    return file_path.name
+
+
+def cmd_index():
+    print(f"Indexing KORA Monorepo at {KORA_ROOT}...")
+
+    catalog = {
+        "_manifest": {
+            "urn": "urn:kora:catalog:master:2.0.0",
+            "federation": {"visibility": "public"},
+            "description": "Auto-generated Kora Monorepo Catalog",
+        },
+        "Catalog": {
+            "Agents": [],
+            "Skills": [],
+            "Knowledge": [],
+            "Documents": [],
+            "Other": [],
+        },
+    }
+
+    count = 0
+    extensions = {".yaml", ".yml"}
+
+    for root, dirs, files in os.walk(KORA_ROOT):
+        # Skip directories we don't care about
+        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests")]
+
+        for file in files:
+            file_path = Path(root) / file
+            if file_path.suffix not in extensions:
+                continue
+
+            # Skip the catalog itself!
+            if file_path.absolute() == CATALOG_PATH.absolute():
+                continue
+
+            doc, err = load_yaml_safe(file_path)
+            if err:
+                print(f"[WARN] Error parsing {file_path.relative_to(KORA_ROOT)}: {err}")
+                continue
+
+            if (
+                doc
+                and isinstance(doc, dict)
+                and "_manifest" in doc
+                and "urn" in doc["_manifest"]
+            ):
+                urn = doc["_manifest"]["urn"]
+                title = get_artifact_title(doc, file_path)
+                rel_path = str(file_path.relative_to(KORA_ROOT))
+
+                entry = {
+                    "urn": urn,
+                    "title": title,
+                    "file": rel_path,
+                    "status": doc.get("Status", "published"),
+                }
+
+                # urn:{ns}:{type}:{id}:{ver}
+                parts = urn.split(":")
+                obj_type = parts[2] if len(parts) >= 3 else "unknown"
+
+                if obj_type == "agent":
+                    catalog["Catalog"]["Agents"].append(entry)
+                elif obj_type == "skill":
+                    catalog["Catalog"]["Skills"].append(entry)
+                elif obj_type in ("kb", "core", "domain"):
+                    catalog["Catalog"]["Knowledge"].append(entry)
+                elif obj_type in ("doc", "sys", "ref", "tool"):
+                    catalog["Catalog"]["Documents"].append(entry)
+                else:
+                    catalog["Catalog"]["Other"].append(entry)
+
+                count += 1
+
+    # Save the catalog
+    os.makedirs(CATALOG_PATH.parent, exist_ok=True)
+    with open(CATALOG_PATH, "w", encoding="utf-8") as f:
+        yaml.dump(
+            catalog, f, sort_keys=False, allow_unicode=True, default_flow_style=False
+        )
+
+    print(
+        f"Successfully indexed {count} artifacts into {CATALOG_PATH.relative_to(KORA_ROOT)}!"
+    )
+
+
+def cmd_resolve(urn):
+    doc, _ = load_yaml_safe(CATALOG_PATH)
+    if not doc or "Catalog" not in doc:
+        print("Error: Catalog not found or invalid. Run 'kora index' first.")
+        sys.exit(1)
+
+    for category, items in doc["Catalog"].items():
+        for item in items:
+            # We can resolve exactly or by prefix
+            if item.get("urn", "").startswith(urn):
+                path = KORA_ROOT / item["file"]
+                print(f"[{category}] {item['urn']} -> {path.absolute()}")
+                return
+
+    print(f"URN '{urn}' not found in catalog.")
+    sys.exit(1)
+
+
+def cmd_health():
+    print("Checking Kora Monorepo Health (Broken links)...")
+    doc, _ = load_yaml_safe(CATALOG_PATH)
+    if not doc or "Catalog" not in doc:
+        print("Error: Catalog not found or invalid. Run 'kora index' first.")
+        sys.exit(1)
+
+    # Get all known URNs from catalog
+    known_urns = set()
+    for category, items in doc["Catalog"].items():
+        for item in items:
+            known_urns.add(item.get("urn"))
+
+    # Also add the catalog URN itself
+    known_urns.add(doc["_manifest"]["urn"])
+
+    broken_links = 0
+    checked_files = 0
+
+    # We strip versions for a softer match sometimes, but let's do exact first
+    # Extract pattern: urn:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9.-]+
+    urn_pattern = re.compile(
+        r"(urn:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9.-]+(?:|latest|stable))"
+    )
+
+    for root, dirs, files in os.walk(KORA_ROOT):
+        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests")]
+        for file in files:
+            if not (
+                file.endswith(".yml") or file.endswith(".yaml") or file.endswith(".md")
+            ):
+                continue
+
+            file_path = Path(root) / file
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+            except Exception:
+                continue
+
+            found_urns = set(urn_pattern.findall(content))
+            for f_urn in found_urns:
+                if f_urn not in known_urns:
+                    # Ignore external domains or generic ones?
+                    if not f_urn.startswith("urn:knowledge:") and not f_urn.startswith(
+                        "urn:kora:"
+                    ):
+                        # Attempt to see if it's strictly a bad link or just a generic one
+                        pass
+                    print(f"[BROKEN] In {file_path.relative_to(KORA_ROOT)}: {f_urn}")
+                    broken_links += 1
+            checked_files += 1
+
+    print(f"Health check complete. Scanned {checked_files} files.")
+    if broken_links == 0:
+        print("All URN references are healthy!")
+    else:
+        print(f"Found {broken_links} broken URN references.")
+
+
+def cmd_validate():
+    print("Validating KORA agents against KORA 2.0 Schema...")
+    try:
+        import jsonschema
+    except ImportError:
+        print(
+            "Error: 'jsonschema' module is required for validation. Run 'pip install jsonschema'."
+        )
+        sys.exit(1)
+
+    schema, _ = load_yaml_safe(SCHEMA_PATH)
+    if not schema:
+        print(f"Error: Could not load schema from {SCHEMA_PATH}")
+        sys.exit(1)
+
+    doc, _ = load_yaml_safe(CATALOG_PATH)
+    if not doc or "Catalog" not in doc:
+        print("Error: Catalog not found. Run 'kora index' first.")
+        sys.exit(1)
+
+    agents = doc["Catalog"].get("Agents", [])
+    valid_count = 0
+    invalid_count = 0
+
+    for agent in agents:
+        agent_path = KORA_ROOT / agent["file"]
+        agent_data, err = load_yaml_safe(agent_path)
+        if not agent_data:
+            print(
+                f"[FAIL] Could not parse YAML: {agent_path.relative_to(KORA_ROOT)}. Error: {err}"
+            )
+            invalid_count += 1
+            continue
+
+        try:
+            jsonschema.validate(instance=agent_data, schema=schema)
+            # print(f"[OK] {agent_path.relative_to(KORA_ROOT)}")
+            valid_count += 1
+        except jsonschema.exceptions.ValidationError as e:
+            print(f"[FAIL] {agent_path.relative_to(KORA_ROOT)} - {e.message}")
+            invalid_count += 1
+
+    print(f"Validation complete! Valid: {valid_count}, Invalid: {invalid_count}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="KORA Monorepo CLI")
+    subparsers = parser.add_subparsers(dest="command", help="Sub-commands")
+
+    # Index
+    p_index = subparsers.add_parser(
+        "index", help="Rebuild the catalog from source artifacts"
+    )
+
+    # Resolve
+    p_resolve = subparsers.add_parser(
+        "resolve", help="Resolve a URN to a local file path"
+    )
+    p_resolve.add_argument("urn", help="The URN to resolve")
+
+    # Health
+    p_health = subparsers.add_parser(
+        "health", help="Check for broken URNs across files"
+    )
+
+    # Validate
+    p_validate = subparsers.add_parser(
+        "validate", help="Validate agent YAMLs against the KORA schema"
+    )
+
+    args = parser.parse_args()
+
+    if args.command == "index":
+        cmd_index()
+    elif args.command == "resolve":
+        cmd_resolve(args.urn)
+    elif args.command == "health":
+        cmd_health()
+    elif args.command == "validate":
+        cmd_validate()
+    else:
+        parser.print_help()
+
+
+if __name__ == "__main__":
+    main()

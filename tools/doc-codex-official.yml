@@ -3,7 +3,7 @@
 # Source: staging/doc_oficial_codex.md
 
 _manifest:
-  urn: "urn:knowledge:koda:tools:doc-codex-official:1.0.0"
+  urn: "urn:kora:doc:doc-codex-official:1.0.0"
   federation:
     visibility: private
     license: "Proprietary"
@@ -15,7 +15,7 @@ _manifest:
     mirrors: []
   dependencies:
     requires:
-      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+      - urn: "urn:kora:kb:spec:1.0.0"
         reason: "KODA/Spec base"
   provenance:
     created_by: "OpenAI Docs (author unknown)"

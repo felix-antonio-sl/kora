@@ -1,0 +1,300 @@
+# KODA TDE Lineamiento Plataforma Compartida: Integración de ClaveÚnica
+---
+_manifest:
+  urn: "urn:kora:gov:claveunica:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Plataforma_Compartida_ClaveUnica_Integracion"
+  provenance:
+    created_by: "División de Gobierno Digital - Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_files:
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_Integración__de_ClaveÚnica.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_uso_botón_ClaveÚnica.md"
+    source_url: "https://wikiguias.digital.gob.cl/Manuales/Integraci%C3%B3n_Clave%C3%9Anica"
+    source_updated_at:
+      - "2025-12-02T16:28:26.194Z"
+      - "2025-10-07T23:02:14.543Z"
+  status: draft
+
+ID: "TDE-PLAT-CU-INT-015"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "División de Gobierno Digital - Ministerio SEGPRES"
+Human-Editor: "Equipo ClaveÚnica - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Manual de Integración de ClaveÚnica como proveedor de identidad digital (OpenID Connect/OAuth2.0) para plataformas y servicios digitales del Estado"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, pasos, parámetros, ejemplos) with zero loss. Ignore fat (filler, screenshots, purely presentational layout).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía técnica-operativa para integrar ClaveÚnica como mecanismo de autenticación en servicios digitales del Estado"
+  objective: >-
+    Entregar a equipos técnicos y responsables de producto de los OAEs un manual completo para
+    solicitar credenciales, configurar ambientes, implementar el flujo OpenID Connect con
+    ClaveÚnica, cumplir requisitos de seguridad, y certificar y activar credenciales de
+    producción.
+  usage_guidance:
+    - "Usar este lineamiento para diseñar e implementar la autenticación con ClaveÚnica en trámites y servicios digitales, alineado con las normas técnicas de TD y con el modelo de identidad digital."
+    - "Complementar con las normas técnicas de Autenticación, Interoperabilidad, Notificaciones y Documentos/Expedientes, así como con los lineamientos de Calidad Web y STD 2025."
+  style:
+    - "Responder en es-CL, tono técnico y práctico, respetando términos oficiales (ClaveÚnica, DDU, Cerofilas, etc.)."
+
+Metadata_Original:
+  title: "Manual de Integración  de ClaveÚnica"
+  url: "https://wikiguias.digital.gob.cl/Manuales/Integraci%C3%B3n_Clave%C3%9Anica"
+  category: "Plataformas Compartidas/Manuales de Uso"
+  tags:
+    - "ClaveÚnica"
+    - "integración"
+    - "OpenID Connect"
+    - "OAuth2.0"
+    - "plataformas compartidas"
+  description: "Manual para integrar ClaveÚnica como mecanismo de autenticación en plataformas y servicios digitales de la Administración del Estado."
+  updated_at: "2025-12-02T16:28:26.194Z"
+
+Contexto_y_Rol_ClaveUnica:
+  ID: "TDE_PLAT_CU_CTX_001"
+  Ctx: >-
+    ClaveÚnica es un proveedor de identidad digital (Identity Provider) del Estado de Chile que
+    permite a las personas naturales autenticarse en múltiples plataformas y servicios públicos
+    con una sola contraseña. Es la base del modelo de Identidad Digital del Estado y se integra
+    en aplicaciones web y móviles de los OAEs mediante OpenID Connect (sobre OAuth 2.0).
+  Obj:
+    - "Proveer un mecanismo de autenticación único, seguro y reutilizable para la ciudadanía."
+    - "Estandarizar la autenticación de personas naturales en los servicios digitales del Estado."
+
+Alcance_y_Publico_Objetivo:
+  ID: "TDE_PLAT_CU_ALCANCE_001"
+  Ctx: >-
+    El manual está dirigido a equipos técnicos y responsables de producto de instituciones de la
+    Administración del Estado que implementan o mantienen trámites y servicios digitales que
+    requieren autenticación de personas naturales mediante ClaveÚnica.
+  Cond:
+    - "Las instituciones mandatadas por el Instructivo Presidencial de Transformación Digital deben utilizar ClaveÚnica como único medio de autenticación para personas naturales."
+    - "Se puede integrar ClaveÚnica en plataformas internas para funcionarios, sin perjuicio de otros mecanismos internos según necesidades institucionales."
+    - "Es posible gestionar una migración gradual desde mecanismos propios hacia ClaveÚnica, planificando etapas y plazos."
+
+Solicitud_Credenciales_de_Integracion:
+  ID: "TDE_PLAT_CU_CRED_001"
+  Ctx: >-
+    Toda integración con ClaveÚnica requiere solicitar credenciales institucionales a través del
+    portal ClaveÚnica/Cerofilas y completar un formulario con datos de la institución, contactos
+    y características de la aplicación.
+  Act:
+    - "Ingresar al portal https://claveunica.gob.cl/, sección 'Instituciones Públicas', o directamente a https://claveunica.cerofilas.gob.cl/."
+    - "Autenticarse con ClaveÚnica institucional y seleccionar el trámite 'Solicitud Credenciales de Integración a ClaveÚnica'."
+    - "Completar el formulario de solicitud de credenciales y enviarlo para revisión."
+  Campos_Formulario:
+    - "Seleccionar Institución: nombre oficial del órgano público que integrará ClaveÚnica."
+    - "Contacto Administrativo: funcionario responsable de la plataforma; correo institucional nominativo (no se aceptan casillas genéricas o compartidas)."
+    - "Contacto Técnico: contraparte técnica de la integración (preferentemente funcionario); puede coincidir con el contacto administrativo."
+    - "Nombre de la Aplicación: texto que se mostrará en el formulario de login de ClaveÚnica e identifica institución y plataforma."
+    - "Descripción de la Aplicación: propósito de la integración y contexto de uso (incluyendo si hay proveedor externo)."
+    - "Tipo de Público Objetivo: 'Público (ciudadanía)' o 'Interno (Institución)'."
+    - "URL de la Aplicación: dirección pública del sitio integrado; en producción debe utilizar dominio '.gob.cl' según Norma Técnica de sitios y sistemas web del Estado."
+    - "Redirect URI: endpoints de callback de testing, QA y producción (sólo esquema, autoridad y path; sin query; debe incluir nombre o siglas de la institución; no se permite 'localhost' en producción)."
+    - "Logout URI: autoridad o URIs de cierre de sesión registradas para usar con el endpoint de logout."
+    - "Términos y Condiciones: lectura y aceptación obligatoria del documento oficial de integración."
+  Req:
+    - "Los correos de contactos administrativo y técnico deben ser institucionales y nominativos o del dominio del proveedor (en el caso técnico, si aplica)."
+    - "Los cambios posteriores de nombre de aplicación, Redirect URI o Logout URI se gestionan exclusivamente vía trámites en Cerofilas o Mesa de Servicio y sólo pueden ser solicitados por el contacto administrativo."
+
+Credenciales_y_Ambientes:
+  ID: "TDE_PLAT_CU_CRED_002"
+  Ctx: >-
+    Una vez aprobada la solicitud, se entregan tres pares de credenciales (client_id y
+    client_secret) para ambientes sandbox, QA y producción.
+  Def:
+    - Term: "client_id"
+      Def: "Identificador único de la integración, utilizado en las llamadas al servicio y en los procesos de soporte."
+    - Term: "client_secret"
+      Def: "Secreto asociado a la integración, que debe mantenerse confidencial y no exponerse en código ni interfaces."
+  Req:
+    - "Resguardar las credenciales y limitar su uso a personas autorizadas; la institución es responsable de su custodia."
+    - "Utilizar las credenciales de sandbox y QA sólo con los RUN de prueba habilitados (44.444.444-4, 55.555.555-5, 88.888.888-8, 99.999.999-9, contraseña: 'testing')."
+    - "Mantener el client_secret fuera del código fuente (usar variables de entorno u otros mecanismos seguros)."
+  Ambientes:
+    - Name: "Sandbox"
+      Ctx: "Ambiente limitado para pruebas de integración, con RUN de prueba predefinidos."
+    - Name: "QA"
+      Ctx: "Ambiente de prueba similar a sandbox; permite validar integración antes de producción usando los mismos RUN de prueba."
+    - Name: "Produccion"
+      Ctx: "Ambiente que permite autenticación con cuentas reales de ClaveÚnica, deshabilitado por defecto hasta completar certificación."
+  Warn:
+    - "El uso del parámetro code expirado obliga a repetir el proceso de autenticación."
+
+Flujo_OpenID_Connect_ClaveUnica:
+  ID: "TDE_PLAT_CU_OIDC_001"
+  Ctx: >-
+    ClaveÚnica implementa OpenID Connect sobre OAuth 2.0 utilizando el flujo Authorization Code
+    Flow. El flujo consta de siete pasos principales: creación del token de estado, solicitud de
+    autenticación, validación del estado, canje de código por token de acceso, obtención del
+    token, consulta de datos de usuario y cierre de sesión.
+
+Paso_1_Token_Estado_CSFR:
+  ID: "TDE_PLAT_CU_OIDC_P1"
+  Purp: >-
+    Proteger a los usuarios frente a ataques de Cross-Site Request Forgery (CSRF) manteniendo un
+    estado único entre la sesión del ciudadano y la aplicación integradora.
+  Req:
+    - "Generar un token de sesión único (state) para cada flujo de autenticación, de al menos 30 caracteres aleatorios o derivado de un secreto mediante hash."
+    - "Almacenar el token de sesión en el sistema de la aplicación para luego compararlo con el value devuelto por ClaveÚnica."
+  Rec:
+    - "Utilizar librerías criptográficamente seguras para generar el token."
+
+Paso_2_Solicitud_Autenticacion:
+  ID: "TDE_PLAT_CU_OIDC_P2"
+  Purp: >-
+    Redirigir al usuario al formulario de login de ClaveÚnica para que se autentique, enviando
+    los parámetros necesarios para el flujo Authorization Code.
+  Req:
+    - "Construir una solicitud GET vía HTTPS a https://accounts.claveunica.gob.cl/openid/authorize/."
+    - "Utilizar exclusivamente HTTPS con TLS 1.2 o superior; TLS 1.0 y 1.1 no son aceptados."
+    - "Enviar los parámetros: client_id, response_type=code, scope='openid run name', redirect_uri (URL encodeada) y state (token único de sesión)."
+  Ex:
+    - "Ejemplo genérico de URI: https://accounts.claveunica.gob.cl/openid/authorize/?client_id=...&response_type=code&scope=openid%20run%20name&redirect_uri=...&state=abcdefgh"
+  Warn:
+    - "El formulario de ClaveÚnica debe abrirse a pantalla completa; no debe incrustarse en iframes, popups ni elementos que oculten la barra de direcciones."
+
+Paso_3_Confirmar_State:
+  ID: "TDE_PLAT_CU_OIDC_P3"
+  Purp: >-
+    Verificar que la respuesta de ClaveÚnica corresponde a la sesión iniciada por el usuario y no
+    a un intento de ataque.
+  Req:
+    - "Al recibir la redirección en el Redirect URI, leer los parámetros code y state anexados a la URL."
+    - "Comparar el state recibido con el token de sesión generado en el Paso 1; si no coinciden, abortar el flujo y no continuar con el canje de código."
+
+Paso_4_Canjear_Code_por_Token_Acceso:
+  ID: "TDE_PLAT_CU_OIDC_P4"
+  Purp: "Obtener un token de acceso válido para consultar los datos del usuario autenticado."
+  Req:
+    - "Enviar una solicitud POST vía HTTPS a https://accounts.claveunica.gob.cl/openid/token/."
+    - "Configurar Content-Type: application/x-www-form-urlencoded."
+    - "Incluir en el cuerpo: client_id, client_secret, redirect_uri (la misma URI encodeada utilizada en el Paso 2), grant_type=authorization_code, code (del Paso 3) y state (token de sesión)."
+    - "Realizar la llamada desde el backend de la aplicación (no desde el frontend) para proteger el client_secret."
+    - "No codificar client_id ni client_secret de forma fija en el código; leerlos desde variables de entorno u otros mecanismos seguros."
+
+Paso_5_Procesar_Respuesta_Token:
+  ID: "TDE_PLAT_CU_OIDC_P5"
+  Purp: "Procesar el JSON de respuesta que contiene el access_token e id_token."
+  Ctx: >-
+    La respuesta del endpoint /openid/token/ incluye un JSON con access_token, token_type,
+    expires_in e id_token, entre otros campos.
+  Req:
+    - "Almacenar de manera segura el access_token mientras dure el flujo."
+    - "Respetar el tiempo de expiración indicado (expires_in); una vez expirado, requerir nueva autenticación."
+
+Paso_6_Obtener_Datos_Usuario:
+  ID: "TDE_PLAT_CU_OIDC_P6"
+  Purp: "Obtener el RUN y el nombre de la persona autenticada utilizando el access_token."
+  Req:
+    - "Realizar una solicitud POST a https://accounts.claveunica.gob.cl/openid/userinfo/ con header 'Authorization: Bearer {access_token}'."
+    - "Procesar el JSON de respuesta que incluye el objeto 'RolUnico' (numero, DV, tipo) y 'name' (nombres y apellidos)."
+  Warn:
+    - "El campo 'sub' del JSON se incluye por requerimiento de OpenID Connect, pero no debe usarse como llave de identificación; el identificador de la persona es el RUN (RolUnico.numero)."
+
+Paso_7_Cierre_Sesion_ClaveUnica:
+  ID: "TDE_PLAT_CU_OIDC_P7"
+  Purp: "Cerrar de forma correcta la sesión en ClaveÚnica y, opcionalmente, redirigir al sitio integrador para cerrar su propia sesión."
+  Ctx: >-
+    ClaveÚnica crea su propia sesión (por defecto 60 segundos) y la aplicación integradora puede
+    mantener la suya según sus reglas de negocio. Es recomendable cerrar la sesión de ClaveÚnica
+    explícitamente, tanto para cierres de sesión visibles al usuario como para casos implícitos.
+  Req:
+    - "Implementar un botón o link claramente identificado para cerrar sesión en la aplicación integradora que, a su vez, invoque el endpoint de logout de ClaveÚnica."
+    - "Llamar al endpoint de logout vía GET: https://accounts.claveunica.gob.cl/api/v1/accounts/app/logout?redirect=logout_uri (método 1) o bien redirigir primero al endpoint y luego, con un retardo controlado, a un handler de logout local (método 2)."
+    - "Registrar todas las Logout URI que se utilizarán al solicitar o actualizar las credenciales; si se usa una URI no registrada, el redireccionamiento no se realizará."
+    - "Evitar llamar al endpoint de logout desde popups o iframes para prevenir errores de CORS que dejen la sesión de ClaveÚnica abierta."
+  Rec:
+    - "Aplicar cierre de sesión implícito en flujos lineales (por ejemplo, firma de documentos o encuestas) inmediatamente tras obtener los datos de usuario."
+
+Requisitos_Seguridad_y_Buenas_Practicas:
+  ID: "TDE_PLAT_CU_SEG_001"
+  Req:
+    - "Utilizar HTTPS en el ambiente de producción para toda comunicación relacionada con ClaveÚnica."
+    - "Generar el parámetro state de forma dinámica y aleatoria para cada flujo, sin reutilizar valores estáticos."
+    - "Realizar las llamadas a /openid/token/ y /openid/userinfo/ desde el backend de la aplicación."
+    - "Verificar que las URLs de los endpoints en código fuente correspondan exactamente a https://accounts.claveunica.gob.cl/openid/token/ y https://accounts.claveunica.gob.cl/openid/userinfo/."
+    - "Gestionar client_id y client_secret mediante variables de entorno u otros mecanismos de configuración seguros, evitando su almacenamiento en repositorios de código."
+  Warn:
+    - "Cualquier exposición de client_secret (por ejemplo, en frontend o en repositorios públicos) implica riesgo de seguridad y puede requerir rotación de credenciales."
+
+Boton_ClaveUnica_UX_y_Marca:
+  ID: "TDE_PLAT_CU_BTN_001"
+  Ctx: >-
+    El botón oficial de ClaveÚnica es parte obligatoria de la integración visual y de accesibilidad del servicio; su uso correcto es revisado en la certificación.
+  Anatomy_y_Dimensiones:
+    Req:
+      - "Usar isotipo ClaveÚnica (24x24px) con tipografía Roboto bold 1rem y fondo #0F69C4 (variante estándar)."
+      - "Respetar bordes (curvos 0 por defecto) y espaciados que den apariencia de botón; variantes: rounded-none, rounded-middle, rounded-full."
+      - "Proveer alternativa de alto contraste (btn-color-highContrast) y versión full-width (btn-fw) cuando aplique."
+      - "Mantener aria-label apropiado (p.ej. “Iniciar sesión con ClaveÚnica”)."
+  Codigo_Base:
+    Req:
+      - "Utilizar las clases oficiales (.btn-cu, .btn-color-estandar / .btn-color-highContrast, .btn-m, .cl-claveunica, .texto)."
+      - "Cargar el ícono desde ruta configurable (cu-blanco.svg), ajustando background-size 24px."
+      - "Incluir estados hover/active/focus con contraste adecuado; en focus aplicar outline de color de contraste."
+  Buenas_Practicas_Marca_y_UX:
+    Req:
+      - "Escribir la marca como “ClaveÚnica” (C y U mayúsculas, juntas)."
+      - "No incrustar el formulario en iframes/popups; el botón debe abrir la página de login completa."
+      - "Evitar redundancia de textos (no repetir 'Ingresa con tu ClaveÚnica' junto al botón 'ClaveÚnica')."
+      - "No enlazar el botón a otros mecanismos de autenticación diferentes de ClaveÚnica."
+      - "Usar un único botón principal en accesos principales para evitar confusión."
+    Warn:
+      - "Diseños incorrectos (espaciados, colores o íconos no oficiales) pueden hacer fallar certificación y deben corregirse."
+
+Certificacion_y_Activacion_Credenciales_Produccion:
+  ID: "TDE_PLAT_CU_CERT_001"
+  Ctx: >-
+    Las credenciales de producción permanecen deshabilitadas hasta que la integración es
+    certificada por el equipo de ClaveÚnica. La certificación revisa tanto cumplimiento de
+    requisitos técnicos como de diseño y seguridad.
+  Requisitos_Revision:
+    - "Uso correcto del botón oficial de ClaveÚnica, siguiendo los lineamientos y recursos de diseño (guía, Figma, ejemplos de código)."
+    - "Uso de HTTPS en ambiente productivo."
+    - "Llamada correcta al formulario de ClaveÚnica (login a pantalla completa, sin iframes ni popups, con barra de direcciones visible)."
+    - "Implementación de state dinámico, según el Paso 1."
+    - "Secuencia completa de autenticación con scope 'openid run name' y endpoints en accounts.claveunica.gob.cl."
+    - "Llamadas desde backend a token/ y userinfo/, con evidencia de código que muestre las URLs correctas."
+    - "Uso de variables de entorno para gestionar client_id y client_secret (con evidencia de configuración y consumo)."
+    - "Implementación de cierre de sesión correcto, con botón/link visible y manejo de casos en que el RUN autenticado no está en la base de datos local."
+  Procedimiento:
+    Act:
+      - "Completar la integración en ambiente de producción cumpliendo los requisitos anteriores."
+      - "Solicitar la habilitación de credenciales de producción desde el mismo trámite de solicitud de credenciales en Cerofilas, iniciando la fase de certificación."
+      - "Adjuntar evidencias requeridas (capturas de código, configuración de endpoints, uso de botón oficial, etc.)."
+      - "Atender observaciones y correcciones solicitadas por el equipo de ClaveÚnica."
+    Res:
+      - "Plazo de referencia: 6 días hábiles desde el ingreso del ticket de certificación en la Mesa de Servicio, sujeto a cumplimiento de requisitos y disponibilidad de acceso al sitio."
+
+Actualizacion_URIs_y_Datos_Integracion:
+  ID: "TDE_PLAT_CU_ACT_001"
+  Act:
+    - "Para actualizar Redirect URI u otros parámetros relacionados con URIs, ingresar al portal Cerofilas y usar el trámite 'Actualización de URIs de Credenciales de Integración ClaveÚnica'."
+    - "Para cambiar el nombre de la aplicación, ingresar un ticket en la Mesa de Servicio institucional (digital.gob.cl/incidencia)."
+  Req:
+    - "Los cambios sólo pueden ser solicitados por el contacto administrativo registrado en las credenciales."
+    - "En la solicitud se debe indicar nombre y correo del solicitante, client_id del ambiente correspondiente y las nuevas URIs o datos."
+  Res:
+    - "El tiempo de respuesta típico para actualización de URIs o datos es de 3 días hábiles."

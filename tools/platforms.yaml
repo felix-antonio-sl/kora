@@ -1,5 +1,5 @@
 _manifest:
-  urn: "urn:knowledge:koda:tools:platforms:1.0.0"
+  urn: "urn:kora:doc:platforms:1.0.0"
   federation:
     visibility: internal
     license: "Proprietary"

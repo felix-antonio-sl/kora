@@ -1,0 +1,315 @@
+# KODA TDE Lineamiento: Términos y Condiciones del Sistema de ClaveÚnica
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:claveunica_tyc:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Terminos_Condiciones_ClaveUnica"
+  provenance:
+    created_by: "Subsecretaría de Hacienda / Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Plataformas_CompartidasTérminos_y_Condiciones/Términos_y_Condiciones_para_la_integración_y_el_uso_del_Sistema_de_ClaveÚnica.md"
+    source_url: "https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica"
+    source_updated_at: "2025-11-21T18:45:10.125Z"
+  status: draft
+
+ID: "TDE-LIN-TYC-CLAVEUNICA-036"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Subsecretaría de Hacienda / Secretaría de Gobierno Digital"
+Human-Editor: "Equipo ClaveÚnica - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Términos y Condiciones para la integración y el uso del Sistema de ClaveÚnica por parte de Entidades Usuarias públicas y privadas, aprobados por Resolución Exenta N° 733/2025 y vinculados a la Ley N° 21.658."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Trata estos Términos y Condiciones como contrato normativo. No
+    suavices obligaciones, prohibiciones, responsabilidades ni causales de
+    suspensión. Resume formalmente pero sin perder ninguna condición relevante.
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
+    Ctx_Required->Required External Reference, Ctx_Optional->Optional External
+    Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective,
+    Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference,
+    XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement,
+    Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Rec->Recommendation.
+
+    REFERENCE POLICY: Ref: interno (IDs de este artefacto). XRef/XRef_Required:
+    URNs a leyes y lineamientos (Ley 21.658, Ley 21.180, Ley 19.880, Ley 19.628,
+    normas técnicas, manual de integración ClaveÚnica, etc.).
+
+    LANGUAGE POLICY: Keywords en inglés, contenido normativo en lenguaje
+    jurídico original. END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Términos y Condiciones contractuales del Sistema de ClaveÚnica para Entidades Usuarias"
+  objective: >-
+    Describir alcance, definiciones, criterios de habilitación, obligaciones,
+    prohibiciones, régimen de seguridad, suspensión, responsabilidad, costos y
+    uso de marca del Sistema de ClaveÚnica para entidades usuarias.
+  usage_guidance:
+    - "Usar este lineamiento al analizar responsabilidades de las Entidades
+      Usuarias respecto del uso de ClaveÚnica en sus plataformas electrónicas."
+    - "Complementar con el Manual de Integración de ClaveÚnica (lineamiento 015)
+      para aspectos técnicos, y con la Norma Técnica de Autenticación y Leyes
+      21.180/21.658 para el marco legal."
+  style:
+    - "Responder en es-CL, tono jurídico-técnico, explícito en obligaciones y
+      prohibiciones."
+
+Metadata_Original:
+  title: "Términos y Condiciones para la integración y el uso del Sistema de ClaveÚnica"
+  url: "https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica"
+  category: "Plataformas Compartidas/Términos y Condiciones"
+  tags:
+    - "identidad_digital"
+    - "claveunica"
+    - "terminos_y_condiciones"
+  description: >-
+    Términos contractuales que regulan el uso del Sistema de ClaveÚnica por parte de
+    Entidades Usuarias (públicas y privadas), su habilitación, integración,
+    obligaciones, prohibiciones, responsabilidades y régimen de suspensión.
+  updated_at: "2025-11-21T18:45:10.125Z"
+
+Alcance_y_Obligatoriedad:
+  ID: "TDE_TYC_CU_CTX_001"
+  Articulos: [1]
+  Ctx: >-
+    Los Términos y Condiciones regulan el uso del Sistema de ClaveÚnica por parte de
+    las Entidades Usuarias y son obligatorios por mandato de la Ley N° 21.658, sin
+    requerir aceptación individual.
+  Req:
+    - "Toda Entidad Usuaria que utilice ClaveÚnica debe cumplir íntegramente estos
+       Términos y Condiciones."
+    - "Su obligatoriedad deriva del artículo segundo transitorio de la Ley N° 21.658."
+
+Glosario_y_Definiciones:
+  ID: "TDE_TYC_CU_DEF_001"
+  Articulos: [2]
+  Terms:
+    - Term: "Autenticacion"
+      Def: "Proceso electrónico que valida datos de identificación de un/a usuario/a
+        para permitirle acceso a una plataforma electrónica."
+    - Term: "ClaveUnica"
+      Def: >-
+        Mecanismo oficial de autenticación operado por la SGD, de uso exclusivo para
+        personas naturales (por sí o en representación), basado en OpenID Connect,
+        cuyo factor primario es una contraseña ligada al RUN.
+    - Term: "Entidad_Usuaria"
+      Def: "Entidad integrada al Sistema de ClaveÚnica que lo utiliza como mecanismo
+        de autenticación en sus plataformas electrónicas, sitios web u otros servicios
+        digitales."
+    - Term: "Integracion"
+      Def: "Proceso de conexión y habilitación al Sistema de ClaveÚnica, incluyendo
+        obtención de credenciales y certificación."
+    - Term: "Mecanismo_Oficial_Autenticacion"
+      Def: "ClaveÚnica, cédula de identidad digital y otros mecanismos que cumplen la
+        Norma Técnica de Autenticación y son validados por la SGD."
+    - Term: "Usuario"
+      Def: "Persona natural titular de una cuenta activa de ClaveÚnica, que accede a
+        servicios digitales integrados."
+    - Term: "Servicios_SaaS"
+      Def: >-
+        Servicios de software provistos vía internet por terceros, utilizados por las
+        Entidades Usuarias para ofrecer servicios digitales sin instalar software en
+        su propia infraestructura.
+
+Criterios_Entidad_Usuaria:
+  ID: "TDE_TYC_CU_CRIT_001"
+  Articulos: [3]
+  Req:
+    - "La entidad debe tener habilitantes legales o administrativos que le permitan
+       usar ClaveÚnica, regulando casos de uso y medidas de seguridad adicionales."
+    - "Debe demostrar capacidad para garantizar seguridad, confiabilidad y
+       responsabilidad en el uso de ClaveÚnica y cumplir estándares y directrices
+       técnicas aplicables."
+    - "Debe existir institución pública competente para supervisar o fiscalizar el
+       buen uso de ClaveÚnica por la Entidad Usuaria."
+
+Habilitacion_e_Integracion:
+  ID: "TDE_TYC_CU_INT_001"
+  Articulos: [4]
+  Req:
+    - "La integración se solicita mediante el trámite 'Solicitud de Credenciales de
+       Integración a ClaveÚnica' en gobdigital.cerofilas.gob.cl."
+    - "La SGD acepta la solicitud sólo si se cumplen los requisitos de Entidad
+       Usuaria; si se aceptó por error, puede revocar en cualquier etapa, incluso con
+       credenciales en producción, sin responsabilidad por daños en la entidad."
+    - "La entidad sólo se considera Entidad Usuaria una vez certificada conforme al
+       Manual de Integración y con credenciales en producción."
+    - "Asistencia técnica durante integración y operación se gestiona exclusivamente
+       vía Mesa de Servicios de la SGD."
+    - "Para servicios SaaS, la entidad debe garantizar que solicitud e integración
+       sean lideradas por personal del órgano responsable y usando URL institucional."
+  Ctx_Required:
+    - "urn:kora:gov:claveunica:1.0.0"
+
+Contrapartes_y_Comunicaciones:
+  ID: "TDE_TYC_CU_COM_001"
+  Articulos: [5]
+  Req:
+    - "Cada Entidad Usuaria debe designar contraparte administrativa y técnica y
+       comunicarlo a la SGD según Manual de Integración."
+    - "Las comunicaciones formales con la SGD deben realizarse a través de la Mesa de
+       Servicios de la Secretaría de Gobierno Digital."
+
+Obligaciones_Entidades_Usuarias:
+  ID: "TDE_TYC_CU_OBL_001"
+  Articulos: [6]
+  Subsection_Cumplimiento_Normativo:
+    Req:
+      - "Usar ClaveÚnica en estricto apego a la normativa aplicable y habilitantes
+         legales que permiten a la entidad ser Entidad Usuaria."
+      - "Cumplir con Ley 19.880, Ley 19.628, Ley 21.663 (Marco de Ciberseguridad),
+         Ley 19.799, Norma Técnica de Autenticación, Reglamento DS 4 y otras normas
+         administrativas relacionadas."
+      - "Cumplir lineamientos, estándares, directrices y guías técnicas que la SGD
+         establezca en virtud de la Ley 21.658 y su reglamento."
+  Subsection_Difusion_y_Comunicacion:
+    Req:
+      - "Difundir internamente estos Términos y Condiciones y obligaciones
+         asociadas."
+      - "En escenarios SaaS, incorporar en bases de licitación y contratos la
+         obligación del proveedor de cumplir estos Términos y Condiciones, y
+         detallar cómo se comunicará y difundirá en su organización."
+  Subsection_Garantia_Integracion_y_Funcionamiento:
+    Req:
+      - "Mantener infraestructura y sistemas en condiciones óptimas para garantizar
+         correcta integración y funcionamiento de ClaveÚnica."
+  Subsection_Medidas_Seguridad:
+    Req:
+      - "Implementar segundo factor de autenticación cuando se requiera mayor nivel
+         de seguridad, según SGD, Agencia Nacional de Ciberseguridad u otra
+         autoridad competente."
+      - "No basar factores adicionales en información accesible vía ClaveÚnica o en
+         fuentes públicas."
+      - "Avisar inmediatamente a la SGD ante incidentes de seguridad (accesos no
+         autorizados, filtración de credenciales, etc.)."
+      - "Cooperar con la SGD en auditorías y procesos de identificación de brechas."
+      - "Realizar actualizaciones o cambios de protocolos/estándares que la SGD
+         requiera por motivos de seguridad o continuidad de servicio."
+
+Prohibiciones:
+  ID: "TDE_TYC_CU_PROHIB_001"
+  Articulos: [6]
+  Prohib:
+    - "Solicitar, almacenar o registrar credenciales/contraseñas de usuarios de
+       ClaveÚnica, o inducir a compartirlas."
+    - "Crear o habilitar mecanismos automatizados de acceso a ClaveÚnica por parte
+       de uno o más usuarios."
+    - "Utilizar ClaveÚnica para acceder a cuentas, información o recursos sin
+       autorización expresa de la SGD."
+    - "Manipular el sistema para obtener acceso no autorizado, eludir medidas de
+       seguridad o modificar configuraciones/procesos sin permiso."
+    - "Distribuir, sublicenciar o transferir ClaveÚnica a terceros mediante
+       integraciones no autorizadas."
+    - "Compartir credenciales de integración con terceros ajenos o permitir su
+       obtención fraudulenta por actores no autorizados."
+    - "Utilizar ClaveÚnica para fines maliciosos (extracción/divulgación no
+       autorizada de datos personales, actividades ilegales, daño al sistema o a
+       usuarios)."
+    - "Realizar ingeniería inversa, descompilar o desensamblar software o
+       componentes del Sistema de ClaveÚnica para obtener información confidencial o
+       explotar vulnerabilidades."
+
+Disponibilidad_y_Suspension_Servicio:
+  ID: "TDE_TYC_CU_SUSP_001"
+  Articulos: [7, 8]
+  Suspensiones_Programadas:
+    Req:
+      - "La SGD puede interrumpir temporalmente el servicio por mantención o mejoras,
+         informando con al menos 48 horas de anticipación en el sitio de ClaveÚnica."
+  Suspensiones_No_Programadas:
+    Req:
+      - "La SGD puede interrumpir el servicio por emergencias (fallas técnicas,
+         cortes, fuerza mayor) o acción de terceros (ataques)."
+      - "Las suspensiones se comunican vía sitio web y/o a contrapartes técnicas."
+  Condiciones:
+    Warn:
+      - "La SGD no garantiza un porcentaje específico de disponibilidad, aunque
+         debe hacer esfuerzos razonables para evitar contingencias."
+  Incumplimiento_Suspension:
+    Req:
+      - "Ante incumplimiento de estos Términos por la Entidad Usuaria o sus
+         proveedores SaaS, la SGD puede suspender el servicio sin previo aviso,
+         notificando por correo electrónico a la contraparte técnica y definiendo
+         condiciones de reanudación."
+
+Costos_y_Responsabilidad:
+  ID: "TDE_TYC_CU_COSTOS_001"
+  Articulos: [9, 11]
+  Costos:
+    Req:
+      - "Todos los costos asociados a integración, implementación, operación y
+         cumplimiento de estos Términos son de cargo exclusivo de la Entidad
+         Usuaria (infraestructura, personal, seguridad, ciberseguridad, etc.)."
+  Responsabilidad:
+    Warn:
+      - "El Ministerio se libera de responsabilidad por daños directos o
+         indirectos, previstos o imprevistos, derivados del mal uso del Sistema
+         ClaveÚnica o del incumplimiento de obligaciones por parte de la Entidad
+         Usuaria."
+      - "No es responsable de daños por suspensión del servicio por incumplimiento."
+
+Uso_Marca_ClaveUnica:
+  ID: "TDE_TYC_CU_MARCA_001"
+  Articulos: [10]
+  Ctx: >-
+    ClaveÚnica es una marca registrada a nombre de la Secretaría y Administración
+    General del Ministerio de Hacienda.
+  Req:
+    - "El uso de la marca sin autorización vulnera la Ley 19.039 de Propiedad
+       Industrial; el titular tiene derecho exclusivo a usarla."
+  Prohib:
+    - "Reproducir, modificar o distribuir no autorizadamente software, componentes
+       o marca/logos de ClaveÚnica y claveunica.gob.cl."
+
+Modificacion_y_Adecuacion_Estandares:
+  ID: "TDE_TYC_CU_MOD_001"
+  Articulos: [12, 13]
+  Req:
+    - "La Subsecretaría puede modificar en cualquier momento estos Términos;
+       corresponde a las Entidades Usuarias revisarlos periódicamente."
+    - "Las modificaciones se comunican en claveunica.gob.cl y entran en vigencia 10
+       días hábiles después de su publicación en el Diario Oficial (salvo
+       urgencias)."
+    - "Entidades ya integradas tienen 60 días corridos desde entrada en vigencia
+       para adecuarse a estándares y obligaciones; plazo puede extenderse
+       prudencialmente por la SGD ante dificultades justificadas."
+  Warn:
+    - "El incumplimiento de la adecuación faculta a la SGD para suspender el
+       servicio de ClaveÚnica."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos clave conectados al Lexicon TDE."
+  Terms:
+    - Term: "ClaveUnica"
+      Ref_ID: "TDE_DEF_CLAVEUNICA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_CLAVEUNICA"
+    - Term: "Domicilio Digital Unico"
+      Ref_ID: "TDE_DEF_DDU"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DDU"
+    - Term: "Procedimiento Administrativo"
+      Ref_ID: "TDE_DEF_PROCEDIMIENTO_ADMINISTRATIVO"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PROCEDIMIENTO_ADMINISTRATIVO"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Leyes y lineamientos íntimamente vinculados a los Términos de ClaveÚnica."
+  XRef_Required:
+    - "urn:kora:gov:claveunica:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:legal:ley_19880_procedimientos:1.0.0"
+    - "urn:knowledge:koda:legal:ley_21180_tde:1.0.0"
+    - "urn:knowledge:koda:legal:ley_21658_segdig:1.0.0"
+    - "urn:knowledge:koda:legal:nt_autenticacion:1.0.0"
+    - "urn:knowledge:koda:gov:calidad_web:1.0.0"
+    - "urn:knowledge:koda:gov:identidad_digital:1.0.0"

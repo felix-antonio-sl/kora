@@ -1,0 +1,107 @@
+# KORA Agent Protocol (ADP) Specification v2.0
+# Formal specification of KORA/Agent schema and semantics
+
+_manifest:
+  urn: "urn:kora:kb:agent:2.0.0"
+  federation:
+    visibility: public
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "2.0.0"
+  resolution:
+    canonical_url: "file://knowledge/foundations/core/kora/agent.yml"
+  dependencies:
+    requires:
+      - urn: "urn:kora:kb:spec:2.0.0"
+        reason: "Structural format specification"
+  provenance:
+    created_by: "FS"
+    created_at: "2026-02-20"
+    note: "Evolución dogmática KORA 2.0: FSM estricta y delegación de resolución al catálogo maestro"
+
+ID: KORA-AGENT-SPEC-02
+Version: 2.0.0
+Status: Published
+Source: KODA-AGENT-SPEC-01
+Ctx: Technical specification of KORA as YAML schema for declarative agent definition
+
+LLM_Parsing_Instructions:
+  ID: KORA-LLM-PARSER-02
+  Req: Mandatory block following Metadata.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KORA artifact. Parse with absolute fidelity.
+    FIDELITY: Preserve meat (essential information) and skeleton (structure) with zero loss. Ignore fat.
+    END_LLM_INSTRUCTIONS
+
+# 1. Principles
+Principles:
+  ID: KORA-PRINCIPLES-02
+  Mssn: Declarative agent programming with maximum behavioral fidelity via Categorical FSM.
+  
+  Principle_List:
+    - Principle: YAML is Source Code
+    - Principle: Structure is Meaning
+    - Principle: Agent as Formal Category (FSM)
+      Def: Objects are States. Morphisms are Transitions. Identity is self-loop.
+    - Principle: Centralized Catalog Resolution (Kora 2.0 Shift)
+      Def: Agents never define how to resolve knowledge; they just declare URN dependencies. The local Kora CLI or Runtime resolves via `catalog_master_kora.yml`.
+
+# 2. Schema Structure
+KORA_Runtime_Instructions:
+  ID: KORA-RUNTIME-INSTRUCTIONS-02
+  Purp: The universal brain bootloader for the LLM.
+  Req: MUST be present after _manifest on every agent.
+  Standard_Template: |
+    KORA_Runtime_Instructions:
+      Activation: "You ARE this agent. Execute, don't describe."
+      Content: |
+        BEGIN_KORA_RUNTIME
+        IDENTITY: Adopt role from agent_identity. You ARE this role.
+        STATE_MACHINE: Enter initial_state→execute process→evaluate transitions. No improvisation.
+        COGNITIVE_MODELS: Execute CMs internally. Never expose names/contents.
+        KNOWLEDGE: Use source_artifacts constraints. Wait for KB_READY.
+        SECURITY: block_instructions+forbid_internal_jargon=HARD constraints.
+        EVALUATION: checklist→corrections→deliver only after ALL pass.
+        END_KORA_RUNTIME
+
+Namespaces:
+  ID: KORA-NAMESPACES-02
+  Required_Keys:
+    - agent_identity_and_global_configuration
+    - knowledge_base_interaction_and_governance_rules
+      Purp: Radically simplified in KORA 2.0. Just policy and source URNs.
+      Contains:
+        - policy (EXCLUSIVE_USE, LLM_NATIVE, HYBRID_WEB_KB, WEB_AUGMENTED)
+        - source_artifacts (List of bare URNs)
+    - public_behavior_workflows_and_states
+      Purp: The FSM. Workflows and States (Process + Transitions)
+    - private_internal_reasoning_processes
+      Purp: Cognitive Models (_meta: {expose: false})
+    - input_output_style_format_and_interaction
+    - safety_constraints_and_behavioral_guardrails
+    - self_evaluation_and_correction_mechanisms
+
+Lexicon:
+  ID: KORA-LEXICON-02
+
+  Knowledge_Paths_Simplified:
+    - Path: knowledge_base_interaction_and_governance_rules.policy
+      Type: enum [EXCLUSIVE_USE, ALLOW_GENERAL_KNOWLEDGE, LLM_NATIVE, HYBRID_WEB_KB, WEB_AUGMENTED]
+    - Path: knowledge_base_interaction_and_governance_rules.source_artifacts
+      Type: list[urn]
+      Req: URN format `urn:{namespace}:{type}:{id}[:{version}]`
+
+  Workflow_Paths:
+    - Path: public_behavior_workflows_and_states.defined_workflows.<WF-ID>.initial_state
+    - Path: public_behavior_workflows_and_states.defined_states.<STATE-ID>.process
+    - Path: public_behavior_workflows_and_states.defined_states.<STATE-ID>.transitions
+      Format: "IF <condition> -> <TARGET-STATE-ID>"
+
+Orchestration:
+  ID: KORA-ORCHESTRATION-02
+  Purp: Higher-Order Agents (HOA).
+  Key: orchestration_fleet_and_protocol
+  Schema:
+    - sub_agents: list of URN references `urn:{ns}:agent:{id}`
+    - delegation_pattern: SEQUENTIAL | PARALLEL | CONDITIONAL | ITERATIVE

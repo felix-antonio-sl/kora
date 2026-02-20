@@ -1,0 +1,162 @@
+# KODA Artifact: Contratación Pública de Servicios Médicos - Chile
+# URN: urn:knowledge:koda:legal:contratacion_publica:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre contratación pública de servicios médicos (médicos como proveedores del Estado) y su interacción con el derecho laboral"
+    primary_use: "Distinguir cuándo un médico se vincula como proveedor externo vía contratación pública y cuándo existe en realidad una relación laboral o funcionaria"
+    cross_reference: "Usar definiciones de funcionario/contrata/honorarios de kb_med_000 y kb_med_003; causales de término de kb_med_008 para analizar riesgos contractuales; para confianza legítima y cómputo de años de contrata, ver kb_med_014"
+
+  urn: "urn:knowledge:koda:legal:contratacion_publica:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Módulo XIII: Contratación Pública de servicios médicos"
+    source_document: "Material Curso Legislación Trabajo Médico - UDELAM/COLMED"
+    source_sections: "XIII. Contratación Pública"
+    model_collaborators: ["IA-CLAUDE"]
+  dependencies:
+    - Ref: "urn:kora:legal:index:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:ingreso_carrera:1.0.0"
+    - Ref: "urn:kora:legal:terminacion:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: PRINCIPIOS DE LA CONTRATACIÓN PÚBLICA
+# ═══════════════════════════════════════════════════════════════════
+
+Principios_Contratacion_Publica:
+  ID: CP_PRINC
+  Fuente:
+    - Ref: CPR
+    - Ref: LOC_18575
+  Def: "Conjunto de reglas que rigen la adquisición de bienes y servicios por parte de órganos del Estado, fundadas en la transparencia, igualdad entre oferentes y buen uso de recursos públicos."
+  Principios:
+    - "Legalidad: los contratos administrativos deben ajustarse a las normas que los regulan."
+    - "Libre concurrencia e igualdad de oferentes, evitando discriminaciones arbitrarias."
+    - "Transparencia y publicidad de los procesos de contratación."
+    - "Eficiencia en el uso de recursos públicos."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: MÉDICOS COMO PROVEEDORES DEL ESTADO
+# ═══════════════════════════════════════════════════════════════════
+
+Medicos_Proveedores_Publicos:
+
+  Modalidades_Generales:
+    ID: CP_MED_MODALIDADES
+    Def: "Formas en que un médico puede prestar servicios al Estado sin adquirir calidad de funcionario."
+    Formas:
+      - ID: CP_SERVICIOS_PROFESIONALES
+        Def: "Contratos de prestación de servicios profesionales de salud con un Servicio de Salud, hospital u otro órgano público."
+      - ID: CP_CONVENIOS_COLABORACION
+        Def: "Convenios entre instituciones públicas y privadas de salud que incluyen la participación de médicos externos."
+
+  Diferencia_Con_Vinculo_Funcionario:
+    ID: CP_DIF_FUNC
+    Def: "Diferencias clave entre ser médico proveedor externo y ser médico funcionario."
+    Comparacion:
+      - ID: CP_DIF_NATURALEZA
+        Criterio: "Naturaleza del vínculo"
+        Proveedor: "Contrato administrativo o civil de prestación de servicios."
+        Funcionario: "Relación estatutaria de derecho público (ver kb_med_001 y kb_med_003)."
+      - ID: CP_DIF_SUBORDINACION
+        Criterio: "Subordinación y dependencia"
+        Proveedor: "En principio, autonomía técnica en la ejecución del servicio; no debería existir subordinación laboral típica."
+        Funcionario_o_Trabajador: "Subordinación a instrucciones jerárquicas y sujeción a jornada (ver kb_med_004)."
+      - ID: CP_DIF_REMUNERACION
+        Criterio: "Forma de pago"
+        Proveedor: "Honorarios pactados por servicio, programa o resultado."
+        Funcionario_o_Trabajador: "Remuneraciones sujetas a estatuto o Código del Trabajo."
+
+  Riesgo_Laboral_Encubierto:
+    ID: CP_RIESGO_LAB
+    Def: "Situaciones en que contratos de prestación de servicios u honorarios esconden una relación laboral real."
+    Elementos_Indicativos:
+      - "Subordinación y dependencia en los hechos (órdenes directas, control de jornada, integración en organigrama)."
+      - "Prestación de servicios personales, continuos y exclusivos en favor del órgano público."
+      - "Remuneración periódica fija asimilable a sueldo."
+    Notas:
+      - "Si concurren los elementos del contrato de trabajo, se aplica el Código del Trabajo con independencia del nombre del contrato (ver kb_med_002 y kb_med_003)."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: MODALIDADES DE CONTRATACIÓN PÚBLICA A NIVEL CONCEPTUAL
+# ═══════════════════════════════════════════════════════════════════
+
+Modalidades_Contratacion:
+  ID: CP_MODALIDADES
+  Def: "Formas típicas de contratación administrativa de servicios."
+  Modalidades:
+    - ID: CP_LICITACION_PUBLICA
+      Def: "Proceso abierto en que un órgano público invita a cualquier interesado que cumpla requisitos a presentar ofertas para la prestación de un servicio."
+      Rasgos:
+        - "Mayor publicidad y competencia."
+        - "Uso preferente para contratos de monto relevante o carácter general."
+    - ID: CP_LICITACION_PRIVADA
+      Def: "Proceso en que el órgano público invita a un número determinado de oferentes a presentar propuestas."
+    - ID: CP_TRATO_DIRECTO
+      Def: "Contratación directa con un proveedor específico, en casos excepcionales definidos por la normativa (urgencia, proveedor único, montos pequeños, etc.)."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 4: INHABILIDADES Y CONFLICTOS DE INTERÉS
+# ═══════════════════════════════════════════════════════════════════
+
+Inhabilidades_y_Conflictos:
+  ID: CP_INHABILIDADES
+  Fuente:
+    - Ref: LOC_18575
+  Def: "Limitaciones para que funcionarios o ex funcionarios contraten con el Estado en ciertas condiciones, así como la obligación de evitar conflictos de interés."
+  Ejemplos_Generales:
+    - "Funcionarios que no pueden contratar con el mismo órgano en el que se desempeñan, salvo hipótesis específicas previstas por la ley."
+    - "Obligación de abstenerse en decisiones que involucren interés personal o de parientes, cuando se participa en procesos de contratación."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 5: BUENAS PRÁCTICAS CONTRATUALES PARA MÉDICOS
+# ═══════════════════════════════════════════════════════════════════
+
+Buenas_Practicas:
+  ID: CP_BUENAS_PRACTICAS
+  Def: "Recomendaciones para médicos que participan en contratos con el Estado como proveedores externos."
+  Recomendaciones:
+    - "Revisar cuidadosamente las cláusulas sobre objeto del contrato, duración, remuneración y causales de término (ver kb_med_008)."
+    - "Verificar que el contrato respete las normas de probidad y de incompatibilidades cuando el médico también es funcionario público."
+    - "Evitar situaciones de subordinación y dependencia típicas de un contrato de trabajo si el vínculo es de prestación de servicios."
+    - "Documentar adecuadamente la prestación de servicios y los resultados esperados."
+
+# ═══════════════════════════════════════════════════════════════════
+# RESUMEN EJECUTIVO
+# ═══════════════════════════════════════════════════════════════════
+
+Resumen:
+  Ejes:
+    - "Distingue la contratación de servicios médicos como proveedor externo del vínculo estatutario o laboral."
+    - "Describe modalidades conceptuales de contratación pública y sus principios."
+    - "Advierte sobre el riesgo de relaciones laborales encubiertas y la importancia de la probidad e incompatibilidades."
+  Casos_Uso_Tipicos:
+    - "Analizar si una propuesta de contrato con un hospital público configura realmente una relación de proveedor o una relación laboral encubierta."
+    - "Orientar a un médico que ya es funcionario sobre los límites para celebrar contratos adicionales con el Estado."
+    - "Comprender el contexto de licitaciones y contratación directa de servicios profesionales médicos."

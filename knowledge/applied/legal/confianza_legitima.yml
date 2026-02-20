@@ -1,0 +1,203 @@
+# KODA Artifact: Principio de Confianza Legítima en Contratas Médicas - Chile
+# URN: urn:knowledge:koda:legal:confianza_legitima:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre el principio de confianza legítima aplicado a médicos funcionarios a contrata"
+    primary_use: "Determinar si un médico a contrata está protegido contra la no renovación arbitraria según su antigüedad"
+    cross_reference: "Usar definiciones de contrata/honorarios de kb_med_000; causales de término de kb_med_008; modalidades de contratación de kb_med_010"
+
+  urn: "urn:knowledge:koda:legal:confianza_legitima:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Síntesis jurisprudencial sobre confianza legítima en contratas"
+    source_document: "Jurisprudencia Corte Suprema 2022-2025, Dictámenes CGR"
+    model_collaborators: ["IA-CLAUDE"]
+  dependencies:
+    - Ref: "urn:kora:legal:index:1.0.0"
+    - Ref: "urn:kora:legal:terminacion:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:contratacion_publica:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: CONCEPTO Y FUNDAMENTO
+# ═══════════════════════════════════════════════════════════════════
+
+Concepto_Confianza_Legitima:
+  ID: CL_CONCEPTO
+  Fuente:
+    - Ref: DICT_CGR_6400_2018
+    - Ref: DICT_CGR_16512_2018
+    - Ref: DICT_CGR_156769_2021
+  Def: "Principio jurisprudencial que protege a funcionarios públicos de cambios intempestivos en decisiones administrativas, entregando estabilidad a quienes han desarrollado expectativa razonable de continuidad tras renovaciones sucesivas."
+  Notas:
+    - "Construcción derivada de pronunciamientos de la Contraloría General de la República y, especialmente, de la jurisprudencia de la Corte Suprema; no tiene consagración normativa expresa."
+    - "Los dictámenes CGR N° 6400-2018, 16.512-2018 y 156769-2021 desarrollaron inicialmente una línea protectora para ciertos funcionarios a contrata."
+    - "El dictamen CGR N° E561358/2024 modifica ese enfoque, tratando las controversias sobre confianza legítima como materias litigiosas que deben ser resueltas principalmente por los tribunales; la Corte de Apelaciones de Santiago (Rol 24.805-2024) rechazó un recurso de protección interpuesto contra dicho dictamen."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: CRITERIO TEMPORAL UNIFICADO
+# ═══════════════════════════════════════════════════════════════════
+
+Umbral_Temporal:
+  ID: CL_UMBRAL
+  Fuente:
+    - Ref: CS_ROL_26112_2022
+    - Ref: CS_ROL_26131_2022
+    - Ref: CS_ROL_26196_2022
+    - Ref: CS_ROL_26279_2022
+    - Ref: CS_ROL_26301_2022
+  Criterio: "5 años de antigüedad continuos en calidad de contrata"
+  Fundamento: |
+    "El plazo de cinco años se estima prudente para que la Administración evalúe 
+    íntegramente no solo el desempeño del funcionario sino que, además, estudie 
+    la necesidad de seguir contando con el cargo."
+  Coherencia_Institucional: "Acta 19-2012 del Poder Judicial (refundida por Acta 191-2019): renovación automática tras cinco períodos consecutivos con calificación en lista de méritos."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: RÉGIMEN DIFERENCIADO SEGÚN ANTIGÜEDAD
+# ═══════════════════════════════════════════════════════════════════
+
+Regimen_Segun_Antiguedad:
+
+  Menos_de_5_Anios:
+    ID: CL_MENOS_5
+    Proteccion: false
+    Consecuencias:
+      - "La Administración puede NO renovar sin fundamentación especial."
+      - "La contrata expira automáticamente el 31 de diciembre (art. 10, Ley N° 18.834)."
+      - "No requiere dictación de acto especial para el término."
+    Jurisprudencia:
+      - Rol: "28.295-2025"
+        Caso: "Periodista vs. Municipalidad de Curicó"
+        Antiguedad: "4 años 10 meses (4 a honorarios + contrata)"
+        Resultado: "Rechazado - períodos a honorarios no computan"
+      - Rol: "28.288-2025"
+        Caso: "Funcionaria vs. Municipalidad de Gorbea"
+        Antiguedad: "Desde marzo 2020 (~4 años)"
+        Resultado: "Rechazado - no supera 5 años"
+      - Rol: "8.997-2025"
+        Caso: "5 funcionarios vs. Municipalidad de Cartagena"
+        Antiguedad: "Menos de 5 años"
+        Resultado: "Rechazado - no supera umbral"
+
+  Mas_de_5_Anios:
+    ID: CL_MAS_5
+    Proteccion: true
+    Consecuencias:
+      - "El funcionario ESTÁ protegido por confianza legítima."
+      - "Solo puede ser desvinculado mediante sumario administrativo por falta grave o calificación anual desfavorable."
+      - "NO es admisible usar 'necesidades del servicio' para el término."
+    Jurisprudencia:
+      - Rol: "26.814-2025"
+        Caso: "Médico cirujano vs. Hospital San Borja Arriarán"
+        Antiguedad: "Desde 2004 (~21 años, Ley N° 19.664)"
+        Resultado: "ACOGIDO - ordenó mantener contrata y pagar remuneraciones"
+      - Rol: "61.740-2025"
+        Caso: "Académicos universitarios"
+        Antiguedad: "Más de 5 años"
+        Resultado: "ACOGIDO - ratifica reintegro, refuerza estándar"
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 4: CÓMPUTO DE ANTIGÜEDAD
+# ═══════════════════════════════════════════════════════════════════
+
+Computo_Antiguedad:
+
+  Regla_General:
+    ID: CL_COMPUTO
+    Def: "Solo se computan períodos trabajados en calidad de CONTRATA para alcanzar el umbral de 5 años."
+  
+  Honorarios_Excluidos:
+    ID: CL_HONORARIOS
+    Regla: "Los períodos trabajados a honorarios NO se computan."
+    Fundamento: |
+      "Los períodos trabajados a honorarios no pueden computarse, pues se rigen 
+      por un régimen jurídico diferente al de los funcionarios a contrata." 
+      (Rol 28.295-2025)
+
+  Carga_Probatoria:
+    ID: CL_PRUEBA
+    Regla: "El funcionario debe acreditar haber superado el quinquenio en calidad de contrata."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 5: PUNTOS CONTROVERTIDOS
+# ═══════════════════════════════════════════════════════════════════
+
+Controversias:
+
+  Falta_Consagracion_Legal:
+    ID: CL_CONT_LEGAL
+    Posicion: |
+      "Carece absolutamente de consagración normativa en nuestro ordenamiento jurídico. 
+      Se trata de una construcción derivada de pronunciamientos administrativos de la CGR 
+      que no puede ser invocada en sede judicial como regla decisoria litis."
+    Fuente: "Corte de Apelaciones de Talca"
+
+  Tension_Carrera_Funcionaria:
+    ID: CL_CONT_CARRERA
+    Posicion: |
+      "Implicaría una alteración sustancial del sistema de carrera funcionaria diseñado 
+      por el legislador, el cual diferencia nítidamente entre la estabilidad propia de 
+      los empleados de planta y la temporalidad inherente a los funcionarios a contrata."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 6: SÍNTESIS NORMATIVA
+# ═══════════════════════════════════════════════════════════════════
+
+Sintesis_Normativa:
+  ID: CL_NORMAS
+  Normas:
+    - Norma: "Art. 3° letra c), Ley N° 18.834"
+      Contenido: "Define empleos a contrata como transitorios"
+    - Norma: "Art. 10, Ley N° 18.834"
+      Contenido: "Contratas duran máximo hasta el 31 de diciembre"
+    - Norma: "Art. 146, Ley N° 18.834"
+      Contenido: "Causales de cesación de funciones"
+    - Norma: "Art. 54, Ley N° 19.880"
+      Contenido: "Prohibición de vía simultánea administrativa/judicial"
+    - Norma: "Ley N° 19.664"
+      Contenido: "Estatuto especial médicos sector público"
+
+# ═══════════════════════════════════════════════════════════════════
+# RESUMEN EJECUTIVO
+# ═══════════════════════════════════════════════════════════════════
+
+Resumen:
+  Ejes:
+    - "Umbral consolidado: 5 años de antigüedad continuos en calidad de contrata."
+    - "Honorarios excluidos del cómputo."
+    - "Bajo 5 años: no renovación sin fundamentación especial."
+    - "Sobre 5 años: solo desvinculación por sumario o calificación desfavorable."
+  Casos_Uso_Tipicos:
+    - "Evaluar si un médico a contrata tiene protección ante no renovación."
+    - "Determinar si períodos previos a honorarios suman para el umbral."
+    - "Orientar sobre acciones judiciales en caso de término arbitrario."
+  Fuentes:
+    - "CS Roles 26.112-2022, 26.131-2022, 26.196-2022, 26.279-2022, 26.301-2022"
+    - "CS Roles 26.814-2025, 28.295-2025, 28.288-2025, 8.997-2025, 61.740-2025"
+    - "Dictámenes CGR N° 6400-2018, 16.512-2018, 156769-2021 y E561358/2024; comunicaciones del Poder Judicial que difunden el criterio de 5 años para la confianza legítima."

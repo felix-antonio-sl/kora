@@ -1,5 +1,5 @@
 _manifest:
-  urn: "urn:knowledge:koda:tools:manual-ag-fx-v2:2.0.0"
+  urn: "urn:fxsl:doc:manual-ag-fx-v2:2.0.0"
   federation:
     visibility: private
     license: "CC-BY-4.0"
@@ -11,11 +11,11 @@ _manifest:
     mirrors: []
   dependencies:
     requires:
-      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+      - urn: "urn:kora:kb:spec:1.0.0"
         reason: "KODA/Spec base"
-      - urn: "urn:knowledge:koda:core:transform:1.0.0"
+      - urn: "urn:kora:kb:transform:1.0.0"
         reason: "KODA transformation methodology"
-      - urn: "urn:knowledge:koda:antigravity:doc-antigravity-official:1.0.0"
+      - urn: "urn:kora:antigravity:doc-antigravity-official:1.0.0"
         reason: "Antigravity official documentation (KODA)"
   provenance:
     created_by: "FS"
@@ -36,7 +36,7 @@ Source:
   - "staging/manual_ag_fx_v2.md"
 Ctx: "Manual de orquestación avanzada en Google Antigravity (Artifact-First + Framework R.A.P.S. 2.0)."
 XRef_Required:
-  - "urn:knowledge:koda:antigravity:doc-antigravity-official:1.0.0#DOC-ANTIGRAVITY-OFFICIAL-01"
+  - "urn:kora:antigravity:doc-antigravity-official:1.0.0#DOC-ANTIGRAVITY-OFFICIAL-01"
 Version-Notes: "Transformado desde Markdown a KODA/Spec (telegraphic + dedup)."
 
 LLM_Parsing_Instructions:
@@ -68,7 +68,7 @@ SSOT:
   Def: "Este documento fusiona Manual FX original + documentación oficial de Antigravity."
   Src:
     - "staging/manual_ag_fx_v2.md"
-    - "urn:knowledge:koda:antigravity:doc-antigravity-official:1.0.0#DOC-ANTIGRAVITY-OFFICIAL-01"
+    - "urn:kora:antigravity:doc-antigravity-official:1.0.0#DOC-ANTIGRAVITY-OFFICIAL-01"
   Last_Updated: 2026-01-19
 
 Registries:

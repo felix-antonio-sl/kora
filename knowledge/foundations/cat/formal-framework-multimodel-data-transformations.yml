@@ -1,0 +1,187 @@
+_manifest:
+  urn: "urn:kora:cat:formal-framework-multimodel-data-transformations:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/integration/formal_framework_multimodel_data_transformations.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:kora:kb:spec:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-14"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-14"
+    signature: null
+
+ID: CAT-MM-KANLIFT-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-14
+Modification-Date: 2025-12-14
+Version-Notes: "Initial KODA/Spec transform from sources/cat."
+Src:
+  - "file://sources/cat/A Formal Category Theoretical Framewor.md"
+Ctx: "Category-theoretic framework for multi-model (relational/graph/hierarchical) data and schema transformations using functorial instances and Kan lifts (schema+data transformations with universal properties)."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, formulas, diagrams, code) with zero loss. Ignore fat.
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: internal only—must point to existing ID within THIS document. XRef/XRef_Required: external only—must point to a URN (optionally with #ID fragment) in another artifact.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Define categorical foundations for relational, graph, and hierarchical data models and formalize multi-model data+schema transformations as Kan lifts with universal properties."
+Obj: "Provide a formal reference for representing instances as functors and expressing transformations via right Kan lifts (schema transformation + data transformation)."
+
+Related_Concepts:
+  XRef:
+    - "urn:kora:cat:algebraic-databases:1.0.0#KAN-LIFT"
+    - "urn:kora:cat:unified-representation-transformation-multimodel:1.0.0#Categorical_Representation_of_Multi_Model_Data"
+
+Abstract:
+  ID: MMK-ABS-01
+  Def: "Data integration and migration in polystores and multi-model database systems benefit from data and schema transformations. This work defines category theoretical foundations for relational, graph, and hierarchical data models using functors to represent data instances. Data and schema transformations are formalized as Kan lifts, which consist of schema transformation and data transformation mappings satisfying universal properties."
+
+Introduction:
+  ID: MMK-INTRO-01
+  Def: "Polystores and multi-model databases handle diverse data models, necessitating a rigorous mathematical framework to model data and schema transformations. Category theory offers a compact notation capable of capturing complex structures, aiming to unify various transformation frameworks under a solid theoretical foundation."
+
+Prerequisites:
+  ID: MMK-PREQ-01
+
+  Categories:
+    ID: MMK-PREQ-CAT-01
+
+    Definition_1_Category:
+      ID: MMK-DEF-1
+      Def: "A category C consists of objects Obj(C) and morphisms Hom(C). Each morphism f has f: A -> B for some objects A,B. Morphism composition is associative, and each object has an identity morphism id_A: A -> A such that f ∘ id_A = f and id_A ∘ f = f whenever composition is defined."
+      Example: "See Figure 1 for a simple category with four objects and three non-trivial morphisms f,g,h."
+
+  Functors:
+    ID: MMK-PREQ-FUNCTOR-01
+
+    Definition_2_Functor:
+      ID: MMK-DEF-2
+      Def: "Given categories C and D, a functor F: C -> D maps objects and morphisms: for every object c in C, F(c) is an object in D; for every morphism f: c -> d in C, F(f): F(c) -> F(d) is a morphism in D. Functors preserve identities and composition: F(id_c) = id_{F(c)} and F(g ∘ f) = F(g) ∘ F(f)."
+      Full: "A functor F is full if every morphism in D has a preimage in C."
+      Example: "See Figure 2(a) for a simple functor between two categories."
+      Ref: MMK-DEF-1
+
+  Natural_Transformations:
+    ID: MMK-PREQ-NAT-01
+
+    Definition_3_Natural_Transformation:
+      ID: MMK-DEF-3
+      Def: "Given functors F,G: C -> D, a natural transformation α: F ⇒ G assigns to each object c in C a morphism α_c: F(c) -> G(c) in D such that for every morphism f: c -> d in C, G(f) ∘ α_c = α_d ∘ F(f)."
+      Example: "See Figure 2(b) for a natural transformation between two functors."
+      Ref: MMK-DEF-2
+
+  Kan_Lifts:
+    ID: MMK-PREQ-KAN-01
+
+    Definition_4_Kan_Lift:
+      ID: MMK-DEF-4
+      Def: "Given functors F: A -> C and G: B -> C, a right Kan lift of F through G consists of a functor Rift_G F: A -> B and a natural transformation ε: G ∘ Rift_G F ⇒ F. This pair satisfies the universal property: for any other pair (H: A -> B, η: G ∘ H ⇒ F), there exists a unique natural transformation γ: H ⇒ Rift_G F such that η = ε ∘ (G ∘ γ)."
+      Diagram: |
+        A --F--> C
+        |       ^
+        |H      |G
+        v   η   |
+        B --Rift_G F-->
+      Ref: MMK-DEF-3
+
+  Graphs:
+    ID: MMK-PREQ-GRAPH-01
+
+    Definition_5_Graph:
+      ID: MMK-DEF-5
+      Def: "A graph G is a quadruple G=(V,E,src,tgt) where V is a set of vertices, E is a set of edges, src: E -> V assigns a source vertex to each edge, and tgt: E -> V assigns a target vertex to each edge."
+
+    Definition_6_Path:
+      ID: MMK-DEF-6
+      Def: "For a graph G=(V,E,src,tgt), a path p of length n is a sequence of connected edges. The set of all paths of length n is denoted Path(n)_G, and the set of all paths is Path_G = union_{n in N} Path(n)_G."
+      Ref: MMK-DEF-5
+
+Functorial_Instances_and_Databases:
+  ID: MMK-FUNCTORIAL-01
+
+  Functorial_Representation_of_Relational_Data:
+    ID: MMK-REL-01
+
+    Definition_7_Categorical_Path_Equivalence_Relation:
+      ID: MMK-DEF-7
+      Def: "Given a graph G=(V,E,src,tgt), a categorical path equivalence relation ~ is an equivalence relation on Path_G satisfying specific properties."
+
+    Definition_8_Categorical_Schema:
+      ID: MMK-DEF-8
+      Def: "A categorical schema is a pair C=(G,~), where G is a graph and ~ is a categorical path equivalence relation on Path_G."
+      Ref: [MMK-DEF-5, MMK-DEF-7]
+
+    Definition_9_Schema_Category:
+      ID: MMK-DEF-9
+      Def: "Given a categorical schema C=(G,~), the schema category C has objects the vertices of G; morphisms equivalence classes of paths in G under ~; and composition given by path composition respecting ~."
+      Ref: MMK-DEF-8
+
+    Definition_10_Instance_Functor:
+      ID: MMK-DEF-10
+      Def: "For a schema category C=(G,~), an instance functor I: C -> Set maps objects c to sets I(c) and morphisms f: c -> d to functions I(f): I(c) -> I(d). It satisfies I(p)=I(q) whenever p ~ q."
+      Example: "See Figure 3(a) for a relational instance functor mapping schema to sets."
+      Ref: MMK-DEF-9
+
+  Functorial_Representation_of_Graph_and_Hierarchical_Data:
+    ID: MMK-GRAPH-HIER-01
+
+    Definition_11_Graph_as_Functor:
+      ID: MMK-DEF-11
+      Def: "A graph G can be represented as a functor G: Gcal -> Set, where Gcal is a two-object category with morphisms representing source and target functions: G(0)=E, G(1)=V, G(s)=src, G(t)=tgt."
+      Ref: [MMK-DEF-5, MMK-DEF-2]
+
+    Definition_12_Tree_as_Functor:
+      ID: MMK-DEF-12
+      Def: "A tree is a functor T: Tcal -> Set, where Tcal is a one-object category with a single non-trivial morphism p: 0 -> 0. The functor maps the single object to the set of tree nodes and p to the parent function, with T(p)(r)=r for the root r."
+      Ref: MMK-DEF-2
+
+Data_Transformations_Between_Functorial_Instances:
+  ID: MMK-TRANSFORM-01
+
+  Intuition:
+    ID: MMK-TRANSFORM-INTUITION-01
+    Def: "Transformations between data instances I1: C1 -> Set and I2: C2 -> Set are modeled using functors and natural transformations. Functoriality ensures structure preservation, while natural transformations handle data mapping."
+    Ref: MMK-DEF-3
+
+  Data_Transformation_as_Lifting_Problem:
+    ID: MMK-TRANSFORM-LIFTING-01
+
+    Definition_13_Data_and_Schema_Transformation:
+      ID: MMK-DEF-13
+      Def: "Given data instances I1: C1 -> Set and I2: C2 -> Set, a transformation from I1 to I2 is a Kan lift (Rift_{I2} I1: C1 -> C2, ε: I2 ∘ Rift_{I2} I1 ⇒ I1) where Rift_{I2} I1 is a full functor."
+      Example: "See Figure 4 for a transformation from a relational to a property graph instance."
+      Note: "Functoriality alone does not ensure meaningful transformations. Full functors are required to preserve the necessary structure for practical transformations."
+      Ref: [MMK-DEF-4, MMK-DEF-2]
+
+Conclusions_and_Future_Work:
+  ID: MMK-CONC-01
+  Def: "A category theoretical framework formalizes relational, graph, and hierarchical data models and their transformations. Kan lifts provide a promising basis for data and schema transformations."
+  Future_Work:
+    - "Formalizing query transformations."
+    - "Modeling temporal data within category theory to handle dynamic data changes."
+  Remark: "A solid theoretical foundation using category theory can unify disparate transformation frameworks and support the complexity of polystores and multi-model databases."

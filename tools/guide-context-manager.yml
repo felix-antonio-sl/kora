@@ -1,5 +1,5 @@
 _manifest:
-  urn: "urn:knowledge:koda:tools:guide-context-manager:3.0.0"
+  urn: "urn:kora:doc:guide-context-manager:3.0.0"
   federation:
     visibility: private
     license: "CC-BY-4.0"
@@ -11,9 +11,9 @@ _manifest:
     mirrors: []
   dependencies:
     requires:
-      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+      - urn: "urn:kora:kb:spec:1.0.0"
         reason: "KODA/Spec base"
-      - urn: "urn:knowledge:koda:core:transform:1.0.0"
+      - urn: "urn:kora:kb:transform:1.0.0"
         reason: "KODA transformation methodology"
   provenance:
     created_by: "FS"

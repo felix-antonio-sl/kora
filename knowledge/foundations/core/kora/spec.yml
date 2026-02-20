@@ -1,0 +1,192 @@
+# KORA/Spec Specification v2.0
+# Core format specification for RAG-optimized knowledge artifacts
+# Foundation layer of the Kora Ecosystem
+
+_manifest:
+  urn: "urn:kora:kb:spec:2.0.0"
+  federation:
+    visibility: public
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "2.0.0"
+    breaking_changes_from: "1.0.0"
+  resolution:
+    canonical_url: "file://knowledge/foundations/core/kora/spec.yml"
+  dependencies:
+    requires: [] # Root artifact - no dependencies
+  provenance:
+    created_by: "FS"
+    created_at: "2026-02-20"
+    note: "Evolución dogmática KORA 2.0: URNs simplificados, fin de la federación física"
+
+ID: KORA-SPEC-02
+Version: 2.0.0
+Status: Published
+Source: KODA-SPEC-01
+Ctx: Technical specification of KORA as YAML extension for knowledge engineering
+
+LLM_Parsing_Instructions:
+  ID: KORA-LLM-PARSER-02
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KORA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Purp: Define KORA/Spec as formal extension of YAML for RAG-optimized knowledge artifacts within the Monorepo.
+
+# 1. Definition
+
+KORA:
+  Def: YAML-compliant format using controlled keyword vocabulary for semantic markup.
+  Obj: Transform verbose human documents into dense, structured artifacts for LLM consumption via RAG.
+  Key_Characteristics:
+    - Zero information loss (absolute fidelity)
+    - Telegraphic brevity (maximum token density)
+    - Structural semantics (hierarchy, tables, lists carry meaning)
+    - Internal and cross-artifact referencing (URNs)
+
+# 2. YAML Extension Mechanism
+
+Extension_Model:
+  Base: YAML 1.2 specification
+  Constraint: All KORA documents must be valid YAML
+  Extension: KORA keywords used as YAML keys for semantic markup
+
+Schema:
+  Pattern: "Keyword: ContentValue"
+  Validation: Keys must be either Tier 1 (Core) or Tier 2 (Semantic).
+
+# 3. Keyword Strategy (Tiered Lexicon)
+
+Keyword_Strategy:
+  ID: KORA-KEYWORD-STRATEGY-01
+  Def: Dual-tier system combining rigid structural control with flexible semantic expression.
+
+  Tier_1_Core_Structural:
+    Def: Reserved keywords for logical structure, referencing, and execution.
+    Req: MUST be used for their specific purpose.
+    Keywords:
+      - ID (Unique Identifier)
+      - Ref (Internal cross-reference)
+      - XRef (Cross-artifact reference via URN)
+      - XRef_Required (Mandatory cross-artifact reference via URN)
+      - Def (Definition)
+      - Act (Action/instruction)
+      - Cond (Condition/gate)
+      - Res (Result)
+      - Req (Requirement)
+      - Ctx (Context)
+      - Ctx_Required (External reference - mandatory)
+      - Ctx_Optional (External reference - optional)
+      - Ex (Example)
+      - Purp (Purpose)
+      - Mssn (Mission)
+      - Obj (Objective)
+      - Proc (Process)
+      - Src (Source)
+      - Prohib (Prohibition)
+      - Warn (Warning)
+      - Just (Justification)
+      - Rec (Recommendation)
+
+  Tier_2_Semantic_Domain:
+    Def: Open vocabulary for domain-specific containers, attributes, and classifications.
+    Req:
+      - Must be concise (Snake_Case or CamelCase).
+      - Must NOT duplicate Tier 1 functionality.
+    Examples:
+      - Valid: '"Tacticas_Universales", "Risk_Factors"'
+      - Invalid: '"Definition_Formal" (Use Def)'
+
+# 4. Mandatory Document Structure
+
+Metadata_Block:
+  ID: KORA-STRUCT-METADATA
+  Purp: Document URN, version, and lifecycle.
+  Req: Must be first element in every KORA artifact.
+
+  Structure:
+    - `_manifest`: URN, federation, compatibility, dependencies, provenance
+    - `ID`: Local unique identifier
+    - `Version`: Semantic version
+    - `Status`: Lifecycle state
+
+Spec_LLM_Parsing_Instructions:
+  ID: KORA-STRUCT-INSTRUCTIONS
+  Purp: Provide rules for LLM consumption with perfect fidelity (Meat vs Fat).
+  Req: Mandatory block immediately following Metadata.
+
+# 5. Structural Semantics
+
+Structure_Principles:
+  ID: KORA-PRINCIPLE-STRUCTURE
+  Def: Structural elements are informational meat, not presentation.
+  Req: Preserve YAML hierarchy, unique identifiers, cross-references.
+
+# 5.1 Kora URN Referencing
+
+Cross_Artifact_Referencing:
+  ID: KORA-CROSS-REF-02
+  Purp: Semantic linking between KORA artifacts in the monorepo.
+  
+  Format:
+    Pattern: "urn:{namespace}:{type}:{id}[:{version}][#{fragment}]"
+    Components:
+      - namespace: Origin of knowledge (e.g., kora, gn, tde, fxsl, orko)
+      - type: Entity type (kb, agent, skill, ref)
+      - id: Kebab-case identifier
+      - version: Optional semantic version (defaults to latest)
+      - fragment: Optional YAML ID anchor
+    Examples:
+      - "urn:kora:kb:spec:2.0.0"
+      - "urn:gn:agent:goreologo:2.4.0"
+      - "urn:fxsl:ref:ag-manual#ID-SEC-1"
+
+  Resolution_Chain:
+    Steps:
+      - "1. Parse URN"
+      - "2. Consult catalog_master_kora.yml (or use CLI `kora resolve`)"
+      - "3. Read absolute path in monorepo"
+
+# 6. Core Principles
+
+Principles:
+  - Principle: Absolute Fidelity
+    ID: KORA-PRINCIPLE-FIDELITY
+    Def: Zero loss of informational meat during transformation.
+    Prohib: Summarization or inference.
+    
+  - Principle: Single Source of Truth
+    ID: KORA-PRINCIPLE-SSOT
+    Def: Each concept defined once with unique ID, referenced via Ref/XRef.
+    
+  - Principle: Token Economy (LLM-First Design)
+    ID: KORA-PRINCIPLE-TOKEN-ECONOMY
+    Def: KORA artifacts are for LLM consumption, NOT human readability.
+    Req: Eliminate verbal fat.
+    
+  - Principle: Language Invariance
+    ID: KORA-PRINCIPLE-LANGUAGE
+    Def: Keywords in English, content in original language.
+
+# 7. Validation Schema
+
+Validation:
+  ID: KORA-VALIDATION-02
+  Purp: Criteria for valid KORA artifact.
+  Rules:
+    - Valid YAML 1.2
+    - Keywords exclusively from lexicon
+    - Unique IDs
+    - Ref must exist in local document
+    - XRef must resolve against `catalog_master_kora.yml`
