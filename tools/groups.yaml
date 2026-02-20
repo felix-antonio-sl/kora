@@ -1,0 +1,526 @@
+_manifest:
+  urn: "urn:knowledge:koda:tools:groups:1.0.0"
+  federation:
+    visibility: internal
+    license: "Proprietary"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/moltbot/docs/concepts/kb_groups.yaml"
+    mirrors: []
+  provenance:
+    created_by: "Moltbot Docs"
+    created_at: "2026-01-29"
+    last_modified_by: "Codex"
+    last_modified_at: "2026-01-29"
+    signature: null
+
+ID: MOLTBOT-KB-CONCEPTS-GROUPS-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: Moltbot Docs
+Human-Editor: Codex
+Model-Collaborator: OpenAI-Codex
+Creation-Date: '2026-01-29'
+Modification-Date: '2026-01-29'
+Ctx: 'Moltbot concepts: groups'
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |-
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+Purp: Groups
+Src:
+- File: output/concepts/groups.md
+- File: output/concepts/group-messages.md
+- File: output/concepts/typing-indicators.md
+- File: output/concepts/presence.md
+Sections:
+- ID: CONCEPTS-GROUPS
+  Src:
+    File: output/concepts/groups.md
+    URL: https://docs.molt.bot/concepts/groups
+  Facts: |-
+    H1: Groups - Moltbot
+    H1: Groups
+    Groups
+    Moltbot treats group chats consistently across surfaces: WhatsApp, Telegram, Discord, Slack, Signal, iMessage, Microsoft Teams.
+    Beginner intro (2 minutes)
+    Moltbot "lives" on your own messaging accounts. There is no separate WhatsApp bot user. If **you** are in a group, Moltbot can see that group and respond there. Default behavior:
+    - Groups are restricted (`groupPolicy: "allowlist"`).
+    - Replies require a mention unless you explicitly disable mention gating.
+    Translation: allowlisted senders can trigger Moltbot by mentioning it.
+    > TL;DR > >   * **DM access** is controlled by `*.allowFrom`. >   * **Group access** is controlled by `*.groupPolicy` \+ allowlists (`*.groups`, `*.groupAllowFrom`). >   * **Reply triggering** is controlled by mention gating (`requireMention`, `/activation`). >
+    Quick flow (what happens to a group message):
+    If you want...
+    Session keys
+    - Group sessions use `agent:<agentId>:<channel>:group:<id>` session keys (rooms/channels use `agent:<agentId>:<channel>:channel:<id>`).
+    - Telegram forum topics add `:topic:<threadId>` to the group id so each topic has its own session.
+    - Direct chats use the main session (or per-sender if configured).
+    - Heartbeats are skipped for group sessions.
+    Pattern: personal DMs + public groups (single agent)
+    Yes - this works well if your "personal" traffic is **DMs** and your "public" traffic is **groups**. Why: in single-agent mode, DMs typically land in the **main** session key (`agent:main:main`), while groups always use **non-main** session keys (`agent:main:<channel>:group:<id>`). If you enable sandboxing with `mode: "non-main"`, those group sessions run in Docker while your main DM session stays on-host. This gives you one agent "brain" (shared workspace + memory), but two execution postures:
+    - **DMs** : full tools (host)
+    - **Groups** : sandbox + restricted tools (Docker)
+    > If you need truly separate workspaces/personas ("personal" and "public" must never mix), use a second agent + bindings. See [Multi-Agent Routing](/concepts/multi-agent).
+    Example (DMs on host, groups sandboxed + messaging-only tools):
+    Want "groups can only see folder X" instead of "no host access"? Keep `workspaceAccess: "none"` and mount only allowlisted paths into the sandbox:
+    Related:
+    - Configuration keys and defaults: [Gateway configuration](/gateway/configuration#agentsdefaultssandbox)
+    - Debugging why a tool is blocked: [Sandbox vs Tool Policy vs Elevated](/gateway/sandbox-vs-tool-policy-vs-elevated)
+    - Bind mounts details: [Sandboxing](/gateway/sandboxing#custom-bind-mounts)
+    Display labels
+    - UI labels use `displayName` when available, formatted as `<channel>:<token>`.
+    - `#room` is reserved for rooms/channels; group chats use `g-<slug>` (lowercase, spaces -> `-`, keep `#@+._-`).
+    Group policy
+    Control how group/room messages are handled per channel:
+    Notes:
+    - `groupPolicy` is separate from mention-gating (which requires @mentions).
+    - WhatsApp/Telegram/Signal/iMessage/Microsoft Teams: use `groupAllowFrom` (fallback: explicit `allowFrom`).
+    - Discord: allowlist uses `channels.discord.guilds.<id>.channels`.
+    - Slack: allowlist uses `channels.slack.channels`.
+    - Matrix: allowlist uses `channels.matrix.groups` (room IDs, aliases, or names). Use `channels.matrix.groupAllowFrom` to restrict senders; per-room `users` allowlists are also supported.
+    - Group DMs are controlled separately (`channels.discord.dm.*`, `channels.slack.dm.*`).
+    - Telegram allowlist can match user IDs (`"123456789"`, `"telegram:123456789"`, `"tg:123456789"`) or usernames (`"@alice"` or `"alice"`); prefixes are case-insensitive.
+    - Default is `groupPolicy: "allowlist"`; if your group allowlist is empty, group messages are blocked.
+    Quick mental model (evaluation order for group messages):
+    - `groupPolicy` (open/disabled/allowlist)
+    - group allowlists (`*.groups`, `*.groupAllowFrom`, channel-specific allowlist)
+    - mention gating (`requireMention`, `/activation`)
+    Mention gating (default)
+    Group messages require a mention unless overridden per group. Defaults live per subsystem under `*.groups."*"`. Replying to a bot message counts as an implicit mention (when the channel supports reply metadata). This applies to Telegram, WhatsApp, Slack, Discord, and Microsoft Teams.
+    Notes:
+    - `mentionPatterns` are case-insensitive regexes.
+    - Surfaces that provide explicit mentions still pass; patterns are a fallback.
+    - Per-agent override: `agents.list[].groupChat.mentionPatterns` (useful when multiple agents share a group).
+    - Mention gating is only enforced when mention detection is possible (native mentions or `mentionPatterns` are configured).
+    - Discord defaults live in `channels.discord.guilds."*"` (overridable per guild/channel).
+    - Group history context is wrapped uniformly across channels and is **pending-only** (messages skipped due to mention gating); use `messages.groupChat.historyLimit` for the global default and `channels.<channel>.historyLimit` (or `channels.<channel>.accounts.*.historyLimit`) for overrides. Set `0` to disable.
+    Group/channel tool restrictions (optional)
+    Some channel configs support restricting which tools are available **inside a specific group/room/channel**.
+    - `tools`: allow/deny tools for the whole group.
+    - `toolsBySender`: per-sender overrides within the group (keys are sender IDs/usernames/emails/phone numbers depending on the channel). Use `"*"` as a wildcard.
+    Resolution order (most specific wins):
+    - group/channel `toolsBySender` match
+    - group/channel `tools`
+    - default (`"*"`) `toolsBySender` match
+    - default (`"*"`) `tools`
+    Example (Telegram):
+    Notes:
+    - Group/channel tool restrictions are applied in addition to global/agent tool policy (deny still wins).
+    - Some channels use different nesting for rooms/channels (e.g., Discord `guilds.*.channels.*`, Slack `channels.*`, MS Teams `teams.*.channels.*`).
+    Group allowlists
+    When `channels.whatsapp.groups`, `channels.telegram.groups`, or `channels.imessage.groups` is configured, the keys act as a group allowlist. Use `"*"` to allow all groups while still setting default mention behavior. Common intents (copy/paste):
+    - Disable all group replies
+    - Allow only specific groups (WhatsApp)
+    - Allow all groups but require mention (explicit)
+    - Only the owner can trigger in groups (WhatsApp)
+    Activation (owner-only)
+    Group owners can toggle per-group activation:
+    - `/activation mention`
+    - `/activation always`
+    Owner is determined by `channels.whatsapp.allowFrom` (or the bot's self E.164 when unset). Send the command as a standalone message. Other surfaces currently ignore `/activation`.
+    Context fields
+    Group inbound payloads set:
+    - `ChatType=group`
+    - `GroupSubject` (if known)
+    - `GroupMembers` (if known)
+    - `WasMentioned` (mention gating result)
+    - Telegram forum topics also include `MessageThreadId` and `IsForum`.
+    The agent system prompt includes a group intro on the first turn of a new group session. It reminds the model to respond like a human, avoid Markdown tables, and avoid typing literal `\n` sequences.
+    iMessage specifics
+    - Prefer `chat_id:<id>` when routing or allowlisting.
+    - List chats: `imsg chats --limit 20`.
+    - Group replies always go back to the same `chat_id`.
+    WhatsApp specifics
+    See [Group messages](/concepts/group-messages) for WhatsApp-only behavior (history injection, mention handling details).
+  Tables: |-
+    Goal| What to set
+    ---|---
+    Allow all groups but only reply on @mentions| `groups: { "*": { requireMention: true } }`
+    Disable all group replies| `groupPolicy: "disabled"`
+    Only specific groups| `groups: { "<group-id>": { ... } }` (no `"*"` key)
+    Only you can trigger in groups| `groupPolicy: "allowlist"`, `groupAllowFrom: ["+1555..."]`
+
+    Policy| Behavior
+    ---|---
+    `"open"`| Groups bypass allowlists; mention-gating still applies.
+    `"disabled"`| Block all group messages entirely.
+    `"allowlist"`| Only allow groups/rooms that match the configured allowlist.
+  Ex:
+  - ID: EX-CONCEPTS-GROUPS-98E8DAFADE
+    Ctx: Copy
+    Body: |-
+      groupPolicy? disabled -> drop
+      groupPolicy? allowlist -> group allowed? no -> drop
+      requireMention? yes -> mentioned? no -> store for context only
+      otherwise -> reply
+  - ID: EX-CONCEPTS-GROUPS-E2A027C106
+    Ctx: Copy
+    Body: |-
+      {
+      agents: {
+      defaults: {
+      sandbox: {
+      mode: "non-main", // groups/channels are non-main -> sandboxed
+      scope: "session", // strongest isolation (one container per group/channel)
+      workspaceAccess: "none"
+      }
+      }
+      },
+      tools: {
+      sandbox: {
+      tools: {
+      // If allow is non-empty, everything else is blocked (deny still wins).
+      allow: ["group:messaging", "group:sessions"],
+      deny: ["group:runtime", "group:fs", "group:ui", "nodes", "cron", "gateway"]
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-DB43C929DE
+    Ctx: Copy
+    Body: |-
+      {
+      agents: {
+      defaults: {
+      sandbox: {
+      mode: "non-main",
+      scope: "session",
+      workspaceAccess: "none",
+      docker: {
+      binds: [
+      // hostPath:containerPath:mode
+      "~/FriendsShared:/data:ro"
+      ]
+      }
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-A5D66A4CEE
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      whatsapp: {
+      groupPolicy: "disabled", // "open" | "disabled" | "allowlist"
+      groupAllowFrom: ["+15551234567"]
+      },
+      telegram: {
+      groupPolicy: "disabled",
+      groupAllowFrom: ["123456789", "@username"]
+      },
+      signal: {
+      groupPolicy: "disabled",
+      groupAllowFrom: ["+15551234567"]
+      },
+      imessage: {
+      groupPolicy: "disabled",
+      groupAllowFrom: ["chat_id:123"]
+      },
+      msteams: {
+      groupPolicy: "disabled",
+      groupAllowFrom: ["[[email protected]](/cdn-cgi/l/email-protection)"]
+      },
+      discord: {
+      groupPolicy: "allowlist",
+      guilds: {
+      "GUILD_ID": { channels: { help: { allow: true } } }
+      }
+      },
+      slack: {
+      groupPolicy: "allowlist",
+      channels: { "#general": { allow: true } }
+      },
+      matrix: {
+      groupPolicy: "allowlist",
+      groupAllowFrom: ["@owner:example.org"],
+      groups: {
+      "!roomId:example.org": { allow: true },
+      "#alias:example.org": { allow: true }
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-460B2F0884
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      whatsapp: {
+      groups: {
+      "*": { requireMention: true },
+      "[[email protected]](/cdn-cgi/l/email-protection)": { requireMention: false }
+      }
+      },
+      telegram: {
+      groups: {
+      "*": { requireMention: true },
+      "123456789": { requireMention: false }
+      }
+      },
+      imessage: {
+      groups: {
+      "*": { requireMention: true },
+      "123": { requireMention: false }
+      }
+      }
+      },
+      agents: {
+      list: [
+      {
+      id: "main",
+      groupChat: {
+      mentionPatterns: ["@clawd", "moltbot", "\\+15555550123"],
+      historyLimit: 50
+      }
+      }
+      ]
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-247606FA0E
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      telegram: {
+      groups: {
+      "*": { tools: { deny: ["exec"] } },
+      "-1001234567890": {
+      tools: { deny: ["exec", "read", "write"] },
+      toolsBySender: {
+      "123456789": { alsoAllow: ["exec"] }
+      }
+      }
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-21D67BFFF2
+    Ctx: Copy
+    Body: |-
+      {
+      channels: { whatsapp: { groupPolicy: "disabled" } }
+      }
+  - ID: EX-CONCEPTS-GROUPS-6BD42A217D
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      whatsapp: {
+      groups: {
+      "[[email protected]](/cdn-cgi/l/email-protection)": { requireMention: true },
+      "[[email protected]](/cdn-cgi/l/email-protection)": { requireMention: false }
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-BDBCF4ED89
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      whatsapp: {
+      groups: { "*": { requireMention: true } }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-GROUPS-46E9EB42DD
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      whatsapp: {
+      groupPolicy: "allowlist",
+      groupAllowFrom: ["+15551234567"],
+      groups: { "*": { requireMention: true } }
+      }
+      }
+      }
+- ID: CONCEPTS-GROUP-MESSAGES
+  Src:
+    File: output/concepts/group-messages.md
+    URL: https://docs.molt.bot/concepts/group-messages
+  Facts: |-
+    H1: Group messages - Moltbot
+    H1: Group messages
+    Group messages (WhatsApp web channel)
+    Goal: let Clawd sit in WhatsApp groups, wake up only when pinged, and keep that thread separate from the personal DM session. Note: `agents.list[].groupChat.mentionPatterns` is now used by Telegram/Discord/Slack/iMessage as well; this doc focuses on WhatsApp-specific behavior. For multi-agent setups, set `agents.list[].groupChat.mentionPatterns` per agent (or use `messages.groupChat.mentionPatterns` as a global fallback).
+    What's implemented (2025-12-03)
+    - Activation modes: `mention` (default) or `always`. `mention` requires a ping (real WhatsApp @-mentions via `mentionedJids`, regex patterns, or the bot's E.164 anywhere in the text). `always` wakes the agent on every message but it should reply only when it can add meaningful value; otherwise it returns the silent token `NO_REPLY`. Defaults can be set in config (`channels.whatsapp.groups`) and overridden per group via `/activation`. When `channels.whatsapp.groups` is set, it also acts as a group allowlist (include `"*"` to allow all).
+    - Group policy: `channels.whatsapp.groupPolicy` controls whether group messages are accepted (`open|disabled|allowlist`). `allowlist` uses `channels.whatsapp.groupAllowFrom` (fallback: explicit `channels.whatsapp.allowFrom`). Default is `allowlist` (blocked until you add senders).
+    - Per-group sessions: session keys look like `agent:<agentId>:whatsapp:group:<jid>` so commands such as `/verbose on` or `/think high` (sent as standalone messages) are scoped to that group; personal DM state is untouched. Heartbeats are skipped for group threads.
+    - Context injection: **pending-only** group messages (default 50) that _did not_ trigger a run are prefixed under `[Chat messages since your last reply - for context]`, with the triggering line under `[Current message - respond to this]`. Messages already in the session are not re-injected.
+    - Sender surfacing: every group batch now ends with `[from: Sender Name (+E164)]` so Pi knows who is speaking.
+    - Ephemeral/view-once: we unwrap those before extracting text/mentions, so pings inside them still trigger.
+    - Group system prompt: on the first turn of a group session (and whenever `/activation` changes the mode) we inject a short blurb into the system prompt like `You are replying inside the WhatsApp group "<subject>". Group members: Alice (+44...), Bob (+43...), ... Activation: trigger-only ... Address the specific sender noted in the message context.` If metadata isn't available we still tell the agent it's a group chat.
+    Config example (WhatsApp)
+    Add a `groupChat` block to `~/.clawdbot/moltbot.json` so display-name pings work even when WhatsApp strips the visual `@` in the text body:
+    Notes:
+    - The regexes are case-insensitive; they cover a display-name ping like `@moltbot` and the raw number with or without `+`/spaces.
+    - WhatsApp still sends canonical mentions via `mentionedJids` when someone taps the contact, so the number fallback is rarely needed but is a useful safety net.
+    Activation command (owner-only)
+    Use the group chat command:
+    - `/activation mention`
+    - `/activation always`
+    Only the owner number (from `channels.whatsapp.allowFrom`, or the bot's own E.164 when unset) can change this. Send `/status` as a standalone message in the group to see the current activation mode.
+    How to use
+    - Add your WhatsApp account (the one running Moltbot) to the group.
+    - Say `@moltbot ...` (or include the number). Only allowlisted senders can trigger it unless you set `groupPolicy: "open"`.
+    - The agent prompt will include recent group context plus the trailing `[from: ...]` marker so it can address the right person.
+    - Session-level directives (`/verbose on`, `/think high`, `/new` or `/reset`, `/compact`) apply only to that group's session; send them as standalone messages so they register. Your personal DM session remains independent.
+    Testing / verification
+    - Manual smoke:
+    - Send an `@clawd` ping in the group and confirm a reply that references the sender name.
+    - Send a second ping and verify the history block is included then cleared on the next turn.
+    - Check gateway logs (run with `--verbose`) to see `inbound web message` entries showing `from: <groupJid>` and the `[from: ...]` suffix.
+    Known considerations
+    - Heartbeats are intentionally skipped for groups to avoid noisy broadcasts.
+    - Echo suppression uses the combined batch string; if you send identical text twice without mentions, only the first will get a response.
+    - Session store entries will appear as `agent:<agentId>:whatsapp:group:<jid>` in the session store (`~/.clawdbot/agents/<agentId>/sessions/sessions.json` by default); a missing entry just means the group hasn't triggered a run yet.
+    - Typing indicators in groups follow `agents.defaults.typingMode` (default: `message` when unmentioned).
+  Ex:
+  - ID: EX-CONCEPTS-GROUP-MESSAGES-F54CD11DE1
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      whatsapp: {
+      groups: {
+      "*": { requireMention: true }
+      }
+      }
+      },
+      agents: {
+      list: [
+      {
+      id: "main",
+      groupChat: {
+      historyLimit: 50,
+      mentionPatterns: [
+      "@?moltbot",
+      "\\+?15555550123"
+      ]
+      }
+      }
+      ]
+      }
+      }
+- ID: CONCEPTS-TYPING-INDICATORS
+  Src:
+    File: output/concepts/typing-indicators.md
+    URL: https://docs.molt.bot/concepts/typing-indicators
+  Facts: |-
+    H1: Typing indicators - Moltbot
+    H1: Typing indicators
+    Typing indicators
+    Typing indicators are sent to the chat channel while a run is active. Use `agents.defaults.typingMode` to control **when** typing starts and `typingIntervalSeconds` to control **how often** it refreshes.
+    Defaults
+    When `agents.defaults.typingMode` is **unset** , Moltbot keeps the legacy behavior:
+    - **Direct chats** : typing starts immediately once the model loop begins.
+    - **Group chats with a mention** : typing starts immediately.
+    - **Group chats without a mention** : typing starts only when message text begins streaming.
+    - **Heartbeat runs** : typing is disabled.
+    Modes
+    Set `agents.defaults.typingMode` to one of:
+    - `never` - no typing indicator, ever.
+    - `instant` - start typing **as soon as the model loop begins** , even if the run later returns only the silent reply token.
+    - `thinking` - start typing on the **first reasoning delta** (requires `reasoningLevel: "stream"` for the run).
+    - `message` - start typing on the **first non-silent text delta** (ignores the `NO_REPLY` silent token).
+    Order of "how early it fires": `never` -> `message` -> `thinking` -> `instant`
+    Configuration
+    You can override mode or cadence per session:
+    Notes
+    - `message` mode won't show typing for silent-only replies (e.g. the `NO_REPLY` token used to suppress output).
+    - `thinking` only fires if the run streams reasoning (`reasoningLevel: "stream"`). If the model doesn't emit reasoning deltas, typing won't start.
+    - Heartbeats never show typing, regardless of mode.
+    - `typingIntervalSeconds` controls the **refresh cadence** , not the start time. The default is 6 seconds.
+  Ex:
+  - ID: EX-CONCEPTS-TYPING-INDICATORS-3FC17FD91A
+    Ctx: Copy
+    Body: |-
+      {
+      agent: {
+      typingMode: "thinking",
+      typingIntervalSeconds: 6
+      }
+      }
+  - ID: EX-CONCEPTS-TYPING-INDICATORS-50F581F7C5
+    Ctx: Copy
+    Body: |-
+      {
+      session: {
+      typingMode: "message",
+      typingIntervalSeconds: 4
+      }
+      }
+- ID: CONCEPTS-PRESENCE
+  Src:
+    File: output/concepts/presence.md
+    URL: https://docs.molt.bot/concepts/presence
+  Facts: |-
+    H1: Presence - Moltbot
+    H1: Presence
+    Presence
+    Moltbot "presence" is a lightweight, besteffort view of:
+    - the **Gateway** itself, and
+    - **clients connected to the Gateway** (mac app, WebChat, CLI, etc.)
+    Presence is used primarily to render the macOS app's **Instances** tab and to provide quick operator visibility.
+    Presence fields (what shows up)
+    Presence entries are structured objects with fields like:
+    - `instanceId` (optional but strongly recommended): stable client identity (usually `connect.client.instanceId`)
+    - `host`: humanfriendly host name
+    - `ip`: besteffort IP address
+    - `version`: client version string
+    - `deviceFamily` / `modelIdentifier`: hardware hints
+    - `mode`: `ui`, `webchat`, `cli`, `backend`, `probe`, `test`, `node`, ...
+    - `lastInputSeconds`: "seconds since last user input" (if known)
+    - `reason`: `self`, `connect`, `node-connected`, `periodic`, ...
+    - `ts`: last update timestamp (ms since epoch)
+    Producers (where presence comes from)
+    Presence entries are produced by multiple sources and **merged**.
+    1) Gateway self entry
+    The Gateway always seeds a "self" entry at startup so UIs show the gateway host even before any clients connect.
+    2) WebSocket connect
+    Every WS client begins with a `connect` request. On successful handshake the Gateway upserts a presence entry for that connection.
+    Why oneoff CLI commands don't show up
+    The CLI often connects for short, oneoff commands. To avoid spamming the Instances list, `client.mode === "cli"` is **not** turned into a presence entry.
+    3) `system-event` beacons
+    Clients can send richer periodic beacons via the `system-event` method. The mac app uses this to report host name, IP, and `lastInputSeconds`.
+    4) Node connects (role: node)
+    When a node connects over the Gateway WebSocket with `role: node`, the Gateway upserts a presence entry for that node (same flow as other WS clients).
+    Merge + dedupe rules (why `instanceId` matters)
+    Presence entries are stored in a single inmemory map:
+    - Entries are keyed by a **presence key**.
+    - The best key is a stable `instanceId` (from `connect.client.instanceId`) that survives restarts.
+    - Keys are caseinsensitive.
+    If a client reconnects without a stable `instanceId`, it may show up as a **duplicate** row.
+    TTL and bounded size
+    Presence is intentionally ephemeral:
+    - **TTL:** entries older than 5 minutes are pruned
+    - **Max entries:** 200 (oldest dropped first)
+    This keeps the list fresh and avoids unbounded memory growth.
+    Remote/tunnel caveat (loopback IPs)
+    When a client connects over an SSH tunnel / local port forward, the Gateway may see the remote address as `127.0.0.1`. To avoid overwriting a good clientreported IP, loopback remote addresses are ignored.
+    Consumers
+    macOS Instances tab
+    The macOS app renders the output of `system-presence` and applies a small status indicator (Active/Idle/Stale) based on the age of the last update.
+    Debugging tips
+    - To see the raw list, call `system-presence` against the Gateway.
+    - If you see duplicates:
+    - confirm clients send a stable `client.instanceId` in the handshake
+    - confirm periodic beacons use the same `instanceId`
+    - check whether the connectionderived entry is missing `instanceId` (duplicates are expected)

@@ -1,0 +1,434 @@
+_manifest:
+  urn: "urn:knowledge:koda:tools:messaging:1.0.0"
+  federation:
+    visibility: internal
+    license: "Proprietary"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/moltbot/docs/concepts/kb_messaging.yaml"
+    mirrors: []
+  provenance:
+    created_by: "Moltbot Docs"
+    created_at: "2026-01-29"
+    last_modified_by: "Codex"
+    last_modified_at: "2026-01-29"
+    signature: null
+
+ID: MOLTBOT-KB-CONCEPTS-MESSAGING-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: Moltbot Docs
+Human-Editor: Codex
+Model-Collaborator: OpenAI-Codex
+Creation-Date: '2026-01-29'
+Modification-Date: '2026-01-29'
+Ctx: 'Moltbot concepts: messaging'
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |-
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+Purp: Messaging (messages/streaming/queue/retry/markdown)
+Src:
+- File: output/concepts/messages.md
+- File: output/concepts/streaming.md
+- File: output/concepts/queue.md
+- File: output/concepts/retry.md
+- File: output/concepts/markdown-formatting.md
+Sections:
+- ID: CONCEPTS-MESSAGES
+  Src:
+    File: output/concepts/messages.md
+    URL: https://docs.molt.bot/concepts/messages
+  Facts: |-
+    H1: Messages - Moltbot
+    H1: Messages
+    Messages
+    This page ties together how Moltbot handles inbound messages, sessions, queueing, streaming, and reasoning visibility.
+    Message flow (high level)
+    Key knobs live in configuration:
+    - `messages.*` for prefixes, queueing, and group behavior.
+    - `agents.defaults.*` for block streaming and chunking defaults.
+    - Channel overrides (`channels.whatsapp.*`, `channels.telegram.*`, etc.) for caps and streaming toggles.
+    See [Configuration](/gateway/configuration) for full schema.
+    Inbound dedupe
+    Channels can redeliver the same message after reconnects. Moltbot keeps a short-lived cache keyed by channel/account/peer/session/message id so duplicate deliveries do not trigger another agent run.
+    Inbound debouncing
+    Rapid consecutive messages from the **same sender** can be batched into a single agent turn via `messages.inbound`. Debouncing is scoped per channel + conversation and uses the most recent message for reply threading/IDs. Config (global default + per-channel overrides):
+    Notes:
+    - Debounce applies to **text-only** messages; media/attachments flush immediately.
+    - Control commands bypass debouncing so they remain standalone.
+    Sessions and devices
+    Sessions are owned by the gateway, not by clients.
+    - Direct chats collapse into the agent main session key.
+    - Groups/channels get their own session keys.
+    - The session store and transcripts live on the gateway host.
+    Multiple devices/channels can map to the same session, but history is not fully synced back to every client. Recommendation: use one primary device for long conversations to avoid divergent context. The Control UI and TUI always show the gateway-backed session transcript, so they are the source of truth. Details: [Session management](/concepts/session).
+    Inbound bodies and history context
+    Moltbot separates the **prompt body** from the **command body** :
+    - `Body`: prompt text sent to the agent. This may include channel envelopes and optional history wrappers.
+    - `CommandBody`: raw user text for directive/command parsing.
+    - `RawBody`: legacy alias for `CommandBody` (kept for compatibility).
+    When a channel supplies history, it uses a shared wrapper:
+    - `[Chat messages since your last reply - for context]`
+    - `[Current message - respond to this]`
+    For **non-direct chats** (groups/channels/rooms), the **current message body** is prefixed with the sender label (same style used for history entries). This keeps real-time and queued/history messages consistent in the agent prompt. History buffers are **pending-only** : they include group messages that did _not_ trigger a run (for example, mention-gated messages) and **exclude** messages already in the session transcript. Directive stripping only applies to the **current message** section so history remains intact. Channels that wrap history should set `CommandBody` (or `RawBody`) to the original message text and keep `Body` as the combined prompt. History buffers are configurable via `messages.groupChat.historyLimit` (global default) and per-channel overrides like `channels.slack.historyLimit` or `channels.telegram.accounts.<id>.historyLimit` (set `0` to disable).
+    Queueing and followups
+    If a run is already active, inbound messages can be queued, steered into the current run, or collected for a followup turn.
+    - Configure via `messages.queue` (and `messages.queue.byChannel`).
+    - Modes: `interrupt`, `steer`, `followup`, `collect`, plus backlog variants.
+    Details: [Queueing](/concepts/queue).
+    Streaming, chunking, and batching
+    Block streaming sends partial replies as the model produces text blocks. Chunking respects channel text limits and avoids splitting fenced code. Key settings:
+    - `agents.defaults.blockStreamingDefault` (`on|off`, default off)
+    - `agents.defaults.blockStreamingBreak` (`text_end|message_end`)
+    - `agents.defaults.blockStreamingChunk` (`minChars|maxChars|breakPreference`)
+    - `agents.defaults.blockStreamingCoalesce` (idle-based batching)
+    - `agents.defaults.humanDelay` (human-like pause between block replies)
+    - Channel overrides: `*.blockStreaming` and `*.blockStreamingCoalesce` (non-Telegram channels require explicit `*.blockStreaming: true`)
+    Details: [Streaming + chunking](/concepts/streaming).
+    Reasoning visibility and tokens
+    Moltbot can expose or hide model reasoning:
+    - `/reasoning on|off|stream` controls visibility.
+    - Reasoning content still counts toward token usage when produced by the model.
+    - Telegram supports reasoning stream into the draft bubble.
+    Details: [Thinking + reasoning directives](/tools/thinking) and [Token use](/token-use).
+    Prefixes, threading, and replies
+    Outbound message formatting is centralized in `messages`:
+    - `messages.responsePrefix` (outbound prefix) and `channels.whatsapp.messagePrefix` (WhatsApp inbound prefix)
+    - Reply threading via `replyToMode` and per-channel defaults
+    Details: [Configuration](/gateway/configuration#messages) and channel docs.
+  Ex:
+  - ID: EX-CONCEPTS-MESSAGES-D5EB5F3C1D
+    Ctx: Copy
+    Body: |-
+      Inbound message
+      -> routing/bindings -> session key
+      -> queue (if a run is active)
+      -> agent run (streaming + tools)
+      -> outbound replies (channel limits + chunking)
+  - ID: EX-CONCEPTS-MESSAGES-59E78B5195
+    Ctx: Copy
+    Body: |-
+      {
+      messages: {
+      inbound: {
+      debounceMs: 2000,
+      byChannel: {
+      whatsapp: 5000,
+      slack: 1500,
+      discord: 1500
+      }
+      }
+      }
+      }
+- ID: CONCEPTS-STREAMING
+  Src:
+    File: output/concepts/streaming.md
+    URL: https://docs.molt.bot/concepts/streaming
+  Facts: |-
+    H1: Streaming - Moltbot
+    H1: Streaming
+    Streaming + chunking
+    Moltbot has two separate "streaming" layers:
+    - **Block streaming (channels):** emit completed **blocks** as the assistant writes. These are normal channel messages (not token deltas).
+    - **Token-ish streaming (Telegram only):** update a **draft bubble** with partial text while generating; final message is sent at the end.
+    There is **no real token streaming** to external channel messages today. Telegram draft streaming is the only partial-stream surface.
+    Block streaming (channel messages)
+    Block streaming sends assistant output in coarse chunks as it becomes available.
+    Legend:
+    - `text_delta/events`: model stream events (may be sparse for non-streaming models).
+    - `chunker`: `EmbeddedBlockChunker` applying min/max bounds + break preference.
+    - `channel send`: actual outbound messages (block replies).
+    **Controls:**
+    - `agents.defaults.blockStreamingDefault`: `"on"`/`"off"` (default off).
+    - Channel overrides: `*.blockStreaming` (and per-account variants) to force `"on"`/`"off"` per channel.
+    - `agents.defaults.blockStreamingBreak`: `"text_end"` or `"message_end"`.
+    - `agents.defaults.blockStreamingChunk`: `{ minChars, maxChars, breakPreference? }`.
+    - `agents.defaults.blockStreamingCoalesce`: `{ minChars?, maxChars?, idleMs? }` (merge streamed blocks before send).
+    - Channel hard cap: `*.textChunkLimit` (e.g., `channels.whatsapp.textChunkLimit`).
+    - Channel chunk mode: `*.chunkMode` (`length` default, `newline` splits on blank lines (paragraph boundaries) before length chunking).
+    - Discord soft cap: `channels.discord.maxLinesPerMessage` (default 17) splits tall replies to avoid UI clipping.
+    **Boundary semantics:**
+    - `text_end`: stream blocks as soon as chunker emits; flush on each `text_end`.
+    - `message_end`: wait until assistant message finishes, then flush buffered output.
+    `message_end` still uses the chunker if the buffered text exceeds `maxChars`, so it can emit multiple chunks at the end.
+    Chunking algorithm (low/high bounds)
+    Block chunking is implemented by `EmbeddedBlockChunker`:
+    - **Low bound:** don't emit until buffer >= `minChars` (unless forced).
+    - **High bound:** prefer splits before `maxChars`; if forced, split at `maxChars`.
+    - **Break preference:** `paragraph` -> `newline` -> `sentence` -> `whitespace` -> hard break.
+    - **Code fences:** never split inside fences; when forced at `maxChars`, close + reopen the fence to keep Markdown valid.
+    `maxChars` is clamped to the channel `textChunkLimit`, so you can't exceed per-channel caps.
+    Coalescing (merge streamed blocks)
+    When block streaming is enabled, Moltbot can **merge consecutive block chunks** before sending them out. This reduces "single-line spam" while still providing progressive output.
+    - Coalescing waits for **idle gaps** (`idleMs`) before flushing.
+    - Buffers are capped by `maxChars` and will flush if they exceed it.
+    - `minChars` prevents tiny fragments from sending until enough text accumulates (final flush always sends remaining text).
+    - Joiner is derived from `blockStreamingChunk.breakPreference` (`paragraph` -> `\n\n`, `newline` -> `\n`, `sentence` -> space).
+    - Channel overrides are available via `*.blockStreamingCoalesce` (including per-account configs).
+    - Default coalesce `minChars` is bumped to 1500 for Signal/Slack/Discord unless overridden.
+    Human-like pacing between blocks
+    When block streaming is enabled, you can add a **randomized pause** between block replies (after the first block). This makes multi-bubble responses feel more natural.
+    - Config: `agents.defaults.humanDelay` (override per agent via `agents.list[].humanDelay`).
+    - Modes: `off` (default), `natural` (800-2500ms), `custom` (`minMs`/`maxMs`).
+    - Applies only to **block replies** , not final replies or tool summaries.
+    "Stream chunks or everything"
+    This maps to:
+    - **Stream chunks:** `blockStreamingDefault: "on"` \+ `blockStreamingBreak: "text_end"` (emit as you go). Non-Telegram channels also need `*.blockStreaming: true`.
+    - **Stream everything at end:** `blockStreamingBreak: "message_end"` (flush once, possibly multiple chunks if very long).
+    - **No block streaming:** `blockStreamingDefault: "off"` (only final reply).
+    **Channel note:** For non-Telegram channels, block streaming is **off unless** `*.blockStreaming` is explicitly set to `true`. Telegram can stream drafts (`channels.telegram.streamMode`) without block replies. Config location reminder: the `blockStreaming*` defaults live under `agents.defaults`, not the root config.
+    Telegram draft streaming (token-ish)
+    Telegram is the only channel with draft streaming:
+    - Uses Bot API `sendMessageDraft` in **private chats with topics**.
+    - `channels.telegram.streamMode: "partial" | "block" | "off"`.
+    - `partial`: draft updates with the latest stream text.
+    - `block`: draft updates in chunked blocks (same chunker rules).
+    - `off`: no draft streaming.
+    - Draft chunk config (only for `streamMode: "block"`): `channels.telegram.draftChunk` (defaults: `minChars: 200`, `maxChars: 800`).
+    - Draft streaming is separate from block streaming; block replies are off by default and only enabled by `*.blockStreaming: true` on non-Telegram channels.
+    - Final reply is still a normal message.
+    - `/reasoning stream` writes reasoning into the draft bubble (Telegram only).
+    When draft streaming is active, Moltbot disables block streaming for that reply to avoid double-streaming.
+    Legend:
+    - `sendMessageDraft`: Telegram draft bubble (not a real message).
+    - `final reply`: normal Telegram message send.
+  Ex:
+  - ID: EX-CONCEPTS-STREAMING-99BAF06DB8
+    Ctx: Copy
+    Body: |-
+      Model output
+       text_delta/events
+       (blockStreamingBreak=text_end)
+           chunker emits blocks as buffer grows
+       (blockStreamingBreak=message_end)
+       chunker flushes at message_end
+       channel send (block replies)
+  - ID: EX-CONCEPTS-STREAMING-76617C521F
+    Ctx: Copy
+    Body: |-
+      Telegram (private + topics)
+       sendMessageDraft (draft bubble)
+       streamMode=partial -> update latest text
+       streamMode=block   -> chunker updates draft
+       final reply -> normal message
+- ID: CONCEPTS-QUEUE
+  Src:
+    File: output/concepts/queue.md
+    URL: https://docs.molt.bot/concepts/queue
+  Facts: |-
+    H1: Queue - Moltbot
+    H1: Queue
+    Command Queue (2026-01-16)
+    We serialize inbound auto-reply runs (all channels) through a tiny in-process queue to prevent multiple agent runs from colliding, while still allowing safe parallelism across sessions.
+    Why
+    - Auto-reply runs can be expensive (LLM calls) and can collide when multiple inbound messages arrive close together.
+    - Serializing avoids competing for shared resources (session files, logs, CLI stdin) and reduces the chance of upstream rate limits.
+    How it works
+    - A lane-aware FIFO queue drains each lane with a configurable concurrency cap (default 1 for unconfigured lanes; main defaults to 4, subagent to 8).
+    - `runEmbeddedPiAgent` enqueues by **session key** (lane `session:<key>`) to guarantee only one active run per session.
+    - Each session run is then queued into a **global lane** (`main` by default) so overall parallelism is capped by `agents.defaults.maxConcurrent`.
+    - When verbose logging is enabled, queued runs emit a short notice if they waited more than ~2s before starting.
+    - Typing indicators still fire immediately on enqueue (when supported by the channel) so user experience is unchanged while we wait our turn.
+    Queue modes (per channel)
+    Inbound messages can steer the current run, wait for a followup turn, or do both:
+    - `steer`: inject immediately into the current run (cancels pending tool calls after the next tool boundary). If not streaming, falls back to followup.
+    - `followup`: enqueue for the next agent turn after the current run ends.
+    - `collect`: coalesce all queued messages into a **single** followup turn (default). If messages target different channels/threads, they drain individually to preserve routing.
+    - `steer-backlog` (aka `steer+backlog`): steer now **and** preserve the message for a followup turn.
+    - `interrupt` (legacy): abort the active run for that session, then run the newest message.
+    - `queue` (legacy alias): same as `steer`.
+    Steer-backlog means you can get a followup response after the steered run, so streaming surfaces can look like duplicates. Prefer `collect`/`steer` if you want one response per inbound message. Send `/queue collect` as a standalone command (per-session) or set `messages.queue.byChannel.discord: "collect"`. Defaults (when unset in config):
+    - All surfaces -> `collect`
+    Configure globally or per channel via `messages.queue`:
+    Queue options
+    Options apply to `followup`, `collect`, and `steer-backlog` (and to `steer` when it falls back to followup):
+    - `debounceMs`: wait for quiet before starting a followup turn (prevents "continue, continue").
+    - `cap`: max queued messages per session.
+    - `drop`: overflow policy (`old`, `new`, `summarize`).
+    Summarize keeps a short bullet list of dropped messages and injects it as a synthetic followup prompt. Defaults: `debounceMs: 1000`, `cap: 20`, `drop: summarize`.
+    Per-session overrides
+    - Send `/queue <mode>` as a standalone command to store the mode for the current session.
+    - Options can be combined: `/queue collect debounce:2s cap:25 drop:summarize`
+    - `/queue default` or `/queue reset` clears the session override.
+    Scope and guarantees
+    - Applies to auto-reply agent runs across all inbound channels that use the gateway reply pipeline (WhatsApp web, Telegram, Slack, Discord, Signal, iMessage, webchat, etc.).
+    - Default lane (`main`) is process-wide for inbound + main heartbeats; set `agents.defaults.maxConcurrent` to allow multiple sessions in parallel.
+    - Additional lanes may exist (e.g. `cron`, `subagent`) so background jobs can run in parallel without blocking inbound replies.
+    - Per-session lanes guarantee that only one agent run touches a given session at a time.
+    - No external dependencies or background worker threads; pure TypeScript + promises.
+    Troubleshooting
+    - If commands seem stuck, enable verbose logs and look for "queued for ...ms" lines to confirm the queue is draining.
+    - If you need queue depth, enable verbose logs and watch for queue timing lines.
+  Ex:
+  - ID: EX-CONCEPTS-QUEUE-E2D9F5F700
+    Ctx: Copy
+    Body: |-
+      {
+      messages: {
+      queue: {
+      mode: "collect",
+      debounceMs: 1000,
+      cap: 20,
+      drop: "summarize",
+      byChannel: { discord: "collect" }
+      }
+      }
+      }
+- ID: CONCEPTS-RETRY
+  Src:
+    File: output/concepts/retry.md
+    URL: https://docs.molt.bot/concepts/retry
+  Facts: |-
+    H1: Retry - Moltbot
+    H1: Retry
+    Retry policy
+    Goals
+    - Retry per HTTP request, not per multi-step flow.
+    - Preserve ordering by retrying only the current step.
+    - Avoid duplicating non-idempotent operations.
+    Defaults
+    - Attempts: 3
+    - Max delay cap: 30000 ms
+    - Jitter: 0.1 (10 percent)
+    - Provider defaults:
+    - Telegram min delay: 400 ms
+    - Discord min delay: 500 ms
+    Behavior
+    Discord
+    - Retries only on rate-limit errors (HTTP 429).
+    - Uses Discord `retry_after` when available, otherwise exponential backoff.
+    Telegram
+    - Retries on transient errors (429, timeout, connect/reset/closed, temporarily unavailable).
+    - Uses `retry_after` when available, otherwise exponential backoff.
+    - Markdown parse errors are not retried; they fall back to plain text.
+    Configuration
+    Set retry policy per provider in `~/.clawdbot/moltbot.json`:
+    Notes
+    - Retries apply per request (message send, media upload, reaction, poll, sticker).
+    - Composite flows do not retry completed steps.
+  Ex:
+  - ID: EX-CONCEPTS-RETRY-135A1369F8
+    Ctx: Copy
+    Body: |-
+      {
+      channels: {
+      telegram: {
+      retry: {
+      attempts: 3,
+      minDelayMs: 400,
+      maxDelayMs: 30000,
+      jitter: 0.1
+      }
+      },
+      discord: {
+      retry: {
+      attempts: 3,
+      minDelayMs: 500,
+      maxDelayMs: 30000,
+      jitter: 0.1
+      }
+      }
+      }
+      }
+- ID: CONCEPTS-MARKDOWN-FORMATTING
+  Src:
+    File: output/concepts/markdown-formatting.md
+    URL: https://docs.molt.bot/concepts/markdown-formatting
+  Facts: |-
+    H1: Markdown formatting - Moltbot
+    H1: Markdown formatting
+    Markdown formatting
+    Moltbot formats outbound Markdown by converting it into a shared intermediate representation (IR) before rendering channel-specific output. The IR keeps the source text intact while carrying style/link spans so chunking and rendering can stay consistent across channels.
+    Goals
+    - **Consistency:** one parse step, multiple renderers.
+    - **Safe chunking:** split text before rendering so inline formatting never breaks across chunks.
+    - **Channel fit:** map the same IR to Slack mrkdwn, Telegram HTML, and Signal style ranges without re-parsing Markdown.
+    Pipeline
+    - **Parse Markdown - > IR**
+    - IR is plain text plus style spans (bold/italic/strike/code/spoiler) and link spans.
+    - Offsets are UTF-16 code units so Signal style ranges align with its API.
+    - Tables are parsed only when a channel opts into table conversion.
+    - **Chunk IR (format-first)**
+    - Chunking happens on the IR text before rendering.
+    - Inline formatting does not split across chunks; spans are sliced per chunk.
+    - **Render per channel**
+    - **Slack:** mrkdwn tokens (bold/italic/strike/code), links as `<url|label>`.
+    - **Telegram:** HTML tags (`<b>`, `<i>`, `<s>`, `<code>`, `<pre><code>`, `<a href>`).
+    - **Signal:** plain text + `text-style` ranges; links become `label (url)` when label differs.
+    IR example
+    Input Markdown:
+    IR (schematic):
+    Where it is used
+    - Slack, Telegram, and Signal outbound adapters render from the IR.
+    - Other channels (WhatsApp, iMessage, MS Teams, Discord) still use plain text or their own formatting rules, with Markdown table conversion applied before chunking when enabled.
+    Table handling
+    Markdown tables are not consistently supported across chat clients. Use `markdown.tables` to control conversion per channel (and per account).
+    - `code`: render tables as code blocks (default for most channels).
+    - `bullets`: convert each row into bullet points (default for Signal + WhatsApp).
+    - `off`: disable table parsing and conversion; raw table text passes through.
+    Config keys:
+    Chunking rules
+    - Chunk limits come from channel adapters/config and are applied to the IR text.
+    - Code fences are preserved as a single block with a trailing newline so channels render them correctly.
+    - List prefixes and blockquote prefixes are part of the IR text, so chunking does not split mid-prefix.
+    - Inline styles (bold/italic/strike/inline-code/spoiler) are never split across chunks; the renderer reopens styles inside each chunk.
+    If you need more on chunking behavior across channels, see [Streaming + chunking](/concepts/streaming).
+    Link policy
+    - **Slack:** `[label](url)` -> `<url|label>`; bare URLs remain bare. Autolink is disabled during parse to avoid double-linking.
+    - **Telegram:** `[label](url)` -> `<a href="url">label</a>` (HTML parse mode).
+    - **Signal:** `[label](url)` -> `label (url)` unless label matches the URL.
+    Spoilers
+    Spoiler markers (`||spoiler||`) are parsed only for Signal, where they map to SPOILER style ranges. Other channels treat them as plain text.
+    How to add or update a channel formatter
+    - **Parse once:** use the shared `markdownToIR(...)` helper with channel-appropriate options (autolink, heading style, blockquote prefix).
+    - **Render:** implement a renderer with `renderMarkdownWithMarkers(...)` and a style marker map (or Signal style ranges).
+    - **Chunk:** call `chunkMarkdownIR(...)` before rendering; render each chunk.
+    - **Wire adapter:** update the channel outbound adapter to use the new chunker and renderer.
+    - **Test:** add or update format tests and an outbound delivery test if the channel uses chunking.
+    Common gotchas
+    - Slack angle-bracket tokens (`<@U123>`, `<#C123>`, `<https://...>`) must be preserved; escape raw HTML safely.
+    - Telegram HTML requires escaping text outside tags to avoid broken markup.
+    - Signal style ranges depend on UTF-16 offsets; do not use code point offsets.
+    - Preserve trailing newlines for fenced code blocks so closing markers land on their own line.
+  Ex:
+  - ID: EX-CONCEPTS-MARKDOWN-FORMATTING-36626642F3
+    Ctx: Copy
+    Body: Hello **world** - see [docs](https://docs.molt.bot).
+  - ID: EX-CONCEPTS-MARKDOWN-FORMATTING-BDA68CAAB2
+    Ctx: Copy
+    Body: |-
+      {
+      "text": "Hello world - see docs.",
+      "styles": [
+      { "start": 6, "end": 11, "style": "bold" }
+      ],
+      "links": [
+      { "start": 19, "end": 23, "href": "https://docs.molt.bot" }
+      ]
+      }
+  - ID: EX-CONCEPTS-MARKDOWN-FORMATTING-70E3FD1D26
+    Ctx: Copy
+    Body: |-
+      channels:
+      discord:
+      markdown:
+      tables: code
+      accounts:
+      work:
+      markdown:
+      tables: off

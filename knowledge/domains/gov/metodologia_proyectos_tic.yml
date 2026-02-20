@@ -1,0 +1,436 @@
+# KODA TDE Lineamiento Técnico: Metodología para la gestión de proyectos
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Metodologia_Gestion_Proyectos_TIC"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosGuías/Metodología_para_la_gestión_de_proyectos.md"
+    source_url: "https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos"
+    source_updated_at: "2025-12-05T13:44:57.214Z"
+  status: draft
+
+ID: "TDE-LIN-METODOLOGIA-PROY-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía técnica que establece una metodología referencial para la gestión de proyectos TIC en los OAEs, alineada con la transformación digital del Estado y el marco EVALTIC"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Metodología referencial para la gestión de proyectos TIC en el Estado"
+  objective: >-
+    Entregar un marco metodológico práctico para iniciar, planificar, ejecutar y cerrar proyectos
+    TIC en los OAEs, alineado con la Ley de Transformación Digital del Estado, la Estrategia de
+    Gobierno Digital y el marco EVALTIC.
+  usage_guidance:
+    - "Usar esta guía como referencia base para PMO y equipos de proyecto al definir procesos, roles, fases y herramientas de gestión de proyectos TIC."
+    - "Complementar con la Guía EVALTIC para inversiones y gastos TIC cuando el proyecto requiera financiamiento sujeto a EVALTIC."
+    - "Para conceptos de servicios digitales, plataformas, datos y metadatos, preferir definiciones del Lexicon TDE."
+  style:
+    - "Responder en es-CL, tono técnico claro y pedagógico, orientado a equipos de proyecto, PMO y directivos."
+    - "Resaltar requisitos (Req), actividades (Act) y productos típicos (Res) por fase cuando sea relevante."
+
+Metadata_Original:
+  title: "Metodología para la gestión de proyectos"
+  url: "https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos"
+  category: "Lineamientos Técnicos/Guías"
+  tags:
+    - "guía técnica"
+    - "proyectos"
+    - "tecnologías de la información"
+    - "tic"
+  description: "Guía técnica metodología para la gestión de proyectos."
+  updated_at: "2025-12-05T13:44:57.214Z"
+  elaborated_at: "2025-03-31"
+  last_updated_at: "2025-04-24"
+  autor: "Equipo de gestión de proyectos (PMO), Secretaría de Gobierno Digital, Ministerio de Hacienda"
+
+Introduccion_y_Contexto:
+  ID: "TDE_LIN_METPROY_CTX_001"
+  Ctx: >-
+    La transformación digital del Estado busca mejorar la calidad de vida y oportunidades para
+    personas y empresas, acelerando la transición hacia una administración pública más ágil y
+    moderna. La SGD y los OAEs enfrentan retos significativos para gestionar eficaz y
+    eficientemente proyectos de implementación y adopción de tecnologías.
+  Purp: >-
+    Establecer un marco metodológico referencial para la gestión de proyectos TIC en los OAEs,
+    alineado con estándares internacionales y mejores prácticas, que fortalezca la capacidad de
+    respuesta institucional y la generación sostenida de valor público.
+  Obj: >-
+    Proporcionar una guía práctica para gestionar proyectos TIC y establecer los conceptos
+    fundamentales para crear y operar Oficinas de Gestión de Proyectos (PMO) y herramientas
+    prácticas asociadas.
+
+Objetivo_de_la_Guia:
+  ID: "TDE_LIN_METPROY_OBJ_GUIA_001"
+  Def: >-
+    El objetivo de la guía es estandarizar las prácticas de gestión de proyectos en el Estado,
+    promoviendo eficiencia, transparencia y colaboración, basándose en buenas prácticas
+    internacionales (por ejemplo PMI) y lineamientos de organismos como la OCDE.
+  Obj:
+    - "Fortalecer la calidad, control y eficiencia en la ejecución de proyectos TIC."
+    - "Asegurar alineamiento con la Ley de Transformación Digital del Estado, la estrategia institucional y los objetivos estratégicos TIC."
+    - "Lograr el cumplimiento de objetivos de proyecto en términos de alcance, tiempo, costo y calidad."
+  Ctx_Required:
+    - "Ley N° 21.180 sobre Transformación Digital del Estado."
+    - "Estrategia de Gobierno Digital 2030."
+
+Objetivos_y_Beneficios_de_la_Gestion_de_Proyectos:
+  ID: "TDE_LIN_METPROY_OBJ_BEN_001"
+  Obj:
+    - "Alcanzar objetivos específicos dentro de plazos y presupuestos definidos mediante planificación, ejecución y control estructurados."
+    - "Ordenar y estructurar el trabajo temporal en fases manejables con roles, responsabilidades y entregables claros."
+    - "Alinear proyectos con la estrategia organizacional y los objetivos institucionales."
+    - "Gestionar adecuadamente recursos, riesgos y expectativas de las partes interesadas."
+  Beneficios:
+    - "Mayor eficiencia operativa y mejor uso de recursos."
+    - "Control del alcance, tiempo y costos, evitando desviaciones."
+    - "Mejor calidad de entregables mediante criterios y mecanismos de control."
+    - "Mejor comunicación y coordinación entre equipos."
+    - "Identificación y mitigación oportuna de riesgos."
+    - "Satisfacción de las partes interesadas al alinear entregables con expectativas."
+    - "Aprendizaje organizacional a través de lecciones aprendidas."
+    - "Transparencia y trazabilidad para auditorías y rendición de cuentas."
+    - "Priorización y decisiones basadas en datos en contextos de recursos limitados."
+
+Marco_para_la_Gestion_de_Proyectos_TIC:
+  ID: "TDE_LIN_METPROY_MARCO_001"
+  Def: >-
+    El marco para la gestión de proyectos TIC comprende propuestas para definir un lenguaje
+    común, un modelo de gobernanza con roles y responsabilidades claras, y una metodología para
+    gestionar las distintas fases del ciclo de vida del proyecto.
+
+Definiciones_Clave:
+  ID: "TDE_LIN_METPROY_DEF_001"
+  Terms:
+    - Term: "Proyecto"
+      Def: >-
+        Esfuerzo temporal y único emprendido para crear un producto, servicio o resultado
+        exclusivo, con inicio y fin definidos, objetivos y entregables claros.
+    - Term: "Gestión de proyectos"
+      Def: >-
+        Aplicación de conocimientos, habilidades, herramientas y técnicas a las actividades del
+        proyecto para cumplir sus requisitos dentro de restricciones de alcance, tiempo, costo y
+        calidad.
+    - Term: "Metodología de gestión de proyectos"
+      Def: >-
+        Conjunto estructurado de procesos, herramientas y técnicas para planificar, ejecutar,
+        monitorear y cerrar proyectos de manera sistemática.
+    - Term: "Ciclo de vida del proyecto"
+      Def: >-
+        Conjunto de fases desde el inicio hasta el cierre del proyecto, incluyendo formulación,
+        planificación, ejecución y cierre.
+    - Term: "Fase del proyecto"
+      Def: >-
+        Agrupación lógica de actividades que culmina con uno o más entregables clave.
+    - Term: "Modelo de triple restricción"
+      Def: >-
+        Relación entre alcance, tiempo y costo, donde cambios en una dimensión impactan a las
+        otras.
+    - Term: "Línea base"
+      Def: >-
+        Referencias iniciales de alcance, cronograma y presupuesto que permiten medir desempeño y
+        detectar desviaciones.
+    - Term: "Oficina de Gestión de Proyectos (PMO)"
+      Def: >-
+        Estructura organizacional que estandariza procesos de gobernanza de proyectos y promueve
+        buenas prácticas de gestión de recursos, metodologías, herramientas y técnicas.
+    - Term: "Programa"
+      Def: >-
+        Conjunto de proyectos relacionados gestionados de forma coordinada para obtener
+        beneficios y sinergias adicionales.
+    - Term: "Portafolio o cartera"
+      Def: >-
+        Conjunto de proyectos y programas gestionados estratégicamente para cumplir objetivos
+        institucionales.
+    - Term: "Gestión de portafolios"
+      Def: >-
+        Proceso centralizado para identificar, priorizar, autorizar y controlar proyectos y
+        programas alineados con los objetivos estratégicos de la organización.
+
+Roles_y_Responsabilidades_En_Proyectos:
+  ID: "TDE_LIN_METPROY_ROLES_001"
+  Ctx: >-
+    Un modelo de gobernanza bien definido, con roles y responsabilidades claros, es fundamental
+    para la alineación estratégica, la toma de decisiones eficiente y la rendición de cuentas.
+  Roles:
+    - ID: "TDE_LIN_METPROY_ROL_PATROCINADOR"
+      Name: "Patrocinador del proyecto"
+      rol_principal: "Proporciona respaldo y financiamiento al proyecto."
+      responsabilidades:
+        - "Comunicar la importancia del proyecto, sus objetivos y beneficios."
+        - "Asegurar la participación de áreas relevantes."
+        - "Definir alcance inicial y expectativas."
+        - "Designar a la jefatura de proyecto."
+        - "Reportar avances al Comité Directivo."
+        - "Autorizar cambios de alcance y aprobar cierres de etapa."
+        - "Evaluar desempeño de la jefatura de proyecto."
+    - ID: "TDE_LIN_METPROY_ROL_JEFATURA"
+      Name: "Jefatura del proyecto (Project Manager)"
+      rol_principal: >-
+        Liderar todas las etapas del proyecto asegurando el cumplimiento de objetivos, con
+        liderazgo, comunicación y gestión de riesgos.
+      responsabilidades:
+        - "Planificar etapas, plazos y recursos."
+        - "Guiar y motivar al equipo."
+        - "Supervisar avance y gestionar riesgos."
+        - "Mantener informadas a las partes interesadas."
+        - "Evaluar desempeño del equipo y promover mejoras."
+        - "Gestionar el cierre del proyecto y resultados."
+    - ID: "TDE_LIN_METPROY_ROL_EQUIPO"
+      Name: "Equipo del proyecto"
+      rol_principal: "Ejecutar las tareas asignadas según el plan."
+      responsabilidades:
+        - "Colaborar activamente con la jefatura."
+        - "Reportar avances y obstáculos."
+        - "Participar en reuniones de seguimiento."
+        - "Asegurar calidad de entregables asignados."
+    - ID: "TDE_LIN_METPROY_ROL_STAKEHOLDERS"
+      Name: "Partes interesadas (stakeholders)"
+      rol_principal: >-
+        Personas, grupos u organizaciones que pueden verse afectadas o influir en el proyecto.
+      responsabilidades:
+        - "Expresar expectativas."
+        - "Proporcionar insumos relevantes."
+        - "Apoyar la toma de decisiones."
+        - "Participar en revisiones, validaciones y evaluación de resultados."
+    - ID: "TDE_LIN_METPROY_ROL_RESP_CARTERA"
+      Name: "Responsable de cartera"
+      rol_principal: >-
+        Supervisar, coordinar y gestionar estratégicamente la cartera de proyectos institucionales,
+        alineándola con objetivos estratégicos y optimizando recursos.
+      responsabilidades:
+        - "Evaluar y priorizar iniciativas según criterios estratégicos, técnicos y presupuestarios."
+        - "Solicitar información actualizada de cada proyecto."
+        - "Proponer ajustes en priorización o calendarización."
+        - "Reportar al Comité de Dirección o Dirección."
+    - ID: "TDE_LIN_METPROY_ROL_PMO"
+      Name: "Oficina de Gestión de Proyectos (PMO)"
+      rol_principal: >-
+        Centralizar y coordinar la gestión de proyectos bajo un marco común de metodologías,
+        estándares y políticas.
+      responsabilidades:
+        - "Estandarizar prácticas de gestión de proyectos."
+        - "Proporcionar soporte técnico y metodológico."
+        - "Facilitar la mejora continua en la gestión de proyectos."
+
+Tipos_de_Metodologias:
+  ID: "TDE_LIN_METPROY_METODOS_001"
+  Def: >-
+    La gestión de proyectos puede apoyarse en enfoques tradicionales/predictivos, ágiles e
+    híbridos, cada uno con características, niveles de flexibilidad y contextos de uso
+    diferentes.
+  Metodologias:
+    - Name: "Tradicional o predictiva (Cascada)"
+      Ctx: >-
+        Modelo secuencial con requisitos bien definidos al inicio y planificación completa.
+        Cada fase (planificación, diseño, desarrollo, pruebas, entrega) debe completarse antes
+        de pasar a la siguiente.
+    - Name: "Ágil (iterativa e incremental)"
+      Ctx: >-
+        Enfoque basado en iteraciones cortas, adaptación continua y fuerte involucramiento de
+        usuarios, orientado a entregar valor temprano y frecuente.
+    - Name: "Híbrida"
+      Ctx: >-
+        Combina elementos predictivos y ágiles, utilizando planificación estructurada en
+        dimensiones críticas y ciclos iterativos en componentes con mayor incertidumbre.
+
+Fase_1_Inicio_y_Constitucion:
+  ID: "TDE_LIN_METPROY_FASE1_001"
+  Obj: >-
+    Iniciar formalmente el proyecto, clarificando la necesidad u oportunidad, su alineación
+    estratégica y los elementos básicos de alcance, cronograma y recursos, mediante un Acta de
+    Constitución.
+  Act:
+    - "Identificar la necesidad u oportunidad que origina el proyecto."
+    - "Alinear el proyecto con los objetivos estratégicos institucionales (por ejemplo Formulario A1) y prioridades de transformación digital."
+    - "Describir brevemente el proyecto (qué se hará, para qué, con qué recursos y plazos tentativos)."
+    - "Registrar la propuesta en el canal institucional definido (formulario interno, mesa de proyectos, plataforma institucional o PMO)."
+    - "Elaborar el Acta de Constitución del Proyecto, consolidando acuerdos iniciales y expectativas."
+  Res:
+    - "Acta de Constitución del Proyecto (objetivos, alcance, recursos, partes interesadas, gobernanza, criterios de éxito)."
+    - "Registro de interesados (stakeholders)."
+  Ctx_Optional:
+    - "Plantillas de acta de constitución y registro de interesados disponibles en anexos institucionales."
+
+Consideraciones_para_Proyectos_TIC:
+  ID: "TDE_LIN_METPROY_TIC_001"
+  Ctx: >-
+    Para proyectos TIC que requieren financiamiento, existe una articulación obligatoria con el
+    proceso EVALTIC y los criterios de inversión y gasto en gobierno digital.
+  Req:
+    - "Toda inversión en TIC que supere el monto mínimo establecido por DIPRES debe gestionarse a través del proceso EVALTIC."
+    - "Los proyectos sujetos a EVALTIC deben presentarse el año anterior bajo los lineamientos de la Guía Técnica EVALTIC."
+  XRef_Required:
+    - "urn:knowledge:koda:gov:evaltic:1.0.0"
+
+Fase_2_Planificacion:
+  ID: "TDE_LIN_METPROY_FASE2_001"
+  Obj: "Establecer el curso de acción para cumplir los objetivos del proyecto."
+  Ctx: >-
+    Una vez aprobado el proyecto y emitida el Acta de Constitución, la planificación operativa
+    permite ordenar el trabajo, clarificar compromisos, anticipar riesgos y facilitar el
+    seguimiento.
+  Act:
+    - "Desarrollar el plan de gestión del proyecto y sus subplanes."
+    - "Definir el alcance detallado del proyecto."
+    - "Construir la Estructura de Desglose de Trabajo (EDT)."
+    - "Desarrollar el cronograma del proyecto."
+    - "Estimar y planificar costos."
+    - "Identificar y evaluar riesgos."
+    - "Diseñar el plan de comunicaciones."
+  Res:
+    - "Plan de gestión del proyecto."
+    - "EDT."
+    - "Cronograma."
+    - "Presupuesto."
+    - "Registro de riesgos."
+    - "Plan de comunicaciones."
+  Ctx_Required:
+    - "Documento Técnico N° 70 del Consejo de Auditoría Interna General de Gobierno (CAIGG) sobre gestión de riesgos en el sector público."
+
+Gestion_de_Riesgos_en_Proyectos:
+  ID: "TDE_LIN_METPROY_RIESGOS_001"
+  Ctx: >-
+    La gestión de riesgos debe ser un proceso continuo a lo largo de todas las fases del
+    proyecto, actualizando el registro de riesgos ante cambios y eventos emergentes.
+  Def: >-
+    El análisis cualitativo de riesgos evalúa probabilidad e impacto para priorizar riesgos, y
+    se apoya en matrices de probabilidad e impacto como herramienta central.
+  Ctx_Required:
+    - "CAIGG - Documento Técnico N° 70 Versión 0.3: Implantación, Mantención y Actualización del Proceso de Gestión de Riesgos en el Sector Público."
+
+Fase_3_Ejecucion:
+  ID: "TDE_LIN_METPROY_FASE3_001"
+  Obj: "Coordinar personas y recursos para llevar a cabo el plan de gestión."
+  Ctx: >-
+    La ejecución consiste en realizar las actividades definidas, gestionar día a día el
+    cumplimiento del alcance, plazos y recursos, y mantener foco en el valor de los entregables.
+  Act:
+    - "Dirigir y gestionar el trabajo del proyecto."
+    - "Mantener reuniones breves y periódicas de coordinación con el equipo."
+    - "Gestionar el desempeño del equipo de trabajo."
+    - "Evaluar desempeño vs. lo planificado en cronograma y presupuesto."
+    - "Aplicar procesos formales de control de cambios."
+    - "Validar el alcance y monitorear riesgos y calidad."
+    - "Asegurar la calidad de los entregables."
+    - "Comunicar con las partes interesadas."
+    - "Gestionar proveedores y contrataciones."
+  Res:
+    - "Entregables del proyecto."
+    - "Informes de avance y desempeño."
+    - "Solicitudes de cambio y actualizaciones del plan."
+    - "Registros de incidencias."
+  Ctx_Optional:
+    - "Uso de indicadores clave de desempeño (KPIs) para monitorear el estado del proyecto."
+
+Fase_4_Cierre_y_Mejora:
+  ID: "TDE_LIN_METPROY_FASE4_001"
+  Obj: "Finalizar formalmente todas las actividades del proyecto o fase y capitalizar aprendizajes."
+  Ctx: >-
+    El cierre formal incluye aspectos contractuales, administrativos y de traspaso a operación,
+    así como la consolidación de lecciones aprendidas y la mejora continua.
+  Act:
+    - "Cerrar contratos con proveedores."
+    - "Validar y aceptar entregables."
+    - "Liberar recursos del proyecto."
+    - "Documentar lecciones aprendidas."
+    - "Entregar formalmente a operación o mantenimiento."
+    - "Realizar monitoreo post-proyecto, recoger retroalimentación y revisar indicadores."
+    - "Identificar oportunidades de mejora y, cuando corresponda, definir nuevos proyectos."
+  Res:
+    - "Informe final del proyecto."
+    - "Registro de lecciones aprendidas."
+    - "Cierre administrativo y contractual."
+  Rec:
+    - "Documentar cambios posteriores, sus razones y resultados."
+    - "Designar responsables para impulsar mejoras derivadas del proyecto."
+
+Plantillas_y_Herramientas:
+  ID: "TDE_LIN_METPROY_PLANTILLAS_001"
+  Ctx: >-
+    La guía pone a disposición formatos y plantillas en anexos para apoyar el registro y
+    documentación de cada fase. Los OAEs pueden personalizarlos según su madurez y tamaño. Ejemplos:
+  Items:
+    - "Acta de constitución del proyecto."
+    - "Registro de interesados."
+    - "Plan de gestión del proyecto y subplanes."
+    - "Matriz EDT y cronograma."
+    - "Registro y matriz de riesgos."
+    - "Plan de comunicaciones."
+    - "Informes de avance y desempeño."
+    - "KPIs de proyectos."
+    - "Informe final del proyecto."
+
+Lineamientos_para_la_Implementacion_de_la_Metodologia:
+  ID: "TDE_LIN_METPROY_IMPL_001"
+  Ctx: >-
+    La implementación de una metodología robusta de gestión de proyectos debe abordarse de
+    manera gradual e incremental, con gestión del cambio organizacional.
+  Rec:
+    - "Asegurar compromiso activo de la alta dirección."
+    - "Capacitar a los equipos de proyecto en la metodología."
+    - "Ajustar la metodología al contexto específico de la organización."
+    - "Designar y fortalecer una PMO con personal capacitado."
+    - "Realizar proyectos piloto antes de escalar la metodología."
+    - "Definir KPIs y mecanismos de monitoreo y evaluación."
+    - "Mantener comunicación continua con las partes interesadas."
+    - "Aplicar mejora continua tras cada proyecto ejecutado."
+
+Glosario_Local_Resumen:
+  Description: "Conceptos específicos destacados en la metodología de gestión de proyectos."
+  Terms:
+    - Term: "Proyecto TIC"
+      Ctx: >-
+        Proyecto cuyo propósito principal es implementar o mejorar soluciones de tecnologías de
+        la información y comunicaciones, incluyendo sistemas, servicios digitales, infraestructura
+        y datos.
+    - Term: "PMO (Oficina de Gestión de Proyectos)"
+      Ctx: >-
+        Unidad responsable de estandarizar prácticas de gestión de proyectos, apoyar a los
+        equipos y promover mejora continua en la ejecución de proyectos institucionales.
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de esta guía apoyados en definiciones del Lexicon TDE."
+  Terms:
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+
+Referencias_Resumen:
+  Description: "Referencias conceptuales y normativas asociadas a la metodología."
+  Sources:
+    - "Buenas prácticas de gestión de proyectos (por ejemplo, Project Management Institute - PMI)."
+    - "Lineamientos de la OCDE en gobernanza, gestión pública y transformación digital."
+    - "Ley N° 21.180 sobre Transformación Digital del Estado."
+    - "Estrategia de Gobierno Digital 2030."
+    - "Marco EVALTIC para inversiones y gasto en gobierno digital."
+    - "Documento Técnico N° 70 del CAIGG sobre gestión de riesgos en el sector público."

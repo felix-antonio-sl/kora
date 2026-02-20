@@ -1,0 +1,353 @@
+# KODA Artifact: Ley 21.643 - Prevención y sanción de acoso y violencia en el trabajo (enfoque sector salud)
+# URN: urn:knowledge:koda:legal:ley_21643:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre Ley 21.643 aplicada al trabajo en salud (sector público y privado)"
+    primary_use: "Responder cómo la Ley 21.643 modifica deberes, protocolos y procedimientos frente al acoso sexual, acoso laboral y violencia en el trabajo en el ámbito sanitario"
+    cross_reference: "Usar definiciones y contexto de kb_med_006 (acoso laboral y sexual) y del índice general kb_med_000 para conceptos base"
+
+  urn: "urn:knowledge:koda:legal:ley_21643:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Ley 21.643 aplicada al trabajo médico y sanitario (público y privado)"
+    source_document: "Ley 21.643 (Diario Oficial, 5 enero 2024)"
+    source_sections: "Artículos 1 a 6 y artículos transitorios"
+    model_collaborators: ["KODA-TRANSFORMER"]
+  dependencies:
+    - Ref: "urn:knowledge:koda:legal:index:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:acoso_laboral:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Resumen_Ejecutivo:
+  ID: LEY21643_RESUMEN
+  Ejes_Claves:
+    - "Integra en una sola lógica el acoso sexual, el acoso laboral y la violencia en el trabajo, con perspectiva de género."
+    - "Refuerza el deber del empleador (público y privado) de prevenir, investigar y sancionar estas conductas mediante protocolos formales."
+    - "Obliga a contar con medidas de resguardo inmediatas para la persona denunciante y reglas claras de investigación con confidencialidad, imparcialidad y celeridad."
+    - "Crea obligaciones de reporte estadístico a la Superintendencia de Seguridad Social (SUSESO) sobre denuncias y medidas adoptadas."
+  Casos_Uso_Tipicos:
+    - "Explicar a un médico o funcionaria de salud qué cambia en su protección frente al acoso laboral, sexual o violencia en el trabajo."
+    - "Diseñar o actualizar protocolos internos en un hospital o clínica para cumplir con la Ley 21.643."
+    - "Conectar hechos concretos de acoso o violencia con las vías formales de denuncia e investigación en sector público o privado."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: PRINCIPIOS Y ALCANCE GENERAL
+# ═══════════════════════════════════════════════════════════════════
+
+Principios_Generales:
+
+  Ambito_Aplicacion_Sector_Salud:
+    ID: L21643_AMBITO_SALUD
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: EA_18834
+      - Ref: LEY_18883
+      - Ref: LOC_18575
+    Def: "La Ley 21.643 aplica tanto al sector privado de salud (clínicas, centros médicos, prestadores privados) como al sector público (servicios de salud, hospitales públicos, APS municipal), reforzando el deber de asegurar espacios de trabajo libres de acoso y violencia."
+    Efectos_Principales:
+      - "Reconoce expresamente el derecho a un espacio libre de violencia, acoso laboral y sexual en el trabajo."
+      - "Exige protocolos de prevención, investigación y sanción en organismos públicos y privados."
+      - "Integra la perspectiva de género y riesgos psicosociales en la gestión de salud y seguridad en el trabajo."
+
+  Principio_Espacio_Libre_de_Violencia:
+    ID: L21643_DERECHO_ESPACIO_LIBRE
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LOC_18575
+    Def: "Derecho de toda persona, con ocasión del trabajo, a disfrutar de un espacio libre de violencia, acoso laboral y sexual, que el empleador y los órganos de la Administración deben respetar y proteger."
+    Implicancias_Sanitarias:
+      - "Hospitales, clínicas y centros de salud deben considerar el riesgo de violencia ejercida por usuarios, pacientes, familiares o terceros."
+      - "Las medidas de resguardo incluyen organización de espacios físicos, turnos, equipos de seguridad y capacitación en manejo de situaciones de violencia."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: MODIFICACIONES AL CÓDIGO DEL TRABAJO (SECTOR PRIVADO SALUD)
+# ═══════════════════════════════════════════════════════════════════
+
+Sector_Privado_Salud:
+
+  Definiciones_Integradas_CdT:
+    ID: L21643_CDT_DEFINICIONES
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "La Ley 21.643 modifica el artículo 2° del Código del Trabajo para integrar en un mismo marco el acoso sexual, el acoso laboral y la violencia en el trabajo ejercida por terceros."
+    Elementos:
+      - "Las relaciones laborales deben fundarse en un trato libre de violencia, compatible con la dignidad y con perspectiva de género."
+      - "Se definen expresamente: acoso sexual, acoso laboral y violencia en el trabajo ejercida por terceros ajenos a la relación laboral."
+      - "Se reconoce la violencia ejercida por clientes, usuarios o pacientes como un problema laboral que debe ser prevenido y gestionado."
+
+  Violencia_Por_Terceros_En_Salud:
+    ID: L21643_VIOLENCIA_TERCEROS_SALUD
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "Conductas de violencia física o psicológica ejercidas contra trabajadores de la salud por parte de pacientes, usuarios, familiares u otros terceros, con ocasión de la prestación de servicios."
+    Ejemplos_Tipicos:
+      - "Agresiones verbales o físicas a personal de urgencias o SAPU."
+      - "Amenazas reiteradas a médicos o enfermeras por decisiones clínicas o tiempos de espera."
+      - "Hostigamiento por redes sociales vinculado a la atención de salud prestada."
+    Obligaciones_Empleador:
+      - "Incorporar este riesgo en los protocolos de prevención del acoso y la violencia."
+      - "Adoptar medidas de resguardo físico, organizacional y psicosocial para el personal."
+
+  Protocolo_En_Reglamento_Interno:
+    ID: L21643_CDT_PROTOCOLO
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "El Reglamento Interno de Orden, Higiene y Seguridad debe contener un protocolo de prevención del acoso sexual, acoso laboral y violencia en el trabajo, y el procedimiento que se aplicará a las denuncias."
+    Requisitos_Minimos:
+      - "Debe describir las medidas de resguardo para la persona denunciante y los involucrados."
+      - "Debe indicar las sanciones aplicables conforme al Código del Trabajo."
+      - "Debe considerar las particularidades del trabajo en salud (turnos, guardias, trato con pacientes y acompañantes)."
+    Notas_Salud:
+      - "Clínicas y hospitales privados con 10 o más trabajadores están obligados a adecuar su Reglamento Interno."
+
+  Protocolo_Para_Pequeños_Empleadores:
+    ID: L21643_CDT_PROTOCOLO_PYME
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "Incluso empleadores que no están obligados a tener Reglamento Interno deben informar por escrito a sus trabajadores un protocolo de prevención y el procedimiento de investigación y sanción del acoso y la violencia."
+    Efectos:
+      - "Consultas médicas pequeñas, centros odontológicos o box individuales con personal contratado deben igualmente informar e implementar un procedimiento."
+
+  Protocolo_211A_Contenidos_Minimos:
+    ID: L21643_CDT_211A
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "El nuevo artículo 211-A exige que el empleador elabore un protocolo de prevención del acoso sexual, laboral y violencia en el trabajo, a través del organismo administrador de la Ley 16.744."
+    Contenidos_Obligatorios:
+      - "Identificación de peligros y evaluación de riesgos psicosociales asociados al acoso y la violencia, con perspectiva de género."
+      - "Medidas preventivas y de control, con objetivos medibles y mejora continua."
+      - "Plan de información y capacitación a trabajadores sobre riesgos, derechos y deberes."
+      - "Medidas específicas para prevenir acoso y violencia, considerando la naturaleza de los servicios de salud."
+      - "Medidas de resguardo de privacidad y honra de las personas involucradas y tratamiento de denuncias inconsistentes."
+    Conexiones_Salud:
+      - "Debe articularse con los programas de salud mental del personal y prevención de riesgos en hospitales y clínicas."
+
+  Medidas_Resguardo_Inmediatas:
+    ID: L21643_CDT_RESguardo
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "Ante una denuncia de acoso sexual, acoso laboral o violencia en el trabajo, el empleador debe adoptar de manera inmediata medidas de resguardo para las personas involucradas."
+    Ejemplos_Medidas:
+      - "Separación de espacios físicos entre denunciante y denunciado."
+      - "Redistribución de jornada o cambios de turno durante la investigación."
+      - "Acceso a atención psicológica temprana a través del organismo administrador de la Ley 16.744."
+    Plazos_y_Responsables:
+      - "Si la denuncia se presenta ante la Inspección del Trabajo, ésta tiene un plazo máximo de 2 días hábiles para requerir al empleador la adopción de una o más medidas de resguardo."
+      - "Una vez notificadas por la Inspección del Trabajo, las medidas de resguardo deben ser adoptadas de manera inmediata por el empleador."
+
+  Procedimientos_Investigacion_Privados:
+    ID: L21643_CDT_INVESTIGACION
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "El empleador puede optar por una investigación interna o remitir la denuncia a la Inspección del Trabajo, pero siempre con plazos y estándares mínimos."
+    Reglas_Claves:
+      - "Plazo de 3 días para derivar a la Inspección si no investiga internamente."
+      - "Plazo de 30 días para concluir la investigación."
+      - "La investigación debe ser reservada y oír a ambas partes."
+      - "La Inspección del Trabajo revisa el informe y puede pronunciarse en 30 días."
+    Principios_Procedimentales:
+      - "Confidencialidad, imparcialidad, celeridad y perspectiva de género (art. 211-B)."
+    Obligaciones_Investigacion:
+      - "Las investigaciones internas y las realizadas por la Inspección del Trabajo deben ajustarse siempre a las directrices del Reglamento dictado en virtud del artículo 211-B."
+      - "Cuando la investigación es interna, el empleador debe preferir designar a un investigador que cuente con formación en materias de acoso, género o derechos fundamentales."
+      - "En casos de violencia en el trabajo ejercida por terceros (artículo 2° letra c), las conclusiones del informe deben incluir medidas correctivas respecto de la causa que generó la denuncia."
+
+  Sanciones_y_Seguimiento_Privado:
+    ID: L21643_CDT_SANCIONES
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "Concluida la investigación, el empleador debe aplicar medidas o sanciones dentro de 15 días, e informar a denunciante y denunciado." 
+    Efectos:
+      - "Puede aplicar causales de despido grave del artículo 160 N°1 letras b) o f)."
+      - "Debe ponderar y dejar constancia de la gravedad de los hechos en el informe."
+      - "La persona despedida puede impugnar ante tribunales laborales."
+
+  Tutela_Derechos_Fundamentales:
+    ID: L21643_CDT_TUTELA_DF
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "Cuando la Inspección del Trabajo, en el ejercicio de sus facultades, toma conocimiento de una vulneración de derechos fundamentales vinculada a acoso sexual, acoso laboral o violencia en el trabajo, debe activar el procedimiento de tutela de derechos fundamentales del artículo 486 del Código del Trabajo."
+    Notas:
+      - "Este deber refuerza la protección judicial de trabajadores y trabajadoras de la salud, complementando las medidas administrativas e investigativas."
+      - "La excepción prevista por la Ley 21.643 excluye de esta regla ciertos casos asociados a la letra a) del artículo 2°, según lo indicado en el propio texto legal."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: SECTOR PÚBLICO Y MUNICIPAL (SERVICIOS DE SALUD)
+# ═══════════════════════════════════════════════════════════════════
+
+Sector_Publico_Salud:
+
+  Deber_Probidad_y_Espacio_Libre_Violencia:
+    ID: L21643_PUB_PROBIDAD
+    Fuente:
+      - Ref: LOC_18575
+      - Ref: EA_18834
+      - Ref: LEY_18883
+      - Ref: LEY_21643
+    Def: "Refuerza el deber de los órganos de la Administración del Estado de ejercer la función pública respetando el derecho a un espacio de trabajo libre de violencia, acoso laboral y sexual."
+    Implicancias_Para_Salud_Publica:
+      - "Servicios de Salud, hospitales, consultorios y APS municipal deben adoptar medidas para prevenir, investigar y sancionar estas conductas."
+      - "La inobservancia de estos deberes puede constituir falta a la probidad y generar responsabilidad administrativa."
+
+  Protocolos_Organos_Administracion:
+    ID: L21643_PUB_PROTOCOLO
+    Fuente:
+      - Ref: LOC_18575
+      - Ref: EA_18834
+      - Ref: LEY_18883
+      - Ref: LEY_21643
+    Def: "Los órganos de la Administración deben contar con un protocolo de prevención de violencia en el trabajo, acoso laboral y sexual, con acciones de difusión, formación y monitoreo."
+    Contenidos_Obligatorios:
+      - "Identificación y evaluación de riesgos psicosociales con enfoque inclusivo y de género."
+      - "Medidas preventivas y de control con objetivos medibles."
+      - "Plan de información y capacitación para funcionarios."
+      - "Medidas especiales en servicios de salud para proteger vida y salud del personal."
+      - "Medidas de resguardo de privacidad y honra en investigaciones."
+
+  Sumarios_yProcedimientos_Especiales:
+    ID: L21643_PUB_SUMARIOS
+    Fuente:
+      - Ref: EA_18834
+      - Ref: LEY_18883
+      - Ref: LEY_21643
+    Def: "Introduce reglas específicas para investigaciones y sumarios por acoso laboral, acoso sexual o violencia en el trabajo en el sector público y municipal."
+    Reglas_Principales:
+      - "Obligación de considerar iniciar de oficio investigación cuando se atenta contra la vida o integridad de funcionarios."
+      - "Aplicación de principios de confidencialidad, imparcialidad, celeridad y perspectiva de género."
+      - "Preferencia por designar fiscales con formación en acoso, género o derechos fundamentales."
+      - "Derechos reforzados de víctimas y denunciantes a ser informados, aportar antecedentes y reclamar decisiones ante Contraloría."
+    Plazos_y_Reclamos:
+      - "Diversas normas modificadas por la Ley 21.643 establecen que las resoluciones que afinan el procedimiento deben notificarse a la persona denunciante en plazos acotados (en general, 5 días hábiles), permitiendo reclamar ante la Contraloría General de la República dentro de 20 días."
+      - "Estos plazos refuerzan el derecho de las víctimas y personas afectadas a conocer oportunamente el resultado de la investigación y a impugnar decisiones que consideren injustas."
+
+  Responsabilidad_de_Altas_Autoridades_Municipales:
+    ID: L21643_MUN_AUTORIDADES
+    Fuente:
+      - Ref: LEY_18883
+      - Ref: LEY_18695
+      - Ref: LEY_21643
+    Def: "Regula la responsabilidad de alcaldes, concejales y jefaturas municipales por conductas de acoso o violencia en el trabajo, incluyendo servicios de salud municipal."
+    Notas_Salud:
+      - "Cuando el denunciado es alcalde, concejal o jefatura directa, interviene Contraloría General de la República en el sumario."
+      - "La concurrencia de estas conductas puede constituir contravención grave a la probidad administrativa y generar cesación en el cargo."
+      - "En determinados casos, las resoluciones que sobreseen, absuelven o aplican medidas disciplinarias respecto de autoridades del primer nivel jerárquico quedan afectas a toma de razón por parte de la Contraloría General de la República, agregando un control externo especial."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 4: SUSESO, LEY 16.744 Y REPORTE DE DENUNCIAS
+# ═══════════════════════════════════════════════════════════════════
+
+SUSESO_y_Riesgos_Psicosociales:
+
+  Obligacion_Reporte_SUSESO:
+    ID: L21643_SUSESO_REPORTE
+    Fuente:
+      - Ref: LEY_16744
+      - Ref: LEY_21643
+    Def: "Los organismos administradores del seguro de la Ley 16.744 deben reportar semestralmente a la SUSESO las denuncias de acoso laboral, sexual o violencia en el trabajo y las medidas adoptadas."
+    Datos_Reportados:
+      - "Cantidad de denuncias por tipo de conducta."
+      - "Acciones y medidas de resguardo implementadas."
+      - "Clasificación y registro de la información según instrucciones de SUSESO."
+    Impacto_En_Salud:
+      - "Permite monitorear de forma sistémica los riesgos psicosociales en servicios de salud."
+
+  Deber_Informacion_Empleadores:
+    ID: L21643_SUSESO_INFO_EMPLEADOR
+    Fuente:
+      - Ref: LEY_16744
+      - Ref: LEY_21643
+    Def: "Los empleadores deben proporcionar la información necesaria a los organismos administradores para el reporte a SUSESO."
+    Notas_Salud:
+      - "Servicios de salud públicos y privados deben mantener registros de denuncias y medidas para cumplir con estas obligaciones."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 5: CONEXION CON ACOSO LABORAL Y SEXUAL EN SALUD
+# ═══════════════════════════════════════════════════════════════════
+
+Conexion_Con_Modulo_Acoso:
+
+  Referencia_Acoso_Laboral_Sexual:
+    ID: L21643_REF_ACOSO
+    Ref:
+      - ID: ACOSO_LAB
+      - ID: ACOSO_SEX
+    Def: "La Ley 21.643 no redefine desde cero el acoso laboral y sexual, sino que refuerza y expande su tratamiento procedimental y preventivo, especialmente en contextos de alto riesgo como los servicios de salud."
+    Uso_Practico:
+      - "Para calificar un caso concreto, usar primero las definiciones de acoso de kb_med_006 y luego aplicar las obligaciones procedimentales y de protocolo de este módulo."
+
+  Cambio_Definicion_Acoso_Laboral:
+    ID: L21643_ACTUALIZA_ACOSO_LAB
+    Fuente:
+      - Ref: COD_TRAB
+      - Ref: LEY_21643
+    Def: "La Ley 21.643 modifica el artículo 2° del Código del Trabajo, precisando que el acoso laboral puede manifestarse una sola vez o de manera reiterada o sistemática, siempre que constituya agresión u hostigamiento que cause menoscabo, maltrato, humillación o afecte la situación laboral u oportunidades en el empleo."
+    Notas:
+      - "Este nodo actualiza la definición base ACOSO_LAB del módulo kb_med_006, originalmente centrada en la reiteración o sistematicidad de la conducta."
+      - "En contextos clínicos, un solo episodio especialmente grave (por ejemplo, agresión física o amenaza de gran entidad) puede configurar acoso laboral bajo Ley 21.643."
+
+  Casos_Tipicos_Salud:
+    ID: L21643_CASOS_SALUD
+    Ejemplos:
+      - "Médica de urgencias que sufre agresiones verbales y amenazas físicas recurrentes por parte de acompañantes de pacientes (violencia por terceros)."
+      - "Funcionario de APS municipal sometido a hostigamiento reiterado por su jefatura, con sobrecarga de trabajo y humillaciones públicas (acoso laboral)."
+      - "Residente que recibe proposiciones sexuales no deseadas vinculadas a evaluaciones o asignación de turnos (acoso sexual)."
+    Enfoque_Solucion:
+      - "Identificar el tipo de conducta (ACOSO_LAB, ACOSO_SEX, violencia de terceros)."
+      - "Aplicar el protocolo interno adecuado según sector (privado o público/municipal)."
+      - "Verificar adopción de medidas de resguardo y respeto de plazos y principios procedimentales."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 6: TRANSITORIOS Y ENTRADA EN VIGENCIA
+# ═══════════════════════════════════════════════════════════════════
+
+Vigencia_y_Transitorios:
+
+  Entrada_en_Vigencia:
+    ID: L21643_VIGENCIA
+    Fuente:
+      - Ref: LEY_21643
+    Def: "La Ley 21.643 entra en vigencia el primer día del sexto mes siguiente a su publicación en el Diario Oficial."
+    Implicancias:
+      - "Da un plazo para que empleadores y órganos públicos dicten o actualicen sus protocolos y reglamentos."
+
+  Procesos_En_Curso:
+    ID: L21643_TRANSITORIOS
+    Fuente:
+      - Ref: LEY_21643
+    Def: "Los procesos o investigaciones sobre acoso sexual, laboral o violencia en el trabajo iniciados antes de la vigencia de la ley se rigen por la normativa vigente a la fecha de la denuncia."
+    Nota_Interpretativa:
+      - "Para casos antiguos en hospitales o clínicas, evaluar el marco normativo según fecha de denuncia; para casos nuevos, aplicar completamente Ley 21.643."

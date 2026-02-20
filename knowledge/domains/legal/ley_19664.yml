@@ -1,0 +1,627 @@
+# KODA Artifact: Ley 19.664 - Normas especiales para profesionales funcionarios Servicios de Salud
+# URN: urn:knowledge:koda:legal:ley_19664:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre Ley 19.664 aplicada a médicos y otros profesionales funcionarios de los Servicios de Salud (SNSS)"
+    primary_use: "Explicar, artículo por artículo, cómo la Ley 19.664 regula carrera funcionaria, remuneraciones y asignaciones de cargos 11, 22, 33 y 44 horas en Servicios de Salud, y su relación con Ley 15.076 y otros estatutos"
+    cross_reference: "Usar kb_med_000 (Índice de leyes), kb_med_001 (intro estatutos, nodo L19664_SIN) y kb_med_005 (remuneraciones) para contexto general"
+
+  urn: "urn:knowledge:koda:legal:ley_19664:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Ley 19.664 desarrollada casi artículo-por-artículo para trabajo médico en Servicios de Salud"
+    source_document: "Ley 19.664 (Diario Oficial, 11 febrero 2000)"
+    source_sections: "Artículos 1 a 49 y artículos transitorios 1 a 17"
+    model_collaborators: ["KODA-TRANSFORMER"]
+  dependencies:
+    - Ref: "urn:knowledge:koda:legal:index:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:remuneraciones:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Resumen_Ejecutivo:
+  ID: L19664_RESUMEN
+  Ejes_Claves:
+    - "Ley especial para profesionales funcionarios de los Servicios de Salud con jornadas de 11, 22, 33 y 44 horas (incluye cargos directivos afectos a Ley 15.076)."
+    - "Estructura una carrera funcionaria en dos etapas (Destinación y Formación, Planta Superior), con reglas detalladas de ingreso, permanencia, especialización y acreditación."
+    - "Establece un sistema de remuneraciones y asignaciones específico (sueldo base, antigüedad, experiencia calificada, reforzamiento profesional diurno, permanencia para especialistas, responsabilidad, estímulo, bonificaciones por desempeño, zona, horas extraordinarias)."
+    - "Modifica la Ley 15.076 y otras normas para armonizar el régimen de los profesionales funcionarios de Servicios de Salud con la nueva carrera y sistema remuneratorio."
+  Casos_Uso_Tipicos:
+    - "Determinar qué normas de carrera funcionaria aplican a un médico funcionario de Servicios de Salud con cargo 22 o 44 horas."
+    - "Explicar a un profesional cómo funciona la Etapa de Destinación y Formación, cuándo puede concursar a Planta Superior y qué ocurre si está en programa de especialización."
+    - "Desglosar la estructura de remuneraciones y asignaciones de un profesional regido por Ley 19.664 y cómo se relaciona con módulos generales de remuneraciones (kb_med_005)."
+    - "Identificar qué artículos de Ley 15.076 siguen aplicando y cuáles se entienden sustituidos o modificados por Ley 19.664."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: ÁMBITO Y NATURALEZA DE LA LEY 19.664
+# ═══════════════════════════════════════════════════════════════════
+
+Ambito_y_Naturaleza_L19664:
+
+  Ambito_Aplicacion_L19664:
+    ID: L19664_AMBITO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 1
+    Def: "Establece normas especiales para profesionales funcionarios regidos por Ley 15.076 que desempeñan cargos con jornadas de 11, 22, 33 y 44 horas semanales en establecimientos de los Servicios de Salud, incluyendo cargos de la planta de Directivos con dichas jornadas."
+    Efectos_Principales:
+      - "Estos profesionales quedan regidos por las normas especiales del Título I de la Ley 19.664."
+      - "En todo lo no previsto en este Título y para casos distintos a los señalados, continúa aplicándose Ley 15.076 como estatuto supletorio principal (ver kb_med_001, nodo JERARQ_SNSS)."
+
+  Relacion_con_Otros_Estatutos:
+    ID: L19664_RELACION_ESTATUTOS
+    Fuente:
+      - Ref: LEY_19664
+      - Ref: LEY_15076
+      - Ref: EA_18834
+    Def: "La Ley 19.664 actúa como ley especial frente a Ley 15.076 para médicos y otros profesionales funcionarios de Servicios de Salud con jornadas 11, 22, 33 y 44 horas; en materias no reguladas por esta ley, se recurre supletoriamente a Ley 15.076 y, en segundo nivel, al Estatuto Administrativo General (Ley 18.834)."
+    Conexion_Jerarquia:
+      - "La jerarquía normativa para médicos SNSS se detalla en kb_med_001 (JERARQ_SNSS): CPR, LOC_18575, LEY_19664, LEY_15076, EA_18834, COD_TRAB."
+      - "Este módulo profundiza en el contenido de LEY_19664 que en kb_med_001 se presenta solo como síntesis (L19664_SIN)."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: DOTACIONES Y PLANTAS PROFESIONALES (ARTS. 2–4)
+# ═══════════════════════════════════════════════════════════════════
+
+Dotaciones_y_Planta_Profesional:
+
+  Dotacion_Personal_Servicios_Salud:
+    ID: L19664_ART2_DOTACION
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 2
+    Def: "Dispone que las dotaciones de personal asignadas a los Servicios de Salud, respecto de profesionales funcionarios no directivos regidos por esta ley, se expresan en cargos con jornadas de 11, 22, 33 y 44 horas semanales, fijados y distribuidos por los Directores de los Servicios según necesidades de funcionamiento."
+    Elementos_Clave:
+      - "La dotación global fijada en la Ley de Presupuestos para estos profesionales se expresa en horas semanales de trabajo."
+      - "El Ministerio de Salud distribuye por resolución esas horas entre los distintos Servicios de Salud."
+
+  Plantas_Profesionales_en_Horas:
+    ID: L19664_ART3_PLANTAS
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 3
+    Def: "Ordena que las plantas profesionales de los Servicios de Salud para cargos afectos a Ley 15.076 (excepto cargos de 28 horas) se fijen y expresen en horas semanales de trabajo, no solo en número de cargos."
+    Notas_Interpretativas:
+      - "Refuerza la lógica de planta en horas, coherente con las jornadas de 11, 22, 33 y 44 horas."
+
+  Organizacion_de_Plantas_en_Cargos:
+    ID: L19664_ART4_ORGANIZACION
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 4
+    Def: "Entrega a los Directores de Servicios de Salud la facultad de organizar, distribuir y estructurar las plantas de horas en cargos concretos de 11, 22, 33 o 44 horas para las distintas profesiones, y de reconfigurar, fraccionar o fusionar cargos cuando estén vacantes o haya rebajas horarias fundadas."
+    Reglas_Principales:
+      - "Debe consultarse previamente a los directores de establecimientos bajo su dependencia."
+      - "La reconfiguración de cargos debe considerar las finalidades y necesidades del Servicio de Salud."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: CARRERA FUNCIONARIA (ARTS. 5–24)
+# ═══════════════════════════════════════════════════════════════════
+
+Carrera_Funcionaria_Servicios_Salud:
+
+  Estructura_Basica_Carrera:
+    ID: L19664_ART5_ESTRUCTURA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 5
+    Def: "Define que los profesionales funcionarios no directivos con jornadas diurnas en los establecimientos de los Servicios de Salud quedan sujetos a una carrera funcionaria estructurada en dos etapas: Etapa de Destinación y Formación, y Etapa de Planta Superior."
+    Etapas:
+      - "Etapa de Destinación y Formación: etapa inicial de ingreso, destinación y perfeccionamiento."
+      - "Etapa de Planta Superior: etapa de desarrollo profesional y consolidación en la carrera."
+
+  Etapa_Destinacion_Formacion_Reglas_Generales:
+    ID: L19664_ART6_7_DF
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 6
+      - 7
+    Def: "Regula que la Etapa de Destinación y Formación se cumple mediante empleos a contrata, con permanencia máxima de nueve años, orientada a perfeccionamiento y desarrollo de competencias, principalmente en funciones asistenciales."
+    Reglas_Clave:
+      - "A partir del sexto año en esta etapa, los profesionales pueden postular a concursos para cargos de la Etapa de Planta Superior."
+      - "El Director del Servicio de Salud puede prorrogar fundadamente la contrata de quienes, al noveno año, aún se encuentren en programa de especialización, por un plazo máximo adicional de dos años para completar el programa."
+      - "El detalle de criterios para prórroga de contratos se define por decreto del Ministerio de Salud, suscrito además por el Ministro de Hacienda."
+      - "Pertenecen a esta etapa quienes están en período de perfeccionamiento y desarrollo de competencias, contratados preferentemente para funciones asistenciales."
+
+  Ingreso_a_Destinacion_Formacion:
+    ID: L19664_ART8_INGRESO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 8
+    Def: "Establece que el ingreso a la Etapa de Destinación y Formación se realiza mediante un proceso de selección objetivo, técnico e imparcial, desarrollado a nivel nacional al menos una vez al año."
+    Caracteristicas_Proceso:
+      - "Comisión encargada del proceso puede usar oposición de antecedentes, pruebas, entrevistas, exámenes y otros instrumentos que evalúen competencias para el cargo."
+      - "Los instrumentos de selección deben ser públicos, abiertos y de carácter nacional."
+      - "Un reglamento fija modalidades, condiciones y formalidades de selección y permanencia en la Etapa de Destinación y Formación."
+
+  Contratacion_Directa_en_DF:
+    ID: L19664_ART9_CONTRATACION_DIRECTA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 9
+    Def: "Autoriza a los Directores de Servicios de Salud para contratar directamente profesionales en la Etapa de Destinación y Formación, en casos fundados por necesidades del servicio, en forma transitoria y por períodos determinados."
+    Limites:
+      - "Estas contrataciones se financian con cargo a la dotación de horas asignadas a la Etapa de Destinación y Formación que se encuentren disponibles."
+      - "No pueden exceder del 20% de la dotación de horas asignadas a esta Etapa en cada Servicio."    
+
+  Derechos_y_Programas_de_Especializacion_en_DF:
+    ID: L19664_ART10_12_ESPECIALIZACION
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 10
+      - 11
+      - 12
+    Def: "Regula el acceso de profesionales de la Etapa de Destinación y Formación, y otros regímenes, a programas de perfeccionamiento y especialización, así como las obligaciones de desempeño posterior y reembolso en caso de incumplimiento."
+    Elementos_Clave:
+      - "Profesionales ingresados por concurso nacional a Etapa de Destinación y Formación tienen igualdad de oportunidades para acceder a programas de perfeccionamiento y especialización ofrecidos por los Servicios o el Ministerio de Salud."
+      - "Para acceder a especialización se exige, como regla general, desempeño previo mínimo en nivel primario de atención (en Servicios de Salud o APS municipal) por un lapso no inferior a tres años, con posibles rebajas para especialidades relevantes."
+      - "Los programas de especialización tienen duración continua o acumulada entre uno y tres años."
+      - "Quienes acceden a programas financiados por las entidades empleadoras o el Ministerio deben cumplir obligación de desempeño posterior por un tiempo al menos igual a la duración del programa; el incumplimiento genera obligación de reembolsar gastos incrementados y puede implicar prohibición de reingreso a la Administración del Estado por hasta seis años."
+      - "Se prevén reglas para cumplir el compromiso de desempeño en otro Servicio de Salud, con acuerdos entre servicios y traspaso de recursos y garantías."
+
+  Reglamento_Programas_y_Acceso:
+    ID: L19664_ART13_REGLAMENTO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 13
+    Def: "Ordena dictar un reglamento que fije condiciones y modalidades de acceso a programas de perfeccionamiento y especialización, su permanencia y procedimientos objetivos, técnicos e imparciales de selección."
+
+  Etapa_Planta_Superior_Estructura_y_Niveles:
+    ID: L19664_ART14_18_PLANTA_SUP
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+    Def: "Configura la Etapa de Planta Superior como etapa de desarrollo profesional avanzado, con tres niveles asociados a la asignación de experiencia calificada y sometida a sistemas de acreditación periódica ordinaria y de excelencia."
+    Contenido_Por_Articulo:
+      - Art14: "Define la Etapa de Planta Superior y su finalidad (aplicación sistemática de competencias, formación de nuevos profesionales, coordinación y supervisión de equipos)."
+      - Art15: "Regula el ingreso a Planta Superior mediante concurso público regido por Ley 19.198; reconoce niveles de experiencia calificada ya percibidos y condiciona el pago a existencia de cupo financiero."
+      - Art16: "Establece un sistema de acreditación obligatoria cada nueve años para profesionales de Planta Superior, con evaluación cualitativa y cuantitativa de logros; la no presentación a acreditación genera pérdida de requisitos y vacancia o término de contrato."      
+      - Art17: "Permite acreditación de excelencia tras cinco años en niveles I o II, con requisitos reglamentarios; quienes no aprueban siguen sometidos a reglas de acreditación general."
+      - Art18: "Dispone efectos de la acreditación aprobada: acceso a nivel siguiente sujeto a cupo financiero, cómputo de tiempos de espera para próximas acreditaciones y obligación de nuevas presentaciones en caso de no aprobación."
+
+  Valor_de_Acreditaciones_y_Concursos:
+    ID: L19664_ART20_21_ACREDITACION
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 20
+      - 21
+    Def: "Refuerza el valor de las acreditaciones previas como antecedente en concursos y regula casos de contratación asimilada a Nivel I en Etapa de Planta Superior."
+    Puntos_Relevantes:
+      - "Art20: la aprobación de acreditación en un Servicio de Salud debe ser considerada favorablemente cuando el profesional postula a otro cargo en el mismo u otro Servicio."
+      - "Art21: autoriza a directores de Servicios de Salud a contratar profesionales asimilados al Nivel I de Planta Superior, bajo ciertas condiciones de años de ejercicio, difusión pública de plazas y posterior sometimiento a acreditación."
+
+  Sistema_de_Acreditacion_y_Reglamento:
+    ID: L19664_ART22_ACREDITACION_SISTEMA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 22
+    Def: "Ordena dictar un reglamento que fije parámetros, procedimientos, órganos y modalidades específicas para el funcionamiento del sistema de acreditación de profesionales funcionarios, en base a criterios técnicos, objetivos e imparciales."
+
+  Limites_Contratas_Planta_Superior:
+    ID: L19664_ART23_CONTRATAS_PS
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 23
+    Def: "Limita los cargos a contrata de profesionales funcionarios asimilados a la Etapa de Planta Superior a un máximo equivalente al 20% de las horas del total de la planta profesional definida en el artículo 3."
+
+  Modalidad_Llamada_Ocasional_y_Transitoria:
+    ID: L19664_ART24_MODALIDAD_LLAMADA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 24
+    Def: "Faculta a los Directores de Servicios de Salud para celebrar convenios bajo modalidad de llamada con determinados profesionales (médicos cirujanos, cirujanos dentistas, farmacéuticos o químicos farmacéuticos y bioquímicos) para labores ocasionales o transitorias de carácter clínico."
+    Caracteristicas:
+      - "Esta modalidad refuerza actividades clínicas cuando los recursos humanos propios del Servicio no son suficientes."
+      - "Las prestaciones se retribuyen mediante honorarios conforme a aranceles fijados en los convenios, con vigencia limitada al período presupuestario."
+      - "Los profesionales quedan obligados a aceptar como única retribución los valores convenidos y se establecen reglas de registro y resolución de autorización para los pagos."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 4: REMUNERACIONES Y ASIGNACIONES (ARTS. 25–45)
+# ═══════════════════════════════════════════════════════════════════
+
+Remuneraciones_y_Asignaciones_L19664:
+
+  Sistema_Remuneraciones_General:
+    ID: L19664_ART25_26_SISTEMA
+    Fuente:
+      - Ref: LEY_19664
+      - Ref: LEY_15076
+    Articulos:
+      - 25
+      - 26
+    Def: "Establece un sistema de remuneraciones específico para profesionales funcionarios de planta y a contrata con jornadas diurnas de 11, 22, 33 o 44 horas, compuesto por remuneraciones permanentes y transitorias fijadas por ley y por el Director del Servicio dentro de rangos legales."
+    Elementos:
+      - "Art25: los profesionales con las jornadas señaladas se regirán por el sistema que se regula en los artículos siguientes."
+      - "Art26: distingue remuneraciones permanentes y transitorias; las transitorias se fijan por el Director dentro de rangos legales y, en general, son imponibles para salud y pensiones, con excepciones como la bonificación por desempeño individual."
+    Conexion_Modulo_Remuneraciones:
+      - "Este sistema se conecta con conceptos generales descritos en kb_med_005 (REM_PUB_COMPONENTES, REM_ASIG_CLASICAS), pero con reglas y porcentajes propios."
+
+  Clasificacion_Remuneraciones_Permanentes:
+    ID: L19664_ART27_PERMANENTES
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 27
+    Def: "Enumera las remuneraciones permanentes: sueldo base, asignación de antigüedad, asignación de experiencia calificada, asignación de reforzamiento profesional diurno y asignación de permanencia para especialistas y subespecialistas."
+    Detalle:
+      - "Sueldo base: retribución pecuniaria fija, base de cálculo para otras remuneraciones (salvo bonificaciones de desempeño)."
+      - "Asignación de antigüedad: por trienios de servicios como profesional funcionario."
+      - "Asignación de experiencia calificada: reconoce nivel de calificación técnica y competencia."
+      - "Asignación de reforzamiento profesional diurno: retribuye desempeño profesional en jornadas diurnas en establecimientos de los Servicios de Salud."
+      - "Asignación de permanencia para especialistas y subespecialistas: retribución específica ligada a certificación e inscripción en el registro de prestadores individuales."
+
+  Clasificacion_Remuneraciones_Transitorias:
+    ID: L19664_ART28_TRANSITORIAS
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 28
+    Def: "Define las remuneraciones transitorias: asignación de responsabilidad, asignación de estímulo, bonificación por desempeño individual y bonificación por desempeño colectivo."
+    Detalle:
+      - "Asignación de responsabilidad: retribuye importancia o jerarquía de cargos directivos y funciones de dirección, coordinación, supervisión o mando."
+      - "Asignación de estímulo: se otorga por jornadas prioritarias, competencias profesionales o condiciones y lugares de trabajo difíciles."
+      - "Bonificación por desempeño individual: se asocia al sistema de calificaciones anuales."
+      - "Bonificación por desempeño colectivo: se paga al conjunto de profesionales de unidades de trabajo que cumplen metas de desempeño institucional."
+
+  Sueldo_Base_y_Valores_Iniciales:
+    ID: L19664_ART29_SUELDO_BASE
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 29
+    Def: "Fija el sueldo base mensual para jornada de 44 horas y dispone que se reajusta en los mismos porcentajes y oportunidades que las remuneraciones del sector público; los sueldos base para jornadas de 11, 22 y 33 horas son proporcionales."
+    Nota_Historica:
+      - "Los montos se expresan en valores vigentes a 31 de diciembre de 1996; su actualización se rige por reglas generales de reajuste."
+
+  Asignacion_de_Antiguedad:
+    ID: L19664_ART30_31_ANTIGUEDAD
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 30
+      - 31
+    Def: "Concede una asignación de antigüedad por cada tres años de servicios como profesional funcionario, con una tabla de trienios crecientes, y regula qué servicios previos son válidos para su reconocimiento."
+    Elementos_Clave:
+      - "Art30: establece porcentajes sobre el sueldo base para cada trienio, desde el 34% para el primer trienio hasta el 72% para el décimo tercer trienio."
+      - "Art31: reconoce servicios anteriores prestados como profesional funcionario en diversos organismos (Servicios de Salud, APS municipal, FFAA, Carabineros, universidades, empleadores particulares que ejercen funciones delegadas), con límites (no se cuentan períodos ad honorem y los servicios reconocidos no pueden volver a usarse para el mismo fin en caso de interrupción)."
+
+  Asignacion_Experiencia_Calificada:
+    ID: L19664_ART32_EXPERIENCIA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 32
+    Def: "Otorga a los profesionales de la Etapa de Planta Superior una asignación de experiencia calificada en tres niveles, expresada como porcentaje del sueldo base, condicionada a la existencia de cupos financieros."
+    Porcentajes:
+      - "Nivel I: 40% del sueldo base."
+      - "Nivel II: 82% del sueldo base."
+      - "Nivel III: 102% del sueldo base."
+    Notas:
+      - "Todos los que ingresan a Nivel I tienen derecho al porcentaje correspondiente."
+      - "El acceso a Niveles II y III requiere acreditación y existencia de cupo financiero distribuido por resolución del Ministerio de Salud, visada por la Dirección de Presupuestos."
+      - "Profesionales que pasan a cargos directivos con jornadas reguladas mantienen el porcentaje de asignación reconocido."
+
+  Asignacion_Reforzamiento_Profesional_Diurno:
+    ID: L19664_ART33_REFORZAMIENTO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 33
+    Def: "Establece una asignación de reforzamiento profesional diurno para profesionales de las Etapas de Destinación y Formación y de Planta Superior que cumplan funciones en establecimientos de los Servicios de Salud."
+    Porcentajes:
+      - "Etapa de Destinación y Formación: 28% del sueldo base."
+      - "Etapa de Planta Superior: 108% del sueldo base."
+
+  Asignacion_Permanencia_Especialistas:
+    ID: L19664_ART33BIS_PERMANENCIA
+    Fuente:
+      - Ref: LEY_19664
+      - Ref: LEY_16744
+    Articulos:
+      - "33 bis"
+    Def: "Crea una asignación de permanencia para especialistas y subespecialistas que se desempeñen en los servicios de salud y estén certificados e inscritos en el Registro de Prestadores Individuales de la Superintendencia de Salud."
+    Regimen:
+      - "Monto equivalente al 40% del sueldo base para jornadas de 44, 33 o 22 horas; 10% para jornadas de 11 horas."
+      - "Se paga mensualmente, independientemente del número de especialidades inscritas, y no constituye base de cálculo para otras remuneraciones."
+      - "Si el profesional tiene dos cargos compatibles en el mismo servicio, la asignación puede alcanzar el 40% del sueldo base sobre la suma de jornadas."
+      - "Se percibe solo mientras se mantenga vigente la inscripción en el registro; el profesional es responsable de renovar su certificación."
+
+  Asignacion_Responsabilidad:
+    ID: L19664_ART34_RESPONSABILIDAD
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 34
+    Def: "Otorga una asignación de responsabilidad a profesionales que desempeñan cargos directivos o funciones de dirección, coordinación, supervisión o mando, según requisitos de jornada y selección por concurso interno."
+    Caracteristicas:
+      - "Se paga como porcentaje del sueldo base del cargo o de las horas dedicadas a las funciones de responsabilidad, entre un mínimo del 10% y un máximo del 130%."
+      - "Los rangos específicos se fijan por reglamento, atendiendo complejidad de establecimientos y niveles jerárquicos."
+      - "El Director de cada Servicio determina el porcentaje dentro de esos rangos, mediante resolución fundada."
+
+  Asignacion_Estimulo:
+    ID: L19664_ART35_ESTIMULO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 35
+    Def: "Regula una asignación de estímulo asociada a jornadas prioritarias, competencias profesionales y condiciones o lugares de trabajo especiales."
+    Componentes:
+      - "Jornadas prioritarias: refuerzan horarios diurnos que el Servicio define como necesarios (por ejemplo, jornadas de tarde 22 horas en Etapa de Planta Superior, con montos mínimos definidos por ley)."
+      - "Competencias profesionales: valoran formación, capacitación, especialización o competencias requeridas para determinados puestos."
+      - "Condiciones y lugares de trabajo: reconocen desempeño en lugares aislados, de difícil acceso o con condiciones especiales (ej. turnos de llamada)."
+    Limites:
+      - "La suma de porcentajes por conceptos de estímulo no puede exceder del 180% del sueldo base asociado a las horas efectivamente asignadas a la función."
+
+  Bonificacion_Desempeno_Individual:
+    ID: L19664_ART36_BONO_INDIVIDUAL
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 36
+    Def: "Establece una bonificación anual por desempeño individual asociada al proceso de calificaciones, pagada a un porcentaje de los profesionales mejor evaluados de cada establecimiento."
+    Elementos:
+      - "Se paga al 30% de los profesionales mejor evaluados, con tramos: 10% del total anual de determinadas remuneraciones para el primer 15%, y 5% para el siguiente 15%."
+      - "Se calcula sobre la suma anual de sueldo base, asignación de antigüedad y asignación de experiencia calificada, cuando corresponda."
+      - "Se paga en dos cuotas (julio y diciembre) a quienes estén en servicio a la fecha de pago."
+      - "Se regulan exclusiones (quienes no fueron calificados) y reglas especiales para miembros de juntas calificadoras, delegados y dirigentes de asociaciones."
+
+  Bonificacion_Desempeno_Colectivo:
+    ID: L19664_ART37_38_BONO_COLECTIVO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 37
+      - 38
+    Def: "Crea una bonificación por desempeño colectivo institucional para profesionales que cumplan metas de un programa anual de trabajo convenido entre establecimientos, Servicios de Salud y el Ministerio de Salud, regulando además su tratamiento previsional y tributario."
+    Elementos:
+      - "Art37: define la bonificación como hasta el 10% del total anual de ciertas remuneraciones (sueldo base, antigüedad, experiencia calificada), condicionada a cumplimiento de metas de calidad, eficiencia y acceso."
+      - "Requiere convenios anuales entre establecimientos y Servicios, coherentes con convenios entre Servicios y Ministerio; el Ministro califica metas y evalúa su cumplimiento."
+      - "Art38: establece que la bonificación colectiva se suma a remuneraciones del mes para efectos previsionales (con tope legal) y distribuye su monto proporcionalmente a los meses para efectos de cálculo de impuestos."
+
+  Exclusion_Personal_Honorarios:
+    ID: L19664_ART39_HONORARIOS
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 39
+    Def: "Declara que las bonificaciones por desempeño individual y colectivo no se aplican a profesionales cuya prestación de servicios se rige por contratos a honorarios."
+
+  Compatibilidad_Asignaciones:
+    ID: L19664_ART40_COMPATIBILIDAD
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 40
+    Def: "Señala que las asignaciones de experiencia calificada, antigüedad, reforzamiento profesional diurno, permanencia para especialistas y subespecialistas, responsabilidad, estímulo y las bonificaciones por desempeño son compatibles entre sí, incluso cuando se perciben sus máximos."
+
+  Sustitucion_Sistema_Remuneratorio_Anterior:
+    ID: L19664_ART41_SUSTITUCION
+    Fuente:
+      - Ref: LEY_19664
+      - Ref: LEY_15076
+    Articulos:
+      - 41
+    Def: "Indica que el sistema de remuneraciones de la Ley 19.664 sustituye, para los profesionales a quienes se aplica, diversas remuneraciones establecidas en Ley 15.076 y otras normas (DL 3.551/1980, Ley 18.482, Ley 18.717, Ley 19.112, Ley 19.432), que dejan de ser aplicables desde su entrada en vigencia."
+
+  Bonificaciones_y_Reajustes_Especiales:
+    ID: L19664_ART42_BONOS_TRANSITORIOS
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 42
+    Def: "Fija bonificaciones específicas (referidas a DL 3.501, Ley 18.566, Ley 18.675) para profesionales con jornada 44 horas y proporcionales para 11, 22 y 33 horas, expresadas en valores al 31 de diciembre de 1996, reajustables conforme a reglas del sector público."
+
+  Horas_Extraordinarias_y_Compensacion:
+    ID: L19664_ART43_44_HORAS_EXTRA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 43
+      - 44
+    Def: "Regula el trabajo extraordinario de los profesionales funcionarios regidos por esta ley y su compensación en descanso complementario o pago, y establece que las cantidades percibidas por concepto de horas extraordinarias no son imponibles."
+    Puntos_Clave:
+      - "Art43: define horas extraordinarias y trabajo nocturno; fija reglas de compensación en descanso con recargos del 25% o 50%, y excepcionalmente en dinero cuando no se pueda otorgar descanso; establece tope general de 40 horas extraordinarias diurnas mensuales, salvo calamidades públicas u otras circunstancias extraordinarias."
+      - "Art44: declara que las cantidades percibidas por horas extraordinarias no son imponibles para ningún efecto legal."
+
+  Asignacion_Zona:
+    ID: L19664_ART45_ZONA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 45
+    Def: "Señala que la asignación de zona para profesionales regidos por el sistema de remuneraciones de esta ley se calcula sobre el sueldo base, la asignación de antigüedad y la asignación de experiencia calificada, cuando correspondan."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 5: NORMAS GENERALES, PERFECCIONAMIENTO Y MODIFICACIONES (ARTS. 46–49)
+# ═══════════════════════════════════════════════════════════════════
+
+Normas_Generales_y_Modificaciones:
+
+  Perfeccionamiento_y_Capacitacion:
+    ID: L19664_ART46_PERFECCIONAMIENTO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 46
+    Def: "Autoriza a los Servicios de Salud a otorgar comisiones para concurrir a congresos, seminarios, conferencias, programas de postítulo o posgrado y otras actividades de perfeccionamiento, y ordena estructurar planes anuales de capacitación con días adicionales pagados para dichos fines."
+    Elementos:
+      - "Reconoce el deber de los Servicios de Salud de planificar anualmente actividades de capacitación para profesionales funcionarios."
+      - "Otorga hasta tres días adicionales semestrales con goce de remuneraciones, acumulables dentro del año calendario, destinados exclusivamente a actividades de perfeccionamiento o capacitación."
+      - "El reglamento fija condiciones de acceso, criterios técnicos y modalidades de funcionamiento de la capacitación."
+
+  Comisiones_al_Extranjero:
+    ID: L19664_ART47_COMISION_EXTRANJERO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 47
+    Def: "Permite conceder comisiones al extranjero por hasta treinta días para que profesionales funcionarios concurran a actividades de perfeccionamiento (congresos, seminarios, etc.), bajo condiciones estrictas de utilidad para el servicio, ausencia de perjuicio al funcionamiento y límites de gasto."
+    Condiciones:
+      - "Las actividades deben contribuir al perfeccionamiento profesional y al logro de metas del Servicio."
+      - "La ausencia no puede perjudicar objetivamente el funcionamiento de las unidades."
+      - "En principio no debe implicar gastos adicionales más allá de las remuneraciones, salvo que existan recursos para pasajes o viáticos no financiados por entes externos."
+      - "Se limita el número de comisiones por profesional y se exige un período mínimo entre ellas, con una regla excepcional para casos calificados."
+
+  Modificaciones_a_DL_2763:
+    ID: L19664_ART48_MODIF_DL2763
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 48
+    Def: "Introduce modificaciones al decreto ley N° 2.763 de 1979, reforzando el rol del Ministerio de Salud en la coordinación nacional de procesos de selección de profesionales para ingreso a la Etapa de Destinación y Formación, en el otorgamiento de becas y en la contratación de profesionales para APS municipal mediante convenios con municipalidades."
+    Relevancia_Para_Medicos:
+      - "Permite coordinar a nivel nacional la selección de médicos y otros profesionales para la Etapa de Destinación y Formación, según necesidades del país y de los Servicios."
+      - "Autoriza otorgamiento de becas vinculadas a programas de perfeccionamiento o especialización alineados con necesidades de los Servicios de Salud."
+      - "Facilita convenios con municipalidades para contratar profesionales en Etapa de Destinación y Formación en establecimientos de APS municipal, financiados con transferencias de la Ley 19.378."
+
+  Modificaciones_a_Ley_15076:
+    ID: L19664_ART49_MODIF_15076
+    Fuente:
+      - Ref: LEY_19664
+      - Ref: LEY_15076
+    Articulos:
+      - 49
+    Def: "Introduce numerosas modificaciones a la Ley 15.076 (Estatuto para médicos cirujanos y otros profesionales), principalmente en materias de designaciones, requisitos, asignaciones, jornada, facultades de directores de Servicios de Salud y armonización con la nueva carrera y sistema remuneratorio de la Ley 19.664."
+    Lineas_Principales:
+      - "Ajusta requisitos y modalidades de designación en cargos de médicos (incluyendo referencia a resoluciones, no solo decretos)."
+      - "Modifica reglas sobre asignaciones y jornada para su coherencia con el sistema de horas y jornadas de la Ley 19.664."
+      - "Refuerza facultades de los Directores de Servicios de Salud en la aplicación de ciertas asignaciones y en la organización de recursos humanos."
+    Nota_Al_Usuario:
+      - "Para análisis detallado de las modificaciones artículo por artículo en Ley 15.076, complementar con un módulo específico sobre L15076 o con la lectura del texto refundido vigente (ver kb_med_001, nodo L15076_SIN)."
+# PARTE 6: VIGENCIA Y ARTÍCULO TRANSITORIO
+# ═══════════════════════════════════════════════════════════════════
+
+Vigencia_y_Transitorios_L19664:
+
+  Entrada_en_Vigencia:
+    ID: L19664_VIGENCIA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - "Art. 1 transitorio"
+    Def: "Dispone que la Ley 19.664 entra en vigencia a contar del día primero del sexto mes siguiente al de su publicación en el Diario Oficial, con una regla especial para la entrada en vigencia del artículo 33."
+    Detalle:
+      - "El artículo 33 (asignación de reforzamiento profesional diurno) rige desde el 1 de diciembre de 1999."
+      - "El pago retroactivo que se genere por el artículo 33 debe efectuarse dentro de los 15 días siguientes a la publicación de la ley."
+
+  Reglas_Transitorias_Sistema_Remuneraciones:
+    ID: L19664_TRANSITORIOS_REMUNERACIONES
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - "Art. 1 transitorio"
+    Def: "El artículo transitorio regula la forma en que se implementan las nuevas plantas de horas, la separación de cargos con componentes de 28 horas, y el calendario de aplicación de las bonificaciones por desempeño."
+    Elementos:
+      - "Las jornadas de 28 horas de los cargos 11-28 y 22-28 de las plantas profesionales de Servicios de Salud pasan a constituir cargos separados desde la vigencia de las plantas profesionales de horas reguladas en el artículo 3."
+      - "La bonificación por desempeño individual (art. 36) se paga a contar del año calendario siguiente a la entrada en vigencia de la ley, sobre la base del proceso calificatorio del año anterior."
+      - "La bonificación por desempeño colectivo (art. 37) se paga, por única vez, durante el primer semestre del año calendario siguiente a la entrada en vigencia, a todo el personal, por un porcentaje único de las remuneraciones indicadas en dicho artículo devengadas el año anterior."
+
+  Regimen_Transitorio_Carrera_e_Incorporacion:
+    ID: L19664_TRANS_CARRERA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+    Def: "Regula cómo se incorporan a la nueva carrera los profesionales que ya pertenecían al sistema anterior (Ciclo de Destinación, generales de zona, becarios y titulares o contrata), cómo se transforman las plantas en horas y cómo se asignan Etapas y Niveles iniciales, sin pérdida de condición jurídica ni remuneraciones."
+    Elementos:
+      - "Art2: incorpora por el solo ministerio de la ley a los profesionales del antiguo Ciclo de Destinación en la Etapa de Destinación y Formación de los Servicios de Salud en que se encuentran, definiendo reglas para generales de zona y becarios, incluyendo planillas suplementarias cuando el nuevo sistema genere diferencias de remuneración."
+      - "Art3: faculta al Presidente de la República para modificar, mediante decretos con fuerza de ley, las plantas profesionales afectas a la Ley 15.076 fijándolas en horas semanales de trabajo (excluyendo las 28 horas) y hacer aplicables las normas especiales de esta ley a cargos directivos; establece la incorporación automática de los actuales titulares a las nuevas plantas de horas."
+      - "Art4: ubica a los profesionales en las Etapas y Niveles de la carrera según los trienios de antigüedad reconocidos, fijando reglas distintas para titulares de planta con menos de tres trienios y para funcionarios a contrata con tres o más trienios."
+      - "Art5: dispone que la asignación de experiencia calificada se devenga automáticamente desde la entrada en vigencia de la ley, de acuerdo con el nivel que corresponda a los profesionales en sus cargos, y fija el calendario de las primeras acreditaciones."
+      - "Art6: reconoce a los profesionales de la Planta de Directivos con jornadas reguladas el derecho a percibir la asignación de experiencia calificada según su antigüedad en la Etapa de Planta Superior y regula su designación en el nivel que les corresponda."
+      - "Art7: asegura que la aplicación de las normas especiales de esta ley no pueda significar pérdida de la condición jurídica ni disminución de remuneraciones, ni constituir causal de término de servicios, supresión o fusión de cargos o cese de funciones."
+
+  Regimen_Transitorio_Remuneraciones_y_Desahucio:
+    ID: L19664_TRANS_REMUN_DESAHUCIO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 8
+      - 9
+      - 10
+      - 16
+    Def: "Establece reglas de transición para evitar disminución de remuneraciones con el nuevo sistema, mantener las bases de cálculo de desahucio y asegurar continuidad del régimen remuneratorio anterior mientras se dictan los instrumentos de implementación, incluyendo planillas suplementarias para diferencias de zona."
+    Elementos:
+      - "Art8: garantiza que la entrada en vigencia de las remuneraciones permanentes de esta ley no implique una disminución del total de remuneraciones equivalentes respecto del sistema de la Ley 15.076, creando una planilla suplementaria imponible para cubrir eventuales diferencias, que se absorbe con futuros aumentos permanentes y se reajusta como las remuneraciones del sector público."
+      - "Art9: mantiene, para quienes están afectos al régimen de desahucio del DFL N° 338/1960, una base de cotización equivalente al total de las remuneraciones imponibles del mes anterior a la vigencia de la ley, reajustada conforme a las remuneraciones del sector público, que servirá de base para el pago del beneficio."
+      - "Art10: dispone que, mientras no se dicten los instrumentos necesarios para aplicar el nuevo régimen, el personal continúa transitoriamente bajo el sistema de remuneraciones de la Ley 15.076, con las reliquidaciones correspondientes una vez implementado el nuevo sistema."
+      - "Art16: protege a quienes queden percibiendo por concepto de asignación de zona un monto inferior al que gozaban antes de la ley, asegurándoles el pago de la diferencia mediante una planilla suplementaria reajustable mientras se mantengan las condiciones que dieron origen a su pago."
+
+  Regimen_Transitorio_Retiro_y_Llamada:
+    ID: L19664_TRANS_RETIRO_LLAMADA
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 11
+    Def: "Configura un régimen transitorio de retiro para profesionales funcionarios que cumplen ciertas edades y requisitos previsionales, otorgando beneficios especiales e integración preferente a la modalidad de llamada y a cargos a contrata."
+    Beneficios:
+      - "Permite a los Directores de los Servicios de Salud, durante los tres años siguientes a la entrada en vigencia de la ley, declarar vacantes los cargos de profesionales de planta que cumplan determinadas edades y requisitos para jubilar, así como otorgar iguales beneficios a quienes opten voluntariamente por jubilar dentro de ese plazo."
+      - "Reconoce a estos profesionales derecho a una indemnización equivalente a ocho meses de la última remuneración devengada."
+      - "Otorga el derecho a integrar, por un período no inferior a cinco años, la nómina de consultores de llamada regulada en el artículo 24, y a ser considerados preferentemente para la provisión de cargos a contrata en el respectivo Servicio de Salud."
+
+  Regimen_Transitorio_Seguimiento_y_Financiamiento:
+    ID: L19664_TRANS_SEGUIMIENTO_FINANCIAMIENTO
+    Fuente:
+      - Ref: LEY_19664
+    Articulos:
+      - 12
+      - 13
+      - 14
+      - 15
+      - 17
+    Def: "Dispone mecanismos de seguimiento de la carrera funcionaria, asignación de recursos presupuestarios específicos, facultades para refundir la Ley 15.076 y reglas de financiamiento general de la implementación de la ley."
+    Elementos:
+      - "Art12: ordena al Ministerio de Salud evaluar el desarrollo de la Etapa de Planta Superior durante el tercer, quinto, séptimo y décimo año de vigencia de la ley, para cautelar adecuadamente el flujo de la carrera funcionaria."
+      - "Art13: incrementa una glosa presupuestaria específica para financiar los planes de capacitación asociados al artículo 46."
+      - "Art14: destina recursos presupuestarios mínimos durante el año 2000 para financiar la modalidad de llamada prevista en el artículo 24."
+      - "Art15: faculta al Presidente de la República para dictar, dentro de un año, un decreto con fuerza de ley que fije el texto refundido, coordinado y sistematizado de la Ley 15.076, incorporando sus modificaciones, derogaciones e interpretaciones, sin alterar su verdadero sentido y alcance."
+      - "Art17: establece la fuente de financiamiento de la ley, principalmente con cargo a los presupuestos de los Servicios de Salud y, en lo no cubierto, a recursos del Tesoro Público."

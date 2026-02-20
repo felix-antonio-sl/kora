@@ -1,0 +1,756 @@
+# KODA Artifact: Matriz de Integración Orgánica del Conocimiento GORE Ñuble
+# Meta-artefacto que unifica todo el corpus de conocimiento
+# Versión 1.0.0
+
+_manifest:
+  urn: "urn:knowledge:koda:gn:matriz-integracion-organica:1.0.0"
+  federation:
+    visibility: internal
+    license: "Institutional Use"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/gn/kb_gn_999_matriz_integracion_organica_koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+        reason: "KODA/Spec format compliance"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-22"
+    last_modified_at: "2025-12-22"
+    model_collaborators: ["IA-GEMINI"]
+    signature: null
+
+ID: GN-MATRIZ-INTEGRACION-01
+Version: 1.0.0
+Status: Published
+Human-Creator: FS
+Model-Collaborator: IA-GEMINI
+Creation-Date: 2025-12-22
+Modification-Date: 2025-12-22
+Ctx: "Matriz de integración orgánica que representa el esqueleto completo del conocimiento sobre GORE Ñuble."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+    This is a META-ARTIFACT that indexes all other artifacts in the gorenuble knowledge base.
+    Use this to navigate the corpus and understand the complete structure of GORE Ñuble knowledge.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure).
+    REFERENCE POLICY: Ref: is internal only. XRef: points to external artifacts via URN.
+    LANGUAGE POLICY: Keywords in English, content in Spanish.
+    END_LLM_INSTRUCTIONS
+
+# =============================================================================
+# TAXONOMÍA DEL CONOCIMIENTO GORE ÑUBLE
+# =============================================================================
+
+Taxonomia_Conocimiento:
+  ID: GN-TAXONOMIA-01
+  Purp: "Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble."
+
+  Nivel_1_Fundamentos:
+    ID: TAX-N1-FUNDAMENTOS
+    Def: "Conocimiento base sobre qué es y cómo funciona un GORE."
+    Areas:
+      - intro # Introducción a GOREs y Ñuble
+      - legal # Marco legal y normativo
+      - estadocl # Estructura del Estado de Chile
+
+  Nivel_2_Estrategia:
+    ID: TAX-N2-ESTRATEGIA
+    Def: "Visión de largo plazo y planificación estratégica."
+    Areas:
+      - estrategia # ERD, Ñuble250
+      - social # Diagnóstico social
+      - estadisticas # Indicadores regionales
+
+  Nivel_3_Operacion:
+    ID: TAX-N3-OPERACION
+    Def: "Gestión operativa del día a día."
+    Areas:
+      - gestion # Manuales, inducción, glosario
+      - presupuesto # Gestión presupuestaria
+      - ipr # Inversión pública regional
+      - juridico # Actos jurídicos
+
+  Nivel_4_Habilitadores:
+    ID: TAX-N4-HABILITADORES
+    Def: "Capacidades transversales que habilitan la operación."
+    Areas:
+      - arquitectura # Procesos BPMN, C4, sistemas
+      - comunicaciones # Comunicación institucional
+      - tde # Transformación digital
+
+# =============================================================================
+# ÍNDICE DE ARTEFACTOS POR ÁREA
+# =============================================================================
+
+Indice_Artefactos:
+  ID: GN-INDICE-01
+
+  # -------------------------------------------------------------------------
+  # NIVEL 1: FUNDAMENTOS
+  # -------------------------------------------------------------------------
+
+  intro:
+    ID: IDX-INTRO
+    Titulo: "Introducción y Fundamentos"
+    Artefactos:
+      - id: kb_gn_000
+        urn: "urn:knowledge:koda:gn:intro-gores-nuble:1.0.0"
+        titulo: "Guía Integral GORE Ñuble"
+        path: "intro/kb_gn_000_intro_gores_nuble_koda.yml"
+        tipo: KODA
+        resumen: "Guía técnico-operativa integral: marco constitucional, estructura GORE, contexto Ñuble, autoridades."
+
+      - id: kb_gn_013
+        urn: "urn:knowledge:koda:gn:vision-desarrollo-nuble:1.0.0"
+        titulo: "Visión de Desarrollo Ñuble"
+        path: "intro/kb_gn_013_vision_desarrollo_nuble_koda.yml"
+        tipo: KODA
+        resumen: "Visión estratégica de desarrollo para la Región de Ñuble."
+
+      - id: kb_gn_900
+        urn: "urn:knowledge:koda:gn:gore-ideal:1.0.0"
+        titulo: "GORE Ideal"
+        path: "intro/kb_gn_900_gore_ideal_koda.yml"
+        tipo: KODA
+        resumen: "Modelo aspiracional del GORE, buenas prácticas y referentes."
+
+  legal:
+    ID: IDX-LEGAL
+    Titulo: "Marco Legal y Normativo"
+    Artefactos:
+      - id: kb_gn_031
+        urn: "urn:knowledge:koda:gn:loc-gore:1.0.0"
+        titulo: "LOC GORE"
+        path: "legal/kb_gn_031_loc_gore_koda.yml"
+        tipo: KODA
+        resumen: "Ley Orgánica Constitucional sobre Gobiernos Regionales (Ley 19.175)."
+
+      - id: kb_gn_200
+        urn: "urn:knowledge:koda:gn:marco-legal-gores:1.0.0"
+        titulo: "Marco Legal GOREs"
+        path: "legal/kb_gn_200_marco_legal_gores_koda.yml"
+        tipo: KODA
+        resumen: "Compilación del marco legal aplicable a los Gobiernos Regionales."
+
+  estadocl:
+    ID: IDX-ESTADOCL
+    Titulo: "Estructura del Estado de Chile"
+    Artefactos:
+      - id: kb_core_007
+        urn: "urn:knowledge:koda:estadocl:estructura-estado-chile:1.0.0"
+        titulo: "Estructura del Estado de Chile"
+        path: "../../estadocl/kb_core_007_estructura_estado_chile_koda.yml"
+        tipo: KODA
+        resumen: "Organización general del Estado chileno: poderes, niveles, instituciones."
+
+  # -------------------------------------------------------------------------
+  # NIVEL 2: ESTRATEGIA
+  # -------------------------------------------------------------------------
+
+  estrategia:
+    ID: IDX-ESTRATEGIA
+    Titulo: "Planificación Estratégica"
+    Artefactos:
+      - id: kb_gn_006
+        urn: "urn:knowledge:koda:gn:erd-nuble-2024-2030:1.0.0"
+        titulo: "ERD Ñuble 2024-2030"
+        path: "estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml"
+        tipo: KODA
+        resumen: "Estrategia Regional de Desarrollo 2024-2030: ejes, objetivos, metas."
+
+      - id: kb_gn_056
+        urn: "urn:knowledge:koda:gn:nuble250:1.0.0"
+        titulo: "Ñuble250"
+        path: "estrategia/kb_gn_056_nuble250_koda.yml"
+        tipo: KODA
+        resumen: "Plan de Aceleración Regional Ñuble250."
+
+  social:
+    ID: IDX-SOCIAL
+    Titulo: "Diagnóstico Social"
+    Artefactos:
+      - id: kb_gn_004
+        urn: "urn:knowledge:koda:gn:problemas-sociales-cl:1.0.0"
+        titulo: "Problemas Sociales Chile"
+        path: "social/kb_gn_004_problemas_sociales_cl_koda.yml"
+        tipo: KODA
+        resumen: "Diagnóstico de problemas sociales en Chile con foco regional."
+
+  estadisticas:
+    ID: IDX-ESTADISTICAS
+    Titulo: "Indicadores y Estadísticas"
+    Artefactos:
+      - id: kb_gn_005
+        urn: "urn:knowledge:koda:gn:indicadores-nuble:1.0.0"
+        titulo: "Indicadores Ñuble"
+        path: "estadisticas/kb_gn_005_indicadores_nuble_koda.yml"
+        tipo: KODA
+        resumen: "Indicadores socioeconómicos, demográficos y de desarrollo de Ñuble."
+
+  # -------------------------------------------------------------------------
+  # NIVEL 3: OPERACIÓN
+  # -------------------------------------------------------------------------
+
+  gestion:
+    ID: IDX-GESTION
+    Titulo: "Gestión Institucional"
+    Artefactos:
+      - id: kb_gn_014
+        urn: "urn:knowledge:koda:gn:glosario-gore-nuble:1.0.0"
+        titulo: "Glosario GORE Ñuble"
+        path: "gestion/kb_gn_014_glosario_gore_nuble_koda.yml"
+        tipo: KODA
+        resumen: "Canon terminológico jurídico-administrativo: ~140 términos definidos."
+        XRef: ["GLOS-TERM-*"]
+
+      - id: kb_gn_017
+        urn: "urn:knowledge:koda:gn:manual-induccion:1.0.0"
+        titulo: "Manual de Inducción 2025"
+        path: "gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml"
+        tipo: KODA
+        resumen: "Guía de inducción para nuevos funcionarios del GORE Ñuble."
+
+      - id: kb_gn_009
+        urn: "urn:knowledge:koda:gn:cuentas-publicas:1.0.0"
+        titulo: "Cuentas Públicas 2021-2024"
+        path: "gestion/kb_gn_009_cuentas_publicas_2021_2024_koda.yml"
+        tipo: KODA
+        resumen: "Síntesis de cuentas públicas del período 2021-2024."
+
+      - id: kb_gn_015
+        urn: "urn:knowledge:koda:gn:aprobaciones:1.0.0"
+        titulo: "Sistema de Aprobaciones"
+        path: "gestion/kb_gn_015_aprobaciones_koda.yml"
+        tipo: KODA
+        resumen: "Matrices de aprobación y flujos de autorización."
+
+      - id: kb_gn_020
+        urn: "urn:knowledge:koda:gn:gestion-rendiciones:1.0.0"
+        titulo: "Gestión de Rendiciones"
+        path: "gestion/kb_gn_020_gestion_rendiciones_koda.yml"
+        tipo: KODA
+        resumen: "Procedimientos para rendición de cuentas (SISREC)."
+
+      - id: kb_gn_035
+        urn: "urn:knowledge:koda:gn:estrategia-gestion:1.0.0"
+        titulo: "Estrategia de Gestión"
+        path: "gestion/kb_gn_035_estrategia_gestion_koda.yml"
+        tipo: KODA
+        resumen: "Plan de gestión institucional del GORE."
+
+    Manuales_Operativos:
+      ID: IDX-MANUALES
+      Def: "Manuales de procedimientos por área funcional."
+      Artefactos:
+        # Área Finanzas
+        - id: manual_1_1
+          titulo: "Manual Presupuesto"
+          urn: "urn:knowledge:koda:gn:manual-presupuesto:1.0.0"
+          path: "gestion/kb_gn_043_manual_presupuesto_koda.yml"
+          tipo: KODA
+          resumen: "Procedimientos de gestión presupuestaria."
+
+        - id: manual_1_2
+          titulo: "Manual Contabilidad"
+          urn: "urn:knowledge:koda:gn:manual-contabilidad:1.0.0"
+          path: "gestion/kb_gn_044_manual_contabilidad_koda.yml"
+          tipo: KODA
+          resumen: "Procedimientos contables y registro."
+
+        - id: manual_1_3
+          titulo: "Manual Tesorería"
+          urn: "urn:knowledge:koda:gn:manual-tesoreria:1.0.0"
+          path: "gestion/kb_gn_045_manual_tesoreria_koda.yml"
+          tipo: KODA
+          resumen: "Procedimientos de tesorería y pagos."
+
+        # Área Administración
+        - id: manual_2_1
+          titulo: "Manual Compras"
+          urn: "urn:knowledge:koda:gn:manual-compras:1.0.0"
+          path: "gestion/kb_gn_046_manual_compras_koda.yml"
+          tipo: KODA
+          resumen: "Procedimientos de compras y contrataciones."
+
+        - id: manual_2_2
+          titulo: "Manual Inventarios"
+          urn: "urn:knowledge:koda:gn:manual-inventarios-bodegas:1.0.0"
+          path: "gestion/kb_gn_040_manual_inventarios_bodegas_koda.yml"
+          tipo: KODA
+          resumen: "Gestión de inventarios."
+
+        - id: manual_2_3
+          titulo: "Manual Activo Fijo"
+          urn: "urn:knowledge:koda:gn:manual-activo-fijo:1.0.0"
+          path: "gestion/kb_gn_041_manual_activo_fijo_koda.yml"
+          tipo: KODA
+          resumen: "Control de activos fijos."
+
+        - id: manual_2_4
+          titulo: "Manual Flotas"
+          urn: "urn:knowledge:koda:gn:manual-flotas:1.0.0"
+          path: "gestion/kb_gn_047_manual_flotas_koda.yml"
+          tipo: KODA
+          resumen: "Gestión de vehículos y flotas."
+
+        # Área RRHH
+        - id: manual_3_1
+          titulo: "Manual Ciclo de Vida"
+          urn: "urn:knowledge:koda:gn:manual-ciclo-vida:1.0.0"
+          path: "gestion/kb_gn_048_manual_ciclo_vida_koda.yml"
+          tipo: KODA
+          resumen: "Ciclo de vida del funcionario."
+
+        - id: manual_3_2
+          titulo: "Manual Remuneraciones"
+          urn: "urn:knowledge:koda:gn:manual-remuneraciones:1.0.0"
+          path: "gestion/kb_gn_049_manual_remuneraciones_koda.yml"
+          tipo: KODA
+          resumen: "Gestión de remuneraciones."
+
+        - id: manual_3_3
+          titulo: "Manual Tiempo y Ausentismo"
+          urn: "urn:knowledge:koda:gn:manual-asistencia:1.0.0"
+          path: "gestion/kb_gn_051_manual_asistencia_koda.yml"
+          tipo: KODA
+          resumen: "Control de asistencia y ausentismo."
+
+        - id: manual_3_4
+          titulo: "Manual Desarrollo Organizacional"
+          urn: "urn:knowledge:koda:gn:manual-desarrollo-organizacional:1.0.0"
+          path: "gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml"
+          tipo: KODA
+          resumen: "Desarrollo organizacional y capacitación."
+
+        - id: manual_3_5
+          titulo: "Manual Bienestar"
+          urn: "urn:knowledge:koda:gn:manual-bienestar:1.0.0"
+          path: "gestion/kb_gn_052_manual_bienestar_koda.yml"
+          tipo: KODA
+          resumen: "Programas de bienestar funcionario."
+
+  presupuesto:
+    ID: IDX-PRESUPUESTO
+    Titulo: "Gestión Presupuestaria"
+    Artefactos:
+      - id: kb_gn_018
+        urn: "urn:knowledge:koda:gn:gestion-prpto:1.0.0"
+        titulo: "Gestión Presupuestaria"
+        path: "presupuesto/kb_gn_018_gestion_prpto_koda.yml"
+        tipo: KODA
+        resumen: "Marco general de gestión presupuestaria del GORE."
+
+      - id: kb_gn_210
+        urn: "urn:knowledge:koda:gn:ley-presupuestos-2026-p31:1.0.0"
+        titulo: "Ley Presupuestos 2026 - Partida 31"
+        path: "presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml"
+        tipo: KODA
+        resumen: "Extracto de la Ley de Presupuestos 2026, Partida 31 (GOREs)."
+
+      - id: kb_gn_211
+        urn: "urn:knowledge:koda:gn:ley-presupuestos-2026-normas:1.0.0"
+        titulo: "Ley Presupuestos 2026 - Normas Generales"
+        path: "presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml"
+        tipo: KODA
+        resumen: "Normas generales de ejecución presupuestaria."
+
+  ipr:
+    ID: IDX-IPR
+    Titulo: "Inversión Pública Regional"
+    Artefactos:
+      - id: kb_gn_001
+        urn: "urn:knowledge:koda:gn:transferencia-ppr:1.0.0"
+        titulo: "Transferencia PPR"
+        path: "ipr/kb_gn_001_transferencia_ppr_koda.yml"
+        tipo: KODA
+        resumen: "Procedimiento de transferencia de programas públicos regionales."
+
+      - id: kb_gn_011
+        urn: "urn:knowledge:koda:gn:selector-ipr:1.0.0"
+        titulo: "Selector IPR"
+        path: "ipr/kb_gn_011_selector_ipr_koda.yml"
+        tipo: KODA
+        resumen: "Árbol de decisión para clasificar IPR (IDI vs PPR)."
+
+      - id: kb_gn_019
+        urn: "urn:knowledge:koda:gn:gestion-ipr:1.0.0"
+        titulo: "Gestión IPR"
+        path: "ipr/kb_gn_019_gestion_ipr_koda.yml"
+        tipo: KODA
+        resumen: "Ciclo completo de gestión de inversión pública regional."
+
+      - id: kb_gn_024
+        urn: "urn:knowledge:koda:gn:guia-idi-sni:1.0.0"
+        titulo: "Guía IDI/SNI"
+        path: "ipr/kb_gn_024_guia_idi_sni_koda.yml"
+        tipo: KODA
+        resumen: "Guía para formulación de iniciativas de inversión en SNI."
+
+      - id: kb_gn_025
+        urn: "urn:knowledge:koda:gn:guia-programas:1.0.0"
+        titulo: "Guía Programas"
+        path: "ipr/kb_gn_025_guia_programas_koda.yml"
+        tipo: KODA
+        resumen: "Guía para formulación de programas públicos."
+
+      - id: kb_gn_026
+        urn: "urn:knowledge:koda:gn:guia-fril:1.0.0"
+        titulo: "Guía FRIL"
+        path: "ipr/kb_gn_026_guia_fril_koda.yml"
+        tipo: KODA
+        resumen: "Guía del Fondo Regional de Iniciativa Local."
+
+      - id: kb_gn_027
+        urn: "urn:knowledge:koda:gn:guia-frpd:1.0.0"
+        titulo: "Guía FRPD"
+        path: "ipr/kb_gn_027_guia_frpd_koda.yml"
+        tipo: KODA
+        resumen: "Guía del Fondo Regional para la Productividad y el Desarrollo."
+
+      - id: kb_gn_028
+        urn: "urn:knowledge:koda:gn:instructivo-subvencion-8:1.0.0"
+        titulo: "Instructivo Subvención 8%"
+        path: "ipr/kb_gn_028_instructivo_subvencion_8_koda.yml"
+        tipo: KODA
+        resumen: "Instructivo para subvenciones del 8% FNDR."
+
+      - id: kb_gn_029
+        urn: "urn:knowledge:koda:gn:guia-circ33:1.0.0"
+        titulo: "Guía Circular 33"
+        path: "ipr/kb_gn_029_guia_circ33_koda.yml"
+        tipo: KODA
+        resumen: "Guía de la Circular 33 sobre evaluación socioeconómica."
+
+    Repertorio_Intervenciones:
+      ID: IDX-RIS
+      Def: "Repertorio de Intervenciones Sectoriales"
+      Path: "ipr/kb_gn_010_ris/"
+      Artefactos:
+        - id: kb_gn_010_index
+          titulo: "RIS - Índice"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_index_koda.yml"
+          tipo: KODA
+          resumen: "Índice del repertorio de intervenciones sectoriales."
+
+        - id: kb_gn_010_artcult
+          titulo: "RIS - Arte y Cultura"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml"
+          tipo: KODA
+          resumen: "Intervenciones en arte y cultura."
+
+        - id: kb_gn_010_deportes
+          titulo: "RIS - Deportes"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_deportes_koda.yml"
+          tipo: KODA
+          resumen: "Intervenciones en deportes."
+
+        - id: kb_gn_010_edpub
+          titulo: "RIS - Espacios Públicos"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_edpub_koda.yml"
+          tipo: KODA
+          resumen: "Intervenciones en espacios públicos."
+
+        - id: kb_gn_010_empub
+          titulo: "RIS - Edificación Pública"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_empub_koda.yml"
+          tipo: KODA
+          resumen: "Intervenciones en edificación pública."
+
+        - id: kb_gn_010_patrimonio
+          titulo: "RIS - Patrimonio"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_patrimonio_koda.yml"
+          tipo: KODA
+          resumen: "Intervenciones en patrimonio."
+
+        - id: kb_gn_010_pmdt
+          titulo: "RIS - PMDT"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_pmdt_koda.yml"
+          tipo: KODA
+          resumen: "Programa de Mejoramiento del Desarrollo Territorial."
+
+        - id: kb_gn_010_proginv
+          titulo: "RIS - Programas de Inversión"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_proginv_koda.yml"
+          tipo: KODA
+          resumen: "Programas de inversión regionales."
+
+        - id: kb_gn_010_proyinv
+          titulo: "RIS - Proyectos de Inversión"
+          path: "ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml"
+          tipo: KODA
+          resumen: "Proyectos de inversión regionales."
+
+  juridico:
+    ID: IDX-JURIDICO
+    Titulo: "Actos Jurídicos"
+    Artefactos:
+      - id: kb_gn_100
+        urn: "urn:knowledge:koda:gn:modelos-actos-juridicos:1.0.0"
+        titulo: "Modelos de Actos Jurídicos"
+        path: "juridico/kb_gn_100_modelos_actos_juridicos_koda.yml"
+        tipo: KODA
+        resumen: "Templates de resoluciones, convenios y otros actos administrativos."
+
+  # -------------------------------------------------------------------------
+  # NIVEL 4: HABILITADORES
+  # -------------------------------------------------------------------------
+
+  arquitectura:
+    ID: IDX-ARQUITECTURA
+    Titulo: "Arquitectura y Procesos"
+    Artefactos:
+      - id: kb_gn_050
+        urn: "urn:knowledge:koda:gn:aceleracion-regional:1.0.0"
+        titulo: "Aceleración Regional"
+        path: "arquitectura/kb_gn_050_aceleracion_regional_koda.yml"
+        tipo: KODA
+        resumen: "Plan de aceleración de capacidades del GORE."
+
+      - id: kb_gn_080
+        urn: "urn:knowledge:koda:gn:cies-sitia:1.0.0"
+        titulo: "CIES/SITIA"
+        path: "arquitectura/kb_gn_080_cies_sitia_koda.yml"
+        tipo: KODA
+        resumen: "Sistemas CIES y SITIA: inteligencia y análisis territorial."
+
+      - id: kb_gn_090
+        urn: "urn:knowledge:koda:gn:gestion-informacion-geoespacial:1.0.0"
+        titulo: "Gestión Geoespacial"
+        path: "arquitectura/kb_gn_090_gestion_informacion_geoespacial_koda.yml"
+        tipo: KODA
+        resumen: "Gestión de información geoespacial e IDE regional."
+
+      - id: catalog_procesos
+        titulo: "Catálogo de Procesos"
+        path: "arquitectura/catalog_procesos_gore.yml"
+        tipo: YAML
+        resumen: "Índice de todos los procesos GORE documentados."
+
+    BPMN_Procesos:
+      ID: IDX-BPMN
+      Def: "Diagramas BPMN de procesos institucionales"
+      Path: "arquitectura/bpmn/"
+      Artefactos:
+        - id: D01
+          titulo: "Actos Administrativos"
+          urn: "urn:knowledge:koda:gn:bpmn-d01-actos-administrativos:1.0.0"
+          path: "../../../../sources/gn/arquitectura/bpmn/D01_actos_administrativos.md"
+          koda_path: "arquitectura/bpmn/D01_actos_administrativos_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de emisión de actos administrativos."
+
+        - id: D02
+          titulo: "Ciclo Presupuestario"
+          urn: "urn:knowledge:koda:gn:bpmn-d02-ciclo-presupuestario:1.0.0"
+          path: "arquitectura/bpmn/D02_ciclo_presupuestario.md"
+          koda_path: "arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso del ciclo presupuestario anual."
+
+        - id: D03
+          titulo: "Gestión IPR"
+          urn: "urn:knowledge:koda:gn:bpmn-d03-gestion-ipr:1.0.0"
+          path: "arquitectura/bpmn/D03_gestion_ipr.md"
+          koda_path: "arquitectura/bpmn/D03_gestion_ipr_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de gestión de inversión pública regional."
+
+        - id: D04
+          titulo: "Compras y Contrataciones"
+          urn: "urn:knowledge:koda:gn:bpmn-d04-compras-contrataciones:1.0.0"
+          path: "arquitectura/bpmn/D04_compras_contrataciones.md"
+          koda_path: "arquitectura/bpmn/D04_compras_contrataciones_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de compras y contrataciones."
+
+        - id: D05
+          titulo: "Inventarios y Activo Fijo"
+          urn: "urn:knowledge:koda:gn:bpmn-d05-inventarios-activo-fijo:1.0.0"
+          path: "arquitectura/bpmn/D05_inventarios_activo_fijo.md"
+          koda_path: "arquitectura/bpmn/D05_inventarios_activo_fijo_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de control de inventarios."
+
+        - id: D06
+          titulo: "Flota Vehicular"
+          urn: "urn:knowledge:koda:gn:bpmn-d06-flota-vehicular:1.0.0"
+          path: "arquitectura/bpmn/D06_flota_vehicular.md"
+          koda_path: "arquitectura/bpmn/D06_flota_vehicular_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de gestión de flota."
+
+        - id: D07
+          titulo: "Recursos Humanos"
+          urn: "urn:knowledge:koda:gn:bpmn-d07-rrhh:1.0.0"
+          path: "arquitectura/bpmn/D07_rrhh.md"
+          koda_path: "arquitectura/bpmn/D07_rrhh_koda.yml"
+          tipo: BPMN
+          resumen: "Procesos de gestión de RRHH."
+
+        - id: D08
+          titulo: "Rendiciones"
+          urn: "urn:knowledge:koda:gn:bpmn-d08-rendiciones:1.0.0"
+          path: "arquitectura/bpmn/D08_rendiciones.md"
+          koda_path: "arquitectura/bpmn/D08_rendiciones_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de rendición de cuentas."
+
+        - id: D09
+          titulo: "CIES/SITIA"
+          urn: "urn:knowledge:koda:gn:bpmn-d09-cies-sitia:1.0.0"
+          path: "arquitectura/bpmn/D09_cies_sitia.md"
+          koda_path: "arquitectura/bpmn/D09_cies_sitia_koda.yml"
+          tipo: BPMN
+          resumen: "Procesos de inteligencia territorial."
+
+        - id: D10
+          titulo: "Geoespacial/IDE"
+          urn: "urn:knowledge:koda:gn:bpmn-d10-geoespacial-ide:1.0.0"
+          path: "arquitectura/bpmn/D10_geoespacial_ide.md"
+          koda_path: "arquitectura/bpmn/D10_geoespacial_ide_koda.yml"
+          tipo: BPMN
+          resumen: "Proceso de gestión geoespacial."
+
+        - id: bpmn_index
+          titulo: "Índice BPMN"
+          path: "arquitectura/bpmn/_index.yml"
+          tipo: YAML
+          resumen: "Índice de procesos BPMN."
+
+  comunicaciones:
+    ID: IDX-COMUNICACIONES
+    Titulo: "Comunicaciones Institucionales"
+    Artefactos:
+      - id: kb_gn_008
+        urn: "urn:knowledge:koda:gn:comunicaciones-oc:1.0.0"
+        titulo: "Comunicaciones Oficinas de Comunicaciones"
+        path: "comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml"
+        tipo: KODA
+        resumen: "Roles y funciones del área de comunicaciones."
+
+      - id: kb_gn_030
+        urn: "urn:knowledge:koda:gn:guia-comunicaciones:1.0.0"
+        titulo: "Guía de Comunicaciones"
+        path: "comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml"
+        tipo: KODA
+        resumen: "Manual de estilo y protocolos de comunicación institucional."
+
+  tde:
+    ID: IDX-TDE
+    Titulo: "Transformación Digital"
+    Artefactos:
+      - id: kb_gn_710
+        urn: "urn:knowledge:koda:gn:informe-estado-inicial-gore-pre-td:1.0.0"
+        titulo: "Estado Inicial Pre-TD"
+        path: "tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml"
+        tipo: KODA
+        resumen: "Diagnóstico del estado inicial del GORE previo a transformación digital."
+
+      - id: kb_gn_720
+        urn: "urn:knowledge:koda:gn:estrategia-td-ia:1.0.0"
+        titulo: "Estrategia TD+IA"
+        path: "tde/kb_gn_720_estrategia_td_ia_koda.yml"
+        tipo: KODA
+        resumen: "Estrategia de Transformación Digital e Inteligencia Artificial."
+
+  # -------------------------------------------------------------------------
+  # DATOS (ARCHIVOS CSV)
+  # -------------------------------------------------------------------------
+
+  data:
+    ID: IDX-DATA
+    Titulo: "Datos Estructurados"
+    Artefactos:
+      - id: kb_gn_002
+        titulo: "Noticias GORE"
+        path: "../../../../sources/gn/data/kb_gn_002_noticias.csv"
+        tipo: CSV
+        resumen: "Histórico de noticias institucionales."
+
+      - id: kb_gn_003
+        titulo: "IDIs Históricas"
+        path: "data/kb_gn_003_idis.csv"
+        tipo: CSV
+        resumen: "Base de datos de iniciativas de inversión históricas."
+
+      - id: kb_gn_012
+        titulo: "Programas Vigentes"
+        path: "data/kb_gn_012_progs_vigentes.csv"
+        tipo: CSV
+        resumen: "Listado de programas públicos regionales vigentes."
+
+      - id: kb_gn_110
+        titulo: "Convenios 2022-2025"
+        path: "data/kb_gn_110_convenios_2022_2025.csv"
+        tipo: CSV
+        resumen: "Base de datos de convenios del período 2022-2025."
+
+# =============================================================================
+# GRAFO DE DEPENDENCIAS (RELACIONES CLAVE)
+# =============================================================================
+
+Grafo_Dependencias:
+  ID: GN-GRAFO-01
+  Def: "Relaciones semánticas principales entre artefactos."
+
+  Relaciones:
+    # Fundamentos -> Todo
+    - source: kb_gn_000
+      target: "*"
+      tipo: "fundamenta"
+      nota: "La guía intro es prerrequisito conceptual para todo el corpus."
+
+    # Glosario -> Gestión/IPR/Presupuesto
+    - source: kb_gn_014
+      target: ["kb_gn_018", "kb_gn_019", "kb_gn_020"]
+      tipo: "define_términos"
+      nota: "El glosario define la terminología usada en gestión."
+
+    # Legal -> Presupuesto
+    - source: kb_gn_031
+      target: ["kb_gn_210", "kb_gn_211"]
+      tipo: "norma"
+      nota: "LOC GORE es el marco para ejecución presupuestaria."
+
+    # ERD -> IPR
+    - source: kb_gn_006
+      target: ["kb_gn_019", "kb_gn_011"]
+      tipo: "orienta"
+      nota: "La ERD orienta la priorización de inversiones."
+
+    # BPMN -> Manuales
+    - source: IDX-BPMN
+      target: "manual_*"
+      tipo: "describe_proceso"
+      nota: "BPMN proporciona visión de proceso, manuales el detalle."
+
+    # TDE -> Arquitectura
+    - source: kb_gn_720
+      target: ["kb_gn_080", "kb_gn_090"]
+      tipo: "habilita"
+      nota: "Estrategia TD+IA habilita sistemas de inteligencia."
+
+# =============================================================================
+# SCHEMA (REFERENCIA)
+# =============================================================================
+
+Schema:
+  ID: IDX-SCHEMA
+  Titulo: "Esquemas de Validación"
+  Artefactos:
+    - id: koda_schema
+      titulo: "KODA Schema"
+      path: "../../schemas/koda-schema.json"
+      tipo: JSON
+      resumen: "Esquema JSON para validación de artefactos KODA."

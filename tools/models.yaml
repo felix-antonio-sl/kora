@@ -1,0 +1,538 @@
+_manifest:
+  urn: "urn:knowledge:koda:tools:models:1.0.0"
+  federation:
+    visibility: internal
+    license: "Proprietary"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/moltbot/docs/concepts/kb_models.yaml"
+    mirrors: []
+  provenance:
+    created_by: "Moltbot Docs"
+    created_at: "2026-01-29"
+    last_modified_by: "Codex"
+    last_modified_at: "2026-01-29"
+    signature: null
+
+ID: MOLTBOT-KB-CONCEPTS-MODELS-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: Moltbot Docs
+Human-Editor: Codex
+Model-Collaborator: OpenAI-Codex
+Creation-Date: '2026-01-29'
+Modification-Date: '2026-01-29'
+Ctx: 'Moltbot concepts: models'
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |-
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+Purp: Models
+Src:
+- File: output/concepts/models.md
+- File: output/concepts/model-providers.md
+- File: output/concepts/model-failover.md
+Sections:
+- ID: CONCEPTS-MODELS
+  Src:
+    File: output/concepts/models.md
+    URL: https://docs.molt.bot/concepts/models
+  Facts: |-
+    H1: Models - Moltbot
+    H1: Models
+    Models CLI
+    See [/concepts/model-failover](/concepts/model-failover) for auth profile rotation, cooldowns, and how that interacts with fallbacks. Quick provider overview + examples: [/concepts/model-providers](/concepts/model-providers).
+    How model selection works
+    Moltbot selects models in this order:
+    - **Primary** model (`agents.defaults.model.primary` or `agents.defaults.model`).
+    - **Fallbacks** in `agents.defaults.model.fallbacks` (in order).
+    - **Provider auth failover** happens inside a provider before moving to the next model.
+    Related:
+    - `agents.defaults.models` is the allowlist/catalog of models Moltbot can use (plus aliases).
+    - `agents.defaults.imageModel` is used **only when** the primary model can't accept images.
+    - Per-agent defaults can override `agents.defaults.model` via `agents.list[].model` plus bindings (see [/concepts/multi-agent](/concepts/multi-agent)).
+    Quick model picks (anecdotal)
+    - **GLM** : a bit better for coding/tool calling.
+    - **MiniMax** : better for writing and vibes.
+    Setup wizard (recommended)
+    If you don't want to hand-edit config, run the onboarding wizard:
+    It can set up model + auth for common providers, including **OpenAI Code (Codex) subscription** (OAuth) and **Anthropic** (API key recommended; `claude setup-token` also supported).
+    Config keys (overview)
+    - `agents.defaults.model.primary` and `agents.defaults.model.fallbacks`
+    - `agents.defaults.imageModel.primary` and `agents.defaults.imageModel.fallbacks`
+    - `agents.defaults.models` (allowlist + aliases + provider params)
+    - `models.providers` (custom providers written into `models.json`)
+    Model refs are normalized to lowercase. Provider aliases like `z.ai/*` normalize to `zai/*`. Provider configuration examples (including OpenCode Zen) live in [/gateway/configuration](/gateway/configuration#opencode-zen-multi-model-proxy).
+    "Model is not allowed" (and why replies stop)
+    If `agents.defaults.models` is set, it becomes the **allowlist** for `/model` and for session overrides. When a user selects a model that isn't in that allowlist, Moltbot returns:
+    This happens **before** a normal reply is generated, so the message can feel like it "didn't respond." The fix is to either:
+    - Add the model to `agents.defaults.models`, or
+    - Clear the allowlist (remove `agents.defaults.models`), or
+    - Pick a model from `/model list`.
+    Example allowlist config:
+    Switching models in chat (`/model`)
+    You can switch models for the current session without restarting:
+    Notes:
+    - `/model` (and `/model list`) is a compact, numbered picker (model family + available providers).
+    - `/model <#>` selects from that picker.
+    - `/model status` is the detailed view (auth candidates and, when configured, provider endpoint `baseUrl` \+ `api` mode).
+    - Model refs are parsed by splitting on the **first** `/`. Use `provider/model` when typing `/model <ref>`.
+    - If the model ID itself contains `/` (OpenRouter-style), you must include the provider prefix (example: `/model openrouter/moonshotai/kimi-k2`).
+    - If you omit the provider, Moltbot treats the input as an alias or a model for the **default provider** (only works when there is no `/` in the model ID).
+    Full command behavior/config: [Slash commands](/tools/slash-commands).
+    CLI commands
+    `moltbot models` (no subcommand) is a shortcut for `models status`.
+    `models list`
+    Shows configured models by default. Useful flags:
+    - `--all`: full catalog
+    - `--local`: local providers only
+    - `--provider <name>`: filter by provider
+    - `--plain`: one model per line
+    - `--json`: machinereadable output
+    `models status`
+    Shows the resolved primary model, fallbacks, image model, and an auth overview of configured providers. It also surfaces OAuth expiry status for profiles found in the auth store (warns within 24h by default). `--plain` prints only the resolved primary model. OAuth status is always shown (and included in `--json` output). If a configured provider has no credentials, `models status` prints a **Missing auth** section. JSON includes `auth.oauth` (warn window + profiles) and `auth.providers` (effective auth per provider). Use `--check` for automation (exit `1` when missing/expired, `2` when expiring). Preferred Anthropic auth is the Claude Code CLI setup-token (run anywhere; paste on the gateway host if needed):
+    Scanning (OpenRouter free models)
+    `moltbot models scan` inspects OpenRouter's **free model catalog** and can optionally probe models for tool and image support. Key flags:
+    - `--no-probe`: skip live probes (metadata only)
+    - `--min-params <b>`: minimum parameter size (billions)
+    - `--max-age-days <days>`: skip older models
+    - `--provider <name>`: provider prefix filter
+    - `--max-candidates <n>`: fallback list size
+    - `--set-default`: set `agents.defaults.model.primary` to the first selection
+    - `--set-image`: set `agents.defaults.imageModel.primary` to the first image selection
+    Probing requires an OpenRouter API key (from auth profiles or `OPENROUTER_API_KEY`). Without a key, use `--no-probe` to list candidates only. Scan results are ranked by:
+    - Image support
+    - Tool latency
+    - Context size
+    - Parameter count
+    Input
+    - OpenRouter `/models` list (filter `:free`)
+    - Requires OpenRouter API key from auth profiles or `OPENROUTER_API_KEY` (see [/environment](/environment))
+    - Optional filters: `--max-age-days`, `--min-params`, `--provider`, `--max-candidates`
+    - Probe controls: `--timeout`, `--concurrency`
+    When run in a TTY, you can select fallbacks interactively. In noninteractive mode, pass `--yes` to accept defaults.
+    Models registry (`models.json`)
+    Custom providers in `models.providers` are written into `models.json` under the agent directory (default `~/.clawdbot/agents/<agentId>/models.json`). This file is merged by default unless `models.mode` is set to `replace`.
+  Ex:
+  - ID: EX-CONCEPTS-MODELS-70DFB8BB56
+    Ctx: Copy
+    Body: moltbot onboard
+  - ID: EX-CONCEPTS-MODELS-EB495EC63C
+    Ctx: Copy
+    Body: Model "provider/model" is not allowed. Use /model to list available models.
+  - ID: EX-CONCEPTS-MODELS-9FBDE339C2
+    Ctx: Copy
+    Body: |-
+      {
+      agent: {
+      model: { primary: "anthropic/claude-sonnet-4-5" },
+      models: {
+      "anthropic/claude-sonnet-4-5": { alias: "Sonnet" },
+      "anthropic/claude-opus-4-5": { alias: "Opus" }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-MODELS-1B16E9A179
+    Ctx: Copy
+    Body: |-
+      /model
+      /model list
+      /model 3
+      /model openai/gpt-5.2
+      /model status
+  - ID: EX-CONCEPTS-MODELS-1E1E86FCEF
+    Ctx: Copy
+    Body: |-
+      moltbot models list
+      moltbot models status
+      moltbot models set <provider/model>
+      moltbot models set-image <provider/model>
+  - ID: EX-CONCEPTS-MODELS-76BADB7AA2
+    Body: |-
+      moltbot models aliases list
+      moltbot models aliases add <alias> <provider/model>
+      moltbot models aliases remove <alias>
+  - ID: EX-CONCEPTS-MODELS-124CF961B5
+    Body: |-
+      moltbot models fallbacks list
+      moltbot models fallbacks add <provider/model>
+      moltbot models fallbacks remove <provider/model>
+      moltbot models fallbacks clear
+  - ID: EX-CONCEPTS-MODELS-C369A5F217
+    Body: |-
+      moltbot models image-fallbacks list
+      moltbot models image-fallbacks add <provider/model>
+      moltbot models image-fallbacks remove <provider/model>
+      moltbot models image-fallbacks clear
+  - ID: EX-CONCEPTS-MODELS-D32B96E903
+    Ctx: Copy
+    Body: |-
+      claude setup-token
+      moltbot models status
+- ID: CONCEPTS-MODEL-PROVIDERS
+  Src:
+    File: output/concepts/model-providers.md
+    URL: https://docs.molt.bot/concepts/model-providers
+  Facts: |-
+    H1: Model providers - Moltbot
+    H1: Model providers
+    Model providers
+    This page covers **LLM/model providers** (not chat channels like WhatsApp/Telegram). For model selection rules, see [/concepts/models](/concepts/models).
+    Quick rules
+    - Model refs use `provider/model` (example: `opencode/claude-opus-4-5`).
+    - If you set `agents.defaults.models`, it becomes the allowlist.
+    - CLI helpers: `moltbot onboard`, `moltbot models list`, `moltbot models set <provider/model>`.
+    Built-in providers (pi-ai catalog)
+    Moltbot ships with the piai catalog. These providers require **no** `models.providers` config; just set auth + pick a model.
+    OpenAI
+    - Provider: `openai`
+    - Auth: `OPENAI_API_KEY`
+    - Example model: `openai/gpt-5.2`
+    - CLI: `moltbot onboard --auth-choice openai-api-key`
+    Anthropic
+    - Provider: `anthropic`
+    - Auth: `ANTHROPIC_API_KEY` or `claude setup-token`
+    - Example model: `anthropic/claude-opus-4-5`
+    - CLI: `moltbot onboard --auth-choice token` (paste setup-token) or `moltbot models auth paste-token --provider anthropic`
+    OpenAI Code (Codex)
+    - Provider: `openai-codex`
+    - Auth: OAuth (ChatGPT)
+    - Example model: `openai-codex/gpt-5.2`
+    - CLI: `moltbot onboard --auth-choice openai-codex` or `moltbot models auth login --provider openai-codex`
+    OpenCode Zen
+    - Provider: `opencode`
+    - Auth: `OPENCODE_API_KEY` (or `OPENCODE_ZEN_API_KEY`)
+    - Example model: `opencode/claude-opus-4-5`
+    - CLI: `moltbot onboard --auth-choice opencode-zen`
+    Google Gemini (API key)
+    - Provider: `google`
+    - Auth: `GEMINI_API_KEY`
+    - Example model: `google/gemini-3-pro-preview`
+    - CLI: `moltbot onboard --auth-choice gemini-api-key`
+    Google Vertex / Antigravity / Gemini CLI
+    - Providers: `google-vertex`, `google-antigravity`, `google-gemini-cli`
+    - Auth: Vertex uses gcloud ADC; Antigravity/Gemini CLI use their respective auth flows
+    - Antigravity OAuth is shipped as a bundled plugin (`google-antigravity-auth`, disabled by default).
+    - Enable: `moltbot plugins enable google-antigravity-auth`
+    - Login: `moltbot models auth login --provider google-antigravity --set-default`
+    - Gemini CLI OAuth is shipped as a bundled plugin (`google-gemini-cli-auth`, disabled by default).
+    - Enable: `moltbot plugins enable google-gemini-cli-auth`
+    - Login: `moltbot models auth login --provider google-gemini-cli --set-default`
+    - Note: you do **not** paste a client id or secret into `moltbot.json`. The CLI login flow stores tokens in auth profiles on the gateway host.
+    Z.AI (GLM)
+    - Provider: `zai`
+    - Auth: `ZAI_API_KEY`
+    - Example model: `zai/glm-4.7`
+    - CLI: `moltbot onboard --auth-choice zai-api-key`
+    - Aliases: `z.ai/*` and `z-ai/*` normalize to `zai/*`
+    Vercel AI Gateway
+    - Provider: `vercel-ai-gateway`
+    - Auth: `AI_GATEWAY_API_KEY`
+    - Example model: `vercel-ai-gateway/anthropic/claude-opus-4.5`
+    - CLI: `moltbot onboard --auth-choice ai-gateway-api-key`
+    Other built-in providers
+    - OpenRouter: `openrouter` (`OPENROUTER_API_KEY`)
+    - Example model: `openrouter/anthropic/claude-sonnet-4-5`
+    - xAI: `xai` (`XAI_API_KEY`)
+    - Groq: `groq` (`GROQ_API_KEY`)
+    - Cerebras: `cerebras` (`CEREBRAS_API_KEY`)
+    - GLM models on Cerebras use ids `zai-glm-4.7` and `zai-glm-4.6`.
+    - OpenAI-compatible base URL: `https://api.cerebras.ai/v1`.
+    - Mistral: `mistral` (`MISTRAL_API_KEY`)
+    - GitHub Copilot: `github-copilot` (`COPILOT_GITHUB_TOKEN` / `GH_TOKEN` / `GITHUB_TOKEN`)
+    Providers via `models.providers` (custom/base URL)
+    Use `models.providers` (or `models.json`) to add **custom** providers or OpenAI/Anthropiccompatible proxies.
+    Moonshot AI (Kimi)
+    Moonshot uses OpenAI-compatible endpoints, so configure it as a custom provider:
+    - Provider: `moonshot`
+    - Auth: `MOONSHOT_API_KEY`
+    - Example model: `moonshot/kimi-k2.5`
+    - Kimi K2 model IDs:
+    - `moonshot/kimi-k2.5`
+    - `moonshot/kimi-k2-0905-preview`
+    - `moonshot/kimi-k2-turbo-preview`
+    - `moonshot/kimi-k2-thinking`
+    - `moonshot/kimi-k2-thinking-turbo`
+    Kimi Code
+    Kimi Code uses a dedicated endpoint and key (separate from Moonshot):
+    - Provider: `kimi-code`
+    - Auth: `KIMICODE_API_KEY`
+    - Example model: `kimi-code/kimi-for-coding`
+    Qwen OAuth (free tier)
+    Qwen provides OAuth access to Qwen Coder + Vision via a device-code flow. Enable the bundled plugin, then log in:
+    Model refs:
+    - `qwen-portal/coder-model`
+    - `qwen-portal/vision-model`
+    See [/providers/qwen](/providers/qwen) for setup details and notes.
+    Synthetic
+    Synthetic provides Anthropic-compatible models behind the `synthetic` provider:
+    - Provider: `synthetic`
+    - Auth: `SYNTHETIC_API_KEY`
+    - Example model: `synthetic/hf:MiniMaxAI/MiniMax-M2.1`
+    - CLI: `moltbot onboard --auth-choice synthetic-api-key`
+    MiniMax
+    MiniMax is configured via `models.providers` because it uses custom endpoints:
+    - MiniMax (Anthropiccompatible): `--auth-choice minimax-api`
+    - Auth: `MINIMAX_API_KEY`
+    See [/providers/minimax](/providers/minimax) for setup details, model options, and config snippets.
+    Ollama
+    Ollama is a local LLM runtime that provides an OpenAI-compatible API:
+    - Provider: `ollama`
+    - Auth: None required (local server)
+    - Example model: `ollama/llama3.3`
+    - Installation: <https://ollama.ai>
+    Ollama is automatically detected when running locally at `http://127.0.0.1:11434/v1`. See [/providers/ollama](/providers/ollama) for model recommendations and custom configuration.
+    Local proxies (LM Studio, vLLM, LiteLLM, etc.)
+    Example (OpenAIcompatible):
+    Notes:
+    - For custom providers, `reasoning`, `input`, `cost`, `contextWindow`, and `maxTokens` are optional. When omitted, Moltbot defaults to:
+    - `reasoning: false`
+    - `input: ["text"]`
+    - `cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }`
+    - `contextWindow: 200000`
+    - `maxTokens: 8192`
+    - Recommended: set explicit values that match your proxy/model limits.
+    CLI examples
+    See also: [/gateway/configuration](/gateway/configuration) for full configuration examples.
+  Ex:
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-C201A46F4B
+    Ctx: Copy
+    Body: |-
+      {
+      agents: { defaults: { model: { primary: "openai/gpt-5.2" } } }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-0570B133BD
+    Ctx: Copy
+    Body: |-
+      {
+      agents: { defaults: { model: { primary: "anthropic/claude-opus-4-5" } } }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-408335928C
+    Ctx: Copy
+    Body: |-
+      {
+      agents: { defaults: { model: { primary: "openai-codex/gpt-5.2" } } }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-2E10149C5F
+    Ctx: Copy
+    Body: |-
+      {
+      agents: { defaults: { model: { primary: "opencode/claude-opus-4-5" } } }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-D2D4EF8643
+    Ctx: Copy
+    Body: |-
+      {
+      agents: {
+      defaults: { model: { primary: "moonshot/kimi-k2.5" } }
+      },
+      models: {
+      mode: "merge",
+      providers: {
+      moonshot: {
+      baseUrl: "https://api.moonshot.ai/v1",
+      apiKey: "${MOONSHOT_API_KEY}",
+      api: "openai-completions",
+      models: [{ id: "kimi-k2.5", name: "Kimi K2.5" }]
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-6830B0D91B
+    Ctx: Copy
+    Body: |-
+      {
+      env: { KIMICODE_API_KEY: "sk-..." },
+      agents: {
+      defaults: { model: { primary: "kimi-code/kimi-for-coding" } }
+      },
+      models: {
+      mode: "merge",
+      providers: {
+      "kimi-code": {
+      baseUrl: "https://api.kimi.com/coding/v1",
+      apiKey: "${KIMICODE_API_KEY}",
+      api: "openai-completions",
+      models: [{ id: "kimi-for-coding", name: "Kimi For Coding" }]
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-154CC2D5B1
+    Ctx: Copy
+    Body: |-
+      moltbot plugins enable qwen-portal-auth
+      moltbot models auth login --provider qwen-portal --set-default
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-6F625BCF4C
+    Ctx: Copy
+    Body: |-
+      {
+      agents: {
+      defaults: { model: { primary: "synthetic/hf:MiniMaxAI/MiniMax-M2.1" } }
+      },
+      models: {
+      mode: "merge",
+      providers: {
+      synthetic: {
+      baseUrl: "https://api.synthetic.new/anthropic",
+      apiKey: "${SYNTHETIC_API_KEY}",
+      api: "anthropic-messages",
+      models: [{ id: "hf:MiniMaxAI/MiniMax-M2.1", name: "MiniMax M2.1" }]
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-1B3BE957CD
+    Ctx: Copy
+    Body: |-
+      # Install Ollama, then pull a model:
+      ollama pull llama3.3
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-79A38B15D0
+    Ctx: Copy
+    Body: |-
+      {
+      agents: {
+      defaults: { model: { primary: "ollama/llama3.3" } }
+      }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-3F19D0E081
+    Ctx: Copy
+    Body: |-
+      {
+      agents: {
+      defaults: {
+      model: { primary: "lmstudio/minimax-m2.1-gs32" },
+      models: { "lmstudio/minimax-m2.1-gs32": { alias: "Minimax" } }
+      }
+      },
+      models: {
+      providers: {
+      lmstudio: {
+      baseUrl: "http://localhost:1234/v1",
+      apiKey: "LMSTUDIO_KEY",
+      api: "openai-completions",
+      models: [
+      {
+      id: "minimax-m2.1-gs32",
+      name: "MiniMax M2.1",
+      reasoning: false,
+      input: ["text"],
+      cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+      contextWindow: 200000,
+      maxTokens: 8192
+      }
+      ]
+      }
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-MODEL-PROVIDERS-8A9543942F
+    Ctx: Copy
+    Body: |-
+      moltbot onboard --auth-choice opencode-zen
+      moltbot models set opencode/claude-opus-4-5
+      moltbot models list
+- ID: CONCEPTS-MODEL-FAILOVER
+  Src:
+    File: output/concepts/model-failover.md
+    URL: https://docs.molt.bot/concepts/model-failover
+  Facts: |-
+    H1: Model failover - Moltbot
+    H1: Model failover
+    Model failover
+    Moltbot handles failures in two stages:
+    - **Auth profile rotation** within the current provider.
+    - **Model fallback** to the next model in `agents.defaults.model.fallbacks`.
+    This doc explains the runtime rules and the data that backs them.
+    Auth storage (keys + OAuth)
+    Moltbot uses **auth profiles** for both API keys and OAuth tokens.
+    - Secrets live in `~/.clawdbot/agents/<agentId>/agent/auth-profiles.json` (legacy: `~/.clawdbot/agent/auth-profiles.json`).
+    - Config `auth.profiles` / `auth.order` are **metadata + routing only** (no secrets).
+    - Legacy import-only OAuth file: `~/.clawdbot/credentials/oauth.json` (imported into `auth-profiles.json` on first use).
+    More detail: [/concepts/oauth](/concepts/oauth) Credential types:
+    - `type: "api_key"` -> `{ provider, key }`
+    - `type: "oauth"` -> `{ provider, access, refresh, expires, email? }` (+ `projectId`/`enterpriseUrl` for some providers)
+    Profile IDs
+    OAuth logins create distinct profiles so multiple accounts can coexist.
+    - Default: `provider:default` when no email is available.
+    - OAuth with email: `provider:<email>` (for example `google-antigravity:[[email protected]](/cdn-cgi/l/email-protection)`).
+    Profiles live in `~/.clawdbot/agents/<agentId>/agent/auth-profiles.json` under `profiles`.
+    Rotation order
+    When a provider has multiple profiles, Moltbot chooses an order like this:
+    - **Explicit config** : `auth.order[provider]` (if set).
+    - **Configured profiles** : `auth.profiles` filtered by provider.
+    - **Stored profiles** : entries in `auth-profiles.json` for the provider.
+    If no explicit order is configured, Moltbot uses a roundrobin order:
+    - **Primary key:** profile type (**OAuth before API keys**).
+    - **Secondary key:** `usageStats.lastUsed` (oldest first, within each type).
+    - **Cooldown/disabled profiles** are moved to the end, ordered by soonest expiry.
+    Session stickiness (cache-friendly)
+    Moltbot **pins the chosen auth profile per session** to keep provider caches warm. It does **not** rotate on every request. The pinned profile is reused until:
+    - the session is reset (`/new` / `/reset`)
+    - a compaction completes (compaction count increments)
+    - the profile is in cooldown/disabled
+    Manual selection via `/model ...@<profileId>` sets a **user override** for that session and is not autorotated until a new session starts. Autopinned profiles (selected by the session router) are treated as a **preference** : they are tried first, but Moltbot may rotate to another profile on rate limits/timeouts. Userpinned profiles stay locked to that profile; if it fails and model fallbacks are configured, Moltbot moves to the next model instead of switching profiles.
+    Why OAuth can "look lost"
+    If you have both an OAuth profile and an API key profile for the same provider, roundrobin can switch between them across messages unless pinned. To force a single profile:
+    - Pin with `auth.order[provider] = ["provider:profileId"]`, or
+    - Use a per-session override via `/model ...` with a profile override (when supported by your UI/chat surface).
+    Cooldowns
+    When a profile fails due to auth/ratelimit errors (or a timeout that looks like rate limiting), Moltbot marks it in cooldown and moves to the next profile. Format/invalidrequest errors (for example Cloud Code Assist tool call ID validation failures) are treated as failoverworthy and use the same cooldowns. Cooldowns use exponential backoff:
+    - 1 minute
+    - 5 minutes
+    - 25 minutes
+    - 1 hour (cap)
+    State is stored in `auth-profiles.json` under `usageStats`:
+    Billing disables
+    Billing/credit failures (for example "insufficient credits" / "credit balance too low") are treated as failoverworthy, but they're usually not transient. Instead of a short cooldown, Moltbot marks the profile as **disabled** (with a longer backoff) and rotates to the next profile/provider. State is stored in `auth-profiles.json`:
+    Defaults:
+    - Billing backoff starts at **5 hours** , doubles per billing failure, and caps at **24 hours**.
+    - Backoff counters reset if the profile hasn't failed for **24 hours** (configurable).
+    Model fallback
+    If all profiles for a provider fail, Moltbot moves to the next model in `agents.defaults.model.fallbacks`. This applies to auth failures, rate limits, and timeouts that exhausted profile rotation (other errors do not advance fallback). When a run starts with a model override (hooks or CLI), fallbacks still end at `agents.defaults.model.primary` after trying any configured fallbacks.
+    Related config
+    See [Gateway configuration](/gateway/configuration) for:
+    - `auth.profiles` / `auth.order`
+    - `auth.cooldowns.billingBackoffHours` / `auth.cooldowns.billingBackoffHoursByProvider`
+    - `auth.cooldowns.billingMaxHours` / `auth.cooldowns.failureWindowHours`
+    - `agents.defaults.model.primary` / `agents.defaults.model.fallbacks`
+    - `agents.defaults.imageModel` routing
+    See [Models](/concepts/models) for the broader model selection and fallback overview.
+  Ex:
+  - ID: EX-CONCEPTS-MODEL-FAILOVER-3AC9D1E0F6
+    Ctx: Copy
+    Body: |-
+      {
+      "usageStats": {
+      "provider:profile": {
+      "lastUsed": 1736160000000,
+      "cooldownUntil": 1736160600000,
+      "errorCount": 2
+      }
+      }
+      }
+  - ID: EX-CONCEPTS-MODEL-FAILOVER-06ED651AE5
+    Ctx: Copy
+    Body: |-
+      {
+      "usageStats": {
+      "provider:profile": {
+      "disabledUntil": 1736178000000,
+      "disabledReason": "billing"
+      }
+      }
+      }

@@ -1,0 +1,533 @@
+# KODA TDE Lineamiento Técnico: Guía Calidad WEB
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:calidad_web:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Guia_Calidad_Web_Servicios_Digitales"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_files:
+      - "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md"
+    source_url: "https://wikiguias.digital.gob.cl/guias/Guia_Web"
+    source_updated_at:
+      - "2025-10-07T22:05:11.871Z"
+      - "2025-10-07T23:10:42.437Z"
+  status: draft
+
+ID: "TDE-LIN-CALIDAD-WEB-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía de uso del instrumento de evaluación de calidad en sitios web y servicios digitales del Estado, que clasifica indicadores por prioridad y define dimensiones y método de aplicación"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía de calidad para sitios web y servicios digitales del Estado"
+  objective: >-
+    Proporcionar un marco práctico para evaluar y fortalecer la calidad de sitios web y
+    servicios digitales del Estado, mejorando la experiencia usuaria, el cumplimiento de
+    estándares de calidad y apoyando el desarrollo interno y la contratación de proyectos.
+  usage_guidance:
+    - "Usar esta guía al aplicar el instrumento de evaluación de calidad web y de servicios digitales transaccionales."
+    - "Utilizar las dimensiones y niveles de prioridad como referencia para priorizar mejoras."
+    - "Complementar con lineamientos de accesibilidad, interoperabilidad, seguridad, datos y orientación TIC."
+  style:
+    - "Responder en es-CL, tono práctico y claro, orientado a equipos de servicios digitales, UX y TI."
+    - "Destacar requisitos (Req) de aplicación del instrumento y recomendaciones (Rec) de mejora."
+
+Metadata_Original:
+  title: "Guía Calidad WEB"
+  url: "https://wikiguias.digital.gob.cl/guias/Guia_Web"
+  category: "Lineamientos Técnicos/Guías"
+  tags:
+    - "calidad"
+    - "experiencia usuaria"
+    - "servicios digitales"
+  description: >-
+    La guía de calidad de servicios web proporciona a los evaluadores una referencia clara para
+    responder el instrumento de evaluación. Evalúa los sitios desde diferentes dimensiones como:
+    accesibilidad, lenguaje claro, responsividad, entre otros.
+  updated_at: "2025-10-07T22:05:11.871Z"
+  published_at: "2024-12-27"
+  autor: "Equipo de Servicios Digitales"
+
+Acerca_de_la_Guia:
+  ID: "TDE_LIN_CALWEB_CTX_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#guía-de-uso-instrumento-de-evaluación-de-calidad-en-sitios-webs-y-servicios-digitales-del-estado"
+  Ctx: >-
+    Esta guía presenta un instrumento práctico que clasifica los indicadores de calidad web en
+    tres niveles de prioridad: imprescindible, esperable y deseable. Su aplicación permite
+    identificar áreas de mejora y avanzar hacia estándares en sitios web y servicios digitales,
+    fomentando una gestión digital más inclusiva, segura y eficiente.
+  Obj: >-
+    Entregar un marco de referencia práctico para evaluar y fortalecer la calidad de sitios web
+    y servicios digitales del Estado, mejorando la experiencia de personas y empresas,
+    garantizando el cumplimiento de estándares de calidad y apoyando a los OAEs en el
+    desarrollo interno y la contratación de proyectos.
+
+Contexto_Institucional:
+  ID: "TDE_LIN_CALWEB_CTX_002"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#contexto"
+  Ctx: >-
+    La Ley N° 21.658 crea la Secretaría de Gobierno Digital (SGD) en la Subsecretaría de
+    Hacienda, responsable de proponer y coordinar la Estrategia de Gobierno Digital. En el marco
+    de la Agenda de Modernización del Estado 2022-2026, la SGD impulsa la Plataforma Integrada
+    de Servicios Públicos Digitales, que fija estándares y herramientas para optimizar el diseño,
+    desarrollo y entrega de servicios digitales.
+  Res:
+    - "Este esfuerzo busca no solo mejorar la efectividad de los servicios públicos, sino también aumentar la confianza ciudadana y reducir los costos asociados, alineándose con los objetivos de la Ley de Transformación Digital del Estado."
+  Ctx_Optional:
+    - "El instrumento de evaluación de calidad web y servicios digitales se enmarca en este esfuerzo, proporcionando un marco para la mejora continua de la calidad digital."
+
+Definiciones_Clave:
+  ID: "TDE_LIN_CALWEB_DEF_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#definiciones"
+  Terms:
+    - Term: "Pagina web"
+      Def: "Unidad de información específica del sitio (por ejemplo https://sitioejemplo.gob.cl/historia/1920-1950)."
+    - Term: "Plataforma electronica"
+      Def: "Software o conjunto de software, datos e infraestructura tecnológica que sustenta procesos o procedimientos."
+    - Term: "Plataforma"
+      Def: "En este instrumento, sinónimo genérico de sitio web o servicio digital."
+    - Term: "Servicio digital"
+      Def: "Prestaciones ofrecidas por los OAEs a sus personas usuarias a través de tecnologías digitales."
+    - Term: "Servicio digital transaccional"
+      Def: "Servicio digital que requiere identificación para entregar información personalizada o realizar trámites."
+    - Term: "Sistema"
+      Def: "Componentes informáticos que sustentan los servicios digitales."
+    - Term: "Sitio web"
+      Def: "Conjunto de páginas bajo un mismo dominio (por ejemplo https://sitioejemplo.gob.cl)."
+    - Term: "URL"
+      Def: "Ubicación de una página web o archivo en internet."
+
+Descripcion_Instrumento_y_Secciones:
+  ID: "TDE_LIN_CALWEB_INSTR_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#descripción-del-instrumento-y-secciones"
+  Ctx: >-
+    El instrumento de evaluación se basa en observar y verificar aspectos clave de una muestra
+    de páginas de sitios web y servicios digitales. La evaluación comprueba si cada pregunta de
+    chequeo se cumple en la mayoría de las páginas de la muestra, a menos que alguna pregunta de
+    chequeo indique lo contrario.
+  Ctx_Optional:
+    - "Los instrumentos están disponibles en documentos compartidos que permiten trabajo colaborativo del equipo evaluador."
+    - "Los instrumentos específicos pueden consultarse en la carpeta de evaluación de calidad web y servicios digitales."
+    - "Para visualizar los instrumentos de evaluación de calidad web y servicios digitales: https://drive.google.com/drive/u/0/folders/1KRGA8pw-KO8mKsvI-D662GQOvkmwIgOM"
+  Secciones:
+    - "Portada: presenta el instrumento, datos de evaluadores, escala de cumplimiento y dimensiones, con glosario breve."
+    - "Muestra: registro de URLs de las páginas revisadas."
+    - "Guia para la verificacion tecnica: tutoriales para inspección de código, navegación con teclado y uso de herramientas."
+    - "Dimensiones: hojas por dimensión con indicadores y preguntas de chequeo."
+    - "Hoja de resultados: puntaje ponderado por dimensión y nivel de obligatoriedad."
+    - "Grafico de resultados: gráfico de barras con porcentajes de cumplimiento por dimensión y nivel."
+
+Niveles_de_Prioridad:
+  ID: "TDE_LIN_CALWEB_PRIORIDAD_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#niveles-de-prioridad"
+  Def: >-
+    Los indicadores de calidad se clasifican en tres niveles de obligatoriedad que orientan la
+    priorización de mejoras.
+  Niveles:
+    - Name: "Imprescindible"
+      Def: >-
+        Características mínimas que deben cumplir sitios web o servicios digitales
+        transaccionales. Su ausencia puede generar errores o vulnerabilidades para personas
+        usuarias y sistemas, e incluye indicadores obligatorios según el marco legal vigente.
+    - Name: "Esperable"
+      Def: >-
+        Condiciones esenciales en un sitio web o servicio digital gubernamental centrado en
+        personas usuarias, alineadas con criterios de calidad reconocidos.
+    - Name: "Deseable"
+      Def: >-
+        Elementos que aportan valor agregado y reflejan avance hacia la excelencia, sin ser
+        estrictamente obligatorios.
+
+Dimensiones_Sitios_Web:
+  ID: "TDE_LIN_CALWEB_DIM_WEB_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#dimensiones-instrumento-de-evaluación-de-calidad-para-sitios-web"
+  Def: >-
+    El instrumento de evaluación de calidad para sitios web considera un conjunto de dimensiones
+    con ponderaciones específicas.
+  Tabla:
+    - Orden: 1
+      Dimension: "Contenido y lenguaje claro"
+      Ponderacion: "13%"
+    - Orden: 2
+      Dimension: "Usabilidad"
+      Ponderacion: "13%"
+    - Orden: 3
+      Dimension: "Accesibilidad web"
+      Ponderacion: "10%"
+    - Orden: 4
+      Dimension: "Arquitectura de informacion"
+      Ponderacion: "10%"
+    - Orden: 5
+      Dimension: "Busqueda y encontrabilidad"
+      Ponderacion: "8%"
+    - Orden: 6
+      Dimension: "Responsividad movil"
+      Ponderacion: "6%"
+    - Orden: 7
+      Dimension: "Disenho e imagen institucional"
+      Ponderacion: "5%"
+    - Orden: 8
+      Dimension: "Seguridad"
+      Ponderacion: "5%"
+    - Orden: 9
+      Dimension: "Tecnologia"
+      Ponderacion: "5%"
+    - Orden: 10
+      Dimension: "Atencion a la ciudadania"
+      Ponderacion: "4%"
+    - Orden: 11
+      Dimension: "Audiovisualidad"
+      Ponderacion: "3%"
+    - Orden: 12
+      Dimension: "Enfoque de genero"
+      Ponderacion: "2%"
+    - Orden: 13
+      Dimension: "Imparcialidad e igualdad de trato"
+      Ponderacion: "2%"
+    - Orden: 14
+      Dimension: "Inclusion"
+      Ponderacion: "2%"
+    - Orden: 15
+      Dimension: "Promocion"
+      Ponderacion: "2%"
+    - Orden: 16
+      Dimension: "Transparencia y apertura"
+      Ponderacion: "2%"
+    - Orden: 17
+      Dimension: "Prevencion de errores"
+      Ponderacion: "2%"
+    - Orden: 18
+      Dimension: "Facilidad de acceso e independencia tecnologica"
+      Ponderacion: "2%"
+    - Orden: 19
+      Dimension: "Interaccion y retroalimentacion"
+      Ponderacion: "2%"
+    - Orden: 20
+      Dimension: "Rapidez de respuesta"
+      Ponderacion: "2%"
+
+Dimensiones_Servicios_Digitales:
+  ID: "TDE_LIN_CALWEB_DIM_SERV_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#dimensiones-instrumento-de-evaluación-de-calidad-para-servicios-digitales"
+  Def: >-
+    El instrumento de evaluación de calidad para servicios digitales transaccionales considera
+    dimensiones y ponderaciones específicas.
+  Tabla:
+    - Orden: 1
+      Dimension: "Usabilidad"
+      Ponderacion: "10%"
+    - Orden: 2
+      Dimension: "Prevencion de errores"
+      Ponderacion: "10%"
+    - Orden: 3
+      Dimension: "Accesibilidad web"
+      Ponderacion: "8%"
+    - Orden: 4
+      Dimension: "Interoperabilidad"
+      Ponderacion: "8%"
+    - Orden: 5
+      Dimension: "Contenido y lenguaje claro"
+      Ponderacion: "6%"
+    - Orden: 6
+      Dimension: "Responsividad movil"
+      Ponderacion: "6%"
+    - Orden: 7
+      Dimension: "Seguridad"
+      Ponderacion: "6%"
+    - Orden: 8
+      Dimension: "Resolutividad"
+      Ponderacion: "6%"
+    - Orden: 9
+      Dimension: "Facilidad de acceso e independencia tecnologica"
+      Ponderacion: "6%"
+    - Orden: 10
+      Dimension: "Arquitectura de informacion"
+      Ponderacion: "4%"
+    - Orden: 11
+      Dimension: "Atencion a la ciudadania"
+      Ponderacion: "4%"
+    - Orden: 12
+      Dimension: "Disenho e imagen institucional"
+      Ponderacion: "4%"
+    - Orden: 13
+      Dimension: "Tecnologia"
+      Ponderacion: "4%"
+    - Orden: 14
+      Dimension: "Interaccion y retroalimentacion"
+      Ponderacion: "4%"
+    - Orden: 15
+      Dimension: "Rapidez de respuesta"
+      Ponderacion: "4%"
+    - Orden: 16
+      Dimension: "Audiovisualidad"
+      Ponderacion: "2%"
+    - Orden: 17
+      Dimension: "Enfoque de genero"
+      Ponderacion: "2%"
+    - Orden: 18
+      Dimension: "Imparcialidad e igualdad de trato"
+      Ponderacion: "2%"
+    - Orden: 19
+      Dimension: "Inclusion"
+      Ponderacion: "2%"
+    - Orden: 20
+      Dimension: "Promocion"
+      Ponderacion: "2%"
+
+Aplicacion_del_Instrumento:
+  ID: "TDE_LIN_CALWEB_APLIC_001"
+  Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#aplicación-del-instrumento"
+  Fases:
+    - Name: "Previo_a_la_aplicacion"
+      Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#previo-a-la-aplicación"
+      Act:
+        - "Familiarizarse con el instrumento de evaluacion."
+        - "Solicitar colaboracion de profesionales relevantes (comunicaciones, diseno, informatica, transparencia, atencion de usuarios, etc.) cuando sea necesario."
+    - Name: "Seleccion_de_la_muestra_Sitios_Web"
+      Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#selección-de-la-muestra-instrumento-sitios-web"
+      Req:
+        - "Se debe seleccionar una muestra mínima de 10 páginas web."
+        - "Incluir la portada o página de inicio del sitio."
+        - "Incluir al menos las dos primeras páginas del menú principal (excluyendo la portada)."
+        - "Incluir al menos tres páginas de información interna, siendo una de ellas sobre información de trámites o servicios digitales ciudadanos en el caso de tener."
+        - "Las tres últimas noticias publicadas en el sitio."
+        - "Incluir al menos un formulario de contacto que no requiera autenticación para ingresar datos."
+        - "En caso de no contar con un formulario, utilice únicamente las páginas mencionadas anteriormente para la evaluación."
+      Ex:
+        - "Ejemplo muestra Instrumento Sitios Web (URLs de ejemplo: https://www.gob.cl/instituciones/, https://www.gob.cl/acerca-de/, https://www.gob.cl/tramitesyservicios/, https://www.gob.cl/noticias/...)."
+    - Name: "Seleccion_de_la_muestra_Servicios_Digitales"
+      Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#selección-de-la-muestra-instrumento-servicios-digitales-transaccionales"
+      Req:
+        - "Revisar la pagina de entrada al tramite (landing page) y el flujo completo del tramite en linea."
+        - "Evaluar contenido, diseno y elementos audiovisuales en la landing page y mecánica del proceso, prevencion de errores y velocidad de respuesta en el flujo."
+    - Name: "Recomendaciones_adicionales"
+      Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#recomendaciones-adicionales"
+      Rec:
+        - "Si tiene la posibilidad, utilice dos monitores para facilitar la revisión simultánea de información."
+        - "Abra todas las páginas de la muestra en diferentes pestañas del navegador para agilizar el proceso de inspección."
+    - Name: "Durante_la_aplicacion"
+      Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#durante-la-aplicación"
+      Act:
+        - "Navegue por las hojas del documento compartido completando cada campo según se indique."
+        - "Completar informacion general en la hoja 'Inicio' (institucion, URL, evaluador/a, fecha, navegador, dispositivo)."
+        - "Registrar las URLs de la muestra en la hoja 'Muestra'."
+        - "Revisar dimensiones (hojas 1 a 20) en el orden que se estime conveniente."
+        - "Aunque las hojas estén ordenadas, se pueden revisar en el orden que se considere más conveniente."
+        - "Cada dimensión incluye indicadores con sus definiciones y preguntas de chequeo."
+        - "Responder preguntas de chequeo seleccionando alternativas disponibles (incluyendo 'No aplica' cuando corresponda)."
+        - "Algunas preguntas incluyen la opción 'No aplica' para casos donde el elemento consultado no está presente o no es verificable."
+      Rec:
+        - "Si desea aportar evidencia de la verificación: capture pantallas usando las herramientas sugeridas en la hoja 'Guía', sección 'Capturadores de pantalla'."
+        - "Guarde las capturas en una carpeta compartida y pegue el enlace en la columna de comentarios."
+        - "Asegurar otorgar los permisos necesarios para acceder a dicha carpeta compartida."
+      Req:
+        - "Contestar todas las preguntas de chequeo; las preguntas sin respuesta suman cero puntos."
+        - "Aplicar umbral de cumplimiento del 50% sobre la muestra para responder afirmativamente, considerando excepciones cuando se detecten fallas graves en una pagina de la muestra."
+    - Name: "Despues_de_la_aplicacion"
+      Src: "Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md#después-de-la-aplicación"
+      Act:
+        - "Revisar resultados calculados automaticamente en la hoja 'Resultados' (por dimension y nivel de obligatoriedad)."
+        - "Revisar visualizaciones en la hoja 'Graficos'."
+
+Sistema_de_Puntaje:
+  ID: "TDE_LIN_CALWEB_PUNTAJE_001"
+  Def: >-
+    El puntaje de cada indicador se calcula automaticamente segun las respuestas a las preguntas
+    de chequeo.
+  Tabla:
+    - Puntaje: 0
+      Descripcion: "Ninguna respuesta es afirmativa."
+    - Puntaje: 1
+      Descripcion: "Menos del 50% de las respuestas afirmativas."
+    - Puntaje: 2
+      Descripcion: "El 50% o mas de las respuestas afirmativas."
+    - Puntaje: 3
+      Descripcion: "Todas las preguntas afirmativas."
+
+Interpretacion_de_Resultados:
+  ID: "TDE_LIN_CALWEB_INTERP_001"
+  Def: >-
+    La interpretacion de resultados se basa en porcentajes de cumplimiento por dimension y
+    promedios ponderados por nivel de obligatoriedad y dimension.
+  Factores_Ponderacion_Niveles:
+    - Nivel: "Imprescindible"
+      Peso: "60%"
+    - Nivel: "Esperable"
+      Peso: "25%"
+    - Nivel: "Deseable"
+      Peso: "15%"
+  Res:
+    - "El porcentaje de cumplimiento total por dimension es el promedio ponderado por nivel de obligatoriedad."
+    - "El porcentaje de cumplimiento ponderado global es el promedio de cada nivel, tomando en cuenta la ponderacion asignada a cada dimension (columna E del instrumento)."
+
+Recomendaciones_para_Mejorar:
+  ID: "TDE_LIN_CALWEB_MEJORA_001"
+  Rec:
+    - "Implementar acciones correctivas orientadas a cumplir los indicadores evaluados, priorizando por nivel de obligatoriedad y ponderacion de la dimension."
+    - "Comenzar con los indicadores imprescindibles, que son minimos requeridos y obligatorios segun el marco legal vigente."
+    - "Luego abordar indicadores esperables, que representan mejoras importantes pero no criticas."
+    - "Finalmente trabajar en indicadores deseables, que agregan valor adicional y optimizan la experiencia usuaria."
+  Res: >-
+    El cumplimiento progresivo de imprescindibles, esperables y deseables no solo mejora el
+    resultado de la evaluacion, sino tambien la experiencia de las personas usuarias en el sitio
+    o servicio digital evaluado.
+
+Guia_de_Voz_y_Tono_Extracto:
+  ID: "TDE_LIN_CALWEB_VOZTONO_001"
+  Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#para-qué-es-esta-guía-de-voz-y-tono"
+  Ctx: >-
+    Para orientar la escritura de los documentos que se suben en esta Wiki. Se pretende escribir
+    de un modo conciso, claro, consistente. En la medida de lo posible, es recomendable "llamar"
+    a otras secciones que ya tienen conceptos establecidos.
+  Def_Voz_y_Tono:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#qué-es-voz-y-tono"
+    Def:
+      - "La Voz es lo que define y representa nuestra personalidad."
+      - "El Tono es cómo se expresa la voz a través de distintas actitudes."
+  Importancia:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#qué-es-voz-y-tono"
+    Ctx:
+      - "Uniformidad del mensaje (consistente)."
+      - "Dar la justa forma de entregar el mensaje."
+      - "Hacernos entender hacia las instituciones y usuarios en general."
+      - "Llegar de mejor manera a los usuarios."
+      - "Idealmente, el contenido debiera ser diseñado y testeado."
+      - "Se debe buscar confianza y funcionalidad."
+  Voz:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#voz"
+    Items:
+      - "Informar de manera sencilla, directa y sin tecnicismos innecesarios."
+      - "Usar un lenguaje ameno."
+      - "Hablar para todas las personas (organizaciones, Estado, ciudadanía, empresas, entre otras)."
+  Tono:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#tono"
+    Ctx:
+      - "Generalmente es formal, pero no complejo, cuidando de darse a entender a cualquier público."
+      - "El mensaje es instructivo y constructivo: un emisor experto entrega información y asesoría de manera fácil, eficiente y didáctica."
+  Consejos_de_Estilo:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#consejos-de-estilo"
+    Items:
+      - "Redactar en primera persona."
+      - "Escribir positivamente: emplear un lenguaje positivo en lugar de negativo"
+      - "Cuidar la inclusión usando lenguaje genérico, sin importar el género del receptor"
+      - "Usar lenguaje simple pero formal."
+      - "Usar voz activa: evitar la voz pasiva."
+      - "Evitar usar siglas en el texto."
+      - "Homologar el uso de palabras y conceptos en todos los documentos y cuidar la coherencia entre títulos y cuerpos de texto."
+      - "Emplea un contenido sencillo, breve y preciso; suprime palabras repetitivas."
+      - "Priorizar el mensaje: crear jerarquía; comenzar con lo más importante; organizar ideas; usar títulos y subtítulos descriptivos."
+      - "Crea un mensaje conciso. Usa palabras y oraciones cortas. Evita vueltas innecesarias"
+      - "Reutiliza textos y conceptos de la Wiki."
+  Voz_Activa_Ejemplo:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#voz-activa"
+    Ex:
+      - "SI: Plataformas al servicio de las instituciones para facilitar los procesos de Transformación Digital."
+      - "NO: Las instituciones tienen a su servicio plataformas para los procesos de Transformación Digital."
+  Tiempo_Verbal:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#tiempo-verbal-fechas-exactas"
+    Ex:
+      - "SI: Conoce las siguientes fases."
+      - "NO: Aquí podrás conocer las siguientes fases."
+    Prohib:
+      - "Evita usar las palabras: Ayer, hoy, mañana."
+  Fechas_Exactas:
+    Rec: >-
+      Para fechas exactas, recomendamos los siguientes formatos: 22/03/2019 Sábado 09/03/2019
+  Formato_de_Horas:
+    Req: >-
+      Se debe utilizar un formato de: 00:00 (hora, signo dos puntos y minutos), y además estar
+      acompañado de la palabra “horas”, en la medida de lo posible.
+  Personas_y_Lugares:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#personas-y-lugares"
+    Rec:
+      - "Escribe para personas."
+      - "Redacta en primera persona y siempre trata de “tú” al receptor."
+      - "Cuidar la inclusión usando lenguaje genérico sin importar el género del receptor."
+    Ex:
+      - "SI: Ingresa tu nombre completo. Te damos la bienvenida"
+      - "NO: Ingrese su nombre completo. Bienvenido"
+  Titulos_y_Bajadas:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#títulos-y-bajadas"
+    Req:
+      - "Los títulos inician en mayúscula y el resto en minúscula, excepto siglas o nombres propios que siempre deben escribirse en mayúscula."
+    Ctx:
+      - "La bajada se usa para complementar el título con instrucciones o información."
+      - "Su uso no es obligatorio si el título es suficientemente descriptivo."
+  Parrafos_y_Listas:
+    Src: "Plataformas_CompartidasManuales_de_Uso/Guía_de_Voz_y_tono.md#párrafos-y-listas"
+    Req:
+      - "Una idea por párrafo."
+      - "Máximo 20 palabras por frase."
+      - "Máximo 5 líneas por párrafo, en la medida de lo posible."
+    Listas:
+      Rec:
+        - "Evita largos bloques de contenido utilizando listas con viñetas o números."
+      Ctx:
+        - "Listas con palabras o frases cortas no requieren puntuación al final de cada elemento; listas con párrafos descriptivos sí deben ser puntuadas."
+  Botones_y_Vinculos:
+    Req: >-
+      Los botones y los vínculos (link) siempre deben contener acciones, utiliza verbos
+      imperativos o infinitivos que llamen a la acción. A continuación, si es posible acompaña
+      el verbo con una palabra o frase que muestre lo que encontrará después de hacer clic.
+    Ex:
+      - "SI: Guardar, Descargar, Iniciar sesión"
+      - "EVITAR: Aquí, ahora (no entregan información suficiente)."
+  Textos_Alternativos:
+    Ctx: "Aquellas imágenes que necesitamos describir, poseen una funcionalidad llamada texto alternativo o su nombre en inglés “alt text”"
+    Rec:
+      - "describir en no más de dos líneas una descripción que contenga el objetivo de la ilustración o la foto"
+    Prohib:
+      - "para aquellas imágenes que solo son decorativas y no agregan valor a los lectores de pantalla y sus personas usuarias"
+    Ctx_Optional:
+      - "Video explicativo de voz y tono: https://www.youtube.com/watch?v=ZPPcbnLyjTU&list=PLUwB5Xct9D9cvDscnrC14cm8P1qrV2MI6&index=6"
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de esta guía apoyados en definiciones del Lexicon TDE."
+  Terms:
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos que se articulan con la calidad web y de servicios digitales."
+  XRef:
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+    - "urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0"
+    - "urn:knowledge:koda:gov:cloud_publica:1.0.0"
+
+Referencias_Resumen:
+  Description: "Referencias usadas o vinculadas a la guia de calidad web."
+  Sources:
+    - "Instrumentos de evaluacion de calidad web y de servicios digitales del Estado (carpeta oficial SGD)."
+    - "Ley N° 21.658 que crea la Secretaría de Gobierno Digital."
+    - "Agenda de Modernizacion del Estado 2022-2026."

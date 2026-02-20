@@ -1,0 +1,261 @@
+# KODA TDE Plataforma Compartida: Portal de Datos Abiertos del Estado (Datos.gob.cl)
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:datosgob:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Plataforma_Compartida_DatosGOB_Datos_Abiertos"
+  provenance:
+    created_by: "Secretaría de Gobierno Digital - Ministerio de Hacienda"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_files:
+      - "Lineamientos_TécnicosEstándares/Estándares_para_la_apertura_y_reutilización_de_Datos_Abiertos.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_del_Coordinadora_de_Transformación_Digital.md#datosgob"
+    source_urls:
+      - "https://wikiguias.digital.gob.cl/Est%C3%A1ndares/Datos-Abiertos"
+      - "https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador"
+    source_updated_at:
+      - "2025-10-07T21:05:54.773Z"
+      - "2025-11-14T14:28:29.734Z"
+  status: draft
+
+ID: "TDE-PLAT-DATOSGOB-028"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Secretaría de Gobierno Digital - Ministerio de Hacienda"
+Human-Editor: "Secretaría de Gobierno Digital - Ministerio de Hacienda"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Portal Datos.gob.cl como plataforma compartida de datos abiertos del Estado, pilar de la estrategia de Gobierno Digital y del dominio de datos abiertos en el modelo TDE"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserva MEAT (información esencial) y skeleton (estructura: headers,
+    IDs, listas, definiciones, requisitos) con pérdida cero. Ignora fat (texto
+    decorativo, retórica, ejemplos redundantes, capturas de pantalla).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
+    Ctx_Required->Required External Reference, Ctx_Optional->Optional External
+    Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective,
+    Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference,
+    XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement,
+    Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification,
+    Rec->Recommendation
+
+    REFERENCE POLICY: Ref: es interno al documento—debe apuntar a un ID existente en
+    ESTE artefacto. XRef/XRef_Required: son externos—deben apuntar a un URN (opcional
+    con fragmento #ID) en otro artefacto. Para documentos externos sin ID específico,
+    usar Ctx:/Ctx_Required:/Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords en inglés, contenido en idioma original. Nunca traduzcas
+    el contenido normativo ni las descripciones de las fuentes.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Plataforma compartida de datos abiertos del Estado (Datos.gob.cl)"
+  objective: >-
+    Describir el rol, requisitos y uso del portal Datos.gob.cl como plataforma
+    compartida de datos abiertos del Estado, en coherencia con el estándar de Datos
+    Abiertos, la guía EVALTIC, el Sistema de Transformación Digital y el dominio de
+    gestión de datos.
+  usage_guidance:
+    - "Usar este lineamiento para entender qué es Datos.gob, cómo se relaciona con los
+      estándares de datos abiertos y cuándo debe ser utilizado por las instituciones."
+    - "Complementar con el lineamiento de Estándares para la apertura y reutilización
+      de Datos Abiertos y con el marco MGDE al diseñar catálogos y conjuntos de datos."
+    - "Utilizarlo junto a la Guía EVALTIC, la Estrategia de Datos y el STD 2025 al
+      planificar proyectos TIC e iniciativas de apertura de datos."
+  style:
+    - "Responder en es-CL, con foco normativo y operativo mínimo necesario para
+      modelar requisitos institucionales de datos abiertos."
+
+Metadata_Original:
+  title: "Portal de Datos Abiertos del Estado (Datos.gob.cl)"
+  urls:
+    - "https://datos.gob.cl/"
+    - "https://wikiguias.digital.gob.cl/Est%C3%A1ndares/Datos-Abiertos"
+  category: "Lineamientos Técnicos/Estándares"
+  tags:
+    - "datosgob"
+    - "datos_abiertos"
+    - "open_data"
+    - "plataforma_compartida"
+  description: >-
+    El portal Datos.gob.cl es el portal de datos abiertos de la Secretaría de Gobierno
+    Digital. Centraliza catálogos y conjuntos de datos abiertos de los órganos de la
+    Administración del Estado, publicados bajo estándares y licencias de datos
+    abiertos, para fomentar transparencia, reutilización e innovación.
+  updated_at:
+    - "2025-10-07T21:05:54.773Z"
+
+Contexto_y_Definiciones_DatosAbiertos:
+  ID: "TDE_PLAT_DATOSGOB_CTX_001"
+  Ctx: >-
+    El proyecto Datos.gob.cl es un pilar de la estrategia de Gobierno Digital de Chile.
+    A través de este portal, el Gobierno busca garantizar que los datos de carácter
+    público generados por las instituciones estatales estén disponibles de forma
+    abierta y accesible para todas las personas y entidades interesadas, financiados
+    con recursos públicos y puestos al servicio de la ciudadanía sin restricciones
+    indebidas de uso.
+  Def:
+    - Term: "Dato_Abierto"
+      Def: >-
+        Dato digital con las características técnicas y jurídicas necesarias para que
+        pueda ser usado, reutilizado y redistribuido libremente por cualquier persona
+        y órgano de la Administración del Estado, en cualquier momento y lugar.
+    - Term: "Catalogo_Datos_Abiertos"
+      Def: >-
+        Repositorio que centraliza, almacena y disponibiliza conjuntos de datos
+        abiertos, estructurados y descritos por metadatos.
+    - Term: "Conjunto_Datos_Abiertos"
+      Def: >-
+        Colección de datos representados en formatos de uso común, idealmente
+        estructurados, relacionados entre sí y descritos por sus metadatos.
+  Obj:
+    - "Facilitar el acceso, uso, reutilización y redistribución de datos públicos."
+    - "Impulsar transparencia, participación e innovación a partir de los datos del
+      Estado."
+    - "Alinear la publicación de datos con estándares internacionales de datos
+      abiertos."
+
+Estandares_y_Alcance_DatosGOB:
+  ID: "TDE_PLAT_DATOSGOB_STD_001"
+  Ctx_Required:
+    - "Estándares para la apertura y reutilización de Datos Abiertos."
+  Req:
+    - "Los estándares y directrices de datos abiertos se aplican a los datos y
+      conjuntos de datos abiertos publicados en el portal Datos.gob.cl."
+    - "Los portales o plataformas institucionales de datos abiertos deben garantizar
+      que sus datos estén referenciados y sincronizados en la plataforma de datos
+      abiertos de la Secretaría de Gobierno Digital."
+    - "Los datos abiertos deben publicarse en formatos abiertos que alcancen al menos
+      tres estrellas en la clasificación de Tim Berners-Lee, privilegiando formatos no
+      propietarios."
+    - "Cada catálogo, conjunto de datos y recurso debe describirse mediante metadatos
+      estructurados (por ejemplo, siguiendo DCAT y Dublin Core), incluyendo al menos
+      título, descripción, cobertura, fechas, responsable, frecuencia de
+      actualización y URL de acceso."
+  Rec:
+    - "Usar como referencia los ejemplos de metadatos y estructuras publicados en los
+      estándares de Datos Abiertos para construir catálogos y datasets institucionales
+      coherentes con Datos.gob.cl."
+
+Metadatos_Estandar_Datos_Abiertos:
+  ID: "TDE_PLAT_DATOSGOB_META_001"
+  Ctx: "Metadatos solicitados por nivel (catálogo, conjunto de datos, recurso) según el estándar de Datos Abiertos."
+  Catalogo:
+    - Name: "Cobertura_geografica"
+      Def: "Descripción del ámbito geográfico que abarcan los datos del catálogo, pudiendo especificar niveles: País, Región, Provincia, Comuna."
+      Req_Level: "Recomendado"
+      Ex: "Chile, Región Metropolitana, Santiago"
+    - Name: "N_visitas"
+      Def: "Número de visitas acumuladas por los usuarios al catálogo, reflejando el grado de interacción pública."
+      Req_Level: "Recomendado"
+      Ex: "1000"
+  Conjunto_de_Datos:
+    - Name: "Fecha_de_la_version"
+      Def: "Fecha de la edición de la versión."
+      Req_Level: "Obligatorio"
+      Ex: "2023-01-01"
+  Recurso:
+    - Name: "Diccionario_de_variables"
+      Def: "Lista de campos que contiene un recurso tabular (no aplica para aquellas distribuciones que no sean tablas)."
+      Req_Level: "Obligatorio"
+      Ex: "fecha, estación, temperatura_max, temperatura_min"
+    - Name: "Formato_del_recurso"
+      Def: "Indica el formato del archivo del recurso."
+      Req_Level: "Recomendado"
+      Ex: "CSV"
+
+Licenciamiento_y_Condiciones_Uso:
+  ID: "TDE_PLAT_DATOSGOB_LIC_001"
+  Req:
+    - "Los datos y conjuntos de datos abiertos de los órganos de la Administración del
+      Estado deben ponerse a disposición mediante licencias de dominio público o
+      licencias abiertas que permitan su uso y reutilización amplia."
+    - "En ausencia de asignación explícita, los conjuntos de datos abiertos se
+      aperturarán bajo la licencia Creative Commons Zero (CC0 1.0) según los
+      estándares de Datos Abiertos."
+    - "Cuando sea necesario utilizar una licencia distinta, la entidad debe solicitar y
+      justificar esta situación ante la Secretaría de Gobierno Digital."
+  Rec:
+    - "Seleccionar licencias compatibles con los catálogos internacionales de datos
+      abiertos (por ejemplo, PDDL-1.0, CC BY 4.0, ODC-By 1.0), según la naturaleza del
+      conjunto de datos."
+
+Uso_de_DatosGOB_en_Proyectos_TIC:
+  ID: "TDE_PLAT_DATOSGOB_PROY_001"
+  Ctx_Required:
+    - "Guía Técnica: Marco para las inversiones y el gasto en gobierno digital, EVALTIC."
+  Req:
+    - "Si una iniciativa TIC requiere publicar conjuntos de datos, debe contemplar la
+      publicación directa o a través de servicios en la plataforma de datos abiertos
+      del Estado (Datos.gob.cl)."
+    - "Al formular proyectos TIC, las instituciones deben evaluar siempre el uso de
+      plataformas y servicios compartidos provistos por la Secretaría de Gobierno
+      Digital, entre ellos Datos.gob, ClaveÚnica, DocDigital, SIMPLE, FirmaGob y
+      PISEE."
+  Rec:
+    - "Incorporar explícitamente la publicación en Datos.gob.cl en la formulación y
+      seguimiento de proyectos TIC evaluados a través de EVALTIC."
+
+Habilitacion_y_Gobernanza_DatosGOB:
+  ID: "TDE_PLAT_DATOSGOB_HAB_001"
+  Ctx_Optional:
+    - "El Manual del Coordinador/a de Transformación Digital describe a Datos.Gob como
+      el portal que permite a las instituciones públicas poner a disposición de la
+      ciudadanía sus datos de manera transparente, estandarizada y reutilizable, y
+      señala que la integración inicial requiere el cumplimiento de pasos formales y
+      técnicos coordinados por la Secretaría de Gobierno Digital."
+  Rec:
+    - "Designar responsables institucionales para la administración del catálogo de
+      datos abiertos y de las publicaciones en Datos.gob.cl."
+    - "Coordinar con la Secretaría de Gobierno Digital los pasos formales y técnicos
+      necesarios para la integración inicial, siguiendo los procedimientos que esta
+      defina (por ejemplo, a través de CeroFilas y capacitaciones específicas)."
+    - "Alinear la gobernanza de datos abiertos con los roles y estructuras definidas en
+      el marco de gestión de datos (MGDE) y en la Estrategia de Datos de la
+      Administración del Estado."
+
+Articulacion_con_MGDE_Estrategia_Datos_y_STD:
+  ID: "TDE_PLAT_DATOSGOB_ART_001"
+  Ctx: >-
+    El uso de Datos.gob se relaciona estrechamente con la gestión de datos, la
+    Estrategia de Datos de la Administración del Estado y el Sistema de Transformación
+    Digital, que promueven el uso estratégico de datos y la adopción de plataformas
+    compartidas.
+  Rec:
+    - "Tratar los catálogos y conjuntos de datos publicados en Datos.gob.cl como activos
+      dentro del marco MGDE, con responsables, clasificaciones y políticas de
+      actualización."
+    - "Alinear la apertura de datos en Datos.gob.cl con los lineamientos y objetivos de
+      la Estrategia de Datos de la Administración del Estado."
+    - "Incorporar metas de publicación y reutilización de datos abiertos en el Plan de
+      Transformación Digital institucional (STD 2025)."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de datos abiertos apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Datos"
+      Ref_ID: "TDE_DEF_DATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS"
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Normas y lineamientos relacionados con el portal de datos abiertos."
+  Ctx_Optional: "Estándares de datos abiertos (pendiente de incorporación al catálogo TDE)."
+  XRef:
+    - "urn:knowledge:koda:gov:mgde:1.0.0"
+    - "urn:knowledge:koda:gov:datos_administracion_estado:1.0.0"
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:evaltic:1.0.0"

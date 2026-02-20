@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KODA Schema",
+  "description": "Esquema de validación para artefactos KODA",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Referencia al esquema de validación"
+    },
+    "manifest": {
+      "type": "object",
+      "properties": {
+        "URN": {"type": "string"},
+        "Version": {"type": "string"},
+        "Status": {"type": "string"}
+      },
+      "required": ["URN", "Version", "Status"]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "Title": {"type": "string"},
+        "Description": {"type": "string"},
+        "Domain": {"type": "string"},
+        "Created": {"type": "string"},
+        "Tags": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["Title", "Domain"]
+    }
+  },
+  "required": ["manifest", "metadata"]
+}

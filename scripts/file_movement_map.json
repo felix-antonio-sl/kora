@@ -1,0 +1,1885 @@
+[
+  {
+    "urn": "urn:knowledge:koda:agents:architect:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/knowledge-architect/agent_koda_architect.yaml",
+    "new_path": "agents/architect/agent_architect.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:transformer:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-transformer/agent_koda_transformer.yaml",
+    "new_path": "agents/transformer/agent_transformer.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:smith:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-smith/agent_koda_smith.yaml",
+    "new_path": "agents/smith/agent_smith.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:guardian:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-guardian/agent_koda_guardian.yaml",
+    "new_path": "agents/guardian/agent_guardian.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:tester:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-tester/agent_koda_tester.yaml",
+    "new_path": "agents/tester/agent_tester.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:sim-orchestrator:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-sim-orchestrator/agent_koda_sim_orchestrator.yaml",
+    "new_path": "agents/sim-orchestrator/agent_sim_orchestrator.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:orquestador-generico:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/orquestador-generico/agent_orquestador_generico.yaml",
+    "new_path": "agents/orquestador-generico/agent_orquestador_generico.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ci-assistant:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-ci-assistant/agent_koda_ci_assistant.yaml",
+    "new_path": "agents/ci-assistant/agent_ci_assistant.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:taskmaster:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-taskmaster/agent_koda_taskmaster.yaml",
+    "new_path": "agents/taskmaster/agent_taskmaster.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:cartographer:1.0.0",
+    "workspace": "koda",
+    "old_path": "agents/koda-cartographer/agent_koda_cartographer.yaml",
+    "new_path": "agents/cartographer/agent_cartographer.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:koda-artifact-helper:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/koda/koda-artifact-helper/SKILL.md",
+    "new_path": "skills/own/koda-artifact-helper/skill_koda_artifact_helper.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:context-manager:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/own/context-manager/SKILL.md",
+    "new_path": "skills/own/context-manager/skill_context_manager.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:crear-skill:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/own/crear-skill/SKILL.md",
+    "new_path": "skills/own/crear-skill/skill_crear_skill.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:crear-artefacto:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/koda/crear-artefacto/SKILL.md",
+    "new_path": "skills/own/crear-artefacto/skill_crear_artefacto.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:crear-agente:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/koda/crear-agente/SKILL.md",
+    "new_path": "skills/own/crear-agente/skill_crear_agente.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:arquitecto-gore:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/own/arquitecto-gore/SKILL.md",
+    "new_path": "skills/own/arquitecto-gore/skill_arquitecto_gore.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:data-modeling:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/own/data-modeling/SKILL.md",
+    "new_path": "skills/own/data-modeling/skill_data_modeling.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:skills:database-design:1.0.0",
+    "workspace": "koda",
+    "old_path": "skills/community/database-design/SKILL.md",
+    "new_path": "skills/own/database-design/skill_database_design.yaml",
+    "type": "skills"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:use-claude-code-vscode:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/domains/ide_tools/claude/guide_011_claude-code-vscode_koda.yml",
+    "new_path": "tools/use-claude-code-vscode.yml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:doc-antigravity-official:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/domains/ide_tools/google_antigravity/doc_oficial_ag_koda.yml",
+    "new_path": "tools/doc-antigravity-official.yml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:manual-ag-fx-v2:2.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/domains/ide_tools/google_antigravity/manual_ag_fx_v2_koda.yml",
+    "new_path": "tools/manual-ag-fx-v2.yml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:guide-context-manager:3.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/domains/ide_tools/google_antigravity/guide_ag_003_context-manager_koda.yml",
+    "new_path": "tools/guide-context-manager.yml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:doc-codex-official:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/domains/ide_tools/codex/doc_codex_001_official_koda.yml",
+    "new_path": "tools/doc-codex-official.yml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:quickstart:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_000_quickstart_koda.yml",
+    "new_path": "knowledge/domains/core/quickstart.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:spec:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_001_koda-spec_koda.yml",
+    "new_path": "knowledge/domains/core/spec.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:transform:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_002_koda-transform_koda.yml",
+    "new_path": "knowledge/domains/core/transform.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:hub-federation:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_003_koda-hub-federation_koda.yml",
+    "new_path": "knowledge/domains/core/hub-federation.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:life:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_004_koda-life-master_koda.yml",
+    "new_path": "knowledge/domains/core/life.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:agent:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_005_koda-agent-spec_koda.yml",
+    "new_path": "knowledge/domains/core/agent.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:agent-construct:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_006_koda-agent-construct_koda.yml",
+    "new_path": "knowledge/domains/core/agent-construct.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:test:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_007_koda-test-spec_koda.yml",
+    "new_path": "knowledge/domains/core/test.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:schema-versioning:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_008_schema-versioning_koda.yml",
+    "new_path": "knowledge/domains/core/schema-versioning.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:tooling:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_009_koda-tooling-spec_koda.yml",
+    "new_path": "knowledge/domains/core/tooling.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:skills-federation:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/core/guide_core_010_skills-federation_koda.yml",
+    "new_path": "knowledge/domains/core/skills-federation.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:agent-schema:1.0.0",
+    "workspace": "koda",
+    "old_path": "schemas/koda-agent-schema-1.0.0.json",
+    "new_path": "knowledge/domains/core/agent-schema.json",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:tooling-schema:1.0.0",
+    "workspace": "koda",
+    "old_path": "schemas/koda-tooling-schema-1.0.0.json",
+    "new_path": "knowledge/domains/core/tooling-schema.json",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-guide-onto-gist-001-audit-protocol:1.0.0",
+    "workspace": "koda",
+    "old_path": "knowledge/domains/gist/guide_onto_gist_001_audit_protocol_koda.yml",
+    "new_path": "knowledge/domains/core/fx-guide-onto-gist-001-audit-protocol.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:pensador-generador:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/pensador-generador/agent_pensador_generador.yaml",
+    "new_path": "agents/pensador-generador/agent_pensador_generador.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ingeniero-sistemas-composicional:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/ingeniero-sistemas-composicional/agent_ingeniero_sistemas_composicional.yaml",
+    "new_path": "agents/ingeniero-sistemas-composicional/agent_ingeniero_sistemas_composicional.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:arquitecto-categorico:1.4.0",
+    "workspace": "fxsl",
+    "old_path": "agents/arquitecto-categorico/agent_arquitecto_categorico.yaml",
+    "new_path": "agents/arquitecto-categorico/agent_arquitecto_categorico.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:arquitecto-sistemas-informacion:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/arquitecto-sistemas-informacion/agent_arquitecto_sistemas_informacion.yaml",
+    "new_path": "agents/arquitecto-sistemas-informacion/agent_arquitecto_sistemas_informacion.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:arquitecto-automatizacion-organizacional:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/arquitecto-automatizacion-organizacional/agent_arquitecto_automatizacion_organizacional.yaml",
+    "new_path": "agents/arquitecto-automatizacion-organizacional/agent_arquitecto_automatizacion_organizacional.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ingeniero-software-composicional:2.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/ingeniero-software-composicional/agent_ingeniero_software_composicional.yaml",
+    "new_path": "agents/ingeniero-software-composicional/agent_ingeniero_software_composicional.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:abogado-legislacion-medica:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/abogado-legislacion-medica/agent_abogado_legislacion_medica.yaml",
+    "new_path": "agents/abogado-legislacion-medica/agent_abogado_legislacion_medica.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:medico-urgencias:1.1.0",
+    "workspace": "fxsl",
+    "old_path": "agents/medico-urgencias/agent_medico_urgencias.yaml",
+    "new_path": "agents/medico-urgencias/agent_medico_urgencias.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:estratega-comunicacional:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/estratega-comunicacional/agent_estratega_comunicacional.yaml",
+    "new_path": "agents/estratega-comunicacional/agent_estratega_comunicacional.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:modelador-mbt:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/modelador-mbt/agent_modelador_mbt.yaml",
+    "new_path": "agents/modelador-mbt/agent_modelador_mbt.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:omega:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/omega/agent_omega.yaml",
+    "new_path": "agents/omega/agent_omega.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ontologista-gist:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/ontologista-gist/agent_ontologista_gist.yaml",
+    "new_path": "agents/ontologista-gist/agent_ontologista_gist.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ingeniero-moltbot-composicional:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/ingeniero-moltbot-composicional/agent_ingeniero_moltbot_composicional.yaml",
+    "new_path": "agents/ingeniero-moltbot-composicional/agent_ingeniero_moltbot_composicional.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ingeniero-openclaw-composicional:1.1.0",
+    "workspace": "fxsl",
+    "old_path": "agents/ingeniero-openclaw-composicional/agent_ingeniero_openclaw_composicional.yaml",
+    "new_path": "agents/ingeniero-openclaw-composicional/agent_ingeniero_openclaw_composicional.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:index:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_000_legislacion_index_koda.yml",
+    "new_path": "knowledge/domains/legal/index.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:intro_estatutos:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_001_intro_estatutos_koda.yml",
+    "new_path": "knowledge/domains/legal/intro_estatutos.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_002_deberes_prohibiciones_koda.yml",
+    "new_path": "knowledge/domains/legal/deberes_prohibiciones.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ingreso_carrera:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_003_ingreso_carrera_koda.yml",
+    "new_path": "knowledge/domains/legal/ingreso_carrera.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:jornada_calificaciones:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_004_jornada_calificaciones_koda.yml",
+    "new_path": "knowledge/domains/legal/jornada_calificaciones.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:remuneraciones:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_005_remuneraciones_koda.yml",
+    "new_path": "knowledge/domains/legal/remuneraciones.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:acoso_laboral:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_006_acoso_laboral_koda.yml",
+    "new_path": "knowledge/domains/legal/acoso_laboral.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:responsabilidad_admin:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_007_responsabilidad_admin_koda.yml",
+    "new_path": "knowledge/domains/legal/responsabilidad_admin.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:terminacion:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_008_terminacion_koda.yml",
+    "new_path": "knowledge/domains/legal/terminacion.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:maternidad:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_009_maternidad_koda.yml",
+    "new_path": "knowledge/domains/legal/maternidad.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:contratacion_publica:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_010_contratacion_publica_koda.yml",
+    "new_path": "knowledge/domains/legal/contratacion_publica.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:feriados_permisos:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_011_feriados_permisos_koda.yml",
+    "new_path": "knowledge/domains/legal/feriados_permisos.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:derechos_especiales:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_012_derechos_especiales_koda.yml",
+    "new_path": "knowledge/domains/legal/derechos_especiales.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:formacion_especialistas:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_013_formacion_especialistas_koda.yml",
+    "new_path": "knowledge/domains/legal/formacion_especialistas.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_21643:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_090_ley_21643_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_21643.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_15076:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_091_ley_15076_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_15076.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_19664:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_092_ley_19664_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_19664.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:confianza_legitima:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/medicina/legislacion/kb_med_014_confianza_legitima_koda.yml",
+    "new_path": "knowledge/domains/legal/confianza_legitima.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:cognitive-toolkit:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/cognitive_toolkit.koda.yml",
+    "new_path": "knowledge/domains/cat/cognitive-toolkit.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:seven-sketches:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/foundations/seven_sketches.koda.yml",
+    "new_path": "knowledge/domains/cat/seven-sketches.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:categorical-data-structures:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/foundations/categorical_data_structures.koda.yml",
+    "new_path": "knowledge/domains/cat/categorical-data-structures.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:exploring-category-theoretic-approaches-to-databases:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/foundations/exploring_category_theoretic_approaches_to_databases.koda.yml",
+    "new_path": "knowledge/domains/cat/exploring-category-theoretic-approaches-to-databases.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:action-primary-key:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/dynamics/action_primary_key.koda.yml",
+    "new_path": "knowledge/domains/cat/action-primary-key.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:algebraic-model-management:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/algebraic_model_management.koda.yml",
+    "new_path": "knowledge/domains/cat/algebraic-model-management.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:algebraic-databases:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/foundations/algebraic_databases.koda.yml",
+    "new_path": "knowledge/domains/cat/algebraic-databases.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:categorical-systems-theory:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/dynamics/categorical_systems_theory.koda.yml",
+    "new_path": "knowledge/domains/cat/categorical-systems-theory.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:coalgebras:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/dynamics/coalgebras.koda.yml",
+    "new_path": "knowledge/domains/cat/coalgebras.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:unified-representation-transformation-multimodel:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/unified_representation_transformation_multimodel.koda.yml",
+    "new_path": "knowledge/domains/cat/unified-representation-transformation-multimodel.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:unified-multimodel:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/unified_multimodel.koda.yml",
+    "new_path": "knowledge/domains/cat/unified-multimodel.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:multicategory-multimodel-query-processing:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/multicategory_multimodel_query_processing.koda.yml",
+    "new_path": "knowledge/domains/cat/multicategory-multimodel-query-processing.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:formal-framework-multimodel-data-transformations:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/formal_framework_multimodel_data_transformations.koda.yml",
+    "new_path": "knowledge/domains/cat/formal-framework-multimodel-data-transformations.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:data-lakes-ct:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/data_lakes_ct.koda.yml",
+    "new_path": "knowledge/domains/cat/data-lakes-ct.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:formal-framework-data-lakes-ct:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/formal_framework_data_lakes_category_theory.koda.yml",
+    "new_path": "knowledge/domains/cat/formal-framework-data-lakes-ct.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:cql-data-integration:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/cql_data_integration.koda.yml",
+    "new_path": "knowledge/domains/cat/cql-data-integration.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:mathematical-modelling:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/mathematical_modelling.koda.yml",
+    "new_path": "knowledge/domains/cat/mathematical-modelling.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:mbse-consistency:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/mbse_consistency.koda.yml",
+    "new_path": "knowledge/domains/cat/mbse-consistency.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:audit-patterns:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/audit_patterns.koda.yml",
+    "new_path": "knowledge/domains/cat/audit-patterns.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:kb-category:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/kb_category.koda.yml",
+    "new_path": "knowledge/domains/cat/kb-category.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:constraint-logic:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/constraint_logic.koda.yml",
+    "new_path": "knowledge/domains/cat/constraint-logic.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:schema-evolution:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/meta/schema_evolution.koda.yml",
+    "new_path": "knowledge/domains/cat/schema-evolution.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:cat:data-access-layers:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/cat/integration/kb_data_access_layers_categorical.koda.yml",
+    "new_path": "knowledge/domains/cat/data-access-layers.yml",
+    "type": "cat"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-rules:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "agents/modelador-mbt/rules_mbt.md",
+    "new_path": "knowledge/domains/core/fx-rules.md",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-tensiones:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/modelamiento/tensiones_modelamiento.md",
+    "new_path": "knowledge/domains/core/fx-tensiones.md",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-readme:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/docs/README.md",
+    "new_path": "knowledge/domains/core/fx-readme.md",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-namespace:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/docs/Namespace.md",
+    "new_path": "knowledge/domains/core/fx-namespace.md",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-address-guidance:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/docs/models/AddressGuidance.md",
+    "new_path": "knowledge/domains/core/fx-address-guidance.md",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-uom-model:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/docs/models/UnitOfMeasureModel.md",
+    "new_path": "knowledge/domains/core/fx-uom-model.md",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-core:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/ontologies/gistCore14.0.0.ttl",
+    "new_path": "knowledge/domains/core/fx-core.ttl",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-annotations:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/ontologies/gistRdfsAnnotations14.0.0.ttl",
+    "new_path": "knowledge/domains/core/fx-annotations.ttl",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-subclass-assertions:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/ontologies/gistSubClassAssertions14.0.0.ttl",
+    "new_path": "knowledge/domains/core/fx-subclass-assertions.ttl",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-media-types:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/ontologies/gistMediaTypes14.0.0.ttl",
+    "new_path": "knowledge/domains/core/fx-media-types.ttl",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:fx-prefixes:14.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/gist/ontologies/gistPrefixDeclarations14.0.0.ttl",
+    "new_path": "knowledge/domains/core/fx-prefixes.ttl",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:agent-runtime:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_agent_runtime.yaml",
+    "new_path": "tools/agent-runtime.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:session-management:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_session_management.yaml",
+    "new_path": "tools/session-management.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:memory-context:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_memory_context.yaml",
+    "new_path": "tools/memory-context.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:messaging:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_messaging.yaml",
+    "new_path": "tools/messaging.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:groups:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_groups.yaml",
+    "new_path": "tools/groups.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:models:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_models.yaml",
+    "new_path": "tools/models.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:routing:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_routing.yaml",
+    "new_path": "tools/routing.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:misc:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/concepts/kb_misc.yaml",
+    "new_path": "tools/misc.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:cli:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/cli/kb_cli.yaml",
+    "new_path": "tools/cli.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:gateway:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/gateway/kb_gateway.yaml",
+    "new_path": "tools/gateway.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:channels:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/channels/kb_channels.yaml",
+    "new_path": "tools/channels.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:tools:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/tools/kb_tools.yaml",
+    "new_path": "tools/tools.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:platforms:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/platforms/kb_platforms.yaml",
+    "new_path": "tools/platforms.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:install-start-help-security:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/operations/kb_operations_install_start_help_security.yaml",
+    "new_path": "tools/install-start-help-security.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:automation-hooks-reference:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/operations/kb_operations_automation_hooks_reference.yaml",
+    "new_path": "tools/automation-hooks-reference.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:tools:nodes-plugins-providers-web:1.0.0",
+    "workspace": "fxsl",
+    "old_path": "knowledge/domains/moltbot/docs/operations/kb_operations_nodes_plugins_providers_web.yaml",
+    "new_path": "tools/nodes-plugins-providers-web.yaml",
+    "type": "tools"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:goreologo:2.4.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_goreologo.yaml",
+    "new_path": "agents/goreologo/agent_goreologo.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:asesor-juridico:3.1.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_asesor_juridico.yaml",
+    "new_path": "agents/asesor-juridico/agent_asesor_juridico.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:gestor-ipr-360:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_gestor_ipr_360.yaml",
+    "new_path": "agents/gestor-ipr-360/agent_gestor_ipr_360.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:crm-ipr:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_crm_ipr.yaml",
+    "new_path": "agents/crm-ipr/agent_crm_ipr.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:eacs:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_eacs.yaml",
+    "new_path": "agents/eacs/agent_eacs.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:erp-gore:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_erp_gore.yaml",
+    "new_path": "agents/erp-gore/agent_erp_gore.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:banca-inversion:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_banca_inversion.yaml",
+    "new_path": "agents/banca-inversion/agent_banca_inversion.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ar-virtual:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_ar_virtual.yaml",
+    "new_path": "agents/ar-virtual/agent_ar_virtual.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:dgi-virtual:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_dgi_virtual.yaml",
+    "new_path": "agents/dgi-virtual/agent_dgi_virtual.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:digitrans-gore:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_digitrans_gore.yaml",
+    "new_path": "agents/digitrans-gore/agent_digitrans_gore.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:gobernador-virtual:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_gobernador_virtual.yaml",
+    "new_path": "agents/gobernador-virtual/agent_gobernador_virtual.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:ingeniero-goreos:2.0.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_ingeniero_goreos.yaml",
+    "new_path": "agents/ingeniero-goreos/agent_ingeniero_goreos.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:visionario:1.1.0",
+    "workspace": "gorenuble",
+    "old_path": "agents/agent_visionario.yaml",
+    "new_path": "agents/visionario/agent_visionario.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:intro-gores-nuble:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/01_fundamentos/intro/kb_gn_000_intro_gores_nuble_koda.yml",
+    "new_path": "knowledge/domains/gn/intro-gores-nuble.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:organigrama:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml",
+    "new_path": "knowledge/domains/gn/organigrama.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:selector-ipr:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_011_selector_ipr_koda.yml",
+    "new_path": "knowledge/domains/gn/selector-ipr.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:vision-desarrollo-nuble:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml",
+    "new_path": "knowledge/domains/gn/vision-desarrollo-nuble.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:flujos-aprobacion-documentos:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_015_aprobaciones_koda.yml",
+    "new_path": "knowledge/domains/gn/flujos-aprobacion-documentos.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-induccion-gore-nuble-2026:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-induccion-gore-nuble-2026.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-inventarios-bodegas:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_040_manual_inventarios_bodegas_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-inventarios-bodegas.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-activo-fijo:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_041_manual_activo_fijo_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-activo-fijo.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-desarrollo-organizacional:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-desarrollo-organizacional.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:gestion-ipr:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml",
+    "new_path": "knowledge/domains/gn/gestion-ipr.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:gestion-rendiciones:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_020_gestion_rendiciones_koda.yml",
+    "new_path": "knowledge/domains/gn/gestion-rendiciones.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:estrategia-gestion:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_035_estrategia_gestion_koda.yml",
+    "new_path": "knowledge/domains/gn/estrategia-gestion.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:loc-gore:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/01_fundamentos/legal/kb_gn_031_loc_gore_koda.yml",
+    "new_path": "knowledge/domains/gn/loc-gore.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:gestion-prpto:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/presupuesto/kb_gn_018_gestion_prpto_koda.yml",
+    "new_path": "knowledge/domains/gn/gestion-prpto.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:marco-legal-gores:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/01_fundamentos/legal/kb_gn_200_marco_legal_gores_koda.yml",
+    "new_path": "knowledge/domains/gn/marco-legal-gores.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ley-presupuestos-2026-partida-31:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml",
+    "new_path": "knowledge/domains/gn/ley-presupuestos-2026-partida-31.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml",
+    "new_path": "knowledge/domains/gn/ley-presupuestos-2026-normas-generales.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:matriz-integracion-organica:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml",
+    "new_path": "knowledge/domains/gn/matriz-integracion-organica.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-index:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/_index.yml",
+    "new_path": "knowledge/domains/gn/bpmn-index.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-presupuesto:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-presupuesto.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-contabilidad:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_044_manual_contabilidad_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-contabilidad.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-tesoreria:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_045_manual_tesoreria_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-tesoreria.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-compras:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_046_manual_compras_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-compras.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-flotas:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_047_manual_flotas_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-flotas.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-ciclo-vida:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_048_manual_ciclo_vida_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-ciclo-vida.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-remuneraciones:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_049_manual_remuneraciones_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-remuneraciones.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-asistencia:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_051_manual_asistencia_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-asistencia.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-bienestar:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_052_manual_bienestar_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-bienestar.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:cies-sitia:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml",
+    "new_path": "knowledge/domains/gn/cies-sitia.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:gore-ideal:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/01_fundamentos/intro/kb_gn_900_gore_ideal_koda.yml",
+    "new_path": "knowledge/domains/gn/gore-ideal.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:mgmt:mw-waissbluth:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/core/gestion/kb_gn_mw_waissbluth_koda.yml",
+    "new_path": "knowledge/domains/mgmt/mw-waissbluth.yml",
+    "type": "mgmt"
+  },
+  {
+    "urn": "urn:knowledge:koda:mgmt:meyer-org-structure:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/core/gestion/kb_gn_meyer_org_structure_koda.yml",
+    "new_path": "knowledge/domains/mgmt/meyer-org-structure.yml",
+    "type": "mgmt"
+  },
+  {
+    "urn": "urn:knowledge:koda:mgmt:lean6:1.0.1",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/core/gestion/kb_gn_lean6_core_koda.yml",
+    "new_path": "knowledge/domains/mgmt/lean6.yml",
+    "type": "mgmt"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:manual-operacional-dgi:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/dgi/kb_gn_manual_operacional_dgi_koda.yml",
+    "new_path": "knowledge/domains/gn/manual-operacional-dgi.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:plan-potenciamiento-dgi:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/dgi/kb_gn_plan_potenciamiento_dgi_koda.yml",
+    "new_path": "knowledge/domains/gn/plan-potenciamiento-dgi.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:gestion-info-geoespacial:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/kb_gn_090_gestion_informacion_geoespacial_koda.yml",
+    "new_path": "knowledge/domains/gn/gestion-info-geoespacial.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d01-actos-administrativos:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D01_actos_administrativos_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d01-actos-administrativos.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d02-ciclo-presupuestario:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d02-ciclo-presupuestario.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d03-gestion-ipr:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D03_gestion_ipr_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d03-gestion-ipr.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d04-compras-contrataciones:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D04_compras_contrataciones_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d04-compras-contrataciones.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d05-inventarios-activo-fijo:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D05_inventarios_activo_fijo_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d05-inventarios-activo-fijo.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d06-flota-vehicular:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D06_flota_vehicular_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d06-flota-vehicular.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d07-rrhh:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D07_rrhh_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d07-rrhh.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d08-rendiciones:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D08_rendiciones_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d08-rendiciones.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d09-cies-sitia:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D09_cies_sitia_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d09-cies-sitia.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:bpmn-d10-geoespacial-ide:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml",
+    "new_path": "knowledge/domains/gn/bpmn-d10-geoespacial-ide.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:aceleracion-regional:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/arquitectura/kb_gn_050_aceleracion_regional_koda.yml",
+    "new_path": "knowledge/domains/gn/aceleracion-regional.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:erd-nuble-2024-2030:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/02_estrategia/estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml",
+    "new_path": "knowledge/domains/gn/erd-nuble-2024-2030.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:transferencia-ppr:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_001_transferencia_ppr_koda.yml",
+    "new_path": "knowledge/domains/gn/transferencia-ppr.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-index:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_index_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-index.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-proyinv:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-proyinv.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-proginv:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proginv_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-proginv.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-empub:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_empub_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-empub.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-pmdt:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_pmdt_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-pmdt.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-edpub:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_edpub_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-edpub.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-artcult:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-artcult.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-patrimonio:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_patrimonio_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-patrimonio.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:ris-deportes:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_deportes_koda.yml",
+    "new_path": "knowledge/domains/gn/ris-deportes.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:guia-idi-sni-sts:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_024_guia_idi_sni_koda.yml",
+    "new_path": "knowledge/domains/gn/guia-idi-sni-sts.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:guia-programas-directos-gore:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_025_guia_programas_koda.yml",
+    "new_path": "knowledge/domains/gn/guia-programas-directos-gore.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:guia-fril-2025-sts:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml",
+    "new_path": "knowledge/domains/gn/guia-fril-2025-sts.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:guia-frpd-nuble:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_027_guia_frpd_koda.yml",
+    "new_path": "knowledge/domains/gn/guia-frpd-nuble.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:instructivo-subvencion-8-2025-sts:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_028_instructivo_subvencion_8_koda.yml",
+    "new_path": "knowledge/domains/gn/instructivo-subvencion-8-2025-sts.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:guia-circular-33-sts:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml",
+    "new_path": "knowledge/domains/gn/guia-circular-33-sts.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:indicadores-nuble:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/02_estrategia/estadisticas/kb_gn_005_indicadores_nuble_koda.yml",
+    "new_path": "knowledge/domains/gn/indicadores-nuble.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:comunicaciones-oc:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml",
+    "new_path": "knowledge/domains/gn/comunicaciones-oc.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:cuentas-publicas-2021-2024:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_009_cuentas_publicas_2021_2024_koda.yml",
+    "new_path": "knowledge/domains/gn/cuentas-publicas-2021-2024.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:glosario-gore-nuble:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/gestion/kb_gn_014_glosario_gore_nuble_koda.yml",
+    "new_path": "knowledge/domains/gn/glosario-gore-nuble.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:guia-comunicaciones:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml",
+    "new_path": "knowledge/domains/gn/guia-comunicaciones.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:nuble-250:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/02_estrategia/estrategia/kb_gn_056_nuble250_koda.yml",
+    "new_path": "knowledge/domains/gn/nuble-250.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:problemas-sociales-cl:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/02_estrategia/social/kb_gn_004_problemas_sociales_cl_koda.yml",
+    "new_path": "knowledge/domains/gn/problemas-sociales-cl.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:modelos-actos-juridicos:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/juridico/kb_gn_100_modelos_actos_juridicos_koda.yml",
+    "new_path": "knowledge/domains/gn/modelos-actos-juridicos.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:dictamenes-cgr-gore:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/juridico/kb_gn_101_dictamenes_cgr_gore_koda.yml",
+    "new_path": "knowledge/domains/gn/dictamenes-cgr-gore.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:informe-estado-inicial-gore-pre-td:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml",
+    "new_path": "knowledge/domains/gn/informe-estado-inicial-gore-pre-td.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:estrategia-td-ia:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/04_habilitadores/tde/kb_gn_720_estrategia_td_ia_koda.yml",
+    "new_path": "knowledge/domains/gn/estrategia-td-ia.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml",
+    "new_path": "knowledge/domains/gorenuble/omega:ontology:ipr-gestion-fusion.yml",
+    "type": "gorenuble"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:glosario-ipr-consolidado:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/ipr/otroglosario.yml",
+    "new_path": "knowledge/domains/gn/glosario-ipr-consolidado.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:gestion-prpto-2026:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/presupuesto/kb_gn_018_gestion_prpto_2026_koda.yml",
+    "new_path": "knowledge/domains/gn/gestion-prpto-2026.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:gn:glosas-gores-2026:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml",
+    "new_path": "knowledge/domains/gn/glosas-gores-2026.yml",
+    "type": "gn"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:gn-cqs-master:1.0.1",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/ontologies/onto_gorenuble/goreNubleCQs_Master.yml",
+    "new_path": "knowledge/domains/core/gn-cqs-master.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:mgmt:estructura-estado-chile:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/domains/estadocl/kb_core_007_estructura_estado_chile_koda.yml",
+    "new_path": "knowledge/domains/mgmt/estructura-estado-chile.yml",
+    "type": "mgmt"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:gn-koda-schema:1.0.0",
+    "workspace": "gorenuble",
+    "old_path": "knowledge/schemas/koda-schema.json",
+    "new_path": "knowledge/domains/core/gn-koda-schema.json",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:digitrans:1.0.0",
+    "workspace": "tde",
+    "old_path": "agents/digitrans/agent_digitrans.yaml",
+    "new_path": "agents/digitrans/agent_digitrans.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:datos_administracion_estado:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/estrategias/kb_tde_estrategias_001_estrategia_datos_administracion_estado_koda.yml",
+    "new_path": "knowledge/domains/gov/datos_administracion_estado.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:identidad_digital:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/estrategias/kb_tde_estrategias_002_estrategia_identidad_digital_koda.yml",
+    "new_path": "knowledge/domains/gov/identidad_digital.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/estrategias/kb_tde_estrategias_003_estrategia_gobierno_digital_2030_koda.yml",
+    "new_path": "knowledge/domains/gov/gobierno_digital_2030.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:capacitaciones_tde:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/estrategias/kb_tde_estrategias_004_estrategia_capacitaciones_transformacion_digital_estado_koda.yml",
+    "new_path": "knowledge/domains/gov/capacitaciones_tde.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_21180_tde:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/leyes/kb_tde_lineamientos_032_ley_transformacion_digital_estado_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_21180_tde.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_19880_procedimientos:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/leyes/kb_tde_lineamientos_034_ley_procedimientos_administrativos_19880_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_19880_procedimientos.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_21658_segdig:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/leyes/kb_tde_lineamientos_035_ley_secretaria_gobierno_digital_21658_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_21658_segdig.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:legislacion_ia_chile:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/leyes/kb_tde_lineamientos_038_analisis_legislacion_ia_chile_koda.yml",
+    "new_path": "knowledge/domains/legal/legislacion_ia_chile.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:ley_21719_datos_personales:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/leyes/kb_tde_lineamientos_039_ley_21719_proteccion_datos_personales_koda.yml",
+    "new_path": "knowledge/domains/legal/ley_21719_datos_personales.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/normas/kb_tde_lineamientos_012_norma_documentos_expedientes_electronicos_koda.yml",
+    "new_path": "knowledge/domains/legal/nt_documentos_expedientes.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/normas/kb_tde_lineamientos_013_norma_interoperabilidad_koda.yml",
+    "new_path": "knowledge/domains/legal/nt_interoperabilidad.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:nt_notificaciones:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/normas/kb_tde_lineamientos_014_norma_notificaciones_koda.yml",
+    "new_path": "knowledge/domains/legal/nt_notificaciones.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/normas/kb_tde_lineamientos_018_norma_seguridad_info_ciberseguridad_koda.yml",
+    "new_path": "knowledge/domains/legal/nt_seguridad_ciberseguridad.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:nt_autenticacion:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/normas/kb_tde_lineamientos_020_norma_autenticacion_koda.yml",
+    "new_path": "knowledge/domains/legal/nt_autenticacion.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:legal:nt_calidad_plataformas:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/normas/kb_tde_lineamientos_033_norma_calidad_funcionamiento_plataformas_koda.yml",
+    "new_path": "knowledge/domains/legal/nt_calidad_plataformas.yml",
+    "type": "legal"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:claveunica:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_015_plataforma_claveunica_integracion_koda.yml",
+    "new_path": "knowledge/domains/gov/claveunica.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:notificaciones:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_016_plataforma_notificaciones_estado_koda.yml",
+    "new_path": "knowledge/domains/gov/notificaciones.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:simple_saas:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_017_plataforma_simple_saas_koda.yml",
+    "new_path": "knowledge/domains/gov/simple_saas.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:docdigital:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_026_plataforma_docdigital_koda.yml",
+    "new_path": "knowledge/domains/gov/docdigital.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:pisee:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_027_plataforma_pisee_interoperabilidad_koda.yml",
+    "new_path": "knowledge/domains/gov/pisee.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:datosgob:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_028_plataforma_datosgob_datos_abiertos_koda.yml",
+    "new_path": "knowledge/domains/gov/datosgob.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:claveunica_tyc:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/plataformas/kb_tde_lineamientos_036_terminos_condiciones_claveunica_koda.yml",
+    "new_path": "knowledge/domains/gov/claveunica_tyc.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_002_guia_seguridad_informacion_ciberseguridad_koda.yml",
+    "new_path": "knowledge/domains/gov/seguridad_ciberseguridad_v1.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:cloud_publica:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_003_recomendaciones_cloud_publica_koda.yml",
+    "new_path": "knowledge/domains/gov/cloud_publica.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:metadatos_documentos:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_004_guia_metadatos_documentos_expedientes_koda.yml",
+    "new_path": "knowledge/domains/gov/metadatos_documentos.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:evaltic:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_005_guia_evaltic_marco_inversiones_gobierno_digital_koda.yml",
+    "new_path": "knowledge/domains/gov/evaltic.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_006_metodologia_gestion_proyectos_koda.yml",
+    "new_path": "knowledge/domains/gov/metodologia_proyectos_tic.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_007_orientaciones_basicas_gestion_tic_koda.yml",
+    "new_path": "knowledge/domains/gov/orientaciones_gestion_tic.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:mgde:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_008_marco_gestion_datos_mgde_koda.yml",
+    "new_path": "knowledge/domains/gov/mgde.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:calidad_web:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_009_guia_calidad_web_koda.yml",
+    "new_path": "knowledge/domains/gov/calidad_web.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_010_sistema_transformacion_digital_2025_koda.yml",
+    "new_path": "knowledge/domains/gov/sistema_tde_2025.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:rat_datos_personales:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_021_registro_actividades_tratamiento_datos_personales_koda.yml",
+    "new_path": "knowledge/domains/gov/rat_datos_personales.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_023_reglamento_transformacion_digital_ds4_koda.yml",
+    "new_path": "knowledge/domains/gov/reglamento_tde_ds4.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:diseno_servicios:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_025_diseno_servicios_estado_koda.yml",
+    "new_path": "knowledge/domains/gov/diseno_servicios.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:cpat_completa:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_037_guia_cpat_completa_koda.yml",
+    "new_path": "knowledge/domains/gov/cpat_completa.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:catalogo_cpat_nuble:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_040_catalogo_cpat_nuble_koda.yml",
+    "new_path": "knowledge/domains/gov/catalogo_cpat_nuble.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:simple_saas_oae:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_041_guia_uso_simple_saas_oae_koda.yml",
+    "new_path": "knowledge/domains/gov/simple_saas_oae.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:anonimizacion_datos_v2:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/guias/kb_tde_lineamientos_042_guia_anonimizacion_datos_kb080_koda.yml",
+    "new_path": "knowledge/domains/gov/anonimizacion_datos_v2.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:sys:workflow_wikiguias:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/arquitectura/kb_tde_lineamientos_029_workflow_transformacion_wikiguias_koda.yml",
+    "new_path": "knowledge/domains/sys/workflow_wikiguias.yml",
+    "type": "sys"
+  },
+  {
+    "urn": "urn:knowledge:koda:sys:hub_agentes:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/arquitectura/kb_tde_lineamientos_030_architectura_hub_agentes_tde_koda.yml",
+    "new_path": "knowledge/domains/sys/hub_agentes.yml",
+    "type": "sys"
+  },
+  {
+    "urn": "urn:knowledge:koda:sys:test_strategy:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/domains/arquitectura/kb_tde_lineamientos_031_test_strategy_wikiguias_koda.yml",
+    "new_path": "knowledge/domains/sys/test_strategy.yml",
+    "type": "sys"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:principios_objetivos:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/core/kb_tde_core_principios_y_objetivos_tde_koda.yml",
+    "new_path": "knowledge/domains/gov/principios_objetivos.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/core/kb_tde_core_lexicon_wikiguias_koda.yml",
+    "new_path": "knowledge/domains/gov/lexicon_wikiguias.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:gov:intro_tde:1.0.0",
+    "workspace": "tde",
+    "old_path": "knowledge/core/kb_tde_intro_tde_koda.yml",
+    "new_path": "knowledge/domains/gov/intro_tde.yml",
+    "type": "gov"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:arquitecto-orko:1.0.0",
+    "workspace": "orko",
+    "old_path": "agents/arquitecto-orko/agent_arquitecto_orko.yaml",
+    "new_path": "agents/arquitecto-orko/agent_arquitecto_orko.yaml",
+    "type": "agents"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-fases:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/domains/metodologia/kb_metodologia_001_fases_orko.yml",
+    "new_path": "knowledge/domains/core/orko-fases.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-playbooks:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/domains/metodologia/kb_metodologia_002_playbooks_orko.yml",
+    "new_path": "knowledge/domains/core/orko-playbooks.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:impl-orko-toolkit:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/domains/implementacion/kb_implementacion_001_toolkit_orko.yml",
+    "new_path": "knowledge/domains/core/impl-orko-toolkit.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-fundamentos:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/core/guide_core_000_fundamentos_orko.yml",
+    "new_path": "knowledge/domains/core/orko-fundamentos.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-arquitectura:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/core/guide_core_001_arquitectura_orko.yml",
+    "new_path": "knowledge/domains/core/orko-arquitectura.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-tejidos:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/core/guide_core_002_tejidos_orko.yml",
+    "new_path": "knowledge/domains/core/orko-tejidos.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-metodologia:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/core/guide_core_003_metodologia_orko.yml",
+    "new_path": "knowledge/domains/core/orko-metodologia.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:core:orko-toolkit:1.0.0",
+    "workspace": "orko",
+    "old_path": "knowledge/core/guide_core_004_toolkit_orko.yml",
+    "new_path": "knowledge/domains/core/orko-toolkit.yml",
+    "type": "core"
+  },
+  {
+    "urn": "urn:knowledge:koda:agents:korvo-assistant:1.0.0",
+    "workspace": "korvo",
+    "old_path": "agents/korvo-assistant/agent_korvo_assistant.yaml",
+    "new_path": "agents/korvo-assistant/agent_korvo_assistant.yaml",
+    "type": "agents"
+  }
+]

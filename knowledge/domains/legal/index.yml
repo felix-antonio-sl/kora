@@ -1,0 +1,316 @@
+# KODA Artifact: Índice Global - Legislación Trabajo Médico Chile
+# URN: urn:knowledge:koda:legal:index:1.0.0
+---
+_manifest:
+  classification:
+    role: "Base de conocimiento sobre legislación laboral médica en Chile"
+    primary_use: "Resolver consultas sobre estatutos, derechos, deberes y procedimientos de médicos funcionarios y privados"
+    cross_reference: "Este índice contiene definiciones globales. Los artefactos kb_med_001 a kb_med_013 lo referencian."
+
+  urn: "urn:knowledge:koda:legal:index:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Índice global legislación trabajo médico"
+    source_document: "Material Curso Legislación que Regula el Trabajo Médico - UDELAM/COLMED"
+    model_collaborators: ["IA-CLAUDE"]
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# DEFINICIONES GLOBALES - LEYES
+# ═══════════════════════════════════════════════════════════════════
+
+Leyes_Aplicables:
+  - ID: LEY_15076
+    Def: "Ley 15.076 - Estatuto para médicos cirujanos, farmacéuticos, químico-farmacéuticos, bioquímicos y cirujanos dentistas"
+    Ambito: Profesionales funcionarios sector público
+    Materias:
+      - Ingreso a planta como titular
+      - Remuneraciones especiales
+      - Jornada e incompatibilidades
+      - Calificaciones
+      - Feriados, licencias, permisos
+      - Reemplazos, comisiones, traslados
+      - Becas
+      - Liberación guardia nocturna
+    Reglamento: "DS 110/1963 Ministerio de Salud"
+
+  - ID: LEY_19664
+    Def: "Ley 19.664 - Normas especiales profesionales funcionarios Servicios de Salud"
+    Ambito: Médicos cargos 11, 22, 33, 44 horas en Servicios de Salud
+    Relacion: "Modificatoria de Ref: LEY_15076; aplica en casos especiales"
+    Carrera_Funcionaria:
+      - Etapa_Destinacion_Formacion: Ingreso y especialización
+      - Etapa_Planta_Superior: Desarrollo profesional
+    Materias:
+      - Acceso carrera funcionaria
+      - Programas especialización/subespecialización
+      - Remuneraciones y asignaciones
+      - Acreditación por niveles
+
+  - ID: EA_18834
+    Def: "Ley 18.834 - Estatuto Administrativo General"
+    Texto_Refundido: "DFL 29/2004 Ministerio de Hacienda"
+    Ambito: Funcionarios públicos Ministerios, Intendencias, Gobernaciones, servicios centralizados/descentralizados
+    Aplicacion_Medicos: "Supletoria cuando Ref: LEY_15076 o Ref: LEY_19664 no regulan materia"
+
+  - ID: LOC_18575
+    Def: "Ley 18.575 - Orgánica Constitucional de Bases Generales de la Administración del Estado"
+    Principios:
+      - Servicialidad: Administración al servicio de persona humana
+      - Eficiencia_Eficacia: Administración idónea de medios públicos
+      - Jerarquia: Régimen jerarquizado y disciplinado
+      - Coordinacion: Unidad de acción, evitar duplicación
+
+  - ID: LEY_19378
+    Def: "Ley 19.378 - Estatuto de Atención Primaria de Salud Municipal"
+    Ambito: Profesionales funcionarios APS municipal
+    Aplicacion: Médicos en establecimientos municipales de salud primaria
+
+  - ID: LEY_18883
+    Def: "Ley 18.883 - Estatuto Administrativo Funcionarios Municipales"
+    Ambito: Funcionarios municipales en general
+
+  - ID: LEY_18695
+    Def: "Ley 18.695 - Orgánica Constitucional de Municipalidades"
+    Ambito: "Organización y funcionamiento de las municipalidades"
+
+  - ID: DEC_412_2019
+    Def: "Decreto 412/2019 - Estatuto del Personal de Carabineros de Chile"
+    Tipo: "Decreto supremo que fija texto refundido, coordinado y sistematizado"
+    Ambito: "Personal de Carabineros de Chile"
+
+  - ID: DFL_2_DT
+    Def: "DFL N°2 - Ley orgánica de la Dirección del Trabajo"
+    Ambito: "Organiza la Dirección del Trabajo y establece su función interpretativa (art. 1)"
+
+  - ID: COD_TRAB
+    Def: "Código del Trabajo - Regula relaciones laborales sector privado"
+    Ambito: Médicos contratados bajo régimen privado
+    Caracteristica: Derecho mínimo irrenunciable; normas obligatorias independiente voluntad partes
+
+  - ID: LEY_21643
+    Def: "Ley 21.643 - Prevención, investigación y sanción del acoso laboral, acoso sexual y violencia en el trabajo"
+    Ambito: "Trabajadores del sector público y privado, incluido el sector salud"
+    Relacion: "Modifica Ref: COD_TRAB, Ref: EA_18834, Ref: LEY_18883 y Ref: LEY_18695, reforzando la prevención, investigación y sanción del acoso y la violencia en el trabajo"
+
+  - ID: LEY_16744
+    Def: "Ley 16.744 - Seguro Social contra Accidentes del Trabajo y Enfermedades Profesionales"
+    Tipo: Legal, obligatorio, solidario
+    Cobertura:
+      - Daño emergente (directo, real, efectivo)
+      - Prestaciones médicas y económicas
+
+  - ID: LEY_18961
+    Def: "Ley 18.961 - Orgánica Constitucional de Carabineros de Chile"
+    Ambito: Profesionales en Carabineros
+
+  - ID: DFL_1_1997
+    Def: "DFL 1/1997 Ministerio Interior - Estatuto Personal Fuerzas Armadas"
+    Ambito: Médicos funcionarios FFAA
+    Supletoria: "Ref: LEY_15076, luego Ref: EA_18834"
+
+  - ID: CPR
+    Def: "Constitución Política de la República de Chile"
+    Principio_Supremacia: Norma suprema; obliga autoridades y ciudadanos directamente
+    Art_6: Órganos Estado someten acción a Constitución y normas dictadas conforme a ella
+
+# ═══════════════════════════════════════════════════════════════════
+# DEFINICIONES GLOBALES - INSTITUCIONES
+# ═══════════════════════════════════════════════════════════════════
+
+Instituciones:
+  - ID: SNSS
+    Def: "Sistema Nacional de Servicios de Salud"
+    Desc: Red de Servicios de Salud dependientes del Ministerio de Salud
+
+  - ID: DT
+    Def: "Dirección del Trabajo"
+    Funcion: Fiscalización cumplimiento normativa laboral; jurisprudencia administrativa
+    Ley_Organica: "Ref: DFL_2_DT"
+
+  - ID: CGR
+    Def: "Contraloría General de la República"
+    Funcion: Control legalidad actos administración; toma de razón
+    Notas:
+      - "En materia de confianza legítima, históricamente emitió dictámenes protectores (p.ej. 6400-2018, 16.512-2018, 156769-2021)."
+      - "Desde el dictamen N° E561358/2024 adopta un criterio más restrictivo, tratando estas controversias como materias litigiosas a resolver por los tribunales."
+
+  - ID: MINSAL
+    Def: "Ministerio de Salud"
+
+  - ID: SUBSEC_REDES
+    Def: "Subsecretaría de Redes Asistenciales"
+    Funcion: Regula programas formación especialistas
+
+  - ID: UDELAM
+    Def: "Unidad de Defensa Laboral Médica"
+    Vinculacion: COLMED
+
+  - ID: COLMED
+    Def: "Colegio Médico de Chile"
+
+  - ID: FALMED
+    Def: "Fundación de Asistencia Legal del Colegio Médico"
+
+# ═══════════════════════════════════════════════════════════════════
+# DEFINICIONES GLOBALES - CONCEPTOS CLAVE
+# ═══════════════════════════════════════════════════════════════════
+
+Conceptos:
+  - ID: FUNC_PUB
+    Def: "Funcionario Público"
+    Desc: Persona investida e incorporada a institución pública que actúa en nombre del Estado
+
+  - ID: CARGO_PUB
+    Def: "Cargo Público"
+    Desc: Cargo en plantas o empleos a contrata para realizar función administrativa
+
+  - ID: PLANTA
+    Def: "Planta de Personal"
+    Desc: Conjunto cargos permanentes asignados por ley a cada institución
+
+  - ID: CONTRATA
+    Def: "Empleo a Contrata"
+    Desc: "Cargo transitorio que complementa planta; dura hasta 31 diciembre salvo prórroga (30 días anticipación)"
+
+  - ID: HONORARIOS
+    Def: "Contrato a Honorarios"
+    Desc: "Prestación servicios específicos sin vínculo estatutario ni laboral"
+
+  - ID: CONFIANZA_LEGITIMA
+    Def: "Principio jurisprudencial que protege a funcionarios a contrata frente a cambios intempestivos en la renovación cuando han acumulado cierta antigüedad."
+    Desc: "Doctrina construida principalmente por la Corte Suprema, sin consagración legal expresa; su estándar actual se desarrolla en kb_med_014_confianza_legitima_koda.yml."
+
+  - ID: PAO
+    Def: "Período Asistencial Obligatorio"
+    Desc: Obligación de servicio post-beca en establecimiento público
+
+  - ID: BECA
+    Def: "Beca de Especialización"
+    Desc: Programa formación especialistas en SNSS; máximo 3 años (4 años según Ley 20.816)
+    Incompatibilidad: Cualquier empleo/cargo profesional funcionario durante formación (Art 11)
+
+  - ID: LGN
+    Def: "Liberación de Guardia Nocturna"
+    Req: 20+ años servicio continuo/permanente en guardias nocturnas y días festivos
+    Plazo_Solicitud: Antes 31 agosto cada año
+
+  - ID: CPHS
+    Def: "Comité Paritario de Higiene y Seguridad"
+    Obligatorio: Empresas/faenas >25 trabajadores
+    Composicion: 3 representantes empresa + 3 representantes trabajadores (titulares + suplentes)
+    Duracion: 2 años, reelegibles
+
+# ═══════════════════════════════════════════════════════════════════
+# ÍNDICE DE ARTEFACTOS RELACIONADOS
+# ═══════════════════════════════════════════════════════════════════
+
+Artefactos_Relacionados:
+  - ID: KB_MED_001
+    URN: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+    Tema: "Introducción y Estatutos Jurídicos"
+    Modulo_Fuente: "I"
+
+  - ID: KB_MED_002
+    URN: "urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0"
+    Tema: "Deberes y Prohibiciones"
+    Modulo_Fuente: "II-III"
+
+  - ID: KB_MED_003
+    URN: "urn:knowledge:koda:legal:ingreso_carrera:1.0.0"
+    Tema: "Ingreso a la Vida Laboral"
+    Modulo_Fuente: "IV"
+
+  - ID: KB_MED_004
+    URN: "urn:knowledge:koda:legal:jornada_calificaciones:1.0.0"
+    Tema: "Jornada de Trabajo y Calificaciones"
+    Modulo_Fuente: "V"
+
+  - ID: KB_MED_005
+    URN: "urn:knowledge:koda:legal:remuneraciones:1.0.0"
+    Tema: "Remuneraciones y Asignaciones"
+    Modulo_Fuente: "VI-VIII"
+
+  - ID: KB_MED_006
+    URN: "urn:knowledge:koda:legal:acoso_laboral:1.0.0"
+    Tema: "Acoso Laboral y Sexual"
+    Modulo_Fuente: "IX"
+
+  - ID: KB_MED_007
+    URN: "urn:knowledge:koda:legal:responsabilidad_admin:1.0.0"
+    Tema: "Responsabilidad Administrativa"
+    Modulo_Fuente: "X"
+
+  - ID: KB_MED_008
+    URN: "urn:knowledge:koda:legal:terminacion:1.0.0"
+    Tema: "Terminación Relación Laboral/Funcionarial"
+    Modulo_Fuente: "XI"
+
+  - ID: KB_MED_009
+    URN: "urn:knowledge:koda:legal:maternidad:1.0.0"
+    Tema: "Protección a la Maternidad"
+    Modulo_Fuente: "XII"
+
+  - ID: KB_MED_010
+    URN: "urn:knowledge:koda:legal:contratacion_publica:1.0.0"
+    Tema: "Contratación Pública"
+    Modulo_Fuente: "XIII"
+
+  - ID: KB_MED_011
+    URN: "urn:knowledge:koda:legal:feriados_permisos:1.0.0"
+    Tema: "Feriados, Permisos, Comisiones"
+    Modulo_Fuente: "XIV"
+
+  - ID: KB_MED_012
+    URN: "urn:knowledge:koda:legal:derechos_especiales:1.0.0"
+    Tema: "Liberación Guardia, Incentivo Retiro"
+    Modulo_Fuente: "XV"
+
+  - ID: KB_MED_013
+    URN: "urn:knowledge:koda:legal:formacion_especialistas:1.0.0"
+    Tema: "Becas, PAO, Comisiones de Estudio"
+    Modulo_Fuente: "XVI"
+
+  - ID: KB_MED_014
+    URN: "urn:knowledge:koda:legal:confianza_legitima:1.0.0"
+    Tema: "Principio de Confianza Legítima en Contratas Médicas"
+    Modulo_Fuente: "Jurisprudencia CS 2022-2025 y dictámenes CGR"
+
+  - ID: KB_MED_090
+    URN: "urn:knowledge:koda:legal:ley_21643:1.0.0"
+    Tema: "Ley 21.643 - Prevención, investigación y sanción del acoso y violencia en el trabajo (ámbito salud)"
+    Modulo_Fuente: "Ley 21.643 (2024)"
+
+  - ID: KB_MED_091
+    URN: "urn:knowledge:koda:legal:ley_15076:1.0.0"
+    Tema: "Ley 15.076 - Estatuto de los profesionales funcionarios de la salud (texto refundido DFL 1/2001)"
+    Modulo_Fuente: "Ley 15.076 (DFL 1/2001)"
+
+  - ID: KB_MED_092
+    URN: "urn:knowledge:koda:legal:ley_19664:1.0.0"
+    Tema: "Ley 19.664 - Normas especiales para profesionales funcionarios de los Servicios de Salud"
+    Modulo_Fuente: "Ley 19.664 (2000)"

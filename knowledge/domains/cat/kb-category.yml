@@ -1,0 +1,297 @@
+# KODA Knowledge Artifact: Knowledge Base as Category
+# Domain: Category Theory / Meta-level KB Structure
+# Purpose: Formalize the KB itself as a category with global invariants
+
+_manifest:
+  urn: "urn:knowledge:koda:cat:kb-category:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/meta/kb_category.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+      - urn: "urn:knowledge:koda:cat:seven-sketches:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-05"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-05"
+    signature: null
+
+ID: CAT-KB-META-01
+Version: 1.0.0
+Status: Active
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-05
+Modification-Date: 2025-12-14
+Version-Notes: "Initial KODA/Spec for KB as Category."
+Ctx: "El Knowledge Base como categoría bien formada con invariantes globales."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: internal only. XRef: external URN only.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Formalizar el KB como categoría para auditoría global."
+Obj: "Permitir auditoría del grafo completo de conocimiento, no solo artefactos individuales."
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 1: LA CATEGORÍA KB
+# ═══════════════════════════════════════════════════════════════════════════
+
+KB_Category_Definition:
+  - ID: KB-CAT-DEF
+    Def: "KB es una categoría donde Ob(KB) = artefactos y Hom(KB) = relaciones entre ellos."
+    Components:
+      Objects: |
+        Cada artefacto registrado en el catálogo maestro:
+        - seven_sketches.koda.yml
+        - algebraic_databases.koda.yml
+        - categorical_systems_theory.koda.yml
+        - coalgebras.koda.yml
+        - unified_multimodel.koda.yml
+        - data_lakes_ct.koda.yml
+        - cql_data_integration.koda.yml
+        - mathematical_modelling.koda.yml
+        - mbse_consistency.koda.yml
+        - cognitive_toolkit.koda.yml
+        - audit_patterns.koda.yml
+        - kb_category.koda.yml (este mismo)
+        - constraint_logic.koda.yml
+        - schema_evolution.koda.yml
+      Morphisms: |
+        Relaciones explícitas entre artefactos:
+        - XRef: A cita/usa B
+        - requires: A depende de B para funcionar
+        - refines: A es versión más detallada de B
+        - generalizes: A abstrae B
+        - equivalent_to: A ≅ B (isomorfos semánticamente)
+      Identity: "Cada artefacto tiene morfismo identidad (self-reference trivial)."
+      Composition: "Si A XRef→ B y B XRef→ C, entonces existe path A → B → C."
+
+  - ID: KB-CAT-MORPHISM-TYPES
+    Def: "Clasificación de morfismos en KB."
+    Types:
+      - ID: MORPH-XREF
+        Def: "A cita a B. Morfismo débil (uso sin dependencia estricta)."
+        Direction: "A → B"
+        Semantics: "A menciona concepto de B pero puede funcionar sin B."
+      - ID: MORPH-REQUIRES
+        Def: "A depende de B. Morfismo fuerte (dependencia estricta)."
+        Direction: "A → B"
+        Semantics: "A no puede parsearse/ejecutarse sin B disponible."
+      - ID: MORPH-REFINES
+        Def: "A es refinamiento de B. Más específico."
+        Direction: "A → B"
+        Semantics: "Existe funtor faithful F: Cat(A) → Cat(B)."
+      - ID: MORPH-GENERALIZES
+        Def: "A generaliza B. Más abstracto."
+        Direction: "A → B"
+        Semantics: "A = colímite de familia que incluye B."
+      - ID: MORPH-EQUIVALENT
+        Def: "A y B son semánticamente isomorfos."
+        Direction: "A ↔ B"
+        Semantics: "Existen funtores F: A→B, G: B→A con GF ≅ id, FG ≅ id."
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 2: INVARIANTES GLOBALES DEL KB
+# ═══════════════════════════════════════════════════════════════════════════
+
+KB_Global_Invariants:
+  - ID: KB-INV-NO-DANGLING
+    Def: "No existen referencias colgantes en KB."
+    Formal: "∀ XRef en artefacto A: target(XRef) ∈ Ob(KB) ∨ target es URN externo resoluble."
+    Severity_if_Violated: HIGH
+    Proc: |
+      1. Extraer todos los XRef de todos los artefactos.
+      2. Para cada XRef, verificar que:
+         a) El URN base está en el catálogo maestro, O
+         b) Es un URN externo conocido (koda:core:*, etc.)
+      3. Si tiene fragmento #ID, verificar que ID existe en target.
+      4. Reportar cualquier XRef que no resuelva.
+
+  - ID: KB-INV-NO-BAD-CYCLES
+    Def: "No existen ciclos de refinamiento sin equivalencia declarada."
+    Formal: "Si A refines B y B refines A, entonces A equivalent_to B debe estar declarado."
+    Severity_if_Violated: MEDIUM
+    Proc: |
+      1. Construir grafo dirigido de morfismos REFINES.
+      2. Detectar ciclos.
+      3. Para cada ciclo, verificar que existe EQUIVALENT entre nodos.
+      4. Si hay ciclo sin equivalencia → MEDIUM: posible inconsistencia semántica.
+
+  - ID: KB-INV-REQUIRES-ACYCLIC
+    Def: "El grafo de dependencias requires es acíclico (DAG)."
+    Formal: "No existe cadena A requires B requires ... requires A."
+    Severity_if_Violated: CRITICAL
+    Proc: |
+      1. Construir grafo dirigido de morfismos REQUIRES.
+      2. Ejecutar detección de ciclos (DFS o Kahn).
+      3. Si hay ciclo → CRITICAL: dependencia circular imposible de resolver.
+
+  - ID: KB-INV-CATALOG-COMPLETE
+    Def: "Todo artefacto en /knowledge/cat/ está registrado en el catálogo."
+    Formal: "∀ archivo .koda.yml en knowledge/cat/**: ∃ entrada en catalog_master."
+    Severity_if_Violated: MEDIUM
+    Proc: |
+      1. Listar todos los .koda.yml en knowledge/cat/.
+      2. Extraer URN de cada uno.
+      3. Verificar que cada URN está en catalog_master_fxsl.yml.
+      4. Si falta → MEDIUM: artefacto huérfano.
+
+  - ID: KB-INV-URN-UNIQUE
+    Def: "Cada URN es único en el KB."
+    Formal: "∀ URN u: |{A ∈ KB : urn(A) = u}| = 1."
+    Severity_if_Violated: CRITICAL
+    Proc: |
+      1. Extraer todos los URNs del catálogo.
+      2. Verificar que no hay duplicados.
+      3. Si hay duplicado → CRITICAL: conflicto de identidad.
+
+  - ID: KB-INV-VERSION-CONSISTENT
+    Def: "La versión en metadata coincide con la versión en URN."
+    Formal: "∀ A ∈ KB: A.Version = extract_version(A.urn)."
+    Severity_if_Violated: HIGH
+    Proc: |
+      1. Para cada artefacto, extraer Version del metadata.
+      2. Extraer versión del URN (último segmento antes de extensión).
+      3. Comparar.
+      4. Si difieren → HIGH: inconsistencia de versión.
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 3: CONSTRUCCIONES UNIVERSALES EN KB
+# ═══════════════════════════════════════════════════════════════════════════
+
+KB_Universal_Constructions:
+  - ID: KB-PUSHOUT-MERGE
+    Def: "Merge de dos artefactos con base común = pushout en KB."
+    Structure: |
+      Si A y B ambos refinan C (base común):
+      
+           C
+          / \
+         A   B
+          \ /
+           D = A ⊔_C B (pushout)
+      
+      D es el merge que unifica A y B identificando lo que viene de C.
+    Use: "Merge de conocimientos parciales sobre un mismo dominio base."
+    Ex: |
+      C = seven_sketches (base)
+      A = algebraic_databases (refina seven_sketches)
+      B = cql_data_integration (refina seven_sketches)
+      D = unified_algebraic_integration (merge)
+
+  - ID: KB-PULLBACK-COMMONALITY
+    Def: "Encontrar conocimiento común entre dos artefactos = pullback."
+    Structure: |
+      Si A y B ambos generalizan hacia C:
+      
+           D = A ×_C B (pullback)
+          / \
+         A   B
+          \ /
+           C
+      
+      D captura lo que A y B tienen en común respecto a C.
+    Use: "Identificar overlap conceptual entre artefactos."
+
+  - ID: KB-COLIMIT-SYNTHESIS
+    Def: "Sintetizar un artefacto desde múltiples fuentes = colímite."
+    Structure: |
+      Dado diagrama D: J → KB de artefactos relacionados,
+      colim(D) es la síntesis que unifica todos respetando sus relaciones.
+    Use: "cognitive_toolkit es (conceptualmente) colímite de los artefactos que sintetiza."
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SECCIÓN 4: PROCEDIMIENTO DE AUDITORÍA GLOBAL DEL KB
+# ═══════════════════════════════════════════════════════════════════════════
+
+KB_Global_Audit:
+  - ID: KB-AUDIT-PROC
+    Def: "Procedimiento de auditoría global del Knowledge Base."
+    Proc: |
+      1. INVENTARIO
+         a) Listar todos los artefactos en knowledge/cat/**/*.koda.yml.
+         b) Listar todas las entradas en catalog_master_fxsl.yml.
+         c) Comparar: detectar huérfanos y fantasmas.
+      
+      2. VERIFICAR KB-INV-CATALOG-COMPLETE
+         a) Cada archivo debe tener entrada en catálogo.
+      
+      3. VERIFICAR KB-INV-URN-UNIQUE
+         a) No URNs duplicados.
+      
+      4. VERIFICAR KB-INV-VERSION-CONSISTENT
+         a) Version == URN version para cada artefacto.
+      
+      5. CONSTRUIR GRAFO KB
+         a) Nodos = artefactos.
+         b) Aristas = XRef, requires, refines, generalizes, equivalent_to.
+         c) Etiquetar cada arista con su tipo.
+      
+      6. VERIFICAR KB-INV-NO-DANGLING
+         a) Toda arista tiene target válido.
+      
+      7. VERIFICAR KB-INV-REQUIRES-ACYCLIC
+         a) Subgrafo de requires es DAG.
+      
+      8. VERIFICAR KB-INV-NO-BAD-CYCLES
+         a) Ciclos de refines tienen equivalent_to.
+      
+      9. AUDITORÍA INDIVIDUAL
+         a) Para cada artefacto, ejecutar AUDIT-PROC-FULL.
+         b) Agregar issues por artefacto.
+      
+      10. GENERAR INFORME GLOBAL
+          a) Resumen de invariantes globales.
+          b) Lista de issues por artefacto.
+          c) Métricas: total artefactos, total XRef, densidad del grafo.
+          d) Propuestas de mejora globales.
+    
+    Output_Format: |
+      ## Informe de Auditoría Global del KB
+      
+      ### 1. Inventario
+      - **Total artefactos**: N
+      - **En catálogo**: N
+      - **Huérfanos**: 0
+      
+      ### 2. Invariantes Globales
+      | Invariante | Estado | Detalles |
+      |------------|--------|----------|
+      | NO-DANGLING | ✓/✗ | ... |
+      | NO-BAD-CYCLES | ✓/✗ | ... |
+      | REQUIRES-ACYCLIC | ✓/✗ | ... |
+      | CATALOG-COMPLETE | ✓/✗ | ... |
+      | URN-UNIQUE | ✓/✗ | ... |
+      | VERSION-CONSISTENT | ✓/✗ | ... |
+      
+      ### 3. Grafo del KB
+      - **Nodos**: N artefactos
+      - **Aristas XRef**: M
+      - **Aristas requires**: K
+      - **Densidad**: X%
+      
+      ### 4. Issues por Artefacto
+      | Artefacto | CRITICAL | HIGH | MEDIUM | LOW |
+      |-----------|----------|------|--------|-----|
+      
+      ### 5. Propuestas Globales
+      [Lista de mejoras a nivel KB]
+
+

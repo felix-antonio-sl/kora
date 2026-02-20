@@ -1,0 +1,729 @@
+# KODA Artifact: Ley 15.076 - Estatuto de los Profesionales Funcionarios de la Salud
+# URN: urn:knowledge:koda:legal:ley_15076:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB detallada de la Ley 15.076 para profesionales funcionarios de la salud"
+    primary_use: "Mapear consultas al articulado específico de la Ley 15.076 (DFL 1/2001), explicando derechos, deberes, jornada, remuneraciones, previsión y beneficios especiales de médicos, dentistas, farmacéuticos/químico-farmacéuticos y bioquímicos que actúan como profesionales funcionarios"
+    cross_reference: "Usar kb_med_000_legislacion_index_koda.yml para definiciones globales de leyes y kb_med_001_intro_estatutos_koda.yml para jerarquía normativa (especialmente LEY_19664, EA_18834 y LOC_18575). Este módulo se focaliza en el articulado de Ref: LEY_15076."
+
+  urn: "urn:knowledge:koda:legal:ley_15076:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Ley 15.076 estructurada por Título y artículo (estatuto profesionales funcionarios)"
+    source_document: "DFL N°1/2001 Ministerio de Salud - Texto refundido, coordinado y sistematizado de la Ley 15.076 (DO 20-11-2001)"
+    model_collaborators: ["KODA-TRANSFORMER"]
+  dependencies:
+    - Ref: "urn:knowledge:koda:legal:index:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Resumen_Ejecutivo:
+  ID: L15076_RESUMEN
+  Ejes_Claves:
+    - "Define quiénes son 'profesionales funcionarios' de la salud y el ámbito de aplicación del estatuto (sector público y situaciones especiales)."
+    - "Regula ingreso, concursos, estabilidad relativa y reincorporación de los profesionales funcionarios."
+    - "Establece un sistema propio de remuneraciones, trienios y asignaciones especiales (profesional, estímulo, zona, responsabilidad, etc.)."
+    - "Fija la jornada máxima, compatibilidades e incompatibilidades entre cargos y con el ejercicio liberal."
+    - "Ordena el sistema de calificaciones, feriados, licencias, permisos, reemplazos, comisiones de servicio y traslados."
+    - "Determina el régimen previsional aplicable y beneficios especiales por trabajo en urgencias, maternidades y servicios de alto riesgo."
+    - "Contiene reglas específicas para farmacéuticos y disposiciones generales sobre irrenunciabilidad de derechos, reclamos de usuarios y sanciones."
+    - "Incluye artículos transitorios que regularon el paso desde regímenes anteriores y situaciones históricas específicas (horas profesionales, jubilaciones, etc.)."
+  Casos_Uso_Tipicos:
+    - "Responder qué estatuto aplica a un médico, dentista, químico-farmacéutico o bioquímico en un Servicio de Salud u otra institución pública y cómo se relaciona con Ref: LEY_19664 y Ref: EA_18834."
+    - "Determinar derechos de remuneración, trienios, asignaciones y beneficios específicos (por ejemplo, trabajo en urgencias, radiología, zonas extremas)."
+    - "Analizar compatibilidades de jornadas y cargos, así como las consecuencias de asumir cargos directivos, de confianza o sujetos a sistemas especiales (FF.AA., Carabineros, PDI)."
+    - "Explicar reglas sobre feriados, licencias, permisos, comisiones de estudio y traslados de profesionales funcionarios."
+    - "Revisar el régimen previsional aplicable y los beneficios por trabajo nocturno, en días festivos o en servicios de urgencia y maternidades."
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO PRELIMINAR / ARTÍCULOS INICIALES
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_Preliminar:
+  ID: L15076_TIT_PRELIM
+  Rango_Articulos: "1-2"
+  Descripcion_General: "Define la noción de 'profesionales funcionarios', el ámbito de aplicación material y subjetivo de la ley, y excluye ciertos cargos directivos de su ámbito."
+
+  Art_1_Definicion_Ambito:
+    ID: L15076_ART_01
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Definición de profesionales funcionarios y ámbito de aplicación"
+    Def: |
+      Define como "profesionales funcionarios" a los médicos-cirujanos, farmacéuticos o químico-farmacéuticos,
+      bioquímicos y cirujanos dentistas que desempeñan funciones profesionales en cargos o empleos remunerados
+      a base de sueldo. Establece que estos se rigen por esta ley y, supletoriamente, por el estatuto administrativo
+      aplicable al Servicio, Institución o Empresa en que trabajen, o por el Código del Trabajo, según corresponda.
+    Puntos_Clave:
+      - "La ley no se aplica al ejercicio liberal de la profesión; solo al ejercicio como profesional funcionario."
+      - "Se aplica a Servicios de Salud, Servicios de la Administración Pública, empresas fiscales e instituciones semifiscales o autónomas."
+      - "Para municipalidades, la aplicación se limita principalmente a remuneraciones, beneficios económicos, horario de trabajo e incompatibilidades, salvo que se use otro régimen (por ejemplo, Ref: LEY_19378)."
+      - "Las relaciones con empleadores del sector privado se rigen exclusivamente por el Código del Trabajo."
+      - "Para quienes prestan servicios en FF.AA., Carabineros, SII, Aduanas y ciertas universidades rigen sus estatutos especiales, con remisiones específicas."
+
+  Art_2_Cargos_Directivos_Excluidos:
+    ID: L15076_ART_02
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Cargos directivos fuera del estatuto, con cómputo de tiempo para trienios"
+    Def: |
+      Excluye de la aplicación de la Ley 15.076 a los cargos directivos señalados en el decreto ley N° 249 (Escala Única
+      de Sueldos). No obstante, el tiempo servido en dichos cargos se reconoce para efectos del cómputo de trienios
+      establecidos en este estatuto.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO I: DE LOS PROFESIONALES FUNCIONARIOS (ARTS. 3 A 6)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_I_Profesionales_Funcionarios:
+  ID: L15076_TIT_I
+  Rango_Articulos: "3-6"
+  Descripcion_General: "Regula el ingreso, concursos, requisitos especiales, contenido de los nombramientos y derechos de reincorporación de los profesionales funcionarios."
+
+  Art_3_Ingreso_y_Concursos:
+    ID: L15076_ART_03
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Ingreso a planta como titular y reglas de concurso"
+    Def: |
+      Establece que el ingreso de un profesional funcionario como titular a la planta de un Servicio Público debe
+      hacerse previo concurso, salvo tratándose de cargos de exclusiva confianza. Regula plazos para llamar a
+      concurso, tipos de concurso (amplio o interno), declaratoria de desierto, designaciones directas en ciertos
+      casos y concursos anticipados cuando el titular está en proceso de jubilación.
+    Puntos_Clave:
+      - "Todo ingreso a planta como titular es, por regla general, por concurso."
+      - "Se fijan plazos para convocar concursos tras producirse la vacante."
+      - "Se permite designación directa en caso de concursos desiertos, con condiciones mínimas de permanencia."
+      - "Se reconoce la posibilidad de concursos internos para completar jornadas en un mismo establecimiento."
+      - "Admite designación de profesionales extranjeros con título obtenido o revalidado en Chile."
+
+  Art_4_Medicos_Menos_3_Anios_y_Excepciones:
+    ID: L15076_ART_04
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Restricción de nombramiento en Región Metropolitana a médicos con menos de 3 años, con excepciones"
+    Def: |
+      Prohíbe en general designar en la Región Metropolitana a médicos con menos de tres años de profesión,
+      estableciendo excepciones fundadas en necesidades de servicio (determinadas por Servicios de Salud) y
+      excluyendo a ciertas instituciones (universidades del Estado o reconocidas por éste, Asistencias Públicas,
+      Hospital Psiquiátrico, hospitales de FF.AA., Maternidades, etc.). Regula también la situación de becarios
+      y especialidades determinadas por reglamento.
+
+  Art_5_Contenido_Nombramientos_y_Control_CGR:
+    ID: L15076_ART_05
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Contenido mínimo de decretos o resoluciones de nombramiento y control de incompatibilidades"
+    Def: |
+      Señala el contenido obligatorio de todo decreto o resolución de nombramiento o contrato de trabajo de
+      profesionales funcionarios: individualización del profesional, cargo, lugar y condiciones de trabajo, jornada
+      y remuneraciones. Obliga a los servicios a remitir copia de nombramientos y expiraciones de funciones a la
+      Contraloría General de la República, que lleva un registro para el control de incompatibilidades horarias.
+
+  Art_6_Reincorporacion_y_Derechos_Por_Supresion_o_Representacion:
+    ID: L15076_ART_06
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Derecho de reincorporación por supresión/fusión de cargos o por optar a representación popular"
+    Def: |
+      Establece que los profesionales funcionarios cuyos cargos se supriman, fusionen o cambien de denominación
+      tienen derecho a ser reincorporados de inmediato en otro cargo de la misma especialidad y con remuneración
+      no inferior. Regula la comunicación de vacantes a asociaciones gremiales y el derecho de reincorporación
+      de quienes cesan para asumir cargos de representación popular, reconociendo su antigüedad al momento de la opción.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO II: DE LAS REMUNERACIONES (ARTS. 7 A 11 Y 8 BIS/TER/QUATER)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_II_Remuneraciones:
+  ID: L15076_TIT_II
+  Rango_Articulos: "7-11, 8 bis, 8 ter, 8 quater"
+  Descripcion_General: "Regula el sueldo base, la asignación de antigüedad (trienios), asignaciones profesional y de estímulo, asignaciones especiales y remuneraciones en zonas y situaciones particulares."
+
+  Art_7_Sueldo_Base_y_Trienios:
+    ID: L15076_ART_07
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Sueldo base por jornada y aumentos por antigüedad (trienios)"
+    Def: |
+      Fija el sueldo base mensual asociado a diferentes jornadas (44, 33, 22 y 11 horas) a contar de una fecha
+      determinada y establece el sistema de incrementos porcentuales por antigüedad cada tres años (trienios),
+      hasta un máximo de años de servicio. Precisa que se consideran los años servidos como profesional funcionario
+      en diversos organismos públicos y que un reglamento define la acreditación de servicios ad honorem.
+
+  Art_8_Asignacion_Profesional:
+    ID: L15076_ART_08
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Asignación profesional en función de jornada y trienios"
+    Def: |
+      Regula una asignación profesional no imponible para el personal afecto a la ley que cumpla ciertas condiciones
+      de jornada (por regla general, 44 horas), calculada sobre grados de la Escala Única de Sueldos. El grado de
+      referencia aumenta a medida que el profesional acumula trienios.
+
+  Art_8_Bis_Asignacion_Especial_Estimulo:
+    ID: L15076_ART_08BIS
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Asignación especial de estímulo no imponible vinculada a trienios"
+    Def: |
+      Crea una asignación especial de estímulo no imponible, calculada como porcentaje del sueldo mensual de ciertos
+      grados de la Escala Única, cuyo porcentaje y grado de referencia varían en función del número de trienios
+      del profesional funcionario.
+
+  Art_8_Ter_Asignacion_Especial_44_Horas:
+    ID: L15076_ART_08TER
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Asignación especial para jornada completa, con montos diferenciados según trienios"
+    Def: |
+      Establece una asignación especial no imponible para profesionales con jornada de 44 horas, consistente en
+      montos fijos que aumentan según tramos de antigüedad (trienios), con proporcionalidad para jornadas menores
+      y reglas de reducción o eliminación vinculadas a otras asignaciones especiales previstas en decretos-leyes
+      complementarios.
+
+  Art_8_Quater_Asignacion_Mensual_Permanente:
+    ID: L15076_ART_08QUATER
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Asignación mensual permanente imponible para salud y pensiones"
+    Def: |
+      Introduce una asignación mensual de carácter permanente, imponible solo para efectos de salud y pensiones,
+      cuyo monto se calcula aplicando porcentajes sobre el sueldo base y sobre la suma del sueldo base más diversas
+      asignaciones (responsabilidad, estímulo, profesional, especiales, bonificaciones, etc.). Establece reglas
+      para su recálculo cada vez que cambian las remuneraciones base.
+
+  Art_9_Asignaciones_Responsabilidad_y_Estimulo:
+    ID: L15076_ART_09
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Asignaciones por responsabilidad y por actividades que es necesario estimular"
+    Def: |
+      Autoriza a los empleadores a establecer asignaciones calculadas sobre el sueldo base por horas contratadas:
+      una asignación de responsabilidad (para cargos que la justifican) y otra de estímulo para actividades, lugares
+      o condiciones que se desea incentivar (consultorios periféricos, zonas apartadas, especialidades en falencia,
+      etc.). Define rangos porcentuales, su carácter imponible y reglas de acumulación y límites máximos porcentuales.
+
+  Art_10_Trabajo_Nocturno_y_Horas_Extraordinarias:
+    ID: L15076_ART_10
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Recargos por trabajo nocturno, dominical o festivo y asignación de permanencia"
+    Def: |
+      Regula el recargo en la remuneración por horas trabajadas de noche, domingos o festivos, distinguiendo entre
+      atención exclusivamente a hospitalizados y atención que incluye pacientes externos. Establece una asignación
+      de permanencia para profesionales que, por razones de servicio, excedan su horario contratado, con tope porcentual
+      y reglas sobre su carácter no imponible y compatibilidad con otras asignaciones.
+
+  Art_11_Otras_Remuneraciones_y_Asignaciones:
+    ID: L15076_ART_11
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Asignación familiar, de zona y compatibilidad con otras remuneraciones del sector público"
+    Def: |
+      Dispone que los profesionales funcionarios perciben la asignación familiar conforme al régimen general de
+      prestaciones familiares y regula la asignación de zona para quienes deben residir en determinadas localidades.
+      Permite compatibilizar la remuneración establecida en la ley con otras remuneraciones, regalías, asignaciones
+      y gratificaciones que otorguen las instituciones, así como con bonificaciones generales del sector público,
+      en la medida en que no sean incompatibles con el régimen de remuneraciones de la ley.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO III: HORARIO DE TRABAJO E INCOMPATIBILIDADES (ARTS. 12 A 17)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_III_Horario_e_Incompatibilidades:
+  ID: L15076_TIT_III
+  Rango_Articulos: "12-17"
+  Descripcion_General: "Define la jornada máxima, la distribución de horas, las compatibilidades entre cargos y el tratamiento especial de horas en FF.AA., Carabineros y PDI."
+
+  Art_12_Jornada_Completa_y_Distribucion:
+    ID: L15076_ART_12
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Jornada completa de 44 horas y distribución semanal; excepciones en servicios de urgencia, maternidades y UCI"
+    Def: |
+      Fija la jornada completa de los profesionales funcionarios en 44 horas semanales y regula la forma usual de
+      distribución (lunes a sábado), estableciendo cómo se cumplen las jornadas de 33, 22 y 11 horas. Autoriza a los
+      Servicios de Salud y otras instituciones a redistribuir las jornadas sin ceñirse estrictamente a los seis días
+      de la semana y exceptúa de ciertas limitaciones máximas diarias a turnos de noche y servicios críticos.
+
+  Art_13_Compatibilidades_y_Ejercicio_Liberal:
+    ID: L15076_ART_13
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Compatibilidad de cargos y horas con docencia y con ejercicio libre de la profesión"
+    Def: |
+      Establece que los cargos y remuneraciones de los profesionales funcionarios son compatibles hasta los máximos
+      indicados en la jornada del artículo 12 y autoriza compatibilizarlos con cargos docentes hasta cierto límite
+      de horas semanales. Delimita que estas compatibilidades e incompatibilidades se refieren a instituciones
+      específicas del sector público y precisa que, cualquiera sea la jornada contratada, el profesional no queda
+      inhabilitado para el libre ejercicio de su profesión fuera de las horas contratadas.
+
+  Art_14_Vacancia_por_Cargo_Incompatible_y_Excepciones:
+    ID: L15076_ART_14
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Regla general de vacancia por designación en cargo incompatible y excepciones (altas autoridades, contrata, ADP)"
+    Def: |
+      Dispone que la designación de un profesional funcionario que desempeña un cargo en propiedad para ocupar otro
+      incompatible produce, por regla general, la vacancia del cargo anterior, salvo que el profesional rechace
+      expresamente el nuevo cargo. Establece excepciones para altas autoridades (Ministros, Rectores, Decanos y
+      otros cargos de confianza), cargos a contrata, suplencias, cargos sujetos a plazo y cargos provistos por el
+      Sistema de Alta Dirección Pública, permitiendo en ciertos casos conservar la propiedad del empleo anterior
+      sin derecho a remuneración y con límites temporales.
+
+  Art_15_Cargos_Que_No_Generan_Incompatibilidad:
+    ID: L15076_ART_15
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Cargos de consejero y participación en instituciones que no generan incompatibilidad"
+    Def: |
+      Señala que, para efectos de incompatibilidades, no se consideran ciertos cargos como consejeros de instituciones
+      fiscales, semifiscales, de administración autónoma, de beneficencia pública o particulares, siempre que no
+      se afecte el horario contratado.
+
+  Art_16_Equivalencia_Horas_FFAA_y_Carabineros:
+    ID: L15076_ART_16
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Equivalencia de horas para profesionales que prestan servicios en FF.AA. y Carabineros"
+    Def: |
+      Establece que, para efectos de incompatibilidades, el desempeño de un cargo profesional en las Fuerzas Armadas
+      o en Carabineros de Chile se considera equivalente a once horas semanales de trabajo profesional. Autoriza a
+      oficiales de armas que posean título profesional de la salud a contratar hasta 24 horas semanales adicionales
+      como profesionales funcionarios.
+
+  Art_17_PDI_y_Aplicacion_de_Reglas_Anteriores:
+    ID: L15076_ART_17
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Aplicación de las reglas de incompatibilidad a la Policía de Investigaciones de Chile"
+    Def: |
+      Extiende la regla del artículo anterior a los funcionarios de la Policía de Investigaciones de Chile que posean
+      los títulos profesionales de la ley, asimilando su situación a efectos de incompatibilidades.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO IV: DE LAS CALIFICACIONES (ARTS. 18 A 21)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_IV_Calificaciones:
+  ID: L15076_TIT_IV
+  Rango_Articulos: "18-21"
+  Descripcion_General: "Regula el sistema de calificaciones anuales de los profesionales funcionarios y los efectos de quedar en listas de rendimiento."
+
+  Art_18_Sistema_Listas_Calificacion:
+    ID: L15076_ART_18
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Calificación anual y listas de rendimiento (1 a 4)"
+    Def: |
+      Obliga a los Servicios Públicos a calificar anualmente a sus profesionales funcionarios conforme a un reglamento,
+      estableciendo cuatro listas de calificación: Lista 1 (distinción), Lista 2 (buena), Lista 3 (condicional) y
+      Lista 4 (eliminación).
+
+  Art_19_Efectos_Listas_3_y_4:
+    ID: L15076_ART_19
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Obligación de retiro por lista 4 o por dos listas 3 consecutivas"
+    Def: |
+      Dispone que el profesional funcionario calificado en Lista 4 por resolución ejecutoriada, o por dos años
+      consecutivos en Lista 3, debe retirarse del Servicio dentro de un plazo breve; si no lo hace, se declara la
+      vacancia del empleo a contar de una fecha determinada.
+
+  Art_20_Reglamento_de_Calificaciones:
+    ID: L15076_ART_20
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Remisión al reglamento para detalles de calificación"
+    Def: "Establece que los profesionales funcionarios serán calificados conforme a las normas que determine el reglamento específico, remitiendo a dicho cuerpo normativo los detalles del sistema de evaluación."
+
+  Art_21_Junta_Calificadora_y_Recursos:
+    ID: L15076_ART_21
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Composición de Junta Calificadora y vías de apelación (Jefe Superior y Contraloría)"
+    Def: |
+      Indica que la composición de la Junta Calificadora se fijará en el reglamento y reconoce el derecho del
+      profesional funcionario a apelar sus calificaciones ante el Jefe Superior del Servicio dentro de un plazo
+      determinado, pudiendo posteriormente reclamar ante la Contraloría General de la República conforme al
+      estatuto administrativo general.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO V: FERIADOS, LICENCIAS Y PERMISOS (ARTS. 22 A 27)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_V_Feriados_Licencias_Permisos:
+  ID: L15076_TIT_V
+  Rango_Articulos: "22-27"
+  Descripcion_General: "Establece reglas especiales de feriados, feriados adicionales en servicios de riesgo, permisos con y sin goce de remuneraciones y licencias en sistemas de turno."
+
+  Art_22_Feriado_Legal_y_Remision_EA:
+    ID: L15076_ART_22
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Remisión al Estatuto Administrativo para feriado legal en ciertos casos"
+    Def: |
+      Señala que el feriado legal de los profesionales funcionarios que prestan servicios en entidades afectas
+      al decreto ley N° 249 se rige por el Estatuto Administrativo general, considerando el día sábado como no hábil
+      para su cómputo. Para el resto de los profesionales funcionarios, remite a los artículos siguientes.
+
+  Art_23_Duracion_Feriado_y_Feriados_Especiales:
+    ID: L15076_ART_23
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Duración del feriado anual según años de servicio, zonas extremas y especialidades de riesgo"
+    Def: |
+      Reconoce el derecho a un feriado anual con goce completo de remuneraciones, fijando su duración según los años
+      de servicios y otorgando días adicionales en determinadas regiones y provincias. Establece, además, un feriado
+      especial adicional para ciertas especialidades y servicios de alto riesgo (urgencias, maternidades, tuberculosis,
+      radiología, psiquiatría, etc.), con requisitos específicos.
+
+  Art_24_Acumulacion_y_Uso_Obligatorio:
+    ID: L15076_ART_24
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Uso obligatorio del feriado y reglas de acumulación para perfeccionamiento"
+    Def: |
+      Indica que los feriados son de uso obligatorio y solo pueden acumularse en casos limitados (cursos o estudios
+      de perfeccionamiento en Chile o en el extranjero). Si por necesidades del servicio no es posible usar el feriado
+      en el año correspondiente, el profesional tiene derecho a gozarlo o completarlo el año siguiente.
+
+  Art_25_Permisos_con_Goce:
+    ID: L15076_ART_25
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Permisos con goce de remuneraciones hasta un máximo anual"
+    Def: |
+      Autoriza a los jefes de servicio a otorgar, mediante resolución fundada, permisos fraccionados o continuos
+      con goce de sueldo y demás remuneraciones hasta cierto número de días hábiles por semestre o año calendario,
+      en razón de circunstancias especiales. Define cómo se calcula un "día" de permiso en jornadas distribuidas
+      de manera no uniforme.
+
+  Art_26_Licencias_y_Permisos_en_Turnos_Continuos:
+    ID: L15076_ART_26
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Permisos y licencias en servicios con turnos continuados (urgencias, maternidades)"
+    Def: |
+      Regula que, en servicios donde se trabaja en turnos continuos (urgencias, maternidades), los permisos y licencias
+      inferiores a cierto número de días pueden concederse por horas de trabajo según turno, y establece reglas para
+      la designación de reemplazantes y el cómputo de horas para efectos de derechos estableciendo un vínculo con los
+      recargos del artículo 10.
+
+  Art_27_Permisos_sin_Goce_y_Situaciones_Especiales:
+    ID: L15076_ART_27
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Permisos sin goce de sueldo por motivos particulares, estudios en el extranjero y otras causales"
+    Def: |
+      Autoriza permisos sin goce de remuneraciones por motivos particulares o para trasladarse al extranjero, con
+      límites temporales y condiciones de mantención de remuneraciones en caso de becas de perfeccionamiento.
+      Regula la compatibilidad con ciertos beneficios previsionales y la posibilidad de que el profesional continúe
+      enterando sus imposiciones a su costa.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO VI: REEMPLAZOS, COMISIONES Y TRASLADOS (ARTS. 28 A 31)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_VI_Reemplazos_Comisiones_Traslados:
+  ID: L15076_TIT_VI
+  Rango_Articulos: "28-31"
+  Descripcion_General: "Regula cómo se realizan los reemplazos, las comisiones de estudio y los traslados de profesionales funcionarios, y prohíbe comisiones para funciones inferiores o ajenas a la especialidad salvo emergencia."
+
+  Art_28_Reemplazos_y_Remuneracion_Suplentes:
+    ID: L15076_ART_28
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Reemplazo de profesionales funcionarios y remuneración de suplentes"
+    Def: |
+      Establece que los reemplazos se harán conforme a las normas reglamentarias de cada institución y que el
+      profesional funcionario suplente recibirá, además de su sueldo, la diferencia entre su remuneración y la del
+      funcionario reemplazado. Si el suplente es ajeno a la institución, percibe la renta correspondiente al cargo
+      del reemplazado.
+
+  Art_29_Destinos_y_Gastos_Traslado:
+    ID: L15076_ART_29
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Beneficios por destinación y traslado a lugares distintos de la residencia habitual"
+    Def: |
+      Reconoce beneficios de pasajes y fletes para profesionales funcionarios de planta y a contrata que son
+      destinados a un lugar distinto de su residencia habitual, con remisión a normas del Estatuto Administrativo
+      general. Extiende estos beneficios a ciertos supuestos de ingreso a la Etapa de Destinación y Formación y a
+      casos en que el profesional debe cambiar de residencia para asumir funciones.
+
+  Art_30_Comisiones_de_Estudio_Interior_y_Exterior:
+    ID: L15076_ART_30
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Comisiones con goce de remuneraciones para cursos de perfeccionamiento"
+    Def: |
+      Autoriza a los servicios públicos a conceder comisiones de servicio a profesionales funcionarios para seguir
+      cursos de perfeccionamiento dentro del país por períodos acotados y, cada cierto número de años, comisiones
+      más largas para perfeccionamiento en universidades nacionales o extranjeras, manteniendo el goce de sueldo y
+      demás remuneraciones.
+
+  Art_31_Prohibicion_Comisiones_Inferiores_o_Ajenas:
+    ID: L15076_ART_31
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Prohibición de comisiones para tareas inferiores o ajenas a la especialidad, salvo emergencia"
+    Def: |
+      Prohíbe imponer a los profesionales funcionarios comisiones para desempeñar funciones inferiores a las de su
+      cargo o distintas de su profesión o especialidad, salvo en épocas de emergencia, especialmente en caso de
+      amenaza de epidemias o peligro grave para la salud pública.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO VII: DE LA PREVISIÓN (ARTS. 32 A 37)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_VII_Prevision:
+  ID: L15076_TIT_VII
+  Rango_Articulos: "32-37"
+  Descripcion_General: "Determina el régimen previsional aplicable a los profesionales funcionarios, el reconocimiento de servicios anteriores y beneficios especiales vinculados a trabajo en urgencias y otros servicios críticos."
+
+  Art_32_Regimen_Prevision_CNEMP:
+    ID: L15076_ART_32
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Régimen de previsión en la Caja Nacional de Empleados Públicos y Periodistas y reconocimiento de servicios anteriores"
+    Def: |
+      Señala que los profesionales que prestan servicios en la Administración Civil del Estado se acogen al régimen
+      de la Caja Nacional de Empleados Públicos y Periodistas, con derecho a todos los beneficios de los empleados
+      públicos imponentes de dicha institución. Regula el reconocimiento de servicios anteriores prestados en cargos
+      fiscales, semifiscales, de administración autónoma, beneficencia pública o particulares, y las condiciones
+      para el entero de las cotizaciones y la obtención de jubilación.
+
+  Art_33_Servicios_ad_Honorem:
+    ID: L15076_ART_33
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Cómputo de servicios ad honorem para reconocimiento previsional"
+    Def: |
+      Dispone que, para efectos del reconocimiento de tiempo anterior del artículo precedente, también se computan
+      los servicios prestados ad honorem en ciertas reparticiones públicas, fijando la forma de determinar la renta
+      imponible de referencia para esos períodos.
+
+  Art_34_Bonificacion_Por_Urgencias_y_Maternidades:
+    ID: L15076_ART_34
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Bonificación de un año por cada cinco de servicios en urgencias, maternidades y otros servicios críticos"
+    Def: |
+      Reconoce, para efectos previsionales, una bonificación especial de tiempo (un año por cada cinco de servicios)
+      para profesionales que trabajan o han trabajado en Servicios de Urgencia, Maternidades y otras unidades
+      de alto riesgo, detallando condiciones y excluyendo la posibilidad de reliquidar pensiones ya concedidas.
+
+  Art_35_Prevision_Ferrocarriles_del_Estado:
+    ID: L15076_ART_35
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Régimen previsional especial para profesionales funcionarios de la Empresa de los Ferrocarriles del Estado"
+    Def: |
+      Regula el régimen previsional de los profesionales funcionarios de la Empresa de los Ferrocarriles del Estado,
+      su afiliación a la Caja Nacional de Empleados Públicos y Periodistas, el reconocimiento de tiempo servido en
+      la empresa y la forma de financiar el desahucio.
+
+  Art_36_Aplicacion_de_Otras_Disposiciones_Prevision:
+    ID: L15076_ART_36
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Aplicación de artículos de otros cuerpos legales a profesionales funcionarios con empleos compatibles"
+    Def: |
+      Extiende a los profesionales funcionarios ciertas disposiciones de otros cuerpos legales sobre previsión,
+      cuando desempeñan empleos compatibles en servicios fiscales, semifiscales, de administración autónoma o en
+      el Servicio Nacional de Salud.
+
+  Art_37_Base_Calculo_Pensiones:
+    ID: L15076_ART_37
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Remuneraciones consideradas para liquidar pensiones de jubilación y reajuste por 30 años de servicios"
+    Def: |
+      Determina qué remuneraciones se consideran para liquidar las pensiones de jubilación de los profesionales
+      funcionarios (sueldo base, trienios, ciertas asignaciones y remuneraciones adicionales imponibles),
+      reconociendo el derecho a reajuste de la pensión conforme a la renta de actividad para quienes jubilan con
+      30 o más años de servicios, sujeto a límites generales de rentas imponibles.
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO VIII: DE LOS FARMACÉUTICOS (ART. 38)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_VIII_Farmaceuticos:
+  ID: L15076_TIT_VIII
+  Rango_Articulos: "38"
+  Descripcion_General: "Contiene una disposición específica relativa a cargos farmacéuticos inspectivos."
+
+  Art_38_Cargos_Inspectivos_Jornada_Completa:
+    ID: L15076_ART_38
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Cargos inspectivos farmacéuticos con jornada completa e incompatibilidad con ejercicio liberal"
+    Def: "Establece que los cargos inspectivos farmacéuticos que inhabilitan para el ejercicio libre de la profesión deben desempeñarse a jornada completa."
+
+# ═══════════════════════════════════════════════════════════════════
+# TÍTULO IX: DISPOSICIONES GENERALES (ARTS. 39 A 44)
+# ═══════════════════════════════════════════════════════════════════
+
+Titulo_IX_Disposiciones_Generales:
+  ID: L15076_TIT_IX
+  Rango_Articulos: "39-44"
+  Descripcion_General: "Incluye reglas sobre atención a indigentes, irrenunciabilidad de derechos, reclamos de usuarios, sanciones, becas y liberación de guardias nocturnas."
+
+  Art_39_Atencion_Indigentes:
+    ID: L15076_ART_39
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Obligación tradicional de atención gratuita a indigentes en ausencia de otros servicios"
+    Def: |
+      Reconoce y regula la práctica tradicional según la cual el profesional está obligado a atender gratuitamente
+      a indigentes que no estén incorporados al servicio en que se desempeña, cuando en la respectiva localidad no
+      exista otro profesional o establecimiento obligado a prestar dicho servicio.
+
+  Art_40_Irrenunciabilidad_Derechos:
+    ID: L15076_ART_40
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Irrenunciabilidad de los derechos otorgados por la ley"
+    Def: "Declara que los derechos que se otorgan en la ley son irrenunciables."
+
+  Art_41_Reclamos_Usuarios:
+    ID: L15076_ART_41
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Derecho de usuarios a reclamar atención y obligación de las instituciones de considerar reclamos"
+    Def: |
+      Reconoce que las personas con derecho a atención médica, farmacéutica y dental pueden interponer reclamos
+      ante las instituciones empleadoras de los profesionales funcionarios y obliga a estas instituciones a
+      considerar tales reclamos.
+
+  Art_42_Sanciones_y_Multas:
+    ID: L15076_ART_42
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Multas por infracción a la ley y sanción a profesionales que aceptan condiciones inferiores"
+    Def: |
+      Establece multas para quienes infrinjan las disposiciones de la ley, incluyendo tanto a empleadores que no
+      remuneran conforme al estatuto como a profesionales que aceptan ser remunerados en condiciones inferiores
+      o servir cargos con jornadas que exceden los máximos legales, sin perjuicio de la devolución de diferencias
+      y del entero de imposiciones adeudadas. Determina el destino de las multas y la competencia del juez del Trabajo.
+
+  Art_43_Becas_Perfeccionamiento:
+    ID: L15076_ART_43
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Becas para perfeccionamiento de especialidades y condiciones de financiamiento"
+    Def: |
+      Autoriza a los Servicios de Salud, universidades del Estado y otros empleadores públicos a otorgar becas para
+      perfeccionamiento en especialidades médicas, dentales, químico-farmacéuticas o bioquímicas, fijando requisitos,
+      duración, incompatibilidades durante la beca, montos de la asignación y su financiamiento, así como beneficios
+      adicionales para becarios financiados por el Ministerio de Salud o servicios de salud.
+
+  Art_44_Liberacion_Guardias:
+    ID: L15076_ART_44
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Exención de servicios de guardia nocturna y en días festivos tras largo período de desempeño"
+    Def: |
+      Establece que los profesionales funcionarios que hayan prestado por más de veinte años servicios de guardia
+      nocturna y en días festivos, conforme a las obligaciones de sus cargos, quedan exentos de seguir prestando
+      dichos servicios, conservando los derechos que esas funciones les conferían. Detalla el cómputo del tiempo
+      y la inclusión de períodos sirviendo como suplentes, a contrata o becarios cuando las guardias son parte del
+      programa de formación.
+
+# ═══════════════════════════════════════════════════════════════════
+# ARTÍCULOS TRANSITORIOS
+# ═══════════════════════════════════════════════════════════════════
+
+Articulos_Transitorios:
+  ID: L15076_TRANSITORIOS
+  Rango_Articulos: "1-9 (transitorios)"
+  Descripcion_General: "Normas de transición entre regímenes anteriores y el nuevo estatuto refundido para profesionales funcionarios de la salud. Muchos de estos preceptos tuvieron efectos agotados pero se mantienen como referencia histórica."
+
+  Art_Trans_1_Conservacion_Cargos_y_Propiedad:
+    ID: L15076_ART_TRANS_01
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Conservación de la propiedad de cargos en que se modifican jornadas o asignaciones"
+    Def: "Regula la situación de los titulares de cargos cuyas jornadas o asignaciones se modifican por la aplicación de normas de otra ley, asegurando la conservación de la propiedad de los cargos sin necesidad de nuevo concurso."
+
+  Art_Trans_2_Reconocimiento_Becarios_Antiguos:
+    ID: L15076_ART_TRANS_02
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Reconocimiento de períodos servidos como médicos becados para efectos legales y previsionales"
+    Def: "Permite que médicos becados que se hubieren desempeñado como tales desde la vigencia de ciertos reglamentos puedan obtener el reconocimiento de esos períodos para efectos legales y previsionales."
+
+  Art_Trans_3_Reajuste_Jubilaciones_Directores_Ad_Honorem:
+    ID: L15076_ART_TRANS_03
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Reajuste de jubilaciones de médicos que ejercieron cargos de Director de Hospital ad honorem"
+    Def: "Establece un régimen de reajuste especial para jubilaciones o pensiones de gracia de médicos que ejercieron cargos de Director de Hospital ad honorem en determinados servicios, elevando sus pensiones a un porcentaje de las remuneraciones de los directores en ejercicio."
+
+  Art_Trans_4_Transformacion_Cargos_Horas_Parciales:
+    ID: L15076_ART_TRANS_04
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Transformación de cargos con 3 y 5 horas diarias en cargos de 4 y 6 horas"
+    Def: "Faculta al Servicio Nacional de Salud para transformar, cuando sus disponibilidades lo permitan, cargos con jornadas muy parciales en cargos con más horas, conservando sus titulares la propiedad del cargo."
+
+  Art_Trans_5_Rejubilar_Horas_No_Consideradas:
+    ID: L15076_ART_TRANS_05
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Rejubilar incorporando horas profesionales no consideradas en jubilaciones anteriores"
+    Def: "Autoriza a ciertos funcionarios profesionales que mantuvieron horas profesionales no consideradas en su jubilación original a rejubilar incorporando dichas horas a la nueva jubilación, bajo condiciones específicas."
+
+  Art_Trans_6_Opcion_Regimen_Prevision_Anterior:
+    ID: L15076_ART_TRANS_06
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Clarificación sobre préstamos de auxilio y opción de régimen previsional"
+    Def: "Aclara que el hecho de haber obtenido préstamos de auxilio o emergencia en un instituto previsional no implica una declaración irrevocable de permanencia en ese régimen, permitiendo optar al régimen establecido por la ley."
+
+  Art_Trans_7_Desempeno_en_Hospital_Sala_Cuna_Vina:
+    ID: L15076_ART_TRANS_07
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Consideración del desempeño en el Hospital Sala Cuna de Viña del Mar para ciertos efectos"
+    Def: "Determina cómo debe entenderse, para efectos laborales y previsionales, el desempeño de profesionales funcionarios en el Hospital Sala Cuna de Viña del Mar en relación con el establecimiento para el cual fueron designados."
+
+  Art_Trans_8_Servicios_en_Organismos_Internacionales:
+    ID: L15076_ART_TRANS_08
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Cómputo de tiempo servido en organismos internacionales de salud y otros para ciertos beneficios"
+    Def: "Permite que determinados períodos servidos por profesionales funcionarios en organismos internacionales (OMS, OPS, OEA u otras agencias) se consideren para el cómputo de beneficios establecidos en la ley."
+
+  Art_Trans_9_Limitaciones_Rentas_Imponibles:
+    ID: L15076_ART_TRANS_09
+    Fuente:
+      - Ref: LEY_15076
+    Margen: "Excepción a limitaciones de rentas imponibles para ciertos jubilados y profesionales con alta base imponible"
+    Def: "Establece una excepción a ciertas limitaciones de rentas imponibles previstas en el artículo 37 para jubilados y profesionales que, a una fecha de corte, ya tenían un elevado porcentaje de asignaciones imponibles, permitiéndoles mantener ese mayor porcentaje."

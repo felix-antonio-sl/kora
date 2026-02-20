@@ -1,0 +1,286 @@
+# KODA TDE Estrategia de Gobierno Digital 2030
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_estrategias"
+  type: "Estrategia_Gobierno_Digital_2030"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "EstrategiasEstrategias/Estrategia_de_Gobierno_Digital_2030.md"
+    source_url: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia-2030"
+    source_updated_at: "2025-10-07T23:15:12.481Z"
+  status: draft
+
+ID: "TDE-ESTRATEGIA-GOBIERNO-DIGITAL-2030-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-11
+Ctx: "Estrategia de Gobierno Digital 2030 (WikiGuías SGD) transformada a KODA para namespace tde"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía estratégica oficial sobre Gobierno Digital 2030"
+  objective: >-
+    Proveer respuestas densas y alineadas con la Estrategia de Gobierno Digital 2030,
+    organizando el contenido en bloques consultables: contexto, visión, objetivos,
+    principios, ejes, iniciativas clave, identidad e infraestructura pública digital,
+    y gobernanza y seguimiento.
+  usage_guidance:
+    - "Usar este artefacto como fuente principal para consultas sobre la Estrategia de Gobierno Digital 2030."
+    - "Cuando se requieran definiciones técnicas (por ejemplo API, datos maestros),
+       preferir Ref a IDs del Lexicon TDE cuando existan."
+    - "Para detalles de iniciativas específicas, navegar a la sección Ejes_Estrategicos
+       y sus sub-bloques de iniciativas."
+  style:
+    - "Responder en es-CL, en tono técnico claro y orientado a políticas públicas."
+
+Metadata_Original:
+  category: "Estrategias/Estrategias"
+  tags:
+    - "estrategias"
+    - "gobierno digital 2030"
+  description: >-
+    Estrategia que define visión, objetivos, principios y ejes de acción para que el
+    Estado chileno avance en transformación digital hasta 2030, con foco en servicios
+    centrados en las personas, sector público eficiente, gestión basada en datos,
+    gobernanza y rectoría, talento digital e identidad e infraestructura pública digital.
+
+Contexto_y_Justificacion:
+  - ID: "TDE_EST_GD2030_CTX_001"
+    Type: "Transformacion_digital_y_confianza"
+    Ctx: >-
+      La transformación digital es pilar para el desarrollo de Chile y puede mejorar
+      calidad de vida y oportunidades para personas y empresas. Sin embargo, la baja
+      confianza en la Administración Pública y en la capacidad de respuesta del Estado
+      limita el potencial de la digitalización.
+
+  - ID: "TDE_EST_GD2030_CTX_002"
+    Type: "Evidencia_internacional"
+    Ctx: >-
+      Informes de la OCDE, Banco Mundial, BID y Foro Económico Mundial destacan tanto
+      el valor de GovTech y del gobierno digital, como la necesidad de marcos
+      habilitantes sólidos para gobernanza, normativa, capacidades y plataformas.
+
+  - ID: "TDE_EST_GD2030_CTX_003"
+    Type: "Necesidad_de_estrategia_mediano_plazo"
+    Ctx: >-
+      Chile requiere una estrategia de gobierno digital de mediano plazo que responda a
+      recomendaciones internacionales, articule el uso de datos, plataformas compartidas
+      y talento digital, y se complemente con otras estrategias nacionales como la
+      Estrategia de Transformación Digital 2035 y el Plan Brecha Digital Cero.
+
+Vision_y_Objetivos:
+  Vision:
+    ID: "TDE_EST_GD2030_VIS_001"
+    Def: >-
+      El Estado chileno se compromete a mejorar la calidad de sus servicios y políticas
+      públicas para aumentar la satisfacción y confianza de personas y empresas, mediante
+      una gestión sustentada en sistemas digitales integrados, eficientes y centrados en
+      el usuario, de modo que para 2030 el sector público supere el promedio OCDE en
+      transformación digital.
+  Objetivos:
+    - ID: "TDE_EST_GD2030_OBJ_001"
+      Obj: "Mejorar la experiencia digital de personas y empresas, haciéndola más simple, eficiente e inclusiva."
+    - ID: "TDE_EST_GD2030_OBJ_002"
+      Obj: "Poner en marcha la Estrategia de Datos del Estado para fortalecer servicios y políticas basadas en evidencia."
+    - ID: "TDE_EST_GD2030_OBJ_003"
+      Obj: "Desarrollar un sistema integrado de servicios y procesos digitales que articule al Estado como unidad coherente."
+    - ID: "TDE_EST_GD2030_OBJ_004"
+      Obj: "Consolidar y fortalecer la rectoría y gobernanza digital en la administración pública."
+    - ID: "TDE_EST_GD2030_OBJ_005"
+      Obj: "Impulsar el desarrollo de competencias digitales y atracción/retención de talento especializado en el sector público."
+    - ID: "TDE_EST_GD2030_OBJ_006"
+      Obj: "Desarrollar un modelo escalable y sostenible de servicios digitales compartidos."
+    - ID: "TDE_EST_GD2030_OBJ_007"
+      Obj: "Establecer un sistema nacional de identidad digital seguro y confiable."
+
+Principios:
+  Ctx: >-
+    La Estrategia define principios que deben inspirar decisiones y acciones de
+    transformación digital en el Estado.
+  Items:
+    - ID: "TDE_EST_GD2030_PRI_001"
+      Name: "Digital_por_diseno"
+      Def: >-
+        Integrar tecnologías digitales desde el diseño de políticas y servicios,
+        incorporándolas transversalmente en todo el ciclo de vida.
+    - ID: "TDE_EST_GD2030_PRI_002"
+      Name: "Centrado_en_las_personas"
+      Def: >-
+        Diseñar servicios digitales priorizando experiencia amable, accesible e
+        inclusiva para las personas.
+    - ID: "TDE_EST_GD2030_PRI_003"
+      Name: "Gobierno_integrado"
+      Def: >-
+        Actuar como un solo Estado frente a personas y empresas, mediante
+        colaboración, interoperabilidad e intercambio de información bajo el
+        principio de "una sola vez".
+    - ID: "TDE_EST_GD2030_PRI_004"
+      Name: "Procesos_eficientes"
+      Def: >-
+        Utilizar recursos públicos de forma óptima, maximizando impacto en calidad,
+        seguridad y sostenibilidad.
+    - ID: "TDE_EST_GD2030_PRI_005"
+      Name: "Gobierno_abierto_y_participativo"
+      Def: >-
+        Garantizar acceso a la información y participación digital en formulación,
+        monitoreo y evaluación de políticas y servicios.
+    - ID: "TDE_EST_GD2030_PRI_006"
+      Name: "Innovacion_publica_abierta"
+      Def: >-
+        Habilitar espacios y mecanismos para que terceros aporten soluciones digitales
+        innovadoras a desafíos públicos.
+    - ID: "TDE_EST_GD2030_PRI_007"
+      Name: "Entornos_digitales_seguros_y_confiables"
+      Def: >-
+        Priorizar protección de datos personales y corporativos y la ciberseguridad
+        como base de confianza digital.
+    - ID: "TDE_EST_GD2030_PRI_008"
+      Name: "Sistemas_resilientes_y_sostenibles"
+      Def: >-
+        Minimizar riesgos operacionales y fortalecer resiliencia y continuidad de
+        sistemas, especialmente en servicios críticos.
+
+Ejes_Estrategicos:
+  Overview:
+    ID: "TDE_EST_GD2030_EJE_OVERVIEW"
+    Ctx: >-
+      La Estrategia se organiza en seis ejes: tres transformadores
+      (Servicios digitales centrados en las personas, Sector público eficiente,
+      Gestión inteligente basada en datos) y tres habilitadores
+      (Gobernanza y rectoría para la Transformación Digital, Competencias y talento
+      digital, Identidad e infraestructura pública digital).
+
+  Ejes:
+    - ID: "TDE_EST_GD2030_EJE_1"
+      Name: "Servicios_digitales_centrados_en_las_personas"
+      Category: "Transformador"
+      Purp: >-
+        Diseñar y operar servicios digitales que simplifiquen la interacción con el
+        Estado, integrando canales y mejorando experiencia de uso.
+      Lineamientos_Resumen:
+        - "Simplificar, digitalizar e integrar servicios, consolidando Gob.cl como puerta de entrada única."
+        - "Fortalecer canales de atención multicanal como ChileAtiende, apoyados en IA."
+        - "Evaluar calidad y mejora continua de servicios digitales mediante estándares y medición de satisfacción."
+
+    - ID: "TDE_EST_GD2030_EJE_2"
+      Name: "Sector_publico_eficiente"
+      Category: "Transformador"
+      Purpose: >-
+        Digitalizar y automatizar procesos de gestión pública para lograr un Estado
+        más eficaz, eficiente y transparente, usando servicios compartidos y modelos
+        tecnológicos reutilizables.
+      Lineamientos_Resumen:
+        - "Digitalizar procesos de gestión pública en el marco de la Ley N° 21.180, apoyados por servicios compartidos."
+        - "a. La Secretaría de Gobierno Digital proporcionará servicios compartidos y/o estándares para que, en 2028, todos los órganos de la administración pública hayan implementado los requisitos de la Ley de Transformación Digital en materia de gestión de expedientes, notificaciones electrónicas, interoperabilidad, autenticación digital, entre otras. Esto se llevará a cabo de acuerdo con las fases legales de gradualidad establecidas en la Ley N° 21.180 de Transformación Digital."
+        - "Impulsar la transformación digital con equidad territorial, apoyando gobiernos regionales y municipios."
+        - "Mejorar planificación, implementación y monitoreo de inversiones TIC, fortaleciendo EvalTIC y plataformas asociadas."
+
+    - ID: "TDE_EST_GD2030_EJE_3"
+      Name: "Gestion_inteligente_basada_en_datos"
+      Category: "Transformador"
+      Purpose: >-
+        Transformar la Administración del Estado mediante el uso estratégico de datos,
+        fortaleciendo gobernanza, ecosistemas de datos y capacidades analíticas.
+      Lineamientos_Resumen:
+        - "Consolidar gobernanza y ecosistema de datos con marcos legales y estrategias de datos."
+        - "Promover intercambio e integración de datos, incluyendo lagos de datos y estándares en la red de interoperabilidad."
+        - "Posicionar a Chile como líder en uso productivo de IA en el sector público."
+
+    - ID: "TDE_EST_GD2030_EJE_4"
+      Name: "Gobernanza_y_rectoria_para_la_Transformacion_Digital"
+      Category: "Habilitador"
+      Purpose: >-
+        Instaurar un marco institucional sólido que garantice coordinación, regulación
+        y dirección estratégica del uso de tecnologías en el Estado.
+      Lineamientos_Resumen:
+        - "Fortalecer rol de la SGD como ente rector estratégico y técnico."
+        - "Modernizar marco normativo y regulatorio en transformación digital, ciberseguridad y protección de datos."
+        - "Crear redes y comunidades de práctica para colaboración entre organismos."
+
+    - ID: "TDE_EST_GD2030_EJE_5"
+      Name: "Competencias_y_talento_digital"
+      Category: "Habilitador"
+      Purpose: >-
+        Desarrollar habilidades y competencias digitales en ciudadanía y funcionariado,
+        con foco en capacitación, sensibilización y retención de talento crítico.
+      Lineamientos_Resumen:
+        - "Crear marcos y programas de formación para directivos y funcionarios en transformación digital."
+        - "Desarrollar mecanismos para atracción y retención de talento digital especializado."
+        - "Impulsar alfabetización digital universal, con énfasis en grupos vulnerables."
+
+    - ID: "TDE_EST_GD2030_EJE_6"
+      Name: "Identidad_e_infraestructura_publica_digital"
+      Category: "Habilitador"
+      Purpose: >-
+        Crear una base tecnológica común y segura que habilite servicios públicos
+        digitales, destacando la identidad digital como componente crítico.
+      Lineamientos_Resumen:
+        - "Implementar un nuevo sistema de identidad digital inclusivo y accesible, apoyado en Registro Civil y ClaveÚnica."
+        - "Desplegar servicios de infraestructura base (nube, conectividad segura, SOC compartidos) para sistemas críticos."
+        - "Fortalecer el rol de la SGD como proveedor de plataformas de infraestructura pública digital."
+
+Gobernanza_y_Seguimiento:
+  - ID: "TDE_EST_GD2030_GOB_001"
+    Ctx: >-
+      La Secretaría de Gobierno Digital es responsable del seguimiento, monitoreo y
+      evaluación de la Estrategia y sus planes operativos, reportando periódicamente
+      al Consejo de Modernización del Estado y a comités técnicos, y publicando el
+      avance y los hitos mediante herramientas digitales de gestión de cartera de
+      proyectos.
+
+Relacion_con_Otras_Estrategias:
+  - ID: "TDE_EST_GD2030_REL_001"
+    Ctx: >-
+      La Estrategia de Gobierno Digital 2030 se articula con la Estrategia de Datos
+      del Estado, la Estrategia de Transformación Digital 2035 y el Plan Brecha
+      Digital Cero, así como con políticas de IA y de modernización del Estado.
+
+Glosario_Ref_Lexicon:
+  Description: >-
+    Parte de los términos definidos en el glosario de la Estrategia se han
+    centralizado o se centralizarán en el Lexicon TDE. Esta sección referencia
+    términos ya presentes en el artefacto core.
+  Terms:
+    - Term: "API (Application Programming Interface)"
+      Ref_ID: "TDE_DEF_API"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_API"
+    - Term: "Datos Maestros"
+      Ref_ID: "TDE_DEF_DATOS_MAESTROS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_MAESTROS"
+
+Glosario_Local_Resumen:
+  Description: >-
+    Otros términos como CMS, CRM, GRP, NOC, Omnicanal, PMG, PMO, RCSE, SOC y Wallet
+    se definen en el documento original y se consideran candidatos a consolidación
+    futura en el Lexicon TDE.
+
+Referencias_Resumen:
+  Description: >-
+    La Estrategia se apoya en marcos de gobierno digital de la OCDE, estudios de
+    confianza en instituciones públicas, informes del Banco Mundial y del Foro
+    Económico Mundial sobre GovTech, así como agendas y planes nacionales de
+    modernización del Estado, transformación digital e infraestructura de datos.

@@ -1,0 +1,408 @@
+# KODA Knowledge Artifact: Seven Sketches - Functorial Data Model
+# Domain: Category Theory / Databases
+
+_manifest:
+  urn: "urn:knowledge:koda:cat:seven-sketches:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/foundations/seven_sketches.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-05"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-14"
+    signature: null
+
+ID: CAT-FDM-01
+Version: 1.0.0
+Status: Active
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-05
+Modification-Date: 2025-12-14
+Version-Notes: "KODA/Spec content for Seven Sketches FDM chapter with Proc and examples. Updated with Chapter 3 excerpt from sources/cat/7sk_bbdd.md."
+Src:
+  - "file://sources/cat/7sk_bbdd.md"
+Ctx: "Notas estructuradas sobre el modelo functorial de datos (FDM) para el Arquitecto Categórico."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss.
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: internal only. XRef: external URN only.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Registrar el modelo functorial de datos (FDM) como conocimiento reusable para diseño de esquemas e instancias."
+Obj: "Servir de fuente formal para los motores CM-MIGRATION-ENGINE y CM-STRUCTURE-ENGINE del Arquitecto Categórico."
+
+Source:
+  Title: "Seven Sketches in Compositionality - Databases as Functors"
+  Authors: ["Brendan Fong", "David I. Spivak"]
+  Ctx: "Capítulo que introduce esquemas como categorías, instancias como funtores y migraciones adjuntas."
+
+Chapter_3_Databases_Categories_Functors_Universal_Constructions:
+  ID: SS-CH3-00
+
+  Section_3_1_What_is_a_database:
+    ID: SS-CH3-1
+    Context: |
+      Integrating data from disparate sources is a major problem in industry today. A study in 2008 [BH08] showed that data integration accounts for 40% of IT budgets, and that the market for data integration software was $2.5 billion in 2007 and increasing at a rate of more than 8% per year.
+
+    Definition_Database_as_interlocking_tables:
+      ID: SS-CH3-1-DEF-DB-01
+      Def: "A database is a system of interlocking tables. Data becomes information when it is stored in a given formation."
+
+    Example_Employee_Department:
+      ID: SS-CH3-1-EX-EMPDEPT-01
+      Tables: |
+        | Employee | FName | WorksIn | Mngr |
+        |----------|-------|---------|------|
+        | 1        | Alan  | 101     | 2    |
+        | 2        | Ruth  | 101     | 2    |
+        | 3        | Kris  | 102     | 3    |
+
+        | Department | DName | Secr |
+        |------------|-------|------|
+        | 101        | Sales | 1    |
+        | 102        | IT    | 3    |
+      Notes:
+        - "The ID column entries are like row labels; each row label must be unique."
+        - "Non-ID columns are references: internal references (foreign keys) and external references (e.g., strings)."
+        - "Internal reference labels can be changed consistently; external reference labels cannot."
+      Schema_Diagram: "A Hasse-style diagram for a database schema shows black nodes for tables (ID columns) and arrows for non-ID columns, pointing in the direction of reference."
+
+    Business_Rules:
+      ID: SS-CH3-1-RULES-01
+      Rules:
+        - "Every department’s secretary must work in that department."
+        - "Every employee’s manager must work in the same department as the employee."
+      Note: "easySchema plus constraints equals mySchema (constraints expressed as path equalities like Department.Secr.WorksIn = Department and Employee.Mngr.WorksIn = Employee.WorksIn)."
+
+    Communication_between_databases:
+      ID: SS-CH3-1-COMMS-01
+      Def: "Category theory provides a mathematical approach for translating between different organizational forms (data migration), taking data that fits in one schema and moving it into another."
+
+  Section_3_2_Categories:
+    ID: SS-CH3-2
+
+    Definition_3_6_Category:
+      ID: SS-CH3-DEF-3-6
+      Content: |
+        To specify a category C:
+        1. specify a collection Ob(C), elements of which are called objects.
+        2. for every two objects c,d, specify a set C(c,d), elements of which are called morphisms from c to d.
+        3. for every object c, specify an identity morphism id_c in C(c,c).
+        4. for every three objects c,d,e and morphisms f: c->d and g: d->e, specify a composite f ; g in C(c,e).
+
+        Conditions:
+        (a) Unitality: id_c ; f = f and f ; id_d = f.
+        (b) Associativity: (f ; g) ; h = f ; (g ; h).
+
+    Definition_3_7_Free_category:
+      ID: SS-CH3-DEF-3-7
+      Def: "For any graph G=(V,A,s,t), define a category Free(G) whose objects are vertices V and whose morphisms are paths from c to d. Identity is the trivial path, and composition is concatenation of paths."
+
+  Section_3_3_Functors_natural_transformations_and_databases:
+    ID: SS-CH3-3
+
+    Definition_3_35_Functor:
+      ID: SS-CH3-DEF-3-35
+      Content: |
+        Let C and D be categories. To specify a functor F: C -> D,
+        (i) for every object c in Ob(C), specify an object F(c) in Ob(D);
+        (ii) for every morphism f: c1 -> c2 in C, specify a morphism F(f): F(c1) -> F(c2) in D.
+
+        Properties:
+        (a) F(id_c) = id_{F(c)}.
+        (b) F(f ; g) = F(f) ; F(g).
+
+    Definition_3_44_C_instance:
+      ID: SS-CH3-DEF-3-44
+      Def: "Let C be a schema, i.e. a finitely-presented category. A C-instance is a functor I: C -> Set."
+      Ref: FDM-INSTANCE
+
+    Definition_3_49_Natural_transformation:
+      ID: SS-CH3-DEF-3-49
+      Content: |
+        Let C and D be categories, and let F,G: C -> D be functors.
+        To specify a natural transformation α: F ⇒ G:
+        (i) for each object c in C, specify a morphism α_c: F(c) -> G(c) in D, called the c-component.
+
+        Naturality condition:
+        (a) for every morphism f: c -> d in C,
+            F(f) ; α_d = α_c ; G(f).
+
+        A natural transformation α is a natural isomorphism if each component α_c is an isomorphism in D.
+      Ref: FDM-NATURAL-TRANSFORMATION
+
+    Definition_3_54_Functor_category:
+      ID: SS-CH3-DEF-3-54
+      Def: "Let C and D be categories. D^C is the category whose objects are functors F: C -> D and whose morphisms are natural transformations α: F ⇒ G."
+      Ref: FDM-FUNCTOR-CATEGORY
+
+    Definition_3_60_Category_of_instances:
+      ID: SS-CH3-DEF-3-60
+      Def: "Suppose that C is a database schema and I,J: C -> Set are database instances. An instance homomorphism between them is a natural transformation α: I ⇒ J. Write C-Inst := Set^C."
+      Ref: [FDM-FUNCTOR-CATEGORY, FDM-NATURAL-TRANSFORMATION]
+
+  Section_3_4_Adjunctions_and_data_migration:
+    ID: SS-CH3-4
+
+    Definition_3_68_Pullback_of_instance_along_functor:
+      ID: SS-CH3-DEF-3-68
+      Content: |
+        Let C and D be categories and let F: C -> D be a functor.
+        For any set-valued functor I: D -> Set, the composite F ; I: C -> Set is the pullback of I along F.
+
+        Given a natural transformation α: I ⇒ J, there is a natural transformation α_F: F ; I ⇒ F ; J.
+
+        This uses the data of F to define a functor Δ_F: D-Inst -> C-Inst.
+      Ref: MIGRATION-DELTA
+
+    Definition_3_70_Adjunction:
+      ID: SS-CH3-DEF-3-70
+      Content: |
+        Let C and D be categories, and L: C -> D and R: D -> C be functors.
+        We say that L is left adjoint to R (and R is right adjoint to L) if for any c in C and d in D,
+        there is an isomorphism of hom-sets α_{c,d}: C(c, R(d)) ≅ D(L(c), d) that is natural in c and d.
+      Ref: ADJUNCTION-CHAIN
+
+  Section_3_5_Limits:
+    ID: SS-CH3-5
+
+    Definition_3_79_Terminal_object:
+      ID: SS-CH3-DEF-3-79
+      Def: "Let C be a category. An object Z in C is a terminal object if for each object C of C, there exists a unique morphism !: C -> Z."
+      Ref: LIMIT-TERMINAL
+
+    Proposition_3_84_Terminal_objects_isomorphic:
+      ID: SS-CH3-PROP-3-84
+      Def: "All terminal objects in a category C are isomorphic."
+      Ref: LIMIT-TERMINAL
+
+    Definition_3_86_Product:
+      ID: SS-CH3-DEF-3-86
+      Content: |
+        Let C be a category, and let X,Y be objects in C.
+        A product of X and Y is an object X × Y together with morphisms p_X: X×Y -> X and p_Y: X×Y -> Y
+        such that for all objects C with morphisms f: C -> X and g: C -> Y, there exists a unique morphism <f,g>: C -> X×Y
+        making the usual projection diagram commute.
+      Ref: LIMIT-PRODUCT
+
+    Theorem_3_95_Finite_limits_in_Set_formula:
+      ID: SS-CH3-THM-3-95
+      Content: |
+        Let J be a category presented by a finite graph (V,A,s,t), together with some equations, and let D: J -> Set be a set-valued functor.
+        Write V = {v1, ..., v_n}. The set
+
+          lim D := {(d1, ..., d_n) | d_i in D(v_i) for all 1 <= i <= n and for all a: v_i -> v_j in A, we have D(a)(d_i) = d_j}
+
+        together with the projection maps p_i: (lim D) -> D(v_i) given by p_i(d1,...,d_n) := d_i, is a limit of D.
+
+        This captures finite limits in Set and explains Π-operations as limits of diagrams.
+
+Core_Concepts:
+  - ID: FDM-SCHEMA
+    Def: "Schema de base de datos = categoría finitamente presentada C (objetos=entidades, morfismos=relaciones/atributos, ecuaciones=restringen caminos)."
+    Ex: |
+      Ejemplo: Schema Graph
+      - Objetos: {V, E}
+      - Morfismos: src: E → V, tgt: E → V
+      - Ecuaciones: ninguna adicional
+    Use: "Diseñar esquemas como categorías; validar asociatividad e identidades antes de poblar datos."
+
+  - ID: FDM-INSTANCE
+    Def: "Instancia de base de datos = funtor I: C → Set que asigna conjuntos de registros y funciones entre ellos."
+    Interpretation:
+      - "I(A) = conjunto de filas de la tabla/entidad A"
+      - "I(f): I(A) → I(B) implementa clave foránea o atributo funcional"
+    Ref: FDM-SCHEMA
+    Ex: |
+      Para Schema Graph:
+      - I(V) = {v1, v2, v3}
+      - I(E) = {e1, e2}
+      - I(src)(e1) = v1, I(tgt)(e1) = v2
+
+  - ID: FDM-NATURAL-TRANSFORMATION
+    Def: "Homomorfismo de instancias = transformación natural α: I ⇒ J entre funtores C → Set."
+    Interpretation: "Mapeo estructura-preservante entre dos bases de datos sobre el mismo esquema."
+    Ref: [FDM-SCHEMA, FDM-INSTANCE]
+
+  - ID: FDM-FUNCTOR-CATEGORY
+    Def: "Categoría de instancias C-Inst = [C, Set], con objetos funtores I: C→Set y morfismos transformaciones naturales."
+    Use: "Razonar sobre el espacio de todas las bases de datos posibles sobre un esquema dado."
+    Ref: [FDM-INSTANCE, FDM-NATURAL-TRANSFORMATION]
+
+Migration_Operators:
+  - ID: MIGRATION-DELTA
+    Def: "Δ_F (Pullback): dado F: C → D y J: D→Set, la instancia resultante es Δ_F(J) = J ∘ F."
+    Purp: "Reindexar datos de un esquema destino D a un esquema fuente C."
+    SQL_Analog: "Renombrar columnas, SELECT con alias, duplicar tablas."
+    Guarantees: "Preserva exactamente la estructura de la instancia original; no pierde información."
+    Proc: |
+      1. Identificar funtor de esquemas F: Source_Schema → Target_Schema.
+      2. Para cada objeto A en Source_Schema, localizar F(A) en Target_Schema.
+      3. Para cada instancia J sobre Target_Schema, definir Δ_F(J)(A) := J(F(A)).
+      4. Para cada morfismo f: A→B en Source_Schema, definir Δ_F(J)(f) := J(F(f)).
+      5. Verificar: la composición se preserva automáticamente por funtorialidad.
+    Ex: |
+      -- Schema Source: users(id, name), orders(id, user_id)
+      -- Schema Target: customers(cid, cname), purchases(pid, customer_id)
+      -- Funtor F: users↦customers, orders↦purchases, user_id↦customer_id
+      -- Δ_F traduce datos de customers/purchases a users/orders:
+      SELECT cid AS id, cname AS name FROM customers;  -- Δ_F en users
+      SELECT pid AS id, customer_id AS user_id FROM purchases;  -- Δ_F en orders
+
+  - ID: MIGRATION-SIGMA
+    Def: "Σ_F (Left Pushforward): adjunto izquierdo de Δ_F, migra datos de C a D usando colímites."
+    Purp: "Unificar y generalizar datos al pasar a un esquema más general."
+    SQL_Analog: "UNION, INSERT INTO SELECT, agregaciones."
+    Guarantees: "Puede perder información (co-identificaciones y fusiones); construye colímites."
+    Warn: "Documentar siempre qué información se pierde en la migración."
+    Proc: |
+      1. Identificar funtor F: Source → Target.
+      2. Para cada objeto B en Target, calcular la fibra F⁻¹(B) = {A | F(A)=B}.
+      3. Σ_F(I)(B) := colim_{A∈F⁻¹(B)} I(A) (colímite sobre la fibra).
+      4. Si F colapsa objetos (F(A₁)=F(A₂)=B), los datos se fusionan vía UNION.
+      5. Verificar pérdida: si A₁≠A₂ pero F(A₁)=F(A₂), la distinción original se pierde.
+    Ex: |
+      -- F colapsa employees y contractors a workers:
+      -- Σ_F fusiona ambas tablas:
+      SELECT id, name, 'employee' AS source FROM employees
+      UNION ALL
+      SELECT id, name, 'contractor' AS source FROM contractors;
+      -- Info perdida: ya no distinguimos el tipo original sin la columna source.
+
+  - ID: MIGRATION-PI
+    Def: "Π_F (Right Pushforward): adjunto derecho de Δ_F, migra datos de C a D usando límites."
+    Purp: "Especializar datos imponiendo restricciones conjuntas."
+    SQL_Analog: "JOIN, WHERE, productos cartesianos."
+    Guarantees: "Preserva estructura vía productos; puede descartar registros que no satisfacen condiciones."
+    Proc: |
+      1. Identificar funtor F: Source → Target.
+      2. Para cada objeto B en Target, calcular la fibra F⁻¹(B).
+      3. Π_F(I)(B) := lim_{A∈F⁻¹(B)} I(A) (límite sobre la fibra).
+      4. Si F tiene fibra con múltiples objetos, Π_F calcula el producto (JOIN).
+      5. Solo los registros que matchean en todas las tablas de la fibra sobreviven.
+    Ex: |
+      -- F: {orders, payments} → transactions (ambos mapean a transactions)
+      -- Π_F exige que un registro exista en AMBAS tablas:
+      SELECT o.id, o.amount, p.payment_date
+      FROM orders o
+      INNER JOIN payments p ON o.id = p.order_id;
+      -- Solo transacciones con orden Y pago aparecen.
+
+  - ID: ADJUNCTION-CHAIN
+    Def: "Cadena de adjunciones Σ_F ⊣ Δ_F ⊣ Π_F inducida por un funtor de esquemas F: C→D."
+    Significance: "Toda migración razonable de datos puede descomponerse en combinaciones de estos tres operadores."
+    Decision_Guide: |
+      - Usar Δ cuando: renombrar/reestructurar sin cambiar cardinalidad.
+      - Usar Σ cuando: fusionar, agregar, generalizar (acepta pérdida).
+      - Usar Π cuando: restringir, filtrar, especializar (acepta descartes).
+    Ref: [MIGRATION-DELTA, MIGRATION-SIGMA, MIGRATION-PI]
+
+Limits:
+  - ID: LIMIT-TERMINAL
+    Def: "Objeto terminal 1 en C: para todo C∈Ob(C), existe un único morfismo C→1."
+    SQL: "SELECT 1, constantes."
+    Use: "Modelar singletons, valores por defecto y tipos unidad."
+
+  - ID: LIMIT-PRODUCT
+    Def: "Producto A×B con proyecciones π₁, π₂ que satisfacen una propiedad universal."
+    SQL: "JOIN cartesiano, SELECT a.*, b.*."
+    Universal_Property: "Para todo C con f:C→A y g:C→B, existe único h:C→A×B tal que π₁∘h=f y π₂∘h=g."
+    Use: "Combinar entidades independientes en una vista conjunta."
+
+  - ID: LIMIT-PULLBACK
+    Def: "Pullback A ×_C B = producto fibrado de A y B sobre C."
+    SQL: "JOIN ON shared_key."
+    Use: "Combinar entidades que comparten un contexto común (clave compartida)."
+    Ref: LIMIT-PRODUCT
+
+  - ID: LIMIT-EQUALIZER
+    Def: "Equalizer eq(f,g) = subobjeto donde f=g."
+    SQL: "WHERE f(x) = g(x)."
+    Use: "Filtrar registros que satisfacen igualdad de dos rutas distintas."
+
+Colimits:
+  - ID: COLIMIT-INITIAL
+    Def: "Objeto inicial 0: para todo C∈Ob(C), existe único morfismo 0→C."
+    SQL: "Tablas vacías, consultas WHERE FALSE."
+    Use: "Tipos sin habitantes, casos imposibles."
+
+  - ID: COLIMIT-COPRODUCT
+    Def: "Coproducto A+B con inyecciones i₁, i₂."
+    SQL: "UNION ALL."
+    Use: "Unir entidades del mismo tipo lógico en una sola vista disjunta."
+
+  - ID: COLIMIT-PUSHOUT
+    Def: "Pushout A ⊔_C B: pegado de A y B identificando la parte común C."
+    SQL: "UNION + reconciliación de claves primarias."
+    Use: "Merge de esquemas y normalización incremental."
+
+  - ID: COLIMIT-COEQUALIZER
+    Def: "Coequalizer: cociente por la relación de equivalencia generada por dos morfismos paralelos."
+    SQL: "GROUP BY, DISTINCT."
+    Use: "Colapsar duplicados, construir clases de equivalencia."
+
+Advanced_Concepts:
+  - ID: YONEDA-LEMMA
+    Def: "Para todo objeto A en C, Nat(Hom(A,−), F) ≅ F(A) naturalmente en A."
+    Interpretation: "Un objeto se determina completamente por cómo otros objetos se mapean hacia él."
+    Use: "Fundamenta el diseño orientado a interfaces: conocer un componente = conocer sus relaciones."
+    Application: |
+      En bases de datos: una entidad se define por sus foreign keys entrantes.
+      En APIs: un tipo se define por las funciones que lo producen.
+
+  - ID: SLICE-CATEGORY
+    Def: "Categoría slice C/X: objetos son morfismos f: A→X, morfismos son triángulos conmutativos."
+    Interpretation: "Todos los objetos 'sobre' un objeto base X."
+    Use: "Modelar instancias relativas, datos contextualizados, o entidades dependientes de un contexto."
+    Ex: |
+      -- Schema/X donde X = "organization"
+      -- Objetos: users→org, projects→org, teams→org (todo referencia a org)
+      -- Morfismos: user_project que hace conmutar users→org con projects→org
+      SELECT * FROM users WHERE org_id = 42;  -- Trabajar en slice "org_42"
+
+  - ID: KAN-EXTENSION-BASIC
+    Def: "Extensión de Kan izquierda Lan_F(G): mejor aproximación universal para extender G a lo largo de F."
+    Formula: "(Lan_F G)(d) = colim_{c: F(c)→d} G(c)"
+    Relation: "Σ_F es caso especial donde G = instancia I."
+    Use: "Generaliza Σ para transformaciones arbitrarias, no solo instancias de bases de datos."
+    XRef: "urn:knowledge:koda:cat:algebraic-databases:1.0.0#KAN-EXTENSION"
+
+Operational_Principles:
+  - ID: PRINCIPLE-DIAGRAM-COMMUTES
+    Def: "Un modelo de datos es coherente sii todos los diagramas relevantes conmuten."
+    Proc: |
+      1. Identificar todos los caminos paralelos A → B en el esquema.
+      2. Calcular la composición de cada camino.
+      3. Verificar igualdad path₁ = path₂.
+      4. Si alguno no conmuta → inconsistencia estructural. Corregir esquema o constraints.
+
+  - ID: PRINCIPLE-UNIVERSAL-PROPERTY
+    Def: "Preferir construcciones universales (límites/colímites) frente a soluciones ad-hoc."
+    Just: "Las construcciones universales son únicas hasta isomorfismo y proveen diseños canónicos y robustos."
+    Ref: [LIMIT-PRODUCT, LIMIT-PULLBACK, COLIMIT-COPRODUCT, COLIMIT-PUSHOUT]
+
+  - ID: PRINCIPLE-YONEDA-INTERFACE
+    Def: "Diseñar por interfaces: un componente se define por cómo interactúa, no por su implementación."
+    Just: "Consecuencia directa del lema de Yoneda aplicado a arquitectura de software."
+    Ref: YONEDA-LEMMA
+

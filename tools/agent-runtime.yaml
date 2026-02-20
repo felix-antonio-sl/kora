@@ -1,0 +1,490 @@
+_manifest:
+  urn: "urn:knowledge:koda:tools:agent-runtime:1.0.0"
+  federation:
+    visibility: internal
+    license: "Proprietary"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/moltbot/docs/concepts/kb_agent_runtime.yaml"
+    mirrors: []
+  provenance:
+    created_by: "Moltbot Docs"
+    created_at: "2026-01-29"
+    last_modified_by: "Codex"
+    last_modified_at: "2026-01-29"
+    signature: null
+
+ID: MOLTBOT-KB-CONCEPTS-AGENT-RUNTIME-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: Moltbot Docs
+Human-Editor: Codex
+Model-Collaborator: OpenAI-Codex
+Creation-Date: '2026-01-29'
+Modification-Date: '2026-01-29'
+Ctx: 'Moltbot concepts: agent runtime'
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |-
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+Purp: Consolidar runtime de agentes y configuracion base
+Src:
+- File: output/concepts/agent.md
+- File: output/concepts/agent-loop.md
+- File: output/concepts/agent-workspace.md
+- File: output/concepts/system-prompt.md
+- File: output/token-use.md
+Definitions:
+- ID: WORKSPACE
+  Src:
+    File: output/concepts/agent.md
+  Def: Single agent workspace directory (`agents.defaults.workspace`) used as the agent's only working directory (`cwd`) for tools and context.
+  Req:
+  - Use `moltbot setup` to create `~/.clawdbot/moltbot.json` (if missing) and initialize workspace files.
+  - If `agents.defaults.sandbox` is enabled, non-main sessions may override with per-session workspaces under `agents.defaults.sandbox.workspaceRoot`.
+- ID: BOOTSTRAP-FILES
+  Src:
+    File: output/concepts/agent.md
+  Def: User-editable workspace files injected into agent context on the first turn of a session.
+  List:
+  - 'AGENTS.md: operating instructions + memory'
+  - 'SOUL.md: persona, boundaries, tone'
+  - 'TOOLS.md: user-maintained tool notes (e.g. `imsg`, `sag`, conventions)'
+  - 'BOOTSTRAP.md: one-time first-run ritual (deleted after completion)'
+  - 'IDENTITY.md: agent name/vibe/emoji'
+  - 'USER.md: user profile + preferred address'
+  Proc:
+  - On the first turn of a new session, Moltbot injects the contents of bootstrap files into context.
+  - Blank files are skipped.
+  - Large files are trimmed and truncated with a marker.
+  - If a file is missing, Moltbot injects a single missing-file marker line and continues.
+  - '`BOOTSTRAP.md` is created only for a brand new workspace (no other bootstrap files present); deleting it after completing the ritual should prevent recreation on later restarts.'
+  Ex:
+    ID: EX-SKIP-BOOTSTRAP
+    Body: '{ agent: { skipBootstrap: true } }'
+- ID: TOOLS-AVAILABILITY
+  Src:
+    File: output/concepts/agent.md
+  Def: Core tools are always available (subject to tool policy); `apply_patch` is optional and gated.
+  Req:
+  - '`TOOLS.md` does not control which tools exist; it is guidance on how to use them.'
+  - '`apply_patch` availability is gated by `tools.exec.applyPatch`.'
+- ID: SKILLS-LOCATIONS
+  Src:
+    File: output/concepts/agent.md
+  Def: Skills load from 3 locations; workspace wins on name conflict.
+  List:
+  - Bundled (shipped with the install)
+  - 'Managed/local: `~/.clawdbot/skills`'
+  - 'Workspace: `<workspace>/skills`'
+  Req:
+  - Skills can be gated by config/env (see `skills` in Gateway configuration).
+- ID: PMONO-INTEGRATION
+  Src:
+    File: output/concepts/agent.md
+  Def: Moltbot reuses p-mono code (models/tools) but owns session management, discovery, and tool wiring.
+  Prohib:
+  - No p-coding agent runtime.
+  - No `~/.pi/agent` or `<workspace>/.pi` settings are consulted.
+- ID: SESSION-STORAGE
+  Src:
+    File: output/concepts/agent.md
+  Def: Session transcripts persist as JSONL; session IDs are stable and legacy Pi/Tau sessions are not read.
+  Req:
+  - Store transcripts at `~/.clawdbot/agents/<agentId>/sessions/<SessionId>.jsonl`.
+- ID: QUEUE-MODES
+  Src:
+    File: output/concepts/agent.md
+  Def: Inbound message queue behavior differs by mode (steer/followup/collect).
+  Proc:
+  - 'Mode `steer`: inbound messages are injected into the current run; the queue is checked after each tool call; if queued, remaining tool calls are skipped and replaced with an error result (skipped due to queued message); queued user message is injected before the next assistant response.'
+  - 'Mode `followup` or `collect`: inbound messages are held until the current turn ends; a new agent turn starts with the queued payloads.'
+  Ctx:
+  - 'See Queue doc: /concepts/queue (mode + debounce/cap behavior).'
+- ID: BLOCK-STREAMING
+  Src:
+    File: output/concepts/agent.md
+  Def: Block streaming can send completed assistant blocks; default off and controlled by multiple knobs.
+  Req:
+  - 'Default off: `agents.defaults.blockStreamingDefault: "off"`.'
+  - 'Boundary: `agents.defaults.blockStreamingBreak` (`text_end` vs `message_end`; default `text_end`).'
+  - 'Chunking: `agents.defaults.blockStreamingChunk` (default 800-1200 chars; prefers paragraph breaks, then newlines; sentences last).'
+  - 'Coalesce: `agents.defaults.blockStreamingCoalesce` (idle-based merging to reduce single-line spam).'
+  - 'Non-Telegram channels require explicit `*.blockStreaming: true` to enable block replies.'
+  Proc:
+  - Verbose tool summaries are emitted at tool start (no debounce).
+  - Control UI streams tool output via agent events when available.
+  Ctx:
+  - 'More details: /concepts/streaming'
+- ID: MODEL-REFS
+  Src:
+    File: output/concepts/agent.md
+  Def: Model refs are parsed by splitting on the first '/'.
+  Req:
+  - Use `provider/model` when configuring models (e.g. `agents.defaults.model`, `agents.defaults.models`).
+  - If model ID itself contains '/', include provider prefix (OpenRouter-style), e.g. `openrouter/moonshotai/kimi-k2`.
+  - If provider is omitted, Moltbot treats the input as an alias or a model for the default provider (only when the model ID has no '/').
+- ID: MIN-CONFIG
+  Src:
+    File: output/concepts/agent.md
+  Req:
+  - At minimum set `agents.defaults.workspace`.
+  - 'Strongly recommended: set `channels.whatsapp.allowFrom`.'
+- ID: AGENT-LOOP
+  Src:
+    File: output/concepts/agent-loop.md
+  Def: 'Agent loop = serialized run: intake -> context assembly -> model inference -> tool execution -> streaming replies -> persistence.'
+  Proc:
+  - '`agent` RPC validates params, resolves session (sessionKey/sessionId), persists session metadata, returns `{ runId, acceptedAt }` immediately.'
+  - '`agentCommand` runs the agent: resolves model + thinking/verbose defaults; loads skills snapshot; calls `runEmbeddedPiAgent` (pi-agent-core runtime); emits lifecycle end/error if the embedded loop does not emit one.'
+  - '`runEmbeddedPiAgent`: serializes runs via per-session + global queues; resolves model + auth profile; builds pi session; subscribes to pi events and streams assistant/tool deltas; enforces timeout -> abort; returns payloads + usage metadata.'
+  - '`subscribeEmbeddedPiSession` bridges pi-agent-core events to Moltbot `agent` stream: tool events => `stream: "tool"`; assistant deltas => `stream: "assistant"`; lifecycle events => `stream: "lifecycle"` (`phase: "start" | "end" | "error"`).'
+  - '`agent.wait` uses `waitForAgentJob`: waits for lifecycle end/error for `runId`; returns `{ status: ok|error|timeout, startedAt, endedAt, error? }`.'
+  - 'Queueing + concurrency: runs are serialized per session key (session lane) and optionally through a global lane; this prevents tool/session races and keeps session history consistent.'
+  - 'Session + workspace prep: workspace resolved/created; sandboxed runs may redirect to a sandbox workspace root; skills loaded (or reused from snapshot) and injected into env and prompt; bootstrap/context files resolved and injected; session write lock acquired; `SessionManager` opened and prepared before streaming.'
+  - 'Prompt assembly: system prompt built from base prompt + skills prompt + bootstrap context + per-run overrides; model-specific limits and compaction reserve tokens enforced.'
+  Proc_Additional:
+  - 'Hook points: Internal hooks (Gateway hooks) and plugin hooks (agent + gateway lifecycle).'
+  - 'Streaming + partial replies: assistant deltas streamed; block streaming emits partial replies on `text_end` or `message_end`; reasoning streaming may be separate or block replies.'
+  - 'Tool execution: tool start/update/end emitted on `tool` stream; results sanitized for size and images; messaging tool sends tracked to suppress duplicate confirmations.'
+  - 'Reply shaping: payloads assembled from assistant text (and optional reasoning), inline tool summaries (when verbose + allowed), assistant error text when model errors; `NO_REPLY` filtered; duplicate messaging sends removed; fallback tool error reply emitted only when needed.'
+  - 'Compaction + retries: auto-compaction emits `compaction` stream events and can trigger a retry; on retry in-memory buffers and tool summaries reset to avoid duplicate output.'
+  - 'Event streams: `lifecycle`, `assistant`, `tool`.'
+  - 'Chat channel handling: assistant deltas buffered into chat `delta` messages; chat `final` emitted on lifecycle end/error.'
+  - 'Timeouts: `agent.wait` default 30s (wait-only; `timeoutMs` overrides); runtime timeout `agents.defaults.timeoutSeconds` default 600s enforced in abort timer.'
+  - 'Early exits: agent timeout abort, AbortSignal cancel, gateway disconnect/RPC timeout, `agent.wait` timeout (does not stop agent).'
+- ID: INTERNAL-HOOKS
+  Src:
+    File: output/concepts/agent-loop.md
+  Def: Gateway hooks for commands and lifecycle events.
+  List:
+  - '`agent:bootstrap`: runs while building bootstrap files before the system prompt finalizes; use to add/remove bootstrap context files.'
+  - 'Command hooks: `/new`, `/reset`, `/stop`, and other command events.'
+  Ctx:
+  - 'Hooks setup: /hooks'
+- ID: PLUGIN-HOOKS
+  Src:
+    File: output/concepts/agent-loop.md
+  Def: Plugin extension points inside agent/tool lifecycle and gateway pipeline.
+  List:
+  - '`before_agent_start`'
+  - '`agent_end`'
+  - '`before_compaction` / `after_compaction`'
+  - '`before_tool_call` / `after_tool_call`'
+  - '`tool_result_persist`'
+  - '`message_received` / `message_sending` / `message_sent`'
+  - '`session_start` / `session_end`'
+  - '`gateway_start` / `gateway_stop`'
+  Ctx:
+  - 'Plugins hook API: /plugin#plugin-hooks'
+- ID: AGENT-WORKSPACE
+  Src:
+    File: output/concepts/agent-workspace.md
+    URL: https://docs.molt.bot/concepts/agent-workspace
+  Def: Workspace is the agent's home; only working directory for file tools and workspace context; treat as private memory.
+  Req:
+  - Workspace is default `cwd`, not a hard sandbox; tools resolve relative paths against workspace; absolute paths can still reach elsewhere unless sandboxing is enabled.
+  - If isolation is needed, use `agents.defaults.sandbox` (and/or per-agent sandbox config).
+  - When sandboxing is enabled and `workspaceAccess` is not `"rw"`, tools operate inside a sandbox workspace under `~/.clawdbot/sandboxes`, not the host workspace.
+  Defaults:
+  - 'Default workspace: `~/clawd`.'
+  - If `CLAWDBOT_PROFILE` is set and not `"default"`, default becomes `~/clawd-<profile>`.
+  Ex:
+  - ID: EX-WORKSPACE-OVERRIDE
+    Body: |-
+      {
+        agent: {
+          workspace: "~/clawd"
+        }
+      }
+  - ID: EX-WORKSPACE-OVERRIDE-COMPACT
+    Body: |-
+      {
+      agent: {
+      workspace: "~/clawd"
+      }
+      }
+  Proc:
+  - '`moltbot onboard`, `moltbot configure`, or `moltbot setup` create the workspace and seed bootstrap files if missing.'
+  - 'Bootstrap creation can be disabled via `{ agent: { skipBootstrap: true } }`.'
+- ID: EXTRA-WORKSPACE-FOLDERS
+  Src:
+    File: output/concepts/agent-workspace.md
+  Warn:
+  - Older installs may have created `~/moltbot`; multiple workspace directories can cause auth/state drift; keep a single active workspace.
+  Act:
+  - If unused, archive or move extra folders to Trash (e.g. `trash ~/moltbot`).
+  - Ensure `agents.defaults.workspace` points to the active workspace.
+  - '`moltbot doctor` warns when extra workspace directories are detected.'
+- ID: WORKSPACE-FILE-MAP
+  Src:
+    File: output/concepts/agent-workspace.md
+  Def: Standard workspace file map and meaning.
+  List:
+  - 'AGENTS.md: operating instructions; loaded at start of every session; rules/priorities/how-to-behave.'
+  - 'SOUL.md: persona/tone/boundaries; loaded every session.'
+  - 'USER.md: user identity/addressing; loaded every session.'
+  - 'IDENTITY.md: agent name/vibe/emoji; created/updated during bootstrap ritual.'
+  - 'TOOLS.md: local tools and conventions; guidance only.'
+  - 'HEARTBEAT.md: optional tiny checklist; keep short to avoid token burn.'
+  - 'BOOT.md: optional startup checklist executed on gateway restart when internal hooks enabled; keep short; use message tool for outbound sends.'
+  - 'BOOTSTRAP.md: one-time first-run ritual; created only for brand-new workspace; delete after ritual complete.'
+  - 'memory/YYYY-MM-DD.md: daily memory log; recommended to read today + yesterday on session start.'
+  - 'MEMORY.md (optional): curated long-term memory; only load in main private session.'
+  - 'skills/ (optional): workspace-specific skills; overrides managed/bundled skills when names collide.'
+  - 'canvas/ (optional): UI files for node displays (e.g. `canvas/index.html`).'
+  Req:
+  - If any bootstrap file is missing, Moltbot injects a missing-file marker and continues.
+  - Large bootstrap files are truncated when injected; configure `agents.defaults.bootstrapMaxChars` (default 20000).
+  - '`moltbot setup` can recreate missing defaults without overwriting existing files.'
+- ID: WORKSPACE-NOT-IN-REPO
+  Src:
+    File: output/concepts/agent-workspace.md
+  Prohib:
+  - Do not commit `~/.clawdbot/moltbot.json` (config) into workspace repo.
+  - Do not commit `~/.clawdbot/credentials/` (OAuth tokens, API keys).
+  - Do not commit `~/.clawdbot/agents/<agentId>/sessions/` (session transcripts + metadata).
+  - Do not commit `~/.clawdbot/skills/` (managed skills).
+  Act:
+  - If migrating sessions/config, copy separately and keep out of version control.
+- ID: WORKSPACE-GIT-BACKUP
+  Src:
+    File: output/concepts/agent-workspace.md
+  Def: Recommended private git backup workflow for workspace memory.
+  Ex:
+  - ID: EX-GIT-INIT
+    Body: |-
+      cd ~/clawd
+      git init
+      git add AGENTS.md SOUL.md TOOLS.md IDENTITY.md USER.md HEARTBEAT.md memory/
+      git commit -m "Add agent workspace"
+  - ID: EX-GIT-REMOTE-GITHUB
+    Body: |-
+      git branch -M main
+      git remote add origin <https-url>
+      git push -u origin main
+  - ID: EX-GH-REPO-CREATE
+    Body: |-
+      gh auth login
+      gh repo create clawd-workspace --private --source . --remote origin --push
+  - ID: EX-GIT-REMOTE-GITLAB
+    Body: |-
+      git branch -M main
+      git remote add origin <https-url>
+      git push -u origin main
+  - ID: EX-GIT-UPDATE
+    Body: |-
+      git status
+      git add .
+      git commit -m "Update memory"
+      git push
+- ID: WORKSPACE-SECRETS
+  Src:
+    File: output/concepts/agent-workspace.md
+  Warn:
+  - 'Do not store secrets in the workspace repo (even private): API keys, OAuth tokens, passwords, private credentials.'
+  - Do not store anything under `~/.clawdbot/`.
+  - Avoid raw dumps of chats or sensitive attachments.
+  Ex:
+    ID: EX-GITIGNORE
+    Body: |-
+      # .gitignore (starter)
+      .DS_Store
+      .env
+      **/*.key
+      **/*.pem
+      **/secrets*
+- ID: WORKSPACE-MIGRATION
+  Src:
+    File: output/concepts/agent-workspace.md
+  Proc:
+  - Clone the repo to the desired path (default `~/clawd`).
+  - Set `agents.defaults.workspace` to that path in `~/.clawdbot/moltbot.json`.
+  - Run `moltbot setup --workspace <path>` to seed missing files.
+  - If sessions are needed, copy `~/.clawdbot/agents/<agentId>/sessions/` from old machine separately.
+- ID: WORKSPACE-ADVANCED-NOTES
+  Src:
+    File: output/concepts/agent-workspace.md
+  Rec:
+  - Multi-agent routing can use different workspaces per agent (see /concepts/channel-routing).
+  - If `agents.defaults.sandbox` is enabled, non-main sessions can use per-session sandbox workspaces under `agents.defaults.sandbox.workspaceRoot`.
+- ID: SYSTEM-PROMPT
+  Src:
+    File: output/concepts/system-prompt.md
+    URL: https://docs.molt.bot/concepts/system-prompt
+  Def: Moltbot builds a custom system prompt for every agent run (Moltbot-owned; not the p-coding-agent default).
+  Req:
+  - The prompt is intentionally compact and uses fixed sections.
+  List:
+  - 'Tooling: current tool list + short descriptions.'
+  - 'Skills (when available): how to load skill instructions on demand.'
+  - 'Moltbot Self-Update: how to run `config.apply` and `update.run`.'
+  - 'Workspace: working directory (`agents.defaults.workspace`).'
+  - 'Documentation: local path to Moltbot docs (repo or npm package) and when to read them.'
+  - 'Workspace Files (injected): indicates bootstrap files included below.'
+  - 'Sandbox (when enabled): sandboxed runtime, sandbox paths, and whether elevated exec is available.'
+  - 'Current Date & Time: user-local time, timezone, and time format.'
+  - 'Reply Tags: optional reply tag syntax for supported providers.'
+  - 'Heartbeats: heartbeat prompt and ack behavior.'
+  - 'Runtime: host, OS, node, model, repo root (when detected), thinking level (one line).'
+  - 'Reasoning: current visibility level + /reasoning toggle hint.'
+- ID: PROMPT-MODES
+  Src:
+    File: output/concepts/system-prompt.md
+  Def: Runtime sets `promptMode` per run (not user-facing).
+  List:
+  - '`full` (default): includes all sections.'
+  - '`minimal`: used for sub-agents; omits Skills, Memory Recall, Moltbot Self-Update, Model Aliases, User Identity, Reply Tags, Messaging, Silent Replies, Heartbeats; keeps Tooling, Workspace, Sandbox, Current Date & Time (when known), Runtime, injected context.'
+  - '`none`: returns only base identity line.'
+  Req:
+  - When `promptMode=minimal`, extra injected prompts are labeled Subagent Context (not Group Chat Context).
+- ID: BOOTSTRAP-INJECTION
+  Src:
+    File: output/concepts/system-prompt.md
+  Def: Bootstrap files are trimmed and appended under Project Context.
+  Ref: BOOTSTRAP-FILES
+  Req:
+  - 'Max per-file injection size: `agents.defaults.bootstrapMaxChars` (default 20000).'
+  - Missing files inject missing-file marker.
+  - Internal hook `agent:bootstrap` can intercept bootstrap injection (e.g. swap `SOUL.md` persona).
+  - Inspect injection contributions via `/context list` or `/context detail`.
+  Ctx:
+  - 'See Context: /concepts/context'
+- ID: TIME-HANDLING
+  Src:
+    File: output/concepts/system-prompt.md
+  Def: Current Date & Time section appears when user timezone is known; prompt cache stability avoids dynamic clocks.
+  Req:
+  - Prompt includes time zone only (no dynamic clock/time format).
+  - Use `session_status` when the agent needs the current time; status card includes a timestamp line.
+  - Configure via `agents.defaults.userTimezone` and `agents.defaults.timeFormat` (`auto` | `12` | `24`).
+  Ctx:
+  - 'See Date & Time: /date-time'
+- ID: SKILLS-PROMPT
+  Src:
+    File: output/concepts/system-prompt.md
+  Def: When eligible skills exist, prompt injects compact available skills list (`formatSkillsForPrompt`) including file path for each skill.
+  Req:
+  - Prompt instructs model to use `read` to load the SKILL.md at the listed location (workspace, managed, bundled).
+  - If no eligible skills exist, Skills section is omitted.
+  Ex:
+  - ID: EX-AVAILABLE-SKILLS
+    Body: |-
+      <available_skills>
+        <skill>
+          <name>...</name>
+          <description>...</description>
+          <location>...</location>
+        </skill>
+      </available_skills>
+  - ID: EX-AVAILABLE-SKILLS-COMPACT
+    Body: |-
+      <available_skills>
+      <skill>
+      <name>...</name>
+      <description>...</description>
+      <location>...</location>
+      </skill>
+      </available_skills>
+- ID: DOCS-PROMPT
+  Src:
+    File: output/concepts/system-prompt.md
+  Def: Documentation section points to local docs directory and discovery/community resources.
+  Req:
+  - Docs path can be repo `docs/` or bundled npm package docs.
+  - Prompt notes public mirror, source repo, community Discord, and ClawdHub (https://clawdhub.com) for skills discovery.
+  - Prompt instructs model to consult local docs first and to run `moltbot status` when possible.
+Sections:
+- ID: AGENT-DOC
+  Title: Agent (runtime, workspace, skills, tools, streaming, model refs)
+  Src:
+    File: output/concepts/agent.md
+    URL: https://docs.molt.bot/concepts/agent
+  Refs:
+  - WORKSPACE
+  - BOOTSTRAP-FILES
+  - TOOLS-AVAILABILITY
+  - SKILLS-LOCATIONS
+  - PMONO-INTEGRATION
+  - SESSION-STORAGE
+  - QUEUE-MODES
+  - BLOCK-STREAMING
+  - MODEL-REFS
+  - MIN-CONFIG
+- ID: AGENT-LOOP-DOC
+  Title: Agent loop (entry points, serialization, hooks, streaming)
+  Src:
+    File: output/concepts/agent-loop.md
+    URL: https://docs.molt.bot/concepts/agent-loop
+  Refs:
+  - AGENT-LOOP
+  - INTERNAL-HOOKS
+  - PLUGIN-HOOKS
+- ID: WORKSPACE-DOC
+  Title: Agent workspace (layout, git backup, secrets)
+  Src:
+    File: output/concepts/agent-workspace.md
+    URL: https://docs.molt.bot/concepts/agent-workspace
+  Refs:
+  - AGENT-WORKSPACE
+  - EXTRA-WORKSPACE-FOLDERS
+  - WORKSPACE-FILE-MAP
+  - WORKSPACE-NOT-IN-REPO
+  - WORKSPACE-GIT-BACKUP
+  - WORKSPACE-SECRETS
+  - WORKSPACE-MIGRATION
+  - WORKSPACE-ADVANCED-NOTES
+- ID: SYSTEM-PROMPT-DOC
+  Title: System prompt (structure, modes, time, skills, docs)
+  Src:
+    File: output/concepts/system-prompt.md
+    URL: https://docs.molt.bot/concepts/system-prompt
+  Refs:
+  - SYSTEM-PROMPT
+  - PROMPT-MODES
+  - BOOTSTRAP-INJECTION
+  - TIME-HANDLING
+  - SKILLS-PROMPT
+  - DOCS-PROMPT
+Semantic_FS_Anchors:
+  Generated_By: fix_koda_semantic_fs.py
+  Generated_At: '2026-01-29'
+  Missing_Backticks: |-
+    /compact
+    /status
+    /usage
+    /usage cost
+    /usage off|tokens|full
+    55m
+    cacheRead
+    cacheWrite
+    moltbot channels list
+    moltbot status --usage
+    responseUsage
+  Missing_Code_Blocks_Body: |-
+    models.providers.<provider>.models[].cost
+
+    agents:
+    defaults:
+    model:
+    primary: "anthropic/claude-opus-4-5"
+    models:
+    "anthropic/claude-opus-4-5":
+    params:
+    cacheControlTtl: "1h"
+    heartbeat:
+    every: "55m"

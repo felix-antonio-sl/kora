@@ -1,0 +1,339 @@
+# KODA TDE Guía: Recomendaciones para el Diseño de Servicios en el Estado
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:diseno_servicios:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Guia_Diseno_Servicios_Estado"
+  provenance:
+    created_by: "Secretaría de Gobierno Digital (SGD) - Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Plataformas_CompartidasManuales_de_Uso/Recomendaciones_para_el_Diseño_de_Servicios_en_el_Estado.md"
+    source_url: "https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios"
+    source_updated_at: "2025-10-07T23:07:44.927Z"
+  status: draft
+
+ID: "TDE-GUIA-DISENO-SERVICIOS-ESTADO"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Secretaría de Gobierno Digital (SGD)"
+Human-Editor: "Equipo de Diseño de Servicios - SGD"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía con 14 recomendaciones organizadas en 3 dimensiones para optimizar el diseño de servicios públicos, centrados en las personas usuarias, con cultura de experiencia usuaria y soporte de procesos y tecnologías."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserva el MEAT de la guía (definiciones de cada
+    recomendación, su propósito y lista de acciones sugeridas) y el esqueleto
+    (3 dimensiones, 14 recomendaciones) sin agregar nuevos requisitos ni normas.
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition,
+    Ctx->Context, Ctx_Required->Required External Reference,
+    Ctx_Optional->Optional External Reference, Def->Definition,
+    Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process,
+    Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference,
+    XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement,
+    Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning,
+    Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to an ID within THIS
+    document. XRef/XRef_Required: are external only—must point to a URN in
+    another artifact.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never
+    translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía práctica para diseñar y operar servicios públicos centrados en las personas, inclusivos, seguros y soportados por buenas prácticas tecnológicas y de datos."
+  objective: >-
+    Entregar recomendaciones y acciones concretas para que las instituciones
+    públicas diseñen servicios centrados en necesidades de las personas,
+    instalen una cultura de experiencia usuaria y definan procesos y
+    tecnologías de soporte alineados con interoperabilidad, ciberseguridad y
+    protección de datos.
+  usage_guidance:
+    - "Usar esta guía junto a la Estrategia de Gobierno Digital 2030, la Estrategia de Datos, el Reglamento TD (DS4) y las Normas Técnicas (Interoperabilidad, Seguridad, Notificaciones, Autenticación)."
+    - "Aplicarla como checklist operativo en proyectos de rediseño o creación de servicios digitales, incluyendo servicios presenciales con soporte digital."
+  style:
+    - "Responder en es-CL, con foco en acciones prácticas, ejemplos y pautas aplicables por equipos de servicio."
+
+Metadata_Original:
+  title: "Recomendaciones para el Diseño de Servicios en el Estado"
+  url: "https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios"
+  category: "Plataformas Compartidas/Manuales de Uso"
+  tags:
+    - "guía"
+    - "diseño de servicios"
+  description: "14 recomendaciones para optimizar el diseño de los servicios públicos."
+  updated_at: "2025-10-07T23:07:44.927Z"
+
+Dimension_I_Diseno_Centrado_En_Personas:
+  ID: "TDE_DISENO_DIM1_001"
+  Title: "Dimensión I: Diseño centrado en las necesidades de las personas usuarias"
+
+  Comprender_Personas_Usuarias:
+    ID: "TDE_DISENO_DIM1_REC1"
+    Name: "Comprender a las personas usuarias y sus necesidades"
+    Def: >-
+      Entender a fondo las necesidades y problemas de las personas usuarias,
+      mediante investigación y análisis detallados, para diseñar soluciones
+      efectivas y personalizadas que mejoren su experiencia y satisfacción.
+    Just: >-
+      Enfocarse en la persona usuaria y el problema a resolver permite detectar
+      necesidades, percepciones y acciones que no son evidentes, asegurando que
+      las soluciones respondan al contexto real.
+    Rec:
+      - "Realizar investigaciones periódicas (cualitativas y/o cuantitativas) de personas usuarias para comprender lo que necesitan."
+      - "Usar distintas fuentes de información (datos administrativos, instrumentos de percepción, datos de canales de atención, etc.) para enriquecer la comprensión del problema."
+      - "Construir prototipos rápidos y testear con personas usuarias para contrastar hipótesis y validar componentes de la solución."
+
+  Resolver_Necesidad_Completa:
+    ID: "TDE_DISENO_DIM1_REC2"
+    Name: "Resolver una necesidad de manera completa para las personas, colaborando con otros equipos"
+    Def: >-
+      Diseñar servicios que permitan a las personas usuarias cumplir
+      completamente un objetivo, colaborando con otros equipos e instituciones
+      y entregando información clara sobre el estado de las solicitudes.
+    Just: >-
+      Las necesidades suelen ir más allá de la prestación aislada de una
+      institución; integrar servicios y transparentar el estado de solicitudes
+      mejora la experiencia y resultados para las personas.
+    Rec:
+      - "Identificar los propósitos principales de las personas usuarias y definir servicios en torno a ellos."
+      - "Integrar servicios con otras instituciones públicas para resolver necesidades de forma integral."
+      - "Facilitar el acceso al seguimiento del estado de solicitudes."
+      - "Comprender y abordar las limitaciones legales que afecten el diseño del servicio."
+      - "Trabajar en colaboración abierta con otros organismos para evitar duplicidades."
+      - "Solicitar la información solo una vez, fomentando la interoperabilidad."
+
+  Disenar_Servicios_Simples_Intuitivos:
+    ID: "TDE_DISENO_DIM1_REC3"
+    Name: "Diseñar servicios simples e intuitivos"
+    Def: >-
+      Diseñar servicios fáciles de usar que permitan a las personas cumplir su
+      propósito en el menor número de pasos posibles, con información adecuada
+      para tomar decisiones.
+    Just: >-
+      Servicios simples reducen tiempo y esfuerzo, aumentan satisfacción
+      usuaria, ahorran recursos al Estado y fortalecen la confianza pública.
+    Rec:
+      - "Diseñar el servicio para que las personas puedan lograr su objetivo de la forma más simple posible, idealmente con éxito al primer intento y mínima ayuda."
+      - "Analizar los puntos de decisión en cada etapa, permitiendo a las personas enfocarse en una tarea a la vez."
+      - "Validar la usabilidad y experiencia digital con personas usuarias reales utilizando métodos de investigación apropiados."
+      - "Analizar todos los elementos del servicio con los que interactúa la persona usuaria, en canales digitales y físicos."
+      - "Entregar una experiencia consistente de principio a fin, independiente del canal."
+
+  Garantizar_Accesibilidad_Inclusion:
+    ID: "TDE_DISENO_DIM1_REC4"
+    Name: "Garantizar que todas las personas usuarias puedan utilizar el servicio"
+    Def: >-
+      Crear servicios utilizables por todas las personas, independientemente de
+      sus circunstancias o capacidades, considerando accesibilidad universal e
+      inclusión amplia (discapacidad, conectividad, habilidades digitales,
+      pertinencia cultural, etc.).
+    Just: >-
+      Los servicios gubernamentales deben ser inclusivos y accesibles; diseñar
+      accesible desde el inicio es más fácil y la accesibilidad es esencial
+      para algunos y útil para todos.
+    Rec:
+      - "Cumplir con estándares de accesibilidad universal (WCAG nivel AA)."
+      - "Usar lenguaje claro y palabras simples."
+      - "Incorporar perspectivas de inclusión y género."
+      - "Disponer de información en lenguas oficiales pertinentes."
+      - "Validar con personas representativas del público objetivo, incluyendo personas con necesidades de acceso."
+      - "Proveer apoyos adecuados para segmentos con dificultades o menor alfabetización digital, incluyendo atención asistida."
+      - "Asegurar servicios consistentes para una experiencia sin barreras."
+
+  Experiencia_Integrada_Omnicanal:
+    ID: "TDE_DISENO_DIM1_REC5"
+    Name: "Proporcionar una experiencia integrada a través de todos los canales"
+    Def: >-
+      Diseñar experiencias coherentes que se ajusten a las necesidades de las
+      personas, coordinando todos los canales de atención y, cuando corresponda,
+      entre instituciones relacionadas.
+    Just: >-
+      Coherencia entre canales genera confianza y evita confusión al utilizar
+      servicios públicos.
+    Rec:
+      - "Garantizar una experiencia omnicanal con conexión fluida entre canales."
+      - "Trabajar con instituciones relacionadas para lograr experiencias consistentes y coordinadas."
+      - "Asignar recursos adecuados a cada canal según su rol."
+      - "Involucrar a equipos de atención, negocio y programas en investigación con usuarios, priorización y decisiones."
+      - "Fomentar trabajo conjunto de equipos de atención en distintos canales."
+      - "Realizar testeos periódicos y usar datos para mejorar la experiencia en todos los canales."
+      - "Mantener al personal de todos los canales actualizado sobre servicios y canales disponibles y estandarizar contenidos y lineamientos."
+
+  Evaluacion_Sistematica_Servicios:
+    ID: "TDE_DISENO_DIM1_REC6"
+    Name: "Evaluar sistemáticamente el servicio para asegurar que satisface necesidades"
+    Def: >-
+      Diseñar métricas y mecanismos de evaluación continua para saber si el
+      servicio responde a las necesidades de las personas usuarias y usar esos
+      datos para mejoras constantes.
+    Just: >-
+      Definir y recopilar datos adecuados permite detectar problemas a tiempo,
+      tomar decisiones informadas y sostener la mejora continua.
+    Rec:
+      - "Identificar métricas que midan cómo el servicio resuelve la necesidad principal de las personas y monitorearlas."
+      - "Usar los datos para decidir cómo solucionar problemas y mejorar el servicio desde la perspectiva usuaria."
+      - "Publicar datos asociados a indicadores clave, permitiendo comparar cómo el servicio responde a las necesidades."
+
+Dimension_II_Cultura_Experiencia_Usuaria:
+  ID: "TDE_DISENO_DIM2_001"
+  Title: "Dimensión II: Construcción de una cultura orientada a la experiencia usuaria"
+
+  Entorno_Cultura_Diseno_Servicios:
+    ID: "TDE_DISENO_DIM2_REC1"
+    Name: "Establecer un entorno propicio para una cultura y práctica de diseño y entrega de servicios"
+    Def: >-
+      Crear un ambiente institucional que fomente cultura y práctica sólida en
+      diseño y entrega de servicios, promoviendo innovación, aprendizaje
+      temprano, orientación a la persona usuaria y eficacia.
+    Rec:
+      - "Establecer prácticas que faciliten el aprendizaje continuo, la transferencia de conocimiento y la mejora organizacional."
+      - "Designar un rol responsable de promover la visión centrada en las personas usuarias."
+      - "Fomentar que líderes institucionales apoyen activamente entornos favorables al diseño y prestación de servicios públicos."
+      - "Promover el desarrollo transversal de capacidades y habilidades para diseño e implementación de servicios."
+
+  Gobernanza_Equipos_Multidisciplinarios:
+    ID: "TDE_DISENO_DIM2_REC2"
+    Name: "Instalar una gobernanza integral del diseño de servicios con equipos multidisciplinarios y multinivel"
+    Def: >-
+      Establecer gobernanza de diseño de servicios que involucre equipos
+      diversos y niveles jerárquicos múltiples, capaces de crear y operar
+      servicios de forma sostenible.
+    Rec:
+      - "Constituir equipos multidisciplinarios para investigación, diseño y desarrollo de servicios."
+      - "Involucrar actores clave: ciudadanía, áreas de negocio, equipos técnicos y de atención (OIRS, SIAC, etc.)."
+      - "Asegurar participación de personas de distintos niveles jerárquicos para facilitar decisiones y alineación estratégica."
+      - "Proporcionar acceso a experiencia especializada interna y externa."
+      - "Asegurar tiempo y recursos del equipo para ejecutar fases de diseño y mejora."
+
+  Iteracion_Mejora_Continua:
+    ID: "TDE_DISENO_DIM2_REC3"
+    Name: "Iterar y mejorar continuamente los servicios con base en retroalimentación y resultados"
+    Def: >-
+      Instalar práctica permanente de evaluar, aprender y mejorar el servicio
+      usando métodos ágiles, participativos y centrados en las personas usuarias.
+    Rec:
+      - "Implementar mecanismos permanentes de evaluación usuaria en todos los canales."
+      - "Visibilizar hallazgos y aprendizajes interna y externamente."
+      - "Asegurar capacidad, recursos y flexibilidad técnica para iterar con frecuencia."
+      - "Priorizar mejoras de mayor valor para las personas, respaldadas en datos."
+      - "Adoptar formas de trabajo ágiles y documentar información, hallazgos y decisiones para la gestión del conocimiento."
+
+Dimension_III_Procesos_y_Tecnologias:
+  ID: "TDE_DISENO_DIM3_001"
+  Title: "Dimensión III: Procesos y tecnologías para gestionar y dar soporte al servicio"
+
+  Privacidad_By_Design:
+    ID: "TDE_DISENO_DIM3_REC1"
+    Name: "Proteger la privacidad de las personas usuarias mediante el diseño de servicios"
+    Def: >-
+      Diseñar servicios que protejan la privacidad de las personas, recolectando
+      solo los datos estrictamente necesarios, evaluando qué información se
+      almacenará y el nivel de seguridad requerido, e implementando medidas de
+      seguridad adecuadas (privacy by design).
+    Just: >-
+      El Estado debe proteger la información personal y sensible; la falta de
+      seguridad debilita la confianza pública. La privacidad en el diseño ayuda
+      a cumplir la normativa y a garantizar transparencia.
+    Ctx_Required:
+      - "Ley 19.628 sobre protección de la vida privada y normativa de protección de datos personales."
+      - "Norma Técnica de Seguridad de la Información y Ciberseguridad."
+    Rec:
+      - "Recolectar sólo los datos estrictamente necesarios para la operación del servicio."
+      - "Informar de manera clara y accesible sobre la política de privacidad, uso de datos y medidas de protección."
+      - "Implementar protección de datos (incluyendo papel) desde las primeras fases del diseño (privacy by design), usando cifrado, autenticación multifactor y monitoreo continuo."
+      - "Asegurar cumplimiento normativo y establecer procedimientos de auditoría."
+      - "Capacitar a los equipos en mejores prácticas de seguridad y privacidad."
+
+  Continuidad_Operacional_Seguridad:
+    ID: "TDE_DISENO_DIM3_REC2"
+    Name: "Resguardar la continuidad operacional y la seguridad en la entrega de servicios"
+    Def: >-
+      Garantizar que los servicios, especialmente digitales 24/7, cuenten con
+      medidas para evaluar impacto de interrupciones y restaurar servicios ante
+      fallas o ciberataques, priorizando servicios críticos.
+    Rec:
+      - "Definir planes claros de respuesta ante fallas o interrupciones para restaurar servicios prioritarios."
+      - "Mantener sistemas actualizados con parches y copias de seguridad periódicas."
+      - "Realizar pruebas de vulnerabilidad, monitoreo continuo y simulaciones de fallas."
+      - "Cumplir con la Norma Técnica de Seguridad, la Política Nacional de Ciberseguridad 2023-2028, la Ley 21.663 y protocolos de la ANCI."
+
+  Estandares_Abiertos_Servicios_Compartidos:
+    ID: "TDE_DISENO_DIM3_REC3"
+    Name: "Priorizar estándares abiertos, componentes comunes y servicios compartidos"
+    Def: >-
+      Basar servicios en estándares abiertos, componentes comunes y servicios
+      compartidos para obtener servicios flexibles, consistentes, escalables y
+      accesibles, con experiencia uniforme.
+    Rec:
+      - "Propender al uso de estándares abiertos para facilitar interoperabilidad y evitar dependencias tecnológicas."
+      - "Utilizar servicios compartidos desarrollados u operados por Gobierno Digital."
+      - "Cumplir directrices técnicas y normativas de la SGD para asegurar compatibilidad y alineación con objetivos del Estado."
+      - "Promover uso de servicios y herramientas compartidas entre OAEs para reducir redundancias y mejorar eficiencia."
+
+  Tecnologias_Seguras_Flexibles_Escalables:
+    ID: "TDE_DISENO_DIM3_REC4"
+    Name: "Seleccionar tecnologías seguras, flexibles, escalables y adaptables"
+    Def: >-
+      Elegir tecnologías que permitan crecimiento eficiente, eviten dependencia
+      de un solo proveedor o tecnología y prioricen soluciones de código abierto
+      y nube para asegurar sostenibilidad y adaptabilidad.
+    Rec:
+      - "Elegir tecnologías de código abierto y basadas en la nube para escalar con la demanda."
+      - "Asegurar infraestructura que soporte peaks de usuarios, datos o transacciones manteniendo rendimiento."
+      - "Implementar monitoreo continuo de capacidad y rendimiento."
+      - "Definir planes de contingencia para mantener servicios ante situaciones críticas o aumentos repentinos de demanda."
+      - "Seguir lineamientos técnicos de la SGD; en ausencia de estándares, priorizar estándares abiertos y evitar tecnologías propietarias cerradas."
+      - "Diseñar arquitecturas flexibles que permitan interacción por distintos canales sin afectar funciones centrales."
+
+  Gestion_Datos_e_Interoperabilidad:
+    ID: "TDE_DISENO_DIM3_REC5"
+    Name: "Impulsar la eficiencia en la gestión de datos y la interoperabilidad"
+    Def: >-
+      Diseñar servicios donde los datos sean interoperables entre organismos,
+      evitando que las personas deban entregar la misma información varias
+      veces, y asegurando datos abiertos, protegidos y de calidad.
+    Rec:
+      - "Seguir directrices técnicas de la SGD para garantizar interoperabilidad eficiente."
+      - "Usar la Red de Interoperabilidad del Estado para intercambio seguro y eficiente."
+      - "Tratar los datos como activo estratégico con políticas, normativas, procesos y roles claros."
+      - "Evitar almacenar datos de otras instituciones; en su lugar, consumirlos vía servicios de interoperabilidad."
+      - "Publicar y compartir datos abiertos en DatosGob, respetando siempre la protección de datos personales."
+      - "Implementar mecanismos para que las personas no proporcionen la misma información más de una vez."
+      - "Asegurar medidas de seguridad y conservación que garanticen integridad y disponibilidad de datos."
+      - "Permitir combinar datos para identificar patrones y tendencias útiles para políticas públicas."
+
+Glosario_Ref_Lexicon:
+  Description: "Conceptos de diseño de servicios y datos vinculados al Lexicon TDE."
+  Terms:
+    - Term: "Interoperabilidad"
+      Ref_ID: "TDE_DEF_INTEROPERABILIDAD"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEROPERABILIDAD"
+    - Term: "Datos abiertos"
+      Ref_ID: "TDE_DEF_DATOS_ABIERTOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_ABIERTOS"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Estrategias, normas y guías relacionadas con diseño de servicios."
+  XRef_Required:
+    - "urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:datos_administracion_estado:1.0.0"
+    - "urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0"
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_autenticacion:1.0.0"

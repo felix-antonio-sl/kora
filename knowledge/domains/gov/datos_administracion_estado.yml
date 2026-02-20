@@ -1,0 +1,302 @@
+# KODA TDE Estrategia de Datos de la Administración del Estado
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:datos_administracion_estado:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_estrategias"
+  type: "Estrategia_Datos_Administracion_Estado"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "EstrategiasEstrategias/Estrategia_de_Datos_de_la_Administración_del_Estado.md"
+    source_url: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia_Datos"
+    source_updated_at: "2025-10-07T23:17:43.095Z"
+  status: draft
+
+ID: "TDE-ESTRATEGIA-DATOS-ADM-ESTADO-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-11
+Ctx: "Estrategia de Datos de la Administración del Estado (WikiGuías SGD) transformada a KODA para namespace tde"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía estratégica oficial sobre datos en la Administración del Estado"
+  objective: >-
+    Proveer respuestas densas y alineadas con la Estrategia de Datos de la Administración
+    del Estado, preservando el 100% del MEAT del documento original y organizándolo en
+    bloques consultables (contexto, visión, objetivos, ejes, lineamientos y medidas).
+  usage_guidance:
+    - "Usar este artefacto como fuente principal para consultas sobre la Estrategia de Datos del Estado."
+    - "Para definiciones de términos técnicos de datos, interoperabilidad e infraestructura digital, preferir Ref a IDs del Lexicon TDE (kb_tde_core_lexicon_wikiguias_koda)."
+    - "Cuando se necesiten detalles de medidas concretas del plan de acción, navegar a la sección Ejes_Estrategicos y sus medidas asociadas."
+  style:
+    - "Responder en es-CL, en tono técnico y claro."
+    - "Explicar con ejemplos cuando sea útil para funcionarios públicos no especialistas."
+
+Metadata_Original:
+  category: "Estrategias/Estrategias"
+  tags:
+    - "datos"
+    - "estrategia"
+  description: >-
+    La Estrategia de Datos de la Administración del Estado entrega lineamientos y propone
+    una hoja de ruta para que el Estado avance hacia una gestión de datos estratégica,
+    con foco en la generación de valor público para las personas.
+
+Contexto_y_Justificacion:
+  - ID: "TDE_EST_DATOS_CTX_001"
+    Type: "Relevancia"
+    Ctx: >-
+      La transformación digital ha convertido a las TIC y a los datos en un elemento
+      central para la vida de las personas, la economía y la gestión pública. Los datos
+      personales y no personales pueden ser usados, analizados, agregados, intercambiados
+      e integrados a lo largo de todo su ciclo de vida.
+    Evidence:
+      - "Chile es líder regional en transformación digital según el E-Government Survey 2024, sólo superado por Uruguay."
+      - "Existen avances legales: digitalización de compras públicas, solicitudes de información y procedimientos administrativos."
+      - "Existen plataformas clave como ClaveÚnica, FirmaGob, SIMPLE, RIS, ChileAtiende, entre otras."
+
+  - ID: "TDE_EST_DATOS_CTX_002"
+    Type: "Problema_Oportunidad"
+    Ctx: >-
+      A pesar de los avances, Chile aún no opera como un sector público plenamente impulsado
+      por datos ni abre sus datos por defecto a la ciudadanía, lo que limita el valor
+      público y el desarrollo económico.
+    Res:
+      - "Menor capacidad para anticiparse y responder proactivamente a necesidades ciudadanas."
+      - "Menor aprovechamiento de ahorros y eficiencia derivados de sistemas interoperables."
+    Src:
+      - "Banco Mundial 2021: ahorros globales significativos por interoperabilidad de datos."
+      - "Estudios UE sobre valor económico de los datos abiertos."
+
+  - ID: "TDE_EST_DATOS_CTX_003"
+    Type: "Brechas_Estructurales_Talento_Tecnologia"
+    Ctx: >-
+      El diagnóstico participativo identifica brechas estructurales, de talento y tecnológicas
+      que impiden un uso estratégico de los datos en todo el Estado.
+    Structural_Brechas:
+      - "Ausencia de estructuras de gobernanza de datos consolidadas para todo el Estado."
+      - "Falta de definición clara de propósito, prioridades y responsables de calidad de datos."
+      - "Altos niveles de silos de información y fragmentación de sistemas."
+    Talent_Brechas:
+      - "Escasez de profesionales TIC especializados en datos."
+      - "Baja presencia de científicos/analistas de datos y personal capacitado en datos en otras áreas."
+      - "Diferencias marcadas entre municipios grandes y rurales en talento y alfabetización digital."
+    Technology_Brechas:
+      - "Sistemas obsoletos y falta de infraestructura y arquitectura de datos adecuada."
+      - "Bajo uso de tecnologías avanzadas para interoperabilidad y gestión de datos."
+      - "Baja participación en el Portal de Datos Abiertos y en anonimización de datos."
+
+Vision_y_Objetivo:
+  Vision:
+    ID: "TDE_EST_DATOS_VIS_001"
+    Def: >-
+      Para 2030, la Administración del Estado chileno estará completamente impulsada por
+      datos, información y conocimiento, ofreciendo servicios públicos más proactivos,
+      eficientes, seguros y confiables, y consolidando a Chile como líder en el uso
+      estratégico de datos en la OCDE y referente regional en gobernanza digital.
+  Objetivo:
+    ID: "TDE_EST_DATOS_OBJ_001"
+    Obj: >-
+      Transformar la Administración del Estado para que, mediante el uso estratégico de
+      datos, información y conocimiento, mejore la calidad de vida de las personas y
+      responda de forma eficiente, confiable, resiliente y proactiva a necesidades y
+      desafíos del país, generando valor público.
+
+Ejes_Estrategicos:
+  Overview:
+    ID: "TDE_EST_DATOS_EJE_OVERVIEW"
+    Ctx: >-
+      La Estrategia de Datos se organiza en tres ejes estratégicos transversales que
+      funcionan como habilitantes: (i) Ecosistema: gestión y gobernanza de datos,
+      (ii) Personas: habilidades y capacidades, (iii) Tecnología: infraestructura
+      pública digital para generar valor público.
+
+  Ejes:
+    - ID: "TDE_EST_DATOS_EJE_1"
+      Name: "Ecosistema: gestión y gobernanza de datos"
+      Purp: >-
+        Construir un ecosistema de datos multinivel e intersectorial que trate los datos
+        como activo estratégico, con gobernanza clara, estándares y colaboración entre
+        actores públicos, privados, académicos y sociedad civil.
+      Lineamientos_Estrategicos:
+        - ID: "TDE_EST_DATOS_EJE_1_LIN_001"
+          Name: "Gestion_y_gobernanza_de_datos_con_enfoque_ciudadano"
+          Def: >-
+            La gestión de datos a lo largo de su ciclo de vida debe centrarse en las
+            necesidades, derechos y expectativas ciudadanas. Cada órgano debe ser fuente
+            confiable de datos y metadatos bajo un enfoque coordinado de gobierno.
+        - ID: "TDE_EST_DATOS_EJE_1_LIN_002"
+          Name: "Coordinacion_multinivel"
+          Def: >-
+            Desarrollar capacidades para intercambiar y utilizar datos e información en
+            todos los niveles del Estado, con énfasis en gobiernos locales, optimizando
+            flujos de intercambio y eliminando duplicaciones.
+        - ID: "TDE_EST_DATOS_EJE_1_LIN_003"
+          Name: "Coordinacion_intersectorial"
+          Def: >-
+            Garantizar interoperabilidad e integración segura de datos entre sectores,
+            priorizando sectores clave y permitiendo diseño de políticas públicas
+            basadas en evidencia y colaboración entre órganos.
+      Medidas_Claves_Resumen:
+        - "Creación del Consejo Estratégico de Datos de la Administración del Estado."
+        - "Designación de encargados de datos y grupos técnicos de directores de datos."
+        - "Desarrollo de inventario de datos del Estado y normativas técnicas para datos maestros y de referencia."
+        - "Impulso a interoperabilidad y creación de espacios de colaboración público-privados en datos."
+
+    - ID: "TDE_EST_DATOS_EJE_2"
+      Name: "Personas: habilidades y capacidades"
+      Purp: >-
+        Desarrollar talento digital en el sector público para que las y los funcionarios
+        cuenten con competencias necesarias para gestionar datos, liderar cambios y
+        aprovechar la infraestructura digital.
+      Lineamientos_Estrategicos:
+        - ID: "TDE_EST_DATOS_EJE_2_LIN_001"
+          Name: "Desarrollo_de_talento_digital"
+          Def: >-
+            Implementar programas permanentes de aprendizaje, capacitación y especialización
+            en competencias digitales y de datos para todo el funcionariado.
+        - ID: "TDE_EST_DATOS_EJE_2_LIN_002"
+          Name: "Gestion_del_cambio"
+          Def: >-
+            Incorporar marcos de competencias y herramientas de gestión del cambio para
+            facilitar la adaptación a la digitalización y nuevas normativas de
+            ciberseguridad, privacidad y gobierno digital.
+        - ID: "TDE_EST_DATOS_EJE_2_LIN_003"
+          Name: "Mejora_de_gestion_y_servicios"
+          Def: >-
+            Empoderar al funcionariado para interactuar de forma autónoma con herramientas
+            y plataformas digitales, usando la tecnología para potenciar su trabajo,
+            reducir brechas digitales y mejorar servicios.
+      Medidas_Claves_Resumen:
+        - "Capacitaciones y certificaciones en gobierno y gestión de datos, IA, interoperabilidad y datos abiertos."
+        - "Apoyo al reclutamiento de perfiles de datos en instituciones públicas."
+        - "Programas de alfabetización digital, gestión del cambio y desarrollo de talento en niveles locales y centrales."
+
+    - ID: "TDE_EST_DATOS_EJE_3"
+      Name: "Tecnología: Infraestructura pública digital para generar valor público"
+      Purp: >-
+        Desplegar y fortalecer la infraestructura pública digital (IPD) que permita
+        gestionar, procesar, compartir y usar información de manera segura, eficiente y
+        accesible, habilitando gobierno impulsado por datos e innovación.
+      Lineamientos_Estrategicos:
+        - ID: "TDE_EST_DATOS_EJE_3_LIN_001"
+          Name: "Red_de_interoperabilidad"
+          Def: >-
+            Fortalecer la red de interoperabilidad del Estado para cumplir el principio
+            de "sólo una vez", mediante servicios centralizados y compartidos que
+            permitan intercambio de datos con estándares comunes.
+        - ID: "TDE_EST_DATOS_EJE_3_LIN_002"
+          Name: "Datos_abiertos"
+          Def: >-
+            Potenciar infraestructura y herramientas para publicar, encontrar e integrar
+            datos abiertos, fomentando transparencia, innovación y creación de servicios."
+        - ID: "TDE_EST_DATOS_EJE_3_LIN_003"
+          Name: "Integracion_de_datos"
+          Def: >-
+            Desarrollar servicios e infraestructuras integradas de datos que permitan
+            decisiones basadas en evidencia, con datos actualizados, relevantes y
+            confiables.
+        - ID: "TDE_EST_DATOS_EJE_3_LIN_004"
+          Name: "Innovacion_e_IA_centrada_en_datos"
+          Def: >-
+            Asegurar que la infraestructura de datos soporte casos de uso de IA y
+            tecnologías emergentes, con entornos controlados (sandboxes), gestión de
+            riesgos, transparencia algorítmica y cumplimiento de la Política Nacional de IA.
+      Medidas_Claves_Resumen:
+        - "Desarrollo de portal público para visualizar avance de la Estrategia de Datos."
+        - "Mejoras al portal de datos abiertos y nuevas integraciones geoespaciales."
+        - "Implementación de nueva plataforma de interoperabilidad del Estado y mecanismos de consentimiento."
+        - "Creación de Centro de Excelencia en IA y guía para pilotos de IA."
+
+Glosario_Ref_Lexicon:
+  Description: >-
+    El glosario original de la Estrategia de Datos se ha telegrafizado y centralizado
+    en el artefacto core kb_tde_core_lexicon_wikiguias_koda.yml. Esta sección provee
+    el mapeo entre términos usados en la estrategia y los IDs del Lexicon TDE.
+  Terms:
+    - Term: "API (Application Programming Interface)"
+      Ref_ID: "TDE_DEF_API"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_API"
+    - Term: "Dato"
+      Ref_ID: "TDE_DEF_DATO"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATO"
+    - Term: "Datos abiertos"
+      Ref_ID: "TDE_DEF_DATOS_ABIERTOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_ABIERTOS"
+    - Term: "Datos maestros"
+      Ref_ID: "TDE_DEF_DATOS_MAESTROS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_MAESTROS"
+    - Term: "Datos de referencia"
+      Ref_ID: "TDE_DEF_DATOS_REFERENCIA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_REFERENCIA"
+    - Term: "Integracion de datos"
+      Ref_ID: "TDE_DEF_INTEGRACION_DATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEGRACION_DATOS"
+    - Term: "Interoperar"
+      Ref_ID: "TDE_DEF_INTEROPERAR"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEROPERAR"
+    - Term: "Metadatos"
+      Ref_ID: "TDE_DEF_METADATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_METADATOS"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+    - Term: "Servicios compartidos"
+      Ref_ID: "TDE_DEF_SERVICIOS_COMPARTIDOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_COMPARTIDOS"
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+    - Term: "Tecnologias digitales"
+      Ref_ID: "TDE_DEF_TECNOLOGIAS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_TECNOLOGIAS_DIGITALES"
+
+Bibliografia_Resumen:
+  Description: >-
+    La Estrategia de Datos se apoya en estudios y documentos de organismos internacionales
+    y nacionales sobre gobierno digital, datos y transformación digital. Para detalles,
+    revisar el documento original; aquí se listan las principales fuentes.
+  Sources:
+    - "Banco Mundial (2021). World Development Report 2021: Data for Better Lives."
+    - "CEPAL (2023). Análisis de modelos de gobernanza de datos en el sector público."
+    - "Naciones Unidas (2024). E-Government Survey 2024."
+    - "OCDE (2019, 2024). The Path to Becoming a Data-Driven Public Sector; Digital Government Index."
+    - "DAMA International (2017). DAMA-DMBOK."
+    - "Estudios y diagnósticos de la Secretaría de Gobierno Digital de Chile y Universidad de Chile sobre brechas de talento y gobierno digital."
+
+Colaboradores_Resumen:
+  Description: >-
+    La estrategia fue elaborada con la participación de múltiples ministerios, servicios
+    públicos, organismos autónomos, academia, sector privado y organizaciones de la
+    sociedad civil.
+  Groups:
+    - "Ministerios y servicios públicos (Interior, Ciencia, Hacienda, Desarrollo Social, etc.)."
+    - "Organismos autónomos (Contraloría General de la República, Instituto Nacional de Estadísticas)."
+    - "Superintendencias y reguladores sectoriales (Seguridad Social, Mercado Financiero, SERNAC)."
+    - "Municipios (por ejemplo, Municipalidad de Renca)."
+    - "Organismos internacionales (BID, Alianza Digital UE-ALC, e-Governance Academy)."
+    - "Academia y centros de investigación (Universidad de Chile, Universidad Adolfo Ibáñez, Consorcio IDI)."
+    - "Asociaciones y fundaciones (ACTI, Chiletec, ChileTransparente, Fundación PaísDigital)."

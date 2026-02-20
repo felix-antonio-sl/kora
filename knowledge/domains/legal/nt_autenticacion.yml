@@ -1,0 +1,285 @@
+# KODA TDE Lineamiento Técnico: Norma Técnica de Autenticación (Decreto 9)
+---
+_manifest:
+  urn: "urn:knowledge:koda:legal:nt_autenticacion:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Norma_Tecnica_Autenticacion"
+  provenance:
+    created_by: "Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosNormas/Decreto_9__Norma_Técnica_de_Autenticación.md"
+    source_url: "https://wikiguias.digital.gob.cl/Normas/Decreto9"
+    source_updated_at: "2025-10-07T20:57:23.522Z"
+  status: draft
+
+ID: "TDE-LIN-NORMA-AUTENT-09"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Ministerio Secretaría General de la Presidencia"
+Human-Editor: "División de Gobierno Digital - Ministerio SEGPRES"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Norma Técnica de Autenticación para mecanismos oficiales (ClaveÚnica, Clave Tributaria y otros) utilizados en plataformas electrónicas de los OAEs para validar identidad de usuarios en procedimientos administrativos"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserva el MEAT (objeto, definiciones, requisitos técnicos, obligaciones
+    de uso, protección de datos personales, trazabilidad, niveles/factores de autenticación)
+    y el esqueleto (artículos, párrafos, roles, procesos de integración) sin omitir
+    ningún requisito normativo.
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
+    Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference,
+    Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process,
+    Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference,
+    XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result,
+    Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document.
+    XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment)
+    in another artifact. Use Ctx/Ctx_Required for external legal frameworks without
+    specific KODA URN.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Norma técnica base para autenticación electrónica en la Transformación Digital del Estado"
+  objective: >-
+    Establecer cómo los OAEs deben implementar e integrar mecanismos oficiales de autenticación
+    (ClaveÚnica, Clave Tributaria y nuevos mecanismos), con estándares técnicos, requisitos de
+    seguridad, trazabilidad y protección de datos personales para el acceso a plataformas
+    electrónicas que soportan procedimientos administrativos.
+  usage_guidance:
+    - "Usar esta norma junto con la Norma de Seguridad de la Información y Ciberseguridad, la Norma de Interoperabilidad y las guías técnicas de integración (ClaveÚnica y Clave Tributaria)."
+    - "Tomar este lineamiento como referencia principal para decisiones sobre factores de autenticación, niveles de confianza y protección de datos personales asociada al login."
+  style:
+    - "Responder en es-CL, tono jurídico-técnico, con foco en requisitos normativos y técnicos concretos."
+
+Metadata_Original:
+  title: "Decreto 9 | Norma Técnica de Autenticación"
+  url: "https://wikiguias.digital.gob.cl/Normas/Decreto9"
+  category: "Lineamientos Técnicos/Normas"
+  tags:
+    - "decreto"
+    - "norma tecnica"
+    - "autenticación"
+    - "clave única"
+    - "clave tributaria"
+  description: "Establece la Norma Técnica de Autenticación."
+  updated_at: "2025-10-07T20:57:23.522Z"
+  promulgacion: "2023-05-19"
+  publicacion: "2023-08-17"
+  version: "Única - 17-AGO-2023"
+
+Contexto_y_Base_Legal:
+  ID: "TDE_LIN_AUTENT09_CTX_001"
+  Ctx: >-
+    La norma se dicta en el marco de la Constitución Política, la Ley 19.880, la Ley 21.180,
+    la Ley 19.628 sobre Protección de la Vida Privada, la Ley 19.477 (Servicio de Registro Civil
+    e Identificación), el DFL 1/2020 y el DS 4/2020 (Reglamento de Transformación Digital del
+    Estado). Forma parte del conjunto de seis normas técnicas mandatadas por el Reglamento
+    (interoperabilidad, seguridad, documentos/expedientes, notificaciones, calidad y autenticación).
+  Ctx_Optional:
+    - "La norma se elaboró mediante mesas técnicas interinstitucionales y un proceso de consulta ciudadana, siguiendo estándares internacionales de autenticación."
+
+Objeto_de_la_Norma:
+  ID: "TDE_LIN_AUTENT09_OBJ_001"
+  Articulo: 1
+  Purp: >-
+    Establecer la forma en que los OAEs deberán implementar e integrar los mecanismos oficiales
+    de autenticación en sus plataformas electrónicas institucionales, con el propósito de validar
+    con un nivel de confianza determinado los datos de identidad de quienes acceden a las
+    plataformas que soportan procedimientos administrativos y procesos relacionados.
+
+Definiciones_Clave:
+  ID: "TDE_LIN_AUTENT09_DEF_001"
+  Articulo: 2
+  Terms:
+    - Term: "Autenticacion"
+      Def: "Proceso electrónico que valida los datos de identificación de un(a) usuario(a) para permitirle el acceso a una plataforma electrónica."
+    - Term: "Factor_Autenticacion"
+      Def: "Dato o conjunto de datos de identificación de carácter reservado o inherentes a un(a) usuario(a), que permiten establecer su identidad con distintos grados de confianza."
+    - Term: "Mecanismo_Autenticacion"
+      Def: "Método o conjunto de procesos electrónicos que sustentan la autenticación con un nivel de confianza determinado."
+    - Term: "Mecanismo_Oficial_Autenticacion"
+      Def: "Mecanismo de autenticación que cumple con las disposiciones de la norma y cuenta con validación del Ministerio Secretaría General de la Presidencia."
+    - Term: "Plataforma_Electronica"
+      Def: "Software o conjunto de software, datos e infraestructura tecnológica que sustenta procesos o procedimientos."
+    - Term: "Usuarios"
+      Def: >-
+        Personas naturales o sus apoderados(as), representantes de personas jurídicas o entidades
+        y agrupaciones sin personalidad jurídica, así como funcionarios(as) que acceden a
+        plataformas electrónicas que soportan procedimientos administrativos o procesos
+        relacionados.
+
+Mecanismos_Oficiales_Autenticacion:
+  ID: "TDE_LIN_AUTENT09_MEC_001"
+  Articulo: 3
+  Obj: >-
+    Definir el uso obligatorio de mecanismos oficiales de autenticación para el acceso de
+    interesados(as) a plataformas electrónicas de los OAEs.
+  Req:
+    - "Los OAEs deberán utilizar mecanismos oficiales de autenticación, salvo casos expresamente exceptuados de tramitación electrónica por la Ley 19.880."
+    - "Cuando no sea posible usar un mecanismo oficial, el OAE podrá usar otros mecanismos sólo con autorización expresa previa del Ministerio SEGPRES, según guías técnicas del Art. 19."
+
+ClaveUnica:
+  ID: "TDE_LIN_AUTENT09_MEC_002"
+  Articulo: 4
+  Def: >-
+    Mecanismo oficial de autenticación administrado por el Ministerio SEGPRES, a través de la
+    División de Gobierno Digital, de uso exclusivo para personas naturales, basado en OpenID
+    Connect. Su factor de autenticación es una contraseña creada y administrada por la persona y
+    vinculada a su RUN.
+  Ctx:
+    - "El proceso de enrolamiento y atención a personas naturales depende del Servicio de Registro Civil e Identificación."
+    - "La DGD administra la plataforma de habilitación e integración de ClaveÚnica a los OAEs y la validación de datos de identificación."
+  Req:
+    - "La integración requiere aceptación de términos y condiciones definidos por la DGD, suscritos por la Jefatura Superior de Servicio, según la Guía Técnica del Art. 19."
+
+ClaveTributaria:
+  ID: "TDE_LIN_AUTENT09_MEC_003"
+  Articulo: 5
+  Def: >-
+    Mecanismo oficial de autenticación de uso exclusivo para personas jurídicas o entidades o
+    agrupaciones sin personalidad jurídica que actúan como agrupación. Su factor de autenticación
+    es una contraseña entregada por el Servicio de Impuestos Internos (SII) a los contribuyentes.
+  Req:
+    - "Salvo el SII respecto de sus propias plataformas, ningún OAE podrá utilizar Clave Tributaria para autenticar personas naturales; tales autenticaciones carecen de validez."
+    - "El SII administra Clave Tributaria y define sus términos y condiciones, que deberán ser aceptados por la Jefatura Superior de Servicio de los OAEs que la integren."
+
+Estandares_Tecnicos_Mecanismos:
+  ID: "TDE_LIN_AUTENT09_EST_001"
+  Articulo: 6
+  Req:
+    - "Los mecanismos oficiales de autenticación deben basarse en los estándares OpenID Connect y OAuth 2.0, o superiores."
+    - "Los datos de identificación asociados a factores de autenticación deben almacenarse cifrados, mediante algoritmos como Bcrypt, PBKDF2, SHA-3 y Argon2, o superiores."
+    - "La transmisión de datos durante la autenticación debe utilizar protocolos cifrados como TLSv1.2 o superiores."
+    - "Los registros de gestión y uso de los mecanismos oficiales deben ser trazables y cumplir con los requisitos del párrafo sobre registro y trazabilidad (Art. 13)."
+  Medidas_Prevencion:
+    Articulo: 7
+    Req:
+      - "Implementar mecanismos para prevenir accesos no autorizados (por ejemplo, CAPTCHA u otros), junto con límites de intentos fallidos y bloqueo posterior."
+      - "Definir y aplicar un procedimiento de desbloqueo seguro."
+  UX_y_Lineamientos_Graficos:
+    Articulo: 8
+    Req:
+      - "Incorporar buenas prácticas de experiencia de usuario y accesibilidad web en los procesos de autenticación."
+      - "Cumplir definiciones de marca y lineamientos gráficos provistos por el administrador del mecanismo oficial."
+  Terminos_y_Condiciones:
+    Articulo: 9
+    Req:
+      - "El órgano que administre un mecanismo oficial deberá publicar los términos y condiciones en su sitio web."
+
+Integracion_Mecanismos_Oficiales:
+  ID: "TDE_LIN_AUTENT09_INT_001"
+  Articulo: 10
+  Obj: "Establecer el proceso estándar de integración de mecanismos oficiales en plataformas electrónicas de los OAEs."
+  Proc:
+    - "Solicitud de integración del OAE al administrador del mecanismo oficial."
+    - "Entrega de credenciales e integración técnica del mecanismo en la plataforma."
+    - "Certificación de la integración y habilitación del mecanismo oficial."
+  Revocacion_Habilitacion:
+    Articulo: 11
+    Req:
+      - "El administrador del mecanismo oficial deberá revocar inmediatamente la habilitación a OAEs que incumplan esta norma o las guías técnicas asociadas."
+
+Uso_Mecanismos_Por_OAEs:
+  ID: "TDE_LIN_AUTENT09_USO_001"
+  Deber_Informacion:
+    Articulo: 12
+    Req:
+      - "Informar de inmediato al CSIRT del Ministerio del Interior y Seguridad Pública y al administrador del mecanismo oficial ante sospechas de riesgos o amenazas de seguridad en los mecanismos o plataformas que los utilizan."
+      - "Informar oportunamente al administrador del mecanismo oficial sobre eventos que impliquen aumentos de demanda no previstos que puedan afectar su correcto funcionamiento."
+  Registro_Trazabilidad_Accesos:
+    Articulo: 13
+    Req:
+      - "Mantener registros de accesos para asegurar la trazabilidad de autenticaciones realizadas a través de mecanismos oficiales."
+      - "Almacenar al menos: identificador del usuario autenticado y fecha/hora del acceso (sincronizada con la hora oficial chilena, en referencia a UTC+00:00 y SHOA)."
+      - "Definir mecanismos para identificar representantes de personas jurídicas autenticadas mediante Clave Tributaria, según guía del SII."
+  Proteccion_Datos_Personales:
+    Articulo: 14
+    Ctx_Required:
+      - "Ley 19.628 sobre Protección de la Vida Privada y sus reformas, en especial derechos de acceso, rectificación, cancelación y oposición."
+    Req:
+      - "Respetar en todo momento las normas sobre protección de datos personales de quienes se autentiquen en las plataformas electrónicas."
+      - "Implementar mecanismos que garanticen reserva y protección de datos personales, asegurando derechos ARCO y uso de datos sólo para las finalidades previstas en la ley."
+  Factores_Adicionales:
+    Articulo: 15
+    Req:
+      - "Evaluar la incorporación de factores adicionales de autenticación, especialmente en plataformas que dan acceso a información personal sensible."
+      - "Elevar niveles de seguridad de acuerdo con la criticidad del procedimiento administrativo, equilibrando seguridad y facilidad de acceso para los interesados."
+
+Nuevo_Mecanismo_Oficial:
+  ID: "TDE_LIN_AUTENT09_NUEVO_001"
+  Solicitud_Incorporacion:
+    Articulo: 16
+    Req:
+      - "Los OAEs pueden solicitar a la DGD la incorporación de nuevos mecanismos oficiales de autenticación adicionales a ClaveÚnica y Clave Tributaria."
+      - "La DGD debe analizar y resolver la solicitud, previa consulta al Servicio de Registro Civil e Identificación."
+  Requisitos_Tecnicos:
+    Articulo: 17
+    Req:
+      - "Los nuevos mecanismos que aspiren a ser oficiales deben cumplir, al menos, con los procesos y estándares establecidos en la norma y en las guías técnicas del Art. 19."
+  Gestion_Usuarios:
+    Articulo: 18
+    Req:
+      - "Contar con procesos de enrolamiento seguros, que minimicen la suplantación de identidad y definan los datos de identificación necesarios según el nivel de confianza requerido."
+      - "Disponer de políticas de privacidad accesibles asociadas al proceso de enrolamiento."
+      - "Desarrollar acciones de educación y promoción para el uso seguro del mecanismo y sus factores de autenticación."
+      - "Tener procesos para gestión de datos de identificación (creación, modificación y revocación de credenciales o dispositivos)."
+      - "Ofrecer un servicio de soporte a usuarios para consultas y reporte de problemas en el uso del mecanismo."
+
+Disposiciones_Finales:
+  ID: "TDE_LIN_AUTENT09_DISP_001"
+  Guias_Tecnicas:
+    Articulo: 19
+    Def: >-
+      La DGD dictará una o más guías técnicas para facilitar la implementación de la norma,
+      estableciendo aspectos operativos y procesos (incluida la integración a mecanismos
+      oficiales y uso de mecanismos no oficiales autorizados)." 
+  Gradualidad:
+    Articulo: 20
+    Ctx: >-
+      La aplicación de la norma será acorde a la gradualidad del DFL 1/2020; la DGD definirá
+      lineamientos y formatos para que los OAEs obligados implementen la norma de forma
+      progresiva.
+  Revision:
+    Articulo: 21
+    Req:
+      - "Revisar y actualizar la norma al menos cada dos años; el plazo se cuenta desde la entrada en vigencia de esta norma técnica."
+      - "Las actualizaciones deben tomar en consideración aprendizajes y dificultades de aplicación reportados por los OAEs, impulsar buenas prácticas y minimizar efectos de prácticas incorrectas."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de autenticación y plataformas apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Autenticacion"
+      Ref_ID: "TDE_DEF_AUTENTICACION"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_AUTENTICACION"
+    - Term: "Factor de autenticacion"
+      Ref_ID: "TDE_DEF_FACTOR_AUTENTICACION"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_FACTOR_AUTENTICACION"
+    - Term: "Plataforma electronica"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Normas, plataformas y guías relacionadas con autenticación y protección de datos personales."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_notificaciones:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:claveunica:1.0.0"
+    - "urn:knowledge:koda:gov:notificaciones:1.0.0"
+    - "urn:knowledge:koda:gov:simple_saas:1.0.0"

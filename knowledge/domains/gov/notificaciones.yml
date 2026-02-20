@@ -1,0 +1,413 @@
+# KODA TDE Plataforma Compartida: Plataforma de Notificaciones del Estado
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:notificaciones:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Plataforma_Compartida_Notificaciones_Estado"
+  provenance:
+    created_by: "División de Gobierno Digital - Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_files:
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_atención_ciudadana_plataforma_de_notificaciones.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_usuario_institucional_Plataforma_de_Notificaciones_del_Estado.md"
+    source_urls:
+      - "https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica"
+      - "https://wikiguias.digital.gob.cl/Manuales/manual-de-inicio-notificaciones"
+    source_updated_at:
+      - "2025-11-06T20:02:48.380Z"
+      - "2025-10-07T23:06:17.218Z"
+  status: draft
+
+ID: "TDE-PLAT-NOTIF-016"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "División de Gobierno Digital - Ministerio SEGPRES"
+Human-Editor: "Equipo Plataforma de Notificaciones - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía de integración y operación de la Plataforma de Notificaciones Electrónicas del Estado para OAEs (vía web y API, CasillaÚnica/DDU, en cumplimiento de la Norma Técnica de Notificaciones)"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Plataforma compartida para la práctica de notificaciones electrónicas mediante CasillaÚnica"
+  objective: >-
+    Guiar a los OAEs en la integración y uso operativo de la Plataforma de Notificaciones del
+    Estado, tanto por interfaz web como vía API, asegurando el cumplimiento de la Norma Técnica
+    de Notificaciones, del uso de DDU/CasillaÚnica y de los criterios de CPAT y PISEE.
+  usage_guidance:
+    - "Usar este lineamiento para diseñar, integrar y operar la Plataforma de Notificaciones en instituciones públicas, coordinadamente con ClaveÚnica, CPAT y el modelo de interoperabilidad."
+    - "Complementar con las normas técnicas de Notificaciones, Documentos/Expedientes, Interoperabilidad y Autenticación, así como con STD 2025 y la Guía rápida CPAT."
+  style:
+    - "Responder en es-CL, tono técnico-operativo, con pasos claros y referencias normativas."
+
+Metadata_Original:
+  title: "Plataforma de Notificaciones electrónicas del Estado (Manual de Inicio e Integración)"
+  urls:
+    - "https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica"
+    - "https://wikiguias.digital.gob.cl/Manuales/manual-de-inicio-notificaciones"
+  category: "Plataformas Compartidas/Manuales de Uso"
+  tags:
+    - "notificaciones"
+    - "plataforma compartida"
+    - "casilla única"
+    - "DDU"
+    - "PISEE"
+  description: "Documentos que describen el contexto, proceso de integración y operación de la Plataforma de Notificaciones del Estado, incluyendo uso web y vía API."
+  updated_at:
+    - "2025-11-06T20:02:48.380Z"
+    - "2025-10-07T23:06:17.218Z"
+
+Contexto_y_Relacion_Ley_TD:
+  ID: "TDE_PLAT_NOTIF_CTX_001"
+  Src:
+    - "Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md"
+    - "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md"
+  Ctx: >-
+    La Plataforma de Notificaciones Electrónicas del Estado es el canal oficial para que los OAEs
+    envíen notificaciones electrónicas a las personas en el marco de procedimientos administrativos,
+    utilizando como base el Registro de Domicilios Digitales Únicos (DDU) y la CasillaÚnica. Forma
+    parte de la implementación de la Ley 21.180 de Transformación Digital del Estado, del DFL N°1
+    y de la Norma Técnica de Notificaciones.
+  Obj:
+    - "Optimizar la comunicación entre instituciones públicas y ciudadanía mediante notificaciones electrónicas seguras, trazables y centralizadas."
+    - "Alinear la práctica de notificaciones con el uso obligatorio de medios electrónicos para procedimientos administrativos."
+
+Definiciones_Clave:
+  ID: "TDE_PLAT_NOTIF_DEF_001"
+  Src:
+    - "Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md"
+    - "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md"
+  Terms:
+    - Term: "API_Notificaciones"
+      Def: "Servicio web que permite integrar plataformas institucionales al componente de envío de mensajes de la Plataforma de Notificaciones para gestionar notificaciones en forma automática."
+    - Term: "Casilla_Unica"
+      Def: >-
+        Componente que puede configurarse como DDU, ofreciendo una bandeja de mensajes centralizada
+        donde las personas acceden a todas las notificaciones recibidas desde OAEs.
+    - Term: "DDU"
+      Def: "Domicilio Digital Único: medio electrónico elegido por la persona para recibir notificaciones electrónicas (CasillaÚnica o correo electrónico validado)."
+    - Term: "Notificacion_Electronica"
+      Def: >-
+        Acto de comunicar formalmente a la persona destinataria una resolución u otro acto
+        administrativo, mediante un mensaje enviado a través de la Plataforma de Notificaciones.
+    - Term: "Aviso_Notificacion"
+      Def: >-
+        Correo electrónico informativo que avisa la existencia de una nueva notificación en la
+        CasillaÚnica; no constituye notificación en sí.
+
+Plataforma_Notificaciones_y_Obligatoriedad:
+  ID: "TDE_PLAT_NOTIF_PLAT_001"
+  Src:
+    - "Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md"
+    - "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md"
+  Ctx: >-
+    La plataforma registra personas naturales y jurídicas en el DDU y ejecuta las notificaciones
+    electrónicas de los OAEs. Es una plataforma electrónica centralizada para notificaciones de
+    procedimientos administrativos que las requieran.
+  Req:
+    - "Todos los OAEs deben practicar sus notificaciones por medios electrónicos usando la información del Registro de DDU (art. 46 Ley 19.880)."
+    - "Los OAEs deben integrarse a la plataforma para cumplir el mandato de notificar a interesados y apoderados mediante medios electrónicos."
+
+Prerequisitos_Institucion:
+  ID: "TDE_PLAT_NOTIF_PRE_001"
+  Src: "Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md"
+  Req:
+    - "Contar con Coordinador/a de Transformación Digital oficialmente designado (oficio a SGD y registro en Red de Coordinadores)."
+    - "Asegurar que los funcionarios que usarán la plataforma cuenten con ClaveÚnica activa."
+    - "Seleccionar uno o más procedimientos administrativos a notificar, cargados en el CPAT, idealmente con disponibilidad en línea."
+    - "Aplicar filtros CPAT recomendados (nivel de digitalización, tipos de usuario, notificación practicada, etc.)."
+    - "Definir el equipo de contacto institucional: contacto técnico, contacto de negocio y administrador institucional."
+    - "Definir el medio de envío de notificaciones: vía web, vía API o ambas."
+  Filtros_CPAT_Extracto:
+    - "Estado registro: Completado"
+    - "Tipo de usuario(a): Ambos tipos de personas: Persona natural y jurídica"
+    - "Persona natural: Todo individuo de la especie humana, cualquiera sea su sexo, edad, raza o condición social"
+
+Proceso_Integracion_Plataforma:
+  ID: "TDE_PLAT_NOTIF_INT_001"
+  Src: "Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md#proceso-de-integración-a-la-plataforma-de-notificaciones-electrónicas-del-estado"
+  Ctx: >-
+    El proceso de integración se compone de solicitud de integración, evaluación, actividades en
+    ambiente de pruebas, certificación y habilitación en producción.
+  Pasos:
+    - Step: "Solicitud_Integracion"
+      Act:
+        - "Ingresar a CeroFilas (https://gobdigital.cerofilas.gob.cl/)."
+        - "Crear el trámite 'Solicitud de integración a la Plataforma de Notificaciones' (instituciones)."
+        - "Indicar en el formulario: institución solicitante, contactos administrativos y técnico, administrador institucional, tipo de integración (web/API/ambas), nombre/descr. de la aplicación y, opcionalmente, URL."
+        - "Leer y aceptar los términos y condiciones para las instituciones antes de enviar."
+    - Step: "Evaluacion_Solicitud"
+      Act:
+        - "La SGD verifica que los datos estén completos, que correos sean institucionales y que la institución no esté ya integrada."
+        - "Si hay inconsistencias, se rechaza la solicitud con observaciones; la institución debe corregir y reenviar."
+        - "Si se acepta, la SGD habilita a la institución y al administrador institucional en ambiente de pruebas y envía correo con información de acceso y, si corresponde, credenciales API y nodo PISEE."
+    - Step: "Actividades_Ambiente_Pruebas"
+      Req:
+        - "Configurar la institución vía interfaz web: cargar logo institucional (PNG/JPG, 80-350x80 px, máx. 5 MB); crear una o más firmas institucionales (texto); seleccionar procedimientos administrativos desde lista CPAT."
+        - "Crear usuarios con rol de administrador de mensajes."
+        - "Enviar al menos un mensaje desde la plataforma web y, si corresponde, al menos uno desde la API vía nodo PISEE."
+      Ctx:
+        - "Para pruebas se recomienda usar RUN de ejemplo: 33333333-3 (DDU Casilla) y 33333351-1 (DDU Excepcionado)."
+        - "Se puede visualizar la recepción en CasillaÚnica de pruebas accediendo a https://portal.demo.casillaunica.gob.cl/casilla/ con RUN 33333333-3 y clave 'testing'."
+    - Step: "Solicitud_Certificacion"
+      Act:
+        - "Una vez realizadas las actividades en ambiente de pruebas, ingresar nuevamente a CeroFilas y continuar el flujo para solicitar certificación."
+        - "Adjuntar, si es necesario, comentarios y evidencias que faciliten la evaluación."
+    - Step: "Certificacion"
+      Req:
+        - "La SGD valida que la institución haya configurado logo, firmas y procedimientos, creado administrador de mensajes y enviado mensajes por web/API según el tipo de integración."
+      Res:
+        - "Si la certificación no se aprueba, se envían observaciones por correo; la institución debe corregir y volver a solicitar certificación."
+        - "Si se aprueba, se envía correo con detalles para configurar producción."
+    - Step: "Habilitacion_Produccion"
+      Req:
+        - "La SGD registra la institución y al administrador institucional en producción y genera credenciales API si aplica."
+        - "La institución debe repetir la configuración en producción (logo, firmas, procedimientos) y crear administrador de mensajes."
+        - "Para integración vía API, debe solicitar o reutilizar nodo PISEE en producción a través de Mesa de Servicios; el nodo debe ser autorizado para consumir la plataforma de notificaciones." 
+        - "Completar la integración API a través del nodo PISEE, si corresponde."
+
+  Soporte_y_Escalamiento:
+    Src: "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md#qué-debe-hacer-un-aoe-si-tiene-alguna-inquietud-o-inconveniente-con-la-plataforma"
+    Ctx:
+      - "Para informar sobre otros inconvenientes o hacer sugerencias, puede escribir al correo del producto. Ver figura 30"
+
+Operacion_via_Web:
+  ID: "TDE_PLAT_NOTIF_WEB_001"
+  Src:
+    - "Manual_de_Inicio_Plataforma_de_Notificaciones_electrónicas_del_Estado.md"
+    - "Manual_de_usuario_institucional_Plataforma_de_Notificaciones_del_Estado.md"
+  Ctx: >-
+    La plataforma ofrece dos tipos de mensajes enviados por interfaz web: Mensaje Simple y Mensaje
+    Múltiple. En ambos casos, la institución debe haber completado la configuración en producción.
+  Mensaje_Simple:
+    Def: "Un solo mensaje con mismo contenido y adjuntos para uno o varios destinatarios."
+  Mensaje_Multiple:
+    Def: "Varios grupos de destinatarios dentro de un mismo envío, con posibilidad de diferenciar destinatarios y adjuntos por grupo."
+  Req:
+    - "Elegir el tipo de mensaje en 'Crear mensaje'."
+    - "Seleccionar el procedimiento administrativo a notificar (previamente cargado por el administrador institucional)."
+    - "Agregar destinatarios manualmente o mediante archivo .csv."
+    - "Ingresar asunto (máx. 150 caracteres) y cuerpo de la notificación."
+    - "Adjuntar archivos de prueba en ambiente demo, evitando datos sensibles."
+    - "Opcionalmente asociar una firma institucional y/o usar plantillas predefinidas."
+  Adjuntos:
+    Req:
+      - "Peso máximo total 20 MB por mensaje (suma de todos los adjuntos)."
+      - "Extensiones permitidas: pdf, jpg, png, doc, docx, xls, xlsx."
+      - "Validación de firmas electrónicas en PDF: sólo se permiten documentos no adulterados, sin firmas revocadas y no modificados después de la firma."
+  Estados_Mensajes:
+    Def:
+      - "Enviado: mensaje enviado correctamente."
+      - "En proceso: mensaje en procesamiento."
+      - "Con error: la plataforma tuvo problemas para realizar el envío."
+
+Operacion_via_API_Notificaciones:
+  ID: "TDE_PLAT_NOTIF_API_001"
+  Src: "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md"
+  Ctx: >-
+    La API de notificaciones permite a OAEs habilitados gestionar envíos y consultar estados de
+    mensajes, con las mismas validaciones que la interfaz web.
+  Prerequisitos:
+    Req:
+      - "Tener un nodo de interoperabilidad PISEE 2 configurado y autorizado para consumir la plataforma."
+      - "Disponer de client_id y client_secret asociados a la institución."
+      - "Haber completado la habilitación en producción (configuración de institución, procedimientos, etc.)."
+  Endpoint_SendMessage:
+    URL: "/notificador/sendMessage"
+    Method: "POST"
+    ContentType: "multipart/form-data"
+    Partes:
+      - "data: cadena JSON con los datos de la notificación."
+      - "attachments: archivos adjuntos opcionales (múltiples)."
+    JSON_Data_Campos:
+      - Campo: "recipients"
+        Req: "Obligatorio; arreglo de objetos { rol_unico } con máx. 250 destinatarios; rol_unico es RUN/RUT sin dígito verificador."
+      - Campo: "message_type"
+        Req: "Obligatorio; valores válidos: 'NT' (Notificación), 'CP' (Comunicación Personal), 'CI' (Comunicado Institucional)."
+      - Campo: "procedure_code"
+        Req: "Obligatorio sólo si message_type='NT'; código del procedimiento administrativo habilitado."
+      - Campo: "procedure_stage"
+        Req: "Obligatorio sólo si message_type='NT'; valores: 1 (inicio), 2 (instrucción), 3 (finalización)."
+      - Campo: "signature_uid"
+        Req: "Opcional; UUID de la firma institucional a utilizar."
+      - Campo: "subject"
+        Req: "Obligatorio; asunto de la notificación (máx. 150 caracteres)."
+      - Campo: "content"
+        Req: "Obligatorio; contenido de la notificación."
+      - Campo: "content_type"
+        Req: "Obligatorio; MIME type, por ejemplo 'text/html'."
+      - Campo: "webhook_url"
+        Req: "Opcional; URL para recibir estado del procesamiento; si se define se envía POST con status y message_data_id."
+    Adjuntos:
+      Req:
+        - "Cada archivo ≤ 20 MB; total de adjuntos ≤ 20 MB."
+        - "Máx. 50 archivos por mensaje."
+        - "Extensiones permitidas: pdf, jpg, png, doc, docx, xls, xlsx; PDF con firma electrónica serán validados."
+
+API_Respuestas_y_Seguimiento:
+  ID: "TDE_PLAT_NOTIF_API_002"
+  Src: "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md#cómo-conocer-el-estado-de-una-notificación-enviada-desde-la-api"
+  Respuesta_Envio:
+    Ctx: >-
+      Si la llamada a /notificador/sendMessage es correcta, retorna HTTP 200 con JSON que incluye
+      message_data_id, sent_at y status (ej. 'pending').
+  Errores_Envio:
+    Def: "Cuando los datos no cumplen las validaciones, la API retorna un JSON con 'errors' (código y mensaje) y un 'message' resumen."
+    Codigos_Principales:
+      - "ERR001: No se proporcionó ningún destinatario (recipients vacío o inválido)."
+      - "ERR002: Índices de recipients con elementos sin 'rol_unico'."
+      - "ERR003: rol_unico no válido (tipo o longitud)."
+      - "ERR004: message_type no ingresado."
+      - "ERR005: message_type no permitido (código inválido o no habilitado para la institución)."
+      - "ERR006: procedure_code no ingresado cuando message_type='NT'."
+      - "ERR007: procedure_code no válido o no habilitado."
+      - "ERR008: logo institucional no configurado en la plataforma."
+      - "ERR013–ERR021: errores en adjuntos (formato no permitido, nombre >50 caracteres, peso total>20MB, duplicados, base64 inválido, extensión no coincide, tamaño>20MB, firma no válida o documento adulterado)."
+      - "ERR023: RUN no válido."
+      - "ERR026–ERR029: errores en asunto o contenido (longitud, ausencia, URL no válida)."
+      - "ERR030: más de 250 destinatarios."
+      - "ERR031: envío duplicado (mismo contenido dentro de 5 minutos)."
+      - "ERR032: más de 50 archivos."
+      - "ERR033: nombre de archivo con caracteres no permitidos."
+      - "ERR034: webhook_url con URL no válida."
+  Endpoint_MessageStatus:
+    URL: "/notificador/messageStatus/{message_data_id}"
+    Method: "GET"
+    Ctx: >-
+      Permite consultar el estado de una notificación enviada, identificada por message_data_id
+      devuelto por /notificador/sendMessage.
+    Respuesta_JSON:
+      Campos:
+        - "entity_id: ID de la institución."
+        - "message_data_id: ID del envío."
+        - "received_at: fecha de recepción del mensaje por la plataforma."
+        - "status: estado global del envío (ej. 'processed')."
+        - "subject: asunto del envío."
+        - "recipents_count: cantidad de destinatarios."
+        - "recipients: mapa donde cada clave es un rol_unico y su valor incluye ddu_type, message_status, method, delivered_at y read_at."
+      ddu_type_Valores:
+        - "casilla"
+        - "email"
+        - "not_configured"
+        - "excepcion"
+      message_status_Valores:
+        - "delivered"
+        - "error"
+        - "pending"
+        - "error_rejected"
+        - "error_undetermined_undetermined"
+        - "error_permanent_general"
+        - "error_permanent_no_email"
+        - "error_permanent_supressed"
+        - "error_permanent_on_account_suspension_list"
+        - "error_transient_general"
+        - "error_transient_mailbox_full"
+        - "error_transient_message_too_large"
+        - "error_transient_content_rejected"
+        - "error_transient_attachment_rejected"
+        - "error_send_message_mail"
+
+ Message_Status_y_DDU_Extractos:
+   ID: "TDE_PLAT_NOTIF_API_MSG_STATUS_003"
+   Tabla_3_Estados_Mensaje:
+     - Value: "pending"
+       Def: "Estado inicial, al crear el envío se crea con este estado."
+     - Value: "delivered"
+       Def: "Estado final, el envío queda con este estado al finalizar el proceso de enviar los mensajes."
+     - Value: "error"
+       Def: "Falló al momento de crear/actualizar el envío para el destinatario correspondiente."
+     - Value: "error_rejected"
+       Def: "Se ha determinado que el mensaje es sospechoso o no es válido"
+     - Value: "error_undetermined_undetermined"
+       Def: "No se ha podido determinar un motivo específico de rebote."
+     - Value: "error_permanent_general"
+       Def: "Ha ocurrido un rechazo permanente general."
+     - Value: "error_permanent_no_email"
+       Def: "Ha ocurrido un rechazo permanente porque la dirección de correo electrónico de destino no existe."
+     - Value: "error_permanent_supressed"
+       Def: "Se ha descartado el envío a esta dirección dado que tiene un historial reciente de rebotes como dirección no válida."
+     - Value: "error_permanent_on_account_suspension_list"
+       Def: "Se ha descartado el envío a esta dirección porque está en la lista de correos electrónicos con rebotes previos."
+     - Value: "error_transient_general"
+       Def: "Ha ocurrido un rebote general. Es posible que pueda enviar correctamente a este destinatario en el futuro."
+     - Value: "error_transient_mailbox_full"
+       Def: "Ha ocurrido un rebote. La bandeja de mensajes del destinatario está llenared"
+     - Value: "error_transient_message_too_large"
+       Def: "Ha ocurrido un rebote. Mensaje demasiado grande"
+     - Value: "error_transient_content_rejected"
+       Def: "Ha ocurrido un rebote. Contenido rechazado"
+     - Value: "error_transient_attachment_rejected"
+       Def: "Ha ocurrido un rebote. Archivo adjunto rechazado"
+     - Value: "error_send_message_mail"
+       Def: "No se ha podido comunicar con el servidor de correo"
+   Tabla_4_Estado_Segun_Configuracion_DDU:
+     - Estado_DDU_Destinatario: "DDU no configurada"
+       Estado_Mensaje_Inicial: "delivered"
+       Estado_Mensaje_Final: "delivered o error"
+     - Estado_DDU_Destinatario: "DDU excepcionada"
+       Estado_Mensaje_Inicial: "delivered"
+       Estado_Mensaje_Final: "delivered o error"
+     - Estado_DDU_Destinatario: "DDU configurada como casilla"
+       Estado_Mensaje_Inicial: "delivered"
+       Estado_Mensaje_Final: "delivered o error"
+     - Estado_DDU_Destinatario: "DDU configurada como correo electrónico"
+       Estado_Mensaje_Inicial: "pending"
+       Estado_Mensaje_Final: "delivered o error (todos los posibles errores indicados en la tabla 3 sección 4.3)"
+
+    Errores_por_destinatario_Extracto_Tabla_3:
+      Src: "Manual_de_integracion_Plataforma_de_Notificaciones_del_Estado.md#cómo-conocer-el-estado-de-una-notificación-enviada-desde-la-api"
+      Items:
+        - Code: "error_permanent_general"
+          Def: "Ha ocurrido un rechazo permanente general."
+        - Code: "error_transient_message_too_large"
+          Def: "Ha ocurrido un rebote. Mensaje demasiado grande"
+        - Code: "error_transient_attachment_rejected"
+          Def: "Ha ocurrido un rebote. Archivo adjunto rechazado"
+
+Glosario_Ref_Lexicon:
+  Description: "Términos clave de la Plataforma de Notificaciones conectados al Lexicon TDE."
+  Terms:
+    - Term: "Domicilio Digital Unico"
+      Ref_ID: "TDE_DEF_DDU"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DDU"
+    - Term: "Casilla Unica"
+      Ref_ID: "TDE_DEF_CASILLA_UNICA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_CASILLA_UNICA"
+    - Term: "Notificacion Electronica"
+      Ref_ID: "TDE_DEF_NOTIFICACION_ELECTRONICA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_NOTIFICACION_ELECTRONICA"
+    - Term: "Procedimiento Administrativo"
+      Ref_ID: "TDE_DEF_PROCEDIMIENTO_ADMINISTRATIVO"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PROCEDIMIENTO_ADMINISTRATIVO"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Normas y lineamientos que se articulan con la Plataforma de Notificaciones."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_notificaciones:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+    - "urn:knowledge:koda:gov:claveunica:1.0.0"
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:cpat_completa:1.0.0"

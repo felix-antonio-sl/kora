@@ -1,0 +1,38 @@
+koda_knowledge_resolver:
+  version: "1.0.0"
+  description: "Resolución canónica del monorepo Kora"
+  self:
+    namespace: koda
+    version: "1.0.0"
+    base_path: "."
+
+  resolution_rules:
+    # 1. Catálogo Maestro
+    - pattern: "^urn:knowledge:koda:catalog:master-(?P<workspace>[^:]+):.*$"
+      type: catalog
+      path: "catalog/catalog_master_kora.yml"
+
+    # 2. Skills
+    - pattern: "^urn:knowledge:koda:skills:(?P<skill>[^:]+):.*$"
+      type: skill
+      path: "skills/own/{skill}/skill_{skill_underscore}.yaml"
+
+    # 3. Herramientas (Tools)
+    - pattern: "^urn:knowledge:koda:tools:(?P<tool>[^:]+):.*$"
+      type: document
+      path: "tools/{tool}.yml"
+
+    # 4. Agentes
+    - pattern: "^urn:knowledge:koda:agents:(?P<agent>[^:]+):.*$"
+      type: agent
+      path: "agents/{agent}/agent_{agent_underscore}.yaml"
+
+    # 5. Artefactos de Conocimiento por Dominio KODA
+    #    NOTA: Este pattern asume extensión .yml por defecto.
+    #    Artefactos con extensiones .json, .ttl, .md se resuelven
+    #    mediante el campo explícito `file:` del catálogo maestro.
+    - pattern: "^urn:knowledge:koda:(?P<domain>[^:]+):(?P<artifact>[^:]+):.*$"
+      type: document
+      path: "knowledge/domains/{domain}/{artifact}.yml"
+      fallback_extensions: [".json", ".ttl", ".md", ".yaml"]
+      note: "Si el archivo .yml no existe, buscar con extensiones alternativas o resolver via catalog"

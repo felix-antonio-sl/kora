@@ -1,0 +1,145 @@
+# KODA Knowledge Artifact: Unified Multi-Model Representation
+# Domain: Category Theory / Multi-Model Data
+
+_manifest:
+  urn: "urn:knowledge:koda:cat:unified-multimodel:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/cat/integration/unified_multimodel.koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-05"
+    last_modified_by: "FS"
+    last_modified_at: "2025-12-05"
+    signature: null
+
+ID: CAT-MM-01
+Version: 1.0.0
+Status: Active
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: Cascade
+Creation-Date: 2025-12-05
+Modification-Date: 2025-12-14
+Version-Notes: "Initial KODA/Spec skeleton for Unified Multi-Model Representation."
+Ctx: "Notas estructuradas sobre schema category global y unificación de modelos SQL/NoSQL/Graph."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+Purp: "Registrar el marco de representación unificada para datos multi-modelo."
+Obj: "Servir de fuente formal para CM-INTEGRATION-ENGINE en integración SQL+MongoDB+Neo4j."
+
+Source:
+  Title: "Multi-model Data via Category Theory"
+  Authors: ["Varios"]
+  Ctx: "Uso de categorías para unificar modelos relacionales, documentos, grafos y key-value."
+
+Related_Concepts:
+  XRef:
+    - "urn:knowledge:koda:cat:algebraic-databases:1.0.0#UBER-QUERY"
+    - "urn:knowledge:koda:cat:data-lakes-ct:1.0.0#DL-GROTHENDIECK-DEF"
+  Notes: |
+    - Las uber-queries de algebraic_databases permiten componer consultas cross-schema.
+    - La construcción de Grothendieck unifica familias de esquemas indexados.
+    - Juntos forman la base teórica del CM-INTEGRATION-ENGINE.
+
+Unified_Framework:
+  - ID: UM-SCHEMA-CATEGORY-GLOBAL
+    Def: "Schema Category global: categoría cuyos objetos son tipos lógicos y morfismos son relaciones/paths entre ellos."
+    Components:
+      Objects: "Tablas, colecciones, nodos, documentos, keyspaces."
+      Morphisms: "Foreign Keys, refs, edges, paths, patrones."
+      Attributes: "root, pkey, refs, access_path por cada kind."
+    Use: "Obtener una vista unificada de todos los modelos de datos antes de integrar."
+    Proc: |
+      1. Inventariar todas las fuentes de datos (PostgreSQL, MongoDB, Neo4j, Redis, etc.).
+      2. Para cada fuente, extraer los tipos lógicos como objetos.
+      3. Extraer las relaciones (FKs, refs, edges) como morfismos.
+      4. Unificar en una sola categoría usando coproductos para objetos disjuntos.
+      5. Identificar objetos semánticamente equivalentes y crear morfismos de equivalencia.
+      6. El resultado es la Schema Category global.
+
+  - ID: UM-MODEL-KINDS
+    Def: "Clases de modelos de datos como realizaciones de la Schema Category global."
+    Kinds:
+      - ID: KIND-RELATIONAL
+        Objects: "Tablas"
+        Morphisms: "Foreign Keys"
+        Instance: "Conjuntos de tuplas"
+      - ID: KIND-DOCUMENT
+        Objects: "Colecciones"
+        Morphisms: "Nested refs / embedding"
+        Instance: "Árboles JSON"
+      - ID: KIND-GRAPH
+        Objects: "Nodos (tipos)"
+        Morphisms: "Edges (tipos)"
+        Instance: "Grafos etiquetados"
+      - ID: KIND-KEYVALUE
+        Objects: "Keyspaces"
+        Morphisms: "Prefijos/patrones de key"
+        Instance: "Mapas K→V"
+    Ref: UM-SCHEMA-CATEGORY-GLOBAL
+
+Instance_Category:
+  - ID: UM-INSTANCE-FUNCTOR
+    Def: "Instancia multi-modelo = funtor I: SchemaCategory → Set que asigna datos concretos a cada tipo global."
+    Use: "Representar el contenido combinado de múltiples bases de datos como una sola instancia categórica."
+
+  - ID: UM-WRAPPER-FUNCTOR
+    Def: "Wrapper W_db: DB_specific → SchemaCategory traduce cada esquema físico al esquema global."
+    Ex: |
+      W_postgres, W_mongo, W_neo4j: cada uno asigna tablas/colecciones/grafos a objetos de la Schema Category.
+    Use: "Normalizar diferentes tecnologías a un lenguaje categórico común."
+
+Query_Processing:
+  - ID: UM-QUERY-AS-FUNCTOR
+    Def: "Consulta multi-modelo = funtor Q: SchemaCategory → OutputKind."
+    Interpretation: "Cada consulta elige un tipo de salida (relational/document/graph/flat) como categoría destino."
+    Use: "Especificar explícitamente el modelo de salida de la integración."
+    Proc: |
+      1. Definir la consulta en términos de la Schema Category global.
+      2. Elegir el OutputKind (relational, document, graph, flat).
+      3. Construir funtor Q que mapea tipos globales a tipos del output elegido.
+      4. Ejecutar Q sobre la instancia global I para obtener Q(I).
+      5. Materializar el resultado en el formato del OutputKind.
+    Ex: |
+      -- Query: "usuarios con sus pedidos" sobre PostgreSQL + MongoDB
+      -- SchemaCategory: {User, Order, user_orders: Order→User}
+      -- OutputKind: document (JSON)
+      -- Resultado: [{user: {...}, orders: [{...}, {...}]}]
+
+  - ID: UM-OUTPUT-KIND
+    Def: "OutputKind = categoría target que representa el formato de salida."
+    Options: ["relational", "document", "graph", "flat"]
+    Use: "Controlar el tipo de resultado que el Arquitecto genera (p.ej., SQL vs JSON)."
+    Decision_Guide: |
+      - relational: cuando el consumidor es SQL-based o necesita JOINs.
+      - document: cuando el consumidor es una API REST/GraphQL o frontend.
+      - graph: cuando se necesitan traversals o path queries.
+      - flat: para exports CSV, ETL simple, o ML pipelines.
+
+

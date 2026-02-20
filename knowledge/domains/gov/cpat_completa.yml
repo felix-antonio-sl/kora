@@ -1,0 +1,641 @@
+# KODA TDE Lineamiento Técnico: Guía CPAT (completa)
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:cpat_completa:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Guia_CPAT_Completa"
+  provenance:
+    created_by: "STSador"
+    created_at: "2025-12-12"
+    source_corpus: "koda_internal"
+    source_files: []
+    source_urls: []
+    source_updated_at: []
+  status: draft
+
+ID: "TDE-LIN-CPAT-037"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "STSador"
+Human-Editor: "STSador"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-12
+Modification-Date: 2025-12-12
+Ctx: "Guía CPAT completa para apoyar a instituciones en el uso del Catálogo de Procedimientos Administrativos y Tramitaciones (CPAT), en la fase de preparación de la Ley N° 21.180, incluyendo conceptos clave de procedimiento administrativo, el formulario de caracterización de registros (SFD) y criterios de cálculo de soporte electrónico."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía completa para implementación del Catálogo de Procedimientos Administrativos y Tramitaciones (CPAT)"
+  objective: >-
+    Preservar y operacionalizar definiciones, requisitos y estructura de la guía CPAT completa,
+    incluyendo la tabla de implementación TDE, conceptos de procedimiento administrativo, el
+    formulario de caracterización (SFD) y los criterios de cálculo de soporte electrónico.
+  usage_guidance:
+    - "Usar este artefacto como referencia de detalle para registrar y caracterizar procedimientos/tramitaciones en CPAT y para interpretar el cálculo del nivel de soporte electrónico."
+  style:
+    - "Responder en es-CL, tono técnico-operativo, preservando listas y condiciones tal como están especificadas."
+
+Definitions_Dedup:
+  ID: "KB-066-DEDUP-001"
+  Field_Logic_Interop_Visibility:
+    ID: "KB-066-DEDUP-FIELD-LOGIC-INTEROP-01"
+    Def: "Cond: (Ref: FORM-CPAT-S7-MEDIO-OBTENER-DATO-01.Value == 'Hay interoperabilidad electrónica con la institución') -> Visibility: show."
+  Field_Logic_Notif_Visibility:
+    ID: "KB-066-DEDUP-FIELD-LOGIC-NOTIF-01"
+    Def: "Cond: (Ref: FORM-CPAT-S6-NOTIF-PRACTICADA-01.Value != 'No') -> Visibility: show."
+  Cond_Cumplimiento_Secuencia_Logica:
+    ID: "KB-066-DEDUP-COND-SECUENCIA-01"
+    Cond: "Cumplimiento si se cumple la siguiente secuencia lógica:"
+
+Proposito_de_la_Guia:
+  ID: "KB-066-PROPOSITO-01"
+  Purp: "Apoyar a instituciones en uso de plataforma Catálogo de Procedimientos Administrativos y Tramitaciones (CPAT)."
+  Ctx:
+    - "Fase de preparación de la Ley de Transformación Digital del Estado (Ley N° 21.180)."
+    - "Destinatarios: Equipos institucionales vinculados a implementación Ley N° 21.180; Coordinador/a de Transformación Digital."
+  Obj: "Facilitar la identificación y caracterización de procedimientos administrativos y otras tramitaciones."
+
+Contexto_Transformacion_Digital_del_Estado_TDE:
+  ID: "KB-066-CONTEXTO-TDE-01"
+  Src:
+    - "Ley N° 21.180 sobre Transformación Digital del Estado."
+  Mssn: "Repensar cumplimiento de mandato y entrega de servicios."
+  Obj: "Poner foco en necesidades de las personas por sobre necesidades burocráticas."
+  Proc: "Rediseño de procesos usando tecnología, datos e innovación para simplificar acceso."
+  Req:
+    - "Todos los procedimientos administrativos deben contar con soporte electrónico."
+    - "Servicios del Estado deben ser preferentemente digitales."
+  Ctx: "Responsable: Secretaría de Gobierno Digital (SegDig), dependiente de Subsecretaría de Hacienda."
+  Funciones_de_SegDig:
+    - Act: "Proponer Estrategia de Gobierno Digital."
+    - Act: "Coordinar implementación de la estrategia."
+    - Act: "Asesorar intersectorialmente en uso estratégico de tecnologías digitales, datos e información."
+    - Act: "Desarrollar y operar plataformas y servicios compartidos."
+  Objetivos_de_la_Digitalizacion:
+    - Res: "Otorgar mayor certeza, seguridad y celeridad."
+    - Res: "Permitir desarrollo de políticas públicas y gobierno basado en datos."
+    - Res: "Aumentar transparencia de procesos y actuaciones del Estado."
+  Implementacion:
+    Ctx: "Gradual."
+    Cond: "Conforme a grupos del DFL Nº1 MinSegPres y plazos de Ley N°21.464."
+    Fase_Inicial_Preparacion:
+      Obj: "Que instituciones identifiquen los procedimientos administrativos derivados de su mandato."
+      Res:
+        - "Planificar tránsito a soporte electrónico."
+        - "Establecer línea base y diagnóstico."
+
+Tabla_Resumen_de_Implementacion_TDE:
+  ID: "KB-066-CONTEXTO-TDE-TABLA-01"
+  Src:
+    - "Cuadro resumen DFL Nº1 MinSegPres y Ley N°21.464."
+  Table: |
+    | Año | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 |
+    |---|---|---|---|---|---|---|
+    | **GRUPO A** | Cpt: Preparación | Cpt: Comunicaciones Oficiales | Cpt: Ingreso electrónico de solicitudes | Cpt: Interoperabilidad | Cpt: Notificaciones electrónicas | Cpt: Expedientes electrónicos |
+    | **GRUPO B**| Cpt: Preparación | Cpt: Preparación | Cpt: Comunicaciones Oficiales | Cpt: Ingreso electrónico de solicitudes | Cpt: Interoperabilidad | Cpt: Digitalización de solicitudes en papel |
+
+Conceptos_Clave:
+  ID: "KB-066-CONCEPTOS-CLAVE-01"
+  Src:
+    - "Ley N° 19.880, Bases de los Procedimientos Administrativos."
+  Ctx: "Ley 21.180 modifica Ley 19.880 para establecer que procedimientos deben expresarse por medios electrónicos."
+  Acto_Administrativo:
+    ID: "KB-066-CONCEPTO-ACTO-ADM-01"
+    Src:
+      - "Art. 3°, Ley N°19.880."
+    Def:
+      - "\"Decisiones escritas que adopte la Administración\"."
+      - "\"Decisiones formales que emitan los órganos de la Administración del Estado en las cuales se contienen declaraciones de voluntad, realizadas en el ejercicio de una potestad pública\"."
+    Formas_Tipicas:
+      Decreto_Supremo:
+        Def: "Orden escrita dictada por Pdte. de la República o Ministro (\"Por orden del Pdte.\") sobre asuntos de competencia propia."
+      Resolucion:
+        Def: "Acto análogo dictado por autoridades adm. con poder de decisión."
+      Dictamen:
+        Def: "Declaraciones de juicio, constancia o conocimiento realizadas por órganos Adm. en ejercicio de sus competencias."
+    Ctx: "Jurisprudencia Corte Suprema (5 de agosto de 2020, rol N° 8857-2019) indica que oficios ordinarios e incluso correos electrónicos pueden ser considerados actos administrativos."
+  Procedimiento_Administrativo:
+    ID: "KB-066-CONCEPTO-PROC-ADM-01"
+    Src:
+      - "Art. 18, Ley N°19.880."
+    Def: "\"Sucesión de actos trámite vinculados entre sí, emanados de la Administración y, en su caso, de particulares interesados, que tiene por finalidad producir un acto administrativo terminal\"."
+    Req:
+      - "Todo procedimiento debe constar en un expediente electrónico."
+    Contenido_del_Expediente_Electronico:
+      Req:
+        - "Documentos de interesados, terceros, otros órganos (con fecha/hora de recepción, en orden)."
+        - "Actuaciones, documentos, resoluciones del órgano adm. (con fecha/hora de envío, en orden)."
+        - "Notificaciones y comunicaciones."
+    Formato_de_Ingreso:
+      Req:
+        - "Documentos electrónicos o formatos/medios electrónicos a través de plataformas institucionales."
+  Etapas_del_Procedimiento_Administrativo:
+    ID: "KB-066-ETAPAS-PROC-ADM-01"
+    Src:
+      - "Art. 18 y ss., Ley N°19.880."
+    Ctx: "Modelo: Inicio, Instrucción, Finalización."
+    Inicio:
+      ID: "KB-066-ETAPA-INICIO-01"
+      Src:
+        - "Art. 28 y ss., Ley N°19.880."
+      Modalidades:
+        - Item: "De oficio."
+          Def: "Por iniciativa del propio órgano."
+        - Item: "A solicitud de parte."
+          Def: "Por solicitud de persona interesada."
+      Causas_de_Inicio_de_Oficio:
+        - "Orden superior."
+        - "Petición de otro órgano de la Administración."
+        - "Por denuncia."
+      Requisitos_de_Solicitud_de_Parte:
+        - Req: "Nombre y apellidos del interesado/apoderado."
+        - Req: "Medio electrónico para notificaciones."
+        - Req: "Hechos, razones y peticiones."
+        - Req: "Lugar y fecha."
+        - Req: "Firma o acreditación de voluntad."
+        - Req: "Órgano al que se dirige."
+        - Req: "Autorización para remitir datos sensibles en poder de otros órganos."
+    Instruccion:
+      ID: "KB-066-ETAPA-INSTRUCCION-01"
+      Src:
+        - "Art. 34 y ss., Ley N°19.880."
+      Def: "Actos necesarios para la determinación, conocimiento y comprobación de los datos para pronunciar el acto final."
+      Ctx: "Se realizan de oficio, pero interesados pueden proponer actuaciones."
+    Finalizacion:
+      ID: "KB-066-ETAPA-FINALIZACION-01"
+      Src:
+        - "Art. 40 y ss., Ley N°19.880."
+      Def: "Conclusión del procedimiento mediante un acto terminal."
+      Finalizacion_Normal:
+        Def: "Resolución final que decide sobre las cuestiones planteadas."
+      Finalizacion_Anormal:
+        - "Renuncia y desistimiento (Art. 42)."
+        - "Abandono por inactividad del interesado > 30 días (Art. 43)."
+
+Procedimiento_Administrativo_Electronico_y_Normas_Tecnicas:
+  ID: "KB-066-PROC-ADM-ELEC-01"
+  Req: "Cumplir con 6 Normas Técnicas para dar cumplimiento a la Ley TDE."
+  Definiciones_de_Normas_Tecnicas_NT:
+    ID: "KB-066-NORMAS-TECNICAS-01"
+    Purp: "Definir estándares para la implementación de la TDE."
+    Normas_Tecnicas:
+      Norma_Tecnica_de_Autenticacion:
+        ID: "KB-066-NORMA-AUTENTICACION-01"
+        Purp: "Establecer cómo implementar/integrar mecanismos oficiales de autenticación en plataformas."
+      Norma_Tecnica_de_Interoperabilidad:
+        ID: "KB-066-NORMA-INTEROP-01"
+        Purp: "Definir estándares, protocolos y herramientas para interoperar datos, documentos y expedientes electrónicos."
+      Norma_Tecnica_de_Calidad_de_Plataformas:
+        ID: "KB-066-NORMA-CALIDAD-PLATAFORMAS-01"
+        Purp: "Describir cómo mitigar obsolescencia, mantener continuidad, medir SLAs, aumentar resiliencia y brindar soporte en plataformas."
+      Norma_Tecnica_de_Documentos_y_Expedientes_Electronicos:
+        ID: "KB-066-NORMA-DOCS-EXPEDIENTES-01"
+        Purp: "Definir estándares, formatos y metadatos para administrar documentos y expedientes electrónicos."
+      Norma_Tecnica_de_Notificaciones:
+        ID: "KB-066-NORMA-NOTIFICACIONES-01"
+        Purp: "Detallar funcionamiento de Plataforma de Notificaciones y cómo practicar notificaciones electrónicas."
+      Norma_Tecnica_de_Seguridad:
+        ID: "KB-066-NORMA-SEGURIDAD-01"
+        Purp: "Definir estándares y directrices de seguridad de la información y ciberseguridad."
+
+Plataforma_CPAT:
+  ID: "KB-066-PLATAFORMA-CPAT-01"
+  Ctx_Required:
+    - "https://cpat.gob.cl/"
+  Rol_de_CPAT:
+    - Def: "Herramienta de apoyo a implementación Ley 21.180."
+    - Ctx: "Especialmente en fase de preparación."
+    - Def: "Aportar visión integral del universo y características de los procedimientos a transitar a soporte electrónico."
+  Funcionamiento:
+    ID: "KB-066-CPAT-FUNCIONAMIENTO-01"
+    Ctx: "Herramienta viva, dinámica y colaborativa."
+    Caracteristicas:
+      - Proc: "Instancias periódicas para que instituciones actualicen su información."
+      - Proc: "Perfiles de acceso con ClaveÚnica para trabajo conjunto."
+      - Proc: "Nómina inicial validada por Autoridad Institucional."
+      - Proc: "Cambios futuros validados por Coordinador/a de TDE."
+    Perfiles_de_Usuario:
+      - Perfil: "Perfil-Coordinador-TDE"
+        Cond: "Máximo 1 por institución."
+      - Perfil: "Perfil-Autoridad-Institucional"
+        Cond: "Máximo 1 por institución."
+      - Perfil: "Perfil-Editor"
+        Cond: "Sin límite."
+      - Perfil: "Perfil-Invitado-Institucional"
+        Cond: "Sin límite."
+  Modulos_de_la_Plataforma:
+    ID: "KB-066-CPAT-MODULOS-01"
+    Lista_de_Modulos:
+      - Modulo: "Módulo-Inicio"
+        Ctx: "Instrucciones de uso y cifras relevantes."
+      - Modulo: "Módulo-Equipo-Trabajo"
+        Ctx: "Gestión de usuarios por perfil CTD."
+      - Modulo: "Módulo-Registro"
+        Ctx: "Informar y caracterizar procedimientos y tramitaciones."
+      - Modulo: "Módulo-Transacciones"
+        Ctx: "Informar demanda mensualizada por canal."
+      - Modulo: "Módulo-Reportes"
+        Ctx: "Descargar reportes de la información institucional."
+      - Modulo: "Módulo-Recursos-Informativos"
+        Ctx: "Documentos de interés del proyecto CPAT."
+      - Modulo: "Módulo-Ayuda"
+        Ctx: "Preguntas frecuentes."
+  Contenido_y_Estructura_de_Registros:
+    ID: "KB-066-CPAT-CONTENIDO-01"
+    Purp: "Individualizar y caracterizar registros."
+    Tipos_de_Registro:
+      ID: "KB-066-CPAT-TIPOS-REGISTRO-01"
+      Src:
+        - "Distinción basada en concepto de procedimiento administrativo de Ley N°19.880."
+      Tipos:
+        - Tipo: "Tipo A - Proc. Adm. Función Común"
+          Ex: "Compras públicas, gestión de personas, presupuesto, auditorías."
+        - Tipo: "Tipo B - Proc. Adm. Función Específica"
+          Ex: "Propios del quehacer misional de la institución."
+        - Tipo: "Tipo C - Otras Tramitaciones"
+          Ex: "No clasifican como procedimiento administrativo."
+    Caracterizacion_de_Registros_Formulario_SFD:
+      ID: "KB-066-CPAT-CARACTERIZACION-01"
+      Purp: "Describir cada registro a través de un formulario con múltiples secciones."
+      Formulario_de_Caracterizacion_de_Registros_CPAT:
+        Title: "Formulario de Caracterización de Registros CPAT"
+        ID: "FORM-CPAT-REGISTRO-01"
+        Version: "1.0.0"
+        Status: "Published"
+        Ref-SFD-Guide: "GUIDE-SFD-STS-MASTER-01"
+        Embedded_Block_Marker:
+          Begin: "BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-CPAT-REGISTRO-01"
+          End: "END_EMBEDDED_BLOCK:: FORM-CPAT-REGISTRO-01"
+        Seccion_Identificacion:
+          ID: "FORM-CPAT-S1-IDENTIFICACION-01"
+          Fields:
+            - Field: "Nombre del Registro"
+              ID: "FORM-CPAT-S1-NOMBRE-01"
+              Field-Label: "Nombre"
+              Field-Type: "Text"
+            - Field: "Descripción"
+              ID: "FORM-CPAT-S1-DESCRIPCION-01"
+              Field-Label: "Descripción"
+              Field-Type: "Text"
+            - Field: "Área Responsable"
+              ID: "FORM-CPAT-S1-AREA-RESP-01"
+              Field-Label: "Área responsable"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Cargo del Responsable"
+              ID: "FORM-CPAT-S1-CARGO-RESP-01"
+              Field-Label: "Cargo del o la responsable"
+              Field-Type: "Text"
+            - Field: "Acto de Inicio"
+              ID: "FORM-CPAT-S1-ACTO-INICIO-01"
+              Field-Label: "Acto de inicio"
+              Field-Type: "Text"
+            - Field: "Acto de Término"
+              ID: "FORM-CPAT-S1-ACTO-TERMINO-01"
+              Field-Label: "Acto de término"
+              Field-Type: "Text"
+            - Field: "Producto Institucional Relacionado"
+              ID: "FORM-CPAT-S1-PRODUCTO-REL-01"
+              Field-Label: "Producto institucional relacionado"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+        Seccion_Marco_Normativo:
+          ID: "FORM-CPAT-S2-NORMATIVO-01"
+          Fields:
+            - Field: "Número Ley"
+              ID: "FORM-CPAT-S2-NUM-LEY-01"
+              Field-Label: "Número Ley"
+              Field-Type: "Text"
+            - Field: "URL de la Ley"
+              ID: "FORM-CPAT-S2-URL-LEY-01"
+              Field-Label: "URL de la Ley"
+              Field-Type: "Text"
+              Field-Constraint: "Format: url."
+            - Field: "Otras Fuentes Normativas"
+              ID: "FORM-CPAT-S2-OTRAS-FUENTES-01"
+              Field-Label: "Otras fuentes normativas"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+
+        Seccion_Usuarios:
+          ID: "FORM-CPAT-S3-USUARIOS-01"
+          Fields:
+            - Field: "Pago Asociado"
+              ID: "FORM-CPAT-S3-PAGO-01"
+              Field-Label: "Pago asociado"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Tipo de Usuario/a"
+              ID: "FORM-CPAT-S3-TIPO-USUARIO-01"
+              Field-Label: "Tipo de usuario/a"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Segmento de Usuarios/as"
+              ID: "FORM-CPAT-S3-SEGMENTO-USUARIO-01"
+              Field-Label: "Segmento de usuarios/as"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Relación con Programa Social"
+              ID: "FORM-CPAT-S3-PROG-SOCIAL-01"
+              Field-Label: "Relación con programa social"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Disponibilidad para Realización"
+              ID: "FORM-CPAT-S3-DISPONIBILIDAD-01"
+              Field-Label: "Disponibilidad para su realización"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+
+        Seccion_Soporte_Electronico:
+          ID: "FORM-CPAT-S4-SOPORTE-ELEC-01"
+          Fields:
+            - Field: "Nivel de Digitalización"
+              ID: "FORM-CPAT-S4-NIVEL-DIG-01"
+              Field-Label: "Nivel de digitalización"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Fecha de Digitalización"
+              ID: "FORM-CPAT-S4-FECHA-DIG-01"
+              Field-Label: "Fecha de digitalización"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Canal(es) Transaccional(es)"
+              ID: "FORM-CPAT-S4-CANALES-TRANS-01"
+              Field-Label: "Canal(es) transaccional(es)"
+              Field-Type: "Checkbox-Group"
+              Field-Constraint: "Min-Selections: 1."
+            - Field: "Tipo de Expediente"
+              ID: "FORM-CPAT-S4-TIPO-EXPE-01"
+              Field-Label: "Tipo de expediente"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Acceso al Expediente por Interesados"
+              ID: "FORM-CPAT-S4-ACCESO-EXPE-01"
+              Field-Label: "Acceso al expediente electrónico por interesados/as"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "URL"
+              ID: "FORM-CPAT-S4-URL-PROC-01"
+              Field-Label: "URL"
+              Field-Type: "Text"
+              Field-Constraint: "Format: url."
+            - Field: "Ficha ChileAtiende Relacionada"
+              ID: "FORM-CPAT-S4-FICHA-CHILEATIENDE-01"
+              Field-Label: "Ficha ChileAtiende relacionada"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Número de Plataformas Electrónicas"
+              ID: "FORM-CPAT-S4-NUM-PLATAFORMAS-01"
+              Field-Label: "Número de plataformas electrónicas"
+              Field-Type: "Number"
+              Field-Constraint: "Min-Val: 0."
+            - Field: "Alcance de las Plataformas"
+              ID: "FORM-CPAT-S4-ALCANCE-PLATAFORMAS-01"
+              Field-Label: "Alcance de las plataformas"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Plataforma o Sistema Utilizado"
+              ID: "FORM-CPAT-S4-SISTEMA-UTILIZADO-01"
+              Field-Label: "Plataforma o sistema utilizado"
+              Field-Type: "Checkbox-Group"
+
+        Seccion_Identidad_Digital:
+          ID: "FORM-CPAT-S5-IDENTIDAD-DIGITAL-01"
+          Fields:
+            - Field: "Mecanismo de Autenticación (Usuarios)"
+              ID: "FORM-CPAT-S5-AUTH-USER-01"
+              Field-Label: "Mecanismo de autenticación para usuarios"
+              Field-Type: "Checkbox-Group"
+            - Field: "Mecanismo de Autenticación (Funcionarios)"
+              ID: "FORM-CPAT-S5-AUTH-FUNC-01"
+              Field-Label: "Mecanismo de autenticación para funcionarios"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Firma Electrónica Avanzada"
+              ID: "FORM-CPAT-S5-FIRMA-AVANZADA-01"
+              Field-Label: "Firma electrónica Avanzada"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+
+        Seccion_Notificaciones:
+          ID: "FORM-CPAT-S6-NOTIFICACIONES-01"
+          Fields:
+            - Field: "Notificación Practicada"
+              ID: "FORM-CPAT-S6-NOTIF-PRACTICADA-01"
+              Field-Label: "Notificación(es) practicada(s)"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Etapa de Notificación"
+              ID: "FORM-CPAT-S6-ETAPA-NOTIF-01"
+              Field-Label: "Etapa de notificación"
+              Field-Type: "Checkbox-Group"
+              Field-Logic:
+                Ref: "KB-066-DEDUP-FIELD-LOGIC-NOTIF-01"
+            - Field: "Medio Utilizado para Notificar"
+              ID: "FORM-CPAT-S6-MEDIO-NOTIF-01"
+              Field-Label: "Medio utilizado para notificar"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+              Field-Logic:
+                Ref: "KB-066-DEDUP-FIELD-LOGIC-NOTIF-01"
+
+        Seccion_Datos_Documentos_e_Interoperabilidad:
+          ID: "FORM-CPAT-S7-DATOS-INTEROP-01"
+          Fields:
+            - Field: "Pregunta Habilitante (Requiere Datos)"
+              ID: "FORM-CPAT-S7-REQ-DATOS-01"
+              Field-Label: "Pregunta habilitante sobre requerir datos de otros órganos"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Medio para Obtener Dato/Documento"
+              ID: "FORM-CPAT-S7-MEDIO-OBTENER-DATO-01"
+              Field-Label: "Medio utilizado para obtener dato/documento"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+              Field-Logic: "Cond: (Ref: FORM-CPAT-S7-REQ-DATOS-01.Value == 'Sí') -> Visibility: show."
+            - Field: "Medio para Interoperar"
+              ID: "FORM-CPAT-S7-MEDIO-INTEROP-01"
+              Field-Label: "Medio utilizado para interoperar"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+              Field-Logic:
+                Ref: "KB-066-DEDUP-FIELD-LOGIC-INTEROP-01"
+            - Field: "Institución con la que Interopera"
+              ID: "FORM-CPAT-S7-INST-INTEROP-01"
+              Field-Label: "Institución con la que se interopera"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+              Field-Logic:
+                Ref: "KB-066-DEDUP-FIELD-LOGIC-INTEROP-01"
+            - Field: "Nombre del Dato o Set de Datos"
+              ID: "FORM-CPAT-S7-NOMBRE-DATO-01"
+              Field-Label: "Nombre del dato o set de datos"
+              Field-Type: "Text"
+              Field-Logic:
+                Ref: "KB-066-DEDUP-FIELD-LOGIC-INTEROP-01"
+            - Field: "Documento(s) Notarial(es)"
+              ID: "FORM-CPAT-S7-DOC-NOTARIAL-01"
+              Field-Label: "Documento(s) notarial(es)"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+            - Field: "Medio para Comunicaciones Oficiales"
+              ID: "FORM-CPAT-S7-MEDIO-COM-OFICIAL-01"
+              Field-Label: "Medio para comunicaciones oficiales"
+              Field-Type: "Select"
+              Field-Constraint: "Req: mandatory."
+
+    Transacciones:
+      ID: "KB-066-CPAT-TRANSACCIONES-01"
+      Purp: "Recopilar información de demanda."
+      Def: "Procedimiento administrativo o tramitación finalizado en un mes y canal determinados."
+      Logica_Contable:
+        Proc: "Se contabiliza en el mes en que finaliza, no cuando inicia."
+        Ctx: "Finalización ocurre con el acto administrativo terminal."
+        Ref: "KB-066-CONCEPTO-ACTO-ADM-01"
+      Canales_Transaccionales:
+        - Canal: "Digital"
+          Ex: "email, RRSS, apps, etc."
+        - Canal: "Presencial"
+          Ex: "sucursales, correo postal, tótems, etc."
+        - Canal: "Telefónico"
+          Ex: "mesa de ayuda, SMS, etc."
+      Valores_a_Informar:
+        Req:
+          - "Números enteros (desde 0)."
+          - "\"sin información\" (cuando no se puede determinar)."
+
+Guia_de_Implementacion_CPAT:
+  ID: "KB-066-IMPLEMENTACION-CPAT-01"
+  Calculo_del_Nivel_de_Soporte_Electronico:
+    ID: "KB-066-IMPL-CALCULO-SOPORTE-01"
+    Src:
+      - "Ley 19.880 y las seis Normas Técnicas."
+    Obj: "Visualizar y monitorear el grado de avance hacia el soporte electrónico."
+    Ref: "KB-066-NORMAS-TECNICAS-01"
+    Warn: "Implementación integral de la Ley TDE considera aspectos adicionales no consultados en CPAT."
+    Criterios:
+      Criterio_1_Autenticacion:
+        ID: "KB-066-CALCULO-CRITERIO-AUTENTICACION-01"
+        Ref: "KB-066-NORMA-AUTENTICACION-01"
+        Req: "Utilizar mecanismos oficiales de autenticación para acceso de interesados."
+        Mecanismos_Oficiales:
+          - Mecanismo: "ClaveÚnica"
+            Ctx: "Personas naturales."
+          - Mecanismo: "Clave Tributaria"
+            Ctx: "Personas jurídicas."
+        Mapeo_a_CPAT:
+          Ref: "FORM-CPAT-S5-AUTH-USER-01"
+          Cond: "Cumplimiento si la selección es \"Utiliza ClaveÚnica\" o \"Utiliza Clave Tributaria\"."
+      Criterio_2_Interoperabilidad:
+        ID: "KB-066-CALCULO-CRITERIO-INTEROP-01"
+        Ref: "KB-066-NORMA-INTEROP-01"
+        Ctx:
+          - "Medios electrónicos deben ser capaces de interactuar y operar entre sí (Principio de Interoperabilidad)."
+          - "Órganos del Estado deben cooperar en utilización de medios electrónicos (Principio de Cooperación)."
+        Def: "Intercambiar datos/docs/expedientes entre dos órganos a través de la Red de Interoperabilidad del Estado."
+        Mapeo_a_CPAT:
+          Ref: "FORM-CPAT-S7-DATOS-INTEROP-01"
+          Cond:
+            Ref: "KB-066-DEDUP-COND-SECUENCIA-01"
+          Cond_Sequence:
+            - Cond: "(Ref: FORM-CPAT-S7-REQ-DATOS-01) es \"Sí\"."
+            - Cond: "(Ref: FORM-CPAT-S7-MEDIO-OBTENER-DATO-01) es \"Hay interoperabilidad electrónica con la institución\"."
+            - Cond: "(Ref: FORM-CPAT-S7-MEDIO-INTEROP-01) es \"Utiliza la Red de Interoperabilidad del Estado o utiliza su estándar\"."
+      Criterio_3_Notificaciones:
+        ID: "KB-066-CALCULO-CRITERIO-NOTIFICACIONES-01"
+        Ref: "KB-066-NORMA-NOTIFICACIONES-01"
+        Req: "Notificaciones se practicarán por medios electrónicos usando la Plataforma de Notificaciones (Art. 46, Ley 19.880)."
+        Mapeo_a_CPAT:
+          Ref: "FORM-CPAT-S6-NOTIFICACIONES-01"
+          Cond:
+            Ref: "KB-066-DEDUP-COND-SECUENCIA-01"
+          Cond_Sequence:
+            - Cond: "(Ref: FORM-CPAT-S6-NOTIF-PRACTICADA-01) es \"Sí\"."
+            - Cond: "(Ref: FORM-CPAT-S6-MEDIO-NOTIF-01) es \"Notificación electrónica\"."
+
+      Criterio_4_Plataformas:
+        ID: "KB-066-CALCULO-CRITERIO-PLATAFORMAS-01"
+        Ref: "KB-066-NORMA-CALIDAD-PLATAFORMAS-01"
+        Req: "Órganos obligados a disponer y usar plataformas electrónicas para llevar expedientes (Art. 19, Ley 19.880)."
+        Def: "Software, datos e infraestructura que sustenta procesos o procedimientos."
+        Mapeo_a_CPAT:
+          Ref: "FORM-CPAT-S4-SOPORTE-ELEC-01"
+          Cond: "Cumplimiento si se cumplen TODAS las siguientes condiciones:"
+          Cond_All:
+            - Cond: "(Ref: FORM-CPAT-S4-NIVEL-DIG-01) es \"Nivel 4\" o \"Nivel 5\"."
+            - Cond: "(Ref: FORM-CPAT-S4-NUM-PLATAFORMAS-01) > 0."
+            - Cond: "(Ref: FORM-CPAT-S4-ALCANCE-PLATAFORMAS-01) es \"Las plataformas electrónicas soportan todas las etapas...\"."
+
+      Criterio_5_Expediente_Electronico:
+        ID: "KB-066-CALCULO-CRITERIO-EXPEDIENTE-01"
+        Ref: "KB-066-NORMA-DOCS-EXPEDIENTES-01"
+        Req: "Todo procedimiento debe constar en expediente electrónico (Art. 18, Ley 19.880)."
+        Def: "Unidad documental con ID único, estructurada (índices, docs, metadatos), generada en plataforma electrónica."
+        Mapeo_a_CPAT:
+          Ref: "FORM-CPAT-S4-SOPORTE-ELEC-01"
+          Cond:
+            Ref: "KB-066-DEDUP-COND-SECUENCIA-01"
+          Cond_Sequence:
+            - Cond: "(Ref: FORM-CPAT-S4-TIPO-EXPE-01) es \"Expediente con documentos en formato electrónico\"."
+            - Cond: "(Ref: FORM-CPAT-S4-ACCESO-EXPE-01) es \"Sí, los(as) interesados(as) tienen acceso...\"."
+
+      Criterio_6_Comunicaciones_Oficiales:
+        ID: "KB-066-CALCULO-CRITERIO-COM-OFICIALES-01"
+        Ref: "KB-066-NORMA-DOCS-EXPEDIENTES-01"
+        Req:
+          - "Toda comunicación entre órganos será por medios electrónicos (Art. 9, Ley 19.880)."
+          - "Comunicaciones oficiales se registrarán en plataforma destinada (DocDigital) (Art. 19, Ley 19.880)."
+        Def: "Mensaje entre órganos, suscrito por autoridad, emitido/recibido por medio electrónico formal."
+        Mapeo_a_CPAT:
+          Ref: "FORM-CPAT-S7-MEDIO-COM-OFICIAL-01"
+          Cond: "Cumplimiento si la selección es \"Sí, realiza envíos por medio de la plataforma DocDigital\" o \"Sí, realiza envíos por medios electrónicos propios y DocDigital\"."
+
+  Primeros_Pasos:
+    ID: "KB-066-IMPL-PRIMEROS-PASOS-01"
+    Purp: "Buenas prácticas para iniciar el trabajo de identificación de procedimientos, previo al uso de la plataforma CPAT."
+    Rec:
+      - "Conformar equipo de trabajo representativo del quehacer institucional."
+      - "Revisar el marco normativo aplicable a la institución."
+      - "Utilizar insumos como Formulario A1 y productos estratégicos."
+      - "Usar levantamientos de procesos existentes como insumo."
+
+  Hoja_de_Ruta:
+    ID: "KB-066-IMPL-HOJA-DE-RUTA-01"
+    Etapas:
+      - Etapa: "Etapa 1A (Grupo A)"
+        Ctx: "Dln: Jun22-Dic23"
+        Act: "Gobierno central informa procedimientos."
+      - Etapa: "Etapa 1B (Grupos B-C)"
+        Ctx: "Dln: Jun22-Dic23"
+        Act: "Gobiernos regionales y municipalidades informan procedimientos."
+      - Etapa: "Etapa 2 (Estandarización)"
+        Ctx: "Dln: Desde 2025"
+        Act: "Gobierno Digital identifica procedimientos comunes."
+      - Etapa: "Etapa 3 (Mejora Continua)"
+        Act: "Instituciones revisan y ajustan su nómina según estándar."
+      - Etapa: "Transversal (Seguimiento)"
+        Act: "Actualización continua del avance en digitalización en el CPAT."
+
+Recursos_de_Apoyo:
+  ID: "KB-066-RECURSOS-APOYO-01"
+  Ctx_Optional:
+    - "Manual de usuarios/as de la Plataforma CPAT."
+    - "Plantilla guía del CPAT."
+    - "Consolidado de procedimientos administrativos y tramitaciones."

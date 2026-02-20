@@ -1,0 +1,218 @@
+# KODA Artifact: Ingreso a la Vida Laboral y Carrera - Trabajo Médico Chile
+# URN: urn:knowledge:koda:legal:ingreso_carrera:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre formas de ingreso a la carrera médica en sector público y al trabajo en sector privado en Chile"
+    primary_use: "Comparar rutas de ingreso (SNSS, APS, FFAA, Carabineros, sector privado, honorarios) y sus requisitos normativos básicos"
+    cross_reference: "Usar definiciones legales de kb_med_000_legislacion_index_koda.yml y jerarquías normativas de kb_med_001_intro_estatutos_koda.yml; deberes/prohibiciones en kb_med_002_deberes_prohibiciones_koda.yml"
+
+  urn: "urn:knowledge:koda:legal:ingreso_carrera:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Módulo IV: Inicio e ingreso a la vida laboral"
+    source_document: "Material Curso Legislación Trabajo Médico - UDELAM/COLMED"
+    source_sections: "IV. Inicio e Ingreso a la Vida Laboral"
+    model_collaborators: ["IA-CLAUDE"]
+  dependencies:
+    - Ref: "urn:knowledge:koda:legal:index:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: INGRESO A LA CARRERA EN EL SECTOR PÚBLICO
+# ═══════════════════════════════════════════════════════════════════
+
+Ingreso_Sector_Publico:
+
+  Principios_Generales:
+    ID: ING_PUB_PRINC
+    Fuente:
+      - Ref: CPR
+      - Ref: LOC_18575
+      - Ref: EA_18834
+    Principios:
+      - "Igualdad de acceso a funciones y empleos públicos (CPR art. 19 N°17)."
+      - "Servicio a la persona humana y bien común (LOC_18575)."
+      - "Jerarquía, eficiencia, profesionalización de la Administración."
+      - "Carrera funcionaria basada en mérito y concursos públicos."
+
+  Ingreso_SNSS_y_Sector_Salud_Publico:
+    ID: ING_SNSS
+    Fuente:
+      - Ref: LEY_15076
+      - Ref: LEY_19664
+      - Ref: EA_18834
+    Ambito: "Médicos funcionarios de los Servicios de Salud (SNSS)."
+    Formas_Ingreso:
+      - ID: ING_PLANTA_TITULAR
+        Def: "Ingreso como profesional funcionario de planta en un Servicio de Salud."
+        Requisitos_Tipicos:
+          - "Concurso público para proveer vacante en planta profesional."
+          - "Cumplir requisitos generales de ingreso del Estatuto Administrativo (nacionalidad, educación, salud compatible, etc.)."
+          - "Cumplir requisitos específicos del cargo (título de médico cirujano, especialidad cuando proceda)."
+        Efectos:
+          - "Incorporación a carrera funcionaria regulada por Ref: LEY_19664 y Ref: LEY_15076."
+          - "Acceso a derechos estatutarios (estabilidad, ascenso, feriados, licencias, etc.)."
+      - ID: ING_CONTRATA
+        Def: "Ingreso mediante empleo a contrata en un Servicio de Salud."
+        Caracteristicas:
+          - "Nombramiento de carácter transitorio, financiamiento por dotación anual (presupuesto)."
+          - "Duración: hasta el 31 de diciembre de cada año, salvo renovación."
+          - "Debe asimilarse a un grado de la planta a efectos remuneratorios."
+        Riesgos:
+          - "Menor estabilidad que planta (renovaciones periódicas)."
+      - ID: ING_HONORARIOS_PUB
+        Def: "Vinculación a través de contratos a honorarios con el Servicio de Salud."
+        Caracteristicas:
+          - "No genera calidad de funcionario; se rige por contrato civil."
+          - "Usado para labores accidentales o no habituales del servicio."
+        Riesgos:
+          - "Menor protección estatutaria y estabilidad."
+
+  Ingreso_APS_Municipal:
+    ID: ING_APS
+    Fuente:
+      - Ref: LEY_19378
+      - Ref: LEY_18883
+      - Ref: LEY_18695
+    Ambito: "Médicos en Atención Primaria de Salud Municipal."
+    Formas_Ingreso:
+      - ID: ING_APS_PLANTA
+        Def: "Ingreso a la planta de salud municipal (Estatuto APS)."
+        Elementos:
+          - "Concursos públicos llamados por la entidad administradora de salud municipal."
+          - "Aplicación de normas sobre dotación, jornada y carrera funcionaria APS."
+      - ID: ING_APS_CONTRATA
+        Def: "Contratos a plazo o a contrata en establecimientos de APS."
+        Notas:
+          - "Sujeto a reglas de dotación anual y a Estatuto APS, con supletoriedad de Estatuto Administrativo Municipal."
+
+  Ingreso_FFAA_y_Carabineros:
+    ID: ING_FFAA_CARAB
+    Fuente:
+      - Ref: DFL_1_1997
+      - Ref: LEY_18961
+      - Ref: DEC_412_2019
+      - Ref: LEY_15076
+    Ambito: "Médicos en Fuerzas Armadas y Carabineros de Chile."
+    FFAA:
+      Estatuto: "Ref: DFL_1_1997"
+      Notas:
+        - "Regula la carrera desde el ingreso hasta el término, con supletoriedad de LEY_15076 y EA_18834."
+    Carabineros:
+      Estatuto:
+        - Ref: LEY_18961
+        - Ref: DEC_412_2019
+      Formas_Ingreso:
+        - ID: ING_CARAB_PLANTA
+          Def: "Ingreso a la planta institucional de Carabineros en calidad de médico funcionario."
+        - ID: ING_CARAB_POR_HORAS
+          Def: "Contratación por horas de médicos y dentistas conforme a Ref: LEY_15076."
+          Condiciones:
+            - "Fondos disponibles en Ley de Presupuestos."
+            - "Responden a necesidades del servicio."
+        - ID: ING_CARAB_CPR
+          Def: "Personal contratado por Resolución (CPR) para funciones transitorias."
+          Caracteristicas:
+            - "No integra planta institucional."
+            - "Duración máxima: hasta el 31 de diciembre de cada año."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: INGRESO A TRABAJO EN SECTOR PRIVADO
+# ═══════════════════════════════════════════════════════════════════
+
+Ingreso_Sector_Privado:
+
+  Formas_Principales:
+    ID: ING_PRIV_FORMAS
+    Fuente:
+      - Ref: COD_TRAB
+    Formas:
+      - ID: ING_PRIV_CONTRATO_INDEFINIDO
+        Def: "Contrato de trabajo de duración indefinida entre médico y empleador privado."
+        Caracteristicas:
+          - "Regla general del Código del Trabajo."
+          - "Mayor estabilidad relativa que contratos a plazo fijo."
+      - ID: ING_PRIV_PLAZO_FIJO
+        Def: "Contrato de trabajo por un plazo determinado."
+        Riesgos:
+          - "Limitaciones legales en número de renovaciones y duración total antes de transformarse en indefinido."
+      - ID: ING_PRIV_POR_OBRA
+        Def: "Contrato de trabajo asociado a una obra o faena determinada."
+      - ID: ING_PRIV_HONORARIOS
+        Def: "Prestación de servicios a honorarios (boleta), sin vínculo laboral ni estatutario."
+        Notas:
+          - "Se rige por normas civiles y tributarias, no por el Código del Trabajo."
+
+  Requisitos_y_Formalidades_Iniciales:
+    ID: ING_PRIV_REQ
+    Fuente:
+      - Ref: COD_TRAB
+    Requisitos_Contrato:
+      - "Identificación de las partes (empleador y médico)."
+      - "Tipo de servicio profesional a prestar (especialidad, unidad clínica, jornada)."
+      - "Lugar de prestación de los servicios."
+      - "Monto, forma y período de pago de la remuneración."
+      - "Duración del contrato (indefinido, plazo fijo, obra)."
+    Documentacion_Comun:
+      - "Copia escrita del contrato dentro de los plazos legales."
+      - "Afiliación y cotizaciones en sistema de seguridad social."
+
+  Comparacion_Ingreso_Publico_vs_Privado:
+    ID: ING_COMPARA
+    Dimensiones:
+      - ID: CMP_VINCULO
+        Criterio: "Naturaleza del vínculo"
+        Sector_Publico: "Estatutario, de derecho público, nace de nombramiento."
+        Sector_Privado: "Contractual, de derecho laboral, nace de contrato de trabajo."
+      - ID: CMP_ESTABILIDAD
+        Criterio: "Estabilidad"
+        Sector_Publico: "Alta para cargos de carrera; depende de causales legales de expiración."
+        Sector_Privado: "Depende del tipo de contrato y causales del Código del Trabajo."
+      - ID: CMP_ACCESO
+        Criterio: "Forma de acceso"
+        Sector_Publico: "Concursos públicos y nombramientos."
+        Sector_Privado: "Acuerdos entre empleador y trabajador, procesos de selección privados."
+      - ID: CMP_REMUNERACIONES
+        Criterio: "Determinación de remuneraciones"
+        Sector_Publico: "Fijadas por ley y escalas de sueldos."
+        Sector_Privado: "Pactadas en contrato individual/colectivo dentro de mínimos legales."
+
+# ═══════════════════════════════════════════════════════════════════
+# RESUMEN EJECUTIVO
+# ═══════════════════════════════════════════════════════════════════
+
+Resumen:
+  Ejes:
+    - "Diferencia entre ingreso estatutario al sector público y contratación laboral en sector privado."
+    - "Mapea las principales rutas de ingreso para médicos: SNSS, APS, FFAA, Carabineros, clínicas y centros privados."
+    - "Conecta ingreso con la posterior carrera funcionaria o desarrollo laboral."
+  Casos_Uso_Tipicos:
+    - "Ayudar a un médico recién egresado a entender opciones de ingreso al sector público vs privado."
+    - "Comparar estabilidad y requisitos al elegir entre plaza en Servicio de Salud, APS o clínica privada."
+    - "Contextualizar decisiones laborales junto con derechos/deberes modelados en kb_med_002."

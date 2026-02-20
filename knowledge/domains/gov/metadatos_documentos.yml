@@ -1,0 +1,297 @@
+# KODA TDE Lineamiento Técnico: Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:metadatos_documentos:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Guia_Tecnica_Metadatos_Documentos_Expedientes"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosGuías/Guía_Técnica_de_Metadatos_para_Documentos_y_Expedientes_Electrónicos.md"
+    source_url: "https://wikiguias.digital.gob.cl/guias/Metadatos_Expediente_Electr%C3%B3nico"
+    source_updated_at: "2025-10-07T21:18:48.902Z"
+  status: draft
+
+ID: "TDE-LIN-METADATOS-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Guía técnica de metadatos para documentos y expedientes electrónicos que operacionaliza la Norma Técnica de Documentos y Expedientes Electrónicos (DS 10/2023)"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía técnica para definir y aplicar metadatos de documentos y expedientes electrónicos"
+  objective: >-
+    Entregar un marco técnico para que los OAEs definan, gestionen e interoperan metadatos
+    obligatorios, condicionales y sugeridos para documentos y expedientes electrónicos, en
+    cumplimiento de la Norma Técnica de Documentos y Expedientes Electrónicos.
+  usage_guidance:
+    - "Usar este artefacto como referencia para diseñar modelos de datos y esquemas de metadatos en sistemas de gestión documental y expediente electrónico."
+    - "Complementar con la Norma Técnica de Documentos y Expedientes Electrónicos (DS 10/2023) y con la norma ISO 15489 e ISO 23081."
+    - "Para el concepto general de metadatos, preferir la definición canónica del Lexicon TDE."
+  style:
+    - "Responder en es-CL, tono técnico claro, orientado a equipos de archivo, gestión documental y TI."
+    - "Usar ejemplos telegrafiados cuando ayuden a entender grupos de metadatos, sin replicar tablas completas salvo que sea necesario."
+
+Metadata_Original:
+  title: "Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos"
+  url: "https://wikiguias.digital.gob.cl/guias/Metadatos_Expediente_Electr%C3%B3nico"
+  category: "Lineamientos Técnicos/Guías"
+  tags:
+    - "expediente electrónico"
+    - "guía técnica"
+    - "metadatos"
+  description: >-
+    Metadatos obligatorios, condicionales y sugeridos para la gestión e interoperabilidad de
+    documentos y expedientes electrónicos de los órganos de la Administración del Estado.
+  updated_at: "2025-10-07T21:18:48.902Z"
+
+Contexto_y_Justificacion:
+  - ID: "TDE_LIN_META_CTX_001"
+    Type: "Marco_legal_TDE"
+    Ctx: >-
+      La guía se enmarca en la Ley N° 21.180 de Transformación Digital del Estado, que modificó
+      la Ley N° 19.880 para incorporar la digitalización de procedimientos administrativos y
+      encomendó al DS N° 4 de 2020 la regulación de procedimientos electrónicos.
+    Ctx_Required:
+      - "Ley N° 21.180, de Transformación Digital del Estado."
+      - "Ley N° 19.880, sobre procedimientos administrativos."
+      - "Decreto Supremo N° 4, de 2020, del Ministerio Secretaría General de la Presidencia."
+  - ID: "TDE_LIN_META_CTX_002"
+    Type: "Norma_Tecnica_Documentos_y_Expedientes"
+    Ctx: >-
+      El DS N° 10 de 2023 establece la Norma Técnica de Documentos y Expedientes Electrónicos
+      para la gestión de procedimientos administrativos. La presente guía define metadatos para
+      facilitar su implementación.
+    Ctx_Required:
+      - "DS N° 10 de 2023 - Norma Técnica de Documentos y Expedientes Electrónicos."
+  - ID: "TDE_LIN_META_CTX_003"
+    Type: "Buenas_practicas_internacionales"
+    Ctx: >-
+      La guía se basa en buenas prácticas internacionales, en particular las normas ISO 15489
+      sobre gestión de documentos e ISO 23081 sobre metadatos para la gestión de documentos,
+      que proveen el marco para la definición y uso de metadatos.
+    Ctx_Required:
+      - "ISO 15489 - Records management."
+      - "ISO 23081 - Information and documentation — Records management processes — Metadata for records."
+
+Metadatos_para_la_Gestion_Documental:
+  ID: "TDE_LIN_META_GD_001"
+  Ctx: >-
+    El uso de metadatos es fundamental para la descripción precisa y completa de documentos y
+    expedientes electrónicos, permitiendo una correcta gestión y tramitación documental,
+    favoreciendo la interoperabilidad y la eficiencia en los ciclos documentales.
+  Purp: >-
+    Garantizar la disponibilidad, recuperación, accesibilidad, conservación e interoperabilidad
+    de documentos y expedientes electrónicos mediante conjuntos de metadatos bien definidos.
+  Obj:
+    - "Definir metadatos obligatorios, condicionales y sugeridos para expedientes y documentos electrónicos."
+    - "Establecer un esquema de metadatos alineado con la Norma Técnica, la legislación vigente y las mejores prácticas internacionales."
+    - "Permitir la interoperabilidad entre sistemas de gestión documental y con el Archivo Nacional."
+
+Modelo_Entidad_Relacion_Metadatos:
+  ID: "TDE_LIN_META_MER_001"
+  Def: >-
+    La estructura de metadatos se modela mediante entidades y relaciones que representan los
+    elementos clave de la gestión documental electrónica.
+  Entidades:
+    - Name: "Documento"
+      Def: "Unidad de información registrada que forma parte de un expediente electrónico."
+    - Name: "Expediente"
+      Def: "Conjunto de documentos organizados en torno a un mismo procedimiento administrativo."
+    - Name: "Actor"
+      Def: "Institución, persona natural o jurídica responsable o involucrada en creación, custodia o gestión de documentos."
+    - Name: "Relación"
+      Def: "Asociación entre dos o más entidades relevante para la gestión del documento o expediente."
+  Rec:
+    - "Diseñar los modelos de datos institucionales respetando estas entidades y sus relaciones, permitiendo secciones múltiples de metadatos cuando existan actores múltiples."
+
+Esquema_de_Metadatos_Resumen:
+  ID: "TDE_LIN_META_ESQ_001"
+  Def: >-
+    El esquema de metadatos consta de 29 elementos para expedientes electrónicos y 46 elementos
+    para documentos electrónicos, organizados en ocho grupos de metadatos para expedientes y
+    diez grupos para documentos, clasificados según su obligatoriedad.
+  Clasificacion:
+    - Type: "Obligatorios"
+      Def: "Metadatos esenciales que deben estar presentes en todo expediente o documento."
+      Expedientes: 18
+      Documentos: 12
+    - Type: "Condicionales"
+      Def: "Metadatos que deben usarse cuando se cumple cierta condición documentada en su ficha."
+      Expedientes: 5
+      Documentos: 16
+    - Type: "Sugeridos"
+      Def: "Metadatos complementarios que pueden utilizarse para descripciones más detalladas."
+      Expedientes: 6
+      Documentos: 18
+  Notacion_Especial:
+    - Flag: "AN"
+      Def: "Metadatos requeridos por el Archivo Nacional para procesos de transferencia digital."
+    - Flag: "MU"
+      Def: "Metadatos de carácter múltiple, que permiten múltiples valores (por ejemplo, múltiples actores)."
+
+Tabla_1_Expedientes_Extracto:
+  ID: "TDE_LIN_META_EXP_TAB1_EX_001"
+  Items:
+    - Codificacion: "MGDEE51_2"
+      Grupo: "5"
+      Sub_N: "5.1.2"
+      Rotulo: "Nombre OAE productor"
+      Def: "Nombre institucional, en caso que el OAE productor no esté registrado en el codificador."
+    - Codificacion: "MGDEE51_5"
+      Grupo: "5"
+      Sub_N: "5.1.5"
+      Rotulo: "Nombre OAE relacionado"
+      Def: "Nombre institucional, en caso que sea el OAE productor que no esté registrado en el codificador."
+      Flags:
+        - "MU"
+    - Codificacion: "MGDEE7_2"
+      Grupo: "7"
+      Sub_N: "7.2"
+      Rotulo: "Nombre de procedimiento administrativo asociado"
+      Def: "Nombre del procedimiento administrativo, en caso de no encontrarse incorporado a CPAT."
+
+Tabla_2_Documentos_Extracto:
+  ID: "TDE_LIN_META_DOC_TAB2_EX_001"
+  Items:
+    - Codificacion: "MGDDE2_1"
+      Grupo: "2"
+      Sub_N: "2.1"
+      Rotulo: "Tamaño"
+      Def: "Volumen del documento estimado en Kb."
+
+Formato_Fechas_ISO_8601:
+  ID: "TDE_LIN_META_FMT_001"
+  Req:
+    - "Se genera automáticamente, según formato aaaa-mm-dd hh:mm:ss (ISO 8601)."
+    - "Debe tener posibilidad de ser modificado, pero dicho cambio debe quedar registrado."
+  Def: "Formato aaaa-mm-dd hh:mm:ss (ISO 8601)"
+
+Valores_y_Ejemplos_Extracto:
+  ID: "TDE_LIN_META_EX_001"
+  Items:
+    - Ctx: "Servicio interoperabilidad Códigos (Gescode)"
+    - Ex: "5076 (PA-UNI00002-00001- Convalidación de Programa de Perfeccionamiento Académico)"
+    - Ex: "Resolución exenta asigna presupuesto para compra de insumos"
+    - Ctx: "El valor a seleccionar desde lista controlada dependerá de un término genérico."
+    - Ctx: "Lista controlada de origen (ver sección 4. lista N° 8)."
+
+Obligaciones_de_Implementacion:
+  ID: "TDE_LIN_META_REQ_001"
+  Req:
+    - "Asociar a todo documento y expediente electrónico un conjunto de metadatos que describa su identidad, contexto, estructura y contenido, desde su creación y durante todo su ciclo de vida."
+    - "Mantener los metadatos como registros permanentes mientras exista el expediente o documento en resguardo o custodia institucional y durante su preservación a largo plazo en el Archivo Nacional."
+    - "Conservar metadatos en las plataformas usadas para la gestión documental, evitando sobrescrituras que destruyan la trazabilidad."
+    - "Generar metadatos en formato estandarizado cuando se interoperan documentos o expedientes entre sistemas."
+  Rec:
+    - "Implementar los metadatos mediante estructuras en repositorios documentales, bases de datos u otras soluciones que permitan su gestión y preservación."
+    - "Documentar las decisiones institucionales respecto de metadatos sugeridos y extensiones locales del modelo."
+
+Grupos_de_Metadatos_Expedientes_Resumen:
+  ID: "TDE_LIN_META_EXP_GRUPOS_001"
+  Description: >-
+    Resumen de los grupos de metadatos definidos para expedientes electrónicos, basado en la
+    tabla de metadatos (Tabla 1) de la guía original.
+  Grupos:
+    - ID: "TDE_LIN_META_EXP_G1_IDENTIFICACION"
+      Name: "Identificación"
+      Def: >-
+        Metadatos que permiten la identificación unívoca del expediente (por ejemplo,
+        identificador de expediente, código de serie, número del expediente, estado, título).
+    - ID: "TDE_LIN_META_EXP_G2_DESCRIPCION"
+      Name: "Descripción"
+      Def: >-
+        Metadatos que describen el contenido global del expediente (resumen, asunto).
+    - ID: "TDE_LIN_META_EXP_G3_TEMPORALIDAD"
+      Name: "Temporalidad"
+      Def: >-
+        Metadatos que indican fechas clave del expediente (creación, finalización) y otros
+        atributos temporales.
+    - ID: "TDE_LIN_META_EXP_G4_CARACTERIZACION"
+      Name: "Caracterización documental"
+      Def: >-
+        Metadatos que identifican el tipo de expediente y su mecanismo de incorporación al
+        sistema de gestión documental institucional.
+    - ID: "TDE_LIN_META_EXP_GN_OTROS"
+      Name: "Otros grupos (según guía)"
+      Ctx: >-
+        La tabla completa de metadatos para expedientes incluye más grupos y campos específicos
+        detallados en la sección 3.1 de la guía original, que deben ser consultados para
+        implementación exhaustiva.
+
+Grupos_de_Metadatos_Documentos_Resumen:
+  ID: "TDE_LIN_META_DOC_GRUPOS_001"
+  Description: >-
+    Resumen de la estructura de metadatos para documentos electrónicos, alineada con la sección
+    3 de la guía.
+  Rec:
+    - "Reutilizar, cuando corresponda, los grupos definidos para expedientes (por ejemplo, Identificación, Descripción, Temporalidad), adaptados a nivel documento."
+    - "Incorporar grupos adicionales específicos de documentos (por ejemplo, soporte, formato, firma electrónica, relación con expedientes), según lo indicado en las tablas de la guía."
+
+Implementacion_en_Sistemas_Institucionales:
+  ID: "TDE_LIN_META_SIST_001"
+  Rec:
+    - "Definir modelos de datos y esquemas de base de datos que reflejen el esquema de metadatos propuesto, incluyendo flags AN y MU."
+    - "Diseñar interfaces de usuario que permitan capturar metadatos obligatorios y condicionales, minimizando errores de registro."
+    - "Considerar desde el diseño la exportación/interoperación de metadatos según formatos estándar (por ejemplo, XML/JSON alineado a la Norma Técnica y a las necesidades del Archivo Nacional)."
+    - "Asegurar que los cambios al esquema de metadatos sean gestionados mediante procedimientos formales de control de cambios."
+
+Glosario_Local_Resumen:
+  Description: >-
+    La guía profundiza en el uso de metadatos en la gestión documental del Estado. Este
+    glosario local identifica nociones que se usan con un sentido específico en este
+    lineamiento.
+  Terms:
+    - Term: "Metadatos para la gestión documental en el Estado"
+      Ctx: >-
+        Conjunto estructurado de datos que describen documentos y expedientes electrónicos,
+        su contexto, estructura y contenido, utilizados para garantizar su identificación,
+        trazabilidad, interoperabilidad y preservación a largo plazo en el sector público.
+    - Term: "Expediente electrónico"
+      Ctx: >-
+        Conjunto organizado de documentos electrónicos que sustentan un procedimiento
+        administrativo, tramitado a través de medios electrónicos conforme a la Norma Técnica.
+
+Glosario_Ref_Lexicon:
+  Description: >-
+    Esta guía se apoya en la definición general de metadatos y otros conceptos ya presentes en
+    el Lexicon TDE.
+  Terms:
+    - Term: "Metadatos"
+      Ref_ID: "TDE_DEF_METADATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_METADATOS"
+
+Referencias_Resumen:
+  Description: >-
+    Referencias normativas y técnicas que sustentan la guía de metadatos.
+  Sources:
+    - "Ley N° 21.180 de Transformación Digital del Estado."
+    - "Ley N° 19.880 sobre procedimientos administrativos."
+    - "DS N° 4 de 2020, que regula la expresión electrónica de procedimientos administrativos."
+    - "DS N° 10 de 2023, Norma Técnica de Documentos y Expedientes Electrónicos."
+    - "ISO 15489 - Records management."
+    - "ISO 23081 - Metadata for records."
+    - "Lineamientos del Archivo Nacional de Chile para transferencia y preservación digital."

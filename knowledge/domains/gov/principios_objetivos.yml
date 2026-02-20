@@ -1,0 +1,309 @@
+# KODA TDE Principios y Objetivos Marco de la Transformación Digital del Estado
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:principios_objetivos:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_core"
+  type: "Principios_y_Objetivos_TDE"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "koda_internal"
+    source_files:
+      - "tde/knowledge/core/kb_tde_core_principios_y_objetivos_tde_koda.yml"
+  status: draft
+
+ID: "TDE-CORE-PRINCIPIOS-OBJETIVOS-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-11
+Ctx: "Principios y objetivos marco de la Transformación Digital del Estado (TDE) sintetizados desde estrategias WikiGuías"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Núcleo de principios y objetivos marco para el namespace tde"
+  objective: >-
+    Proveer un resumen estructurado de los principios y objetivos estratégicos que
+    gobiernan la Transformación Digital del Estado, sintetizando las cuatro
+    estrategias base (Gobierno Digital 2030, Datos, Identidad Digital y
+    Capacitaciones) en un artefacto core de referencia para toda la KB tde.
+  usage_guidance:
+    - "Usar este artefacto como marco superior para interpretar y aplicar los
+       lineamientos de otros artefactos tde (estrategias, lineamientos técnicos,
+       normas, plataformas)."
+    - "Ante dudas sobre prioridades o tensiones entre guías específicas, referirse a
+       estos principios y objetivos marco."
+    - "Complementar este artefacto con el Lexicon TDE para términos específicos y con
+       las estrategias individuales para detalle operativo."
+  style:
+    - "Responder en es-CL, tono técnico claro, orientado a arquitectura de políticas."
+
+Principios_TDE:
+  Description: >-
+    Principios transversales que deben guiar el diseño e implementación de políticas,
+    servicios, datos, identidades y capacidades en la Transformación Digital del Estado.
+  Items:
+    - ID: "TDE_CORE_PRI_001"
+      Name: "Digital_por_diseno"
+      Origin:
+        - "Estrategia de Gobierno Digital 2030"
+      Description: >-
+        Integrar tecnologías digitales desde el diseño de políticas públicas y
+        servicios, considerando su impacto en todo el ciclo de vida y no sólo como
+        capa posterior o de implementación.
+
+    - ID: "TDE_CORE_PRI_002"
+      Name: "Centrado_en_las_personas"
+      Origin:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Capacitaciones"
+      Description: >-
+        Situar a personas y empresas en el centro de la experiencia digital, tanto en
+        el diseño de servicios como en los procesos de formación, asegurando
+        accesibilidad, inclusión y pertinencia.
+
+    - ID: "TDE_CORE_PRI_003"
+      Name: "Gobierno_integrado_y_datos_compartidos"
+      Origin:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Datos"
+      Description: >-
+        Actuar como un solo Estado mediante interoperabilidad, intercambio seguro de
+        datos y coordinación multinivel e intersectorial, evitando duplicar solicitudes
+        de información y esfuerzos institucionales.
+
+    - ID: "TDE_CORE_PRI_004"
+      Name: "Valor_publico_basado_en_datos"
+      Origin:
+        - "Estrategia de Datos"
+        - "Gobierno Digital 2030"
+      Description: >-
+        Usar datos, información y conocimiento como activo estratégico para diseñar,
+        implementar y evaluar políticas y servicios, maximizando valor público y
+        transparencia.
+
+    - ID: "TDE_CORE_PRI_005"
+      Name: "Entornos_digitales_seguros_y_proteccion_de_datos"
+      Origin:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Identidad Digital"
+      Description: >-
+        Priorizar ciberseguridad y protección de datos personales y corporativos en
+        todo el ciclo de vida de servicios y sistemas, como condición de posibilidad
+        para confianza ciudadana y adopción digital.
+
+    - ID: "TDE_CORE_PRI_006"
+      Name: "Identidad_digital_como_habilitante"
+      Origin:
+        - "Estrategia de Identidad Digital"
+        - "Gobierno Digital 2030"
+      Description: >-
+        Tratar la identidad digital como habilitante clave para el ejercicio de
+        derechos, la inclusión y el acceso seguro a servicios públicos y privados,
+        sobre una infraestructura pública digital robusta.
+
+    - ID: "TDE_CORE_PRI_007"
+      Name: "Innovacion_publica_abierta_y_GovTech"
+      Origin:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Datos"
+      Description: >-
+        Fomentar innovación abierta y colaboración con sector privado, academia y
+        sociedad civil para desarrollar soluciones GovTech que amplifiquen impacto y
+        eficiencia del Estado.
+
+    - ID: "TDE_CORE_PRI_008"
+      Name: "Talento_digital_y_capacitacion_permanente"
+      Origin:
+        - "Estrategia de Capacitaciones"
+        - "Gobierno Digital 2030"
+      Description: >-
+        Reconocer que la transformación digital depende de personas, promoviendo
+        desarrollo continuo de talento, marcos de competencias y estrategias de
+        gestión del cambio a nivel institucional.
+
+    - ID: "TDE_CORE_PRI_009"
+      Name: "Equidad_territorial_y_inclusion_digital"
+      Origin:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Datos"
+        - "Estrategia de Capacitaciones"
+      Description: >-
+        Asegurar que las políticas y servicios digitales, así como las capacitaciones,
+        consideren brechas territoriales y poblacionales, con énfasis en gobiernos
+        locales y grupos vulnerables.
+
+    - ID: "TDE_CORE_PRI_010"
+      Name: "Sistemas_resilientes_sostenibles_y_responsables"
+      Origin:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Datos"
+        - "Estrategia de Identidad Digital"
+      Description: >-
+        Diseñar infraestructura y servicios digitales con criterios de resiliencia,
+        sostenibilidad, responsabilidad y respeto a marcos regulatorios nacionales e
+        internacionales.
+
+Objetivos_Estrategicos_TDE:
+  Description: >-
+    Objetivos de alto nivel que sintetizan la dirección estratégica común de las
+    cuatro estrategias base y que deben orientar lineamientos técnicos, normas y
+    proyectos.
+  Items:
+    - ID: "TDE_CORE_OBJ_001"
+      Name: "Experiencia_digital_simple_segura_e_inclusiva"
+      Source_Strategies:
+        - "Gobierno Digital 2030"
+      Description: >-
+        Mejorar la experiencia digital de personas y empresas, haciéndola más simple,
+        eficiente e inclusiva, superando el promedio OCDE en madurez de gobierno
+        digital hacia 2030.
+
+    - ID: "TDE_CORE_OBJ_002"
+      Name: "Estado_impulsado_por_datos"
+      Source_Strategies:
+        - "Estrategia de Datos"
+        - "Gobierno Digital 2030"
+      Description: >-
+        Transformar la Administración del Estado en una organización impulsada por
+        datos, información y conocimiento, con gobernanza, ecosistemas y capacidades
+        analíticas robustas.
+
+    - ID: "TDE_CORE_OBJ_003"
+      Name: "Sistema_integrado_de_servicios_y_procesos"
+      Source_Strategies:
+        - "Gobierno Digital 2030"
+      Description: >-
+        Articular servicios y procesos digitales como un sistema integrado, apoyado en
+        interoperabilidad, plataformas compartidas y modelos de arquitectura
+        empresarial.
+
+    - ID: "TDE_CORE_OBJ_004"
+      Name: "Rectoria_y_gobernanza_digital_fortalecidas"
+      Source_Strategies:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Identidad Digital"
+        - "Estrategia de Datos"
+      Description: >-
+        Fortalecer rectoría y gobernanza digital mediante instituciones sólidas,
+        marcos normativos actualizados y coordinación efectiva entre actores.
+
+    - ID: "TDE_CORE_OBJ_005"
+      Name: "Sistema_nacional_de_identidad_digital"
+      Source_Strategies:
+        - "Estrategia de Identidad Digital"
+        - "Gobierno Digital 2030"
+      Description: >-
+        Implementar un sistema nacional de identidad digital inclusivo, seguro y
+        confiable, basado en Registro Civil y ClaveÚnica, con marco público-privado
+        de confianza y escalabilidad internacional.
+
+    - ID: "TDE_CORE_OBJ_006"
+      Name: "Talento_digital_y_gestion_del_cambio"
+      Source_Strategies:
+        - "Estrategia de Capacitaciones"
+        - "Gobierno Digital 2030"
+      Description: >-
+        Desarrollar talento digital en el sector público mediante programas de
+        formación basados en competencias, trayectorias por perfiles, estrategias de
+        gestión del cambio y mecanismos de retención de personal crítico.
+
+    - ID: "TDE_CORE_OBJ_007"
+      Name: "Infraestructura_publica_digital_compartida"
+      Source_Strategies:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Datos"
+      Description: >-
+        Consolidar infraestructura pública digital segura, escalable y compartida
+        (plataformas, nube, conectividad, servicios de interoperabilidad) que soporte
+        servicios y datos a nivel nacional.
+
+    - ID: "TDE_CORE_OBJ_008"
+      Name: "Cierre_de_brechas_digitales_y_de_confianza"
+      Source_Strategies:
+        - "Gobierno Digital 2030"
+        - "Estrategia de Datos"
+        - "Estrategia de Capacitaciones"
+      Description: >-
+        Reducir brechas de acceso, uso y confianza en servicios digitales, mediante
+        políticas de inclusión, alfabetización digital y mejora de calidad de servicios
+        y canales.
+
+Relacion_Estrategias_Fuente:
+  Description: >-
+    Mapa de cómo las cuatro estrategias base contribuyen a los principios y objetivos
+    marco, útil para trazabilidad y auditoría de la KB tde.
+  Strategies:
+    - Name: "Estrategia de Gobierno Digital 2030"
+      URN: "urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0"
+      Contribuye_a_Principios:
+        - "TDE_CORE_PRI_001"
+        - "TDE_CORE_PRI_002"
+        - "TDE_CORE_PRI_003"
+        - "TDE_CORE_PRI_004"
+        - "TDE_CORE_PRI_005"
+        - "TDE_CORE_PRI_007"
+        - "TDE_CORE_PRI_008"
+        - "TDE_CORE_PRI_009"
+        - "TDE_CORE_PRI_010"
+      Contribuye_a_Objetivos:
+        - "TDE_CORE_OBJ_001"
+        - "TDE_CORE_OBJ_002"
+        - "TDE_CORE_OBJ_003"
+        - "TDE_CORE_OBJ_004"
+        - "TDE_CORE_OBJ_005"
+        - "TDE_CORE_OBJ_007"
+        - "TDE_CORE_OBJ_008"
+
+    - Name: "Estrategia de Datos de la Administración del Estado"
+      URN: "urn:knowledge:koda:gov:datos_administracion_estado:1.0.0"
+      Contribuye_a_Principios:
+        - "TDE_CORE_PRI_003"
+        - "TDE_CORE_PRI_004"
+        - "TDE_CORE_PRI_007"
+        - "TDE_CORE_PRI_009"
+        - "TDE_CORE_PRI_010"
+      Contribuye_a_Objetivos:
+        - "TDE_CORE_OBJ_002"
+        - "TDE_CORE_OBJ_007"
+        - "TDE_CORE_OBJ_008"
+
+    - Name: "Estrategia de Identidad Digital"
+      URN: "urn:knowledge:koda:gov:identidad_digital:1.0.0"
+      Contribuye_a_Principios:
+        - "TDE_CORE_PRI_005"
+        - "TDE_CORE_PRI_006"
+        - "TDE_CORE_PRI_010"
+      Contribuye_a_Objetivos:
+        - "TDE_CORE_OBJ_004"
+        - "TDE_CORE_OBJ_005"
+
+    - Name: "Estrategia de Capacitaciones para la Transformación Digital del Estado"
+      URN: "urn:knowledge:koda:gov:capacitaciones_tde:1.0.0"
+      Contribuye_a_Principios:
+        - "TDE_CORE_PRI_002"
+        - "TDE_CORE_PRI_008"
+        - "TDE_CORE_PRI_009"
+      Contribuye_a_Objetivos:
+        - "TDE_CORE_OBJ_006"
+        - "TDE_CORE_OBJ_008"

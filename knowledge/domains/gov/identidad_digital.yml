@@ -1,0 +1,511 @@
+# KODA TDE Estrategia de Identidad Digital
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:identidad_digital:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_estrategias"
+  type: "Estrategia_Identidad_Digital"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "EstrategiasEstrategias/Estrategia_de_identidad_digital.md"
+    source_url: "https://wikiguias.digital.gob.cl/Estrategias/identidad-digital"
+    source_updated_at: "2025-10-07T23:18:50.892Z"
+  status: draft
+
+ID: "TDE-ESTRATEGIA-IDENTIDAD-DIGITAL-01"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Human-Editor: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-11
+Ctx: "Estrategia de Identidad Digital (WikiGuías SGD) transformada a KODA para namespace tde"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Guía estratégica oficial sobre identidad digital en Chile"
+  objective: >-
+    Entregar respuestas densas y alineadas con la Estrategia de Identidad Digital,
+    preservando el MEAT del documento original y organizándolo en bloques consultables:
+    alcance, relevancia, contexto nacional, desafíos, visión, objetivo, modelo y
+    plan de implementación.
+  usage_guidance:
+    - "Usar este artefacto como fuente principal para consultas sobre identidad digital en el Estado chileno."
+    - "Cuando se mencionen conceptos generales de datos, infraestructura digital o servicios compartidos, preferir Ref a IDs del Lexicon TDE cuando existan."
+    - "Para detalles operativos del nuevo sistema público-privado de identidad digital, ir a Modelo_Identidad_Digital y Plan_Implementacion."
+  style:
+    - "Responder en es-CL, en tono técnico claro y pedagógico."
+    - "Priorizar explicaciones que ayuden a funcionarios públicos y policy makers." 
+
+Metadata_Original:
+  category: "Estrategias/Estrategias"
+  tags:
+    - "estrategia"
+    - "identidad digital"
+  description: >-
+    Marco estratégico para el establecimiento de un nuevo sistema de identidad digital
+    para personas naturales que actúen por sí o en representación de otras personas
+    naturales o jurídicas.
+
+Contexto_y_Justificacion:
+  - ID: "TDE_EST_ID_CTX_001"
+    Type: "Alcance"
+    Ctx: >-
+      La estrategia define un marco para un nuevo sistema de identidad digital para
+      personas naturales, con potencial de extensión futura a objetos y sistemas.
+    Key_Aspects:
+      - "Foco inicial en identidad de personas naturales como base del sistema."
+      - "Posibilidad de extender el modelo a identidades de objetos y sistemas en el tiempo."
+
+  - ID: "TDE_EST_ID_CTX_002"
+    Type: "Relevancia_Derechos_y_Inclusion"
+    Ctx: >-
+      La identidad digital es habilitante clave para el ejercicio de derechos en
+      entornos digitales y para la inclusión digital, permitiendo acceso a servicios
+      básicos, financieros y trámites transfronterizos.
+    Evidence:
+      - "La identidad es un derecho humano reconocido internacionalmente."
+      - "La identidad digital permite acceder a servicios públicos esenciales y
+         participar plenamente en la economía digital."
+      - "Estudios internacionales muestran impacto económico significativo de
+         sistemas robustos de identidad digital."
+
+  - ID: "TDE_EST_ID_CTX_003"
+    Type: "Relevancia_Economica_y_Competitividad"
+    Ctx: >-
+      Un sistema robusto de identidad digital puede aumentar la productividad, impulsar
+      el comercio electrónico, reducir costos de verificación y fortalecer la economía
+      digital.
+    Evidence:
+      - "Estimaciones de la UE y McKinsey muestran aportes sustantivos al PIB por
+         implementación de identidades digitales."
+      - "Ahorros significativos en costos de gestión y verificación de identidad
+         para acceso a servicios digitales."
+
+  - ID: "TDE_EST_ID_CTX_004"
+    Type: "Contexto_Chile_Logros"
+    Ctx: >-
+      Chile posee activos relevantes para identidad digital: registro civil robusto
+      con RUN, experiencia histórica en digitalización tributaria y la plataforma
+      ClaveÚnica operada por la SGD, con alta adopción y cobertura de trámites.
+    Assets:
+      - "Rol Único Nacional (RUN) como identificador fundacional administrado por Registro Civil."
+      - "Larga trayectoria del SII en digitalización de trámites tributarios y uso de credenciales digitales."
+      - "Plataforma ClaveÚnica como activo central de autenticación para más de 15M de personas y ~1800 trámites."
+
+  - ID: "TDE_EST_ID_CTX_005"
+    Type: "Desafios_Chile"
+    Ctx: >-
+      A pesar de los avances, Chile enfrenta aumento de fraudes digitales, marco
+      regulatorio fragmentado y gobernanza dispersa de identidad digital.
+    Challenges:
+      - "Incremento de intentos de fraude y phishing asociados a identidades digitales."
+      - "Regulación fragmentada: foco en firma electrónica avanzada y uso acotado de ClaveÚnica."
+      - "Gobernanza distribuida entre múltiples instituciones sin entidad rectora única ni modelo claro (centralizado vs descentralizado vs federado)."
+
+Vision_y_Objetivo:
+  Vision:
+    ID: "TDE_EST_ID_VIS_001"
+    Def: >-
+      Para 2030, Chile contará con un ecosistema de identidad digital al servicio de
+      las personas, sustentado en una sólida alianza público-privada, que lo posicione
+      como líder regional en economía digital y uno de los nuevos líderes mundiales
+      en identidad digital.
+  Objetivo:
+    ID: "TDE_EST_ID_OBJ_001"
+    Obj: >-
+      Implementar un sistema de identidad digital inclusivo, seguro y confiable que
+      permita a las personas naturales (y a quienes actúan en representación de otras
+      personas naturales o jurídicas) acceder de manera simple y amigable a productos
+      y servicios digitales públicos y privados, nacionales e internacionales.
+
+Modelo_Identidad_Digital:
+  - ID: "TDE_EST_ID_MOD_001"
+    Name: "Modelo_centralizado_para_identidad_fundacional"
+    Def: >-
+      El modelo propuesto se basa en un esquema centralizado para el otorgamiento de
+      la identidad fundacional, manteniendo al Registro Civil como responsable de la
+      identidad civil y del RUN, y aprovechando ClaveÚnica como principal activo de
+      autenticación.
+    Key_Elements:
+      - "Registro Civil mantiene responsabilidad sobre identidad fundacional y RUN."
+      - "ClaveÚnica se consolida como componente central de la infraestructura pública digital."
+      - "Se construye sobre marcos legales y activos tecnológicos existentes."
+
+  - ID: "TDE_EST_ID_MOD_002"
+    Name: "Marco_publico_privado_de_confianza"
+    Def: >-
+      La estrategia plantea un marco de confianza público-privado en el que entidades
+      privadas complementan capacidades del Estado para integrar instituciones al
+      sistema, operar servicios de confianza y escalar la adopción de identidad digital.
+    Key_Elements:
+      - "Entidades privadas como canales de distribución y operadores de servicios de confianza."
+      - "Complemento a la infraestructura pública digital provista por SGD y Registro Civil."
+      - "Enfoque en seguridad, interoperabilidad y resiliencia del sistema."
+
+  - ID: "TDE_EST_ID_MOD_003"
+    Name: "Broker_de_identidad_digital"
+    Def: >-
+      Se propone implementar una pasarela o broker de identidad digital sobre la
+      infraestructura de ClaveÚnica que ofrecerá servicios de autenticación y otros
+      servicios de confianza, comenzando con la cédula de identidad digital.
+    Components:
+      - "Servicio de autenticación basado en ClaveÚnica como factor primario."
+      - "Integración de la cédula de identidad digital como mecanismo de mayor seguridad."
+      - "Capacidad de integrar servicios de confianza adicionales en el tiempo."
+
+Gobernanza_y_Regulacion:
+  - ID: "TDE_EST_ID_GOB_001"
+    Name: "Gobernanza_corto_plazo_2025_2026"
+    Def: >-
+      En el corto plazo, la rectoría del sistema recae en un Comité Ejecutivo de
+      Identidad Digital compuesto por Registro Civil, SGD, ANCI y la Entidad
+      Acreditadora del Ministerio de Economía.
+    Responsibilities:
+      - "Registro Civil: identidad fundacional y cédula de identidad (física y digital)."
+      - "SGD: liderazgo en uso de tecnologías digitales y operación de ClaveÚnica."
+      - "ANCI: auditoría de seguridad del modelo de identidad."
+      - "Entidad Acreditadora MINECON: regulación e inspección de servicios de firma electrónica avanzada."
+
+  - ID: "TDE_EST_ID_GOB_002"
+    Name: "Gobernanza_mediano_plazo_2027_2030"
+    Def: >-
+      A mediano plazo, se proyecta la creación de una única autoridad rectora definida
+      por ley, que lidere el sistema de identidad digital y coordine a prestadores de
+      servicios de confianza públicos y privados.
+    Key_Aspects:
+      - "Ley que establece autoridad rectora y sus competencias."
+      - "Acreditación de entidades públicas y privadas como prestadores de servicios de confianza."
+      - "Mantenimiento del rol del Registro Civil en identidad fundacional."
+
+  - ID: "TDE_EST_ID_GOB_003"
+    Name: "Marco_regulatorio_y_estandares"
+    Def: >-
+      La estrategia contempla desarrollar y actualizar normas técnicas y regulatorias
+      sobre autenticación, seguridad, servicios de confianza y financiamiento, alineadas
+      con estándares internacionales.
+    Measures_Resumen:
+      - "Reforma y actualización de la Norma Técnica de Autenticación."
+      - "Normas conjuntas sobre ciberseguridad y seguridad de la información para servicios de autenticación."
+      - "Definición de indicadores de impacto y resultado del sistema de identidad digital."
+
+Plan_Implementacion:
+  Corto_Plazo_2025_2026:
+    ID: "TDE_EST_ID_PLAN_CP"
+    Purp: >-
+      Implementar un modelo inicial basado en ClaveÚnica y la cédula de identidad digital,
+      consolidar la gobernanza existente y poner en marcha el broker de identidad con
+      pilotos en sector público y entidades privadas seleccionadas.
+    Acciones_Claves:
+      - "Implementar cédula de identidad digital como parte del nuevo Sistema de Identificación Nacional."
+      - "Constituir el Consejo o Comité de Identidad Digital y definir indicadores de impacto."
+      - "Desarrollar la primera versión del broker de identidad sobre ClaveÚnica."
+      - "Reformar la Norma Técnica de Autenticación y dictar estándares de seguridad para servicios de autenticación."
+      - "Iniciar pilotos del broker en instituciones públicas y entidades privadas."
+      - "Implementar modelo de financiamiento de costo distribuido para uso de ClaveÚnica por entidades privadas."
+
+  Mediano_Plazo_2027_2030:
+    ID: "TDE_EST_ID_PLAN_MP"
+    Purp: >-
+      Escalar el sistema hacia un modelo con autoridad rectora única, integrar nuevos
+      prestadores de servicios de confianza y realizar evaluaciones intermedia y final
+      del sistema.
+    Acciones_Claves:
+      - "Establecer por ley la autoridad rectora del sistema de identidad digital."
+      - "Administrar el modelo de financiamiento para servicios privados de confianza."
+      - "Integrar nuevos prestadores de servicios de confianza públicos y privados al sistema."
+      - "Realizar evaluación intermedia y final del diseño e implementación del sistema."
+
+Tabla_N1_Nuevo_Sistema_Identidad_Digital:
+  ID: "TDE_EST_ID_TABLA_001"
+  Src: "tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_identidad_digital.md"
+  Ctx: "Tabla N°1. Nuevo sistema de identidad digital para Chile."
+  Items:
+    - ID: "TDE_EST_ID_TABLA_001_001"
+      Actividad: "Establecer o verificar la identidad original"
+      Responsable_Corto_Plazo:
+        - "Registro Civil"
+      Responsable_Mediano_Plazo:
+        - "Registro Civil"
+
+    - ID: "TDE_EST_ID_TABLA_001_002"
+      Actividad: "Elaborar decretos, reglamentos y leyes"
+      Responsable_Corto_Plazo:
+        - "Ministerio de Hacienda"
+        - "Ministerio de Justicia y DDHH"
+      Responsable_Mediano_Plazo:
+        - "Ministerio de Hacienda"
+        - "Ministerio de Justicia y DDHH"
+
+    - ID: "TDE_EST_ID_TABLA_001_003"
+      Actividad: "Liderar y coordinar el sistema"
+      Responsable_Corto_Plazo:
+        - "Comité Ejecutivo de Identidad Digital"
+        - "SGD"
+        - "ANCI"
+        - "Registro Civil"
+        - "Entidad Acreditadora (MINECON)"
+      Responsable_Mediano_Plazo:
+        - "***Autoridad pública claramente definida***"
+
+    - ID: "TDE_EST_ID_TABLA_001_004"
+      Actividad: "Establecer estándares funcionales, tecnológicos, de confianza y de seguridad"
+      Responsable_Corto_Plazo: []
+      Responsable_Mediano_Plazo: []
+
+    - ID: "TDE_EST_ID_TABLA_001_005"
+      Actividad: "Acreditar cumplimiento de estándares"
+      Responsable_Corto_Plazo: []
+      Responsable_Mediano_Plazo: []
+
+    - ID: "TDE_EST_ID_TABLA_001_006"
+      Actividad: "Fiscalizar el cumplimiento de estándares"
+      Responsable_Corto_Plazo:
+        - "ANCI"
+        - "Registro Civil"
+      Responsable_Mediano_Plazo:
+        - "***Autoridad pública claramente definida***"
+
+    - ID: "TDE_EST_ID_TABLA_001_007"
+      Actividad: "Prestar servicios de confianza"
+      Responsable_Corto_Plazo:
+        - "SGD"
+        - "Registro Civil"
+      Responsable_Mediano_Plazo:
+        - "Entidades acreditadas"
+        - "SGD"
+        - "Registro Civil"
+
+    - ID: "TDE_EST_ID_TABLA_001_008"
+      Actividad: "Sumar servicios de confianza al *broker* de identidad digital"
+      Responsable_Corto_Plazo:
+        - "SGD"
+      Responsable_Mediano_Plazo:
+        - "SGD"
+
+    - ID: "TDE_EST_ID_TABLA_001_009"
+      Actividad: "Integrar servicios de confianza en entidades públicas y privadas para autenticar a sus usuarios/clientes"
+      Responsable_Corto_Plazo:
+        - "SGD"
+        - "Entidades privadas"
+      Responsable_Mediano_Plazo:
+        - "SGD"
+        - "Entidades privadas"
+
+    - ID: "TDE_EST_ID_TABLA_001_010"
+      Actividad: "Cobrar a las entidades privadas que utilicen servicios de confianza públicos para autenticar a sus clientes"
+      Responsable_Corto_Plazo:
+        - "Registro Civil"
+      Responsable_Mediano_Plazo:
+        - "***Autoridad pública claramente definida***"
+
+    - ID: "TDE_EST_ID_TABLA_001_011"
+      Actividad: "Proveer el servicio de claves que cumplan estándares"
+      Responsable_Corto_Plazo:
+        - "SGD"
+      Responsable_Mediano_Plazo:
+        - "SGD"
+
+Anexo_N1_Plan_de_Accion_Estrategia_Identidad_Digital:
+  ID: "TDE_EST_ID_ANX_001"
+  Src: "tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_identidad_digital.md#anexo-no-1-plan-de-acción-de-la-estrategia-de-identidad-digital"
+  Ctx: "Anexo Nº 1: Plan de Acción de la Estrategia de Identidad Digital."
+  Items:
+    - ID: "TDE_EST_ID_ANX_001_001"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Implementar cédula de identidad digital"
+      Descripcion: "Como parte del nuevo Sistema de Identificación Nacional, se ofrecerá a las personas una nueva cédula de identidad que cuenta con 32 medidas de seguridad y una cédula digital, de carácter opcional, a la que podrán acceder a través de un aplicativo en sus teléfonos móviles."
+      Responsable: "Registro Civil"
+      Plazo: "Q4-2024"
+      Medio_de_verificacion: "Hito de lanzamiento realizado"
+
+    - ID: "TDE_EST_ID_ANX_001_002"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Constituir Consejo de identidad Digital"
+      Descripcion: "Comienzo de las funciones del consejo constituido por la SGD, el Registro Civil y la ANCI"
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q1-2025"
+      Medio_de_verificacion: "Acta de la primera sesión firmada"
+
+    - ID: "TDE_EST_ID_ANX_001_003"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Definir indicadores de impacto y resultado del nuevo sistema"
+      Descripcion: "Definir la línea de base, metas e indicadores de impacto y de resultado del nuevo sistema, para efectos de las evaluaciones intermedias y final."
+      Responsable: "Consejo de Identidad Digital"
+      Plazo: "Q2-2025"
+      Medio_de_verificacion: "Informe técnico publicado"
+
+    - ID: "TDE_EST_ID_ANX_001_004"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Desarrollar primera versión de ***broker*** de Identidad identidad digital"
+      Descripcion: "Se implementará un servicio de autenticación sobre la infraestructura de ClaveÚnica, para transformarla en una pasarela o *broker* de identidad, que ofrece diversos servicios."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q2-2025"
+      Medio_de_verificacion: "Cédula de identidad digital disponible en el servicio de autenticación de Clave Única"
+
+    - ID: "TDE_EST_ID_ANX_001_005"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Reformar la Norma Técnica de Autenticación"
+      Descripcion: "Establecer estándares y directrices técnicas sobre autenticación que fortalezcan, normativamente, el modelo de gobernanza propuesto en la Estrategia de Identidad Digital, a través de la actualización del Decreto N° 9, de 2023, del Ministerio Secretaría General de la Presidencia, que establece Norma Técnica de Autenticación."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q2-2025"
+      Medio_de_verificacion: "Decreto supremo publicado"
+
+    - ID: "TDE_EST_ID_ANX_001_006"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Establecer estándares y niveles de seguridad para la prestación de servicios de autenticación"
+      Descripcion: "Dictar una norma conjunta de carácter general que establezca los estándares y directrices técnicas en materia de ciberseguridad y seguridad de la información, que deberán cumplir quienes operen y/o desarrollen servicios de autenticación."
+      Responsable: "Ministerio de Hacienda & ANCI"
+      Plazo: "Q2-2025"
+      Medio_de_verificacion: "Norma publicada"
+
+    - ID: "TDE_EST_ID_ANX_001_007"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Iniciar piloto del ***broker*** de identidad digital en el sector público"
+      Descripcion: "Habilitar el uso del *broker* de identidad digital para órganos públicos."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q3-2025"
+      Medio_de_verificacion: "*Broker* de identidad en su primera versión en producción usada por instituciones públicas"
+
+    - ID: "TDE_EST_ID_ANX_001_008"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Proponer entidad rectora"
+      Descripcion: "Elaborar una recomendación técnica sobre cuál debería ser la entidad rectora del sistema de identidad digital, su alcance y competencias."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q4-2025"
+      Medio_de_verificacion: "Informe técnico publicado"
+
+    - ID: "TDE_EST_ID_ANX_001_009"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Proponer modelo de financiamiento para la prestación de servicios privados de confianza"
+      Descripcion: "Definir el modelo de financiamiento que operará cuando se sumen proveedores privados de servicios de autenticación al *broker*."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q4-2025"
+      Medio_de_verificacion: "Informe técnico publicado"
+
+    - ID: "TDE_EST_ID_ANX_001_010"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Iniciar piloto del ***broker*** de identidad digital en determinadas entidades privadas"
+      Descripcion: "Habilitar el uso del *broker* de identidad digital por parte de determinadas entidades privadas."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q1-2026"
+      Medio_de_verificacion: "*Broker* de identidad en su primera versión en producción usada por instituciones privadas"
+
+    - ID: "TDE_EST_ID_ANX_001_011"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Implementar un modelo de financiamiento para el uso de ClaveÚnica por entidades privadas"
+      Descripcion: "Las entidades privadas que se integren a ClaveÚnica deberán firmar un convenio con el Registro Civil para efectos de pagar de acuerdo al volumen de transacciones (costo distribuido)."
+      Responsable: "Registro Civil"
+      Plazo: "Q1-2026"
+      Medio_de_verificacion: "Actos administrativos del Registro Civil que aprueban convenios totalmente tramitados"
+
+    - ID: "TDE_EST_ID_ANX_001_012"
+      Alcance: "Corto plazo 2025-2026"
+      Accion: "Ingresar el servicio compartido FirmaGob a la lista de confianza de la Entidad Acreditadora"
+      Descripcion: "Cumplir todos los requisitos para ser agregados a la lista de confianza (*trust service list*) de la Entidad Acreditadora de MINECON."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q4-2026"
+      Medio_de_verificacion: "FirmaGob agregado a la lista de confianza"
+
+    - ID: "TDE_EST_ID_ANX_001_013"
+      Alcance: "Mediano plazo 2027-2030"
+      Accion: "Contar con una única autoridad rectora"
+      Descripcion: "Establecer por ley la entidad que ejercerá la rectoría del sistema."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q1-2027"
+      Medio_de_verificacion: "Ley publicada"
+
+    - ID: "TDE_EST_ID_ANX_001_014"
+      Alcance: "Mediano plazo 2027-2030"
+      Accion: "Administrar modelo de financiamiento para la prestación de servicios privados de confianza"
+      Descripcion: "Definir el modelo de financiamiento que operará cuando se sumen proveedores privados de servicios de confianza al sistema."
+      Responsable: "Autoridad rectora"
+      Plazo: "Q2-2027"
+      Medio_de_verificacion: "Según corresponda"
+
+    - ID: "TDE_EST_ID_ANX_001_015"
+      Alcance: "Mediano plazo 2027-2030"
+      Accion: "Incluir nuevos prestadores de servicios de confianza en el sistema"
+      Descripcion: "Expandir la solución para integrar nuevos servicios de autenticación e identidad ofrecidos por prestadores de servicios de confianza debidamente acreditados, tanto del sector público como privado."
+      Responsable: "Autoridad rectora"
+      Plazo: "Q3 -2027"
+      Medio_de_verificacion: "Piloto con nuevos prestadores de servicios de confianza concluido"
+
+    - ID: "TDE_EST_ID_ANX_001_016"
+      Alcance: "Mediano plazo 2027-2030"
+      Accion: "Realizar evaluación intermedia del diseño e implementación del sistema"
+      Descripcion: "Evaluar los primeros años de operación del sistema y sus pilotos."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q2-2028"
+      Medio_de_verificacion: "Informe de entidad independiente publicado"
+
+    - ID: "TDE_EST_ID_ANX_001_017"
+      Alcance: "Mediano plazo 2027-2030"
+      Accion: "Realizar evaluación final del diseño e implementación del sistema"
+      Descripcion: "Evaluar los primeros años de la operación del sistema y sus pilotos."
+      Responsable: "Ministerio de Hacienda"
+      Plazo: "Q4-2030"
+      Medio_de_verificacion: "Informe de identidad independiente publicado"
+
+Riesgos_y_Consideraciones:
+  - ID: "TDE_EST_ID_RISK_001"
+    Type: "Seguridad_y_fraude"
+    Warn: >-
+      El aumento de fraudes y suplantación de identidad digital refuerza la necesidad
+      de estándares robustos de seguridad, monitoreo y educación a la ciudadanía.
+
+  - ID: "TDE_EST_ID_RISK_002"
+    Type: "Fragmentacion_institucional"
+    Warn: >-
+      La actual fragmentación de roles y regulaciones en identidad digital puede
+      dificultar la implementación del nuevo modelo si no se logra una coordinación
+      efectiva y una autoridad rectora clara.
+
+  - ID: "TDE_EST_ID_RISK_003"
+    Type: "Adopcion_y_confianza"
+    Warn: >-
+      La adopción exitosa del sistema requiere confianza ciudadana y de las entidades
+      privadas, lo que depende de transparencia, protección de datos y beneficios claros
+      para las personas.
+
+Glosario_Ref_Lexicon:
+  Description: >-
+    Algunos conceptos generales (por ejemplo, servicios digitales) se encuentran
+    definidos de forma canónica en el Lexicon TDE. Esta sección referencia términos
+    ya presentes en el artefacto core kb_tde_core_lexicon_wikiguias_koda.yml.
+  Terms:
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+
+Bibliografia_Resumen:
+  Description: >-
+    La Estrategia de Identidad Digital se apoya en marcos internacionales sobre
+    identidad digital, economía digital, protección de datos y gobierno digital, así
+    como en estudios y estadísticas nacionales sobre brechas y ciberdelitos.
+  Sources_Claves:
+    - "Propuesta de Reglamento de la Unión Europea sobre Marco para una Identidad Digital Europea."
+    - "Informes del Banco Interamericano de Desarrollo sobre gestión de identidad y economía digital."
+    - "Informes del Banco Mundial sobre identificación para el desarrollo (ID4D)."
+    - "Informes de CEPAL sobre inclusión y brechas digitales."
+    - "Estudios nacionales de CSIRT, PDI y encuestas sobre fraude digital en Chile."
+    - "Estudios y estadísticas de la Secretaría de Gobierno Digital sobre uso de ClaveÚnica y servicios digitales."

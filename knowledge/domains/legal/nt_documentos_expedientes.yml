@@ -1,0 +1,374 @@
+# KODA TDE Lineamiento Técnico: Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)
+---
+_manifest:
+  urn: "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Norma_Tecnica_Documentos_Expedientes_Electronicos"
+  provenance:
+    created_by: "Transformación Digital del Estado - Secretaría de Gobierno Digital"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosNormas/Decreto_10__Documentos_y_Expedientes_Electrónicos_para_la_gestión_de_procedimientos_administrativos.md"
+    source_url: "https://wikiguias.digital.gob.cl/Normas/Decreto10"
+    source_updated_at: "2025-10-07T20:58:44.453Z"
+  status: draft
+
+ID: "TDE-LIN-NORMA-DED-10"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Ministerio Secretaría General de la Presidencia"
+Human-Editor: "División de Gobierno Digital - Ministerio SEGPRES"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Norma Técnica de Documentos y Expedientes Electrónicos para la gestión de procedimientos administrativos en los órganos de la Administración del Estado (Decreto 10)"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Norma técnica base para gestión de documentos y expedientes electrónicos en el Estado"
+  objective: >-
+    Definir los estándares, formatos, metadatos, registros de trazabilidad, fases y procesos que
+    deben cumplir los OAEs para administrar y gestionar documentos y expedientes electrónicos en
+    el marco de los procedimientos administrativos regulados por la Ley 19.880 y la Ley 21.180.
+  usage_guidance:
+    - "Usar este lineamiento como norma marco para diseñar políticas de gestión documental, plataformas de expedientes electrónicos, repositorios y trazabilidad."
+    - "Complementar con las guías técnicas de metadatos (lineamiento 004), MGDE (008), Calidad y Funcionamiento, Notificaciones, Interoperabilidad (Decreto 12), Seguridad y Ciberseguridad y otras normas técnicas vinculadas."
+    - "Aplicar en conjunto con el Sistema de Transformación Digital 2025 y los diagnósticos CPAT/MGDE/Calidad Web."
+  style:
+    - "Responder en es-CL, tono normativo y técnico, respetando definiciones y estructura jurídica."
+
+Metadata_Original:
+  title: "Decreto 10 | Documentos y Expedientes Electrónicos para la gestión de procedimientos administrativos"
+  url: "https://wikiguias.digital.gob.cl/Normas/Decreto10"
+  category: "Lineamientos Técnicos/Normas"
+  tags:
+    - "decreto"
+    - "expediente electrónico"
+    - "norma técnica"
+    - "comunicación oficial"
+    - "gestión documental"
+  description: "Establece Norma Técnica de Documentos y Expedientes Electrónicos para la gestión de procedimientos administrativos."
+  updated_at: "2025-10-07T20:58:44.453Z"
+  promulgacion: "2023-05-19"
+  publicacion: "2023-08-17"
+  version: "Única - 17-AGO-2023"
+
+Contexto_y_Base_Legal:
+  ID: "TDE_LIN_DED10_CTX_001"
+  Ctx: >-
+    La norma se dicta en virtud de la Constitución Política, la Ley 19.880 (procedimientos
+    administrativos), la Ley 18.993, la Ley 21.180 (Transformación Digital del Estado), la Ley
+    19.628 (Protección de la Vida Privada), el DFL 1/2020 (gradualidad de la TD), el DS 4/2020
+    (Reglamento de TD), la Ley 19.799 (documentos electrónicos y firma), y normas asociadas a
+    microformas y reglamentos complementarios.
+  Just:
+    - "Es necesario establecer estándares, formatos, metadatos, trazabilidad y procesos para la gestión de documentos y expedientes electrónicos que obran en poder de los OAEs."
+
+Objeto_de_la_Norma:
+  ID: "TDE_LIN_DED10_OBJ_001"
+  Articulo: 1
+  Src: "tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_10__Documentos_y_Expedientes_Electrónicos_para_la_gestión_de_procedimientos_administrativos.md#artículo-1-objeto"
+  Purp: >-
+    La presente norma técnica tiene por objeto definir los estándares, formatos, metadatos,
+    registros de trazabilidad, fases y procesos que deben cumplir los órganos de la
+    Administración del Estado para administrar y gestionar los documentos y expedientes
+    electrónicos que obren en su poder a raíz de la tramitación de un procedimiento
+    administrativo.
+
+Definiciones_Clave:
+  ID: "TDE_LIN_DED10_DEF_001"
+  Articulo: 2
+  Src: "tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_10__Documentos_y_Expedientes_Electrónicos_para_la_gestión_de_procedimientos_administrativos.md#artículo-2-definiciones"
+  Terms:
+    - Term: "Comunicacion_Oficial"
+      Def: >-
+        Mensaje entre órganos de la Administración del Estado, suscrito por el (la) Jefe(a)
+        Superior de Servicio o quien tenga facultades delegadas para la representación del
+        órgano, emitido o recibido a través de un medio electrónico de carácter formal que
+        asegure la integridad y registro de dicha comunicación.
+    - Term: "Conservacion_o_Preservacion_Documental_Digital"
+      Def: >-
+        Conjunto de medidas, estándares, tecnologías y acciones necesarias para mantener el
+        acceso a los documentos y la información contenida en ellos en el tiempo, sin afectar
+        su fidelidad e integridad. La preservación documental digital deberá comprender la
+        migración de soportes y formatos, así como de las tecnologías que los sustentan, en
+        cumplimiento del principio de actualización contemplado en el artículo 16 bis de la
+        ley N° 19.880 y de lo establecido en el decreto supremo N° 4, de 2020, del Ministerio
+        Secretaría General de la Presidencia.
+    - Term: "Copia_Autorizada"
+      Def: >-
+        Aquella generada por una plataforma electrónica de gestión de expedientes electrónicos
+        y que cuenta con un medio de verificación de su autenticidad.
+    - Term: "Documento"
+      Def: >-
+        Información creada, recibida o conservada como evidencia y como activo por una
+        organización o individuo, en el desarrollo de sus actividades o en virtud de sus
+        obligaciones legales.
+    - Term: "Documento_Electronico"
+      Def: >-
+        Representación de un hecho, imagen o idea creada, enviada, comunicada o recibida por
+        medios electrónicos y almacenada de un modo idóneo para permitir su uso posterior.
+    - Term: "Expediente_Administrativo"
+      Def: >-
+        Registro íntegro de todas las actuaciones de un procedimiento administrativo, tales
+        como los documentos presentados por los interesados, por terceros y por otros órganos
+        de la Administración del Estado, con expresión de la fecha y hora de su recepción,
+        respetando su orden de ingreso; las actuaciones y los documentos y resoluciones que el
+        órgano remita a los interesados, a terceros o a otros órganos de la Administración del
+        Estado y las notificaciones y comunicaciones a que éstas den lugar, con expresión de la
+        fecha y hora de su envío, en estricto orden de ocurrencia o egreso; así como todo otro
+        requisito que indique la ley N° 19.880 o sus reglamentos, que se estructuran en las
+        plataformas electrónicas en la forma de expedientes electrónicos.
+    - Term: "Expediente_Electronico"
+      Def: >-
+        Unidad documental individualizada por medio de un identificador único, funcionalmente
+        estructurado por el conjunto de índices, documentos electrónicos, metadatos y
+        registros, que es generada por un órgano de la Administración del Estado a través de
+        una plataforma electrónica, para el registro de sus expedientes administrativos en
+        soporte electrónico.
+    - Term: "Expediente_Hibrido"
+      Def: >-
+        Expediente electrónico que, en virtud del artículo 14 del Reglamento, registra las
+        actuaciones del procedimiento administrativo tanto en soporte electrónico como en
+        soporte papel, haciendo referencia a la ubicación de estas últimas.
+    - Term: "Gestion_Documental"
+      Def: >-
+        Conjunto de procesos asociados a la administración del ciclo de vida de los
+        documentos, desde su creación o captura hasta su disposición final, los que se
+        vinculan directamente con la gestión de procesos institucionales dentro de la cual se
+        produce o utiliza dicha documentación.
+    - Term: "IUIe"
+      Def: >-
+        Número único que se asigna automáticamente a un expediente registrado en un Sistema de
+        Gestión Documental, permitiendo su referencia, identificación y localización.
+    - Term: "Plataforma_Electronica"
+      Def: >-
+        Software o conjunto de software, datos e infraestructura tecnológica que sustenta
+        procesos o procedimientos.
+    - Term: "Sistema_o_Plaf_Gestion_Documental"
+      Def: >-
+        Sistema informático que dirige y controla los procesos de un órgano de la
+        Administración del Estado relativos a la incorporación, gestión y acceso a sus
+        documentos a lo largo del tiempo, y que comprende a las personas, los procedimientos
+        relacionados, las herramientas digitales y la tecnología requerida para llevar a cabo
+        dichos procesos.
+    - Term: "Reglamento"
+      Def: >-
+        Decreto supremo N° 4, de 2020, del Ministerio Secretaría General de la Presidencia,
+        reglamento que regula la forma en que los procedimientos administrativos deberán
+        expresarse a través de medios electrónicos, en las materias que indica, según lo
+        dispuesto en la ley N° 21.180 sobre Transformación Digital del Estado.
+    - Term: "Usuarios"
+      Def: >-
+        Personas naturales o sus apoderados(as), y los(as) representantes de las personas
+        jurídicas o entidades y agrupaciones sin personalidad jurídica que actúan como
+        interesados(as) en un procedimiento administrativo, así como los(as) funcionarios(as)
+        que acceden a las plataformas electrónicas que soportan procedimientos administrativos
+        o procesos relacionados con estos.
+
+Modelo_Gestion_Expedientes_y_Gestion_Documental:
+  ID: "TDE_LIN_DED10_MODELO_001"
+  Articulos: [3, 4, 5]
+  Politica_Gestion_Documental:
+    Req:
+      - "Definir una Política de Gestión Documental que establezca estructura institucional de gestión y almacenamiento de documentos y expedientes electrónicos (plataformas de gestión, repositorios, archivos institucionales)."
+      - "Ajustar la Política a directrices de la norma, normativa vigente y guías técnicas del artículo 38."
+      - "Mantener actualizada la Política de Gestión Documental, debiendo ser revisada y actualizada en períodos de mínimo un año y máximo de tres años."
+    Contenidos_Minimos:
+      - "Objetivo institucional en gestión documental."
+      - "Roles responsables del proceso de gestión documental."
+      - "Identificación de procedimientos administrativos según Norma de Interoperabilidad."
+      - "Roles, metas y lineamientos en preservación y resguardo documental."
+      - "Criterios para procesos de gestión documental (definidos en guías técnicas)."
+      - "Gobernanza interna para implementación y aseguramiento."
+  Elementos_Minimos:
+    - "Plataforma de gestión de expedientes."
+    - "Uno o más repositorios documentales."
+    - "Procesos de creación de documentos electrónicos estandarizados e interoperables."
+
+Plataformas_y_Repositorios:
+  ID: "TDE_LIN_DED10_PLATAFORMAS_001"
+  Articulos: [6, 7, 8, 9, 10]
+  Req:
+    - "Contar con una Plataforma de Gestión de Expedientes Electrónicos para soportar procedimientos administrativos en todas sus fases (recepción, creación, procesamiento, transición, disposición final)."
+    - "Contar con al menos un repositorio documental para almacenamiento y custodia de documentos y expedientes electrónicos, que permita su gestión (trazabilidad, relaciones, metadatos)."
+    - "Usar códigos estandarizados del Gestor de Códigos del Estado (Norma de Interoperabilidad) para identificar OAEs, procedimientos y coberturas geográficas en todas las plataformas."
+    - "Registrar fecha y hora de todas las gestiones sobre documentos/expedientes en plataformas, usando UTC+00:00 y sincronización con el SHOA."
+    - "Garantizar que toda plataforma interconectada, integrada o que permita acceso a expedientes cumpla las normas técnicas señaladas en el art. 57 del Reglamento."
+
+Trazabilidad_Minima:
+  ID: "TDE_LIN_DED10_TRAZA_001"
+  Articulo: 11
+  Req:
+    - "Incluir en plataformas y expedientes registros de: creación, incorporación, modificación, transferencia y eliminación."
+    - "Registrar acceso al expediente."
+    - "Registrar constancia de autorización de poderes cuando corresponda."
+  Ctx_Optional:
+    - "Los métodos de implementación, estandarización y metadatos adicionales de trazabilidad se definan en guías técnicas del art. 38."
+
+Documentos_Electronicos:
+  ID: "TDE_LIN_DED10_DOCS_001"
+  Articulos: [12, 13, 14, 15, 16, 17]
+  Estandarizacion_Estructura:
+    Def: >-
+      Un documento electrónico estandarizado se compone de datos, formato de archivo y metadatos
+      estandarizados. Los detalles se precisan en guías técnicas.
+  Formatos_Validos:
+    Req:
+      - "Incorporar documentos electrónicos en expedientes sólo en formatos autorizados por las guías técnicas."
+      - "Cuando se requiera un nuevo formato, proponer su incorporación a la guía, con visación de la DGD y, cuando corresponda, del Archivo Nacional."
+  Metadatos_Documento:
+    Req:
+      - "Vincular todo documento electrónico con una estructura de metadatos estandarizados, incluyendo campos obligatorios, condicionales y sugeridos definidos en guías técnicas."
+  Acceso_Documentos:
+    Req:
+      - "Usar mecanismos de autenticación de la Norma Técnica de Autenticación para acceso de interesados y usuarios de plataformas de gestión documental/expedientes."
+      - "Para acceso de otros OAEs, seguir la Norma Técnica de Interoperabilidad."
+  Verificacion_Documentos:
+    Req:
+      - "Habilitar consulta de trazabilidad para verificar identificación y cambios en documentos electrónicos, identificando a quien ejecuta las gestiones."
+  Preservacion_Documentos:
+    Req:
+      - "Conservar documentos electrónicos en entornos que aseguren confidencialidad, disponibilidad e integridad durante todo su ciclo de vida, según Norma de Seguridad de la Información y Ciberseguridad."
+      - "Mantener custodia en repositorios documentales adecuados."
+
+Expedientes_Electronicos:
+  ID: "TDE_LIN_DED10_EXP_001"
+  Articulos: [18, 19, 20, 21, 22, 23, 24, 25, 26]
+  Creacion:
+    Req:
+      - "Crear expediente electrónico al inicio de todo procedimiento administrativo (de oficio o a petición de parte), asignando IUIe."
+      - "Registrar creación en la plataforma y generar metadatos obligatorios del expediente."
+  Esquema_Estructural:
+    Componentes:
+      - "Documentos electrónicos estandarizados."
+      - "Índice electrónico del expediente."
+      - "Metadatos estandarizados del expediente."
+      - "Registro de trazabilidad."
+      - "Registro de accesos (autenticaciones y accesos efectivos, autorizaciones a terceros)."
+      - "Registro de actos administrativos (incluyendo los interoperados)."
+      - "Registro de demás acciones de gestión documental y de expedientes."
+  Elementos_y_Principio_Fidelidad:
+    Def: >-
+      Todo expediente electrónico debe registrar íntegra y sucesivamente las actuaciones del
+      procedimiento, en cumplimiento del principio de fidelidad del art. 16 bis de la Ley 19.880.
+  Incorporacion_Documentos:
+    Req:
+      - "Seguir reglas diferenciadas para inicio a petición de parte o de oficio."
+      - "Formularios/solicitudes web: conformar documento electrónico visualizable con metadatos."
+      - "Documentos ingresados vía plataformas: generar metadatos estandarizados y luego incorporarlos al expediente."
+      - "Documentos físicos: conformar microformas según DFL 1/2020 (Culturas) y reglamento DS 23/2020."
+  Vinculacion_Metadatos:
+    Req:
+      - "Vincular todo contenido del expediente con el índice y metadatos estandarizados, según estándares y procesos definidos en guías técnicas."
+  Trazabilidad_Incoporacion:
+    Req:
+      - "Registrar incorporación de documentos al expediente mediante: documento electrónico directo, enlace persistente a repositorio externo o enlace a otro expediente (anidamiento)."
+  Interoperabilidad:
+    Req:
+      - "Cuando se incorporen datos/documentos/expedientes por interoperabilidad, distinguir si se trata de datos o documentos/expedientes."
+      - "Datos interoperados: incorporarlos mediante documento electrónico estandarizado."
+      - "Documentos/expedientes interoperados: incorporarlos según esta norma."
+      - "Identificar elemento interoperado, órgano de origen (código Gestor de Códigos del Estado), servicio de interoperabilidad usado y contar con autorización del interesado cuando se trate de datos sensibles."
+  Documentacion_Fisica_y_Expedientes_Hibridos:
+    Req:
+      - "Digitalizar documentación física en formato de microforma (DFL 1/2020 y DS 23/2020) como copia fiel con valor probatorio."
+      - "En casos de excepción donde no sea posible digitalizar, incorporar estructura de documento electrónico que describa y referencie la documentación física, tratándola como expediente híbrido según guías técnicas."
+
+Comunicaciones_Notificaciones_Acceso_y_Certificados:
+  ID: "TDE_LIN_DED10_COM_NOTIF_001"
+  Articulos: [27, 28, 29, 30]
+  Req:
+    - "Incorporar al expediente todas las comunicaciones oficiales del procedimiento, registrándolas mediante la Plataforma de Comunicaciones Oficiales según guías técnicas."
+    - "Incorporar al expediente todas las notificaciones realizadas, según tipos definidos en guías técnicas de notificaciones."
+    - "Garantizar acceso a expedientes y documentos mediante mecanismos de autenticación (Norma de Autenticación) para interesados y usuarios, y Norma de Interoperabilidad para otros OAEs."
+    - "Emitir automáticamente certificado electrónico de presentación de documentación en el expediente (con fecha/hora, origen, número de expediente, órgano, identificación del presentante y receptor), incorporándolo al expediente; emitir copia física en casos de excepción de Ley 19.880 cuando se solicite."
+
+Condiciones_de_Funcionamiento_y_Acceso:
+  ID: "TDE_LIN_DED10_FUNC_001"
+  Articulos: [31, 32, 33, 34, 35, 36, 37]
+  Req:
+    - "Habilitar consulta de trazabilidad para verificar contenido y cambios en expedientes electrónicos."
+    - "Conservar documentos electrónicos según Norma de Seguridad y Ciberseguridad, en repositorios que cumplan condiciones de la norma."
+    - "Permitir uso de enlaces persistentes para referenciar documentación o expedientes alojados en otros repositorios, cumpliendo estándares de enlaces persistentes definidos en guías técnicas."
+    - "Validar identidad de usuarios que realizan actuaciones en la plataforma de expedientes, o identificar ingreso automatizado desde otras plataformas (Norma de Autenticación)."
+    - "Cumplir estándares mínimos de plataformas (control de poderes, control de roles de acceso, generación de copias autorizadas, condiciones de repositorios, aseguramiento de servicios)."
+    - "Asegurar que plataformas interconectadas/integradas/interoperen permitan acceso a expedientes y contenidos siguiendo normas de Autenticación, Interoperabilidad y Seguridad/Ciberseguridad."
+    - "Mantener registro de accesos a documentos con datos sensibles, incluyendo usuario, fecha/hora y documentos accedidos; incorporar en ciclo de mejora continua procesos para establecer perfiles de acceso acordes a Norma de Calidad y Funcionamiento."
+
+Disposiciones_Finales:
+  ID: "TDE_LIN_DED10_DISP_001"
+  Articulos: [38, 39, 40]
+  Guías_Tecnicas:
+    Def: >-
+      La DGD dictará una o más guías técnicas para facilitar la implementación de la norma,
+      definiendo aspectos operativos y procedimientos (incluyendo metadatos, formatos,
+      trazabilidad, estructuras y procesos específicos).
+  Gradualidad:
+    Ctx: >-
+      La aplicación de la norma se ajusta a la gradualidad del DFL 1/2020 (TD), con lineamientos y
+      formatos definidos por la DGD para los órganos obligados.
+  Revision:
+    Req:
+      - "Revisar y actualizar la norma al menos cada dos años; el plazo se cuenta desde la entrada en vigencia de esta norma técnica."
+      - "Las actualizaciones deben tomar en consideración aprendizajes y dificultades de aplicación transversales, impulsar buenas prácticas y minimizar las incorrectas que se pudieren haber presentado."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de la norma apoyados en definiciones del Lexicon TDE."
+  Terms:
+    - Term: "Documento"
+      Ref_ID: "TDE_DEF_DOCUMENTO"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DOCUMENTO"
+    - Term: "Metadatos"
+      Ref_ID: "TDE_DEF_METADATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_METADATOS"
+    - Term: "Expediente electronico"
+      Ref_ID: "TDE_DEF_EXPEDIENTE_ELECTRONICO"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_EXPEDIENTE_ELECTRONICO"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+    - Term: "Interoperar"
+      Ref_ID: "TDE_DEF_INTEROPERAR"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEROPERAR"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos y normas que se articulan con la Norma Técnica de Documentos y Expedientes Electrónicos."
+  XRef_Required:
+    - "urn:knowledge:koda:gov:metadatos_documentos:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:mgde:1.0.0"
+    - "urn:knowledge:koda:gov:calidad_web:1.0.0"
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:cpat_completa:1.0.0"
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+
+Referencias_Resumen:
+  Description: "Referencias normativas clave vinculadas a la Norma Técnica de Documentos y Expedientes Electrónicos."
+  Sources:
+    - "Ley N° 19.880 (procedimientos administrativos)."
+    - "Ley N° 21.180 (Transformación Digital del Estado)."
+    - "Ley N° 19.628 (Protección de la Vida Privada)."
+    - "Ley N° 19.799 (documentos electrónicos y firma)."
+    - "DFL N° 1/2020 (gradualidad de la TD y microformas)."
+    - "DS N° 4/2020 (Reglamento que regula procedimientos electrónicos)."
+    - "DS N° 181/2002 y DS N° 14/2014 (reglamento firma electrónica)."
+    - "DS N° 23/2020 (microformas)."
+    - "Normas técnicas de Autenticación, Interoperabilidad, Calidad y Funcionamiento, Notificaciones y Seguridad/Ciberseguridad."

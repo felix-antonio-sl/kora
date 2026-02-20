@@ -1,0 +1,215 @@
+# KODA TDE Workflow: Arquitectura de Hub y Agentes sobre la KB `tde`
+---
+_manifest:
+  urn: "urn:knowledge:koda:sys:hub_agentes:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Arquitectura_Hub_Agentes_TDE"
+  provenance:
+    created_by: "Equipo KODA/TDE"
+    created_at: "2025-12-11"
+    source_corpus: "koda_internal"
+    source_files:
+      - "tde/knowledge/domains/tde/lineamientos/kb_tde_lineamientos_030_architectura_hub_agentes_tde_koda.yml"
+    source_urls: []
+    source_updated_at: []
+  status: draft
+
+ID: "TDE-HUB-AGENTES-030"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Equipo KODA/TDE"
+Human-Editor: "Equipo KODA/TDE"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Arquitectura lógica de un Hub de agentes (incluyendo KODA-TRANSFORMER y agentes TDE especializados) operando sobre la KB `tde` en formato KODA/Spec"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Este documento describe una arquitectura de agentes. Trata los roles,
+    flujos y responsabilidades como especificaciones de alto nivel, no como texto
+    decorativo.
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
+    Ctx_Required->Required External Reference, Ctx_Optional->Optional External
+    Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective,
+    Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference,
+    XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement,
+    Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification,
+    Rec->Recommendation, Metric->Metric, Step->Step.
+
+    REFERENCE POLICY: Ref: es interno a este documento—apunta a IDs definidos aquí.
+    XRef/XRef_Required: apuntan a otros artefactos KODA (por ejemplo, workflow de
+    transformación, normas técnicas, plataformas compartidas).
+
+    LANGUAGE POLICY: Keywords en inglés, contenido en idioma original. No traduzcas
+    nombres de artefactos KODA ni URNs.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Especificación de arquitectura de un Hub de agentes para operar la KB TDE"
+  objective: >-
+    Definir roles de agentes, flujos principales y puntos de integración para operar
+    la KB `tde` en formato KODA/Spec: transformación, auditoría, consulta y
+    mantenimiento.
+  usage_guidance:
+    - "Usar este lineamiento como blueprint para implementar el Hub de agentes
+      (humano + IA) sobre la KB `tde`."
+    - "Complementar con el workflow de transformación (029) para definir
+      responsabilidades concretas de cada agente."
+  style:
+    - "Tono arquitectónico y procedimental; cada bloque debe interpretarse como
+      componente o flujo del sistema."
+
+Contexto_Hub_TDE:
+  ID: "TDE_HUB_AGENTES_CTX_001"
+  Ctx: >-
+    La KB `tde` está compuesta por artefactos KODA/Spec que modelan normas técnicas,
+    guías, estrategias y plataformas compartidas de Transformación Digital del Estado.
+    Para operar esta KB a escala (transformar nuevas piezas, auditar MEAT, responder
+    consultas complejas y mantener coherencia), se requiere un Hub de agentes
+    cooperando sobre los mismos artefactos.
+  Ctx_Optional:
+    - "El agente KODA-TRANSFORMER se define externamente (por ejemplo, en
+      agents/koda-transformer/agent_koda_transformer.yaml) y ejecuta tareas
+      alineadas con el workflow 029."
+  Obj:
+    - "Definir roles de agentes especializados para la KB `tde`."
+    - "Describir flujos de transformación, auditoría y consulta sobre artefactos
+      KODA."
+    - "Especificar cómo se orquesta el trabajo entre agentes y con personas editoras."
+
+Roles_Principales_de_Agentes:
+  ID: "TDE_HUB_AGENTES_ROLES_001"
+  Def:
+    - Name: "KODA_TRANSFORMER"
+      Purp: >-
+        Ejecutar el workflow de transformación wikiguias→KODA (029) para nuevas
+        fuentes o para versiones actualizadas de documentos.
+      Act:
+        - "Leer fuentes Markdown o PDF y producir borradores de artefactos KODA."
+        - "Aplicar Fase 1–3 del workflow 029 (Análisis, Telegrafización,
+          Deduplicación) de forma automatizada o semiautomatizada."
+        - "Proponer XRef y uso de Lexicon según patrones existentes."
+      XRef_Required:
+        - "urn:knowledge:koda:sys:workflow_wikiguias:1.0.0#TDE_WORKFLOW_WIKIGUIAS_GLOBAL_001"
+    - Name: "TDE_AUDITOR_KB"
+      Purp: >-
+        Auditar artefactos KODA existentes frente a sus fuentes para asegurar
+        FS=100%, TER≥30% y RD≥2.0.
+      Act:
+        - "Ejecutar Fase 4 del workflow 029 (Validación) sobre artefactos nuevos o
+          modificados."
+        - "Detectar MEAT faltante y proponer parches sobre los YAML."
+        - "Generar reportes de auditoría (por artefacto y globales)."
+      Metric:
+        - "Porcentaje de artefactos auditados sobre el total."
+        - "Número de hallazgos MEAT por artefacto."
+    - Name: "TDE_ROUTER_ORQUESTADOR"
+      Purp: "Recibir tareas de alto nivel y enrutar acciones entre agentes y personas."
+      Act:
+        - "Clasificar la tarea (transformar, auditar, consultar, mantener)."
+        - "Asignar subtareas a KODA-TRANSFORMER, TDE_AUDITOR_KB u otros agentes."
+        - "Consolidar resultados y devolver artefactos o respuestas al usuario."
+    - Name: "TDE_EXPLORER_QA"
+      Purp: "Responder consultas sobre la KB `tde` usando artefactos KODA como fuente."
+      Act:
+        - "Interpretar preguntas de usuario y localizar artefactos relevantes."
+        - "Leer bloques Tier1 relevantes y componer respuestas con FS alta
+          respecto al KODA."
+        - "Proponer nuevas XRef cuando detecte relaciones no modeladas explícitamente."
+    - Name: "TDE_INDEXADOR"
+      Purp: "Mantener índices de búsqueda, embeddings y catálogos sobre la KB `tde`."
+      Act:
+        - "Actualizar índices cuando cambian artefactos (altas/bajas/modificaciones)."
+        - "Sincronizar URNs y metadatos con catálogos maestros (ej. catalog_master_tde)."
+
+Flujos_Principales:
+  ID: "TDE_HUB_AGENTES_FLUJOS_001"
+  Proc:
+    - Name: "Flujo_Transformacion_Fuente_a_KODA"
+      Step:
+        - "Recepción de una nueva fuente (Markdown wikiguias, norma externa,
+          estrategia) por el ORQUESTADOR."
+        - "Clasificación y mapeo 1:1, 1:n, n:1 según workflow 029."
+        - "Invocación de KODA-TRANSFORMER para ejecutar Fase 1–3 y producir YAML
+          borrador(es)."
+        - "Envío del borrador a TDE_AUDITOR_KB para Fase 4 (Validación)."
+        - "Aplicación de parches sobre los archivos YAML mediante herramientas de
+          edición controladas."
+    - Name: "Flujo_Auditoria_Periodica_KB"
+      Step:
+        - "Planificación de auditorías periódicas (por lote temático, por tipo de
+          documento o por antigüedad)."
+        - "Ejecución por TDE_AUDITOR_KB comparando artefactos existentes con sus
+          fuentes declaradas en Metadata_Original."
+        - "Generación de reportes de hallazgos y parches propuestos."
+        - "Cierre de hallazgos una vez actualizados y revalidados los artefactos."
+    - Name: "Flujo_Consulta_QA_sobre_KB"
+      Step:
+        - "Recepción de una pregunta de usuario (humano u otro sistema)."
+        - "ORQUESTADOR envía a TDE_EXPLORER_QA la tarea, junto con contexto
+          (dominio, artefactos prioritarios)."
+        - "TDE_EXPLORER_QA hace retrieval sobre KODA (Tier1) y construye respuesta
+          citando explícitamente IDs de bloques relevantes."
+        - "Opcionalmente, registrar patrones de uso para mejorar XRef y Lexicon."
+
+Integracion_Con_Espacio_Ficheros_y_Catalogos:
+  ID: "TDE_HUB_AGENTES_FS_001"
+  Ctx: >-
+    La KB `tde` vive en el sistema de archivos (árbol de YAML bajo knowledge/core y
+    knowledge/domains) y se referencia en uno o más catálogos maestros.
+  Req:
+    - "Todos los agentes que modifiquen artefactos KODA deben hacerlo mediante
+      herramientas controladas (por ejemplo, apply_patch, write_to_file), nunca
+      escribiendo directo sin registro."
+    - "Cada artefacto debe mantener actualizado su bloque _manifest.provenance y
+      Metadata_Original cuando cambien las fuentes o URNs."
+    - "TDE_INDEXADOR debe actualizar índices y catálogos cuando se creen o borren
+      artefactos."
+
+Seguridad_y_Control_Cambios:
+  ID: "TDE_HUB_AGENTES_SEC_001"
+  Ctx_Required:
+    - "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"
+  Rec:
+    - "Tratar el repositorio de la KB `tde` como activo de información crítico;
+      aplicar política de control de cambios, respaldos y gestión de vulnerabilidades
+      según Norma de Seguridad y GU-CIBER-001."
+    - "Mantener trazabilidad de cambios sobre YAML (historial de commits, auditoría
+      de parches aplicados por agentes)."
+
+Articulacion_Con_Workflow_Transformacion:
+  ID: "TDE_HUB_AGENTES_ART_029_001"
+  Ctx: >-
+    El workflow 029 describe las fases de transformación; este documento mapea
+    explícitamente dichas fases a responsabilidades de agentes.
+  Rec:
+    - "Asignar Fase 1–3 principalmente a KODA-TRANSFORMER y Fase 4 a
+      TDE_AUDITOR_KB, con apoyo humano cuando haya ambigüedades."
+    - "Usar el patrón de mapeo de fuentes (Patrones_Mapping_Fuentes_Artefactos) para
+      que el ORQUESTADOR tome decisiones consistentes sobre 1:1, 1:n y n:1."
+  XRef_Required:
+    - "urn:knowledge:koda:sys:workflow_wikiguias:1.0.0"
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de arquitectura de agentes apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos y normas relevantes para la arquitectura del Hub TDE."
+  XRef:
+    - "urn:knowledge:koda:sys:workflow_wikiguias:1.0.0"
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:mgde:1.0.0"
+    - "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"

@@ -1,0 +1,188 @@
+# KODA Artifact: Terminación de la Relación Laboral/Funcionarial - Trabajo Médico Chile
+# URN: urn:knowledge:koda:legal:terminacion:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre causales, procedimientos y efectos de la terminación de la relación funcionaria y laboral de médicos en Chile"
+    primary_use: "Determinar qué causales pueden invocarse para terminar el vínculo, qué procedimiento aplica y qué derechos conserva el médico"
+    cross_reference: "Usar definiciones legales de kb_med_000; estatutos de kb_med_001; deberes/prohibiciones de kb_med_002; jornada/calificaciones de kb_med_004; responsabilidad administrativa de kb_med_007; confianza legítima de kb_med_014"
+
+  urn: "urn:knowledge:koda:legal:terminacion:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Módulo XI: Terminación de la relación laboral/funcionarial"
+    source_document: "Material Curso Legislación Trabajo Médico - UDELAM/COLMED"
+    source_sections: "XI. Terminación de la relación funcionaria y laboral"
+    model_collaborators: ["IA-CLAUDE"]
+  dependencies:
+    - Ref: "urn:knowledge:koda:legal:index:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:jornada_calificaciones:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:responsabilidad_admin:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: TERMINACIÓN DE LA RELACIÓN FUNCIONARIA (SECTOR PÚBLICO)
+# ═══════════════════════════════════════════════════════════════════
+
+Terminacion_Sector_Publico:
+
+  Marco_General:
+    ID: TERM_PUB_MARCO
+    Fuente:
+      - Ref: EA_18834
+      - Ref: LOC_18575
+    Def: "La relación estatutaria entre el médico funcionario y el Estado sólo puede terminar por causales expresamente previstas en la ley, aplicadas mediante los procedimientos establecidos."
+    Principios:
+      - "Legalidad y tipicidad de las causales de cesación."
+      - "Estabilidad relativa del funcionario de carrera."
+      - "Necesidad de procedimiento previo para sanciones de alta entidad (como la destitución)."
+
+  Causales_Tipicas_Estatuto_Administrativo:
+    ID: TERM_PUB_CAUSALES
+    Def: "Listado de causales generales de expiración de funciones del Estatuto Administrativo (EA_18834)."
+    Causales:
+      - ID: TERM_RENUNCIA_ACEPTADA
+        Def: "Aceptación de la renuncia voluntaria presentada por el funcionario."
+        Notas:
+          - "La renuncia sólo produce efectos una vez aceptada por la autoridad competente."
+      - ID: TERM_JUBILACION_PENSION
+        Def: "Obtención de jubilación, pensión o renta vitalicia en relación con el cargo."
+      - ID: TERM_VACANCIA
+        Def: "Declaración de vacancia del empleo por las causales que establezca la ley (por ejemplo no asumir el cargo oportunamente)."
+      - ID: TERM_DESTITUCION
+        Def: "Medida disciplinaria máxima aplicada por infracciones graves, previa instrucción de sumario administrativo."
+      - ID: TERM_SUPRESION_EMPLEO
+        Def: "Supresión del empleo cuando la planta es modificada por ley."
+      - ID: TERM_FIN_PERIODO
+        Def: "Término del período legal para el cual fue designado el funcionario (cargos a plazo)."
+      - ID: TERM_FALLECIMIENTO
+        Def: "Muerte del funcionario."
+
+  Procedimiento_para_Destitucion:
+    ID: TERM_PUB_PROC_DEST
+    Fuente:
+      - Ref: EA_18834
+    Def: "Resumen del camino típico para aplicar la sanción de destitución."
+    Etapas_Tipicas:
+      - "Inicio de procedimiento disciplinario (sumario) por hechos que podrían constituir falta grave."
+      - "Formulación de cargos y notificación al funcionario."
+      - "Descargos y producción de prueba."
+      - "Informe y propuesta de sanción por el fiscal instructor."
+      - "Resolución de la autoridad competente, que puede aplicar o no la destitución."
+    Garantias:
+      - "Derecho a defensa y a ser oído."
+      - "Necesidad de fundamentar la decisión y ajustar la sanción a la gravedad de los hechos."
+
+  Efectos_de_la_Terminacion_Funcionaria:
+    ID: TERM_PUB_EFECTOS
+    Def: "Consecuencias jurídicas de la cesación de funciones."
+    Efectos:
+      - "Pérdida de la calidad de funcionario y de los derechos asociados (estabilidad, carrera funcionaria)."
+      - "Eventual derecho a indemnizaciones o beneficios de retiro, según legislación especial (p.ej. incentivos de retiro que se abordan en otro módulo)."
+      - "En caso de destitución, registro de la medida en la hoja de vida y posibles impedimentos para futuros nombramientos."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: TERMINACIÓN EN OTROS ESTATUTOS PÚBLICOS
+# ═══════════════════════════════════════════════════════════════════
+
+Terminacion_Otros_Estatutos:
+
+  APS_Municipal:
+    ID: TERM_APS
+    Fuente:
+      - Ref: LEY_19378
+      - Ref: LEY_18883
+    Notas:
+      - "La terminación del vínculo en APS se rige por el Estatuto APS y, supletoriamente, por el Estatuto Administrativo Municipal."
+      - "Incluye causales similares: renuncia, jubilación, destitución, supresión de empleo, término de período, entre otras."
+
+  Carabineros_y_FFAA:
+    ID: TERM_CARAB_FFAA
+    Fuente:
+      - Ref: LEY_18961
+      - Ref: DEC_412_2019
+      - Ref: DFL_1_1997
+    Notas:
+      - "Cada estatuto institucional establece sus propias causales de retiro, baja o término de carrera para el personal médico."
+      - "Suelen contemplar causales disciplinarias, de salud, de antigüedad o de necesidades institucionales."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: TERMINACIÓN DEL CONTRATO DE TRABAJO (SECTOR PRIVADO)
+# ═══════════════════════════════════════════════════════════════════
+
+Terminacion_Sector_Privado:
+
+  Causales_Legales_Principales:
+    ID: TERM_PRIV_CAUSALES
+    Fuente:
+      - Ref: COD_TRAB
+    Def: "Causales de término de contrato reguladas por el Código del Trabajo."
+    Grupos:
+      - ID: TERM_ART_159
+        Def: "Causales del art. 159 CdT (mutuo acuerdo, renuncia, vencimiento de plazo, conclusión del trabajo o servicio, caso fortuito o fuerza mayor, etc.)."
+      - ID: TERM_ART_160
+        Def: "Causales del art. 160 CdT (incumplimientos graves del trabajador, tales como conducta inmoral, acoso sexual, injurias, ausencia injustificada, etc.)."
+      - ID: TERM_ART_161
+        Def: "Necesidades de la empresa, establecimiento o servicio; desahucio en ciertos cargos de confianza."
+
+  Procedimiento_Desvinculacion:
+    ID: TERM_PRIV_PROC
+    Def: "Pasos básicos que debe seguir el empleador para poner término al contrato."
+    Etapas_Tipicas:
+      - "Comunicación escrita al trabajador, indicando causal legal específica."
+      - "Envió de copia a la Inspección del Trabajo dentro de los plazos legales cuando corresponda."
+      - "Pago de indemnizaciones, feriado pendiente y otras prestaciones, según causal y antigüedad."
+
+  Protecciones_y_Fueros:
+    ID: TERM_PRIV_FUERO
+    Def: "Resguardos que limitan la posibilidad de desvincular al trabajador en ciertas situaciones."
+    Notas:
+      - "Existen fueros especiales (maternal, sindical, otros) que restringen o condicionan la terminación del contrato; el detalle se desarrolla en módulos específicos (p.ej. maternidad)."
+      - "En caso de vulneración de derechos fundamentales, puede accionarse vía procedimiento de tutela."
+
+  Honorarios:
+    ID: TERM_PRIV_HONORARIOS
+    Def: "Terminación de contratos a honorarios sin vínculo laboral."
+    Caracteristicas:
+      - "Por regla general, se rige por lo pactado en el contrato civil (plazo, condiciones de término)."
+      - "No se aplican las normas de término del Código del Trabajo ni las indemnizaciones propias de éste."
+
+# ═══════════════════════════════════════════════════════════════════
+# RESUMEN EJECUTIVO
+# ═══════════════════════════════════════════════════════════════════
+
+Resumen:
+  Ejes:
+    - "Diferencia entre la terminación de la relación estatutaria (funcionarios públicos) y la terminación del contrato de trabajo (sector privado)."
+    - "Enumera causales típicas de cesación de funciones en el Estatuto Administrativo y causales del Código del Trabajo."
+    - "Destaca la importancia del procedimiento disciplinario para sanciones como la destitución y de las formalidades en los despidos del sector privado."
+  Casos_Uso_Tipicos:
+    - "Analizar si una causal invocada para terminar el vínculo de un médico se ajusta a derecho."
+    - "Comprender las diferencias prácticas entre dejar un cargo público y terminar un contrato en el sector privado."
+    - "Conectar la terminación con la trayectoria de carrera y los derechos económicos del profesional."

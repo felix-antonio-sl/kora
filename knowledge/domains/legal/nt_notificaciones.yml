@@ -1,0 +1,259 @@
+# KODA TDE Lineamiento Técnico: Norma Técnica de Notificaciones (Decreto 8)
+---
+_manifest:
+  urn: "urn:knowledge:koda:legal:nt_notificaciones:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Norma_Tecnica_Notificaciones"
+  provenance:
+    created_by: "Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosNormas/Decreto_8__Norma_técnica_de_notificaciones.md"
+    source_url: "https://wikiguias.digital.gob.cl/Normas/Decreto8"
+    source_updated_at: "2025-10-07T20:55:53.971Z"
+  status: draft
+
+ID: "TDE-LIN-NORMA-NOTIF-08"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Ministerio Secretaría General de la Presidencia"
+Human-Editor: "División de Gobierno Digital - Ministerio SEGPRES"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Norma Técnica de Notificaciones para la práctica de notificaciones electrónicas mediante Plataforma de Notificaciones y Registro DDU (Decreto 8)"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, listas, artículos) with zero loss. Ignore fat (formalismo jurídico, frases de protocolo).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Norma técnica base para notificaciones electrónicas y Domicilio Digital Único (DDU)"
+  objective: >-
+    Detallar el funcionamiento de la Plataforma de Notificaciones y establecer cómo los OAEs
+    deben realizar notificaciones electrónicas basadas en el Registro de Domicilios Digitales
+    Únicos (DDU), conforme a la Ley 19.880, la Ley 21.180 y su Reglamento.
+  usage_guidance:
+    - "Usar esta norma junto con las normas de Documentos/Expedientes (Decreto 10) e Interoperabilidad (Decreto 12) para modelar el ciclo completo de notificaciones electrónicas."
+    - "Complementar con el STD 2025, CPAT y lineamientos de calidad web cuando se diseñen plataformas y flujos de notificación."
+  style:
+    - "Responder en es-CL, tono normativo y claro."
+
+Metadata_Original:
+  title: "Decreto 8 | Norma técnica de notificaciones"
+  url: "https://wikiguias.digital.gob.cl/Normas/Decreto8"
+  category: "Lineamientos Técnicos/Normas"
+  tags:
+    - "decreto"
+    - "norma tecnica"
+    - "notificaciones"
+    - "casilla única"
+    - "domicilio digital único"
+  description: "Establece la norma técnica de notificaciones."
+  updated_at: "2025-10-07T20:55:53.971Z"
+  promulgacion: "2023-05-19"
+  publicacion: "2023-08-17"
+  version: "Única - 17-AGO-2023"
+
+Contexto_y_Base_Legal:
+  ID: "TDE_LIN_NOTIF8_CTX_001"
+  Ctx: >-
+    La norma se dicta en el marco de la Constitución, la Ley 19.880, la Ley 21.180, DFL 1/2020,
+    DS 4/2020, Ley 19.628, la normativa sobre Registro Civil e Identificación y acuerdos de la
+    Contraloría General.
+  Just:
+    - "Los OAEs están obligados a practicar notificaciones electrónicas en base a un registro de domicilios digitales, por lo que se requiere definir la Plataforma de Notificaciones y su operatividad."
+
+Objeto_de_la_Norma:
+  ID: "TDE_LIN_NOTIF8_OBJ_001"
+  Articulo: 1
+  Purp: >-
+    Detallar el funcionamiento de la Plataforma de Notificaciones y establecer la forma en que
+    los OAEs deben practicar notificaciones electrónicas usando el Registro de Domicilios
+    Digitales Únicos (DDU) dependiente del Servicio de Registro Civil e Identificación.
+
+Definiciones_Clave:
+  ID: "TDE_LIN_NOTIF8_DEF_001"
+  Articulo: 2
+  Terms:
+    - Term: "DDU"
+      Def: >-
+        Domicilio Digital Único: medio electrónico determinado por una persona para recibir
+        notificaciones electrónicas en un procedimiento administrativo; puede ser la Casilla
+        Única o un correo electrónico.
+    - Term: "Plataforma_Notificaciones"
+      Def: "Plataforma electrónica mediante la cual se practican notificaciones electrónicas de los OAEs."
+    - Term: "Reglamento"
+      Def: "DS 4/2020 que regula la forma en que los procedimientos administrativos se expresan a través de medios electrónicos (Ley 21.180)."
+    - Term: "Servicios_Web"
+      Def: >-
+        Servicios informáticos automatizados que cumplen estándares y protocolos permitiendo la
+        interoperabilidad de datos en una red de telecomunicaciones.
+    - Term: "Usuarios"
+      Def: >-
+        Personas naturales (o sus apoderados/representantes de personas jurídicas o entidades)
+        interesadas en procedimientos administrativos, y funcionarios que acceden a plataformas
+        de soporte de estos.
+
+Registro_DDU:
+  ID: "TDE_LIN_NOTIF8_REG_DDU_001"
+  Articulo: 3
+  Def: >-
+    Registro de Domicilios Digitales Únicos (DDU), dependiente del Servicio de Registro Civil e
+    Identificación, que contiene la información sobre tipo de persona, DDU vigente, cambios de
+    DDU y excepciones a notificación electrónica.
+  Req:
+    - "Registrar RUT/RUN o RUT tributario, DDU vigente, cambios de DDU con fecha y situación de excepción a notificación electrónica."
+
+Componentes_Plat_Notificaciones:
+  ID: "TDE_LIN_NOTIF8_COMPONENTES_001"
+  Articulo: 4
+  Componentes:
+    - Name: "Casilla_Unica"
+      Def: >-
+        Bandeja de mensajes centralizada para acceder a notificaciones de procedimientos
+        administrativos, que puede usarse como DDU.
+    - Name: "Modulo_Institucional"
+      Def: >-
+        Componente para OAEs que permite: enviar notificaciones, consultar estados y registrar
+        solicitudes/decisiones de excepción a notificación electrónica.
+    - Name: "Componente_Envio_Mensajes"
+      Def: "Gestiona el envío de notificaciones al DDU determinado."
+    - Name: "API_Notificaciones"
+      Def: >-
+        Servicio web para integrar plataformas institucionales con el componente de envío de
+        mensajes y automatizar notificaciones.
+    - Name: "Modulo_Admin_DDU"
+      Def: >-
+        Componente (gestionado por Registro Civil) para que personas configuren/modifiquen su DDU,
+        conectado a la Plataforma de Notificaciones vía servicio web.
+  Ctx_Optional:
+    - "Salvo el módulo de administración del DDU, la Plataforma es administrada por la DGD."
+
+Configuracion_y_Funcionamiento_DDU:
+  ID: "TDE_LIN_NOTIF8_DDU_001"
+  Articulos: [5, 6, 7, 10, 20]
+  Configuracion:
+    Req:
+      - "DDU se determina por interesados/as conforme al Reglamento, pudiendo ser Casilla Única o correo electrónico."
+      - "Configuración se realiza en el portal de la Plataforma, autenticándose con mecanismo oficial (Norma de Autenticación)."
+      - "Casilla Única debe ser activada para acceder a la bandeja de mensajes."
+      - "Personas jurídicas deben indicar personas naturales autorizadas para acceder a la Casilla Única."
+      - "El último medio electrónico determinado será considerado DDU vigente."
+  Bandeja_Mensajes:
+    Def: >-
+      Bandeja de mensajes de Casilla Única que contiene todas las notificaciones de
+      procedimientos en que se figura como interesado, apoderado o representante, ordenadas por
+      fecha y órgano emisor.
+  Aviso_Notificacion:
+    Req:
+      - "Interesados con DDU=Casilla Única podrán configurar un medio electrónico para recibir avisos informativos de nuevas notificaciones."
+      - "Avisos se envían al correo del representante o autorizados en caso de personas jurídicas."
+    Ctx:
+      - "El aviso es solo informativo y su ausencia no invalida la notificación."
+  Excepciones_Notificacion_Electronica:
+    Req:
+      - "Solicitudes de excepción se presentan al OAE o al Registro Civil, según Reglamento."
+      - "OAEs que acojan la excepción deben comunicarla al Registro Civil mediante el módulo institucional para actualizar el Registro DDU."
+  Reconfiguracion_DDU:
+    Req:
+      - "Para usar correo electrónico como DDU, el interesado debe modificar la configuración en el módulo de administración del DDU, validando el correo según guías técnicas."
+  Buen_Uso_Correo_DDU:
+    Rec:
+      - "Mantener la casilla habilitada y con capacidad."
+      - "Revisar spam."
+      - "Verificar remitente mediante código identificador de transacción."
+
+Notificaciones_via_Plataforma:
+  ID: "TDE_LIN_NOTIF8_ENVIO_001"
+  Articulos: [11, 12, 13, 14, 15, 16, 17, 18, 19, 21]
+  Administrador_Institucional:
+    Req:
+      - "La jefatura superior del servicio debe designar un administrador institucional de la Plataforma para gestionar permisos y perfiles."
+  Formas_Envio:
+    Req:
+      - "Enviar notificaciones a la Plataforma mediante módulo institucional (funcionarios autorizados) o API de notificaciones (integración automática)."
+  Datos_Envio:
+    Req:
+      - "Para cada notificación, proporcionar: código del OAE (Gestor de Códigos), RUN/RUT destinatario, identificador de expediente (Norma DED), identificación del procedimiento (Norma Interoperabilidad), tipo de notificación (según guía técnica), asunto y descripción, y documentos adjuntos o URI persistente conforme a Norma DED."
+  Envio_y_Resultados:
+    Req:
+      - "Plataforma enviará notificaciones al DDU del interesado/apoderado/representante."
+      - "Plataforma asignará código identificador de transacción e informará estados: enviado exitoso, persona exceptuada, persona sin DDU, o envío no exitoso (requiere reintento y, en caso de error persistente, alerta a DGD por Mesa de Ayuda)."
+  Constancia_y_Trazabilidad:
+    Req:
+      - "Plataforma debe registrar fecha/hora de envío y recepción, código de transacción, información de envío a DDU o correo (cuando corresponda)."
+      - "Esta información será contenida en el certificado digital a que se refiere el inciso final del artículo 26 del Reglamento."
+      - "Registrar: datos del envío (Art. 13), estado (Art. 15), datos registrados según Art. 16 y todos los datos derivados de la operación."
+      - "Cada OAE debe verificar estado de envío con el código de transacción."
+      - "En notificaciones presenciales en dependencias, funcionario debe registrar fecha/hora en la Plataforma."
+  Interrupciones_Servicio:
+    Req:
+      - "En indisponibilidad de la Plataforma, ésta emite certificado de la incidencia; en mantenciones programadas, se informa previamente."
+      - "En ambos casos, la información respectiva se publicará en el portal web de la Plataforma de Notificaciones, según lo establecido en el inciso final del artículo 47 y el inciso final del artículo 7, ambos del Reglamento."
+      - "Notificaciones no enviadas durante la incidencia deben remitirse cuando la Plataforma se restablezca, registrando fecha/hora."
+
+Notificaciones_en_Leyes_Especiales:
+  ID: "TDE_LIN_NOTIF8_LEYES_ESP_001"
+  Articulo: 9
+  Req:
+    - "En procedimientos regulados por leyes especiales con reglas propias de notificación, enviar copia de la notificación al DDU, sin sustituir la forma principal establecida en la ley especial (sólo actos de efecto particular)."
+
+Disposiciones_Finales:
+  ID: "TDE_LIN_NOTIF8_DISP_001"
+  Articulos: [22, 23, 24]
+  Guias_Tecnicas:
+    Def: >-
+      La DGD dictará guías técnicas que detallen medios para avisos de notificación, validación
+      de correos, formatos de notificación, etc.
+  Gradualidad:
+    Ctx: >-
+      La aplicación sigue la gradualidad del DFL 1/2020; la DGD definirá lineamientos y formatos
+      para implementación por parte de OAEs obligados.
+  Revision:
+    Req:
+      - "Revisar y actualizar la norma al menos cada dos años; el plazo se cuenta desde la entrada en vigencia de esta norma técnica."
+      - "Las actualizaciones deben tomar en consideración aprendizajes y dificultades de aplicación reportados por los órganos de la Administración del Estado, impulsar buenas prácticas y minimizar efectos de prácticas incorrectas."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos clave de notificaciones apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos y normas relacionadas con notificaciones electrónicas."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+
+Referencias_Resumen:
+  Description: "Referencias normativas clave de la Norma Técnica de Notificaciones."
+  Sources:
+    - "Ley N° 19.880 (art. 46, Título V)."
+    - "Ley N° 21.180 (Transformación Digital del Estado)."
+    - "Ley N° 19.628 (Protección de la Vida Privada)."
+    - "DFL N° 1/2020 (gradualidad de la TD)."
+    - "DS N° 4/2020 (Reglamento de TD)."
+    - "Normas técnicas de Documentos/Expedientes e Interoperabilidad."

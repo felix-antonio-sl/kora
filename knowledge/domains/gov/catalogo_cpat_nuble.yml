@@ -1,0 +1,633 @@
+# KODA TDE Lineamiento Técnico: Catálogo CPAT (Ñuble)
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:catalogo_cpat_nuble:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Catalogo_CPAT_Nuble"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-12-13"
+    source_corpus: "koda_internal"
+    source_files: []
+    source_urls: []
+    source_updated_at: []
+  status: draft
+
+ID: "TDE-LIN-CPAT-040"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "FS"
+Human-Editor: "FS"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-13
+Modification-Date: 2025-12-14
+Ctx: "Análisis de madurez de trámites digitales (CPAT) para GORE Ñuble y municipalidades, orientado a la Transformación Digital del Estado (TDE) y preparación para IA responsable."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Análisis CPAT regional (Ñuble) para priorización y madurez digital"
+  objective: >-
+    Preservar y operacionalizar el análisis de madurez CPAT para GORE Ñuble y municipalidades,
+    incluyendo síntesis, método, resultados, tipología, implicancias IA, hoja de ruta, KPIs,
+    recomendaciones, arquitectura, playbook, gobernanza, riesgos y próximos pasos.
+  usage_guidance:
+    - "Usar como insumo para priorización regional y estandarización de trámites hacia Nivel 3+"
+    - "Referenciar la guía CPAT completa para definiciones operativas y criterios de soporte electrónico"
+  style:
+    - "Responder en es-CL, tono técnico-operativo, preservando listas, IDs y condiciones."
+
+XRef_Required:
+  - "urn:knowledge:koda:gov:cpat_completa:1.0.0"
+
+Definitions_Dedup:
+  ID: "TDE_CPAT_DEDUP_001"
+  Rec_Asegurar_Canal_Transaccional_Url_Informativa:
+    ID: "TDE-CPAT-DEDUP-REC-ASEGURAR-CANAL-01"
+    Rec: "Asegurar canal transaccional donde ya existe URL informativa."
+  Proc_Clasificacion_Si_No:
+    ID: "TDE-CPAT-DEDUP-PROC-CLASIFICACION-SI-NO-01"
+    Proc: "Clasificación Sí/No."
+
+Resumen_Ejecutivo:
+  ID: "TDE-CPAT-RESUMEN-01"
+
+  Lo_esencial:
+    ID: "TDE-CPAT-RESUMEN-ESENCIAL-01"
+    Res:
+      - "Dominan los objetos *Solicitud/Permiso* y *Certificado/Constancia* (especialmente en municipios)."
+      - "Objetos secundarios dominantes son *Pago/Arancel* e *Inscripción/Registro*."
+      - "Existe una concentración de niveles 0–1 en las categorías dominantes."
+      - "Oportunidad de salto a Nivel 3 (formulario + expediente + notificación) con retornos rápidos."
+      - "Brecha existente entre la disponibilidad de una URL informativa y un canal transaccional completo."
+      - "Autenticación heterogénea con baja adopción de ClaveÚnica y uso extendido de mecanismos propios."
+      - "GORE Ñuble muestra un núcleo avanzado de Nivel 5 (≈21%), pero convive con un 50% en Nivel 0."
+      - "Municipios tienen ≈3,7% de trámites en Nivel 5 y más de la mitad en Nivel 0–1."
+      - "Existen buenas prácticas puntuales (p. ej., Ninhue) que deben escalarse."
+    Rec:
+      - "Urge estandarizar la autenticación."
+      - "Foco en cerrar la asimetría de madurez en GORE Ñuble."
+
+  Que_hacer_ahora:
+    ID: "TDE-CPAT-RESUMEN-ACCIONES-01"
+    Obj: "Llevar los trámites priorizados a Nivel 3."
+    Act:
+      - "Priorizar top 30–50 trámites de alto volumen/urgencia social en *Solicitud/Permiso* y *Certificado/Constancia* (Nivel 0–1)."
+      - "Estandarizar autenticación (ClaveÚnica por defecto donde aplique)."
+      - "Crear plan de eliminación/migración de mecanismos de autenticación propios."
+      - "Cerrar la brecha URL→Canal, convirtiendo páginas informativas en flujos completos con expediente y notificación."
+      - "Crear inventario de automatizaciones/IA."
+      - "Elaborar matriz de riesgos para IA/automatización."
+      - "Definir política de transparencia/explicabilidad con revisión humana."
+      - Act: "Implementar un tablero regional con KPIs de madurez, uso y calidad del servicio."
+        Ref: "TDE-CPAT-KPIS-01"
+
+Alcance_Fuentes_y_Metodo:
+  ID: "TDE-CPAT-METODOLOGIA-01"
+
+  Fuentes_y_Cobertura:
+    ID: "TDE-CPAT-METODOLOGIA-FUENTES-01"
+    Src: 
+      - "Catálogos CPAT (GOREs y Municipalidades)."
+      - "Codebook propio de tipologías y reglas."
+      - "Extracciones y tablas de datos (asignación, distribuciones, cruces, ejemplos)."
+    Ctx:
+      - "Período de análisis 2024–2025."
+      - "Cobertura GORE Ñuble."
+      - "Cobertura 15/21 municipalidades con registros CPAT 2024."
+    Warn: "6 comunas sin datos en el corte de información."
+
+  Metodo_de_clasificacion:
+    ID: "TDE-CPAT-METODOLOGIA-CLASIFICACION-01"
+    Dimensiones:
+      - Item: "A"
+        Def: "Dimensión A – Objeto."
+        Proc: "Regex y señales semánticas sobre “Nombre del registro”."
+      - Item: "B"
+        Def: "Dimensión B – Tipo CPAT."
+        Proc: "Clasificación por función común/específica."
+      - Item: "C"
+        Def: "Dimensión C – Nivel (0–5)."
+        Proc: "Normalizado a “Nivel X”."
+      - Item: "D"
+        Def: "Dimensión D – Autenticación."
+        Proc: "Clasificación en ClaveÚnica/Tributaria/Propia/Sin."
+      - Item: "E"
+        Def: "Dimensión E – Canal transaccional."
+        Proc:
+          Ref: "TDE-CPAT-DEDUP-PROC-CLASIFICACION-SI-NO-01"
+      - Item: "F"
+        Def: "Dimensión F – URL de inicio."
+        Proc:
+          Ref: "TDE-CPAT-DEDUP-PROC-CLASIFICACION-SI-NO-01"
+    Dimensiones_complementarias:
+      Ctx:
+        - "Disponibilidad."
+        - "Pago asociado."
+
+  Criterios_y_Reglas_Transversales:
+    ID: "TDE-CPAT-METODOLOGIA-REGLAS-01"
+    Ctx:
+      - "Regla de propósito dominante."
+      - "Regla de distinción Certificados vs Solicitudes."
+      - "Regla de distinción Inscripción vs Permiso."
+      - "Regla de agrupación Transparencia/Relación ciudadana."
+      - "Regla de agrupación Compras."
+      - "Regla de agrupación Orientación."
+    Proc: "Proceso de manejo de ambigüedad mediante revisión manual."
+
+Resultados_Consolidados:
+  ID: "TDE-CPAT-RESULTADOS-01"
+
+  GORE_Nuble:
+    ID: "TDE-CPAT-RESULTADOS-GORE-01"
+    Res:
+      - "Universo de 42 registros aproximadamente."
+      - "29 registros de función común."
+      - "12 registros de función específica."
+      - "1 registro de otra función."
+      - "Madurez Nivel 0: ~50%."
+      - "Madurez Nivel 5: ~21% (núcleo avanzado)."
+      - "Resto de registros distribuidos en niveles 1-4."
+      - "~50% de los registros tiene URL de inicio."
+      - "≈29% de los registros tiene canal digital declarado."
+      - "Coexistencia de islas avanzadas con rezago estructural."
+    Ex: "Ejemplos de Nivel 5 son Acceso a la Información (Ley 20.285), Audiencias (Ley 20.730), declaraciones de intereses/patrimonio, y procesos de compras."
+    Rec:
+      - "Paquetizar mejoras para migrar a Nivel 3 los trámites de función común en Nivel 0."
+      - Ref: "TDE-CPAT-DEDUP-REC-ASEGURAR-CANAL-01"
+
+  Municipalidades_de_Nuble:
+    ID: "TDE-CPAT-RESULTADOS-MUNIS-01"
+    Res:
+      - "Universo de ≈2.642 registros (15 comunas)."
+      - "Estado mayoritario de registros es \"Completado\"."
+      - "Madurez Nivel 0–1 concentra la mayoría de los registros."
+      - "Madurez Nivel 5: ≈3,7%."
+      - "Uso de ClaveÚnica: ~9–10%."
+      - "Uso de mecanismo propio de autenticación: ~17%."
+      - "Uso de autenticación Tributaria es marginal."
+      - "~54% de los registros tiene URL de inicio."
+      - "Existe heterogeneidad entre comunas."
+      - "Gran potencial de estandarización y aprovechamiento de buenas prácticas locales."
+    Ex:
+      - "Ninhue presenta un alto % de Nivel 5 y mayor uso de ClaveÚnica."
+      - "San Fabián, Cobquecura, Coelemu, Quillón, San Nicolás presentan alto % de Nivel 0."
+
+  Patrones_transversales:
+    ID: "TDE-CPAT-RESULTADOS-PATRONES-01"
+    Res:
+      - "Objetos *Solicitud/Permiso* y *Certificado/Constancia* concentran niveles bajos."
+      - "Uso de mecanismo propio de autenticación está extendido."
+      - "ClaveÚnica está subutilizada."
+      - "Muchas URLs son informativas y no tienen un flujo transaccional completo."
+      - "Existen oportunidades para implementar pago en línea y conciliación automatizada donde hay cobro."
+    Rec:
+      - "Son candidatos ideales para digitalizar con formularios electrónicos, expediente y notificaciones."
+      - "Priorizar el cierre de esta brecha (URL vs. Canal)."
+
+Tipologia_CPAT_Sintesis_Operativa:
+  ID: "TDE-CPAT-TIPOLOGIA-01"
+
+  Objeto_del_registro_clasificacion_principal:
+    ID: "TDE-CPAT-TIPOLOGIA-OBJETO-01"
+    Def:
+      - "Solicitud/Permiso"
+      - "Certificado/Constancia"
+      - "Pago/Arancel"
+      - "Beneficio/Subsidio/Postulación"
+      - "Inscripción/Registro"
+      - "Reclamo/Denuncia/Transparencia"
+      - "Compras/Licitaciones"
+      - "Atención/Orientación"
+      - "Otro/No clasificado (requiere revisión manual)"
+
+  Otras_dimensiones_y_reglas:
+    ID: "TDE-CPAT-TIPOLOGIA-REGLAS-01"
+    Ctx:
+      - "Dimensión clave: Tipo CPAT."
+      - "Dimensión clave: Nivel (0–5)."
+      - "Dimensión clave: Autenticación."
+      - "Dimensión clave: Canal."
+      - "Dimensión clave: URL."
+      - "Dimensión clave: Disponibilidad."
+      - "Dimensión clave: Pago asociado."
+      - "Regla de clasificación: propósito dominante."
+      - "Regla de clasificación: evidencia de canal para validar nivel."
+      - "Regla de clasificación: uso de ClaveÚnica por defecto cuando corresponda."
+      - "Regla de clasificación: higiene de enlaces."
+
+Implicancias_para_TDE_con_foco_en_IA_responsable:
+  ID: "TDE-CPAT-IMPLICANCIAS-IA-01"
+
+  Mapa_de_riesgo_IA_automatizacion:
+    Act: "Identificar alto riesgo sobre trámites Nivel ≥3 (decisiones que afectan derechos, subsidios, elegibilidad, priorización de proyectos)."
+    Req:
+      - "Exigir revisión humana."
+      - "Exigir explicabilidad razonable."
+      - "Exigir bitácoras de decisión."
+      - "Exigir gobernanza de datos."
+
+  Datos_y_calidad:
+    Req:
+      - "Establecer diccionarios de datos."
+      - "Definir reglas de negocio."
+      - "Asegurar linaje de datos."
+      - "Realizar pruebas de sesgo cuando exista modelamiento."
+      - "Definir políticas de retención, auditoría y protección de datos."
+
+  Transparencia_al_usuario:
+    Req:
+      - "Rotulado de IA cuando aplique."
+      - "Explicación simple de criterios."
+      - "Disponer de un canal de apelación."
+
+  Contratacion_publica:
+    Req: "Incluir cláusulas de IA responsable (matriz de riesgos, métricas, documentación técnica, pruebas, auditorías, plan de contingencia)."
+
+  Ciberseguridad:
+    Req:
+      - "Establecer controles mínimos."
+      - "Gestionar incidentes para automatizaciones/IA."
+      - "Definir proceso de reporte de incidentes."
+
+  Personas_y_cambio:
+    Req: "Realizar capacitación focalizada (datos, jurídico, compras TI, TI, atención ciudadana)."
+
+Hoja_de_Ruta_Priorizada_12_meses:
+  ID: "TDE-CPAT-ROADMAP-01"
+
+  Dias_0_90_habilitadores_quick_wins:
+    ID: "TDE-CPAT-ROADMAP-90D-01"
+    Heading_Literal:
+      - "#### 5.1. 0–90 días (habilitadores + quick wins)"
+    Act:
+      - "Realizar inventario de sistemas automatizados/IA (GORE + municipios con mayor rezago)."
+      - "Elaborar matriz de riesgos (GORE + municipios con mayor rezago)."
+      - "Realizar limpieza y normalización de URLs."
+      - "Crear checklist de transparencia por trámite."
+      - "Estandarizar autenticación (ClaveÚnica por defecto)."
+      - "Crear planes de migración desde mecanismos de autenticación propios."
+      - "Crear plantillas de formulario, expediente y notificación para casos *Solicitud/Permiso*, *Certificado* y *Pago*."
+
+  Dias_90_180_aceleracion:
+    ID: "TDE-CPAT-ROADMAP-180D-01"
+    Act:
+      - "Migrar top 30–50 trámites de alto impacto a Nivel 3 (de punta a punta)."
+      - Act: "Implementar tablero regional con KPIs."
+        Ref: "TDE-CPAT-KPIS-01"
+      - "Realizar pilotos de explicabilidad y revisión humana en decisiones automatizadas."
+
+  Dias_180_365_consolidacion:
+    ID: "TDE-CPAT-ROADMAP-365D-01"
+    Ctx: "Foco en interoperabilidad (validaciones automáticas, pagos, notificaciones, conciliación)."
+    Act:
+      - "Escalar a Nivel 4–5 un grupo de 10–15 trámites estratégicos."
+      - "Realizar auditorías internas de IA."
+      - "Realizar pruebas de sesgo donde corresponda."
+      - "Operar de forma continua la gestión de incidentes (automatización/IA)."
+      - "Asegurar resguardo legal de la operación de automatización/IA."
+
+KPIs_y_tablero_regional:
+  ID: "TDE-CPAT-KPIS-01"
+
+  Cobertura_y_madurez:
+    ID: "TDE-CPAT-KPIS-MADUREZ-01"
+    Ctx:
+      - "% de trámites con URL válida (vigente)."
+      - "% con canal transaccional."
+      - "% con ClaveÚnica."
+      - "Distribución por Nivel 0–5 y variación trimestral."
+
+  Uso_y_calidad:
+    ID: "TDE-CPAT-KPIS-USO-01"
+    Ctx:
+      - "Tiempo de ciclo (p50/p90) por objeto."
+      - "Tasa de reingreso / retrabajo."
+      - "Tasa de reclamos y SLA de respuesta."
+      - "Satisfacción NPS/CSAT."
+
+  IA_responsable:
+    ID: "TDE-CPAT-KPIS-IA-01"
+    Ctx:
+      - "% trámites con rotulado (si aplica)."
+      - "% con revisión humana documentada."
+      - "Incidentes reportados/gestionados."
+      - "Auditorías realizadas y hallazgos cerrados."
+
+  Formula_de_priorizacion_sugerida:
+    ID: "TDE-CPAT-KPIS-FORMULA-01"
+    Ctx: '$\text{Score} = 0{,}35\times\text{Impacto} + 0{,}30\times\text{Factibilidad} + 0{,}20\times\text{Riesgo} + 0{,}15\times\text{Urgencia estacional}$'
+    Factores:
+      - Term: "Impacto"
+        Def: "volumen, criticidad social, ingresos/costos evitados."
+      - Term: "Factibilidad"
+        Def: "disponibilidad de datos, procesos, equipo."
+      - Term: "Riesgo"
+        Def: "cumplimiento/tecnológico reputacional (priorizar reducción de riesgo)."
+      - Term: "Urgencia"
+        Def: "ventanas/picos (p. ej., permisos estacionales)."
+
+Recomendaciones_tacticas_por_actor:
+  ID: "TDE-CPAT-RECOMENDACIONES-01"
+
+  GORE_Nuble:
+    ID: "TDE-CPAT-RECOMENDACIONES-GORE-01"
+    Rec:
+      - "Subir a Nivel 3 los trámites de función común en Nivel 0."
+      - Ref: "TDE-CPAT-DEDUP-REC-ASEGURAR-CANAL-01"
+      - "Estandarizar ClaveÚnica y expediente/seguimiento."
+      - "Publicar un repositorio único de URLs de inicio con control de versiones."
+
+  Municipios_con_alto_rezago:
+    ID: "TDE-CPAT-RECOMENDACIONES-REZAGO-01"
+    Ctx: "Ejemplos de municipios: San Fabián, Cobquecura, Coelemu, Quillón, San Nicolás."
+    Rec:
+      - "Implementar programa intensivo de paquete mínimo (formulario estándar + ClaveÚnica + expediente)."
+      - "Proveer apoyo técnico para cerrar la brecha URL→Canal."
+
+  Municipios_con_buen_desempeno:
+    ID: "TDE-CPAT-RECOMENDACIONES-AVANZADOS-01"
+    Ctx: "Ejemplos de municipios: Ninhue, Ñiquén."
+    Rec:
+      - "Fomentar mentoría cruzada."
+      - "Promover la reutilización de plantillas."
+      - "Crear un catálogo de buenas prácticas para escalar soluciones."
+
+Arquitectura_de_solucion_estado_objetivo:
+  ID: "TDE-CPAT-ARQUITECTURA-01"
+
+  Capa_de_experiencia:
+    ID: "TDE-CPAT-ARQUITECTURA-EXP-01"
+    Ctx:
+      - "Formularios web accesibles, multicanal."
+      - "Validaciones in situ y autocompletado en formularios."
+      - "Sistema de notificación y seguimiento (folio/expediente)."
+
+  Capa_de_identidad_y_firma:
+    ID: "TDE-CPAT-ARQUITECTURA-ID-01"
+    Ctx:
+      - "ClaveÚnica como estándar de autenticación."
+      - "Firma electrónica simple/avanzada según caso de uso."
+
+  Capa_de_procesos_BPM_Case:
+    ID: "TDE-CPAT-ARQUITECTURA-PROC-01"
+    Ctx:
+      - "Motor de flujos, reglas y SLAs."
+      - "Bitácora y trazabilidad de procesos."
+      - "Integraciones a pagos, correo/notificación y repositorios documentales."
+
+  Capa_de_datos:
+    ID: "TDE-CPAT-ARQUITECTURA-DATA-01"
+    Ctx:
+      - "Catálogo de datos y diccionarios."
+      - "Control de calidad y linaje de datos."
+      - "Tablero de KPIs y evidencia para auditorías."
+
+  Capa_de_interoperabilidad:
+    ID: "TDE-CPAT-ARQUITECTURA-INTEROP-01"
+    Ctx:
+      - "Servicios de consulta/validación con terceros públicos."
+      - "Conciliación de pagos."
+      - "Servicios de reportabilidad."
+
+  Capa_de_IA_opcional_segun_riesgo:
+    ID: "TDE-CPAT-ARQUITECTURA-IA-01"
+    Ctx:
+      - "Asistentes para orientación y clasificación (bajo riesgo)."
+      - "Apoyo a decisión con revisión humana y explicabilidad (alto riesgo)."
+      - "Controles de IA (rotulado, pruebas, auditorías, gestión de sesgo e incidentes)."
+
+Playbook_de_implementacion_patrones_reutilizables:
+  ID: "TDE-CPAT-PLAYBOOK-01"
+  Patrones:
+    - Item: "1."
+      Ctx: "Certificados/Constancias (L0–1→L3)"
+      Proc: "Formulario + validación automática de requisitos + generación de PDF con folio + notificación."
+      Cond: "Si hay cobro, integrar pago en línea y conciliación."
+    - Item: "2."
+      Ctx: "Solicitudes/Permisos"
+      Proc:
+        - "Formulario estructurado + expediente + revisión con checklist + resolución digital."
+        - "Integraciones a catastro/registro si aplica."
+    - Item: "3."
+      Ctx: "Pagos/Aranceles"
+      Proc: "Portal de pagos + cálculo automático + conciliación + comprobante."
+    - Item: "4."
+      Ctx: "Inscripciones/Registros"
+      Proc: "Alta/actualización con validaciones + API de consulta/constancia."
+    - Item: "5."
+      Ctx: "Reclamos/Transparencia"
+      Proc: "Flujo con SLAs, hitos y comunicación; trazabilidad completa y métricas públicas."
+
+Gestion_del_cambio_y_gobernanza:
+  ID: "TDE-CPAT-GOBERNANZA-01"
+
+  Modelo_de_gobernanza:
+    ID: "TDE-CPAT-GOBERNANZA-MODELO-01"
+    Comite_TDE_estrategico:
+      Ctx: "Comité TDE (estratégico)."
+      Act: "Prioriza cartera y aprueba estándares."
+    Oficina_de_Producto_Digital_operativo:
+      Ctx: "Oficina de Producto Digital (operativo)."
+      Act: "Fabrica y opera los flujos comunes."
+    Data_Governance:
+      Ctx: "Data Governance."
+      Act: "Define políticas, diccionarios, calidad y acceso a datos."
+    Oficial_de_IA_Responsable:
+      Ctx: "Oficial de IA Responsable."
+      Act: "Mantiene inventario, riesgos, auditorías y reportes de IA."
+
+  RACI_resumido:
+    ID: "TDE-CPAT-GOBERNANZA-RACI-01"
+    Roles:
+      - Role: "R (responsable)"
+        Ctx: "Oficina de Producto / equipos municipales."
+      - Role: "A (aprobador)"
+        Ctx: "Comité TDE."
+      - Role: "C (consultado)"
+        Ctx: "Jurídico, Compras, Ciberseguridad, Datos."
+      - Role: "I (informado)"
+        Ctx: "Direcciones/Unidades dueñas del trámite."
+
+Riesgos_y_mitigaciones:
+  ID: "TDE-CPAT-RIESGOS-01"
+  Riesgos:
+    - Warn: "R1: Subdeclaración/obsolescencia de niveles o URLs."
+      Rec: "Validación periódica, pruebas de extremo a extremo, monitoreo de enlaces."
+    - Warn: "R2: Sobreuso de mecanismos propios de autenticación."
+      Rec: "Plan de migración a ClaveÚnica y desactivación progresiva."
+    - Warn: "R3: Dependencias externas (pagos/interoperabilidad)."
+      Rec: "Acuerdos y SLAs, colas de degradación."
+    - Warn: "R4: Automatizaciones de alto riesgo sin salvaguardas."
+      Rec: "Revisión humana, explicabilidad, auditorías, gestión de incidentes."
+    - Warn: "R5: Variabilidad municipal de capacidades."
+      Rec: "Plantillas reutilizables, mentoring y acompañamiento regional."
+
+Proximos_pasos_accionables_checklist:
+  ID: "TDE-CPAT-NEXT-STEPS-01"
+  Act:
+    - "[ ] Validar dataset 2024 vs. 2025 y completar 6 comunas faltantes."
+    - "[ ] Publicar catálogo único de URLs con control de versiones."
+    - "[ ] Acordar lista priorizada (30–50) de trámites L0–1 → L3."
+    - "[ ] Aprobar estándares (ClaveÚnica, expediente, notificación, métricas)."
+    - "[ ] Levantar inventario IA/automatizaciones y clasificar riesgos."
+    - "[ ] Montar tablero KPIs y rutina trimestral de seguimiento."
+
+Apendice_A_Codebook_resumido_uso_practico:
+  ID: "TDE-CPAT-APENDICE-A-01"
+
+  Definiciones_y_senales_objeto:
+    ID: "TDE-CPAT-APENDICE-A1-01"
+    Items:
+      - Def: "Solicitud/Permiso."
+        Ctx:
+          - "“solicitud”"
+          - "“permiso”"
+          - "“autorización”"
+          - "“licencia”"
+          - "“prórroga”"
+      - Def: "Certificado/Constancia."
+        Ctx:
+          - "“certificado”"
+          - "“constancia”"
+          - "“acreditación”"
+          - "“fe de”"
+      - Def: "Pago/Arancel."
+        Ctx:
+          - "“pago”"
+          - "“arancel”"
+          - "“derecho”"
+          - "“cancelación”"
+      - Def: "Beneficio/Subsidio/Postulación."
+        Ctx:
+          - "“postulación”"
+          - "“subsidio”"
+          - "“beneficio”"
+          - "“bono”"
+          - "“beca”"
+          - "“aporte”"
+      - Def: "Inscripción/Registro."
+        Ctx:
+          - "“inscripción”"
+          - "“registro”"
+          - "“empadronamiento”"
+          - "“matrícula”"
+          - "“actualización”"
+      - Def: "Reclamo/Denuncia/Transparencia."
+        Ctx:
+          - "“reclamo”"
+          - "“denuncia”"
+          - "“OIRS/SIAC”"
+          - "“transparencia”"
+          - "“acceso a la información”"
+          - "“audiencia”"
+          - "“lobby”"
+      - Def: "Compras/Licitaciones."
+        Ctx:
+          - "“licitación”"
+          - "“contratación”"
+          - "“convenio marco”"
+          - "“proveedor”"
+          - "“Mercado Público”"
+      - Def: "Atención/Orientación."
+        Ctx:
+          - "“orientación”"
+          - "“información”"
+          - "“asesoría”"
+          - "“guía”"
+
+  Reglas_transversales:
+    ID: "TDE-CPAT-APENDICE-A2-01"
+    Ctx:
+      - "Propósito dominante."
+      - "Certificados vs. solicitudes."
+      - "Inscripción vs. permiso."
+      - "Transparencia/relación ciudadana."
+      - "Compras."
+      - "Orientación."
+      - "Ambigüedad (revisión manual)."
+
+  Normalizacion_de_nivel:
+    ID: "TDE-CPAT-APENDICE-A3-01"
+    Niveles:
+      - Def: "Nivel 0."
+        Ctx: "sólo presencial."
+      - Def: "Nivel 1."
+        Ctx: "información en línea sin transacción."
+      - Def: "Nivel 2."
+        Ctx: "descarga/envío no estandarizado."
+      - Def: "Nivel 3."
+        Ctx: "flujo en línea de punta a punta."
+      - Def: "Nivel 4."
+        Ctx: "interoperabilidad/pagos/validaciones."
+      - Def: "Nivel 5."
+        Ctx: "automatización avanzada + expediente trazable."
+
+Apendice_B_Plantillas_reutilizables:
+  ID: "TDE-CPAT-APENDICE-B-01"
+
+  Ficha_de_Tramite_Digital_minimos:
+    ID: "TDE-CPAT-APENDICE-B1-01"
+    Ctx:
+      - "Nombre y Objeto"
+      - "Tipo CPAT"
+      - "Nivel objetivo (próximo trimestre)"
+      - "Autenticación (estándar)"
+      - "URL de inicio"
+      - "Canal transaccional"
+      - "Pago asociado (sí/no)"
+      - "Interoperabilidades"
+      - "SLAs y métricas"
+      - "Riesgo (IA/automatización) y salvaguardas"
+      - "Propietario y equipo responsable"
+
+  Checklist_IA_responsable_por_tramite_con_automatizacion:
+    ID: "TDE-CPAT-APENDICE-B2-01"
+    Req:
+      - "[ ] ¿Se clasificó el riesgo y se documentó?"
+      - "[ ] ¿Hay revisión humana significativa cuando impacta derechos?"
+      - "[ ] ¿Se mantiene bitácora y linaje de datos?"
+      - "[ ] ¿Existe explicación simple al usuario?"
+      - "[ ] ¿Se rotula el uso de IA (si aplica)?"
+      - "[ ] ¿Se ejecutaron pruebas de desempeño y sesgo?"
+      - "[ ] ¿Hay plan de incidentes y continuidad?"
+      - "[ ] ¿Se incluyen cláusulas contractuales de IA responsable?"
+
+  Clausulas_minimas_en_contratacion:
+    ID: "TDE-CPAT-APENDICE-B3-01"
+    Req:
+      - "Entrega de documentación técnica y matriz de riesgos."
+      - "Métricas medibles de desempeño y sesgo."
+      - "Derecho de auditoría y pruebas; gestión de incidentes."
+      - "Propiedad y acceso a bitácoras/datos para fiscalización."
+      - "Cumplimiento normativo (datos, ciberseguridad, transparencia)."
+
+Apendice_C_Arbol_de_decision_de_clasificacion_texto:
+  ID: "TDE-CPAT-APENDICE-C-01"
+  Proc:
+    - "1. ¿El resultado es un documento acreditativo? → **Certificado/Constancia**."
+    - "2. ¿Crea/modifica un asiento en un padrón? → **Inscripción/Registro**."
+    - "3. ¿El acto central es pagar? → **Pago/Arancel**."
+    - "4. ¿Es solicitar una autorización/licencia? → **Solicitud/Permiso**."
+    - "5. ¿Es postular a un beneficio/subsidio/beca? → **Beneficio/Subsidio/Postulación**."
+    - "6. ¿Es reclamar/denunciar/pedir información pública? → **Reclamo/Denuncia/Transparencia**."
+    - "7. ¿Es contratar/comprar (sector público)? → **Compras/Licitaciones**."
+    - "8. ¿Sólo orienta/informa sin acto administrativo? → **Atención/Orientación**."
+    - "9. Si no encaja → **Otro/No clasificado** (revisar manualmente)."

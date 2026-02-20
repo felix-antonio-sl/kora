@@ -1,0 +1,217 @@
+# KODA TDE Plataforma Compartida: SIMPLE en modalidad SaaS
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:simple_saas:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Plataforma_Compartida_SIMPLE_SaaS"
+  provenance:
+    created_by: "División de Gobierno Digital - Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_files:
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_de_uso_SIMPLE_en_modalidad_SaaS.md"
+      - "Plataformas_CompartidasManuales_de_Uso/Glosario_de_la_Plataforma_SIMPLE.md"
+    source_urls:
+      - "https://wikiguias.digital.gob.cl/Manuales/Simple_SaaS"
+      - "https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple"
+    source_updated_at:
+      - "2025-10-07T23:11:31.485Z"
+      - "2025-10-07T23:11:30.948Z"
+  status: draft
+
+ID: "TDE-PLAT-SIMPLE-SaaS-017"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "División de Gobierno Digital - Ministerio SEGPRES"
+Human-Editor: "Equipo de Digitalización - Secretaría de Gobierno Digital"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Plataforma SIMPLE como BPMS en modalidad SaaS para digitalizar procesos de negocio de baja complejidad en organismos del Estado"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, listas, definiciones) with zero loss. Ignore fat (decorative text, imágenes de portada, enlaces redundantes).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Plataforma compartida de modelado y ejecución de procesos digitales (BPMS) en modalidad SaaS"
+  objective: >-
+    Proveer a los OAEs de un marco conceptual y operativo para usar SIMPLE como BPMS en la nube,
+    apoyados por el equipo de digitalización, para modelar y ejecutar procesos de baja complejidad
+    alineados con la Transformación Digital del Estado.
+  usage_guidance:
+    - "Usar este lineamiento para entender los conceptos fundamentales de SIMPLE, sus ambientes (desarrollo, capacitación, productivo) y los bloques básicos de modelado (tareas, formularios, campos, acciones)."
+    - "Complementar con la guía completa de uso de SIMPLE SaaS y las Buenas Prácticas de digitalización para detalles procedimentales."
+  style:
+    - "Responder en es-CL, con foco en conceptos de BPMS/digitalización y su aplicación en el contexto TDE."
+
+Metadata_Original:
+  title: "SIMPLE en modalidad SaaS (Manual de uso + Glosario)"
+  urls:
+    - "https://wikiguias.digital.gob.cl/Manuales/Simple_SaaS"
+    - "https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple"
+  category: "Plataformas Compartidas/Manuales de Uso"
+  tags:
+    - "simple"
+    - "saas"
+    - "bpms"
+    - "digitalizacion_procesos"
+  description: "Documentos que describen el uso de la plataforma SIMPLE como BPMS en modalidad SaaS y los conceptos clave asociados."
+  updated_at:
+    - "2025-10-07T23:11:31.485Z"
+    - "2025-10-07T23:11:30.948Z"
+
+Contexto_y_Rol_SIMPLE:
+  ID: "TDE_PLAT_SIMPLE_CTX_001"
+  Ctx: >-
+    SIMPLE (Sistema de Implementación de Procesos Ligeramente Estandarizados) es un sistema
+    modelador de procesos (BPMS) que permite definir tareas y aplicar lógica de decisiones de
+    negocio para implementar procesos digitales de baja complejidad en instituciones públicas.
+  Def:
+    - Term: "SIMPLE"
+      Def: >-
+        Sistema de Implementación de Procesos Ligeramente Estandarizados; un BPMS que permite
+        modelar, automatizar y ejecutar procesos mediante formularios, tareas y acciones.
+    - Term: "BPMS"
+      Def: "Plataforma tecnológica que permite modelar, automatizar, monitorear y optimizar procesos de negocio."
+    - Term: "BPMN"
+      Def: "Lenguaje estándar para modelar procesos de negocio mediante diagramas de flujo."
+  Obj:
+    - "Apoyar a los OAEs en la digitalización progresiva de procesos de baja complejidad."
+    - "Permitir la implementación directa de procesos digitales con lógica de negocio explícita."
+
+Ambientes_y_Modalidad_SaaS:
+  ID: "TDE_PLAT_SIMPLE_AMB_001"
+  Ambientes:
+    - Name: "Ambiente de desarrollo"
+      Def: "Ambiente compartido para el desarrollo de nuevos procesos de los distintos OAEs que utilizan SIMPLE."
+    - Name: "Ambiente de capacitación"
+      Def: "Ambiente compartido para el desarrollo de manuales de capacitación y ejecución del taller 'Aprendiendo SIMPLE'."
+    - Name: "Ambiente productivo"
+      Def: "Ambiente entregado gratuitamente a cada OAE para disponibilizar sus procesos de cara a las personas."
+  SaaS:
+    Def: >-
+      Modelo de software en el que las aplicaciones se alojan en la nube y se ofrecen a los
+      usuarios a través de Internet. SIMPLE en modalidad SaaS implica que la infraestructura y la
+      plataforma son gestionadas por la SGD, mientras que las instituciones diseñan y operan sus
+      procesos.
+  Cuenta:
+    Def: >-
+      Creación en la nube de la institución usuaria de SIMPLE. Requiere nombrar un administrador
+      que actúe como contraparte del Equipo de Digitalización y responsable de la gestión de la
+      cuenta.
+  Ctx_Optional:
+    - "La Guía de uso de SIMPLE SaaS describe en detalle requisitos y compromisos que debe cumplir la institución para usar la plataforma (considerada como referencia externa)."
+
+Componentes_FUNCionales:
+  ID: "TDE_PLAT_SIMPLE_COMP_001"
+  Backend_y_Frontend:
+    - Term: "Back-end"
+      Def: >-
+        Parte del software que maneja la lógica, el procesamiento de datos y la interacción con el
+        servidor (incluye el modelador de procesos).
+    - Term: "Front-end"
+      Def: >-
+        Parte visible e interactiva de la aplicación con la que interactúan funcionarios y personas
+        usuarias.
+  Formularios_y_Campos:
+    Def: "Formularios son el lienzo donde se agregan todos los campos de SIMPLE."
+    Campos_Principales:
+      - "Textbox, textarea, párrafo, título, subtítulo: para captura y presentación de texto, con soporte de etiquetas HTML."
+      - "Checkbox, radio, select: para selección única o múltiple de opciones."
+      - "Campos de ubicación y entidades (regiones/provincias/comunas, países, instituciones)."
+      - "Campos de fecha (date) con restricciones según necesidad del OAE."
+      - "Campos de archivos (file, file transfer) con límite de tamaño o vigencia."
+      - "Campo documento (referencia a documento generado en SIMPLE)."
+      - "Campo Javascript (para agregar código JS en el proceso)."
+      - "Campos grilla y grilla de datos externos (tablas editables y datos externos)."
+  Tareas_y_Conexiones:
+    Def: >-
+      Las tareas son componentes que contienen pasos, acciones y configuraciones necesarias para
+      la ejecución del proceso.
+    Conexiones:
+      - "Conexión secuencial: define la siguiente tarea a ejecutar."
+      - "Conexión por evaluación: avanza a una tarea u otra según condición."
+      - "Conexión paralela y paralela por evaluación: ejecutan varias tareas al mismo tiempo (con opción de condicionar su ejecución)."
+      - "Conexión de unión: requerida para converger tareas paralelas antes de seguir."
+
+Acciones_y_Integraciones:
+  ID: "TDE_PLAT_SIMPLE_ACC_001"
+  Acciones_Principales:
+    - "Enviar correo: configura remitente, copias, asunto, contenido y adjuntos."
+    - "Generar documento: crea documentos HTML dentro del trámite."
+    - "Enviar documento: envía documentos generados a endpoints externos vía REST en base64."
+    - "Generar variable: define nuevas variables en el contexto del trámite."
+    - "Descargar documento: descarga un documento desde una URL pública y lo transforma a base64 en una variable."
+    - "Redirección: redirecciona al usuario a una URL externa al completar una tarea o paso."
+    - "Consultar REST/SOAP: consume servicios web externos y almacena respuestas en variables."
+  Integracion:
+    Def: >-
+      Conexión de sistemas, aplicaciones y servicios externos al BPMS para intercambiar
+      información y ejecutar tareas dentro de los procesos modelados en SIMPLE.
+
+Ciclo_Vida_y_Digitalizacion_Procesos:
+  ID: "TDE_PLAT_SIMPLE_CICLO_001"
+  Ctx: >-
+    El uso de SIMPLE se enmarca en la disciplina de gestión y digitalización de procesos, cubriendo
+    todo el ciclo de vida desde el diseño hasta la mejora continua.
+  Terminos_Clave:
+    - "Ciclo de Vida de Procesos: modelado, implementación, ejecución, monitoreo y optimización."
+    - "Digitalización de Procesos: conversión de procesos manuales o tradicionales en flujos automatizados con herramientas tecnológicas."
+    - "Gestión de Procesos: práctica de identificar, diseñar, documentar, implementar, monitorear y optimizar procesos de negocio."
+    - "Optimización de Procesos: mejora continua para aumentar eficiencia y reducir costos."
+    - "Monitorización de Procesos: seguimiento en tiempo real del desempeño para detectar cuellos de botella o ineficiencias."
+    - "Gestión del Cambio: estrategia para asegurar la adopción efectiva de procesos digitalizados."
+    - "KPI: métricas clave para evaluar desempeño y eficiencia de procesos."
+
+Capacitacion_y_Acompanamiento:
+  ID: "TDE_PLAT_SIMPLE_CAP_001"
+  Terminos:
+    - "Aprendiendo SIMPLE: taller práctico del equipo de digitalización para capacitar a funcionarios que trabajarán con SIMPLE."
+    - "Ambiente de capacitación: entorno para manuales y talleres de SIMPLE."
+    - "Manuales de digitalización: materiales del equipo de digitalización para formar digitalizadores."
+    - "Equipo de digitalización: equipo de la SGD que brinda herramientas y asesoría para el modelado y optimización de procesos."
+    - "Presentación de procesos: instancia en que digitalizadores presentan procesos desarrollados al equipo de digitalización."
+    - "Simple Day: webinar para conocer el modelador, usos y acompañamiento disponible."
+  Rec:
+    - "Planificar una fase de capacitación y acompañamiento antes de desplegar procesos a producción."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de SIMPLE apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "BPMS"
+      Ref_ID: "TDE_DEF_BPMS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_BPMS"
+    - Term: "Workflow"
+      Ref_ID: "TDE_DEF_WORKFLOW"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_WORKFLOW"
+    - Term: "API"
+      Ref_ID: "TDE_DEF_API"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_API"
+    - Term: "KPI"
+      Ref_ID: "TDE_DEF_KPI"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_KPI"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos y normas que se relacionan con la digitalización de procesos usando SIMPLE."
+  XRef:
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:cpat_completa:1.0.0"
+    - "urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0"
+    - "urn:knowledge:koda:gov:evaltic:1.0.0"
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+    - "urn:knowledge:koda:gov:mgde:1.0.0"

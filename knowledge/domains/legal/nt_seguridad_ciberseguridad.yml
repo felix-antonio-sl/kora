@@ -1,0 +1,285 @@
+# KODA TDE Lineamiento Técnico: Norma Técnica de Seguridad de la Información y Ciberseguridad (Decreto 7)
+---
+_manifest:
+  urn: "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Norma_Tecnica_Seguridad_Informacion_Ciberseguridad"
+  provenance:
+    created_by: "Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosNormas/Decreto_7___Norma_técnica_de_Seguridad_de_la_Información_y_ciberseguridad.md"
+    source_url: "https://wikiguias.digital.gob.cl/Normas/Decreto7"
+    source_updated_at: "2025-10-07T22:50:39.839Z"
+  status: draft
+
+ID: "TDE-LIN-NORMA-SEG-CIBER-07"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Ministerio Secretaría General de la Presidencia"
+Human-Editor: "División de Gobierno Digital - Ministerio SEGPRES"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Norma Técnica de Seguridad de la Información y Ciberseguridad para plataformas electrónicas que sustentan procedimientos administrativos en la Administración del Estado"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, artículos, funciones, categorías) with zero loss. Ignore fat (formalismo jurídico, repeticiones retóricas).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Norma técnica base para seguridad de la información y ciberseguridad en el Estado"
+  objective: >-
+    Definir estándares y directrices técnicas que los OAEs deben cumplir para proteger la
+    confidencialidad, integridad y disponibilidad de la información y la infraestructura
+    informática de las plataformas electrónicas que sustentan procedimientos administrativos.
+  usage_guidance:
+    - "Usar esta norma junto con la Guía Técnica de Seguridad de la Información y Ciberseguridad para diseñar políticas, diagnósticos y planes de seguridad a nivel institucional."
+    - "Integrar sus lineamientos con las normas de Documentos/Expedientes, Interoperabilidad, Notificaciones y Autenticación, y con los marcos STD 2025, CPAT y MGDE."
+  style:
+    - "Responder en es-CL, tono jurídico-técnico, manteniendo el enfoque en funciones (identificación, protección, detección, respuesta, recuperación)."
+
+Metadata_Original:
+  title: "Decreto 7  | Norma técnica de Seguridad de la Información y ciberseguridad"
+  url: "https://wikiguias.digital.gob.cl/Normas/Decreto7"
+  category: "Lineamientos Técnicos/Normas"
+  tags:
+    - "decreto"
+    - "norma tecnica"
+    - "seguridad de la información"
+    - "ciberseguridad"
+  description: "Establece Norma Técnica de Seguridad de la Información y Ciberseguridad, conforme a la Ley Nº 21.180."
+  updated_at: "2025-10-07T22:50:39.839Z"
+  promulgacion: "2023-05-19"
+  publicacion: "2023-08-17"
+  version: "Única - 17-AGO-2023"
+
+Contexto_y_Base_Legal:
+  ID: "TDE_LIN_SEG07_CTX_001"
+  Ctx: >-
+    La norma se dicta en el marco de la Constitución Política, la Ley 19.880, la Ley 21.180 de
+    Transformación Digital, el DFL 1/2020, el DS 4/2020 (Reglamento de TD), el DS 83/2004
+    (seguridad y confidencialidad de documentos electrónicos), el Instructivo Presidencial N° 8/2018
+    sobre ciberseguridad y la Ley 21.663 (Ley Marco de Ciberseguridad), entre otras normas. Forma
+    parte del conjunto de seis normas técnicas mandatadas por el Reglamento (interoperabilidad,
+    seguridad, documentos/expedientes, notificaciones, calidad y autenticación).
+
+Objeto_de_la_Norma:
+  ID: "TDE_LIN_SEG07_OBJ_001"
+  Articulo: 1
+  Purp: >-
+    Definir estándares y establecer directrices técnicas sobre seguridad de la información y
+    ciberseguridad que deben cumplir los OAEs para resguardar la confidencialidad, integridad y
+    disponibilidad de la información y la infraestructura informática de las plataformas
+    electrónicas que sustentan sus procedimientos administrativos.
+
+Definiciones_Clave:
+  ID: "TDE_LIN_SEG07_DEF_001"
+  Articulo: 2
+  Terms:
+    - Term: "Activo"
+      Def: >-
+        Elemento lógico o físico (hardware, equipamiento o sistema relacionado con la información)
+        que permite generar, almacenar, soportar, enviar o intercambiar información.
+    - Term: "Activo_Informacion"
+      Def: >-
+        Datos o información cuyo tratamiento es esencial para el funcionamiento del OAE que los
+        usa, genera, almacena, envía o intercambia y que deben ser protegidos en su
+        confidencialidad, integridad, disponibilidad u otros factores relevantes.
+    - Term: "Seguridad_Informacion_y_Ciberseguridad"
+      Def: >-
+        Conjunto de acciones, políticas y medidas preventivas y reactivas destinadas a prevenir,
+        mitigar, manejar y responder a amenazas y riesgos de incidentes de seguridad, proteger y
+        restablecer la confidencialidad, integridad y disponibilidad de activos, activos de
+        información y servicios.
+    - Term: "Confidencialidad"
+      Def: "Atributo que asegura que los activos e información sólo sean conocidos y accedidos por quienes estén autorizados."
+    - Term: "Disponibilidad"
+      Def: "Atributo relativo a la accesibilidad y utilización de los activos e información a requerimiento de entidades o procesos autorizados."
+    - Term: "Integridad"
+      Def: "Atributo relativo a la exactitud, autenticidad y completitud de activos e información."
+    - Term: "Control_Seguridad"
+      Def: "Conjunto de estándares, buenas prácticas y normativas para administrar riesgos en TI."
+    - Term: "Gestion_Riesgo"
+      Def: >-
+        Proceso estructurado y proactivo de identificación, evaluación, control y tratamiento de
+        riesgos derivados de amenazas de seguridad.
+    - Term: "Incidente_Seguridad"
+      Def: >-
+        Evento o serie de eventos indeseados o inesperados que comprometen la disponibilidad,
+        autenticidad, integridad o confidencialidad de sistemas, activos, datos o servicios.
+    - Term: "Plataforma_Electronica"
+      Def: "Software o conjunto de software, datos e infraestructura tecnológica que sustenta procesos o procedimientos."
+    - Term: "Sistema_Informatico"
+      Def: "Conjunto de componentes lógicos y físicos que interactúan para realizar una función prevista."
+    - Term: "Reglamento"
+      Def: >-
+        Decreto supremo Nº 4, de 2020, del Ministerio Secretaría General de la Presidencia, que
+        aprueba el reglamento que regula la forma en que los procedimientos administrativos deben
+        expresarse a través de medios electrónicos, en las materias que indica, de conformidad con
+        lo dispuesto en la Ley Nº 21.180 sobre Transformación Digital del Estado.
+    - Term: "Riesgo"
+      Def: >-
+        Efecto de la incertidumbre sobre los activos de información y los objetivos de una entidad,
+        habitualmente expresado en relación con las consecuencias de un evento o incidente de
+        seguridad y su probabilidad de ocurrencia.
+    - Term: "Servidor"
+      Def: >-
+        Equipo virtual o físico dedicado a entregar servicios de red, servicios de bases de datos,
+        sitios web, sistemas informáticos, carpetas compartidas y, en general, brindar los recursos
+        necesarios para responder las peticiones de usuarios.
+    - Term: "Usuarios"
+      Def: >-
+        Personas naturales o sus apoderados(as), y los(as) representantes de las personas jurídicas
+        o entidades y agrupaciones sin personalidad jurídica que actúan como interesados(as) en un
+        procedimiento administrativo, así como los(as) funcionarios(as) que acceden a las
+        plataformas electrónicas que soportan procedimientos administrativos o procesos
+        relacionados con estos.
+
+Marco_Seguridad_Info_Ciberseguridad:
+  ID: "TDE_LIN_SEG07_MARCO_001"
+  Articulo: 3
+  Ctx: >-
+    Los OAEs deben estructurar su trabajo en seguridad de la información y ciberseguridad a partir
+    de un diagnóstico inicial, la definición de funciones y categorías y la generación e
+    implementación de una Política de Seguridad de la Información y Ciberseguridad.
+  Req:
+    - "Realizar un diagnóstico inicial del estado de ciberseguridad de las plataformas electrónicas (Art. 4), siguiendo las guías técnicas."
+    - "Incluir este diagnóstico en el Catálogo de Plataformas de la Norma Técnica de Calidad y Funcionamiento, manteniendo un registro íntegro de plataformas administradas."
+
+Politica_de_Seguridad_Info_Ciberseguridad:
+  ID: "TDE_LIN_SEG07_POL_001"
+  Articulo: 5
+  Purp: >-
+    Establecer directrices generales de seguridad de la información y ciberseguridad dentro del
+    OAE, incluyendo componentes de software, hardware, sistemas informáticos y datos que
+    almacenan, procesan e interoperan, e incorporar la privacidad desde el diseño.
+  Req:
+    - "Elaborar una Política aprobada mediante acto administrativo por la Jefatura Superior de Servicio."
+    - "Velar por la preservación de confidencialidad, integridad y disponibilidad de la información, considerando seguridad y privacidad desde el diseño."
+    - "Identificar activos y activos de información, su alcance, roles involucrados y normativa aplicable."
+    - "Designar un responsable institucional de seguridad de la información y ciberseguridad y un responsable de los activos de información; estas funciones no pueden externalizarse."
+    - "Revisar y actualizar la Política periódicamente (al menos cada dos años, conforme a Art. 14)."
+
+Funciones_y_Categorias:
+  ID: "TDE_LIN_SEG07_FUNC_001"
+  Articulos: [6, 7, 8, 9, 10, 11]
+  Ctx: >-
+    La norma organiza la implementación de la Política en cinco funciones: Identificación,
+    Protección, Detección, Respuesta y Recuperación, cada una con categorías específicas que se
+    detallan en guías técnicas.
+  Funcion_Identificacion:
+    Articulo: 7
+    Obj: >-
+      Lograr un entendimiento organizacional que permita identificar y administrar adecuadamente
+      riesgos de seguridad de la información y ciberseguridad asociados a procesos, personas y
+      plataformas electrónicas.
+    Categorias:
+      - "Contexto o entorno institucional."
+      - "Gobernanza."
+      - "Gestión de activos de información."
+      - "Gestión de riesgos."
+      - "Contratación y gestión de la relación con proveedores de servicios en la nube."
+  Funcion_Proteccion:
+    Articulo: 8
+    Obj: >-
+      Desarrollar e implementar procesos y actividades que garanticen medidas de seguridad para la
+      entrega adecuada, oportuna y segura de servicios.
+    Categorias:
+      - "Gestión de servidores, redes, autenticación y control de acceso a plataformas electrónicas."
+      - "Concienciación y formación de funcionarios en seguridad."
+      - "Seguridad de los datos y protección de la información en poder de la Administración."
+      - "Registro de eventos."
+  Funcion_Deteccion:
+    Articulo: 9
+    Obj: "Detectar oportunamente incidentes de seguridad."
+    Categorias:
+      - "Análisis de eventos para identificar anomalías, fallas o eventos precursores."
+      - "Monitoreo continuo de seguridad (protección contra código malicioso)."
+      - "Procesos de detección de eventos de seguridad."
+  Funcion_Respuesta:
+    Articulo: 10
+    Obj: >-
+      Adoptar medidas técnicas y organizativas cuando se detecten incidentes de seguridad de la
+      información o ciberseguridad.
+    Categorias:
+      - "Planificación de respuesta ante incidentes."
+      - "Comunicación de acciones de respuesta."
+      - "Análisis de incidentes."
+      - "Mitigación de incidentes."
+      - "Mejoras a la planificación y procesos de respuesta."
+  Funcion_Recuperacion:
+    Articulo: 11
+    Obj: >-
+      Mantener planes de recuperación y restablecer capacidades, plataformas, sistemas, redes o
+      servicios afectados por incidentes de seguridad.
+    Categorias:
+      - "Planificación de la recuperación."
+      - "Mejoras a la planificación y procesos de recuperación."
+      - "Comunicación del estado de recuperación."
+
+Privacidad_y_Proteccion_Datos:
+  ID: "TDE_LIN_SEG07_PRIV_001"
+  Ctx_Optional:
+    - "La Guía Técnica de Seguridad de la Información y Ciberseguridad establece lineamientos específicos para 'Privacidad y protección de la información', orientados a la protección de datos personales que se transmiten, interoperen y almacenan en plataformas, de acuerdo con la normativa vigente de protección de datos."
+  Req:
+    - "Adoptar resguardos desde el diseño para proteger datos personales en todas las plataformas y servicios, alineados con Ley 19.628 y la normativa sectorial aplicable."
+    - "Asegurar que las políticas, controles de acceso, respaldos, eliminaciones y controles criptográficos consideren explícitamente la protección de datos personales y la minimización de riesgos para los titulares."
+
+Disposiciones_Finales:
+  ID: "TDE_LIN_SEG07_DISP_001"
+  Articulos: [12, 13, 14]
+  Guias_Tecnicas:
+    Def: >-
+      La DGD dictará una o más guías técnicas para facilitar la implementación de la norma,
+      estableciendo aspectos operativos y procesos detallados para cada función y categoría.
+  Gradualidad:
+    Ctx: >-
+      La aplicación de la norma sigue la gradualidad del DFL 1/2020; la DGD definirá lineamientos
+      y formatos para que los OAEs obligados implementen la norma de manera progresiva.
+  Revision:
+    Req:
+      - "Revisar y actualizar la norma al menos cada dos años; el plazo se cuenta desde la entrada en vigencia de esta norma técnica."
+      - "Las actualizaciones deben tomar en consideración aprendizajes y dificultades de aplicación reportados por los OAEs, impulsar buenas prácticas y minimizar efectos de prácticas incorrectas."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de seguridad y ciberseguridad apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Seguridad de la informacion"
+      Ref_ID: "TDE_DEF_SEGURIDAD_INFORMACION"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SEGURIDAD_INFORMACION"
+    - Term: "Ciberseguridad"
+      Ref_ID: "TDE_DEF_CIBERSEGURIDAD"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_CIBERSEGURIDAD"
+    - Term: "Activo de informacion"
+      Ref_ID: "TDE_DEF_ACTIVO_INFORMACION"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_ACTIVO_INFORMACION"
+    - Term: "Plataforma electronica"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Normas técnicas y lineamientos estrechamente vinculados a la seguridad de la información y ciberseguridad."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_notificaciones:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:claveunica:1.0.0"
+    - "urn:knowledge:koda:gov:notificaciones:1.0.0"
+    - "urn:knowledge:koda:gov:simple_saas:1.0.0"
+    - "urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0"

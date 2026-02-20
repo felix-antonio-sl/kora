@@ -1,0 +1,244 @@
+# KODA TDE Plataforma Compartida: Red de Interoperabilidad PISEE
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:pisee:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Plataforma_Compartida_PISEE"
+  provenance:
+    created_by: "Secretaría de Gobierno Digital - Ministerio de Hacienda"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_files:
+      - "Plataformas_CompartidasManuales_de_Uso/Manual_del_Coordinadora_de_Transformación_Digital.md#red-de-interoperabilidad-pisee"
+    source_urls:
+      - "https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador"
+    source_updated_at:
+      - "2025-11-14T14:28:29.734Z"
+  status: draft
+
+ID: "TDE-PLAT-PISEE-027"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Secretaría de Gobierno Digital - Ministerio de Hacienda"
+Human-Editor: "Secretaría de Gobierno Digital - Ministerio de Hacienda"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Red de Interoperabilidad PISEE y su plataforma asociada como servicio compartido para interoperar datos, documentos y expedientes entre OAEs, en coherencia con la Norma Técnica de Interoperabilidad y el modelo de Transformación Digital del Estado"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserva MEAT (información esencial) y skeleton (estructura: headers,
+    IDs, listas, definiciones, pasos de habilitación, requisitos) con pérdida cero.
+    Ignora fat (texto decorativo, retórica, capturas de pantalla y elementos puramente
+    visuales).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
+    Ctx_Required->Required External Reference, Ctx_Optional->Optional External
+    Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective,
+    Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference,
+    XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement,
+    Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification,
+    Rec->Recommendation
+
+    REFERENCE POLICY: Ref: es interno al documento—debe apuntar a un ID existente en
+    ESTE artefacto. XRef/XRef_Required: son externos—deben apuntar a un URN (opcional
+    con fragmento #ID) en otro artefacto. Para documentos externos sin ID específico,
+    usar Ctx:/Ctx_Required:/Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords en inglés, contenido en idioma original. Nunca traduzcas
+    el contenido normativo ni las descripciones de las fuentes.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Plataforma compartida de interoperabilidad de datos, documentos y expedientes (Red PISEE)"
+  objective: >-
+    Describir el rol, requisitos de uso, habilitación y gobernanza de la Red de
+    Interoperabilidad PISEE y su nodo asociado como plataforma compartida para
+    interoperar datos, documentos y expedientes electrónicos entre OAEs, en coherencia
+    con la Norma Técnica de Interoperabilidad, el STD 2025, EVALTIC y las
+    Orientaciones TIC.
+  usage_guidance:
+    - "Usar este lineamiento para entender qué es la red de interoperabilidad PISEE, en
+      qué casos debe utilizarse y cómo habilitar un nodo de desarrollo y producción."
+    - "Complementar con el lineamiento de la Norma Técnica de Interoperabilidad y las
+      guías técnicas que esta remite para diseñar integraciones concretas."
+    - "Usarlo junto a la Guía Metodológica del STD 2025, la Guía EVALTIC y las
+      Orientaciones TIC al planificar la adopción de plataformas y servicios
+      compartidos."
+  style:
+    - "Responder en es-CL, con foco normativo-operativo mínimo necesario para modelar
+      procesos de interoperabilidad y requisitos institucionales."
+
+Metadata_Original:
+  title: "Red de Interoperabilidad PISEE como plataforma compartida de interoperabilidad del Estado"
+  urls:
+    - "https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador"
+  category: "Plataformas Compartidas/Manuales de Uso"
+  tags:
+    - "pisee"
+    - "interoperabilidad"
+    - "plataforma compartida"
+    - "nodo_interoperabilidad"
+  description: >-
+    La Red de Interoperabilidad PISEE permite que los OAEs interoperan datos, documentos
+    y expedientes electrónicos mediante nodos de interoperabilidad validados. Las guías
+    metodológicas y técnicas de TD recomiendan priorizar su adopción como servicio
+    compartido para cumplir con la Norma Técnica de Interoperabilidad y los
+    estándares del Sistema de Transformación Digital.
+  updated_at:
+    - "2025-11-14T14:28:29.734Z"
+
+Contexto_y_Definiciones_PISEE:
+  ID: "TDE_PLAT_PISEE_CTX_001"
+  Ctx: >-
+    La Red de Interoperabilidad PISEE consiste en un conjunto de conexiones directas y
+    seguras a través de internet, en base a nodos de interoperabilidad alojados en la
+    infraestructura informática de los órganos de la Administración del Estado que,
+    actuando como proveedores y/o consumidores a través de plataformas electrónicas,
+    permiten el intercambio y la transmisión de datos, documentos y expedientes
+    electrónicos. Es el principal servicio compartido de interoperabilidad que las
+    guías de TD recomiendan utilizar al diseñar proyectos TIC.
+  Def:
+    - Term: "PISEE"
+      Def: >-
+        Red de interoperabilidad del Estado, basada en nodos de interoperabilidad y
+        servicios centralizados, que permite intercambiar datos, documentos y
+        expedientes electrónicos entre OAEs de forma segura y trazable.
+    - Term: "Nodo_Interoperabilidad"
+      Def: >-
+        Componente de software alojado en la infraestructura del OAE que le permite
+        conectarse a la red de interoperabilidad, consumir y proveer servicios de
+        interoperabilidad cumpliendo los estándares técnicos definidos en la Norma
+        Técnica de Interoperabilidad.
+    - Term: "Servicio_Interoperabilidad"
+      Def: >-
+        Servicio informático automatizado que permite interoperar datos, documentos o
+        expedientes electrónicos entre consumidores y proveedores mediante un nodo
+        validado, registrado en los servicios centralizados de interoperabilidad.
+  Obj:
+    - "Proveer un medio estándar, seguro y trazable para interoperar datos, documentos
+      y expedientes electrónicos entre OAEs."
+    - "Reducir solicitudes de información a las personas usuarias usando datos ya
+      existentes en el Estado."
+    - "Alinear proyectos TIC con los estándares de interoperabilidad del Estado y con
+      el enfoque integrado de gobierno del STD 2025."
+
+Estandares_y_Obligaciones_de_Uso:
+  ID: "TDE_PLAT_PISEE_STD_001"
+  Ctx_Required:
+    - "Norma Técnica de Interoperabilidad (Decreto 12)."
+    - "Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)."
+    - "Norma Técnica de Seguridad de la Información y Ciberseguridad (Decreto 7)."
+    - "Reglamento de Transformación Digital (Decreto 4)."
+  Req:
+    - "Los OAEs deben integrarse a la red de interoperabilidad actuando como
+      consumidores y/o proveedores de servicios, a través de nodos de interoperabilidad
+      conectados a los servicios centralizados de interoperabilidad."
+    - "La red de interoperabilidad debe ser la vía estándar para el intercambio de
+      datos, documentos y expedientes electrónicos entre OAEs, evitando solicitar a las
+      personas usuarias información que ya obra en poder del Estado."
+    - "En el marco del Sistema de Transformación Digital 2025, las instituciones deben
+      evaluar siempre el uso de plataformas y servicios compartidos como PISEE al
+      formular proyectos TIC (EVALTIC) y planes de TD."
+  Rec:
+    - "Usar PISEE y/o cumplir estrictamente la Norma Técnica de Interoperabilidad para
+      todo intercambio sistemático de datos/documentos entre OAEs."
+    - "Alinear las integraciones con PISEE con los lineamientos de gestión de datos,
+      seguridad y protección de datos personales."
+
+Habilitacion_Nodo_Desarrollo_y_Produccion:
+  ID: "TDE_PLAT_PISEE_HAB_001"
+  Ctx: >-
+    El Manual del Coordinador/a de Transformación Digital describe un proceso gradual
+    de habilitación de PISEE mediante nodos de desarrollo y producción, complementado
+    por capacitaciones técnicas.
+  Nodo_Desarrollo:
+    Pasos:
+      - "La institución debe asistir a la capacitación inicial 'Pisee: Introducción a
+        la red de interoperabilidad PISEE'."
+      - "A través del Coordinador/a de Transformación Digital, solicitar el Nodo de
+        Desarrollo mediante el trámite correspondiente en CeroFilas; este nodo permite
+        realizar pruebas y validar integraciones antes de pasar a producción."
+      - "Dependiendo de la necesidad de la institución, asistir al taller técnico de
+        Consumo de Servicios de Información o al taller de Proveedor de Servicios de
+        Información."
+      - "Designar funcionarios o asesores encargados de administrar los servicios de
+        interoperabilidad mediante el Portal PISEE, con autenticación vía ClaveÚnica."
+  Nodo_Produccion:
+    Pasos:
+      - "Solicitar el Nodo de Producción de la Red de Interoperabilidad - PISEE mediante
+        el trámite correspondiente en CeroFilas; este nodo permite consumir servicios
+        productivos ya habilitados o proveer servicios propios en producción."
+      - "Configurar el nodo de producción siguiendo los estándares de la Norma Técnica
+        de Interoperabilidad y las guías técnicas asociadas (por ejemplo, para
+        registrar endpoints y credenciales de servicios)."
+      - "Coordinar con la Secretaría de Gobierno Digital la validación técnica del nodo
+        cuando se trate de un desarrollo propio."
+
+Gobernanza_y_Operacion_PISEE:
+  ID: "TDE_PLAT_PISEE_GOB_001"
+  Ctx_Optional:
+    - "Las Orientaciones TIC y el Manual del Coordinador/a de TD resaltan el rol del
+      CTD como responsable de articular la adopción de plataformas compartidas, entre
+      ellas la red PISEE."
+  Req:
+    - "Formalizar, a través del CTD, los responsables de administración de servicios de
+      interoperabilidad en el Portal PISEE (al menos uno para rol técnico y otro para
+      rol de negocio)."
+    - "Mantener actualizada la información de servicios de interoperabilidad
+      publicados/consumidos, alineada con el Catálogo de Servicios de Interoperabilidad
+      y el CPAT."
+  Rec:
+    - "Incorporar el uso de PISEE como componente explícito en el Plan de Transformación
+      Digital y en la cartera de proyectos TIC evaluados con EVALTIC."
+    - "Articular la gobernanza de PISEE con los comités de datos, seguridad de la
+      información y transformación digital."
+
+Articulacion_con_Plataformas_y_Lineamientos_TDE:
+  ID: "TDE_PLAT_PISEE_ART_001"
+  Ctx: >-
+    PISEE se utiliza como canal de interoperabilidad para múltiples plataformas
+    compartidas (por ejemplo, la API de la Plataforma de Notificaciones) y se
+    vincula con normas técnicas y lineamientos transversales.
+  Rec:
+    - "Diseñar integraciones de plataformas compartidas (como Notificador del Estado,
+      DocDigital u otras) considerando a PISEE como canal de interoperabilidad por
+      defecto para el intercambio de datos y documentos."
+    - "Alinear las configuraciones de nodo PISEE con los requisitos de la Norma Técnica
+      de Interoperabilidad y de Seguridad de la Información y Ciberseguridad."
+    - "Utilizar los servicios centralizados de interoperabilidad (Catálogo de Servicios,
+      Registro de Trazabilidad, Directorio de Datos) para publicar y consumir servicios
+      que operen sobre PISEE."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de interoperabilidad apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+    - Term: "Servicios digitales"
+      Ref_ID: "TDE_DEF_SERVICIOS_DIGITALES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES"
+    - Term: "Datos"
+      Ref_ID: "TDE_DEF_DATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Normas técnicas y lineamientos vinculados a la red de interoperabilidad PISEE."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"
+    - "urn:knowledge:koda:gov:notificaciones:1.0.0"
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:evaltic:1.0.0"
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"

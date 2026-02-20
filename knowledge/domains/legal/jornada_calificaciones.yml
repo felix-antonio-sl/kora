@@ -1,0 +1,191 @@
+# KODA Artifact: Jornada de Trabajo y Calificaciones - Trabajo Médico Chile
+# URN: urn:knowledge:koda:legal:jornada_calificaciones:1.0.0
+---
+_manifest:
+  classification:
+    role: "KB sobre jornada de trabajo y sistema de calificaciones de funcionarios médicos en el sector público chileno"
+    primary_use: "Responder consultas sobre horarios, trabajo extraordinario, control de jornada y evaluación de desempeño de médicos funcionarios"
+    cross_reference: "Usar definiciones legales de kb_med_000, jerarquías de kb_med_001 e información de deberes/prohibiciones de kb_med_002 para contexto"
+
+  urn: "urn:knowledge:koda:legal:jornada_calificaciones:1.0.0"
+  federation:
+    visibility: internal
+    license: "CC-BY-NC-4.0"
+  compatibility:
+    min_consumer_version: "1.0.0"
+  version: "1.0.0"
+  status: "DRAFT"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-29"
+    version_notes: "v1.0.0 - Módulo V: Jornada de trabajo y calificaciones de funcionarios"
+    source_document: "Material Curso Legislación Trabajo Médico - UDELAM/COLMED"
+    source_sections: "V. Desarrollo de la vida funcionaria: jornada y calificaciones"
+    model_collaborators: ["IA-CLAUDE"]
+  dependencies:
+    - Ref: "urn:knowledge:koda:legal:index:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:intro_estatutos:1.0.0"
+    - Ref: "urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 1: JORNADA DE TRABAJO DE LOS SERVIDORES PÚBLICOS
+# ═══════════════════════════════════════════════════════════════════
+
+Jornada_Servidores_Publicos:
+
+  Marco_General:
+    ID: JOR_MARCO
+    Fuente:
+      - Ref: EA_18834
+      - Ref: LOC_18575
+    Desc: "La jornada de los funcionarios públicos se regula por el Estatuto Administrativo y normas especiales de cada estatuto sectorial (por ejemplo Ref: LEY_15076 y Ref: LEY_19664 para médicos)."
+    Principios:
+      - "Primacía del interés público en la organización del tiempo de trabajo."
+      - "Necesidad de continuidad del servicio, especialmente en salud."
+      - "Sujeción a jerarquía y planificación institucional de turnos."
+
+  Jornada_Ordinaria:
+    ID: JOR_ORD
+    Def: "Tiempo de trabajo regular que el funcionario debe cumplir en forma personal en su cargo."
+    Caracteristicas:
+      - "Determinada por ley y reglamentos para cada estatuto (EA_18834, LEY_15076, LEY_19664, LEY_19378)."
+      - "Por regla general, se estructura en jornada diurna semanal en días hábiles administrativos, con particularidades en servicios de salud (turnos y guardias)."
+      - "Debe cumplirse íntegramente salvo licencias, permisos o feriados debidamente autorizados."
+    Medicos:
+      Notas:
+        - "Para médicos funcionarios de Servicios de Salud, Ref: LEY_15076 y Ref: LEY_19664 establecen jornadas en horas semanales (11, 22, 33, 44) y modalidades de trabajo diurno y de turnos."
+        - "La jornada ordinaria puede complementarse con trabajo en urgencias, guardias y otras modalidades definidas en los reglamentos de cada establecimiento."
+
+  Jornada_Extraordinaria:
+    ID: JOR_EXTRA
+    Def: "Tiempo de trabajo que excede la jornada ordinaria autorizada legalmente."
+    Reglas_Generales:
+      - "Debe estar previamente autorizada por la jefatura competente, dentro de los límites que fije la normativa."
+      - "Se justifica por necesidades del servicio (continuidad asistencial, contingencias sanitarias, etc.)."
+      - "Da derecho a compensaciones (horas extraordinarias o descansos compensatorios) conforme a las leyes especiales aplicables."
+    Riesgos:
+      - "Uso abusivo o sistemático de jornada extraordinaria puede afectar salud del médico y calidad de atención."
+
+  Descansos_y_Feriados:
+    ID: JOR_DESC
+    Fuente:
+      - Ref: EA_18834
+    Elementos:
+      - "Feriado anual, permisos administrativos y licencias médicas se rigen por el Estatuto Administrativo y estatutos especiales."
+      - "El goce de estos derechos requiere solicitud y autorización de la autoridad competente (no opera de pleno derecho)."
+      - "En servicios de turno, la planificación de feriados debe compatibilizarse con la continuidad asistencial."
+
+  Control_Asistencia_y_Cumplimiento:
+    ID: JOR_CONTROL
+    Def: "Mecanismos mediante los cuales la Administración verifica el cumplimiento de la jornada."
+    Mecanismos:
+      - "Registros de entrada y salida (relojes biométricos, libros de asistencia u otros sistemas)."
+      - "Supervisión directa de jefaturas clínicas y administrativas."
+    Consecuencias_Incumplimiento:
+      - "Atrasos reiterados, inasistencias injustificadas o abandono de funciones pueden originar anotaciones de demérito y procedimientos disciplinarios."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 2: PROCESO DE CALIFICACIONES DE LOS FUNCIONARIOS PÚBLICOS
+# ═══════════════════════════════════════════════════════════════════
+
+Calificaciones_Funcionarios_Publicos:
+
+  Objetivo_y_Naturaleza:
+    ID: CAL_OBJ
+    Fuente:
+      - Ref: EA_18834
+    Def: "Sistema formal mediante el cual se evalúa periódicamente el desempeño de los funcionarios públicos."
+    Finalidades:
+      - "Medir desempeño y mérito para efectos de carrera funcionaria (ascensos, promociones)."
+      - "Detectar necesidades de perfeccionamiento y capacitación."
+      - "Generar insumos para decisiones de gestión (destinaciones, jefaturas, etc.)."
+
+  Juntas_Calificadoras:
+    ID: CAL_JUNTAS
+    Def: "Órganos colegiados que realizan el proceso de calificación en cada servicio."
+    Composicion_General:
+      - "Integradas por funcionarios de más alto nivel jerárquico del servicio, según lo determine el Estatuto y reglamentos."
+    Funciones:
+      - "Revisar antecedentes de desempeño de los funcionarios."
+      - "Asignar puntajes o conceptos de calificación según factores predefinidos."
+      - "Resolver reclamaciones o apelaciones internas dentro del proceso calificatorio."
+
+  Factores_y_Escala_de_Calificacion:
+    ID: CAL_FACTORES
+    Def: "Criterios e instrumentos usados para evaluar el desempeño."
+    Factores_Comunes:
+      - "Cumplimiento de la jornada y obligaciones del cargo."
+      - "Calidad técnica del trabajo realizado (especialmente relevante para médicos)."
+      - "Responsabilidad, iniciativa y trabajo en equipo."
+      - "Relación con usuarios y pares (trato digno, respeto)."
+    Escala_Tipica:
+      - "Conceptos o niveles (por ejemplo: sobresaliente, bueno, suficiente, deficiente), según reglamento propio de cada servicio."
+
+  Efectos_de_la_Calificacion:
+    ID: CAL_EFECTOS
+    Def: "Consecuencias jurídicas y administrativas de los resultados de la calificación."
+    Efectos_Positivos:
+      - "Mejores calificaciones favorecen el acceso a ascensos y promociones."
+      - "Pueden incidir en asignaciones de responsabilidad o cargos de jefatura."
+    Efectos_Negativos:
+      - "Calificaciones deficientes reiteradas pueden originar medidas correctivas, planes de mejora o incluso causales de término de relación funcionaria según el Estatuto."
+      - "Se registran en la hoja de vida del funcionario y pueden influir en futuras decisiones administrativas."
+
+  Garantias_del_Proceso:
+    ID: CAL_GARANTIAS
+    Def: "Resguardos mínimos para asegurar debido proceso en la evaluación."
+    Elementos:
+      - "Conocimiento previo de los factores y normas de calificación."
+      - "Posibilidad de revisar la calificación asignada."
+      - "Vías de reclamo o apelación (administrativa o ante Contraloría, según corresponda)."
+
+# ═══════════════════════════════════════════════════════════════════
+# PARTE 3: IMPACTO ESPECÍFICO EN MÉDICOS FUNCIONARIOS
+# ═══════════════════════════════════════════════════════════════════
+
+Impacto_en_Medicos:
+
+  Relacion_Jornada_Calificacion:
+    ID: MED_JOR_CAL
+    Def: "Cómo la gestión de la jornada influye en la evaluación de desempeño de médicos funcionarios."
+    Claves:
+      - "Cumplimiento de turnos, guardias y actividades clínicas programadas es un factor central de evaluación."
+      - "Inasistencias injustificadas o reiterados atrasos impactan negativamente en la calificación."
+      - "Participación en actividades docentes, investigación y gestión clínica puede valorarse positivamente, según el reglamento de cada servicio."
+
+  Especialidades_y_Cargos_Directivos:
+    ID: MED_ESPEC_DIR
+    Notas:
+      - "Médicos con responsabilidades de jefatura (servicio, unidad, programa) suelen tener factores adicionales asociados a gestión de equipos y resultados asistenciales."
+      - "En algunos estatutos especiales (Ref: LEY_19664), la progresión en la carrera puede vincularse a niveles de acreditación, desempeño y antigüedad."
+
+# ═══════════════════════════════════════════════════════════════════
+# RESUMEN EJECUTIVO
+# ═══════════════════════════════════════════════════════════════════
+
+Resumen:
+  Ejes:
+    - "Describe las reglas generales de jornada de trabajo de funcionarios públicos, con énfasis en médicos del sector salud."
+    - "Explica el sistema de calificaciones y su rol en la carrera funcionaria."
+    - "Conecta el cumplimiento de jornada y la calidad del desempeño clínico con los resultados de la evaluación."
+  Casos_Uso_Tipicos:
+    - "Ayudar a un médico funcionario a entender cómo su jornada y asistencia impactan su calificación."
+    - "Apoyar decisiones sobre organización de turnos y cargas de trabajo desde una perspectiva estatutaria."
+    - "Contextualizar conflictos o dudas sobre evaluaciones de desempeño y eventuales medidas disciplinarias."

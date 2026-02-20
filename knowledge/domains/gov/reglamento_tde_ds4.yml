@@ -1,0 +1,310 @@
+# KODA TDE Reglamento: Reglamento de Transformación Digital del Estado (Decreto 4)
+---
+_manifest:
+  urn: "urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Reglamento_Transformacion_Digital_Procedimientos_Electronicos"
+  provenance:
+    created_by: "Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md"
+    source_url: "https://wikiguias.digital.gob.cl/Leyes/Decreto_4"
+    source_updated_at: "2025-10-07T20:47:05.514Z"
+  status: draft
+
+ID: "TDE-REGLA-TD-DS4-2021"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Ministerio Secretaría General de la Presidencia"
+Human-Editor: "Secretaría de Gobierno Digital (SGD)"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Reglamento que regula cómo los procedimientos administrativos deben expresarse a través de medios electrónicos, incluyendo expedientes electrónicos, notificaciones electrónicas, Domicilio Digital Único, interoperabilidad y estándares de plataformas."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Reglamento operativo de la Ley 21.180 para procedimientos administrativos electrónicos."
+  objective: >-
+    Regular la forma en que los procedimientos administrativos deberán expresarse
+    a través de medios electrónicos, definiendo uso de expedientes electrónicos,
+    plataformas, presentación de documentos, notificaciones electrónicas, Domicilio
+    Digital Único, interoperabilidad y estándares de seguridad, calidad y
+    ciberseguridad de las plataformas del Estado.
+  usage_guidance:
+    - "Usar este reglamento como referencia central para interpretar y aplicar las normas técnicas de TD (expedientes, interoperabilidad, notificaciones, seguridad/ciberseguridad, calidad, autenticación)."
+    - "Conectarlo con Ley 21.180, Ley 19.880, Ley 19.799, Ley 19.628 y con las Normas Técnicas 7, 8, 9, 10, 12 y Estrategia de Datos."
+  style:
+    - "Responder en es-CL, tono jurídico-técnico, enfatizando flujos operativos y responsabilidades institucionales."
+
+Metadata_Original:
+  title: "Decreto 4"
+  url: "https://wikiguias.digital.gob.cl/Leyes/Decreto_4"
+  category: "Regulación/Leyes y Reglamentos"
+  tags:
+    - "leyes"
+    - "procedimiento administrativo"
+    - "decreto"
+  description: "Reglamento que regula la forma en que los procedimientos administrativos deberán expresarse a través de medios electrónicos, según la Ley N° 21.180."
+  updated_at: "2025-10-07T20:47:05.514Z"
+  promulgacion: "2020-11-09"
+  publicacion: "2021-12-11"
+  version: "Única - 11-DIC-2021"
+
+Contexto_y_Base_Legal:
+  ID: "TDE_DS4_CTX_001"
+  Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#encabezado"
+  Ctx: >-
+    El reglamento se dicta para implementar las modificaciones introducidas por la
+    Ley N° 21.180 a la Ley N° 19.880, regulando la expresión electrónica de los
+    procedimientos administrativos. Se apoya en la Constitución, la Ley 18.575,
+    la Ley 19.880, la Ley 21.180, la Ley 19.799 (documentos y firma electrónica),
+    la Ley 19.628 (protección de la vida privada), la Ley 20.285 (acceso a la
+    información pública) y otras normas sectoriales.
+  Ctx_Required:
+    - "Ley N° 19.880 sobre Bases de los Procedimientos Administrativos."
+    - "Ley N° 21.180 sobre Transformación Digital del Estado."
+    - "Ley N° 19.799 sobre documentos electrónicos y firma electrónica."
+    - "Ley N° 19.628 sobre Protección de la Vida Privada."
+    - "Ley N° 20.285 sobre Acceso a la Información Pública."
+
+Objeto_del_Reglamento:
+  ID: "TDE_DS4_OBJ_001"
+  Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-1o"
+  Articulo: 1
+  Purp: >-
+    Regular la presentación de documentos electrónicos, las excepciones para
+    soporte papel, la digitalización y cotejo de documentos, la entrega de
+    copias, el Domicilio Digital Único y las notificaciones electrónicas, así
+    como los estándares y condiciones que deben cumplir las plataformas
+    electrónicas para llevar expedientes electrónicos.
+
+Principios_Medios_Electronicos:
+  ID: "TDE_DS4_PRINC_001"
+  Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-2o-principios-generales-relativos-a-los-medios-electrónicos"
+  Articulo: 2
+  Req:
+    - "Todo procedimiento administrativo deberá expresarse a través de los medios electrónicos establecidos por la ley, salvo excepciones legales."
+    - "En la tramitación electrónica deben respetarse los principios de neutralidad tecnológica, actualización, equivalencia funcional, fidelidad, interoperabilidad y cooperación, conforme al art. 16 bis de la Ley 19.880."
+
+Procedimiento_Por_Medios_Electronicos:
+  ID: "TDE_DS4_PROC_001"
+  Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-ii-del-procedimiento-administrativo-por-medios-electrónicos"
+  Titulos: ["II"]
+  Componentes:
+    Expediente_Electronico:
+      Articulos: [3, 4, 5, 6, 7, 8]
+      Req:
+        - "Los OAEs deben disponer y utilizar plataformas electrónicas para llevar expedientes electrónicos."
+        - "Todo procedimiento administrativo debe constar en expediente electrónico, salvo excepciones legales."
+        - "Las plataformas de gestión de expedientes deben albergar expedientes, registrar trazabilidad, permitir ingreso de antecedentes y acceso de funcionarios y personas autorizadas."
+        - "Las plataformas deben permitir presentación de documentos 24/7; las presentaciones en días inhábiles se entienden realizadas en el primer día hábil siguiente."
+        - "En caso de indisponibilidad, se permite temporalmente soporte papel mediante resolución fundada; luego deben digitalizarse e incorporarse al expediente."
+        - "El expediente debe contener un registro actualizado de todas las actuaciones, entradas y salidas, con fecha y hora, cumpliendo la Norma Técnica de Documentos y Expedientes Electrónicos."
+    Presentacion_Documentos:
+      Articulos: [9, 10, 11, 12, 13, 14, 15, 16, 17]
+      Req:
+        - "Los interesados deben presentar documentos a través de las plataformas del órgano respectivo, pudiendo eximirse de aportar documentos que ya obren en poder de otro órgano."
+        - "El ingreso se hará mediante documentos electrónicos (original o copia digitalizada) o mediante formatos/medios electrónicos definidos."
+        - "Los interesados pueden obtener certificados automáticos de fecha y hora de presentación."
+        - "Documentos electrónicos deben cumplir la Ley 19.799 y la Norma Técnica de Documentos y Expedientes Electrónicos; los actos administrativos deben firmarse electrónicamente."
+        - "Los interesados pueden presentar copias digitalizadas de documentos en papel, declarando su autenticidad y conservando el original. El órgano puede requerir antecedentes adicionales para cotejo."
+        - "El reglamento define casos excepcionales en que no es posible digitalizar (cantidad, formato, naturaleza) y regula obtención, cobro y excusas para copias en papel en casos acotados."
+
+Domicilio_Digital_Unico_y_Notificaciones:
+  ID: "TDE_DS4_DDU_001"
+  Src:
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-iii-del-domicilio-digital-único"
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-iv-notificaciones-en-el-procedimiento-administrativo"
+  Titulos: ["III", "IV"]
+  Def_DDU:
+    Articulo: 18
+    Def: >-
+      El Domicilio Digital Único (DDU) es el medio electrónico determinado por
+      una persona para recibir notificaciones electrónicas en los procedimientos
+      administrativos. Puede ser la Casilla Única o un correo electrónico
+      validado, conforme a la Norma Técnica de Notificaciones.
+  Registro_DDU:
+    Articulos: [19, 20, 21]
+    Req:
+      - "Las personas pueden determinar y cambiar su DDU a través de un módulo administrado por el Servicio de Registro Civil e Identificación."
+      - "Existirá un registro único de DDUs con información del DDU vigente, cambios y excepciones de notificación electrónica."
+      - "El SRCeI obtiene la información para el registro a partir de determinaciones de las personas y de comunicaciones de las autoridades que concedan excepciones."
+  Notificaciones:
+    Articulos: [22, 23, 24, 25, 26, 27]
+    Req:
+      - "Las notificaciones se practicarán por medios electrónicos sobre la base del registro único de DDUs, salvo excepciones."
+      - "Excepcionalmente, quienes carezcan de medios tecnológicos o de acceso podrán solicitar notificación diversa, conforme al Título V."
+      - "Se regula la notificación en dependencias del órgano cuando el interesado se apersone."
+      - "Toda persona con RUN o RUT tendrá una Casilla Única, que puede usarse como DDU y desde la cual se accede a notificaciones de procedimientos."
+      - "La primera notificación se realiza al medio indicado al inicio del procedimiento o, en su defecto, por carta certificada en procedimientos de oficio sin DDU registrado, informando sobre cómo definir DDU o pedir notificación diversa."
+      - "Los OAEs practicarán notificaciones electrónicas a través de una plataforma de notificaciones que debe asegurar constancia de fecha/hora de envío/recepción, integridad de contenido e identidad de remitente/destinatario, según la Norma Técnica de Notificaciones."
+      - "Las notificaciones electrónicas se consideran practicadas transcurridos tres días hábiles desde su envío al DDU, registrándose en el expediente electrónico."
+
+Excepciones_a_Medios_Electronicos:
+  ID: "TDE_DS4_EXCEP_001"
+  Src:
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-v-de-las-excepciones-a-la-presentación-de-documentos-electrónicos-y-notificaciones-por-medios-electrónicos"
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-29-del-cumplimiento-de-las-circunstancias-excepcionales-en-determinados-casos"
+  Titulo: "V"
+  Ctx: >-
+    Regula las condiciones y procedimiento para exceptuar a ciertas personas de la
+    obligación de presentar documentos electrónicos y/o ser notificadas
+    electrónicamente.
+  Req:
+    - "Los OAEs pueden exceptuar a personas que carezcan de medios tecnológicos, no tengan acceso a medios electrónicos o sólo actúen excepcionalmente por estos medios, previa solicitud."
+    - "Las excepciones deben ser informadas al SRCeI para su registro en el Registro de DDUs."
+    - "Se establecen criterios para tener por acreditadas las circunstancias excepcionales (hogares 40% más vulnerable, aislamiento territorial, edad ≥ 60, discapacidad que impide actuar por medios electrónicos)."
+    - "Cualquier interesado puede invocar y acreditar circunstancias excepcionales mediante antecedentes."
+    - "El reglamento define formularios, contenido mínimo, plazos y forma de pronunciamiento sobre solicitudes de excepción; mientras se resuelve, se permite uso de papel y notificación diversa."
+    - "Se regula la incorporación de documentos en papel al expediente electrónico y la consulta de expedientes en dependencias con apoyo del personal."
+
+  Criterios_Acreditacion_Articulo_29:
+    Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-29-del-cumplimiento-de-las-circunstancias-excepcionales-en-determinados-casos"
+    Req:
+      - "Para efectos de lo dispuesto en este reglamento, se tendrá por acreditado que una persona cumple con las circunstancias señaladas en el artículo precedente, cuando concurra cualquiera de las siguientes situaciones:"
+      - "a) Pertenezca a hogares que integren el 40% socioeconómicamente más vulnerable de la población, de conformidad al instrumento de caracterización socioeconómica a que se refiere el artículo 5 de la ley Nº 20.379, que crea el Sistema Intersectorial de Protección Social e institucionaliza el subsistema de protección integral a la infancia \"Chile Crece Contigo\"."
+      - "b) Tenga su domicilio en una localidad en condiciones de aislamiento, esto es, que tenga dificultades de accesibilidad y conectividad física, dispongan de muy baja densidad poblacional, presenten dispersión en la distribución territorial de sus habitantes, y que muestren baja presencia y cobertura de servicios básicos y públicos. Lo anterior, de conformidad a lo establecido en el Estudio de Identificación de Localidades en Condiciones de Aislamiento elaborado por la Subsecretaría de Desarrollo Regional y Administrativo del año 2012 o el texto que lo modifique, sustituya o reemplace."
+      - "c) Tenga 60 años o más."
+      - "d) Presentar alguna discapacidad que le impida actuar por medios electrónicos, según la calificación y certificación señalada en el artículo 13 de la ley Nº 20.422."
+      - "En virtud del principio de interoperabilidad, el órgano de la Administración del Estado ante quien se presente el respectivo formulario indicado en el artículo 32 verificará la concurrencia de alguna de las hipótesis señaladas en el inciso anterior, sobre la base de la información proporcionada por el interesado."
+  Articulo_29_Extracto_Literal:
+    Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-29-del-cumplimiento-de-las-circunstancias-excepcionales-en-determinados-casos"
+    Items:
+      - "a) Pertenezca a hogares que integren el 40% socioeconómicamente más vulnerable de la población, de conformidad al instrumento de caracterización socioeconómica a que se refiere el artículo 5 de la ley Nº 20.379, que crea el Sistema Intersectorial de Protección Social e institucionaliza el subsistema de protección integral a la infancia \"Chile Crece Contigo\"."
+      - "b) Tenga su domicilio en una localidad en condiciones de aislamiento, esto es, que tenga dificultades de accesibilidad y conectividad física, dispongan de muy baja densidad poblacional, presenten dispersión en la distribución territorial de sus habitantes, y que muestren baja presencia y cobertura de servicios básicos y públicos. Lo anterior, de conformidad a lo establecido en el Estudio de Identificación de Localidades en Condiciones de Aislamiento elaborado por la Subsecretaría de Desarrollo Regional y Administrativo del año 2012 o el texto que lo modifique, sustituya o reemplace."
+      - "c) Tenga 60 años o más."
+      - "d) Presentar alguna discapacidad que le impida actuar por medios electrónicos, según la calificación y certificación señalada en el artículo 13 de la ley Nº 20.422."
+
+Comunicaciones_Oficiales_y_Interoperabilidad:
+  ID: "TDE_DS4_INTEROP_001"
+  Src:
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-vi-de-las-comunicaciones-oficiales-entre-los-órganos-de-la-administración-del-estado"
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-vii-de-la-interoperabilidad"
+  Titulos: ["VI", "VII"]
+  Plataforma_Comunicaciones_Oficiales:
+    Articulos: [36, 37, 38]
+    Req:
+      - "Las comunicaciones oficiales entre OAEs deben registrarse en una plataforma de comunicaciones oficiales con campos mínimos (remitente, destinatario, autoridades, contenido, tipo)."
+      - "La plataforma debe cumplir estándares de seguridad, interoperabilidad, interconexión y ciberseguridad."
+      - "Se exigen controles de acceso basados en roles, confidencialidad e integridad, respaldos y planes de contingencia, integración con otras plataformas usando la Norma Técnica de Interoperabilidad."
+  Interoperabilidad_Procedimientos:
+    Articulos: [39, 40]
+    Req:
+      - "Toda comunicación interorgánica en procedimientos se realizará por medios electrónicos, registrando órgano requirente/destinatario, funcionario responsable, procedimiento, gestión y plazo."
+      - "En virtud de interoperabilidad y cooperación, los OAEs que tengan documentos o información necesaria para otro órgano deben remitirlos electrónicamente, conforme a la Norma Técnica de Interoperabilidad."
+  Datos_Sensibles_y_Proteccion_Datos:
+    Articulo: 41
+    Ctx_Required:
+      - "Art. 30 letra f) y art. 46 de la Ley 19.880 (consentimiento y notificaciones)."
+      - "Art. 7 y 11 de la Ley 19.628 sobre protección de datos personales y deber de secreto."
+    Req:
+      - "Para interoperar documentos o información que contengan datos de carácter sensible del interesado, se requiere autorización previa del interesado en los términos de la Ley 19.880."
+      - "Debe dejarse registro de cada solicitud de información sensible entre OAEs, incluyendo órgano requirente, funcionario responsable, órgano destinatario, procedimiento, datos solicitados y plazo."
+      - "Los funcionarios de órganos requirente y destinatario que accedan a datos sensibles deben guardar secreto y actuar con debida diligencia, siendo responsables de los daños conforme a Ley 19.628."
+
+Estandares_y_Condiciones_Plaformas:
+  ID: "TDE_DS4_PLAT_001"
+  Src: "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-viii-de-los-estándares-y-condiciones-de-la-o-las-plataformas-de-gestión-de-expedientes-electrónicos"
+  Titulo: "VIII"
+  Estandares_Generales:
+    Articulos: [42]
+    Req:
+      - "Las plataformas para expedientes electrónicos deben cumplir estándares de seguridad, interoperabilidad, interconexión y ciberseguridad establecidos en la Ley 19.880 y las Normas Técnicas."
+  Seguridad_y_Ciberseguridad:
+    Articulos: [43, 46, 52]
+    Req:
+      - "Cada OAE debe contar con políticas de seguridad de la información y de ciberseguridad, con planes de contingencia para continuidad operativa."
+      - "Debe definirse niveles de seguridad de acceso y autenticación a plataformas, de acuerdo con Normas Técnicas."
+      - "La política de ciberseguridad debe incluir uso adecuado de criptografía, mitigación de riesgos de captura/suplantación, y control de acceso a plataformas y perfiles."
+      - "Se debe resguardar integridad y protección de documentos e información en plataformas, en línea con la Norma Técnica de Ciberseguridad y leyes aplicables."
+  Interoperabilidad_e_Interconexion:
+    Articulos: [44, 45]
+    Req:
+      - "Los OAEs habilitarán servicios de interoperabilidad para expedientes y documentos, según la Norma Técnica de Interoperabilidad."
+      - "Sistemas y datos deben ser interoperables entre OAEs dentro de sus atribuciones, respetando casos en que se requiere autorización expresa de interesados."
+      - "Las plataformas deben mantener conexiones operativas hacia internet y hacia los OAEs con que interoperen, con resguardos de seguridad."
+  Accesibilidad_y_Funcionamiento:
+    Articulos: [47, 48, 49, 50, 51]
+    Req:
+      - "Los OAEs deben permitir acceso permanente a plataformas de expedientes para interesados y OAEs con los que interoperan, considerando necesidades de usuarios y recursos."
+      - "El acceso requiere autenticación según la Norma Técnica de Autenticación."
+      - "Debe registrarse fecha/hora y metadata de ingresos al expediente y mantener trazabilidad de accesos, especialmente a expedientes con datos sensibles."
+      - "Se regulan la disponibilidad de expedientes durante y después de la tramitación, alineada con políticas de gestión documental y leyes sobre archivo/eliminación."
+      - "La incorporación de documentos debe respetar formatos de preservación; si no los cumplen, corresponde al órgano hacer la conversión."
+  Conservacion_y_Calidad:
+    Articulos: [53, 54, 55]
+    Req:
+      - "Cada OAE es responsable de la integridad, disponibilidad y autenticidad de sus expedientes electrónicos, mediante repositorios digitales alineados con la Norma Técnica de Documentos y Expedientes Electrónicos."
+      - "Se regula la reconstitución de expedientes o piezas perdidas (uso de copias fieles o repetición de actos)."
+      - "Los OAEs deben implementar planes de mejora continua sobre uso de plataformas y condiciones del reglamento, midiendo anualmente estándares y definiendo iniciativas de mejora, informando a SEGPRES cuando se requiera."
+
+Normas_Tecnicas_y_Rol_SEGPRES:
+  ID: "TDE_DS4_NT_001"
+  Src:
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#título-ix-disposiciones-finales"
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-56-rol-del-ministerio-secretaría-general-de-la-presidencia"
+    - "RegulaciónLeyes_y_Reglamentos/Decreto_4.md#artículo-57-normas-técnicas"
+  Titulos: ["IX"]
+  Rol_SEGPRES:
+    Articulo: 56
+    Ctx: >-
+      El Ministerio Secretaría General de la Presidencia coordinará y asesorará a
+      los OAEs en el uso estratégico de tecnologías digitales y en la gestión de
+      herramientas y plataformas electrónicas reguladas en el reglamento.
+  Normas_Tecnicas:
+    Articulo: 57
+    Def: >-
+      Se mandata la dictación de seis Normas Técnicas: Interoperabilidad,
+      Seguridad de la Información y Ciberseguridad, Documentos y Expedientes
+      Electrónicos, Notificaciones, Calidad y Funcionamiento, y Autenticación,
+      que desarrollan estándares, protocolos y procesos detallados para la
+      implementación de la Ley 21.180.
+  Criterios_Elaboracion:
+    Articulo: 58
+    Rec:
+      - "Las Normas Técnicas deben basarse en estándares internacionales reconocidos y buenas prácticas, así como en diagnósticos y necesidades del Estado de Chile."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos clave del reglamento vinculados al Lexicon TDE."
+  Terms:
+    - Term: "Expediente electronico"
+      Ref_ID: "TDE_DEF_EXPEDIENTE_ELECTRONICO"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_EXPEDIENTE_ELECTRONICO"
+    - Term: "Domicilio Digital Unico"
+      Ref_ID: "TDE_DEF_DDU"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DDU"
+    - Term: "Datos sensibles"
+      Ref_ID: "TDE_DEF_DATOS_SENSIBLES"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_SENSIBLES"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Normas técnicas, estrategias y lineamientos que dependen de o desarrollan el Reglamento TD."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+    - "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_notificaciones:1.0.0"
+    - "urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0"
+    - "urn:knowledge:koda:legal:nt_autenticacion:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:datos_administracion_estado:1.0.0"
+    - "urn:knowledge:koda:gov:rat_datos_personales:1.0.0"

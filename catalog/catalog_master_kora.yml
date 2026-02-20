@@ -1,0 +1,1284 @@
+_manifest:
+  urn: urn:knowledge:koda:catalog:master-kora:1.0.0
+  federation:
+    visibility: public
+    license: CC-BY-4.0
+  provenance:
+    created_by: Koda Migrator
+    created_at: '2026-02-20'
+    note: Consolidación de koda, fxsl, gorenuble, tde, orko, korvo
+Catalog:
+  Agents:
+  - urn: urn:knowledge:koda:agents:architect:1.0.0
+    title: KODA Architect Agent
+    description: Official agent embodying the KODA Framework
+    file: agents/architect/agent_architect.yaml
+    status: published
+    primary: true
+  - urn: urn:knowledge:koda:agents:transformer:1.0.0
+    title: KODA Transformer Agent
+    description: Specialist for document transformation and KODA artifact auditing
+    file: agents/transformer/agent_transformer.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:smith:1.0.0
+    title: KODA Smith Agent
+    description: Specialist for building KODA-compliant agent definitions
+    file: agents/smith/agent_smith.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:guardian:1.0.0
+    title: KODA Guardian Agent
+    description: Representative, defender, and evangelist of the KODA Framework
+    file: agents/guardian/agent_guardian.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:tester:1.0.0
+    title: KODA Tester Agent
+    description: Specialist for testing KODA-compliant agents with simulation capabilities
+    file: agents/tester/agent_tester.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:sim-orchestrator:1.0.0
+    title: KODA Sim Orchestrator Agent
+    description: Higher-Order Agent for simulated testing with transparent evidence
+      marking
+    file: agents/sim-orchestrator/agent_sim_orchestrator.yaml
+    status: published
+    higher_order: true
+  - urn: urn:knowledge:koda:agents:orquestador-generico:1.0.0
+    title: KODA Orquestador Genérico
+    description: Higher-Order Agent para orquestación multi-agente sobre catálogos
+      federados
+    file: agents/orquestador-generico/agent_orquestador_generico.yaml
+    status: published
+    higher_order: true
+  - urn: urn:knowledge:koda:agents:ci-assistant:1.0.0
+    title: KODA CI Assistant Agent
+    description: Specialist for CI/CD workflows explanation, debugging and optimization
+    file: agents/ci-assistant/agent_ci_assistant.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:taskmaster:1.0.0
+    title: KODA Taskmaster Agent
+    description: Specialist for project and task management using GitHub Issues and
+      Projects
+    file: agents/taskmaster/agent_taskmaster.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:cartographer:1.0.0
+    title: KODA Cartographer Agent
+    description: Specialist for transforming chaotic sources into elegant data models
+      (ESCUCHAR→MAPEAR→ELEVAR→CRISTALIZAR)
+    file: agents/cartographer/agent_cartographer.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:pensador-generador:1.0.0
+    title: Pensador-Generador
+    file: agents/pensador-generador/agent_pensador_generador.yaml
+    source: knowledge/domains/inteligencia/pensador-analitico-generativo.md
+    status: active
+    description: 'Pensador Analítico-Generador: claridad operable desde la complejidad.'
+  - urn: urn:knowledge:koda:agents:ingeniero-sistemas-composicional:1.0.0
+    title: Ingeniero-Sistemas-Composicional
+    file: agents/ingeniero-sistemas-composicional/agent_ingeniero_sistemas_composicional.yaml
+    status: active
+    description: 'Ingeniero-Arquitecto de Sistemas Composicionales: descomposición
+      jerárquica y composición categórica de sistemas complejos.'
+  - urn: urn:knowledge:koda:agents:arquitecto-categorico:1.4.0
+    title: Arquitecto-Categorico
+    file: agents/arquitecto-categorico/agent_arquitecto_categorico.yaml
+    status: active
+    description: 'Arquitecto Categórico de dominios de datos: modelado con teoría
+      de categorías y generación de artefactos técnicos (esquemas, APIs, grafos).'
+  - urn: urn:knowledge:koda:agents:arquitecto-sistemas-informacion:1.0.0
+    title: Arquitecto-Sistemas-Informacion
+    file: agents/arquitecto-sistemas-informacion/agent_arquitecto_sistemas_informacion.yaml
+    status: active
+    description: 'Arquitecto de Sistemas de Información: IS como Work Systems de procesamiento
+      de información, con datos como categorías.'
+  - urn: urn:knowledge:koda:agents:arquitecto-automatizacion-organizacional:1.0.0
+    title: Arquitecto-Automatizacion-Organizacional
+    file: agents/arquitecto-automatizacion-organizacional/agent_arquitecto_automatizacion_organizacional.yaml
+    status: active
+    description: 'Arquitecto de Automatización Organizacional: modelar, diagnosticar
+      y transformar organizaciones mediante automatización e IA.'
+  - urn: urn:knowledge:koda:agents:ingeniero-software-composicional:2.0.0
+    title: Ingeniero-Software-Composicional
+    file: agents/ingeniero-software-composicional/agent_ingeniero_software_composicional.yaml
+    status: active
+    description: 'Ingeniero de Software Composicional: diseño, arquitectura, código
+      y tests bajo un paradigma categórico end-to-end.'
+  - urn: urn:knowledge:koda:agents:abogado-legislacion-medica:1.0.0
+    title: Abogado-Legislacion-Medica
+    file: agents/abogado-legislacion-medica/agent_abogado_legislacion_medica.yaml
+    status: active
+    description: Abogado especialista en legislación del trabajo médico en Chile.
+  - urn: urn:knowledge:koda:agents:medico-urgencias:1.1.0
+    title: Medico-Urgencias
+    file: agents/medico-urgencias/agent_medico_urgencias.yaml
+    status: active
+    description: Asistente médico AI especializado en urgencias en Chile, con parsimonia
+      extrema y foco en decisiones críticas.
+  - urn: urn:knowledge:koda:agents:estratega-comunicacional:1.0.0
+    title: Estratega-Comunicacional
+    file: agents/estratega-comunicacional/agent_estratega_comunicacional.yaml
+    status: active
+    description: Estratega de comunicación organizacional.
+  - urn: urn:knowledge:koda:agents:modelador-mbt:1.0.0
+    title: Modelador-MBT
+    file: agents/modelador-mbt/agent_modelador_mbt.yaml
+    status: active
+    description: Modelador basado en tensiones (MBT) para diseño organizacional.
+  - urn: urn:knowledge:koda:agents:omega:1.0.0
+    title: Omega
+    file: agents/omega/agent_omega.yaml
+    status: active
+    description: 'OMEGA: Arquitecto de Sistemas. Especialista en modelado tridimensional
+      (Propósito, Datos, Proceso) usando Omega 2.0.'
+  - urn: urn:knowledge:koda:agents:ontologista-gist:1.0.0
+    title: Ontologista-Gist
+    file: agents/ontologista-gist/agent_ontologista_gist.yaml
+    status: active
+    description: Pensador Dialéctico-Generativo especializado en Gist 14.0 upper ontology.
+      Hereda de Pensador-Generador.
+  - urn: urn:knowledge:koda:agents:ingeniero-moltbot-composicional:1.0.0
+    title: Ingeniero-Moltbot-Composicional
+    file: agents/ingeniero-moltbot-composicional/agent_ingeniero_moltbot_composicional.yaml
+    status: active
+    description: Especialista en desarrollo e implementación de Moltbot. Descendiente
+      de Ingeniero-Sistemas-Composicional.
+  - urn: urn:knowledge:koda:agents:ingeniero-openclaw-composicional:1.1.0
+    title: Ingeniero-OpenClaw-Composicional
+    file: agents/ingeniero-openclaw-composicional/agent_ingeniero_openclaw_composicional.yaml
+    status: active
+    description: 'Ingeniero-Arquitecto de Sistemas OpenClaw: desarrollo, configuración
+      y operación self-hosted multi-canal.'
+  - urn: urn:knowledge:koda:agents:goreologo:2.4.0
+    title: Goreólogo - Experto Integral en Dominio GORE Ñuble
+    file: agents/goreologo/agent_goreologo.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:asesor-juridico:3.1.0
+    title: Asesor Jurídico - Garante de Legalidad Regional
+    file: agents/asesor-juridico/agent_asesor_juridico.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:gestor-ipr-360:1.0.0
+    title: Gestor IPR 360 - Experto en Inversión Pública Regional
+    file: agents/gestor-ipr-360/agent_gestor_ipr_360.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:crm-ipr:1.0.0
+    title: CRM-IPR - Asistente CRM 360° Inversión Pública Regional
+    file: agents/crm-ipr/agent_crm_ipr.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:eacs:1.0.0
+    title: EACS - Enterprise Administrative & Compliance System
+    file: agents/eacs/agent_eacs.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:erp-gore:1.0.0
+    title: ERP-GORE - Enterprise Resource Planning Regional
+    file: agents/erp-gore/agent_erp_gore.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:banca-inversion:1.0.0
+    title: Banca de Inversión Regional - Inversión Estratégica
+    file: agents/banca-inversion/agent_banca_inversion.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:ar-virtual:1.0.0
+    title: AR Virtual - Administrador Regional Virtual
+    file: agents/ar-virtual/agent_ar_virtual.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:dgi-virtual:1.0.0
+    title: DGI Virtual - Departamento de Gestión Institucional Virtual
+    file: agents/dgi-virtual/agent_dgi_virtual.yaml
+    extends: urn:knowledge:koda:agents:ar-virtual:1.0.0
+    status: published
+  - urn: urn:knowledge:koda:agents:digitrans-gore:1.0.0
+    title: DIGITRANS-GORE - Oficial de Cumplimiento TDE Integral
+    file: agents/digitrans-gore/agent_digitrans_gore.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:gobernador-virtual:1.0.0
+    title: Gobernador Virtual - Gobernador Regional Virtual
+    file: agents/gobernador-virtual/agent_gobernador_virtual.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:ingeniero-goreos:2.0.0
+    title: Ingeniero GORE_OS - Desarrollador Principal del Proyecto GORE_OS
+    file: agents/ingeniero-goreos/agent_ingeniero_goreos.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:visionario:1.1.0
+    title: Visionario - Prospectivista Estratégico y Catalizador ExO-GORE
+    file: agents/visionario/agent_visionario.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:digitrans:1.0.0
+    title: DIGITRANS Agent
+    description: Expert advisor for Digital Transformation of the State (TDE) - Chile
+    file: agents/digitrans/agent_digitrans.yaml
+    status: published
+  - urn: urn:knowledge:koda:agents:arquitecto-orko:1.0.0
+    title: Arquitecto ORKO
+    description: Agente experto integral sobre las 6 capas ORKO (Layer 0-5) para consultas
+      generales
+    file: agents/arquitecto-orko/agent_arquitecto_orko.yaml
+    dependencies:
+    - urn:knowledge:koda:core:agent:1.0.0
+    status: published
+    primary: true
+  - urn: urn:knowledge:koda:agents:korvo-assistant:1.0.0
+    title: Korvo Assistant
+    file: agents/korvo-assistant/agent_korvo_assistant.yaml
+    status: Active
+    Purp: Asistente personal integral 24/7 para gestión de vida
+  Skills:
+  - urn: urn:knowledge:koda:skills:koda-artifact-helper:1.0.0
+    title: 'Skill: KODA Artifact Helper'
+    description: Asiste en la creación y validación de artefactos KODA-compliant
+    file: skills/own/koda-artifact-helper/skill_koda_artifact_helper.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:context-manager:1.0.0
+    title: 'Skill: Context Manager'
+    description: Gestiona snapshots, handoffs y esqueletos de contexto
+    file: skills/own/context-manager/skill_context_manager.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:crear-skill:1.0.0
+    title: 'Skill: Crear Skill'
+    description: Generador de estructuras para nuevas skills KODA
+    file: skills/own/crear-skill/skill_crear_skill.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:crear-artefacto:1.0.0
+    title: 'Skill: Crear Artefacto KODA'
+    description: Genera nuevos artefactos de conocimiento (Guides, KB Articles) estándar
+      KODA/Spec.
+    file: skills/own/crear-artefacto/skill_crear_artefacto.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:crear-agente:1.0.0
+    title: 'Skill: Crear Agente KODA'
+    description: Automatiza la creación de nuevos agentes siguiendo el estándar KODA/Agent
+    file: skills/own/crear-agente/skill_crear_agente.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:arquitecto-gore:1.0.0
+    title: 'Skill: Arquitecto GORE (Light)'
+    description: Capacidades de modelado institucional GORE y análisis de tensiones
+      ontológicas (Light)
+    file: skills/own/arquitecto-gore/skill_arquitecto_gore.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:data-modeling:1.0.0
+    title: 'Skill: Data Modeling'
+    description: ERDs, data dictionaries, and structured data models (Conceptual/Logical/Physical)
+    file: skills/own/data-modeling/skill_data_modeling.yaml
+    status: published
+  - urn: urn:knowledge:koda:skills:database-design:1.0.0
+    title: 'Skill: Database Design'
+    description: Community skill for database selection, ORM choice, and schema design
+      principles
+    file: skills/own/database-design/skill_database_design.yaml
+    status: published
+  IDE_Tools:
+  - urn: urn:knowledge:koda:tools:use-claude-code-vscode:1.0.0
+    title: Use Claude Code in VS Code
+    description: Installation, configuration and usage guide for Claude Code VS Code
+      extension
+    file: tools/use-claude-code-vscode.yml
+    status: draft
+  - urn: urn:knowledge:koda:tools:doc-antigravity-official:1.0.0
+    title: Antigravity Official Documentation (KODA)
+    description: KODA/Spec rendering of Antigravity official documentation (draft).
+    file: tools/doc-antigravity-official.yml
+    status: published
+  - urn: urn:knowledge:koda:tools:manual-ag-fx-v2:2.0.0
+    title: Manual AG FX v2 (KODA)
+    description: Manual de orquestación avanzada en Google Antigravity (Artifact-First
+      + R.A.P.S. 2.0) (draft).
+    file: tools/manual-ag-fx-v2.yml
+    status: published
+  - urn: urn:knowledge:koda:tools:guide-context-manager:3.0.0
+    title: 'Guide: Context Manager (KODA)'
+    description: Official guide for Context Management (Snapshots, Handoffs, Skeletons)
+    file: tools/guide-context-manager.yml
+    status: published
+  - urn: urn:knowledge:koda:tools:doc-codex-official:1.0.0
+    title: Codex Official Documentation (KODA)
+    description: Official OpenAI Codex documentation telegrafized for KODA
+    file: tools/doc-codex-official.yml
+    status: published
+  - urn: urn:knowledge:koda:tools:agent-runtime:1.0.0
+    title: Moltbot Agent Runtime
+    file: tools/agent-runtime.yaml
+    status: active
+    description: 'Runtime de agentes: workspace, bootstrap, sesiones, streaming'
+  - urn: urn:knowledge:koda:tools:session-management:1.0.0
+    title: Moltbot Session Management
+    file: tools/session-management.yaml
+    status: active
+    description: 'Gestión de sesiones: IDs, persistencia, queue modes'
+  - urn: urn:knowledge:koda:tools:memory-context:1.0.0
+    title: Moltbot Memory and Context
+    file: tools/memory-context.yaml
+    status: active
+    description: 'Memoria y contexto: bootstrap files, system prompt'
+  - urn: urn:knowledge:koda:tools:messaging:1.0.0
+    title: Moltbot Messaging
+    file: tools/messaging.yaml
+    status: active
+    description: 'Mensajería: formatos, streaming, deltas'
+  - urn: urn:knowledge:koda:tools:groups:1.0.0
+    title: Moltbot Groups
+    file: tools/groups.yaml
+    status: active
+    description: 'Grupos: routing, activación, mention gating'
+  - urn: urn:knowledge:koda:tools:models:1.0.0
+    title: Moltbot Models
+    file: tools/models.yaml
+    status: active
+    description: 'Modelos: providers, refs, aliases'
+  - urn: urn:knowledge:koda:tools:routing:1.0.0
+    title: Moltbot Routing
+    file: tools/routing.yaml
+    status: active
+    description: 'Routing: multi-agent, channel routing'
+  - urn: urn:knowledge:koda:tools:misc:1.0.0
+    title: Moltbot Miscellaneous
+    file: tools/misc.yaml
+    status: active
+    description: 'Misceláneos: timestamps, token usage, etc.'
+  - urn: urn:knowledge:koda:tools:cli:1.0.0
+    title: Moltbot CLI
+    file: tools/cli.yaml
+    status: active
+    description: 'CLI: comandos gateway, agent, send, wizard, doctor'
+  - urn: urn:knowledge:koda:tools:gateway:1.0.0
+    title: Moltbot Gateway
+    file: tools/gateway.yaml
+    status: active
+    description: 'Gateway: WebSocket control plane, configuración, Tailscale'
+  - urn: urn:knowledge:koda:tools:channels:1.0.0
+    title: Moltbot Channels
+    file: tools/channels.yaml
+    status: active
+    description: 'Canales: WhatsApp, Telegram, Discord, Slack, Signal, iMessage, Teams'
+  - urn: urn:knowledge:koda:tools:tools:1.0.0
+    title: Moltbot Tools
+    file: tools/tools.yaml
+    status: active
+    description: 'Tools: browser, canvas, nodes, skills'
+  - urn: urn:knowledge:koda:tools:platforms:1.0.0
+    title: Moltbot Platforms
+    file: tools/platforms.yaml
+    status: active
+    description: 'Plataformas: macOS, iOS, Android, Canvas, Voice'
+  - urn: urn:knowledge:koda:tools:install-start-help-security:1.0.0
+    title: Moltbot Operations - Install/Start/Help/Security
+    file: tools/install-start-help-security.yaml
+    status: active
+    description: 'Operaciones: instalación, inicio, ayuda, seguridad'
+  - urn: urn:knowledge:koda:tools:automation-hooks-reference:1.0.0
+    title: Moltbot Operations - Automation/Hooks/Reference
+    file: tools/automation-hooks-reference.yaml
+    status: active
+    description: 'Operaciones: automatización, hooks, referencias'
+  - urn: urn:knowledge:koda:tools:nodes-plugins-providers-web:1.0.0
+    title: Moltbot Operations - Nodes/Plugins/Providers/Web
+    file: tools/nodes-plugins-providers-web.yaml
+    status: active
+    description: 'Operaciones: nodos, plugins, providers, web'
+  Domains:
+  - urn: urn:knowledge:koda:core:quickstart:1.0.0
+    title: KODA Quickstart Guide
+    file: knowledge/domains/core/quickstart.yml
+    status: published
+  - urn: urn:knowledge:koda:core:spec:1.0.0
+    title: KODA/Spec Specification
+    file: knowledge/domains/core/spec.yml
+    status: published
+  - urn: urn:knowledge:koda:core:transform:1.0.0
+    title: KODA Transformation Methodology
+    file: knowledge/domains/core/transform.yml
+    status: published
+  - urn: urn:knowledge:koda:core:hub-federation:1.0.0
+    title: KODA Hub & Federation Guide
+    file: knowledge/domains/core/hub-federation.yml
+    status: published
+  - urn: urn:knowledge:koda:core:life:1.0.0
+    title: KODA/Life Management Guide
+    file: knowledge/domains/core/life.yml
+    status: published
+  - urn: urn:knowledge:koda:core:agent:1.0.0
+    title: KODA/Agent Protocol Specification
+    file: knowledge/domains/core/agent.yml
+    status: published
+  - urn: urn:knowledge:koda:core:agent-construct:1.0.0
+    title: KODA/Agent Construction Methodology
+    file: knowledge/domains/core/agent-construct.yml
+    status: published
+  - urn: urn:knowledge:koda:core:test:1.0.0
+    title: KODA/Test Framework Specification
+    file: knowledge/domains/core/test.yml
+    status: published
+  - urn: urn:knowledge:koda:core:schema-versioning:1.0.0
+    title: Schema Versioning Policy
+    file: knowledge/domains/core/schema-versioning.yml
+    status: published
+  - urn: urn:knowledge:koda:core:tooling:1.0.0
+    title: KODA/Tooling Specification
+    file: knowledge/domains/core/tooling.yml
+    status: published
+  - urn: urn:knowledge:koda:core:skills-federation:1.0.0
+    title: KODA/Skills Federation Protocol
+    file: knowledge/domains/core/skills-federation.yml
+    status: published
+  - urn: urn:knowledge:koda:core:agent-schema:1.0.0
+    title: KODA/Agent JSON Schema
+    file: knowledge/domains/core/agent-schema.json
+    status: published
+  - urn: urn:knowledge:koda:core:tooling-schema:1.0.0
+    title: KODA/Tooling JSON Schema
+    file: knowledge/domains/core/tooling-schema.json
+    status: published
+  - urn: urn:knowledge:koda:core:fx-guide-onto-gist-001-audit-protocol:1.0.0
+    title: Protocolo de Auditoría Ontológica 360° (Gist)
+    description: Protocolo exhaustivo para auditoría de ontologías (Pragmático, Estructural,
+      Semántico, Sintáctico)
+    file: knowledge/domains/core/fx-guide-onto-gist-001-audit-protocol.yml
+    status: draft
+  - urn: urn:knowledge:koda:legal:index:1.0.0
+    title: Legislación Médica - Índice General
+    file: knowledge/domains/legal/index.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:intro_estatutos:1.0.0
+    title: Introducción a los Estatutos y Jerarquía Normativa
+    file: knowledge/domains/legal/intro_estatutos.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0
+    title: Derechos, Deberes, Prohibiciones e Incompatibilidades
+    file: knowledge/domains/legal/deberes_prohibiciones.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:ingreso_carrera:1.0.0
+    title: Ingreso a la Vida Laboral y Carrera Funcionaria
+    file: knowledge/domains/legal/ingreso_carrera.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:jornada_calificaciones:1.0.0
+    title: Jornada de Trabajo y Calificaciones
+    file: knowledge/domains/legal/jornada_calificaciones.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:remuneraciones:1.0.0
+    title: Remuneraciones y Asignaciones
+    file: knowledge/domains/legal/remuneraciones.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:acoso_laboral:1.0.0
+    title: Acoso Laboral y Sexual
+    file: knowledge/domains/legal/acoso_laboral.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:responsabilidad_admin:1.0.0
+    title: Responsabilidad Administrativa y Sumarios
+    file: knowledge/domains/legal/responsabilidad_admin.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:terminacion:1.0.0
+    title: Terminación de la Relación Laboral/Funcionarial
+    file: knowledge/domains/legal/terminacion.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:maternidad:1.0.0
+    title: Protección a la Maternidad
+    file: knowledge/domains/legal/maternidad.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:contratacion_publica:1.0.0
+    title: Contratación Pública y Modalidades de Vínculo
+    file: knowledge/domains/legal/contratacion_publica.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:feriados_permisos:1.0.0
+    title: Feriados, Permisos y Comisiones de Servicio
+    file: knowledge/domains/legal/feriados_permisos.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:derechos_especiales:1.0.0
+    title: 'Derechos Especiales: Guardia Nocturna e Incentivo al Retiro'
+    file: knowledge/domains/legal/derechos_especiales.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:formacion_especialistas:1.0.0
+    title: Formación de Especialistas, Becas y PAO
+    file: knowledge/domains/legal/formacion_especialistas.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:ley_21643:1.0.0
+    title: Ley 21.643 - Ley Karin (Acoso y Violencia Laboral)
+    file: knowledge/domains/legal/ley_21643.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:ley_15076:1.0.0
+    title: Ley 15.076 - Estatuto de los Profesionales Funcionarios de los Servicios
+      de Salud
+    file: knowledge/domains/legal/ley_15076.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:ley_19664:1.0.0
+    title: Ley 19.664 - Normas Especiales para los Profesionales Funcionarios de los
+      Servicios de Salud
+    file: knowledge/domains/legal/ley_19664.yml
+    status: active
+  - urn: urn:knowledge:koda:legal:confianza_legitima:1.0.0
+    title: Principio de Confianza Legítima en Contratas Médicas
+    file: knowledge/domains/legal/confianza_legitima.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:cognitive-toolkit:1.0.0
+    title: Cognitive Toolkit v1.1 — Arquitecto Categórico
+    file: knowledge/domains/cat/cognitive-toolkit.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:seven-sketches:1.0.0
+    title: Seven Sketches — Functorial Data Model
+    file: knowledge/domains/cat/seven-sketches.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:categorical-data-structures:1.0.0
+    title: Categorical Data Structures (Patterson et al., 2022)
+    file: knowledge/domains/cat/categorical-data-structures.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:exploring-category-theoretic-approaches-to-databases:1.0.0
+    title: Exploring Category-Theoretic Approaches to Databases
+    file: knowledge/domains/cat/exploring-category-theoretic-approaches-to-databases.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:action-primary-key:1.0.0
+    title: Action is the Primary Key (Fukada, 2024)
+    file: knowledge/domains/cat/action-primary-key.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:algebraic-model-management:1.0.0
+    title: 'Algebraic Model Management: A Survey (Schultz et al., 2017)'
+    file: knowledge/domains/cat/algebraic-model-management.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:algebraic-databases:1.0.0
+    title: Algebraic Databases — Profunctors & Proarrow Equipments
+    file: knowledge/domains/cat/algebraic-databases.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:categorical-systems-theory:1.0.0
+    title: Categorical Systems Theory — Lenses & Monadic Systems
+    file: knowledge/domains/cat/categorical-systems-theory.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:coalgebras:1.0.0
+    title: Coalgebras for Software Engineering
+    file: knowledge/domains/cat/coalgebras.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:unified-representation-transformation-multimodel:1.0.0
+    title: A Unified Representation and Transformation of Multi-Model Data Using Category
+      Theory
+    file: knowledge/domains/cat/unified-representation-transformation-multimodel.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:unified-multimodel:1.0.0
+    title: Unified Multi-Model Representation
+    file: knowledge/domains/cat/unified-multimodel.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:multicategory-multimodel-query-processing:1.0.0
+    title: 'MultiCategory: Multi-model Query Processing Meets Category Theory and
+      Functional Programming'
+    file: knowledge/domains/cat/multicategory-multimodel-query-processing.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:formal-framework-multimodel-data-transformations:1.0.0
+    title: A Formal Category Theoretical Framework for Multi-Model Data Transformations
+    file: knowledge/domains/cat/formal-framework-multimodel-data-transformations.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:data-lakes-ct:1.0.0
+    title: Data Lakes via Category Theory
+    file: knowledge/domains/cat/data-lakes-ct.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:formal-framework-data-lakes-ct:1.0.0
+    title: A Formal Framework for Data Lakes Based on Category Theory
+    file: knowledge/domains/cat/formal-framework-data-lakes-ct.yml
+    status: draft
+  - urn: urn:knowledge:koda:cat:cql-data-integration:1.0.0
+    title: Categorical Query Language (CQL) Data Integration
+    file: knowledge/domains/cat/cql-data-integration.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:mathematical-modelling:1.0.0
+    title: Mathematical Modelling via Category Theory
+    file: knowledge/domains/cat/mathematical-modelling.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:mbse-consistency:1.0.0
+    title: MBSE Consistency via Category Theory (S2ML+Cat)
+    file: knowledge/domains/cat/mbse-consistency.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:audit-patterns:1.0.0
+    title: Categorical Audit Patterns for DIK Artifacts
+    file: knowledge/domains/cat/audit-patterns.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:kb-category:1.0.0
+    title: Knowledge Base as Category
+    file: knowledge/domains/cat/kb-category.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:constraint-logic:1.0.0
+    title: Unified Constraint Logic (Sketches/Regular)
+    file: knowledge/domains/cat/constraint-logic.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:schema-evolution:1.0.0
+    title: Schema Evolution and Behavioral Audit
+    file: knowledge/domains/cat/schema-evolution.yml
+    status: active
+  - urn: urn:knowledge:koda:cat:data-access-layers:1.0.0
+    title: Data Access Layers via Category Theory
+    file: knowledge/domains/cat/data-access-layers.yml
+    status: active
+  - urn: urn:knowledge:koda:core:fx-rules:1.0.0
+    title: MBT - Reglas Operativas del Asistente
+    file: knowledge/domains/core/fx-rules.md
+    status: active
+    description: Reglas operativas del agente Modelador-MBT (no directivo, explicitar
+      tensiones, registrar decisiones).
+  - urn: urn:knowledge:koda:core:fx-tensiones:1.0.0
+    title: Tensiones del Modelamiento de Sistemas (MBT)
+    file: knowledge/domains/core/fx-tensiones.md
+    status: active
+    description: Taxonomía MBT de tensiones ontológicas, dinámicas, epistemológicas
+      y semióticas.
+  - urn: urn:knowledge:koda:core:fx-readme:14.0.0
+    title: Gist README - Overview and Getting Started
+    file: knowledge/domains/core/fx-readme.md
+    status: active
+    description: Overview of Gist upper ontology, licensing, and access methods.
+  - urn: urn:knowledge:koda:core:fx-namespace:14.0.0
+    title: Gist Namespace vs Ontology IRI
+    file: knowledge/domains/core/fx-namespace.md
+    status: active
+    description: Distinction between namespace and ontology IRI in Gist.
+  - urn: urn:knowledge:koda:core:fx-address-guidance:14.0.0
+    title: Gist Address Modeling Patterns
+    file: knowledge/domains/core/fx-address-guidance.md
+    status: active
+    description: Patterns for modeling physical and electronic addresses with Categories.
+  - urn: urn:knowledge:koda:core:fx-uom-model:14.0.0
+    title: Gist Magnitudes and Units of Measure
+    file: knowledge/domains/core/fx-uom-model.md
+    status: active
+    description: Magnitude pattern with Aspects, UnitGroups, and conversion factors.
+  - urn: urn:knowledge:koda:core:fx-core:14.0.0
+    title: gistCore 14.0.0 Ontology
+    file: knowledge/domains/core/fx-core.ttl
+    status: active
+    description: Core Gist ontology with ~100 classes and ~100 properties.
+  - urn: urn:knowledge:koda:core:fx-annotations:14.0.0
+    title: gistRdfsAnnotations 14.0.0
+    file: knowledge/domains/core/fx-annotations.ttl
+    status: active
+    description: RDFS labels and comments for Gist classes and properties.
+  - urn: urn:knowledge:koda:core:fx-subclass-assertions:14.0.0
+    title: gistSubClassAssertions 14.0.0
+    file: knowledge/domains/core/fx-subclass-assertions.ttl
+    status: active
+    description: Supplementary subclass hierarchy for OWL RL reasoners.
+  - urn: urn:knowledge:koda:core:fx-media-types:14.0.0
+    title: gistMediaTypes 14.0.0
+    file: knowledge/domains/core/fx-media-types.ttl
+    status: active
+    description: IANA Media Type instances (JSON, Turtle, CSV, etc.).
+  - urn: urn:knowledge:koda:core:fx-prefixes:14.0.0
+    title: gistPrefixDeclarations 14.0.0
+    file: knowledge/domains/core/fx-prefixes.ttl
+    status: active
+    description: SHACL prefix declarations for visualizers and tooling.
+  - urn: urn:knowledge:koda:gn:intro-gores-nuble:1.0.0
+    title: Guía Integral del Gobierno Regional de Ñuble
+    file: knowledge/domains/gn/intro-gores-nuble.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:organigrama:1.0.0
+    title: Organigrama Institucional GORE Ñuble
+    file: knowledge/domains/gn/organigrama.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:selector-ipr:1.0.0
+    title: Selector de Vías de Financiamiento para IPR
+    file: knowledge/domains/gn/selector-ipr.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:vision-desarrollo-nuble:1.0.0
+    title: Visión de Desarrollo GORE Ñuble
+    file: knowledge/domains/gn/vision-desarrollo-nuble.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:flujos-aprobacion-documentos:1.0.0
+    title: Catálogo de Flujos de Aprobación de Documentos para el GORE Ñuble
+    file: knowledge/domains/gn/flujos-aprobacion-documentos.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:manual-induccion-gore-nuble-2026:1.0.0
+    title: Manual de Inducción del Gobierno Regional de Ñuble 2026
+    file: knowledge/domains/gn/manual-induccion-gore-nuble-2026.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-inventarios-bodegas:1.0.0
+    title: 'Manual 2.2: Gestión de Inventarios y Bodegas'
+    file: knowledge/domains/gn/manual-inventarios-bodegas.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-activo-fijo:1.0.0
+    title: 'Manual 2.3: Gestión del Ciclo de Vida del Activo Fijo'
+    file: knowledge/domains/gn/manual-activo-fijo.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-desarrollo-organizacional:1.0.0
+    title: 'Manual 3.4: Desarrollo Organizacional y Capacitación'
+    file: knowledge/domains/gn/manual-desarrollo-organizacional.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:gestion-ipr:1.0.0
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR)
+    file: knowledge/domains/gn/gestion-ipr.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:gestion-rendiciones:1.0.0
+    title: Gestión de Rendiciones de Cuentas en el GORE Ñuble
+    file: knowledge/domains/gn/gestion-rendiciones.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:estrategia-gestion:1.0.0
+    title: Estrategia y Gestión del GORE en Chile
+    file: knowledge/domains/gn/estrategia-gestion.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:loc-gore:1.0.0
+    title: LOC Gobierno y Administración Regional (DFL 1-19.175)
+    file: knowledge/domains/gn/loc-gore.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:gestion-prpto:1.0.0
+    title: Gestión Financiera y Operativa del Presupuesto Regional
+    file: knowledge/domains/gn/gestion-prpto.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:marco-legal-gores:1.0.0
+    title: Compendio Jurídico para Gobiernos Regionales
+    file: knowledge/domains/gn/marco-legal-gores.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ley-presupuestos-2026-partida-31:1.0.0
+    title: 'Ley de Presupuestos 2026 - Partida 31: Financiamiento Gobiernos Regionales'
+    file: knowledge/domains/gn/ley-presupuestos-2026-partida-31.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ley-presupuestos-2026-normas-generales:1.0.0
+    title: Ley de Presupuestos 2026 - Normas Generales (Ley 21.796)
+    file: knowledge/domains/gn/ley-presupuestos-2026-normas-generales.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:matriz-integracion-organica:1.0.0
+    title: Matriz de Integración Orgánica del Conocimiento GORE Ñuble
+    file: knowledge/domains/gn/matriz-integracion-organica.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:bpmn-index:1.0.0
+    title: Índice de Procesos BPMN
+    file: knowledge/domains/gn/bpmn-index.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:manual-presupuesto:1.0.0
+    title: 'Manual 1.1: Gestión Presupuestaria (Formulación y Ejecución)'
+    file: knowledge/domains/gn/manual-presupuesto.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-contabilidad:1.0.0
+    title: 'Manual 1.2: Contabilidad e Información Financiera'
+    file: knowledge/domains/gn/manual-contabilidad.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-tesoreria:1.0.0
+    title: 'Manual 1.3: Tesorería y Gestión de Pagos'
+    file: knowledge/domains/gn/manual-tesoreria.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-compras:1.0.0
+    title: 'Manual 2.1: Compras y Contrataciones Públicas'
+    file: knowledge/domains/gn/manual-compras.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-flotas:1.0.0
+    title: 'Manual 2.4: Gestión de Vehículos e Infraestructura'
+    file: knowledge/domains/gn/manual-flotas.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-ciclo-vida:1.0.0
+    title: 'Manual 3.1: Ciclo de Vida del Funcionario'
+    file: knowledge/domains/gn/manual-ciclo-vida.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-remuneraciones:1.0.0
+    title: 'Manual 3.2: Gestión de Remuneraciones'
+    file: knowledge/domains/gn/manual-remuneraciones.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-asistencia:1.0.0
+    title: 'Manual 3.3: Control de Asistencia y Ausentismo'
+    file: knowledge/domains/gn/manual-asistencia.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:manual-bienestar:1.0.0
+    title: 'Manual 3.5: Programas de Bienestar al Personal'
+    file: knowledge/domains/gn/manual-bienestar.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:cies-sitia:1.0.0
+    title: Centro Integrado de Emergencia y Seguridad (CIES) de Ñuble con integración
+      SITIA
+    file: knowledge/domains/gn/cies-sitia.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:gore-ideal:1.0.0
+    title: GORE Ñuble Ideal y GORE 4.0
+    file: knowledge/domains/gn/gore-ideal.yml
+    status: draft
+  - urn: urn:knowledge:koda:mgmt:mw-waissbluth:1.0.0
+    title: Introducción a la Gestión Pública (Waissbluth) - Versión ETE
+    file: knowledge/domains/mgmt/mw-waissbluth.yml
+    status: published
+  - urn: urn:knowledge:koda:mgmt:meyer-org-structure:1.0.0
+    title: Principle-based Organizational Structure
+    file: knowledge/domains/mgmt/meyer-org-structure.yml
+    status: draft
+  - urn: urn:knowledge:koda:mgmt:lean6:1.0.1
+    title: Lean Six Sigma Core Concepts
+    file: knowledge/domains/mgmt/lean6.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:manual-operacional-dgi:1.0.0
+    title: Manual Operacional DGI - Departamento de Gestión Institucional
+    file: knowledge/domains/gn/manual-operacional-dgi.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:plan-potenciamiento-dgi:1.0.0
+    title: Plan de Potenciamiento DGI - Integración Meyer + Lean Six Sigma + Navegación
+      Social
+    file: knowledge/domains/gn/plan-potenciamiento-dgi.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:gestion-info-geoespacial:1.0.0
+    title: Gestión de Información Geoespacial en GORE Ñuble (Marco Integrado)
+    file: knowledge/domains/gn/gestion-info-geoespacial.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d01-actos-administrativos:1.0.0
+    title: 'BPMN D01: Tramitación de Actos Administrativos'
+    file: knowledge/domains/gn/bpmn-d01-actos-administrativos.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d02-ciclo-presupuestario:1.0.0
+    title: 'BPMN D02: Ciclo Presupuestario Regional'
+    file: knowledge/domains/gn/bpmn-d02-ciclo-presupuestario.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d03-gestion-ipr:1.0.0
+    title: 'BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)'
+    file: knowledge/domains/gn/bpmn-d03-gestion-ipr.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d04-compras-contrataciones:1.0.0
+    title: 'BPMN D04: Compras Públicas y Contrataciones'
+    file: knowledge/domains/gn/bpmn-d04-compras-contrataciones.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d05-inventarios-activo-fijo:1.0.0
+    title: 'BPMN D05: Gestión de Inventarios y Activo Fijo'
+    file: knowledge/domains/gn/bpmn-d05-inventarios-activo-fijo.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d06-flota-vehicular:1.0.0
+    title: 'BPMN D06: Gestión de Flota Vehicular'
+    file: knowledge/domains/gn/bpmn-d06-flota-vehicular.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d07-rrhh:1.0.0
+    title: 'BPMN D07: Gestión de Personas (RRHH)'
+    file: knowledge/domains/gn/bpmn-d07-rrhh.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d08-rendiciones:1.0.0
+    title: 'BPMN D08: Gestión de Rendiciones de Cuentas'
+    file: knowledge/domains/gn/bpmn-d08-rendiciones.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d09-cies-sitia:1.0.0
+    title: 'BPMN D09: Gestión Operativa CIES/SITIA'
+    file: knowledge/domains/gn/bpmn-d09-cies-sitia.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:bpmn-d10-geoespacial-ide:1.0.0
+    title: 'BPMN D10: Gestión de Información Geoespacial (IDE/Geonodo)'
+    file: knowledge/domains/gn/bpmn-d10-geoespacial-ide.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:aceleracion-regional:1.0.0
+    title: Aceleración Regional GORE Ñuble
+    file: knowledge/domains/gn/aceleracion-regional.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:erd-nuble-2024-2030:1.0.0
+    title: Estrategia Regional de Desarrollo Ñuble 2024-2030
+    file: knowledge/domains/gn/erd-nuble-2024-2030.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:transferencia-ppr:1.0.0
+    title: Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
+    file: knowledge/domains/gn/transferencia-ppr.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-index:1.0.0
+    title: Índice de Requisitos de Información Sectorial (RIS) SNI
+    file: knowledge/domains/gn/ris-index.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-proyinv:1.0.0
+    title: RIS Genéricas para Proyectos de Inversión (SNI 2023)
+    file: knowledge/domains/gn/ris-proyinv.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-proginv:1.0.0
+    title: RIS Genéricas para Programas de Inversión (SNI 2025)
+    file: knowledge/domains/gn/ris-proginv.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-empub:1.0.0
+    title: RIS para Estudios y Proyectos de Empresas del Estado (SNI 2024)
+    file: knowledge/domains/gn/ris-empub.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-pmdt:1.0.0
+    title: RIS para Estudio Básico PMDT (SNI 2024)
+    file: knowledge/domains/gn/ris-pmdt.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-edpub:1.0.0
+    title: RIS para Proyectos de Edificación Pública (SNI 2024)
+    file: knowledge/domains/gn/ris-edpub.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-artcult:1.0.0
+    title: RIS para Proyectos de Arte y Cultura (SNI 2024)
+    file: knowledge/domains/gn/ris-artcult.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-patrimonio:1.0.0
+    title: RIS para Proyectos Patrimoniales (SNI 2024)
+    file: knowledge/domains/gn/ris-patrimonio.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:ris-deportes:1.0.0
+    title: RIS para Proyectos de Infraestructura Deportiva (SNI 2024)
+    file: knowledge/domains/gn/ris-deportes.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:guia-idi-sni-sts:1.0.0
+    title: Guía Formulación Iniciativas de Inversión (IDI) en SNI para GOREs
+    file: knowledge/domains/gn/guia-idi-sni-sts.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:guia-programas-directos-gore:1.0.0
+    title: Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución
+      Directa GORE
+    file: knowledge/domains/gn/guia-programas-directos-gore.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:guia-fril-2025-sts:1.0.0
+    title: Instructivo FRIL 2025 GORE Ñuble
+    file: knowledge/domains/gn/guia-fril-2025-sts.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:guia-frpd-nuble:1.0.0
+    title: Guía Operativa FRPD Ñuble 2025
+    file: knowledge/domains/gn/guia-frpd-nuble.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:instructivo-subvencion-8-2025-sts:1.0.0
+    title: Instructivo Concurso Vinculación con la Comunidad 8% 2025
+    file: knowledge/domains/gn/instructivo-subvencion-8-2025-sts.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:guia-circular-33-sts:1.0.0
+    title: Guía Operativa para Formulación y Evaluación de Iniciativas Circular 33
+    file: knowledge/domains/gn/guia-circular-33-sts.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:indicadores-nuble:1.0.0
+    title: Indicadores regionales y comunales - Región de Ñuble (BCN junio 2025)
+    file: knowledge/domains/gn/indicadores-nuble.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:comunicaciones-oc:1.0.0
+    title: Comunicaciones Oscar Crisóstomo (compilado)
+    file: knowledge/domains/gn/comunicaciones-oc.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:cuentas-publicas-2021-2024:1.0.0
+    title: Cuentas Públicas GORE Ñuble 2021-2024 (STS)
+    file: knowledge/domains/gn/cuentas-publicas-2021-2024.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:glosario-gore-nuble:1.0.0
+    title: Glosario Unificado Jurídico-Administrativo GORE Ñuble (STS)
+    file: knowledge/domains/gn/glosario-gore-nuble.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:guia-comunicaciones:1.0.0
+    title: Guía Integral de Comunicaciones GORE Ñuble (STS)
+    file: knowledge/domains/gn/guia-comunicaciones.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:nuble-250:1.0.0
+    title: Agenda Estratégica "Ñuble 250" (STS)
+    file: knowledge/domains/gn/nuble-250.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:problemas-sociales-cl:1.0.0
+    title: Catálogo de Problemas Sociales de Chile (STS)
+    file: knowledge/domains/gn/problemas-sociales-cl.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:modelos-actos-juridicos:1.0.0
+    title: Modelos de Actos Jurídicos GORE Ñuble (SFD/STS)
+    file: knowledge/domains/gn/modelos-actos-juridicos.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:dictamenes-cgr-gore:1.0.0
+    title: Dictámenes CGR Relevantes para GOREs
+    file: knowledge/domains/gn/dictamenes-cgr-gore.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:informe-estado-inicial-gore-pre-td:1.0.0
+    title: Informe Estado Inicial GORE Ñuble Pre-Transformación Digital (STS)
+    file: knowledge/domains/gn/informe-estado-inicial-gore-pre-td.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:estrategia-td-ia:1.0.0
+    title: Estrategia de Transformación Digital e IA GORE Ñuble (STS)
+    file: knowledge/domains/gn/estrategia-td-ia.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:omega-ipr-gestion-fusion:1.0.0
+    title: Ontología Categorial Ω-IPR (Fusión Gestión + Selector)
+    file: knowledge/domains/gn/omega-ipr-gestion-fusion.yml
+    status: published
+    origin_urn: "urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0"
+  - urn: urn:knowledge:koda:gn:glosario-ipr-consolidado:1.0.0
+    title: Glosario Consolidado IPR - GORE Ñuble
+    file: knowledge/domains/gn/glosario-ipr-consolidado.yml
+    status: published
+  - urn: urn:knowledge:koda:gn:gestion-prpto-2026:1.0.0
+    title: Gestión Financiera y Operativa del Presupuesto Regional (2026)
+    file: knowledge/domains/gn/gestion-prpto-2026.yml
+    status: draft
+  - urn: urn:knowledge:koda:gn:glosas-gores-2026:1.0.0
+    title: Ley de Presupuestos 2026 - Glosas GORES
+    file: knowledge/domains/gn/glosas-gores-2026.yml
+    status: draft
+  - urn: urn:knowledge:koda:core:gn-cqs-master:1.0.1
+    title: Catálogo Maestro de Competency Questions – Ontología GORE Ñuble / TDE
+    file: knowledge/domains/core/gn-cqs-master.yml
+    status: draft
+  - urn: urn:knowledge:koda:mgmt:estructura-estado-chile:1.0.0
+    title: Estructura del Estado de Chile
+    file: knowledge/domains/mgmt/estructura-estado-chile.yml
+    status: published
+  - urn: urn:knowledge:koda:core:gn-koda-schema:1.0.0
+    title: KODA Schema Definition
+    file: knowledge/domains/core/gn-koda-schema.json
+    status: published
+  - urn: urn:knowledge:koda:gov:datos_administracion_estado:1.0.0
+    title: Estrategia de Datos de la Administración del Estado
+    file: knowledge/domains/gov/datos_administracion_estado.yml
+    subdomain: estrategias
+    status: draft
+  - urn: urn:knowledge:koda:gov:identidad_digital:1.0.0
+    title: Estrategia de Identidad Digital
+    file: knowledge/domains/gov/identidad_digital.yml
+    subdomain: estrategias
+    status: draft
+  - urn: urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0
+    title: Estrategia de Gobierno Digital 2030
+    file: knowledge/domains/gov/gobierno_digital_2030.yml
+    subdomain: estrategias
+    status: draft
+  - urn: urn:knowledge:koda:gov:capacitaciones_tde:1.0.0
+    title: Estrategia de Capacitaciones para la TDE
+    file: knowledge/domains/gov/capacitaciones_tde.yml
+    subdomain: estrategias
+    status: draft
+  - urn: urn:knowledge:koda:legal:ley_21180_tde:1.0.0
+    title: Ley N° 21.180 de Transformación Digital del Estado
+    file: knowledge/domains/legal/ley_21180_tde.yml
+    subdomain: leyes
+    status: draft
+  - urn: urn:knowledge:koda:legal:ley_19880_procedimientos:1.0.0
+    title: Ley N° 19.880 sobre Bases de los Procedimientos Administrativos
+    file: knowledge/domains/legal/ley_19880_procedimientos.yml
+    subdomain: leyes
+    status: draft
+  - urn: urn:knowledge:koda:legal:ley_21658_segdig:1.0.0
+    title: Ley N° 21.658 que crea la Secretaría de Gobierno Digital
+    file: knowledge/domains/legal/ley_21658_segdig.yml
+    subdomain: leyes
+    status: draft
+  - urn: urn:knowledge:koda:legal:legislacion_ia_chile:1.0.0
+    title: Análisis de la Legislación en Trámite sobre IA en Chile
+    file: knowledge/domains/legal/legislacion_ia_chile.yml
+    subdomain: leyes
+    status: draft
+  - urn: urn:knowledge:koda:legal:ley_21719_datos_personales:1.0.0
+    title: Ley N° 21.719 de Protección de Datos Personales
+    file: knowledge/domains/legal/ley_21719_datos_personales.yml
+    subdomain: leyes
+    status: draft
+  - urn: urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0
+    title: Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)
+    file: knowledge/domains/legal/nt_documentos_expedientes.yml
+    subdomain: normas
+    status: draft
+  - urn: urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0
+    title: Norma Técnica de Interoperabilidad (Decreto 12)
+    file: knowledge/domains/legal/nt_interoperabilidad.yml
+    subdomain: normas
+    status: draft
+  - urn: urn:knowledge:koda:legal:nt_notificaciones:1.0.0
+    title: Norma Técnica de Notificaciones (Decreto 8)
+    file: knowledge/domains/legal/nt_notificaciones.yml
+    subdomain: normas
+    status: draft
+  - urn: urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0
+    title: Norma Técnica de Seguridad de la Información y Ciberseguridad (Decreto
+      7)
+    file: knowledge/domains/legal/nt_seguridad_ciberseguridad.yml
+    subdomain: normas
+    status: draft
+  - urn: urn:knowledge:koda:legal:nt_autenticacion:1.0.0
+    title: Norma Técnica de Autenticación (Decreto 9)
+    file: knowledge/domains/legal/nt_autenticacion.yml
+    subdomain: normas
+    status: draft
+  - urn: urn:knowledge:koda:legal:nt_calidad_plataformas:1.0.0
+    title: Norma Técnica de Calidad y Funcionamiento de Plataformas (Decreto 11)
+    file: knowledge/domains/legal/nt_calidad_plataformas.yml
+    subdomain: normas
+    status: draft
+  - urn: urn:knowledge:koda:gov:claveunica:1.0.0
+    title: Plataforma ClaveÚnica - Integración
+    file: knowledge/domains/gov/claveunica.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:notificaciones:1.0.0
+    title: Plataforma de Notificaciones del Estado
+    file: knowledge/domains/gov/notificaciones.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:simple_saas:1.0.0
+    title: Plataforma SIMPLE en modalidad SaaS
+    file: knowledge/domains/gov/simple_saas.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:docdigital:1.0.0
+    title: Plataforma DocDigital
+    file: knowledge/domains/gov/docdigital.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:pisee:1.0.0
+    title: Red de Interoperabilidad PISEE
+    file: knowledge/domains/gov/pisee.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:datosgob:1.0.0
+    title: Portal de Datos Abiertos del Estado (Datos.gob.cl)
+    file: knowledge/domains/gov/datosgob.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:claveunica_tyc:1.0.0
+    title: Términos y Condiciones del Sistema de ClaveÚnica
+    file: knowledge/domains/gov/claveunica_tyc.yml
+    subdomain: plataformas
+    status: draft
+  - urn: urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad (v1)
+    file: knowledge/domains/gov/seguridad_ciberseguridad_v1.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:cloud_publica:1.0.0
+    title: Recomendaciones Técnicas para Cloud Pública
+    file: knowledge/domains/gov/cloud_publica.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:metadatos_documentos:1.0.0
+    title: Guía Técnica de Metadatos para Documentos y Expedientes
+    file: knowledge/domains/gov/metadatos_documentos.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:evaltic:1.0.0
+    title: Guía Técnica EVALTIC
+    file: knowledge/domains/gov/evaltic.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0
+    title: Metodología para la gestión de proyectos TIC
+    file: knowledge/domains/gov/metodologia_proyectos_tic.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0
+    title: Orientaciones básicas para la gestión de las TIC
+    file: knowledge/domains/gov/orientaciones_gestion_tic.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:mgde:1.0.0
+    title: Marco de Referencia de Gestión de Datos del Estado (MGDE)
+    file: knowledge/domains/gov/mgde.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:calidad_web:1.0.0
+    title: Guía Calidad WEB
+    file: knowledge/domains/gov/calidad_web.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:sistema_tde_2025:1.0.0
+    title: Guía Metodológica del Sistema de Transformación Digital 2025
+    file: knowledge/domains/gov/sistema_tde_2025.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:rat_datos_personales:1.0.0
+    title: Registro de Actividades de Tratamiento de Datos Personales (RAT)
+    file: knowledge/domains/gov/rat_datos_personales.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0
+    title: Reglamento de Transformación Digital del Estado (Decreto 4)
+    file: knowledge/domains/gov/reglamento_tde_ds4.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:diseno_servicios:1.0.0
+    title: Recomendaciones para el Diseño de Servicios en el Estado
+    file: knowledge/domains/gov/diseno_servicios.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:cpat_completa:1.0.0
+    title: Guía CPAT Completa
+    file: knowledge/domains/gov/cpat_completa.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:catalogo_cpat_nuble:1.0.0
+    title: Catálogo CPAT (Ñuble) - Análisis de Madurez Digital
+    file: knowledge/domains/gov/catalogo_cpat_nuble.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:simple_saas_oae:1.0.0
+    title: Guía de Uso SIMPLE SaaS para OAE
+    file: knowledge/domains/gov/simple_saas_oae.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:gov:anonimizacion_datos_v2:1.0.0
+    title: Guía de Anonimización de Datos (KB080)
+    file: knowledge/domains/gov/anonimizacion_datos_v2.yml
+    subdomain: guias
+    status: draft
+  - urn: urn:knowledge:koda:sys:workflow_wikiguias:1.0.0
+    title: Workflow de Transformación del corpus wikiguias a KODA/Spec
+    file: knowledge/domains/sys/workflow_wikiguias.yml
+    subdomain: arquitectura
+    status: draft
+  - urn: urn:knowledge:koda:sys:hub_agentes:1.0.0
+    title: Arquitectura de Hub y Agentes sobre la KB tde
+    file: knowledge/domains/sys/hub_agentes.yml
+    subdomain: arquitectura
+    status: draft
+  - urn: urn:knowledge:koda:sys:test_strategy:1.0.0
+    title: Estrategia de Pruebas KODA/Test para la KB wikiguias (tde)
+    file: knowledge/domains/sys/test_strategy.yml
+    subdomain: arquitectura
+    status: draft
+  - urn: urn:knowledge:koda:gov:principios_objetivos:1.0.0
+    title: Principios y Objetivos Marco de la TDE
+    file: knowledge/domains/gov/principios_objetivos.yml
+    status: draft
+  - urn: urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0
+    title: Lexicon WikiGuías TDE
+    file: knowledge/domains/gov/lexicon_wikiguias.yml
+    status: draft
+  - urn: urn:knowledge:koda:gov:intro_tde:1.0.0
+    title: Introducción a la Transformación Digital del Estado
+    file: knowledge/domains/gov/intro_tde.yml
+    status: draft
+  - urn: urn:knowledge:koda:core:orko-fases:1.0.0
+    title: Metodología ORKO - Fases de Transformación (Layer 3)
+    description: 'Receta de transformación: Fases, Playbooks, Templates'
+    file: knowledge/domains/core/orko-fases.yml
+    status: published
+    layer: 3
+  - urn: urn:knowledge:koda:core:orko-playbooks:1.0.0
+    title: Playbooks ORKO
+    description: 'Playbooks por nivel de salud: Survival, Minimal, Advanced'
+    file: knowledge/domains/core/orko-playbooks.yml
+    status: published
+    layer: 3
+  - urn: urn:knowledge:koda:core:impl-orko-toolkit:1.0.0
+    title: ORKO Toolkit (Layer 4-5)
+    description: Calculadoras, scripts, herramientas compiladas para usuario final
+    file: knowledge/domains/core/impl-orko-toolkit.yml
+    status: published
+    layer: 4
+  - urn: urn:knowledge:koda:core:orko-fundamentos:1.0.0
+    title: Fundamentos Teóricos ORKO (Layer 0)
+    description: 'Genoma de ORKO: Primitivos (P1-P5), Invariantes (I1-I8), Teoremas'
+    file: knowledge/domains/core/orko-fundamentos.yml
+    Exported_IDs:
+    - ORKO-CORE-FUND-01
+    - ORKO-AX-A1
+    - ORKO-AX-A2
+    - ORKO-AX-A3
+    - ORKO-AX-A4
+    - ORKO-AX-A5
+    - ORKO-INV-I1
+    - ORKO-INV-I2
+    - ORKO-INV-I3
+    - ORKO-INV-I4
+    - ORKO-INV-I5
+    - ORKO-INV-I6
+    - ORKO-INV-I7
+    - ORKO-INV-I8
+    status: published
+    layer: 0
+  - urn: urn:knowledge:koda:core:orko-arquitectura:1.0.0
+    title: Arquitectura ORKO (Layer 1)
+    description: 'Diseño del sistema: Contratos, relaciones, principios de diseño
+      (PD1-PD76)'
+    file: knowledge/domains/core/orko-arquitectura.yml
+    Exported_IDs:
+    - ORKO-CORE-ARQ-01
+    - ORKO-C-C1
+    - ORKO-C-C2
+    - ORKO-C-C3
+    - ORKO-C-C4
+    - ORKO-C-C5
+    status: published
+    layer: 1
+  - urn: urn:knowledge:koda:core:orko-tejidos:1.0.0
+    title: Tejidos Tecnológicos ORKO (Layer 2)
+    description: Especificación de Tejidos (TF1-TF3) que instancian los primitivos
+    file: knowledge/domains/core/orko-tejidos.yml
+    status: draft
+    layer: 2
+  - urn: urn:knowledge:koda:core:orko-metodologia:1.0.0
+    title: Metodología ORKO (Layer 3)
+    description: Fases de transformación, templates y guías de implementación
+    file: knowledge/domains/core/orko-metodologia.yml
+    status: published
+    layer: 3
+  - urn: urn:knowledge:koda:core:orko-toolkit:1.0.0
+    title: ORKO Toolkit (Layer 4-5)
+    description: Calculadoras, scripts y herramientas para usuario final
+    file: knowledge/domains/core/orko-toolkit.yml
+    status: published
+    layer: 4
+Statistics:
+  total_artifacts: 269
+  agents: 40
+  skills: 8
+  tools: 21
+  domains: 200

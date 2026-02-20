@@ -1,0 +1,326 @@
+# KODA TDE Lineamiento Técnico: Norma Técnica de Interoperabilidad (Decreto 12)
+---
+_manifest:
+  urn: "urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0"
+  federation: { visibility: public, license: "CC-BY-4.0" }
+  domain: "tde_lineamientos"
+  type: "Norma_Tecnica_Interoperabilidad"
+  provenance:
+    created_by: "Ministerio Secretaría General de la Presidencia"
+    created_at: "2025-12-11"
+    source_corpus: "wikiguias_corpus"
+    source_file: "Lineamientos_TécnicosNormas/Decreto_12___Interoperabilidad.md"
+    source_url: "https://wikiguias.digital.gob.cl/Normas/Decreto12"
+    source_updated_at: "2025-10-07T21:03:40.034Z"
+  status: draft
+
+ID: "TDE-LIN-NORMA-INT-12"
+Version: 1.0.0
+Status: Draft
+Human-Creator: "Ministerio Secretaría General de la Presidencia"
+Human-Editor: "División de Gobierno Digital - Ministerio SEGPRES"
+Model-Collaborator: "IA-CASCADE"
+Creation-Date: 2025-12-11
+Modification-Date: 2025-12-14
+Ctx: "Norma Técnica de Interoperabilidad para la red de interoperabilidad del Estado (Decreto 12), que define estándares, protocolos, componentes y gobernanza"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables, artículos) with zero loss. Ignore fat (formalismo jurídico, frases de protocolo).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+
+LLM_Instructions:
+  role: "Norma técnica base para la interoperabilidad de datos, documentos y expedientes electrónicos en el Estado"
+  objective: >-
+    Definir estándares, protocolos, componentes, herramientas y reglas de coordinación para que
+    los OAEs interoperen datos, documentos y expedientes electrónicos a través de la red de
+    interoperabilidad, en cumplimiento de la Ley 19.880, Ley 21.180 y su Reglamento.
+  usage_guidance:
+    - "Usar esta norma para diseñar arquitecturas de interoperabilidad institucional (nodos, servicios, esquemas, acuerdos, autorizaciones)."
+    - "Complementar con la Norma de Documentos y Expedientes Electrónicos (Decreto 10), MGDE, CPAT, STD 2025 y lineamientos de datos y seguridad."
+  style:
+    - "Responder en es-CL, tono jurídico-técnico, manteniendo definiciones y estructura por artículos."
+
+Metadata_Original:
+  title: "Decreto 12  | Interoperabilidad"
+  url: "https://wikiguias.digital.gob.cl/Normas/Decreto12"
+  category: "Lineamientos Técnicos/Normas"
+  tags:
+    - "decreto"
+    - "norma técnica"
+    - "interoperabilidad"
+    - "nodo"
+    - "gestor de códigos"
+  description: "Establece Norma Técnica de Interoperabilidad."
+  updated_at: "2025-10-07T21:03:40.034Z"
+  promulgacion: "2023-05-19"
+  publicacion: "2023-08-17"
+  version: "Única - 17-AGO-2023"
+
+Contexto_y_Base_Legal:
+  ID: "TDE_LIN_INT12_CTX_001"
+  Ctx: >-
+    La norma se dicta en el marco de la Constitución Política, la Ley 19.880 (procedimientos
+    administrativos), la Ley 19.628 (Protección de la Vida Privada), la Ley 21.180 (TD del
+    Estado), el DFL 1/2020 (gradualidad), el DS 4/2020 (Reglamento de TD) y los reglamentos
+    sobre documentos electrónicos y firma electrónica (DS 181/2002 y DS 14/2014).
+  Just:
+    - "Los medios electrónicos deben ser capaces de interactuar y operar entre sí al interior de la Administración del Estado, por lo que se requiere un modelo de interoperabilidad común."
+
+Objeto_de_la_Norma:
+  ID: "TDE_LIN_INT12_OBJ_001"
+  Articulo: 1
+  Purp: >-
+    Definir estándares, protocolos y herramientas para que los OAEs interoperen datos, documentos
+    y expedientes electrónicos mediante la red de interoperabilidad.
+
+Definiciones_Clave:
+  ID: "TDE_LIN_INT12_DEF_001"
+  Articulo: 2
+  Terms:
+    - Term: "Codigo"
+      Def: "Secuencia de símbolos que identifican unívocamente un objeto, entidad o estado."
+    - Term: "Consumidor_Servicios_Interoperabilidad"
+      Def: >-
+        Órgano de la Administración que demanda un servicio de interoperabilidad a otro para
+        interoperar datos, documentos o expedientes electrónicos.
+    - Term: "Dato"
+      Def: >-
+        Representación cuantitativa o cualitativa capturada mediante letras, números o símbolos,
+        observable o medible respecto de personas, objetos, hechos, juicios o fenómenos.
+    - Term: "Dato_Abierto"
+      Def: >-
+        Dato digital con características técnicas y jurídicas para ser usado, reutilizado y
+        redistribuido libremente por cualquier persona u órgano, en cualquier momento y lugar.
+    - Term: "Dato_Digital"
+      Def: >-
+        Dato representado por variables discretas (bits) tratable por sistemas capaces de
+        interpretarlo, en términos del art. 2(o) de la Ley 19.628.
+    - Term: "Endpoint"
+      Def: "Dirección URI de un servicio web utilizado para recibir o enviar información."
+    - Term: "Interoperar"
+      Def: >-
+        Operación mediante la cual dos OAEs, conectados por un nodo de interoperabilidad,
+        intercambian o transmiten datos, documentos o expedientes electrónicos.
+    - Term: "Metadatos"
+      Def: "Datos que describen contexto, contenido y estructura de un dato."
+    - Term: "Plataforma_Electronica"
+      Def: "Software o conjunto de software, datos e infraestructura tecnológica que sustenta procesos o procedimientos."
+    - Term: "Protocolo_Comunicacion"
+      Def: >-
+        Reglas y estándares que determinan cómo se transmiten datos en la red de interoperabilidad.
+    - Term: "Proveedor_Servicios_Interoperabilidad"
+      Def: >-
+        Órgano al que se le demanda un servicio de interoperabilidad para interoperar datos,
+        documentos o expedientes electrónicos.
+    - Term: "Reglamento"
+      Def: >-
+        DS 4/2020 que regula la expresión electrónica de procedimientos administrativos según Ley 21.180.
+    - Term: "Servicios_Interoperabilidad"
+      Def: >-
+        Servicios informáticos automatizados que permiten interoperar datos, documentos o
+        expedientes electrónicos entre consumidores y proveedores mediante un nodo validado,
+        cumpliendo requisitos de servicios centralizados.
+    - Term: "Transaccion"
+      Def: >-
+        Instancia completa de comunicación entre consumidor y proveedor (consulta, recepción,
+        respuesta y recepción de la respuesta).
+    - Term: "Token"
+      Def: >-
+        Secuencia de caracteres sin significado semántico propio, usada como credencial de
+        autenticación o identificador de sesión/transacción.
+    - Term: "URI"
+      Def: "Identificador simple y extensible de recursos en internet."
+
+Red_de_Interoperabilidad_y_Componentes:
+  ID: "TDE_LIN_INT12_RED_001"
+  Articulos: [3, 4, 5]
+  Red:
+    Def: >-
+      Conjunto de conexiones directas y seguras a través de internet, basadas en nodos de
+      interoperabilidad alojados en OAEs, que actúan como proveedores/consumidores mediante
+      plataformas electrónicas para intercambiar datos, documentos y expedientes electrónicos.
+    Req:
+      - "Usar la red para cumplir artículos 16 bis, 17(d), 19 y 24 bis de la Ley 19.880 y disposiciones del Reglamento."
+  Componentes:
+    - "Nodos de interoperabilidad."
+    - "Servicios centralizados de interoperabilidad (Catálogo de Servicios, Registro de Trazabilidad, Directorio de Datos, Catálogo de Esquemas, Gestor de Acuerdos, Gestor de Autorizaciones)."
+    - "Herramientas complementarias: Gestor de Códigos del Estado y Catálogo de Procedimientos Administrativos y Trámites (CPAT)."
+    - "Elementos transmisibles en la red de interoperabilidad."
+  Integracion:
+    Req:
+      - "OAEs deben integrarse a la red actuando como proveedores y/o consumidores mediante nodos conectados a los servicios centralizados."
+
+Nodo_de_Interoperabilidad:
+  ID: "TDE_LIN_INT12_NODO_001"
+  Articulo: 6
+  Def: >-
+    Componente de software alojado en infraestructura del OAE, que permite interoperar e integrar
+    sistemas y plataformas a la red, cumpliendo estándares y protocolos de la norma.
+  Req_Minimos:
+    - "Establecer conexión segura entre OAEs según Guía Técnica de Interoperabilidad y Norma de Seguridad/Ciberseguridad."
+    - "Enviar y recibir datos, documentos y expedientes electrónicos entre OAEs conectados."
+    - "Permitir recepción y envío de mensajes entre OAEs de la red."
+    - "Conectarse a otros nodos y a servicios centralizados para registrar trazabilidad de mensajes."
+    - "Conectarse al gestor de autorizaciones."
+    - "Ser única vía de acceso a servicios de interoperabilidad, enlazando catálogo de servicios y OAEs."
+    - "Encriptar mensajes y respuestas según métodos de la Guía Técnica."
+    - "Validar certificado de autenticación del nodo consumidor."
+    - "Auto-monitorear sus operaciones según estándares de la Guía Técnica."
+    - "Usar protocolos autorizados por la DGD."
+  Ctx_Optional:
+    - "Un OAE puede tener uno o más nodos; la DGD provee un nodo estándar, pero los OAEs pueden desarrollar uno propio sujeto a validación técnica."
+
+Servicios_Centralizados_de_Interoperabilidad:
+  ID: "TDE_LIN_INT12_SERVICIOS_001"
+  Articulos: [7, 8, 9, 10, 11, 12, 13]
+  Def: >-
+    Conjunto de herramientas de software e infraestructura que habilitan los servicios comunes de
+    interoperabilidad y almacenan trazabilidad y metadatos de transacciones.
+  Componentes:
+    - "Catálogo de Servicios de Interoperabilidad: lista de servicios (datos, documentos, expedientes) ofrecidos por OAEs."
+    - "Registro de Trazabilidad: almacena información de cada transacción."
+    - "Directorio de Datos: describe datos disponibles (nombre, descripción, clasificación, responsable)."
+    - "Catálogo de Esquemas: gestiona esquemas basales y documentales aprobados."
+    - "Gestor de Acuerdos: gestiona acuerdos de términos y condiciones para servicios."
+    - "Gestor de Autorizaciones: gestiona consentimientos para datos sensibles."
+  Req_OAEs:
+    - "Publicar todos los servicios de interoperabilidad administrados en el Catálogo de Servicios, con código único del Gestor de Códigos y vínculo a CPAT."
+    - "Designar responsables para mantener actualizada la información en servicios centralizados (Catálogo de Servicios, Directorio de Datos, Esquemas)."
+    - "Enviar registros de trazabilidad por cada transacción, con información de plataforma/servicio, órganos, procedimiento, marca de tiempo (UTC+00), datos sensibles y resultado de la transacción."
+    - "Clasificar datos en personales, sensibles, estadísticos, secretos, reservados u otros (Ley 19.628) en el Directorio de Datos."
+  Trazabilidad_Transacciones:
+    Req:
+      - "Nodos deben enviar registros de trazabilidad en tiempo real; se permite envío diferido en paquetes dentro de 48 horas en casos excepcionales."
+
+Gestor_de_Acuerdos_y_Autorizaciones:
+  ID: "TDE_LIN_INT12_ACUERDOS_AUT_001"
+  Articulos: [12, 13, 14, 15]
+  Gestor_Acuerdos:
+    Def: >-
+      Servicio centralizado que habilita la solicitud, negociación y firma de acuerdos de términos
+      y condiciones para servicios de interoperabilidad.
+    Req:
+      - "Usar Gestor de Acuerdos para todos los servicios (excepto datos abiertos)."
+      - "Solicitudes deben ser realizadas por jefaturas de TI con visto bueno jurídico."
+      - "Órgano proveedor debe responder en 15 días hábiles (+5 en casos justificados) aceptando o denegando."
+      - "Negativas deben ser fundadas; DGD puede mediar y solicitar aceptación, especialmente ante falta de capacidad manifiesta."
+      - "Acuerdos se suscriben con firma electrónica avanzada por Jefaturas Superiores."
+  Gestor_Autorizaciones:
+    Def: >-
+      Servicio para que personas interesadas otorguen o revoquen consentimiento para interoperar sus
+      datos personales sensibles, integrado con ClaveÚnica.
+    Requisitos_Consentimiento:
+      - "Prestarse por interesado/a, apoderado/a o representante legal."
+      - "Otorgarse por escrito mediante acto afirmativo claro vía Gestor de Autorizaciones (salvo excepciones en papel)."
+      - "Ser libre, específico, informado, inequívoco y revocable, sin afectar el derecho a tramitar el procedimiento."
+      - "Consentimiento cubre todo el procedimiento desde inicio hasta término; revocación no tiene efecto retroactivo."
+    Req:
+      - "Autorizar, revocar y consultar historial de autorizaciones."
+      - "Incorporar la autorización como documento al expediente electrónico y preservarlo."
+
+Herramientas_Complementarias_y_Elementos_Transmisibles:
+  ID: "TDE_LIN_INT12_COMP_CODIGOS_CPAT_001"
+  Articulos: [16, 17, 18, 19, 20]
+  Herramientas_Complementarias:
+    - "Gestor de Códigos del Estado: gestiona códigos estandarizados (OAEs, procedimientos, territorios, etc.)."
+    - "CPAT: catálogo de procedimientos y trámites (nómina, codificación, estandarización, caracterización)."
+  Req_CPAT:
+    - "Identificar y codificar procedimientos y trámites con: nombre, ley de origen, código, necesidad de interoperar datos/docs/expedientes, vínculos a Directorio de Datos y Catálogo de Servicios, necesidad de Gestor de Autorizaciones y mecanismo de contacto."
+  Elementos_Transmisibles:
+    Def: >-
+      Incluyen datos personales, otros datos relevantes, documentos y expedientes necesarios para
+      la tramitación del procedimiento administrativo, transmitidos mediante la red de
+      interoperabilidad.
+    Req:
+      - "Remitir datos/documentos/expedientes necesarios a OAEs consumidores vía nodo."
+      - "Tratar datos abiertos fuera del concepto de interoperabilidad (consumos directos)."
+      - "Publicar documentos públicos en portales según Ley 20.285."
+  Clasificacion_Datos:
+    Req:
+      - "Clasificar datos en el Directorio de Datos según Ley 19.628 y normativa vigente."
+
+Coordinacion_de_Interoperabilidad:
+  ID: "TDE_LIN_INT12_COORD_001"
+  Articulos: [21, 22, 23, 24, 25, 26]
+  Niveles:
+    - "Nivel institucional: coordinado por DGD, resuelve problemas operativos entre OAEs."
+    - "Niveles sectoriales: comités por sector económico/social; coordinan estándares, codificaciones y esquemas sectoriales."
+    - "Nivel estratégico: coordina, valida y aprueba estándares y esquemas transversales; presidido por jefatura DGD."
+  Rol_DGD:
+    Ctx: >-
+      La DGD apoya coordinación estratégica, propone estándares y códigos y asesora a OAEs en la
+      implementación de la red, convocando instancias transversales o sectoriales.
+
+Disposiciones_Finales_y_Transitorias:
+  ID: "TDE_LIN_INT12_DISP_001"
+  Articulos: [27, 28, 29]
+  Guias_Tecnicas:
+    Def: >-
+      La DGD dictará guías técnicas para los aspectos operativos y procesos de la
+      interoperabilidad (métodos de encriptación, protocolos, validación de nodos, etc.).
+  Gradualidad:
+    Ctx: >-
+      La aplicación sigue la gradualidad del DFL 1/2020; la DGD define lineamientos y formatos
+      para su implementación."
+  Revision:
+    Req:
+      - "Revisar y actualizar la norma al menos cada dos años; el plazo se cuenta desde la entrada en vigencia de esta norma técnica."
+      - "Las actualizaciones deben tomar en consideración aprendizajes y dificultades de aplicación reportados por los OAEs, impulsar buenas prácticas y minimizar efectos de prácticas incorrectas."
+  Disposiciones_Transitorias:
+    Req:
+      - "Los OAEs tienen un año desde la entrada en vigencia para construir el catastro inicial de datos (Directorio de Datos) e incorporarlo."
+      - "El 31 de diciembre de 2026 será el último día de funcionamiento de la Plataforma Integrada de Servicios Electrónicos del Estado (PISEE); desde esa fecha, la red de interoperabilidad descrita en esta norma será la única vía de interoperabilidad para todos los OAEs."
+      - "Los OAEs que interoperan mediante versiones anteriores de PISEE deberán migrar a la red de interoperabilidad del Estado durante el año 2025 (grupos A y B del DFL 1/2020) y durante el año 2026 (grupo C), pudiendo adelantar esta transición antes del inicio formal de la Fase 6 de interoperabilidad."
+      - "Los esquemas asociados a PISEE deberán ser revisados, modificados, ajustados o actualizados en el plazo de un año desde la entrada en vigencia de la norma, para alinearlos con los esquemas contenidos en el Catálogo de Servicios de Interoperabilidad."
+      - "Quedarán sin efecto los convenios de interoperabilidad vigentes entre OAEs en todo aquello que no sea compatible con lo dispuesto en esta norma técnica, conforme al artículo cuarto transitorio del Reglamento."
+
+Glosario_Ref_Lexicon:
+  Description: "Términos de interoperabilidad apoyados en el Lexicon TDE."
+  Terms:
+    - Term: "Interoperar"
+      Ref_ID: "TDE_DEF_INTEROPERAR"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEROPERAR"
+    - Term: "Datos"
+      Ref_ID: "TDE_DEF_DATOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS"
+    - Term: "Datos abiertos"
+      Ref_ID: "TDE_DEF_DATOS_ABIERTOS"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_ABIERTOS"
+    - Term: "Plataforma"
+      Ref_ID: "TDE_DEF_PLATAFORMA"
+      XRef: "urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_PLATAFORMA"
+
+XRef_Lineamientos_Relacionados:
+  Description: "Lineamientos y normas estrechamente vinculadas a la Norma de Interoperabilidad."
+  XRef_Required:
+    - "urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0"
+  XRef:
+    - "urn:knowledge:koda:gov:mgde:1.0.0"
+    - "urn:knowledge:koda:gov:calidad_web:1.0.0"
+    - "urn:knowledge:koda:gov:sistema_tde_2025:1.0.0"
+    - "urn:knowledge:koda:gov:cpat_completa:1.0.0"
+    - "urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0"
+
+Referencias_Resumen:
+  Description: "Referencias normativas clave de la Norma Técnica de Interoperabilidad."
+  Sources:
+    - "Ley N° 19.880 (art. 16 bis, 17(d), 19, 24 bis, 30(f))."
+    - "Ley N° 19.628 (Protección de la Vida Privada)."
+    - "Ley N° 21.180 (Transformación Digital del Estado)."
+    - "DFL N° 1/2020 (gradualidad)."
+    - "DS N° 4/2020 (Reglamento de TD)."
+    - "Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)."
+    - "Normas técnicas de Seguridad/Ciberseguridad, Calidad y Funcionamiento y Notificaciones."

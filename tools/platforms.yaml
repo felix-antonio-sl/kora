@@ -1,0 +1,2665 @@
+_manifest:
+  urn: "urn:knowledge:koda:tools:platforms:1.0.0"
+  federation:
+    visibility: internal
+    license: "Proprietary"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/moltbot/docs/platforms/kb_platforms.yaml"
+    mirrors: []
+  provenance:
+    created_by: "Moltbot Docs"
+    created_at: "2026-01-29"
+    last_modified_by: "Codex"
+    last_modified_at: "2026-01-29"
+    signature: null
+
+ID: MOLTBOT-KB-PLATFORMS-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: Moltbot Docs
+Human-Editor: Codex
+Model-Collaborator: OpenAI-Codex
+Creation-Date: '2026-01-29'
+Modification-Date: '2026-01-29'
+Ctx: Moltbot platforms
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |-
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
+
+    LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+    END_LLM_INSTRUCTIONS
+Purp: Platforms docs
+Src:
+- File: output/platforms.md
+- File: output/platforms/android.md
+- File: output/platforms/exe-dev.md
+- File: output/platforms/fly.md
+- File: output/platforms/gcp.md
+- File: output/platforms/hetzner.md
+- File: output/platforms/ios.md
+- File: output/platforms/linux.md
+- File: output/platforms/macos-vm.md
+- File: output/platforms/macos.md
+- File: output/platforms/windows.md
+- File: output/platforms/mac/bundled-gateway.md
+- File: output/platforms/mac/canvas.md
+- File: output/platforms/mac/child-process.md
+- File: output/platforms/mac/dev-setup.md
+- File: output/platforms/mac/health.md
+- File: output/platforms/mac/icon.md
+- File: output/platforms/mac/logging.md
+- File: output/platforms/mac/menu-bar.md
+- File: output/platforms/mac/peekaboo.md
+- File: output/platforms/mac/permissions.md
+- File: output/platforms/mac/release.md
+- File: output/platforms/mac/remote.md
+- File: output/platforms/mac/signing.md
+- File: output/platforms/mac/skills.md
+- File: output/platforms/mac/voice-overlay.md
+- File: output/platforms/mac/voicewake.md
+- File: output/platforms/mac/webchat.md
+- File: output/platforms/mac/xpc.md
+- File: output/northflank.md
+- File: output/railway.md
+Sections:
+- ID: PLATFORMS-ANDROID
+  Src:
+    File: output/platforms/android.md
+    URL: https://docs.molt.bot/platforms/android
+  Facts: |-
+    H1: Android - Moltbot
+    Platforms
+    H1: Android
+    Android App (Node)
+    Support snapshot
+    - Role: companion node app (Android does not host the Gateway).
+    - Gateway required: yes (run it on macOS, Linux, or Windows via WSL2).
+    - Install: [Getting Started](/start/getting-started) \+ [Pairing](/gateway/pairing).
+    - Gateway: [Runbook](/gateway) \+ [Configuration](/gateway/configuration).
+    - Protocols: [Gateway protocol](/gateway/protocol) (nodes + control plane).
+    System control
+    System control (launchd/systemd) lives on the Gateway host. See [Gateway](/gateway).
+    Connection Runbook
+    Android node app  (mDNS/NSD + WebSocket)  **Gateway** Android connects directly to the Gateway WebSocket (default `ws://<host>:18789`) and uses Gateway-owned pairing.
+    Prerequisites
+    - You can run the Gateway on the "master" machine.
+    - Android device/emulator can reach the gateway WebSocket:
+    - Same LAN with mDNS/NSD, **or**
+    - Same Tailscale tailnet using Wide-Area Bonjour / unicast DNS-SD (see below), **or**
+    - Manual gateway host/port (fallback)
+    - You can run the CLI (`moltbot`) on the gateway machine (or via SSH).
+    1) Start the Gateway
+    Confirm in logs you see something like:
+    - `listening on ws://0.0.0.0:18789`
+    For tailnet-only setups (recommended for Vienna  London), bind the gateway to the tailnet IP:
+    - Set `gateway.bind: "tailnet"` in `~/.clawdbot/moltbot.json` on the gateway host.
+    - Restart the Gateway / macOS menubar app.
+    2) Verify discovery (optional)
+    From the gateway machine:
+    More debugging notes: [Bonjour](/gateway/bonjour).
+    Tailnet (Vienna  London) discovery via unicast DNS-SD
+    Android NSD/mDNS discovery won't cross networks. If your Android node and the gateway are on different networks but connected via Tailscale, use Wide-Area Bonjour / unicast DNS-SD instead:
+    - Set up a DNS-SD zone (example `moltbot.internal.`) on the gateway host and publish `_moltbot-gw._tcp` records.
+    - Configure Tailscale split DNS for `moltbot.internal` pointing at that DNS server.
+    Details and example CoreDNS config: [Bonjour](/gateway/bonjour).
+    3) Connect from Android
+    In the Android app:
+    - The app keeps its gateway connection alive via a **foreground service** (persistent notification).
+    - Open **Settings**.
+    - Under **Discovered Gateways** , select your gateway and hit **Connect**.
+    - If mDNS is blocked, use **Advanced -> Manual Gateway** (host + port) and **Connect (Manual)**.
+    After the first successful pairing, Android auto-reconnects on launch:
+    - Manual endpoint (if enabled), otherwise
+    - The last discovered gateway (best-effort).
+    4) Approve pairing (CLI)
+    On the gateway machine:
+    Pairing details: [Gateway pairing](/gateway/pairing).
+    5) Verify the node is connected
+    - Via nodes status:
+    - Via Gateway:
+    6) Chat + history
+    The Android node's Chat sheet uses the gateway's **primary session key** (`main`), so history and replies are shared with WebChat and other clients:
+    - History: `chat.history`
+    - Send: `chat.send`
+    - Push updates (best-effort): `chat.subscribe` -> `event:"chat"`
+    7) Canvas + camera
+    Gateway Canvas Host (recommended for web content)
+    If you want the node to show real HTML/CSS/JS that the agent can edit on disk, point the node at the Gateway canvas host. Note: nodes use the standalone canvas host on `canvasHost.port` (default `18793`).
+    - Create `~/clawd/canvas/index.html` on the gateway host.
+    - Navigate the node to it (LAN):
+    Tailnet (optional): if both devices are on Tailscale, use a MagicDNS name or tailnet IP instead of `.local`, e.g. `http://<gateway-magicdns>:18793/__moltbot__/canvas/`. This server injects a live-reload client into HTML and reloads on file changes. The A2UI host lives at `http://<gateway-host>:18793/__moltbot__/a2ui/`. Canvas commands (foreground only):
+    - `canvas.eval`, `canvas.snapshot`, `canvas.navigate` (use `{"url":""}` or `{"url":"/"}` to return to the default scaffold). `canvas.snapshot` returns `{ format, base64 }` (default `format="jpeg"`).
+    - A2UI: `canvas.a2ui.push`, `canvas.a2ui.reset` (`canvas.a2ui.pushJSONL` legacy alias)
+    Camera commands (foreground only; permission-gated):
+    - `camera.snap` (jpg)
+    - `camera.clip` (mp4)
+    See [Camera node](/nodes/camera) for parameters and CLI helpers.
+  Ex:
+  - ID: EX-PLATFORMS-ANDROID-E0A3C63E1F
+    Ctx: Copy
+    Body: moltbot gateway --port 18789 --verbose
+  - ID: EX-PLATFORMS-ANDROID-FCD89451CC
+    Ctx: Copy
+    Body: dns-sd -B _moltbot-gw._tcp local.
+  - ID: EX-PLATFORMS-ANDROID-ECA5A1CDD6
+    Ctx: Copy
+    Body: |-
+      moltbot nodes pending
+      moltbot nodes approve <requestId>
+  - ID: EX-PLATFORMS-ANDROID-DE07BDE7C0
+    Ctx: Copy
+    Body: moltbot nodes status
+  - ID: EX-PLATFORMS-ANDROID-876A49B0B5
+    Ctx: Copy
+    Body: moltbot gateway call node.list --params "{}"
+  - ID: EX-PLATFORMS-ANDROID-24902A9219
+    Ctx: Copy
+    Body: moltbot nodes invoke --node "<Android Node>" --command canvas.navigate --params '{"url":"http://<gateway-hostname>.local:18793/__moltbot__/canvas/"}'
+- ID: PLATFORMS-EXE-DEV
+  Src:
+    File: output/platforms/exe-dev.md
+    URL: https://docs.molt.bot/platforms/exe-dev
+  Facts: |-
+    H1: Exe dev - Moltbot
+    Platforms
+    H1: Exe dev
+    exe.dev
+    Goal: Moltbot Gateway running on an exe.dev VM, reachable from your laptop via: `https://<vm-name>.exe.xyz` This page assumes exe.dev's default **exeuntu** image. If you picked a different distro, map packages accordingly.
+    Beginner quick path
+    - <https://exe.new/moltbot>
+    - Fill in your auth key/token as needed
+    - Click on "Agent" next to your VM, and wait...
+    - ???
+    - Profit
+    What you need
+    - exe.dev account
+    - `ssh exe.dev` access to [exe.dev](https://exe.dev) virtual machines (optional)
+    Automated Install with Shelley
+    Shelley, [exe.dev](https://exe.dev)'s agent, can install Moltbot instantly with our prompt. The prompt used is as below:
+    Manual installation
+    1) Create the VM
+    From your device:
+    Then connect:
+    Tip: keep this VM **stateful**. Moltbot stores state under `~/.clawdbot/` and `~/clawd/`.
+    2) Install prerequisites (on the VM)
+    3) Install Moltbot
+    Run the Moltbot install script:
+    4) Setup nginx to proxy Moltbot to port 8000
+    Edit `/etc/nginx/sites-enabled/default` with
+    5) Access Moltbot and grant privileges
+    Access `https://<vm-name>.exe.xyz/?token=YOUR-TOKEN-FROM-TERMINAL`. Approve devices with `moltbot devices list` and `moltbot device approve`. When in doubt, use Shelley from your browser!
+    Remote Access
+    Remote access is handled by [exe.dev](https://exe.dev)'s authentication. By default, HTTP traffic from port 8000 is forwarded to `https://<vm-name>.exe.xyz` with email auth.
+    Updating
+    Guide: [Updating](/install/updating)
+  Ex:
+  - ID: EX-PLATFORMS-EXE-DEV-10B2838711
+    Ctx: Copy
+    Body: Set up Moltbot (https://docs.molt.bot/install) on this VM. Use the non-interactive and accept-risk flags for moltbot onboarding. Add the supplied auth or token as needed. Configure nginx to forward from the default port 18789 to the root location on the default enabled site config, making sure to enable Websocket support. Pairing is done by "moltbot devices list" and "moltbot device approve <request id>". Make sure the dashboard shows that Moltbot's health is OK. exe.dev handles forwarding from port 8000 to port 80/443 and HTTPS for us, so the final "reachable" should be <vm-name>.exe.xyz, without port specification.
+  - ID: EX-PLATFORMS-EXE-DEV-20B415AACC
+    Ctx: Copy
+    Body: 'ssh exe.dev new '
+  - ID: EX-PLATFORMS-EXE-DEV-39EE4B898C
+    Ctx: Copy
+    Body: ssh <vm-name>.exe.xyz
+  - ID: EX-PLATFORMS-EXE-DEV-52C79466DE
+    Ctx: Copy
+    Body: |-
+      sudo apt-get update
+      sudo apt-get install -y git curl jq ca-certificates openssl
+  - ID: EX-PLATFORMS-EXE-DEV-44BF00AA57
+    Ctx: Copy
+    Body: curl -fsSL https://molt.bot/install.sh | bash
+  - ID: EX-PLATFORMS-EXE-DEV-4C41186950
+    Ctx: Copy
+    Body: |-
+      server {
+      listen 80 default_server;
+      listen [::]:80 default_server;
+      listen 8000;
+      listen [::]:8000;
+  - ID: EX-PLATFORMS-EXE-DEV-BB079843EB
+    Body: server_name _;
+  - ID: EX-PLATFORMS-EXE-DEV-0A68DC050B
+    Body: |-
+      location / {
+      proxy_pass http://127.0.0.1:18789;
+      proxy_http_version 1.1;
+  - ID: EX-PLATFORMS-EXE-DEV-E649D1CF2F
+    Body: |-
+      # WebSocket support
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+  - ID: EX-PLATFORMS-EXE-DEV-05236F5DB7
+    Body: |-
+      # Standard proxy headers
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+  - ID: EX-PLATFORMS-EXE-DEV-387B182390
+    Body: |-
+      # Timeout settings for long-lived connections
+      proxy_read_timeout 86400s;
+      proxy_send_timeout 86400s;
+      }
+      }
+  - ID: EX-PLATFORMS-EXE-DEV-FAC68A6EA5
+    Ctx: Copy
+    Body: |-
+      npm i -g moltbot@latest
+      moltbot doctor
+      moltbot gateway restart
+      moltbot health
+- ID: PLATFORMS-FLY
+  Src:
+    File: output/platforms/fly.md
+    URL: https://docs.molt.bot/platforms/fly
+  Facts: |-
+    H1: Fly.io - Moltbot
+    Platforms
+    H1: Fly.io
+    Deploy Moltbot on Fly.io
+    Fly.io Deployment
+    **Goal:** Moltbot Gateway running on a [Fly.io](https://fly.io) machine with persistent storage, automatic HTTPS, and Discord/channel access.
+    What you need
+    - [flyctl CLI](https://fly.io/docs/hands-on/install-flyctl/) installed
+    - Fly.io account (free tier works)
+    - Model auth: Anthropic API key (or other provider keys)
+    - Channel credentials: Discord bot token, Telegram token, etc.
+    Beginner quick path
+    - Clone repo -> customize `fly.toml`
+    - Create app + volume -> set secrets
+    - Deploy with `fly deploy`
+    - SSH in to create config or use Control UI
+    1) Create the Fly app
+    **Tip:** Choose a region close to you. Common options: `lhr` (London), `iad` (Virginia), `sjc` (San Jose).
+    2) Configure fly.toml
+    Edit `fly.toml` to match your app name and requirements. **Security note:** The default config exposes a public URL. For a hardened deployment with no public IP, see Private Deployment or use `fly.private.toml`.
+    **Key settings:**
+    3) Set secrets
+    **Notes:**
+    - Non-loopback binds (`--bind lan`) require `CLAWDBOT_GATEWAY_TOKEN` for security.
+    - Treat these tokens like passwords.
+    - **Prefer env vars over config file** for all API keys and tokens. This keeps secrets out of `moltbot.json` where they could be accidentally exposed or logged.
+    4) Deploy
+    First deploy builds the Docker image (~2-3 minutes). Subsequent deploys are faster. After deployment, verify:
+    You should see:
+    5) Create config file
+    SSH into the machine to create a proper config:
+    Create the config directory and file:
+    **Note:** With `CLAWDBOT_STATE_DIR=/data`, the config path is `/data/moltbot.json`. **Note:** The Discord token can come from either:
+    - Environment variable: `DISCORD_BOT_TOKEN` (recommended for secrets)
+    - Config file: `channels.discord.token`
+    If using env var, no need to add token to config. The gateway reads `DISCORD_BOT_TOKEN` automatically. Restart to apply:
+    6) Access the Gateway
+    Control UI
+    Open in browser:
+    Or visit `https://my-moltbot.fly.dev/` Paste your gateway token (the one from `CLAWDBOT_GATEWAY_TOKEN`) to authenticate.
+    Logs
+    SSH Console
+    Troubleshooting
+    "App is not listening on expected address"
+    The gateway is binding to `127.0.0.1` instead of `0.0.0.0`. **Fix:** Add `--bind lan` to your process command in `fly.toml`.
+    Health checks failing / connection refused
+    Fly can't reach the gateway on the configured port. **Fix:** Ensure `internal_port` matches the gateway port (set `--port 3000` or `CLAWDBOT_GATEWAY_PORT=3000`).
+    OOM / Memory Issues
+    Container keeps restarting or getting killed. Signs: `SIGABRT`, `v8::internal::Runtime_AllocateInYoungGeneration`, or silent restarts. **Fix:** Increase memory in `fly.toml`:
+    Or update an existing machine:
+    **Note:** 512MB is too small. 1GB may work but can OOM under load or with verbose logging. **2GB is recommended.**
+    Gateway Lock Issues
+    Gateway refuses to start with "already running" errors. This happens when the container restarts but the PID lock file persists on the volume. **Fix:** Delete the lock file:
+    The lock file is at `/data/gateway.*.lock` (not in a subdirectory).
+    Config Not Being Read
+    If using `--allow-unconfigured`, the gateway creates a minimal config. Your custom config at `/data/moltbot.json` should be read on restart. Verify the config exists:
+    Writing Config via SSH
+    The `fly ssh console -C` command doesn't support shell redirection. To write a config file:
+    **Note:** `fly sftp` may fail if the file already exists. Delete first:
+    State Not Persisting
+    If you lose credentials or sessions after a restart, the state dir is writing to the container filesystem. **Fix:** Ensure `CLAWDBOT_STATE_DIR=/data` is set in `fly.toml` and redeploy.
+    Updates
+    Updating Machine Command
+    If you need to change the startup command without a full redeploy:
+    **Note:** After `fly deploy`, the machine command may reset to what's in `fly.toml`. If you made manual changes, re-apply them after deploy.
+    Private Deployment (Hardened)
+    By default, Fly allocates public IPs, making your gateway accessible at `https://your-app.fly.dev`. This is convenient but means your deployment is discoverable by internet scanners (Shodan, Censys, etc.). For a hardened deployment with **no public exposure** , use the private template.
+    When to use private deployment
+    - You only make **outbound** calls/messages (no inbound webhooks)
+    - You use **ngrok or Tailscale** tunnels for any webhook callbacks
+    - You access the gateway via **SSH, proxy, or WireGuard** instead of browser
+    - You want the deployment **hidden from internet scanners**
+    Setup
+    Use `fly.private.toml` instead of the standard config:
+    Or convert an existing deployment:
+    After this, `fly ips list` should show only a `private` type IP:
+    Accessing a private deployment
+    Since there's no public URL, use one of these methods: **Option 1: Local proxy (simplest)**
+    **Option 2: WireGuard VPN**
+    **Option 3: SSH only**
+    Webhooks with private deployment
+    If you need webhook callbacks (Twilio, Telnyx, etc.) without public exposure:
+    - **ngrok tunnel** \- Run ngrok inside the container or as a sidecar
+    - **Tailscale Funnel** \- Expose specific paths via Tailscale
+    - **Outbound-only** \- Some providers (Twilio) work fine for outbound calls without webhooks
+    Example voice-call config with ngrok:
+    The ngrok tunnel runs inside the container and provides a public webhook URL without exposing the Fly app itself.
+    Security benefits
+    Notes
+    - Fly.io uses **x86 architecture** (not ARM)
+    - The Dockerfile is compatible with both architectures
+    - For WhatsApp/Telegram onboarding, use `fly ssh console`
+    - Persistent data lives on the volume at `/data`
+    - Signal requires Java + signal-cli; use a custom image and keep memory at 2GB+.
+    Cost
+    With the recommended config (`shared-cpu-2x`, 2GB RAM):
+    - ~$10-15/month depending on usage
+    - Free tier includes some allowance
+    See [Fly.io pricing](https://fly.io/docs/about/pricing/) for details.
+  Tables: |-
+    Setting| Why
+    ---|---
+    `--bind lan`| Binds to `0.0.0.0` so Fly's proxy can reach the gateway
+    `--allow-unconfigured`| Starts without a config file (you'll create one after)
+    `internal_port = 3000`| Must match `--port 3000` (or `CLAWDBOT_GATEWAY_PORT`) for Fly health checks
+    `memory = "2048mb"`| 512MB is too small; 2GB recommended
+    `CLAWDBOT_STATE_DIR = "/data"`| Persists state on the volume
+
+    Aspect| Public| Private
+    ---|---|---
+    Internet scanners| Discoverable| Hidden
+    Direct attacks| Possible| Blocked
+    Control UI access| Browser| Proxy/VPN
+    Webhook delivery| Direct| Via tunnel
+  Ex:
+  - ID: EX-PLATFORMS-FLY-2C2596D569
+    Ctx: Copy
+    Body: |-
+      # Clone the repo
+      git clone https://github.com/moltbot/moltbot.git
+      cd moltbot
+  - ID: EX-PLATFORMS-FLY-5F8BAA207C
+    Body: |-
+      # Create a new Fly app (pick your own name)
+      fly apps create my-moltbot
+  - ID: EX-PLATFORMS-FLY-84E6B495FD
+    Body: |-
+      # Create a persistent volume (1GB is usually enough)
+      fly volumes create moltbot_data --size 1 --region iad
+  - ID: EX-PLATFORMS-FLY-6092FD0847
+    Ctx: Copy
+    Body: |-
+      app = "my-moltbot"  # Your app name
+      primary_region = "iad"
+  - ID: EX-PLATFORMS-FLY-15255B9571
+    Body: |-
+      [build]
+      dockerfile = "Dockerfile"
+  - ID: EX-PLATFORMS-FLY-00A6F30C40
+    Body: |-
+      [env]
+      NODE_ENV = "production"
+      CLAWDBOT_PREFER_PNPM = "1"
+      CLAWDBOT_STATE_DIR = "/data"
+      NODE_OPTIONS = "--max-old-space-size=1536"
+  - ID: EX-PLATFORMS-FLY-863F56D307
+    Body: |-
+      [processes]
+      app = "node dist/index.js gateway --allow-unconfigured --port 3000 --bind lan"
+  - ID: EX-PLATFORMS-FLY-69B0845FDA
+    Body: |-
+      [http_service]
+      internal_port = 3000
+      force_https = true
+      auto_stop_machines = false
+      auto_start_machines = true
+      min_machines_running = 1
+      processes = ["app"]
+  - ID: EX-PLATFORMS-FLY-F5C921F5A4
+    Body: |-
+      [[vm]]
+      size = "shared-cpu-2x"
+      memory = "2048mb"
+  - ID: EX-PLATFORMS-FLY-56F04B3DD0
+    Body: |-
+      [mounts]
+      source = "moltbot_data"
+      destination = "/data"
+  - ID: EX-PLATFORMS-FLY-D6136186A8
+    Ctx: Copy
+    Body: |-
+      # Required: Gateway token (for non-loopback binding)
+      fly secrets set CLAWDBOT_GATEWAY_TOKEN=$(openssl rand -hex 32)
+  - ID: EX-PLATFORMS-FLY-921270154E
+    Body: |-
+      # Model provider API keys
+      fly secrets set ANTHROPIC_API_KEY=sk-ant-...
+  - ID: EX-PLATFORMS-FLY-DA05690CD6
+    Body: |-
+      # Optional: Other providers
+      fly secrets set OPENAI_API_KEY=sk-...
+      fly secrets set GOOGLE_API_KEY=...
+  - ID: EX-PLATFORMS-FLY-926C653460
+    Body: |-
+      # Channel tokens
+      fly secrets set DISCORD_BOT_TOKEN=MTQ...
+  - ID: EX-PLATFORMS-FLY-6F204F7C7E
+    Ctx: Copy
+    Body: fly deploy
+  - ID: EX-PLATFORMS-FLY-308FCF2383
+    Ctx: Copy
+    Body: |-
+      fly status
+      fly logs
+  - ID: EX-PLATFORMS-FLY-DBD87EBB90
+    Ctx: Copy
+    Body: |-
+      [gateway] listening on ws://0.0.0.0:3000 (PID xxx)
+      [discord] logged in to discord as xxx
+  - ID: EX-PLATFORMS-FLY-19B1596FD6
+    Ctx: Copy
+    Body: fly ssh console
+  - ID: EX-PLATFORMS-FLY-EA58A12478
+    Ctx: Copy
+    Body: |-
+      mkdir -p /data
+      cat > /data/moltbot.json << 'EOF'
+      {
+      "agents": {
+      "defaults": {
+      "model": {
+      "primary": "anthropic/claude-opus-4-5",
+      "fallbacks": ["anthropic/claude-sonnet-4-5", "openai/gpt-4o"]
+      },
+      "maxConcurrent": 4
+      },
+      "list": [
+      {
+      "id": "main",
+      "default": true
+      }
+      ]
+      },
+      "auth": {
+      "profiles": {
+      "anthropic:default": { "mode": "token", "provider": "anthropic" },
+      "openai:default": { "mode": "token", "provider": "openai" }
+      }
+      },
+      "bindings": [
+      {
+      "agentId": "main",
+      "match": { "channel": "discord" }
+      }
+      ],
+      "channels": {
+      "discord": {
+      "enabled": true,
+      "groupPolicy": "allowlist",
+      "guilds": {
+      "YOUR_GUILD_ID": {
+      "channels": { "general": { "allow": true } },
+      "requireMention": false
+      }
+      }
+      }
+      },
+      "gateway": {
+      "mode": "local",
+      "bind": "auto"
+      },
+      "meta": {
+      "lastTouchedVersion": "2026.1.27-beta.1"
+      }
+      }
+      EOF
+  - ID: EX-PLATFORMS-FLY-98CBC65F14
+    Ctx: Copy
+    Body: |-
+      exit
+      fly machine restart <machine-id>
+  - ID: EX-PLATFORMS-FLY-5B45491382
+    Ctx: Copy
+    Body: fly open
+  - ID: EX-PLATFORMS-FLY-4A7DE1C163
+    Ctx: Copy
+    Body: |-
+      fly logs              # Live logs
+      fly logs --no-tail    # Recent logs
+  - ID: EX-PLATFORMS-FLY-6336173A61
+    Ctx: Copy
+    Body: |-
+      [[vm]]
+      memory = "2048mb"
+  - ID: EX-PLATFORMS-FLY-FC9995B95A
+    Ctx: Copy
+    Body: fly machine update <machine-id> --vm-memory 2048 -y
+  - ID: EX-PLATFORMS-FLY-0B3CB931D2
+    Ctx: Copy
+    Body: |-
+      fly ssh console --command "rm -f /data/gateway.*.lock"
+      fly machine restart <machine-id>
+  - ID: EX-PLATFORMS-FLY-142C499A1E
+    Ctx: Copy
+    Body: fly ssh console --command "cat /data/moltbot.json"
+  - ID: EX-PLATFORMS-FLY-71910CF5F1
+    Ctx: Copy
+    Body: |-
+      # Use echo + tee (pipe from local to remote)
+      echo '{"your":"config"}' | fly ssh console -C "tee /data/moltbot.json"
+  - ID: EX-PLATFORMS-FLY-FB77AE54CB
+    Body: |-
+      # Or use sftp
+      fly sftp shell
+      > put /local/path/config.json /data/moltbot.json
+  - ID: EX-PLATFORMS-FLY-5DA0F31F23
+    Ctx: Copy
+    Body: fly ssh console --command "rm /data/moltbot.json"
+  - ID: EX-PLATFORMS-FLY-3BC65FC3BC
+    Ctx: Copy
+    Body: |-
+      # Pull latest changes
+      git pull
+  - ID: EX-PLATFORMS-FLY-B688D2BDB5
+    Body: |-
+      # Redeploy
+      fly deploy
+  - ID: EX-PLATFORMS-FLY-BC76988422
+    Body: |-
+      # Check health
+      fly status
+      fly logs
+  - ID: EX-PLATFORMS-FLY-940004E0A7
+    Ctx: Copy
+    Body: |-
+      # Get machine ID
+      fly machines list
+  - ID: EX-PLATFORMS-FLY-8737EC9F33
+    Body: |-
+      # Update command
+      fly machine update <machine-id> --command "node dist/index.js gateway --port 3000 --bind lan" -y
+  - ID: EX-PLATFORMS-FLY-97A0A0FA0F
+    Body: |-
+      # Or with memory increase
+      fly machine update <machine-id> --vm-memory 2048 --command "node dist/index.js gateway --port 3000 --bind lan" -y
+  - ID: EX-PLATFORMS-FLY-7B1AFAFAE6
+    Ctx: Copy
+    Body: |-
+      # Deploy with private config
+      fly deploy -c fly.private.toml
+  - ID: EX-PLATFORMS-FLY-DC32D2C424
+    Ctx: Copy
+    Body: |-
+      # List current IPs
+      fly ips list -a my-moltbot
+  - ID: EX-PLATFORMS-FLY-CE31F1792C
+    Body: |-
+      # Release public IPs
+      fly ips release <public-ipv4> -a my-moltbot
+      fly ips release <public-ipv6> -a my-moltbot
+  - ID: EX-PLATFORMS-FLY-BE6583C523
+    Body: |-
+      # Switch to private config so future deploys don't re-allocate public IPs
+      # (remove [http_service] or deploy with the private template)
+      fly deploy -c fly.private.toml
+  - ID: EX-PLATFORMS-FLY-9DD3516794
+    Body: |-
+      # Allocate private-only IPv6
+      fly ips allocate-v6 --private -a my-moltbot
+  - ID: EX-PLATFORMS-FLY-1B0F739033
+    Ctx: Copy
+    Body: |-
+      VERSION  IP                   TYPE             REGION
+      v6       fdaa:x:x:x:x::x      private          global
+  - ID: EX-PLATFORMS-FLY-B927C89ED8
+    Ctx: Copy
+    Body: |-
+      # Forward local port 3000 to the app
+      fly proxy 3000:3000 -a my-moltbot
+  - ID: EX-PLATFORMS-FLY-5B5611E029
+    Body: '# Then open http://localhost:3000 in browser'
+  - ID: EX-PLATFORMS-FLY-70F2960C47
+    Ctx: Copy
+    Body: |-
+      # Create WireGuard config (one-time)
+      fly wireguard create
+  - ID: EX-PLATFORMS-FLY-4DD1671545
+    Body: |-
+      # Import to WireGuard client, then access via internal IPv6
+      # Example: http://[fdaa:x:x:x:x::x]:3000
+  - ID: EX-PLATFORMS-FLY-CD53030D27
+    Ctx: Copy
+    Body: fly ssh console -a my-moltbot
+  - ID: EX-PLATFORMS-FLY-17793E6FE9
+    Ctx: Copy
+    Body: |-
+      {
+      "plugins": {
+      "entries": {
+      "voice-call": {
+      "enabled": true,
+      "config": {
+      "provider": "twilio",
+      "tunnel": { "provider": "ngrok" }
+      }
+      }
+      }
+      }
+      }
+- ID: PLATFORMS-GCP
+  Src:
+    File: output/platforms/gcp.md
+    URL: https://docs.molt.bot/platforms/gcp
+  Facts: |-
+    H1: Gcp - Moltbot
+    Platforms
+    H1: Gcp
+    Moltbot on GCP Compute Engine (Docker, Production VPS Guide)
+    Goal
+    Run a persistent Moltbot Gateway on a GCP Compute Engine VM using Docker, with durable state, baked-in binaries, and safe restart behavior. If you want "Moltbot 24/7 for ~$5-12/mo", this is a reliable setup on Google Cloud. Pricing varies by machine type and region; pick the smallest VM that fits your workload and scale up if you hit OOMs.
+    What are we doing (simple terms)?
+    - Create a GCP project and enable billing
+    - Create a Compute Engine VM
+    - Install Docker (isolated app runtime)
+    - Start the Moltbot Gateway in Docker
+    - Persist `~/.clawdbot` \+ `~/clawd` on the host (survives restarts/rebuilds)
+    - Access the Control UI from your laptop via an SSH tunnel
+    The Gateway can be accessed via:
+    - SSH port forwarding from your laptop
+    - Direct port exposure if you manage firewalling and tokens yourself
+    This guide uses Debian on GCP Compute Engine. Ubuntu also works; map packages accordingly. For the generic Docker flow, see [Docker](/install/docker).
+    Quick path (experienced operators)
+    - Create GCP project + enable Compute Engine API
+    - Create Compute Engine VM (e2-small, Debian 12, 20GB)
+    - SSH into the VM
+    - Install Docker
+    - Clone Moltbot repository
+    - Create persistent host directories
+    - Configure `.env` and `docker-compose.yml`
+    - Bake required binaries, build, and launch
+    What you need
+    - GCP account (free tier eligible for e2-micro)
+    - gcloud CLI installed (or use Cloud Console)
+    - SSH access from your laptop
+    - Basic comfort with SSH + copy/paste
+    - ~20-30 minutes
+    - Docker and Docker Compose
+    - Model auth credentials
+    - Optional provider credentials
+    - WhatsApp QR
+    - Telegram bot token
+    - Gmail OAuth
+    1) Install gcloud CLI (or use Console)
+    **Option A: gcloud CLI** (recommended for automation) Install from <https://cloud.google.com/sdk/docs/install> Initialize and authenticate:
+    **Option B: Cloud Console** All steps can be done via the web UI at <https://console.cloud.google.com>
+    2) Create a GCP project
+    **CLI:**
+    Enable billing at <https://console.cloud.google.com/billing> (required for Compute Engine). Enable the Compute Engine API:
+    **Console:**
+    - Go to IAM & Admin > Create Project
+    - Name it and create
+    - Enable billing for the project
+    - Navigate to APIs & Services > Enable APIs > search "Compute Engine API" > Enable
+    3) Create the VM
+    **Machine types:**
+    **CLI:**
+    **Console:**
+    - Go to Compute Engine > VM instances > Create instance
+    - Name: `moltbot-gateway`
+    - Region: `us-central1`, Zone: `us-central1-a`
+    - Machine type: `e2-small`
+    - Boot disk: Debian 12, 20GB
+    - Create
+    4) SSH into the VM
+    **CLI:**
+    **Console:** Click the "SSH" button next to your VM in the Compute Engine dashboard. Note: SSH key propagation can take 1-2 minutes after VM creation. If connection is refused, wait and retry.
+    5) Install Docker (on the VM)
+    Log out and back in for the group change to take effect:
+    Then SSH back in:
+    Verify:
+    6) Clone the Moltbot repository
+    This guide assumes you will build a custom image to guarantee binary persistence.
+    7) Create persistent host directories
+    Docker containers are ephemeral. All long-lived state must live on the host.
+    8) Configure environment variables
+    Create `.env` in the repository root.
+    Generate strong secrets:
+    **Do not commit this file.**
+    9) Docker Compose configuration
+    Create or update `docker-compose.yml`.
+    10) Bake required binaries into the image (critical)
+    Installing binaries inside a running container is a trap. Anything installed at runtime will be lost on restart. All external binaries required by skills must be installed at image build time. The examples below show three common binaries only:
+    - `gog` for Gmail access
+    - `goplaces` for Google Places
+    - `wacli` for WhatsApp
+    These are examples, not a complete list. You may install as many binaries as needed using the same pattern. If you add new skills later that depend on additional binaries, you must:
+    - Update the Dockerfile
+    - Rebuild the image
+    - Restart the containers
+    **Example Dockerfile**
+    11) Build and launch
+    Verify binaries:
+    Expected output:
+    12) Verify Gateway
+    Success:
+    13) Access from your laptop
+    Create an SSH tunnel to forward the Gateway port:
+    Open in your browser: `http://127.0.0.1:18789/` Paste your gateway token.
+    What persists where (source of truth)
+    Moltbot runs in Docker, but Docker is not the source of truth. All long-lived state must survive restarts, rebuilds, and reboots.
+    Updates
+    To update Moltbot on the VM:
+    Troubleshooting
+    **SSH connection refused** SSH key propagation can take 1-2 minutes after VM creation. Wait and retry. **OS Login issues** Check your OS Login profile:
+    Ensure your account has the required IAM permissions (Compute OS Login or Compute OS Admin Login). **Out of memory (OOM)** If using e2-micro and hitting OOM, upgrade to e2-small or e2-medium:
+    Service accounts (security best practice)
+    For personal use, your default user account works fine. For automation or CI/CD pipelines, create a dedicated service account with minimal permissions:
+    - Create a service account:
+    - Grant Compute Instance Admin role (or narrower custom role):
+    Avoid using the Owner role for automation. Use the principle of least privilege. See <https://cloud.google.com/iam/docs/understanding-roles> for IAM role details.
+    Next steps
+    - Set up messaging channels: [Channels](/channels)
+    - Pair local devices as nodes: [Nodes](/nodes)
+    - Configure the Gateway: [Gateway configuration](/gateway/configuration)
+  Tables: |-
+    Type| Specs| Cost| Notes
+    ---|---|---|---
+    e2-small| 2 vCPU, 2GB RAM| ~$12/mo| Recommended
+    e2-micro| 2 vCPU (shared), 1GB RAM| Free tier eligible| May OOM under load
+
+    Component| Location| Persistence mechanism| Notes
+    ---|---|---|---
+    Gateway config| `/home/node/.clawdbot/`| Host volume mount| Includes `moltbot.json`, tokens
+    Model auth profiles| `/home/node/.clawdbot/`| Host volume mount| OAuth tokens, API keys
+    Skill configs| `/home/node/.clawdbot/skills/`| Host volume mount| Skill-level state
+    Agent workspace| `/home/node/clawd/`| Host volume mount| Code and agent artifacts
+    WhatsApp session| `/home/node/.clawdbot/`| Host volume mount| Preserves QR login
+    Gmail keyring| `/home/node/.clawdbot/`| Host volume + password| Requires `GOG_KEYRING_PASSWORD`
+    External binaries| `/usr/local/bin/`| Docker image| Must be baked at build time
+    Node runtime| Container filesystem| Docker image| Rebuilt every image build
+    OS packages| Container filesystem| Docker image| Do not install at runtime
+    Docker container| Ephemeral| Restartable| Safe to destroy
+  Ex:
+  - ID: EX-PLATFORMS-GCP-C498B128EE
+    Ctx: Copy
+    Body: |-
+      gcloud init
+      gcloud auth login
+  - ID: EX-PLATFORMS-GCP-7F8142358F
+    Ctx: Copy
+    Body: |-
+      gcloud projects create my-moltbot-project --name="Moltbot Gateway"
+      gcloud config set project my-moltbot-project
+  - ID: EX-PLATFORMS-GCP-FDD2FF750E
+    Ctx: Copy
+    Body: gcloud services enable compute.googleapis.com
+  - ID: EX-PLATFORMS-GCP-322B2271C9
+    Ctx: Copy
+    Body: |-
+      gcloud compute instances create moltbot-gateway \
+      --zone=us-central1-a \
+      --machine-type=e2-small \
+      --boot-disk-size=20GB \
+      --image-family=debian-12 \
+      --image-project=debian-cloud
+  - ID: EX-PLATFORMS-GCP-6355AD17C4
+    Ctx: Copy
+    Body: gcloud compute ssh moltbot-gateway --zone=us-central1-a
+  - ID: EX-PLATFORMS-GCP-7218595409
+    Ctx: Copy
+    Body: |-
+      sudo apt-get update
+      sudo apt-get install -y git curl ca-certificates
+      curl -fsSL https://get.docker.com | sudo sh
+      sudo usermod -aG docker $USER
+  - ID: EX-PLATFORMS-GCP-DE3AC21778
+    Ctx: Copy
+    Body: exit
+  - ID: EX-PLATFORMS-GCP-AE1F1E13FB
+    Ctx: Copy
+    Body: |-
+      docker --version
+      docker compose version
+  - ID: EX-PLATFORMS-GCP-5ED2495F55
+    Ctx: Copy
+    Body: |-
+      git clone https://github.com/moltbot/moltbot.git
+      cd moltbot
+  - ID: EX-PLATFORMS-GCP-34F927F6A1
+    Ctx: Copy
+    Body: |-
+      mkdir -p ~/.clawdbot
+      mkdir -p ~/clawd
+  - ID: EX-PLATFORMS-GCP-2FA44CBC5A
+    Ctx: Copy
+    Body: |-
+      CLAWDBOT_IMAGE=moltbot:latest
+      CLAWDBOT_GATEWAY_TOKEN=change-me-now
+      CLAWDBOT_GATEWAY_BIND=lan
+      CLAWDBOT_GATEWAY_PORT=18789
+  - ID: EX-PLATFORMS-GCP-AB30FEF727
+    Body: |-
+      CLAWDBOT_CONFIG_DIR=/home/$USER/.clawdbot
+      CLAWDBOT_WORKSPACE_DIR=/home/$USER/clawd
+  - ID: EX-PLATFORMS-GCP-BEAB38DD6C
+    Body: |-
+      GOG_KEYRING_PASSWORD=change-me-now
+      XDG_CONFIG_HOME=/home/node/.clawdbot
+  - ID: EX-PLATFORMS-GCP-678D4BE5A0
+    Ctx: Copy
+    Body: openssl rand -hex 32
+  - ID: EX-PLATFORMS-GCP-57FB20B6E4
+    Ctx: Copy
+    Body: |-
+      services:
+      moltbot-gateway:
+      image: ${CLAWDBOT_IMAGE}
+      build: .
+      restart: unless-stopped
+      env_file:
+      - .env
+      environment:
+      - HOME=/home/node
+      - NODE_ENV=production
+      - TERM=xterm-256color
+      - CLAWDBOT_GATEWAY_BIND=${CLAWDBOT_GATEWAY_BIND}
+      - CLAWDBOT_GATEWAY_PORT=${CLAWDBOT_GATEWAY_PORT}
+      - CLAWDBOT_GATEWAY_TOKEN=${CLAWDBOT_GATEWAY_TOKEN}
+      - GOG_KEYRING_PASSWORD=${GOG_KEYRING_PASSWORD}
+      - XDG_CONFIG_HOME=${XDG_CONFIG_HOME}
+      - PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      volumes:
+      - ${CLAWDBOT_CONFIG_DIR}:/home/node/.clawdbot
+      - ${CLAWDBOT_WORKSPACE_DIR}:/home/node/clawd
+      ports:
+      # Recommended: keep the Gateway loopback-only on the VM; access via SSH tunnel.
+      # To expose it publicly, remove the `127.0.0.1:` prefix and firewall accordingly.
+      - "127.0.0.1:${CLAWDBOT_GATEWAY_PORT}:18789"
+  - ID: EX-PLATFORMS-GCP-224F298B33
+    Body: |-
+      # Optional: only if you run iOS/Android nodes against this VM and need Canvas host.
+      # If you expose this publicly, read /gateway/security and firewall accordingly.
+      # - "18793:18793"
+      command:
+      [
+      "node",
+      "dist/index.js",
+      "gateway",
+      "--bind",
+      "${CLAWDBOT_GATEWAY_BIND}",
+      "--port",
+      "${CLAWDBOT_GATEWAY_PORT}"
+      ]
+  - ID: EX-PLATFORMS-GCP-6262207F04
+    Ctx: Copy
+    Body: FROM node:22-bookworm
+  - ID: EX-PLATFORMS-GCP-DEAC05FEB2
+    Body: RUN apt-get update && apt-get install -y socat && rm -rf /var/lib/apt/lists/*
+  - ID: EX-PLATFORMS-GCP-BCD995C39A
+    Body: |-
+      # Example binary 1: Gmail CLI
+      RUN curl -L https://github.com/steipete/gog/releases/latest/download/gog_Linux_x86_64.tar.gz \
+      | tar -xz -C /usr/local/bin && chmod +x /usr/local/bin/gog
+  - ID: EX-PLATFORMS-GCP-42E1EC6308
+    Body: |-
+      # Example binary 2: Google Places CLI
+      RUN curl -L https://github.com/steipete/goplaces/releases/latest/download/goplaces_Linux_x86_64.tar.gz \
+      | tar -xz -C /usr/local/bin && chmod +x /usr/local/bin/goplaces
+  - ID: EX-PLATFORMS-GCP-060CD77044
+    Body: |-
+      # Example binary 3: WhatsApp CLI
+      RUN curl -L https://github.com/steipete/wacli/releases/latest/download/wacli_Linux_x86_64.tar.gz \
+      | tar -xz -C /usr/local/bin && chmod +x /usr/local/bin/wacli
+  - ID: EX-PLATFORMS-GCP-F8DD05996A
+    Body: '# Add more binaries below using the same pattern'
+  - ID: EX-PLATFORMS-GCP-2D47FEAC61
+    Body: |-
+      WORKDIR /app
+      COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+      COPY ui/package.json ./ui/package.json
+      COPY scripts ./scripts
+  - ID: EX-PLATFORMS-GCP-A6C8C461D6
+    Body: |-
+      RUN corepack enable
+      RUN pnpm install --frozen-lockfile
+  - ID: EX-PLATFORMS-GCP-AF077D5B8E
+    Body: |-
+      COPY . .
+      RUN pnpm build
+      RUN pnpm ui:install
+      RUN pnpm ui:build
+  - ID: EX-PLATFORMS-GCP-8676B4E57A
+    Body: ENV NODE_ENV=production
+  - ID: EX-PLATFORMS-GCP-904B50DE38
+    Body: CMD ["node","dist/index.js"]
+  - ID: EX-PLATFORMS-GCP-F348B494DF
+    Ctx: Copy
+    Body: |-
+      docker compose build
+      docker compose up -d moltbot-gateway
+  - ID: EX-PLATFORMS-GCP-5BDF75D734
+    Ctx: Copy
+    Body: |-
+      docker compose exec moltbot-gateway which gog
+      docker compose exec moltbot-gateway which goplaces
+      docker compose exec moltbot-gateway which wacli
+  - ID: EX-PLATFORMS-GCP-1067283E99
+    Ctx: Copy
+    Body: |-
+      /usr/local/bin/gog
+      /usr/local/bin/goplaces
+      /usr/local/bin/wacli
+  - ID: EX-PLATFORMS-GCP-603A9F57CE
+    Ctx: Copy
+    Body: docker compose logs -f moltbot-gateway
+  - ID: EX-PLATFORMS-GCP-280EAEB15F
+    Ctx: Copy
+    Body: '[gateway] listening on ws://0.0.0.0:18789'
+  - ID: EX-PLATFORMS-GCP-D5DBB2A428
+    Ctx: Copy
+    Body: gcloud compute ssh moltbot-gateway --zone=us-central1-a -- -L 18789:127.0.0.1:18789
+  - ID: EX-PLATFORMS-GCP-6B421B9307
+    Ctx: Copy
+    Body: |-
+      cd ~/moltbot
+      git pull
+      docker compose build
+      docker compose up -d
+  - ID: EX-PLATFORMS-GCP-EA142FB2C3
+    Ctx: Copy
+    Body: gcloud compute os-login describe-profile
+  - ID: EX-PLATFORMS-GCP-063C8F49B3
+    Ctx: Copy
+    Body: |-
+      # Stop the VM first
+      gcloud compute instances stop moltbot-gateway --zone=us-central1-a
+  - ID: EX-PLATFORMS-GCP-C20365DB06
+    Body: |-
+      # Change machine type
+      gcloud compute instances set-machine-type moltbot-gateway \
+      --zone=us-central1-a \
+      --machine-type=e2-small
+  - ID: EX-PLATFORMS-GCP-3D404824B5
+    Body: |-
+      # Start the VM
+      gcloud compute instances start moltbot-gateway --zone=us-central1-a
+  - ID: EX-PLATFORMS-GCP-AE0EA0CA7B
+    Ctx: Copy
+    Body: |-
+      gcloud iam service-accounts create moltbot-deploy \
+      --display-name="Moltbot Deployment"
+  - ID: EX-PLATFORMS-GCP-B862F2995A
+    Ctx: Copy
+    Body: |-
+      gcloud projects add-iam-policy-binding my-moltbot-project \
+      --member="serviceAccount:[[email protected]](/cdn-cgi/l/email-protection)" \
+      --role="roles/compute.instanceAdmin.v1"
+- ID: PLATFORMS-HETZNER
+  Src:
+    File: output/platforms/hetzner.md
+    URL: https://docs.molt.bot/platforms/hetzner
+  Facts: |-
+    H1: Hetzner - Moltbot
+    Platforms
+    H1: Hetzner
+    Moltbot on Hetzner (Docker, Production VPS Guide)
+    Goal
+    Run a persistent Moltbot Gateway on a Hetzner VPS using Docker, with durable state, baked-in binaries, and safe restart behavior. If you want "Moltbot 24/7 for ~$5", this is the simplest reliable setup. Hetzner pricing changes; pick the smallest Debian/Ubuntu VPS and scale up if you hit OOMs.
+    What are we doing (simple terms)?
+    - Rent a small Linux server (Hetzner VPS)
+    - Install Docker (isolated app runtime)
+    - Start the Moltbot Gateway in Docker
+    - Persist `~/.clawdbot` \+ `~/clawd` on the host (survives restarts/rebuilds)
+    - Access the Control UI from your laptop via an SSH tunnel
+    The Gateway can be accessed via:
+    - SSH port forwarding from your laptop
+    - Direct port exposure if you manage firewalling and tokens yourself
+    This guide assumes Ubuntu or Debian on Hetzner. If you are on another Linux VPS, map packages accordingly. For the generic Docker flow, see [Docker](/install/docker).
+    Quick path (experienced operators)
+    - Provision Hetzner VPS
+    - Install Docker
+    - Clone Moltbot repository
+    - Create persistent host directories
+    - Configure `.env` and `docker-compose.yml`
+    - Bake required binaries into the image
+    - `docker compose up -d`
+    - Verify persistence and Gateway access
+    What you need
+    - Hetzner VPS with root access
+    - SSH access from your laptop
+    - Basic comfort with SSH + copy/paste
+    - ~20 minutes
+    - Docker and Docker Compose
+    - Model auth credentials
+    - Optional provider credentials
+    - WhatsApp QR
+    - Telegram bot token
+    - Gmail OAuth
+    1) Provision the VPS
+    Create an Ubuntu or Debian VPS in Hetzner. Connect as root:
+    This guide assumes the VPS is stateful. Do not treat it as disposable infrastructure.
+    2) Install Docker (on the VPS)
+    Verify:
+    3) Clone the Moltbot repository
+    This guide assumes you will build a custom image to guarantee binary persistence.
+    4) Create persistent host directories
+    Docker containers are ephemeral. All long-lived state must live on the host.
+    5) Configure environment variables
+    Create `.env` in the repository root.
+    Generate strong secrets:
+    **Do not commit this file.**
+    6) Docker Compose configuration
+    Create or update `docker-compose.yml`.
+    7) Bake required binaries into the image (critical)
+    Installing binaries inside a running container is a trap. Anything installed at runtime will be lost on restart. All external binaries required by skills must be installed at image build time. The examples below show three common binaries only:
+    - `gog` for Gmail access
+    - `goplaces` for Google Places
+    - `wacli` for WhatsApp
+    These are examples, not a complete list. You may install as many binaries as needed using the same pattern. If you add new skills later that depend on additional binaries, you must:
+    - Update the Dockerfile
+    - Rebuild the image
+    - Restart the containers
+    **Example Dockerfile**
+    8) Build and launch
+    Verify binaries:
+    Expected output:
+    9) Verify Gateway
+    Success:
+    From your laptop:
+    Open: `http://127.0.0.1:18789/` Paste your gateway token.
+    What persists where (source of truth)
+    Moltbot runs in Docker, but Docker is not the source of truth. All long-lived state must survive restarts, rebuilds, and reboots.
+  Tables: |-
+    Component| Location| Persistence mechanism| Notes
+    ---|---|---|---
+    Gateway config| `/home/node/.clawdbot/`| Host volume mount| Includes `moltbot.json`, tokens
+    Model auth profiles| `/home/node/.clawdbot/`| Host volume mount| OAuth tokens, API keys
+    Skill configs| `/home/node/.clawdbot/skills/`| Host volume mount| Skill-level state
+    Agent workspace| `/home/node/clawd/`| Host volume mount| Code and agent artifacts
+    WhatsApp session| `/home/node/.clawdbot/`| Host volume mount| Preserves QR login
+    Gmail keyring| `/home/node/.clawdbot/`| Host volume + password| Requires `GOG_KEYRING_PASSWORD`
+    External binaries| `/usr/local/bin/`| Docker image| Must be baked at build time
+    Node runtime| Container filesystem| Docker image| Rebuilt every image build
+    OS packages| Container filesystem| Docker image| Do not install at runtime
+    Docker container| Ephemeral| Restartable| Safe to destroy
+  Ex:
+  - ID: EX-PLATFORMS-HETZNER-35B558800A
+    Ctx: Copy
+    Body: ssh root@YOUR_VPS_IP
+  - ID: EX-PLATFORMS-HETZNER-E797177995
+    Ctx: Copy
+    Body: |-
+      apt-get update
+      apt-get install -y git curl ca-certificates
+      curl -fsSL https://get.docker.com | sh
+  - ID: EX-PLATFORMS-HETZNER-AE1F1E13FB
+    Ctx: Copy
+    Body: |-
+      docker --version
+      docker compose version
+  - ID: EX-PLATFORMS-HETZNER-5ED2495F55
+    Ctx: Copy
+    Body: |-
+      git clone https://github.com/moltbot/moltbot.git
+      cd moltbot
+  - ID: EX-PLATFORMS-HETZNER-1FCA9A6E2F
+    Ctx: Copy
+    Body: |-
+      mkdir -p /root/.clawdbot
+      mkdir -p /root/clawd
+  - ID: EX-PLATFORMS-HETZNER-BACD6DA0AF
+    Body: |-
+      # Set ownership to the container user (uid 1000):
+      chown -R 1000:1000 /root/.clawdbot
+      chown -R 1000:1000 /root/clawd
+  - ID: EX-PLATFORMS-HETZNER-2FA44CBC5A
+    Ctx: Copy
+    Body: |-
+      CLAWDBOT_IMAGE=moltbot:latest
+      CLAWDBOT_GATEWAY_TOKEN=change-me-now
+      CLAWDBOT_GATEWAY_BIND=lan
+      CLAWDBOT_GATEWAY_PORT=18789
+  - ID: EX-PLATFORMS-HETZNER-D10B81E89D
+    Body: |-
+      CLAWDBOT_CONFIG_DIR=/root/.clawdbot
+      CLAWDBOT_WORKSPACE_DIR=/root/clawd
+  - ID: EX-PLATFORMS-HETZNER-BEAB38DD6C
+    Body: |-
+      GOG_KEYRING_PASSWORD=change-me-now
+      XDG_CONFIG_HOME=/home/node/.clawdbot
+  - ID: EX-PLATFORMS-HETZNER-678D4BE5A0
+    Ctx: Copy
+    Body: openssl rand -hex 32
+  - ID: EX-PLATFORMS-HETZNER-F524AABAA7
+    Ctx: Copy
+    Body: |-
+      services:
+      moltbot-gateway:
+      image: ${CLAWDBOT_IMAGE}
+      build: .
+      restart: unless-stopped
+      env_file:
+      - .env
+      environment:
+      - HOME=/home/node
+      - NODE_ENV=production
+      - TERM=xterm-256color
+      - CLAWDBOT_GATEWAY_BIND=${CLAWDBOT_GATEWAY_BIND}
+      - CLAWDBOT_GATEWAY_PORT=${CLAWDBOT_GATEWAY_PORT}
+      - CLAWDBOT_GATEWAY_TOKEN=${CLAWDBOT_GATEWAY_TOKEN}
+      - GOG_KEYRING_PASSWORD=${GOG_KEYRING_PASSWORD}
+      - XDG_CONFIG_HOME=${XDG_CONFIG_HOME}
+      - PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      volumes:
+      - ${CLAWDBOT_CONFIG_DIR}:/home/node/.clawdbot
+      - ${CLAWDBOT_WORKSPACE_DIR}:/home/node/clawd
+      ports:
+      # Recommended: keep the Gateway loopback-only on the VPS; access via SSH tunnel.
+      # To expose it publicly, remove the `127.0.0.1:` prefix and firewall accordingly.
+      - "127.0.0.1:${CLAWDBOT_GATEWAY_PORT}:18789"
+  - ID: EX-PLATFORMS-HETZNER-AE3A64ABEA
+    Body: |-
+      # Optional: only if you run iOS/Android nodes against this VPS and need Canvas host.
+      # If you expose this publicly, read /gateway/security and firewall accordingly.
+      # - "18793:18793"
+      command:
+      [
+      "node",
+      "dist/index.js",
+      "gateway",
+      "--bind",
+      "${CLAWDBOT_GATEWAY_BIND}",
+      "--port",
+      "${CLAWDBOT_GATEWAY_PORT}"
+      ]
+  - ID: EX-PLATFORMS-HETZNER-6262207F04
+    Ctx: Copy
+    Body: FROM node:22-bookworm
+  - ID: EX-PLATFORMS-HETZNER-DEAC05FEB2
+    Body: RUN apt-get update && apt-get install -y socat && rm -rf /var/lib/apt/lists/*
+  - ID: EX-PLATFORMS-HETZNER-BCD995C39A
+    Body: |-
+      # Example binary 1: Gmail CLI
+      RUN curl -L https://github.com/steipete/gog/releases/latest/download/gog_Linux_x86_64.tar.gz \
+      | tar -xz -C /usr/local/bin && chmod +x /usr/local/bin/gog
+  - ID: EX-PLATFORMS-HETZNER-42E1EC6308
+    Body: |-
+      # Example binary 2: Google Places CLI
+      RUN curl -L https://github.com/steipete/goplaces/releases/latest/download/goplaces_Linux_x86_64.tar.gz \
+      | tar -xz -C /usr/local/bin && chmod +x /usr/local/bin/goplaces
+  - ID: EX-PLATFORMS-HETZNER-060CD77044
+    Body: |-
+      # Example binary 3: WhatsApp CLI
+      RUN curl -L https://github.com/steipete/wacli/releases/latest/download/wacli_Linux_x86_64.tar.gz \
+      | tar -xz -C /usr/local/bin && chmod +x /usr/local/bin/wacli
+  - ID: EX-PLATFORMS-HETZNER-F8DD05996A
+    Body: '# Add more binaries below using the same pattern'
+  - ID: EX-PLATFORMS-HETZNER-2D47FEAC61
+    Body: |-
+      WORKDIR /app
+      COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+      COPY ui/package.json ./ui/package.json
+      COPY scripts ./scripts
+  - ID: EX-PLATFORMS-HETZNER-A6C8C461D6
+    Body: |-
+      RUN corepack enable
+      RUN pnpm install --frozen-lockfile
+  - ID: EX-PLATFORMS-HETZNER-AF077D5B8E
+    Body: |-
+      COPY . .
+      RUN pnpm build
+      RUN pnpm ui:install
+      RUN pnpm ui:build
+  - ID: EX-PLATFORMS-HETZNER-8676B4E57A
+    Body: ENV NODE_ENV=production
+  - ID: EX-PLATFORMS-HETZNER-904B50DE38
+    Body: CMD ["node","dist/index.js"]
+  - ID: EX-PLATFORMS-HETZNER-F348B494DF
+    Ctx: Copy
+    Body: |-
+      docker compose build
+      docker compose up -d moltbot-gateway
+  - ID: EX-PLATFORMS-HETZNER-5BDF75D734
+    Ctx: Copy
+    Body: |-
+      docker compose exec moltbot-gateway which gog
+      docker compose exec moltbot-gateway which goplaces
+      docker compose exec moltbot-gateway which wacli
+  - ID: EX-PLATFORMS-HETZNER-1067283E99
+    Ctx: Copy
+    Body: |-
+      /usr/local/bin/gog
+      /usr/local/bin/goplaces
+      /usr/local/bin/wacli
+  - ID: EX-PLATFORMS-HETZNER-603A9F57CE
+    Ctx: Copy
+    Body: docker compose logs -f moltbot-gateway
+  - ID: EX-PLATFORMS-HETZNER-280EAEB15F
+    Ctx: Copy
+    Body: '[gateway] listening on ws://0.0.0.0:18789'
+  - ID: EX-PLATFORMS-HETZNER-F29F7D70D1
+    Ctx: Copy
+    Body: ssh -N -L 18789:127.0.0.1:18789 root@YOUR_VPS_IP
+- ID: PLATFORMS-IOS
+  Src:
+    File: output/platforms/ios.md
+    URL: https://docs.molt.bot/platforms/ios
+  Facts: |-
+    H1: Ios - Moltbot
+    Platforms
+    H1: Ios
+    iOS App (Node)
+    Availability: internal preview. The iOS app is not publicly distributed yet.
+    What it does
+    - Connects to a Gateway over WebSocket (LAN or tailnet).
+    - Exposes node capabilities: Canvas, Screen snapshot, Camera capture, Location, Talk mode, Voice wake.
+    - Receives `node.invoke` commands and reports node status events.
+    Requirements
+    - Gateway running on another device (macOS, Linux, or Windows via WSL2).
+    - Network path:
+    - Same LAN via Bonjour, **or**
+    - Tailnet via unicast DNS-SD (`moltbot.internal.`), **or**
+    - Manual host/port (fallback).
+    Quick start (pair + connect)
+    - Start the Gateway:
+    - In the iOS app, open Settings and pick a discovered gateway (or enable Manual Host and enter host/port).
+    - Approve the pairing request on the gateway host:
+    - Verify connection:
+    Discovery paths
+    Bonjour (LAN)
+    The Gateway advertises `_moltbot._tcp` on `local.`. The iOS app lists these automatically.
+    Tailnet (cross-network)
+    If mDNS is blocked, use a unicast DNS-SD zone (recommended domain: `moltbot.internal.`) and Tailscale split DNS. See [Bonjour](/gateway/bonjour) for the CoreDNS example.
+    Manual host/port
+    In Settings, enable **Manual Host** and enter the gateway host + port (default `18789`).
+    Canvas + A2UI
+    The iOS node renders a WKWebView canvas. Use `node.invoke` to drive it:
+    Notes:
+    - The Gateway canvas host serves `/__moltbot__/canvas/` and `/__moltbot__/a2ui/`.
+    - The iOS node auto-navigates to A2UI on connect when a canvas host URL is advertised.
+    - Return to the built-in scaffold with `canvas.navigate` and `{"url":""}`.
+    Canvas eval / snapshot
+    Voice wake + talk mode
+    - Voice wake and talk mode are available in Settings.
+    - iOS may suspend background audio; treat voice features as best-effort when the app is not active.
+    Common errors
+    - `NODE_BACKGROUND_UNAVAILABLE`: bring the iOS app to the foreground (canvas/camera/screen commands require it).
+    - `A2UI_HOST_NOT_CONFIGURED`: the Gateway did not advertise a canvas host URL; check `canvasHost` in [Gateway configuration](/gateway/configuration).
+    - Pairing prompt never appears: run `moltbot nodes pending` and approve manually.
+    - Reconnect fails after reinstall: the Keychain pairing token was cleared; re-pair the node.
+    Related docs
+    - [Pairing](/gateway/pairing)
+    - [Discovery](/gateway/discovery)
+    - [Bonjour](/gateway/bonjour)
+  Ex:
+  - ID: EX-PLATFORMS-IOS-90954A50A7
+    Ctx: Copy
+    Body: moltbot gateway --port 18789
+  - ID: EX-PLATFORMS-IOS-ECA5A1CDD6
+    Ctx: Copy
+    Body: |-
+      moltbot nodes pending
+      moltbot nodes approve <requestId>
+  - ID: EX-PLATFORMS-IOS-FFF5B93771
+    Ctx: Copy
+    Body: |-
+      moltbot nodes status
+      moltbot gateway call node.list --params "{}"
+  - ID: EX-PLATFORMS-IOS-D3D88A8814
+    Ctx: Copy
+    Body: moltbot nodes invoke --node "iOS Node" --command canvas.navigate --params '{"url":"http://<gateway-host>:18793/__moltbot__/canvas/"}'
+  - ID: EX-PLATFORMS-IOS-033E7A28A1
+    Ctx: Copy
+    Body: moltbot nodes invoke --node "iOS Node" --command canvas.eval --params '{"javaScript":"(() => { const {ctx} = window.__moltbot; ctx.clearRect(0,0,innerWidth,innerHeight); ctx.lineWidth=6; ctx.strokeStyle=\"#ff2d55\"; ctx.beginPath(); ctx.moveTo(40,40); ctx.lineTo(innerWidth-40, innerHeight-40); ctx.stroke(); return \"ok\"; })()"}'
+  - ID: EX-PLATFORMS-IOS-B985CB2692
+    Ctx: Copy
+    Body: moltbot nodes invoke --node "iOS Node" --command canvas.snapshot --params '{"maxWidth":900,"format":"jpeg"}'
+- ID: PLATFORMS-LINUX
+  Src:
+    File: output/platforms/linux.md
+    URL: https://docs.molt.bot/platforms/linux
+  Facts: |-
+    H1: Linux - Moltbot
+    Platforms
+    H1: Linux
+    Linux App
+    The Gateway is fully supported on Linux. **Node is the recommended runtime**. Bun is not recommended for the Gateway (WhatsApp/Telegram bugs). Native Linux companion apps are planned. Contributions are welcome if you want to help build one.
+    Beginner quick path (VPS)
+    - Install Node 22+
+    - `npm i -g moltbot@latest`
+    - `moltbot onboard --install-daemon`
+    - From your laptop: `ssh -N -L 18789:127.0.0.1:18789 <user>@<host>`
+    - Open `http://127.0.0.1:18789/` and paste your token
+    Step-by-step VPS guide: [exe.dev](/platforms/exe-dev)
+    Install
+    - [Getting Started](/start/getting-started)
+    - [Install & updates](/install/updating)
+    - Optional flows: [Bun (experimental)](/install/bun), [Nix](/install/nix), [Docker](/install/docker)
+    Gateway
+    - [Gateway runbook](/gateway)
+    - [Configuration](/gateway/configuration)
+    Gateway service install (CLI)
+    Use one of these:
+    Or:
+    Select **Gateway service** when prompted. Repair/migrate:
+    System control (systemd user unit)
+    Moltbot installs a systemd **user** service by default. Use a **system** service for shared or always-on servers. The full unit example and guidance live in the [Gateway runbook](/gateway). Minimal setup: Create `~/.config/systemd/user/moltbot-gateway[-<profile>].service`:
+    Enable it:
+  Ex:
+  - ID: EX-PLATFORMS-LINUX-CAFCB38B10
+    Ctx: Copy
+    Body: moltbot onboard --install-daemon
+  - ID: EX-PLATFORMS-LINUX-75A40EEB92
+    Ctx: Copy
+    Body: moltbot gateway install
+  - ID: EX-PLATFORMS-LINUX-B12AF73D80
+    Ctx: Copy
+    Body: moltbot configure
+  - ID: EX-PLATFORMS-LINUX-01B12A0318
+    Ctx: Copy
+    Body: moltbot doctor
+  - ID: EX-PLATFORMS-LINUX-C2B2E48A86
+    Ctx: Copy
+    Body: |-
+      [Unit]
+      Description=Moltbot Gateway (profile: <profile>, v<version>)
+      After=network-online.target
+      Wants=network-online.target
+  - ID: EX-PLATFORMS-LINUX-06EA618281
+    Body: |-
+      [Service]
+      ExecStart=/usr/local/bin/moltbot gateway --port 18789
+      Restart=always
+      RestartSec=5
+  - ID: EX-PLATFORMS-LINUX-4B31B62F2E
+    Body: |-
+      [Install]
+      WantedBy=default.target
+  - ID: EX-PLATFORMS-LINUX-15BE1ADE38
+    Ctx: Copy
+    Body: systemctl --user enable --now moltbot-gateway[-<profile>].service
+- ID: PLATFORMS-MACOS-VM
+  Src:
+    File: output/platforms/macos-vm.md
+    URL: https://docs.molt.bot/platforms/macos-vm
+  Facts: |-
+    H1: Macos vm - Moltbot
+    Platforms
+    H1: Macos vm
+    Moltbot on macOS VMs (Sandboxing)
+    Recommended default (most users)
+    - **Small Linux VPS** for an always-on Gateway and low cost. See [VPS hosting](/vps).
+    - **Dedicated hardware** (Mac mini or Linux box) if you want full control and a **residential IP** for browser automation. Many sites block data center IPs, so local browsing often works better.
+    - **Hybrid:** keep the Gateway on a cheap VPS, and connect your Mac as a **node** when you need browser/UI automation. See [Nodes](/nodes) and [Gateway remote](/gateway/remote).
+    Use a macOS VM when you specifically need macOS-only capabilities (iMessage/BlueBubbles) or want strict isolation from your daily Mac.
+    macOS VM options
+    Local VM on your Apple Silicon Mac (Lume)
+    Run Moltbot in a sandboxed macOS VM on your existing Apple Silicon Mac using [Lume](https://cua.ai/docs/lume). This gives you:
+    - Full macOS environment in isolation (your host stays clean)
+    - iMessage support via BlueBubbles (impossible on Linux/Windows)
+    - Instant reset by cloning VMs
+    - No extra hardware or cloud costs
+    Hosted Mac providers (cloud)
+    If you want macOS in the cloud, hosted Mac providers work too:
+    - [MacStadium](https://www.macstadium.com/) (hosted Macs)
+    - Other hosted Mac vendors also work; follow their VM + SSH docs
+    Once you have SSH access to a macOS VM, continue at step 6 below.
+    Quick path (Lume, experienced users)
+    - Install Lume
+    - `lume create moltbot --os macos --ipsw latest`
+    - Complete Setup Assistant, enable Remote Login (SSH)
+    - `lume run moltbot --no-display`
+    - SSH in, install Moltbot, configure channels
+    - Done
+    What you need (Lume)
+    - Apple Silicon Mac (M1/M2/M3/M4)
+    - macOS Sequoia or later on the host
+    - ~60 GB free disk space per VM
+    - ~20 minutes
+    1) Install Lume
+    If `~/.local/bin` isn't in your PATH:
+    Verify:
+    Docs: [Lume Installation](https://cua.ai/docs/lume/guide/getting-started/installation)
+    2) Create the macOS VM
+    This downloads macOS and creates the VM. A VNC window opens automatically. Note: The download can take a while depending on your connection.
+    3) Complete Setup Assistant
+    In the VNC window:
+    - Select language and region
+    - Skip Apple ID (or sign in if you want iMessage later)
+    - Create a user account (remember the username and password)
+    - Skip all optional features
+    After setup completes, enable SSH:
+    - Open System Settings -> General -> Sharing
+    - Enable "Remote Login"
+    4) Get the VM's IP address
+    Look for the IP address (usually `192.168.64.x`).
+    5) SSH into the VM
+    Replace `youruser` with the account you created, and the IP with your VM's IP.
+    6) Install Moltbot
+    Inside the VM:
+    Follow the onboarding prompts to set up your model provider (Anthropic, OpenAI, etc.).
+    7) Configure channels
+    Edit the config file:
+    Add your channels:
+    Then login to WhatsApp (scan QR):
+    8) Run the VM headlessly
+    Stop the VM and restart without display:
+    The VM runs in the background. Moltbot's daemon keeps the gateway running. To check status:
+    Bonus: iMessage integration
+    This is the killer feature of running on macOS. Use [BlueBubbles](https://bluebubbles.app) to add iMessage to Moltbot. Inside the VM:
+    - Download BlueBubbles from bluebubbles.app
+    - Sign in with your Apple ID
+    - Enable the Web API and set a password
+    - Point BlueBubbles webhooks at your gateway (example: `https://your-gateway-host:3000/bluebubbles-webhook?password=<password>`)
+    Add to your Moltbot config:
+    Restart the gateway. Now your agent can send and receive iMessages. Full setup details: [BlueBubbles channel](/channels/bluebubbles)
+    Save a golden image
+    Before customizing further, snapshot your clean state:
+    Reset anytime:
+    Running 24/7
+    Keep the VM running by:
+    - Keeping your Mac plugged in
+    - Disabling sleep in System Settings -> Energy Saver
+    - Using `caffeinate` if needed
+    For true always-on, consider a dedicated Mac mini or a small VPS. See [VPS hosting](/vps).
+    Troubleshooting
+    Related docs
+    - [VPS hosting](/vps)
+    - [Nodes](/nodes)
+    - [Gateway remote](/gateway/remote)
+    - [BlueBubbles channel](/channels/bluebubbles)
+    - [Lume Quickstart](https://cua.ai/docs/lume/guide/getting-started/quickstart)
+    - [Lume CLI Reference](https://cua.ai/docs/lume/reference/cli-reference)
+    - [Unattended VM Setup](https://cua.ai/docs/lume/guide/fundamentals/unattended-setup) (advanced)
+    - [Docker Sandboxing](/install/docker) (alternative isolation approach)
+  Tables: |-
+    Problem| Solution
+    ---|---
+    Can't SSH into VM| Check "Remote Login" is enabled in VM's System Settings
+    VM IP not showing| Wait for VM to fully boot, run `lume get moltbot` again
+    Lume command not found| Add `~/.local/bin` to your PATH
+    WhatsApp QR not scanning| Ensure you're logged into the VM (not host) when running `moltbot channels login`
+  Ex:
+  - ID: EX-PLATFORMS-MACOS-VM-F6535872E6
+    Ctx: Copy
+    Body: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/trycua/cua/main/libs/lume/scripts/install.sh)"
+  - ID: EX-PLATFORMS-MACOS-VM-3D8E1C10FC
+    Ctx: Copy
+    Body: echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.zshrc && source ~/.zshrc
+  - ID: EX-PLATFORMS-MACOS-VM-DCC5BB621C
+    Ctx: Copy
+    Body: lume --version
+  - ID: EX-PLATFORMS-MACOS-VM-504A1251CA
+    Ctx: Copy
+    Body: lume create moltbot --os macos --ipsw latest
+  - ID: EX-PLATFORMS-MACOS-VM-169876D701
+    Ctx: Copy
+    Body: lume get moltbot
+  - ID: EX-PLATFORMS-MACOS-VM-C66E103C5F
+    Ctx: Copy
+    Body: ssh [[email protected]](/cdn-cgi/l/email-protection)
+  - ID: EX-PLATFORMS-MACOS-VM-95FFBCAE67
+    Ctx: Copy
+    Body: |-
+      npm install -g moltbot@latest
+      moltbot onboard --install-daemon
+  - ID: EX-PLATFORMS-MACOS-VM-6A00ABECFB
+    Ctx: Copy
+    Body: nano ~/.clawdbot/moltbot.json
+  - ID: EX-PLATFORMS-MACOS-VM-AF6315E57E
+    Ctx: Copy
+    Body: |-
+      {
+      "channels": {
+      "whatsapp": {
+      "dmPolicy": "allowlist",
+      "allowFrom": ["+15551234567"]
+      },
+      "telegram": {
+      "botToken": "YOUR_BOT_TOKEN"
+      }
+      }
+      }
+  - ID: EX-PLATFORMS-MACOS-VM-5AC88972A8
+    Ctx: Copy
+    Body: moltbot channels login
+  - ID: EX-PLATFORMS-MACOS-VM-18B5211732
+    Ctx: Copy
+    Body: |-
+      lume stop moltbot
+      lume run moltbot --no-display
+  - ID: EX-PLATFORMS-MACOS-VM-87595CB0BA
+    Ctx: Copy
+    Body: ssh [[email protected]](/cdn-cgi/l/email-protection) "moltbot status"
+  - ID: EX-PLATFORMS-MACOS-VM-ED02026F2C
+    Ctx: Copy
+    Body: |-
+      {
+      "channels": {
+      "bluebubbles": {
+      "serverUrl": "http://localhost:1234",
+      "password": "your-api-password",
+      "webhookPath": "/bluebubbles-webhook"
+      }
+      }
+      }
+  - ID: EX-PLATFORMS-MACOS-VM-11FBE4B4E3
+    Ctx: Copy
+    Body: |-
+      lume stop moltbot
+      lume clone moltbot moltbot-golden
+  - ID: EX-PLATFORMS-MACOS-VM-8A0DA84050
+    Ctx: Copy
+    Body: |-
+      lume stop moltbot && lume delete moltbot
+      lume clone moltbot-golden moltbot
+      lume run moltbot --no-display
+- ID: PLATFORMS-MACOS
+  Src:
+    File: output/platforms/macos.md
+    URL: https://docs.molt.bot/platforms/macos
+  Facts: |-
+    H1: Macos - Moltbot
+    Platforms
+    H1: Macos
+    Moltbot macOS Companion (menu bar + gateway broker)
+    The macOS app is the **menubar companion** for Moltbot. It owns permissions, manages/attaches to the Gateway locally (launchd or manual), and exposes macOS capabilities to the agent as a node.
+    What it does
+    - Shows native notifications and status in the menu bar.
+    - Owns TCC prompts (Notifications, Accessibility, Screen Recording, Microphone, Speech Recognition, Automation/AppleScript).
+    - Runs or connects to the Gateway (local or remote).
+    - Exposes macOSonly tools (Canvas, Camera, Screen Recording, `system.run`).
+    - Starts the local node host service in **remote** mode (launchd), and stops it in **local** mode.
+    - Optionally hosts **PeekabooBridge** for UI automation.
+    - Installs the global CLI (`moltbot`) via npm/pnpm on request (bun not recommended for the Gateway runtime).
+    Local vs remote mode
+    - **Local** (default): the app attaches to a running local Gateway if present; otherwise it enables the launchd service via `moltbot gateway install`.
+    - **Remote** : the app connects to a Gateway over SSH/Tailscale and never starts a local process. The app starts the local **node host service** so the remote Gateway can reach this Mac. The app does not spawn the Gateway as a child process.
+    Launchd control
+    The app manages a peruser LaunchAgent labeled `bot.molt.gateway` (or `bot.molt.<profile>` when using `--profile`/`CLAWDBOT_PROFILE`; legacy `com.clawdbot.*` still unloads).
+    Replace the label with `bot.molt.<profile>` when running a named profile. If the LaunchAgent isn't installed, enable it from the app or run `moltbot gateway install`.
+    Node capabilities (mac)
+    The macOS app presents itself as a node. Common commands:
+    - Canvas: `canvas.present`, `canvas.navigate`, `canvas.eval`, `canvas.snapshot`, `canvas.a2ui.*`
+    - Camera: `camera.snap`, `camera.clip`
+    - Screen: `screen.record`
+    - System: `system.run`, `system.notify`
+    The node reports a `permissions` map so agents can decide what's allowed. Node service + app IPC:
+    - When the headless node host service is running (remote mode), it connects to the Gateway WS as a node.
+    - `system.run` executes in the macOS app (UI/TCC context) over a local Unix socket; prompts + output stay in-app.
+    Diagram (SCI):
+    Exec approvals (system.run)
+    `system.run` is controlled by **Exec approvals** in the macOS app (Settings -> Exec approvals). Security + ask + allowlist are stored locally on the Mac in:
+    Example:
+    Notes:
+    - `allowlist` entries are glob patterns for resolved binary paths.
+    - Choosing "Always Allow" in the prompt adds that command to the allowlist.
+    - `system.run` environment overrides are filtered (drops `PATH`, `DYLD_*`, `LD_*`, `NODE_OPTIONS`, `PYTHON*`, `PERL*`, `RUBYOPT`) and then merged with the app's environment.
+    Deep links
+    The app registers the `moltbot://` URL scheme for local actions.
+    `moltbot://agent`
+    Triggers a Gateway `agent` request.
+    Query parameters:
+    - `message` (required)
+    - `sessionKey` (optional)
+    - `thinking` (optional)
+    - `deliver` / `to` / `channel` (optional)
+    - `timeoutSeconds` (optional)
+    - `key` (optional unattended mode key)
+    Safety:
+    - Without `key`, the app prompts for confirmation.
+    - With a valid `key`, the run is unattended (intended for personal automations).
+    Onboarding flow (typical)
+    - Install and launch **Moltbot.app**.
+    - Complete the permissions checklist (TCC prompts).
+    - Ensure **Local** mode is active and the Gateway is running.
+    - Install the CLI if you want terminal access.
+    Build & dev workflow (native)
+    - `cd apps/macos && swift build`
+    - `swift run Moltbot` (or Xcode)
+    - Package app: `scripts/package-mac-app.sh`
+    Debug gateway connectivity (macOS CLI)
+    Use the debug CLI to exercise the same Gateway WebSocket handshake and discovery logic that the macOS app uses, without launching the app.
+    Connect options:
+    - `--url <ws://host:port>`: override config
+    - `--mode <local|remote>`: resolve from config (default: config or local)
+    - `--probe`: force a fresh health probe
+    - `--timeout <ms>`: request timeout (default: `15000`)
+    - `--json`: structured output for diffing
+    Discovery options:
+    - `--include-local`: include gateways that would be filtered as "local"
+    - `--timeout <ms>`: overall discovery window (default: `2000`)
+    - `--json`: structured output for diffing
+    Tip: compare against `moltbot gateway discover --json` to see whether the macOS app's discovery pipeline (NWBrowser + tailnet DNSSD fallback) differs from the Node CLI's `dns-sd` based discovery.
+    Remote connection plumbing (SSH tunnels)
+    When the macOS app runs in **Remote** mode, it opens an SSH tunnel so local UI components can talk to a remote Gateway as if it were on localhost.
+    Control tunnel (Gateway WebSocket port)
+    - **Purpose:** health checks, status, Web Chat, config, and other control-plane calls.
+    - **Local port:** the Gateway port (default `18789`), always stable.
+    - **Remote port:** the same Gateway port on the remote host.
+    - **Behavior:** no random local port; the app reuses an existing healthy tunnel or restarts it if needed.
+    - **SSH shape:** `ssh -N -L <local>:127.0.0.1:<remote>` with BatchMode + ExitOnForwardFailure + keepalive options.
+    - **IP reporting:** the SSH tunnel uses loopback, so the gateway will see the node IP as `127.0.0.1`. Use **Direct (ws/wss)** transport if you want the real client IP to appear (see [macOS remote access](/platforms/mac/remote)).
+    For setup steps, see [macOS remote access](/platforms/mac/remote). For protocol details, see [Gateway protocol](/gateway/protocol).
+    Related docs
+    - [Gateway runbook](/gateway)
+    - [Gateway (macOS)](/platforms/mac/bundled-gateway)
+    - [macOS permissions](/platforms/mac/permissions)
+    - [Canvas](/platforms/mac/canvas)
+  Ex:
+  - ID: EX-PLATFORMS-MACOS-6A3E1F64C6
+    Ctx: Copy
+    Body: |-
+      launchctl kickstart -k gui/$UID/bot.molt.gateway
+      launchctl bootout gui/$UID/bot.molt.gateway
+  - ID: EX-PLATFORMS-MACOS-2DCE143DAF
+    Ctx: Copy
+    Body: |-
+      Gateway -> Node Service (WS)
+      |  IPC (UDS + token + HMAC + TTL)
+      v
+      Mac App (UI + TCC + system.run)
+  - ID: EX-PLATFORMS-MACOS-D5B64E06B4
+    Ctx: Copy
+    Body: ~/.clawdbot/exec-approvals.json
+  - ID: EX-PLATFORMS-MACOS-3744761FC0
+    Ctx: Copy
+    Body: |-
+      {
+      "version": 1,
+      "defaults": {
+      "security": "deny",
+      "ask": "on-miss"
+      },
+      "agents": {
+      "main": {
+      "security": "allowlist",
+      "ask": "on-miss",
+      "allowlist": [
+      { "pattern": "/opt/homebrew/bin/rg" }
+      ]
+      }
+      }
+      }
+  - ID: EX-PLATFORMS-MACOS-922BF4CC39
+    Ctx: Copy
+    Body: open 'moltbot://agent?message=Hello%20from%20deep%20link'
+  - ID: EX-PLATFORMS-MACOS-9DFD98E679
+    Ctx: Copy
+    Body: |-
+      cd apps/macos
+      swift run moltbot-mac connect --json
+      swift run moltbot-mac discover --timeout 3000 --json
+- ID: PLATFORMS-WINDOWS
+  Src:
+    File: output/platforms/windows.md
+    URL: https://docs.molt.bot/platforms/windows
+  Facts: |-
+    H1: Windows - Moltbot
+    Platforms
+    H1: Windows
+    Windows (WSL2)
+    Moltbot on Windows is recommended **via WSL2** (Ubuntu recommended). The CLI + Gateway run inside Linux, which keeps the runtime consistent and makes tooling far more compatible (Node/Bun/pnpm, Linux binaries, skills). Native Windows installs are untested and more problematic. Native Windows companion apps are planned.
+    Install (WSL2)
+    - [Getting Started](/start/getting-started) (use inside WSL)
+    - [Install & updates](/install/updating)
+    - Official WSL2 guide (Microsoft): <https://learn.microsoft.com/windows/wsl/install>
+    Gateway
+    - [Gateway runbook](/gateway)
+    - [Configuration](/gateway/configuration)
+    Gateway service install (CLI)
+    Inside WSL2:
+    Or:
+    Select **Gateway service** when prompted. Repair/migrate:
+    Advanced: expose WSL services over LAN (portproxy)
+    WSL has its own virtual network. If another machine needs to reach a service running **inside WSL** (SSH, a local TTS server, or the Gateway), you must forward a Windows port to the current WSL IP. The WSL IP changes after restarts, so you may need to refresh the forwarding rule. Example (PowerShell **as Administrator**):
+    Allow the port through Windows Firewall (one-time):
+    Refresh the portproxy after WSL restarts:
+    Notes:
+    - SSH from another machine targets the **Windows host IP** (example: `ssh user@windows-host -p 2222`).
+    - Remote nodes must point at a **reachable** Gateway URL (not `127.0.0.1`); use `moltbot status --all` to confirm.
+    - Use `listenaddress=0.0.0.0` for LAN access; `127.0.0.1` keeps it local only.
+    - If you want this automatic, register a Scheduled Task to run the refresh step at login.
+    Step-by-step WSL2 install
+    1) Install WSL2 + Ubuntu
+    Open PowerShell (Admin):
+    Reboot if Windows asks.
+    2) Enable systemd (required for gateway install)
+    In your WSL terminal:
+    Then from PowerShell:
+    Re-open Ubuntu, then verify:
+    3) Install Moltbot (inside WSL)
+    Follow the Linux Getting Started flow inside WSL:
+    Full guide: [Getting Started](/start/getting-started)
+    Windows companion app
+    We do not have a Windows companion app yet. Contributions are welcome if you want contributions to make it happen.
+  Ex:
+  - ID: EX-PLATFORMS-WINDOWS-CAFCB38B10
+    Ctx: Copy
+    Body: moltbot onboard --install-daemon
+  - ID: EX-PLATFORMS-WINDOWS-75A40EEB92
+    Ctx: Copy
+    Body: moltbot gateway install
+  - ID: EX-PLATFORMS-WINDOWS-B12AF73D80
+    Ctx: Copy
+    Body: moltbot configure
+  - ID: EX-PLATFORMS-WINDOWS-01B12A0318
+    Ctx: Copy
+    Body: moltbot doctor
+  - ID: EX-PLATFORMS-WINDOWS-A9DD48B2F3
+    Ctx: Copy
+    Body: |-
+      $Distro = "Ubuntu-24.04"
+      $ListenPort = 2222
+      $TargetPort = 22
+  - ID: EX-PLATFORMS-WINDOWS-EEE789D13B
+    Body: |-
+      $WslIp = (wsl -d $Distro -- hostname -I).Trim().Split(" ")[0]
+      if (-not $WslIp) { throw "WSL IP not found." }
+  - ID: EX-PLATFORMS-WINDOWS-66F3AEB9E3
+    Body: |-
+      netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=$ListenPort `
+      connectaddress=$WslIp connectport=$TargetPort
+  - ID: EX-PLATFORMS-WINDOWS-E31AABA1BD
+    Ctx: Copy
+    Body: |-
+      New-NetFirewallRule -DisplayName "WSL SSH $ListenPort" -Direction Inbound `
+      -Protocol TCP -LocalPort $ListenPort -Action Allow
+  - ID: EX-PLATFORMS-WINDOWS-49397BB4FF
+    Ctx: Copy
+    Body: |-
+      netsh interface portproxy delete v4tov4 listenport=$ListenPort listenaddress=0.0.0.0 | Out-Null
+      netsh interface portproxy add v4tov4 listenport=$ListenPort listenaddress=0.0.0.0 `
+      connectaddress=$WslIp connectport=$TargetPort | Out-Null
+  - ID: EX-PLATFORMS-WINDOWS-02634720A9
+    Ctx: Copy
+    Body: |-
+      wsl --install
+      # Or pick a distro explicitly:
+      wsl --list --online
+      wsl --install -d Ubuntu-24.04
+  - ID: EX-PLATFORMS-WINDOWS-AE4E188F1C
+    Ctx: Copy
+    Body: |-
+      sudo tee /etc/wsl.conf >/dev/null <<'EOF'
+      [boot]
+      systemd=true
+      EOF
+  - ID: EX-PLATFORMS-WINDOWS-840CF1A25C
+    Ctx: Copy
+    Body: wsl --shutdown
+  - ID: EX-PLATFORMS-WINDOWS-EB760221FB
+    Ctx: Copy
+    Body: systemctl --user status
+  - ID: EX-PLATFORMS-WINDOWS-70792613D8
+    Ctx: Copy
+    Body: |-
+      git clone https://github.com/moltbot/moltbot.git
+      cd moltbot
+      pnpm install
+      pnpm ui:build # auto-installs UI deps on first run
+      pnpm build
+      moltbot onboard
+- ID: PLATFORMS-MAC-BUNDLED-GATEWAY
+  Src:
+    File: output/platforms/mac/bundled-gateway.md
+    URL: https://docs.molt.bot/platforms/mac/bundled-gateway
+  Facts: |-
+    H1: Bundled gateway - Moltbot
+    macOS Companion App
+    H1: Bundled gateway
+    Gateway on macOS (external launchd)
+    Moltbot.app no longer bundles Node/Bun or the Gateway runtime. The macOS app expects an **external** `moltbot` CLI install, does not spawn the Gateway as a child process, and manages a peruser launchd service to keep the Gateway running (or attaches to an existing local Gateway if one is already running).
+    Install the CLI (required for local mode)
+    You need Node 22+ on the Mac, then install `moltbot` globally:
+    The macOS app's **Install CLI** button runs the same flow via npm/pnpm (bun not recommended for Gateway runtime).
+    Launchd (Gateway as LaunchAgent)
+    Label:
+    - `bot.molt.gateway` (or `bot.molt.<profile>`; legacy `com.clawdbot.*` may remain)
+    Plist location (peruser):
+    - `~/Library/LaunchAgents/bot.molt.gateway.plist` (or `~/Library/LaunchAgents/bot.molt.<profile>.plist`)
+    Manager:
+    - The macOS app owns LaunchAgent install/update in Local mode.
+    - The CLI can also install it: `moltbot gateway install`.
+    Behavior:
+    - "Moltbot Active" enables/disables the LaunchAgent.
+    - App quit does **not** stop the gateway (launchd keeps it alive).
+    - If a Gateway is already running on the configured port, the app attaches to it instead of starting a new one.
+    Logging:
+    - launchd stdout/err: `/tmp/moltbot/moltbot-gateway.log`
+    Version compatibility
+    The macOS app checks the gateway version against its own version. If they're incompatible, update the global CLI to match the app version.
+    Smoke check
+    Then:
+  Ex:
+  - ID: EX-PLATFORMS-MAC-BUNDLED-GATEWAY-7B4C0753C4
+    Ctx: Copy
+    Body: npm install -g moltbot@<version>
+  - ID: EX-PLATFORMS-MAC-BUNDLED-GATEWAY-3BA528B178
+    Ctx: Copy
+    Body: moltbot --version
+  - ID: EX-PLATFORMS-MAC-BUNDLED-GATEWAY-ED79A300DB
+    Body: |-
+      CLAWDBOT_SKIP_CHANNELS=1 \
+      CLAWDBOT_SKIP_CANVAS_HOST=1 \
+      moltbot gateway --port 18999 --bind loopback
+  - ID: EX-PLATFORMS-MAC-BUNDLED-GATEWAY-E24333A777
+    Ctx: Copy
+    Body: moltbot gateway call health --url ws://127.0.0.1:18999 --timeout 3000
+- ID: PLATFORMS-MAC-CANVAS
+  Src:
+    File: output/platforms/mac/canvas.md
+    URL: https://docs.molt.bot/platforms/mac/canvas
+  Facts: |-
+    H1: Canvas - Moltbot
+    macOS Companion App
+    H1: Canvas
+    Canvas (macOS app)
+    The macOS app embeds an agentcontrolled **Canvas panel** using `WKWebView`. It is a lightweight visual workspace for HTML/CSS/JS, A2UI, and small interactive UI surfaces.
+    Where Canvas lives
+    Canvas state is stored under Application Support:
+    - `~/Library/Application Support/Moltbot/canvas/<session>/...`
+    The Canvas panel serves those files via a **custom URL scheme** :
+    - `moltbot-canvas://<session>/<path>`
+    Examples:
+    - `moltbot-canvas://main/` -> `<canvasRoot>/main/index.html`
+    - `moltbot-canvas://main/assets/app.css` -> `<canvasRoot>/main/assets/app.css`
+    - `moltbot-canvas://main/widgets/todo/` -> `<canvasRoot>/main/widgets/todo/index.html`
+    If no `index.html` exists at the root, the app shows a **builtin scaffold page**.
+    Panel behavior
+    - Borderless, resizable panel anchored near the menu bar (or mouse cursor).
+    - Remembers size/position per session.
+    - Autoreloads when local canvas files change.
+    - Only one Canvas panel is visible at a time (session is switched as needed).
+    Canvas can be disabled from Settings -> **Allow Canvas**. When disabled, canvas node commands return `CANVAS_DISABLED`.
+    Agent API surface
+    Canvas is exposed via the **Gateway WebSocket** , so the agent can:
+    - show/hide the panel
+    - navigate to a path or URL
+    - evaluate JavaScript
+    - capture a snapshot image
+    CLI examples:
+    Notes:
+    - `canvas.navigate` accepts **local canvas paths** , `http(s)` URLs, and `file://` URLs.
+    - If you pass `"/"`, the Canvas shows the local scaffold or `index.html`.
+    A2UI in Canvas
+    A2UI is hosted by the Gateway canvas host and rendered inside the Canvas panel. When the Gateway advertises a Canvas host, the macOS app autonavigates to the A2UI host page on first open. Default A2UI host URL:
+    A2UI commands (v0.8)
+    Canvas currently accepts **A2UI v0.8** server->client messages:
+    - `beginRendering`
+    - `surfaceUpdate`
+    - `dataModelUpdate`
+    - `deleteSurface`
+    `createSurface` (v0.9) is not supported. CLI example:
+    Quick smoke:
+    Triggering agent runs from Canvas
+    Canvas can trigger new agent runs via deep links:
+    - `moltbot://agent?...`
+    Example (in JS):
+    The app prompts for confirmation unless a valid key is provided.
+    Security notes
+    - Canvas scheme blocks directory traversal; files must live under the session root.
+    - Local Canvas content uses a custom scheme (no loopback server required).
+    - External `http(s)` URLs are allowed only when explicitly navigated.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-CANVAS-74E054A0C0
+    Ctx: Copy
+    Body: |-
+      moltbot nodes canvas present --node <id>
+      moltbot nodes canvas navigate --node <id> --url "/"
+      moltbot nodes canvas eval --node <id> --js "document.title"
+      moltbot nodes canvas snapshot --node <id>
+  - ID: EX-PLATFORMS-MAC-CANVAS-4A596B266A
+    Ctx: Copy
+    Body: http://<gateway-host>:18793/__moltbot__/a2ui/
+  - ID: EX-PLATFORMS-MAC-CANVAS-7851AD5FC6
+    Ctx: Copy
+    Body: |-
+      cat > /tmp/a2ui-v0.8.jsonl <<'EOFA2'
+      {"surfaceUpdate":{"surfaceId":"main","components":[{"id":"root","component":{"Column":{"children":{"explicitList":["title","content"]}}}},{"id":"title","component":{"Text":{"text":{"literalString":"Canvas (A2UI v0.8)"},"usageHint":"h1"}}},{"id":"content","component":{"Text":{"text":{"literalString":"If you can read this, A2UI push works."},"usageHint":"body"}}}]}}
+      {"beginRendering":{"surfaceId":"main","root":"root"}}
+      EOFA2
+  - ID: EX-PLATFORMS-MAC-CANVAS-13EEA9B0F0
+    Body: moltbot nodes canvas a2ui push --jsonl /tmp/a2ui-v0.8.jsonl --node <id>
+  - ID: EX-PLATFORMS-MAC-CANVAS-BC52F2EA99
+    Ctx: Copy
+    Body: moltbot nodes canvas a2ui push --node <id> --text "Hello from A2UI"
+  - ID: EX-PLATFORMS-MAC-CANVAS-380AE6A4C3
+    Ctx: Copy
+    Body: window.location.href = "moltbot://agent?message=Review%20this%20design";
+- ID: PLATFORMS-MAC-CHILD-PROCESS
+  Src:
+    File: output/platforms/mac/child-process.md
+    URL: https://docs.molt.bot/platforms/mac/child-process
+  Facts: |-
+    H1: Child process - Moltbot
+    macOS Companion App
+    H1: Child process
+    Gateway lifecycle on macOS
+    The macOS app **manages the Gateway via launchd** by default and does not spawn the Gateway as a child process. It first tries to attach to an alreadyrunning Gateway on the configured port; if none is reachable, it enables the launchd service via the external `moltbot` CLI (no embedded runtime). This gives you reliable autostart at login and restart on crashes. Childprocess mode (Gateway spawned directly by the app) is **not in use** today. If you need tighter coupling to the UI, run the Gateway manually in a terminal.
+    Default behavior (launchd)
+    - The app installs a peruser LaunchAgent labeled `bot.molt.gateway` (or `bot.molt.<profile>` when using `--profile`/`CLAWDBOT_PROFILE`; legacy `com.clawdbot.*` is supported).
+    - When Local mode is enabled, the app ensures the LaunchAgent is loaded and starts the Gateway if needed.
+    - Logs are written to the launchd gateway log path (visible in Debug Settings).
+    Common commands:
+    Replace the label with `bot.molt.<profile>` when running a named profile.
+    Unsigned dev builds
+    `scripts/restart-mac.sh --no-sign` is for fast local builds when you don't have signing keys. To prevent launchd from pointing at an unsigned relay binary, it:
+    - Writes `~/.clawdbot/disable-launchagent`.
+    Signed runs of `scripts/restart-mac.sh` clear this override if the marker is present. To reset manually:
+    Attach-only mode
+    To force the macOS app to **never install or manage launchd** , launch it with `--attach-only` (or `--no-launchd`). This sets `~/.clawdbot/disable-launchagent`, so the app only attaches to an already running Gateway. You can toggle the same behavior in Debug Settings.
+    Remote mode
+    Remote mode never starts a local Gateway. The app uses an SSH tunnel to the remote host and connects over that tunnel.
+    Why we prefer launchd
+    - Autostart at login.
+    - Builtin restart/KeepAlive semantics.
+    - Predictable logs and supervision.
+    If a true childprocess mode is ever needed again, it should be documented as a separate, explicit devonly mode.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-CHILD-PROCESS-6A3E1F64C6
+    Ctx: Copy
+    Body: |-
+      launchctl kickstart -k gui/$UID/bot.molt.gateway
+      launchctl bootout gui/$UID/bot.molt.gateway
+  - ID: EX-PLATFORMS-MAC-CHILD-PROCESS-B79A0BF017
+    Ctx: Copy
+    Body: rm ~/.clawdbot/disable-launchagent
+- ID: PLATFORMS-MAC-DEV-SETUP
+  Src:
+    File: output/platforms/mac/dev-setup.md
+    URL: https://docs.molt.bot/platforms/mac/dev-setup
+  Facts: |-
+    H1: Dev setup - Moltbot
+    macOS Companion App
+    H1: Dev setup
+    macOS Developer Setup
+    This guide covers the necessary steps to build and run the Moltbot macOS application from source.
+    Prerequisites
+    Before building the app, ensure you have the following installed:
+    - **Xcode 26.2+** : Required for Swift development.
+    - **Node.js 22+ & pnpm**: Required for the gateway, CLI, and packaging scripts.
+    1\. Install Dependencies
+    Install the project-wide dependencies:
+    2\. Build and Package the App
+    To build the macOS app and package it into `dist/Moltbot.app`, run:
+    If you don't have an Apple Developer ID certificate, the script will automatically use **ad-hoc signing** (`-`). For dev run modes, signing flags, and Team ID troubleshooting, see the macOS app README: <https://github.com/moltbot/moltbot/blob/main/apps/macos/README.md>
+    > **Note** : Ad-hoc signed apps may trigger security prompts. If the app crashes immediately with "Abort trap 6", see the Troubleshooting section.
+    3\. Install the CLI
+    The macOS app expects a global `moltbot` CLI install to manage background tasks. **To install it (recommended):**
+    - Open the Moltbot app.
+    - Go to the **General** settings tab.
+    - Click **"Install CLI"**.
+    Alternatively, install it manually:
+    Troubleshooting
+    Build Fails: Toolchain or SDK Mismatch
+    The macOS app build expects the latest macOS SDK and Swift 6.2 toolchain. **System dependencies (required):**
+    - **Latest macOS version available in Software Update** (required by Xcode 26.2 SDKs)
+    - **Xcode 26.2** (Swift 6.2 toolchain)
+    **Checks:**
+    If versions don't match, update macOS/Xcode and re-run the build.
+    App Crashes on Permission Grant
+    If the app crashes when you try to allow **Speech Recognition** or **Microphone** access, it may be due to a corrupted TCC cache or signature mismatch. **Fix:**
+    - Reset the TCC permissions:
+    - If that fails, change the `BUNDLE_ID` temporarily in [`scripts/package-mac-app.sh`](https://github.com/moltbot/moltbot/blob/main/scripts/package-mac-app.sh) to force a "clean slate" from macOS.
+    Gateway "Starting..." indefinitely
+    If the gateway status stays on "Starting...", check if a zombie process is holding the port:
+    If a manual run is holding the port, stop that process (Ctrl+C). As a last resort, kill the PID you found above.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-4AB13AD1EB
+    Ctx: Copy
+    Body: pnpm install
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-9BDEF86A87
+    Ctx: Copy
+    Body: ./scripts/package-mac-app.sh
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-7B4C0753C4
+    Ctx: Copy
+    Body: npm install -g moltbot@<version>
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-E80A287748
+    Ctx: Copy
+    Body: |-
+      xcodebuild -version
+      xcrun swift --version
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-C6CCE76597
+    Ctx: Copy
+    Body: tccutil reset All bot.molt.mac.debug
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-826BBBC61E
+    Ctx: Copy
+    Body: |-
+      moltbot gateway status
+      moltbot gateway stop
+  - ID: EX-PLATFORMS-MAC-DEV-SETUP-A39E8242A0
+    Body: |-
+      # If you're not using a LaunchAgent (dev mode / manual runs), find the listener:
+      lsof -nP -iTCP:18789 -sTCP:LISTEN
+- ID: PLATFORMS-MAC-HEALTH
+  Src:
+    File: output/platforms/mac/health.md
+    URL: https://docs.molt.bot/platforms/mac/health
+  Facts: |-
+    H1: Health - Moltbot
+    macOS Companion App
+    H1: Health
+    Health Checks on macOS
+    How to see whether the linked channel is healthy from the menu bar app.
+    Menu bar
+    - Status dot now reflects Baileys health:
+    - Green: linked + socket opened recently.
+    - Orange: connecting/retrying.
+    - Red: logged out or probe failed.
+    - Secondary line reads "linked  auth 12m" or shows the failure reason.
+    - "Run Health Check" menu item triggers an on-demand probe.
+    Settings
+    - General tab gains a Health card showing: linked auth age, session-store path/count, last check time, last error/status code, and buttons for Run Health Check / Reveal Logs.
+    - Uses a cached snapshot so the UI loads instantly and falls back gracefully when offline.
+    - **Channels tab** surfaces channel status + controls for WhatsApp/Telegram (login QR, logout, probe, last disconnect/error).
+    How the probe works
+    - App runs `moltbot health --json` via `ShellExecutor` every ~60s and on demand. The probe loads creds and reports status without sending messages.
+    - Cache the last good snapshot and the last error separately to avoid flicker; show the timestamp of each.
+    When in doubt
+    - You can still use the CLI flow in [Gateway health](/gateway/health) (`moltbot status`, `moltbot status --deep`, `moltbot health --json`) and tail `/tmp/moltbot/moltbot-*.log` for `web-heartbeat` / `web-reconnect`.
+- ID: PLATFORMS-MAC-ICON
+  Src:
+    File: output/platforms/mac/icon.md
+    URL: https://docs.molt.bot/platforms/mac/icon
+  Facts: |-
+    H1: Icon - Moltbot
+    macOS Companion App
+    H1: Icon
+    Menu Bar Icon States
+    Author: steipete  Updated: 2025-12-06  Scope: macOS app (`apps/macos`)
+    - **Idle:** Normal icon animation (blink, occasional wiggle).
+    - **Paused:** Status item uses `appearsDisabled`; no motion.
+    - **Voice trigger (big ears):** Voice wake detector calls `AppState.triggerVoiceEars(ttl: nil)` when the wake word is heard, keeping `earBoostActive=true` while the utterance is captured. Ears scale up (1.9x), get circular ear holes for readability, then drop via `stopVoiceEars()` after 1s of silence. Only fired from the in-app voice pipeline.
+    - **Working (agent running):** `AppState.isWorking=true` drives a "tail/leg scurry" micro-motion: faster leg wiggle and slight offset while work is in-flight. Currently toggled around WebChat agent runs; add the same toggle around other long tasks when you wire them.
+    Wiring points
+    - Voice wake: runtime/tester call `AppState.triggerVoiceEars(ttl: nil)` on trigger and `stopVoiceEars()` after 1s of silence to match the capture window.
+    - Agent activity: set `AppStateStore.shared.setWorking(true/false)` around work spans (already done in WebChat agent call). Keep spans short and reset in `defer` blocks to avoid stuck animations.
+    Shapes & sizes
+    - Base icon drawn in `CritterIconRenderer.makeIcon(blink:legWiggle:earWiggle:earScale:earHoles:)`.
+    - Ear scale defaults to `1.0`; voice boost sets `earScale=1.9` and toggles `earHoles=true` without changing overall frame (1818 pt template image rendered into a 3636 px Retina backing store).
+    - Scurry uses leg wiggle up to ~1.0 with a small horizontal jiggle; it's additive to any existing idle wiggle.
+    Behavioral notes
+    - No external CLI/broker toggle for ears/working; keep it internal to the app's own signals to avoid accidental flapping.
+    - Keep TTLs short (<10s) so the icon returns to baseline quickly if a job hangs.
+- ID: PLATFORMS-MAC-LOGGING
+  Src:
+    File: output/platforms/mac/logging.md
+    URL: https://docs.molt.bot/platforms/mac/logging
+  Facts: |-
+    H1: Logging - Moltbot
+    macOS Companion App
+    H1: Logging
+    Logging (macOS)
+    Rolling diagnostics file log (Debug pane)
+    Moltbot routes macOS app logs through swift-log (unified logging by default) and can write a local, rotating file log to disk when you need a durable capture.
+    - Verbosity: **Debug pane -> Logs -> App logging -> Verbosity**
+    - Enable: **Debug pane -> Logs -> App logging -> "Write rolling diagnostics log (JSONL)"**
+    - Location: `~/Library/Logs/Moltbot/diagnostics.jsonl` (rotates automatically; old files are suffixed with `.1`, `.2`, ...)
+    - Clear: **Debug pane -> Logs -> App logging -> "Clear"**
+    Notes:
+    - This is **off by default**. Enable only while actively debugging.
+    - Treat the file as sensitive; don't share it without review.
+    Unified logging private data on macOS
+    Unified logging redacts most payloads unless a subsystem opts into `privacy -off`. Per Peter's write-up on macOS [logging privacy shenanigans](https://steipete.me/posts/2025/logging-privacy-shenanigans) (2025) this is controlled by a plist in `/Library/Preferences/Logging/Subsystems/` keyed by the subsystem name. Only new log entries pick up the flag, so enable it before reproducing an issue.
+    Enable for Moltbot (`bot.molt`)
+    - Write the plist to a temp file first, then install it atomically as root:
+    - No reboot is required; logd notices the file quickly, but only new log lines will include private payloads.
+    - View the richer output with the existing helper, e.g. `./scripts/clawlog.sh --category WebChat --last 5m`.
+    Disable after debugging
+    - Remove the override: `sudo rm /Library/Preferences/Logging/Subsystems/bot.molt.plist`.
+    - Optionally run `sudo log config --reload` to force logd to drop the override immediately.
+    - Remember this surface can include phone numbers and message bodies; keep the plist in place only while you actively need the extra detail.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-LOGGING-F5C2D16FD5
+    Ctx: Copy
+    Body: |-
+      cat <<'EOF' >/tmp/bot.molt.plist
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+      <key>DEFAULT-OPTIONS</key>
+      <dict>
+      <key>Enable-Private-Data</key>
+      <true/>
+      </dict>
+      </dict>
+      </plist>
+      EOF
+      sudo install -m 644 -o root -g wheel /tmp/bot.molt.plist /Library/Preferences/Logging/Subsystems/bot.molt.plist
+- ID: PLATFORMS-MAC-MENU-BAR
+  Src:
+    File: output/platforms/mac/menu-bar.md
+    URL: https://docs.molt.bot/platforms/mac/menu-bar
+  Facts: |-
+    H1: Menu bar - Moltbot
+    macOS Companion App
+    H1: Menu bar
+    Menu Bar Status Logic
+    What is shown
+    - We surface the current agent work state in the menu bar icon and in the first status row of the menu.
+    - Health status is hidden while work is active; it returns when all sessions are idle.
+    - The "Nodes" block in the menu lists **devices** only (paired nodes via `node.list`), not client/presence entries.
+    - A "Usage" section appears under Context when provider usage snapshots are available.
+    State model
+    - Sessions: events arrive with `runId` (per-run) plus `sessionKey` in the payload. The "main" session is the key `main`; if absent, we fall back to the most recently updated session.
+    - Priority: main always wins. If main is active, its state is shown immediately. If main is idle, the most recently active nonmain session is shown. We do not flipflop midactivity; we only switch when the current session goes idle or main becomes active.
+    - Activity kinds:
+    - `job`: highlevel command execution (`state: started|streaming|done|error`).
+    - `tool`: `phase: start|result` with `toolName` and `meta/args`.
+    IconState enum (Swift)
+    - `idle`
+    - `workingMain(ActivityKind)`
+    - `workingOther(ActivityKind)`
+    - `overridden(ActivityKind)` (debug override)
+    ActivityKind -> glyph
+    - `exec` ->
+    - `read` ->
+    - `write` ->
+    - `edit` ->
+    - `attach` ->
+    - default ->
+    Visual mapping
+    - `idle`: normal critter.
+    - `workingMain`: badge with glyph, full tint, leg "working" animation.
+    - `workingOther`: badge with glyph, muted tint, no scurry.
+    - `overridden`: uses the chosen glyph/tint regardless of activity.
+    Status row text (menu)
+    - While work is active: `<Session role>  <activity label>`
+    - Examples: `Main  exec: pnpm test`, `Other  read: apps/macos/Sources/Moltbot/AppState.swift`.
+    - When idle: falls back to the health summary.
+    Event ingestion
+    - Source: controlchannel `agent` events (`ControlChannel.handleAgentEvent`).
+    - Parsed fields:
+    - `stream: "job"` with `data.state` for start/stop.
+    - `stream: "tool"` with `data.phase`, `name`, optional `meta`/`args`.
+    - Labels:
+    - `exec`: first line of `args.command`.
+    - `read`/`write`: shortened path.
+    - `edit`: path plus inferred change kind from `meta`/diff counts.
+    - fallback: tool name.
+    Debug override
+    - Settings  Debug  "Icon override" picker:
+    - `System (auto)` (default)
+    - `Working: main` (per tool kind)
+    - `Working: other` (per tool kind)
+    - `Idle`
+    - Stored via `@AppStorage("iconOverride")`; mapped to `IconState.overridden`.
+    Testing checklist
+    - Trigger main session job: verify icon switches immediately and status row shows main label.
+    - Trigger nonmain session job while main idle: icon/status shows nonmain; stays stable until it finishes.
+    - Start main while other active: icon flips to main instantly.
+    - Rapid tool bursts: ensure badge does not flicker (TTL grace on tool results).
+    - Health row reappears once all sessions idle.
+- ID: PLATFORMS-MAC-PEEKABOO
+  Src:
+    File: output/platforms/mac/peekaboo.md
+    URL: https://docs.molt.bot/platforms/mac/peekaboo
+  Facts: |-
+    H1: Peekaboo - Moltbot
+    macOS Companion App
+    H1: Peekaboo
+    Peekaboo Bridge (macOS UI automation)
+    Moltbot can host **PeekabooBridge** as a local, permissionaware UI automation broker. This lets the `peekaboo` CLI drive UI automation while reusing the macOS app's TCC permissions.
+    What this is (and isn't)
+    - **Host** : Moltbot.app can act as a PeekabooBridge host.
+    - **Client** : use the `peekaboo` CLI (no separate `moltbot ui ...` surface).
+    - **UI** : visual overlays stay in Peekaboo.app; Moltbot is a thin broker host.
+    Enable the bridge
+    In the macOS app:
+    - Settings -> **Enable Peekaboo Bridge**
+    When enabled, Moltbot starts a local UNIX socket server. If disabled, the host is stopped and `peekaboo` will fall back to other available hosts.
+    Client discovery order
+    Peekaboo clients typically try hosts in this order:
+    - Peekaboo.app (full UX)
+    - Claude.app (if installed)
+    - Moltbot.app (thin broker)
+    Use `peekaboo bridge status --verbose` to see which host is active and which socket path is in use. You can override with:
+    Security & permissions
+    - The bridge validates **caller code signatures** ; an allowlist of TeamIDs is enforced (Peekaboo host TeamID + Moltbot app TeamID).
+    - Requests time out after ~10 seconds.
+    - If required permissions are missing, the bridge returns a clear error message rather than launching System Settings.
+    Snapshot behavior (automation)
+    Snapshots are stored in memory and expire automatically after a short window. If you need longer retention, recapture from the client.
+    Troubleshooting
+    - If `peekaboo` reports "bridge client is not authorized", ensure the client is properly signed or run the host with `PEEKABOO_ALLOW_UNSIGNED_SOCKET_CLIENTS=1` in **debug** mode only.
+    - If no hosts are found, open one of the host apps (Peekaboo.app or Moltbot.app) and confirm permissions are granted.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-PEEKABOO-F3C1BBC35F
+    Ctx: Copy
+    Body: export PEEKABOO_BRIDGE_SOCKET=/path/to/bridge.sock
+- ID: PLATFORMS-MAC-PERMISSIONS
+  Src:
+    File: output/platforms/mac/permissions.md
+    URL: https://docs.molt.bot/platforms/mac/permissions
+  Facts: |-
+    H1: Permissions - Moltbot
+    macOS Companion App
+    H1: Permissions
+    macOS permissions (TCC)
+    macOS permission grants are fragile. TCC associates a permission grant with the app's code signature, bundle identifier, and on-disk path. If any of those change, macOS treats the app as new and may drop or hide prompts.
+    Requirements for stable permissions
+    - Same path: run the app from a fixed location (for Moltbot, `dist/Moltbot.app`).
+    - Same bundle identifier: changing the bundle ID creates a new permission identity.
+    - Signed app: unsigned or ad-hoc signed builds do not persist permissions.
+    - Consistent signature: use a real Apple Development or Developer ID certificate so the signature stays stable across rebuilds.
+    Ad-hoc signatures generate a new identity every build. macOS will forget previous grants, and prompts can disappear entirely until the stale entries are cleared.
+    Recovery checklist when prompts disappear
+    - Quit the app.
+    - Remove the app entry in System Settings -> Privacy & Security.
+    - Relaunch the app from the same path and re-grant permissions.
+    - If the prompt still does not appear, reset TCC entries with `tccutil` and try again.
+    - Some permissions only reappear after a full macOS restart.
+    Example resets (replace bundle ID as needed):
+    If you are testing permissions, always sign with a real certificate. Ad-hoc builds are only acceptable for quick local runs where permissions do not matter.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-PERMISSIONS-0A5F13E9B5
+    Ctx: Copy
+    Body: |-
+      sudo tccutil reset Accessibility bot.molt.mac
+      sudo tccutil reset ScreenCapture bot.molt.mac
+      sudo tccutil reset AppleEvents
+- ID: PLATFORMS-MAC-RELEASE
+  Src:
+    File: output/platforms/mac/release.md
+    URL: https://docs.molt.bot/platforms/mac/release
+  Facts: |-
+    H1: Release - Moltbot
+    macOS Companion App
+    H1: Release
+    Moltbot macOS release (Sparkle)
+    This app now ships Sparkle auto-updates. Release builds must be Developer ID-signed, zipped, and published with a signed appcast entry.
+    Prereqs
+    - Developer ID Application cert installed (example: `Developer ID Application: <Developer Name> (<TEAMID>)`).
+    - Sparkle private key path set in the environment as `SPARKLE_PRIVATE_KEY_FILE` (path to your Sparkle ed25519 private key; public key baked into Info.plist). If it is missing, check `~/.profile`.
+    - Notary credentials (keychain profile or API key) for `xcrun notarytool` if you want Gatekeeper-safe DMG/zip distribution.
+    - We use a Keychain profile named `moltbot-notary`, created from App Store Connect API key env vars in your shell profile:
+    - `APP_STORE_CONNECT_API_KEY_P8`, `APP_STORE_CONNECT_KEY_ID`, `APP_STORE_CONNECT_ISSUER_ID`
+    - `echo "$APP_STORE_CONNECT_API_KEY_P8" | sed 's/\\n/\n/g' > /tmp/moltbot-notary.p8`
+    - `xcrun notarytool store-credentials "moltbot-notary" --key /tmp/moltbot-notary.p8 --key-id "$APP_STORE_CONNECT_KEY_ID" --issuer "$APP_STORE_CONNECT_ISSUER_ID"`
+    - `pnpm` deps installed (`pnpm install --config.node-linker=hoisted`).
+    - Sparkle tools are fetched automatically via SwiftPM at `apps/macos/.build/artifacts/sparkle/Sparkle/bin/` (`sign_update`, `generate_appcast`, etc.).
+    Build & package
+    Notes:
+    - `APP_BUILD` maps to `CFBundleVersion`/`sparkle:version`; keep it numeric + monotonic (no `-beta`), or Sparkle compares it as equal.
+    - Defaults to the current architecture (`$(uname -m)`). For release/universal builds, set `BUILD_ARCHS="arm64 x86_64"` (or `BUILD_ARCHS=all`).
+    - Use `scripts/package-mac-dist.sh` for release artifacts (zip + DMG + notarization). Use `scripts/package-mac-app.sh` for local/dev packaging.
+    Appcast entry
+    Use the release note generator so Sparkle renders formatted HTML notes:
+    Generates HTML release notes from `CHANGELOG.md` (via [`scripts/changelog-to-html.sh`](https://github.com/moltbot/moltbot/blob/main/scripts/changelog-to-html.sh)) and embeds them in the appcast entry. Commit the updated `appcast.xml` alongside the release assets (zip + dSYM) when publishing.
+    Publish & verify
+    - Upload `Moltbot-2026.1.27-beta.1.zip` (and `Moltbot-2026.1.27-beta.1.dSYM.zip`) to the GitHub release for tag `v2026.1.27-beta.1`.
+    - Ensure the raw appcast URL matches the baked feed: `https://raw.githubusercontent.com/moltbot/moltbot/main/appcast.xml`.
+    - Sanity checks:
+    - `curl -I https://raw.githubusercontent.com/moltbot/moltbot/main/appcast.xml` returns 200.
+    - `curl -I <enclosure url>` returns 200 after assets upload.
+    - On a previous public build, run "Check for Updates..." from the About tab and verify Sparkle installs the new build cleanly.
+    Definition of done: signed app + appcast are published, update flow works from an older installed version, and release assets are attached to the GitHub release.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-RELEASE-7F6BCCB032
+    Ctx: Copy
+    Body: |-
+      # From repo root; set release IDs so Sparkle feed is enabled.
+      # APP_BUILD must be numeric + monotonic for Sparkle compare.
+      BUNDLE_ID=bot.molt.mac \
+      APP_VERSION=2026.1.27-beta.1 \
+      APP_BUILD="$(git rev-list --count HEAD)" \
+      BUILD_CONFIG=release \
+      SIGN_IDENTITY="Developer ID Application: <Developer Name> (<TEAMID>)" \
+      scripts/package-mac-app.sh
+  - ID: EX-PLATFORMS-MAC-RELEASE-7ECB4C5B53
+    Body: |-
+      # Zip for distribution (includes resource forks for Sparkle delta support)
+      ditto -c -k --sequesterRsrc --keepParent dist/Moltbot.app dist/Moltbot-2026.1.27-beta.1.zip
+  - ID: EX-PLATFORMS-MAC-RELEASE-2142146577
+    Body: |-
+      # Optional: also build a styled DMG for humans (drag to /Applications)
+      scripts/create-dmg.sh dist/Moltbot.app dist/Moltbot-2026.1.27-beta.1.dmg
+  - ID: EX-PLATFORMS-MAC-RELEASE-560EF1E4FD
+    Body: |-
+      # Recommended: build + notarize/staple zip + DMG
+      # First, create a keychain profile once:
+      #   xcrun notarytool store-credentials "moltbot-notary" \
+      #     --apple-id "<apple-id>" --team-id "<team-id>" --password "<app-specific-password>"
+      NOTARIZE=1 NOTARYTOOL_PROFILE=moltbot-notary \
+      BUNDLE_ID=bot.molt.mac \
+      APP_VERSION=2026.1.27-beta.1 \
+      APP_BUILD="$(git rev-list --count HEAD)" \
+      BUILD_CONFIG=release \
+      SIGN_IDENTITY="Developer ID Application: <Developer Name> (<TEAMID>)" \
+      scripts/package-mac-dist.sh
+  - ID: EX-PLATFORMS-MAC-RELEASE-F32C5D35D0
+    Body: |-
+      # Optional: ship dSYM alongside the release
+      ditto -c -k --keepParent apps/macos/.build/release/Moltbot.app.dSYM dist/Moltbot-2026.1.27-beta.1.dSYM.zip
+  - ID: EX-PLATFORMS-MAC-RELEASE-8E4589667B
+    Ctx: Copy
+    Body: SPARKLE_PRIVATE_KEY_FILE=/path/to/ed25519-private-key scripts/make_appcast.sh dist/Moltbot-2026.1.27-beta.1.zip https://raw.githubusercontent.com/moltbot/moltbot/main/appcast.xml
+- ID: PLATFORMS-MAC-REMOTE
+  Src:
+    File: output/platforms/mac/remote.md
+    URL: https://docs.molt.bot/platforms/mac/remote
+  Facts: |-
+    H1: Remote - Moltbot
+    macOS Companion App
+    H1: Remote
+    Remote Moltbot (macOS  remote host)
+    This flow lets the macOS app act as a full remote control for a Moltbot gateway running on another host (desktop/server). It's the app's **Remote over SSH** (remote run) feature. All features-health checks, Voice Wake forwarding, and Web Chat-reuse the same remote SSH configuration from _Settings -> General_.
+    Modes
+    - **Local (this Mac)** : Everything runs on the laptop. No SSH involved.
+    - **Remote over SSH (default)** : Moltbot commands are executed on the remote host. The mac app opens an SSH connection with `-o BatchMode` plus your chosen identity/key and a local port-forward.
+    - **Remote direct (ws/wss)** : No SSH tunnel. The mac app connects to the gateway URL directly (for example, via Tailscale Serve or a public HTTPS reverse proxy).
+    Remote transports
+    Remote mode supports two transports:
+    - **SSH tunnel** (default): Uses `ssh -N -L ...` to forward the gateway port to localhost. The gateway will see the node's IP as `127.0.0.1` because the tunnel is loopback.
+    - **Direct (ws/wss)** : Connects straight to the gateway URL. The gateway sees the real client IP.
+    Prereqs on the remote host
+    - Install Node + pnpm and build/install the Moltbot CLI (`pnpm install && pnpm build && pnpm link --global`).
+    - Ensure `moltbot` is on PATH for non-interactive shells (symlink into `/usr/local/bin` or `/opt/homebrew/bin` if needed).
+    - Open SSH with key auth. We recommend **Tailscale** IPs for stable reachability off-LAN.
+    macOS app setup
+    - Open _Settings -> General_.
+    - Under **Moltbot runs** , pick **Remote over SSH** and set:
+    - **Transport** : **SSH tunnel** or **Direct (ws/wss)**.
+    - **SSH target** : `user@host` (optional `:port`).
+    - If the gateway is on the same LAN and advertises Bonjour, pick it from the discovered list to auto-fill this field.
+    - **Gateway URL** (Direct only): `wss://gateway.example.ts.net` (or `ws://...` for local/LAN).
+    - **Identity file** (advanced): path to your key.
+    - **Project root** (advanced): remote checkout path used for commands.
+    - **CLI path** (advanced): optional path to a runnable `moltbot` entrypoint/binary (auto-filled when advertised).
+    - Hit **Test remote**. Success indicates the remote `moltbot status --json` runs correctly. Failures usually mean PATH/CLI issues; exit 127 means the CLI isn't found remotely.
+    - Health checks and Web Chat will now run through this SSH tunnel automatically.
+    Web Chat
+    - **SSH tunnel** : Web Chat connects to the gateway over the forwarded WebSocket control port (default 18789).
+    - **Direct (ws/wss)** : Web Chat connects straight to the configured gateway URL.
+    - There is no separate WebChat HTTP server anymore.
+    Permissions
+    - The remote host needs the same TCC approvals as local (Automation, Accessibility, Screen Recording, Microphone, Speech Recognition, Notifications). Run onboarding on that machine to grant them once.
+    - Nodes advertise their permission state via `node.list` / `node.describe` so agents know what's available.
+    Security notes
+    - Prefer loopback binds on the remote host and connect via SSH or Tailscale.
+    - If you bind the Gateway to a non-loopback interface, require token/password auth.
+    - See [Security](/gateway/security) and [Tailscale](/gateway/tailscale).
+    WhatsApp login flow (remote)
+    - Run `moltbot channels login --verbose` **on the remote host**. Scan the QR with WhatsApp on your phone.
+    - Re-run login on that host if auth expires. Health check will surface link problems.
+    Troubleshooting
+    - **exit 127 / not found** : `moltbot` isn't on PATH for non-login shells. Add it to `/etc/paths`, your shell rc, or symlink into `/usr/local/bin`/`/opt/homebrew/bin`.
+    - **Health probe failed** : check SSH reachability, PATH, and that Baileys is logged in (`moltbot status --json`).
+    - **Web Chat stuck** : confirm the gateway is running on the remote host and the forwarded port matches the gateway WS port; the UI requires a healthy WS connection.
+    - **Node IP shows 127.0.0.1** : expected with the SSH tunnel. Switch **Transport** to **Direct (ws/wss)** if you want the gateway to see the real client IP.
+    - **Voice Wake** : trigger phrases are forwarded automatically in remote mode; no separate forwarder is needed.
+    Notification sounds
+    Pick sounds per notification from scripts with `moltbot` and `node.invoke`, e.g.:
+    There is no global "default sound" toggle in the app anymore; callers choose a sound (or none) per request.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-REMOTE-B06990ECC1
+    Ctx: Copy
+    Body: moltbot nodes notify --node <id> --title "Ping" --body "Remote gateway ready" --sound Glass
+- ID: PLATFORMS-MAC-SIGNING
+  Src:
+    File: output/platforms/mac/signing.md
+    URL: https://docs.molt.bot/platforms/mac/signing
+  Facts: |-
+    H1: Signing - Moltbot
+    macOS Companion App
+    H1: Signing
+    mac signing (debug builds)
+    This app is usually built from [`scripts/package-mac-app.sh`](https://github.com/moltbot/moltbot/blob/main/scripts/package-mac-app.sh), which now:
+    - sets a stable debug bundle identifier: `bot.molt.mac.debug`
+    - writes the Info.plist with that bundle id (override via `BUNDLE_ID=...`)
+    - calls [`scripts/codesign-mac-app.sh`](https://github.com/moltbot/moltbot/blob/main/scripts/codesign-mac-app.sh) to sign the main binary and app bundle so macOS treats each rebuild as the same signed bundle and keeps TCC permissions (notifications, accessibility, screen recording, mic, speech). For stable permissions, use a real signing identity; ad-hoc is opt-in and fragile (see [macOS permissions](/platforms/mac/permissions)).
+    - uses `CODESIGN_TIMESTAMP=auto` by default; it enables trusted timestamps for Developer ID signatures. Set `CODESIGN_TIMESTAMP=off` to skip timestamping (offline debug builds).
+    - inject build metadata into Info.plist: `MoltbotBuildTimestamp` (UTC) and `MoltbotGitCommit` (short hash) so the About pane can show build, git, and debug/release channel.
+    - **Packaging requires Node 22+** : the script runs TS builds and the Control UI build.
+    - reads `SIGN_IDENTITY` from the environment. Add `export SIGN_IDENTITY="Apple Development: Your Name (TEAMID)"` (or your Developer ID Application cert) to your shell rc to always sign with your cert. Ad-hoc signing requires explicit opt-in via `ALLOW_ADHOC_SIGNING=1` or `SIGN_IDENTITY="-"` (not recommended for permission testing).
+    - runs a Team ID audit after signing and fails if any Mach-O inside the app bundle is signed by a different Team ID. Set `SKIP_TEAM_ID_CHECK=1` to bypass.
+    Usage
+    Ad-hoc Signing Note
+    When signing with `SIGN_IDENTITY="-"` (ad-hoc), the script automatically disables the **Hardened Runtime** (`--options runtime`). This is necessary to prevent crashes when the app attempts to load embedded frameworks (like Sparkle) that do not share the same Team ID. Ad-hoc signatures also break TCC permission persistence; see [macOS permissions](/platforms/mac/permissions) for recovery steps.
+    Build metadata for About
+    `package-mac-app.sh` stamps the bundle with:
+    - `MoltbotBuildTimestamp`: ISO8601 UTC at package time
+    - `MoltbotGitCommit`: short git hash (or `unknown` if unavailable)
+    The About tab reads these keys to show version, build date, git commit, and whether it's a debug build (via `#if DEBUG`). Run the packager to refresh these values after code changes.
+    Why
+    TCC permissions are tied to the bundle identifier _and_ code signature. Unsigned debug builds with changing UUIDs were causing macOS to forget grants after each rebuild. Signing the binaries (adhoc by default) and keeping a fixed bundle id/path (`dist/Moltbot.app`) preserves the grants between builds, matching the VibeTunnel approach.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-SIGNING-58CADBBE16
+    Ctx: Copy
+    Body: |-
+      # from repo root
+      scripts/package-mac-app.sh               # auto-selects identity; errors if none found
+      SIGN_IDENTITY="Developer ID Application: Your Name" scripts/package-mac-app.sh   # real cert
+      ALLOW_ADHOC_SIGNING=1 scripts/package-mac-app.sh    # ad-hoc (permissions will not stick)
+      SIGN_IDENTITY="-" scripts/package-mac-app.sh        # explicit ad-hoc (same caveat)
+      DISABLE_LIBRARY_VALIDATION=1 scripts/package-mac-app.sh   # dev-only Sparkle Team ID mismatch workaround
+- ID: PLATFORMS-MAC-SKILLS
+  Src:
+    File: output/platforms/mac/skills.md
+    URL: https://docs.molt.bot/platforms/mac/skills
+  Facts: |-
+    H1: Skills - Moltbot
+    macOS Companion App
+    H1: Skills
+    Skills (macOS)
+    The macOS app surfaces Moltbot skills via the gateway; it does not parse skills locally.
+    Data source
+    - `skills.status` (gateway) returns all skills plus eligibility and missing requirements (including allowlist blocks for bundled skills).
+    - Requirements are derived from `metadata.moltbot.requires` in each `SKILL.md`.
+    Install actions
+    - `metadata.moltbot.install` defines install options (brew/node/go/uv).
+    - The app calls `skills.install` to run installers on the gateway host.
+    - The gateway surfaces only one preferred installer when multiple are provided (brew when available, otherwise node manager from `skills.install`, default npm).
+    Env/API keys
+    - The app stores keys in `~/.clawdbot/moltbot.json` under `skills.entries.<skillKey>`.
+    - `skills.update` patches `enabled`, `apiKey`, and `env`.
+    Remote mode
+    - Install + config updates happen on the gateway host (not the local Mac).
+- ID: PLATFORMS-MAC-VOICE-OVERLAY
+  Src:
+    File: output/platforms/mac/voice-overlay.md
+    URL: https://docs.molt.bot/platforms/mac/voice-overlay
+  Facts: |-
+    H1: Voice overlay - Moltbot
+    macOS Companion App
+    H1: Voice overlay
+    Voice Overlay Lifecycle (macOS)
+    Audience: macOS app contributors. Goal: keep the voice overlay predictable when wake-word and push-to-talk overlap.
+    Current intent
+    - If the overlay is already visible from wake-word and the user presses the hotkey, the hotkey session _adopts_ the existing text instead of resetting it. The overlay stays up while the hotkey is held. When the user releases: send if there is trimmed text, otherwise dismiss.
+    - Wake-word alone still auto-sends on silence; push-to-talk sends immediately on release.
+    Implemented (Dec 9, 2025)
+    - Overlay sessions now carry a token per capture (wake-word or push-to-talk). Partial/final/send/dismiss/level updates are dropped when the token doesn't match, avoiding stale callbacks.
+    - Push-to-talk adopts any visible overlay text as a prefix (so pressing the hotkey while the wake overlay is up keeps the text and appends new speech). It waits up to 1.5s for a final transcript before falling back to the current text.
+    - Chime/overlay logging is emitted at `info` in categories `voicewake.overlay`, `voicewake.ptt`, and `voicewake.chime` (session start, partial, final, send, dismiss, chime reason).
+    Next steps
+    - **VoiceSessionCoordinator (actor)**
+    - Owns exactly one `VoiceSession` at a time.
+    - API (token-based): `beginWakeCapture`, `beginPushToTalk`, `updatePartial`, `endCapture`, `cancel`, `applyCooldown`.
+    - Drops callbacks that carry stale tokens (prevents old recognizers from reopening the overlay).
+    - **VoiceSession (model)**
+    - Fields: `token`, `source` (wakeWord|pushToTalk), committed/volatile text, chime flags, timers (auto-send, idle), `overlayMode` (display|editing|sending), cooldown deadline.
+    - **Overlay binding**
+    - `VoiceSessionPublisher` (`ObservableObject`) mirrors the active session into SwiftUI.
+    - `VoiceWakeOverlayView` renders only via the publisher; it never mutates global singletons directly.
+    - Overlay user actions (`sendNow`, `dismiss`, `edit`) call back into the coordinator with the session token.
+    - **Unified send path**
+    - On `endCapture`: if trimmed text is empty -> dismiss; else `performSend(session:)` (plays send chime once, forwards, dismisses).
+    - Push-to-talk: no delay; wake-word: optional delay for auto-send.
+    - Apply a short cooldown to the wake runtime after push-to-talk finishes so wake-word doesn't immediately retrigger.
+    - **Logging**
+    - Coordinator emits `.info` logs in subsystem `bot.molt`, categories `voicewake.overlay` and `voicewake.chime`.
+    - Key events: `session_started`, `adopted_by_push_to_talk`, `partial`, `finalized`, `send`, `dismiss`, `cancel`, `cooldown`.
+    Debugging checklist
+    - Stream logs while reproducing a sticky overlay:
+    - Verify only one active session token; stale callbacks should be dropped by the coordinator.
+    - Ensure push-to-talk release always calls `endCapture` with the active token; if text is empty, expect `dismiss` without chime or send.
+    Migration steps (suggested)
+    - Add `VoiceSessionCoordinator`, `VoiceSession`, and `VoiceSessionPublisher`.
+    - Refactor `VoiceWakeRuntime` to create/update/end sessions instead of touching `VoiceWakeOverlayController` directly.
+    - Refactor `VoicePushToTalk` to adopt existing sessions and call `endCapture` on release; apply runtime cooldown.
+    - Wire `VoiceWakeOverlayController` to the publisher; remove direct calls from runtime/PTT.
+    - Add integration tests for session adoption, cooldown, and empty-text dismissal.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-VOICE-OVERLAY-8CD8B05EDE
+    Ctx: Copy
+    Body: sudo log stream --predicate 'subsystem == "bot.molt" AND category CONTAINS "voicewake"' --level info --style compact
+- ID: PLATFORMS-MAC-VOICEWAKE
+  Src:
+    File: output/platforms/mac/voicewake.md
+    URL: https://docs.molt.bot/platforms/mac/voicewake
+  Facts: |-
+    H1: Voicewake - Moltbot
+    macOS Companion App
+    H1: Voicewake
+    Voice Wake & Push-to-Talk
+    Modes
+    - **Wake-word mode** (default): always-on Speech recognizer waits for trigger tokens (`swabbleTriggerWords`). On match it starts capture, shows the overlay with partial text, and auto-sends after silence.
+    - **Push-to-talk (Right Option hold)** : hold the right Option key to capture immediately-no trigger needed. The overlay appears while held; releasing finalizes and forwards after a short delay so you can tweak text.
+    Runtime behavior (wake-word)
+    - Speech recognizer lives in `VoiceWakeRuntime`.
+    - Trigger only fires when there's a **meaningful pause** between the wake word and the next word (~0.55s gap). The overlay/chime can start on the pause even before the command begins.
+    - Silence windows: 2.0s when speech is flowing, 5.0s if only the trigger was heard.
+    - Hard stop: 120s to prevent runaway sessions.
+    - Debounce between sessions: 350ms.
+    - Overlay is driven via `VoiceWakeOverlayController` with committed/volatile coloring.
+    - After send, recognizer restarts cleanly to listen for the next trigger.
+    Lifecycle invariants
+    - If Voice Wake is enabled and permissions are granted, the wake-word recognizer should be listening (except during an explicit push-to-talk capture).
+    - Overlay visibility (including manual dismiss via the X button) must never prevent the recognizer from resuming.
+    Sticky overlay failure mode (previous)
+    Previously, if the overlay got stuck visible and you manually closed it, Voice Wake could appear "dead" because the runtime's restart attempt could be blocked by overlay visibility and no subsequent restart was scheduled. Hardening:
+    - Wake runtime restart is no longer blocked by overlay visibility.
+    - Overlay dismiss completion triggers a `VoiceWakeRuntime.refresh(...)` via `VoiceSessionCoordinator`, so manual X-dismiss always resumes listening.
+    Push-to-talk specifics
+    - Hotkey detection uses a global `.flagsChanged` monitor for **right Option** (`keyCode 61` \+ `.option`). We only observe events (no swallowing).
+    - Capture pipeline lives in `VoicePushToTalk`: starts Speech immediately, streams partials to the overlay, and calls `VoiceWakeForwarder` on release.
+    - When push-to-talk starts we pause the wake-word runtime to avoid dueling audio taps; it restarts automatically after release.
+    - Permissions: requires Microphone + Speech; seeing events needs Accessibility/Input Monitoring approval.
+    - External keyboards: some may not expose right Option as expected-offer a fallback shortcut if users report misses.
+    User-facing settings
+    - **Voice Wake** toggle: enables wake-word runtime.
+    - **Hold Cmd+Fn to talk** : enables the push-to-talk monitor. Disabled on macOS < 26.
+    - Language & mic pickers, live level meter, trigger-word table, tester (local-only; does not forward).
+    - Mic picker preserves the last selection if a device disconnects, shows a disconnected hint, and temporarily falls back to the system default until it returns.
+    - **Sounds** : chimes on trigger detect and on send; defaults to the macOS "Glass" system sound. You can pick any `NSSound`-loadable file (e.g. MP3/WAV/AIFF) for each event or choose **No Sound**.
+    Forwarding behavior
+    - When Voice Wake is enabled, transcripts are forwarded to the active gateway/agent (the same local vs remote mode used by the rest of the mac app).
+    - Replies are delivered to the **last-used main provider** (WhatsApp/Telegram/Discord/WebChat). If delivery fails, the error is logged and the run is still visible via WebChat/session logs.
+    Forwarding payload
+    - `VoiceWakeForwarder.prefixedTranscript(_:)` prepends the machine hint before sending. Shared between wake-word and push-to-talk paths.
+    Quick verification
+    - Toggle push-to-talk on, hold Cmd+Fn, speak, release: overlay should show partials then send.
+    - While holding, menu-bar ears should stay enlarged (uses `triggerVoiceEars(ttl:nil)`); they drop after release.
+- ID: PLATFORMS-MAC-WEBCHAT
+  Src:
+    File: output/platforms/mac/webchat.md
+    URL: https://docs.molt.bot/platforms/mac/webchat
+  Facts: |-
+    H1: Webchat - Moltbot
+    macOS Companion App
+    H1: Webchat
+    WebChat (macOS app)
+    The macOS menu bar app embeds the WebChat UI as a native SwiftUI view. It connects to the Gateway and defaults to the **main session** for the selected agent (with a session switcher for other sessions).
+    - **Local mode** : connects directly to the local Gateway WebSocket.
+    - **Remote mode** : forwards the Gateway control port over SSH and uses that tunnel as the data plane.
+    Launch & debugging
+    - Manual: Lobster menu -> "Open Chat".
+    - Autoopen for testing:
+    - Logs: `./scripts/clawlog.sh` (subsystem `bot.molt`, category `WebChatSwiftUI`).
+    How it's wired
+    - Data plane: Gateway WS methods `chat.history`, `chat.send`, `chat.abort`, `chat.inject` and events `chat`, `agent`, `presence`, `tick`, `health`.
+    - Session: defaults to the primary session (`main`, or `global` when scope is global). The UI can switch between sessions.
+    - Onboarding uses a dedicated session to keep firstrun setup separate.
+    Security surface
+    - Remote mode forwards only the Gateway WebSocket control port over SSH.
+    Known limitations
+    - The UI is optimized for chat sessions (not a full browser sandbox).
+  Ex:
+  - ID: EX-PLATFORMS-MAC-WEBCHAT-4C2AD98BF6
+    Ctx: Copy
+    Body: dist/Moltbot.app/Contents/MacOS/Moltbot --webchat
+- ID: PLATFORMS-MAC-XPC
+  Src:
+    File: output/platforms/mac/xpc.md
+    URL: https://docs.molt.bot/platforms/mac/xpc
+  Facts: |-
+    H1: Xpc - Moltbot
+    macOS Companion App
+    H1: Xpc
+    Moltbot macOS IPC architecture
+    **Current model:** a local Unix socket connects the **node host service** to the **macOS app** for exec approvals + `system.run`. A `moltbot-mac` debug CLI exists for discovery/connect checks; agent actions still flow through the Gateway WebSocket and `node.invoke`. UI automation uses PeekabooBridge.
+    Goals
+    - Single GUI app instance that owns all TCC-facing work (notifications, screen recording, mic, speech, AppleScript).
+    - A small surface for automation: Gateway + node commands, plus PeekabooBridge for UI automation.
+    - Predictable permissions: always the same signed bundle ID, launched by launchd, so TCC grants stick.
+    How it works
+    Gateway + node transport
+    - The app runs the Gateway (local mode) and connects to it as a node.
+    - Agent actions are performed via `node.invoke` (e.g. `system.run`, `system.notify`, `canvas.*`).
+    Node service + app IPC
+    - A headless node host service connects to the Gateway WebSocket.
+    - `system.run` requests are forwarded to the macOS app over a local Unix socket.
+    - The app performs the exec in UI context, prompts if needed, and returns output.
+    Diagram (SCI):
+    PeekabooBridge (UI automation)
+    - UI automation uses a separate UNIX socket named `bridge.sock` and the PeekabooBridge JSON protocol.
+    - Host preference order (client-side): Peekaboo.app -> Claude.app -> Moltbot.app -> local execution.
+    - Security: bridge hosts require an allowed TeamID; DEBUG-only same-UID escape hatch is guarded by `PEEKABOO_ALLOW_UNSIGNED_SOCKET_CLIENTS=1` (Peekaboo convention).
+    - See: [PeekabooBridge usage](/platforms/mac/peekaboo) for details.
+    Operational flows
+    - Restart/rebuild: `SIGN_IDENTITY="Apple Development: <Developer Name> (<TEAMID>)" scripts/restart-mac.sh`
+    - Kills existing instances
+    - Swift build + package
+    - Writes/bootstraps/kickstarts the LaunchAgent
+    - Single instance: app exits early if another instance with the same bundle ID is running.
+    Hardening notes
+    - Prefer requiring a TeamID match for all privileged surfaces.
+    - PeekabooBridge: `PEEKABOO_ALLOW_UNSIGNED_SOCKET_CLIENTS=1` (DEBUG-only) may allow same-UID callers for local development.
+    - All communication remains local-only; no network sockets are exposed.
+    - TCC prompts originate only from the GUI app bundle; keep the signed bundle ID stable across rebuilds.
+    - IPC hardening: socket mode `0600`, token, peer-UID checks, HMAC challenge/response, short TTL.
+  Ex:
+  - ID: EX-PLATFORMS-MAC-XPC-4A4295E94B
+    Ctx: Copy
+    Body: |-
+      Agent -> Gateway -> Node Service (WS)
+      |  IPC (UDS + token + HMAC + TTL)
+      v
+      Mac App (UI + TCC + system.run)
+Semantic_FS_Anchors:
+  Generated_By: fix_koda_semantic_fs.py
+  Generated_At: '2026-01-29'
+  Missing_Backticks: |-
+    /newbot
+    /setup
+    /setup/export
+    123456789:AA...
+    8080
+    @BotFather
+    CLAWDBOT_STATE_DIR=/data/.clawdbot
+    CLAWDBOT_WORKSPACE_DIR=/data/workspace
+    PORT=8080
+    SETUP_PASSWORD
+    applications.commands
+    https://<something>.up.railway.app
+    https://<your-northflank-domain>/moltbot
+    https://<your-northflank-domain>/setup
+    https://<your-railway-domain>/moltbot
+    https://<your-railway-domain>/setup
+    https://<your-railway-domain>/setup/export
+  Missing_Code_Blocks_Body: ''
