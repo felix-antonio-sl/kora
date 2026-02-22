@@ -235,6 +235,21 @@
 
 ───
 
+### Parte VII — Arquitectura Avanzada
+
+**22. Multi-Gateway Dockerizado: Federación de Agentes**
+- 22.1 Por qué multi-gateway (y no solo multi-agent): tabla de limitaciones de single-process
+- 22.2 Arquitectura: Docker Compose multi-gateway con red compartida
+- 22.3 Docker Compose: configuración base con YAML template y estructura de directorios
+- 22.4 Conocimiento compartido: bind mounts :ro, QMD sidecar compartido, git sync
+- 22.5 Comunicación inter-gateway: webhook relay, buzón de archivos, Docker network directo
+- 22.6 Orquestación: hub-and-spoke, mesh, hub + selective spokes
+- 22.7 Configuración de cada gateway: hub (Korax), spoke webhook-only (GoreOS), spoke + canal (Médico)
+- 22.8 Skill federation-delegate: encapsulación de lógica de delegación
+- 22.9 Seguridad: tokens dedicados, red interna, content wrapping, anti-loop
+- 22.10 Operaciones: startup/shutdown, health checks, monitoring, backup, rolling updates
+- 22.11 Scaling: de 3 a N gateways, límites prácticos de recursos
+
 ### Apéndices
 
 A. Referencia rápida de configuración (campos clave con ejemplos mínimos)

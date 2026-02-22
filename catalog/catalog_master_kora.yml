@@ -741,6 +741,10 @@ Catalog:
     title: orko-metodologia.yml
     file: knowledge/foundations/core/orko/orko-metodologia.yml
     status: published
+  - urn: urn:kora:kb:agent:2.0.0
+    title: KORA-AGENT-SPEC-02
+    file: knowledge/foundations/core/kora/agent.yml
+    status: Published
   - urn: urn:kora:kb:hub-federation:1.0.0
     title: KODA-HUB-FEDERATION-01
     file: knowledge/foundations/core/koda/hub-federation.yml

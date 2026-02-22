@@ -44,6 +44,10 @@
 20. [Patrones de Diseño](20-patrones-diseno.md)
 21. [Decisiones de Arquitectura](21-decisiones-arquitectura.md)
 
+## Parte VII — Arquitectura Avanzada
+
+22. [Multi-Gateway Dockerizado: Federación de Agentes](22-multi-gateway-docker-federation.md)
+
 ## Apéndices
 
 - [A: Referencia Rápida de Configuración](apendices.md#apéndice-a--referencia-rápida-de-configuración)
