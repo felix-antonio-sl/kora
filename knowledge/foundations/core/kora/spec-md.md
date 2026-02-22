@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-02-22"
     source: "RFC 2119, Diátaxis Framework, KORA/MD"
-version: 2.1.0
+version: "2.1.0"
 status: published
 tags: [spec, prescriptivo, formato, instrucciones, workflow]
 lang: es
@@ -127,7 +127,7 @@ Todo documento KORA/Spec-MD **DEBE** constar de exactamente **2 capas**:
 **Correcto:** `Apertura de archivo con --- seguido del YAML de manifiesto`
 **Incorrecto:** `Apertura de archivo con # Título seguido del YAML más abajo`
 
-### Capa 1: YAML Frontmatter
+### 3.1 Capa 1: YAML Frontmatter
 
 La Capa 1 **DEBE** ser un bloque YAML delimitado por `---` que precede a todo otro contenido, y **DEBE** cumplir estrictamente el siguiente esquema:
 
@@ -146,7 +146,7 @@ lang: "{ISO 639-1}"
 ---
 ```
 
-### Capa 2: Cuerpo Prescriptivo
+### 3.2 Capa 2: Cuerpo Prescriptivo
 
 El cuerpo prescriptivo **DEBE** estructurar su contenido en jerarquía de encabezados [→ 5. Gramática Estructural] y **NO DEBE** contener prosa que no cumpla una función normativa explícita [→ 5.4 Prosa Explicativa].
 

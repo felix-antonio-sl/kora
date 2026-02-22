@@ -1,4 +1,9 @@
 {
+  "_deprecated": {
+    "status": "deprecated",
+    "replaced_by": "urn:kora:kb:agent-spec-md",
+    "note": "KORA 4.0 abandona JSON Schema monolítico. Ver agent-spec-md.md."
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "urn:kora:kb:agent-schema:2.0.0",
   "title": "KORA Agent Protocol Schema v2.0",

@@ -35,6 +35,7 @@ El ecosistema KORA se sostiene sobre los siguientes documentos fundacionales:
 | ----------------------------- | ---------- | ----------------------------------------------------- |
 | `urn:kora:kb:md-spec`         | Spec       | Formato de artefactos de conocimiento descriptivo     |
 | `urn:kora:kb:spec-md`         | Spec       | Formato de documentos prescriptivos                   |
+| `urn:kora:kb:agent-spec-md`   | Spec       | Arquitectura categórica de agentes LLM               |
 | `urn:kora:kb:wf-koraficacion` | Workflow   | Estrategia de ejecución para transformación a KORA/MD |
 | `urn:kora:kb:gobernanza`      | Gobernanza | Precedencia, inyección y extensiones (este documento) |
 

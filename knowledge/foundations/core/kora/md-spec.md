@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-02-22"
     source: "KORA RAG-Native Standards"
-version: 1.1.4
+version: "1.1.4"
 status: published
 tags: [spec, markdown, llm, knowledge, rag, koraficacion]
 lang: es
@@ -25,7 +25,7 @@ KORA/MD gobierna **únicamente** artefactos de conocimiento estático: bases de 
 
 **Audiencia primaria:** LLMs que consumen estos artefactos vía recuperación aumentada (RAG). **Audiencia secundaria:** Humanos que redactan el conocimiento.
 
-**Límite Duro:** Esta especificación **NO DEBE** usarse para gobernar agentes, catálogos, esquemas ni configuraciones de ejecución.
+**Límite Duro:** Esta especificación **NO DEBE** usarse para gobernar agentes, catálogos, esquemas ni configuraciones de ejecución. Para la arquitectura de agentes, ver [KORA/Agent-Spec](urn:kora:kb:agent-spec-md).
 
 > **Meta-Cláusula de Auto-Excepción:** Este documento (`md-spec.md`) ES un documento prescriptivo. Por consiguiente, su propia redacción **ESTÁ GOBERNADA** por el estándar superior [KORA/Spec-MD](urn:kora:kb:spec-md) y **NO DEBE** auto-aplicarse la prohibición de prosa impuesta en su Capa 2.
 

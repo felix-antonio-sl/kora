@@ -1,3 +1,6 @@
+# Status: DEPRECATED — Reemplazado por agent-spec-md.md (urn:kora:kb:agent-spec-md)
+# KORA 4.0 abandona definición monolítica YAML a favor de workspaces con topología segregada.
+
 # KORA Agent Protocol (ADP) Specification v2.0
 # Formal specification of KORA/Agent schema and semantics
 
