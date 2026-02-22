@@ -4,14 +4,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-02-22"
-    source: "RFC 2119, Diátaxis Framework, KORA/MD v1.0"
-version: 2.0.3
+    source: "RFC 2119, Diátaxis Framework, KORA/MD"
+version: 2.1.0
 status: published
 tags: [spec, prescriptivo, formato, instrucciones, workflow]
 lang: es
 ---
 
-# KORA/Spec-MD — Especificación para Documentos Prescriptivos v2.0.3
+# KORA/Spec-MD — Especificación para Documentos Prescriptivos v2.1.0
 
 ## 1. Definición
 
@@ -24,9 +24,9 @@ KORA/MD gobierna conocimiento descriptivo (hechos). KORA/Spec-MD gobierna conoci
 | Función             | Describir lo que ES                      | Definir lo que debe ser                         |
 | Contenido           | Hechos, datos, procedimientos existentes | Reglas, formatos, restricciones, obligaciones   |
 | Prosa               | Prohibida (telegráfico puro)             | Permitida cuando explica el porqué de una regla |
-| Estructura          | Headings como chunks RAG                 | Headings como jerarquía normativa               |
+| Estructura          | Headings como `Chunk RAG`                | Headings como jerarquía normativa               |
 | Validación          | Fidelidad al documento fuente            | Consistencia interna y ausencia de ambigüedad   |
-| Consumidor primario | RAG / retrieval                          | LLM en context window (skill, system prompt)    |
+| Consumidor primario | RAG / *Retrieval*                        | LLM en *Context Window* (*Skill*, *System Prompt*) |
 
 ### 1.1 Alcance y Audiencia
 
@@ -36,6 +36,11 @@ Para optimizar su interpretación por la audiencia primaria, todo documento pres
 
 **Correcto:** `Redactar un "Protocolo de Seguridad" usando el formato KORA/Spec-MD`
 **Incorrecto:** `Usar KORA/Spec-MD para el "Historial de Incidentes" (es descriptivo, DEBE usar KORA/MD)`
+
+En estándares fundacionales de formatos descriptivos, un documento **PUEDE** incluir una cláusula de auto-excepción para su propia redacción. Toda cláusula de auto-excepción **DEBE** referenciar explícitamente KORA/Spec-MD y delimitar de forma acotada qué regla local queda exceptuada.
+
+**Correcto:** `Declarar una auto-excepción limitada a la prohibición de prosa e indicar referencia explícita a KORA/Spec-MD.`
+**Incorrecto:** `Declarar una auto-excepción global sin alcance ni referencia normativa.`
 
 ### 1.2 Funtor de Cristalización
 
@@ -47,16 +52,30 @@ El input no es un documento único sino un conjunto heterogéneo: decisiones de 
 
 **Propiedades del funtor G:**
 
-- **Cristalizador:** Convierte decisiones implícitas y prácticas observadas en reglas explícitas con keywords RFC 2119.
-- **Formalizador:** Cada convención informal se materializa como una regla con exactamente una lectura posible.
-- **Desambiguador:** Donde el input admite múltiples interpretaciones, el output fuerza una sola.
-- **Ejemplificador:** Cada regla con complejidad semántica o riesgo de ambigüedad se acompaña de par `Correcto:` / `Incorrecto:` que ancla la interpretación.
+- **Cristalizador:** El funtor **DEBE** convertir decisiones implícitas y prácticas observadas en reglas explícitas con keywords RFC 2119.
+- **Formalizador:** Cada convención informal **DEBE** materializarse como una regla con exactamente una lectura posible.
+- **Desambiguador:** Donde la entrada admite múltiples interpretaciones, la salida **DEBE** forzar exactamente una.
+- **Ejemplificador:** Toda regla con complejidad semántica o riesgo de ambigüedad **DEBE** acompañarse del par `Correcto:` / `Incorrecto:` para anclar la interpretación.
+
+**Correcto:**
+```markdown
+- **Cristalizador:** (propiedad descrita con lenguaje normativo DEBE).
+- **Ejemplificador:** ... (propiedad acompañada de este mismo bloque de Correcto/Incorrecto para evitar ambigüedad).
+```
+
+**Incorrecto:**
+```markdown
+- Cristalizador: Intenta escribir reglas claras cuando puedas.
+```
 
 ---
 
 ## 2. Definiciones
 
-Los siguientes términos tienen significado preciso dentro de KORA/Spec-MD:
+La tabla de esta sección **DEBE** incluir todo término clave con significado preciso dentro de este documento:
+
+**Correcto:** `El documento usa "RFC 2119" y "URN"; ambos aparecen definidos en esta tabla.`
+**Incorrecto:** `El documento usa "ACL" como término clave y no existe entrada para "ACL".`
 
 | Término                    | Definición                                                                                                                                                                |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,17 +87,26 @@ Los siguientes términos tienen significado preciso dentro de KORA/Spec-MD:
 | **Chunk RAG**              | Unidad de texto independientemente recuperable por un sistema de retrieval                                                                                                |
 | **Funtor**                 | Transformación que mapea objetos y relaciones de un dominio a otro preservando estructura                                                                                 |
 | **Keyword RFC 2119**       | Palabra con significado normativo estandarizado (`DEBE`, `DEBERÍA`, `PUEDE` y sus negaciones)                                                                             |
-| **SemVer**                 | Esquema de versionamiento semántico `MAJOR.MINOR.PATCH` usado para reflejar impacto de cambios normativos                                                                  |
-| **Patch/Minor/Major**      | Tipos de incremento SemVer: Patch corrige erratas sin cambio normativo, Minor agrega reglas compatibles, Major introduce rupturas                                          |
-| **ISO 639-1**              | Estándar de código de idioma de dos letras usado en el campo `lang`                                                                                                        |
-| **ISO 8601 (fecha)**       | Estándar de fecha absoluta en formato `YYYY-MM-DD`                                                                                                                          |
+| **SemVer**                 | Esquema de versionamiento semántico `MAJOR.MINOR.PATCH` usado para reflejar impacto de cambios normativos                                                                 |
+| **Patch/Minor/Major**      | Tipos de incremento SemVer: Patch corrige erratas sin cambio normativo, Minor agrega reglas compatibles, Major introduce rupturas                                         |
+| **ISO 639-1**              | Estándar de código de idioma de dos letras usado en el campo `lang`                                                                                                       |
+| **ISO 8601 (fecha)**       | Estándar de fecha absoluta en formato `YYYY-MM-DD`                                                                                                                        |
 | **URN**                    | Identificador único de recurso con formato `urn:{namespace}:{type}:{id}`                                                                                                  |
-| **Namespace**              | Primer segmento lógico de un URN; delimita el dominio al que pertenece el recurso                                                                                          |
+| **Namespace**              | Primer segmento lógico de un URN; delimita el dominio al que pertenece el recurso                                                                                         |
 | **Frontmatter**            | Bloque YAML delimitado por `---` al inicio del archivo, contiene metadata de máquina                                                                                      |
 | **Cuerpo Prescriptivo**    | Segunda capa del documento: contenido Markdown con reglas, definiciones y prosa normativa, separado del frontmatter                                                       |
+| **Cláusula de auto-excepción** | Regla explícita y acotada que exceptúa una norma local del propio documento, con referencia a su estándar rector                                                   |
 | **Cristalización**         | Proceso de convertir decisiones implícitas, prácticas informales y restricciones en reglas explícitas con keywords RFC 2119                                               |
 | **Prosa explicativa**      | Texto dentro de un documento KORA/Spec-MD que cumple una función normativa: racionalizar, desambiguar, clarificar o contextualizar reglas                                 |
-| **Fenced code block**      | Bloque Markdown delimitado por triple backtick; su contenido se trata como literal y no participa en validaciones de headings                                              |
+| **Fenced code block**      | Bloque Markdown delimitado por triple backtick; su contenido se trata como literal y no participa en validaciones de headings                                             |
+| **Context Window**         | Ventana de contexto activa de un LLM donde se inyectan instrucciones, definiciones y evidencia relevante                                                                   |
+| **Workflow**               | Secuencia prescriptiva de pasos operativos ejecutables por un agente humano o LLM                                                                                         |
+| **Skill**                  | Habilidad o herramienta empaquetada que un LLM puede invocar en su *Context Window*                                                                                       |
+| **System Prompt**          | Instrucción base fundacional inyectada a un LLM (Agente) antes de interactuar con el usuario                                                                              |
+| **Retrieval**              | Mecanismo de búsqueda semántica para inyectar fragmentos de conocimiento en contextos de LLMs                                                                             |
+| **Input / Output**         | Datos de entrada y salida, respectivamente, para una evaluación, función, agente o funtor                                                                                 |
+| **Snapshot**               | Estado congelado de un objeto, abstracción o conocimiento en una versión específica temporal                                                                              |
+| **Filler**                 | Texto de relleno carente de valor informativo o normativo (grasa comunicativa)                                                                                            |
 
 ---
 
@@ -137,7 +165,7 @@ Todo documento KORA/Spec-MD **DEBE** adoptar las keywords de RFC 2119/8174 para 
 | **PUEDE** (MAY)             | Opcional. La implementación decide.                           |
 
 **Reglas de uso:**
-- Solo se **DEBE** usar keywords cuando la oración expresa una obligación, prohibición o permiso. **NO DEBE** usarse con valor normativo en oraciones descriptivas o explicativas.
+- Toda keyword **DEBE** usarse solo cuando la oración expresa una obligación, prohibición o permiso. **NO DEBE** usarse con valor normativo en oraciones puramente descriptivas o explicativas.
 - La mención metalingüística de keywords RFC 2119 en definiciones, tablas de referencia o ejemplos didácticos **PUEDE** realizarse sin valor normativo; en esos casos **DEBERÍA** representarse en código inline (por ejemplo, `DEBE`) para evitar ambigüedad.
 - En documentos en español, se **DEBE** usar la versión castellana. Cada equivalencia inglesa **PUEDE** incluirse entre paréntesis solo en la primera mención de su keyword y **NO DEBE** repetirse en menciones posteriores.
 - En documentos en inglés, se **DEBE** usar la keyword RFC 2119 correspondiente en MAYÚSCULAS.
@@ -206,7 +234,7 @@ El cuerpo prescriptivo **PUEDE** incluir prosa explicativa únicamente si dicha 
 3. **Clarificar un término** ya definido en [→ 2. Definiciones] cuando el contexto local requiere elaboración. Toda definición canónica **DEBE** residir en §2; la prosa inline solo contextualiza, no reemplaza.
 4. **Contextualizar una restricción** que sin contexto parecería arbitraria.
 
-La prosa **NO DEBE**:
+Toda prosa **NO DEBE**:
 - Introducir una sección ("En esta sección veremos...").
 - Transicionar entre secciones ("Habiendo definido lo anterior...").
 - Repetir información ya declarada en otra sección.
@@ -285,12 +313,14 @@ Cada documento KORA/Spec-MD **DEBE** poder comprenderse sin necesidad de leer ot
 **Correcto:** `"...conforme al estándar base (ver [KORA/MD](urn:kora:kb:md-spec))."`
 **Incorrecto:** `"...se usa el patrón P-44." (sin definir ni enlazar a su URN)`
 
-### 7.3 Preservación de Idioma
+### 7.3 Preservación de Idioma y Anglicismos
 
-El idioma del documento **DEBE** ser consistente y **DEBE** ser declarado en el campo `lang` del frontmatter.
+Todo documento **DEBE** estar escrito en un idioma consistente, el cual **DEBE** ser declarado en el campo `lang` del frontmatter.
 
-**Correcto:** `Frontmatter con lang: es y contenido completo en español.`
-**Incorrecto:** `Frontmatter con lang: es y secciones mezcladas en inglés sin justificación.`
+Todo anglicismo técnico o término de la industria (ej. *chunk*, *frontmatter*, *workflow*) **PUEDE** utilizarse solo si cumple al menos una condición verificable: (a) tiene entrada en §2, (b) aparece en *cursiva* en su primera mención dentro de cada `##`, o (c) referencia una definición externa vía URN. Un anglicismo **NO DEBE** usarse sin cumplir al menos una de estas condiciones.
+
+**Correcto:** `Frontmatter con lang: es y términos técnicos como Chunk RAG definidos formalmente en §2.`
+**Incorrecto:** `Frontmatter con lang: es y secciones traducidas artificialmente usando "código frontal" en vez de "frontmatter".`
 
 ### 7.4 Versionamiento Semántico
 
@@ -307,7 +337,7 @@ Todo cambio en las reglas del documento **DEBE** reflejarse en el campo `version
 
 ### 7.5 No-Circularidad
 
-Una especificación **NO DEBE** contener definiciones circulares (A se define en términos de B, y B en términos de A).
+Ningún documento **DEBE** contener definiciones circulares (A se define en términos de B, y B en términos de A).
 
 **Correcto:** `"URN": identificador único; "Namespace": primer segmento del URN.`
 **Incorrecto:** `"URN": valor definido por namespace; "Namespace": valor definido por URN.`
@@ -319,7 +349,7 @@ Una especificación **NO DEBE** contener definiciones circulares (A se define en
 | Check                        | Criterio                                                                                          | Acción si falla                                     |
 | ---------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | Frontmatter válido           | Parsea sin error, campos autorizados                                                              | Corregir YAML                                       |
-| Numeración secuencial        | Secciones `##` numeradas 1, 2, 3... (excluye headings dentro de fenced code blocks)              | Renumerar                                           |
+| Numeración secuencial        | Secciones `##` numeradas 1, 2, 3... (excluye headings dentro de fenced code blocks)               | Renumerar                                           |
 | Keywords RFC 2119 en negrita | Toda keyword normativa en **negrita**                                                             | Formatear                                           |
 | Headings descriptivos        | Ningún heading genérico ("Otros", "Misceláneos")                                                  | Renombrar con contenido normativo                   |
 | Sin ambigüedad               | Cada regla tiene exactamente una lectura                                                          | Reescribir o agregar ejemplo                        |
@@ -328,6 +358,7 @@ Una especificación **NO DEBE** contener definiciones circulares (A se define en
 | Consistencia interna         | Sin contradicciones no resueltas entre reglas                                                     | Resolver conflicto mediante cláusula de precedencia |
 | No-circularidad              | Ningún término definido circularmente                                                             | Reescribir definiciones                             |
 | Definiciones completas       | Todo término clave del documento tiene entrada en §2                                              | Agregar a §2 Definiciones                           |
+| Anglicismos controlados      | Todo anglicismo cumple §7.3 (definido en §2, cursiva inicial o URN)                              | Definir, cursivar o referenciar                     |
 | Referencias válidas          | Todo `(urn:...)` y `[→ Sección]` resuelve                                                         | Corregir                                            |
 | Auto-suficiencia             | Conceptos externos definidos inline o referenciados                                               | Agregar definición                                  |
 
