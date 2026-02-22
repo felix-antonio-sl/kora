@@ -68,19 +68,19 @@ KORA_Runtime_Instructions:
 Namespaces:
   ID: KORA-NAMESPACES-02
   Required_Keys:
-    - agent_identity_and_global_configuration
-    - knowledge_base_interaction_and_governance_rules
+    agent_identity_and_global_configuration: {}
+    knowledge_base_interaction_and_governance_rules:
       Purp: Radically simplified in KORA 2.0. Just policy and source URNs.
       Contains:
         - policy (EXCLUSIVE_USE, LLM_NATIVE, HYBRID_WEB_KB, WEB_AUGMENTED)
         - source_artifacts (List of bare URNs)
-    - public_behavior_workflows_and_states
+    public_behavior_workflows_and_states:
       Purp: The FSM. Workflows and States (Process + Transitions)
-    - private_internal_reasoning_processes
-      Purp: Cognitive Models (_meta: {expose: false})
-    - input_output_style_format_and_interaction
-    - safety_constraints_and_behavioral_guardrails
-    - self_evaluation_and_correction_mechanisms
+    private_internal_reasoning_processes:
+      Purp: "Cognitive Models (_meta: {expose: false})"
+    input_output_style_format_and_interaction: {}
+    safety_constraints_and_behavioral_guardrails: {}
+    self_evaluation_and_correction_mechanisms: {}
 
 Lexicon:
   ID: KORA-LEXICON-02
