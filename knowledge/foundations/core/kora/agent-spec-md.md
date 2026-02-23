@@ -272,19 +272,158 @@ El archivo `SOUL.md` **DEBE** definir exclusivamente el tono, arquetipo, prejuic
 **Correcto:** `SOUL.md declara: "Tono clínico e implacable. Prioriza diagnóstico sobre cortesía."`
 **Incorrecto:** `SOUL.md declara: "IF consulta_urgente → priorizar_respuesta_rápida" (lógica FSM en archivo fenomenológico).`
 
-### 5.3 Barreras de Seguridad Estricta (config.json)
+### 5.3 Mónada de Efectos (config.json)
 
-El agente encapsulado (LLM) **NO DEBE** administrar recursivamente su propio confinamiento de estado base (Límite). Toda regla sobre qué bases de conocimiento (KB) puede montar o qué contenedores aislar **DEBE** pre-existir compilada estáticamente en el entorno o runtime como `config.json`. Instanciar listas "hard-codeadas" de acceso al conocimiento dentro de la FSM compromete la pureza de la transición lógica e infla los costos con datos que la máquina operadora resolvería mejor sin intervención de LLM.
+`config.json` materializa el componente M (§3.4). El agente encapsulado (LLM) **NO DEBE** administrar su propio confinamiento. Toda regla sobre qué KBs puede montar, qué herramientas puede invocar o qué límites de red aplican **DEBE** pre-existir compilada estáticamente en `config.json`.
+
+**JSON Schema:**
+
+```json
+{
+  "type": "object",
+  "required": ["allowed_kb", "sandbox"],
+  "properties": {
+    "allowed_kb": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^urn:" },
+      "description": "URNs de KBs accesibles por el agente"
+    },
+    "sandbox": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": { "enum": ["strict", "permissive", "off"] }
+      }
+    },
+    "tools": {
+      "type": "object",
+      "properties": {
+        "allow": { "type": "array", "items": { "type": "string" } },
+        "deny": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "sub_agents": {
+      "type": "object",
+      "properties": {
+        "max_depth": { "type": "integer", "minimum": 0 },
+        "max_concurrent": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}
+```
+
+**Invariante:** `config.json` es inmutable desde el LLM. Las restricciones declaradas en M prevalecen sobre cualquier instrucción en c (§8.2).
 
 **Correcto:** `config.json pre-compila: {"allowed_kb": ["urn:gn:kb:protocolo-seguridad"]}. AGENTS.md no menciona la política de acceso.`
 **Incorrecto:** `AGENTS.md contiene: "Tienes acceso a las bases: protocolo-seguridad, ley-21180". La FSM mezcla política de sandboxing con lógica de transición.`
 
 ### 5.4 Contexto del Operador (USER.md)
 
-El archivo `USER.md` **DEBE** definir exclusivamente el perfil, las rutinas y las preferencias del operador humano. `USER.md` **NO DEBE** contener lógica algorítmica, restricciones de seguridad ni instrucciones de personalidad del agente. `USER.md` **NO DEBE** inyectarse en sesiones de sub-agentes; su alcance es estrictamente la sesión *Main*.
+`USER.md` materializa la fibra de contexto operador de U (§3.3). **DEBE** definir exclusivamente el perfil, las rutinas y las preferencias del operador humano.
+
+**Grammar — Secciones obligatorias:**
+
+1. **Perfil:** rol profesional, área de expertise, contexto organizacional.
+2. **Rutinas:** horarios, patrones de trabajo, flujos recurrentes.
+3. **Preferencias de Output:** formato preferido (markdown, tablas, bullets), idioma, nivel de detalle.
+
+**Invariantes:**
+- `USER.md` **NO DEBE** contener lógica algorítmica, restricciones de seguridad ni instrucciones de personalidad del agente.
+- `USER.md` **NO DEBE** inyectarse en sesiones de sub-agentes; su alcance es estrictamente la sesión *Main*.
+
+**Template:**
+
+```markdown
+---
+_manifest:
+  urn: "urn:{namespace}:agent-bootstrap:{nombre}-user:{version}"
+  type: "bootstrap_user"
+---
+## Perfil
+{Rol profesional y contexto organizacional.}
+## Rutinas
+{Horarios y patrones de trabajo recurrentes.}
+## Preferencias de Output
+{Formato, idioma, nivel de detalle.}
+```
 
 **Correcto:** `USER.md describe el rol profesional del usuario, sus horarios y preferencias de formato de output.`
 **Incorrecto:** `USER.md contiene reglas de seguridad o transiciones de la FSM.`
+
+### 5.5 Funtor de Interfaz (TOOLS.md)
+
+`TOOLS.md` materializa el componente F (§3.2). **DEBE** declarar la semántica operacional de cada herramienta disponible para el agente, otorgando al LLM los tipos y firmas inferenciales necesarios para interactuar con funtores externos.
+
+**Grammar — Por cada herramienta:**
+
+1. **Nombre:** identificador de la herramienta.
+2. **Firma inferencial:** tipos de input y output.
+3. **Cuándo usar:** condiciones bajo las cuales la FSM invoca esta herramienta.
+4. **Cuándo NO usar:** restricciones explícitas de uso.
+
+**Invariantes:**
+- `TOOLS.md` describe semántica, **NO** implementación. No contiene endpoints, API keys ni detalles de deployment.
+- `TOOLS.md` se inyecta en sesión main **Y** en sub-agentes (F se hereda).
+
+**Template:**
+
+```markdown
+---
+_manifest:
+  urn: "urn:{namespace}:agent-bootstrap:{nombre}-tools:{version}"
+  type: "bootstrap_tools"
+---
+## {nombre_herramienta}
+- **Firma:** {input_type} → {output_type}
+- **Cuándo usar:** {condición de invocación}
+- **Cuándo NO usar:** {restricción}
+- **Notas:** {observaciones operacionales}
+```
+
+**Correcto:** `TOOLS.md declara: "search_kb(query: string) → KBEntry[]. Usar cuando se necesite información de la KB. NO usar para búsquedas web."`
+**Incorrecto:** `TOOLS.md contiene: "curl -H 'Authorization: Bearer xxx' https://api.internal/search". Detalle de implementación en vez de semántica.`
+
+### 5.6 Modelos Cognitivos (skills/CM-*.md)
+
+Los archivos `CM-*.md` en `skills/` materializan endofuntores cognitivos sobre U. Son procesos aislados, computacionalmente densos, convocados exclusivamente bajo evaluación diferida (*Lazy Load*).
+
+**Grammar — Secciones obligatorias:**
+
+1. **Propósito:** qué transformación cognitiva realiza este CM.
+2. **Input/Output:** qué recibe del estado actual y qué produce.
+3. **Procedimiento:** pasos del proceso cognitivo.
+4. **Signature Output:** formato esperado del resultado.
+
+**Invariantes:**
+- Un CM **DEBE** residir en `skills/`. No puede estar inline en AGENTS.md.
+- Un CM se carga **solo** cuando la FSM lo invoca explícitamente (Lazy Evaluation).
+- Todo CM referenciado en AGENTS.md **DEBE** existir como archivo en `skills/`.
+- Un CM **NO DEBE** contener lógica de transición de la FSM. Es un endofuntor puro.
+
+**Template:**
+
+```markdown
+---
+_manifest:
+  urn: "urn:{namespace}:agent-bootstrap:{nombre}-cm-{id}:{version}"
+  type: "lazy_load_endofunctor"
+---
+## Propósito
+{Qué transformación cognitiva realiza.}
+## Input/Output
+- **Input:** {tipo y fuente del input}
+- **Output:** {tipo y formato del resultado}
+## Procedimiento
+1. {Paso 1}
+2. {Paso 2}
+...
+## Signature Output
+{Formato exacto del resultado esperado.}
+```
+
+**Correcto:** `AGENTS.md: "ACT: Evaluar riesgo usando skill CM-analisis-legal." El CM reside en skills/ y se carga on-demand.`
+**Incorrecto:** `AGENTS.md contiene inline 200 líneas de un árbol de análisis legal embebido en el bootstrap.`
 
 ---
 
