@@ -177,24 +177,62 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 
 ---
 
-## 4. Topología Estructural
+## 4. Instanciación: Topología de Workspace
 
-Todo agente **DEBE** existir como un directorio único, organizado bajo una topología determinista. Todo *Workspace* **DEBE** contener en su raíz estrictamente los componentes base de inicialización y un subdirectorio dedicado a recursos intermitentes.
+### 4.1 Principio de Derivación
 
-**Esquema Obligatorio:**
+La topología de archivos es una **materialización física** de los 5 componentes esenciales de §3. No es un postulado independiente — se DERIVA de la descomposición categórica. Toda topología válida **DEBE** materializar los 5 componentes; **PUEDE** materializar cada uno en uno o más archivos.
+
+### 4.2 Esquema Canónico KORA
+
+| Componente §3           | Archivo         | Justificación                                           |
+|--------------------------|-----------------|--------------------------------------------------------|
+| c — Morfismo de transición (§3.1) | AGENTS.md       | FSM aislada como grafo de control puro                 |
+| F — Funtor de interfaz (§3.2)     | TOOLS.md        | Semántica de herramientas segregada del control         |
+| U — Fibra fenomenológica (§3.3)   | SOUL.md         | Personalidad aislada de la lógica algorítmica           |
+| U — Fibra contexto operador (§3.3) | USER.md         | Contexto operador, solo inyectado en sesión main       |
+| M — Mónada de efectos (§3.4)      | config.json     | Policies pre-compiladas, inmutables desde el LLM        |
+| Endofuntores sobre U              | skills/CM-*.md  | Modelos cognitivos bajo evaluación diferida              |
+| W — Diagrama de wiring (§3.5)     | Declarado en AGENTS.md | No requiere archivo propio; vive en los morfismos de c |
+
+IDENTITY.md es **OPCIONAL**: fibra estática de U para plataformas que requieren separar metadata de identidad (nombre, versión, clasificación) de fenomenología (personalidad, tono).
 
 ```text
-/agents/nombre-del-agente/
-├── AGENTS.md        (Lógica algorítmica y orquestación)
-├── SOUL.md          (Arquetipo y fenomenología)
-├── USER.md          (Contexto del operador: perfil, rutinas, preferencias)
-├── IDENTITY.md      (Metadatos de red)
-├── TOOLS.md         (Semántica de herramientas)
-├── config.json      (Políticas de ejecución y seguridad)
-└── skills/          (Módulos cognitivos bajo demanda)
+/agents/{nombre-del-agente}/
+├── AGENTS.md        ← c (morfismo de transición)
+├── SOUL.md          ← U, fibra fenomenológica
+├── USER.md          ← U, fibra contexto operador
+├── TOOLS.md         ← F (funtor de interfaz)
+├── config.json      ← M (mónada de efectos)
+└── skills/          ← endofuntores sobre U
     ├── CM-evaluador.md
     └── CM-analisis-normativo.md
 ```
+
+### 4.3 Extensiones de Plataforma
+
+Un runtime **PUEDE** extender la topología canónica con archivos adicionales que materialicen capacidades específicas de la plataforma. Cada extensión **DEBE** mapearse a exactamente un componente de §3.
+
+**Ejemplo — extensión tipo OpenClaw:**
+
+| Archivo extensión | Componente §3 | Propósito                                              |
+|-------------------|---------------|--------------------------------------------------------|
+| HEARTBEAT.md      | c (extensión) | Checklist periódico ejecutado por la FSM en heartbeats |
+| MEMORY.md         | U, fibra episódica | Memoria curada de largo plazo, inyectada en main      |
+| memory/           | U, fibra episódica | Logs diarios, acceso on-demand via search              |
+| BOOTSTRAP.md      | c (efímero)   | Ritual de primer arranque, auto-destruible             |
+| hooks/            | M (extensión) | Event handlers pre/post transición                     |
+
+Estas extensiones **NO** forman parte del esquema canónico KORA. Un agente **DEBE** ser válido sin ellas (§4.4 criterio 4).
+
+### 4.4 Regla de Validez
+
+Una topología es válida sii cumple los 4 criterios:
+
+1. **Completitud:** materializa los 5 componentes de §3.
+2. **Exclusividad:** cada archivo pertenece a exactamente un componente.
+3. **Compatibilidad:** las extensiones no violan invariantes de §8.
+4. **Autonomía de c:** la FSM (AGENTS.md) es evaluable sin archivos de extensión — si HEARTBEAT.md, MEMORY.md o hooks/ faltan, c sigue operando correctamente.
 
 ---
 
