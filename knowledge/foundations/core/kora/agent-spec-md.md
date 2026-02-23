@@ -93,22 +93,87 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 
 ---
 
-## 3. Primitivas Topológicas
+## 3. Componentes Esenciales
 
-> Las definiciones formales de cada concepto residen en [→ 2. Definiciones]; esta tabla describe sus roles funcionales concretos dentro de la topología del agente.
+> Esta sección define formalmente los 5 componentes de §1.2. Las propiedades aquí declaradas son invariantes — toda instanciación (§4) **DEBE** preservarlas.
 
-| Primitiva                 | Rol Funcional Categórico                                                                                                                                      |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Workspace de Agente**   | El morfismo identidad del agente; contenedor físico unitario que acota la visibilidad del dominio funcional.                                                  |
-| **FSM (Categorical FSM)** | Sistema dinámico que modela `Estados` como **Objetos** discretos y `Transiciones` condicionales como **Morfismos** puros.                                     |
-| **AGENTS.md**             | El archivo núcleo. Actúa como la función declarativa principal que rige la FSM bajo las reglas invariables de [KORA/Spec-MD](urn:kora:kb:spec-md).            |
-| **SOUL.md**               | El álgebra cualitativa. Define la instancia de personalidad y tono. **No** forma parte del grafo de control; es puramente fenomenológico.                     |
-| **USER.md**               | Contexto fenoménico del operador. Define perfil, rutinas y preferencias del usuario. Inyectado solo en sesión *Main*; **NO** participa en sub-agentes.        |
-| **IDENTITY.md**           | Archivo de metadatos estáticos o "etiqueta type" (clasificación, versión).                                                                                    |
-| **TOOLS.md**              | Semántica operacional. Otorga al LLM los tipos y firmas inferenciales para interactuar con funtores externos.                                                 |
-| **config.json**           | Factor Límite (Limit). Contrato estricto del *runtime* que impone barreras físicas de red y aserción de restricciones (sandboxing).                           |
-| **Modelo Cognitivo (CM)** | Un endofuntor cognitivo; un proceso aislado computacionalmente, asíncrono y convocado bajo evaluación diferida pura (*Lazy Load*).                            |
-| **Sub-agente**            | Una categoría adjunta. Ejecución esclava que hereda la lógica base matemática (FSM) pero disipa la fenomenología (SOUL) para acelerar inferencia concurrente. |
+### 3.1 El Morfismo de Transición c
+
+**Definición:** c es el comportamiento del agente, formalizado como una FSM donde los estados son objetos categóricos y las transiciones son morfismos puros.
+
+**Propiedades:**
+1. **Determinismo en M:** dado un estado u ∈ U y un input i ∈ In, el siguiente estado c(u, i) es único dentro de la mónada M. Si M = Identity, la transición es determinista pura. Si M = Powerset, se permite no-determinismo acotado.
+2. **Composicionalidad:** los morfismos componen asociativamente — una cadena de transiciones S₁ → S₂ → S₃ es equivalente a su composición directa S₁ → S₃.
+3. **Co-inducción:** los nodos terminales de la FSM **DEBEN** evaluar y auto-corregir el output antes de entregarlo. El agente no termina sin verificación.
+
+**Correcto:** `La FSM define: STATE: S-INIT → ACT: Clasificar. → Trans: IF legal → S-LEGAL. Cada transición es un morfismo puro sin prosa fenomenológica.`
+**Incorrecto:** `La FSM mezcla: "Soy un analista apasionado. STATE: S-INIT → Clasificar." La narrativa de personalidad contamina el morfismo.`
+
+### 3.2 El Funtor de Interfaz F
+
+**Definición:** F define el tipado de inputs y outputs del agente. Para un agente reactivo, F(U) = (Out × U)^In — dado un input, el agente produce un output y un nuevo estado.
+
+**Propiedades:**
+1. **Álgebra cerrada:** toda herramienta (tool) disponible para el agente **DEBE** tener su firma inferencial declarada en F. El agente no **DEBE** invocar herramientas no declaradas.
+2. **Semántica, no implementación:** F describe QUÉ acciones existen y QUÉ tipos aceptan/retornan, no CÓMO se implementan.
+3. **Herencia en sub-agentes:** cuando un agente maestro instancia un sub-agente, F se hereda completo — el sub-agente opera con las mismas herramientas que el maestro.
+
+**Correcto:** `F declara: "search_kb(query: string) → results: KBEntry[]". Firma tipada, sin implementación.`
+**Incorrecto:** `F contiene: "Para buscar, usa curl https://api... con headers X-Auth". Detalle de implementación dentro de la interfaz.`
+
+### 3.3 El Espacio de Estados U
+
+**Definición:** U es el estado interno del agente, descomponible como producto de **fibras** ortogonales: U = Π(fibras). Cada fibra es independientemente evaluable y segregable.
+
+**Fibras estándar:**
+
+| Fibra                | Contenido                                    | Participación en sub-agentes |
+|----------------------|----------------------------------------------|------------------------------|
+| Fenomenológica       | Personalidad, tono, arquetipo, posicionamiento | **NO** — se disipa            |
+| Contexto operador    | Perfil, rutinas, preferencias del usuario     | **NO** — solo sesión main     |
+| Episódica (opcional) | Memoria, historia, logs de sesiones previas   | Según plataforma             |
+| Estática (opcional)  | Metadata de identidad, clasificación, versión | Según plataforma             |
+
+**Propiedades:**
+1. **Completitud:** U **DEBE** contener toda la información necesaria para que c produzca el output correcto.
+2. **Ortogonalidad:** las fibras son independientes — modificar la fibra fenomenológica no afecta el comportamiento de c.
+3. **Segregabilidad:** cada fibra **PUEDE** materializarse como un artefacto separado sin pérdida de información.
+
+**Correcto:** `La fibra fenomenológica declara: "Tono clínico e implacable. Prioriza diagnóstico." Sin lógica de transición.`
+**Incorrecto:** `La fibra fenomenológica contiene: "IF consulta_urgente → priorizar_respuesta." Lógica FSM en fibra cualitativa.`
+
+### 3.4 La Mónada de Efectos M
+
+**Definición:** M encapsula las constraints computacionales del agente — seguridad, sandboxing, políticas de herramientas, límites de red. El update de c vive en Kl(M): las transiciones producen estados envueltos en M, no estados puros.
+
+**Tipos de M según runtime:**
+
+| Mónada       | Efecto                          | Ejemplo en agentes                           |
+|--------------|---------------------------------|----------------------------------------------|
+| Identity     | Puro (sin restricciones extra)  | Agente de prueba sin sandboxing              |
+| Writer       | Con logging/traza               | Agente con auditoría obligatoria             |
+| Powerset     | No-determinístico               | Agente que genera múltiples alternativas     |
+| Distribution | Estocástico                     | Agente con muestreo probabilístico           |
+
+**Propiedades:**
+1. **Inmutabilidad desde el LLM:** M **DEBE** ser pre-compilada por el runtime. El LLM **NO DEBE** modificar sus propias constraints de seguridad en runtime.
+2. **Precedencia ejecutiva:** las restricciones de M prevalecen sobre cualquier instrucción en c o en la conversación.
+3. **Transparencia:** M **DEBE** ser declarativa — el agente puede leer sus constraints pero no alterarlas.
+
+**Correcto:** `M pre-compila: {"allowed_kb": ["urn:gn:kb:protocolo-seguridad"], "sandbox": {"mode": "strict"}}. c no menciona políticas de acceso.`
+**Incorrecto:** `c contiene: "Tienes acceso a protocolo-seguridad y ley-21180." Políticas de sandbox embebidas en la FSM.`
+
+### 3.5 El Diagrama de Wiring W
+
+**Definición:** W especifica cómo el agente se compone con otros agentes. Es un morfismo en la categoría de wiring diagrams WD que conecta outputs de un agente con inputs de otro.
+
+**Propiedades:**
+1. **Composicionalidad:** el comportamiento del sistema compuesto **DEBE** ser calculable desde sus componentes y W. No se requiere inspeccionar el estado interno de cada sub-agente.
+2. **Adjunciones para sub-agentes:** la instanciación de un sub-agente se modela como adjunción Left ⊣ Right, donde el maestro (Left) delega y el esclavo (Right) ejecuta.
+3. **Asimetría de contexto:** al componer, c y F se heredan; las fibras fenomenológica y de contexto operador se disipan. El sub-agente hereda la lógica pero no la personalidad.
+
+**Correcto:** `W declara en c: "ACT: Delegar análisis a sub-agente-legal. Hereda: FSM, TOOLS. Disipa: SOUL, USER." Composición explícita.`
+**Incorrecto:** `W no se declara. El agente invoca sub-agentes ad-hoc sin especificar qué contexto heredan.`
 
 ---
 
