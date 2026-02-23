@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-02-22"
     source: "KORA RAG-Native Standards"
-version: "1.1.4"
+version: "2.0.0"
 status: published
-tags: [spec, markdown, llm, knowledge, rag, koraficacion]
+tags: [spec, markdown, llm, knowledge, rag, koraficacion, workflow, verificacion, fidelidad]
 lang: es
 ---
 
-# KORA/MD — Especificación de Artefactos de Conocimiento v1.1.4
+# KORA/MD — Especificación de Artefactos de Conocimiento v2.0.0
 
 ## 1. Definición
 
@@ -61,6 +61,11 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 | **SemVer**            | Esquema de versionamiento semántico `MAJOR.MINOR.PATCH`                                                 |
 | **ISO 639-1**         | Estándar de código de idioma de dos letras usado en `lang`                                              |
 | **IF/THEN**           | Estructura condicional tabular que expresa `Condición -> Resultado`                                     |
+| **Segmento**          | Porción temáticamente coherente de un documento fuente, delimitada para procesamiento independiente (~3-5K tokens) |
+| **Verificación Adversarial** | Evaluación por un LLM distinto al transformador que identifica omisiones comparando fuente contra output |
+| **Verificación Mecánica**    | Conjunto de checks determinísticos (no LLM) que validan fidelidad estructural y numérica               |
+| **Fidelidad**         | Propiedad del output que garantiza que toda información del documento fuente está representada           |
+| **Normalización**     | Reorganización opcional de la jerarquía de encabezados para optimizar fragmentación RAG sin pérdida de información |
 
 ---
 
@@ -320,7 +325,7 @@ La koraficación es una transformación `F: DocHumano → KORA/MD`. **NO DEBE** 
 - **Idioma-invariante:** El idioma de la salida **DEBE** ser idéntico al de la entrada.
 - **Idempotente:** Toda aplicación recursiva `F(F(x))` **DEBE** resultar en `F(x)`.
 
-La implementación concreta (un solo paso LLM, múltiples pasadas, trabajo manual) es irrelevante para esta especificación, siempre que el resultado cumpla la validación.
+La implementación concreta (un solo paso LLM, múltiples pasadas, trabajo manual) es irrelevante para esta especificación, siempre que el resultado cumpla la validación. Para una estrategia de ejecución concreta, ver [→ 6.3 Estrategia de Ejecución].
 
 **Correcto:**
 
@@ -344,6 +349,179 @@ Fuente:
 Salida KORA/MD:
 El fondo FNDR tiene un plazo de 60 días.
 ```
+
+### 6.3 Estrategia de Ejecución
+
+La koraficación como funtor es declarativa (§6.2), pero su ejecución mediante LLMs requiere una estrategia que mitigue limitaciones probabilísticas. Esta subsección define el CÓMO: segmentación, separación de concerns y verificación mecánica.
+
+### 6.4 Evaluación del Input
+
+Antes de transformar, **DEBE** clasificarse el documento fuente:
+
+| Criterio             | Valor                                | Implicación                                                  |
+| -------------------- | ------------------------------------ | ------------------------------------------------------------ |
+| Largo del documento  | <5K tokens                           | Koraficación directa (un solo paso)                          |
+| Largo del documento  | 5K-15K tokens                        | Koraficación segmentada (por secciones naturales)            |
+| Largo del documento  | >15K tokens                          | Koraficación segmentada + verificación adversarial obligatoria |
+| Estructura existente | Tiene headings claros                | Segmentar por headings del original                          |
+| Estructura existente | Prosa monolítica sin headings        | Segmentar por párrafos temáticos (~1-2K tokens/segmento)     |
+| Contenido numérico   | Alto (tablas, cifras, leyes, plazos) | Verificación mecánica de fidelidad obligatoria               |
+| Contenido numérico   | Bajo (prosa conceptual)              | Verificación mecánica opcional                               |
+
+### 6.5 Segmentación
+
+Para documentos >5K tokens:
+
+1. **DEBEN** identificarse los puntos de corte naturales del documento (títulos, capítulos, secciones).
+2. Cada segmento **DEBE** ser temáticamente coherente y caber dentro de ~3-5K tokens.
+3. Los segmentos **DEBEN** numerarse para trazabilidad: `[Seg-1]`, `[Seg-2]`, ... `[Seg-N]`.
+
+**NO DEBE** cortarse dentro de una tabla, lista o párrafo. El corte **DEBE** realizarse siempre entre secciones.
+
+**Correcto:** `Cortar entre ## Sección A y ## Sección B, generando [Seg-1] y [Seg-2] independientes.`
+**Incorrecto:** `Cortar una tabla de 20 filas a la mitad para que cada segmento contenga 10 filas.`
+
+### 6.6 Telegrafización Fiel (Primer Paso LLM)
+
+Para cada segmento (o el documento completo si es <5K), **DEBE** aplicarse la siguiente instrucción al LLM:
+
+```
+Transforma el siguiente documento a formato KORA/MD aplicando estas reglas:
+- Telegrafizar: comprimir toda prosa a su forma mínima sin perder información.
+- Preservar: toda cifra, fecha, plazo, excepción, condición y referencia legal.
+- Preservar idioma: el output debe estar en el mismo idioma del input.
+- Preservar estructuras: toda lista conserva todos sus ítems. Toda tabla conserva todas sus filas y columnas.
+- Promover: convertir prosa comparativa/condicional a tablas o listas.
+- NO reorganizar la estructura de secciones. Mantener el orden del original.
+- Usar headings telegráficos (sintagmas nominales, no oraciones).
+- Prohibido: introducciones, transiciones, hedging, saludos, retórica.
+
+Documento fuente:
+[contenido del segmento]
+```
+
+La instrucción **NO DEBE** modificarse para agregar directivas que contradigan esta especificación. El output **DEBE** ser un segmento koraficado con estructura fiel al original.
+
+**Correcto:**
+
+```markdown
+Instrucción: "Telegrafizar preservando toda cifra y estructura."
+Output: tabla con todas las filas del original, texto comprimido.
+```
+
+**Incorrecto:**
+
+```markdown
+Instrucción: "Resume el documento en 3 párrafos."
+Output: párrafos que omiten cifras y colapsan tablas.
+```
+
+### 6.7 Ensamblaje
+
+Si el documento fue segmentado:
+
+1. Los segmentos koraficados **DEBEN** concatenarse en orden.
+2. **DEBE** agregarse el `#` (H1) como título unificado del artefacto.
+3. **DEBEN** agregarse separadores `---` entre secciones `##`.
+
+### 6.8 Normalización (Segundo Paso LLM — Opcional)
+
+**DEBERÍA** aplicarse solo si el documento original tiene redundancia evidente o estructura subóptima.
+
+**Instrucción al LLM:**
+
+```
+El siguiente es un artefacto KORA/MD ya telegrafizado. Tu tarea es ÚNICAMENTE reorganizar la estructura de encabezados para optimizarla:
+- Fusionar secciones que tratan el mismo tema.
+- Dividir secciones excesivamente largas.
+- Eliminar información duplicada (conservar la instancia más completa).
+- NO modificar el texto de las celdas, ítems de lista ni definiciones.
+- NO agregar ni eliminar información factual.
+
+Artefacto:
+[contenido ensamblado]
+```
+
+La normalización **NO DEBE** agregar ni eliminar información factual. El output **DEBE** ser un artefacto normalizado.
+
+### 6.9 Inyección de Frontmatter
+
+**DEBE** agregarse el bloque YAML frontmatter al inicio del artefacto:
+
+```yaml
+---
+_manifest:
+  urn: "urn:{namespace}:kb:{id}"
+  provenance:
+    created_by: "{autor}"
+    created_at: "{YYYY-MM-DD}"
+    source: "{referencia del documento original}"
+version: "1.0.0"
+status: draft
+tags: [{tag1}, {tag2}, {tag3}]
+lang: {código ISO 639-1 del contenido}
+---
+```
+
+El frontmatter **DEBE** cumplir el schema definido en [→ 3.1 Capa 1: YAML Frontmatter].
+
+**Correcto:**
+
+```yaml
+version: "1.0.0"
+lang: "es"
+```
+
+**Incorrecto:**
+
+```yaml
+version: 1.0.0
+lang: es
+owner: "equipo-a"
+```
+
+### 6.10 Verificación Mecánica
+
+Checks determinísticos (no dependen de LLM). Cada check **DEBE** ejecutarse antes de considerar el artefacto como válido:
+
+| Check                    | Método                                                           | Criterio de falla                     |
+| ------------------------ | ---------------------------------------------------------------- | ------------------------------------- |
+| Conteo de ítems de lista | `grep -c "^- " source` vs `grep -c "^- " output`                 | Diferencia > 0                        |
+| Conteo de filas de tabla | `grep -c "^\|" source` vs `grep -c "^\|" output`                 | output < source (descontando headers) |
+| Cifras preservadas       | Extraer `\d+[\.,]?\d*` del source, verificar presencia en output | Cifra ausente                         |
+| Fechas preservadas       | Extraer patrones de fecha del source, verificar en output        | Fecha ausente                         |
+| Frontmatter válido       | Parsear YAML entre `---` delimitadores                           | Error de parseo                       |
+| URN sin versión          | Buscar `urn:.*:.*:.*:` (4+ segmentos) en cuerpo                  | Match encontrado                      |
+| Lang coherente           | Campo `lang` vs idioma detectado del contenido                   | Divergencia                           |
+
+### 6.11 Verificación Adversarial
+
+Para documentos >15K tokens o con alto contenido numérico, **DEBE** ejecutarse verificación adversarial.
+
+**Instrucción al LLM verificador (distinto al transformador):**
+
+```
+Compara el documento original con el artefacto KORA/MD generado.
+Identifica TODA información presente en el original que NO esté representada en el output.
+Lista cada omisión como:
+- [LÍNEA/SECCIÓN del original]: [información faltante]
+
+Si no hay omisiones, responde: "FIDELIDAD: COMPLETA"
+
+Original:
+[documento fuente]
+
+KORA/MD generado:
+[artefacto]
+```
+
+Si se detectan omisiones → **DEBE** volverse a [→ 6.6 Telegrafización Fiel] para los segmentos afectados.
+
+### 6.12 Registro en Catálogo
+
+1. **DEBE** ejecutarse `kora index` para registrar el URN en el catálogo.
+2. **DEBE** cambiarse `status: draft` a `status: published` una vez verificado.
+3. **DEBE** realizarse commit al monorepo.
 
 ---
 
@@ -478,7 +656,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-02-22"
     source: "Manual Rendiciones GORE Ñuble v3"
-version: 2.0.0
+version: "2.0.0"
 status: published
 tags: [rendiciones, sisrec, cgr, plazos, gore-nuble]
 lang: es
