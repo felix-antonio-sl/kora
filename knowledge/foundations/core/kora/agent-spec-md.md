@@ -441,10 +441,11 @@ Procesos como árboles analíticos densos o rutinas lógicas pesadas encarnan tr
 
 ## 7. Orquestación y Adjunciones
 
-La arquitectura KORA soporta el diseño de Sistemas Multi-Agente (SMA) modelándolos categóricamente como Funtores adjuntos.
+La arquitectura KORA soporta el diseño de Sistemas Multi-Agente (SMA) modelándolos categóricamente como funtores adjuntos. El componente W (§3.5) se materializa como declaraciones de adjunción dentro de AGENTS.md, no como archivo separado.
 
-1. Todo Agente Maestro (Functor Left) **DEBE** declarar sus reglas de instanciación hacia sub-agentes (Functor Right) en los morfismos de transición de su `AGENTS.md`.
-2. Toda sesión de sub-agente engendrada **DEBE** operar bajo asimetría pura de contexto: heredará imperativamente el esquema de control (`AGENTS.md` y `TOOLS.md`) para garantizar el encuadre matemático, pero las capas pasivas de identidad (`SOUL.md`) **NO DEBEN** transferirse, preservando la inviolabilidad computacional y mitigando costos superfluos.
+1. Todo Agente Maestro (Functor Left) **DEBE** declarar sus reglas de instanciación hacia sub-agentes (Functor Right) en los morfismos de transición de su `AGENTS.md`. Esta declaración constituye el diagrama de wiring W del agente.
+2. Toda sesión de sub-agente engendrada **DEBE** operar bajo asimetría pura de contexto: heredará imperativamente c (`AGENTS.md`) y F (`TOOLS.md`) para garantizar el encuadre matemático, pero las fibras fenomenológica (`SOUL.md`) y de contexto operador (`USER.md`) **NO DEBEN** transferirse, preservando Token Economy y aislamiento computacional.
+3. W **DEBE** declarar explícitamente qué componentes hereda cada sub-agente. La omisión de esta declaración viola la composicionalidad (§3.5 propiedad 1).
 
 ---
 
@@ -463,15 +464,20 @@ Toda evaluación matemática en `AGENTS.md` asume la inmutabilidad dura de su co
 
 ## 9. Verificación
 
-| Check                    | Criterio                                                                      | Acción si falla                  |
-| ------------------------ | ----------------------------------------------------------------------------- | -------------------------------- |
-| Segregación Topológica   | `config.json` y archivos `.md` base en raíz del workspace                     | Crear elementos faltantes        |
-| FSM como Morfismos Puros | `AGENTS.md` contiene solo nodos y transiciones; cero prosa fenomenológica     | Trasladar narrativa a `SOUL.md`  |
-| Autonomía Lógica         | La FSM no evalúa condicionantes basados en variables de `SOUL.md` o `USER.md` | Redirigir dependencias al núcleo |
-| Endofuntores Aislados    | Todo CM reside en `skills/`; no contamina el bootstrap                        | Extirpar CM hacia `skills/`      |
-| Seguridad Determinista   | Política RAG/Sandboxing en `config.json`, no en lenguaje natural              | Trasladar al runtime (JSON/CLI)  |
-| Contexto del Operador    | `USER.md` existe, sin lógica FSM, no inyectado en sub-agentes                 | Segregar contenido               |
-| Completitud Topológica   | Workspace contiene todos los archivos obligatorios de §4                      | Crear archivos faltantes         |
+| Check                    | Criterio                                                                       | Acción si falla                  |
+| ------------------------ | ------------------------------------------------------------------------------ | -------------------------------- |
+| Segregación Topológica   | `config.json` y archivos `.md` base en raíz del workspace                      | Crear elementos faltantes        |
+| FSM como Morfismos Puros | `AGENTS.md` contiene solo nodos y transiciones; cero prosa fenomenológica      | Trasladar narrativa a `SOUL.md`  |
+| Autonomía Lógica         | La FSM no evalúa condicionantes basados en variables de `SOUL.md` o `USER.md`  | Redirigir dependencias al núcleo |
+| Endofuntores Aislados    | Todo CM reside en `skills/`; no contamina el bootstrap                         | Extirpar CM hacia `skills/`      |
+| Seguridad Determinista   | Política RAG/Sandboxing en `config.json`, no en lenguaje natural               | Trasladar al runtime (JSON/CLI)  |
+| Contexto del Operador    | `USER.md` existe, sin lógica FSM, no inyectado en sub-agentes                  | Segregar contenido               |
+| Completitud Topológica   | Workspace contiene todos los archivos obligatorios de §4.2                     | Crear archivos faltantes         |
+| TOOLS.md completo        | Cada herramienta tiene nombre, firma, cuándo usar/no usar (§5.5)               | Completar entradas faltantes     |
+| config.json válido       | Parsea contra JSON Schema de §5.3                                              | Corregir schema                  |
+| CM en skills/            | Todo CM referenciado en AGENTS.md existe como archivo en `skills/`              | Crear CM faltante                |
+| CM grammar               | Cada CM tiene: Propósito, I/O, Procedimiento, Signature Output (§5.6)          | Completar secciones faltantes    |
+| Wiring declarado         | Si AGENTS.md instancia sub-agentes, W declara herencia explícita (§7)          | Agregar declaración de herencia  |
 
 ---
 
@@ -481,18 +487,17 @@ Toda evaluación matemática en `AGENTS.md` asume la inmutabilidad dura de su co
 
 ```text
 /agents/analista-legal/
-├── AGENTS.md      ← FSM pura: estados, transiciones, reglas duras
-├── SOUL.md        ← Tono, arquetipo, posicionamiento
-├── USER.md        ← Perfil del operador (solo sesión Main)
-├── IDENTITY.md    ← Metadatos estáticos
-├── TOOLS.md       ← Firmas inferenciales de herramientas
-├── config.json    ← Sandboxing pre-compilado
+├── AGENTS.md      ← c: FSM pura, estados, transiciones, wiring W
+├── SOUL.md        ← U fibra fenomenológica: tono, arquetipo
+├── USER.md        ← U fibra contexto: perfil operador (solo main)
+├── TOOLS.md       ← F: firmas inferenciales de herramientas
+├── config.json    ← M: sandboxing pre-compilado, allowed_kb
 └── skills/
-    ├── CM-evaluador-riesgo.md
-    └── CM-analisis-normativo.md
+    ├── CM-evaluador-riesgo.md    ← endofuntor lazy
+    └── CM-analisis-normativo.md  ← endofuntor lazy
 ```
 
-Propiedades: topología completa, AGENTS.md sin prosa fenomenológica, CMs en skills/ con carga diferida, config.json inmutable.
+Propiedades: 5 componentes materializados (§4.4 criterio 1), AGENTS.md sin prosa fenomenológica, CMs en skills/ con carga diferida, config.json inmutable, TOOLS.md con firmas tipadas.
 
 ### 10.2 Workspace Mal Formado
 
@@ -500,10 +505,10 @@ Propiedades: topología completa, AGENTS.md sin prosa fenomenológica, CMs en sk
 /agents/analista-legal/
 ├── AGENTS.md      ← Contiene personalidad + FSM mezcladas
 ├── config.json    ← Modificado por el LLM en runtime
-└── CM-evaluador.md ← CM suelto en raíz
+└── CM-evaluador.md ← CM suelto en raíz (fuera de skills/)
 ```
 
-Violaciones: segregación violada (§5.1/§5.2), SOUL/USER/IDENTITY/TOOLS ausentes (§4), CM fuera de topología (§6), inmutabilidad violada (§5.3).
+Violaciones: segregación violada (§5.1/§5.2), SOUL/USER/TOOLS ausentes (§4.4 criterio 1), CM fuera de topología (§5.6), inmutabilidad violada (§5.3).
 
 ---
 
@@ -511,19 +516,19 @@ Violaciones: segregación violada (§5.1/§5.2), SOUL/USER/IDENTITY/TOOLS ausent
 
 ```text
 /agents/{nombre-del-agente}/
-├── AGENTS.md
-├── SOUL.md
-├── USER.md
-├── IDENTITY.md
-├── TOOLS.md
-├── config.json
+├── AGENTS.md       ← c (obligatorio)
+├── SOUL.md         ← U fibra fenomenológica (obligatorio)
+├── USER.md         ← U fibra contexto (obligatorio)
+├── TOOLS.md        ← F (obligatorio)
+├── config.json     ← M (obligatorio)
+├── IDENTITY.md     ← U fibra estática (OPCIONAL)
 └── skills/
-    └── CM-{nombre}.md
+    └── CM-{nombre}.md  ← endofuntores (si aplica)
 ```
 
-> Los archivos internos de un workspace (`AGENTS.md`, `SOUL.md`) siguen un frontmatter simplificado conforme al schema de bootstrap, no el schema completo de KORA/Spec-MD.
+> Los archivos internos de un workspace siguen un frontmatter simplificado conforme al schema de bootstrap, no el schema completo de KORA/Spec-MD. Los templates de §5.4-§5.6 definen la grammar de cada archivo.
 
-**AGENTS.md:**
+**AGENTS.md** (c — §5.1):
 
 ```markdown
 ---
@@ -531,16 +536,18 @@ _manifest:
   urn: "urn:{namespace}:agent-bootstrap:{nombre}-agents:{version}"
   type: "bootstrap_agents"
 ---
-
 ## 1. Máquina de Estados (FSM)
 1. STATE: S-INIT → ACT: {acción}. → Trans: IF {cond} → S-{TARGET}.
 2. STATE: S-{TARGET} → ACT: {acción}. → Trans: IF {cond} → S-END.
 
 ## 2. Reglas Duras
 - {Restricción de seguridad o formato}.
+
+## 3. Adjunciones (W)
+- Sub-agente: {nombre}. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md.
 ```
 
-**SOUL.md:**
+**SOUL.md** (U fibra fenomenológica — §5.2):
 
 ```markdown
 ---
@@ -553,3 +560,30 @@ _manifest:
 ## Tono
 {Arquetipo y estilo comunicativo.}
 ```
+
+**TOOLS.md** (F — §5.5):
+
+```markdown
+---
+_manifest:
+  urn: "urn:{namespace}:agent-bootstrap:{nombre}-tools:{version}"
+  type: "bootstrap_tools"
+---
+## {nombre_herramienta}
+- **Firma:** {input_type} → {output_type}
+- **Cuándo usar:** {condición de invocación}
+- **Cuándo NO usar:** {restricción}
+```
+
+**config.json** (M — §5.3):
+
+```json
+{
+  "allowed_kb": ["urn:{namespace}:kb:{id}"],
+  "sandbox": { "mode": "strict" },
+  "tools": { "allow": [], "deny": [] },
+  "sub_agents": { "max_depth": 1, "max_concurrent": 3 }
+}
+```
+
+**USER.md** (U fibra contexto — §5.4) y **skills/CM-*.md** (endofuntores — §5.6): ver templates en sus respectivas secciones.
