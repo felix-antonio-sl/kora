@@ -89,6 +89,8 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 | **Token Economy**           | Restricción de diseño que minimiza consumo de tokens por turno mediante segregación topológica y *Lazy Evaluation*                |
 | **Co-inducción**            | Técnica de prueba dual a la inducción; en agentes, mecanismo de auto-corrección en nodos terminales de la FSM                     |
 | **Categoría**               | Estructura algebraica: objetos, morfismos y leyes de composición asociativa con identidad                                         |
+| **Agentificación**          | Transformación G que construye o migra agentes al formato workspace KORA; funtor análogo a Koraficación para agentes             |
+| **Transmutación**           | Modo G₂ del funtor G: transformación de un YAML monolítico KODA a un workspace KORA/Agent preservando bisimilaridad              |
 | **KORA/Spec-MD**            | Formato para documentos prescriptivos (ver [especificación](urn:kora:kb:spec-md)); gobierna la redacción de este documento        |
 
 ---
@@ -587,3 +589,84 @@ _manifest:
 ```
 
 **USER.md** (U fibra contexto — §5.4) y **skills/CM-*.md** (endofuntores — §5.6): ver templates en sus respectivas secciones.
+
+---
+
+## 12. Agentificación
+
+> Esta sección define el **Funtor G** — la transformación que construye o migra agentes al formato KORA. Es análoga a md-spec §6 (Koraficación) pero opera sobre agentes, no sobre artefactos de conocimiento.
+
+### 12.1 Entrada
+
+El funtor G opera en dos modos:
+
+| Modo | Input | Output | Uso |
+|------|-------|--------|-----|
+| **G₁** | Requirements (objetivo, dominio, constraints) | KORA/Agent workspace | Construcción desde cero |
+| **G₂** | KODA/Agent.yaml (monolito YAML) | KORA/Agent workspace | Transmutación de legado |
+
+Para G₂, el input aceptado es cualquier YAML monolítico con `KODA_Runtime_Instructions`, estados definidos, bloques de identidad/personalidad, y configuración de KB/tools.
+
+### 12.2 Propiedades del Funtor G
+
+G **DEBE** satisfacer las siguientes propiedades formales:
+
+1. **Fiel:** toda transición del original tiene representación en AGENTS.md. No se pierden estados ni morfismos.
+2. **Segregador:** separa c, F, U, M en archivos ortogonales según §4.2. Ningún componente queda mezclado con otro.
+3. **Promotor:** el código inline se promueve a su artefacto correspondiente — personalidad inline → SOUL.md, policies inline → config.json, tools inline → TOOLS.md.
+4. **Bisimilar:** G(agent) ≈ agent — el comportamiento observable del workspace **DEBE** ser indistinguible del output del YAML monolítico para todo input del dominio.
+5. **Idempotente:** G(G(agent)) = G(agent) — aplicar G a un workspace ya migrado no produce cambios.
+
+### 12.3 Estrategia de Ejecución
+
+**Para G₂ (transmutación KODA → KORA):**
+
+1. **Leer** el YAML monolítico completo y clasificar cada bloque por componente:
+   - `KODA_Runtime_Instructions` / `defined_states` / `defined_workflows` → c (AGENTS.md)
+   - `agent_identity` / `role` / `objective` / `tone` / `personality` → U fibra fenomenológica (SOUL.md)
+   - Contexto operador (si existe) → U fibra contexto (USER.md)
+   - `tools` / `capabilities` → F (TOOLS.md)
+   - `knowledge_base_interaction` / `policies` / `sandbox` → M (config.json)
+   - CMs inline (bloques >50 líneas de lógica densa, ej. `CM-INTENT-CLASSIFIER`) → endofuntores (skills/CM-*.md)
+
+2. **Extraer** estados y transiciones → AGENTS.md siguiendo grammar de §5.1.
+3. **Extraer** fenomenología (tono, arquetipo, rol) → SOUL.md siguiendo grammar de §5.2.
+4. **Extraer** contexto operador → USER.md siguiendo grammar de §5.4.
+5. **Mapear** tools/capabilities → TOOLS.md siguiendo grammar de §5.5.
+6. **Extraer** policies, sandbox y KB access → config.json siguiendo schema de §5.3.
+7. **Identificar** CMs inline y segregar → skills/CM-*.md siguiendo grammar de §5.6.
+8. **Generar** frontmatter para cada archivo (URN: `urn:{namespace}:agent-bootstrap:{nombre}-{tipo}:{version}`).
+9. **Crear** directorio workspace con topología de §4.2.
+
+**Para G₁ (construcción desde cero):**
+
+1. **Recibir** requirements: objetivo, dominio, constraints, herramientas necesarias.
+2. **Diseñar** FSM: estados iniciales, transiciones, nodos terminales con co-inducción.
+3. **Definir** interfaz F: qué tools necesita, qué outputs produce.
+4. **Definir** fenomenología: tono, arquetipo, posicionamiento.
+5. **Definir** constraints M: sandbox, KB permitidas, tool policies.
+6. **Generar** workspace completo con topología §4.2 y grammars §5.
+
+### 12.4 Verificación Mecánica
+
+| Check | Método | Criterio de falla |
+|-------|--------|-------------------|
+| Conteo de estados | Contar `S-` en source vs AGENTS.md | Diferencia > 0 |
+| Conteo de CMs | Contar `CM-` en source vs archivos en skills/ | Diferencia > 0 |
+| Completitud topológica | Verificar existencia de AGENTS.md, SOUL.md, USER.md, TOOLS.md, config.json | Archivo faltante |
+| Segregación | Buscar prosa fenomenológica en AGENTS.md | Match encontrado |
+| config.json válido | Parsear contra JSON schema §5.3 | Error de parseo |
+| Frontmatter | Cada archivo tiene frontmatter de bootstrap | Ausente |
+
+### 12.5 Verificación de Bisimulación
+
+El agente migrado **DEBE** ser bisimilar al original:
+
+1. Seleccionar 5 inputs representativos del dominio del agente.
+2. Ejecutar cada input contra el YAML monolítico original (formato KODA).
+3. Ejecutar cada input contra el workspace KORA.
+4. Comparar outputs: **DEBEN** ser funcionalmente indistinguibles.
+5. Si divergencia detectada → identificar qué componente perdió información y corregir.
+
+**Correcto:** `G₂(agent_guardian.yaml) produce un workspace donde las transiciones S-DISPATCHER → S-EVALUATOR → S-DISPATCHER se preservan exactamente, y el tono "defensor evangélico" reside en SOUL.md.`
+**Incorrecto:** `G₂ pierde el estado S-DIAGNOSTICIAN porque el bloque YAML estaba mal parseado. El workspace produce 6 estados pero el original tenía 7.`
