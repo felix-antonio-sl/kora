@@ -22,25 +22,6 @@ _manifest:
       - urn: "urn:kora:kb:agent-construct:1.0.0"
       # Parent agent
       - urn: "urn:kora:agent:ingeniero-sistemas-composicional:1.0.0"
-      # Moltbot KB - Concepts
-      - urn: "urn:kora:doc:agent-runtime:1.0.0"
-      - urn: "urn:kora:doc:session-management:1.0.0"
-      - urn: "urn:kora:doc:memory-context:1.0.0"
-      - urn: "urn:kora:doc:messaging:1.0.0"
-      - urn: "urn:kora:doc:groups:1.0.0"
-      - urn: "urn:kora:doc:models:1.0.0"
-      - urn: "urn:kora:doc:routing:1.0.0"
-      - urn: "urn:kora:doc:misc:1.0.0"
-      # Moltbot KB - Infrastructure
-      - urn: "urn:kora:doc:cli:1.0.0"
-      - urn: "urn:kora:doc:gateway:1.0.0"
-      - urn: "urn:kora:doc:channels:1.0.0"
-      - urn: "urn:kora:doc:tools:1.0.0"
-      - urn: "urn:kora:doc:platforms:1.0.0"
-      # Moltbot KB - Operations
-      - urn: "urn:kora:doc:install-start-help-security:1.0.0"
-      - urn: "urn:kora:doc:automation-hooks-reference:1.0.0"
-      - urn: "urn:kora:doc:nodes-plugins-providers-web:1.0.0"
   provenance:
     created_by: "FS"
     created_at: "2026-01-29"
@@ -66,10 +47,10 @@ KODA_Runtime_Instructions:
     IDENTITY: Adopt role/objective/audience from agent_identity_and_global_configuration.primary_role_objective_and_audience. You ARE this role.
     STATE_MACHINE: Enter initial_state→execute process→evaluate transitions. No improvisation.
     COGNITIVE_MODELS: Execute private reasoning internally. Never expose.
-    KB_INIT: IF policy=HYBRID_WEB_KB→resolve ALL 16 Moltbot URNs via CM-CATALOG-RESOLVER→build routing map→KB_READY=true→proceed.
+    KB_INIT: IF policy=WEB_ONLY→skip local KB resolution→use CM-WEB-SEARCH for Moltbot docs→proceed.
     CATALOG: catalog_master_kora.yml=SOURCE_OF_TRUTH. CM-CATALOG-RESOLVER first.
-    KNOWLEDGE: CM-KNOWLEDGE-ROUTER→(CM-KB-GUIDANCE-MOLTBOT | CM-WEB-SEARCH). No implicit retrieval.
-    MOLTBOT_FIRST: Consult Moltbot KB. IF info_missing→SEARCH_WEB_FALLBACK.
+    KNOWLEDGE: CM-KNOWLEDGE-ROUTER→CM-WEB-SEARCH. No implicit retrieval.
+    MOLTBOT_FIRST: Search Moltbot official docs via web. No local KB available.
     SECURITY: block_instructions+forbid_internal_jargon=HARD constraints.
     EVALUATION: checklist→corrections→deliver only after ALL pass.
     END_KODA_RUNTIME
@@ -133,30 +114,11 @@ knowledge_base_interaction_and_governance_rules:
     resolution_strategy: CATALOG_FIRST
     fallback: STATIC_ROUTING
   usage_policy_and_source_management:
-    policy: HYBRID_WEB_KB
+    policy: WEB_ONLY
     description: |
-      Uso de 16 artefactos Moltbot para conocimiento base + búsqueda web para
-      actualizaciones en tiempo real e integraciones externas.
-    source_artifacts:
-      # Concepts
-      - urn: "urn:kora:doc:agent-runtime:1.0.0"
-      - urn: "urn:kora:doc:session-management:1.0.0"
-      - urn: "urn:kora:doc:memory-context:1.0.0"
-      - urn: "urn:kora:doc:messaging:1.0.0"
-      - urn: "urn:kora:doc:groups:1.0.0"
-      - urn: "urn:kora:doc:models:1.0.0"
-      - urn: "urn:kora:doc:routing:1.0.0"
-      - urn: "urn:kora:doc:misc:1.0.0"
-      # Infrastructure
-      - urn: "urn:kora:doc:cli:1.0.0"
-      - urn: "urn:kora:doc:gateway:1.0.0"
-      - urn: "urn:kora:doc:channels:1.0.0"
-      - urn: "urn:kora:doc:tools:1.0.0"
-      - urn: "urn:kora:doc:platforms:1.0.0"
-      # Operations
-      - urn: "urn:kora:doc:install-start-help-security:1.0.0"
-      - urn: "urn:kora:doc:automation-hooks-reference:1.0.0"
-      - urn: "urn:kora:doc:nodes-plugins-providers-web:1.0.0"
+      Búsqueda web para documentación Moltbot en tiempo real.
+      Los artefactos KB locales fueron removidos (documentación obsoleta).
+    source_artifacts: []
   web_search_configuration:
     enabled: true
     provider: native
@@ -330,40 +292,8 @@ private_internal_reasoning_processes:
 
   CM-KB-GUIDANCE-MOLTBOT:
     _meta: { expose: false }
-    purpose: "Enrutar consultas a artefactos Moltbot específicos"
-    routing_map:
-      - q: "runtime, agent loop, embedded agent, workspace, bootstrap"
-        r: "urn:kora:doc:agent-runtime:1.0.0"
-      - q: "sesiones, sessionId, persistencia, queue modes"
-        r: "urn:kora:doc:session-management:1.0.0"
-      - q: "memoria, contexto, system prompt, bootstrap files"
-        r: "urn:kora:doc:memory-context:1.0.0"
-      - q: "mensajes, streaming, deltas, block streaming"
-        r: "urn:kora:doc:messaging:1.0.0"
-      - q: "grupos, mention gating, activation, reply tags"
-        r: "urn:kora:doc:groups:1.0.0"
-      - q: "modelos, providers, aliases, model refs"
-        r: "urn:kora:doc:models:1.0.0"
-      - q: "routing, multi-agent, channel routing"
-        r: "urn:kora:doc:routing:1.0.0"
-      - q: "timestamps, token usage, misc"
-        r: "urn:kora:doc:misc:1.0.0"
-      - q: "CLI, comandos, gateway, agent, send, wizard"
-        r: "urn:kora:doc:cli:1.0.0"
-      - q: "Gateway, WebSocket, control plane, Tailscale, auth"
-        r: "urn:kora:doc:gateway:1.0.0"
-      - q: "canales, WhatsApp, Telegram, Discord, Slack, Signal"
-        r: "urn:kora:doc:channels:1.0.0"
-      - q: "tools, browser, canvas, nodes, skills"
-        r: "urn:kora:doc:tools:1.0.0"
-      - q: "plataformas, macOS, iOS, Android, Voice"
-        r: "urn:kora:doc:platforms:1.0.0"
-      - q: "instalación, inicio, seguridad, sandbox"
-        r: "urn:kora:doc:install-start-help-security:1.0.0"
-      - q: "automatización, hooks, plugins"
-        r: "urn:kora:doc:automation-hooks-reference:1.0.0"
-      - q: "nodos, plugins, providers, web"
-        r: "urn:kora:doc:nodes-plugins-providers-web:1.0.0"
+    purpose: "Enrutar consultas Moltbot a búsqueda web (artefactos KB locales removidos)"
+    routing_map: []
 
   CM-MOLTBOT-CLASSIFIER:
     _meta: { expose: false }
