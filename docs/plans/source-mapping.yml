@@ -1,0 +1,797 @@
+# Source Mapping — KORA Phase 1
+# Generated: 2026-02-24
+# Total entries: 208 (175 YAML KBs + 33 non-YAML files in fxsl/gist, fxsl/mbt, kora/)
+# Strategy counts: FROM_SOURCE: 79, FROM_YAML: 129
+# Coverage: TDE 93%, FXSL 77%, GN 26%, Gov 56%, Mgmt 50%, Legal 10%, Orko 0%, Kora 0%
+
+mappings:
+  gn:
+  - kb: knowledge/gn/normativa/loc-gore.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/ley_19175.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/normativa/marco-legal-gores.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/fx_ley_18575.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/bpmn/bpmn-d01-actos-administrativos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d03-gestion-ipr.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d06-flota-vehicular.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d07-rrhh.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d08-rendiciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d09-cies-sitia.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Process model, no clear single-document source
+  - kb: knowledge/gn/bpmn/bpmn-index.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Index artifact, no clear single-document source
+  - kb: knowledge/gn/gestion/flujos-aprobacion-documentos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple normative sources
+  - kb: knowledge/gn/gestion/gestion-info-geoespacial.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple sources
+  - kb: knowledge/gn/gestion/gestion-ipr.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/Manual técnico-operativo de la inversión pública regional Gobiernos
+      regionales de chile - Gobierno Regional de Ñuble - 2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gestion/gestion-prpto-2026.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/instrucciones_glosas_gore_2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gestion/gestion-prpto.yml
+    source: /Users/felixsanhueza/posibles fuentes/fx_manual_herramientas_analisis_presupuestario_chile_conciso.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gestion/gestion-rendiciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple normative sources
+  - kb: knowledge/gn/gestion/glosas-gores-2026.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/instrucciones_glosas_gore_2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gestion/transferencia-ppr.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple sources
+  - kb: knowledge/gn/gn-cqs-master.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Master index artifact
+  - kb: knowledge/gn/gobernanza/aceleracion-regional.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/cies-sitia.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/comunicaciones-oc.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/cuentas-publicas-2021-2024.yml
+    source: /Users/felixsanhueza/posibles fuentes/fx_cuentas_publicas_gore_nuble_2021_2023.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gobernanza/erd-nuble-2024-2030.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/estrategia-gestion.yml
+    source: /Users/felixsanhueza/posibles fuentes/fx_manual_diseno_estrategico_gestion_publica_2024.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gobernanza/estrategia-td-ia.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/glosario-gore-nuble.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite glossary artifact
+  - kb: knowledge/gn/gobernanza/glosario-ipr-consolidado.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite glossary artifact
+  - kb: knowledge/gn/gobernanza/gore-ideal.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/indicadores-nuble.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/Documentacion/indicadores_regionales_comunales_nuble.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gobernanza/informe-estado-inicial-gore-pre-td.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/intro-gores-nuble.yml
+    source: /Users/felixsanhueza/posibles fuentes/kb_gn_000_intro_gores_nuble.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/gobernanza/matriz-integracion-organica.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/nuble-250.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/omega-ipr-gestion-fusion.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite fusion artifact
+  - kb: knowledge/gn/gobernanza/organigrama.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/plan-potenciamiento-dgi.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/problemas-sociales-cl.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/gobernanza/vision-desarrollo-nuble.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/guias/guia-circular-33-sts.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/instructivo_c33.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/guias/guia-comunicaciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/guias/guia-fril-2025-sts.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from gore_desde_0 FRIL docs
+  - kb: knowledge/gn/guias/guia-frpd-nuble.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/Minuta Técnica del Fondo Regional para la Productividad y el
+      Desarrollo.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/guias/guia-idi-sni-sts.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/normas_instrucciones_y_procedimientos_para_el_proceso_de_inversión_pública_2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/guias/guia-programas-directos-gore.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/manual_tecnico_normativo_programas_publicos_2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/guias/instructivo-subvencion-8-2025-sts.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/instructivo_vinc8_felix.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/manuales/manual-activo-fijo.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-asistencia.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-bienestar.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-ciclo-vida.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-compras.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/evaluación_ex_ante_2025_de_programas_públicos_de_gobiernos_regionales.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/manuales/manual-contabilidad.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-desarrollo-organizacional.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-flotas.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-induccion-gore-nuble-2026.yml
+    source: /Users/felixsanhueza/posibles fuentes/fx_orientaciones_administracion_regional_2024.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/manuales/manual-inventarios-bodegas.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-operacional-dgi.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-presupuesto.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/Manual técnico-operativo del sistema de programas públicos
+      en gobiernos regionales de chile - Sanhueza - 2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/manuales/manual-remuneraciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/manuales/manual-tesoreria.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gn/normativa/dictamenes-cgr-gore.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from CGR dictamenes
+  - kb: knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/ley_presupuesto_2025_gores.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/normativa/ley-presupuestos-2026-partida-31.yml
+    source: /Users/felixsanhueza/posibles fuentes/gore_desde_0/ley_presupuesto_2025_gores.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gn/normativa/modelos-actos-juridicos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple normative sources
+  - kb: knowledge/gn/ris/ris-artcult.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-deportes.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-edpub.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-empub.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-index.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system index, likely composite
+  - kb: knowledge/gn/ris/ris-patrimonio.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-pmdt.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-proginv.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/ris-proyinv.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Institutional info system, likely composite
+  - kb: knowledge/gn/ris/selector-ipr.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Selector/routing artifact
+  tde:
+  - kb: knowledge/tde/estrategia/gobierno_digital_2030.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_Gobierno_Digital_2030.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/estrategia/principios_objetivos.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_identidad_digital.md
+    strategy: FROM_SOURCE
+    notes: Primary match; composite from multiple estrategias
+  - kb: knowledge/tde/guias/calidad_web.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_Calidad_WEB.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/anonimizacion_datos_v2.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_introductoria_a_la_anonimización_de_datos.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/diseno_servicios.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Plataformas_CompartidasManuales_de_Uso/Recomendaciones_para_el_Diseño_de_Servicios_en_el_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/evaltic.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_Técnica_Marco_para_las_inversiones_y_el_gasto_en_gobierno_digital_EVALTIC.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/metadatos_documentos.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_Técnica_de_Metadatos_para_Documentos_y_Expedientes_Electrónicos.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/mgde.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_Técnica_aplicación_de_un_marco_de_referencia_de_gestión_de_datos_en_los_órganos_de_la_Administración_del_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/orientaciones_gestion_tic.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Orientaciones_básicas_para_la_gestión_de_las_TIC.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/rat_datos_personales.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Protección_de_Datos_PersonalesPolítica_de_Tratamiento/Registro_de_Actividades_de_Tratamiento.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/reglamento_tde_ds4.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/RegulaciónLeyes_y_Reglamentos/Decreto_4.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/seguridad_ciberseguridad_v1.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_Técnica_de_Seguridad_de_la_Información_y_Ciberseguridad.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/sistema_tde_2025.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_Metodológica_del_Sistema_de_Transformación_Digital_2025.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/catalogo_cpat_nuble.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_rápida_CPAT.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/guias/cpat_completa.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Guía_rápida_CPAT.md
+    strategy: FROM_SOURCE
+    notes: Same source as catalogo_cpat_nuble; full CPAT guide
+  - kb: knowledge/tde/leyes/ley_19880_procedimientos.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/RegulaciónLeyes_y_Reglamentos/Ley_19880.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/leyes/ley_21180_tde.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/RegulaciónLeyes_y_Reglamentos/Ley_Nº_21180_de_Transformación_Digital_del_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/normas_tecnicas/nt_autenticacion.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_9__Norma_Técnica_de_Autenticación.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/normas_tecnicas/nt_calidad_plataformas.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_11__Plataformas_electrónicas_y__procedimientos_administrativos_en_los_Órganos_de_la_Administración_del_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/normas_tecnicas/nt_documentos_expedientes.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_10__Documentos_y_Expedientes_Electrónicos_para_la_gestión_de_procedimientos_administrativos.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/normas_tecnicas/nt_interoperabilidad.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_12___Interoperabilidad.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/normas_tecnicas/nt_notificaciones.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_8__Norma_técnica_de_notificaciones.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/normas_tecnicas/nt_seguridad_ciberseguridad.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosNormas/Decreto_7___Norma_técnica_de_Seguridad_de_la_Información_y_ciberseguridad.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/plataformas/claveunica.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Plataformas_CompartidasManuales_de_Uso/Manual_de_Integración__de_ClaveÚnica.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/plataformas/claveunica_tyc.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Plataformas_CompartidasTérminos_y_Condiciones/Términos_y_Condiciones_para_la_integración_y_el_uso_del_Sistema_de_ClaveÚnica.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/plataformas/simple_saas.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Plataformas_CompartidasManuales_de_Uso/Manual_de_uso_SIMPLE_en_modalidad_SaaS.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/tde/plataformas/simple_saas_oae.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Plataformas_CompartidasManuales_de_Uso/Manual_de_uso_SIMPLE_en_modalidad_SaaS.md
+    strategy: FROM_SOURCE
+    notes: Same source as simple_saas; OAE variant
+  - kb: knowledge/tde/plataformas/docdigital.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found in wikiguias corpus
+  - kb: knowledge/tde/plataformas/pisee.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found in wikiguias corpus
+  fxsl:
+  - kb: knowledge/fxsl/cat/seven-sketches.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: 'Book: Seven Sketches in Compositionality (Fong & Spivak); Zotero academic paper'
+  - kb: knowledge/fxsl/cat/action-primary-key.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/algebraic-databases.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/algebraic-model-management.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/audit-patterns.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/categorical-data-structures.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/categorical-systems-theory.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/coalgebras.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/cognitive-toolkit.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/constraint-logic.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/cql-data-integration.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/data-access-layers.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/data-lakes-ct.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/exploring-category-theoretic-approaches-to-databases.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/formal-framework-data-lakes-ct.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/formal-framework-multimodel-data-transformations.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/kb-category.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper; likely fx_ctfp (Category Theory for Programmers)
+  - kb: knowledge/fxsl/cat/mathematical-modelling.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/mbse-consistency.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/multicategory-multimodel-query-processing.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/schema-evolution.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/unified-multimodel.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/cat/unified-representation-transformation-multimodel.yml
+    source: null
+    strategy: FROM_SOURCE
+    notes: Zotero academic paper
+  - kb: knowledge/fxsl/gist/fx-guide-onto-gist-001-audit-protocol.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Already in YAML format
+  - kb: knowledge/fxsl/gist/fx-address-guidance.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in markdown format
+  - kb: knowledge/fxsl/gist/fx-namespace.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in markdown format
+  - kb: knowledge/fxsl/gist/fx-readme.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in markdown format
+  - kb: knowledge/fxsl/gist/fx-uom-model.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in markdown format
+  - kb: knowledge/fxsl/mbt/fx-rules.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in markdown format
+  - kb: knowledge/fxsl/mbt/fx-tensiones.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in markdown format
+  legal:
+  - kb: knowledge/legal/legislacion_ia_chile.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/RegulaciónLeyes_y_Reglamentos/Ley_Nº_21658.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/legal/ley_21658_segdig.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/RegulaciónLeyes_y_Reglamentos/Ley_Nº_21658.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/legal/ley_21719_datos_personales.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/ley_15076.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Specific medical law, no corpus match
+  - kb: knowledge/legal/ley_19664.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Specific medical law, no corpus match
+  - kb: knowledge/legal/ley_21643.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Specific labor law, no corpus match
+  - kb: knowledge/legal/acoso_laboral.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/confianza_legitima.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/contratacion_publica.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/deberes_prohibiciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/derechos_especiales.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/feriados_permisos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/formacion_especialistas.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/index.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Index artifact
+  - kb: knowledge/legal/ingreso_carrera.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/intro_estatutos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/jornada_calificaciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/maternidad.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/remuneraciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/responsabilidad_admin.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  - kb: knowledge/legal/terminacion.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple legal sources
+  gov:
+  - kb: knowledge/gov/cloud_publica.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Recomendaciones_Técnicas_para_la_adquisición_de_servicios_de_Cloud_Pública_en_los_Órganos_de_la_Administración_del_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gov/capacitaciones_tde.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_capacitaciones_para_la_Transformación_Digital_del_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gov/datos_administracion_estado.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_Datos_de_la_Administración_del_Estado.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gov/identidad_digital.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/EstrategiasEstrategias/Estrategia_de_identidad_digital.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gov/datosgob.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/gov/intro_tde.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite introductory artifact
+  - kb: knowledge/gov/lexicon_wikiguias.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite lexicon artifact
+  - kb: knowledge/gov/metodologia_proyectos_tic.yml
+    source: /Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus/Lineamientos_TécnicosGuías/Metodología_para_la_gestión_de_proyectos.md
+    strategy: FROM_SOURCE
+  - kb: knowledge/gov/notificaciones.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Composite from multiple notification platform sources
+  orko:
+  - kb: knowledge/orko/impl-orko-toolkit.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-arquitectura.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-fases.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-fundamentos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-metodologia.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-playbooks.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-tejidos.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  - kb: knowledge/orko/orko-toolkit.yml
+    source: null
+    strategy: FROM_YAML
+    notes: Expansion deferred per plan
+  mgmt:
+  - kb: knowledge/mgmt/estructura-estado-chile.yml
+    source: /Users/felixsanhueza/posibles fuentes/fx_estructura_administracion_estado_chile.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/mgmt/mw-waissbluth.yml
+    source: /Users/felixsanhueza/posibles fuentes/fx_weisbluth_manual_coordinacion_estrategica_sector_publico_2024.txt
+    strategy: FROM_SOURCE
+  - kb: knowledge/mgmt/lean6.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  - kb: knowledge/mgmt/meyer-org-structure.yml
+    source: null
+    strategy: FROM_YAML
+    notes: No clear single-source document found
+  kora:
+  - kb: knowledge/kora/manual-openclaw/00-fundamentos-previos.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/00-toc.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/01-arquitectura-gateway.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/02-agente-unidad-fundamental.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/03-sesiones.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/04-modelos-failover.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/05-memoria.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/06-multi-agent-routing.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/07-aislamiento-seguridad.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/08-patrones-multitenant.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/09-sub-agentes.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/10-sub-agentes-anidados.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/11-comunicacion-inter-sesion.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/12-heartbeats.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/13-cron-jobs.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/14-cron-vs-heartbeat.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/15-hooks.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/16-webhooks.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/17-lobster.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/18-modelo-seguridad.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/19-operaciones.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/20-patrones-diseno.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/21-decisiones-arquitectura.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/22-multi-gateway-docker-federation.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/apendices.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/CHEATSHEET.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/manual-openclaw/README.md
+    source: null
+    strategy: FROM_YAML
+    notes: Already in final markdown format
+  - kb: knowledge/kora/sys/hub_agentes.yml
+    source: null
+    strategy: FROM_YAML
+    notes: System configuration artifact
+  - kb: knowledge/kora/sys/test_strategy.yml
+    source: null
+    strategy: FROM_YAML
+    notes: System configuration artifact
+  - kb: knowledge/kora/sys/workflow_wikiguias.yml
+    source: null
+    strategy: FROM_YAML
+    notes: System configuration artifact
