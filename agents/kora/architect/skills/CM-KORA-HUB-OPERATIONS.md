@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:architect-koda-hub-operations:1.0.0"
+  urn: "urn:kora:skill:architect-kora-hub-operations:1.0.0"
   type: "skill"
 version: "1.0.0"
 status: published

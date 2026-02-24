@@ -116,7 +116,7 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 **Definición:** F define el tipado de inputs y outputs del agente. Para un agente reactivo, F(U) = (Out × U)^In — dado un input, el agente produce un output y un nuevo estado.
 
 **Propiedades:**
-1. **Álgebra cerrada:** toda herramienta (tool) disponible para el agente **DEBE** tener su firma inferencial declarada en F. El agente no **DEBE** invocar herramientas no declaradas.
+1. **Álgebra cerrada:** toda herramienta (tool) disponible para el agente **DEBE** tener su firma inferencial declarada en F. El agente **NO DEBE** invocar herramientas no declaradas.
 2. **Semántica, no implementación:** F describe QUÉ acciones existen y QUÉ tipos aceptan/retornan, no CÓMO se implementan.
 3. **Herencia en sub-agentes:** cuando un agente maestro instancia un sub-agente, F se hereda completo — el sub-agente opera con las mismas herramientas que el maestro.
 
@@ -463,6 +463,8 @@ Todo morfismo validado en `AGENTS.md` **DEBE** formularse pura e independienteme
 ### 8.2 Conservación de Perímetros (Limit Preservation)
 
 Toda evaluación matemática en `AGENTS.md` asume la inmutabilidad dura de su confinamiento. Las políticas imperativas sancionadas en el Límite (`config.json` o capa base del O.S.) **DEBEN** tener precedencia ejecutiva irrefutable sobre cualquier instrucción insertada en los nodos conversacionales del LLM.
+
+---
 
 ## 9. Verificación
 

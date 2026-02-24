@@ -35,18 +35,14 @@ lang: en
   - Inclusion: A ↪ B (monomorfismo; instance I(A) ⊆ I(B)).
   - Surjection: A ↠ B (epimorfismo; instance I(f) surjective).
 
-- **Theory**:
-- T = (S, Σ) where S is schema and Σ is set of formulas.
-
+- **Theory**: T = (S, Σ) where S is schema and Σ is set of formulas.
 
 ## Satisfaction
 
 - **Definition**: Instance I: S→Set satisfies T = (S, Σ) iff all formulas in Σ satisfied.
 
 
-- **Notation**:
-- I ⊨ T.
-
+- **Notation**: I ⊨ T.
 
 - **Procedure**:
 
@@ -58,13 +54,9 @@ lang: en
 
 ## Model Category
 
-- **Mod(T)**:
-- Category of T models (valid instances) + natural transformations preserving T.
+- **Mod(T)**: Category of T models (valid instances) + natural transformations preserving T.
 
-
-- **Use**:
-- Study space of valid instances conforming to schema with constraints.
-
+- **Use**: Study space of valid instances conforming to schema with constraints.
 
 ## Constraints in Contexts
 

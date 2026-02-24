@@ -27,9 +27,7 @@ lang: en
 - Central proposal: use Applied Category Theory to generate data structures automatically from formal specifications.
 
 
-- **Enabling technology**:
-- GATs (Generalized Algebraic Theories), C-Sets (category-indexed sets), ACSets (Attributed C-Sets), Catlab.jl.
-
+- **Enabling technology**: GATs (Generalized Algebraic Theories), C-Sets (category-indexed sets), ACSets (Attributed C-Sets), Catlab.jl.
 
 ## Core Concepts
 
@@ -47,9 +45,7 @@ lang: en
 - ACSet is funtor X: S → Set where attribute objects map to fixed data types (R, String, etc.).
 
 
-- **Formalism**:
-- Via comma categories or indexing over base type category.
-
+- **Formalism**: Via comma categories or indexing over base type category.
 
 ### GAT
 
@@ -84,13 +80,9 @@ lang: en
 - Not passive static values, but funtores.
 
 
-- **Definition**:
-- Database instance conforming to schema.
+- **Definition**: Database instance conforming to schema.
 
-
-- **Categorical Modeling**:
-- Instance of database via C-Set objects and morfismos.
-
+- **Categorical Modeling**: Instance of database via C-Set objects and morfismos.
 
 ### Information
 
@@ -98,28 +90,18 @@ lang: en
 - schema is first-class mathematical object.
 
 
-- **Definition**:
-- Formal specification of data structure and algebraic constraints.
+- **Definition**: Formal specification of data structure and algebraic constraints.
 
-
-- **Categorical Modeling**:
-- Via GAT, schema presentation; syntax/semantics separation.
-- Allows multiple implementations (in-memory, SQL, graphs) by changing target category or funtor implementation.
-
+- **Categorical Modeling**: Via GAT, schema presentation; syntax/semantics separation. Allows multiple implementations (in-memory, SQL, graphs) by changing target category or funtor implementation.
 
 ### Knowledge
 
 - Capacity to transform and reason about data preserving structure.
 
 
-- **Definition**:
-- Functorial operations translating data between different schemas and combining datasets.
+- **Definition**: Functorial operations translating data between different schemas and combining datasets.
 
-
-- **Categorical Modeling**:
-- Given funtor F: C → D induces three adjoined operations on C-Sets (Δ_F, Σ_F, Π_F).
-- Gluing constructions.
-
+- **Categorical Modeling**: Given funtor F: C → D induces three adjoined operations on C-Sets (Δ_F, Σ_F, Π_F). Gluing constructions.
 
 ### Modeling
 
@@ -154,6 +136,4 @@ end
 - **Correctness**: Data migrations mathematically guarantee structure preservation, eliminating entire classes of ETL errors.
 - **Efficiency**: Code generation allows high-level abstractions to compete in performance with manual implementations.
 
-- **Significance**:
-- Fundamental for building systems where Action (Fukada) and Structure (Patterson) coexist rigorously.
-
+- **Significance**: Fundamental for building systems where Action (Fukada) and Structure (Patterson) coexist rigorously.

@@ -21,21 +21,13 @@ lang: en
 
 ## KB Category Definition
 
-- **Objects**:
-- Artifacts registered in catalog.
+- **Objects**: Artifacts registered in catalog.
 
+- **Morphisms**: Relations between artifacts (XRef, requires, refines, generalizes, equivalent_to).
 
-- **Morphisms**:
-- Relations between artifacts (XRef, requires, refines, generalizes, equivalent_to).
+- **Identity**: Self-references (trivial).
 
-
-- **Identity**:
-- Self-references (trivial).
-
-
-- **Composition**:
-- Paths through artifact relationships.
-
+- **Composition**: Paths through artifact relationships.
 
 ## Morphism Types
 
@@ -53,18 +45,14 @@ lang: en
 - Fragments must exist in targets.
 
 
-- **Severity if Violated**:
-- HIGH.
-
+- **Severity if Violated**: HIGH.
 
 ### No Bad Cycles in Refinement
 
 - If A refines B and B refines A, declare A equivalent_to B explicitly.
 
 
-- **Severity if Violated**:
-- MEDIUM.
-
+- **Severity if Violated**: MEDIUM.
 
 ### Requires Acyclic (DAG)
 
@@ -72,18 +60,14 @@ lang: en
 - no circular dependencies.
 
 
-- **Severity if Violated**:
-- CRITICAL.
-
+- **Severity if Violated**: CRITICAL.
 
 ### Catalog Complete
 
 - All artifact files registered in master catalog.
 
 
-- **Severity if Violated**:
-- MEDIUM.
-
+- **Severity if Violated**: MEDIUM.
 
 ### URN Unique
 
@@ -91,18 +75,14 @@ lang: en
 - no duplicates.
 
 
-- **Severity if Violated**:
-- CRITICAL.
-
+- **Severity if Violated**: CRITICAL.
 
 ### Version Consistent
 
 - metadata.Version equals URN version.
 
 
-- **Severity if Violated**:
-- HIGH.
-
+- **Severity if Violated**: HIGH.
 
 ## Universal Constructions
 
@@ -112,9 +92,7 @@ lang: en
 - pushout unifies identifying shared origin.
 
 
-- **Use**:
-- Merge of knowledge partial about same domain.
-
+- **Use**: Merge of knowledge partial about same domain.
 
 ### Pullback: Commonality
 
@@ -138,6 +116,4 @@ lang: en
 4. Audit individual artifacts (DIK classification).
 5. Generate global report with metrics and improvement recommendations.
 
-- **Output Format**:
-- Inventory summary, invariant status, graph metrics (nodes, edges, density), issues by artifact, consolidated proposals.
-
+- **Output Format**: Inventory summary, invariant status, graph metrics (nodes, edges, density), issues by artifact, consolidated proposals.

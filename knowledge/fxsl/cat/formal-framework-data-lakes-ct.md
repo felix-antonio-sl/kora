@@ -21,9 +21,7 @@ lang: en
 
 ## Data Lake Category DL
 
-- **Definition**:
-- Objects = {Data Storage, Data Ingestion, Data Exploration}.
-
+- **Definition**: Objects = {Data Storage, Data Ingestion, Data Exploration}.
 
 - **Morphisms**:
 
@@ -31,9 +29,7 @@ lang: en
 - explore: Storage → Exploration
 - maintenance: Storage × Storage → Storage (bifunctor for combining datasets)
 
-- **Remark**:
-- Maintenance morphism allows operations improving datasets/metadata by combining storage functionalities.
-
+- **Remark**: Maintenance morphism allows operations improving datasets/metadata by combining storage functionalities.
 
 ## Category Theory Fundamentals
 
@@ -42,10 +38,7 @@ lang: en
 - Maps objects C to D, morfismos preserving identity and composition.
 
 
-- **Surjective Functor**:
-- For every pair in D and morfismo g:
-- F(x) → F(y) in D, exists morfismo f: x' → y' in C with F(f)=g.
-
+- **Surjective Functor**: For every pair in D and morfismo g: F(x) → F(y) in D, exists morfismo f: x' → y' in C with F(f)=g.
 
 ### Constant Functor
 
@@ -58,13 +51,9 @@ lang: en
 - Functors map instance categories to high-level DL category.
 
 
-- **Example**: Δ_{Storage-DL}:
-- Storage → DL.
+- **Example**: Δ_{Storage-DL}: Storage → DL.
 
-
-- **Surjectivity Ensures**:
-- Every morfismo in DL has corresponding morfismo in instance categories; maintains structural integrity.
-
+- **Surjectivity Ensures**: Every morfismo in DL has corresponding morfismo in instance categories; maintains structural integrity.
 
 ## Example: Enterprise Application
 

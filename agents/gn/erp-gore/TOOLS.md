@@ -21,11 +21,21 @@ _manifest:
 | Topic | URN |
 |-------|-----|
 | Presupuesto, SIGFE, subtitulos, disponibilidad | urn:gn:kb:gestion-prpto |
+| Manual presupuesto, ejecucion presupuestaria | urn:gn:kb:manual-presupuesto |
 | Ley presupuestos, Partida 31, glosas | urn:gn:kb:ley-presupuestos-2026-partida-31 |
 | Normas generales ley presupuestos | urn:gn:kb:ley-presupuestos-2026-normas-generales |
+| Contabilidad, registros contables, NICSP | urn:gn:kb:manual-contabilidad |
+| Tesoreria, pagos, flujo caja | urn:gn:kb:manual-tesoreria |
+| Compras, adquisiciones, licitaciones, Mercado Publico | urn:gn:kb:manual-compras |
 | Inventarios, bodegas, stock | urn:gn:kb:manual-inventarios-bodegas |
 | Activo fijo, patrimonio, bienes | urn:gn:kb:manual-activo-fijo |
+| Remuneraciones, liquidaciones, sueldos | urn:gn:kb:manual-remuneraciones |
+| Asistencia, control horario, ausentismo | urn:gn:kb:manual-asistencia |
+| Bienestar, beneficios, prestaciones funcionarias | urn:gn:kb:manual-bienestar |
+| Ciclo vida funcionario, ingreso, egreso | urn:gn:kb:manual-ciclo-vida |
 | RRHH, capacitacion, desarrollo | urn:gn:kb:manual-desarrollo-organizacional |
 | Induccion, organizacion GORE | urn:gn:kb:manual-induccion-gore-nuble-2026 |
+| Flotas, vehiculos, flota vehicular | urn:gn:kb:manual-flotas |
+| DGI, operaciones, control gestion, reportes | urn:gn:kb:manual-operacional-dgi |
 | Indicadores, metricas regionales | urn:gn:kb:indicadores-nuble |
 | Intro GOREs Nuble | urn:gn:kb:intro-gores-nuble |

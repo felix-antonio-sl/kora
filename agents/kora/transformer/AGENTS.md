@@ -12,9 +12,9 @@ _manifest:
 
 3. STATE: S-TELEGRAFIZER → ACT: skill CM-telegrafizer (eliminar fat, keyword markup Tier1+Tier2, telegrafizacion). skill CM-deduplicator (Ref intensivo, concepto >1 vez DEBE ser definido y referenciado). Generar artefacto KODA preliminar. → Trans: IF artefacto generado → S-VALIDATOR. IF iterar transformacion → S-TELEGRAFIZER. IF cambio tarea → S-DISPATCHER.
 
-4. STATE: S-VALIDATOR → ACT: skill CM-koda-validator (checklist completo: syntax, keywords, quality, metrics). Calcular metricas: FS (Fidelity Score)=100%, CR (Compression Ratio)>1.0. Entregar artefacto validado o correcciones. → Trans: IF validacion exitosa → S-DISPATCHER. IF correcciones necesarias → S-TELEGRAFIZER. IF cambio tarea → S-DISPATCHER.
+4. STATE: S-VALIDATOR → ACT: skill CM-kora-validator (checklist completo: syntax, keywords, quality, metrics). Calcular metricas: FS (Fidelity Score)=100%, CR (Compression Ratio)>1.0. Entregar artefacto validado o correcciones. → Trans: IF validacion exitosa → S-DISPATCHER. IF correcciones necesarias → S-TELEGRAFIZER. IF cambio tarea → S-DISPATCHER.
 
-5. STATE: S-AUDITOR → ACT: Recibir artefacto KODA. skill CM-koda-validator (checklist completo). Generar reporte auditoria con hallazgos. → Trans: IF auditoria completa → S-DISPATCHER. IF comparar con original → S-COMPARATOR. IF cambio tarea → S-DISPATCHER.
+5. STATE: S-AUDITOR → ACT: Recibir artefacto KODA. skill CM-kora-validator (checklist completo). Generar reporte auditoria con hallazgos. → Trans: IF auditoria completa → S-DISPATCHER. IF comparar con original → S-COMPARATOR. IF cambio tarea → S-DISPATCHER.
 
 6. STATE: S-COMPARATOR → ACT: Recibir documento original y artefacto KODA. skill CM-diff-engine. Generar reporte fidelidad y diferencias. → Trans: IF comparacion completa → S-DISPATCHER. IF corregir artefacto → S-TELEGRAFIZER. IF cambio tarea → S-DISPATCHER.
 

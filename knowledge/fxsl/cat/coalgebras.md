@@ -26,9 +26,7 @@ lang: en
 - While algebras focus on constructing finite structures via constructors, coalgebras focus on observing infinite behaviors via destructors/observers.
 
 
-- **Application**:
-- Model software objects, reactive systems, concurrent components with hidden state where behavior matters more than representation.
-
+- **Application**: Model software objects, reactive systems, concurrent components with hidden state where behavior matters more than representation.
 
 ## Core Concepts
 
@@ -43,9 +41,7 @@ lang: en
 - F: Funtor describing type of observations/transitions.
 - c: Morfismo of structure assigning each state its observation and next state.
 
-- **Principle**:
-- What matters is system behavior, not internal representation.
-
+- **Principle**: What matters is system behavior, not internal representation.
 
 ### Interface Functors
 
@@ -58,27 +54,17 @@ lang: en
 
 ### Behavioral Equivalence: Bisimulation
 
-- **Definition**:
-- Relation R ⊆ U×U such that related states produce indistinguishable behaviors under c.
+- **Definition**: Relation R ⊆ U×U such that related states produce indistinguishable behaviors under c.
 
+- **Formal**: If u₁ R u₂ then F(R)(c(u₁), c(u₂)) holds.
 
-- **Formal**:
-- If u₁ R u₂ then F(R)(c(u₁), c(u₂)) holds.
+- **Interpretation**: Observational equivalence finer than internal isomorfismo.
 
-
-- **Interpretation**:
-- Observational equivalence finer than internal isomorfismo.
-
-
-- **Use**:
-- Determine when components are substitutable without changing external behavior.
-
+- **Use**: Determine when components are substitutable without changing external behavior.
 
 ### Final Coalgebra
 
-- **Definition**:
-- Terminal object in category of F-coalgebras.
-
+- **Definition**: Terminal object in category of F-coalgebras.
 
 - **Property**: For every coalgebra (U,c) exists unique morfismo unfold: U→ν_F preserving structure.
 
@@ -89,17 +75,13 @@ lang: en
 - **Behavioral Equivalence**: u ~ v ⟺ beh_U(u) = beh_V(v).
 
 
-- **Use**:
-- Abstract state internally; work only with observable behavior (e.g., infinite streams).
-
+- **Use**: Abstract state internally; work only with observable behavior (e.g., infinite streams).
 
 ## Reasoning Principles
 
 ### Coinduction
 
-- **Technique**:
-- Dual to induction for proving equality of infinite behaviors.
-
+- **Technique**: Dual to induction for proving equality of infinite behaviors.
 
 - **Procedure**:
 
@@ -107,9 +89,7 @@ lang: en
 2. Prove R is bisimulation (closed under c and F).
 3. Conclude related states indistinguishable from behavior perspective.
 
-- **Use**:
-- Prove equivalence of reactive systems or infinite streams/processes.
-
+- **Use**: Prove equivalence of reactive systems or infinite streams/processes.
 
 ### Anamorphism
 
@@ -119,9 +99,7 @@ lang: en
 - **Type**: unfold: A→ν_F.
 
 
-- **Use**:
-- Generate infinite flows or continuous behaviors from finite seed.
-
+- **Use**: Generate infinite flows or continuous behaviors from finite seed.
 
 ## Software Applications
 
@@ -136,15 +114,11 @@ lang: en
 - Instance obj modeled as coalgebra (state_obj, c_obj: state_obj → F_C(state_obj)).
 - Encapsulation = hidden state; only F_C exposed.
 
-- **Use**:
-- Reason about APIs, objects, components by observable behavior.
-
+- **Use**: Reason about APIs, objects, components by observable behavior.
 
 ### Component Substitution
 
-- **Definition**:
-- Component A substitutable by B iff bisimulation exists between coalgebras.
-
+- **Definition**: Component A substitutable by B iff bisimulation exists between coalgebras.
 
 - **Procedure**:
 
@@ -153,9 +127,7 @@ lang: en
 3. Construct relation R between initial states; prove bisimulation.
 4. If R is bisimulation → A and B substitutable without behavior change.
 
-- **Use**:
-- Safe refactoring, regression testing, implementation comparison.
-
+- **Use**: Safe refactoring, regression testing, implementation comparison.
 
 ## DIK Framework
 

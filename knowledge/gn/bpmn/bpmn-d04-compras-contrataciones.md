@@ -24,7 +24,7 @@ lang: es
 *   **Criticidad**: Alta (🟠)
 *   **Dueño**: Unidad de Abastecimiento
 *   **Alcance**: 4 procesos principales, ~12 subprocesos
-*   **Referencia**: `kb_gn_054_bpmn_c4_koda.yml` (L.700-950)
+*   **Referencia**: `urn:gn:kb:bpmn-index`
 
 ## Mapa de Procesos: Ciclo de Compras Públicas
 

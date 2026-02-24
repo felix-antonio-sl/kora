@@ -66,6 +66,10 @@ Catalog:
     title: CM-INTAKE
     file: agents/gn/goreologo/skills/CM-INTAKE.md
     status: published
+  - urn: urn:gn:skill:digitrans-gore-intake:1.0.0
+    title: CM-INTAKE
+    file: agents/gn/digitrans-gore/skills/CM-INTAKE.md
+    status: published
   - urn: urn:kora:skill:transformer-task-classifier:1.0.0
     title: CM-TASK-CLASSIFIER
     file: agents/kora/transformer/skills/CM-TASK-CLASSIFIER.md
@@ -134,7 +138,7 @@ Catalog:
     title: CM-CONTEXT-MANAGER
     file: agents/kora/cartographer/skills/CM-CONTEXT-MANAGER.md
     status: published
-  - urn: urn:kora:skill:architect-koda-hub-operations:1.0.0
+  - urn: urn:kora:skill:architect-kora-hub-operations:1.0.0
     title: CM-KORA-HUB-OPERATIONS
     file: agents/kora/architect/skills/CM-KORA-HUB-OPERATIONS.md
     status: published
@@ -1755,9 +1759,9 @@ Catalog:
     title: CM-deduplicator.md
     file: agents/kora/transformer/skills/CM-deduplicator.md
     status: published
-  - urn: urn:kora:agent-bootstrap:transformer-cm-koda-validator:1.0.0
-    title: CM-koda-validator.md
-    file: agents/kora/transformer/skills/CM-koda-validator.md
+  - urn: urn:kora:agent-bootstrap:transformer-cm-kora-validator:1.0.0
+    title: CM-kora-validator.md
+    file: agents/kora/transformer/skills/CM-kora-validator.md
     status: published
   - urn: urn:kora:agent-bootstrap:transformer-cm-diff-engine:1.0.0
     title: CM-diff-engine.md

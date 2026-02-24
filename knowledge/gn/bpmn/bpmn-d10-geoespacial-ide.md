@@ -28,7 +28,7 @@ lang: es
 | Dueño | Coordinador Regional IDE |
 | Procesos | 3 (P1: Ciclo Vida, P2: Publicación, P3: Gobernanza) |
 | Subprocesos | ~10 |
-| Fuente | kb_gn_054_bpmn_c4_koda.yml L.4308-4478 |
+| Fuente | `urn:gn:kb:bpmn-index` |
 
 ## Mapa General del Dominio
 

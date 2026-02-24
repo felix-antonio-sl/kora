@@ -23,57 +23,35 @@ lang: en
 
 ### Data Level
 
-- **Definition**:
-- Instance I:
-- S → Set over schema S.
-
+- **Definition**: Instance I: S → Set over schema S.
 
 - Concrete values, rows, records, observations.
 - Funtor mapping sets to objects and functions to morfismos.
 
-- **Audit Focus**:
-- Referential integrity, completeness, consistency with schema.
+- **Audit Focus**: Referential integrity, completeness, consistency with schema.
 
-
-- **Example**:
-- SQL table with data, JSON document, CSV file.
-
+- **Example**: SQL table with data, JSON document, CSV file.
 
 ### Information Level
 
-- **Definition**:
-- Schema S (finitely presented category).
-
+- **Definition**: Schema S (finitely presented category).
 
 - Objects = entities/types, Morfismos = relations/attributes.
 - Path equations = business constraints.
 
-- **Audit Focus**:
-- Structural coherence, commutativity, completeness of relations.
+- **Audit Focus**: Structural coherence, commutativity, completeness of relations.
 
-
-- **Example**:
-- DDL SQL, JSON Schema, GraphQL Schema, .koda.yml.
-
+- **Example**: DDL SQL, JSON Schema, GraphQL Schema, .koda.yml.
 
 ### Knowledge Level
 
-- **Definition**:
-- Transformations, migrations, abstract models (funtores between categories, adjunctions, Kan extensions).
+- **Definition**: Transformations, migrations, abstract models (funtores between categories, adjunctions, Kan extensions).
 
+- **Characteristics**: Behaviors (coálgebras), inference rules, processes.
 
-- **Characteristics**:
-- Behaviors (coálgebras), inference rules, processes.
+- **Audit Focus**: Functoriality, structure preservation, validity of adjunctions, complete processes.
 
-
-- **Audit Focus**:
-- Functoriality, structure preservation, validity of adjunctions, complete processes.
-
-
-- **Example**:
-- Migration funtor F:
-- S → T, agent specification, .koda.yml with processes.
-
+- **Example**: Migration funtor F: S → T, agent specification, .koda.yml with processes.
 
 ## Audit Dimensions
 
@@ -89,9 +67,7 @@ lang: en
 - **Associativity**: (h∘g)∘f = h∘(g∘f).
 - **Path Equality**: Parallel declared paths commute.
 
-- **Severity if Fail**:
-- CRITICAL.
-
+- **Severity if Fail**: CRITICAL.
 
 ### Referential
 
@@ -104,9 +80,7 @@ lang: en
 - **External Refs**: XRef: point to resolvable URNs.
 - **Foreign Keys**: Instance foreign keys point to existing records.
 
-- **Severity if Fail**:
-- HIGH.
-
+- **Severity if Fail**: HIGH.
 
 ### Completeness
 
@@ -119,9 +93,7 @@ lang: en
 - **Information**: Schema has objects, morfismos, equations explicit.
 - **Knowledge**: Key concepts have operative processes.
 
-- **Severity if Fail**:
-- MEDIUM.
-
+- **Severity if Fail**: MEDIUM.
 
 ### Quality
 
@@ -134,9 +106,7 @@ lang: en
 - **Functoriality**: Transformations preserve structure.
 - **Behavioral Equivalence**: Equivalent states identified (bisimulation).
 
-- **Severity if Fail**:
-- LOW.
-
+- **Severity if Fail**: LOW.
 
 ### Migration
 
@@ -149,9 +119,7 @@ lang: en
 - **Square Commutativity**: Migration square commutes naturally.
 - **Constraint Preservation**: Migration preserves required constraints.
 
-- **Severity if Fail**:
-- HIGH.
-
+- **Severity if Fail**: HIGH.
 
 ### Behavioral
 
@@ -164,9 +132,7 @@ lang: en
 - **Bisimulation**: Declared equivalent components are bisimilar.
 - **Action Index**: Episodes have action as primary key.
 
-- **Severity if Fail**:
-- MEDIUM/LOW.
-
+- **Severity if Fail**: MEDIUM/LOW.
 
 ## Improvement Patterns
 

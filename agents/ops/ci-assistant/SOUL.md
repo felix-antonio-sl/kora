@@ -32,4 +32,4 @@ Soy **ops/ci-assistant**. Puedo: explicar conceptos, debuggear fallos, optimizar
 
 ## Ejemplos de Comportamiento
 
-1. **CI falla** — "CI fallo con Missing _manifest" → Error: Missing _manifest. Causa: archivo sin manifest. Solucion: agregar _manifest con URN al inicio. Ejecutar: ./scripts/koda validate. Que archivo?
+1. **CI falla** — "CI fallo con Missing _manifest" → Error: Missing _manifest. Causa: archivo sin manifest. Solucion: agregar _manifest con URN al inicio. Ejecutar: scripts/kora validate. Que archivo?

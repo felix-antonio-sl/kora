@@ -8,10 +8,10 @@ Fusiona 6 repositorios (koda, fxsl, gorenuble, tde, orko, korvo) en una estructu
 
 | Metrica | Valor |
 |---------|-------|
-| Artifacts totales (catalogo) | 470 |
+| Artifacts totales (catalogo) | 515 |
 | Knowledge bases | 212 |
 | Agentes (workspaces) | 41 |
-| Skills (endofuntores lazy-load) | 94 |
+| Skills (endofuntores lazy-load) | 139 |
 | Specs fundacionales | 4 |
 | Namespaces activos | 9 |
 | Broken URNs | 0 |
@@ -93,9 +93,9 @@ Requisitos: Python 3 + PyYAML. No hay build system — es un monorepo de especif
 
 | Namespace | Dominio | Artifacts |
 |-----------|---------|-----------|
-| **fxsl** | Teoria de categorias, gist, MBT, agentes personales | 136 |
-| **gn** | Gobierno Regional de Nuble (GORE) | 134 |
-| **kora** | Framework, specs, manual OpenClaw | 115 |
+| **fxsl** | Teoria de categorias, gist, MBT, agentes personales | 141 |
+| **gn** | Gobierno Regional de Nuble (GORE) | 144 |
+| **kora** | Framework, specs, manual OpenClaw | 145 |
 | **tde** | Transformacion digital del Estado | 33 |
 | **legal** | Normativa legal chilena | 21 |
 | **orko** | Metodologia de complejidad organizacional | 12 |
@@ -129,6 +129,7 @@ Requisitos: Python 3 + PyYAML. No hay build system — es un monorepo de especif
 - [x] **Phase 1** — Source Mapping: 208 artifacts mapeados
 - [x] **Phase 2** — Koraficacion: 175+ KBs YAML a KORA/MD
 - [x] **Phase 4** — Agentificacion: 40 YAML monolitos a 41 workspaces KORA
+- [x] **Phase Audit** — Coherencia: auditoria completa del corpus, 77 URNs corregidas, 45 skills materializados
 - [ ] **Phase F** — Governance: deprecacion formal KODA, archivado repos fuente
 
 ## Fuentes Teoricas

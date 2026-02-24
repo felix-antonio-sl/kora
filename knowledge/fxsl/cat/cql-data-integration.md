@@ -26,15 +26,11 @@ lang: en
 - Addresses data misinterpretation via structure-preserving migrations and automatic provenance.
 
 
-- **Key Benefit**:
-- Static guarantee that migrated data respects constraints; functorial migrations are structure-preserving for both source and target.
-
+- **Key Benefit**: Static guarantee that migrated data respects constraints; functorial migrations are structure-preserving for both source and target.
 
 ## Definition
 
-- **CQL**:
-- Based on algebraic database formalism motivated by category theory.
-
+- **CQL**: Based on algebraic database formalism motivated by category theory.
 
 - **Features**:
 
@@ -48,38 +44,25 @@ lang: en
 - Challenge: data misinterpretation, lack of standards, heterogeneous formats.
 
 
-- **CQL Solution**:
-- Define schema (Olog) explicitly capturing conceptual knowledge; constraints prevent misuse; migrations are mathematically sound.
-
+- **CQL Solution**: Define schema (Olog) explicitly capturing conceptual knowledge; constraints prevent misuse; migrations are mathematically sound.
 
 ## Ologs (Ontology Logs)
 
-- **Definition**:
-- Like concept maps with formal interpretation.
-
+- **Definition**: Like concept maps with formal interpretation.
 
 - **Boxes**: Database tables (or sets with functions).
 - **Arrows**: Foreign keys (or functions).
 - **Path Equations**: When two paths yield same result (integrity constraint).
 
-- **Conceptual Value**:
-- Schema not mere container; conveys important semantic knowledge.
-
+- **Conceptual Value**: Schema not mere container; conveys important semantic knowledge.
 
 ## Functorial Migration
 
-- **Definition**:
-- Application of Δ/Σ/Π induced by schema funtor F:
-- S_source→S_target.
+- **Definition**: Application of Δ/Σ/Π induced by schema funtor F: S_source→S_target.
 
+- **Guarantee**: Correctness by construction; if funtor exists, migration respects integrity.
 
-- **Guarantee**:
-- Correctness by construction; if funtor exists, migration respects integrity.
-
-
-- **Provenance**:
-- Funtoriality preserves information about data origin; trazable through transformations.
-
+- **Provenance**: Funtoriality preserves information about data origin; trazable through transformations.
 
 - **Procedure**:
 

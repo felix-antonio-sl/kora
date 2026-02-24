@@ -41,9 +41,7 @@ lang: en
 - **Coalgebra**: c: X → F(X)
 
 
-- **Bisimulation**:
-- R₁~R₂ ⟺ ∀ops. observe(R₁(ops)) = observe(R₂(ops))
-
+- **Bisimulation**: R₁~R₂ ⟺ ∀ops. observe(R₁(ops)) = observe(R₂(ops))
 
 ## ORM as Adjunction
 
@@ -62,16 +60,10 @@ lang: en
 - **Grothendieck**: ∫F, I=zones, F(z)=schema_z
 
 
-- **Audit**:
-- Pipelines = morfismos; diagram conmuta
-
+- **Audit**: Pipelines = morfismos; diagram conmuta
 
 ## Synthesis
 
-- **2-Category**:
-- Objects = components, 1-morphisms = transformations, 2-morphisms = migrations
+- **2-Category**: Objects = components, 1-morphisms = transformations, 2-morphisms = migrations
 
-
-- **Audit Dimensions**:
-- Storage-Model Align, API-Functor Preserve, Repo-Bisim, ORM-Adj Valid, Pipeline-Commute
-
+- **Audit Dimensions**: Storage-Model Align, API-Functor Preserve, Repo-Bisim, ORM-Adj Valid, Pipeline-Commute

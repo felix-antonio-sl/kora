@@ -29,31 +29,19 @@ lang: en
 
 ### Schema Category
 
-- **Objects**:
-- Predefined data types (string, integer) and entities (customers, products).
+- **Objects**: Predefined data types (string, integer) and entities (customers, products).
 
+- **Morphisms**: Typed functions between types; relations (customer located in location).
 
-- **Morphisms**:
-- Typed functions between types; relations (customer located in location).
-
-
-- **Purpose**:
-- Unified view for different data models; seamless multi-model query processing.
-
+- **Purpose**: Unified view for different data models; seamless multi-model query processing.
 
 ### Instance Category
 
-- **Objects in Schema**:
-- Mapped to Haskell data structures in instance category.
+- **Objects in Schema**: Mapped to Haskell data structures in instance category.
 
+- **Morphisms in Schema**: Mapped to concrete Haskell functions.
 
-- **Morphisms in Schema**:
-- Mapped to concrete Haskell functions.
-
-
-- **Instance Functor**:
-- Maps objects schema → instance via collection constructor functors.
-
+- **Instance Functor**: Maps objects schema → instance via collection constructor functors.
 
 ## Multi-Model Query Language
 
@@ -70,17 +58,11 @@ lang: en
 
 ## Query Processing
 
-- **Parsing**:
-- Queries parsed into fold-functions based on schema information.
+- **Parsing**: Queries parsed into fold-functions based on schema information.
 
+- **Execution**: Haskell backend executes fold-functions against instance category.
 
-- **Execution**:
-- Haskell backend executes fold-functions against instance category.
-
-
-- **Visualization**:
-- Results returned to frontend and visualized per specified data model.
-
+- **Visualization**: Results returned to frontend and visualized per specified data model.
 
 ## Mathematical Foundations
 

@@ -24,9 +24,7 @@ lang: en
 - Chapter introducing database model where schemas are categories, instances are funtores, and migrations are adjoint functors.
 
 
-- **Core Insight**:
-- Data integration through category-theoretic translation between organizational forms (schema migration).
-
+- **Core Insight**: Data integration through category-theoretic translation between organizational forms (schema migration).
 
 ## Core Definitions
 
@@ -36,80 +34,46 @@ lang: en
 - Data becomes information when stored in given formation.
 
 
-- **Example**:
-- Employee table with fields (ID, FName, WorksIn, Mngr);
-- Department table (ID, DName, Secr).
+- **Example**: Employee table with fields (ID, FName, WorksIn, Mngr); Department table (ID, DName, Secr).
 
-
-- **Business Rules**:
-- Every employee's manager works same department; secretary of department works in department.
-
+- **Business Rules**: Every employee's manager works same department; secretary of department works in department.
 
 ### Schema as Category
 
-- **Definition**:
-- Category C finitely presented.
-
+- **Definition**: Category C finitely presented.
 
 - **Objects**: Entity types (tables).
 - **Morfismos**: Relations, attributes, foreign keys.
 - **Equations**: Path constraints (business rules).
 
-- **Hasse Diagram**:
-- Black nodes for tables (ID columns); arrows for non-ID columns pointing to references.
-
+- **Hasse Diagram**: Black nodes for tables (ID columns); arrows for non-ID columns pointing to references.
 
 ### Instance as Funtor
 
-- **Definition**:
-- C-instance is funtor I:
-- C → Set.
-
+- **Definition**: C-instance is funtor I: C → Set.
 
 - For object X, I(X) = set of rows.
 - For morfismo f: X→Y, I(f) = function between sets.
 
-- **Example**:
-- For schema Graph with V, E and morfismos src, tgt:
-- E→V:
-
-- I(V) = {v1, v2, v3}
-- I(E) = {e1, e2}
-- I(src)(e1) = v1, I(tgt)(e1) = v2
+- **Example**: For schema Graph with V, E and morfismos src, tgt: E→V: I(V) = {v1, v2, v3} I(E) = {e1, e2} I(src)(e1) = v1, I(tgt)(e1) = v2
 
 ### Category of Instances
 
-- **Definition**:
-- C-Inst := [C, Set] with objects funtores I:
-- C→Set and morfismos natural transformations (instance homomorphisms).
+- **Definition**: C-Inst := [C, Set] with objects funtores I: C→Set and morfismos natural transformations (instance homomorphisms).
 
-
-- **Homomorphism**:
-- Natural transformation α:
-- I ⇒ J between instances (structure-preserving mapping).
-
+- **Homomorphism**: Natural transformation α: I ⇒ J between instances (structure-preserving mapping).
 
 ## Migration Operators
 
 ### Δ_F (Pullback/Restriction)
 
-- **Definition**:
-- Given F:
-- C → D and J:
-- D→Set, pullback is Δ_F(J) = J ∘ F.
+- **Definition**: Given F: C → D and J: D→Set, pullback is Δ_F(J) = J ∘ F.
 
+- **Purpose**: Reindex data from target schema D to source schema C.
 
-- **Purpose**:
-- Reindex data from target schema D to source schema C.
+- **SQL Analog**: Column renaming, SELECT with alias, table duplication.
 
-
-- **SQL Analog**:
-- Column renaming, SELECT with alias, table duplication.
-
-
-- **Guarantee**:
-- Preserves exactly original structure; no information loss.
-
+- **Guarantee**: Preserves exactly original structure; no information loss.
 
 - **Procedure**:
 
@@ -119,49 +83,27 @@ lang: en
 
 ### Σ_F (Left Pushforward/Generalization)
 
-- **Definition**:
-- Adjoint left of Δ_F.
-- Migrates from C to D using colimits.
+- **Definition**: Adjoint left of Δ_F. Migrates from C to D using colimits.
 
+- **Purpose**: Unify and generalize to more general schema.
 
-- **Purpose**:
-- Unify and generalize to more general schema.
+- **SQL Analog**: UNION, INSERT INTO SELECT, aggregations.
 
+- **Guarantee**: May lose information (co-identifications, fusions); constructs colimits.
 
-- **SQL Analog**:
-- UNION, INSERT INTO SELECT, aggregations.
-
-
-- **Guarantee**:
-- May lose information (co-identifications, fusions); constructs colimits.
-
-
-- **Property**:
-- If F collapses objects (F(A₁)=F(A₂)=B), data fuse via UNION.
-
+- **Property**: If F collapses objects (F(A₁)=F(A₂)=B), data fuse via UNION.
 
 ### Π_F (Right Pushforward/Specialization)
 
-- **Definition**:
-- Adjoint right of Δ_F.
-- Migrates from C to D using limits.
+- **Definition**: Adjoint right of Δ_F. Migrates from C to D using limits.
 
+- **Purpose**: Specialize imposing joint constraints.
 
-- **Purpose**:
-- Specialize imposing joint constraints.
+- **SQL Analog**: JOIN, WHERE, cartesian products.
 
+- **Guarantee**: Preserves via products; may discard unmatching records.
 
-- **SQL Analog**:
-- JOIN, WHERE, cartesian products.
-
-
-- **Guarantee**:
-- Preserves via products; may discard unmatching records.
-
-
-- **Property**:
-- For fibra with multiple objects, Π_F calculates product (JOIN); only matching records survive.
-
+- **Property**: For fibra with multiple objects, Π_F calculates product (JOIN); only matching records survive.
 
 ### Adjunction Chain
 
@@ -179,151 +121,90 @@ lang: en
 
 ### Terminal Object
 
-- **Definition**:
-- 1 in C; for all C∈Ob(C) exists unique morfismo C→1.
+- **Definition**: 1 in C; for all C∈Ob(C) exists unique morfismo C→1.
 
+- **SQL**: SELECT 1, constants.
 
-- **SQL**:
-- SELECT 1, constants.
-
-
-- **Use**:
-- Singletons, default values, unit types.
-
+- **Use**: Singletons, default values, unit types.
 
 ### Product
 
-- **Definition**:
-- A×B with projections π₁, π₂; universal property.
+- **Definition**: A×B with projections π₁, π₂; universal property.
 
+- **SQL**: JOIN cartesian, SELECT a.*, b.*.
 
-- **SQL**:
-- JOIN cartesian, SELECT a.*, b.*.
-
-
-- **Use**:
-- Combine independent entities in joint view.
-
+- **Use**: Combine independent entities in joint view.
 
 ### Pullback
 
-- **Definition**:
-- Fibered product A ×_C B over C.
+- **Definition**: Fibered product A ×_C B over C.
 
+- **SQL**: JOIN ON shared_key.
 
-- **SQL**:
-- JOIN ON shared_key.
-
-
-- **Use**:
-- Combine entities sharing common context.
-
+- **Use**: Combine entities sharing common context.
 
 ### Equalizer
 
 - **Definition**: eq(f,g) = subobjeto where f=g.
 
 
-- **SQL**:
-- WHERE f(x) = g(x).
+- **SQL**: WHERE f(x) = g(x).
 
-
-- **Use**:
-- Filter records satisfying equality of two paths.
-
+- **Use**: Filter records satisfying equality of two paths.
 
 ## Colimits (Constructions)
 
 ### Initial Object
 
-- **Definition**:
-- 0; for all C exists unique 0→C.
+- **Definition**: 0; for all C exists unique 0→C.
 
+- **SQL**: Empty tables, WHERE FALSE.
 
-- **SQL**:
-- Empty tables, WHERE FALSE.
-
-
-- **Use**:
-- Impossible cases.
-
+- **Use**: Impossible cases.
 
 ### Coproduct
 
-- **Definition**:
-- A+B with injections i₁, i₂.
+- **Definition**: A+B with injections i₁, i₂.
 
+- **SQL**: UNION ALL.
 
-- **SQL**:
-- UNION ALL.
-
-
-- **Use**:
-- Union entities of same logical type.
-
+- **Use**: Union entities of same logical type.
 
 ### Pushout
 
-- **Definition**:
-- Glued pegado A ⊔_C B identifying common part C.
+- **Definition**: Glued pegado A ⊔_C B identifying common part C.
 
+- **SQL**: UNION + reconciliation of primary keys.
 
-- **SQL**:
-- UNION + reconciliation of primary keys.
-
-
-- **Use**:
-- Merge schemas and incremental normalization.
-
+- **Use**: Merge schemas and incremental normalization.
 
 ### Coequalizer
 
-- **Definition**:
-- Cociente by equivalence relation generated by two parallel morfismos.
+- **Definition**: Cociente by equivalence relation generated by two parallel morfismos.
 
+- **SQL**: GROUP BY, DISTINCT.
 
-- **SQL**:
-- GROUP BY, DISTINCT.
-
-
-- **Use**:
-- Collapse duplicates, build equivalence classes.
-
+- **Use**: Collapse duplicates, build equivalence classes.
 
 ## Advanced Concepts
 
 ### Yoneda Lemma
 
-- **Formula**:
-- Nat(Hom(A,−), F) ≅ F(A) naturally in A.
+- **Formula**: Nat(Hom(A,−), F) ≅ F(A) naturally in A.
 
+- **Interpretation**: Object determined completely by how others map toward it.
 
-- **Interpretation**:
-- Object determined completely by how others map toward it.
+- **Use**: Interface-oriented design: component known by relations.
 
-
-- **Use**:
-- Interface-oriented design: component known by relations.
-
-
-- **Application**:
-- Entities defined by foreign-key entries; types by producing functions.
-
+- **Application**: Entities defined by foreign-key entries; types by producing functions.
 
 ### Kan Extension
 
-- **Left Kan Extension**:
-- Lan_F(G) = best universal approximation extending G along F.
+- **Left Kan Extension**: Lan_F(G) = best universal approximation extending G along F.
 
+- **Formula**: (Lan_F G)(d) = colim_{c: F(c)→d} G(c).
 
-- **Formula**:
-- (Lan_F G)(d) = colim_{c:
-- F(c)→d} G(c).
-
-
-- **Use**:
-- Generalizes Σ to arbitrary transformations.
-
+- **Use**: Generalizes Σ to arbitrary transformations.
 
 ### Operational Principles
 

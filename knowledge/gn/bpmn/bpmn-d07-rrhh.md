@@ -24,7 +24,7 @@ lang: es
 - **Nivel de Criticidad**: 🟠 Alta
 - **Responsable**: Área de Gestión de Personas
 - **Alcance**: 7 procesos principales, ~20 subprocesos
-- **Referencia Técnica**: kb_gn_054_bpmn_c4_koda.yml (L.1410-1880)
+- **Referencia Técnica**: `urn:gn:kb:bpmn-index`
 
 ## Mapa General del Dominio
 ```mermaid

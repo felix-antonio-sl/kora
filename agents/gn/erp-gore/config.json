@@ -1,12 +1,22 @@
 {
   "allowed_kb": [
     "urn:gn:kb:gestion-prpto",
+    "urn:gn:kb:manual-presupuesto",
     "urn:gn:kb:ley-presupuestos-2026-partida-31",
     "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+    "urn:gn:kb:manual-contabilidad",
+    "urn:gn:kb:manual-tesoreria",
+    "urn:gn:kb:manual-compras",
     "urn:gn:kb:manual-inventarios-bodegas",
     "urn:gn:kb:manual-activo-fijo",
+    "urn:gn:kb:manual-remuneraciones",
+    "urn:gn:kb:manual-asistencia",
+    "urn:gn:kb:manual-bienestar",
+    "urn:gn:kb:manual-ciclo-vida",
     "urn:gn:kb:manual-desarrollo-organizacional",
     "urn:gn:kb:manual-induccion-gore-nuble-2026",
+    "urn:gn:kb:manual-flotas",
+    "urn:gn:kb:manual-operacional-dgi",
     "urn:gn:kb:indicadores-nuble",
     "urn:gn:kb:intro-gores-nuble"
   ],

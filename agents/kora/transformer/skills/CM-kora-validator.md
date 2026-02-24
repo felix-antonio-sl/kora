@@ -1,16 +1,16 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:transformer-cm-koda-validator:1.0.0"
+  urn: "urn:kora:agent-bootstrap:transformer-cm-kora-validator:1.0.0"
   type: "lazy_load_endofuntor"
 ---
 
 ## Proposito
 
-Validar artefacto KODA contra especificacion completa y calcular metricas de calidad FS y CR.
+Validar artefacto KORA contra especificacion completa y calcular metricas de calidad FS y CR.
 
 ## Input/Output
 
-- **Input:** Artefacto KODA desde S-VALIDATOR o S-AUDITOR
+- **Input:** Artefacto KORA desde S-VALIDATOR o S-AUDITOR
 - **Output:** Reporte de validacion con checklist, metricas calculadas, hallazgos y correcciones
 
 ## Procedimiento
@@ -29,7 +29,7 @@ Validar artefacto KODA contra especificacion completa y calcular metricas de cal
    - Estructura preservada (jerarquias, tablas, listas)
 4. **Metrics calculation:**
    - FS (Fidelity Score) = hechos preservados / hechos originales × 100
-   - CR (Compression Ratio) = caracteres_original / caracteres_koda
+   - CR (Compression Ratio) = caracteres_original / caracteres_kora
    - Objetivo: FS=100%, CR>1.0
 5. IF alguna verificacion falla → generar lista de correcciones especificas
 6. IF todas pasan → artefacto validado, listo para uso
@@ -37,7 +37,7 @@ Validar artefacto KODA contra especificacion completa y calcular metricas de cal
 ## Signature Output
 
 ```
-**Validacion KODA**:
+**Validacion KORA**:
 | Categoria | Resultado |
 |-----------|-----------|
 | Syntax | [PASS/FAIL — detalles] |

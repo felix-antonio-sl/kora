@@ -54,31 +54,20 @@ lang: en
 - Individual model structures (graphs or terms), despojados of external relational context.
 
 
-- **Formalism**:
-- Object G in Graph category or algebraic specification.
+- **Formalism**: Object G in Graph category or algebraic specification.
 
-
-- **Interpretation**:
-- Syntax pura of artifact (nodes, edges of class diagram before conformance to metamodel).
-
+- **Interpretation**: Syntax pura of artifact (nodes, edges of class diagram before conformance to metamodel).
 
 ### Information
 
 - Data (graphs) restricted and structured via schema/type (metamodel).
 
 
-- **Definition**:
-- Typed Model—not just graph G, but morfismo t:
-- G → TG where TG is type graph.
+- **Definition**: Typed Model—not just graph G, but morfismo t: G → TG where TG is type graph.
 
+- **Formalism**: Objects in typed-graph category Graph_TG.
 
-- **Formalism**:
-- Objects in typed-graph category Graph_TG.
-
-
-- **Interpretation**:
-- Typing morfismo assigns semantic meaning to data nodes; information is structure validated by semantics.
-
+- **Interpretation**: Typing morfismo assigns semantic meaning to data nodes; information is structure validated by semantics.
 
 ### Knowledge
 
@@ -86,41 +75,26 @@ lang: en
 - relations between them.
 
 
-- **Definition**:
-- Megamodel—model whose elements are other models and relations are semantic links (instantiation, transformation, trace).
+- **Definition**: Megamodel—model whose elements are other models and relations are semantic links (instantiation, transformation, trace).
 
+- **Formalism**: Graph or structure with nodes = models, edges = conformity or transformation relations.
 
-- **Formalism**:
-- Graph or structure with nodes = models, edges = conformity or transformation relations.
-
-
-- **Interpretation**:
-- The map of territory; allows reasoning about complete system; captures intent and trazabilidad of design.
-
+- **Interpretation**: The map of territory; allows reasoning about complete system; captures intent and trazabilidad of design.
 
 ### Modeling
 
 - Execution of algebraic operations on model space to derive new states/artifacts.
 
 
-- **Definition**:
-- Application of Model Management Operators (Match, Merge, Diff, Split, Compose).
+- **Definition**: Application of Model Management Operators (Match, Merge, Diff, Split, Compose).
 
+- **Formalism**: Merge = Colimit (Pushout); Diff = algebraic complement; Coupled Transformations = funtores migrating models.
 
-- **Formalism**:
-- Merge = Colimit (Pushout);
-- Diff = algebraic complement;
-- Coupled Transformations = funtores migrating models.
-
-
-- **Interpretation**: "Calculation"; instead of manually editing, apply operators:
-- Modelo_Final = Merge(Modelo_A, Modelo_B).
-
+- **Interpretation**: "Calculation"; instead of manually editing, apply operators: Modelo_Final = Merge(Modelo_A, Modelo_B).
 
 ## Conclusion
 
 - Proposes vision where software engineering becomes algebra:
-
 
 - Data = Graphs (G).
 - Information = Typed Graphs (t: G → TG).
@@ -128,4 +102,3 @@ lang: en
 - Modeling = Algebra of Models (pushouts, coupled transformations).
 
 - Provides theoretical base for tools like Catlab.jl, demonstrating that efficient management of complex systems requires mathematical rigor.
-

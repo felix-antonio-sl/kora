@@ -55,26 +55,18 @@ lang: en
 
 ### Convertible Models
 
-- Two formulations B_1, B_2 for same assumptions Set_A are convertible if natural transformation links functors F, G:
-- Set_A → B_1, B_2.
+- Two formulations B_1, B_2 for same assumptions Set_A are convertible if natural transformation links functors F, G: Set_A → B_1, B_2.
 
-
-- **Property**:
-- Convertible models have same complexity.
-
+- **Property**: Convertible models have same complexity.
 
 ## Coupled Models
 
 - Models (i,j) formed from assumptions Set_i and Set_j plus coupling conditions.
 
 
-- **Category ModCoup_{i,j}**:
-- Objects = finite assumption sets; morphisms = relations; coupling conditions non-empty.
+- **Category ModCoup_{i,j}**: Objects = finite assumption sets; morphisms = relations; coupling conditions non-empty.
 
-
-- **Use**:
-- Model hierarchical phenomena (thermal-elasticity, fluid-structure interaction).
-
+- **Use**: Model hierarchical phenomena (thermal-elasticity, fluid-structure interaction).
 
 ### Complexity Variants
 
@@ -89,35 +81,21 @@ lang: en
 
 ## Universal Arrows & Completeness
 
-- **Completeness**:
-- Set_A complete w.r.t. phenomenon Set'_A iff Set_A ⊂ Set'_A; write Set_A | Set'_A.
+- **Completeness**: Set_A complete w.r.t. phenomenon Set'_A iff Set_A ⊂ Set'_A; write Set_A | Set'_A.
 
+- **Reducible**: Simpler object exists still complete.
 
-- **Reducible**:
-- Simpler object exists still complete.
+- **Extendable**: More complex object still complete.
 
-
-- **Extendable**:
-- More complex object still complete.
-
-
-- **Minimal/Maximal**:
-- Irreducible/not-extendable complete models.
-
+- **Minimal/Maximal**: Irreducible/not-extendable complete models.
 
 ## Automatically Generated Models
 
-- **Algorithm**:
-- From set X of all possible assumptions, select subsets S via type-checked derivation.
+- **Algorithm**: From set X of all possible assumptions, select subsets S via type-checked derivation.
 
+- **Type System**: Signals (time/space → typed value); differential operators (∂/∂xi); equations composed via higher-level notation with type-checking.
 
-- **Type System**:
-- Signals (time/space → typed value); differential operators (∂/∂xi); equations composed via higher-level notation with type-checking.
-
-
-- **Outcome**:
-- Automatically consistent model equations if type-check succeeds.
-
+- **Outcome**: Automatically consistent model equations if type-check succeeds.
 
 ## Lattice of Models
 
