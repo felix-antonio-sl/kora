@@ -1,0 +1,38 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "ci_execute",
+      "regression_run",
+      "diversity_check",
+      "security_scan",
+      "human_gate",
+      "verification_report",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  },
+  "verification": {
+    "layers_by_risk": {
+      "lectura": [1, 2, 3],
+      "escritura": [1, 2, 3, 4],
+      "destructiva": [1, 2, 3, 4, 5]
+    },
+    "layer_order": ["CI", "REGRESION", "DIVERSIDAD", "SEGURIDAD", "HUMANA"],
+    "fail_fast": true,
+    "human_gate_timeout_min": 60,
+    "diversity_enforcement": "strict",
+    "tier": "T2"
+  }
+}

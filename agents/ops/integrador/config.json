@@ -1,0 +1,42 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "semantic_merge",
+      "coherence_check",
+      "conflict_classify",
+      "conflict_resolve",
+      "queue_manage",
+      "backpressure_control",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  },
+  "integration": {
+    "tier": "T2",
+    "auto_resolve_trivial": true,
+    "escalate_substantive": true,
+    "ci_green_required": true,
+    "evals_required": true,
+    "backpressure": {
+      "enabled": true,
+      "queue_threshold": 15,
+      "notification_target": "orquestador"
+    },
+    "merge_queue": {
+      "prioritize_by": "business_value",
+      "max_concurrent_merges": 3
+    }
+  }
+}

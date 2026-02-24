@@ -1,0 +1,73 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:kora:kb:agent-spec-md",
+    "urn:fxsl:kb:stack-llm-arquitectura"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "event_classify",
+      "golden_path_execute",
+      "backpressure_control",
+      "circuit_breaker_manage",
+      "system_status",
+      "agent_dispatch",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 5
+  },
+  "golden_paths": {
+    "estandar": {
+      "steps": ["lint", "types", "tests", "eval_regresion", "merge", "deploy_canary", "expand"],
+      "auto_approve": true
+    },
+    "destructiva": {
+      "steps": ["lint", "types", "tests", "eval_regresion", "eval_seguridad", "hold", "aprobacion_operador", "deploy_canary_agresivo"],
+      "auto_approve": false,
+      "requires_human_approval": true
+    },
+    "infraestructura": {
+      "steps": ["intent", "iac_generation", "plan", "diff_review", "apply", "verify", "drift_monitor"],
+      "auto_approve": false,
+      "requires_human_approval": true
+    },
+    "hotfix": {
+      "steps": ["diagnose", "fix_test", "eval_express", "deploy_directo"],
+      "auto_approve": true,
+      "auto_rollback": true
+    }
+  },
+  "backpressure": {
+    "queue_threshold": 20,
+    "reduction_factor": 0.5,
+    "drain_check_interval_min": 5,
+    "redirect_tasks": ["analysis", "refactoring", "planning"]
+  },
+  "circuit_breakers": {
+    "cascade_deploys": {
+      "failure_count_threshold": 3,
+      "window_min": 15
+    },
+    "pipeline_saturation": {
+      "queue_depth_critical": 50,
+      "feedback_time_max_min": 60
+    },
+    "infra_drift": {
+      "check_interval_min": 30,
+      "auto_reconcile_trivial": true
+    },
+    "observer_failure": {
+      "heartbeat_timeout_min": 5,
+      "backstop_alerts_required": true
+    }
+  },
+  "tier": "T1"
+}

@@ -1,0 +1,58 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:kora:kb:agent-spec-md",
+    "urn:fxsl:kb:stack-llm-arquitectura"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "pr_security_analyze",
+      "runtime_monitor",
+      "cve_check",
+      "exposure_evaluate",
+      "adversarial_test",
+      "self_audit",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  },
+  "security": {
+    "model_diversity": {
+      "mandatory": true,
+      "abort_if_same_provider": true,
+      "verify_on_bootstrap": true
+    },
+    "asymmetric_veto": {
+      "enabled": true,
+      "can_block": true,
+      "can_approve_alone": false,
+      "approval_requires": ["ops/ci-assistant", "ops/tester"]
+    },
+    "tiers": {
+      "analysis": "T2",
+      "adversarial": "T3",
+      "runtime_monitor": "T2",
+      "meta_eval": "T2"
+    },
+    "adversarial_frequency": "monthly",
+    "contextual_analysis": {
+      "architecture_md_required": true,
+      "reject_without_context": true
+    },
+    "agent_to_agent": {
+      "typed_structures_only": true,
+      "reject_free_text": true
+    },
+    "findings_format": {
+      "required_fields": ["severity", "evidence", "attack_vector", "real_impact", "suggested_fix"]
+    }
+  }
+}
