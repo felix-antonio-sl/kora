@@ -20,6 +20,9 @@ scripts/kora health
 
 # Validate agent YAMLs against JSON schema (requires: pip install jsonschema)
 scripts/kora validate
+
+# Show monorepo statistics (artifact counts, namespace breakdown)
+scripts/kora stats
 ```
 
 No build system — this is a documentation/specification monorepo. Python3 + PyYAML required for CLI.
@@ -39,7 +42,7 @@ kora/
   knowledge/                    # KBs organized by namespace
     gn/                         #   gobernanza regional (77 files)
       bpmn/ gestion/ gobernanza/ guias/ manuales/ normativa/ ris/
-    fxsl/                       #   cat, gist, mbt (35 files)
+    fxsl/                       #   cat, gist, mbt (30 files)
       cat/ gist/ mbt/
     kora/                       #   manual-openclaw, sys (30 files)
       manual-openclaw/ sys/
@@ -50,7 +53,7 @@ kora/
     orko/                       #   8 KBs condensados
     mgmt/                       #   management (4 files)
 
-  agents/                       # Agent workspaces by namespace
+  agents/                       # 40 agents as YAML monoliths (pending migration to workspaces)
     kora/                       #   7 framework agents
     fxsl/                       #   15 personal agents
     gn/                         #   12 GORE agents
@@ -59,10 +62,9 @@ kora/
     orko/                       #   1 agent
     korvo/                      #   1 agent
 
-  specs/                        # Foundational specifications
   catalog/                      # Master URN registry
   skills/                       # Skills federation
-  scripts/                      # CLI tools
+  scripts/                      # CLI tools (kora index/resolve/health/validate/stats)
   docs/                         # Plans and documentation
 ```
 
@@ -95,14 +97,16 @@ Catalog (`catalog/catalog_master_kora.yml`) is the source of truth. Run `scripts
 
 ### Migration Status
 
-Phase 0 (Genesis) complete — namespace-based directory restructuring done.
+Completed:
+- **Phase 0** (Genesis): Namespace-based directory restructuring
+- **Phase 1** (Source Mapping): 208 artifacts mapped (79 FROM_SOURCE, 129 FROM_YAML)
+- **Phase 2** (Koraficacion): 175+ YAML KBs → KORA/MD Markdown across all namespaces
+- **Spec consolidation**: wf-koraficacion absorbed into md-spec v2.0.0 §6
+- **CLI adaptation**: `scripts/kora` index/health/stats adapted to KORA/MD format
 
 Pending:
-- **Phase 1**: Source mapping (KB → original source documents)
-- **Phase 2**: Koraficacion — 175 YAML KBs → KORA/MD Markdown
-- **Phase 3**: Agent evaluation + migration — 40 YAML monoliths → workspace directories
-- **Phase 4**: Autopoiesis — CLI adaptation, catalog regeneration
-- **Phase 5**: Archival of source repos
+- **Phase 3** (Agentificacion): 40 YAML agent monoliths → workspace directories via functor G₂ (agent-spec §12)
+- **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival
 
 ## Key Conventions
 
