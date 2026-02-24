@@ -1863,13 +1863,25 @@ Catalog:
     title: TOOLS.md
     file: agents/korvo/korax/TOOLS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-config:1.0.0
-    title: config.json
-    file: agents/korvo/korax/config.json
+  - urn: urn:kora:agent-bootstrap:korax-cm-delegacion:1.0.0
+    title: CM-DELEGACION.md
+    file: agents/korvo/korax/skills/CM-DELEGACION.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:korax-cm-bancarrota:1.0.0
+    title: CM-BANCARROTA.md
+    file: agents/korvo/korax/skills/CM-BANCARROTA.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:korax-cm-deteccion-colapso:1.0.0
+    title: CM-DETECCION-COLAPSO.md
+    file: agents/korvo/korax/skills/CM-DETECCION-COLAPSO.md
     status: published
   - urn: urn:kora:agent-bootstrap:korax-cm-triaje:1.0.0
     title: CM-TRIAJE.md
     file: agents/korvo/korax/skills/CM-TRIAJE.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:korax-cm-deteccion-abandono:1.0.0
+    title: CM-DETECCION-ABANDONO.md
+    file: agents/korvo/korax/skills/CM-DETECCION-ABANDONO.md
     status: published
   - urn: urn:kora:agent-bootstrap:korax-cm-planificacion:1.0.0
     title: CM-PLANIFICACION.md
@@ -1879,23 +1891,7 @@ Catalog:
     title: CM-SINCRONIZACION.md
     file: agents/korvo/korax/skills/CM-SINCRONIZACION.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-deteccion-colapso:1.0.0
-    title: CM-DETECCION-COLAPSO.md
-    file: agents/korvo/korax/skills/CM-DETECCION-COLAPSO.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-bancarrota:1.0.0
-    title: CM-BANCARROTA.md
-    file: agents/korvo/korax/skills/CM-BANCARROTA.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-deteccion-abandono:1.0.0
-    title: CM-DETECCION-ABANDONO.md
-    file: agents/korvo/korax/skills/CM-DETECCION-ABANDONO.md
-    status: published
   - urn: urn:kora:agent-bootstrap:korax-cm-close:1.0.0
     title: CM-CLOSE.md
     file: agents/korvo/korax/skills/CM-CLOSE.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-delegacion:1.0.0
-    title: CM-DELEGACION.md
-    file: agents/korvo/korax/skills/CM-DELEGACION.md
     status: published

@@ -1,13 +1,20 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:datos-administracion-estado"
+  urn: urn:gov:kb:datos-administracion-estado
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, gobierno, chile, estrategia-datos, interoperabilidad, gobernanza-datos]
+tags:
+- transformacion-digital
+- gobierno
+- chile
+- estrategia-datos
+- interoperabilidad
+- gobernanza-datos
+- knowledge
 lang: es
 ---
 
@@ -79,13 +86,13 @@ lang: es
 
 | Término | Referencia URN (KORA/KODA) |
 | :--- | :--- |
-| API | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_API` |
-| Dato | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATO` |
-| Datos abiertos | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_ABIERTOS` |
-| Datos maestros | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_DATOS_MAESTROS` |
-| Interoperar | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_INTEROPERAR` |
-| Metadatos | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_METADATOS` |
-| Servicios digitales | `urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0#TDE_DEF_SERVICIOS_DIGITALES` |
+| API | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_API` |
+| Dato | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_DATO` |
+| Datos abiertos | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_DATOS_ABIERTOS` |
+| Datos maestros | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_DATOS_MAESTROS` |
+| Interoperar | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_INTEROPERAR` |
+| Metadatos | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_METADATOS` |
+| Servicios digitales | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_SERVICIOS_DIGITALES` |
 
 ## Bibliografía y Colaboradores
 

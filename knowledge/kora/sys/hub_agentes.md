@@ -1,11 +1,18 @@
 ---
-urn: urn:kora:kb:hub-agentes
-created_by: FS
-date: 2026-01-29
-source: KORA system config
+_manifest:
+  urn: urn:kora:kb:hub-agentes
+  provenance:
+    created_by: FS
+    created_at: '2026-01-29'
+    source: KORA system config
 version: 2.0.0
 status: published
-tags: [kora, sistema, configuracion]
+tags:
+- kora
+- sistema
+- configuracion
+- sys
+- hub
 lang: es
 ---
 
@@ -21,7 +28,7 @@ lang: es
 - **KODA_TRANSFORMER**
   - **Propósito**: Ejecución workflow transformación 029 (Fuentes → KODA).
   - **Acciones**: Lectura fuentes, producción borradores YAML, aplicación fases 1-3.
-  - **Referencia**: urn:knowledge:koda:sys:workflow_wikiguias:1.0.0#TDE_WORKFLOW_WIKIGUIAS_GLOBAL_001
+  - **Referencia**: urn:kora:kb:workflow-wikiguias#TDE_WORKFLOW_WIKIGUIAS_GLOBAL_001
 - **TDE_AUDITOR_KB**
   - **Propósito**: Aseguramiento calidad (FS=100%, TER≥30%, RD≥2.0).
   - **Acciones**: Fase 4 workflow 029, detección MEAT faltante, reportes auditoría.
@@ -65,7 +72,7 @@ lang: es
 ## Seguridad y Control
 - **Clasificación**: Activo de información crítico.
 - **Políticas**: Control de cambios, respaldos, trazabilidad de commits y parches.
-- **Normativa**: urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0
+- **Normativa**: urn:tde:kb:nt-seguridad-ciberseguridad
 
 ## Articulación Workflow 029
 - **Asignación**: Fases 1-3 (KODA_TRANSFORMER), Fase 4 (TDE_AUDITOR_KB).

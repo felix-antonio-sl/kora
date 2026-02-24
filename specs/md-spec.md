@@ -118,7 +118,7 @@ lang: "{código ISO 639-1 del contenido}"
 
 ```yaml
 _manifest:
-  urn: "urn:kora:kb:gestion-ipr"
+  urn: "urn:gn:kb:gestion-ipr"
   provenance:
     created_by: "autor"
     created_at: "2026-02-22"
@@ -133,7 +133,7 @@ lang: "es"
 
 ```yaml
 _manifest:
-  urn: "urn:kora:kb:gestion-ipr:1.2.0"
+  urn: "urn:gn:kb:gestion-ipr"
 version: "1.2.0"
 tags: [ipr]
 lang: "es"
@@ -179,8 +179,8 @@ Todo artefacto KORA/MD **DEBE** tener un URN con el formato `urn:{namespace}:{ty
 
 Toda referencia dentro del cuerpo **NO DEBE** incluir versión. Todo URN apunta al concepto, no a una instantánea temporal. Toda versión es un atributo mutable que reside exclusivamente en el frontmatter del documento destino.
 
-**Correcto:** `Según [Guía de Implementación](urn:tde:kb:guia-implementacion)...`
-**Incorrecto:** `...[Guía](urn:tde:kb:guia-implementacion:1.0.0)`
+**Correcto:** `Según [Guía de Implementación](urn:tde:kb:sistema-tde-2025)...`
+**Incorrecto:** `...[Guía](urn:tde:kb:sistema-tde-2025)`
 
 ### 4.3 Tipos de Referencia
 

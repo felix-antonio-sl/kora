@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:bpmn-index"
+  urn: urn:gn:kb:bpmn-index
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, bpmn, arquitectura]
+tags:
+- gore-nuble
+- gobierno-regional
+- bpmn
+- arquitectura
+- gn
 lang: es
 ---
 
@@ -23,13 +28,13 @@ lang: es
 ## Catálogo de Procesos BPMN
 | ID | Título | Archivo KODA | URN KORA |
 | :--- | :--- | :--- | :--- |
-| D01 | Actos Administrativos | D01_actos_administrativos_koda.yml | urn:kora:gn:bpmn-d01-actos-administrativos:1.0.0 |
-| D02 | Ciclo Presupuestario | D02_ciclo_presupuestario_koda.yml | urn:kora:gn:bpmn-d02-ciclo-presupuestario:1.0.0 |
-| D03 | Gestión IPR | D03_gestion_ipr_koda.yml | urn:kora:gn:bpmn-d03-gestion-ipr:1.0.0 |
-| D04 | Compras y Contrataciones | D04_compras_contrataciones_koda.yml | urn:kora:gn:bpmn-d04-compras-contrataciones:1.0.0 |
-| D05 | Inventarios y Activo Fijo | D05_inventarios_activo_fijo_koda.yml | urn:kora:gn:bpmn-d05-inventarios-activo-fijo:1.0.0 |
-| D06 | Flota Vehicular | D06_flota_vehicular_koda.yml | urn:kora:gn:bpmn-d06-flota-vehicular:1.0.0 |
-| D07 | Recursos Humanos | D07_rrhh_koda.yml | urn:kora:gn:bpmn-d07-rrhh:1.0.0 |
-| D08 | Rendiciones | D08_rendiciones_koda.yml | urn:kora:gn:bpmn-d08-rendiciones:1.0.0 |
-| D09 | CIES/SITIA | D09_cies_sitia_koda.yml | urn:kora:gn:bpmn-d09-cies-sitia:1.0.0 |
-| D10 | Geoespacial/IDE | D10_geoespacial_ide_koda.yml | urn:kora:gn:bpmn-d10-geoespacial-ide:1.0.0 |
+| D01 | Actos Administrativos | D01_actos_administrativos_koda.yml | urn:gn:kb:bpmn-d01-actos-administrativos |
+| D02 | Ciclo Presupuestario | D02_ciclo_presupuestario_koda.yml | urn:gn:kb:bpmn-d02-ciclo-presupuestario |
+| D03 | Gestión IPR | D03_gestion_ipr_koda.yml | urn:gn:kb:bpmn-d03-gestion-ipr |
+| D04 | Compras y Contrataciones | D04_compras_contrataciones_koda.yml | urn:gn:kb:bpmn-d04-compras-contrataciones |
+| D05 | Inventarios y Activo Fijo | D05_inventarios_activo_fijo_koda.yml | urn:gn:kb:bpmn-d05-inventarios-activo-fijo |
+| D06 | Flota Vehicular | D06_flota_vehicular_koda.yml | urn:gn:kb:bpmn-d06-flota-vehicular |
+| D07 | Recursos Humanos | D07_rrhh_koda.yml | urn:gn:kb:bpmn-d07-rrhh |
+| D08 | Rendiciones | D08_rendiciones_koda.yml | urn:gn:kb:bpmn-d08-rendiciones |
+| D09 | CIES/SITIA | D09_cies_sitia_koda.yml | urn:gn:kb:bpmn-d09-cies-sitia |
+| D10 | Geoespacial/IDE | D10_geoespacial_ide_koda.yml | urn:gn:kb:bpmn-d10-geoespacial-ide |

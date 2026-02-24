@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:legal:kb:index"
+  urn: urn:legal:kb:index
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Estatuto Administrativo y normativa chilena"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Estatuto Administrativo y normativa chilena
+version: 2.0.0
 status: published
-tags: [derecho-administrativo, estatuto, chile]
+tags:
+- derecho-administrativo
+- estatuto
+- chile
+- knowledge
+- legal
 lang: es
 ---
 
@@ -63,20 +68,20 @@ lang: es
 
 | ID | URN | Tema | Fuente (Módulo/Ley) |
 | :--- | :--- | :--- | :--- |
-| **KB_MED_001** | `urn:knowledge:koda:legal:intro_estatutos:1.0.0` | Introducción y Estatutos Jurídicos | Módulo I |
-| **KB_MED_002** | `urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0` | Deberes y Prohibiciones | Módulo II-III |
-| **KB_MED_003** | `urn:knowledge:koda:legal:ingreso_carrera:1.0.0` | Ingreso a la Vida Laboral | Módulo IV |
-| **KB_MED_004** | `urn:knowledge:koda:legal:jornada_calificaciones:1.0.0` | Jornada de Trabajo y Calificaciones | Módulo V |
-| **KB_MED_005** | `urn:kora:legal:remuneraciones:1.0.0` | Remuneraciones y Asignaciones | Módulo VI-VIII |
-| **KB_MED_006** | `urn:knowledge:koda:legal:acoso_laboral:1.0.0` | Acoso Laboral y Sexual | Módulo IX |
-| **KB_MED_007** | `urn:knowledge:koda:legal:responsabilidad_admin:1.0.0` | Responsabilidad Administrativa | Módulo X |
-| **KB_MED_008** | `urn:kora:legal:terminacion:1.0.0` | Terminación Relación Laboral | Módulo XI |
-| **KB_MED_009** | `urn:kora:legal:maternidad:1.0.0` | Protección a la Maternidad | Módulo XII |
-| **KB_MED_010** | `urn:knowledge:koda:legal:contratacion_publica:1.0.0` | Contratación Pública | Módulo XIII |
-| **KB_MED_011** | `urn:knowledge:koda:legal:feriados_permisos:1.0.0` | Feriados, Permisos, Comisiones | Módulo XIV |
-| **KB_MED_012** | `urn:knowledge:koda:legal:derechos_especiales:1.0.0` | Liberación Guardia, Incentivo Retiro | Módulo XV |
-| **KB_MED_013** | `urn:knowledge:koda:legal:formacion_especialistas:1.0.0` | Becas, PAO, Estudio | Módulo XVI |
-| **KB_MED_014** | `urn:knowledge:koda:legal:confianza_legitima:1.0.0` | Confianza Legítima en Contratas | Jurisprudencia CS/CGR |
-| **KB_MED_090** | `urn:knowledge:koda:legal:ley_21643:1.0.0` | Ley 21.643 - Acoso y Violencia | Ley Karin (2024) |
-| **KB_MED_091** | `urn:knowledge:koda:legal:ley_15076:1.0.0` | Ley 15.076 - Estatuto Profesionales | DFL 1/2001 |
-| **KB_MED_092** | `urn:knowledge:koda:legal:ley_19664:1.0.0` | Ley 19.664 - Normas Especiales | Ley 19.664 (2000) |
+| **KB_MED_001** | `urn:legal:kb:intro-estatutos` | Introducción y Estatutos Jurídicos | Módulo I |
+| **KB_MED_002** | `urn:legal:kb:deberes-prohibiciones` | Deberes y Prohibiciones | Módulo II-III |
+| **KB_MED_003** | `urn:legal:kb:ingreso-carrera` | Ingreso a la Vida Laboral | Módulo IV |
+| **KB_MED_004** | `urn:legal:kb:jornada-calificaciones` | Jornada de Trabajo y Calificaciones | Módulo V |
+| **KB_MED_005** | `urn:legal:kb:remuneraciones` | Remuneraciones y Asignaciones | Módulo VI-VIII |
+| **KB_MED_006** | `urn:legal:kb:acoso-laboral` | Acoso Laboral y Sexual | Módulo IX |
+| **KB_MED_007** | `urn:legal:kb:responsabilidad-admin` | Responsabilidad Administrativa | Módulo X |
+| **KB_MED_008** | `urn:legal:kb:terminacion` | Terminación Relación Laboral | Módulo XI |
+| **KB_MED_009** | `urn:legal:kb:maternidad` | Protección a la Maternidad | Módulo XII |
+| **KB_MED_010** | `urn:legal:kb:contratacion-publica` | Contratación Pública | Módulo XIII |
+| **KB_MED_011** | `urn:legal:kb:feriados-permisos` | Feriados, Permisos, Comisiones | Módulo XIV |
+| **KB_MED_012** | `urn:legal:kb:derechos-especiales` | Liberación Guardia, Incentivo Retiro | Módulo XV |
+| **KB_MED_013** | `urn:legal:kb:formacion-especialistas` | Becas, PAO, Estudio | Módulo XVI |
+| **KB_MED_014** | `urn:legal:kb:confianza-legitima` | Confianza Legítima en Contratas | Jurisprudencia CS/CGR |
+| **KB_MED_090** | `urn:legal:kb:ley-21643` | Ley 21.643 - Acoso y Violencia | Ley Karin (2024) |
+| **KB_MED_091** | `urn:legal:kb:ley-15076` | Ley 15.076 - Estatuto Profesionales | DFL 1/2001 |
+| **KB_MED_092** | `urn:legal:kb:ley-19664` | Ley 19.664 - Normas Especiales | Ley 19.664 (2000) |

@@ -13,12 +13,12 @@ KORA is a formally-specified monorepo for building and governing AI agents using
 scripts/kora index
 
 # Resolve a URN to its physical file path
-scripts/kora resolve "urn:kora:agent:guardian:1.0.0"
+scripts/kora resolve "urn:kora:kb:agent-spec-md"
 
 # Check for broken URN references
 scripts/kora health
 
-# Validate agent YAMLs against JSON schema (requires: pip install jsonschema)
+# Validate agent workspaces (requires: pip install jsonschema)
 scripts/kora validate
 
 # Show monorepo statistics (artifact counts, namespace breakdown)
@@ -53,14 +53,14 @@ kora/
     orko/                       #   8 KBs condensados
     mgmt/                       #   management (4 files)
 
-  agents/                       # 40 agents as YAML monoliths (pending migration to workspaces)
+  agents/                       # 41 agents as KORA workspaces (AGENTS.md + SOUL.md + USER.md + TOOLS.md + config.json + skills/)
     kora/                       #   7 framework agents
     fxsl/                       #   15 personal agents
     gn/                         #   12 GORE agents
     ops/                        #   3 transversal agents
     tde/                        #   1 agent
     orko/                       #   1 agent
-    korvo/                      #   1 agent
+    korvo/                      #   2 agents
 
   catalog/                      # Master URN registry
   skills/                       # Skills federation
@@ -89,7 +89,7 @@ An agent is an F-coalgebra `c: U → F(U)` with 5 essential components:
 
 ### URN System
 
-Format: `urn:{namespace}:{type}:{id}:{version}` — e.g., `urn:kora:kb:gobernanza:1.2.0`
+Format: `urn:{namespace}:{type}:{id}` — e.g., `urn:kora:kb:agent-spec-md`
 
 Active namespaces: **kora**, **fxsl**, **gn**, **tde**, **orko**, **korvo**, **gov**, **legal**, **mgmt**
 
@@ -103,9 +103,9 @@ Completed:
 - **Phase 2** (Koraficacion): 175+ YAML KBs → KORA/MD Markdown across all namespaces
 - **Spec consolidation**: wf-koraficacion absorbed into md-spec v2.0.0 §6
 - **CLI adaptation**: `scripts/kora` index/health/stats adapted to KORA/MD format
+- **Phase 4** (Agentificacion): 40 YAML monoliths → 41 KORA workspaces via functor G₂ (agent-spec §12). 86 skills, 0 broken URNs in agents/.
 
 Pending:
-- **Phase 3** (Agentificacion): 40 YAML agent monoliths → workspace directories via functor G₂ (agent-spec §12)
 - **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival
 
 ## Key Conventions
