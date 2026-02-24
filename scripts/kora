@@ -18,9 +18,7 @@ from pathlib import Path
 
 KORA_ROOT = Path(os.path.abspath(__file__)).parent.parent
 CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
-SCHEMA_PATH = (
-    KORA_ROOT / "knowledge" / "foundations" / "core" / "kora" / "agent-schema.json"
-)
+SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
 
 
 def load_yaml_safe(path):

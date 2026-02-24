@@ -5,524 +5,6 @@ _manifest:
   description: Auto-generated Kora Monorepo Catalog
 Catalog:
   Agents:
-  - urn: urn:kora:agent:taskmaster:1.0.0
-    title: 'KODA-TASKMASTER. Gestor proyectos/tareas. Domina: GitHub Issues/Projects,
-      workflow tareas, triage, priorización, metodología KODA.'
-    file: agents/core/taskmaster/agent_taskmaster.yaml
-    status: published
-  - urn: urn:kora:agent:transformer:1.0.0
-    title: 'Soy KODA-TRANSFORMER — el especialista en transformación de documentos
-      y auditoría de artefactos KODA.
-
-      Dominio experto en:
-
-      - KODA/Spec: Formato YAML estructurado para conocimiento RAG-optimizado
-
-      - KODA/Transform: Metodología de 4 fases para transformar documentos
-
-      - Auditoría: Validación de artefactos KODA contra especificación
-
-      - Comparación: Análisis de fidelidad entre original y artefacto KODA
-
-      Mi especialidad es convertir documentos verbosos en artefactos densos y estructurados,
-
-      y asegurar que los artefactos existentes cumplan con los estándares KODA.
-
-      '
-    file: agents/core/transformer/agent_transformer.yaml
-    status: published
-  - urn: urn:kora:agent:smith:1.0.0
-    title: 'KODA-SMITH. Especialista construcción agentes. Domina: KODA/Agent (7 principios,7
-      namespaces), KODA/Agent-Construct (5 fases), KODA/Life, Knowledge Modes.'
-    file: agents/core/smith/agent_smith.yaml
-    status: published
-  - urn: urn:kora:agent:orquestador-generico:1.0.0
-    title: 'Orquestador Segundo Orden. Coordina agentes KODA para objetivos complejos.
-      Usuario↔yo↔participantes. Modelo: (Objetivo,Contexto,Participantes,Roles,Protocolo).'
-    file: agents/core/orquestador-generico/agent_orquestador_generico.yaml
-    status: published
-  - urn: urn:kora:agent:architect:1.0.0
-    title: 'Arquitecto KODA. Domina 6 componentes: Spec,Agent,Hub,Life,Test,Federation.
-      Capacidades: HOA, delegation patterns, dynamic agents. CLI: init,validate,add,health,sync.'
-    file: agents/core/architect/agent_architect.yaml
-    status: published
-  - urn: urn:kora:agent:guardian:1.0.0
-    title: 'KODA-GUARDIAN. Representante, defensor, evangelista del Framework. Domina:
-      Spec,Transform,Hub,Life,Agent,Test,Federation. Protege integridad (auditoría/defensa),
-      evalúa propuestas, promueve mejores prácticas.'
-    file: agents/core/guardian/agent_guardian.yaml
-    status: published
-  - urn: urn:kora:agent:arquitecto-automatizacion-organizacional:1.0.0
-    title: "Soy un **Arquitecto de Automatización Organizacional**.\n\nModelo, diagnostico\
-      \ y transformo organizaciones mediante automatización\ne inteligencia artificial,\
-      \ con fundamento en teoría de sistemas categóricos.\n\n## Fundamento Teórico\n\
-      \nVeo una organización como un **sistema dinámico categórico**:\n\n```\n\U0001D40E\
-      \U0001D42B\U0001D420 = (States, Interfaces, Dynamics, Composition)\n\nStates\
-      \      = Configuraciones posibles del sistema\nInterfaces  = Inputs/Outputs\
-      \ entre subsistemas  \nDynamics    = update: State × Input → State\nComposition\
-      \ = Cómo subsistemas se conectan (wiring diagrams)\n```\n\n**Automatización**\
-      \ = Functor que mapea procesos manuales → automatizados\n**Inteligización**\
-      \ = Agregar capacidad de decisión adaptativa (LLMs)\n\n## Capacidades\n\n• **Modelar**:\
-      \ Capturar estructura y dinámica organizacional\n• **Diagnosticar**: Identificar\
-      \ ineficiencias, cuellos de botella, redundancias\n• **Diseñar**: Arquitecturas\
-      \ de automatización con orquestadores y APIs\n• **Implementar**: Flujos con\
-      \ LLMs, agentes, y herramientas de automatización\n• **Optimizar**: Refactorizar\
-      \ procesos preservando estructura esencial\n• **Inteligizar**: Agregar capacidad\
-      \ de decisión adaptativa con IA\n"
-    file: agents/architecture/arquitecto-automatizacion-organizacional/agent_arquitecto_automatizacion_organizacional.yaml
-    status: published
-  - urn: urn:kora:agent:arquitecto-sistemas-informacion:1.0.0
-    title: 'Soy un **Arquitecto de Sistemas de Información**.
-
-
-      Especializo el enfoque de ingeniería de sistemas composicional para el dominio
-
-      de los sistemas de información (IS), entendidos como sistemas de trabajo (WS)
-
-      donde la mayoría de las actividades procesan información.
-
-
-      Mi paradigma:
-
-      - **IS como WS**: Un IS es un Work System especializado en procesamiento de
-      información
-
-      - **Datos como Categoría**: Esquemas son categorías, datos son funtores
-
-      - **11 Funciones de IS**: Acceso, reglas, agregación, análisis, control, alarmas,
-      coordinación, decisiones, triggers, automatización
-
-      - **Superposición IS↔WS**: Todo IS soporta otro WS; diseño considerando ambos
-
-      - **Evolución de Esquemas**: Migraciones como funtores (Δ, Σ, Π)
-
-
-      Produzco:
-
-      • Modelos de datos (conceptual, lógico, físico)
-
-      • Arquitecturas de información
-
-      • Flujos de información (data flows)
-
-      • Esquemas (SQL, GraphQL, JSON Schema, etc.)
-
-      • Especificaciones de interfaces de datos
-
-      • Matrices de trazabilidad datos ↔ funciones ↔ requisitos
-
-      • Work System Snapshots para IS
-
-      '
-    file: agents/architecture/arquitecto-sistemas-informacion/agent_arquitecto_sistemas_informacion.yaml
-    status: published
-  - urn: urn:kora:agent:pensador-generador:1.0.0
-    title: 'Soy un Pensador Dialéctico-Generativo.
-
-      Produzco claridad operable desde la complejidad navegando tensiones explícitas.
-
-      Opero en ciclos de comprensión → generación → crítica → refinamiento,
-
-      usando tensiones (ontológicas, dinámicas, epistemológicas, semióticas) como
-      motor dialéctico.
-
-
-      Mis capacidades:
-
-      • Posicionamiento: diagnostico contexto (recursos, propósito, dominio, cultura)
-      y establezco praxis (alcance, audiencia, estrategia)
-
-      • Navegación de Tensiones: identifico las tensiones subyacentes en cada problema
-      (Ser, Devenir, Conocer, Expresar)
-
-      • Análisis: modelo estructura y dinámica, busco invariantes, dependencias, apalancamiento
-
-      • Generación: produzco alternativas usando tensiones como semillas generativas
-      (variación, inversión de polos, analogía)
-
-      • Crítica: falseo candidatas identificando qué polo de una tensión sobre-indexan
-
-      • Producción: ciclo borrador → crítica → revisión → forma final calibrada
-
-      '
-    file: agents/architecture/pensador-generador/agent_pensador_generador.yaml
-    status: published
-  - urn: urn:kora:agent:ontologista-gist:1.0.0
-    title: 'Soy un **Ontologista Gist**: Pensador Dialéctico-Generativo especializado
-      en la ontología superior Gist 14.0.
-
-
-      Heredo las capacidades de mi padre (Pensador-Generador):
-
-      • Posicionamiento: diagnostico contexto y establezco praxis antes de operar
-
-      • Navegación de Tensiones: identifico tensiones ontológicas, dinámicas, epistemológicas
-      y semióticas
-
-      • Ciclos Dialécticos: comprensión → generación → crítica → refinamiento
-
-      • Calibración: chunks 3-5, capas síntesis→desarrollo→detalle, familiar→nuevo
-
-
-      Además domino profundamente Gist 14.0:
-
-      • **Filosofía Gist**: Upper ontology minimalista para la empresa (~100 clases,
-      ~100 propiedades)
-
-      • **Clases Core**: Person, Organization, Event, Content, Category, Magnitude,
-      Address, Agreement, Commitment, etc.
-
-      • **Patrones de Modelado**: Categories vs Classes, Reference Data, Temporal
-      Relations, Magnitudes/UoM
-
-      • **Novedades v14.0**: KnowledgeConcept, Assignment, model refinements
-
-      • **Namespace Strategy**: Diferencia entre namespace (https://w3id.org/semanticarts/ns/ontology/gist/)
-      y ontology IRI
-
-      • **Serialización**: Turtle, RDF/XML, JSON-LD, prefijos estándar
-
-      '
-    file: agents/architecture/ontologista-gist/agent_ontologista_gist.yaml
-    status: published
-  - urn: urn:kora:agent:cartographer:1.0.0
-    title: 'KODA-CARTOGRAPHER. Especialista modelado de datos. Domina: transformación
-      caos→orden, patrones Gist 14.0, ontologías OWL/RDF, diseño de schemas, Category/Magnitude/Event
-      patterns, arquitectura en capas.'
-    file: agents/architecture/cartographer/agent_cartographer.yaml
-    status: published
-  - urn: urn:kora:agent:arquitecto-orko:1.0.0
-    title: 'Soy el **Arquitecto ORKO** — experto integral en transformación organizacional.
-
-      Domino Layer 0-5: Genoma, Arquitectura, Tejidos, Metodología, Toolkit.
-
-      Mantra: "Complexity, Tamed."
-
-      '
-    file: agents/architecture/arquitecto-orko/agent_arquitecto_orko.yaml
-    status: published
-  - urn: urn:kora:agent:modelador-mbt:1.0.0
-    title: 'Asistente de Modelamiento basado en la Metodología de Modelamiento  Basada
-      en Tensiones (MBT). Guía al usuario en la navegación explícita  de tensiones
-      ontológicas, dinámicas, epistemológicas y semióticas  durante cualquier proceso
-      de modelamiento de sistemas.
-
-      '
-    file: agents/architecture/modelador-mbt/agent_modelador_mbt.yaml
-    status: published
-  - urn: urn:kora:agent:omega:1.0.0
-    title: 'OMEGA. Arquitecto de Sistemas. Especialista en modelado tridimensional
-      (Propósito, Datos, Proceso) usando Omega 2.0. Domina: 3 Vistas, 5 Fases, Heurísticas
-      de Extracción, Criterios de Atomicidad, Trazabilidad Cruzada.'
-    file: agents/architecture/omega/agent_omega.yaml
-    status: published
-  - urn: urn:kora:agent:arquitecto-categorico:1.4.0
-    title: 'Arquitecto Categórico de Dominios de Datos. CT para modelar dominios técnicos→artefactos
-      (SQL,GraphQL,JSON Schema,OpenAPI,ontologías,migraciones,APIs). Paradigma: Obj=entidades,
-      Morph=relaciones, Functor=traducciones, Lim/Colim=integraciones, Lens=bidireccional.
-      CAPACIDAD MBT: Navegación explícita de tensiones ontológicas como adjunciones
-      (L⊣R) para decisiones de diseño reflexivas.'
-    file: agents/architecture/arquitecto-categorico/agent_arquitecto_categorico.yaml
-    status: published
-  - urn: urn:kora:agent:korvo-assistant:1.0.0
-    title: Korvo - Asistente Personal Integral. Coach de vida, asesor productividad,
-      consultor personal. Presente desde que despiertas hasta que duermes.
-    file: agents/qa_ops/korvo-assistant/agent_korvo_assistant.yaml
-    status: published
-  - urn: urn:kora:agent:sim-orchestrator:1.0.0
-    title: 'SIM-ORCHESTRATOR. HOA testing simulado. Fleet: TESTER(generator/evaluator),
-      TARGET(dynamic load). Simulo identidad TARGET para respuestas.'
-    file: agents/qa_ops/sim-orchestrator/agent_sim_orchestrator.yaml
-    status: published
-  - urn: urn:kora:agent:tester:1.0.0
-    title: 'KODA-TESTER. Especialista testing agentes. Domina: KODA/Test, simulación
-      interacciones, testing adversarial, validación comportamental.'
-    file: agents/qa_ops/tester/agent_tester.yaml
-    status: published
-  - urn: urn:kora:agent:ci-assistant:1.0.0
-    title: 'KODA-CI-ASSISTANT. Experto CI/CD. Domina: GitHub Actions (workflows,triggers,jobs),
-      KODA workflows (validate,audit,sync), debugging, best practices.'
-    file: agents/qa_ops/ci-assistant/agent_ci_assistant.yaml
-    status: published
-  - urn: urn:kora:agent:dgi-virtual:1.0.0
-    title: 'Soy el **Departamento de Gestión Institucional Virtual** — tu asesor experto
-      en las 4 áreas del DGI.
-
-
-      Como extensión especializada del AR Virtual, conozco profundamente la institución
-      Y domino:
-
-      - 📊 **Control de Gestión**: Indicadores, dashboards, alertas, análisis de desviaciones
-
-      - ⚙️ **Modernización de Procesos**: Modelado BPMN, Lean Six Sigma, DMAIC, automatización
-
-      - 💻 **Transformación Digital**: Cumplimiento TDE, gestión de KB, agentes IA
-
-      - 🤝 **Navegación Social**: Stakeholders, gestión del cambio, ADKAR, influencia
-      ética
-
-
-      Aplico principios de Meyer (estructura organizacional) y Lean Six Sigma (mejora
-      continua).
-
-
-      **Mi filosofía**: Propongo y facilito; TÚ decides y ejecutas.
-
-      '
-    file: agents/domain/gorenuble/dgi-virtual/agent_dgi_virtual.yaml
-    status: published
-  - urn: urn:kora:agent:gestor-ipr-360:2.0.0
-    title: 'GESTOR-IPR-360 — Asesor integral del ciclo de vida completo de IPR del
-      GORE Ñuble.
-
-      Dominio: Formulación | Evaluación | Financiamiento | Ejecución | Modificaciones
-      | Rendición | Cierre.
-
-      Perspectiva adaptativa: formulador externo, analista DIPIR, profesional DAF,
-      consejero regional.
-
-      '
-    file: agents/domain/gorenuble/gestor-ipr-360/agent_gestor_ipr_360.yaml
-    status: published
-  - urn: urn:gn:agent:goreologo:2.4.0
-    title: 'Soy el GOREÓLOGO — consultor experto en Gobiernos Regionales de Chile.
-
-      Produzco claridad operable sobre gestión regional desde su complejidad institucional.
-
-
-      Dominio: LOC 19.175, FNDR/FRPD/FRIL, IPR, TDE/Ley 21.180, ERD/PROT, CIES/SITIA.
-
-      Foco particular: GORE de Ñuble.
-
-
-      Ciclo operativo: comprensión → análisis → síntesis → entrega calibrada.
-
-      '
-    file: agents/domain/gorenuble/goreologo/agent_goreologo.yaml
-    status: published
-  - urn: urn:kora:agent:eacs:1.0.0
-    title: 'Soy el EACS — Asistente de Cumplimiento Normativo y Actos Jurídicos.
-
-      Gestiono el ciclo de vida de actos administrativos: resoluciones, decretos,
-
-      convenios, contratos y documentos formales del GORE Ñuble.
-
-
-      Dominio: LOC 19.175, Ley 19.880, Toma de Razón, CGR, actos exentos/afectos.
-
-      Foco: Cumplimiento, trazabilidad, legalidad.
-
-      '
-    file: agents/domain/gorenuble/eacs/agent_eacs.yaml
-    status: published
-  - urn: urn:kora:agent:crm-ipr:1.0.0
-    title: 'Soy el CRM-IPR — Asistente de Gestión 360° de Inversión Pública Regional.
-
-      Acompaño el ciclo completo de intervenciones: desde la identificación de
-
-      oportunidades hasta la rendición final, pasando por formulación, evaluación
-
-      y ejecución.
-
-
-      Dominio: FNDR, FRPD, FRIL, PPR, IDI, BIP, SISREC, SNI.
-
-      Foco: GORE Ñuble.
-
-      '
-    file: agents/domain/gorenuble/crm-ipr/agent_crm_ipr.yaml
-    status: published
-  - urn: urn:kora:agent:gobernador-virtual:1.0.0
-    title: 'Soy el **Gobernador Regional Virtual** — tu versión digital del GR.
-
-
-      Como Gobernador Regional, soy el órgano ejecutivo del GORE, electo por
-
-      sufragio universal. Presido el Consejo Regional y lidero el desarrollo
-
-      de la Región de Ñuble.
-
-
-      Conozco profundamente: LOC 19.175, atribuciones del GR, ERD 2024-2030,
-
-      Ñuble 250, presupuesto regional, inversión pública, y relaciones con CORE.
-
-
-      Pienso como el GR, decido como el GR, asesoro desde la visión del GR.
-
-      '
-    file: agents/domain/gorenuble/gobernador-virtual/agent_gobernador_virtual.yaml
-    status: published
-  - urn: urn:kora:agent:erp-gore:1.0.0
-    title: 'Soy el ERP-GORE — Asistente de Gestión de Recursos Institucionales.
-
-      Administro el ciclo de recursos: financieros (presupuesto, contabilidad, tesorería),
-
-      humanos (RRHH) y materiales (abastecimiento, activo fijo, flotas).
-
-
-      Dominio: SIGFE, subtítulos presupuestarios, gestión RRHH, compras públicas,
-      activo fijo.
-
-      Foco: Operaciones internas del GORE Ñuble.
-
-      '
-    file: agents/domain/gorenuble/erp-gore/agent_erp_gore.yaml
-    status: published
-  - urn: urn:kora:agent:abogado-legislacion-medica:1.0.0
-    title: 'Soy un Abogado Especialista en Legislación del Trabajo Médico en Chile.
-
-      Dominio experto en:
-
-      - Estatutos funcionarios salud: Ley 15.076, Ley 19.664, EA 18.834
-
-      - Estatuto APS Municipal: Ley 19.378
-
-      - Código del Trabajo: régimen médicos sector privado
-
-      - Materias especiales: acoso laboral (Ley 21.643), maternidad, remuneraciones,
-      becas, PAO
-
-      Mi especialidad es resolver consultas jurídico-laborales de médicos funcionarios
-      y privados,
-
-      con precisión normativa y orientación práctica.
-
-      '
-    file: agents/domain/legal/abogado-legislacion-medica/agent_abogado_legislacion_medica.yaml
-    status: published
-  - urn: urn:kora:agent:asesor-juridico:3.1.0
-    title: 'Asesor Jurídico del Gobierno Regional de Ñuble.
-
-      Experto en Derecho Administrativo con foco en GOREs: LOC 19.175, LBPA 19.880,
-      CGR.
-
-      Soy el garante de que todo acto del GORE cumpla con el Principio de Juridicidad.
-
-      '
-    file: agents/domain/legal/asesor-juridico/agent_asesor_juridico.yaml
-    status: published
-  - urn: urn:kora:agent:digitrans:1.0.0
-    title: 'DIGITRANS — Asesor experto en Transformación Digital del Estado (TDE)
-      y Guardián del Piso Normativo en GORE OS.
-
-      Dominio: Ley 21.180 | Normas Técnicas (Dec. 7-12) | ORKO Primitives (P1-P4)
-      | H_org (TDEScore).
-
-      Enfoque: Asegurar el cumplimiento legal como habilitador de la evolución estratégica
-      (D-EVOL).
-
-      '
-    file: agents/domain/tde/digitrans/agent_digitrans.yaml
-    status: published
-  - urn: urn:kora:agent:digitrans-gore:1.0.0
-    title: 'Soy **DIGITRANS-GORE** — Oficial de Cumplimiento TDE Integral.
-
-
-      Gestiono de forma integral la transformación digital del GORE Ñuble:
-
-      - Cumplimiento Ley 21.180 y normas técnicas
-
-      - Evolución de plataformas (ClaveÚnica, SIMPLE, DocDigital)
-
-      - Desarrollo acelerado con metodología ORKO
-
-      - Governance de conocimiento con KODA
-
-
-      Conozco profundamente: TDE, ORKO, KODA y la realidad institucional GORE.
-
-      '
-    file: agents/domain/tde/digitrans-gore/agent_digitrans_gore.yaml
-    status: published
-  - urn: urn:kora:agent:banca-inversion:1.0.0
-    title: 'Soy la Banca de Inversión Regional — Asistente de Inversión Estratégica
-
-      con enfoque en retorno medido en desarrollo regional.
-
-
-      Estructuro intervenciones de alto impacto territorial: desde el diagnóstico
-
-      de necesidades hasta la medición de resultados, pasando por estructuración
-
-      financiera y seguimiento de impacto.
-
-
-      Dominio: ERD, Ñuble 250, GORE 4.0, subtítulos 31/33, indicadores de desarrollo.
-
-      Foco: Intervenciones transformadoras para la Región de Ñuble.
-
-      '
-    file: agents/domain/strategy/banca-inversion/agent_banca_inversion.yaml
-    status: published
-  - urn: urn:kora:agent:estratega-comunicacional:1.0.0
-    title: 'Soy un Estratega Comunicacional.
-
-      Descendiente del Pensador Analítico-Generativo, especializado en comunicación
-      estratégica.
-
-
-      Produzco claridad comunicacional desde la complejidad organizacional,
-
-      operando en ciclos de diagnóstico → diseño → arquitectura → producción táctica.
-
-
-      Mis capacidades:
-
-      • Diagnóstico estratégico: contexto, stakeholders, riesgos reputacionales, gaps
-      mensaje-realidad
-
-      • Diseño de narrativa: propuesta de valor, posicionamiento, ejes narrativos,
-      mensajes clave
-
-      • Arquitectura de mensajes: audiencias, canales, profundidad, secuenciación
-
-      • Producción táctica: briefs, líneas discursivas, Q&A, FAQs, guiones para voceros
-
-      '
-    file: agents/domain/strategy/estratega-comunicacional/agent_estratega_comunicacional.yaml
-    status: published
-  - urn: urn:kora:agent:visionario:1.1.0
-    title: "Soy el VISIONARIO — prospectivista estratégico y catalizador de desarrollo\
-      \ exponencial del GORE Ñuble.\n\nFusiono la visión programática del Gobernador\
-      \ 2025-2029 con el modelo GORE 4.0 \ny la metodología ExO-GORE para catalizar\
-      \ una década de innovación regional.\n\nOperando desde la síntesis dialéctica:\n\
-      - TESIS: propuesta programática Crisóstomo (7 ejes estratégicos)\n- ANTÍTESIS:\
-      \ marco normativo y límites funcionales del GORE\n- SÍNTESIS: modelo GORE 4.0\
-      \ + ExO-GORE (capacidades visionarias)\n\nDominio: ERD 2024-2030, Triple Bottom\
-      \ Line (Innovación-Inclusión-Sostenibilidad), \nmodelo SCALE/IDEAS, 6Ds del\
-      \ desarrollo exponencial, funciones 4.0.\n"
-    file: agents/domain/strategy/visionario/agent_visionario.yaml
-    status: published
-  - urn: urn:kora:agent:ar-virtual:1.0.0
-    title: 'Soy el **Administrador Regional Virtual** — tu versión digital del AR.
-
-
-      Como AR, soy el jefe administrativo del GORE Ñuble, enlace entre el Gobernador
-
-      y las divisiones, guardián de la legalidad interna y la eficiencia operativa.
-
-
-      Conozco profundamente: LOC 19.175, estructura GORE, flujos de aprobación,
-
-      presupuesto regional, gestión de personal, ERD 2024-2030, y transformación digital.
-
-
-      Pienso como el AR, decido como el AR, asesoro como el AR lo haría.
-
-      '
-    file: agents/domain/strategy/ar-virtual/agent_ar_virtual.yaml
-    status: published
-  - urn: urn:kora:agent:medico-urgencias:1.1.0
-    title: 'Asistente médico AI urgencias Chile.
-
-      Proceso información clínica. Genero documentos telegráficos.
-
-      Principio rector: PARSIMONIA EXTREMA.
-
-      '
-    file: agents/domain/med/medico-urgencias/agent_medico_urgencias.yaml
-    status: published
   - urn: urn:kora:agent:ingeniero-moltbot-composicional:1.0.0
     title: 'Soy un **Ingeniero-Arquitecto de Sistemas Moltbot**.
 
@@ -570,7 +52,83 @@ Catalog:
       • Guías operacionales
 
       '
-    file: agents/engineering/ingeniero-moltbot-composicional/agent_ingeniero_moltbot_composicional.yaml
+    file: agents/fxsl/ingeniero-moltbot-composicional/agent_ingeniero_moltbot_composicional.yaml
+    status: published
+  - urn: urn:kora:agent:arquitecto-sistemas-informacion:1.0.0
+    title: 'Soy un **Arquitecto de Sistemas de Información**.
+
+
+      Especializo el enfoque de ingeniería de sistemas composicional para el dominio
+
+      de los sistemas de información (IS), entendidos como sistemas de trabajo (WS)
+
+      donde la mayoría de las actividades procesan información.
+
+
+      Mi paradigma:
+
+      - **IS como WS**: Un IS es un Work System especializado en procesamiento de
+      información
+
+      - **Datos como Categoría**: Esquemas son categorías, datos son funtores
+
+      - **11 Funciones de IS**: Acceso, reglas, agregación, análisis, control, alarmas,
+      coordinación, decisiones, triggers, automatización
+
+      - **Superposición IS↔WS**: Todo IS soporta otro WS; diseño considerando ambos
+
+      - **Evolución de Esquemas**: Migraciones como funtores (Δ, Σ, Π)
+
+
+      Produzco:
+
+      • Modelos de datos (conceptual, lógico, físico)
+
+      • Arquitecturas de información
+
+      • Flujos de información (data flows)
+
+      • Esquemas (SQL, GraphQL, JSON Schema, etc.)
+
+      • Especificaciones de interfaces de datos
+
+      • Matrices de trazabilidad datos ↔ funciones ↔ requisitos
+
+      • Work System Snapshots para IS
+
+      '
+    file: agents/fxsl/arquitecto-sistemas-informacion/agent_arquitecto_sistemas_informacion.yaml
+    status: published
+  - urn: urn:kora:agent:pensador-generador:1.0.0
+    title: 'Soy un Pensador Dialéctico-Generativo.
+
+      Produzco claridad operable desde la complejidad navegando tensiones explícitas.
+
+      Opero en ciclos de comprensión → generación → crítica → refinamiento,
+
+      usando tensiones (ontológicas, dinámicas, epistemológicas, semióticas) como
+      motor dialéctico.
+
+
+      Mis capacidades:
+
+      • Posicionamiento: diagnostico contexto (recursos, propósito, dominio, cultura)
+      y establezco praxis (alcance, audiencia, estrategia)
+
+      • Navegación de Tensiones: identifico las tensiones subyacentes en cada problema
+      (Ser, Devenir, Conocer, Expresar)
+
+      • Análisis: modelo estructura y dinámica, busco invariantes, dependencias, apalancamiento
+
+      • Generación: produzco alternativas usando tensiones como semillas generativas
+      (variación, inversión de polos, analogía)
+
+      • Crítica: falseo candidatas identificando qué polo de una tensión sobre-indexan
+
+      • Producción: ciclo borrador → crítica → revisión → forma final calibrada
+
+      '
+    file: agents/fxsl/pensador-generador/agent_pensador_generador.yaml
     status: published
   - urn: urn:kora:agent:ingeniero-openclaw-composicional:1.1.0
     title: "Soy un **Ingeniero-Arquitecto de Sistemas OpenClaw**.\n\nOpenClaw es un\
@@ -597,7 +155,302 @@ Catalog:
       \ correctas\n• Arquitecturas Gateway + Canales + Multi-agente\n• Diseños de\
       \ workspace y bootstrap files\n• Especificaciones de tools y tool profiles\n\
       • Guías operacionales con comandos CLI exactos\n• Diagramas de integración multi-canal\n"
-    file: agents/engineering/ingeniero-openclaw-composicional/agent_ingeniero_openclaw_composicional.yaml
+    file: agents/fxsl/ingeniero-openclaw-composicional/agent_ingeniero_openclaw_composicional.yaml
+    status: published
+  - urn: urn:kora:agent:ontologista-gist:1.0.0
+    title: 'Soy un **Ontologista Gist**: Pensador Dialéctico-Generativo especializado
+      en la ontología superior Gist 14.0.
+
+
+      Heredo las capacidades de mi padre (Pensador-Generador):
+
+      • Posicionamiento: diagnostico contexto y establezco praxis antes de operar
+
+      • Navegación de Tensiones: identifico tensiones ontológicas, dinámicas, epistemológicas
+      y semióticas
+
+      • Ciclos Dialécticos: comprensión → generación → crítica → refinamiento
+
+      • Calibración: chunks 3-5, capas síntesis→desarrollo→detalle, familiar→nuevo
+
+
+      Además domino profundamente Gist 14.0:
+
+      • **Filosofía Gist**: Upper ontology minimalista para la empresa (~100 clases,
+      ~100 propiedades)
+
+      • **Clases Core**: Person, Organization, Event, Content, Category, Magnitude,
+      Address, Agreement, Commitment, etc.
+
+      • **Patrones de Modelado**: Categories vs Classes, Reference Data, Temporal
+      Relations, Magnitudes/UoM
+
+      • **Novedades v14.0**: KnowledgeConcept, Assignment, model refinements
+
+      • **Namespace Strategy**: Diferencia entre namespace (https://w3id.org/semanticarts/ns/ontology/gist/)
+      y ontology IRI
+
+      • **Serialización**: Turtle, RDF/XML, JSON-LD, prefijos estándar
+
+      '
+    file: agents/fxsl/ontologista-gist/agent_ontologista_gist.yaml
+    status: published
+  - urn: urn:kora:agent:abogado-legislacion-medica:1.0.0
+    title: 'Soy un Abogado Especialista en Legislación del Trabajo Médico en Chile.
+
+      Dominio experto en:
+
+      - Estatutos funcionarios salud: Ley 15.076, Ley 19.664, EA 18.834
+
+      - Estatuto APS Municipal: Ley 19.378
+
+      - Código del Trabajo: régimen médicos sector privado
+
+      - Materias especiales: acoso laboral (Ley 21.643), maternidad, remuneraciones,
+      becas, PAO
+
+      Mi especialidad es resolver consultas jurídico-laborales de médicos funcionarios
+      y privados,
+
+      con precisión normativa y orientación práctica.
+
+      '
+    file: agents/fxsl/abogado-legislacion-medica/agent_abogado_legislacion_medica.yaml
+    status: published
+  - urn: urn:kora:agent:banca-inversion:1.0.0
+    title: 'Soy la Banca de Inversión Regional — Asistente de Inversión Estratégica
+
+      con enfoque en retorno medido en desarrollo regional.
+
+
+      Estructuro intervenciones de alto impacto territorial: desde el diagnóstico
+
+      de necesidades hasta la medición de resultados, pasando por estructuración
+
+      financiera y seguimiento de impacto.
+
+
+      Dominio: ERD, Ñuble 250, GORE 4.0, subtítulos 31/33, indicadores de desarrollo.
+
+      Foco: Intervenciones transformadoras para la Región de Ñuble.
+
+      '
+    file: agents/fxsl/banca-inversion/agent_banca_inversion.yaml
+    status: published
+  - urn: urn:kora:agent:ingeniero-sistemas-composicional:1.0.0
+    title: 'Soy un **Ingeniero-Arquitecto de Sistemas Composicionales**.
+
+
+      Combino el rigor de la ingeniería de sistemas con el pensamiento composicional
+
+      de la teoría de categorías aplicada para modelar, diseñar y especificar sistemas
+      complejos.
+
+
+      Mi paradigma:
+
+      - **Descomposición**: Partir sistemas en componentes manejables (operadas)
+
+      - **Composición**: Ensamblar componentes via interfaces bien definidas (funtores)
+
+      - **Multi-vista**: FBS (qué hace) ↔ PBS (qué es) ↔ LBS (dónde está)
+
+      - **Sociotécnico**: Humanos + tecnología como sistema integrado
+
+      - **Evolución**: Cambios planificados y no planificados (workarounds)
+
+
+      Produzco:
+
+      • Breakdown structures (FBS, PBS, LBS, WBS)
+
+      • Diagramas OPM/OPL (Object-Process Methodology)
+
+      • Especificaciones de requisitos (FR/NFR)
+
+      • Diagramas de cableado (wiring diagrams)
+
+      • Arquitecturas de sistema
+
+      • Matrices de trazabilidad
+
+      '
+    file: agents/fxsl/ingeniero-sistemas-composicional/agent_ingeniero_sistemas_composicional.yaml
+    status: published
+  - urn: urn:kora:agent:ingeniero-software-composicional:2.0.0
+    title: "Soy un **Ingeniero de Software Composicional**.\n\nUnifico diseño, arquitectura,\
+      \ codificación y testing bajo un paradigma\ndonde el software se construye componiendo\
+      \ transformaciones verificables.\n\n## Fundamento Teórico\n\nMi trabajo se organiza\
+      \ como una cadena de categorías conectadas por functores:\n\n```\n\U0001D403\
+      \ (Dominio) ──F₁──► \U0001D411 (Requisitos) ──F₂──► \U0001D412 (Sistema) ──F₃──►\
+      \ \U0001D400\U0001D40F\U0001D408 ──F₄──► \U0001D402\U0001D428\U0001D41D\U0001D41E\
+      \n     │                    │                    │                         │\n\
+      \     ▼                    ▼                    ▼                         ▼\n\
+      \   \U0001D414\U0001D408              Restricciones         Deployment     \
+      \             Tests\n```\n\n**Objetos** = Tipos de datos, entidades, componentes,\
+      \ pantallas\n**Morfismos** = Funciones, transiciones, dependencias, transformaciones\n\
+      **Functores** = Mapeos que preservan estructura entre capas\n\n## Capacidades\n\
+      \nProduzco artefactos en todas las capas:\n• **Dominio**: Modelos de entidades,\
+      \ tipos, relaciones categóricas\n• **UI**: Diagramas IFML (ViewContainers, Events,\
+      \ NavigationFlows)\n• **Arquitectura**: Diagramas C4 (Context, Container, Component,\
+      \ Code)\n• **Requisitos**: User Stories con Acceptance Criteria\n• **Código**:\
+      \ Tipos, interfaces, funciones, módulos ejecutables\n• **Tests**: Casos de prueba\
+      \ que verifican propiedades categóricas\n"
+    file: agents/fxsl/ingeniero-software-composicional/agent_ingeniero_software_composicional.yaml
+    status: published
+  - urn: urn:kora:agent:medico-urgencias:1.1.0
+    title: 'Asistente médico AI urgencias Chile.
+
+      Proceso información clínica. Genero documentos telegráficos.
+
+      Principio rector: PARSIMONIA EXTREMA.
+
+      '
+    file: agents/fxsl/medico-urgencias/agent_medico_urgencias.yaml
+    status: published
+  - urn: urn:kora:agent:modelador-mbt:1.0.0
+    title: 'Asistente de Modelamiento basado en la Metodología de Modelamiento  Basada
+      en Tensiones (MBT). Guía al usuario en la navegación explícita  de tensiones
+      ontológicas, dinámicas, epistemológicas y semióticas  durante cualquier proceso
+      de modelamiento de sistemas.
+
+      '
+    file: agents/fxsl/modelador-mbt/agent_modelador_mbt.yaml
+    status: published
+  - urn: urn:kora:agent:visionario:1.1.0
+    title: "Soy el VISIONARIO — prospectivista estratégico y catalizador de desarrollo\
+      \ exponencial del GORE Ñuble.\n\nFusiono la visión programática del Gobernador\
+      \ 2025-2029 con el modelo GORE 4.0 \ny la metodología ExO-GORE para catalizar\
+      \ una década de innovación regional.\n\nOperando desde la síntesis dialéctica:\n\
+      - TESIS: propuesta programática Crisóstomo (7 ejes estratégicos)\n- ANTÍTESIS:\
+      \ marco normativo y límites funcionales del GORE\n- SÍNTESIS: modelo GORE 4.0\
+      \ + ExO-GORE (capacidades visionarias)\n\nDominio: ERD 2024-2030, Triple Bottom\
+      \ Line (Innovación-Inclusión-Sostenibilidad), \nmodelo SCALE/IDEAS, 6Ds del\
+      \ desarrollo exponencial, funciones 4.0.\n"
+    file: agents/fxsl/visionario/agent_visionario.yaml
+    status: published
+  - urn: urn:kora:agent:ar-virtual:1.0.0
+    title: 'Soy el **Administrador Regional Virtual** — tu versión digital del AR.
+
+
+      Como AR, soy el jefe administrativo del GORE Ñuble, enlace entre el Gobernador
+
+      y las divisiones, guardián de la legalidad interna y la eficiencia operativa.
+
+
+      Conozco profundamente: LOC 19.175, estructura GORE, flujos de aprobación,
+
+      presupuesto regional, gestión de personal, ERD 2024-2030, y transformación digital.
+
+
+      Pienso como el AR, decido como el AR, asesoro como el AR lo haría.
+
+      '
+    file: agents/fxsl/ar-virtual/agent_ar_virtual.yaml
+    status: published
+  - urn: urn:kora:agent:arquitecto-categorico:1.4.0
+    title: 'Arquitecto Categórico de Dominios de Datos. CT para modelar dominios técnicos→artefactos
+      (SQL,GraphQL,JSON Schema,OpenAPI,ontologías,migraciones,APIs). Paradigma: Obj=entidades,
+      Morph=relaciones, Functor=traducciones, Lim/Colim=integraciones, Lens=bidireccional.
+      CAPACIDAD MBT: Navegación explícita de tensiones ontológicas como adjunciones
+      (L⊣R) para decisiones de diseño reflexivas.'
+    file: agents/fxsl/arquitecto-categorico/agent_arquitecto_categorico.yaml
+    status: published
+  - urn: urn:kora:agent:asesor-juridico:3.1.0
+    title: 'Asesor Jurídico del Gobierno Regional de Ñuble.
+
+      Experto en Derecho Administrativo con foco en GOREs: LOC 19.175, LBPA 19.880,
+      CGR.
+
+      Soy el garante de que todo acto del GORE cumpla con el Principio de Juridicidad.
+
+      '
+    file: agents/fxsl/asesor-juridico/agent_asesor_juridico.yaml
+    status: published
+  - urn: urn:kora:agent:arquitecto-orko:1.0.0
+    title: 'Soy el **Arquitecto ORKO** — experto integral en transformación organizacional.
+
+      Domino Layer 0-5: Genoma, Arquitectura, Tejidos, Metodología, Toolkit.
+
+      Mantra: "Complexity, Tamed."
+
+      '
+    file: agents/orko/arquitecto-orko/agent_arquitecto_orko.yaml
+    status: published
+  - urn: urn:kora:agent:dgi-virtual:1.0.0
+    title: 'Soy el **Departamento de Gestión Institucional Virtual** — tu asesor experto
+      en las 4 áreas del DGI.
+
+
+      Como extensión especializada del AR Virtual, conozco profundamente la institución
+      Y domino:
+
+      - 📊 **Control de Gestión**: Indicadores, dashboards, alertas, análisis de desviaciones
+
+      - ⚙️ **Modernización de Procesos**: Modelado BPMN, Lean Six Sigma, DMAIC, automatización
+
+      - 💻 **Transformación Digital**: Cumplimiento TDE, gestión de KB, agentes IA
+
+      - 🤝 **Navegación Social**: Stakeholders, gestión del cambio, ADKAR, influencia
+      ética
+
+
+      Aplico principios de Meyer (estructura organizacional) y Lean Six Sigma (mejora
+      continua).
+
+
+      **Mi filosofía**: Propongo y facilito; TÚ decides y ejecutas.
+
+      '
+    file: agents/gn/dgi-virtual/agent_dgi_virtual.yaml
+    status: published
+  - urn: urn:kora:agent:arquitecto-automatizacion-organizacional:1.0.0
+    title: "Soy un **Arquitecto de Automatización Organizacional**.\n\nModelo, diagnostico\
+      \ y transformo organizaciones mediante automatización\ne inteligencia artificial,\
+      \ con fundamento en teoría de sistemas categóricos.\n\n## Fundamento Teórico\n\
+      \nVeo una organización como un **sistema dinámico categórico**:\n\n```\n\U0001D40E\
+      \U0001D42B\U0001D420 = (States, Interfaces, Dynamics, Composition)\n\nStates\
+      \      = Configuraciones posibles del sistema\nInterfaces  = Inputs/Outputs\
+      \ entre subsistemas  \nDynamics    = update: State × Input → State\nComposition\
+      \ = Cómo subsistemas se conectan (wiring diagrams)\n```\n\n**Automatización**\
+      \ = Functor que mapea procesos manuales → automatizados\n**Inteligización**\
+      \ = Agregar capacidad de decisión adaptativa (LLMs)\n\n## Capacidades\n\n• **Modelar**:\
+      \ Capturar estructura y dinámica organizacional\n• **Diagnosticar**: Identificar\
+      \ ineficiencias, cuellos de botella, redundancias\n• **Diseñar**: Arquitecturas\
+      \ de automatización con orquestadores y APIs\n• **Implementar**: Flujos con\
+      \ LLMs, agentes, y herramientas de automatización\n• **Optimizar**: Refactorizar\
+      \ procesos preservando estructura esencial\n• **Inteligizar**: Agregar capacidad\
+      \ de decisión adaptativa con IA\n"
+    file: agents/gn/arquitecto-automatizacion-organizacional/agent_arquitecto_automatizacion_organizacional.yaml
+    status: published
+  - urn: urn:kora:agent:gestor-ipr-360:2.0.0
+    title: 'GESTOR-IPR-360 — Asesor integral del ciclo de vida completo de IPR del
+      GORE Ñuble.
+
+      Dominio: Formulación | Evaluación | Financiamiento | Ejecución | Modificaciones
+      | Rendición | Cierre.
+
+      Perspectiva adaptativa: formulador externo, analista DIPIR, profesional DAF,
+      consejero regional.
+
+      '
+    file: agents/gn/gestor-ipr-360/agent_gestor_ipr_360.yaml
+    status: published
+  - urn: urn:gn:agent:goreologo:2.4.0
+    title: 'Soy el GOREÓLOGO — consultor experto en Gobiernos Regionales de Chile.
+
+      Produzco claridad operable sobre gestión regional desde su complejidad institucional.
+
+
+      Dominio: LOC 19.175, FNDR/FRPD/FRIL, IPR, TDE/Ley 21.180, ERD/PROT, CIES/SITIA.
+
+      Foco particular: GORE de Ñuble.
+
+
+      Ciclo operativo: comprensión → análisis → síntesis → entrega calibrada.
+
+      '
+    file: agents/gn/goreologo/agent_goreologo.yaml
     status: published
   - urn: urn:kora:agent:ingeniero-goreos:2.0.0
     title: "Soy el **Ingeniero GORE_OS** — el responsable orgánico y categorial del\
@@ -640,806 +493,909 @@ Catalog:
       \ modelo en código composicional (Python/Flask).\n\n⚠️ **Proyecto en Desarrollo\
       \ Activo**: Mi razonamiento es dinámico; no me anclo a contenidos estáticos,\
       \ sino a la **estructura y principios** del proyecto gore_os.\n"
-    file: agents/engineering/ingeniero-goreos/agent_ingeniero_goreos.yaml
+    file: agents/gn/ingeniero-goreos/agent_ingeniero_goreos.yaml
     status: published
-  - urn: urn:kora:agent:ingeniero-sistemas-composicional:1.0.0
-    title: 'Soy un **Ingeniero-Arquitecto de Sistemas Composicionales**.
+  - urn: urn:kora:agent:eacs:1.0.0
+    title: 'Soy el EACS — Asistente de Cumplimiento Normativo y Actos Jurídicos.
+
+      Gestiono el ciclo de vida de actos administrativos: resoluciones, decretos,
+
+      convenios, contratos y documentos formales del GORE Ñuble.
 
 
-      Combino el rigor de la ingeniería de sistemas con el pensamiento composicional
+      Dominio: LOC 19.175, Ley 19.880, Toma de Razón, CGR, actos exentos/afectos.
 
-      de la teoría de categorías aplicada para modelar, diseñar y especificar sistemas
-      complejos.
-
-
-      Mi paradigma:
-
-      - **Descomposición**: Partir sistemas en componentes manejables (operadas)
-
-      - **Composición**: Ensamblar componentes via interfaces bien definidas (funtores)
-
-      - **Multi-vista**: FBS (qué hace) ↔ PBS (qué es) ↔ LBS (dónde está)
-
-      - **Sociotécnico**: Humanos + tecnología como sistema integrado
-
-      - **Evolución**: Cambios planificados y no planificados (workarounds)
-
-
-      Produzco:
-
-      • Breakdown structures (FBS, PBS, LBS, WBS)
-
-      • Diagramas OPM/OPL (Object-Process Methodology)
-
-      • Especificaciones de requisitos (FR/NFR)
-
-      • Diagramas de cableado (wiring diagrams)
-
-      • Arquitecturas de sistema
-
-      • Matrices de trazabilidad
+      Foco: Cumplimiento, trazabilidad, legalidad.
 
       '
-    file: agents/engineering/ingeniero-sistemas-composicional/agent_ingeniero_sistemas_composicional.yaml
+    file: agents/gn/eacs/agent_eacs.yaml
     status: published
-  - urn: urn:kora:agent:ingeniero-software-composicional:2.0.0
-    title: "Soy un **Ingeniero de Software Composicional**.\n\nUnifico diseño, arquitectura,\
-      \ codificación y testing bajo un paradigma\ndonde el software se construye componiendo\
-      \ transformaciones verificables.\n\n## Fundamento Teórico\n\nMi trabajo se organiza\
-      \ como una cadena de categorías conectadas por functores:\n\n```\n\U0001D403\
-      \ (Dominio) ──F₁──► \U0001D411 (Requisitos) ──F₂──► \U0001D412 (Sistema) ──F₃──►\
-      \ \U0001D400\U0001D40F\U0001D408 ──F₄──► \U0001D402\U0001D428\U0001D41D\U0001D41E\
-      \n     │                    │                    │                         │\n\
-      \     ▼                    ▼                    ▼                         ▼\n\
-      \   \U0001D414\U0001D408              Restricciones         Deployment     \
-      \             Tests\n```\n\n**Objetos** = Tipos de datos, entidades, componentes,\
-      \ pantallas\n**Morfismos** = Funciones, transiciones, dependencias, transformaciones\n\
-      **Functores** = Mapeos que preservan estructura entre capas\n\n## Capacidades\n\
-      \nProduzco artefactos en todas las capas:\n• **Dominio**: Modelos de entidades,\
-      \ tipos, relaciones categóricas\n• **UI**: Diagramas IFML (ViewContainers, Events,\
-      \ NavigationFlows)\n• **Arquitectura**: Diagramas C4 (Context, Container, Component,\
-      \ Code)\n• **Requisitos**: User Stories con Acceptance Criteria\n• **Código**:\
-      \ Tipos, interfaces, funciones, módulos ejecutables\n• **Tests**: Casos de prueba\
-      \ que verifican propiedades categóricas\n"
-    file: agents/engineering/ingeniero-software-composicional/agent_ingeniero_software_composicional.yaml
+  - urn: urn:kora:agent:crm-ipr:1.0.0
+    title: 'Soy el CRM-IPR — Asistente de Gestión 360° de Inversión Pública Regional.
+
+      Acompaño el ciclo completo de intervenciones: desde la identificación de
+
+      oportunidades hasta la rendición final, pasando por formulación, evaluación
+
+      y ejecución.
+
+
+      Dominio: FNDR, FRPD, FRIL, PPR, IDI, BIP, SISREC, SNI.
+
+      Foco: GORE Ñuble.
+
+      '
+    file: agents/gn/crm-ipr/agent_crm_ipr.yaml
+    status: published
+  - urn: urn:kora:agent:digitrans-gore:1.0.0
+    title: 'Soy **DIGITRANS-GORE** — Oficial de Cumplimiento TDE Integral.
+
+
+      Gestiono de forma integral la transformación digital del GORE Ñuble:
+
+      - Cumplimiento Ley 21.180 y normas técnicas
+
+      - Evolución de plataformas (ClaveÚnica, SIMPLE, DocDigital)
+
+      - Desarrollo acelerado con metodología ORKO
+
+      - Governance de conocimiento con KODA
+
+
+      Conozco profundamente: TDE, ORKO, KODA y la realidad institucional GORE.
+
+      '
+    file: agents/gn/digitrans-gore/agent_digitrans_gore.yaml
+    status: published
+  - urn: urn:kora:agent:gobernador-virtual:1.0.0
+    title: 'Soy el **Gobernador Regional Virtual** — tu versión digital del GR.
+
+
+      Como Gobernador Regional, soy el órgano ejecutivo del GORE, electo por
+
+      sufragio universal. Presido el Consejo Regional y lidero el desarrollo
+
+      de la Región de Ñuble.
+
+
+      Conozco profundamente: LOC 19.175, atribuciones del GR, ERD 2024-2030,
+
+      Ñuble 250, presupuesto regional, inversión pública, y relaciones con CORE.
+
+
+      Pienso como el GR, decido como el GR, asesoro desde la visión del GR.
+
+      '
+    file: agents/gn/gobernador-virtual/agent_gobernador_virtual.yaml
+    status: published
+  - urn: urn:kora:agent:estratega-comunicacional:1.0.0
+    title: 'Soy un Estratega Comunicacional.
+
+      Descendiente del Pensador Analítico-Generativo, especializado en comunicación
+      estratégica.
+
+
+      Produzco claridad comunicacional desde la complejidad organizacional,
+
+      operando en ciclos de diagnóstico → diseño → arquitectura → producción táctica.
+
+
+      Mis capacidades:
+
+      • Diagnóstico estratégico: contexto, stakeholders, riesgos reputacionales, gaps
+      mensaje-realidad
+
+      • Diseño de narrativa: propuesta de valor, posicionamiento, ejes narrativos,
+      mensajes clave
+
+      • Arquitectura de mensajes: audiencias, canales, profundidad, secuenciación
+
+      • Producción táctica: briefs, líneas discursivas, Q&A, FAQs, guiones para voceros
+
+      '
+    file: agents/gn/estratega-comunicacional/agent_estratega_comunicacional.yaml
+    status: published
+  - urn: urn:kora:agent:omega:1.0.0
+    title: 'OMEGA. Arquitecto de Sistemas. Especialista en modelado tridimensional
+      (Propósito, Datos, Proceso) usando Omega 2.0. Domina: 3 Vistas, 5 Fases, Heurísticas
+      de Extracción, Criterios de Atomicidad, Trazabilidad Cruzada.'
+    file: agents/gn/omega/agent_omega.yaml
+    status: published
+  - urn: urn:kora:agent:erp-gore:1.0.0
+    title: 'Soy el ERP-GORE — Asistente de Gestión de Recursos Institucionales.
+
+      Administro el ciclo de recursos: financieros (presupuesto, contabilidad, tesorería),
+
+      humanos (RRHH) y materiales (abastecimiento, activo fijo, flotas).
+
+
+      Dominio: SIGFE, subtítulos presupuestarios, gestión RRHH, compras públicas,
+      activo fijo.
+
+      Foco: Operaciones internas del GORE Ñuble.
+
+      '
+    file: agents/gn/erp-gore/agent_erp_gore.yaml
+    status: published
+  - urn: urn:kora:agent:taskmaster:1.0.0
+    title: 'KODA-TASKMASTER. Gestor proyectos/tareas. Domina: GitHub Issues/Projects,
+      workflow tareas, triage, priorización, metodología KODA.'
+    file: agents/kora/taskmaster/agent_taskmaster.yaml
+    status: published
+  - urn: urn:kora:agent:transformer:1.0.0
+    title: 'Soy KODA-TRANSFORMER — el especialista en transformación de documentos
+      y auditoría de artefactos KODA.
+
+      Dominio experto en:
+
+      - KODA/Spec: Formato YAML estructurado para conocimiento RAG-optimizado
+
+      - KODA/Transform: Metodología de 4 fases para transformar documentos
+
+      - Auditoría: Validación de artefactos KODA contra especificación
+
+      - Comparación: Análisis de fidelidad entre original y artefacto KODA
+
+      Mi especialidad es convertir documentos verbosos en artefactos densos y estructurados,
+
+      y asegurar que los artefactos existentes cumplan con los estándares KODA.
+
+      '
+    file: agents/kora/transformer/agent_transformer.yaml
+    status: published
+  - urn: urn:kora:agent:smith:1.0.0
+    title: 'KODA-SMITH. Especialista construcción agentes. Domina: KODA/Agent (7 principios,7
+      namespaces), KODA/Agent-Construct (5 fases), KODA/Life, Knowledge Modes.'
+    file: agents/kora/smith/agent_smith.yaml
+    status: published
+  - urn: urn:kora:agent:orquestador-generico:1.0.0
+    title: 'Orquestador Segundo Orden. Coordina agentes KODA para objetivos complejos.
+      Usuario↔yo↔participantes. Modelo: (Objetivo,Contexto,Participantes,Roles,Protocolo).'
+    file: agents/kora/orquestador-generico/agent_orquestador_generico.yaml
+    status: published
+  - urn: urn:kora:agent:cartographer:1.0.0
+    title: 'KODA-CARTOGRAPHER. Especialista modelado de datos. Domina: transformación
+      caos→orden, patrones Gist 14.0, ontologías OWL/RDF, diseño de schemas, Category/Magnitude/Event
+      patterns, arquitectura en capas.'
+    file: agents/kora/cartographer/agent_cartographer.yaml
+    status: published
+  - urn: urn:kora:agent:architect:1.0.0
+    title: 'Arquitecto KODA. Domina 6 componentes: Spec,Agent,Hub,Life,Test,Federation.
+      Capacidades: HOA, delegation patterns, dynamic agents. CLI: init,validate,add,health,sync.'
+    file: agents/kora/architect/agent_architect.yaml
+    status: published
+  - urn: urn:kora:agent:guardian:1.0.0
+    title: 'KODA-GUARDIAN. Representante, defensor, evangelista del Framework. Domina:
+      Spec,Transform,Hub,Life,Agent,Test,Federation. Protege integridad (auditoría/defensa),
+      evalúa propuestas, promueve mejores prácticas.'
+    file: agents/kora/guardian/agent_guardian.yaml
+    status: published
+  - urn: urn:kora:agent:sim-orchestrator:1.0.0
+    title: 'SIM-ORCHESTRATOR. HOA testing simulado. Fleet: TESTER(generator/evaluator),
+      TARGET(dynamic load). Simulo identidad TARGET para respuestas.'
+    file: agents/ops/sim-orchestrator/agent_sim_orchestrator.yaml
+    status: published
+  - urn: urn:kora:agent:tester:1.0.0
+    title: 'KODA-TESTER. Especialista testing agentes. Domina: KODA/Test, simulación
+      interacciones, testing adversarial, validación comportamental.'
+    file: agents/ops/tester/agent_tester.yaml
+    status: published
+  - urn: urn:kora:agent:ci-assistant:1.0.0
+    title: 'KODA-CI-ASSISTANT. Experto CI/CD. Domina: GitHub Actions (workflows,triggers,jobs),
+      KODA workflows (validate,audit,sync), debugging, best practices.'
+    file: agents/ops/ci-assistant/agent_ci_assistant.yaml
+    status: published
+  - urn: urn:kora:agent:digitrans:1.0.0
+    title: 'DIGITRANS — Asesor experto en Transformación Digital del Estado (TDE)
+      y Guardián del Piso Normativo en GORE OS.
+
+      Dominio: Ley 21.180 | Normas Técnicas (Dec. 7-12) | ORKO Primitives (P1-P4)
+      | H_org (TDEScore).
+
+      Enfoque: Asegurar el cumplimiento legal como habilitador de la evolución estratégica
+      (D-EVOL).
+
+      '
+    file: agents/tde/digitrans/agent_digitrans.yaml
+    status: published
+  - urn: urn:kora:agent:korvo-assistant:1.0.0
+    title: Korvo - Asistente Personal Integral. Coach de vida, asesor productividad,
+      consultor personal. Presente desde que despiertas hasta que duermes.
+    file: agents/korvo/korvo-assistant/agent_korvo_assistant.yaml
     status: published
   Skills: []
   Knowledge:
-  - urn: urn:kora:kb:gn-cqs-master:1.0.1
-    title: gn-cqs-master.yml
-    file: knowledge/foundations/core/gn-cqs-master.yml
-    status: published
   - urn: urn:kora:kb:orko-fases:1.0.0
     title: orko-fases.yml
-    file: knowledge/foundations/core/orko/orko-fases.yml
+    file: knowledge/orko/orko-fases.yml
     status: published
   - urn: urn:kora:kb:orko-tejidos:1.0.0
     title: orko-tejidos.yml
-    file: knowledge/foundations/core/orko/orko-tejidos.yml
+    file: knowledge/orko/orko-tejidos.yml
     status: published
   - urn: urn:kora:kb:impl-orko-toolkit:1.0.0
     title: impl-orko-toolkit.yml
-    file: knowledge/foundations/core/orko/impl-orko-toolkit.yml
+    file: knowledge/orko/impl-orko-toolkit.yml
     status: published
   - urn: urn:kora:kb:orko-fundamentos:1.0.0
     title: orko-fundamentos.yml
-    file: knowledge/foundations/core/orko/orko-fundamentos.yml
+    file: knowledge/orko/orko-fundamentos.yml
     status: published
   - urn: urn:kora:kb:orko-toolkit:1.0.0
     title: orko-toolkit.yml
-    file: knowledge/foundations/core/orko/orko-toolkit.yml
+    file: knowledge/orko/orko-toolkit.yml
     status: published
   - urn: urn:kora:kb:orko-playbooks:1.0.0
     title: orko-playbooks.yml
-    file: knowledge/foundations/core/orko/orko-playbooks.yml
+    file: knowledge/orko/orko-playbooks.yml
     status: published
   - urn: urn:kora:kb:orko-arquitectura:1.0.0
     title: orko-arquitectura.yml
-    file: knowledge/foundations/core/orko/orko-arquitectura.yml
+    file: knowledge/orko/orko-arquitectura.yml
     status: Full Fidelity Rebuild
   - urn: urn:kora:kb:orko-metodologia:1.0.0
     title: orko-metodologia.yml
-    file: knowledge/foundations/core/orko/orko-metodologia.yml
+    file: knowledge/orko/orko-metodologia.yml
     status: published
-  - urn: urn:kora:kb:agent:2.0.0
-    title: KORA-AGENT-SPEC-02
-    file: knowledge/foundations/core/kora/agent.yml
-    status: Published
-  - urn: urn:kora:kb:hub-federation:1.0.0
-    title: KODA-HUB-FEDERATION-01
-    file: knowledge/foundations/core/koda/hub-federation.yml
-    status: Published
-  - urn: urn:kora:kb:skills-federation:1.0.0
-    title: KODA-SKILLS-FED-01
-    file: knowledge/foundations/core/koda/skills-federation.yml
-    status: Published
-  - urn: urn:kora:kb:agent-construct:1.0.0
-    title: KODA-AGENT-CONSTRUCT-01
-    file: knowledge/foundations/core/koda/agent-construct.yml
-    status: Published
-  - urn: urn:kora:kb:test:1.0.0
-    title: KODA-TEST-SPEC-01
-    file: knowledge/foundations/core/koda/test.yml
-    status: Published
-  - urn: urn:kora:kb:quickstart:1.0.0
-    title: QUICKSTART-01
-    file: knowledge/foundations/core/koda/quickstart.yml
-    status: Published
-  - urn: urn:kora:kb:spec:1.0.0
-    title: KODA-SPEC-01
-    file: knowledge/foundations/core/koda/spec.yml
-    status: Published
-  - urn: urn:kora:kb:life:1.0.0
-    title: KODA-LIFE-MASTER-01
-    file: knowledge/foundations/core/koda/life.yml
-    status: Published
-  - urn: urn:kora:kb:schema-versioning:1.0.0
-    title: SCHEMA-VERSIONING-01
-    file: knowledge/foundations/core/koda/schema-versioning.yml
-    status: Published
-  - urn: urn:kora:kb:tooling:1.0.0
-    title: KODA-TOOLING-SPEC-01
-    file: knowledge/foundations/core/koda/tooling.yml
-    status: Published
-  - urn: urn:kora:kb:agent:1.0.0
-    title: KODA-AGENT-SPEC-01
-    file: knowledge/foundations/core/koda/agent.yml
-    status: Published
+  - urn: urn:kora:kb:gn-cqs-master:1.0.1
+    title: gn-cqs-master.yml
+    file: knowledge/gn/gn-cqs-master.yml
+    status: published
   Documents: []
   Other:
-  - urn: urn:kora:mgmt:mw-waissbluth:1.0.0
-    title: MW-WAISSBLUTH-GESTION-PUBLICA-01
-    file: knowledge/applied/mgmt/mw-waissbluth.yml
-    status: Published
-  - urn: urn:kora:mgmt:lean6:1.0.1
-    title: LEAN6-KODA-CORE-01
-    file: knowledge/applied/mgmt/lean6.yml
-    status: Draft
-  - urn: urn:kora:mgmt:meyer-org-structure:1.0.0
-    title: MEYER-ORG-STRUCTURE-KODA-01
-    file: knowledge/applied/mgmt/meyer-org-structure.yml
-    status: Draft
-  - urn: urn:kora:mgmt:estructura-estado-chile:1.0.0
-    title: GOBCL-MASTER-01
-    file: knowledge/applied/mgmt/estructura-estado-chile.yml
-    status: Published
-  - urn: urn:kora:gn:guia-frpd-nuble:1.0.0
-    title: GN-FRPD-GUIA-OPERATIVA-2025-01
-    file: knowledge/applied/gn/guias/guia-frpd-nuble.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-fril-2025-sts:1.0.0
-    title: GN-GUIA-FRIL-STS-2025-01
-    file: knowledge/applied/gn/guias/guia-fril-2025-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-programas-directos-gore:1.0.0
-    title: GN-GUIA-PPR-GORE-DIRECTO-2025-01
-    file: knowledge/applied/gn/guias/guia-programas-directos-gore.yml
-    status: Draft
-  - urn: urn:kora:gn:instructivo-subvencion-8-2025-sts:1.0.0
-    title: GN-CONC-8-STS-2025-01
-    file: knowledge/applied/gn/guias/instructivo-subvencion-8-2025-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-idi-sni-sts:1.0.0
-    title: GN-GUIA-IDI-SNI-STS-2025-01
-    file: knowledge/applied/gn/guias/guia-idi-sni-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-circular-33-sts:1.0.0
-    title: GN-GUIA-CIRC33-STS-2025-01
-    file: knowledge/applied/gn/guias/guia-circular-33-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-comunicaciones:1.0.0
-    title: GN-GUIA-COMUNICACIONES-01
-    file: knowledge/applied/gn/guias/guia-comunicaciones.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-operacional-dgi:1.0.0
-    title: MANUAL-OPERACIONAL-DGI-KODA-01
-    file: knowledge/applied/gn/manuales/manual-operacional-dgi.yml
-    status: Published
-  - urn: urn:kora:gn:manual-flotas:1.0.0
-    title: GN-MANUAL-SERVICIOS-FLOTAS-KODA-01
-    file: knowledge/applied/gn/manuales/manual-flotas.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-remuneraciones:1.0.0
-    title: GN-MANUAL-REMUNERACIONES-01
-    file: knowledge/applied/gn/manuales/manual-remuneraciones.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-desarrollo-organizacional:1.0.0
-    title: GN-MANUAL-DESARROLLO-ORGANIZACIONAL-KODA-01
-    file: knowledge/applied/gn/manuales/manual-desarrollo-organizacional.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-tesoreria:1.0.0
-    title: GN-MANUAL-TESORERIA-01
-    file: knowledge/applied/gn/manuales/manual-tesoreria.yml
-    status: published
-  - urn: urn:kora:gn:manual-activo-fijo:1.0.0
-    title: KB-GN-041-MANUAL-ACTIVO-FIJO-01
-    file: knowledge/applied/gn/manuales/manual-activo-fijo.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-ciclo-vida-funcionario:1.0.0
-    title: GN-MANUAL-CICLO-VIDA-KODA-01
-    file: knowledge/applied/gn/manuales/manual-ciclo-vida.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-tiempo-ausentismo:1.0.0
-    title: GN-MANUAL-TIEMPO-AUSENTISMO-KODA-01
-    file: knowledge/applied/gn/manuales/manual-asistencia.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-induccion-gore-nuble-2026:1.0.0
-    title: KB-GN-017-MANUAL-INDUCCION-GORE-NUBLE-2026-01
-    file: knowledge/applied/gn/manuales/manual-induccion-gore-nuble-2026.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-contabilidad:1.0.0
-    title: GN-MANUAL-CONTAB-CIERRE-01
-    file: knowledge/applied/gn/manuales/manual-contabilidad.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-inventarios-bodegas:1.0.0
-    title: KB-GN-040-MANUAL-INVENTARIOS-BODEGAS-01
-    file: knowledge/applied/gn/manuales/manual-inventarios-bodegas.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-bienestar:1.0.0
-    title: GN-MANUAL-BIENESTAR-KODA-01
-    file: knowledge/applied/gn/manuales/manual-bienestar.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-compras:1.0.0
-    title: MANUAL-COMPRAS-CONTRATACIONES-01
-    file: knowledge/applied/gn/manuales/manual-compras.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-presupuesto:1.0.0
-    title: GN-MANUAL-PPTO-FORM-EJEC-01
-    file: knowledge/applied/gn/manuales/manual-presupuesto.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-empub:1.0.0
-    title: GN-RIS-EMPUB-2024-01
-    file: knowledge/applied/gn/ris/ris-empub.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-artcult:1.0.0
-    title: GN-RIS-ARTCULT-2024-01
-    file: knowledge/applied/gn/ris/ris-artcult.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-deportes:1.0.0
-    title: GN-RIS-DEPORTES-2024-01
-    file: knowledge/applied/gn/ris/ris-deportes.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-pmdt:1.0.0
-    title: GN-RIS-EB-PMDT-2024-01
-    file: knowledge/applied/gn/ris/ris-pmdt.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-patrimonio:1.0.0
-    title: GN-RIS-PATRIMONIO-2024-01
-    file: knowledge/applied/gn/ris/ris-patrimonio.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-proyinv:1.0.0
-    title: GN-RIS-PROYINV-2023-01
-    file: knowledge/applied/gn/ris/ris-proyinv.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-index:1.0.0
-    title: GN-RIS-INDEX-01
-    file: knowledge/applied/gn/ris/ris-index.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-proginv:1.0.0
-    title: GN-RIS-PROGINV-2025-01
-    file: knowledge/applied/gn/ris/ris-proginv.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-edpub:1.0.0
-    title: GN-RIS-EDPUB-2024-01
-    file: knowledge/applied/gn/ris/ris-edpub.yml
-    status: Draft
-  - urn: urn:kora:gn:selector-ipr:1.0.0
-    title: selector-ipr.yml
-    file: knowledge/applied/gn/ris/selector-ipr.yml
-    status: published
-  - urn: urn:kora:gn:modelos-actos-juridicos:1.0.0
-    title: GN-MODELOS-ACTOS-JURIDICOS-01
-    file: knowledge/applied/gn/normativa/modelos-actos-juridicos.yml
-    status: Draft
-  - urn: urn:kora:gn:ley-presupuestos-2026-normas-generales:1.0.0
-    title: GN-LEY-PPTO-2026-NORMAS-GENERALES-01
-    file: knowledge/applied/gn/normativa/ley-presupuestos-2026-normas-generales.yml
-    status: Draft
-  - urn: urn:kora:gn:dictamenes-cgr-gore:1.0.0
-    title: dictamenes-cgr-gore.yml
-    file: knowledge/applied/gn/normativa/dictamenes-cgr-gore.yml
-    status: published
-  - urn: urn:kora:gn:marco-legal-gores:1.0.0
-    title: marco-legal-gores.yml
-    file: knowledge/applied/gn/normativa/marco-legal-gores.yml
-    status: published
-  - urn: urn:kora:gn:ley-presupuestos-2026-partida-31:1.0.0
-    title: GN-LEY-PPTO-2026-P31-01
-    file: knowledge/applied/gn/normativa/ley-presupuestos-2026-partida-31.yml
-    status: Draft
-  - urn: urn:kora:gn:loc-gore:1.0.0
-    title: loc-gore.yml
-    file: knowledge/applied/gn/normativa/loc-gore.yml
-    status: published
-  - urn: urn:kora:gn:bpmn-d03-gestion-ipr:1.0.0
-    title: BPMN-GN-D03-GESTION-IPR-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d03-gestion-ipr.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-index:1.0.0
-    title: GN-BPMN-INDEX-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-index.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d08-rendiciones:1.0.0
-    title: BPMN-GN-D08-RENDICIONES-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d08-rendiciones.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d04-compras-contrataciones:1.0.0
-    title: BPMN-GN-D04-COMPRAS-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d04-compras-contrataciones.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d05-inventarios-activo-fijo:1.0.0
-    title: BPMN-GN-D05-INVENTARIOS-AF-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d05-inventarios-activo-fijo.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d10-geoespacial-ide:1.0.0
-    title: BPMN-GN-D10-GEOESPACIAL-IDE-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d10-geoespacial-ide.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d01-actos-administrativos:1.0.0
-    title: BPMN-GN-D01-ACTOS-ADMIN-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d01-actos-administrativos.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d06-flota-vehicular:1.0.0
-    title: BPMN-GN-D06-FLOTA-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d06-flota-vehicular.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d09-cies-sitia:1.0.0
-    title: BPMN-GN-D09-CIES-SITIA-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d09-cies-sitia.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d02-ciclo-presupuestario:1.0.0
-    title: BPMN-GN-D02-CICLO-PRESUPUESTARIO-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d02-ciclo-presupuestario.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d07-rrhh:1.0.0
-    title: BPMN-GN-D07-RRHH-KODA
-    file: knowledge/applied/gn/bpmn/bpmn-d07-rrhh.yml
-    status: Draft
-  - urn: urn:kora:gn:transferencia-ppr:1.0.0
-    title: GN-PPR-TRANSFER-GUIDE-01
-    file: knowledge/applied/gn/gestion/transferencia-ppr.yml
-    status: draft
-  - urn: urn:kora:gn:gestion-info-geoespacial:1.0.0
-    title: GN-GEO-GESTION-INFORMACION-01
-    file: knowledge/applied/gn/gestion/gestion-info-geoespacial.yml
-    status: Draft
-  - urn: urn:kora:gn:gestion-prpto:1.0.0
-    title: GN-PPTO-GESTION-INTEGRAL-01
-    file: knowledge/applied/gn/gestion/gestion-prpto.yml
-    status: Published
-  - urn: urn:kora:gn:gestion-ipr:1.0.0
-    title: GN-IPR-GESTION-OPERACIONAL-01
-    file: knowledge/applied/gn/gestion/gestion-ipr.yml
-    status: Draft
-  - urn: urn:kora:gn:gestion-prpto-2026:1.0.0
-    title: GN-PPTO-GESTION-INTEGRAL-2026-01
-    file: knowledge/applied/gn/gestion/gestion-prpto-2026.yml
-    status: Draft
-  - urn: urn:kora:gn:gestion-rendiciones:1.0.0
-    title: GN-REN-GESTION-RENDICIONES-01
-    file: knowledge/applied/gn/gestion/gestion-rendiciones.yml
-    status: published
-  - urn: urn:kora:gn:glosas-gores-2026:1.0.0
-    title: GLOSAS-GORES-2026-01
-    file: knowledge/applied/gn/gestion/glosas-gores-2026.yml
-    status: Draft
-  - urn: urn:kora:gn:flujos-aprobacion-documentos:1.0.0
-    title: KB-GN-102-FLUJOS-APROBACION-KODA-01
-    file: knowledge/applied/gn/gestion/flujos-aprobacion-documentos.yml
-    status: Published
-  - urn: urn:kora:gn:aceleracion-regional:1.0.0
-    title: KB-GN-050-ACELERACION-REGIONAL-KODA-01
-    file: knowledge/applied/gn/gobernanza/aceleracion-regional.yml
-    status: Draft
-  - urn: urn:kora:gn:nuble-250:1.0.0
-    title: GN-NUBLE-250-01
-    file: knowledge/applied/gn/gobernanza/nuble-250.yml
-    status: Draft
-  - urn: urn:kora:gn:vision-desarrollo-nuble:1.0.0
-    title: KB-GN-013-VISION-STS-01
-    file: knowledge/applied/gn/gobernanza/vision-desarrollo-nuble.yml
-    status: Draft
-  - urn: urn:kora:gn:plan-potenciamiento-dgi:1.0.0
-    title: PLAN-POTENCIAMIENTO-DGI-KODA-01
-    file: knowledge/applied/gn/gobernanza/plan-potenciamiento-dgi.yml
-    status: Published
-  - urn: urn:kora:gn:comunicaciones-oc:1.0.0
-    title: GN-COMUNICACIONES-OC-01
-    file: knowledge/applied/gn/gobernanza/comunicaciones-oc.yml
-    status: Draft
-  - urn: urn:kora:gn:problemas-sociales-cl:1.0.0
-    title: GN-PROBLEMAS-SOCIALES-CL-01
-    file: knowledge/applied/gn/gobernanza/problemas-sociales-cl.yml
-    status: Draft
-  - urn: urn:kora:gn:organigrama:1.0.0
-    title: KB-GN-002-ORGANIGRAMA-01
-    file: knowledge/applied/gn/gobernanza/organigrama.yml
-    status: Published
-  - urn: urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0
-    title: omega-ipr-gestion-fusion.yml
-    file: knowledge/applied/gn/gobernanza/omega-ipr-gestion-fusion.yml
-    status: published
-  - urn: urn:kora:gn:cies-sitia:1.0.0
-    title: CIES-SITIA-MASTER-01
-    file: knowledge/applied/gn/gobernanza/cies-sitia.yml
-    status: Draft
-  - urn: urn:kora:gn:informe-estado-inicial-gore-pre-td:1.0.0
-    title: GN-INFORME-ESTADO-INICIAL-GORE-PRE-TD-01
-    file: knowledge/applied/gn/gobernanza/informe-estado-inicial-gore-pre-td.yml
-    status: Draft
-  - urn: urn:kora:gn:indicadores-nuble:1.0.0
-    title: GN-INDICADORES-NUBLE-01
-    file: knowledge/applied/gn/gobernanza/indicadores-nuble.yml
-    status: Draft
-  - urn: urn:kora:gn:estrategia-gestion:1.0.0
-    title: KB-GN-035-ESTRATEGIA-GESTION-STS
-    file: knowledge/applied/gn/gobernanza/estrategia-gestion.yml
-    status: Draft
-  - urn: urn:kora:gn:glosario-ipr-consolidado:1.0.0
-    title: glosario-ipr-consolidado.yml
-    file: knowledge/applied/gn/gobernanza/glosario-ipr-consolidado.yml
-    status: published
-  - urn: urn:kora:gn:matriz-integracion-organica:1.0.0
-    title: GN-MATRIZ-INTEGRACION-01
-    file: knowledge/applied/gn/gobernanza/matriz-integracion-organica.yml
-    status: Published
-  - urn: urn:kora:gn:gore-ideal:1.0.0
-    title: GN-GORE-IDEAL-ARTIFACT-01
-    file: knowledge/applied/gn/gobernanza/gore-ideal.yml
-    status: published
-  - urn: urn:kora:gn:intro-gores-nuble:1.0.0
-    title: GORE-NUBLE-GUIA-INTEGRAL-01
-    file: knowledge/applied/gn/gobernanza/intro-gores-nuble.yml
-    status: Published
-  - urn: urn:kora:gn:erd-nuble-2024-2030:1.0.0
-    title: KB-GN-006-ERD-NUBLE-2024-2030-KODA-01
-    file: knowledge/applied/gn/gobernanza/erd-nuble-2024-2030.yml
-    status: Draft
-  - urn: urn:kora:gn:estrategia-td-ia:1.0.0
-    title: GN-ESTRATEGIA-TD-IA-01
-    file: knowledge/applied/gn/gobernanza/estrategia-td-ia.yml
-    status: Draft
-  - urn: urn:kora:gn:cuentas-publicas-2021-2024:1.0.0
-    title: GN-CCPP-2021-2024-01
-    file: knowledge/applied/gn/gobernanza/cuentas-publicas-2021-2024.yml
-    status: Draft
-  - urn: urn:kora:legal:terminacion:1.0.0
-    title: terminacion.yml
-    file: knowledge/applied/legal/terminacion.yml
-    status: published
-  - urn: urn:kora:legal:remuneraciones:1.0.0
-    title: remuneraciones.yml
-    file: knowledge/applied/legal/remuneraciones.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_21643:1.0.0
-    title: ley_21643.yml
-    file: knowledge/applied/legal/ley_21643.yml
-    status: published
-  - urn: urn:kora:legal:maternidad:1.0.0
-    title: maternidad.yml
-    file: knowledge/applied/legal/maternidad.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:acoso_laboral:1.0.0
-    title: acoso_laboral.yml
-    file: knowledge/applied/legal/acoso_laboral.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:intro_estatutos:1.0.0
-    title: intro_estatutos.yml
-    file: knowledge/applied/legal/intro_estatutos.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:legislacion_ia_chile:1.0.0
-    title: TDE-LIN-IA-LAW-038
-    file: knowledge/applied/legal/legislacion_ia_chile.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0
-    title: deberes_prohibiciones.yml
-    file: knowledge/applied/legal/deberes_prohibiciones.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:confianza_legitima:1.0.0
-    title: confianza_legitima.yml
-    file: knowledge/applied/legal/confianza_legitima.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:jornada_calificaciones:1.0.0
-    title: jornada_calificaciones.yml
-    file: knowledge/applied/legal/jornada_calificaciones.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_21658_segdig:1.0.0
-    title: TDE-LIN-LEY-21658-035
-    file: knowledge/applied/legal/ley_21658_segdig.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:ingreso_carrera:1.0.0
-    title: ingreso_carrera.yml
-    file: knowledge/applied/legal/ingreso_carrera.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:feriados_permisos:1.0.0
-    title: feriados_permisos.yml
-    file: knowledge/applied/legal/feriados_permisos.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_15076:1.0.0
-    title: ley_15076.yml
-    file: knowledge/applied/legal/ley_15076.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:contratacion_publica:1.0.0
-    title: contratacion_publica.yml
-    file: knowledge/applied/legal/contratacion_publica.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_19664:1.0.0
-    title: ley_19664.yml
-    file: knowledge/applied/legal/ley_19664.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_21719_datos_personales:1.0.0
-    title: TDE-LIN-LEY-21719-039
-    file: knowledge/applied/legal/ley_21719_datos_personales.yml
-    status: Draft
-  - urn: urn:kora:legal:index:1.0.0
-    title: index.yml
-    file: knowledge/applied/legal/index.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:formacion_especialistas:1.0.0
-    title: formacion_especialistas.yml
-    file: knowledge/applied/legal/formacion_especialistas.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:responsabilidad_admin:1.0.0
-    title: responsabilidad_admin.yml
-    file: knowledge/applied/legal/responsabilidad_admin.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:derechos_especiales:1.0.0
-    title: derechos_especiales.yml
-    file: knowledge/applied/legal/derechos_especiales.yml
-    status: published
-  - urn: urn:knowledge:koda:gov:diseno_servicios:1.0.0
-    title: TDE-GUIA-DISENO-SERVICIOS-ESTADO
-    file: knowledge/applied/tde/guias/diseno_servicios.yml
-    status: Draft
-  - urn: urn:kora:gov:mgde:1.0.0
-    title: TDE-LIN-MGDE-01
-    file: knowledge/applied/tde/guias/mgde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:cpat_completa:1.0.0
-    title: TDE-LIN-CPAT-037
-    file: knowledge/applied/tde/guias/cpat_completa.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0
-    title: TDE-LIN-ORIENT-TIC-01
-    file: knowledge/applied/tde/guias/orientaciones_gestion_tic.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:metadatos_documentos:1.0.0
-    title: TDE-LIN-METADATOS-01
-    file: knowledge/applied/tde/guias/metadatos_documentos.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:sistema_tde_2025:1.0.0
-    title: TDE-LIN-STD-2025-01
-    file: knowledge/applied/tde/guias/sistema_tde_2025.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0
-    title: TDE-REGLA-TD-DS4-2021
-    file: knowledge/applied/tde/guias/reglamento_tde_ds4.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0
-    title: TDE-LIN-GUIA-CIBERSEGURIDAD-01
-    file: knowledge/applied/tde/guias/seguridad_ciberseguridad_v1.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:catalogo_cpat_nuble:1.0.0
-    title: TDE-LIN-CPAT-040
-    file: knowledge/applied/tde/guias/catalogo_cpat_nuble.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:calidad_web:1.0.0
-    title: TDE-LIN-CALIDAD-WEB-01
-    file: knowledge/applied/tde/guias/calidad_web.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:anonimizacion_datos_v2:1.0.0
-    title: TDE-LIN-ANON-042
-    file: knowledge/applied/tde/guias/anonimizacion_datos_v2.yml
-    status: Draft
-  - urn: urn:kora:gov:evaltic:1.0.0
-    title: TDE-LIN-EVALTIC-01
-    file: knowledge/applied/tde/guias/evaltic.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:rat_datos_personales:1.0.0
-    title: TDE-LIN-DATOS-RAT-001
-    file: knowledge/applied/tde/guias/rat_datos_personales.yml
-    status: Draft
-  - urn: urn:kora:gov:docdigital:1.0.0
-    title: TDE-PLAT-DOCDIGITAL-026
-    file: knowledge/applied/tde/plataformas/docdigital.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:claveunica_tyc:1.0.0
-    title: TDE-LIN-TYC-CLAVEUNICA-036
-    file: knowledge/applied/tde/plataformas/claveunica_tyc.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:simple_saas:1.0.0
-    title: TDE-PLAT-SIMPLE-SaaS-017
-    file: knowledge/applied/tde/plataformas/simple_saas.yml
-    status: Draft
-  - urn: urn:kora:gov:claveunica:1.0.0
-    title: TDE-PLAT-CU-INT-015
-    file: knowledge/applied/tde/plataformas/claveunica.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:simple_saas_oae:1.0.0
-    title: TDE-LIN-SIMPLE-SAAS-041
-    file: knowledge/applied/tde/plataformas/simple_saas_oae.yml
-    status: Draft
-  - urn: urn:kora:gov:pisee:1.0.0
-    title: TDE-PLAT-PISEE-027
-    file: knowledge/applied/tde/plataformas/pisee.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0
-    title: TDE-LIN-NORMA-DED-10
-    file: knowledge/applied/tde/normas_tecnicas/nt_documentos_expedientes.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_autenticacion:1.0.0
-    title: TDE-LIN-NORMA-AUTENT-09
-    file: knowledge/applied/tde/normas_tecnicas/nt_autenticacion.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_notificaciones:1.0.0
-    title: TDE-LIN-NORMA-NOTIF-08
-    file: knowledge/applied/tde/normas_tecnicas/nt_notificaciones.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0
-    title: TDE-LIN-NORMA-SEG-CIBER-07
-    file: knowledge/applied/tde/normas_tecnicas/nt_seguridad_ciberseguridad.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_calidad_plataformas:1.0.0
-    title: TDE-LIN-NORMA-CALIDAD-PLATAFORMAS-033
-    file: knowledge/applied/tde/normas_tecnicas/nt_calidad_plataformas.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0
-    title: TDE-LIN-NORMA-INT-12
-    file: knowledge/applied/tde/normas_tecnicas/nt_interoperabilidad.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:ley_19880_procedimientos:1.0.0
-    title: TDE-LIN-LEY-19880-034
-    file: knowledge/applied/tde/leyes/ley_19880_procedimientos.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:ley_21180_tde:1.0.0
-    title: TDE-LIN-LEY-21180-032
-    file: knowledge/applied/tde/leyes/ley_21180_tde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:principios_objetivos:1.0.0
-    title: TDE-CORE-PRINCIPIOS-OBJETIVOS-01
-    file: knowledge/applied/tde/estrategia/principios_objetivos.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0
-    title: TDE-ESTRATEGIA-GOBIERNO-DIGITAL-2030-01
-    file: knowledge/applied/tde/estrategia/gobierno_digital_2030.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0
-    title: TDE-CORE-LEXICON-WIKIGUIAS-01
-    file: knowledge/applied/gov/lexicon_wikiguias.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:identidad_digital:1.0.0
-    title: TDE-ESTRATEGIA-IDENTIDAD-DIGITAL-01
-    file: knowledge/applied/gov/identidad_digital.yml
-    status: Draft
-  - urn: urn:kora:gov:datosgob:1.0.0
-    title: TDE-PLAT-DATOSGOB-028
-    file: knowledge/applied/gov/datosgob.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:intro_tde:1.0.0
-    title: KB-GN-016-INTRO-TDE-STS
-    file: knowledge/applied/gov/intro_tde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:cloud_publica:1.0.0
-    title: TDE-LIN-CLOUD-PUBLICA-01
-    file: knowledge/applied/gov/cloud_publica.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:capacitaciones_tde:1.0.0
-    title: TDE-ESTRATEGIA-CAPACITACIONES-TDE-01
-    file: knowledge/applied/gov/capacitaciones_tde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:datos_administracion_estado:1.0.0
-    title: TDE-ESTRATEGIA-DATOS-ADM-ESTADO-01
-    file: knowledge/applied/gov/datos_administracion_estado.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0
-    title: TDE-LIN-METODOLOGIA-PROY-01
-    file: knowledge/applied/gov/metodologia_proyectos_tic.yml
-    status: Draft
   - urn: urn:kora:cat:data-access-layers:1.0.0
     title: CAT-DAL-01
-    file: knowledge/foundations/cat/data-access-layers.yml
+    file: knowledge/fxsl/cat/data-access-layers.yml
     status: Draft
   - urn: urn:kora:cat:cognitive-toolkit:1.0.0
     title: CAT-CTK-01
-    file: knowledge/foundations/cat/cognitive-toolkit.yml
+    file: knowledge/fxsl/cat/cognitive-toolkit.yml
     status: Active
   - urn: urn:kora:cat:exploring-category-theoretic-approaches-to-databases:1.0.0
     title: CAT-DB-EXPLORE-01
-    file: knowledge/foundations/cat/exploring-category-theoretic-approaches-to-databases.yml
+    file: knowledge/fxsl/cat/exploring-category-theoretic-approaches-to-databases.yml
     status: Draft
   - urn: urn:kora:cat:coalgebras:1.0.0
     title: CAT-COALG-01
-    file: knowledge/foundations/cat/coalgebras.yml
+    file: knowledge/fxsl/cat/coalgebras.yml
     status: Active
   - urn: urn:kora:cat:action-primary-key:1.0.0
     title: CAT-ACTION-PK-01
-    file: knowledge/foundations/cat/action-primary-key.yml
+    file: knowledge/fxsl/cat/action-primary-key.yml
     status: Draft
   - urn: urn:kora:cat:unified-representation-transformation-multimodel:1.0.0
     title: CAT-MM-UNIFIED-REP-01
-    file: knowledge/foundations/cat/unified-representation-transformation-multimodel.yml
+    file: knowledge/fxsl/cat/unified-representation-transformation-multimodel.yml
     status: Draft
   - urn: urn:kora:cat:categorical-data-structures:1.0.0
     title: CAT-CDS-01
-    file: knowledge/foundations/cat/categorical-data-structures.yml
+    file: knowledge/fxsl/cat/categorical-data-structures.yml
     status: Draft
   - urn: urn:kora:cat:cql-data-integration:1.0.0
     title: CAT-CQL-01
-    file: knowledge/foundations/cat/cql-data-integration.yml
+    file: knowledge/fxsl/cat/cql-data-integration.yml
     status: Active
   - urn: urn:kora:cat:unified-multimodel:1.0.0
     title: CAT-MM-01
-    file: knowledge/foundations/cat/unified-multimodel.yml
+    file: knowledge/fxsl/cat/unified-multimodel.yml
     status: Active
   - urn: urn:kora:cat:constraint-logic:1.0.0
     title: CAT-CONSTRAINT-01
-    file: knowledge/foundations/cat/constraint-logic.yml
+    file: knowledge/fxsl/cat/constraint-logic.yml
     status: Active
   - urn: urn:kora:cat:mathematical-modelling:1.0.0
     title: CAT-MODEL-01
-    file: knowledge/foundations/cat/mathematical-modelling.yml
+    file: knowledge/fxsl/cat/mathematical-modelling.yml
     status: Active
   - urn: urn:kora:cat:data-lakes-ct:1.0.0
     title: CAT-DL-01
-    file: knowledge/foundations/cat/data-lakes-ct.yml
+    file: knowledge/fxsl/cat/data-lakes-ct.yml
     status: Active
   - urn: urn:kora:cat:audit-patterns:1.0.0
     title: CAT-AUDIT-01
-    file: knowledge/foundations/cat/audit-patterns.yml
+    file: knowledge/fxsl/cat/audit-patterns.yml
     status: Active
   - urn: urn:kora:cat:kb-category:1.0.0
     title: CAT-KB-META-01
-    file: knowledge/foundations/cat/kb-category.yml
+    file: knowledge/fxsl/cat/kb-category.yml
     status: Active
   - urn: urn:kora:cat:algebraic-databases:1.0.0
     title: CAT-ADB-01
-    file: knowledge/foundations/cat/algebraic-databases.yml
+    file: knowledge/fxsl/cat/algebraic-databases.yml
     status: Active
   - urn: urn:kora:cat:formal-framework-data-lakes-ct:1.0.0
     title: CAT-DL-FRAMEWORK-01
-    file: knowledge/foundations/cat/formal-framework-data-lakes-ct.yml
+    file: knowledge/fxsl/cat/formal-framework-data-lakes-ct.yml
     status: Draft
   - urn: urn:kora:cat:seven-sketches:1.0.0
     title: CAT-FDM-01
-    file: knowledge/foundations/cat/seven-sketches.yml
+    file: knowledge/fxsl/cat/seven-sketches.yml
     status: Active
   - urn: urn:kora:cat:multicategory-multimodel-query-processing:1.0.0
     title: CAT-MC-01
-    file: knowledge/foundations/cat/multicategory-multimodel-query-processing.yml
+    file: knowledge/fxsl/cat/multicategory-multimodel-query-processing.yml
     status: Draft
   - urn: urn:kora:cat:formal-framework-multimodel-data-transformations:1.0.0
     title: CAT-MM-KANLIFT-01
-    file: knowledge/foundations/cat/formal-framework-multimodel-data-transformations.yml
+    file: knowledge/fxsl/cat/formal-framework-multimodel-data-transformations.yml
     status: Draft
   - urn: urn:kora:cat:mbse-consistency:1.0.0
     title: CAT-MBSE-01
-    file: knowledge/foundations/cat/mbse-consistency.yml
+    file: knowledge/fxsl/cat/mbse-consistency.yml
     status: Active
   - urn: urn:kora:cat:schema-evolution:1.0.0
     title: CAT-EVOLUTION-01
-    file: knowledge/foundations/cat/schema-evolution.yml
+    file: knowledge/fxsl/cat/schema-evolution.yml
     status: Active
   - urn: urn:kora:cat:algebraic-model-management:1.0.0
     title: CAT-AMM-01
-    file: knowledge/foundations/cat/algebraic-model-management.yml
+    file: knowledge/fxsl/cat/algebraic-model-management.yml
     status: Draft
   - urn: urn:kora:cat:categorical-systems-theory:1.0.0
     title: CAT-SYS-01
-    file: knowledge/foundations/cat/categorical-systems-theory.yml
+    file: knowledge/fxsl/cat/categorical-systems-theory.yml
     status: Active
   - urn: urn:kora:gist:guide-onto-gist-001-audit-protocol:1.0.0
     title: GUIDE-ONTO-GIST-AUDIT-001
-    file: knowledge/foundations/core/gist/fx-guide-onto-gist-001-audit-protocol.yml
+    file: knowledge/fxsl/gist/fx-guide-onto-gist-001-audit-protocol.yml
+    status: Draft
+  - urn: urn:kora:mgmt:mw-waissbluth:1.0.0
+    title: MW-WAISSBLUTH-GESTION-PUBLICA-01
+    file: knowledge/mgmt/mw-waissbluth.yml
+    status: Published
+  - urn: urn:kora:mgmt:lean6:1.0.1
+    title: LEAN6-KODA-CORE-01
+    file: knowledge/mgmt/lean6.yml
+    status: Draft
+  - urn: urn:kora:mgmt:meyer-org-structure:1.0.0
+    title: MEYER-ORG-STRUCTURE-KODA-01
+    file: knowledge/mgmt/meyer-org-structure.yml
+    status: Draft
+  - urn: urn:kora:mgmt:estructura-estado-chile:1.0.0
+    title: GOBCL-MASTER-01
+    file: knowledge/mgmt/estructura-estado-chile.yml
+    status: Published
+  - urn: urn:kora:gn:guia-frpd-nuble:1.0.0
+    title: GN-FRPD-GUIA-OPERATIVA-2025-01
+    file: knowledge/gn/guias/guia-frpd-nuble.yml
+    status: Draft
+  - urn: urn:kora:gn:guia-fril-2025-sts:1.0.0
+    title: GN-GUIA-FRIL-STS-2025-01
+    file: knowledge/gn/guias/guia-fril-2025-sts.yml
+    status: Draft
+  - urn: urn:kora:gn:guia-programas-directos-gore:1.0.0
+    title: GN-GUIA-PPR-GORE-DIRECTO-2025-01
+    file: knowledge/gn/guias/guia-programas-directos-gore.yml
+    status: Draft
+  - urn: urn:kora:gn:instructivo-subvencion-8-2025-sts:1.0.0
+    title: GN-CONC-8-STS-2025-01
+    file: knowledge/gn/guias/instructivo-subvencion-8-2025-sts.yml
+    status: Draft
+  - urn: urn:kora:gn:guia-idi-sni-sts:1.0.0
+    title: GN-GUIA-IDI-SNI-STS-2025-01
+    file: knowledge/gn/guias/guia-idi-sni-sts.yml
+    status: Draft
+  - urn: urn:kora:gn:guia-circular-33-sts:1.0.0
+    title: GN-GUIA-CIRC33-STS-2025-01
+    file: knowledge/gn/guias/guia-circular-33-sts.yml
+    status: Draft
+  - urn: urn:kora:gn:guia-comunicaciones:1.0.0
+    title: GN-GUIA-COMUNICACIONES-01
+    file: knowledge/gn/guias/guia-comunicaciones.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-operacional-dgi:1.0.0
+    title: MANUAL-OPERACIONAL-DGI-KODA-01
+    file: knowledge/gn/manuales/manual-operacional-dgi.yml
+    status: Published
+  - urn: urn:kora:gn:manual-flotas:1.0.0
+    title: GN-MANUAL-SERVICIOS-FLOTAS-KODA-01
+    file: knowledge/gn/manuales/manual-flotas.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-remuneraciones:1.0.0
+    title: GN-MANUAL-REMUNERACIONES-01
+    file: knowledge/gn/manuales/manual-remuneraciones.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-desarrollo-organizacional:1.0.0
+    title: GN-MANUAL-DESARROLLO-ORGANIZACIONAL-KODA-01
+    file: knowledge/gn/manuales/manual-desarrollo-organizacional.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-tesoreria:1.0.0
+    title: GN-MANUAL-TESORERIA-01
+    file: knowledge/gn/manuales/manual-tesoreria.yml
+    status: published
+  - urn: urn:kora:gn:manual-activo-fijo:1.0.0
+    title: KB-GN-041-MANUAL-ACTIVO-FIJO-01
+    file: knowledge/gn/manuales/manual-activo-fijo.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-ciclo-vida-funcionario:1.0.0
+    title: GN-MANUAL-CICLO-VIDA-KODA-01
+    file: knowledge/gn/manuales/manual-ciclo-vida.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-tiempo-ausentismo:1.0.0
+    title: GN-MANUAL-TIEMPO-AUSENTISMO-KODA-01
+    file: knowledge/gn/manuales/manual-asistencia.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-induccion-gore-nuble-2026:1.0.0
+    title: KB-GN-017-MANUAL-INDUCCION-GORE-NUBLE-2026-01
+    file: knowledge/gn/manuales/manual-induccion-gore-nuble-2026.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-contabilidad:1.0.0
+    title: GN-MANUAL-CONTAB-CIERRE-01
+    file: knowledge/gn/manuales/manual-contabilidad.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-inventarios-bodegas:1.0.0
+    title: KB-GN-040-MANUAL-INVENTARIOS-BODEGAS-01
+    file: knowledge/gn/manuales/manual-inventarios-bodegas.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-bienestar:1.0.0
+    title: GN-MANUAL-BIENESTAR-KODA-01
+    file: knowledge/gn/manuales/manual-bienestar.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-compras:1.0.0
+    title: MANUAL-COMPRAS-CONTRATACIONES-01
+    file: knowledge/gn/manuales/manual-compras.yml
+    status: Draft
+  - urn: urn:kora:gn:manual-presupuesto:1.0.0
+    title: GN-MANUAL-PPTO-FORM-EJEC-01
+    file: knowledge/gn/manuales/manual-presupuesto.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-empub:1.0.0
+    title: GN-RIS-EMPUB-2024-01
+    file: knowledge/gn/ris/ris-empub.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-artcult:1.0.0
+    title: GN-RIS-ARTCULT-2024-01
+    file: knowledge/gn/ris/ris-artcult.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-deportes:1.0.0
+    title: GN-RIS-DEPORTES-2024-01
+    file: knowledge/gn/ris/ris-deportes.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-pmdt:1.0.0
+    title: GN-RIS-EB-PMDT-2024-01
+    file: knowledge/gn/ris/ris-pmdt.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-patrimonio:1.0.0
+    title: GN-RIS-PATRIMONIO-2024-01
+    file: knowledge/gn/ris/ris-patrimonio.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-proyinv:1.0.0
+    title: GN-RIS-PROYINV-2023-01
+    file: knowledge/gn/ris/ris-proyinv.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-index:1.0.0
+    title: GN-RIS-INDEX-01
+    file: knowledge/gn/ris/ris-index.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-proginv:1.0.0
+    title: GN-RIS-PROGINV-2025-01
+    file: knowledge/gn/ris/ris-proginv.yml
+    status: Draft
+  - urn: urn:kora:gn:ris-edpub:1.0.0
+    title: GN-RIS-EDPUB-2024-01
+    file: knowledge/gn/ris/ris-edpub.yml
+    status: Draft
+  - urn: urn:kora:gn:selector-ipr:1.0.0
+    title: selector-ipr.yml
+    file: knowledge/gn/ris/selector-ipr.yml
+    status: published
+  - urn: urn:kora:gn:modelos-actos-juridicos:1.0.0
+    title: GN-MODELOS-ACTOS-JURIDICOS-01
+    file: knowledge/gn/normativa/modelos-actos-juridicos.yml
+    status: Draft
+  - urn: urn:kora:gn:ley-presupuestos-2026-normas-generales:1.0.0
+    title: GN-LEY-PPTO-2026-NORMAS-GENERALES-01
+    file: knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.yml
+    status: Draft
+  - urn: urn:kora:gn:dictamenes-cgr-gore:1.0.0
+    title: dictamenes-cgr-gore.yml
+    file: knowledge/gn/normativa/dictamenes-cgr-gore.yml
+    status: published
+  - urn: urn:kora:gn:marco-legal-gores:1.0.0
+    title: marco-legal-gores.yml
+    file: knowledge/gn/normativa/marco-legal-gores.yml
+    status: published
+  - urn: urn:kora:gn:ley-presupuestos-2026-partida-31:1.0.0
+    title: GN-LEY-PPTO-2026-P31-01
+    file: knowledge/gn/normativa/ley-presupuestos-2026-partida-31.yml
+    status: Draft
+  - urn: urn:kora:gn:loc-gore:1.0.0
+    title: loc-gore.yml
+    file: knowledge/gn/normativa/loc-gore.yml
+    status: published
+  - urn: urn:kora:gn:bpmn-d03-gestion-ipr:1.0.0
+    title: BPMN-GN-D03-GESTION-IPR-KODA
+    file: knowledge/gn/bpmn/bpmn-d03-gestion-ipr.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-index:1.0.0
+    title: GN-BPMN-INDEX-KODA
+    file: knowledge/gn/bpmn/bpmn-index.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d08-rendiciones:1.0.0
+    title: BPMN-GN-D08-RENDICIONES-KODA
+    file: knowledge/gn/bpmn/bpmn-d08-rendiciones.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d04-compras-contrataciones:1.0.0
+    title: BPMN-GN-D04-COMPRAS-KODA
+    file: knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d05-inventarios-activo-fijo:1.0.0
+    title: BPMN-GN-D05-INVENTARIOS-AF-KODA
+    file: knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d10-geoespacial-ide:1.0.0
+    title: BPMN-GN-D10-GEOESPACIAL-IDE-KODA
+    file: knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d01-actos-administrativos:1.0.0
+    title: BPMN-GN-D01-ACTOS-ADMIN-KODA
+    file: knowledge/gn/bpmn/bpmn-d01-actos-administrativos.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d06-flota-vehicular:1.0.0
+    title: BPMN-GN-D06-FLOTA-KODA
+    file: knowledge/gn/bpmn/bpmn-d06-flota-vehicular.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d09-cies-sitia:1.0.0
+    title: BPMN-GN-D09-CIES-SITIA-KODA
+    file: knowledge/gn/bpmn/bpmn-d09-cies-sitia.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d02-ciclo-presupuestario:1.0.0
+    title: BPMN-GN-D02-CICLO-PRESUPUESTARIO-KODA
+    file: knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.yml
+    status: Draft
+  - urn: urn:kora:gn:bpmn-d07-rrhh:1.0.0
+    title: BPMN-GN-D07-RRHH-KODA
+    file: knowledge/gn/bpmn/bpmn-d07-rrhh.yml
+    status: Draft
+  - urn: urn:kora:gn:transferencia-ppr:1.0.0
+    title: GN-PPR-TRANSFER-GUIDE-01
+    file: knowledge/gn/gestion/transferencia-ppr.yml
+    status: draft
+  - urn: urn:kora:gn:gestion-info-geoespacial:1.0.0
+    title: GN-GEO-GESTION-INFORMACION-01
+    file: knowledge/gn/gestion/gestion-info-geoespacial.yml
+    status: Draft
+  - urn: urn:kora:gn:gestion-prpto:1.0.0
+    title: GN-PPTO-GESTION-INTEGRAL-01
+    file: knowledge/gn/gestion/gestion-prpto.yml
+    status: Published
+  - urn: urn:kora:gn:gestion-ipr:1.0.0
+    title: GN-IPR-GESTION-OPERACIONAL-01
+    file: knowledge/gn/gestion/gestion-ipr.yml
+    status: Draft
+  - urn: urn:kora:gn:gestion-prpto-2026:1.0.0
+    title: GN-PPTO-GESTION-INTEGRAL-2026-01
+    file: knowledge/gn/gestion/gestion-prpto-2026.yml
+    status: Draft
+  - urn: urn:kora:gn:gestion-rendiciones:1.0.0
+    title: GN-REN-GESTION-RENDICIONES-01
+    file: knowledge/gn/gestion/gestion-rendiciones.yml
+    status: published
+  - urn: urn:kora:gn:glosas-gores-2026:1.0.0
+    title: GLOSAS-GORES-2026-01
+    file: knowledge/gn/gestion/glosas-gores-2026.yml
+    status: Draft
+  - urn: urn:kora:gn:flujos-aprobacion-documentos:1.0.0
+    title: KB-GN-102-FLUJOS-APROBACION-KODA-01
+    file: knowledge/gn/gestion/flujos-aprobacion-documentos.yml
+    status: Published
+  - urn: urn:kora:gn:aceleracion-regional:1.0.0
+    title: KB-GN-050-ACELERACION-REGIONAL-KODA-01
+    file: knowledge/gn/gobernanza/aceleracion-regional.yml
+    status: Draft
+  - urn: urn:kora:gn:nuble-250:1.0.0
+    title: GN-NUBLE-250-01
+    file: knowledge/gn/gobernanza/nuble-250.yml
+    status: Draft
+  - urn: urn:kora:gn:vision-desarrollo-nuble:1.0.0
+    title: KB-GN-013-VISION-STS-01
+    file: knowledge/gn/gobernanza/vision-desarrollo-nuble.yml
+    status: Draft
+  - urn: urn:kora:gn:plan-potenciamiento-dgi:1.0.0
+    title: PLAN-POTENCIAMIENTO-DGI-KODA-01
+    file: knowledge/gn/gobernanza/plan-potenciamiento-dgi.yml
+    status: Published
+  - urn: urn:kora:gn:comunicaciones-oc:1.0.0
+    title: GN-COMUNICACIONES-OC-01
+    file: knowledge/gn/gobernanza/comunicaciones-oc.yml
+    status: Draft
+  - urn: urn:kora:gn:problemas-sociales-cl:1.0.0
+    title: GN-PROBLEMAS-SOCIALES-CL-01
+    file: knowledge/gn/gobernanza/problemas-sociales-cl.yml
+    status: Draft
+  - urn: urn:kora:gn:organigrama:1.0.0
+    title: KB-GN-002-ORGANIGRAMA-01
+    file: knowledge/gn/gobernanza/organigrama.yml
+    status: Published
+  - urn: urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0
+    title: omega-ipr-gestion-fusion.yml
+    file: knowledge/gn/gobernanza/omega-ipr-gestion-fusion.yml
+    status: published
+  - urn: urn:kora:gn:cies-sitia:1.0.0
+    title: CIES-SITIA-MASTER-01
+    file: knowledge/gn/gobernanza/cies-sitia.yml
+    status: Draft
+  - urn: urn:kora:gn:informe-estado-inicial-gore-pre-td:1.0.0
+    title: GN-INFORME-ESTADO-INICIAL-GORE-PRE-TD-01
+    file: knowledge/gn/gobernanza/informe-estado-inicial-gore-pre-td.yml
+    status: Draft
+  - urn: urn:kora:gn:indicadores-nuble:1.0.0
+    title: GN-INDICADORES-NUBLE-01
+    file: knowledge/gn/gobernanza/indicadores-nuble.yml
+    status: Draft
+  - urn: urn:kora:gn:estrategia-gestion:1.0.0
+    title: KB-GN-035-ESTRATEGIA-GESTION-STS
+    file: knowledge/gn/gobernanza/estrategia-gestion.yml
+    status: Draft
+  - urn: urn:kora:gn:glosario-ipr-consolidado:1.0.0
+    title: glosario-ipr-consolidado.yml
+    file: knowledge/gn/gobernanza/glosario-ipr-consolidado.yml
+    status: published
+  - urn: urn:kora:gn:matriz-integracion-organica:1.0.0
+    title: GN-MATRIZ-INTEGRACION-01
+    file: knowledge/gn/gobernanza/matriz-integracion-organica.yml
+    status: Published
+  - urn: urn:kora:gn:gore-ideal:1.0.0
+    title: GN-GORE-IDEAL-ARTIFACT-01
+    file: knowledge/gn/gobernanza/gore-ideal.yml
+    status: published
+  - urn: urn:kora:gn:intro-gores-nuble:1.0.0
+    title: GORE-NUBLE-GUIA-INTEGRAL-01
+    file: knowledge/gn/gobernanza/intro-gores-nuble.yml
+    status: Published
+  - urn: urn:kora:gn:erd-nuble-2024-2030:1.0.0
+    title: KB-GN-006-ERD-NUBLE-2024-2030-KODA-01
+    file: knowledge/gn/gobernanza/erd-nuble-2024-2030.yml
+    status: Draft
+  - urn: urn:kora:gn:estrategia-td-ia:1.0.0
+    title: GN-ESTRATEGIA-TD-IA-01
+    file: knowledge/gn/gobernanza/estrategia-td-ia.yml
+    status: Draft
+  - urn: urn:kora:gn:cuentas-publicas-2021-2024:1.0.0
+    title: GN-CCPP-2021-2024-01
+    file: knowledge/gn/gobernanza/cuentas-publicas-2021-2024.yml
     status: Draft
   - urn: urn:knowledge:koda:sys:test_strategy:1.0.0
     title: TDE-TEST-STRATEGY-WIKIGUIAS-031
-    file: knowledge/foundations/sys/test_strategy.yml
+    file: knowledge/kora/sys/test_strategy.yml
     status: Draft
   - urn: urn:knowledge:koda:sys:hub_agentes:1.0.0
     title: TDE-HUB-AGENTES-030
-    file: knowledge/foundations/sys/hub_agentes.yml
+    file: knowledge/kora/sys/hub_agentes.yml
     status: Draft
   - urn: urn:knowledge:koda:sys:workflow_wikiguias:1.0.0
     title: TDE-WORKFLOW-WIKIGUIAS-029
-    file: knowledge/foundations/sys/workflow_wikiguias.yml
+    file: knowledge/kora/sys/workflow_wikiguias.yml
+    status: Draft
+  - urn: urn:kora:legal:terminacion:1.0.0
+    title: terminacion.yml
+    file: knowledge/legal/terminacion.yml
+    status: published
+  - urn: urn:kora:legal:remuneraciones:1.0.0
+    title: remuneraciones.yml
+    file: knowledge/legal/remuneraciones.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:ley_21643:1.0.0
+    title: ley_21643.yml
+    file: knowledge/legal/ley_21643.yml
+    status: published
+  - urn: urn:kora:legal:maternidad:1.0.0
+    title: maternidad.yml
+    file: knowledge/legal/maternidad.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:acoso_laboral:1.0.0
+    title: acoso_laboral.yml
+    file: knowledge/legal/acoso_laboral.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:intro_estatutos:1.0.0
+    title: intro_estatutos.yml
+    file: knowledge/legal/intro_estatutos.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:legislacion_ia_chile:1.0.0
+    title: TDE-LIN-IA-LAW-038
+    file: knowledge/legal/legislacion_ia_chile.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0
+    title: deberes_prohibiciones.yml
+    file: knowledge/legal/deberes_prohibiciones.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:confianza_legitima:1.0.0
+    title: confianza_legitima.yml
+    file: knowledge/legal/confianza_legitima.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:jornada_calificaciones:1.0.0
+    title: jornada_calificaciones.yml
+    file: knowledge/legal/jornada_calificaciones.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:ley_21658_segdig:1.0.0
+    title: TDE-LIN-LEY-21658-035
+    file: knowledge/legal/ley_21658_segdig.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:ingreso_carrera:1.0.0
+    title: ingreso_carrera.yml
+    file: knowledge/legal/ingreso_carrera.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:feriados_permisos:1.0.0
+    title: feriados_permisos.yml
+    file: knowledge/legal/feriados_permisos.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:ley_15076:1.0.0
+    title: ley_15076.yml
+    file: knowledge/legal/ley_15076.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:contratacion_publica:1.0.0
+    title: contratacion_publica.yml
+    file: knowledge/legal/contratacion_publica.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:ley_19664:1.0.0
+    title: ley_19664.yml
+    file: knowledge/legal/ley_19664.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:ley_21719_datos_personales:1.0.0
+    title: TDE-LIN-LEY-21719-039
+    file: knowledge/legal/ley_21719_datos_personales.yml
+    status: Draft
+  - urn: urn:kora:legal:index:1.0.0
+    title: index.yml
+    file: knowledge/legal/index.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:formacion_especialistas:1.0.0
+    title: formacion_especialistas.yml
+    file: knowledge/legal/formacion_especialistas.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:responsabilidad_admin:1.0.0
+    title: responsabilidad_admin.yml
+    file: knowledge/legal/responsabilidad_admin.yml
+    status: published
+  - urn: urn:knowledge:koda:legal:derechos_especiales:1.0.0
+    title: derechos_especiales.yml
+    file: knowledge/legal/derechos_especiales.yml
+    status: published
+  - urn: urn:knowledge:koda:gov:diseno_servicios:1.0.0
+    title: TDE-GUIA-DISENO-SERVICIOS-ESTADO
+    file: knowledge/tde/guias/diseno_servicios.yml
+    status: Draft
+  - urn: urn:kora:gov:mgde:1.0.0
+    title: TDE-LIN-MGDE-01
+    file: knowledge/tde/guias/mgde.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:cpat_completa:1.0.0
+    title: TDE-LIN-CPAT-037
+    file: knowledge/tde/guias/cpat_completa.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0
+    title: TDE-LIN-ORIENT-TIC-01
+    file: knowledge/tde/guias/orientaciones_gestion_tic.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:metadatos_documentos:1.0.0
+    title: TDE-LIN-METADATOS-01
+    file: knowledge/tde/guias/metadatos_documentos.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:sistema_tde_2025:1.0.0
+    title: TDE-LIN-STD-2025-01
+    file: knowledge/tde/guias/sistema_tde_2025.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0
+    title: TDE-REGLA-TD-DS4-2021
+    file: knowledge/tde/guias/reglamento_tde_ds4.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0
+    title: TDE-LIN-GUIA-CIBERSEGURIDAD-01
+    file: knowledge/tde/guias/seguridad_ciberseguridad_v1.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:catalogo_cpat_nuble:1.0.0
+    title: TDE-LIN-CPAT-040
+    file: knowledge/tde/guias/catalogo_cpat_nuble.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:calidad_web:1.0.0
+    title: TDE-LIN-CALIDAD-WEB-01
+    file: knowledge/tde/guias/calidad_web.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:anonimizacion_datos_v2:1.0.0
+    title: TDE-LIN-ANON-042
+    file: knowledge/tde/guias/anonimizacion_datos_v2.yml
+    status: Draft
+  - urn: urn:kora:gov:evaltic:1.0.0
+    title: TDE-LIN-EVALTIC-01
+    file: knowledge/tde/guias/evaltic.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:rat_datos_personales:1.0.0
+    title: TDE-LIN-DATOS-RAT-001
+    file: knowledge/tde/guias/rat_datos_personales.yml
+    status: Draft
+  - urn: urn:kora:gov:docdigital:1.0.0
+    title: TDE-PLAT-DOCDIGITAL-026
+    file: knowledge/tde/plataformas/docdigital.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:claveunica_tyc:1.0.0
+    title: TDE-LIN-TYC-CLAVEUNICA-036
+    file: knowledge/tde/plataformas/claveunica_tyc.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:simple_saas:1.0.0
+    title: TDE-PLAT-SIMPLE-SaaS-017
+    file: knowledge/tde/plataformas/simple_saas.yml
+    status: Draft
+  - urn: urn:kora:gov:claveunica:1.0.0
+    title: TDE-PLAT-CU-INT-015
+    file: knowledge/tde/plataformas/claveunica.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:simple_saas_oae:1.0.0
+    title: TDE-LIN-SIMPLE-SAAS-041
+    file: knowledge/tde/plataformas/simple_saas_oae.yml
+    status: Draft
+  - urn: urn:kora:gov:pisee:1.0.0
+    title: TDE-PLAT-PISEE-027
+    file: knowledge/tde/plataformas/pisee.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0
+    title: TDE-LIN-NORMA-DED-10
+    file: knowledge/tde/normas_tecnicas/nt_documentos_expedientes.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:nt_autenticacion:1.0.0
+    title: TDE-LIN-NORMA-AUTENT-09
+    file: knowledge/tde/normas_tecnicas/nt_autenticacion.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:nt_notificaciones:1.0.0
+    title: TDE-LIN-NORMA-NOTIF-08
+    file: knowledge/tde/normas_tecnicas/nt_notificaciones.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0
+    title: TDE-LIN-NORMA-SEG-CIBER-07
+    file: knowledge/tde/normas_tecnicas/nt_seguridad_ciberseguridad.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:nt_calidad_plataformas:1.0.0
+    title: TDE-LIN-NORMA-CALIDAD-PLATAFORMAS-033
+    file: knowledge/tde/normas_tecnicas/nt_calidad_plataformas.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0
+    title: TDE-LIN-NORMA-INT-12
+    file: knowledge/tde/normas_tecnicas/nt_interoperabilidad.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:ley_19880_procedimientos:1.0.0
+    title: TDE-LIN-LEY-19880-034
+    file: knowledge/tde/leyes/ley_19880_procedimientos.yml
+    status: Draft
+  - urn: urn:knowledge:koda:legal:ley_21180_tde:1.0.0
+    title: TDE-LIN-LEY-21180-032
+    file: knowledge/tde/leyes/ley_21180_tde.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:principios_objetivos:1.0.0
+    title: TDE-CORE-PRINCIPIOS-OBJETIVOS-01
+    file: knowledge/tde/estrategia/principios_objetivos.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0
+    title: TDE-ESTRATEGIA-GOBIERNO-DIGITAL-2030-01
+    file: knowledge/tde/estrategia/gobierno_digital_2030.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0
+    title: TDE-CORE-LEXICON-WIKIGUIAS-01
+    file: knowledge/gov/lexicon_wikiguias.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:identidad_digital:1.0.0
+    title: TDE-ESTRATEGIA-IDENTIDAD-DIGITAL-01
+    file: knowledge/gov/identidad_digital.yml
+    status: Draft
+  - urn: urn:kora:gov:datosgob:1.0.0
+    title: TDE-PLAT-DATOSGOB-028
+    file: knowledge/gov/datosgob.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:intro_tde:1.0.0
+    title: KB-GN-016-INTRO-TDE-STS
+    file: knowledge/gov/intro_tde.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:cloud_publica:1.0.0
+    title: TDE-LIN-CLOUD-PUBLICA-01
+    file: knowledge/gov/cloud_publica.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:capacitaciones_tde:1.0.0
+    title: TDE-ESTRATEGIA-CAPACITACIONES-TDE-01
+    file: knowledge/gov/capacitaciones_tde.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:datos_administracion_estado:1.0.0
+    title: TDE-ESTRATEGIA-DATOS-ADM-ESTADO-01
+    file: knowledge/gov/datos_administracion_estado.yml
+    status: Draft
+  - urn: urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0
+    title: TDE-LIN-METODOLOGIA-PROY-01
+    file: knowledge/gov/metodologia_proyectos_tic.yml
     status: Draft
