@@ -1,12 +1,12 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:architect-cm-koda-agent-construct:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: "urn:kora:agent-bootstrap:architect-cm-kora-agent-construct:1.0.0"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito
 
-Ejecutar las 5 fases de construccion de agentes KODA-compliant desde requisitos hasta deployment.
+Ejecutar las 5 fases de construccion de agentes KORA-compliant desde requisitos hasta deployment.
 
 ## Input/Output
 
@@ -29,7 +29,7 @@ Ejecutar las 5 fases de construccion de agentes KODA-compliant desde requisitos 
    - Minimo: S-DISPATCHER, S-END
 3. **P3 — Construction (7 namespaces):**
    - _manifest
-   - KODA_Runtime_Instructions
+   - KORA_Runtime_Instructions
    - agent_identity
    - knowledge_base
    - workflows_states

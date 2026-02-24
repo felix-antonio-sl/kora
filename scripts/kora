@@ -198,10 +198,10 @@ def cmd_health():
     broken_links = 0
     checked_files = 0
 
-    # We strip versions for a softer match sometimes, but let's do exact first
-    # Extract pattern: urn:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9.-]+
+    # Match both tripartite KB URNs (urn:ns:kb:id) and 5-segment bootstrap URNs
+    # (urn:ns:agent-bootstrap:name:version). The version segment is optional.
     urn_pattern = re.compile(
-        r"(urn:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9.-]+(?:|latest|stable))"
+        r"(urn:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9.-]+(?::[a-z0-9.-]+)?)"
     )
 
     for root, dirs, files in os.walk(KORA_ROOT):
@@ -219,24 +219,64 @@ def cmd_health():
             except Exception:
                 continue
 
-            found_urns = set(urn_pattern.findall(content))
-            for f_urn in found_urns:
+            # Collect URNs line-by-line, skipping fenced code blocks and "Incorrecto:" lines
+            in_code_block = False
+            valid_urns_in_file = set()
+            for line in content.split("\n"):
+                stripped = line.strip()
+                if stripped.startswith("```"):
+                    in_code_block = not in_code_block
+                    continue
+                if in_code_block:
+                    continue
+                # Skip lines that are pedagogical "incorrect" examples
+                if stripped.lower().startswith("**incorrecto"):
+                    continue
+                for f_urn in urn_pattern.findall(line):
+                    valid_urns_in_file.add(f_urn)
+            for f_urn in valid_urns_in_file:
                 if f_urn not in known_urns:
-                    # Ignore external domains or generic ones?
-                    if not f_urn.startswith("urn:knowledge:") and not f_urn.startswith(
-                        "urn:kora:"
-                    ):
-                        # Attempt to see if it's strictly a bad link or just a generic one
-                        pass
+                    # Skip informal cross-agent references (urn:ns:agent:name)
+                    # These are logical references not indexed as catalog entries
+                    parts = f_urn.split(":")
+                    if len(parts) == 4 and parts[2] == "agent":
+                        continue
                     print(f"[BROKEN] In {file_path.relative_to(KORA_ROOT)}: {f_urn}")
                     broken_links += 1
             checked_files += 1
 
-    print(f"Health check complete. Scanned {checked_files} files.")
-    if broken_links == 0:
+    # Also validate allowed_kb in agent config.json files against catalog
+    import json
+    config_broken = 0
+    for root, dirs, files in os.walk(KORA_ROOT / "agents"):
+        dirs[:] = [d for d in dirs if d not in (".git",)]
+        for file in files:
+            if file != "config.json":
+                continue
+            file_path = Path(root) / file
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    cfg = json.load(f)
+                for kb_urn in cfg.get("allowed_kb", []):
+                    if not isinstance(kb_urn, str) or not kb_urn.startswith("urn:"):
+                        print(f"[CONFIG] In {file_path.relative_to(KORA_ROOT)}: non-URN entry '{kb_urn}'")
+                        config_broken += 1
+                    elif kb_urn not in known_urns:
+                        print(f"[CONFIG] In {file_path.relative_to(KORA_ROOT)}: unknown KB URN '{kb_urn}'")
+                        config_broken += 1
+            except Exception as e:
+                print(f"[WARN] Could not check {file_path.relative_to(KORA_ROOT)}: {e}")
+
+    total_broken = broken_links + config_broken
+    print(f"\nHealth check complete. Scanned {checked_files} files.")
+    if total_broken == 0:
         print("All URN references are healthy!")
     else:
-        print(f"Found {broken_links} broken URN references.")
+        if broken_links > 0:
+            print(f"  {broken_links} broken URN reference(s) in file content.")
+        if config_broken > 0:
+            print(f"  {config_broken} broken/invalid URN(s) in agent config.json allowed_kb.")
+        print(f"  Total: {total_broken} issue(s) found.")
 
 
 def cmd_validate():

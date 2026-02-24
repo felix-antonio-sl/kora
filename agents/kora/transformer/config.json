@@ -1,7 +1,7 @@
 {
   "allowed_kb": [
-    "urn:kora:kb:spec",
-    "urn:kora:kb:transform"
+    "urn:kora:kb:spec-md",
+    "urn:kora:kb:md-spec"
   ],
   "sandbox": {
     "mode": "strict"

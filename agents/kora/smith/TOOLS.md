@@ -20,6 +20,5 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Agent spec, 7 principios, namespaces, Guard Set | urn:kora:kb:agent |
-| Construir, 5 fases, anti-patrones, checklist | urn:kora:kb:agent-construct |
-| Life cycle, Design/Build/Test/Deploy, Git | urn:kora:kb:life |
+| Agent spec, 7 principios, namespaces, Guard Set, F-coalgebra, agent-spec-md | urn:kora:kb:agent-spec-md |
+| Hub agentes, federacion agentes, catalogo, URNs, manifiestos | urn:kora:kb:hub-agentes |

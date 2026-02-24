@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:kora:agent-bootstrap:tester-cm-full-audit-suite:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Ejecutar bateria completa de 6 tests sobre un agente: cobertura de estados, transiciones, adversarial, conocimiento, consistencia multi-turno.
 
@@ -13,7 +13,7 @@ Ejecutar bateria completa de 6 tests sobre un agente: cobertura de estados, tran
 - **Input:** agent_spec: {identity, states, transitions, safety, kbs}
 - **Output:** audit_results: [{test_type, status: PASS|FAIL, details, severity}]
 
-## Procedure
+## Procedimiento
 
 1. **COVERAGE** — CM-state-coverage-analyzer:
    - Extraer states del spec

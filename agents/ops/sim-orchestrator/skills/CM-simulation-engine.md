@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:kora:agent-bootstrap:sim-orchestrator-cm-simulation-engine:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Motor de simulacion que asume la identidad del agente TARGET para generar respuestas basadas en su spec. Ejecuta el ciclo completo de cambio de identidad, procesamiento y restauracion.
 
@@ -13,7 +13,7 @@ Motor de simulacion que asume la identidad del agente TARGET para generar respue
 - **Input:** test_case: {id, type, prompt}, target_agent: {name, spec, states}
 - **Output:** simulated_response: {test_id, response, evidence_type: SIMULATED}
 
-## Procedure
+## Procedimiento
 
 1. Obtener test actual del test_suite
 2. CAMBIAR IDENTIDAD → TARGET: adoptar role, objective, states del spec cargado

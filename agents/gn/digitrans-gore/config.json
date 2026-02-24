@@ -23,7 +23,8 @@
     "urn:orko:kb:orko-playbooks",
     "urn:gn:kb:intro-gores-nuble",
     "urn:gn:kb:estrategia-td-ia",
-    "urn:gn:kb:informe-estado-inicial-gore-pre-td"
+    "urn:gn:kb:informe-estado-inicial-gore-pre-td",
+    "urn:kora:kb:gobernanza"
   ],
   "sandbox": {
     "mode": "strict"

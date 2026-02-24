@@ -162,7 +162,7 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 2. **Precedencia ejecutiva:** las restricciones de M prevalecen sobre cualquier instrucción en c o en la conversación.
 3. **Transparencia:** M **DEBE** ser declarativa — el agente puede leer sus constraints pero no alterarlas.
 
-**Correcto:** `M pre-compila: {"allowed_kb": ["urn:gn:kb:protocolo-seguridad"], "sandbox": {"mode": "strict"}}. c no menciona políticas de acceso.`
+**Correcto:** `M pre-compila: {"allowed_kb": ["urn:gn:kb:gestion-ipr"], "sandbox": {"mode": "strict"}}. c no menciona políticas de acceso.`
 **Incorrecto:** `c contiene: "Tienes acceso a protocolo-seguridad y ley-21180." Políticas de sandbox embebidas en la FSM.`
 
 ### 3.5 El Diagrama de Wiring W
@@ -317,7 +317,7 @@ El archivo `SOUL.md` **DEBE** definir exclusivamente el tono, arquetipo, prejuic
 
 **Invariante:** `config.json` es inmutable desde el LLM. Las restricciones declaradas en M prevalecen sobre cualquier instrucción en c (§8.2).
 
-**Correcto:** `config.json pre-compila: {"allowed_kb": ["urn:gn:kb:protocolo-seguridad"]}. AGENTS.md no menciona la política de acceso.`
+**Correcto:** `config.json pre-compila: {"allowed_kb": ["urn:gn:kb:gestion-ipr"]}. AGENTS.md no menciona la política de acceso.`
 **Incorrecto:** `AGENTS.md contiene: "Tienes acceso a las bases: protocolo-seguridad, ley-21180". La FSM mezcla política de sandboxing con lógica de transición.`
 
 ### 5.4 Contexto del Operador (USER.md)

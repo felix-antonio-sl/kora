@@ -172,7 +172,7 @@ Todo artefacto KORA/MD **DEBE** tener un URN con el formato `urn:{namespace}:{ty
 | **type**      | Categoría ontológica (en artefactos KORA/MD **DEBE** ser `kb`) | `kb`                                              |
 | **id**        | Objeto terminal (kebab-case, semánticamente expresivo)         | `gestion-ipr`, `ley-21180`, `protocolo-seguridad` |
 
-**Correcto:** `urn:gn:kb:protocolo-seguridad`
+**Correcto:** `urn:gn:kb:gestion-ipr`
 **Incorrecto:** `urn:gn:kb:019`
 
 ### 4.2 Referencias A-Temporales
@@ -192,7 +192,7 @@ Toda referencia en KORA/MD **DEBE** utilizar la siguiente sintaxis estandarizada
 | A otro artefacto KORA     | `[Descripción](urn:{ns}:{type}:{id})` | Enlace semántico a otro artefacto         |
 | Externa                   | `[Descripción](https://...)`          | Enlace a fuente web externa               |
 
-**Correcto:** `Ver [Protocolo](urn:kora:kb:protocolo-seguridad) y [→ 5. Gramática Estructural].`
+**Correcto:** `Ver [Agent Spec](urn:kora:kb:agent-spec-md) y [→ 5. Gramática Estructural].`
 **Incorrecto:** `Ver protocolo-seguridad y sección cinco.`
 
 ---

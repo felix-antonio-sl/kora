@@ -56,7 +56,7 @@ lang: es
 
 ## 02 IPR
 
-## Existenciales
+### Existenciales
 - CQ-029: ¿Qué es una IPR (Intervención Pública Regional)?
 - CQ-030: ¿Qué es un IDI (Iniciativa de Inversión)?
 - CQ-031: ¿Qué es un PPR (Programa Público Regional)?
@@ -68,7 +68,7 @@ lang: es
 - CQ-037: ¿Qué es el Diseño de un programa?
 - CQ-038: ¿Qué tipos de IPR existen según su naturaleza?
 
-## Relacionales
+### Relacionales
 - CQ-039: ¿Qué relación existe entre IPR y mecanismo de financiamiento?
 - CQ-040: ¿Qué entidad formula una IPR?
 - CQ-041: ¿Qué entidad evalúa una IPR?
@@ -80,14 +80,14 @@ lang: es
 - CQ-047: ¿Qué relación existe entre PPR y BIPS?
 - CQ-048: ¿Qué vinculación tiene el código BIP con el ciclo de vida de la IPR?
 
-## Temporales
+### Temporales
 - CQ-049: ¿Cuáles son las etapas del ciclo de vida de una IPR?
 - CQ-050: ¿Cuál es la secuencia de fases de una IDI (Prefactibilidad, Factibilidad, Diseño, Ejecución)?
 - CQ-051: ¿Cuál es la secuencia de fases de un PPR (Perfil, Diseño, Ejecución)?
 - CQ-052: ¿Cuándo se asigna el código BIP a una iniciativa?
 - CQ-053: ¿Cuándo se realiza la evaluación ex post de una IPR?
 
-## Agregación
+### Agregación
 - CQ-054: ¿Cuántas IPR están en cartera del GORE Ñuble?
 - CQ-055: ¿Cuántas IPR están en estado de ejecución?
 - CQ-056: ¿Cuántas IPR fueron aprobadas en el año presupuestario vigente?
@@ -98,7 +98,7 @@ lang: es
 
 ## 03 Financiamiento
 
-## Existenciales
+### Existenciales
 - CQ-061: ¿Qué es el FNDR (Fondo Nacional de Desarrollo Regional)?
 - CQ-062: ¿Qué es el FRIL (Fondo Regional de Iniciativa Local)?
 - CQ-063: ¿Qué es el FRPD (Fondo Regional para la Productividad y el Desarrollo)?
@@ -110,7 +110,7 @@ lang: es
 - CQ-069: ¿Qué es la Glosa 12 (FRIL)?
 - CQ-070: ¿Qué es la Glosa 13 (FRPD)?
 
-## Relacionales
+### Relacionales
 - CQ-071: ¿Qué relación existe entre tipo de IPR y mecanismo de financiamiento aplicable?
 - CQ-072: ¿Qué relación tiene el FNDR con la Ley de Presupuestos?
 - CQ-073: ¿Qué entidades pueden acceder al FRIL?
@@ -119,13 +119,13 @@ lang: es
 - CQ-076: ¿Qué glosa aplica para transferencias a municipios?
 - CQ-077: ¿Qué glosa aplica para transferencias a privados sin fines de lucro?
 
-## Temporales
+### Temporales
 - CQ-078: ¿Cuál es el calendario presupuestario anual del FNDR?
 - CQ-079: ¿Cuándo se realizan los llamados FRIL en el año?
 - CQ-080: ¿Cuándo se realiza el concurso FRPD?
 - CQ-081: ¿Cuándo se realiza el concurso 8%?
 
-## Agregación
+### Agregación
 - CQ-082: ¿Cuál es el presupuesto total FNDR de Ñuble para el año vigente?
 - CQ-083: ¿Cuál es el monto disponible para FRIL en el año vigente?
 - CQ-084: ¿Cuál es el monto disponible para FRPD en el año vigente?
@@ -136,7 +136,7 @@ lang: es
 
 ## 04 Evaluación
 
-## Existenciales
+### Existenciales
 - CQ-089: ¿Qué es el SNI (Sistema Nacional de Inversiones)?
 - CQ-090: ¿Qué es el BIP (Banco Integrado de Proyectos)?
 - CQ-091: ¿Qué es un RATE (Resultado de Análisis Técnico-Económico)?
@@ -150,7 +150,7 @@ lang: es
 - CQ-099: ¿Qué es la evaluación de Pertinencia?
 - CQ-100: ¿Qué es la evaluación Técnico-Económica?
 
-## Relacionales
+### Relacionales
 - CQ-101: ¿Qué organismo realiza la evaluación SNI (MDSF)?
 - CQ-102: ¿Qué organismo realiza la evaluación de programas (DIPRES/SES)?
 - CQ-103: ¿Qué unidad GORE realiza la evaluación FRIL?
@@ -159,14 +159,14 @@ lang: es
 - CQ-106: ¿Qué relación existe entre nivel de proporcionalidad y profundidad de análisis?
 - CQ-107: ¿Qué track de evaluación aplica según tipo de IPR?
 
-## Temporales
+### Temporales
 - CQ-108: ¿Cuál es el plazo de MDSF para evaluación de admisibilidad?
 - CQ-109: ¿Cuál es el plazo de MDSF para análisis técnico-económico?
 - CQ-110: ¿Cuál es el plazo para subsanar observaciones FI/OT?
 - CQ-111: ¿Cuál es el plazo del GORE para emitir RATE FRIL?
 - CQ-112: ¿Cuál es la vigencia de un RS?
 
-## Agregación
+### Agregación
 - CQ-113: ¿Cuántos tracks de evaluación existen según tipo de IPR?
 - CQ-114: ¿Cuántos niveles de proporcionalidad define MDSF?
 - CQ-115: ¿Cuántas metodologías sectoriales de evaluación existen?
@@ -176,7 +176,7 @@ lang: es
 
 ## 05 Aprobación
 
-## Existenciales
+### Existenciales
 - CQ-119: ¿Qué es el proceso de priorización de IPR?
 - CQ-120: ¿Qué es un Acuerdo CORE?
 - CQ-121: ¿Qué es una Resolución Exenta?
@@ -184,7 +184,7 @@ lang: es
 - CQ-123: ¿Qué es el umbral de 7.000 UTM?
 - CQ-124: ¿Qué es la Toma de Razón de CGR?
 
-## Relacionales
+### Relacionales
 - CQ-125: ¿Qué instancia aprueba IPR >7.000 UTM?
 - CQ-126: ¿Qué instancia aprueba IPR ≤7.000 UTM?
 - CQ-127: ¿Qué unidad emite el CDP?
@@ -192,12 +192,12 @@ lang: es
 - CQ-129: ¿Qué IPR requieren Toma de Razón de CGR?
 - CQ-130: ¿Qué criterios de priorización aplica el CDR?
 
-## Temporales
+### Temporales
 - CQ-131: ¿Cuándo sesiona el CORE para aprobar IPR?
 - CQ-132: ¿Cuál es el plazo de CGR para Toma de Razón?
 - CQ-133: ¿Cuál es el plazo entre aprobación CORE y emisión de Resolución?
 
-## Agregación
+### Agregación
 - CQ-134: ¿Cuántas IPR fueron aprobadas por el CORE en el año vigente?
 - CQ-135: ¿Cuál es el monto total aprobado por el CORE?
 - CQ-136: ¿Cuántas IPR fueron aprobadas por delegación del Gobernador?
@@ -208,26 +208,26 @@ lang: es
 
 ## 06 Convenios
 
-## Existenciales
+### Existenciales
 - CQ-141: ¿Qué es un Convenio de Transferencia?
 - CQ-142: ¿Qué es un Convenio Mandato?
 - CQ-143: ¿Qué es una Transferencia Corriente (Subtítulo 24)?
 - CQ-144: ¿Qué es una Transferencia de Capital (Subtítulo 33)?
 - CQ-145: ¿Qué es una garantía de fiel cumplimiento?
 
-## Relacionales
+### Relacionales
 - CQ-146: ¿Qué entidades pueden ser receptoras de transferencias?
 - CQ-147: ¿Qué relación existe entre tipo de convenio y tipo de entidad receptora?
 - CQ-148: ¿Qué división GORE gestiona los convenios?
 - CQ-149: ¿Qué relación tiene el convenio con la Resolución aprobatoria?
 - CQ-150: ¿Qué condiciones activan la exigencia de garantía?
 
-## Temporales
+### Temporales
 - CQ-151: ¿Cuál es el plazo para firma del convenio tras aprobación?
 - CQ-152: ¿Cuál es el plazo para primera transferencia tras firma?
 - CQ-153: ¿Cuál es la vigencia típica de un convenio?
 
-## Agregación
+### Agregación
 - CQ-154: ¿Cuántos convenios vigentes tiene el GORE?
 - CQ-155: ¿Cuál es el monto total transferido en el año?
 - CQ-156: ¿Cuántas entidades tienen convenio vigente con el GORE?
@@ -238,7 +238,7 @@ lang: es
 
 ## 07 Ejecución
 
-## Existenciales
+### Existenciales
 - CQ-161: ¿Qué es el seguimiento de una IPR?
 - CQ-162: ¿Qué es un informe de avance?
 - CQ-163: ¿Qué es el avance físico de un proyecto?
@@ -246,20 +246,20 @@ lang: es
 - CQ-165: ¿Qué es un ITO (Inspector Técnico de Obra)?
 - CQ-166: ¿Qué es una modificación de proyecto?
 
-## Relacionales
+### Relacionales
 - CQ-167: ¿Qué unidad GORE realiza el seguimiento de IPR?
 - CQ-168: ¿Qué relación existe entre ejecutor e informes de avance?
 - CQ-169: ¿Qué tipos de modificaciones requieren aprobación CORE?
 - CQ-170: ¿Qué rol cumple el ITO en el seguimiento?
 - CQ-171: ¿Qué acciones se derivan de un incumplimiento de hitos?
 
-## Temporales
+### Temporales
 - CQ-172: ¿Con qué periodicidad se entregan informes de avance?
 - CQ-173: ¿Cuál es el plazo máximo de ejecución de un proyecto FRIL?
 - CQ-174: ¿Cuál es el plazo máximo de ejecución de una iniciativa FRPD?
 - CQ-175: ¿Cuál es el plazo de ejecución de una iniciativa 8%?
 
-## Agregación
+### Agregación
 - CQ-176: ¿Cuántas IPR están en ejecución actualmente?
 - CQ-177: ¿Cuál es el porcentaje promedio de avance físico de IPR en ejecución?
 - CQ-178: ¿Cuántas IPR presentan retrasos en su ejecución?
@@ -270,25 +270,25 @@ lang: es
 
 ## 08 Rendición
 
-## Existenciales
+### Existenciales
 - CQ-183: ¿Qué es el SISREC (Sistema de Rendición Electrónica de Cuentas)?
 - CQ-184: ¿Qué es una rendición de cuentas?
 - CQ-185: ¿Qué es la Resolución N°30 de CGR?
 - CQ-186: ¿Qué es un reparo de rendición?
 - CQ-187: ¿Qué es el cierre administrativo de una IPR?
 
-## Relacionales
+### Relacionales
 - CQ-188: ¿Qué entidades deben rendir cuentas al GORE?
 - CQ-189: ¿Qué unidad GORE revisa las rendiciones?
 - CQ-190: ¿Qué relación existe entre rendición y cierre de convenio?
 - CQ-191: ¿Qué acciones se derivan de rendiciones pendientes?
 
-## Temporales
+### Temporales
 - CQ-192: ¿Cuál es el plazo para rendir cuentas tras término de ejecución?
 - CQ-193: ¿Cuál es el plazo para subsanar reparos de rendición?
 - CQ-194: ¿Con qué periodicidad se rinden cuentas parciales?
 
-## Agregación
+### Agregación
 - CQ-195: ¿Cuántas rendiciones pendientes existen con el GORE?
 - CQ-196: ¿Cuál es el monto total de rendiciones pendientes?
 - CQ-197: ¿Cuántas entidades tienen rendiciones pendientes?
@@ -298,7 +298,7 @@ lang: es
 
 ## 09 Normativo
 
-## Existenciales
+### Existenciales
 - CQ-201: ¿Qué es la LOC GORE (Ley 19.175)?
 - CQ-202: ¿Qué es la Ley de Presupuestos (21.796)?
 - CQ-203: ¿Qué es el DL 1.263 (Administración Financiera del Estado)?
@@ -308,7 +308,7 @@ lang: es
 - CQ-207: ¿Qué es la Resolución N°30 de CGR?
 - CQ-208: ¿Qué es la Ley 19.862 (Registro de Colaboradores del Estado)?
 
-## Relacionales
+### Relacionales
 - CQ-209: ¿Qué leyes regulan las atribuciones del GORE?
 - CQ-210: ¿Qué normas regulan la evaluación de proyectos SNI?
 - CQ-211: ¿Qué normas regulan las transferencias a terceros?
@@ -318,12 +318,12 @@ lang: es
 - CQ-215: ¿Qué normas regulan el FRIL?
 - CQ-216: ¿Qué normas regulan el FRPD?
 
-## Temporales
+### Temporales
 - CQ-217: ¿Cuál es la vigencia de la Ley de Presupuestos?
 - CQ-218: ¿Cuándo fue promulgada la LOC GORE?
 - CQ-219: ¿Cuándo fue emitido el Oficio Circular N°33?
 
-## Agregación
+### Agregación
 - CQ-220: ¿Cuántas leyes principales regulan el funcionamiento del GORE?
 - CQ-221: ¿Cuántas resoluciones CGR aplican a transferencias?
 - CQ-222: ¿Cuántos oficios circulares de Hacienda aplican al GORE?
@@ -333,7 +333,7 @@ lang: es
 
 ## 10 TDE
 
-## Existenciales
+### Existenciales
 - CQ-226: ¿Qué es la TDE (Transformación Digital del Estado)?
 - CQ-227: ¿Qué es la Ley de TDE (21.180)?
 - CQ-228: ¿Qué es un documento electrónico oficial?
@@ -343,7 +343,7 @@ lang: es
 - CQ-232: ¿Qué es Clave Única?
 - CQ-233: ¿Qué es el expediente electrónico?
 
-## Relacionales
+### Relacionales
 - CQ-234: ¿Qué relación tiene TDE con los procedimientos administrativos?
 - CQ-235: ¿Qué organismos están obligados a implementar TDE?
 - CQ-236: ¿Qué relación existe entre GESDOC y el BIP?
@@ -351,12 +351,12 @@ lang: es
 - CQ-238: ¿Qué plataformas digitales administra el GORE Ñuble?
 - CQ-239: ¿Qué relación tiene la FEA con la validez de documentos GORE?
 
-## Temporales
+### Temporales
 - CQ-240: ¿Cuándo entró en vigencia la Ley TDE para GORE?
 - CQ-241: ¿Cuáles son las etapas de implementación de TDE en GORE?
 - CQ-242: ¿Cuándo debe estar completada la digitalización de trámites GORE?
 
-## Agregación
+### Agregación
 - CQ-243: ¿Cuántos trámites GORE están digitalizados?
 - CQ-244: ¿Cuántos usuarios utilizan GESDOC en el GORE?
 - CQ-245: ¿Cuántos documentos electrónicos fueron procesados en el año?
@@ -367,7 +367,7 @@ lang: es
 
 ## 11 Gestión Operacional IPR
 
-## Existenciales
+### Existenciales
 - CQ-250: ¿Qué es una IPR según la guía operacional?
 - CQ-251: ¿Qué es un IDI (Iniciativa de Inversión) en contexto GORE?
 - CQ-252: ¿Qué significa el estado PRE-ADMISIBLE CDR?
@@ -379,7 +379,7 @@ lang: es
 - CQ-258: ¿Qué es un RATE y cuáles son sus valores posibles (RS, FI, OT)?
 - CQ-259: ¿Qué significa el estado NV (No Vigente)?
 
-## Relacionales
+### Relacionales
 - CQ-260: ¿Quién preside el Comité Directivo Regional (CDR)?
 - CQ-261: ¿Qué relación existe entre la DIPIR y el proceso de evaluación técnica?
 - CQ-262: ¿Qué unidad debe emitir el CDP para una IPR?
@@ -389,21 +389,21 @@ lang: es
 - CQ-266: ¿Qué relación existe entre el CORE y la aprobación de IPR >7.000 UTM?
 - CQ-267: ¿Qué entidad emite la RS para proyectos que ingresan al SNI?
 
-## Temporales
+### Temporales
 - CQ-268: ¿Cuál es el plazo orientativo de MDSF para evaluación de admisibilidad (Track A)?
 - CQ-269: ¿Cuál es el plazo orientativo para el Análisis Técnico-Económico de MDSF?
 - CQ-270: ¿Cuál es el plazo máximo para subsanar observaciones FI/OT en SNI?
 - CQ-271: ¿Cuánto tiempo tiene el GORE para emitir el primer RATE en FRIL?
 - CQ-272: ¿Cuánto tiempo dispone un formulador para enviar el Diseño tras aprobación de Perfil (PPR)?
 
-## Agregación
+### Agregación
 - CQ-273: ¿Cuántas fases tiene el proceso end-to-end de gestión de IPR?
 - CQ-274: ¿Cuántos tracks de evaluación técnica existen según el tipo de IPR?
 - CQ-275: ¿Cuántas etapas contempla la Fase 1 (Ingreso y Admisibilidad)?
 
 ## 12 Selector Vías Financiamiento
 
-## Existenciales
+### Existenciales
 - CQ-276: ¿Qué es el FNDR según el selector?
 - CQ-277: ¿Qué es el FRPD según el selector?
 - CQ-278: ¿Qué es el SNI según el selector?
@@ -415,7 +415,7 @@ lang: es
 - CQ-284: ¿Qué es la Glosa 12 (FRIL)?
 - CQ-285: ¿Qué es la Glosa 13 (FRPD)?
 
-## Relacionales
+### Relacionales
 - CQ-286: ¿Qué relación existe entre tipo de IPR (Proyecto vs Programa) y vía de financiamiento?
 - CQ-287: ¿Qué mecanismo aplica cuando el ejecutor es una Municipalidad para proyectos <5.000 UTM?
 - CQ-288: ¿Qué evaluador corresponde para programas de ejecución directa GORE (Glosa 06)?
@@ -423,19 +423,19 @@ lang: es
 - CQ-290: ¿Qué restricción de probidad vincula a los postulantes FRPD con autoridades GORE?
 - CQ-291: ¿Qué dependencia normativa tiene FRIL respecto de SUBDERE?
 
-## Temporales
+### Temporales
 - CQ-292: ¿Cuál es el período de vigencia de un RS FRIL?
 - CQ-293: ¿Cuántos días tiene el municipio desde la firma del convenio FRIL para licitar?
 - CQ-294: ¿Cuál es el plazo de ejecución máximo permitido para iniciativas FRPD?
 
-## Agregación
+### Agregación
 - CQ-295: ¿Cuántos mecanismos de financiamiento principales existen para IPR Proyecto?
 - CQ-296: ¿Cuántas categorías de instituciones están habilitadas para postular al FRPD?
 - CQ-297: ¿Cuántos fondos temáticos componen el Concurso 8%?
 
 ## 13 Guía IDI SNI
 
-## Existenciales
+### Existenciales
 - CQ-298: ¿Qué es el Principio de Proporcionalidad en el SNI?
 - CQ-299: ¿Qué es la Situación Base Optimizada?
 - CQ-300: ¿Qué es el VAN social?
@@ -449,7 +449,7 @@ lang: es
 - CQ-308: ¿Qué es el BIPS (Banco Integrado de Programas Sociales)?
 - CQ-309: ¿Qué es la Metodología de Marco Lógico (MML)?
 
-## Relacionales
+### Relacionales
 - CQ-310: ¿Qué relación existe entre nivel de proporcionalidad (0-3) y profundidad del análisis SNI?
 - CQ-311: ¿Qué actores institucionales participan en el ciclo SNI (MDSF, DIPRES, GORE)?
 - CQ-312: ¿Qué relación tiene la Situación Sin Proyecto con la Situación Con Proyecto?
@@ -458,19 +458,19 @@ lang: es
 - CQ-315: ¿Qué subsistemas componen el SNI?
 - CQ-316: ¿Qué relación existe entre Análisis Costo-Beneficio (ACB) y Análisis Costo-Eficiencia (ACE)?
 
-## Temporales
+### Temporales
 - CQ-317: ¿Cuáles son las etapas de preinversión de una IDI?
 - CQ-318: ¿Cuáles son las fases principales del ciclo de vida de una IDI?
 - CQ-319: ¿En qué momento del ciclo se realiza la evaluación ex post?
 
-## Agregación
+### Agregación
 - CQ-320: ¿Cuántos niveles de profundidad de evaluación define el MDSF?
 - CQ-321: ¿Cuántos tipos de IDI existen según clasificación presupuestaria Subtítulo 31?
 - CQ-322: ¿Cuántos subsistemas tiene el SNI?
 
 ## 14 PPR Ejecución Directa
 
-## Existenciales
+### Existenciales
 - CQ-323: ¿Qué un PPR de Ejecución Directa GORE?
 - CQ-324: ¿Qué es el Formulario de Perfil de un PPR?
 - CQ-325: ¿Qué es el Formulario de Diseño de un PPR?
@@ -481,7 +481,7 @@ lang: es
 - CQ-330: ¿Qué es un componente de programa?
 - CQ-331: ¿Qué es un indicador SMART?
 
-## Relacionales
+### Relacionales
 - CQ-332: ¿Qué relación tiene DIPRES/SES con la evaluación ex ante de PPR?
 - CQ-333: ¿Cómo se vincula el problema central con los componentes del programa?
 - CQ-334: ¿Qué relación existe entre árbol de problemas y árbol de objetivos?
@@ -489,19 +489,19 @@ lang: es
 - CQ-336: ¿Qué rol cumple la División GORE patrocinante en un PPR?
 - CQ-337: ¿Cómo se relacionan los indicadores SMART con el monitoreo del programa?
 
-## Temporales
+### Temporales
 - CQ-338: ¿Cuáles son las fases del ciclo de vida de un PPR?
 - CQ-339: ¿Cuál es el plazo para enviar el Diseño tras notificación de DIPRES/SES?
 - CQ-340: ¿Cuál es el plazo para corregir y reenviar tras retroalimentación?
 
-## Agregación
+### Agregación
 - CQ-341: ¿Cuántas fases tiene el proceso bifásico de evaluación ex ante (Perfil + Diseño)?
 - CQ-342: ¿Cuántos principios rectores de formulación se definen para PPR?
 - CQ-343: ¿Cuántas dimensiones de indicadores de desempeño existen?
 
 ## 15 FRIL
 
-## Existenciales
+### Existenciales
 - CQ-344: ¿Qué es el FRIL (Fondo Regional de Iniciativa Local)?
 - CQ-345: ¿Qué es un BNUP (Bien Nacional de Uso Público)?
 - CQ-346: ¿Qué es un ITO (Inspector Técnico de Obra)?
@@ -511,7 +511,7 @@ lang: es
 - CQ-350: ¿Qué significa el estado NV (No Vigente) en FRIL?
 - CQ-351: ¿Qué significa el estado IN (Incumplimiento de Normativa)?
 
-## Relacionales
+### Relacionales
 - CQ-352: ¿Qué relación existe entre monto máximo FRIL y el tope regional de Ñuble (4.545 UTM)?
 - CQ-353: ¿Qué servicio emite el certificado de pertinencia técnica para proyectos deportivos formativos?
 - CQ-354: ¿Qué servicio emite el certificado de pertinencia para infraestructura de salud?
@@ -519,14 +519,14 @@ lang: es
 - CQ-356: ¿Qué vinculación debe declarar el proyecto FRIL con la ERD y el PLADECO?
 - CQ-357: ¿Qué restricciones de terreno aplican para proyectos en predios privados bajo Ley Indígena?
 
-## Temporales
+### Temporales
 - CQ-358: ¿Cuál es el plazo máximo del GORE para emitir el primer RATE FRIL?
 - CQ-359: ¿Cuál es el plazo para subsanar observaciones FI/OT en FRIL?
 - CQ-360: ¿Cuántos días tiene el municipio para presentar licitación tras firma del convenio?
 - CQ-361: ¿Cuándo se desarrolla el 1er Llamado FRIL 2025?
 - CQ-362: ¿Cuándo se desarrolla el 2do Llamado FRIL 2025?
 
-## Agregación
+### Agregación
 - CQ-363: ¿Cuál es el monto máximo por proyecto FRIL en la Región de Ñuble?
 - CQ-364: ¿Cuál es el monto mínimo por proyecto FRIL?
 - CQ-365: ¿Cuántas iniciativas puede postular cada comuna en período regular?
@@ -536,7 +536,7 @@ lang: es
 
 ## 16 FRPD
 
-## Existenciales
+### Existenciales
 - CQ-369: ¿Qué es el FRPD (Fondo Regional para la Productividad y el Desarrollo)?
 - CQ-370: ¿Qué es la exención de evaluación ex ante para iniciativas CTCI?
 - CQ-371: ¿Qué significa Caso 1 – Innovación, CTCI en bifurcación post-selección?
@@ -545,7 +545,7 @@ lang: es
 - CQ-374: ¿Qué tipos de investigación reconoce el FRPD (básica, aplicada, desarrollo experimental)?
 - CQ-375: ¿Qué tipos de innovación financia el FRPD?
 
-## Relacionales
+### Relacionales
 - CQ-376: ¿Qué instituciones están habilitadas para postular al FRPD según SUBCTCI?
 - CQ-377: ¿Qué relación tiene el FRPD con la Ley de Royalty Minero (21.591)?
 - CQ-378: ¿Qué vinculación estratégica debe tener una iniciativa FRPD con ERD y ER-CTCI?
@@ -553,12 +553,12 @@ lang: es
 - CQ-380: ¿Qué prohibiciones de parentesco aplican a postulantes FRPD respecto del Gobernador y CORE?
 - CQ-381: ¿Qué relación tiene CORFO/ANID con transferencias directas FRPD?
 
-## Temporales
+### Temporales
 - CQ-382: ¿Cuál es el plazo máximo de ejecución de una iniciativa FRPD?
 - CQ-383: ¿Cuál es el plazo para formular consultas tras publicación del concurso FRPD?
 - CQ-384: ¿Cuál es el plazo máximo de respuesta a consultas FRPD?
 
-## Agregación
+### Agregación
 - CQ-385: ¿Cuántos sectores prioritarios define el concurso FRPD 2025?
 - CQ-386: ¿Cuántos focos prioritarios contempla el concurso FRPD?
 - CQ-387: ¿Cuál es el quórum mínimo de la Comisión Evaluadora FRPD?
@@ -569,7 +569,7 @@ lang: es
 
 ## 17 Transferencia PPR
 
-## Existenciales
+### Existenciales
 - CQ-392: ¿Qué es un PPR Transferible a entidad pública?
 - CQ-393: ¿Qué es el ITF (Informe Técnico Favorable) interno del GORE?
 - CQ-394: ¿Qué diferencia hay entre ITF y RATE RS?
@@ -577,25 +577,25 @@ lang: es
 - CQ-396: ¿Qué entidades pueden ser receptoras de transferencias PPR?
 - CQ-397: ¿Qué significa la exención de evaluación central (DIPRES/SES) para transferencias a entidades públicas?
 
-## Relacionales
+### Relacionales
 - CQ-398: ¿Qué relación tiene la Glosa 06 letra c con la exención de evaluación ex ante?
 - CQ-399: ¿Qué proceso reemplaza la evaluación Circular 22 para PPR transferidos?
 - CQ-400: ¿Qué división GORE debe emitir el Certificado de Pertinencia y Patrocinio?
 - CQ-401: ¿Qué relación existe entre DAE y la evaluación técnica de diseño de PPR transferidos?
 - CQ-402: ¿Qué vinculación debe existir entre el objeto social de la entidad postulante y el programa?
 
-## Temporales
+### Temporales
 - CQ-403: ¿Cuál es la fecha límite para postular PPR a financiamiento 2026?
 - CQ-404: ¿Qué ocurre con propuestas ingresadas post-fecha límite si son recomendadas favorablemente?
 
-## Agregación
+### Agregación
 - CQ-405: ¿Cuál es el porcentaje máximo de la transferencia para contratación de personal a honorarios?
 - CQ-406: ¿Cuál es el porcentaje máximo para gastos de administración del GORE?
 - CQ-407: ¿Cuántos documentos mínimos se requieren para postular un PPR transferible?
 
 ## 18 Concurso 8 Porciento
 
-## Existenciales
+### Existenciales
 - CQ-408: ¿Qué es el Concurso Vinculación con la Comunidad 8%?
 - CQ-409: ¿Qué son las subvenciones FNDR 8%?
 - CQ-410: ¿Qué es el Fondo de Cultura del Concurso 8%?
@@ -608,7 +608,7 @@ lang: es
 - CQ-417: ¿Qué son las Residencias Mejor Niñez y cómo se financian?
 - CQ-418: ¿Qué es el CIES (Centro Integral de Emergencia y Seguridad)?
 
-## Relacionales
+### Relacionales
 - CQ-419: ¿Qué relación existe entre antigüedad de la organización (2 años) y elegibilidad?
 - CQ-420: ¿Qué restricción de postulación múltiple aplica a organizaciones privadas sin fines de lucro?
 - CQ-421: ¿Qué excepciones permiten presentar más de una iniciativa?
@@ -616,12 +616,12 @@ lang: es
 - CQ-423: ¿Qué servicio gestiona el Fondo de Seguridad Ciudadana?
 - CQ-424: ¿Qué obligación de entrega aplica para iniciativas de edición de libros/discos/videos?
 
-## Temporales
+### Temporales
 - CQ-425: ¿Cuál es el plazo general de ejecución de iniciativas 8%?
 - CQ-426: ¿Con cuánta anticipación debe coordinarse la invitación a actos de inicio/cierre?
 - CQ-427: ¿Hasta qué fecha está abierta la postulación para representación y creación de libros (Cultura)?
 
-## Agregación
+### Agregación
 - CQ-428: ¿Cuál es el monto total disponible para instituciones privadas en el Concurso 8% 2025?
 - CQ-429: ¿Cuál es el monto asignado al Fondo de Seguridad Ciudadana (privados)?
 - CQ-430: ¿Cuál es el monto asignado al Fondo de Deporte (privados)?
@@ -632,7 +632,7 @@ lang: es
 
 ## 19 Circular 33
 
-## Existenciales
+### Existenciales
 - CQ-435: ¿Qué es el Oficio Circular 33 del Ministerio de Hacienda?
 - CQ-436: ¿Qué son los Estudios Propios del Giro bajo C33?
 - CQ-437: ¿Qué son los ANF (Activos No Financieros) bajo C33?
@@ -644,7 +644,7 @@ lang: es
 - CQ-443: ¿Qué es el software MANVU SIMP y cuándo se usa?
 - CQ-444: ¿Qué es el Certificado de Conservación 30% (Anexo 4B)?
 
-## Relacionales
+### Relacionales
 - CQ-445: ¿Qué relación existe entre subtítulo 22 y estudios propios del giro?
 - CQ-446: ¿Qué relación tiene el subtítulo 29 con la adquisición de ANF?
 - CQ-447: ¿Qué organismo autoriza la creación del subtítulo 22 para estudios del GORE?
@@ -653,12 +653,12 @@ lang: es
 - CQ-450: ¿Qué vinculación debe declarar el proyecto C33 con la ERD y PLADECO?
 - CQ-451: ¿Qué relación tiene la fase de Reconstrucción con el SNI?
 
-## Temporales
+### Temporales
 - CQ-452: ¿Cuál es la antigüedad máxima permitida para el Certificado de Dominio Vigente?
 - CQ-453: ¿Cuál es la antigüedad máxima para el Certificado de Avalúo Fiscal?
 - CQ-454: ¿Cuál es la antigüedad máxima para cotizaciones?
 
-## Agregación
+### Agregación
 - CQ-455: ¿Cuál es el porcentaje mínimo de aporte propio para ANF (financiamiento compartido)?
 - CQ-456: ¿Cuál es el porcentaje máximo del proyecto que puede destinarse a equipamiento (conservación)?
 - CQ-457: ¿Cuál es el límite de gastos administrativos sobre el valor total del proyecto C33?
@@ -668,20 +668,20 @@ lang: es
 
 ## 20 Umbrales Transversal
 
-## Existenciales
+### Existenciales
 - CQ-461: ¿Qué es el umbral de 5.000 UTM para exención de RS?
 - CQ-462: ¿Qué es el umbral de 7.000 UTM para aprobación obligatoria CORE?
 - CQ-463: ¿Qué es el umbral de 1.000 UTM para garantías en transferencias a privados?
 
-## Relacionales
+### Relacionales
 - CQ-464: ¿Qué relación existe entre monto del proyecto y requisito de Toma de Razón CGR?
 - CQ-465: ¿Qué relación tiene el umbral de 5.000 UTM con FRIL y proyectos municipales?
 - CQ-466: ¿Qué relación tiene la Glosa 03 con las prohibiciones de uso de recursos FNDR?
 
-## Temporales
+### Temporales
 - CQ-472: ¿Cuál es la fecha de actualización del valor UTM usado como referencia para umbrales?
 
-## Agregación
+### Agregación
 - CQ-467: ¿Cuál es el tope de 5% para gastos de administración en Glosa 06?
 - CQ-468: ¿Cuál es el tope de 5% para contratación de personal a honorarios en transferencias?
 - CQ-469: ¿Cuál es el tope de 10% para ANF sobre costo total de proyecto FRIL?

@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:visionario-cm-arquitecto-erd:2.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Mapear objetivos estrategicos ERD a acciones concretas.
 
@@ -13,7 +13,7 @@ Mapear objetivos estrategicos ERD a acciones concretas.
 - **Input:** Consulta sobre ERD, ejes, lineamientos, objetivos estrategicos
 - **Output:** Ruta de accion con Quick Wins y proyectos emblematicos alineados a ERD
 
-## Procedure
+## Procedimiento
 
 ESTRUCTURA ERD 2024-2030:
 - EJE 1: Territorio y Medio Ambiente

@@ -124,7 +124,7 @@ lang: es
 
 
 ### Reglas Específicas Documentales
-- **Oficio Conductor:** Dirigido a Gobernador. Alineación ERD Ñuble 2022-2030 y PLADECO (si aplica).
+- **Oficio Conductor:** Dirigido a Gobernador. Alineación ERD Ñuble 2024-2030 y PLADECO (si aplica).
 - **Ficha IDI:** Etapa "Ejecución". Montos exactos presupuesto. Código BIP vigente.
 - **Cotizaciones:** 3 mínimo. Proveedor único requiere informe fundado.
 - **Certificado Pertinencia:** Emitido por servicio competente (IND, SEREMI Salud, SEREMI Educación, Vialidad, SERVIU, DOH).

@@ -36,14 +36,10 @@ lang: en
 - Category finitely presented S (objects=entities, morfismos=relations/attributes, equations=path constraints).
 
 
-- **Instance**:
-- Funtor I:
-- S → Set assigning sets of rows and functions.
+- **Instance**: Funtor I: S → Set assigning sets of rows and functions.
 
 
-- **Migration**:
-- Operators Δ/Σ/Π induced by schema funtor F:
-- S → T.
+- **Migration**: Operators Δ/Σ/Π induced by schema funtor F: S → T.
 
 
 - **Use**:
@@ -52,14 +48,10 @@ lang: en
 
 ### 2. System Dynamics: Lenses and Coalgebras
 
-- **Lens**:
-- Pair (update:
-- S×I→S, expose:
-- S→O) modeling systems with internal state and external view.
+- **Lens**: Pair (update: S×I→S, expose: S→O) modeling systems with internal state and external view.
 
 
-- **Coalgebra**: c:
-- U → F(U) models observable behavior given interface funtor F.
+- **Coalgebra**: c: U → F(U) models observable behavior given interface funtor F.
 
 
 - **Bisimulation**:

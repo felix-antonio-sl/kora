@@ -29,78 +29,37 @@ lang: en
 
 ### Categorical Schema
 
-- **Definition**:
-- C = (G, ~) where G is graph, ~ is categorical path equivalence on Path_G.
-
-
-- **Schema Category**:
-- Objects = vertices; morfismos = equivalence classes of paths; composition via path composition.
+- **Definition**: C = (G, ~) where G is graph, ~ is categorical path equivalence on Path_G.
+- **Schema Category**: Objects = vertices; morfismos = equivalence classes of paths; composition via path composition.
 
 
 ### Instance Functor
 
-- **Definition**:
-- I:
-- C → Set maps objects c to sets I(c), morfismos f to functions I(f).
-
-
-- **Property**:
-- Satisfies I(p)=I(q) whenever p ~ q.
-
-
-- **Example**:
-- Relational instance mapping schema to sets of records.
+- **Definition**: I: C → Set maps objects c to sets I(c), morfismos f to functions I(f).
+- **Property**: Satisfies I(p)=I(q) whenever p ~ q.
+- **Example**: Relational instance mapping schema to sets of records.
 
 
 ## Data Transformation as Kan Lift
 
-- **Definition**:
-- Given functors F:
-- A → C and G:
-- B → C, right Kan lift of F through G consists of funtor Rift_G F:
-- A → B and natural transformation ε:
-- G ∘ Rift_G F ⇒ F.
-
-
-- **Universal Property**:
-- For any (H:
-- A → B, η:
-- G ∘ H ⇒ F), exists unique natural transformation γ:
-- H ⇒ Rift_G F with η = ε ∘ (G ∘ γ).
-
-
-- **Application**:
-- Transformation from I1:
-- C1 → Set to I2:
-- C2 → Set is Kan lift (Rift_{I2} I1:
-- C1 → C2, ε:
-- I2 ∘ Rift_{I2} I1 ⇒ I1).
-
-
-- **Requirement**:
-- Rift_{I2} I1 is full funtor preserving necessary structure.
+- **Definition**: Given functors F: A → C and G: B → C, right Kan lift of F through G consists of funtor Rift_G F: A → B and natural transformation ε: G ∘ Rift_G F ⇒ F.
+- **Universal Property**: For any (H: A → B, η: G ∘ H ⇒ F), exists unique natural transformation γ: H ⇒ Rift_G F with η = ε ∘ (G ∘ γ).
+- **Application**: Transformation from I1: C1 → Set to I2: C2 → Set is Kan lift (Rift_{I2} I1: C1 → C2, ε: I2 ∘ Rift_{I2} I1 ⇒ I1).
+- **Requirement**: Rift_{I2} I1 is full funtor preserving necessary structure.
 
 
 ## Multi-Model Support
 
 ### Graph as Functor
 
-- Graph G represented as funtor G:
-- Gcal → Set where Gcal is two-object category.
-
-
-- **Mapping**:
-- G(0)=E (edges), G(1)=V (vertices), G(s)=src, G(t)=tgt.
+- Graph G represented as funtor G: Gcal → Set where Gcal is two-object category.
+- **Mapping**: G(0)=E (edges), G(1)=V (vertices), G(s)=src, G(t)=tgt.
 
 
 ### Tree as Functor
 
-- Tree T represented as funtor T:
-- Tcal → Set where Tcal is one-object category with parent morfismo.
-
-
-- **Mapping**:
-- Single object maps to nodes; parent morfismo maps to parent function.
+- Tree T represented as funtor T: Tcal → Set where Tcal is one-object category with parent morfismo.
+- **Mapping**: Single object maps to nodes; parent morfismo maps to parent function.
 
 
 ## Example Transformation
@@ -108,12 +67,8 @@ lang: en
 - Transformation from relational to property graph instance via Kan lift.
 
 
-- **Schema**:
-- Relational C1 with entities; property graph C2 with nodes/edges.
-
-
-- **Kan Lift**:
-- Creates full funtor mapping relational tuples to graph elements preserving structural properties.
+- **Schema**: Relational C1 with entities; property graph C2 with nodes/edges.
+- **Kan Lift**: Creates full funtor mapping relational tuples to graph elements preserving structural properties.
 
 
 ## Conclusions

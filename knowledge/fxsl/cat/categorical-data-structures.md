@@ -35,9 +35,7 @@ lang: en
 
 ### C-Set
 
-- **Definition**:
-- Given small schema category C, database is funtor X:
-- C → Set.
+- **Definition**: Given small schema category C, database is funtor X: C → Set.
 
 
 - For each object c in C, X(c) is set of instances (rows in table).
@@ -46,8 +44,7 @@ lang: en
 ### ACSet
 
 - **Extension of C-Set** to handle concrete data (numbers, strings).
-- ACSet is funtor X:
-- S → Set where attribute objects map to fixed data types (R, String, etc.).
+- ACSet is funtor X: S → Set where attribute objects map to fixed data types (R, String, etc.).
 
 
 - **Formalism**:
@@ -120,8 +117,7 @@ lang: en
 
 
 - **Categorical Modeling**:
-- Given funtor F:
-- C → D induces three adjoined operations on C-Sets (Δ_F, Σ_F, Π_F).
+- Given funtor F: C → D induces three adjoined operations on C-Sets (Δ_F, Σ_F, Π_F).
 - Gluing constructions.
 
 

@@ -476,7 +476,7 @@ lang: es
 - Gobernador Regional (máxima autoridad ejecutiva, preside CORE)
 - Consejo Regional (órgano colegiado normativo y fiscalizador)
 - Servicio Administrativo del GORE (liderado por Gobernador y Administrador Regional)
-- Divisiones técnicas: DAF, DIPLADE, DIPIR, DIDESOH, DIT, DIFOI
+- Divisiones técnicas: DAF, DIPLADE, DIPIR, DIDESO, DIT, DIFOI
 - Unidad de Control (auditoría interna)
 
 - **Instrumentos de Planificación Estratégica:**

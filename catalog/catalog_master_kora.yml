@@ -5,7 +5,187 @@ _manifest:
   description: Auto-generated Kora Monorepo Catalog
 Catalog:
   Agents: []
-  Skills: []
+  Skills:
+  - urn: urn:fxsl:skill:ontologista-gist-calibrador:1.0.0
+    title: CM-CALIBRADOR
+    file: agents/fxsl/ontologista-gist/skills/CM-CALIBRADOR.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-generador:1.0.0
+    title: CM-GENERADOR
+    file: agents/fxsl/ontologista-gist/skills/CM-GENERADOR.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-autocorrector:1.0.0
+    title: CM-AUTOCORRECTOR
+    file: agents/fxsl/ontologista-gist/skills/CM-AUTOCORRECTOR.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-analizador:1.0.0
+    title: CM-ANALIZADOR
+    file: agents/fxsl/ontologista-gist/skills/CM-ANALIZADOR.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-critico:1.0.0
+    title: CM-CRITICO
+    file: agents/fxsl/ontologista-gist/skills/CM-CRITICO.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-lean-thinking:1.0.0
+    title: CM-LEAN-THINKING
+    file: agents/gn/dgi-virtual/skills/CM-LEAN-THINKING.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-meyer-principles:1.0.0
+    title: CM-MEYER-PRINCIPLES
+    file: agents/gn/dgi-virtual/skills/CM-MEYER-PRINCIPLES.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-structure-principles:1.0.0
+    title: CM-STRUCTURE-PRINCIPLES
+    file: agents/gn/dgi-virtual/skills/CM-STRUCTURE-PRINCIPLES.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-dgi-intake:1.0.0
+    title: CM-DGI-INTAKE
+    file: agents/gn/dgi-virtual/skills/CM-DGI-INTAKE.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-catalog-resolver:1.0.0
+    title: CM-CATALOG-RESOLVER
+    file: agents/gn/dgi-virtual/skills/CM-CATALOG-RESOLVER.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-kb-guidance:1.0.0
+    title: CM-KB-GUIDANCE
+    file: agents/gn/dgi-virtual/skills/CM-KB-GUIDANCE.md
+    status: published
+  - urn: urn:gn:skill:goreologo-kb-guidance:1.0.0
+    title: CM-KB-GUIDANCE
+    file: agents/gn/goreologo/skills/CM-KB-GUIDANCE.md
+    status: published
+  - urn: urn:gn:skill:goreologo-synthesizer:1.0.0
+    title: CM-SYNTHESIZER
+    file: agents/gn/goreologo/skills/CM-SYNTHESIZER.md
+    status: published
+  - urn: urn:gn:skill:goreologo-domain-analyzer:1.0.0
+    title: CM-DOMAIN-ANALYZER
+    file: agents/gn/goreologo/skills/CM-DOMAIN-ANALYZER.md
+    status: published
+  - urn: urn:gn:skill:goreologo-intake:1.0.0
+    title: CM-INTAKE
+    file: agents/gn/goreologo/skills/CM-INTAKE.md
+    status: published
+  - urn: urn:kora:skill:transformer-task-classifier:1.0.0
+    title: CM-TASK-CLASSIFIER
+    file: agents/kora/transformer/skills/CM-TASK-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:transformer-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/transformer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:smith-guard-configurator:1.0.0
+    title: CM-GUARD-CONFIGURATOR
+    file: agents/kora/smith/skills/CM-GUARD-CONFIGURATOR.md
+    status: published
+  - urn: urn:kora:skill:smith-agent-builder:1.0.0
+    title: CM-AGENT-BUILDER
+    file: agents/kora/smith/skills/CM-AGENT-BUILDER.md
+    status: published
+  - urn: urn:kora:skill:smith-state-designer:1.0.0
+    title: CM-STATE-DESIGNER
+    file: agents/kora/smith/skills/CM-STATE-DESIGNER.md
+    status: published
+  - urn: urn:kora:skill:smith-project-classifier:1.0.0
+    title: CM-PROJECT-CLASSIFIER
+    file: agents/kora/smith/skills/CM-PROJECT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:smith-agent-validator:1.0.0
+    title: CM-AGENT-VALIDATOR
+    file: agents/kora/smith/skills/CM-AGENT-VALIDATOR.md
+    status: published
+  - urn: urn:kora:skill:smith-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/smith/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:smith-knowledge-mode-selector:1.0.0
+    title: CM-KNOWLEDGE-MODE-SELECTOR
+    file: agents/kora/smith/skills/CM-KNOWLEDGE-MODE-SELECTOR.md
+    status: published
+  - urn: urn:kora:skill:smith-cm-designer:1.0.0
+    title: CM-CM-DESIGNER
+    file: agents/kora/smith/skills/CM-CM-DESIGNER.md
+    status: published
+  - urn: urn:kora:skill:smith-ftcf-analyzer:1.0.0
+    title: CM-FTCF-ANALYZER
+    file: agents/kora/smith/skills/CM-FTCF-ANALYZER.md
+    status: published
+  - urn: urn:kora:skill:orquestador-generico-role-suggester:1.0.0
+    title: CM-ROLE-SUGGESTER
+    file: agents/kora/orquestador-generico/skills/CM-ROLE-SUGGESTER.md
+    status: published
+  - urn: urn:kora:skill:orquestador-generico-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/orquestador-generico/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:orquestador-generico-protocol-selector:1.0.0
+    title: CM-PROTOCOL-SELECTOR
+    file: agents/kora/orquestador-generico/skills/CM-PROTOCOL-SELECTOR.md
+    status: published
+  - urn: urn:kora:skill:orquestador-generico-result-aggregator:1.0.0
+    title: CM-RESULT-AGGREGATOR
+    file: agents/kora/orquestador-generico/skills/CM-RESULT-AGGREGATOR.md
+    status: published
+  - urn: urn:kora:skill:cartographer-project-classifier:1.0.0
+    title: CM-PROJECT-CLASSIFIER
+    file: agents/kora/cartographer/skills/CM-PROJECT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:cartographer-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/cartographer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:architect-koda-hub-operations:1.0.0
+    title: CM-KORA-HUB-OPERATIONS
+    file: agents/kora/architect/skills/CM-KORA-HUB-OPERATIONS.md
+    status: published
+  - urn: urn:kora:skill:architect-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/architect/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:architect-pedagogical-scaffolding:1.0.0
+    title: CM-PEDAGOGICAL-SCAFFOLDING
+    file: agents/kora/architect/skills/CM-PEDAGOGICAL-SCAFFOLDING.md
+    status: published
+  - urn: urn:kora:skill:architect-validation-engine:1.0.0
+    title: CM-VALIDATION-ENGINE
+    file: agents/kora/architect/skills/CM-VALIDATION-ENGINE.md
+    status: published
+  - urn: urn:kora:skill:architect-intent-analyzer:1.0.0
+    title: CM-INTENT-ANALYZER
+    file: agents/kora/architect/skills/CM-INTENT-ANALYZER.md
+    status: published
+  - urn: urn:kora:skill:guardian-fix-validator:1.0.0
+    title: CM-FIX-VALIDATOR
+    file: agents/kora/guardian/skills/CM-FIX-VALIDATOR.md
+    status: published
+  - urn: urn:kora:skill:guardian-improvement-generator:1.0.0
+    title: CM-IMPROVEMENT-GENERATOR
+    file: agents/kora/guardian/skills/CM-IMPROVEMENT-GENERATOR.md
+    status: published
+  - urn: urn:kora:skill:guardian-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/guardian/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:guardian-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/kora/guardian/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:guardian-principle-defender:1.0.0
+    title: CM-PRINCIPLE-DEFENDER
+    file: agents/kora/guardian/skills/CM-PRINCIPLE-DEFENDER.md
+    status: published
+  - urn: urn:kora:skill:guardian-knowledge-router:1.0.0
+    title: CM-KNOWLEDGE-ROUTER
+    file: agents/kora/guardian/skills/CM-KNOWLEDGE-ROUTER.md
+    status: published
+  - urn: urn:kora:skill:guardian-proposal-evaluator:1.0.0
+    title: CM-PROPOSAL-EVALUATOR
+    file: agents/kora/guardian/skills/CM-PROPOSAL-EVALUATOR.md
+    status: published
+  - urn: urn:kora:skill:guardian-pedagogical-adapter:1.0.0
+    title: CM-PEDAGOGICAL-ADAPTER
+    file: agents/kora/guardian/skills/CM-PEDAGOGICAL-ADAPTER.md
+    status: published
   Knowledge:
   - urn: urn:kora:kb:agent-spec-md
     title: KORA/Agent-Spec — Especificación Categórica de Agentes v5.0.0
@@ -1707,13 +1887,13 @@ Catalog:
     title: TOOLS.md
     file: agents/kora/architect/TOOLS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:architect-cm-koda-transform:1.0.0
-    title: CM-koda-transform.md
-    file: agents/kora/architect/skills/CM-koda-transform.md
+  - urn: urn:kora:agent-bootstrap:architect-cm-kora-transform:1.0.0
+    title: CM-kora-transform.md
+    file: agents/kora/architect/skills/CM-kora-transform.md
     status: published
-  - urn: urn:kora:agent-bootstrap:architect-cm-koda-agent-construct:1.0.0
-    title: CM-koda-agent-construct.md
-    file: agents/kora/architect/skills/CM-koda-agent-construct.md
+  - urn: urn:kora:agent-bootstrap:architect-cm-kora-agent-construct:1.0.0
+    title: CM-kora-agent-construct.md
+    file: agents/kora/architect/skills/CM-kora-agent-construct.md
     status: published
   - urn: urn:kora:agent-bootstrap:guardian-user:1.0.0
     title: USER.md

@@ -1,17 +1,17 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:architect-cm-koda-transform:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: "urn:kora:agent-bootstrap:architect-cm-kora-transform:1.0.0"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito
 
-Ejecutar las 4 fases de transformacion de documentos a formato KODA/Spec con metricas de calidad FS=100% y CR>1.0.
+Ejecutar las 4 fases de transformacion de documentos a formato KORA/Spec-MD con metricas de calidad FS=100% y CR>1.0.
 
 ## Input/Output
 
 - **Input:** Documento fuente (texto, PDF, markdown) desde S-TRANSFORMER
-- **Output:** Artefacto KODA validado con metricas FS (Fidelity Score) y CR (Compression Ratio)
+- **Output:** Artefacto KORA validado con metricas FS (Fidelity Score) y CR (Compression Ratio)
 
 ## Procedimiento
 

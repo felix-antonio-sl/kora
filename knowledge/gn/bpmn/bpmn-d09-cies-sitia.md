@@ -28,7 +28,7 @@ lang: es
 | **Criticidad** | 🟠 Alta |
 | **Responsable** | Supervisor CIES |
 | **Alcance** | 3 Procesos principales / ~8 Subprocesos |
-| **Referencia** | kb_gn_054_bpmn_c4_koda.yml (L.4142-4306) |
+| **Referencia** | urn:gn:kb:bpmn-index |
 
 ## Mapa General del Dominio
 
@@ -299,4 +299,4 @@ flowchart LR
 | Dominio Relacionado | Vínculo Operativo |
 | :--- | :--- |
 | D01 Actos Administrativos | Formalización de convenios GORE-Policiales |
-| D12 Gestión Territorial | Ubicación estratégica de puntos de monitoreo |
+| D10 Geoespacial/IDE | Ubicación estratégica de puntos de monitoreo (dominio geoespacial es D10; no existe D12) |

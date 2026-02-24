@@ -20,15 +20,10 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Spec, YAML, keywords, densidad | urn:kora:kb:spec |
-| Transform, 4 fases, telegrafizacion | urn:kora:kb:transform |
-| Hub, URNs, manifiestos, catalogo, federacion | urn:kora:kb:hub-federation |
-| Life, 5 fases, Git, deployment | urn:kora:kb:life |
-| Agent spec, 7 principios, namespaces, Guard Set | urn:kora:kb:agent |
-| Construir agentes, 5 fases, KB modes | urn:kora:kb:agent-construct |
-| Test, pruebas, seguridad, regresion | urn:kora:kb:test |
-| Schema versioning, migracion | urn:kora:kb:schema-versioning |
-| Quickstart, templates, primer agente | urn:kora:kb:quickstart |
-| JSON Schema, validacion | urn:kora:kb:agent-schema |
-| Skills, federation, symlinks | urn:kora:kb:skills-federation |
-| Federation, resolver, registry, cross-repo | urn:kora:kb:hub-federation |
+| Spec-MD, formato KORA/Spec-MD, prescriptivo, keywords, densidad | urn:kora:kb:spec-md |
+| MD-spec, formato KORA/MD, descriptivo, koraficacion, RAG | urn:kora:kb:md-spec |
+| Hub agentes, URNs, manifiestos, catalogo, federacion | urn:kora:kb:hub-agentes |
+| Agent spec, 7 principios, namespaces, Guard Set, F-coalgebra | urn:kora:kb:agent-spec-md |
+| Construir agentes, 5 fases, KB modes, FTCF, validacion | urn:kora:kb:agent-spec-md |
+| Workflow wikiguias, transformacion documentos, proceso editorial | urn:kora:kb:workflow-wikiguias |
+| Federation, resolver, registry, cross-repo | urn:kora:kb:hub-agentes |

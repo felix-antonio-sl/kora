@@ -88,7 +88,7 @@ lang: es
 
 *   **Obligatoriedad:** Inversiones TIC sobre umbral DIPRES requieren proceso EVALTIC.
 *   **Sincronización:** Presentación el año anterior según Guía Técnica EVALTIC.
-*   **Referencia:** `urn:gov:kb:evaltic` (Lineamientos de inversión y gasto digital).
+*   **Referencia:** `urn:tde:kb:evaltic` (Lineamientos de inversión y gasto digital).
 
 ## Fase 2: Planificación
 

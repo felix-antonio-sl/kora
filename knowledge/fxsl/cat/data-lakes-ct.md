@@ -21,20 +21,10 @@ lang: en
 
 ## Data Lake Category
 
-- **Definition**:
-- DL = category of high-level functionalities.
-
-
-- **Objects**:
-- Ingest, Storage, Maintenance, Exploration.
-
-
-- **Morphisms**:
-- Dependencies and data flows between functionalities.
-
-
-- **Use**:
-- Model DL as capability system, not just storage.
+- **Definition**: DL = category of high-level functionalities.
+- **Objects**: Ingest, Storage, Maintenance, Exploration.
+- **Morphisms**: Dependencies and data flows between functionalities.
+- **Use**: Model DL as capability system, not just storage.
 
 
 ## Data Lake Zones
@@ -47,23 +37,14 @@ lang: en
 - **Consumption**: Ready for dashboards/services.
 - **Sandbox**: Experimentation zone.
 
-- **Use**:
-- Design flows between zones with categorical significance.
+- **Use**: Design flows between zones with categorical significance.
 
 
 ## Zone Functor
 
-- **Definition**:
-- Z:
-- Zone → DL mapping each zone to DL functionalities.
-
-
-- **Requirement**:
-- Surjective in morfismos; every operation comes from some concrete zone.
-
-
-- **Use**:
-- Ensure architecture implements all abstract DL capabilities.
+- **Definition**: Z: Zone → DL mapping each zone to DL functionalities.
+- **Requirement**: Surjective in morfismos; every operation comes from some concrete zone.
+- **Use**: Ensure architecture implements all abstract DL capabilities.
 
 
 ## Grothendieck Construction
@@ -71,13 +52,8 @@ lang: en
 - **Definition**: ∫F flattens family of indexed schemas.
 
 
-- **Input**:
-- Funtor F:
-- I → Cat assigning schema S_i to each index i.
-
-
-- **Output**:
-- Integrated category ∫F with objects pairs (i, x) where x∈F(i).
+- **Input**: Funtor F: I → Cat assigning schema S_i to each index i.
+- **Output**: Integrated category ∫F with objects pairs (i, x) where x∈F(i).
 
 
 - **Procedure**:
@@ -87,9 +63,7 @@ lang: en
 3. For each f: i→j, define funtor F(f): F(i)→F(j).
 4. Construct ∫F: objects = (i,x); morfismos = (f:i→j, g:F(f)(x)→y).
 
-- **Example**:
-- Multi-tenant DL with I={tenant_A, tenant_B, tenant_C};
-- F(tenant)=schema; ∫F=global space.
+- **Example**: Multi-tenant DL with I={tenant_A, tenant_B, tenant_C}; F(tenant)=schema; ∫F=global space.
 
 
 ## Integration Patterns
@@ -99,8 +73,7 @@ lang: en
 - See N databases as single via ∫F.
 
 
-- **Method**:
-- Take I=set of databases, F(i)=schema DB_i; integrate via ∫F.
+- **Method**: Take I=set of databases, F(i)=schema DB_i; integrate via ∫F.
 
 
 ### Schema Evolution
@@ -108,10 +81,6 @@ lang: en
 - Handle schema changes over time.
 
 
-- **Method**:
-- I=temporal versions, F(v)=schema version v; ∫F navigates history.
-
-
-- **Use**:
-- Reason about migrations between schema versions categorically.
+- **Method**: I=temporal versions, F(v)=schema version v; ∫F navigates history.
+- **Use**: Reason about migrations between schema versions categorically.
 

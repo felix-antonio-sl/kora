@@ -116,7 +116,7 @@ lang: es
 | Adm. y Finanzas (DAF) | Alicia Contreras Vielma |
 | Presupuesto e Inversión (DIPIR) | Juan Parada González |
 | Planificación y Desarrollo (DIPLADE) | Erick Solo de Zaldivar |
-| Desarrollo Social (DIDESOH) | Tamara Valenzuela Fuentealba |
+| Desarrollo Social (DIDESO) | Tamara Valenzuela Fuentealba |
 | Fomento e Industria (DIFOI) | Raúl Súnico Galdames |
 | Infraestructura y Transportes (DIT) | Cristián Quiroz Reyes |
 | Comunicaciones | Antonieta Soto Trombert |
@@ -250,7 +250,7 @@ lang: es
 3.  **Presupuesto e Inversión (DIPIR):** Ejecución presupuesto inversión (FNDR), evaluación de iniciativas (IDI), convenios programación.
 4.  **Fomento e Industria (DIFOI):** Desarrollo productivo, ciencia, tecnología e innovación (CTCI).
 5.  **Infraestructura y Transportes (DIT):** Planificación y ejecución de obras, transporte regional.
-6.  **Desarrollo Social (DIDESOH):** Programas sociales, inclusión, deporte, cultura y salud.
+6.  **Desarrollo Social (DIDESO):** Programas sociales, inclusión, deporte, cultura y salud.
 7.  **Prevención del Delito (Opcional):** Coordinación preventiva, atención a víctimas (Foco no policial).
 
 ## Identidad y Participación

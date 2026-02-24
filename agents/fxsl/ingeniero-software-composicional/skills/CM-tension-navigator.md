@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:ingeniero-software-composicional-cm-tension-navigator:2.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito

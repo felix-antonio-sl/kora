@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:korvo:agent-bootstrap:korvo-assistant-cm-productivity-engine:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Purpose

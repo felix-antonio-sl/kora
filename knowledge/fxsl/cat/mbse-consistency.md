@@ -24,20 +24,17 @@ lang: en
 
 ### Catport
 
-- Atomic interface
-- category with single object (symbol) and identity morfismo.
+- Atomic interface; category with single object (symbol) and identity morfismo.
 
 
 ### Catconnection
 
-- Category whose objects are Catports
-- only identities as morfismos.
+- Category whose objects are Catports; only identities as morfismos.
 
 
 ### Catblock
 
-- Category with Catblocks, Catports, Catconnections as objects
-- morfismos describe composition/containment.
+- Category with Catblocks, Catports, Catconnections as objects; morfismos describe composition/containment.
 
 
 - **Conditions**:
@@ -48,44 +45,32 @@ lang: en
 
 ### Catmodel
 
-- Category with finite set of Catblocks, Catports, Catconnections
-- unique Catblock root R.
+- Category with finite set of Catblocks, Catports, Catconnections; unique Catblock root R.
 
 
-- **Properties**:
-- All morfismos from R to each object; no extra morfismos.
+- **Properties**: All morfismos from R to each object; no extra morfismos.
 
 
 ## Consistency Relations
 
 ### Injection
 
-- **Definition**: f:
-- M→N preserves structure (blocks, ports, connections) injectively.
+- **Definition**: f: M→N preserves structure (blocks, ports, connections) injectively.
 
 
-- **Interpretation**:
-- M is structural submodel of N.
+- **Interpretation**: M is structural submodel of N.
 
 
 ### Equivalence
 
-- **Theorem (Cantor-Bernstein)**:
-- If injections M→N and N→M exist, then M and N equivalent (same structural complexity; isomorphic).
+- **Theorem (Cantor-Bernstein)**: If injections M→N and N→M exist, then M and N equivalent (same structural complexity; isomorphic).
 
 
 ### Binary Consistency
 
-- **Definition**:
-- Two Catmodels M, N consistent iff share common submodel K.
-
-
-- **Existence**:
-- Catmodels K and injections K→M, K→N.
-
-
-- **Use**:
-- Verify MBSE-Safety model compatibility.
+- **Definition**: Two Catmodels M, N consistent iff share common submodel K.
+- **Existence**: Catmodels K and injections K→M, K→N.
+- **Use**: Verify MBSE-Safety model compatibility.
 
 
 - **Procedure**:
@@ -108,25 +93,18 @@ lang: en
 - **Injection defines partial order** over Catmodels.
 
 
-- **Use**:
-- Compare structural complexity of distinct system models; organize models in refinement lattice.
+- **Use**: Compare structural complexity of distinct system models; organize models in refinement lattice.
 
 
 ## Theorems
 
-- **Theorem 4.2 (Cantor-Bernstein)**:
-- If A, B have injections F:
-- A→B and G:
-- B→A, then exists injection G':
-- B→A with G'∘F=id_A and F∘G'=id_B.
+- **Theorem 4.2 (Cantor-Bernstein)**: If A, B have injections F: A→B and G: B→A, then exists injection G': B→A with G'∘F=id_A and F∘G'=id_B.
 
 
-- **Proof**:
-- Constructive via strong induction on model order; root blocks match, port counts match, Catconnections preserve size.
+- **Proof**: Constructive via strong induction on model order; root blocks match, port counts match, Catconnections preserve size.
 
 
-- **Theorem 4.3 (Equivalence Relation)**:
-- Equivalence is reflexive, symmetric, transitive.
+- **Theorem 4.3 (Equivalence Relation)**: Equivalence is reflexive, symmetric, transitive.
 
 
 ## Conclusions

@@ -47,6 +47,10 @@ La tabla de esta sección **DEBE** incluir todo término clave con significado p
 | **Runtime**            | Entorno de ejecución de un LLM (OpenClaw, Claude, GPT, Gemini) que consume artefactos KORA                    |
 | **Especificación base** | Documento fundacional que define reglas para un tipo de artefacto (`md-spec.md`, `spec-md.md`)                |
 | **Meta-regla**         | Regla de este documento que gobierna la interacción entre especificaciones, no el contenido de una sola        |
+| **Funtor G (koraficación)** | Funtor definido en `spec-md.md` que transforma documentos humanos en artefactos KORA/MD (Koraficación). Símbolo: G. |
+| **Funtor G₂ (agentificación)** | Funtor definido en `agent-spec-md.md` que transforma YAML monolíticos KODA en workspaces KORA (Agentificación). Símbolo: G₂. |
+
+> **Nota sobre colisión de funtores G:** El ecosistema KORA tiene actualmente dos funtores denominados variantes de G. Para eliminar la ambigüedad, se **DEBERÍA** renombrar el funtor de koraficación en `spec-md.md` a **K** (Kristalization functor) en una futura revisión de esa especificación, reservando G / G₂ para la familia de agentificación en `agent-spec-md.md`. Esta nota es informativa hasta que se actualice `spec-md.md`.
 
 ---
 
@@ -70,7 +74,8 @@ El ecosistema KORA se sostiene sobre los siguientes documentos fundacionales:
 Cuando dos artefactos KORA contienen reglas que se contradicen, la resolución sigue este orden de precedencia (mayor a menor):
 
 1. **Este documento** (`urn:kora:kb:gobernanza`) — Prevalece sobre todo. Define las meta-reglas.
-2. **La especificación del tipo de artefacto** — `md-spec.md` para artefactos descriptivos, `spec-md.md` para prescriptivos. Cada una gobierna su dominio.
+2. **Las especificaciones del tipo de artefacto** — `md-spec.md` para artefactos descriptivos, `spec-md.md` para prescriptivos. Cada una gobierna su dominio.
+   - 2a. **`agent-spec-md.md`** — Especificación que gobierna exclusivamente los workspaces de agentes (directorios `agents/`). Prevalece sobre las extensiones de namespace en todo lo que concierne a la arquitectura interna de un agente (componentes FSM, SOUL, TOOLS, config, skills). No puede contradecir `md-spec.md` ni `spec-md.md`.
 3. **Secciones operativas y guías derivadas** — Secciones de ejecución dentro de las especificaciones y guías derivadas. No pueden contradecir las reglas declarativas de la misma especificación.
 4. **Extensiones de namespace** — Reglas específicas de un namespace. No pueden contradecir las capas superiores.
 
@@ -89,6 +94,24 @@ Si una especificación no dice nada sobre un tema, eso no significa permiso. El 
 
 **Correcto:** `md-spec.md no menciona imágenes → se interpretan como no permitidas (opción restrictiva).`
 **Incorrecto:** `md-spec.md no menciona imágenes → se asume que están permitidas por omisión.`
+
+### 4.4 Excepción: Bootstrap URNs de Agentes
+
+Los archivos de bootstrap de agentes (catalogados con `type: agent-bootstrap`) **PUEDEN** usar el formato extendido de cuatro segmentos:
+
+```
+urn:{namespace}:agent-bootstrap:{nombre}:{version}
+```
+
+Esta excepción al formato tripartito estándar (`urn:{ns}:{type}:{id}`) es legítima porque:
+
+- Los workspaces de agentes requieren versionado explícito para garantizar **bisimulación**: dos versiones del mismo agente pueden coexistir y ser comparadas formalmente.
+- El segmento `{version}` no es metadata opcional; es parte del identificador estructural del workspace.
+
+**Correcto:** `urn:gn:agent-bootstrap:goreologo-agents:2.4.0`
+**Incorrecto:** `urn:gn:agent-bootstrap:goreologo-agents` (omite versión, impide bisimulación)
+
+Esta excepción aplica **únicamente** a artefactos con `type: agent-bootstrap`. Todos los demás artefactos DEBEN usar el formato tripartito.
 
 ---
 
@@ -159,12 +182,12 @@ region: "nuble"
 
 ### 6.3 Precedencia de Extensiones
 
-Las extensiones aplican **solo dentro del namespace que las define**. Un artefacto `urn:gn:kb:protocolo-seguridad` se valida contra:
+Las extensiones aplican **solo dentro del namespace que las define**. Un artefacto `urn:gn:kb:marco-legal-gores` se valida contra:
 
 1. `urn:kora:kb:md-spec` (base)
-2. `urn:gn:kb:ext-frontmatter` (extensión del namespace gn)
+2. `urn:gn:kb:gestion-ipr` (extensión del namespace gn, si existe)
 
-Un artefacto `urn:tde:kb:guia-implementacion` no está sujeto a las extensiones de `gn`.
+Un artefacto `urn:tde:kb:sistema-tde-2025` no está sujeto a las extensiones de `gn`.
 
 ---
 

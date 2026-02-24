@@ -20,5 +20,5 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Formato KODA/Spec, keywords, estructura YAML, densidad, lexicon | urn:kora:kb:spec |
-| Transformar documentos, 4 fases, telegrafizacion, deduplicacion, metricas FS/CR | urn:kora:kb:transform |
+| Formato KORA/Spec-MD prescriptivo, keywords, estructura YAML, densidad, lexicon | urn:kora:kb:spec-md |
+| Transformar documentos, koraficacion, telegrafizacion, deduplicacion, KORA/MD | urn:kora:kb:md-spec |

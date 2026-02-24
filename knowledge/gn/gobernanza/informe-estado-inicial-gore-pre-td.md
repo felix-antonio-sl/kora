@@ -94,7 +94,7 @@ lang: es
 | :--- | :--- | :--- | :--- |
 | **Político-Estratégico** | Gobernador, Jefe Gabinete | Visión y Gobernabilidad | Legado, reputación, posicionamiento regional. |
 | **Técnico-Operacional** | Administradora, DAF, DIPIR, DIT | Eficiencia y Control | Viabilidad, cumplimiento, mitigación de riesgos. |
-| **Programático-Territorial** | DIPLADE, DIDESOH, DIFOI, Comunicaciones | Impacto y Pertinencia | Valor público, beneficio ciudadano (21 comunas). |
+| **Programático-Territorial** | DIPLADE, DIDESO, DIFOI, Comunicaciones | Impacto y Pertinencia | Valor público, beneficio ciudadano (21 comunas). |
 
 ### Arquetipos de Directivos Clave
 - **Gobernador (Óscar Crisóstomo):** "El Arquitecto del Futuro". Visionario, alta velocidad conceptual. Driver: Legado. Riesgo: Subestimar complejidad técnica.
@@ -102,7 +102,7 @@ lang: es
 - **Jefa DAF (Alicia Contreras):** "La Custodia del Cumplimiento". Rígida, técnica. Driver: Seguridad ante Contraloría (CGR). Riesgo: Suspicacia por pérdida de estatus previa.
 - **Jefe DIPIR (Juan Parada):** "El General de la Inversión". Sólido, auditor. Driver: Ejecución presupuestaria y calidad de proyectos.
 - **Jefe DIPLADE (Raúl Súnico):** "El Vigía Estratégico". Vieja guardia política. Driver: Relevancia e influencia sobre el Gobernador.
-- **Jefa DIDESOH (Tamara Valenzuela):** "La Brújula Social". Pragmática, comprometida. Driver: Bienestar social y focalización de ayuda.
+- **Jefa DIDESO (Tamara Valenzuela):** "La Brújula Social". Pragmática, comprometida. Driver: Bienestar social y focalización de ayuda.
 - **Jefe DIT (Cristián Quiroz):** "El Maestro de Obras". Adoptante temprano de IA. Driver: Innovación en infraestructura. Aliado directo.
 - **Jefe Gabinete (Alejandro Aguilera):** "El Navegante Político". Estratega brillante. Temor: Caos por tecnología sin gobernanza ("bisturí en manos de monos").
 
@@ -118,7 +118,7 @@ lang: es
 | :--- | :--- | :--- | :--- | :--- |
 | **Sistema Gestión IPR** | Desarrollo | DIPIR, DAF, Admin | Orquestar ciclo de vida de proyectos. | Alto: Compite con Gesdoc. |
 | **Chat GORE Ciudadano** | Testeo | Ciudadanía | Atención 24/7 sobre trámites/fondos. | Bajo: Alta reputación. |
-| **Asistente 8% FNDR** | Desplegado | DIDESOH / ONGs | Guía para postulantes. | Éxito generó tensión DIT/DIDESOH. |
+| **Asistente 8% FNDR** | Desplegado | DIDESO / ONGs | Guía para postulantes. | Éxito generó tensión DIT/DIDESO. |
 | **Asistente Jurídico** | Prototipo | Equipo Jurídico | Resumen normativa/borradores. | Alto: Generó desconfianza en Admin. |
 | **Asistente Comunicaciones** | Desplegado | Comunicaciones | Redacción de prensa y discursos. | Bajo: Aliada estratégica. |
 | **Plataforma RRD (Odoo)** | Desplegado | SENAPRED | Gestión de emergencias. | Nulo: Aporte constructivo. |
@@ -194,7 +194,7 @@ lang: es
 1. **Aliados:** Consolidar base con DIT y Comunicaciones.
 2. **Eje Técnico:** Presentar Plan Gobernanza y Caso de Negocio a Administradora, DAF, DIPIR.
 3. **Navegante Político:** Reunión con Jefe Gabinete tras pre-acuerdos técnicos.
-4. **Eje Programático:** Mostrar casos de uso específicos (DIDESOH, DIPLADE).
+4. **Eje Programático:** Mostrar casos de uso específicos (DIDESO, DIPLADE).
 5. **Gobernador:** Validación final sobre estrategia respaldada.
 
 ### Fase 3: Presentación Estratégica

@@ -54,8 +54,7 @@ lang: en
 
 - Data + relations (structure): how data relate.
 - Represented as schema S (category).
-- Data conform via functor I:
-- S → Set with formula Info ≅ ∫ I →π S.
+- Data conform via functor I: S → Set with formula Info ≅ ∫ I →π S.
 
 
 ### Knowledge
@@ -75,15 +74,12 @@ lang: en
 
 ### Indexation Functor
 
-- Action is the entity that indexes; proposes an indexation functor Idx:
-- E → A where E is the category of episodes, and each episode maps to a canonical action.
+- Action is the entity that indexes; proposes an indexation functor Idx: E → A where E is the category of episodes, and each episode maps to a canonical action.
 
 
 ### Compositionality of Episodes
 
-- If episode E1 ends in a state that initiates E2, they compose:
-- E1 ;
-- E2.
+- If episode E1 ends in a state that initiates E2, they compose: E1 ; E2.
 - Allows constructing complex episodes (stories, processes) from atomic actions while preserving logical structure.
 
 

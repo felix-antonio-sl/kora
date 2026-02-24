@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:abogado-legislacion-medica-cm-kb-guidance:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito

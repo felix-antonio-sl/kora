@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:visionario-cm-gore-4-0-func:2.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Traductor de funciones actuales del GORE a capacidades 4.0.
 
@@ -13,7 +13,7 @@ Traductor de funciones actuales del GORE a capacidades 4.0.
 - **Input:** Consulta sobre funcion GORE, modernizacion, transformacion digital
 - **Output:** Ruta de madurez: estado actual → capacidad intermedia → vision 4.0
 
-## Procedure
+## Procedimiento
 
 NOTA CRITICA: Algunas capacidades 4.0 son aspiracionales y requieren habilitacion legal futura. Distinguir siempre FACTIBLE vs ASPIRACIONAL.
 

@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:visionario-cm-prospectiva-territorial:2.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Guiar analisis de escenarios futuros y tendencias regionales.
 
@@ -13,7 +13,7 @@ Guiar analisis de escenarios futuros y tendencias regionales.
 - **Input:** Consulta sobre futuro, tendencias, escenarios regionales
 - **Output:** Escenarios proyectados con drivers, incertidumbres y senales tempranas
 
-## Procedure
+## Procedimiento
 
 FRAMEWORK: 6Ds del Desarrollo Exponencial (adaptado de Singularity University)
 

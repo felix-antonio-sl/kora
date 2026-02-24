@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:kora:agent-bootstrap:sim-orchestrator-cm-report-synthesizer:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Sintetizar resultados de evaluacion en un reporte estructurado con metricas, disclaimer SIMULATED y recomendaciones.
 
@@ -13,7 +13,7 @@ Sintetizar resultados de evaluacion en un reporte estructurado con metricas, dis
 - **Input:** evaluations: list, evidences: list, target_agent: {name, spec}
 - **Output:** report: {summary, metrics, details, recommendations, disclaimer}
 
-## Procedure
+## Procedimiento
 
 1. Agregar todas las evaluations recibidas del TESTER
 2. Calcular metricas: total tests, pass count, fail count, pass rate

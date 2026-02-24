@@ -1,8 +1,7 @@
 {
   "allowed_kb": [
-    "urn:kora:kb:agent",
-    "urn:kora:kb:agent-construct",
-    "urn:kora:kb:life"
+    "urn:kora:kb:agent-spec-md",
+    "urn:kora:kb:hub-agentes"
   ],
   "sandbox": {
     "mode": "strict"

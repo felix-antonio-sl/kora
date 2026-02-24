@@ -54,7 +54,7 @@ lang: es
 ## Criterios de Focalización y Plazos
 
 - **Marco Regulatorio:** Art. 74 DFL 1-19.175 (2005).
-- **Alineación Estratégica:** Coherencia obligatoria con ERD Ñuble 2022-2030, Plan de Gobierno Regional y Estrategia Regional de CTCI.
+- **Alineación Estratégica:** Coherencia obligatoria con ERD Ñuble 2024-2030, Plan de Gobierno Regional y Estrategia Regional de CTCI.
 - **Requisitos de Diseño:** Problema regional identificado y demostrable, indicadores de cumplimiento y focalización en reducción de brechas.
 - **Principios:** Equidad de acceso, pertinencia de beneficiarios, transparencia, probidad y eficiencia operativa.
 - **Plazo Postulación 2026:** Recepción de propuestas hasta el 30 de septiembre de 2026.

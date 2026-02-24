@@ -60,4 +60,4 @@ _manifest:
 
 ## 5. Adjunciones (W)
 
-- Extiende: AR Virtual (urn:gn:agent:ar-virtual). Hereda: knowledge_base_interaction, CM-CATALOG-RESOLVER, CM-KB-GUIDANCE. Especializa: dominios DGI.
+- Extiende: AR Virtual (urn:fxsl:agent:ar-virtual). Hereda: knowledge_base_interaction, CM-CATALOG-RESOLVER, CM-KB-GUIDANCE. Especializa: dominios DGI.

@@ -28,7 +28,7 @@ lang: es
 
 ## Antecedentes y Tipos de Iniciativa
 - **Instrumento:** Inversión productiva asociada al Royalty Minero para fomento, innovación y desarrollo regional.
-- **Alineación Estratégica:** Obligatoria con ERD Ñuble 2023-2030 y Estrategia Regional CTCI.
+- **Alineación Estratégica:** Obligatoria con ERD Ñuble 2024-2030 y Estrategia Regional CTCI.
 - **Resultado Esperado:** Apertura de empresas tecnológicas y mejora de empleos regionales.
 - **Tipos de Iniciativa:**
   | Tipo | Definición | Marco Regulatorio |

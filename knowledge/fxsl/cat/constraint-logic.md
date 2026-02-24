@@ -41,9 +41,7 @@ lang: en
 
 ## Satisfaction
 
-- **Definition**:
-- Instance I:
-- S→Set satisfies T = (S, Σ) iff all formulas in Σ satisfied.
+- **Definition**: Instance I: S→Set satisfies T = (S, Σ) iff all formulas in Σ satisfied.
 
 
 - **Notation**:
@@ -93,9 +91,7 @@ lang: en
 
 ## Constraint Preservation by Migrations
 
-- **Definition**:
-- Funtor F:
-- S→T preserves constraint φ iff F(φ) satisfiable in T.
+- **Definition**: Funtor F: S→T preserves constraint φ iff F(φ) satisfiable in T.
 
 
 - **Types**:

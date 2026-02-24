@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-schema-evolution-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito

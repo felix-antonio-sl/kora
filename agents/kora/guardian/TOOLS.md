@@ -20,14 +20,13 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Spec, keywords, YAML | urn:kora:kb:spec |
-| Transform, 4 fases, metricas | urn:kora:kb:transform |
-| Hub, URNs, catalogo, federacion | urn:kora:kb:hub-federation |
-| Life, 5 fases, Git | urn:kora:kb:life |
-| Agent, 7 principios, namespaces | urn:kora:kb:agent |
-| Construccion, 5 fases, patterns | urn:kora:kb:agent-construct |
-| Test, validacion, seguridad | urn:kora:kb:test |
-| Federation, cross-repo, registry | urn:kora:kb:hub-federation |
+| Spec-MD, keywords, YAML prescriptivo, densidad | urn:kora:kb:spec-md |
+| MD-spec, koraficacion, KORA/MD descriptivo | urn:kora:kb:md-spec |
+| Hub agentes, URNs, catalogo, federacion | urn:kora:kb:hub-agentes |
+| Agent spec, 7 principios, namespaces, P1-P7, Guard Set | urn:kora:kb:agent-spec-md |
+| Construccion agentes, 5 fases, patterns, FTCF | urn:kora:kb:agent-spec-md |
+| Workflow wikiguias, transformacion, editorial | urn:kora:kb:workflow-wikiguias |
+| Federation, cross-repo, registry | urn:kora:kb:hub-agentes |
 
 ## web_search
 

@@ -56,16 +56,12 @@ lang: en
 ### Cartesian Category
 
 - Category C with all finite products and terminal object.
-- Cartesian functor F:
-- C → D between cartesian categories preserves products and terminal objects.
+- Cartesian functor F: C → D between cartesian categories preserves products and terminal objects.
 
 
 ## Deterministic Systems
 
-- **Definition**:
-- Consists of State_S, Out_S, In_S, expose_S:
-- State_S → Out_S, and update_S:
-- State_S × In_S → State_S.
+- **Definition**: Consists of State_S, Out_S, In_S, expose_S: State_S → Out_S, and update_S: State_S × In_S → State_S.
 
 
 - **Components**:
@@ -82,55 +78,39 @@ lang: en
 
 ## Lenses
 
-- **Definition**:
-- Pass-forward map f:
-- A^+ → B^+ and pass-back map f^sharp:
-- A^+ × B^- → A^-.
+- **Definition**: Pass-forward map f: A^+ → B^+ and pass-back map f^sharp: A^+ × B^- → A^-.
 
 
-- **Lens Composition**:
-- (f^sharp,f):
-- (A^-,A^+) → (B^-,B^+) and (g^sharp,g):
-- (B^-,B^+) → (C^-,C^+) compose with pass-forward g ∘ f and pass-back defined by (a^+,c^-) |-> f^sharp(a^+, g^sharp(f(a^+), c^-)).
+- **Lens Composition**: (f^sharp,f): (A^-,A^+) → (B^-,B^+) and (g^sharp,g): (B^-,B^+) → (C^-,C^+) compose with pass-forward g ∘ f and pass-back defined by (a^+,c^-) |-> f^sharp(a^+, g^sharp(f(a^+), c^-)).
 
 
 - **Lens Category**:
 - Objects are pairs (A^-,A^+); morfismos are lenses.
 
 
-- **Deterministic as Lens**:
-- System is lens of form (update_S, expose_S):
-- State_S <-> (In_S, Out_S).
+- **Deterministic as Lens**: System is lens of form (update_S, expose_S): State_S <-> (In_S, Out_S).
 
 
 ## Wiring Diagrams
 
-- **Definition**:
-- Lens in Arity;
-- WD := Lens_Arity is category of wiring diagrams.
-- Parallel products endow monoidal structure.
+- **Definition**: Lens in Arity; WD := Lens_Arity is category of wiring diagrams. Parallel products endow monoidal structure.
 
 
 - **Components**:
 - Inner boxes (lenses, coalgebras, services), outer box (composite interface), wires (connections input→output).
 
 
-- **Universal Property**:
-- For cartesian category C and object C in C, unique (up to isomorphism) cartesian functor ev_C:
-- Arity → C; any wiring diagram interpreted as lens in C.
+- **Universal Property**: For cartesian category C and object C in C, unique (up to isomorphism) cartesian functor ev_C: Arity → C; any wiring diagram interpreted as lens in C.
 
 
 ## Kleisli Category
 
 - **Definition**:
 - Let M be commutative monad on cartesian category C.
-- Kleisli category Kl(M) has same objects as C; morfismos f:
-- A ~> B are maps A → M B; identity id_A = eta_A; composition f;g = f (g)^M.
+- Kleisli category Kl(M) has same objects as C; morfismos f: A ~> B are maps A → M B; identity id_A = eta_A; composition f;g = f (g)^M.
 
 
-- **M-System**:
-- Discrete-time system with Kleisli map update_S:
-- State_S × In_S → M(State_S).
+- **M-System**: Discrete-time system with Kleisli map update_S: State_S × In_S → M(State_S).
 
 
 ## Behavior Analysis

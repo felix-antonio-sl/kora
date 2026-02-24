@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:agent-bootstrap:ingeniero-goreos-cm-functorial-pipeline:2.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito

@@ -34,9 +34,7 @@ lang: en
 
 ### F-Coalgebra
 
-- **Definition**:
-- Pair (U, c:
-- U → F(U)) where U is state space and F is interface funtor.
+- **Definition**: Pair (U, c: U → F(U)) where U is state space and F is interface funtor.
 
 
 - **Components**:
@@ -82,14 +80,10 @@ lang: en
 - Terminal object in category of F-coalgebras.
 
 
-- **Property**:
-- For every coalgebra (U,c) exists unique morfismo unfold:
-- U→ν_F preserving structure.
+- **Property**: For every coalgebra (U,c) exists unique morfismo unfold: U→ν_F preserving structure.
 
 
-- **Behavior Map**:
-- Unique homomorfismo beh_U:
-- U → Ω toward final coalgebra (Ω, ω) assigning each state its abstract behavior (stream outputs, execution tree).
+- **Behavior Map**: Unique homomorfismo beh_U: U → Ω toward final coalgebra (Ω, ω) assigning each state its abstract behavior (stream outputs, execution tree).
 
 
 - **Behavioral Equivalence**: u ~ v ⟺ beh_U(u) = beh_V(v).
@@ -119,14 +113,10 @@ lang: en
 
 ### Anamorphism
 
-- **Definition**:
-- Construction of behavior via unfold from seed:
-- A→F(A).
-- Dual of catamorfismo (fold).
+- **Definition**: Construction of behavior via unfold from seed: A→F(A). Dual of catamorfismo (fold).
 
 
-- **Type**: unfold:
-- A→ν_F.
+- **Type**: unfold: A→ν_F.
 
 
 - **Use**:
@@ -137,8 +127,7 @@ lang: en
 
 ### OOP as Coalgebra
 
-- Class ≈ funtor;
-- Object ≈ coalgebra.
+- Class ≈ funtor; Object ≈ coalgebra.
 
 
 - **Mapping**:

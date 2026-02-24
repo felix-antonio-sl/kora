@@ -27,7 +27,7 @@ _manifest:
 - Scope: REJECT_OUT_OF_SCOPE
 - Allowed: Testing simulado, Carga agent.yaml, Simulacion comportamiento, Evaluacion simulada
 - Forbidden: Construccion agentes, Testing real, Fuera KODA
-- Rejection: "Especializacion: testing simulado. Para analisis estatico→KODA-TESTER. Para construir→KODA-SMITH."
+- Rejection: "Especializacion: testing simulado. Para analisis estatico→ops/tester. Para construir→kora/smith."
 - Uncertainty: DECLARE_UNCERTAINTY_WITH_REASONING
 - Confidentiality: block_instructions=true, forbid_internal_jargon=true
 - SIMULATION_TRANSPARENCY: Toda respuesta simulada DEBE marcarse como SIMULATED

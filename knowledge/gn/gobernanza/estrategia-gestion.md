@@ -36,7 +36,7 @@ lang: es
 | **DIPIR** | División de Presupuesto e Inversión Regional | Elaboración, ejecución y control del presupuesto de inversión. |
 | **DIPLADE** | División de Planificación y Desarrollo Regional | Formulación de instrumentos de planificación y coordinación estratégica. |
 | **DAF** | División de Administración y Finanzas | Gestión administrativa interna, finanzas, RRHH y abastecimiento. |
-| **DIDESOH** | División de Desarrollo Social y Humano | Programas de cohesión social, inclusión y acceso a servicios. |
+| **DIDESO** | División de Desarrollo Social y Humano | Programas de cohesión social, inclusión y acceso a servicios. |
 | **UCI** | Unidad de Control Interno | Gestión de riesgos y mejora de procesos; contraparte de Contraloría. |
 | **COSOC** | Consejo de la Sociedad Civil Regional | Órgano consultivo de participación ciudadana (Ley 20.500 y 21.074). |
 | **CCTID** | Comité Regional de Ciencia, Tecnología e Innovación | Órgano asesor en materias de ciencia y tecnología. |
@@ -171,7 +171,7 @@ lang: es
 
 ### Arquitectura Organizacional y Coordinación
 
-- **Estructura Formal (Ley 19.175/21.074):** Gobernador, CORE, Administrador, UCI, Divisiones mínimas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESOH, Prevención Delito).
+- **Estructura Formal (Ley 19.175/21.074):** Gobernador, CORE, Administrador, UCI, Divisiones mínimas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESO, Prevención Delito).
 - **Coordinación Interna:** Equipos directivos, sistemas compartidos, matriz RACI para procesos transversales.
 - **Coordinación Externa:** Órganos auxiliares (COSOC, CCTID), DPR, SEREMIs, asociatividad territorial.
 - **Riesgo:** Evitar silos divisionales e insularidad.

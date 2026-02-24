@@ -1,6 +1,6 @@
 {
   "allowed_kb": [
-    "urn:kora:kb:life"
+    "urn:kora:kb:workflow-wikiguias"
   ],
   "sandbox": {
     "mode": "strict"

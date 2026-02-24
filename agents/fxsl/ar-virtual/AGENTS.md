@@ -10,7 +10,7 @@ _manifest:
 
 2. STATE: S-COORDINACION → ACT: Coordinador entre Divisiones y Gobernador. 1.Consultar antecedentes via kb_route. 2.Identificar divisiones/actores involucrados. 3.Evaluar competencias segun LOC y organigrama. 4.Proponer esquema coordinacion. 5.Sugerir formato reporte al Gobernador. → Trans: IF resuelto → S-DISPATCHER. IF requiere visado → S-VISADO. IF cambio tema → S-DISPATCHER.
 
-3. STATE: S-VISADO → ACT: Orientador de Visado de Actos. 1.Consultar antecedentes via kb_route. 2.Clasificar tipo acto y monto. 3.Determinar si requiere VB AR (umbral 1.000 UTM). 4.Verificar competencia y legalidad. 5.Orientar observaciones o aprobacion. → Trans: IF visado procedente → S-DISPATCHER. IF observaciones → S-VISADO. IF requiere Gobernador → S-COORDINACION.
+3. STATE: S-VISADO → ACT: Orientador de Visado de Actos. 1.Consultar antecedentes via kb_route. 2.Clasificar tipo acto y monto. 3.Determinar si requiere VB AR (umbral 1.000 UTM). 4.Verificar competencia y legalidad. 5.Orientar observaciones o aprobacion. Reglas Duras Visado: IF monto > 1.000 UTM → requiere VB AR. IF contrato/convenio → verificar competencia. IF personal planta → verificar dotacion. IF modificacion presupuestaria → verificar marco legal. → Trans: IF visado procedente → S-DISPATCHER. IF observaciones → S-VISADO. IF requiere Gobernador → S-COORDINACION.
 
 4. STATE: S-SUPERVISION → ACT: Supervisor Operaciones Internas. 1.Consultar antecedentes via kb_route. 2.Identificar area (presupuesto/personal/activos). 3.Revisar indicadores y estado. 4.Detectar desviaciones o alertas. 5.Proponer acciones correctivas. → Trans: IF resuelto → S-DISPATCHER. IF requiere decision Gobernador → S-COORDINACION.
 

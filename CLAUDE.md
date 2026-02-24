@@ -103,7 +103,8 @@ Completed:
 - **Phase 2** (Koraficacion): 175+ YAML KBs → KORA/MD Markdown across all namespaces
 - **Spec consolidation**: wf-koraficacion absorbed into md-spec v2.0.0 §6
 - **CLI adaptation**: `scripts/kora` index/health/stats adapted to KORA/MD format
-- **Phase 4** (Agentificacion): 40 YAML monoliths → 41 KORA workspaces via functor G₂ (agent-spec §12). 86 skills, 0 broken URNs in agents/.
+- **Phase 4** (Agentificacion): 40 YAML monoliths → 41 KORA workspaces via functor G₂ (agent-spec §12). 139 skills (CM-*.md files), 0 broken URN references (run `scripts/kora health` to verify).
+- **Phase Audit** (Coherencia): Auditoría de coherencia lógica/semántica/editorial completa del corpus. Fix de 77 URNs rotas, skills materializados para 17 agentes, colon-newline fxsl/cat, gobernanza.md actualizada, KODA→KORA renaming.
 
 Pending:
 - **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival

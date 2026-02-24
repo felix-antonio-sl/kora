@@ -18,7 +18,8 @@
     "urn:tde:kb:docdigital",
     "urn:orko:kb:orko-fundamentos",
     "urn:orko:kb:orko-arquitectura",
-    "urn:orko:kb:orko-metodologia"
+    "urn:orko:kb:orko-metodologia",
+    "urn:tde:kb:cpat-completa"
   ],
   "sandbox": {
     "mode": "permissive"

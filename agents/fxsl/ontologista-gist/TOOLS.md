@@ -20,14 +20,9 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Clases core, definiciones, ejemplos | urn:fxsl:kb:fx-core |
-| Anotaciones RDFS | urn:fxsl:kb:fx-annotations |
-| Jerarquia de clases, subclases | urn:fxsl:kb:fx-subclass-assertions |
 | Direcciones, Address patterns | urn:fxsl:kb:fx-address-guidance |
 | Magnitudes, UoM, Aspects | urn:fxsl:kb:fx-uom-model |
 | Namespace, IRI, prefijos | urn:fxsl:kb:fx-namespace |
-| Prefijos SHACL | urn:fxsl:kb:fx-prefixes |
-| Media Types | urn:fxsl:kb:fx-media-types |
 | Overview, getting started | urn:fxsl:kb:fx-readme |
 | Audit protocol, Gist guidance | urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol |
 

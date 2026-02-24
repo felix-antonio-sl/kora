@@ -23,7 +23,7 @@ lang: es
 | Sigla/Término | Definición |
 | :--- | :--- |
 | **GORE** | Gobierno Regional. Administración superior regional. |
-| **IPR** | Iniciativa de Proyectos Regionales (proyectos o programas). |
+| **IPR** | Intervención Pública Regional (proyectos o programas). |
 | **FNDR** | Fondo Nacional de Desarrollo Regional. Principal fuente de inversión regional. |
 | **FRPD** | Fondo Regional para la Productividad y el Desarrollo. Foco en innovación y competitividad. |
 | **SNI** | Sistema Nacional de Inversiones. Marco normativo de evaluación de inversión pública. |

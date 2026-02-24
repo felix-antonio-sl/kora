@@ -38,8 +38,7 @@ lang: en
 
 ## Repository Structure
 
-- **Coalgebra**: c:
-- X → F(X)
+- **Coalgebra**: c: X → F(X)
 
 
 - **Bisimulation**:
@@ -48,9 +47,7 @@ lang: en
 
 ## ORM as Adjunction
 
-- **Structure**:
-- Adjunction ORM ⊣ Reflect:
-- DomainCat ⇆ SchemaCat
+- **Structure**: Adjunction ORM ⊣ Reflect: DomainCat ⇆ SchemaCat
 
 
 - **Unit**: η: E → Reflect(ORM(E)) ≈ id

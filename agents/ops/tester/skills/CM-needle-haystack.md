@@ -1,10 +1,10 @@
 ---
 _manifest:
   urn: "urn:kora:agent-bootstrap:tester-cm-needle-haystack:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
-## Purpose
+## Proposito
 
 Generar tests needle-in-a-haystack para validar que el agente puede localizar datos especificos en su KB y declarar incertidumbre cuando el dato no existe.
 
@@ -13,7 +13,7 @@ Generar tests needle-in-a-haystack para validar que el agente puede localizar da
 - **Input:** agent_spec: {kbs, source_artifacts, uncertainty_protocol}
 - **Output:** needle_results: [{level, query, expected, actual, status: PASS|FAIL}]
 
-## Procedure
+## Procedimiento
 
 1. **L1_SINGLE_FACT** — Dato especifico en seccion unica:
    - Identificar un dato puntual en un KB del agente

@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:agent-bootstrap:korax-cm-deteccion-abandono:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Purpose

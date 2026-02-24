@@ -23,10 +23,7 @@ lang: en
 
 ### Profunctors
 
-- **Definition**:
-- Profunctor M:
-- C ⇸ D = funtor M:
-- C^op × D → Set.
+- **Definition**: Profunctor M: C ⇸ D = funtor M: C^op × D → Set.
 
 
 - Generalizes funtores; models relations between categories (queries, correspondences).
@@ -35,36 +32,31 @@ lang: en
 
 ### Bimodules
 
-- **Definition**:
-- Bimodule = profunctor estructurado in the double category Data (schemas, mappings, modules).
+- **Definition**: Bimodule = profunctor estructurado in the double category Data (schemas, mappings, modules).
 
 
 - **Objects**: Schemas (categories).
 - **Vertical Morphisms**: Funtores (schema mappings).
 - **Horizontal Morphisms**: Profunctors/modules (queries).
 
-- Use:
-- Encapsulate consultas as composable entities.
+- **Use**: Encapsulate consultas as composable entities.
 
 
 ### Proarrow Equipment
 
-- **Definition**:
-- Proarrow equipment = double category organizing schemas, mappings, and profunctors.
+- **Definition**: Proarrow equipment = double category organizing schemas, mappings, and profunctors.
 
 
 - **Objects**: Schemas.
 - **Vertical Morphisms**: Schema mappings (funtores).
 - **Horizontal Morphisms**: Profunctors/Bimodules (queries).
 
-- Use:
-- Basis for query rewriting and composition of complex migraciones.
+- **Use**: Basis for query rewriting and composition of complex migraciones.
 
 
 ## Uber-Queries
 
-- **Definition**:
-- Uber-query = consulta expressed as composable profunctor within the equipment.
+- **Definition**: Uber-query = consulta expressed as composable profunctor within the equipment.
 
 
 - **Properties**:
@@ -73,8 +65,7 @@ lang: en
 - Semantically precise: evaluation via Γ_M.
 - Verifiable: allows algebraic proofs over the query.
 
-- Use:
-- Design pipelines of consultas over multiple schemas with formal guarantees.
+- **Use**: Design pipelines of consultas over multiple schemas with formal guarantees.
 
 
 ## Query Evaluation
@@ -83,8 +74,7 @@ lang: en
 - Applies uber-query M to concrete data I.
 
 
-- **Query Composition**:
-- (M;N)(a,c) = ∫^b M(a,b) × N(b,c).
+- **Query Composition**: (M;N)(a,c) = ∫^b M(a,b) × N(b,c).
 - Constructs complex consultas from simple blocks algebraically.
 
 
@@ -98,19 +88,14 @@ lang: en
 
 ### Kan Lift
 
-- **Definition**:
-- Inverse problem of extension; lift structures along a funtor.
+- **Definition**: Inverse problem of extension; lift structures along a funtor.
 - Requires fully faithful funtor to preserve semantics.
 - Transformations multi-model with guarantees.
 
 
 ### Yoneda Embedding
 
-- **Definition**:
-- Embedding y:
-- C → [C^op, Set] where y(A) = Hom(−, A).
-- Property: y is fully faithful;
-- C embeds in its presheaf category.
+- **Definition**: Embedding y: C → [C^op, Set] where y(A) = Hom(−, A). Property: y is fully faithful; C embeds in its presheaf category.
 - Every object represented faithfully by its relations with other objects.
 
 
@@ -123,16 +108,12 @@ lang: en
 
 ## Algebraic Database Schemas
 
-- **Definition**:
-- Database schema S over algebraic theory Type is a pair (S_e, S_o) where S_e is a category (entity category) and S_o:
-- S_e ⇸ Type is an algebraic profunctor (observables profunctor).
+- **Definition**: Database schema S over algebraic theory Type is a pair (S_e, S_o) where S_e is a category (entity category) and S_o: S_e ⇸ Type is an algebraic profunctor (observables profunctor).
 
 
 ## Algebraic Database Instances
 
-- **Definition**:
-- If S=(S_e,S_o) is a schema, an instance on S is a funtor I:
-- S → Set whose restriction to Type is a Type-algebra.
+- **Definition**: If S=(S_e,S_o) is a schema, an instance on S is a funtor I: S → Set whose restriction to Type is a Type-algebra.
 
 
 - **Properties**:
@@ -142,8 +123,7 @@ lang: en
 
 ## Fundamental Data Migration Functors
 
-- Given schema mapping F:
-- S → T, there are three funtores S-Inst ⇆ T-Inst:
+- Given schema mapping F: S → T, there are three funtores S-Inst ⇆ T-Inst:
 
 
 - **Δ_F (Pullback)**: For I in T-Inst, Δ_F(I) = I ∘ F.
@@ -152,16 +132,11 @@ lang: en
 
 ## Double Category Data
 
-- **Definition**:
-- Data is the double category whose objects are schemas, vertical morphisms are schema mappings, horizontal morphisms are bimodules, and 2-cells are transformations respecting the type side.
+- **Definition**: Data is the double category whose objects are schemas, vertical morphisms are schema mappings, horizontal morphisms are bimodules, and 2-cells are transformations respecting the type side.
 
 
-- **Composition**:
-- M ⊗ N of bimodules M:
-- R ⇸ S and N:
-- S ⇸ T is given by M ⊗ N = Λ_N ∘ M.
+- **Composition**: M ⊗ N of bimodules M: R ⇸ S and N: S ⇸ T is given by M ⊗ N = Λ_N ∘ M.
 
 
-- **Property**:
-- Data is an equipment.
+- **Property**: Data is an equipment.
 

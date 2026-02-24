@@ -1,11 +1,8 @@
 {
   "allowed_kb": [
     "urn:kora:kb:hub-agentes",
-    "docs/GUIDE_CI_CD.md",
-    ".github/workflows/koda-validate.yml",
-    ".github/workflows/koda-audit.yml",
-    ".github/workflows/koda-sync.yml",
-    "scripts/koda-audit.sh"
+    "urn:kora:kb:test-strategy",
+    "urn:kora:kb:agent-spec-md"
   ],
   "sandbox": {
     "mode": "permissive"

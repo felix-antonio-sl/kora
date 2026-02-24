@@ -20,11 +20,9 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Conceptos CI/CD, triggers | docs/GUIDE_CI_CD.md |
-| Validacion, PR checks | .github/workflows/koda-validate.yml |
-| Auditoria, drift | .github/workflows/koda-audit.yml |
-| Sync, timestamps | .github/workflows/koda-sync.yml |
-| Script auditoria | scripts/koda-audit.sh |
+| Hub agentes, orquestacion | urn:kora:kb:hub-agentes |
+| Estrategia de testing | urn:kora:kb:test-strategy |
+| Arquitectura agentes, workspace | urn:kora:kb:agent-spec-md |
 
 ## web_search
 

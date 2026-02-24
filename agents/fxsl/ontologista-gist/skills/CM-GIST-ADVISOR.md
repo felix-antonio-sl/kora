@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-gist-advisor:1.0.0"
-  type: "lazy_load_endofunctor"
+  type: "lazy_load_endofuntor"
 ---
 
 ## Proposito
@@ -19,15 +19,11 @@ Consultar KB de Gist para patrones, clases y propiedades. Enrutar consultas al a
 
 | Categoria | URN |
 |-----------|-----|
-| Clases core, definiciones | urn:fxsl:kb:fx-core |
-| Anotaciones RDFS | urn:fxsl:kb:fx-annotations |
-| Jerarquia subclases | urn:fxsl:kb:fx-subclass-assertions |
 | Direcciones, Address | urn:fxsl:kb:fx-address-guidance |
 | Magnitudes, UoM | urn:fxsl:kb:fx-uom-model |
 | Namespace, IRI | urn:fxsl:kb:fx-namespace |
-| Prefijos SHACL | urn:fxsl:kb:fx-prefixes |
-| Media Types | urn:fxsl:kb:fx-media-types |
 | Overview, getting started | urn:fxsl:kb:fx-readme |
+| Audit protocol, Gist guidance | urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol |
 
 2. Consultar clases core Gist segun relevancia:
    - Person, Organization, GovernmentOrganization, IntergovernmentalOrganization
