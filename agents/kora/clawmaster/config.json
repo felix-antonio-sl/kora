@@ -1,0 +1,49 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:00-toc",
+    "urn:kora:kb:00-fundamentos-previos",
+    "urn:kora:kb:01-arquitectura-gateway",
+    "urn:kora:kb:02-agente-unidad-fundamental",
+    "urn:kora:kb:03-sesiones",
+    "urn:kora:kb:04-modelos-failover",
+    "urn:kora:kb:05-memoria",
+    "urn:kora:kb:06-multi-agent-routing",
+    "urn:kora:kb:07-aislamiento-seguridad",
+    "urn:kora:kb:08-patrones-multitenant",
+    "urn:kora:kb:09-sub-agentes",
+    "urn:kora:kb:10-sub-agentes-anidados",
+    "urn:kora:kb:11-comunicacion-inter-sesion",
+    "urn:kora:kb:12-heartbeats",
+    "urn:kora:kb:13-cron-jobs",
+    "urn:kora:kb:14-cron-vs-heartbeat",
+    "urn:kora:kb:15-hooks",
+    "urn:kora:kb:16-webhooks",
+    "urn:kora:kb:17-lobster",
+    "urn:kora:kb:18-modelo-seguridad",
+    "urn:kora:kb:19-operaciones",
+    "urn:kora:kb:20-patrones-diseno",
+    "urn:kora:kb:21-decisiones-arquitectura",
+    "urn:kora:kb:22-multi-gateway-docker-federation",
+    "urn:kora:kb:apendices",
+    "urn:kora:kb:cheatsheet",
+    "urn:kora:kb:readme"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "oc_docs_search",
+      "oc_repo_search",
+      "oc_cli",
+      "spec_consult"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 3
+  }
+}
