@@ -1,12 +1,32 @@
+---
+_manifest:
+  urn: urn:kora:kb:12-heartbeats
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '12'
+- heartbeats
+lang: es
+---
+
 # Capítulo 12 — Heartbeats
 
 > **Propósito:** Entender los heartbeats como el mecanismo de **proactividad periódica** del agente. Un heartbeat es un agent turn programado que corre en la sesión main, revisa lo que necesita atención, y decide si notificar o callar. Es la diferencia entre un asistente reactivo y uno que trabaja para ti en background.
 
----
+- ---
+
 
 ## 12.1 Concepto
 
-Un heartbeat es un **agent turn periódico** inyectado por el gateway en la sesión main del agente. No viene de un mensaje del usuario — viene del scheduler interno.
+- Un heartbeat es un **agent turn periódico** inyectado por el gateway en la sesión main del agente.
+- No viene de un mensaje del usuario — viene del scheduler interno.
+
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -44,7 +64,8 @@ Un heartbeat es un **agent turn periódico** inyectado por el gateway en la sesi
 | **Propósito** | Monitoring + proactividad periódica | Tareas programadas específicas |
 | **Cost pattern** | Tokens cada N minutos (se acumulan) | Tokens por ejecución |
 
----
+- ---
+
 
 ## 12.2 Configuración
 
@@ -106,11 +127,14 @@ Un heartbeat es un **agent turn periódico** inyectado por el gateway en la sesi
 | `session` | `"main"` | Session key override (rare) |
 | `suppressToolErrorWarnings` | false | No emitir warnings de tool errors en heartbeats |
 
----
+- ---
+
 
 ## 12.3 HEARTBEAT.md: El Checklist del Agente
 
-`HEARTBEAT.md` es un archivo en el workspace que el prompt default le dice al agente que lea. Es el **checklist periódico** — lo que el agente debe revisar en cada heartbeat.
+- `HEARTBEAT.md` es un archivo en el workspace que el prompt default le dice al agente que lea.
+- Es el **checklist periódico** — lo que el agente debe revisar en cada heartbeat.
+
 
 ### Ejemplo efectivo
 
@@ -146,9 +170,12 @@ Un heartbeat es un **agent turn periódico** inyectado por el gateway en la sesi
 
 ### Archivo vacío = skip
 
-Si HEARTBEAT.md existe pero solo tiene blank lines y headers → OpenClaw **skippea el heartbeat run** para ahorrar API calls. Si el archivo no existe, el heartbeat corre y el modelo decide qué hacer.
+- Si HEARTBEAT.md existe pero solo tiene blank lines y headers → OpenClaw **skippea el heartbeat run** para ahorrar API calls.
+- Si el archivo no existe, el heartbeat corre y el modelo decide qué hacer.
 
----
+
+- ---
+
 
 ## 12.4 Response Contract: OK vs Alertas
 
@@ -166,11 +193,14 @@ Gateway detecta HEARTBEAT_OK al inicio/final del reply
 └── NO → Reply se envía (con HEARTBEAT_OK stripped)
 ```
 
-**Importante:** HEARTBEAT_OK en el **medio** del reply no se trata especialmente. Solo al inicio o final.
+- **Importante:** HEARTBEAT_OK en el **medio** del reply no se trata especialmente.
+- Solo al inicio o final.
+
 
 ### Alertas
 
-Si el agente encuentra algo que reportar, **no incluye HEARTBEAT_OK**:
+- Si el agente encuentra algo que reportar, **no incluye HEARTBEAT_OK**:
+
 
 ```
 ✅ Correcto:
@@ -182,7 +212,8 @@ Si el agente encuentra algo que reportar, **no incluye HEARTBEAT_OK**:
 (El HEARTBEAT_OK haría que se suprima)
 ```
 
----
+- ---
+
 
 ## 12.5 Delivery y Visibility
 
@@ -195,7 +226,9 @@ Si el agente encuentra algo que reportar, **no incluye HEARTBEAT_OK**:
 | `"whatsapp"` | Siempre a WhatsApp |
 | `"none"` | Corre el heartbeat pero no envía nada externamente |
 
-`"last"` es el más natural: si tu última conversación fue por Telegram, las alertas llegan por Telegram. Si fue por WhatsApp, llegan por WhatsApp.
+- `"last"` es el más natural: si tu última conversación fue por Telegram, las alertas llegan por Telegram.
+- Si fue por WhatsApp, llegan por WhatsApp.
+
 
 ### Visibility controls por canal
 
@@ -227,9 +260,11 @@ Si el agente encuentra algo que reportar, **no incluye HEARTBEAT_OK**:
 }
 ```
 
-**Precedencia:** per-account > per-channel > channel defaults > built-in defaults.
+- **Precedencia:** per-account > per-channel > channel defaults > built-in defaults.
 
-**Si los tres flags son false** → OpenClaw skippea el heartbeat run completo (no gasta API call).
+
+- **Si los tres flags son false** → OpenClaw skippea el heartbeat run completo (no gasta API call).
+
 
 ### Patrones comunes
 
@@ -241,13 +276,16 @@ Si el agente encuentra algo que reportar, **no incluye HEARTBEAT_OK**:
 | Debug: ver todo | `showOk: true, showAlerts: true` |
 | Alertas en un canal, silencio en otro | Per-channel config |
 
----
+- ---
+
 
 ## 12.6 Per-Agent Heartbeats
 
 ### Regla de exclusividad
 
-Si **cualquier** agente en `agents.list[]` tiene un bloque `heartbeat`, **solo esos agentes** corren heartbeats. Los demás se excluyen.
+- Si **cualquier** agente en `agents.list[]` tiene un bloque `heartbeat`, **solo esos agentes** corren heartbeats.
+- Los demás se excluyen.
+
 
 ```json5
 {
@@ -264,11 +302,15 @@ Si **cualquier** agente en `agents.list[]` tiene un bloque `heartbeat`, **solo e
 }
 ```
 
-¿Por qué? Si no tuviera esta regla, todos los agentes correrían heartbeats — potencialmente caro y ruidoso.
+- ¿Por qué?
+- Si no tuviera esta regla, todos los agentes correrían heartbeats — potencialmente caro y ruidoso.
+
 
 ### Merge de config
 
-El bloque per-agent **mergea** sobre `agents.defaults.heartbeat`. Solo necesitas overridear lo que cambia:
+- El bloque per-agent **mergea** sobre `agents.defaults.heartbeat`.
+- Solo necesitas overridear lo que cambia:
+
 
 ```json5
 agents: {
@@ -292,7 +334,8 @@ agents: {
 }
 ```
 
----
+- ---
+
 
 ## 12.7 Active Hours
 
@@ -334,15 +377,20 @@ heartbeat: {
 
 ### 24/7
 
-Omitir `activeHours` → heartbeats corren siempre. O explícitamente: `{ start: "00:00", end: "24:00" }`.
+- Omitir `activeHours` → heartbeats corren siempre.
+- O explícitamente: `{ start: "00:00", end: "24:00" }`.
 
-**Pitfall:** `{ start: "08:00", end: "08:00" }` = ventana de ancho cero → heartbeats **siempre** skippeados.
 
----
+- **Pitfall:** `{ start: "08:00", end: "08:00" }` = ventana de ancho cero → heartbeats **siempre** skippeados.
+
+
+- ---
+
 
 ## 12.8 Manual Wake
 
-Trigger inmediato de heartbeat sin esperar al próximo tick:
+- Trigger inmediato de heartbeat sin esperar al próximo tick:
+
 
 ```bash
 # Inmediato
@@ -352,9 +400,11 @@ openclaw system event --text "Check for urgent follow-ups" --mode now
 openclaw system event --text "Run analysis" --mode next-heartbeat
 ```
 
-Si hay múltiples agentes con heartbeat configurado, el manual wake trigger **todos**.
+- Si hay múltiples agentes con heartbeat configurado, el manual wake trigger **todos**.
 
----
+
+- ---
+
 
 ## 12.9 Costo y Optimización
 
@@ -400,9 +450,12 @@ heartbeat: {
 }
 ```
 
-Costo estimado: ~$2-3/mes. Un buen balance entre proactividad y presupuesto.
+- Costo estimado: ~$2-3/mes.
+- Un buen balance entre proactividad y presupuesto.
 
----
+
+- ---
+
 
 ## 12.10 Reasoning Delivery
 
@@ -412,16 +465,21 @@ heartbeat: {
 }
 ```
 
-Cuando habilitado, el heartbeat envía **dos mensajes**:
+- Cuando habilitado, el heartbeat envía **dos mensajes**:
+
 
 1. El reply normal (alerta o HEARTBEAT_OK)
 2. Un mensaje separado con `Reasoning:` (el thinking interno del modelo)
 
-**Útil para:** Debug, transparencia, entender por qué el agente decidió notificar o no.
+- **Útil para:** Debug, transparencia, entender por qué el agente decidió notificar o no.
 
-**Riesgo:** Puede exponer detalles internos. No habilitar en grupos.
 
----
+- **Riesgo:** Puede exponer detalles internos.
+- No habilitar en grupos.
+
+
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -438,6 +496,8 @@ Cuando habilitado, el heartbeat envía **dos mensajes**:
 | **Manual wake** | Trigger inmediato sin esperar el scheduler |
 | **HEARTBEAT.md vacío = skip** | Ahorro automático cuando no hay nada que revisar |
 
----
+- ---
 
-*Siguiente: [Capítulo 13 — Cron Jobs](13-cron-jobs.md)*
+
+- *Siguiente: [Capítulo 13 — Cron Jobs](13-cron-jobs.md)*
+

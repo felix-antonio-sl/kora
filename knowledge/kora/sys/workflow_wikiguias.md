@@ -1,19 +1,28 @@
 ---
-urn: urn:kora:kb:workflow-wikiguias
-created_by: FS
-date: 2026-01-29
-source: KORA system config
+_manifest:
+  urn: urn:kora:kb:workflow-wikiguias
+  provenance:
+    created_by: FS
+    created_at: '2026-01-29'
+    source: KORA system config
 version: 2.0.0
 status: published
-tags: [kora, sistema, configuracion]
+tags:
+- kora
+- sistema
+- configuracion
+- sys
+- workflow
 lang: es
 ---
 
 # TDE-WORKFLOW-WIKIGUIAS-029
 
 ## Objetivo
-Estandarizar transformación de corpus wikiguias a KORA/Spec.
-Métricas objetivo: FS=100%, TER≥30%, RD≥2.0.
+- Estandarizar transformación de corpus wikiguias a KORA/Spec.
+- Métricas objetivo:
+- FS=100%, TER≥30%, RD≥2.0.
+
 
 ## Workflow Global (TDE_WORKFLOW_WIKIGUIAS_GLOBAL_001)
 - Mssn: Transformación progresiva corpus wikiguias a KB KODA/TDE.

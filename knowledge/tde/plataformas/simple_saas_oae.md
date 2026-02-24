@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:simple-saas-oae"
+  urn: urn:tde:kb:simple-saas-oae
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, simple, saas, procesos-digitales, oae, chile]
+tags:
+- transformacion-digital
+- simple
+- saas
+- procesos-digitales
+- oae
+- chile
+- tde
 lang: es
 ---
 
 # Guía de Uso de SIMPLE (SaaS) para Órganos del Estado
 
 ## Definición y Funcionalidades
-SIMPLE (Sistema de Implementación de Procesos Ligeramente Estandarizados) es un modelador de procesos (BPMS) del Estado para digitalizar trámites de baja complejidad.
+- SIMPLE (Sistema de Implementación de Procesos Ligeramente Estandarizados) es un modelador de procesos (BPMS) del Estado para digitalizar trámites de baja complejidad.
+
 - **Capacidades**: modelamiento gráfico, reglas de negocio, diseño de formularios, generación de documentos, firma electrónica (FirmaGob), autenticación (ClaveÚnica) e integración con APIs externas.
 - **Objetivo**: facilitar la transición progresiva a procedimientos administrativos electrónicos (Ley 21.180).
 

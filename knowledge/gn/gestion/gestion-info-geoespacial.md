@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:gestion-info-geoespacial"
+  urn: urn:gn:kb:gestion-info-geoespacial
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, geoespacial, ide, geonodo]
+tags:
+- gore-nuble
+- gobierno-regional
+- geoespacial
+- ide
+- geonodo
+- gn
 lang: es
 ---
 

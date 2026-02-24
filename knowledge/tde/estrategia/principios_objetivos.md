@@ -1,20 +1,27 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:principios-objetivos"
+  urn: urn:tde:kb:principios-objetivos
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "Secretaría de Gobierno Digital"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: "Secretar\xEDa de Gobierno Digital"
+version: 2.0.0
 status: published
-tags: [transformacion-digital, principios, objetivos, estrategia, chile]
+tags:
+- transformacion-digital
+- principios
+- objetivos
+- estrategia
+- chile
+- tde
 lang: es
 ---
 
 # Principios y Objetivos Marco de la Transformación Digital
 
 ## Principios Transversales TDE
-Guía para diseño e implementación de políticas, servicios, datos e identidades.
+- Guía para diseño e implementación de políticas, servicios, datos e identidades.
+
 - **Digital por diseño**: integración tecnológica desde inicio del ciclo de vida de políticas públicas.
 - **Centrado en personas**: diseño de servicios y formación priorizando accesibilidad, inclusión y pertinencia.
 - **Gobierno integrado y datos compartidos**: actuar como un solo Estado; interoperabilidad e intercambio seguro; evitar duplicidad de solicitudes.
@@ -27,7 +34,8 @@ Guía para diseño e implementación de políticas, servicios, datos e identidad
 - **Resiliencia y sostenibilidad**: sistemas responsables y sostenibles bajo marcos regulatorios nacionales e internacionales.
 
 ## Objetivos Estratégicos de Alto Nivel
-Dirección común para lineamientos técnicos y proyectos.
+- Dirección común para lineamientos técnicos y proyectos.
+
 - **Experiencia simple, segura e inclusiva**: mejorar interacción ciudadana y empresarial; superar promedio OCDE en madurez digital hacia 2030.
 - **Estado impulsado por datos**: transformación hacia organización basada en conocimiento, con gobernanza y capacidades analíticas.
 - **Sistema integrado de servicios y procesos**: articulación mediante interoperabilidad, plataformas compartidas y arquitectura empresarial.
@@ -38,7 +46,8 @@ Dirección común para lineamientos técnicos y proyectos.
 - **Cierre de brechas y confianza**: reducción de brechas de acceso y uso; alfabetización digital y mejora de canales.
 
 ## Mapa de Estrategias Fuente
-Articulación de estrategias base con principios y objetivos marco:
+- Articulación de estrategias base con principios y objetivos marco:
+
 - **Gobierno Digital 2030**: contribuye a todos los principios y objetivos (experiencia, sistema integrado, gobernanza, infraestructura).
 - **Datos de la Administración del Estado**: foco en gobierno integrado, valor de datos, GovTech y sistemas resilientes.
 - **Identidad Digital**: foco en entornos seguros, identidad habilitante y gobernanza.

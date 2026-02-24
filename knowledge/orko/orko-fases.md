@@ -1,31 +1,43 @@
 ---
 _manifest:
-  urn: "urn:orko:kb:orko-fases"
+  urn: urn:orko:kb:orko-fases
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "ORKO framework documentation"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: ORKO framework documentation
+version: 2.0.0
 status: published
-tags: [fases, WSLC, workflow, ciclos, transformacion]
+tags:
+- fases
+- wslc
+- workflow
+- ciclos
+- transformacion
+- knowledge
 lang: es
 ---
 
 # ORKO - Fases Metodología WSLC (Layer 3)
 
-Metodología de 18 fases (F1-F18) que operacionaliza las transformaciones organizacionales. Contratos de decisión con trayectorias, health gates y protocolo de convergencia F2↔F3.
+- Metodología de 18 fases (F1-F18) que operacionaliza las transformaciones organizacionales.
+- Contratos de decisión con trayectorias, health gates y protocolo de convergencia F2↔F3.
+
 
 ## Introducción Metodología
 
-**Definición:** Sistema operativo organizacional adaptable y formal para guiar transformaciones complejas.
+- **Definición:** Sistema operativo organizacional adaptable y formal para guiar transformaciones complejas.
 
-**Core Concept:** Work-System Lifecycle (WSLC) de 18 fases + Catálogo de 15 Playbooks activados por Health Gates.
 
-**Filosofía:** Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en Datos.
+- **Core Concept:** Work-System Lifecycle (WSLC) de 18 fases + Catálogo de 15 Playbooks activados por Health Gates.
+
+
+- **Filosofía:** Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en Datos.
+
 
 ## Mapeo Dominios (D1-D4) a Fases
 
-Las 18 fases operacionalizan los 4 dominios arquitectónicos:
+- Las 18 fases operacionalizan los 4 dominios arquitectónicos:
+
 
 | Fase | D1_Arq | D2_Perc | D3_Dec | D4_Oper | Primitivos |
 |------|--------|---------|--------|---------|-----------|
@@ -48,120 +60,172 @@ Las 18 fases operacionalizan los 4 dominios arquitectónicos:
 | F17 Adaptation | ◐ | ●● | ●●● | ○ | I6 trajectory |
 | F18 Convergence Check | ○ | ●● | ● | ○ | E6 validation |
 
-**Leyenda:** ●●● Primario (75-100%) | ●● Secundario (40-70%) | ● Terciario (15-35%) | ◐ Implícito (<15%) | ○ No aplica
+- **Leyenda:** ●●● Primario (75-100%) | ●● Secundario (40-70%) | ● Terciario (15-35%) | ◐ Implícito (<15%) | ○ No aplica
+
 
 ## Trayectorias Soportadas
 
 ### Trayectoria Survival (6-12 meses)
 
-**Para:** Organizaciones en crisis (H_org < 50)
+- **Para:** Organizaciones en crisis (H_org < 50)
 
-**Objetivo:** Estabilizar el barco. Detener el sangrado.
 
-**Fases Mínimas:** F1, F2, F3, F13, F14, P01-P04
+- **Objetivo:** Estabilizar el barco.
+- Detener el sangrado.
 
-**No incluye:** Diseño arquitectónico completo, transformación profunda
+
+- **Fases Mínimas:** F1, F2, F3, F13, F14, P01-P04
+
+
+- **No incluye:** Diseño arquitectónico completo, transformación profunda
+
 
 ### Trayectoria Minimal (12-18 meses)
 
-**Para:** Organizaciones estables pero lentas (H_org 50-70)
+- **Para:** Organizaciones estables pero lentas (H_org 50-70)
 
-**Objetivo:** Construir cimientos sólidos. Conectar estrategia con ejecución.
 
-**Fases Completas:** F1-F18
+- **Objetivo:** Construir cimientos sólidos.
+- Conectar estrategia con ejecución.
 
-**Énfasis:** Capability mapping, Flow design, Purpose cascade
 
-**Playbooks:** P01-P15 (todas disponibles)
+- **Fases Completas:** F1-F18
+
+
+- **Énfasis:** Capability mapping, Flow design, Purpose cascade
+
+
+- **Playbooks:** P01-P15 (todas disponibles)
+
 
 ### Trayectoria Avanzada (18-36 meses)
 
-**Para:** Organizaciones de alto rendimiento (H_org > 70)
+- **Para:** Organizaciones de alto rendimiento (H_org > 70)
 
-**Objetivo:** Excelencia operativa. Innovación continua.
 
-**Fases Completas:** F1-F18 + iteraciones profundas
+- **Objetivo:** Excelencia operativa.
+- Innovación continua.
 
-**Énfasis:** Advanced autonomy (M6), Pilot→Scale transformations
 
-**Playbooks:** P05-P08 prioritarios (transformation focus)
+- **Fases Completas:** F1-F18 + iteraciones profundas
+
+
+- **Énfasis:** Advanced autonomy (M6), Pilot→Scale transformations
+
+
+- **Playbooks:** P05-P08 prioritarios (transformation focus)
+
 
 ## Protocolos Especiales
 
 ### F2-F3 Convergence Protocol
 
-**Naturaleza:** Circular dependency entre Vision Definition (F2) y Trajectory Selection (F3)
+- **Naturaleza:** Circular dependency entre Vision Definition (F2) y Trajectory Selection (F3)
 
-**Problema Resuelto:**
+
+- **Problema Resuelto:**
+
 - F2 requiere trayectoria para definir visión (input)
 - F3 requiere visión para seleccionar trayectoria (input)
 
-**Solución:**
+- **Solución:**
+
 1. F1 completa (context_profile_36_params)
 2. F3 propone trajectory_baseline basada en H_org + budget
 3. F2 define vision_draft compatible con trayectoria
 4. F3 valida/ajusta trayectoria vs vision_refined
 5. Iteran hasta convergencia (típicamente 2-3 ciclos)
 
-**Ownership:** Role_Captain + Sponsor_L1_Human (Semanal)
+- **Ownership:** Role_Captain + Sponsor_L1_Human (Semanal)
+
 
 ## Health Gates (G1-G4)
 
 ### G1 - H_org Crítico
 
-**Condición:** H_org < 60
+- **Condición:** H_org < 60
 
-**Nivel:** RED
 
-**Fases:** F13, F14
+- **Nivel:** RED
 
-**Playbooks Trigger:** P01, P02, P15
 
-**Trayectoria:** Survival
+- **Fases:** F13, F14
 
-**Acción:** Activación respuesta inmediata. Incident response (F14).
+
+- **Playbooks Trigger:** P01, P02, P15
+
+
+- **Trayectoria:** Survival
+
+
+- **Acción:** Activación respuesta inmediata.
+- Incident response (F14).
+
 
 ### G2 - H_org Bajo Riesgo
 
-**Condición:** 60 ≤ H_org < 70
+- **Condición:** 60 ≤ H_org < 70
 
-**Nivel:** YELLOW
 
-**Fases:** F13, F16, F17
+- **Nivel:** YELLOW
 
-**Playbooks Trigger:** P01 (focalizado), P09
 
-**Trayectoria:** Minimal
+- **Fases:** F13, F16, F17
 
-**Acción:** Recuperación estructurada. Análisis drift. Adaptación (F17).
+
+- **Playbooks Trigger:** P01 (focalizado), P09
+
+
+- **Trayectoria:** Minimal
+
+
+- **Acción:** Recuperación estructurada.
+- Análisis drift.
+- Adaptación (F17).
+
 
 ### G3 - H_org Bueno, Eficiencia Baja
 
-**Condición:** H_org ≥ 70 AND (eta_org < 0.60 OR ROI_Habilitacion < 1.0)
+- **Condición:** H_org ≥ 70 AND (eta_org < 0.60 OR ROI_Habilitacion < 1.0)
 
-**Nivel:** YELLOW
 
-**Fases:** F13, F4, F5
+- **Nivel:** YELLOW
 
-**Playbooks Trigger:** P10, P11, P03
 
-**Trayectoria:** Minimal
+- **Fases:** F13, F4, F5
 
-**Acción:** Optimización capacidades y flujos. Gap resolution.
+
+- **Playbooks Trigger:** P10, P11, P03
+
+
+- **Trayectoria:** Minimal
+
+
+- **Acción:** Optimización capacidades y flujos.
+- Gap resolution.
+
 
 ### G4 - Ready for Avanzada
 
-**Condición:** H_org ≥ 70 AND eta_org ≥ 0.70 AND ROI_Habilitacion ≥ 1.2
+- **Condición:** H_org ≥ 70 AND eta_org ≥ 0.70 AND ROI_Habilitacion ≥ 1.2
 
-**Nivel:** GREEN
 
-**Fases:** F13, F17, F3
+- **Nivel:** GREEN
 
-**Playbooks Trigger:** P05, P06, P07
 
-**Trayectoria:** Avanzada
+- **Fases:** F13, F17, F3
 
-**Acción:** Escalamiento autonomía. Pilotos. Transformaciones controladas.
+
+- **Playbooks Trigger:** P05, P06, P07
+
+
+- **Trayectoria:** Avanzada
+
+
+- **Acción:** Escalamiento autonomía.
+- Pilotos.
+- Transformaciones controladas.
+
 
 ## Governance de Fases
 
@@ -209,11 +273,13 @@ Las 18 fases operacionalizan los 4 dominios arquitectónicos:
 
 ## Validación
 
-**Invariantes Cumplidas:**
+- **Invariantes Cumplidas:**
+
 - I1_Minimalidad: 18 fases necesarias y suficientes
 - I3_Trazabilidad: Todo artefacto traza a Primitivos P1-P5
 - I5_HAIC: Todo role/ownership explícitamente humano
 - I6_Trajectory: 3 trayectorias diferenciadas (Survival, Minimal, Avanzada)
 - I8_Adaptacion: F16/F17 garantizan evolución
 
-**Estado:** VALIDADO ✅
+- **Estado:** VALIDADO ✅
+

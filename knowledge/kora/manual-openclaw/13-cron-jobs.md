@@ -1,12 +1,33 @@
+---
+_manifest:
+  urn: urn:kora:kb:13-cron-jobs
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '13'
+- cron
+- jobs
+lang: es
+---
+
 # Capítulo 13 — Cron Jobs
 
 > **Propósito:** Entender el scheduler integrado del gateway: cómo programar tareas one-shot y recurrentes, las dos modalidades de ejecución (main vs isolated), los modos de delivery, y cómo combinar cron con heartbeats y sub-agentes para automatización completa.
 
----
+- ---
+
 
 ## 13.1 Concepto: Scheduler Integrado
 
-Los cron jobs son **tareas programadas** que corren dentro del proceso del gateway. No dependen del crontab del OS ni de servicios externos — el gateway es el scheduler.
+- Los cron jobs son **tareas programadas** que corren dentro del proceso del gateway.
+- No dependen del crontab del OS ni de servicios externos — el gateway es el scheduler.
+
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -33,11 +54,15 @@ Los cron jobs son **tareas programadas** que corren dentro del proceso del gatew
 | `every` | `--every` | Intervalo fijo en milisegundos | `--every 3600000` (1 hora) |
 | `cron` | `--cron` | Expresión cron estándar (5 o 6 campos) | `--cron "0 7 * * *"` (7 AM diario) |
 
-**Timezone:** Para `cron` expressions, se usa la timezone del host si no se especifica `--tz`. Para `at`, ISO 8601 sin timezone se trata como UTC.
+- **Timezone:** Para `cron` expressions, se usa la timezone del host si no se especifica `--tz`.
+- Para `at`, ISO 8601 sin timezone se trata como UTC.
+
 
 ### Stagger (load spreading)
 
-Expresiones cron "top of hour" como `0 * * * *` reciben un stagger automático de hasta 5 minutos para evitar picos de carga. Expresiones de hora fija como `0 7 * * *` no se alteran.
+- Expresiones cron "top of hour" como `0 * * * *` reciben un stagger automático de hasta 5 minutos para evitar picos de carga.
+- Expresiones de hora fija como `0 7 * * *` no se alteran.
+
 
 ```bash
 # Forzar timing exacto
@@ -47,13 +72,15 @@ openclaw cron add --name "Exact" --cron "0 * * * *" --exact ...
 openclaw cron add --name "Staggered" --cron "0 * * * *" --stagger 30s ...
 ```
 
----
+- ---
+
 
 ## 13.2 Dos Modalidades de Ejecución
 
 ### Main Session: System Events
 
-El job inyecta un **system event** en la sesión main y opcionalmente trigger un heartbeat.
+- El job inyecta un **system event** en la sesión main y opcionalmente trigger un heartbeat.
+
 
 ```
 Job fires → System event enqueued
@@ -79,14 +106,16 @@ Heartbeat run en sesión main
 }
 ```
 
-**Cuándo usar main session:**
+- **Cuándo usar main session:**
+
 - Quieres que el agente tenga **contexto conversacional** (historial reciente)
 - La tarea es simple (un reminder, un check rápido)
 - Quieres que se integre con el heartbeat flow normal
 
 ### Isolated: Dedicated Agent Turn
 
-El job corre un **agent turn dedicado** en su propia sesión `cron:<jobId>`, sin historial previo.
+- El job corre un **agent turn dedicado** en su propia sesión `cron:<jobId>`, sin historial previo.
+
 
 ```
 Job fires → Sesión cron:<jobId> creada (fresh)
@@ -122,7 +151,8 @@ delivery.mode?
 }
 ```
 
-**Cuándo usar isolated:**
+- **Cuándo usar isolated:**
+
 - Tareas pesadas o largas que no deben contaminar main session
 - Output específico que necesita delivery a un canal
 - Model/thinking overrides sin afectar main
@@ -139,13 +169,15 @@ delivery.mode?
 | **Model override** | ⚠ Cambia el modelo de main session | ✅ Solo para este run |
 | **Costo** | Parte del heartbeat turn | Turn independiente |
 
----
+- ---
+
 
 ## 13.3 Delivery Modes
 
 ### announce
 
-Entrega el output del job a un canal de messaging.
+- Entrega el output del job a un canal de messaging.
+
 
 ```json5
 delivery: {
@@ -156,23 +188,21 @@ delivery: {
 }
 ```
 
-**Flujo:**
+- **Flujo:**
+
 1. Job isolated termina → output generado
 2. Si output es `HEARTBEAT_OK` → no se entrega (suprimido)
 3. Si el job ya envió un mensaje via `message` tool al mismo target → skip (evitar duplicados)
 4. Delivery directa via channel adapters (no pasa por main agent)
 5. Summary corto posted a main session (controlado por `wakeMode`)
 
-**Targets de Telegram con topics:**
-```
-"-1001234567890"                    → chat sin topic
-"-1001234567890:topic:123"          → topic específico
-"telegram:group:-100...:topic:123"  → prefixed form
-```
+- **Targets de Telegram con topics:** ``` "-1001234567890" → chat sin topic "-1001234567890:topic:123" → topic específico "telegram:group:-100...:topic:123" → prefixed form ```
+
 
 ### webhook
 
-POST del evento de completion a una URL.
+- POST del evento de completion a una URL.
+
 
 ```json5
 delivery: {
@@ -187,13 +217,18 @@ delivery: {
 
 ### none
 
-Internal only. El job corre, pero nada se envía. Útil para jobs que hacen side effects (escribir archivos, actualizar state) sin necesitar output visible.
+- Internal only.
+- El job corre, pero nada se envía.
+- Útil para jobs que hacen side effects (escribir archivos, actualizar state) sin necesitar output visible.
 
----
+
+- ---
+
 
 ## 13.4 Model y Thinking Overrides
 
-Solo para jobs isolated (`agentTurn`):
+- Solo para jobs isolated (`agentTurn`):
+
 
 ```json5
 payload: {
@@ -205,18 +240,23 @@ payload: {
 }
 ```
 
-**Resolución de modelo:**
+- **Resolución de modelo:**
+
 1. Payload override (mayor prioridad)
 2. Hook-specific defaults (e.g., `hooks.gmail.model`)
 3. Agent config default
 
-**⚠ Para main session jobs:** Model override cambia el modelo de la sesión main compartida. Evitar — usar isolated jobs para model overrides.
+- **⚠ Para main session jobs:** Model override cambia el modelo de la sesión main compartida.
+- Evitar — usar isolated jobs para model overrides.
 
----
+
+- ---
+
 
 ## 13.5 Agent Binding (Multi-Agent)
 
-En setups multi-agent, cada job puede correr bajo un agente específico:
+- En setups multi-agent, cada job puede correr bajo un agente específico:
+
 
 ```bash
 # Crear job bajo agente "ops"
@@ -230,15 +270,18 @@ openclaw cron edit <jobId> --agent ops
 openclaw cron edit <jobId> --clear-agent
 ```
 
-Si el `agentId` especificado no existe, el gateway hace fallback al agente default.
+- Si el `agentId` especificado no existe, el gateway hace fallback al agente default.
 
----
+
+- ---
+
 
 ## 13.6 Retry y Backoff
 
 ### Recurring jobs
 
-Si un job recurring falla, OpenClaw aplica backoff exponencial:
+- Si un job recurring falla, OpenClaw aplica backoff exponencial:
+
 
 ```
 1er fallo  → retry en 30 segundos
@@ -248,15 +291,19 @@ Si un job recurring falla, OpenClaw aplica backoff exponencial:
 5to+ fallo → retry en 60 minutos (cap)
 ```
 
-El backoff se resetea automáticamente después de un run exitoso.
+- El backoff se resetea automáticamente después de un run exitoso.
+
 
 ### One-shot jobs
 
-Jobs `at` no retrian. Después de un run terminal (ok, error, o skipped):
+- Jobs `at` no retrian.
+- Después de un run terminal (ok, error, o skipped):
+
 - Default: se auto-borran (`deleteAfterRun: true`)
 - Si `deleteAfterRun: false`: se deshabilitan (quedan en jobs.json como record)
 
----
+- ---
+
 
 ## 13.7 Storage y History
 
@@ -291,7 +338,8 @@ openclaw cron run <jobId>
 openclaw cron run <jobId> --due
 ```
 
----
+- ---
+
 
 ## 13.8 CLI Quickstart
 
@@ -349,11 +397,13 @@ openclaw system event --mode now --text "Check: ¿expiró el Gmail watch?"
 openclaw cron edit <jobId> --message "Prompt actualizado" --model haiku
 ```
 
----
+- ---
+
 
 ## 13.9 Tool Call API (desde el agente)
 
-El agente puede crear, editar y gestionar cron jobs via tools:
+- El agente puede crear, editar y gestionar cron jobs via tools:
+
 
 ### Crear job
 
@@ -397,7 +447,8 @@ El agente puede crear, editar y gestionar cron jobs via tools:
 { "tool": "cron", "params": { "action": "run", "jobId": "job-123" } }
 ```
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -429,6 +480,9 @@ El agente puede crear, editar y gestionar cron jobs via tools:
                            └── NO → Cron isolated
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 14 — Cron vs Heartbeat: Árbol de Decisión](14-cron-vs-heartbeat.md)*
+
+- *Siguiente: [Capítulo 14 — Cron vs Heartbeat:
+- Árbol de Decisión](14-cron-vs-heartbeat.md)*
+

@@ -1,13 +1,20 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:bpmn-d09-cies-sitia"
+  urn: urn:gn:kb:bpmn-d09-cies-sitia
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, seguridad-publica, cies, sitia, bpmn]
+tags:
+- gore-nuble
+- gobierno-regional
+- seguridad-publica
+- cies
+- sitia
+- bpmn
+- gn
 lang: es
 ---
 

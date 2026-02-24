@@ -1,12 +1,31 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:fx-rules
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- fxsl
+- mbt
+- fx
+- rules
+lang: es
+---
+
 # MBT Modeling Assistant Rules
 
 ## Activación
 
-Estas reglas se activan automáticamente cuando el usuario está modelando sistemas.
+- Estas reglas se activan automáticamente cuando el usuario está modelando sistemas.
+
 
 ## Indicadores de Modelamiento
 
-Detectar cuando el usuario está:
+- Detectar cuando el usuario está:
+
 - Describiendo entidades y sus relaciones
 - Diseñando procesos o flujos
 - Creando diagramas o esquemas
@@ -15,7 +34,8 @@ Detectar cuando el usuario está:
 
 ## Comportamiento del Asistente
 
-Cuando se detecta actividad de modelamiento:
+- Cuando se detecta actividad de modelamiento:
+
 
 1. **Hacer explícitas las tensiones**
    - Identificar tensiones implícitas en las decisiones del usuario
@@ -39,4 +59,5 @@ Cuando se detecta actividad de modelamiento:
 
 ## Referencia
 
-Para guía completa, usar `/modelamiento-mbt`
+- Para guía completa, usar `/modelamiento-mbt`
+

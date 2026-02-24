@@ -1,12 +1,33 @@
+---
+_manifest:
+  urn: urn:kora:kb:06-multi-agent-routing
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '06'
+- multi
+- agent
+lang: es
+---
+
 # Capítulo 6 — Multi-Agent Routing
 
 > **Propósito:** Entender cómo un solo gateway puede hospedar múltiples "cerebros" aislados, cómo los mensajes se rutean al agente correcto, y qué patrones de configuración existen. Este es el capítulo que transforma OpenClaw de "un asistente personal" a "una plataforma de agentes".
 
----
+- ---
+
 
 ## 6.1 Concepto: Un Gateway, Múltiples Cerebros
 
-En modo single-agent (default), todo va a un agente `main`. Multi-agent routing permite que **un solo proceso gateway** hospede múltiples agentes, cada uno con:
+- En modo single-agent (default), todo va a un agente `main`.
+- Multi-agent routing permite que **un solo proceso gateway** hospede múltiples agentes, cada uno con:
+
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -59,9 +80,12 @@ En modo single-agent (default), todo va a un agente `main`. Multi-agent routing 
 | Bot público + asistente privado | **Sí** | — |
 | Diferentes niveles de seguridad/tools | **Sí** | sandbox `non-main` si solo grupos |
 
-**La distinción clave:** `dmScope` separa **contexto** (sesiones diferentes), pero el agente es el mismo (misma personalidad, mismas tools, misma memoria). Multi-agent separa **todo** — son cerebros independientes.
+- **La distinción clave:** `dmScope` separa **contexto** (sesiones diferentes), pero el agente es el mismo (misma personalidad, mismas tools, misma memoria).
+- Multi-agent separa **todo** — son cerebros independientes.
 
----
+
+- ---
+
 
 ## 6.2 Configuración de Agentes
 
@@ -134,13 +158,19 @@ En modo single-agent (default), todo va a un agente `main`. Multi-agent routing 
 
 ### El agente default
 
-Si un mensaje no matchea ningún binding, va al agente con `default: true`. Si ninguno tiene `default: true`, va al primer agente en la lista. Si no hay `agents.list`, el agente implícito es `main`.
+- Si un mensaje no matchea ningún binding, va al agente con `default: true`.
+- Si ninguno tiene `default: true`, va al primer agente en la lista.
+- Si no hay `agents.list`, el agente implícito es `main`.
 
----
+
+- ---
+
 
 ## 6.3 Bindings: El Router Determinístico
 
-Los bindings son **reglas de ruteo** que conectan mensajes inbound con agentes. Son declarativos, determinísticos, y se evalúan por especificidad.
+- Los bindings son **reglas de ruteo** que conectan mensajes inbound con agentes.
+- Son declarativos, determinísticos, y se evalúan por especificidad.
+
 
 ### Anatomía de un binding
 
@@ -161,7 +191,9 @@ Los bindings son **reglas de ruteo** que conectan mensajes inbound con agentes. 
 }
 ```
 
-No todos los campos son necesarios. Cuantos más campos, más específico el match.
+- No todos los campos son necesarios.
+- Cuantos más campos, más específico el match.
+
 
 ### Jerarquía de especificidad (most-specific wins)
 
@@ -195,7 +227,8 @@ PRIORIDAD (mayor a menor):
 
 ### Regla: AND semántico
 
-Si un binding especifica múltiples campos, **todos** deben matchear:
+- Si un binding especifica múltiples campos, **todos** deben matchear:
+
 
 ```json5
 // Matchea SOLO si es Telegram Y el peer es 7192195698
@@ -207,7 +240,8 @@ Si un binding especifica múltiples campos, **todos** deben matchear:
 
 ### Regla: primer match gana (en el mismo tier)
 
-Si dos bindings están en el mismo nivel de especificidad, el que aparece **primero** en la lista de config gana:
+- Si dos bindings están en el mismo nivel de especificidad, el que aparece **primero** en la lista de config gana:
+
 
 ```json5
 bindings: [
@@ -235,13 +269,16 @@ bindings: [
 ]
 ```
 
----
+- ---
+
 
 ## 6.4 Patrones de Multi-Agent
 
 ### Patrón 1: Un agente por canal
 
-El más simple. WhatsApp = rápido/casual, Telegram = deep work.
+- El más simple.
+- WhatsApp = rápido/casual, Telegram = deep work.
+
 
 ```json5
 {
@@ -258,11 +295,14 @@ El más simple. WhatsApp = rápido/casual, Telegram = deep work.
 }
 ```
 
-**Trade-off:** Workspaces separados = memorias separadas. Si quieres compartir contexto, necesitas mechanisms explícitos (agent-to-agent messaging, shared memory paths).
+- **Trade-off:** Workspaces separados = memorias separadas.
+- Si quieres compartir contexto, necesitas mechanisms explícitos (agent-to-agent messaging, shared memory paths).
+
 
 ### Patrón 2: Un agente por cuenta (multi-bot)
 
-Dos bots de Telegram, cada uno con su personalidad.
+- Dos bots de Telegram, cada uno con su personalidad.
+
 
 ```json5
 {
@@ -289,7 +329,8 @@ Dos bots de Telegram, cada uno con su personalidad.
 
 ### Patrón 3: Un agente por persona (DM split)
 
-Un solo número de WhatsApp, pero cada persona habla con un agente diferente.
+- Un solo número de WhatsApp, pero cada persona habla con un agente diferente.
+
 
 ```json5
 {
@@ -309,11 +350,14 @@ Un solo número de WhatsApp, pero cada persona habla con un agente diferente.
 }
 ```
 
-**Nota:** Las respuestas salen del mismo número de WhatsApp. Ariel y Korvo ven el mismo remitente, pero hablan con agentes completamente diferentes.
+- **Nota:** Las respuestas salen del mismo número de WhatsApp.
+- Ariel y Korvo ven el mismo remitente, pero hablan con agentes completamente diferentes.
+
 
 ### Patrón 4: Agente familiar en grupo
 
-Un grupo de WhatsApp familiar con un agente dedicado, sandboxed, read-only:
+- Un grupo de WhatsApp familiar con un agente dedicado, sandboxed, read-only:
+
 
 ```json5
 {
@@ -338,7 +382,9 @@ Un grupo de WhatsApp familiar con un agente dedicado, sandboxed, read-only:
 
 ### Patrón 5: Personal DMs + Public Groups (single agent)
 
-No siempre necesitas multi-agent. Si solo quieres DMs en host y grupos en sandbox:
+- No siempre necesitas multi-agent.
+- Si solo quieres DMs en host y grupos en sandbox:
+
 
 ```json5
 {
@@ -357,13 +403,16 @@ No siempre necesitas multi-agent. Si solo quieres DMs en host y grupos en sandbo
 }
 ```
 
-**Resultado:** DMs en host con acceso total, grupos en Docker con tools restringidos. **Un solo agente, un solo workspace, una sola memoria** — pero con postura de seguridad diferente por contexto.
+- **Resultado:** DMs en host con acceso total, grupos en Docker con tools restringidos. **Un solo agente, un solo workspace, una sola memoria** — pero con postura de seguridad diferente por contexto.
 
----
+
+- ---
+
 
 ## 6.5 Auth Isolation
 
-La aislación de auth es un **invariante de seguridad** de multi-agent:
+- La aislación de auth es un **invariante de seguridad** de multi-agent:
+
 
 ```
 ~/.openclaw/agents/
@@ -400,11 +449,14 @@ La aislación de auth es un **invariante de seguridad** de multi-agent:
 - **Billing:** Keys separadas permiten tracking de costos per-agent.
 - **Revocación:** Puedes revocar la key de un agente sin afectar a los demás.
 
----
+- ---
+
 
 ## 6.6 Agent-to-Agent Messaging
 
-Por default, los agentes NO pueden comunicarse entre sí. Es un opt-in explícito:
+- Por default, los agentes NO pueden comunicarse entre sí.
+- Es un opt-in explícito:
+
 
 ```json5
 {
@@ -417,14 +469,19 @@ Por default, los agentes NO pueden comunicarse entre sí. Es un opt-in explícit
 }
 ```
 
-Cuando habilitado, un agente puede usar `sessions_send` para enviar un mensaje a la sesión de otro agente. Esto permite patrones como:
+- Cuando habilitado, un agente puede usar `sessions_send` para enviar un mensaje a la sesión de otro agente.
+- Esto permite patrones como:
+
 
 - Agente "alerts" detecta algo → envía notificación a agente "main"
 - Agente "work" completa una tarea → reporta a agente "main"
 
-**Riesgo:** Si un agente comprometido puede enviar mensajes a otro, podría intentar prompt injection inter-agente. Mantener el allowlist tight.
+- **Riesgo:** Si un agente comprometido puede enviar mensajes a otro, podría intentar prompt injection inter-agente.
+- Mantener el allowlist tight.
 
----
+
+- ---
+
 
 ## 6.7 Verificación y Debugging
 
@@ -461,7 +518,8 @@ tail -f ~/.openclaw/logs/gateway.log | grep -E "routing|agent:"
 6. ✅ Tool policy per-agent según nivel de confianza
 7. ✅ `openclaw agents list --bindings` muestra el routing esperado
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -492,6 +550,8 @@ tail -f ~/.openclaw/logs/gateway.log | grep -E "routing|agent:"
                   └── NO → Multi-agent
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 7 — Aislamiento y Seguridad por Agente](07-aislamiento-seguridad.md)*
+
+- *Siguiente: [Capítulo 7 — Aislamiento y Seguridad por Agente](07-aislamiento-seguridad.md)*
+

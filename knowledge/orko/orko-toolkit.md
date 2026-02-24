@@ -1,102 +1,136 @@
 ---
 _manifest:
-  urn: "urn:orko:kb:orko-toolkit"
+  urn: urn:orko:kb:orko-toolkit
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "ORKO framework documentation"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: ORKO framework documentation
+version: 2.0.0
 status: published
-tags: [toolkit, implementacion, calculadoras, templates, herramientas]
+tags:
+- toolkit
+- implementacion
+- calculadoras
+- templates
+- herramientas
+- knowledge
 lang: es
 ---
 
 # ORKO - Toolkit de Implementación (Layer 4)
 
-Conjunto de herramientas prácticas (templates y calculadoras) para implementar la metodología. Artefactos consumibles por roles humanos (Excel, Markdown) y máquinas (JSON, YAML).
+- Conjunto de herramientas prácticas (templates y calculadoras) para implementar la metodología.
+- Artefactos consumibles por roles humanos (Excel, Markdown) y máquinas (JSON, YAML).
 
-**Scope:** Layer 4-5 (Implementación)
 
-**Developer Mode:** Las calculadoras se generan programáticamente desde dev_specs (Python)
+- **Scope:** Layer 4-5 (Implementación)
+
+
+- **Developer Mode:** Las calculadoras se generan programáticamente desde dev_specs (Python)
+
 
 ## Calculadoras Principales
 
 ### Health Score Calculator
 
-**Archivo:** health_score_calculator.xlsx
+- **Archivo:** health_score_calculator.xlsx
 
-**Propósito:** Cálculo formal de H_org y componentes (H1-H5)
 
-**Inputs:**
+- **Propósito:** Cálculo formal de H_org y componentes (H1-H5)
+
+
+- **Inputs:**
+
 - Métricas Layer 1 (metric_id, value)
 - Pesos contextuales
 
-**Outputs:**
+- **Outputs:**
+
 - H_org score (0-100)
 - Radar chart
 - Health Gate status
 
-**Fases:** F1, F13, F18
+- **Fases:** F1, F13, F18
+
 
 ### Budget Parametric Allocator
 
-**Archivo:** budget_parametric_allocator.xlsx
+- **Archivo:** budget_parametric_allocator.xlsx
 
-**Propósito:** Estimación paramétrica de presupuesto y timeline según trayectoria
 
-**Inputs:**
+- **Propósito:** Estimación paramétrica de presupuesto y timeline según trayectoria
+
+
+- **Inputs:**
+
 - Trajectory (Survival/Minimal/Avanzada)
 - Headcount
 - Rates
 
-**Outputs:**
+- **Outputs:**
+
 - Budget total
 - Allocation por Fase
 - Timeline estimado
 
-**Fases:** F3, F8
+- **Fases:** F3, F8
+
 
 ### ROI Estimator
 
-**Archivo:** roi_estimator.xlsx
+- **Archivo:** roi_estimator.xlsx
 
-**Propósito:** Proyección de retorno de inversión de transformación y habilitación
 
-**Inputs:**
+- **Propósito:** Proyección de retorno de inversión de transformación y habilitación
+
+
+- **Inputs:**
+
 - Cost of Delay
 - Efficiency gains (%)
 - Implementation cost
 
-**Outputs:**
+- **Outputs:**
+
 - ROI_Habilitacion
 - Payback period
 - NPV
 
-**Fases:** F3, F15, P05
+- **Fases:** F3, F15, P05
+
 
 ### Context Decision Matrix
 
-**Archivo:** context_decision_matrix.xlsx
+- **Archivo:** context_decision_matrix.xlsx
 
-**Propósito:** Matriz de decisión para selección de trayectoria basada en 36 parámetros
 
-**Fases:** F1, F3
+- **Propósito:** Matriz de decisión para selección de trayectoria basada en 36 parámetros
+
+
+- **Fases:** F1, F3
+
 
 ### Convergence Tracker
 
-**Archivo:** convergence_tracker.xlsx
+- **Archivo:** convergence_tracker.xlsx
 
-**Propósito:** Tracking de convergencia arquitectónica E6_current vs E6_target
 
-**Fases:** F12, F18
+- **Propósito:** Tracking de convergencia arquitectónica E6_current vs E6_target
+
+
+- **Fases:** F12, F18
+
 
 ### Regulatory Compliance Tracker
 
-**Archivo:** regulatory_compliance_tracker.xlsx
+- **Archivo:** regulatory_compliance_tracker.xlsx
 
-**Propósito:** Seguimiento de cumplimiento normativo (P4 Límite)
 
-**Fases:** F8, P04
+- **Propósito:** Seguimiento de cumplimiento normativo (P4 Límite)
+
+
+- **Fases:** F8, P04
+
 
 ## Templates
 
@@ -151,9 +185,11 @@ Conjunto de herramientas prácticas (templates y calculadoras) para implementar 
 
 ## Validación
 
-**Estado:** VALIDADO ✅
+- **Estado:** VALIDADO ✅
 
-**Checklist:**
+
+- **Checklist:**
+
 - Calculadoras consistentes con fórmulas Layer 1 (H_org, ROI)
 - Templates cubren inputs/outputs de Fases F1-F18
 - Trazabilidad completa: Tool → Phase → Primitive

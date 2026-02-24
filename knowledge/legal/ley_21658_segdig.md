@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:legal:kb:ley-21658-segdig"
+  urn: urn:legal:kb:ley-21658-segdig
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Estatuto Administrativo y normativa chilena"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Estatuto Administrativo y normativa chilena
+version: 2.0.0
 status: published
-tags: [gobierno-digital, institucionalidad, hacienda, chile]
+tags:
+- gobierno-digital
+- institucionalidad
+- hacienda
+- chile
+- knowledge
 lang: es
 ---
 

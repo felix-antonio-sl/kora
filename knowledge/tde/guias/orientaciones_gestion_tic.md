@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:orientaciones-gestion-tic"
+  urn: urn:tde:kb:orientaciones-gestion-tic
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, tic, gestion-tic, institucionalidad, chile]
+tags:
+- transformacion-digital
+- tic
+- gestion-tic
+- institucionalidad
+- chile
+- tde
 lang: es
 ---
 
 # Orientaciones Básicas para la Gestión de TIC
 
 ## Propósito y Contexto
-Lineamientos iniciales para nuevas instituciones públicas en el diseño de su estrategia TIC, estructura organizacional e infraestructura digital. Alineado con la Secretaría de Gobierno Digital (SGD) y la Ley 21.180 (Transformación Digital del Estado). Busca asegurar la entrega de servicios de calidad desde el inicio de la operación institucional.
+- Lineamientos iniciales para nuevas instituciones públicas en el diseño de su estrategia TIC, estructura organizacional e infraestructura digital.
+- Alineado con la Secretaría de Gobierno Digital (SGD) y la Ley 21.180 (Transformación Digital del Estado).
+- Busca asegurar la entrega de servicios de calidad desde el inicio de la operación institucional.
+
 
 ## Estrategia TIC Institucional
 - **Objetivos Estratégicos**: definir metas de largo plazo alineadas con el mandato institucional.
@@ -40,7 +49,8 @@ Lineamientos iniciales para nuevas instituciones públicas en el diseño de su e
 - **Atención Ciudadana (SIAC)**: implementación de sistemas tipo CRM.
 
 ## Integración con Plataformas Transversales
-Obligatorio para estandarización y cumplimiento normativo:
+- Obligatorio para estandarización y cumplimiento normativo:
+
 - **Catálogo CPAT**: identificación y caracterización de trámites.
 - **ClaveÚnica**: autenticación de identidad ciudadana.
 - **FirmaGob**: firma electrónica avanzada para funcionarios.

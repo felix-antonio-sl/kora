@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:legal:kb:intro-estatutos"
+  urn: urn:legal:kb:intro-estatutos
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Estatuto Administrativo y normativa chilena"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Estatuto Administrativo y normativa chilena
+version: 2.0.0
 status: published
-tags: [derecho-administrativo, estatuto, chile, salud-publica, legislacion-medica]
+tags:
+- derecho-administrativo
+- estatuto
+- chile
+- salud-publica
+- legislacion-medica
+- knowledge
 lang: es
 ---
 
@@ -150,4 +156,7 @@ lang: es
 - Contrato individual de trabajo.
 - Sujeto a Código del Trabajo y convenios colectivos.
 
-**Principio Rector:** Jerarquía específica por vínculo. Regla general: CPR > LOC 18.575 > Estatuto Especial > Estatuto General > Código del Trabajo.
+- **Principio Rector:** Jerarquía específica por vínculo.
+- Regla general:
+- CPR > LOC 18.575 > Estatuto Especial > Estatuto General > Código del Trabajo.
+

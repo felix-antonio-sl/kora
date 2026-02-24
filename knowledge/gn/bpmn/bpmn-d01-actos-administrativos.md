@@ -1,13 +1,20 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:bpmn-d01-actos-administrativos"
+  urn: urn:gn:kb:bpmn-d01-actos-administrativos
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, bpmn, actos-administrativos, ley-19880, ley-21180]
+tags:
+- gore-nuble
+- gobierno-regional
+- bpmn
+- actos-administrativos
+- ley-19880
+- ley-21180
+- gn
 lang: es
 ---
 
@@ -207,5 +214,6 @@ flowchart TD
 | D02 Ciclo Presupuestario | Modificaciones, resoluciones | `D02_ciclo_presupuestario.md` |
 | D08 Rendiciones | Convenios de transferencia | `D08_rendiciones.md` |
 
----
-**Última actualización**: 2025-12-16
+- --- **Última actualización**:
+- 2025-12-16
+

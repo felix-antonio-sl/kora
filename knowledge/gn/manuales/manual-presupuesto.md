@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-presupuesto"
+  urn: urn:gn:kb:manual-presupuesto
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, presupuesto, finanzas, gestion-publica]
+tags:
+- gore-nuble
+- presupuesto
+- finanzas
+- gestion-publica
+- gn
 lang: es
 ---
 

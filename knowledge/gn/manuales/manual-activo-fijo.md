@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-activo-fijo"
+  urn: urn:gn:kb:manual-activo-fijo
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, activo-fijo, contabilidad, nicsp]
+tags:
+- gore-nuble
+- gobierno-regional
+- activo-fijo
+- contabilidad
+- nicsp
+- gn
 lang: es
 ---
 
@@ -15,7 +21,8 @@ lang: es
 
 ## Objetivo
 
-Administración del patrimonio físico institucional mediante el registro, valorización, control y disposición de bienes bajo normativa NICSP.
+- Administración del patrimonio físico institucional mediante el registro, valorización, control y disposición de bienes bajo normativa NICSP.
+
 
 ## Marco Normativo y Clasificación
 
@@ -76,7 +83,8 @@ Administración del patrimonio físico institucional mediante el registro, valor
 ## Valorización y Depreciación
 
 ### Valor Inicial
-Incluye precio de compra, impuestos no recuperables, costos de transporte, instalación y estimación de desmantelamiento (si aplica).
+- Incluye precio de compra, impuestos no recuperables, costos de transporte, instalación y estimación de desmantelamiento (si aplica).
+
 
 ### Parámetros de Depreciación
 *   **Método:** Línea recta.

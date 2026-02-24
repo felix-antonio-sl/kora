@@ -1,11 +1,18 @@
 ---
-urn: urn:gn:kb:gn-cqs-master
-created_by: FS
-date: 2026-01-29
-source: GORE Ñuble
+_manifest:
+  urn: urn:gn:kb:gn-cqs-master
+  provenance:
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
 version: 2.0.0
 status: published
-tags: [gore-nuble, competency-questions, consultas]
+tags:
+- gore-nuble
+- competency-questions
+- consultas
+- knowledge
+- gn
 lang: es
 ---
 
@@ -47,7 +54,7 @@ lang: es
 - CQ-027: ¿Cuántos miembros componen el CDR?
 - CQ-028: ¿Cuántas unidades formuladoras están registradas en la región?
 
-# 02 IPR
+## 02 IPR
 
 ## Existenciales
 - CQ-029: ¿Qué es una IPR (Intervención Pública Regional)?
@@ -89,7 +96,7 @@ lang: es
 - CQ-059: ¿Cuántas IPR por comuna existen en la región?
 - CQ-060: ¿Cuántas IPR por sector/área temática existen?
 
-# 03 Financiamiento
+## 03 Financiamiento
 
 ## Existenciales
 - CQ-061: ¿Qué es el FNDR (Fondo Nacional de Desarrollo Regional)?
@@ -127,7 +134,7 @@ lang: es
 - CQ-087: ¿Cuántos mecanismos de financiamiento administra el GORE?
 - CQ-088: ¿Cuántas glosas presupuestarias aplican al GORE Ñuble?
 
-# 04 Evaluación
+## 04 Evaluación
 
 ## Existenciales
 - CQ-089: ¿Qué es el SNI (Sistema Nacional de Inversiones)?
@@ -167,7 +174,7 @@ lang: es
 - CQ-117: ¿Cuántas IPR fueron evaluadas con RS en el año vigente?
 - CQ-118: ¿Cuál es la tasa de aprobación (RS) de IPR evaluadas?
 
-# 05 Aprobación
+## 05 Aprobación
 
 ## Existenciales
 - CQ-119: ¿Qué es el proceso de priorización de IPR?
@@ -199,7 +206,7 @@ lang: es
 - CQ-139: ¿Cuál es el quórum de aprobación del CORE?
 - CQ-140: ¿Cuántas sesiones de CORE se realizaron en el año?
 
-# 06 Convenios
+## 06 Convenios
 
 ## Existenciales
 - CQ-141: ¿Qué es un Convenio de Transferencia?
@@ -229,7 +236,7 @@ lang: es
 - CQ-159: ¿Cuál es el monto promedio de transferencia por convenio?
 - CQ-160: ¿Cuál es el umbral de 1.000 UTM para garantías a privados?
 
-# 07 Ejecución
+## 07 Ejecución
 
 ## Existenciales
 - CQ-161: ¿Qué es el seguimiento de una IPR?
@@ -261,7 +268,7 @@ lang: es
 - CQ-181: ¿Cuántas IPR fueron terminadas en el año vigente?
 - CQ-182: ¿Cuál es la tasa de cumplimiento de plazos de ejecución?
 
-# 08 Rendición
+## 08 Rendición
 
 ## Existenciales
 - CQ-183: ¿Qué es el SISREC (Sistema de Rendición Electrónica de Cuentas)?
@@ -289,7 +296,7 @@ lang: es
 - CQ-199: ¿Cuántos reparos de rendición fueron emitidos?
 - CQ-200: ¿Cuál es la tasa de aprobación de rendiciones?
 
-# 09 Normativo
+## 09 Normativo
 
 ## Existenciales
 - CQ-201: ¿Qué es la LOC GORE (Ley 19.175)?
@@ -324,7 +331,7 @@ lang: es
 - CQ-224: ¿Cuántas metodologías NIP están vigentes?
 - CQ-225: ¿Cuántas normas de probidad aplican a funcionarios GORE?
 
-# 10 TDE
+## 10 TDE
 
 ## Existenciales
 - CQ-226: ¿Qué es la TDE (Transformación Digital del Estado)?
@@ -358,7 +365,7 @@ lang: es
 - CQ-248: ¿Cuántos servicios de interoperabilidad consume el GORE?
 - CQ-249: ¿Cuál es el nivel de madurez digital del GORE Ñuble?
 
-# 11 Gestión Operacional IPR
+## 11 Gestión Operacional IPR
 
 ## Existenciales
 - CQ-250: ¿Qué es una IPR según la guía operacional?
@@ -394,7 +401,7 @@ lang: es
 - CQ-274: ¿Cuántos tracks de evaluación técnica existen según el tipo de IPR?
 - CQ-275: ¿Cuántas etapas contempla la Fase 1 (Ingreso y Admisibilidad)?
 
-# 12 Selector Vías Financiamiento
+## 12 Selector Vías Financiamiento
 
 ## Existenciales
 - CQ-276: ¿Qué es el FNDR según el selector?
@@ -426,7 +433,7 @@ lang: es
 - CQ-296: ¿Cuántas categorías de instituciones están habilitadas para postular al FRPD?
 - CQ-297: ¿Cuántos fondos temáticos componen el Concurso 8%?
 
-# 13 Guía IDI SNI
+## 13 Guía IDI SNI
 
 ## Existenciales
 - CQ-298: ¿Qué es el Principio de Proporcionalidad en el SNI?
@@ -461,7 +468,7 @@ lang: es
 - CQ-321: ¿Cuántos tipos de IDI existen según clasificación presupuestaria Subtítulo 31?
 - CQ-322: ¿Cuántos subsistemas tiene el SNI?
 
-# 14 PPR Ejecución Directa
+## 14 PPR Ejecución Directa
 
 ## Existenciales
 - CQ-323: ¿Qué un PPR de Ejecución Directa GORE?
@@ -492,7 +499,7 @@ lang: es
 - CQ-342: ¿Cuántos principios rectores de formulación se definen para PPR?
 - CQ-343: ¿Cuántas dimensiones de indicadores de desempeño existen?
 
-# 15 FRIL
+## 15 FRIL
 
 ## Existenciales
 - CQ-344: ¿Qué es el FRIL (Fondo Regional de Iniciativa Local)?
@@ -527,7 +534,7 @@ lang: es
 - CQ-367: ¿Cuántas comunas componen la Región de Ñuble?
 - CQ-368: ¿Cuántos grupos de categorías FRIL existen?
 
-# 16 FRPD
+## 16 FRPD
 
 ## Existenciales
 - CQ-369: ¿Qué es el FRPD (Fondo Regional para la Productividad y el Desarrollo)?
@@ -560,7 +567,7 @@ lang: es
 - CQ-390: ¿Cuántas iniciativas puede postular cada institución al FRPD?
 - CQ-391: ¿Cuál es el límite de gastos administrativos sobre el total postulado FRPD?
 
-# 17 Transferencia PPR
+## 17 Transferencia PPR
 
 ## Existenciales
 - CQ-392: ¿Qué es un PPR Transferible a entidad pública?
@@ -586,7 +593,7 @@ lang: es
 - CQ-406: ¿Cuál es el porcentaje máximo para gastos de administración del GORE?
 - CQ-407: ¿Cuántos documentos mínimos se requieren para postular un PPR transferible?
 
-# 18 Concurso 8 Porciento
+## 18 Concurso 8 Porciento
 
 ## Existenciales
 - CQ-408: ¿Qué es el Concurso Vinculación con la Comunidad 8%?
@@ -623,7 +630,7 @@ lang: es
 - CQ-433: ¿Cuál es el porcentaje máximo para asignación directa de casos emblemáticos?
 - CQ-434: ¿Cuál es el porcentaje del tiraje a entregar al GORE para material editado?
 
-# 19 Circular 33
+## 19 Circular 33
 
 ## Existenciales
 - CQ-435: ¿Qué es el Oficio Circular 33 del Ministerio de Hacienda?
@@ -659,7 +666,7 @@ lang: es
 - CQ-459: ¿Cuántos documentos contempla la matriz de documentación C33?
 - CQ-460: ¿Cuántas categorías principales de iniciativas C33 existen?
 
-# 20 Umbrales Transversal
+## 20 Umbrales Transversal
 
 ## Existenciales
 - CQ-461: ¿Qué es el umbral de 5.000 UTM para exención de RS?

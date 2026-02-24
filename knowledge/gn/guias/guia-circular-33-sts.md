@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:guia-circular-33-sts"
+  urn: urn:gn:kb:guia-circular-33-sts
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, circular-33, fndr, inversion-publica]
+tags:
+- gore-nuble
+- gobierno-regional
+- circular-33
+- fndr
+- inversion-publica
+- gn
 lang: es
 ---
 
@@ -24,7 +30,7 @@ lang: es
 
 ### Base Regulatoria
 - **Constitución:** Artículo 111.
-- **Leyes:** 
+- **Leyes:**
   - Ley 19.175 (Orgánica GORE).
   - Ley 21.074 (Fortalecimiento Regionalización).
   - Ley 21.796 (Presupuesto 2026, Partida 31, Programa 02).
@@ -114,7 +120,8 @@ lang: es
 | 13 | Cert. Terreno / DOM | | (1) | X | X |
 | 14 | Planos / Cubicaciones | | (1) | X | X |
 | 15 | Cronograma (Gantt) | X | X | X | X |
-*(1) Si procede | (2) Solo reposición motorizados*
+- *(1) Si procede | (2) Solo reposición motorizados*
+
 
 ### Reglas Específicas Documentales
 - **Oficio Conductor:** Dirigido a Gobernador. Alineación ERD Ñuble 2022-2030 y PLADECO (si aplica).

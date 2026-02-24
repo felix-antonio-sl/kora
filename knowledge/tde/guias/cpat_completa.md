@@ -1,20 +1,31 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:cpat-completa"
+  urn: urn:tde:kb:cpat-completa
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "Secretaría de Gobierno Digital"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: "Secretar\xEDa de Gobierno Digital"
+version: 2.0.0
 status: published
-tags: [transformacion-digital, cpat, procedimientos-administrativos, ley-21180, chile]
+tags:
+- transformacion-digital
+- cpat
+- procedimientos-administrativos
+- ley-21180
+- chile
+- tde
 lang: es
 ---
 
 # Guía CPAT: Catálogo de Procedimientos y Tramitaciones
 
 ## Propósito y Contexto TDE
-Herramienta de apoyo para implementación de Ley N° 21.180 (Transformación Digital). Permite identificar y caracterizar procedimientos administrativos para planificar tránsito a soporte electrónico. Foco en necesidades ciudadanas; rediseño de procesos usando tecnología e innovación. Responsable: Secretaría de Gobierno Digital (SGD).
+- Herramienta de apoyo para implementación de Ley N° 21.180 (Transformación Digital).
+- Permite identificar y caracterizar procedimientos administrativos para planificar tránsito a soporte electrónico.
+- Foco en necesidades ciudadanas; rediseño de procesos usando tecnología e innovación.
+- Responsable:
+- Secretaría de Gobierno Digital (SGD).
+
 
 ## Implementación Gradual (Ley N° 21.464)
 - **2022-2023**: Preparación e identificación de procedimientos.
@@ -31,7 +42,8 @@ Herramienta de apoyo para implementación de Ley N° 21.180 (Transformación Dig
 - **Normas Técnicas (NT)**: Autenticación, Interoperabilidad, Calidad de Plataformas, Documentos/Expedientes, Notificaciones, Seguridad.
 
 ## Plataforma CPAT
-Plataforma dinámica (<https://cpat.gob.cl/>) para gestión institucional de registros.
+- Plataforma dinámica (<https://cpat.gob.cl/>) para gestión institucional de registros.
+
 - **Perfiles**: Coordinador TDE, Autoridad Institucional, Editor, Invitado.
 - **Módulos**: Registro (caracterización), Transacciones (demanda mensual), Reportes, Ayuda.
 - **Tipos de Registro**:
@@ -40,7 +52,8 @@ Plataforma dinámica (<https://cpat.gob.cl/>) para gestión institucional de reg
     - **Tipo C**: Otras Tramitaciones (no administrativas).
 
 ## Caracterización de Registros (Formulario SFD)
-Secciones obligatorias para describir cada procedimiento:
+- Secciones obligatorias para describir cada procedimiento:
+
 1. **Identificación**: Nombre, descripción, área responsable, actos de inicio/término.
 2. **Marco Normativo**: Ley, URL, otras fuentes.
 3. **Usuarios**: pago asociado, tipo de usuario, segmento, disponibilidad.
@@ -50,7 +63,8 @@ Secciones obligatorias para describir cada procedimiento:
 7. **Interoperabilidad**: requerimiento de datos de otros órganos, medio (PISÉE/Red Interoperabilidad), DocDigital.
 
 ## Cálculo del Nivel de Soporte Electrónico
-Criterios de cumplimiento basados en el formulario CPAT:
+- Criterios de cumplimiento basados en el formulario CPAT:
+
 - **Autenticación**: uso de ClaveÚnica o Clave Tributaria.
 - **Interoperabilidad**: uso de Red de Interoperabilidad del Estado para obtener datos.
 - **Notificaciones**: práctica de notificaciones por medios electrónicos oficiales.
@@ -59,7 +73,10 @@ Criterios de cumplimiento basados en el formulario CPAT:
 - **Comunicaciones Oficiales**: envío vía plataforma DocDigital.
 
 ## Transacciones y Demanda
-Recopilación de demanda mensualizada por canal (Digital, Presencial, Telefónico). Se contabiliza en el mes de finalización (acto terminal). Permite establecer línea base para priorización de digitalización.
+- Recopilación de demanda mensualizada por canal (Digital, Presencial, Telefónico).
+- Se contabiliza en el mes de finalización (acto terminal).
+- Permite establecer línea base para priorización de digitalización.
+
 
 ## Hoja de Ruta Sugerida
 1. Conformar equipo representativo.

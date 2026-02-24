@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:nt-interoperabilidad"
+  urn: urn:tde:kb:nt-interoperabilidad
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, norma-tecnica, interoperabilidad, datos, red-interoperabilidad, chile]
+tags:
+- transformacion-digital
+- norma-tecnica
+- interoperabilidad
+- datos
+- red-interoperabilidad
+- chile
+- tde
 lang: es
 ---
 
 # Norma Técnica de Interoperabilidad (Decreto 12)
 
 ## Objeto y Definiciones
-Define estándares y herramientas para que los Órganos de la Administración del Estado (OAE) intercambien datos, documentos y expedientes electrónicos.
+- Define estándares y herramientas para que los Órganos de la Administración del Estado (OAE) intercambien datos, documentos y expedientes electrónicos.
+
 - **Interoperar**: operación de intercambio seguro entre dos órganos conectados por nodos.
 - **Nodo de Interoperabilidad**: software alojado en el OAE que permite la conexión a la red.
 - **Consumidor**: órgano que demanda el servicio.
@@ -22,7 +30,8 @@ Define estándares y herramientas para que los Órganos de la Administración de
 - **Dato Abierto**: información digital usable libremente por cualquier persona.
 
 ## Red de Interoperabilidad del Estado
-Conjunto de conexiones directas y seguras a través de internet basadas en nodos. 
+- Conjunto de conexiones directas y seguras a través de internet basadas en nodos.
+
 - **Integración**: obligatoria para todos los OAEs para cumplir los principios de la Ley 19.880.
 - **Componentes**: Nodos, Catálogo de Servicios, Registro de Trazabilidad, Directorio de Datos, Catálogo de Esquemas y Gestores de Acuerdos/Autorizaciones.
 

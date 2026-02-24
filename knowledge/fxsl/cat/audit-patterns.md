@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:audit-patterns"
+  urn: urn:fxsl:kb:audit-patterns
   provenance:
-    created_by: "FS"
-    created_at: "2025-12-05"
-    source: "Category Theory / DIK Auditing & Diagnostics"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2025-12-05'
+    source: Category Theory / DIK Auditing & Diagnostics
+version: 2.0.0
 status: published
-tags: [category-theory, audit, dik-framework, pattern-detection, consistency]
+tags:
+- category-theory
+- audit
+- dik-framework
+- pattern-detection
+- consistency
+- fxsl
 lang: en
 ---
 
@@ -17,104 +23,150 @@ lang: en
 
 ### Data Level
 
-**Definition**: Instance I: S → Set over schema S.
+- **Definition**:
+- Instance I:
+- S → Set over schema S.
+
 
 - Concrete values, rows, records, observations.
 - Funtor mapping sets to objects and functions to morfismos.
 
-**Audit Focus**: Referential integrity, completeness, consistency with schema.
+- **Audit Focus**:
+- Referential integrity, completeness, consistency with schema.
 
-**Example**: SQL table with data, JSON document, CSV file.
+
+- **Example**:
+- SQL table with data, JSON document, CSV file.
+
 
 ### Information Level
 
-**Definition**: Schema S (finitely presented category).
+- **Definition**:
+- Schema S (finitely presented category).
+
 
 - Objects = entities/types, Morfismos = relations/attributes.
 - Path equations = business constraints.
 
-**Audit Focus**: Structural coherence, commutativity, completeness of relations.
+- **Audit Focus**:
+- Structural coherence, commutativity, completeness of relations.
 
-**Example**: DDL SQL, JSON Schema, GraphQL Schema, .koda.yml.
+
+- **Example**:
+- DDL SQL, JSON Schema, GraphQL Schema, .koda.yml.
+
 
 ### Knowledge Level
 
-**Definition**: Transformations, migrations, abstract models (funtores between categories, adjunctions, Kan extensions).
+- **Definition**:
+- Transformations, migrations, abstract models (funtores between categories, adjunctions, Kan extensions).
 
-**Characteristics**: Behaviors (coálgebras), inference rules, processes.
 
-**Audit Focus**: Functoriality, structure preservation, validity of adjunctions, complete processes.
+- **Characteristics**:
+- Behaviors (coálgebras), inference rules, processes.
 
-**Example**: Migration funtor F: S → T, agent specification, .koda.yml with processes.
+
+- **Audit Focus**:
+- Functoriality, structure preservation, validity of adjunctions, complete processes.
+
+
+- **Example**:
+- Migration funtor F:
+- S → T, agent specification, .koda.yml with processes.
+
 
 ## Audit Dimensions
 
 ### Structural
 
-Verify artifact forms valid categorical structure.
+- Verify artifact forms valid categorical structure.
 
-**Checks**:
+
+- **Checks**:
+
 - **Identity**: Each object has identity morfismo.
 - **Composition**: Morfismos compose correctly.
 - **Associativity**: (h∘g)∘f = h∘(g∘f).
 - **Path Equality**: Parallel declared paths commute.
 
-**Severity if Fail**: CRITICAL.
+- **Severity if Fail**:
+- CRITICAL.
+
 
 ### Referential
 
-Verify integrity of internal and external references.
+- Verify integrity of internal and external references.
 
-**Checks**:
+
+- **Checks**:
+
 - **Internal Refs**: Ref: point to existing IDs in same document.
 - **External Refs**: XRef: point to resolvable URNs.
 - **Foreign Keys**: Instance foreign keys point to existing records.
 
-**Severity if Fail**: HIGH.
+- **Severity if Fail**:
+- HIGH.
+
 
 ### Completeness
 
-Verify artifact is complete per its DIK level.
+- Verify artifact is complete per its DIK level.
 
-**Checks**:
+
+- **Checks**:
+
 - **Data**: Instance I defined for all objects in schema.
 - **Information**: Schema has objects, morfismos, equations explicit.
 - **Knowledge**: Key concepts have operative processes.
 
-**Severity if Fail**: MEDIUM.
+- **Severity if Fail**:
+- MEDIUM.
+
 
 ### Quality
 
-Evaluate advanced categorical quality.
+- Evaluate advanced categorical quality.
 
-**Checks**:
+
+- **Checks**:
+
 - **Universal Constructions**: Use limits/colimits where applicable.
 - **Functoriality**: Transformations preserve structure.
 - **Behavioral Equivalence**: Equivalent states identified (bisimulation).
 
-**Severity if Fail**: LOW.
+- **Severity if Fail**:
+- LOW.
+
 
 ### Migration
 
-Verify migrations as functorial squares.
+- Verify migrations as functorial squares.
 
-**Checks**:
+
+- **Checks**:
+
 - **Funtor Validity**: F: S→T preserves identities and composition.
 - **Square Commutativity**: Migration square commutes naturally.
 - **Constraint Preservation**: Migration preserves required constraints.
 
-**Severity if Fail**: HIGH.
+- **Severity if Fail**:
+- HIGH.
+
 
 ### Behavioral
 
-Audit dynamic behavior via coálgebras.
+- Audit dynamic behavior via coálgebras.
 
-**Checks**:
+
+- **Checks**:
+
 - **Interface Conformance**: System implements declared interface funtor.
 - **Bisimulation**: Declared equivalent components are bisimilar.
 - **Action Index**: Episodes have action as primary key.
 
-**Severity if Fail**: MEDIUM/LOW.
+- **Severity if Fail**:
+- MEDIUM/LOW.
+
 
 ## Improvement Patterns
 

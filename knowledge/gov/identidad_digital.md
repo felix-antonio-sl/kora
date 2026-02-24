@@ -1,17 +1,23 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:identidad-digital"
+  urn: urn:gov:kb:identidad-digital
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, gobierno, chile, identidad-digital, estrategia]
+tags:
+- transformacion-digital
+- gobierno
+- chile
+- identidad-digital
+- estrategia
+- knowledge
 lang: es
 ---
 
-## Contexto y Justificación
+# Contexto y Justificación
 *   **Alcance**: Marco estratégico para nuevo sistema de identidad digital para personas naturales (actuación propia o representación). Potencial extensión a objetos y sistemas.
 *   **Relevancia**: Habilitante para ejercicio de derechos, inclusión digital y acceso a servicios financieros/transfronterizos.
 *   **Impacto Económico**: Aumento de productividad, impulso al e-commerce y reducción de costos de verificación (referencias UE y McKinsey).

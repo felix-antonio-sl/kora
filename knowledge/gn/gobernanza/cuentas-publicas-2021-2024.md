@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:cuentas-publicas-2021-2024"
+  urn: urn:gn:kb:cuentas-publicas-2021-2024
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, gestion-publica, nuble, cuenta-publica]
+tags:
+- gore-nuble
+- gobierno-regional
+- gestion-publica
+- nuble
+- cuenta-publica
+- gn
 lang: es
 ---
 
@@ -57,18 +63,21 @@ lang: es
 
 ### Inversión Regional 2024 por Distribución
 
-**Por Origen:**
+- **Por Origen:**
+
 *   **Municipal:** M$ 30.711.393.
 *   **Sectorial:** M$ 32.568.413.
 
-**Por Subtítulo (M$):**
+- **Por Subtítulo (M$):**
+
 *   **SUBT 24 (Transferencias Corrientes):** 21.988.939.
 *   **SUBT 31 (Iniciativas de Inversión):** 20.490.783.
 *   **FRIL (Fondo Regional de Iniciativa Local):** 11.877.101.
 *   **SUBT 29 (Activos No Financieros):** 6.026.001.
 *   **SUBT 33 (Transferencias de Capital):** 2.877.064.
 
-**Por Provincia:**
+- **Por Provincia:**
+
 *   **Regional:** M$ 26.781.851 (50 iniciativas).
 *   **Diguillín:** M$ 21.731.882 (98 iniciativas).
 *   **Itata:** M$ 7.910.943 (64 iniciativas).
@@ -155,7 +164,8 @@ lang: es
 | Equidad de Género | 110 | 319.154.394 |
 | Medio Ambiente | 110 | 307.060.717 |
 
----
+- ---
+
 
 ## Gestión Regional 2023
 
@@ -171,7 +181,8 @@ lang: es
 *   **Seguridad:** Tenencia Pinto inaugurada, Subcomisaría Huambalí finalizada.
 *   **Participación:** Creación primer Consejo de la Sociedad Civil (COSOC).
 
----
+- ---
+
 
 ## Gestión Regional 2022
 
@@ -184,7 +195,8 @@ lang: es
 *   **Atención Domiciliaria:** 4 móviles para pacientes postrados ($538M).
 *   **Fondos 7%:** $989 millones adjudicados (Cultura, Medio Ambiente, Adulto Mayor).
 
----
+- ---
+
 
 ## Gestión Regional 2021
 

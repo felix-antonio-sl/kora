@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ris-artcult"
+  urn: urn:gn:kb:ris-artcult
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, sni, cultura, proyectos-inversion]
+tags:
+- gore-nuble
+- gobierno-regional
+- sni
+- cultura
+- proyectos-inversion
+- gn
 lang: es
 ---
 

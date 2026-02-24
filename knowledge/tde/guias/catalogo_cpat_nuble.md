@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:catalogo-cpat-nuble"
+  urn: urn:tde:kb:catalogo-cpat-nuble
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "Secretaría de Gobierno Digital"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: "Secretar\xEDa de Gobierno Digital"
+version: 2.0.0
 status: published
-tags: [transformacion-digital, cpat, nuble, tramites, madurez-digital, chile]
+tags:
+- transformacion-digital
+- cpat
+- nuble
+- tramites
+- madurez-digital
+- chile
+- tde
 lang: es
 ---
 
 # Catálogo CPAT Ñuble: Madurez de Trámites Digitales
 
 ## Resumen de Situación Regional
-Análisis de madurez digital para GORE Ñuble y 15 municipalidades (período 2024–2025).
+- Análisis de madurez digital para GORE Ñuble y 15 municipalidades (período 2024–2025).
+
 - **Dominio de Objetos**: predominan *Solicitud/Permiso* y *Certificado/Constancia*.
 - **Madurez Crítica**: alta concentración en Niveles 0–1 (presencial o informativo).
 - **Brecha Digital**: disparidad entre disponibilidad de URL informativa y canal transaccional real.
@@ -31,7 +39,8 @@ Análisis de madurez digital para GORE Ñuble y 15 municipalidades (período 202
 - Implementar tablero regional con KPIs de madurez y calidad.
 
 ## Metodología de Clasificación
-Dimensiones de análisis para registros CPAT:
+- Dimensiones de análisis para registros CPAT:
+
 - **Objeto**: función central (Solicitud, Certificado, Pago, etc.).
 - **Tipo CPAT**: función común o específica.
 - **Nivel (0–5)**: grado de digitalización (0: presencial, 5: automatización avanzada).
@@ -49,7 +58,8 @@ Dimensiones de análisis para registros CPAT:
 8. **Atención/Orientación**: guías, asesoría sin acto administrativo.
 
 ## Implicancias de IA Responsable
-Requisitos para trámites Nivel >=3 con automatización:
+- Requisitos para trámites Nivel >=3 con automatización:
+
 - **Riesgo**: identificar decisiones que afecten derechos o elegibilidad.
 - **Gobernanza**: exigir revisión humana, explicabilidad y bitácoras de decisión.
 - **Transparencia**: rotulado de IA y canales de apelación para el usuario.

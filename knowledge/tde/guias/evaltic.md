@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:evaltic"
+  urn: urn:tde:kb:evaltic
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, evaltic, inversion-tic, gobernanza, chile]
+tags:
+- transformacion-digital
+- evaltic
+- inversion-tic
+- gobernanza
+- chile
+- tde
 lang: es
 ---
 
 # Guía Técnica EVALTIC: Marco para Inversiones en Gobierno Digital
 
 ## Contexto y Gobernanza
-EVALTIC es el marco obligatorio para gestionar inversiones y gasto en TIC de los Órganos de la Administración del Estado (OAE). Basado en estándares OCDE y BID. Requiere autorización técnica previa para presupuesto DIPRES.
+- EVALTIC es el marco obligatorio para gestionar inversiones y gasto en TIC de los Órganos de la Administración del Estado (OAE).
+- Basado en estándares OCDE y BID.
+- Requiere autorización técnica previa para presupuesto DIPRES.
+
 - **Actores clave**: DIPRES (presupuesto), Secretaría de Gobierno Digital (SGD - evaluación técnica), Secretaría de Modernización (articulación), ChileCompra (contratación).
 - **Marco Legal**: Ley de Presupuestos (Art. 12), Ley 21.180 (Transformación Digital), Ley 21.658 (Creación SGD).
 
@@ -51,7 +60,8 @@ EVALTIC es el marco obligatorio para gestionar inversiones y gasto en TIC de los
 - **Tecnología correcta**: estándares abiertos; servicios compartidos; seguridad y privacidad.
 
 ## Monitoreo y Seguimiento
-Liderado por la PMO de la Secretaría de Gobierno Digital.
+- Liderado por la PMO de la Secretaría de Gobierno Digital.
+
 - **Variables**: plazos (hitos), costos (SIGFE), alcance y gestión de riesgos.
 - **Etapas**: levantamiento inicial, seguimiento periódico del avance y evaluación final de eficacia.
 - **Resultado**: Informe de Evaluación de Eficiencia del Gasto en TIC por iniciativa.

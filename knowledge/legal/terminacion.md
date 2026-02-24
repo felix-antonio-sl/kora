@@ -1,13 +1,20 @@
 ---
 _manifest:
-  urn: "urn:legal:kb:terminacion"
+  urn: urn:legal:kb:terminacion
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Estatuto Administrativo y normativa chilena"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Estatuto Administrativo y normativa chilena
+version: 2.0.0
 status: published
-tags: [derecho-administrativo, estatuto, chile, terminacion-laboral, sector-publico, sector-privado]
+tags:
+- derecho-administrativo
+- estatuto
+- chile
+- terminacion-laboral
+- sector-publico
+- sector-privado
+- knowledge
 lang: es
 ---
 

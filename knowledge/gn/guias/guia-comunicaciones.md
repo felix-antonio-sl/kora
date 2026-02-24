@@ -1,20 +1,27 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:guia-comunicaciones"
+  urn: urn:gn:kb:guia-comunicaciones
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, comunicaciones, estrategia, administracion-publica]
+tags:
+- gore-nuble
+- gobierno-regional
+- comunicaciones
+- estrategia
+- administracion-publica
+- gn
 lang: es
 ---
 
 # Guía Integral de Comunicaciones GORE Ñuble
 
 ## Fundamentos Estratégicos y Misión
-Establece bases conceptuales y desafíos del entorno comunicacional regional.
+- Establece bases conceptuales y desafíos del entorno comunicacional regional.
+
 
 ### Misión y Propósito
 - **Comunicación Clásica (Lasswell):** Transmisión lineal (quién, qué, canal, a quién, efecto).
@@ -39,7 +46,8 @@ Establece bases conceptuales y desafíos del entorno comunicacional regional.
 - **Capital Humano:** Escolaridad 10.9 años vs 11.7 nacional. Obliga a mensajes sin jerga técnica.
 
 ## Ecosistema Político y Narrativa
-Mapeo de actores institucionales y definición del relato central del GORE.
+- Mapeo de actores institucionales y definición del relato central del GORE.
+
 
 ### Entorno Institucional
 - **GORE Ñuble:** Liderar desarrollo sustentable; institución que inspira e impulsa integración territorial.
@@ -57,7 +65,8 @@ Mapeo de actores institucionales y definición del relato central del GORE.
 - **Navegación Partidista:** Reconocimiento de estilos (Republicano/valórico vs Demócrata/pragmático) para anticipar argumentos sin abandonar tono transversal.
 
 ## La Audiencia Ciudadana
-Perfil demográfico y patrones de consumo de medios en la Región de Ñuble.
+- Perfil demográfico y patrones de consumo de medios en la Región de Ñuble.
+
 
 ### Perfil Sociocultural
 - **Población:** 512,289 hab. (2024); crecimiento 6.6% (superior al nacional).
@@ -74,7 +83,8 @@ Perfil demográfico y patrones de consumo de medios en la Región de Ñuble.
 - **Restricción Técnica:** Campañas digitales deben privilegiar formatos livianos (texto/imagen) por dependencia de datos móviles.
 
 ## Caja de Herramientas Comunicacionales
-Lineamientos editoriales, canales y formatos para la ejecución estratégica.
+- Lineamientos editoriales, canales y formatos para la ejecución estratégica.
+
 
 ### Tono y Estructura Editorial
 - **Tono Principal (Resolutivo):** Actos administrativos formales; seriedad y objetividad del Estado.
@@ -105,7 +115,8 @@ Lineamientos editoriales, canales y formatos para la ejecución estratégica.
 | **Nota de Prensa**| 350-450 palabras| Titular, lead, cita autoridad, CTA. |
 
 ## Gestión del Debate y Relación con Medios
-Estrategias de interacción pública y manejo de la percepción mediática.
+- Estrategias de interacción pública y manejo de la percepción mediática.
+
 
 ### Debate Público y Participación
 - **Disciplina del Mensaje:** Retorno constante a los 2-3 mensajes clave en foros públicos.
@@ -120,7 +131,8 @@ Estrategias de interacción pública y manejo de la percepción mediática.
 - **Burbujas Informativas:** Estrategia multicanal obligatoria para romper cámaras de eco.
 
 ## Gobernanza y Procesos Internos
-Roles, flujos de trabajo e indicadores de gestión.
+- Roles, flujos de trabajo e indicadores de gestión.
+
 
 ### Flujo de Producción (5 días hábiles)
 1. Solicitud interna.
@@ -145,7 +157,8 @@ Roles, flujos de trabajo e indicadores de gestión.
 - **Reputación:** Cobertura positiva en prensa local ≥ 75%.
 
 ## Tópicos Especiales y Crisis
-Gestión de riesgos regionales y protocolos de respuesta.
+- Gestión de riesgos regionales y protocolos de respuesta.
+
 
 ### Riesgos en Ñuble
 - **Incendios Forestales:** Probabilidad alta, impacto muy alto.
@@ -159,7 +172,8 @@ Gestión de riesgos regionales y protocolos de respuesta.
 - **Fase 2 (Desarrollo):** Combatir desinformación con datos y mostrar acción concreta.
 
 ## Anexo: Formatos Administrativos GORE Ñuble
-Guía técnica para la redacción de actos administrativos.
+- Guía técnica para la redacción de actos administrativos.
+
 
 ### Resolución Exenta
 - **Definición:** Acto administrativo terminal (Art. 3 Ley 19.880) exento de Toma de Razón (CGR).

@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:mgmt:kb:meyer-org-structure"
+  urn: urn:mgmt:kb:meyer-org-structure
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Principle-based Organizational Structure (meyer.md)"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Principle-based Organizational Structure (meyer.md)
+version: 2.0.0
 status: published
-tags: [organizational-structure, management, principles, design, meyer]
+tags:
+- organizational-structure
+- management
+- principles
+- design
+- meyer
+- knowledge
 lang: en
 ---
 
@@ -26,7 +32,8 @@ lang: en
 
 ### Fundamental Premise
 
-**Organizational Machine**
+- **Organizational Machine**
+
 
 - Definition: Organization as machine that either achieves vision or frustrates ambitions.
 - Source: Sergio Paiz — "Most managers focus on operating poorly designed machine, struggle with it, rather than stepping back and redesigning machine."
@@ -36,9 +43,11 @@ lang: en
   - Objective: Build organization capable of innovating continually over time.
   - Foundation: Role of leader of innovation is not to set vision and motivate others to follow it; but to create community willing and able to generate new ideas.
 
-**Three Strategic Vectors**
+- **Three Strategic Vectors**
 
-Great leaders pursue three parallel strategic vectors simultaneously:
+
+- Great leaders pursue three parallel strategic vectors simultaneously:
+
 
 | Vector | Definition |
 |---|---|
@@ -46,7 +55,8 @@ Great leaders pursue three parallel strategic vectors simultaneously:
 | Technical Vector | Product/service capabilities |
 | Organizational Vector | The machine itself |
 
-This document addresses organizational strategy.
+- This document addresses organizational strategy.
+
 
 ### Power of Structure
 
@@ -84,11 +94,15 @@ This document addresses organizational strategy.
 - Low morale and motivation; disempowerment; dead-end jobs; cynicism; stress.
 - Repeated restructurings, each fixing some problems and creating others.
 
-**Results:** Unhealthy structure is not "supplier of choice" to customers nor "employer of choice" to staff. Stressful place to work; tough to lead; little time for strategic thinking.
+- **Results:** Unhealthy structure is not "supplier of choice" to customers nor "employer of choice" to staff.
+- Stressful place to work; tough to lead; little time for strategic thinking.
+
 
 ## Science of Structure
 
-Foundation: Organizational structure is engineering science, not matter of personalities, politics, personal style.
+- Foundation:
+- Organizational structure is engineering science, not matter of personalities, politics, personal style.
+
 
 ### Definition of Science
 
@@ -103,7 +117,8 @@ Foundation: Organizational structure is engineering science, not matter of perso
 
 ### Common Guidance Without Science
 
-When executives don't study science of structure, reorganizations guided by:
+- When executives don't study science of structure, reorganizations guided by:
+
 
 - Incumbents' personalities and careers; attempts to work around managers who don't do essential aspects of jobs.
 - Overly simplistic models (like "build versus run") or industry fads (like matrix).
@@ -111,23 +126,28 @@ When executives don't study science of structure, reorganizations guided by:
 - Today's work, priorities, strategies.
 - Intuition.
 
-Result: Structure evolves through series of incremental changes by different executives, each with own philosophies and exigencies; resembles patchwork quilt of mismatched pieces.
+- Result:
+- Structure evolves through series of incremental changes by different executives, each with own philosophies and exigencies; resembles patchwork quilt of mismatched pieces.
+
 
 ### Reasons to Study Science
 
-**Avoid Organization du Jour**
+- **Avoid Organization du Jour**
+
 - Without guiding principles, each restructuring solves some problems while creating others.
 - Warning: Never-ending, painful, costly series of disruptions; staff endure endless stream of unsettling changes; little real difference.
 - Science helps engineer organization charts systematically, making deliberate decisions about key trade-offs.
 - Principle-based structure dynamically adapts to changes in world; lasting investment; repeated reorganizations not required.
 
-**Easier to Explain**
+- **Easier to Explain**
+
 - Makes it easier to explain how things supposed to work.
 - Easier for staff to understand; more likely to make it work as intended.
 - With clear principles, executive can invite participation from leadership team without fear of endless haggling and parochial politics.
 - Participation takes advantage of people's in-depth knowledge; builds deep understanding; engenders tremendous commitment.
 
-**Don't Blame People**
+- **Don't Blame People**
+
 - Leaders have moral obligation to study science of structure.
 - Critical to know difference between poorly performing person and good person in poorly designed job.
 - Example — University case:
@@ -138,7 +158,8 @@ Result: Structure evolves through series of incremental changes by different exe
   - Conclusion: Sondra's failure not because she was poor performer; because structure gave her two very different jobs. President studied science of structure and saw real problem before firing great sales leader.
 - Warning: Futile and cruel to blame people for poor performance when structure is root cause.
 
-**New Levels of Performance**
+- **New Levels of Performance**
+
 - Source: Preston Simons, CIO at Aurora Health Care, former CIO at Abbott Laboratories.
 - Led organizations from hundreds of employees regionally to thousands globally; implemented these principles in each case.
 - Result: Powerful, yet pragmatic approach consistently leads to improved role clarity; better teamwork; customer focus; entrepreneurship; improved performance; commitment.
@@ -147,12 +168,14 @@ Result: Structure evolves through series of incremental changes by different exe
 
 ### Great People Alone Not Enough
 
-**Common Argument (Informal Organization)**
+- **Common Argument (Informal Organization)**
+
 - Working relationships formed despite structure create "informal organization" that really determines how things get done.
 - Conclusion: Success depends simply on hiring and developing great people who work hard, work well together, "do what's right."
 - Result: Leads to designing organizational structures around unique talents or career needs of key executives.
 
-**Problems with This Approach**
+- **Problems with This Approach**
+
 
 | Problem | Description |
 |---|---|
@@ -160,7 +183,8 @@ Result: Structure evolves through series of incremental changes by different exe
 | Fragility | Organizations depending only on great people require altruism, which is not natural or reliable; generally fall apart when executive who created team or key members leave |
 | Impracticality | Organization requiring everyone above average difficult to staff; limited in growth potential |
 
-**Reality Check**
+- **Reality Check**
+
 
 - Superior people can overcome most structural dysfunctions, but inordinate amount of leaders' time, energy, goodwill spent resolving confusion and friction.
 - Example — Large airline case:
@@ -175,11 +199,13 @@ Result: Structure evolves through series of incremental changes by different exe
 
 ### Great Processes Alone Not Enough
 
-**Common Argument (Process Engineering)**
+- **Common Argument (Process Engineering)**
+
 - Carefully engineered business processes are key to success.
 - As long as everybody does their part in well-designed processes, organization will perform well.
 
-**Problems with This Approach**
+- **Problems with This Approach**
+
 
 | Problem | Description |
 |---|---|
@@ -187,7 +213,8 @@ Result: Structure evolves through series of incremental changes by different exe
 | Structure Can Override Processes | When staff caught between conflicting forces, they optimize performance appraisals, even if some processes fail |
 | Rigidity | In functions where projects have unique requirements, predefined processes make organization more rigid and less creative |
 
-**Conclusion:** Great people working with great processes can't perform well unless structure they live in is well designed.
+- **Conclusion:** Great people working with great processes can't perform well unless structure they live in is well designed.
+
 
 ### Structure Drives Performance
 
@@ -197,7 +224,9 @@ Result: Structure evolves through series of incremental changes by different exe
 
 ## Seven Fundamental Principles
 
-Foundation: Seven Principles provide foundation for science of structure.
+- Foundation:
+- Seven Principles provide foundation for science of structure.
+
 
 | Principle | Statement |
 |---|---|
@@ -211,18 +240,23 @@ Foundation: Seven Principles provide foundation for science of structure.
 
 ### Principle 1: Golden Rule — Authority and Accountability Must Match
 
-Most important principle; absolutely essential to success of every organization.
+- Most important principle
+- absolutely essential to success of every organization.
 
-**Statement:** Authorities and accountabilities must match.
+
+- **Statement:** Authorities and accountabilities must match.
+
 
 #### Consequences of Violation
 
-**Authority Without Accountability**
+- **Authority Without Accountability**
+
 - Person with authorities but not matching accountabilities becomes unconstrained tyrant.
 - Can make decisions without bearing consequences; can tell others what to do while others held accountable for results.
 - Without checks and balances, they do as they please.
 
-**Accountability Without Authority**
+- **Accountability Without Authority**
+
 - Those with accountabilities but insufficient authorities are disempowered and can't get jobs done.
 - People cannot be held accountable for results if they don't have resources and authorities necessary to achieve those results.
 - Warning: Trying to hold staff accountable for things they can't control won't lead to good performance; only establishes scapegoat to blame.
@@ -230,17 +264,20 @@ Most important principle; absolutely essential to success of every organization.
 
 #### Case Studies
 
-**Process Owners Case**
+- **Process Owners Case**
+
 - CIO appointed "process owners" with authority over processes but without matching accountability for effectiveness.
 - Result: Process owners had authority without accountability; everybody else had accountability without authority.
 - Service-delivery groups took blame when services failed, even if failure was due to bad process.
 - Organization became bureaucratic, slow, inflexible.
 
-**CFO Mandates Others' Budgets**
+- **CFO Mandates Others' Budgets**
+
 - CFO held accountable for company's financial targets, but not for business results.
 - Cuts others' budgets with little regard for impacts; rewarded for cost savings, not blamed for poor performance caused throughout rest of company.
 
-**Customer Service Held Accountable for Resolving Incidents**
+- **Customer Service Held Accountable for Resolving Incidents**
+
 - Customer-service manager held accountable for resolving problems, not just coordinating resolution.
 - Manager didn't have resources or authorities to solve many problems.
 - Those who created problems not held accountable for remediating them.
@@ -281,7 +318,8 @@ Most important principle; absolutely essential to success of every organization.
 
 #### Leader's Role in Empowered Organization
 
-Specific authorities and accountabilities of leaders:
+- Specific authorities and accountabilities of leaders:
+
 
 - Decide rules of game (create organizational ecosystem: structure, resource-governance processes, culture).
 - Once right structure in place, adjust domains as needed, arbitrate boundary disputes, ensure teamwork occurring as it should.
@@ -293,9 +331,13 @@ Specific authorities and accountabilities of leaders:
 - Guide business and product (technology) strategies within group.
 - Serve as diplomat, representing group to peers and superiors.
 
-**Leader's job summary:** Create right environment, do everything possible to help subordinates succeed.
+- **Leader's job summary:** Create right environment, do everything possible to help subordinates succeed.
 
-**Control in empowered organization:** Managing by results can give more, not less, control. Focus moves up from micro-managing to more leveraged level of orchestrating right results. Instead of being cog in machine, leader becomes driver of machine.
+
+- **Control in empowered organization:** Managing by results can give more, not less, control.
+- Focus moves up from micro-managing to more leveraged level of orchestrating right results.
+- Instead of being cog in machine, leader becomes driver of machine.
+
 
 #### Implications for Structure
 
@@ -307,18 +349,22 @@ Specific authorities and accountabilities of leaders:
 
 ### Principle 2: Specialization and Teamwork
 
-Definition: You can only be world-class at one thing at a time; but you can't specialize if you can't team.
+- Definition:
+- You can only be world-class at one thing at a time; but you can't specialize if you can't team.
+
 
 #### Case Study: Customer-centric Structure
 
 - CIO dedicated group to each client business unit; each group relatively self-sufficient, with all skills needed to deliver any applications requested by assigned business unit.
 - Structure: Janice (Sales and Marketing), Bill (Finance), Henry (HR and other Corporate functions), Eugene (Engineering and Manufacturing), IT infrastructure and operations.
 
-**Initial Success:**
+- **Initial Success:**
+
 - Clients felt IT more responsive; better understood business; better partnership developed.
 - Clients could control priorities; more understanding when couldn't do everything.
 
-**Problems Emerged:**
+- **Problems Emerged:**
+
 - Client-liaison function part-time job; not much time to spend with clients.
 - Engineering sub-optimized: each technology sub-specialty scattered among various client-dedicated groups.
 - Limited professional exchange; when staff ran into technical challenges, might not have known peers already figured out answer.
@@ -328,11 +374,14 @@ Definition: You can only be world-class at one thing at a time; but you can't sp
 - Missed business opportunities (no specialists in web and mobile applications).
 - Structure led to multiple general-ledger systems and multiple records for same customer.
 
-**Conclusion:** Customer-aligned organization didn't deliver advantages of its size; performed no better than decentralized groups. Organization didn't deserve to stay together because wasn't adding value.
+- **Conclusion:** Customer-aligned organization didn't deliver advantages of its size; performed no better than decentralized groups.
+- Organization didn't deserve to stay together because wasn't adding value.
+
 
 #### Why Organizations Exist
 
-**Common Purpose Insufficient**
+- **Common Purpose Insufficient**
+
 - For very simple tasks, common purpose might be enough.
 - Example: 100 individuals each trying to make cars; each would have to be expert in virtually every branch of design, engineering, manufacturing. No one person can possibly know enough.
 - Independent people agreeing to work toward common purpose solves problem of volume, but not of complexity.
@@ -364,7 +413,9 @@ Definition: You can only be world-class at one thing at a time; but you can't sp
 
 #### Benefits of Specialization
 
-Source: Adam Smith described advantages of "division of labor" in 1776.
+- Source:
+- Adam Smith described advantages of "division of labor" in 1776.
+
 
 | Benefit | Description |
 |---|---|
@@ -376,20 +427,25 @@ Source: Adam Smith described advantages of "division of labor" in 1776.
 | Reduced Stress | Specialists experience less stress; confident of abilities; more productive, stable, happy |
 | Motivation | With greater competence, easier to excel; better career opportunities |
 
-**Conclusion: Specialists always outperform generalists.**
+- **Conclusion:
+- Specialists always outperform generalists.**
+
 
 #### Concerns About Specialization
 
-**Practical Limits**
+- **Practical Limits**
+
 - Organizations can't afford to specialize to point of becoming "one deep" (dependent for critical services on just one individual).
 - Person may become bottleneck; problems when takes vacation or leaves company.
 - Sometimes cross-training can address this; in other cases, structure must define domains more broadly.
 
-**Job Narrowing Concern**
+- **Job Narrowing Concern**
+
 - Healthy specialization is not job narrowing.
 - Specialists do everything in their field: work with customers; deliver today's work; support past work; keep up with innovations; plan and develop future offerings; improve their processes.
 
-**Market Reality**
+- **Market Reality**
+
 - Market rewards specialists, not generalists.
 - Some resist specialization to avoid accountability for excellence in any one thing.
 
@@ -418,7 +474,9 @@ Source: Adam Smith described advantages of "division of labor" in 1776.
 
 ### Principle 3: Precise Domains
 
-Definition: Define clear boundaries with no overlaps or gaps.
+- Definition:
+- Define clear boundaries with no overlaps or gaps.
+
 
 #### Domain Definition
 
@@ -437,12 +495,14 @@ Definition: Define clear boundaries with no overlaps or gaps.
 - Definition: Lack of clarity may cause multiple groups to think they're responsible for same function.
 - Result: When domains overlap, staff fight and compete with one another.
 
-**Intentional Internal Competition**
+- **Intentional Internal Competition**
+
 - Some leaders create overlapping domains intentionally, thinking internal competition will elicit better performance.
 - Warning: Internal competition should never be needed.
 - For internal service providers, competition comes from vendors; outsourcing or benchmarking study can serve as wake-up call.
 
-**Costs of Overlapping Domains**
+- **Costs of Overlapping Domains**
+
 - Reduced specialization: Splitting profession into multiple groups reduces specialization; lower productivity, slower delivery, lower quality, greater risk, less innovation, more stress.
 - Redundant efforts: More than one group does same research, produces same kind of products; solutions reinvented rather than reused.
 - Less innovation: When two groups study same thing, something else that one might otherwise have explored is missed.
@@ -451,7 +511,8 @@ Definition: Define clear boundaries with no overlaps or gaps.
 - Less teamwork: Internal competition may be friendly, but inevitable friction undermines teamwork.
 - Lack of entrepreneurship: Whenever single line of business fragmented, no one feels "ownership."
 
-**Conclusion:** Good structure defines distinct domains, with no overlapping boundaries.
+- **Conclusion:** Good structure defines distinct domains, with no overlapping boundaries.
+
 
 #### Case Study: Gaps
 
@@ -465,7 +526,8 @@ Definition: Define clear boundaries with no overlaps or gaps.
 
 - Definition: When function is missing, gaps occur.
 
-**Results of Gaps**
+- **Results of Gaps**
+
 - Unreliable delivery: With no one thinking about function on daily basis, it's "catch as catch can."
 - Reduced specialization: Staff filling gap outside their specialty aren't experts; don't have time to learn that other profession.
 - Overlaps: Gaps create overlaps; group that needs missing specialty fills gap for itself, then multiple groups fill same gap.
@@ -475,7 +537,8 @@ Definition: Define clear boundaries with no overlaps or gaps.
 - When domains unclear, staff don't know what they're supposed to be good at; natural drive for excellence thwarted.
 - May try to be good at too many things and become generalists; or may just follow personal interests.
 
-**Benefits of Clear Domains**
+- **Benefits of Clear Domains**
+
 - Give people focus they need to excel.
 - Tell people what literature, which conferences, which methods and technologies, what research to study.
 - Staff develop feeling of pride in their group's unique function.
@@ -516,7 +579,8 @@ Definition: Define clear boundaries with no overlaps or gaps.
 - Key to good domains: bounding what people produce rather than what they do.
 - Dividing up results actually lot easier than sorting tasks; list of organization's products and services far shorter than all tasks people do.
 
-**Example — Applications Manager:**
+- **Example — Applications Manager:**
+
 - Aaron is applications manager; accountable for entire portfolio of applications; single point of accountability.
 - Mark's group produces requirements definitions (not product designs — that's engineering task).
 - Jay sells project planning and facilitation services; whether or not Aaron's engineers get help from Jay, still accountable for delivering projects.
@@ -532,16 +596,21 @@ Definition: Define clear boundaries with no overlaps or gaps.
 
 ### Principle 4: Basis for Substructure
 
-Definition: Divide function into groups based on what it's supposed to be good at.
+- Definition:
+- Divide function into groups based on what it's supposed to be good at.
 
-Context: Organization big enough to require multiple groups in essentially same profession — how to divide all various deliverables among those multiple groups?
+
+- Context:
+- Organization big enough to require multiple groups in essentially same profession — how to divide all various deliverables among those multiple groups?
+
 
 #### Case Study: Structure by Clients' Business Processes
 
 - CIO dedicated groups to each of company's core processes:
   - Gail (product-development process), Jerry (order-to-invoice process), Tom (financial and administrative processes).
 
-**Problems in Practice**
+- **Problems in Practice**
+
 
 | Problem | Description |
 |---|---|
@@ -557,7 +626,8 @@ Context: Organization big enough to require multiple groups in essentially same 
 - **Basis for substructure:** The way you divide domains among groups within a profession.
 - **Determines people's specialties** (their bottom-of-the-T).
 
-**Examples of Different Bases**
+- **Examples of Different Bases**
+
 
 | Basis | Specialization | Generalism |
 |---|---|---|
@@ -582,15 +652,22 @@ Context: Organization big enough to require multiple groups in essentially same 
 
 ### Principle 5: Avoid Conflicts of Interests
 
-Definition: Don't expect people to go in two opposing directions.
+- Definition:
+- Don't expect people to go in two opposing directions.
 
-Context: To support empowerment, Principle 3 states groups' domains should be defined by results they produce. What goes best with what? Two considerations: conflicts of interests (Principle 5) and professional synergies (Principle 6).
+
+- Context:
+- To support empowerment, Principle 3 states groups' domains should be defined by results they produce.
+- What goes best with what?
+- Two considerations: conflicts of interests (Principle 5) and professional synergies (Principle 6).
+
 
 #### Case Study: Governance and Client Liaison Group
 
 - CIO put Martha in charge of "Governance" group; responsibilities included business relationship managers, demand management (deciding priorities among proposed projects), PMO.
 
-**Martha's Conflicts of Interests:**
+- **Martha's Conflicts of Interests:**
+
 - Had authority to decide project priorities; conflicts with business relationship management role which attempts to be on clients' side of table.
 - Judging internal projects proposed by peers undermines service orientation expected in project management function.
 - Since Martha's job was to limit demand, would business relationship managers be aggressive about seeking new high-payoff opportunities?
@@ -600,33 +677,45 @@ Context: To support empowerment, Principle 3 states groups' domains should be de
 
 #### Five Fundamental Conflicts of Interests
 
-Definition: If put wrong deliverables together in single job, can inadvertently create conflicts of interests.
+- Definition:
+- If put wrong deliverables together in single job, can inadvertently create conflicts of interests.
 
-**Conflict 1: Invention Versus Operations**
+
+- **Conflict 1:
+- Invention Versus Operations**
+
 - Definition: Invention (major innovations) versus operational stability.
 - Combining invention and operations misguided: operational issues tend to take precedence; fire-fighting swamps invention; short-term problems take attention away from long-term opportunities.
 - Example — George Case: Manager given both infrastructure operations and infrastructure engineering responsibilities. Made great progress stabilizing operations, but innovation stopped.
 - Example — Telecommunications Cable Manufacturer: Executive given both business development (acquisitions) and operating acquired companies. After first major acquisition, had no time for new deals; CEO left without business development function.
 - Note: Generally, conflict constrains invention; but in cases where leader prefers engineering, invention takes precedence and operations never stabilize.
 
-**Conflict 2: Purpose-specific Solutions Versus Components**
+- **Conflict 2:
+- Purpose-specific Solutions Versus Components**
+
 - Definition: Some organizations produce two different kinds of products: purpose-specific, and components.
 - Example — Construction industry: Architects design buildings; civil engineers design bridges; both draw on structural engineers, electrical engineers.
 - Example — IT: Business applications purpose-specific; all draw on experts in component technologies (computing platforms, databases, middleware).
 - Warning: If group expected to produce both, unhealthy bias built in; staff tend to put everything on familiar platforms.
 - Example — PDC Bleach Operation: Distinguishing purpose-independent (base chemical) from purpose-specific (consumer bleach) products led to new source of revenues.
 
-**Conflict 3: Enterprisewide Thinking Versus Focus of Specialist**
+- **Conflict 3:
+- Enterprisewide Thinking Versus Focus of Specialist**
+
 - Definition: Some decisions (policies, plans, standards) are enterprisewide, affecting many different stakeholders.
 - Warning: If assigned to any one of impacted domains, decisions will tend to be biased in favor of that one stakeholder.
 - Example — IT technology standards: If network standards decided by network engineers, may neglect interests of other engineers who must design compatible systems.
 
-**Conflict 4: Product Specialization Versus Unbiased Diagnosis of Clients' Needs**
+- **Conflict 4:
+- Product Specialization Versus Unbiased Diagnosis of Clients' Needs**
+
 - Definition: Specialization brings quality, but also brings bias.
 - Warning: If staff expected to do both (specialize and provide unbiased diagnosis), conflict of interests arises.
 - Warning: As old saying goes, "Give child hammer, and everything looks like nail!" Despite best efforts to be objective, staff see only needs for their favored solutions.
 
-**Conflict 5: Service Orientation Versus Audit**
+- **Conflict 5:
+- Service Orientation Versus Audit**
+
 - Definition: Primary mission of most functions is serving others; customer focus is key success factor.
 - Warning: Mixing audit functions with service functions creates conflict of interests; impossible to build relationship with customers while also judging them.
 - Example: Just can't say, "I'm from Internal Revenue Service; I'm here to help!"
@@ -647,27 +736,37 @@ Definition: If put wrong deliverables together in single job, can inadvertently 
 
 ### Principle 6: Cluster by Professional Synergies
 
-Definition: Cluster groups under common boss based on similar professions.
+- Definition:
+- Cluster groups under common boss based on similar professions.
 
-Context: As combine organization's many deliverables into domains, first consideration is avoiding conflicts of interests; second is professional synergies.
+
+- Context:
+- As combine organization's many deliverables into domains, first consideration is avoiding conflicts of interests; second is professional synergies.
+
 
 #### Case Study: Process-centric Groups
 
 - CIO dedicated groups to each major process within IT: Ruth (applications development process), Bob (infrastructure engineering process), Matt (incident management process), Art (operational service delivery process).
 
-**Problems:**
+- **Problems:**
+
 - With each group attempting to cover many engineering disciplines, all became less specialized; costs rose, quality suffered, pace of innovation slowed.
 - Art forced to operate whatever infrastructure Bob developed; accountable for service delivery even though had only indirect control of own assets.
 - Smaller, less-visible processes not represented in structure (business opportunity analyses, standards planning).
 - Technology experts scattered among various groups didn't coordinate professional practices.
 
-**Conclusion:** Structuring by internal processes extremely costly way to optimize workflows. As long as willing to invest in processes and teamwork, no need to put diverse professions under common boss just to get them to work together.
+- **Conclusion:** Structuring by internal processes extremely costly way to optimize workflows.
+- As long as willing to invest in processes and teamwork, no need to put diverse professions under common boss just to get them to work together.
+
 
 #### Clustering Similar Professions
 
-Foundation: If don't have to put people under common boss to get them to work together, then free to cluster staff by their professions.
+- Foundation:
+- If don't have to put people under common boss to get them to work together, then free to cluster staff by their professions.
 
-**8 Types of Synergies from Clustering**
+
+- **8 Types of Synergies from Clustering**
+
 
 | Synergy | Description | Warning if Scattered |
 |---|---|---|
@@ -689,33 +788,42 @@ Foundation: If don't have to put people under common boss to get them to work to
 
 ### Principle 7: Business Within a Business
 
-Definition: Every manager is entrepreneur whose job is to satisfy customers (internal and external) with products and services.
+- Definition:
+- Every manager is entrepreneur whose job is to satisfy customers (internal and external) with products and services.
 
-Warning: Common mistake is to hold people accountable for implementing their specialties.
+
+- Warning:
+- Common mistake is to hold people accountable for implementing their specialties.
+
 
 #### Case Study: Safety Group Accountable for Safety
 
 - Local water district: Randy (operations and repairs), Barry (safety and environmental compliance).
 - Safety group did inspections, supervised handling of hazards, oversaw Operations staff while they worked.
 
-**Problems:**
+- **Problems:**
+
 - Work crews weren't trained in safety, since Safety group supposed to take care of that.
 - Sometimes work crews grew impatient waiting for Safety staff to show up, went ahead without them.
 - Study found incidents five to seven times average, fines three to five times average.
 - 80-person Safety group requesting additional 20 staff; best practices were just 5–10 safety experts dedicated to establishing policies and training workers.
 
-**Conclusion:** Safety is attribute of people's work, not product in itself; everybody must run safe businesses and produce safe products. Safety group should have been in business of providing training and consulting to Operations, not "implementing safety."
+- **Conclusion:** Safety is attribute of people's work, not product in itself; everybody must run safe businesses and produce safe products.
+- Safety group should have been in business of providing training and consulting to Operations, not "implementing safety."
+
 
 #### Why Entrepreneurs Love Their Jobs
 
-**What Entrepreneurs Said — Empowerment:**
+- **What Entrepreneurs Said — Empowerment:**
+
 - "...owning my time, choosing which hours I work."
 - "I work as I wish to, within my own sense of professionalism and ethics."
 - "...control over decisions."
 - "I'm not good rule-follower; I like making my own rules."
 - "...the creativity — there's no limitations on my ideas."
 
-**What Entrepreneurs Said — Identity with Results:**
+- **What Entrepreneurs Said — Identity with Results:**
+
 - "...make things happen."
 - "...the adventure of starting something and getting it done."
 - "...building and creating value."
@@ -724,7 +832,8 @@ Warning: Common mistake is to hold people accountable for implementing their spe
 - "I'm an artist of necessities; I love filling society's needs."
 - "I want to be game-changer."
 
-**Conclusion:** No reason can't create these same motivational forces (empowerment, identity with results) inside large organizations, at every level.
+- **Conclusion:** No reason can't create these same motivational forces (empowerment, identity with results) inside large organizations, at every level.
+
 
 #### What It Means to Be a Business Within a Business
 
@@ -737,7 +846,8 @@ Warning: Common mistake is to hold people accountable for implementing their spe
 
 #### Benefits of Business-Within-a-Business Paradigm
 
-Business-within-a-business paradigm brings out best in people:
+- Business-within-a-business paradigm brings out best in people:
+
 
 | Trait | Entrepreneurial Mindset |
 |---|---|
@@ -750,39 +860,50 @@ Business-within-a-business paradigm brings out best in people:
 | Use of vendors | "If buying something more cost-effective than building it internally, I'll be first to propose it" |
 | Innovation | "I've got to stay ahead of my competition; so I'd better innovate" |
 
-**What You Won't Hear:**
+- **What You Won't Hear:**
+
 - "My job is to get budget at beginning of year, make sure it's used up by year end."
 - "We're in public service; we're not business; so I don't have to listen to any customers."
 - "My customer is enterprise as whole; I know what's best for you."
 
 #### Why Not "Partners"
 
-**Dangerous Definition 1: We Share Everything**
+- **Dangerous Definition 1:
+- We Share Everything**
+
 - "All for one, one for all" notion of partnership; respective authorities and accountabilities unclear.
 - IT staff feel have right to tell clients how to run businesses.
 - Clients feel have right to tell IT staff how to manage technology projects.
 - Shared accountability equivalent to no accountability; without clearly defined individual accountabilities, team members struggle for control.
 
-**Dangerous Definition 2: We're the Experts**
+- **Dangerous Definition 2:
+- We're the Experts**
+
 - "We are partners, and hence equals; and since we're IT experts, we'll decide what technologies you get."
 - Opposite of customer focus; "we know what's best for you" attitude erodes relationships.
 - Fundamentally disempowering: would be unfair to hold clients accountable for business results if can't control means of production.
 
 #### Better Form of Partnership: Customer-Supplier Relationships
 
-**Customer-Supplier Model:**
+- **Customer-Supplier Model:**
+
 - Suppliers respect customers' rights to make purchase decisions; present options, then let customers decide.
 - Customers decide what they'll buy; suppliers figure out how to produce it; choose own methods and tools.
 
-**Matching Authorities and Accountabilities:**
+- **Matching Authorities and Accountabilities:**
+
 - Customers have authority to decide what they'll buy; accountable for justifying utilization, paying all life-cycle costs, realizing benefits.
 - Suppliers have authority to decide how they'll produce results; accountable for reliable delivery at competitive costs.
 
-**Benefits:** Customer-supplier relationships clean and mutually respectful. Synergistic: only result from taking advantage of people's different strengths, assigning distinct authorities and accountabilities.
+- **Benefits:** Customer-supplier relationships clean and mutually respectful.
+- Synergistic: only result from taking advantage of people's different strengths, assigning distinct authorities and accountabilities.
+
 
 #### Proactive Entrepreneurship
 
-Entrepreneurs strive to please customers; does not mean they're passive order-takers. Proactive in many ways:
+- Entrepreneurs strive to please customers; does not mean they're passive order-takers.
+- Proactive in many ways:
+
 
 - Market value of their products and services to lift customers' awareness of possibilities.
 - Proactively schedule time to talk to customers about business challenges ("sales" in best sense of profession).
@@ -794,7 +915,9 @@ Entrepreneurs strive to please customers; does not mean they're passive order-ta
 - Don't wait for customers to tell them to offer new products; proactively evolve product lines.
 - Proactively reduce costs and improve quality.
 
-**Summary:** In business-within-a-business paradigm, everybody is "product manager." As proactive as they are, there's line they don't cross: entrepreneurs respect that customers know businesses best, are accountable for business results; therefore, customers must have authority to decide what they "buy."
+- **Summary:** In business-within-a-business paradigm, everybody is "product manager." As proactive as they are, there's line they don't cross: entrepreneurs respect that customers know businesses best, are accountable for business results
+- therefore, customers must have authority to decide what they "buy."
+
 
 #### Implications for Structure
 
@@ -804,7 +927,9 @@ Entrepreneurs strive to please customers; does not mean they're passive order-ta
 
 ## Building Blocks of Organization Charts
 
-Source: Socrates — "The beginning of wisdom is the definition of terms."
+- Source:
+- Socrates — "The beginning of wisdom is the definition of terms."
+
 
 - Engineering science comprises both principles and components.
 - Building Blocks are "components" that can assemble into organization chart.
@@ -819,7 +944,8 @@ Source: Socrates — "The beginning of wisdom is the definition of terms."
 - Building Blocks help avoid gaps (Principle 3); essentially checklist of all possible lines of business.
 - All Building Blocks important; all should be creative, customer focused, entrepreneurial; all essential.
 
-**Two Cautions:**
+- **Two Cautions:**
+
 1. This framework is NOT a prescribed organization chart; Building Blocks simply provide language you can use to describe organization charts.
 2. Some names may sound familiar; may have "Engineering" department today, but it may actually be combination of multiple Building Blocks. Don't confuse name of Building Block with name of group in current organization.
 
@@ -840,7 +966,9 @@ Source: Socrates — "The beginning of wisdom is the definition of terms."
 
 ### Building Block: Engineers
 
-Definition: Engineers create organization's products; discipline or technology specialists, designers, gurus in those products.
+- Definition:
+- Engineers create organization's products; discipline or technology specialists, designers, gurus in those products.
+
 
 #### Engineers Definition and Services
 
@@ -850,7 +978,8 @@ Definition: Engineers create organization's products; discipline or technology s
 - Engineers sell anything requiring in-depth expertise in design of organization's products.
 - Engineers don't own solutions they produce; sell solutions to others (peers within organization or external clients).
 
-**Services of Engineers (all based on in-depth product-design expertise):**
+- **Services of Engineers (all based on in-depth product-design expertise):**
+
 - Solutions (entirely new, or enhancements)
 - Repairs
 - Configuration tuning
@@ -858,7 +987,8 @@ Definition: Engineers create organization's products; discipline or technology s
 - Documentation and training materials, and training
 - Expert time, studies, presentations, sales support
 
-**Examples Across Industries:**
+- **Examples Across Industries:**
+
 
 | Industry | Engineers |
 |---|---|
@@ -875,7 +1005,8 @@ Definition: Engineers create organization's products; discipline or technology s
 - **Applications Engineers:** Those who assemble components into complete products (top layer); produce purpose-specific products tailored to various kinds of customers' needs.
 - **Base Engineers:** All lower layers; design components that go into various applications; components purpose-independent in that serve multiple applications.
 
-**Examples:**
+- **Examples:**
+
 
 | Industry | Applications Engineers | Base Engineers |
 |---|---|---|
@@ -897,7 +1028,10 @@ Definition: Engineers create organization's products; discipline or technology s
 | Interpersonal skills | Low |
 | People supervision | Medium |
 
-Warning: If expected to produce anything other than solutions, depth in professional domain bound to suffer. Any time spend studying customers' businesses is time away from real specialty.
+- Warning:
+- If expected to produce anything other than solutions, depth in professional domain bound to suffer.
+- Any time spend studying customers' businesses is time away from real specialty.
+
 
 #### Engineers Biases
 
@@ -915,7 +1049,9 @@ Warning: If expected to produce anything other than solutions, depth in professi
 
 ### Building Block: Service Providers
 
-Definition: Service Providers deliver ongoing services; may buy products from Engineers, then use those assets to deliver service; or service may be delivered primarily by people.
+- Definition:
+- Service Providers deliver ongoing services; may buy products from Engineers, then use those assets to deliver service; or service may be delivered primarily by people.
+
 
 #### Service Providers Definition
 
@@ -929,7 +1065,8 @@ Definition: Service Providers deliver ongoing services; may buy products from En
 - Business model: look for cases where customers can share use of asset; acquire those assets ("infrastructure"), use them to produce services.
 - Assets include information as well as tangible properties.
 
-**Examples Across Industries:**
+- **Examples Across Industries:**
+
 
 | Industry | Asset-based Services |
 |---|---|
@@ -941,13 +1078,16 @@ Definition: Service Providers deliver ongoing services; may buy products from En
 | Education | Classrooms, residence halls, library |
 | Government | Roads, parks, ports and airports, air traffic control |
 
-Asset-based Service Providers not technology specialists; rely on Engineers to build, document, upgrade, repair assets. Real expertise is in providing services.
+- Asset-based Service Providers not technology specialists; rely on Engineers to build, document, upgrade, repair assets.
+- Real expertise is in providing services.
+
 
 #### People-based Service Providers
 
 - Services produced by people rather than assets; buying "use" of people.
 
-**Examples Across Industries:**
+- **Examples Across Industries:**
+
 
 | Industry | People-based Services |
 |---|---|
@@ -959,7 +1099,8 @@ Asset-based Service Providers not technology specialists; rely on Engineers to b
 | Education | Registrar, admissions processing, student counseling |
 | Government | Social services, elections, weather forecasts |
 
-**Three Types of People-based Service Providers:**
+- **Three Types of People-based Service Providers:**
+
 
 | Type | Description | Example |
 |---|---|---|
@@ -995,7 +1136,10 @@ Asset-based Service Providers not technology specialists; rely on Engineers to b
 
 ### Building Block: Coordinators
 
-Definition: Some things require consensus among stakeholders; Coordinators drive those shared decisions.
+- Definition:
+- Some things require consensus among stakeholders;
+- Coordinators drive those shared decisions.
+
 
 #### Coordinators Definition
 
@@ -1008,59 +1152,71 @@ Definition: Some things require consensus among stakeholders; Coordinators drive
 
 #### Types of Coordinators: Business-Oriented
 
-**Strategy Planning Coordinator**
+- **Strategy Planning Coordinator**
+
 - Expert in strategic planning methods, in business environment and how it creates threats and opportunities.
 - Doesn't decide strategies; helps everybody decide own respective strategies, in coordinated fashion.
 
-**Operational Planning Coordinator**
+- **Operational Planning Coordinator**
+
 - Operating plan looks one or two years ahead; answers questions: "What do we plan to deliver? How will we fulfill demand?"
 - Expert in business and budget planning methods (especially investment-based budgeting).
 
-**Research Coordinator**
+- **Research Coordinator**
+
 - Helps others do research, by sharing expertise in research methods and in how to develop research proposals.
 - Helps executive decide which research projects to fund, as portfolio of investments aligned with strategies.
 - Does NOT do any research; analogous to US National Science Foundation which distributes research grants.
 
-**Organizational Effectiveness Coordinator**
+- **Organizational Effectiveness Coordinator**
+
 - Focus on how organization does business (not what business produces): culture, structure, resource-governance processes, shared methods and tools, metrics and rewards.
 - Distinct from Human Resources in that engineers "organizational ecosystem."
 - Leads transformation projects (including restructuring), then helps everybody work within organizational design.
 
-**Audit Response Coordinator**
+- **Audit Response Coordinator**
+
 - Helps everybody respond to auditors and provides point of contact; but content of audit response is responsibility of appropriate groups throughout organization.
 - With knowledge of questions auditors ask, can offer voluntary "assessments" to help others prepare for audit.
 
-**Regulatory Compliance Coordinator**
+- **Regulatory Compliance Coordinator**
+
 - Everybody accountable for complying with laws and regulations; helps them do so by providing expertise.
 - Provides point of contact for regulators; coordinates any compliance examinations and remediation projects.
 
-**Business Continuity Coordinator**
+- **Business Continuity Coordinator**
+
 - Helps everybody develop own plans; coordinates interdependencies to optimize resilience.
 - Coordinates tests of plan and (if triggered by actual incident) execution of plan.
 
-**Security Coordinator**
+- **Security Coordinator**
+
 - Expert in threats; helps everybody come to consensus on security policies; keeps people informed; leads investigations of and responses to security incidents.
 - NOT audit function; does NOT check up on everybody's compliance with policies; NOT Service Provider offering ongoing security services.
 - In IT, titled Chief Information Security Officer (CISO).
 
 #### Types of Coordinators: Technical
 
-**Standards Coordinator**
+- **Standards Coordinator**
+
 - Standards are conscious constraints on design (not preferred brands and models); permit evolutionary change without loss of integration and interoperability.
 - Does not decide standards; creates framework, then pulls together appropriate stakeholders to decide each "cell" within framework.
 - Helps Engineers access and interpret agreed standards in course of designing solutions.
 
-**Design Patterns Coordinator**
+- **Design Patterns Coordinator**
+
 - Expert in "ripples" (how decisions about one domain affect others); facilitates consensus on design guidelines that affect all domains.
 - Examples: city planning and zoning; distribution company pricing coordination; higher education cross-program initiatives.
 - In IT: drives enterprise programs; maintains map of how existing systems interconnected and how data flows; in IT, combination of Standards and Design Patterns Coordinators called "enterprise architect."
 
 #### Types of Coordinators: Function-Specific
 
-**Information Policy Coordinator (IT)**
+- **Information Policy Coordinator (IT)**
+
 - Coordinates policies with regard to how information handled: retention policies, system-of-record determination, data ownership and access rights, privacy, acceptable use.
 
-**Employment Policy Coordinator (HR)**
+- **Employment Policy Coordinator (HR)**
+
 - Brings enterprise stakeholders to consensus on employment policies (compensation, talent management) to avoid inequities across enterprise.
 
 #### Coordinators Competencies
@@ -1076,7 +1232,9 @@ Definition: Some things require consensus among stakeholders; Coordinators drive
 | Interpersonal skills | High |
 | People supervision | Low |
 
-Note: Each Coordinator is expert in structure of content they are coordinating; know enough about content to understand trade-offs, but must not disempower others.
+- Note:
+- Each Coordinator is expert in structure of content they are coordinating; know enough about content to understand trade-offs, but must not disempower others.
+
 
 #### Coordinators Biases
 
@@ -1090,7 +1248,9 @@ Note: Each Coordinator is expert in structure of content they are coordinating; 
 
 ### Building Block: Sales and Marketing
 
-Definition: Client-facing part of organization; adds value in two ways: enhances organization's relationships with clients (default point of contact; facilitates effective communications); helps clients address challenges using organization's products and services.
+- Definition:
+- Client-facing part of organization; adds value in two ways: enhances organization's relationships with clients (default point of contact; facilitates effective communications); helps clients address challenges using organization's products and services.
+
 
 #### Sales and Marketing Definition
 
@@ -1114,7 +1274,9 @@ Definition: Client-facing part of organization; adds value in two ways: enhances
 
 #### Decentralized Sales Functions
 
-Warning: For many reasons, decentralization of Sales function not advisable:
+- Warning:
+- For many reasons, decentralization of Sales function not advisable:
+
 - When decentralized, often devolves into full-service support function, rather than remain focused on just Sales Building Block.
 - Decentralized Sales staff often treat centralized department as adversary.
 - Makes hard to balance workloads.
@@ -1124,19 +1286,25 @@ Warning: For many reasons, decentralization of Sales function not advisable:
 
 #### Three Types of Sales
 
-**Type 1: Account Sales**
+- **Type 1:
+- Account Sales**
+
 - High-level account representatives responsible for entire client accounts.
 - Proactively meet with selected client executives; produce stream of strategic projects.
 - Very senior function; can attend clients' executive-level meetings and credibly discuss business strategies.
 - Strategic impact immense; job grade should be as high as most senior leaders.
 
-**Type 2: Retail Sales**
+- **Type 2:
+- Retail Sales**
+
 - Not dedicated to any specific accounts; territory is geographic.
 - Default points of contact for clients' inquiries and concerns.
 - May also include business analysts who convert high-level opportunities into detailed requirements.
 - Distinction: Account Sales proactive, serve selected clients (top executives and key influencers); Retail Sales reactive, available to anyone on demand.
 
-**Type 3: Function Sales**
+- **Type 3:
+- Function Sales**
+
 - Experts in clients' professions or specific business processes (disciplines relevant to multiple accounts).
 - Don't have territory; "second-tier" salesforce called in by Account and Retail Sales.
 - Example: Medical device manufacturer brought trained hematologist when demonstrating device in hematology lab; brought trained immunologist when demonstrating in immunology lab.
@@ -1146,11 +1314,13 @@ Warning: For many reasons, decentralization of Sales function not advisable:
 
 - Focuses on clients as whole (either all, or segments with similar needs); distinguishes from Sales which works with clients individually.
 
-**Marketing Communications (one-to-many):**
+- **Marketing Communications (one-to-many):**
+
 - Helps others in organization communicate with clients; coordinates organization's messages for consistency with strategies and brand.
 - Includes branding and marketing communications strategies; publications; advertising and direct communications; promotions; customer events.
 
-**Market Research (many-to-one):**
+- **Market Research (many-to-one):**
+
 - Inbound communications channel; serves organization as window to entire client community.
 - Answers questions about what clients think, want, need, will buy; ranges from customer-satisfaction surveys to market-demand forecasting models.
 
@@ -1180,7 +1350,9 @@ Warning: For many reasons, decentralization of Sales function not advisable:
 
 ### Building Block: Audit
 
-Definition: Audit Building Block includes more than traditional financial and compliance auditors; any function which inspects and judges others, and reports results to someone other than those being inspected.
+- Definition:
+- Audit Building Block includes more than traditional financial and compliance auditors; any function which inspects and judges others, and reports results to someone other than those being inspected.
+
 
 #### Audit Definition
 
@@ -1227,13 +1399,19 @@ Definition: Audit Building Block includes more than traditional financial and co
 | Technical specialization versus unbiased diagnosis of clients' needs | Specialization in topic of audits |
 | Service oriented versus audit | Audit |
 
-Foundation: Audit not only distinct Building Block; to avoid conflicts of interests, must be kept entirely separate from all other service-oriented Building Blocks.
+- Foundation:
+- Audit not only distinct Building Block; to avoid conflicts of interests, must be kept entirely separate from all other service-oriented Building Blocks.
+
 
 ## Applying the Principles: Rainbow Analysis
 
-Source: Paul Cezanne — "We live in a rainbow of chaos."
+- Source:
+- Paul Cezanne — "We live in a rainbow of chaos."
 
-Context: Now ready to look at any organization chart and anticipate where structure getting in way of people's performance.
+
+- Context:
+- Now ready to look at any organization chart and anticipate where structure getting in way of people's performance.
+
 
 ### Rainbow Analysis Overview
 
@@ -1259,13 +1437,16 @@ Context: Now ready to look at any organization chart and anticipate where struct
 5. Color-code organization chart, identifying which Building Blocks within each group.
 6. Warning: If analyzing current organization, be honest and color-code based on what people actually do, regardless of what organization chart says.
 
-Results: In most organizations, result is very colorful chart — why called "Rainbow Analysis."
+- Results:
+- In most organizations, result is very colorful chart — why called "Rainbow Analysis."
+
 
 ### Question 1: Gaps
 
 - **Gap:** Any color (line of business) that's missing, or done part-time by people whose primary focus is another function.
 
-**Consequences of Gaps**
+- **Consequences of Gaps**
+
 
 | Issue | Principle | Consequence |
 |---|---|---|
@@ -1277,7 +1458,8 @@ Results: In most organizations, result is very colorful chart — why called "Ra
 
 - **Rainbows:** Groups marked with more than one color, delivering multiple Building Blocks.
 
-**Problems Created by Rainbows**
+- **Problems Created by Rainbows**
+
 
 | Issue | Principle | Consequence |
 |---|---|---|
@@ -1292,7 +1474,8 @@ Results: In most organizations, result is very colorful chart — why called "Ra
 
 - **Scattered Campus:** When color appears many different places on organization chart; in worst cases, all different sub-specialties within Building Block only come together at level of organization's top executive.
 
-**Problems Created by Scattered Campuses**
+- **Problems Created by Scattered Campuses**
+
 
 | Issue | Principle | Consequence |
 |---|---|---|
@@ -1307,7 +1490,8 @@ Results: In most organizations, result is very colorful chart — why called "Ra
 - **Inappropriate Substructure:** Basis for substructure is anything other than what Building Block supposed to be good at.
 - Example: Engineers divided into groups based on clients' organization chart or business processes, rather than types of products they produce.
 
-**Appropriate Bases for Substructure**
+- **Appropriate Bases for Substructure**
+
 
 | Building Block | Appropriate Basis |
 |---|---|
@@ -1321,7 +1505,8 @@ Results: In most organizations, result is very colorful chart — why called "Ra
 | Marketing communications | Communications channel, service |
 | Marketing research | Service (e.g., design, data collection, analysis) |
 
-**Problems Created by Inappropriate Substructure**
+- **Problems Created by Inappropriate Substructure**
+
 
 | Issue | Principle | Consequence |
 |---|---|---|
@@ -1332,7 +1517,10 @@ Results: In most organizations, result is very colorful chart — why called "Ra
 
 ### Interpreting the Rainbow Analysis
 
-After going through four questions, raise next question: Is change needed? If so, need just few small "tweaks" or "clean sheet of paper" approach?
+- After going through four questions, raise next question:
+- Is change needed?
+- If so, need just few small "tweaks" or "clean sheet of paper" approach?
+
 
 | Choice | Description |
 |---|---|
@@ -1340,13 +1528,21 @@ After going through four questions, raise next question: Is change needed? If so
 | B. Tweaks | Few small changes to existing structure |
 | C. Clean sheet of paper | Completely new structure |
 
-Warning: Many small tweaks more difficult than Clean Sheet approach; typically less effective, lacking whole-system perspective. Unless current structure very close to right, clean sheet of paper generally right way to go.
+- Warning:
+- Many small tweaks more difficult than Clean Sheet approach; typically less effective, lacking whole-system perspective.
+- Unless current structure very close to right, clean sheet of paper generally right way to go.
+
 
 ## Structures Designed to Fail: Case Studies
 
-Source: Confucius — "Study the past if you would divine the future."
+- Source:
+- Confucius — "Study the past if you would divine the future."
 
-Context: Series of case studies describing approaches others have tried; use Rainbow Analysis to analyze faults. Warn about approaches that may be popular but have serious flaws.
+
+- Context:
+- Series of case studies describing approaches others have tried; use Rainbow Analysis to analyze faults.
+- Warn about approaches that may be popular but have serious flaws.
+
 
 ### Strategy as Basis for Structure
 
@@ -1402,7 +1598,9 @@ Context: Series of case studies describing approaches others have tried; use Rai
 |---|---|
 | Gaps | Weakness in any competency can jeopardize strategy; business conditions volatile, so strategies must be dynamic; organization designed to pursue only one competency ill-equipped when imperatives require other strengths |
 
-Foundation: No organization can afford to focus exclusively on just one competency, settle for mediocrity in others.
+- Foundation:
+- No organization can afford to focus exclusively on just one competency, settle for mediocrity in others.
+
 
 #### Alternative
 
@@ -1411,7 +1609,8 @@ Foundation: No organization can afford to focus exclusively on just one competen
 
 #### When to Use Outsourcing
 
-External vendors more cost-effective when:
+- External vendors more cost-effective when:
+
 - Multiple corporations can share vendor's assets (economies of scale cross corporate boundaries, e.g., telecommunication networks).
 - Due to size, vendor can afford higher degree of specialization (particularly valuable in high-tech professions).
 - Company requires more capital than available, willing to pay premium in operating expenses.
@@ -1456,7 +1655,8 @@ External vendors more cost-effective when:
 
 - Business unit leaders may prefer to have own support staff rather than work with enterprise shared-services department.
 
-**Five things that drive desire for decentralization:**
+- **Five things that drive desire for decentralization:**
+
 
 | Driver | Description |
 |---|---|
@@ -1480,9 +1680,11 @@ External vendors more cost-effective when:
 - **Engineering Function:** Each division had own design engineering function; number of parts corporation had to make or buy skyrocketed; CEO-sponsored task-force found dozen different electric motors with roughly same specifications.
 - **Insurance IT:** Multiple customer databases; company never knew when customer who bought from multiple business units was lost, because customer databases fragmented.
 
-**Foundation:** Decentralization inevitably results in higher costs, slower delivery times, lower quality, less innovation, reduced career opportunities for staff, fragmented products and services.
+- **Foundation:** Decentralization inevitably results in higher costs, slower delivery times, lower quality, less innovation, reduced career opportunities for staff, fragmented products and services.
 
-**Warning:** Only thing worse than decentralization is shared-services organization that's not customer focused.
+
+- **Warning:** Only thing worse than decentralization is shared-services organization that's not customer focused.
+
 
 #### Federated Model
 
@@ -1499,7 +1701,8 @@ External vendors more cost-effective when:
 
 #### Roles of Shared Services Amidst Decentralization
 
-If have to tolerate decentralized (federated) environment, enterprise shared-services organizations can still fulfill five roles:
+- If have to tolerate decentralized (federated) environment, enterprise shared-services organizations can still fulfill five roles:
+
 
 1. Full-service provider to clients in corporate headquarters.
 2. Sole (monopoly) provider of short list of products and services where synergies and economies of scale widely accepted; must be determined through consensus of business-unit leaders.
@@ -1507,13 +1710,16 @@ If have to tolerate decentralized (federated) environment, enterprise shared-ser
 4. Sole provider of coordination services where decisions must be made that affect entire enterprise; Coordinators have no formal power; facilitates consensus on standards, policies, plans.
 5. Spokesperson for profession; never speak for others or make commitments for others; can further profession by encouraging collaboration and representing profession's interests.
 
-Results: By accepting accountability only for these five roles, shared-services organization can contribute to enterprisewide objectives without threatening business unit autonomy. "Soft" approach actually strong approach.
+- Results:
+- By accepting accountability only for these five roles, shared-services organization can contribute to enterprisewide objectives without threatening business unit autonomy. "Soft" approach actually strong approach.
+
 
 #### Alternative: Shared Services
 
 - "Shared services" refers to internal service provider that serves multiple clients; instead of each business unit owning own little group, clients buy products and services from central supplier.
 
-**Benefits of Shared Services:**
+- **Benefits of Shared Services:**
+
 
 | Benefit | Description |
 |---|---|
@@ -1526,11 +1732,13 @@ Results: By accepting accountability only for these five roles, shared-services 
 | Specialization | Substructuring staff in appropriate way increases specialization |
 | Enterprise synergies | As business units find themselves using same services, may collaborate more across boundaries |
 
-**Foundation:** Well-designed and well-managed shared-services organization not only performs better, but can improve performance throughout enterprise.
+- **Foundation:** Well-designed and well-managed shared-services organization not only performs better, but can improve performance throughout enterprise.
+
 
 #### Prerequisites for Shared Services
 
-Before business units give up decentralized groups, shared-services organization has to address reasons clients like decentralization:
+- Before business units give up decentralized groups, shared-services organization has to address reasons clients like decentralization:
+
 
 | Driver for Decentralization | Solution in Shared Services |
 |---|---|
@@ -1540,13 +1748,19 @@ Before business units give up decentralized groups, shared-services organization
 | Control of costs | Costs should never be allocated to business units on any basis other than utilization; holding business-unit executives accountable for costs can't control is futile |
 | Accountability | Business unit leaders held accountable for use of shared services, just as accountable for purchases from vendors; shared-services must be able to portray costs by business unit, based on consumption |
 
-Foundation: If meets these requirements, shared-services organization doesn't threaten business unit autonomy any more than buying from external vendors.
+- Foundation:
+- If meets these requirements, shared-services organization doesn't threaten business unit autonomy any more than buying from external vendors.
+
 
 ## Special Situations
 
-Context: Common challenges that, on surface, might seem to force deviation from ideal structure; but ways to approach challenges without compromising Principles.
+- Context:
+- Common challenges that, on surface, might seem to force deviation from ideal structure; but ways to approach challenges without compromising Principles.
 
-Special situations discussed: Self-managed groups, Shared people, Remote locations, Project management office, Compliance and governance.
+
+- Special situations discussed:
+- Self-managed groups, Shared people, Remote locations, Project management office, Compliance and governance.
+
 
 ### Self-managed Groups
 
@@ -1554,39 +1768,50 @@ Special situations discussed: Self-managed groups, Shared people, Remote locatio
 - Could put staff under manager of related line of business; but may risk extending manager too far, or creating undesirable "rainbow."
 - Alternative: Leave line of business as box on organization chart, but with no manager; termed "self-managed group."
 
-**Advantages of Self-managed Groups:**
+- **Advantages of Self-managed Groups:**
+
 - Maintains focus on that line of business, rather than burying within another line of business.
 - Provides growth path for function that may someday warrant manager.
 - Useful when members need to be placed at higher level in structure to get political visibility needed to be effective (e.g., few senior Account Sales staff may all report directly to organization's executive).
 - Helpful when members need to be placed at higher level to get job-grade (compensation) needed.
 
-**Choices for Sharing Supervisory Duties:**
+- **Choices for Sharing Supervisory Duties:**
+
 - Boss (level up) does it.
 - "Lead" (perhaps on rotating basis) does it.
 - Any individual can do it independently.
 - Group collaborates on it (e.g., through consensus).
 
-Note: Some portion of everyone's performance appraisal should be based on performance of whole group (shared destiny).
+- Note:
+- Some portion of everyone's performance appraisal should be based on performance of whole group (shared destiny).
 
-Warning: Contrary to first impressions, self-managed groups do NOT save headcount; supervisory duties must still be fulfilled; total supervisory workload may actually increase.
 
-**Disadvantages of Self-managed Groups:**
+- Warning:
+- Contrary to first impressions, self-managed groups do NOT save headcount; supervisory duties must still be fulfilled; total supervisory workload may actually increase.
+
+
+- **Disadvantages of Self-managed Groups:**
+
 - May not be as coherent in business strategies and directions.
 - May be slower to acquire new methods and tools.
 - Require more attention from manager above them.
 - While supposed to behave as single direct report, inevitably reduce feasible span of manager at next level up.
 
-Foundation: Self-managed groups not goal in themselves; simply way of treating situations that warrant structural separation but not manager; approach should be used with caution.
+- Foundation:
+- Self-managed groups not goal in themselves; simply way of treating situations that warrant structural separation but not manager; approach should be used with caution.
+
 
 ### Shared People: Temporary Duty
 
 - Definition: Sometimes appropriate for one manager to loan individual to another, part time or full time, temporarily or indefinitely. (Term borrowed from military: "temporary duty.")
 
-**When Temporary Duty Needed:**
+- **When Temporary Duty Needed:**
+
 - Certain individuals have skills beyond domain of their group ("rainbow" people); better to put person on loan to other group than to expand group's domain to encompass skills.
 - Move portions of headcount from one group to another as workloads shift ("load balancing").
 
-**Mechanics:**
+- **Mechanics:**
+
 - Borrowing person is not a contract between two groups for delivery of service; simply loan of person.
 - All accountability for work remains with receiving group; receiving managers may even pay individual's salary for that period.
 - If situation permanent, equivalent to individual holding two part-time jobs, reporting to two different managers.
@@ -1597,9 +1822,12 @@ Foundation: Self-managed groups not goal in themselves; simply way of treating s
 
 ### Remote Locations
 
-Definition: In geographically dispersed organizations, some remote locations may have very few staff; but organization still has to deliver all products and services to clients in that location.
+- Definition:
+- In geographically dispersed organizations, some remote locations may have very few staff; but organization still has to deliver all products and services to clients in that location.
 
-**Four ways to address remote locations:**
+
+- **Four ways to address remote locations:**
+
 
 #### Option 1: Rainbow Groups
 
@@ -1632,9 +1860,14 @@ Definition: In geographically dispersed organizations, some remote locations may
 
 ### Project Management Office
 
-Definition: Excellence in project management essential to reliable project delivery; on large, complex projects, particularly critical.
+- Definition:
+- Excellence in project management essential to reliable project delivery; on large, complex projects, particularly critical.
 
-Warning: Traditionally, project leader accountable for managing every aspect of project; but for large projects, few people have sufficient project-management skills. Some leaders create small group of "super project managers" for difficult projects — this creates problems.
+
+- Warning:
+- Traditionally, project leader accountable for managing every aspect of project; but for large projects, few people have sufficient project-management skills.
+- Some leaders create small group of "super project managers" for difficult projects — this creates problems.
+
 
 #### Case Study: PMO that Manages Projects
 
@@ -1711,7 +1944,10 @@ Warning: Traditionally, project leader accountable for managing every aspect of 
 
 ## Workflows: Teamwork Processes
 
-Source: James A. Garfield — "Commerce links all mankind in one common brotherhood of mutual dependence and interests."
+- Source:
+- James A.
+- Garfield — "Commerce links all mankind in one common brotherhood of mutual dependence and interests."
+
 
 - Focused so far on design of organization chart; now time to turn attention to processes of cross-boundary teamwork.
 - Teamwork not luxury; essential aspect of organizational design; can't specialize if can't team (Principle 2).
@@ -1765,27 +2001,40 @@ Source: James A. Garfield — "Commerce links all mankind in one common brotherh
 
 ## Benefits and Cultural Transformation
 
-Source: Max De Pree — "First responsibility of leader is to define reality. Last is to say thank you. In between two, leader must become servant."
+- Source:
+- Max De Pree — "First responsibility of leader is to define reality.
+- Last is to say thank you.
+- In between two, leader must become servant."
 
-Restructuring organization not easy; easy to simply draw boxes and assign names; but doing so does little to improve organization's effectiveness. Building high-performance organization takes meticulous planning; transformational, participative process adds to leaders' workloads; process stressful (people worry about careers, status, power).
+
+- Restructuring organization not easy; easy to simply draw boxes and assign names; but doing so does little to improve organization's effectiveness.
+- Building high-performance organization takes meticulous planning; transformational, participative process adds to leaders' workloads; process stressful (people worry about careers, status, power).
+
 
 ### Efficiencies
 
-**Sources of Efficiencies:**
+- **Sources of Efficiencies:**
+
 - Overlaps eliminated: Time saved by eliminating redundant efforts, territorial disputes, time managers spend sorting out who does what.
 - Role clarity permits greater span: With clear domains, groups self-directed to far greater extent; permits flatter organization, reduces supervisory workloads.
 - Professional collaboration encouraged: Bringing together related specialties induces more professional exchange; precludes redundant research, accelerates organizational learning, improves productivity, enables more reusable components.
 
-Warning: Be cautious about using efficiency gains to justify restructuring initiative; may lead to expectations of reduced budgets and headcount.
+- Warning:
+- Be cautious about using efficiency gains to justify restructuring initiative; may lead to expectations of reduced budgets and headcount.
 
-In practice, efficiencies often reinvested in doing more with same budget:
+
+- In practice, efficiencies often reinvested in doing more with same budget:
+
 - Organizations catch up on critical sustainment tasks (training, innovation, planning, relationship building).
 - Improve quality of services and reduce risks.
 - Catch up on deferred maintenance.
 - More responsive to customers, addressing backlogs and pent-up demand.
 - Find new opportunities to deliver more value by filling gaps.
 
-Warning: Promising cost savings from restructuring associates new organization with job losses; can set staff against change. Efficiencies develop gradually over time, not instantly upon announcement of new organization chart.
+- Warning:
+- Promising cost savings from restructuring associates new organization with job losses; can set staff against change.
+- Efficiencies develop gradually over time, not instantly upon announcement of new organization chart.
+
 
 ### Effectiveness
 
@@ -1793,7 +2042,8 @@ Warning: Promising cost savings from restructuring associates new organization w
 - Efficiencies produce marginal cost savings, whereas improving effectiveness enhances organization's contribution to business (highly-leveraged benefit).
 - Example: Reducing headcount by one might save $100,000 per year; but if greater effectiveness means one more strategic project each year, benefits could be counted in millions.
 
-**Reasons Well-Designed Structure Improves Effectiveness:**
+- **Reasons Well-Designed Structure Improves Effectiveness:**
+
 
 | Reason | Description |
 |---|---|
@@ -1806,18 +2056,22 @@ Warning: Promising cost savings from restructuring associates new organization w
 
 ### Cultural Transformation
 
-In addition to improved efficiency and effectiveness, healthy structure has powerful impacts on organization's culture.
+- In addition to improved efficiency and effectiveness, healthy structure has powerful impacts on organization's culture.
 
-**Empowerment**
+
+- **Empowerment**
+
 - When jobs defined by what people "sell" (results), accountabilities well defined; staff can be empowered to produce results as they see fit.
 - Improves reliable delivery; encourages creativity and innovation; encourages quality (staff fully responsible for own results; incentive to do things right first time — core principle of Total Quality Management).
 
-**Customer Focus**
+- **Customer Focus**
+
 - Running businesses within business, staff recognize funded to serve customers.
 - Focus on delivering products and services to customers, rather than on bureaucratic territories, procedures, tasks.
 - Build effective working relationships with customers; understand what customers want by listening, responding to customers' priorities.
 
-**Entrepreneurship**
+- **Entrepreneurship**
+
 - Since groups defined as lines of business, everybody is entrepreneur.
 - Entrepreneurs know have to be reliable to stay in business; learn not to make commitments can't keep.
 - Entrepreneurs continually seek new opportunities to add value; proactively discover ways to contribute to customers' success.

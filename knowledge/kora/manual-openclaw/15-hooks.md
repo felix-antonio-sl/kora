@@ -1,12 +1,32 @@
+---
+_manifest:
+  urn: urn:kora:kb:15-hooks
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '15'
+- hooks
+lang: es
+---
+
 # Capítulo 15 — Hooks (Event-Driven Automation)
 
 > **Propósito:** Entender cómo extender el gateway con código que reacciona a eventos internos. Los hooks son el mecanismo para automatización que NO depende del modelo — son código TypeScript que corre cuando suceden cosas (comandos, bootstrap, mensajes, startup), sin consumir tokens.
 
----
+- ---
+
 
 ## 15.1 Concepto: Scripts que Reaccionan a Eventos
 
-Un hook es un **handler TypeScript** que se ejecuta cuando el gateway emite un evento. No involucra al modelo de IA — corre directamente en el proceso del gateway.
+- Un hook es un **handler TypeScript** que se ejecuta cuando el gateway emite un evento.
+- No involucra al modelo de IA — corre directamente en el proceso del gateway.
+
 
 ```
 Evento del Gateway
@@ -41,15 +61,19 @@ Procesamiento normal continúa
 | **Velocidad** | Milisegundos | Segundos-minutos | Segundos-minutos | Segundos-minutos |
 | **Capacidad** | Lo que TypeScript puede hacer | Lo que el agente puede hacer | Lo que el agente puede hacer | Lo que el agente puede hacer |
 
-**La distinción clave:** Los hooks son **determinísticos y gratuitos** (no LLM). Los demás mecanismos son **inteligentes pero costosos** (LLM).
+- **La distinción clave:** Los hooks son **determinísticos y gratuitos** (no LLM).
+- Los demás mecanismos son **inteligentes pero costosos** (LLM).
 
----
+
+- ---
+
 
 ## 15.2 Event Types
 
 ### Command Events
 
-Se disparan cuando el usuario o el sistema emite un comando:
+- Se disparan cuando el usuario o el sistema emite un comando:
+
 
 | Event | Cuándo |
 |-------|--------|
@@ -84,11 +108,13 @@ Se disparan cuando el usuario o el sistema emite un comando:
 |------|------|--------|
 | `tool_result_persist` | Síncrono | Antes de persistir tool results al transcript. Puede transformar el payload |
 
----
+- ---
+
 
 ## 15.3 Hook Structure
 
-Cada hook es un directorio con dos archivos:
+- Cada hook es un directorio con dos archivos:
+
 
 ```
 my-hook/
@@ -169,11 +195,13 @@ event = {
 }
 ```
 
----
+- ---
+
 
 ## 15.4 Discovery y Precedencia
 
-Los hooks se descubren automáticamente de tres directorios, en orden de **precedencia** (el primero gana si hay conflicto de nombres):
+- Los hooks se descubren automáticamente de tres directorios, en orden de **precedencia** (el primero gana si hay conflicto de nombres):
+
 
 ```
 1. Workspace hooks      <workspace>/hooks/          (mayor precedencia)
@@ -181,13 +209,16 @@ Los hooks se descubren automáticamente de tres directorios, en orden de **prece
 3. Bundled hooks        <openclaw>/dist/hooks/bundled/   (shipped con OpenClaw)
 ```
 
-Si tienes un hook `session-memory` en tu workspace y otro bundled con el mismo nombre, el del workspace gana.
+- Si tienes un hook `session-memory` en tu workspace y otro bundled con el mismo nombre, el del workspace gana.
 
----
+
+- ---
+
 
 ## 15.5 Hooks Bundled
 
-OpenClaw incluye 4 hooks de fábrica:
+- OpenClaw incluye 4 hooks de fábrica:
+
 
 ### 💾 session-memory
 
@@ -225,17 +256,20 @@ openclaw hooks enable session-memory
 - **Qué hace:** Lee `BOOT.md` del workspace y ejecuta sus instrucciones via agent runner al iniciar el gateway
 - **Para:** Setup automático post-restart (enviar mensajes, verificar estado)
 
----
+- ---
+
 
 ## 15.6 Hook Packs (npm)
 
-Los hooks se pueden distribuir como paquetes npm:
+- Los hooks se pueden distribuir como paquetes npm:
+
 
 ```bash
 openclaw hooks install @acme/my-hooks
 ```
 
-El paquete declara hooks en `package.json`:
+- El paquete declara hooks en `package.json`:
+
 
 ```json
 {
@@ -246,13 +280,18 @@ El paquete declara hooks en `package.json`:
 }
 ```
 
-**Seguridad:** `npm install --ignore-scripts` (sin lifecycle scripts). Los hooks deben ser pure JS/TS.
+- **Seguridad:** `npm install --ignore-scripts` (sin lifecycle scripts).
+- Los hooks deben ser pure JS/TS.
 
----
+
+- ---
+
 
 ## 15.7 Plugin Hooks
 
-Los plugins (Cap. 2) pueden registrar hooks adicionales via la API interna:
+- Los plugins (Cap.
+- 2) pueden registrar hooks adicionales via la API interna:
+
 
 | Hook | Tipo | Uso |
 |------|------|-----|
@@ -262,9 +301,11 @@ Los plugins (Cap. 2) pueden registrar hooks adicionales via la API interna:
 | `after_tool_call` | Síncrono | Post-procesar resultado de tool call |
 | `tool_result_persist` | Síncrono | Transformar tool result antes de persistir al JSONL |
 
-Estos hooks son **in-process** con el gateway (código de plugin) — no son los hooks de directorio descritos arriba.
+- Estos hooks son **in-process** con el gateway (código de plugin) — no son los hooks de directorio descritos arriba.
 
----
+
+- ---
+
 
 ## 15.8 Crear un Hook Custom
 
@@ -323,7 +364,8 @@ sudo systemctl restart openclaw-gateway
 | **Eventos específicos** | `["command:new"]` > `["command"]` — menos overhead |
 | **Sin secretos en HOOK.md** | HOOK.md es metadata + docs, no config |
 
----
+- ---
+
 
 ## 15.9 CLI de Hooks
 
@@ -347,7 +389,8 @@ openclaw hooks disable command-logger
 openclaw hooks install @acme/my-hooks
 ```
 
----
+- ---
+
 
 ## 15.10 Configuración
 
@@ -376,7 +419,8 @@ openclaw hooks install @acme/my-hooks
 }
 ```
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -407,6 +451,8 @@ openclaw hooks install @acme/my-hooks
                   └── NO → Cron isolated
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 16 — Webhooks (External Triggers)](16-webhooks.md)*
+
+- *Siguiente: [Capítulo 16 — Webhooks (External Triggers)](16-webhooks.md)*
+

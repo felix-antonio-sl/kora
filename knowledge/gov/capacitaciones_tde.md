@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:capacitaciones-tde"
+  urn: urn:gov:kb:capacitaciones-tde
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [estrategia, capacitacion, transformacion-digital, talento-digital, gobierno-digital]
+tags:
+- estrategia
+- capacitacion
+- transformacion-digital
+- talento-digital
+- gobierno-digital
+- knowledge
 lang: es
 ---
 
@@ -25,7 +31,8 @@ lang: es
 ## Visión y Objetivos Estratégicos
 
 ### Visión
-Desarrollo de talento digital mediante formación accesible, equitativa y gratuita para fortalecer la modernización estatal.
+- Desarrollo de talento digital mediante formación accesible, equitativa y gratuita para fortalecer la modernización estatal.
+
 
 ### Objetivos
 - **Metodología:** Establecer lineamientos teóricos para programas estructurados de formación.

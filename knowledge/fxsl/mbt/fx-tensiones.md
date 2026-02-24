@@ -1,3 +1,20 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:fx-tensiones
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- fxsl
+- mbt
+- fx
+- tensiones
+lang: es
+---
+
 # Tensiones del Modelamiento de Sistemas
 
 > Versión 2.2 | 2025-12-13
@@ -16,7 +33,8 @@
 └───────────────────────────────────────────────────────────────┘
 ```
 
----
+- ---
+
 
 ## A: TENSIONES SUSTANTIVAS
 
@@ -64,7 +82,8 @@
 | Detalle ↔ Abstracción      | Fino     | Grueso    | ¿Cuánto zoom?        |
 | Modular ↔ Monolítico       | Piezas   | Bloque    | ¿Separable?          |
 
----
+- ---
+
 
 ## B: PRAXIS
 
@@ -104,7 +123,8 @@
 | Foco ↔ Contexto      | Detalle    | Visión general  | ¿Zoom in o out?             |
 | Completar ↔ Entregar | Seguir     | Terminar        | ¿Cuándo suficiente?         |
 
----
+- ---
+
 
 ## C: CONTEXTO
 
@@ -140,7 +160,8 @@
 | Ágil ↔ Planificado  | Iterativo      | Fases     | ¿Metodología? |
 | Tolerante ↔ Crítico | Aproximaciones | Precisión | ¿Estándar?    |
 
----
+- ---
+
 
 ## Métricas
 

@@ -1,8 +1,21 @@
 ---
-urn: urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol
+_manifest:
+  urn: urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
 version: 1.0.0
 status: published
-tags: [ontology, audit, gist, sparql, owl, shacl, governance]
+tags:
+- ontology
+- audit
+- gist
+- sparql
+- owl
+- shacl
+- governance
+- fxsl
 lang: es
 ---
 
@@ -10,7 +23,10 @@ lang: es
 
 ## Overview
 
-End-to-end ontology audit framework with 4 quadrants (pragmatic, structural, semantic, syntactic). Calibrates severity by maturity level (L1-L4). Produces checklist, evidence (SPARQL/OWL/SHACL), and actionable reports.
+- End-to-end ontology audit framework with 4 quadrants (pragmatic, structural, semantic, syntactic).
+- Calibrates severity by maturity level (L1-L4).
+- Produces checklist, evidence (SPARQL/OWL/SHACL), and actionable reports.
+
 
 ## Maturity Matrix
 
@@ -23,7 +39,9 @@ End-to-end ontology audit framework with 4 quadrants (pragmatic, structural, sem
 
 ## Quadrant 1: Pragmatic
 
-**Focus**: Purpose, scope, governance, audience.
+- **Focus**:
+- Purpose, scope, governance, audience.
+
 
 ### Competency Questions (CQs) and Functional Requirements
 
@@ -34,13 +52,15 @@ End-to-end ontology audit framework with 4 quadrants (pragmatic, structural, sem
 | P1.3 | CQ coverage vs. classes/properties | Medium | ○ | ○ | ● | ● |
 | P1.4 | Traceability CQ ↔ Stakeholder | Low | ○ | ○ | ○ | ● |
 
-**Key Questions**:
+- **Key Questions**:
+
 - Do documented competency questions exist?
 - Can each CQ be written as SPARQL query?
 - Is every class/property justified by at least one CQ?
 - Are there gaps (CQs the model cannot answer)?
 
-**Anti-Patterns**:
+- **Anti-Patterns**:
+
 
 | Pattern | Symptom | Impact |
 |---------|---------|--------|
@@ -48,7 +68,9 @@ End-to-end ontology audit framework with 4 quadrants (pragmatic, structural, sem
 | Orphan Concepts | Classes not in any CQ | Unnecessary complexity |
 | Scope Creep | CQs exceeding domain | Unmanageable model |
 
-**Technique**: Detect unused classes/properties
+- **Technique**:
+- Detect unused classes/properties
+
 
 ```sparql
 SELECT ?class (COUNT(?s) AS ?instances) (COUNT(?usage) AS ?usages)
@@ -70,12 +92,14 @@ HAVING (COUNT(?s) = 0 && COUNT(?usage) = 0)
 | P2.2 | Reuse Index | % of reused properties vs. ad-hoc |
 | P2.3 | Axiom Density | Axioms per class (ideal L3: 2-5) |
 
-**Key Questions**:
+- **Key Questions**:
+
 - Can any class be eliminated without losing CQ coverage?
 - Is detail level appropriate? (neither excessive nor insufficient)
 - Are domain boundaries clear? What explicitly NOT modeled?
 
-**Checklist**:
+- **Checklist**:
+
 - Scope Statement documented (max 3 paragraphs)
 - Explicit Out-of-Scope list
 - Version and effective date
@@ -91,7 +115,8 @@ HAVING (COUNT(?s) = 0 && COUNT(?usage) = 0)
 | P3.3 | Examples | Complex classes have skos:example |
 | P3.4 | Multilingualism | Labels in required languages with @lang tags |
 
-**Anti-Patterns**:
+- **Anti-Patterns**:
+
 
 | Pattern | Example | Correction |
 |---------|---------|------------|
@@ -108,7 +133,8 @@ HAVING (COUNT(?s) = 0 && COUNT(?usage) = 0)
 | P4.3 | Change Management | Process for proposing changes? |
 | P4.4 | Deprecation | How obsolete terms marked? (owl:deprecated) |
 
-**Metadata Template (L3+)**:
+- **Metadata Template (L3+)**:
+
 
 ```turtle
 <https://example.org/ontology/domain> a owl:Ontology ;
@@ -123,11 +149,16 @@ HAVING (COUNT(?s) = 0 && COUNT(?usage) = 0)
   rdfs:comment "Ontología para modelar..."@es .
 ```
 
-**Trade-off**: Perfect logic can degrade pragmatic utility if too complex. Prioritize operable clarity; if Gist pattern simple solves problem, avoid complex OWL.
+- **Trade-off**:
+- Perfect logic can degrade pragmatic utility if too complex.
+- Prioritize operable clarity; if Gist pattern simple solves problem, avoid complex OWL.
+
 
 ## Quadrant 2: Structural
 
-**Focus**: Taxonomy, architecture, properties, namespaces, patterns, reuse.
+- **Focus**:
+- Taxonomy, architecture, properties, namespaces, patterns, reuse.
+
 
 ### Taxonomic Hygiene
 
@@ -141,7 +172,8 @@ HAVING (COUNT(?s) = 0 && COUNT(?usage) = 0)
 | S1.4 | Orphan classes | Classes without superclass (except owl:Thing) |
 | S1.5 | Multiple inheritance | Detect and validate if intentional |
 
-**Multiple Inheritance Detection**:
+- **Multiple Inheritance Detection**:
+
 
 ```sparql
 SELECT ?class (COUNT(?parent) AS ?parentCount)
@@ -161,7 +193,8 @@ HAVING (COUNT(?parent) > 1)
 | Instance | Specific individuals | ex:_Person_JuanPerez a gist:Person | ex:JuanPerez a owl:Class |
 | gist:Category | Flexible taxonomies, no axioms | ex:_EmployeeType_Permanent a gist:Category | Class for admin types |
 
-**Key Questions**:
+- **Key Questions**:
+
 - Classes that should be instances? (e.g., `ChileCountry` as class)
 - Instances that should be classes? (master data modeling error)
 - Using `gist:Category` for user-managed taxonomies?
@@ -177,7 +210,8 @@ HAVING (COUNT(?parent) > 1)
 | S2.3 | Characteristics | Functional, transitive, symmetric correctly applied? |
 | S2.4 | Naming consistency | Verbs for object properties (hasX, isXOf)? |
 
-**Properties Without Inverse**:
+- **Properties Without Inverse**:
+
 
 ```sparql
 SELECT ?prop WHERE {
@@ -195,7 +229,8 @@ SELECT ?prop WHERE {
 | S2.6 | Measured values | Measurables use gist:Magnitude pattern? |
 | S2.7 | Dates | Using xsd:date, xsd:dateTime consistently? |
 
-**Anti-Patterns**:
+- **Anti-Patterns**:
+
 
 | Pattern | Example | Correction |
 |---------|---------|------------|
@@ -212,7 +247,8 @@ SELECT ?prop WHERE {
 | S3.3 | Dereferenceable | IRIs resolve to documentation or opaque? |
 | S3.4 | IRI pattern | Consistent for classes, properties, instances? |
 
-**Recommended IRI Patterns**:
+- **Recommended IRI Patterns**:
+
 
 ```
 https://org.example/ontology/domain/              # TBox
@@ -251,7 +287,9 @@ WHERE {
 
 ## Quadrant 3: Semantic
 
-**Focus**: Logic, inference, constraints, identity, OWL profiles.
+- **Focus**:
+- Logic, inference, constraints, identity, OWL profiles.
+
 
 ### Logical Consistency
 
@@ -262,14 +300,16 @@ WHERE {
 | ELK | OWL 2 EL | High performance, large ontologies |
 | RDFox | OWL 2 RL | Materialization, queries |
 
-**Checklist**:
+- **Checklist**:
+
 - Loads without errors in Protégé
 - Reasoner runs < 60s (L3)
 - No unsatisfiable classes
 - No inconsistencies detected
 - Spot-check inferences as expected
 
-**Unsatisfiable Classes** (equivalent to owl:Nothing):
+- **Unsatisfiable Classes** (equivalent to owl:Nothing):
+
 
 ```sparql
 SELECT ?class WHERE {
@@ -277,7 +317,8 @@ SELECT ?class WHERE {
 }
 ```
 
-**Common Causes**:
+- **Common Causes**:
+
 - Contradictory restrictions (min 1 AND max 0)
 - Disjointness with superclass
 - Incompatible ranges in property chain
@@ -292,7 +333,8 @@ SELECT ?class WHERE {
 | Specific property | Domain/Range on most general applicable class |
 | Multiple domains | Use owl:unionOf or don't declare |
 
-**Anti-Pattern (Over-constrained)**:
+- **Anti-Pattern (Over-constrained)**:
+
 
 ```turtle
 # ❌ Too restrictive
@@ -313,7 +355,8 @@ ex:hasPet rdfs:domain ex:Person ;
 | L1.2 | Covering axioms | Union of subclasses = superclass? |
 | L1.3 | Completeness | Model uses CWA or OWA appropriately? |
 
-**Pattern**:
+- **Pattern**:
+
 
 ```turtle
 ex:Employee rdfs:subClassOf ex:Person .
@@ -332,7 +375,8 @@ ex:Person owl:disjointUnionOf (ex:Employee ex:Customer ex:Prospect) .
 | owl:InverseFunctionalProperty | Uniquely identifies | hasSSN is IFP? |
 | owl:hasKey | Composite key | Classes have keys defined? |
 
-**Anti-Pattern (String Linking)**:
+- **Anti-Pattern (String Linking)**:
+
 
 ```turtle
 # ❌ String link
@@ -355,11 +399,15 @@ ex:_Invoice_456 ex:hasCustomer ex:_Organization_AcmeCorp .
 | OWL 2 QL | AC0 | Query answering | No complex existentials |
 | OWL 2 RL | PTIME | Inference rules | No existentials in head |
 
-**Verification**: Check Protégé → Ontology > Metrics > OWL Profile.
+- **Verification**:
+- Check Protégé → Ontology > Metrics > OWL Profile.
+
 
 ## Quadrant 4: Syntactic
 
-**Focus**: Artifact quality: parsing, style, annotations, modularity, tests, CI.
+- **Focus**:
+- Artifact quality: parsing, style, annotations, modularity, tests, CI.
+
 
 ### Syntactic Validation
 
@@ -392,7 +440,8 @@ ex:_Invoice_456 ex:hasCustomer ex:_Organization_AcmeCorp .
 | skos:scopeNote | ○ | ○ | ○ | ● |
 | dc:source | ○ | ○ | ○ | ● |
 
-**Completeness Query**:
+- **Completeness Query**:
+
 
 ```sparql
 SELECT ?entity
@@ -417,7 +466,8 @@ HAVING (!BOUND(?label) || !BOUND(?comment))
 | M3 | Explicit imports | owl:imports for dependencies? |
 | M4 | Versioned imports | Versioned IRIs for critical imports? |
 
-**Pattern**:
+- **Pattern**:
+
 
 ```
 ontology/

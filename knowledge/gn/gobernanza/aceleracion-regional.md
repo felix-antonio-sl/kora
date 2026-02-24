@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:aceleracion-regional"
+  urn: urn:gn:kb:aceleracion-regional
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, aceleracion-regional, desarrollo-exponencial, exo-gore]
+tags:
+- gore-nuble
+- gobierno-regional
+- aceleracion-regional
+- desarrollo-exponencial
+- exo-gore
+- gn
 lang: es
 ---
 
@@ -25,7 +31,8 @@ lang: es
 | **Sostenibilidad Resiliente** | Crecimiento ecológicamente sostenible; adaptación a shocks climáticos/económicos. | Energías renovables, economía circular, infraestructura verde, agricultura inteligente. |
 
 ## Las 6Ds del Desarrollo Regional
-Marco de transformación basado en la economía de la información:
+- Marco de transformación basado en la economía de la información:
+
 1.  **Digitalización:** Conversión de procesos y activos de átomos a bits.
 2.  **Decepción:** Fase inicial de crecimiento lento que parece lineal y es subestimado.
 3.  **Disrupción:** Nuevos modelos digitales vuelven obsoletos los tradicionales por eficiencia y bajo costo.
@@ -43,7 +50,8 @@ Marco de transformación basado en la economía de la información:
 | **5. Territorio como Plataforma** | Gestión del territorio como habilitador de innovación y calidad de vida. | Infraestructura digital universal (alta velocidad); recuperación de espacios públicos; monitoreo subregional. |
 
 ## Modelo Operativo ExO-GORE: Atributos SCALE (Externos)
-Gestión de la abundancia externa para maximizar agilidad:
+- Gestión de la abundancia externa para maximizar agilidad:
+
 *   **Staff on Demand:** Contratación flexible de expertos globales y pool regional pre-validado; uso de plataformas freelance.
 *   **Community & Crowd:** Co-creación vía App Ñuble; encuestas deliberativas; desafíos de innovación abierta (crowdsourcing).
 *   **AI & Algorithms:** Hub de Datos Regional para decisiones basadas en evidencia; focalización dinámica de programas; sistemas predictivos de desastres.
@@ -51,7 +59,8 @@ Gestión de la abundancia externa para maximizar agilidad:
 *   **Engagement:** Gamificación mediante Puntos Cívicos; concursos nacionales de ideas; leaderboards de metas comunales (reciclaje, energía).
 
 ## Modelo Operativo ExO-GORE: Atributos IDEAS (Internos)
-Estructura de gestión interna ágil y transparente:
+- Estructura de gestión interna ágil y transparente:
+
 *   **Interfaces:** Ventanilla Única Digital para fondos concursables (8%, FRIL, FRPD); APIs abiertas (Open Data) para sociedad civil.
 *   **Dashboards:** Panel estratégico regional público; visualización de Triple Bottom Line; implementación de OKRs por divisiones.
 *   **Experimentation:** Metodología Lean Startup; Oficina de Ensayo y Error para pilotos comunales; fondo presupuestario para proyectos de alto riesgo/aprendizaje.

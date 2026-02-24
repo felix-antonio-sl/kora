@@ -1,26 +1,35 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:nt-autenticacion"
+  urn: urn:tde:kb:nt-autenticacion
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, norma-tecnica, autenticacion, clave-unica, clave-tributaria, chile]
+tags:
+- transformacion-digital
+- norma-tecnica
+- autenticacion
+- clave-unica
+- clave-tributaria
+- chile
+- tde
 lang: es
 ---
 
 # Norma Técnica de Autenticación (Decreto 9)
 
 ## Objeto y Definiciones
-Establece cómo los Órganos de la Administración del Estado (OAE) deben implementar mecanismos oficiales de autenticación en sus plataformas para validar identidades con niveles de confianza determinados.
+- Establece cómo los Órganos de la Administración del Estado (OAE) deben implementar mecanismos oficiales de autenticación en sus plataformas para validar identidades con niveles de confianza determinados.
+
 - **Autenticación**: proceso electrónico de validación de datos de identificación para acceso.
 - **Factor de Autenticación**: dato reservado o inherente (contraseña, biometría) para establecer identidad.
 - **Mecanismo Oficial**: método validado por el Ministerio SEGPRES que cumple esta norma.
 
 ## Mecanismos Oficiales Obligatorios
-Los OAEs deben usar mecanismos oficiales, salvo excepciones legales de tramitación electrónica.
+- Los OAEs deben usar mecanismos oficiales, salvo excepciones legales de tramitación electrónica.
+
 - **ClaveÚnica**: para personas naturales. Administrada por SEGPRES/DGD; enrolamiento vía Registro Civil. Basada en OpenID Connect.
 - **Clave Tributaria**: para personas jurídicas y agrupaciones sin personalidad jurídica. Administrada por el SII. Prohibido su uso para autenticar personas naturales fuera del SII.
 
@@ -45,7 +54,9 @@ Los OAEs deben usar mecanismos oficiales, salvo excepciones legales de tramitaci
 - **Niveles de Confianza**: evaluar factores adicionales (MFA) según la criticidad del trámite o sensibilidad de los datos.
 
 ## Nuevos Mecanismos
-Los OAEs pueden solicitar a la DGD la oficialización de nuevos métodos. Requisitos:
+- Los OAEs pueden solicitar a la DGD la oficialización de nuevos métodos.
+- Requisitos:
+
 - Procesos de enrolamiento seguros (minimizar suplantación).
 - Políticas de privacidad accesibles.
 - Soporte técnico a usuarios y gestión de revocación de credenciales.

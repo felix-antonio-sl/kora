@@ -1,12 +1,33 @@
+---
+_manifest:
+  urn: urn:kora:kb:07-aislamiento-seguridad
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '07'
+- aislamiento
+- seguridad
+lang: es
+---
+
 # Capítulo 7 — Aislamiento y Seguridad por Agente
 
 > **Propósito:** Entender los tres controles de seguridad per-agent (sandbox, tool policy, elevated) como un sistema integrado. Saber cuál resolver primero cuando algo está bloqueado, y diseñar perfiles de seguridad coherentes para cada agente.
 
----
+- ---
+
 
 ## 7.1 Los Tres Controles: Vista Unificada
 
-OpenClaw tiene tres mecanismos de seguridad que trabajan en capas. Son **relacionados pero independientes**:
+- OpenClaw tiene tres mecanismos de seguridad que trabajan en capas.
+- Son **relacionados pero independientes**:
+
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
@@ -42,7 +63,9 @@ OpenClaw tiene tres mecanismos de seguridad que trabajan en capas. Son **relacio
                        └── NO → exec corre en container
 ```
 
-**Regla cardinal:** Tool policy es el gate principal. Si un tool está denied, no importa si estás en sandbox o en host, ni si elevated está activado — el tool no existe para el modelo.
+- **Regla cardinal:** Tool policy es el gate principal.
+- Si un tool está denied, no importa si estás en sandbox o en host, ni si elevated está activado — el tool no existe para el modelo.
+
 
 ### Debug rápido
 
@@ -53,13 +76,16 @@ openclaw sandbox explain --session agent:work:main
 openclaw sandbox explain --json
 ```
 
-Muestra: sandbox mode/scope efectivo, si la sesión está sandboxed, tool allow/deny resuelto, elevated gates.
+- Muestra: sandbox mode/scope efectivo, si la sesión está sandboxed, tool allow/deny resuelto, elevated gates.
 
----
+
+- ---
+
 
 ## 7.2 Sandbox: Dónde Corren los Tools
 
-El sandbox envuelve la ejecución de tools en **containers Docker** para limitar el blast radius de un modelo que hace algo "dumb".
+- El sandbox envuelve la ejecución de tools en **containers Docker** para limitar el blast radius de un modelo que hace algo "dumb".
+
 
 ### Modes
 
@@ -69,7 +95,9 @@ El sandbox envuelve la ejecución de tools en **containers Docker** para limitar
 | `"non-main"` | Solo sesiones non-main (grupos, canales, cron, subagentes) | **El más útil:** DMs en host, grupos en sandbox |
 | `"all"` | Toda sesión | Agentes de bajo trust o públicos |
 
-**"non-main" es basado en mainKey, no en agentId.** Grupos y canales siempre son non-main. Si tu agente main tiene heartbeats que corren en la sesión main, esos NO se sandboxean en modo `non-main`.
+- **"non-main" es basado en mainKey, no en agentId.** Grupos y canales siempre son non-main.
+- Si tu agente main tiene heartbeats que corren en la sesión main, esos NO se sandboxean en modo `non-main`.
+
 
 ### Scope: cuántos containers
 
@@ -79,7 +107,8 @@ El sandbox envuelve la ejecución de tools en **containers Docker** para limitar
 | `"agent"` | Uno por agente | Medio | Todas las sesiones de un agente comparten container |
 | `"shared"` | Uno para todos | Mínimo | Todas las sesiones sandboxed comparten container |
 
-**Trade-off:** `"session"` es lo más seguro pero consume más recursos Docker. `"shared"` es más eficiente pero si una sesión deja archivos, otra los puede ver.
+- **Trade-off:** `"session"` es lo más seguro pero consume más recursos Docker. `"shared"` es más eficiente pero si una sesión deja archivos, otra los puede ver.
+
 
 ### Workspace Access
 
@@ -102,9 +131,12 @@ sandbox: {
 }
 ```
 
-**Los binds perforan el sandbox.** Lo que montas es visible dentro del container con el modo que configures (`:ro` o `:rw`). Default es read-write si omites el modo.
+- **Los binds perforan el sandbox.** Lo que montas es visible dentro del container con el modo que configures (`:ro` o `:rw`).
+- Default es read-write si omites el modo.
 
-**Seguridad:**
+
+- **Seguridad:**
+
 - OpenClaw bloquea binds peligrosos: `docker.sock`, `/etc`, `/proc`, `/sys`, `/dev`
 - Preferir `:ro` siempre que sea posible
 - `scope: "shared"` ignora per-agent binds (solo aplican los globales)
@@ -120,7 +152,9 @@ sandbox: {
 }
 ```
 
-Default: **sin network.** El container no puede hacer requests HTTP, instalar packages, ni conectarse a nada. Para skills que necesitan network:
+- Default: **sin network.** El container no puede hacer requests HTTP, instalar packages, ni conectarse a nada.
+- Para skills que necesitan network:
+
 
 ```json5
 sandbox: { docker: { network: "bridge" } }  // habilita red
@@ -139,16 +173,22 @@ sandbox: {
 }
 ```
 
-Corre **una sola vez** después de crear el container. No en cada run. Pitfalls comunes:
+- Corre **una sola vez** después de crear el container.
+- No en cada run.
+- Pitfalls comunes:
+
 - `network: "none"` + package install = fallo silencioso
 - `readOnlyRoot: true` + writes = fallo
 - Non-root user + apt-get = fallo
 
----
+- ---
+
 
 ## 7.3 Tool Policy: Qué Tools Existen
 
-Recapitulación del Cap. 2 con foco en el contexto multi-agent.
+- Recapitulación del Cap.
+- 2 con foco en el contexto multi-agent.
+
 
 ### Las 8 capas de filtrado
 
@@ -163,11 +203,13 @@ Layer 7: Sandbox Policy      (tools.sandbox.tools.allow/deny)
 Layer 8: Subagent Policy     (tools.subagents.tools.allow/deny)
 ```
 
-**Cada capa solo puede restringir más.** Un tool denied en Layer 3 no se puede re-habilitar en Layer 5.
+- **Cada capa solo puede restringir más.** Un tool denied en Layer 3 no se puede re-habilitar en Layer 5.
+
 
 ### Per-agent overrides
 
-La clave de multi-agent es que Layers 5-6 permiten **per-agent customization**:
+- La clave de multi-agent es que Layers 5-6 permiten **per-agent customization**:
+
 
 ```json5
 {
@@ -208,7 +250,8 @@ La clave de multi-agent es que Layers 5-6 permiten **per-agent customization**:
 
 ### Sandbox tool policy (Layer 7)
 
-Cuando un agente corre en sandbox, una capa adicional de policy puede restringir qué tools funcionan **dentro del sandbox**:
+- Cuando un agente corre en sandbox, una capa adicional de policy puede restringir qué tools funcionan **dentro del sandbox**:
+
 
 ```json5
 {
@@ -238,11 +281,13 @@ Cuando un agente corre en sandbox, una capa adicional de policy puede restringir
 }
 ```
 
-Si `agents.list[].tools.sandbox.tools` está definido, **reemplaza** (no merge) `tools.sandbox.tools` para ese agente.
+- Si `agents.list[].tools.sandbox.tools` está definido, **reemplaza** (no merge) `tools.sandbox.tools` para ese agente.
+
 
 ### Provider-specific tool policy
 
-Puedes restringir tools según qué modelo/provider se esté usando:
+- Puedes restringir tools según qué modelo/provider se esté usando:
+
 
 ```json5
 {
@@ -259,13 +304,18 @@ Puedes restringir tools según qué modelo/provider se esté usando:
 }
 ```
 
-**Caso de uso:** Modelos más débiles podrían abusar de tools complejos (browser, exec). Restringir tools para modelos de menor capacidad es una mitigación de seguridad.
+- **Caso de uso:** Modelos más débiles podrían abusar de tools complejos (browser, exec).
+- Restringir tools para modelos de menor capacidad es una mitigación de seguridad.
 
----
+
+- ---
+
 
 ## 7.4 Elevated Mode: El Escape Hatch
 
-Elevated es un mecanismo **específico para exec** que permite escapar del sandbox al host. No afecta ningún otro tool.
+- Elevated es un mecanismo **específico para exec** que permite escapar del sandbox al host.
+- No afecta ningún otro tool.
+
 
 ### Qué hace cada nivel
 
@@ -292,7 +342,9 @@ Elevated es un mecanismo **específico para exec** que permite escapar del sandb
                            └── SÍ → Elevated disponible
 ```
 
-**Ambos gates deben pasar:** global Y per-agent. El per-agent solo puede restringir más, nunca expandir.
+- **Ambos gates deben pasar:** global Y per-agent.
+- El per-agent solo puede restringir más, nunca expandir.
+
 
 ### Configuración
 
@@ -337,11 +389,13 @@ Elevated es un mecanismo **específico para exec** que permite escapar del sandb
 | Debugging de servicios del host desde agente sandboxed | ✅ Sí (`full` para velocidad) |
 | Operación rutinaria que necesita path del host | ❌ No — usar bind mount |
 
----
+- ---
+
 
 ## 7.5 Perfiles de Seguridad: Patrones Integrados
 
-Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes más comunes:
+- Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes más comunes:
+
 
 ### Perfil: Trust Total (personal)
 
@@ -353,8 +407,10 @@ Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes m
   // elevated: no relevante (ya en host)
 }
 ```
-**Blast radius:** Máximo. El modelo tiene acceso total al host.
-**Cuándo:** Solo tú usas el agente. Confías en el modelo y en tu input.
+- **Blast radius:** Máximo.
+- El modelo tiene acceso total al host. **Cuándo:** Solo tú usas el agente.
+- Confías en el modelo y en tu input.
+
 
 ### Perfil: Coding Agent (sandboxed con acceso a código)
 
@@ -377,8 +433,8 @@ Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes m
   }
 }
 ```
-**Blast radius:** Limitado a container + workspace + /projects.
-**Cuándo:** Agente que edita código pero no debería tocar el host.
+- **Blast radius:** Limitado a container + workspace + /projects. **Cuándo:** Agente que edita código pero no debería tocar el host.
+
 
 ### Perfil: Read-Only Observer
 
@@ -393,8 +449,9 @@ Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes m
   }
 }
 ```
-**Blast radius:** Mínimo. Solo puede leer y buscar.
-**Cuándo:** Agente que responde preguntas basándose en memoria y web, sin capacidad de acción.
+- **Blast radius:** Mínimo.
+- Solo puede leer y buscar. **Cuándo:** Agente que responde preguntas basándose en memoria y web, sin capacidad de acción.
+
 
 ### Perfil: Messaging-Only
 
@@ -410,8 +467,9 @@ Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes m
   }
 }
 ```
-**Blast radius:** Casi nulo. Solo puede enviar mensajes y ver sus propias sesiones.
-**Cuándo:** Bot de atención/soporte que solo conversa.
+- **Blast radius:** Casi nulo.
+- Solo puede enviar mensajes y ver sus propias sesiones. **Cuándo:** Bot de atención/soporte que solo conversa.
+
 
 ### Perfil: Grupo Público (máxima restricción)
 
@@ -423,10 +481,12 @@ Combinando sandbox + tool policy + elevated, estos son los perfiles coherentes m
   groupChat: { mentionPatterns: ["@bot"] }
 }
 ```
-**Blast radius:** Prácticamente cero. Solo `session_status`, aislamiento total por sesión.
-**Cuándo:** Bot en un grupo público donde cualquiera puede enviar mensajes.
+- **Blast radius:** Prácticamente cero.
+- Solo `session_status`, aislamiento total por sesión. **Cuándo:** Bot en un grupo público donde cualquiera puede enviar mensajes.
 
----
+
+- ---
+
 
 ## 7.6 Precedencia de Config: Per-Agent vs Defaults
 
@@ -440,7 +500,8 @@ agents.list[].sandbox.docker.*      > agents.defaults.sandbox.docker.*
 agents.list[].sandbox.browser.*     > agents.defaults.sandbox.browser.*
 ```
 
-**Nota:** Per-agent `docker.*` y `browser.*` se ignoran cuando scope resuelve a `"shared"` (un solo container para todos).
+- **Nota:** Per-agent `docker.*` y `browser.*` se ignoran cuando scope resuelve a `"shared"` (un solo container para todos).
+
 
 ### Tool Restrictions
 
@@ -464,7 +525,8 @@ tools.elevated.allowFrom                  → global sender allowlist
 agents.list[].tools.elevated.allowFrom    → per-agent allowlist (intersección)
 ```
 
----
+- ---
+
 
 ## 7.7 Migración: Single Agent → Multi-Agent
 
@@ -512,9 +574,11 @@ agents.list[].tools.elevated.allowFrom    → per-agent allowlist (intersección
 }
 ```
 
-**`openclaw doctor` migra automáticamente** configs legacy `agent.*` a `agents.defaults` + `agents.list`.
+- **`openclaw doctor` migra automáticamente** configs legacy `agent.*` a `agents.defaults` + `agents.list`.
 
----
+
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -559,6 +623,8 @@ openclaw sandbox explain --agent <id>
           → Per-agent gate bloqueado?
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 8 — Patrones Multi-Tenant](08-patrones-multitenant.md)*
+
+- *Siguiente: [Capítulo 8 — Patrones Multi-Tenant](08-patrones-multitenant.md)*
+

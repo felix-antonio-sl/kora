@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:nt-calidad-plataformas"
+  urn: urn:tde:kb:nt-calidad-plataformas
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, norma-tecnica, calidad-software, plataformas, evaltic, chile]
+tags:
+- transformacion-digital
+- norma-tecnica
+- calidad-software
+- plataformas
+- evaltic
+- chile
+- tde
 lang: es
 ---
 
 # Norma Técnica de Calidad y Funcionamiento de Plataformas (Decreto 11)
 
 ## Objeto y Alcance
-Describe cómo los Órganos de la Administración del Estado (OAE) deben mitigar la obsolescencia tecnológica, asegurar la continuidad operacional y establecer niveles óptimos de servicio para plataformas que sustentan procedimientos administrativos. Introduce el Ciclo de Gestión de la Calidad y el Plan de Mejora Continua como herramientas obligatorias.
+- Describe cómo los Órganos de la Administración del Estado (OAE) deben mitigar la obsolescencia tecnológica, asegurar la continuidad operacional y establecer niveles óptimos de servicio para plataformas que sustentan procedimientos administrativos.
+- Introduce el Ciclo de Gestión de la Calidad y el Plan de Mejora Continua como herramientas obligatorias.
+
 
 ## Definiciones Clave
 - **Ciclo de Gestión de Calidad**: proceso recurrente de reducción de brechas tecnológicas respecto a estándares.
@@ -23,7 +32,8 @@ Describe cómo los Órganos de la Administración del Estado (OAE) deben mitigar
 - **EvalTIC**: proceso de evaluación técnica liderado por DIPRES y SGD para proyectos de inversión tecnológica.
 
 ## Ciclo de Gestión de la Calidad
-Requiere la creación previa de un **Catálogo de Plataformas** con una línea base de estado inicial.
+- Requiere la creación previa de un **Catálogo de Plataformas** con una línea base de estado inicial.
+
 1. **Elaboración del Plan**: identificación de brechas y medición de estándares del Reglamento (DS 4).
 2. **Formulación Presupuestaria**: vinculación con EvalTIC para solicitud de recursos a DIPRES.
 3. **Implementación**: ejecución de mejoras según priorización y presupuesto asignado.
@@ -38,7 +48,10 @@ Requiere la creación previa de un **Catálogo de Plataformas** con una línea b
 - Remisión del plan a SEGPRES cuando sea solicitado.
 
 ## Articulación con EvalTIC
-Los OAEs deben formular proyectos EvalTIC para financiar mejoras en sus plataformas. La evaluación técnica de DIPRES/SGD es vinculante para la asignación presupuestaria. Los ajustes solicitados por evaluadores deben realizarse dentro de los plazos establecidos en las disposiciones vigentes de proyectos TIC.
+- Los OAEs deben formular proyectos EvalTIC para financiar mejoras en sus plataformas.
+- La evaluación técnica de DIPRES/SGD es vinculante para la asignación presupuestaria.
+- Los ajustes solicitados por evaluadores deben realizarse dentro de los plazos establecidos en las disposiciones vigentes de proyectos TIC.
+
 
 ## Rol del Coordinador/a de Transformación Digital (CTD)
 - Responsable directo de gestionar el Plan de Mejora Continua.

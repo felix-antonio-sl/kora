@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:legal:kb:ley-21719-datos-personales"
+  urn: urn:legal:kb:ley-21719-datos-personales
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Estatuto Administrativo y normativa chilena"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Estatuto Administrativo y normativa chilena
+version: 2.0.0
 status: published
-tags: [derecho-administrativo, estatuto, chile, datos-personales]
+tags:
+- derecho-administrativo
+- estatuto
+- chile
+- datos-personales
+- knowledge
 lang: es
 ---
 
@@ -74,7 +79,7 @@ lang: es
 
 ## Procedimiento ante el Responsable
 - **Solicitud**: Escrita (e-mail o formulario). Incluir identidad, domicilio/e-mail y detalle del derecho solicitado.
-- **Plazos de Respuesta**: 
+- **Plazos de Respuesta**:
   - 30 días corridos desde el ingreso.
   - Prórroga única de 30 días adicionales.
 - **Obligaciones del Responsable**:

@@ -1,25 +1,34 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-flotas"
+  urn: urn:gn:kb:manual-flotas
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, servicios-generales, gestion-flotas, mantenimiento-infraestructura]
+tags:
+- gore-nuble
+- gobierno-regional
+- servicios-generales
+- gestion-flotas
+- mantenimiento-infraestructura
+- gn
 lang: es
 ---
 
 # Manual 2.4: Servicios Generales y Gestión de Flotas
 
 ## Objetivo
-Operativizar servicios de soporte institucional y administrar flota vehicular del GORE. Garantizar disponibilidad, seguridad y control de costos.
+- Operativizar servicios de soporte institucional y administrar flota vehicular del GORE.
+- Garantizar disponibilidad, seguridad y control de costos.
+
 
 ## Sección I: Servicios Generales
 
 ### Alcance de Servicios Generales
-Servicios transversales de apoyo operativo:
+- Servicios transversales de apoyo operativo:
+
 | Servicio | Alcance |
 | :--- | :--- |
 | Mantención Infraestructura | Edificios, instalaciones eléctricas, sanitarias. |
@@ -38,7 +47,8 @@ Servicios transversales de apoyo operativo:
 | Coordinación con DAF | Contrataciones, pagos, control presupuestario. |
 
 ### Servicios Externalizados y Administración de Contratos
-Ejecución mayoritaria mediante contratos externos:
+- Ejecución mayoritaria mediante contratos externos:
+
 - **Servicios:** Aseo, Seguridad Privada, Jardinería, Mantención Ascensores/Equipos especializados.
 - **Administración de Contratos:**
   - Designación de Administrador del Contrato.
@@ -61,13 +71,15 @@ Ejecución mayoritaria mediante contratos externos:
   - Seguimiento mediante alertas automáticas.
 
 ### Órdenes de Trabajo (OT)
-Instrumento formal de gestión de intervenciones:
+- Instrumento formal de gestión de intervenciones:
+
 - **Generación:** Por reporte de usuario o automática vía plan preventivo.
 - **Contenido:** Descripción, ubicación, equipo, prioridad (alta/media/baja), fecha.
 - **Proceso:** Asignación -> Ejecución (registro materiales/horas) -> Validación solicitante -> Cierre (actualización hoja de vida).
 
 ### Control de Elementos de Seguridad
-Inspección y mantenimiento de:
+- Inspección y mantenimiento de:
+
 - **Extintores:** Carga, vencimiento, ubicación, señalética.
 - **Redes:** Pruebas periódicas de red húmeda y seca.
 - **Sistemas:** Iluminación de emergencia, detectores de humo, alarmas.

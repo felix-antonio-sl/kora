@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:omega-ipr-gestion-fusion"
+  urn: urn:gn:kb:omega-ipr-gestion-fusion
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, finanzas-publicas, gestion-ipr]
+tags:
+- gore-nuble
+- gobierno-regional
+- finanzas-publicas
+- gestion-ipr
+- gn
 lang: es
 ---
 

@@ -1,12 +1,34 @@
+---
+_manifest:
+  urn: urn:kora:kb:10-sub-agentes-anidados
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '10'
+- sub
+- agentes
+lang: es
+---
+
 # Capítulo 10 — Sub-Agentes Anidados (Orchestrator Pattern)
 
 > **Propósito:** Entender cómo habilitar y diseñar orquestación multi-nivel: un agente principal que delega a un orquestador, que a su vez distribuye trabajo a workers. Este capítulo construye sobre el Cap. 9 y añade la dimensión de profundidad.
 
----
+- ---
+
 
 ## 10.1 Concepto: Depth > 1
 
-Por default, los sub-agentes son **flat** (`maxSpawnDepth: 1`): el main puede spawn sub-agentes, pero esos sub-agentes no pueden spawn hijos. El orchestrator pattern habilita **un nivel adicional** de nesting:
+- Por default, los sub-agentes son **flat** (`maxSpawnDepth:
+- 1`): el main puede spawn sub-agentes, pero esos sub-agentes no pueden spawn hijos.
+- El orchestrator pattern habilita **un nivel adicional** de nesting:
+
 
 ```
 maxSpawnDepth: 1 (default — flat)
@@ -35,12 +57,14 @@ Main ──► Orchestrator (depth 1)
 | **Costo de contexto** | N announces → N system messages en historial del main | 1 announce → 1 system message |
 | **Flexibilidad** | Main debe saber dividir la tarea | Orchestrator especializado en dividir y sintetizar |
 
-**El orchestrator pattern brilla cuando:**
+- **El orchestrator pattern brilla cuando:**
+
 - La tarea requiere **dividir, distribuir, esperar, y sintetizar** — y ese flujo es complejo
 - Quieres evitar contaminar el contexto del main con N resultados intermedios
 - El orchestrator puede usar un modelo diferente (más barato para coordinación)
 
----
+- ---
+
 
 ## 10.2 Configuración
 
@@ -68,13 +92,18 @@ Main ──► Orchestrator (depth 1)
 | 1 | `agent:main:subagent:<uuid-A>` | Orchestrator | ✅ Si `maxSpawnDepth ≥ 2` |
 | 2 | `agent:main:subagent:<uuid-A>:subagent:<uuid-B>` | Worker (leaf) | ❌ Nunca |
 
-**Depth 2 es siempre leaf.** No importa si configuras `maxSpawnDepth: 5` — en la práctica, depth 2 es el pattern recomendado. Depths mayores agregan latencia y complejidad sin beneficio claro.
+- **Depth 2 es siempre leaf.** No importa si configuras `maxSpawnDepth:
+- 5` — en la práctica, depth 2 es el pattern recomendado.
+- Depths mayores agregan latencia y complejidad sin beneficio claro.
 
----
+
+- ---
+
 
 ## 10.3 Tool Policy por Depth
 
-La tool policy cambia según el depth y el modo:
+- La tool policy cambia según el depth y el modo:
+
 
 ### Depth 1 cuando maxSpawnDepth = 1 (leaf mode, default)
 
@@ -120,9 +149,13 @@ La tool policy cambia según el depth y el modo:
 | `sessions_send` | ✅ | ❌ | ❌ | ❌ |
 | Tools normales | ✅ | ✅ | ✅ | ✅ |
 
-**Observación clave:** El orchestrator en depth 1 recibe session tools **solo porque** `maxSpawnDepth ≥ 2`. Si vuelves a poner `maxSpawnDepth: 1`, pierde esos tools automáticamente.
+- **Observación clave:** El orchestrator en depth 1 recibe session tools **solo porque** `maxSpawnDepth ≥ 2`.
+- Si vuelves a poner `maxSpawnDepth:
+- 1`, pierde esos tools automáticamente.
 
----
+
+- ---
+
 
 ## 10.4 Announce Chain: Flujo de Resultados Multi-Nivel
 
@@ -178,13 +211,17 @@ La tool policy cambia según el depth y el modo:
 - El Orchestrator anuncia a SU parent: Main (depth 0)
 - Main **nunca** recibe announces directos de los workers
 
-Esto mantiene la abstracción limpia: Main delega al Orchestrator, el Orchestrator se encarga del detalle.
+- Esto mantiene la abstracción limpia:
+- Main delega al Orchestrator, el Orchestrator se encarga del detalle.
 
----
+
+- ---
+
 
 ## 10.5 Fan-Out Control: maxChildrenPerAgent
 
-Cada sesión (en cualquier depth) puede tener como máximo `maxChildrenPerAgent` hijos activos simultáneamente.
+- Cada sesión (en cualquier depth) puede tener como máximo `maxChildrenPerAgent` hijos activos simultáneamente.
+
 
 ```json5
 {
@@ -200,7 +237,8 @@ Cada sesión (en cualquier depth) puede tener como máximo `maxChildrenPerAgent`
 
 ### ¿Qué pasa si se excede?
 
-El `sessions_spawn` retorna error — el modelo debe esperar a que un hijo termine antes de spawnar otro.
+- El `sessions_spawn` retorna error — el modelo debe esperar a que un hijo termine antes de spawnar otro.
+
 
 ### Fan-out total
 
@@ -222,9 +260,12 @@ Limitado por: maxChildrenPerAgent (5 per orch) × children de main (5 max)
                 + global maxConcurrent (8 default)
 ```
 
-**maxConcurrent es el hard cap global.** Aunque puedas tener 5 orchestrators × 5 workers = 25 sub-agentes en teoría, solo 8 corren simultáneamente. El resto se encola.
+- **maxConcurrent es el hard cap global.** Aunque puedas tener 5 orchestrators × 5 workers = 25 sub-agentes en teoría, solo 8 corren simultáneamente.
+- El resto se encola.
 
----
+
+- ---
+
 
 ## 10.6 Cascade Stop
 
@@ -249,7 +290,8 @@ Limitado por: maxChildrenPerAgent (5 per orch) × children de main (5 max)
 
 ### `/subagents kill <id>`
 
-Kill selectivo: mata un sub-agente específico y **todos sus descendientes**.
+- Kill selectivo: mata un sub-agente específico y **todos sus descendientes**.
+
 
 ```
 /subagents kill Orchestrator-A
@@ -262,13 +304,15 @@ Kill selectivo: mata un sub-agente específico y **todos sus descendientes**.
 (Orchestrator-B y sus workers NO se afectan)
 ```
 
----
+- ---
+
 
 ## 10.7 Diseño de un Orchestrator Efectivo
 
 ### El task del orchestrator
 
-El `task` que pasas al orchestrator debe ser **prescriptivo sobre el patrón**, no solo sobre la tarea:
+- El `task` que pasas al orchestrator debe ser **prescriptivo sobre el patrón**, no solo sobre la tarea:
+
 
 ```
 ❌ Malo:
@@ -292,7 +336,9 @@ Timeout por worker: 120 segundos"
 
 ### Modelo del orchestrator
 
-El orchestrator no hace trabajo pesado — divide, delega, espera, y sintetiza. Un modelo de tier medio es suficiente:
+- El orchestrator no hace trabajo pesado — divide, delega, espera, y sintetiza.
+- Un modelo de tier medio es suficiente:
+
 
 ```
 Main:          Sonnet (conversación con usuario)
@@ -303,7 +349,8 @@ Special worker: Opus (si una subtarea requiere análisis profundo)
 
 ### Error handling
 
-El orchestrator debe manejar la posibilidad de que un worker falle o timeout:
+- El orchestrator debe manejar la posibilidad de que un worker falle o timeout:
+
 
 ```
 ✅ En el task del orchestrator:
@@ -323,7 +370,8 @@ en el informe final con status claro."
 | Sin timeout en workers | Workers zombie que nunca terminan | Siempre usar `runTimeoutSeconds` |
 | Orchestrator no sintetiza | Cada announce del worker llega raw al main | Task debe incluir "sintetiza antes de anunciar" |
 
----
+- ---
+
 
 ## 10.8 Caso de Uso Completo: Research Pipeline
 
@@ -398,9 +446,11 @@ Result: "## Análisis Regulatorio de IA en Latinoamérica
 runtime 3m42s | 45.2K in / 12.8K out
 ```
 
-Main puede entregar directamente al usuario o agregar contexto/opinión.
+- Main puede entregar directamente al usuario o agregar contexto/opinión.
 
----
+
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -431,6 +481,8 @@ Main puede entregar directamente al usuario o agregar contexto/opinión.
           El orchestrator sintetiza antes de anunciar
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 11 — Comunicación Inter-Sesión](11-comunicacion-inter-sesion.md)*
+
+- *Siguiente: [Capítulo 11 — Comunicación Inter-Sesión](11-comunicacion-inter-sesion.md)*
+

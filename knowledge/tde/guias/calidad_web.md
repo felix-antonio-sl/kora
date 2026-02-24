@@ -1,20 +1,30 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:calidad-web"
+  urn: urn:tde:kb:calidad-web
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, calidad-web, ux, servicios-digitales, chile]
+tags:
+- transformacion-digital
+- calidad-web
+- ux
+- servicios-digitales
+- chile
+- tde
 lang: es
 ---
 
 # Guía de Calidad Web y Servicios Digitales
 
 ## Contexto y Objetivo
-Marco de referencia para evaluar y fortalecer calidad de sitios web y servicios digitales del Estado. Impulsado por Secretaría de Gobierno Digital (SGD) bajo Agenda de Modernización 2022-2026. Busca mejorar experiencia usuaria, aumentar confianza ciudadana y reducir costos. Aplicable a órganos de la administración del Estado (OAE) en desarrollo interno y contratación.
+- Marco de referencia para evaluar y fortalecer calidad de sitios web y servicios digitales del Estado.
+- Impulsado por Secretaría de Gobierno Digital (SGD) bajo Agenda de Modernización 2022-2026.
+- Busca mejorar experiencia usuaria, aumentar confianza ciudadana y reducir costos.
+- Aplicable a órganos de la administración del Estado (OAE) en desarrollo interno y contratación.
+
 
 ## Definiciones Clave
 - **Sitio Web**: conjunto de páginas bajo un mismo dominio.
@@ -67,7 +77,9 @@ Marco de referencia para evaluar y fortalecer calidad de sitios web y servicios 
 - **Accesibilidad**: texto alternativo (alt text) descriptivo para imágenes funcionales (máximo 2 líneas).
 
 ## Mejora Continua
-Interpretación de resultados basada en promedios ponderados. Priorizar acciones correctivas:
+- Interpretación de resultados basada en promedios ponderados.
+- Priorizar acciones correctivas:
+
 1. Indicadores imprescindibles (legales y críticos).
 2. Indicadores esperables (mejoras importantes UX).
 3. Indicadores deseables (optimización y valor adicional).

@@ -1,13 +1,22 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:intro-tde"
+  urn: urn:gov:kb:intro-tde
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, gobierno, chile, estrategia, normativa, interoperabilidad, ciberseguridad, datos]
+tags:
+- transformacion-digital
+- gobierno
+- chile
+- estrategia
+- normativa
+- interoperabilidad
+- ciberseguridad
+- datos
+- knowledge
 lang: es
 ---
 
@@ -16,7 +25,11 @@ lang: es
 ## Marco Estratégico TDE
 
 ### Visión 2030 y Objetivos
-Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Ecosistema de identidad digital centrado en las personas. Superar promedio OCDE en confianza.
+- Estado unificado, proactivo y confiable.
+- Uso estratégico y ético de datos.
+- Ecosistema de identidad digital centrado en las personas.
+- Superar promedio OCDE en confianza.
+
 
 | Objetivo | Definición |
 | :--- | :--- |
@@ -46,7 +59,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 *   **Seguridad y confianza:** Protección de datos y gestión de riesgos.
 *   **Resiliencia:** Continuidad operacional y sostenibilidad.
 
----
+- ---
+
 
 ## Ejes Estratégicos e Iniciativas
 
@@ -59,7 +73,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 | **5. Talento Digital** | Campus Digital; Estatuto especial TIC; Alfabetización digital. |
 | **6. Identidad e Infra** | Cédula Digital; Estrategia Cloud-first; Carpeta Ciudadana; Wallet de credenciales. |
 
----
+- ---
+
 
 ## Marco Institucional y Legal
 
@@ -79,7 +94,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 | **DS 8 (Notificaciones)** | Comunicación | Domicilio Digital Único (DDU); Notificación válida tras 3 días hábiles. |
 | **DS 11 (Calidad)** | Mejora Continua | Catálogo de plataformas; Designación de Coordinador TD por Jefe de Servicio. |
 
----
+- ---
+
 
 ## Gobernanza y Ciclo de Inversión TIC
 
@@ -97,7 +113,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 *   **Restricciones:** Prohibido aumento de dotación permanente vía TIC; prohibido ampliar datacenters propios (salvo excepción).
 *   **Prioridad:** Alineamiento Cloud First y estándares TDE.
 
----
+- ---
+
 
 ## Pilares Habilitadores
 
@@ -119,7 +136,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 4.  **Responder:** Plan de respuesta; notificación obligatoria a ANCI/CSIRT.
 5.  **Recuperar:** Planes de continuidad (BCP) y recuperación ante desastres (DRP).
 
----
+- ---
+
 
 ## Diseño y Valor Público
 
@@ -129,7 +147,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 *   **Metodología:** Investigación con usuarios, prototipado e iteración ágil.
 *   **Calidad Web:** Instrumento de evaluación (Imprescindible 60%, Esperable 25%, Deseable 15%).
 
----
+- ---
+
 
 ## Anexos y Glosario
 
@@ -141,7 +160,8 @@ Estado unificado, proactivo y confiable. Uso estratégico y ético de datos. Eco
 | **Wallet** | App para gestionar credenciales verificables y documentos digitales. |
 | **CPAT** | Catálogo de Procedimientos Administrativos y Tramitaciones. |
 
----
+- ---
+
 
 ## Hitos Relevantes 2024-2025
 

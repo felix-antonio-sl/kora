@@ -1,8 +1,18 @@
 ---
-urn: urn:fxsl:kb:unified-multimodel
+_manifest:
+  urn: urn:fxsl:kb:unified-multimodel
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
 version: 1.0.0
 status: published
-tags: [category-theory, multi-model, data-integration, schema-unification]
+tags:
+- category-theory
+- multi-model
+- data-integration
+- schema-unification
+- fxsl
 lang: es
 ---
 
@@ -10,11 +20,15 @@ lang: es
 
 ## Overview
 
-Framework for representing multi-model data (relational, document, graph, key-value) via unified schema category. Enables cross-model querying and integration.
+- Framework for representing multi-model data (relational, document, graph, key-value) via unified schema category.
+- Enables cross-model querying and integration.
+
 
 ## Global Schema Category
 
-**Definition**: Schema Category global: category whose objects are logical types and morphisms are relations/paths between them.
+- **Definition**:
+- Schema Category global: category whose objects are logical types and morphisms are relations/paths between them.
+
 
 | Component | Structure |
 |-----------|-----------|
@@ -22,7 +36,9 @@ Framework for representing multi-model data (relational, document, graph, key-va
 | **Morphisms** | Foreign Keys, refs, edges, paths, patterns |
 | **Attributes** | root, pkey, refs, access_path per kind |
 
-**Purpose**: Unified view of all data models before integration.
+- **Purpose**:
+- Unified view of all data models before integration.
+
 
 ### Construction Process
 
@@ -35,7 +51,9 @@ Framework for representing multi-model data (relational, document, graph, key-va
 
 ## Model Kinds
 
-**Definition**: Data model classes as realizations of global Schema Category.
+- **Definition**:
+- Data model classes as realizations of global Schema Category.
+
 
 | Kind | Objects | Morphisms | Instance |
 |------|---------|-----------|----------|
@@ -46,22 +64,38 @@ Framework for representing multi-model data (relational, document, graph, key-va
 
 ## Instance Category
 
-**Instance Functor**: Instance = funtor I: SchemaCategory → Set assigning concrete data to each global type.
+- **Instance Functor**:
+- Instance = funtor I:
+- SchemaCategory → Set assigning concrete data to each global type.
 
-**Purpose**: Represent combined content of multiple databases as single categorical instance.
 
-**Wrapper Functor**: W_db: DB_specific → SchemaCategory translates each physical schema to global schema.
+- **Purpose**:
+- Represent combined content of multiple databases as single categorical instance.
 
-**Examples**:
+
+- **Wrapper Functor**:
+- W_db:
+- DB_specific → SchemaCategory translates each physical schema to global schema.
+
+
+- **Examples**:
+
 - W_postgres, W_mongo, W_neo4j: each maps tables/collections/graphs to Schema Category objects
 
-**Use**: Normalize different technologies to common categorical language.
+- **Use**:
+- Normalize different technologies to common categorical language.
+
 
 ## Query Processing
 
-**Query as Functor**: Multi-model query = funtor Q: SchemaCategory → OutputKind.
+- **Query as Functor**:
+- Multi-model query = funtor Q:
+- SchemaCategory → OutputKind.
 
-**Interpretation**: Each query selects output type (relational/document/graph/flat) as target category.
+
+- **Interpretation**:
+- Each query selects output type (relational/document/graph/flat) as target category.
+
 
 ### Query Execution
 
@@ -71,7 +105,9 @@ Framework for representing multi-model data (relational, document, graph, key-va
 4. Execute Q on global instance I: get Q(I)
 5. Materialize result in OutputKind format
 
-**Example**: Users with orders across PostgreSQL + MongoDB
+- **Example**:
+- Users with orders across PostgreSQL + MongoDB
+
 
 ```
 SchemaCategory: {User, Order, user_orders: Order→User}
@@ -81,7 +117,9 @@ Result: [{user: {...}, orders: [{...}, {...}]}]
 
 ## Output Models
 
-**Definition**: OutputKind = target category representing output format.
+- **Definition**:
+- OutputKind = target category representing output format.
+
 
 | OutputKind | Use Case |
 |-----------|----------|

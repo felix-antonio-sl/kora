@@ -1,12 +1,31 @@
+---
+_manifest:
+  urn: urn:kora:kb:03-sesiones
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '03'
+- sesiones
+lang: es
+---
+
 # Capítulo 3 — Sesiones
 
 > **Propósito:** Entender cómo OpenClaw organiza las conversaciones en sesiones, cómo las identifica, cuándo las resetea, cómo persiste su estado, y los mecanismos de gestión de contexto (compaction, pruning). Las sesiones son el concepto que conecta agentes con canales, y dominar su lógica es prerequisito para multi-agente, automatización y seguridad.
 
----
+- ---
+
 
 ## 3.1 Session Keys: El Sistema de Direcciones
 
-Cada conversación en OpenClaw tiene un **session key** — un identificador estable que determina dónde se almacena el historial, qué contexto ve el modelo, y cómo se aísla de otras conversaciones.
+- Cada conversación en OpenClaw tiene un **session key** — un identificador estable que determina dónde se almacena el historial, qué contexto ve el modelo, y cómo se aísla de otras conversaciones.
+
 
 ### Anatomía de un session key
 
@@ -37,21 +56,41 @@ agent:<agentId>:<rest>
 
 ### Implicaciones de diseño
 
-**1. El key determina el aislamiento.** Dos mensajes con el mismo session key comparten historial. Dos mensajes con keys distintos NO se ven entre sí. Esto es la base de toda la seguridad de contexto.
+- **1.
+- El key determina el aislamiento.** Dos mensajes con el mismo session key comparten historial.
+- Dos mensajes con keys distintos NO se ven entre sí.
+- Esto es la base de toda la seguridad de contexto.
 
-**2. Los DMs son el caso más sutil.** Con `dmScope: "main"`, todos los DMs (desde cualquier canal, cualquier número) llegan a la misma sesión. Esto da continuidad pero puede filtrar contexto si múltiples personas pueden enviar DMs.
 
-**3. Grupos siempre tienen su propio key.** No hay opción de "colapsar" grupos a la sesión main. Esto es un invariante de seguridad.
+- **2.
+- Los DMs son el caso más sutil.** Con `dmScope: "main"`, todos los DMs (desde cualquier canal, cualquier número) llegan a la misma sesión.
+- Esto da continuidad pero puede filtrar contexto si múltiples personas pueden enviar DMs.
 
-**4. Cron y webhooks siempre son aislados.** Cada cron job y cada webhook run tienen su propia sesión. Los cron jobs aislados crean un sessionId fresh en cada ejecución (sin carry-over de historial).
 
-**5. Session key ≠ session ID.** El key es estable (e.g., `agent:main:main` siempre existe). El ID es un UUID que cambia con cada `/new` o `/reset`. Mismo key, nuevo ID = nueva conversación dentro del mismo "canal lógico".
+- **3.
+- Grupos siempre tienen su propio key.** No hay opción de "colapsar" grupos a la sesión main.
+- Esto es un invariante de seguridad.
 
----
+
+- **4.
+- Cron y webhooks siempre son aislados.** Cada cron job y cada webhook run tienen su propia sesión.
+- Los cron jobs aislados crean un sessionId fresh en cada ejecución (sin carry-over de historial).
+
+
+- **5.
+- Session key ≠ session ID.** El key es estable (e.g., `agent:main:main` siempre existe).
+- El ID es un UUID que cambia con cada `/new` o `/reset`.
+- Mismo key, nuevo ID = nueva conversación dentro del mismo "canal lógico".
+
+
+- ---
+
 
 ## 3.2 DM Scope: La Decisión de Aislamiento más Importante
 
-La configuración `session.dmScope` determina cómo se agrupan los mensajes directos. Es **la primera decisión de seguridad** al configurar un agente que recibe DMs de más de una persona.
+- La configuración `session.dmScope` determina cómo se agrupan los mensajes directos.
+- Es **la primera decisión de seguridad** al configurar un agente que recibe DMs de más de una persona.
+
 
 ### Los cuatro modos
 
@@ -113,7 +152,8 @@ La configuración `session.dmScope` determina cómo se agrupan los mensajes dire
 
 ### Identity Links: Unificar identidades cross-channel
 
-Si usas `per-peer` o `per-channel-peer` y quieres que Korvo-en-Telegram y Korvo-en-WhatsApp compartan sesión:
+- Si usas `per-peer` o `per-channel-peer` y quieres que Korvo-en-Telegram y Korvo-en-WhatsApp compartan sesión:
+
 
 ```json5
 {
@@ -127,19 +167,25 @@ Si usas `per-peer` o `per-channel-peer` y quieres que Korvo-en-Telegram y Korvo-
 }
 ```
 
-Con esto, ambos identificadores de Korvo resuelven al canonical key `korvo`, y comparten sesión aunque vengan de canales distintos.
+- Con esto, ambos identificadores de Korvo resuelven al canonical key `korvo`, y comparten sesión aunque vengan de canales distintos.
 
----
+
+- ---
+
 
 ## 3.3 Ciclo de Vida de una Sesión
 
 ### Creación
 
-Una sesión se crea **lazily** cuando llega el primer mensaje para un session key que no existe. No hay "pre-creación" de sesiones.
+- Una sesión se crea **lazily** cuando llega el primer mensaje para un session key que no existe.
+- No hay "pre-creación" de sesiones.
+
 
 ### Reset: cuándo se reinicia una sesión
 
-OpenClaw evalúa si una sesión está "stale" **en cada mensaje inbound**. Si la sesión expiró, se genera un nuevo sessionId (el session key se mantiene).
+- OpenClaw evalúa si una sesión está "stale" **en cada mensaje inbound**.
+- Si la sesión expiró, se genera un nuevo sessionId (el session key se mantiene).
+
 
 #### Reset diario (default)
 
@@ -151,7 +197,9 @@ Timeline:
   04:01  → Mensaje llega → sesión expirada → nuevo sessionId
 ```
 
-El agente "amanece" cada día con una sesión fresh. Pero los bootstrap files y la memoria en disco persisten — solo se pierde el contexto conversacional.
+- El agente "amanece" cada día con una sesión fresh.
+- Pero los bootstrap files y la memoria en disco persisten — solo se pierde el contexto conversacional.
+
 
 #### Reset por inactividad (idle)
 
@@ -159,7 +207,8 @@ El agente "amanece" cada día con una sesión fresh. Pero los bootstrap files y 
 { session: { reset: { mode: "daily", atHour: 4, idleMinutes: 120 } } }
 ```
 
-Si han pasado 120 minutos sin actividad **Y** ya pasó la hora de reset diario → la sesión se resetea. **Whichever expires first wins.**
+- Si han pasado 120 minutos sin actividad **Y** ya pasó la hora de reset diario → la sesión se resetea. **Whichever expires first wins.**
+
 
 #### Overrides por tipo y canal
 
@@ -179,9 +228,12 @@ Si han pasado 120 minutos sin actividad **Y** ya pasó la hora de reset diario �
 }
 ```
 
-**Precedencia:** `resetByChannel` > `resetByType` > `reset` (global).
+- **Precedencia:** `resetByChannel` > `resetByType` > `reset` (global).
 
-Esto permite políticas diferentes: Discord puede mantener sesiones largas (threads son persistentes), mientras que WhatsApp resetea diariamente.
+
+- Esto permite políticas diferentes:
+- Discord puede mantener sesiones largas (threads son persistentes), mientras que WhatsApp resetea diariamente.
+
 
 #### Reset manual
 
@@ -198,7 +250,8 @@ Esto permite políticas diferentes: Discord puede mantener sesiones largas (thre
 - **Sub-agentes:** Sesión efímera (`agent:<id>:subagent:<uuid>`). Se archivan o borran según `cleanup` config.
 - **Webhooks:** Session key configurable; por default `hook:<uuid>` es fresh cada vez.
 
----
+- ---
+
 
 ## 3.4 Persistencia: Dónde Vive Todo
 
@@ -244,14 +297,16 @@ Esto permite políticas diferentes: Discord puede mantener sesiones largas (thre
 }
 ```
 
-Puntos clave:
+- Puntos clave:
+
 - **Es seguro borrar entries.** Se recrean en el próximo mensaje.
 - **Token counts vienen de aquí.** Los UIs (CLI, macOS app, WebChat) consultan este archivo, no parsean JSONLs.
 - **`compactions` es un counter.** Indica cuántas veces se ha compactado la sesión. Útil para diagnosticar sesiones que compactan mucho (MEMORY.md muy grande, tool calls excesivos).
 
 ### Transcripts JSONL: la conversación completa
 
-Cada línea del JSONL es un mensaje (user, assistant, tool_call, tool_result, system, compaction_summary):
+- Cada línea del JSONL es un mensaje (user, assistant, tool_call, tool_result, system, compaction_summary):
+
 
 ```jsonl
 {"role":"system","content":"[system prompt...]","timestamp":1708444800000}
@@ -261,7 +316,8 @@ Cada línea del JSONL es un mensaje (user, assistant, tool_call, tool_result, sy
 {"role":"tool","tool_call_id":"tc_1","content":"Thu Feb 20 17:00:00 UTC 2026"}
 ```
 
-Puntos clave:
+- Puntos clave:
+
 - **Append-only durante la sesión.** Nunca se editan líneas existentes (excepto compaction, que reescribe).
 - **Pruning NO toca este archivo.** Pruning solo afecta lo que se envía al modelo in-memory.
 - **Compaction SÍ reescribe.** El summary reemplaza mensajes antiguos en el JSONL.
@@ -277,11 +333,13 @@ Puntos clave:
 | Quieres auditar qué dijo el agente | Leer el JSONL directamente o usar `sessions_history` |
 | Backup | Incluir `~/.openclaw/agents/*/sessions/` en tu backup strategy |
 
----
+- ---
+
 
 ## 3.5 Compaction: Cómo el Agente Sobrevive Conversaciones Largas
 
-La compaction es el mecanismo que permite sesiones indefinidamente largas dentro de una ventana de contexto finita.
+- La compaction es el mecanismo que permite sesiones indefinidamente largas dentro de una ventana de contexto finita.
+
 
 ### El problema
 
@@ -347,13 +405,17 @@ Retry del request original
 
 ### Qué se pierde en compaction
 
-La compaction es un **resumen**, no una copia. Se pierden:
+- La compaction es un **resumen**, no una copia.
+- Se pierden:
+
 
 - **Detalles finos** de tool outputs (el resumen dice "ejecutó un comando que mostró X" pero no incluye las 500 líneas de output)
 - **Nuances conversacionales** (bromas, tangentes, tonos sutiles)
 - **Datos exactos** (IPs, hashes, paths completos) a menos que el modelo los considere importantes
 
-**Por eso el memory flush es crítico:** antes de perder acceso al contexto completo, el agente tiene una oportunidad de escribir lo importante a disco. Lo que está en `memory/*.md` sobrevive a cualquier compaction.
+- **Por eso el memory flush es crítico:** antes de perder acceso al contexto completo, el agente tiene una oportunidad de escribir lo importante a disco.
+- Lo que está en `memory/*.md` sobrevive a cualquier compaction.
+
 
 ### Compaction manual
 
@@ -385,19 +447,24 @@ La compaction es un **resumen**, no una copia. Se pierden:
 
 ### Anti-patrón: compaction loops
 
-Si tu system prompt + bootstrap files consumen 50K tokens en un modelo con 128K de ventana, la sesión se compacta constantemente porque queda poco espacio para historial. Síntomas:
+- Si tu system prompt + bootstrap files consumen 50K tokens en un modelo con 128K de ventana, la sesión se compacta constantemente porque queda poco espacio para historial.
+- Síntomas:
+
 
 - `compactions` crece rápido en sessions.json
 - El agente "olvida" cosas que le dijiste hace 5 minutos
 - Cada respuesta es más lenta (overhead de compaction)
 
-**Solución:** Reducir bootstrap files, cambiar a un modelo con ventana más grande, o usar menos tools (schemas más pequeños).
+- **Solución:** Reducir bootstrap files, cambiar a un modelo con ventana más grande, o usar menos tools (schemas más pequeños).
 
----
+
+- ---
+
 
 ## 3.6 Session Pruning: Limpieza In-Memory
 
-Pruning es diferente de compaction: no es un resumen narrativo sino una **poda técnica** de tool results viejos.
+- Pruning es diferente de compaction: no es un resumen narrativo sino una **poda técnica** de tool results viejos.
+
 
 ### Compaction vs Pruning
 
@@ -437,9 +504,14 @@ Enviar contexto podado al modelo
 
 ### ¿Por qué alinearlo con prompt caching?
 
-Anthropic cachea el prompt por un TTL (default ~5 min). Mientras el cache es válido, no pagas cache-write. Cuando expira, la próxima request re-cachea todo.
+- Anthropic cachea el prompt por un TTL (default ~5 min).
+- Mientras el cache es válido, no pagas cache-write.
+- Cuando expira, la próxima request re-cachea todo.
 
-Si podas los tool results antes de ese re-cache, el cache-write es más pequeño → **más barato**. Si no podas, re-cacheas 200K tokens de tool results que probablemente ya no importan.
+
+- Si podas los tool results antes de ese re-cache, el cache-write es más pequeño → **más barato**.
+- Si no podas, re-cacheas 200K tokens de tool results que ya no importan.
+
 
 ### Qué nunca se poda
 
@@ -448,11 +520,13 @@ Si podas los tool results antes de ese re-cache, el cache-write es más pequeño
 - Tool results con imágenes (podrían ser referenciados)
 - Los últimos `keepLastAssistants` (default 3) bloques de asistente + sus tool results
 
----
+- ---
+
 
 ## 3.7 Send Policy: Control de Delivery
 
-La send policy permite bloquear el envío de mensajes a ciertos tipos de sesión sin listar IDs individuales.
+- La send policy permite bloquear el envío de mensajes a ciertos tipos de sesión sin listar IDs individuales.
+
 
 ### Casos de uso
 
@@ -483,7 +557,8 @@ La send policy permite bloquear el envío de mensajes a ciertos tipos de sesión
 
 ### Override por sesión
 
-El owner puede override la policy por sesión con comandos de chat:
+- El owner puede override la policy por sesión con comandos de chat:
+
 
 ```
 /send on        ← permitir en esta sesión (override)
@@ -496,7 +571,8 @@ El owner puede override la policy por sesión con comandos de chat:
 - `keyPrefix` matchea el key **normalizado** (sin `agent:<id>:`). Ejemplo: `discord:channel:` matchea `agent:main:discord:channel:123`.
 - `rawKeyPrefix` matchea el key **completo**. Ejemplo: `agent:main:discord:` solo matchea el agente `main` en Discord, no el agente `work`.
 
----
+- ---
+
 
 ## 3.8 Inspección y Debugging de Sesiones
 
@@ -537,7 +613,8 @@ openclaw gateway call sessions.list --params '{}'
 | `sessions_send` | Enviar mensaje a otra sesión |
 | `session_status` | Ver status de la sesión actual |
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -586,6 +663,8 @@ openclaw gateway call sessions.list --params '{}'
                turns     (persist)  (in-memory)
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 4 — Modelos y Failover](04-modelos-failover.md)*
+
+- *Siguiente: [Capítulo 4 — Modelos y Failover](04-modelos-failover.md)*
+

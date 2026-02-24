@@ -1,19 +1,25 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:datosgob"
+  urn: urn:gov:kb:datosgob
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [datos-abiertos, plataforma-compartida, gobierno-digital, chile]
+tags:
+- datos-abiertos
+- plataforma-compartida
+- gobierno-digital
+- chile
+- knowledge
 lang: es
 ---
 
 # Portal de Datos Abiertos (Datos.gob.cl)
 
-Plataforma central del Estado chileno para la publicación de catálogos y conjuntos de datos abiertos bajo estándares de interoperabilidad y licencias libres.
+- Plataforma central del Estado chileno para la publicación de catálogos y conjuntos de datos abiertos bajo estándares de interoperabilidad y licencias libres.
+
 
 ## Definiciones Base
 

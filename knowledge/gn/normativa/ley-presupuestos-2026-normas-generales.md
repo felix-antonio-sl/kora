@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ley-presupuestos-2026-normas-generales"
+  urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, presupuesto-2026, normativa]
+tags:
+- gore-nuble
+- gobierno-regional
+- presupuesto-2026
+- normativa
+- gn
 lang: es
 ---
 
@@ -52,7 +57,8 @@ lang: es
 | UTM | Unidades Tributarias Mensuales |
 
 ## Artículo 01: Presupuesto de Ingresos y Gastos 2026
-Aprobación del Presupuesto de Ingresos y Gastos del Sector Público para el año 2026.
+- Aprobación del Presupuesto de Ingresos y Gastos del Sector Público para el año 2026.
+
 
 ### Presupuesto en Moneda Nacional (Miles de $)
 | Concepto | Ingresos (Resumen) | Gastos (Resumen) |

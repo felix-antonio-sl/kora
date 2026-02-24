@@ -1,12 +1,32 @@
+---
+_manifest:
+  urn: urn:kora:kb:08-patrones-multitenant
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- 08
+- patrones
+- multitenant
+lang: es
+---
+
 # Capítulo 8 — Patrones Multi-Tenant
 
 > **Propósito:** Aplicar los conceptos de multi-agent, sesiones, sandbox y tool policy a escenarios concretos de uso compartido. Este capítulo no introduce conceptos nuevos — combina lo aprendido en patrones arquitectónicos accionables para cuando múltiples personas, canales o propósitos comparten un mismo gateway.
 
----
+- ---
+
 
 ## 8.1 ¿Qué es "Multi-Tenant" en OpenClaw?
 
-Multi-tenant no es un feature — es un **patrón** que emerge de combinar:
+- Multi-tenant no es un feature — es un **patrón** que emerge de combinar:
+
 
 - **Multi-agent** (Cap. 6): cerebros aislados
 - **DM scope** (Cap. 3): sesiones separadas
@@ -20,7 +40,9 @@ Multi-tenant no es un feature — es un **patrón** que emerge de combinar:
                  para cada caso de uso
 ```
 
-No existe una config `multiTenant: true`. Lo que existe es un espectro de aislamiento:
+- No existe una config `multiTenant: true`.
+- Lo que existe es un espectro de aislamiento:
+
 
 ```
 Sin aislamiento ──────────────────────────────── Aislamiento total
@@ -29,14 +51,17 @@ Sin aislamiento ─────────────────────�
   (todo junto)      (contexto sep.)      (todo sep.)    (proceso sep.)
 ```
 
-La decisión es: **¿cuánto necesitas separar y por qué?**
+- La decisión es: **¿cuánto necesitas separar y por qué?**
 
----
+
+- ---
+
 
 ## 8.2 Patrón A: Un Número de WhatsApp → Múltiples Personas
 
 ### Escenario
-Tienes un número de WhatsApp (personal o business) y quieres que diferentes personas hablen con el bot, cada una con privacidad.
+- Tienes un número de WhatsApp (personal o business) y quieres que diferentes personas hablen con el bot, cada una con privacidad.
+
 
 ### Opción 1: Solo separar contexto (más simple)
 
@@ -53,11 +78,18 @@ Tienes un número de WhatsApp (personal o business) y quieres que diferentes per
 }
 ```
 
-**Resultado:** Un solo agente, un workspace, una memoria. Cada persona tiene su propia sesión (historial separado). Pero comparten personalidad, tools y modelo.
+- **Resultado:** Un solo agente, un workspace, una memoria.
+- Cada persona tiene su propia sesión (historial separado).
+- Pero comparten personalidad, tools y modelo.
 
-**Riesgo residual:** Si el modelo lee MEMORY.md (inyectado en toda sesión main), podría revelar info de una sesión a otra. Mitigación: MEMORY.md solo se inyecta en sesión main, y con `per-channel-peer`, ninguna sesión es "main" excepto la del owner.
 
-**Cuándo:** Pocas personas (familia, amigos cercanos), mismas tools para todos.
+- **Riesgo residual:** Si el modelo lee MEMORY.md (inyectado en toda sesión main), podría revelar info de una sesión a otra.
+- Mitigación:
+- MEMORY.md solo se inyecta en sesión main, y con `per-channel-peer`, ninguna sesión es "main" excepto la del owner.
+
+
+- **Cuándo:** Pocas personas (familia, amigos cercanos), mismas tools para todos.
+
 
 ### Opción 2: Agente por persona (aislamiento total)
 
@@ -85,9 +117,12 @@ Tienes un número de WhatsApp (personal o business) y quieres que diferentes per
 }
 ```
 
-**Resultado:** Workspace, memoria, auth, tools y sesiones completamente separados. Clau tiene su propio SOUL.md, su propio modelo, y tools restringidos.
+- **Resultado:** Workspace, memoria, auth, tools y sesiones completamente separados.
+- Clau tiene su propio SOUL.md, su propio modelo, y tools restringidos.
 
-**Cuándo:** Necesitas diferentes personalidades, niveles de acceso, o memorias separadas.
+
+- **Cuándo:** Necesitas diferentes personalidades, niveles de acceso, o memorias separadas.
+
 
 ### Tabla comparativa
 
@@ -102,12 +137,14 @@ Tienes un número de WhatsApp (personal o business) y quieres que diferentes per
 | Privacidad de contexto | ✅ Sesiones separadas | ✅ Todo separado |
 | Esfuerzo de mantenimiento | Mínimo | Per-agent (workspace, auth, etc.) |
 
----
+- ---
+
 
 ## 8.3 Patrón B: Múltiples Cuentas → Múltiples Agentes
 
 ### Escenario
-Tienes múltiples bots de Telegram (o múltiples números de WhatsApp) y quieres que cada uno tenga su propio cerebro.
+- Tienes múltiples bots de Telegram (o múltiples números de WhatsApp) y quieres que cada uno tenga su propio cerebro.
+
 
 ```json5
 {
@@ -134,7 +171,9 @@ Tienes múltiples bots de Telegram (o múltiples números de WhatsApp) y quieres
 }
 ```
 
-**Resultado:** Cada bot de Telegram tiene su propia personalidad, memoria y sesiones. El bot personal es restrictivo (solo Korvo); el business acepta pairing.
+- **Resultado:** Cada bot de Telegram tiene su propia personalidad, memoria y sesiones.
+- El bot personal es restrictivo (solo Korvo); el business acepta pairing.
+
 
 ### Para WhatsApp con múltiples números
 
@@ -161,12 +200,14 @@ openclaw channels login --channel whatsapp --account business
 }
 ```
 
----
+- ---
+
 
 ## 8.4 Patrón C: Canal × Modelo (Fast vs Deep)
 
 ### Escenario
-WhatsApp para conversación rápida (Sonnet), Telegram para trabajo profundo (Opus).
+- WhatsApp para conversación rápida (Sonnet), Telegram para trabajo profundo (Opus).
+
 
 ```json5
 {
@@ -196,23 +237,30 @@ WhatsApp para conversación rápida (Sonnet), Telegram para trabajo profundo (Op
 
 ### Variante: mismo agente, override de modelo por peer
 
-Si no necesitas workspaces separados (solo quieres un modelo diferente para un canal), puedes usar un solo agente con override en chat:
+- Si no necesitas workspaces separados (solo quieres un modelo diferente para un canal), puedes usar un solo agente con override en chat:
+
 
 ```
 En Telegram: /model opus      ← persiste en la sesión de Telegram
 En WhatsApp: /model sonnet    ← persiste en la sesión de WhatsApp
 ```
 
-Esto funciona cuando usas `dmScope: "per-channel-peer"` (sesiones separadas por canal), y el override persiste en cada sesión.
+- Esto funciona cuando usas `dmScope: "per-channel-peer"` (sesiones separadas por canal), y el override persiste en cada sesión.
 
-**Trade-off:** Menos config pero manual. Cada `/new` resetea el modelo. Multi-agent es más declarativo y persistente.
 
----
+- **Trade-off:** Menos config pero manual.
+- Cada `/new` resetea el modelo.
+- Multi-agent es más declarativo y persistente.
+
+
+- ---
+
 
 ## 8.5 Patrón D: Family/Work/Public Profiles
 
 ### Escenario completo
-Un gateway con tres perfiles de seguridad:
+- Un gateway con tres perfiles de seguridad:
+
 
 ```json5
 {
@@ -300,13 +348,15 @@ Un gateway con tres perfiles de seguridad:
 | work | Opus | All (Docker + rw) | Coding sin cron/gateway | Solo Korvo (Telegram work-bot) |
 | family | Haiku | All (Docker, no workspace) | Memory + web (sin fs/exec) | Familia (grupo WA + DM Clau) |
 
----
+- ---
+
 
 ## 8.6 Patrón E: Secure DM Mode Obligatorio
 
 ### Cuándo es obligatorio
 
-Si **cualquiera** de estas condiciones es true, `per-channel-peer` debería estar activado:
+- Si **cualquiera** de estas condiciones es true, `per-channel-peer` debería estar activado:
+
 
 - `dmPolicy: "pairing"` y has aprobado más de un sender
 - `dmPolicy: "allowlist"` con múltiples entries
@@ -337,9 +387,11 @@ Bot → "Mencionaste una cita médica mañana a las 10"
 }
 ```
 
-**`openclaw security audit` advierte** cuando detecta multiple senders + `dmScope: "main"`.
+- **`openclaw security audit` advierte** cuando detecta multiple senders + `dmScope: "main"`.
 
----
+
+- ---
+
 
 ## 8.7 Patrón F: Múltiples Gateways en un Host
 
@@ -356,7 +408,9 @@ Bot → "Mencionaste una cita médica mañana a las 10"
 
 ### La mayoría de los setups NO lo necesitan
 
-Un solo gateway maneja múltiples agentes, múltiples canales, múltiples cuentas. Multi-gateway agrega complejidad operativa:
+- Un solo gateway maneja múltiples agentes, múltiples canales, múltiples cuentas.
+- Multi-gateway agrega complejidad operativa:
+
 
 - Puertos separados (base + derived ports)
 - Config separada
@@ -389,11 +443,14 @@ openclaw --profile rescue gateway install
 | Browser control port (base+2) | ✅ Sí (derivado del port) |
 | CDP ports | ✅ Sí (derivados) |
 
-**Port spacing:** Dejar al menos 20 puertos entre gateways. Mejor aún, usar rangos completamente diferentes (18789 vs 19789).
+- **Port spacing:** Dejar al menos 20 puertos entre gateways.
+- Mejor aún, usar rangos completamente diferentes (18789 vs 19789).
+
 
 ### Rescue bot: el patrón principal
 
-El rescue bot es un segundo gateway mínimo que puede:
+- El rescue bot es un segundo gateway mínimo que puede:
+
 - Diagnosticar si el gateway principal está caído
 - Aplicar cambios de config al principal
 - Enviar mensajes de emergencia
@@ -421,7 +478,8 @@ El rescue bot es un segundo gateway mínimo que puede:
 }
 ```
 
----
+- ---
+
 
 ## 8.8 Resumen: Matriz de Patrones
 
@@ -464,6 +522,8 @@ El rescue bot es un segundo gateway mínimo que puede:
         └── SÍ → Patrón D + sandbox: all + tools: minimal
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 9 — Sub-Agentes (sessions_spawn)](09-sub-agentes.md)*
+
+- *Siguiente: [Capítulo 9 — Sub-Agentes (sessions_spawn)](09-sub-agentes.md)*
+

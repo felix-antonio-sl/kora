@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-induccion-gore-nuble-2026"
+  urn: urn:gn:kb:manual-induccion-gore-nuble-2026
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, induccion, gestion-personas]
+tags:
+- gore-nuble
+- gobierno-regional
+- induccion
+- gestion-personas
+- gn
 lang: es
 ---
 
@@ -283,12 +288,13 @@ lang: es
 - **Contacto:** comité.paritario@goredenuble.cl
 
 ## Evaluación del Proceso de Inducción
-*Documento de cierre para mejora continua del programa.*
+- *Documento de cierre para mejora continua del programa.*
+
 
 ### Ámbitos de Evaluación
 1. **Actividad de Bienvenida:** Recepción por jefatura, conocimiento de equipo, disponibilidad de puesto de trabajo y equipamiento (PC/Teléfono).
 2. **Relación con el Cargo:** Claridad sobre objetivos, metas, medios y rol a desempeñar.
 3. **Relación con la Institución:** Comprensión de misión, objetivos estratégicos, organigrama y valores.
 
----
-*Fin del Manual de Inducción GORE Ñuble 2026*
+- --- *Fin del Manual de Inducción GORE Ñuble 2026*
+

@@ -1,21 +1,43 @@
+---
+_manifest:
+  urn: urn:kora:kb:14-cron-vs-heartbeat
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '14'
+- cron
+- vs
+lang: es
+---
+
 # Capítulo 14 — Cron vs Heartbeat: Árbol de Decisión
 
 > **Propósito:** Consolidar la decisión más frecuente de automatización — cuándo usar heartbeat, cuándo cron, y cuándo combinar ambos. Este capítulo es una referencia rápida de decisión, no una introducción (eso fue Cap. 12-13).
 
----
+- ---
+
 
 ## 14.1 La Pregunta Correcta
 
-La pregunta no es "¿heartbeat o cron?" sino:
+- La pregunta no es "¿heartbeat o cron?" sino:
+
 
 1. **¿Cuándo debe correr?** (timing)
 2. **¿Qué contexto necesita?** (conversacional vs limpio)
 3. **¿Cómo se entrega el resultado?** (delivery)
 4. **¿Cuánto cuesta?** (tokens)
 
-Cada combinación de respuestas apunta a un mecanismo diferente.
+- Cada combinación de respuestas apunta a un mecanismo diferente.
 
----
+
+- ---
+
 
 ## 14.2 Tabla de Decisión Rápida
 
@@ -32,7 +54,8 @@ Cada combinación de respuestas apunta a un mecanismo diferente.
 | Compilar newsletter semanal | **Cron isolated** | Tarea pesada, modelo específico, delivery a canal |
 | "Recuérdame X" (usuario pide) | **Cron main** (`--at`) | One-shot, auto-delete, wake inmediato |
 
----
+- ---
+
 
 ## 14.3 Flowchart de Decisión
 
@@ -64,11 +87,13 @@ Cada combinación de respuestas apunta a un mecanismo diferente.
         └── NO → Heartbeat
 ```
 
----
+- ---
+
 
 ## 14.4 Patrón Combinado: La Setup Más Eficiente
 
-La mayoría de los setups deberían usar **ambos** complementándose:
+- La mayoría de los setups deberían usar **ambos** complementándose:
+
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -117,7 +142,8 @@ La mayoría de los setups deberían usar **ambos** complementándose:
 | Cron main con model override | Cambia el modelo de toda la sesión main | Usar cron isolated |
 | Todo en heartbeat, sin cron | No puedes hacer timing preciso ni model override | Combinar ambos |
 
----
+- ---
+
 
 ## 14.5 Comparativa de Costo
 
@@ -162,13 +188,16 @@ Reminders one-shot (~5/mes):   $0.50/mes
 Total estimado:                ~$14.30/mes
 ```
 
-**Comparado con:** 5 cron jobs aislados con Sonnet reemplazando el heartbeat → ~$18/mes (sin batching).
+- **Comparado con:** 5 cron jobs aislados con Sonnet reemplazando el heartbeat → ~$18/mes (sin batching).
 
----
+
+- ---
+
 
 ## 14.6 Main Session Cron vs Heartbeat
 
-Ambos corren en la sesión main, pero de forma diferente:
+- Ambos corren en la sesión main, pero de forma diferente:
+
 
 ```
 HEARTBEAT:
@@ -205,9 +234,13 @@ openclaw cron add --every 14400000 --session main \
 - Light check-in si >8h sin contacto
 ```
 
-**La diferencia sutil:** El cron main es **imperativo** ("haz esto ahora"). El heartbeat es **declarativo** ("aquí está tu checklist, decide qué hacer"). Ambos corren en main, pero el modelo de decisión es diferente.
+- **La diferencia sutil:** El cron main es **imperativo** ("haz esto ahora").
+- El heartbeat es **declarativo** ("aquí está tu checklist, decide qué hacer").
+- Ambos corren en main, pero el modelo de decisión es diferente.
 
----
+
+- ---
+
 
 ## 14.7 Diagrama de Arquitectura Integrada
 
@@ -244,7 +277,8 @@ openclaw cron add --every 14400000 --session main \
 └────────────────────────────────────────────────────────────┘
 ```
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -259,8 +293,12 @@ openclaw cron add --every 14400000 --session main \
 | **Costo** | Bajo (1 turn batcheado) | Parte del heartbeat turn | Turn completo por job |
 | **Ideal para** | Monitoring periódico | Reminders, events | Reportes, análisis, tareas pesadas |
 
-**Regla de oro:** Si puedes meter el check en HEARTBEAT.md sin complicarlo — hazlo ahí. Si necesitas timing, modelo, o aislamiento — cron.
+- **Regla de oro:** Si puedes meter el check en HEARTBEAT.md sin complicarlo — hazlo ahí.
+- Si necesitas timing, modelo, o aislamiento — cron.
 
----
 
-*Siguiente: [Capítulo 15 — Hooks (Event-Driven Automation)](15-hooks.md)*
+- ---
+
+
+- *Siguiente: [Capítulo 15 — Hooks (Event-Driven Automation)](15-hooks.md)*
+

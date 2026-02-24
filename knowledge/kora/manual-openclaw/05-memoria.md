@@ -1,12 +1,31 @@
+---
+_manifest:
+  urn: urn:kora:kb:05-memoria
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '05'
+- memoria
+lang: es
+---
+
 # Capítulo 5 — Memoria
 
 > **Propósito:** Entender cómo un agente "recuerda" entre sesiones, cómo se indexa y busca esa memoria, y qué decisiones de configuración afectan la calidad del recall. La memoria es lo que transforma un chatbot stateless en un asistente con continuidad — y hacerlo bien requiere entender tanto el diseño de archivos como la infraestructura de búsqueda.
 
----
+- ---
+
 
 ## 5.1 El Modelo Mental: Dos Capas de Memoria
 
-Un agente OpenClaw tiene **dos memorias radicalmente diferentes** que se complementan:
+- Un agente OpenClaw tiene **dos memorias radicalmente diferentes** que se complementan:
+
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -52,9 +71,13 @@ Un agente OpenClaw tiene **dos memorias radicalmente diferentes** que se complem
 > **Si el agente necesita saberlo en TODA interacción → MEMORY.md.**
 > **Si el agente necesita encontrarlo cuando sea relevante → memory/*.md.**
 
-Un error común es poner todo en MEMORY.md. Si crece a 20KB (~5,000 tokens), esos tokens se consumen en CADA turn. Mover detalles a daily logs y mantener MEMORY.md como un "índice curado" es la optimización más impactante.
+- Un error común es poner todo en MEMORY.md.
+- Si crece a 20KB (~5,000 tokens), esos tokens se consumen en CADA turn.
+- Mover detalles a daily logs y mantener MEMORY.md como un "índice curado" es la optimización más impactante.
 
----
+
+- ---
+
 
 ## 5.2 Anatomía de los Memory Files
 
@@ -82,7 +105,8 @@ Un error común es poner todo en MEMORY.md. Si crece a 20KB (~5,000 tokens), eso
 - Español semiformal
 ```
 
-**Buenas prácticas:**
+- **Buenas prácticas:**
+
 - Mantener <10KB (~2,500 tokens)
 - Estructura con headers para scan rápido
 - Solo hechos durables — si cambia cada semana, no va aquí
@@ -106,7 +130,8 @@ Un error común es poner todo en MEMORY.md. Si crece a 20KB (~5,000 tokens), eso
 - Gmail watch expira 26-feb → renovar antes
 ```
 
-**Buenas prácticas:**
+- **Buenas prácticas:**
+
 - Un archivo por día (append-only durante el día)
 - Separar por sesión/tema con headers
 - Incluir decisiones explícitamente (son lo más valioso para recall futuro)
@@ -130,13 +155,17 @@ memory/
     └── koda-index.md
 ```
 
-Todo lo que esté bajo `memory/` con extensión `.md` es indexado automáticamente por el vector search. Puedes crear cualquier estructura que tenga sentido para tu caso de uso.
+- Todo lo que esté bajo `memory/` con extensión `.md` es indexado automáticamente por el vector search.
+- Puedes crear cualquier estructura que tenga sentido para tu caso de uso.
 
----
+
+- ---
+
 
 ## 5.3 Memory Tools: search y get
 
-El agente accede a la memoria persistente con dos tools:
+- El agente accede a la memoria persistente con dos tools:
+
 
 ### memory_search — Búsqueda semántica
 
@@ -151,9 +180,12 @@ El agente accede a la memoria persistente con dos tools:
 }
 ```
 
-**Retorna:** snippets (~700 chars), file path, line range, score, provider/model de embeddings.
+- **Retorna:** snippets (~700 chars), file path, line range, score, provider/model de embeddings.
 
-**NO retorna:** el archivo completo. Solo fragmentos relevantes con suficiente contexto para decidir si leer más.
+
+- **NO retorna:** el archivo completo.
+- Solo fragmentos relevantes con suficiente contexto para decidir si leer más.
+
 
 ### memory_get — Lectura directa
 
@@ -168,7 +200,9 @@ El agente accede a la memoria persistente con dos tools:
 }
 ```
 
-**Retorna:** contenido del archivo (o segmento). Solo acepta paths dentro de `MEMORY.md` o `memory/`.
+- **Retorna:** contenido del archivo (o segmento).
+- Solo acepta paths dentro de `MEMORY.md` o `memory/`.
+
 
 ### Flujo típico de recall
 
@@ -191,11 +225,13 @@ Agente opcionalmente ejecuta: memory_get("memory/2026-02-20.md", from=10, lines=
 Agente responde con contexto completo de la decisión
 ```
 
----
+- ---
+
 
 ## 5.4 Búsqueda Híbrida: Vector + BM25
 
-La memoria se busca con **dos señales complementarias** que se combinan:
+- La memoria se busca con **dos señales complementarias** que se combinan:
+
 
 ### ¿Por qué dos señales?
 
@@ -206,9 +242,13 @@ La memoria se busca con **dos señales complementarias** que se combinan:
 | "ANTHROPIC_API_KEY" | ❌ Malo (no es lenguaje natural) | ✅ Perfecto (match de token) |
 | "cómo configuré el router" | ✅ Bueno | ✅ Bueno |
 
-**Vector search** convierte query y documentos en vectores de embeddings y compara por distancia coseno. Es fuerte en paráfrasis ("setup de red" ≈ "configuré el router") pero débil en tokens exactos.
+- **Vector search** convierte query y documentos en vectores de embeddings y compara por distancia coseno.
+- Es fuerte en paráfrasis ("setup de red" ≈ "configuré el router") pero débil en tokens exactos.
 
-**BM25** es búsqueda full-text clásica (TF-IDF). Es fuerte en tokens exactos ("sqlite-vec", "ANTHROPIC_API_KEY") pero no entiende sinónimos.
+
+- **BM25** es búsqueda full-text clásica (TF-IDF).
+- Es fuerte en tokens exactos ("sqlite-vec", "ANTHROPIC_API_KEY") pero no entiende sinónimos.
+
 
 ### Cómo se combinan
 
@@ -248,13 +288,17 @@ La memoria se busca con **dos señales complementarias** que se combinan:
 }
 ```
 
-**Ajuste de pesos:** Si tu memoria es mayormente texto narrativo (diarios, decisiones) → vectorWeight alto (0.7-0.8). Si tiene mucho código, IDs, variables de entorno → textWeight más alto (0.4-0.5).
+- **Ajuste de pesos:** Si tu memoria es mayormente texto narrativo (diarios, decisiones) → vectorWeight alto (0.7-0.8).
+- Si tiene mucho código, IDs, variables de entorno → textWeight más alto (0.4-0.5).
 
----
+
+- ---
+
 
 ## 5.5 Post-Procesamiento: MMR y Temporal Decay
 
-Después de la búsqueda híbrida, dos filtros opcionales refinan los resultados:
+- Después de la búsqueda híbrida, dos filtros opcionales refinan los resultados:
+
 
 ```
 Vector + BM25 → Weighted Merge → Temporal Decay → Sort → MMR → Top-K Results
@@ -262,9 +306,11 @@ Vector + BM25 → Weighted Merge → Temporal Decay → Sort → MMR → Top-K R
 
 ### MMR (Maximal Marginal Relevance) — Diversidad
 
-**Problema:** Si buscas "configuración del router", podrías obtener 5 snippets de 5 daily logs diferentes que todos dicen lo mismo ("Configuré el router Omada, VLAN 10 para IoT").
+- **Problema:** Si buscas "configuración del router", podrías obtener 5 snippets de 5 daily logs diferentes que todos dicen lo mismo ("Configuré el router Omada, VLAN 10 para IoT").
 
-**Solución:** MMR penaliza resultados que son demasiado similares a los ya seleccionados:
+
+- **Solución:** MMR penaliza resultados que son demasiado similares a los ya seleccionados:
+
 
 ```
 score_mmr = λ × relevancia − (1−λ) × max_similitud_con_ya_seleccionados
@@ -277,7 +323,9 @@ Sin MMR:                           Con MMR (λ=0.7):
 3. memory/network.md "ref red"     3. 2026-02-05 "AdGuard DNS setup"
 ```
 
-El near-duplicate del 8 de febrero cae; el agente obtiene tres piezas distintas de información.
+- El near-duplicate del 8 de febrero cae
+- el agente obtiene tres piezas distintas de información.
+
 
 ```json5
 mmr: {
@@ -288,16 +336,19 @@ mmr: {
 
 ### Temporal Decay — Boost de recencia
 
-**Problema:** Una nota de hace 6 meses con wording perfecto puede superar a una nota de ayer con la información actualizada.
+- **Problema:** Una nota de hace 6 meses con wording perfecto puede superar a una nota de ayer con la información actualizada.
 
-**Solución:** Multiplica el score por un factor exponencial de decay:
+
+- **Solución:** Multiplica el score por un factor exponencial de decay:
+
 
 ```
 decayedScore = score × e^(-λ × ageInDays)
 donde λ = ln(2) / halfLifeDays
 ```
 
-Con halfLife=30 días:
+- Con halfLife=30 días:
+
 
 | Antigüedad | Multiplicador |
 |------------|--------------|
@@ -307,12 +358,15 @@ Con halfLife=30 días:
 | 90 días | 12.5% |
 | 180 días | ~1.6% |
 
-**Archivos "evergreen" nunca decaen:**
+- **Archivos "evergreen" nunca decaen:**
+
 - `MEMORY.md` (root memory)
 - Archivos no-datados en `memory/` (e.g., `memory/projects.md`, `memory/network.md`)
 - Estos contienen información de referencia que siempre debe rankear normalmente
 
-**Archivos datados** (`memory/YYYY-MM-DD.md`) usan la fecha del filename. Otros fuentes (e.g., transcripts de sesión) usan mtime.
+- **Archivos datados** (`memory/YYYY-MM-DD.md`) usan la fecha del filename.
+- Otros fuentes (e.g., transcripts de sesión) usan mtime.
+
 
 ```json5
 temporalDecay: {
@@ -330,11 +384,14 @@ temporalDecay: {
 | Meses de historial, info vieja outranks nueva | Opcional | ✅ Sí |
 | Daily logs abundantes + historial largo | ✅ Sí | ✅ Sí |
 
----
+- ---
+
 
 ## 5.6 Embedding Providers
 
-Los embeddings son las representaciones vectoriales que hacen posible la búsqueda semántica. OpenClaw soporta múltiples providers:
+- Los embeddings son las representaciones vectoriales que hacen posible la búsqueda semántica.
+- OpenClaw soporta múltiples providers:
+
 
 ### Providers disponibles
 
@@ -348,7 +405,8 @@ Los embeddings son las representaciones vectoriales que hacen posible la búsque
 
 ### Auto-selección
 
-Si no configuras provider, OpenClaw auto-selecciona en este orden:
+- Si no configuras provider, OpenClaw auto-selecciona en este orden:
+
 1. `local` si hay `modelPath` configurado y el archivo existe
 2. `openai` si hay API key de OpenAI disponible
 3. `gemini` si hay API key de Gemini
@@ -379,11 +437,15 @@ Si no configuras provider, OpenClaw auto-selecciona en este orden:
 
 ### Reindexación automática
 
-El índice almacena el **fingerprint** del provider/modelo/endpoint + parámetros de chunking. Si cualquiera de estos cambia, OpenClaw **reindexa automáticamente** todo el store. Esto significa que cambiar de OpenAI a Gemini embeddings trigger un reindex completo.
+- El índice almacena el **fingerprint** del provider/modelo/endpoint + parámetros de chunking.
+- Si cualquiera de estos cambia, OpenClaw **reindexa automáticamente** todo el store.
+- Esto significa que cambiar de OpenAI a Gemini embeddings trigger un reindex completo.
+
 
 ### Embedding cache
 
-Para evitar re-embeddear texto que no cambió (especialmente útil para session transcripts):
+- Para evitar re-embeddear texto que no cambió (especialmente útil para session transcripts):
+
 
 ```json5
 memorySearch: {
@@ -396,7 +458,8 @@ memorySearch: {
 
 ### Batch indexing (OpenAI + Gemini)
 
-Para corpus grandes, OpenAI Batch API es significativamente más barato y rápido:
+- Para corpus grandes, OpenAI Batch API es significativamente más barato y rápido:
+
 
 ```json5
 memorySearch: {
@@ -410,7 +473,8 @@ memorySearch: {
 }
 ```
 
----
+- ---
+
 
 ## 5.7 Almacenamiento e Indexación
 
@@ -420,7 +484,8 @@ memorySearch: {
 ~/.openclaw/memory/<agentId>.sqlite
 ```
 
-El índice vive en SQLite con:
+- El índice vive en SQLite con:
+
 - Chunks de ~400 tokens con 80 tokens de overlap
 - Vectores almacenados (si sqlite-vec disponible) o en memoria
 - FTS5 para BM25 full-text search
@@ -428,7 +493,8 @@ El índice vive en SQLite con:
 
 ### sqlite-vec (aceleración vectorial)
 
-Cuando disponible, sqlite-vec almacena embeddings en una tabla virtual (`vec0`) y hace vector distance queries en la DB — sin cargar todo a JS.
+- Cuando disponible, sqlite-vec almacena embeddings en una tabla virtual (`vec0`) y hace vector distance queries en la DB — sin cargar todo a JS.
+
 
 ```json5
 memorySearch: {
@@ -441,7 +507,8 @@ memorySearch: {
 }
 ```
 
-Si sqlite-vec no está disponible, OpenClaw usa cosine similarity in-process (más lento para corpus grandes, pero funcional).
+- Si sqlite-vec no está disponible, OpenClaw usa cosine similarity in-process (más lento para corpus grandes, pero funcional).
+
 
 ### Sincronización
 
@@ -449,11 +516,13 @@ Si sqlite-vec no está disponible, OpenClaw usa cosine similarity in-process (m�
 - **Sync triggers:** al inicio de sesión, en cada search, y por intervalo configurable
 - **Async:** la sincronización corre en background; los resultados de búsqueda pueden estar ligeramente desactualizados hasta que termine
 
----
+- ---
+
 
 ## 5.8 QMD Backend (Experimental)
 
-QMD es un sidecar de búsqueda local-first que combina BM25 + vectors + reranking, como alternativa al SQLite manager built-in.
+- QMD es un sidecar de búsqueda local-first que combina BM25 + vectors + reranking, como alternativa al SQLite manager built-in.
+
 
 ### Cuándo considerar QMD
 
@@ -487,13 +556,18 @@ QMD es un sidecar de búsqueda local-first que combina BM25 + vectors + rerankin
 
 ### Fallback automático
 
-Si QMD falla (CLI no encontrado, JSON parse error, timeout), OpenClaw cae automáticamente al SQLite manager built-in. No hay pérdida de servicio.
+- Si QMD falla (CLI no encontrado, JSON parse error, timeout), OpenClaw cae automáticamente al SQLite manager built-in.
+- No hay pérdida de servicio.
 
----
+
+- ---
+
 
 ## 5.9 Session Memory Search (Experimental)
 
-Normalmente, `memory_search` solo busca en archivos Markdown. Con esta feature experimental, también puede buscar en **transcripts de sesiones pasadas**:
+- Normalmente, `memory_search` solo busca en archivos Markdown.
+- Con esta feature experimental, también puede buscar en **transcripts de sesiones pasadas**:
+
 
 ```json5
 {
@@ -526,11 +600,13 @@ Normalmente, `memory_search` solo busca en archivos Markdown. Con esta feature e
 - Los resultados pueden estar ligeramente desactualizados (indexación async)
 - Los transcripts en disco son legibles por cualquier proceso con acceso al filesystem
 
----
+- ---
+
 
 ## 5.10 Extra Memory Paths
 
-Puedes indexar archivos Markdown fuera del layout default:
+- Puedes indexar archivos Markdown fuera del layout default:
+
 
 ```json5
 {
@@ -551,13 +627,18 @@ Puedes indexar archivos Markdown fuera del layout default:
 - Symlinks se ignoran
 - Solo Markdown
 
-Para QMD, usa `memory.qmd.paths` con más opciones (pattern matching, nombres de colección).
+- Para QMD, usa `memory.qmd.paths` con más opciones (pattern matching, nombres de colección).
 
----
+
+- ---
+
 
 ## 5.11 Memory Scope (Restringir por Sesión)
 
-Por defecto, `memory_search` está disponible en sesiones DM (directas). En grupos puede ser un riesgo de privacidad. El scope controla dónde funciona:
+- Por defecto, `memory_search` está disponible en sesiones DM (directas).
+- En grupos puede ser un riesgo de privacidad.
+- El scope controla dónde funciona:
+
 
 ```json5
 {
@@ -575,13 +656,17 @@ Por defecto, `memory_search` está disponible en sesiones DM (directas). En grup
 }
 ```
 
-Cuando scope deniega una búsqueda, el tool retorna vacío (no error) y OpenClaw loggea un warning para debugging.
+- Cuando scope deniega una búsqueda, el tool retorna vacío (no error) y OpenClaw loggea un warning para debugging.
 
----
+
+- ---
+
 
 ## 5.12 Memory Flush Pre-Compaction
 
-Este mecanismo conecta la memoria con la compaction (Cap. 3):
+- Este mecanismo conecta la memoria con la compaction (Cap.
+- 3):
+
 
 ```
 Sesión se acerca al límite de contexto
@@ -602,16 +687,19 @@ Sesión se acerca al límite de contexto
          (lo escrito a disco sobrevive; lo no escrito se resume)
 ```
 
-**Esto es una red de seguridad, no una garantía.** La calidad depende de:
+- **Esto es una red de seguridad, no una garantía.** La calidad depende de:
+
 - Que el modelo identifique correctamente qué es importante
 - Que tenga acceso de escritura al workspace (no funciona con `workspaceAccess: "ro"` o `"none"`)
 - Que el `softThresholdTokens` dé suficiente margen (default 4,000 tokens antes del hard limit)
 
----
+- ---
+
 
 ## 5.13 Citations
 
-`memory_search` puede incluir footers de citación en los snippets:
+- `memory_search` puede incluir footers de citación en los snippets:
+
 
 ```json5
 { memory: { citations: "auto" } }   // "auto" | "on" | "off"
@@ -620,7 +708,8 @@ Sesión se acerca al límite de contexto
 - `auto`/`on`: snippets incluyen `Source: <path#line>` para verificabilidad
 - `off`: el path se envía internamente (para `memory_get`) pero no aparece en el snippet
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -676,6 +765,8 @@ Sesión se acerca al límite de contexto
 └────────────────────────────────────────────────────────────────┘
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 6 — Multi-Agent Routing](06-multi-agent-routing.md)*
+
+- *Siguiente: [Capítulo 6 — Multi-Agent Routing](06-multi-agent-routing.md)*
+

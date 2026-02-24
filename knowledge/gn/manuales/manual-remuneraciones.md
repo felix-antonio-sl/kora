@@ -1,25 +1,32 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-remuneraciones"
+  urn: urn:gn:kb:manual-remuneraciones
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, remuneraciones, gestion-personas]
+tags:
+- gore-nuble
+- gobierno-regional
+- remuneraciones
+- gestion-personas
+- gn
 lang: es
 ---
 
 # Manual de Remuneraciones y Compensaciones
 
 ## Objetivo
-Regular cálculo, validación y pago de remuneraciones del personal GORE Ñuble para asegurar exactitud, oportunidad y cumplimiento legal.
+- Regular cálculo, validación y pago de remuneraciones del personal GORE Ñuble para asegurar exactitud, oportunidad y cumplimiento legal.
+
 
 ## Estructura de Remuneraciones
 
 ### Escala de Sueldos y Haberes (EUS)
-Regida por EUS y leyes especiales de reajuste del Sector Público.
+- Regida por EUS y leyes especiales de reajuste del Sector Público.
+
 
 | Componente | Descripción |
 | :--- | :--- |
@@ -52,7 +59,8 @@ Regida por EUS y leyes especiales de reajuste del Sector Público.
 ### Horas Extraordinarias y Viáticos
 
 #### Horas Extraordinarias
-Basado en sistema de control horario biométrico y resolución previa.
+- Basado en sistema de control horario biométrico y resolución previa.
+
 
 | Tipo | Tope Mensual |
 | :--- | :--- |
@@ -73,14 +81,17 @@ Basado en sistema de control horario biométrico y resolución previa.
 * **Tope Legal:** 15% o 25% de remuneración líquida según convenio.
 
 ### Obligaciones de Información (Ley de Presupuestos)
-Remisión semestral a Comisión de Hacienda de la Cámara de Diputados (Art. 14 N°10 Ley Presupuestos 2026):
+- Remisión semestral a Comisión de Hacienda de la Cámara de Diputados (Art.
+- 14 N°10 Ley Presupuestos 2026):
+
 * Gastos asociados a remuneraciones.
 * Calidad jurídica de contratos.
 * Porcentajes por estamento y género.
 * Duración media de contratos y re-contrataciones.
 
 ### Transparencia Activa (Ley 20.285)
-Publicación mensual en sitio web: dotación planta, contrata y honorarios (remuneraciones brutas y líquidas).
+- Publicación mensual en sitio web: dotación planta, contrata y honorarios (remuneraciones brutas y líquidas).
+
 
 ## Complementos y Sistemas
 * **Sistema Operativo:** SIGPER para gestión de procesos.

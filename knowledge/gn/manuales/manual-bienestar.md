@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-bienestar"
+  urn: urn:gn:kb:manual-bienestar
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, bienestar, gestion-personas, calidad-de-vida]
+tags:
+- gore-nuble
+- gobierno-regional
+- bienestar
+- gestion-personas
+- calidad-de-vida
+- gn
 lang: es
 ---
 

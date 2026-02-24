@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:simple-saas"
+  urn: urn:tde:kb:simple-saas
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, simple, saas, bpms, procesos-digitales, chile]
+tags:
+- transformacion-digital
+- simple
+- saas
+- bpms
+- procesos-digitales
+- chile
+- tde
 lang: es
 ---
 
 # Plataforma SIMPLE (Modalidad SaaS)
 
 ## Definición y Conceptos
-SIMPLE (Sistema de Implementación de Procesos Ligeramente Estandarizados) es un modelador de procesos de negocio (BPMS) en la nube. Permite a las instituciones públicas automatizar flujos de baja complejidad mediante una interfaz gráfica y lógica de negocio explícita.
+- SIMPLE (Sistema de Implementación de Procesos Ligeramente Estandarizados) es un modelador de procesos de negocio (BPMS) en la nube.
+- Permite a las instituciones públicas automatizar flujos de baja complejidad mediante una interfaz gráfica y lógica de negocio explícita.
+
 - **BPMS**: plataforma para modelar, automatizar, monitorear y optimizar procesos.
 - **BPMN**: lenguaje estándar de diagramas de flujo utilizado para el modelado.
 
@@ -26,7 +35,8 @@ SIMPLE (Sistema de Implementación de Procesos Ligeramente Estandarizados) es un
 
 ## Componentes del Modelador
 ### Formularios y Campos
-Lienzo interactivo para la captura de datos.
+- Lienzo interactivo para la captura de datos.
+
 - **Texto**: textbox, textarea, párrafos con soporte HTML.
 - **Selección**: checkbox, radio buttons, selectores de lista.
 - **Entidades**: integración con datos de regiones, comunas e instituciones oficiales.
@@ -34,7 +44,8 @@ Lienzo interactivo para la captura de datos.
 - **JS**: soporte para scripts personalizados mediante campo Javascript.
 
 ### Tareas y Conexiones
-Componentes lógicos que estructuran el flujo.
+- Componentes lógicos que estructuran el flujo.
+
 - **Secuencial**: flujo lineal de pasos.
 - **Evaluación**: bifurcación basada en condiciones de negocio.
 - **Paralela**: ejecución simultánea de múltiples tareas.
@@ -48,7 +59,8 @@ Componentes lógicos que estructuran el flujo.
 - **Redirección**: envío del usuario a sitios externos tras completar hitos.
 
 ## Ciclo de Vida de la Digitalización
-Proceso integral que abarca:
+- Proceso integral que abarca:
+
 1. **Modelado**: diseño gráfico del flujo institucional.
 2. **Implementación**: configuración de formularios, acciones y reglas.
 3. **Ejecución**: operación en ambiente productivo SaaS.
@@ -56,7 +68,8 @@ Proceso integral que abarca:
 5. **Optimización**: mejora continua del proceso basada en datos de uso.
 
 ## Acompañamiento Técnico
-Liderado por el Equipo de Digitalización de la SGD.
+- Liderado por el Equipo de Digitalización de la SGD.
+
 - **Talleres**: "Aprendiendo SIMPLE" para formación de digitalizadores internos.
 - **Visado**: presentación obligatoria de procesos antes del paso a producción.
 - **Comunidad**: webinars ("Simple Day") y manuales de buenas prácticas para la red de OAEs.

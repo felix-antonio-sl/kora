@@ -1,13 +1,20 @@
 ---
 _manifest:
-  urn: "urn:legal:kb:derechos-especiales"
+  urn: urn:legal:kb:derechos-especiales
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "Estatuto Administrativo y normativa chilena"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: Estatuto Administrativo y normativa chilena
+version: 2.0.0
 status: published
-tags: [derecho-administrativo, estatuto, chile, carrera-medica, guardia-nocturna, retiro]
+tags:
+- derecho-administrativo
+- estatuto
+- chile
+- carrera-medica
+- guardia-nocturna
+- retiro
+- knowledge
 lang: es
 ---
 

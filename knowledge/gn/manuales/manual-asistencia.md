@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-asistencia"
+  urn: urn:gn:kb:manual-asistencia
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, gestion-personas, asistencia, licencias-medicas]
+tags:
+- gore-nuble
+- gobierno-regional
+- gestion-personas
+- asistencia
+- licencias-medicas
+- gn
 lang: es
 ---
 
 # Manual 3.3: Gestión del Tiempo y Ausentismo
 
 ## Objetivo del Control de Asistencia y Ausentismo
-Regulación del control de asistencia, cumplimiento de jornada laboral y gestión de permisos/licencias. Garantiza la continuidad operativa del GORE Ñuble.
+- Regulación del control de asistencia, cumplimiento de jornada laboral y gestión de permisos/licencias.
+- Garantiza la continuidad operativa del GORE Ñuble.
+
 
 ## Jornada Laboral y Sistema de Control
 | Componente | Detalle |

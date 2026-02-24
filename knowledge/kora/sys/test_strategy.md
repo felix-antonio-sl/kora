@@ -1,11 +1,18 @@
 ---
-urn: kora:kb:test-strategy
-created_by: FS
-created_at: 2026-01-29
-source: KORA system config
+_manifest:
+  urn: urn:kora:kb:test-strategy
+  provenance:
+    created_by: FS
+    created_at: '2026-01-29'
+    source: KORA system config
 version: 2.0.0
 status: published
-tags: [kora, sistema, configuracion]
+tags:
+- kora
+- sistema
+- configuracion
+- sys
+- test
 lang: es
 ---
 

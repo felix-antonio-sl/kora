@@ -1,13 +1,20 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:plan-potenciamiento-dgi"
+  urn: urn:gn:kb:plan-potenciamiento-dgi
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, dgi, dmaic, gestion-cambio, meyer]
+tags:
+- gore-nuble
+- gobierno-regional
+- dgi
+- dmaic
+- gestion-cambio
+- meyer
+- gn
 lang: es
 ---
 

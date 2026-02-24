@@ -1,8 +1,26 @@
+---
+_manifest:
+  urn: urn:kora:kb:00-toc
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '00'
+- toc
+lang: es
+---
+
 # Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
 
 ## Tabla de Contenidos
 
-───
+- ───
+
 
 ### Parte I — Fundamentos Arquitectónicos
 
@@ -58,7 +76,8 @@
 - 5.9 Extra memory paths y scope (restringir por tipo de sesión)
 - 5.10 Memory flush automático pre-compaction
 
-───
+- ───
+
 
 ### Parte II — Multi-Agente
 
@@ -89,7 +108,8 @@
 - 8.5 Secure DM mode: per-channel-peer obligatorio en multi-user
 - 8.6 Multiple gateways en un host (profiles, ports, isolation checklist)
 
-───
+- ───
+
 
 ### Parte III — Orquestación de Sub-Agentes
 
@@ -120,7 +140,8 @@
 - 11.4 Agent-to-agent messaging (tools.agentToAgent)
 - 11.5 openclaw agent CLI: runs directos sin mensaje inbound
 
-───
+- ───
+
 
 ### Parte IV — Automatización
 
@@ -185,7 +206,8 @@
 - 17.5 Integración con cron y heartbeat como triggers
 - 17.6 Safety: timeouts, output caps, sandbox checks
 
-───
+- ───
+
 
 ### Parte V — Seguridad y Operaciones
 
@@ -208,7 +230,8 @@
 - 19.4 Backup strategy: config, credentials, workspace, memory
 - 19.5 Gateway restart y hot-reload de config
 
-───
+- ───
+
 
 ### Parte VI — Patrones de Diseño y Decisiones Arquitectónicas
 
@@ -233,11 +256,15 @@
 - 21.7 ¿Tools.elevated: cuándo y para quién?
 - 21.8 Memory architecture: cuándo MEMORY.md, cuándo daily, cuándo QMD
 
-───
+- ───
+
 
 ### Parte VII — Arquitectura Avanzada
 
-**22. Multi-Gateway Dockerizado: Federación de Agentes**
+- **22.
+- Multi-Gateway Dockerizado:
+- Federación de Agentes**
+
 - 22.1 Por qué multi-gateway (y no solo multi-agent): tabla de limitaciones de single-process
 - 22.2 Arquitectura: Docker Compose multi-gateway con red compartida
 - 22.3 Docker Compose: configuración base con YAML template y estructura de directorios
@@ -252,8 +279,10 @@
 
 ### Apéndices
 
-A. Referencia rápida de configuración (campos clave con ejemplos mínimos)
-B. Glosario (agentId, accountId, binding, sessionKey, mainKey, dmScope, tool profile, etc.)
-C. Checklist de setup multi-agente (paso a paso)
-D. Checklist de seguridad (auditoría express)
-E. Mapeo KODA → OpenClaw (tabla de equivalencias para migración)
+- A.
+- Referencia rápida de configuración (campos clave con ejemplos mínimos) B.
+- Glosario (agentId, accountId, binding, sessionKey, mainKey, dmScope, tool profile, etc.) C.
+- Checklist de setup multi-agente (paso a paso) D.
+- Checklist de seguridad (auditoría express) E.
+- Mapeo KODA → OpenClaw (tabla de equivalencias para migración)
+

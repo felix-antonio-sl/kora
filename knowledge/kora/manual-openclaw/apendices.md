@@ -1,6 +1,23 @@
+---
+_manifest:
+  urn: urn:kora:kb:apendices
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- apendices
+lang: es
+---
+
 # Apéndices
 
----
+- ---
+
 
 ## Apéndice A — Referencia Rápida de Configuración
 
@@ -87,7 +104,8 @@
 | `hooks.enabled` | bool | false | Habilitar webhooks HTTP |
 | `hooks.token` | string | — | Token para webhooks |
 
----
+- ---
+
 
 ## Apéndice B — Glosario
 
@@ -136,7 +154,8 @@
 | **Webhook** | Endpoint HTTP que sistemas externos pueden llamar para trigger acciones |
 | **Workspace** | Directorio del agente con bootstrap files, memoria, skills, y proyectos |
 
----
+- ---
+
 
 ## Apéndice C — Checklist de Setup Multi-Agente
 
@@ -190,7 +209,8 @@
    - Enviar en cada grupo → verificar routing
    - Verificar que cada agente tiene los tools esperados
 
----
+- ---
+
 
 ## Apéndice D — Checklist de Seguridad (Auditoría Express)
 
@@ -239,7 +259,8 @@
 openclaw security audit --deep
 ```
 
----
+- ---
+
 
 ## Apéndice E — Mapeo KODA → OpenClaw
 
@@ -284,6 +305,8 @@ KODA YAML Agent Definition
 | Genoma (invariantes) | openclaw.json + tool policy |
 | Fenotipo (configuraciones) | agents.list[] overrides, /model overrides |
 
----
+- ---
 
-*Fin del Manual*
+
+- *Fin del Manual*
+

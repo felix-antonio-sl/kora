@@ -1,20 +1,30 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:mgde"
+  urn: urn:tde:kb:mgde
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, datos, mgde, gobernanza-datos, dama, chile]
+tags:
+- transformacion-digital
+- datos
+- mgde
+- gobernanza-datos
+- dama
+- chile
+- tde
 lang: es
 ---
 
 # Marco de Referencia de Gestión de Datos del Estado (MGDE)
 
 ## Contexto y Definición
-Adaptación del marco global DAMA-DMBOK a la realidad del sector público chileno. El MGDE orienta a los órganos de la administración del Estado (OAE) en la adopción de buenas prácticas para tratar los datos como activos estratégicos. Alineado con la Estrategia de Gobierno Digital 2030 y las recomendaciones de la OCDE ("Impulsado por datos").
+- Adaptación del marco global DAMA-DMBOK a la realidad del sector público chileno.
+- El MGDE orienta a los órganos de la administración del Estado (OAE) en la adopción de buenas prácticas para tratar los datos como activos estratégicos.
+- Alineado con la Estrategia de Gobierno Digital 2030 y las recomendaciones de la OCDE ("Impulsado por datos").
+
 
 ## Principios Orientadores
 - **Activo Estratégico**: los datos son fundamentales para metas institucionales y mejora de servicios.
@@ -39,7 +49,8 @@ Adaptación del marco global DAMA-DMBOK a la realidad del sector público chilen
 12. **Aspectos Legales**: cumplimiento normativo y asesoría jurídica especializada.
 
 ## Modelo de Madurez
-Niveles de desarrollo evaluados mediante herramienta de autoevaluación:
+- Niveles de desarrollo evaluados mediante herramienta de autoevaluación:
+
 - **Insuficiente (0-40%)**: no se cumplen mínimos deseables.
 - **Básico (40-60%)**: cumplimiento de requisitos mínimos iniciales.
 - **Medio (60-80%)**: profundización de prácticas en dimensiones críticas.
@@ -63,4 +74,5 @@ Niveles de desarrollo evaluados mediante herramienta de autoevaluación:
 - **Etapa 3 (12-28 meses)**: Consolidación de gobernanza, despliegue de dimensiones avanzadas y mejora continua.
 
 ## Herramientas de Apoyo
-La Secretaría de Gobierno Digital provee una **Herramienta de Autoevaluación MGDE** (basada en Google Forms/Sheets) que genera automáticamente el nivel de madurez por dimensión y propuestas de hoja de ruta institucional.
+- La Secretaría de Gobierno Digital provee una **Herramienta de Autoevaluación MGDE** (basada en Google Forms/Sheets) que genera automáticamente el nivel de madurez por dimensión y propuestas de hoja de ruta institucional.
+

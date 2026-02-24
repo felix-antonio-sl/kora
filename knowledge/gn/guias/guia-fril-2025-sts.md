@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:guia-fril-2025-sts"
+  urn: urn:gn:kb:guia-fril-2025-sts
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, fril, infraestructura, inversion-publica]
+tags:
+- gore-nuble
+- gobierno-regional
+- fril
+- infraestructura
+- inversion-publica
+- gn
 lang: es
 ---
 

@@ -1,17 +1,24 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:metodologia-proyectos-tic"
+  urn: urn:gov:kb:metodologia-proyectos-tic
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, gobierno, chile, gestion-proyectos, tic, pmo]
+tags:
+- transformacion-digital
+- gobierno
+- chile
+- gestion-proyectos
+- tic
+- pmo
+- knowledge
 lang: es
 ---
 
-## Contexto y Propósito
+# Contexto y Propósito
 
 *   **Alcance:** Marco referencial para gestión de proyectos TIC en Órganos de la Administración del Estado (OAE).
 *   **Alineamiento:** Ley N° 21.180 (Transformación Digital), Estrategia de Gobierno Digital 2030 y Marco EVALTIC.

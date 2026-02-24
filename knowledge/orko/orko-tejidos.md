@@ -1,33 +1,48 @@
 ---
 _manifest:
-  urn: "urn:orko:kb:orko-tejidos"
+  urn: urn:orko:kb:orko-tejidos
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "ORKO framework documentation"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: ORKO framework documentation
+version: 2.0.0
 status: published
-tags: [tejidos, TF1, TF2, TF3, tecnologia, operacionalizacion]
+tags:
+- tejidos
+- tf1
+- tf2
+- tf3
+- tecnologia
+- operacionalizacion
+- knowledge
 lang: es
 ---
 
 # ORKO - Tejidos Tecnológicos (Layer 2)
 
-Operacionalización que transforma contratos arquitectónicos abstractos en implementaciones tecnológicas concretas. Genoma (Abstracciones Universales) / Fenotipo (Implementaciones Concretas).
+- Operacionalización que transforma contratos arquitectónicos abstractos en implementaciones tecnológicas concretas.
+- Genoma (Abstracciones Universales) / Fenotipo (Implementaciones Concretas).
+
 
 ## Principio de Derivación
 
-Cada primitivo fundamental (P1, P2, P3) genera UN tejido tecnológico. Transversales (P4, P5) son concerns cross-cutting.
+- Cada primitivo fundamental (P1, P2, P3) genera UN tejido tecnológico.
+- Transversales (P4, P5) son concerns cross-cutting.
+
 
 ## TF1 - Tejido de Capacidad
 
-**Primitivo:** P1_Capacidad | **Axioma:** A2_Existencia_Capacidad
+- **Primitivo:** P1_Capacidad | **Axioma:** A2_Existencia_Capacidad
 
-**Scope:** Diseño, desarrollo, despliegue, gestión capacidades organizacionales
 
-**Sustratos:** Humano, Algorítmico, Mecánico, Mixto
+- **Scope:** Diseño, desarrollo, despliegue, gestión capacidades organizacionales
 
-**Dominios Técnicos:** BAD (Business Architecture Design), OCE (Org Change Eng), Infrastructure
+
+- **Sustratos:** Humano, Algorítmico, Mecánico, Mixto
+
+
+- **Dominios Técnicos:** BAD (Business Architecture Design), OCE (Org Change Eng), Infrastructure
+
 
 ### Schema CapacityAsset
 
@@ -44,7 +59,8 @@ Cada primitivo fundamental (P1, P2, P3) genera UN tejido tecnológico. Transvers
 | lifecycle | State | {Planning, Development, Active, Idle, Deprecated, Retired} |
 | utilization_avg | Float[0..1] | Promedio utilización |
 
-**Métricas de Trayectoria (Algorítmico):**
+- **Métricas de Trayectoria (Algorítmico):**
+
 - total_executions
 - drift_detected
 - last_retrain_date
@@ -66,20 +82,25 @@ TF1_Score = weighted_avg(Coverage×25%, Quality×30%, Availability×25%, Governa
 Threshold: >= 70
 ```
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_TF1.1: accountable_id.substrate ∈ {Humano, Mixto}
 - INV_TF1.2: substrate=Algorítmico → delegated_from NOT NULL
 - INV_TF1.3: delegation_mode=M6 → guardrails comprehensive
 
 ## TF2 - Tejido de Flujo
 
-**Primitivo:** P2_Flujo + P1_Capacidad(ejecutores) | **Axioma:** A1_Transformación
+- **Primitivo:** P2_Flujo + P1_Capacidad(ejecutores) | **Axioma:** A1_Transformación
 
-**Scope:** Orquestación, automatización, ejecución flujos organizacionales
 
-**Espectro Cognitivo:** C0_Mechanical, C1_Decisional, C2_Cognitive
+- **Scope:** Orquestación, automatización, ejecución flujos organizacionales
 
-**Dominios Técnicos:** BPA (Business Process Automation), OCE, CI/CD
+
+- **Espectro Cognitivo:** C0_Mechanical, C1_Decisional, C2_Cognitive
+
+
+- **Dominios Técnicos:** BPA (Business Process Automation), OCE, CI/CD
+
 
 ### Schema FlowAsset
 
@@ -98,7 +119,8 @@ Threshold: >= 70
 | override_mechanism | Boolean | Circuit breaker |
 | guardrails | {operational, quality, scope} |  |
 
-**Propiedades de Step:**
+- **Propiedades de Step:**
+
 - capacity_id
 - input_schema / output_schema
 - timeout_seconds
@@ -119,22 +141,28 @@ TF2_Score = weighted_avg(Coverage×20%, Reliability×30%, Efficiency×25%, Safet
 Threshold: >= 70
 ```
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_TF2.1: ∀ step: step.output_schema compatible next_step.input_schema
 - INV_TF2.2: cognitive_level=C2 ∧ orchestration.pattern=Multi_Agent → agents.length ≥ 2
 - INV_TF2.3: handoff_ratio > 0.30 → Warning (Meyer Rule)
 
 ## TF3 - Tejido de Información
 
-**Primitivo:** P3_Información | **Axioma:** A3_Existencia_Información
+- **Primitivo:** P3_Información | **Axioma:** A3_Existencia_Información
 
-**Scope:** Ciclo vida completa información (Ingestion→Storage→Processing→Analytics→Semantics)
 
-**Sub-Dominios:** Foundation, Analytics, Semantic
+- **Scope:** Ciclo vida completa información (Ingestion→Storage→Processing→Analytics→Semantics)
 
-**Arquitectura:** Lakehouse Unificado (Bronze → Silver → Gold → Semantic)
 
-**Dominios Técnicos:** Data, Analytics, Knowledge Management
+- **Sub-Dominios:** Foundation, Analytics, Semantic
+
+
+- **Arquitectura:** Lakehouse Unificado (Bronze → Silver → Gold → Semantic)
+
+
+- **Dominios Técnicos:** Data, Analytics, Knowledge Management
+
 
 ### Schema InformationAsset
 
@@ -176,7 +204,8 @@ TF3_Score = weighted_avg(Coverage×20%, Quality×30%, Freshness×20%, Governance
 Threshold: >= 70
 ```
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_TF3.1: origin=Internal ⇒ (produced_by_flow OR produced_by_capacity NOT NULL)
 - INV_TF3.2: contains_pii=true → masking_rules NOT NULL
 - INV_TF3.3: sub_domain=Semantic ∧ rag_config NOT NULL → indexing.vector_indexed=true
@@ -185,7 +214,8 @@ Threshold: >= 70
 
 ### Security (P4 - Límite)
 
-**Aplicación a Tejidos:**
+- **Aplicación a Tejidos:**
+
 
 | Tejido | Implementación |
 |-------|-----------------|
@@ -200,7 +230,8 @@ Gating_Rule: Security_Score < 70 → Bloquear cambios críticos
 
 ### Purpose (P5 - Propósito)
 
-**Definición:** Mecanismo de Governance que vincula tejidos con Objetivos de Negocio (OKRs)
+- **Definición:** Mecanismo de Governance que vincula tejidos con Objetivos de Negocio (OKRs)
+
 
 | Tejido | Aplicación |
 |-------|-----------|
@@ -214,23 +245,27 @@ Purpose_Alignment = (Σ OKR.progress × asset_contribution) / Total_OKRs
 
 ### Interface Layer UX/UI
 
-**Design System Unificado:**
+- **Design System Unificado:**
+
 
 | Nivel | Elementos |
 |-------|-----------|
 | Foundation | Tokens, Grid, Typography, Colors |
 | Components | Atomic Design (Atoms, Molecules, Organisms) |
 
-**Aplicación Tejidos:**
+- **Aplicación Tejidos:**
+
 - TF1_UIs: Capacity Registry, Agent Designer, Performance Dashboard
 - TF2_UIs: Flow Designer (DAG), Execution Monitor, HITL Queue
 - TF3_UIs: Data Catalog, Dashboard Builder, RAG Search UI
 
-**Standards:** WCAG 2.1 AA, Core Web Vitals
+- **Standards:** WCAG 2.1 AA, Core Web Vitals
+
 
 ### Observability
 
-**Pillars:** Logs, Metrics, Traces, Alerts
+- **Pillars:** Logs, Metrics, Traces, Alerts
+
 
 | Tejido | Logs | Metrics | Traces |
 |-------|------|---------|--------|
@@ -242,11 +277,14 @@ Purpose_Alignment = (Σ OKR.progress × asset_contribution) / Total_OKRs
 
 ### E7 - Flow Execution
 
-**Ubicación:** Integrado en TF2.execution_history
+- **Ubicación:** Integrado en TF2.execution_history
 
-**Concepto:** Instancia concreta de ejecución de Flow (Runtime tracking)
 
-**Key Fields:**
+- **Concepto:** Instancia concreta de ejecución de Flow (Runtime tracking)
+
+
+- **Key Fields:**
+
 - id, flow_id, trigger
 - status, current_step_id
 - outputs_produced
@@ -254,20 +292,25 @@ Purpose_Alignment = (Σ OKR.progress × asset_contribution) / Total_OKRs
 
 ### E6 - Architectural State
 
-**Ubicación:** Concern Transversal (Meta-arquitectónico)
+- **Ubicación:** Concern Transversal (Meta-arquitectónico)
 
-**Concepto:** Snapshot completo del sistema en momento dado
 
-**Tipos:** Current, Target, Intermediate, Historical
+- **Concepto:** Snapshot completo del sistema en momento dado
 
-**Operaciones:**
+
+- **Tipos:** Current, Target, Intermediate, Historical
+
+
+- **Operaciones:**
+
 - capture_current_state()
 - define_target_state()
 - plan_intermediate_states()
 - calculate_convergence()
 - transition_to_state()
 
-**Métricas:**
+- **Métricas:**
+
 - consistency_validated: Boolean
 - convergence_pct: Float
 - health_score: Aggregated(TF1, TF2, TF3, Security)
@@ -293,15 +336,18 @@ Purpose_Alignment = (Σ OKR.progress × asset_contribution) / Total_OKRs
 
 ### Casos Uso End-to-End
 
-**RAG Pipeline:**
+- **RAG Pipeline:**
+
 - Components: TF1(LLM) + TF2(Orchestration) + TF3(Semantic)
 - Trace: Query → TF2 → TF1(Embed) → TF3(Retrieve) → TF1(Generate) → TF3(Log)
 
-**CI/CD Pipeline:**
+- **CI/CD Pipeline:**
+
 - Components: TF1(Build/Test) + TF2(Pipeline) + TF3(Repo/Logs)
 - Trace: Commit → TF2 → TF1s → HITL → Deploy → Monitor
 
-**Multi-Agent Research:**
+- **Multi-Agent Research:**
+
 - Components: TF1(Agents) + TF2(Hierarchical Loop) + TF3(Sources)
 - Trace: Task → TF1(Manager) → TF2(Loop) → TF1(Workers) → TF3(Report)
 
@@ -320,4 +366,5 @@ Purpose_Alignment = (Σ OKR.progress × asset_contribution) / Total_OKRs
 | I7_Emergencia | Niveles cognitivos C0-C3 soportados |
 | I8_Adaptacion | Trayectorias Minimal y Avanzada soportadas |
 
-**Estado:** VALIDADO ✅
+- **Estado:** VALIDADO ✅
+

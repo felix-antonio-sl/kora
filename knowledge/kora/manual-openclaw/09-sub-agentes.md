@@ -1,12 +1,32 @@
+---
+_manifest:
+  urn: urn:kora:kb:09-sub-agentes
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- 09
+- sub
+- agentes
+lang: es
+---
+
 # Capítulo 9 — Sub-Agentes (sessions_spawn)
 
 > **Propósito:** Entender cómo un agente puede delegar trabajo a runs aislados en background, cómo se orquestan, qué tools reciben, y cómo los resultados fluyen de vuelta. Los sub-agentes transforman un agente individual en un sistema capaz de paralelismo y división del trabajo.
 
----
+- ---
+
 
 ## 9.1 Concepto: Runs Aislados en Background
 
-Un sub-agente es un **run de agente independiente** que:
+- Un sub-agente es un **run de agente independiente** que:
+
 
 1. Corre en su propia sesión (`agent:<id>:subagent:<uuid>`)
 2. Tiene su propio contexto (no ve el historial del parent)
@@ -52,9 +72,11 @@ Un sub-agente es un **run de agente independiente** que:
 | **Timeout** | Timeout global de la sesión | Timeout independiente por sub-agent |
 | **Costo** | Todo en un context window | Cada sub-agent tiene su propia ventana |
 
-**Caso de uso ideal:** Tareas que son independientes entre sí, toman tiempo (>30s), o generan mucho output que contaminaría el contexto del parent.
+- **Caso de uso ideal:** Tareas que son independientes entre sí, toman tiempo (>30s), o generan mucho output que contaminaría el contexto del parent.
 
----
+
+- ---
+
 
 ## 9.2 Tool: sessions_spawn
 
@@ -92,7 +114,10 @@ Un sub-agente es un **run de agente independiente** que:
 }
 ```
 
-El tool retorna inmediatamente. El sub-agente corre en background. El resultado llega como un mensaje de sistema al chat del requester cuando termina.
+- El tool retorna inmediatamente.
+- El sub-agente corre en background.
+- El resultado llega como un mensaje de sistema al chat del requester cuando termina.
+
 
 ### Discovery: agents_list
 
@@ -101,7 +126,8 @@ El tool retorna inmediatamente. El sub-agente corre en background. El resultado 
 → ["main", "coding", "ops"]   // agentIds permitidos para spawn
 ```
 
-Controlado por `agents.list[].subagents.allowAgents`:
+- Controlado por `agents.list[].subagents.allowAgents`:
+
 
 ```json5
 {
@@ -117,7 +143,8 @@ Controlado por `agents.list[].subagents.allowAgents`:
 }
 ```
 
----
+- ---
+
 
 ## 9.3 Announce: Cómo los Resultados Fluyen de Vuelta
 
@@ -161,24 +188,30 @@ Announce step (corre dentro de la sesión del sub-agente)
 | `timed out` | `runTimeoutSeconds` expiró |
 | `unknown` | No se pudo determinar el outcome |
 
-**Status NO se infiere del contenido.** Viene del runtime — si el model call terminó sin excepciones, es success, incluso si el modelo dice "no pude encontrar nada".
+- **Status NO se infiere del contenido.** Viene del runtime — si el model call terminó sin excepciones, es success, incluso si el modelo dice "no pude encontrar nada".
+
 
 ### Delivery resiliente
 
-El announce usa un mecanismo de delivery con fallbacks:
+- El announce usa un mecanismo de delivery con fallbacks:
+
 
 1. Delivery directa al chat channel (idempotency key estable)
 2. Si falla → fallback a queue routing
 3. Si falla → retry con backoff exponencial
 4. Si todo falla → give-up (best-effort)
 
-**Los announces son best-effort.** Si el gateway se reinicia antes de que un sub-agente termine, el announce se pierde. El transcript en disco sigue existiendo.
+- **Los announces son best-effort.** Si el gateway se reinicia antes de que un sub-agente termine, el announce se pierde.
+- El transcript en disco sigue existiendo.
 
----
+
+- ---
+
 
 ## 9.4 Tool Policy en Sub-Agentes
 
-Los sub-agentes tienen una policy de tools **más restrictiva** que el parent por defecto.
+- Los sub-agentes tienen una policy de tools **más restrictiva** que el parent por defecto.
+
 
 ### Default: todo excepto session tools
 
@@ -217,7 +250,8 @@ Sub-agente (depth 1, leaf) recibe:
 
 ### Contexto inyectado
 
-Sub-agentes reciben un **prompt minimal**:
+- Sub-agentes reciben un **prompt minimal**:
+
 
 | Archivo | ¿Inyectado en sub-agente? |
 |---------|--------------------------|
@@ -229,15 +263,19 @@ Sub-agentes reciben un **prompt minimal**:
 | HEARTBEAT.md | ❌ No |
 | MEMORY.md | ❌ No |
 
-Esto mantiene el contexto del sub-agente **lean**: sin personalidad, sin info del usuario, sin memoria inyectada. Si necesita contexto, se pasa en el `task`.
+- Esto mantiene el contexto del sub-agente **lean**: sin personalidad, sin info del usuario, sin memoria inyectada.
+- Si necesita contexto, se pasa en el `task`.
 
----
+
+- ---
+
 
 ## 9.5 Concurrencia y Límites
 
 ### Lane dedicada
 
-Los sub-agentes corren en una **lane de queue separada** del main:
+- Los sub-agentes corren en una **lane de queue separada** del main:
+
 
 ```
 Queue Lanes:
@@ -245,7 +283,9 @@ Queue Lanes:
   subagent  → concurrency: 8 (default)    ← sub-agentes
 ```
 
-Esto significa que los sub-agentes NO compiten con las sesiones normales por queue slots. Puedes tener 4 sesiones normales + 8 sub-agentes corriendo simultáneamente.
+- Esto significa que los sub-agentes NO compiten con las sesiones normales por queue slots.
+- Puedes tener 4 sesiones normales + 8 sub-agentes corriendo simultáneamente.
+
 
 ### Configuración
 
@@ -276,7 +316,8 @@ Esto significa que los sub-agentes NO compiten con las sesiones normales por que
 
 ### Auto-archive
 
-Después de completar, los sub-agentes se archivan automáticamente:
+- Después de completar, los sub-agentes se archivan automáticamente:
+
 
 ```
 Sub-agente completa → espera archiveAfterMinutes (60 min)
@@ -290,15 +331,19 @@ Transcript: renombra a *.deleted.<timestamp> (preservado en disco)
 - `cleanup: "keep"` espera el auto-archive timer
 - Si el gateway se reinicia, timers pendientes se pierden (best-effort)
 
----
+- ---
+
 
 ## 9.6 Modelo y Costo
 
 ### Estrategia de costo para sub-agentes
 
-Cada sub-agente tiene su **propio context window** y su propio consumo de tokens. Si spawns 5 sub-agentes con Opus, pagas 5 context windows de Opus.
+- Cada sub-agente tiene su **propio context window** y su propio consumo de tokens.
+- Si spawns 5 sub-agentes con Opus, pagas 5 context windows de Opus.
 
-**Patrón recomendado:**
+
+- **Patrón recomendado:**
+
 
 ```
 Main agent:     Sonnet (calidad + prompt cache para conversación)
@@ -337,7 +382,8 @@ Special tasks:  Opus via model override (cuando necesitas calidad máxima)
 4. Modelo del caller                       (herencia, menor prioridad)
 ```
 
----
+- ---
+
 
 ## 9.7 Auth en Sub-Agentes
 
@@ -356,13 +402,16 @@ Merge: perfiles del target agent + perfiles del main (como fallback)
 Si conflicto en profile ID → gana el target agent
 ```
 
-Si el sub-agente se spawna bajo `agentId: "coding"`, usa los auth profiles de `coding` con los de `main` como fallback. Esto asegura que:
+- Si el sub-agente se spawna bajo `agentId: "coding"`, usa los auth profiles de `coding` con los de `main` como fallback.
+- Esto asegura que:
+
 
 - Sub-agentes bajo otro agentId usan las credenciales de ese agente
 - Si ese agente no tiene credenciales para un provider, las del main sirven de backup
 - El merge es aditivo (nunca se pierden perfiles)
 
----
+- ---
+
 
 ## 9.8 Patrones de Uso
 
@@ -409,7 +458,8 @@ Si el sub-agente se spawna bajo `agentId: "coding"`, usa los auth profiles de `c
 → Sub-agent C (kimi): "Genera draft largo (100K ctx)"    // contexto amplio
 ```
 
----
+- ---
+
 
 ## 9.9 Slash Commands para Sub-Agentes
 
@@ -453,7 +503,8 @@ Kill de cada sub-agente
 (Si depth-2) Kill de sub-sub-agentes de cada uno
 ```
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -471,6 +522,8 @@ Kill de cada sub-agente
 | **Auth merge** | Sub-agentes bajo otro agentId heredan auth del parent como fallback |
 | **Best-effort announce** | Trade-off: simplicidad operativa vs garantía de delivery |
 
----
+- ---
 
-*Siguiente: [Capítulo 10 — Sub-Agentes Anidados (Orchestrator Pattern)](10-sub-agentes-anidados.md)*
+
+- *Siguiente: [Capítulo 10 — Sub-Agentes Anidados (Orchestrator Pattern)](10-sub-agentes-anidados.md)*
+

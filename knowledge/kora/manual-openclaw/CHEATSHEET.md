@@ -1,8 +1,25 @@
+---
+_manifest:
+  urn: urn:kora:kb:cheatsheet
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- cheatsheet
+lang: es
+---
+
 # OpenClaw — Cheatsheet Definitivo
 > Agentes · Multi-Agente · Orquestación · Automatización · Seguridad
 > *370KB destilados en una página*
 
----
+- ---
+
 
 ## 🏗️ ARQUITECTURA
 
@@ -15,11 +32,15 @@ Gateway (1 proceso)
 └── Session Store (JSONL en disco)
 ```
 
-**Agent Loop:** intake → queue → session prep → prompt assembly → model inference → tool exec (loop) → reply shape → persist
+- **Agent Loop:** intake → queue → session prep → prompt assembly → model inference → tool exec (loop) → reply shape → persist
 
-**Serialización:** 1 run activo por sesión. Queue modes: `collect` (default) | `steer` | `followup`
 
----
+- **Serialización:** 1 run activo por sesión.
+- Queue modes: `collect` (default) | `steer` | `followup`
+
+
+- ---
+
 
 ## 🤖 ANATOMÍA DEL AGENTE
 
@@ -44,9 +65,11 @@ Identity Runtime (in-memory)   → skills snapshot, tool policy resuelta
 | HEARTBEAT.md | ✅ | ❌ | Checklist periódico |
 | MEMORY.md | ✅* | ❌ | Memoria curada (*solo sesión main privada) |
 
-⚠️ **Cada char en bootstrap se paga en cada turn.** Truncation a 20K chars/archivo (silenciosa).
+- ⚠️ **Cada char en bootstrap se paga en cada turn.** Truncation a 20K chars/archivo (silenciosa).
 
----
+
+- ---
+
 
 ## 📋 SESIONES
 
@@ -61,7 +84,8 @@ Identity Runtime (in-memory)   → skills snapshot, tool policy resuelta
 | Cron | `cron:<jobId>` |
 | Sub-agente | `agent:<id>:subagent:<uuid>` |
 
-**Key = estable** (canal lógico). **ID = UUID** (cambia con `/new`).
+- **Key = estable** (canal lógico). **ID = UUID** (cambia con `/new`).
+
 
 ### DM Scope — LA decisión de seguridad #1
 
@@ -80,7 +104,8 @@ Memory Flush (pre-compact) →  turn silencioso para escribir a disco antes de r
 Reset (/new)               →  nuevo sessionId, memoria en disco intacta
 ```
 
----
+- ---
+
 
 ## 🧠 MODELOS Y FAILOVER
 
@@ -91,9 +116,12 @@ Request → Override sesión? → Override agente? → Primary → Fallback 1 �
                                            (round-robin + session stickiness)
 ```
 
-**Cooldown:** 1min → 5min → 25min → 1h (cap). **Billing disable:** 5h → 10h → 24h.
+- **Cooldown:** 1min → 5min → 25min → 1h (cap). **Billing disable:** 5h → 10h → 24h.
 
-**Regla:** Diversidad de provider en fallbacks. Si Anthropic cae, OpenAI toma.
+
+- **Regla:** Diversidad de provider en fallbacks.
+- Si Anthropic cae, OpenAI toma.
+
 
 | Nivel | Override |
 |-------|---------|
@@ -102,7 +130,8 @@ Request → Override sesión? → Override agente? → Primary → Fallback 1 �
 | Cron/webhook `model:` | Per-job |
 | `sessions_spawn({model:})` | Per-sub-agente |
 
----
+- ---
+
 
 ## 💾 MEMORIA
 
@@ -111,14 +140,16 @@ MEMORY.md (inyectado, cada turn)     ← Hechos durables. Mantener <10KB
 memory/*.md (on-demand, via tools)   ← Daily logs, notas, detalles
 ```
 
-**Búsqueda:** `memory_search` (vector 70% + BM25 30%) → `memory_get` (lectura)
+- **Búsqueda:** `memory_search` (vector 70% + BM25 30%) → `memory_get` (lectura)
+
 
 | Post-procesamiento | Cuándo habilitar |
 |-------------------|-----------------|
 | MMR (diversidad) | >50 daily logs con contenido repetitivo |
 | Temporal Decay | >3 meses de historial |
 
----
+- ---
+
 
 ## 👥 MULTI-AGENTE
 
@@ -128,7 +159,9 @@ memory/*.md (on-demand, via tools)   ← Daily logs, notas, detalles
 peer > parentPeer > guildId+roles > guildId > teamId > accountId > channel > default
 ```
 
-AND semántico. Primer match gana en el mismo tier.
+- AND semántico.
+- Primer match gana en el mismo tier.
+
 
 ### ¿Necesito multi-agent?
 
@@ -141,9 +174,13 @@ Diferentes trust levels        → Multi-agent con sandbox per-agent
 
 ### Auth Isolation = Invariante
 
-Cada agente: su propio `auth-profiles.json`. Nunca compartir. Blast radius limitado.
+- Cada agente: su propio `auth-profiles.json`.
+- Nunca compartir.
+- Blast radius limitado.
 
----
+
+- ---
+
 
 ## 🔒 SEGURIDAD — 3 CONTROLES
 
@@ -153,7 +190,8 @@ Cada agente: su propio `auth-profiles.json`. Nunca compartir. Blast radius limit
 3. ELEVATED     → ¿exec escapa al host?     (solo exec, solo desde sandbox)
 ```
 
-**Tool policy es el gate principal.** Si denied → nada más importa.
+- **Tool policy es el gate principal.** Si denied → nada más importa.
+
 
 ### Sandbox
 
@@ -202,7 +240,8 @@ SCOPE next      → ¿Qué puede hacer? (tools, sandbox, elevated)
 MODEL last      → ¿Resiste injection? (Opus > Sonnet > Haiku)
 ```
 
----
+- ---
+
 
 ## 🔀 SUB-AGENTES
 
@@ -212,11 +251,15 @@ MODEL last      → ¿Resiste injection? (Opus > Sonnet > Haiku)
 { "task": "...", "label": "...", "model": "haiku", "thinking": "low", "runTimeoutSeconds": 300 }
 ```
 
-→ Non-blocking. Resultado vía **announce** al chat del parent.
+- → Non-blocking.
+- Resultado vía **announce** al chat del parent.
 
-**Sub-agentes reciben:** AGENTS.md + TOOLS.md (prompt minimal). **No reciben:** SOUL.md, USER.md, MEMORY.md.
 
-**Tools:** Todo excepto `sessions_*`, `subagents`, `cron`, `gateway`.
+- **Sub-agentes reciben:** AGENTS.md + TOOLS.md (prompt minimal). **No reciben:** SOUL.md, USER.md, MEMORY.md.
+
+
+- **Tools:** Todo excepto `sessions_*`, `subagents`, `cron`, `gateway`.
+
 
 ### Orchestrator Pattern (depth 2)
 
@@ -227,9 +270,14 @@ Main → Orchestrator (depth 1, recibe session tools)
            └── Worker
 ```
 
-`maxSpawnDepth: 2` | `maxChildrenPerAgent: 5` | `maxConcurrent: 8` (lane separada)
+- `maxSpawnDepth:
+- 2` | `maxChildrenPerAgent:
+- 5` | `maxConcurrent:
+- 8` (lane separada)
 
-**Announce chain:** Workers → Orchestrator → Main (nunca cross-level)
+
+- **Announce chain:** Workers → Orchestrator → Main (nunca cross-level)
+
 
 ### Gestión
 
@@ -246,7 +294,8 @@ Main → Orchestrator (depth 1, recibe session tools)
 Main: Sonnet (conversación)  |  Sub-agentes: Haiku (barato)  |  Special: Opus (override)
 ```
 
----
+- ---
+
 
 ## ⏰ AUTOMATIZACIÓN
 
@@ -268,7 +317,9 @@ Main: Sonnet (conversación)  |  Sub-agentes: Haiku (barato)  |  Special: Opus (
 { heartbeat: { every: "30m", model: "haiku", target: "last", activeHours: { start: "08:00", end: "23:00" } } }
 ```
 
-`HEARTBEAT_OK` → suprimido. Alerta → delivery. ~$2.70/mes con Haiku.
+- `HEARTBEAT_OK` → suprimido.
+- Alerta → delivery. ~$2.70/mes con Haiku.
+
 
 ### Cron Jobs
 
@@ -296,7 +347,8 @@ Events: command:new | agent:bootstrap | gateway:startup | message:received | mes
 Bundled: session-memory | bootstrap-extra-files | command-logger | boot-md
 ```
 
-Hooks = TypeScript determinístico. **0 tokens.**
+- Hooks = TypeScript determinístico. **0 tokens.**
+
 
 ### Webhooks (HTTP ingress)
 
@@ -306,7 +358,10 @@ POST /hooks/agent   → Agent turn aislado con delivery (completo)
 POST /hooks/<name>  → Mapped hook con transforms (custom)
 ```
 
-Auth: `Authorization: Bearer <token>`. Siempre loopback/tailnet.
+- Auth: `Authorization:
+- Bearer <token>`.
+- Siempre loopback/tailnet.
+
 
 ### Lobster (workflows determinísticos)
 
@@ -314,9 +369,12 @@ Auth: `Authorization: Bearer <token>`. Siempre loopback/tailnet.
 pipeline: "cmd1 | cmd2 | approve --prompt 'OK?' | cmd3"
 ```
 
-→ 1 tool call = workflow completo. Approval gates con resume tokens. `llm-task` para LLM steps JSON-only.
+- → 1 tool call = workflow completo.
+- Approval gates con resume tokens. `llm-task` para LLM steps JSON-only.
 
----
+
+- ---
+
 
 ## 🔧 OPERACIONES
 
@@ -348,7 +406,8 @@ tar -czvf ~/backups/openclaw-$(date +%Y%m%d).tar.gz \
   ~/clawd/
 ```
 
----
+- ---
+
 
 ## 📐 PATRONES RÁPIDOS
 
@@ -361,7 +420,8 @@ tar -czvf ~/backups/openclaw-$(date +%Y%m%d).tar.gz \
 | **Cron + webhook pipeline** | Cron isolated + /hooks/agent |
 | **Minimal viable** | 1 canal + 1 agente + token |
 
----
+- ---
+
 
 ## ⚡ REGLAS DE ORO
 
@@ -376,13 +436,16 @@ tar -czvf ~/backups/openclaw-$(date +%Y%m%d).tar.gz \
 9. **Non-main es el sweet spot** → DMs en host, grupos en sandbox
 10. **Diversidad de provider en fallbacks** → si uno cae, otro toma
 
----
+- ---
 
----
+
+- ---
+
 
 ## 🌐 FEDERACIÓN MULTI-GATEWAY (Docker)
 
-**Cuándo:** Fault isolation real, rolling updates, resource limits per-agent, diferentes versiones.
+- **Cuándo:** Fault isolation real, rolling updates, resource limits per-agent, diferentes versiones.
+
 
 ```
 Docker Compose + bridge network + shared volumes (:ro) + webhooks
@@ -394,7 +457,8 @@ Docker Compose + bridge network + shared volumes (:ro) + webhooks
 | **Buzón de archivos** | Volumen compartido + heartbeat | ~30s-30min | Alta (mensajes persisten) |
 | **Docker network** | HTTP directo por nombre de container | ~1-5s | Baja |
 
-**Topología recomendada:** Hub (Korax) + Spokes (especialistas webhook-only)
+- **Topología recomendada:** Hub (Korax) + Spokes (especialistas webhook-only)
+
 
 ```yaml
 # Template: spoke en docker-compose.yml
@@ -409,8 +473,11 @@ spoke-gateway:
     - /srv/comms:/shared/comms:rw                    # buzón inter-gateway
 ```
 
-**Seguridad:** Tokens dedicados por gateway · Red Docker internal · KB en :ro · Content wrapping · Anti-loop con depth header
+- **Seguridad:** Tokens dedicados por gateway · Red Docker internal · KB en :ro · Content wrapping · Anti-loop con depth header
 
----
 
-*`cabinet/docs/manual-openclaw/` — 22 capítulos + 5 apéndices — ~395KB — Feb 2026*
+- ---
+
+
+- *`cabinet/docs/manual-openclaw/` — 22 capítulos + 5 apéndices — ~395KB — Feb 2026*
+

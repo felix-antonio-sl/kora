@@ -1,23 +1,34 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:metadatos-documentos"
+  urn: urn:tde:kb:metadatos-documentos
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, metadatos, gestion-documental, expediente-electronico, chile]
+tags:
+- transformacion-digital
+- metadatos
+- gestion-documental
+- expediente-electronico
+- chile
+- tde
 lang: es
 ---
 
 # Guía Técnica de Metadatos para Documentos y Expedientes
 
 ## Contexto y Marco Normativo
-Operacionaliza la Norma Técnica de Documentos y Expedientes Electrónicos (DS 10/2023) bajo la Ley 21.180 (Transformación Digital). Basada en estándares internacionales ISO 15489 (Gestión de documentos) e ISO 23081 (Metadatos para gestión de documentos). Aplica a todos los órganos de la administración del Estado (OAE).
+- Operacionaliza la Norma Técnica de Documentos y Expedientes Electrónicos (DS 10/2023) bajo la Ley 21.180 (Transformación Digital).
+- Basada en estándares internacionales ISO 15489 (Gestión de documentos) e ISO 23081 (Metadatos para gestión de documentos).
+- Aplica a todos los órganos de la administración del Estado (OAE).
+
 
 ## Propósito de los Metadatos
-Garantizar disponibilidad, recuperación, accesibilidad, conservación e interoperabilidad de la información pública. Permiten descripción precisa del contexto, estructura y contenido de documentos y expedientes electrónicos durante todo su ciclo de vida, incluyendo su transferencia al Archivo Nacional.
+- Garantizar disponibilidad, recuperación, accesibilidad, conservación e interoperabilidad de la información pública.
+- Permiten descripción precisa del contexto, estructura y contenido de documentos y expedientes electrónicos durante todo su ciclo de vida, incluyendo su transferencia al Archivo Nacional.
+
 
 ## Modelo de Entidades
 - **Expediente**: conjunto organizado de documentos de un procedimiento administrativo.

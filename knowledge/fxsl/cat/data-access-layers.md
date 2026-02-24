@@ -1,12 +1,19 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:data-access-layers"
+  urn: urn:fxsl:kb:data-access-layers
   provenance:
-    created_by: "FS"
-    created_at: "2025-12-08"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2025-12-08'
+    source: legacy-import
+version: 2.0.0
 status: published
-tags: [category-theory, data-access, architecture, dal, storage-models]
+tags:
+- category-theory
+- data-access
+- architecture
+- dal
+- storage-models
+- fxsl
 lang: en
 ---
 
@@ -31,13 +38,20 @@ lang: en
 
 ## Repository Structure
 
-**Coalgebra**: c: X → F(X)
+- **Coalgebra**: c:
+- X → F(X)
 
-**Bisimulation**: R₁~R₂ ⟺ ∀ops. observe(R₁(ops)) = observe(R₂(ops))
+
+- **Bisimulation**:
+- R₁~R₂ ⟺ ∀ops. observe(R₁(ops)) = observe(R₂(ops))
+
 
 ## ORM as Adjunction
 
-**Structure**: Adjunction ORM ⊣ Reflect: DomainCat ⇆ SchemaCat
+- **Structure**:
+- Adjunction ORM ⊣ Reflect:
+- DomainCat ⇆ SchemaCat
+
 
 - **Unit**: η: E → Reflect(ORM(E)) ≈ id
 - **Counit**: ε: ORM(Reflect(T)) → T ≈ id
@@ -45,14 +59,22 @@ lang: en
 
 ## DataLake Construction
 
-**Construction**: colim(Dataset_i, Pipeline_ij)
+- **Construction**: colim(Dataset_i, Pipeline_ij)
 
-**Grothendieck**: ∫F, I=zones, F(z)=schema_z
 
-**Audit**: Pipelines = morfismos; diagram conmuta
+- **Grothendieck**: ∫F, I=zones, F(z)=schema_z
+
+
+- **Audit**:
+- Pipelines = morfismos; diagram conmuta
+
 
 ## Synthesis
 
-**2-Category**: Objects = components, 1-morphisms = transformations, 2-morphisms = migrations
+- **2-Category**:
+- Objects = components, 1-morphisms = transformations, 2-morphisms = migrations
 
-**Audit Dimensions**: Storage-Model Align, API-Functor Preserve, Repo-Bisim, ORM-Adj Valid, Pipeline-Commute
+
+- **Audit Dimensions**:
+- Storage-Model Align, API-Functor Preserve, Repo-Bisim, ORM-Adj Valid, Pipeline-Commute
+

@@ -1,13 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:loc-gore"
+  urn: urn:gn:kb:loc-gore
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [dfl-1-19175, gobierno-regional, administracion-publica, chile]
+tags:
+- dfl-1-19175
+- gobierno-regional
+- administracion-publica
+- chile
+- gn
 lang: es
 ---
 

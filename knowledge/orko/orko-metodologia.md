@@ -1,23 +1,32 @@
 ---
 _manifest:
-  urn: "urn:orko:kb:orko-metodologia"
+  urn: urn:orko:kb:orko-metodologia
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "ORKO framework documentation"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: ORKO framework documentation
+version: 2.0.0
 status: published
-tags: [metodologia, WSLC, fases, playbooks, governance]
+tags:
+- metodologia
+- wslc
+- fases
+- playbooks
+- governance
+- knowledge
 lang: es
 ---
 
 # ORKO - Metodología (Layer 3)
 
-Sistema operativo organizacional adaptable y formal para guiar transformaciones complejas. Work-System Lifecycle (WSLC) de 18 fases + Catálogo de 15 Playbooks activados por Health Gates.
+- Sistema operativo organizacional adaptable y formal para guiar transformaciones complejas.
+- Work-System Lifecycle (WSLC) de 18 fases + Catálogo de 15 Playbooks activados por Health Gates.
+
 
 ## Filosofía
 
-Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en Datos.
+- Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en Datos.
+
 
 ## WSLC - Fases (F1-F18)
 
@@ -25,204 +34,280 @@ Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en 
 
 #### F1 - Context Assessment
 
-**Propósito:** Capturar estado organizacional actual (E6_current), H_org baseline y perfil de contexto (36 params)
+- **Propósito:** Capturar estado organizacional actual (E6_current), H_org baseline y perfil de contexto (36 params)
 
-**Inputs:** Stakeholder Interviews, Org Docs, Regulatory Context
 
-**Outputs:**
+- **Inputs:** Stakeholder Interviews, Org Docs, Regulatory Context
+
+
+- **Outputs:**
+
 - context_profile_36_params
 - h_org_baseline
 - context_classification
 
-**Owner:** Role_Captain
+- **Owner:** Role_Captain
+
 
 #### F2 - Vision Definition
 
-**Propósito:** Definir visión, ambición y North Star alineada con restricciones del contexto
+- **Propósito:** Definir visión, ambición y North Star alineada con restricciones del contexto
 
-**Inputs:** F1.context_profile, F3.trajectory_selected
 
-**Outputs:** vision_statement.md, okr_L4, vision_constraints
+- **Inputs:** F1.context_profile, F3.trajectory_selected
 
-**Owner:** Role_Captain + Sponsor_L1_Human
 
-**Protocolo:** F2_F3_convergence (circular dependency)
+- **Outputs:** vision_statement.md, okr_L4, vision_constraints
+
+
+- **Owner:** Role_Captain + Sponsor_L1_Human
+
+
+- **Protocolo:** F2_F3_convergence (circular dependency)
+
 
 #### F3 - Trajectory Selection
 
-**Propósito:** Seleccionar trayectoria óptima (Survival, Minimal, Avanzada) basada en decisión matrix formal
+- **Propósito:** Seleccionar trayectoria óptima (Survival, Minimal, Avanzada) basada en decisión matrix formal
 
-**Inputs:** F1.h_org_baseline, Budget/Runway
 
-**Outputs:** trajectory_selected, timeline_commitment, budget_allocation
+- **Inputs:** F1.h_org_baseline, Budget/Runway
 
-**Owner:** Role_Captain + Sponsor_L1_Human
+
+- **Outputs:** trajectory_selected, timeline_commitment, budget_allocation
+
+
+- **Owner:** Role_Captain + Sponsor_L1_Human
+
 
 ### Development (F4-F9)
 
 #### F4 - Capability Mapping
 
-**Propósito:** Inventariar y mapear capacidades (P1) humanas, algorítmicas y mixtas
+- **Propósito:** Inventariar y mapear capacidades (P1) humanas, algorítmicas y mixtas
 
-**Inputs:** F2.vision, F3.trajectory
 
-**Outputs:** p1_inventory.yaml, skills_matrix, capacity_gaps
+- **Inputs:** F2.vision, F3.trajectory
 
-**Owner:** Role_Architect
+
+- **Outputs:** p1_inventory.yaml, skills_matrix, capacity_gaps
+
+
+- **Owner:** Role_Architect
+
 
 #### F5 - Flow Design
 
-**Propósito:** Diseñar flujos de valor (P2) y optimizar handoffs
+- **Propósito:** Diseñar flujos de valor (P2) y optimizar handoffs
 
-**Inputs:** F4.p1_inventory, F7.okr_cascade
 
-**Outputs:** vsm_maps, handoff_ratio_metrics, flow_optimization_plan
+- **Inputs:** F4.p1_inventory, F7.okr_cascade
 
-**Owner:** Role_Architect
+
+- **Outputs:** vsm_maps, handoff_ratio_metrics, flow_optimization_plan
+
+
+- **Owner:** Role_Architect
+
 
 #### F6 - Information Architecture
 
-**Propósito:** Diseñar arquitectura de información (P3), dominios de datos y governance
+- **Propósito:** Diseñar arquitectura de información (P3), dominios de datos y governance
 
-**Inputs:** F1.context, F7.okrs
 
-**Outputs:** data_catalog, architecture_blueprint, information_governance
+- **Inputs:** F1.context, F7.okrs
 
-**Owner:** Role_Architect (Data)
+
+- **Outputs:** data_catalog, architecture_blueprint, information_governance
+
+
+- **Owner:** Role_Architect (Data)
+
 
 #### F7 - Purpose Cascade
 
-**Propósito:** Cascadear OKRs (P5) desde L4 (Org) hasta L3/L2/L1 según trayectoria, asignando accountability humana
+- **Propósito:** Cascadear OKRs (P5) desde L4 (Org) hasta L3/L2/L1 según trayectoria, asignando accountability humana
 
-**Inputs:** F2.okr_L4, F3.trajectory
 
-**Outputs:** okr_cascade_L4_to_L1.yaml, purpose_policy, alignment_matrix
+- **Inputs:** F2.okr_L4, F3.trajectory
 
-**Owner:** Role_Captain + Leaders
 
-**Invariant:** I5_HAIC: Every OKR must have a Human Owner
+- **Outputs:** okr_cascade_L4_to_L1.yaml, purpose_policy, alignment_matrix
+
+
+- **Owner:** Role_Captain + Leaders
+
+
+- **Invariant:** I5_HAIC:
+- Every OKR must have a Human Owner
+
 
 #### F8 - Limits Definition
 
-**Propósito:** Formalizar límites (P4) regulatorios, técnicos y presupuestarios
+- **Propósito:** Formalizar límites (P4) regulatorios, técnicos y presupuestarios
 
-**Inputs:** F1.regulatory_constraints, F3.budget
 
-**Outputs:** limit_catalog.yaml, compliance_framework_refs
+- **Inputs:** F1.regulatory_constraints, F3.budget
 
-**Owner:** Role_Architect (Governance)
+
+- **Outputs:** limit_catalog.yaml, compliance_framework_refs
+
+
+- **Owner:** Role_Architect (Governance)
+
 
 #### F9 - Target State Design
 
-**Propósito:** Sintetizar diseños F4-F8 en un Estado Arquitectónico Objetivo (E6_target)
+- **Propósito:** Sintetizar diseños F4-F8 en un Estado Arquitectónico Objetivo (E6_target)
 
-**Inputs:** F4-F8 outputs, F3.trajectory
 
-**Outputs:** e6_target.yaml, target_diagrams, gap_analysis_current_target
+- **Inputs:** F4-F8 outputs, F3.trajectory
 
-**Owner:** Role_Architect
+
+- **Outputs:** e6_target.yaml, target_diagrams, gap_analysis_current_target
+
+
+- **Owner:** Role_Architect
+
 
 ### Implementation (F10-F12)
 
 #### F10 - Quick Wins
 
-**Propósito:** Ejecutar acciones de alto impacto y bajo esfuerzo para ganar momentum y mejorar H_org temprano
+- **Propósito:** Ejecutar acciones de alto impacto y bajo esfuerzo para ganar momentum y mejorar H_org temprano
 
-**Inputs:** F9.gap_analysis, F5.vsm_maps
 
-**Outputs:** quick_wins_backlog, execution_log, h_org_early_impact
+- **Inputs:** F9.gap_analysis, F5.vsm_maps
 
-**Owner:** Role_Delivery_Lead
+
+- **Outputs:** quick_wins_backlog, execution_log, h_org_early_impact
+
+
+- **Owner:** Role_Delivery_Lead
+
 
 #### F11 - Fabric Deployment
 
-**Propósito:** Desplegar cambios estructurales en Tejidos (TF1, TF2, TF3)
+- **Propósito:** Desplegar cambios estructurales en Tejidos (TF1, TF2, TF3)
 
-**Inputs:** F9.target_schemas, F9.e6_target
 
-**Outputs:** fabric_deployment_plan, tf1/tf2/tf3_status
+- **Inputs:** F9.target_schemas, F9.e6_target
 
-**Owner:** Role_Delivery_Lead
+
+- **Outputs:** fabric_deployment_plan, tf1/tf2/tf3_status
+
+
+- **Owner:** Role_Delivery_Lead
+
 
 #### F12 - State Transition
 
-**Propósito:** Orquestar la transición formal de E6_current a E6_target (migraciones, reorgs)
+- **Propósito:** Orquestar la transición formal de E6_current a E6_target (migraciones, reorgs)
 
-**Inputs:** F9.e6_target, F11.fabric_status
 
-**Outputs:** state_transition_plan, e6_intermediate_states
+- **Inputs:** F9.e6_target, F11.fabric_status
 
-**Owner:** Role_Architect + Delivery
+
+- **Outputs:** state_transition_plan, e6_intermediate_states
+
+
+- **Owner:** Role_Architect + Delivery
+
 
 ### Operation (F13-F15)
 
 #### F13 - Health Monitoring
 
-**Propósito:** Monitoreo continuo de métricas canónicas (H_org, eta_org) y activación de Health Gates
+- **Propósito:** Monitoreo continuo de métricas canónicas (H_org, eta_org) y activación de Health Gates
 
-**Inputs:** Live Signals TF1/TF2/TF3
 
-**Outputs:** h_org_dashboard, health_gate_status (G1-G4), playbook_triggers
+- **Inputs:** Live Signals TF1/TF2/TF3
 
-**Owner:** Role_HealthOwner
+
+- **Outputs:** h_org_dashboard, health_gate_status (G1-G4), playbook_triggers
+
+
+- **Owner:** Role_HealthOwner
+
 
 #### F14 - Incident Response
 
-**Propósito:** Gestión reactiva de incidentes y degradaciones de salud detectadas por F13
+- **Propósito:** Gestión reactiva de incidentes y degradaciones de salud detectadas por F13
 
-**Inputs:** F13.alerts, playbook_triggers
 
-**Outputs:** incident_reports, recovery_actions, post_mortems
+- **Inputs:** F13.alerts, playbook_triggers
 
-**Owner:** Role_IncidentLead
+
+- **Outputs:** incident_reports, recovery_actions, post_mortems
+
+
+- **Owner:** Role_IncidentLead
+
 
 #### F15 - Continuous Execution
 
-**Propósito:** Operación regular del sistema de trabajo (Sprints, BAU, Cadencia)
+- **Propósito:** Operación regular del sistema de trabajo (Sprints, BAU, Cadencia)
 
-**Inputs:** Backlog F10/F11, F7.okrs
 
-**Outputs:** execution_log, sprint_reports, cadence_adjustments
+- **Inputs:** Backlog F10/F11, F7.okrs
 
-**Owner:** Role_Delivery_Lead
+
+- **Outputs:** execution_log, sprint_reports, cadence_adjustments
+
+
+- **Owner:** Role_Delivery_Lead
+
 
 ### Evolution (F16-F18)
 
 #### F16 - Learning Loops
 
-**Propósito:** Cerrar ciclos de aprendizaje, analizando correlación entre acciones y métricas
+- **Propósito:** Cerrar ciclos de aprendizaje, analizando correlación entre acciones y métricas
 
-**Inputs:** F13.trends, F14.post_mortems, F15.reports
 
-**Outputs:** learning_log, playbook_improvement_backlog, trajectory_recommendations
+- **Inputs:** F13.trends, F14.post_mortems, F15.reports
 
-**Owner:** Role_Captain
+
+- **Outputs:** learning_log, playbook_improvement_backlog, trajectory_recommendations
+
+
+- **Owner:** Role_Captain
+
 
 #### F17 - Adaptation
 
-**Propósito:** Formalizar decisiones de cambio de rumbo (Pivots, Trajectory Adjustments) vía ADRs
+- **Propósito:** Formalizar decisiones de cambio de rumbo (Pivots, Trajectory Adjustments) vía ADRs
 
-**Inputs:** F16.learnings, F13.trends
 
-**Outputs:** trajectory_adjustment, adaptation_plan, okr_refinement
+- **Inputs:** F16.learnings, F13.trends
 
-**Owner:** Role_SteeringCommittee
+
+- **Outputs:** trajectory_adjustment, adaptation_plan, okr_refinement
+
+
+- **Owner:** Role_SteeringCommittee
+
 
 #### F18 - Convergence Check
 
-**Propósito:** Validación final de convergencia hacia E6_target al cierre de ciclo
+- **Propósito:** Validación final de convergencia hacia E6_target al cierre de ciclo
 
-**Inputs:** F9.e6_target, F12.e6_current_post
 
-**Outputs:** convergence_report, convergence_score, gap_analysis_residual
+- **Inputs:** F9.e6_target, F12.e6_current_post
 
-**Owner:** Role_Architect
+
+- **Outputs:** convergence_report, convergence_score, gap_analysis_residual
+
+
+- **Owner:** Role_Architect
+
 
 ## Playbooks (P01-P15)
 
 ### Recovery (P01-P04, P09, P12, P13)
 
-**Propósito:** Restaurar H_org ante degradaciones críticas (G1/G2)
+- **Propósito:** Restaurar H_org ante degradaciones críticas (G1/G2)
+
 
 | Playbook | Trigger | Duración |
 |----------|---------|----------|
@@ -236,7 +321,8 @@ Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en 
 
 ### Transformation (P05-P08, P10-P11)
 
-**Propósito:** Cambios estructurales proactivos para mejorar eta_org y ROI
+- **Propósito:** Cambios estructurales proactivos para mejorar eta_org y ROI
+
 
 | Playbook | Trigger | Duración |
 |----------|---------|----------|
@@ -249,7 +335,8 @@ Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en 
 
 ### Operational (P14-P15)
 
-**Propósito:** Ajustes tácticos durante operación continua
+- **Propósito:** Ajustes tácticos durante operación continua
+
 
 | Playbook | Trigger | Duración |
 |----------|---------|----------|
@@ -290,4 +377,5 @@ Minimalidad, Ortogonalidad, Accountability Humana (HAIC), Adaptación basada en 
 | I6_Trajectory | Metodología soporta 3 trayectorias diferenciadas |
 | I8_Adaptacion | F16/F17 garantizan evolución del sistema |
 
-**Estado:** VALIDADO ✅
+- **Estado:** VALIDADO ✅
+

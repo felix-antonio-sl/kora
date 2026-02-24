@@ -1,26 +1,35 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:nt-notificaciones"
+  urn: urn:tde:kb:nt-notificaciones
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, norma-tecnica, notificaciones, ddu, casilla-unica, chile]
+tags:
+- transformacion-digital
+- norma-tecnica
+- notificaciones
+- ddu
+- casilla-unica
+- chile
+- tde
 lang: es
 ---
 
 # Norma Técnica de Notificaciones (Decreto 8)
 
 ## Objeto y Definiciones
-Detalla el funcionamiento de la **Plataforma de Notificaciones** y la obligatoriedad de practicar notificaciones electrónicas para los Órganos de la Administración del Estado (OAE).
+- Detalla el funcionamiento de la **Plataforma de Notificaciones** y la obligatoriedad de practicar notificaciones electrónicas para los Órganos de la Administración del Estado (OAE).
+
 - **Domicilio Digital Único (DDU)**: medio electrónico determinado por el usuario para recibir notificaciones (Casilla Única o correo electrónico).
 - **Plataforma de Notificaciones**: sistema centralizado administrado por la DGD para la emisión y registro de notificaciones.
 - **API de Notificaciones**: servicio web para la integración automática de plataformas institucionales con el sistema de envío nacional.
 
 ## Registro de Domicilios Digitales Únicos (DDU)
-Administrado por el Servicio de Registro Civil e Identificación.
+- Administrado por el Servicio de Registro Civil e Identificación.
+
 - **Contenido**: RUT/RUN, DDU vigente, histórico de cambios y situación de excepción legal a la notificación electrónica.
 - **Configuración**: los usuarios definen su DDU en el portal oficial autenticándose con ClaveÚnica. El último medio registrado se considera el vigente.
 
@@ -31,7 +40,8 @@ Administrado por el Servicio de Registro Civil e Identificación.
 - **Módulo de Administración DDU**: herramienta del Registro Civil para gestión de la identidad digital vinculada al domicilio.
 
 ## Proceso de Notificación
-Los OAEs deben proporcionar datos mínimos para cada envío:
+- Los OAEs deben proporcionar datos mínimos para cada envío:
+
 - Código de institución (Gestor de Códigos).
 - RUN/RUT del destinatario.
 - Identificador de expediente (IUIe) y del procedimiento.

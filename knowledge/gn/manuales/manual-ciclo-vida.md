@@ -1,20 +1,27 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-ciclo-vida"
+  urn: urn:gn:kb:manual-ciclo-vida
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, recursos-humanos, ciclo-vida]
+tags:
+- gore-nuble
+- gobierno-regional
+- recursos-humanos
+- ciclo-vida
+- gn
 lang: es
 ---
 
 # Manual 3.1: Ciclo de Vida del Funcionario
 
 ## Objetivo
-Regulación de procesos administrativos de trayectoria laboral en GORE Ñuble (desde ingreso hasta egreso). Aseguramiento de cumplimiento normativo estatutario y presupuestario vigente.
+- Regulación de procesos administrativos de trayectoria laboral en GORE Ñuble (desde ingreso hasta egreso).
+- Aseguramiento de cumplimiento normativo estatutario y presupuestario vigente.
+
 
 ## Ingreso y Contratación
 

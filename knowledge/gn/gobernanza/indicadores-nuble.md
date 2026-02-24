@@ -1,19 +1,30 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:indicadores-nuble"
+  urn: urn:gn:kb:indicadores-nuble
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, estadisticas, demografia, economia, seguridad, salud, educacion]
+tags:
+- gore-nuble
+- gobierno-regional
+- estadisticas
+- demografia
+- economia
+- seguridad
+- salud
+- educacion
+- gn
 lang: es
 ---
 
 # Indicadores regionales y comunales región de Ñuble
 
-Actualización BCN: Junio 2025.
+- Actualización BCN:
+- Junio 2025.
+
 
 ## Indicadores Demográficos
 

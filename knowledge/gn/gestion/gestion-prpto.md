@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:gestion-prpto"
+  urn: urn:gn:kb:gestion-prpto
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, presupuesto, finanzas-publicas, gestion-regional]
+tags:
+- gore-nuble
+- gobierno-regional
+- presupuesto
+- finanzas-publicas
+- gestion-regional
+- gn
 lang: es
 ---
 

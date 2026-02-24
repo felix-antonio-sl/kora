@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:lexicon-wikiguias"
+  urn: urn:gov:kb:lexicon-wikiguias
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, gobierno, chile, interoperabilidad, datos]
+tags:
+- transformacion-digital
+- gobierno
+- chile
+- interoperabilidad
+- datos
+- knowledge
 lang: es
 ---
 

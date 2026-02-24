@@ -1,17 +1,23 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:notificaciones"
+  urn: urn:gov:kb:notificaciones
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, gobierno, chile, notificaciones, interoperabilidad]
+tags:
+- transformacion-digital
+- gobierno
+- chile
+- notificaciones
+- interoperabilidad
+- knowledge
 lang: es
 ---
 
-## Contexto Normativo y Digital
+# Contexto Normativo y Digital
 
 - Canal oficial para envío de notificaciones electrónicas de OAEs.
 - Basado en Registro de Domicilios Digitales Únicos (DDU) y CasillaÚnica.

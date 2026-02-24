@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gov:kb:cloud-publica"
+  urn: urn:gov:kb:cloud-publica
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [cloud, infraestructura, compras-publicas, gobierno-digital, chile]
+tags:
+- cloud
+- infraestructura
+- compras-publicas
+- gobierno-digital
+- chile
+- knowledge
 lang: es
 ---
 

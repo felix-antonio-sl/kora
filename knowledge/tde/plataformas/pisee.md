@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:pisee"
+  urn: urn:tde:kb:pisee
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, pisee, interoperabilidad, plataforma-compartida, chile]
+tags:
+- transformacion-digital
+- pisee
+- interoperabilidad
+- plataforma-compartida
+- chile
+- tde
 lang: es
 ---
 
 # Red de Interoperabilidad PISEE
 
 ## Definición y Objetivo
-PISEE es el servicio compartido que permite el intercambio seguro y trazable de datos, documentos y expedientes electrónicos entre Órganos de la Administración del Estado (OAE). Basada en nodos de interoperabilidad alojados en la infraestructura de cada órgano, elimina la necesidad de solicitar al ciudadano información que el Estado ya posee.
+- PISEE es el servicio compartido que permite el intercambio seguro y trazable de datos, documentos y expedientes electrónicos entre Órganos de la Administración del Estado (OAE).
+- Basada en nodos de interoperabilidad alojados en la infraestructura de cada órgano, elimina la necesidad de solicitar al ciudadano información que el Estado ya posee.
+
 
 ## Nodos de Interoperabilidad
 - **Nodo de Desarrollo**: ambiente para pruebas y validación de integraciones técnicas. Solicitado vía CeroFilas por el Coordinador de Transformación Digital (CTD).

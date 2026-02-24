@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:ley-21180"
+  urn: urn:tde:kb:ley-21180
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, ley-21180, procedimientos-administrativos, expediente-electronico, chile]
+tags:
+- transformacion-digital
+- ley-21180
+- procedimientos-administrativos
+- expediente-electronico
+- chile
+- tde
 lang: es
 ---
 
 # Ley 21.180: Transformación Digital del Estado
 
 ## Objeto y Alcance
-Digitalizar los procedimientos administrativos del Estado, obligando al uso de medios y plataformas electrónicas en la gestión documental y las comunicaciones oficiales. Modifica la Ley 19.880 para establecer la escrituración electrónica como norma general, garantizando la validez de actos suscritos mediante firma electrónica.
+- Digitalizar los procedimientos administrativos del Estado, obligando al uso de medios y plataformas electrónicas en la gestión documental y las comunicaciones oficiales.
+- Modifica la Ley 19.880 para establecer la escrituración electrónica como norma general, garantizando la validez de actos suscritos mediante firma electrónica.
+
 
 ## Principios de los Medios Electrónicos (16 bis)
 - **Neutralidad Tecnológica**: no discriminar tecnologías específicas; permitir actualizaciones sin invalidar actos.
@@ -32,7 +40,9 @@ Digitalizar los procedimientos administrativos del Estado, obligando al uso de m
 - **Notificaciones**: uso obligatorio de medios electrónicos basados en un registro único de Domicilios Digitales.
 
 ## Gestión de Microformas (Ley 18.845)
-Define microforma como imagen compactada o digitalizada de un documento original idónea para conservación y recuperación posterior. Otorga mérito probatorio a copias digitales generadas bajo procedimientos reglamentarios, asimilándolas al documento original.
+- Define microforma como imagen compactada o digitalizada de un documento original idónea para conservación y recuperación posterior.
+- Otorga mérito probatorio a copias digitales generadas bajo procedimientos reglamentarios, asimilándolas al documento original.
+
 
 ## Interoperabilidad y Datos Sensibles
 - Órganos obligados a compartir información requerida para trámites externos.

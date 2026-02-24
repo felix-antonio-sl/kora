@@ -1,8 +1,26 @@
+---
+_manifest:
+  urn: urn:kora:kb:19-operaciones
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '19'
+- operaciones
+lang: es
+---
+
 # Capítulo 19 — Operaciones
 
 > **Propósito:** Referencia práctica para el día a día operativo: diagnosticar, monitorear, respaldar y recuperar. No es teoría — es el runbook.
 
----
+- ---
+
 
 ## 19.1 Diagnóstico Rápido
 
@@ -13,7 +31,8 @@ openclaw status          # resumen general
 openclaw status --all    # detallado (safe to share, secrets redacted)
 ```
 
-Muestra: gateway version, uptime, canales conectados, agentes, modelos, sesiones activas, cron jobs, heartbeat state.
+- Muestra: gateway version, uptime, canales conectados, agentes, modelos, sesiones activas, cron jobs, heartbeat state.
+
 
 ### openclaw doctor
 
@@ -23,7 +42,8 @@ openclaw doctor --fix              # aplicar fixes automáticos
 openclaw doctor --generate-gateway-token   # generar token seguro
 ```
 
-Diagnostica: config obsoleta, permisos, migraciones pendientes, token faltante.
+- Diagnostica: config obsoleta, permisos, migraciones pendientes, token faltante.
+
 
 ### openclaw security audit
 
@@ -51,7 +71,8 @@ openclaw sandbox explain --session agent:work:main  # sesión específica
 openclaw sandbox explain --json                   # parseable
 ```
 
----
+- ---
+
 
 ## 19.2 Gateway (systemd)
 
@@ -79,12 +100,14 @@ curl -s http://localhost:18789/health
 
 ### Hot reload
 
-Algunos cambios de config se aplican sin restart:
+- Algunos cambios de config se aplican sin restart:
+
 - Model aliases y fallbacks
 - Tool policy changes
 - Session config (dmScope, reset)
 
-Cambios que requieren restart:
+- Cambios que requieren restart:
+
 - Channel connections (nuevos bots, cuentas)
 - Gateway port/bind/auth
 - Plugin changes
@@ -104,7 +127,8 @@ openclaw status
 curl -s http://localhost:18789/health
 ```
 
----
+- ---
+
 
 ## 19.3 Logging
 
@@ -151,14 +175,17 @@ journalctl -u openclaw-gateway | grep cron
 
 ### Retention
 
-Los logs no se auto-rotan. Configurar logrotate o limpiar manualmente:
+- Los logs no se auto-rotan.
+- Configurar logrotate o limpiar manualmente:
+
 
 ```bash
 # Limpiar logs >7 días
 find /tmp/openclaw/ -name 'openclaw-*.log' -mtime +7 -delete
 ```
 
----
+- ---
+
 
 ## 19.4 Backup Strategy
 
@@ -212,7 +239,8 @@ sudo systemctl start openclaw-gateway
 openclaw status
 ```
 
----
+- ---
+
 
 ## 19.5 Monitoreo
 
@@ -241,7 +269,8 @@ openclaw sessions --active 60 --json | jq length
 cat ~/.openclaw/agents/main/sessions/sessions.json | jq '[.[].totalTokens] | add'
 ```
 
----
+- ---
+
 
 ## 19.6 Mantenimiento Periódico
 
@@ -268,7 +297,8 @@ cat ~/.openclaw/agents/main/sessions/sessions.json | jq '[.[].totalTokens] | add
 - [ ] Verificar tools: `openclaw sandbox explain`
 - [ ] Backup de config
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -284,6 +314,8 @@ cat ~/.openclaw/agents/main/sessions/sessions.json | jq '[.[].totalTokens] | add
 | Health monitoring | Cron del OS + curl health endpoint |
 | Incident response | Stop → Rotate → Audit → Report |
 
----
+- ---
 
-*Siguiente: [Capítulo 20 — Patrones de Diseño](20-patrones-diseno.md) (Parte VI)*
+
+- *Siguiente: [Capítulo 20 — Patrones de Diseño](20-patrones-diseno.md) (Parte VI)*
+

@@ -1,20 +1,30 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:sistema-tde-2025"
+  urn: urn:tde:kb:sistema-tde-2025
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, std, pmg, estrategia, gobernanza, chile]
+tags:
+- transformacion-digital
+- std
+- pmg
+- estrategia
+- gobernanza
+- chile
+- tde
 lang: es
 ---
 
 # Sistema de Transformación Digital (STD) 2025
 
 ## Contexto y Objetivo del Sistema
-El STD se incorpora al Programa de Mejoramiento de la Gestión (PMG) 2025 para instalar principios y estándares de gobierno digital. Busca mejorar la calidad de servicios entregados a personas y empresas. Alineado con la Estrategia 2030, la Ley 21.180 y las Normas Técnicas de Transformación Digital.
+- El STD se incorpora al Programa de Mejoramiento de la Gestión (PMG) 2025 para instalar principios y estándares de gobierno digital.
+- Busca mejorar la calidad de servicios entregados a personas y empresas.
+- Alineado con la Estrategia 2030, la Ley 21.180 y las Normas Técnicas de Transformación Digital.
+
 
 ## Estructura de Etapas (2025)
 ### Etapa 1: Gobernanza y Diagnóstico

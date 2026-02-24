@@ -1,0 +1,51 @@
+{
+  "target": "/Users/felixsanhueza/Developer/kora/knowledge",
+  "tool": "/Users/felixsanhueza/Developer/kora/scripts/telegraph_audit_repair.py",
+  "iterations": [
+    {
+      "iteration": 0,
+      "phase": "audit",
+      "files_total": 208,
+      "files_with_issues": 117,
+      "far_hits_total": 1,
+      "prose_blocks_total": 2598
+    },
+    {
+      "iteration": 1,
+      "phase": "repair+audit",
+      "files_changed": 117,
+      "fact_blocked": 0,
+      "files_with_issues": 1,
+      "far_hits_total": 1,
+      "prose_blocks_total": 0
+    },
+    {
+      "iteration": 2,
+      "phase": "repair+audit",
+      "files_changed": 0,
+      "fact_blocked": 0,
+      "files_with_issues": 1,
+      "far_hits_total": 1,
+      "prose_blocks_total": 0,
+      "note": "Residual FAR in list item identified"
+    },
+    {
+      "iteration": 3,
+      "phase": "repair+audit",
+      "files_changed": 5,
+      "fact_blocked": 0,
+      "files_with_issues": 0,
+      "far_hits_total": 0,
+      "prose_blocks_total": 0
+    },
+    {
+      "iteration": 4,
+      "phase": "stability_check",
+      "files_changed": 0,
+      "files_with_issues": 0,
+      "far_hits_total": 0,
+      "prose_blocks_total": 0
+    }
+  ],
+  "status": "PASS"
+}

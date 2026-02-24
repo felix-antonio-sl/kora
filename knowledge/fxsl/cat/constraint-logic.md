@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:constraint-logic"
+  urn: urn:fxsl:kb:constraint-logic
   provenance:
-    created_by: "FS"
-    created_at: "2025-12-05"
-    source: "Unified Constraint Logic for categorical artifacts"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2025-12-05'
+    source: Unified Constraint Logic for categorical artifacts
+version: 2.0.0
 status: published
-tags: [category-theory, constraints, sketches, regular-logic, satisfaction]
+tags:
+- category-theory
+- constraints
+- sketches
+- regular-logic
+- satisfaction
+- fxsl
 lang: en
 ---
 
@@ -15,9 +21,11 @@ lang: en
 
 ## Constraint Language L_CT
 
-Fragment of regular logic expressible in categories.
+- Fragment of regular logic expressible in categories.
 
-**Components**:
+
+- **Components**:
+
 - **Sorts**: Category objects (types, entities).
 - **Terms**: Morfismos and compositions (paths).
 - **Formulas**:
@@ -27,15 +35,23 @@ Fragment of regular logic expressible in categories.
   - Inclusion: A ↪ B (monomorfismo; instance I(A) ⊆ I(B)).
   - Surjection: A ↠ B (epimorfismo; instance I(f) surjective).
 
-**Theory**: T = (S, Σ) where S is schema and Σ is set of formulas.
+- **Theory**:
+- T = (S, Σ) where S is schema and Σ is set of formulas.
+
 
 ## Satisfaction
 
-**Definition**: Instance I: S→Set satisfies T = (S, Σ) iff all formulas in Σ satisfied.
+- **Definition**:
+- Instance I:
+- S→Set satisfies T = (S, Σ) iff all formulas in Σ satisfied.
 
-**Notation**: I ⊨ T.
 
-**Procedure**:
+- **Notation**:
+- I ⊨ T.
+
+
+- **Procedure**:
+
 1. For each φ ∈ Σ, verify:
    - Path equations: I(path₁) = I(path₂).
    - Existence formulas: required object/limit exists.
@@ -44,9 +60,13 @@ Fragment of regular logic expressible in categories.
 
 ## Model Category
 
-**Mod(T)**: Category of T models (valid instances) + natural transformations preserving T.
+- **Mod(T)**:
+- Category of T models (valid instances) + natural transformations preserving T.
 
-**Use**: Study space of valid instances conforming to schema with constraints.
+
+- **Use**:
+- Study space of valid instances conforming to schema with constraints.
+
 
 ## Constraints in Contexts
 
@@ -73,20 +93,26 @@ Fragment of regular logic expressible in categories.
 
 ## Constraint Preservation by Migrations
 
-**Definition**: Funtor F: S→T preserves constraint φ iff F(φ) satisfiable in T.
+- **Definition**:
+- Funtor F:
+- S→T preserves constraint φ iff F(φ) satisfiable in T.
 
-**Types**:
+
+- **Types**:
+
 - **Strict**: I ⊨ φ ⟹ F*(I) ⊨ F(φ). Always preserved.
 - **Weak**: ∃I such that F*(I) ⊨ F(φ). Some models preserve.
 
-**Rules for Adjoint**:
+- **Rules for Adjoint**:
+
 - **Δ_F** (pullback): ALWAYS preserves path equations.
 - **Σ_F** (pushforward): NOT ALWAYS; may collapse distinctions.
 - **Π_F** (right pushforward): Preserves existence constraints.
 
 ## Constraint Audit
 
-**Procedure**:
+- **Procedure**:
+
 1. Extract theory T_source = (S, Σ_S) from source schema.
 2. Extract T_target = (T, Σ_T) from target.
 3. Identify funtor F: S → T.
@@ -96,7 +122,8 @@ Fragment of regular logic expressible in categories.
 
 ## Theory Audit
 
-**Procedure**:
+- **Procedure**:
+
 1. Extract schema S and constraints.
 2. Verify internal consistency (no contradictions).
 3. Verify satisfiability (exists at least one model I ⊨ T).

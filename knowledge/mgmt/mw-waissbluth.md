@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:mgmt:kb:mw-waissbluth"
+  urn: urn:mgmt:kb:mw-waissbluth
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-27"
-    source: "Introducción a la Gestión Pública — Mario Waissbluth"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-27'
+    source: "Introducci\xF3n a la Gesti\xF3n P\xFAblica \u2014 Mario Waissbluth"
+version: 2.0.0
 status: published
-tags: [gestion-publica, waissbluth, administracion-estado, politicas-publicas, modernizacion]
+tags:
+- gestion-publica
+- waissbluth
+- administracion-estado
+- politicas-publicas
+- modernizacion
+- knowledge
 lang: es
 ---
 
@@ -41,7 +47,8 @@ lang: es
 - **Causa:** Carencia en diseño de políticas y su materialización.
 - **Resultado:** Pobreza, inequidades, injusticias, carencias.
 
-**Problemas generalizados:**
+- **Problemas generalizados:**
+
 
 | # | Problema |
 |---|---------|
@@ -51,13 +58,15 @@ lang: es
 | d | Elevada rotación de ministros y directivos |
 | e | Supeditación de la gestión a intereses clientelares, populistas y/o corrupción |
 
-**Efectos:**
+- **Efectos:**
+
 - Resultados de políticas no perduran.
 - Desperdicio de recursos financieros.
 - Desilusión de ciudadanía y funcionarios.
 - Falta de rendición de cuentas (Ejecutivo, Legislativo, Judicial).
 
----
+- ---
+
 
 ## Enfoque y Estructura del Libro
 
@@ -83,7 +92,8 @@ lang: es
 - **Advertencia:** No es un "manual". La gestión pública no es "manualizable".
 - **Definición gestión pública:** Arte de navegar en aguas turbulentas (políticas, técnicas, comunicacionales) para producir valor público.
 
----
+- ---
+
 
 ## Conceptos Generales: El Estado
 
@@ -94,14 +104,16 @@ lang: es
 - Causa de surgimiento: necesidad de estructuras de poder y normas en urbes para regular relaciones y conflictos.
 - Factores habilitantes: registro del tiempo, escritura, números, contabilidad, geomensura, fuerzas armadas, tributos, especialización del trabajo, comercio.
 
-**Consecuencias del progreso:**
+- **Consecuencias del progreso:**
+
 - Organizaciones colectivas más poderosas y eficientes.
 - Sacrificio de salud y libertad individual (hacinamiento, dietas monótonas).
 - Exterminio o absorción de tribus cazadoras-recolectoras.
 
 ### Funciones Esenciales del Estado
 
-Las funciones esenciales prácticamente no han variado históricamente:
+- Las funciones esenciales prácticamente no han variado históricamente:
+
 
 | # | Poder | Función |
 |---|-------|---------|
@@ -116,7 +128,8 @@ Las funciones esenciales prácticamente no han variado históricamente:
 
 ### Herramientas de Intervención Estatal
 
-Metáfora: "Sermones, zanahorias y garrotes".
+- Metáfora: "Sermones, zanahorias y garrotes".
+
 
 | Herramienta | Mecanismo | Ejemplo | Nivel de Intervención |
 |-------------|-----------|---------|----------------------|
@@ -129,14 +142,17 @@ Metáfora: "Sermones, zanahorias y garrotes".
 
 ### El Ciclo Ideal de Acción del Estado
 
-**Diagrama esencial:** Política Pública → Gestión → Recursos → Resultados
+- **Diagrama esencial:** Política Pública → Gestión → Recursos → Resultados
 
-**Flujo básico:**
+
+- **Flujo básico:**
+
 1. Política pública debe ser gestionada para implementarse (en servicios públicos).
 2. Gestión requiere recursos (asignados por Min. Hacienda/Finanzas).
 3. Gestión produce resultados (buenos, regulares, malos; corto/largo plazo).
 
-**Retroalimentación ideal:**
+- **Retroalimentación ideal:**
+
 - Resultados deben ser evaluados.
 - Evaluación debe retroalimentar y modificar: asignación de recursos, definición de políticas, gestión de las agencias.
 - **Obstáculo real:** restricciones políticas o electorales a menudo impiden este ciclo ideal.
@@ -156,9 +172,11 @@ Metáfora: "Sermones, zanahorias y garrotes".
 
 ### Frontera Difusa: Política, Políticas Públicas y Gestión
 
-Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
+- Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 
-**Incentivos de actores:**
+
+- **Incentivos de actores:**
+
 
 | Actor | Interés | Foco temporal |
 |-------|---------|---------------|
@@ -182,12 +200,14 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - **Respuesta del director:** "¿Por qué nadie me había informado?!… ¡Llamen a la jefa de prensa!"
 - **Resultado:** Al día siguiente, el nuevo proceso estaba implementándose.
 
-**Moralejas:**
+- **Moralejas:**
+
 1. Entender incentivos/motivaciones del otro.
 2. En organizaciones públicas verticales: lo que el jefe ordena, se hace; lo que NO ordena explícitamente, NO se hace.
 3. El rol del técnico es NO salir en la foto.
 
----
+- ---
+
 
 ## Ciclo de Construcción de Políticas Públicas
 
@@ -200,7 +220,8 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - **Concepto:** Formulación de políticas es una interacción/fricción continua entre coaliciones ideológicas.
 - **Actores-coalición:** Informales, de diversas instituciones (públicas, privadas, académicas, partidos, etc.) que comparten creencias y buscan modificar reglas.
 
-**Premisas del modelo:**
+- **Premisas del modelo:**
+
 1. **Perspectiva temporal:** Cambio en políticas públicas requiere una década o más (salvo casos revolucionarios/crisis). La evidencia científica horada convicciones lentamente.
 2. **Sistemas de creencias:** Políticas/programas son análogos a sistemas de creencias. Coaliciones difícilmente modifican valores fundamentales, pero pueden negociar variables secundarias.
 
@@ -208,7 +229,8 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - Fricción común: más vs. menos intervención estatal.
 - Rol del directivo público: moverse con cautela e inteligencia en esta frontera difusa para lograr resultados políticamente atractivos y modernizar la gestión.
 
----
+- ---
+
 
 ## Problemas Simples vs. Problemas Tortuosos (Wicked Problems)
 
@@ -223,7 +245,8 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - **Error común:** Dar soluciones simplistas a problemas tortuosos (ej. endurecer penas como única solución a la delincuencia).
 - **Requisito del directivo público:** Si enfrenta un problema wicked, debe invertir >50% de su tiempo en coordinación y negociación con otros servicios y ministerios.
 
----
+- ---
+
 
 ## El Estado Weberiano Tradicional
 
@@ -250,7 +273,8 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 
 - **Crítica Latam:** Incumplimiento de principios 4 y 8 ha provocado que el resto no funcione bien. Muchas burocracias son pre-weberianas.
 
----
+- ---
+
 
 ## Teoría del Agente-Principal y sus Fallas
 
@@ -258,7 +282,8 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - **Problema de agencia:** Dueños tienen menos información que ejecutivos.
 - **Solución privada:** Convenios de desempeño, incentivos monetarios, sistemas de control.
 
-**Aplicación mecanicista al sector público:**
+- **Aplicación mecanicista al sector público:**
+
 
 | Rol | Actor |
 |-----|-------|
@@ -266,14 +291,16 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 | Agente | Directivo público |
 | Resultado | Diseño de convenios de desempeño, incentivos, indicadores |
 
-**Fallas del modelo:**
+- **Fallas del modelo:**
+
 - a) "Dueños" (ciudadanos, stakeholders) son muchos y con intereses divergentes.
 - b) Directivos dependen de otras entidades sobre las que no tienen control.
 - c) Muchos indicadores son difíciles de medir.
 - d) Incentivos monetarios, consecuentemente, son poco útiles.
 - **Conclusión:** No tirar todo a la basura, pero se requiere más flexibilidad para la gobernanza pública.
 
----
+- ---
+
 
 ## El Estado en Red y Ciudadano-céntrico
 
@@ -281,16 +308,19 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - Cambio de paradigma: hacia mayor flexibilidad, innovación, polifuncionalidad, participación, operación en redes.
 - **Problema modelo tradicional:** Burocracias jerárquicas de "comando y control" no resuelven problemas complejos que trascienden fronteras organizacionales.
 
-**Nuevo modelo:**
+- **Nuevo modelo:**
+
 - Responsabilidad directivos: organizar recursos que frecuentemente pertenecen a otros para producir valor público.
 - Estructura: malla multiorganizacional y multisectorial, similar a una red de computadores.
 - Redes clave: "público-públicas" y "público-privadas".
 - Coproducción de servicios entre sector público y privado.
 - Propósito: servir a los ciudadanos, no a los funcionarios.
 
-**Problema Latam:** Falta de comunicación y coordinación (Estado en "anti-red") y desconfianzas público-privadas son estructurales.
+- **Problema Latam:** Falta de comunicación y coordinación (Estado en "anti-red") y desconfianzas público-privadas son estructurales.
 
-**Desafío del directivo:** Migrar del Estado weberiano al Estado en red (tecnologías de información son cruciales).
+
+- **Desafío del directivo:** Migrar del Estado weberiano al Estado en red (tecnologías de información son cruciales).
+
 
 ### Paradigma Ciudadano-céntrico
 
@@ -298,14 +328,17 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - **Ej. servicio-céntrico:** Trámite de una herencia; heredero debe transitar por múltiples servicios públicos obteniendo certificados de información que el Estado ya posee.
 - **Definición Estado ciudadano-céntrico:** Aquel donde el ciudadano no necesita ir a ventanillas, pues trámites están pre-elaborados o entidades interoperan en línea.
 
-**Caso exitoso: Servicio de Impuestos Internos de Chile (años 90)**
+- **Caso exitoso:
+- Servicio de Impuestos Internos de Chile (años 90)**
+
 - Mecanismo: obligó a empleadores/instituciones financieras a declarar anualmente; interconectó sistemas.
 - Resultado: SII dispone de casi toda la información de ingresos; ciudadano solo verifica en línea su declaración pre-elaborada.
 - Beneficios: ahorro de tiempo para ciudadano, disminución de evasión tributaria para el Estado.
 - Clave del éxito: tecnologías de información no como soporte, sino como eje estratégico de la transformación.
 - **Conclusión:** No hay mejoras significativas de gestión pública en el s.XXI sin tecnologías de información a nivel estratégico.
 
----
+- ---
+
 
 ## Conceptos Generales: Gestión Pública
 
@@ -330,7 +363,8 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 - **Ejemplo:** Servicio hipotético "Serproc" (Servicio de Protección al Consumidor).
 - **Stakeholders:** Ministro de Comercio, Viceministro, Min. Finanzas, Parlamentarios, Asociaciones de Consumidores, Gremios Empresariales, Gremio de funcionarios, Medios de Prensa.
 
-**Interpretación del mapa:**
+- **Interpretación del mapa:**
+
 - Flechas gruesas oscuras: relaciones frecuentes y constructivas.
 - Flechas gruesas punteadas: relaciones intensas pero conflictivas.
 - Flechas delgadas: relaciones infrecuentes.
@@ -338,9 +372,13 @@ Fuerte interacción y superposición entre `politics`, `policy` y `gestión`.
 
 ### Enfoque Tridimensional y Balance de Tiempos
 
-Referencia: Hill y Lynn, "Public Management: A Three-Dimensional Approach".
+- Referencia:
+- Hill y Lynn, "Public Management:
+- A Three-Dimensional Approach".
 
-**Dimensiones de la gestión pública:**
+
+- **Dimensiones de la gestión pública:**
+
 
 | # | Dimensión | Descripción |
 |---|-----------|-------------|
@@ -351,7 +389,8 @@ Referencia: Hill y Lynn, "Public Management: A Three-Dimensional Approach".
 - Requisito del directivo: balancear constantemente las tres dimensiones.
 - **Dilema de tiempos:** Conjugar tiempos técnicos vs. tiempos políticos.
 
-**Ejemplo ERP:**
+- **Ejemplo ERP:**
+
 - Problema: desorden administrativo en organización con 1.200 funcionarios en 15 provincias.
 - Solución técnica: instalar un software ERP.
 - Tiempo técnico de implementación: 3-4 años.
@@ -359,11 +398,14 @@ Referencia: Hill y Lynn, "Public Management: A Three-Dimensional Approach".
 - Resultado: Ministro no tendrá entusiasmo en aprobar/financiar la reforma.
 - **Lección:** Directivos deben calibrar ventanas de oportunidad cronológica y diseñar reformas congruentes. Tener programas de mejora listos, a la espera de detonantes (ej. crisis políticas).
 
----
+- ---
+
 
 ## Instituciones Excelentes vs. Mediocres
 
-Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors".
+- Referencia:
+- Jim Collins, "Good to Great" y "Good to Great and the Social Sectors".
+
 
 - Empresas excelentes se parecen más a instituciones públicas excelentes que a empresas mediocres.
 - "Aroma a excelencia" y "aroma a mediocridad" permean ambos sectores.
@@ -380,7 +422,8 @@ Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors
 
 - **Mala marca pública:** Ciudadanos no recurren a servicios, buenos profesionales no quieren trabajar ahí, no se asignan recursos.
 
----
+- ---
+
 
 ## El Arte de Navegar en la Complejidad
 
@@ -396,16 +439,19 @@ Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors
 - **Ejemplo de error mecanicista:** Creer que cambios de estructura resuelven problemas por sí solos.
 - **Pattern Recognition:** Habilidad para ver patrones (diseños) que dan forma a problemas y soluciones.
 
-**Metáfora cerebral:**
+- **Metáfora cerebral:**
+
 - Hemisferio izquierdo: racional, analítico.
 - Hemisferio derecho: intuitivo, ve patterns.
 - Crítica a informes de consultoría: a menudo son mecanicistas, llenos de datos, pero no distinguen causas de síntomas, no ven los patterns.
 
-**Referencias:**
+- **Referencias:**
+
 - "The Divided Brain" (Iain McGilchrist).
 - "Drive" (Dan Pink) — sobre por qué incentivos mecanicistas no funcionan.
 
-**Notas sobre sistemas complejos:**
+- **Notas sobre sistemas complejos:**
+
 - Reconoce autoorganización de las partes de un sistema.
 - Permite diseños de "anarquía controlada".
 
@@ -419,7 +465,8 @@ Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors
 6. Mantener conexión continua con clientes internos y externos.
 7. Contemplar posibilidad de imprevistos y escoger la opción "menos mala".
 
----
+- ---
+
 
 ## El Martillo y los Clavos
 
@@ -427,13 +474,15 @@ Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors
 - **Ejemplos de herramientas:** Talleres de equipo, balanced scorecard, reingeniería, ERP, ISO 9000, etc.
 - **Riesgo:** Enamorarse del método más que del resultado.
 
-**Recomendaciones:**
+- **Recomendaciones:**
+
 1. Diagnóstico analítico integral (hemisferio izquierdo).
 2. Síntesis de problemas fundamentales (hemisferio derecho).
 3. Decidir qué herramientas usar, cuándo y en qué secuencia.
 4. Contar con un equipo que complemente las debilidades del directivo.
 
----
+- ---
+
 
 ## La Insularidad en el Sector Público
 
@@ -441,7 +490,8 @@ Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors
 - **Prevalencia:** Patología más frecuente del sector público (>95% de organizaciones en la región).
 - **Analogía:** Como la diabetes; crónica, sin cura, pero controlable.
 
-**Causas de la insularidad:**
+- **Causas de la insularidad:**
+
 
 | Causa | Descripción |
 |-------|-------------|
@@ -451,11 +501,13 @@ Referencia: Jim Collins, "Good to Great" y "Good to Great and the Social Sectors
 
 - **Paliativo sugerido:** Reuniones semanales de coordinación efectivas, con seguimiento riguroso de compromisos.
 
----
+- ---
+
 
 ## Las 18 Dimensiones de la Gestión
 
-Marco para comprender y diagnosticar cualquier organización.
+- Marco para comprender y diagnosticar cualquier organización.
+
 
 | # | Dimensión |
 |---|-----------|
@@ -478,18 +530,21 @@ Marco para comprender y diagnosticar cualquier organización.
 | 17 | Mecanismos de aprendizaje institucional |
 | 18 | Stock de liderazgo (líderes positivos, regulares, manzanas podridas) |
 
-**Metodología de diagnóstico:**
+- **Metodología de diagnóstico:**
+
 1. Vuelo a gran altura (fotos con poco detalle, encuestas de opinión).
 2. Identificar áreas complicadas.
 3. Hacer vuelos más rasantes (indagar con mayor profundidad) en esas áreas.
 
----
+- ---
+
 
 ## Patologías Frecuentes en Servicios Públicos
 
 - Diagrama de epidemiología de servicios públicos; cada patología incide o agrava otra.
 
-**Agrupaciones:**
+- **Agrupaciones:**
+
 - Entorno externo: 5 patologías.
 - Personas: 7 patologías.
 - Procesos y estrategias: 7 patologías.
@@ -500,7 +555,8 @@ Marco para comprender y diagnosticar cualquier organización.
 
 - Lo que debiera ser "normal" (hacer bien el trabajo) es "anormal" en el sector público.
 
-**Factor clave de éxito — directivos excelentes:**
+- **Factor clave de éxito — directivos excelentes:**
+
 - Sabían técnicamente de su oficio.
 - Tenían competencias de liderazgo.
 - Formaron una generación de recambio.
@@ -508,11 +564,13 @@ Marco para comprender y diagnosticar cualquier organización.
 
 - **Riesgo de continuidad:** Un solo mal director puede desmoronar décadas de avance.
 
-**Factor institucional clave:**
+- **Factor institucional clave:**
+
 - Necesidad de ministros y autoridades que entiendan que cargos de gerencia pública no son para reparto clientelar.
 - Importancia de desarrollar servicios civiles (ej. Chile) para concursar y seleccionar cargos directivos.
 
----
+- ---
+
 
 ## El Directivo Público: Intraemprendedor del Estado
 
@@ -530,7 +588,8 @@ Marco para comprender y diagnosticar cualquier organización.
 | Segundo Desafío | N/A | Evaluar 21 directivos (regionales/centrales) sin conocimiento previo, por mandato legal |
 | Resultado | Preparación sólida; rol complejo | Fuerte estrés |
 
----
+- ---
+
 
 ## La Buena Gestión: ¿Arte, Ciencia o Artesanía?
 
@@ -538,7 +597,8 @@ Marco para comprender y diagnosticar cualquier organización.
 
 ### Modelo de Mintzberg (Managers, not MBAs)
 
-**Definición de buena gerencia:** Balance entre 3 ámbitos:
+- **Definición de buena gerencia:** Balance entre 3 ámbitos:
+
 
 | Ámbito | Descripción |
 |--------|-------------|
@@ -582,11 +642,14 @@ Marco para comprender y diagnosticar cualquier organización.
 4. Deliberación pública y liderazgo.
 5. Marketing público.
 
----
+- ---
+
 
 ## Perfil Deseable del Directivo Público
 
-Fuente: Sistema de Alta Dirección Pública de Chile.
+- Fuente:
+- Sistema de Alta Dirección Pública de Chile.
+
 
 ### Atributos del Perfil
 
@@ -621,7 +684,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 
 - **Driver principal:** Significación e impacto de la labor.
 
----
+- ---
+
 
 ## Habilidades de Interfaz con el Sistema Político
 
@@ -636,7 +700,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 
 - A pesar de las dificultades, el impacto positivo en millones de personas es una gran recompensa.
 
----
+- ---
+
 
 ## Estilos de Liderazgo
 
@@ -656,7 +721,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 | Incendio | Autoritario, da órdenes |
 | Desarrollo estable | Participativo, coach/facilitador |
 
----
+- ---
+
 
 ## Los Intraemprendedores del Estado
 
@@ -672,7 +738,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 - **Desenlace:** Artaza fue reinstalado, luego nombrado ministro, y la ley que impulsó legalizó sus acciones previas (asumir riesgos para innovar).
 - **Conclusión:** La densidad de intraemprendedores define el ritmo de modernización de un país.
 
----
+- ---
+
 
 ## Mapa Rutero de la Modernización Institucional
 
@@ -697,7 +764,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 
 - **Objetivo:** Asegurar capacidades cruciales para operar como buena organización del s. XX.
 
-**Capacidades requeridas (no necesariamente organigrama):**
+- **Capacidades requeridas (no necesariamente organigrama):**
+
 - Unidad de control de gestión del desempeño y probidad.
 - Excelente unidad de RRHH/gestión de personas.
 - Buena capacidad de gestión de administración, presupuesto, finanzas y jurídico.
@@ -724,7 +792,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 - Actividades cuidadosamente administradas y supervisadas por autoridades superiores.
 - **Advertencia:** No darle la importancia adecuada garantiza el fracaso.
 
-**Actividades clave:**
+- **Actividades clave:**
+
 - Comunicación, diálogo, consulta, encuestas, capacitación.
 - Sondeo y comunicación con stakeholders externos y usuarios.
 
@@ -738,7 +807,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 
 - **Factor clave de éxito:** Adecuada gestión del componente "personas" disminuye fracaso a 20-30%.
 
----
+- ---
+
 
 ## Diagnóstico Institucional
 
@@ -754,7 +824,8 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 
 - **Requisito previo:** Tener claros objetivos, plazos, y preguntas clave.
 
-**Objetivos posibles:**
+- **Objetivos posibles:**
+
 - Entender cómo funciona la organización.
 - Entender relaciones laborales.
 - Dar un salto en valor público.
@@ -765,19 +836,24 @@ Fuente: Sistema de Alta Dirección Pública de Chile.
 - **Plazo típico:** Un par de meses (a veces semanas/días).
 - **Entregable:** Relato sintético, elocuente y documentado para presentar a autoridades.
 
----
+- ---
+
 
 ## Metodología de Diagnóstico Rápido y Útil
 
-Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
+- Fuente:
+- Centro de Sistemas Públicos (CSP), U. de Chile.
 
-**Advertencia:** Método depende de la calidad de su aplicación y del sentido común.
+
+- **Advertencia:** Método depende de la calidad de su aplicación y del sentido común.
+
 
 ### Paso 1: Definir Preguntas Clave
 
 - Regla: no hay buen diagnóstico sin preguntas relevantes y claras.
 
-**Preguntas generales:**
+- **Preguntas generales:**
+
 - ¿Mandato formal vs. valor público esperado?
 - ¿Expectativas de usuarios y stakeholders?
 - ¿Tendencias del entorno?
@@ -793,7 +869,8 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 - Equipo: interno, externo o mixto (interno mejora apropiación).
 - Criterio: de lo general a lo particular.
 
-**Fuentes secundarias:**
+- **Fuentes secundarias:**
+
 - Lecturas básicas: leyes, reglamentos.
 - Lecturas especializadas: estudios técnicos, consultorías.
 - Informes de auditorías.
@@ -807,7 +884,8 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 - **Herramienta:** Modelo de negocio Canvas (Osterwalder).
 - **Método de trabajo:** Imprimir esquema grande, usar post-its, trabajo en equipo.
 
-**Componentes Canvas:**
+- **Componentes Canvas:**
+
 
 | # | Componente |
 |---|-----------|
@@ -827,7 +905,8 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 - **Propósito:** Capturar percepciones de funcionarios, directivos y actores clave.
 - **Instrumento:** Conjunto de afirmaciones positivas, evaluadas en escala Likert.
 
-**Ámbitos del instrumento:**
+- **Ámbitos del instrumento:**
+
 - Estratégicos e institucionales.
 - Liderazgo, coordinación, estructura.
 - Procesos sustantivos y atención al usuario.
@@ -855,7 +934,8 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 
 - **Formato recomendado:** Presentación ejecutiva en láminas (fuerza la síntesis).
 
-**Secciones recomendadas:**
+- **Secciones recomendadas:**
+
 - Antecedentes descriptivos.
 - Hallazgos (fuentes secundarias y primarias).
 - Modelo de agregación de valor y mapa de stakeholders.
@@ -871,13 +951,15 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 - Síntesis de conclusiones simplista o mecanicista.
 - Inadecuada presentación o comunicación final.
 
----
+- ---
+
 
 ## Gestión Estratégica
 
 - **Propósito:** Fijar dirección y ruta para la toma de decisiones; poner al ciudadano al centro.
 
-**Precaución principal:**
+- **Precaución principal:**
+
 - Problema: planificación estratégica a menudo es un ejercicio mecánico y burocrático (Misión-Visión-FODA) para cumplir con organismos de control.
 - Realidad: llenar formularios no es estrategia; el plan ("mamotreto") queda guardado sin uso.
 - **Requisito verdadero:** Comprometer a la organización, asignar recursos, lograr transformaciones y construir valor público.
@@ -892,12 +974,14 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 | Control | Medición del logro vs. lo planificado para determinar desviaciones y retroalimentar |
 | Estrategia | Conjunto de lineamientos amplios y sostenidos de acción |
 
-**Características de la estrategia:**
+- **Características de la estrategia:**
+
 - a) Apunta al sentido de existencia institucional.
 - b) Abarca toda la organización.
 - c) Largo plazo.
 
-**Componentes de la estrategia:** Acciones, instrumentos de acción (sermones, zanahorias, garrotes) y la propuesta de valor público.
+- **Componentes de la estrategia:** Acciones, instrumentos de acción (sermones, zanahorias, garrotes) y la propuesta de valor público.
+
 
 - **Foco primario:** Creación de valor público para el ciudadano.
 
@@ -908,7 +992,8 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 - Valor público va más allá de preferencias individuales.
 - **Incluye:** Libertades fundamentales, derechos humanos, medio ambiente, calidad de vida, capabilities, valores morales compartidos, interés de futuras generaciones.
 
-**Definiciones clave:**
+- **Definiciones clave:**
+
 
 | Concepto | Definición | Autor |
 |----------|-----------|-------|
@@ -921,7 +1006,8 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 - Valor público, interés público y valores públicos deben definirse políticamente.
 - **Herramienta de definición:** Triángulo estratégico de Moore.
 
----
+- ---
+
 
 ## Arquitectura Organizacional
 
@@ -931,7 +1017,9 @@ Fuente: Centro de Sistemas Públicos (CSP), U. de Chile.
 
 ### Metodología de Diseño de Arquitectura
 
-Fuente: CSP, U. de Chile.
+- Fuente:
+- CSP, U. de Chile.
+
 
 - **Criterio de secuencia:** El diseño debe ser secuencial para asegurar alineamiento.
 
@@ -966,7 +1054,8 @@ Fuente: CSP, U. de Chile.
 5. Facilitar la coordinación lateral (romper silos).
 6. Adaptabilidad al cambio.
 
----
+- ---
+
 
 ## Control de Gestión del Desempeño
 
@@ -980,7 +1069,8 @@ Fuente: CSP, U. de Chile.
 
 ### Sistemas de Control de Gestión (SCG)
 
-**Componentes clave:**
+- **Componentes clave:**
+
 
 | # | Componente |
 |---|-----------|
@@ -1002,14 +1092,16 @@ Fuente: CSP, U. de Chile.
 | Procesos Internos | ¿En qué procesos debemos ser excelentes? |
 | Aprendizaje y Crecimiento | ¿Cómo podemos seguir mejorando y creando valor? |
 
-**Errores comunes en control de gestión:**
+- **Errores comunes en control de gestión:**
+
 - Tener demasiados indicadores (parálisis).
 - Indicadores mal definidos (fácilmente manipulables).
 - Falta de datos confiables y oportunos.
 - No usar la información para la toma de decisiones (ejercicio burocrático).
 - Focalizarse solo en output (cuánto hicimos) y no en outcome (qué impacto logramos).
 
----
+- ---
+
 
 ## Corrupción y Probidad
 
@@ -1027,7 +1119,8 @@ Fuente: CSP, U. de Chile.
 | 4 | Malversación de fondos públicos |
 | 5 | Falta de transparencia y rendición de cuentas |
 
-**Factores que fomentan la corrupción:**
+- **Factores que fomentan la corrupción:**
+
 - Altas cuotas de discrecionalidad en la toma de decisiones.
 - Bajos niveles de control y sanción.
 - Bajos salarios y falta de carrera funcionaria meritocrática.
@@ -1044,7 +1137,8 @@ Fuente: CSP, U. de Chile.
 | 5 | Códigos de ética y capacitación en valores públicos |
 | 6 | Selección de personal basada en mérito (ADP) |
 
----
+- ---
+
 
 ## Gestión de Personas
 
@@ -1063,20 +1157,23 @@ Fuente: CSP, U. de Chile.
 | 5 — Capacitación y Desarrollo | Mejorar competencias para desafíos actuales y futuros |
 | 6 — Gestión de Relaciones Laborales | Diálogo constructivo con gremios y asociaciones |
 
-**Factores críticos de éxito:**
+- **Factores críticos de éxito:**
+
 - Liderazgo directivo comprometido con las personas.
 - Sistemas de evaluación de desempeño realistas y útiles (no solo para cumplir).
 - Clima organizacional saludable y de confianza.
 - Reconocimiento no monetario y sentido de propósito.
 
----
+- ---
+
 
 ## Gestión de Riesgos Institucionales
 
 - **Propósito:** Identificar, evaluar y mitigar eventos que puedan impedir el logro de los objetivos.
 - **Criterio:** Enfoque preventivo vs. reactivo.
 
-**Tipos de riesgos en el sector público:**
+- **Tipos de riesgos en el sector público:**
+
 
 | # | Tipo |
 |---|------|
@@ -1087,7 +1184,8 @@ Fuente: CSP, U. de Chile.
 | 5 | Riesgos Reputacionales y de RR.PP. |
 | 6 | Riesgos Políticos (cambios de autoridad, prioridades) |
 
-**Metodología básica de gestión de riesgos:**
+- **Metodología básica de gestión de riesgos:**
+
 
 | # | Paso |
 |---|------|
@@ -1096,7 +1194,8 @@ Fuente: CSP, U. de Chile.
 | 3 | Definición de Medidas de Mitigación (Evitar, Reducir, Transferir, Aceptar) |
 | 4 | Monitoreo y Seguimiento (Matriz de Riesgos) |
 
----
+- ---
+
 
 ## Transformación Digital
 
@@ -1117,13 +1216,15 @@ Fuente: CSP, U. de Chile.
 | 4 — Arquitectura de Datos | Uso de Big Data e IA para predecir necesidades y detectar anomalías |
 | 5 — Seguridad de la Información | Ciberseguridad como prioridad absoluta |
 
-**Factores críticos de éxito:**
+- **Factores críticos de éxito:**
+
 - Liderazgo directivo que entienda la tecnología.
 - Gestión del cambio cultural (resistencia de funcionarios).
 - Capacidad técnica interna o externalización estratégica bien gestionada.
 - Enfoque en la experiencia del usuario (UX).
 
----
+- ---
+
 
 ## Gestión de Procesos y Servicios al Usuario
 
@@ -1138,46 +1239,53 @@ Fuente: CSP, U. de Chile.
 | Rediseño de Procesos | Repensar el proceso de punta a punta; no solo "pavimentar el camino de vacas" (digitalizar procesos malos) |
 | Medición de Satisfacción Usuaria | Encuestas, buzones de sugerencias, Focus Groups, Mystery Shopper |
 
-**Atributos de un buen servicio:**
+- **Atributos de un buen servicio:**
+
 - Simplicidad y claridad en la información.
 - Rapidez y oportunidad en la entrega.
 - Trato amable y profesional.
 - Resolutividad (que el problema se solucione efectivamente).
 - Transparencia en el estado del trámite.
 
----
+- ---
+
 
 ## Innovación Pública
 
 - **Propósito:** Generar nuevas y mejores formas de crear valor público.
 - **Concepto:** No es solo tecnología; es cambio en procesos, servicios, alianzas, o formas de intervención.
 
-**Ecosistema de innovación:**
+- **Ecosistema de innovación:**
+
 - Laboratorios de Gobierno.
 - Concursos de innovación interna.
 - Uso de Design Thinking y metodologías ágiles.
 - Colaboración con sector privado y academia.
 
-**Barreras a la innovación en el Estado:**
+- **Barreras a la innovación en el Estado:**
+
 - Aversión al riesgo y miedo al castigo por fallar.
 - Rigideces presupuestarias y legales.
 - Cultura de "siempre se ha hecho así".
 - Falta de incentivos para innovar.
 
-**Habilitantes de la innovación:**
+- **Habilitantes de la innovación:**
+
 - Liderazgo que respalda la experimentación.
 - Presupuesto y tiempo dedicado a proyectos de innovación.
 - Capacidad técnica para prototipar y pilotear.
 - Reconocimiento de los innovadores públicos.
 
----
+- ---
+
 
 ## Gestión de Proyectos
 
 - **Propósito:** Asegurar que las iniciativas de cambio se ejecuten en tiempo, costo y calidad.
 - **Importancia:** La mayoría de las modernizaciones fracasan por mala ejecución, no por mal diseño.
 
-**Metodología de gestión de proyectos:**
+- **Metodología de gestión de proyectos:**
+
 
 | # | Paso |
 |---|------|
@@ -1187,17 +1295,20 @@ Fuente: CSP, U. de Chile.
 | 4 | Gestión de Adquisiciones y Contratos |
 | 5 | Cierre y Evaluación de lecciones aprendidas |
 
-**PMO (Project Management Office):**
+- **PMO (Project Management Office):**
+
 - Concepto: Unidad central que estandariza metodologías, apoya a jefes de proyecto y reporta avance a la directiva.
 
----
+- ---
+
 
 ## Gestión del Cambio
 
 - **Propósito:** Acompañar a las personas y a la organización en la transición del estado actual al deseado.
 - **Relevancia:** Es el factor #1 que determina el éxito o fracaso de las transformaciones.
 
-**Estrategias de gestión del cambio:**
+- **Estrategias de gestión del cambio:**
+
 
 | # | Estrategia |
 |---|-----------|
@@ -1208,13 +1319,15 @@ Fuente: CSP, U. de Chile.
 | 5 | Gestión de resistencias (escuchar miedos, mitigar impactos) |
 | 6 | Celebración de "Quick Wins" (logros tempranos) para generar impulso |
 
----
+- ---
+
 
 ## Conclusiones del Arte de la Gestión Pública
 
 - **Mensaje final:** La modernización del Estado es una tarea ética y política de primer orden.
 
-**Síntesis clave:**
+- **Síntesis clave:**
+
 
 | # | Principio |
 |---|-----------|

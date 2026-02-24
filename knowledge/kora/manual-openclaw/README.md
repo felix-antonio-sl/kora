@@ -1,9 +1,26 @@
+---
+_manifest:
+  urn: urn:kora:kb:readme
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- readme
+lang: es
+---
+
 # Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
 
 > Manual técnico orientado a fundamentos y toma de decisiones arquitectónicas.
 > Basado en OpenClaw v2026.2.20 + documentación oficial.
 
----
+- ---
+
 
 ## Parte I — Fundamentos Arquitectónicos
 

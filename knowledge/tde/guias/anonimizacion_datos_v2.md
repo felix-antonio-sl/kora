@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:anonimizacion-datos"
+  urn: urn:tde:kb:anonimizacion-datos
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, datos, privacidad, anonimizacion, chile]
+tags:
+- transformacion-digital
+- datos
+- privacidad
+- anonimizacion
+- chile
+- tde
 lang: es
 ---
 
@@ -46,7 +52,9 @@ lang: es
 5. **Finalización**: evaluación de utilidad y documentación del balance privacidad/utilidad.
 
 ### Uso de Seudónimos
-Sustitución por tokens robustos (aleatorios) sin relación lógica con original. Requiere tabla segura de mapeo para gestión interna permitiendo fusión de datos y análisis sin revelar identidad.
+- Sustitución por tokens robustos (aleatorios) sin relación lógica con original.
+- Requiere tabla segura de mapeo para gestión interna permitiendo fusión de datos y análisis sin revelar identidad.
+
 
 ## Catálogo de Técnicas
 ### Enmascaramiento (Masking)

@@ -1,20 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:docdigital"
+  urn: urn:tde:kb:docdigital
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, docdigital, comunicaciones-oficiales, plataforma-compartida, chile]
+tags:
+- transformacion-digital
+- docdigital
+- comunicaciones-oficiales
+- plataforma-compartida
+- chile
+- tde
 lang: es
 ---
 
 # Plataforma DocDigital: Comunicaciones Oficiales del Estado
 
 ## Definición y Objetivo
-DocDigital es la plataforma compartida para tramitar, enviar y recibir comunicaciones oficiales entre los Órganos de la Administración del Estado (OAE). Provee un canal único que asegura la trazabilidad de oficios, resoluciones y convenios interorgánicos, cumpliendo con los estándares de la Ley 21.180.
+- DocDigital es la plataforma compartida para tramitar, enviar y recibir comunicaciones oficiales entre los Órganos de la Administración del Estado (OAE).
+- Provee un canal único que asegura la trazabilidad de oficios, resoluciones y convenios interorgánicos, cumpliendo con los estándares de la Ley 21.180.
+
 
 ## Obligaciones de Uso
 - **Registro Obligatorio**: todas las comunicaciones oficiales interinstitucionales deben registrarse en DocDigital según el Sistema de Transformación Digital 2025.

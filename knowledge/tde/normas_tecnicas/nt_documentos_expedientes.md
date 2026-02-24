@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:nt-documentos-expedientes"
+  urn: urn:tde:kb:nt-documentos-expedientes
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, norma-tecnica, gestion-documental, expediente-electronico, ley-21180, chile]
+tags:
+- transformacion-digital
+- norma-tecnica
+- gestion-documental
+- expediente-electronico
+- ley-21180
+- chile
+- tde
 lang: es
 ---
 
 # Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)
 
 ## Objeto y Ámbito
-Establece estándares, formatos, metadatos y procesos para la gestión de documentos y expedientes electrónicos en los Órganos de la Administración del Estado (OAE). Aplica a todos los procedimientos administrativos regidos por la Ley 19.880 y la Ley 21.180 (Transformación Digital).
+- Establece estándares, formatos, metadatos y procesos para la gestión de documentos y expedientes electrónicos en los Órganos de la Administración del Estado (OAE).
+- Aplica a todos los procedimientos administrativos regidos por la Ley 19.880 y la Ley 21.180 (Transformación Digital).
+
 
 ## Definiciones Principales
 - **Expediente Electrónico**: unidad documental con identificador único (IUIe), estructurada por índices, documentos, metadatos y registros de trazabilidad.
@@ -24,7 +33,8 @@ Establece estándares, formatos, metadatos y procesos para la gestión de docume
 - **Expediente Híbrido**: registro que combina actuaciones en soporte electrónico y papel (referenciado).
 
 ## Modelo de Gestión Documental
-Cada OAE debe implementar una **Política de Gestión Documental** (revisión cada 1-3 años) que incluya:
+- Cada OAE debe implementar una **Política de Gestión Documental** (revisión cada 1-3 años) que incluya:
+
 - Estructura institucional de almacenamiento (plataformas y repositorios).
 - Roles responsables y gobernanza interna.
 - Lineamientos de preservación y resguardo.

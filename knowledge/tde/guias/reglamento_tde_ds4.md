@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:reglamento-ds4"
+  urn: urn:tde:kb:reglamento-ds4
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, reglamento, ds4, procedimientos-administrativos, chile]
+tags:
+- transformacion-digital
+- reglamento
+- ds4
+- procedimientos-administrativos
+- chile
+- tde
 lang: es
 ---
 
 # Reglamento de Transformación Digital del Estado (DS 4)
 
 ## Objeto y Ámbito de Aplicación
-Regula la forma en que los procedimientos administrativos deben expresarse electrónicamente (Ley 21.180). Cubre presentación de documentos, expedientes electrónicos, notificaciones, Domicilio Digital Único (DDU) e interoperabilidad. Basado en principios de neutralidad tecnológica, equivalencia funcional, fidelidad y cooperación.
+- Regula la forma en que los procedimientos administrativos deben expresarse electrónicamente (Ley 21.180).
+- Cubre presentación de documentos, expedientes electrónicos, notificaciones, Domicilio Digital Único (DDU) e interoperabilidad.
+- Basado en principios de neutralidad tecnológica, equivalencia funcional, fidelidad y cooperación.
+
 
 ## Expediente Electrónico
 - **Obligatoriedad**: todo procedimiento debe constar en expediente electrónico (salvo excepciones legales).
@@ -35,7 +44,8 @@ Regula la forma en que los procedimientos administrativos deben expresarse elect
 - **Casilla Única**: asignada a toda persona con RUN/RUT para acceso a notificaciones del Estado.
 
 ## Excepciones al Soporte Electrónico
-Personas pueden solicitar notificación y presentación en papel si carecen de medios tecnológicos:
+- Personas pueden solicitar notificación y presentación en papel si carecen de medios tecnológicos:
+
 - **Criterios de Acreditación**:
     - Hogares en el 40% más vulnerable.
     - Localidades en condiciones de aislamiento (según SUBDERE).
@@ -55,7 +65,8 @@ Personas pueden solicitar notificación y presentación en papel si carecen de m
 - **Mejora Continua**: medición anual de estándares y planes de acción informados a la autoridad rectora (SGD).
 
 ## Normas Técnicas Mandatadas
-El reglamento establece la dictación de seis normas técnicas específicas:
+- El reglamento establece la dictación de seis normas técnicas específicas:
+
 1. Interoperabilidad.
 2. Seguridad y Ciberseguridad.
 3. Documentos y Expedientes Electrónicos.

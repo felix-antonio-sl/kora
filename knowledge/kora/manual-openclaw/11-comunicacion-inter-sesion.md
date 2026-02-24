@@ -1,8 +1,27 @@
+---
+_manifest:
+  urn: urn:kora:kb:11-comunicacion-inter-sesion
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '11'
+- comunicacion
+- inter
+lang: es
+---
+
 # Capítulo 11 — Comunicación Inter-Sesión
 
 > **Propósito:** Entender los mecanismos para que sesiones, agentes y procesos externos se comuniquen entre sí dentro de un gateway. Esto completa el toolkit de orquestación: Cap. 9-10 cubren delegación vertical (parent→child), este capítulo cubre comunicación horizontal (sesión↔sesión, agente↔agente, CLI→sesión).
 
----
+- ---
+
 
 ## 11.1 Mapa de Mecanismos
 
@@ -32,13 +51,16 @@
 | Que un agente "work" notifique al agente "main" | agent-to-agent |
 | Trigger externo (cron del OS, script, CI/CD) | `openclaw agent` CLI |
 
----
+- ---
+
 
 ## 11.2 sessions_send: Enviar Mensaje a Otra Sesión
 
 ### Qué hace
 
-Inyecta un mensaje en otra sesión como si fuera un mensaje inbound. Esto **trigger un agent run** en esa sesión.
+- Inyecta un mensaje en otra sesión como si fuera un mensaje inbound.
+- Esto **trigger un agent run** en esa sesión.
+
 
 ```json
 {
@@ -50,7 +72,8 @@ Inyecta un mensaje en otra sesión como si fuera un mensaje inbound. Esto **trig
 }
 ```
 
-O usando label:
+- O usando label:
+
 
 ```json
 {
@@ -69,11 +92,13 @@ O usando label:
 | `sessionKey` | Match exacto del key (e.g., `agent:main:main`) |
 | `label` | Match por label del sub-agente (e.g., `code-review`) |
 
-**Solo uno de los dos.** Si ambos se proporcionan, `sessionKey` tiene precedencia.
+- **Solo uno de los dos.** Si ambos se proporcionan, `sessionKey` tiene precedencia.
+
 
 ### Visibilidad: qué sesiones puedes alcanzar
 
-La visibilidad se controla con `tools.sessions.visibility`:
+- La visibilidad se controla con `tools.sessions.visibility`:
+
 
 | Valor | Sesiones alcanzables |
 |-------|---------------------|
@@ -99,14 +124,18 @@ La visibilidad se controla con `tools.sessions.visibility`:
 
 ### Implicaciones de seguridad
 
-`sessions_send` es poderoso: puede inyectar mensajes en cualquier sesión visible. Un agente comprometido con `visibility: "all"` podría enviar instrucciones a otra sesión.
+- `sessions_send` es poderoso: puede inyectar mensajes en cualquier sesión visible.
+- Un agente comprometido con `visibility: "all"` podría enviar instrucciones a otra sesión.
 
-**Mitigaciones:**
+
+- **Mitigaciones:**
+
 - Default `"tree"` limita a la cadena de sub-agentes
 - Sub-agentes depth 1 (leaf) no tienen `sessions_send` en sus tools
 - `"self"` para agentes de bajo trust
 
----
+- ---
+
 
 ## 11.3 sessions_list: Descubrir Sesiones
 
@@ -150,7 +179,8 @@ La visibilidad se controla con `tools.sessions.visibility`:
 
 ### Uso típico
 
-El agente main usa `sessions_list` para **monitorear** sub-agentes sin polling:
+- El agente main usa `sessions_list` para **monitorear** sub-agentes sin polling:
+
 
 ```
 Agente: "¿Cómo van los sub-agentes?"
@@ -158,15 +188,18 @@ Agente: "¿Cómo van los sub-agentes?"
 → "Hay 2 activos y 1 completado. El completado dice: '...'"
 ```
 
-**No hacer polling.** Los announces son push-based. `sessions_list` es para inspección on-demand, no para busy-waiting.
+- **No hacer polling.** Los announces son push-based. `sessions_list` es para inspección on-demand, no para busy-waiting.
 
----
+
+- ---
+
 
 ## 11.4 sessions_history: Leer Transcripts
 
 ### Qué hace
 
-Lee el historial de mensajes de otra sesión (sujeto a visibilidad).
+- Lee el historial de mensajes de otra sesión (sujeto a visibilidad).
+
 
 ```json
 {
@@ -187,7 +220,8 @@ Lee el historial de mensajes de otra sesión (sujeto a visibilidad).
 
 ### Caso de uso principal
 
-Después de que un sub-agente completa y anuncia un resumen, el main puede querer el **detalle completo**:
+- Después de que un sub-agente completa y anuncia un resumen, el main puede querer el **detalle completo**:
+
 
 ```
 Main recibe announce: "PR revisado. 3 issues."
@@ -195,11 +229,13 @@ Main quiere detalle → sessions_history(subagent_key, includeTools: true)
 → Ve exactamente qué comandos corrió, qué archivos leyó, y los findings detallados
 ```
 
----
+- ---
+
 
 ## 11.5 subagents Tool: Gestión de Sub-Agentes
 
-El tool `subagents` es la interfaz programática para gestionar sub-agentes desde dentro de una sesión.
+- El tool `subagents` es la interfaz programática para gestionar sub-agentes desde dentro de una sesión.
+
 
 ### Acciones
 
@@ -222,7 +258,10 @@ El tool `subagents` es la interfaz programática para gestionar sub-agentes desd
 }
 ```
 
-**Steer inyecta el mensaje en el run activo** del sub-agente. El sub-agente lo ve como un mensaje del "usuario" que aparece durante su ejecución. El comportamiento depende del queue mode:
+- **Steer inyecta el mensaje en el run activo** del sub-agente.
+- El sub-agente lo ve como un mensaje del "usuario" que aparece durante su ejecución.
+- El comportamiento depende del queue mode:
+
 
 - Si el sub-agente está ejecutando tools → el steer se inyecta después del próximo tool boundary
 - Si el sub-agente está generando texto → el steer interrumpe y se procesa
@@ -239,15 +278,20 @@ El tool `subagents` es la interfaz programática para gestionar sub-agentes desd
 }
 ```
 
-`target` puede ser: label, session key, run id, o `"all"`.
+- `target` puede ser: label, session key, run id, o `"all"`.
 
----
+
+- ---
+
 
 ## 11.6 Agent-to-Agent Messaging
 
 ### Concepto
 
-Cuando tienes múltiples agentes (Cap. 6), pueden necesitar comunicarse. Por default, esto está **deshabilitado**:
+- Cuando tienes múltiples agentes (Cap.
+- 6), pueden necesitar comunicarse.
+- Por default, esto está **deshabilitado**:
+
 
 ```json5
 {
@@ -274,7 +318,8 @@ Cuando tienes múltiples agentes (Cap. 6), pueden necesitar comunicarse. Por def
 
 ### Cómo funciona
 
-Un agente usa `sessions_send` con un sessionKey de otro agente:
+- Un agente usa `sessions_send` con un sessionKey de otro agente:
+
 
 ```json
 {
@@ -286,7 +331,8 @@ Un agente usa `sessions_send` con un sessionKey de otro agente:
 }
 ```
 
-Esto trigger un agent run en la sesión main del agente "work".
+- Esto trigger un agent run en la sesión main del agente "work".
+
 
 ### Patrones
 
@@ -301,18 +347,21 @@ Esto trigger un agent run en la sesión main del agente "work".
 - **Prompt injection inter-agente:** Un agente comprometido podría enviar instrucciones maliciosas a otro
 - **Loops:** Agente A envía a B, B responde a A, A envía a B... → loop infinito
 
-**Mitigaciones:**
+- **Mitigaciones:**
+
 - Allowlist tight (solo los agentes que genuinamente necesitan comunicarse)
 - Mantener deshabilitado por default
 - Los agentes que reciben mensajes inter-agente deberían tratar el contenido como input no-confiable (similar a mensajes de grupo)
 
----
+- ---
+
 
 ## 11.7 openclaw agent CLI: Runs Directos
 
 ### Concepto
 
-El comando `openclaw agent` permite trigger un agent run desde la línea de comandos, scripts, cron del OS, o CI/CD — **sin un mensaje inbound de un canal de messaging**.
+- El comando `openclaw agent` permite trigger un agent run desde la línea de comandos, scripts, cron del OS, o CI/CD — **sin un mensaje inbound de un canal de messaging**.
+
 
 ```bash
 # Enviar mensaje a la sesión main
@@ -380,11 +429,13 @@ openclaw agent --message "..."
 | **Delivery** | Opcional (--deliver) | Configurable (announce, webhook, none) |
 | **Model** | Flag --model | Config del job |
 
----
+- ---
+
 
 ## 11.8 Visibilidad: El Modelo de Seguridad
 
-Todos los mecanismos de comunicación inter-sesión están gated por **visibilidad**:
+- Todos los mecanismos de comunicación inter-sesión están gated por **visibilidad**:
+
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -426,7 +477,8 @@ Todos los mecanismos de comunicación inter-sesión están gated por **visibilid
 }
 ```
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -449,6 +501,8 @@ Todos los mecanismos de comunicación inter-sesión están gated por **visibilid
 | **Steer > kill** | Preferir redirección de sub-agentes sobre terminación |
 | **CLI como escape hatch** | `openclaw agent` para integraciones externas sin tocar messaging |
 
----
+- ---
 
-*Siguiente: [Capítulo 12 — Heartbeats](12-heartbeats.md) (Parte IV — Automatización)*
+
+- *Siguiente: [Capítulo 12 — Heartbeats](12-heartbeats.md) (Parte IV — Automatización)*
+

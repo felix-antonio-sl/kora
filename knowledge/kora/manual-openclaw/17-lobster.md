@@ -1,12 +1,31 @@
+---
+_manifest:
+  urn: urn:kora:kb:17-lobster
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '17'
+- lobster
+lang: es
+---
+
 # Capítulo 17 — Lobster (Workflow Runtime)
 
 > **Propósito:** Entender cómo ejecutar pipelines determinísticas multi-paso con approval gates dentro de OpenClaw. Lobster cierra el gap entre "el agente hace todo via tool calls" y "scripts que no necesitan inteligencia": es orquestación determinística con checkpoints humanos, opcionalmente enriquecida con LLM steps.
 
----
+- ---
+
 
 ## 17.1 El Problema que Resuelve
 
-Sin Lobster, un workflow multi-paso requiere múltiples tool calls del modelo:
+- Sin Lobster, un workflow multi-paso requiere múltiples tool calls del modelo:
+
 
 ```
 SIN LOBSTER (múltiples roundtrips):
@@ -51,11 +70,13 @@ Lobster orquesta los pasos.
 | **Reanudabilidad** | Reempezar si se pierde contexto | Resume token persiste |
 | **Auditabilidad** | Hay que leer el transcript | Pipeline es data (log, diff, replay) |
 
----
+- ---
+
 
 ## 17.2 Cómo Funciona
 
-Lobster es un **CLI externo** que OpenClaw invoca como tool:
+- Lobster es un **CLI externo** que OpenClaw invoca como tool:
+
 
 ```
 Agent loop
@@ -93,7 +114,8 @@ Lobster continúa desde el checkpoint:
 Retorna: { status: "ok", output: [...] }
 ```
 
----
+- ---
+
 
 ## 17.3 DSL: Pipelines y Pipes
 
@@ -103,7 +125,9 @@ Retorna: { status: "ok", output: [...] }
 exec --json --shell 'inbox list' | exec --stdin json --shell 'inbox categorize' | approve --prompt 'Apply?'
 ```
 
-Cada `|` conecta stdout de un paso con stdin del siguiente. Es un pipe Unix con approval gates built-in.
+- Cada `|` conecta stdout de un paso con stdin del siguiente.
+- Es un pipe Unix con approval gates built-in.
+
 
 ### Workflow file (.lobster)
 
@@ -139,7 +163,8 @@ steps:
 
 ### Patrón: CLIs pequeños + JSON pipes + approvals
 
-La filosofía de Lobster: construir **CLIs pequeños** que hablan JSON, y conectarlos:
+- La filosofía de Lobster: construir **CLIs pequeños** que hablan JSON, y conectarlos:
+
 
 ```bash
 # Cada CLI hace una cosa y retorna JSON
@@ -152,11 +177,13 @@ email-sender --json --dry-run                      → [{ id, to, subject, statu
 pipeline: "gog.gmail.search | email-classifier | approve --prompt 'Send?' | email-sender"
 ```
 
----
+- ---
+
 
 ## 17.4 Resume Tokens: Pause → Approve → Continue
 
-El approval gate es la feature definitoria de Lobster:
+- El approval gate es la feature definitoria de Lobster:
+
 
 ```
 Pipeline corriendo
@@ -202,13 +229,17 @@ Pipeline termina: { status: "ok" }
 approve --preview-from-stdin --limit 5 --prompt 'Send these drafts?'
 ```
 
-Adjunta las primeras 5 líneas de stdin como preview en la approval request. Así el usuario puede ver qué se va a ejecutar antes de aprobar.
+- Adjunta las primeras 5 líneas de stdin como preview en la approval request.
+- Así el usuario puede ver qué se va a ejecutar antes de aprobar.
 
----
+
+- ---
+
 
 ## 17.5 llm-task: LLM Steps dentro de Workflows
 
-A veces un paso del pipeline necesita **inteligencia** (clasificar, resumir, generar). `llm-task` es un plugin tool que ejecuta un LLM call JSON-only:
+- A veces un paso del pipeline necesita **inteligencia** (clasificar, resumir, generar). `llm-task` es un plugin tool que ejecuta un LLM call JSON-only:
+
 
 ```yaml
 # Dentro de un pipeline Lobster:
@@ -264,11 +295,14 @@ openclaw.invoke --tool llm-task --action json --args-json '{
 - Schema validation: output rechazado si no matchea el schema
 - Tratar output como untrusted a menos que se valide
 
----
+- ---
+
 
 ## 17.6 Integración con Cron y Heartbeat
 
-Lobster no se ejecuta solo — necesita un trigger. Los triggers son cron, heartbeat, o la conversación directa:
+- Lobster no se ejecuta solo — necesita un trigger.
+- Los triggers son cron, heartbeat, o la conversación directa:
+
 
 ```
 TRIGGER                     LOBSTER PIPELINE
@@ -290,9 +324,14 @@ openclaw cron add \
   --announce --channel telegram --to "7192195698"
 ```
 
-El cron job trigger un agent turn. El agente llama lobster. Si hay approval pending, lo anuncia al canal. El usuario aprueba (o no) en su próxima interacción.
+- El cron job trigger un agent turn.
+- El agente llama lobster.
+- Si hay approval pending, lo anuncia al canal.
+- El usuario aprueba (o no) en su próxima interacción.
 
----
+
+- ---
+
 
 ## 17.7 Safety
 
@@ -307,7 +346,8 @@ El cron job trigger un agent turn. El agente llama lobster. Si hay approval pend
 | **Approvals** | Side effects solo con aprobación explícita |
 | **CWD restriction** | `cwd` debe estar dentro del working directory actual |
 
----
+- ---
+
 
 ## 17.8 Tool Parameters
 
@@ -345,11 +385,14 @@ El cron job trigger un agent turn. El agente llama lobster. Si hay approval pend
 }
 ```
 
----
+- ---
+
 
 ## 17.9 Caso de Uso: Second Brain Management
 
-Un ejemplo real de la comunidad: CLI de "second brain" + Lobster pipelines para gestionar 3 vaults Markdown (personal, partner, shared):
+- Un ejemplo real de la comunidad:
+- CLI de "second brain" + Lobster pipelines para gestionar 3 vaults Markdown (personal, partner, shared):
+
 
 ```
 Workflows:
@@ -359,9 +402,11 @@ Workflows:
   shared-task-sync → compare shared vault with partner → APPROVE → sync
 ```
 
-Cada workflow usa CLIs pequeños que emiten JSON, llm-task para juicio cuando se necesita, y approval gates antes de cualquier side effect.
+- Cada workflow usa CLIs pequeños que emiten JSON, llm-task para juicio cuando se necesita, y approval gates antes de cualquier side effect.
 
----
+
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -391,6 +436,8 @@ Cada workflow usa CLIs pequeños que emiten JSON, llm-task para juicio cuando se
                   └── SÍ → LOBSTER
 ```
 
----
+- ---
 
-*Siguiente: [Capítulo 18 — Modelo de Seguridad](18-modelo-seguridad.md) (Parte V — Seguridad y Operaciones)*
+
+- *Siguiente: [Capítulo 18 — Modelo de Seguridad](18-modelo-seguridad.md) (Parte V — Seguridad y Operaciones)*
+

@@ -1,29 +1,41 @@
 ---
 _manifest:
-  urn: "urn:orko:kb:orko-arquitectura"
+  urn: urn:orko:kb:orko-arquitectura
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "ORKO framework documentation"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: ORKO framework documentation
+version: 2.0.0
 status: published
-tags: [arquitectura, contratos, diseño, principios, entidades]
+tags:
+- arquitectura
+- contratos
+- dise-o
+- principios
+- entidades
+- knowledge
 lang: es
 ---
 
 # ORKO - Arquitectura Organizacional (Layer 1)
 
-Operacionalización de los fundamentos teóricos en estructuras, contratos y modelos ejecutables. Contratos canónicos y principios de diseño que operacionalizan el Genoma.
+- Operacionalización de los fundamentos teóricos en estructuras, contratos y modelos ejecutables.
+- Contratos canónicos y principios de diseño que operacionalizan el Genoma.
+
 
 ## Contratos Canónicos (Primitivos Operables)
 
-Especificación OPERABLE de Primitivos P1–P5. Schemas abstractos (Genoma) implementables en tecnología (Fenotipo).
+- Especificación OPERABLE de Primitivos P1–P5.
+- Schemas abstractos (Genoma) implementables en tecnología (Fenotipo).
+
 
 ### C1 - Capacidad
 
-**ID:** ORKO-CON-C1 | **Primitivo Base:** P1
+- **ID:** ORKO-CON-C1 | **Primitivo Base:** P1
 
-**Schema:**
+
+- **Schema:**
+
 
 | Campo | Tipo | Restricción |
 |-------|------|-------------|
@@ -37,18 +49,22 @@ Especificación OPERABLE de Primitivos P1–P5. Schemas abstractos (Genoma) impl
 | delegation_mode | {M1..M6} |  |
 | lifecycle | {Planning, Development, Active, Idle, Deprecated, Retired} |  |
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_C1: accountable_id.substrate ∈ {Humano, Mixto} (HAIC)
 - INV_C2: Algorítmico → delegated_from NOT NULL
 - INV_C3: Mixto → composition has ≥1 Humano
 
-**Resolución:** Actor y Agente son VISTAS de Capacidad, no entidades separadas.
+- **Resolución:** Actor y Agente son VISTAS de Capacidad, no entidades separadas.
+
 
 ### C2 - Flujo
 
-**ID:** ORKO-CON-C2 | **Primitivo Base:** P2
+- **ID:** ORKO-CON-C2 | **Primitivo Base:** P2
 
-**Schema:**
+
+- **Schema:**
+
 
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
@@ -60,15 +76,18 @@ Especificación OPERABLE de Primitivos P1–P5. Schemas abstractos (Genoma) impl
 | owner_capacity_id | UUID |  |
 | purpose_id | UUID | Required |
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_F1: Acyclic DAG
 - INV_F4: All flows serve a Purpose (A5)
 
 ### C3 - Información
 
-**ID:** ORKO-CON-C3 | **Primitivo Base:** P3
+- **ID:** ORKO-CON-C3 | **Primitivo Base:** P3
 
-**Schema:**
+
+- **Schema:**
+
 
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
@@ -79,15 +98,18 @@ Especificación OPERABLE de Primitivos P1–P5. Schemas abstractos (Genoma) impl
 | quality | {completeness, accuracy, timeliness} |  |
 | observable_id | {EX1..EX8, IN1..IN8} \| null |  |
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_I3: Lineage forms DAG
 - Lineage_Policy: Internal origin MUST have producer; External MUST have source_ref
 
 ### C4 - Límite
 
-**ID:** ORKO-CON-C4 | **Primitivo Base:** P4
+- **ID:** ORKO-CON-C4 | **Primitivo Base:** P4
 
-**Schema:**
+
+- **Schema:**
+
 
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
@@ -96,14 +118,17 @@ Especificación OPERABLE de Primitivos P1–P5. Schemas abstractos (Genoma) impl
 | constraint | {target, expression, enforcement={Preventive\|Detective}} |  |
 | compliance | {violations_summary, severity_score} |  |
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_L3: Regulatorio requires Authority Source
 
 ### C5 - Propósito
 
-**ID:** ORKO-CON-C5 | **Primitivo Base:** P5
+- **ID:** ORKO-CON-C5 | **Primitivo Base:** P5
 
-**Schema:**
+
+- **Schema:**
+
 
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
@@ -113,24 +138,30 @@ Especificación OPERABLE de Primitivos P1–P5. Schemas abstractos (Genoma) impl
 | hierarchy | {parent_purpose_id, children_ids, alignment_score} | Tree |
 | ownership | {owner_capacity_id (Humano/Mixto)} |  |
 
-**Invariantes:**
+- **Invariantes:**
+
 - INV_P5: Hierarchy forms Tree (Child end_date ≤ Parent end_date)
 - INV_P3: Owner MUST be Human/Mixto
 
 ### Entidades Compuestas
 
-**E7 - Ejecución de Flujo**
+- **E7 - Ejecución de Flujo**
+
 - Descripción: Instancia concreta de un Flujo
 - Schema: {flow_id, executed_by, start/end_time, status, outputs, failure_reason}
 - Rol: Base para DORA metrics y audit trails
 
-**E6 - Estado Arquitectónico**
+- **E6 - Estado Arquitectónico**
+
 - Descripción: Snapshot consistente del sistema (Capacidades + Flujos + Propósitos)
 - Schema: {state_type={Current\|Target}, snapshot_data, validity}
 
 ## Principios de Diseño (PD1-PD76)
 
-Reglas operativas derivadas de invariantes teóricos (I1-I8). Total: 76 principios.
+- Reglas operativas derivadas de invariantes teóricos (I1-I8).
+- Total:
+- 76 principios.
+
 
 ### Minimalidad (I1)
 
@@ -175,7 +206,8 @@ Reglas operativas derivadas de invariantes teóricos (I1-I8). Total: 76 principi
 
 ## Modelo Relacional
 
-**Entidades Core:** E1_Cap, E2_Flu, E3_Inf, E4_Lim, E5_Prop
+- **Entidades Core:** E1_Cap, E2_Flu, E3_Inf, E4_Lim, E5_Prop
+
 
 ### Relaciones Fundamentales
 
@@ -192,66 +224,82 @@ Reglas operativas derivadas de invariantes teóricos (I1-I8). Total: 76 principi
 | R11 | Propósito jerarquía | Tree |
 | R12 | Capacidad composición | Recursive, Acyclic |
 
-**R13 - Delegación HAIC:**
+- **R13 - Delegación HAIC:**
+
 - Def: Capacidad(Alg) [1] ↔delegada_por↔ [1] Capacidad(Hum/Mix)
 - Constraint: Mandatory for all Algo capacities
 
-**R14-R15:**
+- **R14-R15:**
+
 - R14_State_Transitions: Estado → Transición → Estado (Evolution)
 - R15_Transition_Flow: Transición ejecutada por Flujos (Design-Run Link)
 
 ## Vistas Arquitectónicas (Dominios)
 
-Proyecciones del modelo para concerns específicos.
+- Proyecciones del modelo para concerns específicos.
+
 
 ### D1 - Arquitectura
 
-**Concern:** Estructura & Límites
+- **Concern:** Estructura & Límites
 
-**Artefactos:**
+
+- **Artefactos:**
+
 - D1.1 Org Chart (Capacidades + R12)
 - D1.2 RACI Matrix (Rights management)
 - D1.3 Purpose Cascade (Alignment tree)
 
-**Métrica:** A_Score (Claridad Autoridad, Span of Control, Alignment)
+- **Métrica:** A_Score (Claridad Autoridad, Span of Control, Alignment)
+
 
 ### D2 - Percepción
 
-**Concern:** Observabilidad & Estado
+- **Concern:** Observabilidad & Estado
 
-**Artefactos:**
+
+- **Artefactos:**
+
 - D2.1 Dashboard 16 Observables (8 EXT + 8 INT)
   - EXT: Demanda, Competidores, Regulación, Tech, Feedback, Disrupt, Social, Econ
   - INT: Velocidad, Salud Cap, Eficiencia, Calidad, Utilización, Alineación, Violaciones, Debt
 - D2.2 Anomaly/Compliance Logs
 
-**Métrica:** P_Score (Coverage, Freshness, Latencia Detección)
+- **Métrica:** P_Score (Coverage, Freshness, Latencia Detección)
+
 
 ### D3 - Decisión
 
-**Concern:** Estrategia & Priorización
+- **Concern:** Estrategia & Priorización
 
-**Artefactos:**
+
+- **Artefactos:**
+
 - D3.1 OKR Canvas (Planning)
 - D3.2 Portfolio Board (RICE scoring, WIP limits)
 - D3.3 Decision Audit Trail (Accountability log)
 
-**Métrica:** D_Score (Velocity, Portfolio Balance, Execution Rate)
+- **Métrica:** D_Score (Velocity, Portfolio Balance, Execution Rate)
+
 
 ### D4 - Operación
 
-**Concern:** Ejecución & Entrega Valor
+- **Concern:** Ejecución & Entrega Valor
 
-**Artefactos:**
+
+- **Artefactos:**
+
 - D4.1 Value Stream Map (Flow analysis)
 - D4.2 DORA Dashboard (Deploy freq, Lead time, CFR, MTTR)
 - D4.3 Incident Log
 
-**Métrica:** O_Score (Flow efficiency, Cycle time, Availability)
+- **Métrica:** O_Score (Flow efficiency, Cycle time, Availability)
+
 
 ## H_org - Health Score Organizacional
 
-**Definición:** Métrica integrada de salud organizacional
+- **Definición:** Métrica integrada de salud organizacional
+
 
 ```
 H_org = 0.30·H1(Humano) + 0.25·H2(Arq) + 0.20·H3(Flujo) + 0.15·H4(Perc) + 0.10·H5(Dec)
@@ -259,7 +307,8 @@ H_org = 0.30·H1(Humano) + 0.25·H2(Arq) + 0.20·H3(Flujo) + 0.15·H4(Perc) + 0.
 Constraint: H_org < 70 → Bloquear transformaciones (Recovery Mode)
 ```
 
-**Dimensiones H:**
+- **Dimensiones H:**
+
 - H1_Humano: Bienestar, Engagement, Desarrollo, Autonomía
 - H2_Arquitectura: A_Score revisado
 - H3_Flujo: O_Score revisado (Focus on waste reduction)

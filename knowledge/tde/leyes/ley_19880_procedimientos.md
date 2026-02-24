@@ -1,20 +1,29 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:ley-19880"
+  urn: urn:tde:kb:ley-19880
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, ley-19880, procedimientos-administrativos, actos-administrativos, chile]
+tags:
+- transformacion-digital
+- ley-19880
+- procedimientos-administrativos
+- actos-administrativos
+- chile
+- tde
 lang: es
 ---
 
 # Ley 19.880: Bases de los Procedimientos Administrativos
 
 ## Ámbito y Objeto
-Establece las bases de los procedimientos que rigen los actos de los Órganos de la Administración del Estado (OAE). Incluye ministerios, GOREs, municipios, servicios públicos, CGR y FF.AA. Tiene carácter supletorio frente a leyes especiales.
+- Establece las bases de los procedimientos que rigen los actos de los Órganos de la Administración del Estado (OAE).
+- Incluye ministerios, GOREs, municipios, servicios públicos, CGR y FF.AA.
+- Tiene carácter supletorio frente a leyes especiales.
+
 - **Procedimiento**: sucesión de actos para un acto terminal.
 - **Acto Administrativo**: decisiones formales (decretos, resoluciones) con voluntad, juicio o conocimiento.
 

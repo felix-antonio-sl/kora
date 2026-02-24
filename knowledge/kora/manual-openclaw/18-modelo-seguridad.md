@@ -1,19 +1,40 @@
+---
+_manifest:
+  urn: urn:kora:kb:18-modelo-seguridad
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '18'
+- modelo
+- seguridad
+lang: es
+---
+
 # Capítulo 18 — Modelo de Seguridad
 
 > **Propósito:** Entender la postura de seguridad de OpenClaw de forma integral: el threat model, la filosofía de defensa en profundidad, y cómo cada control contribuye a reducir el blast radius. Este capítulo sintetiza lo disperso en capítulos anteriores en un modelo mental unificado.
 
----
+- ---
+
 
 ## 18.1 Threat Model: Qué Puede Salir Mal
 
-Tu agente IA puede:
+- Tu agente IA puede:
+
 - Ejecutar comandos shell arbitrarios
 - Leer/escribir archivos en disco
 - Acceder a servicios de red
 - Enviar mensajes a cualquier persona (si tiene acceso a canales)
 - Navegar la web con un browser real (con sesiones logueadas)
 
-Las amenazas vienen de **tres direcciones**:
+- Las amenazas vienen de **tres direcciones**:
+
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -42,9 +63,11 @@ Las amenazas vienen de **tres direcciones**:
 
 > **La mayoría de los fallos no son exploits sofisticados — son "alguien le mandó un mensaje al bot y el bot hizo lo que le pidieron."**
 
-La defensa no es hacer al modelo "más inteligente" contra injection — es **limitar lo que puede pasar si el modelo es manipulado**.
+- La defensa no es hacer al modelo "más inteligente" contra injection — es **limitar lo que puede pasar si el modelo es manipulado**.
 
----
+
+- ---
+
 
 ## 18.2 Filosofía: Access Control Before Intelligence
 
@@ -61,9 +84,11 @@ PRIORIDAD DE CONTROLES:
    (model strength, prompt hardening, safety wrappers)
 ```
 
-**Identity** es el control más fuerte: si un atacante no puede enviar mensajes al bot, no puede hacer nada. **Scope** es la siguiente línea: si el bot es manipulado pero solo puede leer archivos, el daño es limitado. **Model** es la última defensa — y es la más débil porque prompt injection no está resuelto.
+- **Identity** es el control más fuerte: si un atacante no puede enviar mensajes al bot, no puede hacer nada. **Scope** es la siguiente línea: si el bot es manipulado pero solo puede leer archivos, el daño es limitado. **Model** es la última defensa — y es la más débil porque prompt injection no está resuelto.
 
----
+
+- ---
+
 
 ## 18.3 Controles de Identity (Quién Habla)
 
@@ -88,13 +113,17 @@ PRIORIDAD DE CONTROLES:
 
 > **Si más de una persona puede enviar DMs → `dmScope: "per-channel-peer"` es obligatorio.**
 
-`openclaw security audit` advierte si detecta múltiples senders con `dmScope: "main"`.
+- `openclaw security audit` advierte si detecta múltiples senders con `dmScope: "main"`.
 
----
+
+- ---
+
 
 ## 18.4 Controles de Scope (Qué Puede Hacer)
 
-Recapitulación integrada de los tres mecanismos (Cap. 7):
+- Recapitulación integrada de los tres mecanismos (Cap.
+- 7):
+
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -123,7 +152,8 @@ Recapitulación integrada de los tres mecanismos (Cap. 7):
 
 ### Control plane lockdown
 
-Para cualquier agente que maneje contenido untrusted:
+- Para cualquier agente que maneje contenido untrusted:
+
 
 ```json5
 {
@@ -133,13 +163,15 @@ Para cualquier agente que maneje contenido untrusted:
 }
 ```
 
----
+- ---
+
 
 ## 18.5 Prompt Injection: Lo que No Está Resuelto
 
 ### Prompt injection no requiere DMs públicos
 
-Incluso si **solo tú** hablas con el bot, injection puede llegar via:
+- Incluso si **solo tú** hablas con el bot, injection puede llegar via:
+
 - Resultados de `web_search` / `web_fetch`
 - Páginas visitadas con `browser`
 - Contenido de emails leídos con `gog`
@@ -182,7 +214,9 @@ Summary (texto limpio)
 MAIN AGENT (full tools)
 ```
 
-El reader agent no puede hacer daño porque no tiene tools peligrosos. Si es manipulado, solo puede generar texto raro — no ejecutar comandos.
+- El reader agent no puede hacer daño porque no tiene tools peligrosos.
+- Si es manipulado, solo puede generar texto raro — no ejecutar comandos.
+
 
 ### Model Strength
 
@@ -192,7 +226,8 @@ El reader agent no puede hacer daño porque no tiene tools peligrosos. Si es man
 | Sonnet / Kimi | Media | OK para agentes personales con input controlado |
 | Haiku / mini | Baja | Solo para agentes sin tools o con input 100% trusted |
 
----
+- ---
+
 
 ## 18.6 Seguridad de Red
 
@@ -212,7 +247,8 @@ Tailscale Serve  → Accesible desde tu tailnet (OK)
 Tailscale Funnel → Accesible desde internet público (⚠ deliberado)
 ```
 
-Si usas Funnel:
+- Si usas Funnel:
+
 - Gateway protegido por token de 256-bit
 - URL no indexada (dominio Tailscale)
 - Pero cualquiera con la URL puede intentar auth
@@ -230,9 +266,11 @@ Si usas Funnel:
 └── agents/<id>/sessions/*.jsonl            → transcripts (PII)
 ```
 
-**Todo bajo `~/.openclaw/` es sensible.** Permisos: `700` para dirs, `600` para files.
+- **Todo bajo `~/.openclaw/` es sensible.** Permisos: `700` para dirs, `600` para files.
 
----
+
+- ---
+
 
 ## 18.7 Hardened Baseline (Copy-Paste)
 
@@ -266,9 +304,11 @@ Si usas Funnel:
 }
 ```
 
-Después, **selectivamente re-habilitar** tools para agentes específicos de confianza.
+- Después, **selectivamente re-habilitar** tools para agentes específicos de confianza.
 
----
+
+- ---
+
 
 ## 18.8 openclaw security audit
 
@@ -307,7 +347,8 @@ openclaw security audit --json
 | `warn` | Fix pronto — riesgo latente |
 | `info` | Considerar — mejora de postura |
 
----
+- ---
+
 
 ## 18.9 Incident Response
 
@@ -352,7 +393,8 @@ openclaw security audit --deep
 - Qué envió el atacante + qué hizo el agente
 - Si el gateway estaba expuesto más allá de loopback
 
----
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -368,6 +410,8 @@ openclaw security audit --deep
 | **Audit regularly** | `openclaw security audit --deep` después de cambios |
 | **Rotate on incident** | Asumir compromiso completo si hay leak |
 
----
+- ---
 
-*Siguiente: [Capítulo 19 — Operaciones](19-operaciones.md)*
+
+- *Siguiente: [Capítulo 19 — Operaciones](19-operaciones.md)*
+

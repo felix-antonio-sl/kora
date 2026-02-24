@@ -1,20 +1,30 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:claveunica-tyc"
+  urn: urn:tde:kb:claveunica-tyc
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "wikiguias.digital.gob.cl"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: wikiguias.digital.gob.cl
+version: 2.0.0
 status: published
-tags: [transformacion-digital, clave-unica, terminos-y-condiciones, identidad-digital, chile]
+tags:
+- transformacion-digital
+- clave-unica
+- terminos-y-condiciones
+- identidad-digital
+- chile
+- tde
 lang: es
 ---
 
 # Términos y Condiciones del Sistema de ClaveÚnica
 
 ## Alcance y Obligatoriedad
-Regulan el uso del Sistema de ClaveÚnica por parte de Entidades Usuarias (públicas y privadas). Obligatorios por mandato de la Ley 21.658 (Art. 2° transitorio). El cumplimiento es integral y no requiere aceptación individual para su vigencia.
+- Regulan el uso del Sistema de ClaveÚnica por parte de Entidades Usuarias (públicas y privadas).
+- Obligatorios por mandato de la Ley 21.658 (Art.
+- 2° transitorio).
+- El cumplimiento es integral y no requiere aceptación individual para su vigencia.
+
 
 ## Definiciones Clave
 - **ClaveÚnica**: mecanismo oficial de autenticación basado en OpenID Connect para personas naturales. Administrado por la SGD.

@@ -1,13 +1,19 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ris-empub"
+  urn: urn:gn:kb:ris-empub
   provenance:
-    created_by: "FS"
-    created_at: "2026-01-29"
-    source: "GORE Ñuble"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-01-29'
+    source: "GORE \xD1uble"
+version: 2.0.0
 status: published
-tags: [gore-nuble, gobierno-regional, sni, empresas-publicas, inversion]
+tags:
+- gore-nuble
+- gobierno-regional
+- sni
+- empresas-publicas
+- inversion
+- gn
 lang: es
 ---
 
@@ -32,10 +38,10 @@ lang: es
 | **Minería/Energía** | ENAMI, CODELCO-CHILE, ENAP (incluye filiales como SIPETROL). |
 
 ## Orientaciones para la Evaluación
-- **Evaluación Privada:** 
+- **Evaluación Privada:**
   - Tasa de descuento definida por el SEP.
   - Excepción: Tasa propia de la empresa si está debidamente fundamentada.
-- **Evaluación Social:** 
+- **Evaluación Social:**
   - Obligatoria ante existencia de externalidades o beneficios/costos externos.
   - Parámetros: Precios sociales y tasa de descuento social vigente en SNI.
 - **Metodología:** Uso de Metodología General de Preparación y Evaluación de Proyectos o específica sectorial.
@@ -48,7 +54,7 @@ lang: es
   - Evaluación Social y Riesgo de Desastres (si aplica).
   - Carta Gantt de actividades y cronograma financiero.
 - **Terreno:** Acreditación de propiedad o requisitos para adquisición.
-- **Contratación:** 
+- **Contratación:**
   - Términos de Referencia (TDR) para prefactibilidad/factibilidad.
   - Presupuesto detallado (incluye participación ciudadana) firmado por profesional competente.
 - **Estrategia:** Demostrar consistencia con objetivos estratégicos de la empresa.

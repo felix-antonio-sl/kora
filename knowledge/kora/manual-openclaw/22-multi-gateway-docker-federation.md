@@ -1,14 +1,35 @@
+---
+_manifest:
+  urn: urn:kora:kb:22-multi-gateway-docker-federation
+  provenance:
+    created_by: FS
+    created_at: '2026-02-24'
+    source: legacy-import
+version: 2.0.0
+status: published
+tags:
+- kora
+- manual-openclaw
+- '22'
+- multi
+- gateway
+lang: es
+---
+
 # Capítulo 22 — Multi-Gateway Dockerizado: Federación de Agentes
 
 > **Propósito:** Diseñar una arquitectura donde múltiples instancias de OpenClaw Gateway corren en containers Docker sobre un servidor dedicado, compartiendo red y repositorios de conocimiento, con capacidad de comunicación inter-agente. Este capítulo explora patrones que van más allá de lo single-gateway y multi-agent, usando mecanismos nativos y canónicos de OpenClaw.
 
----
+- ---
+
 
 ## 22.1 Por Qué Multi-Gateway (y No Solo Multi-Agent)
 
 ### Lo que multi-agent resuelve dentro de un gateway
 
-Un solo gateway con `agents.list[]` (Cap. 6-8) te da:
+- Un solo gateway con `agents.list[]` (Cap.
+- 6-8) te da:
+
 - Múltiples "cerebros" con workspaces, auth y sesiones aisladas
 - Bindings para ruteo determinístico
 - Tool policy y sandbox per-agent
@@ -40,7 +61,8 @@ Un solo gateway con `agents.list[]` (Cap. 6-8) te da:
 └── NO → Multi-agent en un gateway es suficiente
 ```
 
----
+- ---
+
 
 ## 22.2 Arquitectura: Docker Compose Multi-Gateway
 
@@ -90,7 +112,8 @@ Un solo gateway con `agents.list[]` (Cap. 6-8) te da:
 4. **Comunicación inter-gateway** via webhooks HTTP (mecanismo nativo de OpenClaw)
 5. **Cada gateway maneja sus propios canales** (un bot Telegram por gateway, o webhook-only)
 
----
+- ---
+
 
 ## 22.3 Docker Compose: Configuración Base
 
@@ -213,7 +236,8 @@ services:
             └── skills/
 ```
 
----
+- ---
+
 
 ## 22.4 Conocimiento Compartido: Patrones
 
@@ -224,7 +248,8 @@ volumes:
   - /srv/koda/knowledge:/shared/koda:ro    # todos leen, nadie escribe
 ```
 
-Cada gateway puede referenciar la KB compartida en su config:
+- Cada gateway puede referenciar la KB compartida en su config:
+
 
 ```json5
 // openclaw.json de goreos-gateway
@@ -239,18 +264,21 @@ Cada gateway puede referenciar la KB compartida en su config:
 }
 ```
 
-**Ventajas:**
+- **Ventajas:**
+
 - Un solo lugar para mantener la KB
 - Actualización atómica: editas en el host → todos los gateways lo ven
 - Read-only previene que un gateway corrupto modifique la KB
 
-**Limitaciones:**
+- **Limitaciones:**
+
 - Los gateways indexan la KB independientemente (cada uno tiene su propio SQLite de embeddings)
 - Si la KB es grande (>10K archivos), el re-indexado post-cambio puede ser pesado
 
 ### Patrón 2: QMD Sidecar Compartido
 
-Si la KB es muy grande, un QMD sidecar compartido evita indexación duplicada:
+- Si la KB es muy grande, un QMD sidecar compartido evita indexación duplicada:
+
 
 ```yaml
 services:
@@ -277,8 +305,10 @@ services:
 }
 ```
 
-**Ventaja:** Un solo índice vectorial. N gateways consultando el mismo search.
-**Trade-off:** Dependencia adicional. Si el QMD cae, memory search falla (con fallback a SQLite local).
+- **Ventaja:** Un solo índice vectorial.
+- N gateways consultando el mismo search. **Trade-off:** Dependencia adicional.
+- Si el QMD cae, memory search falla (con fallback a SQLite local).
+
 
 ### Patrón 3: Git Sync para KB
 
@@ -287,13 +317,19 @@ services:
 */30 * * * * cd /srv/koda/knowledge && git pull --quiet
 ```
 
-Los gateways ven los cambios en el próximo sync de su watcher (debounce ~1.5s post-write).
+- Los gateways ven los cambios en el próximo sync de su watcher (debounce ~1.5s post-write).
 
----
+
+- ---
+
 
 ## 22.5 Comunicación Inter-Gateway: Patrones Nativos
 
-OpenClaw no tiene un protocolo nativo de gateway-to-gateway. Pero tiene **webhooks** (Cap. 16) y **exec** (para HTTP calls). Estos son los bloques canónicos para construir comunicación.
+- OpenClaw no tiene un protocolo nativo de gateway-to-gateway.
+- Pero tiene **webhooks** (Cap.
+- 16) y **exec** (para HTTP calls).
+- Estos son los bloques canónicos para construir comunicación.
+
 
 ### Patrón A: Webhook Relay (recomendado)
 
@@ -313,30 +349,21 @@ GoreOS completa → delivery via announce a canal
 GoreOS completa → POST resultado a http://korax-gateway:18789/hooks/wake
 ```
 
-**Implementación concreta:**
+- **Implementación concreta:**
 
-GW1 (Korax) llama a GW2 (GoreOS):
-```json
-{
-  "tool": "exec",
-  "params": {
-    "command": "curl -sX POST http://goreos-gateway:18809/hooks/agent -H 'Authorization: Bearer GOREOS_TOKEN' -H 'Content-Type: application/json' -d '{\"message\":\"Analiza la propuesta de GORE para el sistema de actas\",\"deliver\":false,\"model\":\"anthropic/claude-opus-4-6\"}'"
-  }
-}
-```
 
-GW2 (GoreOS) responde via webhook de vuelta:
-```json5
-// En AGENTS.md de goreos-gateway:
-// "Al terminar un análisis, envía el resultado a Korax via:
-//  curl -sX POST http://korax-gateway:18789/hooks/wake
-//    -H 'Authorization: Bearer KORAX_HOOKS_TOKEN'
-//    -d '{\"text\":\"GoreOS analysis complete: ...\"}'"
-```
+- GW1 (Korax) llama a GW2 (GoreOS): ```json { "tool": "exec", "params": { "command": "curl -sX POST http://goreos-gateway:18809/hooks/agent -H 'Authorization:
+- Bearer GOREOS_TOKEN' -H 'Content-Type: application/json' -d '{\"message\":\"Analiza la propuesta de GORE para el sistema de actas\",\"deliver\":false,\"model\":\"anthropic/claude-opus-4-6\"}'" } } ```
+
+
+- GW2 (GoreOS) responde via webhook de vuelta: ```json5 // En AGENTS.md de goreos-gateway: // "Al terminar un análisis, envía el resultado a Korax via: // curl -sX POST http://korax-gateway:18789/hooks/wake // -H 'Authorization:
+- Bearer KORAX_HOOKS_TOKEN' // -d '{\"text\":\"GoreOS analysis complete: ...\"}'" ```
+
 
 ### Patrón B: Buzón de Archivos (fire-and-forget)
 
-Comunicación asíncrona via archivos en un volumen compartido:
+- Comunicación asíncrona via archivos en un volumen compartido:
+
 
 ```
 /srv/comms/
@@ -365,7 +392,8 @@ Comunicación asíncrona via archivos en un volumen compartido:
 }
 ```
 
-Cada gateway tiene un heartbeat que revisa su buzón:
+- Cada gateway tiene un heartbeat que revisa su buzón:
+
 
 ```markdown
 # HEARTBEAT.md de korax-gateway
@@ -374,9 +402,12 @@ Cada gateway tiene un heartbeat que revisa su buzón:
 - Si hay mensajes, leerlos y procesar
 ```
 
-**Ventajas:** Simple, sin dependencias de red, auditable (archivos en disco), tolerante a fallos (si un gateway está caído, los mensajes esperan).
+- **Ventajas:** Simple, sin dependencias de red, auditable (archivos en disco), tolerante a fallos (si un gateway está caído, los mensajes esperan).
 
-**Desventajas:** Latencia (depende del intervalo del heartbeat). No es real-time.
+
+- **Desventajas:** Latencia (depende del intervalo del heartbeat).
+- No es real-time.
+
 
 ### Patrón C: Docker Network + Direct Webhook (real-time)
 
@@ -386,14 +417,19 @@ networks:
     driver: bridge
 ```
 
-Los containers se resuelven por nombre (`goreos-gateway`, `korax-gateway`) dentro de la red Docker. No necesitan IPs estáticas.
+- Los containers se resuelven por nombre (`goreos-gateway`, `korax-gateway`) dentro de la red Docker.
+- No necesitan IPs estáticas.
+
 
 ```bash
 # Desde korax-gateway, GoreOS es alcanzable:
 curl http://goreos-gateway:18809/health
 ```
 
-**Seguridad:** La red Docker bridge es internal — no expuesta a internet. Pero dentro de la red, cualquier container puede alcanzar a cualquier otro. Si necesitas aislamiento:
+- **Seguridad:** La red Docker bridge es internal — no expuesta a internet.
+- Pero dentro de la red, cualquier container puede alcanzar a cualquier otro.
+- Si necesitas aislamiento:
+
 
 ```yaml
 networks:
@@ -414,9 +450,11 @@ networks:
 | **Real-time** | ✅ | ❌ | ✅ |
 | **Mecanismo OpenClaw** | /hooks/agent + /hooks/wake | Heartbeat + read/exec | /hooks/agent |
 
-**Recomendación:** Webhook relay para comunicación real-time + buzón de archivos como fallback para tolerancia a fallos.
+- **Recomendación:** Webhook relay para comunicación real-time + buzón de archivos como fallback para tolerancia a fallos.
 
----
+
+- ---
+
 
 ## 22.6 Orquestación: Quién Coordina a Quién
 
@@ -435,9 +473,11 @@ networks:
   └──────────┘   └──────────┘   └──────────┘
 ```
 
-Korax es el hub: recibe mensajes del usuario, decide si necesita delegar a un especialista, y consolida resultados.
+- Korax es el hub: recibe mensajes del usuario, decide si necesita delegar a un especialista, y consolida resultados.
 
-**Implementación:**
+
+- **Implementación:**
+
 - Korax tiene un skill `delegate-to-specialist` que sabe hacer POST a los webhooks de cada spoke
 - Los spokes tienen webhooks habilitados + tokens dedicados
 - Los spokes retornan resultados via webhook de vuelta a Korax (o via buzón de archivos)
@@ -456,9 +496,12 @@ Korax es el hub: recibe mensajes del usuario, decide si necesita delegar a un es
             └──────────┘
 ```
 
-Todos pueden hablar con todos. Más flexible pero más complejo.
+- Todos pueden hablar con todos.
+- Más flexible pero más complejo.
 
-**Implementación:**
+
+- **Implementación:**
+
 - Cada gateway tiene tokens de webhook de todos los demás
 - Cada AGENTS.md incluye instrucciones sobre cuándo contactar a qué gateway
 - Riesgo de loops: A → B → A → B... Mitigar con headers de "origin" o message IDs
@@ -484,7 +527,8 @@ Médico (spoke):
   - NO contacta a otros spokes
 ```
 
----
+- ---
+
 
 ## 22.7 Configuración de Cada Gateway
 
@@ -565,11 +609,13 @@ Médico (spoke):
 }
 ```
 
----
+- ---
+
 
 ## 22.8 Skill: Federation Delegate
 
-Un skill en el workspace de Korax que encapsula la lógica de delegación:
+- Un skill en el workspace de Korax que encapsula la lógica de delegación:
+
 
 ```markdown
 # skills/federation-delegate/SKILL.md
@@ -590,11 +636,9 @@ description: "Delegar tareas a gateways especializados de la federación (GoreOS
 ## Cómo delegar
 
 ```bash
-curl -sX POST http://<gateway>:<port>/hooks/agent \
-  -H "Authorization: Bearer <TOKEN>" \
-  -H "Content-Type: application/json" \
-  -d '{"message":"<TAREA>","deliver":false,"model":"<MODEL>"}'
-```
+- curl -sX POST http://<gateway>:<port>/hooks/agent \ -H "Authorization:
+- Bearer <TOKEN>" \ -H "Content-Type: application/json" \ -d '{"message":"<TAREA>","deliver":false,"model":"<MODEL>"}' ```
+
 
 ## Cuándo delegar
 
@@ -610,14 +654,16 @@ curl -sX POST http://<gateway>:<port>/hooks/agent \
 
 ## Resultado
 
-El spoke procesa y puede:
+- El spoke procesa y puede:
+
 1. Retornar via webhook a /hooks/wake (real-time)
 2. Dejar resultado en /shared/comms/<spoke>-to-korax/ (async)
 
-Revisar /shared/comms/ si el webhook no llegó.
-```
+- Revisar /shared/comms/ si el webhook no llegó. ```
 
----
+
+- ---
+
 
 ## 22.9 Seguridad de la Federación
 
@@ -645,18 +691,19 @@ Revisar /shared/comms/ si el webhook no llegó.
 
 ### Anti-loop
 
-Incluir un header `X-Federation-Depth` en las llamadas inter-gateway:
+- Incluir un header `X-Federation-Depth` en las llamadas inter-gateway:
+
 
 ```bash
 curl -H "X-Federation-Depth: 1" ...
 ```
 
-En AGENTS.md del spoke:
-```markdown
-Si recibes un mensaje con depth ≥ 2, NO reenvíes a otro gateway. Procesa localmente.
-```
+- En AGENTS.md del spoke: ```markdown Si recibes un mensaje con depth ≥ 2, NO reenvíes a otro gateway.
+- Procesa localmente. ```
 
----
+
+- ---
+
 
 ## 22.10 Operaciones
 
@@ -722,13 +769,11 @@ tar -czvf ~/backups/federation-$(date +%Y%m%d).tar.gz \
   .env
 ```
 
-Para state (auth profiles, sessions): los Docker named volumes se backupean con:
-```bash
-docker run --rm -v korax-state:/data -v ~/backups:/backup alpine \
-  tar -czf /backup/korax-state-$(date +%Y%m%d).tar.gz -C /data .
-```
+- Para state (auth profiles, sessions): los Docker named volumes se backupean con: ```bash docker run --rm -v korax-state:/data -v ~/backups:/backup alpine \ tar -czf /backup/korax-state-$(date +%Y%m%d).tar.gz -C /data . ```
 
----
+
+- ---
+
 
 ## 22.11 Scaling: De 3 a N Gateways
 
@@ -752,9 +797,11 @@ docker run --rm -v korax-state:/data -v ~/backups:/backup alpine \
 | Puertos | 1 base + ~20 derived | 10 base + ~200 derived |
 | Disco (state) | ~50-500 MB | ~0.5-5 GB |
 
-Un servidor de 64GB RAM puede hospedar cómodamente **20-30 gateways** con sandboxes ligeros.
+- Un servidor de 64GB RAM puede hospedar cómodamente **20-30 gateways** con sandboxes ligeros.
 
----
+
+- ---
+
 
 ## Resumen del Capítulo
 
@@ -782,6 +829,8 @@ Un servidor de 64GB RAM puede hospedar cómodamente **20-30 gateways** con sandb
          └── 10+ → Kubernetes o similar (fuera de scope)
 ```
 
----
+- ---
 
-*Este capítulo extiende la Parte VI del manual con patrones avanzados de deployment.*
+
+- *Este capítulo extiende la Parte VI del manual con patrones avanzados de deployment.*
+
