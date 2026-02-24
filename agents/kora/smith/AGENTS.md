@@ -4,6 +4,8 @@ _manifest:
   type: "bootstrap_agents"
 ---
 
+> **DEPRECATED:** Este agente ha sido reemplazado por **kora/forgemaster**, que gestiona el ciclo de vida completo de agentes KORA. Usar forgemaster para todas las operaciones de construcción, validación y mantenimiento de agentes.
+
 ## 1. FSM (WF-SMITH)
 
 1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-PROJECT-CLASSIFIER: Clasificar(NEW_AGENT|VALIDATE|ITERATE|CONSULT|END), Fase actual si progreso, KB mode(KB_BASED|LLM_NATIVE|WEB_AUGMENTED|HYBRID). → Trans: IF nuevo agente → S-REQUIREMENTS. IF validar → S-VALIDATOR. IF iterar → S-ARCHITECT. IF consulta → S-CONSULTANT. IF terminar → S-END.

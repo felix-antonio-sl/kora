@@ -1,4 +1,6 @@
 {
+  "status": "deprecated",
+  "successor": "kora/forgemaster",
   "allowed_kb": [
     "urn:kora:kb:agent-spec-md",
     "urn:kora:kb:hub-agentes"
