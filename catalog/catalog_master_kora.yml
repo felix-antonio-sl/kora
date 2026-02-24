@@ -347,6 +347,24 @@ Catalog:
     title: MBT Modeling Assistant Rules
     file: knowledge/fxsl/mbt/fx-rules.md
     status: published
+  - urn: urn:fxsl:kb:xanpan-agents-metodologia
+    title: Xanpan::Agents --- Metodologia de Desarrollo Agil Post-Humano v2.1.0
+    file: knowledge/fxsl/xanpan/xanpan-agents-metodologia.md
+    status: published
+  - urn: urn:fxsl:kb:swarm-ops-metodologia
+    title: Swarm::Ops --- Framework Operacional para Enjambres de Agentes v1.0.0
+    file: knowledge/fxsl/xanpan/swarm-ops-metodologia.md
+    status: published
+  - urn: urn:fxsl:kb:stack-llm-arquitectura
+    title: STACK::LLM — Arquitectura de Referencia para Desarrollo Asistido por LLM
+      v1.0.0
+    file: knowledge/fxsl/xanpan/stack-llm-arquitectura.md
+    status: published
+  - urn: urn:fxsl:kb:chapter0-operador-solitario
+    title: 'Chapter 0: El Operador Solitario — Bootstrap Path para Desarrollo Asistido
+      por LLM v1.0.0'
+    file: knowledge/fxsl/xanpan/chapter0-operador-solitario.md
+    status: published
   - urn: urn:fxsl:kb:fx-uom-model
     title: New Magnitudes and Units of Measure in gist 13
     file: knowledge/fxsl/gist/fx-uom-model.md
