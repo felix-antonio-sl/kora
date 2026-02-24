@@ -1,0 +1,26 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:md-spec",
+    "urn:kora:kb:spec-md",
+    "urn:kora:kb:gobernanza"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "artifact_read",
+      "artifact_write",
+      "artifact_validate",
+      "spec_consult",
+      "artifact_list"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 3
+  }
+}

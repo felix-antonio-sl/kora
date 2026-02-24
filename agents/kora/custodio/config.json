@@ -1,0 +1,34 @@
+{
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:custodio-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:kora:kb:agent-spec-md",
+    "urn:kora:kb:gobernanza",
+    "urn:kora:kb:md-spec",
+    "urn:kora:kb:spec-md"
+  ],
+  "sandbox": false,
+  "tools": {
+    "allow": [
+      "kora_cli",
+      "git",
+      "filesystem_read",
+      "filesystem_write"
+    ],
+    "deny": [
+      "web_search",
+      "code_execution"
+    ]
+  },
+  "sub_agents": {
+    "kora/forgemaster": "delegar creacion/mejora de agentes",
+    "kora/curator": "delegar trabajo sobre artefactos KB"
+  },
+  "limits": {
+    "max_write_per_turn": 5,
+    "require_confirmation_on_write": true,
+    "require_confirmation_on_delete": true
+  }
+}
