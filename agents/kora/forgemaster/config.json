@@ -1,0 +1,27 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:agent-spec-md",
+    "urn:kora:spec:gobernanza",
+    "urn:kora:spec:spec-md",
+    "urn:kora:spec:md-spec"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "workspace_read",
+      "workspace_write",
+      "spec_consult",
+      "agent_list",
+      "health_check"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 3
+  }
+}
