@@ -21,9 +21,9 @@ _manifest:
 | Topic | URN |
 |-------|-----|
 | Agent spec, F-coalgebra, 5 componentes, FSM, segregacion, co-induccion, agent-spec-md | urn:kora:kb:agent-spec-md |
-| Gobernanza, precedencia, meta-reglas, URN bootstrap | urn:kora:spec:gobernanza |
-| Formato prescriptivo, grammar, RFC 2119, spec-md | urn:kora:spec:spec-md |
-| Formato descriptivo, koraficacion, md-spec | urn:kora:spec:md-spec |
+| Gobernanza, precedencia, meta-reglas, URN bootstrap | urn:kora:kb:gobernanza |
+| Formato prescriptivo, grammar, RFC 2119, spec-md | urn:kora:kb:spec-md |
+| Formato descriptivo, koraficacion, md-spec | urn:kora:kb:md-spec |
 
 ## workspace_read
 
