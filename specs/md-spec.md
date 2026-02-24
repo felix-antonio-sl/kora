@@ -307,7 +307,7 @@ La telegrafización **NO DEBE** sacrificar contenido informativo. Un artefacto K
 
 ### 6.1 Entrada
 
-Cualquier documento escrito originalmente para lectores humanos **PUEDE** usarse: PDF, Word, HTML, texto plano, wiki, memorándum.
+Cualquier documento escrito originalmente para lectores humanos **PUEDE** usarse: PDF, Word, HTML, texto plano, wiki, memorándum. Todo documento que ingrese al monorepo para koraficación **DEBE** transitar por el pipeline de ingesta definido en [Pipeline de Ingesta](urn:kora:kb:pipeline-ingesta): `inbox/` → `source/` → `drafts/` → `knowledge/`.
 
 ### 6.2 El Funtor de Transformación
 

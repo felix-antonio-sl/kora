@@ -99,7 +99,7 @@ def cmd_index():
 
     for root, dirs, files in os.walk(KORA_ROOT):
         # Skip directories we don't care about
-        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests", "docs", "staging", ".claude", ".agent", ".venv", "__pycache__")]
+        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests", "docs", "staging", "inbox", "source", "drafts", ".claude", ".agent", ".venv", "__pycache__")]
 
         for file in files:
             file_path = Path(root) / file
@@ -205,7 +205,7 @@ def cmd_health():
     )
 
     for root, dirs, files in os.walk(KORA_ROOT):
-        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests", "docs", "staging", ".claude", ".agent", ".venv", "__pycache__")]
+        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests", "docs", "staging", "inbox", "source", "drafts", ".claude", ".agent", ".venv", "__pycache__")]
         for file in files:
             if not (
                 file.endswith(".yml") or file.endswith(".yaml") or file.endswith(".md")
@@ -324,6 +324,88 @@ def cmd_validate():
     print(f"Validation complete! Valid: {valid_count}, Invalid: {invalid_count}")
 
 
+def cmd_intake():
+    """Show status of each source file vs knowledge/ artifacts."""
+    source_dir = KORA_ROOT / "source"
+    drafts_dir = KORA_ROOT / "drafts"
+    knowledge_dir = KORA_ROOT / "knowledge"
+
+    if not source_dir.exists():
+        print("No source/ directory found.")
+        return
+
+    # Collect all source files
+    source_files = []
+    for root, dirs, files in os.walk(source_dir):
+        for file in files:
+            if file.startswith("."):
+                continue
+            source_files.append(Path(root) / file)
+
+    if not source_files:
+        print("No source files found.")
+        return
+
+    # Load catalog to check published artifacts
+    doc, _ = load_yaml_safe(CATALOG_PATH)
+    catalog_sources = {}
+    if doc and "Catalog" in doc:
+        for category, items in doc["Catalog"].items():
+            for item in items:
+                urn = item.get("urn", "")
+                file_path = KORA_ROOT / item.get("file", "")
+                # Read the artifact to check provenance.source
+                artifact, _ = load_yaml_safe(file_path)
+                if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
+                    prov_source = artifact["_manifest"].get("provenance", {}).get("source", "")
+                    if prov_source:
+                        catalog_sources[prov_source] = {
+                            "urn": urn,
+                            "status": item.get("status", "unknown"),
+                            "file": item.get("file", ""),
+                        }
+
+    # Check drafts for in-progress artifacts
+    draft_sources = {}
+    if drafts_dir.exists():
+        for root, dirs, files in os.walk(drafts_dir):
+            for file in files:
+                if not file.endswith(".md") or file.startswith("."):
+                    continue
+                draft_path = Path(root) / file
+                artifact, _ = load_yaml_safe(draft_path)
+                if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
+                    prov_source = artifact["_manifest"].get("provenance", {}).get("source", "")
+                    if prov_source:
+                        draft_sources[prov_source] = str(draft_path.relative_to(KORA_ROOT))
+
+    print("=== KORA Intake Status ===\n")
+    counts = {"PENDING": 0, "PROCESSING": 0, "PUBLISHED": 0}
+
+    for sf in sorted(source_files):
+        rel = str(sf.relative_to(KORA_ROOT))
+        if rel in catalog_sources:
+            status = "PUBLISHED"
+            info = catalog_sources[rel]
+            print(f"  [{status}] {rel} → {info['file']} ({info['urn']})")
+        elif rel in draft_sources:
+            status = "PROCESSING"
+            print(f"  [{status}] {rel} → {draft_sources[rel]}")
+        else:
+            status = "PENDING"
+            print(f"  [{status}] {rel}")
+        counts[status] += 1
+
+    # Check for orphans (catalog artifacts pointing to non-existent sources)
+    orphan_count = 0
+    for src_path, info in catalog_sources.items():
+        if src_path.startswith("source/") and not (KORA_ROOT / src_path).exists():
+            print(f"  [ORPHAN] {info['file']} → {src_path} (source missing)")
+            orphan_count += 1
+
+    print(f"\nSummary: {counts['PUBLISHED']} published, {counts['PROCESSING']} processing, {counts['PENDING']} pending, {orphan_count} orphan(s)")
+
+
 def cmd_stats():
     doc, _ = load_yaml_safe(CATALOG_PATH)
     if not doc or "Catalog" not in doc:
@@ -383,6 +465,11 @@ def main():
         "stats", help="Show monorepo statistics from the catalog"
     )
 
+    # Intake
+    p_intake = subparsers.add_parser(
+        "intake", help="Show status of source files vs knowledge artifacts"
+    )
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -395,6 +482,8 @@ def main():
         cmd_validate()
     elif args.command == "stats":
         cmd_stats()
+    elif args.command == "intake":
+        cmd_intake()
     else:
         parser.print_help()
 

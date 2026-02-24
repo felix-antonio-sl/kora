@@ -48,7 +48,7 @@ KORA/MD define un funtor de compresión `F: DocHumano → KORA/MD` que elimina g
 
 `G: {Decisiones ∪ Prácticas ∪ Restricciones} → KORA/Spec-MD`
 
-El input no es un documento único sino un conjunto heterogéneo: decisiones de diseño (explícitas o tácitas), prácticas existentes (convenciones informales), y restricciones (técnicas, organizacionales, legales).
+El input no es un documento único sino un conjunto heterogéneo: decisiones de diseño (explícitas o tácitas), prácticas existentes (convenciones informales), y restricciones (técnicas, organizacionales, legales). Todo documento que ingrese al monorepo para cristalización **DEBE** transitar por el pipeline de ingesta definido en [Pipeline de Ingesta](urn:kora:kb:pipeline-ingesta): `inbox/` → `source/` → `drafts/` → `knowledge/`.
 
 **Propiedades del funtor G:**
 

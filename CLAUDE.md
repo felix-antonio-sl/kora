@@ -23,6 +23,9 @@ scripts/kora validate
 
 # Show monorepo statistics (artifact counts, namespace breakdown)
 scripts/kora stats
+
+# Show intake pipeline status (source → drafts → knowledge)
+scripts/kora intake
 ```
 
 No build system — this is a documentation/specification monorepo. Python3 + PyYAML required for CLI.
@@ -33,6 +36,12 @@ No build system — this is a documentation/specification monorepo. Python3 + Py
 
 ```
 kora/
+  inbox/                        # Landing zone for raw objects (PDFs, books, datasets)
+  source/                       # Curated extracts ready for F|G transformation
+    fxsl/
+      xanpan/                   #   xanpan methodology corpus (4 files)
+  drafts/                       # WIP artifacts (status: draft), mirrors knowledge/
+
   specs/                        # 4 foundational specs
     gobernanza.md               #   ecosystem meta-rules (v1.2.0)
     md-spec.md                  #   KORA/MD knowledge format (v2.0.0)
@@ -42,8 +51,8 @@ kora/
   knowledge/                    # KBs organized by namespace
     gn/                         #   gobernanza regional (77 files)
       bpmn/ gestion/ gobernanza/ guias/ manuales/ normativa/ ris/
-    fxsl/                       #   cat, gist, mbt (30 files)
-      cat/ gist/ mbt/
+    fxsl/                       #   cat, gist, mbt, xanpan (34 files)
+      cat/ gist/ mbt/ xanpan/
     kora/                       #   manual-openclaw, sys (30 files)
       manual-openclaw/ sys/
     tde/                        #   transformacion digital (29 files)
@@ -64,7 +73,7 @@ kora/
 
   catalog/                      # Master URN registry
   skills/                       # Skills federation
-  scripts/                      # CLI tools (kora index/resolve/health/validate/stats)
+  scripts/                      # CLI tools (kora index/resolve/health/validate/stats/intake)
   docs/                         # Plans and documentation
 ```
 
@@ -105,6 +114,8 @@ Completed:
 - **CLI adaptation**: `scripts/kora` index/health/stats adapted to KORA/MD format
 - **Phase 4** (Agentificacion): 40 YAML monoliths → 41 KORA workspaces via functor G₂ (agent-spec §12). 139 skills (CM-*.md files), 0 broken URN references (run `scripts/kora health` to verify).
 - **Phase Audit** (Coherencia): Auditoría de coherencia lógica/semántica/editorial completa del corpus. Fix de 77 URNs rotas, skills materializados para 17 agentes, colon-newline fxsl/cat, gobernanza.md actualizada, KODA→KORA renaming.
+
+- **Phase I** (Ingesta): Pipeline infrastructure (inbox/ → source/ → drafts/ → knowledge/) + `kora intake` command. First corpus: Xanpan (4 KORA/Spec-MD artifacts published to knowledge/fxsl/xanpan/).
 
 Pending:
 - **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival
