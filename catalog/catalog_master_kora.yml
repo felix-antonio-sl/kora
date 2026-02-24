@@ -110,6 +110,38 @@ Catalog:
     title: CM-AGENT-DESIGNER
     file: agents/kora/forgemaster/skills/CM-AGENT-DESIGNER.md
     status: published
+  - urn: urn:kora:skill:custodio-surgeon:1.0.0
+    title: CM-SURGEON
+    file: agents/kora/custodio/skills/CM-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:custodio-catalog-steward:1.0.0
+    title: CM-CATALOG-STEWARD
+    file: agents/kora/custodio/skills/CM-CATALOG-STEWARD.md
+    status: published
+  - urn: urn:kora:skill:custodio-health-inspector:1.0.0
+    title: CM-HEALTH-INSPECTOR
+    file: agents/kora/custodio/skills/CM-HEALTH-INSPECTOR.md
+    status: published
+  - urn: urn:kora:skill:custodio-ingesta-steward:1.0.0
+    title: CM-INGESTA-STEWARD
+    file: agents/kora/custodio/skills/CM-INGESTA-STEWARD.md
+    status: published
+  - urn: urn:kora:skill:custodio-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/custodio/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:custodio-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/kora/custodio/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:custodio-evolucion-planner:1.0.0
+    title: CM-EVOLUCION-PLANNER
+    file: agents/kora/custodio/skills/CM-EVOLUCION-PLANNER.md
+    status: published
+  - urn: urn:kora:skill:custodio-estructura-auditor:1.0.0
+    title: CM-ESTRUCTURA-AUDITOR
+    file: agents/kora/custodio/skills/CM-ESTRUCTURA-AUDITOR.md
+    status: published
   - urn: urn:kora:skill:transformer-task-classifier:1.0.0
     title: CM-TASK-CLASSIFIER
     file: agents/kora/transformer/skills/CM-TASK-CLASSIFIER.md
@@ -170,6 +202,50 @@ Catalog:
     title: CM-RESULT-AGGREGATOR
     file: agents/kora/orquestador-generico/skills/CM-RESULT-AGGREGATOR.md
     status: published
+  - urn: urn:kora:skill:curator-artifact-designer:1.0.0
+    title: CM-ARTIFACT-DESIGNER
+    file: agents/kora/curator/skills/CM-ARTIFACT-DESIGNER.md
+    status: published
+  - urn: urn:kora:skill:curator-lifecycle-orchestrator:1.0.0
+    title: CM-LIFECYCLE-ORCHESTRATOR
+    file: agents/kora/curator/skills/CM-LIFECYCLE-ORCHESTRATOR.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-editor:1.0.0
+    title: CM-ARTIFACT-EDITOR
+    file: agents/kora/curator/skills/CM-ARTIFACT-EDITOR.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-optimizer:1.0.0
+    title: CM-ARTIFACT-OPTIMIZER
+    file: agents/kora/curator/skills/CM-ARTIFACT-OPTIMIZER.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-deprecator:1.0.0
+    title: CM-ARTIFACT-DEPRECATOR
+    file: agents/kora/curator/skills/CM-ARTIFACT-DEPRECATOR.md
+    status: published
+  - urn: urn:kora:skill:curator-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/curator/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:curator-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/kora/curator/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:curator-crystallizer:1.0.0
+    title: CM-CRYSTALLIZER
+    file: agents/kora/curator/skills/CM-CRYSTALLIZER.md
+    status: published
+  - urn: urn:kora:skill:curator-koraficator:1.0.0
+    title: CM-KORAFICATOR
+    file: agents/kora/curator/skills/CM-KORAFICATOR.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-surgeon:1.0.0
+    title: CM-ARTIFACT-SURGEON
+    file: agents/kora/curator/skills/CM-ARTIFACT-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-auditor:1.0.0
+    title: CM-ARTIFACT-AUDITOR
+    file: agents/kora/curator/skills/CM-ARTIFACT-AUDITOR.md
+    status: published
   - urn: urn:kora:skill:cartographer-project-classifier:1.0.0
     title: CM-PROJECT-CLASSIFIER
     file: agents/kora/cartographer/skills/CM-PROJECT-CLASSIFIER.md
@@ -197,38 +273,6 @@ Catalog:
   - urn: urn:kora:skill:architect-intent-analyzer:1.0.0
     title: CM-INTENT-ANALYZER
     file: agents/kora/architect/skills/CM-INTENT-ANALYZER.md
-    status: published
-  - urn: urn:kora:skill:guardian-fix-validator:1.0.0
-    title: CM-FIX-VALIDATOR
-    file: agents/kora/guardian/skills/CM-FIX-VALIDATOR.md
-    status: published
-  - urn: urn:kora:skill:guardian-improvement-generator:1.0.0
-    title: CM-IMPROVEMENT-GENERATOR
-    file: agents/kora/guardian/skills/CM-IMPROVEMENT-GENERATOR.md
-    status: published
-  - urn: urn:kora:skill:guardian-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER
-    file: agents/kora/guardian/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:kora:skill:guardian-intent-classifier:1.0.0
-    title: CM-INTENT-CLASSIFIER
-    file: agents/kora/guardian/skills/CM-INTENT-CLASSIFIER.md
-    status: published
-  - urn: urn:kora:skill:guardian-principle-defender:1.0.0
-    title: CM-PRINCIPLE-DEFENDER
-    file: agents/kora/guardian/skills/CM-PRINCIPLE-DEFENDER.md
-    status: published
-  - urn: urn:kora:skill:guardian-knowledge-router:1.0.0
-    title: CM-KNOWLEDGE-ROUTER
-    file: agents/kora/guardian/skills/CM-KNOWLEDGE-ROUTER.md
-    status: published
-  - urn: urn:kora:skill:guardian-proposal-evaluator:1.0.0
-    title: CM-PROPOSAL-EVALUATOR
-    file: agents/kora/guardian/skills/CM-PROPOSAL-EVALUATOR.md
-    status: published
-  - urn: urn:kora:skill:guardian-pedagogical-adapter:1.0.0
-    title: CM-PEDAGOGICAL-ADAPTER
-    file: agents/kora/guardian/skills/CM-PEDAGOGICAL-ADAPTER.md
     status: published
   Knowledge:
   - urn: urn:kora:kb:agent-spec-md
@@ -1809,6 +1853,22 @@ Catalog:
     title: TOOLS.md
     file: agents/kora/taskmaster/TOOLS.md
     status: published
+  - urn: urn:kora:agent-bootstrap:custodio-user:1.0.0
+    title: USER.md
+    file: agents/kora/custodio/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-soul:1.0.0
+    title: SOUL.md
+    file: agents/kora/custodio/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-agents:1.0.0
+    title: AGENTS.md
+    file: agents/kora/custodio/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-tools:1.0.0
+    title: TOOLS.md
+    file: agents/kora/custodio/TOOLS.md
+    status: published
   - urn: urn:kora:agent-bootstrap:transformer-user:1.0.0
     title: USER.md
     file: agents/kora/transformer/USER.md
@@ -1884,6 +1944,22 @@ Catalog:
   - urn: urn:kora:agent-bootstrap:orquestador-generico-cm-synthesis-engine:1.0.0
     title: CM-synthesis-engine.md
     file: agents/kora/orquestador-generico/skills/CM-synthesis-engine.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-user:1.0.0
+    title: USER.md
+    file: agents/kora/curator/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-soul:1.0.0
+    title: SOUL.md
+    file: agents/kora/curator/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-agents:1.0.0
+    title: AGENTS.md
+    file: agents/kora/curator/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-tools:1.0.0
+    title: TOOLS.md
+    file: agents/kora/curator/TOOLS.md
     status: published
   - urn: urn:kora:agent-bootstrap:cartographer-user:1.0.0
     title: USER.md
@@ -1976,30 +2052,6 @@ Catalog:
   - urn: urn:kora:agent-bootstrap:architect-cm-kora-agent-construct:1.0.0
     title: CM-kora-agent-construct.md
     file: agents/kora/architect/skills/CM-kora-agent-construct.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:guardian-user:1.0.0
-    title: USER.md
-    file: agents/kora/guardian/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:guardian-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/guardian/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:guardian-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/guardian/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:guardian-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/guardian/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:guardian-cm-drift-analyzer:1.0.0
-    title: CM-drift-analyzer.md
-    file: agents/kora/guardian/skills/CM-drift-analyzer.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:guardian-cm-audit-executor:1.0.0
-    title: CM-audit-executor.md
-    file: agents/kora/guardian/skills/CM-audit-executor.md
     status: published
   - urn: urn:kora:agent-bootstrap:sim-orchestrator-user:2.0.0
     title: USER.md
