@@ -1,0 +1,38 @@
+{
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:tester-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:stack-llm-arquitectura",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:fxsl:kb:chapter0-operador-solitario"
+  ],
+  "sandbox": true,
+  "tools": {
+    "allow": [
+      "test_read",
+      "test_write",
+      "test_execution"
+    ],
+    "deny": [
+      "filesystem_write",
+      "deploy",
+      "production_access",
+      "secret_management"
+    ]
+  },
+  "sub_agents": {},
+  "limits": {
+    "tier_default": "T2",
+    "require_ac_coverage": true,
+    "require_test_independence": true,
+    "require_determinism": true,
+    "zero_untested_acs": true
+  },
+  "execution_environment": {
+    "sandboxed": true,
+    "note": "Tests se generan y ejecutan en entorno sandboxed. No hay acceso a produccion ni escritura de codigo de produccion."
+  }
+}

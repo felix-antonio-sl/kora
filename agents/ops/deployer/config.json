@@ -1,0 +1,50 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "change_classify",
+      "strategy_select",
+      "deploy_execute",
+      "feature_flag_manage",
+      "post_deploy_verify",
+      "rollback_execute",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  },
+  "deploy": {
+    "canary": {
+      "initial_percentage": 5,
+      "expansion_steps": [25, 50, 100],
+      "observation_window_min": 15
+    },
+    "fast_track": {
+      "observation_window_min": 5
+    },
+    "rollback_thresholds": {
+      "latency_increase_percent": 20,
+      "error_rate_increase_percent": 1,
+      "resource_spike_percent": 50
+    },
+    "batching": {
+      "enabled": true,
+      "observation_between_batches_min": 10
+    },
+    "tiers": {
+      "T1_lectura": "fast-track",
+      "T2_escritura": "canary",
+      "T3_destructiva": "manual"
+    }
+  }
+}

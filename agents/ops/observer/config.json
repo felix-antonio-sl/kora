@@ -1,0 +1,28 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:fxsl:kb:chapter0-operador-solitario",
+    "urn:fxsl:kb:stack-llm-arquitectura",
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "strict",
+    "notes": "Read-only monitoring. No write access to production systems."
+  },
+  "tools": {
+    "allow": ["health_check", "anomaly_detect", "deploy_timeline", "correlate", "diagnosis_propose", "alert_send", "heartbeat", "kb_route"],
+    "deny": ["deploy", "rollback_execute", "code_write", "config_modify"]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  },
+  "tier": "T2",
+  "heartbeat_interval": "60s",
+  "alert_channels": {
+    "default": "telegram",
+    "escalation": "slack",
+    "critical": ["telegram", "slack", "email"]
+  },
+  "observer_infra_separation": true
+}
