@@ -2,6 +2,8 @@
 _manifest:
   urn: "urn:korvo:agent-bootstrap:korvo-assistant-tools:2.0.0"
   type: "bootstrap_tools"
+status: deprecated
+deprecated_by: "urn:kora:agent-bootstrap:korax-tools:2.0.0"
 ---
 
 ## catalog_resolve

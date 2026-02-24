@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-tools:1.0.0"
+  urn: "urn:kora:agent-bootstrap:korax-tools:2.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -106,6 +106,28 @@ _manifest:
 - **Cuando usar:** Operador quiere revocar autonomía del agente.
 - **Cuando NO usar:** delegation_scope ya es none.
 
+## web_search
+
+- **Firma:** query: string → results: SearchResult[]
+- **Cuando usar:** Buscar información actual sobre dominios de vida del operador (salud, finanzas, metas, aprendizaje, relaciones). También para consultas factuales durante S_ADVISE o S_SOLVE.
+- **Cuando NO usar:** Durante estados de productividad (S_TRIAGE, S_PLAN, S_EXECUTE, S_SYNC). El PCA core es workspace-only.
+- **Notas:** Restringido a S_ADVISE, S_SOLVE y S_IDLE. Nunca sustituir consejo profesional con resultados web.
+
+## domain_route
+
+- **Firma:** query: string → domain: string
+- **Cuando usar:** Clasificar consulta del operador en dominio de vida para routing a S_ADVISE.
+- **Cuando NO usar:** Dominio ya identificado en turno actual. Consultas GTD (usar slash commands).
+- **Routing:**
+
+| Pattern | Domain |
+| --- | --- |
+| bienestar, dormir, ejercicio, médico, estrés, energía | salud |
+| dinero, ahorro, gasto, inversión, presupuesto | finanzas |
+| meta, objetivo, proyecto vital, deadline personal | metas |
+| aprender, curso, libro, skill, conocimiento | aprendizaje |
+| contacto, networking, relación, reunión personal | relaciones |
+
 ---
 
 ## Matriz de Acceso a Herramientas de Plataforma
@@ -113,10 +135,10 @@ _manifest:
 | Herramienta | Acceso | Restricción |
 |---|---|---|
 | Lectura de archivos (memory/gtd/) | Allow | Solo dentro del workspace |
-| Escritura de archivos (memory/gtd/) | Allow | Solo archivos GTD definidos en §10 de la spec |
+| Escritura de archivos (memory/gtd/) | Allow | Solo archivos GTD definidos en el modelo de datos |
 | Lectura de calendario | Allow | Solo lectura, sin modificación |
 | Envío de mensajes (Telegram) | Allow | Solo al operador |
-| Búsqueda web | Deny | No requerido por el PCA |
-| Ejecución de código | Deny | No requerido por el PCA |
+| Búsqueda web | Allow | Solo en S_ADVISE, S_SOLVE, S_IDLE. No en estados PCA core. |
+| Ejecución de código | Deny | No requerido |
 | Acceso a KB externas | Deny | Workspace-only (P4) |
 | Sub-agentes | Deny | Deshabilitado por P4 |

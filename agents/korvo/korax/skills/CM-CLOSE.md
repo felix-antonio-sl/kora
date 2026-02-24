@@ -1,17 +1,17 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-cm-close:1.0.0"
+  urn: "urn:kora:agent-bootstrap:korax-cm-close:2.0.0"
   type: "lazy_load_endofuntor"
 ---
 
 ## Purpose
 
-Ritual de cierre vespertino (PCA Módulo 3: "Noche — 2min de Cierre"). Cierra el día, vacía micro-capturas y ejecuta micro-check de Waiting (INV-12).
+Ritual de cierre vespertino (PCA Módulo 3: "Noche — 2min de Cierre"). Cierra el día, vacía micro-capturas, ejecuta micro-check de Waiting (INV-12) y ofrece espacio para reflexión.
 
 ## Input/Output
 
 - **Input:** day_state: {bloques_ejecutados, capturas_pendientes, waiting_items}
-- **Output:** close: CloseResult {capturas_nuevas, waiting_alertas, triaje_recordado}
+- **Output:** close: CloseResult {capturas_nuevas, waiting_alertas, triaje_recordado, reflexion}
 
 ## Procedure
 
@@ -19,9 +19,10 @@ Ritual de cierre vespertino (PCA Módulo 3: "Noche — 2min de Cierre"). Cierra 
 2. Si no hubo triaje hoy → recordar suavemente (vinculado a triaje vespertino, que el operador inicia manualmente con `/triaje`).
 3. **Micro-check Waiting (INV-12):** ¿Algo en WAITING.md >3 días? → Alertar con lista.
 4. Recordar vaciar micro-capturas del día al buffer.
-5. Confirmar cierre.
+5. **Reflexión breve (opcional):** "¿Cómo fue el día?" Si el operador quiere hablar → escuchar en registro relacional (no operacional). Si no → cerrar sin insistir.
+6. Confirmar cierre.
 
-**Duración:** 2 minutos máximo.
+**Duración:** 2-5 minutos (2 base + reflexión opcional).
 
 ## Signature Output
 

@@ -2,6 +2,9 @@
 _manifest:
   urn: "urn:korvo:agent-bootstrap:korvo-assistant-agents:2.0.0"
   type: "bootstrap_agents"
+status: deprecated
+deprecated_by: "urn:kora:agent-bootstrap:korax-agents:2.0.0"
+deprecation_note: "Capacidades absorbidas por korvo/korax v2.0.0 (S_ADVISE, S_SOLVE, S_COMPANION). Este agente ya no debe instanciarse."
 ---
 
 ## 1. FSM (WF-KORVO-MAIN)

@@ -6,6 +6,58 @@ _manifest:
 Catalog:
   Agents: []
   Skills:
+  - urn: urn:fxsl:skill:reviewer-eval-executor:1.0.0
+    title: CM-EVAL-EXECUTOR
+    file: agents/fxsl/reviewer/skills/CM-EVAL-EXECUTOR.md
+    status: published
+  - urn: urn:fxsl:skill:reviewer-verdict-synthesizer:1.0.0
+    title: CM-VERDICT-SYNTHESIZER
+    file: agents/fxsl/reviewer/skills/CM-VERDICT-SYNTHESIZER.md
+    status: published
+  - urn: urn:fxsl:skill:reviewer-security-reviewer:1.0.0
+    title: CM-SECURITY-REVIEWER
+    file: agents/fxsl/reviewer/skills/CM-SECURITY-REVIEWER.md
+    status: published
+  - urn: urn:fxsl:skill:reviewer-code-reviewer:1.0.0
+    title: CM-CODE-REVIEWER
+    file: agents/fxsl/reviewer/skills/CM-CODE-REVIEWER.md
+    status: published
+  - urn: urn:fxsl:skill:reviewer-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/fxsl/reviewer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:reviewer-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/fxsl/reviewer/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-dashboard-generator:1.0.0
+    title: CM-DASHBOARD-GENERATOR
+    file: agents/fxsl/analyst/skills/CM-DASHBOARD-GENERATOR.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-retro-reporter:1.0.0
+    title: CM-RETRO-REPORTER
+    file: agents/fxsl/analyst/skills/CM-RETRO-REPORTER.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-metrics-collector:1.0.0
+    title: CM-METRICS-COLLECTOR
+    file: agents/fxsl/analyst/skills/CM-METRICS-COLLECTOR.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/fxsl/analyst/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/fxsl/analyst/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-trend-analyzer:1.0.0
+    title: CM-TREND-ANALYZER
+    file: agents/fxsl/analyst/skills/CM-TREND-ANALYZER.md
+    status: published
+  - urn: urn:fxsl:skill:analyst-backlog-health-checker:1.0.0
+    title: CM-BACKLOG-HEALTH-CHECKER
+    file: agents/fxsl/analyst/skills/CM-BACKLOG-HEALTH-CHECKER.md
+    status: published
   - urn: urn:fxsl:skill:planner-okr-strategist:1.0.0
     title: CM-OKR-STRATEGIST
     file: agents/fxsl/planner/skills/CM-OKR-STRATEGIST.md
@@ -53,6 +105,110 @@ Catalog:
   - urn: urn:fxsl:skill:ontologista-gist-critico:1.0.0
     title: CM-CRITICO
     file: agents/fxsl/ontologista-gist/skills/CM-CRITICO.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-self-evaluator:1.0.0
+    title: CM-SELF-EVALUATOR
+    file: agents/fxsl/sentinel/skills/CM-SELF-EVALUATOR.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/fxsl/sentinel/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-eval-auditor:1.0.0
+    title: CM-EVAL-AUDITOR
+    file: agents/fxsl/sentinel/skills/CM-EVAL-AUDITOR.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/fxsl/sentinel/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-purple-card-generator:1.0.0
+    title: CM-PURPLE-CARD-GENERATOR
+    file: agents/fxsl/sentinel/skills/CM-PURPLE-CARD-GENERATOR.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-context-auditor:1.0.0
+    title: CM-CONTEXT-AUDITOR
+    file: agents/fxsl/sentinel/skills/CM-CONTEXT-AUDITOR.md
+    status: published
+  - urn: urn:fxsl:skill:sentinel-swarm-auditor:1.0.0
+    title: CM-SWARM-AUDITOR
+    file: agents/fxsl/sentinel/skills/CM-SWARM-AUDITOR.md
+    status: published
+  - urn: urn:fxsl:skill:refactorer-code-analyzer:1.0.0
+    title: CM-CODE-ANALYZER
+    file: agents/fxsl/refactorer/skills/CM-CODE-ANALYZER.md
+    status: published
+  - urn: urn:fxsl:skill:refactorer-dependency-modernizer:1.0.0
+    title: CM-DEPENDENCY-MODERNIZER
+    file: agents/fxsl/refactorer/skills/CM-DEPENDENCY-MODERNIZER.md
+    status: published
+  - urn: urn:fxsl:skill:refactorer-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/fxsl/refactorer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:refactorer-debt-tracker:1.0.0
+    title: CM-DEBT-TRACKER
+    file: agents/fxsl/refactorer/skills/CM-DEBT-TRACKER.md
+    status: published
+  - urn: urn:fxsl:skill:refactorer-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/fxsl/refactorer/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:fxsl:skill:refactorer-refactor-executor:1.0.0
+    title: CM-REFACTOR-EXECUTOR
+    file: agents/fxsl/refactorer/skills/CM-REFACTOR-EXECUTOR.md
+    status: published
+  - urn: urn:fxsl:skill:tester-acceptance-test-generator:1.0.0
+    title: CM-ACCEPTANCE-TEST-GENERATOR
+    file: agents/fxsl/tester/skills/CM-ACCEPTANCE-TEST-GENERATOR.md
+    status: published
+  - urn: urn:fxsl:skill:tester-integration-test-generator:1.0.0
+    title: CM-INTEGRATION-TEST-GENERATOR
+    file: agents/fxsl/tester/skills/CM-INTEGRATION-TEST-GENERATOR.md
+    status: published
+  - urn: urn:fxsl:skill:tester-test-executor:1.0.0
+    title: CM-TEST-EXECUTOR
+    file: agents/fxsl/tester/skills/CM-TEST-EXECUTOR.md
+    status: published
+  - urn: urn:fxsl:skill:tester-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/fxsl/tester/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:tester-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/fxsl/tester/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:fxsl:skill:tester-coverage-reporter:1.0.0
+    title: CM-COVERAGE-REPORTER
+    file: agents/fxsl/tester/skills/CM-COVERAGE-REPORTER.md
+    status: published
+  - urn: urn:fxsl:skill:coder-story-consumer:1.0.0
+    title: CM-STORY-CONSUMER
+    file: agents/fxsl/coder/skills/CM-STORY-CONSUMER.md
+    status: published
+  - urn: urn:fxsl:skill:coder-tdd-executor:1.0.0
+    title: CM-TDD-EXECUTOR
+    file: agents/fxsl/coder/skills/CM-TDD-EXECUTOR.md
+    status: published
+  - urn: urn:fxsl:skill:coder-bug-hunter:1.0.0
+    title: CM-BUG-HUNTER
+    file: agents/fxsl/coder/skills/CM-BUG-HUNTER.md
+    status: published
+  - urn: urn:fxsl:skill:coder-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/fxsl/coder/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:coder-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: agents/fxsl/coder/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:fxsl:skill:coder-pr-generator:1.0.0
+    title: CM-PR-GENERATOR
+    file: agents/fxsl/coder/skills/CM-PR-GENERATOR.md
+    status: published
+  - urn: urn:fxsl:skill:coder-implementation-planner:1.0.0
+    title: CM-IMPLEMENTATION-PLANNER
+    file: agents/fxsl/coder/skills/CM-IMPLEMENTATION-PLANNER.md
     status: published
   - urn: urn:gn:skill:dgi-virtual-lean-thinking:1.0.0
     title: CM-LEAN-THINKING
@@ -174,9 +330,17 @@ Catalog:
     title: CM-TROUBLESHOOTER
     file: agents/kora/clawmaster/skills/CM-TROUBLESHOOTER.md
     status: published
+  - urn: urn:kora:skill:clawmaster-lifecycle-orchestrator:1.0.0
+    title: CM-LIFECYCLE-ORCHESTRATOR
+    file: agents/kora/clawmaster/skills/CM-LIFECYCLE-ORCHESTRATOR.md
+    status: published
   - urn: urn:kora:skill:clawmaster-performance-optimizer:1.0.0
     title: CM-PERFORMANCE-OPTIMIZER
     file: agents/kora/clawmaster/skills/CM-PERFORMANCE-OPTIMIZER.md
+    status: published
+  - urn: urn:kora:skill:clawmaster-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: agents/kora/clawmaster/skills/CM-CONTEXT-MANAGER.md
     status: published
   - urn: urn:kora:skill:clawmaster-version-manager:1.0.0
     title: CM-VERSION-MANAGER
@@ -185,6 +349,10 @@ Catalog:
   - urn: urn:kora:skill:clawmaster-intent-classifier:1.0.0
     title: CM-INTENT-CLASSIFIER
     file: agents/kora/clawmaster/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:clawmaster-code-contributor:1.0.0
+    title: CM-CODE-CONTRIBUTOR
+    file: agents/kora/clawmaster/skills/CM-CODE-CONTRIBUTOR.md
     status: published
   - urn: urn:kora:skill:clawmaster-knowledge-navigator:1.0.0
     title: CM-KNOWLEDGE-NAVIGATOR
@@ -333,6 +501,118 @@ Catalog:
   - urn: urn:kora:skill:architect-intent-analyzer:1.0.0
     title: CM-INTENT-ANALYZER
     file: agents/kora/architect/skills/CM-INTENT-ANALYZER.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-backpressure-controller:1.0.0
+    title: CM-BACKPRESSURE-CONTROLLER.md
+    file: agents/ops/orquestador-swarm/skills/CM-BACKPRESSURE-CONTROLLER.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-event-classifier:1.0.0
+    title: CM-EVENT-CLASSIFIER.md
+    file: agents/ops/orquestador-swarm/skills/CM-EVENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-system-status:1.0.0
+    title: CM-SYSTEM-STATUS.md
+    file: agents/ops/orquestador-swarm/skills/CM-SYSTEM-STATUS.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/orquestador-swarm/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/orquestador-swarm/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-golden-path-router:1.0.0
+    title: CM-GOLDEN-PATH-ROUTER.md
+    file: agents/ops/orquestador-swarm/skills/CM-GOLDEN-PATH-ROUTER.md
+    status: published
+  - urn: urn:ops:skill:orquestador-swarm-circuit-breaker-manager:1.0.0
+    title: CM-CIRCUIT-BREAKER-MANAGER.md
+    file: agents/ops/orquestador-swarm/skills/CM-CIRCUIT-BREAKER-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:security-self-auditor:1.0.0
+    title: CM-SELF-AUDITOR.md
+    file: agents/ops/security/skills/CM-SELF-AUDITOR.md
+    status: published
+  - urn: urn:ops:skill:security-dependency-auditor:1.0.0
+    title: CM-DEPENDENCY-AUDITOR.md
+    file: agents/ops/security/skills/CM-DEPENDENCY-AUDITOR.md
+    status: published
+  - urn: urn:ops:skill:security-runtime-monitor:1.0.0
+    title: CM-RUNTIME-MONITOR.md
+    file: agents/ops/security/skills/CM-RUNTIME-MONITOR.md
+    status: published
+  - urn: urn:ops:skill:security-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/security/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:security-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/security/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:security-pr-analyzer:1.0.0
+    title: CM-PR-SECURITY-ANALYZER.md
+    file: agents/ops/security/skills/CM-PR-SECURITY-ANALYZER.md
+    status: published
+  - urn: urn:ops:skill:security-adversarial-tester:1.0.0
+    title: CM-ADVERSARIAL-TESTER.md
+    file: agents/ops/security/skills/CM-ADVERSARIAL-TESTER.md
+    status: published
+  - urn: urn:ops:skill:integrador-conflict-resolver:1.0.0
+    title: CM-CONFLICT-RESOLVER.md
+    file: agents/ops/integrador/skills/CM-CONFLICT-RESOLVER.md
+    status: published
+  - urn: urn:ops:skill:integrador-semantic-merger:1.0.0
+    title: CM-SEMANTIC-MERGER.md
+    file: agents/ops/integrador/skills/CM-SEMANTIC-MERGER.md
+    status: published
+  - urn: urn:ops:skill:integrador-coherence-verifier:1.0.0
+    title: CM-COHERENCE-VERIFIER.md
+    file: agents/ops/integrador/skills/CM-COHERENCE-VERIFIER.md
+    status: published
+  - urn: urn:ops:skill:integrador-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/integrador/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:integrador-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/integrador/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:integrador-merge-queue-manager:1.0.0
+    title: CM-MERGE-QUEUE-MANAGER.md
+    file: agents/ops/integrador/skills/CM-MERGE-QUEUE-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:verificador-ci-layer:1.0.0
+    title: CM-CI-LAYER.md
+    file: agents/ops/verificador/skills/CM-CI-LAYER.md
+    status: published
+  - urn: urn:ops:skill:verificador-regression-layer:1.0.0
+    title: CM-REGRESSION-LAYER.md
+    file: agents/ops/verificador/skills/CM-REGRESSION-LAYER.md
+    status: published
+  - urn: urn:ops:skill:verificador-human-gate:1.0.0
+    title: CM-HUMAN-GATE.md
+    file: agents/ops/verificador/skills/CM-HUMAN-GATE.md
+    status: published
+  - urn: urn:ops:skill:verificador-verification-orchestrator:1.0.0
+    title: CM-VERIFICATION-ORCHESTRATOR.md
+    file: agents/ops/verificador/skills/CM-VERIFICATION-ORCHESTRATOR.md
+    status: published
+  - urn: urn:ops:skill:verificador-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/verificador/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:verificador-security-layer:1.0.0
+    title: CM-SECURITY-LAYER.md
+    file: agents/ops/verificador/skills/CM-SECURITY-LAYER.md
+    status: published
+  - urn: urn:ops:skill:verificador-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/verificador/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:verificador-diversity-layer:1.0.0
+    title: CM-DIVERSITY-LAYER.md
+    file: agents/ops/verificador/skills/CM-DIVERSITY-LAYER.md
     status: published
   Knowledge:
   - urn: urn:kora:kb:agent-spec-md
@@ -1213,6 +1493,38 @@ Catalog:
     status: published
   Documents: []
   Other:
+  - urn: urn:fxsl:agent-bootstrap:reviewer-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/reviewer/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:reviewer-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/reviewer/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:reviewer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/reviewer/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:reviewer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/reviewer/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/analyst/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/analyst/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/analyst/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/analyst/TOOLS.md
+    status: published
   - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-user:1.0.0
     title: USER.md
     file: agents/fxsl/ingeniero-moltbot-composicional/USER.md
@@ -1393,6 +1705,38 @@ Catalog:
     title: CM-GIST-ADVISOR.md
     file: agents/fxsl/ontologista-gist/skills/CM-GIST-ADVISOR.md
     status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/sentinel/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/sentinel/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/sentinel/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/sentinel/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/refactorer/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/refactorer/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/refactorer/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/refactorer/TOOLS.md
+    status: published
   - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-user:1.0.0
     title: USER.md
     file: agents/fxsl/abogado-legislacion-medica/USER.md
@@ -1505,6 +1849,22 @@ Catalog:
     title: CM-mbt-categorical-bridge.md
     file: agents/fxsl/ingeniero-software-composicional/skills/CM-mbt-categorical-bridge.md
     status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/tester/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/tester/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/tester/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/tester/TOOLS.md
+    status: published
   - urn: urn:fxsl:agent-bootstrap:medico-urgencias-user:1.1.0
     title: USER.md
     file: agents/fxsl/medico-urgencias/USER.md
@@ -1540,6 +1900,22 @@ Catalog:
   - urn: urn:fxsl:agent-bootstrap:modelador-mbt-tools:2.0.0
     title: TOOLS.md
     file: agents/fxsl/modelador-mbt/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/coder/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/coder/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/coder/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/coder/TOOLS.md
     status: published
   - urn: urn:fxsl:agent-bootstrap:visionario-user:2.0.0
     title: USER.md
@@ -2145,6 +2521,142 @@ Catalog:
     title: CM-kora-agent-construct.md
     file: agents/kora/architect/skills/CM-kora-agent-construct.md
     status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-user:1.0.0
+    title: USER.md
+    file: agents/ops/orquestador-swarm/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/orquestador-swarm/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/orquestador-swarm/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/orquestador-swarm/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-user:1.0.0
+    title: USER.md
+    file: agents/ops/deployer/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/deployer/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/deployer/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/deployer/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-post-deploy-verifier:1.0.0
+    title: CM-POST-DEPLOY-VERIFIER.md
+    file: agents/ops/deployer/skills/CM-POST-DEPLOY-VERIFIER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/deployer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-change-classifier:1.0.0
+    title: CM-CHANGE-CLASSIFIER.md
+    file: agents/ops/deployer/skills/CM-CHANGE-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/deployer/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-strategy-selector:1.0.0
+    title: CM-STRATEGY-SELECTOR.md
+    file: agents/ops/deployer/skills/CM-STRATEGY-SELECTOR.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-rollback-executor:1.0.0
+    title: CM-ROLLBACK-EXECUTOR.md
+    file: agents/ops/deployer/skills/CM-ROLLBACK-EXECUTOR.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-cm-deploy-executor:1.0.0
+    title: CM-DEPLOY-EXECUTOR.md
+    file: agents/ops/deployer/skills/CM-DEPLOY-EXECUTOR.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-user:1.0.0
+    title: USER.md
+    file: agents/ops/security/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/security/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/security/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/security/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-user:1.0.0
+    title: USER.md
+    file: agents/ops/observer/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/observer/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/observer/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/observer/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/observer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-anomaly-detector:1.0.0
+    title: CM-ANOMALY-DETECTOR.md
+    file: agents/ops/observer/skills/CM-ANOMALY-DETECTOR.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-alert-manager:1.0.0
+    title: CM-ALERT-MANAGER.md
+    file: agents/ops/observer/skills/CM-ALERT-MANAGER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/observer/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-health-monitor:1.0.0
+    title: CM-HEALTH-MONITOR.md
+    file: agents/ops/observer/skills/CM-HEALTH-MONITOR.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-correlation-engine:1.0.0
+    title: CM-CORRELATION-ENGINE.md
+    file: agents/ops/observer/skills/CM-CORRELATION-ENGINE.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-cm-diagnosis-proposer:1.0.0
+    title: CM-DIAGNOSIS-PROPOSER.md
+    file: agents/ops/observer/skills/CM-DIAGNOSIS-PROPOSER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-user:1.0.0
+    title: USER.md
+    file: agents/ops/integrador/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/integrador/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/integrador/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/integrador/TOOLS.md
+    status: published
   - urn: urn:kora:agent-bootstrap:sim-orchestrator-user:2.0.0
     title: USER.md
     file: agents/ops/sim-orchestrator/USER.md
@@ -2212,6 +2724,22 @@ Catalog:
   - urn: urn:kora:agent-bootstrap:ci-assistant-tools:2.0.0
     title: TOOLS.md
     file: agents/ops/ci-assistant/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-user:1.0.0
+    title: USER.md
+    file: agents/ops/verificador/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/verificador/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/verificador/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/verificador/TOOLS.md
     status: published
   - urn: urn:tde:agent-bootstrap:digitrans-user:2.0.0
     title: USER.md

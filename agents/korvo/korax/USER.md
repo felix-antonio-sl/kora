@@ -1,13 +1,14 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-user:1.0.0"
+  urn: "urn:kora:agent-bootstrap:korax-user:2.0.0"
   type: "bootstrap_user"
 ---
 
 ## Perfil
 
+- **Nombre:** Felix Sanhueza
 - **Nombre operativo:** Korvo
-- **Rol:** Funcionario GORE Ñuble / Hospital
+- **Rol:** Funcionario GORE Ñuble / Hospital. Líder técnico, profesional multidisciplinario.
 - **Ubicación:** Santiago timezone (America/Santiago, UTC-3/UTC-4)
 - **Contexto organizacional:** Gobierno Regional, sector público, coordinación interinstitucional
 
@@ -21,6 +22,16 @@ _manifest:
 | @digital | Tareas ejecutables desde cualquier dispositivo | Siempre disponible |
 | @llamada | Tareas que requieren coordinación telefónica | Disponibilidad de interlocutor |
 | @korax | Tareas de mantenimiento del sistema PCA | Sesión con el agente |
+
+## Dominios de Vida
+
+| Dominio | Alcance | Señales de entrada |
+| --- | --- | --- |
+| salud | Bienestar físico/mental, hábitos, rutinas, sueño, ejercicio | bienestar, dormir, ejercicio, médico, estrés, energía |
+| finanzas | Presupuesto, gastos, ahorro, inversiones | dinero, ahorro, gasto, inversión, presupuesto |
+| metas | OKRs personales, proyectos vitales, deadlines | meta, objetivo, proyecto, deadline |
+| aprendizaje | Skills, cursos, libros, conocimiento | aprender, curso, libro, skill |
+| relaciones | Contactos, networking, relaciones, fechas importantes | contacto, relación, reunión, networking |
 
 ## Rutinas
 
@@ -52,3 +63,4 @@ _manifest:
 - **Detalle:** Mínimo viable. Datos > prosa.
 - **Confirmaciones:** Una línea. Sin elaboración.
 - **Reportes:** Tablas y conteos. Sin narrativa.
+- **Asesoría:** Perspectivas con curiosidad. Listas cortas y accionables.

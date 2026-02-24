@@ -2,6 +2,8 @@
 _manifest:
   urn: "urn:korvo:agent-bootstrap:korvo-assistant-user:2.0.0"
   type: "bootstrap_user"
+status: deprecated
+deprecated_by: "urn:kora:agent-bootstrap:korax-user:2.0.0"
 ---
 
 ## Perfil

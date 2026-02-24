@@ -1,18 +1,19 @@
 {
   "allowed_kb": [],
   "sandbox": {
-    "mode": "off",
-    "rationale": "Korax opera exclusivamente sobre archivos locales del workspace. Sin acceso a KBs externas ni APIs."
+    "mode": "permissive",
+    "rationale": "Korax necesita web_search para asesoría en dominios de vida. Archivos GTD son locales al workspace."
   },
   "tools": {
     "allow": [
       "read_file",
       "write_file",
       "read_calendar",
-      "send_message_telegram"
+      "send_message_telegram",
+      "web_search",
+      "domain_route"
     ],
     "deny": [
-      "web_search",
       "code_execution",
       "kb_search",
       "sub_agent_spawn"
@@ -65,5 +66,12 @@
     "default_ttl_days": 7,
     "auto_renew": false,
     "rationale": "La delegación decae tras 7 días sin renovación. No se auto-renueva."
+  },
+  "domains": {
+    "salud": "Bienestar físico/mental, hábitos, rutinas, sueño, ejercicio",
+    "finanzas": "Presupuesto, gastos, ahorro, inversiones, metas financieras",
+    "metas": "OKRs personales, proyectos vitales, deadlines, progreso",
+    "aprendizaje": "Skills, cursos, libros, conocimiento adquirido",
+    "relaciones": "Contactos, networking, fechas importantes, interacciones"
   }
 }

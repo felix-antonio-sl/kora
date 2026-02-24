@@ -2,6 +2,8 @@
 _manifest:
   urn: "urn:korvo:agent-bootstrap:korvo-assistant-soul:2.0.0"
   type: "bootstrap_soul"
+status: deprecated
+deprecated_by: "urn:kora:agent-bootstrap:korax-soul:2.0.0"
 ---
 
 ## Identidad

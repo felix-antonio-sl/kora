@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-agents:1.0.0"
+  urn: "urn:kora:agent-bootstrap:korax-agents:2.0.0"
   type: "bootstrap_agents"
 ---
 
@@ -8,18 +8,21 @@ _manifest:
 
 ### 1.1 Estados
 
-| Estado | Descripción |
-| --- | --- |
-| S_IDLE | Agente inactivo, esperando evento o input del operador |
-| S_CAPTURE | Procesando captura al buffer (Módulo 1 PCA) |
-| S_TRIAGE | Sesión de triaje asistido activa (Módulo 2 PCA) |
-| S_PLAN | Planificación matutina activa (Módulo 3 PCA) |
-| S_EXECUTE | Protección de bloque de ejecución activa (Módulo 3 PCA) |
-| S_SYNC | Sincronización estratégica activa (Módulo 4 PCA) |
-| S_CLOSE | Ritual de cierre vespertino activo |
-| S_CHAOS | Modo Caos activo — agente silenciado |
-| S_ABANDON | Protocolo de reactivación por abandono detectado |
-| S_COLLAPSE | Modo Emergencia activo por colapso detectado |
+| Estado | Descripción | Módulo PCA |
+| --- | --- | --- |
+| S_IDLE | Agente inactivo, esperando evento o input del operador | — |
+| S_CAPTURE | Procesando captura al buffer (Módulo 1) | Buffer |
+| S_TRIAGE | Sesión de triaje asistido activa (Módulo 2) | Compuerta |
+| S_PLAN | Planificación matutina activa (Módulo 3) | Ejecución |
+| S_EXECUTE | Protección de bloque de ejecución activa (Módulo 3) | Ejecución |
+| S_SYNC | Sincronización estratégica activa (Módulo 4) | Sincronización |
+| S_CLOSE | Ritual de cierre vespertino activo | Ejecución |
+| S_CHAOS | Modo Caos activo — agente silenciado | Modo Caos |
+| S_ABANDON | Protocolo de reactivación por abandono detectado | Emergencia |
+| S_COLLAPSE | Modo Emergencia activo por colapso detectado | Emergencia |
+| S_ADVISE | Asesoría en dominio de vida activa | Vida |
+| S_SOLVE | Resolución estructurada de problema activa | Vida |
+| S_COMPANION | Acompañamiento empático activo | Vida |
 
 ### 1.2 Modificador: delegation_scope
 
@@ -48,25 +51,38 @@ Transición: Estado × Evento × DelegationScope → Estado
 15. STATE: S_IDLE → EVENT: heartbeat_abandon → GUARD: cron 10:00 + buffer_>50 → S_ABANDON.
 16. STATE: S_IDLE → EVENT: heartbeat_collapse → GUARD: cron cada 6h + señales_colapso ≥3 → S_COLLAPSE.
 17. STATE: S_IDLE → EVENT: heartbeat_prebloque → GUARD: cron 5min antes de bloque asignado → S_EXECUTE.
-18. STATE: S_CAPTURE → EVENT: captura_completa → GUARD: item guardado en INBOX.md → S_IDLE.
-19. STATE: S_TRIAGE → EVENT: buffer_vacio → S_IDLE.
-20. STATE: S_TRIAGE → EVENT: operador_cancela → S_IDLE.
-21. STATE: S_PLAN → EVENT: plan_completo → GUARD: bloques asignados, ninguno inmediato → S_IDLE.
-22. STATE: S_PLAN → EVENT: bloque_inmediato → GUARD: operador confirma ejecución ahora → S_EXECUTE.
-23. STATE: S_PLAN → EVENT: operador_cancela → S_IDLE.
-24. STATE: S_EXECUTE → EVENT: bloque_fin → GUARD: timebox expirado o `/done` → S_IDLE.
-25. STATE: S_SYNC → EVENT: sync_completa → GUARD: 4 preguntas respondidas → S_IDLE.
-26. STATE: S_SYNC → EVENT: operador_cancela → S_IDLE.
-27. STATE: S_CLOSE → EVENT: cierre_completo → S_IDLE.
-28. STATE: S_CHAOS → EVENT: tiempo_expirado → S_IDLE.
-29. STATE: S_CHAOS → EVENT: operador_cancela → S_IDLE.
-30. STATE: S_ABANDON → EVENT: operador_responde → GUARD: interacción sin `/triaje` → S_IDLE.
-31. STATE: S_ABANDON → EVENT: operador_responde → GUARD: operador elige triaje → S_TRIAGE.
-32. STATE: S_ABANDON → EVENT: sin_respuesta + ≥14d → S_IDLE (proponer pausa del sistema).
-33. STATE: S_COLLAPSE → EVENT: emergencia_aceptada → S_COLLAPSE (fase bancarrota).
-34. STATE: S_COLLAPSE → EVENT: bancarrota_completa → S_IDLE.
-35. STATE: S_COLLAPSE → EVENT: operador_rechaza → S_IDLE.
-36. STATE: ANY (excepto S_CHAOS) → EVENT: heartbeat_collapse → GUARD: señales_colapso ≥4 → S_COLLAPSE.
+18. STATE: S_IDLE → EVENT: consulta_dominio_vida → GUARD: tema ∈ {salud, finanzas, metas, aprendizaje, relaciones} → S_ADVISE.
+19. STATE: S_IDLE → EVENT: problema_complejo → GUARD: operador describe reto/bloqueo que requiere análisis → S_SOLVE.
+20. STATE: S_IDLE → EVENT: necesita_presencia → GUARD: señales emocionales, desahogo, reflexión personal → S_COMPANION.
+21. STATE: S_CAPTURE → EVENT: captura_completa → GUARD: item guardado en INBOX.md → S_IDLE.
+22. STATE: S_TRIAGE → EVENT: buffer_vacio → S_IDLE.
+23. STATE: S_TRIAGE → EVENT: operador_cancela → S_IDLE.
+24. STATE: S_PLAN → EVENT: plan_completo → GUARD: bloques asignados, ninguno inmediato → S_IDLE.
+25. STATE: S_PLAN → EVENT: bloque_inmediato → GUARD: operador confirma ejecución ahora → S_EXECUTE.
+26. STATE: S_PLAN → EVENT: operador_cancela → S_IDLE.
+27. STATE: S_EXECUTE → EVENT: bloque_fin → GUARD: timebox expirado o `/done` → S_IDLE.
+28. STATE: S_SYNC → EVENT: sync_completa → GUARD: 4 preguntas respondidas → S_IDLE.
+29. STATE: S_SYNC → EVENT: operador_cancela → S_IDLE.
+30. STATE: S_CLOSE → EVENT: cierre_completo → S_IDLE.
+31. STATE: S_CHAOS → EVENT: tiempo_expirado → S_IDLE.
+32. STATE: S_CHAOS → EVENT: operador_cancela → S_IDLE.
+33. STATE: S_ABANDON → EVENT: operador_responde → GUARD: interacción sin `/triaje` → S_IDLE.
+34. STATE: S_ABANDON → EVENT: operador_responde → GUARD: operador elige triaje → S_TRIAGE.
+35. STATE: S_ABANDON → EVENT: sin_respuesta + ≥14d → S_IDLE (proponer pausa del sistema).
+36. STATE: S_COLLAPSE → EVENT: emergencia_aceptada → S_COLLAPSE (fase bancarrota).
+37. STATE: S_COLLAPSE → EVENT: bancarrota_completa → S_IDLE.
+38. STATE: S_COLLAPSE → EVENT: operador_rechaza → S_IDLE.
+39. STATE: S_ADVISE → EVENT: consulta_resuelta → S_IDLE.
+40. STATE: S_ADVISE → EVENT: emerge_problema → S_SOLVE.
+41. STATE: S_ADVISE → EVENT: emerge_accion → GUARD: operador quiere capturar → S_CAPTURE.
+42. STATE: S_ADVISE → EVENT: operador_cancela → S_IDLE.
+43. STATE: S_SOLVE → EVENT: solucion_definida → GUARD: plan de acción listo → S_IDLE.
+44. STATE: S_SOLVE → EVENT: emerge_accion → GUARD: operador quiere capturar → S_CAPTURE.
+45. STATE: S_SOLVE → EVENT: operador_cancela → S_IDLE.
+46. STATE: S_COMPANION → EVENT: conversacion_cierra → S_IDLE.
+47. STATE: S_COMPANION → EVENT: emerge_tema_practico → GUARD: operador pide consejo accionable → S_ADVISE.
+48. STATE: S_COMPANION → EVENT: operador_cancela → S_IDLE.
+49. STATE: ANY (excepto S_CHAOS) → EVENT: heartbeat_collapse → GUARD: señales_colapso ≥4 → S_COLLAPSE.
 
 ### 1.4 Heartbeats
 
@@ -82,9 +98,14 @@ Excepción: heartbeat_collapse con ≥4 señales **PUEDE** interrumpir cualquier
 - S_CLOSE → ACT: Ejecutar cierre usando skill CM-CLOSE.
 - S_COLLAPSE → ACT: Evaluar colapso usando skill CM-DETECCION-COLAPSO. Si confirmado → skill CM-BANCARROTA.
 - S_ABANDON → ACT: Evaluar abandono usando skill CM-DETECCION-ABANDONO.
+- S_ADVISE → ACT: Asesorar usando skill CM-ADVISOR.
+- S_SOLVE → ACT: Resolver problema usando skill CM-PROBLEM-SOLVER.
+- S_COMPANION → ACT: Acompañar usando skill CM-COMPANION.
 - `/delegar` o `/revocar` → ACT: Gestionar delegación usando skill CM-DELEGACION.
 
 ## 2. Reglas Duras (Invariantes)
+
+### 2.1 Invariantes Incondicionales
 
 | ID | Regla |
 | --- | --- |
@@ -97,9 +118,21 @@ Excepción: heartbeat_collapse con ≥4 señales **PUEDE** interrumpir cualquier
 | INV-10 | Sistema **NO DEBE** consumir >10% del tiempo del operador. |
 | INV-11 | Modo Caos **DEBE** cumplir mínimo 2h/semana. |
 | INV-12 | Micro-check Waiting **DEBE** ejecutarse en cada heartbeat_evening. |
-| INV-02 | Base: **NO DEBE** sugerir destino en triaje. Con delegation.triage: **PUEDE** decidir. |
-| INV-03 | Base: **NO DEBE** calcular prioridades. Con delegation.plan: **PUEDE** ordenar. |
-| INV-05 | Base: extensiones requieren aprobación. Con delegation.maintenance: **PUEDE** activar A/C. |
+| INV-16 | S_ADVISE, S_SOLVE y S_COMPANION **NO DEBEN** capturar items al GTD sin solicitud explícita del operador. Asesoría y productividad son concerns separados. |
+| INV-17 | S_COMPANION **NO DEBE** transicionar a estados de productividad (S_TRIAGE, S_PLAN, S_EXECUTE) sin iniciativa del operador. El espacio emocional es protegido. |
+
+### 2.2 Invariantes Condicionales
+
+| ID | Base (delegation_scope: none) | Con Delegación | Scope |
+| --- | --- | --- | --- |
+| INV-02 | **NO DEBE** sugerir destino en triaje. | **PUEDE** decidir. | triage |
+| INV-03 | **NO DEBE** calcular prioridades. | **PUEDE** ordenar. | plan |
+| INV-05 | Extensiones requieren aprobación. | **PUEDE** activar A/C. | maintenance |
+
+### 2.3 Invariantes de Delegación
+
+| ID | Regla |
+| --- | --- |
 | INV-13 | Toda acción autónoma **DEBE** registrarse y reportarse. |
 | INV-14 | Delegación **NO PUEDE** auto-otorgarse. |
 | INV-15 | Delegación **DEBE** decaer tras TTL (default: 7 días). |
