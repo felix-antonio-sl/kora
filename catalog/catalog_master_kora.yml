@@ -705,697 +705,691 @@ Catalog:
     status: published
   Skills: []
   Knowledge:
-  - urn: urn:kora:kb:orko-fases:1.0.0
-    title: orko-fases.yml
-    file: knowledge/orko/orko-fases.yml
+  - urn: urn:kora:kb:agent-spec-md
+    title: KORA/Agent-Spec — Especificación Categórica de Agentes v5.0.0
+    file: specs/agent-spec-md.md
     status: published
-  - urn: urn:kora:kb:orko-tejidos:1.0.0
-    title: orko-tejidos.yml
-    file: knowledge/orko/orko-tejidos.yml
+  - urn: urn:kora:kb:spec-md
+    title: KORA/Spec-MD — Especificación para Documentos Prescriptivos v2.1.0
+    file: specs/spec-md.md
     status: published
-  - urn: urn:kora:kb:impl-orko-toolkit:1.0.0
-    title: impl-orko-toolkit.yml
-    file: knowledge/orko/impl-orko-toolkit.yml
+  - urn: urn:kora:kb:md-spec
+    title: KORA/MD — Especificación de Artefactos de Conocimiento v2.0.0
+    file: specs/md-spec.md
     status: published
-  - urn: urn:kora:kb:orko-fundamentos:1.0.0
-    title: orko-fundamentos.yml
-    file: knowledge/orko/orko-fundamentos.yml
+  - urn: urn:kora:kb:gobernanza
+    title: Gobernanza del Ecosistema KORA v1.2.0
+    file: specs/gobernanza.md
     status: published
-  - urn: urn:kora:kb:orko-toolkit:1.0.0
-    title: orko-toolkit.yml
-    file: knowledge/orko/orko-toolkit.yml
+  - urn: urn:fxsl:kb:mbse-consistency
+    title: MBSE Consistency via Category Theory
+    file: knowledge/fxsl/cat/mbse-consistency.md
     status: published
-  - urn: urn:kora:kb:orko-playbooks:1.0.0
-    title: orko-playbooks.yml
-    file: knowledge/orko/orko-playbooks.yml
+  - urn: urn:fxsl:kb:audit-patterns
+    title: Categorical Audit Patterns
+    file: knowledge/fxsl/cat/audit-patterns.md
     status: published
-  - urn: urn:kora:kb:orko-arquitectura:1.0.0
-    title: orko-arquitectura.yml
-    file: knowledge/orko/orko-arquitectura.yml
-    status: Full Fidelity Rebuild
-  - urn: urn:kora:kb:orko-metodologia:1.0.0
-    title: orko-metodologia.yml
-    file: knowledge/orko/orko-metodologia.yml
+  - urn: urn:fxsl:kb:cognitive-toolkit
+    title: Categorical Cognitive Toolkit v1.2
+    file: knowledge/fxsl/cat/cognitive-toolkit.md
     status: published
-  - urn: urn:kora:kb:gn-cqs-master:1.0.1
-    title: gn-cqs-master.yml
-    file: knowledge/gn/gn-cqs-master.yml
+  - urn: urn:fxsl:kb:formal-framework-data-lakes-ct
+    title: Formal Framework for Data Lakes (CT)
+    file: knowledge/fxsl/cat/formal-framework-data-lakes-ct.md
+    status: published
+  - urn: urn:fxsl:kb:data-access-layers
+    title: Data Access Layers via Category Theory
+    file: knowledge/fxsl/cat/data-access-layers.md
+    status: published
+  - urn: urn:fxsl:kb:kb-category
+    title: Knowledge Base as Category
+    file: knowledge/fxsl/cat/kb-category.md
+    status: published
+  - urn: urn:fxsl:kb:cql-data-integration
+    title: 'CQL: Categorical Query Language'
+    file: knowledge/fxsl/cat/cql-data-integration.md
+    status: published
+  - urn: urn:fxsl:kb:mathematical-modelling
+    title: Mathematical Modelling via Category Theory
+    file: knowledge/fxsl/cat/mathematical-modelling.md
+    status: published
+  - urn: urn:fxsl:kb:algebraic-model-management
+    title: Algebraic Model Management
+    file: knowledge/fxsl/cat/algebraic-model-management.md
+    status: published
+  - urn: urn:fxsl:kb:coalgebras
+    title: Coalgebras for Software Engineering
+    file: knowledge/fxsl/cat/coalgebras.md
+    status: published
+  - urn: urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases
+    title: Category-Theoretic Database Approaches
+    file: knowledge/fxsl/cat/exploring-category-theoretic-approaches-to-databases.md
+    status: published
+  - urn: urn:fxsl:kb:multicategory-multimodel-query-processing
+    title: 'MultiCategory: Multi-Model Query Processing'
+    file: knowledge/fxsl/cat/multicategory-multimodel-query-processing.md
+    status: published
+  - urn: urn:fxsl:kb:categorical-data-structures
+    title: Categorical Data Structures
+    file: knowledge/fxsl/cat/categorical-data-structures.md
+    status: published
+  - urn: urn:fxsl:kb:categorical-systems-theory
+    title: Categorical Systems Theory
+    file: knowledge/fxsl/cat/categorical-systems-theory.md
+    status: published
+  - urn: urn:fxsl:kb:formal-framework-multimodel-data-transformations
+    title: Multi-Model Data Transformations via Kan Lifts
+    file: knowledge/fxsl/cat/formal-framework-multimodel-data-transformations.md
+    status: published
+  - urn: urn:fxsl:kb:action-primary-key
+    title: Action as Primary Key
+    file: knowledge/fxsl/cat/action-primary-key.md
+    status: published
+  - urn: urn:fxsl:kb:algebraic-databases
+    title: Algebraic Databases
+    file: knowledge/fxsl/cat/algebraic-databases.md
+    status: published
+  - urn: urn:fxsl:kb:seven-sketches
+    title: Functorial Data Model (FDM)
+    file: knowledge/fxsl/cat/seven-sketches.md
+    status: published
+  - urn: urn:fxsl:kb:data-lakes-ct
+    title: Data Lakes via Category Theory
+    file: knowledge/fxsl/cat/data-lakes-ct.md
+    status: published
+  - urn: urn:fxsl:kb:constraint-logic
+    title: Unified Constraint Logic
+    file: knowledge/fxsl/cat/constraint-logic.md
+    status: published
+  - urn: urn:orko:kb:orko-tejidos
+    title: ORKO - Tejidos Tecnológicos (Layer 2)
+    file: knowledge/orko/orko-tejidos.md
+    status: published
+  - urn: urn:orko:kb:orko-fundamentos
+    title: ORKO - Fundamentos Teóricos (Layer 0)
+    file: knowledge/orko/orko-fundamentos.md
+    status: published
+  - urn: urn:orko:kb:orko-toolkit
+    title: ORKO - Toolkit de Implementación (Layer 4)
+    file: knowledge/orko/orko-toolkit.md
+    status: published
+  - urn: urn:orko:kb:impl-orko-toolkit
+    title: ORKO - Toolkit Implementación (Layer 4-5)
+    file: knowledge/orko/impl-orko-toolkit.md
+    status: published
+  - urn: urn:orko:kb:orko-arquitectura
+    title: ORKO - Arquitectura Organizacional (Layer 1)
+    file: knowledge/orko/orko-arquitectura.md
+    status: published
+  - urn: urn:orko:kb:orko-playbooks
+    title: ORKO - Catálogo Playbooks (P01-P15)
+    file: knowledge/orko/orko-playbooks.md
+    status: published
+  - urn: urn:orko:kb:orko-fases
+    title: ORKO - Fases Metodología WSLC (Layer 3)
+    file: knowledge/orko/orko-fases.md
+    status: published
+  - urn: urn:orko:kb:orko-metodologia
+    title: ORKO - Metodología (Layer 3)
+    file: knowledge/orko/orko-metodologia.md
+    status: published
+  - urn: urn:mgmt:kb:meyer-org-structure
+    title: Principle-based Organizational Structure
+    file: knowledge/mgmt/meyer-org-structure.md
+    status: published
+  - urn: urn:mgmt:kb:estructura-estado-chile
+    title: Estructura del Estado de Chile
+    file: knowledge/mgmt/estructura-estado-chile.md
+    status: published
+  - urn: urn:mgmt:kb:lean6
+    title: Lean Six Sigma — Core Concepts
+    file: knowledge/mgmt/lean6.md
+    status: published
+  - urn: urn:mgmt:kb:mw-waissbluth
+    title: Introducción a la Gestión Pública (Waissbluth)
+    file: knowledge/mgmt/mw-waissbluth.md
+    status: published
+  - urn: urn:gn:kb:guia-comunicaciones
+    title: Guía Integral de Comunicaciones GORE Ñuble
+    file: knowledge/gn/guias/guia-comunicaciones.md
+    status: published
+  - urn: urn:gn:kb:guia-idi-sni-sts
+    title: Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos
+      Regionales
+    file: knowledge/gn/guias/guia-idi-sni-sts.md
+    status: published
+  - urn: urn:gn:kb:guia-circular-33-sts
+    title: Guía Operativa Circular 33 GORE Ñuble
+    file: knowledge/gn/guias/guia-circular-33-sts.md
+    status: published
+  - urn: urn:gn:kb:guia-programas-directos-gore
+    title: Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución
+      Directa GORE (Vía Glosa 06)
+    file: knowledge/gn/guias/guia-programas-directos-gore.md
+    status: published
+  - urn: urn:gn:kb:guia-fril-2025-sts
+    title: Instructivo FRIL 2025 – Región de Ñuble
+    file: knowledge/gn/guias/guia-fril-2025-sts.md
+    status: published
+  - urn: urn:gn:kb:instructivo-subvencion-8-2025-sts
+    title: Instructivo Concurso de Vinculación con la Comunidad 8% 2025 – Región de
+      Ñuble
+    file: knowledge/gn/guias/instructivo-subvencion-8-2025-sts.md
+    status: published
+  - urn: urn:gn:kb:guia-frpd-nuble
+    title: Guía Operativa FRPD Ñuble 2025
+    file: knowledge/gn/guias/guia-frpd-nuble.md
+    status: published
+  - urn: urn:gn:kb:manual-desarrollo-organizacional
+    title: 'Manual 3.4: Desarrollo Organizacional y Capacitación'
+    file: knowledge/gn/manuales/manual-desarrollo-organizacional.md
+    status: published
+  - urn: urn:gn:kb:manual-asistencia
+    title: 'Manual 3.3: Gestión del Tiempo y Ausentismo'
+    file: knowledge/gn/manuales/manual-asistencia.md
+    status: published
+  - urn: urn:gn:kb:manual-induccion-gore-nuble-2026
+    title: Manual de Inducción del Gobierno Regional de Ñuble 2026
+    file: knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md
+    status: published
+  - urn: urn:gn:kb:manual-ciclo-vida
+    title: 'Manual 3.1: Ciclo de Vida del Funcionario'
+    file: knowledge/gn/manuales/manual-ciclo-vida.md
+    status: published
+  - urn: urn:gn:kb:manual-flotas
+    title: 'Manual 2.4: Servicios Generales y Gestión de Flotas'
+    file: knowledge/gn/manuales/manual-flotas.md
+    status: published
+  - urn: urn:gn:kb:manual-presupuesto
+    title: Manual de Formulación y Ejecución Presupuestaria
+    file: knowledge/gn/manuales/manual-presupuesto.md
+    status: published
+  - urn: urn:gn:kb:manual-tesoreria
+    title: Manual de Tesorería y Gestión de Ingresos
+    file: knowledge/gn/manuales/manual-tesoreria.md
+    status: published
+  - urn: urn:gn:kb:manual-bienestar
+    title: 'Manual 3.5: Bienestar y Calidad de Vida'
+    file: knowledge/gn/manuales/manual-bienestar.md
+    status: published
+  - urn: urn:gn:kb:manual-compras
+    title: 'Manual 2.1: Compras Públicas y Contrataciones'
+    file: knowledge/gn/manuales/manual-compras.md
+    status: published
+  - urn: urn:gn:kb:manual-contabilidad
+    title: Manual de Contabilidad Gubernamental y Cierre Financiero
+    file: knowledge/gn/manuales/manual-contabilidad.md
+    status: published
+  - urn: urn:gn:kb:manual-activo-fijo
+    title: 'Manual 2.3: Gestión del Ciclo de Vida del Activo Fijo'
+    file: knowledge/gn/manuales/manual-activo-fijo.md
+    status: published
+  - urn: urn:gn:kb:manual-remuneraciones
+    title: Manual de Remuneraciones y Compensaciones
+    file: knowledge/gn/manuales/manual-remuneraciones.md
+    status: published
+  - urn: urn:gn:kb:manual-operacional-dgi
+    title: Manual Operacional DGI
+    file: knowledge/gn/manuales/manual-operacional-dgi.md
+    status: published
+  - urn: urn:gn:kb:manual-inventarios-bodegas
+    title: 'Manual 2.2: Gestión de Inventarios y Bodegas'
+    file: knowledge/gn/manuales/manual-inventarios-bodegas.md
+    status: published
+  - urn: urn:gn:kb:ris-proyinv
+    title: RIS Genéricas para Proyectos de Inversión (SNI 2023)
+    file: knowledge/gn/ris/ris-proyinv.md
+    status: published
+  - urn: urn:gn:kb:ris-artcult
+    title: RIS para Proyectos de Arte y Cultura (SNI 2024)
+    file: knowledge/gn/ris/ris-artcult.md
+    status: published
+  - urn: urn:gn:kb:ris-proginv
+    title: RIS Genéricas para Programas de Inversión (SNI 2025)
+    file: knowledge/gn/ris/ris-proginv.md
+    status: published
+  - urn: urn:gn:kb:ris-empub
+    title: RIS para Estudios y Proyectos de Empresas del Estado (SNI 2024)
+    file: knowledge/gn/ris/ris-empub.md
+    status: published
+  - urn: urn:gn:kb:ris-pmdt
+    title: Requisitos de Información para Estudio Básico PMDT (SNI 2024)
+    file: knowledge/gn/ris/ris-pmdt.md
+    status: published
+  - urn: urn:gn:kb:ris-patrimonio
+    title: RIS para Proyectos Patrimoniales (SNI 2024)
+    file: knowledge/gn/ris/ris-patrimonio.md
+    status: published
+  - urn: urn:gn:kb:ris-edpub
+    title: RIS para Proyectos de Edificación Pública (SNI 2024)
+    file: knowledge/gn/ris/ris-edpub.md
+    status: published
+  - urn: urn:gn:kb:ris-deportes
+    title: RIS para Proyectos de Infraestructura Deportiva (SNI 2024)
+    file: knowledge/gn/ris/ris-deportes.md
+    status: published
+  - urn: urn:gn:kb:selector-ipr
+    title: Selector de Vías de Financiamiento para IPR
+    file: knowledge/gn/ris/selector-ipr.md
+    status: published
+  - urn: urn:gn:kb:ris-index
+    title: Índice de Requisitos de Información Sectorial (RIS) SNI
+    file: knowledge/gn/ris/ris-index.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31
+    title: 'Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026'
+    file: knowledge/gn/normativa/ley-presupuestos-2026-partida-31.md
+    status: published
+  - urn: urn:gn:kb:dictamenes-cgr-gore
+    title: Dictámenes CGR para Gobiernos Regionales
+    file: knowledge/gn/normativa/dictamenes-cgr-gore.md
+    status: published
+  - urn: urn:gn:kb:modelos-actos-juridicos
+    title: Modelos de Actos Jurídicos GORE Ñuble
+    file: knowledge/gn/normativa/modelos-actos-juridicos.md
+    status: published
+  - urn: urn:gn:kb:marco-legal-gores
+    title: Compendio Jurídico para Gobiernos Regionales
+    file: knowledge/gn/normativa/marco-legal-gores.md
+    status: published
+  - urn: urn:gn:kb:loc-gore
+    title: Ley Orgánica Constitucional sobre Gobierno y Administración Regional
+    file: knowledge/gn/normativa/loc-gore.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
+    title: 'Ley de Presupuestos 2026: Normas Generales'
+    file: knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d08-rendiciones
+    title: 'D08: Gestión de Rendiciones de Cuentas'
+    file: knowledge/gn/bpmn/bpmn-d08-rendiciones.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d09-cies-sitia
+    title: 'D09: Gestión Operativa CIES-SITIA (Seguridad Pública)'
+    file: knowledge/gn/bpmn/bpmn-d09-cies-sitia.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d10-geoespacial-ide
+    title: 'D10: Gestión de Información Geoespacial (IDE/Geonodo)'
+    file: knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d03-gestion-ipr
+    title: Gestión de Intervenciones Públicas Regionales (IPR)
+    file: knowledge/gn/bpmn/bpmn-d03-gestion-ipr.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d07-rrhh
+    title: 'D07: Gestión de Personas (RRHH)'
+    file: knowledge/gn/bpmn/bpmn-d07-rrhh.md
+    status: published
+  - urn: urn:gn:kb:bpmn-index
+    title: Índice de Procesos BPMN
+    file: knowledge/gn/bpmn/bpmn-index.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d04-compras-contrataciones
+    title: 'D04: Compras Públicas y Contrataciones'
+    file: knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d02-ciclo-presupuestario
+    title: Ciclo Presupuestario Regional (BPMN D02)
+    file: knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d05-inventarios-activo-fijo
+    title: 'BPMN D05: Gestión de Inventarios y Activo Fijo'
+    file: knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d06-flota-vehicular
+    title: 'D06: Gestión de Flota Vehicular'
+    file: knowledge/gn/bpmn/bpmn-d06-flota-vehicular.md
+    status: published
+  - urn: urn:gn:kb:bpmn-d01-actos-administrativos
+    title: 'BPMN D01: Tramitación de Actos Administrativos'
+    file: knowledge/gn/bpmn/bpmn-d01-actos-administrativos.md
+    status: published
+  - urn: urn:gn:kb:transferencia-ppr
+    title: Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
+    file: knowledge/gn/gestion/transferencia-ppr.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR)
+    file: knowledge/gn/gestion/gestion-ipr.md
+    status: published
+  - urn: urn:gn:kb:flujos-aprobacion-documentos
+    title: Flujos de Aprobación de Documentos
+    file: knowledge/gn/gestion/flujos-aprobacion-documentos.md
+    status: published
+  - urn: urn:gn:kb:gestion-info-geoespacial
+    title: Gestión de Información Geoespacial en GORE Ñuble
+    file: knowledge/gn/gestion/gestion-info-geoespacial.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto
+    title: Gestión Financiera y Operativa del Presupuesto Regional (GORE)
+    file: knowledge/gn/gestion/gestion-prpto.md
+    status: published
+  - urn: urn:gn:kb:gestion-rendiciones
+    title: Gestión de Rendiciones de Cuentas - GORE Ñuble
+    file: knowledge/gn/gestion/gestion-rendiciones.md
+    status: published
+  - urn: urn:gn:kb:glosas-gores-2026
+    title: Glosas y Requerimientos de Información GORES 2026
+    file: knowledge/gn/gestion/glosas-gores-2026.md
+    status: published
+  - urn: urn:gn:kb:glosario-ipr-consolidado
+    title: Glosario Consolidado IPR - GORE Ñuble
+    file: knowledge/gn/gobernanza/glosario-ipr-consolidado.md
+    status: published
+  - urn: urn:gn:kb:erd-nuble-2024-2030
+    title: Estrategia Regional de Desarrollo Ñuble 2024 - 2030
+    file: knowledge/gn/gobernanza/erd-nuble-2024-2030.md
+    status: published
+  - urn: urn:gn:kb:cies-sitia
+    title: Centro Integrado de Emergencia y Seguridad (CIES) - SITIA Ñuble
+    file: knowledge/gn/gobernanza/cies-sitia.md
+    status: published
+  - urn: urn:gn:kb:gore-ideal
+    title: GORE Ñuble Ideal / GORE 4.0
+    file: knowledge/gn/gobernanza/gore-ideal.md
+    status: published
+  - urn: urn:gn:kb:matriz-integracion-organica
+    title: Matriz de Integración Orgánica del Conocimiento GORE Ñuble
+    file: knowledge/gn/gobernanza/matriz-integracion-organica.md
+    status: published
+  - urn: urn:gn:kb:organigrama
+    title: Organigrama Institucional GORE Ñuble
+    file: knowledge/gn/gobernanza/organigrama.md
+    status: published
+  - urn: urn:gn:kb:informe-estado-inicial-gore-pre-td
+    title: Informe Estado Inicial GORE Ñuble Pre-Transformación Digital
+    file: knowledge/gn/gobernanza/informe-estado-inicial-gore-pre-td.md
+    status: published
+  - urn: urn:gn:kb:problemas-sociales-cl
+    title: Catálogo de Problemas Sociales de Chile (STS)
+    file: knowledge/gn/gobernanza/problemas-sociales-cl.md
+    status: published
+  - urn: urn:gn:kb:plan-potenciamiento-dgi
+    title: Plan de Potenciamiento DGI
+    file: knowledge/gn/gobernanza/plan-potenciamiento-dgi.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble
+    title: Indicadores regionales y comunales región de Ñuble
+    file: knowledge/gn/gobernanza/indicadores-nuble.md
+    status: published
+  - urn: urn:gn:kb:nuble-250
+    title: Agenda Estratégica Ñuble 250
+    file: knowledge/gn/gobernanza/nuble-250.md
+    status: published
+  - urn: urn:gn:kb:cuentas-publicas-2021-2024
+    title: Cuentas Públicas Gobierno Regional de Ñuble (2021-2024)
+    file: knowledge/gn/gobernanza/cuentas-publicas-2021-2024.md
+    status: published
+  - urn: urn:gn:kb:estrategia-td-ia
+    title: Estrategia y Plan de Transformación Digital e IA "Ñuble Aumentado" (2025–2028)
+    file: knowledge/gn/gobernanza/estrategia-td-ia.md
+    status: published
+  - urn: urn:gn:kb:intro-gores-nuble
+    title: Guía Integral de la Administración Regional de Ñuble
+    file: knowledge/gn/gobernanza/intro-gores-nuble.md
+    status: published
+  - urn: urn:gn:kb:glosario-gore-nuble
+    title: Glosario Unificado GORE Ñuble
+    file: knowledge/gn/gobernanza/glosario-gore-nuble.md
+    status: published
+  - urn: urn:gn:kb:aceleracion-regional
+    title: Estrategia de desarrollo exponencial
+    file: knowledge/gn/gobernanza/aceleracion-regional.md
+    status: published
+  - urn: urn:gn:kb:vision-desarrollo-nuble
+    title: Visión de Desarrollo GORE Ñuble
+    file: knowledge/gn/gobernanza/vision-desarrollo-nuble.md
+    status: published
+  - urn: urn:gn:kb:comunicaciones-oc
+    title: Comunicaciones Oscar Crisóstomo
+    file: knowledge/gn/gobernanza/comunicaciones-oc.md
+    status: published
+  - urn: urn:gn:kb:estrategia-gestion
+    title: Estrategia y Gestión del GORE en Chile
+    file: knowledge/gn/gobernanza/estrategia-gestion.md
+    status: published
+  - urn: urn:gn:kb:omega-ipr-gestion-fusion
+    title: 'Ontología Ω-IPR: Gestión y Fusión de Financiamiento'
+    file: knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md
+    status: published
+  - urn: urn:legal:kb:terminacion
+    title: Terminación de la Relación Laboral y Funcionaria
+    file: knowledge/legal/terminacion.md
+    status: published
+  - urn: urn:legal:kb:intro-estatutos
+    title: Introducción y Estatutos Jurídicos - Trabajo Médico Chile
+    file: knowledge/legal/intro_estatutos.md
+    status: published
+  - urn: urn:legal:kb:ley-21658-segdig
+    title: 'Ley N° 21.658: Creación de la Secretaría de Gobierno Digital'
+    file: knowledge/legal/ley_21658_segdig.md
+    status: published
+  - urn: urn:legal:kb:ley-21719-datos-personales
+    title: Ley N° 21.719 de Protección de Datos Personales
+    file: knowledge/legal/ley_21719_datos_personales.md
+    status: published
+  - urn: urn:legal:kb:ley-21643
+    title: 'Ley 21.643: Prevención y Sanción de Acoso y Violencia en el Trabajo'
+    file: knowledge/legal/ley_21643.md
+    status: published
+  - urn: urn:legal:kb:ingreso-carrera
+    title: Ingreso a la Carrera y Vida Laboral Médica
+    file: knowledge/legal/ingreso_carrera.md
+    status: published
+  - urn: urn:legal:kb:deberes-prohibiciones
+    title: Deberes, Prohibiciones e Incompatibilidades en el Trabajo Médico
+    file: knowledge/legal/deberes_prohibiciones.md
+    status: published
+  - urn: urn:legal:kb:ley-15076
+    title: 'Ley 15.076: Estatuto de los Profesionales Funcionarios de la Salud'
+    file: knowledge/legal/ley_15076.md
+    status: published
+  - urn: urn:legal:kb:confianza-legitima
+    title: Confianza Legítima en Contratas Médicas
+    file: knowledge/legal/confianza_legitima.md
+    status: published
+  - urn: urn:legal:kb:acoso-laboral
+    title: Acoso Laboral y Sexual en el Ámbito Médico
+    file: knowledge/legal/acoso_laboral.md
+    status: published
+  - urn: urn:legal:kb:index
+    title: Índice Global - Legislación Trabajo Médico Chile
+    file: knowledge/legal/index.md
+    status: published
+  - urn: urn:legal:kb:feriados-permisos
+    title: Feriados, Permisos y Comisiones
+    file: knowledge/legal/feriados_permisos.md
+    status: published
+  - urn: urn:legal:kb:derechos-especiales
+    title: 'Derechos Especiales: Liberación de Guardia e Incentivo al Retiro'
+    file: knowledge/legal/derechos_especiales.md
+    status: published
+  - urn: urn:legal:kb:remuneraciones
+    title: Remuneraciones y Asignaciones - Trabajo Médico Chile
+    file: knowledge/legal/remuneraciones.md
+    status: published
+  - urn: urn:legal:kb:jornada-calificaciones
+    title: Jornada de Trabajo y Calificaciones (Trabajo Médico)
+    file: knowledge/legal/jornada_calificaciones.md
+    status: published
+  - urn: urn:legal:kb:contratacion-publica
+    title: Contratación Pública de Servicios Médicos en Chile
+    file: knowledge/legal/contratacion_publica.md
+    status: published
+  - urn: urn:legal:kb:responsabilidad-admin
+    title: Responsabilidad Administrativa
+    file: knowledge/legal/responsabilidad_admin.md
+    status: published
+  - urn: urn:legal:kb:maternidad
+    title: Protección a la Maternidad y Paternidad
+    file: knowledge/legal/maternidad.md
+    status: published
+  - urn: urn:legal:kb:ley-19664
+    title: 'Ley 19.664: Normas Especiales para Profesionales Funcionarios de Servicios
+      de Salud'
+    file: knowledge/legal/ley_19664.md
+    status: published
+  - urn: urn:legal:kb:formacion-especialistas
+    title: Formación de Especialistas, PAO y Comisiones de Estudio
+    file: knowledge/legal/formacion_especialistas.md
+    status: published
+  - urn: urn:legal:kb:legislacion-ia-chile
+    title: Análisis de la Legislación de Inteligencia Artificial en Chile
+    file: knowledge/legal/legislacion_ia_chile.md
+    status: published
+  - urn: urn:tde:kb:catalogo-cpat-nuble
+    title: 'Catálogo CPAT Ñuble: Madurez de Trámites Digitales'
+    file: knowledge/tde/guias/catalogo_cpat_nuble.md
+    status: published
+  - urn: urn:tde:kb:diseno-servicios
+    title: Recomendaciones para el Diseño de Servicios en el Estado
+    file: knowledge/tde/guias/diseno_servicios.md
+    status: published
+  - urn: urn:tde:kb:reglamento-ds4
+    title: Reglamento de Transformación Digital del Estado (DS 4)
+    file: knowledge/tde/guias/reglamento_tde_ds4.md
+    status: published
+  - urn: urn:tde:kb:rat-datos-personales
+    title: Registro de Actividades de Tratamiento de Datos Personales (RAT)
+    file: knowledge/tde/guias/rat_datos_personales.md
+    status: published
+  - urn: urn:tde:kb:sistema-tde-2025
+    title: Sistema de Transformación Digital (STD) 2025
+    file: knowledge/tde/guias/sistema_tde_2025.md
+    status: published
+  - urn: urn:tde:kb:cpat-completa
+    title: 'Guía CPAT: Catálogo de Procedimientos y Tramitaciones'
+    file: knowledge/tde/guias/cpat_completa.md
+    status: published
+  - urn: urn:tde:kb:evaltic
+    title: 'Guía Técnica EVALTIC: Marco para Inversiones en Gobierno Digital'
+    file: knowledge/tde/guias/evaltic.md
+    status: published
+  - urn: urn:tde:kb:seguridad-ciberseguridad
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad
+    file: knowledge/tde/guias/seguridad_ciberseguridad_v1.md
+    status: published
+  - urn: urn:tde:kb:mgde
+    title: Marco de Referencia de Gestión de Datos del Estado (MGDE)
+    file: knowledge/tde/guias/mgde.md
+    status: published
+  - urn: urn:tde:kb:metadatos-documentos
+    title: Guía Técnica de Metadatos para Documentos y Expedientes
+    file: knowledge/tde/guias/metadatos_documentos.md
+    status: published
+  - urn: urn:tde:kb:orientaciones-gestion-tic
+    title: Orientaciones Básicas para la Gestión de TIC
+    file: knowledge/tde/guias/orientaciones_gestion_tic.md
+    status: published
+  - urn: urn:tde:kb:anonimizacion-datos
+    title: Guía de Anonimización de Datos
+    file: knowledge/tde/guias/anonimizacion_datos_v2.md
+    status: published
+  - urn: urn:tde:kb:calidad-web
+    title: Guía de Calidad Web y Servicios Digitales
+    file: knowledge/tde/guias/calidad_web.md
+    status: published
+  - urn: urn:tde:kb:simple-saas
+    title: Plataforma SIMPLE (Modalidad SaaS)
+    file: knowledge/tde/plataformas/simple_saas.md
+    status: published
+  - urn: urn:tde:kb:claveunica-tyc
+    title: Términos y Condiciones del Sistema de ClaveÚnica
+    file: knowledge/tde/plataformas/claveunica_tyc.md
+    status: published
+  - urn: urn:tde:kb:pisee
+    title: Red de Interoperabilidad PISEE
+    file: knowledge/tde/plataformas/pisee.md
+    status: published
+  - urn: urn:tde:kb:docdigital
+    title: 'Plataforma DocDigital: Comunicaciones Oficiales del Estado'
+    file: knowledge/tde/plataformas/docdigital.md
+    status: published
+  - urn: urn:tde:kb:simple-saas-oae
+    title: Guía de Uso de SIMPLE (SaaS) para Órganos del Estado
+    file: knowledge/tde/plataformas/simple_saas_oae.md
+    status: published
+  - urn: urn:tde:kb:claveunica
+    title: Manual de Integración de ClaveÚnica
+    file: knowledge/tde/plataformas/claveunica.md
+    status: published
+  - urn: urn:tde:kb:nt-calidad-plataformas
+    title: Norma Técnica de Calidad y Funcionamiento de Plataformas (Decreto 11)
+    file: knowledge/tde/normas_tecnicas/nt_calidad_plataformas.md
+    status: published
+  - urn: urn:tde:kb:nt-interoperabilidad
+    title: Norma Técnica de Interoperabilidad (Decreto 12)
+    file: knowledge/tde/normas_tecnicas/nt_interoperabilidad.md
+    status: published
+  - urn: urn:tde:kb:nt-autenticacion
+    title: Norma Técnica de Autenticación (Decreto 9)
+    file: knowledge/tde/normas_tecnicas/nt_autenticacion.md
+    status: published
+  - urn: urn:tde:kb:nt-documentos-expedientes
+    title: Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)
+    file: knowledge/tde/normas_tecnicas/nt_documentos_expedientes.md
+    status: published
+  - urn: urn:tde:kb:nt-notificaciones
+    title: Norma Técnica de Notificaciones (Decreto 8)
+    file: knowledge/tde/normas_tecnicas/nt_notificaciones.md
+    status: published
+  - urn: urn:tde:kb:nt-seguridad-ciberseguridad
+    title: Norma Técnica de Seguridad de la Información y Ciberseguridad (Decreto
+      7)
+    file: knowledge/tde/normas_tecnicas/nt_seguridad_ciberseguridad.md
+    status: published
+  - urn: urn:tde:kb:ley-21180
+    title: 'Ley 21.180: Transformación Digital del Estado'
+    file: knowledge/tde/leyes/ley_21180_tde.md
+    status: published
+  - urn: urn:tde:kb:ley-19880
+    title: 'Ley 19.880: Bases de los Procedimientos Administrativos'
+    file: knowledge/tde/leyes/ley_19880_procedimientos.md
+    status: published
+  - urn: urn:tde:kb:principios-objetivos
+    title: Principios y Objetivos Marco de la Transformación Digital
+    file: knowledge/tde/estrategia/principios_objetivos.md
+    status: published
+  - urn: urn:tde:kb:gobierno-digital-2030
+    title: Estrategia de Gobierno Digital 2030
+    file: knowledge/tde/estrategia/gobierno_digital_2030.md
+    status: published
+  - urn: urn:gov:kb:capacitaciones-tde
+    title: Estrategia de Capacitaciones para la Transformación Digital del Estado
+    file: knowledge/gov/capacitaciones_tde.md
+    status: published
+  - urn: urn:gov:kb:notificaciones
+    title: notificaciones.md
+    file: knowledge/gov/notificaciones.md
+    status: published
+  - urn: urn:gov:kb:intro-tde
+    title: Guía Maestra de Transformación Digital del Estado (TDE)
+    file: knowledge/gov/intro_tde.md
+    status: published
+  - urn: urn:gov:kb:metodologia-proyectos-tic
+    title: metodologia_proyectos_tic.md
+    file: knowledge/gov/metodologia_proyectos_tic.md
+    status: published
+  - urn: urn:gov:kb:datosgob
+    title: Portal de Datos Abiertos (Datos.gob.cl)
+    file: knowledge/gov/datosgob.md
+    status: published
+  - urn: urn:gov:kb:lexicon-wikiguias
+    title: Lexicón WikiGuías SGD
+    file: knowledge/gov/lexicon_wikiguias.md
+    status: published
+  - urn: urn:gov:kb:identidad-digital
+    title: identidad_digital.md
+    file: knowledge/gov/identidad_digital.md
+    status: published
+  - urn: urn:gov:kb:cloud-publica
+    title: 'Lineamientos Técnicos: Recomendaciones para la adquisición de servicios
+      de Cloud Pública'
+    file: knowledge/gov/cloud_publica.md
+    status: published
+  - urn: urn:gov:kb:datos-administracion-estado
+    title: Estrategia de Datos de la Administración del Estado
+    file: knowledge/gov/datos_administracion_estado.md
     status: published
   Documents: []
-  Other:
-  - urn: urn:kora:cat:data-access-layers:1.0.0
-    title: CAT-DAL-01
-    file: knowledge/fxsl/cat/data-access-layers.yml
-    status: Draft
-  - urn: urn:kora:cat:cognitive-toolkit:1.0.0
-    title: CAT-CTK-01
-    file: knowledge/fxsl/cat/cognitive-toolkit.yml
-    status: Active
-  - urn: urn:kora:cat:exploring-category-theoretic-approaches-to-databases:1.0.0
-    title: CAT-DB-EXPLORE-01
-    file: knowledge/fxsl/cat/exploring-category-theoretic-approaches-to-databases.yml
-    status: Draft
-  - urn: urn:kora:cat:coalgebras:1.0.0
-    title: CAT-COALG-01
-    file: knowledge/fxsl/cat/coalgebras.yml
-    status: Active
-  - urn: urn:kora:cat:action-primary-key:1.0.0
-    title: CAT-ACTION-PK-01
-    file: knowledge/fxsl/cat/action-primary-key.yml
-    status: Draft
-  - urn: urn:kora:cat:unified-representation-transformation-multimodel:1.0.0
-    title: CAT-MM-UNIFIED-REP-01
-    file: knowledge/fxsl/cat/unified-representation-transformation-multimodel.yml
-    status: Draft
-  - urn: urn:kora:cat:categorical-data-structures:1.0.0
-    title: CAT-CDS-01
-    file: knowledge/fxsl/cat/categorical-data-structures.yml
-    status: Draft
-  - urn: urn:kora:cat:cql-data-integration:1.0.0
-    title: CAT-CQL-01
-    file: knowledge/fxsl/cat/cql-data-integration.yml
-    status: Active
-  - urn: urn:kora:cat:unified-multimodel:1.0.0
-    title: CAT-MM-01
-    file: knowledge/fxsl/cat/unified-multimodel.yml
-    status: Active
-  - urn: urn:kora:cat:constraint-logic:1.0.0
-    title: CAT-CONSTRAINT-01
-    file: knowledge/fxsl/cat/constraint-logic.yml
-    status: Active
-  - urn: urn:kora:cat:mathematical-modelling:1.0.0
-    title: CAT-MODEL-01
-    file: knowledge/fxsl/cat/mathematical-modelling.yml
-    status: Active
-  - urn: urn:kora:cat:data-lakes-ct:1.0.0
-    title: CAT-DL-01
-    file: knowledge/fxsl/cat/data-lakes-ct.yml
-    status: Active
-  - urn: urn:kora:cat:audit-patterns:1.0.0
-    title: CAT-AUDIT-01
-    file: knowledge/fxsl/cat/audit-patterns.yml
-    status: Active
-  - urn: urn:kora:cat:kb-category:1.0.0
-    title: CAT-KB-META-01
-    file: knowledge/fxsl/cat/kb-category.yml
-    status: Active
-  - urn: urn:kora:cat:algebraic-databases:1.0.0
-    title: CAT-ADB-01
-    file: knowledge/fxsl/cat/algebraic-databases.yml
-    status: Active
-  - urn: urn:kora:cat:formal-framework-data-lakes-ct:1.0.0
-    title: CAT-DL-FRAMEWORK-01
-    file: knowledge/fxsl/cat/formal-framework-data-lakes-ct.yml
-    status: Draft
-  - urn: urn:kora:cat:seven-sketches:1.0.0
-    title: CAT-FDM-01
-    file: knowledge/fxsl/cat/seven-sketches.yml
-    status: Active
-  - urn: urn:kora:cat:multicategory-multimodel-query-processing:1.0.0
-    title: CAT-MC-01
-    file: knowledge/fxsl/cat/multicategory-multimodel-query-processing.yml
-    status: Draft
-  - urn: urn:kora:cat:formal-framework-multimodel-data-transformations:1.0.0
-    title: CAT-MM-KANLIFT-01
-    file: knowledge/fxsl/cat/formal-framework-multimodel-data-transformations.yml
-    status: Draft
-  - urn: urn:kora:cat:mbse-consistency:1.0.0
-    title: CAT-MBSE-01
-    file: knowledge/fxsl/cat/mbse-consistency.yml
-    status: Active
-  - urn: urn:kora:cat:schema-evolution:1.0.0
-    title: CAT-EVOLUTION-01
-    file: knowledge/fxsl/cat/schema-evolution.yml
-    status: Active
-  - urn: urn:kora:cat:algebraic-model-management:1.0.0
-    title: CAT-AMM-01
-    file: knowledge/fxsl/cat/algebraic-model-management.yml
-    status: Draft
-  - urn: urn:kora:cat:categorical-systems-theory:1.0.0
-    title: CAT-SYS-01
-    file: knowledge/fxsl/cat/categorical-systems-theory.yml
-    status: Active
-  - urn: urn:kora:gist:guide-onto-gist-001-audit-protocol:1.0.0
-    title: GUIDE-ONTO-GIST-AUDIT-001
-    file: knowledge/fxsl/gist/fx-guide-onto-gist-001-audit-protocol.yml
-    status: Draft
-  - urn: urn:kora:mgmt:mw-waissbluth:1.0.0
-    title: MW-WAISSBLUTH-GESTION-PUBLICA-01
-    file: knowledge/mgmt/mw-waissbluth.yml
-    status: Published
-  - urn: urn:kora:mgmt:lean6:1.0.1
-    title: LEAN6-KODA-CORE-01
-    file: knowledge/mgmt/lean6.yml
-    status: Draft
-  - urn: urn:kora:mgmt:meyer-org-structure:1.0.0
-    title: MEYER-ORG-STRUCTURE-KODA-01
-    file: knowledge/mgmt/meyer-org-structure.yml
-    status: Draft
-  - urn: urn:kora:mgmt:estructura-estado-chile:1.0.0
-    title: GOBCL-MASTER-01
-    file: knowledge/mgmt/estructura-estado-chile.yml
-    status: Published
-  - urn: urn:kora:gn:guia-frpd-nuble:1.0.0
-    title: GN-FRPD-GUIA-OPERATIVA-2025-01
-    file: knowledge/gn/guias/guia-frpd-nuble.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-fril-2025-sts:1.0.0
-    title: GN-GUIA-FRIL-STS-2025-01
-    file: knowledge/gn/guias/guia-fril-2025-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-programas-directos-gore:1.0.0
-    title: GN-GUIA-PPR-GORE-DIRECTO-2025-01
-    file: knowledge/gn/guias/guia-programas-directos-gore.yml
-    status: Draft
-  - urn: urn:kora:gn:instructivo-subvencion-8-2025-sts:1.0.0
-    title: GN-CONC-8-STS-2025-01
-    file: knowledge/gn/guias/instructivo-subvencion-8-2025-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-idi-sni-sts:1.0.0
-    title: GN-GUIA-IDI-SNI-STS-2025-01
-    file: knowledge/gn/guias/guia-idi-sni-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-circular-33-sts:1.0.0
-    title: GN-GUIA-CIRC33-STS-2025-01
-    file: knowledge/gn/guias/guia-circular-33-sts.yml
-    status: Draft
-  - urn: urn:kora:gn:guia-comunicaciones:1.0.0
-    title: GN-GUIA-COMUNICACIONES-01
-    file: knowledge/gn/guias/guia-comunicaciones.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-operacional-dgi:1.0.0
-    title: MANUAL-OPERACIONAL-DGI-KODA-01
-    file: knowledge/gn/manuales/manual-operacional-dgi.yml
-    status: Published
-  - urn: urn:kora:gn:manual-flotas:1.0.0
-    title: GN-MANUAL-SERVICIOS-FLOTAS-KODA-01
-    file: knowledge/gn/manuales/manual-flotas.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-remuneraciones:1.0.0
-    title: GN-MANUAL-REMUNERACIONES-01
-    file: knowledge/gn/manuales/manual-remuneraciones.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-desarrollo-organizacional:1.0.0
-    title: GN-MANUAL-DESARROLLO-ORGANIZACIONAL-KODA-01
-    file: knowledge/gn/manuales/manual-desarrollo-organizacional.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-tesoreria:1.0.0
-    title: GN-MANUAL-TESORERIA-01
-    file: knowledge/gn/manuales/manual-tesoreria.yml
-    status: published
-  - urn: urn:kora:gn:manual-activo-fijo:1.0.0
-    title: KB-GN-041-MANUAL-ACTIVO-FIJO-01
-    file: knowledge/gn/manuales/manual-activo-fijo.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-ciclo-vida-funcionario:1.0.0
-    title: GN-MANUAL-CICLO-VIDA-KODA-01
-    file: knowledge/gn/manuales/manual-ciclo-vida.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-tiempo-ausentismo:1.0.0
-    title: GN-MANUAL-TIEMPO-AUSENTISMO-KODA-01
-    file: knowledge/gn/manuales/manual-asistencia.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-induccion-gore-nuble-2026:1.0.0
-    title: KB-GN-017-MANUAL-INDUCCION-GORE-NUBLE-2026-01
-    file: knowledge/gn/manuales/manual-induccion-gore-nuble-2026.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-contabilidad:1.0.0
-    title: GN-MANUAL-CONTAB-CIERRE-01
-    file: knowledge/gn/manuales/manual-contabilidad.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-inventarios-bodegas:1.0.0
-    title: KB-GN-040-MANUAL-INVENTARIOS-BODEGAS-01
-    file: knowledge/gn/manuales/manual-inventarios-bodegas.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-bienestar:1.0.0
-    title: GN-MANUAL-BIENESTAR-KODA-01
-    file: knowledge/gn/manuales/manual-bienestar.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-compras:1.0.0
-    title: MANUAL-COMPRAS-CONTRATACIONES-01
-    file: knowledge/gn/manuales/manual-compras.yml
-    status: Draft
-  - urn: urn:kora:gn:manual-presupuesto:1.0.0
-    title: GN-MANUAL-PPTO-FORM-EJEC-01
-    file: knowledge/gn/manuales/manual-presupuesto.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-empub:1.0.0
-    title: GN-RIS-EMPUB-2024-01
-    file: knowledge/gn/ris/ris-empub.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-artcult:1.0.0
-    title: GN-RIS-ARTCULT-2024-01
-    file: knowledge/gn/ris/ris-artcult.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-deportes:1.0.0
-    title: GN-RIS-DEPORTES-2024-01
-    file: knowledge/gn/ris/ris-deportes.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-pmdt:1.0.0
-    title: GN-RIS-EB-PMDT-2024-01
-    file: knowledge/gn/ris/ris-pmdt.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-patrimonio:1.0.0
-    title: GN-RIS-PATRIMONIO-2024-01
-    file: knowledge/gn/ris/ris-patrimonio.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-proyinv:1.0.0
-    title: GN-RIS-PROYINV-2023-01
-    file: knowledge/gn/ris/ris-proyinv.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-index:1.0.0
-    title: GN-RIS-INDEX-01
-    file: knowledge/gn/ris/ris-index.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-proginv:1.0.0
-    title: GN-RIS-PROGINV-2025-01
-    file: knowledge/gn/ris/ris-proginv.yml
-    status: Draft
-  - urn: urn:kora:gn:ris-edpub:1.0.0
-    title: GN-RIS-EDPUB-2024-01
-    file: knowledge/gn/ris/ris-edpub.yml
-    status: Draft
-  - urn: urn:kora:gn:selector-ipr:1.0.0
-    title: selector-ipr.yml
-    file: knowledge/gn/ris/selector-ipr.yml
-    status: published
-  - urn: urn:kora:gn:modelos-actos-juridicos:1.0.0
-    title: GN-MODELOS-ACTOS-JURIDICOS-01
-    file: knowledge/gn/normativa/modelos-actos-juridicos.yml
-    status: Draft
-  - urn: urn:kora:gn:ley-presupuestos-2026-normas-generales:1.0.0
-    title: GN-LEY-PPTO-2026-NORMAS-GENERALES-01
-    file: knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.yml
-    status: Draft
-  - urn: urn:kora:gn:dictamenes-cgr-gore:1.0.0
-    title: dictamenes-cgr-gore.yml
-    file: knowledge/gn/normativa/dictamenes-cgr-gore.yml
-    status: published
-  - urn: urn:kora:gn:marco-legal-gores:1.0.0
-    title: marco-legal-gores.yml
-    file: knowledge/gn/normativa/marco-legal-gores.yml
-    status: published
-  - urn: urn:kora:gn:ley-presupuestos-2026-partida-31:1.0.0
-    title: GN-LEY-PPTO-2026-P31-01
-    file: knowledge/gn/normativa/ley-presupuestos-2026-partida-31.yml
-    status: Draft
-  - urn: urn:kora:gn:loc-gore:1.0.0
-    title: loc-gore.yml
-    file: knowledge/gn/normativa/loc-gore.yml
-    status: published
-  - urn: urn:kora:gn:bpmn-d03-gestion-ipr:1.0.0
-    title: BPMN-GN-D03-GESTION-IPR-KODA
-    file: knowledge/gn/bpmn/bpmn-d03-gestion-ipr.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-index:1.0.0
-    title: GN-BPMN-INDEX-KODA
-    file: knowledge/gn/bpmn/bpmn-index.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d08-rendiciones:1.0.0
-    title: BPMN-GN-D08-RENDICIONES-KODA
-    file: knowledge/gn/bpmn/bpmn-d08-rendiciones.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d04-compras-contrataciones:1.0.0
-    title: BPMN-GN-D04-COMPRAS-KODA
-    file: knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d05-inventarios-activo-fijo:1.0.0
-    title: BPMN-GN-D05-INVENTARIOS-AF-KODA
-    file: knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d10-geoespacial-ide:1.0.0
-    title: BPMN-GN-D10-GEOESPACIAL-IDE-KODA
-    file: knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d01-actos-administrativos:1.0.0
-    title: BPMN-GN-D01-ACTOS-ADMIN-KODA
-    file: knowledge/gn/bpmn/bpmn-d01-actos-administrativos.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d06-flota-vehicular:1.0.0
-    title: BPMN-GN-D06-FLOTA-KODA
-    file: knowledge/gn/bpmn/bpmn-d06-flota-vehicular.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d09-cies-sitia:1.0.0
-    title: BPMN-GN-D09-CIES-SITIA-KODA
-    file: knowledge/gn/bpmn/bpmn-d09-cies-sitia.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d02-ciclo-presupuestario:1.0.0
-    title: BPMN-GN-D02-CICLO-PRESUPUESTARIO-KODA
-    file: knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.yml
-    status: Draft
-  - urn: urn:kora:gn:bpmn-d07-rrhh:1.0.0
-    title: BPMN-GN-D07-RRHH-KODA
-    file: knowledge/gn/bpmn/bpmn-d07-rrhh.yml
-    status: Draft
-  - urn: urn:kora:gn:transferencia-ppr:1.0.0
-    title: GN-PPR-TRANSFER-GUIDE-01
-    file: knowledge/gn/gestion/transferencia-ppr.yml
-    status: draft
-  - urn: urn:kora:gn:gestion-info-geoespacial:1.0.0
-    title: GN-GEO-GESTION-INFORMACION-01
-    file: knowledge/gn/gestion/gestion-info-geoespacial.yml
-    status: Draft
-  - urn: urn:kora:gn:gestion-prpto:1.0.0
-    title: GN-PPTO-GESTION-INTEGRAL-01
-    file: knowledge/gn/gestion/gestion-prpto.yml
-    status: Published
-  - urn: urn:kora:gn:gestion-ipr:1.0.0
-    title: GN-IPR-GESTION-OPERACIONAL-01
-    file: knowledge/gn/gestion/gestion-ipr.yml
-    status: Draft
-  - urn: urn:kora:gn:gestion-prpto-2026:1.0.0
-    title: GN-PPTO-GESTION-INTEGRAL-2026-01
-    file: knowledge/gn/gestion/gestion-prpto-2026.yml
-    status: Draft
-  - urn: urn:kora:gn:gestion-rendiciones:1.0.0
-    title: GN-REN-GESTION-RENDICIONES-01
-    file: knowledge/gn/gestion/gestion-rendiciones.yml
-    status: published
-  - urn: urn:kora:gn:glosas-gores-2026:1.0.0
-    title: GLOSAS-GORES-2026-01
-    file: knowledge/gn/gestion/glosas-gores-2026.yml
-    status: Draft
-  - urn: urn:kora:gn:flujos-aprobacion-documentos:1.0.0
-    title: KB-GN-102-FLUJOS-APROBACION-KODA-01
-    file: knowledge/gn/gestion/flujos-aprobacion-documentos.yml
-    status: Published
-  - urn: urn:kora:gn:aceleracion-regional:1.0.0
-    title: KB-GN-050-ACELERACION-REGIONAL-KODA-01
-    file: knowledge/gn/gobernanza/aceleracion-regional.yml
-    status: Draft
-  - urn: urn:kora:gn:nuble-250:1.0.0
-    title: GN-NUBLE-250-01
-    file: knowledge/gn/gobernanza/nuble-250.yml
-    status: Draft
-  - urn: urn:kora:gn:vision-desarrollo-nuble:1.0.0
-    title: KB-GN-013-VISION-STS-01
-    file: knowledge/gn/gobernanza/vision-desarrollo-nuble.yml
-    status: Draft
-  - urn: urn:kora:gn:plan-potenciamiento-dgi:1.0.0
-    title: PLAN-POTENCIAMIENTO-DGI-KODA-01
-    file: knowledge/gn/gobernanza/plan-potenciamiento-dgi.yml
-    status: Published
-  - urn: urn:kora:gn:comunicaciones-oc:1.0.0
-    title: GN-COMUNICACIONES-OC-01
-    file: knowledge/gn/gobernanza/comunicaciones-oc.yml
-    status: Draft
-  - urn: urn:kora:gn:problemas-sociales-cl:1.0.0
-    title: GN-PROBLEMAS-SOCIALES-CL-01
-    file: knowledge/gn/gobernanza/problemas-sociales-cl.yml
-    status: Draft
-  - urn: urn:kora:gn:organigrama:1.0.0
-    title: KB-GN-002-ORGANIGRAMA-01
-    file: knowledge/gn/gobernanza/organigrama.yml
-    status: Published
-  - urn: urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0
-    title: omega-ipr-gestion-fusion.yml
-    file: knowledge/gn/gobernanza/omega-ipr-gestion-fusion.yml
-    status: published
-  - urn: urn:kora:gn:cies-sitia:1.0.0
-    title: CIES-SITIA-MASTER-01
-    file: knowledge/gn/gobernanza/cies-sitia.yml
-    status: Draft
-  - urn: urn:kora:gn:informe-estado-inicial-gore-pre-td:1.0.0
-    title: GN-INFORME-ESTADO-INICIAL-GORE-PRE-TD-01
-    file: knowledge/gn/gobernanza/informe-estado-inicial-gore-pre-td.yml
-    status: Draft
-  - urn: urn:kora:gn:indicadores-nuble:1.0.0
-    title: GN-INDICADORES-NUBLE-01
-    file: knowledge/gn/gobernanza/indicadores-nuble.yml
-    status: Draft
-  - urn: urn:kora:gn:estrategia-gestion:1.0.0
-    title: KB-GN-035-ESTRATEGIA-GESTION-STS
-    file: knowledge/gn/gobernanza/estrategia-gestion.yml
-    status: Draft
-  - urn: urn:kora:gn:glosario-ipr-consolidado:1.0.0
-    title: glosario-ipr-consolidado.yml
-    file: knowledge/gn/gobernanza/glosario-ipr-consolidado.yml
-    status: published
-  - urn: urn:kora:gn:matriz-integracion-organica:1.0.0
-    title: GN-MATRIZ-INTEGRACION-01
-    file: knowledge/gn/gobernanza/matriz-integracion-organica.yml
-    status: Published
-  - urn: urn:kora:gn:gore-ideal:1.0.0
-    title: GN-GORE-IDEAL-ARTIFACT-01
-    file: knowledge/gn/gobernanza/gore-ideal.yml
-    status: published
-  - urn: urn:kora:gn:intro-gores-nuble:1.0.0
-    title: GORE-NUBLE-GUIA-INTEGRAL-01
-    file: knowledge/gn/gobernanza/intro-gores-nuble.yml
-    status: Published
-  - urn: urn:kora:gn:erd-nuble-2024-2030:1.0.0
-    title: KB-GN-006-ERD-NUBLE-2024-2030-KODA-01
-    file: knowledge/gn/gobernanza/erd-nuble-2024-2030.yml
-    status: Draft
-  - urn: urn:kora:gn:estrategia-td-ia:1.0.0
-    title: GN-ESTRATEGIA-TD-IA-01
-    file: knowledge/gn/gobernanza/estrategia-td-ia.yml
-    status: Draft
-  - urn: urn:kora:gn:cuentas-publicas-2021-2024:1.0.0
-    title: GN-CCPP-2021-2024-01
-    file: knowledge/gn/gobernanza/cuentas-publicas-2021-2024.yml
-    status: Draft
-  - urn: urn:knowledge:koda:sys:test_strategy:1.0.0
-    title: TDE-TEST-STRATEGY-WIKIGUIAS-031
-    file: knowledge/kora/sys/test_strategy.yml
-    status: Draft
-  - urn: urn:knowledge:koda:sys:hub_agentes:1.0.0
-    title: TDE-HUB-AGENTES-030
-    file: knowledge/kora/sys/hub_agentes.yml
-    status: Draft
-  - urn: urn:knowledge:koda:sys:workflow_wikiguias:1.0.0
-    title: TDE-WORKFLOW-WIKIGUIAS-029
-    file: knowledge/kora/sys/workflow_wikiguias.yml
-    status: Draft
-  - urn: urn:kora:legal:terminacion:1.0.0
-    title: terminacion.yml
-    file: knowledge/legal/terminacion.yml
-    status: published
-  - urn: urn:kora:legal:remuneraciones:1.0.0
-    title: remuneraciones.yml
-    file: knowledge/legal/remuneraciones.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_21643:1.0.0
-    title: ley_21643.yml
-    file: knowledge/legal/ley_21643.yml
-    status: published
-  - urn: urn:kora:legal:maternidad:1.0.0
-    title: maternidad.yml
-    file: knowledge/legal/maternidad.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:acoso_laboral:1.0.0
-    title: acoso_laboral.yml
-    file: knowledge/legal/acoso_laboral.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:intro_estatutos:1.0.0
-    title: intro_estatutos.yml
-    file: knowledge/legal/intro_estatutos.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:legislacion_ia_chile:1.0.0
-    title: TDE-LIN-IA-LAW-038
-    file: knowledge/legal/legislacion_ia_chile.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:deberes_prohibiciones:1.0.0
-    title: deberes_prohibiciones.yml
-    file: knowledge/legal/deberes_prohibiciones.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:confianza_legitima:1.0.0
-    title: confianza_legitima.yml
-    file: knowledge/legal/confianza_legitima.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:jornada_calificaciones:1.0.0
-    title: jornada_calificaciones.yml
-    file: knowledge/legal/jornada_calificaciones.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_21658_segdig:1.0.0
-    title: TDE-LIN-LEY-21658-035
-    file: knowledge/legal/ley_21658_segdig.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:ingreso_carrera:1.0.0
-    title: ingreso_carrera.yml
-    file: knowledge/legal/ingreso_carrera.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:feriados_permisos:1.0.0
-    title: feriados_permisos.yml
-    file: knowledge/legal/feriados_permisos.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_15076:1.0.0
-    title: ley_15076.yml
-    file: knowledge/legal/ley_15076.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:contratacion_publica:1.0.0
-    title: contratacion_publica.yml
-    file: knowledge/legal/contratacion_publica.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_19664:1.0.0
-    title: ley_19664.yml
-    file: knowledge/legal/ley_19664.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:ley_21719_datos_personales:1.0.0
-    title: TDE-LIN-LEY-21719-039
-    file: knowledge/legal/ley_21719_datos_personales.yml
-    status: Draft
-  - urn: urn:kora:legal:index:1.0.0
-    title: index.yml
-    file: knowledge/legal/index.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:formacion_especialistas:1.0.0
-    title: formacion_especialistas.yml
-    file: knowledge/legal/formacion_especialistas.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:responsabilidad_admin:1.0.0
-    title: responsabilidad_admin.yml
-    file: knowledge/legal/responsabilidad_admin.yml
-    status: published
-  - urn: urn:knowledge:koda:legal:derechos_especiales:1.0.0
-    title: derechos_especiales.yml
-    file: knowledge/legal/derechos_especiales.yml
-    status: published
-  - urn: urn:knowledge:koda:gov:diseno_servicios:1.0.0
-    title: TDE-GUIA-DISENO-SERVICIOS-ESTADO
-    file: knowledge/tde/guias/diseno_servicios.yml
-    status: Draft
-  - urn: urn:kora:gov:mgde:1.0.0
-    title: TDE-LIN-MGDE-01
-    file: knowledge/tde/guias/mgde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:cpat_completa:1.0.0
-    title: TDE-LIN-CPAT-037
-    file: knowledge/tde/guias/cpat_completa.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:orientaciones_gestion_tic:1.0.0
-    title: TDE-LIN-ORIENT-TIC-01
-    file: knowledge/tde/guias/orientaciones_gestion_tic.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:metadatos_documentos:1.0.0
-    title: TDE-LIN-METADATOS-01
-    file: knowledge/tde/guias/metadatos_documentos.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:sistema_tde_2025:1.0.0
-    title: TDE-LIN-STD-2025-01
-    file: knowledge/tde/guias/sistema_tde_2025.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:reglamento_tde_ds4:1.0.0
-    title: TDE-REGLA-TD-DS4-2021
-    file: knowledge/tde/guias/reglamento_tde_ds4.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:seguridad_ciberseguridad_v1:1.0.0
-    title: TDE-LIN-GUIA-CIBERSEGURIDAD-01
-    file: knowledge/tde/guias/seguridad_ciberseguridad_v1.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:catalogo_cpat_nuble:1.0.0
-    title: TDE-LIN-CPAT-040
-    file: knowledge/tde/guias/catalogo_cpat_nuble.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:calidad_web:1.0.0
-    title: TDE-LIN-CALIDAD-WEB-01
-    file: knowledge/tde/guias/calidad_web.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:anonimizacion_datos_v2:1.0.0
-    title: TDE-LIN-ANON-042
-    file: knowledge/tde/guias/anonimizacion_datos_v2.yml
-    status: Draft
-  - urn: urn:kora:gov:evaltic:1.0.0
-    title: TDE-LIN-EVALTIC-01
-    file: knowledge/tde/guias/evaltic.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:rat_datos_personales:1.0.0
-    title: TDE-LIN-DATOS-RAT-001
-    file: knowledge/tde/guias/rat_datos_personales.yml
-    status: Draft
-  - urn: urn:kora:gov:docdigital:1.0.0
-    title: TDE-PLAT-DOCDIGITAL-026
-    file: knowledge/tde/plataformas/docdigital.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:claveunica_tyc:1.0.0
-    title: TDE-LIN-TYC-CLAVEUNICA-036
-    file: knowledge/tde/plataformas/claveunica_tyc.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:simple_saas:1.0.0
-    title: TDE-PLAT-SIMPLE-SaaS-017
-    file: knowledge/tde/plataformas/simple_saas.yml
-    status: Draft
-  - urn: urn:kora:gov:claveunica:1.0.0
-    title: TDE-PLAT-CU-INT-015
-    file: knowledge/tde/plataformas/claveunica.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:simple_saas_oae:1.0.0
-    title: TDE-LIN-SIMPLE-SAAS-041
-    file: knowledge/tde/plataformas/simple_saas_oae.yml
-    status: Draft
-  - urn: urn:kora:gov:pisee:1.0.0
-    title: TDE-PLAT-PISEE-027
-    file: knowledge/tde/plataformas/pisee.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_documentos_expedientes:1.0.0
-    title: TDE-LIN-NORMA-DED-10
-    file: knowledge/tde/normas_tecnicas/nt_documentos_expedientes.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_autenticacion:1.0.0
-    title: TDE-LIN-NORMA-AUTENT-09
-    file: knowledge/tde/normas_tecnicas/nt_autenticacion.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_notificaciones:1.0.0
-    title: TDE-LIN-NORMA-NOTIF-08
-    file: knowledge/tde/normas_tecnicas/nt_notificaciones.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_seguridad_ciberseguridad:1.0.0
-    title: TDE-LIN-NORMA-SEG-CIBER-07
-    file: knowledge/tde/normas_tecnicas/nt_seguridad_ciberseguridad.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_calidad_plataformas:1.0.0
-    title: TDE-LIN-NORMA-CALIDAD-PLATAFORMAS-033
-    file: knowledge/tde/normas_tecnicas/nt_calidad_plataformas.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:nt_interoperabilidad:1.0.0
-    title: TDE-LIN-NORMA-INT-12
-    file: knowledge/tde/normas_tecnicas/nt_interoperabilidad.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:ley_19880_procedimientos:1.0.0
-    title: TDE-LIN-LEY-19880-034
-    file: knowledge/tde/leyes/ley_19880_procedimientos.yml
-    status: Draft
-  - urn: urn:knowledge:koda:legal:ley_21180_tde:1.0.0
-    title: TDE-LIN-LEY-21180-032
-    file: knowledge/tde/leyes/ley_21180_tde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:principios_objetivos:1.0.0
-    title: TDE-CORE-PRINCIPIOS-OBJETIVOS-01
-    file: knowledge/tde/estrategia/principios_objetivos.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:gobierno_digital_2030:1.0.0
-    title: TDE-ESTRATEGIA-GOBIERNO-DIGITAL-2030-01
-    file: knowledge/tde/estrategia/gobierno_digital_2030.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:lexicon_wikiguias:1.0.0
-    title: TDE-CORE-LEXICON-WIKIGUIAS-01
-    file: knowledge/gov/lexicon_wikiguias.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:identidad_digital:1.0.0
-    title: TDE-ESTRATEGIA-IDENTIDAD-DIGITAL-01
-    file: knowledge/gov/identidad_digital.yml
-    status: Draft
-  - urn: urn:kora:gov:datosgob:1.0.0
-    title: TDE-PLAT-DATOSGOB-028
-    file: knowledge/gov/datosgob.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:intro_tde:1.0.0
-    title: KB-GN-016-INTRO-TDE-STS
-    file: knowledge/gov/intro_tde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:cloud_publica:1.0.0
-    title: TDE-LIN-CLOUD-PUBLICA-01
-    file: knowledge/gov/cloud_publica.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:capacitaciones_tde:1.0.0
-    title: TDE-ESTRATEGIA-CAPACITACIONES-TDE-01
-    file: knowledge/gov/capacitaciones_tde.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:datos_administracion_estado:1.0.0
-    title: TDE-ESTRATEGIA-DATOS-ADM-ESTADO-01
-    file: knowledge/gov/datos_administracion_estado.yml
-    status: Draft
-  - urn: urn:knowledge:koda:gov:metodologia_proyectos_tic:1.0.0
-    title: TDE-LIN-METODOLOGIA-PROY-01
-    file: knowledge/gov/metodologia_proyectos_tic.yml
-    status: Draft
+  Other: []

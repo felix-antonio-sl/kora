@@ -24,15 +24,28 @@ SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
 def load_yaml_safe(path):
     try:
         with open(path, "r", encoding="utf-8") as f:
-            try:
-                return yaml.safe_load(f), None
-            except yaml.composer.ComposerError:
-                # File has multiple YAML documents separated by ---
-                f.seek(0)
-                docs = list(yaml.safe_load_all(f))
-                if docs:
-                    return docs[0], None  # Parse first document
-                return None, "Empty multi-document"
+            content = f.read()
+
+        # For .md files, extract YAML frontmatter between --- delimiters
+        if path.suffix == ".md":
+            if content.startswith("---"):
+                end = content.index("---", 3)
+                frontmatter = content[3:end]
+                doc = yaml.safe_load(frontmatter)
+                # Attach body for title extraction
+                if isinstance(doc, dict):
+                    doc["_md_body"] = content[end + 3 :].strip()
+                return doc, None
+            return None, "No YAML frontmatter found"
+
+        # For YAML files, parse normally
+        try:
+            return yaml.safe_load(content), None
+        except yaml.composer.ComposerError:
+            docs = list(yaml.safe_load_all(content))
+            if docs:
+                return docs[0], None
+            return None, "Empty multi-document"
     except Exception as e:
         return None, str(e)
 
@@ -41,6 +54,14 @@ def get_artifact_title(doc, file_path):
     # Try to find a human readable title
     if not isinstance(doc, dict):
         return file_path.name
+
+    # For MD files, extract H1 title from body
+    body = doc.pop("_md_body", "")
+    if body:
+        for line in body.split("\n"):
+            line = line.strip()
+            if line.startswith("# ") and not line.startswith("## "):
+                return line[2:].strip()
 
     if "ID" in doc:
         return str(doc["ID"])
@@ -74,11 +95,11 @@ def cmd_index():
     }
 
     count = 0
-    extensions = {".yaml", ".yml"}
+    extensions = {".yaml", ".yml", ".md"}
 
     for root, dirs, files in os.walk(KORA_ROOT):
         # Skip directories we don't care about
-        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests")]
+        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests", "docs", "staging", ".claude", ".agent", ".venv", "__pycache__")]
 
         for file in files:
             file_path = Path(root) / file
@@ -108,7 +129,7 @@ def cmd_index():
                     "urn": urn,
                     "title": title,
                     "file": rel_path,
-                    "status": doc.get("Status", "published"),
+                    "status": doc.get("status", doc.get("Status", "published")),
                 }
 
                 # urn:{ns}:{type}:{id}:{ver}
@@ -184,7 +205,7 @@ def cmd_health():
     )
 
     for root, dirs, files in os.walk(KORA_ROOT):
-        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests")]
+        dirs[:] = [d for d in dirs if d not in (".git", "scripts", "tests", "docs", "staging", ".claude", ".agent", ".venv", "__pycache__")]
         for file in files:
             if not (
                 file.endswith(".yml") or file.endswith(".yaml") or file.endswith(".md")
@@ -263,6 +284,35 @@ def cmd_validate():
     print(f"Validation complete! Valid: {valid_count}, Invalid: {invalid_count}")
 
 
+def cmd_stats():
+    doc, _ = load_yaml_safe(CATALOG_PATH)
+    if not doc or "Catalog" not in doc:
+        print("Error: Catalog not found. Run 'kora index' first.")
+        sys.exit(1)
+
+    print("=== KORA Monorepo Stats ===")
+    total = 0
+    for category, items in doc["Catalog"].items():
+        count = len(items)
+        total += count
+        if count > 0:
+            print(f"  {category}: {count}")
+    print(f"  TOTAL: {total}")
+
+    # Count by namespace
+    ns_counts = {}
+    for category, items in doc["Catalog"].items():
+        for item in items:
+            urn = item.get("urn", "")
+            parts = urn.split(":")
+            ns = parts[1] if len(parts) >= 2 else "unknown"
+            ns_counts[ns] = ns_counts.get(ns, 0) + 1
+
+    print("\nBy namespace:")
+    for ns, count in sorted(ns_counts.items(), key=lambda x: -x[1]):
+        print(f"  {ns}: {count}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="KORA Monorepo CLI")
     subparsers = parser.add_subparsers(dest="command", help="Sub-commands")
@@ -288,6 +338,11 @@ def main():
         "validate", help="Validate agent YAMLs against the KORA schema"
     )
 
+    # Stats
+    p_stats = subparsers.add_parser(
+        "stats", help="Show monorepo statistics from the catalog"
+    )
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -298,6 +353,8 @@ def main():
         cmd_health()
     elif args.command == "validate":
         cmd_validate()
+    elif args.command == "stats":
+        cmd_stats()
     else:
         parser.print_help()
 
