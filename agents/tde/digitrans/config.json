@@ -1,0 +1,47 @@
+{
+  "allowed_kb": [
+    "urn:gov:kb:intro-tde",
+    "urn:tde:kb:principios-objetivos",
+    "urn:gov:kb:lexicon-wikiguias",
+    "urn:tde:kb:ley-21180",
+    "urn:tde:kb:ley-19880",
+    "urn:legal:kb:ley-21658-segdig",
+    "urn:legal:kb:ley-21719-datos-personales",
+    "urn:legal:kb:legislacion-ia-chile",
+    "urn:tde:kb:nt-documentos-expedientes",
+    "urn:tde:kb:nt-interoperabilidad",
+    "urn:tde:kb:nt-seguridad-ciberseguridad",
+    "urn:tde:kb:nt-autenticacion",
+    "urn:tde:kb:nt-notificaciones",
+    "urn:tde:kb:nt-calidad-plataformas",
+    "urn:tde:kb:claveunica",
+    "urn:tde:kb:simple-saas",
+    "urn:tde:kb:docdigital",
+    "urn:tde:kb:pisee",
+    "urn:gov:kb:notificaciones",
+    "urn:gov:kb:datosgob",
+    "urn:gov:kb:datos-administracion-estado",
+    "urn:gov:kb:identidad-digital",
+    "urn:tde:kb:gobierno-digital-2030",
+    "urn:gov:kb:capacitaciones-tde",
+    "urn:tde:kb:cpat-completa",
+    "urn:tde:kb:mgde",
+    "urn:gov:kb:cloud-publica",
+    "urn:tde:kb:metadatos-documentos",
+    "urn:tde:kb:evaltic",
+    "urn:tde:kb:calidad-web",
+    "urn:tde:kb:diseno-servicios",
+    "urn:tde:kb:anonimizacion-datos"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}

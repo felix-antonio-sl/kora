@@ -1,0 +1,18 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:agent",
+    "urn:kora:kb:agent-construct",
+    "urn:kora:kb:life"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 1
+  }
+}

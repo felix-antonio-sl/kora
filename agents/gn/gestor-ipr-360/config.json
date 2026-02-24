@@ -1,0 +1,41 @@
+{
+  "allowed_kb": [
+    "urn:gn:kb:intro-gores-nuble",
+    "urn:gn:kb:loc-gore",
+    "urn:gn:kb:marco-legal-gores",
+    "urn:gn:kb:selector-ipr",
+    "urn:gn:kb:guia-idi-sni-sts",
+    "urn:gn:kb:transferencia-ppr",
+    "urn:gn:kb:guia-programas-directos-gore",
+    "urn:gn:kb:guia-fril-2025-sts",
+    "urn:gn:kb:guia-frpd-nuble",
+    "urn:gn:kb:instructivo-subvencion-8-2025-sts",
+    "urn:gn:kb:guia-circular-33-sts",
+    "urn:gn:kb:ris-index",
+    "urn:gn:kb:ris-artcult",
+    "urn:gn:kb:ris-deportes",
+    "urn:gn:kb:ris-edpub",
+    "urn:gn:kb:ris-empub",
+    "urn:gn:kb:ris-patrimonio",
+    "urn:gn:kb:ris-pmdt",
+    "urn:gn:kb:ris-proginv",
+    "urn:gn:kb:ris-proyinv",
+    "urn:gn:kb:gestion-prpto",
+    "urn:gn:kb:gestion-ipr",
+    "urn:gn:kb:gestion-rendiciones",
+    "urn:gn:kb:estrategia-gestion",
+    "urn:gn:kb:gestion-info-geoespacial",
+    "urn:gn:kb:gore-ideal"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

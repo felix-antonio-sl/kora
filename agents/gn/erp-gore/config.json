@@ -1,0 +1,24 @@
+{
+  "allowed_kb": [
+    "urn:gn:kb:gestion-prpto",
+    "urn:gn:kb:ley-presupuestos-2026-partida-31",
+    "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+    "urn:gn:kb:manual-inventarios-bodegas",
+    "urn:gn:kb:manual-activo-fijo",
+    "urn:gn:kb:manual-desarrollo-organizacional",
+    "urn:gn:kb:manual-induccion-gore-nuble-2026",
+    "urn:gn:kb:indicadores-nuble",
+    "urn:gn:kb:intro-gores-nuble"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

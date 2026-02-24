@@ -1,0 +1,39 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:cognitive-toolkit",
+    "urn:fxsl:kb:seven-sketches",
+    "urn:fxsl:kb:algebraic-databases",
+    "urn:fxsl:kb:categorical-systems-theory",
+    "urn:fxsl:kb:coalgebras",
+    "urn:fxsl:kb:unified-multimodel",
+    "urn:fxsl:kb:data-lakes-ct",
+    "urn:fxsl:kb:cql-data-integration",
+    "urn:fxsl:kb:mathematical-modelling",
+    "urn:fxsl:kb:mbse-consistency",
+    "urn:fxsl:kb:audit-patterns",
+    "urn:fxsl:kb:kb-category",
+    "urn:fxsl:kb:constraint-logic",
+    "urn:fxsl:kb:schema-evolution",
+    "urn:fxsl:kb:data-access-layers",
+    "urn:fxsl:kb:fx-tensiones",
+    "urn:fxsl:kb:action-primary-key",
+    "urn:fxsl:kb:categorical-data-structures",
+    "urn:fxsl:kb:algebraic-model-management",
+    "urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases",
+    "urn:fxsl:kb:formal-framework-data-lakes-ct",
+    "urn:fxsl:kb:formal-framework-multimodel-data-transformations",
+    "urn:fxsl:kb:multicategory-multimodel-query-processing",
+    "urn:fxsl:kb:unified-representation-transformation-multimodel"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route", "web_search", "artifact_generate"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

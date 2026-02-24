@@ -1,0 +1,21 @@
+{
+  "allowed_kb": [
+    "urn:orko:kb:orko-fundamentos",
+    "urn:orko:kb:orko-arquitectura",
+    "urn:orko:kb:orko-tejidos",
+    "urn:orko:kb:orko-metodologia",
+    "urn:orko:kb:orko-toolkit",
+    "urn:orko:kb:impl-orko-toolkit"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}

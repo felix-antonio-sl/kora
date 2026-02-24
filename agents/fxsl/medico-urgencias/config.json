@@ -1,0 +1,14 @@
+{
+  "allowed_kb": [],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["parse_clinical_input", "analyze_image"],
+    "deny": ["web_search", "code_execution"]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  }
+}

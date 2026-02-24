@@ -1,0 +1,23 @@
+{
+  "allowed_kb": [
+    "urn:gn:kb:flujos-aprobacion-documentos",
+    "urn:gn:kb:modelos-actos-juridicos",
+    "urn:gn:kb:loc-gore",
+    "urn:gn:kb:marco-legal-gores",
+    "urn:gn:kb:glosario-gore-nuble",
+    "urn:gn:kb:estrategia-gestion",
+    "urn:gn:kb:cuentas-publicas-2021-2024",
+    "urn:gn:kb:gestion-rendiciones"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:spec",
+    "urn:kora:kb:transform",
+    "urn:kora:kb:hub-federation",
+    "urn:kora:kb:life",
+    "urn:kora:kb:agent",
+    "urn:kora:kb:agent-construct",
+    "urn:kora:kb:test"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route", "web_search"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}

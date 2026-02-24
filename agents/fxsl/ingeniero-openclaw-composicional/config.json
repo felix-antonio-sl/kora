@@ -1,0 +1,20 @@
+{
+  "allowed_kb": [],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "web_search_openclaw", "web_search"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  },
+  "web_source": {
+    "canonical": "https://docs.openclaw.ai/",
+    "role": "SINGLE_SOURCE_OF_TRUTH",
+    "citation_required": true,
+    "dynamic": true
+  }
+}

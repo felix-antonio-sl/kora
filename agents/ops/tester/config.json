@@ -1,0 +1,17 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:test-strategy",
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route", "agent_parser"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}

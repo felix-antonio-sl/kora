@@ -1,0 +1,17 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:agent",
+    "urn:kora:kb:hub-agentes"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route", "pattern_advise"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}

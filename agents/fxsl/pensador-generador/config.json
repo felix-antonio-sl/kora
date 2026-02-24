@@ -1,0 +1,16 @@
+{
+  "allowed_kb": [
+    "urn:fxsl:kb:fx-tensiones"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["search_kb", "resolve_urn"],
+    "deny": ["code_execution"]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "allowed_kb": [
+    "urn:gov:kb:intro-tde",
+    "urn:tde:kb:principios-objetivos",
+    "urn:tde:kb:ley-21180",
+    "urn:tde:kb:ley-19880",
+    "urn:legal:kb:ley-21719-datos-personales",
+    "urn:tde:kb:nt-documentos-expedientes",
+    "urn:tde:kb:nt-interoperabilidad",
+    "urn:tde:kb:nt-autenticacion",
+    "urn:tde:kb:nt-seguridad-ciberseguridad",
+    "urn:tde:kb:claveunica",
+    "urn:tde:kb:simple-saas",
+    "urn:tde:kb:docdigital",
+    "urn:tde:kb:pisee",
+    "urn:tde:kb:reglamento-ds4",
+    "urn:tde:kb:cpat-completa",
+    "urn:tde:kb:catalogo-cpat-nuble",
+    "urn:tde:kb:simple-saas-oae",
+    "urn:orko:kb:orko-fundamentos",
+    "urn:orko:kb:orko-arquitectura",
+    "urn:orko:kb:orko-metodologia",
+    "urn:orko:kb:orko-playbooks",
+    "urn:gn:kb:intro-gores-nuble",
+    "urn:gn:kb:estrategia-td-ia",
+    "urn:gn:kb:informe-estado-inicial-gore-pre-td"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

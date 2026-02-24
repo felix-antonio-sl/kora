@@ -1,0 +1,25 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route", "web_search", "domain_route"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  },
+  "domains": {
+    "salud": "Bienestar fisico/mental, habitos, rutinas, medicamentos, sueno",
+    "finanzas": "Presupuesto, gastos, ahorro, inversiones, metas financieras",
+    "metas": "OKRs personales, proyectos, deadlines, progreso, retrospectivas",
+    "aprendizaje": "Skills, cursos, libros, notas, conocimiento adquirido",
+    "relaciones": "Contactos, networking, fechas importantes, interacciones",
+    "problemas": "Retos actuales, obstaculos, analisis, soluciones en progreso",
+    "korvo": "Meta-conocimiento: como funciono, mis reglas, mi evolucion"
+  }
+}

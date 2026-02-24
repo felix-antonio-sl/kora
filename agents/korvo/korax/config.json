@@ -1,0 +1,14 @@
+{
+  "allowed_kb": [],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "buffer_manage", "plan_generate", "sync_review", "web_search"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "allowed_kb": [
+    "urn:kora:kb:hub-agentes",
+    "docs/GUIDE_CI_CD.md",
+    ".github/workflows/koda-validate.yml",
+    ".github/workflows/koda-audit.yml",
+    ".github/workflows/koda-sync.yml",
+    "scripts/koda-audit.sh"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": ["catalog_resolve", "kb_route", "web_search"],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}
