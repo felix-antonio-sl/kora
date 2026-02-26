@@ -11,9 +11,9 @@ KORA is a formally-specified monorepo for building and governing AI agents using
 ```bash
 scripts/kora index      # Rebuild catalog from all artifacts (run after any structural change)
 scripts/kora resolve "urn:kora:kb:agent-spec-md"  # Resolve URN to file path
-scripts/kora health     # Check for broken URN references
-scripts/kora validate   # Validate agent workspaces (requires: pip install jsonschema)
-scripts/kora stats      # Show monorepo statistics
+scripts/kora health     # Check for broken URN references (scans 635 files)
+scripts/kora validate   # Validate 188 agent components against schemas/kora-agent-schema.json (requires: pip install jsonschema)
+scripts/kora stats      # Show monorepo statistics (Agents/Skills/Knowledge by namespace)
 scripts/kora intake     # Show intake pipeline status (inbox → source → drafts → knowledge)
 ```
 
@@ -28,11 +28,12 @@ kora/
   specs/                        # 7 foundational specs (gobernanza, md-spec, spec-md, agent-spec-md, skill-spec-md, runtime-spec-md, swarm-spec-md)
   knowledge/                    # KBs organized by namespace (gn, fxsl, kora, tde, legal, gov, orko, mgmt)
     kora/categorical-foundations/  # Formal Layer: 6 documents (00-05) with categorical math backing the specs
-  agents/                       # Agent workspaces organized by namespace
-  catalog/                      # Master URN registry — catalog_master_kora.yml (~2500 lines, auto-generated)
+  agents/                       # Agent workspaces organized by namespace (47 workspaces, 188 indexed components)
+  catalog/                      # Master URN registry — catalog_master_kora.yml (auto-generated, sections: Agents/Skills/Knowledge/Documents/Other)
+  schemas/                      # JSON schemas — kora-agent-schema.json validates agent component frontmatter
   inbox/ → source/ → drafts/ → knowledge/   # Intake pipeline for new artifacts
   scripts/                      # CLI tools (Python 3 + PyYAML)
-  docs/                         # Session handoffs, plans, and reports
+  docs/                         # plans/ and reports/ (session handoffs, architecture decisions)
 ```
 
 ### Governance Hierarchy (precedence, highest to lowest)
@@ -104,7 +105,7 @@ Format: `urn:{namespace}:{type}:{id}` — e.g., `urn:kora:kb:agent-spec-md`
 
 Active namespaces: **kora**, **fxsl**, **gn**, **tde**, **orko**, **korvo**, **gov**, **legal**, **mgmt**, **ops**
 
-Catalog (`catalog/catalog_master_kora.yml`) is the source of truth. Run `scripts/kora index` after changes.
+Catalog (`catalog/catalog_master_kora.yml`) is the source of truth. Run `scripts/kora index` after changes. The indexer classifies by `_manifest.urn` type segment: `agent-bootstrap` → Agents, `skill` → Skills, `kb`/`core`/`domain` → Knowledge.
 
 ### Key Namespace Agents
 
@@ -154,9 +155,9 @@ Script Protocol: all executable scripts in Skills must be Python 3 with JSON I/O
 
 ## Migration Status
 
-Completed: Phase 0 (Genesis) → Phase 1 (Source Mapping) → Phase 2 (Koraficación) → Phase 4 (Agentificación) → Phase Audit (Coherencia) → Phase I (Ingesta pipeline + Xanpan corpus) → **Phase S (Spec Rewrite v7.0.0)** → wikiguias_corpus koraficación (41 artefactos `tde/`)
+Completed: Phase 0 (Genesis) → Phase 1 (Source Mapping) → Phase 2 (Koraficación) → Phase 4 (Agentificación) → Phase Audit (Coherencia) → Phase I (Ingesta pipeline + Xanpan corpus) → **Phase S (Spec Rewrite v7.0.0)** → Re-koraficación masiva (167 artefactos KODA YAML → KORA/MD) → fix 60 URNs rotas (legacy `urn:knowledge:koda:*` → namespaces canónicos)
 
-Pending: **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival. Agentes con URNs `tde:kb:` rotos post-rekoraficación (ver `kora health`).
+Pending: **Phase F** (Governance): KODA formal deprecation, source repo archival. `inbox/wikiguias_corpus/` pendiente de ingesta (→ kora/curator).
 
 ## Key Conventions
 
