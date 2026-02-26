@@ -17,3 +17,14 @@ _manifest:
 - **Cuando usar:** Resolver URN a path fisico antes de acceder contenido KB. Primer paso obligatorio.
 - **Cuando NO usar:** Si path ya resuelto en turno actual.
 - **Notas:** Catalogo SOURCE_OF_TRUTH. Fallback routing estatico. El path devuelto debe emplearse para operación de lectura directa e inyección en la memoria contextual del agente durante su session prep (runtime OpenClaw).
+
+## kb_route
+
+- **Firma:** query_topic: string → urn: string
+- **Cuando usar:** Clasificar tema → resolver URN → priorizar KB antes de invocar search_kb.
+- **Cuando NO usar:** Tema ya mapeado en turno actual.
+- **Routing Map:**
+
+| Topic | URN |
+|-------|-----|
+| Tensiones creativas, MBT, dialectica, paradojas | `urn:fxsl:kb:fx-tensiones` |
