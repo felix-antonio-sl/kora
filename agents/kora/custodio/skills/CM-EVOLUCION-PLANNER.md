@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:custodio-evolucion-planner:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Planifica mejoras estructurales al repo KORA como entidad: reorganizacion de directorios, nuevas convenciones, nuevos scripts CLI, optimizacion de pipeline.
+
+## I/O
+
+- **Input:** estado_actual: HealthReport | StructureAuditReport (diagnosticos previos), areas_friccion: string[] | null
+- **Output:** EvolutionPlan (ver Signature Output)
 
 ## Procedimiento
 1. Analizar estado actual: metricas (kora stats), estructura (filesystem scan), gaps detectados en auditorias previas.
@@ -25,5 +30,9 @@ Planifica mejoras estructurales al repo KORA como entidad: reorganizacion de dir
 5. Implementar mejoras aprobadas secuencialmente. Verificar cada paso.
 6. Post-implementacion: ejecutar kora health para confirmar que no se introdujeron regresiones.
 
-## Output
-Plan de evolucion: tabla {mejora, impacto, esfuerzo, riesgo, archivos_afectados}. Post-implementacion: reporte de verificacion.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| mejoras | {mejora, impacto, esfuerzo, riesgo, archivos_afectados}[] | Plan priorizado de mejoras |
+| verificacion | enum(PASS\|FAIL) \| null | Resultado post-implementacion (si se implemento) |

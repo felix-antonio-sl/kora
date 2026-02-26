@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:custodio-estructura-auditor:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Audita la estructura del monorepo KORA: verifica directorios esperados, convenciones de naming, archivos huerfanos, workspaces incompletos, frontmatter valido.
+
+## I/O
+
+- **Input:** scope: string | null (ruta o namespace a auditar, null=monorepo completo)
+- **Output:** StructureAuditReport (ver Signature Output)
 
 ## Procedimiento
 1. Verificar directorios raiz esperados: inbox/, source/, drafts/, specs/, knowledge/, agents/, catalog/, skills/, scripts/, docs/.
@@ -21,5 +26,9 @@ Audita la estructura del monorepo KORA: verifica directorios esperados, convenci
 7. Muestrear frontmatter de artefactos: verificar _manifest.urn presente y formato valido.
 8. Reporte con hallazgos clasificados: ERROR(falta componente esencial), WARNING(convencion rota, huerfano), OK(conforme).
 
-## Output
-Reporte auditoria: tabla {hallazgo, severidad, ruta, accion_recomendada}. Conteo por severidad.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| hallazgos | {hallazgo, severidad, ruta, accion_recomendada}[] | Lista de hallazgos clasificados |
+| conteo | {error: int, warning: int, ok: int} | Conteo por severidad |

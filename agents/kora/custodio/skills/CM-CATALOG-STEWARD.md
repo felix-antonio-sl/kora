@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:custodio-catalog-steward:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Gestiona el catalogo maestro del repo KORA: sincroniza, detecta URNs rotas, resuelve referencias.
+
+## I/O
+
+- **Input:** accion: enum(sync|health|resolve), urn_target: string | null (si accion=resolve)
+- **Output:** CatalogReport (ver Signature Output)
 
 ## Procedimiento
 1. Ejecutar `scripts/kora index` → reconstruir catalog_master_kora.yml desde artefactos.
@@ -20,5 +25,12 @@ Gestiona el catalogo maestro del repo KORA: sincroniza, detecta URNs rotas, resu
 6. Si se solicita resolver URN especifica: ejecutar `scripts/kora resolve "{urn}"`.
 7. Reporte final: tabla con estado del catalogo.
 
-## Output
-Reporte: {sincronizado: bool, nuevas: int, actualizadas: int, eliminadas: int, rotas: [{urn, causa, fix_propuesto}]}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| sincronizado | bool | Catalogo sincronizado sin errores |
+| nuevas | int | Entradas nuevas agregadas |
+| actualizadas | int | Entradas actualizadas |
+| eliminadas | int | Entradas eliminadas |
+| rotas | {urn, causa, fix_propuesto}[] | URNs rotas con diagnostico |

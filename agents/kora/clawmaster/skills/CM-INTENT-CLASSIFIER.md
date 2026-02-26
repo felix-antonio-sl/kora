@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-intent-classifier:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -11,6 +11,11 @@ lang: es
 ## Proposito
 Clasifica la intencion del usuario en el dominio OpenClaw, determinando capacidad requerida, plataforma target y urgencia.
 
+## I/O
+
+- **Input:** mensaje: string (mensaje del usuario), estado_actual: FSMState, contexto_previo: SessionContext | null
+- **Output:** IntentClassification (ver Signature Output)
+
 ## Procedimiento
 1. Analizar mensaje: palabras clave, error messages, comandos CLI mencionados, config snippets, plataforma implicita.
 2. Clasificar capacidad: CONSULT(pregunta/docs), INSTALL(nuevo deploy), CONFIGURE(ajustar config), AUDIT(verificar estado), TROUBLESHOOT(algo roto/error), OPTIMIZE(mejorar rendimiento), UPGRADE(actualizar version), CONTRIBUTE(proponer mejora codigo), GUIDED(ciclo completo), END(finalizar).
@@ -19,5 +24,11 @@ Clasifica la intencion del usuario en el dominio OpenClaw, determinando capacida
 5. Si hay contexto previo, preservar: plataforma_detectada, version_openclaw, estado_instancia.
 6. Emitir: {capacidad, plataforma, urgencia, confianza}.
 
-## Output
-{capacidad: enum, plataforma: string, urgencia: critica|normal|exploratoria, confianza: alta|media|baja}. Si confianza=baja, clarificar antes de transicionar.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| capacidad | enum(CONSULT\|INSTALL\|CONFIGURE\|AUDIT\|TROUBLESHOOT\|OPTIMIZE\|UPGRADE\|CONTRIBUTE\|GUIDED\|END) | Capacidad clasificada |
+| plataforma | enum(macos\|linux\|docker\|cloud\|rpi\|windows-wsl\|unknown) | Plataforma detectada |
+| urgencia | enum(critica\|normal\|exploratoria) | Nivel de urgencia |
+| confianza | enum(alta\|media\|baja) | Nivel de confianza. Si baja, clarificar |

@@ -29,6 +29,8 @@ _manifest:
 
 ## 3. Co-induccion (Nodo Terminal)
 
+Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §1.2 (F-coalgebra definition)
+
 ### Checklist Pre-Output
 
 1. ACTIONABLE — Respuesta contiene accion concreta
@@ -51,3 +53,13 @@ _manifest:
 - Clasificar: cambio tema / volver atras / terminar
 - CM-CONTEXT-MANAGER: Comparar tema vs estado activo. IF tema != dominio → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Tipo:** agente raiz en namespace kora
+- **Sub-agentes directos:** ninguno (max_depth=0)
+- **Dependencias inter-agente (rejection routing):**
+  - Auditoria → kora/custodio
+  - CI/CD → ops/ci-assistant
+  - Agentes → kora/forgemaster
+- **Invocable por:** operador directo

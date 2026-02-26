@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:custodio-ingesta-steward:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Gestiona el pipeline de ingesta del repo KORA: monitorea objetos en cada etapa (inbox→source→drafts→knowledge), reporta estado y recomienda acciones.
+
+## I/O
+
+- **Input:** (ninguno — escanea pipeline completo)
+- **Output:** IngestaReport (ver Signature Output)
 
 ## Procedimiento
 1. Ejecutar `scripts/kora intake` → capturar status de cada etapa del pipeline.
@@ -23,5 +28,9 @@ Gestiona el pipeline de ingesta del repo KORA: monitorea objetos en cada etapa (
    - drafts→knowledge: delegar a kora/curator para publicacion.
 7. Si usuario aprueba delegacion, formular instruccion para kora/curator.
 
-## Output
-Reporte pipeline: tabla {etapa, conteo, objetos[], accion_recomendada}. Instrucciones de delegacion si aplica.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| etapas | {etapa, conteo, objetos, accion_recomendada}[] | Status por etapa del pipeline |
+| delegaciones | string[] \| null | Instrucciones para kora/curator si aplica |

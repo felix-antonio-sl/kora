@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-troubleshooter:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Diagnostica y resuelve problemas de OpenClaw por reflejo — el arbol diagnostico esta internalizado, la solucion viene con el problema.
+
+## I/O
+
+- **Input:** sintomas: string (descripcion del problema, error messages, logs)
+- **Output:** TroubleshootReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -42,5 +47,14 @@ Diagnostica y resuelve problemas de OpenClaw por reflejo — el arbol diagnostic
 - Sintoma → Causa → Fix → Verificacion
 - Referencia a capitulo/doc relevante
 
-## Output
-Problema resuelto. Reporte: {sintoma, categoria, causa_raiz, fix_aplicado, verificacion, referencia, prevencion}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| sintoma | string | Sintoma reportado |
+| categoria | string | Categoria del problema |
+| causa_raiz | string | Causa raiz diagnosticada |
+| fix_aplicado | string | Fix implementado |
+| verificacion | string | Resultado de verificacion post-fix |
+| referencia | string | Capitulo/doc de referencia |
+| prevencion | string | Recomendacion para prevenir recurrencia |

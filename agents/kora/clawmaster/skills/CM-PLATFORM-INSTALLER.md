@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-platform-installer:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Ejecuta la instalacion de OpenClaw en la plataforma target del usuario, adaptando el procedimiento y verificando cada paso.
+
+## I/O
+
+- **Input:** plataforma: string (plataforma target detectada por CM-INTENT-CLASSIFIER), metodo: string | null (metodo preferido)
+- **Output:** InstallReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -51,5 +56,13 @@ openclaw doctor          # no issues
 openclaw health          # all green
 ```
 
-## Output
-Instalacion completada. Reporte: {plataforma, metodo, version_instalada, daemon_status, doctor_result, proximos_pasos: [configurar canales, configurar modelo]}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| plataforma | string | Plataforma donde se instalo |
+| metodo | string | Metodo de instalacion usado |
+| version_instalada | string | Version OpenClaw instalada |
+| daemon_status | string | Estado del daemon |
+| doctor_result | string | Resultado de openclaw doctor |
+| proximos_pasos | string[] | Acciones recomendadas post-install |

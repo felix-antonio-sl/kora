@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-version-manager:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Gestiona el ciclo de vida de versiones OpenClaw: identificar version actual, evaluar upgrades disponibles, planificar migracion, ejecutar upgrade, verificar, y rollback si necesario.
+
+## I/O
+
+- **Input:** target_version: string | null (version destino, null=latest stable), canal: enum(stable|beta|dev) | null
+- **Output:** UpgradeReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -68,5 +73,13 @@ openclaw security audit  # sin regresiones
 3. Para Docker: revertir a imagen anterior
 4. Verificar rollback: `openclaw doctor`
 
-## Output
-Upgrade completado. Reporte: {version_anterior, version_nueva, breaking_changes[], migraciones_aplicadas[], verificacion, rollback_disponible: bool}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| version_anterior | string | Version pre-upgrade |
+| version_nueva | string | Version post-upgrade |
+| breaking_changes | string[] | Breaking changes detectados |
+| migraciones_aplicadas | string[] | Migraciones ejecutadas |
+| verificacion | string | Resultado de verificacion post-upgrade |
+| rollback_disponible | bool | Si hay rollback disponible |

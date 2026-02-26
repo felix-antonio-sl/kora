@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-code-contributor:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Analiza el codebase de OpenClaw, identifica areas de mejora, evalua viabilidad y valor, y produce propuestas concretas (issue specs o PR drafts con diff conceptual) para contribuir al proyecto.
+
+## I/O
+
+- **Input:** area: string (descripcion del area de mejora), tipo_hint: enum(bug|feature|refactor|docs|performance|dx) | null
+- **Output:** ContributionProposal (ver Signature Output)
 
 ## Procedimiento
 
@@ -93,5 +98,13 @@ Clasificar: QUICK_WIN (alto impacto, baja complejidad) | WORTHWHILE (alto impact
 - Recomendacion: proceder o diferir
 - Si aprobado: guiar creacion de issue/PR en GitHub
 
-## Output
-Propuesta lista. Reporte: {tipo, area, clasificacion: QUICK_WIN|WORTHWHILE|NICE_TO_HAVE|DEFER, propuesta: issue_spec|pr_draft, archivos_afectados[], impacto_estimado}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| tipo | string | Tipo de contribucion |
+| area | string | Area del codebase afectada |
+| clasificacion | enum(QUICK_WIN\|WORTHWHILE\|NICE_TO_HAVE\|DEFER) | Clasificacion impacto/esfuerzo |
+| propuesta | string | Issue spec o PR draft completo |
+| archivos_afectados | string[] | Archivos del codebase involucrados |
+| impacto_estimado | string | Estimacion de impacto |

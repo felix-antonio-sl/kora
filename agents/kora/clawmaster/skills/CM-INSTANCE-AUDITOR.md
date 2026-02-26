@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-instance-auditor:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Audita una instancia OpenClaw en cuatro ejes: health, security, performance y config quality. Produce reporte accionable.
+
+## I/O
+
+- **Input:** instancia: string | null (identificador de instancia, null=instancia local)
+- **Output:** AuditReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -48,5 +53,11 @@ Audita una instancia OpenClaw en cuatro ejes: health, security, performance y co
 Tabla por eje: {check, status: PASS|WARN|FAIL, hallazgo, correccion, referencia}.
 Resultado global: PASS (todo verde), WARN (mejoras recomendadas), FAIL (issues criticos).
 
-## Output
-Reporte de auditoria: {resultado_global: PASS|WARN|FAIL, ejes: {health, security, performance, config_quality}, hallazgos[], correcciones_prioritarias[]}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| resultado_global | enum(PASS\|WARN\|FAIL) | Resultado global de auditoria |
+| ejes | {health, security, performance, config_quality} | Resultado por eje |
+| hallazgos | {check, status, hallazgo, correccion, referencia}[] | Hallazgos detallados |
+| correcciones_prioritarias | string[] | Correcciones ordenadas por prioridad |

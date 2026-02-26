@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:custodio-health-inspector:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Ejecuta diagnostico completo del estado del repo KORA. Consolida resultados de multiples herramientas en un reporte unico con severidades.
+
+## I/O
+
+- **Input:** (ninguno — ejecuta bateria de comandos diagnosticos)
+- **Output:** HealthReport (ver Signature Output)
 
 ## Procedimiento
 1. Ejecutar `scripts/kora health` → capturar broken URNs.
@@ -20,5 +25,10 @@ Ejecuta diagnostico completo del estado del repo KORA. Consolida resultados de m
 6. Emitir veredicto global: SANO(0 errors), ADVERTENCIA(solo warnings), CRITICO(>=1 error).
 7. Si CRITICO, recomendar transicion a S-CIRUGIA con lista de issues.
 
-## Output
-Reporte tabular con veredicto global. Formato: tabla markdown + veredicto + recomendacion.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| veredicto | enum(SANO\|ADVERTENCIA\|CRITICO) | Veredicto global |
+| componentes | {componente, estado, severidad, detalle}[] | Estado por componente |
+| recomendacion | string \| null | Accion recomendada si hay issues |

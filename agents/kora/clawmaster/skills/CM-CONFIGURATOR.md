@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-configurator:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Configura instancias OpenClaw cubriendo todos los dominios de configuracion: gateway, channels, models, agents, security, automation, multi-agent, sandbox, memory, skills.
+
+## I/O
+
+- **Input:** scope: string (dominio de configuracion), config_actual: object | null
+- **Output:** ConfigReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -45,5 +50,11 @@ openclaw status          # servicios ok
 openclaw security audit  # sin vulnerabilidades
 ```
 
-## Output
-Config aplicada. Reporte: {scope, cambios_realizados[], config_generada: JSON5, validacion: doctor_result}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| scope | string | Dominio de configuracion aplicado |
+| cambios_realizados | string[] | Lista de cambios aplicados |
+| config_generada | string | Config JSON5 generada |
+| validacion | string | Resultado de openclaw doctor |

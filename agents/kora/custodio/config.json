@@ -9,13 +9,18 @@
     "urn:kora:kb:md-spec",
     "urn:kora:kb:spec-md"
   ],
-  "sandbox": false,
+  "sandbox": {
+    "mode": "permissive"
+  },
   "tools": {
     "allow": [
-      "kora_cli",
-      "git",
-      "filesystem_read",
-      "filesystem_write"
+      "repo_health",
+      "catalog_sync",
+      "urn_resolve",
+      "intake_pipeline",
+      "git_status",
+      "filesystem_scan",
+      "file_write"
     ],
     "deny": [
       "web_search",
@@ -23,12 +28,16 @@
     ]
   },
   "sub_agents": {
-    "kora/forgemaster": "delegar creacion/mejora de agentes",
-    "kora/curator": "delegar trabajo sobre artefactos KB"
+    "max_depth": 1,
+    "max_concurrent": 2
   },
   "limits": {
-    "max_write_per_turn": 5,
-    "require_confirmation_on_write": true,
-    "require_confirmation_on_delete": true
+    "policy_flags": {
+      "require_confirmation_on_write": true,
+      "require_confirmation_on_delete": true
+    },
+    "quotas": {
+      "max_write_per_turn": 5
+    }
   }
 }

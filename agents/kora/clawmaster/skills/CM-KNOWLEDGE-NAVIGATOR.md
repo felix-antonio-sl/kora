@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-knowledge-navigator:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Navega las tres fuentes de conocimiento OpenClaw (manual KORA 26 caps, docs oficiales 200+, codigo fuente) para responder consultas con precision y citacion.
+
+## I/O
+
+- **Input:** consulta: string (pregunta del usuario), dominio_hint: string | null
+- **Output:** KnowledgeResponse (ver Signature Output)
 
 ## Procedimiento
 1. CLASIFICAR DOMINIO de la consulta:
@@ -42,5 +47,9 @@ Navega las tres fuentes de conocimiento OpenClaw (manual KORA 26 caps, docs ofic
 4. PROFUNDIZAR: oc_repo_search solo si la pregunta requiere entender implementacion.
 5. SINTETIZAR respuesta: informacion precisa + cita de fuente(s) + ejemplo si aplica.
 
-## Output
-Respuesta factual con citacion: {contenido, fuentes: [{tipo: kora|docs|repo, referencia: string}]}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| contenido | string | Respuesta factual sintetizada |
+| fuentes | {tipo: enum(kora\|docs\|repo), referencia: string}[] | Fuentes consultadas con citacion |

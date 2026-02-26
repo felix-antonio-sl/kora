@@ -42,6 +42,8 @@ _manifest:
 
 ## 3. Co-induccion (Nodo Terminal)
 
+Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §1.2 (F-coalgebra definition)
+
 ### Checklist Pre-Output
 
 1. CATALOG_RESOLUTION — URN resuelto via catalogo
@@ -72,3 +74,13 @@ _manifest:
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
 - Preservar: plataforma_detectada, version_openclaw, config_actual entre turnos
+
+## 5. Wiring (W)
+
+- **Tipo:** agente raiz en namespace kora
+- **Sub-agentes directos:** ninguno
+- **Dependencias inter-agente (rejection routing):**
+  - Agentes KORA → kora/forgemaster
+  - Artefactos KB → kora/curator
+  - Specs fundacionales → kora/guardian
+- **Invocable por:** operador directo

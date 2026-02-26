@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:kora:skill:clawmaster-performance-optimizer:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Evalua y optimiza el rendimiento de una instancia OpenClaw en 8 ejes. Produce mejoras con impacto estimado, implementa las aprobadas.
+
+## I/O
+
+- **Input:** instancia: string | null (identificador de instancia, null=local), baseline: AuditReport | null
+- **Output:** OptimizationReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -57,5 +62,13 @@ Tabla de mejoras ordenada por impacto/esfuerzo:
 - Comparar antes/despues
 - `openclaw doctor` — confirmar health
 
-## Output
-Optimizacion completada. Reporte: {baseline, ejes_evaluados[], bottlenecks[], mejoras_aplicadas[], metricas_post: {delta_tokens, delta_latencia, delta_sesiones}, verificacion}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| baseline | object | Metricas baseline pre-optimizacion |
+| ejes_evaluados | string[] | Ejes evaluados con resultado |
+| bottlenecks | string[] | Cuellos de botella identificados |
+| mejoras_aplicadas | string[] | Mejoras implementadas |
+| metricas_post | {delta_tokens, delta_latencia, delta_sesiones} | Delta metricas post-optimizacion |
+| verificacion | string | Resultado doctor post-optimizacion |
