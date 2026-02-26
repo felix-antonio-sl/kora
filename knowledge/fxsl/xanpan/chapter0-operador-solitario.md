@@ -2,587 +2,811 @@
 _manifest:
   urn: "urn:fxsl:kb:chapter0-operador-solitario"
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
+    created_by: "kora/curator"
+    created_at: "2026-02-25"
     source: "source/fxsl/xanpan/chapter0-operador-solitario.md"
-version: "1.0.0"
+version: "1.1.0"
 status: published
-tags: [xanpan, operador-solitario, bootstrap, llm, agentes, infraestructura, fases]
+tags: [xanpan, operador-solitario, bootstrap, llm, agentes, infrastructure]
 lang: es
 ---
+# CHAPTER 0: EL OPERADOR SOLITARIO
 
-# Chapter 0: El Operador Solitario — Bootstrap Path para Desarrollo Asistido por LLM v1.0.0
+## Bootstrap Path para Desarrollo Asistido por LLM — De una Persona a un Enjambre
 
-## 1. Premisa
+- *El capítulo que le faltaba al corpus: cómo empezar cuando eres uno, tienes un VPS, y quieres construir algo real*
 
-Los tres documentos del corpus --- [STACK::LLM](urn:fxsl:kb:stack-llm-arquitectura), [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia), [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia) --- describen un sistema maduro. Presuponen infraestructura existente, agentes operativos, pipelines de evals y al menos dos roles humanos diferenciados (Product Owner y Operador). Son correctos pero incompletos: describen el destino sin trazar la ruta desde el origen.
 
-Este documento prescribe la ruta.
+- Documento fundacional del corpus Xanpan::Agents Febrero 2026
 
-El lector de Chapter 0 **DEBE** cumplir todas estas condiciones simultáneamente:
 
-- Tiene capacidad tecnica suficiente para escribir codigo y gestionar infraestructura basica.
+- ---
+
+
+## Índice
+
+0. [Premisa: Por qué este documento existe](#0-premisa-por-qué-este-documento-existe)
+1. [El Operador Solitario como rol legítimo](#1-el-operador-solitario-como-rol-legítimo)
+2. [Fase 0: Cimientos (Día 1)](#2-fase-0-cimientos-día-1)
+3. [Fase 1: El Primer Proyecto (Semana 1)](#3-fase-1-el-primer-proyecto-semana-1)
+4. [Fase 2: Primer Agente (Mes 1)](#4-fase-2-primer-agente-mes-1)
+5. [Fase 3: Múltiples Agentes (Mes 2-3)](#5-fase-3-múltiples-agentes-mes-2-3)
+6. [Fase 4: Enjambre (cuando el proyecto lo exija)](#6-fase-4-enjambre-cuando-el-proyecto-lo-exija)
+7. [Context Engineering Progresivo](#7-context-engineering-progresivo)
+8. [Infraestructura Progresiva](#8-infraestructura-progresiva)
+9. [Observabilidad Progresiva](#9-observabilidad-progresiva)
+10. [Seguridad Progresiva](#10-seguridad-progresiva)
+11. [Economía: Presupuesto Real por Fase](#11-economía-presupuesto-real-por-fase)
+12. [Anti-patrones del Operador Solitario](#12-anti-patrones-del-operador-solitario)
+13. [Caso Real: Korvo–Korax como Proof of Concept](#13-caso-real-korvo-korax-como-proof-of-concept)
+14. [Cuándo dejar de ser solitario](#14-cuándo-dejar-de-ser-solitario)
+15. [Mapa de Navegación del Corpus](#15-mapa-de-navegación-del-corpus)
+
+- ---
+
+
+# 0. Premisa: Por qué este documento existe
+
+- Los tres documentos del corpus — STACK::LLM, Swarm::Ops, Xanpan::Agents — describen un sistema maduro.
+- Presuponen infraestructura existente, agentes operativos, pipelines de evals, y al menos dos roles humanos diferenciados (Product Owner y Operador).
+- Son correctos pero incompletos: describen el destino sin trazar la ruta desde el origen.
+
+
+- Este documento es la ruta.
+
+
+- El lector típico de Chapter 0 es una persona que cumple todas estas condiciones simultáneamente:
+
+
+- Tiene capacidad técnica suficiente para escribir código y gestionar infraestructura básica.
 - Tiene acceso a LLMs de frontera (API keys, suscripciones a Claude Pro, ChatGPT Plus, o equivalentes).
-- Tiene un VPS o acceso a cloud computing basico.
-- No tiene equipo. No tiene presupuesto para un equipo. Es una persona sola.
+- Tiene un VPS o acceso a cloud computing básico.
+- No tiene equipo. No tiene presupuesto para un equipo. Es, por ahora, una persona sola.
 
-Esta persona es el **Operador Solitario**. No es un rol degradado ni una version empobrecida del equipo descrito en [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia). Es el estado legitimo de inicio de cualquier proyecto de software asistido por LLM.
+- Esta persona es el **Operador Solitario.** No es un rol degradado ni una versión empobrecida del equipo descrito en Xanpan::Agents.
+- Es el estado legítimo de inicio de cualquier proyecto de software asistido por LLM.
 
-> **PRINCIPIO DE ARRANQUE:** Todo sistema complejo empieza como una persona resolviendo un problema concreto. Chapter 0 no pide infraestructura que no existe, no asume roles que no se pueden llenar, y no impone ceremonias absurdas para un equipo de uno. Cada decision tomada en Chapter 0 **DEBE** ser compatible con el crecimiento futuro, de modo que al escalar no sea necesario reescribir desde cero.
 
----
+> ⚡ **EL PRINCIPIO DE ARRANQUE**
+>
+> Ningún enjambre nació como enjambre. Todo sistema complejo empezó como una persona resolviendo un problema concreto. Chapter 0 respeta esa realidad: no pide infraestructura que no tienes, no asume roles que no puedes llenar, y no impone ceremonias que serían absurdas para un equipo de uno. Lo que sí hace es asegurar que cada decisión que tomes sea compatible con el crecimiento futuro, de modo que cuando necesites escalar, no tengas que reescribir desde cero.
 
-## 2. El Operador Solitario como Rol Legitimo
+- ---
 
-### 2.1 La violacion consciente: dual-hat
 
-[Xanpan::Agents §2](urn:fxsl:kb:xanpan-agents-metodologia) define dos roles humanos distintos:
+# 1. El Operador Solitario como rol legítimo
 
-- **Product Owner (PO):** Decide que construir. Define valor de negocio. Prioriza backlog. Negocia scope.
-- **Operador:** Decide como construir. Configura agentes. Optimiza pipelines. Gestiona infraestructura.
+## 1.1 La violación consciente: dual-hat
 
-En Xanpan clasico, la separacion es obligatoria porque las tensiones entre "que" y "como" son productivas. Un PO que tambien opera tiende a optimizar la tecnica a expensas del negocio (o viceversa).
+- Xanpan::Agents §2 define dos roles humanos distintos:
 
-El Operador Solitario viola esta separacion. El coste de dos personas para un proyecto embrionario es prohibitivo.
 
-La compensacion es disciplina: el Operador Solitario **DEBE** alternar sombreros explicitamente.
+- **Product Owner (PO):** Decide qué construir. Define valor de negocio. Prioriza backlog. Negocia scope.
+- **Operador:** Decide cómo construir. Configura agentes. Optimiza pipelines. Gestiona infraestructura.
 
-**Sombrero PO --- cuando usarlo:** Al inicio de cada ciclo de trabajo, al definir que historias abordar, al decidir si un feature ship o necesita mas iteracion, al hablar con usuarios o stakeholders.
+- En Xanpan clásico, la separación es obligatoria porque las tensiones entre "qué" y "cómo" son reales y productivas.
+- Un PO que también opera tiende a optimizar la técnica a expensas del negocio (o viceversa).
 
-**Sombrero Operador --- cuando usarlo:** Al configurar herramientas, al interactuar con agentes LLM, al resolver problemas tecnicos, al optimizar prompts, al gestionar infraestructura.
 
-El Operador Solitario **NO DEBE** mezclar sombreros: cuando lleva el sombrero PO, **DEBE** priorizar por valor de negocio sin dejarse seducir por la elegancia tecnica. Cuando lleva el sombrero Operador, **DEBE** optimizar la ejecucion sin cuestionar las prioridades ya definidas como PO.
+- El Operador Solitario viola esta separación.
+- Conscientemente.
+- No porque la separación sea incorrecta, sino porque el coste de dos personas para un proyecto embrionario es prohibitivo.
 
-**Correcto:** Iniciar el ciclo con sombrero PO seleccionando historias por valor de negocio, luego cambiar a sombrero Operador para implementarlas.
-**Incorrecto:** Decidir que construir y como construirlo en la misma conversacion mental, sin separacion explicita de roles.
 
-### 2.2 El PCA como compensador
+- La compensación es disciplina: el Operador Solitario debe alternar sombreros explícitamente.
 
-El **Pensamiento Ciclico Asincrono** --- la estructura temporal de [Xanpan::Agents §4](urn:fxsl:kb:xanpan-agents-metodologia) con ciclos de 2-4 semanas y flujo continuo dentro --- funciona para el Operador Solitario sin ceremonias de coordinacion.
 
-El ciclo del Operador Solitario **DEBE** contener exactamente tres fases:
+- **Sombrero PO (cuándo):** Al inicio de cada ciclo de trabajo, al definir qué historias abordar, al decidir si un feature ship o necesita más iteración, al hablar con usuarios o stakeholders.
 
-1. **Inicio de ciclo (sombrero PO):** Revisar OKRs, seleccionar historias para el ciclo, priorizar.
-2. **Ejecucion (sombrero Operador):** Trabajar con LLMs para implementar historias. Flujo continuo.
-3. **Cierre de ciclo (ambos sombreros):** Evaluar si se entrego valor, si se cumplieron los KRs, que se aprendio.
 
-La retrospectiva del Operador Solitario **DEBE** ser un documento de 5-10 lineas al final de cada ciclo. No es una reunion; es una reflexion escrita que alimenta el siguiente ciclo.
+- **Sombrero Operador (cuándo):** Al configurar herramientas, al interactuar con agentes LLM, al resolver problemas técnicos, al optimizar prompts, al gestionar infraestructura.
 
----
 
-## 3. Fase 0: Cimientos (Dia 1)
+- La disciplina está en no mezclar: cuando llevas el sombrero PO, priorizas por valor de negocio sin dejarte seducir por la elegancia técnica.
+- Cuando llevas el sombrero Operador, optimizas la ejecución sin cuestionar las prioridades que ya definiste como PO.
 
-**Objetivo:** Tener un entorno de desarrollo funcional donde construir cualquier cosa con asistencia de LLM.
 
-### 3.1 Componentes requeridos
+## 1.2 El PCA como compensador
 
-El Operador Solitario **DEBE** tener disponibles todos los componentes de la siguiente tabla al finalizar el Dia 1:
+- El **Pensamiento Cíclico Asíncrono** — la estructura temporal de Xanpan::Agents §4 con ciclos de 2-4 semanas y flujo continuo dentro — funciona naturalmente para el Operador Solitario.
+- No hay ceremonias de coordinación porque no hay equipo que coordinar.
+- El ciclo se reduce a:
 
-| Componente | Eleccion | Coste |
+
+1. **Inicio de ciclo (sombrero PO):** Revisa OKRs, selecciona historias para el ciclo, prioriza.
+2. **Ejecución (sombrero Operador):** Trabaja con LLMs para implementar historias. Flujo continuo.
+3. **Cierre de ciclo (ambos sombreros):** ¿Se entregó valor? ¿Se cumplieron los KRs? ¿Qué aprendí?
+
+- La retrospectiva del Operador Solitario es un documento de 5-10 líneas al final de cada ciclo.
+- No es una reunión; es una reflexión escrita que alimenta el siguiente ciclo.
+
+
+- ---
+
+
+# 2. Fase 0: Cimientos (Día 1)
+
+- **Objetivo:** Tener un entorno de desarrollo funcional donde puedas construir cualquier cosa con asistencia de LLM.
+
+
+- **Lo que necesitas:**
+
+
+| Componente | Elección | Coste |
 |---|---|---|
-| **Maquina local** | Computadora actual (cualquier OS) | Ya la tiene |
+| **Máquina local** | Tu computadora actual (cualquier OS) | Ya la tienes |
 | **Editor** | VS Code o Cursor | Gratis / $20/mes |
 | **CLI de LLM** | Claude Code + Gemini CLI (ambos) | API usage |
 | **Control de versiones** | GitHub (repo privado) | Gratis |
 | **Runtime** | Node.js LTS + Python 3.11+ | Gratis |
 | **Package managers** | pnpm (Node), uv (Python) | Gratis |
-| **VPS** | Hetzner CX22 o equivalente (2 vCPU, 4GB RAM) | ~EUR 4-8/mes |
-| **Dominio** | Uno. Para el proyecto. | ~$12/anio |
+| **VPS** | Hetzner CX22 o equivalente (2 vCPU, 4GB RAM) | ~€4-8/mes |
+| **Dominio** | Uno. Para tu proyecto. | ~$12/año |
 
-### 3.2 Componentes excluidos en Fase 0
+- **Lo que NO necesitas todavía:** Kubernetes.
+- ArgoCD.
+- Terraform.
+- Langfuse.
+- Feature flags.
+- Model Router.
+- Nada del stack extendido de STACK::LLM §10.2.
 
-El Operador Solitario **NO DEBE** instalar ni configurar en Fase 0: Kubernetes, ArgoCD, Terraform, Langfuse, feature flags, Model Router, ni ningun componente del stack extendido de [STACK::LLM §10.2](urn:fxsl:kb:stack-llm-arquitectura).
 
-### 3.3 Acciones concretas de Dia 1
+- **Acciones concretas de Día 1:**
 
-El Operador Solitario **DEBE** ejecutar las siguientes acciones en orden:
 
-1. Instalar Node.js LTS, Python 3.11+, Docker Desktop, Git.
-2. Configurar GitHub con SSH keys.
-3. Instalar Claude Code (`npm install -g @anthropic-ai/claude-code`) y configurar la API key.
-4. Instalar Gemini CLI como segunda opinion.
-5. Crear un repo en GitHub para el proyecto.
-6. En el VPS: instalar Docker y Docker Compose. Configurar SSH con key-only auth. Configurar firewall basico (ufw: solo puertos 22, 80, 443).
-7. Escribir el primer archivo de context engineering: `CONVENTIONS.md` (ver [-> 9. Context Engineering Progresivo]).
+1. Instala Node.js LTS, Python 3.11+, Docker Desktop, Git.
+2. Configura GitHub con SSH keys.
+3. Instala Claude Code (`npm install -g @anthropic-ai/claude-code`) y configura tu API key.
+4. Instala Gemini CLI como segunda opinión.
+5. Crea un repo en GitHub para tu proyecto.
+6. En tu VPS: instala Docker y Docker Compose. Configura SSH con key-only auth. Configura firewall básico (ufw: solo 22, 80, 443).
+7. Escribe tu primer archivo de context engineering: `CONVENTIONS.md` (ver §7).
 
-**Resultado verificable:** El Operador Solitario **DEBE** poder abrir Claude Code en su computadora y empezar a construir. El VPS **DEBE** estar listo para recibir deploys.
+- **Resultado:** Puedes sentarte frente a tu computadora, abrir Claude Code, y empezar a construir.
+- El VPS está listo para recibir deploys.
 
----
 
-## 4. Fase 1: El Primer Proyecto (Semana 1)
+- ---
 
-**Objetivo:** Construir y desplegar algo funcional. El tamano no importa; la completitud si.
 
-### 4.1 Perfil Minimo de STACK::LLM
+# 3. Fase 1: El Primer Proyecto (Semana 1)
 
-El primer proyecto **DEBE** usar exclusivamente el **Perfil Minimo** de [STACK::LLM §11.1](urn:fxsl:kb:stack-llm-arquitectura):
+- **Objetivo:** Construir y desplegar algo funcional.
+- Cualquier cosa.
+- El tamaño no importa; la completitud sí.
+
+
+## 3.1 Elige el Perfil Mínimo de STACK::LLM
+
+- Tu primer proyecto usa exclusivamente el **Perfil Mínimo** de STACK::LLM §11.1:
+
 
 - **Stack:** TypeScript full-stack. Next.js + Server Actions + Drizzle ORM + PostgreSQL.
-- **Infraestructura:** Docker Compose en el VPS. Nginx como reverse proxy. Let's Encrypt para HTTPS.
-- **CI/CD:** GitHub Actions con un workflow simple: push -> build -> test -> deploy via SSH.
+- **Infraestructura:** Docker Compose en tu VPS. Nginx como reverse proxy. Let's Encrypt para HTTPS.
+- **CI/CD:** GitHub Actions con un workflow simple: push → build → test → deploy via SSH.
 - **Base de datos:** PostgreSQL en un contenedor Docker. Backup diario con pg_dump a un volumen local (y opcionalmente a object storage).
 
-El primer proyecto **NO DEBE** incluir capa Python, FastAPI, agentes, ni microservicios. Es un monolito TypeScript desplegado con Docker Compose.
+- No hay capa Python.
+- No hay FastAPI.
+- No hay agentes.
+- Es un monolito TypeScript desplegado con Docker Compose.
+- Esto no es una limitación; es lo correcto para esta fase.
 
-### 4.2 Flujo de trabajo
 
-El Operador Solitario **DEBE** seguir este flujo en cada iteracion:
+## 3.2 El flujo de trabajo
 
 ```
-1. [Sombrero PO] Definir 3-5 historias para la primera semana
-2. [Sombrero Operador] Abrir Claude Code en el repo
-3. Dar contexto: "Lee CONVENTIONS.md. Implementa esta historia: [descripcion]"
-4. Revisar el output. Iterar. Commitear.
-5. Push -> GitHub Actions -> test -> deploy al VPS
-6. Verificar en produccion
+1. [Sombrero PO] Define 3-5 historias para la primera semana
+2. [Sombrero Operador] Abre Claude Code en tu repo
+3. Dale contexto: "Lee CONVENTIONS.md. Implementa esta historia: [descripción]"
+4. Revisa el output. Itera. Commitea.
+5. Push → GitHub Actions → test → deploy al VPS
+6. Verifica en producción
 7. Siguiente historia
 ```
 
-### 4.3 Context engineering minimo viable
+## 3.3 Context engineering mínimo viable
 
-En Fase 1, el Operador Solitario **DEBE** mantener exactamente **dos archivos** de context engineering:
+- En Fase 1, necesitas exactamente **dos archivos** de context engineering:
 
-- **CONVENTIONS.md:** Lenguaje (TypeScript), framework (Next.js), estilo de codigo, estructura de carpetas, convenciones de naming, patrones de manejo de errores. 30-50 lineas.
-- **SCHEMA.md:** Modelo de datos de la aplicacion. Tablas, relaciones, tipos. Lo que Drizzle necesita saber.
 
-Estos dos archivos, cargados en el contexto del LLM al inicio de cada sesion, son suficientes para que el modelo genere codigo coherente con el proyecto.
+- **CONVENTIONS.md:** Lenguaje (TypeScript), framework (Next.js), estilo de código, estructura de carpetas, convenciones de naming, patrones de manejo de errores. 30-50 líneas.
+- **SCHEMA.md:** Modelo de datos de tu aplicación. Tablas, relaciones, tipos. Lo que Drizzle necesita saber.
 
-### 4.4 IaC minimo
+- Esos dos archivos, cargados en el contexto del LLM al inicio de cada sesión, son suficientes para que el modelo genere código coherente con tu proyecto.
 
-La infraestructura como codigo en Fase 1 **DEBE** ser un unico archivo: `docker-compose.yml`. El Operador Solitario **NO DEBE** usar Terraform ni Pulumi en esta fase. El `docker-compose.yml` se versiona en git, se despliega con `docker compose up -d`, y define completamente la infraestructura.
 
-Si la infraestructura cabe en un `docker-compose.yml`, la Infrastructure as Conversation ([Swarm::Ops §5](urn:fxsl:kb:swarm-ops-metodologia)) es el chat con el LLM: "Necesito agregar un servicio de Redis para caching. Actualiza el docker-compose."
+## 3.4 IaC mínimo
 
-### 4.5 Restricciones de Fase 1
+- Tu infraestructura como código es un archivo: `docker-compose.yml`.
+- Eso es tu IaC.
+- No necesitas Terraform.
+- No necesitas Pulumi.
+- Tu `docker-compose.yml` se versiona en git, se despliega con `docker compose up -d`, y define completamente tu infraestructura.
 
-El Operador Solitario **NO DEBE** en Fase 1:
 
-- Implementar autenticacion compleja si no la necesita. Auth.js cuando sea necesario.
-- Anadir un ORM complejo. Drizzle + SQL directo para consultas complejas.
-- Configurar CI/CD elaborado. Un workflow de GitHub Actions de 30 lineas es suficiente.
-- Intentar microservicios. Monolito sin excepciones.
-- Instalar herramientas de observabilidad. Si algo falla, los logs se consultan con `docker logs`.
+- Si tu infraestructura cabe en un `docker-compose.yml`, tu Infrastructure as Conversation (Swarm::Ops §5) es literalmente el chat con tu LLM: "Necesito agregar un servicio de Redis para caching.
+- Actualiza el docker-compose."
 
----
 
-## 5. Fase 2: Primer Agente (Mes 1)
+## 3.5 Qué NO hacer en Fase 1
 
-**Objetivo:** El proyecto necesita un componente inteligente (chatbot, analizador de documentos, clasificador) que requiere un LLM en produccion, no solo en desarrollo.
+- No implementes autenticación compleja si no la necesitas. Auth.js cuando sea necesario.
+- No añadas un ORM complejo. Drizzle + SQL directo para consultas complejas.
+- No configures CI/CD elaborado. Un workflow de GitHub Actions de 30 líneas es suficiente.
+- No intentes hacer microservicios. Monolito. Sin excepciones.
+- No instales herramientas de observabilidad. Si algo falla, miras los logs con `docker logs`.
 
-**Senal de transicion:** La aplicacion necesita llamar a un LLM para servir a usuarios, no solo para que el Operador Solitario desarrolle.
+- ---
 
-### 5.1 Cambios respecto a Fase 1
+
+# 4. Fase 2: Primer Agente (Mes 1)
+
+- **Objetivo:** Tu proyecto necesita un componente inteligente.
+- Un chatbot.
+- Un analizador de documentos.
+- Un clasificador.
+- Algo que requiere un LLM en producción, no solo en desarrollo.
+
+
+- **Señal de transición:** Cuando tu aplicación necesita llamar a un LLM para servir a usuarios, no solo para que tú desarrolles.
+
+
+## 4.1 Qué cambia
+
+- Se activa la segunda mitad del stack de STACK::LLM.
+- Aparece Python como lenguaje cognitivo.
+
 
 | Componente | Fase 1 | Fase 2 |
 |---|---|---|
-| **Lenguajes** | TypeScript only | TypeScript (producto) + Python (cognicion) |
-| **Backend extra** | --- | FastAPI para la capa de IA |
-| **LLM en produccion** | No | Si (via API) |
-| **Proxy de modelos** | --- | LiteLLM (rotacion de providers, fallback, control de costes) |
-| **Observabilidad LLM** | --- | Langfuse (trazas, costes, calidad) |
-| **Vectores** | --- | pgvector (si necesita RAG o busqueda semantica) |
+| **Lenguajes** | TypeScript only | TypeScript (producto) + Python (cognición) |
+| **Backend extra** | — | FastAPI para la capa de IA |
+| **LLM en producción** | No | Sí (via API) |
+| **Proxy de modelos** | — | LiteLLM (rotación de providers, fallback, control de costes) |
+| **Observabilidad LLM** | — | Langfuse (trazas, costes, calidad) |
+| **Vectores** | — | pgvector (si necesitas RAG o búsqueda semántica) |
 
-### 5.2 Arquitectura de Fase 2
-
-La arquitectura en Fase 2 **DEBE** seguir esta topologia:
+## 4.2 Arquitectura de Fase 2
 
 ```
 [Next.js frontend]
-    | API calls
-[Next.js API routes / Server Actions] <-> [PostgreSQL]
-    | cuando necesita cognicion
-[FastAPI (Python)] <-> [LiteLLM proxy] <-> [LLM providers]
-    | opcional
+    ↓ API calls
+[Next.js API routes / Server Actions] ←→ [PostgreSQL]
+    ↓ cuando necesita cognición
+[FastAPI (Python)] ←→ [LiteLLM proxy] ←→ [LLM providers]
+    ↓ opcional
 [pgvector para embeddings]
 ```
 
-El frontend y el backend de producto **DEBEN** permanecer en TypeScript. FastAPI **DEBE** entrar solo para la capa cognitiva: el codigo que orquesta llamadas a LLMs, procesa respuestas, maneja RAG, ejecuta cadenas de prompts.
+- El frontend y el backend de producto siguen en TypeScript.
+- FastAPI entra solo para la capa cognitiva: el código que orquesta llamadas a LLMs, procesa respuestas, maneja RAG, ejecuta cadenas de prompts.
 
-### 5.3 Justificacion de Python en Fase 2
 
-Python entra en Fase 2 por pragmatismo: el ecosistema de IA en Python (LangChain, LlamaIndex, CrewAI, OpenAI SDK, Anthropic SDK, sentence-transformers, scikit-learn) es 10x mas maduro que sus equivalentes en TypeScript. Python tiene las mejores abstracciones, la mejor documentacion, y la mayor representacion en training data para el dominio de IA.
+## 4.3 Por qué Python aquí y no antes
 
-El Operador Solitario **NO DEBE** introducir Python antes de Fase 2.
+- No por preferencia estética sino por pragmatismo duro: el ecosistema de IA en Python (LangChain, LlamaIndex, CrewAI, OpenAI SDK, Anthropic SDK, sentence-transformers, scikit-learn) es 10x más maduro que sus equivalentes en TypeScript.
+- Cuando tu aplicación necesita llamar a un LLM en producción, Python tiene las mejores abstracciones, la mejor documentación, y la mayor representación en training data para este dominio específico.
 
-### 5.4 LiteLLM como proxy
 
-LiteLLM **DEBE** ser el primer proxy de modelos. No es un Model Router sofisticado ([STACK::LLM §9.1](urn:fxsl:kb:stack-llm-arquitectura)); es un proxy que provee:
+## 4.4 LiteLLM como proxy
 
-- **Interfaz unificada:** Llama a OpenAI, Anthropic, Google, Mistral con la misma API.
-- **Fallback:** Si Claude esta caido, redirige a GPT automaticamente.
+- LiteLLM es tu primer proxy de modelos.
+- No es un Model Router sofisticado (STACK::LLM §9.1); es un proxy que te da:
+
+
+- **Interfaz unificada:** Llamas a OpenAI, Anthropic, Google, Mistral con la misma API.
+- **Fallback:** Si Claude está caído, redirige a GPT automáticamente.
 - **Control de costes:** Presupuesto diario/mensual por API key.
 - **Logging:** Cada llamada loggeada con tokens consumidos.
 
-El Model Router de 4 tiers **NO DEBE** implementarse antes de Fase 3-4.
+- Es todo lo que necesitas.
+- El Model Router de 4 tiers llega en Fase 3-4.
 
-### 5.5 Context engineering Fase 2
 
-En Fase 2, el Operador Solitario **DEBE** agregar dos archivos de contexto:
+## 4.5 Context engineering Fase 2
 
-- **ARCHITECTURE.md:** Documenta como se comunican los dos lenguajes y dos procesos. Endpoints internos, formato de mensajes, flujo de datos entre Next.js y FastAPI.
-- **CONSTRAINTS.md:** Presupuesto de tokens mensuales. Providers permitidos. Latencia maxima aceptable para llamadas a LLM. Datos que nunca deben ir a un LLM externo.
+- Se agregan dos archivos:
 
-Total de archivos de contexto en Fase 2: 4 (CONVENTIONS, SCHEMA, ARCHITECTURE, CONSTRAINTS).
 
----
+- **ARCHITECTURE.md:** Ahora que tienes dos lenguajes y dos procesos, necesitas documentar cómo se comunican. Endpoints internos, formato de mensajes, flujo de datos entre Next.js y FastAPI.
+- **CONSTRAINTS.md:** Presupuesto de tokens mensuales. Providers permitidos. Latencia máxima aceptable para llamadas a LLM. Datos que nunca deben ir a un LLM externo.
 
-## 6. Fase 3: Multiples Agentes (Mes 2-3)
+- Total de archivos de contexto:
+- 4 (CONVENTIONS, SCHEMA, ARCHITECTURE, CONSTRAINTS).
 
-**Objetivo:** El proyecto requiere mas de una capacidad cognitiva independiente. Un agente que escribe, otro que revisa. Un agente que busca, otro que sintetiza. Se necesita orquestacion.
 
-**Senal de transicion:** Un solo prompt/cadena no puede resolver el problema y se necesitan agentes con roles diferenciados que se coordinan.
+- ---
 
-### 6.1 Cambios respecto a Fase 2
+
+# 5. Fase 3: Múltiples Agentes (Mes 2-3)
+
+- **Objetivo:** Tu proyecto requiere más de una capacidad cognitiva independiente.
+- Un agente que escribe, otro que revisa.
+- Un agente que busca, otro que sintetiza.
+- Necesitas orquestación.
+
+
+- **Señal de transición:** Cuando te das cuenta de que un solo prompt/cadena no puede resolver el problema y necesitas agentes con roles diferenciados que se coordinan.
+
+
+## 5.1 Qué cambia
 
 | Componente | Fase 2 | Fase 3 |
 |---|---|---|
-| **Orquestacion** | Cadenas lineales de prompts | Framework de orquestacion (Agents SDK, CrewAI, o custom) |
-| **Model Router** | LiteLLM proxy basico | Router con tiers (economico/balance/frontera/razonamiento) |
-| **Evals** | Verificacion manual de outputs | Pipeline de evals automatizado (regresion, calidad, coste) |
-| **Aislamiento** | Todo en el mismo proceso | Contenedores separados por agente (read-only minimo) |
-| **Infraestructura** | Docker Compose | Docker Compose con mas servicios (o primer contacto con K8s) |
+| **Orquestación** | Cadenas lineales de prompts | Framework de orquestación (Agents SDK, CrewAI, o custom) |
+| **Model Router** | LiteLLM proxy básico | Router con tiers (económico/balance/frontera/razonamiento) |
+| **Evals** | Verificación manual de outputs | Pipeline de evals automatizado (regresión, calidad, coste) |
+| **Aislamiento** | Todo en el mismo proceso | Contenedores separados por agente (read-only mínimo) |
+| **Infraestructura** | Docker Compose | Docker Compose con más servicios (o primer contacto con K8s) |
 
-### 6.2 Regla de diversidad de modelos
+## 5.2 La regla de diversidad de modelos
 
-Principio cardinal de [Xanpan::Agents §9.3](urn:fxsl:kb:xanpan-agents-metodologia): si un agente genera algo, el agente que lo verifica **DEBE** usar un modelo diferente. Si el coder usa Claude, el reviewer **DEBE** usar GPT. Si el analizador usa Gemini, el sintetizador **DEBE** usar Claude.
+- Principio cardinal tomado de Xanpan::Agents §9.3: si un agente genera algo, el agente que lo verifica debe usar un modelo diferente.
+- Si el coder usa Claude, el reviewer usa GPT.
+- Si el analizador usa Gemini, el sintetizador usa Claude.
+- La razón es simple: un modelo no puede detectar sus propios blind spots.
+- Dos modelos tienen blind spots diferentes; la intersección es más pequeña.
 
-Un modelo no puede detectar sus propios blind spots. Dos modelos tienen blind spots diferentes; la interseccion es mas pequena.
 
-**Correcto:** Agente-coder con Claude Opus, agente-reviewer con GPT-4o.
-**Incorrecto:** Agente-coder con Claude Opus, agente-reviewer con Claude Sonnet.
+## 5.3 Evals: el momento en que se vuelven obligatorios
 
-### 6.3 Evals obligatorios en Fase 3
+- En Fase 2, verificabas manualmente.
+- En Fase 3, la verificación manual no escala.
+- Necesitas evals automatizados.
 
-En Fase 2, la verificacion era manual. En Fase 3, la verificacion manual no escala. El Operador Solitario **DEBE** implementar evals automatizados.
 
-Evals minimos requeridos:
+- Empieza con lo mínimo:
 
-1. **Dataset de regresion:** 20-50 ejemplos de input->output esperado para cada capacidad de cada agente. **DEBEN** ejecutarse en cada cambio.
-2. **Eval de coste:** Cuantos tokens consumio la tarea. **DEBE** verificar que esta dentro del presupuesto.
-3. **Eval de calidad:** Para tareas con output subjetivo, un modelo-juez (diferente al modelo-autor) **DEBE** evaluar calidad con rubric.
 
-El Operador Solitario **PUEDE** implementar evals como un script de Python que ejecuta el dataset, compara outputs, y reporta pass/fail. Frameworks de eval complejos (Braintrust, etc.) **NO DEBE** adoptarse antes de Fase 4.
+1. **Dataset de regresión:** 20-50 ejemplos de input→output esperado para cada capacidad de cada agente. Se ejecutan en cada cambio.
+2. **Eval de coste:** ¿Cuántos tokens consumió esta tarea? ¿Está dentro del presupuesto?
+3. **Eval de calidad:** Para tareas con output subjetivo, un modelo-juez (diferente al modelo-autor) evalúa calidad con rubric.
 
-### 6.4 Context engineering Fase 3
+- No necesitas Braintrust ni frameworks de eval complejos todavía.
+- Un script de Python que ejecuta el dataset, compara outputs, y reporta pass/fail es suficiente.
 
-En Fase 3, el Operador Solitario **DEBE** agregar:
 
-- **AGENTS.md:** Quien es cada agente, que modelo usa, que herramientas tiene, que puede y que no puede hacer. Es el directorio del enjambre emergente.
+## 5.4 Context engineering Fase 3
 
-Total de archivos de contexto en Fase 3: 5 (CONVENTIONS, SCHEMA, ARCHITECTURE, CONSTRAINTS, AGENTS).
+- Se agrega:
 
----
 
-## 7. Fase 4: Enjambre (Cuando el Proyecto lo Exija)
+- **AGENTS.md:** Quién es cada agente, qué modelo usa, qué herramientas tiene, qué puede y qué no puede hacer. Es el directorio del enjambre emergente.
 
-**Objetivo:** El sistema tiene suficientes agentes, suficiente complejidad operacional, y suficiente escala para necesitar los frameworks completos del corpus.
+- Total de archivos de contexto:
+- 5 (CONVENTIONS, SCHEMA, ARCHITECTURE, CONSTRAINTS, AGENTS).
 
-**Senal de transicion:** Docker Compose se vuelve inmanejable. Los deploys manuales son un cuello de botella. Los agentes necesitan coordinarse sin intervencion directa del Operador.
 
-### 7.1 Activacion del corpus completo
+- ---
 
-En Fase 4, los siguientes documentos dejan de ser opcionales:
 
-| Documento | Que se activa | Justificacion |
+# 6. Fase 4: Enjambre (cuando el proyecto lo exija)
+
+- **Objetivo:** Tu sistema tiene suficientes agentes, suficiente complejidad operacional, y suficiente escala que necesitas los frameworks completos del corpus.
+
+
+- **Señal de transición:** Cuando el Docker Compose se vuelve inmanejable.
+- Cuando los deploys manuales son un cuello de botella.
+- Cuando los agentes necesitan coordinarse sin tu intervención directa.
+
+
+## 6.1 Activación del corpus completo
+
+- Aquí es donde dejan de ser opcionales:
+
+
+| Documento | Qué activas | Por qué ahora |
 |---|---|---|
-| **[STACK::LLM §9-10](urn:fxsl:kb:stack-llm-arquitectura)** | Stack extendido completo. Model Router formal. MCP. Aislamiento con Firecracker. | La complejidad tecnica lo exige |
-| **[Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia)** | Sistema nervioso adaptativo. IaConversation real. Agente-observer. Security-by-Swarm | Los deploys y la operacion ya no caben en scripts simples |
-| **[Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia)** | Metodologia completa. Separacion PO/Operador. Tablero Neural. OKRs formales. Sentinel | Ya no es un solo operador; se necesita estructura para coordinar |
+| **STACK::LLM §9-10** | Stack extendido completo. Model Router formal. MCP. Aislamiento con Firecracker. | La complejidad técnica lo exige |
+| **Swarm::Ops** | Sistema nervioso adaptativo. IaConversation real. Agente-observer. Security-by-Swarm | Los deploys y la operación ya no caben en scripts simples |
+| **Xanpan::Agents** | Metodología completa. Separación PO/Operador. Tablero Neural. OKRs formales. Sentinel | Ya no eres uno; necesitas estructura para coordinar |
 
-### 7.2 Transicion de Docker Compose a Kubernetes
+## 6.2 La transición de Docker Compose a Kubernetes
 
-La migracion a Kubernetes **NO DEBE** tratarse como obligatoria. Es condicional:
+- No es obligatoria.
+- Es condicional:
 
-- **DEBE** permanecer en Docker Compose si tiene <=10 contenedores, un solo VPS, y el deploy manual con `docker compose pull && docker compose up -d` tarda menos de 2 minutos.
-- **DEBERIA** migrar a Kubernetes si tiene >10 contenedores, necesita auto-scaling, necesita zero-downtime deploys, o necesita aislamiento de red entre agentes.
 
-Docker Swarm **PUEDE** usarse como migracion intermedia. Es Kubernetes sin la complejidad. Para operadores solitarios que estan escalando, Docker Swarm es suficiente.
+- **Quédate en Docker Compose** si tienes ≤10 contenedores, un solo VPS, y el deploy manual con `docker compose pull && docker compose up -d` tarda menos de 2 minutos.
+- **Migra a Kubernetes** si tienes >10 contenedores, necesitas auto-scaling, necesitas zero-downtime deploys, o necesitas aislamiento de red entre agentes.
 
-**Correcto:** Migrar a Kubernetes cuando Docker Compose tarda >2 minutos en reiniciar y hay >10 contenedores.
-**Incorrecto:** Migrar a Kubernetes en Fase 2 porque "eventualmente lo necesitare".
+- La migración intermedia existe:
+- Docker Swarm.
+- Es Kubernetes sin la complejidad.
+- Para muchos Operadores Solitarios que están escalando, Docker Swarm es suficiente y llegará hasta bastante lejos.
 
-### 7.3 Senales de fin del Operador Solitario
 
-Fase 4 es donde el Operador Solitario necesita ayuda. Las senales:
+## 6.3 Cuándo dejas de ser Operador Solitario
 
-- Pasa mas del 50% del tiempo en operacion y menos del 50% en construccion.
-- Los incidentes en produccion requieren atencion que no puede dar por horario/capacidad.
-- La separacion PO/Operador deja de ser una ficcion util y se vuelve una necesidad real.
+- Fase 4 es típicamente donde el Operador Solitario necesita ayuda.
+- Las señales:
 
-Cuando estas senales aparecen, [Xanpan::Agents §16](urn:fxsl:kb:xanpan-agents-metodologia) (Modelo de Transicion) se activa completamente.
 
----
+- Pasas más del 50% del tiempo en operación y menos del 50% en construcción.
+- Los incidentes en producción requieren atención que no puedes dar por horario/capacidad.
+- La separación PO/Operador deja de ser una ficción útil y se vuelve una necesidad real.
 
-## 8. Mapa de Fases y Senales de Transicion
+- En este punto, Xanpan::Agents §16 (Modelo de Transición) se activa completamente.
 
-El Operador Solitario **DEBE** avanzar de fase solo cuando la senal de transicion correspondiente se manifiesta. **NO DEBE** saltar fases por anticipacion.
 
-| Fase | Horizonte | Senal de entrada | Senal de salida |
-|---|---|---|---|
-| **Fase 0** | Dia 1 | Decision de iniciar proyecto | Entorno de desarrollo funcional |
-| **Fase 1** | Semana 1 | Entorno listo | Aplicacion desplegada en produccion |
-| **Fase 2** | Mes 1 | La aplicacion necesita LLM para servir usuarios | Agente funcionando en produccion |
-| **Fase 3** | Mes 2-3 | Un solo prompt/cadena no resuelve el problema | Multiples agentes coordinados con evals |
-| **Fase 4** | Cuando el proyecto lo exija | Docker Compose inmanejable, deploys como cuello de botella | Corpus completo activado |
+- ---
 
----
 
-## 9. Context Engineering Progresivo
+# 7. Context Engineering Progresivo
 
-El context engineering **DEBE** crecer con el proyecto. El Operador Solitario **NO DEBE** crear archivos de contexto antes de la fase que los requiere.
+- El context engineering no nace completo.
+- Crece con el proyecto.
+- Esta es la ruta:
+
 
 | Fase | Archivos | Contenido total | Notas |
 |---|---|---|---|
-| **Fase 0** | --- | --- | Sin proyecto todavia |
-| **Fase 1** | CONVENTIONS.md, SCHEMA.md | ~100 lineas | Lo minimo para coherencia de codigo |
-| **Fase 2** | + ARCHITECTURE.md, CONSTRAINTS.md | ~250 lineas | Aparece la dualidad TS/Python y los limites de coste |
-| **Fase 3** | + AGENTS.md | ~400 lineas | Directorio del enjambre emergente |
-| **Fase 4** | + INFRA.md, RUNBOOKS.md | ~600+ lineas | Infraestructura compleja exige documentacion formal |
+| **Fase 0** | — | — | Sin proyecto todavía |
+| **Fase 1** | CONVENTIONS.md, SCHEMA.md | ~100 líneas | Lo mínimo para coherencia de código |
+| **Fase 2** | + ARCHITECTURE.md, CONSTRAINTS.md | ~250 líneas | Aparece la dualidad TS/Python y los límites de coste |
+| **Fase 3** | + AGENTS.md | ~400 líneas | Directorio del enjambre emergente |
+| **Fase 4** | + INFRA.md, RUNBOOKS.md | ~600+ líneas | Infraestructura compleja exige documentación formal |
 
-### 9.1 Regla de relevancia de contexto
+- **Regla fundamental (STACK::LLM §8.3):** El 70% del contexto que le das al LLM debe ser relevante para la tarea actual.
+- No cargues los 7 archivos en cada sesión.
+- Carga los que necesitas para lo que estás haciendo ahora.
 
-El 70% del contexto que se entrega al LLM **DEBE** ser relevante para la tarea actual ([STACK::LLM §8.3](urn:fxsl:kb:stack-llm-arquitectura)). El Operador Solitario **NO DEBE** cargar todos los archivos de contexto en cada sesion. **DEBE** cargar solo los que necesita para la tarea en curso.
 
-### 9.2 Context engineering vs. documentacion
+- Los archivos de context engineering no son documentación pasiva.
+- Son artefactos operacionales que alimentan directamente a los LLMs.
+- Si un archivo no cambia cómo el LLM genera código, no es context engineering — es documentación tradicional (que también es valiosa, pero sirve a un propósito diferente).
 
-Los archivos de context engineering son artefactos operacionales que alimentan directamente a los LLMs. Si un archivo no cambia como el LLM genera codigo, no es context engineering --- es documentacion tradicional. Ambos tienen valor, pero sirven a propositos diferentes y el Operador Solitario **NO DEBE** confundirlos.
 
----
+- ---
 
-## 10. Infraestructura Progresiva
 
-La infraestructura **DEBE** crecer con el proyecto. Cada incremento de infraestructura **DEBE** ser motivado por una necesidad real, no por una expectativa de necesidad futura.
+# 8. Infraestructura Progresiva
+
+- La infraestructura crece con el proyecto.
+- La tabla mapea fase → infraestructura concreta:
+
 
 | Capa | Fase 1 | Fase 2 | Fase 3 | Fase 4 |
 |---|---|---|---|---|
-| **Compute** | 1 VPS (Hetzner CX22) | 1-2 VPS | 2-3 VPS o cluster pequeno | Kubernetes |
-| **IaC** | `docker-compose.yml` | `docker-compose.yml` (mas servicios) | Docker Compose + scripts de provisioning | Terraform + ArgoCD |
-| **CI/CD** | GitHub Actions (30 lineas) | GitHub Actions (~100 lineas) | GitHub Actions + evals automatizados | [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) completo |
+| **Compute** | 1 VPS (Hetzner CX22) | 1-2 VPS | 2-3 VPS o cluster pequeño | Kubernetes |
+| **IaC** | `docker-compose.yml` | `docker-compose.yml` (más servicios) | Docker Compose + scripts de provisioning | Terraform + ArgoCD |
+| **CI/CD** | GitHub Actions (30 líneas) | GitHub Actions (~100 líneas) | GitHub Actions + evals automatizados | Swarm::Ops completo |
 | **Reverse proxy** | Nginx + Let's Encrypt | Nginx + Let's Encrypt | Caddy o Traefik (routing por servicio) | Ingress controller |
-| **Backups** | pg_dump cron + volumen local | pg_dump + object storage (S3/R2) | Backup automatizado con verificacion | Backup con disaster recovery |
-| **DNS** | 1 dominio, 1-2 registros | Subdominios para servicios | DNS programatico (Cloudflare API) | DNS como codigo |
+| **Backups** | pg_dump cron + volumen local | pg_dump + object storage (S3/R2) | Backup automatizado con verificación | Backup con disaster recovery |
+| **DNS** | 1 dominio, 1-2 registros | Subdominos para servicios | DNS programático (Cloudflare API) | DNS como código |
 | **Secrets** | `.env` file (NO en git) | `.env` + Docker secrets | SOPS o Vault | Vault con rotation |
 
-La sobre-ingenieria de infraestructura es el anti-patron mas caro del Operador Solitario porque consume el recurso mas escaso: tiempo.
+- **Principio rector:** Cada incremento de infraestructura debe ser motivado por una necesidad real, no por una expectativa de necesidad futura.
+- La sobre-ingeniería de infraestructura es el anti-patrón más caro del Operador Solitario porque consume el recurso más escaso: tu tiempo.
 
-> **REGLA DEL DOCKER-COMPOSE:** Si la infraestructura cabe en un `docker-compose.yml`, el IaC es ese archivo. La IaConversation ([Swarm::Ops §5](urn:fxsl:kb:swarm-ops-metodologia)) es el chat con el LLM: "Agrega un servicio de Redis para caching." La drift detection es `docker compose config --quiet` comparado con lo que corre en produccion. Cuando Docker Compose deje de ser suficiente, sera evidente --- no porque un documento lo diga.
 
----
+> ⚡ **LA REGLA DEL DOCKER-COMPOSE**
+>
+> Si tu infraestructura cabe en un `docker-compose.yml`, tu IaC es ese archivo. Tu IaConversation (Swarm::Ops §5) es el chat con tu LLM: "Agrega un servicio de Redis para caching." Tu drift detection es `docker compose config --quiet` comparado con lo que corre en producción. No necesitas más. Cuando necesites más, lo sabrás porque Docker Compose dejará de ser suficiente — no porque un documento te lo dijo.
 
-## 11. Observabilidad Progresiva
+- ---
 
-La observabilidad **DEBE** crecer por niveles. El Operador Solitario **NO DEBE** implementar un nivel sin haber completado los niveles anteriores.
 
-| Nivel | Fase | Implementacion | Coste |
+# 9. Observabilidad Progresiva
+
+| Nivel | Fase | Implementación | Coste |
 |---|---|---|---|
-| **Nivel 0: Logs** | Fase 1 | `docker logs` + grep. Nada mas. | $0 |
-| **Nivel 1: Metricas basicas** | Fase 2 | Uptime monitor externo (UptimeRobot, Betterstack free tier). Health endpoint en la app. | $0-7/mes |
-| **Nivel 2: Stack de observabilidad** | Fase 3 | Prometheus + Grafana en Docker Compose. Langfuse para trazas LLM. Sentry para errores. | $0-30/mes |
-| **Nivel 3: Inteligencia activa** | Fase 4 | Agente-observer ([Swarm::Ops §7](urn:fxsl:kb:swarm-ops-metodologia)). Alertas correlacionadas con deploys. Rollback semi-automatico. | Variable |
+| **Nivel 0: Logs** | Fase 1 | `docker logs` + grep. Nada más. | $0 |
+| **Nivel 1: Métricas básicas** | Fase 2 | Uptime monitor externo (UptimeRobot, Betterstack free tier). Health endpoint en tu app. | $0-7/mes |
+| **Nivel 2: Stack de observabilidad** | Fase 3 | Prometheus + Grafana en tu Docker Compose. Langfuse para trazas LLM. Sentry para errores. | $0-30/mes |
+| **Nivel 3: Inteligencia activa** | Fase 4 | Agente-observer (Swarm::Ops §7). Alertas correlacionadas con deploys. Rollback semi-automático. | Variable |
 
-### 11.1 Ruta del agente-observer
+- **La ruta del agente-observer** (corrección a Swarm::Ops §7.2, que lo describía como straightforward cuando es un proyecto entero):
 
-[Swarm::Ops §7.2](urn:fxsl:kb:swarm-ops-metodologia) describe el agente-observer como un componente maduro. En la practica, **DEBE** construirse en 4 etapas:
 
-1. **Etapa 1: Alertas clasicas.** Prometheus + reglas de alerta estaticas. Si latencia > X ms, alerta a Telegram/Slack. No necesita IA.
-2. **Etapa 2: Correlacion manual asistida.** Ante una alerta, el Operador pregunta al LLM: "La latencia subio a las 14:30. Estos son los deploys de hoy [lista]. Cual pudo causar el problema?" El LLM ayuda a diagnosticar, pero el Operador inicia la conversacion.
-3. **Etapa 3: Correlacion semi-automatica.** Un script que, ante cada alerta, recoge metricas + timeline de deploys recientes + logs relevantes, y los envia a un LLM para analisis. El output es un diagnostico propuesto que el Operador revisa.
-4. **Etapa 4: Agente-observer completo.** Un agente que monitorea continuamente, detecta anomalias pre-alerta, correlaciona automaticamente, y propone (o ejecuta) acciones. Esto es [Swarm::Ops §7.2](urn:fxsl:kb:swarm-ops-metodologia) en su forma madura.
+- El agente-observer no nace adulto.
+- Se construye en 4 etapas:
 
-Cada etapa es funcional por si misma. El Operador Solitario **NO DEBE** intentar implementar la etapa 4 directamente. La mayoria de los operadores solitarios operaran en etapa 2-3 durante meses o anos.
 
----
+1. **Etapa 1: Alertas clásicas.** Prometheus + reglas de alerta estáticas. Si latencia > X ms, alerta a Telegram/Slack. Esto ya existe y funciona. No necesita IA.
+2. **Etapa 2: Correlación manual asistida.** Cuando recibes una alerta, le preguntas a tu LLM: "La latencia subió a las 14:30. Estos son los deploys de hoy [lista]. ¿Cuál pudo causar el problema?" El LLM te ayuda a diagnosticar, pero tú inicias la conversación.
+3. **Etapa 3: Correlación semi-automática.** Un script que, ante cada alerta, recoge métricas + timeline de deploys recientes + logs relevantes, y los envía a un LLM para análisis. El output es un diagnóstico propuesto que tú revisas.
+4. **Etapa 4: Agente-observer completo.** Un agente que monitorea continuamente, detecta anomalías pre-alerta, correlaciona automáticamente, y propone (o ejecuta) acciones. Esto es Swarm::Ops §7.2 en su forma madura.
 
-## 12. Seguridad Progresiva
+- Cada etapa es funcional por sí misma.
+- No necesitas llegar a la etapa 4 para tener observabilidad útil.
+- La mayoría de los Operadores Solitarios vivirán felices en la etapa 2-3 durante meses o años.
 
-La seguridad **DEBE** crecer por niveles. Los niveles 0 y 1 **DEBEN** implementarse desde Fase 1 por tener coste cero y esfuerzo minimo.
 
-| Nivel | Fase | Implementacion |
+- ---
+
+
+# 10. Seguridad Progresiva
+
+| Nivel | Fase | Implementación |
 |---|---|---|
-| **Nivel 0: Higiene basica** | Fase 1 | SSH con keys (no passwords). Firewall (ufw). HTTPS (Let's Encrypt). Dependencias actualizadas. Secrets en `.env`, nunca en git. |
-| **Nivel 1: Aplicacion** | Fase 1-2 | Validacion de inputs (Zod en frontend y backend). Auth.js cuando se necesite autenticacion. CORS configurado correctamente. Rate limiting. |
-| **Nivel 2: LLM-specific** | Fase 2-3 | Sanitizacion de inputs antes de enviarlos a LLMs. Nunca incluir secrets en prompts. Validacion de outputs del LLM antes de ejecutar acciones. Presupuesto de tokens como mecanismo anti-abuse. |
-| **Nivel 3: Agentes** | Fase 3-4 | Aislamiento de ejecucion por agente (contenedores read-only). Principio de minimo privilegio por agente. Diversidad de modelos entre generador y verificador. |
-| **Nivel 4: Security-by-Swarm** | Fase 4 | Agente-security dedicado ([Swarm::Ops §8](urn:fxsl:kb:swarm-ops-metodologia)). Analisis contextual de PRs. Monitoreo de comportamiento en runtime. |
+| **Nivel 0: Higiene básica** | Fase 1 | SSH con keys (no passwords). Firewall (ufw). HTTPS (Let's Encrypt). Dependencias actualizadas. Secrets en `.env`, nunca en git. |
+| **Nivel 1: Aplicación** | Fase 1-2 | Validación de inputs (Zod en frontend y backend). Auth.js cuando necesites autenticación. CORS configurado correctamente. Rate limiting. |
+| **Nivel 2: LLM-specific** | Fase 2-3 | Sanitización de inputs antes de enviarlos a LLMs. Nunca incluir secrets en prompts. Validación de outputs del LLM antes de ejecutar acciones. Presupuesto de tokens como mecanismo anti-abuse. |
+| **Nivel 3: Agentes** | Fase 3-4 | Aislamiento de ejecución por agente (contenedores read-only). Principio de mínimo privilegio por agente. Diversidad de modelos entre generador y verificador. |
+| **Nivel 4: Security-by-Swarm** | Fase 4 | Agente-security dedicado (Swarm::Ops §8). Análisis contextual de PRs. Monitoreo de comportamiento en runtime. |
 
-### 12.1 Controles meta del agente-security (quis custodiet)
+- **La cuestión del quis custodiet** (corrección a Swarm::Ops §8, que no abordaba la seguridad del agente-security mismo):
 
-[Swarm::Ops §8](urn:fxsl:kb:swarm-ops-metodologia) no aborda la seguridad del agente-security mismo. El agente-security tiene un problema de bootstrap: quien lo asegura a el.
 
-El Operador Solitario **DEBE** implementar cuatro controles meta, alineados con el patron del Sentinel en [Xanpan::Agents §9.4](urn:fxsl:kb:xanpan-agents-metodologia):
+- El agente-security tiene un problema de bootstrap: ¿quién lo asegura a él?
+- Si el agente de seguridad usa un modelo con blind spots en seguridad, tienes un guardia ciego.
 
-1. **Modelo diferente al enjambre.** Si los agentes productivos usan Claude, el security-agent **DEBE** usar GPT (o viceversa). Los blind spots no se solapan.
-2. **Meta-eval periodico.** Cada mes, el security-agent **DEBE** ser sometido a un conjunto de pruebas adversariales conocidas. Si falla alguna, se recalibra.
-3. **Veto asimetrico.** El security-agent **PUEDE** bloquear cualquier PR pero **NO DEBE** aprobar sin pasar por los otros layers de verificacion. Un falso positivo causa delay; un falso negativo en cualquier otra capa lo atrapa.
-4. **Auditoria externa periodica.** Cada trimestre (o cuando el presupuesto lo permita), un humano con experiencia en seguridad **DEBE** revisar los logs del security-agent: que aprobo, que rechazo, que debio detectar y no detecto.
 
----
+- Cuatro controles meta (alineados con el patrón del Sentinel en Xanpan::Agents §9.4):
 
-## 13. Economia: Presupuesto Real por Fase
 
-El Operador Solitario **DEBE** conocer y respetar los rangos de coste por fase. Cada euro gastado **DEBE** justificarse con valor entregado.
+1. **Modelo diferente al enjambre.** Si tus agentes productivos usan Claude, el security-agent usa GPT (o viceversa). Los blind spots no se solapan.
+2. **Meta-eval periódico.** Cada mes, somete al security-agent a un conjunto de pruebas adversariales conocidas. Si falla alguna, recalibra.
+3. **Veto asimétrico.** El security-agent puede bloquear cualquier PR pero no puede aprobar sin pasar por los otros layers de verificación. Un falso positivo causa delay; un falso negativo en cualquier otra capa lo atrapa.
+4. **Auditoría externa periódica.** Cada trimestre (o cuando el presupuesto lo permita), un humano con experiencia en seguridad revisa los logs del security-agent: qué aprobó, qué rechazó, qué debió detectar y no detectó.
+
+- ---
+
+
+# 11. Economía: Presupuesto Real por Fase
 
 | Concepto | Fase 1 | Fase 2 | Fase 3 | Fase 4 |
 |---|---|---|---|---|
-| **VPS** | EUR 5-10/mes | EUR 10-30/mes | EUR 30-80/mes | EUR 80-300/mes |
-| **Dominio + DNS** | EUR 1/mes | EUR 1/mes | EUR 2/mes | EUR 5/mes |
-| **API tokens (desarrollo)** | EUR 20-50/mes | EUR 30-80/mes | EUR 50-150/mes | EUR 100-500/mes |
-| **API tokens (produccion)** | EUR 0 | EUR 10-100/mes | EUR 50-300/mes | EUR 200-2000/mes |
-| **Herramientas SaaS** | EUR 0-20/mes | EUR 0-30/mes | EUR 20-60/mes | EUR 50-200/mes |
-| **Total estimado** | **EUR 25-80/mes** | **EUR 50-240/mes** | **EUR 150-590/mes** | **EUR 430-3000/mes** |
+| **VPS** | €5-10/mes | €10-30/mes | €30-80/mes | €80-300/mes |
+| **Dominio + DNS** | €1/mes | €1/mes | €2/mes | €5/mes |
+| **API tokens (desarrollo)** | €20-50/mes | €30-80/mes | €50-150/mes | €100-500/mes |
+| **API tokens (producción)** | €0 | €10-100/mes | €50-300/mes | €200-2000/mes |
+| **Herramientas SaaS** | €0-20/mes | €0-30/mes | €20-60/mes | €50-200/mes |
+| **Total estimado** | **€25-80/mes** | **€50-240/mes** | **€150-590/mes** | **€430-3000/mes** |
 
-### 13.1 Curva de coste
+- **La curva de coste no es lineal; es exponencial.** Cada fase multiplica el coste de la anterior.
+- Esto es esperado y correcto: estás pasando de un proyecto personal a una plataforma.
+- Lo que no es aceptable es saltar a costes de Fase 3 cuando estás en Fase 1.
+- Cada euro gastado debe justificarse con valor entregado.
 
-La curva de coste es exponencial: cada fase multiplica el coste de la anterior. El Operador Solitario **NO DEBE** incurrir en costes de Fase 3 cuando esta en Fase 1.
 
-### 13.2 Control de costes
+- **Control de costes como disciplina, no como restricción:** Configura alertas de facturación desde el Día 1.
+- En toda API de LLM.
+- En tu cloud provider.
+- El presupuesto de tokens de Xanpan::Agents §6.3 no es burocracia; es supervivencia financiera del Operador Solitario.
 
-El Operador Solitario **DEBE** configurar alertas de facturacion desde el Dia 1 en toda API de LLM y en el cloud provider. El presupuesto de tokens de [Xanpan::Agents §6.3](urn:fxsl:kb:xanpan-agents-metodologia) es supervivencia financiera del Operador Solitario, no burocracia.
 
----
+- ---
 
-## 14. Anti-patrones del Operador Solitario
 
-### 14.1 Sobre-ingenieria prematura
+# 12. Anti-patrones del Operador Solitario
 
-**Sintoma:** Kubernetes en Fase 1. Terraform para un VPS. Feature flags cuando hay 3 usuarios. Model Router de 4 tiers cuando se usa un solo modelo.
+## 12.1 Sobre-ingeniería prematura
 
-**Causa:** Leer el corpus completo y querer implementar todo de golpe.
+- **Síntoma:** Kubernetes en Fase 1.
+- Terraform para un VPS.
+- Feature flags cuando tienes 3 usuarios.
+- Model Router de 4 tiers cuando usas un solo modelo.
 
-**Regla:** El Operador Solitario **DEBE** implementar lo que necesita hoy. El corpus es un mapa del territorio completo, no una lista de requisitos minimos.
 
-### 14.2 Sub-ingenieria en seguridad
+- **Causa:** Leer el corpus completo y querer implementar todo de golpe.
 
-**Sintoma:** Secrets en el codigo. No HTTPS. No validacion de inputs. LLM con acceso directo a la base de datos.
 
-**Causa:** Asumir que un proyecto personal no necesita seguridad.
+- **Corrección:** Implementa lo que necesitas hoy.
+- El corpus es un mapa del territorio completo, no una lista de requisitos mínimos.
 
-**Regla:** La seguridad de Nivel 0-1 ([-> 12. Seguridad Progresiva]) tiene coste cero y esfuerzo minimo. El Operador Solitario **DEBE** implementarla sin excepcion.
 
-### 14.3 Ausencia de backups
+## 12.2 Sub-ingeniería en seguridad
 
-**Sintoma:** La base de datos en produccion no tiene backup. O tiene backup pero nunca se ha probado que se pueda restaurar.
+- **Síntoma:** Secrets en el código.
+- No HTTPS.
+- No validación de inputs.
+- LLM con acceso directo a la base de datos.
 
-**Causa:** Asumir que la perdida de datos no va a ocurrir.
 
-**Regla:** El Operador Solitario **DEBE** configurar `pg_dump` en un cron job el Dia 1 (5 minutos de setup). **DEBE** probar la restauracion del backup el mismo dia (5 minutos adicionales).
+- **Causa:** "Es solo mi proyecto personal, no necesita seguridad."
 
-### 14.4 Context engineering ausente
 
-**Sintoma:** Cada sesion con el LLM empieza desde cero. El modelo no sabe las convenciones del proyecto. Genera codigo inconsistente.
+- **Corrección:** La seguridad de Nivel 0-1 (§10) tiene coste cero y esfuerzo mínimo.
+- No hay excusa para no implementarla.
 
-**Causa:** Asumir que el LLM entiende el proyecto sin contexto explicito.
 
-**Regla:** El Operador Solitario **DEBE** crear CONVENTIONS.md + SCHEMA.md en Fase 1. Son 30 minutos de escritura que ahorran horas de correccion.
+## 12.3 Ausencia de backups
 
-### 14.5 Aislamiento del Operador
+- **Síntoma:** La base de datos en producción no tiene backup.
+- O tiene backup pero nunca se ha probado que se pueda restaurar.
 
-**Sintoma:** Meses construyendo sin que nadie use lo construido. Sin contacto con usuarios en semanas.
 
-**Causa:** El sombrero Operador es adictivo. Construir es mas comodo que validar.
+- **Causa:** "No me va a pasar."
 
-**Regla:** El sombrero PO **NO DEBE** ser opcional. Al inicio de cada ciclo, el Operador Solitario **DEBE** responder: "Para quien estoy construyendo esto y cuando lo van a usar?" Si no hay respuesta, el ciclo esta mal priorizado.
 
----
+- **Corrección:** `pg_dump` en un cron job es 5 minutos de setup.
+- Restaurar el backup de prueba es otros 5 minutos.
+- Hazlo el Día 1.
 
-## 15. Caso Real: Korvo-Korax como Proof of Concept
 
-### 15.1 El sistema
+## 12.4 Context engineering ausente
 
-Korvo-Korax es un sistema personal que implementa la mayoria de los patrones del corpus a escala minima:
+- **Síntoma:** Cada sesión con el LLM empieza desde cero.
+- El modelo no sabe las convenciones de tu proyecto.
+- Genera código inconsistente.
 
-- **1 humano** como PO + Operador (dual-hat, [-> 2. El Operador Solitario como Rol Legitimo]).
-- **1 agente principal** (Korax) que genera sub-agentes segun la tarea.
+
+- **Causa:** "El LLM es inteligente, debería entender mi proyecto."
+
+
+- **Corrección:** CONVENTIONS.md + SCHEMA.md en Fase 1.
+- 30 minutos de escritura que ahorran horas de corrección.
+
+
+## 12.5 Aislamiento del Operador
+
+- **Síntoma:** Llevas meses construyendo sin que nadie use lo que construyes.
+- No has hablado con un usuario en semanas.
+
+
+- **Causa:** El sombrero Operador es adictivo.
+- Construir es más cómodo que validar.
+
+
+- **Corrección:** El sombrero PO no es opcional.
+- Al inicio de cada ciclo, fuerza la pregunta: "¿Para quién estoy construyendo esto y cuándo lo van a usar?" Si no hay respuesta, el ciclo está mal priorizado.
+
+
+- ---
+
+
+# 13. Caso Real: Korvo–Korax como Proof of Concept
+
+## 13.1 El sistema
+
+- Korvo–Korax es un sistema personal que implementa involuntariamente la mayoría de los patrones del corpus a escala mínima:
+
+
+- **1 humano** como PO + Operador (dual-hat, §1.1).
+- **1 agente principal** (Korax) que genera sub-agentes según la tarea.
 - **1 VPS** en Hetzner como infraestructura.
 - **Docker** para browser automation y servicios auxiliares.
-- **Telegram** como canal de comunicacion humano-agente.
-- **PCA** (Pensamiento Ciclico Asincrono) como estructura temporal light.
+- **Telegram** como canal de comunicación humano-agente.
+- **PCA** (Pensamiento Cíclico Asíncrono) como estructura temporal light.
 
-### 15.2 Mapeo al corpus
+## 13.2 Mapeo al corpus
 
-| Concepto del corpus | Implementacion en Korvo-Korax |
+| Concepto del corpus | Implementación en Korvo–Korax |
 |---|---|
 | Product Owner | El humano (sombrero PO) |
 | Operador | El humano (sombrero Operador) |
 | Agente-coder | Korax delegando a Claude Code / Gemini CLI |
 | Model Router | LiteLLM proxy con reglas manuales |
-| Evals | Verificacion humana + tests automatizados basicos |
-| Observabilidad | Logs + uptime monitor + revision manual |
+| Evals | Verificación humana + tests automatizados básicos |
+| Observabilidad | Logs + uptime monitor + revisión manual |
 | Context engineering | CONVENTIONS.md + documentos de proyecto |
 | IaC | docker-compose.yml |
-| CI/CD | GitHub Actions basico |
-| Tablero Neural | Lista de tareas en herramienta de gestion personal |
+| CI/CD | GitHub Actions básico |
+| Tablero Neural | Lista de tareas en herramienta de gestión personal |
 | Retrospectiva | Notas al final de cada ciclo |
 
-### 15.3 Lecciones como reglas
+## 13.3 Lecciones observadas
 
-1. **La separacion PO/Operador es real aun siendo ficticia.** El Operador Solitario **DEBE** alternar sombreros conscientemente. Sin sombrero PO explicito, es facil pasar tres semanas refactorizando infraestructura mientras el producto no avanza.
+1. **La separación PO/Operador es real aun siendo ficticia.** Alternar sombreros conscientemente previene la deriva hacia la optimización técnica infinita. Sin sombrero PO explícito, es fácil pasar tres semanas refactorizando infraestructura mientras el producto no avanza.
 
-2. **El context engineering es el multiplicador mas barato.** La diferencia entre darle CONVENTIONS.md al LLM y no darselo es la diferencia entre codigo coherente y codigo que necesita reescritura. **DEBE** priorizarse desde Fase 1.
+2. **El context engineering es el multiplicador más barato.** La diferencia entre darle CONVENTIONS.md al LLM y no dárselo es la diferencia entre código coherente y código que necesita reescritura. Es el máximo ROI/tiempo invertido.
 
-3. **Docker Compose es suficiente mas tiempo del esperado.** El Operador Solitario **NO DEBE** migrar a Kubernetes hasta que las senales de [-> 7. Fase 4: Enjambre] se manifiesten. Korvo-Korax opera con Docker Compose en un solo VPS y no ha encontrado el techo.
+3. **Docker Compose es suficiente para más tiempo del que crees.** La tentación de migrar a Kubernetes llega mucho antes de la necesidad real. Korvo–Korax opera con Docker Compose en un solo VPS y no ha encontrado el techo.
 
-4. **Los costes de API tokens son el gasto mas dificil de predecir.** La variabilidad es alta: una tarea compleja puede consumir 10x mas tokens que una tarea simple del mismo tipo. LiteLLM con presupuestos **DEBE** estar activo desde Fase 2.
+4. **Los costes de API tokens son el gasto más difícil de predecir.** La variabilidad es alta: una tarea compleja puede consumir 10x más tokens que una tarea simple del mismo tipo. El proxy de LiteLLM con presupuestos es esencial desde Fase 2.
 
-5. **Telegram como interfaz es funcional.** Para un Operador Solitario, una interfaz de chat asincrona donde puede dar instrucciones al enjambre desde el telefono es mas util que un dashboard web sofisticado. La interfaz minima **PUEDE** ser la interfaz definitiva.
+5. **Telegram como interfaz es sorprendentemente funcional.** Para un Operador Solitario, una interfaz de chat asíncrona donde puedes dar instrucciones al enjambre desde el teléfono mientras caminas es más útil que un dashboard web sofisticado. La interfaz mínima no es la peor; es la que usas.
 
-### 15.4 Alcance actual de Korvo-Korax
+## 13.4 Lo que Korvo–Korax no cubre
 
-Korvo-Korax opera en Fase 2-3 del bootstrap path. No tiene:
+- Korvo–Korax opera en Fase 2-3 del bootstrap path.
+- No tiene:
 
-- Separacion real PO/Operador (violacion consciente).
-- Pipeline de evals formal (en transicion de etapa 2 a 3).
-- Agente-observer (en etapa 2: correlacion manual asistida).
-- Security-by-Swarm (seguridad nivel 2: LLM-specific, sin agente dedicado).
+
+- Separación real PO/Operador (violación consciente).
+- Pipeline de evals formal (en transición de etapa 2 a 3).
+- Agente-observer (en etapa 2: correlación manual asistida).
+- Security-by-Swarm (seguridad nivel 2: LLM-specific, pero no agente dedicado).
 - Kubernetes ni IaC formal (Docker Compose es suficiente).
 
-Esto no es una deficiencia; es el estado correcto para su fase actual.
+- Esto no es una deficiencia
+- es el estado correcto para su fase actual.
 
----
 
-## 16. Mapa de Navegacion del Corpus
+- ---
 
-### 16.1 Orden de lectura
 
-El Operador Solitario **DEBE** leer los documentos del corpus en este orden:
+# 14. Cuándo dejar de ser solitario
 
-1. **Chapter 0** (este documento): Bootstrap path. Punto de entrada.
-2. **[STACK::LLM](urn:fxsl:kb:stack-llm-arquitectura) v1.0**: Stack de referencia. Consultar segun la fase actual.
-3. **[Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) v1.0**: Cuando entre en Fase 3-4, leer completo.
-4. **[Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia) v2.1**: Cuando necesite metodologia formal de enjambre, leer completo.
+- El Operador Solitario es un estado legítimo pero no necesariamente permanente.
+- Las señales de que es hora de escalar:
 
-### 16.2 Que documento responde cada pregunta
 
-| Pregunta | Documento | Seccion |
+- **Señales de que necesitas un segundo humano:**
+
+
+- El backlog crece más rápido de lo que puedes ejecutar, consistentemente, durante 3+ ciclos.
+- Los incidentes de producción ocurren en horarios donde no puedes responder.
+- La complejidad del dominio de negocio excede tu conocimiento individual (necesitas un PO real, no tu sombrero PO).
+- El contexto del proyecto ya no cabe en tu cabeza. Los archivos de context engineering empiezan a contradecirse porque no tienes tiempo de mantenerlos coherentes.
+
+- **Señales de que necesitas más infraestructura:**
+
+
+- Docker Compose tarda más de 3 minutos en reiniciar todo.
+- Necesitas zero-downtime deploys porque hay usuarios activos a todas horas.
+- El backup y la recuperación ante desastres se vuelven complejos.
+- Los contenedores compiten por recursos en un solo VPS y la respuesta no es solo "comprar un VPS más grande."
+
+- **Señales de que necesitas los frameworks completos:**
+
+
+- Tienes 4+ agentes que se coordinan entre sí.
+- El gasto en tokens excede €500/mes y necesitas optimización formal.
+- Los evals manuales ya no cubren la superficie de verificación necesaria.
+- Un bug en un agente causó un incidente que tardó horas en diagnosticarse.
+
+- Cuando estas señales aparecen, Xanpan::Agents §16 (Modelo de Transición) y Swarm::Ops completo se activan.
+- Chapter 0 termina.
+- El corpus comienza.
+
+
+- ---
+
+
+# 15. Mapa de Navegación del Corpus
+
+## 15.1 Orden de lectura recomendado
+
+1. **Chapter 0** (este documento): Bootstrap path. Empieza aquí.
+2. **STACK::LLM v1.0**: Stack de referencia. Consulta según tu fase actual.
+3. **Swarm::Ops v1.0**: Cuando entres en Fase 3-4, lee completo.
+4. **Xanpan::Agents v2.1**: Cuando necesites metodología formal de enjambre, lee completo.
+
+## 15.2 Qué documento responde cada pregunta
+
+| Pregunta | Documento | Sección |
 |---|---|---|
-| "Que tecnologias uso?" | [STACK::LLM](urn:fxsl:kb:stack-llm-arquitectura) | §0-10 segun la fase |
-| "Como empiezo si soy uno solo?" | Chapter 0 | [-> 3. Fase 0: Cimientos] a [-> 7. Fase 4: Enjambre] |
-| "Como organizo mi trabajo?" | Chapter 0 + [Xanpan::Agents §4](urn:fxsl:kb:xanpan-agents-metodologia) | PCA adaptado |
-| "Como gestiono agentes en produccion?" | [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) | §3-7 |
-| "Como hago CI/CD para agentes?" | [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) | §4, 6 |
-| "Como defino roles de agentes?" | [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia) | §9 |
-| "Como hago evals?" | [STACK::LLM §9.4](urn:fxsl:kb:stack-llm-arquitectura) + [Xanpan::Agents §7.2](urn:fxsl:kb:xanpan-agents-metodologia) | Pipeline concreto + principios |
-| "Cuanto va a costar?" | Chapter 0 | [-> 13. Economia: Presupuesto Real por Fase] |
-| "Como aseguro mi sistema?" | [STACK::LLM §6](urn:fxsl:kb:stack-llm-arquitectura) + Chapter 0 | [-> 12. Seguridad Progresiva] |
-| "Cuando necesito Kubernetes?" | Chapter 0 | [-> 7. Fase 4: Enjambre] + [-> 14. Anti-patrones del Operador Solitario] |
+| "¿Qué tecnologías uso?" | STACK::LLM | §0-10 según tu fase |
+| "¿Cómo empiezo si soy uno solo?" | Chapter 0 | §2-6 |
+| "¿Cómo organizo mi trabajo?" | Chapter 0 §1 + Xanpan::Agents §4 | PCA adaptado |
+| "¿Cómo gestiono agentes en producción?" | Swarm::Ops | §3-7 |
+| "¿Cómo hago CI/CD para agentes?" | Swarm::Ops | §4, 6 |
+| "¿Cómo defino roles de agentes?" | Xanpan::Agents | §9 |
+| "¿Cómo hago evals?" | STACK::LLM §9.4 + Xanpan::Agents §7.2 | Pipeline concreto + principios |
+| "¿Cuánto va a costar?" | Chapter 0 | §11 |
+| "¿Cómo aseguro mi sistema?" | STACK::LLM §6 + Chapter 0 §10 | Baseline + progresivo |
+| "¿Cuándo necesito Kubernetes?" | Chapter 0 §6.2 + §14 | Señales concretas |
 
-### 16.3 Arquitectura del corpus
+## 15.3 Arquitectura del corpus
 
 ```
 CHAPTER 0: El Operador Solitario
-  "Empieza aqui. Crece desde aqui."
-    |
-    +-- STACK::LLM v1.0
-    |     "Que tecnologias usar. Universal."
-    |     Se usa desde Fase 1.
-    |
-    +-- SWARM::OPS v1.0
-    |     "Como operar. Para enjambres."
-    |     Se activa en Fase 3-4.
-    |
-    +-- XANPAN::AGENTS v2.1
-          "Como organizar. Metodologia completa."
+  "Empieza aquí. Crece desde aquí."
+    │
+    ├── STACK::LLM v1.0
+    │     "Qué tecnologías usar. Universal."
+    │     Se usa desde Fase 1.
+    │
+    ├── SWARM::OPS v1.0
+    │     "Cómo operar. Para enjambres."
+    │     Se activa en Fase 3-4.
+    │
+    └── XANPAN::AGENTS v2.1
+          "Cómo organizar. Metodología completa."
           Se activa en Fase 4.
 ```
 
-Chapter 0 es el punto de entrada. [STACK::LLM](urn:fxsl:kb:stack-llm-arquitectura) acompana desde el inicio. [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) y [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia) se activan cuando la complejidad lo exige. No antes.
+- Chapter 0 es el punto de entrada.
+- STACK::LLM acompaña desde el inicio.
+- Swarm::Ops y Xanpan::Agents se activan cuando la complejidad lo exige.
+- No antes.
+
+
+- ---
+
+
+- *Chapter 0:
+- El Operador Solitario.
+- Documento fundacional del corpus Xanpan::Agents.
+- Febrero 2026.*
+
+
+- *Este documento existe porque todo enjambre empezó siendo una persona con una idea y un VPS.
+- El camino desde ese punto hasta un sistema complejo no requiere un big bang de infraestructura ni un salto de fe hacia frameworks que todavía no necesitas.
+- Requiere decisiones correctas que no cierren puertas futuras, disciplina para distinguir lo necesario de lo deseable, y la humildad de reconocer que el 80% de los proyectos nunca necesitarán el 80% del corpus — y que eso está perfectamente bien.*
+

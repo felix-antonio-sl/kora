@@ -2,528 +2,598 @@
 _manifest:
   urn: "urn:fxsl:kb:stack-llm-arquitectura"
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
+    created_by: "kora/curator"
+    created_at: "2026-02-25"
     source: "source/fxsl/xanpan/stack-llm-v1-arquitectura.md"
-version: "1.0.0"
+version: "1.1.0"
 status: published
-tags: [xanpan, stack, llm, arquitectura, typescript, python, infraestructura, agentes]
+tags: [xanpan, stack-llm, arquitectura, desarrollo-ai, axiomas, tech-stack, typescript, python, agentes]
 lang: es
 ---
+# STACK::LLM v1.0
 
-# STACK::LLM — Arquitectura de Referencia para Desarrollo Asistido por LLM v1.0.0
+## Stack de Desarrollo para la Era de Asistencia por LLM
 
-## 1. Axiomas Fundacionales
+- *La arquitectura de referencia para construir cualquier cosa — desde un inventario de kiosco hasta un enjambre de agentes — cuando los LLMs son tus co-desarrolladores*
 
-Los seis axiomas que gobiernan toda decision de stack son invariantes del sistema. Las tecnologias concretas **PUEDEN** cambiar; los axiomas persisten. Toda decision tecnologica dentro de este documento se deriva de al menos un axioma.
 
-> **AXIOMA 1: Tipado estatico como guardrail cognitivo**
+- Febrero 2026
+
+
+- ---
+
+
+## Índice
+
+0. [Axiomas Fundacionales: Por qué estas tecnologías y no otras](#0-axiomas-fundacionales)
+1. [Frontend: La Capa Visual](#1-frontend-la-capa-visual)
+2. [Backend: La Capa Lógica](#2-backend-la-capa-lógica)
+3. [Datos: La Capa de Persistencia](#3-datos-la-capa-de-persistencia)
+4. [Infraestructura y Operaciones](#4-infraestructura-y-operaciones)
+5. [Observabilidad](#5-observabilidad)
+6. [Seguridad](#6-seguridad)
+7. [El Flujo de Desarrollo AI-First](#7-el-flujo-de-desarrollo-ai-first)
+8. [Context Engineering: La Nueva Disciplina](#8-context-engineering-la-nueva-disciplina)
+9. [Capa de Agentes (cuando el proyecto lo requiere)](#9-capa-de-agentes-cuando-el-proyecto-lo-requiere)
+10. [Stack Completo: La Tabla de Referencia](#10-stack-completo-la-tabla-de-referencia)
+11. [Tres Perfiles de Proyecto](#11-tres-perfiles-de-proyecto)
+12. [Conexión con el Corpus Xanpan::Agents (opcional)](#12-conexión-con-el-corpus-xanpanagents-opcional)
+
+- ---
+
+
+# 0. Axiomas Fundacionales
+
+- Este documento no es un catálogo de tecnologías favoritas.
+- Cada decisión emerge de **seis axiomas** que reflejan cómo los LLMs realmente procesan y generan código.
+- Aplican igual si estás construyendo un sistema de inventario para un kiosco, una plataforma SaaS, o un enjambre de agentes autónomos.
+- Porque en los tres casos, tu co-desarrollador es un modelo de lenguaje.
+
+
+- Entender los axiomas es más importante que memorizar la tabla final.
+- Las tecnologías cambiarán.
+- Los axiomas sobrevivirán.
+
+
+> 🧬 **AXIOMA 1: Tipado estático como guardrail cognitivo**
 >
-> Los sistemas de tipos funcionan como capa de validacion que intercepta errores de generacion antes de runtime. TypeScript y Pydantic actuan como compiladores de cordura para el output del LLM.
+> Los sistemas de tipos no son solo herramientas para desarrolladores humanos: funcionan como una capa de validación que intercepta errores de generación antes de que alcancen runtime. TypeScript y Pydantic actúan como compiladores de cordura para el output del LLM. Un LLM que genera código sin tipos es un LLM sin barandillas al borde del precipicio.
 
-Todo proyecto **DEBE** usar lenguajes con tipado estatico (TypeScript, Python con Pydantic) como lenguajes primarios. El codigo generado por LLM sin tipos estaticos **NO DEBE** desplegarse a produccion.
-
-**Correcto:** `TypeScript con strict mode habilitado para todo el proyecto`
-**Incorrecto:** `JavaScript vanilla sin tipos para "ir mas rapido"`
-
-> **AXIOMA 2: Sobre-representacion en entrenamiento como ventaja competitiva**
+> 🧬 **AXIOMA 2: Sobre-representación en entrenamiento como ventaja competitiva**
 >
-> Las tecnologias dominantes en GitHub (Python, TypeScript, React, PostgreSQL) estan masivamente representadas en los datos de entrenamiento de todo LLM. Esto genera patrones de generacion con menor tasa de error y mayor coherencia estructural.
+> Las tecnologías dominantes en GitHub (Python, TypeScript, React, PostgreSQL) están masivamente representadas en los datos de entrenamiento de todo LLM. Esto no es una preferencia estética: genera patrones de generación con menor tasa de error y mayor coherencia estructural. Elegir una tecnología nicho porque es "técnicamente superior" pero tiene 1/100 de la representación en training data es sabotear a tu co-desarrollador.
 
-Toda seleccion de tecnologia **DEBERIA** priorizar aquellas con alta representacion en datos de entrenamiento de LLMs. Elegir una tecnologia nicho con 1/100 de la representacion en training data **NO DEBERIA** hacerse sin justificacion documentada.
-
-> **AXIOMA 3: Declaratividad sobre imperatividad**
+> 🧬 **AXIOMA 3: Declaratividad sobre imperatividad**
 >
-> Los LLMs generan codigo mas correcto cuando describen un estado final deseado (SQL, React JSX, Tailwind, Terraform HCL) que cuando orquestan secuencias imperativas paso a paso.
+> Los LLMs generan código más correcto cuando describen un estado final deseado (SQL, React JSX, Tailwind, Terraform HCL) que cuando deben orquestar secuencias imperativas paso a paso. Esto explica por qué React supera a jQuery para generación, por qué Tailwind supera a CSS imperativo, y por qué SQL directo supera a query builders imperativos.
 
-Toda decision de framework y herramienta **DEBERIA** preferir APIs declarativas sobre imperativas. React sobre jQuery, Tailwind sobre CSS imperativo, SQL directo sobre query builders imperativos.
-
-> **AXIOMA 4: Contratos explicitos como limites de alucinacion**
+> 🧬 **AXIOMA 4: Contratos explícitos como límites de alucinación**
 >
-> JSON Schema, OpenAPI, Zod, Pydantic y tipos estrictos definen los limites de lo que el modelo puede generar. Sin contratos, la creatividad del modelo se vuelve impredecibilidad.
+> JSON Schema, OpenAPI, Zod, Pydantic, y tipos estrictos definen los límites de lo que el modelo puede generar. Sin contratos, la creatividad del modelo se vuelve impredecibilidad. Cada endpoint, cada formulario, cada transformación de datos debe tener un contrato tipado. Es la diferencia entre pedir "parsea esto" (invitación a alucinar) y "valida contra este schema" (instrucción precisa).
 
-Todo endpoint, formulario y transformacion de datos **DEBE** tener un contrato tipado. La instruccion "parsea esto" (invitacion a alucinar) **NO DEBE** reemplazar a "valida contra este schema" (instruccion precisa).
-
-**Correcto:** `const ProductSchema = z.object({ name: z.string(), price: z.number() })`
-**Incorrecto:** `const data = JSON.parse(input) // sin validacion de schema`
-
-> **AXIOMA 5: Resiliencia como requisito arquitectonico, no como feature**
+> 🧬 **AXIOMA 5: Resiliencia como requisito arquitectónico, no como feature**
 >
-> Un sistema construido con asistencia de LLM sin tests, linting, CI y validacion automatica no es un sistema de produccion. Los LLMs son no-deterministas: dos generaciones del mismo prompt pueden producir codigo diferente. Los guardrails (tipos, tests, lint, CI) convierten ese no-determinismo en un problema manejable.
+> Un sistema construido con asistencia de LLM sin tests, linting, CI y validación automática no es un sistema de producción. Es un demo. Los LLMs son no-deterministas: dos generaciones del mismo prompt pueden producir código diferente. Los guardrails (tipos, tests, lint, CI) convierten esa no-determinismo en un problema manejable.
 
-Todo proyecto **DEBE** incluir tests, linting, CI y validacion automatica antes de considerarse apto para produccion.
-
-> **AXIOMA 6: Soberania y control de costos**
+> 🧬 **AXIOMA 6: Soberanía y control de costos**
 >
-> Self-hosting donde sea posible. Routing inteligente de modelos para controlar costos de desarrollo asistido. Dependencias minimas de vendors con lock-in.
+> Self-hosting donde sea posible. Routing inteligente de modelos para controlar costos de desarrollo asistido. Dependencias mínimas de vendors con lock-in. Un stack que depende de un solo proveedor de LLM o cloud es un stack frágil.
 
-Todo stack **DEBE** minimizar dependencias de vendors con lock-in. Un stack que depende de un solo proveedor de LLM o cloud es un stack fragil y **NO DEBERIA** usarse para produccion sin plan de migracion documentado.
+- ---
 
----
 
-## 2. Frontend: Capa Visual
+# 1. Frontend: La Capa Visual
 
-### 2.1 Lenguaje y Framework Core
+- Ya sea un dashboard de inventario de kiosco, un portal de clientes, o la interfaz del Tablero Neural de Xanpan::Agents: todo es frontend.
+- Y es frontend que un LLM va a ayudarte a generar, mantener y evolucionar.
 
-Todo proyecto con interfaz visual **DEBE** usar **TypeScript + React + Next.js (App Router)** como stack frontend primario.
 
-| Tecnologia | Funcion | Axioma |
+## 1.1 Lenguaje y Framework Core
+
+- **TypeScript + React + Next.js (App Router)**
+
+
+- **TypeScript** intercepta el 70-80% de los errores de generación más comunes: propiedades faltantes, tipos incompatibles, contratos rotos. Cuando un LLM genera un componente y el compilador rechaza `<Button onClick={handler} labell="Guardar" />`, ese typo se atrapa antes de que exista. Sin TypeScript, llega a producción.
+- **React** es el framework con mayor representación en datos de entrenamiento (**Axioma 2**). Los LLMs han internalizado miles de patrones composicionales. Pides "un formulario de registro con validación" y recibes un componente funcional con hooks, estados y manejo de errores coherente. Con frameworks menos representados, recibes más alucinaciones estructurales.
+- **Next.js App Router** unifica server components, server actions y routing. Los Server Actions son particularmente poderosos: eliminan la necesidad de APIs REST separadas para operaciones internas. Un formulario de "agregar producto al inventario" puede tener su lógica de validación, persistencia y redirect en el mismo archivo. Menos superficie = menos errores de generación = el LLM genera flujos completos con coherencia.
+
+- **Alternativa para sitios estáticos:** Astro cuando no necesitas interactividad rica.
+- Un catálogo de productos de lectura, un blog, una landing page.
+
+
+## 1.2 Estilos y Sistema de Diseño
+
+- **Tailwind CSS + Shadcn/UI**
+
+
+- **Tailwind** convierte las decisiones de diseño en tokens textuales atómicos (**Axioma 3**). Cada clase es un token predecible. `className="flex items-center gap-2 text-sm font-medium text-gray-700"` — el LLM combina estas clases con la misma precisión con la que combina palabras en una oración. No hay cascada CSS que predecir, no hay especificidad que calcular, no hay archivos .css separados que mantener en coherencia.
+- **Shadcn/UI** proporciona componentes accesibles y tipados que se copian directamente al proyecto. No es dependencia npm — es código tuyo que el LLM puede leer, modificar y extender. Un `<DataTable>` de Shadcn que necesitas personalizar para tu inventario de kiosco: el LLM lo modifica directamente porque está en tu repo, no escondido en node_modules.
+
+## 1.3 Validación y Estado
+
+- **Zod** como capa de validación unificada:
+
+
+- Un schema Zod definido una vez es ley en frontend Y backend. Para un inventario de kiosco: `const ProductSchema = z.object({ name: z.string().min(1), price: z.number().positive(), stock: z.number().int().nonnegative() })`. Ese schema valida el formulario, valida el Server Action, y genera el tipo TypeScript automáticamente. El LLM no puede inventar un campo `precio` cuando el schema dice `price`.
+- **TanStack Query** para gestión de estado del servidor: caching, revalidación, y optimistic updates. Un LLM genera un hook de TanStack Query con mucha más fiabilidad que una solución custom de state management.
+
+- ---
+
+
+# 2. Backend: La Capa Lógica
+
+## 2.1 Dos lenguajes, responsabilidades divididas
+
+- No es indecisión.
+- Es especialización.
+- Ambos lenguajes están masivamente representados en training data (**Axioma 2**) y el LLM genera código de alta calidad en ambos.
+
+
+| Lenguaje | Rol | Cuándo |
 |---|---|---|
-| **TypeScript** | Intercepta el 70-80% de errores de generacion mas comunes: propiedades faltantes, tipos incompatibles, contratos rotos | 1 |
-| **React** | Framework con mayor representacion en datos de entrenamiento. Los LLMs han internalizado miles de patrones composicionales | 2 |
-| **Next.js App Router** | Unifica server components, server actions y routing. Los Server Actions eliminan la necesidad de APIs REST separadas para operaciones internas | 3 |
+| **TypeScript (Hono / tRPC / Next.js Server Actions)** | API de producto, lógica de negocio, BFF | Cuando el frontend es Next.js y quieres types compartidos end-to-end. Para la mayoría de proyectos web: CRUD, dashboards, inventarios. |
+| **Python (FastAPI)** | Capa cognitiva, procesamiento de datos, ML, integración con LLMs | Cuando necesitas procesamiento pesado, integración con ecosistema ML/AI, o tool-calling para agentes. |
 
-Para sitios estaticos sin interactividad rica (catalogos de lectura, blogs, landing pages), el proyecto **PUEDE** usar **Astro** como alternativa.
+- **Para proyectos simples** (inventario de kiosco, portal de gestión, SaaS básico):
+- TypeScript full-stack con Next.js Server Actions es suficiente.
+- No necesitas Python.
+- Un solo lenguaje, tipos compartidos, zero API boilerplate.
 
-### 2.2 Estilos y Sistema de Diseno
 
-Todo proyecto **DEBE** usar **Tailwind CSS** para estilos y **DEBERIA** usar **Shadcn/UI** como biblioteca de componentes.
+- **Para proyectos con capa cognitiva** (chatbots, agentes, procesamiento ML):
+- Python con FastAPI para la lógica de agentes + TypeScript para el frontend.
+- FastAPI genera automáticamente JSON Schema desde Pydantic, que es el formato que los LLMs consumen para tool-calling.
+- La cadena `Pydantic Model → JSON Schema → Tool Definition` es nativa y sin fricción.
 
-- **Tailwind** convierte decisiones de diseno en tokens textuales atomicos (Axioma 3). Cada clase es un token predecible. No hay cascada CSS que predecir, no hay especificidad que calcular, no hay archivos .css separados que mantener en coherencia.
-- **Shadcn/UI** proporciona componentes accesibles y tipados que se copian directamente al proyecto. No es dependencia npm: es codigo propio que el LLM **PUEDE** leer, modificar y extender.
 
-### 2.3 Validacion y Estado
+## 2.2 FastAPI: cuándo y por qué
 
-Todo proyecto **DEBE** usar **Zod** como capa de validacion unificada en frontend.
+- FastAPI no es obligatorio para todo proyecto.
+- Es obligatorio cuando necesitas:
 
-Un schema Zod definido una vez es ley en frontend y backend. El schema valida el formulario, valida el Server Action y genera el tipo TypeScript automaticamente.
 
-**Correcto:**
-```typescript
-const ProductSchema = z.object({
-  name: z.string().min(1),
-  price: z.number().positive(),
-  stock: z.number().int().nonnegative()
-});
-```
-**Incorrecto:**
-```typescript
-// Validacion manual sin schema compartido
-if (typeof data.name === "string") { ... }
-```
+- **Tool-calling para agentes:** La cadena Pydantic → JSON Schema → Tool es irremplazable.
+- **APIs que otros sistemas consumen:** OpenAPI automático desde tipos Python. Documentación gratis.
+- **Procesamiento de datos:** El ecosistema Python (pandas, numpy, scikit-learn) no tiene equivalente en TS.
 
-Para gestion de estado del servidor, el proyecto **DEBERIA** usar **TanStack Query** (caching, revalidacion, optimistic updates).
+- Para un inventario de kiosco con CRUD simple, FastAPI es overkill.
+- Server Actions de Next.js + Drizzle ORM + PostgreSQL resuelven sin salir de TypeScript.
 
----
 
-## 3. Backend: Capa Logica
+## 2.3 Diseño de APIs y herramientas
 
-### 3.1 Lenguajes y Responsabilidades
+- Independientemente del lenguaje, cada endpoint y cada herramienta sigue los mismos principios:
 
-El stack **DEBE** usar uno o dos lenguajes segun la complejidad del proyecto. Ambos lenguajes estan masivamente representados en training data (Axioma 2).
 
-| Lenguaje | Rol | Cuando usarlo |
-|---|---|---|
-| **TypeScript (Hono / tRPC / Next.js Server Actions)** | API de producto, logica de negocio, BFF | Cuando el frontend es Next.js y se requieren types compartidos end-to-end. Para proyectos web: CRUD, dashboards, inventarios |
-| **Python (FastAPI)** | Capa cognitiva, procesamiento de datos, ML, integracion con LLMs | Cuando se necesita procesamiento pesado, integracion con ecosistema ML/AI, o tool-calling para agentes |
+- **Schema tipado para input Y output.** Zod en TS, Pydantic en Python. No `any`. Nunca.
+- **Docstrings/JSDoc estructurados.** El LLM los lee para entender qué hace cada función cuando genera código que la llama.
+- **Validación antes de ejecución.** Input validado contra schema antes de tocar la base de datos o un servicio externo.
+- **Errores tipados.** No strings de error. Tipos de error que el frontend puede discriminar y manejar.
 
-Para proyectos simples (inventario, portal de gestion, SaaS basico), TypeScript full-stack con Next.js Server Actions **DEBERIA** ser suficiente. Un solo lenguaje, tipos compartidos, zero API boilerplate.
+- ---
 
-Para proyectos con capa cognitiva (chatbots, agentes, procesamiento ML), el stack **DEBE** usar Python con FastAPI para la logica de agentes + TypeScript para el frontend. FastAPI genera automaticamente JSON Schema desde Pydantic, que es el formato que los LLMs consumen para tool-calling. La cadena `Pydantic Model -> JSON Schema -> Tool Definition` es nativa y sin friccion.
 
-### 3.2 FastAPI: Condiciones de Uso
+# 3. Datos: La Capa de Persistencia
 
-FastAPI **NO DEBE** usarse para todo proyecto. FastAPI **DEBE** usarse cuando se requiere al menos una de estas capacidades:
+## 3.1 Base de Datos
 
-- **Tool-calling para agentes:** La cadena Pydantic -> JSON Schema -> Tool es irremplazable.
-- **APIs que otros sistemas consumen:** OpenAPI automatico desde tipos Python. Documentacion generada.
-- **Procesamiento de datos:** El ecosistema Python (pandas, numpy, scikit-learn) no tiene equivalente en TypeScript.
+- **PostgreSQL.** Sin excepciones para el 95% de los casos de uso.
 
-Para CRUD simple, Server Actions de Next.js + Drizzle ORM + PostgreSQL **DEBERIAN** usarse sin salir de TypeScript.
 
-### 3.3 Diseno de APIs y Herramientas
+- **Sobre-representación en training data** (**Axioma 2**): Los LLMs generan SQL para PostgreSQL con precisión notable. Queries complejas, CTEs, window functions, JSON operations: todo sale bien generado al primer intento con más frecuencia que con cualquier otra base.
+- **pgvector** integrado nativamente para búsqueda vectorial cuando lo necesites. Empiezas con CRUD simple para tu inventario. Un día quieres búsqueda semántica ("muéstrame productos similares a X"). pgvector lo habilita sin migrar de base de datos. HNSW indexes para búsqueda aproximada de alta velocidad.
+- **Es la base de datos, no una base de datos.** Almacena datos relacionales, JSON (jsonb), vectores (pgvector), full-text search, geospatial (PostGIS). No necesitas Redis para cache simple (tienen unlogged tables), no necesitas Elasticsearch para búsqueda básica (tienen tsvector), no necesitas una base vectorial separada (tienen pgvector hasta ~10M vectores).
 
-Independientemente del lenguaje, todo endpoint y toda herramienta **DEBE** cumplir:
+- **Para escalas masivas de vectores** (>10M):
+- Qdrant, Pinecone, o Milvus como tier especializado.
 
-- **Schema tipado para input y output.** Zod en TypeScript, Pydantic en Python. El tipo `any` **NO DEBE** usarse.
-- **Docstrings/JSDoc estructurados.** El LLM los lee para entender que hace cada funcion cuando genera codigo que la invoca.
-- **Validacion antes de ejecucion.** El input **DEBE** validarse contra schema antes de tocar base de datos o servicio externo.
-- **Errores tipados.** Strings de error genericos **NO DEBEN** usarse. Los tipos de error **DEBEN** permitir que el frontend discrimine y maneje cada caso.
 
-**Correcto:**
-```typescript
-// Zod schema para input + output tipado
-const CreateProductInput = z.object({ name: z.string(), price: z.number() });
-type CreateProductOutput = { id: string; created: boolean };
-```
-**Incorrecto:**
-```typescript
-// Sin tipos, sin validacion
-async function createProduct(data: any): Promise<any> { ... }
-```
+## 3.2 ORM y Query Builders
 
----
+- **TypeScript:** Drizzle ORM. Type-safe, cercano a SQL puro, excelente para generación por LLM (**Axioma 3**: declarativo). El LLM genera queries Drizzle que son casi SQL legible. Alternativa: Prisma si el equipo prioriza DX sobre cercanía a SQL.
+- **Python:** SQLAlchemy 2.0 con el nuevo estilo de queries tipadas.
 
-## 4. Datos: Capa de Persistencia
+## 3.3 Embeddings y búsqueda vectorial (cuando lo necesites)
 
-### 4.1 Base de Datos
+- No todo proyecto necesita embeddings.
+- Un inventario de kiosco no los necesita al día 1.
+- Pero el stack debe permitir añadirlos sin reescritura:
 
-Todo proyecto **DEBE** usar **PostgreSQL** como base de datos primaria.
 
-- **Sobre-representacion en training data** (Axioma 2): Los LLMs generan SQL para PostgreSQL con precision notable. Queries complejas, CTEs, window functions, JSON operations: todo se genera correctamente con mayor frecuencia que con cualquier otra base.
-- **pgvector** integrado nativamente para busqueda vectorial. Se habilita sin migrar de base de datos. HNSW indexes para busqueda aproximada de alta velocidad.
-- PostgreSQL almacena datos relacionales, JSON (jsonb), vectores (pgvector), full-text search, geospatial (PostGIS). El proyecto **NO DEBERIA** agregar Redis para cache simple (existen unlogged tables), Elasticsearch para busqueda basica (existe tsvector), ni una base vectorial separada para menos de 10M vectores (existe pgvector).
+- **Abstracción obligatoria:** Si decides usar embeddings, una interfaz común (`EmbeddingProvider`) que permita intercambiar modelos. Almacenar siempre el `model_id` junto al vector.
+- **Modelos recomendados:** OpenAI text-embedding-3-small/large como default. Cohere embed-v4 o Nomic embed como fallback open-source (soberanía, **Axioma 6**).
+- **Estrategia de migración:** Re-indexación progresiva en background cuando se cambia de modelo. Dual-read durante transición.
 
-Para escalas masivas de vectores (>10M), el proyecto **PUEDE** agregar Qdrant, Pinecone o Milvus como tier especializado.
+## 3.4 Memoria de agentes (cuando el proyecto lo requiere)
 
-### 4.2 ORM y Query Builders
+- Tres niveles que se activan progresivamente según la complejidad del proyecto:
 
-| Lenguaje | ORM Primario | Alternativa | Axioma |
+
+| Nivel | Duración | Implementación | Necesitas si... |
 |---|---|---|---|
-| **TypeScript** | Drizzle ORM (type-safe, cercano a SQL puro, declarativo) | Prisma (si el equipo prioriza DX sobre cercania a SQL) | 3 |
-| **Python** | SQLAlchemy 2.0 (estilo de queries tipadas) | -- | 2 |
-
-### 4.3 Embeddings y Busqueda Vectorial
-
-No todo proyecto necesita embeddings. El stack **DEBE** permitir anadirlos sin reescritura cuando se requieran.
-
-- **Abstraccion obligatoria:** Si el proyecto usa embeddings, **DEBE** definir una interfaz comun (`EmbeddingProvider`) que permita intercambiar modelos. El `model_id` **DEBE** almacenarse junto al vector.
-- **Modelos recomendados:** OpenAI text-embedding-3-small/large como default. Cohere embed-v4 o Nomic embed como fallback open-source (soberania, Axioma 6).
-- **Estrategia de migracion:** Re-indexacion progresiva en background cuando se cambia de modelo. Dual-read durante transicion.
-
-**Correcto:** `{ vector: Float32Array, model_id: "text-embedding-3-small", created_at: "2026-02-24" }`
-**Incorrecto:** `{ vector: Float32Array } // sin model_id, imposible saber con que modelo se genero`
-
-### 4.4 Memoria de Agentes
-
-Tres niveles que se activan progresivamente segun la complejidad del proyecto:
-
-| Nivel | Duracion | Implementacion | Condicion de activacion |
-|---|---|---|---|
-| **Working Memory** | Sesion | Ventana de contexto del LLM | Cualquier interaccion con LLM |
-| **Episodic Memory** | Dias-semanas | PostgreSQL + busqueda por fecha/contexto | El sistema necesita recordar interacciones pasadas |
+| **Working Memory** | Sesión | Ventana de contexto del LLM | Tienes cualquier interacción con LLM |
+| **Episodic Memory** | Días-semanas | PostgreSQL + búsqueda por fecha/contexto | El sistema necesita recordar interacciones pasadas |
 | **Semantic Memory** | Permanente | pgvector + documentos indexados | El sistema necesita conocimiento de dominio persistente |
 
-Cuando la aplicacion use LLMs, **DEBE** implementar compresion progresiva de ventana de contexto. Los mensajes antiguos **DEBEN** resumirse automaticamente cuando la ventana supere el 70% de capacidad. El resumen **DEBERIA** generarse con un modelo economico (Haiku, Flash, Mini).
+- **Gestión de ventana de contexto:** Cuando uses LLMs en tu app, implementar compresión progresiva.
+- Los mensajes antiguos se resumen automáticamente cuando la ventana supera el 70% de capacidad.
+- El resumen se genera con un modelo económico (Haiku, Flash, Mini).
 
----
 
-## 5. Infraestructura y Operaciones
+- ---
 
-### 5.1 Principio de Soberania
 
-Axioma 6 gobierna la infraestructura: control sobre datos, costos y capacidad de migracion. "Soberania" no significa "todo on-premise." Significa: el equipo entiende donde estan sus datos, cuanto paga y **PUEDE** migrar si el vendor cambia terminos.
+# 4. Infraestructura y Operaciones
 
-| Componente | Decision | Justificacion |
+## 4.1 Principio de soberanía
+
+- **Axioma 6:** Control sobre tu infraestructura.
+- No significa "todo on-premise." Significa: entiendes dónde están tus datos, cuánto pagas, y puedes migrar si el vendor cambia términos.
+
+
+| Componente | Decisión | Justificación |
 |---|---|---|
-| **Empaquetado** | Docker (contenedores inmutables) | Reproducibilidad. Lo que corre en dev corre en prod |
-| **Infra base** | Depende del perfil (ver [-> 11. Tres Perfiles de Proyecto]) | Desde un VPS de $5/mes hasta Kubernetes multi-cloud |
-| **Repositorio** | GitHub | Fuente unica de verdad. El LLM lee el repo para generar codigo coherente |
-| **CI/CD** | GitHub Actions | Build, test, lint, deploy. Automatico en cada PR |
-| **CD (GitOps)** | ArgoCD (cuando se necesita K8s) | Sincronizacion declarativa continua entre GitHub y produccion. Drift detection |
-| **IaC** | Terraform / OpenTofu | Para proyectos que necesitan infra declarativa. No necesario para un VPS simple |
-| **Secrets** | SOPS o Vault | Secrets **NO DEBEN** almacenarse en codigo. Variables de entorno como minimo. Vault para equipos grandes |
+| **Empaquetado** | Docker (contenedores inmutables) | Reproducibilidad. Lo que corre en dev corre en prod. |
+| **Infra base** | Depende del perfil (ver §11) | Desde un VPS de $5/mes hasta Kubernetes multi-cloud |
+| **Repositorio** | GitHub | Fuente única de verdad. El LLM lee tu repo para generar código coherente. |
+| **CI/CD** | GitHub Actions | Build, test, lint, deploy. Automático en cada PR. |
+| **CD (GitOps)** | ArgoCD (cuando necesitas K8s) | Sincronización declarativa continua entre GitHub y producción. Drift detection. |
+| **IaC** | Terraform / OpenTofu | Para proyectos que necesitan infra declarativa. No necesario para un VPS simple. |
+| **Secrets** | SOPS o Vault | Nunca en código. Variables de entorno como mínimo. Vault para equipos grandes. |
 
-### 5.2 Pipeline de CI/CD
+## 4.2 Pipeline de CI/CD
 
-Todo proyecto **DEBE** tener el siguiente pipeline minimo, independientemente del tamano:
+- El pipeline mínimo que todo proyecto debe tener, independientemente del tamaño:
+
 
 ```
 Push / PR
-  -> lint (TypeScript compiler, Ruff para Python, ESLint)
-  -> type check (tsc --noEmit)
-  -> tests (vitest / pytest)
-  -> build
-  -> deploy (automatico a staging, manual a prod)
+  → lint (TypeScript compiler, Ruff para Python, ESLint)
+  → type check (tsc --noEmit)
+  → tests (vitest / pytest)
+  → build
+  → deploy (automático a staging, manual a prod)
 ```
 
-Todo proyecto que integre LLMs **DEBE** agregar al pipeline:
+- **Para proyectos con LLMs integrados**, agregar:
+
 
 ```
-  -> validacion de schemas (JSON Schema de herramientas valido)
-  -> evals de regresion (agente contra dataset de test)
-  -> estimacion de costo (tokens por suite antes de ejecutar contra modelos de produccion)
+  → validación de schemas (JSON Schema de herramientas válido)
+  → evals de regresión (agente contra dataset de test)
+  → estimación de costo (tokens por suite antes de ejecutar contra modelos de producción)
 ```
 
-### 5.3 Feature Flags
+## 4.3 Feature flags
 
-Para produccion seria, el proyecto **DEBERIA** usar un servicio de feature flags (LaunchDarkly, Unleash o Flagsmith). Para proyectos simples, un JSON en la DB o una tabla `feature_flags` **PUEDE** ser suficiente.
+- **LaunchDarkly, Unleash, o Flagsmith.** Para proyectos simples, un JSON en la DB o una tabla `feature_flags` basta.
+- Para producción seria: un servicio de feature flags es la red de seguridad que permite deploy continuo sin miedo.
+- Activas la feature para el 5% de usuarios, verificas que funciona, expandes.
 
-Los feature flags permiten deploy continuo sin riesgo: activar la feature para el 5% de usuarios, verificar que funciona, expandir.
 
----
+- ---
 
-## 6. Observabilidad
 
-### 6.1 Stack Base
+# 5. Observabilidad
 
-| Capa | Que observa | Herramientas | Obligatorio |
+## 5.1 Stack base
+
+| Capa | Qué observa | Herramientas | Todo proyecto lo necesita? |
 |---|---|---|---|
-| **Infraestructura** | Server health, latencia, errores | OpenTelemetry + Prometheus + Grafana | **DEBE** existir al menos uptime monitoring |
-| **Aplicacion** | Errores, performance, user flows | Sentry (errores), OpenTelemetry (traces) | **DEBE** existir |
-| **LLM/Agente** | Costos, latencia, calidad de generacion | Langfuse (self-hosted) | **DEBE** existir si el proyecto usa LLMs |
-| **Negocio** | Metricas de producto, conversion | PostHog / Plausible | **DEBERIA** existir |
+| **Infraestructura** | Server health, latencia, errores | OpenTelemetry + Prometheus + Grafana | Sí (al menos uptime monitoring) |
+| **Aplicación** | Errores, performance, user flows | Sentry (errores), OpenTelemetry (traces) | Sí |
+| **LLM/Agente** | Costos, latencia, calidad de generación | Langfuse (self-hosted) | Solo si usas LLMs en la app |
+| **Negocio** | Métricas de producto, conversión | PostHog / Plausible | Recomendado |
 
-### 6.2 Alerting
+## 5.2 Alerting
 
-Todo proyecto **DEBE** tener alertas para: uptime, errores 5xx y latencia p95.
+- Alertas básicas para todo proyecto: uptime, errores 5xx, latencia p95.
+- Para proyectos con LLMs, agregar:
 
-Todo proyecto que integre LLMs **DEBE** agregar alertas para:
 
-- Degradacion de calidad de respuestas (hallucination rate).
-- Incremento subito en costo por sesion (loops infinitos del agente).
-- Caida en tool selection accuracy.
-- Rate limiting de proveedores cercano al limite.
+- Degradación de calidad de respuestas (hallucination rate).
+- Incremento súbito en costo por sesión (loops infinitos del agente).
+- Caída en tool selection accuracy.
+- Rate limiting de proveedores cercano al límite.
 
----
+- ---
 
-## 7. Seguridad
 
-### 7.1 Baseline para Todo Proyecto
+# 6. Seguridad
 
-Todo proyecto **DEBE** cumplir estos requisitos de seguridad minimos:
+## 6.1 Baseline para todo proyecto
 
-- **HTTPS.** Sin excepciones. Todo trafico **DEBE** ir cifrado.
-- **Autenticacion:** Auth.js (NextAuth) para proyectos TypeScript full-stack. Para APIs: JWT o API keys con rotacion.
-- **Autorizacion:** Row-level security en PostgreSQL cuando los datos son multi-tenant.
-- **Input validation:** Zod/Pydantic en cada boundary. El proyecto **NO DEBE** confiar en datos del cliente sin validacion.
-- **Secrets:** **NO DEBEN** almacenarse en codigo. Variables de entorno como minimo.
-- **Dependencies:** Dependabot o Renovate **DEBEN** configurarse para actualizaciones automaticas de dependencias con vulnerabilidades conocidas.
+- **HTTPS siempre.** Sin excepciones.
+- **Autenticación:** Auth.js (NextAuth) para proyectos TS full-stack. Para APIs: JWT o API keys con rotación.
+- **Autorización:** Row-level security en PostgreSQL cuando los datos son multi-tenant. El kiosco ve solo su inventario.
+- **Input validation:** Zod/Pydantic en cada boundary. Nunca confíes en datos del cliente.
+- **Secrets:** Nunca en código. Variables de entorno como mínimo.
+- **Dependencies:** Dependabot o Renovate para actualizaciones automáticas de dependencias con vulnerabilidades conocidas.
 
-### 7.2 Seguridad para LLMs
+## 6.2 Seguridad adicional para LLMs
 
-Cuando la aplicacion integra LLMs, **DEBEN** implementarse los siguientes controles:
+- Cuando tu aplicación integra LLMs:
 
-| Amenaza | Control | Implementacion |
+
+| Amenaza | Control | Implementación |
 |---|---|---|
-| **Prompt Injection** | Separacion system/user | User input **NO DEBE** concatenarse en system prompts. Templates con placeholders tipados |
-| **Agent-to-agent injection** | Sanitizacion inter-agente | El output de un agente **DEBE** tratarse como untrusted input para el siguiente. Validar contra schema en cada interfaz interna |
-| **Output inseguro** | Todo output LLM = untrusted | Validar contra schema antes de ejecutar cualquier accion derivada |
-| **Data leakage** | Clasificacion de datos | PII **NO DEBE** enviarse a LLMs externos si no es necesario. Scrubbing automatico |
-| **Excessive agency** | Allowlists de herramientas | Toda herramienta invocable por LLM **DEBE** estar en allowlist explicito |
-| **Costo descontrolado** | Budget enforcement | Limites por sesion/usuario. Circuit breaker si se excede |
+| **Prompt Injection** | Separación system/user | Nunca concatenar user input en system prompts. Templates con placeholders tipados. |
+| **Agent-to-agent injection** | Sanitización inter-agente | Cuando agentes pasan datos entre sí, tratar el output de un agente como untrusted input para el siguiente. Validar contra schema en cada interfaz interna. |
+| **Output inseguro** | Todo output LLM = untrusted | Validar contra schema antes de ejecutar cualquier acción derivada. |
+| **Data leakage** | Clasificación de datos | No enviar PII a LLMs externos si no es necesario. Scrubbing automático. |
+| **Excessive agency** | Allowlists de herramientas | Si el LLM puede llamar herramientas: cada una en allowlist explícito. |
+| **Costo descontrolado** | Budget enforcement | Límites por sesión/usuario. Circuit breaker si se excede. |
 
-### 7.3 Aislamiento de Ejecucion para Agentes
+## 6.3 Aislamiento de ejecución (para agentes)
 
-Cuando los agentes ejecutan herramientas que tocan el sistema operativo o servicios externos, **DEBE** aplicarse el nivel de aislamiento correspondiente:
+- Cuando los agentes ejecutan herramientas que tocan el sistema operativo o servicios externos:
+
 
 | Nivel | Runtime | Permisos | Caso de uso |
 |---|---|---|---|
 | **Nivel 1 (Read)** | Container read-only | Filesystem RO, red restringida | Queries, lectura de APIs |
-| **Nivel 2 (Write)** | Container efimero | Destruido post-ejecucion | Escritura a DB, generacion de archivos |
-| **Nivel 3 (Shell)** | MicroVM (Firecracker) | Sin red externa, timeout estricto | Ejecucion de codigo arbitrario, tests |
+| **Nivel 2 (Write)** | Container efímero | Destruido post-ejecución | Escritura a DB, generación de archivos |
+| **Nivel 3 (Shell)** | MicroVM (Firecracker) | Sin red externa, timeout estricto | Ejecución de código arbitrario, tests |
 
-**Correcto:** `Agente con permiso Write ejecuta en container efimero que se destruye post-ejecucion`
-**Incorrecto:** `Agente con permiso Shell ejecuta en el host sin aislamiento ni timeout`
+- ---
 
----
 
-## 8. Flujo de Desarrollo AI-First
+# 7. El Flujo de Desarrollo AI-First
 
-### 8.1 CLIs de Desarrollo
+## 7.1 CLIs de desarrollo
 
-El equipo **DEBERIA** usar las siguientes herramientas de linea de comandos segun la tarea:
+- En 2026, tres herramientas han convergido como los co-desarrolladores de línea de comandos más efectivos:
 
-| Herramienta | Fortaleza | Cuando usarla |
+
+| Herramienta | Fortaleza | Cuándo usarla |
 |---|---|---|
-| **Claude Code** | Refactorizaciones de contexto amplio, razonamiento multi-archivo | Cambios arquitectonicos, migraciones, features complejas que tocan multiples archivos |
-| **Gemini CLI** | Contexto masivo (1M+ tokens), analisis multicapa | Revision de codigo completa, documentacion de sistemas existentes, analisis de logs |
-| **Codex CLI** | Iteracion rapida en terminal, acceso a OS | Scripts, one-liners, operaciones de sistema, automatizacion rapida |
+| **Claude Code** | Refactorizaciones de contexto amplio, razonamiento multi-archivo | Cambios arquitectónicos, migraciones, features complejas que tocan múltiples archivos |
+| **Gemini CLI** | Contexto masivo (1M+ tokens), análisis multicapa | Revisión de código completa, documentación de sistemas existentes, análisis de logs |
+| **Codex CLI** | Iteración rápida en terminal, acceso a OS | Scripts, one-liners, operaciones de sistema, automatización rápida |
 
-Las herramientas **NO** son mutuamente excluyentes. El equipo **DEBE** seleccionar la herramienta que mejor se adapte a cada tarea.
+- No son mutuamente excluyentes.
+- Son herramientas con fortalezas diferentes.
+- Usa la que mejor se adapte a la tarea.
 
-### 8.2 Principios del Desarrollo AI-First
 
-Todo proyecto que use LLMs como co-desarrolladores **DEBE** adoptar estos principios:
+## 7.2 Principios del desarrollo AI-first
 
-- **Type-first development:** Tipos e interfaces **DEBEN** definirse ANTES de implementar. El LLM genera implementaciones mas correctas cuando tiene el contrato completo.
+- Desarrollar con asistencia de LLM no es "autocompletado glorificado." Es un paradigma diferente:
 
-**Correcto:**
-```typescript
-// Definir tipo primero
-interface Product { id: string; name: string; price: number; stock: number }
-// Luego pedir: "implementa el CRUD de Product"
-```
-**Incorrecto:**
-```
-// Pedir "implementa el CRUD de productos" sin tipo previo
-```
 
-- **Small PRs:** Los LLMs **DEBEN** usarse para cambios pequenos y enfocados, no para refactorizaciones masivas.
-- **Context engineering como practica diaria:** Archivos de contexto **DEBEN** mantenerse actualizados y el LLM **DEBE** consumirlos en cada sesion. Ver [-> 9. Context Engineering: La Nueva Disciplina].
-- **Eval-driven (para agentes):** Los evals **DEBEN** escribirse antes de la implementacion. Los evals definen el comportamiento esperado. Es TDD para agentes.
-- **Review todo lo generado:** Todo output de LLM **DEBE** revisarse como si viniera de un desarrollador junior brillante pero propenso a errores sutiles.
+- **Type-first development:** Define tipos e interfaces ANTES de implementar. El LLM genera implementaciones más correctas cuando tiene el contrato completo. Escribir `interface Product { id: string; name: string; price: number; stock: number }` antes de pedir "implementa el CRUD de productos" produce código dramáticamente mejor que pedir el CRUD sin el tipo.
+- **Small PRs:** Los LLMs generan mejor código en cambios pequeños y enfocados que en refactorizaciones masivas. "Agrega validación de stock negativo al formulario de producto" > "Refactoriza todo el módulo de inventario."
+- **Context engineering como práctica diaria:** Mantener archivos de contexto actualizados que el LLM consume en cada sesión. Ver §8.
+- **Eval-driven (para agentes):** Cuando construyes agentes, escribir los evals antes de la implementación. Los evals definen el comportamiento esperado. Es TDD para el mundo de agentes.
+- **Review todo lo generado:** El LLM es un co-desarrollador junior con conocimiento enciclopédico pero sin juicio. Revisa cada PR como si viniera de un junior brillante pero propenso a errores sutiles.
 
----
+- ---
 
-## 9. Context Engineering: La Nueva Disciplina
 
-### 9.1 Definicion
+# 8. Context Engineering: La Nueva Disciplina
 
-Context engineering es el diseno, creacion y mantenimiento de los artefactos que alimentan la ventana de contexto del LLM para que produzca outputs correctos. Es documentacion tecnica escrita para ser consumida por maquinas ademas de humanos.
+## 8.1 ¿Qué es?
 
-Un LLM de primera linea con context engineering pobre produce peor resultado que un LLM de segunda linea con context engineering excelente. Todo proyecto **DEBE** invertir en context engineering como multiplicador de calidad.
+- Context engineering es el diseño, creación y mantenimiento de los artefactos que alimentan la ventana de contexto del LLM para que produzca outputs correctos.
+- Es el equivalente a la documentación técnica, pero escrita para ser consumida por máquinas además de humanos.
 
-### 9.2 Artefactos de Context Engineering
 
-Todo proyecto **DEBE** mantener al menos los artefactos marcados como obligatorios:
+- **El contexto es el multiplicador.** Un LLM de primera línea con context engineering pobre produce peor resultado que un LLM de segunda línea con context engineering excelente.
+- Si le pides a Claude Opus que genere un endpoint sin decirle tus convenciones, patrones, o estructura del proyecto, obtienes código genérico.
+- Si le das CONVENTIONS.md + ARCHITECTURE.md + el schema de la DB, obtienes código que encaja en tu proyecto como si lo hubiera escrito alguien del equipo.
 
-| Artefacto | Contenido | Obligatorio | Ejemplo para inventario de kiosco |
-|---|---|---|---|
-| **CONVENTIONS.md** | Estilo de codigo, patrones, naming, estructura de archivos | **DEBE** existir | "Usamos camelCase en TS, snake_case en Python. Server Actions en `app/actions/`. Componentes en `components/ui/`." |
-| **ARCHITECTURE.md** | Diagrama de componentes, flujo de datos, decisiones clave | **DEBERIA** existir | "Next.js full-stack. PostgreSQL en Supabase. Auth con Auth.js. Deploy en Vercel." |
-| **STACK.md** | Tecnologias, versiones, quirks conocidos | **DEBERIA** existir | "Next.js 15.1, Drizzle 0.38, PostgreSQL 16. Nota: Drizzle no soporta `returning()` en SQLite." |
-| **SCHEMA.md** | Modelo de datos con relaciones | **DEBE** existir | "Productos -> Categorias (N:1). Movimientos de inventario con timestamp y usuario." |
 
-Para proyectos mas complejos, **DEBERIAN** agregarse:
+## 8.2 Artefactos de context engineering
 
-| Artefacto | Condicion de activacion |
+- La inversión en estos archivos se paga sola en la primera semana de desarrollo asistido:
+
+
+| Artefacto | Contenido | Ejemplo para inventario de kiosco |
+|---|---|---|
+| **CONVENTIONS.md** | Estilo de código, patrones, naming, estructura de archivos | "Usamos camelCase en TS, snake_case en Python. Server Actions en `app/actions/`. Componentes en `components/ui/`." |
+| **ARCHITECTURE.md** | Diagrama de componentes, flujo de datos, decisiones clave | "Next.js full-stack. PostgreSQL en Supabase. Auth con Auth.js. Deploy en Vercel." |
+| **STACK.md** | Tecnologías, versiones, quirks conocidos | "Next.js 15.1, Drizzle 0.38, PostgreSQL 16. Nota: Drizzle no soporta `returning()` en SQLite." |
+| **SCHEMA.md** | Modelo de datos con relaciones | "Productos → Categorías (N:1). Movimientos de inventario con timestamp y usuario." |
+
+- **Para proyectos más complejos**, agregar:
+
+
+| Artefacto | Cuándo lo necesitas |
 |---|---|
-| **INFRA.md** | Cuando existe infra propia (no solo PaaS) |
-| **CONSTRAINTS.md** | Cuando hay restricciones de compliance, budget o regulatorias |
-| **RUNBOOKS.md** | Cuando se opera produccion y se necesitan procedimientos de recuperacion |
-| **AGENTS.md** | Cuando el proyecto incluye agentes IA con roles y permisos |
+| **INFRA.md** | Cuando tienes infra propia (no solo PaaS) |
+| **CONSTRAINTS.md** | Cuando hay restricciones de compliance, budget, o regulatorias |
+| **RUNBOOKS.md** | Cuando operas producción y necesitas procedimientos de recuperación |
+| **AGENTS.md** | Cuando tu proyecto incluye agentes IA con roles y permisos |
 
-### 9.3 Economia del Contexto
+## 8.3 La economía del contexto
 
-La ventana de contexto tiene un precio literal (tokens) y un precio cognitivo (dilucion de atencion del modelo).
+- La ventana de contexto tiene un precio literal (tokens) y un precio cognitivo (dilución de atención del modelo):
 
-- **Regla 70/30:** El 70% de la ventana **DEBE** ser relevante para la tarea actual. El 30% restante es contexto de sistema. Si el ratio se invierte, el output se degrada.
-- **Carga selectiva:** El proyecto **NO DEBE** cargar todos los artefactos en cada sesion. Un cambio de estilos necesita CONVENTIONS.md y los componentes afectados; no necesita INFRA.md.
-- **Densidad:** Los context files **DEBEN** ser densos y sin redundancia. Cada palabra es un token que se paga.
 
-**Correcto:** `"Usamos Drizzle ORM con PostgreSQL. Migraciones en drizzle/migrations/. Schema en src/db/schema.ts."` (20 tokens que ahorran 200 tokens de explicacion por sesion)
-**Incorrecto:** `"En nuestro proyecto hemos decidido que vamos a utilizar Drizzle ORM como nuestra capa de acceso a datos porque nos parece que..."` (tokens desperdiciados en filler)
+- **Regla 70/30:** El 70% de la ventana debe ser relevante para la tarea actual. El 30% restante es contexto de sistema. Si el ratio se invierte, el output se degrada.
+- **Carga selectiva:** No cargar todo en cada sesión. Un cambio de estilos necesita CONVENTIONS.md y los componentes afectados. No necesita INFRA.md.
+- **Densidad:** Los context files deben ser densos y sin redundancia. Cada palabra es un token que se paga. "Usamos Drizzle ORM con PostgreSQL. Migraciones en `drizzle/migrations/`. Schema en `src/db/schema.ts`." — 20 tokens que ahorran 200 tokens de explicación en cada sesión.
 
----
+- ---
 
-## 10. Capa de Agentes
 
-Esta seccion se activa cuando el proyecto integra LLMs como parte de la funcionalidad: chatbots, asistentes, procesamiento inteligente, agentes autonomos.
+# 9. Capa de Agentes (cuando el proyecto lo requiere)
 
-### 10.1 Model Router
+- **No todo proyecto necesita agentes.** Un inventario de kiosco no necesita un enjambre auto-evolutivo.
+- Pero cuando tu proyecto sí integra LLMs como parte de la funcionalidad (chatbots, asistentes, procesamiento inteligente, agentes autónomos), esta capa se activa.
 
-No todas las tareas requieren el mismo modelo. Todo proyecto con LLMs **DEBE** implementar routing de modelos por tier.
+
+## 9.1 Model Router
+
+- No todas las tareas requieren el mismo modelo.
+- Un resumen de texto no necesita Opus;
+- Haiku lo resuelve.
+- Una decisión arquitectónica compleja sí necesita Opus.
+
 
 | Tier | Modelos (febrero 2026) | Costo relativo | Caso de uso |
 |---|---|---|---|
-| **T1 (Economico)** | Haiku 3.5, GPT-4o Mini, Flash 2.0, DeepSeek-V3 | $ | Clasificacion, formateo, resumenes, orquestacion |
-| **T2 (Balance)** | Sonnet 4, GPT-4.1, Gemini 2.5 Pro | $$ | Generacion de codigo, analisis, tool-calling |
-| **T3 (Frontier)** | Opus 4.5, GPT-4.5, Gemini Ultra | $$$ | Razonamiento complejo, planificacion, arquitectura |
-| **T4 (Reasoning)** | o3, Gemini Thinking | $$$$ | Problemas matematicos, logicos, evaluacion critica |
+| **T1 (Económico)** | Haiku 3.5, GPT-4o Mini, Flash 2.0, DeepSeek-V3 | $ | Clasificación, formateo, resúmenes, orquestación |
+| **T2 (Balance)** | Sonnet 4, GPT-4.1, Gemini 2.5 Pro | $$ | Generación de código, análisis, tool-calling |
+| **T3 (Frontier)** | Opus 4.5, GPT-4.5, Gemini Ultra | $$$ | Razonamiento complejo, planificación, arquitectura |
+| **T4 (Reasoning)** | o3, Gemini Thinking | $$$$ | Problemas matemáticos, lógicos, evaluación crítica |
 
-**Implementacion:** LiteLLM proxy **DEBERIA** usarse como solucion base (interfaz OpenAI-compatible para todos los providers, fallback chains, budget tracking). Para el 100% de control: router custom con clasificador de complejidad.
+- **Implementación práctica:** LiteLLM proxy como 80% de la solución.
+- Interfaz OpenAI-compatible para todos los providers, fallback chains, budget tracking.
+- Para el 100%: router custom con clasificador de complejidad.
 
-**Budget enforcement:** Limites por sesion, por usuario y por agente **DEBEN** configurarse. Cuando se alcanza el limite, el sistema **DEBE** degradar al tier inferior con notificacion. Sin budget enforcement, un loop infinito de un agente **PUEDE** costar cientos de dolares en minutos.
 
-### 10.2 Orquestacion de Agentes
+- **Budget enforcement:** Límites por sesión, por usuario, por agente.
+- Cuando se alcanza el límite, degrada al tier inferior con notificación.
+- Sin esto, un loop infinito de un agente te puede costar cientos de dólares en minutos.
 
-El ecosistema de frameworks cambia cada 3 meses. Todo proyecto **DEBE** definir una capa de abstraccion (`AgentOrchestrator`) con metodos estandar (`route`, `execute_tool`, `manage_memory`). La implementacion concreta sobre el framework del momento **PUEDE** cambiar sin afectar agentes ni herramientas.
+
+## 9.2 Orquestación de agentes
+
+- El ecosistema cambia cada 3 meses.
+- La respuesta correcta: **capa de abstracción.**
+
+
+- Define una interfaz `AgentOrchestrator` con métodos estándar (`route`, `execute_tool`, `manage_memory`).
+- Implementa sobre el framework del momento.
+- Si el framework cambia, reescribes el adaptador, no los agentes ni las herramientas.
+
 
 | Framework | Fortaleza | Caso de uso ideal |
 |---|---|---|
 | **OpenClaw** | Multi-agente nativo, multi-canal, persistencia local | Enjambres de agentes colaborativos |
-| **LangGraph** | Flujos complejos con estado, visualizacion | Workflows multi-paso con branching |
+| **LangGraph** | Flujos complejos con estado, visualización | Workflows multi-paso con branching |
 | **Agents SDK (OpenAI)** | API limpia, handoffs nativos | Equipos centrados en GPT |
-| **Custom** | Control total | Necesidades unicas |
+| **Custom** | Control total | Necesidades únicas |
 
-### 10.3 Model Context Protocol (MCP)
+## 9.3 Model Context Protocol (MCP)
 
-MCP es el estandar para interoperabilidad de herramientas entre agentes. Las herramientas expuestas como MCP servers son consumibles desde Claude Code, Cursor, IDEs y el orquestador sin reescritura. Todo proyecto con agentes **DEBERIA** exponer sus herramientas como MCP servers.
+- MCP es el estándar para interoperabilidad de herramientas entre agentes.
+- Las herramientas expuestas como MCP servers son consumibles desde Claude Code, Cursor, IDEs, y tu orquestador sin reescritura.
+- Es HTTP para el mundo de agentes: infraestructura, no feature.
 
-### 10.4 Evals: El TDD de los Agentes
 
-| Tipo | Que verifica | Obligatoriedad |
+## 9.4 Evals: el TDD de los agentes
+
+| Tipo | Qué verifica | Obligatorio? |
 |---|---|---|
-| **Regresion** | Calidad se mantiene ante cambios | **DEBE** ejecutarse pre-deploy |
-| **Alucinacion** | Output no contiene informacion fabricada | **DEBE** ejecutarse pre-deploy |
-| **Tool-calling** | Selecciona herramientas correctas | **DEBE** ejecutarse pre-deploy |
-| **Costo** | Tokens en rango esperado | **DEBE** ejecutarse pre-deploy |
-| **Seguridad** | No expone datos, no escala privilegios | **DEBE** ejecutarse pre-deploy |
-| **Adversarial** | Resiste intentos de comprometerlo | **DEBERIA** ejecutarse cada ciclo |
+| **Regresión** | Calidad se mantiene ante cambios | Sí, pre-deploy |
+| **Alucinación** | Output no contiene información fabricada | Sí, pre-deploy |
+| **Tool-calling** | Selecciona herramientas correctas | Sí, pre-deploy |
+| **Costo** | Tokens en rango esperado | Sí, pre-deploy |
+| **Seguridad** | No expone datos, no escala privilegios | Sí, pre-deploy |
+| **Adversarial** | Resiste intentos de romperlo | Recomendado, cada ciclo |
 
-**LLM-as-a-Judge:** Un modelo de otro provider **DEBE** evaluar la calidad. Si el agente usa Claude, el judge **DEBE** usar GPT. Diversidad de modelos reduce blind spots compartidos.
+- **LLM-as-a-Judge:** Un modelo de otro provider evalúa la calidad.
+- Si tu agente usa Claude, el judge usa GPT.
+- Diversidad de modelos reduce blind spots compartidos.
 
-### 10.5 Modelos Fundacionales
 
-El sistema es agnostico por diseno. Ninguna decision **DEBE** asumir un proveedor unico:
+## 9.5 Modelos fundacionales
+
+- El sistema es agnóstico por diseño.
+- Ninguna decisión asume un proveedor:
+
 
 - **Claude (Anthropic):** Razonamiento, tool-calling preciso, instrucciones complejas.
 - **Gemini (Google):** Contexto masivo (1M+), multimodalidad, eficiencia de costo.
 - **GPT (OpenAI):** Ecosistema maduro, function calling robusto, reasoning (o-series).
 - **Eficiencia (DeepSeek, Qwen):** Costo/rendimiento superior para T1. Self-hosteable.
 
-Las capacidades, precios y disponibilidad de modelos cambian semanalmente. Todo proyecto con LLMs **DEBE** mantener un archivo `MODELS.md` como artefacto de context engineering: modelos permitidos, tiers asignados, precios actuales, benchmarks internos. El archivo **DEBE** actualizarse mensualmente o ante cada cambio significativo de provider. Tratar la informacion de modelos como dato estatico en un documento es un anti-patron.
+> ⚡ **MODELS.md COMO ARTEFACTO VIVO**
+>
+> Las capacidades, precios, y disponibilidad de modelos cambian semanalmente. Esta lista es orientativa al momento de escritura (febrero 2026). La recomendación operativa es mantener un archivo `MODELS.md` en el repositorio del proyecto como artefacto de context engineering: modelos permitidos, tiers asignados, precios actuales, benchmarks internos. Este archivo se actualiza mensualmente (o ante cada cambio significativo de provider) y alimenta al Model Router. Tratar la información de modelos como dato estático en un documento es un anti-patrón; tratarla como artefacto versionado y actualizable es context engineering.
 
-### 10.6 Modos de Fallo del Stack
+## 9.6 Modos de fallo del stack (prevención)
 
-Todo equipo **DEBE** conocer y prevenir estos modos de fallo especificos de stacks con LLMs:
+- Todo stack tiene modos de fallo específicos.
+- Estos son los más probables cuando LLMs participan en el desarrollo y operación:
 
-| Modo de fallo | Descripcion | Prevencion |
+
+| Modo de fallo | Descripción | Prevención |
 |---|---|---|
-| **Model version drift** | Un provider actualiza el modelo y el comportamiento cambia. Tests pasan pero el output degrada en calidad, estilo o precision | Pinning de versiones de modelo cuando el provider lo permita. Evals de regresion ante cada cambio de modelo |
-| **Embedding drift** | Los embeddings generados con una version de modelo no son compatibles con los generados con otra. La busqueda semantica degrada sin error visible | Regenerar embeddings completos ante cambios de modelo de embedding. Monitorear hit rate de busqueda semantica |
-| **Corrupcion de memoria semantica** | Datos incorrectos entran en la memoria de agentes ([-> 4. Datos: Capa de Persistencia]) y se amplifican con el uso | Validacion de escritura en memoria. TTL para memorias. Mecanismo de purge manual. Auditoria periodica |
-| **Cost explosion por loop** | Un agente entra en un loop de reintentos, consumiendo tokens sin converger. Prompt injection **PUEDE** provocar esto deliberadamente | Budget enforcement por sesion y por agente. Circuit breaker: si tokens consumidos > N*esperado, abort |
-| **Context window overflow** | El contexto acumulado excede la ventana y el LLM empieza a olvidar instrucciones tempranas, generando output inconsistente | Monitoreo de uso de contexto. Summarization estrategica. Regla 70/30 de [-> 9. Context Engineering: La Nueva Disciplina] |
-| **Provider downtime cascade** | El provider principal cae y no hay fallback configurado | LiteLLM con fallback a segundo provider. El proyecto **NO DEBE** depender de un solo provider para funcionalidad critica en produccion |
+| **Model version drift** | Un provider actualiza silenciosamente el modelo y el comportamiento cambia. Tests pasan pero el output degrada en calidad, estilo, o precisión. | Pinning de versiones de modelo cuando el provider lo permita. Evals de regresión ante cada cambio de modelo. |
+| **Embedding drift** | Los embeddings generados con una versión de modelo no son compatibles con los generados con otra. La búsqueda semántica degrada sin error visible. | Regenerar embeddings completos ante cambios de modelo de embedding. Monitorear hit rate de búsqueda semántica. |
+| **Corrupción de memoria semántica** | Si usas memoria persistente para agentes (§3.4), datos incorrectos entran en la memoria y se amplifican con el uso. | Validación de escritura en memoria. TTL para memorias. Mecanismo de purge manual. Auditoría periódica. |
+| **Cost explosion por loop** | Un agente entra en un loop de reintentos, consumiendo tokens sin converger. Prompt injection puede provocar esto deliberadamente. | Budget enforcement por sesión y por agente. Circuit breaker: si tokens consumidos > N×esperado, abort. |
+| **Context window overflow** | El contexto acumulado excede la ventana y el LLM empieza a "olvidar" instrucciones tempranas, generando output inconsistente. | Monitoreo de uso de contexto. Summarization estratégica. Regla 70/30 de §8.3. |
+| **Provider downtime cascade** | Tu provider principal cae y no tienes fallback configurado. | LiteLLM con fallback a segundo provider. Nunca depender de un solo provider para funcionalidad crítica en producción. |
 
----
+- ---
 
-## 11. Stack Completo: Tabla de Referencia
 
-### 11.1 Stack Base (Todo Proyecto)
+# 10. Stack Completo: La Tabla de Referencia
 
-| Capa | Tecnologia | Alternativa | Axioma |
+## 10.1 Stack base (todo proyecto)
+
+| Capa | Tecnología | Alternativa | Axioma |
 |---|---|---|---|
-| **Lenguaje frontend** | TypeScript | -- | 1, 2 |
-| **Framework frontend** | Next.js (App Router) | Astro (estaticos) | 2, 3 |
-| **Estilos** | Tailwind CSS | -- | 3 |
+| **Lenguaje frontend** | TypeScript | — | 1, 2 |
+| **Framework frontend** | Next.js (App Router) | Astro (estáticos) | 2, 3 |
+| **Estilos** | Tailwind CSS | — | 3 |
 | **Componentes UI** | Shadcn/UI | Radix primitives | 2 |
-| **Validacion** | Zod (TS) / Pydantic (Py) | -- | 1, 4 |
+| **Validación** | Zod (TS) / Pydantic (Py) | — | 1, 4 |
 | **Backend (TS)** | Next.js Server Actions / Hono | tRPC | 3 |
-| **Backend (Python)** | FastAPI | -- | 4 |
-| **Base de datos** | PostgreSQL | -- | 2 |
+| **Backend (Python)** | FastAPI | — | 4 |
+| **Base de datos** | PostgreSQL | — | 2 |
 | **ORM (TS)** | Drizzle | Prisma | 3 |
-| **ORM (Python)** | SQLAlchemy 2.0 | -- | 2 |
-| **Empaquetado** | Docker | -- | 5 |
+| **ORM (Python)** | SQLAlchemy 2.0 | — | 2 |
+| **Empaquetado** | Docker | — | 5 |
 | **Repositorio** | GitHub | GitLab | 2 |
 | **CI/CD** | GitHub Actions | GitLab CI | 5 |
 | **Observabilidad** | OpenTelemetry + Sentry | Datadog | 6 |
 | **Auth** | Auth.js (NextAuth) | Clerk, Supabase Auth | 6 |
 
-### 11.2 Stack Extendido (Proyectos con LLMs/Agentes)
+## 10.2 Stack extendido (proyectos con LLMs/agentes)
 
-| Capa | Tecnologia | Alternativa | Axioma |
+| Capa | Tecnología | Alternativa | Axioma |
 |---|---|---|---|
 | **Vectores** | pgvector (< 10M) | Qdrant (>10M) | 2 |
 | **Embeddings** | OpenAI text-embedding-3 | Cohere, Nomic | 6 |
 | **Observabilidad LLM** | Langfuse (self-hosted) | LangSmith | 6 |
 | **Evals** | Braintrust / Arize Phoenix | TruLens | 4, 5 |
-| **Model Router** | LiteLLM proxy / custom | -- | 5, 6 |
-| **Orquestacion** | OpenClaw (tras abstraccion) | LangGraph, Agents SDK | 5 |
-| **Interop** | MCP | -- | 5 |
+| **Model Router** | LiteLLM proxy / custom | — | 5, 6 |
+| **Orquestación** | OpenClaw (tras abstracción) | LangGraph, Agents SDK | 5 |
+| **Interop** | MCP | — | 5 |
 | **Aislamiento** | gVisor / Firecracker | Docker rootless | 5 |
 | **GitOps** | ArgoCD | Flux | 5 |
 | **Feature flags** | Unleash / Flagsmith | LaunchDarkly | 6 |
 | **Dev tools** | Claude Code + Gemini CLI + Codex CLI | Cursor, Windsurf | 2 |
 
----
+- ---
 
-## 12. Tres Perfiles de Proyecto
 
-### 12.1 Perfil Minimo: "El Kiosco"
+# 11. Tres Perfiles de Proyecto
 
-Inventario de kiosco, SaaS de agenda, portal de gestion interna. CRUD con logica de negocio. Sin agentes.
+## 11.1 Perfil Mínimo: "El Kiosco"
 
-| Decision | Eleccion |
+- Un inventario de kiosco.
+- Un SaaS de agenda.
+- Un portal de gestión interna.
+- CRUD con algo de lógica de negocio.
+- Sin agentes.
+
+
+| Decisión | Elección |
 |---|---|
 | **Stack** | TypeScript full-stack. Next.js + Server Actions + Drizzle + PostgreSQL |
-| **Infra** | Vercel (frontend) + Supabase o Neon (PostgreSQL). O un VPS de $5-10/mes con Docker Compose |
+| **Infra** | Vercel (frontend) + Supabase o Neon (PostgreSQL). O un VPS de $5-10/mes con Docker Compose. |
 | **CI/CD** | GitHub Actions: lint + type check + test + deploy |
 | **Observabilidad** | Sentry (errores) + Vercel Analytics o Plausible |
-| **Context engineering** | CONVENTIONS.md + SCHEMA.md. Dos archivos |
-| **Desarrollo** | Un humano + Claude Code / Cursor |
+| **Context engineering** | CONVENTIONS.md + SCHEMA.md. Dos archivos. |
+| **Desarrollo** | Un humano + Claude Code / Cursor. |
 | **Costo operativo mensual** | $5-50 |
 
-### 12.2 Perfil Medio: "El SaaS con IA"
+## 11.2 Perfil Medio: "El SaaS con IA"
 
-Plataforma con usuarios, pagos y capa de IA: chatbot de soporte, analisis inteligente de datos, generacion de contenido. LLMs integrados pero sin agentes autonomos.
+- Una plataforma con usuarios, pagos, y una capa de IA: chatbot de soporte, análisis inteligente de datos, generación de contenido.
+- LLMs integrados pero no agentes autónomos.
 
-| Decision | Eleccion |
+
+| Decisión | Elección |
 |---|---|
-| **Stack** | TypeScript (Next.js) + Python (FastAPI para capa IA). PostgreSQL + pgvector |
-| **Infra** | Docker en VPS (Hetzner) o cloud manejado. ArgoCD si Kubernetes |
+| **Stack** | TypeScript (Next.js) + Python (FastAPI para capa IA). PostgreSQL + pgvector. |
+| **Infra** | Docker en VPS (Hetzner) o cloud manejado. ArgoCD si Kubernetes. |
 | **CI/CD** | GitHub Actions: lint + types + tests + evals de IA + deploy |
 | **Model Router** | LiteLLM proxy con budget enforcement |
 | **Observabilidad** | Sentry + Langfuse + Prometheus + Grafana |
@@ -531,63 +601,92 @@ Plataforma con usuarios, pagos y capa de IA: chatbot de soporte, analisis inteli
 | **Desarrollo** | 1-3 humanos + LLMs como co-developers |
 | **Costo operativo mensual** | $50-500 |
 
-### 12.3 Perfil Completo: "El Enjambre"
+## 11.3 Perfil Completo: "El Enjambre"
 
-Sistema con agentes autonomos que ejecutan tareas, toman decisiones y se auto-optimizan. El escenario de [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia).
+- Un sistema con agentes autónomos que ejecutan tareas, toman decisiones, y se auto-optimizan.
+- El escenario de Xanpan::Agents.
 
-| Decision | Eleccion |
+
+| Decisión | Elección |
 |---|---|
-| **Stack** | Stack completo [-> 11. Stack Completo: Tabla de Referencia] (11.1 + 11.2). Dual language. Model Router custom |
-| **Infra** | Kubernetes con ArgoCD. Firecracker para aislamiento de agentes. IaC con Terraform |
-| **CI/CD** | Pipeline completo con evals (regresion, alucinacion, tool-calling, seguridad, adversarial) |
+| **Stack** | Stack completo §10.1 + §10.2. Dual language. Model Router custom. |
+| **Infra** | Kubernetes con ArgoCD. Firecracker para aislamiento de agentes. IaC con Terraform. |
+| **CI/CD** | Pipeline completo con evals (regresión, alucinación, tool-calling, seguridad, adversarial) |
 | **Model Router** | Custom con clasificador de complejidad + circuit breakers + budget enforcement |
 | **Observabilidad** | Stack completo: OTEL + Prometheus + Grafana + Langfuse + alerting AI-native |
-| **Context engineering** | Suite completa [-> 9. Context Engineering: La Nueva Disciplina]: CONVENTIONS, ARCHITECTURE, STACK, SCHEMA, INFRA, CONSTRAINTS, RUNBOOKS, AGENTS |
-| **Desarrollo** | PO + Operador + enjambre ([Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia)) |
+| **Context engineering** | Suite completa §8.2: CONVENTIONS, ARCHITECTURE, STACK, SCHEMA, INFRA, CONSTRAINTS, RUNBOOKS, AGENTS |
+| **Desarrollo** | PO + Operador + enjambre (Xanpan::Agents) |
 | **Costo operativo mensual** | $500-5000+ |
 
----
+- ---
 
-## 13. Conexion con el Corpus Xanpan::Agents
 
-Este documento funciona de forma autonoma como stack de referencia para cualquier proyecto construido con asistencia de LLM. Cuando se usa en conjunto con el corpus Xanpan::Agents, forma parte de una trinidad:
+# 12. Conexión con el Corpus Xanpan::Agents (opcional)
+
+- Este documento funciona de forma autónoma.
+- Es un stack de referencia para cualquier proyecto construido con asistencia de LLM.
+- Pero cuando se usa en conjunto con el corpus Xanpan::Agents, forma parte de una trinidad:
+
 
 ```
-+-----------------------------------------+
-|        CHAPTER 0: El Operador           |
-|        Solitario                        |
-|   Bootstrap: DONDE empezar             |
-|   (Punto de entrada al corpus)          |
-+-----------------+-----------------------+
-                  |
-+-----------------+-----------------------+
-|          STACK::LLM v1.0               |  <- Este documento
-|   Arquitectura: CON QUE construir      |
-|   (Universal, desde Fase 1)            |
-+-----------------+-----------------------+
-                  |
-       +----------+----------+
-       |                     |
-+------+------+     +-------+---------+
-| SWARM::OPS  |     | XANPAN::AGENTS  |
-| v1.0        |     | v2.1            |
-| Operaciones |     | Metodologia     |
-| (Fase 3-4)  |     | (Fase 4)        |
-+-------------+     +-----------------+
+┌──────────────────────────────────────────┐
+│        CHAPTER 0: El Operador            │
+│        Solitario                         │
+│   Bootstrap: DÓNDE empezar              │
+│   (Punto de entrada al corpus)           │
+└────────────────┬─────────────────────────┘
+                 │
+┌────────────────┴─────────────────────────┐
+│          STACK::LLM v1.0                 │ ← Este documento
+│   Arquitectura: CON QUÉ construir       │
+│   (Universal, desde Fase 1)             │
+└────────────────┬─────────────────────────┘
+                 │
+      ┌──────────┴──────────┐
+      │                     │
+┌─────┴───────┐     ┌──────┴──────────┐
+│ SWARM::OPS  │     │ XANPAN::AGENTS  │
+│ v1.0        │     │ v2.1            │
+│ Operaciones │     │ Metodología     │
+│ (Fase 3-4)  │     │ (Fase 4)        │
+└─────────────┘     └─────────────────┘
 ```
 
-**Orden de lectura:** [Chapter 0](urn:fxsl:kb:chapter0-operador-solitario) -> STACK::LLM -> [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) -> [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia). Chapter 0 dice por donde empezar. STACK::LLM dice con que construir. Swarm::Ops dice como operar. Xanpan::Agents dice como gobernar.
+- **Orden de lectura recomendado:** Chapter 0 → STACK::LLM → Swarm::Ops → Xanpan::Agents.
+- Chapter 0 dice por dónde empezar.
+- STACK::LLM dice con qué construir.
+- Swarm::Ops dice cómo operar.
+- Xanpan::Agents dice cómo gobernar.
 
-STACK::LLM es universal: aplica a los tres perfiles de proyecto. [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia) y [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) se activan cuando el proyecto alcanza el Perfil Completo.
 
-### 13.1 Mapa de Referencias para Perfil Completo
+- **STACK::LLM es universal.** Aplica a los tres perfiles de proyecto.
+- Xanpan::Agents y Swarm::Ops se activan solo cuando el proyecto alcanza el Perfil Completo.
 
-| Concepto | STACK::LLM | [Xanpan::Agents](urn:fxsl:kb:xanpan-agents-metodologia) | [Swarm::Ops](urn:fxsl:kb:swarm-ops-metodologia) |
+
+- **Mapa de referencias para Perfil Completo:**
+
+
+| Concepto | STACK::LLM | Xanpan::Agents | Swarm::Ops |
 |---|---|---|---|
-| Model Router | [-> 10. Capa de Agentes] (tiers, budget) | [Xanpan::Agents &sect;9.3](urn:fxsl:kb:xanpan-agents-metodologia) (conceptual) | -- |
-| Evals | [-> 10. Capa de Agentes] (pipeline) | [Xanpan::Agents &sect;7.2](urn:fxsl:kb:xanpan-agents-metodologia) (practica obligatoria) | [Swarm::Ops &sect;4.3](urn:fxsl:kb:swarm-ops-metodologia) (CI insuficiente) |
-| Context Engineering | [-> 9. Context Engineering: La Nueva Disciplina] (artefactos, economia) | [Xanpan::Agents &sect;2.2](urn:fxsl:kb:xanpan-agents-metodologia) (responsabilidad Operador) | -- |
-| Seguridad | [-> 7. Seguridad] (OWASP, aislamiento) | [Xanpan::Agents &sect;13](urn:fxsl:kb:xanpan-agents-metodologia) (gobernanza) | [Swarm::Ops &sect;8](urn:fxsl:kb:swarm-ops-metodologia) (Security-by-Swarm) |
-| Observabilidad | [-> 6. Observabilidad] (capas) | [Xanpan::Agents &sect;12](urn:fxsl:kb:xanpan-agents-metodologia) (dashboard 5D) | [Swarm::Ops &sect;7](urn:fxsl:kb:swarm-ops-metodologia) (agente-observer) |
-| CI/CD | [-> 5. Infraestructura y Operaciones] (pipeline) | -- | [Swarm::Ops &sect;4](urn:fxsl:kb:swarm-ops-metodologia) (sistema nervioso) |
-| Deploy | [-> 5. Infraestructura y Operaciones] (feature flags) | [Xanpan::Agents &sect;10.1](urn:fxsl:kb:xanpan-agents-metodologia) (aprobacion humana) | [Swarm::Ops &sect;4.2](urn:fxsl:kb:swarm-ops-metodologia) (flujos concurrentes) |
+| Model Router | §9.1 (tiers, budget) | §9.3 (conceptual) | — |
+| Evals | §9.4 (pipeline) | §7.2 (práctica obligatoria) | §4.3 (CI insuficiente) |
+| Context Engineering | §8 (artefactos, economía) | §2.2 (responsabilidad Operador) | — |
+| Seguridad | §6 (OWASP, aislamiento) | §13 (gobernanza) | §8 (Security-by-Swarm) |
+| Observabilidad | §5 (3 capas) | §12 (dashboard 5D) | §7 (agente-observer) |
+| CI/CD | §4.2 (pipeline) | — | §4 (sistema nervioso) |
+| Deploy | §4.3 (feature flags) | §10.1 (aprobación humana) | §4.2 (flujos concurrentes) |
+
+- ---
+
+
+- *STACK::LLM v1.0.
+- Febrero 2026.*
+
+
+- *Este stack no es una lista de tecnologías favoritas.
+- Es una arquitectura diseñada desde la perspectiva de cómo los LLMs realmente procesan y generan código.
+- Cada decisión prioriza:
+- (1) reducir errores de generación, (2) mantener costos controlados, (3) permitir evolución sin lock-in, y (4) operar de forma segura en producción.
+- Aplica igual al inventario de un kiosco que al enjambre más ambicioso.
+- Porque en ambos casos, tu co-desarrollador es un modelo de lenguaje, y merece las mejores condiciones de trabajo.*
+
