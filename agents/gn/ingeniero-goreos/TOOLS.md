@@ -20,9 +20,6 @@ _manifest:
 
 | Topic / Domain | URN |
 |----------------|-----|
-| **GORE_OS** | |
-| Blueprint, dominios, vision | Leer /Users/felixsanhueza/Developer/goreos/docs/blueprint/* |
-| Stack, arquitectura | Leer /Users/felixsanhueza/Developer/goreos/stack.md |
 | **GORENUBLE** | |
 | Estructura GORE, organigrama | urn:gn:kb:intro-gores-nuble |
 | Organigrama, divisiones, departamentos | urn:gn:kb:organigrama |
