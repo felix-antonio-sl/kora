@@ -1713,6 +1713,10 @@ Catalog:
     title: DS 7 — Norma Tecnica de Seguridad de la Informacion y Ciberseguridad
     file: knowledge/tde/normas_tecnicas/nt-seguridad-ciberseguridad.md
     status: published
+  - urn: urn:tde:kb:ley-21719-datos-personales
+    title: Ley 21.719 — Protección de Datos Personales
+    file: knowledge/tde/leyes/ley-21719-datos-personales.md
+    status: published
   - urn: urn:tde:kb:ley-19880-procedimiento-administrativo
     title: Ley N 19.880 -- Bases Procedimientos Administrativos
     file: knowledge/tde/leyes/ley-19880-procedimiento-administrativo.md
@@ -1720,6 +1724,10 @@ Catalog:
   - urn: urn:tde:kb:decreto-4-procedimiento-digital
     title: Decreto N 4 -- Reglamento Procedimientos Administrativos Electrónicos
     file: knowledge/tde/leyes/decreto-4-procedimiento-digital.md
+    status: published
+  - urn: urn:tde:kb:legislacion-ia-chile
+    title: Proyecto de Ley de Inteligencia Artificial — Chile
+    file: knowledge/tde/leyes/legislacion-ia-chile.md
     status: published
   - urn: urn:tde:kb:ley-21658-ciberseguridad
     title: Ley N 21.658 -- Crea Secretaría de Gobierno Digital
