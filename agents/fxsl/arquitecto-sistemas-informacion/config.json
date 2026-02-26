@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:algebraic-databases",
     "urn:fxsl:kb:unified-multimodel",
@@ -17,7 +21,12 @@
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "web_search", "artifact_generate"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "web_search",
+      "artifact_generate"
+    ],
     "deny": []
   },
   "sub_agents": {

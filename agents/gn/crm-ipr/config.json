@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:crm-ipr-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:gn:kb:gestion-ipr",
     "urn:gn:kb:selector-ipr",
@@ -18,7 +22,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

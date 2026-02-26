@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:ops:agent-bootstrap:ci-assistant-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:kora:kb:hub-agentes",
     "urn:kora:kb:test-strategy",
@@ -8,7 +12,11 @@
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "web_search"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "web_search"
+    ],
     "deny": []
   },
   "sub_agents": {

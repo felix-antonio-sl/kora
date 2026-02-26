@@ -25,7 +25,6 @@
   },
   "sub_agents": {},
   "limits": {
-    "tier_default": "T2",
     "require_ac_coverage": true,
     "require_test_independence": true,
     "require_determinism": true,
@@ -34,5 +33,8 @@
   "execution_environment": {
     "sandboxed": true,
     "note": "Tests se generan y ejecutan en entorno sandboxed. No hay acceso a produccion ni escritura de codigo de produccion."
+  },
+  "model_routing": {
+    "tier_default": "T2"
   }
 }

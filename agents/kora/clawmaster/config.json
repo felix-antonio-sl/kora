@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:clawmaster-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:kora:kb:00-toc",
     "urn:kora:kb:00-fundamentos-previos",

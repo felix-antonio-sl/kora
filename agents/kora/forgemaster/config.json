@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:forgemaster-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:kora:kb:agent-spec-md",
     "urn:kora:kb:gobernanza",

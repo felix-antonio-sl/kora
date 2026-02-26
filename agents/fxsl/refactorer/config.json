@@ -29,15 +29,22 @@
   },
   "sub_agents": {},
   "limits": {
-    "tier_default": "T2",
     "require_tests_before_refactor": true,
     "require_metrics_before_after": true,
     "max_refactorings_per_session": 20,
     "behavior_change_policy": "abort_and_revert"
   },
   "context_engineering": {
-    "required": ["CONVENTIONS.md"],
-    "recommended": ["ARCHITECTURE.md", "SCHEMA.md"],
+    "required": [
+      "CONVENTIONS.md"
+    ],
+    "recommended": [
+      "ARCHITECTURE.md",
+      "SCHEMA.md"
+    ],
     "rule_70_30": "70% contexto relevante a la zona de refactoring, 30% contexto de sistema"
+  },
+  "model_routing": {
+    "tier_default": "T2"
   }
 }

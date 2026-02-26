@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:tde:agent-bootstrap:digitrans-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:gov:kb:intro-tde",
     "urn:tde:kb:principios-objetivos",
@@ -37,7 +41,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

@@ -27,7 +27,6 @@
   },
   "sub_agents": {},
   "limits": {
-    "tier_default": "T1",
     "tier_deep_analysis": "T2",
     "no_goodhart": true,
     "require_source_per_metric": true,
@@ -35,5 +34,8 @@
     "no_fabricated_data": true,
     "stale_threshold_days": 5,
     "min_cycles_for_trend": 2
+  },
+  "model_routing": {
+    "tier_default": "T1"
   }
 }

@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:ops:agent-bootstrap:verificador-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:xanpan-agents-metodologia",
     "urn:fxsl:kb:swarm-ops-metodologia",
@@ -25,11 +29,32 @@
   },
   "verification": {
     "layers_by_risk": {
-      "lectura": [1, 2, 3],
-      "escritura": [1, 2, 3, 4],
-      "destructiva": [1, 2, 3, 4, 5]
+      "lectura": [
+        1,
+        2,
+        3
+      ],
+      "escritura": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "destructiva": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
-    "layer_order": ["CI", "REGRESION", "DIVERSIDAD", "SEGURIDAD", "HUMANA"],
+    "layer_order": [
+      "CI",
+      "REGRESION",
+      "DIVERSIDAD",
+      "SEGURIDAD",
+      "HUMANA"
+    ],
     "fail_fast": true,
     "human_gate_timeout_min": 60,
     "diversity_enforcement": "strict",

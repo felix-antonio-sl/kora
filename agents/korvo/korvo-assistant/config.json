@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:korvo:agent-bootstrap:korvo-assistant-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:kora:kb:agent-spec-md"
   ],
@@ -6,7 +10,12 @@
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "web_search", "domain_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "web_search",
+      "domain_route"
+    ],
     "deny": []
   },
   "sub_agents": {

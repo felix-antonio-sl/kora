@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:dgi-virtual-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:mgmt:kb:estructura-estado-chile",
     "urn:gn:kb:loc-gore",
@@ -17,8 +21,13 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
-    "deny": ["web_search"]
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
+    "deny": [
+      "web_search"
+    ]
   },
   "sub_agents": {
     "max_depth": 0,

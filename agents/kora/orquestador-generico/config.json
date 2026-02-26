@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:orquestador-generico-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:kora:kb:hub-agentes"
   ],
@@ -6,7 +10,11 @@
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "orchestrate"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "orchestrate"
+    ],
     "deny": []
   },
   "sub_agents": {

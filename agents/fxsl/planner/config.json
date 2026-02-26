@@ -25,10 +25,12 @@
   },
   "sub_agents": {},
   "limits": {
-    "tier_default": "T3",
     "require_value_per_story": true,
     "require_analog_krs": true,
     "max_stories_per_epic": 10,
     "max_objectives_per_cycle": 3
+  },
+  "model_routing": {
+    "tier_default": "T3"
   }
 }

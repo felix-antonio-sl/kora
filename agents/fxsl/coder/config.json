@@ -28,8 +28,6 @@
   },
   "sub_agents": {},
   "limits": {
-    "tier_default": "T2",
-    "tier_complex": "T3",
     "require_plan_approval": true,
     "require_tdd": true,
     "require_types_before_code": true,
@@ -37,8 +35,20 @@
     "zero_any_policy": true
   },
   "context_engineering": {
-    "required": ["CONVENTIONS.md", "SCHEMA.md"],
-    "recommended": ["ARCHITECTURE.md", "STACK.md"],
+    "required": [
+      "CONVENTIONS.md",
+      "SCHEMA.md"
+    ],
+    "recommended": [
+      "ARCHITECTURE.md",
+      "STACK.md"
+    ],
     "rule_70_30": "70% contexto relevante a la tarea, 30% contexto de sistema"
+  },
+  "model_routing": {
+    "tier_default": "T2",
+    "tier_overrides": {
+      "complejo": "T3"
+    }
   }
 }

@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:ingeniero-software-composicional-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:seven-sketches",
     "urn:fxsl:kb:coalgebras",
@@ -9,7 +13,11 @@
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "web_search"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "web_search"
+    ],
     "deny": []
   },
   "sub_agents": {

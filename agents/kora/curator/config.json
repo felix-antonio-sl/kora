@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:curator-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:kora:kb:md-spec",
     "urn:kora:kb:spec-md",

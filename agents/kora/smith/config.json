@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:smith-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "status": "deprecated",
   "successor": "kora/forgemaster",
   "allowed_kb": [
@@ -9,7 +13,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:erp-gore-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:gn:kb:gestion-prpto",
     "urn:gn:kb:manual-presupuesto",
@@ -24,7 +28,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

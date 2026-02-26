@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:banca-inversion-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:gn:kb:gestion-prpto",
     "urn:gn:kb:ley-presupuestos-2026-partida-31",
@@ -19,7 +23,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

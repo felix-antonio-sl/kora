@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:orko:agent-bootstrap:arquitecto-orko-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:orko:kb:orko-fundamentos",
     "urn:orko:kb:orko-arquitectura",
@@ -11,7 +15,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

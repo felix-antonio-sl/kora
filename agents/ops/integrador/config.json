@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:ops:agent-bootstrap:integrador-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:xanpan-agents-metodologia",
     "urn:fxsl:kb:swarm-ops-metodologia",

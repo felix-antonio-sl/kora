@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:gobernador-virtual-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:mgmt:kb:estructura-estado-chile",
     "urn:gn:kb:loc-gore",
@@ -21,7 +25,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

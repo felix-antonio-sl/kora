@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:asesor-juridico-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:gn:kb:organigrama",
     "urn:gn:kb:flujos-aprobacion-documentos",
@@ -20,7 +24,10 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
     "deny": []
   },
   "sub_agents": {

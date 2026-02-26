@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:abogado-legislacion-medica-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:legal:kb:index",
     "urn:legal:kb:intro-estatutos",
@@ -23,8 +27,14 @@
     "mode": "strict"
   },
   "tools": {
-    "allow": ["search_kb", "resolve_urn"],
-    "deny": ["web_search", "code_execution"]
+    "allow": [
+      "search_kb",
+      "resolve_urn"
+    ],
+    "deny": [
+      "web_search",
+      "code_execution"
+    ]
   },
   "sub_agents": {
     "max_depth": 0,

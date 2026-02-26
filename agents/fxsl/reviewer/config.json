@@ -10,12 +10,6 @@
     "urn:fxsl:kb:chapter0-operador-solitario"
   ],
   "sandbox": true,
-  "model_diversity": {
-    "rule": "MUST use different provider than coder",
-    "if_coder_uses": "anthropic",
-    "reviewer_must_use": "openai|google|other",
-    "abort_if_same_provider": true
-  },
   "tools": {
     "allow": [
       "code_read",
@@ -32,7 +26,6 @@
   },
   "sub_agents": {},
   "limits": {
-    "tier_default": "T2",
     "max_hallazgos_before_reject": 3,
     "require_evidence_per_hallazgo": true,
     "require_suggestion_per_hallazgo": true,
@@ -43,5 +36,14 @@
     "MAYOR": "Logica incorrecta, contrato de tipos roto, test faltante, AC no cubierto",
     "MENOR": "Estilo, naming, estructura mejorable, documentacion faltante",
     "NOTA": "Sugerencia de mejora, alternativa mas idiomatica, observacion"
+  },
+  "model_routing": {
+    "tier_default": "T2",
+    "diversity": {
+      "rule": "MUST use different provider than coder",
+      "if_coder_uses": "anthropic",
+      "reviewer_must_use": "openai|google|other",
+      "abort_if_same_provider": true
+    }
   }
 }

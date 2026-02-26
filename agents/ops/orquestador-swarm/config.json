@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:ops:agent-bootstrap:orquestador-swarm-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:xanpan-agents-metodologia",
     "urn:fxsl:kb:swarm-ops-metodologia",
@@ -26,21 +30,51 @@
   },
   "golden_paths": {
     "estandar": {
-      "steps": ["lint", "types", "tests", "eval_regresion", "merge", "deploy_canary", "expand"],
+      "steps": [
+        "lint",
+        "types",
+        "tests",
+        "eval_regresion",
+        "merge",
+        "deploy_canary",
+        "expand"
+      ],
       "auto_approve": true
     },
     "destructiva": {
-      "steps": ["lint", "types", "tests", "eval_regresion", "eval_seguridad", "hold", "aprobacion_operador", "deploy_canary_agresivo"],
+      "steps": [
+        "lint",
+        "types",
+        "tests",
+        "eval_regresion",
+        "eval_seguridad",
+        "hold",
+        "aprobacion_operador",
+        "deploy_canary_agresivo"
+      ],
       "auto_approve": false,
       "requires_human_approval": true
     },
     "infraestructura": {
-      "steps": ["intent", "iac_generation", "plan", "diff_review", "apply", "verify", "drift_monitor"],
+      "steps": [
+        "intent",
+        "iac_generation",
+        "plan",
+        "diff_review",
+        "apply",
+        "verify",
+        "drift_monitor"
+      ],
       "auto_approve": false,
       "requires_human_approval": true
     },
     "hotfix": {
-      "steps": ["diagnose", "fix_test", "eval_express", "deploy_directo"],
+      "steps": [
+        "diagnose",
+        "fix_test",
+        "eval_express",
+        "deploy_directo"
+      ],
       "auto_approve": true,
       "auto_rollback": true
     }
@@ -49,7 +83,11 @@
     "queue_threshold": 20,
     "reduction_factor": 0.5,
     "drain_check_interval_min": 5,
-    "redirect_tasks": ["analysis", "refactoring", "planning"]
+    "redirect_tasks": [
+      "analysis",
+      "refactoring",
+      "planning"
+    ]
   },
   "circuit_breakers": {
     "cascade_deploys": {
@@ -69,5 +107,7 @@
       "backstop_alerts_required": true
     }
   },
-  "tier": "T1"
+  "model_routing": {
+    "tier_default": "T1"
+  }
 }

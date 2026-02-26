@@ -1,13 +1,22 @@
 {
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:fx-tensiones"
   ],
   "sandbox": {
-    "mode": "permissive"
+    "mode": "isolated"
   },
   "tools": {
-    "allow": ["search_kb", "resolve_urn"],
-    "deny": ["code_execution"]
+    "allow": [
+      "search_kb",
+      "resolve_urn"
+    ],
+    "deny": [
+      "code_execution"
+    ]
   },
   "sub_agents": {
     "max_depth": 0,

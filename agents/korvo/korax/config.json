@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:korvo:agent-bootstrap:korax-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [],
   "sandbox": {
     "mode": "permissive",
@@ -60,7 +64,12 @@
   "extensions": {
     "activation_policy": "user-explicit",
     "rationale": "Extensiones A-D inactivas por defecto (P4). Activación requiere aprobación explícita del operador, salvo delegation_scope ⊇ maintenance.",
-    "available": ["A_waiting_monitor", "B_criticality", "C_observability", "D_dependency_graph"]
+    "available": [
+      "A_waiting_monitor",
+      "B_criticality",
+      "C_observability",
+      "D_dependency_graph"
+    ]
   },
   "delegation": {
     "default_ttl_days": 7,

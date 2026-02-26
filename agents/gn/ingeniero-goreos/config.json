@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:ingeniero-goreos-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:gn:kb:intro-gores-nuble",
     "urn:gn:kb:organigrama",
@@ -25,7 +29,13 @@
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "file_read", "file_write", "web_search"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "file_read",
+      "file_write",
+      "web_search"
+    ],
     "deny": []
   },
   "sub_agents": {

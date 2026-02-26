@@ -1,10 +1,19 @@
 {
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [],
   "sandbox": {
     "mode": "permissive"
   },
   "tools": {
-    "allow": ["catalog_resolve", "kb_route", "web_search", "artifact_generate"],
+    "allow": [
+      "catalog_resolve",
+      "kb_route",
+      "web_search",
+      "artifact_generate"
+    ],
     "deny": []
   },
   "sub_agents": {

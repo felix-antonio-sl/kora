@@ -1,4 +1,8 @@
 {
+  "_manifest": {
+    "urn": "urn:ops:agent-bootstrap:deployer-config:1.0.0",
+    "type": "bootstrap_config"
+  },
   "allowed_kb": [
     "urn:fxsl:kb:xanpan-agents-metodologia",
     "urn:fxsl:kb:swarm-ops-metodologia",
@@ -26,7 +30,11 @@
   "deploy": {
     "canary": {
       "initial_percentage": 5,
-      "expansion_steps": [25, 50, 100],
+      "expansion_steps": [
+        25,
+        50,
+        100
+      ],
       "observation_window_min": 15
     },
     "fast_track": {
