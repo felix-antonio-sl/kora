@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:orko:agent-bootstrap:arquitecto-orko-config:1.0.0",
+    "urn": "urn:orko:agent-bootstrap:arquitecto-orko-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [

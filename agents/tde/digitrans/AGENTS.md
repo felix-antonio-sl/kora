@@ -50,3 +50,9 @@ _manifest:
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio TDE → CONTEXT_SHIFT → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** digitrans opera como agente raiz en namespace tde. No es sub-agente.
+- **Sub-agentes:** No declara sub-agentes (max_depth=0, max_concurrent=0).
+- **Disipacion:** No aplica — agente raiz sin herencia de personality ni operator context.

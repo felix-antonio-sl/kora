@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:tde:agent-bootstrap:digitrans-config:1.0.0",
+    "urn": "urn:tde:agent-bootstrap:digitrans-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
