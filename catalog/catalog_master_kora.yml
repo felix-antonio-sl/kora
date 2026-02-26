@@ -1099,11 +1099,11 @@ Catalog:
     file: knowledge/gn/manuales/manual-flotas.md
     status: published
   - urn: urn:gn:kb:manual-presupuesto
-    title: Manual de Formulación y Ejecución Presupuestaria
+    title: 'Manual 1.1: Formulación y Ejecución Presupuestaria'
     file: knowledge/gn/manuales/manual-presupuesto.md
     status: published
   - urn: urn:gn:kb:manual-tesoreria
-    title: Manual de Tesorería y Gestión de Ingresos
+    title: 'Manual 1.3: Tesorería y Gestión de Ingresos'
     file: knowledge/gn/manuales/manual-tesoreria.md
     status: published
   - urn: urn:gn:kb:manual-bienestar
@@ -1123,7 +1123,7 @@ Catalog:
     file: knowledge/gn/manuales/manual-activo-fijo.md
     status: published
   - urn: urn:gn:kb:manual-remuneraciones
-    title: Manual de Remuneraciones y Compensaciones
+    title: 'Manual 3.2: Remuneraciones y Compensaciones'
     file: knowledge/gn/manuales/manual-remuneraciones.md
     status: published
   - urn: urn:gn:kb:manual-operacional-dgi
@@ -1587,122 +1587,163 @@ Catalog:
     title: Análisis de la Legislación de Inteligencia Artificial en Chile
     file: knowledge/legal/legislacion_ia_chile.md
     status: published
-  - urn: urn:tde:kb:catalogo-cpat-nuble
-    title: 'Catálogo CPAT Ñuble: Análisis de Madurez de Trámites Digitales'
-    file: knowledge/tde/guias/catalogo_cpat_nuble.md
+  - urn: urn:tde:kb:guia-evaltic
+    title: 'Guía Técnica: Marco para las Inversiones y el Gasto en Gobierno Digital
+      (EVALTIC)'
+    file: knowledge/tde/guias/guia-evaltic.md
     status: published
-  - urn: urn:tde:kb:diseno-servicios
-    title: Recomendaciones para el Diseño de Servicios en el Estado
-    file: knowledge/tde/guias/diseno_servicios.md
+  - urn: urn:tde:kb:guia-gestion-tic
+    title: Orientaciones básicas para la gestión de TIC
+    file: knowledge/tde/guias/guia-gestion-tic.md
     status: published
-  - urn: urn:tde:kb:reglamento-ds4
-    title: Reglamento de Transformación Digital del Estado (DS N° 4/2020 SEGPRES)
-    file: knowledge/tde/guias/reglamento_tde_ds4.md
+  - urn: urn:tde:kb:guia-rapida-cpat
+    title: Guía rápida CPAT
+    file: knowledge/tde/guias/guia-rapida-cpat.md
     status: published
-  - urn: urn:tde:kb:rat-datos-personales
-    title: Registro de Actividades de Tratamiento de Datos Personales (RAT)
-    file: knowledge/tde/guias/rat_datos_personales.md
+  - urn: urn:tde:kb:guia-estandares-datos-abiertos
+    title: Estándares para apertura y reutilización de Datos Abiertos
+    file: knowledge/tde/guias/guia-estandares-datos-abiertos.md
     status: published
-  - urn: urn:tde:kb:sistema-tde-2025
-    title: Sistema de Transformación Digital (STD) 2025
-    file: knowledge/tde/guias/sistema_tde_2025.md
+  - urn: urn:tde:kb:guia-anonimizacion-datos
+    title: Guía Introductoria a la Anonimización de Datos
+    file: knowledge/tde/guias/guia-anonimizacion-datos.md
     status: published
-  - urn: urn:tde:kb:cpat-completa
-    title: 'Guía CPAT Completa: Catálogo de Procedimientos Administrativos y Tramitaciones'
-    file: knowledge/tde/guias/cpat_completa.md
+  - urn: urn:tde:kb:guia-registro-tratamiento-datos
+    title: Registro de Actividades de Tratamiento (RAT)
+    file: knowledge/tde/guias/guia-registro-tratamiento-datos.md
     status: published
-  - urn: urn:tde:kb:evaltic
-    title: 'Guía Técnica EVALTIC: Marco para Inversiones y Gasto en Gobierno Digital'
-    file: knowledge/tde/guias/evaltic.md
+  - urn: urn:tde:kb:guia-calidad-web
+    title: Guía de Evaluación de Calidad en Sitios Web y Servicios Digitales del Estado
+    file: knowledge/tde/guias/guia-calidad-web.md
     status: published
-  - urn: urn:tde:kb:seguridad-ciberseguridad
-    title: Guía Técnica de Seguridad de la Información y Ciberseguridad
-    file: knowledge/tde/guias/seguridad_ciberseguridad_v1.md
+  - urn: urn:tde:kb:guia-marco-gestion-datos
+    title: 'Guía Técnica: Marco de Referencia de Gestión de Datos del Estado (MGDE)'
+    file: knowledge/tde/guias/guia-marco-gestion-datos.md
     status: published
-  - urn: urn:tde:kb:mgde
-    title: Marco de Referencia de Gestión de Datos del Estado (MGDE)
-    file: knowledge/tde/guias/mgde.md
-    status: published
-  - urn: urn:tde:kb:metadatos-documentos
+  - urn: urn:tde:kb:guia-metadatos-documentos
     title: Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos
-    file: knowledge/tde/guias/metadatos_documentos.md
+    file: knowledge/tde/guias/guia-metadatos-documentos.md
     status: published
-  - urn: urn:tde:kb:orientaciones-gestion-tic
-    title: Orientaciones Básicas para la Gestión de TIC
-    file: knowledge/tde/guias/orientaciones_gestion_tic.md
+  - urn: urn:tde:kb:guia-sistema-tde-2025
+    title: Guía Metodológica del Sistema de Transformación Digital 2025
+    file: knowledge/tde/guias/guia-sistema-tde-2025.md
     status: published
-  - urn: urn:tde:kb:anonimizacion-datos
-    title: Guía de Anonimización de Datos
-    file: knowledge/tde/guias/anonimizacion_datos_v2.md
+  - urn: urn:tde:kb:guia-seguridad-ciberseguridad
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad
+    file: knowledge/tde/guias/guia-seguridad-ciberseguridad.md
     status: published
-  - urn: urn:tde:kb:calidad-web
-    title: Guía de Calidad Web y Servicios Digitales
-    file: knowledge/tde/guias/calidad_web.md
+  - urn: urn:tde:kb:guia-metodologia-proyectos
+    title: Metodología para la gestión de proyectos TIC
+    file: knowledge/tde/guias/guia-metodologia-proyectos.md
     status: published
-  - urn: urn:tde:kb:simple-saas
-    title: Plataforma SIMPLE (Modalidad SaaS)
-    file: knowledge/tde/plataformas/simple_saas.md
+  - urn: urn:tde:kb:guia-cloud-publica
+    title: Recomendaciones técnicas para adquisición de Cloud Pública en OAE
+    file: knowledge/tde/guias/guia-cloud-publica.md
+    status: published
+  - urn: urn:tde:kb:manual-notificaciones-inicio
+    title: Manual de inicio — Plataforma de Notificaciones Electronicas del Estado
+    file: knowledge/tde/plataformas/manual-notificaciones-inicio.md
+    status: published
+  - urn: urn:tde:kb:manual-integracion-claveunica
+    title: Manual de integración de ClaveÚnica
+    file: knowledge/tde/plataformas/manual-integracion-claveunica.md
+    status: published
+  - urn: urn:tde:kb:guia-voz-tono
+    title: Guia de Voz y Tono — Plataformas de Gobierno Digital
+    file: knowledge/tde/plataformas/guia-voz-tono.md
+    status: published
+  - urn: urn:tde:kb:manual-coordinadora-tde
+    title: Manual del Coordinador/a de Transformacion Digital
+    file: knowledge/tde/plataformas/manual-coordinadora-tde.md
+    status: published
+  - urn: urn:tde:kb:glosario-simple
+    title: Glosario SIMPLE
+    file: knowledge/tde/plataformas/glosario-simple.md
+    status: published
+  - urn: urn:tde:kb:manual-notificaciones-atencion-ciudadana
+    title: Manual de atencion ciudadana — Plataforma de Notificaciones
+    file: knowledge/tde/plataformas/manual-notificaciones-atencion-ciudadana.md
+    status: published
+  - urn: urn:tde:kb:manual-integracion-notificaciones
+    title: Manual de integracion — Plataforma de Notificaciones del Estado
+    file: knowledge/tde/plataformas/manual-integracion-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:manual-claveunica-boton
+    title: Manual de uso botón ClaveÚnica
+    file: knowledge/tde/plataformas/manual-claveunica-boton.md
+    status: published
+  - urn: urn:tde:kb:guia-diseno-servicios
+    title: Recomendaciones para el Diseno de Servicios en el Estado
+    file: knowledge/tde/plataformas/guia-diseno-servicios.md
     status: published
   - urn: urn:tde:kb:claveunica-tyc
-    title: Términos y Condiciones del Sistema de ClaveÚnica
-    file: knowledge/tde/plataformas/claveunica_tyc.md
+    title: Términos y condiciones de ClaveÚnica
+    file: knowledge/tde/plataformas/claveunica-tyc.md
     status: published
-  - urn: urn:tde:kb:pisee
-    title: Red de Interoperabilidad PISEE
-    file: knowledge/tde/plataformas/pisee.md
+  - urn: urn:tde:kb:manual-notificaciones-institucional
+    title: Manual usuario institucional — Plataforma de Notificaciones del Estado
+      (CasillaUnica)
+    file: knowledge/tde/plataformas/manual-notificaciones-institucional.md
     status: published
-  - urn: urn:tde:kb:docdigital
-    title: 'Plataforma DocDigital: Comunicaciones Oficiales del Estado'
-    file: knowledge/tde/plataformas/docdigital.md
-    status: published
-  - urn: urn:tde:kb:simple-saas-oae
-    title: Guía de Uso de SIMPLE (SaaS) para Órganos del Estado
-    file: knowledge/tde/plataformas/simple_saas_oae.md
-    status: published
-  - urn: urn:tde:kb:claveunica
-    title: Manual de Integración de ClaveÚnica
-    file: knowledge/tde/plataformas/claveunica.md
-    status: published
-  - urn: urn:tde:kb:nt-calidad-plataformas
-    title: Norma Técnica de Calidad y Funcionamiento de Plataformas (Decreto 11)
-    file: knowledge/tde/normas_tecnicas/nt_calidad_plataformas.md
-    status: published
-  - urn: urn:tde:kb:nt-interoperabilidad
-    title: Norma Técnica de Interoperabilidad (Decreto 12)
-    file: knowledge/tde/normas_tecnicas/nt_interoperabilidad.md
-    status: published
-  - urn: urn:tde:kb:nt-autenticacion
-    title: Norma Técnica de Autenticación (Decreto 9)
-    file: knowledge/tde/normas_tecnicas/nt_autenticacion.md
-    status: published
-  - urn: urn:tde:kb:nt-documentos-expedientes
-    title: Norma Técnica de Documentos y Expedientes Electrónicos (Decreto 10)
-    file: knowledge/tde/normas_tecnicas/nt_documentos_expedientes.md
+  - urn: urn:tde:kb:manual-simple-saas
+    title: Manual de uso SIMPLE en modalidad SaaS
+    file: knowledge/tde/plataformas/manual-simple-saas.md
     status: published
   - urn: urn:tde:kb:nt-notificaciones
-    title: Norma Técnica de Notificaciones (Decreto 8)
-    file: knowledge/tde/normas_tecnicas/nt_notificaciones.md
+    title: DS 8 — Norma Tecnica de Notificaciones
+    file: knowledge/tde/normas_tecnicas/nt-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:nt-autenticacion
+    title: DS 9 — Norma Tecnica de Autenticacion
+    file: knowledge/tde/normas_tecnicas/nt-autenticacion.md
+    status: published
+  - urn: urn:tde:kb:nt-plataformas-procedimientos
+    title: DS 11 — Norma Tecnica de Calidad y Funcionamiento de Plataformas Electronicas
+    file: knowledge/tde/normas_tecnicas/nt-plataformas-procedimientos.md
+    status: published
+  - urn: urn:tde:kb:nt-interoperabilidad
+    title: DS 12 — Norma Tecnica de Interoperabilidad
+    file: knowledge/tde/normas_tecnicas/nt-interoperabilidad.md
+    status: published
+  - urn: urn:tde:kb:nt-documentos-expedientes
+    title: DS 10 — Norma Tecnica de Documentos y Expedientes Electronicos
+    file: knowledge/tde/normas_tecnicas/nt-documentos-expedientes.md
     status: published
   - urn: urn:tde:kb:nt-seguridad-ciberseguridad
-    title: Norma Técnica de Seguridad de la Información y Ciberseguridad (Decreto
-      7)
-    file: knowledge/tde/normas_tecnicas/nt_seguridad_ciberseguridad.md
+    title: DS 7 — Norma Tecnica de Seguridad de la Informacion y Ciberseguridad
+    file: knowledge/tde/normas_tecnicas/nt-seguridad-ciberseguridad.md
     status: published
-  - urn: urn:tde:kb:ley-21180
-    title: 'Ley 21.180: Transformación Digital del Estado'
-    file: knowledge/tde/leyes/ley_21180_tde.md
+  - urn: urn:tde:kb:ley-19880-procedimiento-administrativo
+    title: Ley N 19.880 -- Bases Procedimientos Administrativos
+    file: knowledge/tde/leyes/ley-19880-procedimiento-administrativo.md
     status: published
-  - urn: urn:tde:kb:ley-19880
-    title: 'Ley 19.880: Bases de los Procedimientos Administrativos'
-    file: knowledge/tde/leyes/ley_19880_procedimientos.md
+  - urn: urn:tde:kb:decreto-4-procedimiento-digital
+    title: Decreto N 4 -- Reglamento Procedimientos Administrativos Electrónicos
+    file: knowledge/tde/leyes/decreto-4-procedimiento-digital.md
     status: published
-  - urn: urn:tde:kb:principios-objetivos
-    title: Principios y Objetivos Marco de la Transformación Digital del Estado
-    file: knowledge/tde/estrategia/principios_objetivos.md
+  - urn: urn:tde:kb:ley-21658-ciberseguridad
+    title: Ley N 21.658 -- Crea Secretaría de Gobierno Digital
+    file: knowledge/tde/leyes/ley-21658-ciberseguridad.md
+    status: published
+  - urn: urn:tde:kb:ley-21180-tde
+    title: Ley N 21.180 -- Transformación Digital del Estado
+    file: knowledge/tde/leyes/ley-21180-tde.md
+    status: published
+  - urn: urn:tde:kb:estrategia-datos
+    title: Estrategia de Datos de la Administración del Estado
+    file: knowledge/tde/estrategia/estrategia-datos.md
+    status: published
+  - urn: urn:tde:kb:estrategia-identidad-digital
+    title: Estrategia de Identidad Digital
+    file: knowledge/tde/estrategia/estrategia-identidad-digital.md
     status: published
   - urn: urn:tde:kb:gobierno-digital-2030
     title: Estrategia de Gobierno Digital 2030
-    file: knowledge/tde/estrategia/gobierno_digital_2030.md
+    file: knowledge/tde/estrategia/gobierno-digital-2030.md
+    status: published
+  - urn: urn:tde:kb:estrategia-capacitaciones-tde
+    title: Estrategia de Capacitaciones para la Transformación Digital del Estado
+    file: knowledge/tde/estrategia/estrategia-capacitaciones-tde.md
     status: published
   - urn: urn:gov:kb:capacitaciones-tde
     title: Estrategia de Capacitaciones para la Transformación Digital del Estado
