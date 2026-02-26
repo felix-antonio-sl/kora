@@ -12,18 +12,17 @@
     "urn:gn:kb:matriz-integracion-organica",
     "urn:gn:kb:erd-nuble-2024-2030",
     "urn:gn:kb:flujos-aprobacion-documentos",
-    "urn:tde:kb:ley-21180",
-    "urn:tde:kb:ley-19880",
+    "urn:tde:kb:ley-21180-tde",
+    "urn:tde:kb:ley-19880-procedimiento-administrativo",
     "urn:tde:kb:nt-documentos-expedientes",
     "urn:tde:kb:nt-interoperabilidad",
     "urn:tde:kb:nt-seguridad-ciberseguridad",
-    "urn:tde:kb:claveunica",
-    "urn:tde:kb:simple-saas",
-    "urn:tde:kb:docdigital",
+    "urn:tde:kb:manual-integracion-claveunica",
+    "urn:tde:kb:manual-simple-saas",
     "urn:orko:kb:orko-fundamentos",
     "urn:orko:kb:orko-arquitectura",
     "urn:orko:kb:orko-metodologia",
-    "urn:tde:kb:cpat-completa"
+    "urn:tde:kb:guia-rapida-cpat"
   ],
   "sandbox": {
     "mode": "permissive"

@@ -30,15 +30,14 @@ _manifest:
 | ERD, ejes estrategicos | urn:gn:kb:erd-nuble-2024-2030 |
 | Flujos aprobacion | urn:gn:kb:flujos-aprobacion-documentos |
 | **TDE** | |
-| Ley 21.180, procedimientos electronicos | urn:tde:kb:ley-21180 |
-| Ley 19.880, LBPA | urn:tde:kb:ley-19880 |
+| Ley 21.180, procedimientos electronicos | urn:tde:kb:ley-21180-tde |
+| Ley 19.880, LBPA | urn:tde:kb:ley-19880-procedimiento-administrativo |
 | Expediente electronico, DS 10 | urn:tde:kb:nt-documentos-expedientes |
 | Interoperabilidad, PISEE | urn:tde:kb:nt-interoperabilidad |
 | Seguridad, ciberseguridad | urn:tde:kb:nt-seguridad-ciberseguridad |
-| ClaveUnica | urn:tde:kb:claveunica |
-| SIMPLE | urn:tde:kb:simple-saas |
-| DocDigital | urn:tde:kb:docdigital |
-| CPAT, madurez | urn:tde:kb:cpat-completa |
+| ClaveUnica | urn:tde:kb:manual-integracion-claveunica |
+| SIMPLE | urn:tde:kb:manual-simple-saas |
+| CPAT, madurez | urn:tde:kb:guia-rapida-cpat |
 | **ORKO** | |
 | Axiomas, primitivos P1-P5 | urn:orko:kb:orko-fundamentos |
 | Arquitectura ORKO | urn:orko:kb:orko-arquitectura |
@@ -49,7 +48,7 @@ _manifest:
 | Domain | Keywords | State |
 |--------|----------|-------|
 | GORE | GORE, Nuble, FNDR, FRPD, division, departamento, IPR, rendicion, convenio, LOC, 19.175, presupuesto regional, CORE, gobernador, organigrama | S-GORE-KNOWLEDGE |
-| TDE | TDE, 21.180, ClaveUnica, SIMPLE, DocDigital, expediente electronico, interoperabilidad, PISEE, norma tecnica, decreto 7/10/12, CPAT, transformacion digital | S-TDE-KNOWLEDGE |
+| TDE | TDE, 21.180, ClaveUnica, SIMPLE, expediente electronico, interoperabilidad, norma tecnica, decreto 4/10/12, CPAT, transformacion digital | S-TDE-KNOWLEDGE |
 | METODOLOGIA | categoria, functor, composicion, IFML, C4, user story, test, tipo, morfismo, Effect | S-CONSULTANT |
 
 ## file_read

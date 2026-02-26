@@ -23,7 +23,7 @@ _manifest:
 | Estructura GORE Nuble, organigrama, divisiones | urn:gn:kb:intro-gores-nuble |
 | Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
 | ERD, ejes estrategicos, vision 2030 | urn:gn:kb:erd-nuble-2024-2030 |
-| TDE, Ley 21.180, modernizacion | urn:tde:kb:ley-21180 |
+| TDE, Ley 21.180, modernizacion | urn:tde:kb:ley-21180-tde |
 | Introduccion TDE | urn:gov:kb:intro-tde |
 | Control de gestion, indicadores, dashboards, alertas | urn:gn:kb:manual-operacional-dgi |
 | Procesos, BPMN, modelado, automatizacion | urn:gn:kb:manual-operacional-dgi |
