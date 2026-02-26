@@ -35,6 +35,6 @@ _manifest:
 | Nuble 250, proyectos emblematicos | urn:gn:kb:nuble-250 |
 | Indicadores, estadisticas regionales | urn:gn:kb:indicadores-nuble |
 | TDE, introduccion | urn:gov:kb:intro-tde |
-| Ley 21.180, TDE, modernizacion | urn:tde:kb:ley-21180 |
-| Clave Unica | urn:tde:kb:claveunica |
-| SIMPLE SaaS | urn:tde:kb:simple-saas |
+| Ley 21.180, TDE, modernizacion | urn:tde:kb:ley-21180-tde |
+| Clave Unica, integracion | urn:tde:kb:manual-integracion-claveunica |
+| SIMPLE SaaS, tramites digitales | urn:tde:kb:manual-simple-saas |

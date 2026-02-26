@@ -19,9 +19,9 @@
     "urn:gn:kb:nuble-250",
     "urn:gn:kb:indicadores-nuble",
     "urn:gov:kb:intro-tde",
-    "urn:tde:kb:ley-21180",
-    "urn:tde:kb:claveunica",
-    "urn:tde:kb:simple-saas"
+    "urn:tde:kb:ley-21180-tde",
+    "urn:tde:kb:manual-integracion-claveunica",
+    "urn:tde:kb:manual-simple-saas"
   ],
   "sandbox": {
     "mode": "strict"
