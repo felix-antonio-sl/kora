@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-crystallizer:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-crystallizer:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Ejecuta el Funtor G: {Decisiones + Practicas + Restricciones} → KORA/Spec-MD conforme a spec-md §1.2. Cristaliza conocimiento prescriptivo en documentos formales con reglas univocas.
+
+## I/O
+
+- **Input:** decisiones: Decision[] (decisiones explicitas/tacitas), practicas: Practice[] (convenciones informales), restricciones: Constraint[] (tecnicas, organizacionales, legales), plan: ArtifactPlan | null
+- **Output:** CrystallizedSpec (ver Signature Output)
 
 ## Procedimiento
 
@@ -64,5 +69,9 @@ Checks spec-md §8:
 - Referencias validas
 - Auto-suficiencia
 
-## Output
-Artefacto KORA/Spec-MD completo (frontmatter + cuerpo). Reporte de conformidad contra spec-md §8.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| artefacto | string | Artefacto KORA/Spec-MD completo (frontmatter + cuerpo) |
+| conformidad | object | Reporte de conformidad contra spec-md §8 |

@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-koraficator:1.1.0"
-  type: "skill"
-version: "1.1.0"
+  urn: "urn:kora:skill:curator-koraficator:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Ejecuta el Funtor F: DocHumano → KORA/MD conforme a md-spec §6. Transforma documentos humanos en artefactos descriptivos RAG-optimizados preservando fidelidad absoluta.
+
+## I/O
+
+- **Input:** documento_fuente: Document (documento humano a koraficiar), plan: ArtifactPlan | null (plan de CM-ARTIFACT-DESIGNER, si existe)
+- **Output:** KoraficationResult (ver Signature Output)
 
 ## Procedimiento
 
@@ -140,5 +145,10 @@ Reemplaza verificacion adversarial simple. Ejecutar siempre (no solo si >15K o a
    Status: FIDELIDAD COMPLETA | OMISIONES DETECTADAS (listar)
    ```
 
-## Output
-Artefacto KORA/MD completo (frontmatter + cuerpo). Metricas: FS (Fidelity Score, objetivo: 100%), CR (Compression Ratio, objetivo: >1.5 — >1.0 trivial, >1.5 objetivo, >2.0 excelente).
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| artefacto | string | Artefacto KORA/MD completo (frontmatter + cuerpo) |
+| FS | number | Fidelity Score (objetivo: 100%) |
+| CR | number | Compression Ratio (objetivo: >1.5) |

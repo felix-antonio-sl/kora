@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-designer:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-artifact-designer:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Planifica la estructura de un nuevo artefacto de conocimiento KORA: determina tipo, namespace, fuente, jerarquia de headings y metadatos.
+
+## I/O
+
+- **Input:** intencion: IntentClassification (del CM-INTENT-CLASSIFIER), fuentes: Document[] | null (documentos fuente si existen)
+- **Output:** ArtifactPlan (ver Signature Output)
 
 ## Procedimiento
 1. ELICITAR DOMINIO: ¿Que conocimiento captura? ¿Descriptivo(hechos) o prescriptivo(reglas)? ¿En que namespace vive? ¿Que fuentes tiene?
@@ -25,5 +30,15 @@ Planifica la estructura de un nuevo artefacto de conocimiento KORA: determina ti
 6. DEFINIR FRONTMATTER: urn, provenance(author, date, source), version(1.0.0), status(draft), tags(min 3), lang.
 7. Presentar plan al usuario: tabla con tipo, namespace, URN, estructura propuesta, fuentes, estrategia de ejecucion.
 
-## Output
-Plan de artefacto: {tipo, namespace, urn, fuente, largo_estimado, estrategia(directa|segmentada|segmentada+adversarial), estructura_propuesta[], frontmatter{}}. Presentar para aprobacion antes de ejecutar.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| tipo | enum(descriptivo\|prescriptivo) | Tipo de artefacto determinado |
+| namespace | string | Namespace KORA destino |
+| urn | string | URN asignado al artefacto |
+| fuente | string | Identificacion de fuente(s) |
+| largo_estimado | string | Estimacion de tokens del input |
+| estrategia | enum(directa\|segmentada\|segmentada+adversarial) | Estrategia de ejecucion |
+| estructura_propuesta | string[] | Headings planificados |
+| frontmatter | object | Metadata YAML planificada |

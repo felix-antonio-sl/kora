@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-editor:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-artifact-editor:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Modifica artefactos de conocimiento existentes preservando todos los invariantes de la spec correspondiente. Gestiona versionamiento semantico.
+
+## I/O
+
+- **Input:** artefacto: path | URN (artefacto existente), cambios: ChangeRequest (descripcion de modificaciones solicitadas)
+- **Output:** EditResult (ver Signature Output)
 
 ## Procedimiento
 1. LEER artefacto completo. Clasificar tipo (descriptivo/prescriptivo).
@@ -32,5 +37,12 @@ Modifica artefactos de conocimiento existentes preservando todos los invariantes
    - Major: cambio que invalida lecturas previas.
 6. VERIFICAR resultado contra checklist correspondiente (invocar CM-ARTIFACT-AUDITOR mentalmente).
 
-## Output
-Artefacto editado con version bumped. Reporte: {cambios_aplicados[], version_anterior, version_nueva, invariantes_preservados: bool}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| artefacto_editado | string | Artefacto con modificaciones aplicadas |
+| cambios_aplicados | string[] | Lista de cambios realizados |
+| version_anterior | string | Version antes de edicion |
+| version_nueva | string | Version despues de edicion (SemVer bump) |
+| invariantes_preservados | bool | Todos los invariantes intactos |

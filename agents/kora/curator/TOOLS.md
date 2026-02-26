@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:curator-tools:1.0.0"
+  urn: "urn:kora:agent-bootstrap:curator-tools:2.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -23,7 +23,6 @@ _manifest:
 | Formato descriptivo, koraficacion, telegrafizacion, chunks RAG, md-spec | urn:kora:kb:md-spec |
 | Formato prescriptivo, cristalizacion, RFC 2119, spec-md | urn:kora:kb:spec-md |
 | Gobernanza, precedencia, meta-reglas, extensiones, inyeccion LLM | urn:kora:kb:gobernanza |
-| Agentes, F-coalgebra, workspaces (fuera scope — redirigir) | urn:kora:kb:agent-spec-md |
 
 ## artifact_read
 

@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-intent-classifier:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-intent-classifier:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-CURATOR, determinando la capacidad requerida, el tipo de artefacto y el modo de operacion.
+
+## I/O
+
+- **Input:** mensaje: string (mensaje del usuario), estado_actual: FSMState (estado FSM vigente), contexto_previo: SessionContext | null
+- **Output:** IntentClassification (ver Signature Output)
 
 ## Procedimiento
 1. Analizar mensaje: palabras clave, contexto previo, artefactos mencionados, documentos referenciados.
@@ -19,5 +24,12 @@ Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-CURATOR,
 5. Si hay progreso previo, identificar fase actual del ciclo.
 6. Emitir clasificacion: {capacidad, tipo_artefacto, modo, fase_actual, confianza}.
 
-## Output
-Clasificacion con campos: `capacidad` (enum), `tipo_artefacto` (descriptivo|prescriptivo|ambiguo), `modo` (GUIADO|LIBRE), `fase_actual` (enum|null), `confianza` (alta|media|baja). Si confianza=baja, formular pregunta aclaratoria antes de transicionar.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| capacidad | enum(DESIGN\|KORAFICATE\|CRYSTALLIZE\|AUDIT\|EDIT\|REPAIR\|IMPROVE\|DEPRECATE\|GUIDED\|END) | Capacidad clasificada |
+| tipo_artefacto | enum(descriptivo\|prescriptivo\|ambiguo) | Tipo de artefacto detectado |
+| modo | enum(GUIADO\|LIBRE) | Modo de operacion |
+| fase_actual | enum\|null | Fase del ciclo si hay progreso previo |
+| confianza | enum(alta\|media\|baja) | Nivel de confianza. Si baja, formular pregunta aclaratoria |

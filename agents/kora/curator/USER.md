@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:curator-user:1.0.0"
+  urn: "urn:kora:agent-bootstrap:curator-user:2.0.0"
   type: "bootstrap_user"
 ---
 

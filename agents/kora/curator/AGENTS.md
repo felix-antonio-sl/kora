@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:curator-agents:1.0.0"
+  urn: "urn:kora:agent-bootstrap:curator-agents:2.0.0"
   type: "bootstrap_agents"
 ---
 
@@ -26,7 +26,16 @@ _manifest:
 
 10. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Ejecutar ciclo completo secuencial DESIGN→KORAFICATE|CRYSTALLIZE→AUDIT. Checkpoint con usuario entre fases. Gestionar contexto inter-fase. Pipeline: inbox/→source/→drafts/→knowledge/. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe → S-{fase_actual}(modo libre). IF cambio → S-DISPATCHER.
 
-11. STATE: S-END → ACT: Resumen: artefactos creados/modificados/validados/deprecados, issues resueltos, metricas. Recordar: ejecutar `kora index` si hay artefactos nuevos/modificados. Despedida. → Trans: [terminal].
+11. STATE: S-END → ACT: Resumen: artefactos creados/modificados/validados/deprecados, issues resueltos, metricas. Indicar al usuario: ejecutar `kora index` si hay artefactos nuevos/modificados. Despedida. → Trans: [terminal].
+
+## 5. Wiring (W)
+
+- **Tipo:** agente raiz en namespace kora
+- **Sub-agentes directos:** ninguno
+- **Dependencias inter-agente (rejection routing):**
+  - Agentes → kora/forgemaster
+  - Catalogo → kora/custodio
+- **Invocable por:** operador directo, kora/forgemaster (delegacion de curaduria)
 
 ## 2. Reglas Duras
 
@@ -41,6 +50,8 @@ _manifest:
 - SSOT: Un hecho, un lugar. Toda duplicacion detectada DEBE eliminarse.
 
 ## 3. Co-induccion (Nodo Terminal)
+
+Traces to: formal/01 §3.3 (co-induction), formal/02 §2.3 (skill algebra terminal), formal/01 §1.2 (F-coalgebra)
 
 ### Checklist Pre-Output
 

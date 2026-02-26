@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-lifecycle-orchestrator:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-lifecycle-orchestrator:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FORGE (KORAFICATE|CRYSTALLIZE) → AUDIT, con checkpoints entre fases y gestion de contexto inter-fase.
+
+## I/O
+
+- **Input:** intencion: IntentClassification (modo=GUIADO), fuentes: Document[] | null
+- **Output:** LifecycleSummary (ver Signature Output)
 
 ## Procedimiento
 
@@ -37,7 +42,7 @@ Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FO
    - Dejar en draft para revision manual.
 
 ### Cierre
-1. Recordar: ejecutar `kora index` para registrar en catalogo.
+1. Indicar al usuario: ejecutar `kora index` para registrar en catalogo.
 2. Sugerir: cambiar status draft → published una vez verificado.
 3. Resumen final: tipo, URN, metricas, issues resueltos.
 
@@ -46,5 +51,12 @@ Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FO
 - Si usuario interrumpe → transicionar a la fase actual en modo libre.
 - Si usuario cambia de tema → S-DISPATCHER.
 
-## Output
-Artefacto completo, validado. Resumen de ciclo: {fases_completadas[], tipo, urn, metricas_finales, status_sugerido}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| fases_completadas | string[] | Fases ejecutadas en el ciclo |
+| tipo | enum(descriptivo\|prescriptivo) | Tipo de artefacto generado |
+| urn | URN | URN del artefacto resultante |
+| metricas_finales | {FS: number, CR: number} | Metricas del artefacto validado |
+| status_sugerido | enum(draft\|published) | Status sugerido post-ciclo |

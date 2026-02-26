@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-context-manager:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-context-manager:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Gestiona el contexto multi-turno del agente: detecta cambios de tema, retornos a fases anteriores, finalizaciones y solicitudes fuera de scope.
+
+## I/O
+
+- **Input:** mensaje_actual: string (mensaje del usuario), estado_fsm: FSMState (estado FSM activo), contexto_sesion: SessionContext | null
+- **Output:** ContextClassification (ver Signature Output)
 
 ## Procedimiento
 1. COMPARAR tema del mensaje actual vs estado FSM activo:
@@ -28,5 +33,10 @@ Gestiona el contexto multi-turno del agente: detecta cambios de tema, retornos a
    - Si cambio dentro del ciclo guiado: mantener estado acumulado.
    - Si cambio radical: limpiar contexto, re-clasificar desde S-DISPATCHER.
 
-## Output
-Clasificacion de contexto: {accion: CONTINUAR|NUEVO|ATRAS|TERMINAR|FUERA, estado_destino: string?, contexto_preservar: {}?}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| accion | enum(CONTINUAR\|NUEVO\|ATRAS\|TERMINAR\|FUERA) | Tipo de cambio de contexto |
+| estado_destino | string \| null | Estado FSM destino (si aplica transicion) |
+| contexto_preservar | object \| null | Datos a mantener al transicionar |

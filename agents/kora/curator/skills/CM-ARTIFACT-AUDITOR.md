@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-auditor:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-artifact-auditor:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Valida artefactos de conocimiento existentes contra la spec correspondiente. Genera reporte PASS|FAIL con correcciones detalladas por check.
+
+## I/O
+
+- **Input:** artefacto: path | URN (artefacto a auditar)
+- **Output:** AuditReport (ver Signature Output)
 
 ## Procedimiento
 
@@ -58,5 +63,12 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 
 ### Paso 5: Generar Reporte
 
-## Output
-Reporte de auditoria: {resultado: PASS|FAIL, tipo: descriptivo|prescriptivo, checks: [{nombre, status: PASS|FAIL, detalle, correccion}], metricas: {FS, CR}?, resumen: string}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| resultado | enum(PASS\|FAIL) | Resultado global de auditoria |
+| tipo | enum(descriptivo\|prescriptivo) | Tipo clasificado |
+| checks | {nombre, status, detalle, correccion}[] | Checklist con resultado por item |
+| metricas | {FS: number, CR: number} \| null | Metricas de fidelidad y compresion (si aplica) |
+| resumen | string | Resumen ejecutivo del reporte |

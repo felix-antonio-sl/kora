@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-optimizer:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:curator-artifact-optimizer:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, estructura RAG, deduplicacion, referencias, densidad semantica.
+
+## I/O
+
+- **Input:** artefacto: path | URN (artefacto existente a optimizar)
+- **Output:** OptimizationReport (ver Signature Output)
 
 ## Procedimiento
 1. LEER artefacto completo. Clasificar tipo.
@@ -33,5 +38,14 @@ Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, est
 5. IMPLEMENTAR mejoras aprobadas.
 6. Bump version segun impacto.
 
-## Output
-Artefacto optimizado. Reporte: {mejoras_propuestas: [{prioridad, eje, hallazgo, propuesta}], mejoras_aplicadas[], version_anterior, version_nueva, metricas_antes: {FS, CR}, metricas_despues: {FS, CR}}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| artefacto_optimizado | string | Artefacto con mejoras aplicadas |
+| mejoras_propuestas | {prioridad, eje, hallazgo, propuesta}[] | Mejoras identificadas |
+| mejoras_aplicadas | string[] | Mejoras implementadas (aprobadas por usuario) |
+| version_anterior | string | Version antes de optimizacion |
+| version_nueva | string | Version despues de optimizacion |
+| metricas_antes | {FS: number, CR: number} | Metricas pre-optimizacion |
+| metricas_despues | {FS: number, CR: number} | Metricas post-optimizacion |
