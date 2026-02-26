@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:pensador-generador-cm-navegador-tensiones:2.0.0"
-  type: "lazy_load_endofuntor"
+  type: "bootstrap_skill"
 ---
 
 ## Proposito

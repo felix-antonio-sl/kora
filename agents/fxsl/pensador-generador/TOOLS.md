@@ -16,4 +16,4 @@ _manifest:
 - **Firma:** urn: string -> file_path: string
 - **Cuando usar:** Resolver URN a path fisico antes de acceder contenido KB. Primer paso obligatorio.
 - **Cuando NO usar:** Si path ya resuelto en turno actual.
-- **Notas:** Catalogo SOURCE_OF_TRUTH. Fallback routing estatico.
+- **Notas:** Catalogo SOURCE_OF_TRUTH. Fallback routing estatico. El path devuelto debe emplearse para operación de lectura directa e inyección en la memoria contextual del agente durante su session prep (runtime OpenClaw).

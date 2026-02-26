@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:2.0.0"
+  urn: "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -14,46 +14,14 @@ _manifest:
 ## kb_route
 
 - **Firma:** query_topic: string → urn: string
-- **Cuando usar:** Clasificar tema → resolver URN → priorizar KB → LLM solo pegamento.
+- **Cuando usar:** Clasificar tema → resolver URN → priorizar KB.
 - **Cuando NO usar:** Tema ya mapeado en turno actual.
 - **Routing Map:**
 
-| Topic | URN |
-|-------|-----|
-| FDM, DIK, Lenses, Monads | urn:fxsl:kb:cognitive-toolkit |
-| DB functors, adj, lim/colim, migration | urn:fxsl:kb:seven-sketches |
-| Profunctors, bimodules, uber-queries | urn:fxsl:kb:algebraic-databases |
-| Lenses, wiring, monadic, behavior | urn:fxsl:kb:categorical-systems-theory |
-| Coalg, bisim, coinduction, OOP | urn:fxsl:kb:coalgebras |
-| Schema cat, multi-model, Grothendieck | urn:fxsl:kb:unified-multimodel |
-| Data lakes, zones | urn:fxsl:kb:data-lakes-ct |
-| CQL, provenance, ologs | urn:fxsl:kb:cql-data-integration |
-| Model complexity, convertibility | urn:fxsl:kb:mathematical-modelling |
-| MBSE, S2ML, consistency | urn:fxsl:kb:mbse-consistency |
-| Audit dims, severity, patterns | urn:fxsl:kb:audit-patterns |
-| KB as cat, invariants | urn:fxsl:kb:kb-category |
-| Constraints, preservation | urn:fxsl:kb:constraint-logic |
-| Schema evolution, versions | urn:fxsl:kb:schema-evolution |
-| DAL, SQL/NoSQL, APIs, repos, ORMs, lakes | urn:fxsl:kb:data-access-layers |
-| Tensiones, polos, adjunciones diseno, A1-A4, MBT | urn:fxsl:kb:fx-tensiones |
-| Action as PK, event sourcing | urn:fxsl:kb:action-primary-key |
-| Categorical data structures | urn:fxsl:kb:categorical-data-structures |
-| Algebraic model management | urn:fxsl:kb:algebraic-model-management |
-| CT approaches to databases (survey) | urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases |
-| Formal framework DL CT | urn:fxsl:kb:formal-framework-data-lakes-ct |
-| Formal framework multimodel transformations | urn:fxsl:kb:formal-framework-multimodel-data-transformations |
-| Multicategory multimodel query processing | urn:fxsl:kb:multicategory-multimodel-query-processing |
-| Unified representation transformation multimodel | urn:fxsl:kb:unified-representation-transformation-multimodel |
-
-## web_search
-
-- **Firma:** query: string → results: SearchResult[]
-- **Cuando usar:** Informacion post-cutoff, frameworks especificos, sintaxis de versiones recientes.
-- **Cuando NO usar:** Temas cubiertos por KB. KB siempre tiene prioridad.
-
-## artifact_generate
-
-- **Firma:** model: CategoricalModel, format: TargetFormat → artifact: string
-- **Cuando usar:** S-ARTIFACT-GENERATION. Traducir modelo categorico a formato target.
-- **Cuando NO usar:** Modelo no formalizado aun (requiere S-CATEGORICAL-MODELING primero).
-- **Formatos:** PostgreSQL DDL, GraphQL SDL, JSON Schema, OpenAPI 3.x, Prisma, Mermaid, PlantUML, SPARQL
+| Enrutador Macro                           | Alcance                                                                                            | URNs Asociadas (Buscar en catalogo)                                                                                                                                                                                                                                                                                |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Estructuras Estáticas & Datos Puros**   | Modelado DDL, JSON Schema, GraphQL, Primary Keys, Constraints.                                     | `urn:fxsl:kb:seven-sketches`, `urn:fxsl:kb:categorical-data-structures`, `urn:fxsl:kb:constraint-logic`, `urn:fxsl:kb:action-primary-key`, `urn:fxsl:kb:data-access-layers`                                                                                                                                        |
+| **Integración & Data Lakes**              | Multi-modelos, Data Lakes, CQL, Grothendieck, Transformaciones, Pushouts.                          | `urn:fxsl:kb:cql-data-integration`, `urn:fxsl:kb:data-lakes-ct`, `urn:fxsl:kb:formal-framework-data-lakes-ct`, `urn:fxsl:kb:unified-multimodel`, `urn:fxsl:kb:multicategory-multimodel-query-processing`, `urn:fxsl:kb:unified-representation-transformation-multimodel`, `urn:fxsl:kb:algebraic-model-management` |
+| **Comportamiento & Transiciones (Topos)** | Coalgebras, Lenses, Monads, Dinámica stateful, Teoría de Sistemas.                                 | `urn:fxsl:kb:coalgebras`, `urn:fxsl:kb:categorical-systems-theory`, `urn:fxsl:kb:cognitive-toolkit`                                                                                                                                                                                                                |
+| **Evolución & Auditoría**                 | Migraciones de esquemas (Δ/Σ/Π), Evolución en el tiempo, Patrones de Auditoría, Consistency MBSE.  | `urn:fxsl:kb:schema-evolution`, `urn:fxsl:kb:audit-patterns`, `urn:fxsl:kb:mbse-consistency`, `urn:fxsl:kb:formal-framework-multimodel-data-transformations`                                                                                                                                                       |
+| **Meta-Arquitectura & Epistemología**     | Profuntores, Bimodules, Tensión DIK, Bases de Conocimiento formales, Representaciones Algebraicas. | `urn:fxsl:kb:algebraic-databases`, `urn:fxsl:kb:kb-category`, `urn:fxsl:kb:mathematical-modelling`, `urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases`                                                                                                                                             |
