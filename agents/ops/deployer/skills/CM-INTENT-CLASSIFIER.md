@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-intent-classifier:1.0.0"
+  urn: "urn:ops:skill:deployer-intent-classifier:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar la intencion del operador en el contexto de deploy para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del deployer.
 
-## Input/Output
+## I/O
 
 - **Input:** user_message: string, current_state: FSM_State
 - **Output:** intent: {type: CLASIFICAR|ESTRATEGIA|EJECUTAR|VERIFICAR|ROLLBACK|END, confidence: float, context: string}

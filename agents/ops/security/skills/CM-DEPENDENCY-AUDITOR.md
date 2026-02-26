@@ -8,7 +8,7 @@ _manifest:
 
 Auditar dependencias del proyecto para CVEs evaluando exposicion REAL, no solo existencia de vulnerabilidad. Diferencia clave: "dependencia tiene CVE" vs "dependencia tiene CVE Y la funcion vulnerable esta expuesta a input externo en nuestro codebase." Proponer mitigacion priorizada por exposicion real.
 
-## Input/Output
+## I/O
 
 - **Input:** dependencies: {name: string, version: string}[], codebase_usage: {dependency: string, import_locations: FileLocation[], input_sources: InputSource[]}
 - **Output:** audit: {total_cves: number, exposed_cves: number, findings: DependencyFinding[], mitigations: Mitigation[]}

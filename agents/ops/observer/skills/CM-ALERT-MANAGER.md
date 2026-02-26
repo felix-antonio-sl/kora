@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-alert-manager:1.0.0"
+  urn: "urn:ops:skill:observer-alert-manager:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar el ciclo de vida de alertas. Mantener alertas clasicas como backstop independiente. Generar alertas inteligentes desde deteccion de anomalias. Rutear al Operador via canal configurado con reglas de escalacion.
 
-## Input/Output
+## I/O
 
 - **Input:** alert_trigger: {source: CLASSIC|INTELLIGENT, severity, anomaly?: AnomalyEvent, diagnosis?: DiagnosisReport}, config: alert_channels (de config.json)
 - **Output:** alert_result: {alert_id, sent: bool, channels_used: string[], escalation_scheduled: bool, summary: string}

@@ -8,7 +8,7 @@ _manifest:
 
 Construir y ejecutar el plan de golden path correspondiente al evento clasificado. Despachar agentes especializados para cada paso del camino. Monitorear progreso y detectar desviaciones.
 
-## Input/Output
+## I/O
 
 - **Input:** classification: {event_type, risk, golden_path, priority, affected_systems}, agents_available: AgentRegistry
 - **Output:** execution_plan: {path: string, steps: Step[], agents_dispatched: AgentDispatch[], status: in_progress|completed|failed|hold, deviations: Deviation[]}

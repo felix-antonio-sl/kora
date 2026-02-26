@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:ci-assistant-soul:2.0.0"
+  urn: "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0"
   type: "bootstrap_soul"
 ---
 

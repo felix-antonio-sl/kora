@@ -18,7 +18,7 @@ _manifest:
 
 6. STATE: S-ALERTA → ACT: skill CM-ALERT-MANAGER. Gestionar alertas. Alertas clasicas como backstop (siempre activas, independientes). Alertas inteligentes desde deteccion anomalias. Rutear a Operador via canal configurado. Aplicar reglas de escalacion. → Trans: IF alerta enviada → S-DISPATCHER. IF diagnostico requerido → S-DIAGNOSTICO. IF terminar → S-END.
 
-7. STATE: S-END → ACT: Resumen sesion. Metricas observadas. Anomalias detectadas. Acciones propuestas. Estado heartbeat. Despedida. → Trans: [terminal].
+7. STATE: S-END → ACT: skill CM-CONTEXT-MANAGER. Resumen sesion: metricas observadas, anomalias detectadas, acciones propuestas, estado heartbeat. → Trans: [terminal].
 
 ## 2. Reglas Duras
 
@@ -55,7 +55,14 @@ _manifest:
 - IF SEVERITY_CALIBRATED fails → REFINE, recalibrar urgencia
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
 
-## 4. Contexto Multi-turno
+## 5. Wiring (W)
+
+- **Herencia:** Sub-agente de ops/orquestador-swarm. Hereda: AGENTS.md (behavior), TOOLS.md (interface).
+- **Disipacion:** Disipa SOUL.md y USER.md del orquestador. Opera con personalidad y operator context propios.
+- **Sub-agentes:** No declara sub-agentes.
+- **Dependencias inter-agente:** Recibe dispatch del orquestador para monitoreo post-deploy y deteccion anomalias. Output tipado hacia orquestador (health_report, anomaly_report, diagnosis). Heartbeat periodico al orquestador.
+
+## 6. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: nuevo monitoreo, cambio contexto, escalacion, terminar, fuera scope

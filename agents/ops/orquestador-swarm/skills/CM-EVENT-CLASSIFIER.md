@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar eventos entrantes al sistema nervioso del enjambre. Determinar tipo de evento, nivel de riesgo y golden path correspondiente. Cada evento es un estimulo que el orquestador debe rutear.
 
-## Input/Output
+## I/O
 
 - **Input:** event: {type: string, payload: EventPayload, source: string, timestamp: ISO8601}
 - **Output:** classification: {event_type: commit|pr|alert|config_change|sentinel_proposal|eval_result|heartbeat, risk: lectura|escritura|destructiva, golden_path: estandar|destructiva|infraestructura|hotfix, priority: 1-5, affected_systems: string[], requires_human: boolean}

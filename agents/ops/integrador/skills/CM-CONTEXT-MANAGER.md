@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar contexto multi-turno de la sesion de integracion. Mantener estado acumulado (PRs analizados, conflictos resueltos, estado cola, backpressure) y generar resumen de sesion en nodo terminal.
 
-## Input/Output
+## I/O
 
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, merges: MergeResult[], conflicts: ConflictResult[], queue_state: QueueState}
 - **Output:** session_summary: {prs_integrated: number, conflicts_resolved: {trivial: number, substantive_escalated: number}, coherence_checks: number, queue_final: QueueState, throughput: number, backpressure_events: number, timeline: TimelineEntry[]}

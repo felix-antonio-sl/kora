@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar conflictos de merge en trivial vs substantivo, resolver triviales autonomamente y preparar escalacion diagnostica completa para substantivos.
 
-## Input/Output
+## I/O
 
 - **Input:** conflict: {files: string[], diff_a: string, diff_b: string, conflict_markers: string[], pr_a: PRInfo, pr_b: PRInfo}
 - **Output:** resolution: {classification: trivial|substantivo, status: resolved|escalated, resolved_diff?: string, escalation?: {reason: string, options: string[], impact: string, evidence: string[]}}

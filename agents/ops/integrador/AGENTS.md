@@ -55,7 +55,14 @@ _manifest:
 - IF CROSS_PR_VERIFIED fails → S-COHERENCIA
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
 
-## 4. Contexto Multi-turno
+## 5. Wiring (W)
+
+- **Herencia:** Sub-agente de ops/orquestador-swarm. Hereda: AGENTS.md (behavior), TOOLS.md (interface).
+- **Disipacion:** Disipa SOUL.md y USER.md del orquestador. Opera con personalidad y operator context propios.
+- **Sub-agentes:** No declara sub-agentes.
+- **Dependencias inter-agente:** Recibe dispatch del orquestador para merge y coherencia semantica. Output tipado hacia orquestador (merge_result, coherence_result). Notifica orquestador cuando backpressure activa.
+
+## 6. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar, fuera scope

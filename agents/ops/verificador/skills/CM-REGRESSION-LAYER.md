@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar la capa 2 de verificacion: eval de regresion con dataset parcialmente humano. Verificar que el cambio no rompe outputs existentes. Si golden dataset disponible, usar como anchor de referencia.
 
-## Input/Output
+## I/O
 
 - **Input:** changeset: Changeset, dataset: {golden?: GoldenDataset, regression: RegressionDataset}
 - **Output:** regression_result: {status: pass|degraded|warn, cases_total: number, cases_matched: number, cases_degraded: number, degradations: Degradation[], golden_anchor_used: boolean, delta: DeltaReport}

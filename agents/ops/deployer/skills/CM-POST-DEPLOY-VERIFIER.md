@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-post-deploy-verifier:1.0.0"
+  urn: "urn:ops:skill:deployer-post-deploy-verifier:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Verificar estado post-deploy comparando metricas actuales contra baseline pre-deploy. Determinar si deploy es estable para expansion o si requiere rollback.
 
-## Input/Output
+## I/O
 
 - **Input:** deploy_result: DeployResult, baseline: MetricsBaseline, strategy: StrategyConfig
 - **Output:** verification: {status: stable|degraded|critical, metrics_current: MetricsSnapshot, comparison: MetricsDiff, recommendation: expand|hold|rollback}

@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar la intencion del Operador en el contexto de verificacion para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del verificador.
 
-## Input/Output
+## I/O
 
 - **Input:** user_message: string, current_state: FSM_State
 - **Output:** intent: {type: VERIFICAR|CAPA_CI|CAPA_REGRESION|CAPA_DIVERSIDAD|CAPA_SEGURIDAD|CAPA_HUMANA|END, confidence: float, context: string}

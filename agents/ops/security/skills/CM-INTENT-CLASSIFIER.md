@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar la intencion del operador en el contexto de seguridad para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del agente de seguridad. Verificar DIVERSITY_CHECK como precondicion antes de clasificar.
 
-## Input/Output
+## I/O
 
 - **Input:** user_message: string, current_state: FSM_State, swarm_config: {model: string, provider: string}
 - **Output:** intent: {type: ANALISIS_PR|RUNTIME|DEPENDENCIAS|ADVERSARIAL|META_EVAL|END, confidence: float, context: string, diversity_verified: boolean}

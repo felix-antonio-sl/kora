@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar la capa 1 de verificacion: CI verde (lint + type check + tests unitarios). Resultado binario pass/fail. CI verde es condicion minima pero radicalmente insuficiente por si sola (Swarm::Ops Axioma 4).
 
-## Input/Output
+## I/O
 
 - **Input:** changeset: {files: string[], pr_metadata: PRInfo, test_config?: TestConfig}
 - **Output:** ci_result: {status: pass|fail, lint: {status: pass|fail, errors: string[]}, types: {status: pass|fail, errors: string[]}, tests: {status: pass|fail, total: number, passed: number, failed: number, skipped: number, failures: TestFailure[]}, duration_ms: number}

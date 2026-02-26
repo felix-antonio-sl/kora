@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar contexto multi-turno de la sesion de verificacion. Mantener estado acumulado (clasificaciones, capas ejecutadas, evidencia) y generar resumen de sesion en nodo terminal.
 
-## Input/Output
+## I/O
 
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, verifications: VerificationResult[]}
 - **Output:** session_summary: {verifications_executed: number, verdicts: VerdictCount, layers_stats: LayerStats, diversity_providers: ProviderPair[], timeline: TimelineEntry[], recommendation: string}

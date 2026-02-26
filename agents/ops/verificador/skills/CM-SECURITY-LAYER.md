@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar la capa 4 de verificacion: eval de seguridad. Analisis estatico + dinamico + check de privilegios. Contextual con ARCHITECTURE.md. Priorizar hallazgos por impacto real, no por volumen. Alineado con Swarm::Ops 8.2 (agente-security activo).
 
-## Input/Output
+## I/O
 
 - **Input:** changeset: Changeset, architecture_context?: ArchitectureDoc
 - **Output:** security_result: {status: pass|fail, static_analysis: {findings: Finding[], critical: number, high: number, medium: number, low: number}, dynamic_analysis: {status: pass|fail, findings: Finding[]}, privilege_check: {status: pass|fail, escalations: PrivilegeEscalation[]}, contextualized: boolean, prioritized_findings: Finding[]}

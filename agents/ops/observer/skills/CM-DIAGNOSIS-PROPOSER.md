@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-diagnosis-proposer:1.0.0"
+  urn: "urn:ops:skill:observer-diagnosis-proposer:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Basado en anomalia detectada y correlaciones calculadas, proponer top-3 hipotesis de diagnostico con confianza y recomendar accion concreta para cada una.
 
-## Input/Output
+## I/O
 
 - **Input:** anomaly: AnomalyEvent, correlations: CorrelationReport (output de CM-CORRELATION-ENGINE)
 - **Output:** diagnosis: {hypotheses: [{rank, description, confidence_pct, evidence, recommended_action: ROLLBACK|INVESTIGATE|WAIT|ESCALATE, action_detail}], auto_rollback_eligible: bool, summary: string}

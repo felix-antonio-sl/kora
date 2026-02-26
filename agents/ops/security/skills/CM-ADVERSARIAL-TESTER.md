@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar tests adversariales contra el enjambre de agentes. Simular ataques reales para identificar vulnerabilidades antes que un atacante. Categorias: prompt injection (direct, indirect, agent-to-agent), validation bypass, privilege escalation, OWASP Top 10 adaptado para LLMs. Frecuencia: mensual o en recalibracion del enjambre.
 
-## Input/Output
+## I/O
 
 - **Input:** targets: {agent_id: string, endpoints: string[], capabilities: string[]}[], test_categories: string[], previous_results: TestResult[]
 - **Output:** report: {tests_executed: number, vulnerabilities: Vulnerability[], pass_rate: float, critical_findings: number, regression_check: RegressionResult[]}

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-health-monitor:1.0.0"
+  urn: "urn:ops:skill:observer-health-monitor:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Recopilar y sintetizar metricas clave del sistema de produccion. Generar tabla de estado de salud con clasificacion global.
 
-## Input/Output
+## I/O
 
 - **Input:** service_filter: string? (opcional, filtrar por servicio), metrics_source: health_check tool output
 - **Output:** health_report: {timestamp, global_status: HEALTHY|DEGRADED|CRITICAL, services: [{name, metrics, status}], llm_metrics: {cost_24h, tokens_24h, consumption_rate}, summary: string}

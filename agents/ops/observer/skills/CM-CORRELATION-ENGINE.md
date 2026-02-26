@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-correlation-engine:1.0.0"
+  urn: "urn:ops:skill:observer-correlation-engine:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Cruzar anomalias detectadas con eventos recientes del sistema (deploys, cambios config, actualizaciones modelo, cambios trafico) para calcular confianza de correlacion.
 
-## Input/Output
+## I/O
 
 - **Input:** anomaly: AnomalyEvent (output de CM-ANOMALY-DETECTOR), events: Event[] (via deploy_timeline + correlate tools)
 - **Output:** correlation_report: {anomaly_summary, events_analyzed: int, correlations: [{event, temporal_proximity, causal_plausibility, confidence_pct, hypothesis}], top_correlation: Correlation, recommendation: string}

@@ -8,7 +8,7 @@ _manifest:
 
 Orquestar la ejecucion secuencial de las 5 capas de verificacion adaptadas al tipo de cambio. Determinar capas requeridas segun riesgo. Ejecutar en orden fijo. Fail-fast si alguna capa falla.
 
-## Input/Output
+## I/O
 
 - **Input:** changeset: {files: string[], pr_metadata: PRInfo, diff_summary: string, coder_info: {provider: string, model: string}}
 - **Output:** orchestration_result: {change_type: lectura|escritura|destructiva, layers_required: number[], layers_executed: LayerResult[], verdict: APROBADO|RECHAZADO, failed_layer?: string, evidence: Evidence[]}

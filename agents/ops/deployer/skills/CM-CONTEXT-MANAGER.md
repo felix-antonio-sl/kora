@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-context-manager:1.0.0"
+  urn: "urn:ops:skill:deployer-context-manager:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar contexto multi-turno de la sesion de deploy. Mantener estado acumulado (clasificaciones, estrategias, deploys, verificaciones) y generar resumen de sesion en nodo terminal.
 
-## Input/Output
+## I/O
 
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, deploys: DeployResult[], rollbacks: RollbackResult[]}
 - **Output:** session_summary: {deploys_executed: number, strategies_used: StrategyCount, rollbacks_triggered: number, final_metrics: MetricsSnapshot, timeline: TimelineEntry[]}

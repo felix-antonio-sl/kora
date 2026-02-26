@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-context-manager:1.0.0"
+  urn: "urn:ops:skill:observer-context-manager:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar el contexto de sesion de observacion. Mantener estado de anomalias activas, correlaciones en curso y diagnosticos pendientes. Detectar cambios de contexto y transiciones implicitas.
 
-## Input/Output
+## I/O
 
 - **Input:** session_state: {active_anomalies, pending_correlations, pending_diagnoses, heartbeat_status, last_health_check}, new_message: string
 - **Output:** context_update: {context_shift: bool, recommended_state: FSM_STATE, active_context: SessionContext, stale_data: [{item, age, recommendation: REFRESH|DISCARD}]}

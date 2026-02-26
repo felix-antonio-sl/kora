@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-strategy-selector:1.0.0"
+  urn: "urn:ops:skill:deployer-strategy-selector:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Seleccionar la estrategia de deploy optima basada en la clasificacion de riesgo. Configurar feature flags y parametros de observacion segun el modo seleccionado.
 
-## Input/Output
+## I/O
 
 - **Input:** classification: {risk: lectura|escritura|destructiva, affected_systems: string[]}, environment: string
 - **Output:** strategy: {mode: fast-track|canary|manual, flag_config: FlagConfig, observation: ObservationConfig, rollback_plan: RollbackPlan}

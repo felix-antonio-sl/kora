@@ -8,7 +8,7 @@ _manifest:
 
 Monitorear patrones de comportamiento en produccion para detectar amenazas de seguridad. No es un WAF — entiende que es "normal" para la aplicacion y detecta desviaciones significativas del baseline. Detecta lo que reglas estaticas no pueden: ataques lentos, escalacion gradual, prompt injection entre agentes.
 
-## Input/Output
+## I/O
 
 - **Input:** baseline: BehaviorBaseline, current: BehaviorSnapshot, agent_communications: AgentMessage[]
 - **Output:** assessment: {classification: INFO|SUSPICIOUS|THREAT|ACTIVE_ATTACK, anomalies: Anomaly[], agent_injection_attempts: InjectionAttempt[], recommended_action: string}

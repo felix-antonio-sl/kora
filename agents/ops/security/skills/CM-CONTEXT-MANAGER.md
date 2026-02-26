@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar contexto multi-turno de la sesion de seguridad. Mantener estado acumulado (hallazgos por PR, vetos emitidos, amenazas runtime, CVEs evaluados, tests adversariales) y generar resumen de sesion en nodo terminal.
 
-## Input/Output
+## I/O
 
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, prs_analyzed: PRAnalysis[], runtime_assessments: RuntimeAssessment[], dependency_audits: DependencyAudit[], adversarial_reports: AdversarialReport[], meta_evals: MetaEval[]}
 - **Output:** session_summary: {prs_analyzed: number, findings_total: number, findings_by_severity: SeverityCount, vetos_emitted: number, threats_detected: number, cves_evaluated: number, adversarial_tests: number, meta_eval_status: string, timeline: TimelineEntry[]}

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-deploy-executor:1.0.0"
+  urn: "urn:ops:skill:deployer-deploy-executor:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar el deploy segun la estrategia seleccionada. Orquestar: build, push, apply, activacion de feature flag. Registrar cada accion para auditoria y rollback.
 
-## Input/Output
+## I/O
 
 - **Input:** strategy: StrategyConfig, changeset: Changeset, environment: string
 - **Output:** deploy_result: {status: success|failed, version: string, environment: string, flag_status: FlagStatus, actions_log: ActionLog[], timestamp: ISO8601, baseline_snapshot: MetricsBaseline}

@@ -8,7 +8,7 @@ _manifest:
 
 Generar reporte completo del estado del sistema nervioso del enjambre. Consolidar informacion de todos los flujos: eventos en cola, golden paths activos, agentes ejecutando, backpressure, circuit breakers, heartbeats.
 
-## Input/Output
+## I/O
 
 - **Input:** system_snapshot: {event_queue: Event[], active_paths: GoldenPathExecution[], agent_registry: AgentStatus[], backpressure: BackpressureState, circuit_breakers: CircuitBreakerState[], heartbeats: HeartbeatLog[]}
 - **Output:** status_report: {summary: SystemSummary, event_queue: EventQueueReport, golden_paths: GoldenPathReport[], agents: AgentReport[], backpressure: BackpressureReport, circuit_breakers: CircuitBreakerReport[], health: healthy|degraded|critical}

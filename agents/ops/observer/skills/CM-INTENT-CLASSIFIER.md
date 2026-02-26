@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-intent-classifier:1.0.0"
+  urn: "urn:ops:skill:observer-intent-classifier:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar la intencion del Operador en una de las categorias del dominio de observabilidad para rutear al estado FSM correcto.
 
-## Input/Output
+## I/O
 
 - **Input:** user_message: string (mensaje del Operador en lenguaje natural)
 - **Output:** classification: {intent: MONITOR|ANOMALIA|CORRELACION|DIAGNOSTICO|ALERTA|END, confidence: float, reasoning: string}

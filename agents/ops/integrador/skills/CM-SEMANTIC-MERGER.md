@@ -8,7 +8,7 @@ _manifest:
 
 Verificar coherencia semantica de un PR contra el estado actual de main. No es merge textual — es validacion de que los cambios combinados preservan coherencia arquitectonica, contractual y de naming.
 
-## Input/Output
+## I/O
 
 - **Input:** pr: {diff: string, files: string[], branch: string, metadata: PRInfo}, main_state: {architecture: ArchInfo, conventions: ConventionSet, active_interfaces: InterfaceMap}
 - **Output:** merge_analysis: {status: coherent|incoherent, issues: SemanticIssue[], severity: low|medium|high, recommendation: merge|hold|reject}

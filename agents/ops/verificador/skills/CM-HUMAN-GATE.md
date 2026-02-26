@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar la capa 5 de verificacion: aprobacion humana. Solo para cambios destructivos. Presentar resumen completo de todas las capas ejecutadas con evidencia, recomendacion y riesgo. HOLD para aprobacion explicita del Operador. Ultimo firewall antes de deploy.
 
-## Input/Output
+## I/O
 
 - **Input:** layers_executed: LayerResult[], change_type: destructiva, changeset_summary: string, coder_info: CoderInfo
 - **Output:** gate_result: {status: approved|rejected|timeout, operator_comment?: string, timestamp: ISO8601, hold_duration_min: number}

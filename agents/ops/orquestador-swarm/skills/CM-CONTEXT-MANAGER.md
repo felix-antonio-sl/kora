@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar contexto multi-turno de la sesion de orquestacion. Mantener estado acumulado (eventos procesados, golden paths ejecutados, backpressure, circuit breakers) y generar resumen de sesion en nodo terminal.
 
-## Input/Output
+## I/O
 
 - **Input:** session_history: {turns: Turn[], events_processed: EventClassification[], golden_paths_executed: GoldenPathExecution[], backpressure_activations: BackpressureAction[], circuit_breakers_triggered: CircuitBreakerEvent[], agent_dispatches: AgentDispatch[]}
 - **Output:** session_summary: {events_total: number, events_by_type: TypeCount, golden_paths_completed: number, golden_paths_failed: number, backpressure_activations: number, circuit_breakers_triggered: number, agents_dispatched: number, timeline: TimelineEntry[], final_health: string, recommendations: string[]}

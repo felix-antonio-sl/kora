@@ -57,7 +57,14 @@ _manifest:
 - IF NO_ALERT_FATIGUE fails → REFINE, consolidar hallazgos, priorizar por impacto real
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
 
-## 4. Contexto Multi-turno
+## 5. Wiring (W)
+
+- **Herencia:** Sub-agente de ops/orquestador-swarm. Hereda: AGENTS.md (behavior), TOOLS.md (interface).
+- **Disipacion:** Disipa SOUL.md y USER.md del orquestador. Opera con personalidad y operator context propios. Modelo/provider DEBE ser diferente al del enjambre (diversity enforced).
+- **Sub-agentes:** No declara sub-agentes.
+- **Dependencias inter-agente:** Recibe dispatch del orquestador para eval seguridad en golden paths destructivos. Output tipado hacia orquestador (security_analysis, veto_status). Veto asimetrico: puede bloquear PRs unilateralmente.
+
+## 6. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: nuevo analisis, cambio contexto, escalacion, terminar, fuera scope

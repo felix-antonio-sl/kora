@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar los 4 controles quis custodiet ipsos custodes sobre el propio agente de seguridad. Quien vigila al vigilante? Este CM verifica la integridad, rendimiento y diversidad del agente de seguridad. Detecta degradacion propia y genera flag para auditoria humana externa.
 
-## Input/Output
+## I/O
 
 - **Input:** own_config: AgentConfig, swarm_config: SwarmConfig, audit_logs: {period: DateRange, decisions: Decision[], findings_confirmed: number, findings_rejected: number}
 - **Output:** meta_eval: {controls: ControlResult[], overall_status: OPERATIONAL|DEGRADED|COMPROMISED, flag_human_audit: boolean, next_audit_date: ISO8601}

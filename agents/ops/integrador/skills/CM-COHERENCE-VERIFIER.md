@@ -8,7 +8,7 @@ _manifest:
 
 Analisis cross-PR cuando multiples PRs target la misma zona del codebase. Verificar que los cambios combinados de todos los PRs no introducen contradicciones, duplicaciones o asunciones mutuamente excluyentes.
 
-## Input/Output
+## I/O
 
 - **Input:** prs: {pr_id: string, diff: string, target_zone: string, files: string[]}[], codebase_state: {architecture: ArchInfo, active_prs: PRInfo[]}
 - **Output:** coherence_result: {status: coherent|contradictory|duplicate, conflicts: CrossPRConflict[], prs_analyzed: number, zones_checked: string[], recommendation: string}

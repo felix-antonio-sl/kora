@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar la intencion del Operador en el contexto de orquestacion del enjambre para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del orquestador.
 
-## Input/Output
+## I/O
 
 - **Input:** user_message: string, current_state: FSM_State
 - **Output:** intent: {type: EVENTO|GOLDEN_PATH|BACKPRESSURE|CIRCUITO|ESTADO|END, confidence: float, context: string}

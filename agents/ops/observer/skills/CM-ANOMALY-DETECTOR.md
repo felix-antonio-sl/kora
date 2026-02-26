@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-cm-anomaly-detector:1.0.0"
+  urn: "urn:ops:skill:observer-anomaly-detector:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Analizar series temporales de metricas para detectar anomalias estadisticas. Clasificar severidad y generar reporte de anomalias detectadas.
 
-## Input/Output
+## I/O
 
 - **Input:** metrics: MetricSeries (via anomaly_detect tool), window: duration (default 1h), baseline_window: duration (default 24h)
 - **Output:** anomaly_report: {anomalies_found: int, anomalies: [{metric, type, baseline, current, deviation_sigma, severity, timestamp, trend}], overall_severity: LOW|MEDIUM|HIGH|CRITICAL}

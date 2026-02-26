@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-rollback-executor:1.0.0"
+  urn: "urn:ops:skill:deployer-rollback-executor:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar rollback atomico cuando verificacion post-deploy detecta degradacion. Revertir a version anterior, desactivar feature flag, verificar normalizacion de metricas, alertar operador con diagnostico.
 
-## Input/Output
+## I/O
 
 - **Input:** deploy_result: DeployResult, verification: VerificationResult, rollback_plan: RollbackPlan
 - **Output:** rollback_result: {status: success|failed, reverted_to: string, flag_deactivated: boolean, metrics_normalized: boolean, diagnosis: Diagnosis, actions_log: ActionLog[]}

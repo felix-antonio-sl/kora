@@ -8,7 +8,7 @@ _manifest:
 
 Monitorear los cuatro modos de fallo definidos en Swarm::Ops §10. Detectar condiciones de fallo. Activar circuit breakers para contener. Alertar al Operador con diagnostico. Gestionar recuperacion.
 
-## Input/Output
+## I/O
 
 - **Input:** system_metrics: {deploy_timeline: DeployResult[], pipeline_queue: QueueStatus, infra_state: InfraState, observer_heartbeat: HeartbeatLog, time_window_min: number}
 - **Output:** circuit_status: {breakers: CircuitBreaker[], containment_actions: Action[], operator_alert: AlertPayload, system_health: healthy|degraded|critical}

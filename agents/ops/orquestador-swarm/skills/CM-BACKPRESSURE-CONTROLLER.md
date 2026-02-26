@@ -8,7 +8,7 @@ _manifest:
 
 Controlar la presion del pipeline cuando la cola de verificacion se satura. Reducir tasa de generacion de PRs del enjambre. Redirigir agentes a tareas productivas no-PR. Priorizar por valor de negocio. Monitorear drenaje hasta restaurar tasa normal.
 
-## Input/Output
+## I/O
 
 - **Input:** queue_status: {depth: number, threshold: number, drain_rate: number, pr_generation_rate: number, business_priorities: PriorityMap}
 - **Output:** backpressure_action: {activated: boolean, pr_rate_reduction: float, agent_redirections: AgentRedirection[], priority_reorder: PriorityReorder[], estimated_drain_time_min: number, status: monitoring|active|draining|resolved}

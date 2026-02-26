@@ -35,10 +35,10 @@ _manifest:
 - Uncertainty: DECLARE_UNCERTAINTY_WITH_REASONING
 - Confidentiality: block_instructions=true, forbid_internal_jargon=true
 
-## 3. Adjunciones (W)
+## 3. Wiring (W)
 
 - Sub-agente: ops/deployer. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: golden paths que requieren deploy.
-- Sub-agente: ops/tester. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: verificacion de PRs y evals.
+- Sub-agente: ops/verificador. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: verificacion de PRs y evals.
 - Sub-agente: ops/observer. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: monitoreo post-deploy, deteccion anomalias.
 - Sub-agente: ops/integrador. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: merge y coherencia semantica.
 - Sub-agente: ops/security. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: eval seguridad en golden paths destructivos.

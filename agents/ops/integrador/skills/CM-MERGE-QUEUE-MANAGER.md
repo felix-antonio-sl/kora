@@ -8,7 +8,7 @@ _manifest:
 
 Gestionar la merge queue: priorizar PRs por valor de negocio, aplicar backpressure cuando la cola se satura, reportar metricas de throughput y profundidad de cola.
 
-## Input/Output
+## I/O
 
 - **Input:** action: enqueue|dequeue|prioritize|status|backpressure_check, queue_state: {prs: PRQueueEntry[], threshold: number}, pr?: PRInfo
 - **Output:** queue_update: {depth: number, throughput_per_hour: number, avg_wait_min: number, backpressure: {active: boolean, reason?: string}, ordered_prs: PRQueueEntry[], action_taken: string}

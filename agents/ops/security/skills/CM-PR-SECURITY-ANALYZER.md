@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:security-pr-analyzer:1.0.0"
+  urn: "urn:ops:skill:security-pr-security-analyzer:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Analizar la seguridad de un PR con contexto arquitectonico completo. Identificar hallazgos reales priorizados por impacto, no por severidad generica. Pensar como atacante: que explotaria con este cambio?
 
-## Input/Output
+## I/O
 
 - **Input:** pr: {diff: string, files_changed: string[], metadata: PRInfo}, architecture: ArchDoc, existing_findings: Finding[]
 - **Output:** analysis: {findings: Finding[], attack_surfaces_affected: string[], veto: boolean, veto_reason: string|null, summary: string}

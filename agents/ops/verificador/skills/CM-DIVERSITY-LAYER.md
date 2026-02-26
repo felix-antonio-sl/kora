@@ -8,7 +8,7 @@ _manifest:
 
 Ejecutar la capa 3 de verificacion: eval de diversidad. Verificar que el reviewer usa un provider/modelo DIFERENTE al coder. Ejecutar cross-eval donde otro "cerebro" evalua el cambio independientemente. Protege contra alucinacion sistemica (Xanpan::Agents 15.1).
 
-## Input/Output
+## I/O
 
 - **Input:** coder_info: {provider: string, model: string}, reviewer_info: {provider: string, model: string}, changeset: Changeset
 - **Output:** diversity_result: {status: pass|fail, same_provider: boolean, coder_provider: string, reviewer_provider: string, cross_eval: {quality: pass|fail, correctness: pass|fail, spec_adherence: pass|fail, reasoning: string}}

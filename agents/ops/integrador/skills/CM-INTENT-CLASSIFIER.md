@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar la intencion del operador en el contexto de integracion para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del integrador.
 
-## Input/Output
+## I/O
 
 - **Input:** user_message: string, current_state: FSM_State
 - **Output:** intent: {type: MERGE|COHERENCIA|CONFLICTO|COLA|END, confidence: float, context: string}

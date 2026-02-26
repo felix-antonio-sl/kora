@@ -57,7 +57,14 @@ _manifest:
 - IF HUMAN_GATE_FOR_DESTRUCTIVE fails → HOLD, esperar aprobacion Operador
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
 
-## 4. Contexto Multi-turno
+## 5. Wiring (W)
+
+- **Herencia:** Sub-agente de ops/orquestador-swarm (referenced as ops/tester in orchestrator wiring). Hereda: AGENTS.md (behavior), TOOLS.md (interface).
+- **Disipacion:** Disipa SOUL.md y USER.md del orquestador. Opera con personalidad y operator context propios.
+- **Sub-agentes:** No declara sub-agentes.
+- **Dependencias inter-agente:** Recibe dispatch del orquestador para verificacion de PRs y evals en golden paths. Output tipado hacia orquestador (verification_report, verdict). Coordina con ops/security para capa 4 seguridad.
+
+## 6. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar, fuera scope

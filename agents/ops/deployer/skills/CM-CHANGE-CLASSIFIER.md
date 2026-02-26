@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-cm-change-classifier:1.0.0"
+  urn: "urn:ops:skill:deployer-change-classifier:1.0.0"
   type: "lazy_load_endofunctor"
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 
 Clasificar el riesgo de un PR o changeset para determinar la estrategia de deploy. Asignar uno de tres niveles: lectura, escritura, destructiva.
 
-## Input/Output
+## I/O
 
 - **Input:** changeset: {files: string[], pr_metadata: PRInfo, diff_summary: string, labels: string[]}
 - **Output:** classification: {risk: lectura|escritura|destructiva, reason: string, affected_systems: string[], dod_status: {passed: number, total: 9, missing: string[]}}
