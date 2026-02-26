@@ -21,56 +21,49 @@ lang: es
 
 # Protocolo de Auditoría Ontológica 360° (Gist)
 
-## Overview
+## Propósito y Alcance
 
-- End-to-end ontology audit framework with 4 quadrants (pragmatic, structural, semantic, syntactic).
-- Calibrates severity by maturity level (L1-L4).
-- Produces checklist, evidence (SPARQL/OWL/SHACL), and actionable reports.
+Ctx: Auditoría ontológica 360° (propósito/estructura/semántica/sintaxis). SPARQL/OWL/SHACL. Foco: Gist como ontología upper/patrones reutilizables.
+XRef_Required: `urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol`
+Src: `staging/d.md`
 
+Evaluar ontologías end-to-end: validez + utilidad + sostenibilidad. Objetivos: (1) calibrar severidad por nivel de madurez (L1–L4); (2) auditar 4 cuadrantes: pragmático/estructural/semántico/sintáctico; (3) producir checklist, evidencias (SPARQL/OWL/SHACL) y reporte accionable.
 
-## Maturity Matrix
+## Matriz de Madurez (MMO)
 
-| Level | Name | Description |
-|-------|------|-------------|
-| **L1** | Prototype | Initial exploration, high tolerance for inconsistencies |
-| **L2** | Development | Model under construction, requires basic consistency |
-| **L3** | Production | Operational model, requires strict conformance |
-| **L4** | Federated | Published for external integration, maximum rigor |
+| Nivel | Nombre | Descripción |
+|---|---|---|
+| L1 | Prototipo | Exploración inicial; tolerancia alta a inconsistencias |
+| L2 | Desarrollo | Modelo en construcción; requiere consistencia básica |
+| L3 | Producción | Modelo operativo; requiere conformidad estricta |
+| L4 | Federado | Modelo publicado para integración externa; máximo rigor |
 
-## Quadrant 1: Pragmatic
+## Cuadrante 1: Pragmático
 
-- **Focus**:
-- Purpose, scope, governance, audience.
+Foco: propósito, alcance, gobernanza, audiencia.
 
+### Competency Questions (CQs) y Requisitos Funcionales
 
-### Competency Questions (CQs) and Functional Requirements
+Criterios:
 
-| ID | Criterion | Weight | L1 | L2 | L3 | L4 |
-|----|-----------|--------|----|----|----|----|
-| P1.1 | CQs documented | High | ○ | ● | ● | ● |
-| P1.2 | CQs translatable to SPARQL | High | ○ | ○ | ● | ● |
-| P1.3 | CQ coverage vs. classes/properties | Medium | ○ | ○ | ● | ● |
-| P1.4 | Traceability CQ ↔ Stakeholder | Low | ○ | ○ | ○ | ● |
+| ID | Criterio | Peso | L1 | L2 | L3 | L4 |
+|---|---|---|---|---|---|---|
+| P1.1 | Existencia de CQs documentadas | Alto | ○ | ● | ● | ● |
+| P1.2 | CQs traducibles a SPARQL | Alto | ○ | ○ | ● | ● |
+| P1.3 | Cobertura CQs vs clases/propiedades | Medio | ○ | ○ | ● | ● |
+| P1.4 | Trazabilidad CQ ↔ Stakeholder | Bajo | ○ | ○ | ○ | ● |
 
-- **Key Questions**:
+Preguntas: (1) ¿Existe documento que liste CQs? (2) Para cada CQ, ¿existe SPARQL que la responda? (3) ¿Cada clase/propiedad justificada por ≥1 CQ? (4) ¿Hay CQs que el modelo no puede responder? (Gap Analysis)
 
-- Do documented competency questions exist?
-- Can each CQ be written as SPARQL query?
-- Is every class/property justified by at least one CQ?
-- Are there gaps (CQs the model cannot answer)?
+Anti-patrones:
 
-- **Anti-Patterns**:
+| Anti-patrón | Síntoma | Impacto |
+|---|---|---|
+| CQ-less Ontology | Sin CQs documentadas | Imposible validar utilidad |
+| Orphan Concepts | Clases sin CQ | Complejidad innecesaria |
+| Scope Creep | CQs fuera del dominio | Modelo inmanejable |
 
-
-| Pattern | Symptom | Impact |
-|---------|---------|--------|
-| CQ-less Ontology | No documented CQs | Impossible to validate utility |
-| Orphan Concepts | Classes not in any CQ | Unnecessary complexity |
-| Scope Creep | CQs exceeding domain | Unmanageable model |
-
-- **Technique**:
-- Detect unused classes/properties
-
+Técnica — detección de clases sin instancias ni uso:
 
 ```sparql
 SELECT ?class (COUNT(?s) AS ?instances) (COUNT(?usage) AS ?usages)
@@ -81,99 +74,78 @@ WHERE {
 }
 GROUP BY ?class
 HAVING (COUNT(?s) = 0 && COUNT(?usage) = 0)
-# Classes without instances/usage = candidates for elimination
 ```
 
-### Scope and Minimalism Alignment
+### Alineación de Alcance y Minimalismo
 
-| ID | Criterion | Description |
-|----|-----------|-------------|
-| P2.1 | Class/CQ Ratio | Ideally ≤ 3 classes per covered CQ |
-| P2.2 | Reuse Index | % of reused properties vs. ad-hoc |
-| P2.3 | Axiom Density | Axioms per class (ideal L3: 2-5) |
+| ID | Criterio | Descripción |
+|---|---|---|
+| P2.1 | Ratio Clase/CQ | Idealmente ≤3 clases por CQ cubierta |
+| P2.2 | Índice de Reuso | % propiedades reutilizadas vs. ad-hoc |
+| P2.3 | Densidad Axiomática | Axiomas por clase (ideal: 2–5 para L3) |
 
-- **Key Questions**:
+Preguntas: ¿Puede eliminarse alguna clase sin perder respuesta a CQs? ¿Nivel de detalle apropiado? ¿Límites del dominio claros? ¿Qué explícitamente NO se modela?
 
-- Can any class be eliminated without losing CQ coverage?
-- Is detail level appropriate? (neither excessive nor insufficient)
-- Are domain boundaries clear? What explicitly NOT modeled?
+Checklist de gobernanza de alcance: Scope Statement documentado (máx 3 párrafos); lista explícita de Out of Scope; versión y fecha de vigencia; proceso de Change Request definido; responsable de gobernanza identificado.
 
-- **Checklist**:
+### Audiencia y Usabilidad Humana
 
-- Scope Statement documented (max 3 paragraphs)
-- Explicit Out-of-Scope list
-- Version and effective date
-- Change Request process defined
-- Governance owner identified
+| ID | Criterio | Verificación |
+|---|---|---|
+| P3.1 | Legibilidad de Labels | ¿rdfs:label en lenguaje natural, sin camelCase técnico? |
+| P3.2 | Completitud de Definiciones | ¿100% de clases tienen skos:definition o rdfs:comment? |
+| P3.3 | Ejemplos | ¿Clases complejas tienen skos:example? |
+| P3.4 | Multilingüismo | ¿Labels en idiomas requeridos con @lang tags? |
 
-### Audience and Human Usability
+Anti-patrones:
 
-| ID | Criterion | Verification |
-|----|-----------|--------------|
-| P3.1 | Label Readability | rdfs:label in natural language, no camelCase |
-| P3.2 | Definition Completeness | 100% of classes have skos:definition or rdfs:comment |
-| P3.3 | Examples | Complex classes have skos:example |
-| P3.4 | Multilingualism | Labels in required languages with @lang tags |
+| Anti-patrón | Ejemplo | Corrección |
+|---|---|---|
+| CamelCase Labels | rdfs:label "hasEmploymentRelation" | rdfs:label "tiene relación de empleo"@es |
+| Definition-less Classes | Clase sin rdfs:comment | Añadir definición de 1–2 oraciones |
+| Jargon Overload | "RDF reification pattern for n-ary" | "Representa relación con múltiples participantes" |
 
-- **Anti-Patterns**:
+### Gobernanza y Ciclo de Vida
 
+| ID | Criterio | Preguntas |
+|---|---|---|
+| P4.1 | Versionamiento | ¿Existe owl:versionInfo y política de deprecación? |
+| P4.2 | Provenance | ¿Documentado creador, fecha, licencia? |
+| P4.3 | Change Management | ¿Proceso para proponer cambios? |
+| P4.4 | Deprecation Policy | ¿Cómo se marcan términos obsoletos? (owl:deprecated) |
 
-| Pattern | Example | Correction |
-|---------|---------|------------|
-| CamelCase Labels | "hasEmploymentRelation" | "tiene relación de empleo"@es |
-| Definition-less | Class without rdfs:comment | Add 1-2 sentence definition |
-| Jargon Overload | "RDF reification pattern" | "Representa relación con múltiples participantes" |
-
-### Governance and Lifecycle
-
-| ID | Criterion | Question |
-|----|-----------|----------|
-| P4.1 | Versioning | owl:versionInfo and deprecation policy? |
-| P4.2 | Provenance | Creator, date, license documented? |
-| P4.3 | Change Management | Process for proposing changes? |
-| P4.4 | Deprecation | How obsolete terms marked? (owl:deprecated) |
-
-- **Metadata Template (L3+)**:
-
+Metadatos requeridos L3+:
 
 ```turtle
 <https://example.org/ontology/domain> a owl:Ontology ;
-  owl:versionInfo "1.2.0" ;
-  owl:versionIRI <https://example.org/ontology/domain/1.2.0> ;
-  owl:priorVersion <https://example.org/ontology/domain/1.1.0> ;
-  dc:title "Domain Ontology"@en ;
-  dc:creator "Knowledge Team" ;
-  dc:created "2025-01-15"^^xsd:date ;
-  dc:modified "2026-01-23"^^xsd:date ;
-  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  rdfs:comment "Ontología para modelar..."@es .
+    owl:versionInfo "1.2.0" ;
+    owl:versionIRI <https://example.org/ontology/domain/1.2.0> ;
+    owl:priorVersion <https://example.org/ontology/domain/1.1.0> ;
+    dc:title "Domain Ontology"@en ;
+    dc:creator "Knowledge Team" ;
+    dc:created "2025-01-15"^^xsd:date ;
+    dc:modified "2026-01-23"^^xsd:date ;
+    dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Ontología para modelar..."@es .
 ```
 
-- **Trade-off**:
-- Perfect logic can degrade pragmatic utility if too complex.
-- Prioritize operable clarity; if Gist pattern simple solves problem, avoid complex OWL.
+Trade-off semiótico: perfección lógica puede degradar utilidad pragmática si el modelo es demasiado complejo para consultar. Priorizar claridad operable; si `gist:Category` resuelve, evitar OWL complejo por pureza.
 
+## Cuadrante 2: Estructural
 
-## Quadrant 2: Structural
+Foco: taxonomía, arquitectura, propiedades, namespaces, patrones y reuso.
 
-- **Focus**:
-- Taxonomy, architecture, properties, namespaces, patterns, reuse.
+### Higiene Taxonómica
 
+**Análisis de jerarquía de clases:**
 
-### Taxonomic Hygiene
-
-#### Class Hierarchy Analysis
-
-| ID | Verification | Method |
-|----|--------------|--------|
-| S1.1 | Cycles in subClassOf | SPARQL query or reasoner |
-| S1.2 | Maximum depth | Count levels (recommended: ≤ 7) |
-| S1.3 | Average breadth | Direct subclasses per class (recommended: 3-7) |
-| S1.4 | Orphan classes | Classes without superclass (except owl:Thing) |
-| S1.5 | Multiple inheritance | Detect and validate if intentional |
-
-- **Multiple Inheritance Detection**:
-
+| ID | Verificación | Método |
+|---|---|---|
+| S1.1 | Ciclos en subClassOf | Query SPARQL o razonador |
+| S1.2 | Profundidad máxima | Contar niveles (recomendado: ≤7) |
+| S1.3 | Anchura promedio | Subclases directas por clase (recomendado: 3–7) |
+| S1.4 | Clases huérfanas | Sin superclase (excepto owl:Thing) |
+| S1.5 | Herencia múltiple | Detectar y validar si intencional |
 
 ```sparql
 SELECT ?class (COUNT(?parent) AS ?parentCount)
@@ -185,33 +157,26 @@ GROUP BY ?class
 HAVING (COUNT(?parent) > 1)
 ```
 
-#### Class vs. Instance vs. Category
+**Distinción Class / Instance / Category:**
 
-| Pattern | Use When | Example | Anti-pattern |
-|---------|----------|---------|--------------|
-| owl:Class | Types with formal axioms, stable | ex:Employee rdfs:subClassOf gist:Person | Class per variant |
-| Instance | Specific individuals | ex:_Person_JuanPerez a gist:Person | ex:JuanPerez a owl:Class |
-| gist:Category | Flexible taxonomies, no axioms | ex:_EmployeeType_Permanent a gist:Category | Class for admin types |
+| Patrón | Usar Cuando | Ejemplo Correcto | Anti-patrón |
+|---|---|---|---|
+| owl:Class | Tipos con axiomas formales, estables | ex:Employee rdfs:subClassOf gist:Person | Crear clase por cada variante |
+| Instance | Individuos específicos | ex:_Person_JuanPerez a gist:Person | ex:JuanPerez a owl:Class |
+| gist:Category | Taxonomías flexibles, sin axiomas | ex:_EmployeeType_Permanent a gist:Category | Clase para tipos administrativos |
 
-- **Key Questions**:
+Preguntas: ¿Hay clases que deberían ser instancias? (ej: ChileCountry como clase). ¿Hay instancias que deberían ser clases? ¿Se usa `gist:Category` para taxonomías administradas por no-técnicos?
 
-- Classes that should be instances? (e.g., `ChileCountry` as class)
-- Instances that should be classes? (master data modeling error)
-- Using `gist:Category` for user-managed taxonomies?
+### Higiene de Propiedades
 
-### Property Hygiene
+**Object Properties:**
 
-#### Object Properties
-
-| ID | Verification | Criterion |
-|----|--------------|-----------|
-| S2.1 | Inverse declared | All navigable properties have inverse? |
-| S2.2 | Domain/Range | Declared but not overly restrictive? |
-| S2.3 | Characteristics | Functional, transitive, symmetric correctly applied? |
-| S2.4 | Naming consistency | Verbs for object properties (hasX, isXOf)? |
-
-- **Properties Without Inverse**:
-
+| ID | Verificación | Criterio |
+|---|---|---|
+| S2.1 | Inversa declarada | ¿Propiedades navegables tienen inversa? |
+| S2.2 | Dominio/Rango | ¿Declarados pero no excesivamente restrictivos? |
+| S2.3 | Características | ¿Funcional, transitiva, simétrica correctamente aplicadas? |
+| S2.4 | Naming consistency | ¿Verbos para object properties (hasX, isXOf)? |
 
 ```sparql
 SELECT ?prop WHERE {
@@ -221,55 +186,53 @@ SELECT ?prop WHERE {
 }
 ```
 
-#### Datatype Properties
+**Datatype Properties:**
 
-| ID | Verification | Criterion |
-|----|--------------|-----------|
-| S2.5 | Explicit datatype | rdfs:range with xsd: datatype? |
-| S2.6 | Measured values | Measurables use gist:Magnitude pattern? |
-| S2.7 | Dates | Using xsd:date, xsd:dateTime consistently? |
+| ID | Verificación | Criterio |
+|---|---|---|
+| S2.5 | Tipo de dato explícito | ¿rdfs:range con xsd: datatype? |
+| S2.6 | Magnitudes con unidad | ¿Valores medibles usan gist:Magnitude pattern? |
+| S2.7 | Fechas | ¿Usan xsd:date, xsd:dateTime consistentemente? |
 
-- **Anti-Patterns**:
+Anti-patrones de propiedades:
 
+| Anti-patrón | Ejemplo | Corrección |
+|---|---|---|
+| Stringly-typed | ex:employeeId "12345" sin tipo | Usar xsd:integer o IRI |
+| Direct Measurement | ex:weight "75.5"^^xsd:decimal | gist:Magnitude con UoM |
+| Embedded Semantics | ex:billingAddress, ex:shippingAddress separadas | gist:Address + gist:AddressUsageType |
 
-| Pattern | Example | Correction |
-|---------|---------|------------|
-| Stringly-typed | ex:employeeId "12345" | Use xsd:integer or IRI |
-| Direct Measurement | ex:weight "75.5" | gist:Magnitude with UoM |
-| Embedded Semantics | billingAddress, shippingAddress separate | gist:Address + gist:AddressUsageType |
+### Higiene de Namespaces e IRIs
 
-### Namespace and IRI Hygiene
+| ID | Criterio | Verificación |
+|---|---|---|
+| S3.1 | No Namespace Squatting | ¿No se definen términos en gist:, foaf:, schema:? |
+| S3.2 | Consistencia de Prefijos | ¿Un solo prefijo por namespace? |
+| S3.3 | Dereferenciabilidad | ¿IRIs resuelven a documentación o son opacos? |
+| S3.4 | Patrón de IRI | ¿Consistente para clases, propiedades, instancias? |
 
-| ID | Criterion | Verification |
-|----|-----------|--------------|
-| S3.1 | No squatting | Don't define in gist:, foaf:, schema:? |
-| S3.2 | Consistent prefixes | One prefix per namespace throughout? |
-| S3.3 | Dereferenceable | IRIs resolve to documentation or opaque? |
-| S3.4 | IRI pattern | Consistent for classes, properties, instances? |
-
-- **Recommended IRI Patterns**:
-
+Patrones de IRI recomendados:
 
 ```
-https://org.example/ontology/domain/              # TBox
-https://org.example/data/domain/                  # ABox
-https://org.example/data/domain/_Person_abc123   # Instance (_prefix)
-https://org.example/refdata/Country_CL            # Reference data
+https://org.example/ontology/domain/         # TBox (clases, propiedades)
+https://org.example/data/domain/             # ABox (instancias)
+https://org.example/data/domain/_Person_abc123   # Instancias (prefijo "_")
+https://org.example/refdata/Country_CL        # Reference Data
 ```
 
-### Modeling Patterns and Reuse
+### Patrones de Modelado y Reuso
 
-#### Gist Pattern Evaluation
+**Evaluación de patrones Gist:**
 
-| Pattern | When | Verify |
-|---------|------|--------|
-| TemporalRelation | Relations with temporal context | Employment, membership, ownership as relations? |
-| Magnitude + UoM | Measurable values | Weight, price, distance using pattern? |
-| Category | Flexible taxonomies | Admin types as categories? |
-| Address | Physical/electronic addresses | Using containedText + refersTo? |
-| Agreement/Commitment | Contracts, obligations | Structure for parties and terms? |
+| Patrón | Aplica Cuando | Verificar |
+|---|---|---|
+| TemporalRelation | Relaciones con contexto temporal | ¿Empleo, membresía, propiedad modelados como relación? |
+| Magnitude + UoM | Valores medibles | ¿Peso, precio, distancia usan el patrón? |
+| Category | Taxonomías flexibles | ¿Tipos administrativos son categorías? |
+| Address | Direcciones físicas/electrónicas | ¿Se usa containedText + refersTo? |
+| Agreement/Commitment | Contratos, obligaciones | ¿Estructura para partes y términos? |
 
-#### Reuse Metrics
+**Métricas de reuso:**
 
 ```sparql
 SELECT
@@ -282,34 +245,25 @@ WHERE {
   UNION
   { ?custom a owl:ObjectProperty . FILTER(!STRSTARTS(STR(?custom), "https://w3id.org/semanticarts/")) }
 }
-# Goal L3+: reusePercent >= 40%
+# Objetivo L3+: reusePercent >= 40%
 ```
 
-## Quadrant 3: Semantic
+## Cuadrante 3: Semántico
 
-- **Focus**:
-- Logic, inference, constraints, identity, OWL profiles.
+Foco: lógica, inferencia, restricciones, identidad, perfiles OWL.
 
+### Consistencia Lógica
 
-### Logical Consistency
+| Herramienta | Perfil | Uso |
+|---|---|---|
+| HermiT | OWL 2 DL | Consistencia, clasificación |
+| Pellet | OWL 2 DL | Consistencia, explicaciones |
+| ELK | OWL 2 EL | Alto rendimiento, ontologías grandes |
+| RDFox | OWL 2 RL | Materialización, consultas |
 
-| Tool | Profile | Use |
-|------|---------|-----|
-| HermiT | OWL 2 DL | Consistency, classification |
-| Pellet | OWL 2 DL | Consistency, explanations |
-| ELK | OWL 2 EL | High performance, large ontologies |
-| RDFox | OWL 2 RL | Materialization, queries |
+Checklist: carga sin errores en Protégé; razonador sin timeout (<60s para L3); sin clases insatisfacibles; sin inconsistencias; inferencias esperadas (spot check).
 
-- **Checklist**:
-
-- Loads without errors in Protégé
-- Reasoner runs < 60s (L3)
-- No unsatisfiable classes
-- No inconsistencies detected
-- Spot-check inferences as expected
-
-- **Unsatisfiable Classes** (equivalent to owl:Nothing):
-
+Detección de clases insatisfacibles (después de clasificación):
 
 ```sparql
 SELECT ?class WHERE {
@@ -317,122 +271,96 @@ SELECT ?class WHERE {
 }
 ```
 
-- **Common Causes**:
+Causas comunes: restricciones contradictorias (ej: `hasPart min 1` y `hasPart max 0`); disjointness con superclase; rangos incompatibles en cadena de propiedades.
 
-- Contradictory restrictions (min 1 AND max 0)
-- Disjointness with superclass
-- Incompatible ranges in property chain
+### Rigor en Restricciones
 
-### Constraint Rigor
+| Escenario | Recomendación |
+|---|---|
+| Propiedad general | No declarar domain/range (hereda de superpropiedad) |
+| Propiedad específica | Domain/Range en clase más general aplicable |
+| Múltiples dominios posibles | Usar owl:unionOf o no declarar |
 
-#### Domain/Range Guidance
-
-| Scenario | Recommendation |
-|----------|-----------------|
-| General property | Don't declare domain/range (inherit from superclass) |
-| Specific property | Domain/Range on most general applicable class |
-| Multiple domains | Use owl:unionOf or don't declare |
-
-- **Anti-Pattern (Over-constrained)**:
-
+Anti-patrón sobre-restringido:
 
 ```turtle
-# ❌ Too restrictive
-ex:hasPet rdfs:domain ex:Person ;
-          rdfs:range ex:Dog .
-# Problem: Can't have cats
+# Incorrecto: demasiado restrictivo
+ex:hasPet rdfs:domain ex:Person ; rdfs:range ex:Dog .
 
-# ✅ Flexible
-ex:hasPet rdfs:domain ex:Person ;
-          rdfs:range ex:Animal .
+# Correcto: flexible
+ex:hasPet rdfs:domain ex:Person ; rdfs:range ex:Animal .
+# O mejor: heredar de gist:hasMember sin restricciones adicionales
 ```
 
-#### Disjointness
+**Disjointness:**
 
-| ID | Verification | Impact |
-|----|--------------|--------|
-| L1.1 | Explicit disjointness | Sister classes disjoint? |
-| L1.2 | Covering axioms | Union of subclasses = superclass? |
-| L1.3 | Completeness | Model uses CWA or OWA appropriately? |
-
-- **Pattern**:
-
+| ID | Verificación | Impacto |
+|---|---|---|
+| L1.1 | Disjointness explícita | ¿Clases hermanas son disjuntas? |
+| L1.2 | Covering axioms | ¿Unión de subclases = superclase? |
+| L1.3 | Completitud | ¿CWA o OWA apropiadamente aplicados? |
 
 ```turtle
+# Patrón recomendado: hermanos disjuntos
 ex:Employee rdfs:subClassOf ex:Person .
 ex:Customer rdfs:subClassOf ex:Person .
 ex:Employee owl:disjointWith ex:Customer .
 
-# Or using DisjointUnion (OWL 2)
+# O con DisjointUnion (OWL 2)
 ex:Person owl:disjointUnionOf (ex:Employee ex:Customer ex:Prospect) .
 ```
 
-### Identity Management
+### Manejo de Identidad
 
-| Feature | Use | Verify |
-|---------|-----|--------|
-| owl:FunctionalProperty | Unique value per subject | hasBirthDate functional? |
-| owl:InverseFunctionalProperty | Uniquely identifies | hasSSN is IFP? |
-| owl:hasKey | Composite key | Classes have keys defined? |
+| Característica | Uso | Verificar |
+|---|---|---|
+| owl:FunctionalProperty | Valor único por sujeto | ¿hasBirthDate es funcional? |
+| owl:InverseFunctionalProperty | Identifica unívocamente | ¿hasSSN es IFP? |
+| owl:hasKey | Clave compuesta | ¿Clases tienen claves definidas? |
 
-- **Anti-Pattern (String Linking)**:
-
+Anti-patrón de enlace por string:
 
 ```turtle
-# ❌ String link
+# Incorrecto: enlace por string (typos rompen integridad)
 ex:_Order_123 ex:customerName "Acme Corp" .
 ex:_Invoice_456 ex:customerName "Acme Corp" .
-# No semantic link, typos break integrity
 
-# ✅ IRI link
+# Correcto: enlace por IRI
 ex:_Order_123 ex:hasCustomer ex:_Organization_AcmeCorp .
 ex:_Invoice_456 ex:hasCustomer ex:_Organization_AcmeCorp .
 ```
 
-### OWL Profiles and Computational Complexity
+### Perfiles OWL y Complejidad Computacional
 
-| Profile | Complexity | Use | Verify |
-|---------|-----------|-----|--------|
-| OWL 2 Full | Undecidable | Avoid | N/A |
-| OWL 2 DL | 2-NEXPTIME | Medium ontologies | Default |
-| OWL 2 EL | PTIME | Large (SNOMED) | No negation, unions |
-| OWL 2 QL | AC0 | Query answering | No complex existentials |
-| OWL 2 RL | PTIME | Inference rules | No existentials in head |
+| Perfil | Complejidad | Uso Típico |
+|---|---|---|
+| OWL 2 Full | Indecidible | Evitar |
+| OWL 2 DL | 2-NEXPTIME | Ontologías medianas (default) |
+| OWL 2 EL | PTIME | Ontologías grandes (SNOMED) |
+| OWL 2 QL | AC0 | Query answering |
+| OWL 2 RL | PTIME | Reglas de inferencia |
 
-- **Verification**:
-- Check Protégé → Ontology > Metrics > OWL Profile.
+Verificación: Protégé → Ontology → Ontology Metrics → OWL Profile.
 
+## Cuadrante 4: Sintáctico
 
-## Quadrant 4: Syntactic
+Foco: calidad del artefacto — parseo, estilo, anotaciones, modularización, tests, CI.
 
-- **Focus**:
-- Artifact quality: parsing, style, annotations, modularity, tests, CI.
+### Validación Sintáctica
 
+| Verificación | Herramienta | Comando |
+|---|---|---|
+| Turtle válido | rapper | rapper -i turtle -c ontology.ttl |
+| RDF/XML válido | xmllint + rapper | Validar XML + RDF |
+| Prefijos declarados | Parser | Sin warnings de prefijos desconocidos |
+| IRIs válidas | Parser | Sin caracteres ilegales |
 
-### Syntactic Validation
+Checklist de estilo: indentación consistente (2 espacios); orden subject-ordered luego predicate-ordered; blank lines entre entidades; comentarios Turtle por sección (#=== CLASSES ===); prefijos ordenados alfabéticamente; un archivo por módulo.
 
-#### Parse and Serialization
+### Anotaciones y Documentación Inline
 
-| Verification | Tool | Command |
-|--------------|------|---------|
-| Turtle valid | rapper | rapper -i turtle -c ontology.ttl |
-| RDF/XML valid | xmllint + rapper | Validate XML + RDF |
-| Prefixes declared | Parser | No unknown prefix warnings |
-| Valid IRIs | Parser | No illegal characters |
-
-#### Style Checklist
-
-- Consistent indentation (2 spaces)
-- Subject-ordered, then predicate-ordered
-- Blank lines between entities
-- Turtle comments for sections (#=== CLASSES ===)
-- Prefixes alphabetically sorted
-- One file per module (large ontologies)
-
-### Annotations and Documentation
-
-| Annotation | L1 | L2 | L3 | L4 |
-|-----------|----|----|----|----|
+| Anotación | L1 | L2 | L3 | L4 |
+|---|---|---|---|---|
 | rdfs:label | ● | ● | ● | ● |
 | rdfs:comment | ○ | ● | ● | ● |
 | skos:definition | ○ | ○ | ● | ● |
@@ -440,8 +368,7 @@ ex:_Invoice_456 ex:hasCustomer ex:_Organization_AcmeCorp .
 | skos:scopeNote | ○ | ○ | ○ | ● |
 | dc:source | ○ | ○ | ○ | ● |
 
-- **Completeness Query**:
-
+Query de completitud de anotaciones:
 
 ```sparql
 SELECT ?entity
@@ -457,168 +384,120 @@ WHERE {
 HAVING (!BOUND(?label) || !BOUND(?comment))
 ```
 
-### Modularity and Dependencies
+### Modularización y Dependencias
 
-| ID | Criterion | Verification |
-|----|-----------|--------------|
-| M1 | TBox/ABox separation | Ontology separate from instances? |
-| M2 | Modules by domain | Subdomains in separate files? |
-| M3 | Explicit imports | owl:imports for dependencies? |
-| M4 | Versioned imports | Versioned IRIs for critical imports? |
+| ID | Criterio | Verificación |
+|---|---|---|
+| M1 | Separación TBox/ABox | ¿Ontología separada de datos de instancia? |
+| M2 | Módulos por dominio | ¿Subdominios en archivos separados? |
+| M3 | Imports explícitos | ¿owl:imports para dependencias? |
+| M4 | Versiones de imports | ¿IRIs versionados para imports críticos? |
 
-- **Pattern**:
-
+Patrón de modularización:
 
 ```
 ontology/
-├── core.ttl                    # Core classes/properties
+├── core.ttl
 ├── extensions/
-│   ├── temporal.ttl            # Temporal extensions
-│   └── spatial.ttl             # Spatial extensions
+│   ├── temporal.ttl
+│   └── spatial.ttl
 ├── reference-data/
-│   ├── countries.ttl           # Reference data
+│   ├── countries.ttl
 │   └── currencies.ttl
-└── bundle.ttl                  # Imports all modules
+└── bundle.ttl
 ```
 
-### Testing and Automated Validation
+### Testing y Validación Automatizada
 
-#### SHACL Shapes Example
+Ejemplo SHACL shapes:
 
 ```turtle
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix ex: <https://example.org/ns/> .
 
 ex:PersonShape a sh:NodeShape ;
-  sh:targetClass ex:Person ;
-  sh:property [
-    sh:path ex:hasName ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:datatype xsd:string ;
-    sh:message "Persona debe tener exactamente un nombre"@es
-  ] ;
-  sh:property [
-    sh:path ex:hasBirthDate ;
-    sh:maxCount 1 ;
-    sh:datatype xsd:date ;
-    sh:lessThan ex:hasDeathDate ;
-    sh:message "Nacimiento anterior a muerte"@es
-  ] .
+    sh:targetClass ex:Person ;
+    sh:property [
+        sh:path ex:hasName ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Toda persona debe tener exactamente un nombre"@es
+    ] ;
+    sh:property [
+        sh:path ex:hasBirthDate ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:lessThan ex:hasDeathDate ;
+        sh:message "Fecha de nacimiento debe ser anterior a fecha de muerte"@es
+    ] .
 ```
 
-#### CI/CD Pipeline Example
+Pipeline CI/CD ejemplo (GitHub Actions):
 
 ```yaml
 ontology-validation:
   steps:
     - name: Syntax Check
       run: rapper -i turtle -c *.ttl
-
     - name: Consistency Check
       run: java -jar HermiT.jar -c ontology.ttl
-
     - name: SHACL Validation
       run: shacl validate -s shapes.ttl -d data.ttl
-
     - name: Metrics Report
       run: python ontology_metrics.py > report.md
 ```
 
-## Consolidated Audit Checklist
+## Checklist Consolidado
 
-### Phase 1: Preparation
+**Preparación**: identificar nivel de madurez L1–L4; obtener CQs y alcance; identificar stakeholders; configurar ambiente (Protégé, razonador, SHACL processor).
 
-- [ ] Identify maturity objective (L1-L4)
-- [ ] Obtain CQ and scope documentation
-- [ ] Identify stakeholders and audience
-- [ ] Set up environment (Protégé, reasoner, SHACL processor)
+**Auditoría Pragmática (C1)**: verificar existencia y calidad de CQs; validar cobertura CQ ↔ Modelo; evaluar minimalismo y alcance; revisar legibilidad labels/definiciones; verificar metadatos de gobernanza.
 
-### Phase 2: Pragmatic Audit (Q1)
+**Auditoría Estructural (C2)**: analizar jerarquía de clases (ciclos, profundidad, anchura); validar distinción Class/Instance/Category; revisar propiedades (inversas, características); verificar higiene de namespaces; evaluar reuso de patrones estándar.
 
-- [ ] Verify CQ existence and quality
-- [ ] Validate CQ ↔ Model coverage
-- [ ] Evaluate minimalism and scope
-- [ ] Review label/definition readability
-- [ ] Verify governance metadata
+**Auditoría Semántica (C3)**: ejecutar razonador (consistencia); verificar clases insatisfacibles; analizar restricciones domain/range; validar disjointness; revisar manejo de identidad; confirmar perfil OWL.
 
-### Phase 3: Structural Audit (Q2)
+**Auditoría Sintáctica (C4)**: validar parsing sin errores; verificar estilo y formato; evaluar completitud de anotaciones; revisar modularización; verificar dependencias (imports); evaluar existencia de tests (SHACL).
 
-- [ ] Analyze class hierarchy (cycles, depth, breadth)
-- [ ] Validate Class/Instance/Category distinction
-- [ ] Review properties (inverses, characteristics)
-- [ ] Verify namespace hygiene
-- [ ] Evaluate standard pattern reuse
+**Reporte y Recomendaciones**: clasificar hallazgos por severidad (Critical/Major/Minor/Info); proporcionar ejemplos de corrección; priorizar acciones correctivas; documentar trade-offs de diseño; generar métricas comparativas.
 
-### Phase 4: Semantic Audit (Q3)
-
-- [ ] Run reasoner (consistency)
-- [ ] Check for unsatisfiable classes
-- [ ] Analyze domain/range constraints
-- [ ] Validate disjointness
-- [ ] Review identity handling
-- [ ] Confirm OWL profile
-
-### Phase 5: Syntactic Audit (Q4)
-
-- [ ] Validate parsing (no errors)
-- [ ] Verify style and format
-- [ ] Evaluate annotation completeness
-- [ ] Review modularity
-- [ ] Verify imports/dependencies
-- [ ] Check test coverage (SHACL)
-
-### Phase 6: Report and Recommendations
-
-- [ ] Classify findings by severity (Critical/Major/Minor/Info)
-- [ ] Provide correction examples
-- [ ] Prioritize corrective actions
-- [ ] Document design trade-offs
-- [ ] Generate comparative metrics
-
-## Audit Report Template
+## Plantilla de Reporte
 
 ```markdown
-# Ontology Audit Report
+# Reporte de Auditoría Ontológica
+**Ontología**: [Nombre]
+**Versión**: [X.Y.Z]
+**Fecha**: [YYYY-MM-DD]
+**Auditor**: [Nombre/Agente]
+**Nivel Objetivo**: [L1-L4]
 
-**Ontology**: [Name]
-**Version**: [X.Y.Z]
-**Date**: [YYYY-MM-DD]
-**Auditor**: [Name/Agent]
-**Target Level**: [L1-L4]
+## Resumen Ejecutivo
+| Cuadrante   | Score    | Estado          |
+|-------------|----------|-----------------|
+| Pragmático  | X/10     | RED/YELLOW/GREEN |
+| Estructural | X/10     | RED/YELLOW/GREEN |
+| Semántico   | X/10     | RED/YELLOW/GREEN |
+| Sintáctico  | X/10     | RED/YELLOW/GREEN |
+| **Total**   | **X/40** |                 |
 
-## Executive Summary
+## Hallazgos Críticos
+1. [Hallazgo con impacto y corrección]
 
-| Quadrant | Score | Status |
-|----------|-------|--------|
-| Pragmatic | X/10 | RED/YELLOW/GREEN |
-| Structural | X/10 | RED/YELLOW/GREEN |
-| Semantic | X/10 | RED/YELLOW/GREEN |
-| Syntactic | X/10 | RED/YELLOW/GREEN |
-| **Total** | **X/40** | |
+## Hallazgos Mayores
+1. [Hallazgo con impacto y corrección]
 
-## Critical Findings
+## Hallazgos Menores
+1. [Hallazgo con impacto y corrección]
 
-1. [Finding with impact and correction]
+## Métricas
+- Total Clases: X
+- Total Propiedades: X (Object: Y, Datatype: Z)
+- Total Instancias: X
+- Índice de Reuso: X%
+- Densidad Axiomática: X axiomas/clase
+- Cobertura de Anotaciones: X%
 
-## Major Findings
-
-1. [Finding with impact and correction]
-
-## Minor Findings
-
-1. [Finding with impact and correction]
-
-## Metrics
-
-- Total Classes: X
-- Total Properties: X (Object: Y, Datatype: Z)
-- Total Instances: X
-- Reuse Index: X%
-- Axiom Density: X axioms/class
-- Annotation Coverage: X%
-
-## Prioritized Recommendations
-
-1. [Action] - Urgency: High/Medium/Low
+## Recomendaciones Priorizadas
+1. [Acción] — Urgencia: Alta/Media/Baja
 ```

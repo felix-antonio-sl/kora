@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-agent-surgeon:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:forgemaster-agent-surgeon:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Diagnostica y repara agentes KORA con precision quirurgica: minima modificacion, preservar invariantes, no romper otros componentes.
+
+## I/O
+
+- **Input:** agent_path: string (ruta al workspace), problema: string (descripcion del problema reportado)
+- **Output:** SurgicalReport (ver Signature Output)
 
 ## Procedimiento
 1. DIAGNOSTICO: Leer workspace completo del agente afectado (workspace_read).
@@ -21,5 +26,13 @@ Diagnostica y repara agentes KORA con precision quirurgica: minima modificacion,
 7. VERIFICAR POST-FIX: Re-ejecutar CM-AGENT-VALIDATOR en el componente modificado. Confirmar que el fix resuelve el problema sin introducir nuevos issues.
 8. DOCUMENTAR: Registrar que se cambio, por que, y que se verifico.
 
-## Output
-Reporte quirurgico: {agente, problema, severidad, componente_afectado, fix_aplicado, verificacion_post: PASS|FAIL}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| agente | string | Nombre del agente intervenido |
+| problema | string | Problema diagnosticado |
+| severidad | enum(CRITICAL\|HIGH\|MEDIUM\|LOW) | Severidad del problema |
+| componente_afectado | string | Archivo(s) modificado(s) |
+| fix_aplicado | string | Descripcion del fix |
+| verificacion_post | enum(PASS\|FAIL) | Resultado de re-validacion |

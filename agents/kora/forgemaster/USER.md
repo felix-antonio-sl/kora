@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:forgemaster-user:1.0.0"
+  urn: "urn:kora:agent-bootstrap:forgemaster-user:2.0.0"
   type: "bootstrap_user"
 ---
 

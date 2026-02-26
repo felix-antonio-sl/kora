@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-context-manager:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:forgemaster-context-manager:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante con el estado FSM actual, activando CONTEXT_SHIFT cuando corresponde.
+
+## I/O
+
+- **Input:** mensaje: string (mensaje entrante), estado_actual: FSMState, tema_previo: string | null
+- **Output:** ContextDecision (ver Signature Output)
 
 ## Procedimiento
 1. Capturar estado FSM actual y tema del ultimo turno desde contexto de sesion.
@@ -24,5 +29,11 @@ Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante
 5. Si cambio radical(tema completamente distinto) → S-DISPATCHER para reclasificacion.
 6. Actualizar contexto de sesion con estado nuevo y tema actual.
 
-## Output
-Decision de continuidad: {tipo_cambio, accion, estado_destino, mensaje_usuario_si_aplica}. Si CONTEXT_SHIFT → notificar al usuario de forma transparente antes de transicionar.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| tipo_cambio | enum(coherente\|nuevo\|atras\|terminar\|fuera_de_scope) | Tipo de cambio detectado |
+| accion | string | Accion a tomar (continuar, CONTEXT_SHIFT, S-END, REJECT) |
+| estado_destino | FSMState\|null | Estado FSM destino si hay transicion |
+| mensaje_usuario | string\|null | Mensaje al usuario si aplica |

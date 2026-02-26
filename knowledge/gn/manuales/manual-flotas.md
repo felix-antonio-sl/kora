@@ -3,172 +3,165 @@ _manifest:
   urn: urn:gn:kb:manual-flotas
   provenance:
     created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_at: '2026-02-24'
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
 - gore-nuble
 - gobierno-regional
+- flotas
+- vehiculos
 - servicios-generales
-- gestion-flotas
-- mantenimiento-infraestructura
 - gn
 lang: es
 ---
 
 # Manual 2.4: Servicios Generales y Gestión de Flotas
 
-## Objetivo
-- Operativizar servicios de soporte institucional y administrar flota vehicular del GORE.
-- Garantizar disponibilidad, seguridad y control de costos.
+Objetivo: Operativizar los servicios de soporte institucional y administrar eficientemente la flota vehicular del GORE, garantizando disponibilidad, seguridad y control de costos.
 
+Siglas: DAF = División de Administración y Finanzas · DIPRES = Dirección de Presupuestos · D.L. 799 = Decreto Ley sobre vehículos estatales · SOAP = Seguro Obligatorio de Accidentes Personales.
 
-## Sección I: Servicios Generales
+## Servicios Generales
 
-### Alcance de Servicios Generales
-- Servicios transversales de apoyo operativo:
+**Alcance de servicios:**
 
 | Servicio | Alcance |
-| :--- | :--- |
-| Mantención Infraestructura | Edificios, instalaciones eléctricas, sanitarias. |
-| Aseo y Ornato | Limpieza oficinas, áreas comunes, jardines. |
-| Seguridad Física | Vigilancia, control acceso, CCTV. |
-| Cafetería / Alimentación | Según disponibilidad. |
-| Correo y Mensajería | Distribución correspondencia interna/externa. |
-| Gestión Estacionamientos | Asignación y control de espacios. |
+|----------|---------|
+| Mantención de Infraestructura | Edificios, instalaciones, sistemas eléctricos, sanitarios |
+| Aseo y Ornato | Limpieza de oficinas, áreas comunes, jardines |
+| Seguridad Física | Vigilancia, control de acceso, circuito cerrado |
+| Cafetería y Alimentación | Si aplica |
+| Correo y Mensajería | Distribución interna y externa de correspondencia |
+| Gestión de Estacionamientos | Asignación y control de espacios |
 
-### Organización del Área
-| Rol | Función / Responsabilidad |
-| :--- | :--- |
-| Jefe Servicios Generales | Coordinación integral del área. |
-| Supervisores por Área | Control de Mantención, Aseo, Seguridad. |
-| Personal Operativo | Funcionarios propios o externos contratados. |
-| Coordinación con DAF | Contrataciones, pagos, control presupuestario. |
+**Organización del área:**
 
-### Servicios Externalizados y Administración de Contratos
-- Ejecución mayoritaria mediante contratos externos:
+| Rol | Descripción |
+|-----|-------------|
+| Jefe de Servicios Generales | Responsable de la coordinación integral |
+| Supervisores por Área | Mantención, Aseo, Seguridad |
+| Personal Operativo | Funcionarios propios o empresas contratadas |
+| Coordinación con DAF | Para contrataciones, pagos y control presupuestario |
 
-- **Servicios:** Aseo, Seguridad Privada, Jardinería, Mantención Ascensores/Equipos especializados.
-- **Administración de Contratos:**
-  - Designación de Administrador del Contrato.
-  - Verificación de dotaciones y horarios.
-  - Registro de incidencias en Libro de Novedades.
-  - Evaluación periódica del servicio.
-  - Aplicación de multas según bases contractuales.
+**Contratos externalizados:** La mayoría de servicios se ejecutan mediante contratos externos (Aseo, Seguridad, Mantención de Áreas Verdes, Mantención de Ascensores/Equipos). Administración: designación de Administrador del Contrato · verificación de dotaciones y horarios · libro de novedades · evaluación periódica · aplicación de multas según bases.
 
-## Sección II: Mantención de Infraestructura
+## Mantención de Infraestructura
 
-### Tipos y Plan de Mantención
-- **Categorías:**
-  - **Preventiva:** Programada según calendario para evitar fallas.
-  - **Correctiva:** Reparación de daños detectados.
-  - **Emergencia:** Atención inmediata (filtraciones, cortes eléctricos).
-- **Plan Anual:**
-  - Basado en inventario de instalaciones y equipos.
-  - Define frecuencia (mensual, trimestral, anual).
-  - Asigna responsable (interno/contratista) y presupuesto estimado.
-  - Seguimiento mediante alertas automáticas.
+**Tipos de mantención:** Preventiva (programada para evitar fallas) · Correctiva (reparación de fallas detectadas) · Emergencia (atención inmediata ante situaciones críticas).
 
-### Órdenes de Trabajo (OT)
-- Instrumento formal de gestión de intervenciones:
+**Plan de Mantención Preventiva:** Elaboración anual en base a inventario de instalaciones y equipos. Contenido: listado de equipos e instalaciones · frecuencia de intervención (mensual/trimestral/anual) · responsable de ejecución · presupuesto estimado.
 
-- **Generación:** Por reporte de usuario o automática vía plan preventivo.
-- **Contenido:** Descripción, ubicación, equipo, prioridad (alta/media/baja), fecha.
-- **Proceso:** Asignación -> Ejecución (registro materiales/horas) -> Validación solicitante -> Cierre (actualización hoja de vida).
+**Órdenes de Trabajo:**
 
-### Control de Elementos de Seguridad
-- Inspección y mantenimiento de:
+| Etapa | Descripción |
+|-------|-------------|
+| Generación | Por usuario (falla reportada) o automática (plan preventivo) |
+| Contenido | Descripción del requerimiento, ubicación y equipo afectado, prioridad (alta/media/baja), fecha de solicitud |
+| Asignación | A técnico interno o derivación a contratista |
+| Ejecución | Registro de trabajos realizados, materiales usados, horas |
+| Cierre | Validación por solicitante; actualización de hoja de vida del equipo |
 
-- **Extintores:** Carga, vencimiento, ubicación, señalética.
-- **Redes:** Pruebas periódicas de red húmeda y seca.
-- **Sistemas:** Iluminación de emergencia, detectores de humo, alarmas.
-- **Evacuación:** Señalética normativa.
+**Control de elementos de seguridad:** Extintores (carga, vencimiento, ubicación, señalética) · red húmeda y seca (pruebas periódicas) · iluminación de emergencia · señalética de evacuación · detectores de humo y alarmas.
 
-## Sección III: Gestión de Flota Vehicular
+## Gestión de Flota Vehicular
 
-### Restricciones Legales y Normativa
-- **Adquisición (Art. 12 Ley Presupuestos):** Requiere autorización previa de DIPRES para compras que superen montos fijados. Aplica a vehículos motorizados por cualquier título (incluye proyectos inversión).
-- **Uso (D.L. 799):** Prohibición de circulación sábados, domingos y festivos. Excepción: Autorización expresa y fundada por servicio impostergable.
+**Restricción legal de adquisición (Art. 12 Ley Presupuestos):** La adquisición de vehículos motorizados, a cualquier título, requiere autorización previa de DIPRES cuando el precio supere el monto fijado por dicha dirección. Aplica también a vehículos adquiridos vía proyectos de inversión.
 
-### Registro de Vehículos y Conductores
-- **Ficha de Vehículo:**
-  - Identificación: Patente, marca, modelo, año, chasis, motor, color, tipo.
-  - Administrativo: Código activo fijo (Ref: Manual 2.3), valor, fecha compra, responsable, centro costo.
-  - Documentos: Permiso circulación, Revisión técnica, SOAP, Seguro voluntario.
-  - Equipamiento: GPS, radio, botiquín, extintor, kit emergencia.
-- **Control de Conductores:**
-  - Nómina de autorizados vía resolución/memorando.
-  - Requisitos: Licencia vigente (clase acorde), hoja de vida sin infracciones graves.
-  - Alertas automáticas por vencimiento de licencias.
+**Registro de vehículos — ficha completa por unidad:**
+- Identificación: patente, marca, modelo, año, N° chasis y motor, color, tipo.
+- Administrativo: código de activo fijo (Manual 2.3), fecha de adquisición y valor, responsable asignado, centro de costo.
+- Documentación vigente: permiso de circulación, revisión técnica, SOAP, seguro automotriz voluntario.
+- Equipamiento: accesorios (GPS, radio, botiquín, extintor), kit de emergencia.
 
-### Solicitud, Asignación y Bitácora
-- **Flujo de Asignación:** Solicitud funcionario -> Aprobación jefatura -> Asignación Encargado Flota (vehículo + conductor) -> Confirmación.
-- **Prioridades:** Comisiones oficiales, Gobernador/Autoridades, Emergencias, Traslados programados.
-- **Bitácora Obligatoria:**
-  - Registro de cada salida: Fecha, hora, conductor, destino, propósito, kilometraje (inicio/fin).
-  - Modalidad: Digital (principal) y Física (respaldo en vehículo).
+**Registro de conductores:** Nómina de funcionarios autorizados. Requisitos: licencia de conducir vigente (clase apropiada) · hoja de vida sin infracciones graves · autorización formal (resolución o memorando). Control de vencimiento de licencias con alertas.
 
-### Control de Insumos y Uso
-- **Combustible:** Tarjetas asignadas por vehículo. Registro de carga (estación, litros, monto, km).
-- **Rendimiento:** Análisis km/litro vs estándar fabricante. Alertas por anomalías.
-- **Kilometraje:** Registro mensual de odómetro. Proyección de mantenciones. Detección de usos no autorizados.
+**Solicitud y asignación de vehículos:**
 
-## Sección IV: Mantención de Vehículos
+| Paso | Descripción |
+|------|-------------|
+| 1. Solicitud | Funcionario requiere vehículo: fecha, hora, destino, propósito |
+| 2. Aprobación | Jefatura del solicitante autoriza |
+| 3. Asignación | Encargado de Flota verifica disponibilidad y asigna vehículo + conductor |
+| 4. Confirmación | Notificación al solicitante y conductor |
 
-### Plan y Órdenes de Trabajo Vehicular
-- **Mantenimiento Preventivo:** Según fabricante y kilometraje (5.000, 10.000, 20.000 km). Cambio aceite, filtros, frenos, neumáticos.
-- **Mantenimiento Correctivo:** Reparación de fallas según criticidad.
-- **Mantenimiento Mayor:** Overhaul motor/transmisión. Requiere evaluación costo/beneficio vs reemplazo.
-- **Gestión:** OT similares a infraestructura. Registro de repuestos y actualización de hoja de vida vehicular.
+Prioridad: Comisiones de servicio oficiales · actividades del Gobernador y autoridades · emergencias institucionales · traslados programados.
 
-### Control Documental
+Restricción de uso (D.L. 799): Los vehículos estatales no pueden circular en días sábados, domingos ni festivos, salvo autorización expresa y fundada por razones de servicio impostergables.
+
+**Bitácora de uso — registro obligatorio por cada salida:**
+
+| Campo | Descripción |
+|-------|-------------|
+| Fecha y hora | Salida y retorno |
+| Conductor | Nombre |
+| Destino y propósito | Descripción |
+| Kilometraje | Inicial y final |
+| Observaciones | Estado del vehículo, incidentes |
+
+Modalidad: Digital (sistema o aplicación móvil) + Física (cuaderno en el vehículo como respaldo).
+
+**Control de combustible:** Tarjeta de combustible asignada a cada vehículo (ej. ServiEstado, Copec). Registro de cargas: fecha y estación, litros, monto, kilometraje al momento de carga. Análisis de rendimiento: Km/litro por vehículo, comparación con estándar del fabricante, alertas por consumos anómalos.
+
+**Control de kilometraje:** Registro mensual del odómetro · proyección de mantenciones según kilometraje · detección de usos no autorizados.
+
+## Mantención de Vehículos
+
+**Plan de mantención vehicular:**
+- Preventiva: según manual del fabricante y kilometraje (típico: cada 5.000, 10.000, 20.000 km; incluye cambio de aceite, filtros, revisión de frenos, neumáticos).
+- Correctiva: reparación de fallas detectadas; prioridad según criticidad.
+- Mayor: overhaul de motor, transmisión; evaluación costo/beneficio vs. reemplazo del vehículo.
+
+**Control de documentación — alertas automáticas por vencimientos:**
+
 | Documento | Frecuencia | Responsable |
-| :--- | :--- | :--- |
+|-----------|-----------|-------------|
 | Permiso de Circulación | Anual | Encargado Flota |
 | Revisión Técnica | Semestral/Anual | Encargado Flota |
 | SOAP | Anual | Encargado Flota |
 | Seguro Automotriz | Anual | Encargado Flota |
 | Licencia Conductor | Según vencimiento | RRHH / Conductor |
 
-### Procedimiento ante Siniestros y Accidentes
+**Procedimiento ante accidente:**
 1. Asegurar integridad de personas.
-2. Notificar a Carabineros y Compañía de Seguros.
+2. Notificar a Carabineros y compañía de seguros.
 3. Documentar con fotografías y croquis.
-4. Reportar a Encargado de Flota y Jefatura.
+4. Reportar a Encargado de Flota y jefatura.
 5. Gestionar denuncia y reclamo al seguro.
-6. Evaluación de responsabilidad (posible sumario).
-7. Reparación o baja del vehículo.
+6. Evaluar responsabilidad del conductor (posible sumario).
+7. Reparación o baja del vehículo según daño.
 
-## Sección V: Control y Reportería
+## Control y Reportería
 
-### Indicadores de Gestión (KPI)
-- **Disponibilidad:** % tiempo operativo vs mantenimiento.
-- **Utilización:** % uso efectivo vs capacidad.
-- **Eficiencia:** Costo por km (Combustible + Mantención + Seguros / Km).
-- **Gasto:** Costo total por vehículo (mensual/anual).
-- **Seguridad:** Conteo de incidentes, accidentes y multas.
+**Indicadores de gestión de flota:**
 
-### Reportes y Auditoría
-- **Informe Mensual:** Estado flota, km recorridos, consumo, mantenciones y costos.
-- **Alertas:** Informe de vencimientos documentales.
-- **Ranking:** Desempeño conductores (consumo, multas).
-- **Auditoría:** Cruce de bitácora vs combustible vs km. Verificación vs comisiones de servicio autorizadas.
+| Indicador | Descripción |
+|-----------|-------------|
+| Disponibilidad | % de tiempo operativo vs. mantenimiento |
+| Utilización | % de uso efectivo vs. capacidad disponible |
+| Costo por Kilómetro | (Combustible + Mantención + Seguros) / Km recorridos |
+| Costo por Vehículo | Gastos totales mensuales/anuales |
+| Incidentes | Número de accidentes, multas de tránsito |
 
-## Sección VI: Disposiciones Especiales
+**Reportes periódicos:**
+- Informe Mensual de Flota: estado de cada vehículo, kilometraje recorrido, consumo de combustible, mantenciones realizadas, costos incurridos.
+- Informe de Vencimientos: documentos próximos a vencer.
+- Ranking de Conductores: por consumo, incidentes, multas.
 
-### Otras Modalidades y Baja
-- **Comodato/Arriendo:** Vehículos externos en uso temporal o leasing. Sujetos a mismo régimen de bitácora, combustible y mantenimiento. Registro contable como gasto arriendo (no activo fijo).
-- **Baja de Vehículos (Ref: Manual 2.3):**
-  - Informe técnico de obsolescencia o siniestro.
-  - Resolución de baja.
-  - Destino: Remate, donación o destrucción.
-  - Trámites: Transferencia de dominio o baja registral.
+**Auditoría de uso:** Verificación de coherencia entre bitácora, combustible y kilometraje · detección de usos no autorizados o fuera de horario · cruce con comisiones de servicio autorizadas.
 
-### Matriz de Responsabilidades
+## Disposiciones Especiales
+
+**Vehículos en comodato o arriendo:** Comodato Recibido (de otras instituciones) y Arriendo Operativo (leasing sin transferencia de propiedad): mismo régimen de bitácora, combustible y mantención; contabilidad: gasto de arriendo, no activo fijo.
+
+**Baja de vehículos** (según Manual 2.3 Activo Fijo): informe técnico de obsolescencia o siniestro → resolución de baja → destino (remate/donación/destrucción) → trámites legales (transferencia de dominio o baja registral).
+
+**Responsabilidades:**
+
 | Rol | Responsabilidades |
-| :--- | :--- |
-| Conductor | Uso correcto, registro bitácora, reporte de fallas. |
-| Encargado de Flota | Planificación, asignación, control documental. |
-| Jefe Servicios Generales | Supervisión integral del área operativa. |
-| DAF | Control presupuestario y gestión de contratos. |
+|-----|-----------------|
+| Conductor | Uso correcto, registro de bitácora, reporte de fallas |
+| Encargado de Flota | Planificación, asignación, control documental |
+| Jefe de Servicios Generales | Supervisión integral del área |
+| DAF | Control presupuestario y de contratos |

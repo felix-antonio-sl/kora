@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -18,101 +18,83 @@ tags:
 lang: es
 ---
 
-# RIS para Proyectos de Infraestructura Deportiva (SNI 2024)
+# RIS Infraestructura Deportiva (SNI 2024)
 
-## Alcance y Clasificación de Proyectos
+Fuente: [PDF SNI](https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf). Aplica: proyectos de edificación para práctica física y deportiva. Marco metodológico: "Metodología de Formulación y Evaluación de Proyectos de Infraestructura Deportiva".
 
-| Categoría | Especificación |
+## Alcance y Clasificación
+
+Modalidades: formativo, recreativo, competitivo, alto rendimiento. Un proyecto puede atender múltiples modalidades; se clasifica por tamaño, estándar o costo.
+
+Proyectos en establecimientos educacionales: deben ser abiertos a la comunidad; operar de forma autónoma en administración, financiamiento y accesos propios a vía pública.
+
+Aumento de oferta (SNI): incremento real en deportistas atendidos simultáneamente. No califica: mejoras de confort (iluminación, camarines, estética) sin intensificar uso.
+
+## Componentes de Instalaciones
+
+| Área | Componentes |
 | :--- | :--- |
-| Definición | Edificación destinada exclusivamente a la práctica física y deportiva. |
-| Marco Metodológico | Metodología de Formulación y Evaluación de Proyectos de Infraestructura Deportiva. |
-| Clasificación | Un proyecto puede atender múltiples modalidades; se clasifica por tamaño, estándar o costo. |
+| Uso deportivo (esenciales) | Espacios de juego (dimensiones, altura reglamentaria); camarines, baños, bodegas, oficinas, primeros auxilios; accesos, circulaciones, estacionamientos. |
+| Espectadores — presencial | Graderías, boleterías, puntos de venta, baños, estacionamientos. |
+| Espectadores — transmisión | Puntos de prensa, salas especializadas, ascensores de servicio, espacios radio/TV. |
+| Alto rendimiento (opcionales) | Habitaciones, alimentación, lavandería, estudio, entretención, atención física/psicológica. |
+| Áreas mixtas | Administración, seguridad, iluminación, urbanización, losas, estacionamientos comunes. |
 
-### Modalidades Deportivas
-*   **M-1 Formativo:** Iniciación y aprendizaje deportivo.
-*   **M-2 Recreativo:** Actividad física de esparcimiento.
-*   **M-3 Competitivo:** Práctica sistemática con reglamentación.
-*   **M-4 Alto Rendimiento:** Entrenamiento y competencia de élite.
+## Metodología de Prorrateo Presupuestario (CAE diferenciado)
 
-### Integración en Establecimientos Educacionales
-*   **Apertura:** Deben permitir uso a la comunidad externa.
-*   **Autonomía:** Operación independiente en administración, financiamiento y accesos directos desde vía pública.
+CAE = Costo Anual Equivalente.
 
-### Criterio de Aumento de Oferta
-*   **Definición:** Incremento real en cantidad de deportistas atendidos simultáneamente.
-*   **Exclusión:** Mejoras de confort (iluminación, camarines, estética) que no intensifiquen el uso del recinto.
+1. Clasificar superficies: deportistas / espectadores / mixtas.
+2. Áreas mixtas: repartir 50% a deportistas y 50% a espectadores.
+3. Extraer partidas directas de cada componente; sumar costos prorrateados de mixtas.
+4. Resultado: indicadores CAE-Deportista y CAE-Espectador diferenciados.
 
-## Componentes de Instalaciones Deportivas
-
-### Áreas de Uso Deportivo (Esenciales)
-*   **Espacios de juego:** Dimensiones y altura reglamentaria según disciplina.
-*   **Instalaciones accesorias:** Camarines, baños, áreas de ejercicios, bodegas, oficinas, primeros auxilios.
-*   **Servicios:** Accesos, circulaciones, estacionamientos.
-
-### Áreas para Espectadores
-*   **Uso Presencial:** Graderías, accesos, circulaciones, boleterías, puntos de venta, servicios higiénicos, estacionamientos.
-*   **Uso Transmisión:** Puntos de prensa, salas especializadas, ascensores de servicio, espacios para radio y TV.
-
-### Componentes de Alto Rendimiento (Opcionales)
-*   Habitaciones y áreas de alimentación.
-*   Lavandería, espacios de estudio y entretención.
-*   Atención especializada (física y psicológica).
-
-### Áreas Mixtas
-*   Administración general, seguridad, iluminación perimetral.
-*   Urbanización, cierros, losas y estacionamientos comunes.
-
-## Metodología de Prorrateo Presupuestario
-
-### Clasificación de Superficies Atribuibles
-1.  **Identificación:** Clasificar cada recinto según destino (Deportistas, Espectadores, Mixto).
-2.  **Regla de Áreas Mixtas:** Distribuir 50% de la superficie al componente Deportista y 50% al componente Espectador.
-
-### Cálculo de Costo Medio
-*   **Partidas Directas:** Extraer del presupuesto los ítems atribuibles directamente a cada componente.
-*   **Costos Prorrateados:** Sumar costos derivados de áreas mixtas según la regla del 50/50.
-*   **Objetivo:** Obtener Indicadores CAE diferenciados para deportistas y para espectadores.
-
-## Criterios de Evaluación y Umbrales de Inversión
+## Criterios de Evaluación
 
 ### Proyectos Formativos y Recreativos
-| Escala | Condición | Criterio de Evaluación |
+
+| Escala | Condición | Criterio |
 | :--- | :--- | :--- |
-| **Menor** | 5.000 a 8.000 UTM (sin aumento oferta) | Análisis simplificado. |
-| **Mediana** | Recinto existente / Aforo <500 (cerrado) o <1.500 (abierto) | CAE-Deportista máx: **0,075 UTM**. |
-| **Mayor** | Aforo hasta 1.500 (cerrado) o 2.500 (abierto) | CAE-Deportista: **0,075 UTM**; CAE-Espectador: **0,11 UTM**. |
+| Menor | 5.000–8.000 UTM, sin aumento de oferta | Análisis simplificado |
+| Mediana | Recinto existente; aforo <500 (cerrado) o <1.500 (abierto) | CAE-Deportista máx. 0,075 UTM |
+| Mayor | Aforo hasta 1.500 (cerrado) o 2.500 (abierto) | CAE-Deportista 0,075 UTM; CAE-Espectador 0,11 UTM |
 
-### Proyectos de Alta Competencia
-*   **Condición:** Aforo >1.500 (cerrados) o >2.500 (abiertos).
-*   **Criterio Deportista:** CAE hasta **0,12 UTM**.
-*   **Criterio Espectador:** Evaluación económica mediante **VAN y TIR**.
+### Proyectos Alta Competencia
 
-### Proyectos de Alto Rendimiento
-*   **Niveles:** Regional (CER) y Nacional (CAR).
-*   **Requisito:** Respaldo explícito de políticas y autoridades deportivas nacionales.
-*   **Umbral CER:** CAE-Deportista puede incrementarse hasta **30%** sobre estándar.
-*   **Umbral CAR:** Sin limitación predefinida de CAE; evaluación mediante VAN y TIR para espectadores.
-*   **Optimización:** Obligatoriedad de tecnologías para eficiencia en operación y mantención.
+- Condición: aforo >1.500 (cerrados) o >2.500 (abiertos).
+- CAE-Deportista: hasta 0,12 UTM.
+- CAE-Espectador: evaluación mediante VAN y TIR.
 
-### Componentes de Optimización Operativa
-*   Iluminación LED y paneles fotovoltaicos.
-*   Sistemas de control de acceso y seguridad.
-*   Climatización: Calderas, deshumidificación, generadores.
-*   Protección y mantenimiento de superficies de juego.
+### Proyectos Alto Rendimiento
 
-## Requisitos de Postulación y Antecedentes Técnicos
+| Nivel | Límite CAE-Deportista | Espectadores |
+| :--- | :--- | :--- |
+| Regional (CER) | Puede incrementarse hasta 30% sobre estándar | Prorrateo igual a escala mayor |
+| Nacional (CAR) | Sin limitación predefinida | VAN y TIR |
+
+Requisito: respaldo explícito de políticas y autoridades deportivas nacionales. Recomendado: tecnologías de eficiencia operativa (LED, fotovoltaicos, calderas, deshumidificación, control de acceso, protección de superficies).
+
+## Requisitos de Postulación
 
 ### Etapa de Diseño
-1.  **Formulación:** Uso obligatorio de "Planilla evaluación-sector deporte" o Metodología General.
-2.  **Técnicos:** Según estándar "Antecedentes Técnicos para Proyectos que consideran Edificación".
-3.  **Legal:** Certificado de propiedad del terreno (dominio vigente).
-4.  **Presupuesto Consultoría:** Detalle de personal, horas hombre y gastos administrativos.
-5.  **Gestión:** Términos de Referencia (TDR), Carta Gantt (incluye licitación) y Calendario de Financiamiento.
-6.  **Sostenibilidad:** Plan de Gestión según instructivo sectorial.
+
+| # | Requisito |
+| :--- | :--- |
+| 1 | Formulación: "Planilla evaluación-sector deporte" o Metodología General. |
+| 2 | Antecedentes técnicos: "Antecedentes Técnicos para Proyectos que consideran Edificación". |
+| 3 | Certificación de propiedad del terreno. |
+| 4 | Presupuesto detallado de consultoría de diseño: personal, horas hombre, gastos administrativos. |
+| 5 | TDR para la consultoría. |
+| 6 | Carta Gantt: licitación, contratación, revisión. |
+| 7 | Calendario de financiamiento: asignaciones y gastos administrativos. |
+| 8 | Plan de gestión según instructivo sectorial. |
 
 ### Etapa de Ejecución
-1.  **Evaluación:** Planilla sectorial actualizada o Metodología General.
-2.  **Especialidades:** Antecedentes técnicos completos de edificación y especialidades.
-3.  **Equipamiento:** Listado valorizado y especificaciones técnicas de equipos y mobiliario.
-4.  **Operación:** Plan de Gestión validado.
-5.  **Normativa:** Cumplimiento de Normas, Instrucciones y Procedimientos (NIP) de Inversión Pública.
+
+| # | Requisito |
+| :--- | :--- |
+| 1 | Formulación directa: "Planilla evaluación-sector deporte" o Metodología General. |
+| 2 | Antecedentes técnicos: "Antecedentes Técnicos para Proyectos que consideran Edificación". |
+| 3 | Listado valorizado de equipamiento y equipos con especificaciones. |
+| 4 | Plan de gestión validado. |
+| 5 | Cumplimiento de Normas, Instrucciones y Procedimientos (NIP) de Inversión Pública. |

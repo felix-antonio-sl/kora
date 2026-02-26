@@ -20,60 +20,62 @@ lang: es
 
 # Protección a la Maternidad y Paternidad
 
+Fuente: Material Curso Legislación Trabajo Médico — UDELAM/COLMED.
+Ámbito: trabajadoras y trabajadores médicos en sector público y privado de Chile.
+
 ## Principios Generales
-- **Base Legal**: Constitución Política de la República (CPR), Código del Trabajo.
-- **Protección Especial**: Amparo reforzado a la maternidad, infancia y familia.
-- **No Discriminación**: Prohibición absoluta de discriminación por embarazo o maternidad.
-- **Fueros**: Limitación legal a la terminación del vínculo laboral/estatutario.
 
-## Régimen Sector Privado (Código del Trabajo)
+Base legal: Constitución Política de la República (CPR), Código del Trabajo.
+- Protección especial a la maternidad, infancia y familia.
+- Prohibición absoluta de discriminación por embarazo o maternidad.
+- Reconocimiento de fueros que limitan la terminación del vínculo laboral/estatutario durante ciertos períodos.
 
-### Prestaciones de Descanso y Subsidios
+## Sector Privado: Prestaciones de Descanso y Subsidios
+
 | Prestación | Descripción |
 | :--- | :--- |
-| **Prenatal** | Descanso previo al parto con subsidio de maternidad. |
-| **Postnatal** | Descanso de la madre posterior al parto con subsidio. |
-| **Postnatal Parental** | Extensión del descanso ejercible por madre o padre según ley. |
-| **Permisos Lactancia** | Tiempo remunerado para alimentación del hijo. |
+| Prenatal | Descanso previo al parto con subsidio de maternidad. |
+| Postnatal | Descanso de la madre posterior al parto con subsidio. |
+| Postnatal Parental | Extensión del descanso ejercible por madre o padre según ley. |
+| Permisos Lactancia | Tiempo remunerado para alimentación del hijo. |
 
-### Fuero Maternal
-- **Definición**: Impedimento de término de contrato sin autorización judicial previa (desafuero).
-- **Vigencia**: Desde la concepción hasta el término del período fijado tras el postnatal (según Código del Trabajo).
-- **Infracción**: Despido sin autorización judicial es ineficaz y genera responsabilidad del empleador.
+## Sector Privado: Fuero Maternal
 
-### Condiciones Laborales
-- **Irrenunciabilidad**: Prohibición de rebaja unilateral de remuneraciones.
-- **Estabilidad**: Prohibición de alterar jornada o categoría por embarazo/maternidad.
+Definición: protección especial que impide al empleador poner término al contrato de la trabajadora embarazada o madre reciente sin autorización judicial previa (desafuero).
+Vigencia: desde la concepción confirmada hasta el término del período fijado por el Código del Trabajo tras el postnatal.
+Infracción: despido sin autorización judicial es ineficaz y genera responsabilidad del empleador.
 
-## Protección en Sector Público
+Prohibición de desmejora: prohibido rebajar unilateralmente remuneraciones, jornada o categoría por motivo de embarazo o maternidad.
 
-### Marco Normativo Estatutario
-- **Leyes Aplicables**: Estatuto Administrativo (Ley 18.834), Ley 15.076, Ley 19.664.
-- **Supletoriedad**: Aplicación del Código del Trabajo en lo no regulado y compatible.
+## Sector Público: Marco Normativo Estatutario
 
-### Derechos Funcionarios
-- **Licencias y Permisos**: Derechos a licencias médicas y feriados específicos por embarazo y parto.
-- **Protección de Empleo**: Restricción de destinaciones y término de vínculo durante embarazo/postnatal.
-- **Gestión de Turnos**: Reglas de compatibilidad para desempeño en servicios de guardia y turnos.
+Leyes aplicables: Estatuto Administrativo (Ley 18.834), Ley 15.076, Ley 19.664.
+Supletoriedad: Código del Trabajo en lo no regulado y compatible con el estatuto.
+
+Derechos funcionarios:
+- Licencias y Permisos: derecho a licencias médicas, permisos y feriados por embarazo, parto y cuidados del recién nacido, según normas estatutarias y de seguridad social.
+- Protección de empleo: restricción de destinaciones y terminación del vínculo durante embarazo y postnatal; remisión a normas de fuero maternal donde corresponda.
+- Gestión de turnos: reglas de compatibilidad de la maternidad con desempeño en servicios de guardia y turnos.
 
 ## Parentalidad y Conciliación
 
-### Permisos Parentales
-- **Titularidad**: Ejercitables por padre o madre bajo reglas del Código del Trabajo.
-- **Sector Público**: Requiere normas de adecuación estatutaria para su plena aplicación.
+Permisos parentales (Código del Trabajo): ejercitables por padre o madre. En el sector público, su plena aplicación puede requerir normas de adecuación estatutaria.
 
-### Medidas de Conciliación
-- **Ajustes Operativos**: Modificación de turnos o jornada en embarazo avanzado o lactancia.
-- **Cuidado Infantil**: Permisos y días administrativos para cuidado de hijos enfermos.
+Medidas de conciliación trabajo-familia:
+- Ajustes de jornada o turnos en embarazo avanzado o durante lactancia.
+- Permisos y días administrativos para cuidado de hijos enfermos cuando la normativa lo permite.
 
 ## Limitaciones al Término del Vínculo
 
-### Restricciones Legales
-- **Sector Privado**: Exigencia obligatoria de desafuero judicial para aplicar causales de término.
-- **Derechos Fundamentales**: La discriminación por maternidad habilita acciones por tutela laboral.
-- **Ponderación Pública**: La estabilidad estatutaria prevalece sobre medidas administrativas de desvinculación.
+Sector privado:
+- Exigencia obligatoria de desafuero judicial para aplicar causales de término a trabajadoras con fuero maternal.
+- Discriminación por embarazo o maternidad habilita acciones por vulneración de derechos fundamentales (procedimiento de tutela).
 
-### Casos de Aplicación
-- Evaluación de legalidad en desvinculaciones durante embarazo/postnatal.
-- Análisis de compatibilidad en cambios de funciones o jornada.
-- Comparativa de estándares de protección entre sector público y privado.
+Sector público:
+- Estabilidad estatutaria y derechos de maternidad deben ser ponderados en cualquier proceso de término o destinación.
+- La discriminación puede constituir falta a la probidad.
+
+Casos de aplicación:
+- Determinar si una médica puede ser desvinculada durante el embarazo/postnatal y bajo qué condiciones.
+- Evaluar si un cambio de jornada o funciones en médica embarazada es compatible con la normativa.
+- Comparar estándares de protección entre cargo público y contrato en clínica privada.

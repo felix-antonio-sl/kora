@@ -3,151 +3,141 @@ _manifest:
   urn: urn:gn:kb:manual-contabilidad
   provenance:
     created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_at: '2026-02-24'
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
 - gore-nuble
 - gobierno-regional
 - contabilidad
+- sigfe
 - nicsp
-- cgr
-- finanzas
 - gn
 lang: es
 ---
 
-# Manual de Contabilidad Gubernamental y Cierre Financiero
+# Manual 1.2: Contabilidad Gubernamental y Cierre Financiero
 
-## Glosario y Definiciones
-| Categoría | Sigla/Término | Definición |
-| :--- | :--- | :--- |
-| **Órganos** | CGR | Contraloría General de la República. |
-| | DIPRES | Dirección de Presupuestos. |
-| | DIPIR | División de Presupuesto e Inversión Regional. |
-| **Normas** | NICSP | Normas Internacionales de Contabilidad para el Sector Público. |
-| | Devengo | Reconocimiento de obligación/derecho independiente del flujo de caja. |
-| | Deuda Flotante | Obligaciones devengadas no pagadas al cierre del ejercicio. |
-| **Sistemas** | SIGFE | Sistema de Información para la Gestión Financiera del Estado. |
-| | ERP | Sistema financiero institucional; mantiene Matriz de Devengamiento. |
-| | SIGPER / SIGAS | Módulos de Remuneraciones / Activo Fijo y Existencias. |
-| | SISREC | Sistema de Rendición Electrónica de Cuentas de CGR. |
-| **Documentos** | Comprobante | Documento fuente único de registro (papel o digital firmado). |
-| | Libro Banco | Registro cronológico; debe cuadrar diario con saldo contable "Banco". |
-| | Asiento Tipo | Parametrización en ERP para operaciones recurrentes. |
-| | Matriz Devengo | Asociación entre imputación presupuestaria y asiento patrimonial. |
+Objetivo: Asegurar integridad contable bajo normativa NICSP y CGR; garantizar registro fidedigno, oportuno y trazable de hechos económicos del GORE Ñuble en operación diaria y procesos críticos de cierre financiero.
 
-## Fundamentos y Marco Normativo
-#### Objetivos
-*   Asegurar integridad contable bajo normativa NICSP y CGR.
-*   Garantizar registro fidedigno, oportuno y trazable de hechos económicos.
+Siglas: CGR = Contraloría General de la República · DIPRES = Dirección de Presupuestos · DIPIR = División de Presupuesto e Inversión Regional · NICSP = Normas Internacionales de Contabilidad del Sector Público · SIGFE = Sistema de Información para la Gestión Financiera del Estado · ERP = sistema ERP financiero institucional · SIGPER = sistema de remuneraciones · SIGAS = sistema de activo fijo y existencias · SII = Servicio de Impuestos Internos · SISREC = Sistema de Rendición Electrónica de Cuentas CGR · DAF = División de Administración y Finanzas · UCR = Unidad de Control de Rendiciones · RTF = Referente Técnico-Financiero · FEA = Firma Electrónica Avanzada.
 
-#### Destinatarios
-*   Analistas contables, Tesoreros, Jefaturas y personal de DIPIR.
+## Marco Normativo
 
-#### Marco Legal Aplicable
-*   **DL N° 1.263 (1975):** Ley Orgánica de Administración Financiera del Estado.
-*   **Resolución N° 16 (2015) CGR:** Normativa Sistema de Contabilidad General de la Nación (NICSP-CGR).
-*   **Resolución N° 30 (2015) CGR:** Normas sobre rendición de cuentas.
-*   **Oficios Circulares CGR:** Instrucciones anuales de cierre y apertura.
-*   **Instrucciones DIPRES:** Clasificador Presupuestario y manuales operativos SIGFE.
+| Fuente | Contenido |
+|--------|-----------|
+| DL N° 1.263 (1975) | Ley Orgánica de Administración Financiera del Estado |
+| Resolución N° 16 (2015) CGR | Aprueba normativa Sistema de Contabilidad General de la Nación (NICSP-CGR) |
+| Resolución N° 30 (2015) CGR | Normas sobre rendición de cuentas |
+| Oficios Circulares CGR | Instrucciones anuales sobre cierres contables y apertura de ejercicio |
+| Instrucciones DIPRES | Clasificador Presupuestario y manuales operativos SIGFE |
+
+**Conceptos clave:**
+- Devengo: reconocimiento de obligación de pago o derecho de cobro, independiente de fecha efectiva de pago o recaudación.
+- Deuda Flotante: obligaciones devengadas y no pagadas al cierre del ejercicio.
+- Matriz de Devengamiento: parametrización en ERP que asocia imputación presupuestaria (Subtítulo/Ítem/Asig) con asiento contable patrimonial.
+- Asiento Tipo: asiento contable pre-parametrizado en ERP para operaciones recurrentes.
+- Comprobante Contable: documento fuente único de registro (papel o digital firmado).
+- Libro Banco: registro cronológico de movimientos bancarios; debe cuadrar diariamente con saldo contable de cuenta "Banco".
 
 ## Plan de Cuentas y Estructura Contable
-#### Niveles Jerárquicos CGR
-1.  **Título:** Ej. 1 ACTIVO.
-2.  **Grupo:** Ej. 11 ACTIVOS CIRCULANTES.
-3.  **Subgrupo:** Ej. 111 DISPONIBILIDADES.
-4.  **Cuenta Nivel 1:** Ej. 11101 BANCO ESTADO.
-5.  **Cuenta Nivel 2:** Ej. 1110101 CUENTA ÚNICA FISCAL.
-6.  **Desagregados:** Control de gestión (Proyecto/IPR).
 
-#### Ambiente Contable Institucional
-*   **Centros de Costo:** Asociados a estructura organizacional (Divisiones/Deptos).
-*   **Centros de Gestión IPR:** Cada IDI funciona como centro contable independiente.
-*   **Matriz de Devengamiento:** Parametrización obligatoria en ERP; genera asientos automáticos (Ej: Gasto Personal -> Gasto Patrimonial + Pasivo Corriente).
-*   **Cuentas de Orden:** Control de garantías (boletas/pólizas); no afectan patrimonio directamente.
+**Plan de Cuentas CGR (adoptado integralmente por el GORE):**
 
-#### Biblioteca de Asientos Tipo
-*   **Devengo Remuneraciones:** Automático desde SIGPER.
-*   **Devengo Bienes y Servicios:** Automático desde Adquisiciones/Activo Fijo.
-*   **Ingresos por Transferencia:** Recepción de aporte fiscal.
-*   **Rendiciones de Cuentas:** Regularización de anticipos.
-*   **Atribución:** Solo Jefe de Finanzas crea nuevos modelos de asientos.
+| Nivel | Ejemplo |
+|-------|---------|
+| Título | 1 ACTIVO |
+| Grupo | 11 ACTIVOS CIRCULANTES |
+| Subgrupo | 111 DISPONIBILIDADES |
+| Cuenta Nivel 1 | 11101 BANCO ESTADO |
+| Cuenta Nivel 2 | 1110101 CUENTA ÚNICA FISCAL |
+| Desagregados institucionales | Auxiliar por Proyecto/IPR |
+
+Cuentas de Orden: control de garantías (boletas, pólizas) y responsabilidades eventuales; no afectan patrimonio directamente; sí responsabilidad administrativa.
+
+**Configuración del ambiente contable:**
+- Centros de costo: catálogo asociado a estructura organizacional (Divisiones/Departamentos) para imputar gastos operativos.
+- Centros de gestión IPR: cada IDI funciona como centro de gestión contable; permite balances por proyecto.
+- Asociación contable-presupuestaria: Matriz de Devengamiento actualizada en ERP; cada imputación presupuestaria genera automáticamente asiento contable patrimonial correcto.
+
+**Asientos Tipo pre-parametrizados:**
+
+| Asiento | Fuente |
+|---------|--------|
+| Devengo de Remuneraciones | Automático desde módulo SIGPER |
+| Devengo de Bienes y Servicios | Automático desde módulo Adquisiciones/Activo Fijo |
+| Ingresos por Transferencia | Asiento tipo de recepción de aporte fiscal |
+| Rendiciones de Cuentas | Asiento tipo para regularizar anticipos |
+
+Creación de nuevos asientos: solo Jefe de Finanzas tiene atribución.
 
 ## Registro y Operación Contable
-#### Comprobantes Contables
-*   **Automáticos:** Generados por hitos en módulos auxiliares (Ej: Recepción en bodega).
-*   **Manuales:** Restringidos a ajustes, depreciaciones y correcciones.
-    *   Requieren V°B° jefatura + Minuta Explicativa adjunta.
-*   **Validaciones:** Sistema bloquea descuadres y rupturas de lógica Financiero-Económica.
 
-#### Centralización Contable
-*   **Remuneraciones (SIGPER):** Mensual; validación Bruto = Líquido + Leyes + Retenciones.
-*   **Activo Fijo (SIGAS):** Entrada bodega genera alta activo + pasivo proveedor.
-*   **Interoperabilidad:** Recepción automática de cartolas y decretos DIPRES.
+**Comprobantes contables:**
+- Automáticos (Interfaz): se generan sin intervención humana directa al aprobarse hitos en módulos auxiliares (ej. Recepción Conforme en Bodega genera el devengo).
+- Manuales: solo para ajustes, regularizaciones, depreciaciones manuales y correcciones de errores. Requieren V°B° de jefatura y minuta explicativa adjunta.
+- Validaciones del sistema: bloquea comprobantes descuadrados y bloquea lógica Financiero-Económico (ej. gasto presupuestario sin contrapartida patrimonial).
 
-#### Gestión de Honorarios
-*   Importación de Boletas Electrónicas desde SII.
-*   Cálculo automático de retención (tasa vigente).
-*   Emisión mensual de Libro de Honorarios Auxiliar y DJ 1879 anual.
+**Centralización contable** (integración de sistemas satélites al ERP Financiero):
 
-## Gestión de Deuda e Institucional
-#### Cuentas por Pagar y Deuda
-*   **Aging:** Monitoreo de antigüedad; alerta obligatoria por facturas > 30 días (Ley Pago a 30 Días).
-*   **Deuda Flotante:** Segregación al 31/12 de compromisos devengados no pagados.
-*   **Anticipos:** Control estricto de Fondos por Rendir/Viáticos; prohibido nuevos anticipos con rendiciones pendientes.
+| Área | Procedimiento |
+|------|--------------|
+| Remuneraciones (SIGPER) | Centralizar mensualmente tras cierre de sueldos; validar integridad total: Monto Bruto = Líquido + Leyes Sociales + Retenciones |
+| Activo Fijo y Existencias (SIGAS) | Entrada de bodega genera alta de activo/existencia + pasivo con proveedor (Facturas por Recibir); consumo de bodega genera gasto patrimonial |
+| Interoperabilidad Externa | Recepción automática de decretos de modificación presupuestaria desde DIPRES; recepción de cartolas bancarias |
 
-#### Rendiciones de Cuentas SISREC (Res. Ex. N° 1.858/2023)
-| Paso | Actividad | Responsable |
-| :--- | :--- | :--- |
-| 1. Recepción | Centralización y derivación al Referente Técnico. | Unidad Control Rendiciones |
-| 2. Revisión | Análisis físico y financiero en SISREC. | Analista Otorgante |
-| 3. Aprobación | Firma Informe de Aprobación vía FEA. | Jefatura DAF |
-| 4. Registro | Asiento en SIGFE (Reverso Anticipo / Reconocimiento Gasto). | Contabilidad (Dln: 2 días) |
+**Gestión de honorarios:** Importación de Boletas Electrónicas desde SII → cálculo automático de retención (tasa vigente) → generación de obligación de pago (Devengo) y cuentas por pagar → emisión mensual Libro de Honorarios Auxiliar → emisión certificados de retención anuales (DJ 1879).
+
+**Gestión de deuda institucional:**
+- Cuentas por Pagar: monitoreo de antigüedad (Aging); alerta obligatoria sobre facturas devengadas con más de 30 días de antigüedad (Ley Pago a 30 Días).
+- Deuda Flotante: al cierre de año, segregación clara de compromisos devengados no pagados para imputación a caja del año siguiente.
+- Anticipos: control estricto de Fondos por Rendir y viáticos; prohibido nuevos anticipos a funcionarios/proveedores con rendiciones pendientes.
+
+**Rendiciones externas (SISREC):** Transferencias a terceros (Subtítulos 24 y 33) deben rendirse vía SISREC (CGR), conforme a Res. Ex. N° 1.858/2023.
+
+| Paso | Responsable | Acción |
+|------|-------------|--------|
+| 1. Recepción y Derivación | UCR | Centraliza la recepción y deriva al RTF |
+| 2. Revisión Técnica | Analista Otorgante | Revisión física y financiera en SISREC; aprobación o devolución por observaciones |
+| 3. Firma y Aprobación | Encargado Otorgante (Jefatura DAF) | Firma del Informe de Aprobación mediante FEA |
+| 4. Contabilización SIGFE | Analista | Descarga del informe aprobado; ejecución del asiento de rendición en SIGFE (Reverso de Anticipos / Reconocimiento de Gasto) — plazo: 2 días hábiles tras aprobación técnica |
 
 ## Integración Bancaria y Conciliación
-#### Administración de Cuentas
-*   Registro único de cuentas FNDR, Operacionales y Fondos de Terceros.
-*   Libro Banco debe cuadrar diariamente con saldo contable.
 
-#### Proceso de Conciliación
-*   **Frecuencia:** Diaria (gestión) y Mensual (cierre).
-*   **Método:** Carga electrónica de cartola y matcheo automático por monto/documento.
-*   **Partidas Críticas:**
-    *   Cheques girados y no cobrados (revisar caducidad).
-    *   Depósitos no reconocidos (investigación inmediata).
-    *   Cargos bancarios no contabilizados.
-*   **Resultado:** Anexo CGR firmado por Tesorero y Jefe de Finanzas.
+**Administración de cuentas corrientes:** Registro único de todas las cuentas (FNDR, Operacionales, Fondos de Terceros). Libro Banco debe cuadrar diariamente con saldo contable de cuenta "Banco".
+
+**Conciliación bancaria:**
+- Frecuencia: diaria (gestión de caja) y mensual (cierre contable).
+- Método: carga electrónica de cartola bancaria → cruce automático (matcheo) por monto y número de documento.
+- Partidas conciliatorias: analizar y depurar mensualmente (cheques girados no cobrados, depósitos no reconocidos, cargos bancarios no contabilizados).
+- Resultado: Anexo CGR de Conciliación Bancaria firmado por Tesorero y Jefe de Finanzas.
 
 ## Procesos de Cierre
-#### Cierre Mensual (Día 10 mes siguiente)
-1.  **Cierre Auxiliares:** Bodega, AF, Remuneraciones, Tesorería.
-2.  **Centralización:** Ejecución de interfaces pendientes.
-3.  **Análisis:** Revisión de saldos anómalos (Activos con saldo acreedor).
-4.  **Cuadratura:** Presupuesto vs Contabilidad Patrimonial.
-5.  **Reportes:** Balance Comprobación + Informe Ejecución.
-6.  **Envío:** Transmisión XML/API a CGR/DIPRES vía SIGFE.
 
-#### Cierre Anual y Apertura
-*   **Periodo 13-14:** Ajustes finales según instrucciones CGR.
-*   **Devengo Total:** Asegurar registro de bienes/servicios recibidos al 31/12.
-*   **Ajustes Obligatorios:** Depreciación, provisión vacaciones, castigos deuda incobrable.
-*   **Apertura:** Generación automática de saldos al 01/01; refundición de cuentas de resultado en "Resultados Acumulados".
+**Cierre mensual** (cronograma estricto, ej. día 10 del mes siguiente):
 
-#### Reportería Legal Nativa
-*   Balance de 8 Columnas.
-*   Estado de Situación Financiera.
-*   Estado de Resultados y Flujo de Efectivo (Método Directo).
-*   Estado de Cambios en el Patrimonio e Informe de Pasivos Contingentes.
+| Paso | Acción |
+|------|--------|
+| 1. Cierre de Módulos Auxiliares | Bodega, Activo Fijo, Remuneraciones, Tesorería |
+| 2. Centralización | Ejecutar interfaces pendientes |
+| 3. Análisis de Cuentas | Revisar saldos anómalos (ej. activo con saldo acreedor) |
+| 4. Cuadratura Inter-sistémica | Saldo Presupuestario vs. Contabilidad Patrimonial |
+| 5. Generación de Reportes | Balance de Comprobación y de Saldos; Informe de Ejecución Presupuestaria |
+| 6. Envío SIGFE | Generación y transmisión de XML/API a Contraloría/DIPRES |
+
+**Cierre anual:**
+- Períodos 13 y 14: uso de períodos de ajuste y cierre según instrucciones CGR.
+- Devengo total: asegurar devengo de bienes y servicios recibidos al 31/12, aunque factura llegue después.
+- Ajustes: depreciación anual · corrección monetaria (si aplica) · provisiones de vacaciones · castigos de deuda incobrable.
+- Asiento de apertura: generado automáticamente por el sistema; cuentas de resultado se refunden en "Resultados Acumulados".
+
+**Reportería legal obligatoria:** Balance de 8 Columnas · Estado de Situación Financiera (Balance General Clasificado) · Estado de Resultados · Estado de Flujo de Efectivo (Método Directo) · Estado de Cambios en el Patrimonio Neto · Informe de Pasivos Contingentes.
 
 ## Auditoría y Control
-#### Pista de Auditoría
-*   Registro obligatorio de: Creador, Aprobador, Fecha y Hora exacta.
-*   **Inmutabilidad:** Comprobante mayorizado NO se edita; se reversa con contra-asiento.
-*   **Log de Cambios:** Trazabilidad obligatoria en datos maestros (Ej: Cuentas bancarias proveedores).
 
-#### Seguridad y Segregación
-*   Separación de funciones: Solicitante vs Aprobador; Pagador vs Conciliador.
-*   Uso de claves únicas e intransferibles.
-*   **Alerta:** Documento vivo; requiere actualización ante cambios en NICSP-CGR o sistemas GORE.
+**Pista de auditoría:** Principio "Quién, Qué, Cuándo". Cada comprobante registra usuario creador, usuario aprobador, fecha y hora exacta. Comprobante Aprobado/Mayorizado no se edita — se reversa con comprobante contrario. Log de cambios para datos maestros (ej. cambio de cuenta bancaria de proveedor).
+
+**Segregación de funciones:** Quien solicita gasto no debe aprobar. Quien gira pago no debe conciliar el banco. Credenciales únicas e intransferibles.
+
+Documento vivo: actualizar ante cambios en normativa NICSP-CGR o en sistemas de información del GORE.

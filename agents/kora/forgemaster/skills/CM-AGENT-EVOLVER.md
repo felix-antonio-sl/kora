@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-agent-evolver:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:forgemaster-agent-evolver:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -11,6 +11,11 @@ lang: es
 ## Proposito
 Analiza un agente existente y propone mejoras iterativas: optimizar FSM, refinar skills, expandir capacidades, mejorar fenomenologia.
 
+## I/O
+
+- **Input:** agent_path: string (ruta al workspace del agente objetivo)
+- **Output:** EvolutionReport (ver Signature Output)
+
 ## Procedimiento
 1. LEER WORKSPACE: workspace_read del agente objetivo. Entender su dominio, FSM, skills, tools.
 2. ANALIZAR EFICIENCIA FSM: ¿Estados innecesarios? ¿Transiciones redundantes? ¿Determinismo respetado? ¿Co-induccion completa?
@@ -18,8 +23,15 @@ Analiza un agente existente y propone mejoras iterativas: optimizar FSM, refinar
 4. ANALIZAR FENOMENOLOGIA: ¿SOUL.md refleja el dominio actual? ¿Tono apropiado? ¿Ejemplos relevantes?
 5. ANALIZAR TOOLS: ¿Herramientas suficientes? ¿Firmas correctas? ¿Routing map actualizado?
 6. PROPONER MEJORAS: Lista priorizada con impacto(alto|medio|bajo) y esfuerzo(alto|medio|bajo). Recomendar quick wins primero.
-7. IMPLEMENTAR MEJORAS APROBADAS: Aplicar cambios respetando segregacion. Un commit por mejora logica.
+7. IMPLEMENTAR MEJORAS APROBADAS: Aplicar cambios respetando segregacion. Una modificacion logica por iteracion.
 8. RE-VALIDAR: CM-AGENT-VALIDATOR post-mejora.
 
-## Output
-Reporte de mejora: {agente, analisis: {fsm, skills, soul, tools}, mejoras_propuestas: [{descripcion, impacto, esfuerzo}], mejoras_aplicadas: [], validacion_post: PASS|FAIL}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| agente | string | Nombre del agente analizado |
+| analisis | {fsm: string, skills: string, soul: string, tools: string} | Resultado del analisis por area |
+| mejoras_propuestas | {descripcion: string, impacto: enum, esfuerzo: enum}[] | Mejoras priorizadas |
+| mejoras_aplicadas | string[] | Mejoras implementadas |
+| validacion_post | enum(PASS\|FAIL) | Resultado de re-validacion |

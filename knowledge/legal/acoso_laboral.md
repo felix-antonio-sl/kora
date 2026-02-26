@@ -19,59 +19,52 @@ lang: es
 
 # Acoso Laboral y Sexual en el Ámbito Médico
 
-## Definiciones y Marco General
-- **Acoso Laboral:**
-  - **Conducta:** Agresión u hostigamiento por empleador o trabajadores (cualquier medio).
-  - **Frecuencia:** Única vez (especialmente grave) o sistemática/reiterada.
-  - **Efecto:** Menoscabo, maltrato, humillación o perjuicio en situación laboral/oportunidades.
-  - **Fuentes:** Código del Trabajo, Ley 21.643 (Ley Karin).
-- **Acoso Sexual:**
-  - **Conducta:** Comportamiento de naturaleza sexual no consentido (cualquier medio).
-  - **Efecto:** Amenaza o perjuicio en situación laboral o acceso a oportunidades.
-  - **Fuente:** Código del Trabajo.
-- **Principio de Dignidad:**
-  - **Obligación:** Estado y empleadores deben respetar/proteger dignidad en el trabajo.
-  - **Restricción:** Medidas de control deben ser compatibles con la dignidad del trabajador.
-  - **Fuentes:** CPR, LOC 18.575, Código del Trabajo.
+## Definiciones
 
-## Sector Público: Régimen de Funcionarios
-- **Marco de Probidad:**
-  - Prohibición: Acoso sexual, acoso laboral y discriminación arbitraria.
-  - Fuentes: Estatuto Administrativo (Ley 18.834), LOC 18.575.
-- **Conductas Prohibidas:**
-  - Humillación o ridiculización reiterada ante el equipo.
-  - Asignación sistemática de tareas degradantes o inútiles (hostigamiento).
-  - Insinuaciones, gestos o contacto sexual no deseado.
-  - Coerción: Amenazar carrera funcionaria para obtener favores sexuales.
-- **Responsabilidad y Sanciones:**
-  - **Vías:** Administrativa, civil y penal.
-  - **Procedimiento:** Investigación sumaria o sumario administrativo.
-  - **Medidas:** Desde anotaciones de demérito hasta la destitución.
-  - **Agravantes:** Incumplimiento de deberes de trato digno y jornada legal.
+- Acoso Laboral (Cód. Trabajo + Ley 21.643): agresión u hostigamiento por empleador o trabajadores (cualquier medio), una sola vez si es especialmente grave o de forma reiterada/sistemática, con resultado de menoscabo, maltrato, humillación o perjuicio en situación laboral u oportunidades de empleo.
+- Acoso Sexual (Cód. Trabajo): comportamiento de naturaleza sexual no consentido (cualquier medio) que amenaza o perjudica la situación laboral o acceso a oportunidades.
+- Principio de Dignidad (CPR, LOC 18.575, Cód. Trabajo): Estado y empleadores deben respetar y proteger la dignidad en el trabajo; medidas de control deben ser compatibles con ella.
+
+## Sector Público: Funcionarios
+
+Marco de probidad y dignidad (Ley 18.834, LOC 18.575): prohíbe acoso sexual, acoso laboral y discriminación arbitraria.
+
+Conductas prohibidas:
+- Humillar o ridiculizar reiteradamente a un colega frente al equipo.
+- Asignar sistemáticamente tareas degradantes o inútiles como hostigamiento.
+- Insinuaciones, gestos o contacto físico sexual no deseado.
+- Amenazar carrera funcionaria o evaluaciones para obtener favores sexuales.
+
+Consecuencias (responsabilidad administrativa, civil y penal):
+- Investigación sumaria o sumario administrativo.
+- Anotaciones de demérito en hoja de vida.
+- Sanciones disciplinarias hasta destitución según gravedad y reiteración.
+- Agravante: incumplimiento de deberes de trato digno y jornada.
 
 ## Sector Privado: Código del Trabajo
-- **Principios Rectores:**
-  - Protección eficaz de vida y salud.
-  - Ambiente laboral digno y de mutuo respeto.
-- **Reglamento Interno (Art. 153-154 CdT):**
-  - **Exigencia:** Obligatorio para empresas con 10 o más trabajadores.
-  - **Contenido:** Procedimientos de denuncia, investigación y sanciones para acoso sexual.
-  - **Sanciones:** Amonestación (verbal/escrita) y multa (máx. 25% remuneración diaria).
-  - **Garantías:** Aplicación general, impersonal y respetuosa de la dignidad.
-- **Protocolo de Denuncia (Acoso Sexual):**
-  - **Inicio:** Denuncia escrita al empleador o canal previsto.
-  - **Gestión:** Investigación interna o remisión a Inspección del Trabajo.
-  - **Resguardo:** Medidas inmediatas (separación de involucrados, cambios de turno).
-- **Mecanismos de Defensa (Acoso Laboral):**
-  - Autodespido (despido indirecto).
-  - Acción de tutela de derechos fundamentales.
 
-## Factores de Riesgo en Contexto Sanitario
-- **Entorno Clínico:**
-  - Carga asistencial crítica y presión por productividad.
-  - Jerarquías rígidas entre jefaturas médicas y equipos subordinados.
-  - Dinámicas complejas en equipos multiprofesionales.
-- **Incidencia de la Jornada:**
-  - Vulnerabilidad: Aumenta en turnos nocturnos y guardias prolongadas.
-  - Requisito: Canales de denuncia operativos y accesibles 24/7.
-  - Relación: El respeto a límites de jornada es preventivo de situaciones de acoso.
+Principios: protección eficaz de vida y salud; ambiente laboral digno y de mutuo respeto.
+
+Reglamento Interno (art. 153-154 CdT):
+- Obligatorio en empresas con 10 o más trabajadores.
+- Debe contener procedimiento de denuncia, investigación y sanciones para acoso sexual.
+- Sanciones posibles: amonestación verbal o escrita; multa máx. 25% remuneración diaria.
+- Garantía: aplicación general, impersonal y respetuosa de la dignidad.
+
+Protocolo de denuncia por acoso sexual:
+- Denuncia escrita al empleador o canal del Reglamento Interno.
+- Investigación interna o remisión a Inspección del Trabajo.
+- Medidas de resguardo durante investigación: separación de involucrados, cambios de turno.
+- Sanciones disciplinarias si se acredita el acoso, sin perjuicio de acciones judiciales.
+
+Mecanismos ante acoso laboral en sector privado:
+- Autodespido (despido indirecto).
+- Acción de tutela de derechos fundamentales.
+
+## Factores de Riesgo en Servicios de Salud
+
+- Altas cargas asistenciales y presión por productividad.
+- Jerarquías rígidas entre jefaturas médicas y equipos subordinados.
+- Equipos multiprofesionales con culturas organizacionales diversas.
+- Turnos nocturnos y prolongados aumentan vulnerabilidad frente a conductas de acoso.
+- Requisito preventivo: canales de denuncia accesibles y respetar límites de jornada.

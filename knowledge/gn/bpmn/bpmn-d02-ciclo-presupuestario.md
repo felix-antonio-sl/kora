@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -17,73 +17,49 @@ tags:
 lang: es
 ---
 
-# Ciclo Presupuestario Regional (BPMN D02)
+# BPMN D02: Ciclo Presupuestario Regional
 
-## Metadatos y Estructura del Dominio
-- **ID Dominio:** DOM-PRESUPUESTO
-- **Criticidad:** Crítica (Rojo)
-- **Responsables:** DAF (Funcionamiento) / DIPIR (Inversión)
-- **Volumen:** 5 Procesos principales / ~15 Subprocesos
-- **Referencia SSOT:** LOC 19.175 Art. 72-73
+## Metadatos del Dominio
 
-## Mapa General del Ciclo Anual
-```mermaid
-flowchart LR
-    subgraph CICLO["📅 Ciclo Anual"]
-        P1["P1: Formulación<br/>(May-Jun)"]
-        P2["P2: Aprobación<br/>(Sep-Nov)"]
-        P3["P3: Distribución<br/>(Dic-Ene)"]
-        P4["P4: Ejecución<br/>(Todo el año)"]
-        P5["P5: Control y<br/>Cierre (Dic-Ene)"]
-    end
+| Atributo | Valor |
+| :--- | :--- |
+| ID | DOM-PRESUPUESTO |
+| Criticidad | Crítica |
+| Dueño | DAF (Funcionamiento) / DIPIR (Inversión) |
+| Procesos | 5 (P1–P5) + Modificaciones (transversal) |
+| Subprocesos | ~15 |
 
-    subgraph TRANSVERSAL["🔄 Transversal"]
-        PM["Modificaciones<br/>Presupuestarias"]
-    end
+## Mapa General: Ciclo Anual
 
-    P1 --> P2 --> P3 --> P4 --> P5
-    P4 <--> PM
-    P5 -.->|"Retroalimentación"| P1
+| Proceso | Período |
+| :--- | :--- |
+| P1: Formulación | Mayo–Junio (año anterior) |
+| P2: Aprobación | Septiembre–Noviembre |
+| P3: Distribución | Diciembre–Enero |
+| P4: Ejecución | Todo el año |
+| P5: Control y Cierre | Diciembre–Enero |
+| Modificaciones Presupuestarias | Transversal (durante P4) |
 
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#4CAF50,color:#fff
-    style P3 fill:#FF9800,color:#fff
-    style P4 fill:#9C27B0,color:#fff
-    style P5 fill:#607D8B,color:#fff
-    style PM fill:#E91E63,color:#fff
-```
+P5 retroalimenta a P1 en el ciclo siguiente.
 
-## P1: Formulación del Presupuesto (Mayo-Junio)
-### Flujo de Formulación
-```mermaid
-flowchart TD
-    A["📜 DIPRES emite<br/>instructivo y clasificador"] --> B["Definir techos<br/>preliminares"]
+## P1: Formulación del Presupuesto
 
-    subgraph INVERSION["💼 Inversión (DIPIR)"]
-        C1["Propuesta marco<br/>de inversión"]
-        C2["Cartera proyectos<br/>con RS vigente"]
-        C3["Asignaciones por<br/>fuente (FNDR/FRIL/FRPD)"]
-    end
+**Período:** Mayo–Junio del año anterior.
 
-    subgraph FUNCIONAMIENTO["🏢 Funcionamiento (DAF)"]
-        D1["Personal (Subt. 21)"]
-        D2["Bienes/Servicios (Subt. 22)"]
-        D3["Transferencias (Subt. 24)"]
-    end
+### Flujo
 
-    B --> C1 & D1
-    C1 --> C2 --> C3
-    D1 --> D2 --> D3
-    C3 & D3 --> E["Consolidación<br/>propuesta"]
-    E --> F["Presentación a<br/>Gobernador/a"]
-    F --> G["Ajustes según<br/>prioridades ERD"]
-    G --> H["📤 Envío a DIPRES"]
+1. DIPRES emite instructivo y clasificador presupuestario
+2. Definir techos preliminares
+3. Formulación paralela por áreas:
+   - DIPIR: propuesta marco de inversión → cartera proyectos con RS vigente → asignaciones por fuente (FNDR/FRIL/FRPD)
+   - DAF: Personal (Subt. 21) → Bienes/Servicios (Subt. 22) → Transferencias (Subt. 24)
+4. Consolidación de propuesta
+5. Presentación a Gobernador/a
+6. Ajustes según prioridades ERD
+7. Envío a DIPRES
 
-    style A fill:#2196F3,color:#fff
-    style H fill:#4CAF50,color:#fff
-```
+### Estructura del Presupuesto
 
-### Estructura de Subtítulos y Responsables
 | Subtítulo | Concepto | Responsable |
 | :--- | :--- | :--- |
 | 21 | Personal | DAF |
@@ -93,55 +69,56 @@ flowchart TD
 | 31 | Inversión (Iniciativas) | DIPIR |
 | 33 | Transferencias de Capital | DIPIR |
 
-## P2-P4: Aprobación, Distribución y Ejecución
-- **P2 Aprobación (Sep-Nov):** Intervención de Gobernador, CORE, DIPRES y CGR.
-- **P3 Distribución (Dic-Ene):** Distribución inicial del presupuesto aprobado y carga masiva en SIGFE.
-- **P4 Ejecución (Anual):** Gestión de compromisos, devengos y pagos según calendario mensual.
+## P2: Aprobación del Presupuesto
 
-## P5: Control y Cierre de Ejercicio (Diciembre-Enero)
-### Flujo de Cierre y Evaluación
-```mermaid
-flowchart TD
-    subgraph CONTROL["🔍 Control Durante el Año"]
-        A["Control interno<br/>(DAF, DIPIR, U. Control)"]
-        B["Seguimiento DIPRES<br/>(mensual)"]
-        C["Sistema KPIs y<br/>alertas tempranas"]
-    end
+Actores: Gobernador/a, CORE, DIPRES, CGR. El presupuesto regional requiere presentación formal y aprobación por estos organismos antes de su distribución.
 
-    subgraph CIERRE["📅 Cierre 31/12"]
-        D["Consolidar<br/>información (DAF)"]
-        E["Cerrar cuentas<br/>en SIGFE"]
-        F["Calcular deuda<br/>flotante"]
-        G["Regularizar<br/>deuda flotante"]
-        H["Informe cierre<br/>a DIPRES/CGR"]
-    end
+## P3: Distribución Inicial
 
-    subgraph EVALUACION["📊 Evaluación"]
-        I["Evaluar resultados<br/>físicos y financieros"]
-        J["Informe evaluación<br/>ex post (DIPIR)"]
-    end
+Distribución del presupuesto aprobado y carga en SIGFE para habilitar ejecución.
 
-    A & B & C --> D --> E --> F --> G --> H
-    H --> I --> J
+## P4: Ejecución Presupuestaria
 
-    style H fill:#607D8B,color:#fff
-    style J fill:#9C27B0,color:#fff
-```
+Seguimiento continuo de compromisos, devengos y pagos durante el año. Proceso de Modificaciones Presupuestarias actúa como subproceso transversal.
 
-### Gestión de Deuda Flotante
-```mermaid
-flowchart TD
-    A["Obligaciones devengadas<br/>al 31/12 pendientes<br/>de pago"] --> B{"¿SIC<br/>suficiente?"}
-    B -->|"Sí"| C["Financiar con<br/>SIC"]
-    B -->|"No"| D["SIC + Mayor<br/>aporte fiscal"]
-    C & D --> E["Incorporar en<br/>presupuesto año siguiente"]
-    E --> F["Primera prioridad<br/>de pago"]
+## P5: Control y Cierre del Ejercicio
 
-    style F fill:#FF9800,color:#fff
-```
+**Período:** Diciembre–Enero.
 
-## Reportería, Sistemas y Normativa
-### Reportes Oficiales
+### Flujo de Control
+
+1. Control interno (DAF, DIPIR, Unidad de Control)
+2. Seguimiento DIPRES mensual
+3. Sistema KPIs y alertas tempranas
+
+### Flujo de Cierre (al 31/12)
+
+1. Consolidar información (DAF)
+2. Cerrar cuentas en SIGFE
+3. Calcular deuda flotante
+4. Regularizar deuda flotante
+5. Informe de cierre a DIPRES/CGR
+6. Evaluar resultados físicos y financieros
+7. Informe evaluación ex post (DIPIR)
+
+### Deuda Flotante
+
+Obligaciones devengadas al 31/12 pendientes de pago. Financiamiento: SIC (si suficiente) o SIC + mayor aporte fiscal. Se incorpora en presupuesto año siguiente como primera prioridad de pago.
+
+## Modificaciones Presupuestarias (Transversal)
+
+Proceso que opera durante P4. Requiere Acuerdo CORE según criterios:
+
+| Condición | Requiere CORE |
+| :--- | :--- |
+| Monto > 7.000 UTM | Sí |
+| Nuevo programa/proyecto | Sí |
+| Aumento costo ≤ 10% (tope 7.000 UTM) | No |
+| Uso 3% emergencia (Glosa 14) | No |
+| Regularización de ingresos | No |
+
+## Reportería Oficial
+
 | Reporte | Frecuencia | Destinatario |
 | :--- | :--- | :--- |
 | Informe Ejecución Mensual | Mensual | DIPRES, CORE |
@@ -149,27 +126,30 @@ flowchart TD
 | Cartera de Proyectos | Mensual | Web institucional |
 | Acuerdos CORE | 5 días hábiles | Web institucional |
 
-### Ecosistema de Sistemas
+## Sistemas Involucrados
+
 | Sistema | Función |
 | :--- | :--- |
-| SYS-SIGFE | Gestión financiera central del Estado |
-| SYS-BIP-SNI | Gestión de inversión pública |
-| SYS-TRANSPARENCIA | Publicación de información activa |
+| SYS-SIGFE | Gestión financiera central |
+| SYS-BIP-SNI | Inversión pública |
+| SYS-TRANSPARENCIA | Publicación de información |
 
-### Marco Normativo Aplicable
+## Normativa Aplicable
+
 | Norma | Alcance |
 | :--- | :--- |
-| LOC 19.175 Art. 72-73 | Competencias presupuestarias del GORE |
-| Decreto 854/2004 Hacienda | Clasificador presupuestario vigente |
-| Ley de Presupuestos (Anual) | Marco legal del ejercicio financiero |
-| Glosa 14 Partida 31 | Uso de 3% para emergencias |
-| Glosa 16 Partida 31 | Exigencias de transparencia |
-| NICSP-CGR | Normas Internacionales de Contabilidad Sector Público |
-| Resolución 30/2015 CGR | Procedimientos de rendiciones de cuentas |
+| LOC 19.175 Art. 72-73 | Competencias presupuestarias |
+| Decreto 854/2004 Hacienda | Clasificador presupuestario |
+| Ley de Presupuestos (anual) | Marco legal del ejercicio |
+| Glosa 14 Partida 31 | 3% emergencias |
+| Glosa 16 Partida 31 | Transparencia |
+| NICSP-CGR | Contabilidad gubernamental |
+| Resolución 30/2015 CGR | Rendiciones |
 
 ## Referencias Cruzadas
-| Dominio Relacionado | Vínculo / Dependencia |
+
+| Dominio | Vínculo |
 | :--- | :--- |
-| D03 Gestión IPR | CDP, financiamiento de proyectos de inversión |
-| D08 Rendiciones | Contabilización, conciliación en SIGFE |
-| D04 Compras | Órdenes de compra, contratos y devengos |
+| D03 Gestión IPR | CDP, financiamiento proyectos |
+| D08 Rendiciones | Contabilización, SIGFE |
+| D04 Compras | Órdenes de compra, contratos |

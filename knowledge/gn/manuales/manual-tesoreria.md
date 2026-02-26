@@ -3,8 +3,8 @@ _manifest:
   urn: urn:gn:kb:manual-tesoreria
   provenance:
     created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_at: '2026-02-24'
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -12,97 +12,96 @@ tags:
 - gobierno-regional
 - tesoreria
 - finanzas
-- gestion-publica
 - gn
 lang: es
 ---
 
-# Manual de Tesorería y Gestión de Ingresos
+# Manual 1.3: Tesorería y Gestión de Ingresos
 
-## Definiciones Base
+Objetivo: Controlar el flujo de caja, la ejecución de pagos y la recaudación de ingresos, asegurando la disponibilidad financiera y el resguardo de los recursos regionales.
 
-| Término | Definición |
-| :--- | :--- |
-| **Tesorero** | Funcionario responsable de custodia de fondos, valores y administración de cuentas corrientes. |
-| **PAC** | Programación Anual de Caja; herramienta de proyección de liquidez. |
-| **CUF** | Cuenta Única Fiscal del Banco Estado. |
-| **TEF** | Transferencia Electrónica de Fondos. |
+Siglas: DAF = División de Administración y Finanzas · DIPIR = División de Presupuesto e Inversión Regional · DIPRES = Dirección de Presupuestos · CUF = Cuenta Única Fiscal del Banco Estado · TEF = Transferencia Electrónica de Fondos · PAC = Programación Anual de Caja · FNDR = Fondo Nacional de Desarrollo Regional · SIGFE = Sistema de Información para la Gestión Financiera del Estado · UTM = Unidad Tributaria Mensual.
 
-## Organización y Normas
+## Organización y Marco Normativo
 
-### Rol del Tesorero Regional
-* **Custodia de Fondos:** Administración técnica de cuentas corrientes.
-* **Custodia de Valores:** Resguardo físico/digital de boletas de garantía, pólizas y vales vista.
-* **Firma Conjunta:** Autorización obligatoria de pagos con Jefe DAF o Jefe Finanzas.
+**Rol del Tesorero Regional:**
+- Custodia de Fondos: administración de cuentas corrientes.
+- Custodia de Valores: resguardo de boletas de garantía, pólizas, vales vista.
+- Firma Conjunta: autorización de pagos junto a Jefe DAF o Jefe Finanzas.
 
-### Seguridad de Valores
-* **Arqueo de Caja:** Ejecución sorpresiva por Finanzas o Auditoría.
-* **Infraestructura:** Uso de caja fuerte ignífuga con acceso restringido.
-* **Garantía:** Póliza de Fidelidad Funcionaria obligatoria para personal con manejo de fondos.
+**Seguridad de valores:**
+- Arqueo de Caja sorpresivo (realizado por Finanzas o Auditoría).
+- Uso de Caja Fuerte ignífuga con acceso restringido.
+- Póliza de Fidelidad Funcionaria para personal con manejo de fondos.
 
-### Marco Normativo
-| Fuente | Referencia | Detalle |
-| :--- | :--- | :--- |
-| **DL 1.263 (1975)** | Arts. 11, 12 | Principio de Anualidad presupuestaria. |
-| **DL 1.263 (1975)** | Art. 30 | Centralización en Cuenta Única Fiscal (CUF). |
-| **Ley 21.180** | Transformación Digital | Obligatoriedad de expediente electrónico. |
-| **Ley Presupuestos** | Partida 31 | Glosas específicas FNDR. |
+**Marco normativo:**
+
+| Norma | Contenido |
+|-------|-----------|
+| DL 1.263 (1975) — Arts. 11, 12 y 30 | Anualidad presupuestaria y CUF |
+| Ley 21.180 | Expediente electrónico obligatorio |
+| Ley de Presupuestos (Partida 31) | Glosas FNDR |
 
 ## Gestión Bancaria y Programación
 
-### Administración de Cuentas CUF
-* **Tipología de Cuentas:**
-    1. **FNDR:** Exclusiva para inversión regional.
-    2. **Funcionamiento:** Para gasto administrativo institucional.
-    3. **Fondos de Terceros:** Cuentas de custodia y depósitos en garantía.
-* **Restricción:** Cierre o apertura requiere Resolución fundada y autorización del Ministerio de Hacienda.
+**Cuentas corrientes institucionales (CUF Banco Estado):**
 
-### Programación de Caja (PAC)
-* **Información:** Reporte semanal de disponibilidad real a DIPIR/DAF.
-* **Remesas:** Solicitud vía SIGFE a DIPRES según devengo exigible registrado.
-* **Advertencia:** Saldos no ejecutados al 31 de diciembre se reintegran a Rentas Generales (salvo Saldo Inicial de Caja autorizado).
+| Tipo | Uso |
+|------|-----|
+| FNDR (Inversión) | Proyectos de inversión regional |
+| Funcionamiento | Gasto administrativo |
+| Fondos de Terceros | Custodia |
+
+Cierre/apertura de cuentas requiere Resolución + Autorización Hacienda.
+
+**Programación de Caja (PAC):**
+- Informa semanalmente disponibilidad real a DIPIR/DAF.
+- Solicita remesas a DIPRES vía SIGFE según devengo exigible.
+- Saldos no ejecutados al 31/12 deben reintegrarse a Rentas Generales (salvo SIC autorizado).
 
 ## Proceso de Egresos y Pagos
 
-### Ciclo de Pago a Proveedores
-* **Condición Crítica:** Solo tras validación técnica y administrativa del Devengo.
-* **Requisitos Obligatorios:**
-    * Recepción Conforme (Hito de cumplimiento).
-    * Factura aceptada (transcurridos 8 días desde recepción).
-    * Orden de Compra (OC) y Resolución aprobatoria vigentes.
-    * Imputación presupuestaria registrada en sistema.
+**Ciclo de pago a proveedores (solo tras validación del Devengo):**
 
-### Escala de Aprobación de Pagos
-| Rango Monto | Responsables Autorizadores |
-| :--- | :--- |
-| **< 100 UTM** | Jefe Finanzas + Tesorero |
-| **100 - 1.000 UTM** | Jefe DAF + Jefe Finanzas |
-| **> 1.000 UTM** | V°B° Administrador Regional (adicional) |
+Requisitos previos: Recepción Conforme · factura aceptada (8 días) · OC y Resolución vigente · imputación presupuestaria registrada.
 
-### Medios de Pago y Remuneraciones
-* **Preferencia:** Transferencia Electrónica (TEF Masiva) con protocolo de doble apoderado.
-* **Excepción:** Cheques nominativos y cruzados solo para finiquitos o devoluciones menores.
-* **Seguridad Remuneraciones:** Nóminas encriptadas para confidencialidad.
-* **Plazos:** Pago de cotizaciones previsionales vía PREVIRED antes del día 10 de cada mes.
+**Escala de aprobaciones:**
+
+| Monto | Responsables |
+|-------|-------------|
+| < 100 UTM | Jefe Finanzas + Tesorero |
+| 100 a 1.000 UTM | Jefe DAF + Jefe Finanzas |
+| > 1.000 UTM | Requiere V°B° Administrador Regional |
+
+**Medios de pago:**
+- Preferente: TEF Masiva con doble apoderado.
+- Excepción: Cheques nominativos y cruzados (finiquitos, devoluciones menores).
+
+**Remuneraciones y cotizaciones:**
+- Confidencialidad: nómina encriptada.
+- Pago de cotizaciones vía PREVIRED antes del día 10.
 
 ## Gestión de Ingresos y Garantías
 
-### Percepción de Ingresos
-* **Transferencias:** Fondos provenientes de DIPRES y SUBDERE.
-* **Ingresos Propios:** Venta de bases de licitación y activos prescindibles.
-* **Recuperaciones:** Licencias médicas (SIL) y reintegros de viáticos.
-* **Multas:** Aplicación de sanciones a proveedores vía descuento o pago directo.
+**Tipos de ingresos:**
+- Transferencias DIPRES/SUBDERE.
+- Ingresos Propios (venta de bases, activos).
+- Recuperaciones (licencias médicas SIL, viáticos).
+- Multas a proveedores (descuento o pago directo).
 
-### Control de Garantías
-* **Recepción:** Documento físico o certificado digital de fidelidad.
-* **Registro:** Detalle de vencimiento, monto total y aseguradora/banco emisor.
-* **Alertas:** Notificación a Unidad Técnica con 30 y 15 días de anticipación al vencimiento.
-* **Ejecución:** Cobro inmediato ante resolución administrativa de incumplimiento contractual.
-* **Devolución:** Exige Acta de Recepción Conforme Final de la prestación.
+**Control de garantías:**
 
-## Control Diario y Reportabilidad
+| Paso | Acción |
+|------|--------|
+| 1. Recepción | Documento físico o certificado digital |
+| 2. Registro | Vencimiento, monto, aseguradora |
+| 3. Alerta de vencimiento | 30 y 15 días de anticipación a Unidad Técnica |
+| 4. Cobro | Inmediato ante resolución de incumplimiento |
 
-### Operaciones de Cierre
-* **Cuadratura:** Conciliación diaria de Ingresos vs Egresos.
-* **Prohibición:** No se permite el traspaso de diferencias al día siguiente sin aclaración previa.
-* **Informe Diario:** Generación de estado de disponibilidades y Deuda Flotante Diaria.
+Devolución de garantía: exige Acta de Recepción Conforme Final.
+
+## Control Diario
+
+- Cuadratura de Caja diaria (Ingresos vs. Egresos).
+- Prohibido: pasar diferencias al día siguiente sin aclarar.
+- Reporte: Informe Diario de Disponibilidades y Deuda Flotante Diaria.

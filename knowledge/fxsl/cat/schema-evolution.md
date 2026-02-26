@@ -21,276 +21,110 @@ lang: en
 
 ## Overview
 
-- Formalizes temporal evolution of schemas and behavioral dynamics via category theory.
-- Audits migrations, versions, and system behavior over time using categorical constructions.
+Ctx: Auditing migrations, versions, and behavior over time.
+XRef: `urn:fxsl:kb:seven-sketches#MIGRATION-DELTA`, `urn:fxsl:kb:coalgebras#BISIMULATION`, `urn:fxsl:kb:cql-data-integration#CQL-PROVENANCE`, `urn:fxsl:kb:constraint-logic#CL-MIGRATION-AUDIT`
 
+Extends audit from static snapshots to temporal processes and dynamic behaviors.
 
 ## Version Category
 
-- **Definition**: Ver is category where objects = versions and morphisms = migrations.
+**Ver** = category: objects = versions; morphisms = migrations.
 
-| Component | Structure |
-|-----------|-----------|
-| **Objects** | v1.0.0, v1.1.0, v2.0.0, ... |
-| **Morphisms** | upgrade: vₙ → vₙ₊₁; downgrade: vₙ₊₁ → vₙ (if exists) |
-| **Identity** | Identity migration (no-op) per version |
-| **Composition** | upgrade_{n,n+1} ∘ upgrade_{n+1,n+2} = upgrade_{n,n+2} |
+- Objects: v1.0.0, v1.1.0, v2.0.0, ...
+- Morphisms: upgrade: v_n → v_{n+1}; downgrade: v_{n+1} → v_n (if exists)
+- Identity: no-op migration on each version
+- Composition: upgrade_{n,n+1} ; upgrade_{n+1,n+2} = upgrade_{n,n+2}
+- Properties: Ver typically a preorder (at most one morphism between versions); if upgrades and downgrades compatible → partial groupoid
 
-- **Properties**: Ver typically preorder (at most one morphism between versions) If upgrades/downgrades compatible, can be partial groupoid
+**Schema functor F: Ver → Cat** — assigns each version its schema. F(v_n) = S_n; F(upgrade) = migration functor F_{n,n+1}: S_n → S_{n+1}.
 
-- **Evolution Schema Functor**: F: Ver → Cat assigns to each version its schema.
+Example: F(v1.0.0) = S₁ with {Employee, Department}; F(v1.1.0) = S₂ with {Employee, Department, Project}; F(upgrade_{1.0→1.1}) = inclusion S₁ ↪ S₂.
 
-- F(vₙ) = Sₙ (schema at version n)
-- F(upgrade) = migration functor Fₙ,ₙ₊₁: Sₙ → Sₙ₊₁
-- Formalizes schema evolution through versions
+**Instance fibration** — for each version v, instance category Inst(F(v)). Migration upgrade_{n,n+1} induces functors Δ/Σ/Π between instance categories.
 
-- **Example**: Employee/Department schema evolution
-
-| Version | Objects | Morphism |
-|---------|---------|----------|
-| v1.0.0 | {Employee, Department} | — |
-| v1.1.0 | {Employee, Department, Project} | Inclusion S₁ ↪ S₂ |
-
-- **Instance Fibration**: Fibration connecting instances with schema versions.
-
-- For each version v: category Inst(F(v)) of instances
-- Migration induces Δ/Σ/Π functors between instance categories
+```
+Inst(S₁) --Σ_F--> Inst(S₂)
+    |                   |
+    v                   v
+ v1.0.0 --upgrade--> v1.1.0
+```
 
 ## Migration Chain Audit
 
-- **Definition**: Sequence of migrations v₁ → v₂ → ... → vₙ.
+**Migration chain** — sequence v₁ → v₂ → ... → vₙ.
 
-### Audit Goals
+Audit goals: (1) each migration is functorial; (2) composition preserves critical invariants; (3) detect cumulative information/constraint loss.
 
-1. Verify each migration is functorial
-2. Verify composition preserves critical invariants
-3. Detect cumulative information/constraint loss
+**Procedure**:
+1. Inventory: list versions v₁,...,vₙ and migrations m₁: v₁→v₂, ..., m_{n-1}: v_{n-1}→vₙ.
+2. Individual migration audit: for each mᵢ verify functor validity (preserves id, composition); identify operator (Δ,Σ,Π or combination); apply CL-MIGRATION-AUDIT for constraints; record preserved vs. lost constraints.
+3. Composition audit: compute m = m_{n-1} ∘ ... ∘ m₁; verify m: S₁ → Sₙ valid functor; compare constraints T₁ vs. Tₙ; identify chain-lost constraints.
+4. Provenance analysis: trace data in Sₙ to origin in S₁; detect orphaned data (no clear origin).
+5. Invariant analysis: identify critical invariants (must-preserve constraints); verify preservation across full chain; critical invariant lost → CRITICAL severity.
+6. Report: migration map; constraints preserved vs. lost per migration; critical invariants final state; improvement recommendations.
 
-### Chain Audit Procedure
-
-- **Phase 1: Version Inventory**
-
-- List versions: v₁, v₂, ..., vₙ
-- List migrations: m₁: v₁→v₂, m₂: v₂→v₃, ..., mₙ₋₁: vₙ₋₁→vₙ
-
-- **Phase 2: Individual Migration Audit**
-
-- For each mᵢ:
-
-- Verify mᵢ is valid functor (preserves id, composition)
-- Identify operator: Δ, Σ, Π, or combination
-- Apply constraint logic audit (CL-MIGRATION-AUDIT)
-- Register: preserved vs. lost constraints
-
-- **Phase 3: Composition Audit**
-
-- Compute composition m = mₙ₋₁ ∘ ... ∘ m₁
-- Verify m: S₁ → Sₙ is valid functor
-- Compare constraints: T₁ vs Tₙ
-- Identify lost constraints
-
-- **Phase 4: Provenance Analysis**
-
-- For data in Sₙ, trace origin to S₁
-- Verify provenance traceable through chain
-- Detect "orphan" data (no clear origin)
-
-- **Phase 5: Invariant Analysis**
-
-- Identify critical invariants (MUST preserve)
-- Verify preservation across chain
-- CRITICAL if lost
-
-- **Phase 6: Report**
-
-- Version/migration map
-- Preserved vs. lost constraints by migration
-- Critical invariants: final state
-- Improvement recommendations
-
-### Technical Debt Detection
-
-- **Definition**: Detect categorical debt in schema evolution.
-
-- **Symptoms**:
-
-- Current schema doesn't satisfy prior version constraints
-- Ad-hoc migrations not functorial
-- Important constraints gradually lost
-- Migrated data no longer comply with original invariants
-
-- **Procedure**:
-
-1. Load v₁ (original version) constraints
-2. Load current instance I in vₙ
-3. Attempt verify original constraints on current data
-4. Difference = accumulated categorical debt
-5. Propose debt repayment plan: refactoring to restore invariants
+**Technical debt detection** — Symptoms: schema violates prior version constraints; ad-hoc non-functorial migrations; important constraints progressively lost; migrated data no longer satisfies original invariants. Procedure: load constraints from v₁; load current instance I in vₙ; verify original constraints on current data; difference = accumulated categorical debt; propose refactoring plan.
 
 ## Behavioral Audit
 
-- **Definition**: System behavior captured as coalgebra c: U → F(U).
+**Coalgebra** — c: U → F(U): U = state space; F = interface functor; c assigns each state its observable behavior.
+XRef: `urn:fxsl:kb:coalgebras#COALGEBRA-DEF`
 
-| Component | Meaning |
-|-----------|---------|
-| **U** | State space (hidden) |
-| **F** | Interface functor (outputs, transitions) |
-| **c** | Maps each state to observable behavior |
+**Bisimulation audit** — comparing behavioral equivalence between system versions:
+1. Model versions as coalgebras: (U₁, c₁: U₁ → F(U₁)) and (U₂, c₂: U₂ → F(U₂)); verify same interface functor F.
+2. Verify bisimulation: find relation R ⊆ U₁ × U₂ such that (u₁,u₂) ∈ R implies: output(c₁(u₁)) = output(c₂(u₂)); if u₁ transitions to u₁', ∃ u₂' with u₂ transitions to u₂' and (u₁',u₂') ∈ R. Alternative: verify via final coalgebra beh₁(u₁) = beh₂(u₂).
+3. Analyze differences: identify diverging states; identify input sequences producing different outputs; classify: intentional change vs. regression.
+4. Report: bisimilar? Yes/No; divergence points; recommendation: document change or fix regression.
 
-### Bisimulation Audit
-
-- **Definition**: Audit behavioral equivalence between system versions.
-
-- **Procedure**:
-
-
-- **Phase 1: Model as Coalgebras**
-
-- System v₁: (U₁, c₁: U₁ → F(U₁))
-- System v₂: (U₂, c₂: U₂ → F(U₂))
-- Verify both use same interface functor F
-
-- **Phase 2: Verify Bisimulation**
-
-- Search R ⊆ U₁ × U₂ such that:
-
-- If (u₁, u₂) ∈ R: output(c₁(u₁)) = output(c₂(u₂))
-- If (u₁, u₂) ∈ R and u₁ → u₁': exists u₂' where u₂ → u₂' and (u₁', u₂') ∈ R
-
-- Alternative: verify via final coalgebra: beh₁(u₁) = beh₂(u₂)
-
-- **Phase 3: Analyze Differences**
-
-- If not bisimilar:
-
-- Identify divergence states
-- Identify input sequences producing different outputs
-- Classify: intentional change or regression?
-
-- **Phase 4: Report**
-
-- Bisimilar? Yes/No
-- If no: divergence points
-- Recommend: document change or fix regression
-
-### Action Audit
-
-- **Definition**: Audit logs/episodes using action as primary key.
-
-- **Procedure**:
-
-
-1. **Verify Episodic Structure**
-   - Each episode has indexing action
-   - Action is morphism in domain category
-   - No "orphan" episodes without action
-
-2. **Verify Compositionality**
-   - If E₁ followed E₂: is action composition recorded?
-   - Action sequences form paths in category
-
-3. **Verify Temporal Consistency**
-   - Actions respect temporal order
-   - No time travel (effects before causes)
-
-4. **Verify Action Constraints**
-   - Do actions satisfy preconditions?
-   - Do results satisfy postconditions?
-
-5. **Report**
-   - Episode coverage by action
-   - Temporal anomalies
-   - Pre/postcondition violations
+**Action audit** — auditing logs/episodes using action as primary key:
+1. Verify episodic structure: each episode has indexing action; action = morphism in domain category; no orphaned episodes.
+2. Verify compositionality: if episode E₁ followed by E₂, composition of actions recorded?; action sequences form paths in category.
+3. Verify temporal consistency: actions respect temporal order; no time-travel (effects before causes).
+4. Verify constraints on actions: actions satisfy declared preconditions?; results satisfy postconditions?
+5. Report: episode-by-action coverage; temporal anomalies; pre/postcondition violations.
 
 ## Categorical Provenance
 
-- **Definition**: Provenance = tracing data origin through transformations.
+**Provenance** — given datum d in instance J: T → **Set**, provenance(d) = set of data in I: S → **Set** that contributed to d via migration F: S → T.
+XRef: `urn:fxsl:kb:cql-data-integration#CQL-PROVENANCE`
 
-- **Formal**: For data d in instance J: T → Set, provenance(d) = set of data in I: S → Set contributing to d via migration F: S → T
+**Provenance audit**:
+1. Completeness: for each d in target, provenance defined? If not → WARN: datum without provenance.
+2. Correctness: if provenance(d) = {s₁,...,sₖ}, applying migration to sᵢ produces d?
+3. Minimality: provenance includes only necessary data? Unnecessary items → inefficiency (not error).
+4. Transitivity: for migration chains, provenance transitive through v₁→v₂→v₃?
+5. Report: provenance coverage; data without origin; inconsistencies.
 
-### Provenance Audit
+## Full Temporal Audit Procedure
 
-- **Phase 1: Completeness**
+Scope determination:
+- Schema evolution? → Migration chain audit + debt detection.
+- Behavior? → Bisimulation audit (version comparison) or action audit (logs).
+- Provenance? → Provenance audit.
+- Combined? → Execute all applicable.
 
-- For each d in target: has provenance?
-- d without provenance → WARN
-
-- **Phase 2: Correctness**
-
-- If provenance(d) = {s₁, ..., sₖ}: does applying migration to sᵢ produce d?
-- Verify transformation matches
-
-- **Phase 3: Minimality**
-
-- Does provenance include only necessary data?
-- Unnecessary data = inefficiency (not error)
-
-- **Phase 4: Transitivity**
-
-- For migration chains: is provenance transitive?
-- provenance(d in v₃) must trace to v₁
-
-- **Phase 5: Report**
-
-- Provenance coverage
-- Data without origin
-- Inconsistencies
-
-## Temporal Audit Procedure (Complete)
-
-- **Phase 1: Determine Scope**
-
-- Schema evolution audit? → Section 2
-- Behavioral audit? → Section 3
-- Provenance audit? → Section 4
-- Combination? → Execute all applicable
-
-- **Phase 2: If Schema Evolution**
-
-- Build Ver category
-- Identify F: Ver → Cat
-- Execute CHAIN-AUDIT-PROC
-- Execute DEBT-DETECTION
-
-- **Phase 3: If Behavioral**
-
-- Model system(s) as coalgebra(s)
-- Comparing versions: BISIM-AUDIT
-- Auditing logs: ACTION-AUDIT
-
-- **Phase 4: If Provenance**
-
-- Identify migrations
-- Execute PROVENANCE-AUDIT
-
-- **Phase 5: Consolidate Report**
-
-- Summary per audited dimension
-- Issues found
-- Improvement proposals
-
-### Report Format
+Output format:
 
 ```
 ## Temporal/Behavioral Audit Report
 
 ### 1. Scope
 - Schema evolution: ✓/✗
-- Behavioral: ✓/✗
+- Behavior: ✓/✗
 - Provenance: ✓/✗
 
 ### 2. Evolution (if applicable)
 | Version | Constraints | Preserved | Lost |
 |---------|-------------|-----------|------|
 
-### 3. Behavioral (if applicable)
+### 3. Behavior (if applicable)
 | System A | System B | Bisimilar | Divergences |
 |----------|----------|-----------|-------------|
 
 ### 4. Provenance (if applicable)
-| Coverage | Without Origin | Inconsistencies |
-|----------|----------------|-----------------|
+| Coverage | No origin | Inconsistencies |
+|----------|-----------|-----------------|
 
-### 5. Issues & Proposals
+### 5. Issues and Proposals
 [Consolidated list]
 ```

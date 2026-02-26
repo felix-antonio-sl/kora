@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -16,134 +16,144 @@ tags:
 lang: es
 ---
 
-# D04: Compras Públicas y Contrataciones
+# BPMN D04: Compras Públicas y Contrataciones
 
-## Metadatos y Características del Dominio D04
+## Metadatos del Dominio
 
-*   **ID**: `DOM-COMPRAS`
-*   **Criticidad**: Alta (🟠)
-*   **Dueño**: Unidad de Abastecimiento
-*   **Alcance**: 4 procesos principales, ~12 subprocesos
-*   **Referencia**: `urn:gn:kb:bpmn-index`
-
-## Mapa de Procesos: Ciclo de Compras Públicas
-
-```mermaid
-flowchart LR
-    subgraph CICLO["📋 Ciclo de Compras"]
-        P1["P1: Plan Anual<br/>de Compras"]
-        P2["P2: Licitación<br/>Pública"]
-        P3["P3: Órdenes<br/>de Compra"]
-        P4["P4: Gestión de<br/>Contratos"]
-    end
-
-    P1 --> P2 --> P3 --> P4
-    P1 -->|"Convenio Marco"| P3
-
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#FF9800,color:#fff
-    style P3 fill:#4CAF50,color:#fff
-    style P4 fill:#9C27B0,color:#fff
-```
-
-## P1: Plan Anual de Compras (PAC) - Proceso y Contenido
-
-*   **ID**: `BPMN-GN-COMPRAS-PAC-01`
-*   **Período**: Anual (Diciembre-Enero)
-*   **Frecuencia**: Ajustes trimestrales
-
-### Flujo de Elaboración del PAC
-1.  **Identificación**: Divisiones definen necesidades.
-2.  **Requerimiento**: Unidades envían solicitudes.
-3.  **Consolidación**: Abastecimiento centraliza datos.
-4.  **Clasificación**: CM (Convenio Marco), LP (Licitación), CD (Compra Directa).
-5.  **Validación**: DAF confirma presupuesto.
-6.  **Aprobación**: Firma del Gobernador/a.
-7.  **Publicación**: Mercado Público.
-
-### Estructura de Datos PAC
-| Elemento | Detalle |
+| Atributo | Valor |
 | :--- | :--- |
-| Producto/Servicio | Descripción técnica |
-| Cantidad | Unidades estimadas |
-| Monto | Valor estimado en CLP |
+| ID | DOM-COMPRAS |
+| Criticidad | Alta |
+| Dueño | Unidad de Abastecimiento |
+| Procesos | 4 (PAC, Licitación, OC, Contratos) |
+| Subprocesos | ~12 |
+
+## Mapa General
+
+P1 Plan Anual de Compras → P2 Licitación Pública → P3 Órdenes de Compra → P4 Gestión de Contratos.
+Desde P1 también se puede ir directamente a P3 vía Convenio Marco.
+
+## P1: Plan Anual de Compras (PAC)
+
+**Período:** Anual (Diciembre–Enero).
+
+### Flujo
+
+1. Divisiones identifican necesidades → unidades envían requerimientos
+2. Abastecimiento consolida
+3. Clasificar por mecanismo: Convenio Marco / Licitación / Compra Directa
+4. Validación presupuestaria (DAF)
+5. Aprobación Gobernador/a
+6. Publicar PAC en Mercado Público
+7. Monitoreo y ajustes trimestrales
+
+### Contenido del PAC
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Producto/Servicio | Descripción detallada |
+| Cantidad estimada | Unidades requeridas |
+| Monto estimado | Valor en pesos |
 | Período | Trimestre de adquisición |
-| Mecanismo | CM, LP, CD o TDP |
+| Mecanismo | CM / LP / CD / TDP |
 
-## P2: Proceso de Licitación Pública (> 1.000 UTM)
+## P2: Licitación Pública
 
-*   **ID**: `BPMN-GN-COMPRAS-MECANISMOS-01`
-*   **Umbral**: Obligatorio para montos > 1.000 UTM
+**Umbral:** > 1.000 UTM.
 
-### Fases de Licitación
-*   **Preparación**: Elaboración bases (técnicas/admin), revisión jurídica, resolución aprobatoria.
-*   **Publicación**: Mercado Público, consultas/aclaraciones, recepción de ofertas.
-*   **Evaluación**: Comisión evaluadora, criterios (Precio, Calidad, Experiencia), acta de evaluación, propuesta de adjudicación.
-*   **Adjudicación**: Resolución, publicación de resultados, notificación, período de impugnación.
+### Mecanismos de Compra
 
-## Mecanismos y Umbrales de Adquisición
-
-```mermaid
-flowchart TD
-    A["Necesidad de<br/>adquisición"] --> B{"Monto<br/>estimado"}
-    
-    B -->|"> 1.000 UTM"| C["🏛️ Licitación<br/>Pública"]
-    B -->|"100-1.000 UTM"| D["📋 Licitación<br/>Privada"]
-    B -->|"< 100 UTM"| E["💳 Compra<br/>Directa"]
-    
-    A --> F{"¿Existe<br/>Convenio Marco?"}
-    F -->|"Sí"| G["🛒 Convenio<br/>Marco"]
-    F -->|"No"| B
-
-    style C fill:#f44336,color:#fff
-    style G fill:#4CAF50,color:#fff
-```
-
-## P3: Ejecución y Estados de Órdenes de Compra (OC)
-
-*   **ID**: `BPMN-GN-COMPRAS-OC-01`
-*   **Plataforma**: Mercado Público
-
-### Flujo de Ejecución OC
-1.  **Generación**: Abastecimiento crea OC tras adjudicación.
-2.  **Vinculación**: Asociación con CDP y partida presupuestaria.
-3.  **Autorización**: Firma de jefatura.
-4.  **Envío**: Notificación a proveedor.
-5.  **Aceptación**: Confirmación del proveedor.
-6.  **Recepción**: Entrega de bienes/servicios.
-7.  **Conformidad**: Acta de recepción (si cumple) o Rechazo (si no cumple).
-8.  **Cierre**: Facturación y Pago.
-
-### Ciclo de Vida de la OC
-| Estado | Condición |
+| Monto | Mecanismo |
 | :--- | :--- |
-| Generada | Creada en sistema |
-| Enviada | Notificada formalmente |
-| Aceptada | Proveedor conforme |
-| Recepcionada | Bien/servicio entregado |
-| Pagada | Ciclo financiero finalizado |
+| > 1.000 UTM | Licitación Pública |
+| 100–1.000 UTM | Licitación Privada |
+| < 100 UTM | Compra Directa |
+| Existe Convenio Marco | Convenio Marco (prioridad) |
 
-## P4: Gestión, Formalización y Cierre de Contratos
+### Flujo
 
-*   **ID**: `BPMN-GN-COMPRAS-CONTRATOS-01`
-*   **Responsable**: Administrador de Contrato (Designado)
+**Preparación:**
+1. Elaborar bases técnicas y administrativas
+2. Revisión jurídica
+3. Resolución que aprueba bases
 
-### Etapas Contractuales
-*   **Formalización**: Elaboración, revisión jurídica, firma, resolución, gestión de garantías (Fiel cumplimiento, Anticipo).
-*   **Ejecución**: Seguimiento de hitos, verificación técnica, estados de pago parciales.
-*   **Cierre**: Recepción definitiva, acta de cierre, devolución de garantías, evaluación de desempeño del proveedor.
+**Publicación:**
+4. Publicar en Mercado Público
+5. Período de consultas → respuestas y aclaraciones
+6. Recepción de ofertas
 
-### Funciones del Administrador
-*   Supervisión técnica del cumplimiento.
-*   Enlace oficial con el proveedor.
-*   Custodia y actualización del expediente.
-*   Certificación de hitos y avances.
-*   Autorización de estados de pago.
+**Evaluación:**
+7. Comisión evaluadora revisa ofertas
+8. Aplicar criterios: precio, calidad, experiencia
+9. Acta de evaluación → propuesta de adjudicación
 
-## Control, Transparencia y Prohibiciones en Compras
+**Adjudicación:**
+10. Resolución de adjudicación
+11. Publicar resultado → notificar a oferentes
+12. Período de impugnación
 
-### Matriz de Transparencia
-| Tipo Información | Plataforma Publicación |
+## P3: Ejecución de Órdenes de Compra
+
+**Sistema:** Mercado Público.
+
+### Flujo
+
+1. Adjudicación/Contrato vigente
+2. Abastecimiento genera OC
+3. Asociar CDP y partida presupuestaria
+4. Firma jefatura respectiva
+5. Enviar OC a proveedor → proveedor acepta OC
+6. Recepción de bienes/servicios → ¿Conforme?
+   - Sí → Acta de recepción → facturación → pago
+   - No → Rechazo/devolución
+
+### Estados de la OC
+
+| Estado | Descripción |
+| :--- | :--- |
+| Generada | OC creada en el sistema |
+| Enviada | Notificada al proveedor |
+| Aceptada | Proveedor confirma |
+| Recepcionada | Bienes/servicios entregados |
+| Pagada | Proceso completado |
+
+## P4: Gestión de Contratos
+
+**Responsable:** Administrador de Contrato.
+
+### Flujo
+
+**Formalización:**
+1. Elaborar contrato → revisión jurídica → firma de partes
+2. Resolución aprobatoria
+3. Garantías: fiel cumplimiento, anticipo
+
+**Ejecución:**
+4. Designar administrador de contrato
+5. Seguimiento de hitos
+6. Verificar cumplimiento
+7. Estados de pago parciales
+
+**Cierre:**
+8. Recepción definitiva → acta de cierre
+9. Devolución garantías
+10. Evaluación proveedor
+
+### Funciones del Administrador de Contrato
+
+| Función | Descripción |
+| :--- | :--- |
+| Supervisión | Verificar cumplimiento técnico |
+| Comunicación | Enlace con proveedor |
+| Documentación | Mantener expediente |
+| Hitos | Certificar avances |
+| Pagos | Autorizar estados de pago |
+
+## Control y Transparencia
+
+### Obligaciones de Publicación
+
+| Información | Plataforma |
 | :--- | :--- |
 | PAC | Mercado Público |
 | Licitaciones | Mercado Público |
@@ -151,28 +161,32 @@ flowchart TD
 | Contratos | Transparencia Activa |
 | Órdenes de Compra | Mercado Público |
 
-### Restricciones Críticas
-*   **Fraccionamiento**: Prohibido dividir compras para eludir umbrales de licitación.
-*   **Conflictos de Interés**: Obligación de declaración de inhabilidades por funcionarios.
-*   **Probidad**: Rigor en criterios de evaluación y actas de comisión.
+### Prohibiciones
 
-## Ecosistema Tecnológico y Sistemas de Gestión
+- Fraccionamiento prohibido: no dividir compras para eludir umbrales.
+- Conflicto de intereses: funcionarios deben declarar inhabilidades.
 
-| Sistema | Sigla | Función Principal |
-| :--- | :--- | :--- |
-| ChileCompra | `ORG-CHILECOMPRA` | Mercado Público, OC, Licitaciones |
-| SIGFE | `SYS-SIGFE` | CDP, compromisos presupuestarios, pagos |
-| DocDigital | `SYS-DOCDIGITAL` | Contratos, resoluciones, actos admin. |
+## Sistemas Involucrados
 
-## Marco Normativo y Referencias de Compras Públicas
+| Sistema | Función |
+| :--- | :--- |
+| ORG-CHILECOMPRA | Mercado Público, OC, licitaciones |
+| SYS-SIGFE | CDP, compromisos, pagos |
+| SYS-DOCDIGITAL | Contratos, resoluciones |
 
-### Base Legal
-*   **Ley 19.886**: Ley de Bases sobre Contratos Administrativos de Suministro y Prestación de Servicios.
-*   **D.S. 250**: Reglamento de la Ley 19.886.
-*   **Directivas ChileCompra**: Normas operativas y procedimentales.
-*   **Ley 20.730**: Regulación del Lobby y gestión de intereses.
+## Normativa Aplicable
 
-### Vínculos de Dominio (Referencias Cruzadas)
-*   **D02 Ciclo Presupuestario**: Gestión de CDP y compromisos financieros.
-*   **D05 Inventarios**: Recepción física de bienes y alta de activos.
-*   **D01 Actos Administrativos**: Tramitación de resoluciones de bases y adjudicación.
+| Norma | Alcance |
+| :--- | :--- |
+| Ley 19.886 | Compras públicas |
+| Reglamento D.S. 250 | Procedimientos |
+| Directivas ChileCompra | Operativas |
+| Ley 20.730 | Lobby y conflictos de interés |
+
+## Referencias Cruzadas
+
+| Dominio | Vínculo |
+| :--- | :--- |
+| D02 Ciclo Presupuestario | CDP, compromisos |
+| D05 Inventarios | Recepción de bienes |
+| D01 Actos Administrativos | Resoluciones de adjudicación |

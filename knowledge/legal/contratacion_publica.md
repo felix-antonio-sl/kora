@@ -19,53 +19,52 @@ lang: es
 
 # Contratación Pública de Servicios Médicos en Chile
 
-## Principios de la Contratación Pública
-- **Definición:** Reglas para adquisición de bienes/servicios por órganos del Estado.
-- **Fundamentos:** Transparencia, igualdad entre oferentes, buen uso de recursos públicos.
-- **Fuentes:** Constitución Política (CPR), Ley 18.575 (LOCBGAE).
-- **Principios Clave:**
-  | Principio | Descripción |
-  | :--- | :--- |
-  | Legalidad | Ajuste estricto a las normas reguladoras. |
-  | Libre Concurrencia | Fomento de competencia e igualdad; prohibición de discriminación arbitraria. |
-  | Transparencia | Publicidad obligatoria de los procesos. |
-  | Eficiencia | Optimización del uso de recursos públicos. |
+## Principios
+
+Fuentes: CPR, LOC 18.575. Reglas para adquisición de bienes/servicios por órganos del Estado:
+- Legalidad: contratos ajustados estrictamente a normas reguladoras.
+- Libre concurrencia e igualdad de oferentes; prohibición de discriminación arbitraria.
+- Transparencia y publicidad obligatoria de los procesos.
+- Eficiencia en uso de recursos públicos.
 
 ## Médicos como Proveedores del Estado
-- **Concepto:** Prestación de servicios al Estado sin adquirir calidad de funcionario.
-- **Modalidades de Prestación:**
-  - **Servicios Profesionales:** Contratos con Servicios de Salud, hospitales u otros órganos.
-  - **Convenios de Colaboración:** Acuerdos entre instituciones públicas y privadas con participación de médicos externos.
 
-### Comparación: Proveedor vs. Funcionario
-| Criterio | Médico Proveedor (Externo) | Médico Funcionario |
+Modalidades de prestación sin adquirir calidad de funcionario:
+- Contratos de prestación de servicios profesionales con Servicios de Salud, hospitales u otros órganos.
+- Convenios entre instituciones públicas y privadas con participación de médicos externos.
+
+Diferencias clave proveedor vs. funcionario:
+
+| Criterio | Médico Proveedor | Médico Funcionario |
 | :--- | :--- | :--- |
-| **Naturaleza del Vínculo** | Contrato administrativo o civil de servicios. | Relación estatutaria de derecho público. |
-| **Subordinación** | Autonomía técnica; sin subordinación laboral típica. | Sujeción a jerarquía y control de jornada. |
-| **Forma de Pago** | Honorarios pactados (servicio, programa o resultado). | Remuneraciones según estatuto o Código del Trabajo. |
+| Naturaleza del vínculo | Contrato administrativo o civil de servicios | Relación estatutaria de derecho público |
+| Subordinación | Autonomía técnica; sin subordinación laboral típica | Sujeción a jerarquía e instrucciones; control de jornada |
+| Forma de pago | Honorarios pactados por servicio, programa o resultado | Remuneraciones fijadas por estatuto o Código del Trabajo |
 
-## Riesgo Laboral Encubierto
-- **Concepto:** Contratos de servicios/honorarios que ocultan una relación laboral real.
-- **Elementos Indicativos de Laboralidad:**
-  - Subordinación fáctica: órdenes directas, control de jornada, integración en organigrama.
-  - Continuidad: prestación de servicios personales, continuos y exclusivos.
-  - Pago: remuneración periódica fija asimilable a sueldo.
-- **Normativa Aplicable:** Ante estos elementos, rige el Código del Trabajo (Principio de Primacía de la Realidad).
+## Riesgo de Relación Laboral Encubierta
+
+Elementos indicativos de laboralidad real bajo contrato de servicios u honorarios:
+- Subordinación fáctica: órdenes directas, control de jornada, integración en organigrama.
+- Prestación personal, continua y exclusiva en favor del órgano público.
+- Remuneración periódica fija asimilable a sueldo.
+
+Si concurren los elementos del contrato de trabajo, rige el Código del Trabajo con independencia del nombre del contrato (Principio de Primacía de la Realidad).
 
 ## Modalidades de Contratación Administrativa
-- **Licitación Pública:** Proceso abierto; máxima publicidad y competencia; preferente para montos relevantes.
-- **Licitación Privada:** Invitación selectiva a oferentes determinados.
-- **Trato Directo:** Excepción legal por urgencia, proveedor único o montos menores.
+
+- Licitación pública: proceso abierto; máxima publicidad y competencia; uso preferente para contratos de monto relevante.
+- Licitación privada: invitación selectiva a número determinado de oferentes.
+- Trato directo: excepción legal por urgencia, proveedor único o montos menores definidos por normativa.
 
 ## Inhabilidades y Conflictos de Interés
-- **Fuente:** Ley 18.575.
-- **Restricciones para Funcionarios:**
-  - Prohibición de contratar con el órgano de desempeño actual (salvo excepciones).
-  - Deber de abstención ante interés personal o de parientes en procesos de contratación.
-- **Ex-Funcionarios:** Sujetos a limitaciones temporales y condiciones específicas de contratación.
 
-## Buenas Prácticas Contractuales
-- **Análisis de Cláusulas:** Revisión estricta de objeto, duración, honorarios y causales de término.
-- **Cumplimiento de Probidad:** Verificar compatibilidad si existe cargo funcionario simultáneo.
-- **Resguardo de Autonomía:** Evitar dinámicas de subordinación (instrucciones jerárquicas directas) en servicios externos.
-- **Gestión Documental:** Acreditación rigurosa de prestaciones y resultados esperados.
+Fuente: LOC 18.575.
+- Funcionarios no pueden contratar con el órgano de desempeño actual (salvo excepciones legales).
+- Obligación de abstenerse en decisiones con interés personal o de parientes en procesos de contratación.
+
+## Buenas Prácticas para Médicos Proveedores
+
+- Revisar cláusulas de objeto, duración, honorarios y causales de término.
+- Verificar compatibilidad de probidad e incompatibilidades si existe cargo funcionario simultáneo.
+- Evitar dinámicas de subordinación que configuren relación laboral encubierta.
+- Documentar adecuadamente prestaciones realizadas y resultados esperados.

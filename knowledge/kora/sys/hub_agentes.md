@@ -18,63 +18,77 @@ lang: es
 
 # Hub de Agentes TDE
 
+ID: TDE-HUB-AGENTES-030 | Dominio: tde_lineamientos
+XRef: urn:kora:kb:workflow-wikiguias, urn:tde:kb:nt-seguridad-ciberseguridad
+
 ## Contexto Operativo
-- **ID**: TDE_HUB_AGENTES_CTX_001
-- **Objetivo**: Operación a escala de KB `tde` (artefactos KODA/Spec).
-- **Alcance**: Transformación, auditoría, consulta y mantenimiento de coherencia.
-- **Integración**: Orquestación entre agentes especializados y editores humanos.
+
+- KB `tde`: artefactos KODA/Spec (normas técnicas, guías, estrategias, plataformas compartidas).
+- Operación a escala requiere Hub de agentes cooperando: transformación, auditoría, consulta, mantenimiento.
+- Agentes complementan trabajo de editores humanos sobre mismo árbol de YAML.
 
 ## Roles de Agentes
-- **KODA_TRANSFORMER**
-  - **Propósito**: Ejecución workflow transformación 029 (Fuentes → KODA).
-  - **Acciones**: Lectura fuentes, producción borradores YAML, aplicación fases 1-3.
-  - **Referencia**: urn:kora:kb:workflow-wikiguias#TDE_WORKFLOW_WIKIGUIAS_GLOBAL_001
-- **TDE_AUDITOR_KB**
-  - **Propósito**: Aseguramiento calidad (FS=100%, TER≥30%, RD≥2.0).
-  - **Acciones**: Fase 4 workflow 029, detección MEAT faltante, reportes auditoría.
-- **TDE_ROUTER_ORQUESTADOR**
-  - **Propósito**: Enrutamiento tareas alto nivel.
-  - **Acciones**: Clasificación tareas, asignación a especialistas, consolidación resultados.
-- **TDE_EXPLORER_QA**
-  - **Propósito**: Respuesta consultas sobre KB.
-  - **Acciones**: Localización artefactos Tier1, composición respuestas alta fidelidad.
-- **TDE_INDEXADOR**
-  - **Propósito**: Mantenimiento índices, embeddings y catálogos.
-  - **Acciones**: Sincronización URNs y metadatos con `catalog_master_tde`.
+
+| Agente | Propósito | Responsabilidad Workflow 029 |
+|--------|-----------|------------------------------|
+| KODA_TRANSFORMER | Transformar fuentes Markdown/PDF a KODA | Fases 1–3 (Análisis, Telegrafización, Deduplicación) |
+| TDE_AUDITOR_KB | Asegurar FS=100%, TER≥30%, RD≥2.0 | Fase 4 (Validación); reportes de hallazgos MEAT |
+| TDE_ROUTER_ORQUESTADOR | Enrutar tareas de alto nivel entre agentes | Clasificar, asignar, consolidar resultados |
+| TDE_EXPLORER_QA | Responder consultas sobre KB `tde` | Retrieval Tier1; citar IDs de bloques |
+| TDE_INDEXADOR | Mantener índices, embeddings, catálogos | Sincronizar URNs y metadatos con catalog_master_tde |
+
+XRef KODA_TRANSFORMER: urn:kora:kb:workflow-wikiguias#TDE_WORKFLOW_WIKIGUIAS_GLOBAL_001
+
+Métricas TDE_AUDITOR_KB:
+- % artefactos auditados sobre total
+- N° hallazgos MEAT por artefacto
 
 ## Flujos Principales
-### Transformación Fuente a KODA
-1. Recepción fuente (ORQUESTADOR).
-2. Clasificación y mapeo (1:1, 1:n, n:1).
-3. Transformación fases 1-3 (KODA_TRANSFORMER).
-4. Validación fase 4 (TDE_AUDITOR_KB).
-5. Aplicación parches controlada.
+
+### Transformación Fuente a KODA (ID: TDE_HUB_AGENTES_FLUJOS_001)
+
+1. Recepción fuente (ORQUESTADOR); clasificación y mapeo 1:1, 1:n o n:1.
+2. KODA_TRANSFORMER ejecuta Fases 1–3 → borrador YAML.
+3. TDE_AUDITOR_KB ejecuta Fase 4 (Validación).
+4. Aplicación de parches mediante herramientas controladas (`apply_patch`, `write_to_file`).
 
 ### Auditoría Periódica KB
-1. Planificación por lote o antigüedad.
-2. Ejecución auditoría vs Metadata_Original (TDE_AUDITOR_KB).
-3. Generación reportes hallazgos/parches.
-4. Cierre y revalidación artefactos.
+
+1. Planificación por lote temático, tipo de documento o antigüedad.
+2. TDE_AUDITOR_KB compara artefactos vs fuentes declaradas en Metadata_Original.
+3. Generación de reportes de hallazgos y parches propuestos.
+4. Cierre de hallazgos tras actualización y revalidación.
 
 ### Consulta QA sobre KB
-1. Recepción consulta usuario.
-2. Delegación contexto y artefactos (ORQUESTADOR → TDE_EXPLORER_QA).
-3. Retrieval Tier1 y construcción respuesta con citas ID.
-4. Registro patrones para mejora XRef/Lexicon.
 
-## Gestión de Archivos y Catálogos
-- **Ubicación**: Árbol YAML en `knowledge/core` y `knowledge/domains`.
-- **Reglas**:
-  - Modificaciones solo mediante herramientas controladas (`apply_patch`, `write_to_file`).
-  - Actualización obligatoria de `_manifest.provenance` y `Metadata_Original`.
-  - Sincronización inmediata de índices tras cambios.
+1. Recepción pregunta usuario → ORQUESTADOR delega a TDE_EXPLORER_QA con contexto.
+2. TDE_EXPLORER_QA: retrieval Tier1 + respuesta citando IDs de bloques relevantes.
+3. Registro de patrones de uso para enriquecer XRef y Lexicon.
 
-## Seguridad y Control
-- **Clasificación**: Activo de información crítico.
-- **Políticas**: Control de cambios, respaldos, trazabilidad de commits y parches.
-- **Normativa**: urn:tde:kb:nt-seguridad-ciberseguridad
+## Gestión de Archivos y Catálogos (ID: TDE_HUB_AGENTES_FS_001)
 
-## Articulación Workflow 029
-- **Asignación**: Fases 1-3 (KODA_TRANSFORMER), Fase 4 (TDE_AUDITOR_KB).
-- **Apoyo**: Intervención humana en ambigüedades.
-- **Patrones**: Uso de `Patrones_Mapping_Fuentes_Artefactos` para decisiones consistentes.
+- Árbol YAML: `knowledge/core` y `knowledge/domains`.
+- Req: Modificaciones solo mediante herramientas controladas; nunca escritura directa sin registro.
+- Req: Actualizar `_manifest.provenance` y `Metadata_Original` cuando cambien fuentes o URNs.
+- Req: TDE_INDEXADOR actualiza índices y catálogos ante altas/bajas/modificaciones.
+
+## Seguridad y Control de Cambios (ID: TDE_HUB_AGENTES_SEC_001)
+
+- Clasificación: activo de información crítico.
+- Políticas: control de cambios, respaldos, trazabilidad de commits y parches.
+- Normativa: urn:tde:kb:nt-seguridad-ciberseguridad; GU-CIBER-001.
+
+## Articulación con Workflow 029 (ID: TDE_HUB_AGENTES_ART_029_001)
+
+- Fases 1–3: KODA_TRANSFORMER (con apoyo humano en ambigüedades).
+- Fase 4: TDE_AUDITOR_KB.
+- Patrón de decisión de mapeo (1:1, 1:n, n:1): usar `Patrones_Mapping_Fuentes_Artefactos` del workflow 029.
+- XRef_Required: urn:kora:kb:workflow-wikiguias
+
+## Glosario
+
+| Término | Ref | XRef |
+|---------|-----|------|
+| Servicios digitales | TDE_DEF_SERVICIOS_DIGITALES | urn:gov:kb:lexicon-wikiguias#TDE_DEF_SERVICIOS_DIGITALES |
+
+XRef relacionados: urn:tde:kb:guia-sistema-tde-2025, urn:tde:kb:guia-marco-gestion-datos

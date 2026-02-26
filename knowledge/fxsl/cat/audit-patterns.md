@@ -19,139 +19,138 @@ lang: en
 
 # Categorical Audit Patterns
 
+Formal patterns for auditing, diagnosing, and improving DIK artifacts using categorical criteria. Sources: Seven Sketches (Fong, Spivak) — path equality, FDM; Categorical Data Integration (Brown, Spivak, Wisnesky) — integrity by construction; Coalgebra for the Working Software Engineer (Barbosa) — bisimulation as behavioral equivalence criterion; MBSE + Cat (S2ML) — catmodels, binary consistency, injections.
+
 ## DIK Classification of Artifacts
 
-### Data Level
+| Level | Definition | Examples |
+|-------|-----------|---------|
+| DATA | Instance I: S → Set over schema S. Values, rows, records, observations. Functor assigning sets to objects and functions to morphisms. | SQL table, JSON document, CSV file |
+| INFORMATION | Schema S (finitely presented category). Objects = entities/types; morphisms = relations/attributes; path equations = business constraints. | DDL SQL, JSON Schema, GraphQL Schema, .koda.yml |
+| KNOWLEDGE | Transformations, migrations, abstract models. Functors between categories, adjunctions (Δ/Σ/Π), Kan extensions, behaviors (coalgebras), inference rules. | Migration functor F: S → T, agent spec, .koda.yml with Proc |
 
-- **Definition**: Instance I: S → Set over schema S.
-
-- Concrete values, rows, records, observations.
-- Funtor mapping sets to objects and functions to morfismos.
-
-- **Audit Focus**: Referential integrity, completeness, consistency with schema.
-
-- **Example**: SQL table with data, JSON document, CSV file.
-
-### Information Level
-
-- **Definition**: Schema S (finitely presented category).
-
-- Objects = entities/types, Morfismos = relations/attributes.
-- Path equations = business constraints.
-
-- **Audit Focus**: Structural coherence, commutativity, completeness of relations.
-
-- **Example**: DDL SQL, JSON Schema, GraphQL Schema, .koda.yml.
-
-### Knowledge Level
-
-- **Definition**: Transformations, migrations, abstract models (funtores between categories, adjunctions, Kan extensions).
-
-- **Characteristics**: Behaviors (coálgebras), inference rules, processes.
-
-- **Audit Focus**: Functoriality, structure preservation, validity of adjunctions, complete processes.
-
-- **Example**: Migration funtor F: S → T, agent specification, .koda.yml with processes.
+Audit focus per level: DATA → referential integrity, completeness, schema consistency. INFORMATION → structural coherence, commutativity, completeness of relations. KNOWLEDGE → functoriality, structure preservation, validity of adjunctions, complete Procs.
 
 ## Audit Dimensions
 
-### Structural
+### Structural (AUDIT-DIM-STRUCTURAL)
 
-- Verify artifact forms valid categorical structure.
+| Check | Definition | Severity | Procedure |
+|-------|-----------|----------|-----------|
+| CHECK-IDENTITY | Each object has identity morphism? | CRITICAL | List all objects; verify id_A: A → A for each A |
+| CHECK-COMPOSITION | Morphisms compose correctly? | CRITICAL | For f: A→B, g: B→C verify g∘f: A→C; verify cod(f)=dom(g) |
+| CHECK-ASSOCIATIVITY | (h∘g)∘f = h∘(g∘f)? | CRITICAL | — |
+| CHECK-PATH-EQUALITY | Declared parallel paths commute? | HIGH | For each equation path₁=path₂: verify I(path₁)=I(path₂) for every instance I. Ex: Employee.Mngr.WorksIn = Employee.WorksIn |
 
+### Referential (AUDIT-DIM-REFERENTIAL)
 
-- **Checks**:
+| Check | Definition | Severity |
+|-------|-----------|----------|
+| CHECK-REF-INTERNAL | Ref: targets exist in same document? | HIGH |
+| CHECK-XREF-EXTERNAL | XRef: targets are resolvable URNs? If #ID, verify it exists in target. | HIGH |
+| CHECK-FOREIGN-KEY | For each morphism f: A→B, every v ∈ I(A) has I(f)(v) ∈ I(B). | CRITICAL |
 
-- **Identity**: Each object has identity morfismo.
-- **Composition**: Morfismos compose correctly.
-- **Associativity**: (h∘g)∘f = h∘(g∘f).
-- **Path Equality**: Parallel declared paths commute.
+### Completeness (AUDIT-DIM-COMPLETENESS)
 
-- **Severity if Fail**: CRITICAL.
+| Check | Level | Severity |
+|-------|-------|----------|
+| CHECK-DATA-COMPLETE | Instance I defined for all objects in schema? | MEDIUM |
+| CHECK-INFO-COMPLETE | Schema has explicit objects, morphisms, and equations? | MEDIUM |
+| CHECK-KNOWLEDGE-PROC | Key concepts have operational Proc fields? | LOW |
 
-### Referential
+### Quality (AUDIT-DIM-QUALITY)
 
-- Verify integrity of internal and external references.
+| Check | Definition | Severity |
+|-------|-----------|----------|
+| CHECK-UNIVERSAL-CONSTRUCTION | Universal constructions used where applicable? | LOW |
+| CHECK-FUNCTORIALITY | Transformations preserve structure? | MEDIUM |
+| CHECK-BEHAVIORAL-EQUIVALENCE | Equivalent states identified via bisimulation? | LOW |
 
+### Migration (AUDIT-DIM-MIGRATION)
 
-- **Checks**:
+| Check | Definition | Severity | Procedure |
+|-------|-----------|----------|-----------|
+| CHECK-MIGRATION-FUNCTOR | F: S→T well-defined? | HIGH | Verify F(id_A)=id_{F(A)} and F(g∘f)=F(g)∘F(f) |
+| CHECK-MIGRATION-SQUARE | Migration square commutes? | HIGH | Given F: S→T, I: S→Set, J: T→Set — verify J ∘ F = α ∘ I (naturally) |
+| CHECK-CONSTRAINT-PRESERVATION | Migration preserves required constraints? | HIGH | — |
 
-- **Internal Refs**: Ref: point to existing IDs in same document.
-- **External Refs**: XRef: point to resolvable URNs.
-- **Foreign Keys**: Instance foreign keys point to existing records.
+### Behavioral (AUDIT-DIM-BEHAVIORAL)
 
-- **Severity if Fail**: HIGH.
+| Check | Definition | Severity | Procedure |
+|-------|-----------|----------|-----------|
+| CHECK-INTERFACE-CONFORMANCE | System implements declared interface functor F? | HIGH | — |
+| CHECK-BISIMULATION | Declared equivalent components are bisimilar? | MEDIUM | Identify c₁: U₁→F(U₁), c₂: U₂→F(U₂); verify bisimulation R ⊆ U₁×U₂; or verify beh(u₁)=beh(u₂) in final coalgebra |
+| CHECK-ACTION-INDEX | Episodes have action as primary key? | LOW | — |
 
-### Completeness
+## Problem Patterns and Improvements
 
-- Verify artifact is complete per its DIK level.
-
-
-- **Checks**:
-
-- **Data**: Instance I defined for all objects in schema.
-- **Information**: Schema has objects, morfismos, equations explicit.
-- **Knowledge**: Key concepts have operative processes.
-
-- **Severity if Fail**: MEDIUM.
-
-### Quality
-
-- Evaluate advanced categorical quality.
-
-
-- **Checks**:
-
-- **Universal Constructions**: Use limits/colimits where applicable.
-- **Functoriality**: Transformations preserve structure.
-- **Behavioral Equivalence**: Equivalent states identified (bisimulation).
-
-- **Severity if Fail**: LOW.
-
-### Migration
-
-- Verify migrations as functorial squares.
-
-
-- **Checks**:
-
-- **Funtor Validity**: F: S→T preserves identities and composition.
-- **Square Commutativity**: Migration square commutes naturally.
-- **Constraint Preservation**: Migration preserves required constraints.
-
-- **Severity if Fail**: HIGH.
-
-### Behavioral
-
-- Audit dynamic behavior via coálgebras.
-
-
-- **Checks**:
-
-- **Interface Conformance**: System implements declared interface funtor.
-- **Bisimulation**: Declared equivalent components are bisimilar.
-- **Action Index**: Episodes have action as primary key.
-
-- **Severity if Fail**: MEDIUM/LOW.
-
-## Improvement Patterns
-
-- **Broken Diagram**: Parallel paths don't commute → Add path equation or correct morfismos.
-- **Orphan Object**: Object without morfismos (except identity) → Connect or eliminate.
-- **Dangling Reference**: Ref/XRef points to inexistent → Correct or create target.
-- **Missing Process**: Concept without operative procedure → Add process with executable steps.
-- **Version Mismatch**: Version ≠ URN version → Align versions.
-- **Ad-hoc Construction**: Ad-hoc where universal exists → Use corresponding limit/colimit.
-- **Non-functorial Migration**: Migration doesn't preserve composition → Redefine as valid funtor or use Σ/Δ/Π.
-- **Redundant Bisimilar**: Bisimilar components treated as distinct → Identify via morphism to final coalgebra.
+| Pattern | Symptom | Proposal | Justification |
+|---------|---------|----------|---------------|
+| PATTERN-BROKEN-DIAGRAM | Parallel paths do not commute | Add path equation or correct morphisms | Commutativity is a categorical coherence requirement |
+| PATTERN-ORPHAN-OBJECT | Object without morphisms (except identity) | Connect to graph or remove if redundant | — |
+| PATTERN-DANGLING-REFERENCE | Ref/XRef points to nonexistent | Correct reference or create target | — |
+| PATTERN-MISSING-PROC | Concept without operational procedure | Add Proc with executable steps | Knowledge without Proc is not actionable |
+| PATTERN-VERSION-MISMATCH | Version ≠ URN version | Align Version with URN | — |
+| PATTERN-AD-HOC-CONSTRUCTION | Ad-hoc construction where universal exists | Use corresponding limit/colimit | — |
+| PATTERN-NON-FUNCTORIAL-MIGRATION | Migration does not preserve composition | Redefine as valid functor or use Σ/Δ/Π | — |
+| PATTERN-REDUNDANT-BISIMILAR | Bisimilar components treated as distinct | Identify via unique morphism to final coalgebra | — |
 
 ## Full Audit Procedure
 
-1. **DIK Classification**: Determine level (DATA | INFORMATION | KNOWLEDGE); identify type.
-2. **Structural Audit**: Execute checks for identity, composition, associativity, path equality. Register CRITICAL issues.
-3. **Referential Audit**: Execute ref validity, XRef resolution, foreign-key checks. Register HIGH issues.
-4. **Completeness Audit**: Per DIK level, verify completeness. Register MEDIUM issues.
-5. **Quality Audit**: Check universal constructions, functoriality, behavioral equivalence. Register LOW issues.
-6. **Migrations**: Verify funtor validity, square commutativity, constraint preservation.
-7. **Behavioral**: Verify interface conformance, bisimulation, action indexing.
-8. **Report Generation**: Consolidate by severity, associate improvement patterns, propose solutions with categorical justification.
+**Step 1 — DIK Classification.**
+a) Determine level: DATA | INFORMATION | KNOWLEDGE.
+b) Identify type: SCHEMA | INSTANCE | ARTIFACT | MODEL | AGENT.
+c) Record URN and domain.
+
+**Step 2 — Structural Audit (AUDIT-DIM-STRUCTURAL).**
+Execute CHECK-IDENTITY, CHECK-COMPOSITION, CHECK-ASSOCIATIVITY, CHECK-PATH-EQUALITY. Record CRITICAL issues.
+
+**Step 3 — Referential Audit (AUDIT-DIM-REFERENTIAL).**
+Execute CHECK-REF-INTERNAL, CHECK-XREF-EXTERNAL. If instance: CHECK-FOREIGN-KEY. Record HIGH issues.
+
+**Step 4 — Completeness Audit (AUDIT-DIM-COMPLETENESS).**
+Execute level-appropriate check (DATA/INFO/KNOWLEDGE). Record MEDIUM issues.
+
+**Step 5 — Quality Audit (AUDIT-DIM-QUALITY).**
+Execute CHECK-UNIVERSAL-CONSTRUCTION, CHECK-FUNCTORIALITY, CHECK-BEHAVIORAL-EQUIVALENCE if applicable. Record LOW issues.
+
+**Step 6 — Migration Audit (if applicable) (AUDIT-DIM-MIGRATION).**
+Execute CHECK-MIGRATION-FUNCTOR, CHECK-MIGRATION-SQUARE, CHECK-CONSTRAINT-PRESERVATION.
+
+**Step 7 — Behavioral Audit (if applicable) (AUDIT-DIM-BEHAVIORAL).**
+Execute CHECK-INTERFACE-CONFORMANCE, CHECK-BISIMULATION, CHECK-ACTION-INDEX for episodes.
+
+**Step 8 — Report Generation.**
+a) Consolidate issues by severity.
+b) Associate improvement PATTERN to each issue.
+c) Generate proposals with categorical justification.
+
+## Audit Report Format
+
+```
+## DIK Audit Report
+
+### 1. Classification
+- DIK Level: [DATA | INFORMATION | KNOWLEDGE]
+- Type: [SCHEMA | INSTANCE | ARTIFACT | MODEL | AGENT]
+- URN: [urn if applicable]
+
+### 2. Diagnostic Summary
+| Dimension      | Status | Issues       |
+|----------------|--------|--------------|
+| Structural     | ✓/✗   | n CRITICAL   |
+| Referential    | ✓/✗   | n HIGH       |
+| Completeness   | ✓/✗   | n MEDIUM     |
+| Quality        | ✓/✗   | n LOW        |
+| Migrations     | ✓/✗/NA| ...          |
+| Behavior       | ✓/✗/NA| ...          |
+
+### 3. Detected Issues
+| # | Severity | Dimension | Description | Location |
+
+### 4. Improvement Proposals
+| # | Issue | Pattern | Proposal | Justification |
+
+### 5. Next Steps
+[Prioritized list]
+```

@@ -21,176 +21,98 @@ lang: en
 
 ## Abstract
 
-- A category-theory-based formalism for multi-model data: schema category for structure and instance category for data.
-- Provides algorithms for transformations enabling flexible multi-model schema design, cross-model querying/integration, controlled evolution, and multi-model-to-multi-model migration.
+Ctx: Unified category-theoretic representation for multi-model data with high-level transformation algorithms.
+Src: `sources/cat/A unified representation and transform.md`
 
+Multi-model data = combination of relational, document, graph, wide-column, key/value models. Proposes category-theory-based unifying model for representing and transforming multi-model schemas and instances. Enables querying, evolution, and migration across models via common categorical intermediary.
 
-## Introduction
+Example query (Ex 1.1): "For each customer in Prague, find a friend who ordered the most expensive product among all that customer's friends." — combines relational customer data, graph friendships, document orders, wide-column references, key/value shopping carts.
 
-- Multi-model data combines several data models (relational, document, graph, wide-column) within one database or across multiple.
-- Category theory provides common conceptual framework for heterogeneous models.
+## Category Theory Prerequisites
 
+**Category** (C = (O, M, ∘)): objects O = Obj(C); morphisms M = Hom(C); f: A → B with domain A and codomain B; associative composition (h ∘ g) ∘ f = h ∘ (g ∘ f); identity 1_A for each A.
 
-- **Example Scenario**: Customer data (PostgreSQL) + friendships (graph) + orders (document) + shopping carts (key-value), querying: "For each Prague customer, find friend with most expensive product ordered."
+**Functor** F: C1 → C2: maps objects and morphisms preserving identities and composition.
 
-- **Approach**: Unify terminology and models using category theory; handle aggregate-oriented vs. aggregate-ignorant systems.
+Example: **Set** = category (objects = sets, morphisms = functions); **Rel** = category (objects = sets, morphisms = binary relations).
 
-## Category Theory Basics
+## Schema Category
 
-- **Category**: C = (O, M, ∘) with:
+**S = (O_S, M_S, ∘_S)** — models structure of data (analogous to conceptual schema).
 
-- Set of objects O = Obj(C)
-- Set of morphisms M = Hom(C); each f: A → B has domain A, codomain B
-- Composition ∘: associative, each object has identity
+**Objects**: each o ∈ O_S = tuple (key, label, superid, ids). superid = set of attributes for o; ids = collection of identifiers (subsets of superid).
 
-- **Example**: Set (objects = sets, morphisms = functions); Rel (objects = sets, morphisms = binary relations)
+**Morphisms**: each m ∈ M_S = (signature, dom, cod, min, max). signature ∈ M* for composing base morphisms; dom and cod = domain and codomain objects; min, max ∈ {0, 1, *} = cardinalities.
 
-- **Functor**: F: C₁ → C₂ maps objects and morphisms preserving identities and composition.
+**Composition**: m₂ ∘_S m₁ = (signature₂ · signature₁, dom₁, cod₂, min, max) with cardinality rules applied to min and max.
 
-## Categorical Representation
+**Dual morphisms**: for each m: X → Y, dual m⁻¹: Y → X required — bidirectional relationship capture.
 
-- Two main categories:
+Example (Ex 2.4): ER schema → schema category with objects {Customer, Order, Address, Product, ...}; superid and ids per object from ER identifiers.
 
-- **Schema Category S**: Models data structure (conceptual schema)
-- **Instance Category I**: Models actual data
+## Instance Category
 
-### Schema Category
+**I = (O_I, M_I, ∘_I)** — models actual data.
 
-- **Objects**: Each o ∈ O_S is tuple (key, label, superid, ids).
+**Objects**: O_I corresponds to O_S. Each o_I = set of tuples (active domain) conforming to attributes in superid.
 
-| Part | Meaning |
-|------|---------|
-| **superid** | Set of attributes for object o |
-| **ids** | Collection of identifiers (subsets of superid) |
+**Morphisms**: M_I = relations between tuples, reflecting cardinalities (min, max). Identities = reflexive relations on object sets. Composition ∘_I = standard relational composition.
 
-- **Morphisms**: Each m ∈ M_S is (signature, dom, cod, min, max).
+Example (Ex 2.5): Customer in O_S with attributes {id, name, surname} → Customer in O_I = {(id,1),(name,Mary),(surname,Smith)}, {(id,2),(name,Anne),(surname,Maxwell)}, ...
 
-| Part | Meaning |
-|------|---------|
-| **signature** | From M*, used to compose base morphisms |
-| **dom, cod** | Domain and codomain objects |
-| **min, max** | Cardinalities in {0,1,*} |
+Example (Ex 2.6): Morphism Customer → Surname = subset of Customer × Surname matching each tuple to its surname.
 
-- **Composition**: m₂ ∘_S m₁ = (signature₂ · signature₁, dom₁, cod₂, min, max), applying cardinality rules.
+## Category-to-Data Mapping (Kinds)
 
+**Kind κ** = (D, name_κ, root_κ, morph_κ, pkey_κ, ref_κ, P_κ):
+- D = DBMS
+- root_κ ∈ O_S or M_S = main object/morphism
+- pkey_κ = collection of signatures forming identifier
+- ref_κ = set of references to other kinds
+- P_κ = access path (tree/JSON-like structure describing nested properties)
 
-- **Dual Morphisms**: For each m: X → Y, dual morphism m⁻¹: Y → X captures bidirectional relationships.
+Access paths describe nesting, arrays, maps. JSON-like grammar accommodates document and column models, dynamic property names.
 
-- **Example ER → Schema Category**: ``` Objects: Customer, Order, Address, Product Each object's superid and ids follow from ER identifiers ```
+## Transformation Algorithms
 
-### Instance Category
+**Algorithm 1 (Model to Category — M2C)**:
+1. Extract records from DBMS kind κ.
+2. Represent as forests of records (trees).
+3. Traverse forest; fill instance category I with objects and morphisms respecting cardinalities and compositions.
+- Properties/arrays → objects or morphisms based on access path.
+- Missing values → empty sets of superidentifiers.
 
-- **Objects**: Objects in O_I correspond to O_S. Each o_I is set of tuples conforming to superid attributes.
+**Algorithm 2 (DDL — Category to Model schema)**: creates or alters target DBMS schema based on category structure via wrapper for each system.
 
-- **Morphisms**: M_I relations between tuples, reflecting cardinalities (min, max). Identity morphisms are reflexive.
+**Algorithm 3 (DML — Category to Model data)**: inserts data from instance category into new schema.
 
-- **Composition**: Standard relational composition ∘_I.
+**Algorithm 4 (IC — integrity constraints)**: finalizes references and constraints (primary keys, foreign keys).
 
-- **Example Instance Data**: ``` Customer: {(id,1,name,Mary,surname,Smith), (id,2,name,Anne,surname,Maxwell), ...} ```
-
-
-- **Morphism Example**: Customer → Surname subset of Customer × Surname, matching each tuple to its surname.
-
-## Category to Data Mapping
-
-- **Definition**: How schema category (and instances) map onto DBMS kinds (tables, documents, column families). Each kind associated with root object/morphism, primary key, optional references, access path.
-
-- **Kind**: κ = (D, name_κ, root_κ, morph_κ, pkey_κ, ref_κ, P_κ).
-
-
-| Part | Meaning |
-|------|---------|
-| **D** | DBMS |
-| **root_κ** | Main object/morphism in O_S or M_S |
-| **pkey_κ** | Signatures forming identifier |
-| **ref_κ** | References to other kinds |
-| **P_κ** | Access path: how properties nested/inlined |
-
-- **Access Paths**: Tree/JSON-like format; cardinalities drive single value vs. array.
-
-- **JSON-like Representation**: Grammar-based specification for nested properties, arrays, maps, dynamic names. Accommodates document and column models.
-
-## Transformations
-
-### Model to Category (Algorithm 1)
-
-- High-level transformation:
-
-1. Extract records from DBMS kind κ
-2. Represent as forests of records (trees)
-3. Traverse forest, fill instance category I with objects/morphisms respecting cardinalities, compositions
-
-- **Notes**: Properties/arrays mapped to objects/morphisms per access path Missing values → empty superidentifier sets
-
-### Category to Model (Algorithms 2-4)
-
-- **Algorithm 2 (DDL)**: Create/alter schema in target DBMS based on category structure (wrapper per system).
-
-- **Algorithm 3 (DML)**: Take instance category, insert data into new schema.
-
-- **Algorithm 4 (IC)**: Finalize references, constraints (PKs, FKs).
-
-### Multi-Model to Multi-Model Migration
-
-- **Approach**: Use categorical representation as intermediary; avoids direct pairwise mappings.
-
-- **Process**:
-
-1. Transform model(s) to instance category
-2. Transform from instance category to new model(s)
-
-- **Benefit**: Inter-model references and consistency/schema strategies captured in category, simplifying migration.
+**Multi-model to multi-model migration** — categorical representation as intermediary avoids O(n²) pairwise mappings:
+1. Transform source model(s) → instance category.
+2. Transform instance category → target model(s).
+Inter-model references and schema strategies captured in category.
 
 ## MM-cat Framework
 
-- **Definition**: Tool implementing schema/instance categories and unified transformations via DBMS wrappers, transformation modules.
+MM-cat = tool implementing schema/instance categories and unified transformations.
 
-### Architecture
+Architecture:
+- Schema category + instance category as core data structures.
+- Wrappers per DBMS implementing interface for schema creation, references, data push/pull.
+- Transformation modules: model-to-category and category-to-model.
 
-| Component | Role |
-|-----------|------|
-| **Schema + Instance Categories** | Core data structures |
-| **DBMS Wrappers** | Interface per DBMS for schema creation, references, data push/pull, etc. |
-| **Transformation Modules** | Apply model-to-category and category-to-model transformations |
+Wrapper types: AbstractPathWrapper (object/morphism → DBMS property mapping); AbstractDDLWrapper (schema creation/alteration); AbstractPushWrapper, AbstractPullWrapper, AbstractICWrapper (insertion, retrieval, integrity constraints).
 
-### Wrapper Types
+Performance: transformation algorithms linear in record count; logarithmic overhead if indexing required; parallelizable by data splitting or distributed composition tasks.
 
-| Wrapper | Purpose |
-|---------|---------|
-| **AbstractPathWrapper** | Map objects/morphisms to DBMS properties |
-| **AbstractDDLWrapper** | Create/alter schema definitions |
-| **AbstractPushWrapper** | Insert data |
-| **AbstractPullWrapper** | Retrieve data |
-| **AbstractICWrapper** | Integrity constraints |
+## Benefits and Future Work
 
-### Performance
+Benefits of categorical approach:
+- Cross-model representation without forcing constructs across models.
+- Proper handling of relationships (composite morphisms) for joins and transformations.
+- Generic expansions to conceptual querying, evolution management, partial schema usage in schema-less contexts.
 
-- Transformation algorithms linear in record count; logarithmic overhead if indexing required.
-- Parallelizable by splitting input data or distributing composition tasks.
+Application: conceptual query language derivable; cross-model joins and navigations use morphism compositions; partial results combined via pullbacks in category.
 
-
-## Benefits of Category Theory
-
-- **Cross-model representation** without forcing constructs across models
-- **Proper relationship handling** (composite morphisms) for joins and transformations
-- **Generic expansions** to conceptual querying, evolution management, partial schema usage
-
-## Querying
-
-- Conceptual query language derived
-- cross-model joins use morphism compositions
-- partial results combined via pullbacks in category.
-
-
-## Conclusion
-
-- Category-theory formalism for multi-model data:
-
-- Schema category for structure
-- Instance category for data
-- Transformations to/from categories enabling flexible multi-model design, cross-model querying/integration, controlled evolution, multi-model-to-multi-model migration
-
-## Future Work
-
-- Integration of comprehensive query language and advanced evolution management based on categorical foundations.
-
+Future work: comprehensive query language; advanced evolution management based on categorical foundations.

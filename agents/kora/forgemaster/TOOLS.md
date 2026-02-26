@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:forgemaster-tools:1.0.0"
+  urn: "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -20,10 +20,13 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Agent spec, F-coalgebra, 5 componentes, FSM, segregacion, co-induccion, agent-spec-md | urn:kora:kb:agent-spec-md |
+| Agent spec, 5 componentes, FSM, segregacion, co-induccion, agent-spec-md | urn:kora:kb:agent-spec-md |
 | Gobernanza, precedencia, meta-reglas, URN bootstrap | urn:kora:kb:gobernanza |
 | Formato prescriptivo, grammar, RFC 2119, spec-md | urn:kora:kb:spec-md |
 | Formato descriptivo, koraficacion, md-spec | urn:kora:kb:md-spec |
+| Skills, CM grammar, lazy-load, skill lifecycle, skill-spec-md | urn:kora:kb:skill-spec-md |
+| Runtime, model routing, deployment, fallback chains, runtime-spec-md | urn:kora:kb:runtime-spec-md |
+| Swarms, multi-agent, golden paths, circuit breakers, sentinel, swarm-spec-md | urn:kora:kb:swarm-spec-md |
 
 ## workspace_read
 
@@ -44,7 +47,7 @@ _manifest:
 - **Firma:** spec_name: string → content: string
 - **Cuando usar:** Consultar specs fundacionales para verificar conformidad o resolver dudas arquitectonicas.
 - **Cuando NO usar:** Si la informacion ya esta en contexto de sesion.
-- **Notas:** Specs disponibles: agent-spec-md, gobernanza, spec-md, md-spec.
+- **Notas:** Specs disponibles: agent-spec-md, gobernanza, spec-md, md-spec, skill-spec-md, runtime-spec-md, swarm-spec-md.
 
 ## agent_list
 
@@ -55,7 +58,7 @@ _manifest:
 
 ## health_check
 
-- **Firma:** agent_path: string → {result: PASS|FAIL, issues: {severity, component, field, message, fix}[]}
-- **Cuando usar:** Ejecutar validacion de conformidad completa contra agent-spec-md.
+- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}
+- **Cuando usar:** Ejecutar validacion de conformidad completa contra agent-spec-md v7.2.0 (17 checks).
 - **Cuando NO usar:** Validaciones parciales o consultas rapidas.
-- **Notas:** Invoca internamente CM-AGENT-VALIDATOR. Checklist: segregacion, co-induccion, URNs, token economy, completitud, FSM determinismo.
+- **Notas:** Invoca internamente CM-AGENT-VALIDATOR v2.0.0. Checklist: 17 checks alineados con agent-spec-md v7.2.0 §9 + skill-spec-md v2.0.0.

@@ -3,8 +3,8 @@ _manifest:
   urn: urn:gn:kb:manual-bienestar
   provenance:
     created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_at: '2026-02-24'
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -12,57 +12,53 @@ tags:
 - gobierno-regional
 - bienestar
 - gestion-personas
-- calidad-de-vida
 - gn
 lang: es
 ---
 
 # Manual 3.5: Bienestar y Calidad de Vida
 
-## Objetivo y Alcance
-- Gestión: Beneficios y prestaciones sociales.
-- Destinatarios: Funcionarios y cargas familiares.
-- Propósito: Mejora de calidad de vida del personal.
+Objetivo: Gestionar beneficios y prestaciones sociales destinados a mejorar la calidad de vida de los funcionarios y sus cargas familiares.
 
-## Afiliación y Financiamiento del Bienestar
-- Carácter: Afiliación voluntaria; desafiliación libre.
-- Elegibilidad: Funcionarios Planta, Contrata y jubilados que opten por permanecer.
-- Fuentes Financiamiento:
-  - Aporte Funcionario: % de remuneración imponible vía descuento por planilla.
-  - Aporte Institucional: Aporte anual según Ley de Presupuestos (Subtítulo 24).
-  - Cuota Incorporación: Pago único al ingresar al servicio.
+Siglas: SIGPER = Sistema de gestión de personal · CCAF = Caja de Compensación de Asignación Familiar · ACHS/IST = Mutualidades de seguridad.
 
-## Estructura Administrativa de Bienestar
-- Consejo Administrativo: Órgano colegiado con representantes institucionales y socios electos. Define presupuestos y beneficios.
-- Unidad de Bienestar: Ejecuta decisiones del Consejo y administra los fondos del servicio.
+## Servicio de Bienestar
 
-## Prestaciones de Salud y Reembolsos
-- Bonificación: Porcentaje del copago (tras cobertura Isapre/FONASA y seguro complementario).
-- Cobertura: Consultas, exámenes, medicamentos, óptica y prótesis.
-- Restricción: Sujeto a tope anual máximo por socio y carga familiar.
+**Afiliación y aportes:**
+- Afiliación voluntaria; desafiliación libre.
+- Socios elegibles: funcionarios de Planta y Contrata (y jubilados que deseen permanecer).
 
-## Subsidios Económicos y Becas
-- Eventos Vitales: Asignaciones por Nacimiento, Matrimonio/AUC y Fallecimiento.
-- Educación: Bono escolar anual (Pre-kinder hasta Universidad).
-- Mérito: Becas de excelencia académica para funcionarios y sus hijos.
+| Fuente | Descripción |
+|--------|-------------|
+| Aporte del Funcionario | Porcentaje de remuneración imponible (descuento por planilla) |
+| Aporte Institucional | Aporte anual definido en Ley de Presupuestos (Subtítulo 24) |
+| Cuota de Incorporación | Pago único al ingresar |
 
-## Sistema de Préstamos Internos
-- Categorías: Médico, Auxilio (libre disposición), Escolar y Habitacional.
-- Condiciones: Tasa de interés baja; cuotas mediante descuento por planilla.
-- Garantía: Requiere codeudor solidario (otro socio) según el monto solicitado.
+**Administración:**
+- Consejo Administrativo: órgano colegiado con representantes de la institución y de los socios (electos); decide sobre presupuestos y beneficios.
+- Unidad de Bienestar: ejecuta decisiones del Consejo y administra los fondos.
 
-## Convenios y Beneficios Externos
-- Comerciales: Descuentos en farmacias, gimnasios, ópticas y librerías.
-- Institucionales: Créditos sociales y programas de turismo vía Cajas de Compensación (CCAF).
+## Beneficios y Prestaciones
 
-## Actividades y Calidad de Vida
-- Eventos: Organización de hitos institucionales (Aniversario GORE, Fiestas Patrias, Navidad).
-- Fomento: Talleres recreativos y actividades deportivas para funcionarios.
+**Ayudas médicas y dentales:** Bonificación de un porcentaje del copago (no cubierto por Isapre/FONASA y seguro complementario) en consultas, exámenes, medicamentos, óptica y prótesis. Tope anual máximo de reembolso por socio/carga.
 
-## Seguridad y Salud Ocupacional
-- Colaboración: Coordinación con Mutualidades (ACHS/IST).
-- Prevención: Evaluación de puestos de trabajo y prevención de enfermedades profesionales.
+**Ayudas económicas:**
+- Subsidios en dinero por eventos vitales: Nacimiento, Matrimonio/AUC, Fallecimiento.
+- Bonos Escolares: aporte anual por escolaridad de hijos (Pre-kinder a Universidad).
+- Becas de Excelencia: premio al rendimiento académico del funcionario o hijos.
 
-## Gobernanza y Operación Digital
-- Marco Normativo: Reglamento General de Servicios de Bienestar; Reglamento Interno Específico GORE Ñuble.
-- Gestión Operativa: Procesamiento de beneficios mediante sistema SIGPER.
+**Préstamos:** Tipos: Médico · Auxilio (libre disposición) · Escolar · Habitacional. Condiciones: interés bajo, descuento por planilla en cuotas, codeudor solidario (otro socio) según monto.
+
+**Convenios:**
+- Comerciales: descuentos en farmacias, gimnasios, ópticas, librerías, etc.
+- Institucionales: acuerdos con CCAF para créditos sociales y turismo.
+
+## Calidad de Vida
+
+**Actividades recreativas y culturales:**
+- Organización de eventos de camaradería: Aniversario GORE, Fiestas Patrias, Navidad.
+- Actividades deportivas y talleres.
+
+**Prevención de riesgos:** Coordinación con Mutualidad (ACHS/IST) para evaluación de puestos de trabajo y prevención de enfermedades profesionales.
+
+Rige: Reglamento General de Servicios de Bienestar y Reglamento Interno Específico del GORE Ñuble. Gestión operativa vía SIGPER.

@@ -19,71 +19,99 @@ lang: es
 
 # Estrategia de Capacitaciones para la Transformación Digital del Estado
 
-## Contexto y Desafíos de la Formación Digital
+Fuente: WikiGuías SGD — `urn:gov:kb:capacitaciones-tde`
+Responsable: Secretaría de Gobierno Digital (Subsecretaría de Hacienda).
 
-| Factor | Detalle |
-| :--- | :--- |
-| **Demanda Normativa** | Implementación de Ley N° 21.180 exige nuevas competencias en cultura y procesos. |
-| **Oferta Histórica** | Insuficiencia inicial de programas formativos; baja cobertura en tecnologías. |
-| **Brechas Clave** | Ausencia previa de marco de competencias digitales para el sector público. |
-| **Acceso** | Necesidad de pertinencia y equidad en la distribución nacional de capacitaciones. |
+## Contexto y Desafíos
 
-## Visión y Objetivos Estratégicos
+La TDE (Transformación Digital del Estado) exige que el funcionariado desarrolle competencias para adaptarse a cambios profundos en cultura, métodos y procesos.
 
-### Visión
-- Desarrollo de talento digital mediante formación accesible, equitativa y gratuita para fortalecer la modernización estatal.
+Brechas identificadas:
+- Oferta inicial de capacitación insuficiente durante primeros años de implementación de la Ley N° 21.180.
+- Baja proporción de funcionarios con capacitación reciente en tecnologías o computación (encuestas).
+- Ausencia inicial de marco de competencias digitales para sector público chileno.
+- Cobertura y pertinencia de la oferta persisten como problemas aún con su ampliación.
+- Falta de lineamientos teóricos y metodológicos para estrategia de adopción digital.
 
+## Visión y Objetivos
 
-### Objetivos
-- **Metodología:** Establecer lineamientos teóricos para programas estructurados de formación.
-- **Competencias:** Fortalecer el talento mediante trayectorias formativas específicas por perfil.
-- **Gestión del Cambio:** Facilitar adaptación laboral y aprendizaje continuo en los servicios.
-- **Innovación:** Proveer soluciones integrales con impacto real en la transformación del sector.
+Visión: Impulsar la TDE mediante desarrollo de talento digital a través de capacitaciones accesibles, equitativas y gratuitas, diseñadas según necesidades reales de cada funcionaria y funcionario.
 
-## Ejes Estratégicos de la Estrategia
+| ID | Objetivo |
+|---|---|
+| OBJ-001 | Definir lineamientos teóricos y metodológicos para un programa de formación estructurado alineado con la estrategia de gobierno digital |
+| OBJ-002 | Fortalecer talento digital mediante competencias clave y trayectorias formativas por perfiles (malla de formación) |
+| OBJ-003 | Facilitar adaptación a nuevas condiciones laborales mediante aprendizaje continuo y apoyo en gestión del cambio |
+| OBJ-004 | Proporcionar solución integral, innovadora y oportuna de capacitación con impacto real en la TDE |
 
-- **Eje 1: Lineamientos:** Marco conceptual alineado a la Estrategia de Gobierno Digital.
-- **Eje 2: Perfiles:** Clasificación de funcionarios y diseño de rutas de aprendizaje.
-  - **Segmentos:** Directivos, Coordinadores TD, Ciberseguridad, TIC, Gestión Documental, Legales.
-- **Eje 3: Cultura:** Integración de la formación en la gestión; sensibilización e incentivos.
-- **Eje 4: Multicanalidad:** Canales virtuales, presenciales y mixtos con metodologías innovadoras.
+## Ejes Estratégicos
 
-## Marco Conceptual y Definiciones Legales
+**Eje 1 — Lineamientos teóricos y metodológicos**
+Definir marco conceptual y metodológico para el programa de formación en competencias digitales; coherencia y alineación con Ley de TDE y Estrategia de Gobierno Digital.
 
-- **Capacitación (Estatuto Administrativo):** Actividades permanentes para desarrollo de conocimientos y destrezas laborales eficientes.
-- **Tipos Legales (Chile):**
-  - Para la promoción.
-  - De perfeccionamiento.
-  - Voluntaria.
-- **Modelos BID:**
-  - **Inicial:** Onboarding y adaptación.
-  - **Continua:** Desarrollo permanente de habilidades.
-  - **Específica:** Liderazgo en transformación digital.
+**Eje 2 — Segmentación de perfiles y trayectorias formativas**
+Clasificar al funcionariado según roles y necesidades; diseñar rutas de aprendizaje diferenciadas en malla de formación por perfiles.
 
-## Referencias Internacionales y Buenas Prácticas
+Perfiles iniciales priorizados:
+- Cargos directivos y jefaturas
+- Coordinadores de transformación digital de cada institución
+- Equipos de seguridad de la información y ciberseguridad
+- Equipos TIC
+- Equipos de oficina de partes
+- Equipos de asuntos legales
+- Equipos de gestión documental
 
-- **Países Analizados:** Argentina, Colombia, Corea del Sur, Dinamarca, España, Estonia, Reino Unido.
-- **Modelos Exitosos:**
-  - Creación de Academias de Gobierno Digital.
-  - Definición de marcos nacionales de competencias digitales.
-  - Plataformas de aprendizaje virtual masivo con flexibilidad horaria.
+**Eje 3 — Cultura institucional y gestión del cambio**
+Integrar formación en competencias digitales en la gestión institucional; promover cultura de aprendizaje continuo, incentivos, sensibilización y capacitaciones en gestión del cambio.
 
-## Plan de Acción y Responsabilidades
+**Eje 4 — Canales y estrategia multicanal de capacitación**
+Desarrollar y optimizar canales (virtuales, presenciales y mixtos) mediante estrategia multicanal que garantice acceso equitativo y metodologías innovadoras.
 
-| Acción | Eje Relacionado | Responsable |
-| :--- | :--- | :--- |
-| **Análisis de Brechas** | Lineamientos | Subsecretaría de Hacienda (SGD) |
-| **Diseño de Malla** | Segmentación | Subsecretaría de Hacienda (SGD) |
-| **Sensibilización** | Cultura | Subsecretaría de Hacienda (SGD) |
-| **Estrategia Multicanal** | Canales | Subsecretaría de Hacienda (SGD) |
+## Marco Conceptual y Definiciones
 
-## Factores Críticos y Gestión de Riesgos
+Capacitación (Estatuto Administrativo): conjunto de actividades permanentes, organizadas y sistemáticas destinadas a que funcionarias y funcionarios desarrollen, complementen, perfeccionen o actualicen conocimientos y destrezas necesarias para el desempeño eficiente de sus cargos.
 
-### Recomendaciones BID (2022)
-- Implementar herramienta única de capacitación.
-- Definir perfiles formativos por rol con cronogramas y metodologías detalladas.
+Tipos según Estatuto Administrativo:
+- Capacitación para la promoción
+- Capacitación de perfeccionamiento
+- Capacitación voluntaria
 
-### Riesgos Identificados
-- **Gestión:** Persistencia de brechas por falta de apoyo directivo o mala planificación.
-- **Adopción:** Resistencia funcionaria ante ausencia de incentivos o sensibilización.
-- **Calidad:** Obsolescencia de contenidos y falta de sostenibilidad académica.
+Tipos según BID:
+- Formación inicial (onboarding): adaptación
+- Formación continua: desarrollo permanente
+- Formación específica: liderazgo en TDE
+
+## Plan de Acción (Resumen por Eje)
+
+| Eje | Acción | Responsable |
+|---|---|---|
+| Lineamientos técnicos y metodológicos | Analizar brechas y necesidades de capacitación para TDE; definir metodología para plan formativo basado en competencias digitales | Subsecretaría de Hacienda (SGD) |
+| Segmentación de perfiles | Desarrollar malla de formación basada en competencias y hoja de ruta de aprendizaje; validar con expertos y representantes institucionales | Subsecretaría de Hacienda (SGD) |
+| Cultura y gestión del cambio | Diseñar estrategias de integración de la formación en gestión institucional, sensibilización e incentivos; talleres sobre gestión del cambio | Subsecretaría de Hacienda (SGD) |
+| Canales y estrategia multicanal | Desarrollar estrategia multicanal; implementar y monitorear efectividad; colaboraciones con universidades e instituciones para ampliar oferta | Subsecretaría de Hacienda (SGD) |
+
+## Referencia Internacional
+
+Modelos analizados: Argentina, Colombia, Corea del Sur, Dinamarca, España, Estonia y Reino Unido. Diferencias en objetivos, modelos de competencias y públicos objetivo.
+
+Buenas prácticas identificadas:
+- Plataformas virtuales masivas con marcos de competencias definidos
+- Academias nacionales con programas de competencias digitales
+- Canales multimodales: cursos virtuales (horario flexible) + instancias presenciales
+
+Recomendación BID 2022: crear herramienta única de capacitación con perfiles formativos por rol agrupados según necesidades comunes; modelo de capacitación con descripción detallada de acciones formativas (metodologías, contenidos, duración, cronogramas).
+
+## Riesgos
+
+| Riesgo | Descripción |
+|---|---|
+| Brechas capacidades y cobertura | Persisten si no se asegura planificación adecuada, apoyo directivo y seguimiento de resultados |
+| Gestión del cambio | Sin estrategias claras puede existir resistencia a participar y aplicar aprendizajes |
+| Sostenibilidad y actualización | Depende de actualización constante de contenidos, calidad académica y adaptación a nuevas tecnologías |
+
+## Referencias Normativas
+
+- Ley N° 21.180 sobre Transformación Digital del Estado
+- Estatuto Administrativo
+- Guías de transformación digital del BID
+- Planes de competencias digitales de países referentes (UK GDS, Estonian Academy of e-Governance, etc.)

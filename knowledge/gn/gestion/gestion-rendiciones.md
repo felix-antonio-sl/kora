@@ -127,15 +127,25 @@ lang: es
 6.  **Contabilidad:** Registro en SIGFE (2 días).
 7.  **Archivo:** Custodia expediente (1 día).
 
-#### Modalidad Estándar (SISREC)
-*   **GORE (Otorgante):**
-    *   RTF (Analista): Crea programa, registra transferencia, revisa rendición (7 días).
-    *   Jefe DAF (Encargado): Revisa y firma aprobación/devolución con FEA (1 día).
-    *   U.C.R./DAF: Contabiliza en SIGFE y archiva (2 días cada uno).
-*   **Ejecutor:**
-    *   Analista: Acepta transferencia, crea informe mensual (15 días hábiles mes siguiente), carga documentos.
-    *   Ministro de Fe: Certifica autenticidad.
-    *   Encargado: Firma informe con FEA y envía al GORE.
+#### Modalidad Estándar (SISREC) — Flujo Completo
+
+**GORE como Otorgante:**
+
+| Paso | Rol SISREC | Actividad | Plazo |
+| :--- | :--- | :--- | :--- |
+| 1 | Analista Otorgante (RTF) | Crea Programa/Proyecto; registra y envía transferencia al Ejecutor; recibe y revisa rendición; aprueba/observa cada transacción; envía a Encargado | 7 días hábiles |
+| 2 | Encargado Otorgante (Jefe DAF) | Revisa propuesta; si observa → devuelve al Ejecutor con FEA; si aprueba → firma Informe de Aprobación (total/parcial) con FEA | 1 día hábil |
+| 3 | Analista Otorgante (RTF) | Descarga Informe de Aprobación firmado; deriva a U.C.R./DAF para contabilización | — |
+| 4 | U.C.R./DAF | Contabiliza en SIGFE; archiva registro | 2 + 2 días hábiles |
+
+**Ejecutor como Rendidor:**
+
+| Paso | Rol SISREC | Actividad | Plazo |
+| :--- | :--- | :--- | :--- |
+| 1 | Analista Ejecutor | Acepta transferencia; crea informe (mensual/regularización/sin movimiento); ingresa transacciones y adjunta documentos digitalizados; envía a Ministro de Fe | 15 días hábiles mes siguiente |
+| 2 | Ministro de Fe | Verifica autenticidad de documentos; si OK → aprueba y pasa a Encargado; si observa → devuelve a Analista | — |
+| 3 | Encargado Ejecutor | Revisa rendición; si OK → firma Informe de Rendición con FEA y envía al GORE; si observa → devuelve a Analista | — |
+| 4 | Analista Ejecutor (si GORE devuelve) | Recibe rendición observada; crea informe de "Regularización"; corrige y reenvía | — |
 
 ## Rendición por Tipología de Fondos
 
@@ -143,7 +153,7 @@ lang: es
 | :--- | :--- |
 | **FNDR Inversión (S.31)** | Ejecución directa GORE. Respaldo: Estados pago visados por ITO, facturas, BIP en SIGFE. |
 | **FNDR Transferencias (S.33)** | Ejecución terceros. Obligatorio SISREC. Convenio rige hitos y productos. |
-| **FRIL** | Proyectos municipales. <5000 UTM exento informe MDSF pero requiere registro SNI. Rendición vía SISREC. |
+| **FRIL** | Proyectos municipales. < 5.000 UTM: exento informe favorable MDSF pero debe ingresarse al SNI la información según Oficio N°2 del 26/01/2024 MH-MDSF. Prohibido financiar por etapas o fraccionar. Rendición vía SISREC. |
 | **FRPD** | Royalty Minero. Foco en innovación/competitividad. Rendición acredita hitos y productos I+D+i. |
 | **8% FNDR (Subvenciones)** | Concursable. Medios verificación críticos (asistencia, fotos). Control de gastos prohibidos. |
 | **Programas (S.24)** | Glosa 06. Gasto administrativo tope 5%. Rendición de componentes según diseño ex ante DIPRES. |
@@ -180,10 +190,10 @@ lang: es
 *   Manuales internos actualizados y roles interdivisionales claros.
 *   Gestión de riesgos: prevención de fraude, errores y demoras.
 
-#### Manejo de Contingencias
-*   **Pérdida de documentación:** Trazabilidad en libros/sistemas; SISREC elimina este riesgo.
-*   **Mora en rendición:** Bloqueo de cuotas (Art. 18 Res. 30); exigir garantías para adelantos si el convenio lo permite.
-*   **Sobrecarga operativa:** Reasignación de revisores y priorización de transferencias críticas.
+#### Manejo de Contingencias (Sec. 7.3 Manual Procedimientos)
+*   **Pérdida de rendición al interior del GORE:** Mantener registros digitales o libros de correspondencia en cada unidad (OP, U.C.R., RTF); si no hay trazabilidad, solicitar copia a ejecutora; SISREC minimiza este riesgo.
+*   **Entidad privada solicita cuota siguiente sin haber rendido la anterior:** Aplicar Art. 18 Res. 30 CGR; si convenio lo permite, autorizar adelanto solo contra garantía (vale vista o póliza) por monto no rendido, fijando plazo perentorio para rendir o ejecutar garantía.
+*   **Sobrecarga operativa:** Usar planificación anual para anticipar peaks; reasignar revisores; priorizar rendiciones que habilitan transferencias críticas.
 
 ## Procedimientos Contables SIGFE
 

@@ -21,60 +21,48 @@ lang: en
 
 ## Functorial Data Model (FDM)
 
-- Database not static tables but funtor from schema category to Set.
+Ctx: Analysis (Walter) on FDM and DIK hierarchy applied to databases and migrations.
+Src: `sources/cat/Exploring Category-Theoretic Approaches to Databases.md`
+XRef: `urn:fxsl:kb:seven-sketches`
 
-
-- **Insight**: Allows migration and schema integration as functorial operations, guaranteeing mathematical integrity.
-
+Database = functor I: S → **Set**, where S = schema category (finitely presented). Allows migration and schema integration as functorial operations (pullbacks, pushforwards), guaranteeing mathematical integrity.
 
 ## Core Definitions
 
-### Data: Instance Funtor
+**FDM** — data as functor from schema category to Set.
 
-- **Definition**: I: S → Set where S is schema category.
-- For object A: I(A) = set of records.
-- For morfismo f: A→B: I(f) = function between sets.
+**Schema category S** — finitely presented category: objects = tables/entities; morphisms = columns/relations/foreign keys; equations = path integrity constraints.
 
-- **Formalism**: Conforms to schema topology via functoriality.
+**Instance** — functor I: S → **Set**. For each object A in S, I(A) = set of records. For each morphism f: A → B, I(f) = function between sets.
 
+**Schema translation** — functor F: S → T inducing migration operations.
 
-### Information: Schema Category
+## Migration Operators
 
-- **Definition**: Finitely presented category S.
+**Δ_F (Pullback)** — brings data from T to S; simple reindexation. No information loss.
 
+**Σ_F (Left Pushforward)** — migrates data from S to T using colimits (unions/sums). May lose information via co-identifications.
 
-- **Objects**: Tables/entities.
-- **Morfismos**: Columns/relations/foreign keys.
-- **Equations**: Path constraints (business rules).
+**Π_F (Right Pushforward)** — migrates data from S to T using limits (products/joins). May discard records not satisfying conditions.
 
-- **Interpretation**: Schema not passive description; algebraic structure dictating valid data behavior.
+**Adjunction chain**: Σ_F ⊣ Δ_F ⊣ Π_F.
 
+**Grothendieck construction** — tool for integrating heterogeneous data; basis for integrating multiple databases via colimits in Cat.
 
-### Knowledge: Migration Funtores
+## DIK Layer Mapping
 
-- **Definition**: Funtores F: S → T and induced operators Δ_F, Σ_F, Π_F.
-- **Use**: Translate and integrate schemas logically preserving meaning.
-- **Interpretation**: Operational logic enabling system disparities to speak; formal ETL.
+| Layer | Categorical Object | Formal Def |
+|---|---|---|
+| Data | Functor I: S → **Set** | I(A) = records; I(f) = FK function |
+| Information | Schema category S | Objects, morphisms, equations |
+| Knowledge | Migration functors Δ_F, Σ_F, Π_F | F: S → T induces operations |
+| Modeling | Design of schema categories + natural transformations | Colimits in Cat for multi-DB integration |
 
+XRef (Modeling): `urn:fxsl:kb:formal-framework-data-lakes-ct`, `urn:fxsl:kb:unified-multimodel`
 
-### Modeling: Schema and Transformation Design
+## Conclusion Summary
 
-- **Definition**: Design categories of schemas and transformations.
-- **Procedure**: Define generators/relations for S; integrate via colimits in Cat.
-- **Use**: High-level architecture; define ontology; enable coherent databases.
-
-
-## DIK Framework
-
-| Level | Categorical Formalism |
-|-------|----------------------|
-| **Data** | Funtor I: S → Set |
-| **Information** | Category of schema S |
-| **Knowledge** | Funtores (Δ_F, Σ_F, Π_F) |
-| **Modeling** | Design of categories and transformations |
-
-## Conclusion
-
-- Examines CT foundations for design, integration, and migration—surpassing relational model limitations.
-- Allows rigorous treatment of complex data transformations while preserving semantic integrity.
-
+- Data: Functor I: S → **Set**
+- Information: Schema category S
+- Knowledge: Migration functors (Δ_F, Σ_F, Π_F)
+- Modeling: Design of categories and natural transformations

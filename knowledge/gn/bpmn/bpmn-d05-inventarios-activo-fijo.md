@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -23,150 +23,159 @@ lang: es
 
 ## Metadatos del Dominio
 
-| Atributo | Detalle |
+| Atributo | Valor |
 | :--- | :--- |
-| **Criticidad** | 🟡 Media |
-| **Dueño** | DAF |
-| **Procesos** | 2 |
-| **Subprocesos** | ~10 |
-| **Sistemas** | SIGAS, SIGFE, SIGFIN |
+| ID | DOM-INVENTARIOS-AF |
+| Criticidad | Media |
+| Dueño | DAF |
+| Procesos | 2 (Inventarios/Bodegas, Activo Fijo) |
+| Subprocesos | ~10 |
+| Sistema | SIGAS |
 
-## Mapa General del Dominio
+## Mapa General
 
-```mermaid
-flowchart LR
-    subgraph EXISTENCIAS["📦 Existencias (Inventarios)"]
-        P1A["Catálogo<br/>materiales"]
-        P1B["Recepción<br/>desde OC"]
-        P1C["Consumo y<br/>despacho"]
-        P1D["Inventario<br/>físico"]
-        P1E["Control<br/>vencimientos"]
-    end
+**P1 Existencias (Inventarios):** Catálogo materiales → Recepción desde OC → Consumo y despacho → Inventario físico / Control vencimientos.
 
-    subgraph ACTIVO_FIJO["🏢 Activo Fijo"]
-        P2A["Alta de<br/>bienes"]
-        P2B["Valorización y<br/>depreciación"]
-        P2C["Movimientos<br/>internos"]
-        P2D["Baja de<br/>bienes"]
-        P2E["Inventario<br/>físico AF"]
-    end
-
-    P1A --> P1B --> P1C --> P1D
-    P1C --> P1E
-    P2A --> P2B --> P2C
-    P2C --> P2D
-    P2C --> P2E
-
-    style P1B fill:#4CAF50,color:#fff
-    style P2A fill:#2196F3,color:#fff
-```
+**P2 Activo Fijo:** Alta de bienes → Valorización y depreciación → Movimientos internos → Baja de bienes / Inventario físico AF.
 
 ## P1: Gestión de Inventarios y Bodegas
 
 ### Catálogo de Materiales
-- **Identificación:** Necesidad de nuevo ítem.
-- **Verificación:** Existencia previa de código en sistema.
-- **Creación:** Registro en SIGAS (Nombre, Unidad Medida, Categoría, Valorización).
+
+1. Identificar necesidad de nuevo ítem
+2. Verificar si existe código en SIGAS → ¿Existe?
+   - Sí → usar código existente
+   - No → crear nuevo código: nombre, unidad de medida, categoría, valorización
 
 ### Recepción de Bienes desde OC
-1. **Entrega:** Proveedor en bodega física.
-2. **Validación:** Cantidad, calidad y guía de despacho.
-3. **Decisión:** Conformidad -> Firma guía; Disconformidad -> Rechazo/Devolución.
-4. **Registro:** Ingreso en SIGAS, actualización automática de stock.
-5. **Notificación:** Aviso inmediato al área requirente.
+
+1. OC aceptada por proveedor → proveedor entrega en bodega
+2. Bodeguero verifica cantidad, calidad y guía de despacho → ¿Conforme?
+   - No → rechazar/devolver
+   - Sí → firmar guía de recepción
+3. Ingresar en SIGAS → actualizar stock → notificar a requirente
 
 ### Consumo y Despacho
-- **Solicitud:** Generación de vale de consumo por unidad.
-- **Autorización:** Aprobación formal por Jefatura.
-- **Preparación:** Picking por bodeguero.
-- **Despacho:** Entrega física con firma de vale.
-- **Actualización:** Rebaja de stock en SIGAS e imputación a centro de costo.
+
+1. Unidad solicita materiales → generar vale de consumo
+2. Jefatura autoriza
+3. Bodeguero prepara pedido → despachar y firmar vale
+4. Actualizar stock en SIGAS → imputar a centro de costo
 
 ### Inventario Físico
-- **Programación:** Frecuencia mensual o trimestral.
-- **Protocolo:** Bloqueo de movimientos en SIGAS previo al conteo.
-- **Conciliación:** Comparación conteo físico vs. saldo sistema.
-- **Diferencias:** Investigación de causas.
-- **Ajustes:** Actualización de sistema (si amerita) o inicio de responsabilidad administrativa.
+
+**Frecuencia:** Mensual o trimestral.
+
+1. Programar inventario → bloquear movimientos en SIGAS
+2. Equipo realiza conteo físico → comparar con saldo sistema → ¿Diferencias?
+   - No → cerrar inventario
+   - Sí → investigar causas → ¿Justificado?
+     - Sí → ajustar sistema → cerrar
+     - No → responsabilidad administrativa → cerrar
 
 ### Control de Vencimientos (FEFO)
-- **Registro:** Ingreso con fecha de caducidad obligatoria.
-- **Alertas:** Notificaciones automáticas de SIGAS.
-- **Despacho:** Prioridad a artículos próximos a vencer.
-- **Excedentes:** Evaluación de uso urgente, donación o baja.
+
+1. Ingresar artículo con fecha de vencimiento → SIGAS registra y alerta
+2. Despachar primero los próximos a vencer
+3. Si próximo a vencer sin uso → evaluar: uso urgente, donación o baja
 
 ### Valorización de Existencias
-| Método | Aplicación |
-| :--- | :--- |
-| **PPP (Precio Promedio Ponderado)** | Método por defecto |
-| **FIFO (First In, First Out)** | Uso alternativo |
-| **FEFO (First Expired, First Out)** | Artículos perecibles |
+
+| Método | Descripción | Uso |
+| :--- | :--- | :--- |
+| PPP | Precio Promedio Ponderado | Default |
+| FIFO | First In, First Out | Alternativo |
+| FEFO | First Expired, First Out | Perecibles |
 
 ## P2: Gestión de Activo Fijo
 
-### Criterios de Capitalización
-- **Umbral:** Valor ≥ 3 UTM.
-- **Vida Útil:** Superior a 1 año.
-- **Normativa:** NICSP 17, 21, 31.
+**Umbral de capitalización:** ≥ 3 UTM y vida útil > 1 año.
+**Normativa:** NICSP 17, 21, 31.
 
 ### Alta de Bienes
-1. **Origen:** Compra, donación o transferencia.
-2. **Clasificación:** Bien ≥ 3 UTM -> Activo Fijo; Bien < 3 UTM -> Gasto.
-3. **Identificación:** Asignación de N° inventario y plaqueteo físico.
-4. **Registro SIGAS:** Código, valor, ubicación, responsable.
-5. **Integración:** Contabilización automática en SIGFE.
+
+1. Bien adquirido (compra, donación, etc.) → ¿Valor ≥ 3 UTM y vida útil > 1 año?
+   - No → gasto del período
+   - Sí → activo fijo
+2. Asignar N° inventario → plaquetear bien
+3. Registrar en SIGAS: código, valor, ubicación, responsable
+4. Contabilizar en SIGFE
 
 ### Valorización y Depreciación
-- **Parámetros:** Determinación de vida útil y valor residual.
-- **Cálculo:** Depreciación mensual por método de línea recta.
-- **Ejecución:** Proceso automático en SIGAS.
-- **Contabilidad:** Generación mensual de asientos en SIGFE.
-- **Valor Libro:** Costo histórico menos depreciación acumulada.
+
+1. Determinar vida útil y valor residual
+2. Calcular depreciación mensual (método línea recta)
+3. SIGAS ejecuta depreciación automática
+4. Generar asientos SIGFE mensuales
+5. Valor libro = Costo − Depreciación Acumulada
 
 ### Movimientos Internos
-- **Autorización:** Visto bueno de jefatura de origen.
-- **Traslado:** Movimiento físico del bien.
-- **Actualización:** Cambio de ubicación y responsable en SIGAS.
-- **Confirmación:** Recepción conforme por jefatura de destino.
+
+1. Solicitud de traslado → jefatura origen autoriza
+2. Actualizar ubicación y responsable en SIGAS
+3. Bien se traslada físicamente → jefatura destino confirma recepción
 
 ### Baja de Bienes
-| Causal | Requerimiento Documental |
-| :--- | :--- |
-| **Deterioro irreparable** | Informe técnico |
-| **Obsolescencia** | Informe funcional |
-| **Pérdida o Hurto** | Denuncia policial + Sumario administrativo |
-| **Donación** | Autorización de Gobernador/a |
 
-- **Finalización:** Resolución de baja, registro en SIGAS, egreso en SIGFE y destino físico (destrucción, remate o donación).
+| Causal | Documentación requerida |
+| :--- | :--- |
+| Deterioro irreparable | Informe técnico |
+| Obsolescencia | Informe funcional |
+| Pérdida/Hurto | Denuncia + Sumario |
+| Donación | Autorización Gobernador/a |
+
+Flujo: documentación causal → Resolución de baja → dar de baja en SIGAS → contabilizar en SIGFE → destino físico (destrucción, remate o donación).
 
 ### Inventario Físico Activo Fijo
-- **Frecuencia:** Anual obligatoria.
-- **Proceso:** Corte de sistema, verificación física de placas/N° de inventario.
-- **Cierre:** Investigación de diferencias y regularización administrativa.
 
-## Casos Especiales y Normativa
+**Frecuencia:** Anual.
+
+1. Corte de sistema y reportes
+2. Equipos verifican existencia física → escanear plaquetas o verificar N°
+3. Comparar con registro SIGAS → ¿Diferencias?
+   - Sí → investigar y regularizar → cerrar
+   - No → cerrar inventario
+
+## Casos Especiales
 
 ### Bienes de Proyectos FNDR
-- **Naturaleza:** Bienes adquiridos para terceros.
-- **Registro:** Clasificados como Activos No Financieros (ANF) en el GORE.
-- **Transferencia:** Traspaso formal vía resolución a entidad receptora.
-- **Baja GORE:** Egreso patrimonial tras confirmación de recepción.
+
+1. Proyecto FNDR entrega bienes
+2. Transferencia a entidad receptora
+3. GORE registra como ANF hasta traspasar
+4. Resolución de transferencia
+5. Receptor da de alta en su patrimonio
 
 ### Comodatos y Préstamos
-| Tipo | Gestión |
-| :--- | :--- |
-| **Recibido** | Bien de tercero en custodia GORE; requiere convenio y control paralelo. |
-| **Entregado** | Bien GORE en custodia de tercero; mantiene responsabilidad patrimonial. |
 
-### Normativa y Marco Legal
+| Tipo | Descripción |
+| :--- | :--- |
+| Comodato recibido | Bien de tercero en custodia GORE |
+| Comodato entregado | Bien GORE en custodia de tercero |
+
+Ambos requieren convenio y registro en control paralelo.
+
+## Sistemas Involucrados
+
+| Sistema | Función |
+| :--- | :--- |
+| SYS-SIGAS | Gestión de inventarios y activo fijo |
+| SYS-SIGFE | Contabilización |
+| SYS-SIGFIN | Integración financiera |
+
+## Normativa Aplicable
+
 | Norma | Alcance |
 | :--- | :--- |
-| **NICSP 17** | Propiedad, planta y equipo |
-| **NICSP 21** | Deterioro de activos no generadores de efectivo |
-| **NICSP 31** | Activos intangibles |
-| **Res. CGR** | Procedimientos de baja y control de bienes públicos |
-| **Ley 18.575** | Bases Generales de la Administración del Estado (Responsabilidad) |
+| NICSP 17 | Propiedad, planta y equipo |
+| NICSP 21 | Deterioro activos no generadores |
+| NICSP 31 | Activos intangibles |
+| Resoluciones CGR | Procedimientos de baja |
+| Ley 18.575 | Responsabilidad patrimonial |
 
 ## Referencias Cruzadas
-- **D04 Compras:** Relación directa por recepción de bienes desde Órdenes de Compra.
-- **D02 Ciclo Presupuestario:** Integración para contabilización de Activos Fijos en SIGFE.
+
+| Dominio | Vínculo |
+| :--- | :--- |
+| D04 Compras | Recepción desde OC |
+| D02 Ciclo Presupuestario | Contabilización activo fijo |

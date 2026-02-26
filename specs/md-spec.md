@@ -179,8 +179,8 @@ Todo artefacto KORA/MD **DEBE** tener un URN con el formato `urn:{namespace}:{ty
 
 Toda referencia dentro del cuerpo **NO DEBE** incluir version. Todo URN apunta al concepto, no a una instantanea temporal. Toda version es un atributo mutable que reside exclusivamente en el frontmatter del documento destino.
 
-**Correcto:** `Segun [Guia de Implementacion](urn:tde:kb:sistema-tde-2025)...`
-**Incorrecto:** `...[Guia](urn:tde:kb:sistema-tde-2025)`
+**Correcto:** `Segun [Guia de Implementacion](urn:tde:kb:guia-sistema-tde-2025)...`
+**Incorrecto:** `...[Guia](urn:tde:kb:guia-sistema-tde-2025)`
 
 ### 4.3 Tipos de Referencia
 

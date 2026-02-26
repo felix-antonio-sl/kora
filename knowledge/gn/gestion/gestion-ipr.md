@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -23,180 +23,253 @@ lang: es
 
 | Sigla | Nombre | Definición |
 | :--- | :--- | :--- |
-| IPR | Intervención Pública Regional | Acción (proyecto, programa, estudio) financiada por GORE para desarrollo. |
-| IDI | Iniciativa de Inversión | IPR asociada a proyectos de capital (obras, activos). |
+| IPR | Intervención Pública Regional | Término paraguas: proyecto, programa o estudio financiado por GORE para objetivos de desarrollo. |
+| IDI | Iniciativa de Inversión | IPR de capital (obras, activos); sujeta a evaluación SNI. |
 | PPR | Programa Público Regional | IPR de gasto corriente o mixto (servicios, subvenciones). |
-| RS | Recomendación Satisfactoria | Resultado favorable evaluación SNI/MDSF para IDI. |
-| RF | Recomendación Favorable | Resultado favorable evaluación programas (Glosa 06). |
-| AD | Admisible para financiamiento | Resultado favorable MDSF para proyectos de conservación. |
-| CDP | Certificado de Disponibilidad Presupuestaria | Documento DAF que acredita fondos disponibles. |
-| BIP | Banco Integrado de Proyectos | Sistema de registro y seguimiento de IDI. |
-| SIGFE | Sistema de Información Financiera | Registro contable-financiero estatal. |
-| SISREC | Sistema de Rendición Electrónica | Plataforma CGR para rendición de transferencias. |
-| DIPIR | Div. Presupuesto e Inversión Regional | Responsable presupuesto inversión y gestión IPR. |
-| DIPLADE | Div. Planificación y Desarrollo Regional | Lidera planificación y preside CDR. |
-| CORE | Consejo Regional | Órgano colegiado que aprueba financiamiento. |
-| CDR | Comité Directivo Regional | Instancia técnico-política interna para pertinencia estratégica. |
-| MDSF | Ministerio Desarrollo Social y Familia | Evaluación técnico-económica de IDI en SNI. |
+| RS | Recomendación Satisfactoria | Resultado favorable evaluación SNI/MDSF para IDI de mayor envergadura. |
+| RF | Recomendación Favorable | Resultado favorable evaluación programas Glosa 06 (DIPRES/SES). |
+| AD | Admisible para financiamiento | Resultado MDSF para proyectos de conservación; habilita financiamiento sin RS. |
+| FI | Falta Información | RATE MDSF: observaciones subsanables (máx. 60 días hábiles). |
+| OT | Objetado Técnicamente | RATE MDSF: rechazo técnico; requiere reformulación. |
+| CDP | Certificado de Disponibilidad Presupuestaria | Documento DAF que acredita fondos disponibles para financiar IPR. |
+| BIP | Banco Integrado de Proyectos | Sistema SNI de registro y seguimiento de IDI. |
+| SIGFE | Sistema de Información Financiera del Estado | Registro contable-presupuestario oficial. |
+| SISREC | Sistema de Rendición Electrónica de Cuentas | Plataforma CGR para rendición de transferencias Subt. 24 y 33. |
+| DIPIR | División de Presupuesto e Inversión Regional | Responsable de presupuesto inversión y gestión IPR. |
+| DIPLADE | División de Planificación y Desarrollo Regional | Lidera planificación y preside CDR. |
+| CORE | Consejo Regional | Órgano colegiado que aprueba o rechaza financiamiento de IPR. |
+| CDR | Comité Directivo Regional | Filtro técnico-político interno de pertinencia estratégica. |
+| MDSF | Ministerio de Desarrollo Social y Familia | Evaluación técnico-económica de IDI en el SNI. |
+| SGDOC | Sistema de Gestión Documental | Plataforma de ingreso y numeración de documentos en Oficina de Partes. |
+| FNDR | Fondo Nacional de Desarrollo Regional | Principal fuente de financiamiento inversión regional. |
+| FRIL | Fondo Regional de Iniciativa Local | Proyectos municipales < 5.000 UTM. |
+| FRPD | Fondo Regional para la Productividad y el Desarrollo | Royalty Minero; innovación y competitividad. |
+| ERD | Estrategia Regional de Desarrollo | Instrumento estratégico de prioridades regionales. |
 
-### Estados de Admisibilidad
+### Estados de Admisibilidad IPR
+
 - PRE-ADMISIBLE CDR
 - NO PRE-ADMISIBLE CDR
 - ADMISIBLE
 - ADMISIBLE CON OBSERVACIONES
 - INADMISIBLE
 
-### Estados de Financiamiento
+### Estados de Financiamiento IPR
+
 - PARA REVISIÓN TÉCNICA
 - EN CARTERA PRE-ADMISIBLE
 - ENVIADO A MDSF
-- APROBADO TÉCNICAMENTE (RS/RF/AD/Exento RS)
+- APROBADO TÉCNICAMENTE (RS / RF / AD / Exento RS)
 - CARTERA ENVIADA A CORE
 - CERTIFICADO CORE OK
 - ENVIADO A FINANCIAMIENTO
 - TRANSFERENCIA PROGRAMADA
 - CONVENIO FORMALIZADO
 
-## Marco Normativo y Fundamentos
+## Marco Normativo
 
-- **LOC GORE:** Artículos 16, 24, 36, 78.
-- **DL N°1.263/1975:** Artículo 19 bis (Administración Financiera).
-- **Ley 20.530:** Creación del MDSF.
+- **LOC GORE:** Arts. 16, 24, 36, 78.
+- **DL N°1.263/1975:** Art. 19 bis (Administración Financiera del Estado).
+- **Ley 20.530:** Crea Ministerio de Desarrollo Social y Familia (MDSF).
 - **Ley de Presupuestos 2026 (Partida 31):** Glosas 01, 06, 07, 12.
-- **Ley de Presupuestos 2026 (Normas Generales):** Artículos 06, 23, 24, 25, 26.
+- **Normas Generales Ley 2026:** Arts. 06, 23, 24, 25, 26.
 - **Resolución 30/2015 CGR:** Rendición de cuentas.
 - **Normativa DIPRES/MDSF:** Procedimientos SNI, BIP y procedimientos especiales.
 
 ## Fase 1: Ingreso, Pertinencia y Admisibilidad
 
 ### 2.1 Recepción y Registro
-- **Unidad Formuladora:** Presenta IPR con oficio conductor firmado por máxima autoridad.
-- **Oficina de Partes GORE:** Recepciona documentación, asigna número SGDOC y deriva a DIPIR.
-- **Jefatura DIPIR:** Registra datos básicos y pone postulación a disposición del CDR.
+
+| Paso | Responsable | Actividades | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | Unidad Formuladora | Preparar IPR según guías del mecanismo. Ingresar oficio conductor firmado por máxima autoridad. | Oficio y antecedentes presentados al GORE. |
+| 2 | Oficina de Partes GORE | Recepcionar oficio y documentación. Asignar número SGDOC. Derivar a Jefatura DIPIR. | Postulación registrada y derivada formalmente. |
+| 3 | Jefatura DIPIR | Registrar datos básicos en sistema de seguimiento interno. Poner postulación a disposición del CDR. | Postulación disponible para revisión CDR. |
+
+Advertencia: Calidad de formulación inicial es crítica para el resto del ciclo.
 
 ### 2.2 Análisis de Pertinencia Estratégica (Filtro CDR)
-- **Convocatoria:** Jefatura DIPLADE convoca CDR (Jefaturas División, Rezago, Admin. Regional).
-- **Evaluación:** Alineación con ERD y prioridades estratégicas del GORE.
-- **Resultados:** Generación de acta con categorización `PRE-ADMISIBLE CDR` o `NO PRE-ADMISIBLE CDR`.
-- **Priorización:** DIPIR evalúa marco presupuestario y declara `PARA REVISIÓN TÉCNICA`.
+
+Composición CDR: Jefaturas de División, Jefatura de Rezago, Administrador/a Regional. Preside DIPLADE.
+
+| Paso | Responsable | Actividades | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | Jefatura DIPLADE | Recibir listado de postulaciones. Convocar sesión CDR. | CDR convocado con cartera a revisar. |
+| 2 | CDR | Analizar alineación con ERD y prioridades estratégicas. Evaluar viabilidad preliminar. Generar acta con categorización. | `PRE-ADMISIBLE CDR` o `NO PRE-ADMISIBLE CDR` |
+| 3 | Jefatura DIPIR | Evaluar marco presupuestario para IPR PRE-ADMISIBLES. Priorizar para revisión técnica. | `PARA REVISIÓN TÉCNICA` o `EN CARTERA PRE-ADMISIBLE` |
 
 ### 2.3 Revisión de Admisibilidad Formal
-- **Asignación:** Jefatura Preinversión (DIPIR) asigna analista según tipología.
-- **Revisión:** Verificación documental exhaustiva y carga en Carpeta Digital BIP.
-- **Dictamen:** `ADMISIBLE`, `ADMISIBLE CON OBSERVACIONES` o `INADMISIBLE`.
-- **Subsanación:** Unidad Formuladora corrige observaciones; incumplimiento deriva en `INADMISIBLE`.
+
+| Paso | Responsable | Actividades | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | Jefatura Preinversión (DIPIR) | Asignar analista según tipología. Formalizar apoyos interdivisionales. | IPR derivada a analista. |
+| 2 | Analista Preinversión (DIPIR) | Revisión documental exhaustiva. Verificar requisitos guía operativa. Comprobar carga en Carpeta Digital BIP. | `ADMISIBLE` / `ADMISIBLE CON OBSERVACIONES` / `INADMISIBLE` |
+| 3 | Unidad Formuladora | (Solo si ADMISIBLE CON OBSERVACIONES) Corregir antecedentes en plazo definido. | Documentación subsanada. |
+| 4 | Jefatura Preinversión (DIPIR) | Si INADMISIBLE: despachar oficio. Si ADMISIBLE: declarar lista para Fase 2. | `INADMISIBLE INFORMADO` o `LISTA PARA FASE 2` |
+
+Advertencia: No subsanar en plazo deriva en estado INADMISIBLE.
 
 ## Fase 2: Evaluación Técnico-Económica
 
-### 3.1 Evaluación SNI (MDSF) - IDI Nivel 2 y 3
-- **Analista GORE:** Verifica cumplimiento de RIS y metodologías SNI. Elabora Acta de Admisibilidad.
-- **Solicitud Evaluación:** Oficio firmado por Gobernador/a a SEREMI MDSF.
-- **Registro BIP:** Jefatura Preinversión informa postulación en BIP (`ENVIADO A MDSF`).
-- **Evaluación MDSF:** Admisibilidad (5 días) y Análisis Técnico-Económico (10 días).
-- **Resultados RATE:** RS (Satis.), FI (Falta Info), OT (Objetado Técnicamente).
-- **Cierre:** Si RS -> Aprobado Técnicamente. Si FI/OT -> Subsanación (máx. 60 días hábiles).
+### Track A — SNI (IDI Nivel 2 y 3, Requieren RS)
 
-### 3.2 Programas Públicos Regionales (Glosa 06)
-- **Fase Perfil:** GORE envía Formulario de Perfil a DIPRES/SES.
-- **Fase Diseño:** Si perfil aprueba, GORE envía Formulario de Diseño (Marco Lógico).
-- **Gastos Admin:** Límite hasta 5% del monto total de transferencia para gestión GORE.
-- **Recursos Humanos:** Habilitada contratación honorarios; cese automático al finalizar convenio.
-- **Resultado:** Calificación `RF` (Recomendación Favorable) requerida para financiamiento.
+| Paso | Responsable | Actividades | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | Analista GORE (DIPIR) | Revisión de fondo. Verificar RIS y metodologías SNI. Asegurar calidad estudios preinversionales. Elaborar Acta de Admisibilidad interna. | `ADMISIBLE PARA ENVÍO A MDSF` |
+| 2 | Jefatura DIPIR / Gobernador/a | Elaborar y visar oficio a SEREMI MDSF. Gestionar cadena V°B° interno. | Oficio despachado a MDSF. |
+| 3 | Jefatura Preinversión (DIPIR) | Registrar "Informar Postulación" en BIP. | Iniciativa `ENVIADO A MDSF` en BIP. |
+| 4 | Analista MDSF | Admisibilidad (5 días orientativos). ATE (10 días orientativos). | RATE: `RS` / `FI` / `OT` |
+| 5 | Unidad Formuladora / Analista GORE | Si RS: registrar aprobación. Si FI/OT: apoyar subsanación (máx. 60 días hábiles). | `APROBADO TÉCNICAMENTE (RS)` |
+| 6 | Jefatura Preinversión (DIPIR) | Monitorear BIP. Informar cartera RS para priorización. | Cartera RS disponible. |
 
-### 3.3 Procedimientos Especiales y Vías Simplificadas
+### Track B — Programas Públicos Regionales (Glosa 06)
+
+Aplica a: continuidad de programas, subvenciones 8% FNDR, transferencias entidades públicas, emergencias, FRPD Innovación (Res. 33/2024).
+
+Restricciones financieras Glosa 06:
+- Hasta 5% del monto total de la transferencia para gastos de administración GORE (Subt. 21, 22, 29).
+- Hasta 5% del monto para honorarios en entidad receptora; cese automático al finalizar convenio.
+- Personal a honorarios tiene calidad de agente público según convenio.
+
+| Paso | Responsable | Actividades | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | División Proponente / DIPIR | Elaborar Formulario de Perfil de Programa. Definir contraparte única GORE frente a DIPRES/SES. | Formulario enviado a DIPRES/SES. |
+| 2 | DIPRES/SES | Evaluar pertinencia del perfil. | Aprobado (solicita Diseño) o Rechazado. |
+| 3 | División Proponente / DIPIR | (Solo si solicitan Diseño) Elaborar Formulario de Diseño con Marco Lógico. | Formulario Diseño enviado. |
+| 4 | DIPRES/SES | Revisión iterativa. Emisión observaciones/subsanaciones. | Calificación: `RF` / `OT` / `FI` |
+| 5 | División Proponente / DIPIR | Subsanar hasta lograr RF. | `APROBADO TÉCNICAMENTE (RF)` |
+
+Advertencia: Solo RF habilita programa para solicitar financiamiento.
+
+### Track C — Vías Simplificadas y Procedimientos Especiales
 
 #### Proyectos < 5.000 UTM (Exención RS)
-- **Postulación:** Uso de descriptor específico en BIP.
-- **Restricciones:** No aplica en fraccionamiento, EIA/CMN, problemas terreno o exclusiones legales.
-- **Carta Responsabilidad:** GORE declara ausencia de impedimentos ante MDSF.
-- **Aprobación:** Otorgada internamente por GORE (`Exento RS`).
 
-#### Proyectos de Conservación
-- **Criterio:** Costo total <= 30% del costo de reposición del activo.
-- **Evaluación:** MDSF verifica clasificación y emite RATE `AD` (Admisible).
+| Paso | Responsable | Actividades |
+| :--- | :--- | :--- |
+| 1 | Unidad Formuladora | Postular en BIP usando descriptor "Proyecto menor a 5.000 UTM". Verificar ausencia de causales de exclusión: fraccionamiento, EIA/CMN, problemas terreno. |
+| 2 | Unidad Formuladora | Cargar estudio preinversional simplificado en Carpeta Digital BIP. |
+| 3 | GORE (Institución Financiera) | Enviar Carta de Responsabilidad a MDSF declarando ausencia de impedimentos. |
+| 4 | Jefatura Preinversión (DIPIR) | Evaluar y otorgar aprobación interna GORE. | Resultado: `Exento RS` |
+
+#### Proyectos de Conservación (Costo ≤ 30% valor reposición)
+- MDSF verifica clasificación como "Conservación".
+- Resultado: RATE `AD` (Admisible); no equivale a RS completo.
 
 #### FRIL, 8% FNDR, FRPD y Circular 33
-- **FRIL:** Evaluación de mérito por GORE. Informe MDSF requerido si es transferencia de capital.
-- **8% FNDR:** Concurso público con bases. Exigencia de garantías (pagaré) a privados.
-- **FRPD (Royalty):** Tipología Innovación exenta de evaluación ex ante Glosa 06 (Res. 33/2024).
+- **FRIL:** Evaluación de mérito por GORE. Informe MDSF requerido si es transferencia de capital. Proyectos < 5.000 UTM exentos de informe MDSF (Oficio N°2/2024 Hacienda), pero requieren ingreso a SNI.
+- **8% FNDR:** Concurso público con bases; exigencia de garantías (pagaré) a privados; mínimo 1% para cultura.
+- **FRPD (Royalty):** Tipología Innovación exenta evaluación ex ante Glosa 06 (Res. 33/2024 MCTCI).
 - **Circular 33:** Tramitación y aprobación vía DIPRES.
 
 ## Fase 3: Financiamiento y Aprobación Presupuestaria
 
-### 4.1 Modificaciones sin Acuerdo Obligatorio CORE
-- **Solicitud CDP:** DIPIR solicita al Depto. Presupuesto (DAF).
-- **Emisión:** DAF verifica disponibilidad y emite CDP.
-- **Instrucción:** Unidad Patrocinante instruye tramitación de modificación presupuestaria.
+### 4.1 Modificaciones sin Acuerdo Obligatorio CORE (≤ 7.000 UTM / 10%)
+
+1. **Solicitud CDP:** DIPIR solicita al Depto. Presupuesto (DAF).
+2. **Emisión CDP:** DAF verifica disponibilidad y emite Certificado de Disponibilidad Presupuestaria.
+3. **Instrucción:** Unidad Patrocinante instruye tramitación de modificación presupuestaria.
 
 ### 4.2 Iniciativas con Aprobación CORE (> 7.000 UTM)
-- **Preparación:** DIPIR elabora carpeta CORE (fichas IDI, antecedentes).
-- **Envío:** Gobernador/a remite cartera formal al CORE.
-- **Sesión:** Análisis en comisiones y votación en Pleno.
-- **Certificación:** Sec. Ejecutivo CORE emite `Certificado de Acuerdo CORE` (formato DIPRES).
+
+| Paso | Responsable | Actividades | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | DIPIR | Elaborar carpeta CORE (fichas IDI, antecedentes técnicos y financieros). | Carpeta CORE lista. |
+| 2 | Gobernador/a | Remitir cartera formal al CORE. | `CARTERA ENVIADA A CORE` |
+| 3 | CORE | Análisis en comisiones; votación en Pleno. | Acuerdo aprobatorio o rechazo. |
+| 4 | Secretario Ejecutivo CORE | Emitir Certificado de Acuerdo CORE (formato DIPRES). | `CERTIFICADO CORE OK` |
 
 ## Fase 4: Gestión Presupuestaria y Formalización
 
 ### 5.1 Tramitación de Actos Administrativos
-- **Borrador:** Depto. Presupuesto elabora Resolución (interna) o solicitud de Decreto (Partida 31).
-- **Visación:** V°B° Jurídico, Presupuesto, DIPIR y Administrador Regional.
-- **Formalización:** Firma Gobernador/a y Toma de Razón CGR cuando corresponda.
+
+1. **Borrador:** Depto. Presupuesto elabora Resolución (interna) o solicita Decreto (Partida 31 si aplica).
+2. **Visación:** V°B° Jurídico → Presupuesto → DIPIR → Administrador Regional.
+3. **Formalización:** Firma Gobernador/a. Toma de Razón CGR cuando corresponda.
 
 ### 5.2 Elaboración y Firma de Convenio
-- **Contenido Mínimo:** Objeto, monto, plazos, productos, rendición (SISREC), restitución.
-- **Privados:** Verificación de concurso, objeto social y cumplimiento de obligaciones previas.
-- **Garantías:** Exigibles según umbrales de monto y normas de la Ley de Presupuestos.
+
+Contenido mínimo del convenio:
+- Partes, objeto, monto total, calendario de transferencias, plazos, metas e indicadores MML.
+- Obligaciones de rendición (SISREC), restitución de fondos y cláusulas de probidad.
+- Prohibición de contratar parientes hasta 3° consanguinidad/2° afinidad de autoridades GORE o directivos de entidad ejecutora.
+
+Condiciones adicionales:
+- **Privados:** Verificación de concurso, objeto social, cumplimiento de obligaciones previas (Res. 30 CGR).
+- **Garantías:** Exigibles según umbrales de monto y Ley de Presupuestos.
 - **Suscripción:** Firma Gobernador/a y Representante Legal de entidad receptora.
 
 ### 5.3 Formalización Final y Devengo
-- **Aprobación:** Resolución GORE aprueba convenio y otorga vigencia.
-- **Regla Devengo Privados/Municipios:** Devengo al ser obligación exigible (convenio tramitado).
-- **Regla Devengo Servicios Públicos:** Devengo contra aprobación de rendición de cuentas.
+
+| Paso | Responsable | Actividades |
+| :--- | :--- | :--- |
+| 1 | Depto. Presupuesto | Elaborar Resolución aprobatoria del convenio. |
+| 2 | GORE / CGR | Firmar resolución; enviar a CGR para Toma de Razón si corresponde. |
+| 3 | DAF / DIPIR | Programar transferencias según regla de devengo: Privados/Municipios = devengo al ser exigible; Servicios Públicos = devengo al aprobarse rendición. |
+
+Resultado: `CONVENIO FORMALIZADO` → `TRANSFERENCIA PROGRAMADA`
 
 ## Fase 5: Ejecución y Seguimiento
 
 ### 6.1 Inicio y Coordinación
-- **Control Técnico:** Validación de EE.TT., planos y antecedentes aprobados.
-- **Reunión Arranque:** Definición de roles, hitos de control y procedimientos rendición.
-- **Seguimiento:** Apertura de carpeta de proyecto (digital/física) por Supervisor GORE.
+
+1. **Control Técnico:** División Patrocinante verifica EE.TT., planos y antecedentes aprobados.
+2. **Reunión Arranque:** GORE y UT receptora definen roles, hitos de control, plazos y procedimientos de rendición. Acta de acuerdos.
+3. **Carpeta de Seguimiento:** Supervisor/a GORE crea carpeta digital/física con todos los antecedentes.
 
 ### 6.2 Licitación y Adjudicación
-- **Inversión > 1.000 UTM:** Licitación pública obligatoria (salvo emergencia).
-- **Estudios > 500 UTM:** Licitación pública obligatoria (salvo emergencia).
-- **Contratación:** UT Receptora adjudica, firma contrato y formaliza entrega de terreno.
+
+| Requisito | Umbral | Excepción |
+| :--- | :--- | :--- |
+| Licitación pública — Inversión | > 1.000 UTM | Emergencia según normativa. |
+| Licitación pública — Estudios | > 500 UTM | Emergencia según normativa. |
+
+Proceso UT Receptora: publicar en Mercado Público → adjudicar → firmar contrato → Acta de Entrega de Terreno u Orden de Inicio.
 
 ### 6.3 Supervisión y Control
-- **Visitas Terreno:** Supervisión periódica y actualización de avance físico en BIP.
-- **Control Financiero:** Monitoreo SIGFE y revisión de rendiciones en SISREC.
-- **Gestión de Pagos:** Tramitación de Estados de Pago según hitos de convenio.
+
+| Actor | Actividades |
+| :--- | :--- |
+| Supervisor/a GORE | Visitas a terreno periódicas; revisar informes de avance; gestionar Estados de Pago; actualizar BIP con % avance físico. |
+| Analista Financiero (DAF/DIPIR) | Monitorear SIGFE; revisar rendiciones SISREC; alertar sobre sub-ejecución o desviaciones. |
+| Comité de Seguimiento | Reuniones periódicas GORE-UT; actas con acuerdos y planes de acción. |
 
 ## Fase 6: Gestión de Modificaciones
 
-### 7.1 Solicitud de Modificación
-- **Justificación:** UT Receptora prepara informe técnico/financiero por sobrecostos o imprevistos.
-- **Ingreso:** Solicitud formal al Gobernador/a con antecedentes de respaldo.
+### 7.1 Solicitud de Modificación (UT Receptora)
+1. Detectar necesidad (sobrecosto, obra adicional, imprevisto).
+2. Preparar informe técnico/financiero justificativo.
+3. Enviar oficio formal al Gobernador/a con antecedentes (presupuestos actualizados, planos, etc.).
 
-### 7.2 Evaluación y Reevaluación
-- **Análisis GORE:** DIPIR verifica pertinencia y no alteración del objetivo sustancial.
-- **Pronunciamiento:** Verificación de umbrales para reingreso a CORE o reevaluación SNI.
-- **Decisión:** Aprobación o rechazo formal mediante informe técnico.
+### 7.2 Evaluación y Reevaluación (GORE)
+1. **Análisis:** Supervisor/a GORE y Analista DIPIR verifican pertinencia; confirman que no se altera objetivo sustancial.
+2. **Pronunciamiento:** DIPIR/DIPLADE verifican si nuevo costo supera umbrales que exigen nuevo CORE o SNI.
+3. **Decisión:** Aprobación o rechazo formal mediante informe técnico de Jefatura DIPIR.
 
 ### 7.3 Tramitación de Cambios
-- **Aumento Presupuesto:** Repetición de Fase 3 (CORE si aplica).
-- **Formalización:** Modificación presupuestaria (Res/Decreto) y addendum de convenio.
+1. **Aumento Presupuesto:** Repetición de Fase 3 (CORE si aplica).
+2. **Formalización:** Modificación presupuestaria (Resolución/Decreto) y addendum de convenio.
 
 ## Fase 7: Cierre y Evaluación Ex-Post
 
 ### 8.1 Cierre Técnico
-- **Recepciones:** Recepción provisoria y definitiva de obras tras período de garantía.
-- **Informe Final:** Validación de productos, metas y resultados por Supervisor GORE.
+
+| Paso | Responsable | Actividades |
+| :--- | :--- | :--- |
+| 1 | UT Receptora | Recepción provisoria y definitiva de obras al contratista. Acta de Recepción Definitiva tras período de garantía. |
+| 2 | UT Técnica / Supervisor GORE | Elaborar informe final (productos, metas, resultados). Validar informe GORE. |
 
 ### 8.2 Cierre Financiero y Administrativo
-- **Rendición Final:** Presentada en SISREC CGR sin saldos pendientes.
-- **Aprobación DAF:** Revisión fundada, solicitud de reintegros y aprobación en plazo legal.
-- **Cierre Formal:** Resolución que aprueba rendición final y declara cierre de convenio.
-- **Garantías:** Devolución de documentos tras formalización del cierre.
+
+| Paso | Responsable | Actividades |
+| :--- | :--- | :--- |
+| 1 | UT Receptora | Presentar rendición final en SISREC CGR sin saldos pendientes. |
+| 2 | DAF (Analista Financiero) | Revisar y aprobar rendición final de manera fundada. Solicitar reintegros de saldos no utilizados o gastos rechazados. Pronunciarse en plazo legal. |
+| 3 | Depto. Presupuesto | Elaborar Resolución que aprueba rendición y declara cierre de convenio. |
+| 4 | DAF / Entidad Receptora | Devolver garantías tras formalización del cierre. |
 
 ### 8.3 Evaluación Ex-Post
-- **Muestra:** Selección de IPR relevantes por MDSF/GORE.
-- **Estudio:** Evaluación comparativa situación 'con' vs 'sin' proyecto.
-- **Retroalimentación:** Incorporación de lecciones al ciclo de inversión regional.
+
+1. **Selección:** MDSF/GORE seleccionan muestra de IPR relevantes.
+2. **Estudio:** Evaluación comparativa situación "con proyecto" vs "sin proyecto".
+3. **Retroalimentación:** Lecciones aprendidas incorporadas al ciclo de inversión regional.

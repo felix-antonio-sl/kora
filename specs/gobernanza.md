@@ -219,7 +219,7 @@ Las extensiones aplican **solo dentro del namespace que las define**. Un artefac
 1. `urn:kora:kb:md-spec` (base)
 2. `urn:gn:kb:gestion-ipr` (extension del namespace gn, si existe)
 
-Un artefacto `urn:tde:kb:sistema-tde-2025` no esta sujeto a las extensiones de `gn`.
+Un artefacto `urn:tde:kb:guia-sistema-tde-2025` no esta sujeto a las extensiones de `gn`.
 
 ---
 

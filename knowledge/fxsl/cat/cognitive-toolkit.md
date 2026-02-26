@@ -18,115 +18,102 @@ lang: en
 
 # Categorical Cognitive Toolkit v1.2
 
-## Overview
+Master map of how the Arquitecto Categórico agent uses Category Theory to think, audit, and act. Internal architecture of Arquitecto Categórico v1.2. Layer linking categorical literature to the agent's 5 cognitive engines.
 
-- Master map of how Arquitecto Categórico uses Category Theory to think, audit, and act.
-- Internal architecture encoding categorical knowledge as reusable toolkit.
+## Section 1 — Ontological Core: Algebraic Database
 
+**Schema = finitely presented category S.** Objects = entities; morphisms = relations/attributes; equations = path constraints. Use: design schemas as categories; validate associativity and identities.
 
-- **Role**: Links category theory literature to 5 internal Cognitive Engines.
+**Instance = functor I: S → Set.** Assigns sets of rows and functions between them. Use: view data as realization of a structural theory.
 
-## Sections
+**Migration = operators Δ/Σ/Π** induced by schema functor F: S → T. Use: model ETL as an adjunctions problem, not ad-hoc scripts.
 
-### 1. Ontological Core: Algebraic Database
+## Section 2 — System Dynamics: Lenses and Coalgebras
 
-- **Schema**: Category finitely presented S (objects=entities, morfismos=relations/attributes, equations=path constraints).
+**Lens = (update: S×I→S, expose: S→O).** Models systems with internal state and external view. Use: design architectures with private state and well-typed APIs.
 
-- **Instance**: Funtor I: S → Set assigning sets of rows and functions.
+**Coalgebra c: U → F(U).** Models observable behavior of a system given interface functor F. Use: reason about component equivalence via bisimulation.
 
+**Bisimulation.** Relation identifying states with same behavior under all inputs. Use: safe refactoring and substitution of microservices.
 
-- **Migration**: Operators Δ/Σ/Π induced by schema funtor F: S → T.
+## Section 3 — Completeness and Effects (Monads)
 
+**Monad catalog** (Maybe, List, Distribution, State, Writer): encapsulates computational effect types. Use: explicitly choose the effect type when modeling real processes.
 
-- **Use**: Design schemas as categories; validate associativity and identities before populating data.
+**Kleisli category Kl(M).** Morphisms A→M(B) for composing effects. Use: compose pipelines with failures, non-determinism, or probabilities in a structured way.
 
-### 2. System Dynamics: Lenses and Coalgebras
+## Section 4 — Meta-Modeling and DIK Hierarchy
 
-- **Lens**: Pair (update: S×I→S, expose: S→O) modeling systems with internal state and external view.
+| Level | Categorical Model |
+|-------|-----------------|
+| Data | Instance I: S → Set (concrete facts) |
+| Information | Schema S (structure and rules) |
+| Knowledge | Category of schemas/models (Cat or Mod) and their transformations |
 
+Operation: elevate or lower level (Data→Info→Knowledge) according to the nature of the problem.
 
-- **Coalgebra**: c: U → F(U) models observable behavior given interface funtor F.
+## Section 5 — Multi-Model Integration and Data Lakes
 
+**Schema Category** (global): objects = types (tables, collections, nodes); morphisms = relations (FKs, refs, edges, paths). Use: unified view before integration.
 
-- **Bisimulation**: Relation identifying states with same behavior under all inputs.
+**Grothendieck construction ∫F.** Flattens indexed families of schemas into a global space. Use: model multi-tenant Data Lakes and federations.
 
-- **Use**: Architecture design with private state and well-typed APIs; refactoring and safe microservice substitution.
+## Section 6 — Model Categories and Complexity
 
-### 3. Effects and Completeness Management: Monads
+**Category of models.** Objects = sets of assumptions; morphisms = refinement relations.
 
-- **Monad Catalog**: Maybe, List, Distribution, State, Writer encapsulate effects.
+**Partial order by assumption inclusion.** Enables discussion of minimal/maximal models.
 
-- **Kleisli Category**: Kl(M) with morfismos A→M(B) composing effects.
+**Convertible models.** Same assumptions, different formulations connected by natural transformation.
 
-- **Use**: Explicitly choose effect type when modeling real processes; compose pipelines with failures, non-determinism, probabilities.
+## Section 7 — Action as Primary Key
 
-### 4. Meta-Modeling: DIK Hierarchy
+**In episodic domains** (logs, workflows): the action (morphism) is the primary key; state is inferred. Use: design event-oriented systems and event sourcing.
 
-- **Data**: Instance I: S → Set (concrete facts).
-- **Information**: Schema S (structure and rules).
-- **Knowledge**: Category of schemas/models (Cat or Mod) and transformations.
+**Stream of actions as final coalgebra.** Behavior takes precedence over internal state.
 
-- **Use**: Lift or lower level per problem nature.
+## Section 8 — MBSE Consistency and Multi-Model Systems
 
-### 5. Multi-Model Integration and Data Lakes
+**Catmodel.** Category representing a system model (blocks, ports, connections). Use: formalize SysML/UML models as categorical objects.
 
-- **Schema Category**: Global with objects=types and morfismos=relations.
+**Consistency between models** = existence of common submodel (pullback in category of models). Use: verify compatibility between MBSE and Safety models.
 
-- **Grothendieck Construction**: ∫F flattens indexed schema families into global space.
+**Partial order by injection.** Compares structural complexity of models. Use: organize model variants of a system in a lattice.
 
+## Section 9 — Agent Operative Directives
 
-- **Use**: Unified view before integrating; multi-tenant data lakes and federations.
+| Directive | Principle |
+|-----------|----------|
+| CTK-IMP-FORMALIZE | Formalize before implementing: always define category and diagrams before code |
+| CTK-IMP-UNIVERSAL | Seek universal properties (products, coproducts, limits, colimits, adjunctions) |
+| CTK-IMP-STRUCTURE | Preserve structure via functors instead of ad-hoc scripts |
+| CTK-IMP-COMPOSE | Compose, do not couple: build systems by composing morphisms and lenses |
+| CTK-IMP-INVARIANTS | Think in invariants: use bisimulation and commutative diagrams as truth criteria |
 
-### 6. Model Categories and Complexity
+## Section 10 — The 5 Categorical Engines
 
-- **Model Category**: Objects=assumption sets; morfismos=refinement relations.
+| Engine | Foundation |
+|--------|-----------|
+| CM-MIGRATION-ENGINE | Δ/Σ/Π and Kan lifts for all data migrations |
+| CM-BEHAVIOR-ENGINE | Lenses, coalgebras, and monads for system dynamics |
+| CM-STRUCTURE-ENGINE | Limits, colimits, and diagram verification (static) |
+| CM-INTEGRATION-ENGINE | Multi-model synthesis and Grothendieck |
+| CM-AUDIT-ENGINE | Categorical diagnosis of DIK artifacts, migrations, behavior, global KB |
 
-- **Order Partial**: Inclusion by assumptions; min/max models.
+## Section 11 — Categorical Audit Engine
 
-- **Convertible**: Same assumptions, different formulations linked by natural transformation.
+**Four internal audit modes:**
+- STATIC: isolated artifact.
+- TEMPORAL: migrations and versions.
+- BEHAVIORAL: coalgebras and bisimulation.
+- KB-GLOBAL: complete knowledge graph.
 
-- **Use**: Organize model families; compare structural complexity.
+**Audit dimensions.** Structural, referential, completeness, categorical quality, migrations, behavior, KB global. Covers: identities/composition, references (Ref/XRef), operational Procs, limit/colimit usage, migration correctness, bisimulation when applicable.
 
-### 7. Action as Primary Key
+**Severity levels:**
+- CRITICAL: invalid structure.
+- HIGH: compromised integrity.
+- MEDIUM: incomplete/suboptimal.
+- LOW: improvement opportunity.
 
-- **Episodic Modeling**: In domains with episodes (logs, workflows), action (morfismo) is primary key; state inferred.
-
-- **Stream as Final Coalgebra**: Action sequence as behavior; behavior primes state.
-
-- **Use**: Event-sourced systems; event sourcing architectures.
-
-### 8. MBSE Consistency and Multi-Model Systems
-
-- **Catmodel**: Categorical representation of system model (blocks, ports, connections).
-
-- **Binary Consistency**: Two models consistent iff they share common submodel.
-
-- **Poset Injection**: Partial order allows complexity structural comparison.
-
-- **Use**: Formalize SysML/UML as categorical objects; verify MBSE-Safety compatibility.
-
-### 9. Agent Directives
-
-- **Formalize before implement**: Always define category and diagrams before code.
-- **Seek universal properties**: Products, coproducts, limits, colimits, adjunctions.
-- **Preserve via functors**: Structure via morfismos, not ad-hoc scripts.
-- **Compose, don't couple**: Systems via morfismo composition and lenses.
-- **Think invariants**: Bisimulation and commutative diagrams as truth criteria.
-
-### 10. The 5 Categorical Cognitive Engines
-
-- **CM-MIGRATION-ENGINE**: Δ/Σ/Π and Kan lifts for all data migration.
-- **CM-BEHAVIOR-ENGINE**: Lenses, coalgebras, monads for dynamics.
-- **CM-STRUCTURE-ENGINE**: Limits, colimits, diagram verification.
-- **CM-INTEGRATION-ENGINE**: Grothendieck synthesis for multi-model.
-- **CM-AUDIT-ENGINE**: DIK audit, migrations, behavior, KB-global consistency.
-
-### 11. Audit Engine
-
-- **Four Internal Modes**: STATIC (artifact isolated), TEMPORAL (migrations/versions), BEHAVIORAL (coalgebras/bisimulation), KB-GLOBAL (complete knowledge graph).
-
-- **Audit Dimensions**: Structural, referential, completeness, categorical quality, migrations, behavior, KB-global.
-
-- **Severity Levels**: CRITICAL (invalid structure), HIGH (compromised integrity), MEDIUM (incomplete/suboptimal), LOW (improvement opportunity).
-
-- **Standard Report**: DIK classification, summary per dimension, issue list, improvement proposals based on patterns.
+**Standard DIK Audit Report.** Classification + summary by dimension + issue list + improvement proposals based on patterns. Deliverable: repeatable and traceable audit results.

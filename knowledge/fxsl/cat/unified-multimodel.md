@@ -20,103 +20,63 @@ lang: en
 
 ## Overview
 
-- Framework for representing multi-model data (relational, document, graph, key-value) via unified schema category.
-- Enables cross-model querying and integration.
+Ctx: Global schema category and unification of SQL/NoSQL/Graph models.
+Src: Multi-model Data via Category Theory.
+XRef: `urn:fxsl:kb:algebraic-databases#UBER-QUERY`, `urn:fxsl:kb:data-lakes-ct#DL-GROTHENDIECK-DEF`
 
+Notes: uber-queries from algebraic_databases enable cross-schema query composition; Grothendieck construction unifies indexed schema families. Together form theoretical basis for CM-INTEGRATION-ENGINE.
 
-## Global Schema Category
+## Schema Category Global
 
-- **Definition**: Schema Category global: category whose objects are logical types and morphisms are relations/paths between them.
+**UM-SCHEMA-CATEGORY-GLOBAL** — Schema Category global: category with objects = logical types and morphisms = relations/paths between them.
 
+- Objects: tables, collections, nodes, documents, keyspaces
+- Morphisms: Foreign Keys, refs, edges, paths, patterns
+- Attributes per object: root, pkey, refs, access_path by kind
 
-| Component | Structure |
-|-----------|-----------|
-| **Objects** | Tables, collections, nodes, documents, keyspaces |
-| **Morphisms** | Foreign Keys, refs, edges, paths, patterns |
-| **Attributes** | root, pkey, refs, access_path per kind |
-
-- **Purpose**: Unified view of all data models before integration.
-
-
-### Construction Process
-
-1. Inventory all data sources (PostgreSQL, MongoDB, Neo4j, Redis, etc.)
-2. Per source, extract logical types as objects
-3. Extract relations (FKs, refs, edges) as morphisms
-4. Unify in single category using coproducts for disjoint objects
-5. Identify semantically equivalent objects, create equivalence morphisms
-6. Result: Global Schema Category
+Construction procedure:
+1. Inventory all data sources (PostgreSQL, MongoDB, Neo4j, Redis, etc.).
+2. For each source, extract logical types as objects.
+3. Extract relations (FKs, refs, edges) as morphisms.
+4. Unify into single category using coproducts for disjoint objects.
+5. Identify semantically equivalent objects; create equivalence morphisms.
+6. Result = global Schema Category.
 
 ## Model Kinds
 
-- **Definition**: Data model classes as realizations of global Schema Category.
-
-
 | Kind | Objects | Morphisms | Instance |
-|------|---------|-----------|----------|
-| **Relational** | Tables | Foreign Keys | Sets of tuples |
-| **Document** | Collections | Nested refs/embedding | JSON trees |
-| **Graph** | Nodes (types) | Edges (types) | Labeled graphs |
-| **Key-Value** | Keyspaces | Key prefixes/patterns | K→V maps |
+|---|---|---|---|
+| Relational | Tables | Foreign Keys | Tuple sets |
+| Document | Collections | Nested refs / embedding | JSON trees |
+| Graph | Node types | Edge types | Labeled graphs |
+| Key-Value | Keyspaces | Key prefixes/patterns | Maps K→V |
+
+All = realizations of global Schema Category.
 
 ## Instance Category
 
-- **Instance Functor**: Instance = funtor I: SchemaCategory → Set assigning concrete data to each global type.
+**UM-INSTANCE-FUNCTOR** — Multi-model instance = functor I: SchemaCategory → **Set** assigning concrete data to each global type. Represents combined content of multiple databases as single categorical instance.
 
-
-- **Purpose**: Represent combined content of multiple databases as single categorical instance.
-
-
-- **Wrapper Functor**: W_db: DB_specific → SchemaCategory translates each physical schema to global schema.
-
-
-- **Examples**:
-
-- W_postgres, W_mongo, W_neo4j: each maps tables/collections/graphs to Schema Category objects
-
-- **Use**: Normalize different technologies to common categorical language.
-
+**UM-WRAPPER-FUNCTOR** — Wrapper W_db: DB_specific → SchemaCategory translates each physical schema to global schema. Examples: W_postgres, W_mongo, W_neo4j each map tables/collections/graphs to global Schema Category objects. Normalizes different technologies to common categorical language.
 
 ## Query Processing
 
-- **Query as Functor**: Multi-model query = funtor Q: SchemaCategory → OutputKind.
+**UM-QUERY-AS-FUNCTOR** — Multi-model query = functor Q: SchemaCategory → OutputKind. Each query chooses output type (relational/document/graph/flat) as target category.
 
+Procedure:
+1. Define query in terms of global Schema Category.
+2. Choose OutputKind (relational, document, graph, flat).
+3. Construct functor Q mapping global types to output types.
+4. Execute Q over global instance I to get Q(I).
+5. Materialize result in OutputKind format.
 
-- **Interpretation**: Each query selects output type (relational/document/graph/flat) as target category.
+Example: "users with their orders" over PostgreSQL + MongoDB. SchemaCategory: {User, Order, user_orders: Order→User}. OutputKind: document (JSON). Result: [{user: {...}, orders: [{...}, {...}]}].
 
+**UM-OUTPUT-KIND** — OutputKind = target category representing output format.
 
-### Query Execution
-
-1. Define query in terms of global Schema Category
-2. Choose OutputKind (relational, document, graph, flat)
-3. Build funtor Q mapping global types to output types
-4. Execute Q on global instance I: get Q(I)
-5. Materialize result in OutputKind format
-
-- **Example**: Users with orders across PostgreSQL + MongoDB
-
-
-```
-SchemaCategory: {User, Order, user_orders: Order→User}
-OutputKind: document (JSON)
-Result: [{user: {...}, orders: [{...}, {...}]}]
-```
-
-## Output Models
-
-- **Definition**: OutputKind = target category representing output format.
-
-
-| OutputKind | Use Case |
-|-----------|----------|
-| **relational** | SQL-based consumers, JOIN-heavy workloads |
-| **document** | REST/GraphQL APIs, frontends |
-| **graph** | Traversals, path queries |
-| **flat** | CSV exports, ETL, ML pipelines |
-
-### Decision Guide
-
-- **relational**: When consumer is SQL-based or needs complex JOINs
-- **document**: When consumer is REST/GraphQL API or frontend
-- **graph**: When traversals or path queries required
-- **flat**: For exports, simple ETL, or ML pipelines
+| OutputKind | Use When |
+|---|---|
+| relational | Consumer is SQL-based or needs JOINs |
+| document | Consumer is REST API, GraphQL, or frontend |
+| graph | Need traversals or path queries |
+| flat | CSV exports, simple ETL, ML pipelines |

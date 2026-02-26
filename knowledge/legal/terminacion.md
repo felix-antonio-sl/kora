@@ -20,75 +20,71 @@ lang: es
 
 # Terminación de la Relación Laboral y Funcionaria
 
-## Terminación de la Relación Funcionaria (Sector Público)
+Fuente: Material Curso Legislación Trabajo Médico — UDELAM/COLMED.
 
-### Marco General
-- **Base Legal:** Ley 18.834 (Estatuto Administrativo), Ley 18.575 (LOCBGAE).
-- **Principio de Legalidad:** Solo procede por causales expresamente previstas en la ley.
-- **Tipicidad:** Causales de cesación deben estar taxativamente descritas.
-- **Estabilidad:** Garantía de permanencia relativa para funcionarios de carrera.
-- **Debido Proceso:** Exigencia de procedimiento previo para sanciones expulsivas (destitución).
+## Sector Público: Terminación de la Relación Funcionaria
 
-### Causales de Expiración de Funciones (Ley 18.834)
+Base legal: Ley 18.834 (Estatuto Administrativo) y Ley 18.575 (LOCBGAE).
 
-| Causal | Descripción y Notas |
+Principios:
+- Legalidad y tipicidad: solo procede por causales expresamente previstas en la ley.
+- Estabilidad relativa del funcionario de carrera.
+- Debido proceso: exigencia de procedimiento previo para sanciones expulsivas (destitución).
+
+Causales de expiración de funciones (Ley 18.834):
+
+| Causal | Descripción |
 | :--- | :--- |
-| **Renuncia aceptada** | Debe ser voluntaria y presentada por escrito; efectos desde la aceptación por autoridad. |
-| **Jubilación / Pensión** | Obtención de pensión o renta vitalicia relacionada con el cargo. |
-| **Declaración de vacancia** | Por causales legales (ej. no asunción oportuna del cargo). |
-| **Destitución** | Medida disciplinaria máxima por infracción grave; requiere sumario previo. |
-| **Supresión del empleo** | Por modificación legal de la planta institucional. |
-| **Término del periodo** | Vencimiento del plazo legal en cargos de designación temporal. |
-| **Fallecimiento** | Extinción automática de la relación por muerte del titular. |
+| Renuncia aceptada | Voluntaria y por escrito; efectos desde la aceptación por autoridad competente. |
+| Jubilación/Pensión | Obtención de pensión o renta vitalicia relacionada con el cargo. |
+| Declaración de vacancia | Por causales legales (ej. no asunción oportuna del cargo). |
+| Destitución | Medida disciplinaria máxima por infracción grave; requiere sumario previo. |
+| Supresión del empleo | Por modificación legal de la planta institucional. |
+| Término del período | Vencimiento del plazo legal en cargos de designación temporal. |
+| Fallecimiento | Extinción automática por muerte del titular. |
 
-### Procedimiento para Destitución
-1. **Inicio:** Orden de instrucción de sumario administrativo por hechos constitutivos de falta grave.
-2. **Notificación:** Formulación de cargos precisa al funcionario.
-3. **Defensa:** Plazo para presentación de descargos y rendición de prueba.
-4. **Propuesta:** Informe del fiscal instructor sugiriendo la sanción.
-5. **Resolución:** Decisión de la autoridad competente fundamentando la destitución.
-6. **Recursos:** Derecho a impugnación administrativa y control de legalidad (CGR).
+Procedimiento para destitución (etapas):
+1. Orden de instrucción de sumario administrativo por hechos constitutivos de falta grave.
+2. Formulación de cargos con notificación al funcionario.
+3. Plazo para presentación de descargos y rendición de prueba.
+4. Informe del fiscal instructor con propuesta de sanción.
+5. Resolución de la autoridad competente fundando la destitución.
+6. Recursos: impugnación administrativa y control de legalidad ante CGR.
 
-### Efectos de la Terminación
-- **Calidad de Funcionario:** Pérdida inmediata de derechos estatutarios y estabilidad.
-- **Indemnizaciones:** Solo proceden si existen leyes especiales (ej. incentivos al retiro).
-- **Hoja de Vida:** Registro de la causal; la destitución genera inhabilidades temporales para reingreso según gravedad.
+Efectos de la terminación:
+- Pérdida inmediata de calidad de funcionario y derechos estatutarios.
+- Indemnizaciones solo si existen leyes especiales (ej. incentivos al retiro).
+- Hoja de vida: registro de la causal; destitución puede generar inhabilidades para reingreso según gravedad.
 
-## Terminación en Otros Estatutos Públicos
+## Otros Estatutos Públicos
 
-### Atención Primaria de Salud (APS) Municipal
-- **Normativa:** Ley 19.378 (Estatuto APS) y supletoriamente Ley 18.883 (Estatuto Municipal).
-- **Causales:** Similares a Ley 18.834 (renuncia, jubilación, destitución, término de plazo).
-- **Particularidad:** Procedimientos disciplinarios regulados por la normativa municipal.
+APS Municipal (Ley 19.378 / Ley 18.883): causales similares a Ley 18.834 (renuncia, jubilación, destitución, término de plazo). Procedimientos disciplinarios regulados por normativa municipal.
 
-### Carabineros y Fuerzas Armadas
-- **Normativa:** Ley 18.961, DFL 1/1997, Dec. 412/2019.
-- **Causales Específicas:** Retiro, baja temporal/definitiva, necesidades institucionales, razones de salud o antigüedad.
-- **Autonomía:** Cada institución posee reglamentación propia para el término de la carrera médica militar/policial.
+Carabineros y Fuerzas Armadas (Ley 18.961, DFL 1/1997, Dec. 412/2019): causales específicas de retiro, baja temporal/definitiva, necesidades institucionales, salud o antigüedad. Cada institución posee reglamentación propia para término de carrera médica militar/policial.
 
-## Terminación del Contrato de Trabajo (Sector Privado)
+## Sector Privado: Terminación del Contrato de Trabajo
 
-### Causales Código del Trabajo
+Causales del Código del Trabajo:
 
 | Artículo | Naturaleza | Ejemplos / Condiciones |
 | :--- | :--- | :--- |
-| **Art. 159** | Causales Objetivas | Mutuo acuerdo, renuncia (30 días aviso), vencimiento de plazo, conclusión de faena, caso fortuito. |
-| **Art. 160** | Causales Subjetivas (Sin indemnización) | Falta de probidad, vías de hecho, injurias, conducta inmoral, ausencias injustificadas, abandono, incumplimiento grave. |
-| **Art. 161** | Necesidades de la Empresa | Racionalización, modernización, bajas en productividad, cambios en mercado. Desahucio (cargos confianza). |
+| Art. 159 | Causales Objetivas | Mutuo acuerdo, renuncia (30 días aviso), vencimiento de plazo, conclusión de faena, caso fortuito. |
+| Art. 160 | Causales Subjetivas (sin indemnización) | Falta de probidad, vías de hecho, injurias, conducta inmoral, ausencias injustificadas, abandono, incumplimiento grave. |
+| Art. 161 | Necesidades de la empresa | Racionalización, modernización, bajas en productividad, cambios en mercado. Desahucio para cargos de confianza. |
 
-### Procedimiento de Desvinculación
-- **Comunicación:** Carta certificada o entrega personal con la causal legal y hechos que la fundan.
-- **Plazos:** Envío a la Inspección del Trabajo dentro de los plazos legales (3 días hábiles para Art. 159/160; 30 días o pago de mes de aviso para Art. 161).
-- **Finiquito:** Documento donde se detallan pagos pendientes (sueldo, feriado proporcional, indemnizaciones si aplica).
+Procedimiento de desvinculación:
+- Comunicación: carta certificada o entrega personal indicando causal legal y hechos fundantes.
+- Plazos: envío a Inspección del Trabajo dentro de los plazos legales (3 días hábiles para Arts. 159/160; 30 días o pago de mes de aviso para Art. 161).
+- Finiquito: documento con pagos pendientes (sueldo, feriado proporcional, indemnizaciones si aplica).
 
-### Protecciones y Fueros
-- **Fuero Maternal:** Prohibición de despido sin autorización judicial previa durante embarazo y hasta un año después del descanso maternal.
-- **Fuero Sindical:** Protección para dirigentes sindicales.
-- **Tutela Laboral:** Acción judicial ante despidos que vulneren derechos fundamentales del médico.
-- **Invalidez:** Normas especiales para término por incapacidad.
+Protecciones y fueros:
+- Fuero Maternal: prohibición de despido sin autorización judicial previa durante embarazo y hasta un año después del descanso maternal.
+- Fuero Sindical: protección para dirigentes sindicales.
+- Tutela Laboral: acción judicial ante despidos que vulneren derechos fundamentales.
+- Invalidez: normas especiales para término por incapacidad.
 
-### Contratos a Honorarios
-- **Naturaleza:** Civil, no laboral (en principio).
-- **Término:** Regido estrictamente por las cláusulas del contrato (plazo de aviso, condiciones de rescisión).
-- **Indemnizaciones:** No proceden por ley laboral, solo si están pactadas expresamente.
-- **Riesgo:** Si existe subordinación y dependencia, puede demandarse el reconocimiento de relación laboral y aplicación de normas del Código del Trabajo.
+Contratos a Honorarios:
+- Naturaleza: civil, no laboral (en principio).
+- Término: regido por cláusulas del contrato (plazo de aviso, condiciones de rescisión).
+- Indemnizaciones: no proceden por ley laboral; solo si están pactadas expresamente.
+- Riesgo: si existe subordinación y dependencia, puede demandarse reconocimiento de relación laboral y aplicación del Código del Trabajo.

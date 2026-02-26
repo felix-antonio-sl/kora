@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -17,79 +17,66 @@ tags:
 lang: es
 ---
 
-# RIS para Proyectos de Arte y Cultura (SNI 2024)
+# RIS Arte y Cultura (SNI 2024)
 
-## Alcance y Aplicabilidad
+Fuente: [PDF SNI](https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf). Aplica: todas las iniciativas de inversión cultural.
 
-- **Ámbito:** Todas las iniciativas de inversión en proyectos culturales.
-- **Enfoque:** Necesidades culturales y artísticas.
-- **Tipos de Iniciativas:**
-  | Tipo | Descripción | Ejemplos |
-  | :--- | :--- | :--- |
-  | **Tipo 1: Nuevas** | Construcción de infraestructuras culturales desde cero. | Bibliotecas, museos, centros culturales, centros de formación artística. |
-  | **Tipo 2: Existentes** | Intervenciones en infraestructuras ya operativas. | Reposición, normalización, reparaciones, mejoramientos o adecuaciones sin aumento de m². |
+## Alcance
 
-## Orientaciones de Inversión
+| Tipo | Descripción |
+| :--- | :--- |
+| Nuevas | Construcción: bibliotecas, museos, centros culturales, centros de formación artística. |
+| Existentes | Reposición, normalización, reparaciones, mejoramientos o adecuaciones sin aumento de m². |
 
-- **Objetivo:** Incrementar acceso a manifestaciones artísticas y culturales.
-- **Priorización:** Sectores vulnerables y comunas con baja oferta cultural.
-- **Acciones Clave:**
-  - Creación de nuevos recintos (centros culturales, bibliotecas, museos).
-  - Mejoramiento de infraestructuras existentes para optimizar y ampliar servicio.
-  - Fomento de participación ciudadana y programas educativos integradores.
-- **Normativa:** Diagnósticos deben responder a políticas sectoriales nacionales, regionales y comunales.
+Priorización: sectores vulnerables y comunas con baja oferta cultural. Diagnósticos deben responder a políticas sectoriales nacionales, regionales, comunales.
 
 ## Consideraciones Transversales
 
-- **Gestión de Riesgo de Desastres:** Aplicación obligatoria de la "Metodología Complementaria para evaluación de Riesgo en infraestructura pública" (desde 2024).
-- **Enfoque de Género:** Integrar lineamientos específicos para asegurar equidad en formulación y ejecución.
+- Riesgo de desastres (desde 2024): aplicar "Metodología Complementaria para evaluación de Riesgo en infraestructura pública".
+- Enfoque de género: integrar lineamientos específicos en formulación y ejecución.
 
-## Requisitos Etapa de Prefactibilidad y Factibilidad
+## Requisitos por Etapa
 
-- **Estudio de Preinversión:**
-  - Base: Metodología General de Preparación y Evaluación de Proyectos.
-  - Contenido: Antecedentes técnicos y consideraciones específicas de edificaciones culturales.
-- **Propiedad del Terreno:** Acreditar según "Requisitos genéricos sobre las propiedades en que se proyectan edificaciones".
-- **Programa Arquitectónico:** Presentado en planilla Excel, firmado por profesional responsable.
-- **Términos de Referencia (TDR):** Requeridos para contratación de la etapa.
-- **Presupuesto Detallado:** Incluir consultorías, asesorías, insumos y gastos administrativos (firmado).
-- **Planificación:** Cronograma de actividades (Carta Gantt) y cronograma financiero.
+### Prefactibilidad y Factibilidad
 
-## Requisitos Etapa de Diseño
+| Documento | Requisito |
+| :--- | :--- |
+| Estudio de preinversión | Base: Metodología General de Preparación y Evaluación de Proyectos. Incluir antecedentes técnicos de edificaciones culturales. |
+| Propiedad del terreno | Acreditar según "Requisitos genéricos sobre propiedades en que se proyectan edificaciones". |
+| Programa arquitectónico | Planilla Excel firmada por profesional responsable. |
+| TDR | Para contratación de la etapa. |
+| Presupuesto detallado | Consultorías, asesorías, insumos, gastos administrativos. Firmado. |
+| Cronogramas | Carta Gantt de actividades + cronograma financiero. |
 
-- **Actualización:** Ajustes al Estudio de Preinversión basados en resultados previos.
-- **Antecedentes Técnicos:** Verificación y actualización de propiedad conforme a normativas.
-- **Contratación del Diseño:**
-  - TDR específico incluyendo procesos de licitación y adjudicación.
-  - Plan de participación ciudadana.
-- **Presupuesto:** Detalle de gastos en consultorías, asesorías y administración.
-- **Planificación:** Cronogramas de actividades (Gantt) y financiero integrando procesos de diseño.
+### Diseño
 
-## Requisitos Etapa de Ejecución
+| Documento | Requisito |
+| :--- | :--- |
+| Actualización estudio de preinversión | Ajustes basados en resultados de etapa anterior. |
+| Antecedentes técnicos de propiedad | Verificación y actualización conforme a normativas. |
+| TDR contratación diseño | Incluye procesos de licitación, adjudicación y participación ciudadana. |
+| Presupuesto detallado | Consultorías, asesorías, gastos administrativos. |
+| Cronogramas | Carta Gantt + cronograma financiero integrando todos los procesos del diseño. |
 
-- **Presentación:**
-  - Opción A: Con Estudio de Preinversión (perfil).
-  - Opción B: Con resumen ejecutivo (si proviene de diseño).
-  - **Obligatorio:** Diseño terminado.
-- **Documentación Técnica:**
-  - Antecedentes técnicos de edificaciones.
-  - Certificación de aprobación del diseño.
-- **Ejecución de Obras:** TDR con especificaciones técnicas detalladas.
-- **Presupuesto de Ejecución:**
-  | Ítem | Requisito |
-  | :--- | :--- |
-  | **Obras Civiles** | Planilla Excel detallada por partidas y niveles. |
-  | **Equipos/Equipamiento** | Listado detallado con cotizaciones de respaldo. |
-  | **Asesorías/Consultorías** | Incluir si corresponde. |
-  | **Gastos Administrativos** | Detalle de gastos internos. |
-- **Planificación:**
-  - Carta Gantt: Incluir licitación, adjudicación, tiempos de contrato y control de Unidad Técnica.
-  - Cronograma Financiero: Concordante con Gantt y ficha IDI.
-- **Plan de Contingencia:** Obligatorio para inmuebles existentes (funcionamiento, almacenaje, etc.).
+### Ejecución
+
+Modalidad de presentación: Opción A — con estudio de preinversión (perfil); Opción B — resumen ejecutivo si proviene de diseño. Entrega obligatoria: diseño terminado.
+
+| Documento | Requisito |
+| :--- | :--- |
+| Antecedentes técnicos | Según estándar edificaciones + certificación de aprobación del diseño. |
+| TDR ejecución | Especificaciones técnicas detalladas. |
+| Presupuesto obras civiles | Planilla Excel detallada por partidas y niveles. |
+| Equipos y equipamiento | Listado detallado con cotizaciones. |
+| Asesorías/consultorías | Si corresponde. |
+| Gastos administrativos | Detalle incluido. |
+| Carta Gantt | Contempla licitación, adjudicación, contrato, control Unidad Técnica (UT). |
+| Cronograma financiero | Concordante con Gantt y ficha IDI (Iniciativa de Inversión). |
+| Plan de contingencia | Obligatorio para inmuebles existentes: funcionamiento, almacenaje, etc. |
 
 ## Aspectos Complementarios
 
-- **Validación:** Todo documento de presupuesto debe estar firmado por profesional responsable.
-- **Evaluación Social:** Uso obligatorio de Precios Sociales vigentes.
-- **Consistencia:** Asegurar concordancia entre cronogramas, requerimientos y Ficha IDI.
-- **Participación:** Actividades ciudadanas específicas obligatorias, especialmente en diseño.
+- Todo presupuesto firmado por profesional responsable.
+- Evaluación social: uso obligatorio de precios sociales vigentes.
+- Concordancia entre cronogramas y ficha IDI.
+- Participación ciudadana: actividades específicas obligatorias, especialmente en diseño.

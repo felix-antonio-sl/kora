@@ -19,86 +19,57 @@ lang: en
 
 # Algebraic Model Management
 
-## Overview
-
-- Consolidates the vision that model management is not a collection of ad-hoc scripts but a rigorous mathematical discipline.
-- Introduces the concept of Megamodel as a first-level artifact capturing relations between models.
-
-
-- **Algebraic approach**: models are objects in a category
-- management operations (merge, diff, match) are categorical constructions (pushouts, pullbacks).
-
+Schultz et al. (2017). Model Management not as ad-hoc scripts but as rigorous mathematical discipline. Models as objects in a category; management operations (merge, diff, match) as categorical constructions (pushouts, pullbacks).
 
 ## Core Definitions
 
-- **AMM (Algebraic Model Management)**: Treats models and relations as complex algebraic structures to automate software engineering tasks (evolution, synchronization, transformation).
+**AMM (Algebraic Model Management).** Treats models and relations as complex algebraic structures to automate software engineering tasks: evolution, synchronization, transformation.
 
-- **Megamodel**: Model whose elements are other models and whose relations are semantic links (instantiation, transformation, trace).
+**Megamodel.** Model whose elements are other models and whose relations are semantic links (instantiation, transformation, trace).
 
-- **Data (Level)**: Individual model formalized as graph or algebraic term; object G in Graph category or algebraic specification.
+**Data (model).** Individual model formalized as a graph G or algebraic term; object in category Graph or an algebraic specification.
 
-- **Information (Level)**: Typed model; not just graph G, but typing morfismo t: G → TG where TG is type graph (metamodel).
+**Typed model (information).** Not merely graph G but a typing morphism t: G → TG where TG = type graph (metamodel). Objects in slice category Graph_TG.
 
-- **Graph Slice Category**: Objects in slice category of typed graphs Graph_TG.
+**Merge.** Colimit (pushout) of two models over a common interface.
 
-- **Merge**: Colimit (pushout) of two models over common interface.
+**Pullback.** Categorical tool for aligning/making consistent structures in comparisons and correspondences.
 
-- **Operators**: Match, Merge, Diff, Split, Compose.
+**Model Management operators.** Match, Merge, Diff, Split, Compose.
 
-- **Coupled Transformations**: Funtores that migrate models responding to metamodel changes (co-evolution).
+**Coupled Transformations.** Functors that migrate models in response to metamodel changes (co-evolution).
 
-## DIK Framework
+## DIK Hierarchy — Algebraic Model Management
 
-### Data
+**Data = individual model.**
+- Definition: graph G (individual model) or algebraic term.
+- Formalism: object G in Graph or an algebraic specification.
+- Interpretation: pure syntax of the artifact (e.g., node/edge structure of a UML class diagram before UML metamodel conformance).
 
-- Individual model structures (graphs or terms), despojados of external relational context.
+**Information = typed model.**
+- Definition: typing morphism t: G → TG, TG = type graph (metamodel).
+- Formalism: objects in slice category Graph_TG.
+- Interpretation: t assigns semantic meaning to data nodes — "this node is a Class", "this edge is Inheritance". Information = structure (G) validated by semantics (TG).
 
+**Knowledge = megamodel.**
+- Definition: model whose elements are other models; relations = semantic links (instantiation, transformation, trace).
+- Formalism: graph where nodes = models (information objects) and edges = conformity or transformation relations.
+- Interpretation: map of the territory. Enables reasoning about the complete system: "If I change Metamodel A, I must migrate Model B using Transformation T". Captures design intent and traceability.
 
-- **Formalism**: Object G in Graph category or algebraic specification.
+**Modeling = execution of algebraic operators.**
+- Operators: Match, Merge, Diff, Split, Compose.
+- Merge = colimit (pushout) of two models over common interface.
+- Diff = algebraic complement or inverse construction.
+- Coupled Transformations = functors migrating models in response to metamodel changes (co-evolution).
+- Interpretation: "calculation". Instead of manual editing, the architect applies operators: Model_Final = Merge(Model_A, Model_B). Functional manipulation of architecture.
 
-- **Interpretation**: Syntax pura of artifact (nodes, edges of class diagram before conformance to metamodel).
+## Summary
 
-### Information
+| Level | Formalism | Construction |
+|-------|-----------|-------------|
+| Data | G ∈ Graph | raw graph / algebraic term |
+| Information | t: G → TG | slice category Graph_TG |
+| Knowledge | Megamodel (M_i, relations) | nodes = models, edges = links |
+| Modeling | Operators (Merge, Diff, ...) | pushouts, coupled transformations |
 
-- Data (graphs) restricted and structured via schema/type (metamodel).
-
-
-- **Definition**: Typed Model—not just graph G, but morfismo t: G → TG where TG is type graph.
-
-- **Formalism**: Objects in typed-graph category Graph_TG.
-
-- **Interpretation**: Typing morfismo assigns semantic meaning to data nodes; information is structure validated by semantics.
-
-### Knowledge
-
-- Higher-level structure organizing ecosystem of models
-- relations between them.
-
-
-- **Definition**: Megamodel—model whose elements are other models and relations are semantic links (instantiation, transformation, trace).
-
-- **Formalism**: Graph or structure with nodes = models, edges = conformity or transformation relations.
-
-- **Interpretation**: The map of territory; allows reasoning about complete system; captures intent and trazabilidad of design.
-
-### Modeling
-
-- Execution of algebraic operations on model space to derive new states/artifacts.
-
-
-- **Definition**: Application of Model Management Operators (Match, Merge, Diff, Split, Compose).
-
-- **Formalism**: Merge = Colimit (Pushout); Diff = algebraic complement; Coupled Transformations = funtores migrating models.
-
-- **Interpretation**: "Calculation"; instead of manually editing, apply operators: Modelo_Final = Merge(Modelo_A, Modelo_B).
-
-## Conclusion
-
-- Proposes vision where software engineering becomes algebra:
-
-- Data = Graphs (G).
-- Information = Typed Graphs (t: G → TG).
-- Knowledge = Megamodels (relations entre M_i).
-- Modeling = Algebra of Models (pushouts, coupled transformations).
-
-- Provides theoretical base for tools like Catlab.jl, demonstrating that efficient management of complex systems requires mathematical rigor.
+Theoretical basis for tools such as Catlab.jl; efficient management of complex systems requires mathematical rigor.

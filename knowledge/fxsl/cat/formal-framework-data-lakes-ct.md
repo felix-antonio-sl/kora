@@ -19,71 +19,56 @@ lang: en
 
 # Formal Framework for Data Lakes (CT)
 
+## Abstract
+
+Ctx: Modeling data lake functionalities as categories linked via functors for compositionality and lineage.
+Src: `sources/cat/A Formal Framework for Data Lakes Base.md`
+
+Big Data management (5V: Volume, Variety, Velocity, Veracity, Value). Data lakes = flexible schema-on-read vs. rigid schema-on-write warehouses. This framework uses category theory to define and unify data lake functionalities, ensuring compositionality and lineage tracking.
+
 ## Data Lake Category DL
 
-- **Definition**: Objects = {Data Storage, Data Ingestion, Data Exploration}.
+**Definition 6** — DL = category with:
+- Objects: {Data Storage, Data Ingestion, Data Exploration}
+- Morphisms: store: Ingestion → Storage; explore: Storage → Exploration; maintenance: Storage × Storage → Storage
+- maintenance is a bifunctor (product of categories, Definition 5) allowing combination of existing storage functionalities.
 
-- **Morphisms**:
+**Definition 1 (Category)** — C consists of objects Ob(C), morphisms Hom(C), associative composition ∘, identity morphisms id_x: x → x.
 
-- store: Ingestion → Storage
-- explore: Storage → Exploration
-- maintenance: Storage × Storage → Storage (bifunctor for combining datasets)
+**Definition 2 (Functor)** — F: C → D maps objects and morphisms preserving identities and composition: F(id_x) = id_{F(x)}; F(g ∘ f) = F(g) ∘ F(f).
 
-- **Remark**: Maintenance morphism allows operations improving datasets/metadata by combining storage functionalities.
+**Definition 3 (Constant Functor)** — Δ_{C→D}: C → D maps every object in C to single object d ∈ Ob(D) and every morphism to id_d.
 
-## Category Theory Fundamentals
+**Definition 4 (Surjective Functor)** — F: C → D surjective if for every g: F(x) → F(y) in D, ∃ f: x' → y' in C with F(f) = g.
 
-### Functor
-
-- Maps objects C to D, morfismos preserving identity and composition.
-
-
-- **Surjective Functor**: For every pair in D and morfismo g: F(x) → F(y) in D, exists morfismo f: x' → y' in C with F(f)=g.
-
-### Constant Functor
-
-- Maps every object to single object d
-- every morfismo to id_d.
-
+**Definition 5 (Product of Categories)** — C1 × C2 has objects (x,y) and morphisms (f,g).
 
 ## Functors Linking Functionalities
 
-- Functors map instance categories to high-level DL category.
+Functors map instance categories to high-level categories in DL. Example: Δ_{Storage→DL}: Storage → DL.
 
+Surjective functors ensure every morphism in DL has a corresponding morphism in instance categories, maintaining structural integrity.
 
-- **Example**: Δ_{Storage-DL}: Storage → DL.
+## Main Functionalities
 
-- **Surjectivity Ensures**: Every morfismo in DL has corresponding morfismo in instance categories; maintains structural integrity.
+- Data Storage: handles heterogeneous data and metadata.
+- Data Ingestion: loads data from various sources.
+- Data Maintenance: organizes data, ensures quality, simplifies schema-on-read.
+- Data Exploration: enables data discovery and query processing.
 
-## Example: Enterprise Application
+## Enterprise Example
 
-### Ingestion Categories
+Multi-model data lake with customer data and online activity records:
 
-- **Ing_ds1**: Aggregates online activity data.
-- **Ing_ds2**: Directly stores customer data without transformation.
+| Category | Content | Storage Technology |
+|---|---|---|
+| Ing_ds1 | Online activity (aggregated) | — |
+| Ing_ds2 | Customer data (direct) | — |
+| Str_ds1 | Activity (time series + metadata) | InfluxDB + Neo4j |
+| Str_ds2 | Customer data + metadata | PostgreSQL + JSON/FS |
 
-### Storage Categories
-
-- **Str_ds1**: Activity data as time series (InfluxDB) + metadata (Neo4j).
-- **Str_ds2**: Customer data (PostgreSQL) + JSON metadata (filesystem).
-
-### Maintenance Operation
-
-- Enriches activity dataset with customer data for enhanced analysis.
-- Demonstrates composition and flexibility.
-
-
-## Compositionality & Lineage
-
-- Framework ensures:
-
-- **Lineage Tracking**: Functors preserve data origin through transformations.
-- **Flexibility**: Multiple storage backends unified via categorical framework.
-- **Structural Integrity**: Morphism requirements maintain robustness.
+Maintenance operation: enriches activity dataset with customer data via composition of maintenance morphism — demonstrates bifunctor flexibility.
 
 ## Conclusion
 
-- Unified formal framework for data lakes using category theory.
-- Leverages functors and compositions to manage lineage and maintain flexibility.
-- Comprehensively covers Ingestion, Storage, Maintenance, Exploration while ensuring structural integrity through category theory principles.
-
+Unified formal framework for data lakes: functors + compositions manage data lineage and flexibility. Covers Data Ingestion, Storage, Maintenance, Exploration with structural integrity via surjective functors. Future: complex workflows, physical component mappings.

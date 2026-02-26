@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -20,125 +20,59 @@ lang: es
 
 # BPMN D01: Tramitación de Actos Administrativos
 
-## Metadatos y Mapa General del Dominio
+## Metadatos del Dominio
 
-### Atributos de Dominio
 | Atributo | Valor |
 | :--- | :--- |
 | ID | DOM-ACTOS-ADMIN |
-| Criticidad | 🟠 Alta |
+| Criticidad | Alta |
 | Dueño | Unidad Jurídica |
-| Procesos | 2 |
+| Procesos | 2 (Resoluciones Exentas, Convenios y Transferencias) |
 | Subprocesos | ~14 fases |
+| SLA | 15 días hábiles |
 
-### Mapa General de Procesos
-```mermaid
-flowchart LR
-    subgraph PROCESOS["📋 Procesos de Actos Administrativos"]
-        P1["P1: Resoluciones<br/>Exentas"]
-        P2["P2: Convenios y<br/>Transferencias"]
-    end
+## Mapa General
 
-    subgraph TRANSVERSAL["🔧 Elementos Transversales"]
-        T1["Expediente<br/>Electrónico"]
-        T2["Firma Electrónica<br/>Avanzada"]
-        T3["Toma de Razón<br/>(cuando aplica)"]
-    end
+Dos procesos principales con elementos transversales compartidos:
 
-    P1 --> T1 & T2
-    P2 --> T1 & T2 & T3
-
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#4CAF50,color:#fff
-```
-
-## Proceso P1: Resoluciones Exentas
-
-### Flujo de Tramitación
-- **ID**: BPMN-GN-RES-EXENTAS-FLUJO-01
-- **Fases**: 7
-- **SLA**: 15 días hábiles
-
-```mermaid
-flowchart TD
-    subgraph FASE1["1️⃣ Iniciación"]
-        A["Área Requirente:<br/>Elaborar borrador"]
-        B["Adjuntar<br/>antecedentes"]
-        C["Ingresar al SGD"]
-    end
-
-    subgraph FASE2["2️⃣ Revisión Jurídica"]
-        D["Jurídica recibe<br/>expediente"]
-        E["Verificar legalidad<br/>y forma"]
-        F{"¿OK?"}
-        G["✅ V°B° Jurídico"]
-        H["❌ Observar"]
-    end
-
-    subgraph FASE3["3️⃣ Gestión"]
-        I["Centro Gestión:<br/>Asignar N° resolución"]
-        J["Completar<br/>formalidades"]
-    end
-
-    subgraph FASE4["4️⃣ Control"]
-        K["Unidad Control:<br/>Verificar procedencia"]
-        L{"¿Conforme?"}
-        M["✅ V°B° Control"]
-        N["❌ Reparar"]
-    end
-
-    subgraph FASE5["5️⃣ V°B° Administrador/a"]
-        O["Administrador/a Regional:<br/>Revisar y visar"]
-    end
-
-    subgraph FASE6["6️⃣ Firma"]
-        P["Gobernador/a:<br/>Firma con FEA"]
-    end
-
-    subgraph FASE7["7️⃣ Notificación y Archivo"]
-        Q["Oficina Partes:<br/>Numerar y fechar"]
-        R["Notificar a<br/>interesados"]
-        S["Publicar si<br/>corresponde"]
-        T["Archivar expediente"]
-    end
-
-    A --> B --> C --> D --> E --> F
-    F -->|"Sí"| G --> I --> J --> K --> L
-    F -->|"No"| H --> A
-    L -->|"Sí"| M --> O --> P --> Q --> R --> S --> T
-    L -->|"No"| N --> A
-
-    style P fill:#4CAF50,color:#fff
-    style T fill:#607D8B,color:#fff
-```
-
-### Roles y Responsabilidades P1
-| Fase | Responsable |
+| Proceso | Elementos transversales |
 | :--- | :--- |
-| Iniciación | Área Requirente |
-| Revisión Jurídica | Unidad Jurídica |
-| Gestión | Centro de Gestión |
-| Control | Unidad de Control |
-| V°B° Administrador/a | Administrador/a Regional |
-| Firma | Gobernador/a Regional |
-| Notificación y Archivo | Oficina de Partes |
+| P1: Resoluciones Exentas | Expediente Electrónico, Firma Electrónica Avanzada |
+| P2: Convenios y Transferencias | Expediente Electrónico, FEA, Toma de Razón (cuando aplica) |
 
-## Proceso P2: Convenios y Transferencias
+## P1: Resoluciones Exentas
 
-### Flujo de Convenios
-```mermaid
-flowchart TD
-    A["Área requirente<br/>propone convenio"] --> B["Elaborar borrador<br/>de convenio"]
-    B --> C["Revisión Jurídica"]
-    C --> D{"¿Ajustes?"}
-    D -->|"Sí"| B
-    D -->|"No"| E["Resolución que<br/>aprueba convenio"]
-    E --> F["Toma de Razón<br/>si corresponde"]
-    F --> G["Firma de partes"]
-    G --> H["Ejecución y<br/>seguimiento"]
-```
+### Fases y Responsables
 
-### Contenido Mínimo de Convenios
+| Fase | Responsable | Acción principal |
+| :--- | :--- | :--- |
+| 1. Iniciación | Área Requirente | Elaborar borrador, adjuntar antecedentes, ingresar al SGD |
+| 2. Revisión Jurídica | Unidad Jurídica | Verificar legalidad y forma; V°B° o devolver con observaciones |
+| 3. Gestión | Centro de Gestión | Asignar N° resolución, completar formalidades |
+| 4. Control | Unidad de Control | Verificar procedencia; V°B° o reparar |
+| 5. V°B° Administrador/a | Administrador/a Regional | Revisar y visar |
+| 6. Firma | Gobernador/a Regional | Firmar con FEA |
+| 7. Notificación y Archivo | Oficina de Partes | Numerar, fechar, notificar, publicar si corresponde, archivar |
+
+### Bifurcaciones
+
+- Fase 2: si Jurídica observa → devuelve a Área Requirente (reinicia fase 1)
+- Fase 4: si Control repara → devuelve a Área Requirente (reinicia fase 1)
+
+## P2: Convenios y Transferencias
+
+### Flujo
+
+1. Área requirente propone convenio
+2. Elaborar borrador
+3. Revisión Jurídica → si requiere ajustes, vuelve al paso 2
+4. Resolución que aprueba convenio
+5. Toma de Razón si corresponde
+6. Firma de partes
+7. Ejecución y seguimiento
+
+### Contenido Mínimo del Convenio
+
 | Elemento | Descripción |
 | :--- | :--- |
 | Partes | GORE + Entidad receptora |
@@ -150,36 +84,27 @@ flowchart TD
 | Restitución | Condiciones de devolución |
 | Probidad | Cláusulas anticorrupción |
 
-### Criterios de Toma de Razón
-```mermaid
-flowchart TD
-    A["Convenio<br/>firmado"] --> B{"Monto y<br/>naturaleza"}
-    B -->|"Supera umbral<br/>CGR"| C["Requiere<br/>Toma de Razón"]
-    B -->|"Bajo umbral"| D["Exento"]
-    B -->|"Normativa<br/>específica"| E["Consultar<br/>Res. CGR"]
+### Criterios Toma de Razón (CGR)
 
-    style C fill:#f44336,color:#fff
-    style D fill:#4CAF50,color:#fff
-```
+| Condición | Resultado |
+| :--- | :--- |
+| Monto supera umbral CGR | Requiere Toma de Razón |
+| Bajo umbral | Exento |
+| Normativa específica | Consultar Resolución CGR |
 
 ## Expediente Electrónico (Ley 21.180)
 
-### Estructura del Expediente
-```mermaid
-flowchart TD
-    subgraph EXPEDIENTE["📁 Expediente Electrónico"]
-        A["Metadatos:<br/>• ID único<br/>• Fecha creación<br/>• Tipo acto"]
-        B["Documentos:<br/>• Borrador<br/>• Antecedentes<br/>• Visaciones"]
-        C["Firmas:<br/>• FEA funcionarios<br/>• FEA autoridad"]
-        D["Trazabilidad:<br/>• Log de acciones<br/>• Fechas/horas"]
-    end
+### Estructura
 
-    A --> B --> C --> D
+| Componente | Contenido |
+| :--- | :--- |
+| Metadatos | ID único, fecha creación, tipo de acto |
+| Documentos | Borrador, antecedentes, visaciones |
+| Firmas | FEA funcionarios, FEA autoridad |
+| Trazabilidad | Log de acciones con fecha/hora |
 
-    style C fill:#2196F3,color:#fff
-```
+### Principios TDE
 
-### Principios de Transformación Digital (TDE)
 | Principio | Aplicación |
 | :--- | :--- |
 | Equivalencia funcional | Documento digital = papel |
@@ -187,17 +112,17 @@ flowchart TD
 | Interoperabilidad | Comunicación entre sistemas |
 | Seguridad | Integridad, autenticidad, no repudio |
 
-## Sistemas y Normativa
+## Sistemas Involucrados
 
-### Ecosistema de Sistemas
 | Sistema | Función |
 | :--- | :--- |
-| SYS-DOCDIGITAL | Gestión documental, expediente |
+| SYS-DOCDIGITAL | Gestión documental, expediente electrónico |
 | SYS-FIRMAGOB | Firma Electrónica Avanzada |
 | SYS-SIGFE | Registro de compromisos |
 | SYS-TRANSPARENCIA | Publicación |
 
-### Marco Normativo
+## Normativa Aplicable
+
 | Norma | Alcance |
 | :--- | :--- |
 | Ley 19.880 LBPA | Procedimiento administrativo |
@@ -208,12 +133,8 @@ flowchart TD
 
 ## Referencias Cruzadas
 
-| Dominio Relacionado | Vínculo | Referencia |
-| :--- | :--- | :--- |
-| D03 Gestión IPR | Fase 4 Formalización | `D03_gestion_ipr.md` |
-| D02 Ciclo Presupuestario | Modificaciones, resoluciones | `D02_ciclo_presupuestario.md` |
-| D08 Rendiciones | Convenios de transferencia | `D08_rendiciones.md` |
-
-- --- **Última actualización**:
-- 2025-12-16
-
+| Dominio | Vínculo |
+| :--- | :--- |
+| D03 Gestión IPR | Fase 4 Formalización |
+| D02 Ciclo Presupuestario | Modificaciones, resoluciones |
+| D08 Rendiciones | Convenios de transferencia |

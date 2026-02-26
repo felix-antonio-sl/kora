@@ -1,13 +1,16 @@
 {
   "_manifest": {
-    "urn": "urn:kora:agent-bootstrap:forgemaster-config:1.0.0",
+    "urn": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
     "urn:kora:kb:agent-spec-md",
     "urn:kora:kb:gobernanza",
     "urn:kora:kb:spec-md",
-    "urn:kora:kb:md-spec"
+    "urn:kora:kb:md-spec",
+    "urn:kora:kb:skill-spec-md",
+    "urn:kora:kb:runtime-spec-md",
+    "urn:kora:kb:swarm-spec-md"
   ],
   "sandbox": {
     "mode": "strict"
@@ -27,5 +30,15 @@
   "sub_agents": {
     "max_depth": 1,
     "max_concurrent": 3
+  },
+  "limits": {
+    "policy_flags": {
+      "require_validation_before_write": true,
+      "require_user_approval_for_deprecation": true
+    },
+    "quotas": {
+      "max_files_per_operation": 20,
+      "max_skills_per_agent": 15
+    }
   }
 }

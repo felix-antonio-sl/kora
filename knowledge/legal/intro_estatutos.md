@@ -19,144 +19,103 @@ lang: es
 
 # Introducción y Estatutos Jurídicos - Trabajo Médico Chile
 
-## Jerarquía Normativa en el Sector Público
+## Jerarquía Normativa: Médicos SNSS
 
-| Orden | Norma Aplicable | Observación |
+Orden de aplicación para médicos funcionarios de Servicios de Salud:
+
+| Orden | Norma | Observación |
 | :--- | :--- | :--- |
-| 1 | Constitución Política de la República (CPR) | Norma fundamental |
+| 1 | CPR | Norma suprema; obliga directamente a autoridades y ciudadanos |
 | 2 | LOC 18.575 | Bases Generales de la Administración del Estado |
-| 3 | Ley 19.664 | Médicos en cargos de 11, 22, 33, 44 horas |
+| 3 | Ley 19.664 | Médicos en cargos de 11, 22, 33, 44 horas en Servicios de Salud |
 | 4 | Ley 15.076 | Supletoria general para médicos |
-| 5 | Estatuto Administrativo (Ley 18.834) | Supletoria de segundo orden |
+| 5 | Ley 18.834 (EA) | Supletoria de segundo orden |
 | 6 | Código del Trabajo | Supletoria final |
 
 ## Principios Constitucionales (CPR)
 
-### Art. 6: Primacía Constitucional
-- Órganos del Estado someten acción a la Constitución y normas dictadas conforme a ella.
-- Obliga directamente a autoridades y ciudadanos.
-- Médicos funcionarios actúan en nombre del Estado.
+Art. 6: órganos del Estado someten su acción a la Constitución y normas dictadas conforme a ella; obliga directamente a autoridades y ciudadanos. Médicos funcionarios actúan en nombre del Estado.
 
-### Art. 19 N° 16: Libertad de Trabajo
-- **Libre contratación:** Derecho de empleador y trabajador a elegir libremente.
-- **Justa retribución:** Aplica a trabajo dependiente e independiente.
-- **No discriminación:** Solo admite distinciones por capacidad o idoneidad personal.
-- **Prohibiciones:** Solo si el trabajo se opone a moral, seguridad o salubridad pública.
-- **Huelga prohibida para:**
-    - Funcionarios del Estado y municipales.
-    - Trabajadores de servicios de utilidad pública.
-    - Labores cuya paralización cause grave daño a salud, economía, abastecimiento o seguridad nacional.
+Art. 19 N°16 — Libertad de trabajo:
+- Libre contratación: empleador y trabajador eligen libremente.
+- Justa retribución: aplica a trabajo dependiente e independiente.
+- No discriminación: solo admite distinciones por capacidad o idoneidad personal.
+- Prohibición de trabajo: solo si se opone a moral, seguridad o salubridad pública.
+- Negociación colectiva: derecho de trabajadores con la empresa; ley establece modalidades.
+- Huelga prohibida para: funcionarios del Estado y municipales; trabajadores de servicios de utilidad pública; labores cuya paralización cause grave daño a salud, economía, abastecimiento o seguridad nacional.
 
-### Otros Derechos
-- **Art. 19 N° 17:** Admisión a funciones públicas sin más requisitos que la CPR y las leyes.
-- **Art. 19 N° 18:** Derecho a seguridad social; Estado garantiza prestaciones básicas.
-- **Art. 19 N° 19:** Libertad sindical; afiliación voluntaria.
+Otros derechos: art. 19 N°17 (admisión a funciones públicas sin más requisitos que CPR y leyes); art. 19 N°18 (seguridad social; Estado garantiza prestaciones básicas uniformes); art. 19 N°19 (libertad sindical; afiliación voluntaria; personalidad jurídica por registro de estatutos).
 
-## Principios de la Ley Orgánica Constitucional (LOC 18.575)
+## Principios de LOC 18.575
 
-- **Servicialidad:** Administración al servicio de la persona; promoción del bien común.
-- **Eficiencia y Eficacia:** Administración idónea de medios públicos.
-- **Jerarquía:** Régimen jerarquizado y disciplinado con control permanente.
-- **Probidad:** Función pública con transparencia regulada por ley.
-- **Estatutos Administrativos:** Personal regido por normas estatutarias legales.
-- **Responsabilidad:** Sujetos a responsabilidad administrativa, civil y penal.
-- **Capacitación:** Estado asegura perfeccionamiento del personal.
+- Servicialidad: administración al servicio de la persona humana; promueve el bien común.
+- Eficiencia y eficacia: administración idónea de medios públicos.
+- Jerarquía: régimen jerarquizado y disciplinado con control jerárquico permanente.
+- Probidad: función pública con transparencia regulada por ley.
+- Estatutos administrativos: personal regido por normas estatutarias legales.
+- Responsabilidad: administrativa, civil y penal.
+- Capacitación: Estado asegura perfeccionamiento del personal.
 
 ## Doctrina de la Confianza Legítima
 
-- **Naturaleza:** Doctrina jurisprudencial (Corte Suprema/CGR), sin ley expresa.
-- **Umbral de 5 años:**
-    - **Menos de 5 años:** Expiración de contrata al 31 de diciembre (Art. 10 Ley 18.834) no requiere motivación especial.
-    - **5 años o más:** Opera confianza legítima. Término del vínculo solo por sumario (destitución) o calificación desfavorable.
-- **Dictamen CGR N° E561358/2024:** Limita rol de Contraloría; remite conflictos de confianza legítima a tribunales de justicia.
+Naturaleza: doctrina jurisprudencial (CS y CGR); sin consagración legal expresa en ninguna ley específica.
 
-## Ley 15.076: Estatutos Médicos y Dentistas
+Umbral: 5 años de servicio continuo en calidad de contrata.
+- Menos de 5 años: expiración al 31 de diciembre (art. 10 EA 18.834) no requiere motivación especial.
+- 5 años o más: Administración solo puede poner término mediante sumario que culmine en destitución, o por calificación anual desfavorable.
 
-- **Referencia Legal:** DFL 1/2001 MINSAL (Texto refundido); DS 110/1963 MINSAL (Reglamento).
-- **Materias Reguladas:**
-    - Ingreso a planta como titular.
-    - Remuneraciones especiales.
-    - Horario de trabajo e incompatibilidades.
-    - Calificaciones, feriados, licencias y permisos.
-    - Reemplazos, comisiones y traslados.
-    - Otorgamiento de becas.
-    - Liberación de guardia nocturna (complementado por Ley 19.230).
+Dictamen CGR N° E561358/2024: limita rol de Contraloría; remite conflictos de confianza legítima a tribunales como asuntos litigiosos. Desarrollo detallado en `urn:legal:kb:confianza-legitima`.
 
-## Ley 19.664: Carrera Funcionaria en Servicios de Salud
+## Ley 15.076
 
-- **Ámbito:** Médicos con cargos de 11, 22, 33 y 44 horas en Servicios de Salud.
-- **Relación con Ley 15.076:** Ley 19.664 es modificatoria; Ley 15.076 rige en lo no previsto.
-- **Etapas de la Carrera:**
-    1. **Destinación y Formación:** Ingreso y especialización.
-    2. **Planta Superior:** Desarrollo profesional.
-- **Ejes Temáticos:**
-    - Acceso a carrera.
-    - Programas de especialización y subespecialización.
-    - Remuneraciones y asignaciones especiales.
-    - Acreditación por niveles.
+Texto refundido: DFL 1/2001 MINSAL. Reglamento: DS 110/1963 MINSAL.
 
-## Estatutos por Institución: APS Municipal, FFAA y Carabineros
+Materias reguladas: ingreso a planta como titular; remuneraciones especiales; horario de trabajo e incompatibilidades; calificaciones; feriados, licencias y permisos; reemplazos, comisiones y traslados; otorgamiento de becas; liberación de guardia nocturna (complementado por Ley 19.230).
 
-### Atención Primaria de Salud (APS) Municipal
-- **Jerarquía:** CPR -> LOC 18.575 -> Ley 19.378 (Estatuto APS) -> Ley 18.883 (Supletoria).
-- **Reglamento:** Decreto 2296/2007 MINSAL.
-- **Contenidos Ley 19.378:** Dotación, jornada, remuneraciones, carrera, misiones de estudio, calificaciones y término de relación laboral.
+## Ley 19.664
 
-### Fuerzas Armadas (FFAA)
-- **Estatuto Principal:** DFL 1/1997.
-- **Supletoriedad:** 1° Ley 15.076; 2° Ley 18.834 (Estatuto Administrativo).
+Ámbito: médicos con cargos de 11, 22, 33 y 44 horas en Servicios de Salud. Modificatoria de Ley 15.076; lo no previsto se rige por Ley 15.076.
 
-### Carabineros de Chile
-- **Marco Legal:** Ley 18.961 (LOC Carabineros); Decreto 412/2019.
-- **Modalidades de Contratación:**
-    - **Por Horas:** Art. 10 DFL 2/1968; regidos por Ley 15.076.
-    - **Temporal:** Máximo 6 meses para reemplazos (licencias/permisos). Sin incompatibilidad.
-    - **Resolución (CPR):** Transitorio, sin escalafón. Término máximo 31 de diciembre cada año. No afecto a Código del Trabajo (excepto protección maternidad).
+Etapas de la carrera:
+1. Destinación y Formación: ingreso y especialización.
+2. Planta Superior: desarrollo profesional.
+
+Ejes temáticos: acceso a carrera; programas de especialización y subespecialización; remuneraciones y asignaciones especiales; acreditación por niveles.
+
+## Estatutos por Institución
+
+APS Municipal: jerarquía CPR → LOC 18.575 → Ley 19.378 → Ley 18.883 → Ley 18.695. Reglamento: Decreto 2296/2007 MINSAL. Ley 19.378 regula: dotación, jornada, remuneraciones, carrera, misiones de estudio, calificaciones y término de relación laboral.
+
+Fuerzas Armadas: Estatuto principal DFL 1/1997; supletoriedad 1° Ley 15.076, 2° Ley 18.834.
+
+Carabineros (Ley 18.961 y Decreto 412/2019):
+- Contratación por horas: art. 10 DFL 2/1968; régimen Ley 15.076; requiere fondos en Ley de Presupuestos.
+- Temporal: máximo 6 meses para reemplazos (licencias, feriados, permisos, reposo preventivo); no producen incompatibilidades; no integran planta.
+- CPR (Personal por Resolución): transitorio, sin escalafón; no ocupa plazas de planta; duración máx. 31 de diciembre cada año; no afecto al Código del Trabajo salvo protección maternidad.
 
 ## Fuentes del Derecho en el Sector Privado
 
-### Fuentes Materiales
-- **Indirectas:** Doctrina, filosofía, tecnología, factores culturales.
-- **Directas:** Órganos legislativos, tribunales, poder ejecutivo.
+Fuentes formales generales:
+- CPR: arts. 19 N°16 al 19.
+- Ley: Código del Trabajo (sistematiza relación basada en prestación de servicios bajo subordinación y dependencia).
+- Reglamentos: decretos, circulares e instrucciones del Ejecutivo.
+- Jurisprudencia judicial: fallos uniformes; Recurso de Unificación de Jurisprudencia (Corte Suprema) solo en materia laboral.
+- Jurisprudencia administrativa (DT): dictámenes que fijan sentido de leyes laborales (DFL 2 art. 1; CdT art. 476); límites: solo leyes laborales, asunto no sometido a tribunales, no establece derechos subjetivos.
+- Costumbre: cláusulas tácitas y reglas de conducta; ejemplo: anticipos de sueldo habituales se incorporan al contrato.
+- Doctrina: tesis de tratadistas; fuente mediata; influye en legislador e interpretación.
 
-### Fuentes Formales Generales
-- **CPR:** Art. 19 N° 16 al 19.
-- **Ley:** Código del Trabajo (sistematiza servicios bajo subordinación y dependencia).
-- **Reglamentos:** Decretos, circulares e instrucciones del Ejecutivo.
-- **Jurisprudencia Judicial:** Fallos uniformes; Recurso de Unificación de Jurisprudencia (Corte Suprema).
-- **Jurisprudencia Administrativa (DT):** Dictámenes que fijan sentido de leyes laborales. Límites: no asuntos en tribunales, no derechos subjetivos.
-- **Costumbre:** Cláusulas tácitas y reglas de conducta. Ejemplo: anticipos de sueldo habituales se incorporan al contrato.
-- **Doctrina:** Tesis de tratadistas; influye en legislador e interpretación.
+Fuentes propias del Derecho del Trabajo (respetando mínimos de orden público laboral):
+- Contrato colectivo (CdT art. 6 inc. 3): uno o más empleadores + sindicatos/grupos; negociación reglada Libro IV CdT.
+- Convenio colectivo: igual que contrato colectivo pero sin sujeción a negociación reglada.
+- Laudo arbitral (CdT art. 320 inc. 2): fallo de tribunal arbitral o mediación voluntaria DT.
+- Reglamento Interno de Orden: obligatorio en empresas ≥10 trabajadores permanentes (art. 153 CdT); contenido: obligaciones, prohibiciones, normas de ambiente digno; incumplimiento = causal despido art. 160 N°5 CdT.
+- Reglamento Interno de Higiene y Seguridad: obligatorio en toda empresa (Ley 16.744 art. 67); pueden consolidarse en un solo documento.
+- Contrato individual (CdT art. 7): convención empleador-trabajador para servicios personales bajo dependencia y subordinación a cambio de remuneración.
 
-## Fuentes Propias del Derecho del Trabajo
+Principio rector: jerarquía específica por tipo de vínculo. Regla general: CPR > LOC 18.575 > Estatuto Especial > Estatuto General > Código del Trabajo.
 
-### Instrumentos Colectivos
-- **Contrato Colectivo:** Uno o más empleadores + sindicatos/grupos unidos. Negociación reglada (Libro IV CdT).
-- **Convenio Colectivo:** Similar a contrato, pero sin sujeción a negociación reglada.
-- **Laudo Arbitral:** Fallo de tribunal arbitral o mediación voluntaria.
+## Opciones Laborales del Médico
 
-### Reglamento Interno
-- **Orden y Disciplina:** Obligatorio en empresas con ≥10 trabajadores permanentes (Art. 153 CdT).
-- **Higiene y Seguridad:** Obligatorio en toda empresa (Art. 67 Ley 16.744).
-- **Contenido:** Obligaciones, prohibiciones, normas de respeto, prevención de riesgos.
-- **Sanción:** Incumplimiento es causal de despido (Art. 160 N° 5 CdT).
+Sector público: Servicios de Salud (Ley 19.664 / 15.076) · APS Municipal (Ley 19.378) · Fuerzas Armadas (DFL 1/1997) · Carabineros (Ley 15.076 / Resoluciones transitorias).
 
-### Contrato Individual
-- Convención entre empleador y trabajador para servicios personales bajo dependencia y subordinación a cambio de remuneración (Art. 7 CdT).
-
-## Resumen de Opciones Laborales
-
-### Sector Público
-- Servicios de Salud (Ley 19.664 / 15.076).
-- APS Municipal (Ley 19.378).
-- Fuerzas Armadas (DFL 1/1997).
-- Carabineros (Ley 15.076 / Resoluciones transitorias).
-
-### Sector Privado
-- Contrato individual de trabajo.
-- Sujeto a Código del Trabajo y convenios colectivos.
-
-- **Principio Rector:** Jerarquía específica por vínculo.
-- Regla general:
-- CPR > LOC 18.575 > Estatuto Especial > Estatuto General > Código del Trabajo.
-
+Sector privado: contrato individual de trabajo (Código del Trabajo y convenios colectivos).

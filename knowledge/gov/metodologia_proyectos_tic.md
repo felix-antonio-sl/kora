@@ -18,150 +18,158 @@ tags:
 lang: es
 ---
 
-# Contexto y Propósito
+# Metodología para la Gestión de Proyectos TIC
 
-*   **Alcance:** Marco referencial para gestión de proyectos TIC en Órganos de la Administración del Estado (OAE).
-*   **Alineamiento:** Ley N° 21.180 (Transformación Digital), Estrategia de Gobierno Digital 2030 y Marco EVALTIC.
-*   **Propósito:** Fortalecer capacidad institucional, estandarizar prácticas y generar valor público mediante gestión eficiente.
-*   **Enfoque:** Mejora de calidad de vida mediante administración pública ágil y moderna.
+Fuente: WikiGuías SGD — `urn:gov:kb:metodologia-proyectos-tic`
+Autor: Equipo de Gestión de Proyectos (PMO), SGD, Ministerio de Hacienda.
+Elaborado: 2025-03-31. Actualizado: 2025-04-24.
 
-## Objetivos de la Guía
+## Contexto y Objetivo
 
-*   **Estandarización:** Unificar prácticas basadas en estándares internacionales (PMI, OCDE).
-*   **Eficiencia:** Optimizar ejecución en términos de alcance, tiempo, costo y calidad.
-*   **Gobernanza:** Establecer conceptos para creación y operación de Oficinas de Gestión de Proyectos (PMO).
-*   **Control:** Asegurar cumplimiento de objetivos estratégicos institucionales y TIC.
+La guía establece un marco metodológico referencial para gestión de proyectos TIC en OAEs (Órganos de la Administración del Estado), alineado con estándares internacionales (PMI, OCDE) y la Ley N° 21.180 de TDE.
 
-## Beneficios de la Gestión
+Objetivos de la guía:
+- Fortalecer calidad, control y eficiencia en ejecución de proyectos TIC
+- Asegurar alineamiento con Ley de TDE, estrategia institucional y objetivos estratégicos TIC
+- Lograr cumplimiento de objetivos en términos de alcance, tiempo, costo y calidad
+- Proporcionar base conceptual para crear y operar PMOs
 
-| Categoría | Beneficio Clave |
-| :--- | :--- |
-| **Operativo** | Mayor eficiencia y optimización de recursos institucionales. |
-| **Control** | Gestión estricta de triple restricción (alcance, tiempo, costo). |
-| **Calidad** | Entregables alineados con expectativas mediante criterios de control. |
-| **Riesgos** | Identificación y mitigación oportuna de amenazas al proyecto. |
-| **Organizacional** | Aprendizaje mediante lecciones aprendidas y transparencia (trazabilidad). |
-| **Estratégico** | Priorización basada en datos y alineamiento institucional. |
+Beneficios de la gestión de proyectos:
+- Mayor eficiencia operativa y mejor uso de recursos
+- Control del alcance, tiempo y costos; evita desviaciones
+- Mejor calidad de entregables mediante criterios y mecanismos de control
+- Identificación y mitigación oportuna de riesgos
+- Transparencia y trazabilidad para auditorías y rendición de cuentas
+- Aprendizaje organizacional a través de lecciones aprendidas
 
-## Definiciones Fundamentales
+## Definiciones Clave
 
 | Término | Definición |
-| :--- | :--- |
-| **Proyecto** | Esfuerzo temporal y único para crear un producto o servicio exclusivo. |
-| **Gestión de Proyectos** | Aplicación de conocimientos y técnicas para cumplir requisitos bajo restricciones. |
-| **Ciclo de Vida** | Conjunto de fases desde el inicio hasta el cierre formal. |
-| **Triple Restricción** | Relación interdependiente entre alcance, tiempo y costo. |
-| **Línea Base** | Referencia inicial para medir desempeño y detectar desviaciones. |
-| **PMO** | Estructura que estandariza gobernanza y promueve buenas prácticas. |
-| **Portafolio** | Conjunto de proyectos y programas gestionados estratégicamente. |
+|---|---|
+| Proyecto | Esfuerzo temporal y único para crear un producto, servicio o resultado exclusivo, con inicio y fin definidos, objetivos y entregables claros |
+| Gestión de proyectos | Aplicación de conocimientos, habilidades, herramientas y técnicas a las actividades del proyecto para cumplir sus requisitos dentro de restricciones de alcance, tiempo, costo y calidad |
+| Metodología de gestión de proyectos | Conjunto estructurado de procesos, herramientas y técnicas para planificar, ejecutar, monitorear y cerrar proyectos de manera sistemática |
+| Ciclo de vida del proyecto | Conjunto de fases desde el inicio hasta el cierre: formulación, planificación, ejecución y cierre |
+| Fase del proyecto | Agrupación lógica de actividades que culmina con uno o más entregables clave |
+| Modelo de triple restricción | Relación entre alcance, tiempo y costo: cambios en una dimensión impactan a las otras |
+| Línea base | Referencias iniciales de alcance, cronograma y presupuesto para medir desempeño y detectar desviaciones |
+| PMO (Oficina de Gestión de Proyectos) | Estructura organizacional que estandariza procesos de gobernanza de proyectos y promueve buenas prácticas de gestión de recursos, metodologías, herramientas y técnicas |
+| Programa | Conjunto de proyectos relacionados gestionados coordinadamente para obtener beneficios y sinergias adicionales |
+| Portafolio o cartera | Conjunto de proyectos y programas gestionados estratégicamente para cumplir objetivos institucionales |
+| Gestión de portafolios | Proceso centralizado para identificar, priorizar, autorizar y controlar proyectos y programas alineados con los objetivos estratégicos |
 
-## Gobernanza y Roles
+## Roles y Responsabilidades
 
-| Rol | Responsabilidad Principal |
-| :--- | :--- |
-| **Patrocinador** | Proporciona financiamiento, define alcance inicial y autoriza cambios. |
-| **Jefatura (PM)** | Lidera ejecución, gestiona riesgos y asegura cumplimiento de objetivos. |
-| **Equipo** | Ejecuta tareas técnicas y asegura calidad de los entregables asignados. |
-| **Stakeholders** | Proporcionan insumos, validan resultados y expresan expectativas. |
-| **Resp. Cartera** | Supervisa alineamiento estratégico y prioriza iniciativas institucionales. |
-| **PMO** | Centraliza metodologías, estándares y soporte técnico-metodológico. |
+| Rol | Función principal | Responsabilidades clave |
+|---|---|---|
+| Patrocinador del proyecto | Proporciona respaldo y financiamiento | Comunicar importancia y objetivos; designar jefatura; autorizar cambios de alcance y cierres de etapa; evaluar desempeño de la jefatura |
+| Jefatura del proyecto (PM) | Liderar todas las etapas asegurando cumplimiento de objetivos | Planificar etapas, plazos y recursos; supervisar avance; gestionar riesgos; mantener informadas a las partes interesadas |
+| Equipo del proyecto | Ejecutar tareas asignadas según el plan | Colaborar con la jefatura; reportar avances y obstáculos; asegurar calidad de entregables asignados |
+| Partes interesadas (stakeholders) | Personas afectadas o con influencia sobre el proyecto | Expresar expectativas; proporcionar insumos; apoyar decisiones; participar en revisiones y evaluación de resultados |
+| Responsable de cartera | Supervisar y gestionar estratégicamente la cartera de proyectos | Evaluar y priorizar iniciativas; proponer ajustes en priorización o calendarización; reportar al Comité de Dirección |
+| PMO | Centralizar y coordinar la gestión bajo un marco común | Estandarizar prácticas; proporcionar soporte técnico y metodológico; facilitar mejora continua |
 
-## Enfoques Metodológicos
+## Tipos de Metodologías
 
-| Método | Características | Contexto de Uso |
-| :--- | :--- | :--- |
-| **Predictivo (Cascada)** | Secuencial, requisitos cerrados, planificación completa inicial. | Proyectos con bajo nivel de incertidumbre y alcance fijo. |
-| **Ágil** | Iterativo, incremental, adaptación continua, entrega de valor temprana. | Entornos dinámicos con requisitos evolutivos. |
-| **Híbrido** | Mezcla de planificación estructurada y ciclos iterativos. | Proyectos complejos con componentes de distinta naturaleza. |
+| Tipo | Características | Contexto de uso |
+|---|---|---|
+| Tradicional / predictiva (Cascada) | Secuencial; requisitos bien definidos al inicio; cada fase completa antes de la siguiente | Alta certeza de requisitos; bajo nivel de cambio |
+| Ágil (iterativa e incremental) | Iteraciones cortas; adaptación continua; fuerte involucramiento de usuarios; entrega de valor temprana y frecuente | Alta incertidumbre; requisitos cambiantes |
+| Híbrida | Combina planificación estructurada en dimensiones críticas con ciclos iterativos en componentes con mayor incertidumbre | Proyectos mixtos con zonas de certeza e incertidumbre |
 
-## Fase 1: Inicio
+## Fase 1 — Inicio y Constitución
 
-*   **Acciones:**
-    *   Identificar necesidad u oportunidad alineada con objetivos estratégicos.
-    *   Definir descripción de alto nivel (qué, para qué, recursos, plazos).
-    *   Registrar propuesta en canales institucionales o PMO.
-*   **Productos:**
-    *   **Acta de Constitución:** Documento formal de inicio con objetivos y gobernanza.
-    *   **Registro de Interesados:** Identificación de partes afectadas o influyentes.
+Objetivo: iniciar formalmente el proyecto, clarificando la necesidad u oportunidad, su alineación estratégica y los elementos básicos de alcance, cronograma y recursos.
 
-## Integración EVALTIC
+Actividades:
+- Identificar la necesidad u oportunidad que origina el proyecto
+- Alinear el proyecto con objetivos estratégicos institucionales (Formulario A1) y prioridades de TDE
+- Describir brevemente el proyecto (qué, para qué, con qué recursos y plazos tentativos)
+- Registrar la propuesta en el canal institucional definido (formulario interno, mesa de proyectos, plataforma institucional o PMO)
+- Elaborar el Acta de Constitución del Proyecto, consolidando acuerdos iniciales y expectativas
 
-*   **Obligatoriedad:** Inversiones TIC sobre umbral DIPRES requieren proceso EVALTIC.
-*   **Sincronización:** Presentación el año anterior según Guía Técnica EVALTIC.
-*   **Referencia:** `urn:tde:kb:evaltic` (Lineamientos de inversión y gasto digital).
+Entregables:
+- Acta de Constitución del Proyecto (objetivos, alcance, recursos, partes interesadas, gobernanza, criterios de éxito)
+- Registro de interesados (stakeholders)
 
-## Fase 2: Planificación
+**Proyectos TIC con financiamiento:** toda inversión en TIC que supere el monto mínimo establecido por DIPRES debe gestionarse a través del proceso EVALTIC; los proyectos deben presentarse el año anterior bajo los lineamientos de la Guía Técnica EVALTIC (`urn:tde:kb:guia-evaltic`).
 
-*   **Acciones:**
-    *   Desarrollar Plan de Gestión integral y subplanes.
-    *   Definir alcance detallado y construir EDT (Estructura de Desglose de Trabajo).
-    *   Elaborar cronograma, presupuesto y plan de comunicaciones.
-*   **Productos:**
-    *   Líneas base de alcance, tiempo y costo.
-    *   Registro de Riesgos.
-    *   Plan de Comunicaciones.
-*   **Referencia Técnica:** Documento N° 70 CAIGG (Gestión de riesgos sector público).
+## Fase 2 — Planificación
 
-## Gestión de Riesgos
+Objetivo: establecer el curso de acción para cumplir los objetivos del proyecto.
 
-*   **Naturaleza:** Proceso continuo y transversal a todas las fases.
-*   **Análisis:** Evaluación cualitativa de probabilidad e impacto mediante matrices.
-*   **Mitigación:** Definición de respuestas ante amenazas y monitoreo de riesgos emergentes.
-*   **Estándar:** CAIGG - Documento Técnico N° 70 Versión 0.3.
+Actividades:
+- Desarrollar el plan de gestión del proyecto y sus subplanes
+- Definir el alcance detallado del proyecto
+- Construir la Estructura de Desglose de Trabajo (EDT)
+- Desarrollar el cronograma del proyecto
+- Estimar y planificar costos
+- Identificar y evaluar riesgos (análisis cualitativo con matrices de probabilidad e impacto)
+- Diseñar el plan de comunicaciones
 
-## Fase 3: Ejecución
+Entregables: plan de gestión del proyecto, EDT, cronograma, presupuesto, registro de riesgos, plan de comunicaciones.
 
-*   **Acciones:**
-    *   Dirigir trabajo técnico y coordinar equipo mediante reuniones periódicas.
-    *   Monitorear desempeño vs planificado (KPIs).
-    *   Gestionar control de cambios, incidentes y calidad de entregables.
-    *   Administrar proveedores y adquisiciones.
-*   **Productos:**
-    *   Entregables técnicos del proyecto.
-    *   Informes de avance y desempeño.
-    *   Solicitudes de cambio aprobadas/rechazadas.
+Referencia para gestión de riesgos: Documento Técnico N° 70 del CAIGG (Consejo de Auditoría Interna General de Gobierno) sobre gestión de riesgos en el sector público.
 
-## Fase 4: Cierre
+## Fase 3 — Ejecución
 
-*   **Acciones:**
-    *   Cerrar contratos y validar aceptación final de entregables.
-    *   Traspasar formalmente el producto a operación/mantenimiento.
-    *   Documentar lecciones aprendidas y liberar recursos.
-    *   Evaluar indicadores post-proyecto y satisfacción de stakeholders.
-*   **Productos:**
-    *   Informe Final del Proyecto.
-    *   Repositorio de Lecciones Aprendidas.
-    *   Acta de Cierre Administrativo.
+Objetivo: coordinar personas y recursos para llevar a cabo el plan de gestión.
 
-## Herramientas y Plantillas
+Actividades:
+- Dirigir y gestionar el trabajo del proyecto
+- Mantener reuniones breves y periódicas de coordinación con el equipo
+- Evaluar desempeño vs. lo planificado en cronograma y presupuesto
+- Aplicar procesos formales de control de cambios
+- Validar el alcance y monitorear riesgos y calidad
+- Asegurar la calidad de los entregables
+- Comunicar con las partes interesadas
+- Gestionar proveedores y contrataciones
 
-*   **Documentación Base:** Acta de constitución, Registro de interesados, Plan de gestión.
-*   **Gestión Operativa:** Matriz EDT, Cronograma (Gantt), Matriz de Riesgos.
-*   **Reportabilidad:** Informes de avance, Tablero de KPIs, Informe final.
-*   **Adaptabilidad:** OAEs deben personalizar plantillas según madurez organizacional.
+Entregables: entregables del proyecto, informes de avance y desempeño, solicitudes de cambio y actualizaciones del plan, registros de incidencias.
 
-## Lineamientos de Implementación
+## Fase 4 — Cierre y Mejora
 
-*   **Estrategia:** Adopción gradual e incremental con gestión del cambio.
-*   **Factores Críticos:**
-    *   Compromiso activo de alta dirección.
-    *   Capacitación continua de equipos y PMO.
-    *   Ejecución de proyectos piloto antes del escalamiento masivo.
-    *   Mejora continua basada en evaluación de resultados reales.
+Objetivo: finalizar formalmente todas las actividades del proyecto o fase y capitalizar aprendizajes.
 
-## Glosario
+Actividades:
+- Cerrar contratos con proveedores
+- Validar y aceptar entregables
+- Liberar recursos del proyecto
+- Documentar lecciones aprendidas
+- Entregar formalmente a operación o mantenimiento
+- Realizar monitoreo post-proyecto; recoger retroalimentación y revisar indicadores
+- Identificar oportunidades de mejora y, cuando corresponda, definir nuevos proyectos
 
-| Término | Contexto TDE |
-| :--- | :--- |
-| **Proyecto TIC** | Soluciones de software, infraestructura, datos o servicios digitales. |
-| **PMO** | Unidad de estandarización y soporte técnico-metodológico. |
-| **Servicios Digitales** | Prestaciones del Estado provistas mediante interfaces digitales. |
-| **Plataforma** | Base tecnológica para despliegue de múltiples servicios. |
+Entregables: informe final del proyecto, registro de lecciones aprendidas, cierre administrativo y contractual.
 
-## Referencias Normativas
+## Lineamientos para la Implementación
 
-*   Ley N° 21.180 sobre Transformación Digital del Estado.
-*   Estrategia de Gobierno Digital 2030 (Chile).
-*   Marco EVALTIC (Secretaría de Gobierno Digital).
-*   Documento Técnico N° 70 CAIGG (Gestión de Riesgos).
-*   Estándares PMI (Project Management Institute) y Lineamientos OCDE.
+- Asegurar compromiso activo de la alta dirección
+- Capacitar a los equipos de proyecto en la metodología
+- Ajustar la metodología al contexto específico de la organización
+- Designar y fortalecer una PMO con personal capacitado
+- Realizar proyectos piloto antes de escalar la metodología
+- Definir KPIs y mecanismos de monitoreo y evaluación
+- Aplicar mejora continua tras cada proyecto ejecutado
+
+## Plantillas Disponibles
+
+Formatos para registro y documentación por fase (personalizables según madurez y tamaño del OAE):
+- Acta de constitución del proyecto
+- Registro de interesados
+- Plan de gestión del proyecto y subplanes
+- Matriz EDT y cronograma
+- Registro y matriz de riesgos
+- Plan de comunicaciones
+- Informes de avance y desempeño
+- KPIs de proyectos
+- Informe final del proyecto
+
+## Referencias
+
+- Project Management Institute (PMI) — buenas prácticas en gestión de proyectos
+- OCDE — lineamientos en gobernanza, gestión pública y transformación digital
+- Ley N° 21.180 sobre Transformación Digital del Estado
+- Estrategia de Gobierno Digital 2030
+- Marco EVALTIC para inversiones y gasto en gobierno digital (`urn:tde:kb:guia-evaltic`)
+- CAIGG — Documento Técnico N° 70 sobre gestión de riesgos en el sector público

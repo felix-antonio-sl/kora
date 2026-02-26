@@ -22,8 +22,7 @@ lang: es
 
 # Indicadores regionales y comunales región de Ñuble
 
-- Actualización BCN:
-- Junio 2025.
+- Actualización BCN: Junio 2025.
 
 
 ## Indicadores Demográficos

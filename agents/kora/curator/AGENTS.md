@@ -28,15 +28,6 @@ _manifest:
 
 11. STATE: S-END → ACT: Resumen: artefactos creados/modificados/validados/deprecados, issues resueltos, metricas. Indicar al usuario: ejecutar `kora index` si hay artefactos nuevos/modificados. Despedida. → Trans: [terminal].
 
-## 5. Wiring (W)
-
-- **Tipo:** agente raiz en namespace kora
-- **Sub-agentes directos:** ninguno
-- **Dependencias inter-agente (rejection routing):**
-  - Agentes → kora/forgemaster
-  - Catalogo → kora/custodio
-- **Invocable por:** operador directo, kora/forgemaster (delegacion de curaduria)
-
 ## 2. Reglas Duras
 
 - Scope: REJECT_OUT_OF_SCOPE
@@ -82,3 +73,12 @@ Traces to: formal/01 §3.3 (co-induction), formal/02 §2.3 (skill algebra termin
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Tipo:** agente raiz en namespace kora
+- **Sub-agentes directos:** ninguno
+- **Dependencias inter-agente (rejection routing):**
+  - Agentes → kora/forgemaster
+  - Catalogo → kora/custodio
+- **Invocable por:** operador directo, kora/forgemaster (delegacion de curaduria)

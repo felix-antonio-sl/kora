@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -17,314 +17,203 @@ tags:
 lang: es
 ---
 
-# D07: Gestión de Personas (RRHH)
+# BPMN D07: Gestión de Personas (RRHH)
 
-## Resumen del Dominio
-- **Identificador**: `DOM-RRHH`
-- **Nivel de Criticidad**: 🟠 Alta
-- **Responsable**: Área de Gestión de Personas
-- **Alcance**: 7 procesos principales, ~20 subprocesos
-- **Referencia Técnica**: `urn:gn:kb:bpmn-index`
+## Metadatos del Dominio
 
-## Mapa General del Dominio
-```mermaid
-flowchart LR
-    subgraph CICLO_VIDA["👤 Ciclo de Vida del Funcionario"]
-        P1["P1: Ingreso y<br/>Contratación"]
-        P2["P2: Inducción"]
-        P3["P3: Remuneraciones"]
-        P4["P4: Tiempo y<br/>Ausentismo"]
-        P5["P5: Desarrollo y<br/>Capacitación"]
-        P6["P6: Bienestar"]
-        P7["P7: Egreso"]
-    end
+| Atributo | Valor |
+| :--- | :--- |
+| ID | DOM-RRHH |
+| Criticidad | Alta |
+| Dueño | Área de Gestión de Personas |
+| Procesos | 7 (P1–P7) |
+| Subprocesos | ~20 |
 
-    P1 --> P2 --> P3
-    P3 --> P4
-    P3 --> P5
-    P3 --> P6
-    P4 & P5 & P6 --> P7
+## Mapa General: Ciclo de Vida del Funcionario
 
-    style P1 fill:#4CAF50,color:#fff
-    style P3 fill:#2196F3,color:#fff
-    style P7 fill:#f44336,color:#fff
-```
+P1 Ingreso y Contratación → P2 Inducción → P3 Remuneraciones (núcleo transversal) → P4 Tiempo y Ausentismo / P5 Desarrollo y Capacitación / P6 Bienestar → P7 Egreso.
 
 ## P1: Ingreso y Contratación
-- **ID**: `BPMN-GN-RRHH-INGRESO-01`
-- **Sistemas Operativos**: SIGPER, SIAPER
-- **Flujo de Proceso**:
-```mermaid
-flowchart TD
-    subgraph RECLUTAMIENTO["📋 Reclutamiento"]
-        A["Identificar vacante"]
-        B["Elaborar perfil<br/>de cargo"]
-        C["Publicar llamado:<br/>• Empleo Público<br/>• GORE web"]
-        D["Recepción de<br/>postulaciones"]
-    end
 
-    subgraph SELECCION["🔍 Selección"]
-        E["Filtro curricular"]
-        F["Evaluación técnica/<br/>psicológica"]
-        G["Entrevista Comisión"]
-        H["Propuesta de<br/>terna"]
-        I["Gobernador/a<br/>decide"]
-    end
-
-    subgraph CONTRATACION["✍️ Contratación"]
-        J["Oferta formal"]
-        K["Aceptación candidato"]
-        L["Resolución de<br/>nombramiento"]
-        M["Alta en SIGPER<br/>y SIAPER"]
-        N["Firma contrato/<br/>decreto"]
-    end
-
-    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K --> L --> M --> N
-
-    style N fill:#4CAF50,color:#fff
-```
+**Sistemas:** SIGPER, SIAPER.
 
 ### Tipos de Contrato
-| Categoría | Descripción Técnica |
+
+| Tipo | Descripción |
 | :--- | :--- |
-| **Planta** | Cargo titular, carrera funcionaria, estabilidad legal |
-| **Contrata** | Empleo transitorio, renovación anual automática/sujeta a evaluación |
-| **Honorarios** | Prestación de servicios específicos, sin vínculo de subordinación laboral directa |
+| Planta | Cargo titular, carrera funcionaria |
+| Contrata | Transitorio, renovación anual |
+| Honorarios | Servicios específicos, sin vínculo laboral |
+
+### Flujo
+
+**Reclutamiento:**
+1. Identificar vacante → elaborar perfil de cargo
+2. Publicar llamado en Empleo Público y web GORE
+3. Recepción de postulaciones
+
+**Selección:**
+4. Filtro curricular → evaluación técnica/psicológica
+5. Entrevista Comisión → propuesta de terna
+6. Gobernador/a decide
+
+**Contratación:**
+7. Oferta formal → aceptación del candidato
+8. Resolución de nombramiento → alta en SIGPER y SIAPER
+9. Firma contrato/decreto
 
 ## P2: Inducción e Integración
-- **ID**: `BPMN-GN-RRHH-INDUCCION-01`
-- **Número de Fases**: 11
-- **Flujo de Integración**:
-```mermaid
-flowchart TD
-    A["Alta del<br/>funcionario"] --> B["Bienvenida<br/>institucional"]
-    B --> C["Entrega de<br/>credencial y accesos"]
-    C --> D["Presentación en<br/>división/área"]
-    D --> E["Asignar mentor/<br/>agente inductor"]
-    E --> F["Recorrido<br/>instalaciones"]
-    F --> G["Capacitación:<br/>• Misión/visión<br/>• Organigrama<br/>• Sistemas<br/>• Normativa"]
-    G --> H["Entrega de<br/>documentos clave"]
-    H --> I["Configuración<br/>puesto trabajo"]
-    I --> J["Seguimiento<br/>30-60-90 días"]
-    J --> K["Evaluación<br/>período prueba"]
 
-    style K fill:#4CAF50,color:#fff
-```
+**Fases:** 11.
+
+1. Bienvenida institucional → entrega de credencial y accesos
+2. Presentación en división/área → asignar mentor/agente inductor
+3. Recorrido instalaciones
+4. Capacitación: misión/visión, organigrama, sistemas, normativa
+5. Entrega de documentos clave → configuración puesto de trabajo
+6. Seguimiento 30-60-90 días → evaluación período de prueba
 
 ## P3: Remuneraciones y Compensaciones
-- **ID**: `BPMN-GN-RRHH-REMUNERACIONES-01`
-- **Ecosistema Digital**: SIGPER, PREVIRED, SIGFE
-- **Marco Referencial**: Escala Única de Sueldos (EUS)
-- **Ciclo de Pago Mensual**:
-```mermaid
-flowchart TD
-    A["Inicio mes"] --> B["Recopilar novedades:<br/>• Licencias<br/>• Horas extra<br/>• Descuentos"]
-    B --> C["Calcular remuneración<br/>bruta"]
-    C --> D["Aplicar descuentos:<br/>• Previsión<br/>• Salud<br/>• Impuestos<br/>• Otros"]
-    D --> E["Generar liquidación"]
-    E --> F["Revisión y<br/>validación"]
-    F --> G["Autorización<br/>pago"]
-    G --> H["Pagar PREVIRED<br/>(cotizaciones)"]
-    H --> I["Transferir a<br/>cuentas funcionarios"]
-    I --> J["Contabilizar<br/>en SIGFE"]
-    J --> K["Archivar<br/>liquidaciones"]
 
-    style I fill:#4CAF50,color:#fff
-```
+**Sistemas:** SIGPER, PREVIRED, SIGFE.
+**Base:** Escala Única de Sueldos (EUS).
 
-### Estructura de Remuneración
-| Componente | Definición |
+### Componentes de la Remuneración
+
+| Componente | Descripción |
 | :--- | :--- |
-| **Sueldo Base** | Definido por grado en Escala Única de Sueldos (EUS) |
-| **Asignaciones** | Bonificaciones por zona, antigüedad, título profesional |
-| **Bonificaciones** | Cumplimiento PMG, incentivos de productividad |
-| **Horas Extraordinarias** | Compensación por tiempo adicional según tope legal |
+| Sueldo base | Según grado EUS |
+| Asignaciones | Zona, antigüedad, profesional |
+| Bonos | PMG, productividad, otros |
+| Horas extra | Según normativa |
+
+### Flujo Mensual
+
+1. Recopilar novedades: licencias, horas extra, descuentos
+2. Calcular remuneración bruta
+3. Aplicar descuentos: previsión, salud, impuestos, otros
+4. Generar liquidación → revisión y validación → autorización de pago
+5. Pagar PREVIRED (cotizaciones)
+6. Transferir a cuentas de funcionarios
+7. Contabilizar en SIGFE → archivar liquidaciones
 
 ## P4: Tiempo, Asistencia y Ausentismo
-- **ID**: `BPMN-GN-RRHH-TIEMPO-AUSENTISMO-01`
-- **Componentes de Control**:
-```mermaid
-flowchart TD
-    subgraph REGISTRO["📋 Registro"]
-        A["Funcionario marca<br/>entrada/salida"]
-        B["Sistema registra<br/>en reloj control"]
-        C["Generar reporte<br/>diario"]
-    end
 
-    subgraph PERMISOS["📝 Permisos"]
-        D["Solicitar permiso:<br/>• Administrativo<br/>• Particular"]
-        E["Jefatura aprueba/<br/>rechaza"]
-        F["Registrar en<br/>sistema"]
-    end
+### Registro de Asistencia
 
-    subgraph LICENCIAS["🏥 Licencias"]
-        G["Funcionario presenta<br/>licencia médica"]
-        H["RRHH recepciona<br/>y valida"]
-        I["Enviar a Isapre/<br/>COMPIN"]
-        J["Resolución:<br/>• Aprobada<br/>• Rechazada"]
-        K["Ajustar<br/>remuneración"]
-    end
+1. Funcionario marca entrada/salida → sistema registra en reloj control
+2. Generar reporte diario
 
-    subgraph FERIADOS["🌴 Feriados"]
-        L["Solicitar feriado<br/>legal/progresivo"]
-        M["Verificar saldo<br/>disponible"]
-        N["Jefatura autoriza"]
-        O["Descontar días"]
-    end
+### Permisos
 
-    A --> B --> C
-    D --> E --> F
-    G --> H --> I --> J --> K
-    L --> M --> N --> O
+1. Solicitar permiso (administrativo o particular)
+2. Jefatura aprueba/rechaza → registrar en sistema
 
-    style K fill:#FF9800,color:#fff
-```
+### Licencias Médicas
+
+1. Funcionario presenta licencia médica → RRHH recepciona y valida
+2. Enviar a Isapre/COMPIN → resolución (aprobada o rechazada)
+3. Ajustar remuneración
+
+### Feriados
+
+1. Solicitar feriado legal/progresivo → verificar saldo disponible
+2. Jefatura autoriza → descontar días
 
 ## P5: Desarrollo Organizacional y Capacitación
-- **ID**: `BPMN-GN-RRHH-DESARROLLO-ORG-01`
-- **Ciclo de Gestión del Talento**:
-```mermaid
-flowchart TD
-    subgraph DNC["📊 Detección de Necesidades"]
-        A["Aplicar encuesta DNC"]
-        B["Análisis de brechas"]
-        C["Priorizar necesidades"]
-    end
 
-    subgraph PAC_CAP["📋 Plan de Capacitación"]
-        D["Elaborar PAC anual"]
-        E["Comité Bipartito<br/>aprueba"]
-        F["Asignar presupuesto"]
-    end
+### Flujo
 
-    subgraph EJECUCION["🎓 Ejecución"]
-        G["Convocar a<br/>funcionarios"]
-        H["Ejecutar<br/>capacitaciones"]
-        I["Evaluar aprendizaje"]
-        J["Certificar"]
-    end
+**Detección de Necesidades (DNC):**
+1. Aplicar encuesta DNC → análisis de brechas → priorizar necesidades
 
-    subgraph SEGUIMIENTO["📈 Seguimiento"]
-        K["Medir transferencia<br/>al puesto"]
-        L["Evaluar impacto"]
-        M["Retroalimentar<br/>proximo ciclo"]
-    end
+**Plan de Capacitación (PAC anual):**
+2. Elaborar PAC → Comité Bipartito aprueba → asignar presupuesto
 
-    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K --> L --> M
+**Ejecución:**
+3. Convocar funcionarios → ejecutar capacitaciones → evaluar aprendizaje → certificar
 
-    style J fill:#4CAF50,color:#fff
-```
+**Seguimiento:**
+4. Medir transferencia al puesto → evaluar impacto → retroalimentar próximo ciclo
 
-### Proceso de Calificaciones
-```mermaid
-flowchart TD
-    A["Periodo calificatorio<br/>(sep-ago)"] --> B["Precalificación<br/>por jefatura"]
-    B --> C["Notificación a<br/>funcionario"]
-    C --> D{"¿Apelación?"}
-    D -->|"No"| E["Junta Calificadora<br/>define nota final"]
-    D -->|"Sí"| F["Junta resuelve<br/>apelación"]
-    F --> E
-    E --> G["Listas:<br/>1-2-3-4 o Eliminación"]
-    G --> H["Registrar en<br/>hoja de vida"]
+### Calificaciones
 
-    style G fill:#9C27B0,color:#fff
-```
+**Período:** Septiembre–Agosto.
+
+1. Precalificación por jefatura → notificación al funcionario
+2. ¿Apelación?
+   - No → Junta Calificadora define nota final
+   - Sí → Junta resuelve apelación → define nota final
+3. Listas: 1 (Distinción) / 2 (Buena) / 3 (Condicional) / 4 (Regular) / Eliminación
+4. Registrar en hoja de vida
 
 ## P6: Bienestar y Calidad de Vida
-- **ID**: `BPMN-GN-RRHH-BIENESTAR-01`
-- **Servicios y Beneficios**:
-```mermaid
-flowchart TD
-    subgraph AFILIACION["📋 Afiliación"]
-        A["Funcionario ingresa"]
-        B["Invitar a<br/>Servicio de Bienestar"]
-        C["Aceptar y afiliar"]
-        D["Descuento mensual<br/>por planilla"]
-    end
 
-    subgraph PRESTACIONES["🎁 Prestaciones"]
-        E["Solicitar beneficio:<br/>• Medico<br/>• Económico<br/>• Préstamo<br/>• Convenio"]
-        F["Unidad Bienestar<br/>evalúa"]
-        G["Consejo Administrativo<br/>aprueba si requiere"]
-        H["Otorgar beneficio"]
-    end
+### Afiliación
 
-    subgraph ACTIVIDADES["🎉 Actividades"]
-        I["Planificar eventos:<br/>• Deportivos<br/>• Recreativos<br/>• Culturales"]
-        J["Ejecutar actividad"]
-        K["Evaluar satisfacción"]
-    end
+1. Funcionario ingresa → invitar al Servicio de Bienestar
+2. Aceptar y afiliar → descuento mensual por planilla
 
-    A --> B --> C --> D
-    E --> F --> G --> H
-    I --> J --> K
+### Prestaciones
 
-    style H fill:#4CAF50,color:#fff
-```
+1. Solicitar beneficio: médico, económico, préstamo, convenio
+2. Unidad de Bienestar evalúa → Consejo Administrativo aprueba si requiere → otorgar beneficio
 
-### Gestión de Seguridad Laboral
-```mermaid
-flowchart TD
-    A["Identificar riesgos<br/>laborales"] --> B["Elaborar matriz<br/>de riesgos"]
-    B --> C["Medidas preventivas"]
-    C --> D["CPHS monitorea"]
-    D --> E{"¿Accidente?"}
-    E -->|"Sí"| F["DIAT/DIEP"]
-    E -->|"No"| G["Seguir monitoreando"]
-    F --> H["Mutual investiga"]
-    H --> I["Medidas correctivas"]
+### Actividades
 
-    style F fill:#f44336,color:#fff
-```
+1. Planificar eventos: deportivos, recreativos, culturales
+2. Ejecutar actividad → evaluar satisfacción
+
+### Prevención de Riesgos
+
+1. Identificar riesgos laborales → elaborar matriz de riesgos → medidas preventivas
+2. CPHS monitorea → ¿Accidente?
+   - Sí → DIAT/DIEP → Mutual investiga → medidas correctivas
+   - No → continuar monitoreo
 
 ## P7: Egreso y Desvinculación
-- **ID**: `BPMN-GN-RRHH-EGRESO-01`
-- **Causales y Protocolos**:
-```mermaid
-flowchart TD
-    A["Egreso de<br/>funcionario"] --> B{"Causal"}
-    
-    B -->|"Voluntario"| C["Renuncia<br/>voluntaria"]
-    B -->|"Jubilación"| D["Retiro por<br/>pensión"]
-    B -->|"Término contrata"| E["No renovación<br/>31/12"]
-    B -->|"Calificación"| F["Eliminación<br/>por nota"]
-    B -->|"Disciplinario"| G["Destitución"]
-    B -->|"Salud"| H["Incompatibilidad<br/>de salud"]
-    
-    C & D & E & F & G & H --> I["Procedimiento<br/>de cierre"]
 
-    style I fill:#607D8B,color:#fff
-```
+### Causales de Egreso
 
-### Protocolo de Cierre Administrativo
-```mermaid
-flowchart TD
-    A["Resolución de<br/>cese"] --> B["Entrega de cargo"]
-    B --> C["Devolución de:<br/>• Credencial<br/>• Equipos<br/>• Documentos"]
-    C --> D["Cierre de accesos:<br/>• TI<br/>• Edificio"]
-    D --> E["Certificado de<br/>servicios"]
-    E --> F["Liquidación final:<br/>• Feriados pendientes<br/>• Bonos proporcionales"]
-    F --> G["Baja en SIGPER<br/>y SIAPER"]
-
-    style G fill:#f44336,color:#fff
-```
-
-## Infraestructura de Sistemas
-| Sistema | Funcionalidad Clave |
+| Causal | Tipo |
 | :--- | :--- |
-| `SYS-SIGPER` | Motor de gestión de personas y cálculo de remuneraciones |
-| `SYS-SIAPER` | Registro y control de toma de razón ante Contraloría |
-| `SYS-PREVIRED` | Gestión electrónica de cotizaciones previsionales |
-| `SYS-SIGFE` | Registro contable y presupuestario de gastos de personal |
+| Renuncia voluntaria | Voluntario |
+| Retiro por pensión | Jubilación |
+| No renovación 31/12 | Término contrata |
+| Eliminación por nota | Calificación lista 4 |
+| Destitución | Disciplinario |
+| Incompatibilidad de salud | Salud |
 
-## Marco Normativo
-| Instrumento | Alcance y Aplicación |
+### Procedimiento de Cierre
+
+1. Resolución de cese → entrega de cargo
+2. Devolución: credencial, equipos, documentos
+3. Cierre de accesos: TI, edificio
+4. Certificado de servicios
+5. Liquidación final: feriados pendientes, bonos proporcionales
+6. Baja en SIGPER y SIAPER
+
+## Sistemas Involucrados
+
+| Sistema | Función |
 | :--- | :--- |
-| **Ley 18.834** | Estatuto Administrativo (Regimen de planta y contrata) |
-| **Ley 18.575** | Ley Orgánica Constitucional de Bases de la Administración |
-| **Ley 20.880** | Probidad en la Función Pública y Declaración de Intereses |
-| **Código del Trabajo** | Aplicación residual para prestadores de servicios a Honorarios |
+| SYS-SIGPER | Gestión de personas, remuneraciones |
+| SYS-SIAPER | Control personal del Estado |
+| SYS-PREVIRED | Cotizaciones previsionales |
+| SYS-SIGFE | Contabilización |
 
-## Interdependencias (Vínculos RAG)
-- **D02 Ciclo Presupuestario**: Gestión del Subtítulo 21 (Remuneraciones).
-- **D01 Actos Administrativos**: Formalización de Resoluciones de Nombramiento.
+## Normativa Aplicable
+
+| Norma | Alcance |
+| :--- | :--- |
+| Ley 18.834 | Estatuto Administrativo |
+| Ley 18.575 | Bases Administración del Estado |
+| Ley 20.880 | Probidad, declaraciones |
+| Código del Trabajo | Honorarios |
+
+## Referencias Cruzadas
+
+| Dominio | Vínculo |
+| :--- | :--- |
+| D02 Ciclo Presupuestario | Subtítulo 21, Remuneraciones |
+| D01 Actos Administrativos | Resoluciones de nombramiento |

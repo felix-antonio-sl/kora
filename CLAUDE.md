@@ -29,11 +29,10 @@ kora/
   knowledge/                    # KBs organized by namespace (gn, fxsl, kora, tde, legal, gov, orko, mgmt)
     kora/categorical-foundations/  # Formal Layer: 6 documents (00-05) with categorical math backing the specs
   agents/                       # Agent workspaces organized by namespace
-  catalog/                      # Master URN registry (source of truth)
-  skills/                       # Skills federation (shared across agents)
+  catalog/                      # Master URN registry — catalog_master_kora.yml (~2500 lines, auto-generated)
   inbox/ → source/ → drafts/ → knowledge/   # Intake pipeline for new artifacts
-  scripts/                      # CLI tools
-  docs/                         # Plans and documentation
+  scripts/                      # CLI tools (Python 3 + PyYAML)
+  docs/                         # Session handoffs, plans, and reports
 ```
 
 ### Governance Hierarchy (precedence, highest to lowest)
@@ -112,8 +111,10 @@ Catalog (`catalog/catalog_master_kora.yml`) is the source of truth. Run `scripts
 | Namespace | Domain | Notable agents |
 |-----------|--------|----------------|
 | **kora** | Framework governance | forgemaster (agent lifecycle), curator (artifact lifecycle), clawmaster (OpenClaw specialist) |
-| **fxsl** | Personal/technical | arquitecto-categorico, ontologista-gist, ingeniero-software-composicional |
-| **gn** | GORE Ñuble regional gov | goreologo, ingeniero-goreos, erp-gore |
+| **fxsl** | Personal/technical | arquitecto-categorico, ontologista-gist, ingeniero-software-composicional, sentinel |
+| **gn** | GORE Ñuble regional gov | goreologo, ingeniero-goreos, erp-gore, goreologo, dgi-virtual, digitrans-gore |
+| **tde** | Transformación Digital Estado | digitrans |
+| **orko** | Arquitectura organizacional | arquitecto-orko |
 | **korvo** | Personal assistant | korax (PCA v3.0 cognitive exoskeleton) |
 | **ops** | DevOps swarm | integrador, verificador, security, orquestador-swarm, deployer, observer |
 
@@ -153,9 +154,9 @@ Script Protocol: all executable scripts in Skills must be Python 3 with JSON I/O
 
 ## Migration Status
 
-Completed: Phase 0 (Genesis) → Phase 1 (Source Mapping) → Phase 2 (Koraficación) → Phase 4 (Agentificación) → Phase Audit (Coherencia) → Phase I (Ingesta pipeline + Xanpan corpus) → **Phase S (Spec Rewrite v7.0.0)**
+Completed: Phase 0 (Genesis) → Phase 1 (Source Mapping) → Phase 2 (Koraficación) → Phase 4 (Agentificación) → Phase Audit (Coherencia) → Phase I (Ingesta pipeline + Xanpan corpus) → **Phase S (Spec Rewrite v7.0.0)** → wikiguias_corpus koraficación (41 artefactos `tde/`)
 
-Pending: **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival
+Pending: **Phase F** (Governance): KODA formal deprecation, catalog regeneration, source repo archival. Agentes con URNs `tde:kb:` rotos post-rekoraficación (ver `kora health`).
 
 ## Key Conventions
 

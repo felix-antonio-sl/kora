@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -17,142 +17,133 @@ tags:
 lang: es
 ---
 
-# D06: Gestión de Flota Vehicular
+# BPMN D06: Gestión de Flota Vehicular
 
 ## Metadatos del Dominio
 
-| Campo | Detalle |
-| :--- | :--- |
-| **ID** | `DOM-FLOTA` |
-| **Criticidad** | 🟡 Media |
-| **Responsable** | Jefe Servicios Generales |
-| **Alcance** | 1 Proceso, 6 Subprocesos |
-
-## Mapa General del Dominio
-
-```mermaid
-flowchart LR
-    subgraph CICLO_FLOTA["🚗 Gestión de Flota"]
-        S1["Registro<br/>vehículos"]
-        S2["Asignación<br/>y uso"]
-        S3["Bitácora<br/>de viaje"]
-        S4["Combustible<br/>y kilometraje"]
-        S5["Mantención<br/>vehicular"]
-        S6["Siniestros y<br/>accidentes"]
-    end
-
-    S1 --> S2 --> S3 --> S4
-    S4 --> S5
-    S2 --> S6
-```
-
-## P1: Gestión de Flota Vehicular
-
 | Atributo | Valor |
 | :--- | :--- |
-| **ID** | `BPMN-GN-FLOTA-VEHICULAR-01` |
-| **Marco Legal** | D.L. 799 (Restricción de uso) |
+| ID | DOM-FLOTA |
+| Criticidad | Media |
+| Dueño | Jefe Servicios Generales |
+| Procesos | 1 proceso, 6 subprocesos |
+| Normativa | D.L. 799 (restricción uso vehículos fiscales) |
 
-### S1: Registro de Vehículos y Conductores
+## Mapa General
 
-#### Registro de Vehículos
-- **Adquisición**: Ingreso inicial.
-- **Sistemas**: Registro en sistema interno.
-- **Atributos**: Patente, modelo, año, tipo combustible.
-- **Asignación**: Definición de división/área.
-- **Legal**: Inscripción en Registro Automotor.
+S1 Registro de vehículos y conductores → S2 Solicitud y asignación → S3 Bitácora de viaje → S4 Gestión de combustible → S5 Mantención vehicular; S2 también conecta con S6 Siniestros y accidentes.
 
-#### Registro de Conductores
-- **Solicitud**: Petición de autorización por funcionario.
-- **Validación**: Licencia vigente, clase apropiada, hoja de vida.
-- **Aprobación**: Autorización Jefe Servicios Generales.
-- **Formalización**: Registro en nómina de conductores.
+## S1: Registro de Vehículos y Conductores
 
-### S2: Solicitud y Asignación
-1. **Solicitud**: Fecha/hora, destino, motivo, pasajeros.
-2. **Autorización**: Validación de jefatura directa.
-3. **Disponibilidad**: Verificación por Servicios Generales.
-4. **Asignación**: Entrega de vehículo, conductor (si aplica), llaves y bitácora.
-5. **Contingencia**: Búsqueda de alternativa o reprogramación si no hay disponibilidad.
+### Registro de Vehículos
 
-### S3: Bitácora de Viaje
-- **Salida**: Registro fecha/hora, Km inicial, estado combustible.
-- **Ejecución**: Realización del viaje programado.
-- **Retorno**: Registro fecha/hora llegada, Km final, observaciones.
-- **Cierre**: Firma de bitácora y devolución de llaves.
+1. Adquisición de vehículo → registrar en sistema interno
+2. Datos requeridos: patente, modelo, año, tipo de combustible
+3. Asignar a división/área → inscribir en Registro Automotor
 
-### S4: Gestión de Combustible
-- **Requerimiento**: Solicitud de cupón/tarjeta por conductor.
-- **Autorización**: Visación Servicios Generales.
-- **Carga**: Registro de litros, monto y Km actual en estación.
-- **Rendición**: Devolución de cupón con factura.
-- **Control**: Consolidación mensual y análisis de rendimiento (Km/Lt).
+### Registro de Conductores
 
-### S5: Mantención Vehicular
+1. Funcionario solicita autorización
+2. Verificar: licencia vigente, clase apropiada, hoja de vida
+3. Autorización de Jefe de Servicios Generales
+4. Registrar en nómina de conductores habilitados
 
-#### Mantención Preventiva
-- **Programación**: Basada en Km o tiempo transcurrido.
-- **Alertas**: Notificación de mantención próxima.
-- **Ejecución**: Gestión con taller y registro en historial.
+## S2: Solicitud y Asignación
 
-#### Mantención Correctiva
-- **Detección**: Reporte de falla a Servicios Generales.
-- **Evaluación**: Definición entre taller interno o externo.
-- **Reparación**: Ejecución y certificación de operatividad.
+1. Funcionario ingresa solicitud: fecha/hora, destino, motivo, pasajeros
+2. Jefatura directa autoriza
+3. Servicios Generales verifica disponibilidad → ¿Disponible?
+   - Sí → asignar vehículo y conductor si aplica → entregar llaves y bitácora
+   - No → buscar alternativa o reprogramar
 
-#### Programa de Mantención
-| Tipo | Umbral | Acciones |
+## S3: Bitácora de Viaje
+
+**Al recibir el vehículo:**
+1. Registrar en bitácora: fecha/hora salida, km inicial, estado del combustible
+
+**Al regresar:**
+2. Registrar: fecha/hora llegada, km final, observaciones
+3. Firmar bitácora → devolver llaves a Servicios Generales
+
+## S4: Gestión de Combustible
+
+1. Conductor solicita cupón/tarjeta
+2. Servicios Generales autoriza
+3. Cargar combustible en estación → registrar: litros, monto, km actual
+4. Devolver cupón con factura
+5. Consolidar consumos mensuales → analizar rendimiento km/litro
+
+## S5: Mantención Vehicular
+
+### Mantención Preventiva
+
+1. Programar según km/tiempo → alertar próxima mantención
+2. Agendar con taller → ejecutar mantención → registrar en historial
+
+### Mantención Correctiva
+
+1. Detectar falla → reportar a Servicios Generales
+2. Evaluar: taller interno o taller externo → reparar → certificar OK para uso
+
+### Programa de Mantención
+
+| Tipo | Frecuencia | Acciones |
 | :--- | :--- | :--- |
-| **Básica** | 5.000 km | Cambio aceite, filtros |
-| **Intermedia** | 15.000 km | Frenos, neumáticos |
-| **Mayor** | 30.000 km | Revisión completa |
-| **Legal** | Anual | Revisión técnica, permiso circulación |
+| Básica | 5.000 km | Cambio aceite, filtros |
+| Intermedia | 15.000 km | Frenos, neumáticos |
+| Mayor | 30.000 km | Revisión completa |
+| Documentos | Anual | Revisión técnica, permiso de circulación |
 
-### S6: Siniestros y Accidentes
-1. **Inmediatez**: Medidas de seguridad del conductor.
-2. **Policial**: Llamado a Carabineros y obtención de constancia/parte.
-3. **Reporte**: Comunicación a Servicios Generales y levantamiento de acta.
-4. **Evaluación**: Análisis de daños propios y a terceros.
-5. **Seguros**: Activación de pólizas y seguimiento.
-6. **Resolución**: Determinación de responsabilidades administrativas/patrimoniales.
+## S6: Siniestros y Accidentes
 
-#### Contenido Acta de Siniestro
-- **Identificación**: Fecha, hora, lugar exacto.
-- **Personal**: Conductor y testigos.
-- **Detalle**: Circunstancias del accidente y descripción de daños.
-- **Respaldo**: Número de parte de Carabineros.
+1. Conductor toma medidas inmediatas → llamar a Carabineros → obtener constancia policial
+2. Reportar a Servicios Generales → levantar acta de siniestro
+3. ¿Daños a terceros?
+   - Sí → activar seguro y procedimiento → seguimiento aseguradora → resolución administrativa → determinar responsabilidades
+   - No → evaluar daños propios → cotizar reparación → resolución administrativa → determinar responsabilidades
+
+### Información del Acta de Siniestro
+
+| Dato | Descripción |
+| :--- | :--- |
+| Fecha y hora | Del accidente |
+| Lugar | Dirección exacta |
+| Conductor | Funcionario a cargo |
+| Descripción | Circunstancias |
+| Testigos | Identificación |
+| Daños | Propios y a terceros |
+| N° Parte | Carabineros |
 
 ## Restricciones Normativas (D.L. 799)
 
-| Restricción | Condición de Cumplimiento |
+| Restricción | Detalle |
 | :--- | :--- |
-| **Fines de semana** | Prohibido uso sin resolución/autorización especial. |
-| **Uso particular** | Prohibición absoluta. |
-| **Territorial** | Salidas fuera de la región requieren autorización expresa. |
-| **Horario** | Restringido a jornada laboral, salvo excepciones fundadas. |
+| Fines de semana | Prohibido sin autorización especial |
+| Uso particular | Prohibido |
+| Fuera de la región | Requiere autorización |
+| Horario | Jornada laboral (salvo excepciones) |
 
-> [!CAUTION]
-> El incumplimiento del D.L. 799 genera responsabilidad administrativa y patrimonial directa.
+Incumplimiento genera responsabilidad administrativa y patrimonial.
 
 ## Métricas de Control
 
-| Indicador | Método de Cálculo | Meta |
+| Indicador | Fórmula | Meta |
 | :--- | :--- | :--- |
-| **Rendimiento** | Kilómetros / Litros | > 10 km/lt |
-| **Cumplimiento Mantención** | (Mantenciones OK / Programadas) * 100 | > 95% |
-| **Accidentabilidad** | (Accidentes / Vehículos) * 100 | < 5% |
-| **Disponibilidad** | (Días operativos / Días totales) * 100 | > 90% |
+| Rendimiento combustible | Km / Litros | > 10 km/lt |
+| % Mantención cumplida | Mantenciones OK / Programadas | > 95% |
+| Tasa de accidentabilidad | Accidentes / Vehículos | < 5% |
+| Disponibilidad flota | Días operativos / Días totales | > 90% |
 
 ## Sistemas Involucrados
 
-| Código | Función |
+| Sistema | Función |
 | :--- | :--- |
-| `SYS-SIGAS` | Inventario centralizado de vehículos. |
-| `SISTEMA-FLOTA` | Registro de bitácoras, consumos y mantenciones. |
+| SYS-SIGAS | Inventario de vehículos |
+| Sistema interno de flota | Bitácoras, mantenciones |
 
 ## Referencias Cruzadas
 
-| Dominio | Relación |
+| Dominio | Vínculo |
 | :--- | :--- |
-| `D05 Inventarios y AF` | Gestión de vehículos como activos fijos institucionales. |
-| `D04 Compras` | Adquisición de vehículos y contratos de suministro (combustible/taller). |
+| D05 Inventarios y AF | Vehículos como activo fijo |
+| D04 Compras | Adquisición vehículos, combustible |

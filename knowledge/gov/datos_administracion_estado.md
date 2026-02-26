@@ -20,90 +20,105 @@ lang: es
 
 # Estrategia de Datos de la Administración del Estado
 
-## Contexto y Diagnóstico
+Fuente: WikiGuías SGD — `urn:gov:kb:datos-administracion-estado`
+Responsable: Secretaría de Gobierno Digital (SGD), Ministerio de Hacienda.
 
-| Categoría | Situación Actual | Impacto / Evidencia |
-| :--- | :--- | :--- |
-| **Relevancia** | TIC y datos como eje central de economía y gestión pública. | Líder regional (E-Government Survey 2024). Uso de ClaveÚnica, FirmaGob, RIS. |
-| **Problema** | Sector público no impulsado por datos; falta de apertura por defecto. | Menor proactividad; pérdida de eficiencia y ahorros por interoperabilidad. |
-| **Brechas Estructurales** | Silos de información; falta de gobernanza consolidada. | Fragmentación de sistemas; falta de responsables de calidad. |
-| **Brechas de Talento** | Escasez de profesionales TIC especializados en datos. | Disparidad marcada entre municipios grandes y rurales. |
-| **Brechas Tecnológicas** | Sistemas obsoletos; baja participación en Datos Abiertos. | Falta de arquitectura adecuada; bajo uso de IA e interoperabilidad. |
+## Contexto y Justificación
 
-## Visión y Objetivo 2030
+Chile lidera en transformación digital en América Latina (E-Government Survey ONU 2024, puesto 31 mundial; superado solo por Uruguay en la región). Plataformas existentes: ClaveÚnica, FirmaGob, SIMPLE, RIS, ChileAtiende.
 
-| Elemento | Definición |
-| :--- | :--- |
-| **Visión** | Administración del Estado 100% impulsada por datos, información y conocimiento. Líder OCDE y referente regional en gobernanza digital. |
-| **Objetivo** | Mejorar calidad de vida mediante uso estratégico de datos; servicios proactivos, eficientes, confiables y resilientes. |
+El Estado chileno aún no opera como sector público plenamente impulsado por datos ni abre sus datos por defecto a la ciudadanía. Consecuencias:
+- Menor capacidad para anticiparse y responder proactivamente a necesidades ciudadanas
+- Menor aprovechamiento de ahorros por sistemas interoperables (estudios Banco Mundial 2021 documentan ahorros globales significativos)
 
-## Eje 1: Ecosistema (Gestión y Gobernanza)
+Brechas estructurales identificadas en diagnóstico participativo:
 
-| Componente | Descripción |
-| :--- | :--- |
-| **Propósito** | Construir ecosistema multinivel e intersectorial con datos como activo estratégico. |
-| **Enfoque Ciudadano** | Gestión centrada en derechos y expectativas ciudadanas; órganos como fuentes confiables. |
-| **Coordinación Multinivel** | Flujos de intercambio optimizados con énfasis en gobiernos locales. |
-| **Coordinación Intersectorial** | Interoperabilidad e integración segura para políticas basadas en evidencia. |
+| Tipo | Brechas |
+|---|---|
+| Estructurales | Ausencia de gobernanza de datos consolidada para todo el Estado; falta de propósito, prioridades y responsables de calidad definidos; silos de información y fragmentación de sistemas |
+| Talento | Escasez de profesionales TIC especializados en datos; baja presencia de científicos/analistas de datos; diferencias marcadas entre municipios grandes y rurales |
+| Tecnología | Sistemas obsoletos; falta de infraestructura y arquitectura de datos adecuada; bajo uso de tecnologías avanzadas para interoperabilidad; baja participación en Portal de Datos Abiertos y en anonimización |
 
-#### Medidas Claves - Ecosistema
-*   Creación del Consejo Estratégico de Datos de la Administración del Estado.
-*   Designación de encargados de datos y grupos técnicos (CDO).
-*   Inventario de datos del Estado y normativas para datos maestros.
-*   Espacios de colaboración público-privada en datos.
+## Visión y Objetivo
 
-## Eje 2: Personas (Habilidades y Capacidades)
+Visión (2030): La Administración del Estado chileno estará completamente impulsada por datos, información y conocimiento, ofreciendo servicios públicos más proactivos, eficientes, seguros y confiables, consolidando a Chile como líder en uso estratégico de datos en la OCDE y referente regional en gobernanza digital.
 
-| Componente | Descripción |
-| :--- | :--- |
-| **Propósito** | Desarrollar talento digital para gestión de datos, liderazgo de cambios e infraestructura. |
-| **Talento Digital** | Programas permanentes de aprendizaje y especialización en competencias de datos. |
-| **Gestión del Cambio** | Adaptación a ciberseguridad, privacidad y nuevas normativas de gobierno digital. |
-| **Autonomía Funcionaria** | Empoderamiento para uso autónomo de herramientas digitales y reducción de brechas. |
+Objetivo: Transformar la Administración del Estado para que, mediante uso estratégico de datos, información y conocimiento, mejore la calidad de vida de las personas y responda de forma eficiente, confiable, resiliente y proactiva a necesidades y desafíos del país, generando valor público.
 
-#### Medidas Claves - Personas
-*   Certificaciones en gobierno de datos, IA, interoperabilidad y datos abiertos.
-*   Apoyo al reclutamiento de perfiles técnicos de datos en instituciones.
-*   Programas de alfabetización digital en niveles locales y centrales.
+## Ejes Estratégicos
 
-## Eje 3: Tecnología (Infraestructura Pública Digital)
+La estrategia se organiza en tres ejes transversales que funcionan como habilitantes.
 
-| Componente | Descripción |
-| :--- | :--- |
-| **Propósito** | Fortalecer IPD para gestionar, procesar y compartir información de forma segura. |
-| **Interoperabilidad** | Cumplimiento del principio "sólo una vez" mediante servicios compartidos. |
-| **Datos Abiertos** | Potenciar portal para transparencia, innovación y creación de servicios derivados. |
-| **Integración de Datos** | Decisiones basadas en evidencia con datos actualizados y confiables. |
-| **Innovación e IA** | Soporte para IA con sandboxes, transparencia algorítmica y gestión de riesgos. |
+### Eje 1 — Ecosistema: Gestión y Gobernanza de Datos
 
-#### Medidas Claves - Tecnología
-*   Portal público para visualización de avance de la Estrategia de Datos.
-*   Nueva plataforma de interoperabilidad del Estado y mecanismos de consentimiento.
-*   Centro de Excelencia en IA y guías para proyectos pilotos de IA.
-*   Mejoras al portal de datos abiertos e integraciones geoespaciales.
+Construir un ecosistema de datos multinivel e intersectorial que trate los datos como activo estratégico, con gobernanza clara, estándares y colaboración entre actores públicos, privados, académicos y sociedad civil.
 
-## Glosario y Referencias
+Lineamientos estratégicos:
+- Gestión y gobernanza de datos con enfoque ciudadano: cada órgano debe ser fuente confiable de datos y metadatos bajo enfoque coordinado de gobierno
+- Coordinación multinivel: capacidades de intercambio en todos los niveles del Estado (énfasis en gobiernos locales), eliminando duplicaciones
+- Coordinación intersectorial: interoperabilidad e integración segura entre sectores; diseño de políticas públicas basadas en evidencia
 
-| Término | Referencia URN (KORA/KODA) |
-| :--- | :--- |
-| API | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_API` |
-| Dato | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_DATO` |
-| Datos abiertos | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_DATOS_ABIERTOS` |
-| Datos maestros | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_DATOS_MAESTROS` |
-| Interoperar | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_INTEROPERAR` |
-| Metadatos | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_METADATOS` |
-| Servicios digitales | `urn:gov:kb:lexicon-wikiguias#TDE_DEF_SERVICIOS_DIGITALES` |
+Medidas clave:
+- Creación del Consejo Estratégico de Datos de la Administración del Estado
+- Designación de encargados de datos y grupos técnicos de directores de datos
+- Desarrollo de inventario de datos del Estado y normativas técnicas para datos maestros y de referencia
+- Impulso a interoperabilidad y creación de espacios de colaboración público-privados en datos
 
-## Bibliografía y Colaboradores
+### Eje 2 — Personas: Habilidades y Capacidades
 
-#### Fuentes Principales
-*   Banco Mundial (2021): World Development Report - Data for Better Lives.
-*   Naciones Unidas (2024): E-Government Survey.
-*   OCDE (2024): Digital Government Index.
-*   DAMA International (2017): DAMA-DMBOK.
+Desarrollar talento digital en el sector público para que el funcionariado cuente con competencias necesarias para gestionar datos, liderar cambios y aprovechar la infraestructura digital.
 
-#### Grupos de Trabajo
-*   Ministerios: Interior, Ciencia, Hacienda, Desarrollo Social.
-*   Autónomos: Contraloría General de la República, INE.
-*   Internacionales: BID, Alianza Digital UE-ALC, e-Governance Academy.
-*   Academia: Universidad de Chile, Universidad Adolfo Ibáñez.
+Lineamientos estratégicos:
+- Desarrollo de talento digital: programas permanentes de aprendizaje, capacitación y especialización en competencias digitales y de datos para todo el funcionariado
+- Gestión del cambio: marcos de competencias y herramientas para facilitar adaptación a digitalización y nuevas normativas (ciberseguridad, privacidad, gobierno digital)
+- Mejora de gestión y servicios: empoderar al funcionariado para interactuar autónomamente con herramientas y plataformas digitales
+
+Medidas clave:
+- Capacitaciones y certificaciones en gobierno y gestión de datos, IA, interoperabilidad y datos abiertos
+- Apoyo al reclutamiento de perfiles de datos en instituciones públicas
+- Programas de alfabetización digital, gestión del cambio y desarrollo de talento en niveles locales y centrales
+
+### Eje 3 — Tecnología: Infraestructura Pública Digital para Generar Valor Público
+
+Desplegar y fortalecer la infraestructura pública digital (IPD) que permita gestionar, procesar, compartir y usar información de manera segura, eficiente y accesible.
+
+Lineamientos estratégicos:
+- Red de interoperabilidad: fortalecer la red del Estado para cumplir el principio "sólo una vez", con servicios centralizados y estándares comunes
+- Datos abiertos: potenciar infraestructura y herramientas para publicar, encontrar e integrar datos abiertos
+- Integración de datos: desarrollar servicios e infraestructuras integradas de datos para decisiones basadas en evidencia
+- Innovación e IA centrada en datos: asegurar que la infraestructura de datos soporte casos de uso de IA y tecnologías emergentes, con sandboxes, gestión de riesgos, transparencia algorítmica y cumplimiento de la Política Nacional de IA
+
+Medidas clave:
+- Portal público para visualizar avance de la Estrategia de Datos
+- Mejoras al portal de datos abiertos y nuevas integraciones geoespaciales
+- Implementación de nueva plataforma de interoperabilidad del Estado y mecanismos de consentimiento
+- Creación de Centro de Excelencia en IA y guía para pilotos de IA
+
+## Glosario (XRef: `urn:gov:kb:lexicon-wikiguias`)
+
+| Término | ID Lexicon |
+|---|---|
+| API (Application Programming Interface) | TDE_DEF_API |
+| Dato | TDE_DEF_DATO |
+| Datos abiertos | TDE_DEF_DATOS_ABIERTOS |
+| Datos maestros | TDE_DEF_DATOS_MAESTROS |
+| Datos de referencia | TDE_DEF_DATOS_REFERENCIA |
+| Integración de datos | TDE_DEF_INTEGRACION_DATOS |
+| Interoperar | TDE_DEF_INTEROPERAR |
+| Metadatos | TDE_DEF_METADATOS |
+| Plataforma | TDE_DEF_PLATAFORMA |
+| Servicios compartidos | TDE_DEF_SERVICIOS_COMPARTIDOS |
+| Servicios digitales | TDE_DEF_SERVICIOS_DIGITALES |
+| Tecnologías digitales | TDE_DEF_TECNOLOGIAS_DIGITALES |
+
+## Referencias
+
+Principales fuentes:
+- Banco Mundial (2021). World Development Report 2021: Data for Better Lives.
+- CEPAL (2023). Análisis de modelos de gobernanza de datos en el sector público.
+- Naciones Unidas (2024). E-Government Survey 2024.
+- OCDE (2019, 2024). The Path to Becoming a Data-Driven Public Sector; Digital Government Index.
+- DAMA International (2017). DAMA-DMBOK.
+- Secretaría de Gobierno Digital de Chile y Universidad de Chile — estudios sobre brechas de talento y gobierno digital.
+
+Colaboradores: ministerios y servicios públicos (Interior, Ciencia, Hacienda, Desarrollo Social, etc.), organismos autónomos (CGR, INE), superintendencias y reguladores, municipios (ej. Renca), organismos internacionales (BID, Alianza Digital UE-ALC, e-Governance Academy), academia (U. de Chile, UAI, Consorcio IDI), asociaciones (ACTI, Chiletec, ChileTransparente, Fundación PaísDigital).

@@ -21,102 +21,59 @@ lang: en
 
 # Categorical Data Structures
 
-## Overview
+Patterson, E., Lynch, O., & Fairbanks, J. (2022). Categorical Data Structures for Technical Computing. Applied Category Theory to generate data structures automatically from formal specifications. Addresses fundamental disconnect between rigorous mathematical models and ad-hoc software implementations.
 
-- Addresses disconnection between rigorous mathematical models and ad-hoc software implementations.
-- Central proposal: use Applied Category Theory to generate data structures automatically from formal specifications.
+Enabling technologies: GATs (Generalized Algebraic Theories), C-Sets (sets indexed by a category), ACSets (Attributed C-Sets), Catlab.jl.
 
+## Core Definitions
 
-- **Enabling technology**: GATs (Generalized Algebraic Theories), C-Sets (category-indexed sets), ACSets (Attributed C-Sets), Catlab.jl.
+**C-Set.** Given schema (small category) C, a database is a functor X: C → Set.
+- For each object c in C: X(c) = set of instances (rows in a table).
+- For each morphism f: c → d: X(f): X(c) → X(d) = function (foreign key column).
 
-## Core Concepts
+**ACSet (Attributed C-Set).** Extension of C-Set for concrete data (numbers, strings). Functor X: S → Set where attribute objects map to fixed data types (e.g., ℝ, String). Handled formally via comma categories or indexing over a base type category.
 
-### C-Set
+**GAT (Generalized Algebraic Theory).** Dependent type system for defining categories, functors, and more complex structures.
 
-- **Definition**: Given small schema category C, database is funtor X: C → Set.
+**Schema presentation.** Schema C is finitely presented by generators (objects and morphisms) and equations (axioms). Separation of Syntax/Semantics: GAT defines syntax (C); models of the theory (functors to Set) are the semantics (data).
 
+**Migration operators** induced by a functor F: C → D between schemas:
 
-- For each object c in C, X(c) is set of instances (rows in table).
-- For each morfismo f: c → d, X(f): X(c) → X(d) is function (foreign-key column).
+| Operator | Definition | Analogy |
+|----------|-----------|---------|
+| Δ_F (pullback) | Precomposition with F; brings data from D to C | —  |
+| Σ_F (left pushforward) | Adds/unions structures (C to D) | UNION or generalization |
+| Π_F (right pushforward) | Products (C to D) | JOIN or MATCH |
 
-### ACSet
+**Gluing.** Combination of partial models via colimits (pushouts) in the category of C-Sets, guaranteeing correct fusion of references.
 
-- **Extension of C-Set** to handle concrete data (numbers, strings).
-- ACSet is funtor X: S → Set where attribute objects map to fixed data types (R, String, etc.).
+## DIK Hierarchy — Categorical Data Structures
 
+**Data = database instance.**
+- Definition: instance of a database conforming to a schema.
+- C-Set model: functor X: C → Set, X(c) = rows, X(f) = foreign key.
+- ACSet extension: attribute objects map to fixed data types.
+- In this paradigm, data are not passive records but functors.
 
-- **Formalism**: Via comma categories or indexing over base type category.
+**Information = formal structure specification.**
+- Definition: formal specification of data structure and algebraic constraints.
+- GAT model: finitely presented schema C (generators + equations).
+- Enables multiple implementations (in-memory, SQL, graphs) by changing target category or functor implementation.
+- Schema is a first-class mathematical object.
 
-### GAT
+**Knowledge = functorial transformations.**
+- Definition: functorial operations for translating data between schemas and combining datasets.
+- Given F: C → D, three adjoint operations on C-Sets: Δ_F, Σ_F, Π_F.
+- Gluing via pushouts for combining partial models.
 
-- **Generalized Algebraic Theory**: system of dependent types allowing definition of categories, funtores, complex structures.
+**Modeling = explicit executable workflow in Catlab.jl.**
+1. Define domain: write GAT or category presentation (objects and morphisms).
+2. Generate code: Julia macros convert specification into optimized data types (structs) and indexed access methods.
+3. Generic manipulation: universal categorical API (limit, colimit, functor) decouples algorithm from data structure.
 
+## Catlab.jl Schema Example
 
-### Schema Presentation
-
-- Schema C presented finitely via generators (objects and morfismos) and equations (axioms).
-
-
-### Syntax/Semantics Separation
-
-- **Syntax**: GAT defines syntax (C).
-- **Semantics**: Models of theory (funtores to Set) are data.
-
-### Migration Operators
-
-- **Δ_F (Pullback)**: Brings data from D to C; simple precomposition with F.
-- **Σ_F (Left Pushforward)**: Migrates data from C to D summing/unioning structures (UNION or generalization).
-- **Π_F (Right Pushforward)**: Migrates data from C to D via products (JOIN or MATCH).
-
-### Gluing
-
-- Combination of partial models via colimits (pushouts) in C-Sets category, guaranteeing correct reference fusion.
-
-
-## DIK Framework
-
-### Data
-
-- Not passive static values, but funtores.
-
-
-- **Definition**: Database instance conforming to schema.
-
-- **Categorical Modeling**: Instance of database via C-Set objects and morfismos.
-
-### Information
-
-- Defines valid shape of data
-- schema is first-class mathematical object.
-
-
-- **Definition**: Formal specification of data structure and algebraic constraints.
-
-- **Categorical Modeling**: Via GAT, schema presentation; syntax/semantics separation. Allows multiple implementations (in-memory, SQL, graphs) by changing target category or funtor implementation.
-
-### Knowledge
-
-- Capacity to transform and reason about data preserving structure.
-
-
-- **Definition**: Functorial operations translating data between different schemas and combining datasets.
-
-- **Categorical Modeling**: Given funtor F: C → D induces three adjoined operations on C-Sets (Δ_F, Σ_F, Π_F). Gluing constructions.
-
-### Modeling
-
-- Explicit and executable workflow (Catlab.jl): define domain (presentation/GAT) → generate code → manipulate generically via categorical API.
-
-
-- **Procedure**:
-
-1. Define domain via GAT or category presentation (objects, morfismos).
-2. Julia macros convert specification to optimized data types (structs) and indexed accessors.
-3. Categorical API (limit, colimit, functor) decouples algorithm from data structure.
-
-## Example: Catlab.jl
-
-```
+```julia
 @present TheoryGraph(FreeSchema) begin
   V::Ob
   E::Ob
@@ -125,15 +82,9 @@ lang: en
 end
 ```
 
-## Conclusions
+## Properties and Consequences
 
-- Patterson et al. demonstrate categorical data structures are not theoretical curiosity but practical foundation for Technical Computing.
-
-
-- **Benefits**:
-
-- **Interoperability**: C-Sets allow different domains (graphs, Petri nets, meshes) to share common language.
-- **Correctness**: Data migrations mathematically guarantee structure preservation, eliminating entire classes of ETL errors.
-- **Efficiency**: Code generation allows high-level abstractions to compete in performance with manual implementations.
-
-- **Significance**: Fundamental for building systems where Action (Fukada) and Structure (Patterson) coexist rigorously.
+- Interoperability: C-Sets give different domains (graphs, Petri nets, meshes) a common language.
+- Correctness: data migrations mathematically guarantee structure preservation, eliminating entire classes of ETL errors.
+- Efficiency: code generation allows high-level abstractions to compete in performance with manual implementations.
+- Foundation for systems where Action (Fukada) and Structure (Patterson) coexist rigorously.

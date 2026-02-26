@@ -19,51 +19,24 @@ lang: en
 
 # Data Access Layers via Category Theory
 
-## Storage Patterns
+Categorical patterns for DAL: storage, APIs, repositories, ORMs, data lakes.
 
-| Pattern | Definition | Use |
-|---------|-----------|-----|
-| SQL Limits | Relational = limits (product, pullback, equalizer) | Integrity, JOINs, ACID |
-| NoSQL Colimits | NoSQL = colimits (coproduct, pushout) | Flexible schema, polyglot |
-| Mixed Lens | SQL(write) ↔ Doc(read) asymmetric lens | Hybrid architectures |
+## Storage and API
 
-## APIs as Functors
+Storage: SQL = limits (product, pullback, equalizer) → integrity, JOINs, ACID. NoSQL = colimits (coproduct, pushout) → flexible schema, polyglot. Mixed: SQL(write) ↔ Doc(read) via asymmetric lens.
 
-| API Type | Functor | Check |
-|----------|---------|-------|
-| REST | Domain → ResourceCat | F(id)=id, F(g∘f)=F(g)∘F(f) |
-| GraphQL | Domain → TypeCat | Pullback dynamic |
-| gRPC | Domain → ProtoCat | Streaming, microservices |
-| Streams | Coalgebra | Action = pk |
+APIs as functors — Domain→ResourceCat (REST), Domain→TypeCat (GraphQL, dynamic pullback), Domain→ProtoCat (gRPC, streaming). Streams: coalgebra, action = primary key. Functor check: F(id)=id; F(g∘f)=F(g)∘F(f).
 
-## Repository Structure
+## Repository, ORM, Data Lake
 
-- **Coalgebra**: c: X → F(X)
+**Repository** = coalgebra c: X → F(X). Bisimulation: R₁ ~ R₂ iff ∀ops. observe(R₁(ops)) = observe(R₂(ops)).
 
+**ORM** = adjunction ORM ⊣ Reflect: DomainCat ⇆ SchemaCat. Unit η: E → Reflect(ORM(E)) ≈ id; counit ε: ORM(Reflect(T)) → T ≈ id. ORM drift = violation of η or ε.
 
-- **Bisimulation**: R₁~R₂ ⟺ ∀ops. observe(R₁(ops)) = observe(R₂(ops))
-
-## ORM as Adjunction
-
-- **Structure**: Adjunction ORM ⊣ Reflect: DomainCat ⇆ SchemaCat
-
-
-- **Unit**: η: E → Reflect(ORM(E)) ≈ id
-- **Counit**: ε: ORM(Reflect(T)) → T ≈ id
-- **Drift**: Violation of η/ε = drift
-
-## DataLake Construction
-
-- **Construction**: colim(Dataset_i, Pipeline_ij)
-
-
-- **Grothendieck**: ∫F, I=zones, F(z)=schema_z
-
-
-- **Audit**: Pipelines = morfismos; diagram conmuta
+**Data Lake** = colim(Dataset_i, Pipeline_ij). Grothendieck: ∫F where I = zones, F(z) = schema_z. Objects of ∫F: pairs (zone, entity). Audit: pipelines = morphisms; diagram must commute.
 
 ## Synthesis
 
-- **2-Category**: Objects = components, 1-morphisms = transformations, 2-morphisms = migrations
+2-categorical model: objects = DAL components, 1-morphisms = transformations, 2-morphisms = migrations.
 
-- **Audit Dimensions**: Storage-Model Align, API-Functor Preserve, Repo-Bisim, ORM-Adj Valid, Pipeline-Commute
+Audit dimensions: STORAGE-MODEL-ALIGN (SQL/NoSQL matches limit/colimit structure), API-FUNCTOR-PRESERVE (functoriality), REPO-BISIM (bisimilar under interface), ORM-ADJ-VALID (η,ε hold), PIPELINE-COMMUTE (pipeline diagram commutes).

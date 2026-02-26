@@ -19,101 +19,118 @@ lang: en
 
 # Unified Constraint Logic
 
+Unified constraint language for all KB artifacts. Fragment of regular logic expressible in categories. Sources: Seven Sketches (Fong, Spivak) — path equations, schemas as categories; CQL (Spivak, Wisnesky) — ologs, constraints as equations, static satisfaction; Sketches of an Elephant (Johnstone) — categorical sketches, regular logic.
+
 ## Constraint Language L_CT
 
-- Fragment of regular logic expressible in categories.
+**Sorts.** Objects of the category (types, entities).
 
+**Terms.** Morphisms and their compositions (paths).
 
-- **Components**:
+**Formulas:**
 
-- **Sorts**: Category objects (types, entities).
-- **Terms**: Morfismos and compositions (paths).
-- **Formulas**:
-  - Path Equation: path₁ = path₂ (in all instances I, I(path₁) = I(path₂)).
-  - Existence: ∃x. φ(x) (required limit/colimit exists).
-  - Uniqueness: ∃!x. φ(x) (universal property).
-  - Inclusion: A ↪ B (monomorfismo; instance I(A) ⊆ I(B)).
-  - Surjection: A ↠ B (epimorfismo; instance I(f) surjective).
+| ID | Form | Syntax | Semantics | Example |
+|----|------|--------|-----------|---------|
+| FORMULA-PATH-EQ | path₁ = path₂ | composition of morphisms | I(path₁)=I(path₂) for every instance I: S→Set | Employee.Mngr.WorksIn = Employee.WorksIn |
+| FORMULA-EXISTENCE | ∃x. φ(x) | required limit exists | category has the required limit | ∃ pullback of A→C←B |
+| FORMULA-UNIQUENESS | ∃!x. φ(x) | unique morphism satisfying condition | universal property of limits/colimits | ∃! f: X→A×B s.t. π₁∘f=g₁ ∧ π₂∘f=g₂ |
+| FORMULA-INCLUSION | A ↪ B (monomorphism) | injective morphism | I(A) ⊆ I(B) via injective I(f) | Manager ↪ Employee |
+| FORMULA-SURJECTION | A ↠ B (epimorphism) | surjective morphism | I(f): I(A) → I(B) surjective | Employee ↠ HasDepartment |
 
-- **Theory**: T = (S, Σ) where S is schema and Σ is set of formulas.
+**Theory T = (S, Σ).** Schema S (category with objects and morphisms) + axiom set Σ of L_CT formulas.
 
-## Satisfaction
+## Theory Satisfaction
 
-- **Definition**: Instance I: S→Set satisfies T = (S, Σ) iff all formulas in Σ satisfied.
+**I ⊨ T.** Instance I: S → Set satisfies theory T = (S, Σ) iff it satisfies all formulas in Σ.
 
+**Satisfaction procedure:**
+1. For each φ ∈ Σ:
+   a) If φ is path₁=path₂: verify I(path₁)=I(path₂).
+   b) If φ is ∃-formula: verify existence of required object.
+   c) If φ is ↪ (mono): verify injectivity of I(f).
+   d) If φ is ↠ (epi): verify surjectivity of I(f).
+2. If all pass → I ⊨ T.
+3. If any fails → I ⊭ T, report violated formula.
 
-- **Notation**: I ⊨ T.
+**Mod(T) = category of models of T.** Objects: instances I: S→Set with I ⊨ T. Morphisms: natural transformations α: I ⇒ J preserving T. Use: study the space of all valid instances of a schema with constraints.
 
-- **Procedure**:
+## Constraint Contexts
 
-1. For each φ ∈ Σ, verify:
-   - Path equations: I(path₁) = I(path₂).
-   - Existence formulas: required object/limit exists.
-   - Mono/epi: injectivity/surjectivity of I(f).
-2. If all pass → I ⊨ T; else report violated formulas.
+**Database constraints (L_CT mapping):**
 
-## Model Category
+| SQL constraint | L_CT form |
+|---------------|----------|
+| PRIMARY KEY | morphism from entity to singleton type (uniqueness) |
+| FOREIGN KEY | morphism f: A→B with existence constraint in I(B) |
+| UNIQUE | morphism that is a monomorphism |
+| NOT_NULL | morphism with required non-empty codomain |
+| CHECK | path equation or inclusion into subobject |
 
-- **Mod(T)**: Category of T models (valid instances) + natural transformations preserving T.
+Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee → Department with ∀e. WorksIn(e) ∈ I(Department).
 
-- **Use**: Study space of valid instances conforming to schema with constraints.
+**MBSE constraints (L_CT mapping):**
+- Block composition: block diagram as category, composition = connection.
+- Port compatibility: type equation on connected ports.
+- Consistency: existence of pullback between models.
 
-## Constraints in Contexts
+**KODA artifact constraints:**
 
-### Database Constraints
-
-- **PRIMARY KEY**: Morfismo to singleton type (uniqueness).
-- **FOREIGN KEY**: f: A→B with existence constraint in I(B).
-- **UNIQUE**: Monomorfismo.
-- **NOT NULL**: Codominio non-empty.
-- **CHECK**: Path equation or subobject inclusion.
-
-### MBSE Constraints
-
-- **Block Composition**: Diagram as category; composition = connection.
-- **Port Compatibility**: Type equations on connected ports.
-- **Consistency**: Pullback existence between models.
-
-### KODA Constraints
-
-- **Ref Valid**: Internal morfismo well-defined.
-- **XRef Resolves**: External morfismo with target in KB.
-- **Proc Complete**: Process field for operative concepts.
-- **Version Match**: metadata.Version = urn.version.
+| Constraint | L_CT |
+|-----------|------|
+| Ref_Valid | well-defined internal morphism |
+| XRef_Resolves | external morphism with target in KB |
+| Proc_Complete | existence of Proc field for operative concepts |
+| Version_Match | equation: metadata.Version = urn.version |
 
 ## Constraint Preservation by Migrations
 
-- **Definition**: Funtor F: S→T preserves constraint φ iff F(φ) satisfiable in T.
+**F: S→T preserves φ** if F(φ) is satisfiable in T.
 
+| Preservation type | Definition | Use |
+|-----------------|-----------|-----|
+| Strict | I ⊨ φ ⟹ F*(I) ⊨ F(φ) for all I | Strong guarantee: constraint always maintained |
+| Weak | ∃I such that F*(I) ⊨ F(φ) | At least some models preserve the constraint |
 
-- **Types**:
+**Adjoint behavior with constraints (Δ/Σ/Π):**
 
-- **Strict**: I ⊨ φ ⟹ F*(I) ⊨ F(φ). Always preserved.
-- **Weak**: ∃I such that F*(I) ⊨ F(φ). Some models preserve.
+| Operator | Constraint preservation | Reason |
+|----------|------------------------|--------|
+| Δ_F (pullback) | ALWAYS preserves path equations | Δ_F(I)(A)=I(F(A)); composition preserved |
+| Σ_F (left pushforward) | NOT always | Uses colimits; may "collapse" distinctions |
+| Π_F (right pushforward) | Preserves existence constraints | Uses limits; preserves universal properties. May empty sets if no compatible elements |
 
-- **Rules for Adjoint**:
+**Preservation verification procedure:**
+1. Identify type of φ (path eq, mono, epi, existence).
+2. Identify migration operator (Δ, Σ, Π).
+3. Apply rules per table above.
+4. Document which constraints are preserved and which are not.
 
-- **Δ_F** (pullback): ALWAYS preserves path equations.
-- **Σ_F** (pushforward): NOT ALWAYS; may collapse distinctions.
-- **Π_F** (right pushforward): Preserves existence constraints.
+## Migration Constraint Audit
 
-## Constraint Audit
-
-- **Procedure**:
-
-1. Extract theory T_source = (S, Σ_S) from source schema.
-2. Extract T_target = (T, Σ_T) from target.
-3. Identify funtor F: S → T.
-4. For each φ ∈ Σ_S: verify F(φ) in Σ_T or derivable.
-5. For each ψ ∈ Σ_T not from Σ_S: verify migration can satisfy.
-6. Report preservation gaps.
+**Procedure:**
+1. Extract source theory T_source = (S, Σ_S).
+2. Extract target theory T_target = (T, Σ_T).
+3. Identify migration functor F: S → T.
+4. For each φ ∈ Σ_S:
+   a) Compute F(φ) (image of constraint).
+   b) Verify if F(φ) ∈ Σ_T or derivable from Σ_T.
+   c) If not → WARN: constraint may be lost.
+5. For each ψ ∈ Σ_T not coming from Σ_S:
+   a) Verify if migration can satisfy ψ.
+   b) If not → ERROR: migration violates target constraints.
+6. Generate preservation report.
 
 ## Theory Audit
 
-- **Procedure**:
+**Audit that an artifact defines a consistent theory:**
+1. EXTRACTION: identify schema S; extract explicit constraints (path eq, FKs, etc.); extract implicit constraints (from KODA conventions); construct T = (S, Σ).
+2. INTERNAL CONSISTENCY: verify Σ has no obvious contradictions (e.g., path₁=path₂ and path₁≠path₂ simultaneously); verify required limits exist in S.
+3. SATISFIABILITY: verify at least one model I ⊨ T exists. If T only has empty models → WARN: possibly trivial theory.
+4. COMPLETENESS: verify important constraints are declared (e.g., FKs have explicit existence constraint).
+5. REPORT: extracted theory + consistency issues + completeness issues.
 
-1. Extract schema S and constraints.
-2. Verify internal consistency (no contradictions).
-3. Verify satisfiability (exists at least one model I ⊨ T).
-4. Verify completeness (important constraints declared).
-5. Report issues per dimension.
+**Audit that an instance satisfies its theory:**
+1. Load schema S and instance I.
+2. Load theory T = (S, Σ).
+3. For each φ ∈ Σ: evaluate I ⊨ φ; if fails: record violation with concrete data.
+4. Generate satisfaction report.

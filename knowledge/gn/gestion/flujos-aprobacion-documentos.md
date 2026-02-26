@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    source: "GORE Ñuble"
 version: 2.0.0
 status: published
 tags:
@@ -17,108 +17,147 @@ tags:
 lang: es
 ---
 
-# Flujos de Aprobación de Documentos
+# Flujos de Aprobación de Documentos — GORE Ñuble
 
-## Principios y Actores del Proceso de Aprobación
+## Glosario de Actores y Siglas
 
-### Fundamentos Jurídico-Procedimentales
-*   **Legalidad**: Sometimiento estricto a la Constitución y leyes; actuaciones fuera de competencia conllevan nulidad.
-*   **Escrituración Electrónica (Ley N° 21.180)**: Procedimientos administrativos 100% electrónicos; papel como excepción; registro en expediente electrónico único.
-*   **Impugnabilidad**: Actos administrativos sujetos a recursos de reposición y jerárquicos según ley.
-*   **Probidad y Transparencia**: Conducta funcionaria intachable; primacía del interés general; acceso público a fundamentos de decisiones.
-*   **Control Externo**: Fiscalización de legalidad y uso de fondos por Contraloría General de la República (CGR); incluye Toma de Razón preventiva.
-
-### Matriz de Actores y Responsabilidades
-| Actor / Unidad | Rol Principal en Aprobaciones | Fuente Normativa |
+| Actor / Sigla | Nombre Completo | Rol Principal |
 | :--- | :--- | :--- |
-| **Gobernador/a Regional** | Firma ejecutiva final; propuesta de presupuesto y planes al CORE; representación legal. | GORE-GUIA-ESTRUCTURA-01 |
-| **Consejo Regional (CORE)** | Aprueba presupuesto (FNDR, 8%, FRIL), ERD y modificaciones; fiscaliza gestión. | GORE-GUIA-ESTRUCTURA-CORE-01 |
-| **Administrador/a Regional** | Coordinación interna; V°B° final pre-firma; subrogancia legal del Gobernador. | GORE-GUIA-ESTRUCTURA-ADM-01 |
-| **DAF (Adm. y Finanzas)** | Gestión financiera/contable; convenios y pagos; control rendiciones; registro SIGFE. | STS-KB-GN-RENDICION-DAF-01 |
-| **DIPIR (Presupuesto e Inversión)** | Formulación y mod. presupuesto inversión; evaluación técnica IDI; monitoreo en BIP. | GORE-IPR-PHASE1-ENTRY-01 |
-| **DIPLADE (Planificación)** | Elaboración y seguimiento ERD; coordinación del gasto (ARI/PROPIR). | GORE-FIN-FORM-ROL-DIPIR-01 |
-| **Asesoría Jurídica** | Control de legalidad interno; redacción y revisión de resoluciones y decretos. | Estructura Interna |
-| **Unidad de Control** | Control preventivo y posterior de legalidad; dependencia técnica de CGR; auditorías. | STS-KB-GN-RENDICION-CONTROL-01 |
-| **Oficina de Partes** | Ingreso formal; asignación número SGDOC; derivación a unidades. | GORE-IPR-PHASE1-RECEPTION-01 |
-| **Comité Directivo (CDR)** | Filtro estratégico y político-técnico pre-evaluación (Jefaturas y Administrador). | GORE-IPR-PHASE1-PERTINENCE-01 |
-| **Referente Técnico (RTF)** | Revisión y seguimiento de primera línea (técnico/financiero) de proyectos. | STS-KB-GN-RENDICION-RTF-01 |
-| **SEREMI MDSF** | Evaluación técnica IDI para otorgar RS (Recomendación Satisfactoria) o AD. | GORE-IPR-PHASE2-TRACK-SNI-01 |
-| **DIPRES** | Evaluación ex-ante Glosa 06; resoluciones presupuesto inicial; visa mods. Partida 31. | GORE-FIN-CTX-CAMBIOS-2025-01 |
-| **CGR (Contraloría)** | Toma de Razón preventiva; fiscalización a posteriori de actos administrativos. | LAW-CGR-TOMA-RAZON-01 |
+| GORE | Gobierno Regional | Administración superior regional; ejecuta inversión y programas. |
+| CORE | Consejo Regional | Aprueba presupuesto, ERD y modificaciones; fiscaliza gestión. |
+| Gobernador/a | Gobernador/a Regional | Firma ejecutiva final; representación legal del GORE. |
+| Admin. Regional | Administrador/a Regional | Coordinación interna; V°B° pre-firma; subrogancia legal. |
+| DAF | División de Administración y Finanzas | Gestión financiera, contable, convenios, pagos, SIGFE. |
+| DIPIR | División de Presupuesto e Inversión Regional | Presupuesto inversión, evaluación IDI, seguimiento BIP. |
+| DIPLADE | División de Planificación y Desarrollo Regional | ERD, ARI/PROPIR, presidencia CDR. |
+| Asesoría Jurídica | — | Control legalidad interno; redacción y revisión de actos. |
+| Unidad de Control | — | Control preventivo y posterior; dependencia técnica CGR. |
+| Oficina de Partes | — | Ingreso formal; número SGDOC; derivación. |
+| CDR | Comité Directivo Regional | Filtro estratégico-político pre-evaluación (Jefaturas + Admin.). |
+| RTF | Referente Técnico-Financiero | Primera línea de revisión y seguimiento por proyecto. |
+| SEREMI MDSF | Min. Desarrollo Social y Familia | Evaluación técnica IDI; otorga RS, AD o FI/OT. |
+| DIPRES | Dirección de Presupuestos | Evaluación ex-ante Glosa 06; resol. presupuesto; visa Partida 31. |
+| CGR | Contraloría General de la República | Toma de Razón preventiva; fiscalización a posteriori. |
+| SIGFE | Sistema de Información Financiera del Estado | Registro contable-presupuestario oficial. |
+| BIP | Banco Integrado de Proyectos | Registro y seguimiento de IDI en SNI. |
+| FEA | Firma Electrónica Avanzada | Sustituye firma manuscrita; valida actos electrónicos. |
+| SNI | Sistema Nacional de Inversiones | Marco de evaluación técnico-económica de proyectos. |
+| IDI | Iniciativa de Inversión | IPR de capital (obras, activos); sujeta a evaluación SNI. |
+| RS | Recomendación Satisfactoria | Resultado favorable evaluación MDSF para IDI. |
+| RF | Recomendación Favorable | Resultado favorable evaluación DIPRES para programas Glosa 06. |
+| AD | Admisible | Resultado favorable MDSF para proyectos de conservación. |
+| ERD | Estrategia Regional de Desarrollo | Instrumento estratégico que orienta prioridades regionales. |
 
-### Instrumentos Tecnológicos
-*   **Expediente Electrónico**: Registro íntegro de actuaciones y documentos; garantiza trazabilidad y acceso a interesados (Ley 21.180).
-*   **Firma Electrónica Avanzada (FEA)**: Sustituye firma manuscrita; otorga validez legal y ejecutoriedad a actos del Gobernador y resoluciones.
+## Principios Jurídico-Procedimentales
 
-## Flujos para Actos Administrativos de Tramitación General
+| Principio | Definición Operacional |
+| :--- | :--- |
+| **Legalidad** | Actuación exclusiva dentro del ámbito de competencia; actos fuera de competencia son nulos. |
+| **Escrituración Electrónica (Ley 21.180)** | Procedimientos 100% electrónicos; papel es excepción; registro en expediente electrónico único. |
+| **Impugnabilidad** | Actos sujetos a recursos de reposición y jerárquico según ley. |
+| **Probidad y Transparencia** | Conducta funcionaria intachable; primacía interés general; publicidad de fundamentos. |
+| **Control Externo (CGR)** | Fiscalización de legalidad y fondos; incluye Toma de Razón preventiva. |
 
-### Resoluciones Exentas y Decretos sin Imputación Presupuestaria
-1.  **Iniciación**: Unidad competente elabora borrador con fundamentos de hecho y derecho.
-2.  **Revisión Jurídica**: Asesoría Jurídica verifica ajuste a normativa y competencias.
-3.  **V°B° Control Interno**: Verificación de procedimientos internos y buena administración.
-4.  **V°B° Jefaturas/Administrador**: Visado de Jefatura de División origen y Administrador/a Regional.
-5.  **Firma**: Gobernador/a Regional firma mediante FEA.
-6.  **Notificación y Archivo**: Registro en Oficina de Partes y expediente electrónico.
-*   **Nota Control**: Exentos de Toma de Razón previa (regla general); sujetos a control posterior de CGR.
+Instrumentos tecnológicos:
+- **Expediente Electrónico:** Registro íntegro de actuaciones; garantiza trazabilidad y acceso a interesados (Ley 21.180).
+- **FEA:** Sustituye firma manuscrita; otorga validez legal y ejecutoriedad a resoluciones y decretos.
 
-## Flujos para Inversión (IDI) y Programas
+## Flujo General: Resoluciones Exentas y Decretos sin Imputación Presupuestaria
 
-### Estándar Sistema Nacional de Inversiones (SNI) - Ruta RS
-1.  **Analista GORE (DIPIR)**: Revisión técnica y metodológica; emisión de Acta de Admisibilidad interna.
-2.  **Gobernador/DIPIR**: Envío formal mediante oficio a SEREMI MDSF.
-3.  **Analista MDSF**: Análisis Técnico-Económico (ATE); plazos: 5 días admisibilidad, 10 días ATE.
-4.  **Resultado MDSF**: Emisión de RATE (RS, FI u OT); plazo máx. subsanación: 60 días hábiles.
-5.  **Priorización**: Inclusión en cartera RS para decisión de financiamiento CORE/Gobernador.
+Aplica a: nombramientos, comisiones, reglamentos internos, respuestas ciudadanas.
 
-### Flujos Simplificados y Diferenciados
-*   **Iniciativas < 5.000 UTM**: Exentas de RS MDSF; aprobación técnica radica en GORE mediante "Carta de Responsabilidad".
-*   **Proyectos de Conservación**: Costo <= 30% valor reposición; MDSF solo verifica admisibilidad (AD).
-*   **Programas Glosa 06 (DIPRES/SES)**:
-    *   **Fase 1**: Evaluación pertinencia mediante Formulario de Perfil.
-    *   **Fase 2**: Evaluación de fondo mediante Formulario de Diseño (Marco Lógico) hasta obtener RF (Recomendado Favorablemente).
+1. **Iniciación:** Unidad competente elabora borrador con fundamentos de hecho y derecho.
+2. **Revisión Jurídica:** Asesoría Jurídica verifica ajuste a normativa y competencias.
+3. **V°B° Control Interno:** Unidad de Control verifica conformidad con procedimientos internos.
+4. **V°B° Jefatura/Administrador:** Jefatura de División origen visa; luego Administrador/a Regional.
+5. **Firma con FEA:** Gobernador/a Regional firma mediante FEA.
+6. **Notificación y Archivo:** Notificación a interesados; registro en expediente electrónico (Oficina de Partes).
 
-## Modificaciones Presupuestarias
+Advertencia: Exentos de Toma de Razón previa (regla general); sujetos a control posterior CGR.
 
-### Restricciones Presupuesto 2026 (Partida 31)
-*   **Glosas 10 (Subt. 31) y 11 (Subt. 33)**: No requieren aprobación CORE si monto total/resultante es <= 10% del costo total aprobado (reajustado).
-*   **Glosa 14 (Emergencias)**:
-    *   Traspaso hasta 3% inversión a Subsecretaría del Interior para emergencias.
-    *   Uso hasta 2% inversión regional para emergencias (vía resolución Interior).
-    *   Ejecución permitida sin esperar tramitación total del acto GORE; informes trimestrales a DIPRES y Comisión Mixta.
+## Flujo SNI Estándar — IDI Nivel 2 y 3 (Requieren RS)
 
-### Matriz de Tipología y Actos Requeridos
+| Paso | Responsable | Actividades Clave | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | Analista GORE (DIPIR) | Verificar RIS y metodologías SNI; elaborar Acta de Admisibilidad interna. | IDI admisible para envío a MDSF. |
+| 2 | Jefatura DIPIR / Gobernador/a | Elaborar y visar oficio a SEREMI MDSF; cadena V°B° interna. | Oficio despachado. |
+| 3 | Analista MDSF | Admisibilidad (5 días); Análisis Técnico-Económico/ATE (10 días). | RATE: RS / FI / OT. |
+| 4 | Unidad Formuladora / Analista GORE | Si RS: avanza. Si FI/OT: subsanar (máx. 60 días hábiles). | Aprobado Técnicamente (RS). |
+| 5 | Jefatura DIPIR | Monitorear BIP; comunicar cartera RS para priorización. | Cartera disponible para financiamiento. |
+
+## Flujos Simplificados SNI
+
+### Proyectos < 5.000 UTM (Exención RS)
+- Aprobación técnica radica en GORE (no en MDSF).
+- GORE envía "Carta de Responsabilidad" a MDSF declarando ausencia de impedimentos y no fraccionamiento.
+- Restricciones: no aplica si hay EIA/CMN, problemas de terreno, fraccionamiento o exclusiones legales.
+- Resultado interno: estado `Exento RS`.
+
+### Proyectos de Conservación (Costo ≤ 30% valor reposición)
+- MDSF solo verifica clasificación como "Conservación".
+- Resultado: RATE `AD` (Admisible); no equivale a RS completo.
+
+### Programas Glosa 06 — Proceso Bifásico DIPRES/SES
+1. **Fase Perfil:** GORE envía Formulario de Perfil. DIPRES/SES evalúan pertinencia.
+2. **Fase Diseño:** Si perfil aprueba, GORE elabora Formulario de Diseño (Marco Lógico). Revisión iterativa hasta calificación `RF` (Recomendación Favorable).
+- RF es requisito obligatorio para financiamiento de programas Glosa 06.
+
+## Flujo: Modificaciones Presupuestarias
+
+### Restricciones Clave 2026 (Partida 31)
+
+| Glosa | Contenido | Condición CORE |
+| :--- | :--- | :--- |
+| **Glosa 10 (Subt. 31)** | No requiere acuerdo CORE si variación ≤ 10% del costo total aprobado (reajustado). | Excepción |
+| **Glosa 11 (Subt. 33)** | Mismo umbral del 10% para arrastres/creaciones. | Excepción |
+| **Glosa 14 (Emergencias)** | Traspaso hasta 3% inversión a Subinterior; uso hasta 2% propio. Ejecución sin esperar tramitación total. Informes trimestrales a DIPRES y Comisión Mixta. | Sin CORE |
+
+### Tipología de Modificaciones y Actos Requeridos
+
 | Tipo de Modificación | Descripción | Impacta P31 | Acto Administrativo |
 | :--- | :--- | :--- | :--- |
-| **Reasignación Interna** | Movimiento entre subtítulos presupuesto GORE. | No | Resolución GORE |
-| **Creación IDI FRPD** | Asignación desde provisión FRPD a proyectos. | No | Resolución GORE |
-| **Suplemento** | Aumento presupuesto por mayor aporte fiscal. | Sí | D.S. (DIPRES) + Resolución GORE |
-| **Transferencia Externa** | Reasignación FNDR a ministerios. | Sí | D.S. (DIPRES) + Resolución GORE |
-| **Emergencias (3%)** | Traspaso fondo emergencia a otras entidades. | Sí | D.S. (DIPRES) + Resolución GORE |
+| Reasignación Interna | Movimiento entre subtítulos presupuesto GORE. | No | Resolución GORE |
+| Creación IDI FRPD | Asignación desde provisión FRPD (Ítem 33.03) a proyectos. | No | Resolución GORE |
+| Suplemento | Aumento presupuesto por mayor aporte fiscal. | Sí | D.S. DIPRES + Resolución GORE |
+| Transferencia Externa | Reasignación FNDR a ministerios (consolidable). | Sí | D.S. DIPRES + Resolución GORE |
+| Emergencias (3%) | Traspaso fondo emergencia a Subsecretaría Interior. | Sí | D.S. DIPRES + Resolución GORE |
 
 ### Instancias de Aprobación
-*   **Consejo Regional (CORE)**: Regla general para toda alteración del presupuesto de inversión.
-*   **Excepciones CORE**: Gobernador puede modificar sin acuerdo previo aumentos en ejecución hasta 10% (máx. 7.000 UTM) y 3% emergencias; obligación de informar mensualmente.
-*   **Control Externo**:
-    1.  **Visación DIPRES**: Revisión normativa obligatoria.
-    2.  **Toma de Razón CGR**: Control preventivo de legalidad; requisito para vigencia y ajuste en SIGFE.
 
-## Convenios y Transferencias de Recursos
+- **CORE:** Regla general para toda alteración del presupuesto de inversión.
+- **Excepciones CORE:** Gobernador puede modificar sin acuerdo previo en: aumentos ejecución hasta 10% (máx. 7.000 UTM), emergencias 3% (Glosa 14), reajustes legales, sentencias judiciales, variaciones tipo de cambio.
+- Aunque no requieran CORE, siempre exigen:
+  1. **Visación DIPRES:** Revisión normativa obligatoria.
+  2. **Toma de Razón CGR:** Control preventivo de legalidad; requisito para vigencia y ajuste en SIGFE.
+
+## Flujo: Convenios y Transferencias de Recursos
 
 ### Restricciones Normativas 2026
-*   **Glosa 03 (Inversión)**: Prohibición de financiar préstamos, personal, consumo, o compra de empresas/sociedades.
-*   **Artículo 07 (Subt. 24 y 33)**:
-    *   Desglose previo mensual a DIPRES como autorización máxima de gasto.
-    *   Informes de avance de actividades y ejecución presupuestaria requeridos.
-    *   No incluye gastos en personal ni consumo salvo norma expresa.
 
-### Flujo de Formalización de Convenios
-1.  **Elaboración**: División técnica redacta borrador (objeto, plazos, productos, rendición).
-2.  **Revisión**: Jurídica valida legalidad (especialmente concursos y garantías en privados); DAF valida cláusulas financieras.
-3.  **Suscripción**: Firma de Gobernador/a y Representante Legal de entidad receptora.
-4.  **Aprobación y CGR**: Emisión de resolución aprobatoria; remisión obligatoria a CGR para Toma de Razón.
-*   **Advertencia**: Prohibido realizar transferencias sin Toma de Razón previa de la resolución.
+- **Glosa 03 (Inversión):** Prohibido financiar préstamos, gastos en personal, bienes/servicios de consumo, ni constituir/comprar sociedades con fondos de inversión.
+- **Art. 07 (Subt. 24 y 33):** Desglose mensual previo a DIPRES como autorización máxima; informes de avance requeridos; no incluye gastos en personal o consumo salvo norma expresa.
+
+### Proceso de Formalización de Convenios
+
+1. **Elaboración:** División técnica redacta borrador (objeto, plazos, productos, cláusulas rendición/restitución).
+2. **Revisión Jurídica:** Asesoría Jurídica valida legalidad (concursos, garantías en privados). DAF valida cláusulas financieras.
+3. **Suscripción:** Firma de Gobernador/a y Representante Legal de entidad receptora.
+4. **Aprobación y CGR:** Resolución aprobatoria; remisión obligatoria a CGR para Toma de Razón.
+
+Advertencia: Prohibido realizar transferencias sin Toma de Razón previa de la resolución aprobatoria.
+
+## Reglas de Devengo por Tipo de Transferencia
+
+| Tipo Receptor | Subtítulo | Momento de Devengo |
+| :--- | :--- | :--- |
+| Sector Privado | S24-01 / S33-01 | Cuando obligación es exigible según convenio. |
+| Municipios | S24-02 / S33-02 | Cuando obligación es exigible (acto/convenio tramitado). |
+| Servicios Públicos (no consolidables) | S24-03 / S33-03 | Al aprobarse la rendición de cuentas. |
+| Servicios Públicos (consolidables) | S24-03 / S33-03 | Cuando obligación es exigible conforme al convenio. |
 
 ## Conclusiones Estructurales
-*   **Segmentación por Proporcionalidad**: Rutas diferenciadas según riesgo, monto y naturaleza; controles exhaustivos reservados para mayor impacto fiscal.
-*   **Gobernanza de Control Dual**: Sistema de filtros internos (División/CORE/Gobernador) y externos (MDSF/DIPRES/CGR) actuando como compuertas obligatorias.
-*   **Hito Crítico CGR**: La Toma de Razón preventiva es el principal garante del erario público previo al desembolso.
+
+- **Proporcionalidad:** Rutas diferenciadas según riesgo, monto y naturaleza; controles exhaustivos reservados para mayor impacto fiscal.
+- **Gobernanza de Control Dual:** Filtros internos (División/CORE/Gobernador) y externos (MDSF/DIPRES/CGR) actúan como compuertas obligatorias.
+- **Hito Crítico:** Toma de Razón CGR es el principal garante del erario público previo al desembolso.
+- **Trazabilidad:** Todo acto queda registrado en expediente electrónico único (Ley 21.180) con FEA del Gobernador/a.

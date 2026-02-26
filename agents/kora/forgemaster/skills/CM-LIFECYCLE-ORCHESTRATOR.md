@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-lifecycle-orchestrator:1.0.0"
-  type: "skill"
-version: "1.0.0"
+  urn: "urn:kora:skill:forgemaster-lifecycle-orchestrator:2.0.0"
+  type: "lazy_load_endofunctor"
+version: "2.0.0"
 status: published
 lang: es
 ---
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Orquesta la secuencia completa del ciclo de vida DESIGN→CREATE→IMPLEMENT→VALIDATE, gestionando transiciones y checkpoints con el usuario.
+
+## I/O
+
+- **Input:** dominio: string (descripcion del agente a crear), namespace: string, restricciones: string[] | null
+- **Output:** LifecycleReport (ver Signature Output)
 
 ## Procedimiento
 1. INICIAR CICLO: Confirmar con usuario que desea modo guiado. Establecer fase_actual=DESIGN.
@@ -20,5 +25,11 @@ Orquesta la secuencia completa del ciclo de vida DESIGN→CREATE→IMPLEMENT→V
 6. INTERRUPCION: Si usuario interrumpe en cualquier fase, transicionar al estado correspondiente en modo libre (S-DESIGN, S-CREATE, S-IMPLEMENT, S-VALIDATE).
 7. COMPLETAR: Resumen del ciclo completo: agente creado, validado, listo.
 
-## Output
-Resumen del ciclo: {agente, fases_completadas: [], resultado_validacion: PASS|FAIL, observaciones}.
+## Signature Output
+
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| agente | string | Nombre del agente creado |
+| fases_completadas | string[] | Fases del ciclo ejecutadas |
+| resultado_validacion | enum(PASS\|FAIL) | Resultado final de validacion |
+| observaciones | string | Notas relevantes del ciclo |

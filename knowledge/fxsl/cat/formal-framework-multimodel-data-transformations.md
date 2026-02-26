@@ -19,63 +19,58 @@ lang: en
 
 # Multi-Model Data Transformations via Kan Lifts
 
-## Overview
+## Abstract
 
-- Defines categorical foundations for relational, graph, hierarchical data models.
-- Formalizes multi-model data+schema transformations as Kan lifts with universal properties.
+Ctx: Category-theoretic framework for relational/graph/hierarchical data and schema transformations using functorial instances and Kan lifts (universal properties).
+Src: `sources/cat/A Formal Category Theoretical Framewor.md`
+XRef: `urn:fxsl:kb:algebraic-databases#KAN-LIFT`, `urn:fxsl:kb:unified-representation-transformation-multimodel#Categorical_Representation_of_Multi_Model_Data`
 
+Polystores and multi-model databases require rigorous mathematical framework for data and schema transformations. Data instances represented as functors; transformations formalized as Kan lifts with universal properties.
 
-## Functorial Representation
+## Prerequisites
+
+**Definition 1 (Category)** — C: objects Obj(C), morphisms Hom(C). Each f: A → B. Composition associative; identity id_A: A → A; f ∘ id_A = f; id_A ∘ f = f.
+
+**Definition 2 (Functor)** — F: C → D. Objects: c ↦ F(c). Morphisms: f: c → d ↦ F(f): F(c) → F(d). Preserves: F(id_c) = id_{F(c)}; F(g ∘ f) = F(g) ∘ F(f). Full if every morphism in D has preimage in C.
+
+**Definition 3 (Natural Transformation)** — α: F ⇒ G (F, G: C → D). Assigns each c ∈ C morphism α_c: F(c) → G(c) in D such that for every f: c → d: G(f) ∘ α_c = α_d ∘ F(f).
+
+**Definition 4 (Right Kan Lift)** — Given F: A → C and G: B → C, right Kan lift of F through G = (Rift_G F: A → B, ε: G ∘ Rift_G F ⇒ F) satisfying universal property: for any (H: A → B, η: G ∘ H ⇒ F), ∃! γ: H ⇒ Rift_G F with η = ε ∘ (G ∘ γ).
+
+**Definition 5 (Graph)** — G = (V, E, src, tgt): vertices V, edges E, src: E → V, tgt: E → V.
+
+**Definition 6 (Path)** — Path p of length n = sequence of connected edges. Path_G = ∪_{n∈N} Path(n)_G.
+
+## Functorial Instances
 
 ### Categorical Schema
 
-- **Definition**: C = (G, ~) where G is graph, ~ is categorical path equivalence on Path_G.
-- **Schema Category**: Objects = vertices; morfismos = equivalence classes of paths; composition via path composition.
+**Definition 7 (Categorical Path Equivalence Relation)** — Given G = (V,E,src,tgt), ~ = equivalence relation on Path_G satisfying required properties.
 
+**Definition 8 (Categorical Schema)** — C = (G, ~): graph G + categorical path equivalence relation ~ on Path_G.
 
-### Instance Functor
+**Definition 9 (Schema Category)** — Given C = (G,~): objects = vertices of G; morphisms = equivalence classes of paths under ~; composition = path composition respecting ~.
 
-- **Definition**: I: C → Set maps objects c to sets I(c), morfismos f to functions I(f).
-- **Property**: Satisfies I(p)=I(q) whenever p ~ q.
-- **Example**: Relational instance mapping schema to sets of records.
+**Definition 10 (Instance Functor)** — I: C → **Set** maps objects c to sets I(c) and morphisms f: c → d to functions I(f): I(c) → I(d). Satisfies I(p) = I(q) whenever p ~ q.
 
+### Graph and Hierarchical Representations
 
-## Data Transformation as Kan Lift
+**Definition 11 (Graph as Functor)** — G: G_cal → **Set**, where G_cal = two-object category with morphisms for src/tgt. G(0) = E, G(1) = V, G(s) = src, G(t) = tgt.
 
-- **Definition**: Given functors F: A → C and G: B → C, right Kan lift of F through G consists of funtor Rift_G F: A → B and natural transformation ε: G ∘ Rift_G F ⇒ F.
-- **Universal Property**: For any (H: A → B, η: G ∘ H ⇒ F), exists unique natural transformation γ: H ⇒ Rift_G F with η = ε ∘ (G ∘ γ).
-- **Application**: Transformation from I1: C1 → Set to I2: C2 → Set is Kan lift (Rift_{I2} I1: C1 → C2, ε: I2 ∘ Rift_{I2} I1 ⇒ I1).
-- **Requirement**: Rift_{I2} I1 is full funtor preserving necessary structure.
+**Definition 12 (Tree as Functor)** — T: T_cal → **Set**, where T_cal = one-object category with single morphism p: 0 → 0. T maps single object to tree nodes, p to parent function; T(p)(r) = r for root r.
 
+## Data Transformations as Lifting Problems
 
-## Multi-Model Support
+**Intuition** — Transformations between instances I1: C1 → **Set** and I2: C2 → **Set** use functors + natural transformations. Functoriality ensures structure preservation.
 
-### Graph as Functor
+**Definition 13 (Data and Schema Transformation)** — Given instances I1: C1 → **Set**, I2: C2 → **Set**, a transformation I1 → I2 = Kan lift (Rift_{I2} I1: C1 → C2, ε: I2 ∘ Rift_{I2} I1 ⇒ I1) where Rift_{I2} I1 is a full functor.
 
-- Graph G represented as funtor G: Gcal → Set where Gcal is two-object category.
-- **Mapping**: G(0)=E (edges), G(1)=V (vertices), G(s)=src, G(t)=tgt.
+Note: Full functors required — functoriality alone does not ensure meaningful transformations for practical use.
 
+## Conclusions and Future Work
 
-### Tree as Functor
+Category-theoretic framework formalizes relational, graph, and hierarchical data models and their transformations. Kan lifts provide universal basis for data and schema transformations.
 
-- Tree T represented as funtor T: Tcal → Set where Tcal is one-object category with parent morfismo.
-- **Mapping**: Single object maps to nodes; parent morfismo maps to parent function.
-
-
-## Example Transformation
-
-- Transformation from relational to property graph instance via Kan lift.
-
-
-- **Schema**: Relational C1 with entities; property graph C2 with nodes/edges.
-- **Kan Lift**: Creates full funtor mapping relational tuples to graph elements preserving structural properties.
-
-
-## Conclusions
-
-- Category theoretical framework:
-
-- Unifies relational, graph, hierarchical models.
-- Formalizes transformations via Kan lifts with universal properties.
-- Promises foundation for multi-model joins, data transformations.
-- Supports polystore and multi-model database complexity.
+Future work:
+- Formalizing query transformations
+- Modeling temporal data within category theory for dynamic data changes

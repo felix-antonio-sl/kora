@@ -18,65 +18,31 @@ lang: es
 
 # Feriados, Permisos y Comisiones
 
-## Feriados y Permisos en el Sector Público
+## Sector Público: Feriados y Permisos
 
-### Feriado Anual
-- **Definición**: Descanso anual remunerado para funcionarios públicos.
-- **Normativa**: Estatuto Administrativo (Ley 18.834).
-- **Condiciones**:
-  - Duración y acumulación según Estatuto y leyes especiales.
-  - Programación obligatoria supeditada a necesidades del servicio.
-  - Requiere autorización previa de la jefatura.
+Feriado anual (Ley 18.834): descanso anual remunerado; duración y acumulación según Estatuto y leyes especiales; programación supeditada a necesidades del servicio; requiere autorización previa de la jefatura.
 
-### Permisos Administrativos
-- **Definición**: Autorizaciones para ausencia temporal por motivos justificados (no médicos).
-- **Tipologías**:
-  - Asuntos particulares.
-  - Fallecimiento de familiares directos.
-  - Actividades gremiales o académicas.
+Permisos administrativos: autorizaciones para ausencia temporal por motivos justificados distintos de enfermedad:
+- Asuntos particulares.
+- Fallecimiento de familiares directos.
+- Actividades gremiales o académicas.
 
-### Licencias Médicas
-- **Definición**: Justificación técnica de inasistencia por enfermedad o accidente.
-- **Alcance**: Aplica al funcionario o sus cargas legales.
-- **Impacto**: Afecta remuneraciones según reglas de seguridad social.
+Licencias médicas: justificación técnica de inasistencia por enfermedad o accidente del funcionario o sus cargas legales; afectan remuneraciones según reglas de seguridad social aplicables.
 
-## Comisiones y Cometidos Funcionarios
+## Sector Público: Comisiones y Cometidos
 
-### Comisiones de Servicio
-- **Normativa**: Estatuto Administrativo (Ley 18.834).
-- **Definición**: Desempeño temporal de funciones fuera del lugar habitual de trabajo.
-- **Atributos**:
-  - Preserva la naturaleza del cargo original.
-  - Genera derecho a viáticos y beneficios pecuniarios asociados.
+Comisiones de servicio (Ley 18.834): desempeño temporal de funciones fuera del lugar habitual de trabajo; preserva la naturaleza del cargo original; genera derecho a viáticos y beneficios pecuniarios asociados.
 
-### Cometidos Funcionarios
-- **Definición**: Instrucciones para realizar labores propias del cargo por tiempo determinado.
-- **Ámbito**: Puede ser dentro o fuera de las dependencias del servicio.
-- **Formalidad**: Requiere resolución formal en caso de desplazamientos significativos.
+Cometidos funcionarios: instrucciones para realizar labores propias del cargo por tiempo determinado, dentro o fuera del servicio; requieren resolución formal cuando implican desplazamientos relevantes.
 
-## Feriados y Permisos en el Sector Privado
+## Sector Privado: Feriados y Permisos
 
-### Feriado Anual Legal
-- **Normativa**: Código del Trabajo.
-- **Definición**: Descanso anual remunerado para trabajadores bajo régimen privado.
-- **Reglas**:
-  - Duración mínima fijada por ley.
-  - Incrementos por antigüedad (feriado progresivo).
-  - Normas estrictas sobre acumulación y fraccionamiento.
+Feriado anual legal (Código del Trabajo): descanso anual remunerado; duración mínima fijada por ley; incrementos por antigüedad (feriado progresivo); normas estrictas de acumulación y fraccionamiento.
 
-### Permisos y Licencias
-- **Normativa**: Código del Trabajo y Seguridad Social.
-- **Cobertura**: Enfermedad, maternidad, paternidad y otros permisos legales específicos.
+Permisos y licencias (Código del Trabajo y seguridad social): enfermedad, maternidad, paternidad y otros permisos legales específicos.
 
 ## Impacto en Organización de Turnos Médicos
-- **Continuidad Asistencial**: Planificación obligatoria de descansos para asegurar dotación mínima.
-- **Gestión de Equipos**: Redistribución de turnos ante comisiones de servicio.
-- **Riesgo Disciplinario**: Inasistencias no justificadas (sin feriado, permiso o licencia) activan responsabilidad administrativa o laboral.
 
-## Resumen Ejecutivo
-- **Ejes**: Clasificación de descansos para médicos en sectores público y privado.
-- **Conectividad**: Relación entre ausencias, continuidad de atención y régimen sancionatorio.
-- **Aplicación**:
-  - Calificación de permisos según casuística.
-  - Evaluación de impacto en carga laboral de equipos.
-  - Nexo entre ausencias e infracciones disciplinarias.
+- Planificación obligatoria de feriados y permisos para asegurar dotación mínima y continuidad asistencial.
+- Comisiones de servicio pueden requerir redistribución de turnos en equipos clínicos.
+- Inasistencia no justificada (sin feriado, permiso ni licencia vigente) genera responsabilidad administrativa o laboral.
