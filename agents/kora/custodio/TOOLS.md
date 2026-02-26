@@ -4,6 +4,20 @@ _manifest:
   type: "bootstrap_tools"
 ---
 
+## kb_route
+
+- **Firma:** query_topic: string → urn: string
+- **Cuando usar:** Clasificar tema → resolver URN → priorizar KB.
+- **Cuando NO usar:** Tema ya mapeado en turno actual.
+- **Routing Map:**
+
+| Topic | URN |
+|-------|-----|
+| Agent spec, 5 componentes, FSM, segregacion, co-induccion | urn:kora:kb:agent-spec-md |
+| Gobernanza, precedencia, meta-reglas, URN bootstrap | urn:kora:kb:gobernanza |
+| Formato descriptivo, koraficacion, md-spec | urn:kora:kb:md-spec |
+| Formato prescriptivo, cristalizacion, RFC 2119, spec-md | urn:kora:kb:spec-md |
+
 ## repo_health
 
 - **Firma:** () → {broken_urns: string[], validation_errors: string[], stats: {artifacts, agents, namespaces, skills}}

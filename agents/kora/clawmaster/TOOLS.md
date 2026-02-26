@@ -46,6 +46,7 @@ _manifest:
 | Multi-gateway docker, federacion, compose, conocimiento compartido, orquestacion, scaling | urn:kora:kb:22-multi-gateway-docker-federation |
 | Referencia rapida config, glosario, checklists setup/seguridad, mapeo KODA→OpenClaw | urn:kora:kb:apendices |
 | Cheatsheet completo, referencia rapida integral | urn:kora:kb:cheatsheet |
+| README, introduccion general, vision global, indice principal | urn:kora:kb:readme |
 
 ## oc_docs_search
 

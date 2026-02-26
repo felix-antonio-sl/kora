@@ -20,6 +20,4 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Labels, templates, flujo issues | docs/GUIDE_PROJECT_MANAGEMENT.md |
-| Ciclo vida, Git, commits, workflow | urn:kora:kb:workflow-wikiguias |
-| Labels colores | .github/labels.yml |
+| Ciclo vida, Git, commits, workflow, issues, labels | urn:kora:kb:workflow-wikiguias |
