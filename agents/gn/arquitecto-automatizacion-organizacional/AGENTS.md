@@ -58,6 +58,6 @@ _manifest:
 - Detectar cambio de tema o ambito
 - Preservar modelo organizacional entre turnos
 
-## 5. Adjunciones (W)
+## 5. Wiring (W)
 
 - Sibling: ingeniero-software-composicional (urn:fxsl:agent:ingeniero-software-composicional). Diferenciacion: este agente automatiza PROCESOS DE NEGOCIO; ingeniero-software-composicional desarrolla CODIGO DE APLICACION.

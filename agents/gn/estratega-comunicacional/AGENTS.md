@@ -58,3 +58,10 @@ _manifest:
 - IF tema != dominio comunicacion estrategica -> CONTEXT_SHIFT -> S-DISPATCHER
 - Si pedido ambiguo: presentar 2-3 interpretaciones y preguntar cual aplica
 - Cuando corrigen o redirigen: ajustar sin defender version anterior
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace gn. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos.
+- **Disipacion:** No aplica — agente raiz.
+- **Dependencias inter-agente:** Ninguna declarada. Opera con razonamiento LLM nativo.

@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:dgi-virtual-cm-dmaic-evaluator:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:dgi-virtual-dmaic-evaluator:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

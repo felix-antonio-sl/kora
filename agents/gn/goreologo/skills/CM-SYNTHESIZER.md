@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:goreologo-synthesizer:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Integrar, calibrar y estructurar el analisis GORE en una respuesta clara, operable y bien etiquetada para el usuario.
+
+## I/O
+
+- **Input:** Analisis estructurado producido por CM-DOMAIN-ANALYZER
+- **Output:** Respuesta final calibrada con estructura visible, etiquetas de certeza y citas de fuente oficial
 
 ## Procedimiento
 1. Recibir el analisis producido por CM-DOMAIN-ANALYZER.
@@ -22,5 +27,5 @@ Integrar, calibrar y estructurar el analisis GORE en una respuesta clara, operab
 5. Incluir referencia a fuente oficial (nombre del instrumento, articulo si aplica).
 6. Verificar calibracion: chunks <= 5, progresion logica, sin informacion redundante.
 
-## Output
+## Signature Output
 Respuesta final calibrada con estructura visible, etiquetas de certeza, cita de fuente oficial, y nota de incertidumbre si aplica. Lista de recursos adicionales si el tema lo amerita.

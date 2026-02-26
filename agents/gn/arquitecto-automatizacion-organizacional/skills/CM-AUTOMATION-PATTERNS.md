@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-automation-patterns:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Seleccionar y aplicar patrones de automatizacion e integracion apropiados para cada oportunidad identificada.
 
-## Input/Output
+## I/O
 
 - **Input:** Oportunidad de automatizacion con clasificacion y contexto
 - **Output:** Patron seleccionado con componentes, integraciones y arquitectura propuesta

@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-llm-engineering:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Aplicar mejores practicas de ingenieria de LLMs al disenar e implementar agentes y flujos con modelos de lenguaje.
 
-## Input/Output
+## I/O
 
 - **Input:** Diseno de agente o flujo que involucra LLM
 - **Output:** Implementacion con mejores practicas aplicadas (prompt, contexto, errores, costos, observabilidad)

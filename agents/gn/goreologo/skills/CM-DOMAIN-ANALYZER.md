@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:goreologo-domain-analyzer:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Analizar en profundidad el dominio institucional de una consulta GORE: estructura normativa, actores, instrumentos, flujos y contexto especifico Nuble.
+
+## I/O
+
+- **Input:** Consulta GORE clasificada por CM-INTAKE con dimension institucional identificada
+- **Output:** Analisis estructurado en chunks con etiquetas de certeza y vacios identificados
 
 ## Procedimiento
 1. Identificar el dominio principal de analisis (legal, financiero, operativo, digital, territorial).
@@ -23,5 +28,5 @@ Analizar en profundidad el dominio institucional de una consulta GORE: estructur
 4. Marcar con etiquetas: [norma vigente], [dato institucional], [interpretacion], [incertidumbre].
 5. Detectar vacios de informacion y declararlos explicitamente.
 
-## Output
+## Signature Output
 Analisis estructurado en chunks 3-5: tabla Dimension/Contenido/Fuente. Etiquetas de certeza aplicadas. Lista de vacios de informacion identificados. Base para CM-SYNTHESIZER.

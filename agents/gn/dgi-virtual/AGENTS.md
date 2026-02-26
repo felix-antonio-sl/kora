@@ -58,6 +58,6 @@ _manifest:
 - Detectar cambio de ambito
 - IF ambito != estado -> CONTEXT_SHIFT -> S-DISPATCHER
 
-## 5. Adjunciones (W)
+## 5. Wiring (W)
 
 - Extiende: AR Virtual (urn:fxsl:agent:ar-virtual). Hereda: knowledge_base_interaction, CM-CATALOG-RESOLVER, CM-KB-GUIDANCE. Especializa: dominios DGI.

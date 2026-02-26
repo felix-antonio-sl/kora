@@ -56,3 +56,10 @@ _manifest:
 - Comparar tema actual vs estado activo
 - Detectar: cambio fase, volver atras, terminar
 - IF fase != estado -> S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace gn. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos.
+- **Disipacion:** No aplica — agente raiz.
+- **Dependencias inter-agente:** Referencia gn/eacs (actos juridicos), gn/erp-gore (recursos operativos) via rejection routing en Reglas Duras.

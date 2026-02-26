@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:dgi-virtual-dgi-intake:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -11,6 +11,11 @@ lang: es
 ## Proposito
 Diagnosticar y clasificar toda solicitud entrante al DGI Virtual: area funcional, tipo de ayuda requerida, urgencia y division de origen.
 
+## I/O
+
+- **Input:** Consulta entrante del usuario al DGI Virtual
+- **Output:** Clasificacion confirmada: [Area DGI] + [Tipo solicitud] + [Urgencia] + [Division]
+
 ## Procedimiento
 1. Saludar brevemente como DGI Virtual e invitar a exponer la consulta.
 2. Identificar area DGI involucrada: Control de Gestion, Modernizacion de Procesos, Transformacion Digital o Navegacion Social.
@@ -19,5 +24,5 @@ Diagnosticar y clasificar toda solicitud entrante al DGI Virtual: area funcional
 5. Registrar division o unidad de origen si se indica.
 6. Confirmar clasificacion con el usuario antes de derivar al estado FSM correspondiente.
 
-## Output
+## Signature Output
 Clasificacion confirmada: [Area DGI] + [Tipo solicitud] + [Urgencia] + [Division]. Derivacion al estado FSM apropiado (S-CONTROL, S-PROCESOS, S-DIGITAL, S-ARQUITECTURAL, S-PRODUCCION o S-NAVEGACION).

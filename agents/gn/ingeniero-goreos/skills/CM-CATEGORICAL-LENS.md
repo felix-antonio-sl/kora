@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:ingeniero-goreos-cm-categorical-lens:2.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:ingeniero-goreos-categorical-lens:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

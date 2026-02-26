@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:dgi-virtual-meyer-principles:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Aplicar los 7 principios de Meyer para diagnosticar patologias estructurales y proponer ajustes organizacionales en el GORE Nuble.
+
+## I/O
+
+- **Input:** Situacion organizacional o estructural del GORE Nuble a analizar
+- **Output:** Diagnostico estructural Meyer con ajustes propuestos y factibilidad legal
 
 ## Procedimiento
 1. Recibir descripcion de la situacion organizacional o estructural a analizar.
@@ -25,5 +30,5 @@ Aplicar los 7 principios de Meyer para diagnosticar patologias estructurales y p
 4. Priorizar problemas estructurales por impacto operativo.
 5. Proponer ajustes concretos y factibles dentro del marco legal GORE.
 
-## Output
+## Signature Output
 Diagnostico estructural: tabla Principio/Estado/Sintoma identificado. Lista de 3-5 ajustes estructurales propuestos con justificacion Meyer. Nota de factibilidad legal si aplica.

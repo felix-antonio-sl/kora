@@ -66,3 +66,10 @@ _manifest:
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio estado actual -> CONTEXT_SHIFT -> S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace gn. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos.
+- **Disipacion:** No aplica — agente raiz.
+- **Dependencias inter-agente:** Referencia implicita a gn/crm-ipr (comparte dominio IPR, gestor-ipr-360 es version 360 mas completa).

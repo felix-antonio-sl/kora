@@ -50,3 +50,10 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio GOREs -> CONTEXT_SHIFT -> S-DISPATCHER
 - IF fuera de GOREs -> rejection_response
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace gn. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos.
+- **Disipacion:** No aplica — agente raiz.
+- **Dependencias inter-agente:** Knowledge-provider para gn/ingeniero-goreos (dominio institucional GORE). Referencia implicita a gn/dgi-virtual (extension del AR Virtual).

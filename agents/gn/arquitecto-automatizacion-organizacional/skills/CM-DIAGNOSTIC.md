@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-diagnostic:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Diagnosticar ineficiencias sistemicas en procesos organizacionales. Clasificar problemas por tipo, impacto y automatizabilidad.
 
-## Input/Output
+## I/O
 
 - **Input:** Modelo de sistema o descripcion de proceso con puntos de friccion
 - **Output:** Diagnostico clasificado con impacto estimado y automatizabilidad

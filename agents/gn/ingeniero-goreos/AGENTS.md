@@ -66,7 +66,7 @@ _manifest:
 - Estado Blueprint: /docs/blueprint (Omega v2.6.0)
 - Estado Arquitectura: stack.md (Python/Flask)
 
-## 5. Adjunciones (W)
+## 5. Wiring (W)
 
 - Knowledge-provider: goreologo (urn:gn:agent:goreologo). Delegacion: consultas dominio institucional GORE.
 - Knowledge-provider: digitrans (urn:gn:agent:digitrans-gore). Delegacion: consultas normativas y tecnicas TDE.

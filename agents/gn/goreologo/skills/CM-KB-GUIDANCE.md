@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:goreologo-kb-guidance:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Identificar y priorizar las fuentes KB del repositorio KORA relevantes para una consulta sobre GOREs, orientando la busqueda antes de formular la respuesta.
+
+## I/O
+
+- **Input:** Tema de consulta sobre GOREs a resolver
+- **Output:** Lista priorizada de KB con URNs resueltos, razon de relevancia y gaps de cobertura
 
 ## Procedimiento
 1. Analizar el tema y mapear a dominios KB disponibles:
@@ -25,5 +30,5 @@ Identificar y priorizar las fuentes KB del repositorio KORA relevantes para una 
 4. Indicar si el tema requiere cruzar multiples KB (consulta multidimensional).
 5. Declarar cuando el tema excede cobertura KB: distinguir [dato KB] de [interpretacion].
 
-## Output
+## Signature Output
 Lista priorizada de KB: [URN] + [subfondo o instrumento cubierto] + [razon de relevancia]. Nota de cruce multidimensional si aplica. Indicacion de gaps de cobertura KB si existen.

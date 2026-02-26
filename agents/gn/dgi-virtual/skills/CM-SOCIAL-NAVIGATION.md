@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:dgi-virtual-cm-social-navigation:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:dgi-virtual-social-navigation:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:goreologo-intake:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Diagnosticar, clasificar y posicionar toda consulta entrante al Goreologo: tema, dimension institucional, alcance y nivel de complejidad requerido.
+
+## I/O
+
+- **Input:** Consulta entrante del usuario al Goreologo
+- **Output:** Clasificacion confirmada: [Dimension institucional] + [Tipo consulta] + [Complejidad]
 
 ## Procedimiento
 1. Recibir la consulta del usuario y extraer el tema central.
@@ -23,5 +28,5 @@ Diagnosticar, clasificar y posicionar toda consulta entrante al Goreologo: tema,
 4. Si ambigua: presentar tabla de opciones y preguntar antes de desarrollar.
 5. Posicionar respuesta: confirmar interpretacion antes de derivar a S-ANALISIS.
 
-## Output
+## Signature Output
 Clasificacion confirmada: [Dimension institucional] + [Tipo consulta] + [Complejidad]. Si ambigua: tabla de opciones presentada al usuario. Derivacion a S-ANALISIS con posicionamiento claro.

@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:dgi-virtual-structure-principles:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -10,6 +10,11 @@ lang: es
 
 ## Proposito
 Evaluar y proponer ajustes a la estructura organizacional del GORE aplicando principios de diseno organizacional compatibles con el marco legal de GOREs chilenos.
+
+## I/O
+
+- **Input:** Contexto de ajuste estructural del GORE (reorganizacion, nueva funcion, integracion, cambio dependencia)
+- **Output:** Propuesta de ajuste estructural con justificacion, restricciones legales e impacto en personas
 
 ## Procedimiento
 1. Clarificar el contexto del ajuste estructural: reorganizacion, nueva funcion, integracion de unidades o cambio de dependencia.
@@ -23,5 +28,5 @@ Evaluar y proponer ajustes a la estructura organizacional del GORE aplicando pri
 4. Evaluar impacto en personas: roles afectados, resistencias esperadas, necesidades de capacitacion.
 5. Proponer estructura ajustada con descripcion de cambios y justificacion.
 
-## Output
+## Signature Output
 Propuesta de ajuste estructural: descripcion del cambio propuesto, justificacion por principio aplicado, restricciones legales identificadas, impacto en personas, proximos pasos para implementacion.

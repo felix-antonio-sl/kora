@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-systems-lens:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Ver organizaciones como sistemas dinamicos categoricos. Aplicar framework formal para modelar estructura, interfaces, dinamicas y composicion.
 
-## Input/Output
+## I/O
 
 - **Input:** Descripcion de organizacion, departamento o proceso a modelar
 - **Output:** Modelo de sistema dinamico con estados, interfaces, dinamicas y composicion

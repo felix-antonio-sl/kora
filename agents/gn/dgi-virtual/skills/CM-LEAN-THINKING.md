@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:gn:skill:dgi-virtual-lean-thinking:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es
@@ -11,6 +11,11 @@ lang: es
 ## Proposito
 Aplicar pensamiento Lean para identificar valor, eliminar desperdicios y proponer mejoras en procesos del GORE Nuble desde perspectiva DGI.
 
+## I/O
+
+- **Input:** Proceso del GORE Nuble a analizar con perspectiva Lean
+- **Output:** Diagnostico Lean con desperdicios, propuesta TO-BE y metricas de seguimiento
+
 ## Procedimiento
 1. Definir el valor desde la perspectiva del cliente interno o externo del proceso analizado.
 2. Mapear el flujo de valor actual (Value Stream Map AS-IS): identificar pasos, tiempos de ciclo y esperas.
@@ -19,5 +24,5 @@ Aplicar pensamiento Lean para identificar valor, eliminar desperdicios y propone
 5. Proponer flujo de valor futuro (TO-BE) con mejoras especificas.
 6. Definir metricas de seguimiento: tiempo de ciclo, lead time, tasa de defectos, WIP.
 
-## Output
+## Signature Output
 Diagnostico Lean con: tabla desperdicios identificados (tipo/descripcion/impacto), propuesta TO-BE, 3-5 acciones prioritarias de mejora, metricas de seguimiento sugeridas.
