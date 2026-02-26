@@ -462,7 +462,7 @@ Catalog:
     title: CM-CRYSTALLIZER
     file: agents/kora/curator/skills/CM-CRYSTALLIZER.md
     status: published
-  - urn: urn:kora:skill:curator-koraficator:1.0.0
+  - urn: urn:kora:skill:curator-koraficator:1.1.0
     title: CM-KORAFICATOR
     file: agents/kora/curator/skills/CM-KORAFICATOR.md
     status: published
@@ -473,34 +473,6 @@ Catalog:
   - urn: urn:kora:skill:curator-artifact-auditor:1.0.0
     title: CM-ARTIFACT-AUDITOR
     file: agents/kora/curator/skills/CM-ARTIFACT-AUDITOR.md
-    status: published
-  - urn: urn:kora:skill:cartographer-project-classifier:1.0.0
-    title: CM-PROJECT-CLASSIFIER
-    file: agents/kora/cartographer/skills/CM-PROJECT-CLASSIFIER.md
-    status: published
-  - urn: urn:kora:skill:cartographer-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER
-    file: agents/kora/cartographer/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:kora:skill:architect-kora-hub-operations:1.0.0
-    title: CM-KORA-HUB-OPERATIONS
-    file: agents/kora/architect/skills/CM-KORA-HUB-OPERATIONS.md
-    status: published
-  - urn: urn:kora:skill:architect-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER
-    file: agents/kora/architect/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:kora:skill:architect-pedagogical-scaffolding:1.0.0
-    title: CM-PEDAGOGICAL-SCAFFOLDING
-    file: agents/kora/architect/skills/CM-PEDAGOGICAL-SCAFFOLDING.md
-    status: published
-  - urn: urn:kora:skill:architect-validation-engine:1.0.0
-    title: CM-VALIDATION-ENGINE
-    file: agents/kora/architect/skills/CM-VALIDATION-ENGINE.md
-    status: published
-  - urn: urn:kora:skill:architect-intent-analyzer:1.0.0
-    title: CM-INTENT-ANALYZER
-    file: agents/kora/architect/skills/CM-INTENT-ANALYZER.md
     status: published
   - urn: urn:ops:skill:orquestador-swarm-backpressure-controller:1.0.0
     title: CM-BACKPRESSURE-CONTROLLER.md
@@ -614,21 +586,45 @@ Catalog:
     title: CM-DIVERSITY-LAYER.md
     file: agents/ops/verificador/skills/CM-DIVERSITY-LAYER.md
     status: published
+  - urn: urn:kora:skill:korax-cm-companion:1.0.0
+    title: CM-COMPANION.md
+    file: agents/korvo/korax/skills/CM-COMPANION.md
+    status: published
+  - urn: urn:kora:skill:korax-cm-problem-solver:1.0.0
+    title: CM-PROBLEM-SOLVER.md
+    file: agents/korvo/korax/skills/CM-PROBLEM-SOLVER.md
+    status: published
+  - urn: urn:kora:skill:korax-cm-advisor:1.0.0
+    title: CM-ADVISOR.md
+    file: agents/korvo/korax/skills/CM-ADVISOR.md
+    status: published
   Knowledge:
+  - urn: urn:kora:kb:skill-spec-md
+    title: KORA/Skill-Spec --- Especificacion de Skills v2.0.0
+    file: specs/skill-spec-md.md
+    status: published
   - urn: urn:kora:kb:agent-spec-md
-    title: KORA/Agent-Spec — Especificación Categórica de Agentes v5.0.0
+    title: KORA/Agent-Spec --- Arquitectura de Agentes v7.2.0
     file: specs/agent-spec-md.md
     status: published
   - urn: urn:kora:kb:spec-md
-    title: KORA/Spec-MD — Especificación para Documentos Prescriptivos v2.1.0
+    title: KORA/Spec-MD — Especificacion para Documentos Prescriptivos v3.0.0
     file: specs/spec-md.md
     status: published
   - urn: urn:kora:kb:md-spec
-    title: KORA/MD — Especificación de Artefactos de Conocimiento v2.0.0
+    title: KORA/MD — Especificacion de Artefactos de Conocimiento v3.0.0
     file: specs/md-spec.md
     status: published
+  - urn: urn:kora:kb:runtime-spec-md
+    title: KORA/Runtime-Spec --- Deployment Cross-Platform de Agentes v2.0.1
+    file: specs/runtime-spec-md.md
+    status: published
+  - urn: urn:kora:kb:swarm-spec-md
+    title: KORA/Swarm-Spec --- Orquestacion Multi-Agente v1.1.0
+    file: specs/swarm-spec-md.md
+    status: published
   - urn: urn:kora:kb:gobernanza
-    title: Gobernanza del Ecosistema KORA v1.2.0
+    title: Gobernanza del Ecosistema KORA v2.1.0
     file: specs/gobernanza.md
     status: published
   - urn: urn:fxsl:kb:mbse-consistency
@@ -732,21 +728,19 @@ Catalog:
     file: knowledge/fxsl/mbt/fx-rules.md
     status: published
   - urn: urn:fxsl:kb:xanpan-agents-metodologia
-    title: Xanpan::Agents --- Metodologia de Desarrollo Agil Post-Humano v2.1.0
+    title: XANPAN::AGENTS v2.1
     file: knowledge/fxsl/xanpan/xanpan-agents-metodologia.md
     status: published
   - urn: urn:fxsl:kb:swarm-ops-metodologia
-    title: Swarm::Ops --- Framework Operacional para Enjambres de Agentes v1.0.0
+    title: SWARM::OPS v1.0
     file: knowledge/fxsl/xanpan/swarm-ops-metodologia.md
     status: published
   - urn: urn:fxsl:kb:stack-llm-arquitectura
-    title: STACK::LLM — Arquitectura de Referencia para Desarrollo Asistido por LLM
-      v1.0.0
+    title: STACK::LLM v1.0
     file: knowledge/fxsl/xanpan/stack-llm-arquitectura.md
     status: published
   - urn: urn:fxsl:kb:chapter0-operador-solitario
-    title: 'Chapter 0: El Operador Solitario — Bootstrap Path para Desarrollo Asistido
-      por LLM v1.0.0'
+    title: 'CHAPTER 0: EL OPERADOR SOLITARIO'
     file: knowledge/fxsl/xanpan/chapter0-operador-solitario.md
     status: published
   - urn: urn:fxsl:kb:fx-uom-model
@@ -1144,6 +1138,30 @@ Catalog:
     title: Hub de Agentes TDE
     file: knowledge/kora/sys/hub_agentes.md
     status: published
+  - urn: urn:kora:kb:cat-ecosystem-2cat
+    title: 'The 2-Category Eco: Interoperability of Agents'
+    file: knowledge/kora/categorical-foundations/03-ecosystem-2cat.md
+    status: published
+  - urn: urn:kora:kb:cat-governance-lattice
+    title: 'Governance as Lattice: Precedence, Transformation, and Spec Hierarchy'
+    file: knowledge/kora/categorical-foundations/05-governance-lattice.md
+    status: published
+  - urn: urn:kora:kb:cat-agent-coalgebra
+    title: The Agent as F-Coalgebra
+    file: knowledge/kora/categorical-foundations/01-agent-coalgebra.md
+    status: published
+  - urn: urn:kora:kb:cat-foundations
+    title: Categorical Foundations for KORA
+    file: knowledge/kora/categorical-foundations/00-foundations.md
+    status: published
+  - urn: urn:kora:kb:cat-discovery-presheaf
+    title: The Discovery Presheaf Psh(F)
+    file: knowledge/kora/categorical-foundations/04-discovery-presheaf.md
+    status: published
+  - urn: urn:kora:kb:cat-skill-algebra
+    title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget'
+    file: knowledge/kora/categorical-foundations/02-skill-algebra.md
+    status: published
   - urn: urn:kora:kb:05-memoria
     title: Capítulo 5 — Memoria
     file: knowledge/kora/manual-openclaw/05-memoria.md
@@ -1525,30 +1543,6 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/analyst/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/ingeniero-moltbot-composicional/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/ingeniero-moltbot-composicional/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/ingeniero-moltbot-composicional/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/ingeniero-moltbot-composicional/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-cm-channel-integrator:1.0.0
-    title: CM-CHANNEL-INTEGRATOR.md
-    file: agents/fxsl/ingeniero-moltbot-composicional/skills/CM-CHANNEL-INTEGRATOR.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-moltbot-composicional-cm-moltbot-classifier:1.0.0
-    title: CM-MOLTBOT-CLASSIFIER.md
-    file: agents/fxsl/ingeniero-moltbot-composicional/skills/CM-MOLTBOT-CLASSIFIER.md
-    status: published
   - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-user:1.0.0
     title: USER.md
     file: agents/fxsl/arquitecto-sistemas-informacion/USER.md
@@ -1632,38 +1626,6 @@ Catalog:
   - urn: urn:fxsl:agent-bootstrap:pensador-generador-cm-navegador-tensiones:2.0.0
     title: CM-navegador-tensiones.md
     file: agents/fxsl/pensador-generador/skills/CM-navegador-tensiones.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-user:1.1.0
-    title: USER.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-soul:1.1.0
-    title: SOUL.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-agents:1.1.0
-    title: AGENTS.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-tools:1.1.0
-    title: TOOLS.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-cm-channel-integrator:1.1.0
-    title: CM-channel-integrator.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/skills/CM-channel-integrator.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-cm-gateway-architect:1.1.0
-    title: CM-gateway-architect.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/skills/CM-gateway-architect.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-cm-tools-designer:1.1.0
-    title: CM-tools-designer.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/skills/CM-tools-designer.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-openclaw-composicional-cm-session-designer:1.1.0
-    title: CM-session-designer.md
-    file: agents/fxsl/ingeniero-openclaw-composicional/skills/CM-session-designer.md
     status: published
   - urn: urn:fxsl:agent-bootstrap:ontologista-gist-user:1.0.0
     title: USER.md
@@ -1965,19 +1927,19 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/ar-virtual/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-user:2.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0
     title: USER.md
     file: agents/fxsl/arquitecto-categorico/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:2.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0
     title: SOUL.md
     file: agents/fxsl/arquitecto-categorico/SOUL.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:2.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.0.0
     title: AGENTS.md
     file: agents/fxsl/arquitecto-categorico/AGENTS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:2.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.0.0
     title: TOOLS.md
     file: agents/fxsl/arquitecto-categorico/TOOLS.md
     status: published
@@ -2429,98 +2391,6 @@ Catalog:
     title: TOOLS.md
     file: agents/kora/curator/TOOLS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-user:1.0.0
-    title: USER.md
-    file: agents/kora/cartographer/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/cartographer/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/cartographer/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/cartographer/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-upper-ontology-selector:1.0.0
-    title: CM-upper-ontology-selector.md
-    file: agents/kora/cartographer/skills/CM-upper-ontology-selector.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-schema-writer:1.0.0
-    title: CM-schema-writer.md
-    file: agents/kora/cartographer/skills/CM-schema-writer.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-story-validator:1.0.0
-    title: CM-story-validator.md
-    file: agents/kora/cartographer/skills/CM-story-validator.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-dependency-grapher:1.0.0
-    title: CM-dependency-grapher.md
-    file: agents/kora/cartographer/skills/CM-dependency-grapher.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-layer-designer:1.0.0
-    title: CM-layer-designer.md
-    file: agents/kora/cartographer/skills/CM-layer-designer.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-inventory-builder:1.0.0
-    title: CM-inventory-builder.md
-    file: agents/kora/cartographer/skills/CM-inventory-builder.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-pattern-advisor:1.0.0
-    title: CM-pattern-advisor.md
-    file: agents/kora/cartographer/skills/CM-pattern-advisor.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-synonym-detector:1.0.0
-    title: CM-synonym-detector.md
-    file: agents/kora/cartographer/skills/CM-synonym-detector.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-ontological-classifier:1.0.0
-    title: CM-ontological-classifier.md
-    file: agents/kora/cartographer/skills/CM-ontological-classifier.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-pattern-listener:1.0.0
-    title: CM-pattern-listener.md
-    file: agents/kora/cartographer/skills/CM-pattern-listener.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-tension-resolver:1.0.0
-    title: CM-tension-resolver.md
-    file: agents/kora/cartographer/skills/CM-tension-resolver.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-pattern-abstractor:1.0.0
-    title: CM-pattern-abstractor.md
-    file: agents/kora/cartographer/skills/CM-pattern-abstractor.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:cartographer-cm-authority-finder:1.0.0
-    title: CM-authority-finder.md
-    file: agents/kora/cartographer/skills/CM-authority-finder.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:architect-user:1.0.0
-    title: USER.md
-    file: agents/kora/architect/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:architect-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/architect/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:architect-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/architect/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:architect-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/architect/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:architect-cm-kora-transform:1.0.0
-    title: CM-kora-transform.md
-    file: agents/kora/architect/skills/CM-kora-transform.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:architect-cm-kora-agent-construct:1.0.0
-    title: CM-kora-agent-construct.md
-    file: agents/kora/architect/skills/CM-kora-agent-construct.md
-    status: published
   - urn: urn:ops:agent-bootstrap:orquestador-swarm-user:1.0.0
     title: USER.md
     file: agents/ops/orquestador-swarm/USER.md
@@ -2657,58 +2527,6 @@ Catalog:
     title: TOOLS.md
     file: agents/ops/integrador/TOOLS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:sim-orchestrator-user:2.0.0
-    title: USER.md
-    file: agents/ops/sim-orchestrator/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:sim-orchestrator-soul:2.0.0
-    title: SOUL.md
-    file: agents/ops/sim-orchestrator/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:sim-orchestrator-agents:2.0.0
-    title: AGENTS.md
-    file: agents/ops/sim-orchestrator/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:sim-orchestrator-tools:2.0.0
-    title: TOOLS.md
-    file: agents/ops/sim-orchestrator/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:sim-orchestrator-cm-simulation-engine:1.0.0
-    title: CM-simulation-engine.md
-    file: agents/ops/sim-orchestrator/skills/CM-simulation-engine.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:sim-orchestrator-cm-report-synthesizer:1.0.0
-    title: CM-report-synthesizer.md
-    file: agents/ops/sim-orchestrator/skills/CM-report-synthesizer.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-user:2.0.0
-    title: USER.md
-    file: agents/ops/tester/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-soul:2.0.0
-    title: SOUL.md
-    file: agents/ops/tester/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-agents:2.0.0
-    title: AGENTS.md
-    file: agents/ops/tester/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-tools:2.0.0
-    title: TOOLS.md
-    file: agents/ops/tester/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-cm-full-audit-suite:1.0.0
-    title: '... etc'
-    file: agents/ops/tester/skills/CM-full-audit-suite.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-cm-needle-haystack:1.0.0
-    title: CM-needle-haystack.md
-    file: agents/ops/tester/skills/CM-needle-haystack.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:tester-cm-adversarial-generator:1.0.0
-    title: '... etc'
-    file: agents/ops/tester/skills/CM-adversarial-generator.md
-    status: published
   - urn: urn:kora:agent-bootstrap:ci-assistant-user:2.0.0
     title: USER.md
     file: agents/ops/ci-assistant/USER.md
@@ -2760,19 +2578,19 @@ Catalog:
   - urn: urn:korvo:agent-bootstrap:korvo-assistant-user:2.0.0
     title: USER.md
     file: agents/korvo/korvo-assistant/USER.md
-    status: published
+    status: deprecated
   - urn: urn:korvo:agent-bootstrap:korvo-assistant-soul:2.0.0
     title: SOUL.md
     file: agents/korvo/korvo-assistant/SOUL.md
-    status: published
+    status: deprecated
   - urn: urn:korvo:agent-bootstrap:korvo-assistant-agents:2.0.0
     title: AGENTS.md
     file: agents/korvo/korvo-assistant/AGENTS.md
-    status: published
+    status: deprecated
   - urn: urn:korvo:agent-bootstrap:korvo-assistant-tools:2.0.0
     title: TOOLS.md
     file: agents/korvo/korvo-assistant/TOOLS.md
-    status: published
+    status: deprecated
   - urn: urn:korvo:agent-bootstrap:korvo-assistant-cm-problem-solver:1.0.0
     title: CM-problem-solver.md
     file: agents/korvo/korvo-assistant/skills/CM-problem-solver.md
@@ -2781,19 +2599,19 @@ Catalog:
     title: CM-productivity-engine.md
     file: agents/korvo/korvo-assistant/skills/CM-productivity-engine.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-user:1.0.0
+  - urn: urn:kora:agent-bootstrap:korax-user:2.0.0
     title: USER.md
     file: agents/korvo/korax/USER.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-soul:1.0.0
+  - urn: urn:kora:agent-bootstrap:korax-soul:2.0.0
     title: SOUL.md
     file: agents/korvo/korax/SOUL.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-agents:1.0.0
+  - urn: urn:kora:agent-bootstrap:korax-agents:2.0.0
     title: AGENTS.md
     file: agents/korvo/korax/AGENTS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-tools:1.0.0
+  - urn: urn:kora:agent-bootstrap:korax-tools:2.0.0
     title: TOOLS.md
     file: agents/korvo/korax/TOOLS.md
     status: published
@@ -2817,7 +2635,7 @@ Catalog:
     title: CM-DETECCION-ABANDONO.md
     file: agents/korvo/korax/skills/CM-DETECCION-ABANDONO.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-planificacion:1.0.0
+  - urn: urn:kora:agent-bootstrap:korax-cm-planificacion:2.0.0
     title: CM-PLANIFICACION.md
     file: agents/korvo/korax/skills/CM-PLANIFICACION.md
     status: published
@@ -2825,7 +2643,7 @@ Catalog:
     title: CM-SINCRONIZACION.md
     file: agents/korvo/korax/skills/CM-SINCRONIZACION.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-close:1.0.0
+  - urn: urn:kora:agent-bootstrap:korax-cm-close:2.0.0
     title: CM-CLOSE.md
     file: agents/korvo/korax/skills/CM-CLOSE.md
     status: published
