@@ -1,19 +1,19 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-cm-triaje:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:korvo:skill:korax-triaje:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
-## Purpose
+## Proposito
 
 Protocolo de procesamiento del buffer (Módulo 2 PCA). Procesa items sin triajear desde INBOX.md hacia sus destinos GTD.
 
-## Input/Output
+## I/O
 
 - **Input:** items: Item[] (sin procesar en INBOX.md)
 - **Output:** result: TriageResult {procesados, eliminados, incubados, comprometidos, waiting}
 
-## Procedure
+## Procedimiento
 
 ### Rama Asistida (delegation_scope: none)
 

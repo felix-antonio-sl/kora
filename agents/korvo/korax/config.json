@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:korvo:agent-bootstrap:korax-config:1.0.0",
+    "urn": "urn:korvo:agent-bootstrap:korax-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [],

@@ -1,19 +1,19 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:korax-cm-problem-solver:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:korvo:skill:korax-problem-solver:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
-## Purpose
+## Proposito
 
 Resolución estructurada de problemas complejos. Combina problem framing, root cause analysis y generación de soluciones para ayudar al operador a abordar retos que no se resuelven con una simple captura al GTD.
 
-## Input/Output
+## I/O
 
 - **Input:** problem_description: string, context: {domain, prior_attempts, resources}
 - **Output:** solution_plan: {problem_statement, root_causes[], options[], recommendation, action_plan}
 
-## Procedure
+## Procedimiento
 
 1. **Problem Framing** — definir el problema con 5 preguntas:
    - ¿Cuál es el problema específico?

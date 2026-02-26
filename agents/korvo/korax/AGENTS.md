@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-agents:2.0.0"
+  urn: "urn:korvo:agent-bootstrap:korax-agents:2.0.0"
   type: "bootstrap_agents"
 ---
 

@@ -1,19 +1,19 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-cm-deteccion-abandono:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:korvo:skill:korax-deteccion-abandono:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
-## Purpose
+## Proposito
 
 Detección y reactivación suave ante abandono del sistema. Escala en 3 niveles calibrados (INV-08: 3d → 7d → 14d, sin saltar niveles).
 
-## Input/Output
+## I/O
 
 - **Input:** last_activity: timestamp, buffer_state: {count, ages}
 - **Output:** reactivation: AbandonResult {nivel, mensaje, opciones}
 
-## Procedure
+## Procedimiento
 
 ### Detección (<1 minuto, automática)
 

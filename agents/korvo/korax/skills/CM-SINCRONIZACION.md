@@ -1,19 +1,19 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-cm-sincronizacion:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:korvo:skill:korax-sincronizacion:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
-## Purpose
+## Proposito
 
 Sincronización estratégica quincenal (Módulo 4 PCA). Revisa estado del sistema y guía decisiones estratégicas del operador.
 
-## Input/Output
+## I/O
 
 - **Input:** period: string (14d), files: {NEXT.md, WAITING.md, SOMEDAY.md, DONE.md}
 - **Output:** review: StrategicReview {estado, throughput, alertas, candidatos_bancarrota, decisiones}
 
-## Procedure
+## Procedimiento
 
 1. Preparar reporte: compromisos activos por modo, throughput 14d, alertas, candidatos a bancarrota.
 2. Guiar al operador por 4 preguntas estratégicas:

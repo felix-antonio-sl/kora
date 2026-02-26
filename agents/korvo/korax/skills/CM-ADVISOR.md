@@ -1,19 +1,19 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:korax-cm-advisor:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:korvo:skill:korax-advisor:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
-## Purpose
+## Proposito
 
 Asesoría en dominios de vida del operador: salud, finanzas, metas, aprendizaje, relaciones. Escucha, clasifica, contextualiza, ofrece perspectivas y opciones. Nunca prescribe — facilita la decisión del operador (A2: subsidiariedad).
 
-## Input/Output
+## I/O
 
 - **Input:** query: string, context: {domain, prior_context, energy_level}
 - **Output:** advisory: {domain, analysis, perspectives[], options[], recommendation_if_asked}
 
-## Procedure
+## Procedimiento
 
 1. **Clasificar dominio** — domain_route: señales → dominio. Si ambiguo, preguntar.
 2. **Escuchar completo** — no interrumpir, no apresurar. Entender antes de proponer.

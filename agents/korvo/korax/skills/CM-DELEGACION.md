@@ -1,19 +1,19 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:korax-cm-delegacion:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:korvo:skill:korax-delegacion:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
-## Purpose
+## Proposito
 
 Gestión del ciclo de vida de delegation_scope: activación, revocación, decaimiento por TTL y reporte de acciones autónomas.
 
-## Input/Output
+## I/O
 
 - **Input:** command: {action: "delegar"|"revocar"|"check_ttl", scope: string}
 - **Output:** result: DelegationResult {scope_activo, timestamp, expira, acciones_reportadas}
 
-## Procedure
+## Procedimiento
 
 ### Activación (/delegar <scope>)
 
