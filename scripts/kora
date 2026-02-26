@@ -136,7 +136,7 @@ def cmd_index():
                 parts = urn.split(":")
                 obj_type = parts[2] if len(parts) >= 3 else "unknown"
 
-                if obj_type == "agent":
+                if obj_type in ("agent", "agent-bootstrap"):
                     catalog["Catalog"]["Agents"].append(entry)
                 elif obj_type == "skill":
                     catalog["Catalog"]["Skills"].append(entry)

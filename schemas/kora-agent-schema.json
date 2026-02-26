@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KORA Agent Component Schema",
+  "description": "Validates KORA agent component frontmatter per agent-spec-md v7.2.0",
+  "type": "object",
+  "required": ["_manifest"],
+  "properties": {
+    "_manifest": {
+      "type": "object",
+      "required": ["urn", "type"],
+      "properties": {
+        "urn": {
+          "type": "string",
+          "pattern": "^urn:[a-z][a-z0-9]*:"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "bootstrap_agents",
+            "bootstrap_soul",
+            "bootstrap_tools",
+            "bootstrap_user",
+            "bootstrap_config",
+            "lazy_load_endofunctor"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

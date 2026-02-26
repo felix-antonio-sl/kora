@@ -4,7 +4,759 @@ _manifest:
     visibility: public
   description: Auto-generated Kora Monorepo Catalog
 Catalog:
-  Agents: []
+  Agents:
+  - urn: urn:fxsl:agent-bootstrap:reviewer-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/reviewer/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:reviewer-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/reviewer/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:reviewer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/reviewer/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:reviewer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/reviewer/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/analyst/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/analyst/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/analyst/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:analyst-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/analyst/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:planner-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/planner/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:planner-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/planner/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:planner-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/planner/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:planner-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/planner/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0
+    title: USER.md
+    file: agents/fxsl/pensador-generador/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0
+    title: SOUL.md
+    file: agents/fxsl/pensador-generador/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0
+    title: AGENTS.md
+    file: agents/fxsl/pensador-generador/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0
+    title: TOOLS.md
+    file: agents/fxsl/pensador-generador/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/ontologista-gist/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/ontologista-gist/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/ontologista-gist/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/ontologista-gist/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/sentinel/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/sentinel/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/sentinel/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:sentinel-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/sentinel/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/refactorer/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/refactorer/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/refactorer/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:refactorer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/refactorer/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/abogado-legislacion-medica/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/abogado-legislacion-medica/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/abogado-legislacion-medica/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/abogado-legislacion-medica/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:banca-inversion-user:2.0.0
+    title: USER.md
+    file: agents/fxsl/banca-inversion/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:banca-inversion-soul:2.0.0
+    title: SOUL.md
+    file: agents/fxsl/banca-inversion/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:banca-inversion-agents:2.0.0
+    title: AGENTS.md
+    file: agents/fxsl/banca-inversion/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:banca-inversion-tools:2.0.0
+    title: TOOLS.md
+    file: agents/fxsl/banca-inversion/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-user:2.0.0
+    title: USER.md
+    file: agents/fxsl/ingeniero-software-composicional/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-soul:2.0.0
+    title: SOUL.md
+    file: agents/fxsl/ingeniero-software-composicional/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-agents:2.0.0
+    title: AGENTS.md
+    file: agents/fxsl/ingeniero-software-composicional/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-tools:2.0.0
+    title: TOOLS.md
+    file: agents/fxsl/ingeniero-software-composicional/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/tester/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/tester/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/tester/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:tester-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/tester/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-user:1.1.0
+    title: USER.md
+    file: agents/fxsl/medico-urgencias/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-soul:1.1.0
+    title: SOUL.md
+    file: agents/fxsl/medico-urgencias/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-agents:1.1.0
+    title: AGENTS.md
+    file: agents/fxsl/medico-urgencias/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-tools:1.1.0
+    title: TOOLS.md
+    file: agents/fxsl/medico-urgencias/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-user:2.0.0
+    title: USER.md
+    file: agents/fxsl/modelador-mbt/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-soul:2.0.0
+    title: SOUL.md
+    file: agents/fxsl/modelador-mbt/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-agents:2.0.0
+    title: AGENTS.md
+    file: agents/fxsl/modelador-mbt/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-tools:2.0.0
+    title: TOOLS.md
+    file: agents/fxsl/modelador-mbt/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-user:1.0.0
+    title: USER.md
+    file: agents/fxsl/coder/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-soul:1.0.0
+    title: SOUL.md
+    file: agents/fxsl/coder/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-agents:1.0.0
+    title: AGENTS.md
+    file: agents/fxsl/coder/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:coder-tools:1.0.0
+    title: TOOLS.md
+    file: agents/fxsl/coder/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:visionario-user:2.0.0
+    title: USER.md
+    file: agents/fxsl/visionario/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:visionario-soul:2.0.0
+    title: SOUL.md
+    file: agents/fxsl/visionario/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:visionario-agents:2.0.0
+    title: AGENTS.md
+    file: agents/fxsl/visionario/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:visionario-tools:2.0.0
+    title: TOOLS.md
+    file: agents/fxsl/visionario/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ar-virtual-user:2.0.0
+    title: USER.md
+    file: agents/fxsl/ar-virtual/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ar-virtual-soul:2.0.0
+    title: SOUL.md
+    file: agents/fxsl/ar-virtual/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ar-virtual-agents:2.0.0
+    title: AGENTS.md
+    file: agents/fxsl/ar-virtual/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:ar-virtual-tools:2.0.0
+    title: TOOLS.md
+    file: agents/fxsl/ar-virtual/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0
+    title: USER.md
+    file: agents/fxsl/arquitecto-categorico/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0
+    title: SOUL.md
+    file: agents/fxsl/arquitecto-categorico/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.0.0
+    title: AGENTS.md
+    file: agents/fxsl/arquitecto-categorico/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.0.0
+    title: TOOLS.md
+    file: agents/fxsl/arquitecto-categorico/TOOLS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-user:4.0.0
+    title: USER.md
+    file: agents/fxsl/asesor-juridico/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-soul:4.0.0
+    title: SOUL.md
+    file: agents/fxsl/asesor-juridico/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-agents:4.0.0
+    title: AGENTS.md
+    file: agents/fxsl/asesor-juridico/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-tools:4.0.0
+    title: TOOLS.md
+    file: agents/fxsl/asesor-juridico/TOOLS.md
+    status: published
+  - urn: urn:orko:agent-bootstrap:arquitecto-orko-user:2.0.0
+    title: USER.md
+    file: agents/orko/arquitecto-orko/USER.md
+    status: published
+  - urn: urn:orko:agent-bootstrap:arquitecto-orko-soul:2.0.0
+    title: SOUL.md
+    file: agents/orko/arquitecto-orko/SOUL.md
+    status: published
+  - urn: urn:orko:agent-bootstrap:arquitecto-orko-agents:2.0.0
+    title: AGENTS.md
+    file: agents/orko/arquitecto-orko/AGENTS.md
+    status: published
+  - urn: urn:orko:agent-bootstrap:arquitecto-orko-tools:2.0.0
+    title: TOOLS.md
+    file: agents/orko/arquitecto-orko/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:dgi-virtual-user:1.0.0
+    title: USER.md
+    file: agents/gn/dgi-virtual/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0
+    title: SOUL.md
+    file: agents/gn/dgi-virtual/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0
+    title: AGENTS.md
+    file: agents/gn/dgi-virtual/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:dgi-virtual-tools:1.0.0
+    title: TOOLS.md
+    file: agents/gn/dgi-virtual/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0
+    title: USER.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0
+    title: SOUL.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0
+    title: AGENTS.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-tools:1.0.0
+    title: TOOLS.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-user:2.0.0
+    title: USER.md
+    file: agents/gn/gestor-ipr-360/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/gestor-ipr-360/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/gestor-ipr-360/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/gestor-ipr-360/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:goreologo-user:2.4.0
+    title: USER.md
+    file: agents/gn/goreologo/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:goreologo-soul:2.4.0
+    title: SOUL.md
+    file: agents/gn/goreologo/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:goreologo-agents:2.4.0
+    title: AGENTS.md
+    file: agents/gn/goreologo/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:goreologo-tools:2.4.0
+    title: TOOLS.md
+    file: agents/gn/goreologo/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-user:2.0.0
+    title: USER.md
+    file: agents/gn/ingeniero-goreos/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/ingeniero-goreos/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/ingeniero-goreos/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/ingeniero-goreos/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:eacs-user:2.0.0
+    title: USER.md
+    file: agents/gn/eacs/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:eacs-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/eacs/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:eacs-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/eacs/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:eacs-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/eacs/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:crm-ipr-user:2.0.0
+    title: USER.md
+    file: agents/gn/crm-ipr/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:crm-ipr-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/crm-ipr/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:crm-ipr-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/crm-ipr/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:crm-ipr-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/crm-ipr/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:digitrans-gore-user:1.0.0
+    title: USER.md
+    file: agents/gn/digitrans-gore/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:digitrans-gore-soul:1.0.0
+    title: SOUL.md
+    file: agents/gn/digitrans-gore/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:digitrans-gore-agents:1.0.0
+    title: AGENTS.md
+    file: agents/gn/digitrans-gore/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:digitrans-gore-tools:1.0.0
+    title: TOOLS.md
+    file: agents/gn/digitrans-gore/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-user:2.0.0
+    title: USER.md
+    file: agents/gn/gobernador-virtual/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/gobernador-virtual/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/gobernador-virtual/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/gobernador-virtual/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-user:1.0.0
+    title: USER.md
+    file: agents/gn/estratega-comunicacional/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-soul:1.0.0
+    title: SOUL.md
+    file: agents/gn/estratega-comunicacional/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-agents:1.0.0
+    title: AGENTS.md
+    file: agents/gn/estratega-comunicacional/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-tools:1.0.0
+    title: TOOLS.md
+    file: agents/gn/estratega-comunicacional/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:omega-user:2.0.0
+    title: USER.md
+    file: agents/gn/omega/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:omega-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/omega/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:omega-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/omega/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:omega-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/omega/TOOLS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:erp-gore-user:2.0.0
+    title: USER.md
+    file: agents/gn/erp-gore/USER.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:erp-gore-soul:2.0.0
+    title: SOUL.md
+    file: agents/gn/erp-gore/SOUL.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:erp-gore-agents:2.0.0
+    title: AGENTS.md
+    file: agents/gn/erp-gore/AGENTS.md
+    status: published
+  - urn: urn:gn:agent-bootstrap:erp-gore-tools:2.0.0
+    title: TOOLS.md
+    file: agents/gn/erp-gore/TOOLS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:forgemaster-user:2.0.0
+    title: USER.md
+    file: agents/kora/forgemaster/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:forgemaster-soul:2.0.0
+    title: SOUL.md
+    file: agents/kora/forgemaster/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:forgemaster-agents:2.0.0
+    title: AGENTS.md
+    file: agents/kora/forgemaster/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:forgemaster-tools:2.0.0
+    title: TOOLS.md
+    file: agents/kora/forgemaster/TOOLS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:taskmaster-user:1.0.0
+    title: USER.md
+    file: agents/kora/taskmaster/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:taskmaster-soul:1.0.0
+    title: SOUL.md
+    file: agents/kora/taskmaster/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:taskmaster-agents:1.0.0
+    title: AGENTS.md
+    file: agents/kora/taskmaster/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:taskmaster-tools:1.0.0
+    title: TOOLS.md
+    file: agents/kora/taskmaster/TOOLS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-user:1.0.0
+    title: USER.md
+    file: agents/kora/custodio/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-soul:1.0.0
+    title: SOUL.md
+    file: agents/kora/custodio/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-agents:1.0.0
+    title: AGENTS.md
+    file: agents/kora/custodio/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:custodio-tools:1.0.0
+    title: TOOLS.md
+    file: agents/kora/custodio/TOOLS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawmaster-user:1.0.0
+    title: USER.md
+    file: agents/kora/clawmaster/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawmaster-soul:1.0.0
+    title: SOUL.md
+    file: agents/kora/clawmaster/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawmaster-agents:1.0.0
+    title: AGENTS.md
+    file: agents/kora/clawmaster/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawmaster-tools:1.0.0
+    title: TOOLS.md
+    file: agents/kora/clawmaster/TOOLS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-user:2.0.0
+    title: USER.md
+    file: agents/kora/curator/USER.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-soul:2.0.0
+    title: SOUL.md
+    file: agents/kora/curator/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-agents:2.0.0
+    title: AGENTS.md
+    file: agents/kora/curator/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:curator-tools:2.0.0
+    title: TOOLS.md
+    file: agents/kora/curator/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-user:1.0.0
+    title: USER.md
+    file: agents/ops/orquestador-swarm/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/orquestador-swarm/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/orquestador-swarm/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/orquestador-swarm/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-user:1.0.0
+    title: USER.md
+    file: agents/ops/deployer/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/deployer/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/deployer/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:deployer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/deployer/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-user:1.0.0
+    title: USER.md
+    file: agents/ops/security/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/security/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/security/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:security-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/security/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-user:1.0.0
+    title: USER.md
+    file: agents/ops/observer/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/observer/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/observer/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:observer-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/observer/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-user:1.0.0
+    title: USER.md
+    file: agents/ops/integrador/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/integrador/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/integrador/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:integrador-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/integrador/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:ci-assistant-user:1.0.0
+    title: USER.md
+    file: agents/ops/ci-assistant/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/ci-assistant/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/ci-assistant/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:ci-assistant-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/ci-assistant/TOOLS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-user:1.0.0
+    title: USER.md
+    file: agents/ops/verificador/USER.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-soul:1.0.0
+    title: SOUL.md
+    file: agents/ops/verificador/SOUL.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-agents:1.0.0
+    title: AGENTS.md
+    file: agents/ops/verificador/AGENTS.md
+    status: published
+  - urn: urn:ops:agent-bootstrap:verificador-tools:1.0.0
+    title: TOOLS.md
+    file: agents/ops/verificador/TOOLS.md
+    status: published
+  - urn: urn:tde:agent-bootstrap:digitrans-user:2.0.0
+    title: USER.md
+    file: agents/tde/digitrans/USER.md
+    status: published
+  - urn: urn:tde:agent-bootstrap:digitrans-soul:2.0.0
+    title: SOUL.md
+    file: agents/tde/digitrans/SOUL.md
+    status: published
+  - urn: urn:tde:agent-bootstrap:digitrans-agents:2.0.0
+    title: AGENTS.md
+    file: agents/tde/digitrans/AGENTS.md
+    status: published
+  - urn: urn:tde:agent-bootstrap:digitrans-tools:2.0.0
+    title: TOOLS.md
+    file: agents/tde/digitrans/TOOLS.md
+    status: published
+  - urn: urn:korvo:agent-bootstrap:korax-user:2.0.0
+    title: USER.md
+    file: agents/korvo/korax/USER.md
+    status: published
+  - urn: urn:korvo:agent-bootstrap:korax-soul:2.0.0
+    title: SOUL.md
+    file: agents/korvo/korax/SOUL.md
+    status: published
+  - urn: urn:korvo:agent-bootstrap:korax-agents:2.0.0
+    title: AGENTS.md
+    file: agents/korvo/korax/AGENTS.md
+    status: published
+  - urn: urn:korvo:agent-bootstrap:korax-tools:2.0.0
+    title: TOOLS.md
+    file: agents/korvo/korax/TOOLS.md
+    status: published
   Skills:
   - urn: urn:fxsl:skill:reviewer-eval-executor:1.0.0
     title: CM-EVAL-EXECUTOR
@@ -1790,756 +2542,4 @@ Catalog:
     file: knowledge/gov/datos_administracion_estado.md
     status: published
   Documents: []
-  Other:
-  - urn: urn:fxsl:agent-bootstrap:reviewer-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/reviewer/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:reviewer-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/reviewer/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:reviewer-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/reviewer/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:reviewer-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/reviewer/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:analyst-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/analyst/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:analyst-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/analyst/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:analyst-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/analyst/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:analyst-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/analyst/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:planner-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/planner/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:planner-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/planner/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:planner-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/planner/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:planner-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/planner/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0
-    title: USER.md
-    file: agents/fxsl/pensador-generador/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0
-    title: SOUL.md
-    file: agents/fxsl/pensador-generador/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0
-    title: AGENTS.md
-    file: agents/fxsl/pensador-generador/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0
-    title: TOOLS.md
-    file: agents/fxsl/pensador-generador/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/ontologista-gist/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/ontologista-gist/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/ontologista-gist/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/ontologista-gist/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:sentinel-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/sentinel/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:sentinel-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/sentinel/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:sentinel-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/sentinel/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:sentinel-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/sentinel/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:refactorer-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/refactorer/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:refactorer-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/refactorer/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:refactorer-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/refactorer/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:refactorer-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/refactorer/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/abogado-legislacion-medica/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/abogado-legislacion-medica/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/abogado-legislacion-medica/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/abogado-legislacion-medica/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:banca-inversion-user:2.0.0
-    title: USER.md
-    file: agents/fxsl/banca-inversion/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:banca-inversion-soul:2.0.0
-    title: SOUL.md
-    file: agents/fxsl/banca-inversion/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:banca-inversion-agents:2.0.0
-    title: AGENTS.md
-    file: agents/fxsl/banca-inversion/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:banca-inversion-tools:2.0.0
-    title: TOOLS.md
-    file: agents/fxsl/banca-inversion/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-user:2.0.0
-    title: USER.md
-    file: agents/fxsl/ingeniero-software-composicional/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-soul:2.0.0
-    title: SOUL.md
-    file: agents/fxsl/ingeniero-software-composicional/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-agents:2.0.0
-    title: AGENTS.md
-    file: agents/fxsl/ingeniero-software-composicional/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-tools:2.0.0
-    title: TOOLS.md
-    file: agents/fxsl/ingeniero-software-composicional/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:tester-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/tester/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:tester-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/tester/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:tester-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/tester/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:tester-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/tester/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-user:1.1.0
-    title: USER.md
-    file: agents/fxsl/medico-urgencias/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-soul:1.1.0
-    title: SOUL.md
-    file: agents/fxsl/medico-urgencias/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-agents:1.1.0
-    title: AGENTS.md
-    file: agents/fxsl/medico-urgencias/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-tools:1.1.0
-    title: TOOLS.md
-    file: agents/fxsl/medico-urgencias/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-user:2.0.0
-    title: USER.md
-    file: agents/fxsl/modelador-mbt/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-soul:2.0.0
-    title: SOUL.md
-    file: agents/fxsl/modelador-mbt/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-agents:2.0.0
-    title: AGENTS.md
-    file: agents/fxsl/modelador-mbt/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:modelador-mbt-tools:2.0.0
-    title: TOOLS.md
-    file: agents/fxsl/modelador-mbt/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:coder-user:1.0.0
-    title: USER.md
-    file: agents/fxsl/coder/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:coder-soul:1.0.0
-    title: SOUL.md
-    file: agents/fxsl/coder/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:coder-agents:1.0.0
-    title: AGENTS.md
-    file: agents/fxsl/coder/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:coder-tools:1.0.0
-    title: TOOLS.md
-    file: agents/fxsl/coder/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-user:2.0.0
-    title: USER.md
-    file: agents/fxsl/visionario/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-soul:2.0.0
-    title: SOUL.md
-    file: agents/fxsl/visionario/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-agents:2.0.0
-    title: AGENTS.md
-    file: agents/fxsl/visionario/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-tools:2.0.0
-    title: TOOLS.md
-    file: agents/fxsl/visionario/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ar-virtual-user:2.0.0
-    title: USER.md
-    file: agents/fxsl/ar-virtual/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ar-virtual-soul:2.0.0
-    title: SOUL.md
-    file: agents/fxsl/ar-virtual/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ar-virtual-agents:2.0.0
-    title: AGENTS.md
-    file: agents/fxsl/ar-virtual/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ar-virtual-tools:2.0.0
-    title: TOOLS.md
-    file: agents/fxsl/ar-virtual/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0
-    title: USER.md
-    file: agents/fxsl/arquitecto-categorico/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0
-    title: SOUL.md
-    file: agents/fxsl/arquitecto-categorico/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.0.0
-    title: AGENTS.md
-    file: agents/fxsl/arquitecto-categorico/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.0.0
-    title: TOOLS.md
-    file: agents/fxsl/arquitecto-categorico/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-user:4.0.0
-    title: USER.md
-    file: agents/fxsl/asesor-juridico/USER.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-soul:4.0.0
-    title: SOUL.md
-    file: agents/fxsl/asesor-juridico/SOUL.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-agents:4.0.0
-    title: AGENTS.md
-    file: agents/fxsl/asesor-juridico/AGENTS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:asesor-juridico-tools:4.0.0
-    title: TOOLS.md
-    file: agents/fxsl/asesor-juridico/TOOLS.md
-    status: published
-  - urn: urn:orko:agent-bootstrap:arquitecto-orko-user:2.0.0
-    title: USER.md
-    file: agents/orko/arquitecto-orko/USER.md
-    status: published
-  - urn: urn:orko:agent-bootstrap:arquitecto-orko-soul:2.0.0
-    title: SOUL.md
-    file: agents/orko/arquitecto-orko/SOUL.md
-    status: published
-  - urn: urn:orko:agent-bootstrap:arquitecto-orko-agents:2.0.0
-    title: AGENTS.md
-    file: agents/orko/arquitecto-orko/AGENTS.md
-    status: published
-  - urn: urn:orko:agent-bootstrap:arquitecto-orko-tools:2.0.0
-    title: TOOLS.md
-    file: agents/orko/arquitecto-orko/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-user:1.0.0
-    title: USER.md
-    file: agents/gn/dgi-virtual/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0
-    title: SOUL.md
-    file: agents/gn/dgi-virtual/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0
-    title: AGENTS.md
-    file: agents/gn/dgi-virtual/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-tools:1.0.0
-    title: TOOLS.md
-    file: agents/gn/dgi-virtual/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0
-    title: USER.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0
-    title: SOUL.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0
-    title: AGENTS.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-tools:1.0.0
-    title: TOOLS.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-user:2.0.0
-    title: USER.md
-    file: agents/gn/gestor-ipr-360/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/gestor-ipr-360/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/gestor-ipr-360/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/gestor-ipr-360/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-user:2.4.0
-    title: USER.md
-    file: agents/gn/goreologo/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-soul:2.4.0
-    title: SOUL.md
-    file: agents/gn/goreologo/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-agents:2.4.0
-    title: AGENTS.md
-    file: agents/gn/goreologo/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-tools:2.4.0
-    title: TOOLS.md
-    file: agents/gn/goreologo/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-user:2.0.0
-    title: USER.md
-    file: agents/gn/ingeniero-goreos/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/ingeniero-goreos/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/ingeniero-goreos/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/ingeniero-goreos/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-user:2.0.0
-    title: USER.md
-    file: agents/gn/eacs/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/eacs/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/eacs/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/eacs/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:crm-ipr-user:2.0.0
-    title: USER.md
-    file: agents/gn/crm-ipr/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:crm-ipr-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/crm-ipr/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:crm-ipr-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/crm-ipr/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:crm-ipr-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/crm-ipr/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:digitrans-gore-user:1.0.0
-    title: USER.md
-    file: agents/gn/digitrans-gore/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:digitrans-gore-soul:1.0.0
-    title: SOUL.md
-    file: agents/gn/digitrans-gore/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:digitrans-gore-agents:1.0.0
-    title: AGENTS.md
-    file: agents/gn/digitrans-gore/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:digitrans-gore-tools:1.0.0
-    title: TOOLS.md
-    file: agents/gn/digitrans-gore/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-user:2.0.0
-    title: USER.md
-    file: agents/gn/gobernador-virtual/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/gobernador-virtual/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/gobernador-virtual/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/gobernador-virtual/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-user:1.0.0
-    title: USER.md
-    file: agents/gn/estratega-comunicacional/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-soul:1.0.0
-    title: SOUL.md
-    file: agents/gn/estratega-comunicacional/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-agents:1.0.0
-    title: AGENTS.md
-    file: agents/gn/estratega-comunicacional/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-tools:1.0.0
-    title: TOOLS.md
-    file: agents/gn/estratega-comunicacional/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:omega-user:2.0.0
-    title: USER.md
-    file: agents/gn/omega/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:omega-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/omega/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:omega-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/omega/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:omega-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/omega/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:erp-gore-user:2.0.0
-    title: USER.md
-    file: agents/gn/erp-gore/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:erp-gore-soul:2.0.0
-    title: SOUL.md
-    file: agents/gn/erp-gore/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:erp-gore-agents:2.0.0
-    title: AGENTS.md
-    file: agents/gn/erp-gore/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:erp-gore-tools:2.0.0
-    title: TOOLS.md
-    file: agents/gn/erp-gore/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:forgemaster-user:2.0.0
-    title: USER.md
-    file: agents/kora/forgemaster/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:forgemaster-soul:2.0.0
-    title: SOUL.md
-    file: agents/kora/forgemaster/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:forgemaster-agents:2.0.0
-    title: AGENTS.md
-    file: agents/kora/forgemaster/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:forgemaster-tools:2.0.0
-    title: TOOLS.md
-    file: agents/kora/forgemaster/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:taskmaster-user:1.0.0
-    title: USER.md
-    file: agents/kora/taskmaster/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:taskmaster-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/taskmaster/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:taskmaster-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/taskmaster/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:taskmaster-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/taskmaster/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:custodio-user:1.0.0
-    title: USER.md
-    file: agents/kora/custodio/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:custodio-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/custodio/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:custodio-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/custodio/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:custodio-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/custodio/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:clawmaster-user:1.0.0
-    title: USER.md
-    file: agents/kora/clawmaster/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:clawmaster-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/clawmaster/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:clawmaster-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/clawmaster/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:clawmaster-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/clawmaster/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:curator-user:2.0.0
-    title: USER.md
-    file: agents/kora/curator/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:curator-soul:2.0.0
-    title: SOUL.md
-    file: agents/kora/curator/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:curator-agents:2.0.0
-    title: AGENTS.md
-    file: agents/kora/curator/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:curator-tools:2.0.0
-    title: TOOLS.md
-    file: agents/kora/curator/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:orquestador-swarm-user:1.0.0
-    title: USER.md
-    file: agents/ops/orquestador-swarm/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/orquestador-swarm/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/orquestador-swarm/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:orquestador-swarm-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/orquestador-swarm/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-user:1.0.0
-    title: USER.md
-    file: agents/ops/deployer/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/deployer/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/deployer/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/deployer/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:security-user:1.0.0
-    title: USER.md
-    file: agents/ops/security/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:security-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/security/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:security-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/security/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:security-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/security/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-user:1.0.0
-    title: USER.md
-    file: agents/ops/observer/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/observer/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/observer/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/observer/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:integrador-user:1.0.0
-    title: USER.md
-    file: agents/ops/integrador/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:integrador-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/integrador/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:integrador-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/integrador/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:integrador-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/integrador/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:ci-assistant-user:1.0.0
-    title: USER.md
-    file: agents/ops/ci-assistant/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/ci-assistant/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/ci-assistant/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:ci-assistant-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/ci-assistant/TOOLS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:verificador-user:1.0.0
-    title: USER.md
-    file: agents/ops/verificador/USER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:verificador-soul:1.0.0
-    title: SOUL.md
-    file: agents/ops/verificador/SOUL.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:verificador-agents:1.0.0
-    title: AGENTS.md
-    file: agents/ops/verificador/AGENTS.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:verificador-tools:1.0.0
-    title: TOOLS.md
-    file: agents/ops/verificador/TOOLS.md
-    status: published
-  - urn: urn:tde:agent-bootstrap:digitrans-user:2.0.0
-    title: USER.md
-    file: agents/tde/digitrans/USER.md
-    status: published
-  - urn: urn:tde:agent-bootstrap:digitrans-soul:2.0.0
-    title: SOUL.md
-    file: agents/tde/digitrans/SOUL.md
-    status: published
-  - urn: urn:tde:agent-bootstrap:digitrans-agents:2.0.0
-    title: AGENTS.md
-    file: agents/tde/digitrans/AGENTS.md
-    status: published
-  - urn: urn:tde:agent-bootstrap:digitrans-tools:2.0.0
-    title: TOOLS.md
-    file: agents/tde/digitrans/TOOLS.md
-    status: published
-  - urn: urn:korvo:agent-bootstrap:korax-user:2.0.0
-    title: USER.md
-    file: agents/korvo/korax/USER.md
-    status: published
-  - urn: urn:korvo:agent-bootstrap:korax-soul:2.0.0
-    title: SOUL.md
-    file: agents/korvo/korax/SOUL.md
-    status: published
-  - urn: urn:korvo:agent-bootstrap:korax-agents:2.0.0
-    title: AGENTS.md
-    file: agents/korvo/korax/AGENTS.md
-    status: published
-  - urn: urn:korvo:agent-bootstrap:korax-tools:2.0.0
-    title: TOOLS.md
-    file: agents/korvo/korax/TOOLS.md
-    status: published
+  Other: []
