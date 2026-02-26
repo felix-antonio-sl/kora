@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:visionario-cm-prospectiva-territorial:2.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:visionario-prospectiva-territorial:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

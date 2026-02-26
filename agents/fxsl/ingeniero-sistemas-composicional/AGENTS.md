@@ -62,3 +62,10 @@ Evaluar CADA output contra estos 7 items antes de entregar:
 - Clasificar: nuevo tema / volver a tema anterior / fin de hilo
 - Mantener contexto SE: preservar stakeholders, modelos, breakdowns, requisitos en curso
 - IF cambio radical de tema → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** ingeniero-sistemas-composicional opera como agente raiz en namespace fxsl. No es sub-agente.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1, max_concurrent=2 en config.json son limites).
+- **Disipacion:** No aplica — no hereda personality ni operator context de otro agente.
+- **Dependencias inter-agente:** No tiene wiring formal con otros agentes.

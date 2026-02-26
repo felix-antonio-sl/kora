@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-ws-analyzer:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-ws-analyzer:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Analizar el Work System que el IS soportara. Mapear procesos, participantes, informacion, tecnologias, clientes y productos/servicios del WS destino.
 
-## Input/Output
+## I/O
 
 - **Input:** Descripcion del IS solicitado desde S-WS-CONTEXT
 - **Output:** Work System Snapshot del WS destino con 6 elementos clave

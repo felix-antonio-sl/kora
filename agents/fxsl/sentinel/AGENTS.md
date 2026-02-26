@@ -68,3 +68,10 @@ _manifest:
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** sentinel opera como agente raiz en namespace fxsl. No es sub-agente.
+- **Sub-agentes:** No declara sub-agentes directos.
+- **Disipacion:** No aplica — sentinel no hereda personality ni operator context de otro agente.
+- **Dependencias inter-agente:** Referencia fxsl/coder (codigo), fxsl/reviewer (reviews), fxsl/planner (planificacion) via rejection routing en Reglas Duras. No hay wiring formal.

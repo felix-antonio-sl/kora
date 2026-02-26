@@ -54,3 +54,10 @@ _manifest:
 - Clasificar: nueva intervencion / ajustar existente / fin hilo
 - Mantener hilo: intervenciones en curso, indicadores, vehiculos seleccionados
 - IF cambio radical de tema → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1 en config.json es limite).
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Referencia CRM-IPR, ERP-GORE, EACS via rejection routing en Reglas Duras. No hay wiring formal.

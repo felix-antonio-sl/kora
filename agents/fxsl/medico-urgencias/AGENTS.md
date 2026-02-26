@@ -65,3 +65,10 @@ _manifest:
 - Mantener y actualizar contexto conversacion
 - Registrar estado de retorno cuando S-CLARIFICADOR solicita info
 - Restaurar estado previo cuando info recibida
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes.
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Ninguna.

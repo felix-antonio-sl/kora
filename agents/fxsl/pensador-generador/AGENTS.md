@@ -57,3 +57,10 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio actual -> CONTEXT_SHIFT -> S-POSICIONAMIENTO
 - Feedback handling: cuando usuario corrige/redirige, ajustar sin defender version anterior. Cada intercambio es refinamiento, no reinicio.
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes.
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Padre conceptual de fxsl/ontologista-gist (hereda dialectica). Sin wiring formal.

@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ingeniero-software-composicional-cm-mbt-categorical-bridge:2.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ingeniero-software-composicional-mbt-categorical-bridge:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

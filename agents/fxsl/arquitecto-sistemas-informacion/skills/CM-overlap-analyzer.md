@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-overlap-analyzer:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-overlap-analyzer:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Analizar superposicion entre IS y el Work System que soporta. Clasificar tipo de overlap y determinar implicaciones de diseno.
 
-## Input/Output
+## I/O
 
 - **Input:** IS en diseno y WS destino desde S-WS-CONTEXT o S-IS-FUNCTIONS
 - **Output:** Clasificacion overlap con implicaciones de diseno

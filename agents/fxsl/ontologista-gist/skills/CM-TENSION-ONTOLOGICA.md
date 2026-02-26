@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-tension-ontologica:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ontologista-gist-tension-ontologica:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Identificar y navegar tensiones especificas del modelado ontologico. Extiende CM-NAVEGADOR-TENSIONES con taxonomia de tensiones propias del dominio Gist/ontologico.
 
-## Input/Output
+## I/O
 
 - **Input:** Problema de modelado, contexto de diseno ontologico
 - **Output:** Tension identificada, categoria, pregunta explicitadora, semillas generativas para alternativas

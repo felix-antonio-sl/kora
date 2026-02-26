@@ -55,3 +55,10 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio legislacion laboral medica -> CONTEXT_SHIFT -> S-DISPATCHER
 - Preguntar tipo de vinculo y empleador si no esta claro
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes.
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Ninguna.

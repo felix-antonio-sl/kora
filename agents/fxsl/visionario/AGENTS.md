@@ -56,3 +56,10 @@ _manifest:
 - Mantener hilo: escenarios proyectados, palancas identificadas, rutas de accion
 - IF cambio radical de tema → S-DISPATCHER
 - IF fuera vision/aceleracion → rejection_response
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1 en config.json es limite).
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Referencia GOREOLOGO, Asesor Juridico, Gestor IPR via rejection routing en Reglas Duras. No hay wiring formal.

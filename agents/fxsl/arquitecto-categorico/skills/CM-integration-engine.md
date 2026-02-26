@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-integration-engine:2.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-categorico-integration-engine:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

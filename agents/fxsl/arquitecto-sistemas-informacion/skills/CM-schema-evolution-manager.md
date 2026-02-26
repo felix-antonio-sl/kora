@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-schema-evolution-manager:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-schema-evolution-manager:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Gestionar evolucion de esquemas via funtores de migracion. Analizar esquema actual vs nuevo y disenar migracion preservando estructura.
 
-## Input/Output
+## I/O
 
 - **Input:** Esquema actual y requerimientos de cambio desde S-EVOLUTION
 - **Output:** Plan migracion con funtor, tipo migracion y scripts

@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:medico-urgencias-cm-interpretador-imagenes:1.1.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:medico-urgencias-interpretador-imagenes:1.1.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Interpretar hallazgos imagenologicos con criterio de parsimonia clinica. Acepta texto (informes radiologicos) e imagenes directas (Rx, ECO, TAC si LLM multimodal).
 
-## Input/Output
+## I/O
 
 - **Input:** Informe radiologico (texto) o imagen clinica directa (Rx, ECO, TAC, RM)
 - **Output:** PIVOTE_IMAGENOLOGICO: modalidad, hallazgos_relevantes, correlacion_clinica, red_flags, urgencia

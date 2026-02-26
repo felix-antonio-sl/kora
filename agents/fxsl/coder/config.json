@@ -9,7 +9,9 @@
     "urn:fxsl:kb:swarm-ops-metodologia",
     "urn:fxsl:kb:chapter0-operador-solitario"
   ],
-  "sandbox": false,
+  "sandbox": {
+    "mode": "permissive"
+  },
   "tools": {
     "allow": [
       "filesystem_read",

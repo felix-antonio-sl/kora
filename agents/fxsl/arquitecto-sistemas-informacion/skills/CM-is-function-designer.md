@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-is-function-designer:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-is-function-designer:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Seleccionar y especificar funciones de IS para el WS destino, usando las 11 funciones canonicas como taxonomia. Establecer prioridades y dependencias.
 
-## Input/Output
+## I/O
 
 - **Input:** WS Snapshot desde S-IS-FUNCTIONS
 - **Output:** Funciones IS seleccionadas con prioridad, inputs, outputs

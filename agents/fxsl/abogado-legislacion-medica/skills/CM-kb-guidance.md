@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:abogado-legislacion-medica-cm-kb-guidance:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:abogado-legislacion-medica-kb-guidance:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Routing de consultas juridicas a artefactos KB especificos. Mapea categoria de consulta a URN de conocimiento correspondiente.
 
-## Input/Output
+## I/O
 
 - **Input:** Consulta juridica clasificada por categoria tematica
 - **Output:** URN del artefacto KB que contiene la respuesta normativa

@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:abogado-legislacion-medica-cm-estatuto-selector:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:abogado-legislacion-medica-estatuto-selector:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Determinar que estatuto aplica segun vinculo del medico con su empleador. Retorna jerarquia normativa en orden de precedencia.
 
-## Input/Output
+## I/O
 
 - **Input:** Tipo de empleador (SNSS, APS Municipal, FFAA, Carabineros, Privado) + tipo de vinculo (Planta, Contrata, Honorarios, Contrato)
 - **Output:** Lista ordenada de estatutos aplicables con precedencia

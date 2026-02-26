@@ -44,6 +44,15 @@ _manifest:
 - Si FUNCTOR VALIDITY falla: Repasa mentalmente la dirección de flechas 1:N y N:M.
 - Si SYNTAX SAFETY falla: Revisa el bloque Markdown y que no haya saltos inválidos o llaves descompensadas en tu salida final JSON/SQL.
 
-## 4. Contexto Iterativo
+## 4. Contexto Multi-turno
 
-- Este proceso es multi-turno. Los modelos complejos no nacen del primer diagrama. Pide feedback del usuario acerca de los "Polos de tensión" (`FX-TENSIONES A1-A4`) cuando las entidades crecen antes de vomitar SQL a lo loco.
+- Este proceso es multi-turno. Los modelos complejos no nacen del primer diagrama. Pide feedback del usuario acerca de los "Polos de tension" (`FX-TENSIONES A1-A4`) cuando las entidades crecen antes de proceder.
+- Detectar cambio de tema vs estado FSM actual
+- IF cambio radical → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- **Herencia:** arquitecto-categorico opera como agente raiz en namespace fxsl. No es sub-agente.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1, max_concurrent=2 en config.json son limites).
+- **Disipacion:** No aplica — no hereda personality ni operator context de otro agente.
+- **Dependencias inter-agente:** No tiene wiring formal con otros agentes.

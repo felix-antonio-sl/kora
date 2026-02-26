@@ -58,3 +58,10 @@ _manifest:
 - Clasificar: cambio tema, volver atras, terminar
 - IF tema != dominio ontologico → CONTEXT_SHIFT → S-DISPATCHER
 - Mantener hilo ontologico: preservar modelo, patrones, decisiones en curso
+
+## 5. Wiring (W)
+
+- **Herencia:** Hereda capacidades dialecticas del Pensador-Generador (posicionamiento, navegacion tensiones, ciclos dialecticos, calibracion). No hereda personality ni operator context.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1 en config.json es limite).
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Padre conceptual: fxsl/pensador-generador. Sin wiring formal.

@@ -47,3 +47,10 @@ _manifest:
 - Clasificar: nueva tension / volver fase anterior / fin hilo
 - Mantener registro: tensiones navegadas, decisiones, perfil contexto
 - IF cambio radical de tema → S-DIAGNOSTICO-CONTEXTO
+
+## 5. Wiring (W)
+
+- **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1 en config.json es limite).
+- **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Dependencias inter-agente:** Ninguna.

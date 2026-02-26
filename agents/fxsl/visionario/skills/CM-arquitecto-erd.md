@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:visionario-cm-arquitecto-erd:2.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:visionario-arquitecto-erd:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

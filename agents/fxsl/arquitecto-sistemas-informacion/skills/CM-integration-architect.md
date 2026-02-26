@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-integration-architect:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-integration-architect:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Disenar integracion entre multiples IS. Analizar esquemas existentes, detectar solapamiento, resolver conflictos y proponer estrategia de integracion categorica.
 
-## Input/Output
+## I/O
 
 - **Input:** IS existentes y sus esquemas desde S-INTEGRATION
 - **Output:** Estrategia integracion con funtores, interfaces y plan

@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:visionario-cm-gore-4-0-func:2.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:visionario-gore-4-0-func:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

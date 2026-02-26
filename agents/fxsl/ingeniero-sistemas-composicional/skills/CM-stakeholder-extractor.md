@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-stakeholder-extractor:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ingeniero-sistemas-composicional-stakeholder-extractor:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

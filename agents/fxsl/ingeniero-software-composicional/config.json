@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:fxsl:agent-bootstrap:ingeniero-software-composicional-config:1.0.0",
+    "urn": "urn:fxsl:agent-bootstrap:ingeniero-software-composicional-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [

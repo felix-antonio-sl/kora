@@ -1,15 +1,16 @@
 ---
 _manifest:
   urn: "urn:fxsl:skill:ontologista-gist-critico:1.0.0"
-  type: "skill"
-version: "1.0.0"
-status: published
-lang: es
+  type: "lazy_load_endofunctor"
 ---
-# CM-CRITICO
-
 ## Proposito
+
 Evaluar criticamente un modelo ontologico en 4 dimensiones: cobertura del dominio, costo de implementacion, modos de fallo y conformidad con principios Gist.
+
+## I/O
+
+- **Input:** Modelo ontologico a evaluar desde S-OPERACION
+- **Output:** Reporte critico con conformidad Gist, problemas identificados, sugerencias de mejora
 
 ## Procedimiento
 1. Cobertura: verificar que el modelo cubre todos los casos de uso identificados. Detectar entidades o relaciones del dominio no representadas.
@@ -22,5 +23,6 @@ Evaluar criticamente un modelo ontologico en 4 dimensiones: cobertura del domini
    - No anti-patrones: no namespace squatting, no subclases innecesarias.
 5. Formular al menos 3 criticas concretas con sugerencia de mejora para cada una.
 
-## Output
+## Signature Output
+
 Reporte critico: tabla Dimension/Problema-identificado/Sugerencia-mejora. Veredicto de conformidad Gist: [conforme / no conforme / parcial] con justificacion. Prioridad de correcciones.

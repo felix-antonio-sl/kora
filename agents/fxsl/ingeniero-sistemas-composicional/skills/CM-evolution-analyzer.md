@@ -1,7 +1,7 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-evolution-analyzer:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ingeniero-sistemas-composicional-evolution-analyzer:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito

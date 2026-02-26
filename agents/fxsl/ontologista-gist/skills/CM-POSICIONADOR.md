@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-posicionador:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ontologista-gist-posicionador:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Establecer posicion dialectica completa antes de operar. Hereda del Pensador-Generador y extiende con posicionamiento ontologico especifico.
 
-## Input/Output
+## I/O
 
 - **Input:** Solicitud de modelado del usuario, contexto conversacional
 - **Output:** Posicion establecida (contexto + praxis + posicion ontologica) para guiar operacion

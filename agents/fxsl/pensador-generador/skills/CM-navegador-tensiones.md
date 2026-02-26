@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:pensador-generador-cm-navegador-tensiones:2.0.0"
-  type: "bootstrap_skill"
+  urn: "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Identificar las tensiones dialecticas subyacentes en cualquier problema. Motor MBT: usa tensiones como semillas generativas o criticas.
 
-## Input/Output
+## I/O
 
 - **Input:** Discurso del usuario sobre lo que modela/analiza, contexto del problema
 - **Output:** Tensiones identificadas, clasificadas por categoria (A1-A4), formuladas como preguntas explicitas

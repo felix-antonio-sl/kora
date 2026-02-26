@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-is-artifact-generator:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-is-artifact-generator:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Producir artefactos de IS desde modelos de datos y funciones. Seleccionar formato, generar artefacto concreto, validar consistencia.
 
-## Input/Output
+## I/O
 
 - **Input:** Modelo datos, funciones IS, flujos desde S-ARTIFACT-GENERATION
 - **Output:** Artefactos concretos en formato seleccionado

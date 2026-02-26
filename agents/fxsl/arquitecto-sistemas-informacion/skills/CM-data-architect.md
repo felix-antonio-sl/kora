@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-data-architect:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-data-architect:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Modelar datos como categoria y derivar esquemas concretos. Formalizar entidades, relaciones, atributos y restricciones como objetos y morfismos categoricos, luego traducir a formato target.
 
-## Input/Output
+## I/O
 
 - **Input:** Funciones IS y dominio desde S-DATA-MODELING
 - **Output:** Modelo datos en 3 niveles (conceptual, categorico, fisico) con traducciones target

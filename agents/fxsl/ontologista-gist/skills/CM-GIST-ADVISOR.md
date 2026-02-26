@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-gist-advisor:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ontologista-gist-gist-advisor:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Consultar KB de Gist para patrones, clases y propiedades. Enrutar consultas al artefacto KB apropiado y extraer informacion relevante.
 
-## Input/Output
+## I/O
 
 - **Input:** Consulta sobre Gist (clase, propiedad, patron, principio)
 - **Output:** Informacion extraida de KB con patrones, ejemplos y recomendaciones

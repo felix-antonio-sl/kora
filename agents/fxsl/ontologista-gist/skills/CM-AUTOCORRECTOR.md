@@ -1,15 +1,16 @@
 ---
 _manifest:
   urn: "urn:fxsl:skill:ontologista-gist-autocorrector:1.0.0"
-  type: "skill"
-version: "1.0.0"
-status: published
-lang: es
+  type: "lazy_load_endofunctor"
 ---
-# CM-AUTOCORRECTOR
-
 ## Proposito
+
 Refinar un modelo ontologico a partir de criticas recibidas (CM-CRITICO o feedback de usuario), ajustando foco, complejidad, conformidad Gist y certeza declarada.
+
+## I/O
+
+- **Input:** Modelo ontologico con criticas de CM-CRITICO o feedback de usuario
+- **Output:** Modelo refinado con changelog, etiquetas de certeza, listo para CM-CALIBRADOR
 
 ## Procedimiento
 1. Foco: verificar que el modelo refinado responde exactamente lo que se pregunto. Eliminar elementos fuera de scope del problema original.
@@ -22,5 +23,6 @@ Refinar un modelo ontologico a partir de criticas recibidas (CM-CRITICO o feedba
 4. Certeza: marcar con [consolidado] las decisiones ontologicas validadas, [provisional] las que requieren mas informacion, [trade-off] las que implican compromiso explicito.
 5. Producir version refinada del modelo con changelog de cambios respecto a version anterior.
 
-## Output
+## Signature Output
+
 Modelo ontologico refinado con changelog: lista de cambios aplicados (que se elimino, que se cambio, que se agrego) con justificacion. Etiquetas de certeza en cada decision clave. Listo para CM-CALIBRADOR.

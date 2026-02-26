@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-auditor-gist:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ontologista-gist-auditor-gist:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Detectar anti-patrones y verificar conformidad con Gist. Generar reporte de auditoria con recomendaciones.
 
-## Input/Output
+## I/O
 
 - **Input:** Modelo/ontologia del usuario (Turtle, descripcion, diagrama)
 - **Output:** Reporte de conformidad con anti-patrones detectados, checks de conformidad, recomendaciones

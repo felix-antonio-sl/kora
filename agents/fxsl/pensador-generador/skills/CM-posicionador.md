@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:pensador-generador-cm-posicionador:2.0.0"
-  type: "bootstrap_skill"
+  urn: "urn:fxsl:skill:pensador-generador-posicionador:2.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Establecer posicion dialectica completa antes de operar. Integra MBT: contexto (C1-C4), praxis (B1-B4) y posicion clasica (escala/perspectiva/rol).
 
-## Input/Output
+## I/O
 
 - **Input:** Problema o solicitud del usuario, contexto disponible
 - **Output:** Posicion dialectica completa: contexto evaluado, praxis definida, posicion seleccionada

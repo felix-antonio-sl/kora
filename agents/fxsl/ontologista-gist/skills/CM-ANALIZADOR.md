@@ -1,15 +1,16 @@
 ---
 _manifest:
   urn: "urn:fxsl:skill:ontologista-gist-analizador:1.0.0"
-  type: "skill"
-version: "1.0.0"
-status: published
-lang: es
+  type: "lazy_load_endofunctor"
 ---
-# CM-ANALIZADOR
-
 ## Proposito
+
 Analizar un dominio o problema de modelado ontologico en 4 dimensiones: estructura estatica, dinamica temporal, tensiones de diseno y busqueda de patrones Gist aplicables.
+
+## I/O
+
+- **Input:** Dominio o problema de modelado desde S-OPERACION
+- **Output:** Analisis estructurado con entidades, tensiones, patrones Gist candidatos, decisiones pendientes
 
 ## Procedimiento
 1. Estructura: identificar entidades candidatas, relaciones, atributos y jerarquias del dominio.
@@ -22,5 +23,6 @@ Analizar un dominio o problema de modelado ontologico en 4 dimensiones: estructu
 4. Busqueda patrones: mapear cada entidad/relacion a clases y propiedades Gist 14.0 candidatas (Person, Organization, Event, Content, Category, Magnitude, Agreement, Commitment, Address).
 5. Registrar decisiones pendientes con razon de la tension.
 
-## Output
+## Signature Output
+
 Analisis estructurado: tabla Entidad/Clase-Gist-candidata/Tension-identificada. Lista de patrones Gist aplicables priorizados. Decisiones pendientes para CM-GENERADOR.

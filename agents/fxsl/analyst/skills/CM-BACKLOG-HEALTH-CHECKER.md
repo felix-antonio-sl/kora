@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:fxsl:skill:analyst-backlog-health-checker:1.0.0"
-  type: "skill"
+  type: "lazy_load_endofunctor"
 version: "1.0.0"
 status: published
 lang: es

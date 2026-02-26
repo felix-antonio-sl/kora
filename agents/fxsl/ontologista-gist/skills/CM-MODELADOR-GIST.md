@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-modelador-gist:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ontologista-gist-modelador-gist:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Aplicar patrones Gist para modelar dominios especificos. Seleccionar patron apropiado segun caso de uso y generar modelo.
 
-## Input/Output
+## I/O
 
 - **Input:** Dominio a modelar, posicion establecida, tensiones identificadas
 - **Output:** Modelo ontologico usando patrones Gist con justificacion

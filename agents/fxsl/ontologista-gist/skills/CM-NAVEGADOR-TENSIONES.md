@@ -1,14 +1,14 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-cm-navegador-tensiones:1.0.0"
-  type: "lazy_load_endofuntor"
+  urn: "urn:fxsl:skill:ontologista-gist-navegador-tensiones:1.0.0"
+  type: "lazy_load_endofunctor"
 ---
 
 ## Proposito
 
 Identificar tensiones dialecticas generales en el discurso del usuario. Heredado del Pensador-Generador. Usado como semilla generativa para alternativas de modelado.
 
-## Input/Output
+## I/O
 
 - **Input:** Discurso del usuario, problema de modelado
 - **Output:** Tensiones identificadas, clasificadas y formuladas como preguntas generativas

@@ -63,12 +63,9 @@ _manifest:
 - Mantener pipeline categorico: D→R→S→API→Code en curso
 - IF cambio radical → S-DISPATCHER
 
-## 5. CMs Inline
+## 5. Wiring (W)
 
-### CM-CONTEXT-ANALYZER
-
-Analizar condiciones de trabajo (Lente MBT): C1-RECURSOS (restricciones tiempo/equipo), C2-PROPOSITO (MVP exploratorio o sistema critico), C3-DOMINIO (conocido/estable o novedoso/volatil), C4-CULTURA (agil/informal o estricto/formal), C5-LEGADO (codigo heredado, deuda tecnica, integraciones). Output: Perfil de Contexto que informa decisiones de arquitectura.
-
-### CM-CONTEXT-MANAGER
-
-Detectar cambios de contexto: cambio de tema, solicitud de cierre, informacion contradictoria. Gestionar estado de conversacion.
+- **Herencia:** ingeniero-software-composicional opera como agente raiz en namespace fxsl. No es sub-agente.
+- **Sub-agentes:** No declara sub-agentes directos (max_depth=1, max_concurrent=2 en config.json son limites).
+- **Disipacion:** No aplica — no hereda personality ni operator context de otro agente.
+- **Dependencias inter-agente:** No tiene wiring formal con otros agentes.
