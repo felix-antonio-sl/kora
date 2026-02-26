@@ -58,6 +58,34 @@ Catalog:
     title: CM-BACKLOG-HEALTH-CHECKER
     file: agents/fxsl/analyst/skills/CM-BACKLOG-HEALTH-CHECKER.md
     status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-integration-architect:1.0.0
+    title: CM-integration-architect.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-integration-architect.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-schema-evolution-manager:1.0.0
+    title: CM-schema-evolution-manager.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-schema-evolution-manager.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-is-function-designer:1.0.0
+    title: CM-is-function-designer.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-is-function-designer.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-is-artifact-generator:1.0.0
+    title: CM-is-artifact-generator.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-is-artifact-generator.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-data-architect:1.0.0
+    title: CM-data-architect.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-data-architect.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-ws-analyzer:1.0.0
+    title: CM-ws-analyzer.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-ws-analyzer.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-overlap-analyzer:1.0.0
+    title: CM-overlap-analyzer.md
+    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-overlap-analyzer.md
+    status: published
   - urn: urn:fxsl:skill:planner-okr-strategist:1.0.0
     title: CM-OKR-STRATEGIST
     file: agents/fxsl/planner/skills/CM-OKR-STRATEGIST.md
@@ -86,25 +114,57 @@ Catalog:
     title: CM-EPIC-DECOMPOSER
     file: agents/fxsl/planner/skills/CM-EPIC-DECOMPOSER.md
     status: published
+  - urn: urn:fxsl:skill:pensador-generador-posicionador:2.0.0
+    title: CM-posicionador.md
+    file: agents/fxsl/pensador-generador/skills/CM-posicionador.md
+    status: published
+  - urn: urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0
+    title: CM-navegador-tensiones.md
+    file: agents/fxsl/pensador-generador/skills/CM-navegador-tensiones.md
+    status: published
   - urn: urn:fxsl:skill:ontologista-gist-calibrador:1.0.0
-    title: CM-CALIBRADOR
+    title: CM-CALIBRADOR.md
     file: agents/fxsl/ontologista-gist/skills/CM-CALIBRADOR.md
     status: published
   - urn: urn:fxsl:skill:ontologista-gist-generador:1.0.0
-    title: CM-GENERADOR
+    title: CM-GENERADOR.md
     file: agents/fxsl/ontologista-gist/skills/CM-GENERADOR.md
     status: published
+  - urn: urn:fxsl:skill:ontologista-gist-modelador-gist:1.0.0
+    title: CM-MODELADOR-GIST.md
+    file: agents/fxsl/ontologista-gist/skills/CM-MODELADOR-GIST.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-auditor-gist:1.0.0
+    title: CM-AUDITOR-GIST.md
+    file: agents/fxsl/ontologista-gist/skills/CM-AUDITOR-GIST.md
+    status: published
   - urn: urn:fxsl:skill:ontologista-gist-autocorrector:1.0.0
-    title: CM-AUTOCORRECTOR
+    title: CM-AUTOCORRECTOR.md
     file: agents/fxsl/ontologista-gist/skills/CM-AUTOCORRECTOR.md
     status: published
   - urn: urn:fxsl:skill:ontologista-gist-analizador:1.0.0
-    title: CM-ANALIZADOR
+    title: CM-ANALIZADOR.md
     file: agents/fxsl/ontologista-gist/skills/CM-ANALIZADOR.md
     status: published
+  - urn: urn:fxsl:skill:ontologista-gist-tension-ontologica:1.0.0
+    title: CM-TENSION-ONTOLOGICA.md
+    file: agents/fxsl/ontologista-gist/skills/CM-TENSION-ONTOLOGICA.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-posicionador:1.0.0
+    title: CM-POSICIONADOR.md
+    file: agents/fxsl/ontologista-gist/skills/CM-POSICIONADOR.md
+    status: published
   - urn: urn:fxsl:skill:ontologista-gist-critico:1.0.0
-    title: CM-CRITICO
+    title: CM-CRITICO.md
     file: agents/fxsl/ontologista-gist/skills/CM-CRITICO.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-navegador-tensiones:1.0.0
+    title: CM-NAVEGADOR-TENSIONES.md
+    file: agents/fxsl/ontologista-gist/skills/CM-NAVEGADOR-TENSIONES.md
+    status: published
+  - urn: urn:fxsl:skill:ontologista-gist-gist-advisor:1.0.0
+    title: CM-GIST-ADVISOR.md
+    file: agents/fxsl/ontologista-gist/skills/CM-GIST-ADVISOR.md
     status: published
   - urn: urn:fxsl:skill:sentinel-self-evaluator:1.0.0
     title: CM-SELF-EVALUATOR
@@ -158,6 +218,62 @@ Catalog:
     title: CM-REFACTOR-EXECUTOR
     file: agents/fxsl/refactorer/skills/CM-REFACTOR-EXECUTOR.md
     status: published
+  - urn: urn:fxsl:skill:abogado-legislacion-medica-kb-guidance:1.0.0
+    title: CM-kb-guidance.md
+    file: agents/fxsl/abogado-legislacion-medica/skills/CM-kb-guidance.md
+    status: published
+  - urn: urn:fxsl:skill:abogado-legislacion-medica-estatuto-selector:1.0.0
+    title: CM-estatuto-selector.md
+    file: agents/fxsl/abogado-legislacion-medica/skills/CM-estatuto-selector.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-breakdown-architect:1.0.0
+    title: CM-breakdown-architect.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-breakdown-architect.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-evolution-analyzer:1.0.0
+    title: CM-evolution-analyzer.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-evolution-analyzer.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-stakeholder-extractor:1.0.0
+    title: CM-stakeholder-extractor.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-stakeholder-extractor.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-artifact-generator:1.0.0
+    title: CM-artifact-generator.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-artifact-generator.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-work-system-analyzer:1.0.0
+    title: CM-work-system-analyzer.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-work-system-analyzer.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-opm-modeler:1.0.0
+    title: CM-opm-modeler.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-opm-modeler.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-sistemas-composicional-requirements-engineer:1.0.0
+    title: CM-requirements-engineer.md
+    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-requirements-engineer.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-software-composicional-tension-navigator:2.0.0
+    title: CM-tension-navigator.md
+    file: agents/fxsl/ingeniero-software-composicional/skills/CM-tension-navigator.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-software-composicional-code-as-category:2.0.0
+    title: CM-code-as-category.md
+    file: agents/fxsl/ingeniero-software-composicional/skills/CM-code-as-category.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-software-composicional-mbt-categorical-bridge:2.0.0
+    title: CM-mbt-categorical-bridge.md
+    file: agents/fxsl/ingeniero-software-composicional/skills/CM-mbt-categorical-bridge.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-software-composicional-context-manager:2.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/fxsl/ingeniero-software-composicional/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:fxsl:skill:ingeniero-software-composicional-context-analyzer:2.0.0
+    title: CM-CONTEXT-ANALYZER.md
+    file: agents/fxsl/ingeniero-software-composicional/skills/CM-CONTEXT-ANALYZER.md
+    status: published
   - urn: urn:fxsl:skill:tester-acceptance-test-generator:1.0.0
     title: CM-ACCEPTANCE-TEST-GENERATOR
     file: agents/fxsl/tester/skills/CM-ACCEPTANCE-TEST-GENERATOR.md
@@ -181,6 +297,10 @@ Catalog:
   - urn: urn:fxsl:skill:tester-coverage-reporter:1.0.0
     title: CM-COVERAGE-REPORTER
     file: agents/fxsl/tester/skills/CM-COVERAGE-REPORTER.md
+    status: published
+  - urn: urn:fxsl:skill:medico-urgencias-interpretador-imagenes:1.1.0
+    title: CM-interpretador-imagenes.md
+    file: agents/fxsl/medico-urgencias/skills/CM-interpretador-imagenes.md
     status: published
   - urn: urn:fxsl:skill:coder-story-consumer:1.0.0
     title: CM-STORY-CONSUMER
@@ -210,6 +330,54 @@ Catalog:
     title: CM-IMPLEMENTATION-PLANNER
     file: agents/fxsl/coder/skills/CM-IMPLEMENTATION-PLANNER.md
     status: published
+  - urn: urn:fxsl:skill:visionario-gore-4-0-func:2.0.0
+    title: CM-gore-4-0-func.md
+    file: agents/fxsl/visionario/skills/CM-gore-4-0-func.md
+    status: published
+  - urn: urn:fxsl:skill:visionario-palancas-exo:2.0.0
+    title: CM-palancas-exo.md
+    file: agents/fxsl/visionario/skills/CM-palancas-exo.md
+    status: published
+  - urn: urn:fxsl:skill:visionario-arquitecto-erd:2.0.0
+    title: CM-arquitecto-erd.md
+    file: agents/fxsl/visionario/skills/CM-arquitecto-erd.md
+    status: published
+  - urn: urn:fxsl:skill:visionario-prospectiva-territorial:2.0.0
+    title: CM-prospectiva-territorial.md
+    file: agents/fxsl/visionario/skills/CM-prospectiva-territorial.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-migration-engine:2.0.0
+    title: CM-migration-engine.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-migration-engine.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-audit-engine:2.0.0
+    title: CM-audit-engine.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-audit-engine.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-artifact-generator:2.0.0
+    title: CM-artifact-generator.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-artifact-generator.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-integration-engine:2.0.0
+    title: CM-integration-engine.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-integration-engine.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-dal-engine:2.0.0
+    title: CM-dal-engine.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-dal-engine.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-tension-explorer:2.0.0
+    title: CM-tension-explorer.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-tension-explorer.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-structure-engine:2.0.0
+    title: CM-structure-engine.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-structure-engine.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-categorico-behavior-engine:2.0.0
+    title: CM-behavior-engine.md
+    file: agents/fxsl/arquitecto-categorico/skills/CM-behavior-engine.md
+    status: published
   - urn: urn:gn:skill:dgi-virtual-lean-thinking:1.0.0
     title: CM-LEAN-THINKING
     file: agents/gn/dgi-virtual/skills/CM-LEAN-THINKING.md
@@ -222,6 +390,10 @@ Catalog:
     title: CM-STRUCTURE-PRINCIPLES
     file: agents/gn/dgi-virtual/skills/CM-STRUCTURE-PRINCIPLES.md
     status: published
+  - urn: urn:gn:skill:dgi-virtual-dmaic-evaluator:1.0.0
+    title: CM-DMAIC-EVALUATOR.md
+    file: agents/gn/dgi-virtual/skills/CM-DMAIC-EVALUATOR.md
+    status: published
   - urn: urn:gn:skill:dgi-virtual-dgi-intake:1.0.0
     title: CM-DGI-INTAKE
     file: agents/gn/dgi-virtual/skills/CM-DGI-INTAKE.md
@@ -233,6 +405,26 @@ Catalog:
   - urn: urn:gn:skill:dgi-virtual-kb-guidance:1.0.0
     title: CM-KB-GUIDANCE
     file: agents/gn/dgi-virtual/skills/CM-KB-GUIDANCE.md
+    status: published
+  - urn: urn:gn:skill:dgi-virtual-social-navigation:1.0.0
+    title: CM-SOCIAL-NAVIGATION.md
+    file: agents/gn/dgi-virtual/skills/CM-SOCIAL-NAVIGATION.md
+    status: published
+  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0
+    title: CM-LLM-ENGINEERING.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-LLM-ENGINEERING.md
+    status: published
+  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0
+    title: CM-SYSTEMS-LENS.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-SYSTEMS-LENS.md
+    status: published
+  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0
+    title: CM-DIAGNOSTIC.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-DIAGNOSTIC.md
+    status: published
+  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0
+    title: CM-AUTOMATION-PATTERNS.md
+    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-AUTOMATION-PATTERNS.md
     status: published
   - urn: urn:gn:skill:goreologo-kb-guidance:1.0.0
     title: CM-KB-GUIDANCE
@@ -249,6 +441,18 @@ Catalog:
   - urn: urn:gn:skill:goreologo-intake:1.0.0
     title: CM-INTAKE
     file: agents/gn/goreologo/skills/CM-INTAKE.md
+    status: published
+  - urn: urn:gn:skill:ingeniero-goreos-code-as-category:2.0.0
+    title: CM-CODE-AS-CATEGORY.md
+    file: agents/gn/ingeniero-goreos/skills/CM-CODE-AS-CATEGORY.md
+    status: published
+  - urn: urn:gn:skill:ingeniero-goreos-categorical-lens:2.0.0
+    title: CM-CATEGORICAL-LENS.md
+    file: agents/gn/ingeniero-goreos/skills/CM-CATEGORICAL-LENS.md
+    status: published
+  - urn: urn:gn:skill:ingeniero-goreos-functorial-pipeline:2.0.0
+    title: CM-FUNCTORIAL-PIPELINE.md
+    file: agents/gn/ingeniero-goreos/skills/CM-FUNCTORIAL-PIPELINE.md
     status: published
   - urn: urn:gn:skill:digitrans-gore-intake:1.0.0
     title: CM-INTAKE
@@ -370,66 +574,6 @@ Catalog:
     title: CM-PLATFORM-INSTALLER
     file: agents/kora/clawmaster/skills/CM-PLATFORM-INSTALLER.md
     status: published
-  - urn: urn:kora:skill:transformer-task-classifier:1.0.0
-    title: CM-TASK-CLASSIFIER
-    file: agents/kora/transformer/skills/CM-TASK-CLASSIFIER.md
-    status: published
-  - urn: urn:kora:skill:transformer-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER
-    file: agents/kora/transformer/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:kora:skill:smith-guard-configurator:1.0.0
-    title: CM-GUARD-CONFIGURATOR
-    file: agents/kora/smith/skills/CM-GUARD-CONFIGURATOR.md
-    status: published
-  - urn: urn:kora:skill:smith-agent-builder:1.0.0
-    title: CM-AGENT-BUILDER
-    file: agents/kora/smith/skills/CM-AGENT-BUILDER.md
-    status: published
-  - urn: urn:kora:skill:smith-state-designer:1.0.0
-    title: CM-STATE-DESIGNER
-    file: agents/kora/smith/skills/CM-STATE-DESIGNER.md
-    status: published
-  - urn: urn:kora:skill:smith-project-classifier:1.0.0
-    title: CM-PROJECT-CLASSIFIER
-    file: agents/kora/smith/skills/CM-PROJECT-CLASSIFIER.md
-    status: published
-  - urn: urn:kora:skill:smith-agent-validator:1.0.0
-    title: CM-AGENT-VALIDATOR
-    file: agents/kora/smith/skills/CM-AGENT-VALIDATOR.md
-    status: published
-  - urn: urn:kora:skill:smith-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER
-    file: agents/kora/smith/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:kora:skill:smith-knowledge-mode-selector:1.0.0
-    title: CM-KNOWLEDGE-MODE-SELECTOR
-    file: agents/kora/smith/skills/CM-KNOWLEDGE-MODE-SELECTOR.md
-    status: published
-  - urn: urn:kora:skill:smith-cm-designer:1.0.0
-    title: CM-CM-DESIGNER
-    file: agents/kora/smith/skills/CM-CM-DESIGNER.md
-    status: published
-  - urn: urn:kora:skill:smith-ftcf-analyzer:1.0.0
-    title: CM-FTCF-ANALYZER
-    file: agents/kora/smith/skills/CM-FTCF-ANALYZER.md
-    status: published
-  - urn: urn:kora:skill:orquestador-generico-role-suggester:1.0.0
-    title: CM-ROLE-SUGGESTER
-    file: agents/kora/orquestador-generico/skills/CM-ROLE-SUGGESTER.md
-    status: published
-  - urn: urn:kora:skill:orquestador-generico-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER
-    file: agents/kora/orquestador-generico/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:kora:skill:orquestador-generico-protocol-selector:1.0.0
-    title: CM-PROTOCOL-SELECTOR
-    file: agents/kora/orquestador-generico/skills/CM-PROTOCOL-SELECTOR.md
-    status: published
-  - urn: urn:kora:skill:orquestador-generico-result-aggregator:1.0.0
-    title: CM-RESULT-AGGREGATOR
-    file: agents/kora/orquestador-generico/skills/CM-RESULT-AGGREGATOR.md
-    status: published
   - urn: urn:kora:skill:curator-artifact-designer:2.0.0
     title: CM-ARTIFACT-DESIGNER
     file: agents/kora/curator/skills/CM-ARTIFACT-DESIGNER.md
@@ -502,6 +646,34 @@ Catalog:
     title: CM-CIRCUIT-BREAKER-MANAGER.md
     file: agents/ops/orquestador-swarm/skills/CM-CIRCUIT-BREAKER-MANAGER.md
     status: published
+  - urn: urn:ops:skill:deployer-post-deploy-verifier:1.0.0
+    title: CM-POST-DEPLOY-VERIFIER.md
+    file: agents/ops/deployer/skills/CM-POST-DEPLOY-VERIFIER.md
+    status: published
+  - urn: urn:ops:skill:deployer-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/deployer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:deployer-change-classifier:1.0.0
+    title: CM-CHANGE-CLASSIFIER.md
+    file: agents/ops/deployer/skills/CM-CHANGE-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:deployer-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/deployer/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:deployer-strategy-selector:1.0.0
+    title: CM-STRATEGY-SELECTOR.md
+    file: agents/ops/deployer/skills/CM-STRATEGY-SELECTOR.md
+    status: published
+  - urn: urn:ops:skill:deployer-rollback-executor:1.0.0
+    title: CM-ROLLBACK-EXECUTOR.md
+    file: agents/ops/deployer/skills/CM-ROLLBACK-EXECUTOR.md
+    status: published
+  - urn: urn:ops:skill:deployer-deploy-executor:1.0.0
+    title: CM-DEPLOY-EXECUTOR.md
+    file: agents/ops/deployer/skills/CM-DEPLOY-EXECUTOR.md
+    status: published
   - urn: urn:ops:skill:security-self-auditor:1.0.0
     title: CM-SELF-AUDITOR.md
     file: agents/ops/security/skills/CM-SELF-AUDITOR.md
@@ -522,13 +694,41 @@ Catalog:
     title: CM-INTENT-CLASSIFIER.md
     file: agents/ops/security/skills/CM-INTENT-CLASSIFIER.md
     status: published
-  - urn: urn:ops:skill:security-pr-analyzer:1.0.0
+  - urn: urn:ops:skill:security-pr-security-analyzer:1.0.0
     title: CM-PR-SECURITY-ANALYZER.md
     file: agents/ops/security/skills/CM-PR-SECURITY-ANALYZER.md
     status: published
   - urn: urn:ops:skill:security-adversarial-tester:1.0.0
     title: CM-ADVERSARIAL-TESTER.md
     file: agents/ops/security/skills/CM-ADVERSARIAL-TESTER.md
+    status: published
+  - urn: urn:ops:skill:observer-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/ops/observer/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:observer-anomaly-detector:1.0.0
+    title: CM-ANOMALY-DETECTOR.md
+    file: agents/ops/observer/skills/CM-ANOMALY-DETECTOR.md
+    status: published
+  - urn: urn:ops:skill:observer-alert-manager:1.0.0
+    title: CM-ALERT-MANAGER.md
+    file: agents/ops/observer/skills/CM-ALERT-MANAGER.md
+    status: published
+  - urn: urn:ops:skill:observer-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER.md
+    file: agents/ops/observer/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:ops:skill:observer-health-monitor:1.0.0
+    title: CM-HEALTH-MONITOR.md
+    file: agents/ops/observer/skills/CM-HEALTH-MONITOR.md
+    status: published
+  - urn: urn:ops:skill:observer-correlation-engine:1.0.0
+    title: CM-CORRELATION-ENGINE.md
+    file: agents/ops/observer/skills/CM-CORRELATION-ENGINE.md
+    status: published
+  - urn: urn:ops:skill:observer-diagnosis-proposer:1.0.0
+    title: CM-DIAGNOSIS-PROPOSER.md
+    file: agents/ops/observer/skills/CM-DIAGNOSIS-PROPOSER.md
     status: published
   - urn: urn:ops:skill:integrador-conflict-resolver:1.0.0
     title: CM-CONFLICT-RESOLVER.md
@@ -586,17 +786,49 @@ Catalog:
     title: CM-DIVERSITY-LAYER.md
     file: agents/ops/verificador/skills/CM-DIVERSITY-LAYER.md
     status: published
-  - urn: urn:kora:skill:korax-cm-companion:1.0.0
+  - urn: urn:korvo:skill:korax-companion:1.0.0
     title: CM-COMPANION.md
     file: agents/korvo/korax/skills/CM-COMPANION.md
     status: published
-  - urn: urn:kora:skill:korax-cm-problem-solver:1.0.0
+  - urn: urn:korvo:skill:korax-delegacion:1.0.0
+    title: CM-DELEGACION.md
+    file: agents/korvo/korax/skills/CM-DELEGACION.md
+    status: published
+  - urn: urn:korvo:skill:korax-bancarrota:1.0.0
+    title: CM-BANCARROTA.md
+    file: agents/korvo/korax/skills/CM-BANCARROTA.md
+    status: published
+  - urn: urn:korvo:skill:korax-deteccion-colapso:1.0.0
+    title: CM-DETECCION-COLAPSO.md
+    file: agents/korvo/korax/skills/CM-DETECCION-COLAPSO.md
+    status: published
+  - urn: urn:korvo:skill:korax-triaje:1.0.0
+    title: CM-TRIAJE.md
+    file: agents/korvo/korax/skills/CM-TRIAJE.md
+    status: published
+  - urn: urn:korvo:skill:korax-problem-solver:1.0.0
     title: CM-PROBLEM-SOLVER.md
     file: agents/korvo/korax/skills/CM-PROBLEM-SOLVER.md
     status: published
-  - urn: urn:kora:skill:korax-cm-advisor:1.0.0
+  - urn: urn:korvo:skill:korax-advisor:1.0.0
     title: CM-ADVISOR.md
     file: agents/korvo/korax/skills/CM-ADVISOR.md
+    status: published
+  - urn: urn:korvo:skill:korax-deteccion-abandono:1.0.0
+    title: CM-DETECCION-ABANDONO.md
+    file: agents/korvo/korax/skills/CM-DETECCION-ABANDONO.md
+    status: published
+  - urn: urn:korvo:skill:korax-planificacion:2.0.0
+    title: CM-PLANIFICACION.md
+    file: agents/korvo/korax/skills/CM-PLANIFICACION.md
+    status: published
+  - urn: urn:korvo:skill:korax-sincronizacion:1.0.0
+    title: CM-SINCRONIZACION.md
+    file: agents/korvo/korax/skills/CM-SINCRONIZACION.md
+    status: published
+  - urn: urn:korvo:skill:korax-close:2.0.0
+    title: CM-CLOSE.md
+    file: agents/korvo/korax/skills/CM-CLOSE.md
     status: published
   Knowledge:
   - urn: urn:kora:kb:skill-spec-md
@@ -660,7 +892,7 @@ Catalog:
     file: knowledge/fxsl/cat/kb-category.md
     status: published
   - urn: urn:fxsl:kb:cql-data-integration
-    title: 'CQL: Categorical Query Language'
+    title: CQL Data Integration for Computational Science
     file: knowledge/fxsl/cat/cql-data-integration.md
     status: published
   - urn: urn:fxsl:kb:mathematical-modelling
@@ -883,7 +1115,7 @@ Catalog:
     file: knowledge/gn/manuales/manual-compras.md
     status: published
   - urn: urn:gn:kb:manual-contabilidad
-    title: Manual de Contabilidad Gubernamental y Cierre Financiero
+    title: 'Manual 1.2: Contabilidad Gubernamental y Cierre Financiero'
     file: knowledge/gn/manuales/manual-contabilidad.md
     status: published
   - urn: urn:gn:kb:manual-activo-fijo
@@ -903,43 +1135,43 @@ Catalog:
     file: knowledge/gn/manuales/manual-inventarios-bodegas.md
     status: published
   - urn: urn:gn:kb:ris-proyinv
-    title: RIS Genéricas para Proyectos de Inversión (SNI 2023)
+    title: RIS Genéricas — Proyectos de Inversión (SNI 2023)
     file: knowledge/gn/ris/ris-proyinv.md
     status: published
   - urn: urn:gn:kb:ris-artcult
-    title: RIS para Proyectos de Arte y Cultura (SNI 2024)
+    title: RIS Arte y Cultura (SNI 2024)
     file: knowledge/gn/ris/ris-artcult.md
     status: published
   - urn: urn:gn:kb:ris-proginv
-    title: RIS Genéricas para Programas de Inversión (SNI 2025)
+    title: RIS Genéricas — Programas de Inversión (SNI 2025)
     file: knowledge/gn/ris/ris-proginv.md
     status: published
   - urn: urn:gn:kb:ris-empub
-    title: RIS para Estudios y Proyectos de Empresas del Estado (SNI 2024)
+    title: RIS Estudios y Proyectos de Empresas del Estado (SNI 2024)
     file: knowledge/gn/ris/ris-empub.md
     status: published
   - urn: urn:gn:kb:ris-pmdt
-    title: Requisitos de Información para Estudio Básico PMDT (SNI 2024)
+    title: RIS Estudio Básico PMDT (SNI 2024)
     file: knowledge/gn/ris/ris-pmdt.md
     status: published
   - urn: urn:gn:kb:ris-patrimonio
-    title: RIS para Proyectos Patrimoniales (SNI 2024)
+    title: RIS Proyectos Patrimoniales (SNI 2024)
     file: knowledge/gn/ris/ris-patrimonio.md
     status: published
   - urn: urn:gn:kb:ris-edpub
-    title: RIS para Proyectos de Edificación Pública (SNI 2024)
+    title: RIS Edificación Pública (SNI 2024)
     file: knowledge/gn/ris/ris-edpub.md
     status: published
   - urn: urn:gn:kb:ris-deportes
-    title: RIS para Proyectos de Infraestructura Deportiva (SNI 2024)
+    title: RIS Infraestructura Deportiva (SNI 2024)
     file: knowledge/gn/ris/ris-deportes.md
     status: published
   - urn: urn:gn:kb:selector-ipr
-    title: Selector de Vías de Financiamiento para IPR
+    title: Selector de Vías de Financiamiento — IPR GORE Ñuble
     file: knowledge/gn/ris/selector-ipr.md
     status: published
   - urn: urn:gn:kb:ris-index
-    title: Índice de Requisitos de Información Sectorial (RIS) SNI
+    title: Índice RIS SNI — GORE Ñuble
     file: knowledge/gn/ris/ris-index.md
     status: published
   - urn: urn:gn:kb:ley-presupuestos-2026-partida-31
@@ -967,35 +1199,35 @@ Catalog:
     file: knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.md
     status: published
   - urn: urn:gn:kb:bpmn-d08-rendiciones
-    title: 'D08: Gestión de Rendiciones de Cuentas'
+    title: 'BPMN D08: Gestión de Rendiciones de Cuentas'
     file: knowledge/gn/bpmn/bpmn-d08-rendiciones.md
     status: published
   - urn: urn:gn:kb:bpmn-d09-cies-sitia
-    title: 'D09: Gestión Operativa CIES-SITIA (Seguridad Pública)'
+    title: 'BPMN D09: Gestión Operativa CIES/SITIA (Seguridad Pública)'
     file: knowledge/gn/bpmn/bpmn-d09-cies-sitia.md
     status: published
   - urn: urn:gn:kb:bpmn-d10-geoespacial-ide
-    title: 'D10: Gestión de Información Geoespacial (IDE/Geonodo)'
+    title: 'BPMN D10: Gestión de Información Geoespacial (IDE/Geonodo)'
     file: knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.md
     status: published
   - urn: urn:gn:kb:bpmn-d03-gestion-ipr
-    title: Gestión de Intervenciones Públicas Regionales (IPR)
+    title: 'BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)'
     file: knowledge/gn/bpmn/bpmn-d03-gestion-ipr.md
     status: published
   - urn: urn:gn:kb:bpmn-d07-rrhh
-    title: 'D07: Gestión de Personas (RRHH)'
+    title: 'BPMN D07: Gestión de Personas (RRHH)'
     file: knowledge/gn/bpmn/bpmn-d07-rrhh.md
     status: published
   - urn: urn:gn:kb:bpmn-index
-    title: Índice de Procesos BPMN
+    title: Índice de Procesos BPMN — GORE Ñuble
     file: knowledge/gn/bpmn/bpmn-index.md
     status: published
   - urn: urn:gn:kb:bpmn-d04-compras-contrataciones
-    title: 'D04: Compras Públicas y Contrataciones'
+    title: 'BPMN D04: Compras Públicas y Contrataciones'
     file: knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.md
     status: published
   - urn: urn:gn:kb:bpmn-d02-ciclo-presupuestario
-    title: Ciclo Presupuestario Regional (BPMN D02)
+    title: 'BPMN D02: Ciclo Presupuestario Regional'
     file: knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.md
     status: published
   - urn: urn:gn:kb:bpmn-d05-inventarios-activo-fijo
@@ -1003,7 +1235,7 @@ Catalog:
     file: knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.md
     status: published
   - urn: urn:gn:kb:bpmn-d06-flota-vehicular
-    title: 'D06: Gestión de Flota Vehicular'
+    title: 'BPMN D06: Gestión de Flota Vehicular'
     file: knowledge/gn/bpmn/bpmn-d06-flota-vehicular.md
     status: published
   - urn: urn:gn:kb:bpmn-d01-actos-administrativos
@@ -1019,7 +1251,7 @@ Catalog:
     file: knowledge/gn/gestion/gestion-ipr.md
     status: published
   - urn: urn:gn:kb:flujos-aprobacion-documentos
-    title: Flujos de Aprobación de Documentos
+    title: Flujos de Aprobación de Documentos — GORE Ñuble
     file: knowledge/gn/gestion/flujos-aprobacion-documentos.md
     status: published
   - urn: urn:gn:kb:gestion-prpto-2026
@@ -1123,7 +1355,7 @@ Catalog:
     file: knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md
     status: published
   - urn: urn:kora:kb:test-strategy
-    title: Estrategia de Pruebas KORA (Sistema)
+    title: Estrategia de Pruebas KB TDE (wikiguias)
     file: knowledge/kora/sys/test_strategy.md
     status: published
   - urn: urn:kora:kb:pipeline-ingesta
@@ -1323,7 +1555,7 @@ Catalog:
     file: knowledge/legal/derechos_especiales.md
     status: published
   - urn: urn:legal:kb:remuneraciones
-    title: Remuneraciones y Asignaciones - Trabajo Médico Chile
+    title: Remuneraciones y Asignaciones — Trabajo Médico Chile
     file: knowledge/legal/remuneraciones.md
     status: published
   - urn: urn:legal:kb:jornada-calificaciones
@@ -1356,7 +1588,7 @@ Catalog:
     file: knowledge/legal/legislacion_ia_chile.md
     status: published
   - urn: urn:tde:kb:catalogo-cpat-nuble
-    title: 'Catálogo CPAT Ñuble: Madurez de Trámites Digitales'
+    title: 'Catálogo CPAT Ñuble: Análisis de Madurez de Trámites Digitales'
     file: knowledge/tde/guias/catalogo_cpat_nuble.md
     status: published
   - urn: urn:tde:kb:diseno-servicios
@@ -1364,7 +1596,7 @@ Catalog:
     file: knowledge/tde/guias/diseno_servicios.md
     status: published
   - urn: urn:tde:kb:reglamento-ds4
-    title: Reglamento de Transformación Digital del Estado (DS 4)
+    title: Reglamento de Transformación Digital del Estado (DS N° 4/2020 SEGPRES)
     file: knowledge/tde/guias/reglamento_tde_ds4.md
     status: published
   - urn: urn:tde:kb:rat-datos-personales
@@ -1376,11 +1608,11 @@ Catalog:
     file: knowledge/tde/guias/sistema_tde_2025.md
     status: published
   - urn: urn:tde:kb:cpat-completa
-    title: 'Guía CPAT: Catálogo de Procedimientos y Tramitaciones'
+    title: 'Guía CPAT Completa: Catálogo de Procedimientos Administrativos y Tramitaciones'
     file: knowledge/tde/guias/cpat_completa.md
     status: published
   - urn: urn:tde:kb:evaltic
-    title: 'Guía Técnica EVALTIC: Marco para Inversiones en Gobierno Digital'
+    title: 'Guía Técnica EVALTIC: Marco para Inversiones y Gasto en Gobierno Digital'
     file: knowledge/tde/guias/evaltic.md
     status: published
   - urn: urn:tde:kb:seguridad-ciberseguridad
@@ -1392,7 +1624,7 @@ Catalog:
     file: knowledge/tde/guias/mgde.md
     status: published
   - urn: urn:tde:kb:metadatos-documentos
-    title: Guía Técnica de Metadatos para Documentos y Expedientes
+    title: Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos
     file: knowledge/tde/guias/metadatos_documentos.md
     status: published
   - urn: urn:tde:kb:orientaciones-gestion-tic
@@ -1465,7 +1697,7 @@ Catalog:
     file: knowledge/tde/leyes/ley_19880_procedimientos.md
     status: published
   - urn: urn:tde:kb:principios-objetivos
-    title: Principios y Objetivos Marco de la Transformación Digital
+    title: Principios y Objetivos Marco de la Transformación Digital del Estado
     file: knowledge/tde/estrategia/principios_objetivos.md
     status: published
   - urn: urn:tde:kb:gobierno-digital-2030
@@ -1477,7 +1709,7 @@ Catalog:
     file: knowledge/gov/capacitaciones_tde.md
     status: published
   - urn: urn:gov:kb:notificaciones
-    title: Contexto Normativo y Digital
+    title: Plataforma de Notificaciones Electrónicas del Estado
     file: knowledge/gov/notificaciones.md
     status: published
   - urn: urn:gov:kb:intro-tde
@@ -1485,24 +1717,23 @@ Catalog:
     file: knowledge/gov/intro_tde.md
     status: published
   - urn: urn:gov:kb:metodologia-proyectos-tic
-    title: Contexto y Propósito
+    title: Metodología para la Gestión de Proyectos TIC
     file: knowledge/gov/metodologia_proyectos_tic.md
     status: published
   - urn: urn:gov:kb:datosgob
-    title: Portal de Datos Abiertos (Datos.gob.cl)
+    title: Portal de Datos Abiertos del Estado — Datos.gob.cl
     file: knowledge/gov/datosgob.md
     status: published
   - urn: urn:gov:kb:lexicon-wikiguias
-    title: Lexicón WikiGuías SGD
+    title: Lexicón WikiGuías SGD — Definiciones Canónicas TDE
     file: knowledge/gov/lexicon_wikiguias.md
     status: published
   - urn: urn:gov:kb:identidad-digital
-    title: Contexto y Justificación
+    title: Estrategia de Identidad Digital
     file: knowledge/gov/identidad_digital.md
     status: published
   - urn: urn:gov:kb:cloud-publica
-    title: 'Lineamientos Técnicos: Recomendaciones para la adquisición de servicios
-      de Cloud Pública'
+    title: Recomendaciones Técnicas para la Adquisición de Servicios de Cloud Pública
     file: knowledge/gov/cloud_publica.md
     status: published
   - urn: urn:gov:kb:datos-administracion-estado
@@ -1559,34 +1790,6 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/arquitecto-sistemas-informacion/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-integration-architect:1.0.0
-    title: CM-integration-architect.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-integration-architect.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-schema-evolution-manager:1.0.0
-    title: CM-schema-evolution-manager.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-schema-evolution-manager.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-is-function-designer:1.0.0
-    title: CM-is-function-designer.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-is-function-designer.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-is-artifact-generator:1.0.0
-    title: CM-is-artifact-generator.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-is-artifact-generator.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-data-architect:1.0.0
-    title: CM-data-architect.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-data-architect.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-ws-analyzer:1.0.0
-    title: CM-ws-analyzer.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-ws-analyzer.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-cm-overlap-analyzer:1.0.0
-    title: CM-overlap-analyzer.md
-    file: agents/fxsl/arquitecto-sistemas-informacion/skills/CM-overlap-analyzer.md
-    status: published
   - urn: urn:fxsl:agent-bootstrap:planner-user:1.0.0
     title: USER.md
     file: agents/fxsl/planner/USER.md
@@ -1619,14 +1822,6 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/pensador-generador/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-cm-posicionador:2.0.0
-    title: CM-posicionador.md
-    file: agents/fxsl/pensador-generador/skills/CM-posicionador.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-cm-navegador-tensiones:2.0.0
-    title: CM-navegador-tensiones.md
-    file: agents/fxsl/pensador-generador/skills/CM-navegador-tensiones.md
-    status: published
   - urn: urn:fxsl:agent-bootstrap:ontologista-gist-user:1.0.0
     title: USER.md
     file: agents/fxsl/ontologista-gist/USER.md
@@ -1642,30 +1837,6 @@ Catalog:
   - urn: urn:fxsl:agent-bootstrap:ontologista-gist-tools:1.0.0
     title: TOOLS.md
     file: agents/fxsl/ontologista-gist/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-cm-modelador-gist:1.0.0
-    title: CM-MODELADOR-GIST.md
-    file: agents/fxsl/ontologista-gist/skills/CM-MODELADOR-GIST.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-cm-auditor-gist:1.0.0
-    title: CM-AUDITOR-GIST.md
-    file: agents/fxsl/ontologista-gist/skills/CM-AUDITOR-GIST.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-cm-tension-ontologica:1.0.0
-    title: CM-TENSION-ONTOLOGICA.md
-    file: agents/fxsl/ontologista-gist/skills/CM-TENSION-ONTOLOGICA.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-cm-posicionador:1.0.0
-    title: CM-POSICIONADOR.md
-    file: agents/fxsl/ontologista-gist/skills/CM-POSICIONADOR.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-cm-navegador-tensiones:1.0.0
-    title: CM-NAVEGADOR-TENSIONES.md
-    file: agents/fxsl/ontologista-gist/skills/CM-NAVEGADOR-TENSIONES.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-cm-gist-advisor:1.0.0
-    title: CM-GIST-ADVISOR.md
-    file: agents/fxsl/ontologista-gist/skills/CM-GIST-ADVISOR.md
     status: published
   - urn: urn:fxsl:agent-bootstrap:sentinel-user:1.0.0
     title: USER.md
@@ -1715,14 +1886,6 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/abogado-legislacion-medica/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-cm-kb-guidance:1.0.0
-    title: CM-kb-guidance.md
-    file: agents/fxsl/abogado-legislacion-medica/skills/CM-kb-guidance.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:abogado-legislacion-medica-cm-estatuto-selector:1.0.0
-    title: CM-estatuto-selector.md
-    file: agents/fxsl/abogado-legislacion-medica/skills/CM-estatuto-selector.md
-    status: published
   - urn: urn:fxsl:agent-bootstrap:banca-inversion-user:2.0.0
     title: USER.md
     file: agents/fxsl/banca-inversion/USER.md
@@ -1755,34 +1918,6 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/ingeniero-sistemas-composicional/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-breakdown-architect:1.0.0
-    title: CM-breakdown-architect.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-breakdown-architect.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-evolution-analyzer:1.0.0
-    title: CM-evolution-analyzer.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-evolution-analyzer.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-stakeholder-extractor:1.0.0
-    title: CM-stakeholder-extractor.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-stakeholder-extractor.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-artifact-generator:1.0.0
-    title: CM-artifact-generator.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-artifact-generator.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-work-system-analyzer:1.0.0
-    title: CM-work-system-analyzer.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-work-system-analyzer.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-opm-modeler:1.0.0
-    title: CM-opm-modeler.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-opm-modeler.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-cm-requirements-engineer:1.0.0
-    title: CM-requirements-engineer.md
-    file: agents/fxsl/ingeniero-sistemas-composicional/skills/CM-requirements-engineer.md
-    status: published
   - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-user:2.0.0
     title: USER.md
     file: agents/fxsl/ingeniero-software-composicional/USER.md
@@ -1798,18 +1933,6 @@ Catalog:
   - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-tools:2.0.0
     title: TOOLS.md
     file: agents/fxsl/ingeniero-software-composicional/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-cm-tension-navigator:2.0.0
-    title: CM-tension-navigator.md
-    file: agents/fxsl/ingeniero-software-composicional/skills/CM-tension-navigator.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-cm-code-as-category:2.0.0
-    title: CM-code-as-category.md
-    file: agents/fxsl/ingeniero-software-composicional/skills/CM-code-as-category.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-software-composicional-cm-mbt-categorical-bridge:2.0.0
-    title: CM-mbt-categorical-bridge.md
-    file: agents/fxsl/ingeniero-software-composicional/skills/CM-mbt-categorical-bridge.md
     status: published
   - urn: urn:fxsl:agent-bootstrap:tester-user:1.0.0
     title: USER.md
@@ -1842,10 +1965,6 @@ Catalog:
   - urn: urn:fxsl:agent-bootstrap:medico-urgencias-tools:1.1.0
     title: TOOLS.md
     file: agents/fxsl/medico-urgencias/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:medico-urgencias-cm-interpretador-imagenes:1.1.0
-    title: CM-interpretador-imagenes.md
-    file: agents/fxsl/medico-urgencias/skills/CM-interpretador-imagenes.md
     status: published
   - urn: urn:fxsl:agent-bootstrap:modelador-mbt-user:2.0.0
     title: USER.md
@@ -1895,22 +2014,6 @@ Catalog:
     title: TOOLS.md
     file: agents/fxsl/visionario/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-cm-gore-4-0-func:2.0.0
-    title: CM-gore-4-0-func.md
-    file: agents/fxsl/visionario/skills/CM-gore-4-0-func.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-cm-palancas-exo:2.0.0
-    title: CM-palancas-exo.md
-    file: agents/fxsl/visionario/skills/CM-palancas-exo.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-cm-arquitecto-erd:2.0.0
-    title: CM-arquitecto-erd.md
-    file: agents/fxsl/visionario/skills/CM-arquitecto-erd.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:visionario-cm-prospectiva-territorial:2.0.0
-    title: CM-prospectiva-territorial.md
-    file: agents/fxsl/visionario/skills/CM-prospectiva-territorial.md
-    status: published
   - urn: urn:fxsl:agent-bootstrap:ar-virtual-user:2.0.0
     title: USER.md
     file: agents/fxsl/ar-virtual/USER.md
@@ -1942,38 +2045,6 @@ Catalog:
   - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.0.0
     title: TOOLS.md
     file: agents/fxsl/arquitecto-categorico/TOOLS.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-migration-engine:2.0.0
-    title: CM-migration-engine.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-migration-engine.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-audit-engine:2.0.0
-    title: CM-audit-engine.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-audit-engine.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-artifact-generator:2.0.0
-    title: CM-artifact-generator.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-artifact-generator.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-integration-engine:2.0.0
-    title: CM-integration-engine.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-integration-engine.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-dal-engine:2.0.0
-    title: CM-dal-engine.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-dal-engine.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-tension-explorer:2.0.0
-    title: CM-tension-explorer.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-tension-explorer.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-structure-engine:2.0.0
-    title: CM-structure-engine.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-structure-engine.md
-    status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-cm-behavior-engine:2.0.0
-    title: CM-behavior-engine.md
-    file: agents/fxsl/arquitecto-categorico/skills/CM-behavior-engine.md
     status: published
   - urn: urn:fxsl:agent-bootstrap:asesor-juridico-user:4.0.0
     title: USER.md
@@ -2023,14 +2094,6 @@ Catalog:
     title: TOOLS.md
     file: agents/gn/dgi-virtual/TOOLS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-cm-dmaic-evaluator:1.0.0
-    title: CM-DMAIC-EVALUATOR.md
-    file: agents/gn/dgi-virtual/skills/CM-DMAIC-EVALUATOR.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-cm-social-navigation:1.0.0
-    title: CM-SOCIAL-NAVIGATION.md
-    file: agents/gn/dgi-virtual/skills/CM-SOCIAL-NAVIGATION.md
-    status: published
   - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0
     title: USER.md
     file: agents/gn/arquitecto-automatizacion-organizacional/USER.md
@@ -2046,22 +2109,6 @@ Catalog:
   - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-tools:1.0.0
     title: TOOLS.md
     file: agents/gn/arquitecto-automatizacion-organizacional/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-llm-engineering:1.0.0
-    title: CM-LLM-ENGINEERING.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-LLM-ENGINEERING.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-systems-lens:1.0.0
-    title: CM-SYSTEMS-LENS.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-SYSTEMS-LENS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-diagnostic:1.0.0
-    title: CM-DIAGNOSTIC.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-DIAGNOSTIC.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-cm-automation-patterns:1.0.0
-    title: CM-AUTOMATION-PATTERNS.md
-    file: agents/gn/arquitecto-automatizacion-organizacional/skills/CM-AUTOMATION-PATTERNS.md
     status: published
   - urn: urn:gn:agent-bootstrap:gestor-ipr-360-user:2.0.0
     title: USER.md
@@ -2110,18 +2157,6 @@ Catalog:
   - urn: urn:gn:agent-bootstrap:ingeniero-goreos-tools:2.0.0
     title: TOOLS.md
     file: agents/gn/ingeniero-goreos/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-cm-code-as-category:2.0.0
-    title: CM-CODE-AS-CATEGORY.md
-    file: agents/gn/ingeniero-goreos/skills/CM-CODE-AS-CATEGORY.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-cm-categorical-lens:2.0.0
-    title: CM-CATEGORICAL-LENS.md
-    file: agents/gn/ingeniero-goreos/skills/CM-CATEGORICAL-LENS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:ingeniero-goreos-cm-functorial-pipeline:2.0.0
-    title: CM-FUNCTORIAL-PIPELINE.md
-    file: agents/gn/ingeniero-goreos/skills/CM-FUNCTORIAL-PIPELINE.md
     status: published
   - urn: urn:gn:agent-bootstrap:eacs-user:2.0.0
     title: USER.md
@@ -2299,82 +2334,6 @@ Catalog:
     title: TOOLS.md
     file: agents/kora/clawmaster/TOOLS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:transformer-user:1.0.0
-    title: USER.md
-    file: agents/kora/transformer/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/transformer/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/transformer/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/transformer/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-cm-meat-fat-analyzer:1.0.0
-    title: CM-meat-fat-analyzer.md
-    file: agents/kora/transformer/skills/CM-meat-fat-analyzer.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-cm-telegrafizer:1.0.0
-    title: Artefacto KODA preliminar
-    file: agents/kora/transformer/skills/CM-telegrafizer.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-cm-deduplicator:1.0.0
-    title: CM-deduplicator.md
-    file: agents/kora/transformer/skills/CM-deduplicator.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-cm-kora-validator:1.0.0
-    title: CM-kora-validator.md
-    file: agents/kora/transformer/skills/CM-kora-validator.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:transformer-cm-diff-engine:1.0.0
-    title: CM-diff-engine.md
-    file: agents/kora/transformer/skills/CM-diff-engine.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:smith-user:1.0.0
-    title: USER.md
-    file: agents/kora/smith/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:smith-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/smith/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:smith-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/smith/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:smith-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/smith/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:orquestador-generico-user:1.0.0
-    title: USER.md
-    file: agents/kora/orquestador-generico/USER.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:orquestador-generico-soul:1.0.0
-    title: SOUL.md
-    file: agents/kora/orquestador-generico/SOUL.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:orquestador-generico-agents:1.0.0
-    title: AGENTS.md
-    file: agents/kora/orquestador-generico/AGENTS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:orquestador-generico-tools:1.0.0
-    title: TOOLS.md
-    file: agents/kora/orquestador-generico/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:orquestador-generico-cm-orchestration-engine:1.0.0
-    title: CM-orchestration-engine.md
-    file: agents/kora/orquestador-generico/skills/CM-orchestration-engine.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:orquestador-generico-cm-synthesis-engine:1.0.0
-    title: CM-synthesis-engine.md
-    file: agents/kora/orquestador-generico/skills/CM-synthesis-engine.md
-    status: published
   - urn: urn:kora:agent-bootstrap:curator-user:2.0.0
     title: USER.md
     file: agents/kora/curator/USER.md
@@ -2423,34 +2382,6 @@ Catalog:
     title: TOOLS.md
     file: agents/ops/deployer/TOOLS.md
     status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-post-deploy-verifier:1.0.0
-    title: CM-POST-DEPLOY-VERIFIER.md
-    file: agents/ops/deployer/skills/CM-POST-DEPLOY-VERIFIER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER.md
-    file: agents/ops/deployer/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-change-classifier:1.0.0
-    title: CM-CHANGE-CLASSIFIER.md
-    file: agents/ops/deployer/skills/CM-CHANGE-CLASSIFIER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-intent-classifier:1.0.0
-    title: CM-INTENT-CLASSIFIER.md
-    file: agents/ops/deployer/skills/CM-INTENT-CLASSIFIER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-strategy-selector:1.0.0
-    title: CM-STRATEGY-SELECTOR.md
-    file: agents/ops/deployer/skills/CM-STRATEGY-SELECTOR.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-rollback-executor:1.0.0
-    title: CM-ROLLBACK-EXECUTOR.md
-    file: agents/ops/deployer/skills/CM-ROLLBACK-EXECUTOR.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:deployer-cm-deploy-executor:1.0.0
-    title: CM-DEPLOY-EXECUTOR.md
-    file: agents/ops/deployer/skills/CM-DEPLOY-EXECUTOR.md
-    status: published
   - urn: urn:ops:agent-bootstrap:security-user:1.0.0
     title: USER.md
     file: agents/ops/security/USER.md
@@ -2483,34 +2414,6 @@ Catalog:
     title: TOOLS.md
     file: agents/ops/observer/TOOLS.md
     status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-context-manager:1.0.0
-    title: CM-CONTEXT-MANAGER.md
-    file: agents/ops/observer/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-anomaly-detector:1.0.0
-    title: CM-ANOMALY-DETECTOR.md
-    file: agents/ops/observer/skills/CM-ANOMALY-DETECTOR.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-alert-manager:1.0.0
-    title: CM-ALERT-MANAGER.md
-    file: agents/ops/observer/skills/CM-ALERT-MANAGER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-intent-classifier:1.0.0
-    title: CM-INTENT-CLASSIFIER.md
-    file: agents/ops/observer/skills/CM-INTENT-CLASSIFIER.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-health-monitor:1.0.0
-    title: CM-HEALTH-MONITOR.md
-    file: agents/ops/observer/skills/CM-HEALTH-MONITOR.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-correlation-engine:1.0.0
-    title: CM-CORRELATION-ENGINE.md
-    file: agents/ops/observer/skills/CM-CORRELATION-ENGINE.md
-    status: published
-  - urn: urn:ops:agent-bootstrap:observer-cm-diagnosis-proposer:1.0.0
-    title: CM-DIAGNOSIS-PROPOSER.md
-    file: agents/ops/observer/skills/CM-DIAGNOSIS-PROPOSER.md
-    status: published
   - urn: urn:ops:agent-bootstrap:integrador-user:1.0.0
     title: USER.md
     file: agents/ops/integrador/USER.md
@@ -2527,19 +2430,19 @@ Catalog:
     title: TOOLS.md
     file: agents/ops/integrador/TOOLS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:ci-assistant-user:2.0.0
+  - urn: urn:ops:agent-bootstrap:ci-assistant-user:1.0.0
     title: USER.md
     file: agents/ops/ci-assistant/USER.md
     status: published
-  - urn: urn:kora:agent-bootstrap:ci-assistant-soul:2.0.0
+  - urn: urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0
     title: SOUL.md
     file: agents/ops/ci-assistant/SOUL.md
     status: published
-  - urn: urn:kora:agent-bootstrap:ci-assistant-agents:2.0.0
+  - urn: urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0
     title: AGENTS.md
     file: agents/ops/ci-assistant/AGENTS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:ci-assistant-tools:2.0.0
+  - urn: urn:ops:agent-bootstrap:ci-assistant-tools:1.0.0
     title: TOOLS.md
     file: agents/ops/ci-assistant/TOOLS.md
     status: published
@@ -2575,75 +2478,19 @@ Catalog:
     title: TOOLS.md
     file: agents/tde/digitrans/TOOLS.md
     status: published
-  - urn: urn:korvo:agent-bootstrap:korvo-assistant-user:2.0.0
-    title: USER.md
-    file: agents/korvo/korvo-assistant/USER.md
-    status: deprecated
-  - urn: urn:korvo:agent-bootstrap:korvo-assistant-soul:2.0.0
-    title: SOUL.md
-    file: agents/korvo/korvo-assistant/SOUL.md
-    status: deprecated
-  - urn: urn:korvo:agent-bootstrap:korvo-assistant-agents:2.0.0
-    title: AGENTS.md
-    file: agents/korvo/korvo-assistant/AGENTS.md
-    status: deprecated
-  - urn: urn:korvo:agent-bootstrap:korvo-assistant-tools:2.0.0
-    title: TOOLS.md
-    file: agents/korvo/korvo-assistant/TOOLS.md
-    status: deprecated
-  - urn: urn:korvo:agent-bootstrap:korvo-assistant-cm-problem-solver:1.0.0
-    title: CM-problem-solver.md
-    file: agents/korvo/korvo-assistant/skills/CM-problem-solver.md
-    status: published
-  - urn: urn:korvo:agent-bootstrap:korvo-assistant-cm-productivity-engine:1.0.0
-    title: CM-productivity-engine.md
-    file: agents/korvo/korvo-assistant/skills/CM-productivity-engine.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-user:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-user:2.0.0
     title: USER.md
     file: agents/korvo/korax/USER.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-soul:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-soul:2.0.0
     title: SOUL.md
     file: agents/korvo/korax/SOUL.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-agents:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-agents:2.0.0
     title: AGENTS.md
     file: agents/korvo/korax/AGENTS.md
     status: published
-  - urn: urn:kora:agent-bootstrap:korax-tools:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-tools:2.0.0
     title: TOOLS.md
     file: agents/korvo/korax/TOOLS.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-delegacion:1.0.0
-    title: CM-DELEGACION.md
-    file: agents/korvo/korax/skills/CM-DELEGACION.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-bancarrota:1.0.0
-    title: CM-BANCARROTA.md
-    file: agents/korvo/korax/skills/CM-BANCARROTA.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-deteccion-colapso:1.0.0
-    title: CM-DETECCION-COLAPSO.md
-    file: agents/korvo/korax/skills/CM-DETECCION-COLAPSO.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-triaje:1.0.0
-    title: CM-TRIAJE.md
-    file: agents/korvo/korax/skills/CM-TRIAJE.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-deteccion-abandono:1.0.0
-    title: CM-DETECCION-ABANDONO.md
-    file: agents/korvo/korax/skills/CM-DETECCION-ABANDONO.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-planificacion:2.0.0
-    title: CM-PLANIFICACION.md
-    file: agents/korvo/korax/skills/CM-PLANIFICACION.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-sincronizacion:1.0.0
-    title: CM-SINCRONIZACION.md
-    file: agents/korvo/korax/skills/CM-SINCRONIZACION.md
-    status: published
-  - urn: urn:kora:agent-bootstrap:korax-cm-close:2.0.0
-    title: CM-CLOSE.md
-    file: agents/korvo/korax/skills/CM-CLOSE.md
     status: published
