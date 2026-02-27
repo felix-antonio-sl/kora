@@ -1,0 +1,52 @@
+{
+  "_manifest": {
+    "urn": "urn:dev:agent-bootstrap:refactorer-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:stack-llm-arquitectura",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:fxsl:kb:chapter0-operador-solitario"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "filesystem_read",
+      "filesystem_write",
+      "code_execution",
+      "git",
+      "lint",
+      "test_runner",
+      "dependency_check"
+    ],
+    "deny": [
+      "deploy",
+      "web_search",
+      "production_access",
+      "secret_management"
+    ]
+  },
+  "sub_agents": {},
+  "limits": {
+    "require_tests_before_refactor": true,
+    "require_metrics_before_after": true,
+    "max_refactorings_per_session": 20,
+    "behavior_change_policy": "abort_and_revert"
+  },
+  "context_engineering": {
+    "required": [
+      "CONVENTIONS.md"
+    ],
+    "recommended": [
+      "ARCHITECTURE.md",
+      "SCHEMA.md"
+    ],
+    "rule_70_30": "70% contexto relevante a la zona de refactoring, 30% contexto de sistema"
+  },
+  "model_routing": {
+    "tier_default": "T2"
+  }
+}

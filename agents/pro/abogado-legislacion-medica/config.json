@@ -1,0 +1,43 @@
+{
+  "_manifest": {
+    "urn": "urn:pro:agent-bootstrap:abogado-legislacion-medica-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:legal:kb:index",
+    "urn:legal:kb:intro-estatutos",
+    "urn:legal:kb:deberes-prohibiciones",
+    "urn:legal:kb:ingreso-carrera",
+    "urn:legal:kb:jornada-calificaciones",
+    "urn:legal:kb:remuneraciones",
+    "urn:legal:kb:acoso-laboral",
+    "urn:legal:kb:responsabilidad-admin",
+    "urn:legal:kb:terminacion",
+    "urn:legal:kb:maternidad",
+    "urn:legal:kb:contratacion-publica",
+    "urn:legal:kb:feriados-permisos",
+    "urn:legal:kb:derechos-especiales",
+    "urn:legal:kb:formacion-especialistas",
+    "urn:legal:kb:ley-21643",
+    "urn:legal:kb:ley-15076",
+    "urn:legal:kb:ley-19664",
+    "urn:legal:kb:confianza-legitima"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "search_kb",
+      "resolve_urn"
+    ],
+    "deny": [
+      "web_search",
+      "code_execution"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  }
+}

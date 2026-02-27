@@ -1,0 +1,67 @@
+{
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:gov:kb:intro-tde",
+    "urn:tde:kb:gobierno-digital-2030",
+    "urn:gov:kb:lexicon-wikiguias",
+    "urn:tde:kb:ley-21180-tde",
+    "urn:tde:kb:ley-19880-procedimiento-administrativo",
+    "urn:legal:kb:ley-21658-segdig",
+    "urn:legal:kb:ley-21719-datos-personales",
+    "urn:legal:kb:legislacion-ia-chile",
+    "urn:tde:kb:nt-documentos-expedientes",
+    "urn:tde:kb:nt-interoperabilidad",
+    "urn:tde:kb:nt-seguridad-ciberseguridad",
+    "urn:tde:kb:nt-autenticacion",
+    "urn:tde:kb:nt-notificaciones",
+    "urn:tde:kb:nt-plataformas-procedimientos",
+    "urn:tde:kb:manual-integracion-claveunica",
+    "urn:tde:kb:manual-simple-saas",
+    "urn:gov:kb:notificaciones",
+    "urn:gov:kb:datosgob",
+    "urn:gov:kb:datos-administracion-estado",
+    "urn:gov:kb:identidad-digital",
+    "urn:gov:kb:capacitaciones-tde",
+    "urn:tde:kb:guia-rapida-cpat",
+    "urn:tde:kb:guia-marco-gestion-datos",
+    "urn:gov:kb:cloud-publica",
+    "urn:tde:kb:guia-metadatos-documentos",
+    "urn:tde:kb:guia-evaltic",
+    "urn:tde:kb:guia-calidad-web",
+    "urn:tde:kb:guia-diseno-servicios",
+    "urn:tde:kb:guia-anonimizacion-datos",
+    "urn:tde:kb:guia-gestion-tic",
+    "urn:tde:kb:guia-seguridad-ciberseguridad",
+    "urn:tde:kb:guia-sistema-tde-2025",
+    "urn:tde:kb:guia-registro-tratamiento-datos",
+    "urn:tde:kb:decreto-4-procedimiento-digital",
+    "urn:tde:kb:guia-metodologia-proyectos",
+    "urn:tde:kb:estrategia-capacitaciones-tde",
+    "urn:tde:kb:estrategia-datos",
+    "urn:tde:kb:estrategia-identidad-digital",
+    "urn:tde:kb:ley-21658-ciberseguridad",
+    "urn:tde:kb:ley-21719-datos-personales",
+    "urn:tde:kb:legislacion-ia-chile",
+    "urn:tde:kb:manual-notificaciones-inicio",
+    "urn:tde:kb:manual-integracion-notificaciones",
+    "urn:tde:kb:manual-claveunica-boton",
+    "urn:tde:kb:glosario-simple"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 0
+  }
+}

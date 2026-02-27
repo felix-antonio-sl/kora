@@ -1,0 +1,38 @@
+{
+  "_manifest": {
+    "urn": "urn:dev:agent-bootstrap:planner-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:stack-llm-arquitectura",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:fxsl:kb:chapter0-operador-solitario"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "analysis",
+      "planning",
+      "kb_read"
+    ],
+    "deny": [
+      "filesystem_write",
+      "code_execution",
+      "git",
+      "web_search"
+    ]
+  },
+  "sub_agents": {},
+  "limits": {
+    "require_value_per_story": true,
+    "require_analog_krs": true,
+    "max_stories_per_epic": 10,
+    "max_objectives_per_cycle": 3
+  },
+  "model_routing": {
+    "tier_default": "T3"
+  }
+}

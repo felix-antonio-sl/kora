@@ -1,0 +1,40 @@
+{
+  "_manifest": {
+    "urn": "urn:gn:agent-bootstrap:ar-virtual-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:mgmt:kb:estructura-estado-chile",
+    "urn:gn:kb:loc-gore",
+    "urn:gn:kb:intro-gores-nuble",
+    "urn:gn:kb:marco-legal-gores",
+    "urn:gn:kb:glosario-gore-nuble",
+    "urn:gn:kb:flujos-aprobacion-documentos",
+    "urn:gn:kb:gestion-prpto",
+    "urn:gn:kb:ley-presupuestos-2026-partida-31",
+    "urn:gn:kb:estrategia-gestion",
+    "urn:gn:kb:manual-induccion-gore-nuble-2026",
+    "urn:gn:kb:cuentas-publicas-2021-2024",
+    "urn:gn:kb:erd-nuble-2024-2030",
+    "urn:gn:kb:nuble-250",
+    "urn:gn:kb:indicadores-nuble",
+    "urn:gov:kb:intro-tde",
+    "urn:tde:kb:ley-21180-tde",
+    "urn:tde:kb:manual-integracion-claveunica",
+    "urn:tde:kb:manual-simple-saas"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

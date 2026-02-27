@@ -1,0 +1,50 @@
+{
+  "_manifest": {
+    "urn": "urn:dev:agent-bootstrap:sentinel-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:fxsl:kb:xanpan-agents-metodologia",
+    "urn:fxsl:kb:stack-llm-arquitectura",
+    "urn:fxsl:kb:swarm-ops-metodologia",
+    "urn:fxsl:kb:chapter0-operador-solitario"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "code_read",
+      "analysis",
+      "metrics_read",
+      "eval_audit"
+    ],
+    "deny": [
+      "filesystem_write",
+      "code_execution",
+      "git_write",
+      "deploy",
+      "config_write"
+    ]
+  },
+  "sub_agents": {},
+  "limits": {
+    "tier_deep_analysis": "T3",
+    "veto_asimetrico": true,
+    "never_auto_execute": true,
+    "require_data_per_diagnosis": true,
+    "self_eval_frequency": "each_cycle",
+    "adversarial_test_frequency": "monthly",
+    "degradation_threshold_ta": 0.5,
+    "max_purple_cards_per_pulse": 5
+  },
+  "model_routing": {
+    "tier_default": "T2",
+    "diversity": {
+      "rule": "MUST use different provider than the swarm it audits",
+      "if_swarm_uses": "anthropic",
+      "sentinel_must_use": "openai|google|other",
+      "abort_if_same_provider": true
+    }
+  }
+}
