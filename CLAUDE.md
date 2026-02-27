@@ -11,8 +11,8 @@ KORA is a formally-specified monorepo for building and governing AI agents using
 ```bash
 scripts/kora index      # Rebuild catalog from all artifacts (run after any structural change)
 scripts/kora resolve "urn:kora:kb:agent-spec-md"  # Resolve URN to file path
-scripts/kora health     # Check for broken URN references (scans 635 files)
-scripts/kora validate   # Validate 188 agent components against schemas/kora-agent-schema.json (requires: pip install jsonschema)
+scripts/kora health     # Check for broken URN references (scans 602 files)
+scripts/kora validate   # Validate 164 agent components against schemas/kora-agent-schema.json (requires: pip install jsonschema)
 scripts/kora stats      # Show monorepo statistics (Agents/Skills/Knowledge by namespace)
 scripts/kora intake     # Show intake pipeline status (inbox → source → drafts → knowledge)
 ```
@@ -28,7 +28,7 @@ kora/
   specs/                        # 7 foundational specs (gobernanza, md-spec, spec-md, agent-spec-md, skill-spec-md, runtime-spec-md, swarm-spec-md)
   knowledge/                    # KBs organized by namespace (gn, fxsl, kora, tde, legal, gov, orko, mgmt)
     kora/categorical-foundations/  # Formal Layer: 6 documents (00-05) with categorical math backing the specs
-  agents/                       # Agent workspaces organized by namespace (47 workspaces, 188 indexed components)
+  agents/                       # Agent workspaces organized by namespace (41 workspaces, 164 indexed components)
   catalog/                      # Master URN registry — catalog_master_kora.yml (auto-generated, sections: Agents/Skills/Knowledge/Documents/Other)
   schemas/                      # JSON schemas — kora-agent-schema.json validates agent component frontmatter
   inbox/ → source/ → drafts/ → knowledge/   # Intake pipeline for new artifacts
@@ -103,21 +103,21 @@ Format: `urn:{namespace}:{type}:{id}` — e.g., `urn:kora:kb:agent-spec-md`
 - Skills: `urn:{ns}:skill:{name}-{skill-name}:{version}`
 - Knowledge: `urn:{ns}:kb:{id}`
 
-Active namespaces: **kora**, **fxsl**, **gn**, **tde**, **orko**, **korvo**, **gov**, **legal**, **mgmt**, **ops**
+Active namespaces: **kora**, **fxsl**, **gn**, **dev**, **ops**, **korvo**, **pro**, **tde**, **gov**, **legal**, **mgmt**, **orko**
 
 Catalog (`catalog/catalog_master_kora.yml`) is the source of truth. Run `scripts/kora index` after changes. The indexer classifies by `_manifest.urn` type segment: `agent-bootstrap` → Agents, `skill` → Skills, `kb`/`core`/`domain` → Knowledge.
 
 ### Key Namespace Agents
 
-| Namespace | Domain | Notable agents |
-|-----------|--------|----------------|
-| **kora** | Framework governance | forgemaster (agent lifecycle), curator (artifact lifecycle), clawmaster (OpenClaw specialist) |
-| **fxsl** | Personal/technical | arquitecto-categorico, ontologista-gist, ingeniero-software-composicional, sentinel |
-| **gn** | GORE Ñuble regional gov | goreologo, ingeniero-goreos, erp-gore, goreologo, dgi-virtual, digitrans-gore |
-| **tde** | Transformación Digital Estado | digitrans |
-| **orko** | Arquitectura organizacional | arquitecto-orko |
-| **korvo** | Personal assistant | korax (PCA v3.0 cognitive exoskeleton) |
-| **ops** | DevOps swarm | integrador, verificador, security, orquestador-swarm, deployer, observer |
+| Namespace | Domain | Agents | Notable |
+|-----------|--------|--------|---------|
+| **kora** | Framework governance | 5 | forgemaster (agent lifecycle), curator (artifact lifecycle), custodio (repo ops), clawmaster (OpenClaw), taskmaster |
+| **fxsl** | Dialectic-cognitive lineage | 6 | pensador-generador (root thinker), arquitecto-categorico, ontologista-gist, arquitecto-orko, ingeniero-sistemas-composicional, arquitecto-sistemas-informacion |
+| **dev** | Software engineering swarm | 7 | planner, coder, reviewer, tester, refactorer, analyst, sentinel |
+| **ops** | DevOps swarm | 7 | orquestador-swarm (parent), deployer, integrador, verificador, security, observer, ci-assistant |
+| **gn** | GORE Ñuble regional gov | 13 | goreologo, gobernador-virtual, ar-virtual, gestor-ipr-360, erp-gore, digitrans, dgi-virtual, asesor-juridico, visionario |
+| **korvo** | Personal assistant | 1 | korax (PCA v3.0 cognitive exoskeleton) |
+| **pro** | Regulated professional domains | 2 | medico-urgencias, abogado-legislacion-medica |
 
 ## Working with Agents
 
@@ -155,7 +155,7 @@ Script Protocol: all executable scripts in Skills must be Python 3 with JSON I/O
 
 ## Migration Status
 
-Completed: Phase 0 (Genesis) → Phase 1 (Source Mapping) → Phase 2 (Koraficación) → Phase 4 (Agentificación) → Phase Audit (Coherencia) → Phase I (Ingesta pipeline + Xanpan corpus) → **Phase S (Spec Rewrite v7.0.0)** → Re-koraficación masiva (167 artefactos KODA YAML → KORA/MD) → fix 60 URNs rotas (legacy `urn:knowledge:koda:*` → namespaces canónicos)
+Completed: Phase 0 (Genesis) → Phase 1 (Source Mapping) → Phase 2 (Koraficación) → Phase 4 (Agentificación) → Phase Audit (Coherencia) → Phase I (Ingesta pipeline + Xanpan corpus) → **Phase S (Spec Rewrite v7.0.0)** → Re-koraficación masiva (167 artefactos KODA YAML → KORA/MD) → fix 60 URNs rotas (legacy `urn:knowledge:koda:*` → namespaces canónicos) → **Recategorización semántico-funcional** (47→41 agentes, namespaces por función: dev/, pro/ nuevos; orko/, tde/ absorbidos)
 
 Pending: **Phase F** (Governance): KODA formal deprecation, source repo archival. `inbox/wikiguias_corpus/` pendiente de ingesta (→ kora/curator).
 
