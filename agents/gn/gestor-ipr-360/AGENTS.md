@@ -72,4 +72,4 @@ _manifest:
 - **Herencia:** Agente raiz en namespace gn. No hereda de otro agente.
 - **Sub-agentes:** No declara sub-agentes directos.
 - **Disipacion:** No aplica — agente raiz.
-- **Dependencias inter-agente:** Referencia implicita a gn/crm-ipr (comparte dominio IPR, gestor-ipr-360 es version 360 mas completa).
+- **Dependencias inter-agente:** Ninguna. Agente principal de dominio IPR.

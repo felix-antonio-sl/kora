@@ -27,5 +27,5 @@ _manifest:
 
 - **Firma:** model: SystemModel, format: TargetFormat -> artifact: string
 - **Cuando usar:** Generar artefactos de automatizacion: flujos n8n/Make, system prompts, configuraciones de agentes, diagramas de arquitectura.
-- **Cuando NO usar:** Codigo de aplicacion (derivar a ingeniero-software-composicional).
+- **Cuando NO usar:** Codigo de aplicacion (fuera de scope).
 - **Formatos:** Workflow JSON, System Prompt, Mermaid, PlantUML, BPMN

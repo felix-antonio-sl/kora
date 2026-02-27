@@ -57,4 +57,4 @@ _manifest:
 - **Herencia:** Agente raiz en namespace gn. No hereda de otro agente.
 - **Sub-agentes:** No declara sub-agentes directos.
 - **Disipacion:** No aplica — agente raiz.
-- **Dependencias inter-agente:** Referencia gn/dgi-virtual (AR Virtual, operativo), gn/digitrans-gore (TDE) via rejection routing en Reglas Duras.
+- **Dependencias inter-agente:** Referencia gn/dgi-virtual (AR Virtual, operativo), gn/digitrans (TDE) via rejection routing en Reglas Duras.
