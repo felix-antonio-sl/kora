@@ -117,19 +117,19 @@ Catalog:
     title: TOOLS.md
     file: agents/pro/abogado-legislacion-medica/TOOLS.md
     status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-user:1.1.0
+  - urn: urn:pro:agent-bootstrap:medico-urgencias-user:2.0.0
     title: USER.md
     file: agents/pro/medico-urgencias/USER.md
     status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-soul:1.1.0
+  - urn: urn:pro:agent-bootstrap:medico-urgencias-soul:2.0.0
     title: SOUL.md
     file: agents/pro/medico-urgencias/SOUL.md
     status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-agents:1.1.0
+  - urn: urn:pro:agent-bootstrap:medico-urgencias-agents:2.0.0
     title: AGENTS.md
     file: agents/pro/medico-urgencias/AGENTS.md
     status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-tools:1.1.0
+  - urn: urn:pro:agent-bootstrap:medico-urgencias-tools:2.0.0
     title: TOOLS.md
     file: agents/pro/medico-urgencias/TOOLS.md
     status: published
@@ -810,9 +810,21 @@ Catalog:
     title: CM-estatuto-selector.md
     file: agents/pro/abogado-legislacion-medica/skills/CM-estatuto-selector.md
     status: published
-  - urn: urn:pro:skill:medico-urgencias-interpretador-imagenes:1.1.0
+  - urn: urn:pro:skill:medico-urgencias-interpretador-imagenes:2.0.0
     title: CM-interpretador-imagenes.md
     file: agents/pro/medico-urgencias/skills/CM-interpretador-imagenes.md
+    status: published
+  - urn: urn:pro:skill:medico-urgencias-razonamiento-clinico:2.0.0
+    title: CM-RAZONAMIENTO-CLINICO.md
+    file: agents/pro/medico-urgencias/skills/CM-RAZONAMIENTO-CLINICO.md
+    status: published
+  - urn: urn:pro:skill:medico-urgencias-context-manager:2.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: agents/pro/medico-urgencias/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:pro:skill:medico-urgencias-generador-documentos:2.0.0
+    title: CM-GENERADOR-DOCUMENTOS.md
+    file: agents/pro/medico-urgencias/skills/CM-GENERADOR-DOCUMENTOS.md
     status: published
   - urn: urn:gn:skill:dgi-virtual-lean-thinking:1.0.0
     title: CM-LEAN-THINKING

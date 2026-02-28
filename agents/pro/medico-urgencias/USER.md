@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:pro:agent-bootstrap:medico-urgencias-user:1.1.0"
+  urn: "urn:pro:agent-bootstrap:medico-urgencias-user:2.0.0"
   type: "bootstrap_user"
 ---
 

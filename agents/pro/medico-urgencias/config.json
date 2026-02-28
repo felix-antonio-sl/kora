@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:pro:agent-bootstrap:medico-urgencias-config:1.0.0",
+    "urn": "urn:pro:agent-bootstrap:medico-urgencias-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [],

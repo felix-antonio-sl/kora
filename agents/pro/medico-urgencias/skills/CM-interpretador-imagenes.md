@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:medico-urgencias-interpretador-imagenes:1.1.0"
+  urn: "urn:pro:skill:medico-urgencias-interpretador-imagenes:2.0.0"
   type: "lazy_load_endofunctor"
 ---
 
