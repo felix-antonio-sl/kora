@@ -2,7 +2,7 @@ import os
 import yaml
 from pathlib import Path
 
-KORA_ROOT = Path("/Users/felixsanhueza/Developer/kora")
+KORA_ROOT = Path(__file__).resolve().parent.parent
 
 yaml_files = list(KORA_ROOT.rglob("*.yml")) + list(KORA_ROOT.rglob("*.yaml"))
 yaml_files = [

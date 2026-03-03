@@ -100,7 +100,7 @@ def process_file(file_path):
     return False, 0
 
 def main():
-    base_dir = Path('/Users/felixsanhueza/Developer/kora')
+    base_dir = Path(__file__).resolve().parent.parent
     extensions = ['.yaml', '.yml', '.md', '.json']
     
     print("Starting KORA URN Transmutation...")
