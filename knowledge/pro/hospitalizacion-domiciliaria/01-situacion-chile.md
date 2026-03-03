@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-03"
     source: "Informe Técnico MINSAL/DEIS: Estado y Situación de la Hospitalización Domiciliaria en Chile 2024-2026"
-version: "1.1.0"
+version: "1.2.0"
 status: draft
 tags: [hospitalizacion-domiciliaria, chile, politica-salud, fonasa, isapre, grd, epidemiologia, normativa, financiamiento, salud-digital, cuidados-paliativos, telemedicina]
 lang: es
@@ -42,7 +42,6 @@ lang: es
 
 | Norma | Tipo | Alcance |
 |-------|------|---------|
-| Código Sanitario DS 725/1968 | DFL | Base habilitación prestadores |
 | DS 1/2022 MINSAL | Decreto | Reglamento establecimientos HD — requisitos operacionales |
 | Norma Técnica HD (2024) | Norma Técnica | Directrices funcionamiento HD; exigencias infraestructura; manuales obligatorios |
 | Norma Técnica 243 (mayo 2025) | Norma Técnica | Taxonomía complejidad hospitalaria: Comunitarios, Provinciales, Regionales/Institutos; HD rol transversal en todos los niveles |
@@ -135,7 +134,7 @@ lang: es
 | Experiencia | 2 años clínicos mínimo |
 | Formación | Postítulo/postgrado gestión en salud + IAAS (mínimo 80 horas, vigencia 5 años) + RCP/DEA |
 | Jornada | Mínimo 22 horas semanales presenciales en recinto base |
-| Plan sucesión | Reemplazante temporal designado con mismos requisitos mínimos; notificación a SEREMI ante ausencias |
+| Plan sucesión | Reemplazante temporal designado con mismos requisitos mínimos |
 
 ### 5.2 Coordinación operativa
 
@@ -193,6 +192,8 @@ lang: es
 2. Médico tratante prescriptor debe ser distinto e independiente al médico supervisor/director técnico de empresa proveedora HD
 3. Isapre debe autorizar pertinencia y derivar formalmente a prestador HD perteneciente a su red CAEC
 
+**Justificación restricción CAEC**: prevenir riesgo moral — evitar que seguros catastróficos financien cuidados crónicos de larga data, residencias geriátricas encubiertas o servicios de enfermería básica sin nivel de riesgo catastrófico.
+
 **Ref**: NT 238 MINSAL; Ley 21.674; Circular IF N° 7 Superintendencia Salud; Ley de Presupuestos 2026.
 
 ## 7. Sector privado
@@ -219,6 +220,8 @@ Instrumento de reputación corporativa, auditado por KPMG. Combina indicadores o
 
 MCC (Código 0201408): incentiva clínicas privadas a ofrecer cupos HD para beneficiarios FONASA.
 
+**GES-4 oncológico**: prestadores como Oncovida activan HD para analgesia compleja, hidratación parenteral y soporte multidisciplinario en final de vida; inicio tratamiento máximo 5 días tras confirmación diagnóstica.
+
 **Ref**: Merco Salud Chile 2025; Ley Presupuestos 2026; NT 238.
 
 ## 8. Salud digital e interoperabilidad
@@ -227,13 +230,11 @@ MCC (Código 0201408): incentiva clínicas privadas a ofrecer cupos HD para bene
 |------------|-------------|
 | Telemonitorización | IoT + wearables + FCE móvil — datos en tiempo real desde domicilio |
 | Telemedicina | Representará ~30% de interacciones sanitarias para 2026 |
-| Georreferenciación | Hospital Sótero del Río: >156.000 atenciones HD 2024; programa "Juégatela por la Innovación" (MINSAL, Corfo, CENS, Pro Salud Chile); plataforma Raylex; enrutamiento dinámico en tiempo real (tráfico, clima, seguridad ruta, especialidad médica requerida) |
+| Georreferenciación | Hospital Sótero del Río: piloto iniciado a fines de 2025; >156.000 atenciones HD 2024; programa "Juégatela por la Innovación" (MINSAL, Corfo, CENS, Pro Salud Chile); plataforma Raylex; enrutamiento dinámico en tiempo real (tráfico, clima, seguridad ruta, especialidad médica requerida) |
 | Interoperabilidad | HL7 FHIR: comunicación bidireccional HD ↔ APS ↔ centros de referencia; Ley 21.688 interoperabilidad fichas clínicas |
 | IA predictiva | Diagnóstico precoz de descompensaciones + algoritmos asignación de rutas vehiculares |
 
 **MCC arancel incluye**: teleconsultas médicas, teleconsultas enfermería, telerehabilitación kinesiológica.
-
-**Brecha digital**: acceso banda ancha, alfabetización digital, barreras idiomáticas — limitantes acceso zonas rurales/extremas.
 
 **Ref**: Piloto Sótero del Río / Raylex; Ley 21.688; NT HCE/Interoperabilidad MINSAL; HL7 FHIR.
 
@@ -248,7 +249,7 @@ MCC (Código 0201408): incentiva clínicas privadas a ofrecer cupos HD para bene
 - Prestaciones: medicamentos (analgesia compleja, opioides, hidratación parenteral), insumos, exámenes
 - Equipo multiprofesional obligatorio: médicos, enfermeras, psicólogos, trabajadores sociales
 - Técnica COPE para cuidadores: Creatividad, Optimismo, Planificación, Información de Expertos
-- Soporte estructurado al duelo familiar post-fallecimiento
+- Soporte estructurado al duelo familiar post-fallecimiento; umbral duelo patológico: síntomas incapacitantes >6 meses
 
 ### 9.2 Geriátricos y dependencia severa
 
@@ -284,12 +285,12 @@ MCC (Código 0201408): incentiva clínicas privadas a ofrecer cupos HD para bene
 
 | Ficha | Indicador | Definición | Dato 2024 |
 |-------|-----------|-----------|-----------|
-| N°1 | Personas atendidas HD | Total pacientes (traspasos + ingresos mes) | 166.707 |
-| N°2 | Días persona atendidos (días cama HD) | Sumatoria días hospitalización por paciente | 1.432.000 |
-| N°3 | Camas estimadas (capacidad diaria) | Días persona / 365 | 3.923 camas virtuales |
-| N°4 | Tasa reingreso | Reingresos a hosp. tradicional / personas atendidas × 100 | 4,1% (SSMOc) |
+| N°1 | Personas atendidas HD | Total pacientes (traspasos + ingresos mes) | → ver §4 |
+| N°2 | Días persona atendidos (días cama HD) | Sumatoria días hospitalización por paciente | → ver §4 |
+| N°3 | Camas estimadas (capacidad diaria) | Días persona / 365 | → ver §4 |
+| N°4 | Tasa reingreso | Reingresos a hosp. tradicional / personas atendidas × 100 | → ver §4 |
 | N°5 | Visitas domiciliarias promedio | Total visitas / personas atendidas | ~13 visitas estándar esperado por caso |
-| N°6 | Indicadores complementarios | Ocupación, promedio días estada, fallecidos no esperados | Ocupación 91%±3; estada 11±3 días |
+| N°6 | Indicadores complementarios | Ocupación, promedio días estada, fallecidos no esperados | → ver §4 |
 
 ## Anexo B: Consentimiento informado HD
 
@@ -301,7 +302,11 @@ Estructura estandarizada — 5 dominios (Ley 20.584; DS 1/2022):
 4. **Certificación entrega documentación**: Carta Derechos y Deberes (Ley 20.584); mecanismo interposición reclamos; resumen clínico en domicilio (diagnósticos, evolución, cuidados, teléfonos emergencia)
 5. **Firmas**: paciente (si estado cognitivo/clínico lo permite) + cuidador/tutor + profesional salud ingresante + lugar, fecha, hora
 
-**Protocolos urgencia domiciliaria**: emergencia clínica (alerta continua, triage, rescate médico SAMU/ambulancia); adecuación esfuerzo terapéutico/órdenes no reanimar (paliativos GES-4); agresiones al equipo (evaluación entorno, evacuación, georreferenciación).
+**Protocolos urgencia domiciliaria**:
+- Emergencia clínica: alerta continua, triage, rescate médico SAMU/ambulancia
+- Manejo de caídas: evaluar contusiones, riesgo fracturas espontáneas, traumatismos; técnicas seguras levantamiento paciente sin lesiones secundarias
+- Voluntades anticipadas y órdenes de no reanimar (paliativos GES-4): prevención obstinación terapéutica; directrices médicas claras en ficha clínica domiciliaria; coordinación con SAMU para alertar que domicilio corresponde a paciente paliativo subsidiario de manejo proporcional (analgesia y confort sobre maniobras invasivas)
+- Agresiones al equipo: evaluación entorno, evacuación, georreferenciación
 
 ## Anexo C: Análisis territorial brechas cobertura
 

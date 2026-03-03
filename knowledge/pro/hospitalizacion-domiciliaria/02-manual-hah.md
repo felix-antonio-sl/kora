@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-03"
     source: "Manual Técnico y Operativo: Hospitalización Domiciliaria (HaH) de Alta Complejidad — perspectiva internacional"
-version: "1.1.0"
+version: "1.2.0"
 status: draft
 tags: [hospitalizacion-domiciliaria, hah, hospital-at-home, operaciones, tecnologia, economia, calidad, evidencia, internacional]
 lang: es
@@ -35,7 +35,7 @@ lang: es
 
 **Victoria, Australia**: TODOS los hospitales regionales y metropolitanos cuentan con programa HaH; gestionan ~6% del total de días-cama hospitalarios del estado.
 
-**Johns Hopkins 1995 (EE.UU.)**: programa fundacional desarrollado por Dr. Bruce Leff. Ensayos iniciales centrados en pacientes geriátricos con exacerbaciones agudas de patologías crónicas. Vías clínicas estrictas: NAC, ICC, EPOC, celulitis.
+**Johns Hopkins, mediados de la década de 1990 (EE.UU.)**: programa fundacional desarrollado por Dr. Bruce Leff. Ensayos iniciales centrados en pacientes geriátricos con exacerbaciones agudas de patologías crónicas. Vías clínicas estrictas: NAC, ICC, EPOC, celulitis.
 
 **Triple Aim**: HaH alineado con el Triple Objetivo de la atención sanitaria — mejorar experiencia del paciente, mejorar salud poblacional, reducir costo per cápita.
 
@@ -63,12 +63,14 @@ lang: es
 |----------|---------------|--------------------|----|
 | Presbyterian Healthcare Services | 0.93% | 3.4% | Significativa |
 
-### 3.4 Morbilidad iatrogénica
+### 3.4 Morbilidad iatrogénica y síndrome poshospitalario
+
+**Síndrome poshospitalario**: cascada de fragilidad iatrogénica que incrementa vulnerabilidad del paciente tras el alta y promueve uso recurrente de recursos de salud. HaH mitiga este síndrome al reducir exposición a riesgos intrahospitalarios.
 
 | Complicación | Hospital tradicional | HaH | Fuente |
 |-------------|---------------------|-----|--------|
 | Delirium | 24% | 9% | Johns Hopkins, ensayos fundacionales |
-| IAAS (infecciones nosocomiales) | Riesgo intrínseco | Reducción drástica | CMS/AHCAH datos |
+| IAAS (infecciones nosocomiales) | Riesgo intrínseco (cepas hospitalarias: *Clostridioides difficile*, MRSA) | Reducción drástica | CMS/AHCAH datos |
 
 ## 4. Evidencia clínica: readmisiones y utilización
 
@@ -80,7 +82,7 @@ lang: es
 | Mount Sinai MACT | 8.60% | 15.60% | Cohorte observacional |
 | Metaanálisis (RR) | RR 0.74 | ref | Revisiones sistemáticas internacionales |
 
-**CMS/AHCAH readmisiones** (>11,000 pacientes): resultados varían por MS-DRG; 2 MS-DRG con tasas más altas en HaH, 3 MS-DRG con tasas más altas en hospital.
+**CMS/AHCAH readmisiones** (>11,000 pacientes): resultados varían por MS-DRG; 2 MS-DRG con tasas más altas en HaH, 3 MS-DRG con tasas muy altas en hospital.
 
 ### 4.2 Visitas a urgencias posalta
 
@@ -142,7 +144,7 @@ lang: es
 | ICC descompensada | Sobrecarga volumen aguda, sin shock cardiogénico ni isquemia aguda, sin UCI | Peso diario (báscula conectada), PA, FC, SpO2 | Diuréticos IV de asa, titulación progresiva, flebotomía domiciliaria, restricción Na/fluidos |
 | EPOC reagudizado | Incremento disnea/tos/esputo, sin intubación ni VM continua | SpO2 continua, FR, cuestionarios disnea, actividad | Corticosteroides sistémicos, ATB si infección, nebulizadores, O2 titulado |
 | NAC (neumonía) | Infección respiratoria baja documentada, hemodinámicamente estable, sin sepsis | SpO2, temperatura, FC; Rx portátil torácico | ATB IV, fluidoterapia IV, switch therapy IV→oral |
-| ITU complicada / Pielonefritis | Dolor incontrolable, hiperémesis, ATB IV por resistencia; no shock séptico | Temperatura, PA, FC | Antimicrobianos IV, fluidoterapia, labs domiciliarios (reactantes fase aguda, función renal) |
+| ITU complicada / Pielonefritis | Dolor incontrolable, hiperémesis, ATB IV por resistencia; comorbilidad alta (índice de Charlson); no shock séptico. Validado en experiencia Mayo Clinic | Temperatura, PA, FC | Antimicrobianos IV, fluidoterapia, labs domiciliarios (reactantes fase aguda, función renal) |
 | Celulitis | Eritema progresivo con falla tx ambulatorio o síntomas sistémicos; no fascitis necrotizante | Temperatura, fotografías/video progresión eritema | ATB parenterales (dosis múltiples/día), curación heridas complejas |
 
 ### 6.3 Expansión quirúrgica y oncológica
@@ -266,6 +268,8 @@ lang: es
 
 ### 9.1 Monitorización remota de pacientes (RPM)
 
+**Estándar regulatorio**: dispositivos RPM requieren autorización FDA 510(k), clasificados como dispositivos médicos Clase II — sustancialmente equivalentes a equipos hospitalarios tradicionales.
+
 | Parámetro | Dispositivo tipo | Estándar |
 |-----------|-----------------|---------|
 | Presión arterial | Monitor portátil Bluetooth/celular | FDA-approved |
@@ -328,7 +332,7 @@ lang: es
 | Riesgo hospitalario | Reducción en HaH | Mecanismo |
 |---------------------|-----------------|-----------|
 | IAAS | Significativa | Entorno no hospitalario; eliminación exposición cruzada habitaciones compartidas |
-| Delirium | 24% → 9% | Ambiente familiar; ritmos circadianos preservados; sin interrupciones sueño nocturnas |
+| Delirium | Ver §3.4 (24% → 9%) | Ambiente familiar; ritmos circadianos preservados; sin interrupciones sueño nocturnas |
 | Caídas hospitalarias | Reducción | Entorno conocido por paciente |
 | Polifarmacia inadvertida | Reducción | Farmacéutico integrado; conciliación activa |
 
