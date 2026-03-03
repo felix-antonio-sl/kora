@@ -85,9 +85,24 @@ scripts/kora resolve    # Resolver URN a path fisico
 scripts/kora health     # Verificar referencias URN rotas
 scripts/kora validate   # Validar workspaces (requiere jsonschema)
 scripts/kora stats      # Estadisticas del monorepo
+scripts/kora intake     # Estado del pipeline de ingesta
 ```
 
-Requisitos: Python 3 + PyYAML. No hay build system — es un monorepo de especificaciones y documentacion.
+En Windows:
+```cmd
+scripts\kora.bat index          &:: CMD
+scripts\kora.ps1 index          # PowerShell (tambien funciona en macOS/Linux)
+```
+
+### Requisitos
+
+Python 3 + dependencias en `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+No hay build system — es un monorepo de especificaciones y documentacion. Portable: funciona en macOS, Linux y Windows sin modificacion.
 
 ## Namespaces
 
