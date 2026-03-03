@@ -1,0 +1,38 @@
+{
+  "_manifest": {
+    "urn": "urn:pro:agent-bootstrap:salubrista-hah-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:pro:kb:hodom-indice",
+    "urn:pro:kb:hodom-situacion-chile",
+    "urn:pro:kb:hodom-manual-hah",
+    "urn:pro:kb:hodom-director-tecnico",
+    "urn:pro:kb:gestion-redes-indice",
+    "urn:pro:kb:gestion-redes-general",
+    "urn:pro:kb:gestion-redes-unidades",
+    "urn:pro:kb:gestion-redes-urgencias",
+    "urn:pro:kb:gestion-redes-salud-mental",
+    "urn:pro:kb:gestion-redes-herramientas",
+    "urn:pro:kb:firs-framework-integrado-razonamiento-salud"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "kb_route",
+      "knowledge_retrieval",
+      "web_search"
+    ],
+    "deny": [
+      "code_execution",
+      "workspace_write",
+      "agent_deploy"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  }
+}
