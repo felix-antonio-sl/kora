@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-03"
     source: "Manual Técnico y Operativo: Hospitalización Domiciliaria (HaH) de Alta Complejidad — perspectiva internacional"
-version: "1.2.0"
+version: "1.3.0"
 status: draft
 tags: [hospitalizacion-domiciliaria, hah, hospital-at-home, operaciones, tecnologia, economia, calidad, evidencia, internacional]
 lang: es
@@ -120,6 +120,8 @@ lang: es
 
 **Cohortes asiáticas**: 79.7% pacientes HaH reportan menos tiempo en cama; 73.2% incrementan deambulación vs. estancias previas en hospital.
 
+_Nota SSOT_: estos datos de sedentarismo (78% vs 86%) son referenciados también desde §13.3 (resultados rurales), donde se confirma consistencia con cohortes urbanas.
+
 ## 6. Vías de admisión
 
 ### 6.1 Modelos de entrada
@@ -161,6 +163,7 @@ lang: es
 - Quimioterapia domiciliaria en expansión
 - Trasplante células madre hematopoyéticas (modelos Home Sweet Home)
 - Prevención CLABSI en domicilio
+- **Bioseguridad citotóxicos**: personal HaH capacitado en manejo y contención de derrames de fármacos citotóxicos
 - Continuum hacia cuidados paliativos domiciliarios
 
 ## 7. Criterios de elegibilidad
@@ -217,7 +220,7 @@ lang: es
 |-----|---------|
 | Médico hospitalista | Visita diaria (presencial o virtual); decisiones clínicas; ajuste tratamiento; disponibilidad 24/7 |
 | Enfermera atención directa | ~3 horas totales/día en domicilio; múltiples visitas; ATB IV, O2, curaciones, flebotomía, ECG |
-| Paramédico comunitario (MIH) | Visitas evaluación presenciales; tratamientos protocolizados; respuesta deterioro. Bajo supervisión RN/MD (AHCAH) |
+| Paramédico comunitario (MIH) | Visitas evaluación presenciales; tratamientos protocolizados; respuesta deterioro. Bajo supervisión RN/MD (AHCAH). **Barrera regulatoria**: frecuentemente requiere modificar regulaciones estatales que limitan práctica a emergencias 911 |
 | Farmacéutico clínico | Conciliación medicamentos; dispensación; visitas virtuales educación paciente/cuidador |
 | Trabajador social / case manager | Evaluación entorno domiciliario; SDOH; carga cuidador; derivaciones sociales; transición posalta (30 días) |
 
@@ -237,7 +240,7 @@ lang: es
 
 **Logística inversa**: protocolos recolección, transporte y eliminación segura de desechos médicos domiciliarios.
 
-**Sustancias controladas**: cadena custodia ininterrumpida; embalaje tamper-evident; lock boxes en domicilio; visibilidad mínima contenido.
+**Sustancias controladas** _(SSOT — referenciado también desde §10.2)_: cadena custodia ininterrumpida; embalaje tamper-evident; lock boxes en domicilio; visibilidad mínima contenido.
 
 **Control calidad subcontratistas**: FMEA (Failure Mode and Effects Analysis).
 
@@ -275,7 +278,6 @@ lang: es
 | Presión arterial | Monitor portátil Bluetooth/celular | FDA-approved |
 | Frecuencia cardíaca + ECG | Wearable continuo / parches 24h | FDA-approved |
 | Oximetría de pulso (SpO2) | Pulsioxímetro continuo | FDA-approved |
-| Frecuencia respiratoria | Sensor de movimiento/wearable | FDA-approved |
 | Peso | Balanza digital conectada (celular/Bluetooth) | FDA-approved |
 | Glucosa | Sensor continuo (CGM) / glucómetro inteligente | FDA-approved |
 | Temperatura | Termometría inteligente seriada | FDA-approved |
@@ -343,7 +345,7 @@ lang: es
 | Administración incorrecta | Escaneo código barras punto de atención (dispositivos móviles); dispensación lotes 24h; mínima preparación al pie de cama |
 | Ruptura cadena de frío | Indicadores térmicos + registradores datos térmicos continuos en contenedores transporte |
 | Almacenamiento domiciliario | Refrigeradores exclusivos portátiles o cajas seguridad |
-| Sustancias controladas | Cadena custodia ininterrumpida + embalaje tamper-evident + lock boxes |
+| Sustancias controladas | Ver §8.3 (cadena custodia, embalaje tamper-evident, lock boxes) |
 | Autoadministración | Screening formal capacidad cognitiva/motora/visual; pastilleros bicolores; enfermería virtual para supervisión síncrona |
 
 ## 11. Economía y financiamiento
@@ -372,6 +374,7 @@ lang: es
 
 - Camas liberadas por HaH → ocupadas por pacientes quirúrgicos/mayor agudeza → margen institucional optimizado
 - Hospitales HaH: tasa ocupación media 20 puntos porcentuales superior a hospitales sin HaH
+- **Argumento CFO**: ingresos $10,000–$12,000 por admisión tradicional → barrera para adopción si no se demuestra que cama liberada será ocupada por caso de mayor rentabilidad
 
 **Backfill quirúrgico**: análisis prospectivo centro académico terciario:
 - 30.1% readmisiones quirúrgicas (60 días) elegibles HaH
@@ -416,6 +419,8 @@ lang: es
 | Calidad sueño superior en HaH | 74.8% | — |
 | "Extremadamente cómodos" (p=0.001) | 84.4% | 60.9% |
 
+**Preservación dignidad**: proximidad a seres queridos y mascotas; eliminación restricciones horarios de visita; reducción ansiedad/depresión asociadas al ingreso nosocomial.
+
 ### 12.2 Aceptabilidad poblacional
 
 - 47.2% población acepta HaH
@@ -424,6 +429,8 @@ lang: es
 ### 12.3 Carga del cuidador (Caregiver Burden)
 
 **Riesgo**: transferencia "carga de vigilancia" al cuidador informal → estrés, ansiedad, agotamiento.
+
+**Estigma**: cuidadores pueden ocultar incapacidad para afrontar la situación por miedo a ser juzgados o a que el familiar sea institucionalizado — retrasa búsqueda de apoyo.
 
 **Delimitación roles**: cuidador = asistencia AVD (hidratación, vestimenta, higiene, deambulación) + soporte emocional. Equipo clínico = todo lo clínico (vías IV, medicación compleja, interpretación biométrica, decisiones terapéuticas).
 
@@ -465,9 +472,10 @@ lang: es
 ### 13.3 Resultados clínicos rurales
 
 - Mortalidad, readmisiones 30 días: sin diferencias significativas vs. hospital físico
-- Sedentarismo: 78% vs 86% (consistente con datos urbanos)
+- Sedentarismo: 78% vs 86% (consistente con datos urbanos — ver datos completos acelerometría en §5.1)
 - Costo ajustado: sin incremento significativo vs. hospitalización tradicional
 - Dependencia telemedicina médica: visitas médicas predominantemente virtuales; soporte presencial por enfermería/paramédicos MIH
+- **Logística diagnóstica rural**: sin equipos portátiles de alta resolución disponibles en toda el área de cobertura → protocolos contemplan transporte intermitente (ida y vuelta) del paciente al hospital para imagenología avanzada no disponible en domicilio rural
 
 ### 13.4 Equidad en poblaciones vulnerables
 
@@ -482,7 +490,7 @@ lang: es
 | Resistencia profesional | Médicos urgencias/especialistas: preocupaciones seguridad y riesgo medico-legal; percepción inferioridad clínica | Presentar HaH como unidad hospitalaria integrada; evidencia clínica + protocolos claros; cobertura 24/7 demostrada; formación en facultades medicina/residencias |
 | Riesgo medico-legal | Ambigüedad responsabilidad datos RPM; gobernanza alertas; cobertura mala praxis | Cláusulas responsabilidad específicas; protocolos claros delegación alertas por nivel |
 | Flujos de trabajo (triaje) | Carga cognitiva/operativa médicos urgencias para evaluar elegibilidad + explicar + coordinar | Navegadores (NP/PA) para recibir referencias y coordinar transición; alertas IA en EHR identifican candidatos; estrategias push-pull |
-| Digital divide | Falta banda ancha, baja alfabetización digital, barreras idiomáticas | Kits tecnológicos provistos por programa (tableta + conectividad celular integrada + extensores Wi-Fi); interfaces un toque/controladas por voz; plataformas multilingüe; interpretación simultánea 24/365; teach-back en idioma preferido |
+| Digital divide | Falta banda ancha, baja alfabetización digital, barreras idiomáticas | Kits tecnológicos provistos por programa (tableta + conectividad celular integrada + extensores Wi-Fi); interfaces un toque/controladas por voz; plataformas multilingüe; interpretación simultánea 24/365 (incluido lenguaje de señas); teach-back en idioma preferido |
 | Cadena suministro | Logística última milla: fragmentación proveedores; entrega oportuna | Contratos SLA; proveedores centralizados; FMEA tercerización; redundancias sistémicas |
 
 ## 15. Perspectivas 2026–2030
@@ -502,7 +510,7 @@ Monitorización bioquímica en tiempo real: marcadores metabólicos + IA predict
 | Servicio | Descripción |
 |----------|------------|
 | Quimioterapia domiciliaria | Infusiones IV complejas; protocolos bioseguridad citotóxicos; detección temprana neutropenia febril/sepsis vía RPM |
-| SNF-at-Home | Rehabilitación domiciliaria: terapia física, ocupacional, enfermería especializada; sustituto directo admisión posaguda |
+| SNF-at-Home (*Rehabilitation Care at Home*) | Rehabilitación domiciliaria: terapia física, ocupacional, enfermería especializada; sustituto directo admisión posaguda |
 | Cuidados paliativos domiciliarios | Advance care planning primeros 30 días; transición oportuna a hospice |
 | Trasplante células madre | Modelos Home Sweet Home |
 
@@ -510,7 +518,7 @@ Monitorización bioquímica en tiempo real: marcadores metabólicos + IA predict
 
 - **2050**: 1 de cada 6 personas tendrá 65+ años
 - **80%** adultos mayores conviven con 2+ afecciones crónicas
-- Proyección: hasta **25%** atención posaguda y a largo plazo proveída en domicilio
+- Brecha ahorro posagudo: hasta **25%** de la totalidad de atención posaguda y a largo plazo podría proveerse en domicilio a favor del modelo domiciliario
 
 ### 15.5 Seguridad información
 

@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-03"
     source: "Síntesis multi-fuente: MINSAL/DEIS Chile 2024-2026, DS 1/2022, DE 31/2024, NT 243/2025, Manual HaH (Johns Hopkins, CMS AHCAH, Cochrane)"
-version: "1.1.0"
+version: "1.3.0"
 status: draft
 tags: [hospitalizacion-domiciliaria, hah, chile, indice, normativa, operaciones, director-tecnico]
 lang: es
@@ -145,6 +145,8 @@ lang: es
 |---------|-------|---------|-------|
 | v1.0.0 | 2026-03-03 | Creación corpus desde fuentes primarias inbox/hodom (3 documentos, 2.655 líneas fuente). Koraficación KORA/MD: telegrafización, estructuración RAG, deduplicación SSOT, frontmatter, glosario centralizado | kora/curator |
 | v1.1.0 | 2026-03-03 | S-REPAIR post-auditoría: eliminación invenciones (Ley 20.575, criterios exclusión espurios, sustancias controladas), reincorporación ~200 hechos perdidos (datos cuantitativos, articulado legal, anexos, perfiles RRHH). Corpus 673→1403 líneas | kora/curator |
+| v1.2.0 | 2026-03-03 | S-REPAIR #2: 01-situacion-chile — eliminadas 3 invenciones (DS 725/1968, brecha digital, notificación SEREMI), +6 hechos (Oncovida, piloto Sótero fines 2025, duelo 6m, riesgo moral CAEC, caídas, voluntades anticipadas), 5 SSOT resueltas. 02-manual-hah — +9 hechos (Mayo Clinic, Charlson, C.difficile/MRSA, síndrome poshospitalario, FDA 510(k), ahorro 25%, CFO $10k-$12k, Rehabilitation Care at Home, lenguaje señas), 2 distorsiones corregidas, 1 SSOT resuelta | kora/curator |
+| v1.3.0 | 2026-03-03 | S-REPAIR #3 (Opus audit → Sonnet repair): 01 — eliminada invención (año Ley 20.584), corregida distorsión terminología patologías, +7 hechos (pandemia, duplicados ficha, infraestructura base, CHBS expandida, exclusiones UAndes, arancel MCC integral), 3 SSOT resueltas. 02 — eliminada invención (sensor FR como RPM), +5 hechos (estigma cuidador, paramédicos 911, logística rural, citotóxicos, dignidad), 2 SSOT resueltas | kora/curator |
 
 ### Política de actualización
 

@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-03"
     source: "Informe Técnico MINSAL/DEIS: Estado y Situación de la Hospitalización Domiciliaria en Chile 2024-2026"
-version: "1.2.0"
+version: "1.3.0"
 status: draft
 tags: [hospitalizacion-domiciliaria, chile, politica-salud, fonasa, isapre, grd, epidemiologia, normativa, financiamiento, salud-digital, cuidados-paliativos, telemedicina]
 lang: es
@@ -23,7 +23,7 @@ lang: es
 
 **Dotación camas país**: total aprox. 37.548 camas — 67% públicas (24.983) + 33% privadas (12.565). RM concentra ~50% camas privadas; resto del país participación privada desciende a 21%; Aysén: 0% camas privadas. SSMOc a inicios 2021: solo 1,1 camas/1.000 hab.
 
-**Evolución HD**: de estrategia de contingencia pandémica (SARS-CoV-2) a modelo estructural consolidado — pilar asistencial integrado en lineamientos MINSAL 2024-2026.
+**Evolución HD**: de estrategia de contingencia pandémica (SARS-CoV-2) a modelo estructural consolidado — pilar asistencial integrado en lineamientos MINSAL 2024-2026. Durante pandemia: hospitales sin HD fueron forzados a aperturar unidades con rapidez; unidades existentes maximizaron coberturas de urgencia.
 
 **Definición operativa HD**: alternativa a atención cerrada tradicional; cuidados clínicos de rango hospitalario en domicilio del paciente; equivalencia funcional en calidad y cantidad mediante equipo multiprofesional, monitorización constante e intervenciones terapéuticas complejas.
 
@@ -45,8 +45,8 @@ lang: es
 | DS 1/2022 MINSAL | Decreto | Reglamento establecimientos HD — requisitos operacionales |
 | Norma Técnica HD (2024) | Norma Técnica | Directrices funcionamiento HD; exigencias infraestructura; manuales obligatorios |
 | Norma Técnica 243 (mayo 2025) | Norma Técnica | Taxonomía complejidad hospitalaria: Comunitarios, Provinciales, Regionales/Institutos; HD rol transversal en todos los niveles |
-| Ley 20.584 (2012) | Ley | Derechos y deberes pacientes; consentimiento informado expreso y firmado |
-| Ley 19.628 | Ley | Protección datos sensibles; ficha clínica como dato sensible; custodia mínimo 15 años |
+| Ley 20.584 | Ley | Derechos y deberes pacientes; consentimiento informado expreso y firmado |
+| Ley 19.628 | Ley | Protección datos sensibles; ficha clínica como dato sensible; custodia mínimo 15 años; exime creación de duplicados si existen informes originales de procedimientos |
 | Ley 21.688 | Ley | Interoperabilidad fichas clínicas |
 
 **Posición normativa**: HD definida como modalidad asistencial equivalente a atención cerrada — no es atención ambulatoria de baja complejidad. HD transversal: adultos, pediatría, ginecoobstetricia, salud mental, cuidados paliativos.
@@ -62,7 +62,7 @@ lang: es
 - Diagnóstico médico definido + plan terapéutico acotado
 - Estancias estimadas: 5-10 días promedio, máximo absoluto 30 días
 - Requiere habitualmente ≥2 intervenciones activas: terapia IV/SC diaria, kinesioterapia motora/respiratoria, oxigenoterapia, curaciones avanzadas, ajuste diario fármacos
-- Patologías index habituales: IC descompensada, EPOC reagudizado, NAC, celulitis, ITU con terapia IV, manejo postquirúrgico, cuidados paliativos oncológicos (GES-4)
+- Patologías index habituales: IC descompensada, EPOC reagudizado, infecciones respiratorias/urinarias/tejidos blandos tributarias de antibioticoterapia parenteral, manejo postquirúrgico, cuidados paliativos oncológicos (GES-4)
 
 ### 3.2 Criterios sociales de inclusión
 
@@ -118,7 +118,7 @@ lang: es
 - Tasa de ocupación HD: 91% (±3)
 - Tasa de reingreso a hospitalización tradicional: 4,1% (41/1.000 atendidos)
 - Tasa reingreso osciló entre 2±2 y 6±1 según hospital base de derivación
-- Mortalidad intra-programa: 3.683 fallecimientos = 5% personas atendidas — concordante con perfil mixto (agudos + crónicos reagudizados + paliativos)
+- Mortalidad intra-programa: → ver §4 tabla indicadores (3.683 fallecimientos = 5% personas atendidas)
 
 **Fuente datos**: DEIS, formulario REM A21 Sección C.
 
@@ -158,7 +158,14 @@ lang: es
 
 **Plan Anual de Capacitación (PAC)**: actualización IAAS; RCP básico + DEA; humanización; trato usuario.
 
-### 5.4 Gestión de riesgos y bioseguridad
+### 5.4 Infraestructura base (Norma Técnica HD 2024)
+
+- Sistemas de comunicación telefónica/radial con grabación continua o registro auditable
+- Soporte informático
+- Sistemas de respaldo de energía eléctrica
+- Áreas REAS: manejo transitorio residuos especiales; bodega almacenamiento con control temperatura y cadena de frío
+
+### 5.5 Gestión de riesgos y bioseguridad
 
 - REAS: procedimiento retiro/transporte/eliminación residuos biológicos domicilio (DS 6/2009); bodega con control temperatura y cadena de frío
 - Prevención caídas: protocolos específicos para entorno domiciliario; barandillas laterales con protección; iluminación nocturna; higiene y lubricación piel (prevención úlceras por presión)
@@ -176,7 +183,7 @@ lang: es
 |-----------|-------------|--------|
 | MAI (Modalidad Atención Institucional) | Financiamiento histórico tradicional — asignación presupuestaria centralizada; gratuito tramos A y B + mayores 60 años | Vigente, en transición |
 | GRD (Grupos Relacionados por Diagnóstico) | Pago por egreso; HD imputable como egreso hospitalario; pesos relativos (Outliers/Inliers); incorporación reciente Traiguén, Puerto Aysén, Peñaflor y Ancud | En expansión: 80 hospitales en 2026 |
-| MCC (Modalidad Cobertura Complementaria) | Ley N° 21.674; NT 238; código 0201408 "Día Cama HD Baja Complejidad"; tramos B, C y D; prima complementaria voluntaria; permite a beneficiarios FONASA acceder a prestadores privados con protección financiera; arancel incluye teleconsultas médicas, enfermería, telerehabilitación kinesiológica | Vigente desde 2024-2025 |
+| MCC (Modalidad Cobertura Complementaria) | Ley N° 21.674; NT 238; código 0201408 "Día Cama HD Baja Complejidad"; tramos B, C y D; prima complementaria voluntaria; permite a beneficiarios FONASA acceder a prestadores privados con protección financiera; arancel incluye teleconsultas médicas, enfermería, telerehabilitación kinesiológica, insumos y medicamentos generales | Vigente desde 2024-2025 |
 
 **Presupuesto MINSAL 2026**: >30 billones pesos; aumento real 5,6% respecto año anterior; aumento histórico 30% acumulado desde 2022. Glosas específicas para normalización días-cama y ventilación domiciliaria (pacientes electrodependientes, liberación cupos UCI).
 
@@ -203,8 +210,8 @@ lang: es
 | Prestador | Perfil |
 |-----------|--------|
 | Home Medical Clinic (HMC) | >25 años experiencia; >27.000 pacientes atendidos; Ficha Electrónica en domicilio conectada a Central de Enfermería 24h; Medical Hilfe (unidad pediátrica intensiva); alianza rescate médico HELP S.A. |
-| GrupoSalud CHBS | Cobertura nacional: equipos en todas capitales regionales; implementación HD <4 días hábiles; cartera: terminales, ventilación, clínica neurológica (ACV, TEC, lesiones medulares) |
-| Clínica Universidad de los Andes | Pioneros HD Chile; RM (Las Condes, Lo Barnechea, Vitacura); estancias promedio 10 días, máximo 30; terapias IV, oxigenoterapia, curaciones avanzadas |
+| GrupoSalud CHBS (Clínica Hogar Buena Salud) | Cobertura nacional: equipos en todas capitales regionales; implementación HD <4 días hábiles; cartera: terminales, ventilación, clínica neurológica (ACV, TEC, lesiones medulares) |
+| Clínica Universidad de los Andes | Pioneros HD Chile; RM (Las Condes, Lo Barnechea, Vitacura); estancias promedio 10 días, máximo 30; terapias IV, oxigenoterapia, curaciones avanzadas; excluye: patologías salud mental descompensadas y dependencias severas sin cuidador efectivo |
 | Domihealth | Orientado adulto mayor; EPOC, demencia; capacidad diagnóstica domiciliaria: radiografías portátiles, ecografías, Doppler |
 
 ### 7.2 Ranking Merco Salud Chile 2025
@@ -218,9 +225,9 @@ Instrumento de reputación corporativa, auditado por KPMG. Combina indicadores o
 
 **Licitaciones 2026**: $57.804 millones compra estratégica FONASA para prestaciones NO GES y Sistema de Acceso Priorizado (SAP); ~15.000 cirugías al sector privado (HD privada asume manejo postoperatorio temprano / alta precoz).
 
-MCC (Código 0201408): incentiva clínicas privadas a ofrecer cupos HD para beneficiarios FONASA.
+MCC: incentiva clínicas privadas a ofrecer cupos HD para beneficiarios FONASA (→ código 0201408, ver §6.1).
 
-**GES-4 oncológico**: prestadores como Oncovida activan HD para analgesia compleja, hidratación parenteral y soporte multidisciplinario en final de vida; inicio tratamiento máximo 5 días tras confirmación diagnóstica.
+**GES-4 oncológico**: prestadores como Oncovida activan HD para analgesia compleja, hidratación parenteral y soporte multidisciplinario en final de vida (→ plazos y copagos GES-4: ver §9.1).
 
 **Ref**: Merco Salud Chile 2025; Ley Presupuestos 2026; NT 238.
 
@@ -339,5 +346,5 @@ Estructura estandarizada — 5 dominios (Ley 20.584; DS 1/2022):
 | IAAS | Infecciones Asociadas a la Atención de Salud — curso prevención ≥80 horas, vigencia 5 años; exigido para DT y coordinación enfermería |
 | Inliers/Outliers | Clasificación duración episodio bajo GRD; Inliers = estadía dentro rangos normalidad; Outliers Superiores = estadía excesiva → carencias pago |
 | IoT/Wearables | Dispositivos salud portátiles; telemonitorización constantes vitales (FC, SpO2, PA, temperatura) |
-| MCC | Modalidad Cobertura Complementaria — Ley 21.674; tramos B, C, D FONASA; prima voluntaria; red prestadores privados; código 0201408 HD baja complejidad |
+| MCC | Modalidad Cobertura Complementaria — Ley 21.674; tramos B, C, D FONASA; prima voluntaria; red prestadores privados (→ código arancel y detalle prestaciones: ver §6.1) |
 | SCC | Score Categorización Complejidad — Básico (0-2), Intermedio (3-5), Complejo (6+); visitas/día, O2, procedimientos invasivos |
