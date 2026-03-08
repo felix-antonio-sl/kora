@@ -25,7 +25,7 @@ extensions:
     fs: 100
     cr: 1.14
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Manual de induccion con mismatch historico entre nombre destino
       y fuente 2025.
     dependencies: []

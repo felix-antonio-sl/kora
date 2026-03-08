@@ -1,5 +1,6 @@
 import json
 import re
+import unicodedata
 from collections import Counter
 from functools import lru_cache
 
@@ -26,8 +27,18 @@ from .workspaces import (
     extract_declared_tool_headings,
     extract_workspace_refs,
     get_workspace_missing_files,
+    iter_markdown_headings,
     iter_agent_workspaces,
     validate_skill_file,
+)
+
+
+CANONICAL_AGENT_SECTION_PATTERNS = (
+    ("## 1. FSM", re.compile(r"^1\.\s+fsm(?:\b|[\s(])")),
+    ("## 2. Reglas Duras", re.compile(r"^2\.\s+reglas duras(?:\b|[\s(])")),
+    ("## 3. Co-induccion", re.compile(r"^3\.\s+co-induccion(?:\b|[\s(])")),
+    ("## 4. Contexto Multi-turno", re.compile(r"^4\.\s+contexto multi-turno(?:\b|[\s(])")),
+    ("## 5. Wiring", re.compile(r"^5\.\s+wiring(?:\b|[\s(])")),
 )
 
 
@@ -69,6 +80,34 @@ def validate_skill_purity(text):
         SEMANTIC_TURN_CONTROL_PATTERNS,
         "Skill contiene control conversacional no permitido ('{match}')",
     )
+
+
+def normalize_heading_token(text):
+    normalized = unicodedata.normalize("NFKD", text)
+    normalized = normalized.encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", normalized.strip().lower())
+
+
+def validate_agents_canonical_structure(text):
+    headings = [normalize_heading_token(heading) for level, heading in iter_markdown_headings(text) if level == 2]
+    failures = []
+    positions = {}
+
+    for required_label, pattern in CANONICAL_AGENT_SECTION_PATTERNS:
+        matching_positions = [index for index, heading in enumerate(headings) if pattern.match(heading)]
+        if not matching_positions:
+            failures.append(f"AGENTS.md carece de seccion canonica '{required_label}'")
+            continue
+        if len(matching_positions) > 1:
+            failures.append(f"AGENTS.md duplica seccion canonica '{required_label}'")
+            continue
+        positions[required_label] = matching_positions[0]
+
+    ordered_positions = [positions[label] for label, _pattern in CANONICAL_AGENT_SECTION_PATTERNS if label in positions]
+    if len(ordered_positions) == len(CANONICAL_AGENT_SECTION_PATTERNS) and ordered_positions != sorted(ordered_positions):
+        failures.append("AGENTS.md viola el orden canonico FSM -> Reglas Duras -> Co-induccion -> Contexto Multi-turno -> Wiring")
+
+    return failures
 
 
 def split_tool_sections(content):
@@ -339,6 +378,10 @@ def cmd_validate(profile="transitional", cohort=None):
         if profile != "legacy":
             if agents_path.exists():
                 agents_text = agents_path.read_text(encoding="utf-8")
+                for failure in validate_agents_canonical_structure(agents_text):
+                    print(f"[FAIL] {agents_path.relative_to(KORA_ROOT)} - {failure}")
+                    issue_counts["agents_grammar"] += 1
+                    workspace_ok = False
                 for failure in validate_traces_semantics(agents_path, agents_text):
                     print(f"[FAIL] {agents_path.relative_to(KORA_ROOT)} - {failure}")
                     issue_counts["trace_semantics"] += 1

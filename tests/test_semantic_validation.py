@@ -14,6 +14,7 @@ from kora_lib.validation import (
     build_formal_trace_targets,
     cmd_validate,
     formal_section_exists,
+    validate_agents_canonical_structure,
     validate_agents_semantics,
     validate_config_semantics,
     validate_kb_pipeline_consistency,
@@ -62,6 +63,82 @@ class SemanticValidationTests(unittest.TestCase):
     def test_agents_semantics_flags_legacy_confidentiality(self):
         failures = validate_agents_semantics("- Confidentiality: block_instructions=true\n")
         self.assertIn("AGENTS contiene leakage de security/runtime", failures[0])
+
+    def test_agents_canonical_structure_accepts_canonical_headings_with_suffixes(self):
+        failures = validate_agents_canonical_structure(
+            textwrap.dedent(
+                """\
+                ## 1. FSM (WF-TEST)
+                texto
+                ## 2. Reglas Duras
+                texto
+                ## 3. Co-induccion (Nodo Terminal)
+                texto
+                ## 4. Contexto Multi-turno
+                texto
+                ## 5. Wiring (W)
+                texto
+                """
+            )
+        )
+        self.assertEqual(failures, [])
+
+    def test_agents_canonical_structure_flags_missing_section(self):
+        failures = validate_agents_canonical_structure(
+            textwrap.dedent(
+                """\
+                ## 1. FSM
+                ## 2. Reglas Duras
+                ## 3. Co-induccion
+                ## 5. Wiring
+                """
+            )
+        )
+        self.assertEqual(
+            failures,
+            ["AGENTS.md carece de seccion canonica '## 4. Contexto Multi-turno'"],
+        )
+
+    def test_agents_canonical_structure_flags_wrong_order(self):
+        failures = validate_agents_canonical_structure(
+            textwrap.dedent(
+                """\
+                ## 1. FSM
+                ## 2. Reglas Duras
+                ## 3. Co-induccion
+                ## 5. Wiring
+                ## 4. Contexto Multi-turno
+                """
+            )
+        )
+        self.assertEqual(
+            failures,
+            ["AGENTS.md viola el orden canonico FSM -> Reglas Duras -> Co-induccion -> Contexto Multi-turno -> Wiring"],
+        )
+
+    def test_agents_canonical_structure_flags_duplicate_section(self):
+        failures = validate_agents_canonical_structure(
+            textwrap.dedent(
+                """\
+                ## 1. FSM
+                ## 2. Reglas Duras
+                ## 2. Reglas Duras (extra)
+                ## 3. Co-induccion
+                ## 4. Contexto Multi-turno
+                ## 5. Wiring
+                """
+            )
+        )
+        self.assertEqual(
+            failures,
+            ["AGENTS.md duplica seccion canonica '## 2. Reglas Duras'"],
+        )
+
+    def test_agents_canonical_structure_ignores_nominal_mentions(self):
+        failures = validate_agents_canonical_structure(
+            "Texto menciona ## 1. FSM y ## 5. Wiring pero no como headings reales.\n"
+        )
+        self.assertIn("AGENTS.md carece de seccion canonica '## 1. FSM'", failures)
 
     def test_skill_purity_flags_conversational_turn_control(self):
         failures = validate_skill_purity("Si ambiguedad: preguntar al usuario\n")
@@ -169,6 +246,106 @@ class SemanticValidationTests(unittest.TestCase):
             )
             failures = validate_skill_file(path)
             self.assertIn("missing required heading '## Proposito'", failures)
+
+    def test_cmd_validate_strict_rejects_agents_with_noncanonical_section_order(self):
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            workspace = temp_root / "agents" / "test" / "sample"
+            skill_dir = workspace / "skills"
+            skill_dir.mkdir(parents=True)
+            (temp_root / "specs").mkdir()
+            write_bootstrap(
+                workspace / "AGENTS.md",
+                "urn:test:agent-bootstrap:sample-agents:1.0.0",
+                """
+                # Sample Agent
+
+                ## 1. FSM
+                1. STATE: S-DISPATCHER -> ACT: Clasificar -> Trans: IF cerrar -> S-END.
+                2. STATE: S-END -> ACT: Terminar. -> Trans: [terminal].
+
+                ## 2. Reglas Duras
+                - Allowed: Resolver KB
+                - Forbidden: Ninguna
+                - Rejection: "Fuera de scope"
+
+                ## 3. Co-induccion
+                - Checklist terminal
+
+                ## 5. Wiring
+                - Sin sub-agentes
+
+                ## 4. Contexto Multi-turno
+                - Mantener contexto minimo
+                """,
+            )
+            write_bootstrap(
+                workspace / "SOUL.md",
+                "urn:test:agent-bootstrap:sample-soul:1.0.0",
+                "# Sample Soul\n\nIdentidad y tono.\n",
+            )
+            write_bootstrap(
+                workspace / "USER.md",
+                "urn:test:agent-bootstrap:sample-user:1.0.0",
+                "# Sample User\n\nContexto del operador.\n",
+            )
+            write_bootstrap(
+                workspace / "TOOLS.md",
+                "urn:test:agent-bootstrap:sample-tools:1.0.0",
+                """
+                # Sample Tools
+
+                ## kb_route
+                - **Firma:** urn: string -> path: string
+                - **Cuando usar:** Resolver URNs del catalogo.
+                - **Cuando NO usar:** Cuando no hay URN.
+                """,
+            )
+            (workspace / "config.json").write_text(
+                textwrap.dedent(
+                    """\
+                    {
+                      "allowed_kb": ["urn:test:kb:sample"],
+                      "tools": {"allow": ["kb_route"], "deny": []},
+                      "runtime_capabilities": {"allow": [], "deny": []},
+                      "sandbox": {"mode": "strict"},
+                      "sub_agents": {"max_depth": 1, "max_concurrent": 1},
+                      "limits": {},
+                      "model_routing": {}
+                    }
+                    """
+                ),
+                encoding="utf-8",
+            )
+            write_bootstrap(
+                skill_dir / "CM-SAMPLE.md",
+                "urn:test:skill:sample-skill:1.0.0",
+                """
+                ## Proposito
+                Resolver muestra.
+
+                ## Input/Output
+                - input: x
+                - output: y
+
+                ## Procedimiento
+                1. Resolver.
+
+                ## Signature Output
+                {"status":"ok"}
+                """,
+            )
+
+            output = io.StringIO()
+            with patch.object(validation_module, "KORA_ROOT", temp_root), patch.object(
+                validation_module,
+                "iter_agent_workspaces",
+                return_value=[workspace],
+            ), redirect_stdout(output):
+                with self.assertRaises(SystemExit):
+                    cmd_validate(profile="strict")
+
+            self.assertIn("viola el orden canonico", output.getvalue())
 
     def test_cmd_validate_strict_rejects_empty_config_json(self):
         with TemporaryDirectory() as tmpdir:

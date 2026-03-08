@@ -1,6 +1,7 @@
 {
   "target_path": "ris/ris-deportes.md",
-  "target_urn": "urn:gn:kb:ris-deportes",
+  "draft_urn": "urn:gn:kb:ris-deportes",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

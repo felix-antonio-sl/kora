@@ -24,7 +24,7 @@ _manifest:
 | Gobernanza, precedencia, meta-reglas, URN bootstrap | urn:kora:kb:gobernanza |
 | Formato prescriptivo, grammar, RFC 2119, spec-md | urn:kora:kb:spec-md |
 | Formato descriptivo, koraficacion, md-spec | urn:kora:kb:md-spec |
-| Skills, CM grammar, lazy-load, skill lifecycle, skill-spec-md | urn:kora:kb:skill-spec-md |
+| Skills, CM grammar, lazy-load y baseline degenerado, skill-spec-md | urn:kora:kb:skill-spec-md |
 | Runtime, model routing, deployment, fallback chains, runtime-spec-md | urn:kora:kb:runtime-spec-md |
 | Swarms, multi-agent, golden paths, circuit breakers, sentinel, swarm-spec-md | urn:kora:kb:swarm-spec-md |
 
@@ -61,4 +61,4 @@ _manifest:
 - **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}
 - **Cuando usar:** Ejecutar validacion de conformidad completa contra agent-spec-md v8.1.0 (17 checks).
 - **Cuando NO usar:** Validaciones parciales o consultas rapidas.
-- **Notas:** Invoca internamente CM-AGENT-VALIDATOR v2.0.0. Checklist: 17 checks alineados con agent-spec-md v8.1.0 §8 + skill-spec-md v3.1.0 §9.
+- **Notas:** Invoca internamente CM-AGENT-VALIDATOR v2.0.0. Checklist: 17 checks alineados con agent-spec-md v8.1.0 §8 + skill-spec-md v3.2.0 §7. El baseline auditado soporta solo Skills degenerados.

@@ -1,6 +1,7 @@
 {
   "target_path": "gobernanza/nuble-250.md",
-  "target_urn": "urn:gn:kb:nuble-250",
+  "draft_urn": "urn:gn:kb:nuble-250",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

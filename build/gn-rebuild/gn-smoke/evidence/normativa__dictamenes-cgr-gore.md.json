@@ -1,6 +1,7 @@
 {
   "target_path": "normativa/dictamenes-cgr-gore.md",
-  "target_urn": "urn:gn:kb:dictamenes-cgr-gore",
+  "draft_urn": "urn:gn:kb:dictamenes-cgr-gore",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

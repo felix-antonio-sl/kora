@@ -10,7 +10,7 @@ lang: es
 # CM-AGENT-VALIDATOR
 
 ## Proposito
-Valida un workspace KORA completo contra agent-spec-md v8.1.0 §8 y skill-spec-md v3.1.0 §9, produciendo reporte con 17 checks y correcciones accionables.
+Valida un workspace KORA completo contra agent-spec-md v8.1.0 §8 y skill-spec-md v3.2.0 §7, produciendo reporte con 17 checks y correcciones accionables.
 
 ## Input/Output
 - **Input:** agent_path: string (ruta al workspace del agente)
@@ -27,11 +27,11 @@ Valida un workspace KORA completo contra agent-spec-md v8.1.0 §8 y skill-spec-m
 8. **TOOLS.md COMPLETO (§6):** Cada tool declarado tiene: nombre, firma (input→output), cuando usar, cuando NO usar. Routing map presente si usa kb_route.
 9. **CONFIG.JSON VALIDO (§5.3):** JSON valido con keys requeridos: allowed_kb, sandbox, tools, sub_agents. Frontmatter _manifest con URN y type correcto.
 10. **CM EN SKILLS/ (§7):** Todo CM referenciado en la FSM tiene archivo correspondiente en skills/. No hay CMs huerfanos (archivos sin referencia en FSM).
-11. **CM GRAMMAR (skill-spec-md v3.1.0 §3):** Cada CM tiene 4 secciones: Proposito, I/O, Procedimiento, Signature Output. Frontmatter con type: "lazy_load_endofunctor".
+11. **CM GRAMMAR (skill-spec-md v3.2.0 §3):** Cada CM degenerado tiene 4 secciones: Proposito, I/O, Procedimiento, Signature Output. Frontmatter con type: "lazy_load_endofunctor".
 12. **WIRING DECLARADO (§8):** Si el agente tiene sub-agentes, la herencia y disipacion esta declarada explicitamente. Sub-agentes heredan behavior + interface, disipan personality + operator context.
 13. **INTERFACE CERRADA (§6.1):** TOOLS.md declara todas las tools que el agente puede usar. No hay tools invocadas en FSM o CMs que no esten declaradas en TOOLS.md.
 14. **SECURITY FILTRA DISCOVERY (§5.4):** config.json tools.allow/deny es consistente con las tools declaradas en TOOLS.md. allowed_kb cubre los URNs referenciados en kb_route.
-15. **SKILL CONFORMIDAD (skill-spec-md v3.1.0):** Skills siguen formato degenerate (CM-only) o extended (directorio). URNs con formato urn:{ns}:skill:{agente}-{skill}:{version}.
+15. **SKILL CONFORMIDAD (skill-spec-md v3.2.0):** El baseline soporta solo Skills degenerados (CM-only). Cualquier surface extendida queda fuera del enforcement base y no debe presentarse como capacidad vigente del repo.
 16. **TRAZABILIDAD VALIDA:** Referencias `Traces to:` apuntan a secciones existentes en knowledge/kora/categorical-foundations/.
 17. **EVALUACIONES:** Si el agente esta en produccion, verificar que exista suite de evals o documentar como SKIP con justificacion.
 

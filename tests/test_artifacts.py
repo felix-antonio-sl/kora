@@ -6,6 +6,7 @@ from common import FIXTURES, ROOT, load_json
 from kora_lib.artifacts import load_yaml_safe
 from kora_lib.config import AGENT_REQUIRED_FILES
 from kora_lib.reports import compute_stats_payload, render_stats_markdown
+from kora_lib.validation import validate_agents_canonical_structure
 from kora_lib.workspaces import get_workspace_missing_files, iter_agent_workspaces, validate_skill_file
 
 
@@ -107,19 +108,37 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in required_terms:
             self.assertIn(term, content)
 
-    def test_skill_spec_restores_lifecycle_and_protocol(self):
+    def test_skill_spec_descopes_extended_support_and_keeps_degenerate_baseline(self):
         content = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
         required_terms = (
-            "## 5. Progressive Disclosure Lifecycle",
-            "Discover",
-            "Activate",
-            "Execute",
-            "### 3.3 Script Protocol",
-            "Wrap",
-            "Extract",
+            "la unica forma soportada, auditada y gobernada automaticamente",
+            "Skill degenerado: archivo `CM-*.md`",
+            "## 5. Descope explicito de Skills extendidos",
+            "fuera del soporte efectivo del repo",
+            "El validator base **DEBE** juzgar conformidad solo sobre Skill degenerado.",
         )
         for term in required_terms:
             self.assertIn(term, content)
+
+        rejected_terms = (
+            "## 5. Progressive Disclosure Lifecycle",
+            "## 6. Topologia y coexistencia",
+            "### 3.3 Script Protocol",
+            "| Discover |",
+            "| Activate |",
+            "| Execute |",
+        )
+        for term in rejected_terms:
+            self.assertNotIn(term, content)
+
+    def test_forgemaster_no_longer_claims_extended_skill_support(self):
+        files = (
+            ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertIn("baseline auditado soporta solo Skills degenerados", content)
+        self.assertNotIn("Skills siguen formato degenerate (CM-only) o extended (directorio)", content)
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")
@@ -181,6 +200,11 @@ class ArtifactFixtureTests(unittest.TestCase):
             content = path.read_text(encoding="utf-8")
             for term in required_terms:
                 self.assertIn(term, content)
+
+    def test_all_agents_follow_canonical_section_order(self):
+        for path in ROOT.glob("agents/*/*/AGENTS.md"):
+            content = path.read_text(encoding="utf-8")
+            self.assertEqual(validate_agents_canonical_structure(content), [], path.as_posix())
 
     def test_orquestador_swarm_drops_dead_swarm_section_refs(self):
         files = (

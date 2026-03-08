@@ -1,6 +1,7 @@
 {
   "target_path": "bpmn/bpmn-d09-cies-sitia.md",
-  "target_urn": "urn:gn:kb:bpmn-d09-cies-sitia",
+  "draft_urn": "urn:gn:kb:bpmn-d09-cies-sitia",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

@@ -42,15 +42,15 @@ _manifest:
 - IF CLARITY fails → simplificar + analogia
 - IF ACTIONABLE fails → pasos concretos
 
+## 4. Contexto Multi-turno
+
+- Comparar tema actual vs estado activo
+- Detectar: cambio tema, volver atras, terminar
+- IF tema != dominio CI/CD → CONTEXT_SHIFT → S-DISPATCHER
+
 ## 5. Wiring (W)
 
 - **Herencia:** ci-assistant no es sub-agente declarado del orquestador-swarm. Opera como agente auxiliar independiente en namespace ops.
 - **Sub-agentes:** No declara sub-agentes.
 - **Disipacion:** No aplica — no hereda personality ni operator context de otro agente.
 - **Dependencias inter-agente:** Referenciado por ops/security y ops/verificador en rejection routing. No hay wiring formal.
-
-## 6. Contexto Multi-turno
-
-- Comparar tema actual vs estado activo
-- Detectar: cambio tema, volver atras, terminar
-- IF tema != dominio CI/CD → CONTEXT_SHIFT → S-DISPATCHER

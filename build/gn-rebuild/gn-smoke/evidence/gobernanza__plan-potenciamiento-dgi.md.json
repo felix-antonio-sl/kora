@@ -1,6 +1,7 @@
 {
   "target_path": "gobernanza/plan-potenciamiento-dgi.md",
-  "target_urn": "urn:gn:kb:plan-potenciamiento-dgi",
+  "draft_urn": "urn:gn:kb:plan-potenciamiento-dgi",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_composite",
   "source_paths": [
@@ -10,7 +11,7 @@
   ],
   "fs": 100,
   "cr": 26.19,
-  "review_gate": "manual",
+  "review_gate": "auto",
   "skeleton_count": 56,
   "meat_count": 1244,
   "fat_count": 0,
@@ -1264,5 +1265,7 @@
     "_manifest.title=Principle-based Organizational Structure",
     "_manifest.urn=urn:knowledge:gorenuble:core:gestion:meyer-org-structure:1.0.0"
   ],
-  "non_equivalence_decisions": []
+  "non_equivalence_decisions": [
+    "El derivado MD toma el plan DGI como fuente principal y resume Meyer/Lean6 como dependencias explícitas dentro del alcance declarado."
+  ]
 }

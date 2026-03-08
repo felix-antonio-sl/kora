@@ -1,6 +1,7 @@
 {
   "target_path": "guias/guia-comunicaciones.md",
-  "target_urn": "urn:gn:kb:guia-comunicaciones",
+  "draft_urn": "urn:gn:kb:guia-comunicaciones",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

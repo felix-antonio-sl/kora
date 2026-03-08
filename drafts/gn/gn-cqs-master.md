@@ -25,7 +25,7 @@ extensions:
     fs: 100
     cr: 3.07
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Preguntas de competencia maestras del bundle ontologico GN.
     dependencies: []
     expected_sections:

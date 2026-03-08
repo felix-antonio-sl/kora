@@ -1,6 +1,7 @@
 {
   "target_path": "bpmn/bpmn-d02-ciclo-presupuestario.md",
-  "target_urn": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
+  "draft_urn": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

@@ -1,6 +1,7 @@
 {
   "target_path": "datos/programas-vigentes-resumen.md",
-  "target_urn": "urn:gn:kb:programas-vigentes-resumen",
+  "draft_urn": "urn:gn:kb:programas-vigentes-resumen",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "derive_csv_scope",
   "source_paths": [

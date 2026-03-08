@@ -25,7 +25,7 @@ extensions:
     fs: 100
     cr: 1.17
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Glosario consolidado IPR; requiere verificacion terminologica.
     dependencies: []
     expected_sections:

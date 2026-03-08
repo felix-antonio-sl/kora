@@ -1,6 +1,7 @@
 {
   "target_path": "gobernanza/problemas-sociales-cl.md",
-  "target_urn": "urn:gn:kb:problemas-sociales-cl",
+  "draft_urn": "urn:gn:kb:problemas-sociales-cl",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

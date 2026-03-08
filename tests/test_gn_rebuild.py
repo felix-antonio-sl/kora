@@ -1,3 +1,4 @@
+import json
 import subprocess
 import sys
 import unittest
@@ -133,10 +134,17 @@ class GnRebuildTests(unittest.TestCase):
             self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
             manual = repo / "drafts/gn/manuales/manual-presupuesto.md"
             csv_doc = repo / "drafts/gn/datos/programas-vigentes-resumen.md"
+            evidence = repo / "build/gn-rebuild/testrun/evidence/datos__programas-vigentes-resumen.md.json"
             self.assertTrue(manual.exists())
             self.assertTrue(csv_doc.exists())
+            self.assertTrue(evidence.exists())
             self.assertIn("extensions:", manual.read_text(encoding="utf-8"))
             self.assertIn("source_paths", manual.read_text(encoding="utf-8"))
+            evidence_payload = json.loads(evidence.read_text(encoding="utf-8"))
+            self.assertEqual(evidence_payload["target_path"], "datos/programas-vigentes-resumen.md")
+            self.assertEqual(evidence_payload["catalog_state"], "draft_unindexed")
+            self.assertEqual(evidence_payload["draft_urn"], "urn:gn:kb:programas-vigentes-resumen")
+            self.assertNotIn("target_urn", evidence_payload)
 
             validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "testrun")
             self.assertEqual(validate.returncode, 0, validate.stderr or validate.stdout)
@@ -146,6 +154,7 @@ class GnRebuildTests(unittest.TestCase):
             report_path = repo / "build/gn-rebuild/testrun/report.md"
             self.assertTrue(report_path.exists())
             self.assertIn("Structural Diff", report_path.read_text(encoding="utf-8"))
+            self.assertIn("build/ queda fuera de index, graph y health por diseno", report_path.read_text(encoding="utf-8"))
 
     def test_koda_hybrid_prefers_embedded_markdown_and_skips_technical_blocks(self):
         with TemporaryDirectory() as tmpdir:
@@ -227,6 +236,75 @@ class GnRebuildTests(unittest.TestCase):
             self.assertIn("## Terminos", body)
             self.assertNotIn("LLM_Parsing_Instructions", body)
             self.assertNotIn("PARSER-01", body)
+
+    def test_validate_rejects_public_target_urn_in_draft_evidence(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/gestion").mkdir(parents=True, exist_ok=True)
+            yaml_source = {
+                "_manifest": {"urn": "urn:test:kb:src"},
+                "ID": "GN-MANUAL-PPTO",
+                "Resumen": {"Objetivo": "Mantener fidelidad"},
+            }
+            (source_root / "domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml").write_text(
+                yaml.safe_dump(yaml_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+            self._write_md(
+                repo / "knowledge/gn/manuales/manual-presupuesto.md",
+                "urn:gn:kb:manual-presupuesto",
+                "Manual Presupuesto",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "manuales/manual-presupuesto.md",
+                                "target_urn": "urn:gn:kb:manual-presupuesto",
+                                "transform_class": "korafy_direct",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "badurn")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "badurn", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            evidence_path = repo / "build/gn-rebuild/badurn/evidence/manuales__manual-presupuesto.md.json"
+            payload = json.loads(evidence_path.read_text(encoding="utf-8"))
+            payload["target_urn"] = payload["draft_urn"]
+            evidence_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "badurn")
+            self.assertNotEqual(validate.returncode, 0)
+            self.assertIn("evidence expone target_urn publico antes de cutover", validate.stdout)
 
 
 if __name__ == "__main__":

@@ -27,7 +27,7 @@ extensions:
     fs: 100
     cr: 3.01
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Organigrama operativo y estructura organica observables en la
       fuente KODA y el slice TTL organizacional.
     dependencies: []

@@ -1,6 +1,7 @@
 {
   "target_path": "ris/ris-proyinv.md",
-  "target_urn": "urn:gn:kb:ris-proyinv",
+  "draft_urn": "urn:gn:kb:ris-proyinv",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

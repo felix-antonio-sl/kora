@@ -1,6 +1,7 @@
 {
   "target_path": "gobernanza/aceleracion-regional.md",
-  "target_urn": "urn:gn:kb:aceleracion-regional",
+  "draft_urn": "urn:gn:kb:aceleracion-regional",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

@@ -1,6 +1,7 @@
 {
   "target_path": "guias/instructivo-subvencion-8-2025-sts.md",
-  "target_urn": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
+  "draft_urn": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_direct",
   "source_paths": [

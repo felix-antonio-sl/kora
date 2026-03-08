@@ -1,6 +1,7 @@
 {
   "target_path": "gn-cqs-master.md",
-  "target_urn": "urn:gn:kb:gn-cqs-master",
+  "draft_urn": "urn:gn:kb:gn-cqs-master",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "derive_ttl_scope",
   "source_paths": [
@@ -8,7 +9,7 @@
   ],
   "fs": 100,
   "cr": 3.07,
-  "review_gate": "manual",
+  "review_gate": "auto",
   "skeleton_count": 23,
   "meat_count": 1038,
   "fat_count": 0,

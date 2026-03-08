@@ -121,7 +121,7 @@ Traces to: formal/01 §1.3 (M-Immutability) ; formal/04 §2.4 (Filtered Discover
 
 ## 6. Skills
 
-Todo CM referenciado en `AGENTS.md` **DEBE** existir en `skills/` como Skill degenerado o referenciar un Skill extendido conforme a `skill-spec-md`.
+Todo CM referenciado en `AGENTS.md` **DEBE** existir en `skills/` como Skill degenerado conforme a `skill-spec-md`.
 
 El bootstrap del agente **NO DEBE** contener CM inline.
 

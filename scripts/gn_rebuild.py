@@ -60,6 +60,37 @@ def sha256_file(path):
     return digest.hexdigest()
 
 
+def deep_merge_dicts(base, patch):
+    result = deepcopy(base)
+    for key, value in patch.items():
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            result[key] = deep_merge_dicts(result[key], value)
+        else:
+            result[key] = deepcopy(value)
+    return result
+
+
+def load_yaml_merged(path):
+    text = path.read_text(encoding="utf-8")
+    docs = [doc for doc in yaml.safe_load_all(text) if doc is not None]
+    if not docs:
+        return None
+    merged = {}
+    non_dict_docs = []
+    for doc in docs:
+        if isinstance(doc, dict):
+            merged = deep_merge_dicts(merged, doc)
+        else:
+            non_dict_docs.append(doc)
+    if merged:
+        if non_dict_docs:
+            merged["_extra_documents"] = non_dict_docs
+        return merged
+    if len(non_dict_docs) == 1:
+        return non_dict_docs[0]
+    return {"_extra_documents": non_dict_docs}
+
+
 def utc_today():
     return datetime.now(timezone.utc).date().isoformat()
 
@@ -191,7 +222,11 @@ def project_markdown_source(path):
 def project_source(path, source_type, scope_statement=None):
     suffix = path.suffix.lower()
     if suffix in {".yml", ".yaml", ".json"}:
-        doc, err = load_yaml_safe(path)
+        if suffix in {".yml", ".yaml"}:
+            doc = load_yaml_merged(path)
+            err = None if doc is not None else "empty YAML"
+        else:
+            doc, err = load_yaml_safe(path)
         if err:
             raise ValueError(f"no fue posible parsear {path}: {err}")
         return project_yaml_structured(doc)
@@ -333,6 +368,8 @@ def render_composite_body(title, item, projections):
 def render_ttl_body(title, item, projection):
     data = projection["data"]
     if isinstance(data, dict):
+        if data.get("_meta", {}).get("type") == "Ω-Ontology":
+            return render_omega_body(title, item, data)
         return render_cqs_catalog_body(title, item, data)
 
     lines = [f"# {title}", "", "## Scope", item["scope_statement"], "", "## Triples"]
@@ -446,6 +483,81 @@ def render_cqs_catalog_body(title, item, data):
                 lines.append(
                     f"| {normalize_scalar(row['Tipo'])} | {normalize_scalar(row['ID'])} | {normalize_scalar(row['Pregunta'])} |"
                 )
+    return "\n".join(lines).strip() + "\n"
+
+
+def count_nested_items(node):
+    if isinstance(node, list):
+        return len(node)
+    if isinstance(node, dict):
+        total = 0
+        for value in node.values():
+            if isinstance(value, list):
+                total += len(value)
+            elif isinstance(value, dict):
+                total += count_nested_items(value)
+        return total
+    return 0
+
+
+def render_omega_body(title, item, data):
+    lines = [f"# {title}", "", "## Scope", item["scope_statement"], "", "## Resumen"]
+    meta = data.get("_meta", {})
+    if meta:
+        if meta.get("type"):
+            lines.append(f"- Tipo: {meta['type']}")
+        if meta.get("schema"):
+            lines.append(f"- Schema: `{meta['schema']}`")
+        based_on = meta.get("based_on", [])
+        if based_on:
+            lines.append(f"- Basado en: {len(based_on)} artefactos")
+    if data.get("omega_objects"):
+        lines.append(f"- Omega objects: {len(data['omega_objects'])}")
+
+    for obj in data.get("omega_objects", []):
+        if not isinstance(obj, dict):
+            continue
+        obj_id = obj.get("id", "Ω-Object")
+        obj_type = obj.get("type", "")
+        lines.extend(["", f"## {obj_id}", f"- Tipo: {obj_type}" if obj_type else "- Tipo: objeto"])
+        if obj.get("description"):
+            lines.append(f"- Descripción: {obj['description']}")
+
+        section_map = {
+            "subtypes": "Subtipos",
+            "fiber_proyectos": "Fibras proyectos",
+            "fiber_programas": "Fibras programas",
+            "systems": "Sistemas",
+            "autoridades_gore": "Autoridades GORE",
+            "divisiones_gore": "Divisiones GORE",
+            "instancias_colegiadas": "Instancias colegiadas",
+            "organismos_externos": "Organismos externos",
+            "ejecutores": "Ejecutores",
+            "roles_operativos": "Roles operativos",
+            "instances": "Instancias",
+        }
+        for key, label in section_map.items():
+            value = obj.get(key)
+            if not value:
+                continue
+            if isinstance(value, list):
+                lines.append(f"- {label}: {len(value)}")
+                for row in value[:5]:
+                    if isinstance(row, dict):
+                        rid = row.get("id", "")
+                        name = row.get("name") or row.get("role") or row.get("description") or ""
+                        lines.append(f"  - `{rid}` {name}".rstrip())
+                    else:
+                        lines.append(f"  - {normalize_scalar(row)}")
+            elif isinstance(value, dict):
+                lines.append(f"- {label}: {len(value)}")
+                for subkey, subvalue in list(value.items())[:5]:
+                    if isinstance(subvalue, dict):
+                        name = subvalue.get("name") or subvalue.get("source") or subvalue.get("description") or ""
+                        lines.append(f"  - `{subkey}` {name}".rstrip())
+                    else:
+                        lines.append(f"  - `{subkey}` {normalize_scalar(subvalue)}")
+
     return "\n".join(lines).strip() + "\n"
 
 
@@ -719,6 +831,53 @@ def locate_lock(roots, run_id):
     return candidates[-1]
 
 
+def evidence_relpath_for(target_path):
+    return f"{target_path.replace('/', '__')}.json"
+
+
+def validate_build_evidence(draft_root, evidence_root, expected_targets):
+    failures = []
+    warnings = []
+
+    for rel_path, meta in sorted(expected_targets.items()):
+        draft_path = draft_root / rel_path
+        evidence_path = evidence_root / evidence_relpath_for(rel_path)
+        if not evidence_path.exists():
+            failures.append(f"evidence faltante: {evidence_path}")
+            continue
+
+        try:
+            evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            failures.append(f"evidence invalida {evidence_path.name}: {exc}")
+            continue
+
+        if evidence.get("target_path") != rel_path:
+            failures.append(f"evidence target_path inconsistente: {evidence_path.name}")
+
+        if "target_urn" in evidence:
+            failures.append(f"evidence expone target_urn publico antes de cutover: {evidence_path.name}")
+
+        if evidence.get("catalog_state") != "draft_unindexed":
+            failures.append(f"evidence catalog_state invalido en {evidence_path.name}")
+
+        if not draft_path.exists():
+            continue
+
+        frontmatter, _body = load_markdown_parts(draft_path)
+        draft_urn = None
+        if isinstance(frontmatter, dict):
+            draft_urn = frontmatter.get("_manifest", {}).get("urn")
+
+        if evidence.get("draft_urn") != draft_urn:
+            failures.append(f"evidence draft_urn inconsistente con draft en {evidence_path.name}")
+
+        if meta.get("target_urn") and draft_urn != meta["target_urn"]:
+            warnings.append(f"{rel_path}: draft_urn no alineada con target_urn esperada")
+
+    return {"failures": failures, "warnings": warnings}
+
+
 def build(args):
     repo_root = Path(args.repo_root).resolve()
     map_doc = load_rebuild_map(Path(args.map_path).resolve())
@@ -749,13 +908,14 @@ def build(args):
         frontmatter, body, gn_ext, combined_facts = build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id)
         target_path = draft_root / item["target_path"]
         ensure_dir(target_path.parent)
-        evidence_relpath = f"{item['target_path'].replace('/', '__')}.json"
+        evidence_relpath = evidence_relpath_for(item["target_path"])
         gn_ext["evidence_path"] = f"build/gn-rebuild/{run_id}/evidence/{evidence_relpath}"
         dump_yaml_frontmatter_and_body(target_path, frontmatter, body)
 
         evidence_payload = {
             "target_path": item["target_path"],
-            "target_urn": frontmatter["_manifest"]["urn"],
+            "draft_urn": frontmatter["_manifest"]["urn"],
+            "catalog_state": "draft_unindexed",
             "run_id": run_id,
             "transform_class": item["transform_class"],
             "source_paths": item["source_paths"],
@@ -788,6 +948,10 @@ def validate(args):
         for entry in map_doc.get("entries", [])
     }
     tree_result = validate_gn_tree(roots["draft_root"], expected_targets=expected_targets)
+    evidence_root = roots["build_root"] / lock["run_id"] / "evidence"
+    evidence_result = validate_build_evidence(roots["draft_root"], evidence_root, expected_targets)
+    tree_result["failures"].extend(evidence_result["failures"])
+    tree_result["warnings"].extend(evidence_result["warnings"])
 
     lock_paths = {item["path"] for item in lock.get("files", [])}
     mapped_paths = {source_path for entry in map_doc.get("entries", []) for source_path in entry.get("source_paths", [])}
@@ -847,6 +1011,10 @@ def report(args):
     report_path = report_root / "report.md"
     lines = [
         f"# GN Rebuild Report {run_id}",
+        "",
+        "## Boundary",
+        "- build/ queda fuera de index, graph y health por diseno; su coherencia se gobierna por esta suite y por la semantica de evidence.",
+        "- drafts/gn representa artefactos no promovidos; su evidencia usa catalog_state `draft_unindexed` hasta cutover.",
         "",
         "## Structural Diff",
         f"- Added: {len(diff['added'])}",

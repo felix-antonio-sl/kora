@@ -1,6 +1,7 @@
 {
   "target_path": "gobernanza/glosario-ipr-consolidado.md",
-  "target_urn": "urn:gn:kb:glosario-ipr-consolidado",
+  "draft_urn": "urn:gn:kb:glosario-ipr-consolidado",
+  "catalog_state": "draft_unindexed",
   "run_id": "gn-smoke",
   "transform_class": "korafy_koda_hybrid",
   "source_paths": [
@@ -8,7 +9,7 @@
   ],
   "fs": 100,
   "cr": 1.17,
-  "review_gate": "manual",
+  "review_gate": "auto",
   "skeleton_count": 3,
   "meat_count": 888,
   "fat_count": 0,

@@ -22,11 +22,11 @@ extensions:
     source_hashes:
       domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml: ed0903e022f2ea9f6e21be87dca3a1f1043b7bb83e09be34aeef38e2261d05eb
     source_type: koda_yaml
-    transformation_mode: korafy_composite
+    transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.12
+    cr: 1.13
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica
       final.
     dependencies: []
@@ -40,12 +40,6 @@ extensions:
 ---
 
 # Glosas y Requerimientos de Información GORES 2026
-
-## Alcance
-Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica final.
-
-## Fuente principal
-- `domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml`
 ## Source
 /Users/felixsanhueza/Developer/gorenuble/staging/glosas gores 2026/glosas_gores_2026.md
 

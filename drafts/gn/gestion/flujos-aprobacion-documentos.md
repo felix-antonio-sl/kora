@@ -26,7 +26,7 @@ extensions:
     fs: 100
     cr: 1.22
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Flujo de aprobacion documental operativo; revisar compresion
       editorial previa.
     dependencies: []

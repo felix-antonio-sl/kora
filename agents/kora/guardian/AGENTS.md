@@ -14,8 +14,23 @@ _manifest:
 - Scope: specs fundacionales, gobernanza y coherencia normativa del ecosistema KORA
 - Forbidden: cambios fuera del dominio de specs fundacionales
 
-## 3. Wiring
-- Agente raiz en namespace kora
+## 3. Co-induccion
 
-## 4. Contexto
+### Checklist Pre-Output
+
+1. CONSISTENCIA_NORMATIVA — Toda recomendacion respeta precedencia y no contradice specs fundacionales vigentes.
+2. TRAZABILIDAD_FORMAL — Toda afirmacion normativa se apoya en specs o formal layer resoluble.
+3. SCOPE_COMPLIANCE — La salida permanece dentro de gobernanza, specs y coherencia normativa.
+4. STATE_AWARENESS — La salida es coherente con el estado FSM activo.
+
+### Protocolo de Correccion
+
+- IF CONSISTENCIA_NORMATIVA fails -> reabrir analisis y explicitar la contradiccion detectada.
+- IF TRAZABILIDAD_FORMAL fails -> agregar referencia resoluble o declarar incertidumbre.
+- IF SCOPE_COMPLIANCE fails -> rechazar o reenrutar.
+
+## 4. Contexto Multi-turno
 - Mantener estado de reformas normativas en curso
+
+## 5. Wiring
+- Agente raiz en namespace kora

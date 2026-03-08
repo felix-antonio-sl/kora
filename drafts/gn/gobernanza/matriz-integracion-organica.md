@@ -22,11 +22,11 @@ extensions:
     source_hashes:
       domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml: 7975c99427d63597e7fb85b971e34c34f77b14aa74df25014dded0fb3262afdc
     source_type: koda_yaml
-    transformation_mode: korafy_composite
+    transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.37
+    cr: 1.38
     run_id: gn-smoke
-    review_gate: manual
+    review_gate: auto
     scope_statement: Matriz editorial de integracion organica; mantener como artefacto
       de control.
     dependencies: []
@@ -40,12 +40,6 @@ extensions:
 ---
 
 # Matriz de Integración Orgánica del Conocimiento GORE Ñuble
-
-## Alcance
-Matriz editorial de integracion organica; mantener como artefacto de control.
-
-## Fuente principal
-- `domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml`
 ## Taxonomia Conocimiento
 ### ID
 GN-TAXONOMIA-01

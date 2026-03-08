@@ -1852,7 +1852,7 @@ Catalog:
     status: published
   Knowledge:
   - urn: urn:kora:kb:skill-spec-md
-    title: KORA/Skill-Spec v3.1.0
+    title: KORA/Skill-Spec v3.2.0
     file: specs/skill-spec-md.md
     status: published
   - urn: urn:kora:kb:agent-spec-md

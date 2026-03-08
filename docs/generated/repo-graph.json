@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 730,
     "node_count": 883,
-    "edge_count": 4176
+    "edge_count": 4171
   },
   "node_kind_counts": {
     "artifact": 226,
@@ -20,7 +20,7 @@
     "DeclaresTool": 200,
     "InvokesSkill": 217,
     "RoutesToAgent": 57,
-    "TracesTo": 49,
+    "TracesTo": 44,
     "XRef": 2575
   },
   "nodes": [
@@ -6523,7 +6523,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:skill-spec-md",
-      "title": "KORA/Skill-Spec v3.1.0",
+      "title": "KORA/Skill-Spec v3.2.0",
       "path": "specs/skill-spec-md.md",
       "namespace": "kora"
     },
@@ -16491,42 +16491,7 @@
     {
       "kind": "TracesTo",
       "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
       "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "specs/skill-spec-md.md"
     },
