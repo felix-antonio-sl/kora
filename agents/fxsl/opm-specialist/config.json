@@ -1,0 +1,33 @@
+{
+  "_manifest": {
+    "urn": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:fxsl:kb:opm-methodology"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  },
+  "limits": {
+    "policy_flags": {
+      "block_instructions": true,
+      "forbid_internal_jargon": true,
+      "require_kb_citation": true
+    },
+    "quotas": {
+      "max_skills_per_agent": 5
+    }
+  }
+}
