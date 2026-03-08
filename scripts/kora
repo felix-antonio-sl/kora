@@ -6,12 +6,13 @@ Commands:
   index    - Dynamically rebuilds catalog_master_kora.yml
   resolve  - Finds the physical path of a URN
   health   - Checks for broken URN links in the monorepo
-  validate - Validates agents against KORA/Agent schemas
+  validate - Validates KORA agent workspaces against the schema
 """
 
 import os
 import sys
 import re
+import json
 import argparse
 import yaml
 from pathlib import Path
@@ -19,6 +20,8 @@ from pathlib import Path
 KORA_ROOT = Path(os.path.abspath(__file__)).parent.parent
 CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
 SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
+AGENT_BOOTSTRAP_FILES = ("AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md")
+AGENT_REQUIRED_FILES = AGENT_BOOTSTRAP_FILES + ("config.json",)
 
 
 def load_yaml_safe(path):
@@ -74,6 +77,25 @@ def get_artifact_title(doc, file_path):
         pass
 
     return file_path.name
+
+
+def iter_agent_workspaces():
+    agents_root = KORA_ROOT / "agents"
+    if not agents_root.exists():
+        return []
+
+    workspaces = []
+    for namespace_dir in sorted(agents_root.iterdir()):
+        if not namespace_dir.is_dir() or namespace_dir.name.startswith("."):
+            continue
+        for workspace_dir in sorted(namespace_dir.iterdir()):
+            if workspace_dir.is_dir() and not workspace_dir.name.startswith("."):
+                workspaces.append(workspace_dir)
+    return workspaces
+
+
+def get_workspace_missing_files(workspace_dir, required_files):
+    return [name for name in required_files if not (workspace_dir / name).exists()]
 
 
 def cmd_index():
@@ -246,7 +268,6 @@ def cmd_health():
             checked_files += 1
 
     # Also validate allowed_kb in agent config.json files against catalog
-    import json
     config_broken = 0
     for root, dirs, files in os.walk(KORA_ROOT / "agents"):
         dirs[:] = [d for d in dirs if d not in (".git",)]
@@ -280,7 +301,7 @@ def cmd_health():
 
 
 def cmd_validate():
-    print("Validating KORA agents against KORA 2.0 Schema...")
+    print("Validating KORA agent workspaces against KORA 2.0 Schema...")
     try:
         import jsonschema
     except ImportError:
@@ -294,34 +315,57 @@ def cmd_validate():
         print(f"Error: Could not load schema from {SCHEMA_PATH}")
         sys.exit(1)
 
-    doc, _ = load_yaml_safe(CATALOG_PATH)
-    if not doc or "Catalog" not in doc:
-        print("Error: Catalog not found. Run 'kora index' first.")
-        sys.exit(1)
+    workspace_valid = 0
+    workspace_invalid = 0
+    bootstrap_validated = 0
 
-    agents = doc["Catalog"].get("Agents", [])
-    valid_count = 0
-    invalid_count = 0
-
-    for agent in agents:
-        agent_path = KORA_ROOT / agent["file"]
-        agent_data, err = load_yaml_safe(agent_path)
-        if not agent_data:
+    for workspace_dir in iter_agent_workspaces():
+        rel_workspace = workspace_dir.relative_to(KORA_ROOT)
+        missing_files = get_workspace_missing_files(workspace_dir, AGENT_REQUIRED_FILES)
+        if missing_files:
             print(
-                f"[FAIL] Could not parse YAML: {agent_path.relative_to(KORA_ROOT)}. Error: {err}"
+                f"[FAIL] {rel_workspace} - missing required files: {', '.join(missing_files)}"
             )
-            invalid_count += 1
+            workspace_invalid += 1
             continue
 
+        config_path = workspace_dir / "config.json"
         try:
-            jsonschema.validate(instance=agent_data, schema=schema)
-            # print(f"[OK] {agent_path.relative_to(KORA_ROOT)}")
-            valid_count += 1
-        except jsonschema.exceptions.ValidationError as e:
-            print(f"[FAIL] {agent_path.relative_to(KORA_ROOT)} - {e.message}")
-            invalid_count += 1
+            with open(config_path, "r", encoding="utf-8") as f:
+                json.load(f)
+        except Exception as e:
+            print(f"[FAIL] {config_path.relative_to(KORA_ROOT)} - invalid JSON: {e}")
+            workspace_invalid += 1
+            continue
 
-    print(f"Validation complete! Valid: {valid_count}, Invalid: {invalid_count}")
+        workspace_ok = True
+        for bootstrap_file in AGENT_BOOTSTRAP_FILES:
+            agent_path = workspace_dir / bootstrap_file
+            agent_data, err = load_yaml_safe(agent_path)
+            if not agent_data:
+                print(
+                    f"[FAIL] Could not parse YAML: {agent_path.relative_to(KORA_ROOT)}. Error: {err}"
+                )
+                workspace_ok = False
+                continue
+
+            try:
+                jsonschema.validate(instance=agent_data, schema=schema)
+                bootstrap_validated += 1
+            except jsonschema.exceptions.ValidationError as e:
+                print(f"[FAIL] {agent_path.relative_to(KORA_ROOT)} - {e.message}")
+                workspace_ok = False
+
+        if workspace_ok:
+            workspace_valid += 1
+        else:
+            workspace_invalid += 1
+
+    print(
+        "Validation complete! "
+        f"Workspaces valid: {workspace_valid}, Invalid: {workspace_invalid}, "
+        f"Bootstrap files validated: {bootstrap_validated}"
+    )
 
 
 def cmd_intake():
@@ -413,13 +457,29 @@ def cmd_stats():
         sys.exit(1)
 
     print("=== KORA Monorepo Stats ===")
+    workspaces = iter_agent_workspaces()
+    complete_workspaces = [
+        workspace
+        for workspace in workspaces
+        if not get_workspace_missing_files(workspace, AGENT_BOOTSTRAP_FILES)
+    ]
+
+    bootstrap_count = len(doc["Catalog"].get("Agents", []))
+    print(f"  Agent Workspaces: {len(complete_workspaces)}")
+    if len(complete_workspaces) != len(workspaces):
+        print(f"  Incomplete Workspace Directories: {len(workspaces) - len(complete_workspaces)}")
+    print(f"  Agent Bootstrap Artifacts: {bootstrap_count}")
+
     total = 0
     for category, items in doc["Catalog"].items():
+        if category == "Agents":
+            total += len(items)
+            continue
         count = len(items)
         total += count
         if count > 0:
             print(f"  {category}: {count}")
-    print(f"  TOTAL: {total}")
+    print(f"  TOTAL Catalog Entries: {total}")
 
     # Count by namespace
     ns_counts = {}
@@ -430,7 +490,7 @@ def cmd_stats():
             ns = parts[1] if len(parts) >= 2 else "unknown"
             ns_counts[ns] = ns_counts.get(ns, 0) + 1
 
-    print("\nBy namespace:")
+    print("\nBy namespace (catalog entries):")
     for ns, count in sorted(ns_counts.items(), key=lambda x: -x[1]):
         print(f"  {ns}: {count}")
 
@@ -457,12 +517,12 @@ def main():
 
     # Validate
     p_validate = subparsers.add_parser(
-        "validate", help="Validate agent YAMLs against the KORA schema"
+        "validate", help="Validate KORA agent workspaces against the schema"
     )
 
     # Stats
     p_stats = subparsers.add_parser(
-        "stats", help="Show monorepo statistics from the catalog"
+        "stats", help="Show monorepo statistics for workspaces and catalog entries"
     )
 
     # Intake

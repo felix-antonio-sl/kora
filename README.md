@@ -8,12 +8,13 @@ Fusiona 6 repositorios (koda, fxsl, gorenuble, tde, orko, korvo) en una estructu
 
 | Metrica | Valor |
 |---------|-------|
-| Artifacts totales (catalogo) | 515 |
-| Knowledge bases | 212 |
-| Agentes (workspaces) | 41 |
-| Skills (endofuntores lazy-load) | 139 |
-| Specs fundacionales | 4 |
-| Namespaces activos | 9 |
+| Artifacts totales (catalogo) | 640 |
+| Knowledge bases | 255 |
+| Agentes (workspaces) | 43 |
+| Artefactos bootstrap de agente (catalogo) | 172 |
+| Skills (endofuntores lazy-load) | 213 |
+| Specs fundacionales | 7 |
+| Namespaces activos | 12 |
 | Broken URNs | 0 |
 
 ## Arquitectura
@@ -22,7 +23,7 @@ Fusiona 6 repositorios (koda, fxsl, gorenuble, tde, orko, korvo) en una estructu
 kora/
   specs/           Especificaciones fundacionales (gobernanza, formatos, agentes)
   knowledge/       KBs organizados por namespace (gn, fxsl, tde, legal, ...)
-  agents/          41 agentes como workspaces KORA
+  agents/          43 agentes como workspaces KORA
   catalog/         Registro maestro de URNs
   skills/          Federacion de skills
   scripts/         CLI (kora index/resolve/health/validate/stats)
@@ -73,7 +74,7 @@ urn:{namespace}:kb:{id}          Knowledge base
 urn:{namespace}:agent-bootstrap:{nombre}-{tipo}:{version}   Archivo de agente
 ```
 
-Namespaces: **kora**, **fxsl**, **gn**, **tde**, **orko**, **korvo**, **gov**, **legal**, **mgmt**
+Namespaces: **gn**, **kora**, **fxsl**, **dev**, **ops**, **pro**, **tde**, **legal**, **korvo**, **gov**, **orko**, **mgmt**
 
 El catalogo (`catalog/catalog_master_kora.yml`) es la fuente de verdad. `kora health` verifica integridad referencial.
 
@@ -84,7 +85,7 @@ scripts/kora index      # Reconstruir catalogo desde todos los artifacts
 scripts/kora resolve    # Resolver URN a path fisico
 scripts/kora health     # Verificar referencias URN rotas
 scripts/kora validate   # Validar workspaces (requiere jsonschema)
-scripts/kora stats      # Estadisticas del monorepo
+scripts/kora stats      # Estadisticas del monorepo (workspaces + catalogo)
 scripts/kora intake     # Estado del pipeline de ingesta
 ```
 
@@ -108,27 +109,30 @@ No hay build system — es un monorepo de especificaciones y documentacion. Port
 
 | Namespace | Dominio | Artifacts |
 |-----------|---------|-----------|
-| **fxsl** | Teoria de categorias, gist, MBT, agentes personales | 141 |
-| **gn** | Gobierno Regional de Nuble (GORE) | 144 |
-| **kora** | Framework, specs, manual OpenClaw | 145 |
-| **tde** | Transformacion digital del Estado | 33 |
+| **gn** | Gobierno Regional de Nuble (GORE) | 149 |
+| **kora** | Framework, specs, manual OpenClaw | 104 |
+| **fxsl** | Teoria de categorias, gist, MBT, agentes personales | 93 |
+| **dev** | Ingenieria de desarrollo y automatizacion | 74 |
+| **ops** | Operaciones, CI, despliegue y verificacion | 70 |
+| **pro** | Dominios profesionales especializados | 52 |
+| **tde** | Transformacion digital del Estado | 41 |
 | **legal** | Normativa legal chilena | 21 |
-| **orko** | Metodologia de complejidad organizacional | 12 |
+| **korvo** | Asistente personal | 15 |
 | **gov** | Gobierno central, plataformas | 9 |
-| **korvo** | Asistente personal | 6 |
+| **orko** | Metodologia de complejidad organizacional | 8 |
 | **mgmt** | Management, estructura del Estado | 4 |
 
 ## Agentes por Namespace
 
 | Namespace | Agentes | Ejemplos |
 |-----------|---------|----------|
-| **fxsl** | 15 | arquitecto-categorico, ontologista-gist, ingeniero-software-composicional |
-| **gn** | 12 | goreologo, ingeniero-goreos, gestor-ipr-360, erp-gore |
-| **kora** | 7 | guardian, architect, transformer, cartographer |
-| **ops** | 3 | tester, sim-orchestrator, ci-assistant |
-| **korvo** | 2 | korvo-assistant, korax |
-| **tde** | 1 | digitrans |
-| **orko** | 1 | arquitecto-orko |
+| **gn** | 13 | goreologo, gestor-ipr-360, erp-gore |
+| **dev** | 7 | analyst, reviewer, sentinel |
+| **ops** | 7 | ci-assistant, integrador, verificador |
+| **fxsl** | 6 | arquitecto-categorico, arquitecto-sistemas-informacion, pensador-generador |
+| **kora** | 5 | clawmaster, curator, custodio |
+| **pro** | 4 | abogado-legislacion-medica, salubrista, salubrista-hah |
+| **korvo** | 1 | korax |
 
 ## Conceptos Clave
 
