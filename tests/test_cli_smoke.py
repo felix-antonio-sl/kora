@@ -29,11 +29,14 @@ class KoraCliSmokeTests(unittest.TestCase):
         self.assertGreater(payload["total_catalog_entries"], 0)
         self.assertIn("Entradas totales de catalogo", markdown)
 
-    def test_sync_docs_generates_repo_graph_and_fxsl_cat_ledger(self):
+    def test_sync_docs_generates_repo_graph_operating_core_and_fxsl_cat_ledger(self):
         run_cli("sync-docs")
         graph_payload = json.loads((GENERATED_DOCS / "repo-graph.json").read_text(encoding="utf-8"))
+        contracts_payload = json.loads((GENERATED_DOCS / "operating-core-contracts.json").read_text(encoding="utf-8"))
         ledger_payload = json.loads((GENERATED_DOCS / "fxsl-cat-ledger.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
+        self.assertIn("kora", contracts_payload["cohorts"])
+        self.assertEqual(contracts_payload["totals"]["workspaces"], 11)
         self.assertIn("promoted", ledger_payload["status_counts"])
 
     def test_stats_json_matches_generated_payload(self):

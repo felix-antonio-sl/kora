@@ -1,0 +1,301 @@
+{
+  "agent_scenarios": [
+    {
+      "id": "forgemaster-create-valid-workspace",
+      "workspace": "kora/forgemaster",
+      "requires_states": ["S-CREATE", "S-VALIDATE"],
+      "requires_skills": ["CM-WORKSPACE-SCAFFOLDER", "CM-AGENT-VALIDATOR"],
+      "requires_tools": ["workspace_write", "health_check"],
+      "requires_routes": ["kora/custodio"],
+      "requires_evidence_terms": ["PASS|FAIL", "Reporte"]
+    },
+    {
+      "id": "forgemaster-repair-invalid-workspace",
+      "workspace": "kora/forgemaster",
+      "requires_states": ["S-OPERATE", "S-IMPROVE"],
+      "requires_skills": ["CM-AGENT-SURGEON", "CM-AGENT-EVOLVER"],
+      "requires_tools": ["workspace_read", "workspace_write"],
+      "requires_evidence_terms": ["issues", "fix"]
+    },
+    {
+      "id": "curator-koraficate-valid-source",
+      "workspace": "kora/curator",
+      "requires_states": ["S-KORAFICATE", "S-AUDIT"],
+      "requires_skills": ["CM-KORAFICATOR", "CM-ARTIFACT-AUDITOR"],
+      "requires_tools": ["artifact_write", "artifact_validate"],
+      "requires_routes": ["kora/custodio"],
+      "requires_evidence_terms": ["reporte estructurado", "PASS|FAIL"]
+    },
+    {
+      "id": "curator-audit-repair-failed-artifact",
+      "workspace": "kora/curator",
+      "requires_states": ["S-AUDIT", "S-REPAIR"],
+      "requires_skills": ["CM-ARTIFACT-AUDITOR", "CM-ARTIFACT-SURGEON"],
+      "requires_tools": ["artifact_read", "artifact_validate"],
+      "requires_evidence_terms": ["metricas", "PASS|FAIL"]
+    },
+    {
+      "id": "custodio-detect-drift",
+      "workspace": "kora/custodio",
+      "requires_states": ["S-SALUD", "S-AUDITORIA"],
+      "requires_skills": ["CM-HEALTH-INSPECTOR", "CM-ESTRUCTURA-AUDITOR"],
+      "requires_tools": ["repo_health", "filesystem_scan", "git_status"],
+      "requires_evidence_terms": ["ERROR|WARNING|OK", "Reporte con hallazgos"]
+    },
+    {
+      "id": "custodio-reindex-report",
+      "workspace": "kora/custodio",
+      "requires_states": ["S-CATALOGO", "S-SALUD"],
+      "requires_skills": ["CM-CATALOG-STEWARD", "CM-HEALTH-INSPECTOR"],
+      "requires_tools": ["catalog_sync", "urn_resolve", "repo_health"],
+      "requires_routes": ["kora/forgemaster", "kora/curator"],
+      "requires_evidence_terms": ["metricas", "reporte"]
+    },
+    {
+      "id": "planner-decompose-epic",
+      "workspace": "dev/planner",
+      "requires_states": ["S-EPICA", "S-HISTORIA"],
+      "requires_skills": ["CM-EPIC-DECOMPOSER", "CM-STORY-REFINER"],
+      "requires_tools": ["epic_decompose", "story_refine"],
+      "requires_routes": ["dev/coder", "dev/reviewer"],
+      "requires_allowed_terms": ["descomponer epicas", "refinar historias"]
+    },
+    {
+      "id": "planner-detect-eval-gap-in-retro",
+      "workspace": "dev/planner",
+      "requires_states": ["S-RETRO"],
+      "requires_skills": ["CM-RETRO-ANALYST"],
+      "requires_tools": ["cycle_metrics"],
+      "requires_evidence_terms": ["gaps en evals", "reporte"]
+    },
+    {
+      "id": "coder-story-to-tdd-plan",
+      "workspace": "dev/coder",
+      "requires_states": ["S-PLANIFICAR", "S-IMPLEMENTAR"],
+      "requires_skills": ["CM-STORY-CONSUMER", "CM-IMPLEMENTATION-PLANNER", "CM-TDD-EXECUTOR"],
+      "requires_tools": ["story_consume", "implementation_plan", "test_write", "type_define"],
+      "requires_routes": ["dev/planner", "dev/reviewer"],
+      "requires_evidence_terms": ["TDD", "tests"]
+    },
+    {
+      "id": "coder-regression-bugfix",
+      "workspace": "dev/coder",
+      "requires_states": ["S-DEPURAR", "S-INTEGRAR"],
+      "requires_skills": ["CM-BUG-HUNTER", "CM-PR-GENERATOR"],
+      "requires_tools": ["test_write", "code_generate", "pr_generate"],
+      "requires_evidence_terms": ["test de regresion", "tests"]
+    },
+    {
+      "id": "reviewer-clean-pr-verdict",
+      "workspace": "dev/reviewer",
+      "requires_states": ["S-REVIEW", "S-VEREDICTO"],
+      "requires_skills": ["CM-CODE-REVIEWER", "CM-VERDICT-SYNTHESIZER"],
+      "requires_tools": ["pr_read", "test_coverage_audit", "verdict_issue"],
+      "requires_evidence_terms": ["APPROVE", "evidencia especifica"]
+    },
+    {
+      "id": "reviewer-defective-pr-finding-evidence",
+      "workspace": "dev/reviewer",
+      "requires_states": ["S-SEGURIDAD", "S-VEREDICTO"],
+      "requires_skills": ["CM-SECURITY-REVIEWER", "CM-VERDICT-SYNTHESIZER"],
+      "requires_tools": ["security_scan", "eval_runner", "verdict_issue"],
+      "requires_routes": ["dev/coder", "dev/planner"],
+      "requires_evidence_terms": ["archivo, linea", "REJECT", "REQUEST_CHANGES"]
+    },
+    {
+      "id": "sentinel-eval-gap-detection",
+      "workspace": "dev/sentinel",
+      "requires_states": ["S-EVAL-AUDIT", "S-PURPLE-CARD"],
+      "requires_skills": ["CM-EVAL-AUDITOR", "CM-PURPLE-CARD-GENERATOR"],
+      "requires_tools": ["eval_coverage", "purple_card_create"],
+      "requires_evidence_terms": ["gaps", "requiere aprobacion humana"]
+    },
+    {
+      "id": "sentinel-context-drift-detection",
+      "workspace": "dev/sentinel",
+      "requires_states": ["S-CONTEXT-HYGIENE", "S-SELF-EVAL"],
+      "requires_skills": ["CM-CONTEXT-AUDITOR", "CM-SELF-EVALUATOR"],
+      "requires_tools": ["context_diff", "self_eval_run"],
+      "requires_routes": ["dev/coder", "dev/reviewer", "dev/planner"],
+      "requires_evidence_terms": ["drift", "tasa <50%"]
+    },
+    {
+      "id": "orquestador-route-pr-golden-path",
+      "workspace": "ops/orquestador-swarm",
+      "requires_states": ["S-EVENTO", "S-GOLDEN-PATH"],
+      "requires_skills": ["CM-EVENT-CLASSIFIER", "CM-GOLDEN-PATH-ROUTER"],
+      "requires_tools": ["event_classify", "golden_path_execute", "agent_dispatch"],
+      "requires_routes": ["ops/verificador", "ops/security"],
+      "requires_evidence_terms": ["golden path", "agentes especializados despachados"]
+    },
+    {
+      "id": "orquestador-backpressure-or-circuit",
+      "workspace": "ops/orquestador-swarm",
+      "requires_states": ["S-BACKPRESSURE", "S-CIRCUITO"],
+      "requires_skills": ["CM-BACKPRESSURE-CONTROLLER", "CM-CIRCUIT-BREAKER-MANAGER"],
+      "requires_tools": ["backpressure_control", "circuit_breaker_manage", "system_status"],
+      "requires_evidence_terms": ["Backpressure es automatica", "Circuit breakers son automaticos"]
+    },
+    {
+      "id": "verificador-reject-at-layer",
+      "workspace": "ops/verificador",
+      "requires_states": ["S-VERIFICAR", "S-CAPA-CI", "S-CAPA-SEGURIDAD"],
+      "requires_skills": ["CM-VERIFICATION-ORCHESTRATOR", "CM-CI-LAYER", "CM-SECURITY-LAYER"],
+      "requires_tools": ["ci_execute", "security_scan", "verification_report"],
+      "requires_evidence_terms": ["RECHAZADO", "evidencia por capa"]
+    },
+    {
+      "id": "verificador-human-gate-destructive",
+      "workspace": "ops/verificador",
+      "requires_states": ["S-CAPA-HUMANA", "S-END"],
+      "requires_skills": ["CM-HUMAN-GATE", "CM-CONTEXT-MANAGER"],
+      "requires_tools": ["human_gate", "verification_report"],
+      "requires_routes": ["ops/observer", "ops/deployer"],
+      "requires_tool_output_terms": ["gate_result", "approved|rejected|timeout"],
+      "requires_evidence_terms": ["NUNCA aprobar automaticamente", "recomendacion + evidencia"]
+    },
+    {
+      "id": "security-contextual-analysis",
+      "workspace": "ops/security",
+      "requires_states": ["S-ANALISIS-PR", "S-META-EVAL"],
+      "requires_skills": ["CM-PR-SECURITY-ANALYZER", "CM-SELF-AUDITOR"],
+      "requires_tools": ["pr_security_analyze", "self_audit"],
+      "requires_evidence_terms": ["ARCHITECTURE.md", "evidence (file:line)", "real_impact"]
+    },
+    {
+      "id": "security-prompt-injection-detection",
+      "workspace": "ops/security",
+      "requires_states": ["S-RUNTIME", "S-ADVERSARIAL"],
+      "requires_skills": ["CM-RUNTIME-MONITOR", "CM-ADVERSARIAL-TESTER"],
+      "requires_tools": ["runtime_monitor", "adversarial_test"],
+      "requires_routes": ["ops/deployer"],
+      "requires_evidence_terms": ["prompt injection agent-to-agent", "veto"]
+    }
+  ],
+  "handoff_scenarios": [
+    {
+      "id": "handoff-planner-to-coder",
+      "from": "dev/planner",
+      "to": "dev/coder",
+      "requires_explicit_route": true,
+      "source_requires_tools": ["story_refine"],
+      "target_requires_tools": ["story_consume", "implementation_plan"]
+    },
+    {
+      "id": "handoff-coder-to-reviewer",
+      "from": "dev/coder",
+      "to": "dev/reviewer",
+      "requires_explicit_route": true,
+      "source_requires_tools": ["pr_generate"],
+      "target_requires_tools": ["pr_read", "verdict_issue"]
+    },
+    {
+      "id": "handoff-reviewer-to-verificador",
+      "from": "dev/reviewer",
+      "to": "ops/verificador",
+      "requires_explicit_route": false,
+      "source_requires_tools": ["verdict_issue", "eval_runner"],
+      "target_requires_tools": ["diversity_check", "verification_report"],
+      "target_requires_evidence_terms": ["evidencia por capa"]
+    },
+    {
+      "id": "handoff-security-to-verificador",
+      "from": "ops/security",
+      "to": "ops/verificador",
+      "requires_explicit_route": false,
+      "source_requires_tools": ["pr_security_analyze"],
+      "target_requires_tools": ["security_scan", "verification_report"],
+      "target_requires_evidence_terms": ["hallazgos", "evidencia por capa"]
+    },
+    {
+      "id": "handoff-forgemaster-to-custodio",
+      "from": "kora/forgemaster",
+      "to": "kora/custodio",
+      "requires_explicit_route": true,
+      "source_requires_tools": ["health_check", "workspace_write"],
+      "target_requires_tools": ["repo_health", "catalog_sync"]
+    },
+    {
+      "id": "handoff-curator-to-custodio",
+      "from": "kora/curator",
+      "to": "kora/custodio",
+      "requires_explicit_route": true,
+      "source_requires_tools": ["artifact_write", "artifact_validate"],
+      "target_requires_tools": ["catalog_sync", "urn_resolve"]
+    }
+  ],
+  "institutional_loops": [
+    {
+      "id": "loop-agent-lifecycle",
+      "steps": ["kora/forgemaster", "kora/custodio"],
+      "required_states_by_step": {
+        "kora/forgemaster": ["S-DESIGN", "S-CREATE", "S-VALIDATE"],
+        "kora/custodio": ["S-SALUD", "S-CATALOGO"]
+      },
+      "required_tools_by_step": {
+        "kora/forgemaster": ["workspace_read", "workspace_write", "health_check"],
+        "kora/custodio": ["repo_health", "catalog_sync", "urn_resolve"]
+      },
+      "required_routes": [["kora/forgemaster", "kora/custodio"]]
+    },
+    {
+      "id": "loop-knowledge-lifecycle",
+      "steps": ["kora/curator", "kora/custodio"],
+      "required_states_by_step": {
+        "kora/curator": ["S-KORAFICATE", "S-AUDIT"],
+        "kora/custodio": ["S-CATALOGO", "S-SALUD"]
+      },
+      "required_tools_by_step": {
+        "kora/curator": ["artifact_write", "artifact_validate"],
+        "kora/custodio": ["catalog_sync", "urn_resolve", "repo_health"]
+      },
+      "required_routes": [["kora/curator", "kora/custodio"]]
+    },
+    {
+      "id": "loop-delivery-verification",
+      "steps": ["dev/planner", "dev/coder", "dev/reviewer", "ops/security", "ops/verificador", "ops/orquestador-swarm"],
+      "required_states_by_step": {
+        "dev/planner": ["S-HISTORIA"],
+        "dev/coder": ["S-PLANIFICAR", "S-INTEGRAR"],
+        "dev/reviewer": ["S-REVIEW", "S-VEREDICTO"],
+        "ops/security": ["S-ANALISIS-PR"],
+        "ops/verificador": ["S-VERIFICAR", "S-CAPA-SEGURIDAD"],
+        "ops/orquestador-swarm": ["S-GOLDEN-PATH"]
+      },
+      "required_tools_by_step": {
+        "dev/planner": ["story_refine"],
+        "dev/coder": ["implementation_plan", "pr_generate"],
+        "dev/reviewer": ["pr_read", "verdict_issue"],
+        "ops/security": ["pr_security_analyze"],
+        "ops/verificador": ["security_scan", "verification_report"],
+        "ops/orquestador-swarm": ["golden_path_execute", "agent_dispatch"]
+      },
+      "required_routes": [["dev/planner", "dev/coder"], ["dev/coder", "dev/reviewer"]]
+    }
+  ],
+  "domain_canary": {
+    "workspace": "gn/goreologo",
+    "requires_states": ["S-ANALISIS"],
+    "requires_skills": ["CM-INTAKE", "CM-KB-GUIDANCE", "CM-DOMAIN-ANALYZER", "CM-SYNTHESIZER"],
+    "requires_tools": ["catalog_resolve", "kb_route"],
+    "requires_allowed_kb_min": 20,
+    "core_support": [
+      {
+        "workspace": "kora/forgemaster",
+        "requires_states": ["S-VALIDATE", "S-OPERATE"],
+        "requires_tools": ["workspace_read", "health_check"]
+      },
+      {
+        "workspace": "kora/custodio",
+        "requires_states": ["S-SALUD", "S-CATALOGO"],
+        "requires_tools": ["repo_health", "catalog_sync", "urn_resolve"]
+      }
+    ],
+    "sample_allowed_kb": [
+      "urn:gn:kb:matriz-integracion-organica",
+      "urn:gn:kb:intro-gores-nuble",
+      "urn:gn:kb:gestion-prpto",
+      "urn:gn:kb:gestion-ipr"
+    ]
+  }
+}
