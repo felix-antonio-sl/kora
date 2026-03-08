@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-structure-principles:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:dgi-virtual-structure-principles:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-STRUCTURE-PRINCIPLES
 
 ## Proposito
 Evaluar y proponer ajustes a la estructura organizacional del GORE aplicando principios de diseno organizacional compatibles con el marco legal de GOREs chilenos.
 
-## I/O
-
+## Input/Output
 - **Input:** Contexto de ajuste estructural del GORE (reorganizacion, nueva funcion, integracion, cambio dependencia)
 - **Output:** Propuesta de ajuste estructural con justificacion, restricciones legales e impacto en personas
 

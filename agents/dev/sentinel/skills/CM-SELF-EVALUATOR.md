@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:sentinel-self-evaluator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:sentinel-self-evaluator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-SELF-EVALUATOR
 
 ## Proposito
 El sentinel se evalua a si mismo. Verifica que sus propuestas mejoran realmente el enjambre. Si no, lo reporta.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Recopilar tarjetas purpura aplicadas en el Ciclo anterior.
@@ -29,5 +34,8 @@ El sentinel se evalua a si mismo. Verifica que sus propuestas mejoran realmente 
 7. Presentar reporte de auto-evaluacion al Operador con total transparencia.
 8. Si CRITICO: proponer recalibracion del sentinel como tarjeta purpura meta (que el Operador decida).
 
-## Output
+## Signature Output
 Auto-eval: {tarjetas_evaluadas: int, tasa_mejora: float, tarjetas_efectivas[], tarjetas_sin_efecto[], tarjetas_contraproducentes[], adversarial_result?: PASS|FAIL, veredicto: SANO|WARNING|CRITICO, propuesta_recalibracion?}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

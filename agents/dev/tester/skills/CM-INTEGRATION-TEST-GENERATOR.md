@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:tester-integration-test-generator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:tester-integration-test-generator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTEGRATION-TEST-GENERATOR
 
 ## Proposito
@@ -16,7 +17,6 @@ Genera tests de integracion para boundaries entre componentes. Verifica que los 
 - **Output:** Tests de integracion: {tests: [{boundary, test_name, test_code, tipo: api|db|service}]}
 
 ## Procedimiento
-
 ### Paso 1: Identificar boundaries
 - Leer ARCHITECTURE.md o diagrama de componentes si disponible.
 - Clasificar boundaries por tipo:

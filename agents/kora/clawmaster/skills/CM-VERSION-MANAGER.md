@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-version-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-version-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-VERSION-MANAGER
 
 ## Proposito
 Gestiona el ciclo de vida de versiones OpenClaw: identificar version actual, evaluar upgrades disponibles, planificar migracion, ejecutar upgrade, verificar, y rollback si necesario.
 
-## I/O
-
+## Input/Output
 - **Input:** target_version: string | null (version destino, null=latest stable), canal: enum(stable|beta|dev) | null
 - **Output:** UpgradeReport (ver Signature Output)
 
 ## Procedimiento
-
 ### Paso 1: Estado Actual
 - `openclaw --version` — version instalada
 - `openclaw status` — estado general
@@ -74,7 +73,6 @@ openclaw security audit  # sin regresiones
 4. Verificar rollback: `openclaw doctor`
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | version_anterior | string | Version pre-upgrade |

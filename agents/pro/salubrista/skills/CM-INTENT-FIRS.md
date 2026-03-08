@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-intent-firs:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-intent-firs:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-FIRS
 
-## Propósito
+## Proposito
 Clasificar la intención del usuario y posicionar el problema en la dimensión FIRS correcta (I/II/III), determinando el estado FSM destino. Previene errores de nivel antes de activar razonamiento.
 
-## I/O
-
+## Input/Output
 - **Input:** consulta: string (texto libre del usuario)
 - **Output:** IntentResult { dimension: "I"|"II"|"III"|"multi", estado_destino: string, nivel_analisis: string, clarificacion_requerida: bool }
 
 ## Procedimiento
-
 1. LEER consulta completa. Identificar objeto principal: ¿es un individuo/paciente? ¿es una población/grupo? ¿es una red/sistema/organización?
 2. POSICIONAR en FIRS:
    - IF objeto = individuo + razonamiento clínico/diagnóstico/terapéutico → Dim I → S-CLINICAL
@@ -32,7 +31,6 @@ Clasificar la intención del usuario y posicionar el problema en la dimensión F
 5. OUTPUT: declarar Dim FIRS + estado destino + nivel de análisis + si requiere clarificación
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | dimension | string | "I" / "II" / "III" / "multi" |

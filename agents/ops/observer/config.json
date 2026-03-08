@@ -15,25 +15,20 @@
   },
   "tools": {
     "allow": [
-      "health_check",
-      "anomaly_detect",
-      "deploy_timeline",
-      "correlate",
-      "diagnosis_propose",
       "alert_send",
+      "anomaly_detect",
+      "correlate",
+      "deploy_timeline",
+      "diagnosis_propose",
+      "health_check",
       "heartbeat",
       "kb_route"
     ],
-    "deny": [
-      "deploy",
-      "rollback_execute",
-      "code_write",
-      "config_modify"
-    ]
+    "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
-    "max_concurrent": 0
+    "max_concurrent": 1
   },
   "heartbeat_interval": "60s",
   "alert_channels": {
@@ -48,5 +43,14 @@
   "observer_infra_separation": true,
   "model_routing": {
     "tier_default": "T2"
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": [
+      "deploy",
+      "rollback_execute",
+      "code_write",
+      "config_modify"
+    ]
   }
 }

@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:tester-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:tester-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona el contexto multi-turno del tester: detecta cambios de tarea, mantiene estado de verificacion entre turnos, gestiona historias y ACs en scope.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Comparar tema del mensaje actual vs estado FSM activo.
@@ -23,5 +28,8 @@ Gestiona el contexto multi-turno del tester: detecta cambios de tarea, mantiene 
 7. IF TERMINAR → transicionar a S-END con resumen.
 8. IF FUERA → aplicar regla de rejection.
 
-## Output
+## Signature Output
 Clasificacion: {tipo, historia_activa?, acs_en_scope?, tests_generados?, suite_ejecutada?, alerta?}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

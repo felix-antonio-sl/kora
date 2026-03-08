@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-security-layer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-security-layer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar la capa 4 de verificacion: eval de seguridad. Analisis estatico + dinamico + check de privilegios. Contextual con ARCHITECTURE.md. Priorizar hallazgos por impacto real, no por volumen. Alineado con Swarm::Ops 8.2 (agente-security activo).
 
-## I/O
-
+## Input/Output
 - **Input:** changeset: Changeset, architecture_context?: ArchitectureDoc
 - **Output:** security_result: {status: pass|fail, static_analysis: {findings: Finding[], critical: number, high: number, medium: number, low: number}, dynamic_analysis: {status: pass|fail, findings: Finding[]}, privilege_check: {status: pass|fail, escalations: PrivilegeEscalation[]}, contextualized: boolean, prioritized_findings: Finding[]}
 
 ## Procedimiento
-
 1. **Analisis estatico (SAST)**:
    - Ejecutar SAST sobre changeset
    - Detectar patrones: inyeccion SQL, XSS, SSRF, path traversal, secrets hardcoded, dependencias vulnerables
@@ -43,7 +40,6 @@ Ejecutar la capa 4 de verificacion: eval de seguridad. Analisis estatico + dinam
    - Hallazgos medios/bajos → status = pass con warnings
 
 ## Signature Output
-
 ```yaml
 security_result:
   status: "pass"

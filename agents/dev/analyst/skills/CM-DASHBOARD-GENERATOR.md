@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:analyst-dashboard-generator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:analyst-dashboard-generator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-DASHBOARD-GENERATOR
 
 ## Proposito

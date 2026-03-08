@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:tester-coverage-reporter:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:tester-coverage-reporter:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-COVERAGE-REPORTER
 
 ## Proposito
@@ -16,7 +17,6 @@ Calcula y reporta cobertura de tests por criterio de aceptacion, por componente 
 - **Output:** Reporte de cobertura: {cobertura_por_ac, cobertura_por_componente, cobertura_por_tipo, gaps[], recomendaciones[]}
 
 ## Procedimiento
-
 ### Paso 1: Mapear ACs a tests
 - Listar todos los ACs de las historias en scope.
 - Para cada AC, buscar tests que lo cubren (por naming convention, por tag, por mapping explicito).

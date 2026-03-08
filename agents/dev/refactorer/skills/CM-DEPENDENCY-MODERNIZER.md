@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:refactorer-dependency-modernizer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:refactorer-dependency-modernizer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-DEPENDENCY-MODERNIZER
 
 ## Proposito
@@ -16,7 +17,6 @@ Detecta dependencias outdated y patrones deprecados. Propone y ejecuta actualiza
 - **Output:** Plan de modernizacion, actualizaciones aplicadas con verificacion de tests, reporte de migracion.
 
 ## Procedimiento
-
 ### Paso 1: Auditar Dependencias
 - Leer manifest del proyecto.
 - Comparar versiones actuales contra latest disponible.
@@ -69,7 +69,6 @@ Detecta dependencias outdated y patrones deprecados. Propone y ejecuta actualiza
 - SIEMPRE obtener aprobacion del Operador para major updates.
 
 ## Signature Output
-
 ```markdown
 ## Modernizacion: {zona}
 

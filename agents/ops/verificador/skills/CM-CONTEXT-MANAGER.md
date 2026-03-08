@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-context-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar contexto multi-turno de la sesion de verificacion. Mantener estado acumulado (clasificaciones, capas ejecutadas, evidencia) y generar resumen de sesion en nodo terminal.
 
-## I/O
-
+## Input/Output
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, verifications: VerificationResult[]}
 - **Output:** session_summary: {verifications_executed: number, verdicts: VerdictCount, layers_stats: LayerStats, diversity_providers: ProviderPair[], timeline: TimelineEntry[], recommendation: string}
 
 ## Procedimiento
-
 1. **Agregar verificaciones ejecutadas**:
    - Contar verificaciones completas: aprobadas vs rechazadas
    - Agrupar por tipo de cambio: lectura, escritura, destructiva
@@ -42,7 +39,6 @@ Gestionar contexto multi-turno de la sesion de verificacion. Mantener estado acu
    - IF todo ok → "Sesion de verificacion completada sin anomalias."
 
 ## Signature Output
-
 ```yaml
 session_summary:
   verifications_executed: 4

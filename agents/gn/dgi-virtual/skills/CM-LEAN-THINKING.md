@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-lean-thinking:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:dgi-virtual-lean-thinking:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-LEAN-THINKING
 
 ## Proposito
 Aplicar pensamiento Lean para identificar valor, eliminar desperdicios y proponer mejoras en procesos del GORE Nuble desde perspectiva DGI.
 
-## I/O
-
+## Input/Output
 - **Input:** Proceso del GORE Nuble a analizar con perspectiva Lean
 - **Output:** Diagnostico Lean con desperdicios, propuesta TO-BE y metricas de seguimiento
 

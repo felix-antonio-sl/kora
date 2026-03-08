@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:korvo:skill:korax-planificacion:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:korvo:skill:korax-planificacion:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Planificación matutina (Módulo 3 PCA). Asigna compromisos a bloques del día según calendario, contexto energético y estado del operador.
 
-## I/O
-
+## Input/Output
 - **Input:** date: string, calendar: CalendarBlocks[], commitments: Item[] (NEXT.md), operator_state: {energy, mood}
 - **Output:** plan: DailyPlan {bloques_asignados, modo_por_bloque, timebox_por_compromiso}
 
 ## Procedimiento
-
 ### Paso 0: Check-in (ambas ramas)
 
 Antes de planificar, verificar estado del operador:
@@ -45,7 +42,6 @@ Antes de planificar, verificar estado del operador:
 **Duración:** 5 minutos máximo.
 
 ## Signature Output
-
 ```
 ☀️ Plan del día:
 - {HH:MM}-{HH:MM}: {MODO} → {compromiso} ({timebox}min)

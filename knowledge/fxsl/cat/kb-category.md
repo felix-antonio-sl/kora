@@ -50,7 +50,7 @@ Composition: if A XRef→ B and B XRef→ C, path A → B → C exists.
 
 **KB-INV-REQUIRES-ACYCLIC** (Severity: CRITICAL) — requires graph is acyclic (DAG). No chain A requires B requires ... requires A. Procedure: directed graph of REQUIRES; DFS or Kahn cycle detection; cycle → CRITICAL.
 
-**KB-INV-CATALOG-COMPLETE** (Severity: MEDIUM) — ∀ artifact in /knowledge/cat/: ∃ entry in catalog_master. Procedure: list all .koda.yml in knowledge/cat/; extract URN from each; verify in catalog_master_fxsl.yml.
+**KB-INV-CATALOG-COMPLETE** (Severity: MEDIUM) — ∀ artifact in `knowledge/fxsl/cat/`: ∃ entry in `catalog/catalog_master_kora.yml`. Procedure: list all Markdown artifacts in `knowledge/fxsl/cat/`; extract URN from each; verify in `catalog/catalog_master_kora.yml`.
 
 **KB-INV-URN-UNIQUE** (Severity: CRITICAL) — ∀ URN u: |{A ∈ KB : urn(A) = u}| = 1. Procedure: extract all URNs from catalog; detect duplicates.
 
@@ -87,7 +87,7 @@ Use: identify conceptual overlap between artifacts.
 ## Global Audit Procedure
 
 Steps:
-1. Inventory: list all artifacts in knowledge/cat/**/*.koda.yml; list catalog entries; compare (orphans and ghosts).
+1. Inventory: list all artifacts in `knowledge/fxsl/cat/**/*.md`; list catalog entries; compare (orphans and ghosts).
 2. Verify KB-INV-CATALOG-COMPLETE.
 3. Verify KB-INV-URN-UNIQUE.
 4. Verify KB-INV-VERSION-CONSISTENT.

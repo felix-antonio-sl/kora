@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:goreologo-domain-analyzer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:goreologo-domain-analyzer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-DOMAIN-ANALYZER
 
 ## Proposito
 Analizar en profundidad el dominio institucional de una consulta GORE: estructura normativa, actores, instrumentos, flujos y contexto especifico Nuble.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta GORE clasificada por CM-INTAKE con dimension institucional identificada
 - **Output:** Analisis estructurado en chunks con etiquetas de certeza y vacios identificados
 

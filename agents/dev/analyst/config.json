@@ -14,18 +14,14 @@
   },
   "tools": {
     "allow": [
-      "analysis",
-      "metrics_read",
-      "kb_read"
+      "backlog_health",
+      "dashboard_generate",
+      "kb_route",
+      "metrics_collect",
+      "retro_report",
+      "trend_analyze"
     ],
-    "deny": [
-      "filesystem_write",
-      "code_execution",
-      "git",
-      "web_search",
-      "deploy",
-      "config_write"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -39,5 +35,20 @@
   },
   "model_routing": {
     "tier_default": "T1"
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "analysis",
+      "metrics_read",
+      "kb_read"
+    ],
+    "deny": [
+      "filesystem_write",
+      "code_execution",
+      "git",
+      "web_search",
+      "deploy",
+      "config_write"
+    ]
   }
 }

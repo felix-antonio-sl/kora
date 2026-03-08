@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-regression-layer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-regression-layer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar la capa 2 de verificacion: eval de regresion con dataset parcialmente humano. Verificar que el cambio no rompe outputs existentes. Si golden dataset disponible, usar como anchor de referencia.
 
-## I/O
-
+## Input/Output
 - **Input:** changeset: Changeset, dataset: {golden?: GoldenDataset, regression: RegressionDataset}
 - **Output:** regression_result: {status: pass|degraded|warn, cases_total: number, cases_matched: number, cases_degraded: number, degradations: Degradation[], golden_anchor_used: boolean, delta: DeltaReport}
 
 ## Procedimiento
-
 1. **Verificar disponibilidad de dataset**:
    - IF regression dataset disponible → proceder
    - IF no hay dataset → status = warn, registrar "Sin dataset de regresion. Pass condicional. ACCION REQUERIDA: crear dataset."
@@ -42,7 +39,6 @@ Ejecutar la capa 2 de verificacion: eval de regresion con dataset parcialmente h
    - IF solo degradaciones media → pass con warnings
 
 ## Signature Output
-
 ```yaml
 regression_result:
   status: "pass"

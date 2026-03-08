@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-code-contributor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-code-contributor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CODE-CONTRIBUTOR
 
 ## Proposito
 Analiza el codebase de OpenClaw, identifica areas de mejora, evalua viabilidad y valor, y produce propuestas concretas (issue specs o PR drafts con diff conceptual) para contribuir al proyecto.
 
-## I/O
-
+## Input/Output
 - **Input:** area: string (descripcion del area de mejora), tipo_hint: enum(bug|feature|refactor|docs|performance|dx) | null
 - **Output:** ContributionProposal (ver Signature Output)
 
 ## Procedimiento
-
 ### Paso 1: Identificar Area de Mejora
 
 | Tipo | Ejemplos | Fuente de Deteccion |
@@ -99,7 +98,6 @@ Clasificar: QUICK_WIN (alto impacto, baja complejidad) | WORTHWHILE (alto impact
 - Si aprobado: guiar creacion de issue/PR en GitHub
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | tipo | string | Tipo de contribucion |

@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-koraficator:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-koraficator:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-KORAFICATOR
 
 ## Proposito
 Ejecuta el Funtor F: DocHumano → KORA/MD conforme a md-spec §6. Transforma documentos humanos en artefactos descriptivos RAG-optimizados preservando fidelidad absoluta.
 
-## I/O
-
+## Input/Output
 - **Input:** documento_fuente: Document (documento humano a koraficiar), plan: ArtifactPlan | null (plan de CM-ARTIFACT-DESIGNER, si existe)
 - **Output:** KoraficationResult (ver Signature Output)
 
 ## Procedimiento
-
 ### Fase 0: Pre-Analisis Documental (NUEVA)
 Antes de cualquier transformacion, escanear el documento fuente:
 1. **Inventario MEAT/FAT/SKELETON**:
@@ -146,7 +145,6 @@ Reemplaza verificacion adversarial simple. Ejecutar siempre (no solo si >15K o a
    ```
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artefacto | string | Artefacto KORA/MD completo (frontmatter + cuerpo) |

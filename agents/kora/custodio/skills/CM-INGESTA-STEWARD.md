@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:custodio-ingesta-steward:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:custodio-ingesta-steward:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INGESTA-STEWARD
 
 ## Proposito
 Gestiona el pipeline de ingesta del repo KORA: monitorea objetos en cada etapa (inbox→source→drafts→knowledge), reporta estado y recomienda acciones.
 
-## I/O
-
+## Input/Output
 - **Input:** (ninguno — escanea pipeline completo)
 - **Output:** IngestaReport (ver Signature Output)
 
@@ -29,7 +29,6 @@ Gestiona el pipeline de ingesta del repo KORA: monitorea objetos en cada etapa (
 7. Si usuario aprueba delegacion, formular instruccion para kora/curator.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | etapas | {etapa, conteo, objetos, accion_recomendada}[] | Status por etapa del pipeline |

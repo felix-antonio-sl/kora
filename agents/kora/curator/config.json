@@ -13,13 +13,13 @@
   },
   "tools": {
     "allow": [
+      "artifact_list",
+      "artifact_read",
+      "artifact_validate",
+      "artifact_write",
       "catalog_resolve",
       "kb_route",
-      "artifact_read",
-      "artifact_write",
-      "artifact_validate",
-      "spec_consult",
-      "artifact_list"
+      "spec_consult"
     ],
     "deny": []
   },
@@ -36,5 +36,9 @@
       "max_artifact_size_tokens": 50000,
       "max_segments_per_artifact": 20
     }
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

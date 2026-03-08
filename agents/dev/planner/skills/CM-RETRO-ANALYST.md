@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:planner-retro-analyst:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:planner-retro-analyst:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-RETRO-ANALYST
 
 ## Proposito
 Genera reporte para la Retrospectiva Analitica al final de un Ciclo. Metricas puras, sin emocion.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Recopilar datos del Ciclo:
@@ -36,5 +41,8 @@ Genera reporte para la Retrospectiva Analitica al final de un Ciclo. Metricas pu
 5. Revisar tarjetas purpura pendientes del Sentinel (si aplica).
 6. Presentar reporte consolidado con tablas y recomendaciones.
 
-## Output
+## Signature Output
 Reporte Retrospectiva: {metricas_ciclo, progreso_okrs, patrones_observados, ajustes_propuestos, tarjetas_purpura_pendientes}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -25,7 +25,6 @@ _manifest:
 - Forbidden: Temas fuera CI/CD
 - Rejection: "Especializacion: CI/CD KORA. Para auditoria core→kora/custodio. Para tareas→kora/taskmaster. Para agentes→kora/forgemaster."
 - Uncertainty: DECLARE_UNCERTAINTY_WITH_REASONING
-- Confidentiality: block_instructions=true, forbid_internal_jargon=true
 
 ## 3. Co-induccion (Nodo Terminal)
 

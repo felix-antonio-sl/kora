@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-kb-guidance:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:dgi-virtual-kb-guidance:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-KB-GUIDANCE
 
 ## Proposito
 Identificar y priorizar las fuentes KB relevantes para una consulta DGI, orientando la busqueda de informacion antes de formular una respuesta.
 
-## I/O
-
+## Input/Output
 - **Input:** Tema de consulta DGI a resolver
 - **Output:** Lista priorizada de KB con URNs resueltos y razon de relevancia
 

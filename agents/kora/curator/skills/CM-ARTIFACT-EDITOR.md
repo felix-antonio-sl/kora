@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-editor:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-artifact-editor:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-ARTIFACT-EDITOR
 
 ## Proposito
 Modifica artefactos de conocimiento existentes preservando todos los invariantes de la spec correspondiente. Gestiona versionamiento semantico.
 
-## I/O
-
+## Input/Output
 - **Input:** artefacto: path | URN (artefacto existente), cambios: ChangeRequest (descripcion de modificaciones solicitadas)
 - **Output:** EditResult (ver Signature Output)
 
@@ -38,7 +38,6 @@ Modifica artefactos de conocimiento existentes preservando todos los invariantes
 6. VERIFICAR resultado contra checklist correspondiente (invocar CM-ARTIFACT-AUDITOR mentalmente).
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artefacto_editado | string | Artefacto con modificaciones aplicadas |

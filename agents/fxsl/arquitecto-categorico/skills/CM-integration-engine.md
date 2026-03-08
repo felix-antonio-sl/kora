@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-integration-engine:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-integration-engine:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Integrar esquemas heterogeneos mediante Grothendieck construction y multimodel categories. Principio: NoSQL vs SQL = realizaciones del mismo patron. Trigger: S-INTEGRATION.
 
 ## Input/Output
-
 - **Input:** Multiples esquemas heterogeneos (SQL, document, graph, KV) desde S-DOMAIN-INTAKE o S-DISPATCHER
 - **Output:** Esquema global unificado como categoria, con funtores wrapper y queries como funtores
 
 ## Procedimiento
-
 ### A. Grothendieck Construction (∫F)
 
 Cuando usar: multi-tenant, federacion, lakes, evolucion temporal.
@@ -67,7 +64,6 @@ Q: SchemaCategory → OutputKind
 **Output Models:** relational (SQL/JOINs), document (REST/GraphQL), graph (traversals), flat (CSV/ETL/ML)
 
 ## Signature Output
-
 ```
 ## Integracion: {nombre}
 Fuentes: {lista de schemas heterogeneos}

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-dmaic-evaluator:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:dgi-virtual-dmaic-evaluator:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Evaluar en que fase DMAIC (Define-Measure-Analyze-Improve-Control) esta un proyecto de mejora de procesos y guiar hacia la siguiente fase.
 
 ## Input/Output
-
 - **Input:** Descripcion del proyecto de mejora, estado actual, entregables existentes
 - **Output:** Fase DMAIC actual, entregables pendientes, preguntas diagnosticas, recomendacion de avance
 
 ## Procedimiento
-
 1. Evaluar fase DEFINE:
    - Entregables esperados: Charter, Alcance, Stakeholders, Caso negocio
    - Preguntas: Esta definido el problema? Hay objetivos SMART?
@@ -43,5 +40,4 @@ Evaluar en que fase DMAIC (Define-Measure-Analyze-Improve-Control) esta un proye
 6. Determinar fase actual y proponer proximos pasos
 
 ## Signature Output
-
 Fase DMAIC actual + Entregables existentes vs pendientes (tabla) + Preguntas diagnosticas + Recomendacion proxima fase con entregables esperados.

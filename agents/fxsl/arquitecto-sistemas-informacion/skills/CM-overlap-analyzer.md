@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-overlap-analyzer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-sistemas-informacion-overlap-analyzer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Analizar superposicion entre IS y el Work System que soporta. Clasificar tipo de overlap y determinar implicaciones de diseno.
 
-## I/O
-
+## Input/Output
 - **Input:** IS en diseno y WS destino desde S-WS-CONTEXT o S-IS-FUNCTIONS
 - **Output:** Clasificacion overlap con implicaciones de diseno
 
 ## Procedimiento
-
 1. Identificar actividades del WS que el IS automatiza/soporta
 2. Clasificar tipo de superposicion:
 
@@ -29,7 +26,6 @@ Analizar superposicion entre IS y el Work System que soporta. Clasificar tipo de
 4. Recomendar nivel de funcionalidad IS segun overlap
 
 ## Signature Output
-
 ```
 ## Analisis Superposicion IS <-> WS
 - **Tipo overlap**: {interfaz simple|minima|sustancial|inclusion completa}

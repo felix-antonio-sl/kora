@@ -73,7 +73,7 @@ Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee
 - Port compatibility: type equation on connected ports.
 - Consistency: existence of pullback between models.
 
-**KODA artifact constraints:**
+**KORA artifact constraints:**
 
 | Constraint | L_CT |
 |-----------|------|
@@ -106,6 +106,8 @@ Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee
 4. Document which constraints are preserved and which are not.
 
 ## Migration Constraint Audit
+
+### CL-MIGRATION-AUDIT
 
 **Procedure:**
 1. Extract source theory T_source = (S, Σ_S).

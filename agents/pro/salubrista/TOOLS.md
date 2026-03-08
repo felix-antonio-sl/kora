@@ -4,7 +4,7 @@ _manifest:
   type: "bootstrap_tools"
 ---
 
-## kb_route (gestión de redes)
+## kb_route
 
 - **Firma:** topic: string → urn: string
 - **Cuando usar:** Toda consulta sobre gestión de redes asistenciales, unidades, urgencias, salud mental, herramientas/KPIs. Primer paso ante cualquier problema de Dim III o con componente de red. Consultar ANTES de web o conocimiento del modelo.
@@ -20,7 +20,7 @@ _manifest:
 | KPIs, BPMN, plantillas operativas, FHIR/HL7, simulación, modelo de madurez digital | `urn:pro:kb:gestion-redes-herramientas` |
 | Índice general, glosario, normativa CL + internacional, contextualización local | `urn:pro:kb:gestion-redes-indice` |
 
-## kb_route (FIRS)
+## kb_route
 
 - **Firma:** topic: string → urn:pro:kb:firs-framework-integrado-razonamiento-salud
 - **Cuando usar:** Toda consulta sobre razonamiento clínico (Dim I), epidemiología/inferencia causal/modelado (Dim II), gestión sanitaria macro (Dim III), ejes transversales, puentes metodológicos, tensiones estructurales del framework.

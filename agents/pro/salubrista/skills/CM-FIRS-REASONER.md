@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-firs-reasoner:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-firs-reasoner:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-FIRS-REASONER
 
-## Propósito
+## Proposito
 Aplicar el framework FIRS para razonamiento clínico individual (Dim I) o inferencia epidemiológica/poblacional (Dim II). Garantiza segregación de niveles, uso correcto de herramientas y mediación obligatoria cuando se cruzan dimensiones.
 
-## I/O
-
+## Input/Output
 - **Input:** dim: "I"|"II", problema: string, contexto: object (datos clínicos o epidemiológicos disponibles)
 - **Output:** ReasoningResult { análisis: string, herramientas_aplicadas: string[], conclusiones: string[], incertidumbre_residual: string, puente_requerido: bool, dim_destino_puente: string? }
 
 ## Procedimiento
-
 ### Ruta Dim I — Cognición Clínica Individual
 
 1. POSICIONAR: nivel = individuo. Objeto: razonamiento clínico frente al paciente.
@@ -62,7 +61,6 @@ Aplicar el framework FIRS para razonamiento clínico individual (Dim I) o infere
 7. OUTPUT: análisis epi con rama identificada, herramientas aplicadas, resultado/estimado, riesgo de falacia ecológica evaluado, puente a Dim I si requerido.
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | dim_aplicada | string | "I" o "II" |

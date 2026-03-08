@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-component-builder:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-component-builder:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-COMPONENT-BUILDER
 
 ## Proposito
 Rellena cada componente del workspace con contenido real, respetando estrictamente la segregacion por componente (agent-spec-md v7.2.0 §3).
 
-## I/O
-
+## Input/Output
 - **Input:** agent_path: string (ruta al workspace), blueprint: AgentBlueprint (output de CM-AGENT-DESIGNER)
 - **Output:** ImplementationReport (ver Signature Output)
 
@@ -44,7 +44,6 @@ Rellena cada componente del workspace con contenido real, respetando estrictamen
 8. Verificar segregacion cruzada: ningun componente contiene contenido de otro.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | componentes_escritos | string[] | Lista de componentes implementados |

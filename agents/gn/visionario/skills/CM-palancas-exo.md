@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:visionario-palancas-exo:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:visionario-palancas-exo:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Catalogo de mecanismos ExO-GORE adaptados a Nuble.
 
-## I/O
-
+## Input/Output
 - **Input:** Iniciativa de innovacion, aceleracion o fondo de desafio
 - **Output:** Propuesta con atributos ExO, mecanismo implementacion, metricas Triple Bottom Line
 
 ## Procedimiento
-
 ATRIBUTOS SCALE (externos):
 - S (Staff on Demand): pool expertos, freelancers, asesorias puntuales
 - C (Community & Crowd): consultas ciudadanas, crowdsourcing, desafios abiertos
@@ -37,5 +34,4 @@ MECANISMOS:
 METRICAS: Triple Bottom Line — Innovacion + Inclusion + Sostenibilidad
 
 ## Signature Output
-
 Propuesta con: atributo SCALE/IDEAS, mecanismo, fases, metricas TBL, riesgos, factores criticos exito.

@@ -4,8 +4,9 @@ _manifest:
   type: "bootstrap_tools"
 ---
 
-## /inbox
+## inbox
 
+- **Etiqueta legacy:** `/inbox`
 - **Firma:** inbox(texto: string) → Confirmación { item: string, timestamp: ISO8601 }
 - **Precondición:** Ninguna.
 - **Postcondición:** Item agregado a INBOX.md con timestamp.
@@ -14,8 +15,9 @@ _manifest:
 - **Cuando usar:** Captura rápida al buffer. Estado: S_CAPTURE.
 - **Cuando NO usar:** Fuera de captura.
 
-## /triaje
+## triaje
 
+- **Etiqueta legacy:** `/triaje`
 - **Firma:** triaje() → SesiónTriaje { items_procesados: int, eliminados: int, incubados: int, comprometidos: int, waiting: int }
 - **Precondición:** INBOX.md tiene ≥1 item sin procesar.
 - **Postcondición:** Buffer vacío. Items distribuidos a NEXT.md, WAITING.md, SOMEDAY.md o eliminados.
@@ -25,8 +27,9 @@ _manifest:
 - **Cuando usar:** Procesamiento del buffer. Estado: S_TRIAGE.
 - **Cuando NO usar:** Buffer vacío.
 
-## /plan
+## plan
 
+- **Etiqueta legacy:** `/plan`
 - **Firma:** plan() → PlanDiario { bloques_asignados: Bloque[], compromisos_sugeridos: Compromiso[] }
 - **Precondición:** NEXT.md tiene ≥1 compromiso pendiente.
 - **Postcondición:** Bloques del día asignados con compromisos.
@@ -36,8 +39,9 @@ _manifest:
 - **Cuando usar:** Planificación matutina. Estado: S_PLAN.
 - **Cuando NO usar:** Fuera de rutina matutina.
 
-## /done
+## done
 
+- **Etiqueta legacy:** `/done`
 - **Firma:** done(item: string) → Confirmación { item: string, timestamp: ISO8601 }
 - **Precondición:** Item existe en NEXT.md.
 - **Postcondición:** Item movido de NEXT.md a DONE.md con timestamp de cierre.
@@ -46,8 +50,9 @@ _manifest:
 - **Cuando usar:** Marcar compromiso completado. Cualquier estado.
 - **Cuando NO usar:** Item no existe en NEXT.md.
 
-## /sync
+## sync
 
+- **Etiqueta legacy:** `/sync`
 - **Firma:** sync() → ReporteSinc { compromisos_activos: int, throughput: Throughput, alertas: Alerta[], candidatos_bancarrota: Item[] }
 - **Precondición:** Han pasado ≥7 días desde última sincronización.
 - **Postcondición:** Reporte generado. Decisiones del operador aplicadas.
@@ -56,8 +61,9 @@ _manifest:
 - **Cuando usar:** Sincronización estratégica quincenal. Estado: S_SYNC.
 - **Cuando NO usar:** Fuera de rutina de sincronización.
 
-## /estado
+## estado
 
+- **Etiqueta legacy:** `/estado`
 - **Firma:** estado() → Dashboard { compromisos: ConteoModo, waiting: int, inbox: int, alertas: Alerta[] }
 - **Precondición:** Ninguna.
 - **Postcondición:** Dashboard instantáneo generado. Sin modificaciones de estado.
@@ -66,8 +72,9 @@ _manifest:
 - **Cuando usar:** Consulta rápida de estado. Cualquier momento.
 - **Cuando NO usar:** Nunca restringido.
 
-## /emergencia
+## emergencia
 
+- **Etiqueta legacy:** `/emergencia`
 - **Firma:** emergencia() → ModoEmergencia { fase: "bancarrota" | "gracia" | "reconstruccion" }
 - **Precondición:** Ninguna (manual o por detección automática).
 - **Postcondición:** Agente entra en S_COLLAPSE. Inicia protocolo de 3 fases.
@@ -76,8 +83,9 @@ _manifest:
 - **Cuando usar:** Colapso detectado o percibido. Estado: S_COLLAPSE.
 - **Cuando NO usar:** Sistema saludable.
 
-## /caos
+## caos
 
+- **Etiqueta legacy:** `/caos`
 - **Firma:** caos(horas: number) → ModoCaos { inicio: ISO8601, fin_estimado: ISO8601 }
 - **Precondición:** horas > 0.
 - **Postcondición:** Agente entra en S_CHAOS. Silenciado total hasta expiración.
@@ -86,8 +94,9 @@ _manifest:
 - **Cuando usar:** Operador necesita tiempo sin sistema. Estado: S_CHAOS.
 - **Cuando NO usar:** No restringido.
 
-## /delegar
+## delegar
 
+- **Etiqueta legacy:** `/delegar`
 - **Firma:** delegar(scope: "triage" | "plan" | "maintenance" | "full") → Confirmación { scope_activo: string[], expira: ISO8601 }
 - **Precondición:** Ninguna.
 - **Postcondición:** delegation_scope actualizado. Timestamp registrado. Expiración calculada (default: 7 días).
@@ -96,8 +105,9 @@ _manifest:
 - **Cuando usar:** Operador quiere otorgar autonomía al agente.
 - **Cuando NO usar:** No restringido.
 
-## /revocar
+## revocar
 
+- **Etiqueta legacy:** `/revocar`
 - **Firma:** revocar(scope?: "triage" | "plan" | "maintenance" | "all") → Confirmación { scope_activo: string[] }
 - **Precondición:** delegation_scope ≠ none.
 - **Postcondición:** Scope indicado removido (o todos si "all"). Si no queda scope, delegation_scope = none.
@@ -130,7 +140,7 @@ _manifest:
 
 ---
 
-## Matriz de Acceso a Herramientas de Plataforma
+#### Matriz de Acceso a Herramientas de Plataforma
 
 | Herramienta | Acceso | Restricción |
 |---|---|---|

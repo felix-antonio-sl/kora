@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:abogado-legislacion-medica-kb-guidance:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:pro:skill:abogado-legislacion-medica-kb-guidance:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Routing de consultas juridicas a artefactos KB especificos. Mapea categoria de consulta a URN de conocimiento correspondiente.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta juridica clasificada por categoria tematica
 - **Output:** URN del artefacto KB que contiene la respuesta normativa
 
 ## Procedimiento
-
 1. Clasificar consulta por categoria tematica
 2. Buscar en routing map la categoria correspondiente
 3. Resolver URN via catalogo (SOURCE_OF_TRUTH)
@@ -40,5 +37,4 @@ Routing map:
 - Definiciones de leyes, instituciones, conceptos globales -> urn:legal:kb:index
 
 ## Signature Output
-
 URN resuelto + file path del artefacto KB correspondiente.

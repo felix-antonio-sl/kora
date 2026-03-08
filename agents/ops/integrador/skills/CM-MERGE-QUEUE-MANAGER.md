@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:integrador-merge-queue-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:integrador-merge-queue-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar la merge queue: priorizar PRs por valor de negocio, aplicar backpressure cuando la cola se satura, reportar metricas de throughput y profundidad de cola.
 
-## I/O
-
+## Input/Output
 - **Input:** action: enqueue|dequeue|prioritize|status|backpressure_check, queue_state: {prs: PRQueueEntry[], threshold: number}, pr?: PRInfo
 - **Output:** queue_update: {depth: number, throughput_per_hour: number, avg_wait_min: number, backpressure: {active: boolean, reason?: string}, ordered_prs: PRQueueEntry[], action_taken: string}
 
 ## Procedimiento
-
 1. **Enqueue**:
    - Recibir PR con metadata: story asociada, prioridad de negocio, riesgo, zona target
    - Asignar posicion en cola segun prioridad de negocio de historia asociada
@@ -41,7 +38,6 @@ Gestionar la merge queue: priorizar PRs por valor de negocio, aplicar backpressu
    - IF backpressure OFF → notificar orquestador: tasa normal
 
 ## Signature Output
-
 ```yaml
 queue_update:
   depth: 18

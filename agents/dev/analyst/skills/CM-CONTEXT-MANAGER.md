@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:analyst-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:analyst-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona el contexto multi-turno del analyst: detecta cambios de tarea, mantiene coherencia entre turnos, preserva el Ciclo y metricas en contexto.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Comparar tema del mensaje actual vs estado FSM activo.
@@ -21,5 +26,8 @@ Gestiona el contexto multi-turno del analyst: detecta cambios de tarea, mantiene
 7. IF TERMINAR → transicionar a S-END.
 8. IF FUERA → aplicar regla de rejection.
 
-## Output
+## Signature Output
 Clasificacion: {tipo, estado_actual, estado_destino, ciclo_en_contexto, metricas_preservadas}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

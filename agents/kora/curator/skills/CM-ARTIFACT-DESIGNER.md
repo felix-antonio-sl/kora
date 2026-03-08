@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-designer:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-artifact-designer:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-ARTIFACT-DESIGNER
 
 ## Proposito
 Planifica la estructura de un nuevo artefacto de conocimiento KORA: determina tipo, namespace, fuente, jerarquia de headings y metadatos.
 
-## I/O
-
+## Input/Output
 - **Input:** intencion: IntentClassification (del CM-INTENT-CLASSIFIER), fuentes: Document[] | null (documentos fuente si existen)
 - **Output:** ArtifactPlan (ver Signature Output)
 
@@ -31,7 +31,6 @@ Planifica la estructura de un nuevo artefacto de conocimiento KORA: determina ti
 7. Presentar plan al usuario: tabla con tipo, namespace, URN, estructura propuesta, fuentes, estrategia de ejecucion.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | tipo | enum(descriptivo\|prescriptivo) | Tipo de artefacto determinado |

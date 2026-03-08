@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:reviewer-code-reviewer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:reviewer-code-reviewer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CODE-REVIEWER
 
 ## Proposito
 Revisa un PR en profundidad: calidad de codigo, convenciones, tipos, tests, estructura. Nucleo del reviewer.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer PR completo: titulo, descripcion, diff, archivos modificados, tests agregados.
@@ -46,5 +51,8 @@ Revisa un PR en profundidad: calidad de codigo, convenciones, tipos, tests, estr
 4. Registrar cada hallazgo con: severidad, archivo:linea, descripcion, sugerencia de fix.
 5. Si hay >3 hallazgos CRITICOS: detener review y recomendar REJECT inmediato.
 
-## Output
+## Signature Output
 Hallazgos: tabla [{severidad, archivo:linea, hallazgo, sugerencia}]. Conteo por severidad.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

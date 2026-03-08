@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:integrador-semantic-merger:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:integrador-semantic-merger:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Verificar coherencia semantica de un PR contra el estado actual de main. No es merge textual — es validacion de que los cambios combinados preservan coherencia arquitectonica, contractual y de naming.
 
-## I/O
-
+## Input/Output
 - **Input:** pr: {diff: string, files: string[], branch: string, metadata: PRInfo}, main_state: {architecture: ArchInfo, conventions: ConventionSet, active_interfaces: InterfaceMap}
 - **Output:** merge_analysis: {status: coherent|incoherent, issues: SemanticIssue[], severity: low|medium|high, recommendation: merge|hold|reject}
 
 ## Procedimiento
-
 1. **Analizar tipos**:
    - Extraer tipos nuevos/modificados del PR
    - Verificar alineacion con tipos existentes en main
@@ -49,7 +46,6 @@ Verificar coherencia semantica de un PR contra el estado actual de main. No es m
 7. **Compilar resultado**: agregar todos los issues, calcular severidad maxima, emitir recomendacion.
 
 ## Signature Output
-
 ```yaml
 merge_analysis:
   pr: "#205"

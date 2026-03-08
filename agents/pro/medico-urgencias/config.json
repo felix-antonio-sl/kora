@@ -9,16 +9,20 @@
   },
   "tools": {
     "allow": [
-      "parse_clinical_input",
-      "analyze_image"
+      "analyze_image",
+      "parse_clinical_input"
     ],
-    "deny": [
-      "web_search",
-      "code_execution"
-    ]
+    "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
     "max_concurrent": 1
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": [
+      "web_search",
+      "code_execution"
+    ]
   }
 }

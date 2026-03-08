@@ -24,13 +24,15 @@
     "allow": [
       "catalog_resolve",
       "kb_route"
-    ],
-    "deny": [
-      "web_search"
     ]
   },
   "sub_agents": {
     "max_depth": 0,
     "max_concurrent": 1
+  },
+  "runtime_capabilities": {
+    "deny": [
+      "web_search"
+    ]
   }
 }

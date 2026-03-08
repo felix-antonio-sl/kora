@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:planner-epic-decomposer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:planner-epic-decomposer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-EPIC-DECOMPOSER
 
 ## Proposito
 Descompone una epica en historias de usuario con anatomia completa segun Xanpan::Agents §5.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer epica y KR asociado. Entender el valor de negocio que la epica debe entregar.
@@ -27,5 +32,8 @@ Descompone una epica en historias de usuario con anatomia completa segun Xanpan:
 5. Verificar que las historias cubren la epica completa sin gaps ni overlap.
 6. Presentar historias en tabla para aprobacion del PO.
 
-## Output
+## Signature Output
 Lista de historias: tabla con {id, who_what_why, num_acs, valor, complejidad, riesgo}. Detalle expandible por historia.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

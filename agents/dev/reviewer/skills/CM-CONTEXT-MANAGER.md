@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:reviewer-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:reviewer-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona contexto multi-turno del reviewer: detecta cambios de tarea, verifica diversidad de modelo, mantiene estado de review entre turnos.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Comparar tema del mensaje actual vs estado FSM activo.
@@ -24,5 +29,8 @@ Gestiona contexto multi-turno del reviewer: detecta cambios de tarea, verifica d
 7. IF TERMINAR → S-END con resumen.
 8. IF FUERA → rejection.
 
-## Output
+## Signature Output
 Clasificacion: {tipo, pr_activo?, fase_actual?, diversidad_ok: bool, alerta?}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:coder-pr-generator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:coder-pr-generator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-PR-GENERATOR
 
 ## Proposito
 Genera un Pull Request completo con descripcion, contexto y checklist de verificacion.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Verificar pre-condiciones:
@@ -36,5 +41,8 @@ Genera un Pull Request completo con descripcion, contexto y checklist de verific
 4. Listar archivos modificados con resumen de cambio por archivo.
 5. Si la historia es destructiva: marcar PR como requiere aprobacion humana.
 
-## Output
+## Signature Output
 PR: {titulo, cuerpo_markdown, archivos_modificados[], checklist_status, requiere_aprobacion: bool}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

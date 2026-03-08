@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-is-artifact-generator:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-sistemas-informacion-is-artifact-generator:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Producir artefactos de IS desde modelos de datos y funciones. Seleccionar formato, generar artefacto concreto, validar consistencia.
 
-## I/O
-
+## Input/Output
 - **Input:** Modelo datos, funciones IS, flujos desde S-ARTIFACT-GENERATION
 - **Output:** Artefactos concretos en formato seleccionado
 
 ## Procedimiento
-
 1. Seleccionar formato(s) de salida segun necesidad
 2. Aplicar funtor de traduccion modelo → formato target
 3. Mantener trazabilidad con modelo fuente
@@ -36,7 +33,6 @@ Producir artefactos de IS desde modelos de datos y funciones. Seleccionar format
 | Migration Scripts | .sql | ALTER/CREATE |
 
 ## Signature Output
-
 ```
 ## Artefacto: {formato}
 ### Metadata

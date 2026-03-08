@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:security-runtime-monitor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:security-runtime-monitor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Monitorear patrones de comportamiento en produccion para detectar amenazas de seguridad. No es un WAF — entiende que es "normal" para la aplicacion y detecta desviaciones significativas del baseline. Detecta lo que reglas estaticas no pueden: ataques lentos, escalacion gradual, prompt injection entre agentes.
 
-## I/O
-
+## Input/Output
 - **Input:** baseline: BehaviorBaseline, current: BehaviorSnapshot, agent_communications: AgentMessage[]
 - **Output:** assessment: {classification: INFO|SUSPICIOUS|THREAT|ACTIVE_ATTACK, anomalies: Anomaly[], agent_injection_attempts: InjectionAttempt[], recommended_action: string}
 
 ## Procedimiento
-
 1. **Establecer/cargar baseline**:
    - Patrones normales de acceso: horarios, volumenes por endpoint, geolocalizacion, user agents
    - Patrones normales de payload: tamanos, encoding, caracteres, campos
@@ -44,7 +41,6 @@ Monitorear patrones de comportamiento en produccion para detectar amenazas de se
    - ACTIVE_ATTACK → alertar operador INMEDIATO, bloqueo preventivo
 
 ## Signature Output
-
 ```yaml
 assessment:
   classification: "THREAT"

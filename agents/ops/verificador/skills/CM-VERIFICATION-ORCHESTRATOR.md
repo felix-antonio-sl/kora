@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-verification-orchestrator:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-verification-orchestrator:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Orquestar la ejecucion secuencial de las 5 capas de verificacion adaptadas al tipo de cambio. Determinar capas requeridas segun riesgo. Ejecutar en orden fijo. Fail-fast si alguna capa falla.
 
-## I/O
-
+## Input/Output
 - **Input:** changeset: {files: string[], pr_metadata: PRInfo, diff_summary: string, coder_info: {provider: string, model: string}}
 - **Output:** orchestration_result: {change_type: lectura|escritura|destructiva, layers_required: number[], layers_executed: LayerResult[], verdict: APROBADO|RECHAZADO, failed_layer?: string, evidence: Evidence[]}
 
 ## Procedimiento
-
 1. **Clasificar tipo de cambio**:
    - Analizar archivos modificados y diff summary
    - .md, .yml (config), .env.example, docs/ → lectura
@@ -39,7 +36,6 @@ Orquestar la ejecucion secuencial de las 5 capas de verificacion adaptadas al ti
 5. **Compilar verdict**: IF todas capas requeridas pass → APROBADO. IF alguna fail → RECHAZADO con capa fallida y razon.
 
 ## Signature Output
-
 ```yaml
 orchestration_result:
   change_type: "escritura"

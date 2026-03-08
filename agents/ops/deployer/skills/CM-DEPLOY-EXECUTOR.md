@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:deployer-deploy-executor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:deployer-deploy-executor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar el deploy segun la estrategia seleccionada. Orquestar: build, push, apply, activacion de feature flag. Registrar cada accion para auditoria y rollback.
 
-## I/O
-
+## Input/Output
 - **Input:** strategy: StrategyConfig, changeset: Changeset, environment: string
 - **Output:** deploy_result: {status: success|failed, version: string, environment: string, flag_status: FlagStatus, actions_log: ActionLog[], timestamp: ISO8601, baseline_snapshot: MetricsBaseline}
 
 ## Procedimiento
-
 1. **Pre-flight checks**:
    - Verificar DoD completo (9/9 pasos)
    - Verificar feature flag creado
@@ -56,7 +53,6 @@ Ejecutar el deploy segun la estrategia seleccionada. Orquestar: build, push, app
 7. **Registrar** actions_log completo para auditoria y rollback.
 
 ## Signature Output
-
 ```yaml
 deploy_result:
   status: "success"

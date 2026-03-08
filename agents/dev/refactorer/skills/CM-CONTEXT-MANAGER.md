@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:refactorer-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:refactorer-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona el contexto multi-turno del refactorer: detecta cambios de tarea, mantiene estado de refactoring entre turnos, gestiona zona de trabajo activa.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Comparar tema del mensaje actual vs estado FSM activo.
@@ -24,5 +29,8 @@ Gestiona el contexto multi-turno del refactorer: detecta cambios de tarea, manti
 8. IF FUERA → aplicar regla de rejection.
 9. Gestionar regla 70/30: verificar que el contexto cargado es >=70% relevante a la zona de refactoring actual.
 
-## Output
+## Signature Output
 Clasificacion: {tipo, zona_activa?, refactorings_en_progreso?, metricas_baseline?, context_files_cargados[], alerta?}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

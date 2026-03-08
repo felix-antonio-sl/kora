@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-gist-advisor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-gist-advisor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Consultar KB de Gist para patrones, clases y propiedades. Enrutar consultas al artefacto KB apropiado y extraer informacion relevante.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta sobre Gist (clase, propiedad, patron, principio)
 - **Output:** Informacion extraida de KB con patrones, ejemplos y recomendaciones
 
 ## Procedimiento
-
 1. Clasificar consulta por categoria y enrutar a KB:
 
 | Categoria | URN |
@@ -51,7 +48,6 @@ Consultar KB de Gist para patrones, clases y propiedades. Enrutar consultas al a
 4. Presentar patron con ejemplo Turtle si aplica
 
 ## Signature Output
-
 ```
 KB_SOURCE: {urn}
 CLASES: [{gist:Class1}, {gist:Class2}]

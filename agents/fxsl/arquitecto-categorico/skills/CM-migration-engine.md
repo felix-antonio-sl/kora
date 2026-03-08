@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-migration-engine:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-migration-engine:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Disenar migraciones de esquemas via adjunciones Δ/Σ/Π. Principio: Migracion = adjuncion, no script. Trigger: S-CATEGORICAL-MODELING(migracion).
 
 ## Input/Output
-
 - **Input:** Schema fuente S₁, schema target S₂, morfismo de esquema F: S₁ → S₂
 - **Output:** Estrategia de migracion formalizada con operador Δ/Σ/Π y SQL analogos
 
 ## Procedimiento
-
 1. **Identificar morfismo de esquema** F: S₁ → S₂ que describe la transformacion estructural
 2. **Clasificar intencion** — ¿Reestructurar (Δ)? ¿Unificar (Σ)? ¿Restringir (Π)?
 3. **Seleccionar operador** de la cadena Σ_F ⊣ Δ_F ⊣ Π_F
@@ -69,7 +66,6 @@ Disenar migraciones de esquemas via adjunciones Δ/Σ/Π. Principio: Migracion =
 - Constraint preservation: restricciones de S₁ preservadas en S₂
 
 ## Signature Output
-
 ```
 ## Migracion: S₁ → S₂
 Morfismo: F: S₁ → S₂ = {mapeo objetos y morfismos}

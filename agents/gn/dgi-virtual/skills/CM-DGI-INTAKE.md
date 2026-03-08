@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-dgi-intake:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:dgi-virtual-dgi-intake:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-DGI-INTAKE
 
 ## Proposito
 Diagnosticar y clasificar toda solicitud entrante al DGI Virtual: area funcional, tipo de ayuda requerida, urgencia y division de origen.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta entrante del usuario al DGI Virtual
 - **Output:** Clasificacion confirmada: [Area DGI] + [Tipo solicitud] + [Urgencia] + [Division]
 

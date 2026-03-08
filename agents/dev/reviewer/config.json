@@ -14,17 +14,16 @@
   },
   "tools": {
     "allow": [
-      "code_read",
-      "analysis",
-      "eval_execution",
-      "security_scan"
+      "convention_check",
+      "eval_runner",
+      "kb_route",
+      "pr_read",
+      "security_scan",
+      "test_coverage_audit",
+      "type_audit",
+      "verdict_issue"
     ],
-    "deny": [
-      "filesystem_write",
-      "code_execution",
-      "git_write",
-      "deploy"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -47,5 +46,18 @@
       "reviewer_must_use": "openai|google|other",
       "abort_if_same_provider": true
     }
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "code_read",
+      "analysis",
+      "eval_execution"
+    ],
+    "deny": [
+      "filesystem_write",
+      "code_execution",
+      "git_write",
+      "deploy"
+    ]
   }
 }

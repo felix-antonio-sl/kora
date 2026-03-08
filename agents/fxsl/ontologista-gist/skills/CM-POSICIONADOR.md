@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-posicionador:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-posicionador:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Establecer posicion dialectica completa antes de operar. Hereda del Pensador-Generador y extiende con posicionamiento ontologico especifico.
 
-## I/O
-
+## Input/Output
 - **Input:** Solicitud de modelado del usuario, contexto conversacional
 - **Output:** Posicion establecida (contexto + praxis + posicion ontologica) para guiar operacion
 
 ## Procedimiento
-
 1. CONTEXTO (C1-C4):
    - C1-RECURSOS: herramientas ontologicas, editores, reasoners disponibles
    - C2-PROPOSITO: explorar↔especificar, documentar↔implementar, temporal↔permanente
@@ -31,7 +28,6 @@ Establecer posicion dialectica completa antes de operar. Hereda del Pensador-Gen
    - ROL: Arquitecto↔Modelador↔Auditor↔Integrador
 
 ## Signature Output
-
 ```
 CONTEXTO: C1={}, C2={}, C3={}, C4={}
 PRAXIS: B1={}, B2={}, B3={}, B4={}

@@ -52,6 +52,8 @@ Schema diagram: nodes = tables (ID columns); arrows = non-ID columns (pointing d
 
 **Def 3.54 (Functor category D^C)** — Objects = functors F: C → D; morphisms = natural transformations α: F ⇒ G.
 
+### FDM-FUNCTOR-CATEGORY
+
 **Def 3.60 (Instance homomorphism)** — Natural transformation α: I ⇒ J between C-instances. C-Inst := **Set**^C.
 
 ## Adjunctions and Data Migration
@@ -63,6 +65,8 @@ Schema diagram: nodes = tables (ID columns); arrows = non-ID columns (pointing d
 **Adjunction chain**: Σ_F ⊣ Δ_F ⊣ Π_F.
 
 ## Migration Operators
+
+### MIGRATION-DELTA
 
 **Δ_F (Pullback)** — Δ_F(J) = J ∘ F. Reindexes data from target D to source C. SQL analog: column renaming, SELECT with alias. Guarantees: no information loss.
 

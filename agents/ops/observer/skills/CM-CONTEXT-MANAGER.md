@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-context-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar el contexto de sesion de observacion. Mantener estado de anomalias activas, correlaciones en curso y diagnosticos pendientes. Detectar cambios de contexto y transiciones implicitas.
 
-## I/O
-
+## Input/Output
 - **Input:** session_state: {active_anomalies, pending_correlations, pending_diagnoses, heartbeat_status, last_health_check}, new_message: string
 - **Output:** context_update: {context_shift: bool, recommended_state: FSM_STATE, active_context: SessionContext, stale_data: [{item, age, recommendation: REFRESH|DISCARD}]}
 
 ## Procedimiento
-
 1. **Evaluar frescura de datos:**
    - Health check > 5 min: marcar como stale, recomendar REFRESH
    - Anomalia detectada > 30 min sin correlacion: recomendar retomar correlacion
@@ -37,7 +34,6 @@ Gestionar el contexto de sesion de observacion. Mantener estado de anomalias act
    - Si heartbeat falla → alerta maxima prioridad
 
 ## Signature Output
-
 ```yaml
 context_update:
   context_shift: false

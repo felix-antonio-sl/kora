@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:reviewer-eval-executor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:reviewer-eval-executor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-EVAL-EXECUTOR
 
 ## Proposito
 Ejecuta evals automatizados aplicables al PR. Capa 2-4 de las 5 capas de verificacion (Swarm::Ops §4.4).
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Determinar evals aplicables segun tipo de cambio:
@@ -31,5 +36,8 @@ Ejecuta evals automatizados aplicables al PR. Capa 2-4 de las 5 capas de verific
    - Resultado: PASS(dentro de presupuesto) | WARNING(>80% presupuesto) | FAIL(excede presupuesto).
 5. Consolidar resultados de todos los evals ejecutados.
 
-## Output
+## Signature Output
 Resultados: [{tipo_eval, resultado: PASS|FAIL|WARNING|NO_DATASET, detalles}]. Resumen: X evals ejecutados, Y pasaron, Z fallaron.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

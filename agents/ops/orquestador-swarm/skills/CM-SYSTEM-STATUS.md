@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:orquestador-swarm-system-status:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:orquestador-swarm-system-status:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Generar reporte completo del estado del sistema nervioso del enjambre. Consolidar informacion de todos los flujos: eventos en cola, golden paths activos, agentes ejecutando, backpressure, circuit breakers, heartbeats.
 
-## I/O
-
+## Input/Output
 - **Input:** system_snapshot: {event_queue: Event[], active_paths: GoldenPathExecution[], agent_registry: AgentStatus[], backpressure: BackpressureState, circuit_breakers: CircuitBreakerState[], heartbeats: HeartbeatLog[]}
 - **Output:** status_report: {summary: SystemSummary, event_queue: EventQueueReport, golden_paths: GoldenPathReport[], agents: AgentReport[], backpressure: BackpressureReport, circuit_breakers: CircuitBreakerReport[], health: healthy|degraded|critical}
 
 ## Procedimiento
-
 1. **Consolidar cola de eventos**:
    - Total eventos pendientes
    - Desglose por tipo (commit, PR, alerta, etc.)
@@ -51,7 +48,6 @@ Generar reporte completo del estado del sistema nervioso del enjambre. Consolida
    - critical: multiples breakers abiertos OR backpressure critica OR agente critico sin heartbeat
 
 ## Signature Output
-
 ```yaml
 status_report:
   summary:
@@ -67,12 +63,12 @@ status_report:
     - path: "estandar"
       event: "PR #245"
       step: "3/7 eval_regresion"
-      agent: "ops/tester"
+      agent: "ops/verificador"
       elapsed_min: 12
     - path: "hotfix"
       event: "Alert #89"
       step: "2/5 fix_test"
-      agent: "fxsl/coder"
+      agent: "dev/coder"
       elapsed_min: 5
   agents:
     active: 4

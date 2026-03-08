@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:deployer-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:deployer-context-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar contexto multi-turno de la sesion de deploy. Mantener estado acumulado (clasificaciones, estrategias, deploys, verificaciones) y generar resumen de sesion en nodo terminal.
 
-## I/O
-
+## Input/Output
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, deploys: DeployResult[], rollbacks: RollbackResult[]}
 - **Output:** session_summary: {deploys_executed: number, strategies_used: StrategyCount, rollbacks_triggered: number, final_metrics: MetricsSnapshot, timeline: TimelineEntry[]}
 
 ## Procedimiento
-
 1. **Agregar deploys ejecutados**:
    - Contar deploys exitosos vs fallidos
    - Agrupar por estrategia: fast-track, canary, manual
@@ -41,7 +38,6 @@ Gestionar contexto multi-turno de la sesion de deploy. Mantener estado acumulado
    - IF canary expansion exitosa → confirmar estabilidad
 
 ## Signature Output
-
 ```yaml
 session_summary:
   deploys_executed: 3

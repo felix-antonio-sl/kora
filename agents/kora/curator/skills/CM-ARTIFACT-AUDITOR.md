@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-auditor:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-artifact-auditor:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-ARTIFACT-AUDITOR
 
 ## Proposito
 Valida artefactos de conocimiento existentes contra la spec correspondiente. Genera reporte PASS|FAIL con correcciones detalladas por check.
 
-## I/O
-
+## Input/Output
 - **Input:** artefacto: path | URN (artefacto a auditar)
 - **Output:** AuditReport (ver Signature Output)
 
 ## Procedimiento
-
 ### Paso 1: Leer y Clasificar
 1. Leer artefacto completo (frontmatter + cuerpo).
 2. Clasificar tipo: descriptivo(KORA/MD) o prescriptivo(KORA/Spec-MD).
@@ -64,7 +63,6 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 ### Paso 5: Generar Reporte
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | resultado | enum(PASS\|FAIL) | Resultado global de auditoria |

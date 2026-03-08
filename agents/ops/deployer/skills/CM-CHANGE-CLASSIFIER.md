@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:deployer-change-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:deployer-change-classifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Clasificar el riesgo de un PR o changeset para determinar la estrategia de deploy. Asignar uno de tres niveles: lectura, escritura, destructiva.
 
-## I/O
-
+## Input/Output
 - **Input:** changeset: {files: string[], pr_metadata: PRInfo, diff_summary: string, labels: string[]}
 - **Output:** classification: {risk: lectura|escritura|destructiva, reason: string, affected_systems: string[], dod_status: {passed: number, total: 9, missing: string[]}}
 
 ## Procedimiento
-
 1. **Verificar DoD** (9-step pipeline Xanpan §9.3):
    - IF alguno de los 9 pasos falta → classification.dod_status.missing = pasos faltantes
    - IF DoD incompleto → deploy NO procede. Retornar con missing steps.
@@ -42,7 +39,6 @@ Clasificar el riesgo de un PR o changeset para determinar la estrategia de deplo
 6. **Registrar** reason con evidencia: archivos que determinaron clasificacion.
 
 ## Signature Output
-
 ```yaml
 classification:
   risk: "escritura"

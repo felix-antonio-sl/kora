@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-troubleshooter:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-troubleshooter:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-TROUBLESHOOTER
 
 ## Proposito
 Diagnostica y resuelve problemas de OpenClaw por reflejo — el arbol diagnostico esta internalizado, la solucion viene con el problema.
 
-## I/O
-
+## Input/Output
 - **Input:** sintomas: string (descripcion del problema, error messages, logs)
 - **Output:** TroubleshootReport (ver Signature Output)
 
 ## Procedimiento
-
 ### Paso 1: Recopilar Sintomas
 - Error message exacto (si hay)
 - Logs relevantes: `openclaw logs --tail 50`
@@ -48,7 +47,6 @@ Diagnostica y resuelve problemas de OpenClaw por reflejo — el arbol diagnostic
 - Referencia a capitulo/doc relevante
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | sintoma | string | Sintoma reportado |

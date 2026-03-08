@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:opm-specialist-example-builder:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:opm-specialist-example-builder:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Construir ejemplos OPM completos que ilustren conceptos, tipos de enlaces, patrones de modelado y tipos de sistemas, generando OPL textual equivalente.
 
 ## Input/Output
-
 - **Input:** sistema a ejemplificar (string) O concepto a ilustrar (string)
 - **Output:** ejemplo OPM completo con identificacion de elementos + OPL textual
 
 ## Procedimiento
-
 1. DETERMINAR tipo de ejemplo:
    a. Sistema completo (SD) — si usuario pide modelar algo
    b. Concepto aislado — si usuario pide ilustrar un tipo de enlace, entidad o mecanismo
@@ -40,5 +37,4 @@ Construir ejemplos OPM completos que ilustren conceptos, tipos de enlaces, patro
 5. SI sistema completo → incluir los 5 componentes del SD (proposito, funcion, habilitadores, entorno, problema)
 
 ## Signature Output
-
 Ejemplo en Markdown: contexto + tabla elementos + tabla enlaces + OPL completo.

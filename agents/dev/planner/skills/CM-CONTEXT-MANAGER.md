@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:planner-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:planner-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona el contexto multi-turno del planner: detecta cambios de tarea, detecta mezcla de sombreros PO/Operador, mantiene coherencia entre turnos.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Comparar tema del mensaje actual vs estado FSM activo.
@@ -22,5 +27,8 @@ Gestiona el contexto multi-turno del planner: detecta cambios de tarea, detecta 
 8. IF TERMINAR → transicionar a S-END.
 9. IF FUERA → aplicar regla de rejection.
 
-## Output
+## Signature Output
 Clasificacion: {tipo, sombrero_detectado, estado_actual, estado_destino, alerta_sombrero?}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

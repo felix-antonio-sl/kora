@@ -24,15 +24,17 @@
       "kb_route",
       "knowledge_retrieval",
       "web_search"
-    ],
-    "deny": [
-      "code_execution",
-      "workspace_write",
-      "agent_deploy"
     ]
   },
   "sub_agents": {
     "max_depth": 0,
     "max_concurrent": 1
+  },
+  "runtime_capabilities": {
+    "deny": [
+      "code_execution",
+      "workspace_write",
+      "agent_deploy"
+    ]
   }
 }

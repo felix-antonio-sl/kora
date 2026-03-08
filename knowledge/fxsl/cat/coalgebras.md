@@ -24,6 +24,8 @@ Barbosa, L.S. Coalgebra for the Working Software Engineer. Coalgebras as dual ca
 
 ## Core Definitions
 
+### COALGEBRA-DEF
+
 **F-coalgebra.** Pair (U, c: U → F(U)) where U = carrier (state space, hidden) and F = interface functor describing type of observations/transitions. What matters: how the system behaves, not how it is represented internally.
 
 **Interface functors (typical):**
@@ -60,6 +62,8 @@ Barbosa, L.S. Coalgebra for the Working Software Engineer. Coalgebras as dual ca
 - Classes ≈ functors; objects ≈ coalgebras; inheritance ≈ natural transformations.
 
 ## Behavioral Equivalence
+
+### BISIMULATION
 
 **Bisimulation.** R ⊆ U×U: relation such that related states produce indistinguishable behaviors under c. If u₁ R u₂ then F(R)(c(u₁), c(u₂)) holds. Observational equivalence finer than isomorphism of internal states.
 

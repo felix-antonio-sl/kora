@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:orquestador-swarm-circuit-breaker-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:orquestador-swarm-circuit-breaker-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Monitorear los cuatro modos de fallo definidos en Swarm::Ops §10. Detectar condiciones de fallo. Activar circuit breakers para contener. Alertar al Operador con diagnostico. Gestionar recuperacion.
 
-## I/O
-
+## Input/Output
 - **Input:** system_metrics: {deploy_timeline: DeployResult[], pipeline_queue: QueueStatus, infra_state: InfraState, observer_heartbeat: HeartbeatLog, time_window_min: number}
 - **Output:** circuit_status: {breakers: CircuitBreaker[], containment_actions: Action[], operator_alert: AlertPayload, system_health: healthy|degraded|critical}
 
 ## Procedimiento
-
 1. **Evaluar Modo 1: Cascada de deploys defectuosos** (Swarm::Ops §10.1):
    - Contar deploys fallidos en ventana temporal (default 15min)
    - IF failures >= threshold (default 3) → ABRIR circuit breaker
@@ -46,7 +43,6 @@ Monitorear los cuatro modos de fallo definidos en Swarm::Ops §10. Detectar cond
    - Acciones recomendadas que requieren decision humana
 
 ## Signature Output
-
 ```yaml
 circuit_status:
   breakers:

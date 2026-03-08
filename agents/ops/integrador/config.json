@@ -13,19 +13,19 @@
   },
   "tools": {
     "allow": [
-      "semantic_merge",
+      "backpressure_control",
       "coherence_check",
       "conflict_classify",
       "conflict_resolve",
+      "kb_route",
       "queue_manage",
-      "backpressure_control",
-      "kb_route"
+      "semantic_merge"
     ],
     "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
-    "max_concurrent": 0
+    "max_concurrent": 1
   },
   "integration": {
     "tier": "T2",
@@ -42,5 +42,9 @@
       "prioritize_by": "business_value",
       "max_concurrent_merges": 3
     }
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

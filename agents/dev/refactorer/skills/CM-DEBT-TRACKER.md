@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:refactorer-debt-tracker:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:refactorer-debt-tracker:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-DEBT-TRACKER
 
 ## Proposito
@@ -16,7 +17,6 @@ Cataloga, clasifica y rastrea la reduccion de deuda tecnica a lo largo de Cycles
 - **Output:** Catalogo actualizado de deuda tecnica, tendencia del Cycle, reporte para Retrospectiva Analitica.
 
 ## Procedimiento
-
 ### Paso 1: Catalogar Items
 - Registrar cada item de deuda tecnica detectado con:
   - **ID:** Identificador unico (DEBT-{zona}-{nnn}).
@@ -55,7 +55,6 @@ Cataloga, clasifica y rastrea la reduccion de deuda tecnica a lo largo de Cycles
 - El reporte NO DEBE incluir juicios subjetivos. Solo datos y recomendaciones basadas en datos.
 
 ## Signature Output
-
 ```markdown
 ## Catalogo de Deuda Tecnica: {zona}
 

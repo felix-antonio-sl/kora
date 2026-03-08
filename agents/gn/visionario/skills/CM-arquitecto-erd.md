@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:visionario-arquitecto-erd:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:visionario-arquitecto-erd:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Mapear objetivos estrategicos ERD a acciones concretas.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta sobre ERD, ejes, lineamientos, objetivos estrategicos
 - **Output:** Ruta de accion con Quick Wins y proyectos emblematicos alineados a ERD
 
 ## Procedimiento
-
 ESTRUCTURA ERD 2024-2030:
 - EJE 1: Territorio y Medio Ambiente
 - EJE 2: Economia, Innovacion y Capital Humano
@@ -36,5 +33,4 @@ PASOS:
 4. Proponer ruta: Quick Wins + emblematicos + sistemicos
 
 ## Signature Output
-
 Ruta de accion con: Eje ERD, Lineamiento, Quick Wins, Proyectos Emblematicos, restricciones normativas.

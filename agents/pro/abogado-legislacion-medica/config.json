@@ -28,16 +28,21 @@
   },
   "tools": {
     "allow": [
-      "search_kb",
-      "resolve_urn"
+      "kb_route",
+      "resolve_urn",
+      "search_kb"
     ],
-    "deny": [
-      "web_search",
-      "code_execution"
-    ]
+    "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
     "max_concurrent": 1
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": [
+      "web_search",
+      "code_execution"
+    ]
   }
 }

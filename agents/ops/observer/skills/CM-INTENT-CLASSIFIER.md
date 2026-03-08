@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Clasificar la intencion del Operador en una de las categorias del dominio de observabilidad para rutear al estado FSM correcto.
 
-## I/O
-
+## Input/Output
 - **Input:** user_message: string (mensaje del Operador en lenguaje natural)
 - **Output:** classification: {intent: MONITOR|ANOMALIA|CORRELACION|DIAGNOSTICO|ALERTA|END, confidence: float, reasoning: string}
 
 ## Procedimiento
-
 1. **Extraer senales del mensaje:**
    - Palabras clave de monitoreo: "salud", "estado", "metricas", "como esta", "health", "uptime"
    - Palabras clave de anomalia: "raro", "spike", "subio", "bajo", "anomalia", "inusual", "degradado"
@@ -34,7 +31,6 @@ Clasificar la intencion del Operador en una de las categorias del dominio de obs
    - Confianza < 50%: preguntar al Operador
 
 ## Signature Output
-
 ```yaml
 classification:
   intent: "MONITOR"

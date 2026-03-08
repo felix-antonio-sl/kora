@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:refactorer-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:refactorer-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario en la FSM WF-REFACTORER, determinando la capacidad de mejora continua requerida.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Analizar mensaje: palabras clave, artefactos mencionados (archivos, zonas, dependencias, metricas), contexto previo.
@@ -18,8 +23,11 @@ Clasifica la intencion del usuario en la FSM WF-REFACTORER, determinando la capa
 4. Si el mensaje pide mejora de codigo existente sin cambio de comportamiento → REFACTORIZAR.
 5. Si el mensaje menciona dependencias outdated, patrones deprecados o migracion → MODERNIZAR.
 6. Si el mensaje pide catalogo, reporte o tendencia de deuda → DEUDA.
-7. Si el mensaje pide implementar feature nueva → RECHAZAR("Fuera de scope. Para features→fxsl/coder.").
+7. Si el mensaje pide implementar feature nueva → RECHAZAR("Fuera de scope. Para features→dev/coder.").
 8. Emitir clasificacion: {capacidad, confianza}.
 
-## Output
+## Signature Output
 Clasificacion: `capacidad` (enum), `confianza` (alta|media|baja). Si confianza=baja, preguntar.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -44,7 +44,7 @@ _manifest:
 - **Firma:** task: {type: string, golden_path_step: string, payload: any} → dispatch_result: {agent: string, status: dispatched|queued|rejected, reason?: string}
 - **Cuando usar:** S-GOLDEN-PATH. Despachar agente especializado para un paso del golden path.
 - **Cuando NO usar:** Ejecutar directamente tareas que corresponden a agentes especializados.
-- **Notas:** Agentes disponibles: ops/deployer, ops/tester, ops/observer, ops/integrador, ops/security. El orquestador despacha, nunca ejecuta directamente.
+- **Notas:** Agentes disponibles: ops/deployer, ops/verificador, ops/observer, ops/integrador, ops/security. El orquestador despacha, nunca ejecuta directamente.
 
 ## kb_route
 

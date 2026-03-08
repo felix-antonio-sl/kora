@@ -77,11 +77,17 @@ Schultz, P., Spivak, D.I., Vasilakopoulou, C., Wisnesky, R. Extension of the set
 
 **Query composition.** (M;N)(a,c) = ∫^b M(a,b) × N(b,c). Builds complex queries from simple composable blocks.
 
+### UBER-QUERY
+
 **Uber-query.** Bimodule N: L ⇸ S; more general query possibly returning multiple tables or referencing other queries.
 
 ## Theoretical Foundations
 
+### KAN-EXTENSION
+
 **Kan extensions.** Lan_F (left, generalizes Σ_F) and Ran_F (right, generalizes Π_F): best universal approximations to extending functors along F.
+
+### KAN-LIFT
 
 **Kan lift.** Inverse extension problem; requires functor to be fully faithful to preserve semantics.
 

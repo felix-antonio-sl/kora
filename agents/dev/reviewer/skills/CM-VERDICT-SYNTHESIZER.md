@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:reviewer-verdict-synthesizer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:reviewer-verdict-synthesizer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-VERDICT-SYNTHESIZER
 
 ## Proposito
 Consolida hallazgos de todas las fases de review y emite veredicto final justificado.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Recopilar hallazgos de:
@@ -31,5 +36,8 @@ Consolida hallazgos de todas las fases de review y emite veredicto final justifi
    - Si REQUEST_CHANGES o REJECT: lista concreta de acciones para el coder.
 5. Si APPROVE: reconocer brevemente el buen trabajo. No ser efusivo.
 
-## Output
+## Signature Output
 Reporte: {resumen, hallazgos_tabla[], evals_resultados[], veredicto, justificacion, acciones_requeridas[]?}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

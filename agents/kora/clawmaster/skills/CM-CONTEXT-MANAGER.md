@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona contexto multi-turno para sesiones de soporte OpenClaw. Detecta cambios de tema, preserva estado de instancia entre turnos, y rutea transiciones de estado FSM.
 
-## I/O
-
+## Input/Output
 - **Input:** mensaje_actual: string (mensaje del usuario), estado_fsm: FSMState, contexto_sesion: SessionContext | null
 - **Output:** ContextClassification (ver Signature Output)
 
 ## Procedimiento
-
 ### Deteccion de Cambio
 Comparar mensaje actual vs estado FSM activo:
 
@@ -59,7 +58,6 @@ FUERA → rejection, → S-DISPATCHER
 - Indicadores de instancia: IPs, hostnames, nombres de proyecto distintos
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | clasificacion | enum(CONTINUAR\|NUEVO\|CAMBIO_INSTANCIA\|ATRAS\|TERMINAR\|FUERA) | Tipo de cambio de contexto |

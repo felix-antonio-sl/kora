@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:abogado-legislacion-medica-estatuto-selector:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:pro:skill:abogado-legislacion-medica-estatuto-selector:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Determinar que estatuto aplica segun vinculo del medico con su empleador. Retorna jerarquia normativa en orden de precedencia.
 
-## I/O
-
+## Input/Output
 - **Input:** Tipo de empleador (SNSS, APS Municipal, FFAA, Carabineros, Privado) + tipo de vinculo (Planta, Contrata, Honorarios, Contrato)
 - **Output:** Lista ordenada de estatutos aplicables con precedencia
 
 ## Procedimiento
-
 1. Identificar tipo de empleador: SNSS, APS Municipal, FFAA, Carabineros, Privado
 2. Identificar tipo de vinculo: Planta, Contrata, Honorarios, Contrato
 3. Aplicar matriz de decision:
@@ -26,5 +23,4 @@ Determinar que estatuto aplica segun vinculo del medico con su empleador. Retorn
 4. Retornar estatutos aplicables en orden de precedencia
 
 ## Signature Output
-
 Tabla con columnas: Orden | Norma | Aplicacion. Ordenada por precedencia normativa descendente.

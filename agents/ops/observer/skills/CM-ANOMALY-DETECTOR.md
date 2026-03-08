@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-anomaly-detector:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-anomaly-detector:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Analizar series temporales de metricas para detectar anomalias estadisticas. Clasificar severidad y generar reporte de anomalias detectadas.
 
-## I/O
-
+## Input/Output
 - **Input:** metrics: MetricSeries (via anomaly_detect tool), window: duration (default 1h), baseline_window: duration (default 24h)
 - **Output:** anomaly_report: {anomalies_found: int, anomalies: [{metric, type, baseline, current, deviation_sigma, severity, timestamp, trend}], overall_severity: LOW|MEDIUM|HIGH|CRITICAL}
 
 ## Procedimiento
-
 1. **Invocar anomaly_detect** con ventana temporal configurada.
 
 2. **Analizar desviaciones por tipo de anomalia:**
@@ -38,7 +35,6 @@ Analizar series temporales de metricas para detectar anomalias estadisticas. Cla
 5. **Si severidad >= HIGH:** recomendar transicion automatica a S-CORRELACION.
 
 ## Signature Output
-
 ```yaml
 anomaly_report:
   anomalies_found: 2

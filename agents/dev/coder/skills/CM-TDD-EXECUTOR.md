@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:coder-tdd-executor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:coder-tdd-executor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-TDD-EXECUTOR
 
 ## Proposito
 Ejecuta el ciclo TDD estricto para cada tarea del plan de implementacion. Nucleo del coder.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 Para cada tarea del plan aprobado, ejecutar en orden:
@@ -54,5 +59,8 @@ Para cada tarea del plan aprobado, ejecutar en orden:
 - Tipos definidos ANTES de tests. Sin excepciones.
 - El ciclo Red→Green→Refactor no se salta ni se reordena.
 
-## Output
+## Signature Output
 Por tarea: {tipos_definidos[], tests_escritos[], codigo_implementado[], tests_pasan: bool, archivos_modificados[]}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

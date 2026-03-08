@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KORA Agent Config Schema",
+  "description": "Validates the executable config.json envelope for KORA agent workspaces.",
+  "type": "object",
+  "required": ["allowed_kb", "sandbox"],
+  "properties": {
+    "_manifest": {
+      "type": "object",
+      "properties": {
+        "urn": {
+          "type": "string",
+          "pattern": "^urn:[a-z][a-z0-9-]*:agent-bootstrap:[a-z0-9._/-]+:[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "type": {
+          "const": "bootstrap_config"
+        }
+      },
+      "required": ["urn", "type"],
+      "additionalProperties": true
+    },
+    "allowed_kb": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:"
+      }
+    },
+    "sandbox": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "enum": ["strict", "permissive", "isolated", "off"]
+            }
+          },
+          "required": ["mode"],
+          "additionalProperties": true
+        },
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "tools": {
+      "type": "object",
+      "properties": {
+        "allow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deny": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "runtime_capabilities": {
+      "type": "object",
+      "properties": {
+        "allow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deny": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "sub_agents": {
+      "type": "object",
+      "properties": {
+        "max_depth": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_concurrent": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

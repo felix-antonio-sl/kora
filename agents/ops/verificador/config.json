@@ -14,18 +14,18 @@
   "tools": {
     "allow": [
       "ci_execute",
-      "regression_run",
       "diversity_check",
-      "security_scan",
       "human_gate",
-      "verification_report",
-      "kb_route"
+      "kb_route",
+      "regression_run",
+      "security_scan",
+      "verification_report"
     ],
     "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
-    "max_concurrent": 0
+    "max_concurrent": 1
   },
   "verification": {
     "layers_by_risk": {
@@ -59,5 +59,9 @@
     "human_gate_timeout_min": 60,
     "diversity_enforcement": "strict",
     "tier": "T2"
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

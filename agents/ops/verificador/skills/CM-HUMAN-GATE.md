@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-human-gate:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-human-gate:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar la capa 5 de verificacion: aprobacion humana. Solo para cambios destructivos. Presentar resumen completo de todas las capas ejecutadas con evidencia, recomendacion y riesgo. HOLD para aprobacion explicita del Operador. Ultimo firewall antes de deploy.
 
-## I/O
-
+## Input/Output
 - **Input:** layers_executed: LayerResult[], change_type: destructiva, changeset_summary: string, coder_info: CoderInfo
-- **Output:** gate_result: {status: approved|rejected|timeout, operator_comment?: string, timestamp: ISO8601, hold_duration_min: number}
+- **Output:** gate_result: {status: pending_approval|approved|rejected|timeout, operator_comment?: string, timestamp?: ISO8601, hold_duration_min: number}
 
 ## Procedimiento
-
 1. **Compilar resumen para el Operador**:
    - Tabla de capas ejecutadas: capa, estado, detalle clave
    - Tipo de cambio: destructiva (razon de clasificacion)
@@ -30,16 +27,29 @@ Ejecutar la capa 5 de verificacion: aprobacion humana. Solo para cambios destruc
 
 3. **Presentar y HOLD**:
    - Mostrar resumen al Operador
-   - HOLD. Esperar respuesta explicita.
+   - Emitir `gate_result.status = pending_approval` mientras no exista decision humana explicita.
    - NUNCA aprobar automaticamente. NUNCA.
    - NUNCA interpretar silencio como aprobacion.
 
 4. **Procesar respuesta del Operador**:
-   - IF Operador aprueba → status = approved, registrar timestamp
-   - IF Operador rechaza → status = rejected, registrar comment del Operador
-   - IF timeout (configurable, default 60min) → status = timeout, tratar como rechazo
+   - IF existe aprobacion explicita del Operador → status = approved, registrar timestamp
+   - IF existe rechazo explicito del Operador → status = rejected, registrar comment del Operador
+   - IF timeout (configurable, default 60min) sin decision humana → status = timeout, tratar como rechazo
 
 ## Signature Output
+```yaml
+gate_result:
+  status: "pending_approval"
+  operator_comment: null
+  timestamp: null
+  hold_duration_min: 0
+  summary_presented:
+    layers_passed: [1, 2, 3, 4]
+    warnings: 0
+    recommendation: "APROBAR. 4 capas pass, sin hallazgos criticos."
+    change_type: "destructiva"
+    reason: "Schema migration ALTER TABLE orders"
+```
 
 ```yaml
 gate_result:

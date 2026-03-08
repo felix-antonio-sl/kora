@@ -17,13 +17,13 @@
   },
   "tools": {
     "allow": [
-      "catalog_resolve",
-      "kb_route",
-      "workspace_read",
-      "workspace_write",
-      "spec_consult",
       "agent_list",
-      "health_check"
+      "catalog_resolve",
+      "health_check",
+      "kb_route",
+      "spec_consult",
+      "workspace_read",
+      "workspace_write"
     ],
     "deny": []
   },
@@ -40,5 +40,9 @@
       "max_files_per_operation": 20,
       "max_skills_per_agent": 15
     }
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

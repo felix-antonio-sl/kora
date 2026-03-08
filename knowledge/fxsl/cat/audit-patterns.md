@@ -26,8 +26,8 @@ Formal patterns for auditing, diagnosing, and improving DIK artifacts using cate
 | Level | Definition | Examples |
 |-------|-----------|---------|
 | DATA | Instance I: S → Set over schema S. Values, rows, records, observations. Functor assigning sets to objects and functions to morphisms. | SQL table, JSON document, CSV file |
-| INFORMATION | Schema S (finitely presented category). Objects = entities/types; morphisms = relations/attributes; path equations = business constraints. | DDL SQL, JSON Schema, GraphQL Schema, .koda.yml |
-| KNOWLEDGE | Transformations, migrations, abstract models. Functors between categories, adjunctions (Δ/Σ/Π), Kan extensions, behaviors (coalgebras), inference rules. | Migration functor F: S → T, agent spec, .koda.yml with Proc |
+| INFORMATION | Schema S (finitely presented category). Objects = entities/types; morphisms = relations/attributes; path equations = business constraints. | DDL SQL, JSON Schema, GraphQL Schema, KORA Markdown artifact with frontmatter |
+| KNOWLEDGE | Transformations, migrations, abstract models. Functors between categories, adjunctions (Δ/Σ/Π), Kan extensions, behaviors (coalgebras), inference rules. | Migration functor F: S → T, agent spec, KORA artifact with explicit procedure |
 
 Audit focus per level: DATA → referential integrity, completeness, schema consistency. INFORMATION → structural coherence, commutativity, completeness of relations. KNOWLEDGE → functoriality, structure preservation, validity of adjunctions, complete Procs.
 

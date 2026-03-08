@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:custodio-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:custodio-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-CUSTODIO, determinando la capacidad operacional requerida.
 
-## I/O
-
+## Input/Output
 - **Input:** mensaje: string (mensaje del usuario), estado_actual: FSMState (estado FSM vigente), contexto_previo: SessionContext | null
 - **Output:** IntentClassification (ver Signature Output)
 
@@ -23,7 +23,6 @@ Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-CUSTODIO
 4. Emitir clasificacion: {capacidad, confianza}.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | capacidad | enum(SALUD\|CATALOGO\|INGESTA\|AUDITORIA\|CIRUGIA\|EVOLUCION\|END) | Capacidad clasificada |

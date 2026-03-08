@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-audit-engine:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-audit-engine:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Auditoria DIK rigurosa de artefactos de datos. Principio: Artefacto bien formado = objeto en categoria verificable. Trigger: S-AUDIT.
 
 ## Input/Output
-
 - **Input:** Artefacto a auditar (schema, modelo, API, KB) + clasificacion DIK desde S-AUDIT
 - **Output:** Informe con nivel DIK, diagnostico por modo, issues con severidad, mejoras con patron
 
 ## Procedimiento
-
 1. **Clasificar DIK** — DATA (instancia I:S→Set), INFORMATION (schema S), KNOWLEDGE (Cat/adjunciones/comportamiento)
 2. **Seleccionar modo** segun tipo de artefacto
 3. **Ejecutar auditoria** por dimensiones del modo
@@ -94,7 +91,6 @@ Auditoria DIK rigurosa de artefactos de datos. Principio: Artefacto bien formado
 | REDUNDANT-BISIMILAR | Componentes bisimilares redundantes | Identificar y unificar |
 
 ## Signature Output
-
 ```
 ## Auditoria: {nombre artefacto}
 Nivel DIK: {DATA | INFORMATION | KNOWLEDGE}

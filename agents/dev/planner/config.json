@@ -14,16 +14,15 @@
   },
   "tools": {
     "allow": [
-      "analysis",
-      "planning",
-      "kb_read"
+      "backlog_prioritize",
+      "cycle_metrics",
+      "epic_decompose",
+      "kb_route",
+      "okr_structure",
+      "pattern_detect",
+      "story_refine"
     ],
-    "deny": [
-      "filesystem_write",
-      "code_execution",
-      "git",
-      "web_search"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -34,5 +33,18 @@
   },
   "model_routing": {
     "tier_default": "T3"
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "analysis",
+      "planning",
+      "kb_read"
+    ],
+    "deny": [
+      "filesystem_write",
+      "code_execution",
+      "git",
+      "web_search"
+    ]
   }
 }

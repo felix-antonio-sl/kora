@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-hah-intent-firs:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-hah-intent-firs:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-FIRS
 
-## Propósito
+## Proposito
 Clasificar la intención del usuario y posicionar el problema en la dimensión FIRS correcta (I/II/III) o detectar problema HaH específico, determinando el estado FSM destino. Extensión de salubrista/CM-INTENT-FIRS: agrega detección de dominio HaH antes de posicionamiento FIRS.
 
-## I/O
-
+## Input/Output
 - **Input:** consulta: string (texto libre del usuario)
 - **Output:** IntentResult { dominio: "FIRS"|"HAH"|"HAH+FIRS", dimension: "I"|"II"|"III"|"multi"|null, subruta_hah: "Admission"|"Operations"|"Director"|"Evidence"|null, estado_destino: string, nivel_analisis: string, clarificacion_requerida: bool }
 
 ## Procedimiento
-
 1. DETECTAR DOMINIO HaH primero (antes de posicionamiento FIRS):
    - Señales HaH: criterios ingreso/egreso HD, condición clínica estable para domicilio, cargo DT, Director Técnico, DS 1/2022, DE 31/2024, hospitalización domiciliaria, Hospital at Home, HaH, visita domiciliaria de intensidad hospitalaria, dispositivos invasivos en domicilio, IAAS domiciliaria, REAS, Resumen Clínico en Domicilio, SAMU/reingreso desde HD, red de apoyo del paciente HD, farmacia botiquín HD, protocolo agresiones terreno, RPM/IoT domiciliario, backfill margin, MCC, NT 238, evidencia Johns Hopkins/Cochrane/CMS
    - IF señales HaH presentes → identificar sub-ruta:
@@ -41,7 +40,6 @@ Clasificar la intención del usuario y posicionar el problema en la dimensión F
 5. OUTPUT: declarar dominio + dimensión o sub-ruta HaH + estado destino + nivel de análisis
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | dominio | string | "FIRS" / "HAH" / "HAH+FIRS" |

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-correlation-engine:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-correlation-engine:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Cruzar anomalias detectadas con eventos recientes del sistema (deploys, cambios config, actualizaciones modelo, cambios trafico) para calcular confianza de correlacion.
 
-## I/O
-
+## Input/Output
 - **Input:** anomaly: AnomalyEvent (output de CM-ANOMALY-DETECTOR), events: Event[] (via deploy_timeline + correlate tools)
 - **Output:** correlation_report: {anomaly_summary, events_analyzed: int, correlations: [{event, temporal_proximity, causal_plausibility, confidence_pct, hypothesis}], top_correlation: Correlation, recommendation: string}
 
 ## Procedimiento
-
 1. **Invocar deploy_timeline** para obtener eventos de las ultimas 24h: deploys, cambios config, actualizaciones modelo, cambios trafico.
 
 2. **Calcular proximidad temporal:**
@@ -42,7 +39,6 @@ Cruzar anomalias detectadas con eventos recientes del sistema (deploys, cambios 
    - Confianza < 40%: "Correlacion debil. Monitorear y esperar mas evidencia."
 
 ## Signature Output
-
 ```yaml
 correlation_report:
   anomaly_summary: "Spike latencia p95 (120ms→890ms) + error rate (0.02%→1.8%)"

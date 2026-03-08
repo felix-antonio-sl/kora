@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-lifecycle-orchestrator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-lifecycle-orchestrator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
 Ejecuta el ciclo completo guiado INSTALL→CONFIGURE→AUDIT para instancias OpenClaw nuevas. Gestiona checkpoints entre fases y adapta el flujo a la plataforma detectada.
 
-## I/O
-
+## Input/Output
 - **Input:** intencion: IntentClassification (modo=GUIDED), plataforma: string
 - **Output:** LifecycleSummary (ver Signature Output)
 
 ## Procedimiento
-
 ### Fase 0: Deteccion
 - Detectar plataforma (OS, runtime, metodo preferido)
 - Confirmar con usuario
@@ -59,7 +58,6 @@ Preservar entre fases:
 - Issues encontrados y resueltos
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | plataforma | string | Plataforma de la instancia |

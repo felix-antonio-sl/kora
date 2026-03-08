@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-agent-surgeon:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-agent-surgeon:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-AGENT-SURGEON
 
 ## Proposito
 Diagnostica y repara agentes KORA con precision quirurgica: minima modificacion, preservar invariantes, no romper otros componentes.
 
-## I/O
-
+## Input/Output
 - **Input:** agent_path: string (ruta al workspace), problema: string (descripcion del problema reportado)
 - **Output:** SurgicalReport (ver Signature Output)
 
@@ -27,7 +27,6 @@ Diagnostica y repara agentes KORA con precision quirurgica: minima modificacion,
 8. DOCUMENTAR: Registrar que se cambio, por que, y que se verifico.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | agente | string | Nombre del agente intervenido |

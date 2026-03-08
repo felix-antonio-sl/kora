@@ -74,6 +74,8 @@ Interpretable in any cartesian category C.
 
 ## Wiring Diagrams
 
+### WIRING-DEF
+
 **Arity.** Free cartesian category on one object X. Objects = X^I for finite sets I; morphisms = reindexing maps derived from functions f*: X^I → X^J for f: J → I. Arity ≅ FinSet^op.
 
 **WD (Wiring Diagrams).** WD := Lens_Arity. Monoidal structure via parallel products. For object C in cartesian category C, unique (up to iso) cartesian functor ev_C: Arity → C sends X to C; any wiring diagram interpreted as a lens in C.

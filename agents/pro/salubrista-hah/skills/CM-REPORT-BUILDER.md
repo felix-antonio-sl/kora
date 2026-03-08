@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-hah-report-builder:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-hah-report-builder:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-REPORT-BUILDER
 
-## Propósito
+## Proposito
 Construir informes estructurados que integran análisis FIRS, recomendaciones con evidencia, KPIs (BSC 4 perspectivas cuando aplique) y trazabilidad normativa. Output final orientado a decisión de gestión, clínica o de política sanitaria.
 
-## I/O
-
+## Input/Output
 - **Input:** contenido_analisis: object (output de CMs previos en sesión), tipo_informe: string, audiencia: string
 - **Output:** Report { encabezado, resumen_ejecutivo, posicion_firs, analisis, recomendaciones[], kpis[], trazabilidad_normativa[], disclaimer }
 
 ## Procedimiento
-
 1. RECIBIR contenido acumulado de sesión (outputs de CM-FIRS-REASONER, CM-NETWORK-ANALYST, CM-QUALITY-AUDITOR o CM-EPI-VIGILANCE).
 2. IDENTIFICAR TIPO DE INFORME:
    - Clínico-epidemiológico (problema individual o poblacional)
@@ -41,7 +40,6 @@ Construir informes estructurados que integran análisis FIRS, recomendaciones co
 6. SI WEB_SEARCH requerido para evidencia faltante → ejecutar, integrar, citar.
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | tipo_informe | string | Clínico-epi / Gestión / Auditoría / Vigilancia / Estratégico |

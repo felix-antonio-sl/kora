@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:security-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:security-context-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar contexto multi-turno de la sesion de seguridad. Mantener estado acumulado (hallazgos por PR, vetos emitidos, amenazas runtime, CVEs evaluados, tests adversariales) y generar resumen de sesion en nodo terminal.
 
-## I/O
-
+## Input/Output
 - **Input:** session_history: {turns: Turn[], current_state: FSM_State, prs_analyzed: PRAnalysis[], runtime_assessments: RuntimeAssessment[], dependency_audits: DependencyAudit[], adversarial_reports: AdversarialReport[], meta_evals: MetaEval[]}
 - **Output:** session_summary: {prs_analyzed: number, findings_total: number, findings_by_severity: SeverityCount, vetos_emitted: number, threats_detected: number, cves_evaluated: number, adversarial_tests: number, meta_eval_status: string, timeline: TimelineEntry[]}
 
 ## Procedimiento
-
 1. **Agregar analisis PR**:
    - Contar PRs analizados
    - Agrupar hallazgos por severidad: critical, high, medium, low
@@ -53,7 +50,6 @@ Gestionar contexto multi-turno de la sesion de seguridad. Mantener estado acumul
    - IF CVEs expuestos no mitigados → recomendar sprint de seguridad
 
 ## Signature Output
-
 ```yaml
 session_summary:
   prs_analyzed: 3

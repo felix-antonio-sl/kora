@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-social-navigation:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:dgi-virtual-social-navigation:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Navegar el sistema social institucional para lograr adopcion de iniciativas. Analizar stakeholders, disenar estrategias ADKAR, y proponer tacticas de influencia etica.
 
 ## Input/Output
-
 - **Input:** Iniciativa o cambio propuesto, contexto organizacional, stakeholders conocidos
 - **Output:** Mapa stakeholders con poder/interes, estrategia ADKAR, tacticas de influencia, plan de adopcion
 
 ## Procedimiento
-
 1. Identificar stakeholders afectados: Quienes son? Cual es su poder e interes? Que beneficio concreto obtiene CADA uno?
 2. Clasificar resistencia:
    - Racional (objeciones tecnicas) -> escuchar e incorporar
@@ -34,5 +31,4 @@ Navegar el sistema social institucional para lograr adopcion de iniciativas. Ana
 5. Proponer plan de adopcion con hitos y metricas
 
 ## Signature Output
-
 Mapa stakeholders (tabla poder/interes) + Diagnostico ADKAR por fase + Tacticas seleccionadas + Plan adopcion con proximos pasos priorizados.

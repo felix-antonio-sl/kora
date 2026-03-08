@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:visionario-prospectiva-territorial:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:visionario-prospectiva-territorial:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Guiar analisis de escenarios futuros y tendencias regionales.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta sobre futuro, tendencias, escenarios regionales
 - **Output:** Escenarios proyectados con drivers, incertidumbres y senales tempranas
 
 ## Procedimiento
-
 FRAMEWORK: 6Ds del Desarrollo Exponencial (adaptado de Singularity University)
 
 1. **Digitalizacion**: Que procesos/activos se estan convirtiendo en bits?
@@ -33,5 +30,4 @@ ESCENARIOS: construir minimo 2-3 escenarios (optimista, tendencial, pesimista)
 INCERTIDUMBRES: identificar factores criticos fuera de control regional
 
 ## Signature Output
-
 Escenario con: horizonte, drivers, incertidumbres, senales tempranas, Quick Wins, alineacion ERD.

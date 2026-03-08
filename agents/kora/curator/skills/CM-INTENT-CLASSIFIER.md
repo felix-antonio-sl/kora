@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-intent-classifier:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-intent-classifier:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-CURATOR, determinando la capacidad requerida, el tipo de artefacto y el modo de operacion.
 
-## I/O
-
+## Input/Output
 - **Input:** mensaje: string (mensaje del usuario), estado_actual: FSMState (estado FSM vigente), contexto_previo: SessionContext | null
 - **Output:** IntentClassification (ver Signature Output)
 
@@ -25,7 +25,6 @@ Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-CURATOR,
 6. Emitir clasificacion: {capacidad, tipo_artefacto, modo, fase_actual, confianza}.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | capacidad | enum(DESIGN\|KORAFICATE\|CRYSTALLIZE\|AUDIT\|EDIT\|REPAIR\|IMPROVE\|DEPRECATE\|GUIDED\|END) | Capacidad clasificada |

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-tension-explorer:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-tension-explorer:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Navegar tensiones ontologicas como adjunciones para decisiones de diseno explicitas. Principio MBT: Tension (Polo A ↔ Polo B) = Adjuncion (L ⊣ R). Usuario colapsa la adjuncion eligiendo.
 
 ## Input/Output
-
 - **Input:** Dominio ambiguo o decision de diseno estructural desde S-DOMAIN-INTAKE o S-CATEGORICAL-MODELING
 - **Output:** Tension identificada con polos, adjuncion subyacente, implicaciones de cada polo, pregunta socratica
 
 ## Procedimiento
-
 1. Detectar ambiguedad o bifurcacion en el dominio
 2. Clasificar en taxonomia A1-A4
 3. Identificar adjuncion subyacente (L ⊣ R)
@@ -57,7 +54,6 @@ Navegar tensiones ontologicas como adjunciones para decisiones de diseno explici
 | Compacto ↔ Verboso | Compress ⊣ Expand | ¿Sacrificio legibilidad o espacio? |
 
 ## Signature Output
-
 ```
 **Tension detectada**: [Polo A] ↔ [Polo B] (Cat: [A1-A4])
 **Adjuncion subyacente**: L ⊣ R

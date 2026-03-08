@@ -20,8 +20,7 @@
     "allow": [
       "catalog_resolve",
       "kb_route"
-    ],
-    "deny": []
+    ]
   },
   "sub_agents": {
     "max_depth": 1,

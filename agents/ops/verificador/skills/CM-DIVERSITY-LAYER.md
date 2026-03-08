@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-diversity-layer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-diversity-layer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar la capa 3 de verificacion: eval de diversidad. Verificar que el reviewer usa un provider/modelo DIFERENTE al coder. Ejecutar cross-eval donde otro "cerebro" evalua el cambio independientemente. Protege contra alucinacion sistemica (Xanpan::Agents 15.1).
 
-## I/O
-
+## Input/Output
 - **Input:** coder_info: {provider: string, model: string}, reviewer_info: {provider: string, model: string}, changeset: Changeset
 - **Output:** diversity_result: {status: pass|fail, same_provider: boolean, coder_provider: string, reviewer_provider: string, cross_eval: {quality: pass|fail, correctness: pass|fail, spec_adherence: pass|fail, reasoning: string}}
 
 ## Procedimiento
-
 1. **Verificar diversidad de provider** (prerequisito):
    - Comparar coder_info.provider vs reviewer_info.provider
    - IF mismo provider → status = fail INMEDIATAMENTE
@@ -39,7 +36,6 @@ Ejecutar la capa 3 de verificacion: eval de diversidad. Verificar que el reviewe
    - IF cross_eval fail → status = fail (cross-eval)
 
 ## Signature Output
-
 ```yaml
 diversity_result:
   status: "pass"

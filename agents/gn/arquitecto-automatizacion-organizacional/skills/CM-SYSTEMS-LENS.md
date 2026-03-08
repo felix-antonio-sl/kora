@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ver organizaciones como sistemas dinamicos categoricos. Aplicar framework formal para modelar estructura, interfaces, dinamicas y composicion.
 
-## I/O
-
+## Input/Output
 - **Input:** Descripcion de organizacion, departamento o proceso a modelar
 - **Output:** Modelo de sistema dinamico con estados, interfaces, dinamicas y composicion
 
 ## Procedimiento
-
 1. Identificar Sistema Dinamico = (States, Interfaces, Dynamics):
    - States: configuraciones posibles del subsistema
    - Interfaces: (Inputs, Outputs) — lo que entra y sale
@@ -41,5 +38,4 @@ Ver organizaciones como sistemas dinamicos categoricos. Aplicar framework formal
    - Como se conecta con otros subsistemas?
 
 ## Signature Output
-
 Modelo formal: States + Interfaces + Dynamics + Composition (diagrama wiring) + Trayectorias identificadas + Oportunidades de automatizacion.

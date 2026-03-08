@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:custodio-surgeon:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:custodio-surgeon:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-SURGEON
 
 ## Proposito
 Aplica reparaciones quirurgicas a componentes del repo KORA: minima modificacion, preservar invariantes, no romper dependencias.
 
-## I/O
-
+## Input/Output
 - **Input:** diagnostico: {componente: string, severidad: string, causa_raiz: string} (problema detectado por CM-HEALTH-INSPECTOR o CM-ESTRUCTURA-AUDITOR)
 - **Output:** SurgicalReport (ver Signature Output)
 
@@ -30,7 +30,6 @@ Aplica reparaciones quirurgicas a componentes del repo KORA: minima modificacion
 8. Documentar: que se cambio, por que, cuando.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | archivos_modificados | string[] | Archivos que fueron modificados |

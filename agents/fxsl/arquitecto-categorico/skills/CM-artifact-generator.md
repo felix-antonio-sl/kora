@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-artifact-generator:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-artifact-generator:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Generar artefactos ejecutables desde modelos categoricos. Cada formato target es un funtor F: CategoricalModel → TargetLanguage. Trigger: S-ARTIFACT-GENERATION.
 
 ## Input/Output
-
 - **Input:** Modelo categorico formalizado (objetos, morfismos, construcciones universales) desde S-ARTIFACT-DESIGN
 - **Output:** Artefacto en formato target con trazabilidad categorica
 
 ## Procedimiento
-
 1. **Confirmar formato destino** con usuario
 2. **Aplicar mapeos categoricos** del formato seleccionado
 3. **Generar sintaxis valida** en el lenguaje target
@@ -110,7 +107,6 @@ Trazabilidad: `# Cat: Obj({nombre}), Morph({f}:{A}→{B})`
 - Trazabilidad completa (todo elemento tiene comentario categorico)
 
 ## Signature Output
-
 ```
 ## Artefacto: {formato}
 Funtor: C_{dominio} → {TargetLanguage}

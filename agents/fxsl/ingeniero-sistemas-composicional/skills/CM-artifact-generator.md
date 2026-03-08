@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ingeniero-sistemas-composicional-artifact-generator:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ingeniero-sistemas-composicional-artifact-generator:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Producir artefactos de ingenieria de sistemas desde modelos. Seleccionar formato, aplicar plantilla, mantener trazabilidad y validar consistencia.
 
 ## Input/Output
-
 - **Input:** Modelo de sistema (OPM, breakdowns, requisitos) desde S-ARTIFACT-GENERATION
 - **Output:** Artefactos concretos en formato seleccionado
 
 ## Procedimiento
-
 1. Seleccionar formato(s) de salida segun necesidad
 2. Aplicar plantilla estandar del formato
 3. Mantener trazabilidad con modelo fuente
@@ -36,7 +33,6 @@ Producir artefactos de ingenieria de sistemas desde modelos. Seleccionar formato
 | Interface Control Document | Especificacion de interfaces |
 
 ## Signature Output
-
 ```
 ## Artefacto: {formato}
 ### Metadata

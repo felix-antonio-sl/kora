@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Aplicar mejores practicas de ingenieria de LLMs al disenar e implementar agentes y flujos con modelos de lenguaje.
 
-## I/O
-
+## Input/Output
 - **Input:** Diseno de agente o flujo que involucra LLM
 - **Output:** Implementacion con mejores practicas aplicadas (prompt, contexto, errores, costos, observabilidad)
 
 ## Procedimiento
-
 1. Prompt Design:
    - System prompt claro con rol, contexto, restricciones
    - Few-shot examples para tareas complejas
@@ -46,5 +43,4 @@ Aplicar mejores practicas de ingenieria de LLMs al disenar e implementar agentes
    - Evaluacion de calidad
 
 ## Signature Output
-
 System prompt disenado + Tool definitions + Error handling strategy + Cost estimate + Observability plan.

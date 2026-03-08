@@ -14,13 +14,13 @@
   },
   "tools": {
     "allow": [
-      "event_classify",
-      "golden_path_execute",
+      "agent_dispatch",
       "backpressure_control",
       "circuit_breaker_manage",
-      "system_status",
-      "agent_dispatch",
-      "kb_route"
+      "event_classify",
+      "golden_path_execute",
+      "kb_route",
+      "system_status"
     ],
     "deny": []
   },
@@ -109,5 +109,9 @@
   },
   "model_routing": {
     "tier_default": "T1"
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

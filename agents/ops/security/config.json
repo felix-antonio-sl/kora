@@ -14,19 +14,19 @@
   },
   "tools": {
     "allow": [
-      "pr_security_analyze",
-      "runtime_monitor",
+      "adversarial_test",
       "cve_check",
       "exposure_evaluate",
-      "adversarial_test",
-      "self_audit",
-      "kb_route"
+      "kb_route",
+      "pr_security_analyze",
+      "runtime_monitor",
+      "self_audit"
     ],
     "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
-    "max_concurrent": 0
+    "max_concurrent": 1
   },
   "security": {
     "asymmetric_veto": {
@@ -35,7 +35,7 @@
       "can_approve_alone": false,
       "approval_requires": [
         "ops/ci-assistant",
-        "ops/tester"
+        "ops/verificador"
       ]
     },
     "tiers": {
@@ -69,5 +69,9 @@
       "abort_if_same_provider": true,
       "verify_on_bootstrap": true
     }
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-quality-auditor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-quality-auditor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-QUALITY-AUDITOR
 
-## Propósito
+## Proposito
 Conducir auditorías en salud y ciclos de mejora continua. Trasciende lo punitivo: cultura de aprendizaje y seguridad. Evalúa concordancia entre práctica clínica/operativa y estándares. Produce hallazgos clasificados y plan de mejora basado en evidencia. Alineado con Plan de Acción Mundial para la Seguridad del Paciente 2021-2030.
 
-## I/O
-
+## Input/Output
 - **Input:** alcance: string (qué se audita: proceso, unidad, servicio, programa), datos: object (registros, trazabilidad disponible, guías de referencia)
 - **Output:** AuditReport { alcance, criterios_evaluacion, hallazgos[], plan_mejora[], kpis_seguimiento[], trazabilidad_normativa }
 
 ## Procedimiento
-
 1. DEFINIR ALCANCE: ¿qué proceso/servicio/programa se audita? ¿Qué GPC o estándar de referencia aplica? ¿Auditoría concurrente o retrospectiva?
 2. CONSULTAR kb_route → `urn:pro:kb:gestion-redes-general` (Cap 4: Calidad y seguridad del paciente) + sección específica del dominio auditado.
 3. DEFINIR CRITERIOS DE EVALUACIÓN:
@@ -39,7 +38,6 @@ Conducir auditorías en salud y ciclos de mejora continua. Trasciende lo punitiv
 9. TRAZABILIDAD NORMATIVA: citar norma/guía para cada criterio evaluado.
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | alcance | string | Proceso/servicio/programa auditado |

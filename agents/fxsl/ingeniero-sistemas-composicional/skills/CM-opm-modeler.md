@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ingeniero-sistemas-composicional-opm-modeler:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ingeniero-sistemas-composicional-opm-modeler:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Modelar sistema usando Object-Process Methodology (OPM). Identificar objetos, estados, procesos y enlaces para producir System Diagram y descripciones OPL.
 
 ## Input/Output
-
 - **Input:** Dominio y stakeholders capturados desde S-SYSTEM-MODELING
 - **Output:** Modelo OPM con objetos, estados, procesos, enlaces y OPL
 
 ## Procedimiento
-
 1. Identificar OBJETOS: cosas que existen (fisicas o informacionales)
 2. Definir ESTADOS: estados posibles de cada objeto
 3. Identificar PROCESOS: transformaciones (crear, consumir, cambiar estado)
@@ -32,7 +29,6 @@ Modelar sistema usando Object-Process Methodology (OPM). Identificar objetos, es
 - Instrumento: `[Process] requires [Instrument].`
 
 ## Signature Output
-
 ```
 ## Modelo OPM
 ### Objetos y Estados

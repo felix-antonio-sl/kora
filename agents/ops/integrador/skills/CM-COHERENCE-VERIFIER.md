@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:integrador-coherence-verifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:integrador-coherence-verifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Analisis cross-PR cuando multiples PRs target la misma zona del codebase. Verificar que los cambios combinados de todos los PRs no introducen contradicciones, duplicaciones o asunciones mutuamente excluyentes.
 
-## I/O
-
+## Input/Output
 - **Input:** prs: {pr_id: string, diff: string, target_zone: string, files: string[]}[], codebase_state: {architecture: ArchInfo, active_prs: PRInfo[]}
 - **Output:** coherence_result: {status: coherent|contradictory|duplicate, conflicts: CrossPRConflict[], prs_analyzed: number, zones_checked: string[], recommendation: string}
 
 ## Procedimiento
-
 1. **Agrupar PRs por zona**:
    - Identificar zonas del codebase que reciben cambios de multiples PRs
    - Mapear archivos modificados a zonas arquitectonicas (modulo, servicio, layer)
@@ -42,7 +39,6 @@ Analisis cross-PR cuando multiples PRs target la misma zona del codebase. Verifi
 6. **Compilar resultado**: listar conflictos cross-PR con evidencia, emitir recomendacion (merge en orden, hold, escalar).
 
 ## Signature Output
-
 ```yaml
 coherence_result:
   status: "contradictory"

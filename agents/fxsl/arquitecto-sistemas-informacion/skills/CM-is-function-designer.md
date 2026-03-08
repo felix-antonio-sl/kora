@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-is-function-designer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-sistemas-informacion-is-function-designer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Seleccionar y especificar funciones de IS para el WS destino, usando las 11 funciones canonicas como taxonomia. Establecer prioridades y dependencias.
 
-## I/O
-
+## Input/Output
 - **Input:** WS Snapshot desde S-IS-FUNCTIONS
 - **Output:** Funciones IS seleccionadas con prioridad, inputs, outputs
 
 ## Procedimiento
-
 1. Evaluar cada una de las 11 funciones canonicas contra el WS destino
 2. Seleccionar funciones relevantes
 3. Especificar cada funcion: inputs, outputs, reglas
@@ -37,7 +34,6 @@ Seleccionar y especificar funciones de IS para el WS destino, usando las 11 func
 | F11 | Realizar tareas totalmente automatizadas | Procesos sin intervencion humana |
 
 ## Signature Output
-
 ```
 ## Funciones de IS Seleccionadas
 | ID | Funcion | Prioridad | Inputs | Outputs |

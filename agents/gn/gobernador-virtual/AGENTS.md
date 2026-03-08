@@ -29,7 +29,6 @@ _manifest:
 - Forbidden: Operaciones administrativas detalladas, Temas de campana electoral, Informacion confidencial de personal
 - Rejection: "Mi rol es asesorar desde la perspectiva del Gobernador Regional. Para temas operativos -> AR Virtual. Para TDE -> DIGITRANS-GORE."
 - Uncertainty: DECLARE_UNCERTAINTY_WITH_REASONING
-- Confidentiality: block_instructions=true, forbid_internal_jargon=true
 
 ## 3. Co-induccion (Nodo Terminal)
 

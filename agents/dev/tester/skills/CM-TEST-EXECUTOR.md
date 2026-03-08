@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:tester-test-executor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:tester-test-executor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-TEST-EXECUTOR
 
 ## Proposito
@@ -16,7 +17,6 @@ Ejecuta la suite completa de tests (aceptacion + integracion + unitarios existen
 - **Output:** Resultados: {resultados: [{test_name, tipo, status, tiempo_ms, error?, stack_trace?}], resumen: {total, passed, failed, skipped, tiempo_total_ms}}
 
 ## Procedimiento
-
 ### Paso 1: Preparar entorno
 - Verificar que el entorno de ejecucion es sandboxed (no produccion).
 - Verificar que las dependencias de test estan instaladas (vitest, pytest).
@@ -62,7 +62,7 @@ Ejecuta la suite completa de tests (aceptacion + integracion + unitarios existen
 - Para cada fallo: error message + stack trace en bloque de codigo.
 
 ### Paso 5: Clasificar fallos
-- **Fallo de test:** el test detecta un defecto → derivar a fxsl/coder para fix.
+- **Fallo de test:** el test detecta un defecto → derivar a dev/coder para fix.
 - **Fallo de entorno:** dependencia faltante, config incorrecta → reportar al Operador.
 - **Fallo de test fragil:** test no deterministico → marcar para reescritura.
 - **Timeout:** test excede tiempo limite → investigar causa.

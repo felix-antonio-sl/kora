@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:sentinel-eval-auditor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:sentinel-eval-auditor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-EVAL-AUDITOR
 
 ## Proposito
 Audita el corpus de evals del enjambre: cobertura, freshness, gaps, golden dataset. Propone nuevos evals.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Inventariar evals existentes por tipo:
@@ -31,5 +36,8 @@ Audita el corpus de evals del enjambre: cobertura, freshness, gaps, golden datas
 4. Detectar evals obsoletos: evals que ya no aplican por cambio de stack o feature eliminada.
 5. Proponer nuevos evals como tarjetas purpura con prioridad.
 
-## Output
+## Signature Output
 Reporte: {evals_existentes: [{tipo, cobertura, freshness}], gaps: [{area, eval_faltante, prioridad}], golden_dataset: {size, humano_curado, freshness}, evals_obsoletos[], propuestas_nuevos_evals[]}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Seleccionar y aplicar patrones de automatizacion e integracion apropiados para cada oportunidad identificada.
 
-## I/O
-
+## Input/Output
 - **Input:** Oportunidad de automatizacion con clasificacion y contexto
 - **Output:** Patron seleccionado con componentes, integraciones y arquitectura propuesta
 
 ## Procedimiento
-
 1. Evaluar patron de automatizacion apropiado:
    - Workflow Orchestration: secuencia pasos automatizados. Trigger -> Steps -> Output. Para procesos con pasos definidos y predecibles.
    - Agent with Tools: LLM que decide que herramientas usar. System prompt + Tools + Memory. Para tareas que requieren razonamiento y multiples acciones.
@@ -31,5 +28,4 @@ Seleccionar y aplicar patrones de automatizacion e integracion apropiados para c
 3. Disenar arquitectura: componentes + interfaces + flujo de datos
 
 ## Signature Output
-
 Patron seleccionado + Componentes (tabla) + Diagrama arquitectura + Integraciones requeridas + Consideraciones (errores, edge cases, costos).

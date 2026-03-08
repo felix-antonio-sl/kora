@@ -1,17 +1,23 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:planner-backlog-curator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:planner-backlog-curator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-BACKLOG-CURATOR
 
 ## Proposito
 Gestiona el backlog como flujo: prioriza, detecta bloqueos, recomienda siguiente historia, y en modo predictivo propone historias nuevas.
 
-## Procedimiento (modo curado)
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
+
+## Procedimiento
+### Modo curado
 1. Listar todas las historias pendientes con sus 5 elementos.
 2. Calcular prioridad para cada una: Valor / (Coste_Estimado × Multiplicador_Riesgo).
    - Multiplicador_Riesgo: lectura=1.0, escritura=1.5, destructiva=3.0.
@@ -22,7 +28,7 @@ Gestiona el backlog como flujo: prioriza, detecta bloqueos, recomienda siguiente
 6. Recomendar siguiente historia para el coder: la de mayor prioridad sin bloqueos.
 7. Presentar backlog como tabla priorizada.
 
-## Procedimiento (modo predictivo)
+### Modo predictivo
 1. Analizar OKRs activos: que KRs tienen bajo progreso.
 2. Analizar historias completadas: que patrones emergen (areas del codebase mas tocadas, tipos de historia mas frecuentes).
 3. Analizar metricas de producto si disponibles: que usan los usuarios, donde hay friccion.
@@ -30,5 +36,5 @@ Gestiona el backlog como flujo: prioriza, detecta bloqueos, recomienda siguiente
 5. Marcar cada propuesta con confianza (alta|media|baja) y justificacion.
 6. Presentar al PO como BORRADORES para curado. NO son decisiones tomadas.
 
-## Output
+## Signature Output
 Modo curado: tabla {posicion, historia, valor, coste, riesgo, prioridad, estado}. Modo predictivo: tabla {propuesta, justificacion, confianza, kr_asociado}.

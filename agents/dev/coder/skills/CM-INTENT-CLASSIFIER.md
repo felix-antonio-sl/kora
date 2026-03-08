@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:coder-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:coder-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario en la FSM WF-CODER, determinando la capacidad de implementacion requerida.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Analizar mensaje: palabras clave, artefactos mencionados (historias, PRs, bugs, codigo), contexto previo.
@@ -19,5 +24,8 @@ Clasifica la intencion del usuario en la FSM WF-CODER, determinando la capacidad
 5. Si el mensaje pide mejora de codigo existente sin historia nueva → REFACTORIZAR.
 6. Emitir clasificacion: {capacidad, confianza}.
 
-## Output
+## Signature Output
 Clasificacion: `capacidad` (enum), `confianza` (alta|media|baja). Si confianza=baja, preguntar.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

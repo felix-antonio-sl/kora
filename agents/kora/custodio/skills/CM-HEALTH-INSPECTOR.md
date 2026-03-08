@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:custodio-health-inspector:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:custodio-health-inspector:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-HEALTH-INSPECTOR
 
 ## Proposito
 Ejecuta diagnostico completo del estado del repo KORA. Consolida resultados de multiples herramientas en un reporte unico con severidades.
 
-## I/O
-
+## Input/Output
 - **Input:** (ninguno — ejecuta bateria de comandos diagnosticos)
 - **Output:** HealthReport (ver Signature Output)
 
@@ -26,7 +26,6 @@ Ejecuta diagnostico completo del estado del repo KORA. Consolida resultados de m
 7. Si CRITICO, recomendar transicion a S-CIRUGIA con lista de issues.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | veredicto | enum(SANO\|ADVERTENCIA\|CRITICO) | Veredicto global |

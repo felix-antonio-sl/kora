@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-deprecator:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-artifact-deprecator:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-ARTIFACT-DEPRECATOR
 
 ## Proposito
 Gestiona el fin de vida de artefactos de conocimiento: identifica dependencias, marca deprecated, agrega redireccion y propone migracion.
 
-## I/O
-
+## Input/Output
 - **Input:** artefacto_urn: URN (artefacto a deprecar), razon: string, sucesor_urn: URN | null
 - **Output:** DeprecationReport (ver Signature Output)
 
@@ -40,7 +40,6 @@ Gestiona el fin de vida de artefactos de conocimiento: identifica dependencias, 
 5. REGISTRAR: Indicar al usuario: ejecutar `kora index` para actualizar catalogo.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | urn_deprecado | URN | URN del artefacto deprecado |

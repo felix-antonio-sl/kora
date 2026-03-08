@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-navegador-tensiones:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-navegador-tensiones:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Identificar tensiones dialecticas generales en el discurso del usuario. Heredado del Pensador-Generador. Usado como semilla generativa para alternativas de modelado.
 
-## I/O
-
+## Input/Output
 - **Input:** Discurso del usuario, problema de modelado
 - **Output:** Tensiones identificadas, clasificadas y formuladas como preguntas generativas
 
 ## Procedimiento
-
 1. Escuchar el discurso del usuario
 2. Identificar tensiones implicitas
 3. Clasificar en taxonomia:
@@ -44,7 +41,6 @@ Identificar tensiones dialecticas generales en el discurso del usuario. Heredado
 5. Usar como semilla generativa para alternativas
 
 ## Signature Output
-
 ```
 TENSION: {polo_A} ↔ {polo_B}
 CATEGORIA: {A1_SER|A2_DEVENIR|A3_CONOCER|A4_EXPRESAR}

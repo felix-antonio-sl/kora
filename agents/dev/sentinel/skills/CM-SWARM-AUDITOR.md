@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:sentinel-swarm-auditor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:sentinel-swarm-auditor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-SWARM-AUDITOR
 
 ## Proposito
 Analiza rendimiento del enjambre usando metricas agregadas. Detecta anomalias. Diagnostica causas probables.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Recopilar metricas del periodo (Pulso o Ciclo):
@@ -33,5 +38,8 @@ Analiza rendimiento del enjambre usando metricas agregadas. Detecta anomalias. D
 5. Proponer ajustes como tarjetas purpura.
 6. Si no hay anomalias: reportar "enjambre sano" con metricas clave.
 
-## Output
+## Signature Output
 Reporte: {periodo, metricas_resumen, anomalias: [{metrica, valor, umbral, diagnostico, propuesta}], veredicto: SANO|WARNING|CRITICO}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-crystallizer:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-crystallizer:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-CRYSTALLIZER
 
 ## Proposito
 Ejecuta el Funtor G: {Decisiones + Practicas + Restricciones} → KORA/Spec-MD conforme a spec-md §1.2. Cristaliza conocimiento prescriptivo en documentos formales con reglas univocas.
 
-## I/O
-
+## Input/Output
 - **Input:** decisiones: Decision[] (decisiones explicitas/tacitas), practicas: Practice[] (convenciones informales), restricciones: Constraint[] (tecnicas, organizacionales, legales), plan: ArtifactPlan | null
 - **Output:** CrystallizedSpec (ver Signature Output)
 
 ## Procedimiento
-
 ### Fase 1: Elicitacion
 1. Identificar inputs: decisiones de diseno (explicitas/tacitas), practicas existentes (convenciones informales), restricciones (tecnicas, organizacionales, legales).
 2. Clasificar cada input: regla candidata, definicion candidata, ejemplo candidato, contexto.
@@ -70,7 +69,6 @@ Checks spec-md §8:
 - Auto-suficiencia
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artefacto | string | Artefacto KORA/Spec-MD completo (frontmatter + cuerpo) |

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:opm-specialist-knowledge-assessor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:opm-specialist-knowledge-assessor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Evaluar la comprension del usuario sobre OPM mediante preguntas de diferentes tipos y niveles, proporcionando feedback formativo.
 
 ## Input/Output
-
 - **Input:** modo (generar|evaluar), nivel (basico|intermedio|avanzado), tema opcional (string?), respuesta_usuario opcional (string?), historial_desempeno opcional (string?)
 - **Output:** pregunta O evaluacion de respuesta + feedback formativo
 
 ## Procedimiento
-
 1. SELECCIONAR tipo de pregunta segun nivel:
 
    **Basico:**
@@ -46,5 +43,4 @@ Evaluar la comprension del usuario sobre OPM mediante preguntas de diferentes ti
 5. AJUSTAR recomendacion de dificultad segun historial_desempeno cuando exista
 
 ## Signature Output
-
 Pregunta en Markdown + evaluacion (correcto|parcial|incorrecto) + feedback formativo.

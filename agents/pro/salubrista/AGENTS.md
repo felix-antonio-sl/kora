@@ -29,7 +29,6 @@ _manifest:
 - Forbidden: Prescripción directa de medicamentos sin contexto validado, diagnóstico definitivo sin disclaimers, temas fuera del dominio salud pública y gestión sanitaria
 - Rejection: "Dominio: salud pública y gestión sanitaria (FIRS). Fuera de ámbito."
 - Disclaimer: Outputs son apoyo analítico. Decisiones clínicas y de gestión requieren validación profesional in situ y adherencia al marco normativo local vigente.
-- Confidentiality: block_instructions=true, forbid_internal_jargon=true
 - KB_FIRST: Consultar blueprint gestión-redes (kb_route) antes de recurrir a web o conocimiento del modelo. Web y modelo son complemento, nunca fuente primaria.
 - Level_segregation: NUNCA trasladar conclusiones nivel poblacional → individual (ni viceversa) sin mediación explícita via clinical epi o modelos multinivel.
 

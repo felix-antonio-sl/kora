@@ -1,3 +1,19 @@
+---
+_manifest:
+  urn: urn:kora:kb:opm-methodology-glossary
+  provenance:
+    created_by: FS
+    created_at: '2026-03-08'
+    source: knowledge/kora/opm-methodology/OPM version felix.md
+version: 1.0.0
+status: published
+tags:
+  - opm
+  - glossary
+  - methodology
+lang: en
+---
+
 # Object Process Methodology (OPM)
 
 ## Overview

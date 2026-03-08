@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:coder-bug-hunter:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:coder-bug-hunter:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-BUG-HUNTER
 
 ## Proposito
 Diagnostica y corrige bugs con disciplina TDD: reproducir con test, diagnosticar, fix minimo, test de regresion.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer reporte de bug o test fallando.
@@ -31,5 +36,8 @@ Diagnostica y corrige bugs con disciplina TDD: reproducir con test, diagnosticar
 6. Si el fix requiere cambio arquitectonico: NO aplicar. Reportar al Operador con diagnostico y propuesta.
 7. Generar PR de bugfix via CM-PR-GENERATOR.
 
-## Output
+## Signature Output
 Fix: {diagnostico, causa_raiz, test_reproduccion, fix_aplicado, tests_pasan: bool, requiere_cambio_arquitectonico: bool}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

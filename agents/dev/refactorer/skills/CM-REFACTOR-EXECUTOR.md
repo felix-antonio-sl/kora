@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:refactorer-refactor-executor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:refactorer-refactor-executor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-REFACTOR-EXECUTOR
 
 ## Proposito
@@ -16,7 +17,6 @@ Ejecuta refactorings atomicos preservando comportamiento, usando tests como red 
 - **Output:** Codigo refactorizado, tests verdes, metricas antes/despues, diff.
 
 ## Procedimiento
-
 ### Paso 0: Verificar Red de Seguridad
 - Verificar que existen tests para la zona afectada.
 - IF no existen tests → escribir tests de caracterizacion ANTES de tocar codigo.
@@ -72,7 +72,6 @@ Ejecutar UN refactoring a la vez. Tipos soportados:
 - SIEMPRE revertir si tests fallan post-refactoring.
 
 ## Signature Output
-
 ```markdown
 ## Refactoring: {tipo}
 

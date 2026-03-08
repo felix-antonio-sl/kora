@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:tester-acceptance-test-generator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:tester-acceptance-test-generator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-ACCEPTANCE-TEST-GENERATOR
 
 ## Proposito
@@ -16,7 +17,6 @@ Deriva tests de aceptacion ejecutables a partir de los criterios de aceptacion (
 - **Output:** Tests ejecutables: {tests: [{ac_id, test_name, test_code, framework}]}
 
 ## Procedimiento
-
 ### Paso 1: Validar ACs
 - Verificar que la historia tiene al menos un AC.
 - Verificar que cada AC tiene: condicion previa (DADO), accion (CUANDO), resultado esperado (ENTONCES).

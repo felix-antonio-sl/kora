@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:goreologo-intake:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:goreologo-intake:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTAKE
 
 ## Proposito
 Diagnosticar, clasificar y posicionar toda consulta entrante al Goreologo: tema, dimension institucional, alcance y nivel de complejidad requerido.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta entrante del usuario al Goreologo
 - **Output:** Clasificacion confirmada: [Dimension institucional] + [Tipo consulta] + [Complejidad]
 

@@ -14,18 +14,15 @@
   },
   "tools": {
     "allow": [
-      "code_read",
-      "analysis",
-      "metrics_read",
-      "eval_audit"
+      "adversarial_test",
+      "context_diff",
+      "eval_coverage",
+      "kb_route",
+      "purple_card_create",
+      "self_eval_run",
+      "swarm_metrics"
     ],
-    "deny": [
-      "filesystem_write",
-      "code_execution",
-      "git_write",
-      "deploy",
-      "config_write"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -46,5 +43,20 @@
       "sentinel_must_use": "openai|google|other",
       "abort_if_same_provider": true
     }
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "code_read",
+      "analysis",
+      "metrics_read",
+      "eval_audit"
+    ],
+    "deny": [
+      "filesystem_write",
+      "code_execution",
+      "git_write",
+      "deploy",
+      "config_write"
+    ]
   }
 }

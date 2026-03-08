@@ -14,20 +14,14 @@
   },
   "tools": {
     "allow": [
-      "filesystem_read",
-      "filesystem_write",
-      "code_execution",
-      "git",
-      "lint",
-      "test_runner",
-      "dependency_check"
+      "complexity_analyze",
+      "debt_catalog",
+      "dependency_audit",
+      "duplication_detect",
+      "kb_route",
+      "refactor_apply"
     ],
-    "deny": [
-      "deploy",
-      "web_search",
-      "production_access",
-      "secret_management"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -48,5 +42,22 @@
   },
   "model_routing": {
     "tier_default": "T2"
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "filesystem_read",
+      "filesystem_write",
+      "code_execution",
+      "git",
+      "lint",
+      "test_runner",
+      "dependency_check"
+    ],
+    "deny": [
+      "deploy",
+      "web_search",
+      "production_access",
+      "secret_management"
+    ]
   }
 }

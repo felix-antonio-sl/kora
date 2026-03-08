@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario en el dominio OpenClaw, determinando capacidad requerida, plataforma target y urgencia.
 
-## I/O
-
+## Input/Output
 - **Input:** mensaje: string (mensaje del usuario), estado_actual: FSMState, contexto_previo: SessionContext | null
 - **Output:** IntentClassification (ver Signature Output)
 
@@ -25,7 +25,6 @@ Clasifica la intencion del usuario en el dominio OpenClaw, determinando capacida
 6. Emitir: {capacidad, plataforma, urgencia, confianza}.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | capacidad | enum(CONSULT\|INSTALL\|CONFIGURE\|AUDIT\|TROUBLESHOOT\|OPTIMIZE\|UPGRADE\|CONTRIBUTE\|GUIDED\|END) | Capacidad clasificada |

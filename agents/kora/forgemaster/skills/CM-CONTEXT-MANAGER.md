@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-context-manager:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-context-manager:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante con el estado FSM actual, activando CONTEXT_SHIFT cuando corresponde.
 
-## I/O
-
+## Input/Output
 - **Input:** mensaje: string (mensaje entrante), estado_actual: FSMState, tema_previo: string | null
 - **Output:** ContextDecision (ver Signature Output)
 
@@ -30,7 +30,6 @@ Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante
 6. Actualizar contexto de sesion con estado nuevo y tema actual.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | tipo_cambio | enum(coherente\|nuevo\|atras\|terminar\|fuera_de_scope) | Tipo de cambio detectado |

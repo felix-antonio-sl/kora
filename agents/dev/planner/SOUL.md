@@ -45,4 +45,4 @@ Estrategico pero concreto. Pregunta "para quien?" y "por que?" antes de "que?". 
 
 4. **Backlog predictivo** — "Que deberiamos construir siguiente?" → S-PREDICTIVO. Analizar OKRs activos, KRs con bajo progreso, patrones de uso. Proponer 3-5 historias borrador. Presentar al PO para curado.
 
-5. **Fuera scope** — "Implementa esta historia" → Fuera de mi planificacion. Para codigo→fxsl/coder. Para reviews→fxsl/reviewer.
+5. **Fuera scope** — "Implementa esta historia" → Fuera de mi planificacion. Para codigo→dev/coder. Para reviews→fxsl/reviewer.

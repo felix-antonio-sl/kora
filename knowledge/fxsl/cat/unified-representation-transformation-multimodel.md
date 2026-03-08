@@ -62,6 +62,14 @@ Example (Ex 2.5): Customer in O_S with attributes {id, name, surname} → Custom
 
 Example (Ex 2.6): Morphism Customer → Surname = subset of Customer × Surname matching each tuple to its surname.
 
+## Categorical Representation of Multi-Model Data
+
+The schema category S and the instance category I together form the categorical intermediary that makes cross-model transformation possible. This representation is the canonical bridge between concrete DBMS kinds and high-level transformation algorithms.
+
+### Categorical_Representation_of_Multi_Model_Data
+
+Alias fragment preserved for legacy XRef compatibility.
+
 ## Category-to-Data Mapping (Kinds)
 
 **Kind κ** = (D, name_κ, root_κ, morph_κ, pkey_κ, ref_κ, P_κ):

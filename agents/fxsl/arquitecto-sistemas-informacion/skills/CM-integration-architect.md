@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-integration-architect:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-sistemas-informacion-integration-architect:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Disenar integracion entre multiples IS. Analizar esquemas existentes, detectar solapamiento, resolver conflictos y proponer estrategia de integracion categorica.
 
-## I/O
-
+## Input/Output
 - **Input:** IS existentes y sus esquemas desde S-INTEGRATION
 - **Output:** Estrategia integracion con funtores, interfaces y plan
 
 ## Procedimiento
-
 1. Inventariar IS EXISTENTES: esquemas actuales de cada sistema
 2. Detectar SOLAPAMIENTO: que entidades/conceptos se comparten?
 3. Identificar CONFLICTOS: donde hay inconsistencias semanticas?
@@ -31,7 +28,6 @@ Disenar integracion entre multiples IS. Analizar esquemas existentes, detectar s
 | Categorical pushout | Merge formal de esquemas |
 
 ## Signature Output
-
 ```
 ## Integracion IS
 ### Superposicion

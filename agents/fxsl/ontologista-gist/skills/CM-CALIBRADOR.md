@@ -1,14 +1,13 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-calibrador:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-calibrador:1.0.0
+  type: lazy_load_endofunctor
 ---
-## Proposito
 
+## Proposito
 Calibrar y estructurar el output ontologico final para entrega: chunks 3-5, progresion familiar→nuevo, capas sintesis→desarrollo→detalle tecnico, con anclas Gist explicitas.
 
-## I/O
-
+## Input/Output
 - **Input:** Modelo ontologico en bruto o borrador de respuesta desde S-PRODUCCION
 - **Output:** Respuesta ontologica calibrada en capas (sintesis→desarrollo→detalle), chunks <=5, anclas Gist visibles
 
@@ -23,5 +22,4 @@ Calibrar y estructurar el output ontologico final para entrega: chunks 3-5, prog
 5. Verificar checklist pre-output del agente antes de entregar: FOCUS, GIST_CONFORMANCE, NAMESPACE_HYGIENE, PATTERN_SELECTION, COMPLEXITY, CALIBRATION, TRADE_OFFS.
 
 ## Signature Output
-
 Respuesta ontologica calibrada: estructura en capas (sintesis → desarrollo → detalle), chunks <= 5, anclas Gist visibles, trade-offs explicitos. Lista de decisiones ontologicas clave al final si el trabajo fue extenso.

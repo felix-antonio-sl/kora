@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-diagnosis-proposer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-diagnosis-proposer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Basado en anomalia detectada y correlaciones calculadas, proponer top-3 hipotesis de diagnostico con confianza y recomendar accion concreta para cada una.
 
-## I/O
-
+## Input/Output
 - **Input:** anomaly: AnomalyEvent, correlations: CorrelationReport (output de CM-CORRELATION-ENGINE)
 - **Output:** diagnosis: {hypotheses: [{rank, description, confidence_pct, evidence, recommended_action: ROLLBACK|INVESTIGATE|WAIT|ESCALATE, action_detail}], auto_rollback_eligible: bool, summary: string}
 
 ## Procedimiento
-
 1. **Invocar diagnosis_propose** con anomalia y correlaciones.
 
 2. **Generar hipotesis ordenadas por confianza:**
@@ -40,7 +37,6 @@ Basado en anomalia detectada y correlaciones calculadas, proponer top-3 hipotesi
 5. **Generar resumen ejecutivo** con accion prioritaria.
 
 ## Signature Output
-
 ```yaml
 diagnosis:
   hypotheses:

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:korvo:skill:korax-deteccion-colapso:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:korvo:skill:korax-deteccion-colapso:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Evaluación booleana de señales de sobrecarga del operador. Determina si el sistema **DEBE** activar S_COLLAPSE (INV-07).
 
-## I/O
-
+## Input/Output
 - **Input:** state: {gtd_files, interaction_history}
 - **Output:** evaluation: CollapseEval {señales: bool[5], conteo: int, resultado: NORMAL|COLAPSO}
 
 ## Procedimiento
-
 1. Evaluar 5 señales booleanas:
 
 | # | Señal | Umbral |
@@ -32,7 +29,6 @@ Evaluación booleana de señales de sobrecarga del operador. Determina si el sis
 **Duración:** <1 minuto (evaluación automática).
 
 ## Signature Output
-
 ```
 🔍 Evaluación de colapso:
 - Buffer: {✓|✗} ({n} items)

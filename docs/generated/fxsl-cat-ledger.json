@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "source_root": "knowledge/fxsl/cat",
+    "entry_count": 23
+  },
+  "status_counts": {
+    "auxiliary": 8,
+    "promoted": 15
+  },
+  "entries": [
+    {
+      "file": "knowledge/fxsl/cat/action-primary-key.md",
+      "stem": "action-primary-key",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-behavioral-preservation"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/algebraic-databases.md",
+      "stem": "algebraic-databases",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-foundations",
+        "urn:kora:kb:cat-skill-algebra"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/algebraic-model-management.md",
+      "stem": "algebraic-model-management",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/audit-patterns.md",
+      "stem": "audit-patterns",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/categorical-data-structures.md",
+      "stem": "categorical-data-structures",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/categorical-systems-theory.md",
+      "stem": "categorical-systems-theory",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-behavioral-preservation"
+      ],
+      "legacy_signals": [
+        "work in progress"
+      ],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/coalgebras.md",
+      "stem": "coalgebras",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-behavioral-preservation"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/cognitive-toolkit.md",
+      "stem": "cognitive-toolkit",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/constraint-logic.md",
+      "stem": "constraint-logic",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/cql-data-integration.md",
+      "stem": "cql-data-integration",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/data-access-layers.md",
+      "stem": "data-access-layers",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/data-lakes-ct.md",
+      "stem": "data-lakes-ct",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-discovery-presheaf",
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/exploring-category-theoretic-approaches-to-databases.md",
+      "stem": "exploring-category-theoretic-approaches-to-databases",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/formal-framework-data-lakes-ct.md",
+      "stem": "formal-framework-data-lakes-ct",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/formal-framework-multimodel-data-transformations.md",
+      "stem": "formal-framework-multimodel-data-transformations",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-discovery-presheaf",
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/kb-category.md",
+      "stem": "kb-category",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/mathematical-modelling.md",
+      "stem": "mathematical-modelling",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-ecosystem-2cat",
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/mbse-consistency.md",
+      "stem": "mbse-consistency",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-ecosystem-2cat",
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/multicategory-multimodel-query-processing.md",
+      "stem": "multicategory-multimodel-query-processing",
+      "status": "auxiliary",
+      "canonical_targets": [],
+      "legacy_signals": [],
+      "reason": "Permanece como apoyo conceptual no normativo."
+    },
+    {
+      "file": "knowledge/fxsl/cat/schema-evolution.md",
+      "stem": "schema-evolution",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-audit-invariants",
+        "urn:kora:kb:cat-behavioral-preservation"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/seven-sketches.md",
+      "stem": "seven-sketches",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-foundations",
+        "urn:kora:kb:cat-skill-algebra"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/unified-multimodel.md",
+      "stem": "unified-multimodel",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-discovery-presheaf",
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    },
+    {
+      "file": "knowledge/fxsl/cat/unified-representation-transformation-multimodel.md",
+      "stem": "unified-representation-transformation-multimodel",
+      "status": "promoted",
+      "canonical_targets": [
+        "urn:kora:kb:cat-discovery-presheaf",
+        "urn:kora:kb:cat-audit-invariants"
+      ],
+      "legacy_signals": [],
+      "reason": "Absorbido por la formal layer oficial via 08-fxsl-cat-bridge."
+    }
+  ]
+}

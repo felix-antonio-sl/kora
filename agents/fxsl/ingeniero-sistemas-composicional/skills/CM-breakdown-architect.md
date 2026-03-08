@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ingeniero-sistemas-composicional-breakdown-architect:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ingeniero-sistemas-composicional-breakdown-architect:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Disenar estructuras de desglose jerarquico (FBS, PBS, LBS) con trazabilidad cruzada. Aplicar principios MECE y codificacion ISO 81346.
 
 ## Input/Output
-
 - **Input:** Modelo OPM desde S-BREAKDOWN-DESIGN
 - **Output:** FBS, PBS, LBS con trazabilidad y codificacion
 
 ## Procedimiento
-
 1. Generar FBS: descomponer funciones (que hace el sistema?)
 2. Derivar PBS: descomponer productos (de que esta hecho?)
 3. Mapear LBS: descomponer ubicaciones (donde esta?) — si aplica
@@ -32,7 +29,6 @@ Disenar estructuras de desglose jerarquico (FBS, PBS, LBS) con trazabilidad cruz
 - Las hojas deben ser verificables/implementables
 
 ## Signature Output
-
 ```
 ## FBS - Functional Breakdown Structure
 {Arbol funcional en formato codigo}

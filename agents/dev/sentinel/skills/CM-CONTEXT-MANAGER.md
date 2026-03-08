@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:sentinel-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:sentinel-context-manager:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-MANAGER
 
 ## Proposito
 Gestiona contexto multi-turno del sentinel. Verifica diversidad de modelo. Mantiene estado de auditoria entre turnos.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Comparar tema del mensaje actual vs estado FSM activo.
@@ -24,5 +29,8 @@ Gestiona contexto multi-turno del sentinel. Verifica diversidad de modelo. Manti
 7. IF TERMINAR → S-END con resumen.
 8. IF FUERA → rejection.
 
-## Output
+## Signature Output
 Clasificacion: {tipo, auditoria_activa?, diversidad_ok: bool, providers_enjambre: string[], provider_sentinel: string}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

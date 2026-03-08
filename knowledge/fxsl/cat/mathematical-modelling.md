@@ -58,6 +58,8 @@ Notes: Model Poset = instance of injection order in MBSE; category of models ana
 
 **Def 2.13 (Category of models)** — Model_1: objects = finite non-empty assumption sets Set_A; morphisms = relations between sets; S: Set_A → A maps assumptions to model formulation; all objects act in same physical dimension.
 
+### MM-COMPLEXITY-ORDER
+
 **Def 2.14 (Complexity order)** — A has higher complexity than B iff Set_A ⊂ Set_B but Set_B ⊄ Set_A. Equal complexity iff Set_A = Set_B.
 
 **Def 2.15 (Total/partial order)** — If Set_{A_1} ⊂ Set_{A_2} ⊂ ... ⊂ Set_{A_n} and union = Set_{A_n}: totally ordered. Otherwise: partially ordered.

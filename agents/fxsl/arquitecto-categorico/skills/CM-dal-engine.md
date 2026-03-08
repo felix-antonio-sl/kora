@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-dal-engine:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-dal-engine:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Disenar y auditar capas de acceso a datos (DAL) con fundamento categorico. Principio: DAL = realizacion de construcciones universales. Trigger: S-DATA-ACCESS-LAYER.
 
 ## Input/Output
-
 - **Input:** Dominio con requisitos de persistencia, API, repositorios desde S-DISPATCHER
 - **Output:** Arquitectura DAL categorica con seleccion de storage, API, repository, ORM, pipeline
 
 ## Procedimiento
-
 1. **Clasificar capa** — STORAGE | API | REPOSITORY | ORM | PIPELINE
 2. **Modelar categoricamente** cada capa segun patron
 3. **Proponer combinacion optima** segun dominio
@@ -90,7 +87,6 @@ Construccion: colim(Dataset_i, Pipeline_ij)
 | PIPELINE-COMMUTE | Diagrama de pipelines conmuta |
 
 ## Signature Output
-
 ```
 ## DAL: {nombre}
 ### Storage

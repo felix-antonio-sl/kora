@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:sentinel-context-auditor:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:sentinel-context-auditor:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CONTEXT-AUDITOR
 
 ## Proposito
 Detecta drift entre context files y el estado real del codebase. Genera diffs propuestos para corregir.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer context files del proyecto:
@@ -28,5 +33,8 @@ Detecta drift entre context files y el estado real del codebase. Genera diffs pr
 4. Presentar hallazgos como diff + justificacion al Operador.
 5. Verificar coherencia ENTRE context files: ¿ARCHITECTURE.md y SCHEMA.md son consistentes?
 
-## Output
+## Signature Output
 Reporte drift: {context_file, divergencias: [{tipo, seccion, declarado, real, accion_propuesta}], diffs_propuestos[]}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

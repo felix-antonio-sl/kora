@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-ci-layer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-ci-layer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar la capa 1 de verificacion: CI verde (lint + type check + tests unitarios). Resultado binario pass/fail. CI verde es condicion minima pero radicalmente insuficiente por si sola (Swarm::Ops Axioma 4).
 
-## I/O
-
+## Input/Output
 - **Input:** changeset: {files: string[], pr_metadata: PRInfo, test_config?: TestConfig}
 - **Output:** ci_result: {status: pass|fail, lint: {status: pass|fail, errors: string[]}, types: {status: pass|fail, errors: string[]}, tests: {status: pass|fail, total: number, passed: number, failed: number, skipped: number, failures: TestFailure[]}, duration_ms: number}
 
 ## Procedimiento
-
 1. **Ejecutar lint**:
    - Correr linter configurado del proyecto
    - Registrar errores/warnings
@@ -36,7 +33,6 @@ Ejecutar la capa 1 de verificacion: CI verde (lint + type check + tests unitario
 5. **Registrar duracion**: Medir tiempo total de ejecucion de la capa.
 
 ## Signature Output
-
 ```yaml
 ci_result:
   status: "pass"

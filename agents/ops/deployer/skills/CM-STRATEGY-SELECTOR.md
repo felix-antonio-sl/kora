@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:deployer-strategy-selector:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:deployer-strategy-selector:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Seleccionar la estrategia de deploy optima basada en la clasificacion de riesgo. Configurar feature flags y parametros de observacion segun el modo seleccionado.
 
-## I/O
-
+## Input/Output
 - **Input:** classification: {risk: lectura|escritura|destructiva, affected_systems: string[]}, environment: string
 - **Output:** strategy: {mode: fast-track|canary|manual, flag_config: FlagConfig, observation: ObservationConfig, rollback_plan: RollbackPlan}
 
 ## Procedimiento
-
 1. **Mapear riesgo a modo**:
    - lectura → fast-track: deploy inmediato, flag ON 100%, observacion 5min
    - escritura → canary: flag ON 5%, observacion 15min, expansion gradual (5%→25%→50%→100%)
@@ -40,7 +37,6 @@ Seleccionar la estrategia de deploy optima basada en la clasificacion de riesgo.
 5. **Validar**: rollback plan DEBE existir antes de retornar estrategia. Sin rollback plan → no hay estrategia valida.
 
 ## Signature Output
-
 ```yaml
 strategy:
   mode: "canary"

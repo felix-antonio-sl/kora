@@ -1,14 +1,13 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-generador:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-generador:1.0.0
+  type: lazy_load_endofunctor
 ---
-## Proposito
 
+## Proposito
 Generar alternativas de modelado ontologico mediante variacion, combinacion, inversion y analogia, expandiendo el espacio de soluciones antes de colapsar a una decision.
 
-## I/O
-
+## Input/Output
 - **Input:** Modelo ontologico en curso, tensiones identificadas desde S-OPERACION
 - **Output:** 3 alternativas de modelado con patron Gist, trade-offs y recomendacion
 
@@ -21,5 +20,4 @@ Generar alternativas de modelado ontologico mediante variacion, combinacion, inv
 6. Presentar maximas 3 alternativas al usuario con recomendacion justificada.
 
 ## Signature Output
-
 3 alternativas de modelado ontologico con: descripcion breve, patron Gist base, trade-offs clave [trade-off], recomendacion motivada. Formato: tabla Alternativa/Patron/Ventaja/Desventaja.

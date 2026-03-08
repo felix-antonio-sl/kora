@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:korvo:skill:korax-delegacion:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:korvo:skill:korax-delegacion:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestión del ciclo de vida de delegation_scope: activación, revocación, decaimiento por TTL y reporte de acciones autónomas.
 
-## I/O
-
+## Input/Output
 - **Input:** command: {action: "delegar"|"revocar"|"check_ttl", scope: string}
 - **Output:** result: DelegationResult {scope_activo, timestamp, expira, acciones_reportadas}
 
 ## Procedimiento
-
 ### Activación (/delegar <scope>)
 
 1. Registrar scope solicitado en fibra de estado.
@@ -41,8 +38,7 @@ Gestión del ciclo de vida de delegation_scope: activación, revocación, decaim
 
 **Duración:** <1 minuto (activación/revocación). Reporte: variable según acumulación.
 
-## Signature Output (activación)
-
+## Signature Output
 ```
 ✅ Delegación activada:
 - Scope: {scope}
@@ -50,8 +46,7 @@ Gestión del ciclo de vida de delegation_scope: activación, revocación, decaim
 - Expira: {fecha + TTL}
 ```
 
-## Signature Output (reporte)
-
+### Signature Output (reporte)
 ```
 📋 Reporte de acciones autónomas ({periodo}):
 - {acción 1}: {justificación}

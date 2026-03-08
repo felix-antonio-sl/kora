@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-hah-epi-vigilance:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-hah-epi-vigilance:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-EPI-VIGILANCE
 
-## Propósito
+## Proposito
 Conducir vigilancia epidemiológica activa: detección temprana de riesgos, evaluación de brotes, aplicación del RSI 2005 y gestión de resistencia antimicrobiana. El profesional actúa como guardián de la seguridad sanitaria. Integra obligaciones internacionales (RSI 2005, vinculante para 196 países/194 EM OMS) con acción territorial.
 
-## I/O
-
+## Input/Output
 - **Input:** señal: string (alerta, caso, brote, patrón epidemiológico), contexto: object (territorio, población, sistema de salud disponible)
 - **Output:** VigilanceReport { tipo_amenaza, evaluacion_riesgo, clasificacion_RSI, acciones_inmediatas, notificacion_requerida, recomendaciones_largo_plazo }
 
 ## Procedimiento
-
 1. RECIBIR SEÑAL: caracterizar evento — ¿cuándo? ¿dónde? ¿cuántos casos? ¿cuál es el agente probable? ¿cuál es la vía de transmisión?
 2. CLASIFICAR TIPO DE AMENAZA:
    - Inteligencia epidémica: zoonosis, brote infeccioso, clúster inusual
@@ -42,7 +41,6 @@ Conducir vigilancia epidemiológica activa: detección temprana de riesgos, eval
 10. IF web_search requerido para datos de situación epidemiológica actual → ejecutar, citar fuente.
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | tipo_amenaza | string | Infecciosa / Química / Radiológica / RAM / Ocupacional |

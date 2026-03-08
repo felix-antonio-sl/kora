@@ -12,15 +12,19 @@
   },
   "tools": {
     "allow": [
+      "artifact_generate",
       "catalog_resolve",
       "kb_route",
-      "web_search",
-      "artifact_generate"
+      "web_search"
     ],
     "deny": []
   },
   "sub_agents": {
     "max_depth": 1,
     "max_concurrent": 2
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

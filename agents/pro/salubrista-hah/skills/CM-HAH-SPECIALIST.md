@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-hah-hah-specialist:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-hah-hah-specialist:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-HAH-SPECIALIST
 
-## Propósito
+## Proposito
 Resolver problemas específicos de Hospitalización Domiciliaria (HD / HaH): criterios de admisión/egreso, gestión operacional, cargo Director Técnico, y evidencia internacional. Norma primaria: DS 1/2022 + DE 31/2024 (Chile). Evidencia base: Johns Hopkins HaH Program, Cochrane/Shepperd, CMS AHCAH. Consultar corpus hodom-* antes que web o modelo.
 
-## I/O
-
+## Input/Output
 - **Input:** subruta: "Admission"|"Operations"|"Director"|"Evidence", problema: string, contexto: object
 - **Output:** HAHResult { subruta, análisis, criterios_evaluados: [], recomendaciones: [], trazabilidad_normativa: [], alertas: [], disclaimer }
 
 ## Procedimiento
-
 ### Sub-ruta A — ADMISSION (criterios ingreso/egreso)
 
 **INGRESO** — Verificar 7 criterios copulativos (art. 15 DS 1/2022, TODOS deben cumplirse):
@@ -175,7 +174,6 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 - Consultar kb_route → `urn:pro:kb:hodom-situacion-chile` para datos DEIS, producción, brechas actuales
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | subruta | string | Admission / Operations / Director / Evidence |

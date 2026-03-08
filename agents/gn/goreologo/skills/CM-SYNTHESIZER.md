@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:goreologo-synthesizer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:goreologo-synthesizer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-SYNTHESIZER
 
 ## Proposito
 Integrar, calibrar y estructurar el analisis GORE en una respuesta clara, operable y bien etiquetada para el usuario.
 
-## I/O
-
+## Input/Output
 - **Input:** Analisis estructurado producido por CM-DOMAIN-ANALYZER
 - **Output:** Respuesta final calibrada con estructura visible, etiquetas de certeza y citas de fuente oficial
 

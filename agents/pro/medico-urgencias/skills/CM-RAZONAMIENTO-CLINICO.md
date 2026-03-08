@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:medico-urgencias-razonamiento-clinico:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:pro:skill:medico-urgencias-razonamiento-clinico:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar razonamiento clinico estructurado sobre datos parseados del paciente. Integra 4 procesos: deteccion red flags (VINDICATE), interacciones farmacologicas, integracion fisiologica y modulacion de contexto segun tipo output.
 
-## I/O
-
+## Input/Output
 - **Input:** ClinicalData parseada (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output) + PIVOTE_IMAGENOLOGICO (si disponible)
 - **Output:** RAZONAMIENTO_CLINICO: red_flags, interacciones, indicadores_fisiologicos, contexto_modulado, sospecha_dx, dx_diferencial, conducta_sugerida
 
 ## Procedimiento
-
 ### Fase 1: RED_FLAGS (VINDICATE)
 
 Busqueda activa sistematica:
@@ -59,7 +56,6 @@ Ajustar profundidad razonamiento segun tipo_output:
 Filtro parsimonia final: eliminar todo razonamiento que no impacte output solicitado.
 
 ## Signature Output
-
 ```
 RAZONAMIENTO_CLINICO:
   red_flags: [lista si detectados, "ninguno identificado" si no]

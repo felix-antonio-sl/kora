@@ -14,16 +14,14 @@
   },
   "tools": {
     "allow": [
-      "test_read",
-      "test_write",
-      "test_execution"
+      "ac_parse",
+      "acceptance_test_generate",
+      "coverage_report",
+      "integration_test_generate",
+      "kb_route",
+      "test_run"
     ],
-    "deny": [
-      "filesystem_write",
-      "deploy",
-      "production_access",
-      "secret_management"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -38,5 +36,18 @@
   },
   "model_routing": {
     "tier_default": "T2"
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "test_read",
+      "test_write",
+      "test_execution"
+    ],
+    "deny": [
+      "filesystem_write",
+      "deploy",
+      "production_access",
+      "secret_management"
+    ]
   }
 }

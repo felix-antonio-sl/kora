@@ -14,18 +14,18 @@
   "tools": {
     "allow": [
       "change_classify",
-      "strategy_select",
       "deploy_execute",
       "feature_flag_manage",
+      "kb_route",
       "post_deploy_verify",
       "rollback_execute",
-      "kb_route"
+      "strategy_select"
     ],
     "deny": []
   },
   "sub_agents": {
     "max_depth": 0,
-    "max_concurrent": 0
+    "max_concurrent": 1
   },
   "deploy": {
     "canary": {
@@ -54,5 +54,9 @@
       "T2_escritura": "canary",
       "T3_destructiva": "manual"
     }
+  },
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
   }
 }

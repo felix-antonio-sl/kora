@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "KORA Agent Component Schema",
-  "description": "Validates KORA agent component frontmatter per agent-spec-md v7.2.0",
+  "description": "Validates KORA agent component frontmatter per agent-spec-md v8.0.0",
   "type": "object",
   "required": ["_manifest"],
   "properties": {

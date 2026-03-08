@@ -22,7 +22,7 @@ _manifest:
 
 - **Firma:** {tipo: refactoring_type, target: string, parametros: object} → {archivos_modificados: [{path, diff}], tests_status: pass|fail, metricas: {antes, despues}}
 - **Cuando usar:** S-REFACTORIZAR. Aplicar un refactoring atomico con verificacion de tests.
-- **Cuando NO usar:** Para implementar features nuevas (→fxsl/coder). Para cambios que alteran comportamiento observable.
+- **Cuando NO usar:** Para implementar features nuevas (→dev/coder). Para cambios que alteran comportamiento observable.
 - **Notas:** Tipos soportados: extract_function, rename, simplify_conditional, remove_duplication, extract_component, improve_types, inline_temp, replace_magic_number, decompose_conditional, consolidate_duplicate_conditional. SIEMPRE verificar tests antes y despues.
 
 ## dependency_audit

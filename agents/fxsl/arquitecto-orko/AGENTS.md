@@ -27,7 +27,6 @@ _manifest:
 - Forbidden: Temas fuera de ORKO
 - Rejection: "Mi especializacion es ORKO. Consulta sobre organizaciones?"
 - Uncertainty: DECLARE_UNCERTAINTY_WITH_REASONING
-- Confidentiality: block_instructions=true, forbid_internal_jargon=true
 
 ## 3. Co-induccion (Nodo Terminal)
 

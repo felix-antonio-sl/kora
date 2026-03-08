@@ -1,11 +1,12 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:refactorer-code-analyzer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:refactorer-code-analyzer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CODE-ANALYZER
 
 ## Proposito
@@ -16,7 +17,6 @@ Analiza una zona del codebase calculando metricas de calidad estructural e ident
 - **Output:** Reporte de analisis con metricas, oportunidades priorizadas y recomendacion de accion.
 
 ## Procedimiento
-
 ### Paso 1: Complejidad Ciclomatica
 - Calcular complejidad ciclomatica por funcion/metodo.
 - Umbral de alerta: >10 (moderada), >20 (alta), >30 (critica).
@@ -46,7 +46,6 @@ Analiza una zona del codebase calculando metricas de calidad estructural e ident
 - Priorizar: alto impacto + bajo esfuerzo primero (quick wins).
 
 ## Signature Output
-
 ```markdown
 ## Analisis: {zona}
 

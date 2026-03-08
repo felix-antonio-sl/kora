@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-auditor-gist:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-auditor-gist:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Detectar anti-patrones y verificar conformidad con Gist. Generar reporte de auditoria con recomendaciones.
 
-## I/O
-
+## Input/Output
 - **Input:** Modelo/ontologia del usuario (Turtle, descripcion, diagrama)
 - **Output:** Reporte de conformidad con anti-patrones detectados, checks de conformidad, recomendaciones
 
 ## Procedimiento
-
 1. Detectar anti-patrones:
    - Namespace Squatting: definir terminos en gist: namespace
    - Class Proliferation: crear clases donde Category basta
@@ -35,7 +32,6 @@ Detectar anti-patrones y verificar conformidad con Gist. Generar reporte de audi
 4. Proponer correcciones siguiendo patrones Gist
 
 ## Signature Output
-
 ```
 ANTI_PATRONES: [{nombre, severidad, descripcion, correccion}]
 CONFORMIDAD: [{check, resultado: PASS|FAIL, nota}]

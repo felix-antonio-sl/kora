@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:korvo:skill:korax-bancarrota:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:korvo:skill:korax-bancarrota:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Protocolo de bancarrota asistida para reiniciar el sistema desde estado limpio. Se activa tras S_COLLAPSE confirmado por el operador.
 
-## I/O
-
+## Input/Output
 - **Input:** confirmation: bool (operador acepta emergencia), gtd_files: {NEXT.md, WAITING.md, SOMEDAY.md}
 - **Output:** rebuild: BankruptcyResult {mantenidos, soltados, renegociados, fase_actual}
 
 ## Procedimiento
-
 ### Fase 1: Bancarrota (15-30 min)
 
 1. Listar todos los compromisos activos (NEXT.md + WAITING.md).
@@ -37,7 +34,6 @@ Protocolo de bancarrota asistida para reiniciar el sistema desde estado limpio. 
 **Duración:** Variable (fase 1: 15-30min, fase 2: 48h, fase 3: 14 días).
 
 ## Signature Output
-
 ```
 🛑 MODO EMERGENCIA — Fase {n}/3
 Compromisos revisados: {n}

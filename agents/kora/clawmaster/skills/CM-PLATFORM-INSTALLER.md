@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-platform-installer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-platform-installer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-PLATFORM-INSTALLER
 
 ## Proposito
 Ejecuta la instalacion de OpenClaw en la plataforma target del usuario, adaptando el procedimiento y verificando cada paso.
 
-## I/O
-
+## Input/Output
 - **Input:** plataforma: string (plataforma target detectada por CM-INTENT-CLASSIFIER), metodo: string | null (metodo preferido)
 - **Output:** InstallReport (ver Signature Output)
 
 ## Procedimiento
-
 ### Paso 1: Detectar y Confirmar Plataforma
 
 | Plataforma | Metodo Recomendado | Docs Referencia |
@@ -57,7 +56,6 @@ openclaw health          # all green
 ```
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | plataforma | string | Plataforma donde se instalo |

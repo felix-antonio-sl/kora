@@ -111,4 +111,6 @@ Example: M = {Controller, Sensor, Actuator, ctrl_to_sensor, ctrl_to_act}; N = {C
 
 ## Injection Partial Order (Complexity)
 
+### MBSE-INJECTION-POSET
+
 Injection relation defines partial order on Catmodels: A ≤ B iff ∃ injection A → B. Organizes models in a lattice of refinements/abstractions. Allows comparison of structural complexity of different models of the same system.

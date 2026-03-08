@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:orquestador-swarm-backpressure-controller:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:orquestador-swarm-backpressure-controller:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Controlar la presion del pipeline cuando la cola de verificacion se satura. Reducir tasa de generacion de PRs del enjambre. Redirigir agentes a tareas productivas no-PR. Priorizar por valor de negocio. Monitorear drenaje hasta restaurar tasa normal.
 
-## I/O
-
+## Input/Output
 - **Input:** queue_status: {depth: number, threshold: number, drain_rate: number, pr_generation_rate: number, business_priorities: PriorityMap}
 - **Output:** backpressure_action: {activated: boolean, pr_rate_reduction: float, agent_redirections: AgentRedirection[], priority_reorder: PriorityReorder[], estimated_drain_time_min: number, status: monitoring|active|draining|resolved}
 
 ## Procedimiento
-
 1. **Evaluar estado de cola**:
    - IF depth > threshold → activar backpressure
    - IF depth > threshold * 2 → backpressure critica, reduccion agresiva
@@ -45,7 +42,6 @@ Controlar la presion del pipeline cuando la cola de verificacion se satura. Redu
    - IF cola drenada → desactivar backpressure, notificar enjambre
 
 ## Signature Output
-
 ```yaml
 backpressure_action:
   activated: true
@@ -54,10 +50,10 @@ backpressure_action:
   threshold: 20
   pr_rate_reduction: 0.5
   agent_redirections:
-    - agent: "fxsl/coder-1"
+    - agent: "dev/coder-1"
       from: "pr_generation"
       to: "architecture_analysis"
-    - agent: "fxsl/coder-2"
+    - agent: "dev/coder-2"
       from: "pr_generation"
       to: "tech_debt_review"
   priority_reorder:

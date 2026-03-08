@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-agent-designer:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-agent-designer:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-AGENT-DESIGNER
 
 ## Proposito
 Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capas de estado, interface y security. Produce blueprint arquitectonico completo. Referencia: agent-spec-md v7.2.0 (tabla de equivalencia terminologica v6/v7 en §15).
 
-## I/O
-
+## Input/Output
 - **Input:** dominio: string (descripcion del dominio del agente), namespace: string, restricciones: string[] | null
 - **Output:** AgentBlueprint (ver Signature Output)
 
@@ -27,7 +27,6 @@ Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capa
 8. Presentar blueprint al usuario: tabla de componentes, diagrama FSM, lista de skills.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | nombre | string | Nombre del agente |

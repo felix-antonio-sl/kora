@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:security-dependency-auditor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:security-dependency-auditor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Auditar dependencias del proyecto para CVEs evaluando exposicion REAL, no solo existencia de vulnerabilidad. Diferencia clave: "dependencia tiene CVE" vs "dependencia tiene CVE Y la funcion vulnerable esta expuesta a input externo en nuestro codebase." Proponer mitigacion priorizada por exposicion real.
 
-## I/O
-
+## Input/Output
 - **Input:** dependencies: {name: string, version: string}[], codebase_usage: {dependency: string, import_locations: FileLocation[], input_sources: InputSource[]}
 - **Output:** audit: {total_cves: number, exposed_cves: number, findings: DependencyFinding[], mitigations: Mitigation[]}
 
 ## Procedimiento
-
 1. **Consultar CVEs** para cada dependencia:
    - Buscar en base CVE: NVD, GitHub Advisory, OSV
    - Filtrar por version actual (descartar CVEs que no aplican a version instalada)
@@ -46,7 +43,6 @@ Auditar dependencias del proyecto para CVEs evaluando exposicion REAL, no solo e
    - Para cada mitigacion: esfuerzo estimado, breaking changes potenciales
 
 ## Signature Output
-
 ```yaml
 audit:
   total_cves: 5

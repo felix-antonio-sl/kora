@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:orquestador-swarm-context-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:orquestador-swarm-context-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar contexto multi-turno de la sesion de orquestacion. Mantener estado acumulado (eventos procesados, golden paths ejecutados, backpressure, circuit breakers) y generar resumen de sesion en nodo terminal.
 
-## I/O
-
+## Input/Output
 - **Input:** session_history: {turns: Turn[], events_processed: EventClassification[], golden_paths_executed: GoldenPathExecution[], backpressure_activations: BackpressureAction[], circuit_breakers_triggered: CircuitBreakerEvent[], agent_dispatches: AgentDispatch[]}
 - **Output:** session_summary: {events_total: number, events_by_type: TypeCount, golden_paths_completed: number, golden_paths_failed: number, backpressure_activations: number, circuit_breakers_triggered: number, agents_dispatched: number, timeline: TimelineEntry[], final_health: string, recommendations: string[]}
 
 ## Procedimiento
-
 1. **Agregar eventos procesados**:
    - Contar eventos por tipo (commit, PR, alerta, config_change, etc.)
    - Contar eventos por riesgo (lectura, escritura, destructiva)
@@ -49,7 +46,6 @@ Gestionar contexto multi-turno de la sesion de orquestacion. Mantener estado acu
    - IF agente especifico frecuentemente despachado → analizar si requiere refuerzo
 
 ## Signature Output
-
 ```yaml
 session_summary:
   events_total: 15

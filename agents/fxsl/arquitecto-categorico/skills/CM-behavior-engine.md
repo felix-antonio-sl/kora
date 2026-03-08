@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-behavior-engine:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-behavior-engine:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Modelar sistemas dinamicos mediante lenses, coalgebras y monadas. Principio: Comportamiento > implementacion. Trigger: S-CATEGORICAL-MODELING(dinamico).
 
 ## Input/Output
-
 - **Input:** Dominio con estados, transiciones, efectos desde S-DOMAIN-INTAKE
 - **Output:** Modelo dinamico formalizado con subsistema apropiado (lens/coalgebra/monada)
 
 ## Procedimiento
-
 1. **Clasificar dinamica** — ¿Observable bidireccional (lens)? ¿Stream/automata (coalgebra)? ¿Efectos computacionales (monada)?
 2. **Seleccionar subsistema** segun clasificacion
 3. **Formalizar** con estructuras concretas
@@ -67,7 +64,6 @@ Kleisli: update: S×I → M(S). Composicion en Kl(M): f >=> g = μ ∘ M(g) ∘ 
 Trayectorias: Secuencia de estados, puntos fijos (steady state), orbitas periodicas.
 
 ## Signature Output
-
 ```
 ## Modelo Dinamico: {nombre}
 Subsistema: {Lens|Coalgebra|Monada}

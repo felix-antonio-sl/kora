@@ -14,19 +14,16 @@
   },
   "tools": {
     "allow": [
-      "filesystem_read",
-      "filesystem_write",
-      "code_execution",
-      "git",
-      "lint",
-      "test_runner"
+      "code_generate",
+      "implementation_plan",
+      "kb_route",
+      "lint_typecheck",
+      "pr_generate",
+      "story_consume",
+      "test_write",
+      "type_define"
     ],
-    "deny": [
-      "deploy",
-      "web_search",
-      "production_access",
-      "secret_management"
-    ]
+    "deny": []
   },
   "sub_agents": {},
   "limits": {
@@ -52,5 +49,21 @@
     "tier_overrides": {
       "complejo": "T3"
     }
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "filesystem_read",
+      "filesystem_write",
+      "code_execution",
+      "git",
+      "lint",
+      "test_runner"
+    ],
+    "deny": [
+      "deploy",
+      "web_search",
+      "production_access",
+      "secret_management"
+    ]
   }
 }

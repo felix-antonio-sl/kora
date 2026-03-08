@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-lifecycle-orchestrator:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-lifecycle-orchestrator:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
 Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FORGE (KORAFICATE|CRYSTALLIZE) → AUDIT, con checkpoints entre fases y gestion de contexto inter-fase.
 
-## I/O
-
+## Input/Output
 - **Input:** intencion: IntentClassification (modo=GUIADO), fuentes: Document[] | null
 - **Output:** LifecycleSummary (ver Signature Output)
 
 ## Procedimiento
-
 ### Fase 1: DESIGN (checkpoint)
 1. Invocar CM-ARTIFACT-DESIGNER.
 2. Presentar plan al usuario.
@@ -52,7 +51,6 @@ Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FO
 - Si usuario cambia de tema → S-DISPATCHER.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | fases_completadas | string[] | Fases ejecutadas en el ciclo |

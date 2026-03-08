@@ -1,14 +1,13 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ontologista-gist-analizador:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ontologista-gist-analizador:1.0.0
+  type: lazy_load_endofunctor
 ---
-## Proposito
 
+## Proposito
 Analizar un dominio o problema de modelado ontologico en 4 dimensiones: estructura estatica, dinamica temporal, tensiones de diseno y busqueda de patrones Gist aplicables.
 
-## I/O
-
+## Input/Output
 - **Input:** Dominio o problema de modelado desde S-OPERACION
 - **Output:** Analisis estructurado con entidades, tensiones, patrones Gist candidatos, decisiones pendientes
 
@@ -24,5 +23,4 @@ Analizar un dominio o problema de modelado ontologico en 4 dimensiones: estructu
 5. Registrar decisiones pendientes con razon de la tension.
 
 ## Signature Output
-
 Analisis estructurado: tabla Entidad/Clase-Gist-candidata/Tension-identificada. Lista de patrones Gist aplicables priorizados. Decisiones pendientes para CM-GENERADOR.

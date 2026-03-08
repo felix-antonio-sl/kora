@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:medico-urgencias-generador-documentos:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:pro:skill:medico-urgencias-generador-documentos:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Generar documentos clinicos telegraficos parametrizados por tipo_output. Unifica logica de generacion para sintesis, alta, hospitalizacion, interconsulta y epicrisis. Aplica filtro parsimonia como paso final.
 
-## I/O
-
+## Input/Output
 - **Input:** RAZONAMIENTO_CLINICO + ClinicalData + tipo_output (sintesis|alta|hospitalizacion|interconsulta|epicrisis)
 - **Output:** Documento clinico telegrafico en wrapper XML <respuesta></respuesta>
 
 ## Procedimiento
-
 ### Paso 1: Seleccion plantilla por tipo_output
 
 **sintesis:**
@@ -70,7 +67,6 @@ Envolver en XML:
 - Siempre: <respuesta>[documento telegrafico]</respuesta>
 
 ## Signature Output
-
 ```
 <respuesta>
 [Documento clinico telegrafico segun plantilla tipo_output]

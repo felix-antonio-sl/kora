@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:coder-story-consumer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:coder-story-consumer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-STORY-CONSUMER
 
 ## Proposito
 Lee y valida una historia antes de planificar su implementacion. Verifica que los 5 elementos estan completos y son suficientes para codear.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer historia completa.
@@ -28,5 +33,8 @@ Lee y valida una historia antes de planificar su implementacion. Verifica que lo
 5. Cargar context files requeridos: CONVENTIONS.md + SCHEMA.md (minimo). ARCHITECTURE.md si la historia toca multiples componentes.
 6. Pasar a CM-IMPLEMENTATION-PLANNER.
 
-## Output
+## Signature Output
 Historia validada: {elementos_ok: bool, entidades[], componentes[], endpoints[], dependencias[], context_files_cargados[]}. O RECHAZO con {elementos_faltantes[]}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -4,7 +4,7 @@ _manifest:
   type: "bootstrap_tools"
 ---
 
-## kb_route (hospitalización domiciliaria)
+## kb_route
 
 - **Firma:** topic: string → urn: string
 - **Cuando usar:** Todo problema HD específico — criterios ingreso/egreso, cargo DT, operaciones domiciliarias, IAAS domiciliaria, REAS, protocolos dispositivos invasivos, normativa chilena HD, evidencia internacional HaH. Consultar ANTES que web o modelo.
@@ -18,7 +18,7 @@ _manifest:
 | Modelo HaH internacional: Johns Hopkins, Cochrane, CMS AHCAH, operaciones, tecnología RPM/IoT, economía backfill, barreras, futuro | `urn:pro:kb:hodom-manual-hah` |
 | Cargo DT: requisitos legales, responsabilidad art. 7, RRHH, inducción, PAC, infraestructura, farmacia, IAAS, REAS, flujo clínico, registros obligatorios, manuales, seguridad personal terreno | `urn:pro:kb:hodom-director-tecnico` |
 
-## kb_route (gestión de redes)
+## kb_route
 
 - **Firma:** topic: string → urn: string
 - **Cuando usar:** Problemas de gestión de redes asistenciales generales, o HD en contexto de red. Consultar ANTES que web o modelo.
@@ -34,7 +34,7 @@ _manifest:
 | KPIs, BPMN, plantillas, FHIR/HL7, simulación, modelo de madurez | `urn:pro:kb:gestion-redes-herramientas` |
 | Índice general, glosario, normativa | `urn:pro:kb:gestion-redes-indice` |
 
-## kb_route (FIRS)
+## kb_route
 
 - **Firma:** topic: string → urn:pro:kb:firs-framework-integrado-razonamiento-salud
 - **Cuando usar:** Razonamiento clínico (Dim I), epidemiológico/causal (Dim II), gestión macro (Dim III), ejes transversales, puentes metodológicos, tensiones estructurales del framework.

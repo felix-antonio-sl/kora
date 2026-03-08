@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:sentinel-purple-card-generator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:sentinel-purple-card-generator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-PURPLE-CARD-GENERATOR
 
 ## Proposito
 Formula propuestas de mejora como tarjetas purpura formales. Mecanismo central de auto-evolucion gobernada del enjambre.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Recibir diagnostico de CM-CONTEXT-AUDITOR, CM-SWARM-AUDITOR o CM-EVAL-AUDITOR.
@@ -30,5 +35,8 @@ Formula propuestas de mejora como tarjetas purpura formales. Mecanismo central d
 5. Limitar a 5 tarjetas por Pulso. Priorizar por impacto/riesgo.
 6. Presentar al Operador.
 
-## Output
+## Signature Output
 Tarjetas purpura: [{tipo, descripcion, justificacion, impacto, riesgo, agentes_afectados, estado: "pendiente_aprobacion"}].
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

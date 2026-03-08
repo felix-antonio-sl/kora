@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-intent-classifier:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-intent-classifier:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-FORGEMASTER, determinando la capacidad requerida y el modo de operacion (guiado/libre).
 
-## I/O
-
+## Input/Output
 - **Input:** mensaje: string (mensaje del usuario), estado_actual: FSMState (estado FSM vigente), contexto_previo: SessionContext | null
 - **Output:** IntentClassification (ver Signature Output)
 
@@ -24,7 +24,6 @@ Clasifica la intencion del usuario al inicio de cada turno en la FSM WF-FORGEMAS
 5. Emitir clasificacion: {capacidad, modo, fase_actual, confianza}.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | capacidad | enum(DESIGN\|CREATE\|IMPLEMENT\|VALIDATE\|OPERATE\|IMPROVE\|DEPRECATE\|GUIDED\|END) | Capacidad clasificada |

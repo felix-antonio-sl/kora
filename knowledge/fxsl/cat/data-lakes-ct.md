@@ -38,6 +38,8 @@ Categorical framework for modeling and integrating Data Lakes. Core construction
 
 ## Grothendieck Construction ∫F
 
+### DL-GROTHENDIECK-DEF
+
 **Definition.** Input: functor F: I → Cat assigning schema S_i to each index i. Output: integrated category ∫F.
 
 - Objects: pairs (i, x) where i ∈ I, x ∈ F(i).

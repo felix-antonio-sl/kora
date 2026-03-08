@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:coder-implementation-planner:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:coder-implementation-planner:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-IMPLEMENTATION-PLANNER
 
 ## Proposito
 Genera plan de implementacion descompuesto en tareas tecnicas ordenadas, respetando el ciclo TDD y type-first development.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Recibir historia validada del CM-STORY-CONSUMER.
@@ -30,5 +35,8 @@ Genera plan de implementacion descompuesto en tareas tecnicas ordenadas, respeta
 6. Presentar plan al Operador para aprobacion.
 7. NO PROCEDER sin aprobacion.
 
-## Output
+## Signature Output
 Plan: {tareas: [{orden, descripcion, archivos[], tipo, depende_de[]}], tier_recomendado, requiere_aprobacion_humana: bool}. Listo para aprobacion.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

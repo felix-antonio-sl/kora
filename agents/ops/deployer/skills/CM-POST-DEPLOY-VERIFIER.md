@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:deployer-post-deploy-verifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:deployer-post-deploy-verifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Verificar estado post-deploy comparando metricas actuales contra baseline pre-deploy. Determinar si deploy es estable para expansion o si requiere rollback.
 
-## I/O
-
+## Input/Output
 - **Input:** deploy_result: DeployResult, baseline: MetricsBaseline, strategy: StrategyConfig
 - **Output:** verification: {status: stable|degraded|critical, metrics_current: MetricsSnapshot, comparison: MetricsDiff, recommendation: expand|hold|rollback}
 
 ## Procedimiento
-
 1. **Esperar ventana observacion**:
    - fast-track: 5min
    - canary: 15min por step de expansion
@@ -52,7 +49,6 @@ Verificar estado post-deploy comparando metricas actuales contra baseline pre-de
    - IF degradado → rollback a version anterior
 
 ## Signature Output
-
 ```yaml
 verification:
   status: "stable"

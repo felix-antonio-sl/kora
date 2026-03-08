@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:korvo:skill:korax-deteccion-abandono:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:korvo:skill:korax-deteccion-abandono:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Detección y reactivación suave ante abandono del sistema. Escala en 3 niveles calibrados (INV-08: 3d → 7d → 14d, sin saltar niveles).
 
-## I/O
-
+## Input/Output
 - **Input:** last_activity: timestamp, buffer_state: {count, ages}
 - **Output:** reactivation: AbandonResult {nivel, mensaje, opciones}
 
 ## Procedimiento
-
 ### Detección (<1 minuto, automática)
 
 Evaluar nivel según tiempo sin triaje/actividad:
@@ -36,7 +33,6 @@ En nivel 1 (≥3 días), Korax **PUEDE** ejecutar triaje rápido automático:
 **Duración:** <1 minuto (detección). Reactivación: variable según nivel.
 
 ## Signature Output
-
 ```
 👋 Nivel {1|2|3}: {n} días sin {triaje|actividad}.
 Buffer: {n} items ({n} >7 días).

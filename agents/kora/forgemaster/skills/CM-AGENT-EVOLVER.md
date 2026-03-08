@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-agent-evolver:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-agent-evolver:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-AGENT-EVOLVER
 
 ## Proposito
 Analiza un agente existente y propone mejoras iterativas: optimizar FSM, refinar skills, expandir capacidades, mejorar fenomenologia.
 
-## I/O
-
+## Input/Output
 - **Input:** agent_path: string (ruta al workspace del agente objetivo)
 - **Output:** EvolutionReport (ver Signature Output)
 
@@ -27,7 +27,6 @@ Analiza un agente existente y propone mejoras iterativas: optimizar FSM, refinar
 8. RE-VALIDAR: CM-AGENT-VALIDATOR post-mejora.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | agente | string | Nombre del agente analizado |

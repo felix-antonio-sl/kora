@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:integrador-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:integrador-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Clasificar la intencion del operador en el contexto de integracion para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del integrador.
 
-## I/O
-
+## Input/Output
 - **Input:** user_message: string, current_state: FSM_State
 - **Output:** intent: {type: MERGE|COHERENCIA|CONFLICTO|COLA|END, confidence: float, context: string}
 
 ## Procedimiento
-
 1. **Extraer** tokens clave del mensaje: PR number, merge, coherencia, conflicto, cola, queue, backpressure, prioridad, status, resolver.
 2. **Mapear** a intent:
    - Tokens PR, merge, integrar, branch, diff, semantico → MERGE
@@ -26,7 +23,6 @@ Clasificar la intencion del operador en el contexto de integracion para dirigir 
 4. **Validar contexto**: IF intent requiere estado previo (ej. CONFLICTO sin merge analizado) → redirigir a paso previo necesario.
 
 ## Signature Output
-
 ```yaml
 intent:
   type: "MERGE"

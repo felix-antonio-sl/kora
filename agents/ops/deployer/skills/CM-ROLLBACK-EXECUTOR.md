@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:deployer-rollback-executor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:deployer-rollback-executor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Ejecutar rollback atomico cuando verificacion post-deploy detecta degradacion. Revertir a version anterior, desactivar feature flag, verificar normalizacion de metricas, alertar operador con diagnostico.
 
-## I/O
-
+## Input/Output
 - **Input:** deploy_result: DeployResult, verification: VerificationResult, rollback_plan: RollbackPlan
 - **Output:** rollback_result: {status: success|failed, reverted_to: string, flag_deactivated: boolean, metrics_normalized: boolean, diagnosis: Diagnosis, actions_log: ActionLog[]}
 
 ## Procedimiento
-
 1. **Desactivar feature flag** (inmediato):
    - Flag → OFF (0% trafico)
    - Log: FLAG_DEACTIVATED
@@ -53,7 +50,6 @@ Ejecutar rollback atomico cuando verificacion post-deploy detecta degradacion. R
    - Recomendar: investigar causa raiz antes de re-deploy
 
 ## Signature Output
-
 ```yaml
 rollback_result:
   status: "success"

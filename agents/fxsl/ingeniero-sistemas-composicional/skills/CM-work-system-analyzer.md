@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:ingeniero-sistemas-composicional-work-system-analyzer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:ingeniero-sistemas-composicional-work-system-analyzer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Analizar sistema usando Work System Perspective (Alter). Mapear 9 elementos del sistema de trabajo y 17 facetas de trabajo para comprension integral.
 
 ## Input/Output
-
 - **Input:** Dominio o sistema existente desde cualquier estado que requiera analisis WS
 - **Output:** Work System Snapshot con 9 elementos y facetas relevantes
 
 ## Procedimiento
-
 1. Mapear 9 elementos del Work System:
    - PARTICIPANTES: Quienes realizan actividades?
    - PROCESOS: Que actividades se realizan?
@@ -31,7 +28,6 @@ Analizar sistema usando Work System Perspective (Alter). Mapear 9 elementos del 
 4. Identificar workarounds existentes o probables
 
 ## Signature Output
-
 ```
 ## Work System Snapshot
 | Elemento | Descripcion |

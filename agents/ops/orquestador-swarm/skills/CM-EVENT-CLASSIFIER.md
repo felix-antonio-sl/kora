@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:orquestador-swarm-event-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:orquestador-swarm-event-classifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Clasificar eventos entrantes al sistema nervioso del enjambre. Determinar tipo de evento, nivel de riesgo y golden path correspondiente. Cada evento es un estimulo que el orquestador debe rutear.
 
-## I/O
-
+## Input/Output
 - **Input:** event: {type: string, payload: EventPayload, source: string, timestamp: ISO8601}
 - **Output:** classification: {event_type: commit|pr|alert|config_change|sentinel_proposal|eval_result|heartbeat, risk: lectura|escritura|destructiva, golden_path: estandar|destructiva|infraestructura|hotfix, priority: 1-5, affected_systems: string[], requires_human: boolean}
 
 ## Procedimiento
-
 1. **Identificar tipo de evento**:
    - Commit/PR → analizar diff y metadata
    - Alerta produccion → analizar severidad y sistema afectado
@@ -50,7 +47,6 @@ Clasificar eventos entrantes al sistema nervioso del enjambre. Determinar tipo d
    - ELSE → requires_human = false
 
 ## Signature Output
-
 ```yaml
 classification:
   event_type: "pr"

@@ -1,0 +1,31 @@
+{
+  "_manifest": {
+    "urn": "urn:test:agent-bootstrap:sample-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:test:kb:sample-kb"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "kb_route",
+      "repo_health"
+    ],
+    "deny": []
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "analysis"
+    ],
+    "deny": [
+      "deploy"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  }
+}

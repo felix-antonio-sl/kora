@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:medico-urgencias-interpretador-imagenes:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:pro:skill:medico-urgencias-interpretador-imagenes:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Interpretar hallazgos imagenologicos con criterio de parsimonia clinica. Acepta texto (informes radiologicos) e imagenes directas (Rx, ECO, TAC si LLM multimodal).
 
-## I/O
-
+## Input/Output
 - **Input:** Informe radiologico (texto) o imagen clinica directa (Rx, ECO, TAC, RM)
 - **Output:** PIVOTE_IMAGENOLOGICO: modalidad, hallazgos_relevantes, correlacion_clinica, red_flags, urgencia
 
 ## Procedimiento
-
 1. CAPABILITY_CHECK: Verificar si modelo activo soporta input visual. Si no -> procesar solo texto.
 2. MODALIDAD: Identificar tipo (Rx, ECO, TAC, RM) y region anatomica.
 3. HALLAZGOS POSITIVOS: Extraer solo alteraciones relevantes para cuadro actual.
@@ -39,7 +36,6 @@ Filtro parsimonia:
 - Omitir variantes anatomicas sin relevancia clinica
 
 ## Signature Output
-
 ```
 PIVOTE_IMAGENOLOGICO:
   modalidad: [tipo + region]

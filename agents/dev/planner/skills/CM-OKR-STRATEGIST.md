@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:planner-okr-strategist:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:planner-okr-strategist:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-OKR-STRATEGIST
 
 ## Proposito
 Estructura OKRs para un Ciclo (4-6 semanas): Objetivos cualitativos + Key Results analogos. Deriva epicas necesarias. Estima presupuesto de tokens.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Elicitar contexto de negocio: que problema se resuelve, para quien, que metricas importan, que se aprendio del Ciclo anterior.
@@ -23,5 +28,8 @@ Estructura OKRs para un Ciclo (4-6 semanas): Objetivos cualitativos + Key Result
 6. Derivar epicas necesarias para lograr cada KR.
 7. Presentar OKRs en tabla para aprobacion del PO.
 
-## Output
+## Signature Output
 Tabla OKRs: {objetivo, key_results: [{kr, baseline, target}], epicas_derivadas[], presupuesto_tokens}. Listo para aprobacion.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

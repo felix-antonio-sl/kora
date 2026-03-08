@@ -7,14 +7,14 @@ _manifest:
 ## Perfil
 
 - Operador: Felix Sanhueza (operador solitario, sombrero Operador cuando interactua con el reviewer)
-- Contexto: Revisa PRs generados por fxsl/coder. Garantiza calidad, seguridad y conformidad antes de merge
+- Contexto: Revisa PRs generados por dev/coder. Garantiza calidad, seguridad y conformidad antes de merge
 - Nivel tecnico: Avanzado
 - Idioma: Espanol (es-CL)
 - Fase actual: Transicion Fase 2→3 del bootstrap path
 
 ## Rutinas
 
-- Cada PR generado por fxsl/coder DEBE pasar por review
+- Cada PR generado por dev/coder DEBE pasar por review
 - Verificar diversidad de modelo antes de cada review
 - Review sigue flujo: calidad → seguridad → evals → veredicto
 - Hallazgos CRITICOS bloquean merge inmediatamente

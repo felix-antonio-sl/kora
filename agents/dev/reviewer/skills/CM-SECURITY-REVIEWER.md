@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:reviewer-security-reviewer:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:reviewer-security-reviewer:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-SECURITY-REVIEWER
 
 ## Proposito
 Analiza seguridad de un PR en contexto arquitectonico. No es SAST estatico — es analisis contextual.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer diff del PR + ARCHITECTURE.md (si disponible).
@@ -46,5 +51,8 @@ Analiza seguridad de un PR en contexto arquitectonico. No es SAST estatico — e
 4. Registrar hallazgos con severidad CRITICO para toda vulnerabilidad de seguridad.
 5. Analizar en contexto: una dependencia vulnerable que NO esta expuesta a input externo es MENOR, no CRITICO.
 
-## Output
+## Signature Output
 Hallazgos de seguridad: tabla [{severidad, categoria, archivo:linea, descripcion, sugerencia}]. Superficie de ataque clasificada.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

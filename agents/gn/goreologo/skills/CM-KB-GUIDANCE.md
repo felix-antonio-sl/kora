@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:goreologo-kb-guidance:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:goreologo-kb-guidance:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-KB-GUIDANCE
 
 ## Proposito
 Identificar y priorizar las fuentes KB del repositorio KORA relevantes para una consulta sobre GOREs, orientando la busqueda antes de formular la respuesta.
 
-## I/O
-
+## Input/Output
 - **Input:** Tema de consulta sobre GOREs a resolver
 - **Output:** Lista priorizada de KB con URNs resueltos, razon de relevancia y gaps de cobertura
 

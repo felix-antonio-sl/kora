@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-sistemas-informacion-schema-evolution-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-sistemas-informacion-schema-evolution-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar evolucion de esquemas via funtores de migracion. Analizar esquema actual vs nuevo y disenar migracion preservando estructura.
 
-## I/O
-
+## Input/Output
 - **Input:** Esquema actual y requerimientos de cambio desde S-EVOLUTION
 - **Output:** Plan migracion con funtor, tipo migracion y scripts
 
 ## Procedimiento
-
 1. Formalizar ESQUEMA ACTUAL: Categoria C_old
 2. Formalizar ESQUEMA NUEVO: Categoria C_new
 3. Disenar FUNTOR F: C_old → C_new (mapeo evolucion)
@@ -26,7 +23,6 @@ Gestionar evolucion de esquemas via funtores de migracion. Analizar esquema actu
 6. Verificar preservacion de datos
 
 ## Signature Output
-
 ```
 ## Plan de Migracion
 - **Esquema actual**: C_old ({descripcion})

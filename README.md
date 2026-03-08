@@ -1,163 +1,99 @@
 # KORA
 
-Monorepo de especificaciones formales para construir y gobernar agentes LLM usando fundamentos de teoria de categorias.
+Monorepo de especificaciones, conocimiento y workspaces de agentes gobernados por una capa formal categorial y una toolchain ejecutable.
 
-Fusiona 6 repositorios (koda, fxsl, gorenuble, tde, orko, korvo) en una estructura organizada por namespaces. Idioma principal: **es-CL**.
+## Que Es
 
-## Numeros
+KORA organiza el ecosistema en cuatro estratos:
 
-| Metrica | Valor |
-|---------|-------|
-| Artifacts totales (catalogo) | 640 |
-| Knowledge bases | 255 |
-| Agentes (workspaces) | 43 |
-| Artefactos bootstrap de agente (catalogo) | 172 |
-| Skills (endofuntores lazy-load) | 213 |
-| Specs fundacionales | 7 |
-| Namespaces activos | 12 |
-| Broken URNs | 0 |
+- `specs/`: ley operativa del sistema.
+- `knowledge/`: artefactos descriptivos KORA/MD.
+- `agents/`: workspaces ejecutables KORA.
+- `scripts/`: CLI oficial para indexar, validar, migrar y auditar.
+
+La Formal Layer oficial vive en `knowledge/kora/categorical-foundations/`. El corpus `knowledge/fxsl/cat/` permanece como material auxiliar y solo entra a la ley operativa por absorcion formal explicita.
 
 ## Arquitectura
 
-```
+```text
 kora/
-  specs/           Especificaciones fundacionales (gobernanza, formatos, agentes)
-  knowledge/       KBs organizados por namespace (gn, fxsl, tde, legal, ...)
-  agents/          43 agentes como workspaces KORA
-  catalog/         Registro maestro de URNs
-  skills/          Federacion de skills
-  scripts/         CLI (kora index/resolve/health/validate/stats)
+  specs/                        constitucion y specs derivadas
+  knowledge/                    KBs por namespace
+    kora/categorical-foundations/   formal layer oficial (00-08)
+    fxsl/cat/                       corpus categorial auxiliar
+  agents/                       workspaces de agentes por namespace
+  catalog/                      vista materializada del grafo de artefactos
+  docs/generated/               salidas vivas generadas por la CLI
+  schemas/                      contratos JSON para bootstrap y config
+  scripts/                      CLI oficial
 ```
 
-### Jerarquia de Gobernanza
+## Gobernanza
 
-```
-gobernanza.md          meta-reglas del ecosistema
-  md-spec.md           formato KORA/MD (descriptivo)
-  spec-md.md           formato KORA/Spec-MD (prescriptivo)
-    agent-spec-md.md   arquitectura de agentes v5.0.0
-```
+La precedencia normativa es:
 
-### Modelo de Agente
+1. `specs/gobernanza.md`
+2. `specs/spec-md.md` y `specs/md-spec.md`
+3. `specs/agent-spec-md.md`, `specs/skill-spec-md.md`, `specs/runtime-spec-md.md`, `specs/swarm-spec-md.md`
+4. extensiones de namespace
 
-Un agente LLM es una **F-coalgebra** `c: U -> F(U)` con 5 componentes esenciales:
+Reglas clave del nuevo regimen:
 
-| # | Componente | Simbolo | Archivo |
-|---|-----------|---------|---------|
-| 1 | Morfismo de transicion | c | `AGENTS.md` — FSM pura, sin prosa |
-| 2 | Funtor de interfaz | F | `TOOLS.md` — firmas de herramientas |
-| 3 | Espacio de estados | U | `SOUL.md` + `USER.md` — fibras ortogonales |
-| 4 | Monada de efectos | M | `config.json` — sandbox inmutable |
-| 5 | Diagrama de wiring | W | Declarado en `AGENTS.md` |
-
-Procesos cognitivos densos se extraen a `skills/CM-*.md` como endofuntores bajo evaluacion diferida (lazy load).
-
-```
-agents/{namespace}/{nombre}/
-  AGENTS.md        c: FSM estados + transiciones + co-induccion
-  SOUL.md          U: identidad, paradigma, tono, ejemplos
-  USER.md          U: perfil operador, rutinas, preferencias
-  TOOLS.md         F: firmas, routing KB, cuando usar/no usar
-  config.json      M: allowed_kb, sandbox, tools, sub_agents
-  skills/
-    CM-*.md        Endofuntores cognitivos (lazy load)
-```
-
-### Principio de Segregacion
-
-La logica de transicion (c) **nunca** se mezcla con la fenomenologia (SOUL.md), el contexto del operador (USER.md), ni las politicas de seguridad (config.json). Dos agentes son sustituibles sii son **bisimilares**: producen outputs indistinguibles para todo input del dominio.
-
-### Sistema URN
-
-```
-urn:{namespace}:kb:{id}          Knowledge base
-urn:{namespace}:agent-bootstrap:{nombre}-{tipo}:{version}   Archivo de agente
-```
-
-Namespaces: **gn**, **kora**, **fxsl**, **dev**, **ops**, **pro**, **tde**, **legal**, **korvo**, **gov**, **orko**, **mgmt**
-
-El catalogo (`catalog/catalog_master_kora.yml`) es la fuente de verdad. `kora health` verifica integridad referencial.
+- `Traces to:` solo puede apuntar a `knowledge/kora/categorical-foundations/`.
+- `Rationale:` absorbe apoyo no normativo o pragmatica operativa.
+- `TOOLS.md` declara interfaz semantica.
+- `config.json.tools.allow` debe coincidir exactamente con esa interfaz.
+- `config.json.runtime_capabilities` contiene permisos crudos del runtime.
+- el catalogo no es source of truth; es una vista derivada del filesystem y sus manifests.
 
 ## Comandos
 
 ```bash
-scripts/kora index      # Reconstruir catalogo desde todos los artifacts
-scripts/kora resolve    # Resolver URN a path fisico
-scripts/kora health     # Verificar referencias URN rotas
-scripts/kora validate   # Validar workspaces (requiere jsonschema)
-scripts/kora stats      # Estadisticas del monorepo (workspaces + catalogo)
-scripts/kora intake     # Estado del pipeline de ingesta
+python3 scripts/kora index
+python3 scripts/kora resolve "urn:kora:kb:agent-spec-md"
+python3 scripts/kora health --strict
+python3 scripts/kora validate --profile strict
+python3 scripts/kora stats --json
+python3 scripts/kora graph --json
+python3 scripts/kora migrate --profile transitional
+python3 scripts/kora sync-docs
+python3 scripts/kora intake
 ```
 
-En Windows:
-```cmd
-scripts\kora.bat index          &:: CMD
-scripts\kora.ps1 index          # PowerShell (tambien funciona en macOS/Linux)
-```
+## Flujo Recomendado
 
-### Requisitos
+Despues de cambios estructurales:
 
-Python 3 + dependencias en `requirements.txt`:
+1. `python3 scripts/kora migrate --profile transitional`
+2. `python3 scripts/kora index`
+3. `python3 scripts/kora health --strict`
+4. `python3 scripts/kora validate --profile strict`
+5. `python3 scripts/kora sync-docs`
+
+## Metricas Vivas
+
+No mantengas conteos a mano. Las metricas actuales se generan desde el catalogo vivo:
+
+- [`docs/generated/repo-stats.md`](docs/generated/repo-stats.md)
+- [`docs/generated/repo-stats.json`](docs/generated/repo-stats.json)
+- [`docs/generated/repo-graph.json`](docs/generated/repo-graph.json)
+- [`docs/generated/fxsl-cat-ledger.json`](docs/generated/fxsl-cat-ledger.json)
+- [`docs/generated/fxsl-cat-ledger.md`](docs/generated/fxsl-cat-ledger.md)
+
+Regeneracion:
 
 ```bash
-pip install -r requirements.txt
+python3 scripts/kora index
+python3 scripts/kora sync-docs
 ```
 
-No hay build system — es un monorepo de especificaciones y documentacion. Portable: funciona en macOS, Linux y Windows sin modificacion.
+## Pruebas
 
-## Namespaces
+La suite minima del auditor categorial vive en `tests/` y se ejecuta con:
 
-| Namespace | Dominio | Artifacts |
-|-----------|---------|-----------|
-| **gn** | Gobierno Regional de Nuble (GORE) | 149 |
-| **kora** | Framework, specs, manual OpenClaw | 104 |
-| **fxsl** | Teoria de categorias, gist, MBT, agentes personales | 93 |
-| **dev** | Ingenieria de desarrollo y automatizacion | 74 |
-| **ops** | Operaciones, CI, despliegue y verificacion | 70 |
-| **pro** | Dominios profesionales especializados | 52 |
-| **tde** | Transformacion digital del Estado | 41 |
-| **legal** | Normativa legal chilena | 21 |
-| **korvo** | Asistente personal | 15 |
-| **gov** | Gobierno central, plataformas | 9 |
-| **orko** | Metodologia de complejidad organizacional | 8 |
-| **mgmt** | Management, estructura del Estado | 4 |
-
-## Agentes por Namespace
-
-| Namespace | Agentes | Ejemplos |
-|-----------|---------|----------|
-| **gn** | 13 | goreologo, gestor-ipr-360, erp-gore |
-| **dev** | 7 | analyst, reviewer, sentinel |
-| **ops** | 7 | ci-assistant, integrador, verificador |
-| **fxsl** | 6 | arquitecto-categorico, arquitecto-sistemas-informacion, pensador-generador |
-| **kora** | 5 | clawmaster, curator, custodio |
-| **pro** | 4 | abogado-legislacion-medica, salubrista, salubrista-hah |
-| **korvo** | 1 | korax |
-
-## Conceptos Clave
-
-- **Koraficacion** (md-spec S6): Transformar documentos humanos a KORA/MD — formato telegrafico optimizado para RAG
-- **Agentificacion** (agent-spec S12): Funtor G que transforma YAML monoliticos KODA en workspaces KORA con segregacion categorica
-- **Bisimulacion**: Criterio de equivalencia entre agentes — comportamiento observable indistinguible
-- **Co-induccion**: Mecanismo de auto-correccion en nodos terminales de la FSM
-- **Endofuntor cognitivo**: Proceso denso aislado en `skills/`, convocado bajo evaluacion diferida
-
-## Estado de Migracion
-
-- [x] **Phase 0** — Genesis: reestructuracion por namespaces
-- [x] **Phase 1** — Source Mapping: 208 artifacts mapeados
-- [x] **Phase 2** — Koraficacion: 175+ KBs YAML a KORA/MD
-- [x] **Phase 4** — Agentificacion: 40 YAML monolitos a 41 workspaces KORA
-- [x] **Phase Audit** — Coherencia: auditoria completa del corpus, 77 URNs corregidas, 45 skills materializados
-- [ ] **Phase F** — Governance: deprecacion formal KODA, archivado repos fuente
-
-## Fuentes Teoricas
-
-- Barbosa, L. *Coalgebra for the Working Software Engineer* — modelo coalgebraico
-- Spivak, D. *Categorical Systems Theory* — lenses, wiring diagrams, sistemas monadicos
-- Fong & Spivak. *Seven Sketches in Compositionality* — fundamentos categoricos
-- Schultz, Spivak, Vasilakopoulou. *Algebraic Databases* — profuntores, bimodulos
-- Spivak. *Functorial Data Migration* — adjunciones Delta/Sigma/Pi
+```bash
+python3 -m unittest discover -s tests
+```
 
 ## Licencia
 

@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:analyst-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:analyst-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario en la FSM WF-ANALYST, determinando la capacidad analitica requerida.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Analizar mensaje: palabras clave, contexto previo, artefactos mencionados (metricas, dashboard, reporte, tendencia, backlog).
@@ -17,5 +22,8 @@ Clasifica la intencion del usuario en la FSM WF-ANALYST, determinando la capacid
 3. Detectar granularidad solicitada: snapshot(un Ciclo) vs comparativa(multi-Ciclo) vs drill-down(una metrica especifica).
 4. Emitir clasificacion: {capacidad, granularidad, confianza}.
 
-## Output
+## Signature Output
 Clasificacion con campos: `capacidad` (enum), `granularidad` (snapshot|comparativa|drill_down), `confianza` (alta|media|baja). Si confianza=baja, formular pregunta aclaratoria.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

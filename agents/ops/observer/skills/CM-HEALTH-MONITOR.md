@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-health-monitor:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-health-monitor:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Recopilar y sintetizar metricas clave del sistema de produccion. Generar tabla de estado de salud con clasificacion global.
 
-## I/O
-
+## Input/Output
 - **Input:** service_filter: string? (opcional, filtrar por servicio), metrics_source: health_check tool output
 - **Output:** health_report: {timestamp, global_status: HEALTHY|DEGRADED|CRITICAL, services: [{name, metrics, status}], llm_metrics: {cost_24h, tokens_24h, consumption_rate}, summary: string}
 
 ## Procedimiento
-
 1. **Invocar health_check** con filtro de servicio si aplica.
 
 2. **Recopilar metricas clave por servicio:**
@@ -43,7 +40,6 @@ Recopilar y sintetizar metricas clave del sistema de produccion. Generar tabla d
 6. **Generar resumen textual** calibrado al estado (calmo si HEALTHY, factual si DEGRADED, urgente si CRITICAL).
 
 ## Signature Output
-
 ```markdown
 ## Estado de Salud — 2026-02-24 14:30 UTC
 

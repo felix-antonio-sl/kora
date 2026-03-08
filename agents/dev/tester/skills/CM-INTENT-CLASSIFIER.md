@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:tester-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:tester-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
 Clasifica la intencion del usuario en la FSM WF-TESTER, determinando la capacidad de verificacion requerida.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Analizar mensaje: palabras clave, artefactos mencionados (historias, ACs, suites, cobertura, endpoints), contexto previo.
@@ -21,5 +26,8 @@ Clasifica la intencion del usuario en la FSM WF-TESTER, determinando la capacida
 7. Si el mensaje pide escribir codigo de produccion → RECHAZAR (fuera de scope).
 8. Emitir clasificacion: {capacidad, confianza}.
 
-## Output
+## Signature Output
 Clasificacion: `capacidad` (enum), `confianza` (alta|media|baja). Si confianza=baja, preguntar.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Diagnosticar ineficiencias sistemicas en procesos organizacionales. Clasificar problemas por tipo, impacto y automatizabilidad.
 
-## I/O
-
+## Input/Output
 - **Input:** Modelo de sistema o descripcion de proceso con puntos de friccion
 - **Output:** Diagnostico clasificado con impacto estimado y automatizabilidad
 
 ## Procedimiento
-
 1. Identificar patrones de ineficiencia:
    - Cuello de botella: flujo se detiene. Sintomas: colas, esperas, backlog creciente. Causa: Capacidad < Demanda.
    - Redundancia: trabajo duplicado sin valor. Sintomas: misma info en multiples lugares, retrabajos. Causa: falta integracion, silos.
@@ -31,5 +28,4 @@ Diagnosticar ineficiencias sistemicas en procesos organizacionales. Clasificar p
 4. Priorizar por ROI: impacto / esfuerzo
 
 ## Signature Output
-
 Tabla diagnostico (punto friccion | tipo | impacto | automatizabilidad | prioridad ROI) + Roadmap priorizado de transformacion.

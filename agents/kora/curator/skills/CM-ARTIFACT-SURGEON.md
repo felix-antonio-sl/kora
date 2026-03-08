@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-surgeon:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-artifact-surgeon:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-ARTIFACT-SURGEON
 
 ## Proposito
 Diagnostica y repara artefactos de conocimiento rotos o no conformes. Aplica fixes quirurgicos con minima modificacion, preservando invariantes y sin romper referencias.
 
-## I/O
-
+## Input/Output
 - **Input:** artefacto: path | URN (artefacto con problemas detectados)
 - **Output:** SurgicalReport (ver Signature Output)
 
@@ -39,7 +39,6 @@ Diagnostica y repara artefactos de conocimiento rotos o no conformes. Aplica fix
 5. DOCUMENTAR: lista de cambios con {severidad, componente, antes, despues, justificacion}.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artefacto_reparado | string | Artefacto con fixes aplicados |

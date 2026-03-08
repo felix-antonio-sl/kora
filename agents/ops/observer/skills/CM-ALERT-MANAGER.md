@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:observer-alert-manager:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:observer-alert-manager:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar el ciclo de vida de alertas. Mantener alertas clasicas como backstop independiente. Generar alertas inteligentes desde deteccion de anomalias. Rutear al Operador via canal configurado con reglas de escalacion.
 
-## I/O
-
+## Input/Output
 - **Input:** alert_trigger: {source: CLASSIC|INTELLIGENT, severity, anomaly?: AnomalyEvent, diagnosis?: DiagnosisReport}, config: alert_channels (de config.json)
 - **Output:** alert_result: {alert_id, sent: bool, channels_used: string[], escalation_scheduled: bool, summary: string}
 
 ## Procedimiento
-
 1. **Clasificar fuente de alerta:**
    - CLASSIC: alerta de Prometheus/Grafana. Backstop. Siempre activa independientemente del observer.
    - INTELLIGENT: alerta generada por CM-ANOMALY-DETECTOR o CM-DIAGNOSIS-PROPOSER. Con contexto enriquecido.
@@ -43,7 +40,6 @@ Gestionar el ciclo de vida de alertas. Mantener alertas clasicas como backstop i
    - Si backstop caido → alerta CRITICAL inmediata: "Backstop de alertas clasicas no responde."
 
 ## Signature Output
-
 ```yaml
 alert_result:
   alert_id: "ALT-2026-0224-001"

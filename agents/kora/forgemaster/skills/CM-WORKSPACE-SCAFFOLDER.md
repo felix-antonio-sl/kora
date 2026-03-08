@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-WORKSPACE-SCAFFOLDER
 
 ## Proposito
 Genera la estructura de directorio completa de un workspace KORA canonico: 5 archivos esenciales + directorio skills/, con frontmatter y secciones vacias listas para implementar.
 
-## I/O
-
+## Input/Output
 - **Input:** nombre: string (nombre del agente), namespace: string, blueprint: AgentBlueprint (output de CM-AGENT-DESIGNER)
 - **Output:** ScaffoldReport (ver Signature Output)
 
@@ -27,7 +27,6 @@ Genera la estructura de directorio completa de un workspace KORA canonico: 5 arc
 8. Verificar topologia: 5 archivos presentes, frontmatter valido, directorio skills/ existe.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | archivos_creados | string[] | Lista de archivos generados |

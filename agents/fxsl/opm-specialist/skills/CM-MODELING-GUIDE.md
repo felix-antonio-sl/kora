@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:opm-specialist-modeling-guide:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:opm-specialist-modeling-guide:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Guiar al usuario paso a paso en la construccion de un modelo OPM System Diagram (SD), siguiendo el procedimiento estandar de modelado OPM.
 
 ## Input/Output
-
 - **Input:** descripcion del sistema a modelar (string), paso actual (1-10), modelo_acumulado opcional (string?)
 - **Output:** pregunta del paso actual + contexto OPM + actualizacion del modelo acumulado en OPL
 
 ## Procedimiento
-
 1. INICIAR con descripcion del sistema proporcionada por usuario
 2. EJECUTAR secuencia de 10 pasos con checkpoint en cada uno:
 
@@ -63,5 +60,4 @@ Guiar al usuario paso a paso en la construccion de un modelo OPM System Diagram 
 5. RETORNAR el siguiente paso recomendado o indicar que el SD base esta completo
 
 ## Signature Output
-
 SD completo en OPL textual + tabla resumen (proceso principal, beneficiario, agentes, instrumentos, entorno).

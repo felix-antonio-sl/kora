@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-agent-deprecator:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-agent-deprecator:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-AGENT-DEPRECATOR
 
 ## Proposito
 Gestiona el retiro ordenado de un agente KORA: identifica dependencias, marca deprecated, propone migracion, archiva.
 
-## I/O
-
+## Input/Output
 - **Input:** agent_path: string (ruta al workspace del agente a deprecar), sucesor_urn: string | null (URN del agente sucesor si existe)
 - **Output:** DeprecationReport (ver Signature Output)
 
@@ -25,7 +25,6 @@ Gestiona el retiro ordenado de un agente KORA: identifica dependencias, marca de
 6. NOTIFICAR: Generar resumen de deprecacion con lista de cambios realizados.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | agente | string | Nombre del agente deprecado |

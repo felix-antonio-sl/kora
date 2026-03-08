@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:custodio-catalog-steward:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:custodio-catalog-steward:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CATALOG-STEWARD
 
 ## Proposito
 Gestiona el catalogo maestro del repo KORA: sincroniza, detecta URNs rotas, resuelve referencias.
 
-## I/O
-
+## Input/Output
 - **Input:** accion: enum(sync|health|resolve), urn_target: string | null (si accion=resolve)
 - **Output:** CatalogReport (ver Signature Output)
 
@@ -26,7 +26,6 @@ Gestiona el catalogo maestro del repo KORA: sincroniza, detecta URNs rotas, resu
 7. Reporte final: tabla con estado del catalogo.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | sincronizado | bool | Catalogo sincronizado sin errores |

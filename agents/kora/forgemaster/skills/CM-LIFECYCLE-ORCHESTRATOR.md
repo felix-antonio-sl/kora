@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-lifecycle-orchestrator:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:forgemaster-lifecycle-orchestrator:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
 Orquesta la secuencia completa del ciclo de vida DESIGN→CREATE→IMPLEMENT→VALIDATE, gestionando transiciones y checkpoints con el usuario.
 
-## I/O
-
+## Input/Output
 - **Input:** dominio: string (descripcion del agente a crear), namespace: string, restricciones: string[] | null
 - **Output:** LifecycleReport (ver Signature Output)
 
@@ -26,7 +26,6 @@ Orquesta la secuencia completa del ciclo de vida DESIGN→CREATE→IMPLEMENT→V
 7. COMPLETAR: Resumen del ciclo completo: agente creado, validado, listo.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | agente | string | Nombre del agente creado |

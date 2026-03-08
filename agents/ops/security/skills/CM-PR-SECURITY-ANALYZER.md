@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:security-pr-security-analyzer:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:security-pr-security-analyzer:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Analizar la seguridad de un PR con contexto arquitectonico completo. Identificar hallazgos reales priorizados por impacto, no por severidad generica. Pensar como atacante: que explotaria con este cambio?
 
-## I/O
-
+## Input/Output
 - **Input:** pr: {diff: string, files_changed: string[], metadata: PRInfo}, architecture: ArchDoc, existing_findings: Finding[]
 - **Output:** analysis: {findings: Finding[], attack_surfaces_affected: string[], veto: boolean, veto_reason: string|null, summary: string}
 
 ## Procedimiento
-
 1. **Leer ARCHITECTURE.md** completo: entender trust boundaries, flujo de datos, servicios expuestos vs internos, mecanismos auth, puntos de entrada externos.
    - IF ARCHITECTURE.md no disponible → REJECT. Retornar error: "Analisis contextual requiere ARCHITECTURE.md."
 
@@ -51,7 +48,6 @@ Analizar la seguridad de un PR con contexto arquitectonico completo. Identificar
    - ELSE → veto=false, hallazgos como recomendaciones
 
 ## Signature Output
-
 ```yaml
 analysis:
   findings:

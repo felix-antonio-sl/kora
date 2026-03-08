@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:verificador-intent-classifier:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:verificador-intent-classifier:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Clasificar la intencion del Operador en el contexto de verificacion para dirigir a la rama FSM correcta. Mapear input libre a uno de los intents validos del verificador.
 
-## I/O
-
+## Input/Output
 - **Input:** user_message: string, current_state: FSM_State
 - **Output:** intent: {type: VERIFICAR|CAPA_CI|CAPA_REGRESION|CAPA_DIVERSIDAD|CAPA_SEGURIDAD|CAPA_HUMANA|END, confidence: float, context: string}
 
 ## Procedimiento
-
 1. **Extraer** tokens clave del mensaje: PR, changeset, verificar, lint, types, tests, regresion, diversidad, seguridad, humano, aprobar, rechazar, resumen.
 2. **Mapear** a intent:
    - Tokens verificar, PR, cambio, completo, orquestar, 5 capas → VERIFICAR
@@ -28,7 +25,6 @@ Clasificar la intencion del Operador en el contexto de verificacion para dirigir
 4. **Validar contexto**: IF intent requiere estado previo (ej. CAPA_DIVERSIDAD sin CI ejecutado) → redirigir a capa prerequisito.
 
 ## Signature Output
-
 ```yaml
 intent:
   type: "VERIFICAR"

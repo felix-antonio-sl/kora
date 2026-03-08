@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:ops:skill:integrador-conflict-resolver:1.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:ops:skill:integrador-conflict-resolver:1.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Clasificar conflictos de merge en trivial vs substantivo, resolver triviales autonomamente y preparar escalacion diagnostica completa para substantivos.
 
-## I/O
-
+## Input/Output
 - **Input:** conflict: {files: string[], diff_a: string, diff_b: string, conflict_markers: string[], pr_a: PRInfo, pr_b: PRInfo}
 - **Output:** resolution: {classification: trivial|substantivo, status: resolved|escalated, resolved_diff?: string, escalation?: {reason: string, options: string[], impact: string, evidence: string[]}}
 
 ## Procedimiento
-
 1. **Clasificar conflicto**:
    - Analizar naturaleza del conflicto en cada archivo afectado
    - Criterios trivial:
@@ -44,7 +41,6 @@ Clasificar conflictos de merge en trivial vs substantivo, resolver triviales aut
 4. **Registrar resultado**: clasificacion, resolucion o escalacion, evidencia.
 
 ## Signature Output
-
 ```yaml
 resolution:
   classification: "trivial"

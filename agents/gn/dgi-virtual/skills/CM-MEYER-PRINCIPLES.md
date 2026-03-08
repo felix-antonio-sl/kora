@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-meyer-principles:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:dgi-virtual-meyer-principles:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-MEYER-PRINCIPLES
 
 ## Proposito
 Aplicar los 7 principios de Meyer para diagnosticar patologias estructurales y proponer ajustes organizacionales en el GORE Nuble.
 
-## I/O
-
+## Input/Output
 - **Input:** Situacion organizacional o estructural del GORE Nuble a analizar
 - **Output:** Diagnostico estructural Meyer con ajustes propuestos y factibilidad legal
 

@@ -1,23 +1,22 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:salubrista-hah-network-analyst:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:pro:skill:salubrista-hah-network-analyst:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-NETWORK-ANALYST
 
-## Propósito
+## Proposito
 Analizar problemas de gestión de redes asistenciales (FIRS Dim III): diseño, operación y mejora de sistemas de salud. Aplica frameworks de finalidad (VBHC, Quadruple Aim), operación (HRO, quality, EBMgt) e instrumentación (BSC, SWOT). Systems thinking como gramática integradora. Base: corpus gestión-redes (36 capítulos + 11 anexos).
 
-## I/O
-
+## Input/Output
 - **Input:** problema: string, contexto: object (tipo de unidad, nivel de red, datos disponibles, normativa local si aplica)
 - **Output:** NetworkAnalysis { subcapa: string, marcos_aplicados: string[], análisis: string, recomendaciones: string[], kpis_propuestos: KPISpec[], trazabilidad: string[], riesgos: string[] }
 
 ## Procedimiento
-
 1. CONSULTAR kb_route → corpus gestión-redes (sección más relevante al problema: general, unidades, urgencias, salud-mental o herramientas). Verificar corpus antes de usar web o modelo.
 2. POSICIONAR en Dim III. Identificar nivel: macro (red/sistema) / meso (establecimiento) / micro (unidad/servicio).
 3. IDENTIFICAR SUBCAPA:
@@ -41,7 +40,6 @@ Analizar problemas de gestión de redes asistenciales (FIRS Dim III): diseño, o
 10. IDENTIFICAR RIESGOS: por cada recomendación, ¿riesgo de consecuencia no intencional (systems thinking)? → declarar mitigación.
 
 ## Signature Output
-
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | nivel_red | string | macro / meso / micro |

@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:clawmaster-knowledge-navigator:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:kora:skill:clawmaster-knowledge-navigator:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-KNOWLEDGE-NAVIGATOR
 
 ## Proposito
 Navega las tres fuentes de conocimiento OpenClaw (manual KORA 26 caps, docs oficiales 200+, codigo fuente) para responder consultas con precision y citacion.
 
-## I/O
-
+## Input/Output
 - **Input:** consulta: string (pregunta del usuario), dominio_hint: string | null
 - **Output:** KnowledgeResponse (ver Signature Output)
 
@@ -48,7 +48,6 @@ Navega las tres fuentes de conocimiento OpenClaw (manual KORA 26 caps, docs ofic
 5. SINTETIZAR respuesta: informacion precisa + cita de fuente(s) + ejemplo si aplica.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | contenido | string | Respuesta factual sintetizada |

@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:pro:skill:medico-urgencias-context-manager:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:pro:skill:medico-urgencias-context-manager:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Gestionar contexto conversacional multi-turno en sesiones de urgencia. Detectar cambio de paciente vs continuacion caso, mantener estado de retorno post-clarificacion, y gestionar cierre limpio de sesion.
 
-## I/O
-
+## Input/Output
 - **Input:** Mensaje usuario + contexto_sesion_actual (paciente_activo, estado_retorno, historial_pacientes)
 - **Output:** CONTEXT_DECISION: accion (nuevo_paciente|continuar|retorno_clarificacion|cierre), contexto_actualizado
 
 ## Procedimiento
-
 ### Escenario 1: Deteccion cambio de paciente
 
 Indicadores de nuevo paciente:
@@ -59,10 +56,9 @@ Accion: confirmar cierre, emitir disclaimer, transicionar a S-END.
 - Nunca mezclar datos entre pacientes diferentes
 - Mantener separacion estricta de contextos por paciente
 - Estado de retorno: LIFO (ultimo clarificador pendiente se resuelve primero)
-- Si ambiguedad en cambio de paciente: preguntar al usuario
+- Si ambiguedad en cambio de paciente: emitir `CONTEXT_DECISION.accion = retorno_clarificacion` y marcar el contexto como ambiguo hasta recibir dato discriminante
 
 ## Signature Output
-
 ```
 CONTEXT_DECISION:
   accion: [nuevo_paciente|continuar|retorno_clarificacion|cierre]

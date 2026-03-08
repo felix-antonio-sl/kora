@@ -1,0 +1,33 @@
+{
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:kora:kb:gobernanza",
+    "urn:kora:kb:spec-md",
+    "urn:kora:kb:md-spec",
+    "urn:kora:kb:agent-spec-md"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "kb_route",
+      "repo_health"
+    ]
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "analysis"
+    ],
+    "deny": [
+      "filesystem_write",
+      "deploy"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 0
+  }
+}

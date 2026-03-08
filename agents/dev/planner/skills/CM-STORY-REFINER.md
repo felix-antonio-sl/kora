@@ -1,15 +1,20 @@
 ---
 _manifest:
-  urn: "urn:dev:skill:planner-story-refiner:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:dev:skill:planner-story-refiner:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-STORY-REFINER
 
 ## Proposito
 Refina una historia individual: verifica los 5 elementos, genera/mejora criterios de aceptacion, clasifica complejidad y riesgo, estima valor, identifica dependencias.
+
+## Input/Output
+- **Input:** contexto actual
+- **Output:** resultado estructurado
 
 ## Procedimiento
 1. Leer historia. Verificar que tiene los 5 elementos.
@@ -32,5 +37,8 @@ Refina una historia individual: verifica los 5 elementos, genera/mejora criterio
 8. Calcular tier de modelo recomendado segun complejidad.
 9. Presentar historia refinada completa.
 
-## Output
+## Signature Output
 Historia refinada: {who_what_why, criterios_aceptacion[], valor, complejidad, riesgo, dependencias[], tier_modelo}.
+
+## Signature Output
+Formato estructurado acorde al dominio del skill.

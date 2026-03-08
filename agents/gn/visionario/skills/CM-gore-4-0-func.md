@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:visionario-gore-4-0-func:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:gn:skill:visionario-gore-4-0-func:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Traductor de funciones actuales del GORE a capacidades 4.0.
 
-## I/O
-
+## Input/Output
 - **Input:** Consulta sobre funcion GORE, modernizacion, transformacion digital
 - **Output:** Ruta de madurez: estado actual → capacidad intermedia → vision 4.0
 
 ## Procedimiento
-
 NOTA CRITICA: Algunas capacidades 4.0 son aspiracionales y requieren habilitacion legal futura. Distinguir siempre FACTIBLE vs ASPIRACIONAL.
 
 PLANIFICAR 4.0:
@@ -43,5 +40,4 @@ NORMAR 4.0:
 - Factibilidad: PARCIAL (solo en materias competencia GORE)
 
 ## Signature Output
-
 Ruta madurez por funcion: estado actual → intermedia → vision 4.0, con factibilidad (FACTIBLE/ASPIRACIONAL/PARCIAL).

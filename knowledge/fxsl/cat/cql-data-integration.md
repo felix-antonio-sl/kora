@@ -55,6 +55,8 @@ Without these abstractions, users must write raw SQL scripts — error-prone and
 5. Apply appropriate operator by migration type.
 6. CQL guarantees correctness + automatic provenance.
 
+### CQL-PROVENANCE
+
 **Provenance.** Complete traceability of the origin of each migrated datum. Mechanism: functoriality preserves origin information through every transformation.
 
 ## Data Sharing Problem in Computational Science

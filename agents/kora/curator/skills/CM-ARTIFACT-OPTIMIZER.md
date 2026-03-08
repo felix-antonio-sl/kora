@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:curator-artifact-optimizer:2.0.0"
-  type: "lazy_load_endofunctor"
-version: "2.0.0"
+  urn: urn:kora:skill:curator-artifact-optimizer:2.0.0
+  type: lazy_load_endofunctor
+version: 2.0.0
 status: published
 lang: es
 ---
+
 # CM-ARTIFACT-OPTIMIZER
 
 ## Proposito
 Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, estructura RAG, deduplicacion, referencias, densidad semantica.
 
-## I/O
-
+## Input/Output
 - **Input:** artefacto: path | URN (artefacto existente a optimizar)
 - **Output:** OptimizationReport (ver Signature Output)
 
@@ -39,7 +39,6 @@ Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, est
 6. Bump version segun impacto.
 
 ## Signature Output
-
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artefacto_optimizado | string | Artefacto con mejoras aplicadas |

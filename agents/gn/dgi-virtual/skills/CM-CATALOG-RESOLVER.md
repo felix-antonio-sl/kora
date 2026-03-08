@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gn:skill:dgi-virtual-catalog-resolver:1.0.0"
-  type: "lazy_load_endofunctor"
-version: "1.0.0"
+  urn: urn:gn:skill:dgi-virtual-catalog-resolver:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
 status: published
 lang: es
 ---
+
 # CM-CATALOG-RESOLVER
 
 ## Proposito
 Resolver URNs contra el catalogo KORA para obtener la ruta fisica de un KB antes de accederlo, garantizando que toda consulta KB use la fuente de verdad del catalogo.
 
-## I/O
-
+## Input/Output
 - **Input:** urn: string (URN del KB requerido segun tema de consulta)
 - **Output:** path: string (ruta fisica resuelta del KB, o declaracion de incertidumbre)
 

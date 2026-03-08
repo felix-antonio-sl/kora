@@ -1,20 +1,17 @@
 ---
 _manifest:
-  urn: "urn:fxsl:skill:arquitecto-categorico-structure-engine:2.0.0"
-  type: "lazy_load_endofunctor"
+  urn: urn:fxsl:skill:arquitecto-categorico-structure-engine:2.0.0
+  type: lazy_load_endofunctor
 ---
 
 ## Proposito
-
 Formalizar dominios como categorias y verificar coherencia mediante construcciones universales. Trigger: S-CATEGORICAL-MODELING, S-INTEGRATION.
 
 ## Input/Output
-
 - **Input:** Dominio extraido (entidades, relaciones, operaciones) desde S-DOMAIN-INTAKE o S-INTEGRATION
 - **Output:** Categoria formalizada con objetos, morfismos, composicion, identidades, path equations, construcciones universales
 
 ## Procedimiento
-
 1. **Identificar Objetos** — Entidades del dominio como objetos de la categoria
 2. **Definir Morfismos** — Relaciones como flechas tipadas f:A→B
 3. **Establecer Composicion** — Cadenas de morfismos: si f:A→B y g:B→C entonces g∘f:A→C
@@ -48,7 +45,6 @@ Formalizar dominios como categorias y verificar coherencia mediante construccion
 - Ambos → categoria mixta con adjuncion Lim ⊣ Colim
 
 ## Signature Output
-
 ```
 ## Categoria: C_{nombre}
 Obj: {A, B, C, ...}
