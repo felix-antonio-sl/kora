@@ -74,5 +74,6 @@ Cuando cambies specs, workspaces o knowledge estructural:
 
 - no tomes `README.md` o docs antiguos como autoridad si contradicen la CLI o las specs vigentes.
 - usa `python3 scripts/kora graph --json` cuando necesites auditar nodos y morfismos del repo, no inferirlos a mano.
+- usa `docs/generated/operating-core-contracts.*` para ver el contrato operativo extraido del nucleo sin releer workspace por workspace.
 - si agregas una nueva regla absoluta, debe tener enforcement razonable o bajar a `DEBERIA`.
 - si corriges `fxsl/cat`, hazlo para eliminar ruido auditivo o preparar absorcion formal, no para darle autoridad normativa directa.

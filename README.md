@@ -77,6 +77,8 @@ No mantengas conteos a mano. Las metricas actuales se generan desde el catalogo 
 - [`docs/generated/repo-stats.md`](docs/generated/repo-stats.md)
 - [`docs/generated/repo-stats.json`](docs/generated/repo-stats.json)
 - [`docs/generated/repo-graph.json`](docs/generated/repo-graph.json)
+- [`docs/generated/operating-core-contracts.json`](docs/generated/operating-core-contracts.json)
+- [`docs/generated/operating-core-contracts.md`](docs/generated/operating-core-contracts.md)
 - [`docs/generated/fxsl-cat-ledger.json`](docs/generated/fxsl-cat-ledger.json)
 - [`docs/generated/fxsl-cat-ledger.md`](docs/generated/fxsl-cat-ledger.md)
 
