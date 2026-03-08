@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_composite
     fs: 100
-    cr: 65.86
+    cr: 131.1
     run_id: gn-smoke
     review_gate: manual
     scope_statement: Fusion semantica IPR/Gestion; requiere validacion de alcance.
@@ -33,13 +33,7 @@ extensions:
     skeleton_count: 1
     meat_count: 6
     fat_count: 0
-    preserved_facts:
-    - _manifest.federation.license=Institutional Use Only
-    - _manifest.federation.visibility=internal
-    - _manifest.provenance.created_at=2026-02-19
-    - _manifest.provenance.created_by=GORE Ñuble
-    - _manifest.provenance.last_modified_at=2026-02-19
-    - _manifest.urn=urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__omega-ipr-gestion-fusion.md.json
 ---
 
 # Ontología Ω-IPR: Gestión y Fusión de Financiamiento
@@ -47,19 +41,5 @@ extensions:
 ## Alcance
 Fusion semantica IPR/Gestion; requiere validacion de alcance.
 
-## Fuente: Kb omega ipr gestion fusion
-### Manifest
-#### Urn
-urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0
-#### Federation
-#### Visibility
-internal
-#### License
-Institutional Use Only
-#### Provenance
-#### Created by
-GORE Ñuble
-#### Created at
-2026-02-19
-#### Last modified at
-2026-02-19
+## Fuente principal
+- `domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml`

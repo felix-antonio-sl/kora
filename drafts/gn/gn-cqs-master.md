@@ -23,7 +23,7 @@ extensions:
     source_type: ontology_yaml
     transformation_mode: derive_ttl_scope
     fs: 100
-    cr: 73.49
+    cr: 3.07
     run_id: gn-smoke
     review_gate: manual
     scope_statement: Preguntas de competencia maestras del bundle ontologico GN.
@@ -33,293 +33,277 @@ extensions:
     skeleton_count: 23
     meat_count: 1038
     fat_count: 0
-    preserved_facts:
-    - Dom_01_Estructura_Organizacional.Agregacion[0].ID=CQ-021
-    - Dom_01_Estructura_Organizacional.Agregacion[0].Q=¿Cuántas divisiones tiene el
-      GORE Ñuble?
-    - Dom_01_Estructura_Organizacional.Agregacion[1].ID=CQ-022
-    - Dom_01_Estructura_Organizacional.Agregacion[1].Q=¿Cuántos departamentos tiene
-      la DIPIR?
-    - Dom_01_Estructura_Organizacional.Agregacion[2].ID=CQ-023
-    - Dom_01_Estructura_Organizacional.Agregacion[2].Q=¿Cuántos consejeros regionales
-      tiene el CORE de Ñuble?
-    - Dom_01_Estructura_Organizacional.Agregacion[3].ID=CQ-024
-    - Dom_01_Estructura_Organizacional.Agregacion[3].Q=¿Cuántas comunas componen la
-      Región de Ñuble?
-    - Dom_01_Estructura_Organizacional.Agregacion[4].ID=CQ-025
-    - Dom_01_Estructura_Organizacional.Agregacion[4].Q=¿Cuántas provincias tiene la
-      Región de Ñuble?
-    - Dom_01_Estructura_Organizacional.Agregacion[5].ID=CQ-026
-    - Dom_01_Estructura_Organizacional.Agregacion[5].Q=¿Cuántos funcionarios tiene
-      el GORE Ñuble?
-    - Dom_01_Estructura_Organizacional.Agregacion[6].ID=CQ-027
-    - Dom_01_Estructura_Organizacional.Agregacion[6].Q=¿Cuántos miembros componen
-      el CDR?
-    - Dom_01_Estructura_Organizacional.Agregacion[7].ID=CQ-028
-    - Dom_01_Estructura_Organizacional.Agregacion[7].Q=¿Cuántas unidades formuladoras
-      están registradas en la región?
-    - Dom_01_Estructura_Organizacional.Existenciales[0].ID=CQ-001
-    - Dom_01_Estructura_Organizacional.Existenciales[0].Q=¿Qué es un Gobierno Regional
-      (GORE)?
-    - Dom_01_Estructura_Organizacional.Existenciales[1].ID=CQ-002
-    - Dom_01_Estructura_Organizacional.Existenciales[1].Q=¿Qué es una División dentro
-      del GORE?
-    - Dom_01_Estructura_Organizacional.Existenciales[2].ID=CQ-003
-    - Dom_01_Estructura_Organizacional.Existenciales[2].Q=¿Qué es un Departamento
-      dentro de una División?
-    - Dom_01_Estructura_Organizacional.Existenciales[3].ID=CQ-004
-    - Dom_01_Estructura_Organizacional.Existenciales[3].Q=¿Qué es la DIPIR (División
-      de Presupuesto e Inversión Regional)?
-    - Dom_01_Estructura_Organizacional.Existenciales[4].ID=CQ-005
-    - Dom_01_Estructura_Organizacional.Existenciales[4].Q=¿Qué es el DAE (Departamento
-      de Análisis y Evaluación)?
-    - Dom_01_Estructura_Organizacional.Existenciales[5].ID=CQ-006
-    - Dom_01_Estructura_Organizacional.Existenciales[5].Q=¿Qué es el CORE (Consejo
-      Regional)?
-    - Dom_01_Estructura_Organizacional.Existenciales[6].ID=CQ-007
-    - Dom_01_Estructura_Organizacional.Existenciales[6].Q=¿Qué es el CDR (Comité Directivo
-      Regional)?
-    - Dom_01_Estructura_Organizacional.Existenciales[7].ID=CQ-008
-    - Dom_01_Estructura_Organizacional.Existenciales[7].Q=¿Qué es una Unidad Formuladora?
-    - Dom_01_Estructura_Organizacional.ID=GN-CQS-DOM-01
-    - Dom_01_Estructura_Organizacional.Relacionales[0].ID=CQ-009
-    - Dom_01_Estructura_Organizacional.Relacionales[0].Q=¿Qué divisiones componen
-      el GORE Ñuble?
-    - Dom_01_Estructura_Organizacional.Relacionales[1].ID=CQ-010
-    - Dom_01_Estructura_Organizacional.Relacionales[1].Q=¿Qué departamentos pertenecen
-      a la DIPIR?
-    - Dom_01_Estructura_Organizacional.Relacionales[2].ID=CQ-011
-    - Dom_01_Estructura_Organizacional.Relacionales[2].Q=¿Quién preside el CDR?
-    - Dom_01_Estructura_Organizacional.Relacionales[3].ID=CQ-012
-    - Dom_01_Estructura_Organizacional.Relacionales[3].Q=¿Qué divisiones participan
-      en el CDR?
-    - Dom_01_Estructura_Organizacional.Relacionales[4].ID=CQ-013
-    - Dom_01_Estructura_Organizacional.Relacionales[4].Q=¿Qué relación jerárquica
-      existe entre División y Departamento?
-    - Dom_01_Estructura_Organizacional.Relacionales[5].ID=CQ-014
-    - Dom_01_Estructura_Organizacional.Relacionales[5].Q=¿Qué unidades dependen del
-      Gobernador Regional?
-    - Dom_01_Estructura_Organizacional.Relacionales[6].ID=CQ-015
-    - Dom_01_Estructura_Organizacional.Relacionales[6].Q=¿Qué relación tiene el CORE
-      con la aprobación de iniciativas?
-    - Dom_01_Estructura_Organizacional.Relacionales[7].ID=CQ-016
-    - Dom_01_Estructura_Organizacional.Relacionales[7].Q=¿Qué unidad es responsable
-      de la evaluación técnica de proyectos?
-    - Dom_01_Estructura_Organizacional.Temporales[0].ID=CQ-017
-    - Dom_01_Estructura_Organizacional.Temporales[0].Q=¿Cuándo fue creado el GORE
-      Ñuble?
-    - Dom_01_Estructura_Organizacional.Temporales[1].ID=CQ-018
-    - Dom_01_Estructura_Organizacional.Temporales[1].Q=¿Cuál es el período de mandato
-      del Gobernador Regional?
-    - Dom_01_Estructura_Organizacional.Temporales[2].ID=CQ-019
-    - Dom_01_Estructura_Organizacional.Temporales[2].Q=¿Cuál es el período de mandato
-      de los Consejeros Regionales?
-    - Dom_01_Estructura_Organizacional.Temporales[3].ID=CQ-020
-    - Dom_01_Estructura_Organizacional.Temporales[3].Q=¿Con qué periodicidad sesiona
-      el CORE?
-    - Dom_02_IPR.Agregacion[0].ID=CQ-054
-    - Dom_02_IPR.Agregacion[0].Q=¿Cuántas IPR están en cartera del GORE Ñuble?
-    - Dom_02_IPR.Agregacion[1].ID=CQ-055
-    - Dom_02_IPR.Agregacion[1].Q=¿Cuántas IPR están en estado de ejecución?
-    - Dom_02_IPR.Agregacion[2].ID=CQ-056
-    - Dom_02_IPR.Agregacion[2].Q=¿Cuántas IPR fueron aprobadas en el año presupuestario
-      vigente?
-    - Dom_02_IPR.Agregacion[3].ID=CQ-057
-    - Dom_02_IPR.Agregacion[3].Q=¿Cuál es el monto total de inversión regional en
-      IPR?
-    - Dom_02_IPR.Agregacion[4].ID=CQ-058
-    - Dom_02_IPR.Agregacion[4].Q=¿Cuántas IPR están clasificadas como IDI vs PPR?
-    - Dom_02_IPR.Agregacion[5].ID=CQ-059
-    - Dom_02_IPR.Agregacion[5].Q=¿Cuántas IPR por comuna existen en la región?
-    - Dom_02_IPR.Agregacion[6].ID=CQ-060
-    - Dom_02_IPR.Agregacion[6].Q=¿Cuántas IPR por sector/área temática existen?
-    - Dom_02_IPR.Existenciales[0].ID=CQ-029
-    - Dom_02_IPR.Existenciales[0].Q=¿Qué es una IPR (Intervención Pública Regional)?
-    - Dom_02_IPR.Existenciales[1].ID=CQ-030
-    - Dom_02_IPR.Existenciales[1].Q=¿Qué es un IDI (Iniciativa de Inversión)?
-    - Dom_02_IPR.Existenciales[2].ID=CQ-031
-    - Dom_02_IPR.Existenciales[2].Q=¿Qué es un PPR (Programa Público Regional)?
-    - Dom_02_IPR.Existenciales[3].ID=CQ-032
-    - Dom_02_IPR.Existenciales[3].Q=¿Qué es un Estudio Básico?
-    - Dom_02_IPR.Existenciales[4].ID=CQ-033
-    - Dom_02_IPR.Existenciales[4].Q=¿Qué es un Proyecto de Inversión?
-    - Dom_02_IPR.Existenciales[5].ID=CQ-034
-    - Dom_02_IPR.Existenciales[5].Q=¿Qué es una Ficha IDI?
-    - Dom_02_IPR.Existenciales[6].ID=CQ-035
-    - Dom_02_IPR.Existenciales[6].Q=¿Qué es el código BIP?
-    - Dom_02_IPR.Existenciales[7].ID=CQ-036
-    - Dom_02_IPR.Existenciales[7].Q=¿Qué es el Perfil de un programa?
-    - Dom_02_IPR.Existenciales[8].ID=CQ-037
-    - Dom_02_IPR.Existenciales[8].Q=¿Qué es el Diseño de un programa?
-    - Dom_02_IPR.Existenciales[9].ID=CQ-038
-    - Dom_02_IPR.Existenciales[9].Q=¿Qué tipos de IPR existen según su naturaleza?
-    - Dom_02_IPR.ID=GN-CQS-DOM-02
-    - Dom_02_IPR.Relacionales[0].ID=CQ-039
-    - Dom_02_IPR.Relacionales[0].Q=¿Qué relación existe entre IPR y mecanismo de financiamiento?
-    - Dom_02_IPR.Relacionales[1].ID=CQ-040
-    - Dom_02_IPR.Relacionales[1].Q=¿Qué entidad formula una IPR?
-    - Dom_02_IPR.Relacionales[2].ID=CQ-041
-    - Dom_02_IPR.Relacionales[2].Q=¿Qué entidad evalúa una IPR?
-    - Dom_02_IPR.Relacionales[3].ID=CQ-042
-    - Dom_02_IPR.Relacionales[3].Q=¿Qué entidad ejecuta una IPR?
-    - Dom_02_IPR.Relacionales[4].ID=CQ-043
-    - Dom_02_IPR.Relacionales[4].Q=¿Qué relación tiene una IPR con la ERD?
-    - Dom_02_IPR.Relacionales[5].ID=CQ-044
-    - Dom_02_IPR.Relacionales[5].Q=¿Qué relación tiene una IPR con el PLADECO comunal?
-    - Dom_02_IPR.Relacionales[6].ID=CQ-045
-    - Dom_02_IPR.Relacionales[6].Q=¿Qué división GORE patrocina una IPR?
-    - Dom_02_IPR.Relacionales[7].ID=CQ-046
-    - Dom_02_IPR.Relacionales[7].Q=¿Qué relación existe entre IDI y SNI?
-    - Dom_02_IPR.Relacionales[8].ID=CQ-047
-    - Dom_02_IPR.Relacionales[8].Q=¿Qué relación existe entre PPR y BIPS?
-    - Dom_02_IPR.Relacionales[9].ID=CQ-048
-    - Dom_02_IPR.Relacionales[9].Q=¿Qué vinculación tiene el código BIP con el ciclo
-      de vida de la IPR?
-    - Dom_02_IPR.Temporales[0].ID=CQ-049
-    - Dom_02_IPR.Temporales[0].Q=¿Cuáles son las etapas del ciclo de vida de una IPR?
-    - Dom_02_IPR.Temporales[1].ID=CQ-050
-    - Dom_02_IPR.Temporales[1].Q=¿Cuál es la secuencia de fases de una IDI (Prefactibilidad,
-      Factibilidad, Diseño, Ejecución)?
-    - Dom_02_IPR.Temporales[2].ID=CQ-051
-    - Dom_02_IPR.Temporales[2].Q=¿Cuál es la secuencia de fases de un PPR (Perfil,
-      Diseño, Ejecución)?
-    - Dom_02_IPR.Temporales[3].ID=CQ-052
-    - Dom_02_IPR.Temporales[3].Q=¿Cuándo se asigna el código BIP a una iniciativa?
-    - Dom_02_IPR.Temporales[4].ID=CQ-053
-    - Dom_02_IPR.Temporales[4].Q=¿Cuándo se realiza la evaluación ex post de una IPR?
-    - Dom_03_Financiamiento.Agregacion[0].ID=CQ-082
-    - Dom_03_Financiamiento.Agregacion[0].Q=¿Cuál es el presupuesto total FNDR de
-      Ñuble para el año vigente?
-    - Dom_03_Financiamiento.Agregacion[1].ID=CQ-083
-    - Dom_03_Financiamiento.Agregacion[1].Q=¿Cuál es el monto disponible para FRIL
-      en el año vigente?
-    - Dom_03_Financiamiento.Agregacion[2].ID=CQ-084
-    - Dom_03_Financiamiento.Agregacion[2].Q=¿Cuál es el monto disponible para FRPD
-      en el año vigente?
-    - Dom_03_Financiamiento.Agregacion[3].ID=CQ-085
-    - Dom_03_Financiamiento.Agregacion[3].Q=¿Cuál es el monto disponible para el Concurso
-      8%?
-    - Dom_03_Financiamiento.Agregacion[4].ID=CQ-086
-    - Dom_03_Financiamiento.Agregacion[4].Q=¿Cuál es el porcentaje de ejecución presupuestaria
-      FNDR?
-    - Dom_03_Financiamiento.Agregacion[5].ID=CQ-087
-    - Dom_03_Financiamiento.Agregacion[5].Q=¿Cuántos mecanismos de financiamiento
-      administra el GORE?
-    - Dom_03_Financiamiento.Agregacion[6].ID=CQ-088
-    - Dom_03_Financiamiento.Agregacion[6].Q=¿Cuántas glosas presupuestarias aplican
-      al GORE Ñuble?
-    - Dom_03_Financiamiento.Existenciales[0].ID=CQ-061
-    - Dom_03_Financiamiento.Existenciales[0].Q=¿Qué es el FNDR (Fondo Nacional de
-      Desarrollo Regional)?
-    - Dom_03_Financiamiento.Existenciales[1].ID=CQ-062
-    - Dom_03_Financiamiento.Existenciales[1].Q=¿Qué es el FRIL (Fondo Regional de
-      Iniciativa Local)?
-    - Dom_03_Financiamiento.Existenciales[2].ID=CQ-063
-    - Dom_03_Financiamiento.Existenciales[2].Q=¿Qué es el FRPD (Fondo Regional para
-      la Productividad y el Desarrollo)?
-    - Dom_03_Financiamiento.Existenciales[3].ID=CQ-064
-    - Dom_03_Financiamiento.Existenciales[3].Q=¿Qué es el Subtítulo 24 (Transferencias
-      Corrientes)?
-    - Dom_03_Financiamiento.Existenciales[4].ID=CQ-065
-    - Dom_03_Financiamiento.Existenciales[4].Q=¿Qué es el Subtítulo 31 (Iniciativas
-      de Inversión)?
-    - Dom_03_Financiamiento.Existenciales[5].ID=CQ-066
-    - Dom_03_Financiamiento.Existenciales[5].Q=¿Qué es el Subtítulo 33 (Transferencias
-      de Capital)?
-    - Dom_03_Financiamiento.Existenciales[6].ID=CQ-067
-    - Dom_03_Financiamiento.Existenciales[6].Q=¿Qué es la Glosa 06 (Programas de Ejecución
-      Directa)?
-    - Dom_03_Financiamiento.Existenciales[7].ID=CQ-068
-    - Dom_03_Financiamiento.Existenciales[7].Q=¿Qué es la Glosa 07 (Subvenciones 8%)?
-    - Dom_03_Financiamiento.Existenciales[8].ID=CQ-069
-    - Dom_03_Financiamiento.Existenciales[8].Q=¿Qué es la Glosa 12 (FRIL)?
-    - Dom_03_Financiamiento.Existenciales[9].ID=CQ-070
-    - Dom_03_Financiamiento.Existenciales[9].Q=¿Qué es la Glosa 13 (FRPD)?
-    - Dom_03_Financiamiento.ID=GN-CQS-DOM-03
-    - Dom_03_Financiamiento.Relacionales[0].ID=CQ-071
-    - Dom_03_Financiamiento.Relacionales[0].Q=¿Qué relación existe entre tipo de IPR
-      y mecanismo de financiamiento aplicable?
-    - Dom_03_Financiamiento.Relacionales[1].ID=CQ-072
-    - Dom_03_Financiamiento.Relacionales[1].Q=¿Qué relación tiene el FNDR con la Ley
-      de Presupuestos?
-    - Dom_03_Financiamiento.Relacionales[2].ID=CQ-073
-    - Dom_03_Financiamiento.Relacionales[2].Q=¿Qué entidades pueden acceder al FRIL?
-    - Dom_03_Financiamiento.Relacionales[3].ID=CQ-074
-    - Dom_03_Financiamiento.Relacionales[3].Q=¿Qué entidades pueden acceder al FRPD?
-    - Dom_03_Financiamiento.Relacionales[4].ID=CQ-075
-    - Dom_03_Financiamiento.Relacionales[4].Q=¿Qué relación tiene el FRPD con la Ley
-      de Royalty Minero?
-    - Dom_03_Financiamiento.Relacionales[5].ID=CQ-076
-    - Dom_03_Financiamiento.Relacionales[5].Q=¿Qué glosa aplica para transferencias
-      a municipios?
-    - Dom_03_Financiamiento.Relacionales[6].ID=CQ-077
-    - Dom_03_Financiamiento.Relacionales[6].Q=¿Qué glosa aplica para transferencias
-      a privados sin fines de lucro?
-    - Dom_03_Financiamiento.Temporales[0].ID=CQ-078
-    - Dom_03_Financiamiento.Temporales[0].Q=¿Cuál es el calendario presupuestario
-      anual del FNDR?
-    - Dom_03_Financiamiento.Temporales[1].ID=CQ-079
-    - Dom_03_Financiamiento.Temporales[1].Q=¿Cuándo se realizan los llamados FRIL
-      en el año?
-    - Dom_03_Financiamiento.Temporales[2].ID=CQ-080
-    - Dom_03_Financiamiento.Temporales[2].Q=¿Cuándo se realiza el concurso FRPD?
-    - Dom_03_Financiamiento.Temporales[3].ID=CQ-081
-    - Dom_03_Financiamiento.Temporales[3].Q=¿Cuándo se realiza el concurso 8%?
-    - Dom_04_Evaluacion.Agregacion[0].ID=CQ-113
-    - Dom_04_Evaluacion.Agregacion[0].Q=¿Cuántos tracks de evaluación existen según
-      tipo de IPR?
-    - Dom_04_Evaluacion.Agregacion[1].ID=CQ-114
-    - Dom_04_Evaluacion.Agregacion[1].Q=¿Cuántos niveles de proporcionalidad define
-      MDSF?
-    - Dom_04_Evaluacion.Agregacion[2].ID=CQ-115
-    - Dom_04_Evaluacion.Agregacion[2].Q=¿Cuántas metodologías sectoriales de evaluación
-      existen?
-    - Dom_04_Evaluacion.Agregacion[3].ID=CQ-116
-    - Dom_04_Evaluacion.Agregacion[3].Q=¿Cuántos estados RATE posibles existen?
-    - Dom_04_Evaluacion.Agregacion[4].ID=CQ-117
-    - Dom_04_Evaluacion.Agregacion[4].Q=¿Cuántas IPR fueron evaluadas con RS en el
-      año vigente?
-    - Dom_04_Evaluacion.Agregacion[5].ID=CQ-118
-    - Dom_04_Evaluacion.Agregacion[5].Q=¿Cuál es la tasa de aprobación (RS) de IPR
-      evaluadas?
-    - Dom_04_Evaluacion.Existenciales[0].ID=CQ-089
-    - Dom_04_Evaluacion.Existenciales[0].Q=¿Qué es el SNI (Sistema Nacional de Inversiones)?
-    - Dom_04_Evaluacion.Existenciales[1].ID=CQ-090
-    - Dom_04_Evaluacion.Existenciales[1].Q=¿Qué es el BIP (Banco Integrado de Proyectos)?
-    - Dom_04_Evaluacion.Existenciales[2].ID=CQ-091
-    - Dom_04_Evaluacion.Existenciales[2].Q=¿Qué es un RATE (Resultado de Análisis
-      Técnico-Económico)?
-    - Dom_04_Evaluacion.Existenciales[3].ID=CQ-092
-    - Dom_04_Evaluacion.Existenciales[3].Q=¿Qué significa RS (Recomendado Satisfactoriamente)?
-    - Dom_04_Evaluacion.Existenciales[4].ID=CQ-093
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gn-cqs-master.md.json
 ---
 
-# 01 Estructura Organizacional
+# Catálogo Maestro de Competency Questions
 
 ## Scope
 Preguntas de competencia maestras del bundle ontologico GN.
 
-## Triples
-- `_manifest`
-- `LLM_Parsing_Instructions`
-- `Dom_01_Estructura_Organizacional`
-- `Dom_02_IPR`
-- `Dom_03_Financiamiento`
-- `Dom_04_Evaluacion`
-- `Dom_05_Aprobacion`
-- `Dom_06_Convenios`
-- `Dom_07_Ejecucion`
-- `Dom_08_Rendicion`
-- `Dom_09_Normativo`
-- `Dom_10_TDE`
-- `Dom_11_Gestion_Operacional_IPR`
-- `Dom_12_Selector_Vias_Financiamiento`
-- `Dom_13_Guia_IDI_SNI`
-- `Dom_14_PPR_Ejecucion_Directa`
-- `Dom_15_FRIL`
-- `Dom_16_FRPD`
-- `Dom_17_Transferencia_PPR`
-- `Dom_18_Concurso_8_Porciento`
-- `Dom_19_Circular_33`
-- `Dom_20_Umbrales_Transversal`
-- `Resumen_Estadistico`
+## Resumen
+- Total CQs: 472
+- Dominios: 20
+- Existencial: 172
+- Relacional: 138
+- Temporal: 69
+- Agregacion: 93
+
+## 01 Estructura Organizacional
+- Existenciales: 8 | Relacionales: 8 | Temporales: 4 | Agregacion: 8
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-001 | ¿Qué es un Gobierno Regional (GORE)? |
+| Existencial | CQ-002 | ¿Qué es una División dentro del GORE? |
+| Relacional | CQ-009 | ¿Qué divisiones componen el GORE Ñuble? |
+| Relacional | CQ-010 | ¿Qué departamentos pertenecen a la DIPIR? |
+| Temporal | CQ-017 | ¿Cuándo fue creado el GORE Ñuble? |
+| Temporal | CQ-018 | ¿Cuál es el período de mandato del Gobernador Regional? |
+| Agregación | CQ-021 | ¿Cuántas divisiones tiene el GORE Ñuble? |
+| Agregación | CQ-022 | ¿Cuántos departamentos tiene la DIPIR? |
+
+## 02 IPR
+- Existenciales: 10 | Relacionales: 10 | Temporales: 5 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-029 | ¿Qué es una IPR (Intervención Pública Regional)? |
+| Existencial | CQ-030 | ¿Qué es un IDI (Iniciativa de Inversión)? |
+| Relacional | CQ-039 | ¿Qué relación existe entre IPR y mecanismo de financiamiento? |
+| Relacional | CQ-040 | ¿Qué entidad formula una IPR? |
+| Temporal | CQ-049 | ¿Cuáles son las etapas del ciclo de vida de una IPR? |
+| Temporal | CQ-050 | ¿Cuál es la secuencia de fases de una IDI (Prefactibilidad, Factibilidad, Diseño, Ejecución)? |
+| Agregación | CQ-054 | ¿Cuántas IPR están en cartera del GORE Ñuble? |
+| Agregación | CQ-055 | ¿Cuántas IPR están en estado de ejecución? |
+
+## 03 Financiamiento
+- Existenciales: 10 | Relacionales: 7 | Temporales: 4 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-061 | ¿Qué es el FNDR (Fondo Nacional de Desarrollo Regional)? |
+| Existencial | CQ-062 | ¿Qué es el FRIL (Fondo Regional de Iniciativa Local)? |
+| Relacional | CQ-071 | ¿Qué relación existe entre tipo de IPR y mecanismo de financiamiento aplicable? |
+| Relacional | CQ-072 | ¿Qué relación tiene el FNDR con la Ley de Presupuestos? |
+| Temporal | CQ-078 | ¿Cuál es el calendario presupuestario anual del FNDR? |
+| Temporal | CQ-079 | ¿Cuándo se realizan los llamados FRIL en el año? |
+| Agregación | CQ-082 | ¿Cuál es el presupuesto total FNDR de Ñuble para el año vigente? |
+| Agregación | CQ-083 | ¿Cuál es el monto disponible para FRIL en el año vigente? |
+
+## 04 Evaluacion
+- Existenciales: 12 | Relacionales: 7 | Temporales: 5 | Agregacion: 6
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-089 | ¿Qué es el SNI (Sistema Nacional de Inversiones)? |
+| Existencial | CQ-090 | ¿Qué es el BIP (Banco Integrado de Proyectos)? |
+| Relacional | CQ-101 | ¿Qué organismo realiza la evaluación SNI (MDSF)? |
+| Relacional | CQ-102 | ¿Qué organismo realiza la evaluación de programas (DIPRES/SES)? |
+| Temporal | CQ-108 | ¿Cuál es el plazo de MDSF para evaluación de admisibilidad? |
+| Temporal | CQ-109 | ¿Cuál es el plazo de MDSF para análisis técnico-económico? |
+| Agregación | CQ-113 | ¿Cuántos tracks de evaluación existen según tipo de IPR? |
+| Agregación | CQ-114 | ¿Cuántos niveles de proporcionalidad define MDSF? |
+
+## 05 Aprobacion
+- Existenciales: 6 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-119 | ¿Qué es el proceso de priorización de IPR? |
+| Existencial | CQ-120 | ¿Qué es un Acuerdo CORE? |
+| Relacional | CQ-125 | ¿Qué instancia aprueba IPR >7.000 UTM? |
+| Relacional | CQ-126 | ¿Qué instancia aprueba IPR ≤7.000 UTM? |
+| Temporal | CQ-131 | ¿Cuándo sesiona el CORE para aprobar IPR? |
+| Temporal | CQ-132 | ¿Cuál es el plazo de CGR para Toma de Razón? |
+| Agregación | CQ-134 | ¿Cuántas IPR fueron aprobadas por el CORE en el año vigente? |
+| Agregación | CQ-135 | ¿Cuál es el monto total aprobado por el CORE? |
+
+## 06 Convenios
+- Existenciales: 5 | Relacionales: 5 | Temporales: 3 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-141 | ¿Qué es un Convenio de Transferencia? |
+| Existencial | CQ-142 | ¿Qué es un Convenio Mandato? |
+| Relacional | CQ-146 | ¿Qué entidades pueden ser receptoras de transferencias? |
+| Relacional | CQ-147 | ¿Qué relación existe entre tipo de convenio y tipo de entidad receptora? |
+| Temporal | CQ-151 | ¿Cuál es el plazo para firma del convenio tras aprobación? |
+| Temporal | CQ-152 | ¿Cuál es el plazo para primera transferencia tras firma? |
+| Agregación | CQ-154 | ¿Cuántos convenios vigentes tiene el GORE? |
+| Agregación | CQ-155 | ¿Cuál es el monto total transferido en el año? |
+
+## 07 Ejecucion
+- Existenciales: 6 | Relacionales: 5 | Temporales: 4 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-161 | ¿Qué es el seguimiento de una IPR? |
+| Existencial | CQ-162 | ¿Qué es un informe de avance? |
+| Relacional | CQ-167 | ¿Qué unidad GORE realiza el seguimiento de IPR? |
+| Relacional | CQ-168 | ¿Qué relación existe entre ejecutor e informes de avance? |
+| Temporal | CQ-172 | ¿Con qué periodicidad se entregan informes de avance? |
+| Temporal | CQ-173 | ¿Cuál es el plazo máximo de ejecución de un proyecto FRIL? |
+| Agregación | CQ-176 | ¿Cuántas IPR están en ejecución actualmente? |
+| Agregación | CQ-177 | ¿Cuál es el porcentaje promedio de avance físico de IPR en ejecución? |
+
+## 08 Rendicion
+- Existenciales: 5 | Relacionales: 4 | Temporales: 3 | Agregacion: 6
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-183 | ¿Qué es el SISREC (Sistema de Rendición Electrónica de Cuentas)? |
+| Existencial | CQ-184 | ¿Qué es una rendición de cuentas? |
+| Relacional | CQ-188 | ¿Qué entidades deben rendir cuentas al GORE? |
+| Relacional | CQ-189 | ¿Qué unidad GORE revisa las rendiciones? |
+| Temporal | CQ-192 | ¿Cuál es el plazo para rendir cuentas tras término de ejecución? |
+| Temporal | CQ-193 | ¿Cuál es el plazo para subsanar reparos de rendición? |
+| Agregación | CQ-195 | ¿Cuántas rendiciones pendientes existen con el GORE? |
+| Agregación | CQ-196 | ¿Cuál es el monto total de rendiciones pendientes? |
+
+## 09 Normativo
+- Existenciales: 8 | Relacionales: 8 | Temporales: 3 | Agregacion: 6
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-201 | ¿Qué es la LOC GORE (Ley 19.175)? |
+| Existencial | CQ-202 | ¿Qué es la Ley de Presupuestos (21.796)? |
+| Relacional | CQ-209 | ¿Qué leyes regulan las atribuciones del GORE? |
+| Relacional | CQ-210 | ¿Qué normas regulan la evaluación de proyectos SNI? |
+| Temporal | CQ-217 | ¿Cuál es la vigencia de la Ley de Presupuestos? |
+| Temporal | CQ-218 | ¿Cuándo fue promulgada la LOC GORE? |
+| Agregación | CQ-220 | ¿Cuántas leyes principales regulan el funcionamiento del GORE? |
+| Agregación | CQ-221 | ¿Cuántas resoluciones CGR aplican a transferencias? |
+
+## 10 TDE
+- Existenciales: 8 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-226 | ¿Qué es la TDE (Transformación Digital del Estado)? |
+| Existencial | CQ-227 | ¿Qué es la Ley de TDE (21.180)? |
+| Relacional | CQ-234 | ¿Qué relación tiene TDE con los procedimientos administrativos? |
+| Relacional | CQ-235 | ¿Qué organismos están obligados a implementar TDE? |
+| Temporal | CQ-240 | ¿Cuándo entró en vigencia la Ley TDE para GORE? |
+| Temporal | CQ-241 | ¿Cuáles son las etapas de implementación de TDE en GORE? |
+| Agregación | CQ-243 | ¿Cuántos trámites GORE están digitalizados? |
+| Agregación | CQ-244 | ¿Cuántos usuarios utilizan GESDOC en el GORE? |
+
+## 11 Gestion Operacional IPR
+- Existenciales: 10 | Relacionales: 8 | Temporales: 5 | Agregacion: 3
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-250 | ¿Qué es una IPR según la guía operacional? |
+| Existencial | CQ-251 | ¿Qué es un IDI (Iniciativa de Inversión) en contexto GORE? |
+| Relacional | CQ-260 | ¿Quién preside el Comité Directivo Regional (CDR)? |
+| Relacional | CQ-261 | ¿Qué relación existe entre la DIPIR y el proceso de evaluación técnica? |
+| Temporal | CQ-268 | ¿Cuál es el plazo orientativo de MDSF para evaluación de admisibilidad (Track A)? |
+| Temporal | CQ-269 | ¿Cuál es el plazo orientativo para el Análisis Técnico-Económico de MDSF? |
+| Agregación | CQ-273 | ¿Cuántas fases tiene el proceso end-to-end de gestión de IPR? |
+| Agregación | CQ-274 | ¿Cuántos tracks de evaluación técnica existen según el tipo de IPR? |
+
+## 12 Selector Vias Financiamiento
+- Existenciales: 10 | Relacionales: 6 | Temporales: 3 | Agregacion: 3
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-276 | ¿Qué es el FNDR según el selector? |
+| Existencial | CQ-277 | ¿Qué es el FRPD según el selector? |
+| Relacional | CQ-286 | ¿Qué relación existe entre tipo de IPR (Proyecto vs Programa) y vía de financiamiento? |
+| Relacional | CQ-287 | ¿Qué mecanismo aplica cuando el ejecutor es una Municipalidad para proyectos <5.000 UTM? |
+| Temporal | CQ-292 | ¿Cuál es el período de vigencia de un RS FRIL? |
+| Temporal | CQ-293 | ¿Cuántos días tiene el municipio desde la firma del convenio FRIL para licitar? |
+| Agregación | CQ-295 | ¿Cuántos mecanismos de financiamiento principales existen para IPR Proyecto? |
+| Agregación | CQ-296 | ¿Cuántas categorías de instituciones están habilitadas para postular al FRPD? |
+
+## 13 Guia IDI SNI
+- Existenciales: 12 | Relacionales: 7 | Temporales: 3 | Agregacion: 3
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-298 | ¿Qué es el Principio de Proporcionalidad en el SNI? |
+| Existencial | CQ-299 | ¿Qué es la Situación Base Optimizada? |
+| Relacional | CQ-310 | ¿Qué relación existe entre nivel de proporcionalidad (0-3) y profundidad del análisis SNI? |
+| Relacional | CQ-311 | ¿Qué actores institucionales participan en el ciclo SNI (MDSF, DIPRES, GORE)? |
+| Temporal | CQ-317 | ¿Cuáles son las etapas de preinversión de una IDI? |
+| Temporal | CQ-318 | ¿Cuáles son las fases principales del ciclo de vida de una IDI? |
+| Agregación | CQ-320 | ¿Cuántos niveles de profundidad de evaluación define el MDSF? |
+| Agregación | CQ-321 | ¿Cuántos tipos de IDI existen según clasificación presupuestaria Subtítulo 31? |
+
+## 14 PPR Ejecucion Directa
+- Existenciales: 9 | Relacionales: 6 | Temporales: 3 | Agregacion: 3
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-323 | ¿Qué es un PPR de Ejecución Directa GORE? |
+| Existencial | CQ-324 | ¿Qué es el Formulario de Perfil de un PPR? |
+| Relacional | CQ-332 | ¿Qué relación tiene DIPRES/SES con la evaluación ex ante de PPR? |
+| Relacional | CQ-333 | ¿Cómo se vincula el problema central con los componentes del programa? |
+| Temporal | CQ-338 | ¿Cuáles son las fases del ciclo de vida de un PPR? |
+| Temporal | CQ-339 | ¿Cuál es el plazo para enviar el Diseño tras notificación de DIPRES/SES? |
+| Agregación | CQ-341 | ¿Cuántas fases tiene el proceso bifásico de evaluación ex ante (Perfil + Diseño)? |
+| Agregación | CQ-342 | ¿Cuántos principios rectores de formulación se definen para PPR? |
+
+## 15 FRIL
+- Existenciales: 8 | Relacionales: 6 | Temporales: 5 | Agregacion: 6
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-344 | ¿Qué es el FRIL (Fondo Regional de Iniciativa Local)? |
+| Existencial | CQ-345 | ¿Qué es un BNUP (Bien Nacional de Uso Público)? |
+| Relacional | CQ-352 | ¿Qué relación existe entre monto máximo FRIL y el tope regional de Ñuble (4.545 UTM)? |
+| Relacional | CQ-353 | ¿Qué servicio emite el certificado de pertinencia técnica para proyectos deportivos formativos? |
+| Temporal | CQ-358 | ¿Cuál es el plazo máximo del GORE para emitir el primer RATE FRIL? |
+| Temporal | CQ-359 | ¿Cuál es el plazo para subsanar observaciones FI/OT en FRIL? |
+| Agregación | CQ-363 | ¿Cuál es el monto máximo por proyecto FRIL en la Región de Ñuble? |
+| Agregación | CQ-364 | ¿Cuál es el monto mínimo por proyecto FRIL? |
+
+## 16 FRPD
+- Existenciales: 7 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-369 | ¿Qué es el FRPD (Fondo Regional para la Productividad y el Desarrollo)? |
+| Existencial | CQ-370 | ¿Qué es la exención de evaluación ex ante para iniciativas CTCI? |
+| Relacional | CQ-376 | ¿Qué instituciones están habilitadas para postular al FRPD según SUBCTCI? |
+| Relacional | CQ-377 | ¿Qué relación tiene el FRPD con la Ley de Royalty Minero (21.591)? |
+| Temporal | CQ-382 | ¿Cuál es el plazo máximo de ejecución de una iniciativa FRPD? |
+| Temporal | CQ-383 | ¿Cuál es el plazo para formular consultas tras publicación del concurso FRPD? |
+| Agregación | CQ-385 | ¿Cuántos sectores prioritarios define el concurso FRPD 2025? |
+| Agregación | CQ-386 | ¿Cuántos focos prioritarios contempla el concurso FRPD? |
+
+## 17 Transferencia PPR
+- Existenciales: 6 | Relacionales: 5 | Temporales: 2 | Agregacion: 3
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-392 | ¿Qué es un PPR Transferible a entidad pública? |
+| Existencial | CQ-393 | ¿Qué es el ITF (Informe Técnico Favorable) interno del GORE? |
+| Relacional | CQ-398 | ¿Qué relación tiene la Glosa 06 letra c con la exención de evaluación ex ante? |
+| Relacional | CQ-399 | ¿Qué proceso reemplaza la evaluación Circular 22 para PPR transferidos? |
+| Temporal | CQ-403 | ¿Cuál es la fecha límite para postular PPR a financiamiento 2026? |
+| Temporal | CQ-404 | ¿Qué ocurre con propuestas ingresadas post-fecha límite si son recomendadas favorablemente? |
+| Agregación | CQ-405 | ¿Cuál es el porcentaje máximo de la transferencia para contratación de personal a honorarios? |
+| Agregación | CQ-406 | ¿Cuál es el porcentaje máximo para gastos de administración del GORE? |
+
+## 18 Concurso 8 Porciento
+- Existenciales: 11 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-408 | ¿Qué es el Concurso Vinculación con la Comunidad 8%? |
+| Existencial | CQ-409 | ¿Qué son las subvenciones FNDR 8%? |
+| Relacional | CQ-419 | ¿Qué relación existe entre antigüedad de la organización (2 años) y elegibilidad? |
+| Relacional | CQ-420 | ¿Qué restricción de postulación múltiple aplica a organizaciones privadas sin fines de lucro? |
+| Temporal | CQ-425 | ¿Cuál es el plazo general de ejecución de iniciativas 8%? |
+| Temporal | CQ-426 | ¿Con cuánta anticipación debe coordinarse la invitación a actos de inicio/cierre? |
+| Agregación | CQ-428 | ¿Cuál es el monto total disponible para instituciones privadas en el Concurso 8% 2025? |
+| Agregación | CQ-429 | ¿Cuál es el monto asignado al Fondo de Seguridad Ciudadana (privados)? |
+
+## 19 Circular 33
+- Existenciales: 10 | Relacionales: 7 | Temporales: 3 | Agregacion: 6
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-435 | ¿Qué es el Oficio Circular 33 del Ministerio de Hacienda? |
+| Existencial | CQ-436 | ¿Qué son los Estudios Propios del Giro bajo C33? |
+| Relacional | CQ-445 | ¿Qué relación existe entre subtítulo 22 y estudios propios del giro? |
+| Relacional | CQ-446 | ¿Qué relación tiene el subtítulo 29 con la adquisición de ANF? |
+| Temporal | CQ-452 | ¿Cuál es la antigüedad máxima permitida para el Certificado de Dominio Vigente? |
+| Temporal | CQ-453 | ¿Cuál es la antigüedad máxima para el Certificado de Avalúo Fiscal? |
+| Agregación | CQ-455 | ¿Cuál es el porcentaje mínimo de aporte propio para ANF (financiamiento compartido)? |
+| Agregación | CQ-456 | ¿Cuál es el porcentaje máximo del proyecto que puede destinarse a equipamiento (conservación)? |
+
+## 20 Umbrales Transversal
+- Existenciales: 3 | Relacionales: 3 | Temporales: 1 | Agregacion: 5
+| Tipo | ID | Pregunta |
+| --- | --- | --- |
+| Existencial | CQ-461 | ¿Qué es el umbral de 5.000 UTM para exención de RS? |
+| Existencial | CQ-462 | ¿Qué es el umbral de 7.000 UTM para aprobación obligatoria CORE? |
+| Relacional | CQ-464 | ¿Qué relación existe entre monto del proyecto y requisito de Toma de Razón CGR? |
+| Relacional | CQ-465 | ¿Qué relación tiene el umbral de 5.000 UTM con FRIL y proyectos municipales? |
+| Temporal | CQ-472 | ¿Cuál es la fecha de actualización del valor UTM usado como referencia para umbrales? |
+| Agregación | CQ-467 | ¿Cuál es el tope de 5% para gastos de administración en Glosa 06? |
+| Agregación | CQ-468 | ¿Cuál es el tope de 5% para contratación de personal a honorarios en transferencias? |

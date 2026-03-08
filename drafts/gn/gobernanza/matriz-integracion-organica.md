@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_composite
     fs: 100
-    cr: 1.27
+    cr: 1.37
     run_id: gn-smoke
     review_gate: manual
     scope_statement: Matriz editorial de integracion organica; mantener como artefacto
@@ -35,241 +35,8 @@ extensions:
     skeleton_count: 14
     meat_count: 557
     fat_count: 0
-    preserved_facts:
-    - Creation-Date=2025-12-22
-    - Ctx=Matriz de integración orgánica que representa el esqueleto completo del
-      conocimiento sobre GORE Ñuble.
-    - Grafo_Dependencias.Def=Relaciones semánticas principales entre artefactos.
-    - Grafo_Dependencias.ID=GN-GRAFO-01
-    - Grafo_Dependencias.Relaciones[0].nota=La guía intro es prerrequisito conceptual
-      para todo el corpus.
-    - Grafo_Dependencias.Relaciones[0].source=kb_gn_000
-    - Grafo_Dependencias.Relaciones[0].target=*
-    - Grafo_Dependencias.Relaciones[0].tipo=fundamenta
-    - Grafo_Dependencias.Relaciones[1].nota=El glosario define la terminología usada
-      en gestión.
-    - Grafo_Dependencias.Relaciones[1].source=kb_gn_014
-    - Grafo_Dependencias.Relaciones[1].target[0]=kb_gn_018
-    - Grafo_Dependencias.Relaciones[1].target[1]=kb_gn_019
-    - Grafo_Dependencias.Relaciones[1].target[2]=kb_gn_020
-    - Grafo_Dependencias.Relaciones[1].tipo=define_términos
-    - Grafo_Dependencias.Relaciones[2].nota=LOC GORE es el marco para ejecución presupuestaria.
-    - Grafo_Dependencias.Relaciones[2].source=kb_gn_031
-    - Grafo_Dependencias.Relaciones[2].target[0]=kb_gn_210
-    - Grafo_Dependencias.Relaciones[2].target[1]=kb_gn_211
-    - Grafo_Dependencias.Relaciones[2].tipo=norma
-    - Grafo_Dependencias.Relaciones[3].nota=La ERD orienta la priorización de inversiones.
-    - Grafo_Dependencias.Relaciones[3].source=kb_gn_006
-    - Grafo_Dependencias.Relaciones[3].target[0]=kb_gn_019
-    - Grafo_Dependencias.Relaciones[3].target[1]=kb_gn_011
-    - Grafo_Dependencias.Relaciones[3].tipo=orienta
-    - Grafo_Dependencias.Relaciones[4].nota=BPMN proporciona visión de proceso, manuales
-      el detalle.
-    - Grafo_Dependencias.Relaciones[4].source=IDX-BPMN
-    - Grafo_Dependencias.Relaciones[4].target=manual_*
-    - Grafo_Dependencias.Relaciones[4].tipo=describe_proceso
-    - Grafo_Dependencias.Relaciones[5].nota=Estrategia TD+IA habilita sistemas de
-      inteligencia.
-    - Grafo_Dependencias.Relaciones[5].source=kb_gn_720
-    - Grafo_Dependencias.Relaciones[5].target[0]=kb_gn_080
-    - Grafo_Dependencias.Relaciones[5].target[1]=kb_gn_090
-    - Grafo_Dependencias.Relaciones[5].tipo=habilita
-    - Human-Creator=FS
-    - ID=GN-MATRIZ-INTEGRACION-01
-    - Indice_Artefactos.ID=GN-INDICE-01
-    - Indice_Artefactos.arquitectura.Artefactos[0].id=kb_gn_050
-    - Indice_Artefactos.arquitectura.Artefactos[0].path=arquitectura/kb_gn_050_aceleracion_regional_koda.yml
-    - Indice_Artefactos.arquitectura.Artefactos[0].resumen=Plan de aceleración de
-      capacidades del GORE.
-    - Indice_Artefactos.arquitectura.Artefactos[0].tipo=KODA
-    - Indice_Artefactos.arquitectura.Artefactos[0].titulo=Aceleración Regional
-    - Indice_Artefactos.arquitectura.Artefactos[0].urn=urn:knowledge:gorenuble:gn:aceleracion-regional:1.0.0
-    - Indice_Artefactos.arquitectura.Artefactos[1].id=kb_gn_080
-    - Indice_Artefactos.arquitectura.Artefactos[1].path=arquitectura/kb_gn_080_cies_sitia_koda.yml
-    - 'Indice_Artefactos.arquitectura.Artefactos[1].resumen=Sistemas CIES y SITIA:
-      inteligencia y análisis territorial.'
-    - Indice_Artefactos.arquitectura.Artefactos[1].tipo=KODA
-    - Indice_Artefactos.arquitectura.Artefactos[1].titulo=CIES/SITIA
-    - Indice_Artefactos.arquitectura.Artefactos[1].urn=urn:knowledge:gorenuble:gn:cies-sitia:1.0.0
-    - Indice_Artefactos.arquitectura.Artefactos[2].id=kb_gn_090
-    - Indice_Artefactos.arquitectura.Artefactos[2].path=arquitectura/kb_gn_090_gestion_informacion_geoespacial_koda.yml
-    - Indice_Artefactos.arquitectura.Artefactos[2].resumen=Gestión de información
-      geoespacial e IDE regional.
-    - Indice_Artefactos.arquitectura.Artefactos[2].tipo=KODA
-    - Indice_Artefactos.arquitectura.Artefactos[2].titulo=Gestión Geoespacial
-    - Indice_Artefactos.arquitectura.Artefactos[2].urn=urn:knowledge:gorenuble:gn:gestion-informacion-geoespacial:1.0.0
-    - Indice_Artefactos.arquitectura.Artefactos[3].id=catalog_procesos
-    - Indice_Artefactos.arquitectura.Artefactos[3].path=arquitectura/catalog_procesos_gore.yml
-    - Indice_Artefactos.arquitectura.Artefactos[3].resumen=Índice de todos los procesos
-      GORE documentados.
-    - Indice_Artefactos.arquitectura.Artefactos[3].tipo=YAML
-    - Indice_Artefactos.arquitectura.Artefactos[3].titulo=Catálogo de Procesos
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].id=D01
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].koda_path=arquitectura/bpmn/D01_actos_administrativos_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].path=../../../../sources/gn/arquitectura/bpmn/D01_actos_administrativos.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].resumen=Proceso de
-      emisión de actos administrativos.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].titulo=Actos Administrativos
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[0].urn=urn:knowledge:gorenuble:gn:bpmn-d01-actos-administrativos:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].id=D02
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].koda_path=arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].path=arquitectura/bpmn/D02_ciclo_presupuestario.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].resumen=Proceso del
-      ciclo presupuestario anual.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].titulo=Ciclo Presupuestario
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[1].urn=urn:knowledge:gorenuble:gn:bpmn-d02-ciclo-presupuestario:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].id=D03
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].koda_path=arquitectura/bpmn/D03_gestion_ipr_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].path=arquitectura/bpmn/D03_gestion_ipr.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].resumen=Proceso de
-      gestión de inversión pública regional.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].titulo=Gestión IPR
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[2].urn=urn:knowledge:gorenuble:gn:bpmn-d03-gestion-ipr:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].id=D04
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].koda_path=arquitectura/bpmn/D04_compras_contrataciones_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].path=arquitectura/bpmn/D04_compras_contrataciones.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].resumen=Proceso de
-      compras y contrataciones.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].titulo=Compras y
-      Contrataciones
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[3].urn=urn:knowledge:gorenuble:gn:bpmn-d04-compras-contrataciones:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].id=D05
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].koda_path=arquitectura/bpmn/D05_inventarios_activo_fijo_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].path=arquitectura/bpmn/D05_inventarios_activo_fijo.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].resumen=Proceso de
-      control de inventarios.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].titulo=Inventarios
-      y Activo Fijo
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[4].urn=urn:knowledge:gorenuble:gn:bpmn-d05-inventarios-activo-fijo:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].id=D06
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].koda_path=arquitectura/bpmn/D06_flota_vehicular_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].path=arquitectura/bpmn/D06_flota_vehicular.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].resumen=Proceso de
-      gestión de flota.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].titulo=Flota Vehicular
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[5].urn=urn:knowledge:gorenuble:gn:bpmn-d06-flota-vehicular:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].id=D07
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].koda_path=arquitectura/bpmn/D07_rrhh_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].path=arquitectura/bpmn/D07_rrhh.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].resumen=Procesos
-      de gestión de RRHH.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].titulo=Recursos Humanos
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[6].urn=urn:knowledge:gorenuble:gn:bpmn-d07-rrhh:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].id=D08
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].koda_path=arquitectura/bpmn/D08_rendiciones_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].path=arquitectura/bpmn/D08_rendiciones.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].resumen=Proceso de
-      rendición de cuentas.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].titulo=Rendiciones
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[7].urn=urn:knowledge:gorenuble:gn:bpmn-d08-rendiciones:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].id=D09
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].koda_path=arquitectura/bpmn/D09_cies_sitia_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].path=arquitectura/bpmn/D09_cies_sitia.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].resumen=Procesos
-      de inteligencia territorial.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].titulo=CIES/SITIA
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[8].urn=urn:knowledge:gorenuble:gn:bpmn-d09-cies-sitia:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].id=D10
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].koda_path=arquitectura/bpmn/D10_geoespacial_ide_koda.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].path=arquitectura/bpmn/D10_geoespacial_ide.md
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].resumen=Proceso de
-      gestión geoespacial.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].tipo=BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].titulo=Geoespacial/IDE
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[9].urn=urn:knowledge:gorenuble:gn:bpmn-d10-geoespacial-ide:1.0.0
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[10].id=bpmn_index
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[10].path=arquitectura/bpmn/_index.yml
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[10].resumen=Índice de
-      procesos BPMN.
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[10].tipo=YAML
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Artefactos[10].titulo=Índice BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Def=Diagramas BPMN de procesos
-      institucionales
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.ID=IDX-BPMN
-    - Indice_Artefactos.arquitectura.BPMN_Procesos.Path=arquitectura/bpmn/
-    - Indice_Artefactos.arquitectura.ID=IDX-ARQUITECTURA
-    - Indice_Artefactos.arquitectura.Titulo=Arquitectura y Procesos
-    - Indice_Artefactos.comunicaciones.Artefactos[0].id=kb_gn_008
-    - Indice_Artefactos.comunicaciones.Artefactos[0].path=comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml
-    - Indice_Artefactos.comunicaciones.Artefactos[0].resumen=Roles y funciones del
-      área de comunicaciones.
-    - Indice_Artefactos.comunicaciones.Artefactos[0].tipo=KODA
-    - Indice_Artefactos.comunicaciones.Artefactos[0].titulo=Comunicaciones Oficinas
-      de Comunicaciones
-    - Indice_Artefactos.comunicaciones.Artefactos[0].urn=urn:knowledge:gorenuble:gn:comunicaciones-oc:1.0.0
-    - Indice_Artefactos.comunicaciones.Artefactos[1].id=kb_gn_030
-    - Indice_Artefactos.comunicaciones.Artefactos[1].path=comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml
-    - Indice_Artefactos.comunicaciones.Artefactos[1].resumen=Manual de estilo y protocolos
-      de comunicación institucional.
-    - Indice_Artefactos.comunicaciones.Artefactos[1].tipo=KODA
-    - Indice_Artefactos.comunicaciones.Artefactos[1].titulo=Guía de Comunicaciones
-    - Indice_Artefactos.comunicaciones.Artefactos[1].urn=urn:knowledge:gorenuble:gn:guia-comunicaciones:1.0.0
-    - Indice_Artefactos.comunicaciones.ID=IDX-COMUNICACIONES
-    - Indice_Artefactos.comunicaciones.Titulo=Comunicaciones Institucionales
-    - Indice_Artefactos.data.Artefactos[0].id=kb_gn_002
-    - Indice_Artefactos.data.Artefactos[0].path=../../../../sources/gn/data/kb_gn_002_noticias.csv
-    - Indice_Artefactos.data.Artefactos[0].resumen=Histórico de noticias institucionales.
-    - Indice_Artefactos.data.Artefactos[0].tipo=CSV
-    - Indice_Artefactos.data.Artefactos[0].titulo=Noticias GORE
-    - Indice_Artefactos.data.Artefactos[1].id=kb_gn_003
-    - Indice_Artefactos.data.Artefactos[1].path=data/kb_gn_003_idis.csv
-    - Indice_Artefactos.data.Artefactos[1].resumen=Base de datos de iniciativas de
-      inversión históricas.
-    - Indice_Artefactos.data.Artefactos[1].tipo=CSV
-    - Indice_Artefactos.data.Artefactos[1].titulo=IDIs Históricas
-    - Indice_Artefactos.data.Artefactos[2].id=kb_gn_012
-    - Indice_Artefactos.data.Artefactos[2].path=data/kb_gn_012_progs_vigentes.csv
-    - Indice_Artefactos.data.Artefactos[2].resumen=Listado de programas públicos regionales
-      vigentes.
-    - Indice_Artefactos.data.Artefactos[2].tipo=CSV
-    - Indice_Artefactos.data.Artefactos[2].titulo=Programas Vigentes
-    - Indice_Artefactos.data.Artefactos[3].id=kb_gn_110
-    - Indice_Artefactos.data.Artefactos[3].path=data/kb_gn_110_convenios_2022_2025.csv
-    - Indice_Artefactos.data.Artefactos[3].resumen=Base de datos de convenios del
-      período 2022-2025.
-    - Indice_Artefactos.data.Artefactos[3].tipo=CSV
-    - Indice_Artefactos.data.Artefactos[3].titulo=Convenios 2022-2025
-    - Indice_Artefactos.data.ID=IDX-DATA
-    - Indice_Artefactos.data.Titulo=Datos Estructurados
-    - Indice_Artefactos.estadisticas.Artefactos[0].id=kb_gn_005
-    - Indice_Artefactos.estadisticas.Artefactos[0].path=estadisticas/kb_gn_005_indicadores_nuble_koda.yml
-    - Indice_Artefactos.estadisticas.Artefactos[0].resumen=Indicadores socioeconómicos,
-      demográficos y de desarrollo de Ñuble.
-    - Indice_Artefactos.estadisticas.Artefactos[0].tipo=KODA
-    - Indice_Artefactos.estadisticas.Artefactos[0].titulo=Indicadores Ñuble
-    - Indice_Artefactos.estadisticas.Artefactos[0].urn=urn:knowledge:gorenuble:gn:indicadores-nuble:1.0.0
-    - Indice_Artefactos.estadisticas.ID=IDX-ESTADISTICAS
-    - Indice_Artefactos.estadisticas.Titulo=Indicadores y Estadísticas
-    - Indice_Artefactos.estadocl.Artefactos[0].id=kb_core_007
-    - Indice_Artefactos.estadocl.Artefactos[0].path=../../estadocl/kb_core_007_estructura_estado_chile_koda.yml
-    - 'Indice_Artefactos.estadocl.Artefactos[0].resumen=Organización general del Estado
-      chileno: poderes, niveles, instituciones.'
-    - Indice_Artefactos.estadocl.Artefactos[0].tipo=KODA
-    - Indice_Artefactos.estadocl.Artefactos[0].titulo=Estructura del Estado de Chile
-    - Indice_Artefactos.estadocl.Artefactos[0].urn=urn:knowledge:gorenuble:estadocl:estructura-estado-chile:1.0.0
-    - Indice_Artefactos.estadocl.ID=IDX-ESTADOCL
-    - Indice_Artefactos.estadocl.Titulo=Estructura del Estado de Chile
-    - Indice_Artefactos.estrategia.Artefactos[0].id=kb_gn_006
-    - Indice_Artefactos.estrategia.Artefactos[0].path=estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml
-    - 'Indice_Artefactos.estrategia.Artefactos[0].resumen=Estrategia Regional de Desarrollo
-      2024-2030: ejes, objetivos, metas.'
-    - Indice_Artefactos.estrategia.Artefactos[0].tipo=KODA
-    - Indice_Artefactos.estrategia.Artefactos[0].titulo=ERD Ñuble 2024-2030
-    - Indice_Artefactos.estrategia.Artefactos[0].urn=urn:knowledge:gorenuble:gn:erd-nuble-2024-2030:1.0.0
-    - Indice_Artefactos.estrategia.Artefactos[1].id=kb_gn_056
-    - Indice_Artefactos.estrategia.Artefactos[1].path=estrategia/kb_gn_056_nuble250_koda.yml
-    - Indice_Artefactos.estrategia.Artefactos[1].resumen=Plan de Aceleración Regional
-      Ñuble250.
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__matriz-integracion-organica.md.json
 ---
 
 # Matriz de Integración Orgánica del Conocimiento GORE Ñuble
@@ -277,80 +44,14 @@ extensions:
 ## Alcance
 Matriz editorial de integracion organica; mantener como artefacto de control.
 
-## Fuente: Kb gn 999 matriz integracion organica koda
-### Manifest
-#### Urn
-urn:knowledge:gorenuble:gn:matriz-integracion-organica:1.0.0
-#### Federation
-#### Visibility
-internal
-#### License
-Institutional Use
-#### Compatibility
-#### Min consumer version
-1.0.0
-#### Breaking changes from
-null
-#### Resolution
-#### Canonical url
-file://knowledge/domains/gn/kb_gn_999_matriz_integracion_organica_koda.yml
-#### Mirrors
-#### Dependencies
-#### Requires
-| urn | reason |
-| --- | --- |
-| urn:knowledge:koda:core:spec:1.0.0 | KODA/Spec format compliance |
-#### Provenance
-#### Created by
-FS
-#### Created at
-2025-12-22
-#### Last modified at
-2025-12-22
-#### Model collaborators
-- IA-GEMINI
-#### Signature
-null
+## Fuente principal
+- `domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml`
+## Taxonomia Conocimiento
 ### ID
-GN-MATRIZ-INTEGRACION-01
-### Version
-1.0.0
-### Status
-Published
-### Human Creator
-FS
-### Model Collaborator
-IA-GEMINI
-### Creation Date
-2025-12-22
-### Modification Date
-2025-12-22
-### Ctx
-Matriz de integración orgánica que representa el esqueleto completo del conocimiento sobre GORE Ñuble.
-### LLM Parsing Instructions
-#### ID
-KODA-LLM-PARSER-01
-#### Req
-Mandatory block following Metadata.
-#### Prohib
-Using for artifact creation or translation.
-#### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-This is a META-ARTIFACT that indexes all other artifacts in the gorenuble knowledge base.
-Use this to navigate the corpus and understand the complete structure of GORE Ñuble knowledge.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure).
-REFERENCE POLICY: Ref: is internal only. XRef: points to external artifacts via URN.
-LANGUAGE POLICY: Keywords in English, content in Spanish.
-END_LLM_INSTRUCTIONS
-
-### Taxonomia Conocimiento
-#### ID
 GN-TAXONOMIA-01
-#### Purp
+### Purp
 Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.
-#### Nivel 1 Fundamentos
+### Nivel 1 Fundamentos
 #### ID
 TAX-N1-FUNDAMENTOS
 #### Def
@@ -359,7 +60,7 @@ Conocimiento base sobre qué es y cómo funciona un GORE.
 - intro
 - legal
 - estadocl
-#### Nivel 2 Estrategia
+### Nivel 2 Estrategia
 #### ID
 TAX-N2-ESTRATEGIA
 #### Def
@@ -368,7 +69,7 @@ Visión de largo plazo y planificación estratégica.
 - estrategia
 - social
 - estadisticas
-#### Nivel 3 Operacion
+### Nivel 3 Operacion
 #### ID
 TAX-N3-OPERACION
 #### Def
@@ -378,7 +79,7 @@ Gestión operativa del día a día.
 - presupuesto
 - ipr
 - juridico
-#### Nivel 4 Habilitadores
+### Nivel 4 Habilitadores
 #### ID
 TAX-N4-HABILITADORES
 #### Def
@@ -387,10 +88,11 @@ Capacidades transversales que habilitan la operación.
 - arquitectura
 - comunicaciones
 - tde
-### Indice Artefactos
-#### ID
+
+## Indice Artefactos
+### ID
 GN-INDICE-01
-#### Intro
+### Intro
 #### ID
 IDX-INTRO
 #### Titulo
@@ -401,7 +103,7 @@ Introducción y Fundamentos
 | kb_gn_000 | urn:knowledge:gorenuble:gn:intro-gores-nuble:1.0.0 | Guía Integral GORE Ñuble | intro/kb_gn_000_intro_gores_nuble_koda.yml | KODA | Guía técnico-operativa integral: marco constitucional, estructura GORE, contexto Ñuble, autoridades. |
 | kb_gn_013 | urn:knowledge:gorenuble:gn:vision-desarrollo-nuble:1.0.0 | Visión de Desarrollo Ñuble | intro/kb_gn_013_vision_desarrollo_nuble_koda.yml | KODA | Visión estratégica de desarrollo para la Región de Ñuble. |
 | kb_gn_900 | urn:knowledge:gorenuble:gn:gore-ideal:1.0.0 | GORE Ideal | intro/kb_gn_900_gore_ideal_koda.yml | KODA | Modelo aspiracional del GORE, buenas prácticas y referentes. |
-#### Legal
+### Legal
 #### ID
 IDX-LEGAL
 #### Titulo
@@ -411,7 +113,7 @@ Marco Legal y Normativo
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_031 | urn:knowledge:gorenuble:gn:loc-gore:1.0.0 | LOC GORE | legal/kb_gn_031_loc_gore_koda.yml | KODA | Ley Orgánica Constitucional sobre Gobiernos Regionales (Ley 19.175). |
 | kb_gn_200 | urn:knowledge:gorenuble:gn:marco-legal-gores:1.0.0 | Marco Legal GOREs | legal/kb_gn_200_marco_legal_gores_koda.yml | KODA | Compilación del marco legal aplicable a los Gobiernos Regionales. |
-#### Estadocl
+### Estadocl
 #### ID
 IDX-ESTADOCL
 #### Titulo
@@ -420,7 +122,7 @@ Estructura del Estado de Chile
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_core_007 | urn:knowledge:gorenuble:estadocl:estructura-estado-chile:1.0.0 | Estructura del Estado de Chile | ../../estadocl/kb_core_007_estructura_estado_chile_koda.yml | KODA | Organización general del Estado chileno: poderes, niveles, instituciones. |
-#### Estrategia
+### Estrategia
 #### ID
 IDX-ESTRATEGIA
 #### Titulo
@@ -430,7 +132,7 @@ Planificación Estratégica
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_006 | urn:knowledge:gorenuble:gn:erd-nuble-2024-2030:1.0.0 | ERD Ñuble 2024-2030 | estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml | KODA | Estrategia Regional de Desarrollo 2024-2030: ejes, objetivos, metas. |
 | kb_gn_056 | urn:knowledge:gorenuble:gn:nuble250:1.0.0 | Ñuble250 | estrategia/kb_gn_056_nuble250_koda.yml | KODA | Plan de Aceleración Regional Ñuble250. |
-#### Social
+### Social
 #### ID
 IDX-SOCIAL
 #### Titulo
@@ -439,7 +141,7 @@ Diagnóstico Social
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_004 | urn:knowledge:gorenuble:gn:problemas-sociales-cl:1.0.0 | Problemas Sociales Chile | social/kb_gn_004_problemas_sociales_cl_koda.yml | KODA | Diagnóstico de problemas sociales en Chile con foco regional. |
-#### Estadisticas
+### Estadisticas
 #### ID
 IDX-ESTADISTICAS
 #### Titulo
@@ -448,7 +150,7 @@ Indicadores y Estadísticas
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_005 | urn:knowledge:gorenuble:gn:indicadores-nuble:1.0.0 | Indicadores Ñuble | estadisticas/kb_gn_005_indicadores_nuble_koda.yml | KODA | Indicadores socioeconómicos, demográficos y de desarrollo de Ñuble. |
-#### Gestion
+### Gestion
 #### ID
 IDX-GESTION
 #### Titulo
@@ -554,7 +256,7 @@ Manuales de procedimientos por área funcional.
 | manual_3_3 | Manual Tiempo y Ausentismo | urn:knowledge:gorenuble:gn:manual-asistencia:1.0.0 | gestion/kb_gn_051_manual_asistencia_koda.yml | KODA | Control de asistencia y ausentismo. |
 | manual_3_4 | Manual Desarrollo Organizacional | urn:knowledge:gorenuble:gn:manual-desarrollo-organizacional:1.0.0 | gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml | KODA | Desarrollo organizacional y capacitación. |
 | manual_3_5 | Manual Bienestar | urn:knowledge:gorenuble:gn:manual-bienestar:1.0.0 | gestion/kb_gn_052_manual_bienestar_koda.yml | KODA | Programas de bienestar funcionario. |
-#### Presupuesto
+### Presupuesto
 #### ID
 IDX-PRESUPUESTO
 #### Titulo
@@ -565,7 +267,7 @@ Gestión Presupuestaria
 | kb_gn_018 | urn:knowledge:gorenuble:gn:gestion-prpto:1.0.0 | Gestión Presupuestaria | presupuesto/kb_gn_018_gestion_prpto_koda.yml | KODA | Marco general de gestión presupuestaria del GORE. |
 | kb_gn_210 | urn:knowledge:gorenuble:gn:ley-presupuestos-2026-p31:1.0.0 | Ley Presupuestos 2026 - Partida 31 | presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml | KODA | Extracto de la Ley de Presupuestos 2026, Partida 31 (GOREs). |
 | kb_gn_211 | urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas:1.0.0 | Ley Presupuestos 2026 - Normas Generales | presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml | KODA | Normas generales de ejecución presupuestaria. |
-#### Ipr
+### Ipr
 #### ID
 IDX-IPR
 #### Titulo
@@ -601,7 +303,7 @@ ipr/kb_gn_010_ris/
 | kb_gn_010_pmdt | RIS - PMDT | ipr/kb_gn_010_ris/kb_gn_010_ris_pmdt_koda.yml | KODA | Programa de Mejoramiento del Desarrollo Territorial. |
 | kb_gn_010_proginv | RIS - Programas de Inversión | ipr/kb_gn_010_ris/kb_gn_010_ris_proginv_koda.yml | KODA | Programas de inversión regionales. |
 | kb_gn_010_proyinv | RIS - Proyectos de Inversión | ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml | KODA | Proyectos de inversión regionales. |
-#### Juridico
+### Juridico
 #### ID
 IDX-JURIDICO
 #### Titulo
@@ -610,7 +312,7 @@ Actos Jurídicos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_100 | urn:knowledge:gorenuble:gn:modelos-actos-juridicos:1.0.0 | Modelos de Actos Jurídicos | juridico/kb_gn_100_modelos_actos_juridicos_koda.yml | KODA | Templates de resoluciones, convenios y otros actos administrativos. |
-#### Arquitectura
+### Arquitectura
 #### ID
 IDX-ARQUITECTURA
 #### Titulo
@@ -835,7 +537,7 @@ arquitectura/bpmn/
   YAML
   #### Resumen
   Índice de procesos BPMN.
-#### Comunicaciones
+### Comunicaciones
 #### ID
 IDX-COMUNICACIONES
 #### Titulo
@@ -845,7 +547,7 @@ Comunicaciones Institucionales
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_008 | urn:knowledge:gorenuble:gn:comunicaciones-oc:1.0.0 | Comunicaciones Oficinas de Comunicaciones | comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml | KODA | Roles y funciones del área de comunicaciones. |
 | kb_gn_030 | urn:knowledge:gorenuble:gn:guia-comunicaciones:1.0.0 | Guía de Comunicaciones | comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml | KODA | Manual de estilo y protocolos de comunicación institucional. |
-#### Tde
+### Tde
 #### ID
 IDX-TDE
 #### Titulo
@@ -855,7 +557,7 @@ Transformación Digital
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_710 | urn:knowledge:gorenuble:gn:informe-estado-inicial-gore-pre-td:1.0.0 | Estado Inicial Pre-TD | tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml | KODA | Diagnóstico del estado inicial del GORE previo a transformación digital. |
 | kb_gn_720 | urn:knowledge:gorenuble:gn:estrategia-td-ia:1.0.0 | Estrategia TD+IA | tde/kb_gn_720_estrategia_td_ia_koda.yml | KODA | Estrategia de Transformación Digital e Inteligencia Artificial. |
-#### Data
+### Data
 #### ID
 IDX-DATA
 #### Titulo
@@ -867,12 +569,13 @@ Datos Estructurados
 | kb_gn_003 | IDIs Históricas | data/kb_gn_003_idis.csv | CSV | Base de datos de iniciativas de inversión históricas. |
 | kb_gn_012 | Programas Vigentes | data/kb_gn_012_progs_vigentes.csv | CSV | Listado de programas públicos regionales vigentes. |
 | kb_gn_110 | Convenios 2022-2025 | data/kb_gn_110_convenios_2022_2025.csv | CSV | Base de datos de convenios del período 2022-2025. |
-### Grafo Dependencias
-#### ID
+
+## Grafo Dependencias
+### ID
 GN-GRAFO-01
-#### Def
+### Def
 Relaciones semánticas principales entre artefactos.
-#### Relaciones
+### Relaciones
 | source | target | tipo | nota |
 | --- | --- | --- | --- |
 | kb_gn_000 | * | fundamenta | La guía intro es prerrequisito conceptual para todo el corpus. |
@@ -881,12 +584,13 @@ Relaciones semánticas principales entre artefactos.
 | kb_gn_006 | ['kb_gn_019', 'kb_gn_011'] | orienta | La ERD orienta la priorización de inversiones. |
 | IDX-BPMN | manual_* | describe_proceso | BPMN proporciona visión de proceso, manuales el detalle. |
 | kb_gn_720 | ['kb_gn_080', 'kb_gn_090'] | habilita | Estrategia TD+IA habilita sistemas de inteligencia. |
-### Schema
-#### ID
+
+## Schema
+### ID
 IDX-SCHEMA
-#### Titulo
+### Titulo
 Esquemas de Validación
-#### Artefactos
+### Artefactos
 | id | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- |
 | koda_schema | KODA Schema | ../../schemas/koda-schema.json | JSON | Esquema JSON para validación de artefactos KODA. |

@@ -36,13 +36,7 @@ extensions:
     skeleton_count: 1
     meat_count: 6
     fat_count: 0
-    preserved_facts:
-    - _manifest.federation.license=Institutional Use Only
-    - _manifest.federation.visibility=internal
-    - _manifest.provenance.created_at=2026-02-19
-    - _manifest.provenance.created_by=GORE Ñuble
-    - _manifest.provenance.last_modified_at=2026-02-19
-    - _manifest.urn=urn:knowledge:gorenuble:gn:marco-legal-gores:1.0.0
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/normativa__marco-legal-gores.md.json
 ---
 
 # Compendio Jurídico para Gobiernos Regionales

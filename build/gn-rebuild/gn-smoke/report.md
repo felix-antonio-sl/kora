@@ -17,20 +17,7 @@
 - manuales/manual-induccion-gore-nuble-2026.md
 
 ## Unused Frozen Sources
-- core/gestion/kb_gn_mw_waissbluth_koda.yml
-- domains/estadocl/kb_core_007_estructura_estado_chile_koda.yml
-- domains/gn/01_fundamentos/intro/kb_gn_000_inicio_intro_gores_nuble_koda.yml
-- domains/gn/05_data_raw/kb_gn_002_noticias.csv
-- domains/gn/05_data_raw/kb_gn_003_idis.csv
-- domains/gn/05_data_raw/kb_gn_110_convenios_2022_2025.csv
-- ontologies/onto_gorenuble/alignmentGnubTde.ttl
-- ontologies/onto_gorenuble/goreNubleApprovalData.ttl
-- ontologies/onto_gorenuble/goreNubleDipirOntology.ttl
-- ontologies/onto_gorenuble/goreNubleDipirRules.ttl
-- ontologies/onto_gorenuble/goreNubleIPRData.ttl
-- ontologies/onto_gorenuble/goreNubleLegalData.ttl
-- ontologies/onto_gorenuble/goreNubleReferenceData.ttl
-- ontologies/onto_gorenuble/goreNubleRenditionData.ttl
+- none
 
 ## Missing Targets
 - none

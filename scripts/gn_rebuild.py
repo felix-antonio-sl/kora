@@ -28,6 +28,28 @@ from kora_lib.gn_validation import validate_gn_tree
 DEFAULT_REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAP_PATH = DEFAULT_REPO_ROOT / "scripts" / "gn_rebuild_map.yml"
 DEFAULT_SOURCE_ROOT = Path("/Users/felixsanhueza/Developer/gorenuble/knowledge")
+TOP_LEVEL_KODA_TECHNICAL_KEYS = {
+    "_manifest",
+    "ID",
+    "Version",
+    "Status",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "Model-Collaborator",
+    "AI-Remediator",
+    "Creation-Date",
+    "Modification-Date",
+    "Primary-Source",
+    "Authoritative-Source",
+    "Source-Hierarchy",
+    "Ref-STS-Guide",
+    "Ctx",
+    "LLM_Parsing_Instructions",
+}
+NESTED_KODA_TECHNICAL_KEYS = {
+    "LLM_Parsing_Instructions",
+}
 
 
 def sha256_file(path):
@@ -233,25 +255,87 @@ def render_direct_body(title, projection):
     return "\n".join(line for line in lines if line is not None).strip() + "\n"
 
 
+def strip_koda_technical_fields(node, depth=0):
+    if isinstance(node, dict):
+        cleaned = {}
+        for key, value in node.items():
+            if depth == 0 and key in TOP_LEVEL_KODA_TECHNICAL_KEYS:
+                continue
+            if depth > 0 and key in NESTED_KODA_TECHNICAL_KEYS:
+                continue
+            cleaned[key] = strip_koda_technical_fields(value, depth + 1)
+        return cleaned
+    if isinstance(node, list):
+        return [strip_koda_technical_fields(item, depth + 1) for item in node]
+    return node
+
+
+def find_embedded_markdown(node):
+    if isinstance(node, dict):
+        for key, value in node.items():
+            candidate = find_embedded_markdown(value)
+            if candidate:
+                return candidate
+            if isinstance(value, str):
+                text = value.strip()
+                if re.search(r"(?m)^#\s+", text) and len(text.splitlines()) >= 5:
+                    return text
+    elif isinstance(node, list):
+        for item in node:
+            candidate = find_embedded_markdown(item)
+            if candidate:
+                return candidate
+    elif isinstance(node, str):
+        text = node.strip()
+        if re.search(r"(?m)^#\s+", text) and len(text.splitlines()) >= 5:
+            return text
+    return None
+
+
+def render_koda_hybrid_body(title, projection):
+    data = strip_koda_technical_fields(projection["data"])
+    embedded_body = find_embedded_markdown(data)
+    if embedded_body:
+        return embedded_body.rstrip() + "\n"
+
+    if isinstance(data, dict):
+        semantic_keys = list(data.keys())
+        if len(semantic_keys) == 1 and isinstance(data[semantic_keys[0]], dict):
+            data = data[semantic_keys[0]]
+
+    hybrid_projection = dict(projection)
+    hybrid_projection["data"] = data
+    return render_direct_body(title, hybrid_projection)
+
+
 def render_composite_body(title, item, projections):
-    lines = [f"# {title}", "", "## Alcance"]
-    lines.append(item.get("scope_statement") or "Vista compuesta con procedencia explicita.")
-    for source_path, projection in projections.items():
-        section_title = headingify(Path(source_path).stem)
-        lines.extend(["", f"## Fuente: {section_title}"])
-        lines.extend(render_markdown_value(projection["data"], 2))
+    lines = [f"# {title}", "", "## Alcance", item.get("scope_statement") or "Vista compuesta con procedencia explicita."]
+    items = list(projections.items())
+    if not items:
+        return "\n".join(lines).strip() + "\n"
+
+    primary_source, primary_projection = items[0]
+    lines.extend(["", "## Fuente principal", f"- `{primary_source}`"])
+    if str(primary_source).endswith((".yml", ".yaml", ".json")):
+        primary_body = render_koda_hybrid_body(title, primary_projection).splitlines()
+        filtered = [line for line in primary_body if not line.startswith("# ")]
+        lines.extend(filtered)
+    else:
+        lines.extend(render_markdown_value(primary_projection["data"], 2))
+
+    if len(items) > 1:
+        lines.extend(["", "## Fuentes derivadas"])
+        for source_path, projection in items[1:]:
+            lines.extend(render_secondary_source_summary(source_path, projection))
     return "\n".join(lines).strip() + "\n"
 
 
 def render_ttl_body(title, item, projection):
-    lines = [
-        f"# {title}",
-        "",
-        "## Scope",
-        item["scope_statement"],
-        "",
-        "## Triples",
-    ]
+    data = projection["data"]
+    if isinstance(data, dict):
+        return render_cqs_catalog_body(title, item, data)
+
+    lines = [f"# {title}", "", "## Scope", item["scope_statement"], "", "## Triples"]
     for triple in projection["data"]:
         lines.append(f"- `{triple}`")
     return "\n".join(lines).strip() + "\n"
@@ -285,6 +369,83 @@ def render_index_body(title, item):
         dep_path = str(dependency).replace(".md", "")
         label = headingify(Path(dep_path).stem)
         lines.append(f"- `{dep_path}` - {label}")
+    return "\n".join(lines).strip() + "\n"
+
+
+def render_secondary_source_summary(source_path, projection):
+    lines = [f"### {headingify(Path(source_path).stem)}", f"- Fuente: `{source_path}`"]
+    if projection["kind"] == "ttl_scope":
+        lines.append(f"- Tipo: TTL derivado")
+        lines.append(f"- Hechos capturados: {len(projection['facts'])}")
+        sample = projection["data"][: min(8, len(projection["data"]))]
+        if sample:
+            lines.append("- Muestra:")
+            lines.extend(f"  - `{item}`" for item in sample)
+        return lines
+
+    data = projection["data"]
+    if isinstance(data, dict):
+        keys = list(data.keys())[:10]
+        lines.append(f"- Tipo: estructurado")
+        if keys:
+            lines.append(f"- Claves: {', '.join(keys)}")
+    elif isinstance(data, list):
+        lines.append(f"- Tipo: lista")
+        lines.append(f"- Elementos: {len(data)}")
+    else:
+        lines.append(f"- Tipo: texto")
+    return lines
+
+
+def render_cqs_catalog_body(title, item, data):
+    type_labels = {
+        "Existenciales": "Existencial",
+        "Relacionales": "Relacional",
+        "Temporales": "Temporal",
+        "Agregacion": "Agregación",
+    }
+    stats = data.get("_manifest", {}).get("statistics", {})
+    lines = [f"# {title}", "", "## Scope", item["scope_statement"], "", "## Resumen"]
+    if stats:
+        if "total_cqs" in stats:
+            lines.append(f"- Total CQs: {stats['total_cqs']}")
+        if "domains" in stats:
+            lines.append(f"- Dominios: {stats['domains']}")
+        if isinstance(stats.get("types"), dict):
+            for key, value in stats["types"].items():
+                lines.append(f"- {headingify(str(key))}: {value}")
+
+    domain_keys = [key for key in data.keys() if key.startswith("Dom_")]
+    for domain_key in domain_keys:
+        domain = data.get(domain_key, {})
+        lines.extend(["", f"## {headingify(domain_key.replace('Dom_', '').replace('_', ' '))}"])
+        counts = []
+        for bucket in ("Existenciales", "Relacionales", "Temporales", "Agregacion"):
+            values = domain.get(bucket, [])
+            if isinstance(values, list):
+                counts.append(f"{bucket}: {len(values)}")
+        if counts:
+            lines.append("- " + " | ".join(counts))
+
+        sample_rows = []
+        for bucket in ("Existenciales", "Relacionales", "Temporales", "Agregacion"):
+            values = domain.get(bucket, [])
+            for item_value in values[:2]:
+                if isinstance(item_value, dict):
+                    sample_rows.append(
+                        {
+                            "Tipo": type_labels.get(bucket, bucket),
+                            "ID": item_value.get("ID", ""),
+                            "Pregunta": item_value.get("Q", ""),
+                        }
+                    )
+        if sample_rows:
+            lines.append("| Tipo | ID | Pregunta |")
+            lines.append("| --- | --- | --- |")
+            for row in sample_rows:
+                lines.append(
+                    f"| {normalize_scalar(row['Tipo'])} | {normalize_scalar(row['ID'])} | {normalize_scalar(row['Pregunta'])} |"
+                )
     return "\n".join(lines).strip() + "\n"
 
 
@@ -469,7 +630,7 @@ def resolve_current_target_metadata(knowledge_root, target_rel_path):
 
 def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id):
     transform_class = item["transform_class"]
-    title = current_meta["title"]
+    title = item.get("target_title") or current_meta["title"]
     projections = {}
     for source_path, source_file in mirrored_sources.items():
         projections[source_path] = project_source(
@@ -480,6 +641,8 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id):
 
     if transform_class == "korafy_direct":
         body = render_direct_body(title, next(iter(projections.values())))
+    elif transform_class == "korafy_koda_hybrid":
+        body = render_koda_hybrid_body(title, next(iter(projections.values())))
     elif transform_class == "korafy_composite":
         body = render_composite_body(title, item, projections)
     elif transform_class == "derive_ttl_scope":
@@ -519,7 +682,6 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id):
         "skeleton_count": skeleton_count,
         "meat_count": meat_count,
         "fat_count": fat_count,
-        "preserved_facts": combined_facts[:200],
     }
     if cr < 1.5:
         gn_ext["cr_justification"] = "Fuente altamente estructurada o derivacion de alcance acotado."
@@ -542,7 +704,7 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id):
     if len(frontmatter["tags"]) < 3:
         frontmatter["tags"] = (frontmatter["tags"] + ["gn", "rebuild", Path(item["target_path"]).stem])[:3]
 
-    return frontmatter, body, gn_ext
+    return frontmatter, body, gn_ext, combined_facts
 
 
 def locate_lock(roots, run_id):
@@ -584,9 +746,11 @@ def build(args):
             mirrored_sources[source_path] = full_path
             source_hashes[source_path] = sha256_file(full_path)
 
-        frontmatter, body, gn_ext = build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id)
+        frontmatter, body, gn_ext, combined_facts = build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id)
         target_path = draft_root / item["target_path"]
         ensure_dir(target_path.parent)
+        evidence_relpath = f"{item['target_path'].replace('/', '__')}.json"
+        gn_ext["evidence_path"] = f"build/gn-rebuild/{run_id}/evidence/{evidence_relpath}"
         dump_yaml_frontmatter_and_body(target_path, frontmatter, body)
 
         evidence_payload = {
@@ -603,9 +767,10 @@ def build(args):
             "fat_count": gn_ext["fat_count"],
             "scope_statement": gn_ext.get("scope_statement"),
             "expected_sections": gn_ext.get("expected_sections", []),
+            "preserved_facts": combined_facts,
             "non_equivalence_decisions": item.get("non_equivalence_decisions", []),
         }
-        evidence_path = evidence_root / f"{item['target_path'].replace('/', '__')}.json"
+        evidence_path = evidence_root / evidence_relpath
         evidence_path.write_text(json.dumps(evidence_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(str(draft_root.relative_to(repo_root)))

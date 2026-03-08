@@ -24,6 +24,20 @@ exclusions:
   - ontologies/onto_gorenuble/goreNubleBundle.ttl
   - ontologies/onto_gorenuble/goreNubleOntology.ttl
   - ontologies/onto_gorenuble/goreNubleShapes.ttl
+  - core/gestion/kb_gn_mw_waissbluth_koda.yml
+  - domains/estadocl/kb_core_007_estructura_estado_chile_koda.yml
+  - domains/gn/01_fundamentos/intro/kb_gn_000_inicio_intro_gores_nuble_koda.yml
+  - domains/gn/05_data_raw/kb_gn_002_noticias.csv
+  - domains/gn/05_data_raw/kb_gn_003_idis.csv
+  - domains/gn/05_data_raw/kb_gn_110_convenios_2022_2025.csv
+  - ontologies/onto_gorenuble/alignmentGnubTde.ttl
+  - ontologies/onto_gorenuble/goreNubleApprovalData.ttl
+  - ontologies/onto_gorenuble/goreNubleDipirOntology.ttl
+  - ontologies/onto_gorenuble/goreNubleDipirRules.ttl
+  - ontologies/onto_gorenuble/goreNubleIPRData.ttl
+  - ontologies/onto_gorenuble/goreNubleLegalData.ttl
+  - ontologies/onto_gorenuble/goreNubleReferenceData.ttl
+  - ontologies/onto_gorenuble/goreNubleRenditionData.ttl
 
 entries:
   - target_path: bpmn/bpmn-d01-actos-administrativos.md
@@ -88,7 +102,7 @@ entries:
     target_urn: urn:gn:kb:flujos-aprobacion-documentos
     source_paths:
       - domains/gn/03_operacion/gestion/kb_gn_015_aprobaciones_koda.yml
-    transform_class: korafy_composite
+    transform_class: korafy_koda_hybrid
     review_gate: manual
     scope_statement: Flujo de aprobacion documental operativo; revisar compresion editorial previa.
 
@@ -132,6 +146,7 @@ entries:
 
   - target_path: gn-cqs-master.md
     target_urn: urn:gn:kb:gn-cqs-master
+    target_title: Catálogo Maestro de Competency Questions
     source_paths:
       - ontologies/onto_gorenuble/goreNubleCQs_Master.yml
     transform_class: derive_ttl_scope
@@ -185,7 +200,7 @@ entries:
     target_urn: urn:gn:kb:glosario-ipr-consolidado
     source_paths:
       - domains/gn/03_operacion/ipr/otroglosario.yml
-    transform_class: korafy_composite
+    transform_class: korafy_koda_hybrid
     review_gate: manual
     scope_statement: Glosario consolidado IPR; requiere verificacion terminologica.
 
@@ -340,7 +355,7 @@ entries:
     target_urn: urn:gn:kb:manual-induccion-gore-nuble-2026
     source_paths:
       - domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml
-    transform_class: korafy_composite
+    transform_class: korafy_koda_hybrid
     review_gate: manual
     scope_statement: Manual de induccion con mismatch historico entre nombre destino y fuente 2025.
 

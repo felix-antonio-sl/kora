@@ -6,6 +6,8 @@ from tempfile import TemporaryDirectory
 
 import yaml
 
+from scripts.kora_lib.artifacts import load_markdown_parts
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "gn_rebuild.py"
@@ -144,6 +146,87 @@ class GnRebuildTests(unittest.TestCase):
             report_path = repo / "build/gn-rebuild/testrun/report.md"
             self.assertTrue(report_path.exists())
             self.assertIn("Structural Diff", report_path.read_text(encoding="utf-8"))
+
+    def test_koda_hybrid_prefers_embedded_markdown_and_skips_technical_blocks(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/ipr").mkdir(parents=True, exist_ok=True)
+
+            hybrid_source = {
+                "_manifest": {"urn": "urn:test:kb:hybrid"},
+                "ID": "HYBRID-01",
+                "LLM_Parsing_Instructions": {"ID": "PARSER-01", "Content": "ignore"},
+                "Content": {
+                    "Body_MD": {
+                        "Content": "# Glosario\n\n## Terminos\n- Uno\n- Dos\n"
+                    }
+                },
+                "terminos": [
+                    {"nombre": "Uno", "def": "Def uno"},
+                    {"nombre": "Dos", "def": "Def dos"},
+                ],
+            }
+            (source_root / "domains/gn/03_operacion/ipr/otroglosario.yml").write_text(
+                yaml.safe_dump(hybrid_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/gobernanza/glosario-ipr-consolidado.md",
+                "urn:gn:kb:glosario-ipr-consolidado",
+                "Glosario IPR",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "source_type": "koda_yaml",
+                            "transform_class": "korafy_direct",
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/ipr/otroglosario.yml"],
+                                "target_path": "gobernanza/glosario-ipr-consolidado.md",
+                                "target_urn": "urn:gn:kb:glosario-ipr-consolidado",
+                                "transform_class": "korafy_koda_hybrid",
+                                "review_gate": "manual",
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "hybridrun")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "hybridrun", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/glosario-ipr-consolidado.md")
+            self.assertIn("# Glosario", body)
+            self.assertIn("## Terminos", body)
+            self.assertNotIn("LLM_Parsing_Instructions", body)
+            self.assertNotIn("PARSER-01", body)
 
 
 if __name__ == "__main__":

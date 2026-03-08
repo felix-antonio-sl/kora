@@ -21,9 +21,9 @@ extensions:
     source_hashes:
       domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml: e36da1f09911c2657522f02b4d7d35b277a63007ef31508c74535ffe6f61c315
     source_type: koda_yaml
-    transformation_mode: korafy_composite
+    transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.1
+    cr: 1.14
     run_id: gn-smoke
     review_gate: manual
     scope_statement: Manual de induccion con mismatch historico entre nombre destino
@@ -34,610 +34,26 @@ extensions:
     skeleton_count: 13
     meat_count: 821
     fat_count: 0
-    preserved_facts:
-    - Creation-Date=2025-12-14
-    - Ctx=Manual de Inducción del Gobierno Regional de Ñuble 2026.
-    - Human-Creator=GORE Ñuble
-    - Human-Editor=FS
-    - ID=KB-GN-017-MANUAL-INDUCCION-GORE-NUBLE-2026-01
-    - 'LLM_Parsing_Instructions.Content=BEGIN_LLM_INSTRUCTIONS
-
-      You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-
-      FIDELITY: Preserve meat (essential information) and skeleton (structure: headers,
-      IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic
-      prose).
-
-
-      LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
-      Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference,
-      Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process,
-      Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory
-      Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition,
-      Warn->Warning, Just->Justification, Rec->Recommendation
-
-
-      REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS
-      document. XRef/XRef_Required: are external only—must point to a URN (optionally
-      with #ID fragment) in another artifact. External documents without specific
-      ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
-
-
-      LANGUAGE POLICY: Keywords in English, content in original language. Never translate
-      content.
-
-      END_LLM_INSTRUCTIONS
-
-      '
-    - LLM_Parsing_Instructions.ID=KODA-LLM-PARSER-01
-    - LLM_Parsing_Instructions.Prohib=Using for artifact creation or translation.
-    - LLM_Parsing_Instructions.Req=Mandatory block following Metadata.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.ID=GN-MANUAL-INDUCCION-2026-01
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Alineacion_con_ERD_Nuble_2024_2030.Ctx=Estos
-      objetivos se alinean con los ejes de la Estrategia Regional de Desarrollo Ñuble
-      2024-2030, que son:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Alineacion_con_ERD_Nuble_2024_2030.Items[0]=Territorio
-      y Medio Ambiente.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Alineacion_con_ERD_Nuble_2024_2030.Items[1]=Economía,
-      Innovación y Capital Humano.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Alineacion_con_ERD_Nuble_2024_2030.Items[2]=Desarrollo
-      Social Inclusivo.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Alineacion_con_ERD_Nuble_2024_2030.Items[3]=Patrimonio,
-      Cultura e Identidad.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Alineacion_con_ERD_Nuble_2024_2030.Items[4]=Institucionalidad
-      y Gobernanza Regional.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[0]=Políticas,
-      planes, programas y proyectos de alcance regional: PROT, ERD, Política Regional
-      de CTiD, ARI, PROPIR, entre otros.'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[1]=Financiamiento
-      de Iniciativas de Inversión y Gasto público regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[2]=Financiamiento
-      de proyectos de infraestructura, equipamiento y gestión de alcance regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[3]=Financiamiento
-      de Proyectos a organizaciones y entidades públicas y privadas.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[4]=Financiamiento
-      de subvenciones en áreas de cultura, deporte, seguridad, género, social, medio
-      ambiente, etc. (Ej. Concurso 8% FNDR).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[5]=Financiamiento
-      de proyectos de conservación, activos no financieros, FRIL, entre otros.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[6]=Financiamiento
-      del Fondo Regional para la Productividad y el Desarrollo (FRPD).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[7]=Coordinación
-      y articulación de actores públicos y privados para el desarrollo regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[8]=Asesoría
-      y asistencia técnica a municipalidades en materias de competencia regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Items[9]=Promoción
-      de la participación ciudadana en la gestión regional.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Bienes_y_Servicios_que_Entrega_el_Gobierno_Regional_de_Nuble.Src=(Ejemplos
-      concretos de la gestión 2023 incluyen: Mejoras en salud (CESFAM, hospitales),
-      Agua Potable Rural, Espacios Públicos, Maquinaria municipal, programas de apoyo
-      a PYMES, seguridad (infraestructura policial, prevención), apoyo a la agricultura
-      y riego, proyectos de innovación, programas para zonas de rezago, y respuesta
-      a emergencias. Fuente: Cuenta Pública GORE Ñuble 2023).'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Ctx=El
-      Gobierno Regional de Ñuble se estableció el 6 de septiembre de 2018, tras la
-      creación de la Región de Ñuble, la cual se separó de la Región del Biobío. Este
-      cambio significativo en la división política-administrativa de Chile fue el
-      resultado de un largo proceso de descentralización y regionalización del país.
-      El Gobierno Regional de Ñuble tiene como objetivo principal promover el desarrollo
-      económico, social y cultural de la región, así como gestionar de manera eficiente
-      los recursos públicos para satisfacer las necesidades de la población local.
-      Desde su creación, ha trabajado en estrecha colaboración con los municipios
-      de la región y la comunidad para impulsar el progreso y el bienestar de las
-      21 comunas que componen la Región de Ñuble.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Ctx=La
-      estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el
-      Consejo Regional, según Certificado CORE 579 del 22 de diciembre de 2022, y
-      posteriormente por Resolución Exenta N° 00056 del 16 de enero de 2023. Esta
-      consta de acuerdo al DFL 1-19175, como base de:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Ctx_Optional[0]=Adicionalmente,
-      la Ley N°19.175 (Art. 68) permite al Gobernador Regional, con acuerdo del CORE,
-      crear una División de Prevención del Delito, encargada de las tareas de coordinación
-      y gestión de las funciones del GORE en materia de seguridad y prevención.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Ctx_Optional[1]=Además,
-      se conjugan una serie de otros departamentos y unidades, dependientes de las
-      primeras, que apoyan y complementan la gestión tanto administrativa como financiera
-      de la organización.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Divisiones_Base[0]=División
-      de Planificación y Desarrollo Regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Divisiones_Base[1]=División
-      de Presupuesto e Inversión Regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Divisiones_Base[2]=División
-      de Administración y Finanzas.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Divisiones_Base[3]=División
-      de Desarrollo Social y Humano.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Divisiones_Base[4]=División
-      de Infraestructura y Transportes.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Divisiones_Base[5]=División
-      de Fomento e Industria.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Items[0]=Un
-      Gobernador/a Regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Items[1]=Un
-      Consejo Regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Items[2]=Un
-      Administrador/a Regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Items[3]=Una
-      Unidad de Control.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Estructura_Organizacional_del_Gobierno_Regional_de_Nuble.Items[4]=Seis
-      Divisiones:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[0].Def=Órgano
-      ejecutivo del gobierno regional, preside el consejo regional. Ejerce funciones
-      con arreglo a la Constitución y leyes. (Revisar en profundidad Art. 24 de la
-      Ley N°19.175 para detalle de funciones).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[0].Unidad=Gobernador
-      Regional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[1].Def=Órgano
-      normativo, resolutivo y fiscalizador, que busca hacer efectiva la participación
-      de la comunidad regional. Integrado por consejeros elegidos por sufragio universal.
-      (Revisar en profundidad Art. 36 de la Ley N°19.175 para detalle de funciones).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[1].Unidad=Consejo
-      Regional (CORE)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[2].Def=Colaborador
-      directo del gobernador regional, encargado de la gestión administrativa del
-      gobierno regional y la coordinación de los jefes de división.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[2].Unidad=Administrador/a
-      Regional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[3].Def=Responsable
-      de la auditoría operativa interna, fiscalización de legalidad y control de ejecución
-      financiera y presupuestaria. Colabora con el CORE en su función fiscalizadora.
-      Emite informes trimestrales y representa actos ilegales al Gobernador.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[3].Unidad=Unidad
-      de Control
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[4].Def=Elabora
-      y propone estrategias, políticas, planes (incluido PROT), programas y proyectos
-      para el desarrollo armónico del territorio, conforme a prioridades del GORE.
-      Apoya al gobernador en evaluación y presta asistencia técnica.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[4].Unidad=DIVISIÓN
-      DE PLANIFICACIÓN Y DESARROLLO REGIONAL (DIPLADE)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[5].Def=Elabora
-      proyectos de presupuesto de inversión, ejecuta y controla dicho presupuesto
-      y programas, asesorando al gobernador en proyectos de inversión según planificación
-      regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[5].Unidad=DIVISIÓN
-      DE PRESUPUESTO E INVERSIÓN REGIONAL (DIPIR)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[6].Def=Gestión
-      administrativa interna y provisión de servicios generales del GORE.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[6].Unidad=DIVISIÓN
-      DE ADMINISTRACIÓN Y FINANZAS (DAF)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[7].Def=Propone,
-      promueve y ejecuta planes y programas regionales para estimular ciencia, tecnología,
-      conocimiento, innovación, desarrollo empresarial y competitividad, facilitando
-      la incorporación de TICs y proponiendo instrumentos de fomento.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[7].Unidad=DIVISIÓN
-      DE FOMENTO E INDUSTRIA
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[8].Def=Propone,
-      promueve y ejecuta planes y programas regionales en materia de obras de infraestructura,
-      equipamiento regional y gestión de transporte.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[8].Unidad=DIVISIÓN
-      DE INFRAESTRUCTURA Y TRANSPORTES
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[9].Def=Propone,
-      promueve y ejecuta planes y programas regionales conducentes a la igualdad de
-      derechos, oportunidades y cohesión social.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[9].Unidad=DIVISIÓN
-      DE DESARROLLO SOCIAL Y HUMANO
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[10].Def=Encargada
-      de tareas de coordinación y gestión de funciones del GORE en materia de prevención
-      del delito y atención a víctimas, en coordinación con la institucionalidad de
-      seguridad pública.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Items[10].Unidad=DIVISIÓN
-      DE PREVENCIÓN DEL DELITO (si se crea)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Funciones_de_las_Unidades_Base_Segun_DFL_1_19175.Req=Las
-      divisiones de Fomento e Industria, Infraestructura y Transportes, y Desarrollo
-      Social y Humano (y Prevención del Delito, si existe) deben coordinar el accionar
-      de los servicios públicos regionales que dependan o se relacionen con el gobierno
-      regional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.ID=GN-MANUAL-INDUCCION-S10
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Mision_y_Vision_Actualizado_2025_2026.Mssn=Liderar
-      e impulsar el desarrollo sustentable de la Región de Ñuble, mediante la gestión
-      eficiente de la inversión pública, la responsabilidad presupuestaria, y la coordinación
-      entre la institucionalidad pública y privada para contribuir al desarrollo territorial
-      armónico, de cordillera a mar.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Mision_y_Vision_Actualizado_2025_2026.Vision.Ctx=Contexto
-      ERD 2024-2030
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Mision_y_Vision_Actualizado_2025_2026.Vision.Def=Que
-      Ñuble sea un territorio reconocido por su calidad de vida, su aporte cultural
-      y su fortalecimiento del capital humano, con una matriz productiva diversificada
-      y una mejora especial en la calidad de vida de adultos mayores y población rural.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Columns[0]=Prioridad
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Columns[1]=Tipo_de_Objetivo
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Columns[2]=Descripcion
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Columns[3]=Enfoque_de_Genero
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Columns[4]=Cambio_Climatico
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[0].Cambio_Climatico=Sí
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[0].Descripcion=Desarrollar
-      estrategias, políticas e instrumentos con enfoque de género para la Planificación
-      Regional, la gestión de la Información territorial regional, y la gestión de
-      los distintos actores del territorio, contribuyendo al desarrollo regional participativo
-      y territorialmente integrado.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[0].Enfoque_de_Genero=Sí
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[0].Prioridad=1
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[0].Tipo_de_Objetivo=Estratégico
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[1].Cambio_Climatico=Sí
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[1].Descripcion=Financiar
-      una cartera anual de iniciativas de Inversión Pública Regional en las áreas
-      de fomento productivo e innovación, que considere la perspectiva de género,
-      y sea desarrollada en conjunto con los actores estratégicos público-privado
-      del territorio, contribuyendo a mejorar las condiciones económicas y sociales
-      de la región.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[1].Enfoque_de_Genero=Sí
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[1].Prioridad=2
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[1].Tipo_de_Objetivo=Estratégico
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[2].Cambio_Climatico=No
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[2].Descripcion=Implementar
-      instancias de participación, actualización, fortalecimiento de capacidades y
-      articulación de los actores estratégicos público-privado del territorio y con
-      perspectiva de género, en materia de formulación, evaluación y/o ejecución de
-      iniciativas de inversión regional con financiamiento público del Fondo Regional
-      de Desarrollo Regional, contribuyendo a una gestión eficaz, eficiente y oportuna
-      del FNDR.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[2].Enfoque_de_Genero=Sí
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[2].Prioridad=3
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Objetivos_Estrategicos_Institucionales_2025_2026.Table.Rows[2].Tipo_de_Objetivo=Estratégico
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Ctx=(El
-      organigrama detallado presentado en el manual 2024 sigue vigente en sus líneas
-      generales. Se debe consultar la última resolución oficial del GORE Ñuble para
-      cualquier actualización específica de departamentos o unidades internas).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[0].Jefe_Division_de_Planificacion_y_Desarrollo_Regional_DIPLADE.Items[0]=Comité
-      Pertinencia y Vinculación Estratégica
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[0].Jefe_Division_de_Planificacion_y_Desarrollo_Regional_DIPLADE.Items[1]=Departamento
-      de Planificación Estratégica y Ordenamiento Territorial
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[0].Jefe_Division_de_Planificacion_y_Desarrollo_Regional_DIPLADE.Items[2]=Departamento
-      de Desarrollo de Proyectos Estratégicos
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[0].Jefe_Division_de_Planificacion_y_Desarrollo_Regional_DIPLADE.Items[3]=Departamento
-      de Desarrollo Urbano (y/o Área Metropolitana, si aplica)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[0].Jefe_Division_de_Planificacion_y_Desarrollo_Regional_DIPLADE.Items[4]=Departamento
-      de Puesta en Valor del Patrimonio
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[1].Jefe_Division_de_Presupuesto_e_Inversion_Regional_DIPIR.Items[0]=Departamento
-      de Análisis y Evaluación de Inversiones (SNI)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[1].Jefe_Division_de_Presupuesto_e_Inversion_Regional_DIPIR.Items[1]=Departamento
-      de Presupuesto Regional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[1].Jefe_Division_de_Presupuesto_e_Inversion_Regional_DIPIR.Items[2]=Departamento
-      de Gestión de Inversiones y Convenios
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[2].Jefe_Division_de_Desarrollo_Social_y_Humano.Departamentos[0].Departamento_Fondos_Concursables_y_Programas_Sociales.Items[0]=Unidad
-      Subvenciones (Ej. 8% FNDR)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[2].Jefe_Division_de_Desarrollo_Social_y_Humano.Departamentos[0].Departamento_Fondos_Concursables_y_Programas_Sociales.Items[1]=Unidad
-      Programas Sociales Regionales
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[2].Jefe_Division_de_Desarrollo_Social_y_Humano.Departamentos[1].Departamento_Analisis_y_Gestion_Territorial.Items[0]=Unidad
-      Participación Ciudadana
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[2].Jefe_Division_de_Desarrollo_Social_y_Humano.Departamentos[1].Departamento_Analisis_y_Gestion_Territorial.Items[1]=Unidad
-      Territorial Provincial (si aplica)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[2].Jefe_Division_de_Desarrollo_Social_y_Humano.Departamentos[1].Departamento_Analisis_y_Gestion_Territorial.Items[2]=Unidad
-      de Seguimiento de Políticas, Planes y Programas Sociales
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[3].Jefe_Division_de_Fomento_e_Industria.Items[0]=Departamento
-      Zonas en Desarrollo (Territorios Rezagados, Zonas Extremas)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[3].Jefe_Division_de_Fomento_e_Industria.Items[1]=Departamento
-      Desarrollo Económico Local y PYMES
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[3].Jefe_Division_de_Fomento_e_Industria.Items[2]=Departamento
-      Ciencia, Tecnología e Innovación para la Competitividad (gestión FRPD)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[3].Jefe_Division_de_Fomento_e_Industria.Items[3]=Departamento
-      de Desarrollo Empresarial y Atracción de Inversiones
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[3].Jefe_Division_de_Fomento_e_Industria.Items[4]=Departamento
-      de Riego y Medio Ambiente (o unidad específica de Medio Ambiente y Cambio Climático)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[4].Jefe_Division_de_Infraestructura_y_Transporte.Departamentos[0].Departamento_de_Infraestructura_y_Equipamiento_Regional.Items[0]=Unidad
-      Saneamiento Básico (APR, alcantarillado)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[4].Jefe_Division_de_Infraestructura_y_Transporte.Departamentos[1].Departamento_Gestion_en_Transporte_y_Telecomunicaciones.Items[0]=Unidad
-      Conectividad (digital y física)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[5].Jefe_Division_de_Administracion_y_Finanzas_DAF.Departamentos[0].Departamento_de_Gestion_y_Desarrollo_de_Personas.Items[0]=Unidad
-      Gestión de Personas
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[5].Jefe_Division_de_Administracion_y_Finanzas_DAF.Departamentos[0].Departamento_de_Gestion_y_Desarrollo_de_Personas.Items[1]=Unidad
-      Desarrollo de Personas (Capacitación)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[5].Jefe_Division_de_Administracion_y_Finanzas_DAF.Departamentos[1]=Departamento_de_Finanzas_y_Contabilidad
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[5].Jefe_Division_de_Administracion_y_Finanzas_DAF.Departamentos[2].Unidad_de_Gestion_Operativa_Interna.Items[0]=Servicios
-      Generales, Adquisiciones
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[5].Jefe_Division_de_Administracion_y_Finanzas_DAF.Departamentos[3]=Unidad_de_Abastecimiento
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[5].Jefe_Division_de_Administracion_y_Finanzas_DAF.Departamentos[4]=Unidad_de_Tecnologias_de_la_Informacion_y_Comunicaciones_TIC_y_Transformacion_Digital
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Divisiones[6].Opcional_Jefe_Division_de_Prevencion_del_Delito.Ctx=Departamentos
-      o unidades según las necesidades de la estrategia regional de prevención.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[0].Gobernador_Region_de_Nuble.Items[0]=Comunicaciones
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[0].Gobernador_Region_de_Nuble.Items[1]=Gabinete
-      Gobernador
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[0].Gobernador_Region_de_Nuble.Items[2]=Centro
-      Integral de Emergencia y Seguridad (CIES)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[0].Gobernador_Region_de_Nuble.Items[3]=Administradora
-      Regional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[0].Gobernador_Region_de_Nuble.Items[4]=Corporación
-      Regional de Desarrollo de Ñuble (u otras entidades asociativas)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[0].Gobernador_Region_de_Nuble.Items[5]=Asesoría
-      Jurídica
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[1].Consejo_Region_de_Nuble.Items[0]=Secretaría
-      Ejecutiva CORE
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_Superior[1].Consejo_Region_de_Nuble.Items[1]=Unidad
-      de Control
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_de_Asesoria.Items[0]=Comité
-      de Ciencia, Tecnología, Conocimiento e Innovación para el Desarrollo (CCTID)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_de_Asesoria.Items[1]=Consejo
-      de la Sociedad Civil (COSOC)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_de_Asesoria.Items[2]=Auditoría
-      (puede ser parte de Unidad de Control o externa según necesidad)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_de_Asesoria.Items[3]=Unidad
-      de Calidad y Gestión Institucional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_10_Gobierno_Regional_de_Nuble.Organigrama_en_detalle.Nivel_de_Asesoria.Items[4]=Oficina
-      de Partes (y Archivo)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[0].Def=Toda
-      lesión que una persona sufra a causa o con ocasión del trabajo, y que le produzca
-      incapacidad o muerte.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[0].Item=a)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[0].Termino=Accidentes
-      del Trabajo
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[1].Def=Causada
-      directamente por el ejercicio de una profesión o trabajo, que produzca incapacidad
-      o muerte.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[1].Item=b)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[1].Termino=Enfermedad
-      Profesional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[2].Def=Ocurrido
-      en el trayecto "directo" de ida o regreso, entre la habitación y el lugar de
-      trabajo.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[2].Item=c)
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Definiciones_Importantes_Accidentes_y_Enfermedades.Def[2].Termino=Accidente
-      de Trayecto
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[0].Def=Hacer
-      uso de los feriados, permisos, licencias y participar en las acciones de capacitación.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[0].Item=1.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[1].Def=Gozar
-      de todas las prestaciones y beneficios que contemplen los sistemas de previsión
-      y bienestar social.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[1].Item=2.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[2].Def=Ser
-      defendidos y exigir que la institución a que pertenezcan persiga la responsabilidad
-      civil y criminal de las personas que atenten contra su vida o su integridad
-      corporal, con motivo del desempeño de sus funciones, o que, por dicho motivo,
-      los injurien o calumnien en cualquier forma.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[2].Item=3.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[3].Def=Percibir
-      por sus servicios las remuneraciones y demás asignaciones adicionales.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[3].Item=4.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[4].Def=Percibir
-      las siguientes asignaciones:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[4].Item=5.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[4].Items[0]=Horas
-      extraordinarias.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[4].Items[1]=Viático,
-      pasajes u otros análogos.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[5].Def=Derecho
-      a afiliarse a los Servicios de Bienestar (Depende si está creado).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[5].Item=6.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[6].Def=Derecho
-      a Asignaciones Familiares.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[6].Item=7.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[7].Def=Derecho
-      a formar y a afiliarse a Asociaciones de funcionarios.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[7].Item=8.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[8].Def=Gozar
-      de estabilidad en el empleo.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[8].Item=9.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[9].Def=Ascender
-      en el respectivo escalafón.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[9].Item=10.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[10].Def=Participar
-      en concursos.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[10].Item=11.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[11].Def=Recibir
-      asistencia en caso de accidente de trabajo o enfermedad profesional.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[11].Item=12.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[12].Def=Todos
-      los funcionarios de planta o contrata que sufran un accidente de trabajo o un
-      accidente de trayecto tienen el derecho a atenderse en los Servicios Médicos
-      de la Mutual de Seguridad de la Cámara Chilena de la Construcción.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Derechos_Funcionarios.Res[12].Item=13.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Destinaciones_Comisiones_de_Servicio_y_Cometidos.Ctx[0]=Toda
-      actividad laboral desarrollada por los funcionarios fuera de las dependencias
-      físicas del Gobierno Regional se considera un cometido funcional. Este debe
-      ser respaldado por un formulario creado para tal efecto (preferentemente electrónico),
-      que debe detallar la actividad a realizar, el tiempo que se utilizará y la fecha
-      en la cual se llevará a cabo. El formulario consta de dos partes:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Destinaciones_Comisiones_de_Servicio_y_Cometidos.Ctx[1]=Todo
-      funcionario que incurra en un cometido deberá llenar la primera parte del formulario,
-      y una vez realizado el cometido, deberá completar la segunda parte, que debe
-      ser firmada por la jefatura directa, quien indicará si existe derecho a viático
-      y a qué porcentaje. Finalmente, el formulario debe ser entregado al Departamento
-      de Gestión y Desarrollo de Personas.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Destinaciones_Comisiones_de_Servicio_y_Cometidos.Ctx_Optional=La
-      Ley de Presupuestos 2026 (Artículo 22) instruye reducir las comisiones de servicio,
-      especialmente al extranjero, a las imprescindibles.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Destinaciones_Comisiones_de_Servicio_y_Cometidos.Proc[0]=Planificación
-      de la actividad y detalles
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Destinaciones_Comisiones_de_Servicio_y_Cometidos.Proc[1]=Características
-      reales del cometido, respaldadas por correo, invitación, planificación, etc.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Documentacion_Exigida_para_Notificar.Req[0].Caso=Accidentes
-      del Trabajo
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Documentacion_Exigida_para_Notificar.Req[0].Items[0]=Denuncia
-      Individual de Accidente del Trabajo (DIAT), Cédula de Identidad.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Documentacion_Exigida_para_Notificar.Req[1].Caso=Accidente
-      de Trayecto
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Documentacion_Exigida_para_Notificar.Req[1].Items[0]=DIAT,
-      Cédula de Identidad.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Documentacion_Exigida_para_Notificar.Req[2].Caso=Enfermedad
-      Profesional
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Documentacion_Exigida_para_Notificar.Req[2].Items[0]=Denuncia
-      Individual de Enfermedad Profesional (DIEP), Cédula de Identidad.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Ctx=Comúnmente
-      conocidos como vacaciones, se utilizan para el descanso de los funcionarios
-      durante un año calendario. Los días de feriado legal varían según la antigüedad
-      laboral:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Ctx_Optional[0]=Para
-      justificar los años trabajados, se debe presentar un Certificado de Vacaciones
-      Progresivas otorgado por la AFP.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Ctx_Optional[1]=Los
-      feriados legales pueden o no ser utilizados durante el año. Si no se utilizan,
-      pueden ser traspasados según la normativa vigente.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Ctx_Optional[2]=Para
-      solicitar este permiso, se debe hacer una solicitud a la jefatura directa a
-      través de un formulario destinado para tal efecto (preferentemente electrónico).
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Items[0]=De
-      1 a 15 años: 15 días hábiles'
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Items[1]=De
-      15 a 20 años: 20 días hábiles'
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Feriado_Legal.Items[2]=Más
-      de 20 años laborales: 25 días hábiles'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Formacion_y_Capacitacion_Funcionaria.Ctx=Todos
-      los años, se aprueba un Plan Anual de Capacitación, el cual establece las actividades
-      de capacitación que se desarrollará el Gobierno Regional durante el año, y a
-      quienes irán dirigidas. Por otro lado, existen diversas posibilidades de optar
-      a actividades de capacitación, como Cursos de la Contraloría, Campus del Servicio
-      Civil, Diplomados y Cursos de la SUBDERE, entre otros. Cada vez que un funcionario(a)
-      quiera optar a estas actividades de perfeccionamiento, deberá presentar al Encargado
-      de Capacitación del GORE un formulario firmado por su jefatura directa. Finalmente,
-      al obtener su certificado de aprobación, deberá remitirlo al Encargado de Capacitación
-      para su correspondiente registro.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.ID=GN-MANUAL-INDUCCION-S11
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Extraordinaria.Ctx=Para
-      trabajar jornadas extraordinarias, el funcionario deberá presentar el formulario
-      N°1 correspondiente a Planificación de Trabajo Extraordinario, el cual debe
-      ser autorizado por la jefatura. Una vez transcurrido el período autorizado para
-      el trabajo extraordinario, se procederá a calcular el tiempo acumulado que exceda
-      el período laboral, el cual será reconocido a través de una resolución que contempla
-      un Formulario N°2 y los respaldos del sistema de control. Una vez reconocido
-      el tiempo de trabajo extraordinario, se registrará en una cuenta a nombre del
-      funcionario, quien podrá utilizarlo como tiempo compensado durante dos años.
-      Posteriormente, se extinguirá. Para solicitar este permiso, se deberá tener
-      claridad de cuánto tiempo posee el funcionario y hacer una solicitud a la jefatura
-      directa a través de un formulario destinado para tal efecto (preferentemente
-      electrónico).
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Ctx=La
-      jornada laboral corresponde a 44 horas semanales, distribuidas de la siguiente
-      manera:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Ctx_Optional[0]=La
-      hora de ingreso podrá ser entre las 8:00 y las 9:00 horas, y la hora de salida
-      dependerá de la hora en que se cumplen las 9 horas (de lunes a jueves) y las
-      8 horas (los viernes).
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Ctx_Optional[1]=Cuando
-      por distintas razones el funcionario olvide marcar, deberá justificarse con
-      la jefatura directa a través de correo electrónico con copia al GDP.
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Items[0]=Lunes
-      a Jueves: 9 horas'
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Items[1]=Viernes:
-      8 horas'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Req[0]=Todo
-      funcionario en Calidad Jurídica Planta, Contrata o Código del Trabajo deberá
-      registrar su ingreso y salida de la jornada laboral en el sistema de control
-      dispuesto para tal efecto.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Jornada_Horaria_y_Mecanismo_de_Control_de_Jornada.Req[1]=Para
-      ello, deberá ponerse en contacto con el Departamento de Gestión y Desarrollo
-      de Personas para registrar sus datos.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Licencias_Medicas.Ctx=Los
-      y las funcionarias(os) que presenten una licencia médica deben asegurarse de
-      que esta sea remitida por el médico o centro de salud al empleador por los medios
-      electrónicos correspondientes dentro de los tres días desde la emisión de la
-      licencia (es el plazo que tiene el trabajador para presentar la licencia médica
-      al empleador). En el caso de que la licencia sea emitida en papel, el funcionario
-      tendrá tres días para hacerla llegar al Gobierno Regional entregándola por oficina
-      de partes (o digitalizándola según los procedimientos de transformación digital).
-      Por último, el funcionario(a) deberá estar atento(a) a la resolución de la ISAPRE
-      o COMPIN, la cual autorizará, rechazará o reducirá los días de licencia otorgados.
-      Para lo cual, en los casos que corresponda, deberá presentar mayores antecedentes
-      para apelar al dictamen.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Permisos_con_Goce_de_Remuneraciones.Ctx=Estos
-      permisos, comúnmente llamados permisos administrativos, corresponden a 6 días
-      asignados a todo funcionario público en el período de un año, y se pueden fraccionar
-      en medios días, sean estos AM o PM. Si el funcionario no hace uso de estos días
-      durante el período de un año calendario, se pierden sin que se tenga derecho
-      a utilizarlos en un próximo período. Para solicitar este permiso, se debe hacer
-      una solicitud a la jefatura directa a través de un formulario destinado para
-      tal efecto (preferentemente electrónico).
-    - 'Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Permisos_sin_Goce_de_Remuneraciones.Ctx=Estos
-      permisos deben ser autorizados por la jefatura directa. Un funcionario podrá
-      solicitar este permiso por:'
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Permisos_sin_Goce_de_Remuneraciones.Items[0]=Motivos
-      particulares, hasta seis meses en cada año calendario.
-    - Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026.Seccion_11_Derechos_y_Deberes_Funcionarios.Permisos_sin_Goce_de_Remuneraciones.Items[1]=Permanecer
-      en el extranjero, hasta por dos años.
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-induccion-gore-nuble-2026.md.json
 ---
 
 # Manual de Inducción del Gobierno Regional de Ñuble 2026
-
-## Alcance
-Manual de induccion con mismatch historico entre nombre destino y fuente 2025.
-
-## Fuente: Kb gn 017 manual induccion gore nuble 2025 koda
-### Manifest
-#### Urn
-urn:knowledge:gorenuble:gn:manual-induccion-gore-nuble-2026:1.0.0
-#### Federation
-#### Visibility
-internal
-#### License
-Institutional Use
-#### Compatibility
-#### Min consumer version
-1.0.0
-#### Breaking changes from
-null
-#### Resolution
-#### Canonical url
-file://knowledge/domains/gn/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml
-#### Mirrors
-#### Dependencies
-#### Requires
-| urn | reason |
-| --- | --- |
-| urn:knowledge:koda:core:spec:1.0.0 | KODA/Spec format compliance |
-| urn:knowledge:koda:core:transform:1.0.0 | Transformation methodology reference |
-#### Provenance
-#### Created by
-KODA-TRANSFORMER
-#### Created at
-2025-12-14
-#### Last modified at
-2025-12-15
-#### Signature
-null
-### ID
-KB-GN-017-MANUAL-INDUCCION-GORE-NUBLE-2026-01
-### Version
-1.0.0
-### Status
-Draft
-### Human Creator
-GORE Ñuble
-### Human Editor
-FS
-### Model Collaborator
-CASCADE
-### Creation Date
-2025-12-14
-### Modification Date
-2025-12-15
-### Primary Source
-staging/gn/kodeando/manual_induccion_gore_ñuble_2024.md
-### Ctx
-Manual de Inducción del Gobierno Regional de Ñuble 2026.
-### LLM Parsing Instructions
-#### ID
-KODA-LLM-PARSER-01
-#### Req
-Mandatory block following Metadata.
-#### Prohib
-Using for artifact creation or translation.
-#### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
-
-LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
-END_LLM_INSTRUCTIONS
-
-### Manual de Induccion Gobierno Regional de Nuble 2026
-#### ID
+## ID
 GN-MANUAL-INDUCCION-2026-01
-#### Titulo
-#### Def
+
+## Titulo
+### Def
 Manual de Inducción del Gobierno Regional de Ñuble 2026
-#### Seccion 1 Introduccion
-#### ID
+
+## Seccion 1 Introduccion
+### ID
 GN-MANUAL-INDUCCION-S01
-#### Que es la induccion
+### Que es la induccion
 #### Def
 - La inducción es una herramienta de gestión que apunta a integrar de manera planificada a las personas que ingresan a la organización o cambian de funciones, a través de un proceso de acompañamiento tendiente a ofrecer la información necesaria para desempeñarse en forma cómoda y eficaz. Permite conocer y comprender los aspectos específicos del trabajo y los procedimientos de la institución, promoviendo la adaptación a las características organizacionales (Servicio Civil, 2016).
 - Dicho de otro modo, la inducción busca contribuir a un ajuste entre persona/puesto/organización a través de acciones deliberadas tendientes a apoyar a las nuevas personas en su integración a la cultura organizacional (Servicio Civil, 2016). Es un proceso que, además de entregar una visión global de la organización, sus proyectos y dar calidez al ingreso, involucra el inicio de la interiorización en los valores institucionales, conocer las prácticas predominantes y los comportamientos acordes a las expectativas de un sistema social estable. Implica el desafío de incorporar e integrar a un nuevo colaborador a una cultura colectiva que determina la manera de actuar (Servicio Civil, 2016).
-#### Objetivos del proceso de induccion
+### Objetivos del proceso de induccion
 #### Ctx
 En sus orientaciones para el proceso de inducción, el Servicio Civil considera esta como un proceso estratégico para la institución, cuyos objetivos son:
 #### Obj
@@ -661,7 +77,7 @@ En sus orientaciones para el proceso de inducción, el Servicio Civil considera 
   #### Fidelizar
   #### Def
   Proceso de fortalecimiento de la identificación del funcionario/a con la función pública en general y con su servicio en particular, y la generación y/o profundización de un compromiso individual con sus funciones.
-#### Beneficios
+### Beneficios
 #### Ctx
 El Servicio Civil en sus orientaciones reconoce como principales beneficios de contar con un programa de inducción los siguientes:
 #### Res
@@ -672,10 +88,10 @@ El Servicio Civil en sus orientaciones reconoce como principales beneficios de c
 - Posibilitar que las personas se sientan parte y se identifiquen con la institución.
 - Facilitar y direccionar las potencialidades de las personas hacia los objetivos institucionales.
 - Facilitar que la persona demuestre en el corto plazo resultados en su propio desempeño y en su aporte a la consecución de los resultados de la institución.
-#### Induccion y ciclo de vida laboral
+### Induccion y ciclo de vida laboral
 #### Ctx
 La inducción constituye un proceso crítico en el ciclo de vida laboral de las personas en cualquier organización. Una buena recepción e incorporación no sólo resulta relevante en tanto acogida, sino que también puede contribuir al sentido de compromiso del funcionario con su desempeño, equipo de trabajo, institución y con la función pública. La organización define e implementa programas que apuntan a integrar de manera planificada a las personas, a través de un proceso de acompañamiento y actividades que permitan transmitir a los nuevos funcionarios actitudes, estándares, valores y patrones de conducta prevalecientes que espera la organización para alcanzar mejores estándares de desempeño en el menor tiempo posible (Servicio Civil, 2016).
-#### Fases generales del proceso
+### Fases generales del proceso
 #### Ctx
 Desde la perspectiva de proceso, un programa de inducción debe considerar al menos:
 #### Proc
@@ -691,16 +107,17 @@ Desde la perspectiva de proceso, un programa de inducción debe considerar al me
   #### Fase orientada al cargo
   #### Purp
   Actividades para clarificar tareas, responsabilidades, funciones y metas esperadas (Servicio Civil, 2016).
-#### Adaptacion y flexibilidad del proceso en la organizacion
+### Adaptacion y flexibilidad del proceso en la organizacion
 #### Ctx
 El proceso de inducción en el Gobierno Regional de Ñuble se concibe como una instancia flexible y adaptable a contingencias y recursos existentes al momento del ingreso del nuevo funcionario. Existirán actividades que son estándar, pero otras deberán ser adecuadas considerando el desempeño que se espera alcanzar según las funciones que se asumen, la procedencia de la persona (Sector Público o Sector Privado) y el nivel de experiencia en la función pública del nuevo funcionario.
-#### Seccion 2 Objetivos
-#### ID
+
+## Seccion 2 Objetivos
+### ID
 GN-MANUAL-INDUCCION-S02
-#### General
+### General
 #### Obj
 Socializar, orientar, entrenar, alinear y fidelizar al funcionario o funcionaria que ingrese a desempeñar funciones al Gobierno Regional de Ñuble de una manera sistematizada y formal, que contribuya a que éste asimile con rapidez la cultura de la organización, se reduzca el tiempo de adaptación al puesto de trabajo y facilite el proceso de integración a la institución, logrando una adecuada satisfacción laboral y un mejor desempeño para la organización.
-#### Especificos
+### Especificos
 #### Obj
 - Presentar a la persona que se integra a los miembros de la institución, informando quiénes son sus superiores y compañeros de trabajo.
 - Entregar información sobre las funciones y responsabilidades en el marco de la estructura y metas organizacionales.
@@ -708,17 +125,19 @@ Socializar, orientar, entrenar, alinear y fidelizar al funcionario o funcionaria
 - Apoyar al funcionario en el conocimiento de las políticas y reglas necesarias para el desempeño en el lugar de trabajo.
 - Facilitar el conocimiento de la cultura organizacional y su adaptación a ésta, familiarizándose con los valores institucionales, la historia organizacional, las prestaciones que ofrece y las características relevantes.
 - Contemplar los tiempos necesarios que demanda la incorporación de un nuevo funcionario, su adaptación y aprendizaje de los objetivos y funciones del cargo, niveles de exigencia de las tareas, normativas existentes, contexto institucional, integración al equipo de trabajo y adaptación a la cultura organizacional.
-#### Seccion 3 Alcance o Cobertura
-#### ID
+
+## Seccion 3 Alcance o Cobertura
+### ID
 GN-MANUAL-INDUCCION-S03
-#### Ctx
+### Ctx
 Aplica a todos los nuevos funcionarios y funcionarias que ingresen a desempeñar funciones al Gobierno Regional de Ñuble, independiente de su situación contractual.
-#### Seccion 4 Marco Normativo
-#### ID
+
+## Seccion 4 Marco Normativo
+### ID
 GN-MANUAL-INDUCCION-S04
-#### Ctx
+### Ctx
 El funcionamiento del Gobierno Regional de Ñuble y la labor de sus funcionarios se rigen por un conjunto de normativas fundamentales, entre las que destacan:
-#### Src
+### Src
 - Constitución Política de la República de Chile.
 - Ley N°18.575: Ley Orgánica Constitucional de Bases Generales de la Administración del Estado (texto refundido por DFL N°1/19.653 de 2000).
 - Ley N°18.834: Estatuto Administrativo (texto refundido por DFL N°29 de 2004).
@@ -742,12 +161,13 @@ El funcionamiento del Gobierno Regional de Ñuble y la labor de sus funcionarios
 - Decreto N°2.421 de 1964: Fija el Texto Refundido de la Ley de Organización de la Contraloría General de la República (Ley N°10.336).
 - Resolución N°30 de 2015 de la Contraloría General de la República: Fija Normas de Procedimiento sobre Rendición de Cuentas (y sus modificaciones).
 - Instructivos y Circulares de la Dirección de Presupuestos (DIPRES) y de la Contraloría General de la República (CGR) aplicables a la gestión presupuestaria y administrativa.
-#### Req
+### Req
 Este marco normativo está en constante evolución, por lo que es deber de cada funcionario mantenerse actualizado respecto a las leyes y reglamentos que rigen su actuar.
-#### Seccion 5 Principios Orientadores
-#### ID
+
+## Seccion 5 Principios Orientadores
+### ID
 GN-MANUAL-INDUCCION-S05
-#### Principios
+### Principios
 -
   #### Compromiso
   #### Def
@@ -784,10 +204,11 @@ GN-MANUAL-INDUCCION-S05
   #### Coherencia y Coordinacion
   #### Def
   Actuamos en armonía con las políticas nacionales y en coordinación con otros órganos del Estado y los gobiernos locales, para optimizar el uso de los recursos y potenciar el impacto de la acción pública en el territorio.
-#### Seccion 6 Definiciones Relevantes Glosario
-#### ID
+
+## Seccion 6 Definiciones Relevantes Glosario
+### ID
 GN-MANUAL-INDUCCION-S06
-#### Glosario
+### Glosario
 | Termino | Def |
 | --- | --- |
 | Inducción | Proceso mediante el cual se integra a un nuevo empleado en la organización, proporcionándole la información y herramientas necesarias para que pueda desempeñar su trabajo de manera eficiente y adaptarse a la cultura organizacional. |
@@ -820,34 +241,36 @@ GN-MANUAL-INDUCCION-S06
 | FNDR (Fondo Nacional de Desarrollo Regional) | Principal fuente de financiamiento para la inversión de los Gobiernos Regionales. |
 | FRPD (Fondo Regional para la Productividad y el Desarrollo) | Fondo destinado a iniciativas de innovación, competitividad, ciencia y tecnología regional. |
 | Glosas Presupuestarias | Disposiciones específicas en la Ley de Presupuestos que regulan el uso de ciertos fondos o establecen condiciones para su ejecución. |
-#### Res
+### Res
 Estas definiciones ayudarán a los nuevos empleados a entender mejor los conceptos clave y a adaptarse más rápidamente a la organización.
-#### Seccion 7 Roles y Responsabilidades
-#### ID
+
+## Seccion 7 Roles y Responsabilidades
+### ID
 GN-MANUAL-INDUCCION-S07
-#### Roles
+### Roles
 | Rol | Def |
 | --- | --- |
 | GOBERNADOR REGIONAL | Su rol es brindar el respaldo al Área de Gestión de Personas para que la inducción sea relevada al interior de la organización. Esto incluye la asignación de los recursos humanos, financieros y materiales necesarios para su realización, y su propia participación en aquellas actividades que así lo consignen. |
 | JEFATURA DIRECTA | Es responsable de garantizar los tiempos y generar las condiciones necesarias para que el nuevo funcionario participe del proceso de inducción. Debe escoger un agente inductor que asegure una adecuada supervisión, seguimiento y orientación del nuevo funcionario. La jefatura directa es la responsable de entregar al nuevo funcionario una descripción clara de las tareas que debe desempeñar, clarificar sus funciones y contextualizar con la estrategia institucional, suministrando toda la información técnica acerca de cómo realizarlas, y será la responsable de retroalimentar al inducido al final del proceso. |
 | ÁREA DE GESTIÓN DE PERSONAS | Responsable del proceso general de inducción. Debe coordinar y monitorear el proceso de inducción y sus actividades. Asimismo, debe controlar la efectiva participación de las personas e introducir los ajustes que determinadas coyunturas pueden demandar. Adicionalmente, debe coordinar una evaluación periódica del proceso de inducción institucional y realizar las acciones de inducción específica que le correspondan en cada caso. Entre las acciones específicas está informar cuáles son las políticas de la organización en gestión de personas, deberes y derechos que le corresponden como funcionario, y familiarizarse con la estructura de la organización (áreas, unidades, infraestructura, entre otros). |
 | AGENTE INDUCTOR, MENTOR O TUTOR | Par de la persona inducida o un miembro de la organización reconocido por ser confiable y experimentado, que pueda responder preguntas sobre la organización y mantenerse cerca durante el periodo inicial. Su rol fundamental es facilitar la interrelación de la persona con su equipo de trabajo directo y con las otras áreas. |
-#### Seccion 8 Aspectos Generales Organizacion Administracion Publica
-#### ID
+
+## Seccion 8 Aspectos Generales Organizacion Administracion Publica
+### ID
 GN-MANUAL-INDUCCION-S08
-#### Ctx
+### Ctx
 La organización de la administración pública en Chile se estructura de manera que permite una gestión eficiente y ordenada del Estado, asegurando el cumplimiento de sus funciones y la prestación de servicios a los ciudadanos. A continuación, se describen los aspectos generales de esta organización:
-#### Division de Poderes
+### Division de Poderes
 #### Ctx
 La administración pública se organiza bajo el principio de la separación de poderes, dividiéndose en tres poderes principales:
 #### Poderes
 - Poder Ejecutivo: Encabezado por el Presidente de la República, quien es responsable de la administración general del país.
 - Poder Legislativo: Compuesto por el Congreso Nacional, que incluye la Cámara de Diputados y el Senado. Su función es la creación de leyes y la fiscalización de las actividades del Ejecutivo.
 - Poder Judicial: Encargado de la administración de justicia, independiente del Ejecutivo y Legislativo.
-#### Presidencia de la Republica
+### Presidencia de la Republica
 #### Ctx
 El Presidente de la República es la máxima autoridad del Poder Ejecutivo y tiene la facultad de nombrar ministros, subsecretarios y jefes de servicios públicos. Además, es responsable de la administración del Estado y la conducción de la política gubernamental.
-#### Ministerios
+### Ministerios
 #### Ctx
 - Cada ministerio está encabezado por un ministro y se encarga de áreas específicas de la política pública. Los ministerios pueden tener una o más subsecretarías y en regiones son representados por sus respectivos secretarios regionales ministeriales (SEREMIs).
 - Con la creación del Ministerio de Seguridad Pública (Ley N°21.730), esta cartera asume las funciones específicas de seguridad ciudadana y orden público, antes radicadas principalmente en el Ministerio del Interior.
@@ -877,18 +300,18 @@ El Presidente de la República es la máxima autoridad del Poder Ejecutivo y tie
 - Ministerio de las Culturas, las Artes y el Patrimonio.
 - Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.
 - Ministerio de la Mujer y la Equidad de Género.
-#### Subsecretarias
+### Subsecretarias
 #### Ctx
 Son órganos dependientes de los ministerios, encargados de áreas específicas dentro de la competencia del ministerio. Las subsecretarías tienen funciones de planificación, coordinación y supervisión de políticas públicas. La Subsecretaría de Desarrollo Regional y Administrativo (SUBDERE), dependiente del Ministerio del Interior, juega un rol clave en la coordinación y apoyo a los Gobiernos Regionales.
-#### Servicios Publicos Descentralizados y Desconcentrados
+### Servicios Publicos Descentralizados y Desconcentrados
 #### Items
 - Descentralizados: Organismos con personalidad jurídica y patrimonio propio que ejecutan políticas específicas y prestan servicios directos a la ciudadanía (Ej. Servicio de Impuestos Internos - SII, Instituto Nacional de Estadísticas - INE, Superintendencias). Los Gobiernos Regionales son entidades descentralizadas.
 - Desconcentrados: Unidades de ministerios o servicios nacionales que operan a nivel regional o provincial para acercar la gestión a los territorios (Ej. Direcciones Regionales de SERVIU, SAG, CONAF; Secretarías Regionales Ministeriales - SEREMI).
-#### Gobiernos Regionales y Locales
+### Gobiernos Regionales y Locales
 #### Items
 - Gobiernos Regionales (GORE): Encargados de la administración superior de la región, con foco en el desarrollo social, cultural y económico. Están constituidos por un Gobernador Regional (electo) y un Consejo Regional (electo). (Ley N°19.175 y sus modificaciones).
 - Gobiernos Locales (Municipalidades): Encabezados por alcaldes y concejos municipales (electos), responsables de la administración local y la prestación de servicios municipales.
-#### Organos Autonomos
+### Organos Autonomos
 #### Ctx
 Existen varios órganos autónomos que operan independientemente del Poder Ejecutivo para garantizar la imparcialidad y el control en diferentes áreas:
 #### Items
@@ -901,10 +324,11 @@ Existen varios órganos autónomos que operan independientemente del Poder Ejecu
 - Agencia Nacional de Ciberseguridad (ANCI) (creada por Ley N°21.663).
 #### Res
 Estos aspectos generales describen cómo se estructura y funciona la administración pública en Chile, asegurando que el Estado pueda cumplir sus responsabilidades de manera eficiente y efectiva.
-#### Seccion 9 Gobiernos Regionales
-#### ID
+
+## Seccion 9 Gobiernos Regionales
+### ID
 GN-MANUAL-INDUCCION-S09
-#### Descentralizacion y Desconcentracion
+### Descentralizacion y Desconcentracion
 #### Ctx
 - La Constitución Política de la República señala en su artículo 3° que:
 - "El Estado de Chile es unitario".
@@ -913,14 +337,14 @@ GN-MANUAL-INDUCCION-S09
 - Esto relaciona los conceptos de descentralización y desconcentración con la capacidad de accionar de los órganos del Estado que describe el citado artículo. (Servicio Civil, 2017)
 - Mientras que la descentralización es la transferencia de parte del poder y recursos del Estado Central a las instancias del nivel regional o local, en donde la toma de decisiones se radica en el nivel regional o local, respondiendo y dando cuenta ante ese mismo nivel; la desconcentración consiste en transferir algunas funciones administrativas y/o técnicas a niveles más bajos de administración, pero manteniendo el poder de decisión a nivel central. Es decir, aunque el decisor se radique en el nivel regional o local, sigue respondiendo ante el nivel central por el resultado de sus decisiones (Servicio Civil, 2017).
 - La Ley N°21.074 de Fortalecimiento de la Regionalización estableció mecanismos para la transferencia de competencias desde ministerios y servicios públicos nacionales hacia los GORE, profundizando el proceso de descentralización funcional.
-#### Funciones Atribuciones y Competencias
+### Funciones Atribuciones y Competencias
 #### Ctx
 La Ley Orgánica Constitucional sobre Gobierno y Administración Regional (LOCGAR, DFL N°1-19.175 y sus modificaciones) establece la estructura de los Gobiernos Regionales, sus funciones, atribuciones y competencias. Como principales funciones de estos se distinguen:
 #### Items
 - La elaboración y aprobación de las políticas, planes y programas de desarrollo de la región, así como su proyecto de presupuesto, ajustados a la Política Nacional de Desarrollo y al Presupuesto de la Nación.
 - Resolver la inversión de los recursos que a la región correspondan en la distribución del Fondo Nacional de Desarrollo Regional (FNDR) y de aquellos que procedan de acuerdo con la normativa aplicable.
 - Dictar normas de carácter general para regular las materias de su competencia, con sujeción a las disposiciones legales y a los decretos supremos reglamentarios, todas las cuales están sujetas al trámite de toma de razón por parte de la Contraloría General de la República y se publicarán en el Diario Oficial.
-#### Funciones Generales Art 16 Ley 19175
+### Funciones Generales Art 16 Ley 19175
 #### Ctx
 FUNCIONES GENERALES DE LOS GOBIERNOS REGIONALES (Art. 16, Ley N°19.175)
 #### Items
@@ -943,7 +367,7 @@ FUNCIONES GENERALES DE LOS GOBIERNOS REGIONALES (Art. 16, Ley N°19.175)
 | ñ) | Construir, reponer, conservar y administrar obras de pavimentación de aceras y calzadas. |
 | o) | Elaborar y aprobar los planes de inversiones en infraestructura de movilidad y espacio público asociados a planes reguladores metropolitanos o intercomunales. |
 | p) | Coparticipar con el Comité Regional para el cambio climático en la elaboración y aprobación de los instrumentos para la gestión del cambio climático a nivel regional. |
-#### Funciones Ordenamiento Territorial Art 17
+### Funciones Ordenamiento Territorial Art 17
 #### Ctx
 Principales funciones del Gobierno Regional en materia de Ordenamiento Territorial (Art. 17)
 #### Items
@@ -958,7 +382,7 @@ Principales funciones del Gobierno Regional en materia de Ordenamiento Territori
 | g) | Proponer a la autoridad competente la localidad en que deberán radicarse las secretarías regionales ministeriales y las direcciones regionales de los servicios públicos. |
 | h) | Financiar estudios que definan las condiciones de localización para la disposición de los distintos tipos de residuos. |
 | i) | Proponer territorios como zonas rezagadas en materia social y su respectivo plan de desarrollo. |
-#### Funciones Fomento Actividades Productivas Art 18
+### Funciones Fomento Actividades Productivas Art 18
 #### Ctx
 Principales funciones del Gobierno Regional en materia de fomento de las actividades productivas (Art. 18)
 #### Items
@@ -971,7 +395,7 @@ Principales funciones del Gobierno Regional en materia de fomento de las activid
 | e) | Promover y apoyar oficinas comunales de fomento productivo. |
 | f) | Promover la investigación científica y tecnológica y el desarrollo de la educación superior y técnico profesional. |
 | g) | Elaborar y aprobar la Política Regional de Ciencia, Tecnología, Conocimiento e Innovación para el Desarrollo. |
-#### Funciones Desarrollo Social y Cultural Art 19
+### Funciones Desarrollo Social y Cultural Art 19
 #### Ctx
 Principales funciones del Gobierno Regional en materia de desarrollo social y cultural (Art. 19)
 #### Items
@@ -985,7 +409,7 @@ Principales funciones del Gobierno Regional en materia de desarrollo social y cu
 | f) | Fomentar expresiones culturales, cautelar el patrimonio, y velar por la protección y desarrollo de etnias originarias. |
 | g) | Proponer programas y proyectos que fomenten la formación deportiva y la práctica del deporte. |
 | h) | Mantener información actualizada sobre la situación socioeconómica regional. |
-#### Atribuciones Art 20
+### Atribuciones Art 20
 #### Ctx
 ATRIBUCIONES DE LOS GOBIERNOS REGIONALES (Art. 20)
 #### Items
@@ -1004,15 +428,16 @@ ATRIBUCIONES DE LOS GOBIERNOS REGIONALES (Art. 20)
 | k) | Diseñar, elaborar, aprobar y ejecutar políticas, planes, programas y proyectos dentro de su territorio. |
 | l) | Ejercer demás atribuciones necesarias para el ejercicio de sus funciones. |
 | m) | Coparticipar con el Comité Regional para el cambio climático en la elaboración y aprobación de los instrumentos para la gestión del cambio climático a nivel regional. |
-#### Marco Juridico Regulatorio
+### Marco Juridico Regulatorio
 #### Ctx
 Se reitera el marco normativo general presentado en la Sección 4, enfatizando la Ley N°19.175 y sus modificaciones como el cuerpo legal central para los GORE, junto con las leyes de presupuesto anuales y normativas específicas sobre probidad, transparencia, lobby, transformación digital, protección de datos, y las referidas a nuevas competencias como seguridad y gestión de desastres.
-#### Seccion 10 Gobierno Regional de Nuble
-#### ID
+
+## Seccion 10 Gobierno Regional de Nuble
+### ID
 GN-MANUAL-INDUCCION-S10
-#### Ctx
+### Ctx
 El Gobierno Regional de Ñuble se estableció el 6 de septiembre de 2018, tras la creación de la Región de Ñuble, la cual se separó de la Región del Biobío. Este cambio significativo en la división política-administrativa de Chile fue el resultado de un largo proceso de descentralización y regionalización del país. El Gobierno Regional de Ñuble tiene como objetivo principal promover el desarrollo económico, social y cultural de la región, así como gestionar de manera eficiente los recursos públicos para satisfacer las necesidades de la población local. Desde su creación, ha trabajado en estrecha colaboración con los municipios de la región y la comunidad para impulsar el progreso y el bienestar de las 21 comunas que componen la Región de Ñuble.
-#### Mision y Vision Actualizado 2025 2026
+### Mision y Vision Actualizado 2025 2026
 #### Mssn
 Liderar e impulsar el desarrollo sustentable de la Región de Ñuble, mediante la gestión eficiente de la inversión pública, la responsabilidad presupuestaria, y la coordinación entre la institucionalidad pública y privada para contribuir al desarrollo territorial armónico, de cordillera a mar.
 #### Vision
@@ -1020,7 +445,7 @@ Liderar e impulsar el desarrollo sustentable de la Región de Ñuble, mediante l
 Que Ñuble sea un territorio reconocido por su calidad de vida, su aporte cultural y su fortalecimiento del capital humano, con una matriz productiva diversificada y una mejora especial en la calidad de vida de adultos mayores y población rural.
 #### Ctx
 Contexto ERD 2024-2030
-#### Objetivos Estrategicos Institucionales 2025 2026
+### Objetivos Estrategicos Institucionales 2025 2026
 #### Table
 #### Columns
 - Prioridad
@@ -1034,7 +459,7 @@ Contexto ERD 2024-2030
 | 1 | Estratégico | Desarrollar estrategias, políticas e instrumentos con enfoque de género para la Planificación Regional, la gestión de la Información territorial regional, y la gestión de los distintos actores del territorio, contribuyendo al desarrollo regional participativo y territorialmente integrado. | Sí | Sí |
 | 2 | Estratégico | Financiar una cartera anual de iniciativas de Inversión Pública Regional en las áreas de fomento productivo e innovación, que considere la perspectiva de género, y sea desarrollada en conjunto con los actores estratégicos público-privado del territorio, contribuyendo a mejorar las condiciones económicas y sociales de la región. | Sí | Sí |
 | 3 | Estratégico | Implementar instancias de participación, actualización, fortalecimiento de capacidades y articulación de los actores estratégicos público-privado del territorio y con perspectiva de género, en materia de formulación, evaluación y/o ejecución de iniciativas de inversión regional con financiamiento público del Fondo Regional de Desarrollo Regional, contribuyendo a una gestión eficaz, eficiente y oportuna del FNDR. | Sí | No |
-#### Alineacion con ERD Nuble 2024 2030
+### Alineacion con ERD Nuble 2024 2030
 #### Ctx
 Estos objetivos se alinean con los ejes de la Estrategia Regional de Desarrollo Ñuble 2024-2030, que son:
 #### Items
@@ -1043,7 +468,7 @@ Estos objetivos se alinean con los ejes de la Estrategia Regional de Desarrollo 
 - Desarrollo Social Inclusivo.
 - Patrimonio, Cultura e Identidad.
 - Institucionalidad y Gobernanza Regional.
-#### Bienes y Servicios que Entrega el Gobierno Regional de Nuble
+### Bienes y Servicios que Entrega el Gobierno Regional de Nuble
 #### Items
 - Políticas, planes, programas y proyectos de alcance regional: PROT, ERD, Política Regional de CTiD, ARI, PROPIR, entre otros.
 - Financiamiento de Iniciativas de Inversión y Gasto público regional.
@@ -1057,7 +482,7 @@ Estos objetivos se alinean con los ejes de la Estrategia Regional de Desarrollo 
 - Promoción de la participación ciudadana en la gestión regional.
 #### Src
 (Ejemplos concretos de la gestión 2023 incluyen: Mejoras en salud (CESFAM, hospitales), Agua Potable Rural, Espacios Públicos, Maquinaria municipal, programas de apoyo a PYMES, seguridad (infraestructura policial, prevención), apoyo a la agricultura y riego, proyectos de innovación, programas para zonas de rezago, y respuesta a emergencias. Fuente: Cuenta Pública GORE Ñuble 2023).
-#### Estructura Organizacional del Gobierno Regional de Nuble
+### Estructura Organizacional del Gobierno Regional de Nuble
 #### Ctx
 La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el Consejo Regional, según Certificado CORE 579 del 22 de diciembre de 2022, y posteriormente por Resolución Exenta N° 00056 del 16 de enero de 2023. Esta consta de acuerdo al DFL 1-19175, como base de:
 #### Items
@@ -1076,7 +501,7 @@ La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el
 #### Ctx Optional
 - Adicionalmente, la Ley N°19.175 (Art. 68) permite al Gobernador Regional, con acuerdo del CORE, crear una División de Prevención del Delito, encargada de las tareas de coordinación y gestión de las funciones del GORE en materia de seguridad y prevención.
 - Además, se conjugan una serie de otros departamentos y unidades, dependientes de las primeras, que apoyan y complementan la gestión tanto administrativa como financiera de la organización.
-#### Organigrama en detalle
+### Organigrama en detalle
 #### Ctx
 (El organigrama detallado presentado en el manual 2024 sigue vigente en sus líneas generales. Se debe consultar la última resolución oficial del GORE Ñuble para cualquier actualización específica de departamentos o unidades internas).
 #### Nivel Superior
@@ -1168,7 +593,7 @@ La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el
   #### Opcional Jefe Division de Prevencion del Delito
   #### Ctx
   Departamentos o unidades según las necesidades de la estrategia regional de prevención.
-#### Funciones de las Unidades Base Segun DFL 1 19175
+### Funciones de las Unidades Base Segun DFL 1 19175
 #### Items
 | Unidad | Def |
 | --- | --- |
@@ -1185,10 +610,11 @@ La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el
 | DIVISIÓN DE PREVENCIÓN DEL DELITO (si se crea) | Encargada de tareas de coordinación y gestión de funciones del GORE en materia de prevención del delito y atención a víctimas, en coordinación con la institucionalidad de seguridad pública. |
 #### Req
 Las divisiones de Fomento e Industria, Infraestructura y Transportes, y Desarrollo Social y Humano (y Prevención del Delito, si existe) deben coordinar el accionar de los servicios públicos regionales que dependan o se relacionen con el gobierno regional.
-#### Seccion 11 Derechos y Deberes Funcionarios
-#### ID
+
+## Seccion 11 Derechos y Deberes Funcionarios
+### ID
 GN-MANUAL-INDUCCION-S11
-#### Requisitos de Ingreso
+### Requisitos de Ingreso
 #### Ctx
 Requisitos Generales: Los postulantes deberán cumplir con los siguientes requisitos generales señalados en el Artículo 12 del Estatuto Administrativo, el cual señala que para ingresar a la Administración del Estado será necesario:
 #### Req
@@ -1200,7 +626,7 @@ Requisitos Generales: Los postulantes deberán cumplir con los siguientes requis
 | d) | Haber aprobado la educación básica y poseer el nivel educacional o título profesional o técnico que por la naturaleza del empleo exija la ley. |
 | e) | No haber cesado en un cargo público como consecuencia de haber obtenido una calificación deficiente, o por medida disciplinaria, salvo que hayan transcurrido más de cinco años desde la fecha de expiración de funciones. |
 | f) | No estar inhabilitado para el ejercicio de funciones o cargos públicos, ni hallarse condenado por crimen o simple delito. |
-#### Prohibiciones Inhabilidades e Incompatibilidades Funcionarias
+### Prohibiciones Inhabilidades e Incompatibilidades Funcionarias
 #### Ctx
 Sin perjuicio de lo anterior, los postulantes no deberán estar afectados a las inhabilidades e incompatibilidades contenidas en los artículos 54 y 56 del DFL N° 1/19653 de 2000 del Ministerio Secretaría General de la Presidencia, que fija el texto refundido, coordinado y sistematizado de la Ley N° 18.575, Orgánica Constitucional de Bases Generales de la Administración del Estado. Estas inhabilidades e incompatibilidades son:
 #### Prohib
@@ -1211,7 +637,7 @@ Sin perjuicio de lo anterior, los postulantes no deberán estar afectados a las 
 | c) | Ser director, administrador, representante o socio titular del 10% o más de los derechos de cualquier clase de sociedad, cuando ésta tenga contratos o cauciones vigentes ascendientes a 200 UTM o más, o litigios pendientes con el Servicio. |
 | d) | Ser cónyuge, hijo, adoptado o pariente hasta el tercer grado de consanguinidad o segundo por afinidad inclusive de las autoridades y de los funcionarios directivos del Servicio hasta el nivel de Jefe de Departamento inclusive. |
 | e) | Desarrollar actividades particulares en los mismos horarios de labores dentro del Servicio, o que interfieran con su desempeño funcionario, salvo actividades de tipo docente, con un máximo de 12 horas semanales. |
-#### Derechos Funcionarios
+### Derechos Funcionarios
 #### Res
 -
   #### Item
@@ -1281,10 +707,10 @@ Sin perjuicio de lo anterior, los postulantes no deberán estar afectados a las 
   13.
   #### Def
   Todos los funcionarios de planta o contrata que sufran un accidente de trabajo o un accidente de trayecto tienen el derecho a atenderse en los Servicios Médicos de la Mutual de Seguridad de la Cámara Chilena de la Construcción.
-#### Licencias Medicas
+### Licencias Medicas
 #### Ctx
 Los y las funcionarias(os) que presenten una licencia médica deben asegurarse de que esta sea remitida por el médico o centro de salud al empleador por los medios electrónicos correspondientes dentro de los tres días desde la emisión de la licencia (es el plazo que tiene el trabajador para presentar la licencia médica al empleador). En el caso de que la licencia sea emitida en papel, el funcionario tendrá tres días para hacerla llegar al Gobierno Regional entregándola por oficina de partes (o digitalizándola según los procedimientos de transformación digital). Por último, el funcionario(a) deberá estar atento(a) a la resolución de la ISAPRE o COMPIN, la cual autorizará, rechazará o reducirá los días de licencia otorgados. Para lo cual, en los casos que corresponda, deberá presentar mayores antecedentes para apelar al dictamen.
-#### Remuneraciones Asignaciones e Incentivos
+### Remuneraciones Asignaciones e Incentivos
 #### Ctx
 - Las remuneraciones del sector público están regidas por diversas escalas, siendo la Escala Única de Sueldos la norma general. Las remuneraciones de la Escala Única de Sueldos (EUS) se conforman por el sueldo base y por un conjunto de asignaciones que dependen de las responsabilidades y características del cargo, de los títulos académicos del trabajador y de la institución en la que trabajan.
 - Los funcionarios del Gobierno Regional se rigen por el Estatuto Administrativo, Ley 18.834 de 1989. La remuneración constituye la sumatoria de los siguientes estipendios según corresponda:
@@ -1300,16 +726,16 @@ Los y las funcionarias(os) que presenten una licencia médica deben asegurarse d
 | 7. | Asignación Modernización: Dentro de los componentes comunes de la EUS, existe la Asignación de Modernización, regida por la Ley 19.553. |
 #### Ctx Optional
 Nota sobre personal a contrata GORE (Ley de Presupuestos 2026): La Glosa 01, Partida 31 de la Ley N°21.796 (Presupuestos 2026) establece que para el personal a contrata de los GORE no regirá la limitación de antigüedad del Estatuto Administrativo. Asimismo, hasta un 20% del personal a contrata podrá desempeñar funciones directivas por encargo del Gobernador Regional. El personal a honorarios podrá tener calidad de Agente Público para efectos de responsabilidad.
-#### Permisos con Goce de Remuneraciones
+### Permisos con Goce de Remuneraciones
 #### Ctx
 Estos permisos, comúnmente llamados permisos administrativos, corresponden a 6 días asignados a todo funcionario público en el período de un año, y se pueden fraccionar en medios días, sean estos AM o PM. Si el funcionario no hace uso de estos días durante el período de un año calendario, se pierden sin que se tenga derecho a utilizarlos en un próximo período. Para solicitar este permiso, se debe hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
-#### Permisos sin Goce de Remuneraciones
+### Permisos sin Goce de Remuneraciones
 #### Ctx
 Estos permisos deben ser autorizados por la jefatura directa. Un funcionario podrá solicitar este permiso por:
 #### Items
 - Motivos particulares, hasta seis meses en cada año calendario.
 - Permanecer en el extranjero, hasta por dos años.
-#### Feriado Legal
+### Feriado Legal
 #### Ctx
 Comúnmente conocidos como vacaciones, se utilizan para el descanso de los funcionarios durante un año calendario. Los días de feriado legal varían según la antigüedad laboral:
 #### Items
@@ -1320,7 +746,7 @@ Comúnmente conocidos como vacaciones, se utilizan para el descanso de los funci
 - Para justificar los años trabajados, se debe presentar un Certificado de Vacaciones Progresivas otorgado por la AFP.
 - Los feriados legales pueden o no ser utilizados durante el año. Si no se utilizan, pueden ser traspasados según la normativa vigente.
 - Para solicitar este permiso, se debe hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
-#### Destinaciones Comisiones de Servicio y Cometidos
+### Destinaciones Comisiones de Servicio y Cometidos
 #### Ctx
 - Toda actividad laboral desarrollada por los funcionarios fuera de las dependencias físicas del Gobierno Regional se considera un cometido funcional. Este debe ser respaldado por un formulario creado para tal efecto (preferentemente electrónico), que debe detallar la actividad a realizar, el tiempo que se utilizará y la fecha en la cual se llevará a cabo. El formulario consta de dos partes:
 - Todo funcionario que incurra en un cometido deberá llenar la primera parte del formulario, y una vez realizado el cometido, deberá completar la segunda parte, que debe ser firmada por la jefatura directa, quien indicará si existe derecho a viático y a qué porcentaje. Finalmente, el formulario debe ser entregado al Departamento de Gestión y Desarrollo de Personas.
@@ -1329,7 +755,7 @@ Comúnmente conocidos como vacaciones, se utilizan para el descanso de los funci
 - Características reales del cometido, respaldadas por correo, invitación, planificación, etc.
 #### Ctx Optional
 La Ley de Presupuestos 2026 (Artículo 22) instruye reducir las comisiones de servicio, especialmente al extranjero, a las imprescindibles.
-#### Jornada Horaria y Mecanismo de Control de Jornada
+### Jornada Horaria y Mecanismo de Control de Jornada
 #### Req
 - Todo funcionario en Calidad Jurídica Planta, Contrata o Código del Trabajo deberá registrar su ingreso y salida de la jornada laboral en el sistema de control dispuesto para tal efecto.
 - Para ello, deberá ponerse en contacto con el Departamento de Gestión y Desarrollo de Personas para registrar sus datos.
@@ -1341,13 +767,13 @@ La jornada laboral corresponde a 44 horas semanales, distribuidas de la siguient
 #### Ctx Optional
 - La hora de ingreso podrá ser entre las 8:00 y las 9:00 horas, y la hora de salida dependerá de la hora en que se cumplen las 9 horas (de lunes a jueves) y las 8 horas (los viernes).
 - Cuando por distintas razones el funcionario olvide marcar, deberá justificarse con la jefatura directa a través de correo electrónico con copia al GDP.
-#### Jornada Extraordinaria
+### Jornada Extraordinaria
 #### Ctx
 Para trabajar jornadas extraordinarias, el funcionario deberá presentar el formulario N°1 correspondiente a Planificación de Trabajo Extraordinario, el cual debe ser autorizado por la jefatura. Una vez transcurrido el período autorizado para el trabajo extraordinario, se procederá a calcular el tiempo acumulado que exceda el período laboral, el cual será reconocido a través de una resolución que contempla un Formulario N°2 y los respaldos del sistema de control. Una vez reconocido el tiempo de trabajo extraordinario, se registrará en una cuenta a nombre del funcionario, quien podrá utilizarlo como tiempo compensado durante dos años. Posteriormente, se extinguirá. Para solicitar este permiso, se deberá tener claridad de cuánto tiempo posee el funcionario y hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
-#### Formacion y Capacitacion Funcionaria
+### Formacion y Capacitacion Funcionaria
 #### Ctx
 Todos los años, se aprueba un Plan Anual de Capacitación, el cual establece las actividades de capacitación que se desarrollará el Gobierno Regional durante el año, y a quienes irán dirigidas. Por otro lado, existen diversas posibilidades de optar a actividades de capacitación, como Cursos de la Contraloría, Campus del Servicio Civil, Diplomados y Cursos de la SUBDERE, entre otros. Cada vez que un funcionario(a) quiera optar a estas actividades de perfeccionamiento, deberá presentar al Encargado de Capacitación del GORE un formulario firmado por su jefatura directa. Finalmente, al obtener su certificado de aprobación, deberá remitirlo al Encargado de Capacitación para su correspondiente registro.
-#### Proceso de Calificaciones Funcionarias
+### Proceso de Calificaciones Funcionarias
 #### Proc
 -
   #### Item
@@ -1443,40 +869,41 @@ Todos los años, se aprueba un Plan Anual de Capacitación, el cual establece la
   17.
   #### Ctx
   Anotaciones de mérito: por conducta o desempeño destacado.
-#### Prevencion de Riesgos Higiene y Seguridad
+### Prevencion de Riesgos Higiene y Seguridad
 #### Ctx
 El Gobierno Regional de Ñuble se encuentra adherido a la Mutual de Seguridad de la Cámara Chilena de la Construcción desde el año 2018 a la fecha. <www.mutual.cl>
-#### Definiciones Importantes Accidentes y Enfermedades
+### Definiciones Importantes Accidentes y Enfermedades
 #### Def
 | Item | Termino | Def |
 | --- | --- | --- |
 | a) | Accidentes del Trabajo | Toda lesión que una persona sufra a causa o con ocasión del trabajo, y que le produzca incapacidad o muerte. |
 | b) | Enfermedad Profesional | Causada directamente por el ejercicio de una profesión o trabajo, que produzca incapacidad o muerte. |
 | c) | Accidente de Trayecto | Ocurrido en el trayecto "directo" de ida o regreso, entre la habitación y el lugar de trabajo. |
-#### Documentacion Exigida para Notificar
+### Documentacion Exigida para Notificar
 #### Req
 | Caso | Items |
 | --- | --- |
 | Accidentes del Trabajo | ['Denuncia Individual de Accidente del Trabajo (DIAT), Cédula de Identidad.'] |
 | Accidente de Trayecto | ['DIAT, Cédula de Identidad.'] |
 | Enfermedad Profesional | ['Denuncia Individual de Enfermedad Profesional (DIEP), Cédula de Identidad.'] |
-#### Responsabilidad del Funcionario frente a un Accidente
+### Responsabilidad del Funcionario frente a un Accidente
 #### Req
 - El funcionario debe informar a su Jefe directo y al Departamento de Gestión de Personas de cualquier accidente laboral. El reporte debe ser a la brevedad.
 - Tras ser atendido, debe entregar el "Informe de atención" y, si hay reposo, el "Alta Médica" antes de reintegrarse.
 - El funcionario que retorne de reposo por Accidente del Trabajo deberá tener una entrevista con el Comité Paritario de Higiene y Seguridad.
-#### Seccion 12 Comites Paritarios de Higiene y Seguridad
-#### ID
+
+## Seccion 12 Comites Paritarios de Higiene y Seguridad
+### ID
 GN-MANUAL-INDUCCION-S12
-#### Def
+### Def
 El Comité Paritario de Higiene y Seguridad (CPHS) es una unidad técnica de trabajo conjunto entre la empresa y los trabajadores, para detectar y evaluar riesgos de accidentes y enfermedades profesionales, y buscar estrategias de prevención.
-#### Integracion
+### Integracion
 #### Def
 Está integrado por tres representantes titulares designados por la administración y tres representantes titulares elegidos por los funcionarios, más sus respectivos suplentes.
-#### Contacto
+### Contacto
 #### Ctx
 Para contactar al Comité Paritario de Higiene y Seguridad del Gobierno Regional, puedes escribir a: comité<.paritario@goredenuble.cl>
-#### Principales Funciones
+### Principales Funciones
 #### Act
 - Asesorar e instruir a los trabajadores para la correcta utilización de los instrumentos de protección.
 - Vigilar el cumplimiento de las medidas de prevención, higiene y seguridad.
@@ -1484,41 +911,45 @@ Para contactar al Comité Paritario de Higiene y Seguridad del Gobierno Regional
 - Decidir si el accidente o la enfermedad profesional se debió a negligencia inexcusable del trabajador.
 - Indicar la adopción de todas las medidas de higiene y seguridad.
 - Promover la realización de cursos de capacitación profesional.
-#### Seccion 13 Probidad y Transparencia
-#### ID
+
+## Seccion 13 Probidad y Transparencia
+### ID
 GN-MANUAL-INDUCCION-S13
-#### Ctx
+### Ctx
 Concepto de probidad y su aplicación al funcionario público (Ley 19.653 y Ley 18.575)
-#### Def
+### Def
 El principio de probidad en la función pública consiste en observar una conducta funcionaria intachable, un desempeño honesto y leal de la función o cargo con preeminencia del interés general sobre el particular.
-#### Componentes
+### Componentes
 | Item | Req |
 | --- | --- |
 | a) | Observar una conducta funcionaria intachable. |
 | b) | Desempeñar honesta y lealmente la función o cargo. |
 | c) | Darle preeminencia al interés general sobre el particular. |
-#### Alcance
+### Alcance
 #### Ctx
 Están sujetos al principio de probidad todas las personas que prestan servicios en o para la Administración Central del Estado y los Gobiernos Regionales, ya sea en cargos de planta, empleos a contrata, contratos a honorarios y contratos regidos por las normas del Código del Trabajo.
-#### Seccion 14 Declaraciones de Intereses y Patrimonios DIP Ley 20880
-#### ID
+
+## Seccion 14 Declaraciones de Intereses y Patrimonios DIP Ley 20880
+### ID
 GN-MANUAL-INDUCCION-S14
-#### Ctx
+### Ctx
 - Para el debido cumplimiento del principio de probidad, esta ley determina las autoridades y funcionarios que deberán declarar sus intereses y patrimonio en forma pública. Para el GORE Ñuble, esto incluye al Gobernador Regional, Consejeros Regionales, Administrador Regional, Jefes de División y otros funcionarios hasta el tercer nivel jerárquico o con funciones de fiscalización, así como ciertos contratados a honorarios.
 - Gestión de Personas debe ingresar al nuevo funcionario (si corresponde) a la plataforma <www.declaracionjurada.cl>, administrada por la Contraloría General de la República. Esta declaración debe confeccionarse dentro de los primeros 30 días corridos desde el ingreso, actualizarse cada mes de marzo (plazo máximo 31 de marzo), y realizarse una declaración de cese de funciones dentro de los 30 días posteriores al término del vínculo.
-#### Seccion 15 Consejo para la Transparencia y Ley 20285
-#### ID
+
+## Seccion 15 Consejo para la Transparencia y Ley 20285
+### ID
 GN-MANUAL-INDUCCION-S15
-#### Def
+### Def
 El Consejo para la Transparencia (CPLT) es una corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, creado por la Ley de Transparencia de la Función Pública y de Acceso a la Información de la Administración del Estado.
-#### Obj
+### Obj
 - Garantizar el principio de transparencia y el derecho de acceso a la información pública. Velar por el adecuado cumplimiento de la Ley de Protección de Datos Personales.
 - Fiscalizar el cumplimiento de las normas de transparencia y acceso a la información, aplicando sanciones.
 - Promover y difundir el principio de transparencia y el derecho de acceso a la información.
-#### Seccion 16 Ley de Acceso a la Informacion Transparencia Activa y Pasiva Lobby
-#### ID
+
+## Seccion 16 Ley de Acceso a la Informacion Transparencia Activa y Pasiva Lobby
+### ID
 GN-MANUAL-INDUCCION-S16
-#### Transparencia
+### Transparencia
 #### Def
 La Ley de Acceso a la Información (Ley 20.285) establece dos modalidades de transparencia: activa y pasiva.
 #### Transparencia Activa
@@ -1550,7 +981,7 @@ La falta, omisión o alteración de esta información conlleva multas.
 #### Def
 - Consiste en la entrega de información a las personas que la soliciten al GORE Ñuble a través de los mecanismos dispuestos (link en web, formulario del portal de transparencia, formato físico en Oficina de Partes).
 - Las solicitudes deben ser respondidas mediante oficio y la información proporcionada en el formato solicitado, dentro del plazo legal, para evitar multas.
-#### Lobby
+### Lobby
 #### Def
 La Ley N°20.730 regula el Lobby y las gestiones que representen intereses particulares ante las autoridades y funcionarios. Su objetivo es regular la publicidad en estas actividades para fortalecer la transparencia y probidad.
 #### Sujetos Pasivos en el GORE
@@ -1566,16 +997,17 @@ Quienes realizan lobby o gestión de interés particular.
 - Deber de Igualdad de trato.
 #### Resp
 El GORE Ñuble es responsable de nombrar a los funcionarios que cumplen rol de sujeto pasivo.
-#### Seccion 17 Asignacion de Equipos Institucionales y Seguridad de la Informacion
-#### ID
+
+## Seccion 17 Asignacion de Equipos Institucionales y Seguridad de la Informacion
+### ID
 GN-MANUAL-INDUCCION-S17
-#### Asignacion de Equipos
+### Asignacion de Equipos
 #### Ctx
 - Asignación de Equipos: La DAF proporciona equipos necesarios (computadoras, teléfonos, etc.).
 - Entrega de Equipos: Documentada y firmada.
 - Solicitud de Equipos Móviles: Justificada y aprobada por jefatura y DAF, según disponibilidad.
 - Registro de Equipos: Detalla equipos asignados.
-#### Tratamiento y Seguridad de la Informacion
+### Tratamiento y Seguridad de la Informacion
 #### Ctx
 Tratamiento y Seguridad de la Información (Ley N°21.719 y Ley N°21.663): Conjunto de políticas y procedimientos para proteger la información contra accesos no autorizados, alteraciones, pérdida o destrucción, en cumplimiento con la Ley de Protección de Datos Personales y la Ley Marco de Ciberseguridad.
 #### Req
@@ -1593,7 +1025,7 @@ Tratamiento y Seguridad de la Información (Ley N°21.719 y Ley N°21.663): Conj
 - Protección de Datos por Diseño y por Defecto: Aplicar medidas para proteger datos desde la concepción de sistemas y procesos.
 - Evaluación de Impacto en Protección de Datos (EIPD): Realizarla previo a tratamientos de alto riesgo.
 - Delegado de Protección de Datos (DPD): Considerar su designación para velar por el cumplimiento de la Ley N°21.719.
-#### Procedimientos Especificos
+### Procedimientos Especificos
 #### Proc
 - Asignación y Entrega de Equipos: Solicitud del jefe de departamento, aprobación DAF, registro, entrega con firma de recepción.
 - Solicitud de Equipos Móviles: Justificación a supervisor, revisión, aprobación DAF, entrega y registro.
@@ -1606,12 +1038,13 @@ Tratamiento y Seguridad de la Información (Ley N°21.719 y Ley N°21.663): Conj
 | 3. | Acceso a Sistemas según rol. |
 | 4. | Backup Regular. |
 | 5. | Reporte de Incidentes al encargado de ciberseguridad y Dpto. de Informática. |
-#### Seccion 18 Transformacion Digital del Estado Ley 21180
-#### ID
+
+## Seccion 18 Transformacion Digital del Estado Ley 21180
+### ID
 GN-MANUAL-INDUCCION-S18
-#### Ctx
+### Ctx
 La Ley N°21.180 de Transformación Digital del Estado, publicada en 2019 y con implementación gradual hasta 2027, mandata a todos los órganos de la Administración del Estado, incluyendo el Gobierno Regional de Ñuble, a realizar sus procedimientos administrativos por medios electrónicos.
-#### Principios y Objetivos
+### Principios y Objetivos
 #### Req
 - Procedimientos Electrónicos: La regla general es la tramitación electrónica, utilizando expedientes digitales.
 - Cero Papel: Eliminar progresivamente el uso del papel en la gestión administrativa.
@@ -1619,7 +1052,7 @@ La Ley N°21.180 de Transformación Digital del Estado, publicada en 2019 y con 
 - Notificaciones Electrónicas: Las comunicaciones a los interesados se realizan por medios electrónicos, preferentemente a través de un Domicilio Digital Único.
 - Interoperabilidad: Los sistemas del GORE deben poder intercambiar información con otros órganos del Estado de forma segura y estandarizada, utilizando la Plataforma de Interoperabilidad del Estado (PISEE).
 - Seguridad y Protección de Datos: La transformación digital debe realizarse resguardando la seguridad de la información y cumpliendo con la normativa de protección de datos personales (Ley N°21.719) y ciberseguridad (Ley N°21.663).
-#### Plataformas Transversales y su Aplicacion en el GORE Nuble
+### Plataformas Transversales y su Aplicacion en el GORE Nuble
 #### Ctx
 El Estado ha desarrollado plataformas para apoyar esta transformación, que el GORE Ñuble debe utilizar o integrar:
 #### Items
@@ -1630,7 +1063,7 @@ El Estado ha desarrollado plataformas para apoyar esta transformación, que el G
 - SIMPLE: Plataforma para crear trámites digitales de baja complejidad sin necesidad de programación. El GORE puede usarla para digitalizar rápidamente formularios y flujos de trabajo.
 - PISEE (Plataforma de Integración de Servicios Electrónicos del Estado): Infraestructura para el intercambio seguro de datos entre instituciones, fundamental para el principio de "no pedir al ciudadano información que el Estado ya posee".
 - Portal de Datos Abiertos (datos.gob.cl): Para la publicación de datos públicos del GORE en formatos reutilizables.
-#### Implementacion en el GORE Nuble
+### Implementacion en el GORE Nuble
 #### Items
 - Plan de Transformación Digital: El GORE debe contar con un plan estratégico para abordar la digitalización, identificando trámites prioritarios, necesidades de infraestructura, capacitación y adecuación normativa interna.
 - Gobernanza Digital: Se recomienda designar un Coordinador de Transformación Digital y un Delegado de Protección de Datos.
@@ -1639,14 +1072,15 @@ El Estado ha desarrollado plataformas para apoyar esta transformación, que el G
 - Registro en Plataformas: El nuevo funcionario, según su rol, será registrado y capacitado en el uso de DocDigital, FirmaGob (si corresponde), y otras plataformas institucionales.
 #### Res
 La transformación digital es un proceso continuo que busca modernizar la gestión regional, hacerla más eficiente, transparente y cercana a las necesidades de los habitantes de Ñuble. El GORE Ñuble está comprometido con este proceso, avanzando hacia la digitalización completa de sus servicios y procedimientos para el año 2027.
-#### Seccion 19 Evaluacion de Induccion
-#### ID
+
+## Seccion 19 Evaluacion de Induccion
+### ID
 GN-MANUAL-INDUCCION-S19
-#### Ctx
+### Ctx
 Como cierre del proceso de inducción, se debe contar con una fase de evaluación dirigida por el equipo de gestión de personas al funcionario que haya desarrollado este proceso formal de inducción, en la lógica de mejora continua, para obtener información significativa, monitorear si los objetivos se están logrando y realizar las adecuaciones pertinentes.
-#### Ctx Optional
+### Ctx Optional
 Esta evaluación considera los siguientes ámbitos:
-#### Actividad de Bienvenida
+### Actividad de Bienvenida
 #### Table
 #### Columns
 - Actividad
@@ -1663,7 +1097,7 @@ Esta evaluación considera los siguientes ámbitos:
 | Contó al momento de ingreso con un puesto de trabajo. |  |  |  |
 | Contó al momento de ingreso con un PC. |  |  |  |
 | Contó al momento de ingreso con un teléfono. |  |  |  |
-#### Relacionadas con el Cargo
+### Relacionadas con el Cargo
 #### Table
 #### Columns
 - Actividad
@@ -1678,7 +1112,7 @@ Esta evaluación considera los siguientes ámbitos:
 | Se logró claridad sobre el rol que desempeñará |  |  |  |
 | Se logró claridad sobre con quiénes debe interactuar |  |  |  |
 | Recibió la información necesaria para iniciar sus tareas. |  |  |  |
-#### Relacionadas con la Institucion
+### Relacionadas con la Institucion
 #### Table
 #### Columns
 - Actividad

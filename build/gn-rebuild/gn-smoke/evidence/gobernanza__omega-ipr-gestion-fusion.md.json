@@ -7,7 +7,7 @@
     "domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml"
   ],
   "fs": 100,
-  "cr": 65.86,
+  "cr": 131.1,
   "review_gate": "manual",
   "skeleton_count": 1,
   "meat_count": 6,
@@ -15,6 +15,14 @@
   "scope_statement": "Fusion semantica IPR/Gestion; requiere validacion de alcance.",
   "expected_sections": [
     "Contenido"
+  ],
+  "preserved_facts": [
+    "_manifest.federation.license=Institutional Use Only",
+    "_manifest.federation.visibility=internal",
+    "_manifest.provenance.created_at=2026-02-19",
+    "_manifest.provenance.created_by=GORE Ñuble",
+    "_manifest.provenance.last_modified_at=2026-02-19",
+    "_manifest.urn=urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0"
   ],
   "non_equivalence_decisions": []
 }

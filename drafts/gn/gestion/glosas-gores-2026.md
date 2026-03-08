@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_composite
     fs: 100
-    cr: 1.08
+    cr: 1.12
     run_id: gn-smoke
     review_gate: manual
     scope_statement: Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica
@@ -35,284 +35,8 @@ extensions:
     skeleton_count: 17
     meat_count: 718
     fat_count: 0
-    preserved_facts:
-    - Creation-Date=2026-01-02
-    - 'Ctx=Ley de Presupuestos Año 2026 - Partida: Financiamiento Gobiernos Regionales'
-    - Definitions[0].Def=gobiernos regionales
-    - Definitions[0].ID=ACTOR-GORES
-    - Definitions[1].Def=Gobierno Regional
-    - Definitions[1].ID=ENTITY-GORE
-    - Definitions[2].Def=Consejo Regional
-    - Definitions[2].ID=BODY-CONSEJO-REGIONAL
-    - Definitions[3].Def=Comisión Especial Mixta de Presupuestos
-    - Definitions[3].ID=BODY-CEMP
-    - Definitions[4].Def=Dirección de Presupuestos
-    - Definitions[4].ID=ORG-DIPRES
-    - Definitions[5].Def=Subsecretaría de Desarrollo Regional y Administrativo
-    - Definitions[5].ID=ORG-SUBDERE
-    - Definitions[6].Def=Ministerio de Desarrollo Social y Familia
-    - Definitions[6].ID=ORG-MDSF
-    - Definitions[7].Def=Ministerio de Transportes y Telecomunicaciones
-    - Definitions[7].ID=ORG-MTT
-    - Definitions[8].Def=Subsecretaría del Interior
-    - Definitions[8].ID=ORG-SUBINTERIOR
-    - Definitions[9].Def=D.F.L N°1-19.175
-    - Definitions[9].ID=LAW-DFL-1-19175
-    - Definitions[10].Def=Ley N°20.378 (Fondo de Apoyo al Transporte Público y la
-      Conectividad Regional)
-    - Definitions[10].ID=LAW-20378
-    - Definitions[11].Def=ley N°18.091
-    - Definitions[11].ID=LAW-18091
-    - Definitions[12].Def=Ley N°20.285 (acceso a la información pública)
-    - Definitions[12].ID=LAW-20285
-    - Definitions[13].Def=Subtítulo 24
-    - Definitions[13].ID=SUBTITULO-24
-    - Definitions[14].Def=Ítem 33.03
-    - Definitions[14].ID=ITEM-3303
-    - Definitions[15].Def=Resolución Exenta N° 33, de 2024 (Ministerio de Ciencias,
-      Tecnología, Conocimiento e Innovación)
-    - Definitions[15].ID=RES-EX-33-2024-MCTCI
-    - Human-Creator=Unknown
-    - Human-Editor=FS
-    - ID=GLOSAS-GORES-2026-01
-    - 'LLM_Parsing_Instructions.Content=BEGIN_LLM_INSTRUCTIONS
-
-      You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-
-      FIDELITY: Preserve meat (essential information) and skeleton (structure: headers,
-      IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic
-      prose).
-
-
-      LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
-      Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference,
-      Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process,
-      Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory
-      Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition,
-      Warn->Warning, Just->Justification, Rec->Recommendation
-
-
-      REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS
-      document. XRef/XRef_Required: are external only—must point to a URN (optionally
-      with #ID fragment) in another artifact. External documents without specific
-      ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
-
-
-      LANGUAGE POLICY: Keywords in English, content in original language. Never translate
-      content.
-
-      END_LLM_INSTRUCTIONS
-
-      '
-    - LLM_Parsing_Instructions.ID=KODA-LLM-PARSER-01
-    - LLM_Parsing_Instructions.Prohib=Using for artifact creation or translation.
-    - LLM_Parsing_Instructions.Req=Mandatory block following Metadata.
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.ID=TABLE-CLASIF-ECON-ING-GAS-01
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Headers[0]=Sub-Título
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Headers[1]=Clasificación
-      Económica
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Headers[2]=Gobiernos
-      Regionales (01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16)
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[0][0]=INGRESOS
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[0][1]=
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[0][2]=1.900.047.503
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[1][0]=05
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[1][1]=Transferencias
-      Corrientes
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[1][2]=17.827.479
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[2][0]=09
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[2][1]=Aporte
-      Fiscal
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[2][2]=1.124.303.237
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[3][0]=13
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[3][1]=Transferencias
-      para Gastos de Capital
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[3][2]=757.916.787
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[4][0]=GASTOS
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[4][1]=
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[4][2]=1.900.047.503
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[5][0]=24
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[5][1]=Transferencias
-      Corrientes
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[5][2]=128.872.343
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[6][0]=33
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[6][1]=Transferencias
-      de Capital
-    - Law_Budget_2026.Economic_Classification_Incomes_Expenses.Table.Rows[6][2]=1.771.175.160
-    - Law_Budget_2026.Glosses[0].Actor.Ref=ACTOR-GORES
-    - Law_Budget_2026.Glosses[0].ID=GLOSA-01-FUNCIONAMIENTO-REGIONAL
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[0].Req=No regirá la
-      limitación establecida en el inciso segundo del artículo 10 del D.F.L N°29,
-      de 2005, del Ministerio de Hacienda, respecto de los empleos a contrata, incluidos
-      en las dotaciones máximas de personal de este programa.
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[1].Allow=El personal
-      a contrata podrá desempeñar funciones de carácter directivo que se le asignen
-      o deleguen, mediante resolución fundada del Jefe de Servicio.
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[2].Req=La resolución
-      fundada del Jefe de Servicio deberá precisar las funciones delegadas.
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[3].Prohib=El personal
-      a contrata no podrá exceder del 20% del total del personal a contrata.
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[4].Allow=El personal
-      a honorarios podrá tener la calidad de Agente Público, para efectos de lo dispuesto
-      en el Decreto Ley N°799, de 1974; para el desempeño de labores de fiscalización
-      o certificación y hacer efectiva su responsabilidad administrativa, civil y
-      penal por el desempeño de sus labores, de acuerdo con lo que se establezca en
-      el respectivo convenio.
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[5].Req.Actor.Ref=ACTOR-GORES
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[5].Req.Text=Informar
-      durante el primer trimestre del año 2026 a la Comisión de Hacienda de la Cámara
-      de Diputados sobre las iniciativas legales y administrativas tendientes al traspaso
-      de la calidad contractual de funcionarios de Gobiernos Regionales de Honorarios
-      a Contrata y el fortalecimiento de los derechos laborales de estos funcionarios.
-    - Law_Budget_2026.Glosses[0].Subtitulo_21_Gasto_en_Personal[6].Req=No regirá la
-      limitación establecida en el artículo 3° de la Ley N°20.035, en lo relativo
-      a la estructura y funciones de los gobiernos regionales.
-    - Law_Budget_2026.Glosses[0].Subtitulo_24_Transferencias_Corrientes[0].Req=Mediante
-      reglamento regional se determinarán los gastos de traslado y reembolso de los
-      consejeros regionales, cuando correspondiese.
-    - Law_Budget_2026.Glosses[0].Subtitulo_24_Transferencias_Corrientes[1].Req.Ctx.Ref=SUBTITULO-24
-    - Law_Budget_2026.Glosses[0].Subtitulo_24_Transferencias_Corrientes[1].Req.Text=Respecto
-      del gasto en cometidos al extranjero de los consejeros regionales se deberá
-      considerar como máximo el 10% del gasto del Subtítulo 24 e incorporarlo en las
-      glosas correspondientes en la resolución de distribución inicial.
-    - Law_Budget_2026.Glosses[0].Subtitulo_24_Transferencias_Corrientes[2].Allow.Actor.Ref=ENTITY-GORE
-    - Law_Budget_2026.Glosses[0].Subtitulo_24_Transferencias_Corrientes[2].Allow.Text=La
-      dotación de vehículos del Gobierno Regional podrá utilizarse en el traslado
-      de los consejeros regionales, en cumplimiento de funciones encomendadas por
-      el Consejo Regional.
-    - Law_Budget_2026.Glosses[0].Title=01 Aplicable a Funcionamiento Regional
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.ID=TABLE-ASIGNACION-INVERSION-REGIONAL-01
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[0]=Gobierno Regional
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[1]=Fondo Nacional
-      de Desarrollo Regional
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[2]=Fondo de Apoyo
-      al Transporte Público y la Conectividad Regional
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[3]=Fondo de Equidad
-      Interregional
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[4]=Fondo para
-      la Productividad y el Desarrollo
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[5]=Tesoro Público
-      Ley N° 21.210, Modernización Tributaria
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[6]=Subsecretaría
-      de la Cultura y las Artes
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[7]=Tesoro Público
-      Ley N° 19.275, Fondo de Desarrollo de Magallanes
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[8]=Tesoro Público
-      Ley N° 19.143, Patentes Mineras
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[9]=Tesoro Público
-      Ley N° 19.657, Patentes Geotérmicas
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[10]=Tesoro Público
-      Art. 129 bis 19 Ley N° 20.017, Código de Aguas
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[11]=Tesoro Público
-      D.L. N°430, de 1992 (E.F. y T.), Patentes de Acuicultura
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[12]=Fondo de Inversión
-      y Reconversión Regional
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Headers[13]=Total
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][0]=Tarapacá
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][1]=35.359.987
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][2]=16.045.986
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][3]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][4]=10.955.743
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][5]=2.639.730
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][6]=778.732
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][8]=7.523.467
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][9]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][10]=112.589
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][11]=9.737
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][12]=2.089.574
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[0][13]=75.515.545
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][0]=Antofagasta
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][1]=44.173.366
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][2]=20.880.832
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][3]=502.233
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][4]=14.256.838
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][5]=3.435.113
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][6]=1.381.566
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][8]=24.188.373
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][9]=254.274
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][10]=1.128.094
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][11]=5.360
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][12]=8.668.717
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[1][13]=118.874.766
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][0]=Atacama
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][1]=34.662.339
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][2]=16.149.839
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][3]=9.064.842
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][4]=11.026.651
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][5]=2.656.815
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][6]=969.124
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][8]=14.201.202
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][9]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][10]=999.449
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][11]=34.313
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][12]=1.922.722
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[2][13]=91.687.296
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][0]=Coquimbo
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][1]=43.820.007
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][2]=19.975.688
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][3]=5.982.724
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][4]=13.638.832
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][5]=3.286.207
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][6]=1.009.479
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][8]=7.202.479
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][9]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][10]=758.483
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][11]=40.860
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][12]=1.926.581
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[3][13]=97.641.340
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][0]=Valparaíso
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][1]=48.891.345
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][2]=22.325.871
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][3]=7.142.942
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][4]=15.243.470
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][5]=3.672.836
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][6]=1.145.019
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][8]=2.789.778
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][9]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][10]=656.680
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][11]=193
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][12]=1.966.521
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[4][13]=103.834.655
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][0]=O'Higgins
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][1]=41.527.239
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][2]=19.123.418
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][3]=7.248.039
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][4]=13.056.926
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][5]=3.146.000
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][6]=1.050.906
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][8]=1.119.486
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][9]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][10]=1.202.029
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][11]=116.838
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][12]=1.920.840
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[5][13]=89.511.721
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][0]=Maule
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][1]=53.077.751
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][2]=24.216.983
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][3]=14.506.251
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][4]=16.534.668
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][5]=3.983.944
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][6]=1.232.914
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][7]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][8]=743.014
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][9]=0
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][10]=2.985.849
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][11]=32
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][12]=1.626.617
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[6][13]=118.908.023
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[7][0]=Biobío
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[7][1]=55.752.999
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[7][2]=25.391.728
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[7][3]=10.192.165
-    - Law_Budget_2026.Glosses[1].Allocation_By_Region.Table.Rows[7][4]=17.336.750
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gestion__glosas-gores-2026.md.json
 ---
 
 # Glosas y Requerimientos de Información GORES 2026
@@ -320,71 +44,20 @@ extensions:
 ## Alcance
 Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica final.
 
-## Fuente: Kb gn 211 ley presupuestos 2026 glosas gores 2026 koda
-### Manifest
-#### Urn
-urn:knowledge:gorenuble:presupuesto:glosas-gores-2026:1.0.0
-#### Federation
-#### Visibility
-private
-#### License
-N/A
-#### Provenance
-#### Created by
-FS
-#### Created at
-2026-01-02
-#### Source
+## Fuente principal
+- `domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml`
+## Source
 /Users/felixsanhueza/Developer/gorenuble/staging/glosas gores 2026/glosas_gores_2026.md
-#### Transformed by
-KODA-TRANSFORMER (GPT-5.2)
-### ID
-GLOSAS-GORES-2026-01
-### Version
-1.0.0
-### Status
-Draft
-### Human Creator
-Unknown
-### Human Editor
-FS
-### Model Collaborator
-GPT-5.2
-### Creation Date
-2026-01-02
-### Modification Date
-2026-01-02
-### Source
-/Users/felixsanhueza/Developer/gorenuble/staging/glosas gores 2026/glosas_gores_2026.md
-### Ctx
-Ley de Presupuestos Año 2026 - Partida: Financiamiento Gobiernos Regionales
-### LLM Parsing Instructions
-#### ID
-KODA-LLM-PARSER-01
-#### Req
-Mandatory block following Metadata.
-#### Prohib
-Using for artifact creation or translation.
-#### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
 
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
-
-LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
-END_LLM_INSTRUCTIONS
-
-### Purp
+## Purp
 Transformación KODA de glosas y requerimientos de información de la Ley de Presupuestos Año 2026 (Partida: Financiamiento Gobiernos Regionales).
-### Obj
+
+## Obj
 - FS=100%: preservar contenido normativo + estructura (tablas, numerales, listas).
 - Deduplicación: usar Ref para entidades recurrentes.
 - Estructura RAG: secciones, actores, restricciones, montos, reporting.
-### Definitions
+
+## Definitions
 | ID | Def |
 | --- | --- |
 | ACTOR-GORES | gobiernos regionales |
@@ -403,16 +76,17 @@ Transformación KODA de glosas y requerimientos de información de la Ley de Pre
 | SUBTITULO-24 | Subtítulo 24 |
 | ITEM-3303 | Ítem 33.03 |
 | RES-EX-33-2024-MCTCI | Resolución Exenta N° 33, de 2024 (Ministerio de Ciencias, Tecnología, Conocimiento e Innovación) |
-### Law Budget 2026
-#### ID
+
+## Law Budget 2026
+### ID
 LAW-PRESUP-2026-GORES
-#### Title
+### Title
 LEY DE PRESUPUESTOS AÑO 2026
-#### Partida
+### Partida
 Financiamiento Gobiernos Regionales
-#### Units
+### Units
 Miles de $
-#### Economic Classification Incomes Expenses
+### Economic Classification Incomes Expenses
 #### ID
 TABLE-CLASIF-ECON-ING-GAS-01
 #### Table
@@ -449,7 +123,7 @@ TABLE-CLASIF-ECON-ING-GAS-01
   - 33
   - Transferencias de Capital
   - 1.771.175.160
-#### Glosses
+### Glosses
 -
   #### ID
   GLOSA-01-FUNCIONAMIENTO-REGIONAL
@@ -1298,7 +972,7 @@ TABLE-CLASIF-ECON-ING-GAS-01
   -
     #### Req
     Beneficiarios de la adquisición se harán cargo de los gastos derivados de esta.
-#### Information Requirements
+### Information Requirements
 #### ID
 INFO-REQS-2026-GORES-01
 #### Items
@@ -1322,16 +996,17 @@ INFO-REQS-2026-GORES-01
 | INFO-REQ-14 | {'Actor': {'Ref': 'ACTOR-GORES'}, 'Frequency': 'Semestral', 'Recipient': {'Ref': 'BODY-CEMP'}, 'Text': 'Informar, a través de informe consolidado, ejecución presupuestaria e información sobre avance de iniciativas financiadas a través de Planes Especiales de Zonas Extremas.'} |
 | INFO-REQ-15 | {'Actor': {'Ref': 'ACTOR-GORES'}, 'Frequency': 'Anual', 'Recipient': {'Ref': 'BODY-CEMP'}, 'Text': 'Informarán recursos destinados a abastecimiento mediante camiones aljibe en situaciones de emergencia hídrica.'} |
 | INFO-REQ-16 | {'Actor': {'Ref': 'ENTITY-GORE'}, 'Frequency': 'Anual', 'Recipient': {'Ref': 'BODY-CEMP'}, 'Text': 'Informará acciones de coordinación con Dirección de Obras Hidráulicas para atender emergencias APR, detallando tiempos de respuesta y mecanismos de seguimiento.'} |
-### Validation Report
-#### ID
+
+## Validation Report
+### ID
 VALIDATION-REPORT-01
-#### Syntax
+### Syntax
 #### Res
 YAML parse OK (ruby psych).
-#### References
+### References
 #### Res
 IDs únicos y Refs resolubles (verificación automática).
-#### Metrics
+### Metrics
 #### TER Approx
 #### Formula
 (source_tokens - artifact_tokens) / source_tokens
