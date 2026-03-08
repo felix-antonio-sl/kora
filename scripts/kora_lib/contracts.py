@@ -3,7 +3,7 @@ import re
 from dataclasses import asdict, dataclass
 from functools import lru_cache
 
-from .config import KORA_ROOT, OPERATING_CORE_COHORTS
+from .config import KORA_ROOT, META_KORA_AUDIT_WORKSPACES, META_KORA_STATUS, OPERATING_CORE_COHORTS
 from .workspaces import extract_cm_refs, extract_workspace_tokens
 
 
@@ -55,6 +55,22 @@ class CapabilityContract:
         payload["tool_names"] = sorted(self.tools.keys())
         payload["state_names"] = sorted(self.states.keys())
         return payload
+
+
+def build_contract_summary(contract):
+    return {
+        "workspace": contract.workspace,
+        "state_names": sorted(contract.states.keys()),
+        "tool_names": sorted(contract.tools.keys()),
+        "tools_allow": contract.tools_allow,
+        "skill_refs": contract.skill_refs,
+        "handoff_targets": contract.handoff_targets,
+        "route_targets": contract.route_targets,
+        "sub_agents": contract.sub_agents,
+        "evidence_lines": contract.evidence_lines,
+        "allowed_kb_count": len(contract.allowed_kb),
+        "sources": contract.sources,
+    }
 
 
 def workspace_dir_from_ref(workspace_ref):
@@ -210,30 +226,40 @@ def load_workspace_contract(workspace_ref):
 
 
 def build_operating_core_payload():
-    payload = {"cohorts": {}, "totals": {"workspaces": 0, "states": 0, "tools": 0, "handoffs": 0}}
+    payload = {
+        "cohorts": {},
+        "totals": {"workspaces": 0, "states": 0, "tools": 0, "handoffs": 0},
+        "meta_kora": {
+            "summary": {"total_workspaces": 0, "operating_core": 0, "auxiliary": 0},
+            "workspaces": [],
+        },
+    }
     for cohort_name, workspaces in OPERATING_CORE_COHORTS.items():
         items = []
         for workspace_ref in workspaces:
             contract = load_workspace_contract(workspace_ref)
-            item = {
-                "workspace": contract.workspace,
-                "state_names": sorted(contract.states.keys()),
-                "tool_names": sorted(contract.tools.keys()),
-                "tools_allow": contract.tools_allow,
-                "skill_refs": contract.skill_refs,
-                "handoff_targets": contract.handoff_targets,
-                "route_targets": contract.route_targets,
-                "sub_agents": contract.sub_agents,
-                "evidence_lines": contract.evidence_lines,
-                "allowed_kb_count": len(contract.allowed_kb),
-                "sources": contract.sources,
-            }
+            item = build_contract_summary(contract)
             items.append(item)
             payload["totals"]["workspaces"] += 1
             payload["totals"]["states"] += len(item["state_names"])
             payload["totals"]["tools"] += len(item["tool_names"])
             payload["totals"]["handoffs"] += len(item["handoff_targets"])
         payload["cohorts"][cohort_name] = items
+
+    core_workspaces = set()
+    for workspaces in OPERATING_CORE_COHORTS.values():
+        core_workspaces.update(workspaces)
+
+    for workspace_ref in META_KORA_AUDIT_WORKSPACES:
+        contract = load_workspace_contract(workspace_ref)
+        item = build_contract_summary(contract)
+        status_payload = META_KORA_STATUS[workspace_ref]
+        item["status"] = status_payload["status"]
+        item["status_reason"] = status_payload["reason"]
+        item["in_operating_core"] = workspace_ref in core_workspaces
+        payload["meta_kora"]["workspaces"].append(item)
+        payload["meta_kora"]["summary"]["total_workspaces"] += 1
+        payload["meta_kora"]["summary"][item["status"]] += 1
     return payload
 
 
@@ -250,6 +276,25 @@ def render_operating_core_markdown(payload):
         f"- Tools semanticas declaradas: {payload['totals']['tools']}",
         f"- Handoffs declarados: {payload['totals']['handoffs']}",
     ]
+
+    meta_summary = payload["meta_kora"]["summary"]
+    lines.extend(
+        [
+            "",
+            "## Auditoria meta-kora",
+            "",
+            f"- Meta agentes auditados: {meta_summary['total_workspaces']}",
+            f"- Meta agentes en nucleo operativo endurecido: {meta_summary['operating_core']}",
+            f"- Meta agentes auxiliares explicitamente descopados: {meta_summary['auxiliary']}",
+            "",
+            "| Workspace | Estatus | Estados | Skills | Tools | Handoffs | Motivo |",
+            "|-----------|---------|---------|--------|-------|----------|--------|",
+        ]
+    )
+    for item in payload["meta_kora"]["workspaces"]:
+        lines.append(
+            f"| {item['workspace']} | {item['status']} | {len(item['state_names'])} | {len(item['skill_refs'])} | {len(item['tool_names'])} | {len(item['handoff_targets'])} | {item['status_reason']} |"
+        )
 
     for cohort_name, items in payload["cohorts"].items():
         lines.extend(

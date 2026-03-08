@@ -133,8 +133,42 @@ COHORT_NAMESPACE_GROUPS = {
     "ops": {"ops"},
     "domains": {"fxsl", "pro", "gn", "korvo"},
 }
+META_KORA_AUDIT_WORKSPACES = (
+    "kora/guardian",
+    "kora/forgemaster",
+    "kora/curator",
+    "kora/custodio",
+    "kora/clawmaster",
+    "kora/taskmaster",
+)
 COHORT_WORKSPACE_OVERRIDES = {
-    "meta-kora": {"guardian", "forgemaster", "curator", "custodio", "clawmaster", "taskmaster"},
+    "meta-kora": {workspace.split("/", 1)[1] for workspace in META_KORA_AUDIT_WORKSPACES},
+}
+META_KORA_STATUS = {
+    "kora/guardian": {
+        "status": "auxiliary",
+        "reason": "Gobierno fundacional de specs; valido y resoluble, pero fuera de los loops operativos endurecidos.",
+    },
+    "kora/forgemaster": {
+        "status": "operating_core",
+        "reason": "Nucleo operativo: disena, crea, valida y entrega handoff al custodio.",
+    },
+    "kora/curator": {
+        "status": "operating_core",
+        "reason": "Nucleo operativo: korafica, audita y entrega handoff al custodio.",
+    },
+    "kora/custodio": {
+        "status": "operating_core",
+        "reason": "Nucleo operativo: cierra salud, catalogo e ingesta del repo.",
+    },
+    "kora/clawmaster": {
+        "status": "auxiliary",
+        "reason": "Especialista OpenClaw/Codex; valido y resoluble, pero fuera de los loops institucionales de KORA.",
+    },
+    "kora/taskmaster": {
+        "status": "auxiliary",
+        "reason": "Soporte de tareas y priorizacion; valido y resoluble, pero fuera del nucleo operativo endurecido.",
+    },
 }
 OPERATING_CORE_COHORTS = {
     "kora": (

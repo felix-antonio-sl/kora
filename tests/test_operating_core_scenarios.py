@@ -65,6 +65,12 @@ def assert_contract_supports_scenario(test_case, contract, scenario):
             msg=f"{contract.workspace} missing allowed_kb depth",
         )
 
+    if scenario.get("requires_no_skills"):
+        test_case.assertEqual(contract.skill_refs, [], msg=f"{contract.workspace} unexpectedly declares skills")
+
+    if scenario.get("requires_no_handoffs"):
+        test_case.assertEqual(contract.handoff_targets, [], msg=f"{contract.workspace} unexpectedly declares handoffs")
+
 
 class OperatingCoreScenarioTests(unittest.TestCase):
     def test_operating_core_payload_is_materialized_by_sync_docs(self):
@@ -80,6 +86,28 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         self.assertEqual(payload["totals"]["workspaces"], 12)
         self.assertEqual(set(payload["cohorts"].keys()), {"kora", "dev", "ops", "domain_canary"})
 
+    def test_meta_kora_audit_is_materialized_with_explicit_status(self):
+        payload = build_operating_core_payload()
+        self.assertIn("meta_kora", payload)
+        self.assertEqual(payload["meta_kora"]["summary"], SCENARIOS["meta_kora"]["summary"])
+
+        statuses = {item["workspace"]: item["status"] for item in payload["meta_kora"]["workspaces"]}
+        self.assertEqual(statuses, SCENARIOS["meta_kora"]["statuses"])
+
+    def test_meta_kora_operating_core_and_auxiliary_boundary_is_explicit(self):
+        payload = build_operating_core_payload()
+        core_workspaces = set()
+        for cohort_items in payload["cohorts"].values():
+            core_workspaces.update(item["workspace"] for item in cohort_items)
+
+        for item in payload["meta_kora"]["workspaces"]:
+            if item["status"] == "operating_core":
+                self.assertTrue(item["in_operating_core"], msg=f"{item['workspace']} should be in operating core")
+                self.assertIn(item["workspace"], core_workspaces)
+            else:
+                self.assertFalse(item["in_operating_core"], msg=f"{item['workspace']} should stay auxiliary")
+                self.assertNotIn(item["workspace"], core_workspaces)
+
     def test_operating_core_routes_and_handoffs_are_real_workspaces(self):
         payload = build_operating_core_payload()
         for cohort_items in payload["cohorts"].values():
@@ -87,6 +115,11 @@ class OperatingCoreScenarioTests(unittest.TestCase):
                 assert_workspace_refs_resolve(self, item["route_targets"], "route")
                 assert_workspace_refs_resolve(self, item["handoff_targets"], "handoff")
                 assert_workspace_refs_resolve(self, item["sub_agents"], "sub-agent")
+
+        for item in payload["meta_kora"]["workspaces"]:
+            assert_workspace_refs_resolve(self, item["route_targets"], "meta route")
+            assert_workspace_refs_resolve(self, item["handoff_targets"], "meta handoff")
+            assert_workspace_refs_resolve(self, item["sub_agents"], "meta sub-agent")
 
     def test_operating_core_contracts_do_not_include_noise_tokens_as_handoffs(self):
         noise_tokens = {"agentes/LLM", "modelo/provider", "formal/01", "formal/02", "pass/fail", "meat/fat"}
@@ -228,6 +261,13 @@ for index, step in enumerate(SCENARIOS["domain_canary"]["core_support"], start=1
         OperatingCoreScenarioTests,
         f"test_domain_canary__core_support_{index}_{step['workspace'].replace('/', '_')}",
         make_canary_support_test(step),
+    )
+
+for scenario in SCENARIOS["meta_auxiliary_scenarios"]:
+    setattr(
+        OperatingCoreScenarioTests,
+        f"test_meta_auxiliary__{scenario['workspace'].replace('/', '_')}",
+        make_canary_support_test(scenario),
     )
 
 

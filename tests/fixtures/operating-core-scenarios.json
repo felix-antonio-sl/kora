@@ -328,5 +328,46 @@
       "urn:orko:kb:orko-metodologia",
       "urn:orko:kb:orko-fundamentos"
     ]
-  }
+  },
+  "meta_kora": {
+    "summary": {
+      "total_workspaces": 6,
+      "operating_core": 3,
+      "auxiliary": 3
+    },
+    "statuses": {
+      "kora/guardian": "auxiliary",
+      "kora/forgemaster": "operating_core",
+      "kora/curator": "operating_core",
+      "kora/custodio": "operating_core",
+      "kora/clawmaster": "auxiliary",
+      "kora/taskmaster": "auxiliary"
+    }
+  },
+  "meta_auxiliary_scenarios": [
+    {
+      "workspace": "kora/guardian",
+      "requires_states": ["S-GOVERNANCE", "S-VALIDATION"],
+      "requires_tools": ["kb_route", "repo_health"],
+      "requires_no_skills": true,
+      "requires_no_handoffs": true,
+      "requires_allowed_kb_min": 4
+    },
+    {
+      "workspace": "kora/clawmaster",
+      "requires_states": ["S-CONSULT", "S-AUDIT", "S-TROUBLESHOOT"],
+      "requires_skills": ["CM-KNOWLEDGE-NAVIGATOR", "CM-INSTANCE-AUDITOR", "CM-TROUBLESHOOTER"],
+      "requires_tools": ["catalog_resolve", "oc_cli", "oc_docs_search"],
+      "requires_routes": ["kora/guardian", "kora/forgemaster"],
+      "requires_allowed_kb_min": 20
+    },
+    {
+      "workspace": "kora/taskmaster",
+      "requires_states": ["S-ISSUE-CREATOR", "S-PRIORITIZER", "S-REPORTER"],
+      "requires_skills": ["CM-ISSUE-BUILDER", "CM-PRIORITY-MATRIX", "CM-STATUS-REPORTER"],
+      "requires_tools": ["catalog_resolve", "kb_route"],
+      "requires_routes": ["kora/forgemaster", "kora/custodio", "ops/ci-assistant"],
+      "requires_allowed_kb_min": 1
+    }
+  ]
 }

@@ -63,6 +63,23 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIsNone(err)
         self.assertEqual(doc["_manifest"]["urn"], "urn:test:skill:sample-extended:1.0.0")
 
+    def test_agent_spec_restores_fsm_contract(self):
+        content = (ROOT / "specs" / "agent-spec-md.md").read_text(encoding="utf-8")
+        required_terms = (
+            "## 1. FSM",
+            "## 2. Reglas Duras",
+            "## 3. Co-induccion",
+            "## 4. Contexto Multi-turno",
+            "## 5. Wiring",
+            "S-DISPATCHER",
+            "S-END",
+            "formal/01 §3.2",
+            "formal/01 §3.3",
+            "formal/01 §6.3",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
     def test_render_stats_markdown_contains_current_categories(self):
         payload = compute_stats_payload()
         markdown = render_stats_markdown(payload)

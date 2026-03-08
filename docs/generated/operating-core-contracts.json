@@ -743,5 +743,363 @@
     "states": 88,
     "tools": 77,
     "handoffs": 32
+  },
+  "meta_kora": {
+    "summary": {
+      "total_workspaces": 6,
+      "operating_core": 3,
+      "auxiliary": 3
+    },
+    "workspaces": [
+      {
+        "workspace": "kora/guardian",
+        "state_names": [
+          "S-DISPATCHER",
+          "S-END",
+          "S-GOVERNANCE",
+          "S-VALIDATION"
+        ],
+        "tool_names": [
+          "kb_route",
+          "repo_health"
+        ],
+        "tools_allow": [
+          "kb_route",
+          "repo_health"
+        ],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
+        "sub_agents": [],
+        "evidence_lines": [],
+        "allowed_kb_count": 4,
+        "sources": {
+          "agents": "agents/kora/guardian/AGENTS.md",
+          "tools": "agents/kora/guardian/TOOLS.md",
+          "config": "agents/kora/guardian/config.json"
+        },
+        "status": "auxiliary",
+        "status_reason": "Gobierno fundacional de specs; valido y resoluble, pero fuera de los loops operativos endurecidos.",
+        "in_operating_core": false
+      },
+      {
+        "workspace": "kora/forgemaster",
+        "state_names": [
+          "S-CREATE",
+          "S-DEPRECATE",
+          "S-DESIGN",
+          "S-DISPATCHER",
+          "S-END",
+          "S-GUIDED",
+          "S-IMPLEMENT",
+          "S-IMPROVE",
+          "S-OPERATE",
+          "S-VALIDATE"
+        ],
+        "tool_names": [
+          "agent_list",
+          "catalog_resolve",
+          "health_check",
+          "kb_route",
+          "spec_consult",
+          "workspace_read",
+          "workspace_write"
+        ],
+        "tools_allow": [
+          "agent_list",
+          "catalog_resolve",
+          "health_check",
+          "kb_route",
+          "spec_consult",
+          "workspace_read",
+          "workspace_write"
+        ],
+        "skill_refs": [
+          "CM-AGENT-DEPRECATOR",
+          "CM-AGENT-DESIGNER",
+          "CM-AGENT-EVOLVER",
+          "CM-AGENT-SURGEON",
+          "CM-AGENT-VALIDATOR",
+          "CM-COMPONENT-BUILDER",
+          "CM-CONTEXT-MANAGER",
+          "CM-INTENT-CLASSIFIER",
+          "CM-LIFECYCLE-ORCHESTRATOR",
+          "CM-WORKSPACE-SCAFFOLDER"
+        ],
+        "handoff_targets": [
+          "kora/curator",
+          "kora/custodio"
+        ],
+        "route_targets": [
+          "kora/curator",
+          "kora/custodio"
+        ],
+        "sub_agents": [],
+        "evidence_lines": [
+          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v7.2.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
+          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}"
+        ],
+        "allowed_kb_count": 7,
+        "sources": {
+          "agents": "agents/kora/forgemaster/AGENTS.md",
+          "tools": "agents/kora/forgemaster/TOOLS.md",
+          "config": "agents/kora/forgemaster/config.json"
+        },
+        "status": "operating_core",
+        "status_reason": "Nucleo operativo: disena, crea, valida y entrega handoff al custodio.",
+        "in_operating_core": true
+      },
+      {
+        "workspace": "kora/curator",
+        "state_names": [
+          "S-AUDIT",
+          "S-CRYSTALLIZE",
+          "S-DEPRECATE",
+          "S-DESIGN",
+          "S-DISPATCHER",
+          "S-EDIT",
+          "S-END",
+          "S-GUIDED",
+          "S-IMPROVE",
+          "S-KORAFICATE",
+          "S-REPAIR"
+        ],
+        "tool_names": [
+          "artifact_list",
+          "artifact_read",
+          "artifact_validate",
+          "artifact_write",
+          "catalog_resolve",
+          "kb_route",
+          "spec_consult"
+        ],
+        "tools_allow": [
+          "artifact_list",
+          "artifact_read",
+          "artifact_validate",
+          "artifact_write",
+          "catalog_resolve",
+          "kb_route",
+          "spec_consult"
+        ],
+        "skill_refs": [
+          "CM-ARTIFACT-AUDITOR",
+          "CM-ARTIFACT-DEPRECATOR",
+          "CM-ARTIFACT-DESIGNER",
+          "CM-ARTIFACT-EDITOR",
+          "CM-ARTIFACT-OPTIMIZER",
+          "CM-ARTIFACT-SURGEON",
+          "CM-CONTEXT-MANAGER",
+          "CM-CRYSTALLIZER",
+          "CM-INTENT-CLASSIFIER",
+          "CM-KORAFICATOR",
+          "CM-LIFECYCLE-ORCHESTRATOR"
+        ],
+        "handoff_targets": [
+          "kora/custodio",
+          "kora/forgemaster"
+        ],
+        "route_targets": [
+          "kora/custodio",
+          "kora/forgemaster"
+        ],
+        "sub_agents": [],
+        "evidence_lines": [
+          "3. STATE: S-KORAFICATE → ACT: CM-KORAFICATOR: Aplicar Funtor F (md-spec §6). Pre-analisis(meat/fat/hechos,N_hechos) → Evaluar input(§6.4) → Segmentar(§6.5,contexto deslizante) → Telegrafizar fiel(§6.6,anti-patrones) → Ensamblar(§6.7) → Deduplicar SSOT(Fase 4b) → Normalizar condicional(§6.8) → Inyectar frontmatter(§6.9) → Verificacion mecanica(§6.10) → Verificacion fidelidad con reporte estructurado(§6.11,maximo 2 iteraciones). Entregar artefacto KORA/MD. → Trans: IF artefacto_generado → S-AUDIT. IF iterar_segmento → S-KORAFICATE. IF cambio → S-DISPATCHER.",
+          "5. STATE: S-AUDIT → ACT: CM-ARTIFACT-AUDITOR: Leer artefacto → Clasificar tipo(descriptivo→md-spec §8, prescriptivo→spec-md §8) → Ejecutar checklist completo → Calcular metricas(FS, CR si aplica) → Generar reporte PASS|FAIL con correcciones por item. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-REPAIR. IF cambio → S-DISPATCHER.",
+          "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
+        ],
+        "allowed_kb_count": 3,
+        "sources": {
+          "agents": "agents/kora/curator/AGENTS.md",
+          "tools": "agents/kora/curator/TOOLS.md",
+          "config": "agents/kora/curator/config.json"
+        },
+        "status": "operating_core",
+        "status_reason": "Nucleo operativo: korafica, audita y entrega handoff al custodio.",
+        "in_operating_core": true
+      },
+      {
+        "workspace": "kora/custodio",
+        "state_names": [
+          "S-AUDITORIA",
+          "S-CATALOGO",
+          "S-CIRUGIA",
+          "S-DISPATCHER",
+          "S-END",
+          "S-EVOLUCION",
+          "S-INGESTA",
+          "S-SALUD"
+        ],
+        "tool_names": [
+          "catalog_sync",
+          "file_write",
+          "filesystem_scan",
+          "git_status",
+          "intake_pipeline",
+          "kb_route",
+          "repo_health",
+          "urn_resolve"
+        ],
+        "tools_allow": [
+          "catalog_sync",
+          "file_write",
+          "filesystem_scan",
+          "git_status",
+          "intake_pipeline",
+          "kb_route",
+          "repo_health",
+          "urn_resolve"
+        ],
+        "skill_refs": [
+          "CM-CATALOG-STEWARD",
+          "CM-CONTEXT-MANAGER",
+          "CM-ESTRUCTURA-AUDITOR",
+          "CM-EVOLUCION-PLANNER",
+          "CM-HEALTH-INSPECTOR",
+          "CM-INGESTA-STEWARD",
+          "CM-INTENT-CLASSIFIER",
+          "CM-SURGEON"
+        ],
+        "handoff_targets": [
+          "kora/curator",
+          "kora/forgemaster"
+        ],
+        "route_targets": [
+          "kora/curator",
+          "kora/forgemaster"
+        ],
+        "sub_agents": [],
+        "evidence_lines": [
+          "2. STATE: S-SALUD → ACT: CM-HEALTH-INSPECTOR: Ejecutar kora health(broken URNs), kora validate(agentes), kora stats(metricas), git status(repo). Consolidar reporte con severidad (ERROR|WARNING|OK). → Trans: IF error_critico → S-CIRUGIA. IF todo_ok → S-DISPATCHER. IF requiere_auditoria_profunda → S-AUDITORIA. IF cambio → S-DISPATCHER.",
+          "3. STATE: S-CATALOGO → ACT: CM-CATALOG-STEWARD: Ejecutar kora index(reconstruir catalogo), detectar URNs rotas(kora health), resolver URNs(kora resolve). Reporte: entradas nuevas, actualizadas, eliminadas, rotas. → Trans: IF broken_refs → S-CIRUGIA. IF catalogo_sincronizado → S-DISPATCHER. IF cambio → S-DISPATCHER.",
+          "5. STATE: S-AUDITORIA → ACT: CM-ESTRUCTURA-AUDITOR: Escanear estructura monorepo. Verificar: directorios esperados existen, convenciones naming, archivos huerfanos, workspaces incompletos, frontmatter valido. Reporte con hallazgos. → Trans: IF hallazgos_criticos → S-CIRUGIA. IF hallazgos_menores → reporte + S-DISPATCHER. IF limpio → S-DISPATCHER. IF cambio → S-DISPATCHER."
+        ],
+        "allowed_kb_count": 4,
+        "sources": {
+          "agents": "agents/kora/custodio/AGENTS.md",
+          "tools": "agents/kora/custodio/TOOLS.md",
+          "config": "agents/kora/custodio/config.json"
+        },
+        "status": "operating_core",
+        "status_reason": "Nucleo operativo: cierra salud, catalogo e ingesta del repo.",
+        "in_operating_core": true
+      },
+      {
+        "workspace": "kora/clawmaster",
+        "state_names": [
+          "S-AUDIT",
+          "S-CONFIGURE",
+          "S-CONSULT",
+          "S-CONTRIBUTE",
+          "S-DISPATCHER",
+          "S-END",
+          "S-GUIDED",
+          "S-INSTALL",
+          "S-OPTIMIZE",
+          "S-TROUBLESHOOT",
+          "S-UPGRADE"
+        ],
+        "tool_names": [
+          "catalog_resolve",
+          "kb_route",
+          "oc_cli",
+          "oc_docs_search",
+          "oc_repo_search",
+          "spec_consult"
+        ],
+        "tools_allow": [
+          "catalog_resolve",
+          "kb_route",
+          "oc_cli",
+          "oc_docs_search",
+          "oc_repo_search",
+          "spec_consult"
+        ],
+        "skill_refs": [
+          "CM-CODE-CONTRIBUTOR",
+          "CM-CONFIGURATOR",
+          "CM-CONTEXT-MANAGER",
+          "CM-INSTANCE-AUDITOR",
+          "CM-INTENT-CLASSIFIER",
+          "CM-KNOWLEDGE-NAVIGATOR",
+          "CM-LIFECYCLE-ORCHESTRATOR",
+          "CM-PERFORMANCE-OPTIMIZER",
+          "CM-PLATFORM-INSTALLER",
+          "CM-TROUBLESHOOTER",
+          "CM-VERSION-MANAGER"
+        ],
+        "handoff_targets": [
+          "kora/curator",
+          "kora/forgemaster",
+          "kora/guardian"
+        ],
+        "route_targets": [
+          "kora/curator",
+          "kora/forgemaster",
+          "kora/guardian"
+        ],
+        "sub_agents": [],
+        "evidence_lines": [
+          "5. STATE: S-AUDIT → ACT: CM-INSTANCE-AUDITOR: openclaw status → openclaw doctor → openclaw security audit → Evaluar(health|security|performance|config_quality) → Generar reporte PASS|WARN|FAIL con hallazgos y correcciones. → Trans: IF audit_pass → S-END. IF audit_warn → S-OPTIMIZE. IF audit_fail → S-TROUBLESHOOT. IF cambio → S-DISPATCHER."
+        ],
+        "allowed_kb_count": 27,
+        "sources": {
+          "agents": "agents/kora/clawmaster/AGENTS.md",
+          "tools": "agents/kora/clawmaster/TOOLS.md",
+          "config": "agents/kora/clawmaster/config.json"
+        },
+        "status": "auxiliary",
+        "status_reason": "Especialista OpenClaw/Codex; valido y resoluble, pero fuera de los loops institucionales de KORA.",
+        "in_operating_core": false
+      },
+      {
+        "workspace": "kora/taskmaster",
+        "state_names": [
+          "S-DISPATCHER",
+          "S-EDUCATOR",
+          "S-END",
+          "S-ISSUE-CREATOR",
+          "S-PRIORITIZER",
+          "S-REPORTER"
+        ],
+        "tool_names": [
+          "catalog_resolve",
+          "kb_route"
+        ],
+        "tools_allow": [
+          "catalog_resolve",
+          "kb_route"
+        ],
+        "skill_refs": [
+          "CM-CONTEXT-MANAGER",
+          "CM-ISSUE-BUILDER",
+          "CM-PRIORITY-MATRIX",
+          "CM-REQUEST-CLASSIFIER",
+          "CM-STATUS-REPORTER"
+        ],
+        "handoff_targets": [
+          "kora/custodio",
+          "kora/forgemaster",
+          "ops/ci-assistant"
+        ],
+        "route_targets": [
+          "kora/custodio",
+          "kora/forgemaster",
+          "ops/ci-assistant"
+        ],
+        "sub_agents": [],
+        "evidence_lines": [],
+        "allowed_kb_count": 1,
+        "sources": {
+          "agents": "agents/kora/taskmaster/AGENTS.md",
+          "tools": "agents/kora/taskmaster/TOOLS.md",
+          "config": "agents/kora/taskmaster/config.json"
+        },
+        "status": "auxiliary",
+        "status_reason": "Soporte de tareas y priorizacion; valido y resoluble, pero fuera del nucleo operativo endurecido.",
+        "in_operating_core": false
+      }
+    ]
   }
 }
