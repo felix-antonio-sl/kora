@@ -10,7 +10,7 @@ lang: es
 # CM-COMPONENT-BUILDER
 
 ## Proposito
-Rellena cada componente del workspace con contenido real, respetando estrictamente la segregacion por componente (agent-spec-md v7.2.0 §3).
+Rellena cada componente del workspace con contenido real, respetando estrictamente la segregacion por componente (agent-spec-md v8.1.0 §3).
 
 ## Input/Output
 - **Input:** agent_path: string (ruta al workspace), blueprint: AgentBlueprint (output de CM-AGENT-DESIGNER)

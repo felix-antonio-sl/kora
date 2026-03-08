@@ -55,7 +55,7 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v7.2.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
+          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v8.1.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
           "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}"
         ],
         "allowed_kb_count": 7,
@@ -836,7 +836,7 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v7.2.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
+          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v8.1.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
           "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}"
         ],
         "allowed_kb_count": 7,

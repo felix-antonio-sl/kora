@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 730,
     "node_count": 883,
-    "edge_count": 4147
+    "edge_count": 4176
   },
   "node_kind_counts": {
     "artifact": 226,
@@ -20,7 +20,7 @@
     "DeclaresTool": 200,
     "InvokesSkill": 217,
     "RoutesToAgent": 57,
-    "TracesTo": 20,
+    "TracesTo": 49,
     "XRef": 2575
   },
   "nodes": [
@@ -6487,7 +6487,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:agent-spec-md",
-      "title": "KORA/Agent-Spec v8.0.0",
+      "title": "KORA/Agent-Spec v8.1.0",
       "path": "specs/agent-spec-md.md",
       "namespace": "kora"
     },
@@ -6505,7 +6505,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:md-spec",
-      "title": "KORA/MD v4.0.0",
+      "title": "KORA/MD v5.0.0",
       "path": "specs/md-spec.md",
       "namespace": "kora"
     },
@@ -6514,7 +6514,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:runtime-spec-md",
-      "title": "KORA/Runtime-Spec v3.0.0",
+      "title": "KORA/Runtime-Spec v3.1.0",
       "path": "specs/runtime-spec-md.md",
       "namespace": "kora"
     },
@@ -6523,7 +6523,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:skill-spec-md",
-      "title": "KORA/Skill-Spec v3.0.0",
+      "title": "KORA/Skill-Spec v3.1.0",
       "path": "specs/skill-spec-md.md",
       "namespace": "kora"
     },
@@ -6532,7 +6532,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:spec-md",
-      "title": "KORA/Spec-MD v4.0.0",
+      "title": "KORA/Spec-MD v5.0.0",
       "path": "specs/spec-md.md",
       "namespace": "kora"
     },
@@ -6541,7 +6541,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:swarm-spec-md",
-      "title": "KORA/Swarm-Spec v2.0.0",
+      "title": "KORA/Swarm-Spec v2.1.0",
       "path": "specs/swarm-spec-md.md",
       "namespace": "kora"
     },
@@ -16379,6 +16379,41 @@
     {
       "kind": "TracesTo",
       "source": "urn:kora:kb:agent-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/agent-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:agent-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/agent-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:agent-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/agent-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:agent-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/agent-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:agent-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/agent-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:agent-spec-md",
       "target": "urn:kora:kb:cat-discovery-presheaf",
       "fragment": null,
       "source_path": "specs/agent-spec-md.md"
@@ -16406,6 +16441,48 @@
     },
     {
       "kind": "TracesTo",
+      "source": "urn:kora:kb:md-spec",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "specs/md-spec.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:md-spec",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "specs/md-spec.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:runtime-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/runtime-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:runtime-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/runtime-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:runtime-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/runtime-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:runtime-spec-md",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "fragment": null,
+      "source_path": "specs/runtime-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
       "source": "urn:kora:kb:runtime-spec-md",
       "target": "urn:kora:kb:cat-behavioral-preservation",
       "fragment": null,
@@ -16414,9 +16491,135 @@
     {
       "kind": "TracesTo",
       "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
       "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:spec-md",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "specs/spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:spec-md",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "specs/spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-ecosystem-2cat",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:swarm-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/swarm-spec-md.md"
     },
     {
       "kind": "XRef",

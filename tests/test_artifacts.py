@@ -80,6 +80,72 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in required_terms:
             self.assertIn(term, content)
 
+    def test_md_spec_restores_koraficacion_contract(self):
+        content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "## 6. Koraficacion",
+            "skeleton",
+            "meat",
+            "fat",
+            "FS=100%",
+            "CR>1.5",
+            "### 6.10 Verificacion mecanica",
+            "### 6.11 Verificacion de fidelidad",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_spec_md_restores_crystallization_contract(self):
+        content = (ROOT / "specs" / "spec-md.md").read_text(encoding="utf-8")
+        required_terms = (
+            "### 1.2 Proceso de cristalizacion",
+            "## 6. Patron obligatorio: regla + ejemplo + traza",
+            "Correcto:",
+            "Incorrecto:",
+            "## 10. Template (esqueleto minimo)",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_skill_spec_restores_lifecycle_and_protocol(self):
+        content = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
+        required_terms = (
+            "## 5. Progressive Disclosure Lifecycle",
+            "Discover",
+            "Activate",
+            "Execute",
+            "### 3.3 Script Protocol",
+            "Wrap",
+            "Extract",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
+        content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")
+        required_terms = (
+            "## 4. Adapters por plataforma",
+            "## 5. Wrapper generation",
+            "## 6. Platform equivalence",
+            "## 7. Model routing",
+            "## 8. Fallback chains y budget",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_swarm_spec_restores_operational_orchestration_contract(self):
+        content = (ROOT / "specs" / "swarm-spec-md.md").read_text(encoding="utf-8")
+        required_terms = (
+            "## 4. Golden Paths",
+            "## 5. Circuit Breakers",
+            "## 6. Backpressure",
+            "## 7. Event Routing",
+            "## 9. Security inter-agente",
+            "## 10. Sentinel pattern",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
     def test_render_stats_markdown_contains_current_categories(self):
         payload = compute_stats_payload()
         markdown = render_stats_markdown(payload)

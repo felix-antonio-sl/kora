@@ -59,6 +59,6 @@ _manifest:
 ## health_check
 
 - **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}
-- **Cuando usar:** Ejecutar validacion de conformidad completa contra agent-spec-md v7.2.0 (17 checks).
+- **Cuando usar:** Ejecutar validacion de conformidad completa contra agent-spec-md v8.1.0 (17 checks).
 - **Cuando NO usar:** Validaciones parciales o consultas rapidas.
-- **Notas:** Invoca internamente CM-AGENT-VALIDATOR v2.0.0. Checklist: 17 checks alineados con agent-spec-md v7.2.0 §9 + skill-spec-md v2.0.0.
+- **Notas:** Invoca internamente CM-AGENT-VALIDATOR v2.0.0. Checklist: 17 checks alineados con agent-spec-md v8.1.0 §8 + skill-spec-md v3.1.0 §9.

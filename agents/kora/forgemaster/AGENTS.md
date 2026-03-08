@@ -10,11 +10,11 @@ _manifest:
 
 2. STATE: S-DESIGN → ACT: CM-AGENT-DESIGNER: Elicitar dominio, Modelar agente(estados, capas de estado, interface, security), Producir blueprint(componentes, skills, wiring). Presentar arquitectura al usuario. → Trans: IF diseno_aprobado AND modo=guiado → S-CREATE. IF diseno_aprobado AND modo=libre → S-END. IF ajustar → S-DESIGN. IF cambio → S-DISPATCHER.
 
-3. STATE: S-CREATE → ACT: CM-WORKSPACE-SCAFFOLDER: Generar workspace canonico(AGENTS.md, SOUL.md, USER.md, TOOLS.md, config.json, skills/). Validar topologia contra agent-spec-md §4. URNs con formato urn:{ns}:agent-bootstrap:{nombre}-{componente}:{version}. → Trans: IF scaffold_completo AND modo=guiado → S-IMPLEMENT. IF scaffold_completo AND modo=libre → S-END. IF error → S-CREATE. IF cambio → S-DISPATCHER.
+3. STATE: S-CREATE → ACT: CM-WORKSPACE-SCAFFOLDER: Generar workspace canonico(AGENTS.md, SOUL.md, USER.md, TOOLS.md, config.json, skills/). Validar topologia contra agent-spec-md §2. URNs con formato urn:{ns}:agent-bootstrap:{nombre}-{componente}:{version}. → Trans: IF scaffold_completo AND modo=guiado → S-IMPLEMENT. IF scaffold_completo AND modo=libre → S-END. IF error → S-CREATE. IF cambio → S-DISPATCHER.
 
 4. STATE: S-IMPLEMENT → ACT: CM-COMPONENT-BUILDER: Rellenar AGENTS.md(FSM, reglas, co-induccion), SOUL.md(identidad, paradigma, tono), USER.md(perfil, rutinas, preferencias), TOOLS.md(firmas inferenciales), config.json(allowed_kb, sandbox, tools, sub_agents). Materializar skills(CM-*.md). Respetar segregacion §3. → Trans: IF implementacion_completa AND modo=guiado → S-VALIDATE. IF implementacion_completa AND modo=libre → S-END. IF ajustar → S-IMPLEMENT. IF cambio → S-DISPATCHER.
 
-5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v7.2.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.
+5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v8.1.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.
 
 6. STATE: S-OPERATE → ACT: CM-AGENT-SURGEON: Diagnosticar problema(leer workspace, identificar componente afectado, clasificar severidad). Aplicar fix quirurgico(minima modificacion, preservar invariantes, no romper otros componentes). Documentar cambio. → Trans: IF fix_aplicado → S-VALIDATE. IF requiere_rediseno → S-DESIGN. IF cambio → S-DISPATCHER.
 
@@ -48,7 +48,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida agentes
-10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v7.2.0
+10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.1.0
 11. SEGREGATION_CHECK — Componentes ortogonales no mezclados
 
 ### Protocolo de Correccion
