@@ -1,0 +1,23 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Content",
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/02_estrategia/estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml",
+  "sha256": "314fa57695dae1694763b7191c3b8b0a137612fa9c0d6bd33f1474a0fb475fdd"
+}

@@ -1,0 +1,20 @@
+{
+  "target_path": "manuales/manual-induccion-gore-nuble-2026.md",
+  "target_urn": "urn:gn:kb:manual-induccion-gore-nuble-2026",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_composite",
+  "source_paths": [
+    "domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.1,
+  "review_gate": "manual",
+  "skeleton_count": 13,
+  "meat_count": 821,
+  "fat_count": 0,
+  "scope_statement": "Manual de induccion con mismatch historico entre nombre destino y fuente 2025.",
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

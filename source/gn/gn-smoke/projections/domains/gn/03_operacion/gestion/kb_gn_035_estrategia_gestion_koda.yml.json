@@ -1,0 +1,29 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Glosario_Conceptos_Clave",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modelos_Mentales_y_Sistemas_para_Gestion_Regional",
+    "Modification-Date",
+    "Parte_II_Modernizacion_y_Herramientas_Gestion_GORE",
+    "Parte_I_Fundamentos_Gestion_Publica_Regional",
+    "Primary-Source",
+    "Ref-STS-Guide",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_035_estrategia_gestion_koda.yml",
+  "sha256": "bc05a25cfc0dfda4a239a7436a4170f0e141e4e12df446b52c199ffa5e8b8489"
+}

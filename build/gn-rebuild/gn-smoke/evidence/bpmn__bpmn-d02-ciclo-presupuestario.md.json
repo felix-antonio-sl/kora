@@ -1,0 +1,20 @@
+{
+  "target_path": "bpmn/bpmn-d02-ciclo-presupuestario.md",
+  "target_urn": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_direct",
+  "source_paths": [
+    "domains/gn/04_habilitadores/arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.28,
+  "review_gate": "auto",
+  "skeleton_count": 25,
+  "meat_count": 124,
+  "fat_count": 0,
+  "scope_statement": null,
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

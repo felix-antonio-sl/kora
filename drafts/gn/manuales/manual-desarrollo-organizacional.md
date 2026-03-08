@@ -1,0 +1,444 @@
+---
+_manifest:
+  urn: urn:gn:kb:manual-desarrollo-organizacional
+  provenance:
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml
+version: 2.0.0
+status: draft
+tags:
+- gore-nuble
+- gobierno-regional
+- desarrollo-organizacional
+- capacitacion
+- gestion-personas
+- gn
+lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml: 3263702921c6f5b970f42c120665e927fc6490c6f80daff6548ee571f120dc41
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.16
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 20
+    meat_count: 105
+    fat_count: 0
+    preserved_facts:
+    - AI-Remediator=KODA-TRANSFORMER
+    - Authoritative-Sources[0].Path=staging/temp/brutos ordenados/01_gestion_personas/res_exta_132_designa_encargado_y_referentes_tecnicos_cdc_2025_koda.yml
+    - Authoritative-Sources[0].Priority=1
+    - Authoritative-Sources[0].Type=CDC-Resolution
+    - Authoritative-Sources[1].Path=staging/temp/brutos ordenados/01_gestion_personas/res_exta_817_define_equipos_trabajo_cdc_2025_koda.yml
+    - Authoritative-Sources[1].Priority=1
+    - Authoritative-Sources[1].Type=CDC-Teams-Resolution
+    - Creation-Date=2025-12-14
+    - 'Ctx=Manual 3.4: Desarrollo Organizacional y Capacitación (GORE Ñuble).'
+    - Format=KODA/Spec
+    - Human-Creator=GORE Ñuble
+    - Human-Editor=FS
+    - ID=GN-MANUAL-DESARROLLO-ORGANIZACIONAL-KODA-01
+    - 'LLM_Parsing_Instructions.Content=BEGIN_LLM_INSTRUCTIONS
+
+      You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+
+      FIDELITY: Preserve meat (essential information) and skeleton (structure: headers,
+      IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic
+      prose).
+
+
+      LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context,
+      Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference,
+      Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective,
+      Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference,
+      Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact
+      Reference, XRef_Required->Mandatory Cross-Artifact Reference.
+
+
+      REFERENCE POLICY: Ref: internal only—must point to existing ID within THIS document.
+      XRef/XRef_Required: external only—must point to a URN (optionally with #ID fragment)
+      in another artifact. Other external mentions use Ctx:, Ctx_Required:, Ctx_Optional:,
+      or Src:.
+
+
+      LANGUAGE POLICY: Keywords in English, content in original language. Never translate
+      content.
+
+      END_LLM_INSTRUCTIONS
+
+      '
+    - LLM_Parsing_Instructions.ID=KODA-LLM-PARSER-01
+    - LLM_Parsing_Instructions.Prohib=Using for artifact creation or translation.
+    - LLM_Parsing_Instructions.Req=Mandatory block following Metadata.
+    - Last-Validated=2025-12-18
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.ID=MANUAL-DESARROLLO-ORG-CONTENT-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Nota_Final.Ctx=Este manual
+      fomenta la carrera funcionaria y la profesionalización del capital humano regional.
+      Los procesos aquí descritos se gestionan operativamente a través del sistema
+      SIGPER.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Nota_Final.ID=MANUAL-DESARROLLO-ORG-NOTA-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Objetivo.ID=MANUAL-DESARROLLO-ORG-OBJ-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Objetivo.Obj=Potenciar las
+      competencias de los funcionarios y promover un ambiente laboral positivo, alineado
+      con los objetivos estratégicos del GORE Ñuble.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.6_Clima_Laboral.ID=MANUAL-DESARROLLO-ORG-SEC-III-CLIMA-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.6_Clima_Laboral.Intervencion.Proc[0]=Planes
+      de acción para abordar brechas (liderazgo, comunicación, condiciones físicas).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.6_Clima_Laboral.Medicion.Req=Aplicación
+      bianual de encuestas de clima laboral (ej. ISTAS 21).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.7_Conciliacion_Trabajo_Vida.ID=MANUAL-DESARROLLO-ORG-SEC-III-CONCILIACION-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.7_Conciliacion_Trabajo_Vida.Politicas.Rec[0]=Promoción
+      de corresponsabilidad parental
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.7_Conciliacion_Trabajo_Vida.Politicas.Rec[1]=Respeto
+      de horarios
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.7_Conciliacion_Trabajo_Vida.Politicas.Rec[2]=Derecho
+      a desconexión
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.7_Conciliacion_Trabajo_Vida.Teletrabajo.Cond=Modalidad
+      sujeta a factibilidad técnica y normativa específica (Ley de Presupuestos /
+      Reglamento Interno), priorizando tareas que permitan medición por objetivos.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.ID=MANUAL-DESARROLLO-ORG-SEC-III-01
+    - 'Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_III_Desarrollo_Organizacional.Title=Sección
+      III: Desarrollo Organizacional'
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Def=Instrumento
+      formal para evaluar el desempeño funcionario.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[0].Def=Evalúa
+      factores cualitativos y cuantitativos.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[0].Etapa=1.
+      Precalificación
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[0].Resp=Jefe
+      Directo
+    - 'Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[1].Def=Comité
+      colegiado que revisa las precalificaciones y asigna la nota final y Lista (1:
+      Distinción, 2: Buena, 3: Condicional, 4: Eliminación).'
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[1].Etapa=2.
+      Junta Calificadora
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[2].Etapa=3.
+      Apelación
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[2].Proc[0]=Funcionario
+      puede apelar ante la Junta
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Etapas[2].Proc[1]=En
+      segunda instancia, ante la Contraloría (por vicios de legalidad).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.ID=MANUAL-DESARROLLO-ORG-SEC-II-CALIFICACIONES-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.4_Sistema_de_Calificaciones.Periodo.Req=Anual
+      (1 de septiembre al 31 de agosto).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.5_Metas_y_Compromisos_PMG.Evaluacion.Res=El
+      cumplimiento determina el pago del Componente de Desempeño de la Asignación
+      de Modernización (pagado trimestralmente).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.5_Metas_y_Compromisos_PMG.ID=MANUAL-DESARROLLO-ORG-SEC-II-PMG-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.5_Metas_y_Compromisos_PMG.Metas_de_Desempeno_Colectivo.Def=Definidas
+      por equipo/división.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.5_Metas_y_Compromisos_PMG.Metas_de_Gestion_Institucional.Def=Definidas
+      anualmente (ej. eficiencia presupuestaria, atención usuarios).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.ID=MANUAL-DESARROLLO-ORG-SEC-II-01
+    - 'Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_II_Gestion_del_Desempeno.Title=Sección
+      II: Gestión del Desempeño'
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.1_Sistema_de_Capacitacion.Ctx=Regido
+      por el Estatuto Administrativo y normas del Servicio Civil, busca perfeccionar
+      los conocimientos y habilidades.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.1_Sistema_de_Capacitacion.ID=MANUAL-DESARROLLO-ORG-SEC-I-SISTEMA-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.2_Deteccion_de_Necesidades_de_Capacitacion_DNC.Fuentes_de_Informacion[0]=Evaluación
+      del desempeño.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.2_Deteccion_de_Necesidades_de_Capacitacion_DNC.Fuentes_de_Informacion[1]=Nuevas
+      normativas o sistemas (ej. SIGFE, Transformación Digital).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.2_Deteccion_de_Necesidades_de_Capacitacion_DNC.Fuentes_de_Informacion[2]=Objetivos
+      estratégicos regionales (ERD).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.2_Deteccion_de_Necesidades_de_Capacitacion_DNC.ID=MANUAL-DESARROLLO-ORG-SEC-I-DNC-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.2_Deteccion_de_Necesidades_de_Capacitacion_DNC.Proc[0].Act=Proceso
+      Anual
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.2_Deteccion_de_Necesidades_de_Capacitacion_DNC.Proc[0].Def=Consulta
+      a jefaturas y funcionarios sobre brechas de competencias.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Aprobacion.Req=Resolución
+      Exenta del Gobernador(a).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Comite_Bipartito_de_Capacitacion.Def=Instancia
+      consultiva con representantes de la asociación de funcionarios y la administración.
+      Revisa y sugiere acciones.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Compromiso.Req[0]=Funcionario
+      capacitado debe replicar conocimientos o aplicarlos.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Compromiso.Req[1]=Renuncias
+      post-curso pueden implicar devolución de costos (según reglamento).
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Ejecucion.Proc[0]=Cursos
+      internos
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Ejecucion.Proc[1]=Cursos
+      externos
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Ejecucion.Proc[2]=e-learning
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Elaboracion.Act=Consolida
+      el DNC.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Elaboracion.Resp=Área
+      de Gestión de Personas
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.ID=MANUAL-DESARROLLO-ORG-SEC-I-PAC-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Rec_Prioridad_en_Competencias_Digitales_Estrategia_TDE.ID=MANUAL-DESARROLLO-ORG-SEC-I-TIP-DIGITAL-01
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.3_Plan_Anual_de_Capacitacion_PAC.Rec_Prioridad_en_Competencias_Digitales_Estrategia_TDE.Rec=Se
+      priorizarán acciones formativas en competencias digitales (uso de plataformas,
+      firma electrónica, seguridad de la información), conforme a la Estrategia de
+      Capacitación de la Transformación Digital del Estado.
+    - Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.ID=MANUAL-DESARROLLO-ORG-SEC-I-01
+    - 'Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Seccion_I_Capacitacion_y_Formacion.Title=Sección
+      I: Capacitación y Formación'
+    - 'Manual_3_4_Desarrollo_Organizacional_y_Capacitacion.Title=Manual 3.4: Desarrollo
+      Organizacional y Capacitación'
+    - Model-Collaborator=IA-CASCADE
+    - Modification-Date=2025-12-16
+    - Primary-Source=staging/brow_speculativo/manual_3_4_desarrollo_organizacional.md
+    - Referencias_Cruzadas.Ctx_Optional[0]=knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml
+    - Referencias_Cruzadas.Ctx_Optional[1]=knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
+    - Referencias_Cruzadas.Ctx_Optional[2]=knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml
+    - Referencias_Cruzadas.Ctx_Optional[3]=knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml
+    - Referencias_Cruzadas.ID=GN-MANUAL-DESARROLLO-ORG-XREF-01
+    - Source-Hierarchy[0].Description=Fuentes Brutas Ordenadas (staging/temp/brutos
+      ordenados/*)
+    - Source-Hierarchy[0].Level=1
+    - Source-Hierarchy[1].Description=Pseudo-manuales KB (knowledge/domains/gn/gestion/pseudo_manuales_operativos/*)
+    - Source-Hierarchy[1].Level=2
+    - Source-Hierarchy[2].Description=Fuentes Especulativas (staging/brow_speculativo/*)
+    - Source-Hierarchy[2].Level=3
+    - Source_ID=MANUAL-DESARROLLO-ORG-01
+    - Status=Draft
+    - Version=1.0.0
+    - _manifest.compatibility.breaking_changes_from=null
+    - _manifest.compatibility.min_consumer_version=1.0.0
+    - _manifest.dependencies.requires[0].reason=KODA/Spec format compliance
+    - _manifest.dependencies.requires[0].urn=urn:knowledge:koda:core:spec:1.0.0
+    - _manifest.dependencies.requires[1].reason=Transformation methodology reference
+    - _manifest.dependencies.requires[1].urn=urn:knowledge:koda:core:transform:1.0.0
+    - _manifest.federation.license=Institutional Use
+    - _manifest.federation.visibility=internal
+    - _manifest.provenance.created_at=2025-12-16
+    - _manifest.provenance.created_by=KODA-TRANSFORMER
+    - _manifest.provenance.last_modified_at=2025-12-16
+    - _manifest.provenance.signature=null
+    - _manifest.resolution.canonical_url=file://knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_4_desarrollo_organizacional.yml
+    - '_manifest.title=Manual 3.4: Desarrollo Organizacional y Capacitación'
+    - _manifest.urn=urn:knowledge:gorenuble:gn:manual-desarrollo-organizacional:1.0.0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+---
+
+# Manual 3.4: Desarrollo Organizacional y Capacitación
+## ID
+GN-MANUAL-DESARROLLO-ORGANIZACIONAL-KODA-01
+
+## Version
+1.0.0
+
+## Status
+Draft
+
+## Format
+KODA/Spec
+
+## Human Creator
+GORE Ñuble
+
+## Human Editor
+FS
+
+## Model Collaborator
+IA-CASCADE
+
+## AI Remediator
+KODA-TRANSFORMER
+
+## Creation Date
+2025-12-14
+
+## Modification Date
+2025-12-16
+
+## Source ID
+MANUAL-DESARROLLO-ORG-01
+
+## Primary Source
+staging/brow_speculativo/manual_3_4_desarrollo_organizacional.md
+
+## Authoritative Sources
+| Path | Type | Priority |
+| --- | --- | --- |
+| staging/temp/brutos ordenados/01_gestion_personas/res_exta_132_designa_encargado_y_referentes_tecnicos_cdc_2025_koda.yml | CDC-Resolution | 1 |
+| staging/temp/brutos ordenados/01_gestion_personas/res_exta_817_define_equipos_trabajo_cdc_2025_koda.yml | CDC-Teams-Resolution | 1 |
+
+## Last Validated
+2025-12-18
+
+## Source Hierarchy
+| Level | Description |
+| --- | --- |
+| 1 | Fuentes Brutas Ordenadas (staging/temp/brutos ordenados/*) |
+| 2 | Pseudo-manuales KB (knowledge/domains/gn/gestion/pseudo_manuales_operativos/*) |
+| 3 | Fuentes Especulativas (staging/brow_speculativo/*) |
+
+## Ctx
+Manual 3.4: Desarrollo Organizacional y Capacitación (GORE Ñuble).
+
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
+
+REFERENCE POLICY: Ref: internal only—must point to existing ID within THIS document. XRef/XRef_Required: external only—must point to a URN (optionally with #ID fragment) in another artifact. Other external mentions use Ctx:, Ctx_Required:, Ctx_Optional:, or Src:.
+
+LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
+END_LLM_INSTRUCTIONS
+
+
+## Manual 3 4 Desarrollo Organizacional y Capacitacion
+### ID
+MANUAL-DESARROLLO-ORG-CONTENT-01
+### Title
+Manual 3.4: Desarrollo Organizacional y Capacitación
+### Objetivo
+#### ID
+MANUAL-DESARROLLO-ORG-OBJ-01
+#### Obj
+Potenciar las competencias de los funcionarios y promover un ambiente laboral positivo, alineado con los objetivos estratégicos del GORE Ñuble.
+### Seccion I Capacitacion y Formacion
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-I-01
+#### Title
+Sección I: Capacitación y Formación
+#### 1 Sistema de Capacitacion
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-I-SISTEMA-01
+#### Ctx
+Regido por el Estatuto Administrativo y normas del Servicio Civil, busca perfeccionar los conocimientos y habilidades.
+#### 2 Deteccion de Necesidades de Capacitacion DNC
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-I-DNC-01
+#### Proc
+| Act | Def |
+| --- | --- |
+| Proceso Anual | Consulta a jefaturas y funcionarios sobre brechas de competencias. |
+#### Fuentes de Informacion
+- Evaluación del desempeño.
+- Nuevas normativas o sistemas (ej. SIGFE, Transformación Digital).
+- Objetivos estratégicos regionales (ERD).
+#### 3 Plan Anual de Capacitacion PAC
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-I-PAC-01
+#### Elaboracion
+#### Resp
+Área de Gestión de Personas
+#### Act
+Consolida el DNC.
+#### Comite Bipartito de Capacitacion
+#### Def
+Instancia consultiva con representantes de la asociación de funcionarios y la administración. Revisa y sugiere acciones.
+#### Aprobacion
+#### Req
+Resolución Exenta del Gobernador(a).
+#### Ejecucion
+#### Proc
+- Cursos internos
+- Cursos externos
+- e-learning
+#### Compromiso
+#### Req
+- Funcionario capacitado debe replicar conocimientos o aplicarlos.
+- Renuncias post-curso pueden implicar devolución de costos (según reglamento).
+#### Rec Prioridad en Competencias Digitales Estrategia TDE
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-I-TIP-DIGITAL-01
+#### Rec
+Se priorizarán acciones formativas en competencias digitales (uso de plataformas, firma electrónica, seguridad de la información), conforme a la Estrategia de Capacitación de la Transformación Digital del Estado.
+### Seccion II Gestion del Desempeno
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-II-01
+#### Title
+Sección II: Gestión del Desempeño
+#### 4 Sistema de Calificaciones
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-II-CALIFICACIONES-01
+#### Def
+Instrumento formal para evaluar el desempeño funcionario.
+#### Periodo
+#### Req
+Anual (1 de septiembre al 31 de agosto).
+#### Etapas
+-
+  #### Etapa
+  1. Precalificación
+  #### Resp
+  Jefe Directo
+  #### Def
+  Evalúa factores cualitativos y cuantitativos.
+-
+  #### Etapa
+  2. Junta Calificadora
+  #### Def
+  Comité colegiado que revisa las precalificaciones y asigna la nota final y Lista (1: Distinción, 2: Buena, 3: Condicional, 4: Eliminación).
+-
+  #### Etapa
+  3. Apelación
+  #### Proc
+  - Funcionario puede apelar ante la Junta
+  - En segunda instancia, ante la Contraloría (por vicios de legalidad).
+#### 5 Metas y Compromisos PMG
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-II-PMG-01
+#### Metas de Gestion Institucional
+#### Def
+Definidas anualmente (ej. eficiencia presupuestaria, atención usuarios).
+#### Metas de Desempeno Colectivo
+#### Def
+Definidas por equipo/división.
+#### Evaluacion
+#### Res
+El cumplimiento determina el pago del Componente de Desempeño de la Asignación de Modernización (pagado trimestralmente).
+### Seccion III Desarrollo Organizacional
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-III-01
+#### Title
+Sección III: Desarrollo Organizacional
+#### 6 Clima Laboral
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-III-CLIMA-01
+#### Medicion
+#### Req
+Aplicación bianual de encuestas de clima laboral (ej. ISTAS 21).
+#### Intervencion
+#### Proc
+- Planes de acción para abordar brechas (liderazgo, comunicación, condiciones físicas).
+#### 7 Conciliacion Trabajo Vida
+#### ID
+MANUAL-DESARROLLO-ORG-SEC-III-CONCILIACION-01
+#### Politicas
+#### Rec
+- Promoción de corresponsabilidad parental
+- Respeto de horarios
+- Derecho a desconexión
+#### Teletrabajo
+#### Cond
+Modalidad sujeta a factibilidad técnica y normativa específica (Ley de Presupuestos / Reglamento Interno), priorizando tareas que permitan medición por objetivos.
+### Nota Final
+#### ID
+MANUAL-DESARROLLO-ORG-NOTA-01
+#### Ctx
+Este manual fomenta la carrera funcionaria y la profesionalización del capital humano regional. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
+
+## Referencias Cruzadas
+### ID
+GN-MANUAL-DESARROLLO-ORG-XREF-01
+### Ctx Optional
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml

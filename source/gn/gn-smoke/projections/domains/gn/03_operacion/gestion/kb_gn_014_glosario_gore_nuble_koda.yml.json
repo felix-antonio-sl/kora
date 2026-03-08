@@ -1,0 +1,13 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Glosario",
+    "LLM_Parsing_Instructions",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_014_glosario_gore_nuble_koda.yml",
+  "sha256": "009cdb8d58716b0411b2e44cb7b22bcbf2f70b83af8c40e5a1aee0bdb516fb59"
+}

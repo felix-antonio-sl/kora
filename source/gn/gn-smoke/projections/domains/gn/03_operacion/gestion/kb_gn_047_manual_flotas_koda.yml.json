@@ -1,0 +1,27 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Manual_2_4_Servicios_Generales_y_Gestion_de_Flotas",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Referencias_Cruzadas",
+    "Source_ID",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_047_manual_flotas_koda.yml",
+  "sha256": "1aafd1431cafe05ba214aaf313e7971f329c43013726f6b1c95fb710a0adc42f"
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "ttl_scope",
+  "scope_statement": "",
+  "facts": [
+    "<https://gorenuble.gob.cl/ontology/goreNubleBundle>",
+    "@prefix owl: <http://www.w3.org/2002/07/owl#> .",
+    "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
+    "a owl:Ontology ;",
+    "owl:imports <https://gorenuble.gob.cl/data/goreNubleApprovalData> ;",
+    "owl:imports <https://gorenuble.gob.cl/data/goreNubleIPRData> ;",
+    "owl:imports <https://gorenuble.gob.cl/data/goreNubleLegalData> ;",
+    "owl:imports <https://gorenuble.gob.cl/data/goreNubleOrgData> ;",
+    "owl:imports <https://gorenuble.gob.cl/data/goreNubleReferenceData> ;",
+    "owl:imports <https://gorenuble.gob.cl/data/goreNubleRenditionData> ;",
+    "owl:imports <https://gorenuble.gob.cl/ontology/alignmentGnubTde> ;",
+    "owl:imports <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;",
+    "owl:imports <https://gorenuble.gob.cl/ontology/goreNubleDipirRules> ;",
+    "owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;",
+    "owl:imports <https://gorenuble.gob.cl/shapes/goreNubleShapes> ;",
+    "skos:definition \"Punto de entrada unificado que importa el TBox estructural, módulo de alineamiento TDE, 6 módulos de datos y SHACL shapes para el Grafo de Conocimiento institucional completo.\"@es .",
+    "skos:prefLabel \"Ontología Integrada GORE Ñuble\"@es ;"
+  ],
+  "skeleton": [
+    "scope",
+    "triples"
+  ],
+  "meat_count": 17,
+  "fat_count": 0,
+  "path": "ontologies/onto_gorenuble/goreNubleBundle.ttl",
+  "sha256": "b114ab1883bb3177f2adf9558fa531039fb5481368a1c6f9789cf7ff22230598"
+}

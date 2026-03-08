@@ -1,0 +1,462 @@
+config:
+  source_root: /Users/felixsanhueza/Developer/gorenuble/knowledge
+  inbox_root: inbox/gn
+  source_mirror_root: source/gn
+  draft_root: drafts/gn
+  knowledge_root: knowledge/gn
+
+defaults:
+  source_type: koda_yaml
+  transform_class: korafy_direct
+  review_gate: auto
+  dependencies: []
+  expected_sections:
+    - Contenido
+
+exclusions:
+  - domains/gn/.DS_Store
+  - domains/gn/01_fundamentos/.DS_Store
+  - domains/gn/03_operacion/.DS_Store
+  - domains/gn/01_fundamentos/intro/omega_gore_nuble_mermaid.md
+  - domains/gn/03_operacion/gestion/terminos.md
+  - schemas/koda-schema.json
+  - ontologies/onto_gorenuble/catalog-v001.xml
+  - ontologies/onto_gorenuble/goreNubleBundle.ttl
+  - ontologies/onto_gorenuble/goreNubleOntology.ttl
+  - ontologies/onto_gorenuble/goreNubleShapes.ttl
+
+entries:
+  - target_path: bpmn/bpmn-d01-actos-administrativos.md
+    target_urn: urn:gn:kb:bpmn-d01-actos-administrativos
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D01_actos_administrativos_koda.yml
+
+  - target_path: bpmn/bpmn-d02-ciclo-presupuestario.md
+    target_urn: urn:gn:kb:bpmn-d02-ciclo-presupuestario
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml
+
+  - target_path: bpmn/bpmn-d03-gestion-ipr.md
+    target_urn: urn:gn:kb:bpmn-d03-gestion-ipr
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D03_gestion_ipr_koda.yml
+
+  - target_path: bpmn/bpmn-d04-compras-contrataciones.md
+    target_urn: urn:gn:kb:bpmn-d04-compras-contrataciones
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D04_compras_contrataciones_koda.yml
+
+  - target_path: bpmn/bpmn-d05-inventarios-activo-fijo.md
+    target_urn: urn:gn:kb:bpmn-d05-inventarios-activo-fijo
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D05_inventarios_activo_fijo_koda.yml
+
+  - target_path: bpmn/bpmn-d06-flota-vehicular.md
+    target_urn: urn:gn:kb:bpmn-d06-flota-vehicular
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D06_flota_vehicular_koda.yml
+
+  - target_path: bpmn/bpmn-d07-rrhh.md
+    target_urn: urn:gn:kb:bpmn-d07-rrhh
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D07_rrhh_koda.yml
+
+  - target_path: bpmn/bpmn-d08-rendiciones.md
+    target_urn: urn:gn:kb:bpmn-d08-rendiciones
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D08_rendiciones_koda.yml
+
+  - target_path: bpmn/bpmn-d09-cies-sitia.md
+    target_urn: urn:gn:kb:bpmn-d09-cies-sitia
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D09_cies_sitia_koda.yml
+
+  - target_path: bpmn/bpmn-d10-geoespacial-ide.md
+    target_urn: urn:gn:kb:bpmn-d10-geoespacial-ide
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml
+
+  - target_path: bpmn/bpmn-index.md
+    target_urn: urn:gn:kb:bpmn-index
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/bpmn/_index.yml
+    transform_class: index_only
+    dependencies:
+      - bpmn/bpmn-d01-actos-administrativos.md
+
+  - target_path: gestion/flujos-aprobacion-documentos.md
+    target_urn: urn:gn:kb:flujos-aprobacion-documentos
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_015_aprobaciones_koda.yml
+    transform_class: korafy_composite
+    review_gate: manual
+    scope_statement: Flujo de aprobacion documental operativo; revisar compresion editorial previa.
+
+  - target_path: gestion/gestion-info-geoespacial.md
+    target_urn: urn:gn:kb:gestion-info-geoespacial
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/kb_gn_090_gestion_informacion_geoespacial_koda.yml
+
+  - target_path: gestion/gestion-ipr.md
+    target_urn: urn:gn:kb:gestion-ipr
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml
+
+  - target_path: gestion/gestion-prpto-2026.md
+    target_urn: urn:gn:kb:gestion-prpto-2026
+    source_paths:
+      - domains/gn/03_operacion/presupuesto/kb_gn_018_gestion_prpto_2026_koda.yml
+
+  - target_path: gestion/gestion-prpto.md
+    target_urn: urn:gn:kb:gestion-prpto
+    source_paths:
+      - domains/gn/03_operacion/presupuesto/kb_gn_018_gestion_prpto_koda.yml
+
+  - target_path: gestion/gestion-rendiciones.md
+    target_urn: urn:gn:kb:gestion-rendiciones
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_020_gestion_rendiciones_koda.yml
+
+  - target_path: gestion/glosas-gores-2026.md
+    target_urn: urn:gn:kb:glosas-gores-2026
+    source_paths:
+      - domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml
+    transform_class: korafy_composite
+    review_gate: manual
+    scope_statement: Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica final.
+
+  - target_path: gestion/transferencia-ppr.md
+    target_urn: urn:gn:kb:transferencia-ppr
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_001_transferencia_ppr_koda.yml
+
+  - target_path: gn-cqs-master.md
+    target_urn: urn:gn:kb:gn-cqs-master
+    source_paths:
+      - ontologies/onto_gorenuble/goreNubleCQs_Master.yml
+    transform_class: derive_ttl_scope
+    source_type: ontology_yaml
+    review_gate: manual
+    scope_statement: Preguntas de competencia maestras del bundle ontologico GN.
+    non_equivalence_decisions:
+      - El derivado MD representa solo el scope declarado de CQs y no reemplaza la fuente ontologica completa.
+
+  - target_path: gobernanza/aceleracion-regional.md
+    target_urn: urn:gn:kb:aceleracion-regional
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/kb_gn_050_aceleracion_regional_koda.yml
+
+  - target_path: gobernanza/cies-sitia.md
+    target_urn: urn:gn:kb:cies-sitia
+    source_paths:
+      - domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml
+
+  - target_path: gobernanza/comunicaciones-oc.md
+    target_urn: urn:gn:kb:comunicaciones-oc
+    source_paths:
+      - domains/gn/04_habilitadores/comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml
+
+  - target_path: gobernanza/cuentas-publicas-2021-2024.md
+    target_urn: urn:gn:kb:cuentas-publicas-2021-2024
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_009_cuentas_publicas_2021_2024_koda.yml
+
+  - target_path: gobernanza/erd-nuble-2024-2030.md
+    target_urn: urn:gn:kb:erd-nuble-2024-2030
+    source_paths:
+      - domains/gn/02_estrategia/estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml
+
+  - target_path: gobernanza/estrategia-gestion.md
+    target_urn: urn:gn:kb:estrategia-gestion
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_035_estrategia_gestion_koda.yml
+
+  - target_path: gobernanza/estrategia-td-ia.md
+    target_urn: urn:gn:kb:estrategia-td-ia
+    source_paths:
+      - domains/gn/04_habilitadores/tde/kb_gn_720_estrategia_td_ia_koda.yml
+
+  - target_path: gobernanza/glosario-gore-nuble.md
+    target_urn: urn:gn:kb:glosario-gore-nuble
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_014_glosario_gore_nuble_koda.yml
+
+  - target_path: gobernanza/glosario-ipr-consolidado.md
+    target_urn: urn:gn:kb:glosario-ipr-consolidado
+    source_paths:
+      - domains/gn/03_operacion/ipr/otroglosario.yml
+    transform_class: korafy_composite
+    review_gate: manual
+    scope_statement: Glosario consolidado IPR; requiere verificacion terminologica.
+
+  - target_path: gobernanza/gore-ideal.md
+    target_urn: urn:gn:kb:gore-ideal
+    source_paths:
+      - domains/gn/01_fundamentos/intro/kb_gn_900_gore_ideal_koda.yml
+
+  - target_path: gobernanza/indicadores-nuble.md
+    target_urn: urn:gn:kb:indicadores-nuble
+    source_paths:
+      - domains/gn/02_estrategia/estadisticas/kb_gn_005_indicadores_nuble_koda.yml
+
+  - target_path: gobernanza/informe-estado-inicial-gore-pre-td.md
+    target_urn: urn:gn:kb:informe-estado-inicial-gore-pre-td
+    source_paths:
+      - domains/gn/04_habilitadores/tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml
+
+  - target_path: gobernanza/intro-gores-nuble.md
+    target_urn: urn:gn:kb:intro-gores-nuble
+    source_paths:
+      - domains/gn/01_fundamentos/intro/kb_gn_000_intro_gores_nuble_koda.yml
+
+  - target_path: gobernanza/matriz-integracion-organica.md
+    target_urn: urn:gn:kb:matriz-integracion-organica
+    source_paths:
+      - domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml
+    transform_class: korafy_composite
+    review_gate: manual
+    scope_statement: Matriz editorial de integracion organica; mantener como artefacto de control.
+
+  - target_path: gobernanza/nuble-250.md
+    target_urn: urn:gn:kb:nuble-250
+    source_paths:
+      - domains/gn/02_estrategia/estrategia/kb_gn_056_nuble250_koda.yml
+
+  - target_path: gobernanza/omega-ipr-gestion-fusion.md
+    target_urn: urn:gn:kb:omega-ipr-gestion-fusion
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml
+    transform_class: korafy_composite
+    review_gate: manual
+    scope_statement: Fusion semantica IPR/Gestion; requiere validacion de alcance.
+
+  - target_path: gobernanza/organigrama.md
+    target_urn: urn:gn:kb:organigrama
+    source_paths:
+      - domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml
+      - ontologies/onto_gorenuble/goreNubleOrgData.ttl
+    transform_class: korafy_composite
+    source_type: mixed
+    review_gate: manual
+    scope_statement: Organigrama operativo y estructura organica observables en la fuente KODA y el slice TTL organizacional.
+
+  - target_path: gobernanza/plan-potenciamiento-dgi.md
+    target_urn: urn:gn:kb:plan-potenciamiento-dgi
+    source_paths:
+      - domains/gn/dgi/kb_gn_plan_potenciamiento_dgi_koda.yml
+      - core/gestion/kb_gn_lean6_core_koda.yml
+      - core/gestion/kb_gn_meyer_org_structure_koda.yml
+    transform_class: korafy_composite
+    source_type: mixed
+    review_gate: manual
+    scope_statement: Plan DGI con dependencias core declaradas.
+
+  - target_path: gobernanza/problemas-sociales-cl.md
+    target_urn: urn:gn:kb:problemas-sociales-cl
+    source_paths:
+      - domains/gn/02_estrategia/social/kb_gn_004_problemas_sociales_cl_koda.yml
+
+  - target_path: gobernanza/vision-desarrollo-nuble.md
+    target_urn: urn:gn:kb:vision-desarrollo-nuble
+    source_paths:
+      - domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml
+
+  - target_path: guias/guia-circular-33-sts.md
+    target_urn: urn:gn:kb:guia-circular-33-sts
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml
+
+  - target_path: guias/guia-comunicaciones.md
+    target_urn: urn:gn:kb:guia-comunicaciones
+    source_paths:
+      - domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml
+
+  - target_path: guias/guia-fril-2025-sts.md
+    target_urn: urn:gn:kb:guia-fril-2025-sts
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
+
+  - target_path: guias/guia-frpd-nuble.md
+    target_urn: urn:gn:kb:guia-frpd-nuble
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_027_guia_frpd_koda.yml
+
+  - target_path: guias/guia-idi-sni-sts.md
+    target_urn: urn:gn:kb:guia-idi-sni-sts
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_024_guia_idi_sni_koda.yml
+
+  - target_path: guias/guia-programas-directos-gore.md
+    target_urn: urn:gn:kb:guia-programas-directos-gore
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_025_guia_programas_koda.yml
+
+  - target_path: guias/instructivo-subvencion-8-2025-sts.md
+    target_urn: urn:gn:kb:instructivo-subvencion-8-2025-sts
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_028_instructivo_subvencion_8_koda.yml
+
+  - target_path: manuales/manual-activo-fijo.md
+    target_urn: urn:gn:kb:manual-activo-fijo
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_041_manual_activo_fijo_koda.yml
+
+  - target_path: manuales/manual-asistencia.md
+    target_urn: urn:gn:kb:manual-asistencia
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_051_manual_asistencia_koda.yml
+
+  - target_path: manuales/manual-bienestar.md
+    target_urn: urn:gn:kb:manual-bienestar
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_052_manual_bienestar_koda.yml
+
+  - target_path: manuales/manual-ciclo-vida.md
+    target_urn: urn:gn:kb:manual-ciclo-vida
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_048_manual_ciclo_vida_koda.yml
+
+  - target_path: manuales/manual-compras.md
+    target_urn: urn:gn:kb:manual-compras
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_046_manual_compras_koda.yml
+
+  - target_path: manuales/manual-contabilidad.md
+    target_urn: urn:gn:kb:manual-contabilidad
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_044_manual_contabilidad_koda.yml
+
+  - target_path: manuales/manual-desarrollo-organizacional.md
+    target_urn: urn:gn:kb:manual-desarrollo-organizacional
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml
+
+  - target_path: manuales/manual-flotas.md
+    target_urn: urn:gn:kb:manual-flotas
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_047_manual_flotas_koda.yml
+
+  - target_path: manuales/manual-induccion-gore-nuble-2026.md
+    target_urn: urn:gn:kb:manual-induccion-gore-nuble-2026
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml
+    transform_class: korafy_composite
+    review_gate: manual
+    scope_statement: Manual de induccion con mismatch historico entre nombre destino y fuente 2025.
+
+  - target_path: manuales/manual-inventarios-bodegas.md
+    target_urn: urn:gn:kb:manual-inventarios-bodegas
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_040_manual_inventarios_bodegas_koda.yml
+
+  - target_path: manuales/manual-operacional-dgi.md
+    target_urn: urn:gn:kb:manual-operacional-dgi
+    source_paths:
+      - domains/gn/dgi/kb_gn_manual_operacional_dgi_koda.yml
+
+  - target_path: manuales/manual-presupuesto.md
+    target_urn: urn:gn:kb:manual-presupuesto
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml
+
+  - target_path: manuales/manual-remuneraciones.md
+    target_urn: urn:gn:kb:manual-remuneraciones
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_049_manual_remuneraciones_koda.yml
+
+  - target_path: manuales/manual-tesoreria.md
+    target_urn: urn:gn:kb:manual-tesoreria
+    source_paths:
+      - domains/gn/03_operacion/gestion/kb_gn_045_manual_tesoreria_koda.yml
+
+  - target_path: normativa/dictamenes-cgr-gore.md
+    target_urn: urn:gn:kb:dictamenes-cgr-gore
+    source_paths:
+      - domains/gn/03_operacion/juridico/kb_gn_101_dictamenes_cgr_gore_koda.yml
+
+  - target_path: normativa/ley-presupuestos-2026-normas-generales.md
+    target_urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
+    source_paths:
+      - domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml
+
+  - target_path: normativa/ley-presupuestos-2026-partida-31.md
+    target_urn: urn:gn:kb:ley-presupuestos-2026-partida-31
+    source_paths:
+      - domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml
+
+  - target_path: normativa/loc-gore.md
+    target_urn: urn:gn:kb:loc-gore
+    source_paths:
+      - domains/gn/01_fundamentos/legal/kb_gn_031_loc_gore_koda.yml
+
+  - target_path: normativa/marco-legal-gores.md
+    target_urn: urn:gn:kb:marco-legal-gores
+    source_paths:
+      - domains/gn/01_fundamentos/legal/kb_gn_200_marco_legal_gores_koda.yml
+
+  - target_path: normativa/modelos-actos-juridicos.md
+    target_urn: urn:gn:kb:modelos-actos-juridicos
+    source_paths:
+      - domains/gn/03_operacion/juridico/kb_gn_100_modelos_actos_juridicos_koda.yml
+
+  - target_path: ris/ris-artcult.md
+    target_urn: urn:gn:kb:ris-artcult
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml
+
+  - target_path: ris/ris-deportes.md
+    target_urn: urn:gn:kb:ris-deportes
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_deportes_koda.yml
+
+  - target_path: ris/ris-edpub.md
+    target_urn: urn:gn:kb:ris-edpub
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_edpub_koda.yml
+
+  - target_path: ris/ris-empub.md
+    target_urn: urn:gn:kb:ris-empub
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_empub_koda.yml
+
+  - target_path: ris/ris-index.md
+    target_urn: urn:gn:kb:ris-index
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_index_koda.yml
+
+  - target_path: ris/ris-patrimonio.md
+    target_urn: urn:gn:kb:ris-patrimonio
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_patrimonio_koda.yml
+
+  - target_path: ris/ris-pmdt.md
+    target_urn: urn:gn:kb:ris-pmdt
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_pmdt_koda.yml
+
+  - target_path: ris/ris-proginv.md
+    target_urn: urn:gn:kb:ris-proginv
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proginv_koda.yml
+
+  - target_path: ris/ris-proyinv.md
+    target_urn: urn:gn:kb:ris-proyinv
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml
+
+  - target_path: ris/selector-ipr.md
+    target_urn: urn:gn:kb:selector-ipr
+    source_paths:
+      - domains/gn/03_operacion/ipr/kb_gn_011_selector_ipr_koda.yml
+
+  - target_path: datos/programas-vigentes-resumen.md
+    target_urn: urn:gn:kb:programas-vigentes-resumen
+    source_paths:
+      - domains/gn/05_data_raw/kb_gn_012_progs_vigentes.csv
+    source_type: csv
+    transform_class: derive_csv_scope
+    scope_statement: Resumen reproducible del dataset de programas vigentes.
+    expected_sections:
+      - Scope
+      - Resumen
+      - Muestra

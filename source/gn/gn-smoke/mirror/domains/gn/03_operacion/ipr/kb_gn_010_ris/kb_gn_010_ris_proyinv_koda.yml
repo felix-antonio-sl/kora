@@ -1,0 +1,195 @@
+# Artefacto KODA/Spec – RIS Genéricas para Proyectos de Inversión (SNI 2023)
+# Fuente principal: kb_gn_010_ris.md (sección RIS-PROYINV-2023)
+
+_manifest:
+  urn: "urn:knowledge:gorenuble:gn:ris-proyinv:1.0.0"
+  federation:
+    visibility: internal
+    license: "Institutional Use"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/gn/kb_gn_010_ris_proyinv_koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+        reason: "KODA/Spec format compliance"
+      - urn: "urn:knowledge:koda:core:transform:1.0.0"
+        reason: "Transformation methodology reference"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-28"
+    last_modified_at: "2025-11-28"
+    signature: null
+
+ID: GN-RIS-PROYINV-2023-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: KODA-TRANSFORMER
+Creation-Date: 2025-11-28
+Modification-Date: 2025-11-28
+Ctx: "Requisitos de información sectorial genéricos para Proyectos de Inversión que ingresan al Sistema Nacional de Inversiones (SNI), versión 2023."
+
+Source:
+  Primary-Source: "kb_gn_010_ris.md (sección RIS-PROYINV-2023)"
+  Ctx_Required:
+    - "https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf"
+    - "https://sni.gob.cl/requisitos-de-informacion-por-sector"
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-GN-RIS-PROYINV-2023-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing):
+      Act->Action, Cause->Cause, Cond->Condition, Cpt->Concept, Ctx->Context,
+      Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
+      Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
+      Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
+      Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
+      Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
+      Resp->Responsible, Src->Source, Warn->Warning.
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
+
+    LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
+    END_LLM_INSTRUCTIONS
+
+RIS_Proyectos_Inversion_2023:
+  ID: RIS-PROYINV-2023-META-01
+  Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf"
+  Prop-Doc: "Establecer requisitos de información para la formulación y presentación de Proyectos de Inversión en sus distintas fases y etapas."
+
+  Ciclo_Vida_Proyecto:
+    ID: RIS-PROYINV-2023-CICLOVIDA-01
+    Estados:
+      - "Estado-1-Preinversion: Preparación y evaluación para determinar viabilidad."
+      - "Estado-2-Inversion: Diseño y ejecución de obras."
+      - "Estado-3-Operacion: Puesta en marcha (marcha blanca) y operación en régimen."
+    Etapas_Preinversion:
+      - "Etapa-1-Perfil"
+      - "Etapa-2-Prefactibilidad"
+      - "Etapa-3-Factibilidad"
+    Etapas_Inversion:
+      - "Etapa-1-Diseño"
+      - "Etapa-2-Ejecucion"
+    Etapas_Operacion:
+      - "Etapa-1-Puesta-en-marcha"
+      - "Etapa-2-Operacion-en-regimen"
+
+  Fase_Preinversion:
+    ID: RIS-PROYINV-2023-PREINVERSION-01
+
+    Estudio_Preinversional:
+      ID: RIS-PROYINV-2023-PREINVERSION-ESTUDIO-01
+      Cont-Req:
+        - "Item-1: Perfil del proyecto (cuando se postula a prefactibilidad)."
+        - "Item-2: Respaldo con metodología aplicable (general o específica)."
+
+    TDR_Estudio:
+      ID: RIS-PROYINV-2023-PREINVERSION-TDR-01
+      Prop: "Definir información básica y actividades del estudio."
+      Cont-Req:
+        - "Antecedentes-Generales/Item-1: Estudios previos (nombre, consultora, año, resumen, versión más reciente)."
+        - "Antecedentes-Generales/Item-2: Estimación de costos de inversión."
+        - "Identificacion-Problema: Definición del problema."
+        - "Objetivos: Generales y específicos."
+        - "Diag-1: Diagnóstico situación actual."
+        - "Var-1: Definición y análisis de variables (oferta, demanda, proyecciones, brechas)."
+        - "Sol-1: Análisis de alternativas de solución."
+        - "Opt-1: Análisis de tamaño óptimo, localización y momento de inversión."
+        - "Cost-Ben-1: Identificación y valorización de costos y beneficios (directos e indirectos)."
+        - "Eval-1: Evaluación técnico-económica de cada alternativa."
+        - "Sel-1: Selección mejor alternativa (con profundización en etapa de factibilidad)."
+        - "Res-1: Resumen y conclusiones."
+
+    Cronograma_Actividades:
+      ID: RIS-PROYINV-2023-PREINVERSION-CRONOGRAMA-01
+      Formato: "Carta Gantt."
+      Detalle-Req: "Fuentes de financiamiento, especificación de jornada (completa, parcial, etc.)."
+
+    Resultados_Esperados:
+      ID: RIS-PROYINV-2023-PREINVERSION-RESULTADOS-01
+      Enfoque: "Vinculados directamente a contenidos y objetivos del estudio."
+
+    Implicancias_Ambientales:
+      ID: RIS-PROYINV-2023-PREINVERSION-AMBIENTAL-01
+      Req: "Evaluación de impactos ambientales del proyecto."
+
+    Presupuesto_Detallado:
+      ID: RIS-PROYINV-2023-PREINVERSION-PRESUPUESTO-01
+      Formato: "Desglose por asignaciones."
+      Cont-Req:
+        - "Asig-Gastos-Administrativos/Item-1: Consultorías, personal (profesionales, técnicos, administrativos)."
+        - "Asig-Gastos-Administrativos/Item-2: Otros gastos administrativos, gastos generales, utilidades."
+        - "Asig-Consultorias/Item-1: Costo total, desagregando perfiles y unidades de medida (horas o unidades)."
+      Obs-Req:
+        - "Obs-1: Incluir costos de estudios ambientales (EIA, DIA) si corresponde."
+        - "Obs-2: Costo total debe incluir impuestos."
+        - "Obs-3: Alinear a Clasificador Presupuestario (ficha IDI)."
+
+  Fase_Inversion:
+    ID: RIS-PROYINV-2023-INVERSION-01
+
+    Etapa_Diseno:
+      ID: RIS-PROYINV-2023-INVERSION-DISEÑO-01
+      Docs-Base-Req:
+        - "Doc-1: Estudio preinversional (perfil, prefactibilidad o factibilidad)."
+        - "Doc-2: Programa arquitectónico (según especificaciones sectoriales)."
+        - "Doc-3: Plano de emplazamiento y de zona (incluye áreas de influencia y servicios)."
+      Cronograma-Req: "Carta Gantt con duración en meses."
+      Calendario-Inv-Req: "Detalle por asignaciones (incluir monto para terreno si aplica)."
+      TDR-Consultoria-Req: "Para contratación de especialistas (arquitectura, ingeniería, especialidades)."
+      Presupuesto-Detallado-Req:
+        Desglose-Asignaciones:
+          - "Gastos-Administrativos: Consultorías (incluye personal desagregado por nivel y otros gastos: materiales, insumos, difusión)."
+          - "Gastos-Administrativos: Revisores independientes (según normativa)."
+        Obs-Req:
+          - "Unidades de medida: horas (RRHH) o unidades globales (otros)."
+          - "Incluir impuestos."
+
+    Etapa_Ejecucion:
+      ID: RIS-PROYINV-2023-INVERSION-EJECUCION-01
+      Docs-Req:
+        - "Doc-1: Estudio preinversional actualizado con resultados de etapa de diseño."
+        - "Doc-2: Resultados completos de diseño (planos, especificaciones técnicas, presupuestos visados)."
+      Soportes-Req: "Cotizaciones para equipos y equipamiento."
+      Cronograma-Act-Req: "Detallado por actividad, con estimaciones de tiempo y fuentes de financiamiento."
+      Presupuesto-Proyecto-Req:
+        Desglose-Asignaciones:
+          - "Gastos-Administrativos"
+          - "Consultorias"
+          - "Terrenos (incluye expropiación o adquisición)"
+          - "Obras-Civiles (incluye servidumbres, redes, etc.)"
+          - "Equipamiento (mobiliario integrado al proyecto)"
+          - "Equipos (máquinas, hardware, software)"
+          - "Vehiculos (si forman parte del proyecto)"
+          - "Otros-Gastos (gastos adicionales no contemplados)"
+        Obs-Req:
+          - "Unidades de medida varían (horas, m², N° unidades, global, etc.)."
+          - "Costo total debe incluir impuestos."
+        Fichas-Registros-Req:
+          - "Coherencia con antecedentes de respaldo y fichas del IDI."
+
+  Documentos_Apoyo:
+    ID: RIS-PROYINV-2023-APOYO-01
+    Req-Especificos:
+      - ID: "Req-1"
+        Enunciado: "Req-1: Requisitos genéricos sobre propiedades en edificaciones."
+      - ID: "Req-2"
+        Enunciado: "Req-2: Antecedentes técnicos para proyectos con edificación."
+      - ID: "Req-3"
+        Enunciado: "Req-3: Instructivo para proyectos que postulan a Pago Contra Recepción."
+    Fuentes-URL:
+      - "Fuente-1-RIS: https://sni.gob.cl/requisitos-de-informacion-por-sector"
+      - "Fuente-2-Herramientas: https://sni.gob.cl/herramientas-de-apoyo-para-la-formulacion"
+      - "Fuente-3-Metodologias: https://sni.gob.cl/metodologias-por-sector"

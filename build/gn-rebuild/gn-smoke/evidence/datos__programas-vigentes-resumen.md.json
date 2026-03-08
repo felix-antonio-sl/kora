@@ -1,0 +1,22 @@
+{
+  "target_path": "datos/programas-vigentes-resumen.md",
+  "target_urn": "urn:gn:kb:programas-vigentes-resumen",
+  "run_id": "gn-smoke",
+  "transform_class": "derive_csv_scope",
+  "source_paths": [
+    "domains/gn/05_data_raw/kb_gn_012_progs_vigentes.csv"
+  ],
+  "fs": 100,
+  "cr": 45.4,
+  "review_gate": "auto",
+  "skeleton_count": 5,
+  "meat_count": 2460,
+  "fat_count": 0,
+  "scope_statement": "Resumen reproducible del dataset de programas vigentes.",
+  "expected_sections": [
+    "Scope",
+    "Resumen",
+    "Muestra"
+  ],
+  "non_equivalence_decisions": []
+}

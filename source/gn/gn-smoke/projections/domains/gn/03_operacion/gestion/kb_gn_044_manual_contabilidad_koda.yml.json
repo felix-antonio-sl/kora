@@ -1,0 +1,27 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Definitions",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Manual_1_2_Contabilidad_Gubernamental_y_Cierre_Financiero",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Referencias_Cruzadas",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_044_manual_contabilidad_koda.yml",
+  "sha256": "e213a67f06aa9e3579701b12b3a73536efd26e221a3a11177008549bab99ff87"
+}

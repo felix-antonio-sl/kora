@@ -1,0 +1,11 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_011_selector_ipr_koda.yml",
+  "sha256": "578cc776ec61c76afff987ab3acf43017fdd85346ae42deb18396e79a6321050"
+}

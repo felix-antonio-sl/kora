@@ -1,0 +1,20 @@
+{
+  "target_path": "manuales/manual-remuneraciones.md",
+  "target_urn": "urn:gn:kb:manual-remuneraciones",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_direct",
+  "source_paths": [
+    "domains/gn/03_operacion/gestion/kb_gn_049_manual_remuneraciones_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.17,
+  "review_gate": "auto",
+  "skeleton_count": 18,
+  "meat_count": 108,
+  "fat_count": 0,
+  "scope_statement": null,
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

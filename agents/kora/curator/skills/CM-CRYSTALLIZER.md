@@ -10,7 +10,7 @@ lang: es
 # CM-CRYSTALLIZER
 
 ## Proposito
-Ejecuta el Funtor G: {Decisiones + Practicas + Restricciones} → KORA/Spec-MD conforme a spec-md §1.2. Cristaliza conocimiento prescriptivo en documentos formales con reglas univocas.
+Ejecuta el Funtor C: {Decisiones + Practicas + Restricciones} → KORA/Spec-MD conforme a spec-md §1.2. Cristaliza conocimiento prescriptivo en documentos formales con reglas univocas.
 
 ## Input/Output
 - **Input:** decisiones: Decision[] (decisiones explicitas/tacitas), practicas: Practice[] (convenciones informales), restricciones: Constraint[] (tecnicas, organizacionales, legales), plan: ArtifactPlan | null
@@ -60,11 +60,13 @@ Checks spec-md §8:
 - Headings descriptivos (no genericos)
 - Sin ambiguedad (cada regla una lectura)
 - Ejemplos presentes (reglas complejas)
+- Patron regla + ejemplo + traza cuando aplique
 - Sin prosa innecesaria
 - Consistencia interna (sin contradicciones)
 - No-circularidad
 - Definiciones completas (§2)
 - Anglicismos controlados (§7.3)
+- Enforcement declarado en tablas de validacion nuevas
 - Referencias validas
 - Auto-suficiencia
 

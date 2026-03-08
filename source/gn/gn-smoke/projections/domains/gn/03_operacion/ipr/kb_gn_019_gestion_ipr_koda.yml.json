@@ -1,0 +1,23 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Glosario_IPR_Gestion",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Proceso_Gestion_Operacional_IPR",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml",
+  "sha256": "14828ff570b8161d675fbc73a4f35979e959d3e94b0b4d6c9ddec35fbea50d79"
+}

@@ -1,0 +1,20 @@
+{
+  "target_path": "normativa/dictamenes-cgr-gore.md",
+  "target_urn": "urn:gn:kb:dictamenes-cgr-gore",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_direct",
+  "source_paths": [
+    "domains/gn/03_operacion/juridico/kb_gn_101_dictamenes_cgr_gore_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.3,
+  "review_gate": "auto",
+  "skeleton_count": 5,
+  "meat_count": 66,
+  "fat_count": 0,
+  "scope_statement": null,
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

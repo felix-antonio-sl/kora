@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Comunicaciones_Oscar_Crisostomo",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml",
+  "sha256": "e9a6de38a542761142f0fe4bc28af4931d93b33e172930bc7204892e3534ad44"
+}

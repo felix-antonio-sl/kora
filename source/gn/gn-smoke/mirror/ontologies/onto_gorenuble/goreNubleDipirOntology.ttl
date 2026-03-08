@@ -1,0 +1,178 @@
+@prefix dipir: <https://gorenuble.gob.cl/ns/dipir/> .
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix tde: <https://datos.gob.cl/ns/ontology/tde/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# DIPIR Ontology v1.0 - Extensión de GNUB para Procesos DIPIR
+# =============================================================================
+# Autor: Ontologista Gist
+# Fecha: 2026-01-22
+# Propósito: Modelar los workflows específicos de DIPIR manteniendo máxima
+#            fidelidad con Gist 14.0 y reutilizando GNUB.
+# =============================================================================
+
+<https://gorenuble.gob.cl/ontology/goreNubleDipirOntology>
+    a owl:Ontology ;
+    owl:versionIRI <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology/1.0.0> ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    skos:prefLabel "DIPIR Ontology"@en , "Ontología DIPIR"@es ;
+    skos:definition "Extensión de la ontología GORE Ñuble para modelar workflows específicos de la División de Inversión y Presupuesto Regional (DIPIR). Reutiliza gnub:IPR, gnub:BudgetaryTransaction y gnub:GOREAgreement."@es ;
+    rdfs:comment """Arquitectura de Integración:
+    
+    DIPIR extiende GNUB sin duplicar conceptos core:
+    - Reutiliza: gnub:IPR, gnub:BudgetClassifier, gnub:BudgetaryTransaction
+    - Añade: Workflow events (Visación, Aprobación), Workflow stages
+    - Remedia: Commitment reification (gnub:BudgetaryCommitment)
+    
+    Para mergear con goreNubleBundle.ttl:
+        owl:imports <https://gorenuble.gob.cl/ontology/dipir> """@es ;
+    .
+
+# =============================================================================
+# EVENTOS DE WORKFLOW DIPIR (gist:Event + Categories)
+# Fuente: dipir_ssot_koda.yaml - Secciones de cascadas de visación
+# =============================================================================
+
+dipir:VisacionEvent
+    a owl:Class ;
+    rdfs:subClassOf gist:Event ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;
+    skos:definition "Evento de visación en el flujo de aprobación administrativo DIPIR. Representa la acción de un actor que valida un documento antes de la aprobación final."@es ;
+    skos:prefLabel "Evento de Visación"@es ;
+    skos:scopeNote "Usar gist:hasParticipant para el visador (Person/Organization), gist:isCategorizedBy con gnub:ApprovalFlowStage para etapa (V°B° Presupuesto, V°B° Jurídico, etc.)."@es ;
+    skos:example """gnubd:_VisacionEvent_Presupuesto_Res123 a dipir:VisacionEvent ;
+        gist:hasParticipant gnubd:_Person_JefePresupuesto ;
+        gist:isCategorizedBy gnubd:_ApprovalStage_VB_Presupuesto ;
+        gist:actualStartDateTime "2026-01-20T10:30:00"^^xsd:dateTime ."""@es ;
+    .
+
+dipir:AprobacionEvent
+    a owl:Class ;
+    rdfs:subClassOf gist:Event ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;
+    skos:definition "Evento de aprobación final en el flujo administrativo DIPIR. Representa la firma o autorización definitiva de un acto administrativo."@es ;
+    skos:prefLabel "Evento de Aprobación"@es ;
+    skos:scopeNote "Típicamente ejecutado por Gobernador Regional (Jefe Superior de Servicio). Marca la transición de un acto de 'En Tramitación' a 'Aprobado'."@es ;
+    skos:example """gnubd:_AprobacionEvent_Gobernador_Res123 a dipir:AprobacionEvent ;
+        gist:hasParticipant gnubd:_Person_GobernadorRegional ;
+        gist:actualStartDateTime "2026-01-22T15:00:00"^^xsd:dateTime ;
+        dipir:approvesAct gnubd:_Resolution_Res123 ."""@es ;
+    .
+
+dipir:TomaRazonEvent
+    a owl:Class ;
+    rdfs:subClassOf gist:Event ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;
+    skos:definition "Evento de Toma de Razón por la Contraloría General de la República (CGR). Control externo de legalidad de actos administrativos afectos."@es ;
+    skos:prefLabel "Evento Toma de Razón"@es ;
+    skos:scopeNote "Solo aplica a Resoluciones AFECTAS y Decretos. Marca el hito de validación externa."@es ;
+    .
+
+# =============================================================================
+# PROPIEDADES DIPIR (Mínimas - preferir gist: cuando sea posible)
+# =============================================================================
+
+dipir:approvesAct
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf gist:affects ;
+    rdfs:domain dipir:AprobacionEvent ;
+    rdfs:range gnub:AdministrativeAct ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;
+    skos:definition "Vincula un evento de aprobación con el acto administrativo que aprueba."@es ;
+    skos:prefLabel "aprueba acto"@es ;
+    .
+
+dipir:visatesAct
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf gist:affects ;
+    rdfs:domain dipir:VisacionEvent ;
+    rdfs:range gnub:AdministrativeAct ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;
+    skos:definition "Vincula un evento de visación con el acto administrativo que visa."@es ;
+    skos:prefLabel "visa acto"@es ;
+    .
+
+# =============================================================================
+# CATEGORIES - Etapas específicas de workflow DIPIR
+# Extiende gnub:ApprovalFlowStage (ya definido en GNUB)
+# =============================================================================
+
+# NOTA: Las etapas base ya están en GNUB como gnub:ApprovalFlowStage.
+# Aquí solo documentamos instancias que podrían añadirse a goreNubleApprovalData.ttl:
+
+# Ejemplo de instancias (mover a ABox):
+# gnubd:_ApprovalStage_VB_Presupuesto
+#     a gnub:ApprovalFlowStage ;
+#     skos:prefLabel "V°B° Presupuesto"@es ;
+#     skos:definition "Visación del Jefe de Departamento de Presupuesto."@es ;
+#     gist:sequence 1 .
+
+# gnubd:_ApprovalStage_VB_Juridico
+#     a gnub:ApprovalFlowStage ;
+#     skos:prefLabel "V°B° Jurídico"@es ;
+#     gist:sequence 2 .
+
+# gnubd:_ApprovalStage_Firma_Gobernador
+#     a gnub:ApprovalFlowStage ;
+#     skos:prefLabel "Firma Gobernador Regional"@es ;
+#     gist:sequence 8 ;
+#     dipir:isFinalApproval true .
+
+# =============================================================================
+# PATRÓN DE USO: Modelar flujo DIPIR con Gist 14.0 (Remediación v2.1)
+# =============================================================================
+# 
+# CASO: Resolución Exenta que crea asignación presupuestaria (Subt 24)
+# 
+# 1. ACTO ADMINISTRATIVO (Commitment) + DOCUMENTO (FormattedContent):
+#    
+#    # El Acto Jurídico (abstracto)
+#    gnubd:_Resolution_Act_001 a gnub:Resolution ;
+#        skos:prefLabel "Res. Exenta N° 001/2026"@es ;
+#        gist:actualStartDateTime "2026-01-15"^^xsd:dateTime ;
+#        gist:isExpressedIn gnubd:_Resolution_Doc_001 .  # Vínculo Acto→Documento
+#    
+#    # El Documento (concreto)
+#    gnubd:_Resolution_Doc_001 a gist:FormattedContent ;
+#        gist:isCategorizedBy gnubd:_DocType_ResolutionExenta ;
+#        gist:isExpressedIn gist:_MediaType_application_pdf ;
+#        gist:containedText "VISTOS: La Ley 19.175..." .
+# 
+# 2. WORKFLOW DE VISACIONES (Eventos):
+#    gnubd:_Visacion_001_Presupuesto a dipir:VisacionEvent ;
+#        gist:hasParticipant gnubd:_Person_JefePresupuesto ;
+#        dipir:visatesAct gnubd:_Resolution_Act_001 ;
+#        gist:actualStartDateTime "2026-01-16T09:00:00"^^xsd:dateTime .
+# 
+# 3. APROBACIÓN FINAL (El evento que confiere el compromiso):
+#    gnubd:_Aprobacion_001 a dipir:AprobacionEvent ;
+#        gist:hasParticipant gnubd:_Person_GobernadorRegional ;
+#        dipir:approvesAct gnubd:_Resolution_Act_001 ;
+#        gist:actualStartDateTime "2026-01-20T14:00:00"^^xsd:dateTime ;
+#        gist:confers gnubd:_Commitment_Budget_001 .  # Evento confiere Compromiso
+# 
+# 4. COMPROMISO PRESUPUESTARIO (La obligación sostenida):
+#    gnubd:_Commitment_Budget_001 a gnub:BudgetaryCommitment ;
+#        gist:hasGiver gnubd:_GORE_Nuble ;
+#        gist:hasGetter gnubd:_Municipality_Chillan ;
+#        gist:hasMagnitude [
+#            gist:numericValue 50000000 ;
+#            gist:hasUnitOfMeasure gnubd:_UoM_CLP
+#        ] .
+# 
+# 5. VINCULACIÓN CON IPR (si aplica):
+#    gnubd:_Agreement_Mandate_001 a gnub:MandateAgreement ;
+#        gist:governs gnubd:_IPR_40028237 .
+#    
+#    gnubd:_IPR_40028237 a gnub:IPRProject ;
+#        gist:isGovernedBy gnubd:_Agreement_Mandate_001 .
+# 
+# =============================================================================
+

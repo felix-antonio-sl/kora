@@ -1,0 +1,26 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Body_MD",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Metadatos_Dominio",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/arquitectura/bpmn/D09_cies_sitia_koda.yml",
+  "sha256": "013b29d9cdd47f96f46a9ce994d9ddbbef0f24d73529039e0a67fa53a112e304"
+}

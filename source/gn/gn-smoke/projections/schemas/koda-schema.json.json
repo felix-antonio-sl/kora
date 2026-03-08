@@ -1,0 +1,16 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "$schema",
+    "description",
+    "properties",
+    "required",
+    "title",
+    "type"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "schemas/koda-schema.json",
+  "sha256": "fbf96b24196d02a0c82c1d414b505a0a03b86e288d31e47f4a556a991620a888"
+}

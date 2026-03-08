@@ -1,0 +1,20 @@
+{
+  "target_path": "gobernanza/informe-estado-inicial-gore-pre-td.md",
+  "target_urn": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_direct",
+  "source_paths": [
+    "domains/gn/04_habilitadores/tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.19,
+  "review_gate": "auto",
+  "skeleton_count": 15,
+  "meat_count": 269,
+  "fat_count": 0,
+  "scope_statement": null,
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

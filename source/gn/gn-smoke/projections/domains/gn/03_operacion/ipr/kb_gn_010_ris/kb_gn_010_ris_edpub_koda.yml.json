@@ -1,0 +1,23 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "RIS_Edificacion_Publica_2024",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_edpub_koda.yml",
+  "sha256": "fea492e4633214c96c97e8181045caff49bf315949a07ed88a85c4fbee28fb8e"
+}

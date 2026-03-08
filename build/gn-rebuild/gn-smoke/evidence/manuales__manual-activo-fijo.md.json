@@ -1,0 +1,20 @@
+{
+  "target_path": "manuales/manual-activo-fijo.md",
+  "target_urn": "urn:gn:kb:manual-activo-fijo",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_direct",
+  "source_paths": [
+    "domains/gn/03_operacion/gestion/kb_gn_041_manual_activo_fijo_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.17,
+  "review_gate": "auto",
+  "skeleton_count": 18,
+  "meat_count": 318,
+  "fat_count": 0,
+  "scope_statement": null,
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

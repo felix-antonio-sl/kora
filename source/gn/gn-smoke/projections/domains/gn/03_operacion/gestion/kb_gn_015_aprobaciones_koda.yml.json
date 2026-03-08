@@ -1,0 +1,26 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Catalogo_de_Flujos_de_Aprobacion_de_Documentos_GORE_Nuble",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Ref-STS-Guide",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_015_aprobaciones_koda.yml",
+  "sha256": "5751b9f208889c0fa25cf1c292dc97352525eaeabd3267d772a1939b7baafbea"
+}

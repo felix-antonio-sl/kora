@@ -1,0 +1,26 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Body_MD",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Metadatos_Dominio",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml",
+  "sha256": "c7aed58a04063ab80e5e43dbb12003236eef581694c4330a58040ce480848294"
+}

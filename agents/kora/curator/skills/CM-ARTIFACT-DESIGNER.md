@@ -23,7 +23,7 @@ Planifica la estructura de un nuevo artefacto de conocimiento KORA: determina ti
    - Prescriptivo (KORA/Spec-MD): reglas, specs, protocolos, workflows, guias operativas → spec rectora: spec-md
 3. DEFINIR URN: formato urn:{namespace}:kb:{id}. ID en kebab-case, semanticamente expresivo.
 4. EVALUAR INPUT (si hay documento fuente):
-   - Largo: <5K tokens(directo), 5K-15K(segmentado), >15K(segmentado + verificacion adversarial)
+   - Largo: <5K tokens(directo), 5K-15K(segmentado), >15K(segmentado + verificacion de fidelidad reforzada)
    - Estructura: headings claros(segmentar por headings) vs prosa monolitica(segmentar por temas ~1-2K tokens)
    - Contenido numerico: alto(verificacion mecanica obligatoria) vs bajo(verificacion opcional)
 5. PLANIFICAR ESTRUCTURA: headings principales(##), sub-headings(###), elementos clave(tablas, listas).
@@ -38,6 +38,6 @@ Planifica la estructura de un nuevo artefacto de conocimiento KORA: determina ti
 | urn | string | URN asignado al artefacto |
 | fuente | string | Identificacion de fuente(s) |
 | largo_estimado | string | Estimacion de tokens del input |
-| estrategia | enum(directa\|segmentada\|segmentada+adversarial) | Estrategia de ejecucion |
+| estrategia | enum(directa\|segmentada\|segmentada+fidelidad-reforzada) | Estrategia de ejecucion |
 | estructura_propuesta | string[] | Headings planificados |
 | frontmatter | object | Metadata YAML planificada |

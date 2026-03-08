@@ -10,7 +10,7 @@ lang: es
 # CM-KORAFICATOR
 
 ## Proposito
-Ejecuta el Funtor F: DocHumano → KORA/MD conforme a md-spec §6. Transforma documentos humanos en artefactos descriptivos RAG-optimizados preservando fidelidad absoluta.
+Ejecuta el Funtor K: DocHumano → KORA/MD conforme a md-spec §6. Transforma documentos humanos en artefactos descriptivos RAG-optimizados preservando fidelidad absoluta.
 
 ## Input/Output
 - **Input:** documento_fuente: Document (documento humano a koraficiar), plan: ArtifactPlan | null (plan de CM-ARTIFACT-DESIGNER, si existe)
@@ -114,7 +114,7 @@ Checks deterministas obligatorios:
 - **Conteo de hechos**: verificar que N_hechos_output >= N_hechos_fuente (de Fase 0)
 
 ### Fase 8: Verificacion de Fidelidad (md-spec §6.11)
-Reemplaza verificacion adversarial simple. Ejecutar siempre (no solo si >15K o alto numerico):
+Ejecutar siempre como cierre estructurado de fidelidad (no solo si >15K o alto numerico):
 
 1. **Reporte estructurado de hechos** (usando N_hechos de Fase 0):
    Para cada hecho atomico identificado en Fase 0, clasificar:

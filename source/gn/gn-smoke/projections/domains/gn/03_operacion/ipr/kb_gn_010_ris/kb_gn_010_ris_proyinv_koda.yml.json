@@ -1,0 +1,23 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "RIS_Proyectos_Inversion_2023",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml",
+  "sha256": "2ff418c2537e09c49caf194bbbe8fbc0320a4f95c3b5a1ab0f146a993f46e33f"
+}

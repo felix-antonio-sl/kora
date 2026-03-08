@@ -1,0 +1,28 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Authoritative-Source",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Manual_3_2_Remuneraciones_y_Compensaciones",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Referencias_Cruzadas",
+    "Source-Hierarchy",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_049_manual_remuneraciones_koda.yml",
+  "sha256": "ec913a9bf78844e5a92b580b05439afdb477e766fc384ca10ab58be2d7207ee6"
+}

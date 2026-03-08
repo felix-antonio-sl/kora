@@ -1,0 +1,11 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml",
+  "sha256": "3ab92b1ccdacc60070e0a8796dd54bb600e956cf0e3f6a4b50b606bc23610385"
+}

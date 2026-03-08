@@ -1,0 +1,26 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Documento",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Obj",
+    "Purp",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "core/gestion/kb_gn_mw_waissbluth_koda.yml",
+  "sha256": "5d2eba125b82ed4000d3500cbace5fd5a28eb971f09ea0082409b15b5b7d1c8f"
+}

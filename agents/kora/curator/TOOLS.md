@@ -41,7 +41,7 @@ _manifest:
 ## artifact_validate
 
 - **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report
-- **Cuando usar:** Ejecutar verificacion mecanica de artefacto contra md-spec §8 (descriptivo) o spec-md §8 (prescriptivo).
+- **Cuando usar:** Ejecutar validacion de artefacto contra md-spec §9 (descriptivo) o spec-md §8 (prescriptivo).
 - **Cuando NO usar:** Si solo se necesita lectura sin validacion.
 - **Notas:** Checks deterministas (no LLM): frontmatter valido, URN formato, sin grasa, idioma preservado, independencia chunk, sin duplicacion, referencias validas, tags minimo 3, estructuras preservadas.
 

@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Guia_Circular_33_GORE_Nuble",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest",
+    "provenance"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml",
+  "sha256": "f6b6ff85f6ff27498cd9c8a7749a3e5f60ea1f9afaea6dd68a833227c9d6dea6"
+}

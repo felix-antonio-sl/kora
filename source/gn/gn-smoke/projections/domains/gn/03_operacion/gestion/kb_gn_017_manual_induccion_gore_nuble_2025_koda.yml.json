@@ -1,0 +1,23 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Manual_de_Induccion_Gobierno_Regional_de_Nuble_2026",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml",
+  "sha256": "e36da1f09911c2657522f02b4d7d35b277a63007ef31508c74535ffe6f61c315"
+}

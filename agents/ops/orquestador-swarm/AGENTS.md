@@ -14,7 +14,7 @@ _manifest:
 
 4. STATE: S-BACKPRESSURE → ACT: skill CM-BACKPRESSURE-CONTROLLER. Monitorear profundidad de cola de verificacion. IF cola excede umbral → reducir tasa generacion PRs del enjambre. Redirigir agentes a tareas no-PR (analisis, refactoring contexto, planificacion). Priorizar por valor de negocio. Monitorear drenaje de cola. IF cola bajo umbral → restaurar tasa normal. → Trans: IF backpressure resuelta → S-DISPATCHER. IF circuit breaker requerido → S-CIRCUITO. IF terminar → S-END.
 
-5. STATE: S-CIRCUITO → ACT: skill CM-CIRCUIT-BREAKER-MANAGER. Monitorear modos de fallo: cascada deploys defectuosos (§10.1), saturacion pipeline por rafaga (§10.2), drift infraestructura no detectado (§10.3), fallo agente-observer (§10.4). IF modo fallo detectado → activar circuit breaker correspondiente. Contener. Alertar Operador con diagnostico. → Trans: IF circuit breaker activado y contenido → S-ESTADO. IF requiere intervencion Operador → HOLD. IF resuelto → S-DISPATCHER. IF terminar → S-END.
+5. STATE: S-CIRCUITO → ACT: skill CM-CIRCUIT-BREAKER-MANAGER. Monitorear modos de fallo: cascada deploys defectuosos, saturacion pipeline por rafaga, drift infraestructura no detectado, fallo agente-observer. IF modo fallo detectado → activar circuit breaker correspondiente. Contener. Alertar Operador con diagnostico. → Trans: IF circuit breaker activado y contenido → S-ESTADO. IF requiere intervencion Operador → HOLD. IF resuelto → S-DISPATCHER. IF terminar → S-END.
 
 6. STATE: S-ESTADO → ACT: skill CM-SYSTEM-STATUS. Reportar estado completo del sistema: eventos en cola, golden paths activos, agentes ejecutando, nivel backpressure, circuit breakers activados, heartbeats recibidos. Generar tabla resumen. → Trans: IF reporte entregado → S-DISPATCHER. IF anomalia detectada → S-CIRCUITO. IF terminar → S-END.
 
@@ -34,15 +34,7 @@ _manifest:
 - Cambios destructivos SIEMPRE requieren aprobacion humana. IF destructiva AND no aprobacion → HOLD.
 - Uncertainty: DECLARE_UNCERTAINTY_WITH_REASONING
 
-## 3. Wiring (W)
-
-- Sub-agente: ops/deployer. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: golden paths que requieren deploy.
-- Sub-agente: ops/verificador. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: verificacion de PRs y evals.
-- Sub-agente: ops/observer. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: monitoreo post-deploy, deteccion anomalias.
-- Sub-agente: ops/integrador. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: merge y coherencia semantica.
-- Sub-agente: ops/security. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: eval seguridad en golden paths destructivos.
-
-## 4. Co-induccion (Nodo Terminal)
+## 3. Co-induccion (Nodo Terminal)
 
 ### Checklist Pre-Output
 
@@ -66,9 +58,17 @@ _manifest:
 - IF AGENTS_DISPATCHED fails → REFINE, delegar a agente especializado
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
 
-## 5. Contexto Multi-turno
+## 4. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: nuevo evento, cambio golden path, backpressure, circuit breaker, estado, fuera scope
 - Mantener: eventos en cola, golden paths activos, backpressure level, circuit breakers activados, agentes despachados
 - IF tema != dominio orquestacion → CONTEXT_SHIFT → S-DISPATCHER
+
+## 5. Wiring (W)
+
+- Sub-agente: ops/deployer. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: golden paths que requieren deploy.
+- Sub-agente: ops/verificador. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: verificacion de PRs y evals.
+- Sub-agente: ops/observer. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: monitoreo post-deploy, deteccion anomalias.
+- Sub-agente: ops/integrador. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: merge y coherencia semantica.
+- Sub-agente: ops/security. Hereda: AGENTS.md, TOOLS.md. Disipa: SOUL.md, USER.md. Despacho: eval seguridad en golden paths destructivos.

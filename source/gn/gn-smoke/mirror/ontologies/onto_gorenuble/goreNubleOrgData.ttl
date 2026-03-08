@@ -1,0 +1,1262 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# DATOS ORGANIZACIONALES GORE ÑUBLE (ABox)
+# Fuente: staging/organigrama_gore_2026.md (estructura efectiva 2026-01-16),
+#         knowledge/domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml,
+#         omega_gore_nuble_mermaid.md (modelo omega actualizado)
+# =============================================================================
+# CONVENCIÓN DE URIs (C4 - Documentación):
+#   - Este archivo usa prefijo "_" + PascalCase: _Org_GORE_Nuble, _Div_DIPLADE
+#   - Archivos nuevos (ApprovalData, RenditionData) usan MixedCase sin prefijo
+#   - Ambas convenciones son válidas; mantener consistencia dentro de cada archivo
+# ORDEN DE CARGA (M2):
+#   1. goreNubleOntology.ttl (TBox)
+#   2. goreNubleOrgData.ttl (este archivo - define UoM y Aspects compartidos)
+#   3. goreNubleIPRData.ttl, goreNubleLegalData.ttl (dependen de OrgData)
+#   4. goreNubleApprovalData.ttl, goreNubleRenditionData.ttl (independientes)
+# =============================================================================
+
+<https://gorenuble.gob.cl/data/goreNubleOrgData>
+    a owl:Ontology ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    skos:prefLabel "Datos Organizacionales GORE Ñuble"@es ;
+    skos:definition "Componente de la base de conocimientos (ABox) que contiene las instancias concretas de la estructura orgánica, la división territorial de la Región de Ñuble, el personal institucional, y elementos compartidos (UoM, Aspects)."@es ;
+    .
+
+# =============================================================================
+# SECCIÓN COMPARTIDA: UNIDADES DE MEDIDA Y ASPECTOS (M3)
+# Estas instancias son usadas por múltiples módulos ABox
+# =============================================================================
+
+# =============================================================================
+# INSTANCIAS DE UNIDADES DE MEDIDA (Extensiones locales de gist)
+# =============================================================================
+
+gnubd:_Unit_Percentage
+    a gist:UnitOfMeasure ;
+    skos:prefLabel "Porcentaje"@es ;
+    skos:altLabel "%" ;
+    skos:definition "Unidad de medida para razones expresadas como fracción de 100."@es ;
+    .
+
+gnubd:_Unit_UTM
+    a gist:UnitOfMeasure ;
+    skos:prefLabel "Unidad Tributaria Mensual"@es ;
+    skos:altLabel "UTM"@es ;
+    skos:definition "Unidad económica tributaria utilizada en Chile, ajustada mensualmente por inflación."@es ;
+    .
+
+gnubd:_Unit_PesoCLP
+    a gist:UnitOfMeasure ;
+    skos:prefLabel "Peso Chileno"@es ;
+    skos:altLabel "CLP"@es ;
+    skos:altLabel "$"@es ;
+    skos:definition "Moneda de curso legal de Chile."@es ;
+    .
+
+gnubd:_Unit_Month
+    a gist:UnitOfMeasure ;
+    skos:prefLabel "Mes"@es ;
+    skos:definition "Unidad de tiempo equivalente a un doceavo de año."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ASPECTOS GIST COMPARTIDOS (para Magnitudes)
+# Ubicadas aquí para evitar dependencias cruzadas entre ABox
+# =============================================================================
+
+gnubd:_Aspect_AdminCostCap
+    a gist:Aspect ;
+    skos:prefLabel "Tope Gastos Administración"@es ;
+    skos:definition "Aspecto que mide el porcentaje máximo permitido para gastos administrativos."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE CATEGORÍA - Tipos de Cargo
+# =============================================================================
+
+gnubd:_PositionType_Gobernador
+    a gnub:PositionType ;
+    skos:prefLabel "Gobernador/a Regional"@es ;
+    skos:definition "Máxima autoridad ejecutiva del Gobierno Regional, electa por sufragio universal."@es ;
+    .
+
+gnubd:_PositionType_AdministradorRegional
+    a gnub:PositionType ;
+    skos:prefLabel "Administrador/a Regional"@es ;
+    skos:definition "Cargo de confianza del Gobernador, responsable de la gestión administrativa interna."@es ;
+    .
+
+gnubd:_PositionType_JefeDivision
+    a gnub:PositionType ;
+    skos:prefLabel "Jefe/a de División"@es ;
+    skos:definition "Cargo de responsabilidad sobre una División del GORE, depende del Administrador Regional."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE PERSONAS (gist:Person) - Referenciadas en Assignments
+# =============================================================================
+
+gnubd:_Person_OscarCrisostomo
+    a gist:Person ;
+    skos:prefLabel "Óscar Crisóstomo Llanos"@es ;
+    skos:definition "Gobernador Regional de Ñuble (2021-2025)."@es ;
+    .
+
+gnubd:_Person_AlejandroAguilera
+    a gist:Person ;
+    skos:prefLabel "Alejandro Aguilera"@es ;
+    skos:definition "Administrador Regional del GORE Ñuble."@es ;
+    .
+
+gnubd:_PositionType_JefeDepartamento
+    a gnub:PositionType ;
+    skos:prefLabel "Jefe/a de Departamento"@es ;
+    skos:definition "Responsable de un Departamento dentro de una División."@es ;
+    .
+
+gnubd:_PositionType_JefeUnidad
+    a gnub:PositionType ;
+    skos:prefLabel "Jefe/a de Unidad"@es ;
+    skos:definition "Responsable de una Unidad dentro de un Departamento o División."@es ;
+    .
+
+gnubd:_PositionType_ConsejeroRegional
+    a gnub:PositionType ;
+    skos:prefLabel "Consejero/a Regional"@es ;
+    skos:definition "Miembro electo del Consejo Regional (CORE)."@es ;
+    .
+
+gnubd:_PositionType_SecretarioEjecutivo
+    a gnub:PositionType ;
+    skos:prefLabel "Secretario/a Ejecutivo/a"@es ;
+    skos:definition "Ministro de fe del CORE, responsable de asesoría técnica y administrativa."@es ;
+    .
+
+gnubd:_PositionType_RTF
+    a gnub:PositionType ;
+    skos:prefLabel "Referente Técnico Financiero"@es ;
+    skos:altLabel "RTF"@es ;
+    skos:definition "Profesional técnico (DIPIR, DIDESO, DIFOI) responsable de la revisión técnica y financiera de rendiciones."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ORGANIZACIONES NACIONALES EXTENDIDAS
+# =============================================================================
+
+gnubd:_Org_MDSF
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Ministerio de Desarrollo Social y Familia"@es ;
+    skos:altLabel "MDSF"@es ;
+    skos:definition "Entidad administradora del SNI y responsable de la evaluación socioeconómica."@es ;
+    .
+
+gnubd:_Org_DIPRES
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Dirección de Presupuestos"@es ;
+    skos:altLabel "DIPRES"@es ;
+    skos:definition "Organismo rector del sistema presupuestario, encargado de la asignación de recursos y evaluación de programas (Glosa 06)."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Gobierno Regional
+# =============================================================================
+
+gnubd:_Org_GORE_Nuble
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Gobierno Regional de Ñuble"@es ;
+    skos:altLabel "GORE Ñuble"@es ;
+    skos:definition "Institución pública encargada de la administración superior de la Región de Ñuble."@es ;
+    .
+
+gnubd:_Org_CORE_Nuble
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Consejo Regional de Ñuble"@es ;
+    skos:altLabel "CORE Ñuble"@es ;
+    skos:altLabel "CONSEJO REGIONAL 16 Consejeros Electos"@es ;
+    skos:definition "Órgano colegiado del GORE con facultades normativas, resolutivas y fiscalizadoras."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Divisiones
+# =============================================================================
+
+gnubd:_Div_DIPLADE
+    a gnub:Division ;
+    skos:prefLabel "División de Planificación y Desarrollo Regional"@es ;
+    skos:altLabel "DIPLADE"@es ;
+    skos:altLabel "División Planificación y Desarrollo Regional"@es ;
+    skos:definition "División encargada de formular instrumentos de planificación y coordinar la estrategia de desarrollo regional."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Div_DIPIR
+    a gnub:Division ;
+    skos:prefLabel "División de Presupuesto e Inversión Regional"@es ;
+    skos:altLabel "DIPIR"@es ;
+    skos:altLabel "División Presupuesto e Inversión Regional"@es ;
+    skos:definition "División encargada de planificación, priorización, evaluación técnica y seguimiento físico de inversión regional."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Div_DIDESO
+    a gnub:Division ;
+    skos:prefLabel "División de Desarrollo Social y Humano"@es ;
+    skos:altLabel "DIDESO"@es ;
+    skos:altLabel "División Desarrollo Social y Humano"@es ;
+    skos:definition "División encargada de programas e iniciativas orientadas a cohesión social, inclusión y acceso a servicios."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Div_DIFOI
+    a gnub:Division ;
+    skos:prefLabel "División de Fomento e Industria"@es ;
+    skos:altLabel "DIFOI"@es ;
+    skos:altLabel "División Fomento e Industria"@es ;
+    skos:definition "División encargada de políticas y programas de fomento productivo, ciencia, tecnología e innovación."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Div_DIINF
+    a gnub:Division ;
+    skos:prefLabel "División de Infraestructura y Transportes"@es ;
+    skos:altLabel "DIT"@es ;
+    skos:altLabel "División Infraestructura y Transportes"@es ;
+    skos:definition "División encargada de proponer, promover y ejecutar planes y programas regionales en infraestructura, equipamiento regional y gestión en transportes."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Div_DAF
+    a gnub:Division ;
+    skos:prefLabel "División de Administración y Finanzas"@es ;
+    skos:altLabel "DAF"@es ;
+    skos:altLabel "División Administración y Finanzas"@es ;
+    skos:definition "División responsable de la gestión administrativa y financiera, formulación y ejecución presupuestaria del presupuesto de funcionamiento, provisión de servicios generales y administración del personal."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Departamentos
+# =============================================================================
+
+# DIPLADE
+gnubd:_Dept_DIPLADE_PlanificacionEstrategica
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Planificación Estratégica y Ordenamiento Territorial"@es ;
+    skos:altLabel "Depto. Planificación Estratégica y Ordenamiento Territorial"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIPLADE ;
+    .
+
+gnubd:_Dept_DIPLADE_ProyectosEstrategicos
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Desarrollo de Proyectos Estratégicos"@es ;
+    skos:altLabel "Depto. Desarrollo Proyectos Estratégicos"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIPLADE ;
+    .
+
+gnubd:_Dept_DIPLADE_ZonasDesarrollo
+    a gnub:Department ;
+    skos:prefLabel "Departamento Zonas en Desarrollo"@es ;
+    skos:altLabel "Depto. Zonas en Desarrollo"@es ;
+    skos:altLabel "Departamento de Zonas en Desarrollo"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIPLADE ;
+    .
+
+gnubd:_Unit_DIPLADE_ComitePertinencia
+    a gnub:Unit ;
+    skos:prefLabel "Comité de Pertinencia y Vinculación Estratégica"@es ;
+    skos:altLabel "Comité Pertinencia y Vinculación Estratégica"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIPLADE ;
+    .
+
+# DIPIR
+gnubd:_Dept_DIPIR_AnalisisEvaluacion
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Análisis y Evaluación"@es ;
+    skos:altLabel "Depto. Análisis y Evaluación"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIPIR ;
+    .
+
+gnubd:_Unit_DIPIR_MunicipalidadesConservaciones
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Municipalidades y Conservaciones"@es ;
+    skos:altLabel "Unidad Municipalidades y Conservaciones"@es ;
+    gist:isDirectPartOf gnubd:_Dept_DIPIR_AnalisisEvaluacion ;
+    .
+
+gnubd:_Unit_DIPIR_ProyectosProgramas
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Proyectos y Programas"@es ;
+    skos:altLabel "Unidad Proyectos y Programas"@es ;
+    gist:isDirectPartOf gnubd:_Dept_DIPIR_AnalisisEvaluacion ;
+    .
+
+gnubd:_Dept_DIPIR_Presupuesto
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Presupuesto"@es ;
+    skos:altLabel "Depto. Presupuesto"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIPIR ;
+    .
+
+# DIDESO
+gnubd:_Dept_DIDESO_FondosConcursables
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Fondos Concursables y Programas Sociales"@es ;
+    skos:altLabel "Depto. Fondos Concursables y Programas Sociales"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIDESO ;
+    .
+
+gnubd:_Dept_DIDESO_GestionTerritorial
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Gestión Territorial"@es ;
+    skos:altLabel "Depto. Gestión Territorial"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIDESO ;
+    .
+
+# DIFOI
+gnubd:_Dept_DIFOI_FomentoDesarrolloProductivo
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Fomento y Desarrollo Productivo"@es ;
+    skos:altLabel "Depto. Fomento y Desarrollo Productivo"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIFOI ;
+    .
+
+gnubd:_Dept_DIFOI_CTI
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Ciencia, Tecnología e Innovación"@es ;
+    skos:altLabel "Depto. Ciencia, Tecnología e Innovación"@es ;
+    skos:altLabel "CTI"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIFOI ;
+    .
+
+# DIINF
+gnubd:_Dept_DIINF_InfraestructuraConectividad
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Infraestructura y Conectividad"@es ;
+    skos:altLabel "Depto. Infraestructura y Conectividad"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIINF ;
+    .
+
+gnubd:_Dept_DIINF_EjecucionSupervision
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Ejecución y Supervisión de Proyectos de Inversión"@es ;
+    skos:altLabel "Depto. Ejecución y Supervisión de Proyectos de Inversión"@es ;
+    gist:isDirectPartOf gnubd:_Div_DIINF ;
+    .
+
+# DAF
+gnubd:_Unit_DAF_OficinaPartes
+    a gnub:Unit ;
+    skos:prefLabel "Oficina de Partes"@es ;
+    skos:altLabel "Oficina Partes"@es ;
+    gist:isDirectPartOf gnubd:_Div_DAF ;
+    .
+
+gnubd:_Dept_DAF_GestionPersonas
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Gestión y Desarrollo de Personas"@es ;
+    skos:altLabel "Depto. Gestión y Desarrollo de Personas"@es ;
+    gist:isDirectPartOf gnubd:_Div_DAF ;
+    .
+
+gnubd:_Dept_DAF_Finanzas
+    a gnub:Department ;
+    skos:prefLabel "Departamento de Finanzas"@es ;
+    skos:altLabel "Depto. Finanzas"@es ;
+    gist:isDirectPartOf gnubd:_Div_DAF ;
+    .
+
+gnubd:_Unit_DAF_Tesoreria
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Tesorería"@es ;
+    skos:altLabel "Unidad Tesorería"@es ;
+    gist:isDirectPartOf gnubd:_Dept_DAF_Finanzas ;
+    .
+
+gnubd:_Unit_DAF_ContabilidadFinanzas
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Contabilidad y Finanzas"@es ;
+    skos:altLabel "Unidad Contabilidad y Finanzas"@es ;
+    gist:isDirectPartOf gnubd:_Dept_DAF_Finanzas ;
+    .
+
+gnubd:_Unit_DAF_ControlRendiciones
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Control de Rendiciones"@es ;
+    skos:altLabel "UCR"@es ;
+    skos:altLabel "Unidad Control Rendiciones"@es ;
+    skos:definition "Unidad especializada en DAF encargada del control y contabilización de rendiciones (SISREC)."@es ;
+    gist:isDirectPartOf gnubd:_Dept_DAF_Finanzas ;
+    .
+
+gnubd:_Unit_DAF_Adquisiciones
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Adquisiciones"@es ;
+    skos:altLabel "Unidad Adquisiciones"@es ;
+    gist:isDirectPartOf gnubd:_Dept_DAF_Finanzas ;
+    .
+
+gnubd:_Unit_DAF_Operaciones
+    a gnub:Unit ;
+    skos:prefLabel "Unidad de Operaciones"@es ;
+    skos:altLabel "Unidad Operaciones"@es ;
+    skos:altLabel "TIC"@es ;
+    gist:isDirectPartOf gnubd:_Dept_DAF_Finanzas ;
+    .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Unidades de Staff
+# =============================================================================
+
+gnubd:_Staff_Gabinete
+    a gnub:StaffUnit ;
+    skos:prefLabel "Unidad de Gabinete y Participación Social"@es ;
+    skos:altLabel "Gabinete del Gobernador"@es ;
+    skos:altLabel "Gabinete"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_Comunicaciones
+    a gnub:StaffUnit ;
+    skos:prefLabel "Departamento de Comunicaciones"@es ;
+    skos:altLabel "Comunicaciones"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_Control
+    a gnub:StaffUnit ;
+    skos:prefLabel "Unidad de Control"@es ;
+    skos:altLabel "Unidad Control"@es ;
+    skos:definition "Unidad encargada de fiscalizar legalidad y ejecución financiera/presupuestaria; depende del Gobernador Regional y colabora con el CORE."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_Juridica
+    a gnub:StaffUnit ;
+    skos:prefLabel "Departamento Jurídico"@es ;
+    skos:altLabel "Jurídica"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_Auditoria
+    a gnub:StaffUnit ;
+    skos:prefLabel "Auditoría Interna"@es ;
+    skos:altLabel "Auditoría"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_DGI
+    a gnub:StaffUnit ;
+    skos:prefLabel "Departamento de Gestión Institucional"@es ;
+    skos:altLabel "DGI"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Unit_DGI_OIRS
+    a gnub:Unit ;
+    skos:prefLabel "Oficina de Informaciones, Reclamos y Sugerencias (OIRS)"@es ;
+    skos:altLabel "OIRS"@es ;
+    gist:isDirectPartOf gnubd:_Staff_DGI ;
+    .
+
+gnubd:_Staff_Nuble250
+    a gnub:StaffUnit ;
+    skos:prefLabel "Departamento Ñuble 250"@es ;
+    skos:altLabel "Ñuble 250"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_URAI
+    a gnub:StaffUnit ;
+    skos:prefLabel "Unidad Regional de Asuntos Internacionales (URAI)"@es ;
+    skos:altLabel "Unidad Regional de Asuntos Institucionales (URAI)"@es ;
+    skos:altLabel "URAI"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_EmergenciaSeguridad
+    a gnub:StaffUnit ;
+    skos:prefLabel "Departamento Coordinación Integral de Emergencia y Seguridad"@es ;
+    skos:altLabel "CIES"@es ;
+    skos:altLabel "Centro Integral de Emergencia y Seguridad"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Staff_Corporacion
+    a gnub:StaffUnit ;
+    skos:prefLabel "Corporación Regional de Desarrollo"@es ;
+    skos:altLabel "Corporación"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Órganos Asesores
+# =============================================================================
+
+gnubd:_Advisory_COSOC
+    a gnub:AdvisoryBody ;
+    skos:prefLabel "Consejo de la Sociedad Civil"@es ;
+    skos:altLabel "COSOC"@es ;
+    skos:definition "Órgano consultivo de participación ciudadana."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Advisory_ComiteCTCI
+    a gnub:AdvisoryBody ;
+    skos:prefLabel "Comité de Ciencia, Tecnología, Conocimiento e Innovación"@es ;
+    skos:altLabel "Comité CTCI"@es ;
+    skos:altLabel "Comité CTI"@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Advisory_CDR
+    a gnub:AdvisoryBody ;
+    skos:prefLabel "Comité Directivo Regional"@es ;
+    skos:altLabel "CDR"@es ;
+    skos:definition "Instancia político-técnica de filtro de pertinencia estratégica de IPR antes de evaluación técnica."@es ;
+    skos:scopeNote "Primer gate del flujo de admisibilidad: emite PRE-ADMISIBLE CDR o NO PRE-ADMISIBLE CDR. Ver instancias AdmissibilityState en IPRData."@es ;
+    gist:isDirectPartOf gnubd:_Org_GORE_Nuble ;
+    .
+
+# =============================================================================
+# Unidades de Apoyo al CORE
+# =============================================================================
+
+gnubd:_Unit_CORE_SecretariaEjecutiva
+    a gnub:StaffUnit ;
+    skos:prefLabel "Secretaría Ejecutiva del CORE"@es ;
+    skos:altLabel "Secretaría Ejecutiva CORE"@es ;
+    gist:isDirectPartOf gnubd:_Org_CORE_Nuble ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE GOBIERNO INTERIOR (Delegados Presidenciales)
+# =============================================================================
+
+gnubd:_Org_DPR_Nuble
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Delegación Presidencial Regional de Ñuble"@es ;
+    skos:altLabel "DPR Ñuble"@es ;
+    skos:altLabel "Delegado Presidencial Regional"@es ;
+    skos:definition "Representante del Presidente en la región, a cargo del gobierno interior y coordinación de servicios públicos nacionales."@es ;
+    .
+
+gnubd:_Org_DPP_Diguillin
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Delegación Presidencial Provincial de Diguillín"@es ;
+    skos:altLabel "DPP Diguillín"@es ;
+    skos:definition "Órgano desconcentrado del DPR que ejerce gobierno interior en la Provincia de Diguillín."@es ;
+    gist:isDirectPartOf gnubd:_Org_DPR_Nuble ;
+    .
+
+gnubd:_Org_DPP_Itata
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Delegación Presidencial Provincial de Itata"@es ;
+    skos:altLabel "DPP Itata"@es ;
+    skos:definition "Órgano desconcentrado del DPR que ejerce gobierno interior en la Provincia de Itata."@es ;
+    gist:isDirectPartOf gnubd:_Org_DPR_Nuble ;
+    .
+
+gnubd:_Org_DPP_Punilla
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Delegación Presidencial Provincial de Punilla"@es ;
+    skos:altLabel "DPP Punilla"@es ;
+    skos:definition "Órgano desconcentrado del DPR que ejerce gobierno interior en la Provincia de Punilla."@es ;
+    gist:isDirectPartOf gnubd:_Org_DPR_Nuble ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE PERSONAS ADICIONALES - Autoridades
+# Nota: _Person_OscarCrisostomo y _Person_AlejandroAguilera definidos arriba
+# =============================================================================
+
+gnubd:_Person_AliciaContreras
+    a gist:Person ;
+    skos:prefLabel "Alicia Contreras Vielma"@es ;
+    .
+
+gnubd:_Person_JuanParada
+    a gist:Person ;
+    skos:prefLabel "Juan Parada González"@es ;
+    .
+
+gnubd:_Person_ErickSolodeZaldivar
+    a gist:Person ;
+    skos:prefLabel "Erick Solo de Zaldivar"@es ;
+    .
+
+gnubd:_Person_TamaraValenzuela
+    a gist:Person ;
+    skos:prefLabel "Tamara Valenzuela Fuentealba"@es ;
+    .
+
+gnubd:_Person_RaulSunico
+    a gist:Person ;
+    skos:prefLabel "Raúl Súnico Galdames"@es ;
+    .
+
+gnubd:_Person_CristianQuiroz
+    a gist:Person ;
+    skos:prefLabel "Cristián Quiroz Reyes"@es ;
+    .
+
+gnubd:_Person_AntonietaSoto
+    a gist:Person ;
+    skos:prefLabel "Antonieta Soto Trombert"@es ;
+    .
+
+gnubd:_Person_AlvaroRivas
+    a gist:Person ;
+    skos:prefLabel "Álvaro Rivas Rivera"@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Nivel Central (Omega)
+# =============================================================================
+
+gnubd:_Org_Presidencia
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Presidencia de la República de Chile"@es ;
+    skos:altLabel "Presidente de la República"@es ;
+    .
+
+gnubd:_Org_MinisterioInterior
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Ministerio del Interior"@es ;
+    .
+
+gnubd:_Org_MinisterioSeguridadPublica
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Ministerio de Seguridad Pública"@es ;
+    .
+
+gnubd:_Org_SUBDERE
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Subsecretaría de Desarrollo Regional y Administrativo"@es ;
+    skos:altLabel "SUBDERE"@es ;
+    .
+
+gnubd:_Org_CGR
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Contraloría General de la República"@es ;
+    skos:altLabel "CGR"@es ;
+    .
+
+gnubd:_Collection_NIVEL_CENTRAL
+    a gist:Collection ;
+    skos:prefLabel "Nivel Central del Estado (Chile)"@es ;
+    skos:altLabel "🏛️ NIVEL CENTRAL (Estado)"@es ;
+    .
+
+gnubd:_Org_Presidencia gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+gnubd:_Org_MinisterioInterior gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+gnubd:_Org_MinisterioSeguridadPublica gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+gnubd:_Org_MDSF gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+gnubd:_Org_SUBDERE gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+gnubd:_Org_DIPRES gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+gnubd:_Org_CGR gist:isMemberOf gnubd:_Collection_NIVEL_CENTRAL .
+
+gnubd:_Collection_GOBIERNO_INTERIOR
+    a gist:Collection ;
+    skos:prefLabel "Gobierno Interior (Ñuble)"@es ;
+    skos:altLabel "🛡️ GOBIERNO INTERIOR"@es ;
+    .
+
+gnubd:_Org_DPR_Nuble gist:isMemberOf gnubd:_Collection_GOBIERNO_INTERIOR .
+gnubd:_Org_DPP_Diguillin gist:isMemberOf gnubd:_Collection_GOBIERNO_INTERIOR .
+gnubd:_Org_DPP_Itata gist:isMemberOf gnubd:_Collection_GOBIERNO_INTERIOR .
+gnubd:_Org_DPP_Punilla gist:isMemberOf gnubd:_Collection_GOBIERNO_INTERIOR .
+gnubd:_Org_SEREMI_SeguridadPublica gist:isMemberOf gnubd:_Collection_GOBIERNO_INTERIOR .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - SEREMIs (Omega)
+# =============================================================================
+
+gnubd:_Org_SEREMI_SeguridadPublica
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Seguridad Pública"@es ;
+    .
+
+gnubd:_Org_SEREMI_Educacion
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Educación"@es ;
+    .
+
+gnubd:_Org_SEREMI_Salud
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Salud"@es ;
+    .
+
+gnubd:_Org_SEREMI_Vivienda
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Vivienda"@es ;
+    .
+
+gnubd:_Org_SEREMI_ObrasPublicas
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Obras Públicas"@es ;
+    .
+
+gnubd:_Org_SEREMI_Agricultura
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Agricultura"@es ;
+    .
+
+gnubd:_Org_SEREMI_Transportes
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Transportes"@es ;
+    .
+
+gnubd:_Org_SEREMI_Economia
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Economía"@es ;
+    .
+
+gnubd:_Org_SEREMI_Trabajo
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Trabajo"@es ;
+    .
+
+gnubd:_Org_SEREMI_MedioAmbiente
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SEREMI Medio Ambiente"@es ;
+    .
+
+gnubd:_Collection_SEREMIAS
+    a gist:Collection ;
+    skos:prefLabel "SEREMIs (Ñuble)"@es ;
+    skos:altLabel "SEREMIAS"@es ;
+    skos:altLabel "📋 SECRETARÍAS REGIONALES MINISTERIALES"@es ;
+    .
+
+gnubd:_Org_SEREMI_SeguridadPublica gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Educacion gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Salud gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Vivienda gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_ObrasPublicas gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Agricultura gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Transportes gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Economia gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_Trabajo gist:isMemberOf gnubd:_Collection_SEREMIAS .
+gnubd:_Org_SEREMI_MedioAmbiente gist:isMemberOf gnubd:_Collection_SEREMIAS .
+
+# =============================================================================
+# INSTANCIAS ORGANIZACIONALES - Servicios Públicos Regionales (Omega)
+# =============================================================================
+
+gnubd:_Org_ServicioSaludNuble
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "Servicio de Salud Ñuble"@es ;
+    skos:altLabel "SS Ñuble"@es ;
+    .
+
+gnubd:_Org_INE_Regional
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "INE Regional"@es ;
+    skos:altLabel "INE Ñuble"@es ;
+    .
+
+gnubd:_Org_SAG_Regional
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SAG Regional"@es ;
+    skos:altLabel "SAG Ñuble"@es ;
+    .
+
+gnubd:_Org_SII_Regional
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SII Regional"@es ;
+    skos:altLabel "SII Ñuble"@es ;
+    .
+
+gnubd:_Org_SERNATUR_Nuble
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SERNATUR Ñuble"@es ;
+    .
+
+gnubd:_Org_CORFO_Regional
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "CORFO Regional"@es ;
+    skos:altLabel "CORFO Ñuble"@es ;
+    .
+
+gnubd:_Org_INDAP_Regional
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "INDAP Regional"@es ;
+    skos:altLabel "INDAP Ñuble"@es ;
+    .
+
+gnubd:_Org_SERCOTEC_Regional
+    a gist:GovernmentOrganization ;
+    skos:prefLabel "SERCOTEC Regional"@es ;
+    skos:altLabel "SERCOTEC Ñuble"@es ;
+    .
+
+gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES
+    a gist:Collection ;
+    skos:prefLabel "Servicios Públicos Regionales (Ñuble)"@es ;
+    skos:altLabel "SERVICIOS"@es ;
+    skos:altLabel "⚙️ SERVICIOS PÚBLICOS REGIONALES"@es ;
+    .
+
+gnubd:_Collection_DIVISIONES_ORGANICAS
+    a gist:Collection ;
+    skos:prefLabel "Divisiones del GORE Ñuble"@es ;
+    skos:altLabel "Divisiones Orgánicas"@es ;
+    .
+
+gnubd:_Div_DIPLADE gist:isMemberOf gnubd:_Collection_DIVISIONES_ORGANICAS .
+gnubd:_Div_DIPIR gist:isMemberOf gnubd:_Collection_DIVISIONES_ORGANICAS .
+gnubd:_Div_DIDESO gist:isMemberOf gnubd:_Collection_DIVISIONES_ORGANICAS .
+gnubd:_Div_DIFOI gist:isMemberOf gnubd:_Collection_DIVISIONES_ORGANICAS .
+gnubd:_Div_DIINF gist:isMemberOf gnubd:_Collection_DIVISIONES_ORGANICAS .
+gnubd:_Div_DAF gist:isMemberOf gnubd:_Collection_DIVISIONES_ORGANICAS .
+
+gnubd:_Collection_STAFF_APOYO
+    a gist:Collection ;
+    skos:prefLabel "Staff de Apoyo del GORE Ñuble"@es ;
+    skos:altLabel "Staff de Apoyo"@es ;
+    .
+
+gnubd:_Staff_Gabinete gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_Comunicaciones gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_Control gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_Juridica gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_Auditoria gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_DGI gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_Nuble250 gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_URAI gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+gnubd:_Staff_Corporacion gist:isMemberOf gnubd:_Collection_STAFF_APOYO .
+
+gnubd:_Collection_ORGANOS_ESPECIALES
+    a gist:Collection ;
+    skos:prefLabel "Órganos Especiales del GORE Ñuble"@es ;
+    skos:altLabel "Órganos Especiales"@es ;
+    .
+
+gnubd:_Staff_EmergenciaSeguridad gist:isMemberOf gnubd:_Collection_ORGANOS_ESPECIALES .
+gnubd:_Advisory_COSOC gist:isMemberOf gnubd:_Collection_ORGANOS_ESPECIALES .
+gnubd:_Advisory_ComiteCTCI gist:isMemberOf gnubd:_Collection_ORGANOS_ESPECIALES .
+
+gnubd:_Org_ServicioSaludNuble gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_INE_Regional gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_SAG_Regional gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_SII_Regional gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_SERNATUR_Nuble gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_CORFO_Regional gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_INDAP_Regional gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Org_SERCOTEC_Regional gist:isMemberOf gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+
+# =============================================================================
+# INSTANCIAS TERRITORIALES - Región
+# =============================================================================
+
+gnubd:_GeoRegion_Nuble
+    a gist:GovernedGeoRegion ;
+    skos:prefLabel "Región de Ñuble"@es ;
+    skos:altLabel "XVI Región"@es ;
+    skos:altLabel "🗺️ TERRITORIO: 3 PROVINCIAS, 21 COMUNAS"@es ;
+    skos:definition "XVI Región de Chile, creada por Ley 21.033. Capital: Chillán. 3 provincias, 21 comunas."@es ;
+    gist:isGovernedBy gnubd:_Org_GORE_Nuble ;
+    gnub:containsGeoRegion gnubd:_Province_Diguillin, gnubd:_Province_Itata, gnubd:_Province_Punilla ;
+    .
+
+# =============================================================================
+# INSTANCIAS TERRITORIALES - Provincias
+# =============================================================================
+
+gnubd:_Province_Diguillin
+    a gnub:Province ;
+    skos:prefLabel "Provincia de Diguillín"@es ;
+    skos:altLabel "Provincia Diguillín (Capital: Bulnes)"@es ;
+    gist:isDirectPartOf gnubd:_GeoRegion_Nuble ;
+    skos:definition "Provincia costera e interior central de Ñuble. 9 comunas. Capital: Bulnes."@es ;
+    .
+
+gnubd:_Province_Itata
+    a gnub:Province ;
+    skos:prefLabel "Provincia de Itata"@es ;
+    skos:altLabel "Provincia Itata (Capital: Quirihue)"@es ;
+    gist:isDirectPartOf gnubd:_GeoRegion_Nuble ;
+    skos:definition "Provincia costera norte de Ñuble. 7 comunas. Capital: Quirihue."@es ;
+    .
+
+gnubd:_Province_Punilla
+    a gnub:Province ;
+    skos:prefLabel "Provincia de Punilla"@es ;
+    skos:altLabel "Provincia Punilla (Capital: San Carlos)"@es ;
+    gist:isDirectPartOf gnubd:_GeoRegion_Nuble ;
+    skos:definition "Provincia cordillerana oriente de Ñuble. 5 comunas. Capital: San Carlos."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS TERRITORIALES - Comunas (Diguillín - 9)
+# =============================================================================
+
+gnubd:_Commune_Bulnes
+    a gnub:Commune ;
+    skos:prefLabel "Bulnes"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    gnub:isCapitalOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_Chillan
+    a gnub:Commune ;
+    skos:prefLabel "Chillán"@es ;
+    skos:definition "Capital regional de Ñuble. Principal centro urbano."@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_ChillanViejo
+    a gnub:Commune ;
+    skos:prefLabel "Chillán Viejo"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_ElCarmen
+    a gnub:Commune ;
+    skos:prefLabel "El Carmen"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_Pemuco
+    a gnub:Commune ;
+    skos:prefLabel "Pemuco"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_Pinto
+    a gnub:Commune ;
+    skos:prefLabel "Pinto"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_Quillon
+    a gnub:Commune ;
+    skos:prefLabel "Quillón"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_SanIgnacio
+    a gnub:Commune ;
+    skos:prefLabel "San Ignacio"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+gnubd:_Commune_Yungay
+    a gnub:Commune ;
+    skos:prefLabel "Yungay"@es ;
+    gist:isDirectPartOf gnubd:_Province_Diguillin ;
+    .
+
+# =============================================================================
+# INSTANCIAS TERRITORIALES - Comunas (Itata - 7)
+# =============================================================================
+
+gnubd:_Commune_Cobquecura
+    a gnub:Commune ;
+    skos:prefLabel "Cobquecura"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    .
+
+gnubd:_Commune_Coelemu
+    a gnub:Commune ;
+    skos:prefLabel "Coelemu"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    .
+
+gnubd:_Commune_Ninhue
+    a gnub:Commune ;
+    skos:prefLabel "Ninhue"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    .
+
+gnubd:_Commune_Portezuelo
+    a gnub:Commune ;
+    skos:prefLabel "Portezuelo"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    .
+
+gnubd:_Commune_Quirihue
+    a gnub:Commune ;
+    skos:prefLabel "Quirihue"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    gnub:isCapitalOf gnubd:_Province_Itata ;
+    .
+
+gnubd:_Commune_Ranquil
+    a gnub:Commune ;
+    skos:prefLabel "Ránquil"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    .
+
+gnubd:_Commune_Treguaco
+    a gnub:Commune ;
+    skos:prefLabel "Treguaco"@es ;
+    gist:isDirectPartOf gnubd:_Province_Itata ;
+    .
+
+# =============================================================================
+# INSTANCIAS TERRITORIALES - Comunas (Punilla - 5)
+# =============================================================================
+
+gnubd:_Commune_Coihueco
+    a gnub:Commune ;
+    skos:prefLabel "Coihueco"@es ;
+    gist:isDirectPartOf gnubd:_Province_Punilla ;
+    .
+
+gnubd:_Commune_Niquen
+    a gnub:Commune ;
+    skos:prefLabel "Ñiquén"@es ;
+    gist:isDirectPartOf gnubd:_Province_Punilla ;
+    .
+
+gnubd:_Commune_SanCarlos
+    a gnub:Commune ;
+    skos:prefLabel "San Carlos"@es ;
+    gist:isDirectPartOf gnubd:_Province_Punilla ;
+    gnub:isCapitalOf gnubd:_Province_Punilla ;
+    .
+
+gnubd:_Commune_SanFabian
+    a gnub:Commune ;
+    skos:prefLabel "San Fabián"@es ;
+    gist:isDirectPartOf gnubd:_Province_Punilla ;
+    .
+
+gnubd:_Commune_SanNicolas
+    a gnub:Commune ;
+    skos:prefLabel "San Nicolás"@es ;
+    gist:isDirectPartOf gnubd:_Province_Punilla ;
+    .
+
+# =============================================================================
+# TIPOS DE ORGANIZACIONES Y SOLICITANTES
+# =============================================================================
+
+gnubd:_OrgType_GobiernoRegional
+    a gnub:OrganizationalUnitType ;
+    skos:prefLabel "Gobierno Regional"@es ;
+    .
+
+gnubd:_OrgType_Municipalidad
+    a gnub:ApplicantInstitution ;
+    skos:prefLabel "Municipalidad"@es ;
+    .
+
+gnubd:_OrgType_ONG
+    a gnub:ApplicantInstitution ;
+    skos:prefLabel "Organización Privada Sin Fines de Lucro"@es ;
+    skos:altLabel "ONG"@es ;
+    .
+
+gnubd:_OrgType_Universidad
+    a gnub:ApplicantInstitution ;
+    skos:prefLabel "Universidad"@es ;
+    .
+
+gnubd:_OrgType_ServicioPublico
+    a gnub:ApplicantInstitution ;
+    skos:prefLabel "Servicio Público"@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ASIGNACIONES (gist:Assignment)
+# Patrón Gist: Assignment vincula Person con Position/Role en Organization
+# =============================================================================
+
+gnubd:_Assignment_Gobernador
+    a gist:Assignment ;
+    skos:prefLabel "Gobernador Regional de Ñuble"@es ;
+    skos:definition "Asignación del cargo de Gobernador/a Regional de Ñuble."@es ;
+    gist:atDateTime "2021-07-14T00:00:00"^^xsd:dateTime ;
+    gist:isAssignmentOf gnubd:_Person_OscarCrisostomo ;
+    gist:isAssignmentTo gnubd:_Org_GORE_Nuble ;
+    gist:isCategorizedBy gnubd:_PositionType_Gobernador ;
+    .
+
+gnubd:_Assignment_AdministradorRegional
+    a gist:Assignment ;
+    skos:prefLabel "Administrador/a Regional de Ñuble"@es ;
+    skos:definition "Asignación del cargo de Administrador/a Regional."@es ;
+    gist:isAssignmentOf gnubd:_Person_AlejandroAguilera ;
+    gist:isAssignmentTo gnubd:_Org_GORE_Nuble ;
+    gist:isCategorizedBy gnubd:_PositionType_AdministradorRegional ;
+    .
+
+gnubd:_Assignment_JefeDIPLADE
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a División DIPLADE"@es ;
+    gist:isAssignmentTo gnubd:_Div_DIPLADE ;
+    gist:isCategorizedBy gnubd:_PositionType_JefeDivision ;
+    .
+
+gnubd:_Assignment_JefeDIPIR
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a División DIPIR"@es ;
+    gist:isAssignmentTo gnubd:_Div_DIPIR ;
+    gist:isCategorizedBy gnubd:_PositionType_JefeDivision ;
+    .
+
+gnubd:_Assignment_JefeDIDESO
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a División DIDESO"@es ;
+    gist:isAssignmentTo gnubd:_Div_DIDESO ;
+    gist:isCategorizedBy gnubd:_PositionType_JefeDivision ;
+    .
+
+gnubd:_Assignment_JefeDIFOI
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a División DIFOI"@es ;
+    gist:isAssignmentTo gnubd:_Div_DIFOI ;
+    gist:isCategorizedBy gnubd:_PositionType_JefeDivision ;
+    .
+
+gnubd:_Assignment_JefeDIINF
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a División DIINF"@es ;
+    gist:isAssignmentTo gnubd:_Div_DIINF ;
+    gist:isCategorizedBy gnubd:_PositionType_JefeDivision ;
+    .
+
+gnubd:_Assignment_JefeDAF
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a División DAF"@es ;
+    gist:isAssignmentTo gnubd:_Div_DAF ;
+    gist:isCategorizedBy gnubd:_PositionType_JefeDivision ;
+    .
+
+gnubd:_Assignment_JefeGabinete
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Unidad de Gabinete y Participación Social"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Gabinete ;
+    .
+
+gnubd:_Assignment_JefeComunicaciones
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Departamento de Comunicaciones"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Comunicaciones ;
+    .
+
+gnubd:_Assignment_JefeControl
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Unidad de Control"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Control ;
+    .
+
+gnubd:_Assignment_JefeJuridica
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Departamento Jurídico"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Juridica ;
+    .
+
+gnubd:_Assignment_JefeAuditoria
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Auditoría Interna"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Auditoria ;
+    .
+
+gnubd:_Assignment_JefeDGI
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Departamento de Gestión Institucional (DGI)"@es ;
+    gist:isAssignmentTo gnubd:_Staff_DGI ;
+    .
+
+gnubd:_Assignment_JefeOficinaPartes
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Oficina de Partes"@es ;
+    gist:isAssignmentTo gnubd:_Unit_DAF_OficinaPartes ;
+    .
+
+gnubd:_Assignment_JefeCorporacion
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Corporación Regional de Desarrollo"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Corporacion ;
+    .
+
+gnubd:_Assignment_JefeNuble250
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Departamento Ñuble 250"@es ;
+    gist:isAssignmentTo gnubd:_Staff_Nuble250 ;
+    .
+
+gnubd:_Assignment_JefeURAI
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a URAI"@es ;
+    gist:isAssignmentTo gnubd:_Staff_URAI ;
+    .
+
+gnubd:_Assignment_JefeEmergenciaSeguridad
+    a gist:Assignment ;
+    skos:prefLabel "Jefe/a Departamento Coordinación Integral de Emergencia y Seguridad"@es ;
+    gist:isAssignmentTo gnubd:_Staff_EmergenciaSeguridad ;
+    .
+
+gnubd:_Assignment_PresidenteCOSOC
+    a gist:Assignment ;
+    skos:prefLabel "Presidente/a COSOC"@es ;
+    gist:isAssignmentTo gnubd:_Advisory_COSOC ;
+    .
+
+gnubd:_Assignment_PresidenteCTCI
+    a gist:Assignment ;
+    skos:prefLabel "Presidente/a Comité CTCI"@es ;
+    gist:isAssignmentTo gnubd:_Advisory_ComiteCTCI ;
+    .
+
+# =============================================================================
+# RELACIONES OMEGA - Arquitectura General del Sistema
+# =============================================================================
+
+# Relaciones Nivel Central
+gnubd:_Org_Presidencia gnub:designates gnubd:_Org_DPR_Nuble .
+gnubd:_Org_MinisterioInterior gnub:hasTutelaOver gnubd:_Org_DPR_Nuble .
+gnubd:_Org_SUBDERE gnub:regulates gnubd:_Org_GORE_Nuble .
+gnubd:_Org_SUBDERE gnub:funds gnubd:_Org_GORE_Nuble .
+gnubd:_Org_DIPRES gnub:allocatesBudgetTo gnubd:_Org_GORE_Nuble .
+gnubd:_Org_CGR gnub:audits gnubd:_Org_GORE_Nuble .
+
+# Estructura interna GORE (supervisión vía Assignments)
+gnubd:_Assignment_Gobernador gnub:chairs gnubd:_Org_CORE_Nuble .
+gnubd:_Org_CORE_Nuble gnub:audits gnubd:_Assignment_AdministradorRegional .
+
+# Supervisión jerárquica (Assignment → Assignment)
+gnubd:_Assignment_Gobernador gnub:supervises gnubd:_Assignment_AdministradorRegional .
+
+gnubd:_Assignment_Gobernador gnub:supervises gnubd:_Assignment_JefeGabinete, gnubd:_Assignment_JefeComunicaciones, gnubd:_Assignment_JefeControl .
+
+gnubd:_Assignment_AdministradorRegional gnub:supervises gnubd:_Assignment_JefeJuridica, gnubd:_Assignment_JefeAuditoria, gnubd:_Assignment_JefeDGI, gnubd:_Assignment_JefeNuble250, gnubd:_Assignment_JefeURAI, gnubd:_Assignment_JefeEmergenciaSeguridad, gnubd:_Assignment_JefeCorporacion .
+gnubd:_Assignment_AdministradorRegional gnub:supervises gnubd:_Assignment_JefeDIPLADE, gnubd:_Assignment_JefeDIPIR, gnubd:_Assignment_JefeDIDESO, gnubd:_Assignment_JefeDIFOI, gnubd:_Assignment_JefeDIINF, gnubd:_Assignment_JefeDAF .
+
+gnubd:_Assignment_Gobernador gnub:supervises gnubd:_Assignment_PresidenteCOSOC, gnubd:_Assignment_PresidenteCTCI .
+
+# Interacción con SEREMIs (según diagrama)
+gnubd:_Assignment_Gobernador gnub:nominatesCandidatesFor gnubd:_Collection_SEREMIAS .
+gnubd:_Assignment_Gobernador gnub:nominatesCandidatesFor gnubd:_Org_SEREMI_Educacion, gnubd:_Org_SEREMI_Salud, gnubd:_Org_SEREMI_Vivienda, gnubd:_Org_SEREMI_ObrasPublicas, gnubd:_Org_SEREMI_Agricultura, gnubd:_Org_SEREMI_Transportes, gnubd:_Org_SEREMI_Economia, gnubd:_Org_SEREMI_Trabajo, gnubd:_Org_SEREMI_MedioAmbiente .
+gnubd:_Div_DIPLADE gnub:coordinatesPlansWith gnubd:_Collection_SEREMIAS .
+gnubd:_Div_DIPLADE gnub:coordinatesPlansWith gnubd:_Org_SEREMI_Educacion, gnubd:_Org_SEREMI_Salud, gnubd:_Org_SEREMI_Vivienda, gnubd:_Org_SEREMI_ObrasPublicas, gnubd:_Org_SEREMI_Agricultura, gnubd:_Org_SEREMI_Transportes, gnubd:_Org_SEREMI_Economia, gnubd:_Org_SEREMI_Trabajo, gnubd:_Org_SEREMI_MedioAmbiente .
+
+# Interacción con Servicios Públicos Regionales (según diagrama)
+gnubd:_Div_DIFOI gnub:coordinatesProductivelyWith gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Div_DIFOI gnub:coordinatesProductivelyWith gnubd:_Org_ServicioSaludNuble, gnubd:_Org_INE_Regional, gnubd:_Org_SAG_Regional, gnubd:_Org_SII_Regional, gnubd:_Org_SERNATUR_Nuble, gnubd:_Org_CORFO_Regional, gnubd:_Org_INDAP_Regional, gnubd:_Org_SERCOTEC_Regional .
+gnubd:_Div_DIPIR gnub:managesFundingFor gnubd:_Collection_SERVICIOS_PUBLICOS_REGIONALES .
+gnubd:_Div_DIPIR gnub:managesFundingFor gnubd:_Org_ServicioSaludNuble, gnubd:_Org_INE_Regional, gnubd:_Org_SAG_Regional, gnubd:_Org_SII_Regional, gnubd:_Org_SERNATUR_Nuble, gnubd:_Org_CORFO_Regional, gnubd:_Org_INDAP_Regional, gnubd:_Org_SERCOTEC_Regional .
+
+# Relación con Territorio (según diagrama)
+gnubd:_Div_DIDESO gnub:deliversSocialProgramsIn gnubd:_GeoRegion_Nuble .
+gnubd:_Div_DIINF gnub:deliversPublicWorksIn gnubd:_GeoRegion_Nuble .
+gnubd:_Div_DIFOI gnub:promotesProductiveDevelopmentIn gnubd:_GeoRegion_Nuble .
+
+# Gobierno Interior (según diagrama)
+gnubd:_Org_DPP_Diguillin gnub:exercisesInteriorGovernmentOver gnubd:_Province_Diguillin .
+gnubd:_Org_DPP_Itata gnub:exercisesInteriorGovernmentOver gnubd:_Province_Itata .
+gnubd:_Org_DPP_Punilla gnub:exercisesInteriorGovernmentOver gnubd:_Province_Punilla .

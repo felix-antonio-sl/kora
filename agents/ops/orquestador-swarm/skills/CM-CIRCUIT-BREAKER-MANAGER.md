@@ -5,32 +5,32 @@ _manifest:
 ---
 
 ## Proposito
-Monitorear los cuatro modos de fallo definidos en Swarm::Ops §10. Detectar condiciones de fallo. Activar circuit breakers para contener. Alertar al Operador con diagnostico. Gestionar recuperacion.
+Monitorear los cuatro modos de fallo operativos del swarm. Detectar condiciones de fallo. Activar circuit breakers para contener. Alertar al Operador con diagnostico. Gestionar recuperacion.
 
 ## Input/Output
 - **Input:** system_metrics: {deploy_timeline: DeployResult[], pipeline_queue: QueueStatus, infra_state: InfraState, observer_heartbeat: HeartbeatLog, time_window_min: number}
 - **Output:** circuit_status: {breakers: CircuitBreaker[], containment_actions: Action[], operator_alert: AlertPayload, system_health: healthy|degraded|critical}
 
 ## Procedimiento
-1. **Evaluar Modo 1: Cascada de deploys defectuosos** (Swarm::Ops §10.1):
+1. **Evaluar Modo 1: Cascada de deploys defectuosos**:
    - Contar deploys fallidos en ventana temporal (default 15min)
    - IF failures >= threshold (default 3) → ABRIR circuit breaker
    - Accion: pausar deploys, rollback atomico del batch completo
    - Regla: periodo observacion obligatorio entre batches
 
-2. **Evaluar Modo 2: Saturacion pipeline por rafaga** (Swarm::Ops §10.2):
+2. **Evaluar Modo 2: Saturacion pipeline por rafaga**:
    - Monitorear profundidad cola y tiempo feedback
    - IF cola > umbral critico (default 50) OR feedback_time > 60min → ABRIR circuit breaker
    - Accion: activar backpressure agresiva, pausar generacion PRs
    - Delegar a CM-BACKPRESSURE-CONTROLLER para gestion detallada
 
-3. **Evaluar Modo 3: Drift infraestructura** (Swarm::Ops §10.3):
+3. **Evaluar Modo 3: Drift infraestructura**:
    - Verificar resultado ultimo terraform plan / drift check
    - IF drift detectado → clasificar: trivial (tags, config menor) vs significativo (recursos, permisos)
    - Accion trivial: reconciliacion automatica
    - Accion significativa: ABRIR circuit breaker, pausar cambios infra, consultar Operador
 
-4. **Evaluar Modo 4: Fallo agente-observer** (Swarm::Ops §10.4):
+4. **Evaluar Modo 4: Fallo agente-observer**:
    - Verificar heartbeat del observer
    - IF heartbeat perdido > timeout (default 5min) → ABRIR circuit breaker
    - Accion: activar alertas clasicas Prometheus como backstop

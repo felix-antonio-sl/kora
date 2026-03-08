@@ -146,6 +146,55 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in required_terms:
             self.assertIn(term, content)
 
+    def test_curator_tracks_restored_md_and_spec_contracts(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "AGENTS.md",
+            ROOT / "agents" / "kora" / "curator" / "SOUL.md",
+            ROOT / "agents" / "kora" / "curator" / "TOOLS.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-KORAFICATOR.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-DESIGNER.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertIn("Funtor K", content)
+        self.assertIn("Funtor C", content)
+        self.assertIn("md-spec §9", content)
+        self.assertNotIn("Funtor F", content)
+        self.assertNotIn("Funtor G", content)
+        self.assertNotIn("md-spec §8", content)
+        self.assertNotIn("verificacion adversarial", content)
+
+    def test_ops_core_agents_follow_canonical_agent_sections(self):
+        files = (
+            ROOT / "agents" / "ops" / "orquestador-swarm" / "AGENTS.md",
+            ROOT / "agents" / "ops" / "security" / "AGENTS.md",
+            ROOT / "agents" / "ops" / "verificador" / "AGENTS.md",
+        )
+        required_terms = (
+            "## 3. Co-induccion",
+            "## 4. Contexto Multi-turno",
+            "## 5. Wiring",
+        )
+        for path in files:
+            content = path.read_text(encoding="utf-8")
+            for term in required_terms:
+                self.assertIn(term, content)
+
+    def test_orquestador_swarm_drops_dead_swarm_section_refs(self):
+        files = (
+            ROOT / "agents" / "ops" / "orquestador-swarm" / "AGENTS.md",
+            ROOT / "agents" / "ops" / "orquestador-swarm" / "TOOLS.md",
+            ROOT / "agents" / "ops" / "orquestador-swarm" / "skills" / "CM-CIRCUIT-BREAKER-MANAGER.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("Swarm::Ops §10", content)
+        self.assertNotIn("§10.1", content)
+        self.assertNotIn("§10.2", content)
+        self.assertNotIn("§10.3", content)
+        self.assertNotIn("§10.4", content)
+
     def test_render_stats_markdown_contains_current_categories(self):
         payload = compute_stats_payload()
         markdown = render_stats_markdown(payload)

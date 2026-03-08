@@ -1,0 +1,13 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "LLM_Parsing_Instructions",
+    "_manifest",
+    "terminos"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/otroglosario.yml",
+  "sha256": "264ea1fd78a2c3593b64ced94af158de885bff7d1dfcaab51533e1afe22449ed"
+}

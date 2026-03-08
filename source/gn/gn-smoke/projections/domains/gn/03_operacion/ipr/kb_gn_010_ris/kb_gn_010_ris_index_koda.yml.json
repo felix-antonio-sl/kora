@@ -1,0 +1,22 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "RIS_Index",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_index_koda.yml",
+  "sha256": "37bd32f03f5bf4b7480d8da3163c0303a73405a9c8cfcf32ee71d6508bae2b93"
+}

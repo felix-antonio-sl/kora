@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest",
+    "informe_de_asesoria_estrategica"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml",
+  "sha256": "8c375d5f6d7b104d75917efbed267ece39f8d6200900d723b0bc336505a3df83"
+}

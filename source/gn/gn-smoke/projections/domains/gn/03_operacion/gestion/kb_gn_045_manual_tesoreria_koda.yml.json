@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Definitions",
+    "Format",
+    "Human-Creator",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Manual_1_3_Tesoreria_y_Gestión_de_Ingresos",
+    "Modification-Date",
+    "Primary-Source",
+    "Referencias_Cruzadas",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_045_manual_tesoreria_koda.yml",
+  "sha256": "764bfd77fdf2c5d3e8421de25ddea6186bb127d0a5d4dc2ddf4296d3b267d32e"
+}

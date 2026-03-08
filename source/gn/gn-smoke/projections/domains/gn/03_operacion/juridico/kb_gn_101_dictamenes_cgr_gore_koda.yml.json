@@ -1,0 +1,15 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Dictamenes",
+    "Indice_por_Materia",
+    "LLM_Parsing_Instructions",
+    "Notas_de_Uso",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/juridico/kb_gn_101_dictamenes_cgr_gore_koda.yml",
+  "sha256": "e07623fa1ffd5eb5c8c0e3f48660809711c33053081fcccc0d17af9f1c50b098"
+}

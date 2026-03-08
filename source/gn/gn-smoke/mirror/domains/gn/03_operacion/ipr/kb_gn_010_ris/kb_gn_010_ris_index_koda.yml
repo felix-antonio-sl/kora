@@ -1,0 +1,112 @@
+# Artefacto KODA/Spec – Índice de Requisitos de Información Sectorial (RIS) SNI
+# Fuente principal: kb_gn_010_ris.md (todas las secciones RIS-*)
+
+_manifest:
+  urn: "urn:knowledge:gorenuble:gn:ris-index:1.0.0"
+  federation:
+    visibility: internal
+    license: "Institutional Use"
+  compatibility:
+    min_consumer_version: "1.0.0"
+    breaking_changes_from: null
+  resolution:
+    canonical_url: "file://knowledge/domains/gn/kb_gn_010_ris_index_koda.yml"
+    mirrors: []
+  dependencies:
+    requires:
+      - urn: "urn:knowledge:koda:core:spec:1.0.0"
+        reason: "KODA/Spec format compliance"
+      - urn: "urn:knowledge:koda:core:transform:1.0.0"
+        reason: "Transformation methodology reference"
+  provenance:
+    created_by: "FS"
+    created_at: "2025-11-28"
+    last_modified_at: "2025-11-28"
+    signature: null
+
+ID: GN-RIS-INDEX-01
+Version: 1.0.0
+Status: Draft
+Human-Creator: FS
+Human-Editor: FS
+Model-Collaborator: KODA-TRANSFORMER
+Creation-Date: 2025-11-28
+Modification-Date: 2025-11-28
+Ctx: "Índice maestro de Requisitos de Información Sectorial (RIS) del Sistema Nacional de Inversiones (SNI) relevantes para el GORE Ñuble."
+
+LLM_Parsing_Instructions:
+  ID: KODA-LLM-PARSER-GN-RIS-INDEX-01
+  Req: Mandatory block following Metadata.
+  Prohib: Using for artifact creation or translation.
+  Content: |
+    BEGIN_LLM_INSTRUCTIONS
+    You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+    FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+    LEXICON (expand before processing):
+      Act->Action, Cause->Cause, Cond->Condition, Cpt->Concept, Ctx->Context,
+      Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
+      Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
+      Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
+      Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
+      Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
+      Resp->Responsible, Src->Source, Warn->Warning.
+
+    REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
+
+    LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
+    END_LLM_INSTRUCTIONS
+
+RIS_Index:
+  ID: GN-RIS-INDEX-01
+  Purp: "Servir como mapa de navegación para los diferentes RIS sectoriales utilizados por el GORE Ñuble."
+
+  Entradas:
+    - ID: RIS-PROYINV-2023
+      Cpt: "RIS Genéricas para Proyectos de Inversión (SNI 2023)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-proyinv:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf"
+      Estado: "draft"
+
+    - ID: RIS-PROGINV-2025
+      Cpt: "RIS para Programas de Inversión (Genérico, 2025)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-proginv:1.0.0"
+      Fuente-URL: null
+      Estado: "draft"
+
+    - ID: RIS-EMPUB-2024
+      Cpt: "RIS para Estudios y Proyectos de Empresas del Estado (2024)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-empub:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_-_Estudios_y_Proyectos_de_Empresas_del_Estado_2024.pdf"
+      Estado: "draft"
+
+    - ID: RIS-EB-PMDT-2024
+      Cpt: "RIS para Estudios Básicos PMDT (Planes Maestros de Desarrollo Territorial, 2024)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-pmdt:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_-_Estudio_basico_PMDT_2024.pdf"
+      Estado: "draft"
+
+    - ID: RIS-EDPUB-2024
+      Cpt: "RIS para Proyectos de Edificación Pública (2024)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-edpub:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf"
+      Estado: "draft"
+
+    - ID: RIS-ARTCULT-2024
+      Cpt: "RIS para Proyectos de Arte y Cultura (2024)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-artcult:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf"
+      Estado: "draft"
+
+    - ID: RIS-PATRIMONIO-2024
+      Cpt: "RIS para Proyectos Patrimoniales (2024)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-patrimonio:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf"
+      Estado: "draft"
+
+    - ID: RIS-DEPORTES-2024
+      Cpt: "RIS para Proyectos de Infraestructura Deportiva (2024)."
+      Urn: "urn:knowledge:gorenuble:gn:ris-deportes:1.0.0"
+      Fuente-URL: "https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf"
+      Estado: "draft"

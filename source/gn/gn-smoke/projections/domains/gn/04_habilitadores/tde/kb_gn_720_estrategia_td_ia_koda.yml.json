@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest",
+    "estrategia_y_plan_de_transformacion_digital_e_ia_nuble_aumentado_2025_2028"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/tde/kb_gn_720_estrategia_td_ia_koda.yml",
+  "sha256": "5328885f1b3ae852439424dd840565fd06c753ed1f56cc32252f923d0bff8a50"
+}

@@ -1,0 +1,358 @@
+---
+_manifest:
+  urn: urn:gn:kb:ris-artcult
+  provenance:
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml
+version: 2.0.0
+status: draft
+tags:
+- gore-nuble
+- gobierno-regional
+- sni
+- cultura
+- proyectos-inversion
+- gn
+lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml: b81e6acc6c478e02e9d8ea146b172dec5893a516a96901e25d5416f63997d112
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.17
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 13
+    meat_count: 83
+    fat_count: 0
+    preserved_facts:
+    - Creation-Date=2025-11-28
+    - Ctx=Requisitos de información para proyectos de inversión cultural que ingresan
+      al Sistema Nacional de Inversiones (SNI), versión 2024.
+    - Human-Creator=FS
+    - Human-Editor=FS
+    - ID=GN-RIS-ARTCULT-2024-01
+    - "LLM_Parsing_Instructions.Content=BEGIN_LLM_INSTRUCTIONS\nYou are an AI agent\
+      \ consuming a KODA artifact. Parse with absolute fidelity.\n\nFIDELITY: Preserve\
+      \ meat (essential information) and skeleton (structure: headers, IDs, lists,\
+      \ tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).\n\
+      \nLEXICON (expand before processing):\n  Act->Action, Cause->Cause, Cond->Condition,\
+      \ Cpt->Concept, Ctx->Context,\n  Def->Definition, Dep->Dependency, Dest->Destination,\
+      \ Dln->Deadline,\n  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,\n\
+      \  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,\n  Nat->Nature,\
+      \ Obj->Objective, Proc->Process, Prohib->Prohibition,\n  Purp->Purpose, Ref->Reference,\
+      \ Req->Requirement, Res->Result,\n  Resp->Responsible, Src->Source, Warn->Warning.\n\
+      \nREFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS\
+      \ document. External documents and legal sources are mentioned as contextual\
+      \ information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.\n\nLANGUAGE\
+      \ POLICY: Keywords in English (and abbreviated forms as listed), content in\
+      \ original language (Spanish). Never translate content.\nEND_LLM_INSTRUCTIONS\n"
+    - LLM_Parsing_Instructions.ID=KODA-LLM-PARSER-GN-RIS-ARTCULT-2024-01
+    - LLM_Parsing_Instructions.Prohib=Using for artifact creation or translation.
+    - LLM_Parsing_Instructions.Req=Mandatory block following Metadata.
+    - Model-Collaborator=KODA-TRANSFORMER
+    - Modification-Date=2025-11-28
+    - RIS_Arte_Cultura_2024.Alcance.Aplicabilidad=Todas las iniciativas de inversión
+      en proyectos culturales.
+    - RIS_Arte_Cultura_2024.Alcance.Foco=Necesidades culturales y artísticas.
+    - RIS_Arte_Cultura_2024.Alcance.ID=RIS-ARTCULT-2024-ALCANCE-01
+    - 'RIS_Arte_Cultura_2024.Alcance.Tipos-Iniciativas[0]=Tipo-1-Nuevas: Construcción
+      de bibliotecas, museos, centros culturales, centros de formación artística,
+      etc.'
+    - 'RIS_Arte_Cultura_2024.Alcance.Tipos-Iniciativas[1]=Tipo-2-Existentes: Reposición,
+      normalización, reparaciones, mejoramientos o adecuaciones sin aumento de m².'
+    - RIS_Arte_Cultura_2024.Aspectos_Adicionales.Firma-Profesional=Todo documento
+      de presupuesto debe estar firmado por profesional responsable.
+    - RIS_Arte_Cultura_2024.Aspectos_Adicionales.ID=RIS-ARTCULT-2024-ADICIONALES-01
+    - RIS_Arte_Cultura_2024.Aspectos_Adicionales.Integracion-Ficha-IDI=Asegurar concordancia
+      en tiempos y requerimientos establecidos.
+    - RIS_Arte_Cultura_2024.Aspectos_Adicionales.Participacion-Ciudadana=Incluir actividades
+      específicas, especialmente en etapa de diseño.
+    - RIS_Arte_Cultura_2024.Aspectos_Adicionales.Precios-Sociales=Utilización obligatoria
+      para evaluación social en todas las etapas.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.Actualizacion-Estudio-Preinv-Req=Incluir
+      ajustes basados en resultados de etapa anterior.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.Cronogramas-Req=De
+      actividades (Carta Gantt) y financiero, integrando todos los procesos del diseño.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.ID=RIS-ARTCULT-2024-ETAPA-DISEÑO-01
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.Presupuesto-Detallado-Req=Considerar
+      gastos de consultorías, asesorías y administrativos.
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.Programa-Arq-TDR-Req[0]=Cont:
+      Para contratación del diseño.'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.Programa-Arq-TDR-Req[1]=Detalle:
+      Debe incluir procesos de licitación, adjudicación y participación ciudadana.'
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Diseno.Propiedad-Antecedentes-Tec-Req=Verificación
+      y actualización conforme a normativas.
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Cronogramas-Req[0]=De-Actividades
+      (Gantt): Contemplar licitación, adjudicación, tiempos de contrato y control
+      de Unidad Técnica.'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Cronogramas-Req[1]=Financiero:
+      Concordante con Carta Gantt y ficha IDI.'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Documentacion-Tecnica-Req[0]=Doc-1:
+      Antecedentes técnicos requeridos para edificaciones.'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Documentacion-Tecnica-Req[1]=Doc-2:
+      Certificación de aprobación del diseño.'
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.ID=RIS-ARTCULT-2024-ETAPA-EJECUCION-01
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Lista-Equipos-Req=Detallada
+      y con respaldos de costos.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Plan-Contingencia-Req=Especialmente
+      para inmuebles existentes (abarcar funcionamiento, almacenaje, etc.).
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presentacion-Proyecto-Req[0]=Opcion-A:
+      Con Estudio de Preinversión (perfil).'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presentacion-Proyecto-Req[1]=Opcion-B:
+      Con resumen ejecutivo si proviene de etapa de diseño.'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presentacion-Proyecto-Req[2]=Entrega-Obligatoria:
+      Diseño terminado.'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presupuesto-Ejecucion-Req[0]=Item-1:
+      Obras civiles (planilla Excel detallada por partidas y niveles).'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presupuesto-Ejecucion-Req[1]=Item-2:
+      Equipos y equipamiento (incluir cotizaciones).'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presupuesto-Ejecucion-Req[2]=Item-3:
+      Asesorías/Consultorías (si corresponde).'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.Presupuesto-Ejecucion-Req[3]=Item-4:
+      Gastos administrativos.'
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Ejecucion.TDR-Ejecucion-Req=Especificaciones
+      técnicas detalladas.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.Cronogramas-Req=De
+      actividades (Carta Gantt) y financiero.
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.Estudio-Preinversion-Req[0]=Base:
+      Elaborado según "Metodología General de Preparación y Evaluación de Proyectos".'
+    - 'RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.Estudio-Preinversion-Req[1]=Cont:
+      Incluir antecedentes técnicos y consideraciones específicas de edificaciones
+      culturales.'
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.ID=RIS-ARTCULT-2024-ETAPA-PREFACT-FACT-01
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.Presupuesto-Detallado-Req=Incluir
+      consultorías, asesorías, insumos y gastos administrativos (firmado).
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.Programa-Arq-Req=Presentado
+      en planilla Excel, firmado por profesional responsable.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.Propiedad-Terreno-Req=Acreditar
+      con documentación conforme a "Requisitos genéricos sobre las propiedades en
+      que se proyectan edificaciones".
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.Etapa_Prefactibilidad_Factibilidad.TDR-Req=Para
+      contratación de la etapa.
+    - RIS_Arte_Cultura_2024.Ciclo_Vida_Requisitos.ID=RIS-ARTCULT-2024-CICLOVIDA-REQUISITOS-01
+    - RIS_Arte_Cultura_2024.Consideraciones_Transversales.Enfoque-Genero.Req=Integrar
+      lineamientos y orientaciones específicas para asegurar equidad en formulación
+      y ejecución.
+    - RIS_Arte_Cultura_2024.Consideraciones_Transversales.ID=RIS-ARTCULT-2024-CONSIDERACIONES-TRANSV-01
+    - RIS_Arte_Cultura_2024.Consideraciones_Transversales.Riesgo-Desastres.Req-Desde-2024=Aplicar
+      "Metodología Complementaria para evaluación de Riesgo en infraestructura pública".
+    - RIS_Arte_Cultura_2024.Fuente-URL=https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
+    - RIS_Arte_Cultura_2024.ID=RIS-ARTCULT-2024-META-01
+    - 'RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.Acciones-Clave[0]=Accion-1:
+      Creación de nuevos recintos (centros culturales, bibliotecas, museos).'
+    - 'RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.Acciones-Clave[1]=Accion-2:
+      Mejoramiento de infraestructuras existentes para optimizar y ampliar servicio
+      cultural.'
+    - 'RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.Acciones-Clave[2]=Accion-3:
+      Fomento de participación ciudadana en actividades culturales y programas educativos
+      integradores.'
+    - RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.ID=RIS-ARTCULT-2024-LINEAS-INV-01
+    - RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.Politicas-Req=Incorporar
+      diagnósticos que respondan a políticas sectoriales (nacionales, regionales,
+      comunales).
+    - RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.Prioridad=Sectores vulnerables
+      y comunas con baja oferta cultural.
+    - RIS_Arte_Cultura_2024.Lineas_Inversion_Orientaciones.Prop=Incrementar acceso
+      a manifestaciones artísticas y culturales.
+    - RIS_Arte_Cultura_2024.Prop-Doc=Establecer requisitos de información para proyectos
+      de inversión cultural.
+    - Source.Ctx_Required[0]=https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
+    - Source.Primary-Source=kb_gn_010_ris.md (sección RIS-ARTCULT-2024)
+    - Status=Draft
+    - Version=1.0.0
+    - _manifest.compatibility.breaking_changes_from=null
+    - _manifest.compatibility.min_consumer_version=1.0.0
+    - _manifest.dependencies.requires[0].reason=KODA/Spec format compliance
+    - _manifest.dependencies.requires[0].urn=urn:knowledge:koda:core:spec:1.0.0
+    - _manifest.dependencies.requires[1].reason=Transformation methodology reference
+    - _manifest.dependencies.requires[1].urn=urn:knowledge:koda:core:transform:1.0.0
+    - _manifest.federation.license=Institutional Use
+    - _manifest.federation.visibility=internal
+    - _manifest.provenance.created_at=2025-11-28
+    - _manifest.provenance.created_by=FS
+    - _manifest.provenance.last_modified_at=2025-11-28
+    - _manifest.provenance.signature=null
+    - _manifest.resolution.canonical_url=file://knowledge/domains/gn/kb_gn_010_ris_artcult_koda.yml
+    - _manifest.urn=urn:knowledge:gorenuble:gn:ris-artcult:1.0.0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+---
+
+# RIS Arte y Cultura (SNI 2024)
+## ID
+GN-RIS-ARTCULT-2024-01
+
+## Version
+1.0.0
+
+## Status
+Draft
+
+## Human Creator
+FS
+
+## Human Editor
+FS
+
+## Model Collaborator
+KODA-TRANSFORMER
+
+## Creation Date
+2025-11-28
+
+## Modification Date
+2025-11-28
+
+## Ctx
+Requisitos de información para proyectos de inversión cultural que ingresan al Sistema Nacional de Inversiones (SNI), versión 2024.
+
+## Source
+### Primary Source
+kb_gn_010_ris.md (sección RIS-ARTCULT-2024)
+### Ctx Required
+- https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
+
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-GN-RIS-ARTCULT-2024-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+LEXICON (expand before processing):
+  Act->Action, Cause->Cause, Cond->Condition, Cpt->Concept, Ctx->Context,
+  Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
+  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
+  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
+  Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
+  Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
+  Resp->Responsible, Src->Source, Warn->Warning.
+
+REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
+
+LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
+END_LLM_INSTRUCTIONS
+
+
+## RIS Arte Cultura 2024
+### ID
+RIS-ARTCULT-2024-META-01
+### Fuente URL
+https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
+### Prop Doc
+Establecer requisitos de información para proyectos de inversión cultural.
+### Alcance
+#### ID
+RIS-ARTCULT-2024-ALCANCE-01
+#### Aplicabilidad
+Todas las iniciativas de inversión en proyectos culturales.
+#### Foco
+Necesidades culturales y artísticas.
+#### Tipos Iniciativas
+- Tipo-1-Nuevas: Construcción de bibliotecas, museos, centros culturales, centros de formación artística, etc.
+- Tipo-2-Existentes: Reposición, normalización, reparaciones, mejoramientos o adecuaciones sin aumento de m².
+### Lineas Inversion Orientaciones
+#### ID
+RIS-ARTCULT-2024-LINEAS-INV-01
+#### Prop
+Incrementar acceso a manifestaciones artísticas y culturales.
+#### Prioridad
+Sectores vulnerables y comunas con baja oferta cultural.
+#### Acciones Clave
+- Accion-1: Creación de nuevos recintos (centros culturales, bibliotecas, museos).
+- Accion-2: Mejoramiento de infraestructuras existentes para optimizar y ampliar servicio cultural.
+- Accion-3: Fomento de participación ciudadana en actividades culturales y programas educativos integradores.
+#### Politicas Req
+Incorporar diagnósticos que respondan a políticas sectoriales (nacionales, regionales, comunales).
+### Consideraciones Transversales
+#### ID
+RIS-ARTCULT-2024-CONSIDERACIONES-TRANSV-01
+#### Riesgo Desastres
+#### Req Desde 2024
+Aplicar "Metodología Complementaria para evaluación de Riesgo en infraestructura pública".
+#### Enfoque Genero
+#### Req
+Integrar lineamientos y orientaciones específicas para asegurar equidad en formulación y ejecución.
+### Ciclo Vida Requisitos
+#### ID
+RIS-ARTCULT-2024-CICLOVIDA-REQUISITOS-01
+#### Etapa Prefactibilidad Factibilidad
+#### ID
+RIS-ARTCULT-2024-ETAPA-PREFACT-FACT-01
+#### Estudio Preinversion Req
+- Base: Elaborado según "Metodología General de Preparación y Evaluación de Proyectos".
+- Cont: Incluir antecedentes técnicos y consideraciones específicas de edificaciones culturales.
+#### Propiedad Terreno Req
+Acreditar con documentación conforme a "Requisitos genéricos sobre las propiedades en que se proyectan edificaciones".
+#### Programa Arq Req
+Presentado en planilla Excel, firmado por profesional responsable.
+#### TDR Req
+Para contratación de la etapa.
+#### Presupuesto Detallado Req
+Incluir consultorías, asesorías, insumos y gastos administrativos (firmado).
+#### Cronogramas Req
+De actividades (Carta Gantt) y financiero.
+#### Etapa Diseno
+#### ID
+RIS-ARTCULT-2024-ETAPA-DISEÑO-01
+#### Actualizacion Estudio Preinv Req
+Incluir ajustes basados en resultados de etapa anterior.
+#### Propiedad Antecedentes Tec Req
+Verificación y actualización conforme a normativas.
+#### Programa Arq TDR Req
+- Cont: Para contratación del diseño.
+- Detalle: Debe incluir procesos de licitación, adjudicación y participación ciudadana.
+#### Presupuesto Detallado Req
+Considerar gastos de consultorías, asesorías y administrativos.
+#### Cronogramas Req
+De actividades (Carta Gantt) y financiero, integrando todos los procesos del diseño.
+#### Etapa Ejecucion
+#### ID
+RIS-ARTCULT-2024-ETAPA-EJECUCION-01
+#### Presentacion Proyecto Req
+- Opcion-A: Con Estudio de Preinversión (perfil).
+- Opcion-B: Con resumen ejecutivo si proviene de etapa de diseño.
+- Entrega-Obligatoria: Diseño terminado.
+#### Documentacion Tecnica Req
+- Doc-1: Antecedentes técnicos requeridos para edificaciones.
+- Doc-2: Certificación de aprobación del diseño.
+#### TDR Ejecucion Req
+Especificaciones técnicas detalladas.
+#### Presupuesto Ejecucion Req
+- Item-1: Obras civiles (planilla Excel detallada por partidas y niveles).
+- Item-2: Equipos y equipamiento (incluir cotizaciones).
+- Item-3: Asesorías/Consultorías (si corresponde).
+- Item-4: Gastos administrativos.
+#### Lista Equipos Req
+Detallada y con respaldos de costos.
+#### Cronogramas Req
+- De-Actividades (Gantt): Contemplar licitación, adjudicación, tiempos de contrato y control de Unidad Técnica.
+- Financiero: Concordante con Carta Gantt y ficha IDI.
+#### Plan Contingencia Req
+Especialmente para inmuebles existentes (abarcar funcionamiento, almacenaje, etc.).
+### Aspectos Adicionales
+#### ID
+RIS-ARTCULT-2024-ADICIONALES-01
+#### Firma Profesional
+Todo documento de presupuesto debe estar firmado por profesional responsable.
+#### Precios Sociales
+Utilización obligatoria para evaluación social en todas las etapas.
+#### Integracion Ficha IDI
+Asegurar concordancia en tiempos y requerimientos establecidos.
+#### Participacion Ciudadana
+Incluir actividades específicas, especialmente en etapa de diseño.

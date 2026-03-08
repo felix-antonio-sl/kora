@@ -1,0 +1,27 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Metrics",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Scope",
+    "Source",
+    "Status",
+    "Topics",
+    "Version",
+    "Warn",
+    "XRef_Required",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "core/gestion/kb_gn_lean6_core_koda.yml",
+  "sha256": "f6f48ca09c86336ca3b66c0e3bd58dfd4ccb26249407a7ee6dd58cf8d2a277f8"
+}

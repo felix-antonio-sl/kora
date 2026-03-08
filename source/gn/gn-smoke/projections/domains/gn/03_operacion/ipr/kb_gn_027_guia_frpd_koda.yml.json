@@ -1,0 +1,27 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Formulario_FRPD_Application_2025",
+    "Glosario_FRPD",
+    "Guia_Operativa_FRPD_Ñuble_2025",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_027_guia_frpd_koda.yml",
+  "sha256": "4f4808ccddcb30b222213dde102ece5d7c782ef8a25540c58b78bba2c36eeff4"
+}

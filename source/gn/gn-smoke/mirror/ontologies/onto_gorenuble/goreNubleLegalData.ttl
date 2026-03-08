@@ -1,0 +1,288 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# DATOS LEGALES GORE ÑUBLE (ABox)
+# =============================================================================
+
+<https://gorenuble.gob.cl/data/goreNubleLegalData>
+    a owl:Ontology ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleOrgData> ;
+    skos:prefLabel "Datos Legales GORE Ñuble"@es ;
+    skos:definition "Componente de la base de conocimientos (ABox) que instancia el marco jurídico y normativo del GORE, incluyendo leyes, artículos y mandatos legales vinculantes."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE DOCUMENTOS LEGALES
+# =============================================================================
+
+gnubd:_LegalDoc_LOC_GORE
+    a gnub:LegalDocument ;
+    skos:prefLabel "LOC GORE (DFL 1-19.175)"@es ;
+    skos:altLabel "Ley Orgánica Constitucional de Gobiernos Regionales"@es ;
+    skos:definition "Texto refundido, coordinado, sistematizado y actualizado de la Ley N° 19.175 sobre Gobierno y Administración Regional."@es ;
+    gnub:hasURI "https://www.bcn.cl/leychile/navegar?idNorma=243771"^^xsd:anyURI ;
+    .
+
+gnubd:_LegalDoc_Ley21033
+    a gnub:LegalDocument ;
+    skos:prefLabel "Ley 21.033"@es ;
+    skos:altLabel "Ley de Creación de la Región de Ñuble"@es ;
+    skos:definition "Ley que crea la XVI Región de Ñuble y modifica otros cuerpos legales."@es ;
+    gnub:hasURI "https://www.bcn.cl/leychile/navegar?idNorma=1108237"^^xsd:anyURI ;
+    .
+
+gnubd:_LegalDoc_LeyPresupuestos2026
+    a gnub:LegalDocument ;
+    skos:prefLabel "Ley de Presupuestos 2026"@es ;
+    skos:altLabel "Partida 31 GORE"@es ;
+    skos:definition "Ley anual que fija el presupuesto del sector público para el año 2026."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ARTÍCULOS LEGALES (LOC GORE)
+# =============================================================================
+
+gnubd:_Article_LOC_Art16
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "16" ;
+    skos:prefLabel "Art. 16 LOC GORE"@es ;
+    skos:definition "Funciones generales del Gobierno Regional."@es ;
+    .
+
+gnubd:_Article_LOC_Art17
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "17" ;
+    skos:prefLabel "Art. 17 LOC GORE"@es ;
+    skos:definition "Funciones en materia de ordenamiento territorial."@es ;
+    .
+
+gnubd:_Article_LOC_Art18
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "18" ;
+    skos:prefLabel "Art. 18 LOC GORE"@es ;
+    skos:definition "Funciones en materia de fomento de actividades productivas."@es ;
+    .
+
+gnubd:_Article_LOC_Art19
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "19" ;
+    skos:prefLabel "Art. 19 LOC GORE"@es ;
+    skos:definition "Funciones de desarrollo social y cultural."@es ;
+    .
+
+gnubd:_Article_LOC_Art20
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "20" ;
+    skos:prefLabel "Art. 20 LOC GORE"@es ;
+    skos:definition "Atribuciones generales del Gobierno Regional."@es ;
+    .
+
+gnubd:_Article_LOC_Art21bis
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "21 bis" ;
+    skos:prefLabel "Art. 21 bis LOC GORE"@es ;
+    skos:definition "Transferencia de competencias desde el nivel central a gobiernos regionales."@es ;
+    .
+
+gnubd:_Article_LOC_Art2
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LOC_GORE ;
+    gnub:articleNumber "2" ;
+    skos:prefLabel "Art. 2 LOC GORE"@es ;
+    skos:definition "Atribuciones del Delegado Presidencial Regional."@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE MANDATOS LEGALES (ejemplos vinculados)
+# =============================================================================
+
+gnubd:_Mandate_AprobarPresupuestoRegional
+    a gnub:LegalMandate ;
+    skos:prefLabel "Aprobar Presupuesto Regional"@es ;
+    skos:definition "Obligación del GORE de elaborar y aprobar el proyecto de presupuesto regional."@es ;
+    gnub:derivesFromArticle gnubd:_Article_LOC_Art16 ;
+    gnub:binds gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Mandate_AprobarPROT
+    a gnub:LegalMandate ;
+    skos:prefLabel "Aprobar PROT"@es ;
+    skos:definition "Obligación de aprobar el Plan Regional de Ordenamiento Territorial."@es ;
+    gnub:derivesFromArticle gnubd:_Article_LOC_Art17 ;
+    gnub:binds gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Mandate_FomentarTurismo
+    a gnub:LegalMandate ;
+    skos:prefLabel "Fomentar Turismo Regional"@es ;
+    skos:definition "Obligación de aprobar el plan regional de desarrollo turístico."@es ;
+    gnub:derivesFromArticle gnubd:_Article_LOC_Art18 ;
+    gnub:binds gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Mandate_CoordinarSeguridadPublica
+    a gnub:LegalMandate ;
+    skos:prefLabel "Coordinar Seguridad Pública"@es ;
+    skos:definition "Atribución del DPR de velar por la tranquilidad y protección de personas y bienes."@es ;
+    gnub:derivesFromArticle gnubd:_Article_LOC_Art2 ;
+    gnub:binds gnubd:_Org_DPR_Nuble ;
+    .
+
+# Vincular artículos con mandatos (relación inversa)
+gnubd:_Article_LOC_Art16 gnub:establishes gnubd:_Mandate_AprobarPresupuestoRegional .
+gnubd:_Article_LOC_Art17 gnub:establishes gnubd:_Mandate_AprobarPROT .
+gnubd:_Article_LOC_Art18 gnub:establishes gnubd:_Mandate_FomentarTurismo .
+gnubd:_Article_LOC_Art2 gnub:establishes gnubd:_Mandate_CoordinarSeguridadPublica .
+
+
+# =============================================================================
+# INSTANCIAS DE REGLAS PRESUPUESTARIAS (GLOSAS)
+# =============================================================================
+
+gnubd:_Rule_Glosa01_General
+    a gnub:BudgetaryRule ;
+    skos:prefLabel "Glosa 01 FNDR"@es ;
+    skos:definition "Marco general para la asignación y modificación presupuestaria del FNDR."@es ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+gnubd:_Rule_Glosa03_Prohibiciones
+    a gnub:BudgetaryRule ;
+    skos:prefLabel "Glosa 03 Prohibiciones"@es ;
+    skos:definition "Prohibición de usar recursos de inversión para préstamos, gastos en personal o bienes de consumo."@es ;
+    gnub:allowsPersonnelExpenses "false"^^xsd:boolean ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+gnubd:_Rule_Glosa06_Programas
+    a gnub:BudgetaryRule ;
+    skos:prefLabel "Glosa 06 Ejecución Directa"@es ;
+    skos:definition "Regula programas de ejecución directa, estableciendo tope de gastos administrativos."@es ;
+    gist:hasMagnitude gnubd:_Mag_AdminCap_Glosa06 ;
+    gnub:allowsPersonnelExpenses "true"^^xsd:boolean ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+gnubd:_Mag_AdminCap_Glosa06
+    a gist:Magnitude ;
+    gist:hasAspect gnubd:_Aspect_AdminCostCap ;
+    gist:numericValue "0.05"^^xsd:decimal ;
+    gist:hasUnitOfMeasure gnubd:_Unit_Percentage ;
+    .
+
+gnubd:_Rule_Glosa07_Subvencion8
+    a gnub:BudgetaryRule ;
+    skos:prefLabel "Glosa 07 Subvención 8%"@es ;
+    skos:definition "Regula el fondo concursable del 8% e inhabilita nuevas transferencias si existen rendiciones pendientes."@es ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+gnubd:_Rule_Glosa12_FRIL
+    a gnub:BudgetaryRule ;
+    skos:prefLabel "Glosa 12 FRIL"@es ;
+    skos:definition "Exime de RS a proyectos FRIL bajo cierto umbral (4.545 UTM) y prohíbe gastos que no sean obras."@es ;
+    gnub:allowsPersonnelExpenses "false"^^xsd:boolean ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+gnubd:_Rule_C33_Cofinanciamiento
+    a gnub:BudgetaryRule ;
+    skos:prefLabel "Regla Cofinanciamiento C33"@es ;
+    skos:definition "Exige un aporte propio del 20% para adquisición de activos no financieros (ANF) vía Circular 33."@es ;
+    gnub:requiresCoFinancing "true"^^xsd:boolean ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE JERARQUÍA PRESUPUESTARIA 2026
+# =============================================================================
+
+gnubd:_Partida_31
+    a gnub:BudgetPartida ;
+    skos:prefLabel "Partida 31: Gobiernos Regionales"@es ;
+    skos:definition "Partida presupuestaria que agrupa a todos los Gobiernos Regionales."@es ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    .
+
+gnubd:_Chapter_01_GORE
+    a gnub:BudgetChapter ;
+    skos:prefLabel "Capítulo 01"@es ;
+    gist:isDirectPartOf gnubd:_Partida_31 ;
+    .
+
+gnubd:_Program_19_Nuble
+    a gnub:BudgetProgram ;
+    skos:prefLabel "Programa 19: GORE Ñuble"@es ;
+    skos:definition "Programa presupuestario específico para la Región de Ñuble."@es ;
+    gist:isDirectPartOf gnubd:_Chapter_01_GORE ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE MANDATOS DE LICITACIÓN (Art. 6 Ley Presupuestos 2026)
+# =============================================================================
+
+gnubd:_Article_Ley2026_Art06
+    a gnub:LegalArticle ;
+    gnub:belongsToLegalDocument gnubd:_LegalDoc_LeyPresupuestos2026 ;
+    gnub:articleNumber "06" ;
+    skos:prefLabel "Art. 06 Ley Presupuestos 2026"@es ;
+    skos:definition "Establece umbrales para licitación pública de proyectos y estudios."@es ;
+    .
+
+gnubd:_Mandate_PublicTender_Projects
+    a gnub:LegalMandate ;
+    skos:prefLabel "Licitación Pública de Proyectos > 1000 UTM"@es ;
+    skos:definition "Obligación de licitar públicamente proyectos cuya ejecución supere las 1.000 UTM."@es ;
+    gnub:derivesFromArticle gnubd:_Article_Ley2026_Art06 ;
+    gnub:binds gnubd:_Org_GORE_Nuble ;
+    .
+
+gnubd:_Mandate_PublicTender_Studies
+    a gnub:LegalMandate ;
+    skos:prefLabel "Licitación Pública de Estudios > 500 UTM"@es ;
+    skos:definition "Obligación de licitar públicamente estudios básicos que superen las 500 UTM."@es ;
+    gnub:derivesFromArticle gnubd:_Article_Ley2026_Art06 ;
+    gnub:binds gnubd:_Org_GORE_Nuble ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE TAXONOMÍA DE GLOSAS (Movido desde TBox)
+# =============================================================================
+
+gnubd:_GlossType_Numeric
+    a gnub:GlossType ;
+    skos:prefLabel "Glosa Numérica"@es ;
+    skos:definition "Glosa que limita montos o cantidades específicas."@es ;
+    .
+
+gnubd:_GlossType_Textual
+    a gnub:GlossType ;
+    skos:prefLabel "Glosa Textual"@es ;
+    skos:definition "Glosa que establece condiciones, prohibiciones o mandatos en texto."@es ;
+    .
+
+gnubd:_GlossType_Mixed
+    a gnub:GlossType ;
+    skos:prefLabel "Glosa Mixta"@es ;
+    skos:definition "Glosa que combina límites numéricos con condiciones textuales."@es ;
+    .
+
+gnubd:_GlossType_Structural
+    a gnub:GlossType ;
+    skos:prefLabel "Glosa Estructural"@es ;
+    skos:definition "Glosa que define la estructura o desagregación del presupuesto."@es ;
+    .

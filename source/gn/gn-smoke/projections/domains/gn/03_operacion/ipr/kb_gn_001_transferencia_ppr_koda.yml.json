@@ -1,0 +1,30 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Glosario_PPR_Transferencia",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Parte_1_Marco_General_y_Objeto",
+    "Parte_2_Proceso_Postulacion_y_Evaluacion_GORE",
+    "Parte_3_Restricciones_Normativas_y_Financieras",
+    "Parte_4_Formalizacion_Ejecucion_y_Seguimiento",
+    "Parte_5_Formularios_Estandarizados_PPR",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/ipr/kb_gn_001_transferencia_ppr_koda.yml",
+  "sha256": "ecb09f8e8d9ac97425808b6d67cdb20d04dd6eb260c1752568c93674bb924ebb"
+}

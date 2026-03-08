@@ -11,6 +11,7 @@ AGENT_BOOTSTRAP_FILES = ("AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md")
 AGENT_REQUIRED_FILES = AGENT_BOOTSTRAP_FILES + ("config.json",)
 IGNORED_DIRS = {
     ".git",
+    "build",
     "scripts",
     "tests",
     "docs",

@@ -1,0 +1,33 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Dom_01_Estructura_Organizacional",
+    "Dom_02_IPR",
+    "Dom_03_Financiamiento",
+    "Dom_04_Evaluacion",
+    "Dom_05_Aprobacion",
+    "Dom_06_Convenios",
+    "Dom_07_Ejecucion",
+    "Dom_08_Rendicion",
+    "Dom_09_Normativo",
+    "Dom_10_TDE",
+    "Dom_11_Gestion_Operacional_IPR",
+    "Dom_12_Selector_Vias_Financiamiento",
+    "Dom_13_Guia_IDI_SNI",
+    "Dom_14_PPR_Ejecucion_Directa",
+    "Dom_15_FRIL",
+    "Dom_16_FRPD",
+    "Dom_17_Transferencia_PPR",
+    "Dom_18_Concurso_8_Porciento",
+    "Dom_19_Circular_33",
+    "Dom_20_Umbrales_Transversal",
+    "LLM_Parsing_Instructions",
+    "Resumen_Estadistico",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "ontologies/onto_gorenuble/goreNubleCQs_Master.yml",
+  "sha256": "54ff9c22ace906e6a52ad6b0c08c11ff59cadc67a90e4605ba777f2a0e142bb0"
+}

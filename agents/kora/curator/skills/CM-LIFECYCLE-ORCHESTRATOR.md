@@ -25,8 +25,8 @@ Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FO
 
 ### Fase 2: FORGE (checkpoint)
 1. Segun tipo:
-   - Descriptivo → invocar CM-KORAFICATOR (Funtor F).
-   - Prescriptivo → invocar CM-CRYSTALLIZER (Funtor G).
+   - Descriptivo → invocar CM-KORAFICATOR (Funtor K).
+   - Prescriptivo → invocar CM-CRYSTALLIZER (Funtor C).
 2. Presentar artefacto preliminar al usuario.
 3. Esperar confirmacion o iteracion.
 4. Preservar contexto: {artefacto_generado, metricas}.

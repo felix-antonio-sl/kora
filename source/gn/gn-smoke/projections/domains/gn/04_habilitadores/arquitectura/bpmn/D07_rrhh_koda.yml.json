@@ -1,0 +1,26 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Body_MD",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Metadatos_Dominio",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/arquitectura/bpmn/D07_rrhh_koda.yml",
+  "sha256": "6f057ef1f3c5dc59c43b5d51a1f7eac20fd95fcfdc2f0d043c2ee832ca215872"
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Creation-Date",
+    "Ctx",
+    "Grafo_Dependencias",
+    "Human-Creator",
+    "ID",
+    "Indice_Artefactos",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Schema",
+    "Status",
+    "Taxonomia_Conocimiento",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml",
+  "sha256": "7975c99427d63597e7fb85b971e34c34f77b14aa74df25014dded0fb3262afdc"
+}

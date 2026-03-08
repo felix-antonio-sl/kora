@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Ley_de_Presupuestos_Sector_Publico_2026",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml",
+  "sha256": "e6d73c2cb0ef11d1a53185ef7b468f25e8523982d599c293ef1a37397e750414"
+}

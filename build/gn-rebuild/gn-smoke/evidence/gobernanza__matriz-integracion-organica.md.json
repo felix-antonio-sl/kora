@@ -1,0 +1,20 @@
+{
+  "target_path": "gobernanza/matriz-integracion-organica.md",
+  "target_urn": "urn:gn:kb:matriz-integracion-organica",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_composite",
+  "source_paths": [
+    "domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.27,
+  "review_gate": "manual",
+  "skeleton_count": 14,
+  "meat_count": 557,
+  "fat_count": 0,
+  "scope_statement": "Matriz editorial de integracion organica; mantener como artefacto de control.",
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "Indicadores_Nuble",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/02_estrategia/estadisticas/kb_gn_005_indicadores_nuble_koda.yml",
+  "sha256": "bcd4882cf1d06aac30b00810e6e866c7c497ec147f8ee8ddb6c7b3962bbe881e"
+}

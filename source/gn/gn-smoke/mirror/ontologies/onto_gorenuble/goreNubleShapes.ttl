@@ -1,0 +1,246 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# =============================================================================
+# SHACL SHAPES - GORE Ñuble Ontology v2.0
+# =============================================================================
+# Propósito: Validación de datos (ABox) contra restricciones de integridad
+# Fecha: 2026-01-23
+# Auditoría 360°: Cuadrante Sintáctico - Validación de Datos
+# =============================================================================
+
+<https://gorenuble.gob.cl/shapes/goreNubleShapes>
+    a owl:Ontology ;
+    owl:versionIRI <https://gorenuble.gob.cl/shapes/goreNubleShapes/1.0.0> ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    skos:prefLabel "SHACL Shapes GORE Ñuble"@es ;
+    skos:definition "Shapes SHACL para validación de datos de la ontología GORE Ñuble."@es ;
+    dc:creator "KODA-TRANSFORMER" ;
+    dc:date "2026-01-23" ;
+    .
+
+# =============================================================================
+# SHAPE: IPR (Intervención Pública Regional)
+# =============================================================================
+
+gnub:IPRShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:IPR ;
+    rdfs:label "Shape para IPR"@es ;
+    rdfs:comment "Valida que toda IPR tenga los atributos mínimos requeridos."@es ;
+    
+    # Código BIP requerido (identificador único)
+    sh:property [
+        sh:path gnub:codigoBIP ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[0-9]{8}-[0-9]$|^FRIL-[0-9]+$" ;
+        sh:message "IPR debe tener exactamente un código BIP con formato XXXXXXXX-X o FRIL-XXXX"@es ;
+    ] ;
+    
+    # Nombre requerido
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "IPR debe tener un nombre (skos:prefLabel)"@es ;
+    ] ;
+    
+    # Fase IPR requerida
+    sh:property [
+        sh:path gnub:hasIPRPhase ;
+        sh:minCount 1 ;
+        sh:class gnub:IPRPhase ;
+        sh:message "IPR debe estar en una fase del ciclo de vida"@es ;
+    ] ;
+    
+    # Fuente de financiamiento requerida
+    sh:property [
+        sh:path gnub:hasFundingSource ;
+        sh:minCount 1 ;
+        sh:class gnub:FundingSource ;
+        sh:message "IPR debe tener una fuente de financiamiento"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: Convenio GORE (GOREAgreement)
+# =============================================================================
+
+gnub:GOREAgreementShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:GOREAgreement ;
+    rdfs:label "Shape para Convenio GORE"@es ;
+    rdfs:comment "Valida que todo convenio tenga los atributos mínimos requeridos."@es ;
+    
+    # Estado de convenio requerido
+    sh:property [
+        sh:path gnub:hasAgreementState ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class gnub:AgreementState ;
+        sh:message "Convenio debe tener un estado de tramitación"@es ;
+    ] ;
+    
+    # Nombre requerido
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:message "Convenio debe tener un nombre"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: Rendición de Cuentas
+# =============================================================================
+
+gnub:RenditionShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:Rendition ;
+    rdfs:label "Shape para Rendición"@es ;
+    rdfs:comment "Valida que toda rendición tenga los atributos mínimos requeridos."@es ;
+    
+    # Estado de rendición requerido
+    sh:property [
+        sh:path gnub:hasRenditionState ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class gnub:RenditionState ;
+        sh:message "Rendición debe tener un estado"@es ;
+    ] ;
+    
+    # Convenio asociado requerido
+    sh:property [
+        sh:path gnub:rendersFor ;
+        sh:minCount 1 ;
+        sh:class gnub:TransferAgreement ;
+        sh:message "Rendición debe estar asociada a un convenio de transferencia"@es ;
+    ] ;
+    
+    # Entidad que rinde requerida
+    sh:property [
+        sh:path gnub:rendersAccount ;
+        sh:minCount 1 ;
+        sh:class gist:Organization ;
+        sh:message "Rendición debe indicar la entidad ejecutora que rinde"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: Organización
+# =============================================================================
+
+gnub:OrganizationShape
+    a sh:NodeShape ;
+    sh:targetClass gist:Organization ;
+    rdfs:label "Shape para Organización"@es ;
+    rdfs:comment "Valida que toda organización tenga metadatos mínimos."@es ;
+    
+    # Nombre requerido
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:message "Organización debe tener un nombre (skos:prefLabel)"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: División GORE
+# =============================================================================
+
+gnub:DivisionShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:Division ;
+    rdfs:label "Shape para División"@es ;
+    rdfs:comment "Valida que toda división tenga estructura organizacional correcta."@es ;
+    
+    # Debe pertenecer al GORE
+    sh:property [
+        sh:path gist:isDirectPartOf ;
+        sh:minCount 1 ;
+        sh:message "División debe pertenecer a una organización (gist:isDirectPartOf)"@es ;
+    ] ;
+    
+    # Nombre y sigla
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:message "División debe tener nombre completo"@es ;
+    ] ;
+    sh:property [
+        sh:path skos:altLabel ;
+        sh:minCount 1 ;
+        sh:message "División debe tener sigla (skos:altLabel)"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: Acto Administrativo
+# =============================================================================
+
+gnub:AdministrativeActShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:AdministrativeAct ;
+    rdfs:label "Shape para Acto Administrativo"@es ;
+    rdfs:comment "Valida que todo acto administrativo tenga metadatos mínimos."@es ;
+    
+    # Etapa de aprobación
+    sh:property [
+        sh:path gnub:hasApprovalStage ;
+        sh:minCount 1 ;
+        sh:class gnub:ApprovalFlowStage ;
+        sh:message "Acto administrativo debe tener una etapa en el flujo de aprobación"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: Línea Presupuestaria
+# =============================================================================
+
+gnub:BudgetLineShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:BudgetLine ;
+    rdfs:label "Shape para Línea Presupuestaria"@es ;
+    rdfs:comment "Valida que toda línea presupuestaria tenga clasificadores."@es ;
+    
+    # IPR asociada requerida
+    sh:property [
+        sh:path [ sh:inversePath gnub:hasBudgetLine ] ;
+        sh:minCount 1 ;
+        sh:class gnub:IPR ;
+        sh:message "Línea presupuestaria debe estar asociada a una IPR"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# SHAPE: Reference Data - Fuente de Financiamiento
+# =============================================================================
+
+gnub:FundingSourceShape
+    a sh:NodeShape ;
+    sh:targetClass gnub:FundingSource ;
+    rdfs:label "Shape para Fuente de Financiamiento"@es ;
+    
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:message "Fuente de financiamiento debe tener nombre"@es ;
+    ] ;
+    sh:property [
+        sh:path skos:notation ;
+        sh:minCount 1 ;
+        sh:message "Fuente de financiamiento debe tener código (skos:notation)"@es ;
+    ] ;
+    .
+
+# =============================================================================
+# FIN SHACL SHAPES
+# =============================================================================

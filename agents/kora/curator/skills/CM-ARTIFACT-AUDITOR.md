@@ -20,9 +20,9 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 ### Paso 1: Leer y Clasificar
 1. Leer artefacto completo (frontmatter + cuerpo).
 2. Clasificar tipo: descriptivo(KORA/MD) o prescriptivo(KORA/Spec-MD).
-3. Determinar spec rectora: md-spec §8 o spec-md §8.
+3. Determinar spec rectora: md-spec §9 o spec-md §8.
 
-### Paso 2: Checklist KORA/MD (md-spec §8, si descriptivo)
+### Paso 2: Checklist KORA/MD (md-spec §9, si descriptivo)
 
 | # | Check | Criterio | Accion si falla |
 |---|-------|----------|-----------------|
@@ -37,6 +37,8 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 | 9 | Fidelidad | Toda cifra, fecha, excepcion, condicion del original presente | Restaurar informacion perdida |
 | 10 | Estructuras preservadas | Toda lista N items, toda tabla MxK | Restaurar items/filas/columnas |
 | 11 | Tags | Minimo 3 tags semanticos en frontmatter | Agregar tags |
+| 12 | Compresion razonable | CR > 1.5 o justificacion explicita por alta densidad | Re-telegrafizar o documentar densidad |
+| 13 | Catalogo derivado | El artefacto es indexable y resoluble via CLI | Corregir manifest o reindexar |
 
 ### Paso 3: Checklist KORA/Spec-MD (spec-md §8, si prescriptivo)
 
@@ -55,10 +57,11 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 | 11 | Anglicismos controlados | Todo anglicismo: definido en §2, cursiva inicial, o URN | Definir, cursivar o referenciar |
 | 12 | Referencias validas | Todo (urn:...) y [→ Seccion] resuelve | Corregir |
 | 13 | Auto-suficiencia | Conceptos externos definidos inline o referenciados | Agregar definicion |
+| 14 | Enforcement declarado | Toda tabla de validacion nueva declara columna Enforcement | Completar tabla |
 
 ### Paso 4: Calcular Metricas (si aplica)
 - FS (Fidelity Score): % informacion fuente representada en output. Objetivo: 100%.
-- CR (Compression Ratio): caracteres_original / caracteres_kora. Objetivo: >1.0.
+- CR (Compression Ratio): caracteres_original / caracteres_kora. Objetivo: >1.5 o justificacion explicita por alta densidad.
 
 ### Paso 5: Generar Reporte
 

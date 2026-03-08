@@ -30,7 +30,7 @@ _manifest:
 - **Firma:** system_metrics: {deploy_failures: number, pipeline_saturation: number, infra_drift: boolean, observer_heartbeat: boolean} → circuit_status: {breakers_open: CircuitBreaker[], containment_actions: Action[], operator_alert: AlertPayload}
 - **Cuando usar:** S-CIRCUITO. Detectar modos de fallo y activar circuit breakers. Tambien en monitoreo periodico.
 - **Cuando NO usar:** Sistema estable sin indicadores de fallo.
-- **Notas:** Cuatro modos de fallo: cascada deploys (§10.1), saturacion pipeline (§10.2), drift infra (§10.3), fallo observer (§10.4). Contencion automatica; recuperacion requiere Operador.
+- **Notas:** Cuatro modos de fallo: cascada deploys, saturacion pipeline, drift infra, fallo observer. Contencion automatica; recuperacion requiere Operador.
 
 ## system_status
 

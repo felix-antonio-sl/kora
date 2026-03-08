@@ -1,0 +1,685 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# REFERENCE DATA - GORE Ñuble
+# =============================================================================
+# Versión: 1.0.0
+# Fecha: 2026-01-22
+# Fuente: FASE 3/4 KODA-CARTOGRAPHER - Análisis de 818 Historias de Usuario
+# Arquitectura: Capa 2 - ABox (Instancias de Categorías)
+# =============================================================================
+
+<https://gorenuble.gob.cl/data/goreNubleReferenceData>
+    a owl:Ontology ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    owl:versionIRI <https://gorenuble.gob.cl/data/goreNubleReferenceData/1.0.0> ;
+    skos:definition "Datos de referencia (Reference Data) del GORE Ñuble: disciplinas, fases, estados, fuentes de financiamiento, mecanismos y tags."@es ;
+    skos:prefLabel "Reference Data GORE Ñuble"@es ;
+    .
+
+# =============================================================================
+# DISCIPLINAS (12 instancias de gist:Discipline)
+# Fuente: Análisis de 818 Historias de Usuario - FASE 2 MAPEAR
+# =============================================================================
+
+gnubd:_Discipline_FIN
+    a gist:Discipline ;
+    skos:prefLabel "Finanzas y Presupuesto"@es ;
+    skos:altLabel "FIN"@es ;
+    skos:notation "FIN" ;
+    skos:definition "Disciplina que abarca gestión financiera, ejecución presupuestaria, contabilidad gubernamental y tesorería regional."@es ;
+    skos:scopeNote "142 entidades, 42 procesos. Tags clave: presupuesto, contabilidad, tesoreria."@es ;
+    .
+
+gnubd:_Discipline_IPR
+    a gist:Discipline ;
+    skos:prefLabel "Inversión Pública Regional"@es ;
+    skos:altLabel "IPR"@es ;
+    skos:notation "IPR" ;
+    skos:definition "Disciplina del ciclo de vida de proyectos y programas de inversión: formulación, evaluación, priorización, ejecución y cierre."@es ;
+    skos:scopeNote "~85 entidades, 55 procesos. Dominio core del GORE."@es ;
+    .
+
+gnubd:_Discipline_ORG
+    a gist:Discipline ;
+    skos:prefLabel "Organización y Personas"@es ;
+    skos:altLabel "ORG"@es ;
+    skos:notation "ORG" ;
+    skos:definition "Disciplina de gestión organizacional: estructura, funcionarios, roles, RRHH y bienestar."@es ;
+    skos:scopeNote "98 entidades, 20 procesos."@es ;
+    .
+
+gnubd:_Discipline_GOV
+    a gist:Discipline ;
+    skos:prefLabel "Gobernanza Regional"@es ;
+    skos:altLabel "GOV"@es ;
+    skos:notation "GOV" ;
+    skos:definition "Disciplina de gobernanza: Gobernador, CORE, sesiones, acuerdos, transparencia y probidad."@es ;
+    skos:scopeNote "46 entidades, 24 procesos. Normalizado de GOB y GOV."@es ;
+    .
+
+gnubd:_Discipline_NORM
+    a gist:Discipline ;
+    skos:prefLabel "Normativo y Jurídico"@es ;
+    skos:altLabel "NORM"@es ;
+    skos:notation "NORM" ;
+    skos:definition "Disciplina jurídica: actos administrativos, resoluciones, decretos, control de legalidad y sumarios."@es ;
+    skos:scopeNote "58 entidades, 22 procesos."@es ;
+    .
+
+gnubd:_Discipline_LOC
+    a gist:Discipline ;
+    skos:prefLabel "Territorial y Geoespacial"@es ;
+    skos:altLabel "LOC"@es ;
+    skos:notation "LOC" ;
+    skos:definition "Disciplina territorial: comunas, regiones, capas GIS, IDE regional y análisis espacial."@es ;
+    skos:scopeNote "66 entidades (incluye TERR). Consolidado de LOC y TERR."@es ;
+    .
+
+gnubd:_Discipline_PLAN
+    a gist:Discipline ;
+    skos:prefLabel "Planificación Regional"@es ;
+    skos:altLabel "PLAN"@es ;
+    skos:notation "PLAN" ;
+    skos:definition "Disciplina de planificación: ERD, PROT, ARI, indicadores, metas y marco lógico."@es ;
+    skos:scopeNote "42 entidades, 28 procesos."@es ;
+    .
+
+gnubd:_Discipline_SEG
+    a gist:Discipline ;
+    skos:prefLabel "Seguridad y Emergencias"@es ;
+    skos:altLabel "SEG"@es ;
+    skos:notation "SEG" ;
+    skos:definition "Disciplina de seguridad pública: CIES, alertas, emergencias, coordinación policial y GRD."@es ;
+    skos:scopeNote "52 entidades (incluye SAL). Consolidado de SEG y SAL."@es ;
+    .
+
+gnubd:_Discipline_SOC
+    a gist:Discipline ;
+    skos:prefLabel "Desarrollo Social"@es ;
+    skos:altLabel "SOC"@es ;
+    skos:notation "SOC" ;
+    skos:definition "Disciplina social: organizaciones sociales, participación ciudadana, beneficiarios y programas sociales."@es ;
+    skos:scopeNote "52 entidades, 14 procesos."@es ;
+    .
+
+gnubd:_Discipline_SYS
+    a gist:Discipline ;
+    skos:prefLabel "Sistemas e Infraestructura"@es ;
+    skos:altLabel "SYS"@es ;
+    skos:notation "SYS" ;
+    skos:definition "Disciplina tecnológica: logs, usuarios, archivos, eventos, pipelines y DevOps."@es ;
+    skos:scopeNote "138 entidades, 48 procesos. Dominio más grande."@es ;
+    .
+
+gnubd:_Discipline_TDE
+    a gist:Discipline ;
+    skos:prefLabel "Transformación Digital"@es ;
+    skos:altLabel "TDE"@es ;
+    skos:notation "TDE" ;
+    skos:definition "Disciplina de transformación digital del Estado: PISEE, interoperabilidad, trámites digitales y gobernanza TI."@es ;
+    skos:scopeNote "72 entidades, 48 procesos."@es ;
+    .
+
+gnubd:_Discipline_GEST
+    a gist:Discipline ;
+    skos:prefLabel "Gestión y Control"@es ;
+    skos:altLabel "GEST"@es ;
+    skos:notation "GEST" ;
+    skos:definition "Disciplina transversal de gestión: auditoría, control de gestión, mejora continua y PMG."@es ;
+    skos:scopeNote "Transversal a todas las otras disciplinas."@es ;
+    .
+
+# =============================================================================
+# FASES IPR (6 instancias de gnub:IPRPhase)
+# Fuente: Modelo Omega, kb_gn_019_gestion_ipr
+# =============================================================================
+
+gnubd:_IPRPhase_F0
+    a gnub:IPRPhase ;
+    skos:prefLabel "F0 - Postulación"@es ;
+    skos:definition "Fase inicial: ingreso de la iniciativa por el formulador."@es ;
+    skos:notation "F0" ;
+    .
+
+gnubd:_IPRPhase_F1
+    a gnub:IPRPhase ;
+    skos:prefLabel "F1 - Admisibilidad"@es ;
+    skos:definition "Fase de verificación de requisitos formales."@es ;
+    skos:notation "F1" ;
+    .
+
+gnubd:_IPRPhase_F2
+    a gnub:IPRPhase ;
+    skos:prefLabel "F2 - Evaluación"@es ;
+    skos:definition "Fase de análisis técnico-económico."@es ;
+    skos:notation "F2" ;
+    .
+
+gnubd:_IPRPhase_F3
+    a gnub:IPRPhase ;
+    skos:prefLabel "F3 - Priorización"@es ;
+    skos:definition "Fase de priorización y asignación presupuestaria."@es ;
+    skos:notation "F3" ;
+    .
+
+gnubd:_IPRPhase_F4
+    a gnub:IPRPhase ;
+    skos:prefLabel "F4 - Formalización"@es ;
+    skos:definition "Fase de formalización: CDP, convenio, inicio ejecución."@es ;
+    skos:notation "F4" ;
+    .
+
+gnubd:_IPRPhase_F5
+    a gnub:IPRPhase ;
+    skos:prefLabel "F5 - Cierre"@es ;
+    skos:definition "Fase de cierre: recepción conforme, liquidación, rendición final."@es ;
+    skos:notation "F5" ;
+    .
+
+# =============================================================================
+# FUENTES DE FINANCIAMIENTO (8 instancias de gnub:FundingSource)
+# Fuente: kb_gn_011_selector_ipr, GLOSARIO.yml
+# =============================================================================
+
+gnubd:_FundingSource_FNDR
+    a gnub:FundingSource ;
+    skos:prefLabel "FNDR"@es ;
+    skos:definition "Fondo Nacional de Desarrollo Regional - principal fuente de inversión regional."@es ;
+    skos:notation "FNDR" ;
+    .
+
+gnubd:_FundingSource_FRIL
+    a gnub:FundingSource ;
+    skos:prefLabel "FRIL"@es ;
+    skos:definition "Fondo Regional de Iniciativa Local - proyectos municipales menores < 5.000 UTM."@es ;
+    skos:notation "FRIL" ;
+    .
+
+gnubd:_FundingSource_FRPD
+    a gnub:FundingSource ;
+    skos:prefLabel "FRPD"@es ;
+    skos:definition "Fondo Regional de Productividad y Desarrollo (ex-Royalty Minero)."@es ;
+    skos:notation "FRPD" ;
+    .
+
+gnubd:_FundingSource_ISAR
+    a gnub:FundingSource ;
+    skos:prefLabel "ISAR"@es ;
+    skos:definition "Inversiones Sectoriales de Asignación Regional."@es ;
+    skos:notation "ISAR" ;
+    .
+
+gnubd:_FundingSource_FIC
+    a gnub:FundingSource ;
+    skos:prefLabel "FIC"@es ;
+    skos:definition "Fondo de Innovación para la Competitividad."@es ;
+    skos:notation "FIC" ;
+    .
+
+gnubd:_FundingSource_FATC
+    a gnub:FundingSource ;
+    skos:prefLabel "FATC"@es ;
+    skos:definition "Fondo de Apoyo a la Transferencia de Competencias."@es ;
+    skos:notation "FATC" ;
+    .
+
+gnubd:_FundingSource_PROPIR
+    a gnub:FundingSource ;
+    skos:prefLabel "PROPIR"@es ;
+    skos:definition "Programa Público de Inversiones Regionales."@es ;
+    skos:notation "PROPIR" ;
+    .
+
+gnubd:_FundingSource_Sectorial
+    a gnub:FundingSource ;
+    skos:prefLabel "Fondos Sectoriales"@es ;
+    skos:definition "Recursos de Ministerios canalizados vía convenios de programación."@es ;
+    skos:notation "SECT" ;
+    .
+
+# =============================================================================
+# MECANISMOS DE FINANCIAMIENTO (7 instancias de gnub:FinancingMechanism)
+# Fuente: kb_gn_011_selector_ipr, GLOSARIO.yml
+# =============================================================================
+
+gnubd:_Mechanism_SNI
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía SNI General"@es ;
+    skos:definition "Evaluación MDSF para IDI > 5.000 UTM."@es ;
+    skos:notation "SNI" ;
+    .
+
+gnubd:_Mechanism_FRIL
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía FRIL"@es ;
+    skos:definition "Evaluación simplificada GORE para proyectos municipales < 5.000 UTM."@es ;
+    skos:notation "FRIL" ;
+    .
+
+gnubd:_Mechanism_C33
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía Circular 33"@es ;
+    skos:definition "Procedimiento expedito para ANF, estudios del giro y emergencias."@es ;
+    skos:notation "C33" ;
+    .
+
+gnubd:_Mechanism_Glosa06
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía Glosa 06"@es ;
+    skos:definition "Evaluación bifásica DIPRES para PPR de ejecución directa."@es ;
+    skos:notation "G06" ;
+    .
+
+gnubd:_Mechanism_Transferencia
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía Transferencia"@es ;
+    skos:definition "PPR ejecutados por municipios, exentos de evaluación DIPRES."@es ;
+    skos:notation "TRANS" ;
+    .
+
+gnubd:_Mechanism_8Porciento
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía 8% FNDR"@es ;
+    skos:definition "Concurso competitivo de subvenciones para organizaciones sin fines de lucro."@es ;
+    skos:notation "8PCT" ;
+    .
+
+gnubd:_Mechanism_FRPD
+    a gnub:FinancingMechanism ;
+    skos:prefLabel "Vía FRPD"@es ;
+    skos:definition "Concurso FRPD con bifurcación post-selección (CTCI vs Fomento)."@es ;
+    skos:notation "FRPD" ;
+    .
+
+# =============================================================================
+# TIPOS DE ALERTA (6 instancias de gnub:AlertType)
+# Fuente: Análisis de 59 menciones de ALERTA en US
+# =============================================================================
+
+gnubd:_AlertType_Security
+    a gnub:AlertType ;
+    skos:prefLabel "Alerta de Seguridad"@es ;
+    skos:definition "Alerta por evento de seguridad informática o física."@es ;
+    skos:notation "SEC" ;
+    .
+
+gnubd:_AlertType_Threshold
+    a gnub:AlertType ;
+    skos:prefLabel "Alerta de Umbral"@es ;
+    skos:definition "Alerta por superación de umbral predefinido (presupuesto, indicador)."@es ;
+    skos:notation "THR" ;
+    .
+
+gnubd:_AlertType_Expiration
+    a gnub:AlertType ;
+    skos:prefLabel "Alerta de Vencimiento"@es ;
+    skos:definition "Alerta por proximidad de fecha límite (convenio, garantía, plazo)."@es ;
+    skos:notation "EXP" ;
+    .
+
+gnubd:_AlertType_Compliance
+    a gnub:AlertType ;
+    skos:prefLabel "Alerta de Cumplimiento"@es ;
+    skos:definition "Alerta por incumplimiento normativo o de compromisos."@es ;
+    skos:notation "CMP" ;
+    .
+
+gnubd:_AlertType_Operational
+    a gnub:AlertType ;
+    skos:prefLabel "Alerta Operacional"@es ;
+    skos:definition "Alerta de sistemas y operaciones (error, indisponibilidad)."@es ;
+    skos:notation "OPS" ;
+    .
+
+gnubd:_AlertType_Reputational
+    a gnub:AlertType ;
+    skos:prefLabel "Alerta Reputacional"@es ;
+    skos:definition "Alerta por riesgo de imagen institucional."@es ;
+    skos:notation "REP" ;
+    .
+
+# =============================================================================
+# SEVERIDADES DE ALERTA (5 instancias de gist:Category)
+# =============================================================================
+
+gnubd:_Severity_Critical
+    a gist:Category ;
+    skos:prefLabel "Crítica"@es ;
+    skos:definition "Severidad máxima: requiere acción inmediata."@es ;
+    skos:notation "P1" ;
+    .
+
+gnubd:_Severity_High
+    a gist:Category ;
+    skos:prefLabel "Alta"@es ;
+    skos:definition "Severidad alta: requiere atención prioritaria."@es ;
+    skos:notation "P2" ;
+    .
+
+gnubd:_Severity_Medium
+    a gist:Category ;
+    skos:prefLabel "Media"@es ;
+    skos:definition "Severidad media: requiere atención programada."@es ;
+    skos:notation "P3" ;
+    .
+
+gnubd:_Severity_Low
+    a gist:Category ;
+    skos:prefLabel "Baja"@es ;
+    skos:definition "Severidad baja: atención cuando sea posible."@es ;
+    skos:notation "P4" ;
+    .
+
+gnubd:_Severity_Info
+    a gist:Category ;
+    skos:prefLabel "Informativa"@es ;
+    skos:definition "Solo informativa: no requiere acción."@es ;
+    skos:notation "P5" ;
+    .
+
+# =============================================================================
+# TAGS PRIORIZADOS (Top 50 de 2,002 - instancias de gist:Tag)
+# Fuente: _taxonomia_tags.md - Ordenados por frecuencia
+# =============================================================================
+
+gnubd:_Tag_arquetipo a gist:Tag ; skos:prefLabel "arquetipo"@es .
+gnubd:_Tag_rrhh a gist:Tag ; skos:prefLabel "rrhh"@es .
+gnubd:_Tag_transparencia a gist:Tag ; skos:prefLabel "transparencia"@es .
+gnubd:_Tag_trazabilidad a gist:Tag ; skos:prefLabel "trazabilidad"@es .
+gnubd:_Tag_alerta a gist:Tag ; skos:prefLabel "alerta"@es .
+gnubd:_Tag_auditoria a gist:Tag ; skos:prefLabel "auditoría"@es .
+gnubd:_Tag_automatizacion a gist:Tag ; skos:prefLabel "automatización"@es .
+gnubd:_Tag_cumplimiento a gist:Tag ; skos:prefLabel "cumplimiento"@es .
+gnubd:_Tag_cies a gist:Tag ; skos:prefLabel "cies"@es .
+gnubd:_Tag_presupuesto a gist:Tag ; skos:prefLabel "presupuesto"@es .
+gnubd:_Tag_interoperabilidad a gist:Tag ; skos:prefLabel "interoperabilidad"@es .
+gnubd:_Tag_convenio a gist:Tag ; skos:prefLabel "convenio"@es .
+gnubd:_Tag_monitoreo a gist:Tag ; skos:prefLabel "monitoreo"@es .
+gnubd:_Tag_koda a gist:Tag ; skos:prefLabel "koda"@es .
+gnubd:_Tag_contabilidad a gist:Tag ; skos:prefLabel "contabilidad"@es .
+gnubd:_Tag_probidad a gist:Tag ; skos:prefLabel "probidad"@es .
+gnubd:_Tag_seguridad a gist:Tag ; skos:prefLabel "seguridad"@es .
+gnubd:_Tag_core a gist:Tag ; skos:prefLabel "core"@es .
+gnubd:_Tag_bienestar a gist:Tag ; skos:prefLabel "bienestar"@es .
+gnubd:_Tag_gobernanza a gist:Tag ; skos:prefLabel "gobernanza"@es .
+gnubd:_Tag_prevencion a gist:Tag ; skos:prefLabel "prevención"@es .
+gnubd:_Tag_integridad a gist:Tag ; skos:prefLabel "integridad"@es .
+gnubd:_Tag_cgr a gist:Tag ; skos:prefLabel "cgr"@es .
+gnubd:_Tag_checklist a gist:Tag ; skos:prefLabel "checklist"@es .
+gnubd:_Tag_gobernador a gist:Tag ; skos:prefLabel "gobernador"@es .
+gnubd:_Tag_infraestructura a gist:Tag ; skos:prefLabel "infraestructura"@es .
+gnubd:_Tag_municipios a gist:Tag ; skos:prefLabel "municipios"@es .
+gnubd:_Tag_inversion_publica a gist:Tag ; skos:prefLabel "inversión-pública"@es .
+gnubd:_Tag_seremi a gist:Tag ; skos:prefLabel "seremi"@es .
+gnubd:_Tag_tesoreria a gist:Tag ; skos:prefLabel "tesorería"@es .
+gnubd:_Tag_logs a gist:Tag ; skos:prefLabel "logs"@es .
+gnubd:_Tag_inventario a gist:Tag ; skos:prefLabel "inventario"@es .
+gnubd:_Tag_cumplimiento_legal a gist:Tag ; skos:prefLabel "cumplimiento-legal"@es .
+gnubd:_Tag_fomento_productivo a gist:Tag ; skos:prefLabel "fomento-productivo"@es .
+gnubd:_Tag_mejora_continua a gist:Tag ; skos:prefLabel "mejora-continua"@es .
+gnubd:_Tag_validacion a gist:Tag ; skos:prefLabel "validación"@es .
+gnubd:_Tag_seguridad_publica a gist:Tag ; skos:prefLabel "seguridad-pública"@es .
+gnubd:_Tag_compromisos a gist:Tag ; skos:prefLabel "compromisos"@es .
+gnubd:_Tag_emergencias a gist:Tag ; skos:prefLabel "emergencias"@es .
+gnubd:_Tag_calidad a gist:Tag ; skos:prefLabel "calidad"@es .
+gnubd:_Tag_fiscalizacion a gist:Tag ; skos:prefLabel "fiscalización"@es .
+gnubd:_Tag_eficiencia a gist:Tag ; skos:prefLabel "eficiencia"@es .
+gnubd:_Tag_consejo_regional a gist:Tag ; skos:prefLabel "consejo-regional"@es .
+gnubd:_Tag_evaluacion a gist:Tag ; skos:prefLabel "evaluación"@es .
+gnubd:_Tag_devops a gist:Tag ; skos:prefLabel "devops"@es .
+gnubd:_Tag_sigfe a gist:Tag ; skos:prefLabel "sigfe"@es .
+gnubd:_Tag_resiliencia a gist:Tag ; skos:prefLabel "resiliencia"@es .
+gnubd:_Tag_dipres a gist:Tag ; skos:prefLabel "dipres"@es .
+gnubd:_Tag_incidentes a gist:Tag ; skos:prefLabel "incidentes"@es .
+gnubd:_Tag_transformacion_digital a gist:Tag ; skos:prefLabel "transformación-digital"@es .
+
+# =============================================================================
+# TIPOS DE CONVENIO (6 instancias de gnub:AgreementType)
+# =============================================================================
+
+gnubd:_AgreementType_Transfer
+    a gnub:AgreementType ;
+    skos:prefLabel "Convenio de Transferencia"@es ;
+    skos:definition "Convenio para transferencia de recursos a entidad ejecutora."@es ;
+    skos:notation "TRANS" ;
+    .
+
+gnubd:_AgreementType_Mandate
+    a gnub:AgreementType ;
+    skos:prefLabel "Convenio Mandato"@es ;
+    skos:definition "Convenio donde GORE encarga ejecución a tercero técnico."@es ;
+    skos:notation "MAND" ;
+    .
+
+gnubd:_AgreementType_Programming
+    a gnub:AgreementType ;
+    skos:prefLabel "Convenio de Programación"@es ;
+    skos:definition "Acuerdo plurianual GORE-Ministerio."@es ;
+    skos:notation "PROG" ;
+    .
+
+gnubd:_AgreementType_Framework
+    a gnub:AgreementType ;
+    skos:prefLabel "Convenio Marco"@es ;
+    skos:definition "Convenio general que establece condiciones para convenios específicos."@es ;
+    skos:notation "MARCO" ;
+    .
+
+gnubd:_AgreementType_Collaboration
+    a gnub:AgreementType ;
+    skos:prefLabel "Convenio de Colaboración"@es ;
+    skos:definition "Convenio para colaboración interinstitucional."@es ;
+    skos:notation "COLAB" ;
+    .
+
+gnubd:_AgreementType_Interinstitutional
+    a gnub:AgreementType ;
+    skos:prefLabel "Convenio Interinstitucional"@es ;
+    skos:definition "Convenio entre instituciones públicas."@es ;
+    skos:notation "INTER" ;
+    .
+
+# =============================================================================
+# ESTADOS DE CONVENIO (5 instancias de gnub:AgreementState)
+# =============================================================================
+
+gnubd:_AgreementState_Draft
+    a gnub:AgreementState ;
+    skos:prefLabel "Borrador"@es ;
+    skos:definition "Convenio en elaboración."@es ;
+    skos:notation "DRAFT" ;
+    .
+
+gnubd:_AgreementState_Reviewed
+    a gnub:AgreementState ;
+    skos:prefLabel "Visado"@es ;
+    skos:definition "Convenio con visación jurídica."@es ;
+    skos:notation "VISA" ;
+    .
+
+gnubd:_AgreementState_Signed
+    a gnub:AgreementState ;
+    skos:prefLabel "Firmado"@es ;
+    skos:definition "Convenio firmado por las partes."@es ;
+    skos:notation "SIGN" ;
+    .
+
+gnubd:_AgreementState_TdRPending
+    a gnub:AgreementState ;
+    skos:prefLabel "TdR Pendiente"@es ;
+    skos:definition "Convenio en Toma de Razón CGR."@es ;
+    skos:notation "TDR" ;
+    .
+
+gnubd:_AgreementState_Formalized
+    a gnub:AgreementState ;
+    skos:prefLabel "Formalizado"@es ;
+    skos:definition "Convenio totalmente tramitado y vigente."@es ;
+    skos:notation "FORM" ;
+    .
+
+# =============================================================================
+# ESTADOS DE RENDICIÓN (5 instancias de gnub:AccountabilityState)
+# =============================================================================
+
+gnubd:_AccountabilityState_Pending
+    a gnub:AccountabilityState ;
+    skos:prefLabel "Pendiente"@es ;
+    skos:definition "Rendición no iniciada."@es ;
+    skos:notation "PEND" ;
+    .
+
+gnubd:_AccountabilityState_InReview
+    a gnub:AccountabilityState ;
+    skos:prefLabel "En Revisión"@es ;
+    skos:definition "Rendición en proceso de revisión."@es ;
+    skos:notation "REV" ;
+    .
+
+gnubd:_AccountabilityState_Observed
+    a gnub:AccountabilityState ;
+    skos:prefLabel "Observada"@es ;
+    skos:definition "Rendición con observaciones por subsanar."@es ;
+    skos:notation "OBS" ;
+    .
+
+gnubd:_AccountabilityState_Approved
+    a gnub:AccountabilityState ;
+    skos:prefLabel "Aprobada"@es ;
+    skos:definition "Rendición aprobada satisfactoriamente."@es ;
+    skos:notation "APR" ;
+    .
+
+gnubd:_AccountabilityState_Rejected
+    a gnub:AccountabilityState ;
+    skos:prefLabel "Rechazada"@es ;
+    skos:definition "Rendición rechazada definitivamente."@es ;
+    skos:notation "REJ" ;
+    .
+
+# =============================================================================
+# RESULTADOS DE EVALUACIÓN (6 instancias de gnub:EvaluationResult)
+# =============================================================================
+
+gnubd:_EvalResult_RS
+    a gnub:EvaluationResult ;
+    skos:prefLabel "RS - Rentabilidad Social"@es ;
+    skos:definition "Recomendación favorable MDSF."@es ;
+    skos:notation "RS" ;
+    .
+
+gnubd:_EvalResult_FI
+    a gnub:EvaluationResult ;
+    skos:prefLabel "FI - Falta de Información"@es ;
+    skos:definition "Evaluación incompleta por falta de antecedentes."@es ;
+    skos:notation "FI" ;
+    .
+
+gnubd:_EvalResult_OT
+    a gnub:EvaluationResult ;
+    skos:prefLabel "OT - Observaciones Técnicas"@es ;
+    skos:definition "Evaluación con observaciones por subsanar."@es ;
+    skos:notation "OT" ;
+    .
+
+gnubd:_EvalResult_RF
+    a gnub:EvaluationResult ;
+    skos:prefLabel "RF - Recomendado Favorablemente"@es ;
+    skos:definition "PPR con evaluación DIPRES favorable."@es ;
+    skos:notation "RF" ;
+    .
+
+gnubd:_EvalResult_ITF
+    a gnub:EvaluationResult ;
+    skos:prefLabel "ITF - Informe Técnico Favorable"@es ;
+    skos:definition "PPR con evaluación GORE favorable (transferencia)."@es ;
+    skos:notation "ITF" ;
+    .
+
+gnubd:_EvalResult_AD
+    a gnub:EvaluationResult ;
+    skos:prefLabel "AD - Admisible"@es ;
+    skos:definition "Proyecto FRIL admisible para financiamiento."@es ;
+    skos:notation "AD" ;
+    .
+
+# =============================================================================
+# TIPOS DE DOCUMENTO (REM-007 - para alignment con TDE)
+# =============================================================================
+
+gnubd:_DocType_Resolution
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución"@es , "Resolution"@en ;
+    skos:definition "Acto administrativo que resuelve un procedimiento. Medio principal de formalización según Ley 19.880."@es ;
+    skos:exactMatch <https://datos.gob.cl/ns/data/tde/_TipoDocumentoElectronico_resolucion> ;
+    skos:note "Fundamento: Art. 3, Ley N° 19.880. Los actos de los GORE se dictan bajo esta forma."@es ;
+    .
+
+gnubd:_DocType_Res_Modification
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución de Modificación"@es ;
+    skos:definition "Resolución que modifica un acto administrativo previo o un convenio vigente."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    .
+
+gnubd:_DocType_Res_Rectification
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución de Rectificación"@es ;
+    skos:definition "Resolución que aclara puntos dudosos o corrige errores materiales, de hecho o aritméticos."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    skos:note "Fundamento: Art. 62, Ley N° 19.880. No puede alterar el fondo de lo decidido."@es ;
+    .
+
+gnubd:_DocType_Res_Rescission
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución de Término (Resciliación)"@es ;
+    skos:definition "Resolución que formaliza el término de un convenio por mutuo acuerdo o causas contractuales."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    .
+
+gnubd:_DocType_Res_Revocation
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución de Revocación/Invalidación"@es ;
+    skos:definition "Resolución que retira un acto previo por razones de mérito (revocación) o ilegalidad (invalidación)."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    skos:note "Fundamento: Art. 53 (Invalidación) y Art. 61 (Revocación), Ley N° 19.880."@es ;
+    .
+
+gnubd:_DocType_Res_Appeal_Resolution
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución de Recurso Administrativo"@es ;
+    skos:definition "Resolución que resuelve un recurso de reposición o jerárquico interpuesto contra un acto previo."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    skos:note "Fundamento: Art. 59, Ley N° 19.880."@es ;
+    .
+
+gnubd:_DocType_Decree
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Decreto"@es , "Decree"@en ;
+    skos:definition "Acto administrativo del Gobernador Regional."@es ;
+    .
+
+gnubd:_DocType_Agreement
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Convenio"@es , "Agreement"@en ;
+    skos:definition "Documento que formaliza un acuerdo entre partes."@es ;
+    .
+
+gnubd:_DocType_Report
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Informe"@es , "Report"@en ;
+    skos:definition "Documento técnico de análisis o evaluación."@es ;
+    skos:exactMatch <https://datos.gob.cl/ns/data/tde/_TipoDocumentoElectronico_informe> ;
+    .
+
+# =============================================================================
+# FIN REFERENCE DATA
+# =============================================================================

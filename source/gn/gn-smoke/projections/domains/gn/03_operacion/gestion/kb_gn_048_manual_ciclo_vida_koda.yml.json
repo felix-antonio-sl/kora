@@ -1,0 +1,29 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Authoritative-Source",
+    "Creation-Date",
+    "Ctx",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Manual_3_1_Ciclo_de_Vida_del_Funcionario",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Referencias_Cruzadas",
+    "Source-Hierarchy",
+    "Source_ID",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/03_operacion/gestion/kb_gn_048_manual_ciclo_vida_koda.yml",
+  "sha256": "0a95c3718cf50db25b12eec303d32a07148c52053b672fcfde7c78632a08238c"
+}

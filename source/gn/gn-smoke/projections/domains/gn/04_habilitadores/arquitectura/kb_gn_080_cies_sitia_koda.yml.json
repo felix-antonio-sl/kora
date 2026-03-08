@@ -1,0 +1,30 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "AI-Remediator",
+    "Beneficios_Para_Region",
+    "Componentes_Clave",
+    "Creation-Date",
+    "Ctx",
+    "Descripcion_General",
+    "Format",
+    "Glosario_Conceptos_Clave",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Objetivos",
+    "Sostenibilidad_y_Modelo_Gestion",
+    "Source",
+    "Status",
+    "Version",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml",
+  "sha256": "2e65308d557054d6aaac05e2bc0f238dc5cd5c29391108605cf5827bd3ed8796"
+}

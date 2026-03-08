@@ -1,0 +1,20 @@
+{
+  "target_path": "gobernanza/vision-desarrollo-nuble.md",
+  "target_urn": "urn:gn:kb:vision-desarrollo-nuble",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_direct",
+  "source_paths": [
+    "domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml"
+  ],
+  "fs": 100,
+  "cr": 1.08,
+  "review_gate": "auto",
+  "skeleton_count": 17,
+  "meat_count": 217,
+  "fat_count": 0,
+  "scope_statement": null,
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

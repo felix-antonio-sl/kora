@@ -1,0 +1,20 @@
+{
+  "target_path": "gobernanza/glosario-ipr-consolidado.md",
+  "target_urn": "urn:gn:kb:glosario-ipr-consolidado",
+  "run_id": "gn-smoke",
+  "transform_class": "korafy_composite",
+  "source_paths": [
+    "domains/gn/03_operacion/ipr/otroglosario.yml"
+  ],
+  "fs": 100,
+  "cr": 1.14,
+  "review_gate": "manual",
+  "skeleton_count": 3,
+  "meat_count": 888,
+  "fat_count": 0,
+  "scope_statement": "Glosario consolidado IPR; requiere verificacion terminologica.",
+  "expected_sections": [
+    "Contenido"
+  ],
+  "non_equivalence_decisions": []
+}

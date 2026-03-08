@@ -1,0 +1,27 @@
+{
+  "kind": "structured",
+  "facts": [],
+  "skeleton": [
+    "Conceptos_Referenciados_sin_Desarrollo_Explicito_en_Fuente",
+    "Creation-Date",
+    "Ctx",
+    "Human-Creator",
+    "Human-Editor",
+    "ID",
+    "LLM_Parsing_Instructions",
+    "Model-Collaborator",
+    "Modification-Date",
+    "Primary-Source",
+    "Propuesta_Programatica_Gobernador_Oscar_Crisostomo_2025_2029",
+    "Ref-STS-Guide",
+    "Status",
+    "Version",
+    "Vision_Nuble_Inteligente",
+    "Vision_de_Desarrollo_GORE_Nuble",
+    "_manifest"
+  ],
+  "meat_count": 0,
+  "fat_count": 0,
+  "path": "domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml",
+  "sha256": "f986014128c781292a4897ae182c94b4d373de340eb95ff2052a748135eb91dd"
+}
