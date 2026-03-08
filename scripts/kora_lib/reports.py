@@ -2,6 +2,7 @@ import json
 
 from .artifacts import load_yaml_safe
 from .config import AGENT_BOOTSTRAP_FILES, CATALOG_PATH, GENERATED_DOCS_DIR
+from .contracts import build_operating_core_payload, render_operating_core_markdown
 from .fxsl_cat import write_fxsl_cat_ledger_docs
 from .graph import build_graph_payload
 from .workspaces import get_workspace_missing_files, iter_agent_workspaces
@@ -106,10 +107,21 @@ def write_generated_graph_docs():
     return payload, json_path
 
 
+def write_generated_operating_core_docs():
+    GENERATED_DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    payload = build_operating_core_payload()
+    json_path = GENERATED_DOCS_DIR / "operating-core-contracts.json"
+    md_path = GENERATED_DOCS_DIR / "operating-core-contracts.md"
+    json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    md_path.write_text(render_operating_core_markdown(payload), encoding="utf-8")
+    return payload, json_path, md_path
+
+
 def sync_generated_docs():
     stats_payload = compute_stats_payload()
     stats_json_path, stats_md_path = write_generated_stats_docs(stats_payload)
     graph_payload, graph_json_path = write_generated_graph_docs()
+    contracts_payload, contracts_json_path, contracts_md_path = write_generated_operating_core_docs()
     fxsl_payload, fxsl_json_path, fxsl_md_path = write_fxsl_cat_ledger_docs(GENERATED_DOCS_DIR)
     return {
         "stats": {
@@ -120,6 +132,11 @@ def sync_generated_docs():
         "graph": {
             "payload": graph_payload,
             "json_path": graph_json_path,
+        },
+        "operating_core": {
+            "payload": contracts_payload,
+            "json_path": contracts_json_path,
+            "md_path": contracts_md_path,
         },
         "fxsl_cat": {
             "payload": fxsl_payload,

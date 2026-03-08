@@ -49,5 +49,7 @@ def cmd_sync_docs():
     print(f"  {outputs['stats']['json_path'].relative_to(KORA_ROOT)}")
     print(f"  {outputs['stats']['md_path'].relative_to(KORA_ROOT)}")
     print(f"  {outputs['graph']['json_path'].relative_to(KORA_ROOT)}")
+    print(f"  {outputs['operating_core']['json_path'].relative_to(KORA_ROOT)}")
+    print(f"  {outputs['operating_core']['md_path'].relative_to(KORA_ROOT)}")
     print(f"  {outputs['fxsl_cat']['json_path'].relative_to(KORA_ROOT)}")
     print(f"  {outputs['fxsl_cat']['md_path'].relative_to(KORA_ROOT)}")

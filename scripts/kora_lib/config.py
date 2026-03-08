@@ -136,6 +136,27 @@ COHORT_NAMESPACE_GROUPS = {
 COHORT_WORKSPACE_OVERRIDES = {
     "meta-kora": {"guardian", "forgemaster", "curator", "custodio", "clawmaster", "taskmaster"},
 }
+OPERATING_CORE_COHORTS = {
+    "kora": (
+        "kora/forgemaster",
+        "kora/curator",
+        "kora/custodio",
+    ),
+    "dev": (
+        "dev/planner",
+        "dev/coder",
+        "dev/reviewer",
+        "dev/sentinel",
+    ),
+    "ops": (
+        "ops/orquestador-swarm",
+        "ops/verificador",
+        "ops/security",
+    ),
+    "domain_canary": (
+        "gn/goreologo",
+    ),
+}
 SEMANTIC_TOOL_DOC_MARKERS = (
     "**Firma:**",
     "**Cuando usar:**",
