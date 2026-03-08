@@ -4,12 +4,11 @@ from dataclasses import asdict, dataclass
 from functools import lru_cache
 
 from .config import KORA_ROOT, OPERATING_CORE_COHORTS
-from .workspaces import extract_cm_refs
+from .workspaces import extract_cm_refs, extract_workspace_tokens
 
 
 STATE_LINE_PATTERN = re.compile(r"^\d+\.\s+STATE:\s+(S-[A-Z0-9-]+)\s*(?:->|→)\s*ACT:\s*(.+)$")
 RULE_LINE_PATTERN = re.compile(r"^\s*-\s*(Allowed|Forbidden|Rejection)\s*:\s*(.+)$", re.MULTILINE)
-AGENT_TOKEN_PATTERN = re.compile(r"\b([a-z0-9-]+/[A-Za-z0-9_-]+)\b")
 SUB_AGENT_PATTERN = re.compile(r"^\s*-\s*Sub-agente:\s*([a-z0-9-]+/[A-Za-z0-9_-]+)", re.MULTILINE)
 TOOL_SIGNATURE_PATTERN = re.compile(r"\*\*Firma:\*\*\s*(.+)")
 EVIDENCE_PATTERNS = (
@@ -107,11 +106,14 @@ def parse_rule_field(agents_text, label):
 
 
 def extract_targets_from_text(text, self_workspace):
-    targets = set()
-    for route in AGENT_TOKEN_PATTERN.findall(text):
-        if route != self_workspace:
-            targets.add(route)
-    return sorted(targets)
+    return sorted(extract_workspace_tokens(text, self_workspace=self_workspace))
+
+
+def get_section_by_keyword(content, keyword):
+    for heading, body in split_markdown_sections(content).items():
+        if keyword.lower() in heading.lower():
+            return body
+    return ""
 
 
 def extract_evidence_lines(*texts):
@@ -168,13 +170,14 @@ def load_workspace_contract(workspace_ref):
     allowed_line = parse_rule_field(agents_text, "Allowed")
     forbidden_line = parse_rule_field(agents_text, "Forbidden")
     rejection_line = parse_rule_field(agents_text, "Rejection")
+    wiring_text = get_section_by_keyword(agents_text, "Wiring")
 
     route_targets = set(extract_targets_from_text("\n".join([allowed_line, forbidden_line, rejection_line]), workspace_ref))
     sub_agents = sorted(set(SUB_AGENT_PATTERN.findall(agents_text)))
     handoff_targets = sorted(
         set(sub_agents)
         | set(route_targets)
-        | set(extract_targets_from_text(agents_text, workspace_ref))
+        | set(extract_targets_from_text(wiring_text, workspace_ref))
     )
     evidence_lines = extract_evidence_lines(agents_text, tools_text)
     report_lines = [

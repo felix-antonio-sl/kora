@@ -81,13 +81,14 @@ def split_tool_sections(content):
         stripped = line.strip()
         if stripped.startswith("```"):
             in_code_block = not in_code_block
+            continue
         if not in_code_block and stripped.startswith("## "):
             if current_heading is not None:
                 sections[current_heading] = "\n".join(current_lines).strip()
             current_heading = stripped[3:].strip()
             current_lines = []
             continue
-        if current_heading is not None:
+        if current_heading is not None and not in_code_block:
             current_lines.append(line)
 
     if current_heading is not None:
@@ -102,7 +103,7 @@ def validate_tools_semantics(content, valid_tool_names):
         if tool_name in LOW_LEVEL_RUNTIME_HINTS:
             failures.append(f"tool '{tool_name}' usa un permiso runtime crudo como interfaz semantica")
         section_body = sections.get(tool_name, "")
-        if section_body and not any(marker in section_body for marker in SEMANTIC_TOOL_DOC_MARKERS):
+        if not any(marker in section_body for marker in SEMANTIC_TOOL_DOC_MARKERS):
             failures.append(f"tool '{tool_name}' carece de documentacion semantica canonica")
     return failures
 
@@ -221,7 +222,7 @@ def validate_workspace_semantics(workspace_dir, config_data, valid_tool_names):
     if tools_path.exists():
         tools_text = tools_path.read_text(encoding="utf-8")
         failures.extend((f"TOOLS: {item}" for item in validate_tools_semantics(tools_text, valid_tool_names)))
-    if config_data:
+    if config_data is not None:
         failures.extend((f"CONFIG: {item}" for item in validate_config_semantics(config_data, valid_tool_names)))
 
     kb_texts = []
@@ -279,7 +280,7 @@ def cmd_validate(profile="transitional", cohort=None):
             issue_counts["invalid_json"] += 1
             workspace_ok = False
 
-        if config_data and profile != "legacy":
+        if config_data is not None and profile != "legacy":
             try:
                 jsonschema.validate(instance=config_data, schema=config_schema)
             except jsonschema.exceptions.ValidationError as exc:
@@ -322,7 +323,7 @@ def cmd_validate(profile="transitional", cohort=None):
                     workspace_ok = False
 
         declared_allow = []
-        if config_data:
+        if config_data is not None:
             declared_allow = config_data.get("tools", {}).get("allow", [])
         if profile != "legacy" and (valid_tool_names or declared_allow):
             if set(valid_tool_names) != set(declared_allow):

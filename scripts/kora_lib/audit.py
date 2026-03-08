@@ -1,7 +1,7 @@
 from .catalog import build_catalog_lookup, load_catalog
 from .config import KORA_ROOT
 from .graph import build_reference_graph
-from .workspaces import fragment_exists, workspace_exists_from_urn
+from .workspaces import fragment_exists
 
 
 def cmd_health(strict=False):
@@ -30,21 +30,6 @@ def cmd_health(strict=False):
                 continue
 
             if edge.target not in known_urns:
-                if workspace_exists_from_urn(edge.target):
-                    if edge.fragment:
-                        target_dir = (
-                            KORA_ROOT
-                            / "agents"
-                            / edge.target.split(":")[1]
-                            / edge.target.split(":")[3]
-                        )
-                        if not fragment_exists(target_dir / "AGENTS.md", edge.fragment):
-                            print(
-                                f"[BROKEN-FRAGMENT] In {edge.source.relative_to(KORA_ROOT)}: {edge.target}#{edge.fragment}"
-                            )
-                            broken_fragments += 1
-                    continue
-
                 label = "CONFIG" if edge.kind == "AllowsKB" else "BROKEN"
                 print(f"[{label}] In {edge.source.relative_to(KORA_ROOT)}: {edge.target}")
                 if edge.kind == "AllowsKB":

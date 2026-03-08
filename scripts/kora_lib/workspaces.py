@@ -11,6 +11,14 @@ from .config import (
     TOOL_IDENTIFIER_PATTERN,
 )
 
+WORKSPACE_REF_PATTERN = re.compile(r"\b([a-z0-9-]+/[A-Za-z0-9_-]+)\b")
+EXPLICIT_ID_PATTERN_TEMPLATE = r"\bID:\s*{fragment}\b"
+TABLE_ANCHOR_PATTERN_TEMPLATE = r"^\|\s*{fragment}\s*\|"
+HTML_ANCHOR_PATTERN_TEMPLATE = r"""<(?:a|span)\b[^>]*\b(?:id|name)=["']{fragment}["'][^>]*>"""
+WORKSPACE_BOOTSTRAP_URN_PATTERN = re.compile(
+    r"^urn:([a-z0-9-]+):agent-bootstrap:([a-z0-9._-]+)-agents:[0-9]+\.[0-9]+\.[0-9]+$"
+)
+
 
 def workspace_in_cohort(workspace_dir, cohort=None):
     if not cohort:
@@ -57,25 +65,67 @@ def slugify_heading(text):
     return slug
 
 
+def iter_markdown_headings(content):
+    in_code_block = False
+    for line in content.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block or not stripped.startswith("#"):
+            continue
+        level = len(stripped) - len(stripped.lstrip("#"))
+        yield level, stripped[level:].strip()
+
+
+def workspace_ref_exists(workspace_ref):
+    try:
+        namespace, name = workspace_ref.split("/", 1)
+    except ValueError:
+        return False
+    return (KORA_ROOT / "agents" / namespace / name).is_dir()
+
+
+def extract_workspace_tokens(text, self_workspace=None):
+    refs = set()
+    for ref in WORKSPACE_REF_PATTERN.findall(text):
+        if ref == self_workspace:
+            continue
+        if workspace_ref_exists(ref):
+            refs.add(ref)
+    return refs
+
+
 def fragment_exists(file_path, fragment):
     try:
         content = file_path.read_text(encoding="utf-8")
     except Exception:
         return False
 
-    if fragment in content:
-        return True
-
     if file_path.suffix != ".md":
         return False
 
     target = slugify_heading(fragment)
-    for line in content.splitlines():
-        stripped = line.strip()
-        if stripped.startswith("#"):
-            heading = stripped.lstrip("#").strip()
-            if slugify_heading(heading) == target:
-                return True
+    for _level, heading in iter_markdown_headings(content):
+        if slugify_heading(heading) == target:
+            return True
+
+    explicit_id_pattern = re.compile(EXPLICIT_ID_PATTERN_TEMPLATE.format(fragment=re.escape(fragment)))
+    table_anchor_pattern = re.compile(
+        TABLE_ANCHOR_PATTERN_TEMPLATE.format(fragment=re.escape(fragment)),
+        re.MULTILINE,
+    )
+    html_anchor_pattern = re.compile(
+        HTML_ANCHOR_PATTERN_TEMPLATE.format(fragment=re.escape(fragment)),
+        re.IGNORECASE,
+    )
+
+    if explicit_id_pattern.search(content):
+        return True
+    if table_anchor_pattern.search(content):
+        return True
+    if html_anchor_pattern.search(content):
+        return True
     return False
 
 
@@ -135,12 +185,17 @@ def validate_skill_file(skill_path):
     if urn and ":skill:" not in urn:
         failures.append(f"skill identity must use ':skill:' URN, found '{urn}'")
 
+    headings = {f"## {heading}" for level, heading in iter_markdown_headings(content) if level == 2}
     for heading in SKILL_REQUIRED_HEADINGS:
-        if heading not in content:
+        if heading not in headings:
             failures.append(f"missing required heading '{heading}'")
     return failures
 
 
 def workspace_exists_from_urn(urn):
-    parts = urn.split(":")
-    return len(parts) == 4 and parts[2] == "agent" and (KORA_ROOT / "agents" / parts[1] / parts[3]).is_dir()
+    base_urn = urn.partition("#")[0]
+    match = WORKSPACE_BOOTSTRAP_URN_PATTERN.fullmatch(base_urn)
+    if not match:
+        return False
+    namespace, workspace_name = match.groups()
+    return (KORA_ROOT / "agents" / namespace / workspace_name).is_dir()

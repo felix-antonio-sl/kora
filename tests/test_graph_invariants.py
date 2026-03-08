@@ -1,9 +1,17 @@
+import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 from common import ROOT, run_cli
 from kora_lib.catalog import build_catalog_lookup, load_catalog
 from kora_lib.graph import build_reference_graph
-from kora_lib.workspaces import fragment_exists, workspace_exists_from_urn
+from kora_lib.workspaces import (
+    fragment_exists,
+    iter_agent_workspaces,
+    workspace_exists_from_urn,
+)
 
 
 class GraphInvariantTests(unittest.TestCase):
@@ -77,7 +85,9 @@ class GraphInvariantTests(unittest.TestCase):
                 workspace = edge.source.parent
                 allowed.setdefault(workspace, set()).add(edge.target)
 
-        for workspace, tool_names in declared.items():
+        for workspace_dir in iter_agent_workspaces():
+            workspace = workspace_dir
+            tool_names = declared.get(workspace, set())
             self.assertEqual(
                 tool_names,
                 allowed.get(workspace, set()),
@@ -89,6 +99,14 @@ class GraphInvariantTests(unittest.TestCase):
             if edge.kind != "AllowsKB":
                 continue
             self.assertIn(edge.target, self.known_urns, msg=f"Unknown allowed_kb URN: {edge.target}")
+
+    def test_build_reference_graph_raises_on_invalid_workspace_config(self):
+        with TemporaryDirectory(dir=ROOT) as tmpdir:
+            config_path = Path(tmpdir) / "config.json"
+            config_path.write_text("{\n", encoding="utf-8")
+            with patch("kora_lib.graph.iter_repository_files", return_value=[config_path]):
+                with self.assertRaises(RuntimeError):
+                    build_reference_graph()
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
 {
   "meta": {
     "scanned_files": 724,
-    "node_count": 878,
+    "node_count": 877,
     "edge_count": 4114
   },
   "node_kind_counts": {
-    "artifact": 227,
+    "artifact": 226,
     "knowledge": 256,
     "skill": 230,
     "spec": 7,
@@ -1238,11 +1238,6 @@
       "title": "USER.md",
       "path": "agents/gn/visionario/USER.md",
       "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:agent:ar-virtual",
-      "kind": "artifact",
-      "urn": "urn:gn:agent:ar-virtual"
     },
     {
       "id": "urn:kora:agent-bootstrap:clawmaster-agents:1.0.0",
@@ -24800,14 +24795,14 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0",
       "fragment": null,
       "source_path": "agents/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
-      "target": "urn:gn:agent:ar-virtual",
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
       "fragment": null,
       "source_path": "agents/gn/dgi-virtual/AGENTS.md"
     },

@@ -59,4 +59,4 @@ _manifest:
 
 ## 5. Wiring (W)
 
-- Extiende: AR Virtual (urn:gn:agent:ar-virtual). Hereda: knowledge_base_interaction, CM-CATALOG-RESOLVER, CM-KB-GUIDANCE. Especializa: dominios DGI.
+- Extiende: AR Virtual (urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0). Hereda: knowledge_base_interaction, CM-CATALOG-RESOLVER, CM-KB-GUIDANCE. Especializa: dominios DGI.

@@ -105,8 +105,9 @@ def build_reference_graph():
         edges.extend(collect_urn_edges(file_path, content))
         try:
             edges.extend(collect_workspace_edges(file_path))
-        except Exception:
-            continue
+        except Exception as exc:
+            rel_path = file_path.relative_to(KORA_ROOT)
+            raise RuntimeError(f"Failed to collect workspace edges from {rel_path}: {exc}") from exc
     return scanned_files, edges
 
 

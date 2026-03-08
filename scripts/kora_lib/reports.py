@@ -1,7 +1,7 @@
 import json
 
 from .artifacts import load_yaml_safe
-from .config import AGENT_BOOTSTRAP_FILES, CATALOG_PATH, GENERATED_DOCS_DIR
+from .config import AGENT_REQUIRED_FILES, CATALOG_PATH, GENERATED_DOCS_DIR
 from .contracts import build_operating_core_payload, render_operating_core_markdown
 from .fxsl_cat import write_fxsl_cat_ledger_docs
 from .graph import build_graph_payload
@@ -18,7 +18,7 @@ def compute_stats_payload():
     complete_workspaces = [
         workspace
         for workspace in workspaces
-        if not get_workspace_missing_files(workspace, AGENT_BOOTSTRAP_FILES)
+        if not get_workspace_missing_files(workspace, AGENT_REQUIRED_FILES)
     ]
 
     bootstrap_count = len(doc["Catalog"].get("Agents", []))

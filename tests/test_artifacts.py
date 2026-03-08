@@ -4,8 +4,9 @@ import jsonschema
 
 from common import FIXTURES, ROOT, load_json
 from kora_lib.artifacts import load_yaml_safe
+from kora_lib.config import AGENT_REQUIRED_FILES
 from kora_lib.reports import compute_stats_payload, render_stats_markdown
-from kora_lib.workspaces import validate_skill_file
+from kora_lib.workspaces import get_workspace_missing_files, iter_agent_workspaces, validate_skill_file
 
 
 class ArtifactFixtureTests(unittest.TestCase):
@@ -68,6 +69,15 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("# KORA Generated Stats", markdown)
         self.assertIn("| Agents |", markdown)
         self.assertIn("| Skills |", markdown)
+
+    def test_compute_stats_payload_uses_required_workspace_files(self):
+        payload = compute_stats_payload()
+        expected_complete = [
+            workspace
+            for workspace in iter_agent_workspaces()
+            if not get_workspace_missing_files(workspace, AGENT_REQUIRED_FILES)
+        ]
+        self.assertEqual(payload["agent_workspaces"], len(expected_complete))
 
 
 if __name__ == "__main__":

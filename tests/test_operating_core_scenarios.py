@@ -1,6 +1,6 @@
 import unittest
 
-from common import FIXTURES, GENERATED_DOCS, load_json, run_cli
+from common import FIXTURES, GENERATED_DOCS, ROOT, load_json, run_cli
 from kora_lib.catalog import build_catalog_lookup, load_catalog
 from kora_lib.contracts import build_operating_core_payload, load_workspace_contract
 
@@ -21,6 +21,15 @@ def assert_terms_present(test_case, haystack, terms, label):
     lower_haystack = haystack.lower()
     for term in terms:
         test_case.assertIn(term.lower(), lower_haystack, msg=f"missing {label}: {term}")
+
+
+def assert_workspace_refs_resolve(test_case, refs, label):
+    for ref in refs:
+        namespace, name = ref.split("/", 1)
+        test_case.assertTrue(
+            (ROOT / "agents" / namespace / name).is_dir(),
+            msg=f"invalid {label}: {ref}",
+        )
 
 
 def assert_contract_supports_scenario(test_case, contract, scenario):
@@ -70,12 +79,34 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         self.assertEqual(payload["totals"]["workspaces"], 11)
         self.assertEqual(set(payload["cohorts"].keys()), {"kora", "dev", "ops", "domain_canary"})
 
+    def test_operating_core_routes_and_handoffs_are_real_workspaces(self):
+        payload = build_operating_core_payload()
+        for cohort_items in payload["cohorts"].values():
+            for item in cohort_items:
+                assert_workspace_refs_resolve(self, item["route_targets"], "route")
+                assert_workspace_refs_resolve(self, item["handoff_targets"], "handoff")
+                assert_workspace_refs_resolve(self, item["sub_agents"], "sub-agent")
+
+    def test_operating_core_contracts_do_not_include_noise_tokens_as_handoffs(self):
+        noise_tokens = {"agentes/LLM", "modelo/provider", "formal/01", "formal/02", "pass/fail", "meat/fat"}
+        for workspace in ("kora/forgemaster", "kora/curator", "dev/reviewer", "ops/verificador", "ops/security"):
+            contract = load_workspace_contract(workspace)
+            self.assertTrue(noise_tokens.isdisjoint(contract.handoff_targets), msg=f"noise leaked into {workspace}")
+
     def test_domain_canary_sample_kb_urns_resolve(self):
         catalog = load_catalog()
         self.assertIsNotNone(catalog)
         _known, lookup = build_catalog_lookup(catalog)
         for urn in SCENARIOS["domain_canary"]["sample_allowed_kb"]:
             self.assertIn(urn, lookup, msg=f"missing canary KB URN {urn}")
+
+    def test_domain_canary_all_allowed_kb_urns_resolve(self):
+        catalog = load_catalog()
+        self.assertIsNotNone(catalog)
+        _known, lookup = build_catalog_lookup(catalog)
+        contract = load_workspace_contract("gn/goreologo")
+        for urn in contract.allowed_kb:
+            self.assertIn(urn, lookup, msg=f"missing canary allowed_kb URN {urn}")
 
     def test_domain_canary_agent_urns_resolve_via_cli(self):
         expected = {
@@ -100,6 +131,8 @@ def make_handoff_test(scenario):
     def test_method(self):
         source_contract = load_workspace_contract(scenario["from"])
         target_contract = load_workspace_contract(scenario["to"])
+        assert_workspace_refs_resolve(self, source_contract.route_targets, "source route")
+        assert_workspace_refs_resolve(self, target_contract.handoff_targets, "target handoff")
 
         for tool_name in scenario.get("source_requires_tools", []):
             self.assertIn(tool_name, source_contract.tools, msg=f"{scenario['from']} missing source tool {tool_name}")

@@ -46,13 +46,8 @@
           "CM-WORKSPACE-SCAFFOLDER"
         ],
         "handoff_targets": [
-          "behavior/interface",
-          "creados/modificados",
-          "formal/01",
-          "generado/modificado",
           "kora/curator",
-          "kora/custodio",
-          "state/security"
+          "kora/custodio"
         ],
         "route_targets": [
           "kora/curator",
@@ -117,15 +112,8 @@
           "CM-LIFECYCLE-ORCHESTRATOR"
         ],
         "handoff_targets": [
-          "creados/modificados",
-          "formal/01",
-          "formal/02",
-          "generado/modificado",
           "kora/custodio",
-          "kora/forgemaster",
-          "meat/fat",
-          "nuevos/modificados",
-          "validados/deprecados"
+          "kora/forgemaster"
         ],
         "route_targets": [
           "kora/custodio",
@@ -187,8 +175,6 @@
           "CM-SURGEON"
         ],
         "handoff_targets": [
-          "escritura/borrado",
-          "formal/01",
           "kora/curator",
           "kora/forgemaster"
         ],
@@ -313,11 +299,7 @@
         ],
         "handoff_targets": [
           "dev/planner",
-          "dev/reviewer",
-          "error/fallo",
-          "prompts/queries",
-          "tipos/interfaces",
-          "tipos/schemas"
+          "dev/reviewer"
         ],
         "route_targets": [
           "dev/planner",
@@ -371,10 +353,8 @@
           "CM-VERDICT-SYNTHESIZER"
         ],
         "handoff_targets": [
-          "agentes/LLM",
           "dev/coder",
-          "dev/planner",
-          "modelo/provider"
+          "dev/planner"
         ],
         "route_targets": [
           "dev/coder",
@@ -446,7 +426,6 @@
           "CM-SWARM-AUDITOR"
         ],
         "handoff_targets": [
-          "agregar/quitar",
           "dev/coder",
           "dev/planner",
           "dev/reviewer"
@@ -579,13 +558,11 @@
           "CM-VERIFICATION-ORCHESTRATOR"
         ],
         "handoff_targets": [
-          "coder/reviewer",
           "dev/coder",
           "ops/deployer",
           "ops/observer",
           "ops/orquestador-swarm",
-          "ops/security",
-          "pass/fail"
+          "ops/security"
         ],
         "route_targets": [
           "dev/coder",
@@ -651,13 +628,10 @@
           "CM-SELF-AUDITOR"
         ],
         "handoff_targets": [
-          "aprobacion/rechazo",
           "dev/coder",
-          "modelo/provider",
           "ops/ci-assistant",
           "ops/deployer",
-          "ops/orquestador-swarm",
-          "positive/negative"
+          "ops/orquestador-swarm"
         ],
         "route_targets": [
           "dev/coder",
@@ -713,9 +687,7 @@
           "CM-SYNTHESIZER"
         ],
         "handoff_targets": [
-          "gn/dgi-virtual",
-          "interpretacion/incertidumbre",
-          "norma/dato"
+          "gn/dgi-virtual"
         ],
         "route_targets": [],
         "sub_agents": [],
@@ -733,6 +705,6 @@
     "workspaces": 11,
     "states": 82,
     "tools": 75,
-    "handoffs": 60
+    "handoffs": 32
   }
 }
