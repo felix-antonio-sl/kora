@@ -4,9 +4,9 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen
 
-- Workspaces cubiertos: 11
-- Estados declarados: 82
-- Tools semanticas declaradas: 75
+- Workspaces cubiertos: 12
+- Estados declarados: 88
+- Tools semanticas declaradas: 77
 - Handoffs declarados: 32
 
 ## Cohorte kora
@@ -39,3 +39,4 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 | Workspace | Estados | Tools | Handoffs |
 |-----------|---------|-------|----------|
 | gn/goreologo | 3 | 2 | 1 |
+| gn/digitrans | 6 | 2 | 0 |

@@ -73,10 +73,11 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         self.assertIn("cohorts", payload)
         self.assertIn("kora", payload["cohorts"])
         self.assertIn("gn/goreologo", {item["workspace"] for item in payload["cohorts"]["domain_canary"]})
+        self.assertIn("gn/digitrans", {item["workspace"] for item in payload["cohorts"]["domain_canary"]})
 
     def test_operating_core_payload_matches_declared_core(self):
         payload = build_operating_core_payload()
-        self.assertEqual(payload["totals"]["workspaces"], 11)
+        self.assertEqual(payload["totals"]["workspaces"], 12)
         self.assertEqual(set(payload["cohorts"].keys()), {"kora", "dev", "ops", "domain_canary"})
 
     def test_operating_core_routes_and_handoffs_are_real_workspaces(self):
@@ -99,20 +100,26 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         _known, lookup = build_catalog_lookup(catalog)
         for urn in SCENARIOS["domain_canary"]["sample_allowed_kb"]:
             self.assertIn(urn, lookup, msg=f"missing canary KB URN {urn}")
+        for urn in SCENARIOS["secondary_domain_canary"]["sample_allowed_kb"]:
+            self.assertIn(urn, lookup, msg=f"missing secondary canary KB URN {urn}")
 
     def test_domain_canary_all_allowed_kb_urns_resolve(self):
         catalog = load_catalog()
         self.assertIsNotNone(catalog)
         _known, lookup = build_catalog_lookup(catalog)
-        contract = load_workspace_contract("gn/goreologo")
-        for urn in contract.allowed_kb:
-            self.assertIn(urn, lookup, msg=f"missing canary allowed_kb URN {urn}")
+        for workspace in ("gn/goreologo", "gn/digitrans"):
+            contract = load_workspace_contract(workspace)
+            for urn in contract.allowed_kb:
+                self.assertIn(urn, lookup, msg=f"missing canary allowed_kb URN {urn}")
 
     def test_domain_canary_agent_urns_resolve_via_cli(self):
         expected = {
             "urn:gn:agent-bootstrap:goreologo-agents:2.4.0": "agents/gn/goreologo/AGENTS.md",
             "urn:gn:agent-bootstrap:goreologo-tools:2.4.0": "agents/gn/goreologo/TOOLS.md",
             "urn:gn:agent-bootstrap:goreologo-config:1.0.0": "agents/gn/goreologo/config.json",
+            "urn:gn:agent-bootstrap:digitrans-agents:2.0.0": "agents/gn/digitrans/AGENTS.md",
+            "urn:gn:agent-bootstrap:digitrans-tools:2.0.0": "agents/gn/digitrans/TOOLS.md",
+            "urn:gn:agent-bootstrap:digitrans-config:2.0.0": "agents/gn/digitrans/config.json",
         }
         for urn, rel_path in expected.items():
             result = run_cli("resolve", urn)
@@ -208,6 +215,12 @@ setattr(
     OperatingCoreScenarioTests,
     "test_domain_canary__goreologo_contract_support",
     make_canary_support_test(SCENARIOS["domain_canary"]),
+)
+
+setattr(
+    OperatingCoreScenarioTests,
+    "test_domain_canary__digitrans_contract_support",
+    make_canary_support_test(SCENARIOS["secondary_domain_canary"]),
 )
 
 for index, step in enumerate(SCENARIOS["domain_canary"]["core_support"], start=1):

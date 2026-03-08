@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 724,
-    "node_count": 877,
-    "edge_count": 4114
+    "scanned_files": 730,
+    "node_count": 883,
+    "edge_count": 4147
   },
   "node_kind_counts": {
     "artifact": 226,
     "knowledge": 256,
-    "skill": 230,
+    "skill": 236,
     "spec": 7,
     "tool": 113,
     "workspace": 45
   },
   "edge_kind_counts": {
-    "AllowsKB": 417,
+    "AllowsKB": 420,
     "AllowsTool": 197,
     "ContainsArtifact": 225,
-    "ContainsSkill": 230,
+    "ContainsSkill": 236,
     "DeclaresTool": 200,
-    "InvokesSkill": 211,
+    "InvokesSkill": 217,
     "RoutesToAgent": 57,
     "TracesTo": 20,
-    "XRef": 2557
+    "XRef": 2575
   },
   "nodes": [
     {
@@ -5259,6 +5259,60 @@
       "namespace": "gn"
     },
     {
+      "id": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0",
+      "title": "CM-CPAT-ANALYZER",
+      "path": "agents/gn/digitrans/skills/CM-CPAT-ANALYZER.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:skill:digitrans-intake:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:skill:digitrans-intake:1.0.0",
+      "title": "CM-INTAKE",
+      "path": "agents/gn/digitrans/skills/CM-INTAKE.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:skill:digitrans-normative-guide:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:skill:digitrans-normative-guide:1.0.0",
+      "title": "CM-NORMATIVE-GUIDE",
+      "path": "agents/gn/digitrans/skills/CM-NORMATIVE-GUIDE.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:skill:digitrans-orko-bridge:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:skill:digitrans-orko-bridge:1.0.0",
+      "title": "CM-ORKO-BRIDGE",
+      "path": "agents/gn/digitrans/skills/CM-ORKO-BRIDGE.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:skill:digitrans-platform-guidance:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:skill:digitrans-platform-guidance:1.0.0",
+      "title": "CM-PLATFORM-GUIDANCE",
+      "path": "agents/gn/digitrans/skills/CM-PLATFORM-GUIDANCE.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:skill:digitrans-synthesizer:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:skill:digitrans-synthesizer:1.0.0",
+      "title": "CM-SYNTHESIZER",
+      "path": "agents/gn/digitrans/skills/CM-SYNTHESIZER.md",
+      "namespace": "gn"
+    },
+    {
       "id": "urn:gn:skill:goreologo-domain-analyzer:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -8259,6 +8313,24 @@
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
       "target": "urn:legal:kb:ley-21719-datos-personales",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:orko:kb:orko-fases",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:orko:kb:orko-fundamentos",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:orko:kb:orko-metodologia",
       "source_path": "agents/gn/digitrans/config.json"
     },
     {
@@ -12684,6 +12756,36 @@
     },
     {
       "kind": "ContainsSkill",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:gn:skill:digitrans-intake:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:gn:skill:digitrans-normative-guide:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:gn:skill:digitrans-orko-bridge:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:gn:skill:digitrans-platform-guidance:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:gn:skill:digitrans-synthesizer:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
       "source": "workspace:gn/goreologo",
       "target": "urn:gn:skill:goreologo-domain-analyzer:1.0.0"
     },
@@ -15071,6 +15173,42 @@
       "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
       "target": "urn:gn:skill:dgi-virtual-structure-principles:1.0.0",
       "source_path": "agents/gn/dgi-virtual/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0",
+      "source_path": "agents/gn/digitrans/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:skill:digitrans-intake:1.0.0",
+      "source_path": "agents/gn/digitrans/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:skill:digitrans-normative-guide:1.0.0",
+      "source_path": "agents/gn/digitrans/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:skill:digitrans-orko-bridge:1.0.0",
+      "source_path": "agents/gn/digitrans/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:skill:digitrans-platform-guidance:1.0.0",
+      "source_path": "agents/gn/digitrans/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:skill:digitrans-synthesizer:1.0.0",
+      "source_path": "agents/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -18741,6 +18879,48 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gn:skill:dgi-virtual-structure-principles:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:skill:digitrans-intake:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:skill:digitrans-normative-guide:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:skill:digitrans-orko-bridge:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:skill:digitrans-platform-guidance:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:skill:digitrans-synthesizer:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -25103,6 +25283,27 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:orko:kb:orko-fases",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:orko:kb:orko-fundamentos",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:orko:kb:orko-metodologia",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:tde:kb:decreto-4-procedimiento-digital",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
@@ -25426,6 +25627,27 @@
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:legal:kb:ley-21719-datos-personales",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:orko:kb:orko-fases",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:orko:kb:orko-fundamentos",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:orko:kb:orko-metodologia",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
     },
@@ -28914,6 +29136,48 @@
       "target": "urn:gn:skill:dgi-virtual-structure-principles:1.0.0",
       "fragment": null,
       "source_path": "agents/gn/dgi-virtual/skills/CM-STRUCTURE-PRINCIPLES.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0",
+      "target": "urn:gn:skill:digitrans-cpat-analyzer:1.0.0",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/skills/CM-CPAT-ANALYZER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:skill:digitrans-intake:1.0.0",
+      "target": "urn:gn:skill:digitrans-intake:1.0.0",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/skills/CM-INTAKE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:skill:digitrans-normative-guide:1.0.0",
+      "target": "urn:gn:skill:digitrans-normative-guide:1.0.0",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/skills/CM-NORMATIVE-GUIDE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:skill:digitrans-orko-bridge:1.0.0",
+      "target": "urn:gn:skill:digitrans-orko-bridge:1.0.0",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/skills/CM-ORKO-BRIDGE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:skill:digitrans-platform-guidance:1.0.0",
+      "target": "urn:gn:skill:digitrans-platform-guidance:1.0.0",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/skills/CM-PLATFORM-GUIDANCE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:skill:digitrans-synthesizer:1.0.0",
+      "target": "urn:gn:skill:digitrans-synthesizer:1.0.0",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/skills/CM-SYNTHESIZER.md"
     },
     {
       "kind": "XRef",

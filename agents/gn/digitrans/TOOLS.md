@@ -72,3 +72,7 @@ _manifest:
 | Seguridad Ciberseguridad, Guia | urn:tde:kb:guia-seguridad-ciberseguridad |
 | Registro Tratamiento Datos, RAT | urn:tde:kb:guia-registro-tratamiento-datos |
 | Metodologia Proyectos TIC | urn:tde:kb:guia-metodologia-proyectos |
+| **ORKO BRIDGE** | |
+| ORKO, Metodologia WSLC | urn:orko:kb:orko-metodologia |
+| ORKO, Fases WSLC | urn:orko:kb:orko-fases |
+| ORKO, Fundamentos y H_org | urn:orko:kb:orko-fundamentos |

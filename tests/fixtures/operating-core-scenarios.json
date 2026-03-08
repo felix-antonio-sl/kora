@@ -297,5 +297,36 @@
       "urn:gn:kb:gestion-prpto",
       "urn:gn:kb:gestion-ipr"
     ]
+  },
+  "secondary_domain_canary": {
+    "workspace": "gn/digitrans",
+    "requires_states": ["S-NORMATIVO", "S-PLATAFORMAS", "S-ORKO-BRIDGE", "S-CPAT"],
+    "requires_skills": [
+      "CM-INTAKE",
+      "CM-NORMATIVE-GUIDE",
+      "CM-PLATFORM-GUIDANCE",
+      "CM-ORKO-BRIDGE",
+      "CM-CPAT-ANALYZER",
+      "CM-SYNTHESIZER"
+    ],
+    "requires_tools": ["catalog_resolve", "kb_route"],
+    "requires_allowed_terms": ["Ley 21.180", "CPAT", "madurez digital"],
+    "requires_evidence_terms": [
+      "[norma vigente]",
+      "[dato institucional]",
+      "[interpretacion]",
+      "[incertidumbre]",
+      "fuente oficial",
+      "ORKO"
+    ],
+    "requires_allowed_kb_min": 48,
+    "sample_allowed_kb": [
+      "urn:gov:kb:intro-tde",
+      "urn:tde:kb:ley-21180-tde",
+      "urn:tde:kb:manual-integracion-claveunica",
+      "urn:tde:kb:guia-rapida-cpat",
+      "urn:orko:kb:orko-metodologia",
+      "urn:orko:kb:orko-fundamentos"
+    ]
   }
 }

@@ -36,7 +36,11 @@ class KoraCliSmokeTests(unittest.TestCase):
         ledger_payload = json.loads((GENERATED_DOCS / "fxsl-cat-ledger.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
         self.assertIn("kora", contracts_payload["cohorts"])
-        self.assertEqual(contracts_payload["totals"]["workspaces"], 11)
+        self.assertEqual(contracts_payload["totals"]["workspaces"], 12)
+        self.assertIn(
+            "gn/digitrans",
+            {item["workspace"] for item in contracts_payload["cohorts"]["domain_canary"]},
+        )
         self.assertIn("promoted", ledger_payload["status_counts"])
 
     def test_stats_json_matches_generated_payload(self):

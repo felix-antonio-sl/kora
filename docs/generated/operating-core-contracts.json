@@ -698,13 +698,50 @@
           "tools": "agents/gn/goreologo/TOOLS.md",
           "config": "agents/gn/goreologo/config.json"
         }
+      },
+      {
+        "workspace": "gn/digitrans",
+        "state_names": [
+          "S-CPAT",
+          "S-DISPATCHER",
+          "S-END",
+          "S-NORMATIVO",
+          "S-ORKO-BRIDGE",
+          "S-PLATAFORMAS"
+        ],
+        "tool_names": [
+          "catalog_resolve",
+          "kb_route"
+        ],
+        "tools_allow": [
+          "catalog_resolve",
+          "kb_route"
+        ],
+        "skill_refs": [
+          "CM-CPAT-ANALYZER",
+          "CM-INTAKE",
+          "CM-NORMATIVE-GUIDE",
+          "CM-ORKO-BRIDGE",
+          "CM-PLATFORM-GUIDANCE",
+          "CM-SYNTHESIZER"
+        ],
+        "handoff_targets": [],
+        "route_targets": [],
+        "sub_agents": [],
+        "evidence_lines": [],
+        "allowed_kb_count": 48,
+        "sources": {
+          "agents": "agents/gn/digitrans/AGENTS.md",
+          "tools": "agents/gn/digitrans/TOOLS.md",
+          "config": "agents/gn/digitrans/config.json"
+        }
       }
     ]
   },
   "totals": {
-    "workspaces": 11,
-    "states": 82,
-    "tools": 75,
+    "workspaces": 12,
+    "states": 88,
+    "tools": 77,
     "handoffs": 32
   }
 }

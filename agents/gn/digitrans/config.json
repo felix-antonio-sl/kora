@@ -48,7 +48,10 @@
     "urn:tde:kb:manual-notificaciones-inicio",
     "urn:tde:kb:manual-integracion-notificaciones",
     "urn:tde:kb:manual-claveunica-boton",
-    "urn:tde:kb:glosario-simple"
+    "urn:tde:kb:glosario-simple",
+    "urn:orko:kb:orko-metodologia",
+    "urn:orko:kb:orko-fases",
+    "urn:orko:kb:orko-fundamentos"
   ],
   "sandbox": {
     "mode": "strict"

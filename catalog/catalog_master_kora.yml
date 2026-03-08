@@ -1222,6 +1222,30 @@ Catalog:
     title: CM-INTAKE
     file: agents/gn/goreologo/skills/CM-INTAKE.md
     status: published
+  - urn: urn:gn:skill:digitrans-normative-guide:1.0.0
+    title: CM-NORMATIVE-GUIDE
+    file: agents/gn/digitrans/skills/CM-NORMATIVE-GUIDE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-orko-bridge:1.0.0
+    title: CM-ORKO-BRIDGE
+    file: agents/gn/digitrans/skills/CM-ORKO-BRIDGE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-synthesizer:1.0.0
+    title: CM-SYNTHESIZER
+    file: agents/gn/digitrans/skills/CM-SYNTHESIZER.md
+    status: published
+  - urn: urn:gn:skill:digitrans-platform-guidance:1.0.0
+    title: CM-PLATFORM-GUIDANCE
+    file: agents/gn/digitrans/skills/CM-PLATFORM-GUIDANCE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-cpat-analyzer:1.0.0
+    title: CM-CPAT-ANALYZER
+    file: agents/gn/digitrans/skills/CM-CPAT-ANALYZER.md
+    status: published
+  - urn: urn:gn:skill:digitrans-intake:1.0.0
+    title: CM-INTAKE
+    file: agents/gn/digitrans/skills/CM-INTAKE.md
+    status: published
   - urn: urn:gn:skill:visionario-gore-4-0-func:2.0.0
     title: CM-gore-4-0-func.md
     file: agents/gn/visionario/skills/CM-gore-4-0-func.md

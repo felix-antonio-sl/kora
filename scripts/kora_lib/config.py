@@ -155,6 +155,7 @@ OPERATING_CORE_COHORTS = {
     ),
     "domain_canary": (
         "gn/goreologo",
+        "gn/digitrans",
     ),
 }
 SEMANTIC_TOOL_DOC_MARKERS = (
