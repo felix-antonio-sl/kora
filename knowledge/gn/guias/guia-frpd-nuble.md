@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-frpd-nuble
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/kb_gn_027_guia_frpd_koda.yml
 version: 2.0.0
 status: published
@@ -23,114 +23,35 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.15
+    cr: 2.78
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 17
-    meat_count: 801
+    skeleton_count: 4
+    meat_count: 768
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/guias__guia-frpd-nuble.md.json
 ---
 
 # Guía Operativa FRPD Ñuble 2025
-## ID
-GN-FRPD-GUIA-OPERATIVA-2025-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-11-28
-
-## Modification Date
-2025-11-28
-
-## Ctx
-Guía operativa para el concurso FRPD 2025 del Gobierno Regional de Ñuble.
-Regula requisitos, procesos, actores y restricciones para la asignación del
-Fondo Regional para la Productividad y el Desarrollo (FRPD) en la región.
-
-
 ## Source
-### Primary Source
-kb_gn_027_guia_frpd_sts.md
-### Ctx Required
+### Contexto requerido
 - Marco legal de Royalty Minero y FRPD (FIN-GORE-NORMATIVA-LEY-ROYALTY-01, FIN-GORE-NORMATIVA-GLOSA-13-01, FIN-GORE-NORMATIVA-FRPD-REGULACION-OPERATIVA-01).
 - Glosa 06 de la Ley de Presupuestos y Circular N°22 de DIPRES.
 - Resolución Exenta N°33 de la SUBCTCI (31-Ene-2024) sobre instituciones habilitadas.
 - Guía de Proyectos SNI (kb_gn_024_guia_idi_sni_sts.md).
 - Guía de Programas Públicos Regionales (kb_gn_025_guia_programas_sts.md).
 - Guía Operativa del Departamento de Análisis y Evaluación del GORE Ñuble para obtención de RS.
-### Ctx Optional
+### Contexto opcional
 - Estrategia Regional de Desarrollo (ERD) Ñuble 2023-2030.
 - Estrategia Regional de Ciencia, Tecnología, Conocimiento e Innovación (ER-CTCI) 2022-2030.
 - Planes regionales y sectoriales de fomento productivo pertinentes.
 
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-GN-FRPD-ÑUBLE-2025-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY:
-  - Preserve all meat (essential information) and skeleton (estructura:
-    secciones, listas, tablas, jerarquías, relaciones) con cero pérdida.
-  - Ignora fat (retórica, redundancias, frases de estilo).
-
-LEXICON (expand before processing):
-  Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context,
-  Def->Definition, Dest->Destination, Dln->Deadline,
-  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
-  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
-  Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
-  Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
-  Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY:
-  - Ref: es interno al documento; sólo puede apuntar a IDs definidos
-    dentro de este mismo artefacto.
-  - Documentos externos (leyes, resoluciones, oficios, formularios,
-    guías complementarias, sitios web) se mencionan bajo Ctx:,
-    Src:, Ctx_Required: o Ctx_Optional:, nunca bajo Ref:.
-
-LANGUAGE POLICY:
-  - Keywords en inglés (y abreviaturas como en este bloque).
-  - Contenido descriptivo en español (es-CL). Nunca traduzcas el contenido.
-END_LLM_INSTRUCTIONS
-
-
 ## Glosario FRPD
-### ID
-GN-FRPD-GLOSARIO-01
-### Purp
+### Proposito
 Definir conceptos, siglas y normas clave recurrentes en la Guía Operativa FRPD Ñuble 2025.
 ### Terminos
 | ID | Sigla | Cpt | Def |
@@ -144,11 +65,9 @@ Definir conceptos, siglas y normas clave recurrentes en la Guía Operativa FRPD 
 | GN-FRPD-GLOS-RS | RS | Recomendado Favorablemente | Calificación que indica aprobación técnica y habilita la obtención de RS para financiamiento. |
 
 ## Guia Operativa FRPD Ñuble 2025
-### ID
-GN-FRPD-GUIA-OPERATIVA-2025-01
 ### Titulo
 Guía Operativa FRPD Ñuble 2025
-### Purp
+### Proposito
 Regular el concurso FRPD 2025 para la asignación de recursos del Fondo
 Regional para la Productividad y el Desarrollo en la Región de Ñuble,
 definiendo reglas, criterios, plazos y responsabilidades para las
@@ -180,94 +99,70 @@ instituciones habilitadas.
 | GN-FRPD-SEC-14-OTROS | Transparencia, rendiciones, SISREC, contrapartes, objeto social, supervisión y protección de datos. |
 | GN-FRPD-FORM-APPLICATION-2025-01 | Formulario de postulación FRPD 2025 (campos obligatorios y especificaciones). |
 ### Sec 1 Antecedentes Generales
-#### ID
-GN-FRPD-SEC-1-ANTECEDENTES
 #### Instrumento FRPD
-#### ID
-GN-FRPD-ANT-INSTRUMENTO-01
 #### Cpt
 Fondo Regional para la Productividad y el Desarrollo (FRPD).
-#### Def
+#### Definicion
 Fondo regional de inversión productiva asociado al Royalty Minero.
-#### Purp
+#### Proposito
 - Financiar inversión productiva a través de proyectos, planes o programas.
-#### Req
+#### Requisitos
 - Considerar regulación operativa anual del FRPD en la Ley de Presupuestos (p.ej. provisión sin distribuir en Ítem 33.03 y transferencias directas cuando aplique).
-#### Ctx
+#### Contexto
 - Marco legal detallado en el Selector IPR (FIN-GORE-NORMATIVA-LEY-ROYALTY-01, FIN-GORE-NORMATIVA-GLOSA-13-01).
 - kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml#GN-LEY-PPTO-2026-P31-GLO-13
 #### Tipos Iniciativa
-#### ID
-GN-FRPD-ANT-TIPOS-01
 #### Tipos
 | ID | Cpt | Def | Req | Ctx_Required |
 | --- | --- | --- | --- | --- |
-| GN-FRPD-TIPO-PROYECTO | Proyectos de inversión. | Iniciativas de inversión de capital. | ['Formulación según la guía del Sistema Nacional de Inversiones (SNI).'] | ['kb_gn_024_guia_idi_sni_sts.md.'] |
-| GN-FRPD-TIPO-PROGRAMA | Programas. | Iniciativas de gasto corriente para entrega de servicios. | ['Formulación según la Guía de Programas Públicos Regionales.'] | ['kb_gn_025_guia_programas_sts.md.'] |
+| GN-FRPD-TIPO-PROYECTO | Proyectos de inversión. | Iniciativas de inversión de capital. | Formulación según la guía del Sistema Nacional de Inversiones (SNI). | kb_gn_024_guia_idi_sni_sts.md. |
+| GN-FRPD-TIPO-PROGRAMA | Programas. | Iniciativas de gasto corriente para entrega de servicios. | Formulación según la Guía de Programas Públicos Regionales. | kb_gn_025_guia_programas_sts.md. |
 #### Ambitos Principales
-#### ID
-GN-FRPD-ANT-AMBITOS-01
 #### Ambitos
 - Fomento de actividades productivas.
 - Desarrollo regional.
 - Promoción de investigación científica, tecnológica, conocimiento e innovación (CTCI).
 #### Alineacion Estrategica Obligatoria
-#### ID
-GN-FRPD-ANT-ALINEACION-01
-#### Req
+#### Requisitos
 - Estrategia Regional de Desarrollo (ERD).
 - Estrategia Regional de CTCI.
 - Otras prioridades estratégicas regionales de fomento productivo.
 #### Rol CTCI
-#### ID
-GN-FRPD-ANT-ROL-CTCI-01
-#### Def
+#### Definicion
 Los actores de CTCI son garantes de la transformación y el desarrollo regional.
 #### Resultado Esperado
-#### ID
-GN-FRPD-ANT-RES-ESPERADO-01
-#### Res
+#### Resultados
 - Generar condiciones para apertura de empresas de base tecnológica con mayores y mejores empleos.
 #### Proposito Guia Operativa
-#### ID
-GN-FRPD-ANT-PROP-GUIA-01
-#### Purp
+#### Proposito
 - Regular el concurso FRPD 2025 en Ñuble, dirigido a instituciones habilitadas.
-#### Src
+#### Fuentes
 - Resolución Exenta N°33 de SUBCTCI (31-Ene-2024) con base de instituciones habilitadas.
 ### Sec 2 Introduccion
-#### ID
-GN-FRPD-SEC-2-INTRO
 #### FRPD Como Herramienta
-#### ID
-GN-FRPD-INTRO-FRPD-01
 #### Cpt
 - FRPD como desafío y aporte al desarrollo económico, productivo y social regional.
 - Ciencia y tecnología como herramienta clave para transformar y fortalecer la región.
-#### Purp
+#### Proposito
 - Promover e incentivar la asociatividad interinstitucional para la cooperación.
-#### Res
+#### Resultados
 - Contribuir a diversificar la matriz productiva y aumentar la competitividad regional.
 #### Alineacion Estrategica
-#### ID
-GN-FRPD-INTRO-ALINEACION-01
-#### Req
+#### Requisitos
 - Alinearse con pilares y prioridades de la ERD.
 - Alinearse con la Estrategia Regional de CTCI 2022-2030.
 #### Consideraciones Adicionales
 - Responder a demandas sociales.
 - Abordar necesidades territoriales de productividad y desarrollo.
 #### Concurso 2025
-#### ID
-GN-FRPD-INTRO-CONCURSO-01
-#### Proc
+#### Proceso
 - Concurso FRPD año 2025 organizado por el GORE Ñuble.
-#### Obj
+#### Objetivos
 - Resolver brechas en fomento y productividad regional.
 #### Req Iniciativas
 - Las iniciativas deben resolver problemáticas en sectores y focos prioritarios definidos en la guía.
 #### Mecanismo Postulacion
-#### Mech
+#### Mecanismo
 Postulación mediante formulario online.
 #### Act Postulante
 - Completar todos los campos del formulario.
@@ -276,44 +171,19 @@ Postulación mediante formulario online.
 #### Cpt
 Las bases determinan las iniciativas preseleccionadas para financiamiento.
 #### Bifurcacion Post Seleccion
-#### ID
-GN-FRPD-INTRO-BIFURCACION-01
-#### Warn
+#### Advertencias
 - Según Glosa 06 y Circular N°22 DIPRES, el camino posterior a la selección depende de la naturaleza de la iniciativa.
 #### Casos
--
-  #### ID
-  GN-FRPD-CASO-1-CTCI
-  #### Cpt
-  Caso 1 – Innovación, CTCI.
-  #### Def
-  Iniciativas estrictamente enmarcadas en CTCI.
-  #### Ctx
-  - Exentas del proceso de evaluación ex ante DIPRES/SES.
-  - La evaluación del concurso se considera final.
--
-  #### ID
-  GN-FRPD-CASO-2-FOMENTO
-  #### Cpt
-  Caso 2 – Fomento Productivo General.
-  #### Def
-  Iniciativas de fomento productivo que no califican como CTCI.
-  #### Req
-  - DEBEN ingresar al proceso de evaluación ex ante correspondiente.
-  - Si son proyectos de inversión, seguir Guía SNI (kb_gn_024_guia_idi_sni_sts.md).
-  - Si son programas de servicios, seguir Guía de Programas Públicos (kb_gn_025_guia_programas_sts.md).
+| ID | Cpt | Def | Ctx | Req |
+| --- | --- | --- | --- | --- |
+| GN-FRPD-CASO-1-CTCI | Caso 1 – Innovación, CTCI. | Iniciativas estrictamente enmarcadas en CTCI. | Exentas del proceso de evaluación ex ante DIPRES/SES., La evaluación del concurso se considera final. |  |
+| GN-FRPD-CASO-2-FOMENTO | Caso 2 – Fomento Productivo General. | Iniciativas de fomento productivo que no califican como CTCI. |  | DEBEN ingresar al proceso de evaluación ex ante correspondiente., Si son proyectos de inversión, seguir Guía SNI (kb_gn_024_guia_idi_sni_sts.md)., Si son programas de servicios, seguir Guía de Programas Públicos (kb_gn_025_guia_programas_sts.md). |
 ### Sec 3 Pilares Estrategicos Concurso 2025
-#### ID
-GN-FRPD-SEC-3-PILARES
 #### Referencias Legales Clave
-#### ID
-GN-FRPD-PILARES-REF-01
-#### Ctx
+#### Contexto
 - Ley de Royalty Minero (FIN-GORE-NORMATIVA-LEY-ROYALTY-01).
 - Regulación operativa FRPD (FIN-GORE-NORMATIVA-FRPD-REGULACION-OPERATIVA-01).
 #### Ambitos Accion
-#### ID
-GN-FRPD-PILARES-AMBITOS-01
 #### Ambitos
 #### Investigacion
 #### Cpt
@@ -333,27 +203,23 @@ Innovación.
 #### Emprendimiento
 #### Cpt
 Emprendimiento (empresa).
-#### Def
+#### Definicion
 Actividades para solucionar problemas complejos y globales con potencial de crecimiento regional.
 #### Difusion y Transferencia
 #### Cpt
 Divulgación, difusión y transferencia tecnológica.
-#### Def
+#### Definicion
 Programas que diseminan conocimiento, ciencia y tecnología hacia sociedad, industria y sector público.
 #### Sectores Prioritarios
-#### ID
-GN-FRPD-PILARES-SECTORES-01
 #### Lista Sectores
 - Atracción de Inversiones para el Desarrollo Regional.
 - Desarrollo Empresarial, Fomento Productivo e Inversión Productiva.
 - Turismo y/o Medioambiente.
 - Energía y/o Conectividad Digital.
 #### Focos Prioritarios
-#### ID
-GN-FRPD-PILARES-FOCOS-01
-#### Req
+#### Requisitos
 - Las iniciativas deben alinearse a los sectores prioritarios definidos para el concurso.
-#### Ctx
+#### Contexto
 - Marco estratégico validado por el Comité Regional de Ciencia.
 #### Instrumentos Planificacion
 - Estrategia de Desarrollo Regional al 2030.
@@ -364,16 +230,10 @@ GN-FRPD-PILARES-FOCOS-01
 - Agroindustrial, Silvoagropecuario y/o Pesca.
 - Emprendimiento, Turismo y Medioambiente.
 ### Sec 4 Postulantes Habilitados
-#### ID
-GN-FRPD-SEC-4-POSTULANTES
 #### Criterio General
-#### ID
-GN-FRPD-POST-CRITERIO-01
 #### Cpt
 Cumplir con Resolución Exenta N°33 de SUBCTCI (31-Ene-2024) sobre instituciones habilitadas.
 #### Lista Instituciones Habilitadas
-#### ID
-GN-FRPD-POST-LISTA-01
 #### Cpt
 Listado de instituciones habilitadas para postular al FRPD 2025.
 #### Instituciones
@@ -419,26 +279,18 @@ Listado de instituciones habilitadas para postular al FRPD 2025.
 - Instituciones de educación superior (literales a, b, c art. 52 DFL N°2/2010 Mineduc), con acreditación institucional vigente Ley N° 20.129.
 - Corporaciones regionales con participación del GORE (glosa 04, Partida 31, Capítulo 01, Programa 02, Ley de Presupuestos 2025).
 #### Prohibiciones Postulacion
-#### ID
-GN-FRPD-POST-PROHIB-01
-#### Prohib
+#### Prohibiciones
 - Instituciones cuyo objeto social no se relacione o sin experiencia comprobable en materias pertinentes.
 - Instituciones con directivos o representantes con parentesco hasta 4° consanguinidad o 3° afinidad, o vínculo de cónyuge/conviviente civil/hijo en común, con Gobernador Regional, Consejeros Regionales, Jefes de División o funcionarios del GORE (incluyendo honorarios).
 - Instituciones con directivos/representantes que hayan trabajado o prestado servicios (remunerados o no) en el GORE.
 - Instituciones privadas con directivos/representantes que hayan sido autoridades o funcionarios del GORE en los 2 años previos al ejercicio de su cargo público actual.
 ### Sec 5 Presentacion Postulaciones
-#### ID
-GN-FRPD-SEC-5-PRESENTACION
 #### Mecanismo
-#### ID
-GN-FRPD-PRES-MECANISMO-01
-#### Mech
+#### Mecanismo
 Postulación en línea mediante página web del GORE Ñuble.
-#### Act
+#### Acciones
 - Completar formulario de postulación.
 #### Plazos Claves 2025
-#### ID
-GN-FRPD-PRES-PLAZOS-01
 #### Cpt
 Plazos clave del concurso 2025 (valores específicos se completan en cada convocatoria).
 #### Fechas Placeholders
@@ -453,40 +305,32 @@ Plazos clave del concurso 2025 (valores específicos se completan en cada convoc
 - Plazo-Max-Ingreso-Eval-Tec
 - Plazo-Max-Obtener-RS
 #### Consultas y Respuestas
-#### ID
-GN-FRPD-PRES-CONSULTAS-01
 #### Proc Consultas
-#### Mech
+#### Mecanismo
 Correo electrónico.
-#### Req
+#### Requisitos
 - Plazo de formulación: primeros 7 días corridos desde el día hábil siguiente a la publicación.
 #### Dest
 Página web del GORE Ñuble (publicación de preguntas).
 #### Proc Respuestas
-#### Mech
+#### Mecanismo
 Mismo correo electrónico utilizado para consultas.
-#### Req
+#### Requisitos
 - Plazo de respuesta máximo: 5 días hábiles, salvo complejidad.
-#### Res
+#### Resultados
 - Respuestas compiladas y publicadas en la web del GORE en los plazos establecidos.
 ### Sec 6 Admisibilidad Administrativa
-#### ID
-GN-FRPD-SEC-6-ADM-ADMIN
 #### Evaluacion
-#### ID
-GN-FRPD-ADM-ADMIN-EVAL-01
-#### Resp
+#### Responsables
 - Comisión de profesionales del GORE Ñuble.
-#### Res
+#### Resultados
 - Clasificación de iniciativas como 'admisibles' o 'inadmisibles'.
 #### Proximo Paso
 - Iniciativas admisibles pasan a admisibilidad técnica.
 #### Criterios Obligatorios
-#### ID
-GN-FRPD-ADM-ADMIN-CRITERIOS-01
 #### Cpt
 Criterios A–L de admisibilidad administrativa.
-#### Req
+#### Requisitos
 - A. Registro en línea completo.
 - B. Vinculación en el registro con pilar estratégico, sector y focos prioritarios (GUIDE-GN-FRPD-STRATEGIC-PILLARS-01, GUIDE-GN-FRPD-PRIORITY-SECTORS-01, GUIDE-GN-FRPD-PRIORITY-FOCUSES-01).
 - C. Formulario de admisibilidad completo.
@@ -500,21 +344,15 @@ Criterios A–L de admisibilidad administrativa.
 - K. Mínimo 1 profesional residente en Ñuble contratado (adjuntar certificado).
 - L. Certificado que acredite que viáticos, alimentación, pasajes, peajes y estacionamiento son asumidos por la institución ejecutora.
 #### Consecuencia Incumplimiento
-#### Res
+#### Resultados
 - La iniciativa se declara inadmisible.
 ### Sec 7 Admisibilidad Tecnica
-#### ID
-GN-FRPD-SEC-7-ADM-TEC
 #### Proposito
-#### ID
-GN-FRPD-ADM-TEC-PROP-01
-#### Purp
+#### Proposito
 - Tomar la mejor decisión de inversión basada en la información presentada.
-#### Obj
+#### Objetivos
 - Evaluar aplicación de las bases, pertinencia local y factibilidad técnica.
 #### Comision Evaluadora
-#### ID
-GN-FRPD-ADM-TEC-COMISION-01
 #### Composicion
 - Máximo 11 representantes del territorio vinculados a fomento e innovación.
 #### Quorum Minimo
@@ -522,16 +360,12 @@ GN-FRPD-ADM-TEC-COMISION-01
 #### Facultades
 - Realizar observaciones a las iniciativas.
 #### Variables Evaluacion
-#### ID
-GN-FRPD-ADM-TEC-VARIABLES-01
 #### Variables
 - A. Coherencia global de la iniciativa.
 - B. Coherencia con objetivos de desarrollo regional.
 - C. Coherencia entre componentes, propósito y actividades.
 - D. Mérito innovador.
 #### Criterios Puntuacion
-#### ID
-GN-FRPD-ADM-TEC-PUNTAJE-01
 #### Escala
 - 1 – Interés: Nulo.
 - 3 – Interés: Bajo.
@@ -548,28 +382,22 @@ GN-FRPD-ADM-TEC-PUNTAJE-01
 Promedio ponderado de todos los evaluadores.
 #### Puntaje Minimo Elegibilidad
 5
-#### Res
+#### Resultados
 - Se construye un ranking de iniciativas 'Elegibles' de mayor a menor puntuación.
 - Iniciativas 'Elegibles' pasan a Evaluación Técnica.
 ### Sec 8 Evaluacion Tecnica y Antecedentes
-#### ID
-GN-FRPD-SEC-8-EVAL-TEC
 #### Alcance
-#### ID
-GN-FRPD-EVAL-ALCANCE-01
-#### Obj
+#### Objetivos
 - Aplicar evaluación técnica a iniciativas declaradas 'Elegibles' en etapas anteriores.
 #### Criterios
 - Antecedentes presentados.
 - Pertinencia.
 - Ejecutabilidad.
 - Uso eficiente de recursos fiscales.
-#### Resp
+#### Responsables
 - Unidad de Proyectos y Programas del Departamento de Análisis y Evaluación del GORE Ñuble.
 #### Lineamientos y Prioridades 2025
-#### ID
-GN-FRPD-EVAL-LINEAMIENTOS-01
-#### Req
+#### Requisitos
 - Considerar prioridades regionales año 2025 fijadas por Resolución Exenta.
 #### Lista Prioridades 2025
 - SOCIAL.
@@ -591,7 +419,7 @@ GN-FRPD-EVAL-LINEAMIENTOS-01
 #### Focalizacion Inversion
 #### Cpt
 Reglas de foco y coherencia de la inversión.
-#### Req
+#### Requisitos
 - Propósito: solucionar un problema regional definido, identificable, demostrable y con indicadores.
 - Formulación: enfocada en disminuir brechas de un problema claramente definido.
 - Cobertura: considerar dimensión regional del FNDR y magnitud del problema.
@@ -599,199 +427,78 @@ Reglas de foco y coherencia de la inversión.
 - Equidad: énfasis en equidad de acceso y pertinencia, con mecanismos de selección transparentes y probos.
 - Gestión: capacidad óptima de gestión, maximizando eficiencia y eficacia.
 #### Restricciones Postulacion
-#### ID
-GN-FRPD-EVAL-RESTRICCIONES-01
 #### Instituciones Publicas
 #### Cpt
 Restricciones para instituciones públicas.
-#### Req
+#### Requisitos
 - No postular a programas con objetivos distintos a su ley o decreto de creación.
 - Acreditar objeto social coherente.
 #### Convenios Vigentes
-#### Req
+#### Requisitos
 - Si existen convenios vigentes con el GORE, adjuntar clarificación de saldos por rendir y cumplir con Res. N°30 de 2015 CGR.
 #### Uso Prohibido Recursos FNDR
-#### Prohib
+#### Prohibiciones
 - Otorgar préstamos.
 - Financiar gastos de personal de entidades receptoras (salvo glosas específicas).
 - Financiar gastos de bienes y servicios de consumo de entidades receptoras (salvo habilitación expresa).
 - Constituir, aportar o comprar sociedades o empresas.
 #### Limite Gastos Administrativos
-#### Req
+#### Requisitos
 - Máximo 5% del total postulado (Art. 25 Ley N° 21.796).
 #### Rendicion Cuentas
-#### Req
+#### Requisitos
 - Rendir cuentas obligatoriamente vía SISREC (Art. 24 Ley N° 21.796).
 #### Subcontratacion
 #### Cpt
 Reglas sobre subcontratación.
-#### Req
+#### Requisitos
 - Permitida sólo para actividades que no son objeto principal del proyecto.
 - Precisar en formulario, presupuesto y convenio.
-#### Prohib
+#### Prohibiciones
 - No subcontratar con personas relacionadas (Art. 100 Ley N° 18.045), incluyendo matrices, coligantes, filiales, directores, gerentes y parientes hasta 2° consanguinidad vinculados al Gobernador, Consejeros o directivos del GORE.
 #### Contratacion Personas
-#### Prohib
+#### Prohibiciones
 - Contratar cónyuges, parejas, hijos o parientes hasta 3° consanguinidad del Gobernador, Consejeros, personal directivo GORE o Jefe de Servicio/directivos de la institución postulante.
 #### Antecedentes Requeridos Postulacion
-#### ID
-GN-FRPD-EVAL-ANTECEDENTES-01
 #### Mech Ingreso
 #### Cpt
 Mecanismos de ingreso de antecedentes.
 #### Instituciones Privadas
-#### Mech
+#### Mecanismo
 Oficio al Gobernador Regional por Oficina de Partes.
 #### Instituciones Publicas
-#### Mech
+#### Mecanismo
 DOC Digital del Estado de Chile.
-#### Req
+#### Requisitos
 - Todos los antecedentes descritos deben estar cargados en el Banco Integrado de Proyectos (BIP) al momento de la postulación.
 #### Lista Antecedentes
--
-  #### ID
-  GN-FRPD-ANT-OFICIO-CONDUCTOR
-  #### Cpt
-  Oficio Conductor.
-  #### Req
-  - Dirigido al Gobernador Regional, firmado y timbrado.
-  - Debe indicar nombre de la iniciativa, código BIP y Eje/Lineamiento/Objetivo ERD asociado.
-  #### Cond
-  - Si no se cumple, la iniciativa es INADMISIBLE.
--
-  #### ID
-  GN-FRPD-ANT-FICHA-IDI
-  #### Cpt
-  Ficha IDI (año presupuestario 2025).
-  #### Src
-  - Se descarga desde BIP con código de proyecto.
-  #### Ctx
-  - Etapa de ejecución.
-  #### Req
-  - Cargar asignación presupuestaria completa.
-  - Registrar cofinanciamiento y fuentes.
-  - Monto total coherente con presupuesto y oficio.
-  - Es el único antecedente impreso, pero también debe estar cargado en BIP.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-1-FORM
-  #### Cpt
-  Anexo 1 – Formulario de Postulación FRPD.
-  #### Purp
-  - Documento metodológico que fundamenta la iniciativa.
-  #### Src
-  - Disponible en página web del GORE Ñuble.
-  #### Rec
-  - Se sugiere usar Metodología de Marco Lógico.
-  #### Ctx
-  - Debe ubicarse en carpeta 'Estudio Preinversional' en BIP.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-2-PRESUPUESTO
-  #### Cpt
-  Anexo 2 – Presupuesto.
-  #### Req
-  - Formato PDF y Excel en BIP.
-  - Desglose máximo coherente con MML, IVA incluido, sin gastos generales ni utilidades.
-  #### Facultades GORE
-  - El GORE puede solicitar análisis de precios unitarios (APU).
-  #### Cond
-  - Cofinanciamiento requiere V°B° de Unidad Financiera.
-  #### Clasificador Presupuestario
-  - Contratación de programa: actividades principales (RRHH, materiales, etc.), sugerido entre 70–95% del total.
-  - Consultoras: externalización de servicios, no puede ser mayor a 'Contratación de Programas'.
-  - Gastos administrativos: hasta 5% del total; incluye combustible, materiales de oficina y garantías (privados).
-  #### Prohib
-  - Cargar viáticos, alimentación, pasajes, peajes o estacionamiento al FRPD.
-  #### Clasificacion SISREC
-  - Inversión: adquisición de activos y otros sin contraprestación directa (asociado a contratación de programa).
-  - Operación: gastos de bienes de consumo y otros para funcionamiento (asociados a gastos administrativos).
-  - Recursos Humanos: remuneraciones (asociadas a consultorías).
-  #### Imputacion Transferencia
-  - Corriente: si gasto asimilable a subtítulos 21, 22, 24 > 50% del total.
-  - De Capital: si gasto asimilable a subtítulos 29, 31, 33 > 50% del total.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-3-PERFILES
-  #### Cpt
-  Anexo 3 – Perfiles y descripción de cargo.
-  #### Req
-  - Describir perfiles, funciones, número de horas y formato de contratación.
-  - Universidades estatales deben adjuntar declaración jurada simple del Rector con horas disponibles de académicos.
-  - Adjuntar certificado de que personas a contratar no pertenecen a la institución (cuando corresponda).
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-4-COTIZ-TDR
-  #### Cpt
-  Anexo 4 – Cotizaciones y/o Términos de Referencia (TDR).
-  #### Req
-  - Al menos 1 cotización por activo, con antigüedad ≤ 60 días, fecha, RUT del proveedor y precio.
-  - TDR detallados para licitaciones (fechas, dimensiones, especificaciones técnicas).
-  #### Ctx
-  - Ubicación en BIP: carpeta 'Especificaciones Técnicas'.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-5-DECL-SIN-REND
-  #### Cpt
-  Anexo 5 – Declaración jurada simple (sin rendiciones pendientes).
-  #### Src
-  - Disponible en página web del GORE Ñuble.
-  #### Req
-  - Firma del representante legal.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-6-ESTATUTOS
-  #### Cpt
-  Anexo 6 – Decreto o Estatutos de creación del servicio.
-  #### Purp
-  - Acreditar que el objeto social se relaciona con el programa.
-  #### Rec
-  - Adjuntar aprobación técnica de SES o DIPRES si existe.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-7-PERSONERIA
-  #### Cpt
-  Anexo 7 – Personería del representante legal.
-  #### Purp
-  - Acreditar quién firmará el convenio.
--
-  #### ID
-  GN-FRPD-ANT-ANEXO-8-RESUMEN-EJEC
-  #### Cpt
-  Anexo 8 – Resumen Ejecutivo.
-  #### Src
-  - Disponible en página web del GORE Ñuble.
-  #### Req
-  - Apéndice con objetivos, descripción y montos.
-  #### Ctx
-  - Ubicación en BIP: carpeta 'Anexos'.
--
-  #### ID
-  GN-FRPD-ANT-OTROS-ANEXOS
-  #### Cpt
-  Otros anexos.
-  #### Cond
-  - Compromiso de financiamiento compartido: certificado de Dirección de Finanzas.
-  - Postulación de Universidad Estatal: certificado de acreditación de la CNA.
-  - Derechos de Autor: declaración jurada sobre plagio, si aplica.
+| ID | Cpt | Req |
+| --- | --- | --- |
+| GN-FRPD-ANT-OFICIO-CONDUCTOR | Oficio Conductor. | Dirigido al Gobernador Regional, firmado y timbrado., Debe indicar nombre de la iniciativa, código BIP y Eje/Lineamiento/Objetivo ERD asociado. |
+| GN-FRPD-ANT-FICHA-IDI | Ficha IDI (año presupuestario 2025). | Cargar asignación presupuestaria completa., Registrar cofinanciamiento y fuentes., Monto total coherente con presupuesto y oficio., Es el único antecedente impreso, pero también debe estar cargado en BIP. |
+| GN-FRPD-ANT-ANEXO-1-FORM | Anexo 1 – Formulario de Postulación FRPD. |  |
+| GN-FRPD-ANT-ANEXO-2-PRESUPUESTO | Anexo 2 – Presupuesto. | Formato PDF y Excel en BIP., Desglose máximo coherente con MML, IVA incluido, sin gastos generales ni utilidades. |
+| GN-FRPD-ANT-ANEXO-3-PERFILES | Anexo 3 – Perfiles y descripción de cargo. | Describir perfiles, funciones, número de horas y formato de contratación., Universidades estatales deben adjuntar declaración jurada simple del Rector con horas disponibles de académicos., Adjuntar certificado de que personas a contratar no pertenecen a la institución (cuando corresponda). |
+| GN-FRPD-ANT-ANEXO-4-COTIZ-TDR | Anexo 4 – Cotizaciones y/o Términos de Referencia (TDR). | Al menos 1 cotización por activo, con antigüedad ≤ 60 días, fecha, RUT del proveedor y precio., TDR detallados para licitaciones (fechas, dimensiones, especificaciones técnicas). |
+| GN-FRPD-ANT-ANEXO-5-DECL-SIN-REND | Anexo 5 – Declaración jurada simple (sin rendiciones pendientes). | Firma del representante legal. |
+| GN-FRPD-ANT-ANEXO-6-ESTATUTOS | Anexo 6 – Decreto o Estatutos de creación del servicio. |  |
+| GN-FRPD-ANT-ANEXO-7-PERSONERIA | Anexo 7 – Personería del representante legal. |  |
+| GN-FRPD-ANT-ANEXO-8-RESUMEN-EJEC | Anexo 8 – Resumen Ejecutivo. | Apéndice con objetivos, descripción y montos. |
+| GN-FRPD-ANT-OTROS-ANEXOS | Otros anexos. |  |
 #### Procedimiento Evaluacion Tecnica y RATE
-#### ID
-GN-FRPD-EVAL-PROCEDIMIENTO-01
-#### Resp
+#### Responsables
 - Unidad de Proyectos y Programas de la DIPIR-GORE Ñuble.
 #### Func
 - Revisión técnica y recomendación de iniciativas.
-#### Res
+#### Resultados
 - Acta de evaluación con asignación de RATE.
 #### Tipos RATE
 #### RS
-#### ID
-GN-FRPD-RATE-RS-01
 #### Cpt
 RS – Recomendado Favorablemente.
-#### Res
+#### Resultados
 - Otorga aprobación técnica.
-#### Req
+#### Requisitos
 - Certificado RS, acta de evaluación, presupuesto final, ficha IDI y oficio conductor.
 #### Contenido Certificado RS
 - Listado de beneficiarios.
@@ -804,22 +511,16 @@ RS – Recomendado Favorablemente.
 #### Vigencia
 - Año de obtención + 2 años calendario siguientes, si no hay cambios sustantivos.
 #### FI
-#### ID
-GN-FRPD-RATE-FI-01
 #### Cpt
 FI – Falta de Información.
-#### Def
+#### Definicion
 - Antecedentes insuficientes, errores o necesidad de actualización.
 #### OT
-#### ID
-GN-FRPD-RATE-OT-01
 #### Cpt
 OT – Objetado técnicamente.
-#### Def
+#### Definicion
 - Iniciativa mal formulada o con problemas técnicos/administrativos/normativos insalvables.
 #### NV
-#### ID
-GN-FRPD-RATE-NV-01
 #### Cpt
 NV – No Vigente.
 #### Causa
@@ -827,25 +528,17 @@ NV – No Vigente.
 - Financiamiento por otra fuente.
 - Desistimiento.
 - Incompatibilidades normativas.
-#### Res
+#### Resultados
 - Término del proceso de evaluación para el año presupuestario.
 ### Sec 9 Comunicacion Resultados
-#### ID
-GN-FRPD-SEC-9-COMUNICACION
 #### Canales
-#### ID
-GN-FRPD-COMUNICACION-CANALES-01
 #### Medio Principal
 - Publicación en página web del GORE Ñuble ([www.goredenuble.cl](www.goredenuble.cl)).
 #### Medio Secundario
 - Comunicación vía correo electrónico a coordinadores de iniciativas desde difoi.nuble@goredenuble.cl.
 ### Sec 10 Ejecucion Iniciativas
-#### ID
-GN-FRPD-SEC-10-EJECUCION
 #### Solicitud Financiamiento
-#### ID
-GN-FRPD-EJEC-SOLICITUD-01
-#### Act
+#### Acciones
 - Departamento de Análisis y Evaluación emite reporte semanal al Gobernador y Jefe de División de Presupuesto con iniciativas aprobadas.
 #### Proc Aprobacion
 - > 7.000 UTM: aprobación del Consejo Regional.
@@ -853,45 +546,33 @@ GN-FRPD-EJEC-SOLICITUD-01
 #### Proc Post Aprobacion
 - Departamento de Presupuesto elabora resolución y solicita creación presupuestaria a DIPRES.
 #### Elaboracion Convenio
-#### ID
-GN-FRPD-EJEC-CONVENIO-01
-#### Ctx
+#### Contexto
 - Inicia una vez emitida la resolución de DIPRES.
-#### Resp
+#### Responsables
 - Departamento de Presupuestos del GORE.
-#### Req
+#### Requisitos
 - Firma del representante legal del servicio beneficiado.
 #### Transferencia Recursos
-#### ID
-GN-FRPD-EJEC-TRANSFERENCIAS-01
-#### Cond
+#### Condiciones
 - Según Ley de Presupuestos, programación financiera y avance efectivo del programa.
-#### Req
+#### Requisitos
 - Cuenta corriente exclusiva para recursos FNDR.
 #### Seguimiento Iniciativa
-#### ID
-GN-FRPD-EJEC-SEGUIMIENTO-01
-#### Resp
+#### Responsables
 - División Patrocinante del GORE.
-#### Obj
+#### Objetivos
 - Seguimiento técnico y financiero.
 #### Reevaluaciones
-#### ID
-GN-FRPD-EJEC-REEVAL-01
-#### Def
+#### Definicion
 - Nuevo análisis frente a cambios significativos.
-#### Ctx
+#### Contexto
 - Aplica sólo a iniciativas con obras civiles.
-#### Prohib
+#### Prohibiciones
 - No aplica a estudios ni programas.
-#### Proc
+#### Proceso
 - Modificaciones requieren ingreso de oficio al Gobernador para evaluación.
 ### Sec 11 Propiedad Intelectual
-#### ID
-GN-FRPD-SEC-11-PROPIEDAD
 #### Reconocimiento
-#### ID
-GN-FRPD-PROPIEDAD-RECONOC-01
 #### Cpt
 - Propiedad intelectual de inventos e innovaciones según Ley 17.336 y 19.039.
 #### Entidad Encargante
@@ -902,35 +583,23 @@ GN-FRPD-PROPIEDAD-RECONOC-01
 #### Propiedad Industrial
 - Aplica el mismo régimen que para propiedad intelectual.
 ### Sec 12 Compromiso Gobierno Regional
-#### ID
-GN-FRPD-SEC-12-COMPROMISO-GORE
 #### Compromiso
-#### ID
-GN-FRPD-COMPROMISO-01
 #### Cpt
 - Transferir recursos asignados según proyecto aprobado y programación financiera.
 #### Condiciones Suspensivas
-#### ID
-GN-FRPD-COND-SUSPENSIVAS-01
-#### Cond
+#### Condiciones
 - Existencia y disponibilidad de recursos en el presupuesto del GORE.
 - No existencia de rebajas presupuestarias del Gobierno Central; en caso contrario, plazos y montos podrán modificarse.
 ### Sec 13 Garantias
-#### ID
-GN-FRPD-SEC-13-GARANTIAS
 #### Ambito
-#### ID
-GN-FRPD-GARANTIAS-AMBITO-01
-#### Ctx
+#### Contexto
 - Aplica sólo a instituciones privadas.
-#### Fnd
+#### Fundamento
 - Res. 30 CGR; Oficio Circular N°20 Ministerio de Hacienda; Dictamen N°15.978/10 CGR.
 #### Reglas Garantias
-#### ID
-GN-FRPD-GARANTIAS-REGLAS-01
-#### Req
+#### Requisitos
 - Obligatoria para transferencias > 1.000 UTM.
-#### Purp
+#### Proposito
 - Velar por el cumplimiento de obligaciones del convenio.
 #### Instrumentos
 - Boletas de garantía.
@@ -943,43 +612,31 @@ GN-FRPD-GARANTIAS-REGLAS-01
 #### Vigencia
 - Mínimo 90 días posteriores al término de la iniciativa; se extiende si hay ampliación de plazo.
 ### Sec 14 Otros Aspectos
-#### ID
-GN-FRPD-SEC-14-OTROS
 #### Transparencia y Comunicaciones
-#### ID
-GN-FRPD-OTROS-TRANSP-01
 #### Cpt
 - Normas gráficas de la Unidad de Comunicaciones del GORE aplican a todas las iniciativas.
-#### Act
+#### Acciones
 - Publicación mensual en la web del GORE de la cartera de proyectos ingresados y con convenio.
 #### Req Instituciones Privadas
 - Al postular: sitio web con información de la institución, directorio y representante legal; publicar estados financieros, balance y memoria anual (especialmente si adjudica > 2.000 UTM).
 - Durante ejecución: banner en web institucional con información de la iniciativa, convenio, avances, etc.
 #### Rendiciones de Cuenta
-#### ID
-GN-FRPD-OTROS-RENDICIONES-01
-#### Req
+#### Requisitos
 - Documentos originales para rendición.
 - Listados de participación con firmas en fresco o digitales.
 #### Uso SISREC
-#### ID
-GN-FRPD-OTROS-SISREC-01
-#### Req
+#### Requisitos
 - Rendir cuentas vía SISREC (Art. 24 Ley N° 21.796).
-#### Resp
+#### Responsables
 - Órgano público que transfiere los fondos es responsable del uso de SISREC.
 #### Obligacion Restituir Fondos
-#### ID
-GN-FRPD-OTROS-RESTITUCION-01
 #### Causa
 - Uso de recursos en finalidad distinta a la autorizada.
 - Fondos no utilizados.
 - Fondos observados por contraparte GORE o Unidad de Control.
-#### Ctx
+#### Contexto
 - La obligación de restituir es distinta de la garantía de fiel cumplimiento.
 #### Contrapartes Tecnicas
-#### ID
-GN-FRPD-OTROS-CONTRAPARTES-01
 #### Cpt
 - Contraparte postulante: persona responsable de la iniciativa informada antes del convenio; si no existe, se debe presupuestar su contratación.
 - Contraparte GORE: nombrada según Resolución Exenta N°162 del 15/02/2023.
@@ -987,159 +644,54 @@ GN-FRPD-OTROS-CONTRAPARTES-01
 - Se busca un flujo ágil; las instituciones deben canalizar la información mediante una contraparte.
 - Para difusión, coordinar con Depto. de Comunicaciones o Gabinete del GORE.
 #### Acreditar Objeto Social
-#### ID
-GN-FRPD-OTROS-OBJETO-SOCIAL-01
-#### Req
+#### Requisitos
 - Los convenios deben mencionar expresamente el objeto social de la institución privada.
 - Acreditar objeto social pertinente a la actividad mediante documentación adjunta.
 #### Facultades Supervision
-#### ID
-GN-FRPD-OTROS-SUPERVISION-01
 #### Cpt
 - GORE y Consejo Regional pueden supervisar iniciativas en ejecución y ex post (Ley N°19.175).
-#### Proc
+#### Proceso
 - Dudas o interpretaciones sobre la guía serán resueltas por el GORE.
 #### Contratacion Funcionarios Universidades
-#### ID
-GN-FRPD-OTROS-UNIVERSIDADES-01
-#### Req
+#### Requisitos
 - Universidades deben adjuntar declaración jurada simple del Rector con detalle de horas disponibles de académicos/investigadores para I+D.
-#### Cond
+#### Condiciones
 - Las horas no deben traslaparse con actividades y horarios regulares de la universidad.
 #### Norma Supletoria
-#### ID
-GN-FRPD-OTROS-NORMA-SUPLETORIA-01
 #### Cpt
 - Aspectos no cubiertos en esta guía se rigen por Guía Base FNDR (Res. Ex. N°83/2024), Normas de Inversión Pública y normativa legal vigente.
 #### Proteccion Datos Personales
-#### ID
-GN-FRPD-OTROS-DATOS-01
-#### Fnd
+#### Fundamento
 - Ley N° 19.628 y sus modificaciones.
-#### Req
+#### Requisitos
 - El postulante debe adoptar medidas técnicas y organizativas para asegurar confidencialidad, integridad y disponibilidad de datos personales.
 #### Derechos Titulares
 - Acceso, rectificación, supresión, oposición y portabilidad.
 #### Normativa Especifica FRPD
-#### ID
-GN-FRPD-OTROS-NORMATIVA-ESPECIFICA-01
 #### Cpt
 - Regulación adicional podrá establecerse por decretos supremos del Ministerio de Hacienda (Ley N° 21.591).
-#### Ctx
+#### Contexto
 - Estas bases se entienden complementadas por dicha normativa una vez publicada.
 
 ## Formulario FRPD Application 2025
-### ID
-GN-FRPD-FORM-APPLICATION-2025-01
-### Purp
+### Proposito
 Definir los campos obligatorios y estructura del formulario de postulación FRPD 2025.
-### Ctx
+### Contexto
 - Deriva directamente del bloque FORM-GN-FRPD-APPLICATION-2025-01 del documento fuente.
 ### Seccion 1 Identificacion Iniciativa
-#### ID
-GN-FRPD-FORM-SEC1-IDENT
 #### Campos
--
-  #### ID
-  GN-FRPD-FORM-COD-BIP
-  #### Field Label
-  Código BIP
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-NOMBRE-PROGRAMA
-  #### Field Label
-  Nombre del Programa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-MONTO-FNDR
-  #### Field Label
-  Monto solicitado FNDR
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory. Min-Val: 0.
--
-  #### ID
-  GN-FRPD-FORM-MONTO-TOTAL
-  #### Field Label
-  Monto total del Programa
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory. Min-Val: 0.
--
-  #### ID
-  GN-FRPD-FORM-PLAZO-MESES
-  #### Field Label
-  Plazo de ejecución (meses)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory. Min-Val: 1. Max-Val: 30.
--
-  #### ID
-  GN-FRPD-FORM-EJE-ERD
-  #### Field Label
-  Eje ERD
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-LINEAMIENTO-ERD
-  #### Field Label
-  Lineamiento ERD
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-OBJETIVO-ERD
-  #### Field Label
-  Objetivo ERD
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-LINEAMIENTO-POSTULA
-  #### Field Label
-  Lineamiento al que postula
-  #### Field Type
-  Checkbox-Group
-  #### Field Instr
-  Marcar con X el lineamiento al que postula.
-  #### Field Options
-  - Social
-  - Asistencia técnica a municipalidades
-  - Cultural
-  - Salud
-  - Infancia
-  - Energía, transportes y telecomunicaciones
-  - Medioambiente y gestión de residuos
-  - Gestión de recursos hídricos
-  - Deportes
-  - Movilidad urbana
-  - Cuidados de adulto mayor
-  - Conectividad digital
-  - Emergencia
-  - Fomento productivo, emprendimiento, innovación
-  - Seguridad pública
-  - Atracción de inversiones
+| ID | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- |
+| GN-FRPD-FORM-COD-BIP | Código BIP | Text | Req: mandatory. |
+| GN-FRPD-FORM-NOMBRE-PROGRAMA | Nombre del Programa | Text | Req: mandatory. |
+| GN-FRPD-FORM-MONTO-FNDR | Monto solicitado FNDR | Number | Req: mandatory. Min-Val: 0. |
+| GN-FRPD-FORM-MONTO-TOTAL | Monto total del Programa | Number | Req: mandatory. Min-Val: 0. |
+| GN-FRPD-FORM-PLAZO-MESES | Plazo de ejecución (meses) | Number | Req: mandatory. Min-Val: 1. Max-Val: 30. |
+| GN-FRPD-FORM-EJE-ERD | Eje ERD | Text | Req: mandatory. |
+| GN-FRPD-FORM-LINEAMIENTO-ERD | Lineamiento ERD | Text | Req: mandatory. |
+| GN-FRPD-FORM-OBJETIVO-ERD | Objetivo ERD | Text | Req: mandatory. |
+| GN-FRPD-FORM-LINEAMIENTO-POSTULA | Lineamiento al que postula | Checkbox-Group |  |
 ### Seccion 2 Institucion Postulante
-#### ID
-GN-FRPD-FORM-SEC2-INSTITUCION
 #### Campos
 | ID | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- |
@@ -1155,154 +707,26 @@ GN-FRPD-FORM-SEC2-INSTITUCION
 | GN-FRPD-FORM-N-PROGRAMAS-EJEC | N° de programas en ejecución con Gobierno Regional | Number | Req: mandatory. Min-Val: 0. |
 | GN-FRPD-FORM-SALDO-POR-RENDIR | Saldo por rendir programas en ejecución (a la fecha de postulación) | Number | Req: mandatory. Min-Val: 0. |
 ### Seccion 3 Diagnostico
-#### ID
-GN-FRPD-FORM-SEC3-DIAGNOSTICO
 #### Campos
--
-  #### ID
-  GN-FRPD-FORM-ANALISIS-INVOLUCRADOS
-  #### Field Label
-  Análisis de los involucrados
-  #### Field Type
-  Static-Text
--
-  #### ID
-  GN-FRPD-FORM-DESC-GRUPO-OBJETIVO
-  #### Field Label
-  Descripción del grupo objetivo
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Identificar beneficiarios directos e indirectos en todos los niveles.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-TERRITORIO-INTERVENIR
-  #### Field Label
-  Territorio a intervenir
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-PROY-ANTERIORES
-  #### Field Label
-  Identificación de proyectos o programas anteriores destinados al grupo objetivo (FNDR o Sectorial).
-  #### Field Type
-  TextArea
--
-  #### ID
-  GN-FRPD-FORM-ANALISIS-BENEFICIARIOS
-  #### Field Label
-  Análisis de los beneficiarios
-  #### Field Type
-  Static-Text
--
-  #### ID
-  GN-FRPD-FORM-REQ-BENEFICIARIO
-  #### Field Label
-  Requisitos específicos para calificar como beneficiario
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-PROC-SELECCION-BENEF
-  #### Field Label
-  Descripción del procedimiento de selección de beneficiarios
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-BENEFICIOS-INDIVIDUALES
-  #### Field Label
-  Beneficios a recibir por beneficiario individual
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-N-ESTIMADO-BENEF
-  #### Field Label
-  Numero estimado de beneficiarios (por grupo objetivo y género)
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-ANALISIS-PROBLEMA
-  #### Field Label
-  Análisis del Problema
-  #### Field Type
-  Static-Text
--
-  #### ID
-  GN-FRPD-FORM-IDENTIFICACION-PROBLEMA
-  #### Field Label
-  Identificación del problema (problemas principales de la situación)
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-DEFINICION-PROBLEMA-CENTRAL
-  #### Field Label
-  Definición del problema central (aplicando prioridad y selectividad)
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-EFECTOS-PROBLEMA
-  #### Field Label
-  Efectos del problema (definir los más importantes)
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-CAUSAS-PROBLEMA
-  #### Field Label
-  Causas del problema (elementos que lo provocan)
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-ARBOL-PROBLEMAS
-  #### Field Label
-  Árbol de problemas (diagrama Causa-Efecto)
-  #### Field Type
-  File
-  #### Field Instr
-  Construir y presentar árbol de problemas. El árbol debe dar una imagen completa de la situación negativa. Verificar validez e integridad.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-ARBOL-OBJETIVOS
-  #### Field Label
-  Diagrama de árbol de soluciones (medios y fines)
-  #### Field Type
-  File
-  #### Field Instr
-  Convertir condiciones negativas a positivas. Examinar relación medio-fin. Añadir nuevos objetivos si es necesario.
-  #### Field Constraint
-  Req: mandatory.
+| ID | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- |
+| GN-FRPD-FORM-ANALISIS-INVOLUCRADOS | Análisis de los involucrados | Static-Text |  |
+| GN-FRPD-FORM-DESC-GRUPO-OBJETIVO | Descripción del grupo objetivo | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-TERRITORIO-INTERVENIR | Territorio a intervenir | Text | Req: mandatory. |
+| GN-FRPD-FORM-PROY-ANTERIORES | Identificación de proyectos o programas anteriores destinados al grupo objetivo (FNDR o Sectorial). | TextArea |  |
+| GN-FRPD-FORM-ANALISIS-BENEFICIARIOS | Análisis de los beneficiarios | Static-Text |  |
+| GN-FRPD-FORM-REQ-BENEFICIARIO | Requisitos específicos para calificar como beneficiario | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-PROC-SELECCION-BENEF | Descripción del procedimiento de selección de beneficiarios | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-BENEFICIOS-INDIVIDUALES | Beneficios a recibir por beneficiario individual | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-N-ESTIMADO-BENEF | Numero estimado de beneficiarios (por grupo objetivo y género) | Text | Req: mandatory. |
+| GN-FRPD-FORM-ANALISIS-PROBLEMA | Análisis del Problema | Static-Text |  |
+| GN-FRPD-FORM-IDENTIFICACION-PROBLEMA | Identificación del problema (problemas principales de la situación) | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-DEFINICION-PROBLEMA-CENTRAL | Definición del problema central (aplicando prioridad y selectividad) | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-EFECTOS-PROBLEMA | Efectos del problema (definir los más importantes) | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-CAUSAS-PROBLEMA | Causas del problema (elementos que lo provocan) | TextArea | Req: mandatory. |
+| GN-FRPD-FORM-ARBOL-PROBLEMAS | Árbol de problemas (diagrama Causa-Efecto) | File | Req: mandatory. |
+| GN-FRPD-FORM-ARBOL-OBJETIVOS | Diagrama de árbol de soluciones (medios y fines) | File | Req: mandatory. |
 ### Seccion 4 Identificacion Programa
-#### ID
-GN-FRPD-FORM-SEC4-IDENT-PROGRAMA
 #### Campos
 | ID | Field-Label | Field-Type |
 | --- | --- | --- |
@@ -1313,106 +737,30 @@ GN-FRPD-FORM-SEC4-IDENT-PROGRAMA
 | GN-FRPD-FORM-PRODUCTOS-ENTREGAR | Productos que se entregarán | TextArea |
 | GN-FRPD-FORM-RESULTADOS-ESPERADOS | Resultados esperados | TextArea |
 ### Seccion 5 Matriz Marco Logico
-#### ID
-GN-FRPD-FORM-SEC5-MML
 #### Campos
 | ID | Field-Label | Field-Type | Field-Instr |
 | --- | --- | --- | --- |
 | GN-FRPD-FORM-MATRIZ-MML | Matriz de Marco Lógico | Repeater | Completar la matriz para cada nivel: Fin, Propósito, Componentes y Actividades. |
 ### Seccion 6 Operatividad Programa
-#### ID
-GN-FRPD-FORM-SEC6-OPERATIVIDAD
 #### Campos
 | ID | Field-Label | Field-Type | Field-Instr | Field-Constraint |
 | --- | --- | --- | --- | --- |
 | GN-FRPD-FORM-ETAPA-PLANIFICACION-CONTROL | Etapa de Planificación y Control | File | Incorporar carta Gantt de actividades y financiera. | Req: mandatory. |
 ### Seccion 7 Presupuesto
-#### ID
-GN-FRPD-FORM-SEC7-PRESUPUESTO
 #### Campos
--
-  #### ID
-  GN-FRPD-FORM-PRESUPUESTO-TITULO
-  #### Field Label
-  Presupuesto
-  #### Field Type
-  Static-Text
--
-  #### ID
-  GN-FRPD-FORM-PRESUPUESTO-DETALLADO
-  #### Field Label
-  Presupuesto Detallado
-  #### Field Type
-  Repeater
-  #### Field Instr
-  Añadir una fila por cada ítem del presupuesto.
--
-  #### ID
-  GN-FRPD-FORM-RESUMEN-PRESUP-CLASIF-PRESUP
-  #### Field Label
-  Resumen Presupuesto (por Clasificación Presupuestaria)
-  #### Field Type
-  Repeater
--
-  #### ID
-  GN-FRPD-FORM-RESUMEN-PRESUP-CLASIF-SISREC
-  #### Field Label
-  Resumen Presupuesto (por Clasificación SISREC)
-  #### Field Type
-  Repeater
--
-  #### ID
-  GN-FRPD-FORM-DETALLE-CONTRATACION-PERSONAS
-  #### Field Label
-  Detalle Contratación de Personas
-  #### Field Type
-  Repeater
--
-  #### ID
-  GN-FRPD-FORM-DETALLE-DIFUSION-HITOS
-  #### Field Label
-  Detalle actividades difusión e hitos comunicacionales
-  #### Field Type
-  Repeater
+| ID | Field-Label | Field-Type |
+| --- | --- | --- |
+| GN-FRPD-FORM-PRESUPUESTO-TITULO | Presupuesto | Static-Text |
+| GN-FRPD-FORM-PRESUPUESTO-DETALLADO | Presupuesto Detallado | Repeater |
+| GN-FRPD-FORM-RESUMEN-PRESUP-CLASIF-PRESUP | Resumen Presupuesto (por Clasificación Presupuestaria) | Repeater |
+| GN-FRPD-FORM-RESUMEN-PRESUP-CLASIF-SISREC | Resumen Presupuesto (por Clasificación SISREC) | Repeater |
+| GN-FRPD-FORM-DETALLE-CONTRATACION-PERSONAS | Detalle Contratación de Personas | Repeater |
+| GN-FRPD-FORM-DETALLE-DIFUSION-HITOS | Detalle actividades difusión e hitos comunicacionales | Repeater |
 ### Seccion 8 Resumen Programa
-#### ID
-GN-FRPD-FORM-SEC8-RESUMEN
 #### Campos
--
-  #### ID
-  GN-FRPD-FORM-RESUMEN-PROGRAMA
-  #### Field Label
-  Resumen del Programa
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory. Max-Len: 3000.
-  #### Field Instr
-  ¾ de hoja máximo.
--
-  #### ID
-  GN-FRPD-FORM-FIRMA-FORMULADOR
-  #### Field Label
-  Nombre, firma y timbre del Formulador
-  #### Field Type
-  Signature
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-FIRMA-REPRESENTANTE
-  #### Field Label
-  Nombre, firma y timbre del jefe de Servicio o Representante
-  #### Field Type
-  Signature
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  GN-FRPD-FORM-CONTACTO-FORMULADOR-FINAL
-  #### Field Label
-  Fono y Mail del formulador
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
+| ID | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- |
+| GN-FRPD-FORM-RESUMEN-PROGRAMA | Resumen del Programa | TextArea | Req: mandatory. Max-Len: 3000. |
+| GN-FRPD-FORM-FIRMA-FORMULADOR | Nombre, firma y timbre del Formulador | Signature | Req: mandatory. |
+| GN-FRPD-FORM-FIRMA-REPRESENTANTE | Nombre, firma y timbre del jefe de Servicio o Representante | Signature | Req: mandatory. |
+| GN-FRPD-FORM-CONTACTO-FORMULADOR-FINAL | Fono y Mail del formulador | Text | Req: mandatory. |

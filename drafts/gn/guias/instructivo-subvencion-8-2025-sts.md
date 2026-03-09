@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.29
+    cr: 2.77
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -38,7 +38,7 @@ extensions:
 
 # Instructivo Concurso de Vinculación con la Comunidad 8% 2025 – Región de Ñuble
 ## Source
-### Ctx Required
+### Contexto requerido
 - Ley N° 21.796 – Ley de Presupuestos del Sector Público 2026 (Glosa 07, Subtítulo 24, subvenciones GORE).
 - Ley N° 19.175 – Ley Orgánica Constitucional sobre Gobierno y Administración Regional (LOC GORE).
 - Ley N° 19.880 – Bases de los Procedimientos Administrativos.
@@ -54,7 +54,7 @@ extensions:
 - Estrategia Regional de Desarrollo Región de Ñuble 2024–2030.
 - Estrategia Quinquenal Regional del Ministerio de las Culturas 2024–2025.
 - Plan Nacional de Seguridad 2022–2024.
-### Ctx Optional
+### Contexto opcional
 - Política Nacional de Actividad Física y Deporte 2016–2025.
 - Documentos operativos internos del GORE Ñuble sobre subvenciones concursables 8%.
 
@@ -62,53 +62,23 @@ extensions:
 ### Proposito
 Definir conceptos, siglas, actores y fondos clave del Concurso 8% Vinculación con la Comunidad.
 ### Terminos
-| ID | Sigla | Cpt | Def |
-| --- | --- | --- | --- |
-| GN-CONC8-GLOS-FNDR | FNDR | Fondo Nacional de Desarrollo Regional | Principal fuente de financiamiento regional administrada por los Gobiernos Regionales; permite asignar recursos a inversión y subvenciones especiales como el Concurso 8%. |
-| ID | Sigla | Cpt | Def |
-| --- | --- | --- | --- |
-| GN-CONC8-GLOS-GORE | GORE | Gobierno Regional | Institución descentralizada, con personalidad jurídica y patrimonio propio, responsable de la administración superior de la Región de Ñuble y de la gestión del FNDR. |
 | ID | Cpt | Def |
 | --- | --- | --- |
+| GN-CONC8-GLOS-FNDR | Fondo Nacional de Desarrollo Regional | Principal fuente de financiamiento regional administrada por los Gobiernos Regionales; permite asignar recursos a inversión y subvenciones especiales como el Concurso 8%. |
+| GN-CONC8-GLOS-GORE | Gobierno Regional | Institución descentralizada, con personalidad jurídica y patrimonio propio, responsable de la administración superior de la Región de Ñuble y de la gestión del FNDR. |
 | GN-CONC8-GLOS-CONCURSO8 | Concurso Vinculación con la Comunidad 8% | Concurso anual de subvenciones FNDR hasta por el 8% de los recursos de inversión regional, destinado a financiar iniciativas de vinculación con la comunidad en diversos fondos temáticos. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-SUBVENCION8 | Subvenciones FNDR 8% | Subvenciones financiadas con cargo a hasta un 8% de los recursos de inversión regional, orientadas a actividades específicas de interés comunitario en áreas como cultura, deporte, seguridad, medio ambiente, entre otras. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-ORG-PRIV-SFL | Instituciones privadas sin fines de lucro | Corporaciones, fundaciones, ONG, organizaciones comunitarias y otras entidades privadas sin fines de lucro habilitadas para postular al Concurso 8% bajo las reglas del instructivo. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-ORG-COMUNITARIAS | Organizaciones comunitarias | Organizaciones territoriales, funcionales o de base (ej. juntas de vecinos, centros de padres, clubes, comités) reguladas principalmente por Ley N° 19.418 y normativa municipal. |
-| ID | Sigla | Cpt | Def |
-| --- | --- | --- | --- |
-| GN-CONC8-GLOS-CIES | CIES | Centro Integral de Emergencia y Seguridad | Unidad del GORE Ñuble responsable de la gestión del Fondo de Seguridad Ciudadana del Concurso 8% y de la coordinación técnica asociada. |
-| ID | Sigla | Cpt | Def |
-| --- | --- | --- | --- |
-| GN-CONC8-GLOS-SISREC | SISREC | Sistema de Rendición de Cuentas | Plataforma utilizada para la rendición de cuentas de subvenciones públicas; de uso obligatorio para municipalidades y, según casos, para instituciones privadas. |
-| ID | Cpt | Def |
-| --- | --- | --- |
+| GN-CONC8-GLOS-CIES | Centro Integral de Emergencia y Seguridad | Unidad del GORE Ñuble responsable de la gestión del Fondo de Seguridad Ciudadana del Concurso 8% y de la coordinación técnica asociada. |
+| GN-CONC8-GLOS-SISREC | Sistema de Rendición de Cuentas | Plataforma utilizada para la rendición de cuentas de subvenciones públicas; de uso obligatorio para municipalidades y, según casos, para instituciones privadas. |
 | GN-CONC8-GLOS-MEJORNINEZ | Residencias Mejor Niñez | Residencias de protección del Servicio Nacional de Protección Especializada a la Niñez y Adolescencia, con línea de financiamiento específica dentro del Fondo Social. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-CULTURA | Fondo de Cultura | Fondo del Concurso 8% orientado a iniciativas culturales, patrimoniales, artísticas y de cultura tradicional. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-SOCIAL | Fondo Social e Inclusión | Fondo que financia iniciativas sociales, de inclusión y prevención psicosocial, incluyendo residencias Mejor Niñez. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-GENERO | Fondo Equidad de Género | Fondo destinado a iniciativas que disminuyan brechas y violencias de género y promuevan la autonomía y liderazgo de mujeres y población LGBTIQA+. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-DEPORTE | Fondo de Deporte | Fondo destinado a iniciativas deportivas formativas, recreativas, inclusivas y de competición, incluyendo representación de deportistas. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-AM | Fondo Personas Mayores | Fondo exclusivo para organizaciones de personas mayores, orientado a envejecimiento activo, inclusión y bienestar integral. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-MEDIOAMB | Fondo Medio Ambiente | Fondo destinado a iniciativas de protección ambiental, educación ambiental, eficiencia hídrica y energética, limpieza de focos de basura y tenencia responsable de mascotas. |
-| ID | Cpt | Def |
-| --- | --- | --- |
 | GN-CONC8-GLOS-FONDO-SEG | Fondo Seguridad Ciudadana | Fondo destinado a iniciativas que mejoren la seguridad humana mediante prevención situacional, prevención de riesgos de desastres y equipamiento comunitario de seguridad. |
 
 ## Normativa Concurso8 Clave
@@ -292,13 +262,13 @@ Distribución del monto total entre fondos y concursos especiales.
 #### Fondos
 | ID | Cpt | Purp |
 | --- | --- | --- |
-| GN-CONC8-FONDO-CULT-01 | Fondo de Cultura | ['Financiar actividades culturales que aborden el desarrollo de la identidad local, comunal, provincial y regional.'] |
-| GN-CONC8-FONDO-SOCIAL-01 | Fondo Social e Inclusión | ['Financiar actividades de carácter social que promuevan la vinculación activa, inclusión, intervención y desarrollo de las personas.'] |
-| GN-CONC8-FONDO-GENERO-01 | Fondo Equidad de Género | ['Financiar iniciativas para disminuir brechas y violencia de género.', 'Financiar iniciativas que contribuyan a la autonomía de la mujer (social, laboral, económica).', 'Financiar iniciativas que promuevan asociatividad, liderazgo femenino, corresponsabilidad y empoderamiento.', 'Financiar iniciativas para disminuir la discriminación hacia personas LGBTI+.'] |
-| GN-CONC8-FONDO-DEPORTE-01 | Fondo de Deporte | ['Financiar iniciativas deportivas, formativas, recreativas e inclusivas.', 'Apoyar competencias a nivel provincial, regional, nacional e internacional.'] |
-| GN-CONC8-FONDO-AM-01 | Fondo para Personas Mayores | ['Fomentar la participación de adultos mayores en actividades sociales, deportivas y culturales para un envejecimiento activo.', 'Apoyar la vida diaria de adultos mayores con dependencia moderada o severa, resguardando su autonomía y dignidad.'] |
-| GN-CONC8-FONDO-MEDIOAMB-01 | Fondo de Medio Ambiente | ['Financiar iniciativas que protejan el medioambiente y promuevan la educación ambiental.', 'Financiar mantenimiento de parques, áreas verdes y jardines botánicos.', 'Financiar operación de instalaciones para tratamiento de residuos sólidos, reciclaje y valorización.', 'Financiar actividades relacionadas con adopción, rescate, atención veterinaria y gestión de residuos de animales.'] |
-| GN-CONC8-FONDO-SEG-01 | Fondo Seguridad Ciudadana | ['Financiar iniciativas para la prevención de delitos y emergencias, incluyendo equipamiento y recuperación de espacios públicos.'] |
+| GN-CONC8-FONDO-CULT-01 | Fondo de Cultura | Financiar actividades culturales que aborden el desarrollo de la identidad local, comunal, provincial y regional. |
+| GN-CONC8-FONDO-SOCIAL-01 | Fondo Social e Inclusión | Financiar actividades de carácter social que promuevan la vinculación activa, inclusión, intervención y desarrollo de las personas. |
+| GN-CONC8-FONDO-GENERO-01 | Fondo Equidad de Género | Financiar iniciativas para disminuir brechas y violencia de género., Financiar iniciativas que contribuyan a la autonomía de la mujer (social, laboral, económica)., Financiar iniciativas que promuevan asociatividad, liderazgo femenino, corresponsabilidad y empoderamiento., Financiar iniciativas para disminuir la discriminación hacia personas LGBTI+. |
+| GN-CONC8-FONDO-DEPORTE-01 | Fondo de Deporte | Financiar iniciativas deportivas, formativas, recreativas e inclusivas., Apoyar competencias a nivel provincial, regional, nacional e internacional. |
+| GN-CONC8-FONDO-AM-01 | Fondo para Personas Mayores | Fomentar la participación de adultos mayores en actividades sociales, deportivas y culturales para un envejecimiento activo., Apoyar la vida diaria de adultos mayores con dependencia moderada o severa, resguardando su autonomía y dignidad. |
+| GN-CONC8-FONDO-MEDIOAMB-01 | Fondo de Medio Ambiente | Financiar iniciativas que protejan el medioambiente y promuevan la educación ambiental., Financiar mantenimiento de parques, áreas verdes y jardines botánicos., Financiar operación de instalaciones para tratamiento de residuos sólidos, reciclaje y valorización., Financiar actividades relacionadas con adopción, rescate, atención veterinaria y gestión de residuos de animales. |
+| GN-CONC8-FONDO-SEG-01 | Fondo Seguridad Ciudadana | Financiar iniciativas para la prevención de delitos y emergencias, incluyendo equipamiento y recuperación de espacios públicos. |
 #### Requisitos Admisibilidad Documental Privados
 #### Requisitos
 - Toda iniciativa debe presentar obligatoriamente la documentación exigida en el instructivo.
@@ -394,26 +364,14 @@ Detallar paso a paso el proceso de postulación en la plataforma en línea para 
 #### Requisitos
 - Tener todos los documentos requeridos digitalizados (PDF, JPG, PNG) antes de iniciar.
 #### Secciones
-| ID | Cpt | Purp |
-| --- | --- | --- |
-| GN-CONC8-GUIA-PRIV-S1-CARGA-DOC-01 | Sección 1 – Carga de documentos | Adjuntar toda la documentación obligatoria. |
 | ID | Cpt |
 | --- | --- |
+| GN-CONC8-GUIA-PRIV-S1-CARGA-DOC-01 | Sección 1 – Carga de documentos |
 | GN-CONC8-GUIA-PRIV-S2-DATOS-01 | Sección 2 – Datos de institución e iniciativa |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-GUIA-PRIV-S3-DATOS-ESPEC-01 | Sección 3 – Datos específicos |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-GUIA-PRIV-S4-FORMULACION-01 | Sección 4 – Formulación del proyecto |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-GUIA-PRIV-S5-PRESUPUESTO-01 | Sección 5 – Presupuesto |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-GUIA-PRIV-S6-FORMULADOR-01 | Sección 6 – Datos del formulador |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-GUIA-PRIV-S7-ENVIO-01 | Sección 7 – Enviar formulario |
 ### Sec 3 Fondo Cultura
 #### Objetivo y Participantes
@@ -875,8 +833,8 @@ Fomentar iniciativas municipales para fortalecer la identidad cultural y la segu
 #### Lineas Financiamiento
 | Cpt | Ctx |
 | --- | --- |
-| Fondo de Fomento a la Cultura | ['Monto Total: $480.000.000.', 'Monto Tope por municipio: $22.857.142.'] |
-| Fondo de Seguridad Ciudadana | ['Monto Total: $250.000.000.', 'Monto Tope por municipio: $25.000.000.', 'Se financiarán solo las 10 iniciativas con mayor puntaje de prelación en evaluación técnica.'] |
+| Fondo de Fomento a la Cultura | Monto Total: $480.000.000., Monto Tope por municipio: $22.857.142. |
+| Fondo de Seguridad Ciudadana | Monto Total: $250.000.000., Monto Tope por municipio: $25.000.000., Se financiarán solo las 10 iniciativas con mayor puntaje de prelación en evaluación técnica. |
 #### Reglas Participacion
 #### Requisitos
 - Podrán participar solo las Municipalidades de la Región de Ñuble.
@@ -1047,29 +1005,15 @@ El incumplimiento puede configurar causal de inhabilitación para futuras postul
 #### Proposito
 Proporcionar los formularios y documentos estandarizados requeridos para el proceso de postulación y rendición.
 #### Anexos Principales
-| ID | Cpt | Ctx |
-| --- | --- | --- |
-| GN-CONC8-ANEXO-1-FORM-POST-PRIVADOS-01 | Formulario de Postulación – Instituciones Privadas | Estructura completa del formulario, con secciones de identificación, iniciativa, descripción, plan de trabajo y presupuesto, incluida lógica de validación interna. |
-| ID | Cpt | Ctx |
-| --- | --- | --- |
-| GN-CONC8-ANEXO-2-FORM-POST-MUNICIPIOS-01 | Formulario de Postulación – Municipalidades | Formulario alineado con las líneas de financiamiento de Cultura y Seguridad Ciudadana para municipios, con identificación, iniciativa y presupuesto. |
-| ID | Cpt | Purp |
-| --- | --- | --- |
-| GN-CONC8-ANEXO-3-CARTA-SOLICITUD-01 | Carta Solicitud de Recursos | Formalizar la solicitud de financiamiento al Gobernador Regional. |
-| ID | Cpt | Purp |
-| --- | --- | --- |
-| GN-CONC8-ANEXO-4-CARTA-ACEPTACION-01 | Carta de Aceptación de Términos y Condiciones | Declarar conocimiento y aceptación del instructivo y normativa del concurso. |
 | ID | Cpt |
 | --- | --- |
+| GN-CONC8-ANEXO-1-FORM-POST-PRIVADOS-01 | Formulario de Postulación – Instituciones Privadas |
+| GN-CONC8-ANEXO-2-FORM-POST-MUNICIPIOS-01 | Formulario de Postulación – Municipalidades |
+| GN-CONC8-ANEXO-3-CARTA-SOLICITUD-01 | Carta Solicitud de Recursos |
+| GN-CONC8-ANEXO-4-CARTA-ACEPTACION-01 | Carta de Aceptación de Términos y Condiciones |
 | GN-CONC8-ANEXO-5-CARTA-PRESENTACION-01 | Carta de Presentación y Experiencia de la Organización |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-ANEXO-6-DJ-A-RESTRICCIONES-01 | Declaración Jurada Simple A (Restricciones B y C) |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-ANEXO-7-DJ-B-RESTRICCION-M-01 | Declaración Jurada Simple B (Restricción M) |
-| ID | Cpt |
-| --- | --- |
 | GN-CONC8-ANEXO-8-CARTA-COMPROMISO-PREVENCION-01 | Carta de Compromiso de Prevención (violencia, drogas y alcohol) |
 #### Anexo 1 Formulario Postulacion Privados
 #### Ref Guide
@@ -1077,49 +1021,45 @@ GUIDE-SFD-STS-MASTER-01
 #### Proposito
 Recopilar toda la información requerida de la organización y la iniciativa para postular a los fondos concursables.
 #### Secciones
-| ID | Titulo | Campos |
-| --- | --- | --- |
-| GN-CONC8-ANX1-SEC1-ORG | Sección 1: Identificación de la Organización | [{'ID': 'GN-CONC8-ANX1-S1-NOMBRE-ORG', 'Field-Label': 'Nombre de la Organización', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX1-S1-RUT-ORG', 'Field-Label': 'RUT de la Organización', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: XX.XXX.XXX-X.'}, {'ID': 'GN-CONC8-ANX1-S1-DOMICILIO', 'Field-Label': 'Domicilio (Calle, N°, Villa, Población)', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX1-S1-COMUNA', 'Field-Label': 'Comuna', 'Field-Type': 'Select', 'Field-Constraint': 'Req: mandatory.', 'Field-Options': ['Bulnes', 'Chillán', 'Chillán Viejo', 'Cobquecura', 'Coelemu', 'Coihueco', 'El Carmen', 'Ninhue', 'Ñiquén', 'Pemuco', 'Pinto', 'Portezuelo', 'Quillón', 'Quirihue', 'Ránquil', 'San Carlos', 'San Fabián', 'San Ignacio', 'San Nicolás', 'Treguaco', 'Yungay']}, {'ID': 'GN-CONC8-ANX1-S1-TEL-CONTACTO', 'Field-Label': 'Teléfono de Contacto', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX1-S1-CORREO-ORG', 'Field-Label': 'Correo Electrónico', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: email.'}, {'ID': 'GN-CONC8-ANX1-S1-REP-LEGAL', 'Field-Label': 'Nombre del Representante Legal', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX1-S1-RUT-REP-LEGAL', 'Field-Label': 'RUT del Representante Legal', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: XX.XXX.XXX-X.'}, {'ID': 'GN-CONC8-ANX1-S1-TEL-REP-LEGAL', 'Field-Label': 'Teléfono del Representante Legal', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX1-S1-CORREO-REP-LEGAL', 'Field-Label': 'Correo Electrónico del Representante Legal', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: email.'}] |
-| GN-CONC8-ANX1-SEC2-INICIATIVA | Sección 2: Identificación de la Iniciativa | [{'ID': 'GN-CONC8-ANX1-S2-NOMBRE-INI', 'Field-Label': 'Nombre de la Iniciativa', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX1-S2-FONDO', 'Field-Label': 'Fondo al que Postula', 'Field-Type': 'Select', 'Field-Constraint': 'Req: mandatory.', 'Field-Options': ['Cultura', 'Deporte', 'Social e Inclusión', 'Seguridad Ciudadana', 'Medio Ambiente', 'Adulto Mayor', 'Equidad de Género']}, {'ID': 'GN-CONC8-ANX1-S2-AREA', 'Field-Label': 'Área de Postulación', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Debe corresponder a una de las áreas definidas para el fondo seleccionado en el instructivo.'}, {'ID': 'GN-CONC8-ANX1-S2-MONTO-SOL', 'Field-Label': 'Monto Solicitado al Gobierno Regional de Ñuble', 'Field-Type': 'Number', 'Field-Constraint': 'Req: mandatory. Min-Val: 0.'}, {'ID': 'GN-CONC8-ANX1-S2-APORTE-TERCEROS', 'Field-Label': 'Aporte de Terceros', 'Field-Type': 'Number', 'Field-Constraint': 'Req: optional. Min-Val: 0.'}, {'ID': 'GN-CONC8-ANX1-S2-APORTE-PROPIO', 'Field-Label': 'Aporte Propio', 'Field-Type': 'Number', 'Field-Constraint': 'Req: optional. Min-Val: 0.'}, {'ID': 'GN-CONC8-ANX1-S2-COSTO-TOTAL', 'Field-Label': 'Costo Total de la Iniciativa', 'Field-Type': 'Number', 'Field-Constraint': 'Req: mandatory. Min-Val: 0.', 'Field-Logic': 'Debe ser igual a Monto Solicitado + Aporte de Terceros + Aporte Propio.'}] |
-| GN-CONC8-ANX1-SEC3-DESCRIPCION | Sección 3: Descripción de la Iniciativa | [{'ID': 'GN-CONC8-ANX1-S3-FUNDAMENTACION', 'Field-Label': 'Fundamentación de la Iniciativa', 'Field-Type': 'TextArea', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Diagnóstico de la situación o problema que se quiere solucionar. Indicar cómo la iniciativa se vincula con los objetivos del fondo.'}, {'ID': 'GN-CONC8-ANX1-S3-DESCRIPCION', 'Field-Label': 'Descripción de la Iniciativa', 'Field-Type': 'TextArea', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Detalle de las principales acciones, si es un evento, taller, etc. Explicar en qué consiste.'}, {'ID': 'GN-CONC8-ANX1-S3-OBJ-GENERAL', 'Field-Label': 'Objetivo General', 'Field-Type': 'TextArea', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Propósito central del proyecto. Debe ser coherente con la fundamentación.'}, {'ID': 'GN-CONC8-ANX1-S3-OBJ-ESPECIFICOS', 'Field-Label': 'Objetivos Específicos', 'Field-Type': 'TextArea', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Resultados medibles y cuantificables que permitirán alcanzar el objetivo general.'}, {'ID': 'GN-CONC8-ANX1-S3-N-BENEF-DIR', 'Field-Label': 'N° de Beneficiarios Directos', 'Field-Type': 'Number', 'Field-Constraint': 'Req: mandatory. Min-Val: 1.'}, {'ID': 'GN-CONC8-ANX1-S3-N-BENEF-IND', 'Field-Label': 'N° de Beneficiarios Indirectos', 'Field-Type': 'Number', 'Field-Constraint': 'Req: optional. Min-Val: 0.'}, {'ID': 'GN-CONC8-ANX1-S3-DESC-BENEF', 'Field-Label': 'Descripción de la Población Beneficiaria', 'Field-Type': 'TextArea', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Detallar el perfil de los beneficiarios (grupo etario, género, territorio, etc.).'}] |
-| GN-CONC8-ANX1-SEC4-PLAN-TRABAJO | Sección 4: Plan de Trabajo | [{'ID': 'GN-CONC8-ANX1-S4-PLAN', 'Field-Label': 'Plan de Trabajo', 'Field-Type': 'Repeater', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Detallar las actividades a realizar y el cronograma de ejecución en meses (máx. 8 meses).', 'Field-Group': {'Group-Label': 'Fila de Actividad', 'Fields': [{'Field-Label': 'Actividad', 'Field-Type': 'Text'}, {'Field-Label': 'Mes 1', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 2', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 3', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 4', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 5', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 6', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 7', 'Field-Type': 'Checkbox'}, {'Field-Label': 'Mes 8', 'Field-Type': 'Checkbox'}]}}] |
-| GN-CONC8-ANX1-SEC5-PRESUPUESTO | Sección 5: Presupuesto Detallado | [{'ID': 'GN-CONC8-ANX1-S5-INSTR', 'Field-Label': 'Instrucciones de Presupuesto', 'Field-Type': 'Static-Text', 'Field-Instr': 'Detallar todos los gastos en los ítems correspondientes. Los montos deben coincidir con lo solicitado.'}, {'ID': 'GN-CONC8-ANX1-S5-ITEM-HONORARIOS', 'Field-Label': 'Ítem 1: Honorarios', 'Field-Type': 'Repeater', 'Field-Group': {'Group-Label': 'Fila de Gasto Honorario', 'Fields': [{'Field-Label': 'Detalle del Gasto', 'Field-Type': 'Text', 'Field-Instr': 'Ej: Monitor de taller, Profesional de apoyo.'}, {'Field-Label': 'Monto Solicitado', 'Field-Type': 'Number'}]}}, {'ID': 'GN-CONC8-ANX1-S5-ITEM-EQUIPAMIENTO', 'Field-Label': 'Ítem 2: Equipamiento', 'Field-Type': 'Repeater', 'Field-Group': {'Group-Label': 'Fila de Gasto Equipamiento', 'Fields': [{'Field-Label': 'Detalle del Gasto', 'Field-Type': 'Text', 'Field-Instr': 'Ej: Data show, notebook, indumentaria.'}, {'Field-Label': 'Monto Solicitado', 'Field-Type': 'Number'}]}}, {'ID': 'GN-CONC8-ANX1-S5-ITEM-GESTION', 'Field-Label': 'Ítem 3: Gastos de Gestión y Producción', 'Field-Type': 'Repeater', 'Field-Group': {'Group-Label': 'Fila de Gasto Gestión', 'Fields': [{'Field-Label': 'Detalle del Gasto', 'Field-Type': 'Text', 'Field-Instr': 'Ej: Arriendo de local, alimentación, materiales.'}, {'Field-Label': 'Monto Solicitado', 'Field-Type': 'Number'}]}}, {'ID': 'GN-CONC8-ANX1-S5-ITEM-DIFUSION', 'Field-Label': 'Ítem 4: Gastos de Difusión', 'Field-Type': 'Repeater', 'Field-Group': {'Group-Label': 'Fila de Gasto Difusión', 'Fields': [{'Field-Label': 'Detalle del Gasto', 'Field-Type': 'Text', 'Field-Instr': 'Ej: Pendón, volantes, spot radial.'}, {'Field-Label': 'Monto Solicitado', 'Field-Type': 'Number'}]}}] |
+| ID | Titulo |
+| --- | --- |
+| GN-CONC8-ANX1-SEC1-ORG | Sección 1: Identificación de la Organización |
+| GN-CONC8-ANX1-SEC2-INICIATIVA | Sección 2: Identificación de la Iniciativa |
+| GN-CONC8-ANX1-SEC3-DESCRIPCION | Sección 3: Descripción de la Iniciativa |
+| GN-CONC8-ANX1-SEC4-PLAN-TRABAJO | Sección 4: Plan de Trabajo |
+| GN-CONC8-ANX1-SEC5-PRESUPUESTO | Sección 5: Presupuesto Detallado |
 #### Anexo 2 Formulario Postulacion Municipalidades
 #### Ref Guide
 GUIDE-SFD-STS-MASTER-01
 #### Proposito
 Recopilar la información requerida de las municipalidades para postular a los fondos concursables de Cultura y Seguridad Ciudadana.
 #### Secciones
-| ID | Titulo | Campos |
-| --- | --- | --- |
-| GN-CONC8-ANX2-SEC1-MUNI | Sección 1: Identificación del Municipio | [{'ID': 'GN-CONC8-ANX2-S1-NOMBRE-MUNI', 'Field-Label': 'Nombre del Municipio', 'Field-Type': 'Select', 'Field-Constraint': 'Req: mandatory.', 'Field-Options': ['Bulnes', 'Chillán', 'Chillán Viejo', 'Cobquecura', 'Coelemu', 'Coihueco', 'El Carmen', 'Ninhue', 'Ñiquén', 'Pemuco', 'Pinto', 'Portezuelo', 'Quillón', 'Quirihue', 'Ránquil', 'San Carlos', 'San Fabián', 'San Ignacio', 'San Nicolás', 'Treguaco', 'Yungay']}, {'ID': 'GN-CONC8-ANX2-S1-RUT-MUNI', 'Field-Label': 'RUT del Municipio', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: XX.XXX.XXX-X.'}, {'ID': 'GN-CONC8-ANX2-S1-DOMICILIO', 'Field-Label': 'Domicilio', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX2-S1-NOMBRE-ALCALDE', 'Field-Label': 'Nombre del Alcalde/sa', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX2-S1-RUT-ALCALDE', 'Field-Label': 'RUT del Alcalde/sa', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: XX.XXX.XXX-X.'}, {'ID': 'GN-CONC8-ANX2-S1-PROF-RESP', 'Field-Label': 'Nombre del Profesional Responsable', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX2-S1-CORREO-PROF', 'Field-Label': 'Correo Electrónico del Profesional Responsable', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory. Format: email.'}, {'ID': 'GN-CONC8-ANX2-S1-TELEFONO-PROF', 'Field-Label': 'Teléfono del Profesional Responsable', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}] |
-| ID | Titulo | Campos |
-| --- | --- | --- |
-| GN-CONC8-ANX2-SEC2-INICIATIVA | Sección 2: Identificación de la Iniciativa | [{'ID': 'GN-CONC8-ANX2-S2-NOMBRE-INI', 'Field-Label': 'Nombre de la Iniciativa', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'ID': 'GN-CONC8-ANX2-S2-FONDO', 'Field-Label': 'Fondo al que Postula', 'Field-Type': 'Select', 'Field-Constraint': 'Req: mandatory.', 'Field-Options': ['Fomento a la Cultura', 'Seguridad Ciudadana']}, {'ID': 'GN-CONC8-ANX2-S2-AREA', 'Field-Label': 'Área de Postulación', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.', 'Field-Instr': 'Debe corresponder a una de las áreas y tipologías definidas para el fondo seleccionado en el instructivo.'}, {'ID': 'GN-CONC8-ANX2-S2-MONTO-SOL', 'Field-Label': 'Monto Solicitado al Gobierno Regional', 'Field-Type': 'Number', 'Field-Constraint': 'Req: mandatory. Min-Val: 0.'}, {'ID': 'GN-CONC8-ANX2-S2-COSTO-TOTAL', 'Field-Label': 'Costo Total de la Iniciativa', 'Field-Type': 'Number', 'Field-Constraint': 'Req: mandatory. Min-Val: 0.'}] |
-| ID | Titulo | Ctx |
-| --- | --- | --- |
-| GN-CONC8-ANX2-SEC3-DESC-PRESUP | Sección 3: Descripción y Presupuesto | ['Esta sección es idéntica en estructura a las secciones 3, 4 y 5 del formulario para instituciones privadas.', 'Se utiliza el mismo conjunto de campos de descripción, plan de trabajo y presupuesto detallado, con la diferencia de que el plazo máximo de ejecución es de 9 meses.'] |
+| ID | Titulo |
+| --- | --- |
+| GN-CONC8-ANX2-SEC1-MUNI | Sección 1: Identificación del Municipio |
+| GN-CONC8-ANX2-SEC2-INICIATIVA | Sección 2: Identificación de la Iniciativa |
+| GN-CONC8-ANX2-SEC3-DESC-PRESUP | Sección 3: Descripción y Presupuesto |
 #### Anexo 3 Carta Solicitud Recursos
 #### Ref Guide
 GUIDE-SFD-STS-MASTER-01
 #### Proposito
 Formalizar la solicitud de financiamiento al Gobernador Regional.
 #### Secciones
-| ID | Titulo | Campos |
-| --- | --- | --- |
-| GN-CONC8-ANX3-SEC1-ENCABEZADO | Sección 1: Encabezado | [{'Field-Label': 'Comuna', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Fecha', 'Field-Type': 'Date', 'Field-Constraint': 'Req: mandatory. Format: DD/MM/YYYY.'}] |
-| GN-CONC8-ANX3-SEC2-CUERPO | Sección 2: Cuerpo de la Solicitud | [{'Field-Label': 'Yo,', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.', 'Field-Placeholder': 'Nombre completo del presidente(a)'}, {'Field-Label': 'presidente(a) de Organización o Institución', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Domiciliado en', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'comuna de', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Texto fijo de solicitud', 'Field-Type': 'Static-Text', 'Field-Value': 'Solicito al Sr. Óscar Crisóstomo Llanos, Gobernador de la Región de Ñuble, financiamiento para el proyecto denominado'}, {'Field-Label': 'Nombre del Proyecto', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Monto Solicitado', 'Field-Type': 'Number', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Fondo Postulado', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Lineamiento', 'Field-Type': 'Text', 'Field-Constraint': 'Req: optional.'}, {'Field-Label': 'Texto fijo Concurso', 'Field-Type': 'Static-Text', 'Field-Value': 'del "CONCURSO DE VINCULACIÓN CON LA COMUNIDAD 8% 2025".'}] |
-| GN-CONC8-ANX3-SEC3-CIERRE | Sección 3: Cierre y Firma | [{'Field-Label': 'FIRMA Y TIMBRE DEL REPRESENTANTE LEGAL', 'Field-Type': 'Static-Text', 'Field-Instr': 'Se debe firmar y timbrar por el representante legal.'}] |
+| ID | Titulo |
+| --- | --- |
+| GN-CONC8-ANX3-SEC1-ENCABEZADO | Sección 1: Encabezado |
+| GN-CONC8-ANX3-SEC2-CUERPO | Sección 2: Cuerpo de la Solicitud |
+| GN-CONC8-ANX3-SEC3-CIERRE | Sección 3: Cierre y Firma |
 #### Anexo 4 Carta Aceptacion Terminos
 #### Ref Guide
 GUIDE-SFD-STS-MASTER-01
 #### Proposito
 Declarar conocimiento y aceptación del instructivo y normativa del concurso.
 #### Secciones
-| ID | Titulo | Campos |
-| --- | --- | --- |
-| GN-CONC8-ANX4-SEC1-IDENTIFICACION | Sección 1: Identificación | [{'Field-Label': 'Yo,', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Rut.:', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}, {'Field-Label': 'Representante legal de la organización o institución', 'Field-Type': 'Text', 'Field-Constraint': 'Req: mandatory.'}] |
-| GN-CONC8-ANX4-SEC2-DECLARACION | Sección 2: Declaración | [{'Field-Label': 'Texto Declaración', 'Field-Type': 'Static-Text', 'Field-Value': 'Declaro, conocer y aceptar el contenido íntegro del presente instructivo general y sus anexos, además de aceptar la normativa legal y reglamentaria vigente.'}] |
+| ID | Titulo |
+| --- | --- |
+| GN-CONC8-ANX4-SEC1-IDENTIFICACION | Sección 1: Identificación |
+| GN-CONC8-ANX4-SEC2-DECLARACION | Sección 2: Declaración |
 #### Anexo 5 Carta Presentacion Experiencia
 #### Ref Guide
 GUIDE-SFD-STS-MASTER-01
@@ -1129,26 +1069,12 @@ Acreditar la identidad, objetivos y experiencia de la organización postulante.
 | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- |
 | Nombre de la organización | Text | Req: mandatory. |
-| Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- |
 | Rut de la Organización | Text | Req: mandatory. |
-| Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- |
 | Dirección de la organización | Text | Req: mandatory. |
-| Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- |
 | Objetivos de la organización (Según lo que indican sus respectivos estatutos) | TextArea | Req: mandatory. |
-| Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- |
 | Experiencia de la organización en el área que postula (indicar ejecución de otras iniciativas ejecutadas, actividades, talleres, etc.) | TextArea | Req: mandatory. |
-| Field-Label | Field-Type | Field-Value |
-| --- | --- | --- |
-| Declaración de Experiencia | Static-Text | El o la representante legal declara tener experiencia en el ámbito de postulación y ejecución del proyecto a presentar al Concurso de Vinculación con la Comunidad 8%. |
-| Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- |
+| Declaración de Experiencia | Static-Text |  |
 | NOMBRE: (Representante Legal Organización o Institución) | Text | Req: mandatory. |
-| Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- |
 | RUT | Text | Req: mandatory. |
 #### Anexo 6 Declaracion Jurada A
 #### Proposito

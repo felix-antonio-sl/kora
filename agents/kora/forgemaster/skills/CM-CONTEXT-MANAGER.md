@@ -13,26 +13,27 @@ lang: es
 Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante con el estado FSM actual, activando CONTEXT_SHIFT cuando corresponde.
 
 ## Input/Output
-- **Input:** mensaje: string (mensaje entrante), estado_actual: FSMState, tema_previo: string | null
+- **Input:** mensaje: string (mensaje entrante), foco_actual: string | null, tema_previo: string | null
 - **Output:** ContextDecision (ver Signature Output)
 
 ## Procedimiento
-1. Capturar estado FSM actual y tema del ultimo turno desde contexto de sesion.
+1. Capturar foco de trabajo actual y tema del ultimo turno desde contexto de sesion.
 2. Analizar mensaje entrante: identificar tema principal, intencion, agentes referenciados.
-3. Comparar tema entrante vs estado actual: coherente(mismo hilo), nuevo(tema diferente), atras(retomar fase anterior), terminar(finalizar sesion), fuera_de_scope(ajeno a ciclo de vida agentes).
+3. Comparar tema entrante vs foco actual: coherente(mismo hilo), nuevo(tema diferente), atras(retomar fase anterior), terminar(finalizar sesion), fuera_de_scope(ajeno a ciclo de vida agentes).
 4. Clasificar tipo de cambio:
-   - coherente → continuar en estado actual sin interrupcion.
-   - nuevo → emitir CONTEXT_SHIFT, proponer transicion a estado apropiado.
+   - coherente → continuar sin interrupcion.
+   - nuevo → emitir CONTEXT_SHIFT y pedir re-clasificacion por la FSM.
    - atras → emitir CONTEXT_SHIFT con memoria de fase anterior.
-   - terminar → transicionar a S-END.
+   - terminar → marcar cierre solicitado.
    - fuera_de_scope → aplicar Guard Set (REJECT_OUT_OF_SCOPE).
-5. Si cambio radical(tema completamente distinto) → S-DISPATCHER para reclasificacion.
-6. Actualizar contexto de sesion con estado nuevo y tema actual.
+5. Si cambio radical(tema completamente distinto) → marcar re-clasificacion.
+6. Actualizar contexto de sesion con foco nuevo y tema actual.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | tipo_cambio | enum(coherente\|nuevo\|atras\|terminar\|fuera_de_scope) | Tipo de cambio detectado |
-| accion | string | Accion a tomar (continuar, CONTEXT_SHIFT, S-END, REJECT) |
-| estado_destino | FSMState\|null | Estado FSM destino si hay transicion |
+| accion | string | Accion semantica a tomar (continuar, CONTEXT_SHIFT, cerrar_sesion, REJECT) |
+| requiere_reclasificacion | bool | True si la FSM debe volver a despachar |
+| fase_recordada | string\|null | Etiqueta semantica de la fase previa si aplica |
 | mensaje_usuario | string\|null | Mensaje al usuario si aplica |

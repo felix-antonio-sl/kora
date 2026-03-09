@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:glosario-ipr-consolidado
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/otroglosario.yml
 version: 2.0.0
 status: published
@@ -23,15 +23,15 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.17
+    cr: 1.24
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Glosario consolidado IPR; requiere verificacion terminologica.
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 3
-    meat_count: 888
+    skeleton_count: 1
+    meat_count: 878
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__glosario-ipr-consolidado.md.json
@@ -467,7 +467,7 @@ extensions:
 | Unidad Técnica Receptora | Departamento técnico que recibe, visa y utiliza los bienes o estudios adquiridos (contraparte técnica). |
 | Usufructo / Comodato | Contrato de cesión de uso de un terreno privado, necesario para invertir fondos públicos en propiedad de terceros. |
 | VAC | Valor presente de los costos totales del proyecto, considerando beneficios adicionales como reducciones de costo. |
-| VAN | | |
+| VAN | \| |
 | VANp | Valor Actual Neto Privado: Rentabilidad financiera calculada con precios de mercado, relevante para proyectos productivos. |
 | Valor Residual | Valor remanente de los activos principales al final del horizonte de evaluación cuando su vida útil lo supera. |
 | Vial | Relativo a la red de caminos, puentes y sendas que aseguran la conectividad regional. |

@@ -512,7 +512,7 @@ Reglas de revocación de competencias transferidas (Art.21 octies).
 - Competencias transferidas definitivamente solo pueden revocarse por ley.
 | Transferencias temporales pueden revocarse de oficio en forma fundada por |
 | --- |
-| ['Incumplimiento de condiciones de ejercicio.', 'Deficiente prestación del servicio a la comunidad.', 'Ejercicio incompatible con políticas públicas nacionales dictadas con posterioridad, sin que GORE ajuste dentro de 6 meses.'] |
+| Incumplimiento de condiciones de ejercicio., Deficiente prestación del servicio a la comunidad., Ejercicio incompatible con políticas públicas nacionales dictadas con posterioridad, sin que GORE ajuste dentro de 6 meses. |
 - GORE puede solicitar revocación de competencias transferidas mediante acuerdo del Consejo Regional (mayoría absoluta con Gobernador o 2/3 sin él).
 - Comité Interministerial instruye comisión de estudio para recabar antecedentes, definir condiciones de corrección y plazo; si no se corrige, informa al Comité para decisión presidencial.
 - Revocación se resuelve por decreto supremo dictado a más tardar 30 de junio y entra en vigencia el 1 de enero del año siguiente.

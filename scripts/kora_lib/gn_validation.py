@@ -26,10 +26,6 @@ KODA_RESIDUE_HEADING_TITLES = {
     "modification date",
     "llm parsing instructions",
     "primary source",
-    "ctx required",
-    "ctx optional",
-    "columns",
-    "rows",
 }
 KODA_RESIDUE_PATTERNS = (
     re.compile(r"BEGIN_LLM_INSTRUCTIONS"),

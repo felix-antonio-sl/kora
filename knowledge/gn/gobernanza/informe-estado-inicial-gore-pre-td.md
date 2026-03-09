@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:informe-estado-inicial-gore-pre-td
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml
 version: 2.0.0
 status: published
@@ -24,97 +24,35 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.19
+    cr: 1.42
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 269
+    skeleton_count: 1
+    meat_count: 239
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__informe-estado-inicial-gore-pre-td.md.json
 ---
 
 # Informe Estado Inicial GORE Ñuble Pre-Transformación Digital
-## ID
-GN-INFORME-ESTADO-INICIAL-GORE-PRE-TD-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Informe Estado Inicial GORE Ñuble Pre-Transformación Digital (STS)
-
-## Primary Source
-staging/gn/kodeando/kb_gn_710_informe_estado_inicial_gore_pre_td_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Informe de asesoria estrategica
-### ID
-GN-INFORME-ESTADO-INICIAL-GORE-PRE-TD-DOC-01
-### Title
+## Titulo
 Informe de Asesoría Estratégica
-### Sections
-#### S 1 resumen ejecutivo
-#### ID
-GN-SEC-0001
-#### Title
+## Secciones
+### S 1 resumen ejecutivo
+#### Titulo
 1. Resumen Ejecutivo
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-EJECUTIVO-01
-#### Sections
+#### Secciones
 #### S 1 1 el desafio modernizacion institucional en un entorno de alta complejidad
-#### ID
-GN-SEC-0002
-#### Title
+#### Titulo
 1.1. El Desafío: Modernización Institucional en un Entorno de Alta Complejidad
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-DESAFIO-01
 
@@ -126,11 +64,9 @@ ID: EIGPTD-RESUMEN-DESAFIO-01
   * Res: No aborda desafíos con la agilidad, inteligencia y eficacia demandadas por la ciudadanía y la Estrategia Regional de Desarrollo (ERD).
 * Cpt: La modernización es un imperativo para la supervivencia y relevancia de la institución.
 #### S 1 2 la oportunidad el vacio de liderazgo en la transformacion digital del esta
-#### ID
-GN-SEC-0003
-#### Title
+#### Titulo
 1.2. La Oportunidad: El Vacío de Liderazgo en la Transformación Digital del Estado (TDE)
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-OPORTUNIDAD-01
 
@@ -142,11 +78,9 @@ ID: EIGPTD-RESUMEN-OPORTUNIDAD-01
   * Warn: Expone a la institución a riesgos de incumplimiento y ciberseguridad.
   * Purp: Un espacio de poder que puede ser ocupado por una visión coherente y un liderazgo proactivo.
 #### S 1 3 la solucion propuesta un ecosistema de ia como motor de la tde
-#### ID
-GN-SEC-0004
-#### Title
+#### Titulo
 1.3. La Solución Propuesta: Un Ecosistema de IA como Motor de la TDE
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-SOLUCION-01
 
@@ -159,11 +93,9 @@ ID: EIGPTD-RESUMEN-SOLUCION-01
 * Fnd: La propuesta se ancla en la normalización y gestión de los datos como un activo estratégico.
 * Cpt: Alinea al GORE con el Marco para la Gestión de Datos del Estado y la Estrategia de Gobierno Digital 2030.
 #### S 1 4 el conflicto tactico central sistema de gestion integral ia vs gesdoc
-#### ID
-GN-SEC-0005
-#### Title
+#### Titulo
 1.4. El Conflicto Táctico Central: Sistema de Gestión Integral IA vs. Gesdoc
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-CONFLICTO-01
 
@@ -177,11 +109,9 @@ ID: EIGPTD-RESUMEN-CONFLICTO-01
   * Fnd: Se funda en una gobernanza de datos robusta que garantiza la interoperabilidad y la inteligencia de negocio a futuro.
 * Cpt: La batalla no es entre dos softwares, es entre un parche de corto plazo y una inversión estratégica a largo plazo.
 #### S 1 5 la decision estrategica el dilema de la conquista vs el legado
-#### ID
-GN-SEC-0006
-#### Title
+#### Titulo
 1.5. La Decisión Estratégica: El Dilema de la "Conquista" vs. el "Legado"
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-DECISION-01
 
@@ -193,11 +123,9 @@ ID: EIGPTD-RESUMEN-DECISION-01
   * * Estrategia de Legado: Asumir una posible partida y enfocar el tiempo restante en institucionalizar la visión, anclar los sistemas en la operación del GORE y mentorear a un sucesor.
 * Cpt: Esta elección es el prerrequisito para diseñar el plan de influencia final.
 #### S 1 6 curso de accion recomendado
-#### ID
-GN-SEC-0007
-#### Title
+#### Titulo
 1.6. Curso de Acción Recomendado
-#### Content
+#### Contenido
 
 ID: EIGPTD-RESUMEN-ACCION-01
 
@@ -211,21 +139,17 @@ ID: EIGPTD-RESUMEN-ACCION-01
   * 3. Ejecución de la Campaña de Influencia: Desplegar una secuencia de conversaciones uno a uno con los directivos clave, utilizando perfiles estratégicos y argumentarios a medida.
     * Res: Culminar en una presentación formal al Eje Político-Estratégico que no solo pida aprobación del proyecto, sino que presente una solución al problema de liderazgo de la TDE.
 * Cpt: La iniciativa representa una oportunidad histórica para posicionar al GORE Ñuble como referente nacional en modernización y gestión pública inteligente.
-#### S 2 objeto y alcance de la asesoria
-#### ID
-GN-SEC-0008
-#### Title
+### S 2 objeto y alcance de la asesoria
+#### Titulo
 2. Objeto y Alcance de la Asesoría
-#### Content
+#### Contenido
 
 ID: EIGPTD-OBJETO-ALCANCE-01
-#### Sections
+#### Secciones
 #### S 2 1 proposito del informe
-#### ID
-GN-SEC-0009
-#### Title
+#### Titulo
 2.1. Propósito del Informe
-#### Content
+#### Contenido
 
 ID: EIGPTD-OBJETO-PROPOSITO-01
 
@@ -242,11 +166,9 @@ ID: EIGPTD-OBJETO-PROPOSITO-01
   * * Constituir la Base del Caso de Negocio: Proveer los fundamentos para la propuesta formal a la alta dirección.
 * Cpt: Este documento es la herramienta para pasar de la visión a la acción con rigor estratégico.
 #### S 2 2 metodologia de la inteligencia organizacional a la estrategia de influenci
-#### ID
-GN-SEC-0010
-#### Title
+#### Titulo
 2.2. Metodología: De la Inteligencia Organizacional a la Estrategia de Influencia
-#### Content
+#### Contenido
 
 ID: EIGPTD-OBJETO-METODOLOGIA-01
 
@@ -265,11 +187,9 @@ ID: EIGPTD-OBJETO-METODOLOGIA-01
     * * Definición de cursos de acción estratégicos.
     * * Estructuración de un plan de influencia fásico.
 #### S 2 3 fases del analisis
-#### ID
-GN-SEC-0011
-#### Title
+#### Titulo
 2.3. Fases del Análisis
-#### Content
+#### Contenido
 
 ID: EIGPTD-OBJETO-FASES-01
 
@@ -279,37 +199,31 @@ ID: EIGPTD-OBJETO-FASES-01
   * * Fase II – Análisis de la Solución y la Propuesta de Valor: Comprensión del "vehículo" de la transformación (inventario y análisis de soluciones de IA).
   * * Fase III – Identificación del Desafío Estratégico Central: Definición del "objetivo real" (posicionar una visión integral para la TDE y resolver conflictos).
   * * Fase IV – Formulación de Cursos de Acción y Plan de Influencia: Diseño del "plan de batalla" (estructuración de opciones estratégicas y pasos tácticos).
-#### S 3 diagnostico del entorno politico y organizacional
-#### ID
-GN-SEC-0012
-#### Title
+### S 3 diagnostico del entorno politico y organizacional
+#### Titulo
 3. Diagnóstico del Entorno Político y Organizacional
-#### Content
+#### Contenido
 
 ID: EIGPTD-DIAGNOSTICO-ENTORNO-01
 
 * Ctx: El éxito de la iniciativa "Ecosistema de IA" depende de su capacidad para navegar el entorno humano de la institución.
 * Cpt: El organigrama formal del GORE Ñuble es insuficiente para comprender el flujo real del poder y la toma de decisiones.
 * Cpt: El análisis revela una estructura de poder informal articulada en tres ejes lógicos, habitada por directivos con perfiles específicos.
-#### Sections
+#### Secciones
 #### S 3 1 ejes de poder y logica de influencia en el gore nuble
-#### ID
-GN-SEC-0013
-#### Title
+#### Titulo
 3.1. Ejes de Poder y Lógica de Influencia en el GORE Ñuble
-#### Content
+#### Contenido
 
 ID: EIGPTD-DIAGNOSTICO-EJES-PODER-01
 
 * Req: Para persuadir eficazmente, es imperativo entender que no todos los directivos valoran los mismos argumentos.
 * Cpt: Se han identificado tres ejes de poder distintos.
-#### Sections
+#### Secciones
 #### S 3 1 1 eje politico estrategico gobernador jefe de gabinete
-#### ID
-GN-SEC-0014
-#### Title
+#### Titulo
 3.1.1. Eje Político-Estratégico (Gobernador, Jefe de Gabinete)
-#### Content
+#### Contenido
 
 ID: EIGPTD-EJES-POLITICO-ESTRATEGICO-01
 
@@ -323,11 +237,9 @@ ID: EIGPTD-EJES-POLITICO-ESTRATEGICO-01
   * Req: La propuesta de IA debe ser enmarcada como un hito de legado, la materialización del "Ñuble Inteligente" y una herramienta para consolidar el liderazgo innovador de la administración.
   * Ctx: Los detalles técnicos son secundarios a la narrativa de transformación.
 #### S 3 1 2 eje tecnico operacional administradora daf dipir dit
-#### ID
-GN-SEC-0015
-#### Title
+#### Titulo
 3.1.2. Eje Técnico-Operacional (Administradora, DAF, DIPIR, DIT)
-#### Content
+#### Contenido
 
 ID: EIGPTD-EJES-TECNICO-OPERACIONAL-01
 
@@ -342,11 +254,9 @@ ID: EIGPTD-EJES-TECNICO-OPERACIONAL-01
   * Instr: Se deben presentar métricas de eficiencia, planes de implementación detallados, análisis de costos, y un robusto plan de gobernanza.
   * Ctx: La narrativa visionaria debe estar respaldada por datos duros de optimización.
 #### S 3 1 3 eje programatico territorial diplade didesoh difoi comunicaciones
-#### ID
-GN-SEC-0016
-#### Title
+#### Titulo
 3.1.3. Eje Programático-Territorial (DIPLADE, DIDESOH, DIFOI, Comunicaciones)
-#### Content
+#### Contenido
 
 ID: EIGPTD-EJES-PROGRAMATICO-TERRITORIAL-01
 
@@ -360,22 +270,18 @@ ID: EIGPTD-EJES-PROGRAMATICO-TERRITORIAL-01
   * Req: La propuesta debe ser presentada como una herramienta para potenciar el valor público.
   * Instr: Es crucial usar casos de uso concretos y centrados en el ciudadano (focalización de ayuda social, simplificación de trámites, fomento de la economía local).
 #### S 3 2 perfiles estrategicos de agentes de interes clave
-#### ID
-GN-SEC-0017
-#### Title
+#### Titulo
 3.2. Perfiles Estratégicos de Agentes de Interés Clave
-#### Content
+#### Contenido
 
 ID: EIGPTD-DIAGNOSTICO-PERFILES-AGENTES-01
 
 * Ctx: Detalle del análisis de cada directivo, integrando rol formal con características personales y motivaciones subyacentes.
-#### Sections
+#### Secciones
 #### S 3 2 1 gobernador regional el arquitecto del futuro oscar crisostomo llanos
-#### ID
-GN-SEC-0018
-#### Title
+#### Titulo
 3.2.1. Gobernador Regional: "El Arquitecto del Futuro" (Óscar Crisóstomo Llanos)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-GOBERNADOR-01
 
@@ -392,11 +298,9 @@ ID: EIGPTD-PERFIL-GOBERNADOR-01
     * * Impacto: Utilizar ejemplos potentes y simplificados ("Imagine predecir las necesidades de los agricultores...").
     * * Liderazgo: Enfatizar la oportunidad de presentar esta experiencia a nivel nacional e internacional.
 #### S 3 2 2 administradora regional la guardiana de la maquina claudia cabrera torre
-#### ID
-GN-SEC-0019
-#### Title
+#### Titulo
 3.2.2. Administradora Regional: "La Guardiana de la Máquina" (Claudia Cabrera Torres)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-ADMINISTRADORA-01
 
@@ -412,11 +316,9 @@ ID: EIGPTD-PERFIL-ADMINISTRADORA-01
     * * Control y Gobernanza: Presentar primero el "Plan de Gobernanza de la IA" para mitigar su principal temor.
     * * Eficiencia Medible: Mostrar métricas claras de optimización y ahorro.
 #### S 3 2 3 jefa de division daf la custodia del cumplimiento alicia contreras vielm
-#### ID
-GN-SEC-0020
-#### Title
+#### Titulo
 3.2.3. Jefa de División DAF: "La Custodia del Cumplimiento" (Alicia Contreras Vielma)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-DAF-01
 
@@ -434,11 +336,9 @@ ID: EIGPTD-PERFIL-DAF-01
     * * Eficiencia Personal: Demostrar cómo la automatización de la revisión de rendiciones le dará control y liberará tiempo.
     * * Reconocimiento: Enmarcar la adopción como un logro personal de ella, posicionándola como líder en modernización financiera.
 #### S 3 2 4 jefe de division dipir el general de la inversion juan parada gonzalez
-#### ID
-GN-SEC-0021
-#### Title
+#### Titulo
 3.2.4. Jefe de División DIPIR: "El General de la Inversión" (Juan Parada González)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-DIPIR-01
 
@@ -454,11 +354,9 @@ ID: EIGPTD-PERFIL-DIPIR-01
     * * Calidad en la Entrada: Mostrar cómo la IA puede funcionar como filtro de calidad para las postulaciones.
     * * Optimización de Recursos: La posibilidad de reasignar fondos de manera informada y proactiva.
 #### S 3 2 5 jefe de division diplade el vigia estrategico raul sunico galdames
-#### ID
-GN-SEC-0022
-#### Title
+#### Titulo
 3.2.5. Jefe de División DIPLADE: "El Vigía Estratégico" (Raúl Súnico Galdames)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-DIPLADE-01
 
@@ -474,11 +372,9 @@ ID: EIGPTD-PERFIL-DIPLADE-01
     * * Lenguaje Simple: Evitar toda jerga técnica. Hablar de "mapas de calor", "alertas de cumplimiento".
     * * Relevancia: Mostrarle que esta herramienta lo mantendrá en el centro de la discusión estratégica.
 #### S 3 2 6 jefa de division didesoh la brujula social tamara valenzuela fuentealba
-#### ID
-GN-SEC-0023
-#### Title
+#### Titulo
 3.2.6. Jefa de División DIDESOH: "La Brújula Social" (Tamara Valenzuela Fuentealba)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-DIDESOH-01
 
@@ -495,11 +391,9 @@ ID: EIGPTD-PERFIL-DIDESOH-01
     * * Simplificación para la Comunidad: Mostrar cómo un chatbot simplifica la postulación al 8% FNDR es una victoria concreta.
     * * Medición de "Outcome": La promesa de medir el bienestar real apelará a su racionalidad.
 #### S 3 2 7 jefatura de division difoi el trono vacante de la innovacion
-#### ID
-GN-SEC-0024
-#### Title
+#### Titulo
 3.2.7. Jefatura de División DIFOI: "El Trono Vacante de la Innovación"
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-DIFOI-01
 
@@ -514,11 +408,9 @@ ID: EIGPTD-PERFIL-DIFOI-01
   * Cpt: Argumento al Gobernador.
     * Rec: "Gobernador, mientras la DIFOI se reestructura, nuestro proyecto puede actuar como el motor de la innovación que la región necesita...".
 #### S 3 2 8 jefe de division dit el maestro de obras cristian quiroz reyes
-#### ID
-GN-SEC-0025
-#### Title
+#### Titulo
 3.2.8. Jefe de División DIT: "El Maestro de Obras" (Cristián Quiroz Reyes)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-DIT-01
 
@@ -535,11 +427,9 @@ ID: EIGPTD-PERFIL-DIT-01
     * * Herramientas para la Gestión: Enfocarse en cómo la IA le facilitará la supervisión de obras.
     * * Innovación Visible: Darle victorias concretas y comunicables para su posicionamiento.
 #### S 3 2 9 jefe de gabinete el navegante politico alejandro aguilera
-#### ID
-GN-SEC-0026
-#### Title
+#### Titulo
 3.2.9. Jefe de Gabinete: "El Navegante Político" (Alejandro Aguilera)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-GABINETE-01
 
@@ -556,11 +446,9 @@ ID: EIGPTD-PERFIL-GABINETE-01
     * * Control de la Narrativa: Mostrarle cómo la IA puede ser el pilar del relato de "buen gobierno".
     * * Reconocimiento de su Rol: Validar su preocupación y posicionarlo como el "guardián estratégico".
 #### S 3 2 10 jefa de comunicaciones la narradora de la transformacion maria antoniet
-#### ID
-GN-SEC-0027
-#### Title
+#### Titulo
 3.2.10. Jefa de Comunicaciones: "La Narradora de la Transformación" (María Antonieta Soto)
-#### Content
+#### Contenido
 
 ID: EIGPTD-PERFIL-COMUNICACIONES-01
 
@@ -576,22 +464,18 @@ ID: EIGPTD-PERFIL-COMUNICACIONES-01
     * * Contenido para la Historia: Posicionar el Ecosistema de IA como una fuente de noticias positivas.
     * * Puente hacia Alejandro: Puede actuar como traductora y validadora de tu visión ante el Jefe de Gabinete.
 #### S 3 3 mapa de conflictos riesgos y alianzas
-#### ID
-GN-SEC-0028
-#### Title
+#### Titulo
 3.3. Mapa de Conflictos, Riesgos y Alianzas
-#### Content
+#### Contenido
 
 ID: EIGPTD-DIAGNOSTICO-MAPA-CONFLICTOS-01
 
 * Ctx: El diagnóstico revela un campo de fuerzas dinámico que debe ser gestionado.
-#### Sections
+#### Secciones
 #### S 3 3 1 focos de resistencia y friccion potencial
-#### ID
-GN-SEC-0029
-#### Title
+#### Titulo
 3.3.1. Focos de Resistencia y Fricción Potencial
-#### Content
+#### Contenido
 
 ID: EIGPTD-MAPA-RESISTENCIA-01
 
@@ -601,11 +485,9 @@ ID: EIGPTD-MAPA-RESISTENCIA-01
   * * El Choque de Paradigmas (Gestión Basada en Datos vs. Gestión Política Tradicional): Riesgo de bloqueo por actores influyentes que no comprenden la lógica técnica.
   * * Las Rivalidades Departamentales (DIDESOH vs. DIT): Riesgo de que el proyecto sea instrumentalizado en disputas de poder.
 #### S 3 3 2 identificacion de campeones y aliados estrategicos
-#### ID
-GN-SEC-0030
-#### Title
+#### Titulo
 3.3.2. Identificación de "Campeones" y Aliados Estratégicos
-#### Content
+#### Contenido
 
 ID: EIGPTD-MAPA-ALIADOS-01
 
@@ -613,24 +495,20 @@ ID: EIGPTD-MAPA-ALIADOS-01
   * * El Campeón Político (Gobernador): Patrocinador visionario. Su apoyo es esencial pero debe ser gestionado.
   * * Los Aliados de Valor Demostrado (Jefa de Comunicaciones, Jefe de DIT): Testimonios de que las herramientas funcionan. Deben ser activados para socializar sus experiencias.
   * * Los Aliados por Interés Propio (Potencialmente DAF y DIPIR): Sus "dolores" operativos (riesgo CGR, presión por ejecución) hacen de la IA una herramienta irresistible para su propio éxito. La estrategia es de alineación de intereses, no de amistad.
-#### S 4 analisis de la iniciativa propuesta ecosistema ia nuble
-#### ID
-GN-SEC-0031
-#### Title
+### S 4 analisis de la iniciativa propuesta ecosistema ia nuble
+#### Titulo
 4. Análisis de la Iniciativa Propuesta ("Ecosistema IA Ñuble")
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANALISIS-INICIATIVA-01
 
 * Cpt: La iniciativa es un portafolio de activos estratégicos que conforman la base para un nuevo modelo operativo en el GORE.
 * Purp: Analizar dichos activos, clasificarlos, articular su propuesta de valor unificada y vincularlos con el marco de la TDE.
-#### Sections
+#### Secciones
 #### S 4 1 inventario de activos estrategicos desarrollados
-#### ID
-GN-SEC-0032
-#### Title
+#### Titulo
 4.1. Inventario de Activos Estratégicos Desarrollados
-#### Content
+#### Contenido
 
 ID: EIGPTD-INICIATIVA-INVENTARIO-01
 
@@ -647,11 +525,9 @@ ID: EIGPTD-INICIATIVA-INVENTARIO-01
 | Asistente de Comunicaciones | Desplegado | Jefatura de Comunicaciones (María Antonieta Soto) | Purp: Asistir en la redacción de comunicados de prensa, posts para redes sociales y discursos, asegurando consistencia. | Cause: La alta demanda de producción de contenidos de comunicación bajo presión. La necesidad de mantener un estilo institucional coherente. | Res: Adoptado como herramienta fundamental por la Jefa de Comunicaciones. Impacto en agilidad y calidad. | Warn: Bajo. Considerado un activo valioso por su usuaria directa, una aliada estratégica. |
 | Plataforma RRD (Odoo) | Desplegado | Actores del Sistema Regional de Prevención y Respuesta ante Desastres | Purp: Gestionar la convocatoria y coordinación de los actores del sistema de emergencias regional. | Cause: La dificultad para convocar y gestionar de forma centralizada a los múltiples actores durante emergencias. | Res: Entregada y en uso por SENAPRED, validando la capacidad de desarrollo y colaboración interinstitucional. | Warn: Nulo. Percibido como un aporte constructivo a un problema compartido. |
 #### S 4 2 tipologia de soluciones herramientas de conocimiento vs plataformas de pro
-#### ID
-GN-SEC-0033
-#### Title
+#### Titulo
 4.2. Tipología de Soluciones: Herramientas de Conocimiento vs. Plataformas de Proceso
-#### Content
+#### Contenido
 
 ID: EIGPTD-INICIATIVA-TIPOLOGIA-01
 
@@ -685,11 +561,9 @@ ID: EIGPTD-INICIATIVA-TIPOLOGIA-01
 
 * Rec: Una estrategia de influencia exitosa debe utilizar el impacto visible de los "bisturíes" para generar el capital político necesario para construir los "quirófanos".
 #### S 4 3 la propuesta de valor unificada hacia un gore proactivo y basado en datos
-#### ID
-GN-SEC-0034
-#### Title
+#### Titulo
 4.3. La Propuesta de Valor Unificada: Hacia un GORE Proactivo y Basado en Datos
-#### Content
+#### Contenido
 
 ID: EIGPTD-INICIATIVA-PROPUESTA-VALOR-01
 
@@ -703,11 +577,9 @@ ID: EIGPTD-INICIATIVA-PROPUESTA-VALOR-01
   * 5. Motor de Desarrollo Regional: Utilizar la IA como plataforma para catalizar la innovación en sectores productivos clave de Ñuble.
 * Cpt: En esencia, la propuesta es sobre adquirir una capacidad institucional de anticipación y aprendizaje continuo.
 #### S 4 4 vinculacion con el marco nacional de transformacion digital del estado
-#### ID
-GN-SEC-0035
-#### Title
+#### Titulo
 4.4. Vinculación con el Marco Nacional de Transformación Digital del Estado
-#### Content
+#### Contenido
 
 ID: EIGPTD-INICIATIVA-VINCULACION-TDE-01
 
@@ -720,11 +592,9 @@ ID: EIGPTD-INICIATIVA-VINCULACION-TDE-01
   * * Cumplimiento del Mandato Legal (Ley N° 21.180): La reingeniería de procesos propuesta es indispensable para asegurar el cumplimiento de la ley hacia el "cero papel" en 2027.
   * * Cumplimiento de Estándares de Transparencia Algorítmica: El Ecosistema de IA está diseñado para cumplir con las "Recomendaciones sobre Transparencia Algorítmica" del CPLT, mientras que soluciones opacas se convierten en un pasivo de cumplimiento.
 #### S 4 5 la base industrial un marco de ingenieria para la produccion de valor publ
-#### ID
-GN-SEC-0036
-#### Title
+#### Titulo
 4.5. La Base Industrial: Un Marco de Ingeniería para la Producción de Valor Público
-#### Content
+#### Contenido
 
 ID: EIGPTD-INICIATIVA-BASE-INDUSTRIAL-01
 
@@ -739,37 +609,31 @@ ID: EIGPTD-INICIATIVA-BASE-INDUSTRIAL-01
 * Cpt: Este enfoque sistémico garantiza la sostenibilidad, reduce el riesgo de obsolescencia y permite una escalabilidad que Gesdoc no puede ofrecer.
 * Cpt: No se evalúa un prototipo, sino una capacidad de producción ya instalada.
 * Cpt: Este anclaje normativo transforma la discusión: la pregunta no es *si* el GORE debe modernizarse así, sino *cómo y quién* liderará el proceso.
-#### S 5 el desafio estrategico central plataforma datos y liderazgo
-#### ID
-GN-SEC-0037
-#### Title
+### S 5 el desafio estrategico central plataforma datos y liderazgo
+#### Titulo
 5. El Desafío Estratégico Central: Plataforma, Datos y Liderazgo
-#### Content
+#### Contenido
 
 ID: EIGPTD-DESAFIO-ESTRATEGICO-01
 
 * Ctx: La iniciativa "Ecosistema IA Ñuble" y el liderazgo de la TDE se sitúan en el epicentro de una decisión fundamental para el futuro del GORE.
 * Purp: Deconstruir el desafío en sus tres componentes clave: la batalla por la plataforma, la oportunidad del vacío de liderazgo y la fusión de ambas en una narrativa de transformación.
-#### Sections
+#### Secciones
 #### S 5 1 la batalla de las plataformas sistema integral ia vs gesdoc
-#### ID
-GN-SEC-0038
-#### Title
+#### Titulo
 5.1. La Batalla de las Plataformas: Sistema Integral IA vs. Gesdoc
-#### Content
+#### Contenido
 
 ID: EIGPTD-DESAFIO-PLATAFORMAS-01
 
 * Cpt: El primer obstáculo tangible es la existencia de "Gesdoc".
 * Ctx: Iniciativa en marcha blanca, técnicamente inferior, pero con la ventaja de la inercia y aparente simplicidad.
 * Req: Abordar este conflicto es una campaña de persuasión estratégica, no un debate técnico.
-#### Sections
+#### Secciones
 #### S 5 1 1 analisis comparativo tactico y estrategico
-#### ID
-GN-SEC-0039
-#### Title
+#### Titulo
 5.1.1. Análisis Comparativo Táctico y Estratégico
-#### Content
+#### Contenido
 
 ID: EIGPTD-PLATAFORMAS-ANALISIS-01
 
@@ -785,11 +649,9 @@ ID: EIGPTD-PLATAFORMAS-ANALISIS-01
 | Alineamiento TDE | Desalineado. Ignora los principios de la Estrategia de Datos del Estado, creando deuda técnica. | Plenamente Alineado. Es la ejecución práctica del Marco para la Gestión de Datos del Estado. |
 | Riesgo Político | Bajo (a corto plazo). Es fácil de aprobar porque no desafía el status quo. | Alto (a corto plazo). Requiere una visión estratégica y la voluntad de liderar un cambio profundo. |
 #### S 5 1 2 argumentario para demostrar la superioridad estrategica del sistema inte
-#### ID
-GN-SEC-0040
-#### Title
+#### Titulo
 5.1.2. Argumentario para Demostrar la Superioridad Estratégica del Sistema Integral
-#### Content
+#### Contenido
 
 ID: EIGPTD-PLATAFORMAS-ARGUMENTARIO-01
 
@@ -801,23 +663,19 @@ ID: EIGPTD-PLATAFORMAS-ARGUMENTARIO-01
   * 4. La Vía de la "Absorción Estratégica": Proponer no la "aniquilación" de Gesdoc, sino su "absorción", ofreciendo una salida honorable a sus impulsores.
   * 5. El Argumento de la Transparencia Exigible (Post-CPLT): Las nuevas recomendaciones del CPLT imponen una carga de cumplimiento que Gesdoc no puede satisfacer, generando un riesgo de incumplimiento. Tu sistema está construido sobre principios de gobernanza y trazabilidad.
 #### S 5 2 el vacio de liderazgo en tde como oportunidad
-#### ID
-GN-SEC-0041
-#### Title
+#### Titulo
 5.2. El Vacío de Liderazgo en TDE como Oportunidad
-#### Content
+#### Contenido
 
 ID: EIGPTD-DESAFIO-LIDERAZGO-01
 
 * Cpt: El estado "descabezado" del proceso TDE no es un problema colateral; es el contexto que hace indispensable tu propuesta.
 * Req: Debemos presentarlo como un riesgo institucional crítico que tu iniciativa viene a resolver.
-#### Sections
+#### Secciones
 #### S 5 2 1 riesgos institucionales de un proceso descabezado
-#### ID
-GN-SEC-0042
-#### Title
+#### Titulo
 5.2.1. Riesgos Institucionales de un Proceso "Descabezado"
-#### Content
+#### Contenido
 
 ID: EIGPTD-LIDERAZGO-RIESGOS-01
 
@@ -827,22 +685,18 @@ ID: EIGPTD-LIDERAZGO-RIESGOS-01
   * 3. Riesgo de Vulnerabilidad en Ciberseguridad: Un proceso TDE sin cabeza es una invitación a incidentes de seguridad.
   * 4. Riesgo de Pérdida de Oportunidades: Reacción tardía a las directrices nacionales en lugar de uso proactivo de la TDE.
 #### S 5 2 2 posicionamiento de la iniciativa ia como la solucion al vacio de lideraz
-#### ID
-GN-SEC-0043
-#### Title
+#### Titulo
 5.2.2. Posicionamiento de la Iniciativa IA como la Solución al Vacío de Liderazgo
-#### Content
+#### Contenido
 
 ID: EIGPTD-LIDERAZGO-POSICIONAMIENTO-01
 
 * Cpt: Tu propuesta debe ser enmarcada como la solución directa a este vacío.
 * Cpt: El argumento es que la iniciativa "Ecosistema IA Ñuble" es la encarnación misma de un plan de transformación digital estratégico. Al adoptar tu sistema, el GORE adopta una estrategia, una metodología y una visión de futuro para su TDE.
 #### S 5 3 la fusion estrategica el ecosistema de ia como ejecucion del plan tde
-#### ID
-GN-SEC-0044
-#### Title
+#### Titulo
 5.3. La Fusión Estratégica: El Ecosistema de IA como Ejecución del Plan TDE
-#### Content
+#### Contenido
 
 ID: EIGPTD-DESAFIO-FUSION-01
 
@@ -853,24 +707,20 @@ ID: EIGPTD-DESAFIO-FUSION-01
   * 3. La Visión: Proponemos una solución integral, un Ecosistema de IA que nos convierte en un GORE proactivo y basado en datos.
   * 4. La Decisión: La decisión no es entre dos softwares, sino entre un camino de fragmentación y riesgo (Gesdoc) y un camino de integración y liderazgo estratégico (Ecosistema IA).
 * Cpt: No estamos pidiendo que aprueben un software; estamos proponiendo que elijan un futuro.
-#### S 6 el dilema del estratega cursos de accion recomendados
-#### ID
-GN-SEC-0045
-#### Title
+### S 6 el dilema del estratega cursos de accion recomendados
+#### Titulo
 6. El Dilema del Estratega: Cursos de Acción Recomendados
-#### Content
+#### Contenido
 
 ID: EIGPTD-DILEMA-ESTRATEGA-01
 
 * Ctx: La viabilidad de la iniciativa está ligada a la posición del estratega.
 * Cpt: El rol actual (alto impacto, baja formalidad, horizonte contractual limitado) crea una paradoja que debe ser gestionada con claridad estratégica.
-#### Sections
+#### Secciones
 #### S 6 1 analisis del factor prometeo activo critico y riesgo de sostenibilidad rev
-#### ID
-GN-SEC-0046
-#### Title
+#### Titulo
 6.1. Análisis del "Factor Prometeo": Activo Crítico y Riesgo de Sostenibilidad (Revisado)
-#### Content
+#### Contenido
 
 ID: EIGPTD-ESTRATEGA-FACTOR-PROMETEO-01
 
@@ -885,32 +735,26 @@ ID: EIGPTD-ESTRATEGA-FACTOR-PROMETEO-01
   * Warn: El riesgo es la incapacidad del GORE para estar a la altura de la oportunidad.
 * Cpt: La gestión de esta paradoja es el núcleo del dilema estratégico.
 #### S 6 2 curso de accion a estrategia de conquista
-#### ID
-GN-SEC-0047
-#### Title
+#### Titulo
 6.2. Curso de Acción A: Estrategia de "Conquista"
-#### Content
+#### Contenido
 
 ID: EIGPTD-ESTRATEGA-ACCION-CONQUISTA-01
 
 * Cpt: Implica una decisión consciente de luchar por consolidar tu posición dentro del GORE, transformando poder informal en autoridad formal.
-#### Sections
+#### Secciones
 #### S 6 2 1 objetivo consolidacion y creacion de un rol formal
-#### ID
-GN-SEC-0048
-#### Title
+#### Titulo
 6.2.1. Objetivo: Consolidación y Creación de un Rol Formal
-#### Content
+#### Contenido
 
 ID: EIGPTD-CONQUISTA-OBJETIVO-01
 
 * Obj: Lograr que la alta dirección reconozca la necesidad crítica de un liderazgo formal para la TDE y cree un rol a tu medida (ej. "Jefe de la Oficina de Transformación Digital"), asegurando tu continuidad.
 #### S 6 2 2 requisitos riesgos y potenciales recompensas
-#### ID
-GN-SEC-0049
-#### Title
+#### Titulo
 6.2.2. Requisitos, Riesgos y Potenciales Recompensas
-#### Content
+#### Contenido
 
 ID: EIGPTD-CONQUISTA-ANALISIS-01
 
@@ -928,34 +772,28 @@ ID: EIGPTD-CONQUISTA-ANALISIS-01
   * * Consolidación Profesional: Posición de liderazgo formal y permanente.
   * * Legado Personal: Reconocimiento como arquitecto de la modernización del GORE.
 #### S 6 3 curso de accion b estrategia de legado
-#### ID
-GN-SEC-0050
-#### Title
+#### Titulo
 6.3. Curso de Acción B: Estrategia de "Legado"
-#### Content
+#### Contenido
 
 ID: EIGPTD-ESTRATEGA-ACCION-LEGADO-01
 
 * Fnd: Parte de la premisa de que tu partida es una posibilidad real.
 * Obj: Asegurar la supervivencia y éxito de tu visión más allá de tu presencia física.
-#### Sections
+#### Secciones
 #### S 6 3 1 objetivo institucionalizacion de la vision y sucesion
-#### ID
-GN-SEC-0051
-#### Title
+#### Titulo
 6.3.1. Objetivo: Institucionalización de la Visión y Sucesión
-#### Content
+#### Contenido
 
 ID: EIGPTD-LEGADO-OBJETIVO-01
 
 * Obj: Anclar tus proyectos y metodología en la cultura y procesos del GORE hasta que se vuelvan indispensables.
 * Mech: Transferir conocimiento, empoderar a otros y asegurar la continuidad a través de un sucesor.
 #### S 6 3 2 requisitos riesgos y potenciales recompensas
-#### ID
-GN-SEC-0052
-#### Title
+#### Titulo
 6.3.2. Requisitos, Riesgos y Potenciales Recompensas
-#### Content
+#### Contenido
 
 ID: EIGPTD-LEGADO-ANALISIS-01
 
@@ -973,11 +811,9 @@ ID: EIGPTD-LEGADO-ANALISIS-01
   * * Capital Reputacional Estratégico: Te posiciona como el "fundador visionario".
   * * Menor Riesgo Político Personal: Evita la confrontación directa.
 #### S 6 4 matriz de decision criterios para la eleccion del estratega
-#### ID
-GN-SEC-0053
-#### Title
+#### Titulo
 6.4. Matriz de Decisión: Criterios para la Elección del Estratega
-#### Content
+#### Contenido
 
 ID: EIGPTD-ESTRATEGA-MATRIZ-DECISION-01
 
@@ -993,34 +829,28 @@ ID: EIGPTD-ESTRATEGA-MATRIZ-DECISION-01
 | Nivel de Esfuerzo y Estrés | Extremo. Dedicación total a la batalla política y ejecución simultánea. | Alto, pero Enfocado. El esfuerzo se centra en mentoría, documentación y ejecución. |
 
 * Instr: Félix, te insto a usar esta matriz como una herramienta de reflexión. La claridad sobre el camino elegido es indispensable.
-#### S 7 plan de influencia y proximos pasos
-#### ID
-GN-SEC-0054
-#### Title
+### S 7 plan de influencia y proximos pasos
+#### Titulo
 7. Plan de Influencia y Próximos Pasos
-#### Content
+#### Contenido
 
 ID: EIGPTD-PLAN-INFLUENCIA-01
 
 * Obj: Construir una coalición de apoyo, neutralizar resistencias y posicionar la iniciativa para que su aprobación sea percibida como la única opción lógica.
-#### Sections
+#### Secciones
 #### S 7 1 fase 1 preparacion del terreno acciones inmediatas
-#### ID
-GN-SEC-0055
-#### Title
+#### Titulo
 7.1. Fase 1: Preparación del Terreno (Acciones Inmediatas)
-#### Content
+#### Contenido
 
 ID: EIGPTD-INFLUENCIA-FASE1-01
 
 * Purp: Ejecutar tres acciones tácticas para dar forma al campo de batalla, construir credibilidad y generar momentum positivo antes de cualquier conversación formal.
-#### Sections
+#### Secciones
 #### S 7 1 1 propuesta de creacion de la mesa de trabajo tde
-#### ID
-GN-SEC-0056
-#### Title
+#### Titulo
 7.1.1. Propuesta de Creación de la "Mesa de Trabajo TDE"
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE1-MESA-TDE-01
 
@@ -1033,11 +863,9 @@ ID: EIGPTD-FASE1-MESA-TDE-01
     * * Tu Rol: Ofrecerte voluntariamente como "Secretario Técnico".
 * Res: Tomas la iniciativa, demuestras visión institucional y te conviertes en el centro neurálgico de la TDE sin generar una lucha de poder explícita.
 #### S 7 1 2 elaboracion del plan de gobernanza de ia
-#### ID
-GN-SEC-0057
-#### Title
+#### Titulo
 7.1.2. Elaboración del Plan de Gobernanza de IA
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE1-GOBERNANZA-IA-01
 
@@ -1052,11 +880,9 @@ ID: EIGPTD-FASE1-GOBERNANZA-IA-01
     * * Cumplimiento Proactivo (CPLT): Incluir una sección que mapee explícitamente cómo se cumplirá con los requisitos del CPLT.
 * Res: Transformas su mayor miedo en tu mayor fortaleza, llegando a la conversación como el estratega que ya ha resuelto el próximo gran desafío de cumplimiento del GORE.
 #### S 7 1 3 lanzamiento controlado del chatbot ciudadano como quick win
-#### ID
-GN-SEC-0058
-#### Title
+#### Titulo
 7.1.3. Lanzamiento controlado del Chatbot Ciudadano como "Quick Win"
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE1-CHATBOT-01
 
@@ -1067,22 +893,18 @@ ID: EIGPTD-FASE1-CHATBOT-01
   * 3. Estrategia de Comunicación: Permitir que la Jefa de Comunicaciones lidere la comunicación del lanzamiento, posicionándolo como un logro del GORE.
 * Res: Obtienes un caso de éxito irrefutable, fortaleces una alianza clave y generas capital político.
 #### S 7 2 fase 2 la campana de influencia conversaciones 1 a 1
-#### ID
-GN-SEC-0059
-#### Title
+#### Titulo
 7.2. Fase 2: La Campaña de Influencia (Conversaciones 1 a 1)
-#### Content
+#### Contenido
 
 ID: EIGPTD-INFLUENCIA-FASE2-01
 
 * Obj: Construir una coalición, mitigar objeciones en privado y asegurar el apoyo antes de la presentación formal.
-#### Sections
+#### Secciones
 #### S 7 2 1 secuencia de aproximacion estrategica a directivos
-#### ID
-GN-SEC-0060
-#### Title
+#### Titulo
 7.2.1. Secuencia de Aproximación Estratégica a Directivos
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE2-SECUENCIA-01
 
@@ -1094,11 +916,9 @@ ID: EIGPTD-FASE2-SECUENCIA-01
   * 4. Eje Programático-Territorial (Tamara Valenzuela, Raúl Súnico): Presentarles los casos de uso específicos que benefician a sus divisiones.
   * 5. El Campeón Político (Gobernador Óscar Crisóstomo): La reunión final de validación sobre una estrategia que ya cuenta con respaldo.
 #### S 7 2 2 argumentarios personalizados por perfil
-#### ID
-GN-SEC-0061
-#### Title
+#### Titulo
 7.2.2. Argumentarios Personalizados por Perfil
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE2-ARGUMENTARIOS-01
 
@@ -1109,22 +929,18 @@ ID: EIGPTD-FASE2-ARGUMENTARIOS-01
   * * A Juan: hablar de "análisis predictivo para maximizar la ejecución".
   * * Al Gobernador: hablar de "legado, liderazgo nacional y 'Ñuble Inteligente'".
 #### S 7 3 fase 3 la presentacion estrategica
-#### ID
-GN-SEC-0062
-#### Title
+#### Titulo
 7.3. Fase 3: La Presentación Estratégica
-#### Content
+#### Contenido
 
 ID: EIGPTD-INFLUENCIA-FASE3-01
 
 * Purp: Instancia formal para buscar la aprobación definitiva. La narrativa debe integrar las lógicas de los ejes de poder.
-#### Sections
+#### Secciones
 #### S 7 3 1 estructura de la narrativa principal
-#### ID
-GN-SEC-0063
-#### Title
+#### Titulo
 7.3.1. Estructura de la Narrativa Principal
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE3-NARRATIVA-01
 
@@ -1137,33 +953,27 @@ ID: EIGPTD-FASE3-NARRATIVA-01
   * 6. La Hoja de Ruta: Presentar un plan de implementación fásico.
   * 7. La Petición (The Ask): Concluir con una solicitud clara (aprobación piloto, formalización Mesa TDE, asignación de recursos).
 #### S 7 3 2 presentacion del caso de negocio y plan de implementacion
-#### ID
-GN-SEC-0064
-#### Title
+#### Titulo
 7.3.2. Presentación del Caso de Negocio y Plan de Implementación
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE3-CASO-NEGOCIO-01
 
 * Ctx: Sección dirigida al Eje Técnico-Operacional.
 * Req: Incluir presupuesto estimado, cronograma detallado, recursos requeridos y KPIs de éxito.
 #### S 7 3 3 analisis de enfoques narrativos a partir de borradores de trabajo
-#### ID
-GN-SEC-0065
-#### Title
+#### Titulo
 7.3.3. Análisis de Enfoques Narrativos a partir de Borradores de Trabajo
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE3-ENFOQUES-NARRATIVOS-01
 
 * Ctx: Los borradores (`b1.md` a `b6.md`) son una fuente de inteligencia para destilar los ángulos narrativos más potentes.
 * Purp: Usarlos como un arsenal de tácticas, no como un guion canónico.
 #### Destilando estrategias desde los borradores de trabajo
-#### ID
-GN-SEC-0066
-#### Title
+#### Titulo
 Destilando Estrategias desde los Borradores de Trabajo
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE3-ESTRATEGIAS-BORRADORES-01
 
@@ -1173,11 +983,9 @@ ID: EIGPTD-FASE3-ESTRATEGIAS-BORRADORES-01
   * * El Enfoque "Narrativa Épica y Visionario Comprometido" (`b3.md`, `b6.md`): Contiene elementos de alto impacto persuasivo (estructura de "actos", revelación de financiamiento propio).
   * * El Enfoque "Show, Don't Tell / Demo Dinámica" (`b4.md`): Centrado en la demostración en vivo para construir confianza técnica.
 #### Mosaico de tacticas narrativas de alto impacto
-#### ID
-GN-SEC-0067
-#### Title
+#### Titulo
 Mosaico de Tácticas Narrativas de Alto Impacto
-#### Content
+#### Contenido
 
 ID: EIGPTD-FASE3-MOSAICO-TACTICAS-01
 
@@ -1189,11 +997,9 @@ ID: EIGPTD-FASE3-MOSAICO-TACTICAS-01
   * * Táctica de Clímax - El Compromiso Irrefutable: Revelar que la capacidad funcional fue desarrollada a cero costo y cero riesgo para el GORE.
   * * Táctica de Cierre - La Propuesta Concreta: Finalizar con una hoja de ruta y una petición clara y ejecutable.
 #### S 7 4 decisiones criticas requeridas por el estratega felix sanhueza
-#### ID
-GN-SEC-0068
-#### Title
+#### Titulo
 7.4. Decisiones Críticas Requeridas por el Estratega (Félix Sanhueza)
-#### Content
+#### Contenido
 
 ID: EIGPTD-INFLUENCIA-DECISIONES-CRITICAS-01
 
@@ -1203,12 +1009,10 @@ ID: EIGPTD-INFLUENCIA-DECISIONES-CRITICAS-01
   * 3. Validar el Nivel de Control a Ceder: ¿Estás dispuesto a entregar el control de la gobernanza a un comité liderado por otros?
   * 4. Confirmar la Vía de Confrontación con Gesdoc: ¿"Absorción estratégica" o "confrontación directa"?
 * Cpt: Tus respuestas serán la directriz final para la ejecución de este plan.
-#### Anexo a matriz detallada de perfiles de agentes de interes
-#### ID
-GN-SEC-0069
-#### Title
+### Anexo a matriz detallada de perfiles de agentes de interes
+#### Titulo
 Anexo A: Matriz Detallada de Perfiles de Agentes de Interés
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-A-01
 
@@ -1228,12 +1032,10 @@ ID: EIGPTD-ANEXO-A-01
 | Jefe de División DIT<br>Cristián Quiroz Reyes | El Maestro de Obras | Ctx: Líder inteligente y cognitivamente flexible. Adoptante temprano de la IA y aliado clave. Su apoyo es táctico y condicionado por su propia agenda. Su debilidad es la gestión operacional. | - Retrasos y sobrecostos en proyectos de infraestructura.<br>- La dificultad de supervisar físicamente múltiples obras.<br>- La percepción de que su cartera de proyectos avanza lentamente. | Lógica: Basada en Innovación y Posicionamiento.<br>Gancho: *"Jefe, con su apoyo, podemos convertir a la DIT en la división pionera en la aplicación de IA para la gestión de infraestructura..."* | - Alinear los hitos del proyecto con sus oportunidades de visibilidad.<br>- Proveerle herramientas que mitiguen sus debilidades operacionales.<br>- Posicionarlo a él como el líder técnico de la iniciativa. | Riesgo: Su apoyo es condicional; podría retirarlo si hay alta resistencia política.<br>Mitigación: Mantenerlo como un aliado cercano, asegurando que obtenga "victorias". | Aliado Técnico y Campeón Inicial |
 | Jefe de Gabinete<br>Alejandro Aguilera | El Navegante Político | Ctx: El actor más influyente después del Gobernador. Estratega político brillante que teme que la innovación no gobernada genere caos. Su *driver* es la gobernabilidad y la protección del capital político del Gobernador. | - La gestión de *stakeholders* con intereses contrapuestos.<br>- La tensión entre lo técnico y lo político.<br>- El riesgo de que iniciativas innovadoras generen crisis. | Lógica: Basada en Control y Riesgo Político.<br>Gancho: *"Alejandro, te propongo que juntos diseñemos las reglas para que esta herramienta sea un instrumento de precisión que fortalezca tu control..."* | - Abordarlo con el Plan de Gobernanza como punto de partida.<br>- Demostrar cómo la IA puede ser una herramienta para gestionar la narrativa.<br>- Posicionarlo a él como el co-arquitecto de los controles. | Riesgo: Veto estratégico por percibir la iniciativa como una amenaza a su control.<br>Mitigación: La estrategia de "co-diseño" de la gobernanza es la única vía. | Guardián Estratégico (Gatekeeper) |
 | Jefa de Comunicaciones<br>María Antonieta Soto | La Narradora de la Transformación | Ctx: Recién asumida, es una usuaria convencida y dependiente de tus herramientas. Su *driver* es la eficacia comunicacional. Aliada incondicional. | - La dificultad de comunicar temas técnicos de forma simple.<br>- La necesidad de generar contenido noticioso positivo.<br>- La gestión de las expectativas ciudadanas. | Lógica: Basada en Narrativa e Impacto Reputacional.<br>Gancho: *"Jefa, tú ya conoces el poder de estas herramientas. Ayúdame a construir la narrativa..."* | - El Chatbot Ciudadano es su principal argumento de venta.<br>- Posicionar el Ecosistema de IA como una fuente de historias positivas.<br>- Usarla como un puente y validador. | Riesgo: Mínimo.<br>Mitigación: Empoderarla dándole un rol protagónico en la comunicación del proyecto. | Aliada Narrativa y Validadora Clave |
-#### Anexo b matriz de inventario de soluciones de ia y transformacion digital
-#### ID
-GN-SEC-0070
-#### Title
+### Anexo b matriz de inventario de soluciones de ia y transformacion digital
+#### Titulo
 Anexo B: Matriz de Inventario de Soluciones de IA y Transformación Digital
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-B-01
 
@@ -1251,23 +1053,19 @@ ID: EIGPTD-ANEXO-B-01
 | Plataforma RRD (Odoo) | Desplegado | Sistema Regional de Prevención y Respuesta ante Desastres | Purp: Estructurar y formalizar el proceso de convocatoria y gestión con los actores del sistema de emergencias. | Cause: La dificultad para convocar y gestionar de forma centralizada a los múltiples actores durante emergencias. | Res: Entregada y en uso por SENAPRED, validando la capacidad de desarrollo y colaboración interinstitucional. | Warn: Nulo. Percibido como un aporte constructivo a un problema compartido. |
 
 * Cpt: Conclusión del Inventario: El portafolio de activos es una demostración tangible de una nueva capacidad institucional para el GORE Ñuble, validando la viabilidad y necesidad de la propuesta del Ecosistema de IA.
-#### Anexo c descripcion y mapa detallado de la situacion actual
-#### ID
-GN-SEC-0071
-#### Title
+### Anexo c descripcion y mapa detallado de la situacion actual
+#### Titulo
 Anexo C: Descripción y Mapa Detallado de la Situación Actual
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-C-01
 
 * Ctx: Cartografía precisa y multidimensional del entorno para diseñar una estrategia de influencia efectiva.
-#### Sections
+#### Secciones
 #### S 1 contexto estrategico regional un gore bajo presion
-#### ID
-GN-SEC-0072
-#### Title
+#### Titulo
 1. Contexto Estratégico Regional: Un GORE Bajo Presión
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-C-CONTEXTO-REGIONAL-01
 
@@ -1278,11 +1076,9 @@ ID: EIGPTD-ANEXO-C-CONTEXTO-REGIONAL-01
   * * Bajo Capital Humano y Envejecimiento: Escolaridad promedio inferior a la media nacional.
   * * Dependencia del Sector Primario: Presión constante por diversificar la matriz productiva (ej. AgroTech).
 #### S 2 la arena politica interna ejes de poder y dinamicas de influencia
-#### ID
-GN-SEC-0073
-#### Title
+#### Titulo
 2. La Arena Política Interna: Ejes de Poder y Dinámicas de Influencia
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-C-POLITICA-INTERNA-01
 
@@ -1290,11 +1086,9 @@ ID: EIGPTD-ANEXO-C-POLITICA-INTERNA-01
 * Ref: EIGPTD-DIAGNOSTICO-EJES-PODER-01
 * Warn: La situación actual está marcada por una tensión palpable entre y dentro de estos ejes.
 #### S 3 el frente tecnologico dos iniciativas en colision
-#### ID
-GN-SEC-0074
-#### Title
+#### Titulo
 3. El Frente Tecnológico: Dos Iniciativas en Colisión
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-C-FRENTE-TECNOLOGICO-01
 
@@ -1311,11 +1105,9 @@ ID: EIGPTD-ANEXO-C-FRENTE-TECNOLOGICO-01
   * Cpt: La situación actual se define por esta colisión. La administración deberá decidir inminentemente entre la solución táctica (Gesdoc) y la estratégica (tu Sistema Integral).
   * Ctx: La decisión es sobre el modelo de gestión del GORE para la próxima década.
 #### S 4 el vacio de liderazgo y el dilema del estratega
-#### ID
-GN-SEC-0075
-#### Title
+#### Titulo
 4. El Vacío de Liderazgo y el Dilema del Estratega
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-C-VACIO-LIDERAZGO-01
 
@@ -1329,24 +1121,20 @@ ID: EIGPTD-ANEXO-C-VACIO-LIDERAZGO-01
 * Cpt: 4.3. La Encrucijada Actual
   * Cpt: El GORE debe elegir un camino tecnológico (Gesdoc vs. Sistema Integral), resolver su vacío de liderazgo en TDE, y tú debes decidir tu estrategia ("Conquista" vs. "Legado").
   * Ctx: La interdependencia de estas tres decisiones define el desafío estratégico central.
-#### Anexo d analisis de la situacion del estratega
-#### ID
-GN-SEC-0076
-#### Title
+### Anexo d analisis de la situacion del estratega
+#### Titulo
 Anexo D: Análisis de la Situación del Estratega
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-D-01
 
 * Ctx: Análisis de la relación con Alejandro Aguilera y el horizonte contractual.
 * Purp: Entender las dinámicas de poder y confianza para el éxito de la estrategia de cambio.
-#### Sections
+#### Secciones
 #### S 1 analisis de la relacion estrategica amistad poder y control
-#### ID
-GN-SEC-0077
-#### Title
+#### Titulo
 1. Análisis de la Relación Estratégica: Amistad, Poder y Control
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-D-RELACION-AA-01
 
@@ -1360,11 +1148,9 @@ ID: EIGPTD-ANEXO-D-RELACION-AA-01
   * Cpt: El conflicto no es sobre la utilidad de la IA, sino sobre la gobernanza de la innovación.
   * Cause: Rechaza el caos que percibe al no estar bajo su control estratégico, creando un círculo vicioso que alimenta su desconfianza.
 #### S 2 el factor incertidumbre la comision de servicio y sus implicancias estrategi
-#### ID
-GN-SEC-0078
-#### Title
+#### Titulo
 2. El "Factor Incertidumbre": La Comisión de Servicio y sus Implicancias Estratégicas
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-D-INCERTIDUMBRE-CONTRACTUAL-01
 
@@ -1376,11 +1162,9 @@ ID: EIGPTD-ANEXO-D-INCERTIDUMBRE-CONTRACTUAL-01
   * Cpt: La fecha límite es tu herramienta más poderosa para forzar una decisión.
   * Mech: Te permite invertir el argumento: no es "¿por qué adoptar tu sistema si te vas?", sino "¿Cómo podemos permitirnos dejar ir esta capacidad estratégica ya demostrada?".
 #### S 3 cursos de accion para la gestion de la relacion con alejandro aguilera
-#### ID
-GN-SEC-0079
-#### Title
+#### Titulo
 3. Cursos de Acción para la Gestión de la Relación con Alejandro Aguilera
-#### Content
+#### Contenido
 
 ID: EIGPTD-ANEXO-D-CURSOS-ACCION-AA-01
 

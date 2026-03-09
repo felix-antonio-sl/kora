@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:indicadores-nuble
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/02_estrategia/estadisticas/kb_gn_005_indicadores_nuble_koda.yml
 version: 2.0.0
 status: published
@@ -27,98 +27,36 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.11
+    cr: 1.46
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 490
+    skeleton_count: 1
+    meat_count: 460
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__indicadores-nuble.md.json
 ---
 
 # Indicadores regionales y comunales región de Ñuble
-## ID
-GN-INDICADORES-NUBLE-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Indicadores regionales y comunales de la Región de Ñuble (Actualización BCN: Junio 2025).
-
-## Primary Source
-staging/gn/kodeando/kb_gn_005_indicadores_nuble.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Indicadores Nuble
-### ID
-GN-INDICADORES-NUBLE-DOC-01
-### Title
+## Titulo
 Indicadores regionales y comunales región de Ñuble
-### Update
+## Update
 Actualización BCN: Junio 2025
-### Sections
-#### Indicadores demograficos
-#### ID
-GN-IND-SEC-0001
-#### Title
+## Secciones
+### Indicadores demograficos
+#### Titulo
 Indicadores Demográficos
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### Poblacion total fuente censo de poblacion y vivienda 2017 y 2024 ine
-#### ID
-GN-IND-SEC-0002
-#### Title
+#### Titulo
 Población Total (Fuente: Censo de Población y Vivienda 2017 y 2024, INE)
-#### Content
+#### Contenido
 
 |Comuna|Censo 2017|Censo 2024|Variación (%)|
 |-|-|-|-|
@@ -146,11 +84,9 @@ Población Total (Fuente: Censo de Población y Vivienda 2017 y 2024, INE)
 |Región de Ñuble|480609|512289|6.6|
 |País|17574003|18480432|5.2|
 #### Poblacion por area urbana rural fuente censo de poblacion y vivienda 2017 proyec
-#### ID
-GN-IND-SEC-0003
-#### Title
+#### Titulo
 Población por Área Urbana-Rural (Fuente: Censo de Población y Vivienda 2017, Proyecciones de Población 2024, INE)
-#### Content
+#### Contenido
 
 |Comuna|Urbana (2017)|Rural (2017)|Urbana (2024)|Rural (2024)|% Ruralidad 2017|% Ruralidad 2024|
 |-|-|-|-|-|-|-|
@@ -178,11 +114,9 @@ Población por Área Urbana-Rural (Fuente: Censo de Población y Vivienda 2017, 
 |Región de Ñuble|333680|146929|372096|149615|30.6|28.7|
 |País|15424263|2149740|17824977|2261400|12.2|11.3|
 #### Poblacion por sexo e indice de masculinidad fuente censo de poblacion y vivienda
-#### ID
-GN-IND-SEC-0004
-#### Title
+#### Titulo
 Población por Sexo e Índice de Masculinidad (Fuente: Censo de Población y Vivienda 2017 y 2024, INE)
-#### Content
+#### Contenido
 
 |Comuna|Hombres (2017)|Mujeres (2017)|Hombres (2024)|Mujeres (2024)|IM 2017|IM 2024|
 |-|-|-|-|-|-|-|
@@ -210,11 +144,9 @@ Población por Sexo e Índice de Masculinidad (Fuente: Censo de Población y Viv
 |Región de Ñuble|232587|248022|246437|265852|93.8|92.7|
 |País|8601989|8972014|8967033|9513399|95.9|94.3|
 #### Poblacion por grupos de edad fuente censo de poblacion y vivienda 2017 y 2024 in
-#### ID
-GN-IND-SEC-0005
-#### Title
+#### Titulo
 Población por Grupos de Edad (Fuente: Censo de Población y Vivienda 2017 y 2024, INE)
-#### Content
+#### Contenido
 
 |Comuna|0 a 14 (2017)|0 a 14 (2024)|15 a 29 (2017)|15 a 29 (2024)|30 a 44 (2017)|30 a 44 (2024)|45 a 64 (2017)|45 a 64 (2024)|65 o más (2017)|65 o más (2024)|Total (2017)|Total (2024)|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -242,11 +174,9 @@ Población por Grupos de Edad (Fuente: Censo de Población y Vivienda 2017 y 202
 |Región de Ñuble|93680|88193|96966|94042|91823|100108|118758|129647|63595|77722|480609|512289|
 |País|3094540|3265532|3611435|3880891|3686064|4213539|4260941|4532821|2921023|2587649|17574003|18480432|
 #### Indice de dependencia demografica idd e indice de adultos mayores iam fuente cen
-#### ID
-GN-IND-SEC-0006
-#### Title
+#### Titulo
 Índice de Dependencia Demográfica (IDD) e Índice de Adultos Mayores (IAM) (Fuente: Censo de Población y Vivienda 2017 y 2024, INE)
-#### Content
+#### Contenido
 
 |Comuna|IDD 2017|IDD 2024|IAM 2017|IAM 2024|
 |-|-|-|-|-|
@@ -273,12 +203,10 @@ GN-IND-SEC-0006
 |Yungay|51.4|52.5|75.2|109.9|
 |Región de Ñuble|49.4|50.8|69.4|97.6|
 |País|45.9|46.5|56.9|79.0|
-#### Indice de desarrollo humano por comuna
-#### ID
-GN-IND-SEC-0007
-#### Title
+### Indice de desarrollo humano por comuna
+#### Titulo
 Indice de Desarrollo Humano por comuna
-#### Content
+#### Contenido
 
 |Comuna|Tramo IDH|IDH|Tasa de Años de Vida Potencialmente Perdidos|Educación|Ingreso|
 |-|-|-|-|-|-|
@@ -302,21 +230,17 @@ Indice de Desarrollo Humano por comuna
 |El Carmen|bajo|0.472|0.733|0.684|0.210|
 |Portezuelo|bajo|0.444|0.621|0.705|0.200|
 |San Ignacio|bajo|0.437|0.667|0.690|0.181|
-#### Indicadores sociales
-#### ID
-GN-IND-SEC-0008
-#### Title
+### Indicadores sociales
+#### Titulo
 Indicadores Sociales
-#### Content
+#### Contenido
 
 Los datos presentados a continuación, fueron extraídos de la Encuesta de Caracterización Socioeconómica Nacional (CASEN) 2017 y 2022 y Sistema Integrado de Información Social, instrumentos gestionados por el Ministerio de Desarrollo Social y Familia (MDSyF)
-#### Sections
+#### Secciones
 #### Tasa de pobreza por ingresos fuente encuesta casen 2017 y 2022 mdsyf
-#### ID
-GN-IND-SEC-0009
-#### Title
+#### Titulo
 Tasa de Pobreza por Ingresos (Fuente: Encuesta CASEN 2017 y 2022, MDSyF)
-#### Content
+#### Contenido
 
 |Comuna|CASEN 2017|CASEN 2022|
 |-|-|-|
@@ -344,11 +268,9 @@ Tasa de Pobreza por Ingresos (Fuente: Encuesta CASEN 2017 y 2022, MDSyF)
 |Región de Ñuble|16.2%|12.1%|
 |País|8.5%|6.5%|
 #### Tasa de pobreza multidimensional 5 dimensiones fuente encuesta casen 2017 y 2022
-#### ID
-GN-IND-SEC-0010
-#### Title
+#### Titulo
 Tasa de Pobreza Multidimensional (5 dimensiones) (Fuente: Encuesta CASEN 2017 y 2022, MDSyF)
-#### Content
+#### Contenido
 
 |Comuna|CASEN 2017|CASEN 2022|
 |-|-|-|
@@ -376,11 +298,9 @@ Tasa de Pobreza Multidimensional (5 dimensiones) (Fuente: Encuesta CASEN 2017 y 
 |Región de Ñuble|24.7%|15.5%|
 |País|20.3%|16.9%|
 #### Porcentaje de personas en el rsh que declaran pertenecer a pueblos indigenas fue
-#### ID
-GN-IND-SEC-0011
-#### Title
+#### Titulo
 Porcentaje de Personas en el RSH que Declaran Pertenecer a Pueblos Indígenas (Fuente: marzo 2025, SIIS-T MDSyF)
-#### Content
+#### Contenido
 
 |Comuna|Pueblos Indígenas (%)|
 |-|-|
@@ -408,11 +328,9 @@ Porcentaje de Personas en el RSH que Declaran Pertenecer a Pueblos Indígenas (F
 |Región de Ñuble|2.1%|
 |País|9.2%|
 #### Porcentaje de personas en el rsh que son extranjeros as fuente marzo 2025 siis t
-#### ID
-GN-IND-SEC-0012
-#### Title
+#### Titulo
 Porcentaje de Personas en el RSH que son Extranjeros/as (Fuente: marzo 2025, SIIS-T MDSyF)
-#### Content
+#### Contenido
 
 |Comuna|Extranjeros (%)|
 |-|-|
@@ -440,11 +358,9 @@ Porcentaje de Personas en el RSH que son Extranjeros/as (Fuente: marzo 2025, SII
 |Región de Ñuble|1.7%|
 |País|6.7%|
 #### Personas en hogares carentes de servicios basicos fuente marzo 2025 siis t mdsyf
-#### ID
-GN-IND-SEC-0013
-#### Title
+#### Titulo
 Personas en Hogares Carentes de Servicios Básicos (Fuente: marzo 2025, SIIS-T MDSyF)
-#### Content
+#### Contenido
 
 |Comuna|Personas en Hogares Carentes de Servicios Básicos (%)|
 |-|-|
@@ -472,11 +388,9 @@ Personas en Hogares Carentes de Servicios Básicos (Fuente: marzo 2025, SIIS-T M
 |Región de Ñuble|17.8%|
 |País|13.1%|
 #### Hogares hacinados fuente marzo 2025 siis t mdsyf
-#### ID
-GN-IND-SEC-0014
-#### Title
+#### Titulo
 Hogares Hacinados (Fuente: marzo 2025, SIIS-T MDSyF)
-#### Content
+#### Contenido
 
 |Comuna|Hogares Hacinados (%)|
 |-|-|
@@ -504,11 +418,9 @@ Hogares Hacinados (Fuente: marzo 2025, SIIS-T MDSyF)
 |Región de Ñuble|8.1%|
 |País|8.1%|
 #### Incidencia de la pobreza por ingresos y multidimensional personas y hogares nubl
-#### ID
-GN-IND-SEC-0015
-#### Title
+#### Titulo
 Incidencia de la pobreza por ingresos y multidimensional – Personas y Hogares (Ñuble vs Chile, 2017-2022)
-#### Content
+#### Contenido
 
 |Indicador|Año|Ñuble %|Chile %|Diferencia pp|
 |-|-|-|-|-|
@@ -521,11 +433,9 @@ Incidencia de la pobreza por ingresos y multidimensional – Personas y Hogares 
 |Pobreza multidimensional (Hogares)|2017|21.1|16.3|4.8|
 |Pobreza multidimensional (Hogares)|2022|12.7|13.4|-0.7|
 #### Brecha de genero e ingresos promedio rsh junio 2024
-#### ID
-GN-IND-SEC-0016
-#### Title
+#### Titulo
 Brecha de género e ingresos promedio (RSH, junio 2024)
-#### Content
+#### Contenido
 
 |Comuna|Brecha trabajo %|Ingreso trabajo $|Brecha pensiones %|Ingreso pensiones $|Brecha capital %|Ingreso capital $|Ingreso total $|
 |-|-|-|-|-|-|-|-|
@@ -553,11 +463,9 @@ Brecha de género e ingresos promedio (RSH, junio 2024)
 |Total región|27.9|350.059|27.2|291.285|30.6|16.652|386.917|
 |Total país|25.6|440.919|35.0|319.755|29.4|16.232|468.619|
 #### Incidencia de la inseguridad alimentaria moderada o grave por comuna casen 2022
-#### ID
-GN-IND-SEC-0017
-#### Title
+#### Titulo
 Incidencia de la inseguridad alimentaria moderada o grave por comuna (CASEN 2022)
-#### Content
+#### Contenido
 
 |Comuna|% hogares|
 |-|-|
@@ -583,11 +491,9 @@ Incidencia de la inseguridad alimentaria moderada o grave por comuna (CASEN 2022
 |Total región Ñuble|16.6|
 |Total nacional|18.9|
 #### Educacion exclusion rezago y escolaridad promedio rsh junio 2024
-#### ID
-GN-IND-SEC-0018
-#### Title
+#### Titulo
 Educación: exclusión, rezago y escolaridad promedio (RSH, junio 2024)
-#### Content
+#### Contenido
 
 |Comuna|% excluidos|Nº excluidos|% rezago|Nº rezago|Años escolaridad|Nº personas|
 |-|-|-|-|-|-|-|
@@ -615,11 +521,9 @@ Educación: exclusión, rezago y escolaridad promedio (RSH, junio 2024)
 |Total regional|1.3|1088|1.6|1393|10.9|402235|
 |Total país|3.3|92289|1.9|57768|11.7|13191306|
 #### Cobertura de pensiones en mayores de edad legal rsh junio 2024
-#### ID
-GN-IND-SEC-0019
-#### Title
+#### Titulo
 Cobertura de pensiones en mayores de edad legal (RSH, junio 2024)
-#### Content
+#### Contenido
 
 |Comuna|Con pensión|Sin pensión|Total|Cobertura %|
 |-|-|-|-|-|
@@ -646,11 +550,9 @@ Cobertura de pensiones en mayores de edad legal (RSH, junio 2024)
 |Yungay|2574|261|2835|90.8|
 |Total Región|76696|7194|83890|91.4|
 #### Prevalencia de discapacidad y dependencia por sexo endide 2022
-#### ID
-GN-IND-SEC-0020
-#### Title
+#### Titulo
 Prevalencia de discapacidad y dependencia por sexo (ENDIDE 2022)
-#### Content
+#### Contenido
 
 |Sexo|Nº discapacidad|% discapacidad|Nº dependencia|% dependencia|
 |-|-|-|-|-|
@@ -659,11 +561,9 @@ Prevalencia de discapacidad y dependencia por sexo (ENDIDE 2022)
 |Total regional|90531|22.9|51168|13.1|
 |Total país|2703897|17.6|1978917|11.9|
 #### Brecha de cuidados por comuna rsh junio 2024
-#### ID
-GN-IND-SEC-0021
-#### Title
+#### Titulo
 Brecha de cuidados por comuna (RSH, junio 2024)
-#### Content
+#### Contenido
 
 |Comuna|Nº cuidadoras|Nº con cuidador|Nº sin cuidador|Total necesidades|Brecha %|
 |-|-|-|-|-|-|
@@ -691,11 +591,9 @@ Brecha de cuidados por comuna (RSH, junio 2024)
 |Total regional|4355|4477|50122|54599|91.8|
 |Total país|114228|116776|1014119|1130895|89.7|
 #### Programas publicos y gasto regional por dimension bips 2023
-#### ID
-GN-IND-SEC-0022
-#### Title
+#### Titulo
 Programas públicos y gasto regional por dimensión (BIPS 2023)
-#### Content
+#### Contenido
 
 |Dimensión|Programas N|Gasto $|Gasto regional % país|
 |-|-|-|-|
@@ -711,11 +609,9 @@ Programas públicos y gasto regional por dimensión (BIPS 2023)
 |Trabajo-ingresos-seguridad social|48|337073065|3.3|
 |Total general|497|1116995373|3.2|
 #### Programas publicos y gasto por poblacion beneficiada bips 2023
-#### ID
-GN-IND-SEC-0023
-#### Title
+#### Titulo
 Programas públicos y gasto por población beneficiada (BIPS 2023)
-#### Content
+#### Contenido
 
 |Población beneficiada|Programas N|Promedio beneficiarios|Gasto $|
 |-|-|-|-|
@@ -734,11 +630,9 @@ Programas públicos y gasto por población beneficiada (BIPS 2023)
 |Unidades|42|491|26999220|
 |Total general|497|–|1116995373|
 #### Proyectos sni en ejecucion por comuna pp 2023
-#### ID
-GN-IND-SEC-0024
-#### Title
+#### Titulo
 Proyectos SNI en ejecución por comuna (PP 2023)
-#### Content
+#### Contenido
 
 |Comuna|Nº proyectos|Costo total $|Participación regional %|Habitantes|Inversión per cápita|
 |-|-|-|-|-|-|
@@ -766,11 +660,9 @@ Proyectos SNI en ejecución por comuna (PP 2023)
 |Intercomunal/Regional|25|534951479|74.6|–|–|
 |Total regional|57|716676836|100.0|519437|1380|
 #### Cobertura del registro social de hogares por comuna abril 2025
-#### ID
-GN-IND-SEC-0025
-#### Title
+#### Titulo
 Cobertura del Registro Social de Hogares por comuna (abril 2025)
-#### Content
+#### Contenido
 
 |Comuna|Personas RSH|Personas %|Hogares RSH|Hogares %|
 |-|-|-|-|-|
@@ -796,11 +688,9 @@ Cobertura del Registro Social de Hogares por comuna (abril 2025)
 |San Fabián|5837|1.13|3216|1.24|
 |San Nicolás|16147|3.12|7984|3.08|
 #### Hogares con ninos ninas o adolescentes pais vs region de nuble abril 2025
-#### ID
-GN-IND-SEC-0026
-#### Title
+#### Titulo
 Hogares con niños, niñas o adolescentes – País vs Región de Ñuble (abril 2025)
-#### Content
+#### Contenido
 
 |Presencia|Hogares País|% País|Hogares Región|% Región|
 |-|-|-|-|-|
@@ -808,11 +698,9 @@ Hogares con niños, niñas o adolescentes – País vs Región de Ñuble (abril 
 |Sí|2423209|26.6|71424|27.6|
 |Total|9124521|100.0|259042|100.0|
 #### Hogares con personas 60 anos pais vs region de nuble abril 2025
-#### ID
-GN-IND-SEC-0027
-#### Title
+#### Titulo
 Hogares con personas ≥ 60 años – País vs Región de Ñuble (abril 2025)
-#### Content
+#### Contenido
 
 |Presencia|Hogares País|% País|Hogares Región|% Región|
 |-|-|-|-|-|
@@ -820,11 +708,9 @@ Hogares con personas ≥ 60 años – País vs Región de Ñuble (abril 2025)
 |Sí|2920452|32.0|96280|37.2|
 |Total|9124521|100.0|259042|100.0|
 #### Estudiantes con inasistencia escolar pais vs region de nuble rex 241 2024
-#### ID
-GN-IND-SEC-0028
-#### Title
+#### Titulo
 Estudiantes con inasistencia escolar – País vs Región de Ñuble (REX 241/2024)
-#### Content
+#### Contenido
 
 |Tipo Inasistencia|Estudiantes País|% País|Estudiantes Región|% Región|
 |-|-|-|-|-|
@@ -832,11 +718,9 @@ Estudiantes con inasistencia escolar – País vs Región de Ñuble (REX 241/202
 |Inasistencia grave|878359|19.9|19540|15.4|
 |Total|4405011|100.0|127107|100.0|
 #### Personas que requieren cuidados region de nuble abril 2025
-#### ID
-GN-IND-SEC-0029
-#### Title
+#### Titulo
 Personas que requieren cuidados – Región de Ñuble (abril 2025)
-#### Content
+#### Contenido
 
 |Situación|Personas|
 |-|-|
@@ -844,11 +728,9 @@ Personas que requieren cuidados – Región de Ñuble (abril 2025)
 |PSDF sin cuidador|51212|
 |Total|57735|
 #### Origen de las diadas cuidador receptor region de nuble abril 2025
-#### ID
-GN-IND-SEC-0030
-#### Title
+#### Titulo
 Origen de las díadas cuidador-receptor – Región de Ñuble (abril 2025)
-#### Content
+#### Contenido
 
 |Origen|N|%|
 |-|-|-|
@@ -858,11 +740,9 @@ Origen de las díadas cuidador-receptor – Región de Ñuble (abril 2025)
 |Solicitudes|4989|74.75|
 |Total|6674|100.00|
 #### Personas identificadas como cuidadoras por comuna region de nuble abril 2025
-#### ID
-GN-IND-SEC-0031
-#### Title
+#### Titulo
 Personas identificadas como cuidadoras por comuna – Región de Ñuble (abril 2025)
-#### Content
+#### Contenido
 
 |Comuna|Personas RSH|Personas cuidadoras|% Personas cuidadoras|
 |-|-|-|-|
@@ -889,11 +769,9 @@ Personas identificadas como cuidadoras por comuna – Región de Ñuble (abril 2
 |San Nicolás|16147|244|1.51|
 |Total|517860|6365|1.23|
 #### Cobertura de prestaciones sociales region de nuble 2024
-#### ID
-GN-IND-SEC-0032
-#### Title
+#### Titulo
 Cobertura de prestaciones sociales – Región de Ñuble (2024)
-#### Content
+#### Contenido
 
 |Categoría|% Cobertura RSH|
 |-|-|
@@ -902,21 +780,17 @@ Cobertura de prestaciones sociales – Región de Ñuble (2024)
 |Personas ≥ 60 años|77|
 |Tramo 40 CSE|79|
 #### Transferencias monetarias recibidas region de nuble 2024
-#### ID
-GN-IND-SEC-0033
-#### Title
+#### Titulo
 Transferencias monetarias recibidas – Región de Ñuble (2024)
-#### Content
+#### Contenido
 
 |Indicador|Personas|% Población RSH|
 |-|-|-|
 |Personas con transferencia|250202|48.0|
 #### Programas con mayor cobertura regional region de nuble 2024
-#### ID
-GN-IND-SEC-0034
-#### Title
+#### Titulo
 Programas con mayor cobertura regional – Región de Ñuble (2024)
-#### Content
+#### Contenido
 
 * Subsidio Familiar (SUF)
 * Subvención Escolar Regular
@@ -927,20 +801,16 @@ Programas con mayor cobertura regional – Región de Ñuble (2024)
 * Bono Invierno
 * Subsidio al Pago Electrónico Útiles Escolares
 * Tarjeta Nacional Estudiantil (TNE)
-#### Indicadores de vivienda y servicios basicos fuente censo 2024 ine
-#### ID
-GN-IND-SEC-0035
-#### Title
+### Indicadores de vivienda y servicios basicos fuente censo 2024 ine
+#### Titulo
 Indicadores de Vivienda y Servicios Básicos (Fuente: Censo 2024, INE)
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### Promedio de personas por hogar
-#### ID
-GN-IND-SEC-0036
-#### Title
+#### Titulo
 Promedio de Personas por Hogar
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Hogares censados|Promedio de personas por hogar|
 |-|-|-|-|
@@ -968,11 +838,9 @@ Promedio de Personas por Hogar
 |16101|Chillán|70.003|2,7|
 |16102|Bulnes|8.771|2,7|
 #### Fuente de energia para cocinar
-#### ID
-GN-IND-SEC-0037
-#### Title
+#### Titulo
 Fuente de Energía para Cocinar
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Hogares censados|Gas|Parafina o petróleo|Leña|Pellet|Carbón|Electricidad|Energía solar (ej. cocina u horno solar)|No utiliza fuente de energía o combustible para cocinar|Fuente de energía o combustible para cocinar no declarada|
 |-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1000,11 +868,9 @@ Fuente de Energía para Cocinar
 |16304|San Fabián|2.022|1.820|2|181|0|1|15|1|2|0|
 |16305|San Nicolás|5.442|4.846|1|542|3|3|34|0|13|0|
 #### Fuente de energia para calefaccion
-#### ID
-GN-IND-SEC-0038
-#### Title
+#### Titulo
 Fuente de Energía para Calefacción
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Hogares censados|Gas|Parafina o petróleo|Leña|Pellet|Carbón|Electricidad|Otra|No utiliza fuente de energía o combustible para calefaccionar|Fuente de energía o combustible para calefaccionar no declarada|
 |-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1032,11 +898,9 @@ Fuente de Energía para Calefacción
 |16304|San Fabián|2.022|98|31|1.785|27|9|46|3|23|0|
 |16305|San Nicolás|5.442|452|220|4.129|62|50|273|13|243|0|
 #### Equipamiento y servicios en el hogar
-#### ID
-GN-IND-SEC-0039
-#### Title
+#### Titulo
 Equipamiento y Servicios en el Hogar
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Disponibilidad de equipo o servicio|Teléfono móvil, celular o smartphone|Computador (escritorio, portátil)|Tablet|Internet fija|Internet móvil desde un celular, tablet o BAM|Internet por conexión satelital|
 |-|-|-|-|-|-|-|-|-|
@@ -1110,11 +974,9 @@ Equipamiento y Servicios en el Hogar
 |16305|San Nicolás|No|97|3.231|4.639|3.825|1.054|5.110|
 |16305|San Nicolás|Disponibilidad no declarada|0|2|1|4|2|7|
 #### Regimen de tenencia de la vivienda
-#### ID
-GN-IND-SEC-0040
-#### Title
+#### Titulo
 Régimen de Tenencia de la Vivienda
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Hogares censados|Propia pagada|Propia pagándose|Arrendada con contrato|Arrendada sin contrato|Cedida por trabajo o servicio|Cedida por familiar u otro|Usufructo: solo uso y goce|Ocupada de hecho|Propiedad en sucesión y litigio|Tenencia de la vivienda no declarada|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1142,11 +1004,9 @@ Régimen de Tenencia de la Vivienda
 |16304|San Fabián|2.022|1.383|16|158|145|58|197|25|12|28|0|
 |16305|San Nicolás|5.442|3.981|95|273|243|148|501|60|34|105|2|
 #### Tipo de vivienda particular ocupada
-#### ID
-GN-IND-SEC-0041
-#### Title
+#### Titulo
 Tipo de Vivienda Particular Ocupada
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Casa con acceso directo desde la calle|Casa en condominio cerrado|Departamento en edificio con ascensor|Departamento en edificio sin ascensor|Vivienda tradicional indígena (ruka u otras)|Pieza en casa antigua o conventillo|Mediagua, mejora, vivienda de emergencia, rancho o choza|Móvil (carpa, casa rodante o similar)|Otro tipo de vivienda particular|
 |-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1174,11 +1034,9 @@ Tipo de Vivienda Particular Ocupada
 |16304|San Fabián|2.007|1.944|50|1|1|0|0|6|0|5|
 |16305|San Nicolás|5.364|5.216|103|1|4|4|2|9|2|23|
 #### Materialidad de paredes exteriores
-#### ID
-GN-IND-SEC-0042
-#### Title
+#### Titulo
 Materialidad de Paredes Exteriores
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Hormigón armado|Albañilería: bloque de cemento, ladrillo o piedra|Tabique forrado por ambas caras|Tabique sin forro interior|Adobe, barro, pirca, quincha u otro material artesanal|Materiales precarios o de desecho|Material paredes exteriores no declarado|
 |-|-|-|-|-|-|-|-|-|-|
@@ -1206,11 +1064,9 @@ Materialidad de Paredes Exteriores
 |16304|San Fabián|2.007|105|394|1.388|83|27|10|0|
 |16305|San Nicolás|5.364|143|940|3.884|217|158|19|3|
 #### Materialidad de la cubierta del techo
-#### ID
-GN-IND-SEC-0043
-#### Title
+#### Titulo
 Materialidad de la Cubierta del Techo
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Teja o tejuelas de arcilla, metálicas, de cemento, de madera, asfálticas o plásticas|Losa hormigón|Planchas metálicas de zinc, cobre, etc.|Planchas de fibrocemento tipo pizarreño|Fonolita o plancha de fieltro embreado|Paja, coirón, totora o caña|Materiales precarios o de desecho|Sin cubierta sólida de techo|Material cubierta de techo no declarado|
 |-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1238,11 +1094,9 @@ Materialidad de la Cubierta del Techo
 |16304|San Fabián|2.007|111|2|1.878|6|7|1|2|0|0|
 |16305|San Nicolás|5.364|241|5|4.999|107|5|1|5|1|0|
 #### Materialidad del piso
-#### ID
-GN-IND-SEC-0044
-#### Title
+#### Titulo
 Materialidad del Piso
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|"Parquet, piso flotante cerámico, madera, alfombra, flexit, cubrepiso u otro similar; sobre radier o vigas de madera"|Radier sin revestimiento|Baldosa de cemento|Capa de cemento sobre tierra|Tierra|Material del piso no declarado|
 |-|-|-|-|-|-|-|-|-|
@@ -1270,11 +1124,9 @@ Materialidad del Piso
 |16304|San Fabián|2.007|1.853|70|40|30|14|0|
 |16305|San Nicolás|5.364|4.780|403|69|86|25|1|
 #### Estado de conservacion de la vivienda
-#### ID
-GN-IND-SEC-0045
-#### Title
+#### Titulo
 Estado de Conservación de la Vivienda
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Viviendas irrecuperables|Viviendas sin requerimientos de reemplazo|Viviendas con requerimiento de reemplazo ignorado|
 |-|-|-|-|-|-|
@@ -1302,11 +1154,9 @@ Estado de Conservación de la Vivienda
 |16304|San Fabián|2.007|34|1.973|0|
 |16305|San Nicolás|5.364|76|5.284|4|
 #### Numero de dormitorios por vivienda
-#### ID
-GN-IND-SEC-0046
-#### Title
+#### Titulo
 Número de Dormitorios por Vivienda
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|0 dormitorios|1 dormitorio|2 dormitorios|3 dormitorios|4 dormitorios|5 dormitorios|6 o más dormitorios|Cantidad de dormitorios no declarado|
 |-|-|-|-|-|-|-|-|-|-|-|
@@ -1334,11 +1184,9 @@ Número de Dormitorios por Vivienda
 |16304|San Fabián|2.007|3|566|836|476|107|16|3|0|
 |16305|San Nicolás|5.364|11|1.667|2.009|1.315|295|53|14|0|
 #### Hacinamiento en viviendas
-#### ID
-GN-IND-SEC-0047
-#### Title
+#### Titulo
 Hacinamiento en Viviendas
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Viviendas sin hacinamiento|Viviendas con hacinamiento medio|Viviendas con hacinamiento crítico|Índice de hacinamiento ignorado|
 |-|-|-|-|-|-|-|
@@ -1366,11 +1214,9 @@ Hacinamiento en Viviendas
 |16304|San Fabián|2.007|1.910|91|6|0|
 |16305|San Nicolás|5.364|5.075|266|23|0|
 #### Numero de hogares por vivienda
-#### ID
-GN-IND-SEC-0048
-#### Title
+#### Titulo
 Número de Hogares por Vivienda
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Viviendas con 1 hogar|Viviendas con 2 hogares|Viviendas con 3 hogares|Viviendas con 4 o más hogares|
 |-|-|-|-|-|-|-|
@@ -1398,11 +1244,9 @@ Número de Hogares por Vivienda
 |16304|San Fabián|2.007|1.992|15|0|0|
 |16305|San Nicolás|5.364|5.290|70|4|0|
 #### Origen del agua
-#### ID
-GN-IND-SEC-0049
-#### Title
+#### Titulo
 Origen del Agua
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Red pública|Pozo o noria|Camión aljibe|Río, vertiente, estero, canal, lago, agua lluvia, etc|Fuente de origen del agua no declarado|
 |-|-|-|-|-|-|-|-|
@@ -1430,11 +1274,9 @@ Origen del Agua
 |16304|San Fabián|2.007|1.830|54|7|116|0|
 |16305|San Nicolás|5.364|4.151|1.041|147|25|0|
 #### Sistema de distribucion del agua
-#### ID
-GN-IND-SEC-0050
-#### Title
+#### Titulo
 Sistema de Distribución del Agua
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Con llave dentro de la vivienda|Con llave dentro del sitio, pero fuera de la vivienda|No tiene sistema, la acarrea|Sistema de distribución del agua no declarado|
 |-|-|-|-|-|-|-|
@@ -1462,11 +1304,9 @@ Sistema de Distribución del Agua
 |16304|San Fabián|2.007|1.949|46|12|0|
 |16305|San Nicolás|5.364|5.145|136|83|0|
 #### Disponibilidad de servicio higienico
-#### ID
-GN-IND-SEC-0051
-#### Title
+#### Titulo
 Disponibilidad de Servicio Higiénico
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Dentro de la vivienda, conectado a una red de alcantarillado|Fuera de la vivienda, conectado a una red de alcantarillado|Conectado a una fosa séptica|Conectado a pozo negro (letrina sanitaria o cajón)|En un cajón sobre acequia o canal|En un cajón conectado a otro sistema|Baño químico|Conectado a baño seco|No tiene servicio higiénico|Sistema de servicio higiénico no declarado|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1494,11 +1334,9 @@ Disponibilidad de Servicio Higiénico
 |16304|San Fabián|2.007|63|5|1.817|104|2|2|0|5|9|0|
 |16305|San Nicolás|5.364|1.520|48|3.556|178|5|3|8|9|36|1|
 #### Disponibilidad de energia electrica
-#### ID
-GN-IND-SEC-0052
-#### Title
+#### Titulo
 Disponibilidad de Energía Eléctrica
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|Red pública|Generador con diésel o bencina|Placa solar|Energía eólica (viento)|Otro|No tiene energía eléctrica|Fuente de energía eléctrica no declarada|
 |-|-|-|-|-|-|-|-|-|-|
@@ -1526,11 +1364,9 @@ Disponibilidad de Energía Eléctrica
 |16304|San Fabián|2.007|1.964|6|20|0|2|15|0|
 |16305|San Nicolás|5.364|5.170|43|65|1|32|53|0|
 #### Sistema de eliminacion de basura
-#### ID
-GN-IND-SEC-0053
-#### Title
+#### Titulo
 Sistema de Eliminación de Basura
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas particulares ocupadas con moradores presentes|La recogen los servicios de aseo|La entierra y/o quema|La deja en terreno eriazo, quebrada o zanja|La tira al río, laguna o mar|Otro|Medio de eliminación de basura no declarado|
 |-|-|-|-|-|-|-|-|-|
@@ -1558,11 +1394,9 @@ Sistema de Eliminación de Basura
 |16304|San Fabián|2.007|1.930|46|3|0|28|0|
 |16305|San Nicolás|5.364|4.675|252|11|2|424|0|
 #### Tipo de vivienda censada
-#### ID
-GN-IND-SEC-0054
-#### Title
+#### Titulo
 Tipo de Vivienda Censada
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Viviendas censadas|Casa con acceso directo desde la calle|Casa en condominio cerrado|Departamento en edificio con ascensor|Departamento en edificio sin ascensor|Vivienda tradicional indígena (ruka u otras)|Pieza en casa antigua o conventillo|Mediagua, mejora, vivienda de emergencia, rancho o choza|Móvil (carpa, casa rodante o similar)|Otro tipo de vivienda particular|Viviendas Colectivas|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1589,21 +1423,17 @@ Tipo de Vivienda Censada
 |16303|Ñiquén|6.008|5.518|444|0|5|0|0|11|3|26|1|
 |16304|San Fabián|3.137|2.975|104|1|1|0|0|37|1|17|1|
 |16305|San Nicolás|6.328|6.132|140|1|4|4|3|11|2|29|2|
-#### Indicadores sanitarios
-#### ID
-GN-IND-SEC-0055
-#### Title
+### Indicadores sanitarios
+#### Titulo
 Indicadores sanitarios
-#### Content
+#### Contenido
 
 Los datos presentados a continuación, fueron extraídos del Departamento de Estadísticas e Información en Salud (DEIS) del Ministerio de Salud y SINIM desde datos FONASA. Se presenta la cantidad de establecimientos de salud al 12 de enero de 2024, las tasas de fecundidad, natalidad, mortalidad general y mortalidad infantil para el año 2020, la población inscrita validada en servicios de salud municipal al año 2022. Este año se incorpora información sobre la Cobertura de vacunación Bivalente COVID-19.
-#### Sections
+#### Secciones
 #### Numero de establecimientos de salud segun tipo version 29 04 2025 fuente deis mi
-#### ID
-GN-IND-SEC-0056
-#### Title
+#### Titulo
 Número de Establecimientos de Salud, según tipo. Versión 29-04-2025 (Fuente: DEIS, MINSAL)
-#### Content
+#### Contenido
 
 |Comuna|CECOSF|COSAM|CONIN|CESFAM|PSR|Clínica|Clínica Dental|Dirección Servicio de Salud|Hospital|Laboratorio Clínico|Centro de Salud Privado|Centro de Diálisis|SAPU|SAR|SUR|Servicio Médico Legal|Unidad de Salud Funcionarios|Vacunatorio|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1674,11 +1504,9 @@ Los siguientes tipos de establecimientos de salud no se encontraron presentes en
 * Unidad de Procedimientos Móvil
 * Vacunatorio Móvil
 #### Poblacion inscrita validada en servicios de salud municipal ano 2023 fuente sini
-#### ID
-GN-IND-SEC-0057
-#### Title
+#### Titulo
 Población Inscrita Validada en Servicios de Salud Municipal, año 2023 (Fuente: SINIM, desde datos FONASA)
-#### Content
+#### Contenido
 
 |Comuna|Población Inscrita|
 |-|-|
@@ -1706,11 +1534,9 @@ Población Inscrita Validada en Servicios de Salud Municipal, año 2023 (Fuente:
 |Región de Ñuble|438363|
 |País|15051673|
 #### Tasa global de fecundidad c 1000 habitantes ano 2022 fuente deis minsal
-#### ID
-GN-IND-SEC-0058
-#### Title
+#### Titulo
 Tasa Global de Fecundidad, c/1000 habitantes, año 2022 (Fuente: DEIS, MINSAL)
-#### Content
+#### Contenido
 
 |Comuna|Tasa de Fecundidad|
 |-|-|
@@ -1738,11 +1564,9 @@ Tasa Global de Fecundidad, c/1000 habitantes, año 2022 (Fuente: DEIS, MINSAL)
 |Región de Ñuble|1.4|
 |País|1.3|
 #### Tasa de natalidad c 1000 habitantes ano 2022 fuente deis minsal
-#### ID
-GN-IND-SEC-0059
-#### Title
+#### Titulo
 Tasa de Natalidad, c/1000 habitantes, año 2022 (Fuente: DEIS, MINSAL)
-#### Content
+#### Contenido
 
 |Comuna|Tasa de Natalidad|
 |-|-|
@@ -1770,11 +1594,9 @@ Tasa de Natalidad, c/1000 habitantes, año 2022 (Fuente: DEIS, MINSAL)
 |Región de Ñuble|9.4|
 |País|9.6|
 #### Tasa de mortalidad general c 1000 habitantes ano 2022 fuente deis minsal
-#### ID
-GN-IND-SEC-0060
-#### Title
+#### Titulo
 Tasa de Mortalidad General, c/1000 habitantes, año 2022 (Fuente: DEIS, MINSAL)
-#### Content
+#### Contenido
 
 |Comuna|Tasa de Mortalidad General|
 |-|-|
@@ -1802,11 +1624,9 @@ Tasa de Mortalidad General, c/1000 habitantes, año 2022 (Fuente: DEIS, MINSAL)
 |Región de Ñuble|8.7|
 |País|6.9|
 #### Tasa de mortalidad infantil c 1000 nacidos vivos anos 2020 fuente deis minsal
-#### ID
-GN-IND-SEC-0061
-#### Title
+#### Titulo
 Tasa de Mortalidad Infantil, c/1000 nacidos vivos, años 2020 (Fuente: DEIS, MINSAL)
-#### Content
+#### Contenido
 
 |Comuna|Tasa de Mortalidad Infantil|
 |-|-|
@@ -1832,21 +1652,17 @@ Tasa de Mortalidad Infantil, c/1000 nacidos vivos, años 2020 (Fuente: DEIS, MIN
 |Yungay|5.9|
 |Región de Ñuble|5.7|
 |País|5.6|
-#### Indicadores educacionales
-#### ID
-GN-IND-SEC-0062
-#### Title
+### Indicadores educacionales
+#### Titulo
 Indicadores educacionales
-#### Content
+#### Contenido
 
 Los datos presentados a continuación, fueron extraídos de las bases puestas a disposición por el Ministerio de Educación, a través de los portales Datos Abiertos y Centro de Estudios. Se presenta el número de establecimientos educacionales y matrícula escolar según dependencia administrativa y nivel de enseñanza impartidos para los años 2021 y 2023. En esta entrega de Reportes Comunales, se incluye los puntajes de las pruebas SIMCE para 4to básico y 2do medio rendidas en año 2022.
-#### Sections
+#### Secciones
 #### Numero de establecimientos educacionales segun dependencia administrativa 2022 y
-#### ID
-GN-IND-SEC-0063
-#### Title
+#### Titulo
 Número de establecimientos educacionales según dependencia administrativa (2022 y 2024) (Fuente: Centro de Estudios, MINEDUC)
-#### Content
+#### Contenido
 
 |Comuna|Municipal (2022)|Municipal (2024)|Part. Subvencionado (2022)|Part. Subvencionado (2024)|Part. Pagado (2022)|Part. Pagado (2024)|CAD (2022)|CAD (2024)|SLE (2022)|SLE (2024)|Total (2022)|Total (2024)|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1874,11 +1690,9 @@ Número de establecimientos educacionales según dependencia administrativa (202
 |Región Ñuble|277|196|124|121|4|4|4|4|0|75|409|400|
 |País|4371|4104|5521|5440|618|604|70|70|636|830|11216|11048|
 #### Matricula escolar segun dependencia administrativa 2022 y 2024 fuente centro de
-#### ID
-GN-IND-SEC-0064
-#### Title
+#### Titulo
 Matrícula escolar según dependencia administrativa (2022 y 2024) (Fuente: Centro de Estudios, MINEDUC)
-#### Content
+#### Contenido
 
 |Comuna|Municipal (2022)|Municipal (2024)|Subvencionada (2022)|Subvencionada (2024)|Part. Pagado (2022)|Part. Pagado (2024)|CAD (2022)|CAD (2024)|SLE (2022)|SLE (2024)|Total (2022)|Total (2024)|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1906,11 +1720,9 @@ Matrícula escolar según dependencia administrativa (2022 y 2024) (Fuente: Cent
 |Región Ñuble|43208|31905|52379|51859|1131|1279|2022|1846|0|10997|98740|97886|
 |País|1116914|1034121|1972241|1939429|334438|340318|44869|44202|176074|224862|3644536|3582932|
 #### Matricula escolar segun nivel de ensenanza impartido 2022 y 2024 fuente centro d
-#### ID
-GN-IND-SEC-0065
-#### Title
+#### Titulo
 Matrícula escolar según nivel de enseñanza impartido (2022 y 2024) (Fuente: Centro de Estudios, MINEDUC)
-#### Content
+#### Contenido
 
 |Comuna|Parvularia (2022)|Parvularia (2024)|Básica Niños (2022)|Básica Niños (2024)|Básica Adultos (2022)|Básica Adultos (2024)|Especial (2022)|Especial (2024)|Humanístico-Científica Jóvenes (2022)|Humanístico-Científica Jóvenes (2024)|Técnico Profesional Jóvenes (2022)|Técnico Profesional Jóvenes (2024)|Total (2022)|Total (2024)|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -1938,11 +1750,9 @@ Matrícula escolar según nivel de enseñanza impartido (2022 y 2024) (Fuente: C
 |Región Ñuble|9069|8731|54855|53925|218|246|5581|5222|20765|21827|6713|6533|98740|97886|
 |País|352678|323073|2052053|1998308|15065|15499|178744|172275|705105|742516|241663|241425|3644536|3582928|
 #### Puntaje prueba simce 2024 fuente agencia de la educacion mineduc
-#### ID
-GN-IND-SEC-0066
-#### Title
+#### Titulo
 Puntaje Prueba SIMCE (2024) (Fuente: Agencia de la Educación, MINEDUC)
-#### Content
+#### Contenido
 
 |Comuna|Lectura (4to básico)|Matemática (4to básico)|Lectura (6to básico)|Matemática (6to básico)|Lectura (2do medio)|Matemática (2do medio)|
 |-|-|-|-|-|-|-|
@@ -1970,11 +1780,9 @@ Puntaje Prueba SIMCE (2024) (Fuente: Agencia de la Educación, MINEDUC)
 |Región Ñuble|279|268|249|244|279|-|
 |País|278|264|249|245|249|259|
 #### Alfabetismo de la poblacion de 5 anos y mas por grupos de edad censo 2024
-#### ID
-GN-IND-SEC-0067
-#### Title
+#### Titulo
 Alfabetismo de la población de 5 años y más por grupos de edad (Censo 2024)
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Sabe leer y escribir|Población de 5 años o más|5-14 años|15-64 años|65 años o más|
 |-|-|-|-|-|-|-|
@@ -2071,11 +1879,9 @@ Alfabetismo de la población de 5 años y más por grupos de edad (Censo 2024)
 |16305|San Nicolás|No|1.102|300|371|431|
 |16305|San Nicolás|Sabe leer y escribir no declarado|57|13|38|6|
 #### Nivel educativo alcanzado por la poblacion censada censo 2024
-#### ID
-GN-IND-SEC-0068
-#### Title
+#### Titulo
 Nivel educativo alcanzado por la población censada (Censo 2024)
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Población censada|Nunca asistió|Diferencial|Parvularia|Básica|Media|Superior|Nivel educativo no declarado|
 |-|-|-|-|-|-|-|-|-|-|
@@ -2103,11 +1909,9 @@ Nivel educativo alcanzado por la población censada (Censo 2024)
 |16304|San Fabián|5.245|371|16|222|1.653|1.871|1.106|6|
 |16305|San Nicolás|15.099|663|58|615|5.561|5.455|2.681|66|
 #### Anos de escolaridad promedio por sexo censo 2024
-#### ID
-GN-IND-SEC-0069
-#### Title
+#### Titulo
 Años de escolaridad promedio por sexo (Censo 2024)
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Sexo|Años de escolaridad promedio|Años de escolaridad promedio para la población de 18 años o más|
 |-|-|-|-|-|
@@ -2181,11 +1985,9 @@ Años de escolaridad promedio por sexo (Censo 2024)
 |16305|San Nicolás|Hombre|8.7|9.9|
 |16305|San Nicolás|Mujer|9.1|10.3|
 #### Tasa de asistencia neta por nivel educativo censo 2024
-#### ID
-GN-IND-SEC-0070
-#### Title
+#### Titulo
 Tasa de asistencia neta por nivel educativo (Censo 2024)
-#### Content
+#### Contenido
 
 |Código comuna|Comuna|Tasa de asistencia neta Educación Parvularia|Tasa de asistencia neta Educación Básica|Tasa de asistencia neta Educación Media|Tasa de asistencia neta Educación Superior|
 |-|-|-|-|-|-|
@@ -2212,21 +2014,17 @@ Tasa de asistencia neta por nivel educativo (Censo 2024)
 |16303|Ñiquén|43.3|95.7|88.8|39.2|
 |16304|San Fabián|44.2|94.4|86.8|36.7|
 |16305|San Nicolás|47.9|95.2|86.8|43.3|
-#### Indicadores economicos
-#### ID
-GN-IND-SEC-0071
-#### Title
+### Indicadores economicos
+#### Titulo
 Indicadores económicos
-#### Content
+#### Contenido
 
 Los datos presentados a continuación, fueron extraídos desde las Estadísticas de Empresa del Servicio de Impuestos Internos (SII). Se presenta el número de empresas y número de trabajadores dependientes, según tamaño de empresa y rubro en el cual desarrolla su actividad económica, para los años 2020 y 2021.
-#### Sections
+#### Secciones
 #### Cantidad de empresas segun tamano 2021 2022 y 2023 fuente estadisticas sii
-#### ID
-GN-IND-SEC-0072
-#### Title
+#### Titulo
 Cantidad de empresas según tamaño (2021, 2022 y 2023) (Fuente: Estadísticas SII)
-#### Content
+#### Contenido
 
 |Comuna|Micro (2021)|Micro (2022)|Micro (2023)|Pequeña (2021)|Pequeña (2022)|Pequeña (2023)|Mediana (2021)|Mediana (2022)|Mediana (2023)|Grande (2021)|Grande (2022)|Grande (2023)|Sin ventas/Sin información (2021)|Sin ventas/Sin información (2022)|Sin ventas/Sin información (2023)|Total (2021)|Total (2022)|Total (2023)|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -2254,11 +2052,9 @@ Cantidad de empresas según tamaño (2021, 2022 y 2023) (Fuente: Estadísticas S
 |Región Ñuble|23524|24657|25495|5380|5626|5443|591|611|588|173|198|179|7493|7592|7100|37161|38684|38805|
 |País|830292|875571|905520|244596|257671|251469|37733|39517|37266|18231|18680|17341|316823|320157|291977|1447675|1511596|1503573|
 #### Numero de trabajadores dependientes informados segun tamano de la empresa 2021 2
-#### ID
-GN-IND-SEC-0073
-#### Title
+#### Titulo
 Número de trabajadores dependientes informados según tamaño de la empresa (2021, 2022, 2023) (Fuente: Estadísticas SII)
-#### Content
+#### Contenido
 
 |Comuna|Micro (2021)|Micro (2022)|Micro (2023)|Pequeña (2021)|Pequeña (2022)|Pequeña (2023)|Mediana (2021)|Mediana (2022)|Mediana (2023)|Grande (2021)|Grande (2022)|Grande (2023)|Sin ventas/Sin información (2021)|Sin ventas/Sin información (2022)|Sin ventas/Sin información (2023)|Total (2021)|Total (2022)|Total (2023)|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -2286,11 +2082,9 @@ Número de trabajadores dependientes informados según tamaño de la empresa (20
 |Región Ñuble|18179|17071|18035|45988|44239|39800|31352|33266|31275|40972|43185|38233|19505|21604|22431|155996|159365|149774|
 |País|722558|725656|646948|2171938|2153280|2036727|1454623|1563999|1480918|4794592|5045103|4798002|696290|709238|746020|9840001|10197276|9708615|
 #### Cantidad de empresas segun rubro economico ano 2023 fuente estadisticas sii
-#### ID
-GN-IND-SEC-0074
-#### Title
+#### Titulo
 Cantidad de empresas según rubro económico, año 2023 (Fuente: Estadísticas SII)
-#### Content
+#### Contenido
 
 |Comuna|Agricultura ganadería silvicultura y pesca|Explotación de minas y canteras|Industria manufacturera|Suministro de electricidad gas vapor y aire acondicionado|Suministro de agua; evacuación de aguas residuales gestión de desechos y descontaminación|Construcción|Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas|Transporte y almacenamiento|Actividades de alojamiento y de servicio de comidas|Información y comunicaciones|Actividades financieras y de seguros|Actividades inmobiliarias|Actividades profesionales científicas y técnicas|Actividades de servicios administrativos y de apoyo|Administración pública y defensa; planes de seguridad social de afiliación obligatoria|Enseñanza|Actividades de atención de la salud humana y de asistencia social|Actividades artísticas de entretenimiento y recreativas|Otras actividades de servicios|Actividades de los hogares como empleadores; actividades no diferenciadas de los hogares|Actividades de organizaciones y órganos extraterritoriales|Sin información|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -2318,11 +2112,9 @@ Cantidad de empresas según rubro económico, año 2023 (Fuente: Estadísticas S
 |Región de Ñuble|7217|61|2764|52|304|2686|12349|3802|2751|351|259|810|1183|1213|36|343|859|360|1323|0|3|79|
 |País|98707|5352|114584|3560|7565|115293|463661|140897|87899|31850|50620|53898|92443|66825|958|20016|49360|16354|78591|7|103|5030|
 #### Numero de trabajadores dependientes informados segun rubro economico de la empre
-#### ID
-GN-IND-SEC-0075
-#### Title
+#### Titulo
 Número de trabajadores dependientes informados según rubro económico de la empresa, año 2023 (Fuente: Estadísticas SII)
-#### Content
+#### Contenido
 
 |Comuna|Agricultura ganadería silvicultura y pesca|Explotación de minas y canteras|Industria manufacturera|Suministro de electricidad gas vapor y aire acondicionado|Suministro de agua; evacuación de aguas residuales gestión de desechos y descontaminación|Construcción|Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas|Transporte y almacenamiento|Actividades de alojamiento y de servicio de comidas|Información y comunicaciones|Actividades financieras y de seguros|Actividades inmobiliarias|Actividades profesionales científicas y técnicas|Actividades de servicios administrativos y de apoyo|Administración pública y defensa; planes de seguridad social de afiliación obligatoria|Enseñanza|Actividades de atención de la salud humana y de asistencia social|Actividades artísticas de entretenimiento y recreativas|Otras actividades de servicios|Actividades de los hogares como empleadores; actividades no diferenciadas de los hogares|Actividades de organizaciones y órganos extraterritoriales|Sin información|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -2350,11 +2142,9 @@ Número de trabajadores dependientes informados según rubro económico de la em
 |Región de Ñuble|35480|290|10387|345|1611|11441|21493|7522|6099|548|204|732|2211|8630|12660|14809|11529|902|2815|0|5|61|
 |País|775844|152718|778025|34306|75964|1133791|1346496|548224|486469|227293|228411|70362|366888|1387230|664974|668023|453957|56112|244278|5|799|8446|
 #### Distribucion de energia electrica por sector region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0076
-#### Title
+#### Titulo
 Distribución de energía eléctrica por sector, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Sector|MWh|% participación|Interanual %|Mensual %|Acumulada %|
 |-|-|-|-|-|-|
@@ -2365,11 +2155,9 @@ Distribución de energía eléctrica por sector, Región de Ñuble (marzo 2025)
 |Otros|12.367|18.3|0.8|11.0|6.5|
 |Total|67.589|100|2.0|–11.6|2.4|
 #### Generacion de energia electrica por fuente region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0077
-#### Title
+#### Titulo
 Generación de energía eléctrica por fuente, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Fuente|MWh|% participación|Interanual %|Mensual %|Acumulada %|
 |-|-|-|-|-|-|
@@ -2377,11 +2165,9 @@ Generación de energía eléctrica por fuente, Región de Ñuble (marzo 2025)
 |Otras fuentes|48.527|57.7|37.7|–1.2|31.7|
 |Total|84.040|100|19.9|7.6|20.0|
 #### Indicadores laborales generales region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0078
-#### Title
+#### Titulo
 Indicadores laborales generales, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Indicador|Valor %|Δ pp|
 |-|-|-|
@@ -2394,11 +2180,9 @@ Indicadores laborales generales, Región de Ñuble (ene-mar 2025)
 |SU2|18.7|1.6|
 |SU3|20.5|–0.5|
 #### Tasa de desocupacion por sexo region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0079
-#### Title
+#### Titulo
 Tasa de desocupación por sexo, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Sexo|Tasa %|Δ pp|
 |-|-|-|
@@ -2406,11 +2190,9 @@ Tasa de desocupación por sexo, Región de Ñuble (ene-mar 2025)
 |Hombres|8.6|–0.2|
 |Total|9.6|0.5|
 #### Tasa de ocupacion informal por sexo region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0080
-#### Title
+#### Titulo
 Tasa de ocupación informal por sexo, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Sexo|Tasa %|Δ pp|
 |-|-|-|
@@ -2418,11 +2200,9 @@ Tasa de ocupación informal por sexo, Región de Ñuble (ene-mar 2025)
 |Hombres|32.2|–4.8|
 |Total|33.0|–3.7|
 #### Ocupados informales por tramo etario region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0081
-#### Title
+#### Titulo
 Ocupados informales por tramo etario, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Tramo etario|TOI %|Δ pp|Variación ocupados %|
 |-|-|-|-|
@@ -2431,11 +2211,9 @@ Ocupados informales por tramo etario, Región de Ñuble (ene-mar 2025)
 |55 y más|43.1|–4.1|—|
 |Total|33.0|–3.7|–7.7|
 #### Tiempo parcial en ocupacion informal region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0082
-#### Title
+#### Titulo
 Tiempo parcial en ocupación informal, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Categoría|% informales|Δ %|
 |-|-|-|
@@ -2444,22 +2222,18 @@ Tiempo parcial en ocupación informal, Región de Ñuble (ene-mar 2025)
 |Involuntario|37.8|3.2|
 |≥ 45 h|4.2|—|
 #### Variacion de ocupados por categoria region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0083
-#### Title
+#### Titulo
 Variación de ocupados por categoría, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Categoría|Variación % 12 m|
 |-|-|
 |Asalariado formal|6.0|
 |Cuenta propia|6.7|
 #### Variacion de ocupados por actividad economica region de nuble ene mar 2025
-#### ID
-GN-IND-SEC-0084
-#### Title
+#### Titulo
 Variación de ocupados por actividad económica, Región de Ñuble (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Actividad|Variación % 12 m|
 |-|-|
@@ -2467,11 +2241,9 @@ Variación de ocupados por actividad económica, Región de Ñuble (ene-mar 2025
 |Industria manufacturera|24.2|
 |Construcción|–16.7|
 #### Indicadores laborales provincia de diguillin ene mar 2025
-#### ID
-GN-IND-SEC-0085
-#### Title
+#### Titulo
 Indicadores laborales, Provincia de Diguillín (ene-mar 2025)
-#### Content
+#### Contenido
 
 |Indicador|Valor %|Δ pp|
 |-|-|-|
@@ -2479,11 +2251,9 @@ Indicadores laborales, Provincia de Diguillín (ene-mar 2025)
 |Ocupación|54.0|–0.1|
 |Participación|60.3|0.0|
 #### Exportaciones por sector region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0086
-#### Title
+#### Titulo
 Exportaciones por sector, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Sector|MM US$|Participación %|Variación %|
 |-|-|-|-|
@@ -2491,22 +2261,18 @@ Exportaciones por sector, Región de Ñuble (marzo 2025)
 |Silvoagropecuario|12.7|8.0|–58.8|
 |Total|159.3|100|19.2|
 #### Exportaciones industriales por rama region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0087
-#### Title
+#### Titulo
 Exportaciones industriales por rama, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Rama|MM US$|Participación %|Variación %|
 |-|-|-|-|
 |Alimentos|46.5|29.2|136.5|
 |Forestales|30.7|19.3|42.3|
 #### Exportaciones por continente region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0088
-#### Title
+#### Titulo
 Exportaciones por continente, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Continente|MM US$|Participación %|Variación %|
 |-|-|-|-|
@@ -2517,11 +2283,9 @@ Exportaciones por continente, Región de Ñuble (marzo 2025)
 |África|0.5|0.3|—|
 |Total|159.3|100|19.2|
 #### Exportaciones por bloque economico region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0089
-#### Title
+#### Titulo
 Exportaciones por bloque económico, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Bloque|MM US$|Variación %|
 |-|-|-|
@@ -2533,11 +2297,9 @@ Exportaciones por bloque económico, Región de Ñuble (marzo 2025)
 |MERCOSUR|1.3|150.5|
 |MCCA|1.3|283.1|
 #### Exportaciones por pais region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0090
-#### Title
+#### Titulo
 Exportaciones por país, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |País|MM US$|Participación %|Variación %|
 |-|-|-|-|
@@ -2545,11 +2307,9 @@ Exportaciones por país, Región de Ñuble (marzo 2025)
 |Estados Unidos|45.3|28.4|39.7|
 |Japón|8.1|5.1|164.2|
 #### Exportaciones de berries y cerezas por subcontinente region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0091
-#### Title
+#### Titulo
 Exportaciones de berries y cerezas por subcontinente, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Subcontinente|MM US$|Participación %|Variación %|
 |-|-|-|-|
@@ -2558,11 +2318,9 @@ Exportaciones de berries y cerezas por subcontinente, Región de Ñuble (marzo 2
 |Oceanía|3.0|9.1|6.8|
 |Total|32.9|100|51.9|
 #### Isup a precios constantes region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0092
-#### Title
+#### Titulo
 ISUP a precios constantes, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Indicador|Variación %|
 |-|-|
@@ -2570,11 +2328,9 @@ ISUP a precios constantes, Región de Ñuble (marzo 2025)
 |Mensual|2.8|
 |Acumulada|–3.3|
 #### Ventas corrientes de supermercados region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0093
-#### Title
+#### Titulo
 Ventas corrientes de supermercados, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Medida|Valor|Variación %|
 |-|-|-|
@@ -2583,11 +2339,9 @@ Ventas corrientes de supermercados, Región de Ñuble (marzo 2025)
 |Superficie m²|61.756|3.3|
 |Ventas por m² $|462.830|–2.7|
 #### Indicadores de alojamiento turistico region de nuble marzo 2025
-#### ID
-GN-IND-SEC-0094
-#### Title
+#### Titulo
 Indicadores de alojamiento turístico, Región de Ñuble (marzo 2025)
-#### Content
+#### Contenido
 
 |Indicador|Valor|Variación % / pp|
 |-|-|-|
@@ -2597,11 +2351,9 @@ Indicadores de alojamiento turístico, Región de Ñuble (marzo 2025)
 |RevPAR $|16.364|22.3|
 |ADR $|68.075|17.8|
 #### Molienda de trigo region de nuble diciembre 2024
-#### ID
-GN-IND-SEC-0095
-#### Title
+#### Titulo
 Molienda de trigo, Región de Ñuble (diciembre 2024)
-#### Content
+#### Contenido
 
 |Concepto|Ton|Interanual %|Mensual %|Acumulada %|
 |-|-|-|-|-|
@@ -2609,11 +2361,9 @@ Molienda de trigo, Región de Ñuble (diciembre 2024)
 |Productos|6.171|–6.9|–11.1|–4.0|
 |Subproductos|1.882|–9.8|–9.4|1.7|
 #### Subproductos de trigo region de nuble diciembre 2024
-#### ID
-GN-IND-SEC-0096
-#### Title
+#### Titulo
 Subproductos de trigo, Región de Ñuble (diciembre 2024)
-#### Content
+#### Contenido
 
 |Subproducto|Ton|Participación %|Interanual %|
 |-|-|-|-|
@@ -2621,22 +2371,18 @@ Subproductos de trigo, Región de Ñuble (diciembre 2024)
 |Afrecho|535|28.4|–14.7|
 |Harinilla|474|25.2|3.0|
 #### Ganado beneficiado y carne region de nuble diciembre 2024
-#### ID
-GN-IND-SEC-0097
-#### Title
+#### Titulo
 Ganado beneficiado y carne, Región de Ñuble (diciembre 2024)
-#### Content
+#### Contenido
 
 |Especie|Cabezas|Δ %|Carne t|Δ %|% nacional|
 |-|-|-|-|-|-|
 |Bovinos|5.911|15.3|1.403|11.5|8.0|
 |Porcinos|1.911|–13.1|160|–15.8|0.3|
 #### Remates en ferias nuble biobio diciembre 2024
-#### ID
-GN-IND-SEC-0098
-#### Title
+#### Titulo
 Remates en ferias, Ñuble-Biobío (diciembre 2024)
-#### Content
+#### Contenido
 
 |Especie|Cabezas|Δ %|
 |-|-|-|
@@ -2645,30 +2391,24 @@ Remates en ferias, Ñuble-Biobío (diciembre 2024)
 |Porcinos|1.225|1.7|
 |Equinos|1.301|–17.7|
 #### Broilers beneficiados o higgins nuble diciembre 2024
-#### ID
-GN-IND-SEC-0099
-#### Title
+#### Titulo
 Broilers beneficiados, O'Higgins + Ñuble (diciembre 2024)
-#### Content
+#### Contenido
 
 |Indicador|Unidades|Carnes t|Δ % unidades|Δ % t|
 |-|-|-|-|-|
 |Broilers|16.594.255|41.431|8.8|11.1|
-#### Indicadores municipales
-#### ID
-GN-IND-SEC-0100
-#### Title
+### Indicadores municipales
+#### Titulo
 Indicadores Municipales
-#### Content
+#### Contenido
 
 Los datos presentados a continuación, fueron extraídos desde la sección Datos Municipales del Sistema Nacional de Información Municipal (SINIM), Año 2023
-#### Sections
+#### Secciones
 #### Datos financieros
-#### ID
-GN-IND-SEC-0101
-#### Title
+#### Titulo
 Datos Financieros
-#### Content
+#### Contenido
 
 |Comuna|Ingresos municipales totales (M$)|Ingresos propios permanentes (IPP) (M$)|Dependencia del FCM (%)|Gastos municipales totales (M$)|Gastos en personal municipal (M$)|Gastos en bienes y servicios de consumo (M$)|
 |-|-|-|-|-|-|-|
@@ -2694,11 +2434,9 @@ Datos Financieros
 |Trehuaco|4432665|403881|87.86|4783268|2061933|645260|
 |Yungay|8567121|1552032|79.35|8392712|2544843|2489324|
 #### Recursos humanos
-#### ID
-GN-IND-SEC-0102
-#### Title
+#### Titulo
 Recursos Humanos
-#### Content
+#### Contenido
 
 |Comuna|Total funcionarios|Nivel de profesionalización (%)|Funcionarios de planta|Funcionarios a contrata|Funcionarios a honorarios|
 |-|-|-|-|-|-|
@@ -2724,11 +2462,9 @@ Recursos Humanos
 |Trehuaco|104|32.43|33|41|30|
 |Yungay|85|48.24|58|27|0|
 #### Educacion municipal
-#### ID
-GN-IND-SEC-0103
-#### Title
+#### Titulo
 Educación Municipal
-#### Content
+#### Contenido
 
 |Comuna|Cobertura (%)|Nº establecimientos|Aporte municipal (M$)|Ingresos educación (M$)|Gastos educación (M$)|
 |-|-|-|-|-|-|
@@ -2754,11 +2490,9 @@ Educación Municipal
 |Trehuaco|64.77|13|640313|3467638|3901972|
 |Yungay|57.61|12|852000|8382094|7720855|
 #### Salud municipal
-#### ID
-GN-IND-SEC-0104
-#### Title
+#### Titulo
 Salud Municipal
-#### Content
+#### Contenido
 
 |Comuna|Tipo administración|Aporte municipal (M$)|Ingresos salud (M$)|Gastos salud (M$)|
 |-|-|-|-|-|
@@ -2784,11 +2518,9 @@ Salud Municipal
 |Trehuaco|Depto. o Dirección|50500|2019570|2044219|
 |Yungay|Depto. o Dirección|460000|2697230|2535762|
 #### Desarrollo territorial
-#### ID
-GN-IND-SEC-0105
-#### Title
+#### Titulo
 Desarrollo Territorial
-#### Content
+#### Contenido
 
 |Comuna|Plan Regulador Comunal|PLADECO|Año actualización PLADECO|Nº propiedades municipales|
 |-|-|-|-|-|
@@ -2814,11 +2546,9 @@ Desarrollo Territorial
 |Trehuaco|No|Sí|2012|44|
 |Yungay|Sí|Sí|2019|65|
 #### Transferencias y compensaciones
-#### ID
-GN-IND-SEC-0106
-#### Title
+#### Titulo
 Transferencias y Compensaciones
-#### Content
+#### Contenido
 
 |Comuna|Monto FCM (M$)|Compensación predios exentos (M$)|FIGEM (M$)|
 |-|-|-|-|
@@ -2851,30 +2581,24 @@ Abreviaturas
 * M$: Miles de pesos chilenos
 * PLADECO: Plan de Desarrollo Comunal
 * FIGEM: Fondo de Incentivo al Mejoramiento de la Gestión Municipal
-#### Indicadores de seguridad publica
-#### ID
-GN-IND-SEC-0107
-#### Title
+### Indicadores de seguridad publica
+#### Titulo
 Indicadores de seguridad Pública
-#### Content
+#### Contenido
 
 Se presentan los principales indicadores de seguridad pública para la Región de Ñuble, incluyendo datos de delitos registrados por las policías y los resultados de la Encuesta Nacional Urbana de Seguridad Ciudadana (ENUSC).
-#### Sections
+#### Secciones
 #### Casos policiales por tipo de delito tasa cada 100 000 habitantes
-#### ID
-GN-IND-SEC-0108
-#### Title
+#### Titulo
 Casos Policiales por tipo de delito (Tasa cada 100.000 habitantes)
-#### Content
+#### Contenido
 
 Fuente: Sistema Táctico de Operación Policial (STOP), Carabineros de Chile.
-#### Sections
+#### Secciones
 #### Abigeato
-#### ID
-GN-IND-SEC-0109
-#### Title
+#### Titulo
 Abigeato
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -2902,11 +2626,9 @@ Abigeato
 |San Fabián|211,5|189|
 |San Nicolás|56,7|56,4|
 #### Delitos sexuales
-#### ID
-GN-IND-SEC-0110
-#### Title
+#### Titulo
 Delitos Sexuales
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -2934,11 +2656,9 @@ Delitos Sexuales
 |San Fabián|465,3|252|
 |San Nicolás|113,5|72,5|
 #### Infracciones a la ley de drogas
-#### ID
-GN-IND-SEC-0111
-#### Title
+#### Titulo
 Infracciones a la Ley de Drogas
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -2966,11 +2686,9 @@ Infracciones a la Ley de Drogas
 |San Fabián|84,6|42|
 |San Nicolás|56,7|88,6|
 #### Robo de vehiculo motorizado
-#### ID
-GN-IND-SEC-0112
-#### Title
+#### Titulo
 Robo de Vehículo Motorizado
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -2998,11 +2716,9 @@ Robo de Vehículo Motorizado
 |San Fabián|0|21|
 |San Nicolás|32,4|40,3|
 #### Robo en lugar habitado y no habitado
-#### ID
-GN-IND-SEC-0113
-#### Title
+#### Titulo
 Robo en Lugar Habitado y No Habitado
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -3030,11 +2746,9 @@ Robo en Lugar Habitado y No Habitado
 |San Fabián|655,7|546,1|
 |San Nicolás|648,4|652,5|
 #### Robos con violencia o sorpresa
-#### ID
-GN-IND-SEC-0114
-#### Title
+#### Titulo
 Robos con Violencia o Sorpresa
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -3062,11 +2776,9 @@ Robos con Violencia o Sorpresa
 |San Fabián|63,5|21|
 |San Nicolás|113,5|88,6|
 #### Violencia intrafamiliar
-#### ID
-GN-IND-SEC-0115
-#### Title
+#### Titulo
 Violencia Intrafamiliar
-#### Content
+#### Contenido
 
 |Unidad Territorial|2022|2023|
 |-|-|-|
@@ -3094,19 +2806,15 @@ Violencia Intrafamiliar
 |San Fabián|1099,8|1134,2|
 |San Nicolás|842,9|757,2|
 #### Riesgos y fragilidad territorial
-#### ID
-GN-IND-SEC-0116
-#### Title
+#### Titulo
 Riesgos y Fragilidad Territorial
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### Poblacion e infraestructura critica expuesta a amenazas
-#### ID
-GN-IND-SEC-0117
-#### Title
+#### Titulo
 Población e Infraestructura Crítica Expuesta a Amenazas
-#### Content
+#### Contenido
 
 |Amenaza|Comuna expuesta|Población Expuesta|Infraestructura Crítica expuesta|
 |-|-|-|-|
@@ -3116,11 +2824,9 @@ Población e Infraestructura Crítica Expuesta a Amenazas
 |Marejadas|Coelemu y Trehuaco|906 habitantes|"514 Viviendas ; 5 Establecimientos Educacionales ; 1 Servicios de Salud ; 1 Cuarteles de Carabineros"|
 |Déficit Hídrico|Región de Ñuble|26126 habitantes|
 #### Indice comunal de fragilidad socio residencial icfsr
-#### ID
-GN-IND-SEC-0118
-#### Title
+#### Titulo
 Índice Comunal de Fragilidad Socio-Residencial (ICFSR)
-#### Content
+#### Contenido
 
 |Comuna|Rk|ICFSR|Clasif. Global|
 |-|-|-|-|
@@ -3146,19 +2852,15 @@ GN-IND-SEC-0118
 |Chillán|264|0,27|moderado|
 |Pemuco|288|0,23|moderado|
 #### Encuesta nacional urbana de seguridad ciudadana enusc 2024 region de nuble
-#### ID
-GN-IND-SEC-0119
-#### Title
+#### Titulo
 Encuesta Nacional Urbana de Seguridad Ciudadana (ENUSC) 2024 - Región de Ñuble
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### Percepcion de aumento de la delincuencia
-#### ID
-GN-IND-SEC-0120
-#### Title
+#### Titulo
 Percepción de aumento de la delincuencia
-#### Content
+#### Contenido
 
 |Nivel Territorial|2023|2024|
 |-|-|-|
@@ -3166,11 +2868,9 @@ Percepción de aumento de la delincuencia
 |COMUNA|84,7%|79,6%|
 |BARRIO|54,3%|47,2%|
 #### Percepcion de aumento de la delincuencia en el pais por region
-#### ID
-GN-IND-SEC-0121
-#### Title
+#### Titulo
 Percepción de aumento de la delincuencia en el PAÍS, por región
-#### Content
+#### Contenido
 
 |Región|2023|2024|
 |-|-|-|
@@ -3191,11 +2891,9 @@ Percepción de aumento de la delincuencia en el PAÍS, por región
 |Aysén|90,1%|87,5%|
 |Magallanes|85,7%|86,6%|
 #### Percepcion de aumento de la delincuencia en la comuna por region
-#### ID
-GN-IND-SEC-0122
-#### Title
+#### Titulo
 Percepción de aumento de la delincuencia en la COMUNA, por región
-#### Content
+#### Contenido
 
 |Región|2023|2024|
 |-|-|-|
@@ -3216,11 +2914,9 @@ Percepción de aumento de la delincuencia en la COMUNA, por región
 |Aysén|71,9%|59,4%|
 |Magallanes|56,4%|48,4%|
 #### Percepcion de aumento de la delincuencia en el barrio por region
-#### ID
-GN-IND-SEC-0123
-#### Title
+#### Titulo
 Percepción de aumento de la delincuencia en el BARRIO, por región
-#### Content
+#### Contenido
 
 |Región|2023|2024|
 |-|-|-|
@@ -3241,11 +2937,9 @@ Percepción de aumento de la delincuencia en el BARRIO, por región
 |Aysén|29,8%|34,1%|
 |Magallanes|17,5%|26,4%|
 #### Fuente de percepcion sobre delincuencia en el pais
-#### ID
-GN-IND-SEC-0124
-#### Title
+#### Titulo
 Fuente de percepción sobre delincuencia en el PAÍS
-#### Content
+#### Contenido
 
 |Fuente|2023|2024|
 |-|-|-|
@@ -3256,11 +2950,9 @@ Fuente de percepción sobre delincuencia en el PAÍS
 |Periódicos|1,8%|2,8%|
 |Experiencia personal|5,0%|2,8%|
 #### Fuente de percepcion sobre delincuencia en la comuna
-#### ID
-GN-IND-SEC-0125
-#### Title
+#### Titulo
 Fuente de percepción sobre delincuencia en la COMUNA
-#### Content
+#### Contenido
 
 |Fuente|2023|2024|
 |-|-|-|
@@ -3271,11 +2963,9 @@ Fuente de percepción sobre delincuencia en la COMUNA
 |Periódicos|3,2%|4,3%|
 |Experiencia personal|7,5%|3,2%|
 #### Fuente de percepcion sobre delincuencia en el barrio
-#### ID
-GN-IND-SEC-0126
-#### Title
+#### Titulo
 Fuente de percepción sobre delincuencia en el BARRIO
-#### Content
+#### Contenido
 
 |Fuente|2024|
 |-|-|
@@ -3286,11 +2976,9 @@ Fuente de percepción sobre delincuencia en el BARRIO
 |Televisión|1,1%|
 |Periódicos|0,4%|
 #### Percepcion de problemas de delincuencia en el barrio
-#### ID
-GN-IND-SEC-0127
-#### Title
+#### Titulo
 Percepción de problemas de delincuencia en el barrio
-#### Content
+#### Contenido
 
 |Situación Delictiva|2023|2024|
 |-|-|-|
@@ -3302,11 +2990,9 @@ Percepción de problemas de delincuencia en el barrio
 |Peleas callejeras sin armas|4,5%|3,1%|
 |Peleas callejeras con armas blancas o de fuego|3,4%|3,1%|
 #### Percepcion de desordenes e incivilidades en el barrio
-#### ID
-GN-IND-SEC-0128
-#### Title
+#### Titulo
 Percepción de desórdenes e incivilidades en el barrio
-#### Content
+#### Contenido
 
 |Desorden|2023|2024|
 |-|-|-|
@@ -3319,11 +3005,9 @@ Percepción de desórdenes e incivilidades en el barrio
 |Venta clandestina de alcohol|6,7%|6,4%|
 |Prostitución o comercio sexual|2,6%|1,3%|
 #### Percepcion de presencia de armas en el barrio
-#### ID
-GN-IND-SEC-0129
-#### Title
+#### Titulo
 Percepción de presencia de armas en el barrio
-#### Content
+#### Contenido
 
 |Percepción|2023|2024|
 |-|-|-|
@@ -3334,11 +3018,9 @@ Percepción de presencia de armas en el barrio
 |Nunca|87,2%|83,2%|
 |NS/NR/SD|0,4%|0,3%|
 #### Percepcion de presencia de drogas en el barrio
-#### ID
-GN-IND-SEC-0130
-#### Title
+#### Titulo
 Percepción de presencia de drogas en el barrio
-#### Content
+#### Contenido
 
 |Percepción|2023|2024|
 |-|-|-|
@@ -3349,11 +3031,9 @@ Percepción de presencia de drogas en el barrio
 |Nunca|67,1%|69,0%|
 |NS/NR/SD|1,1%|0,3%|
 #### Percepcion del trabajo de carabineros en la comuna
-#### ID
-GN-IND-SEC-0131
-#### Title
+#### Titulo
 Percepción del trabajo de Carabineros en la comuna
-#### Content
+#### Contenido
 
 |Aspecto|Percepción|2023|2024|
 |-|-|-|-|
@@ -3370,11 +3050,9 @@ Percepción del trabajo de Carabineros en la comuna
 |Control de armas|Muy bueno y bueno|19,6%|23,7%|
 || Muy mal y Malo|26,7%|28,1%|
 #### Percepcion de la presencia policial carabineros en el barrio en los ultimos 12 m
-#### ID
-GN-IND-SEC-0132
-#### Title
+#### Titulo
 Percepción de la presencia policial (Carabineros) en el barrio en los últimos 12 meses
-#### Content
+#### Contenido
 
 |Percepción|2023|2024|
 |-|-|-|
@@ -3383,11 +3061,9 @@ Percepción de la presencia policial (Carabineros) en el barrio en los últimos 
 |Disminuyó|25,6%|28,4%|
 |NS/NR/SD|2,5%|2,2%|
 #### Percepcion de riesgo de ser victima de un delito
-#### ID
-GN-IND-SEC-0133
-#### Title
+#### Titulo
 Percepción de riesgo de ser víctima de un delito
-#### Content
+#### Contenido
 
 |Año|Respuesta|Porcentaje|
 |-|-|-|
@@ -3398,11 +3074,9 @@ Percepción de riesgo de ser víctima de un delito
 |2024|No|52,7%|
 |2024|No Sabe|2,5%|
 #### Actividades que ha dejado de hacer por temor a ser victima de un delito
-#### ID
-GN-IND-SEC-0134
-#### Title
+#### Titulo
 Actividades que ha dejado de hacer por temor a ser víctima de un delito
-#### Content
+#### Contenido
 
 |Actividad|2023|2024|
 |-|-|-|
@@ -3419,11 +3093,9 @@ Actividades que ha dejado de hacer por temor a ser víctima de un delito
 |Manejar vehículos, motos y/o estacionar fuera de la vivienda (nueva)|| 10,4%|
 |Tomar o usar Uber, Cabify, Didi o similares|11,4%|9,9%|
 #### Victimizacion de hogares
-#### ID
-GN-IND-SEC-0135
-#### Title
+#### Titulo
 Victimización de hogares
-#### Content
+#### Contenido
 
 |Año|Percepción Aumento Delincuencia (País)|Victimización Hogares (DMCS)|
 |-|-|-|
@@ -3435,19 +3107,15 @@ Victimización de hogares
 |2023|92,2%|15,4%|
 |2024|92,2%|17,9%|
 #### Victimizacion de hogares por tipo de delito
-#### ID
-GN-IND-SEC-0136
-#### Title
+#### Titulo
 Victimización de hogares por tipo de delito
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### Delitos violentos
-#### ID
-GN-IND-SEC-0137
-#### Title
+#### Titulo
 Delitos Violentos
-#### Content
+#### Contenido
 
 |Tipo de delito|2023|2024|
 |-|-|-|
@@ -3459,11 +3127,9 @@ Delitos Violentos
 |Robo de vehículo con violencia|0,6%|0,0%|
 |Robo de vivienda con violencia|0,1%|0,0%|
 #### Robos no violentos
-#### ID
-GN-IND-SEC-0138
-#### Title
+#### Titulo
 Robos no violentos
-#### Content
+#### Contenido
 
 |Tipo de Robo|2023|2024|
 |-|-|-|
@@ -3472,44 +3138,36 @@ Robos no violentos
 |Robo por sorpresa no violento|1,2%|1,3%|
 |Robo de vehículo no violento|0,9%|0,8%|
 #### Hurtos
-#### ID
-GN-IND-SEC-0139
-#### Title
+#### Titulo
 Hurtos
-#### Content
+#### Contenido
 
 |Año|Porcentaje|
 |-|-|
 |2023|3,4%|
 |2024|5,0%|
 #### Vandalismo
-#### ID
-GN-IND-SEC-0140
-#### Title
+#### Titulo
 Vandalismo
-#### Content
+#### Contenido
 
 |Tipo|2023|2024|
 |-|-|-|
 |Vehículos|5,6%|6,9%|
 |Viviendas|1,9%|1,6%|
 #### Delitos economicos
-#### ID
-GN-IND-SEC-0141
-#### Title
+#### Titulo
 Delitos económicos
-#### Content
+#### Contenido
 
 |Tipo de Delito|2023|2024|
 |-|-|-|
 |Fraudes|2,7%|5,9%|
 |Estafas|2,5%|3,3%|
 #### Delitos ciberneticos
-#### ID
-GN-IND-SEC-0142
-#### Title
+#### Titulo
 Delitos cibernéticos
-#### Content
+#### Contenido
 
 |Tipo de Delito|2023|2024|
 |-|-|-|
@@ -3518,22 +3176,18 @@ Delitos cibernéticos
 |Acoso por internet o Ciberbullying|0,9%|0,9%|
 |Suplantación Identidad|0,6%|0,7%|
 #### Delitos de odio
-#### ID
-GN-IND-SEC-0143
-#### Title
+#### Titulo
 Delitos de odio
-#### Content
+#### Contenido
 
 |Año|Porcentaje|
 |-|-|
 |2023|0,2%|
 |2024|0,1%|
 #### Victimizacion personal por region
-#### ID
-GN-IND-SEC-0144
-#### Title
+#### Titulo
 Victimización personal por región
-#### Content
+#### Contenido
 
 |Región|2023|2024|
 |-|-|-|
@@ -3555,11 +3209,9 @@ Victimización personal por región
 |Aysén|2,1%|2,0%|
 |Magallanes|2,0%|2,6%|
 #### Victimizacion personal por tipo de delito violento
-#### ID
-GN-IND-SEC-0145
-#### Title
+#### Titulo
 Victimización personal por tipo de delito violento
-#### Content
+#### Contenido
 
 |Tipo de delito|2023|2024|
 |-|-|-|
@@ -3571,22 +3223,18 @@ Victimización personal por tipo de delito violento
 |Robo de Vehículo|0,3%|0,0%|
 |Robo en la vivienda|0,1%|0,0%|
 #### Denuncia de delitos violentos contra el hogar
-#### ID
-GN-IND-SEC-0146
-#### Title
+#### Titulo
 Denuncia de delitos violentos contra el hogar
-#### Content
+#### Contenido
 
 |Año|Denunciaron (Sí)|No Denunciaron (No)|
 |-|-|-|
 |2023|57,7%|42,3%|
 |2024|46,3%|53,7%|
 #### Denuncia por tipo de delito violento contra el hogar
-#### ID
-GN-IND-SEC-0147
-#### Title
+#### Titulo
 Denuncia por tipo de delito violento contra el hogar
-#### Content
+#### Contenido
 
 |Delito|2023|2024|
 |-|-|-|
@@ -3598,19 +3246,15 @@ Denuncia por tipo de delito violento contra el hogar
 |Robo de vehículo con violencia|0,0%|100,0%|
 |Robo de vivienda con violencia|0,0%|100,0%|
 #### Confianza en las instituciones
-#### ID
-GN-IND-SEC-0148
-#### Title
+#### Titulo
 Confianza en las instituciones
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### Conocimiento de instituciones
-#### ID
-GN-IND-SEC-0149
-#### Title
+#### Titulo
 Conocimiento de instituciones
-#### Content
+#### Contenido
 
 |Institución|2023 (% Sí)|2024 (% Sí)|
 |-|-|-|
@@ -3618,39 +3262,33 @@ Conocimiento de instituciones
 |Policía de Investigaciones (PDI)|47,9%|54,7%|
 |Fiscalía o Ministerio Público|32,4%|35,7%|
 #### Confianza en carabineros de chile
-#### ID
-GN-IND-SEC-0150
-#### Title
+#### Titulo
 Confianza en Carabineros de Chile
-#### Content
+#### Contenido
 
 |Confianza|2023|2024|
 |-|-|-|
 |Mucha y bastante confianza|69,3%|68,5%|
 |Poco o Nada de confianza|30,4%|31,4%|
 #### Confianza en la pdi
-#### ID
-GN-IND-SEC-0151
-#### Title
+#### Titulo
 Confianza en la PDI
-#### Content
+#### Contenido
 
 |Confianza|2023|2024|
 |-|-|-|
 |Mucha y bastante confianza|80,5%|80,8%|
 |Poco o Nada de confianza|18,9%|18,2%|
 #### Confianza en la fiscalia o ministerio publico
-#### ID
-GN-IND-SEC-0152
-#### Title
+#### Titulo
 Confianza en la Fiscalía o Ministerio Público
-#### Content
+#### Contenido
 
 |Confianza|2023|2024|
 |-|-|-|
 |Mucha y bastante confianza|44,5%|43,3%|
 |Poco o Nada de confianza|54,5%|56,6%|
-### Content
+## Contenido
 \# Indicadores regionales y comunales región de Ñuble
 
 Actualización BCN: Junio 2025

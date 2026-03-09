@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.41
+    cr: 2.78
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -38,14 +38,14 @@ extensions:
 
 # Guía Operativa FRPD Ñuble 2025
 ## Source
-### Ctx Required
+### Contexto requerido
 - Marco legal de Royalty Minero y FRPD (FIN-GORE-NORMATIVA-LEY-ROYALTY-01, FIN-GORE-NORMATIVA-GLOSA-13-01, FIN-GORE-NORMATIVA-FRPD-REGULACION-OPERATIVA-01).
 - Glosa 06 de la Ley de Presupuestos y Circular N°22 de DIPRES.
 - Resolución Exenta N°33 de la SUBCTCI (31-Ene-2024) sobre instituciones habilitadas.
 - Guía de Proyectos SNI (kb_gn_024_guia_idi_sni_sts.md).
 - Guía de Programas Públicos Regionales (kb_gn_025_guia_programas_sts.md).
 - Guía Operativa del Departamento de Análisis y Evaluación del GORE Ñuble para obtención de RS.
-### Ctx Optional
+### Contexto opcional
 - Estrategia Regional de Desarrollo (ERD) Ñuble 2023-2030.
 - Estrategia Regional de Ciencia, Tecnología, Conocimiento e Innovación (ER-CTCI) 2022-2030.
 - Planes regionales y sectoriales de fomento productivo pertinentes.
@@ -115,8 +115,8 @@ Fondo regional de inversión productiva asociado al Royalty Minero.
 #### Tipos
 | ID | Cpt | Def | Req | Ctx_Required |
 | --- | --- | --- | --- | --- |
-| GN-FRPD-TIPO-PROYECTO | Proyectos de inversión. | Iniciativas de inversión de capital. | ['Formulación según la guía del Sistema Nacional de Inversiones (SNI).'] | ['kb_gn_024_guia_idi_sni_sts.md.'] |
-| GN-FRPD-TIPO-PROGRAMA | Programas. | Iniciativas de gasto corriente para entrega de servicios. | ['Formulación según la Guía de Programas Públicos Regionales.'] | ['kb_gn_025_guia_programas_sts.md.'] |
+| GN-FRPD-TIPO-PROYECTO | Proyectos de inversión. | Iniciativas de inversión de capital. | Formulación según la guía del Sistema Nacional de Inversiones (SNI). | kb_gn_024_guia_idi_sni_sts.md. |
+| GN-FRPD-TIPO-PROGRAMA | Programas. | Iniciativas de gasto corriente para entrega de servicios. | Formulación según la Guía de Programas Públicos Regionales. | kb_gn_025_guia_programas_sts.md. |
 #### Ambitos Principales
 #### Ambitos
 - Fomento de actividades productivas.
@@ -174,12 +174,10 @@ Las bases determinan las iniciativas preseleccionadas para financiamiento.
 #### Advertencias
 - Según Glosa 06 y Circular N°22 DIPRES, el camino posterior a la selección depende de la naturaleza de la iniciativa.
 #### Casos
-| ID | Cpt | Def | Ctx |
-| --- | --- | --- | --- |
-| GN-FRPD-CASO-1-CTCI | Caso 1 – Innovación, CTCI. | Iniciativas estrictamente enmarcadas en CTCI. | ['Exentas del proceso de evaluación ex ante DIPRES/SES.', 'La evaluación del concurso se considera final.'] |
-| ID | Cpt | Def | Req |
-| --- | --- | --- | --- |
-| GN-FRPD-CASO-2-FOMENTO | Caso 2 – Fomento Productivo General. | Iniciativas de fomento productivo que no califican como CTCI. | ['DEBEN ingresar al proceso de evaluación ex ante correspondiente.', 'Si son proyectos de inversión, seguir Guía SNI (kb_gn_024_guia_idi_sni_sts.md).', 'Si son programas de servicios, seguir Guía de Programas Públicos (kb_gn_025_guia_programas_sts.md).'] |
+| ID | Cpt | Def | Ctx | Req |
+| --- | --- | --- | --- | --- |
+| GN-FRPD-CASO-1-CTCI | Caso 1 – Innovación, CTCI. | Iniciativas estrictamente enmarcadas en CTCI. | Exentas del proceso de evaluación ex ante DIPRES/SES., La evaluación del concurso se considera final. |  |
+| GN-FRPD-CASO-2-FOMENTO | Caso 2 – Fomento Productivo General. | Iniciativas de fomento productivo que no califican como CTCI. |  | DEBEN ingresar al proceso de evaluación ex ante correspondiente., Si son proyectos de inversión, seguir Guía SNI (kb_gn_024_guia_idi_sni_sts.md)., Si son programas de servicios, seguir Guía de Programas Públicos (kb_gn_025_guia_programas_sts.md). |
 ### Sec 3 Pilares Estrategicos Concurso 2025
 #### Referencias Legales Clave
 #### Contexto
@@ -474,39 +472,19 @@ DOC Digital del Estado de Chile.
 #### Requisitos
 - Todos los antecedentes descritos deben estar cargados en el Banco Integrado de Proyectos (BIP) al momento de la postulación.
 #### Lista Antecedentes
-| ID | Cpt | Req | Cond |
-| --- | --- | --- | --- |
-| GN-FRPD-ANT-OFICIO-CONDUCTOR | Oficio Conductor. | ['Dirigido al Gobernador Regional, firmado y timbrado.', 'Debe indicar nombre de la iniciativa, código BIP y Eje/Lineamiento/Objetivo ERD asociado.'] | ['Si no se cumple, la iniciativa es INADMISIBLE.'] |
-| ID | Cpt | Src | Ctx | Req |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-ANT-FICHA-IDI | Ficha IDI (año presupuestario 2025). | ['Se descarga desde BIP con código de proyecto.'] | ['Etapa de ejecución.'] | ['Cargar asignación presupuestaria completa.', 'Registrar cofinanciamiento y fuentes.', 'Monto total coherente con presupuesto y oficio.', 'Es el único antecedente impreso, pero también debe estar cargado en BIP.'] |
-| ID | Cpt | Purp | Src | Rec | Ctx |
-| --- | --- | --- | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-1-FORM | Anexo 1 – Formulario de Postulación FRPD. | ['Documento metodológico que fundamenta la iniciativa.'] | ['Disponible en página web del GORE Ñuble.'] | ['Se sugiere usar Metodología de Marco Lógico.'] | ["Debe ubicarse en carpeta 'Estudio Preinversional' en BIP."] |
-| ID | Cpt | Req | Facultades_GORE | Cond | Clasificador_Presupuestario | Prohib | Clasificacion_SISREC | Imputacion_Transferencia |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-2-PRESUPUESTO | Anexo 2 – Presupuesto. | ['Formato PDF y Excel en BIP.', 'Desglose máximo coherente con MML, IVA incluido, sin gastos generales ni utilidades.'] | ['El GORE puede solicitar análisis de precios unitarios (APU).'] | ['Cofinanciamiento requiere V°B° de Unidad Financiera.'] | ['Contratación de programa: actividades principales (RRHH, materiales, etc.), sugerido entre 70–95% del total.', "Consultoras: externalización de servicios, no puede ser mayor a 'Contratación de Programas'.", 'Gastos administrativos: hasta 5% del total; incluye combustible, materiales de oficina y garantías (privados).'] | ['Cargar viáticos, alimentación, pasajes, peajes o estacionamiento al FRPD.'] | ['Inversión: adquisición de activos y otros sin contraprestación directa (asociado a contratación de programa).', 'Operación: gastos de bienes de consumo y otros para funcionamiento (asociados a gastos administrativos).', 'Recursos Humanos: remuneraciones (asociadas a consultorías).'] | ['Corriente: si gasto asimilable a subtítulos 21, 22, 24 > 50% del total.', 'De Capital: si gasto asimilable a subtítulos 29, 31, 33 > 50% del total.'] |
 | ID | Cpt | Req |
 | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-3-PERFILES | Anexo 3 – Perfiles y descripción de cargo. | ['Describir perfiles, funciones, número de horas y formato de contratación.', 'Universidades estatales deben adjuntar declaración jurada simple del Rector con horas disponibles de académicos.', 'Adjuntar certificado de que personas a contratar no pertenecen a la institución (cuando corresponda).'] |
-| ID | Cpt | Req | Ctx |
-| --- | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-4-COTIZ-TDR | Anexo 4 – Cotizaciones y/o Términos de Referencia (TDR). | ['Al menos 1 cotización por activo, con antigüedad ≤ 60 días, fecha, RUT del proveedor y precio.', 'TDR detallados para licitaciones (fechas, dimensiones, especificaciones técnicas).'] | ["Ubicación en BIP: carpeta 'Especificaciones Técnicas'."] |
-| ID | Cpt | Src | Req |
-| --- | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-5-DECL-SIN-REND | Anexo 5 – Declaración jurada simple (sin rendiciones pendientes). | ['Disponible en página web del GORE Ñuble.'] | ['Firma del representante legal.'] |
-| ID | Cpt | Purp | Rec |
-| --- | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-6-ESTATUTOS | Anexo 6 – Decreto o Estatutos de creación del servicio. | ['Acreditar que el objeto social se relaciona con el programa.'] | ['Adjuntar aprobación técnica de SES o DIPRES si existe.'] |
-| ID | Cpt | Purp |
-| --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-7-PERSONERIA | Anexo 7 – Personería del representante legal. | ['Acreditar quién firmará el convenio.'] |
-| ID | Cpt | Src | Req | Ctx |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-ANT-ANEXO-8-RESUMEN-EJEC | Anexo 8 – Resumen Ejecutivo. | ['Disponible en página web del GORE Ñuble.'] | ['Apéndice con objetivos, descripción y montos.'] | ["Ubicación en BIP: carpeta 'Anexos'."] |
-| ID | Cpt | Cond |
-| --- | --- | --- |
-| GN-FRPD-ANT-OTROS-ANEXOS | Otros anexos. | ['Compromiso de financiamiento compartido: certificado de Dirección de Finanzas.', 'Postulación de Universidad Estatal: certificado de acreditación de la CNA.', 'Derechos de Autor: declaración jurada sobre plagio, si aplica.'] |
+| GN-FRPD-ANT-OFICIO-CONDUCTOR | Oficio Conductor. | Dirigido al Gobernador Regional, firmado y timbrado., Debe indicar nombre de la iniciativa, código BIP y Eje/Lineamiento/Objetivo ERD asociado. |
+| GN-FRPD-ANT-FICHA-IDI | Ficha IDI (año presupuestario 2025). | Cargar asignación presupuestaria completa., Registrar cofinanciamiento y fuentes., Monto total coherente con presupuesto y oficio., Es el único antecedente impreso, pero también debe estar cargado en BIP. |
+| GN-FRPD-ANT-ANEXO-1-FORM | Anexo 1 – Formulario de Postulación FRPD. |  |
+| GN-FRPD-ANT-ANEXO-2-PRESUPUESTO | Anexo 2 – Presupuesto. | Formato PDF y Excel en BIP., Desglose máximo coherente con MML, IVA incluido, sin gastos generales ni utilidades. |
+| GN-FRPD-ANT-ANEXO-3-PERFILES | Anexo 3 – Perfiles y descripción de cargo. | Describir perfiles, funciones, número de horas y formato de contratación., Universidades estatales deben adjuntar declaración jurada simple del Rector con horas disponibles de académicos., Adjuntar certificado de que personas a contratar no pertenecen a la institución (cuando corresponda). |
+| GN-FRPD-ANT-ANEXO-4-COTIZ-TDR | Anexo 4 – Cotizaciones y/o Términos de Referencia (TDR). | Al menos 1 cotización por activo, con antigüedad ≤ 60 días, fecha, RUT del proveedor y precio., TDR detallados para licitaciones (fechas, dimensiones, especificaciones técnicas). |
+| GN-FRPD-ANT-ANEXO-5-DECL-SIN-REND | Anexo 5 – Declaración jurada simple (sin rendiciones pendientes). | Firma del representante legal. |
+| GN-FRPD-ANT-ANEXO-6-ESTATUTOS | Anexo 6 – Decreto o Estatutos de creación del servicio. |  |
+| GN-FRPD-ANT-ANEXO-7-PERSONERIA | Anexo 7 – Personería del representante legal. |  |
+| GN-FRPD-ANT-ANEXO-8-RESUMEN-EJEC | Anexo 8 – Resumen Ejecutivo. | Apéndice con objetivos, descripción y montos. |
+| GN-FRPD-ANT-OTROS-ANEXOS | Otros anexos. |  |
 #### Procedimiento Evaluacion Tecnica y RATE
 #### Responsables
 - Unidad de Proyectos y Programas de la DIPIR-GORE Ñuble.
@@ -705,30 +683,14 @@ Definir los campos obligatorios y estructura del formulario de postulación FRPD
 | ID | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- |
 | GN-FRPD-FORM-COD-BIP | Código BIP | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-NOMBRE-PROGRAMA | Nombre del Programa | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-MONTO-FNDR | Monto solicitado FNDR | Number | Req: mandatory. Min-Val: 0. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-MONTO-TOTAL | Monto total del Programa | Number | Req: mandatory. Min-Val: 0. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-PLAZO-MESES | Plazo de ejecución (meses) | Number | Req: mandatory. Min-Val: 1. Max-Val: 30. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-EJE-ERD | Eje ERD | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-LINEAMIENTO-ERD | Lineamiento ERD | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-OBJETIVO-ERD | Objetivo ERD | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Instr | Field-Options |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-FORM-LINEAMIENTO-POSTULA | Lineamiento al que postula | Checkbox-Group | Marcar con X el lineamiento al que postula. | ['Social', 'Asistencia técnica a municipalidades', 'Cultural', 'Salud', 'Infancia', 'Energía, transportes y telecomunicaciones', 'Medioambiente y gestión de residuos', 'Gestión de recursos hídricos', 'Deportes', 'Movilidad urbana', 'Cuidados de adulto mayor', 'Conectividad digital', 'Emergencia', 'Fomento productivo, emprendimiento, innovación', 'Seguridad pública', 'Atracción de inversiones'] |
+| GN-FRPD-FORM-LINEAMIENTO-POSTULA | Lineamiento al que postula | Checkbox-Group |  |
 ### Seccion 2 Institucion Postulante
 #### Campos
 | ID | Field-Label | Field-Type | Field-Constraint |
@@ -746,54 +708,24 @@ Definir los campos obligatorios y estructura del formulario de postulación FRPD
 | GN-FRPD-FORM-SALDO-POR-RENDIR | Saldo por rendir programas en ejecución (a la fecha de postulación) | Number | Req: mandatory. Min-Val: 0. |
 ### Seccion 3 Diagnostico
 #### Campos
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
-| GN-FRPD-FORM-ANALISIS-INVOLUCRADOS | Análisis de los involucrados | Static-Text |
-| ID | Field-Label | Field-Type | Field-Instr | Field-Constraint |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-FORM-DESC-GRUPO-OBJETIVO | Descripción del grupo objetivo | TextArea | Identificar beneficiarios directos e indirectos en todos los niveles. | Req: mandatory. |
 | ID | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- |
+| GN-FRPD-FORM-ANALISIS-INVOLUCRADOS | Análisis de los involucrados | Static-Text |  |
+| GN-FRPD-FORM-DESC-GRUPO-OBJETIVO | Descripción del grupo objetivo | TextArea | Req: mandatory. |
 | GN-FRPD-FORM-TERRITORIO-INTERVENIR | Territorio a intervenir | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
-| GN-FRPD-FORM-PROY-ANTERIORES | Identificación de proyectos o programas anteriores destinados al grupo objetivo (FNDR o Sectorial). | TextArea |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
-| GN-FRPD-FORM-ANALISIS-BENEFICIARIOS | Análisis de los beneficiarios | Static-Text |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
+| GN-FRPD-FORM-PROY-ANTERIORES | Identificación de proyectos o programas anteriores destinados al grupo objetivo (FNDR o Sectorial). | TextArea |  |
+| GN-FRPD-FORM-ANALISIS-BENEFICIARIOS | Análisis de los beneficiarios | Static-Text |  |
 | GN-FRPD-FORM-REQ-BENEFICIARIO | Requisitos específicos para calificar como beneficiario | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-PROC-SELECCION-BENEF | Descripción del procedimiento de selección de beneficiarios | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-BENEFICIOS-INDIVIDUALES | Beneficios a recibir por beneficiario individual | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-N-ESTIMADO-BENEF | Numero estimado de beneficiarios (por grupo objetivo y género) | Text | Req: mandatory. |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
-| GN-FRPD-FORM-ANALISIS-PROBLEMA | Análisis del Problema | Static-Text |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
+| GN-FRPD-FORM-ANALISIS-PROBLEMA | Análisis del Problema | Static-Text |  |
 | GN-FRPD-FORM-IDENTIFICACION-PROBLEMA | Identificación del problema (problemas principales de la situación) | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-DEFINICION-PROBLEMA-CENTRAL | Definición del problema central (aplicando prioridad y selectividad) | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-EFECTOS-PROBLEMA | Efectos del problema (definir los más importantes) | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-CAUSAS-PROBLEMA | Causas del problema (elementos que lo provocan) | TextArea | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Instr | Field-Constraint |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-FORM-ARBOL-PROBLEMAS | Árbol de problemas (diagrama Causa-Efecto) | File | Construir y presentar árbol de problemas. El árbol debe dar una imagen completa de la situación negativa. Verificar validez e integridad. | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Instr | Field-Constraint |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-FORM-ARBOL-OBJETIVOS | Diagrama de árbol de soluciones (medios y fines) | File | Convertir condiciones negativas a positivas. Examinar relación medio-fin. Añadir nuevos objetivos si es necesario. | Req: mandatory. |
+| GN-FRPD-FORM-ARBOL-PROBLEMAS | Árbol de problemas (diagrama Causa-Efecto) | File | Req: mandatory. |
+| GN-FRPD-FORM-ARBOL-OBJETIVOS | Diagrama de árbol de soluciones (medios y fines) | File | Req: mandatory. |
 ### Seccion 4 Identificacion Programa
 #### Campos
 | ID | Field-Label | Field-Type |
@@ -819,32 +751,16 @@ Definir los campos obligatorios y estructura del formulario de postulación FRPD
 | ID | Field-Label | Field-Type |
 | --- | --- | --- |
 | GN-FRPD-FORM-PRESUPUESTO-TITULO | Presupuesto | Static-Text |
-| ID | Field-Label | Field-Type | Field-Instr |
-| --- | --- | --- | --- |
-| GN-FRPD-FORM-PRESUPUESTO-DETALLADO | Presupuesto Detallado | Repeater | Añadir una fila por cada ítem del presupuesto. |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
+| GN-FRPD-FORM-PRESUPUESTO-DETALLADO | Presupuesto Detallado | Repeater |
 | GN-FRPD-FORM-RESUMEN-PRESUP-CLASIF-PRESUP | Resumen Presupuesto (por Clasificación Presupuestaria) | Repeater |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
 | GN-FRPD-FORM-RESUMEN-PRESUP-CLASIF-SISREC | Resumen Presupuesto (por Clasificación SISREC) | Repeater |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
 | GN-FRPD-FORM-DETALLE-CONTRATACION-PERSONAS | Detalle Contratación de Personas | Repeater |
-| ID | Field-Label | Field-Type |
-| --- | --- | --- |
 | GN-FRPD-FORM-DETALLE-DIFUSION-HITOS | Detalle actividades difusión e hitos comunicacionales | Repeater |
 ### Seccion 8 Resumen Programa
 #### Campos
-| ID | Field-Label | Field-Type | Field-Constraint | Field-Instr |
-| --- | --- | --- | --- | --- |
-| GN-FRPD-FORM-RESUMEN-PROGRAMA | Resumen del Programa | TextArea | Req: mandatory. Max-Len: 3000. | ¾ de hoja máximo. |
 | ID | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- |
+| GN-FRPD-FORM-RESUMEN-PROGRAMA | Resumen del Programa | TextArea | Req: mandatory. Max-Len: 3000. |
 | GN-FRPD-FORM-FIRMA-FORMULADOR | Nombre, firma y timbre del Formulador | Signature | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-FIRMA-REPRESENTANTE | Nombre, firma y timbre del jefe de Servicio o Representante | Signature | Req: mandatory. |
-| ID | Field-Label | Field-Type | Field-Constraint |
-| --- | --- | --- | --- |
 | GN-FRPD-FORM-CONTACTO-FORMULADOR-FINAL | Fono y Mail del formulador | Text | Req: mandatory. |

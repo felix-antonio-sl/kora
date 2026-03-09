@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.77
+    cr: 1.76
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -39,7 +39,7 @@ extensions:
 
 # RIS Estudios y Proyectos de Empresas del Estado (SNI 2024)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_-_Estudios_y_Proyectos_de_Empresas_del_Estado_2024.pdf
 
 ## RIS Empresas Publicas 2024

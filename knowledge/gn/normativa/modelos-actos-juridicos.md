@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:modelos-actos-juridicos
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/juridico/kb_gn_100_modelos_actos_juridicos_koda.yml
 version: 2.0.0
 status: published
@@ -24,97 +24,34 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.23
+    cr: 1.81
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 333
+    skeleton_count: 1
+    meat_count: 303
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/normativa__modelos-actos-juridicos.md.json
 ---
 
 # Modelos de Actos Jurídicos GORE Ñuble
-## ID
-GN-MODELOS-ACTOS-JURIDICOS-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Modelos de Actos Jurídicos GORE Ñuble (SFD/STS)
-
-## Primary Source
-staging/gn/kodeando/kb_gn_100_modelos_actos_juridicos_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Modelos de actos juridicos gore nuble
-### ID
-GN-MODELOS-ACTOS-JURIDICOS-DOC-01
-### Title
+## Titulo
 Modelos de Actos Jurídicos GORE Ñuble
-### Sections
-#### S 1 executive summary and usage guide
-#### ID
-GN-SEC-0001
-#### Title
+## Secciones
+### S 1 executive summary and usage guide
+#### Titulo
 1. Executive Summary and Usage Guide
-#### Content
+#### Contenido
 
 ID: KB-GN-100-SUMMARY-01
-#### Sections
+#### Secciones
 #### S 1 1 artifact purpose
-#### ID
-GN-SEC-0002
-#### Title
+#### Titulo
 1.1. Artifact Purpose
-#### Content
+#### Contenido
 
 ID: KB-GN-100-PURPOSE-01
 Purp: Serve as a fundamental knowledge artifact for the AI Agent "Administrative Documentation Generator" (ID: AGENT-GORE-DOCGEN-V1.0).
@@ -124,11 +61,9 @@ Dep: Adherence to SFD and STS standards is critical for AI interpretation and po
 Ref: Ley N° 19.880.
 Obj: Achieve GORE Ñuble modernization goals (reduce errors, standardize documents, increase efficiency and probity).
 #### S 1 2 model structure sfd sts
-#### ID
-GN-SEC-0003
-#### Title
+#### Titulo
 1.2. Model Structure (SFD/STS)
-#### Content
+#### Contenido
 
 ID: KB-GN-100-STRUCTURE-01
 Fnd: Each model is structured with a rigorous syntax for human and machine readability.
@@ -144,11 +79,9 @@ Cpt: `#### Form-Field`.
   - Def: Each field is described by functional keys (`Field-Label`, `Field-Type`, `Field-Instr`, `Field-Constraint`).
   - Purp: Provide context, legal justification, operational instructions, and critical validations to guide the AI agent.
 #### S 1 3 index of legal act models
-#### ID
-GN-SEC-0004
-#### Title
+#### Titulo
 1.3. Index of Legal Act Models
-#### Content
+#### Contenido
 
 ID: KB-GN-100-INDEX-01
 Purp: Provides a quick reference index of the models included in this artifact.
@@ -161,44 +94,36 @@ Purp: Provides a quick reference index of the models included in this artifact.
 |`FORM-REVOCA-ACTO-01`|Resolución que Revoca un Acto Administrativo|1.0.0|Complete|
 |`FORM-ESCRITO-INICIO-01`|Escrito de Inicio de Procedimiento|1.0.0|Complete|
 |`FORM-ESCRITO-REPO-01`|Escrito de Recurso de Reposición|1.0.0|Complete|
-#### S 2 legal act models sfd format
-#### ID
-GN-SEC-0005
-#### Title
+### S 2 legal act models sfd format
+#### Titulo
 2. Legal Act Models (SFD Format)
-#### Content
+#### Contenido
 
 ID: KB-GN-100-MODELS-CONTAINER-01
 
 ```plaintext
 BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-MODIF-CONV-01
-#### Sections
+#### Secciones
 #### Form metadata
-#### ID
-GN-SEC-0006
-#### Title
+#### Titulo
 Form Metadata
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S0-METADATA-01
-#### Sections
+#### Secciones
 #### Form description
-#### ID
-GN-SEC-0007
-#### Title
+#### Titulo
 Form Description
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S0-DESC-01
 Field-Label: "Descripción del Formulario"
 Field-Type: Static-Text
 Field-Instr: "Propósito: Resolución Exenta que aprueba la modificación de un convenio de colaboración o transferencia de recursos. Formaliza la alteración de las cláusulas de un acuerdo preexistente, requiriendo la voluntad de las partes o una habilitación contractual expresa."
 #### Applicable regulations
-#### ID
-GN-SEC-0008
-#### Title
+#### Titulo
 Applicable Regulations
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S0-NORMATIVA-01
 Field-Label: "Normativa Aplicable"
@@ -206,20 +131,16 @@ Field-Type: Static-Text
 Field-Instr: "Marco Legal: Referencias normativas clave que rigen la competencia para celebrar convenios y la forma de los actos administrativos."
 Field-Placeholder: "Ley N° 19.880; Ley N° 18.575, Orgánica Constitucional de Bases Generales de la Administración del Estado; Ley N° 19.175, Orgánica Constitucional sobre Gobierno y Administración Regional."
 #### Header
-#### ID
-GN-SEC-0009
-#### Title
+#### Titulo
 Header
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S1-HEADER-01
-#### Sections
+#### Secciones
 #### Act type
-#### ID
-GN-SEC-0010
-#### Title
+#### Titulo
 Act Type
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S1-TIPO-01
 Field-Label: "Tipo de Acto"
@@ -227,11 +148,9 @@ Field-Type: Static-Text
 Field-Placeholder: "RESOLUCIÓN EXENTA"
 Field-Instr: "Naturaleza: Acto administrativo que no requiere trámite de toma de razón por la Contraloría General de la República, salvo que comprometa recursos de ejercicios futuros o supere ciertos montos."
 #### Resolution number
-#### ID
-GN-SEC-0011
-#### Title
+#### Titulo
 Resolution Number
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S1-NUMERO-01
 Field-Label: "Número de Resolución"
@@ -240,11 +159,9 @@ Field-Placeholder: "N° [numero_resolucion]/[año]"
 Field-Instr: "El agente debe solicitar el número correlativo asignado por la Oficina de Partes o unidad correspondiente."
 Field-Constraint: "Req: mandatory."
 #### Place and date
-#### ID
-GN-SEC-0012
-#### Title
+#### Titulo
 Place and Date
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S1-LUGARFECHA-01
 Field-Label: "Lugar y Fecha"
@@ -253,20 +170,16 @@ Field-Placeholder: "CHILLÁN, [dia] de [mes] de [año]."
 Field-Instr: "Formalidad: Lugar y fecha de emisión del acto."
 Field-Constraint: "Req: mandatory."
 #### Vistos
-#### ID
-GN-SEC-0013
-#### Title
+#### Titulo
 Vistos
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S2-VISTOS-01
-#### Sections
+#### Secciones
 #### Authority attributions
-#### ID
-GN-SEC-0014
-#### Title
+#### Titulo
 Authority Attributions
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S2-ATRIBUCIONES-01
 Field-Label: "Vistos: Atribuciones de la Autoridad"
@@ -274,11 +187,9 @@ Field-Type: Static-Text
 Field-Placeholder: "VISTOS: Lo dispuesto en la Constitución Política de la República; la Ley N° 19.880, que Establece Bases de los Procedimientos Administrativos que rigen los Actos de los Órganos de la Administración del Estado; la Ley N° 18.575, Orgánica Constitucional de Bases Generales de la Administración del Estado; la Ley N° 19.175, Orgánica Constitucional sobre Gobierno y Administración Regional, y sus modificaciones; y la Resolución N° 7, de 2019, de la Contraloría General de la República."
 Field-Instr: "Competencia: Fundamenta la potestad del Gobernador Regional para dictar actos administrativos. Es un requisito esencial para la validez del acto."
 #### Original agreement
-#### ID
-GN-SEC-0015
-#### Title
+#### Titulo
 Original Agreement
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S2-CONVENIO-01
 Field-Label: "Vistos: Convenio Original"
@@ -287,11 +198,9 @@ Field-Placeholder: "El Convenio [nombre_convenio], de fecha [fecha_convenio], su
 Field-Instr: "Objeto: Individualización inequívoca del acuerdo de voluntades a modificar. La precisión evita ambigüedades y potenciales vicios de nulidad."
 Field-Constraint: "Req: mandatory."
 #### Modification request
-#### ID
-GN-SEC-0016
-#### Title
+#### Titulo
 Modification Request
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S2-SOLICITUD-01
 Field-Label: "Vistos: Solicitud de Modificación"
@@ -300,20 +209,16 @@ Field-Placeholder: "La solicitud de modificación presentada por [entidad_solici
 Field-Instr: "Inicio Procedimiento: Documenta el acto que da origen a la modificación, ya sea una solicitud formal o un acuerdo mutuo."
 Field-Constraint: "Req: mandatory."
 #### Considerando
-#### ID
-GN-SEC-0017
-#### Title
+#### Titulo
 Considerando
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S3-CONSIDERANDO-01
-#### Sections
+#### Secciones
 #### Agreement context
-#### ID
-GN-SEC-0018
-#### Title
+#### Titulo
 Agreement Context
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S3-CONTEXTO-01
 Field-Label: "Considerando: Contexto del Convenio"
@@ -322,11 +227,9 @@ Field-Placeholder: "1°. Que, con fecha [fecha_convenio], el Gobierno Regional d
 Field-Instr: "Contexto: Reitera el propósito original del convenio para enmarcar la modificación."
 Field-Constraint: "Req: mandatory."
 #### Modification rationale
-#### ID
-GN-SEC-0019
-#### Title
+#### Titulo
 Modification Rationale
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S3-FUNDAMENTO-01
 Field-Label: "Considerando: Fundamento de la Modificación"
@@ -335,11 +238,9 @@ Field-Placeholder: "2°. Que, por razones de [tipo_razon: hecho, técnicas, oper
 Field-Instr: "Motivación: Cumple con el deber de fundamentación (Art. 11 y 41, Ley 19.880). El acto debe expresar sus razones de hecho y de derecho. El agente IA debe solicitar al usuario que especifique y detalle estas razones de forma clara y suficiente."
 Field-Constraint: "Req: mandatory."
 #### Parties agreement
-#### ID
-GN-SEC-0020
-#### Title
+#### Titulo
 Parties' Agreement
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S3-ACUERDO-01
 Field-Label: "Considerando: Acuerdo de las Partes"
@@ -347,20 +248,16 @@ Field-Type: Static-Text
 Field-Placeholder: "3°. Que existe pleno acuerdo entre las partes para llevar a cabo la modificación en los términos que se expondrán en la parte resolutiva del presente acto."
 Field-Instr: "Voluntad: Refuerza el carácter consensual de la modificación, elemento clave en la estabilidad de los contratos administrativos."
 #### Resuelvo
-#### ID
-GN-SEC-0021
-#### Title
+#### Titulo
 Resuelvo
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S4-RESUELVO-01
-#### Sections
+#### Secciones
 #### Article 1 approval
-#### ID
-GN-SEC-0022
-#### Title
+#### Titulo
 Article 1: Approval
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S4-ART1-01
 Field-Label: "Resuelvo: Artículo Primero (Aprobación)"
@@ -369,11 +266,9 @@ Field-Placeholder: "1°. APRUÉBASE la modificación del Convenio \"[nombre_conv
 Field-Instr: "Decisión: Núcleo del acto administrativo. Contiene la declaración de voluntad formal del órgano. La referencia a un anexo es una buena práctica para modificaciones complejas."
 Field-Constraint: "Req: mandatory."
 #### Article 2 consolidated text
-#### ID
-GN-SEC-0023
-#### Title
+#### Titulo
 Article 2: Consolidated Text
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S4-ART2-01
 Field-Label: "Resuelvo: Artículo Segundo (Texto Refundido)"
@@ -381,11 +276,9 @@ Field-Type: Static-Text
 Field-Placeholder: "2°. APRUÉBASE, en consecuencia, el texto refundido del Convenio, que incorpora las modificaciones aprobadas en el artículo anterior."
 Field-Instr: "Seguridad Jurídica: Opcional pero recomendado. La generación de un texto refundido consolida el acuerdo vigente en un único documento, facilitando su comprensión y ejecución futura."
 #### Article 3 validity
-#### ID
-GN-SEC-0024
-#### Title
+#### Titulo
 Article 3: Validity
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S4-ART3-01
 Field-Label: "Resuelvo: Artículo Tercero (Vigencia)"
@@ -393,20 +286,16 @@ Field-Type: Static-Text
 Field-Placeholder: "3°. DÉJASE constancia que todas las demás cláusulas del convenio original que no han sido modificadas por el presente acto, mantienen su plena vigencia."
 Field-Instr: "Principio de Conservación: Clarifica que la modificación es parcial y no afecta la totalidad del acuerdo, preservando la estabilidad contractual."
 #### Cierre
-#### ID
-GN-SEC-0025
-#### Title
+#### Titulo
 Cierre
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S5-CIERRE-01
-#### Sections
+#### Secciones
 #### Signature block
-#### ID
-GN-SEC-0026
-#### Title
+#### Titulo
 Signature Block
-#### Content
+#### Contenido
 
 ID: FORM-MODIF-CONV-01-S5-FIRMA-01
 Field-Label: "Firma y Timbre"
@@ -420,31 +309,25 @@ END_EMBEDDED_BLOCK:: FORM-MODIF-CONV-01
 ```plaintext
 BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-RECTIF-ACTO-01
 #### Form metadata 2
-#### ID
-GN-SEC-0027
-#### Title
+#### Titulo
 Form Metadata
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S0-METADATA-01
-#### Sections
+#### Secciones
 #### Form description
-#### ID
-GN-SEC-0028
-#### Title
+#### Titulo
 Form Description
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S0-DESC-01
 Field-Label: "Descripción del Formulario"
 Field-Type: Static-Text
 Field-Instr: "Propósito: Resolución Exenta que rectifica errores de hecho, numéricos o de transcripción en un acto administrativo previo. Permite a la Administración corregir sus propios errores materiales sin alterar la sustancia de la decisión original."
 #### Applicable regulations
-#### ID
-GN-SEC-0029
-#### Title
+#### Titulo
 Applicable Regulations
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S0-NORMATIVA-01
 Field-Label: "Normativa Aplicable"
@@ -452,30 +335,24 @@ Field-Type: Static-Text
 Field-Placeholder: "Artículo 62, Ley N° 19.880."
 Field-Instr: "Marco Legal: La potestad rectificatoria se encuentra explícitamente consagrada en esta disposición."
 #### Header 2
-#### ID
-GN-SEC-0030
-#### Title
+#### Titulo
 Header
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S1-HEADER-01
 
 - Field-Group: Contiene los mismos campos que FORM-MODIF-CONV-01-S1-HEADER-01
 #### Vistos 2
-#### ID
-GN-SEC-0031
-#### Title
+#### Titulo
 Vistos
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S2-VISTOS-01
-#### Sections
+#### Secciones
 #### Authority attributions
-#### ID
-GN-SEC-0032
-#### Title
+#### Titulo
 Authority Attributions
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S2-ATRIBUCIONES-01
 Field-Label: "Vistos: Atribuciones de la Autoridad"
@@ -483,11 +360,9 @@ Field-Type: Static-Text
 Field-Placeholder: "VISTOS: Lo dispuesto en el artículo 62 de la Ley N° 19.880, que Establece Bases de los Procedimientos Administrativos que rigen los Actos de los Órganos de la Administración del Estado; la Ley N° 19.175, Orgánica Constitucional sobre Gobierno y Administración Regional; y la Resolución N° 7, de 2019, de la Contraloría General de la República."
 Field-Instr: "Competencia: Invoca directamente la norma que faculta la rectificación."
 #### Original act
-#### ID
-GN-SEC-0033
-#### Title
+#### Titulo
 Original Act
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S2-ACTOORIGINAL-01
 Field-Label: "Vistos: Acto Original"
@@ -496,20 +371,16 @@ Field-Placeholder: "La Resolución Exenta N° [numero_res_original] de fecha [fe
 Field-Instr: "Objeto: Identificación precisa del acto administrativo que contiene el error a subsanar."
 Field-Constraint: "Req: mandatory."
 #### Considerando 2
-#### ID
-GN-SEC-0034
-#### Title
+#### Titulo
 Considerando
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S3-CONSIDERANDO-01
-#### Sections
+#### Secciones
 #### Error type
-#### ID
-GN-SEC-0035
-#### Title
+#### Titulo
 Error Type
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S3-TIPOERROR-01
 Field-Label: "Tipo de Error"
@@ -522,11 +393,9 @@ Field-Constraint: "Req: mandatory."
 - Field-Option: "de transcripción"
 - Field-Option: "numérico"
 #### Error detection clause
-#### ID
-GN-SEC-0036
-#### Title
+#### Titulo
 Error Detection Clause
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S3-DETECCION-01
 Field-Label: "Considerando: Detección del Error"
@@ -534,11 +403,9 @@ Field-Type: Static-Text
 Field-Placeholder: "1°. Que, se ha advertido la existencia de un error de [tipo_error] en el del acto administrativo individualizado en los Vistos."
 Field-Instr: "El agente debe poblar '[tipo_error]' con la selección de FORM-RECTIF-ACTO-01-S3-TIPOERROR-01."
 #### Error detail
-#### ID
-GN-SEC-0037
-#### Title
+#### Titulo
 Error Detail
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S3-DETALLE-01
 Field-Label: "Considerando: Detalle del Error"
@@ -547,11 +414,9 @@ Field-Placeholder: "2°. Que, en efecto, en la sección indicada, donde dice: \"
 Field-Instr: "Especificidad: La rectificación debe ser concreta y precisa, identificando claramente el texto erróneo y el texto correcto. El formato 'dice/debe decir' es la forma canónica."
 Field-Constraint: "Req: mandatory."
 #### Need for rectification
-#### ID
-GN-SEC-0038
-#### Title
+#### Titulo
 Need for Rectification
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S3-NECESIDAD-01
 Field-Label: "Considerando: Necesidad de Rectificar"
@@ -559,20 +424,16 @@ Field-Type: Static-Text
 Field-Placeholder: "3°. Que, en virtud de lo expuesto, y en uso de la facultad conferida por el artículo 62 de la Ley N° 19.880, resulta imperativo proceder a la rectificación del acto viciado para asegurar su correcta inteligencia y ejecución."
 Field-Instr: "Justificación: Conecta la detección del error con la necesidad de ejercer la potestad legal para enmendarlo."
 #### Resuelvo 2
-#### ID
-GN-SEC-0039
-#### Title
+#### Titulo
 Resuelvo
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S4-RESUELVO-01
-#### Sections
+#### Secciones
 #### Article 1 rectification
-#### ID
-GN-SEC-0040
-#### Title
+#### Titulo
 Article 1: Rectification
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S4-ART1-01
 Field-Label: "Resuelvo: Artículo Primero (Rectificación)"
@@ -581,11 +442,9 @@ Field-Placeholder: "1°. RECTIFÍCASE el [seccion_del_acto] de la Resolución Ex
 Field-Instr: "Decisión: Ejecuta la corrección. Es el núcleo del acto de rectificación."
 Field-Constraint: "Req: mandatory."
 #### Article 2 validity
-#### ID
-GN-SEC-0041
-#### Title
+#### Titulo
 Article 2: Validity
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S4-ART2-01
 Field-Label: "Resuelvo: Artículo Segundo (Vigencia)"
@@ -593,20 +452,16 @@ Field-Type: Static-Text
 Field-Placeholder: "2°. ESTABLÉCESE que la presente rectificación forma parte integrante de la Resolución Exenta N° [numero_res_original], entendiéndose que sus efectos se retrotraen a la fecha de dictación de esta última."
 Field-Instr: "Efecto: La rectificación tiene efecto retroactivo ('ex tunc'), pues se entiende que el acto original siempre debió contener el texto correcto. No crea un nuevo acto, sino que enmienda el preexistente."
 #### Cierre 2
-#### ID
-GN-SEC-0042
-#### Title
+#### Titulo
 Cierre
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S5-CIERRE-01
-#### Sections
+#### Secciones
 #### Signature block
-#### ID
-GN-SEC-0043
-#### Title
+#### Titulo
 Signature Block
-#### Content
+#### Contenido
 
 ID: FORM-RECTIF-ACTO-01-S5-FIRMA-01
 Field-Label: "Firma y Timbre"
@@ -620,31 +475,25 @@ END_EMBEDDED_BLOCK:: FORM-RECTIF-ACTO-01
 ```plaintext
 BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-RESCIL-CONV-01
 #### Form metadata 3
-#### ID
-GN-SEC-0044
-#### Title
+#### Titulo
 Form Metadata
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S0-METADATA-01
-#### Sections
+#### Secciones
 #### Form description
-#### ID
-GN-SEC-0045
-#### Title
+#### Titulo
 Form Description
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S0-DESC-01
 Field-Label: "Descripción del Formulario"
 Field-Type: Static-Text
 Field-Instr: "Propósito: Resolución Exenta que aprueba la terminación de un convenio por mutuo acuerdo de las partes (resciliación o mutuo disenso). Formaliza la extinción de las obligaciones de un convenio, basada en la voluntad concordante de los suscriptores."
 #### Applicable regulations
-#### ID
-GN-SEC-0046
-#### Title
+#### Titulo
 Applicable Regulations
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S0-NORMATIVA-01
 Field-Label: "Normativa Aplicable"
@@ -652,30 +501,24 @@ Field-Type: Static-Text
 Field-Placeholder: "Artículo 1545 y 1567 del Código Civil (aplicable supletoriamente); Ley N° 19.880; Ley N° 19.175."
 Field-Instr: "Marco Legal: Se basa en el principio de autonomía de la voluntad, aplicable a los contratos de la Administración en lo que no contravenga el derecho público."
 #### Header 3
-#### ID
-GN-SEC-0047
-#### Title
+#### Titulo
 Header
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S1-HEADER-01
 
 - Field-Group: Contiene los mismos campos que FORM-MODIF-CONV-01-S1-HEADER-01
 #### Vistos 3
-#### ID
-GN-SEC-0048
-#### Title
+#### Titulo
 Vistos
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S2-VISTOS-01
-#### Sections
+#### Secciones
 #### Authority attributions
-#### ID
-GN-SEC-0049
-#### Title
+#### Titulo
 Authority Attributions
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S2-ATRIBUCIONES-01
 Field-Label: "Vistos: Atribuciones de la Autoridad"
@@ -683,11 +526,9 @@ Field-Type: Static-Text
 Field-Placeholder: "VISTOS: Lo dispuesto en la Ley N° 19.880; la Ley N° 19.175, Orgánica Constitucional sobre Gobierno y Administración Regional; y la Resolución N° 7, de 2019, de la Contraloría General de la República."
 Field-Instr: "Competencia: Fundamenta la potestad del Gobernador para dictar el acto."
 #### Original agreement
-#### ID
-GN-SEC-0050
-#### Title
+#### Titulo
 Original Agreement
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S2-CONVENIO-01
 Field-Label: "Vistos: Convenio Original"
@@ -696,11 +537,9 @@ Field-Placeholder: "El Convenio [nombre_convenio], de fecha [fecha_convenio], su
 Field-Instr: "Objeto: Individualización del acuerdo de voluntades que se extinguirá."
 Field-Constraint: "Req: mandatory."
 #### Resciliation agreement
-#### ID
-GN-SEC-0051
-#### Title
+#### Titulo
 Resciliation Agreement
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S2-ACUERDO-01
 Field-Label: "Vistos: Acuerdo de Resciliación"
@@ -709,20 +548,16 @@ Field-Placeholder: "El acuerdo de resciliación suscrito por las partes con fech
 Field-Instr: "Documento Fundante: La resolución aprueba un acuerdo previo. Es esencial que este acuerdo exista y se cite."
 Field-Constraint: "Req: mandatory."
 #### Considerando 3
-#### ID
-GN-SEC-0052
-#### Title
+#### Titulo
 Considerando
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S3-CONSIDERANDO-01
-#### Sections
+#### Secciones
 #### Agreement existence
-#### ID
-GN-SEC-0053
-#### Title
+#### Titulo
 Agreement Existence
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S3-EXISTENCIA-01
 Field-Label: "Considerando: Existencia del Convenio"
@@ -731,11 +566,9 @@ Field-Placeholder: "1°. Que, mediante el instrumento singularizado en los Visto
 Field-Instr: "Contexto: Describe la relación contractual que se va a extinguir."
 Field-Constraint: "Req: mandatory."
 #### Mutual agreement
-#### ID
-GN-SEC-0054
-#### Title
+#### Titulo
 Mutual Agreement
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S3-MUTUOACUERDO-01
 Field-Label: "Considerando: Mutuo Acuerdo"
@@ -743,11 +576,9 @@ Field-Type: Static-Text
 Field-Placeholder: "2°. Que las partes, de común acuerdo y por así convenir a sus intereses, han decidido poner término anticipado al mencionado convenio, manifestando su voluntad expresa en el documento de resciliación citado en los Vistos."
 Field-Instr: "Voluntad: La resciliación se fundamenta en el 'mutuo disenso'. Es el pilar de este acto. A diferencia de la revocación (unilateral por mérito) o la invalidación (por ilegalidad), este acto es bilateral y consensual."
 #### Status of obligations
-#### ID
-GN-SEC-0055
-#### Title
+#### Titulo
 Status of Obligations
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S3-OBLIGACIONES-01
 Field-Label: "Considerando: Estado de Obligaciones"
@@ -759,20 +590,16 @@ Field-Constraint: "Req: mandatory."
 - Field-Option: "las obligaciones pendientes se regularán de la forma que se detalla en el acuerdo"
 Field-Logic: "Cond: (Ref: SELF.Value) -> Visibility: show. Req: mandatory."
 #### Resuelvo 3
-#### ID
-GN-SEC-0056
-#### Title
+#### Titulo
 Resuelvo
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S4-RESUELVO-01
-#### Sections
+#### Secciones
 #### Article 1 approval
-#### ID
-GN-SEC-0057
-#### Title
+#### Titulo
 Article 1: Approval
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S4-ART1-01
 Field-Label: "Resuelvo: Artículo Primero (Aprobación)"
@@ -781,11 +608,9 @@ Field-Placeholder: "1°. APRUÉBASE la resciliación del Convenio \"[nombre_conv
 Field-Instr: "Decisión: Formaliza la aprobación del mutuo disenso."
 Field-Constraint: "Req: mandatory."
 #### Article 2 effects
-#### ID
-GN-SEC-0058
-#### Title
+#### Titulo
 Article 2: Effects
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S4-ART2-01
 Field-Label: "Resuelvo: Artículo Segundo (Efectos)"
@@ -794,11 +619,9 @@ Field-Placeholder: "2°. DÉJASE constancia que, en virtud de la resciliación a
 Field-Instr: "Efecto Temporal: La resciliación, por regla general, opera 'ex nunc' (hacia el futuro), sin afectar los actos ya ejecutados."
 Field-Constraint: "Req: mandatory."
 #### Article 3 settlement
-#### ID
-GN-SEC-0059
-#### Title
+#### Titulo
 Article 3: Settlement
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S4-ART3-01
 Field-Label: "Resuelvo: Artículo Tercero (Finiquito)"
@@ -807,11 +630,9 @@ Field-Placeholder: "3°. DECLÁRASE que las partes se otorgan el más completo y
 Field-Instr: "Finiquito: Cierra la relación contractual. El agente IA debe permitir la inclusión de excepciones si el acuerdo de resciliación así lo estipula."
 Field-Constraint: "Req: mandatory."
 #### Cierre 3
-#### ID
-GN-SEC-0060
-#### Title
+#### Titulo
 Cierre
-#### Content
+#### Contenido
 
 ID: FORM-RESCIL-CONV-01-S5-CIERRE-01
 
@@ -823,31 +644,25 @@ END_EMBEDDED_BLOCK:: FORM-RESCIL-CONV-01
 ```plaintext
 BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-REVOCA-ACTO-01
 #### Form metadata 4
-#### ID
-GN-SEC-0061
-#### Title
+#### Titulo
 Form Metadata
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S0-METADATA-01
-#### Sections
+#### Secciones
 #### Form description
-#### ID
-GN-SEC-0062
-#### Title
+#### Titulo
 Form Description
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S0-DESC-01
 Field-Label: "Descripción del Formulario"
 Field-Type: Static-Text
 Field-Instr: "Propósito: Resolución Exenta que deja sin efecto un acto administrativo anterior por razones de mérito, oportunidad o conveniencia. Potestad discrecional de la Administración para retirar un acto VÁLIDO por razones de interés público. No aplica a actos ilegales."
 #### Applicable regulations
-#### ID
-GN-SEC-0063
-#### Title
+#### Titulo
 Applicable Regulations
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S0-NORMATIVA-01
 Field-Label: "Normativa Aplicable"
@@ -855,30 +670,24 @@ Field-Type: Static-Text
 Field-Placeholder: "Artículo 61, Ley N° 19.880."
 Field-Instr: "Marco Legal: Disposición clave que regula la potestad revocatoria y sus límites."
 #### Header 4
-#### ID
-GN-SEC-0064
-#### Title
+#### Titulo
 Header
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S1-HEADER-01
 
 - Field-Group: Contiene los mismos campos que FORM-MODIF-CONV-01-S1-HEADER-01
 #### Vistos 4
-#### ID
-GN-SEC-0065
-#### Title
+#### Titulo
 Vistos
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S2-VISTOS-01
-#### Sections
+#### Secciones
 #### Authority attributions
-#### ID
-GN-SEC-0066
-#### Title
+#### Titulo
 Authority Attributions
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S2-ATRIBUCIONES-01
 Field-Label: "Vistos: Atribuciones de la Autoridad"
@@ -886,11 +695,9 @@ Field-Type: Static-Text
 Field-Placeholder: "VISTOS: Lo dispuesto en el artículo 61 de la Ley N° 19.880; la Ley N° 19.175; y la Resolución N° 7, de 2019, de la Contraloría General de la República."
 Field-Instr: "Competencia: Invoca la norma que confiere la potestad revocatoria."
 #### Act to be revoked
-#### ID
-GN-SEC-0067
-#### Title
+#### Titulo
 Act to be Revoked
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S2-ACTOREVOCAR-01
 Field-Label: "Vistos: Acto a Revocar"
@@ -899,20 +706,16 @@ Field-Placeholder: "La Resolución Exenta N° [numero_res_original] de fecha [fe
 Field-Instr: "Objeto: Identificación del acto administrativo válido que se pretende dejar sin efecto."
 Field-Constraint: "Req: mandatory."
 #### Considerando 4
-#### ID
-GN-SEC-0068
-#### Title
+#### Titulo
 Considerando
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S3-CONSIDERANDO-01
-#### Sections
+#### Secciones
 #### Merits rationale
-#### ID
-GN-SEC-0069
-#### Title
+#### Titulo
 Merits Rationale
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S3-FUNDAMENTO-01
 Field-Label: "Considerando: Fundamento de Mérito"
@@ -921,11 +724,9 @@ Field-Placeholder: "1°. Que, por razones de mérito, oportunidad y conveniencia
 Field-Instr: "Causal: La revocación es discrecional pero no arbitraria. Debe fundarse en un cambio de circunstancias o una nueva apreciación del interés público. No puede fundarse en la ilegalidad del acto original. El agente IA debe exigir al usuario la explicitación de este fundamento."
 Field-Constraint: "Req: mandatory."
 #### No effect on rights
-#### ID
-GN-SEC-0070
-#### Title
+#### Titulo
 No Effect on Rights
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S3-DERECHOS-01
 Field-Label: "Considerando: No Afectación de Derechos Adquiridos"
@@ -933,20 +734,16 @@ Field-Type: Static-Text
 Field-Placeholder: "2°. Que el acto que por este medio se revoca no ha generado derechos adquiridos por parte de los interesados, o bien, habiéndolos generado, estos han consentido expresamente en la revocación."
 Field-Instr: "Límite Esencial: Condición crítica del artículo 61 de la Ley 19.880. La revocación es improcedente si lesiona derechos legítimamente adquiridos por los particulares. Este considerando es una declaración de cumplimiento legal y el agente IA debe tratarlo como una validación obligatoria."
 #### Resuelvo 4
-#### ID
-GN-SEC-0071
-#### Title
+#### Titulo
 Resuelvo
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S4-RESUELVO-01
-#### Sections
+#### Secciones
 #### Article 1 revocation
-#### ID
-GN-SEC-0072
-#### Title
+#### Titulo
 Article 1: Revocation
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S4-ART1-01
 Field-Label: "Resuelvo: Artículo Único (Revocación)"
@@ -955,11 +752,9 @@ Field-Placeholder: "1°. REVÓCASE, por las razones de mérito, oportunidad y co
 Field-Instr: "Decisión: Contiene la declaración de voluntad que extingue el acto anterior."
 Field-Constraint: "Req: mandatory."
 #### Article 2 effects
-#### ID
-GN-SEC-0073
-#### Title
+#### Titulo
 Article 2: Effects
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S4-ART2-01
 Field-Label: "Resuelvo: Artículo Segundo (Efectos)"
@@ -967,11 +762,9 @@ Field-Type: Static-Text
 Field-Placeholder: "2°. DÉJASE constancia que la presente revocación produce sus efectos a contar de la fecha de su total tramitación, sin afectar las situaciones jurídicas consolidadas bajo la vigencia del acto revocado."
 Field-Instr: "Efecto Temporal: La revocación opera 'ex nunc' (hacia el futuro). No tiene efecto retroactivo, a diferencia de la invalidación. Esto protege la seguridad jurídica."
 #### Cierre 4
-#### ID
-GN-SEC-0074
-#### Title
+#### Titulo
 Cierre
-#### Content
+#### Contenido
 
 ID: FORM-REVOCA-ACTO-01-S5-CIERRE-01
 
@@ -983,31 +776,25 @@ END_EMBEDDED_BLOCK:: FORM-REVOCA-ACTO-01
 ```plaintext
 BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-ESCRITO-INICIO-01
 #### Form metadata 5
-#### ID
-GN-SEC-0075
-#### Title
+#### Titulo
 Form Metadata
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S0-METADATA-01
-#### Sections
+#### Secciones
 #### Form description
-#### ID
-GN-SEC-0076
-#### Title
+#### Titulo
 Form Description
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S0-DESC-01
 Field-Label: "Descripción del Formulario"
 Field-Type: Static-Text
 Field-Instr: "Propósito: Modelo de escrito para que un particular o interesado inicie un procedimiento administrativo ante el GORE Ñuble. Estructura una solicitud formal de un administrado, asegurando que contenga los elementos mínimos para ser acogida a trámite."
 #### Applicable regulations
-#### ID
-GN-SEC-0077
-#### Title
+#### Titulo
 Applicable Regulations
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S0-NORMATIVA-01
 Field-Label: "Normativa Aplicable"
@@ -1015,20 +802,16 @@ Field-Type: Static-Text
 Field-Placeholder: "Artículos 18, 21, 30 de la Ley N° 19.880."
 Field-Instr: "Marco Legal: Rige el derecho de los interesados a iniciar procedimientos y los requisitos de sus solicitudes."
 #### Header 5
-#### ID
-GN-SEC-0078
-#### Title
+#### Titulo
 Header
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S1-HEADER-01
-#### Sections
+#### Secciones
 #### Summary
-#### ID
-GN-SEC-0079
-#### Title
+#### Titulo
 Summary
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S1-SUMILLA-01
 Field-Label: "Sumilla"
@@ -1037,11 +820,9 @@ Field-Placeholder: "EN LO PRINCIPAL: [descripcion_breve_solicitud]; EN EL OTROS�
 Field-Instr: "Claridad: La sumilla resume la petición principal y las secundarias para una rápida identificación por parte de la Oficina de Partes."
 Field-Constraint: "Req: mandatory."
 #### Addressee
-#### ID
-GN-SEC-0080
-#### Title
+#### Titulo
 Addressee
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S1-DESTINATARIO-01
 Field-Label: "Destinatario"
@@ -1049,20 +830,16 @@ Field-Type: Static-Text
 Field-Placeholder: "S.S. EL GOBERNADOR REGIONAL DE ÑUBLE"
 Field-Instr: "Autoridad: Identifica al órgano ante el cual se presenta la solicitud."
 #### Body
-#### ID
-GN-SEC-0081
-#### Title
+#### Titulo
 Body
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S2-BODY-01
-#### Sections
+#### Secciones
 #### Applicant identification
-#### ID
-GN-SEC-0082
-#### Title
+#### Titulo
 Applicant Identification
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S2-IDENTIFICACION-01
 Field-Label: "Identificación del Solicitante"
@@ -1071,11 +848,9 @@ Field-Placeholder: "[nombre_completo], Cédula de Identidad N° [rut], profesió
 Field-Instr: "Legitimación: Identifica al interesado conforme al Art. 21 de la Ley 19.880. La indicación de un medio electrónico es fundamental bajo la nueva normativa de procedimiento administrativo electrónico."
 Field-Constraint: "Req: mandatory."
 #### Optional representation
-#### ID
-GN-SEC-0083
-#### Title
+#### Titulo
 Optional Representation
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S2-REPRESENTACION-01
 Field-Label: "Representación (Opcional)"
@@ -1084,11 +859,9 @@ Field-Placeholder: "(Opcional) Actúo en representación de [nombre_representado
 Field-Instr: "Apoderamiento: Permite la actuación a través de un apoderado, conforme al Art. 22 de la Ley 19.880."
 Field-Constraint: "Req: optional."
 #### Facts
-#### ID
-GN-SEC-0084
-#### Title
+#### Titulo
 Facts
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S2-HECHOS-01
 Field-Label: "Hechos"
@@ -1097,11 +870,9 @@ Field-Placeholder: "1. Que, con fecha [fecha_hechos], [descripcion_clara_y_circu
 Field-Instr: "Fundamento Fáctico: Base fáctica de la petición. Los hechos deben ser expuestos con claridad y precisión para que la Administración pueda comprender la solicitud."
 Field-Constraint: "Req: mandatory."
 #### Law
-#### ID
-GN-SEC-0085
-#### Title
+#### Titulo
 Law
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S2-DERECHO-01
 Field-Label: "Derecho"
@@ -1110,11 +881,9 @@ Field-Placeholder: "2. Que, en virtud de lo dispuesto en [normativa_aplicable_al
 Field-Instr: "Fundamento Jurídico: Conecta los hechos con la norma que ampara la solicitud. Aunque no es estrictamente obligatorio para el particular, su inclusión facilita la tramitación."
 Field-Constraint: "Req: optional."
 #### Specific request
-#### ID
-GN-SEC-0086
-#### Title
+#### Titulo
 Specific Request
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S2-PETICION-01
 Field-Label: "Petición Concreta"
@@ -1123,20 +892,16 @@ Field-Placeholder: "3. Que, en mérito de lo expuesto, solicito a US. se sirva d
 Field-Instr: "Petitorio: Debe ser claro, preciso y específico. La Administración debe resolver sobre lo pedido (Principio Conclusivo, Art. 8, Ley 19.880)."
 Field-Constraint: "Req: mandatory."
 #### Cierre 5
-#### ID
-GN-SEC-0087
-#### Title
+#### Titulo
 Cierre
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S3-CIERRE-01
-#### Sections
+#### Secciones
 #### Por tanto
-#### ID
-GN-SEC-0088
-#### Title
+#### Titulo
 Por Tanto
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S3-PORTANTO-01
 Field-Label: "Por Tanto"
@@ -1144,11 +909,9 @@ Field-Type: Static-Text
 Field-Placeholder: "POR TANTO,\n\nRUEGO A US. acceder a lo solicitado."
 Field-Instr: "Fórmula de cierre de la petición principal."
 #### Otrosi
-#### ID
-GN-SEC-0089
-#### Title
+#### Titulo
 Otrosí
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S3-OTROSI-01
 Field-Label: "Otrosí"
@@ -1157,11 +920,9 @@ Field-Placeholder: "OTROSÍ: Ruego a US. tener por acompañados los siguientes d
 Field-Instr: "Prueba: Permite adjuntar los antecedentes que sustentan la petición, conforme al Art. 30 de la Ley 19.880."
 Field-Constraint: "Req: optional."
 #### Signature
-#### ID
-GN-SEC-0090
-#### Title
+#### Titulo
 Signature
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-INICIO-01-S3-FIRMA-01
 Field-Label: "Firma"
@@ -1175,31 +936,25 @@ END_EMBEDDED_BLOCK:: FORM-ESCRITO-INICIO-01
 ```plaintext
 BEGIN_EMBEDDED_BLOCK:: GUIDE-SFD-STS-MASTER-01 FORM-ESCRITO-REPO-01
 #### Form metadata 6
-#### ID
-GN-SEC-0091
-#### Title
+#### Titulo
 Form Metadata
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S0-METADATA-01
-#### Sections
+#### Secciones
 #### Form description
-#### ID
-GN-SEC-0092
-#### Title
+#### Titulo
 Form Description
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S0-DESC-01
 Field-Label: "Descripción del Formulario"
 Field-Type: Static-Text
 Field-Instr: "Propósito: Modelo de escrito para interponer un recurso de reposición en contra de un acto administrativo del GORE Ñuble. Es el principal medio de impugnación en sede administrativa, permitiendo que la misma autoridad que dictó el acto revise su legalidad."
 #### Applicable regulations
-#### ID
-GN-SEC-0093
-#### Title
+#### Titulo
 Applicable Regulations
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S0-NORMATIVA-01
 Field-Label: "Normativa Aplicable"
@@ -1207,30 +962,24 @@ Field-Type: Static-Text
 Field-Placeholder: "Artículo 59, Ley N° 19.880."
 Field-Instr: "Marco Legal: Regula el recurso de reposición y el recurso jerárquico."
 #### Header 6
-#### ID
-GN-SEC-0094
-#### Title
+#### Titulo
 Header
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S1-HEADER-01
 
 - Field-Group: Contiene los campos `Sumilla` y `Destinatario` de forma similar a FORM-ESCRITO-INICIO-01.
 #### Body 2
-#### ID
-GN-SEC-0095
-#### Title
+#### Titulo
 Body
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S2-BODY-01
-#### Sections
+#### Secciones
 #### Appellant identification
-#### ID
-GN-SEC-0096
-#### Title
+#### Titulo
 Appellant Identification
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S2-IDENTIFICACION-01
 Field-Label: "Identificación del Recurrente"
@@ -1239,11 +988,9 @@ Field-Placeholder: "[nombre_completo], Cédula de Identidad N° [rut], en mi cal
 Field-Instr: "Legitimación: Identifica al recurrente como parte interesada en el procedimiento."
 Field-Constraint: "Req: mandatory."
 #### Contested act
-#### ID
-GN-SEC-0097
-#### Title
+#### Titulo
 Contested Act
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S2-ACTOIMPUGNADO-01
 Field-Label: "Acto Impugnado"
@@ -1252,11 +999,9 @@ Field-Placeholder: "Que, por este acto, y encontrándome dentro del plazo legal 
 Field-Instr: "Objeto y Plazo: Identifica el acto recurrido y declara expresamente la oportunidad del recurso. El plazo de 5 días hábiles desde la notificación es fatal. El agente IA debe calcular o advertir sobre este plazo."
 Field-Constraint: "Req: mandatory."
 #### Grounds for illegality
-#### ID
-GN-SEC-0098
-#### Title
+#### Titulo
 Grounds for Illegality
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S2-FUNDAMENTOS-01
 Field-Label: "Fundamentos de Ilegalidad"
@@ -1265,11 +1010,9 @@ Field-Placeholder: "El acto recurrido adolece de los siguientes vicios de ilegal
 Field-Instr: "Causa de Pedir: El recurso debe fundarse en vicios de legalidad del acto (incompetencia, vicios de forma, desviación de poder, ilegalidad en el contenido, falta de fundamentación), no en meros desacuerdos de mérito. La argumentación debe ser precisa."
 Field-Constraint: "Req: mandatory."
 #### Specific request
-#### ID
-GN-SEC-0099
-#### Title
+#### Titulo
 Specific Request
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S2-PETICION-01
 Field-Label: "Petición Concreta"
@@ -1278,11 +1021,9 @@ Field-Placeholder: "En mérito de los fundamentos de hecho y de derecho expuesto
 Field-Instr: "Petitorio: Define el alcance de la impugnación. La solicitud debe ser coherente con los vicios alegados."
 Field-Constraint: "Req: mandatory."
 #### Cierre 6
-#### ID
-GN-SEC-0100
-#### Title
+#### Titulo
 Cierre
-#### Content
+#### Contenido
 
 ID: FORM-ESCRITO-REPO-01-S3-CIERRE-01
 
@@ -1290,7 +1031,7 @@ ID: FORM-ESCRITO-REPO-01-S3-CIERRE-01
 
 END_EMBEDDED_BLOCK:: FORM-ESCRITO-REPO-01
 ```
-### Content
+## Contenido
 \# Modelos de Actos Jurídicos GORE Ñuble
 
 ID: KB-GN-100-MODELOS-ACTOS-JURIDICOS-STS-V3

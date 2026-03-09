@@ -40,7 +40,7 @@ extensions:
 
 # BPMN D06: Gestión de Flota Vehicular
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -53,7 +53,7 @@ Jefe Servicios Generales
 ### Subprocesos
 6 subprocesos
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.1210-1400
 
 ## Body MD

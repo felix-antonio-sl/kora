@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.02
+    cr: 2.06
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -483,11 +483,9 @@ Pleno cumplimiento
 LEY19983
 #### Proc Contratacion
 #### Requisitos
-| Desc |
-| --- |
-| Requerir información necesaria a proveedores para realizar transferencias |
 | Desc | Ref |
 | --- | --- |
+| Requerir información necesaria a proveedores para realizar transferencias |  |
 | Cumplir instrucciones técnicas generales emitidas por | DIPRES |
 ### Articulo 09
 #### Proposito
@@ -678,14 +676,10 @@ Ministerio de Bienes Nacionales
 - Ventas efectuadas durante año 2026
 - Cuotas recibidas en 2026 por ventas efectuadas en años anteriores
 #### Distribucion
-| Porcentaje | Destino | Uso |
-| --- | --- | --- |
-| 65% | Gobierno regional de la región donde está ubicado el inmueble enajenado | Programa de inversión (glosa 01 común Partida 31 "Financiamiento Gobiernos Regionales") |
 | Porcentaje | Destino |
 | --- | --- |
+| 65% | Gobierno regional de la región donde está ubicado el inmueble enajenado |
 | 10% | Ministerio de Bienes Nacionales |
-| Porcentaje | Destino |
-| --- | --- |
 | 25% | Beneficio fiscal (rentas generales de la Nación) |
 #### Excepcion
 #### Desc
@@ -980,32 +974,16 @@ DIPRES
 #### Desc
 DIPRES podrá delegar facultades total o parcialmente
 #### Incluye
-| Desc |
-| --- |
-| Aprobaciones, visaciones y autorizaciones del Ministerio de Hacienda establecidas en esta ley |
 | Desc | Ref |
 | --- | --- |
+| Aprobaciones, visaciones y autorizaciones del Ministerio de Hacienda establecidas en esta ley |  |
 | Autorizaciones artículos 22 y 24 | DL3001_1979 |
-| Desc | Ref |
-| --- | --- |
 | Oración final del inciso segundo del artículo 8 | DL1056_1975 |
-| Desc | Ref |
-| --- | --- |
 | Artículo 4 | LEY19896 |
-| Desc | Ref |
-| --- | --- |
 | Artículo 19 | LEY18382 |
-| Desc | Ref |
-| --- | --- |
 | Excepción inciso final artículo 9 | LEY19104 |
-| Desc | Ref |
-| --- | --- |
 | Autorizaciones artículo 14 | LEY20128 |
-| Desc | Ref |
-| --- | --- |
 | Autorizaciones artículo 27 | DL1263 |
-| Desc | Ref |
-| --- | --- |
 | Literal r) artículo 70 | LEY19300 |
 #### Modificaciones Concesiones Compensaciones
 #### Contexto
@@ -1066,14 +1044,10 @@ Reglas de avisaje/publicaciones en medios y obligaciones de transparencia asocia
 #### Condiciones
 Órganos y servicios públicos realicen avisaje y publicaciones en medios de comunicación social
 #### Requisitos
-| Desc | Porcentaje |
-| --- | --- |
-| Efectuarlos, al menos en | 40% |
 | Desc |
 | --- |
+| Efectuarlos, al menos en |
 | Medios de comunicación con clara identificación local |
-| Desc |
-| --- |
 | Distribuidos territorialmente de manera equitativa |
 #### Prohibiciones
 #### Desc
@@ -1303,12 +1277,8 @@ Permitida excepcionalmente
 | ID | Cond |
 | --- | --- |
 | GN-LEY-PPTO-2026-ART23-EXC-A | En concursos públicos respectivos no se presentaron interesados |
-| ID | Cond |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART23-EXC-B | Sólo existe una persona jurídica como posible beneficiario de los recursos o como su ejecutor |
-| ID | Cond | Req | Ctx |
-| --- | --- | --- | --- |
-| GN-LEY-PPTO-2026-ART23-EXC-C | Emergencia, urgencia o imprevisto | Calificados de conformidad a lo establecido en el inciso siguiente | Sin perjuicio de disposiciones especiales para sismos y catástrofes contenidas en legislación pertinente |
+| GN-LEY-PPTO-2026-ART23-EXC-C | Emergencia, urgencia o imprevisto |
 #### Req Acreditacion
 #### Requisitos
 Acreditar concurrencia de circunstancia que justifica asignación directa
@@ -1556,17 +1526,17 @@ A más tardar treinta días después de que sean emitidas
 #### Proposito
 Prohibir dieta/remuneración por integrar órganos en empresas/entidades públicas que incrementen remuneración del cargo.
 #### Sujetos
-| Desc | Ref | Ctx |
-| --- | --- | --- |
-| Funcionarias y funcionarios públicos regulados por | LEY18834 | {'Desc': 'Texto refundido, coordinado y sistematizado fijado por', 'Ref': 'DFL29_2004'} |
+| Desc | Ref |
+| --- | --- |
+| Funcionarias y funcionarios públicos regulados por | LEY18834 |
 - Presidente de la República
 - Ministras y ministros de Estado
 - Subsecretarias y subsecretarios
 - Gobernadoras y gobernadores regionales
 - Delegadas y delegados presidenciales regionales
-| Desc | Ref | Ctx |
-| --- | --- | --- |
-| Jefas y jefes superiores de servicios públicos regidos por Título II | LEY18575 | {'Desc': 'Texto refundido, coordinado y sistematizado fija', 'Ref': 'DFL1_19653_2000'} |
+| Desc | Ref |
+| --- | --- |
+| Jefas y jefes superiores de servicios públicos regidos por Título II | LEY18575 |
 #### Prohibiciones
 #### Desc
 No tendrán derecho a percibir dieta o remuneración por integrar consejos o juntas directivas, presidencias, vicepresidencias, directorios, comités u otros equivalentes con cualquier nomenclatura
@@ -1828,20 +1798,12 @@ Situaciones de emergencia declaradas según normas sectoriales pertinentes
 #### Contexto
 Asignaciones presupuestarias habilitadas para la respuesta
 #### Ejemplos Asignaciones
-| Desc |
-| --- |
-| Asignación Para Atender Situaciones de Emergencia (Subsecretaría del Interior) |
 | Desc | Ref |
 | --- | --- |
+| Asignación Para Atender Situaciones de Emergencia (Subsecretaría del Interior) |  |
 | Asignación Emergencias Agrícolas (Subsecretaría de Agricultura) | SUBAGRI |
-| Desc | Ref |
-| --- | --- |
 | Asignación Emergencias (Instituto de Desarrollo Agropecuario) | INDAP |
-| Desc | Ref |
-| --- | --- |
 | Asignación Emergencias Sanitarias (Servicio Agrícola y Ganadero) | SAG |
-| Desc | Ref |
-| --- | --- |
 | Asignación Programas Especiales (Servicio de Cooperación Técnica) | SERCOTEC |
 #### Condicion
 #### Resultados
@@ -2116,18 +2078,10 @@ Oportunidad no podrá exceder del 30 de septiembre de 2026
 | ID | Desc |
 | --- | --- |
 | GN-LEY-PPTO-2026-ART47-A | Financiar mantenimiento, reparación, construcción y habilitación de infraestructura y mobiliario esencial para funcionamiento de establecimientos educacionales |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART47-B | Financiar acciones destinadas a reducir brechas de aprendizaje, promover inclusión y fortalecer trayectorias escolares |
-| ID | Desc | Incluye |
-| --- | --- | --- |
-| GN-LEY-PPTO-2026-ART47-C | Financiar acciones orientadas a fortalecer eficiencia y eficacia en gestión administrativa y financiera de establecimientos educacionales | Podrá considerar pago de deuda previsional respecto del personal docente y asistente de la educación que se desempeñe en los establecimientos educacionales del respectivo sostenedor |
-| ID | Desc | Ref |
-| --- | --- | --- |
-| GN-LEY-PPTO-2026-ART47-D | Destinar recursos para fines educativos establecidos en el artículo 3 | DFL2_1998_MINEDUC |
-| ID | Desc | Req | Req_Adicional |
-| --- | --- | --- | --- |
-| GN-LEY-PPTO-2026-ART47-E | Racionalizar dotación de profesionales y asistentes de la educación para optimizar estructuras de costos y garantizar sostenibilidad financiera en el tiempo | No se requerirá modificar el Plan Anual de Desarrollo Educativo Municipal | Deberá dar cuenta de los ajustes correspondientes el plan anual del año siguiente |
+| GN-LEY-PPTO-2026-ART47-C | Financiar acciones orientadas a fortalecer eficiencia y eficacia en gestión administrativa y financiera de establecimientos educacionales |
+| GN-LEY-PPTO-2026-ART47-D | Destinar recursos para fines educativos establecidos en el artículo 3 |
+| GN-LEY-PPTO-2026-ART47-E | Racionalizar dotación de profesionales y asistentes de la educación para optimizar estructuras de costos y garantizar sostenibilidad financiera en el tiempo |
 #### Literal A Anio 2026
 #### Condiciones
 Para acciones previstas en literal a) precedente
@@ -2170,12 +2124,10 @@ Sostenedor incumpla total o parcialmente el Plan
 #### Requisitos
 Reintegrar a rentas generales de la Nación
 #### Plazos
-| Plazo | Obj |
-| --- | --- |
-| A más tardar el 31 de julio de 2026 | Totalidad de montos no ejecutados |
-| Plazo | Cond |
-| --- | --- |
-| A más tardar el 30 de octubre de 2026 | En el caso del literal a) del inciso tercero |
+| Plazo | Obj | Cond |
+| --- | --- | --- |
+| A más tardar el 31 de julio de 2026 | Totalidad de montos no ejecutados |  |
+| A más tardar el 30 de octubre de 2026 |  | En el caso del literal a) del inciso tercero |
 #### Merito Ejecutivo
 #### Resultados
 Resoluciones señaladas en los incisos quinto y sexto tendrán mérito ejecutivo
@@ -2332,12 +2284,10 @@ Semestre inmediatamente anterior
 #### Requisitos
 Identificar, para cada Partida, Capítulo y, cuando corresponda, Programa, a lo menos
 #### Desglose
-| ID | Desc | Contenido |
-| --- | --- | --- |
-| GN-LEY-PPTO-2026-ART53-1 | Deuda directa del Estado | Saldo total de obligaciones devengadas y pendientes de pago del Fisco y de órganos del sector público comprendidos en la Ley de Presupuestos del Sector Público, incluidos compromisos contabilizados y toda otra obligación exigible con cargo a gastos presupuestarios |
 | ID | Desc | Contenido | Tramos |
 | --- | --- | --- | --- |
-| GN-LEY-PPTO-2026-ART53-2 | Desglose por antigüedad de la deuda | Monto total de obligaciones pendientes de pago, clasificadas según tiempo transcurrido desde su devengamiento o recepción de la factura | ['0 a 30 días', '31 a 90 días', 'Más de 90 días'] |
+| GN-LEY-PPTO-2026-ART53-1 | Deuda directa del Estado | Saldo total de obligaciones devengadas y pendientes de pago del Fisco y de órganos del sector público comprendidos en la Ley de Presupuestos del Sector Público, incluidos compromisos contabilizados y toda otra obligación exigible con cargo a gastos presupuestarios |  |
+| GN-LEY-PPTO-2026-ART53-2 | Desglose por antigüedad de la deuda | Monto total de obligaciones pendientes de pago, clasificadas según tiempo transcurrido desde su devengamiento o recepción de la factura | 0 a 30 días, 31 a 90 días, Más de 90 días |
 #### Formato
 #### Requisitos
 Presentarse en formato consolidado y en detalle por Partida y Capítulo
@@ -2368,53 +2318,21 @@ Actualizada al 31 de diciembre de 2025
 | ID | Desc |
 | --- | --- |
 | GN-LEY-PPTO-2026-ART54-1 | Número de funcionarios que presentaron su renuncia antes de instruirse un procedimiento disciplinario en su contra |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-2 | Número de procedimientos disciplinarios instruidos |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-3 | Número de funcionarios con procedimiento disciplinario instruido |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-4 | Duración promedio de la o las licencias investigadas (días corridos) |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-5 | Remuneraciones promedio de funcionarios objeto del procedimiento disciplinario (remuneración bruta mensualizada durante periodo en que se extendió la o las licencias investigadas) |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-6 | Número de funcionarios con procedimientos disciplinarios en etapa de investigación |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-7 | Número de funcionarios con procedimientos disciplinarios con vista de fiscal emitida |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-8 | Número de funcionarios cuyos procedimientos disciplinarios fueron resueltos por el Jefe Superior del Servicio |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-9 | Número de funcionarios a quienes se aplicó medida disciplinaria de censura |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-10 | Número de funcionarios a quienes se aplicó medida disciplinaria de multa |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-11 | Número de funcionarios a quienes se aplicó medida disciplinaria de suspensión del empleo |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-12 | Número de funcionarios a quienes se aplicó medida disciplinaria de destitución |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-13 | Número de funcionarios absueltos de cargos formulados en procedimiento disciplinario |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-14 | Número de funcionarios que impugnaron la resolución que aplica medida disciplinaria |
-| ID | Desc | Destinatario | Ctx |
-| --- | --- | --- | --- |
-| GN-LEY-PPTO-2026-ART54-15 | Número de funcionarios cuya resolución de término del procedimiento disciplinario fue enviada a | {'Ref': 'CGR'} | Trámite de toma de razón, según corresponda |
-| ID | Desc |
-| --- | --- |
+| GN-LEY-PPTO-2026-ART54-15 | Número de funcionarios cuya resolución de término del procedimiento disciplinario fue enviada a |
 | GN-LEY-PPTO-2026-ART54-16 | Número de funcionarios cuya resolución de término del procedimiento disciplinario se encuentra ejecutoriada |
-| ID | Desc |
-| --- | --- |
 | GN-LEY-PPTO-2026-ART54-17 | Toda otra información que solicite la Dirección de Presupuestos |
 #### Informe DIPRES A CEMP
 #### Autoridad
@@ -2510,9 +2428,7 @@ Propenderán a utilización de mecanismos formales de coordinación interinstitu
 | Desc | Ref |
 | --- | --- |
 | De conformidad a lo establecido en el artículo 5 | LEY18575 |
-| Ref |
-| --- |
-| RES30_2015_CGR |
+|  | RES30_2015_CGR |
 #### Informe Trimestral Convenios
 #### Plazo
 Dentro de los treinta días siguientes al término de cada trimestre

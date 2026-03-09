@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:nuble-250
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/02_estrategia/estrategia/kb_gn_056_nuble250_koda.yml
 version: 2.0.0
 status: published
@@ -23,88 +23,28 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.12
+    cr: 1.27
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 105
+    skeleton_count: 1
+    meat_count: 75
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__nuble-250.md.json
 ---
 
 # Agenda Estratégica Ñuble 250
-## ID
-GN-NUBLE-250-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Agenda estratégica regional "Ñuble 250" (fuente STS), con horizonte 2028, gobernanza, estructura por dimensiones/trazos, proyectos detonantes y plan de implementación.
-
-## Primary Source
-staging/gn/kodeando/kb_gn_056_nuble250_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Nuble 250
-### ID
-GN-NUBLE-250-DOC-01
-### Title
+## Titulo
 Artefacto STS: Agenda Estratégica "Ñuble 250"
-### Sections
-#### S 1 definicion general
-#### ID
-GN-N250-SEC-0001
-#### Title
+## Secciones
+### S 1 definicion general
+#### Titulo
 1. Definición General
-#### Content
+#### Contenido
 
 ID: N250-DEFINITION-01
 Def: "Ñuble 250" es una agenda estratégica de desarrollo regional para la Región de Ñuble, Chile.
@@ -117,24 +57,20 @@ Purp: Conmemorar dos hitos fundamentales que convergen en 2028.
 * Cpt: Hito 1. Def: Primer decenio de Ñuble como región independiente.
 * Cpt: Hito 2. Def: 250 aniversario del natalicio de Bernardo O'Higgins.
 Ctx: Bernardo O'Higgins es la figura inspiradora de la agenda, basada en sus valores de coraje, sentido de futuro y confianza.
-#### S 2 genesis y caracter participativo
-#### ID
-GN-N250-SEC-0002
-#### Title
+### S 2 genesis y caracter participativo
+#### Titulo
 2. Génesis y Carácter Participativo
-#### Content
+#### Contenido
 
 Fnd: La agenda es el resultado de un exhaustivo proceso de participación ciudadana y multisectorial.
 Obj: Asegurar que la agenda responda de manera auténtica a las necesidades y aspiraciones de los habitantes de la región.
 Res: Se construyó un diagnóstico claro de necesidades, avances, urgencias y desafíos.
 Dep: Trabajo colectivo entre sector público, privado y academia.
-#### Sections
+#### Secciones
 #### S 2 1 instancias de participacion
-#### ID
-GN-N250-SEC-0003
-#### Title
+#### Titulo
 2.1. Instancias de Participación
-#### Content
+#### Contenido
 
 Cpt: Resumen cuantitativo.
 
@@ -160,12 +96,10 @@ Cpt: Detalle del proceso.
 * Cpt: Colaboración Municipal.
   * Proc: Revisión de las carteras de iniciativas de cada municipio con miras al 2028.
   * Purp: Asegurar la alineación de proyectos locales con objetivos regionales.
-#### S 3 avances y logros de la region
-#### ID
-GN-N250-SEC-0004
-#### Title
+### S 3 avances y logros de la region
+#### Titulo
 3. Avances y Logros de la Región
-#### Content
+#### Contenido
 
 Src: Discurso del Gobernador Óscar Crisóstomo en el Primer Cabildo Regional.
 Ctx: Avances logrados desde la constitución de Ñuble como región independiente hace siete años.
@@ -194,50 +128,40 @@ Ctx: Avances logrados desde la constitución de Ñuble como región independient
 * Cpt: Desafíos Pendientes Reconocidos.
   * Warn: Desempleo regional.
   * Act: Abordar urgencias con impulso de autoridades centrales y trabajo colectivo.
-#### S 4 problema y solucion
-#### ID
-GN-N250-SEC-0005
-#### Title
+### S 4 problema y solucion
+#### Titulo
 4. Problema y Solución
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### S 4 1 el desafio
-#### ID
-GN-N250-SEC-0006
-#### Title
+#### Titulo
 4.1. El Desafío
-#### Content
+#### Contenido
 
 Cause: Fragmentación de iniciativas y pérdida de sinergias.
 Cause: Proyectos valiosos sin conexión territorial ni social.
 Cause: Falta de "dirección de arte" público que alinee carteras sectoriales y comunales.
 #### S 4 2 la solucion
-#### ID
-GN-N250-SEC-0007
-#### Title
+#### Titulo
 4.2. La Solución
-#### Content
+#### Contenido
 
 Def: Una hoja de ruta única e integradora.
 Mdl: Programa-cartera que articula Estado, municipios, empresas y comunidades.
 Mech: Organizado en "trazos" temáticos con proyectos detonantes ("pulsos"), metas y transparencia continua.
-#### S 5 estructura de la agenda dimensiones y trazos
-#### ID
-GN-N250-SEC-0008
-#### Title
+### S 5 estructura de la agenda dimensiones y trazos
+#### Titulo
 5. Estructura de la Agenda: Dimensiones y Trazos
-#### Content
+#### Contenido
 
 ID: N250-STRUCTURE-01
 Def: La agenda se estructura en tres grandes dimensiones, cada una desglosada en tres "trazos" (líneas de trabajo).
-#### Sections
+#### Secciones
 #### S 5 1 dimension 1 territorio vivo
-#### ID
-GN-N250-SEC-0009
-#### Title
+#### Titulo
 5.1. Dimensión 1: Territorio Vivo
-#### Content
+#### Contenido
 
 Mssn: Nuestra Naturaleza y Patrimonio como Base de Desarrollo.
 
@@ -257,11 +181,9 @@ Mssn: Nuestra Naturaleza y Patrimonio como Base de Desarrollo.
   * Obj: Buscar equidad territorial.
   * Obj: Consolidar su potencial como reserva de biodiversidad y destino turístico sostenible.
 #### S 5 2 dimension 2 conectividad y produccion
-#### ID
-GN-N250-SEC-0010
-#### Title
+#### Titulo
 5.2. Dimensión 2: Conectividad y Producción
-#### Content
+#### Contenido
 
 Mssn: Mover Personas y Economía con Inteligencia y Eficiencia.
 
@@ -279,11 +201,9 @@ Mssn: Mover Personas y Economía con Inteligencia y Eficiencia.
   * Obj: Conectar con los principales puertos del centro-sur para ofrecer productos al Asia Pacífico.
   * Ctx: Se acompaña la atracción de inversiones y el impulso de emprendedores junto a CORFO.
 #### S 5 3 dimension 3 bienestar
-#### ID
-GN-N250-SEC-0011
-#### Title
+#### Titulo
 5.3. Dimensión 3: Bienestar
-#### Content
+#### Contenido
 
 Mssn: Movilidad Limpia, Energía Justa y Red de Ciudades y Valles donde la Vida Cotidiana Mejora.
 
@@ -296,12 +216,10 @@ Mssn: Movilidad Limpia, Energía Justa y Red de Ciudades y Valles donde la Vida 
 * Cpt: Trazo Morado: Mente, Cuerpo y Alma.
   * Ctx: Incluye el plan "21 canchas para Ñuble" (10 ya inauguradas).
   * Ctx: Convenio con el Ministerio de Salud que abarca 40 proyectos (CESFAM, postas rurales, equipos para diagnóstico precoz).
-#### S 6 proyectos detonantes y emblematicos
-#### ID
-GN-N250-SEC-0012
-#### Title
+### S 6 proyectos detonantes y emblematicos
+#### Titulo
 6. Proyectos Detonantes y Emblemáticos
-#### Content
+#### Contenido
 
 Cpt: Proyectos concretos y de alto impacto anunciados.
 
@@ -317,22 +235,18 @@ Cpt: Proyectos concretos y de alto impacto anunciados.
   * Res: El futuro centro albergará sala de cine, espacios educativos y áreas para actividades artísticas y astronómicas.
   * Req: Conservar su distintivo estilo Art Decó Tropical.
   * Obj: Proyectar a Ñuble como una región abierta a la cultura, el conocimiento y la ciencia.
-#### S 7 modelo de gestion y gobernanza
-#### ID
-GN-N250-SEC-0013
-#### Title
+### S 7 modelo de gestion y gobernanza
+#### Titulo
 7. Modelo de Gestión y Gobernanza
-#### Content
+#### Contenido
 
 Fnd: "Hacer que las cosas pasen".
 Src: Cita del Gobernador Óscar Crisóstomo: *"Ñuble 250 es mucho más que una cartera de proyectos; es nuestra gran agenda regional para construir juntos nuestro futuro"*.
-#### Sections
+#### Secciones
 #### S 7 1 gobernanza y roles clave
-#### ID
-GN-N250-SEC-0014
-#### Title
+#### Titulo
 7.1. Gobernanza y Roles Clave
-#### Content
+#### Contenido
 
 
 * Cpt: Gobernador.
@@ -349,11 +263,9 @@ GN-N250-SEC-0014
   * Ctx: Territorial; Conectividad y Crecimiento; Bienestar.
   * Ref: N250-GOVERNANCE-CABILDOS-01.
 #### S 7 2 equipo nuble 250 la secretaria tecnica
-#### ID
-GN-N250-SEC-0015
-#### Title
+#### Titulo
 7.2. Equipo Ñuble 250: La Secretaría Técnica
-#### Content
+#### Contenido
 
 ID: N250-GOVERNANCE-TEAM-01
 Purp: Monitorear y gestionar la implementación de la agenda.
@@ -368,11 +280,9 @@ Cpt: Integrantes.
   * Ctx: Arquitecto, Universidad de Concepción. Ex secretario técnico, Consejo de Monumentos Nacionales. Cofundador, Unidad de Patrimonio de la Municipalidad de Chillán (UPA).
   * Res: UPA fue distinguida con el Premio Conservación de Monumentos Nacionales en 2014.
 #### S 7 3 roles operativos nucleares
-#### ID
-GN-N250-SEC-0016
-#### Title
+#### Titulo
 7.3. Roles Operativos Nucleares
-#### Content
+#### Contenido
 
 
 * Resp: Planificación urbana y diseño.
@@ -391,11 +301,9 @@ GN-N250-SEC-0016
   * Resp: Resolución de nudos críticos.
   * Resp: Definición de productos.
 #### S 7 4 los cabildos instancias de gobernanza participativa
-#### ID
-GN-N250-SEC-0017
-#### Title
+#### Titulo
 7.4. Los Cabildos: Instancias de Gobernanza Participativa
-#### Content
+#### Contenido
 
 ID: N250-GOVERNANCE-CABILDOS-01
 Def: Corazón de la gobernanza participativa de "Ñuble 250".
@@ -426,11 +334,9 @@ Cpt: Primer Cabildo Regional.
 * Res: Explicación en detalle de la Agenda Ñuble 250 y el rol de la Secretaría Técnica.
 * Res: Concluyó con un diálogo abierto para seguir aportando al "gran acuerdo por el futuro de Ñuble".
 #### S 7 5 transparencia participacion y comunicacion
-#### ID
-GN-N250-SEC-0018
-#### Title
+#### Titulo
 7.5. Transparencia, Participación y Comunicación
-#### Content
+#### Contenido
 
 
 * Cpt: Participación Ciudadana.
@@ -446,20 +352,16 @@ GN-N250-SEC-0018
   * Cpt: Visor de Proyectos. Def: Sección interactiva para explorar proyectos por dimensión y trazo.
   * Cpt: Noticias. Def: Mantener informada a la comunidad sobre avances.
   * Cpt: Galería Fotográfica. Def: Imágenes de eventos relevantes.
-#### S 8 plan de implementacion
-#### ID
-GN-N250-SEC-0019
-#### Title
+### S 8 plan de implementacion
+#### Titulo
 8. Plan de Implementación
-#### Content
+#### Contenido
 
-#### Sections
+#### Secciones
 #### S 8 1 consolidacion de carteras
-#### ID
-GN-N250-SEC-0020
-#### Title
+#### Titulo
 8.1. Consolidación de Carteras
-#### Content
+#### Contenido
 
 Req: Estructura única de portafolio.
 
@@ -480,11 +382,9 @@ Req: Estructura única de portafolio.
   * Req: Cada proyecto se mapea a un trazo y a un cabildo.
   * Prohib: "Proyecto huérfano".
 #### S 8 2 programacion y metas 2025 2026
-#### ID
-GN-N250-SEC-0021
-#### Title
+#### Titulo
 8.2. Programación y Metas 2025–2026
-#### Content
+#### Contenido
 
 
 Cpt: Hitos transversales.
@@ -515,11 +415,9 @@ Cpt: Metas cuantitativas mínimas.
 * Obj: ≥90% con trazabilidad pública en Observatorio.
 * Obj: ≥70% de hitos de participación ciudadana ejecutados según calendario.
 #### S 8 3 plan de gestion priorizado 30 60 90 dias
-#### ID
-GN-N250-SEC-0022
-#### Title
+#### Titulo
 8.3. Plan de Gestión Priorizado (30-60-90 días)
-#### Content
+#### Contenido
 
 
 * Cpt: Días 0–30.
@@ -538,11 +436,9 @@ GN-N250-SEC-0022
   * Act: Acuerdos interinstitucionales: INDESPA–SERNAPESCA; MINVU; MOP; convenios municipales.
   * Act: Roadmap 2026 cerrado con metas trimestrales.
 #### S 8 4 riesgos y mitigacion
-#### ID
-GN-N250-SEC-0023
-#### Title
+#### Titulo
 8.4. Riesgos y Mitigación
-#### Content
+#### Contenido
 
 
 |Riesgo|Mitigación|
@@ -552,11 +448,9 @@ GN-N250-SEC-0023
 |Brechas de datos|Ficha única, interoperabilidad mínima y Observatorio como “fuente única de verdad”.|
 |Falta de aceptación social|Participación temprana por cabildos y comunicación de beneficios tangibles.|
 #### S 8 5 requerimientos habilitantes
-#### ID
-GN-N250-SEC-0024
-#### Title
+#### Titulo
 8.5. Requerimientos Habilitantes
-#### Content
+#### Contenido
 
 
 * Cpt: Financiamiento.
@@ -574,7 +468,7 @@ GN-N250-SEC-0024
   * Req: Resoluciones de creación de instancias.
   * Req: Mandatos de coordinación.
   * Req: Modelos de convenio tipo.
-### Content
+## Contenido
 \# Artefacto STS: Agenda Estratégica "Ñuble 250"
 
 Version: 1.0.0
@@ -589,53 +483,6 @@ Ctx: Transformación STS de la agenda estratégica de desarrollo para la Región
 
 ---
 
-BEGIN_LLM_INSTRUCTIONS
 
-You are an AI agent consuming a Structured Telegraphic Style (STS) artifact. Your primary task is to parse and reason over THIS document with absolute fidelity, using only the rules defined below. This artifact is a self-contained source of truth.
-
-1. **Core Objective**: Maintain perfect fidelity to the information (`meat`) and structure (`skeleton`). Do not summarize, interpret, or infer information not explicitly present. Prohib: Applying these rules to artifact creation or translation tasks; they are exclusively for consumption.
-2. **Conceptual Metaphors**:
-    * `meat`: Essential information, data, and facts. Must be preserved with zero loss.
-    * `skeleton`: Logical structure (headers, IDs, lists, tables). This is also `meat` and must be preserved.
-    * `fat`: Non-essential verbiage (filler words, rhetoric, stylistic prose). Must be ignored during reasoning as it has no informational value.
-3. **Lexicon Mode & Expansion**: This document uses an **Abbreviated Lexicon**. You MUST treat the following keywords as valid and expand them according to this mapping before processing:
-    * `Act:` -> `Action:`
-    * `Warn:` -> `Warning:`
-    * `Cause:` -> `Cause:`
-    * `Cpt:` -> `Concept:`
-    * `Cond:` -> `Condition:`
-    * `Ctx:` -> `Context:`
-    * `Def:` -> `Definition:`
-    * `Dep:` -> `Dependency:`
-    * `Dest:` -> `Destination:`
-    * `Dln:` -> `Deadline:`
-    * `Ex:` -> `Example:`
-    * `Fnd:` -> `Foundation:`
-    * `ID:` -> `ID:`
-    * `Instr:` -> `Instruction:`
-    * `Just:` -> `Justification:`
-    * `Mech:` -> `Mechanism:`
-    * `Mssn:` -> `Mission:`
-    * `Mdl:` -> `Model:`
-    * `Nat:` -> `Nature:`
-    * `Obj:` -> `Objective:`
-    * `Proc:` -> `Process:`
-    * `Prohib:` -> `Prohibition:`
-    * `Purp:` -> `Purpose:`
-    * `Rec:` -> `Recommendation:`
-    * `Ref:` -> `Reference:`
-    * `Req:` -> `Requirement:`
-    * `Res:` -> `Result:`
-    * `Resp:` -> `Responsible:`
-    * `Src:` -> `Source:`
-4. **Reference (`Ref:`) Policy**:
-    * `Ref:` is used for **internal cross-references only**.
-    * It MUST point to an `ID:` that exists within THIS document.
-    * You MUST NOT interpret a `Ref:` as a link to an external document or resource. Mentions of other documents are purely contextual (`Ctx:`).
-5. **Language Invariance Policy**:
-    * The `Keywords` in the lexicon are a fixed control vocabulary in English.
-    * All `EssentialData` (the content following a `Keyword:`) MUST be preserved in its original language. Do not translate it.
-
-END_LLM_INSTRUCTIONS
 
 ---

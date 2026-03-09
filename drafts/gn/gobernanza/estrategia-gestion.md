@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.47
+    cr: 2.67
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -44,74 +44,28 @@ Sintetizar conceptos y siglas clave utilizados en la guía de estrategia y gesti
 | ID | Sigla | Nombre | Def |
 | --- | --- | --- | --- |
 | GORE-GLOS-GORE | GORE | Gobierno Regional | Entidad pública autónoma de nivel regional, con personalidad jurídica y patrimonio propio, encargada de la administración superior de la región. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-CORE | CORE | Consejo Regional | Órgano colegiado del GORE, con facultades normativas, resolutivas y fiscalizadoras. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-ERD | ERD | Estrategia Regional de Desarrollo | Instrumento rector de largo plazo que define visión, ejes y objetivos estratégicos del desarrollo regional. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-PROT | PROT | Plan Regional de Ordenamiento Territorial | Instrumento que orienta el uso del territorio y la localización de inversiones. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-FNDR | FNDR | Fondo Nacional de Desarrollo Regional | Principal fondo de inversión de los GORE para proyectos de desarrollo regional. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-FRIL | FRIL | Fondo Regional de Iniciativa Local | Fondo orientado a proyectos de infraestructura local de menor escala, ejecutados principalmente por municipalidades. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-FRPD | FRPD | Fondo Regional para la Productividad y el Desarrollo | Fondo financiado por Royalty Minero para iniciativas de productividad, innovación y desarrollo regional. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-SNI | SNI | Sistema Nacional de Inversiones | Marco y plataforma para evaluación técnico-económica de inversiones públicas. |
-| ID | Nombre | Def |
-| --- | --- | --- |
-| GORE-GLOS-VALOR-PUBLICO | Valor Público | Mejora concreta y sostenible en la calidad de vida de las personas y el desarrollo de la región, derivada de la acción del Estado. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
+| GORE-GLOS-VALOR-PUBLICO |  | Valor Público | Mejora concreta y sostenible en la calidad de vida de las personas y el desarrollo de la región, derivada de la acción del Estado. |
 | GORE-GLOS-IPR | IPR | Intervención Pública Regional | Término paraguas para proyectos, programas y otras iniciativas financiadas por el GORE. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-DPR | DPR | Delegado Presidencial Regional | Representante del Presidente de la República que ejerce el gobierno interior de la región y coordina servicios públicos nacionales. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-SEREMI | SEREMI | Secretaría Regional Ministerial | Representante regional de un ministerio, responsable de implementar políticas sectoriales en la región. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-DIPIR | DIPIR | División de Presupuesto e Inversión Regional | División del GORE encargada de elaborar, ejecutar y controlar el presupuesto de inversión regional. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-DIPLADE | DIPLADE | División de Planificación y Desarrollo Regional | División responsable de formular instrumentos de planificación y coordinar la estrategia de desarrollo regional. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-DAF | DAF | División de Administración y Finanzas | División encargada de la gestión administrativa interna, finanzas, recursos humanos y abastecimiento del GORE. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-DIDESOH | DIDESOH | División de Desarrollo Social y Humano | División encargada de programas e iniciativas orientadas a cohesión social, inclusión y acceso a servicios. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-UCI | UCI | Unidad de Control Interno | Unidad asesora del GORE que impulsa gestión de riesgos, control interno y mejora de procesos, y actúa como contraparte técnica de la Contraloría. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-COSOC | COSOC | Consejo de la Sociedad Civil Regional | Órgano consultivo de participación ciudadana del GORE, regulado por la Ley N°20.500 y la Ley N°21.074. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-CCTID | CCTID | Comité Regional de Ciencia, Tecnología e Innovación para el Desarrollo | Órgano asesor del GORE en materias de ciencia, tecnología e innovación para el desarrollo regional. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-SIGFE | SIGFE | Sistema de Información para la Gestión Financiera del Estado | Sistema contable-financiero oficial donde se registran los movimientos presupuestarios del GORE. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-RF | RF | Recomendación Favorable | Resultado favorable de evaluación de programas en Glosa 06 u otros mecanismos de programas públicos. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-MML | MML | Metodología Marco Lógico | Herramienta de planificación y gestión de proyectos y programas orientada a resultados. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-PMO | PMO | Oficina de Gestión de Proyectos | Unidad responsable de estandarizar y profesionalizar la gestión de cartera de proyectos y programas del GORE. |
-| ID | Sigla | Nombre | Def |
-| --- | --- | --- | --- |
 | GORE-GLOS-SINAPRED | SINAPRED | Sistema Nacional de Prevención y Respuesta ante Desastres | Sistema que organiza la gestión del riesgo de desastres en Chile, asignando roles específicos a los gobiernos regionales. |
 
 ## Parte I Fundamentos Gestion Publica Regional
@@ -129,18 +83,12 @@ Caracterizar los desafíos y singularidades de la gestión pública en los Gobie
 Nivel de análisis: GORE, en el marco de Estado unitario y descentralización en curso.
 #### Singularidad Gestion GORE
 #### Conceptos
-| Cpt | Ctx | Nat | Fnd | Purp |
-| --- | --- | --- | --- | --- |
-| Principio-Actuacion-Directivo-Publico | Comparación Gerente Privado vs Directivo Público Regional. | ['Gerente privado puede hacer todo lo que la ley no prohíbe.', 'Directivo público solo puede hacer lo que la ley permite expresamente.'] | Característica central del Estado de Derecho. | Limitar la arbitrariedad y asegurar ejercicio del poder público dentro de cauces normativos. |
-| Cpt | ID | Def | Componentes |
-| --- | --- | --- | --- |
-| Marco-Juridico-GORE | GORE-MARCO-JURIDICO-01 | Conjunto de normativas que rigen creación, organización y funcionamiento de los GORE. | ['Constitución Política de la República.', 'Ley 19.175: Ley Orgánica Constitucional sobre Gobierno y Administración Regional (DFL N°1-19.175/2005).', 'Ley 21.074: Fortalecimiento de la Regionalización, que modifica sustantivamente la Ley 19.175.'] |
-| Cpt | ID | Src | Nat | Cond |
-| --- | --- | --- | --- | --- |
-| Autonomia-GORE | GORE-AUTONOMIA-01 | Normativa del marco jurídico GORE. | ['Personas jurídicas de derecho público.', 'Patrimonio propio.', 'Autonomía para administrar asuntos de su competencia.'] | La autonomía se ejerce en un Estado unitario, requiriendo coordinación con políticas y directrices nacionales. |
-| Cpt | ID | Nat | Stakeholders | Req |
-| --- | --- | --- | --- | --- |
-| Ecosistema-Stakeholders-GORE | GORE-STAKEHOLDERS-01 | Complejidad de actores y relaciones. | ['Consejo Regional (CORE).', 'Delegado Presidencial Regional (DPR).', 'SEREMIs y servicios públicos desconcentrados.', 'Municipios de la región.', 'Organizaciones de la sociedad civil.', 'Sector privado regional.', 'Órganos de control (CGR, otros).'] | El directivo GORE requiere alta capacidad de articulación y liderazgo político-técnico. |
+| Cpt | Nat | ID |
+| --- | --- | --- |
+| Principio-Actuacion-Directivo-Publico | Gerente privado puede hacer todo lo que la ley no prohíbe., Directivo público solo puede hacer lo que la ley permite expresamente. |  |
+| Marco-Juridico-GORE |  | GORE-MARCO-JURIDICO-01 |
+| Autonomia-GORE | Personas jurídicas de derecho público., Patrimonio propio., Autonomía para administrar asuntos de su competencia. | GORE-AUTONOMIA-01 |
+| Ecosistema-Stakeholders-GORE | Complejidad de actores y relaciones. | GORE-STAKEHOLDERS-01 |
 ### Proposito y Valor Publico Regional
 #### Proposito
 Definir el propósito fundamental del GORE y su rol en la creación de valor público regional.
@@ -190,17 +138,11 @@ Falla en uno de los procesos compromete el sistema completo.
 #### Proposito
 Extraer aprendizajes de la experiencia latinoamericana en gestión pública e implementación.
 #### Conceptos
-| Cpt | Def |
-| --- | --- |
-| Desafio-Implementacion | No basta formular buenas estrategias; sin capacidad de gestión, procesos adecuados y voluntad política, los resultados no se materializan. |
-| Cpt | Req |
-| --- | --- |
-| Foco-en-Gestion-sobre-Politica-Contingente | La gestión técnica orientada a resultados no debe supeditarse a clientelismo, cálculos electorales de corto plazo ni capturas institucionales. |
 | Cpt | Act |
 | --- | --- |
-| Construccion-Capacidades-Institucionales | ['Invertir en desarrollo de equipos humanos.', 'Modernizar sistemas de gestión.', 'Adoptar buenas prácticas de gestión.'] |
-| Cpt | Act |
-| --- | --- |
+| Desafio-Implementacion |  |
+| Foco-en-Gestion-sobre-Politica-Contingente |  |
+| Construccion-Capacidades-Institucionales | Invertir en desarrollo de equipos humanos., Modernizar sistemas de gestión., Adoptar buenas prácticas de gestión. |
 | Rendicion-Cuentas-y-Transparencia | Fortalecer transparencia (activa y pasiva) y comunicar impacto de la gestión del GORE. |
 ### GORE y Entorno
 #### Proposito
@@ -212,12 +154,10 @@ Comprender la posición del GORE en el Estado unitario descentralizado, tensione
 #### Contexto
 Marco constitucional y legal que define posición del GORE.
 #### Conceptos
-| Cpt | Nat | Principios |
-| --- | --- | --- |
-| Estado-Chile | ['Estado unitario.'] | ['Administración del Estado funcional y territorialmente descentralizada o desconcentrada.'] |
-| Cpt | Def | Regulacion | Cambios_Clave_Ley_21074 |
-| --- | --- | --- | --- |
-| GORE-en-Estado | Principal expresión de administración descentralizada a nivel regional. | ['Ley 19.175 (LOC GORE).', 'Ley 21.074 (Fortalecimiento de la Regionalización).'] | ['Elección directa de Gobernadores Regionales.', 'Rediseño de estructura interna del GORE.', 'Ampliación de competencias y mecanismo formal de transferencia.'] |
+| Cpt | Nat | Principios | Def | Regulacion | Cambios_Clave_Ley_21074 |
+| --- | --- | --- | --- | --- | --- |
+| Estado-Chile | Estado unitario. | Administración del Estado funcional y territorialmente descentralizada o desconcentrada. |  |  |  |
+| GORE-en-Estado |  |  | Principal expresión de administración descentralizada a nivel regional. | Ley 19.175 (LOC GORE)., Ley 21.074 (Fortalecimiento de la Regionalización). | Elección directa de Gobernadores Regionales., Rediseño de estructura interna del GORE., Ampliación de competencias y mecanismo formal de transferencia. |
 #### Tensiones Politicas Intergubernamentales
 #### Proposito
 - Entender el conflicto intergubernamental como rasgo inherente de sistemas descentralizados.
@@ -311,13 +251,9 @@ Analizar rol, desafíos y competencias del directivo público regional en el GOR
 #### Perfiles
 | Cpt | ID | Nat | Resp |
 | --- | --- | --- | --- |
-| Gobernador/a Regional | GORE-ROL-GOBERNADOR-01 | Máxima autoridad ejecutiva regional, elegida democráticamente. | ['Liderar formulación ERD.', 'Proponer presupuesto regional.', 'Coordinar acción integral del GORE.'] |
-| Cpt | ID | Nat | Resp |
-| --- | --- | --- | --- |
-| Administrador/a Regional | GORE-ROL-ADMINISTRADOR-01 | Funcionario de exclusiva confianza del Gobernador/a. | ['Gestión administrativa y coordinación de divisiones.', 'Subrogante legal del Gobernador/a.'] |
-| Cpt | ID | Resp |
-| --- | --- | --- |
-| Jefes/as de División | GORE-ROL-JEFE-DIVISION-01 | Liderar divisiones especializadas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESOH, Prevención Delito). |
+| Gobernador/a Regional | GORE-ROL-GOBERNADOR-01 | Máxima autoridad ejecutiva regional, elegida democráticamente. | Liderar formulación ERD., Proponer presupuesto regional., Coordinar acción integral del GORE. |
+| Administrador/a Regional | GORE-ROL-ADMINISTRADOR-01 | Funcionario de exclusiva confianza del Gobernador/a. | Gestión administrativa y coordinación de divisiones., Subrogante legal del Gobernador/a. |
+| Jefes/as de División | GORE-ROL-JEFE-DIVISION-01 |  | Liderar divisiones especializadas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESOH, Prevención Delito). |
 #### Desafio Comun
 Equilibrar demandas técnicas y políticas, presiones externas y recursos limitados, visión de largo plazo y urgencias.
 #### Triangulo Estrategico Moore

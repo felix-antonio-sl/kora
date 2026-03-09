@@ -5,6 +5,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import os
 import re
 import shutil
@@ -71,14 +72,18 @@ SEMANTIC_FIELD_LABELS = {
     "Act": "Acciones",
     "Alcance": "Alcance",
     "Asunto": "Asunto",
+    "Columns": "Columnas",
     "Cond": "Condiciones",
     "Content": "Contenido",
+    "Ctx_Optional": "Contexto opcional",
+    "Ctx_Required": "Contexto requerido",
     "Contexto": "Contexto",
     "Ctx": "Contexto",
     "Def": "Definicion",
     "Dependencia": "Dependencia",
     "Destinatarios": "Destinatarios",
     "Fnd": "Fundamento",
+    "Headers": "Encabezados",
     "Intro": "Introduccion",
     "Mech": "Mecanismo",
     "Mssn": "Mision",
@@ -91,6 +96,7 @@ SEMANTIC_FIELD_LABELS = {
     "Req": "Requisitos",
     "Res": "Resultados",
     "Resp": "Responsables",
+    "Rows": "Filas",
     "Sections": "Secciones",
     "Src": "Fuentes",
     "Titulo": "Titulo",
@@ -100,12 +106,16 @@ SEMANTIC_FIELD_LABELS = {
 }
 BULLET_FIELD_KEYS = {
     "Act",
+    "Columns",
     "Cond",
     "Ctx",
+    "Ctx_Optional",
+    "Ctx_Required",
     "Def",
     "Dependencia",
     "Destinatarios",
     "Fnd",
+    "Headers",
     "Intro",
     "Mech",
     "Mssn",
@@ -118,18 +128,23 @@ BULLET_FIELD_KEYS = {
     "Req",
     "Res",
     "Resp",
+    "Rows",
     "Sections",
     "Src",
     "Warn",
 }
 FIELD_HEADING_KEYS = {
     "Act",
+    "Columns",
     "Cond",
     "Ctx",
+    "Ctx_Optional",
+    "Ctx_Required",
     "Def",
     "Dependencia",
     "Destinatarios",
     "Fnd",
+    "Headers",
     "Mech",
     "Obj",
     "Proc",
@@ -139,6 +154,7 @@ FIELD_HEADING_KEYS = {
     "Req",
     "Res",
     "Resp",
+    "Rows",
     "Sections",
     "Src",
     "Warn",
@@ -243,11 +259,16 @@ def normalize_scalar(value):
     if isinstance(value, bool):
         return "true" if value else "false"
     text = str(value)
+    if "BEGIN_LLM_INSTRUCTIONS" in text:
+        text = re.sub(r"BEGIN_LLM_INSTRUCTIONS.*?(END_LLM_INSTRUCTIONS|$)", "", text, flags=re.DOTALL)
+        text = text.strip()
     text = re.sub(r"(?m)^(#{1,6}\s)", r"\\\1", text)
     return text
 
 
 def escape_markdown_table_cell(value):
+    if isinstance(value, list) and all(not isinstance(item, (dict, list)) for item in value):
+        value = ", ".join(normalize_scalar(item) for item in value)
     return normalize_scalar(value).replace("|", "\\|").replace("\n", "<br>")
 
 
@@ -403,8 +424,41 @@ def validate_body_urn_resolution(tree_root, allowed_urns, fragment_catalog=None)
 def is_table_candidate(items):
     if not items or not all(isinstance(item, dict) for item in items):
         return False
-    key_sets = [tuple(item.keys()) for item in items if item]
-    return bool(key_sets) and all(keys == key_sets[0] for keys in key_sets)
+    headers = dict_list_headers(items)
+    return bool(headers)
+
+
+def dict_list_headers(items):
+    if not items or not all(isinstance(item, dict) for item in items):
+        return []
+    headers = []
+    seen = set()
+    scalar_header_count = {}
+    for item in items:
+        for key, value in item.items():
+            if isinstance(value, dict):
+                continue
+            if isinstance(value, list) and any(isinstance(child, (dict, list)) for child in value):
+                continue
+            scalar_header_count[key] = scalar_header_count.get(key, 0) + 1
+            if key not in seen:
+                seen.add(key)
+                headers.append(key)
+    min_presence = max(1, math.ceil(len(items) * 0.5))
+    return [header for header in headers if scalar_header_count.get(header, 0) >= min_presence]
+
+
+def render_dict_table(items):
+    headers = dict_list_headers(items)
+    if not headers:
+        return []
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join("---" for _ in headers) + " |",
+    ]
+    for item in items:
+        lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+    return lines
 
 
 def is_columns_rows_table(node):
@@ -413,8 +467,15 @@ def is_columns_rows_table(node):
     return isinstance(node.get("Columns"), list) and isinstance(node.get("Rows"), list)
 
 
+def is_headers_rows_table(node):
+    if not isinstance(node, dict):
+        return False
+    return isinstance(node.get("Headers"), list) and isinstance(node.get("Rows"), list)
+
+
 def render_columns_rows_table(node):
-    headers = [escape_markdown_table_cell(item) for item in node.get("Columns", [])]
+    raw_headers = node.get("Columns") if "Columns" in node else node.get("Headers", [])
+    headers = [escape_markdown_table_cell(item) for item in raw_headers]
     rows = node.get("Rows", [])
     if not headers:
         return []
@@ -445,11 +506,7 @@ def render_field_block(label, value, level):
         if value and all(not isinstance(item, (dict, list)) for item in value):
             lines.extend(f"- {normalize_scalar(item)}" for item in value)
         elif is_table_candidate(value):
-            headers = list(value[0].keys())
-            lines.append("| " + " | ".join(headers) + " |")
-            lines.append("| " + " | ".join("---" for _ in headers) + " |")
-            for item in value:
-                lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+            lines.extend(render_dict_table(value))
         else:
             for item in value:
                 if isinstance(item, dict):
@@ -467,15 +524,18 @@ def render_field_block(label, value, level):
 
 def render_kora_node(node, level):
     lines = []
-    if is_columns_rows_table(node):
+    if is_columns_rows_table(node) or is_headers_rows_table(node):
         lines.extend(render_columns_rows_table(node))
+        return lines
+    if isinstance(node, list) and is_table_candidate(node):
+        lines.extend(render_dict_table(node))
         return lines
 
     if isinstance(node, dict):
         for key, value in node.items():
             if key in KODA_BODY_EXCLUDED_KEYS:
                 continue
-            if is_columns_rows_table(value):
+            if is_columns_rows_table(value) or is_headers_rows_table(value):
                 lines.append(f"{'#' * min(level + 1, 4)} {field_label(key)}")
                 lines.extend(render_columns_rows_table(value))
                 continue
@@ -484,11 +544,7 @@ def render_kora_node(node, level):
                 continue
             if isinstance(value, list) and is_table_candidate(value):
                 lines.append(f"{'#' * min(level + 1, 4)} {field_label(key)}")
-                headers = list(value[0].keys())
-                lines.append("| " + " | ".join(headers) + " |")
-                lines.append("| " + " | ".join("---" for _ in headers) + " |")
-                for item in value:
-                    lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+                lines.extend(render_dict_table(value))
                 continue
 
             heading_level = min(level + 1, 4)
@@ -499,10 +555,7 @@ def render_kora_node(node, level):
                 for item in value:
                     if isinstance(item, dict):
                         if is_table_candidate([item]):
-                            headers = list(item.keys())
-                            lines.append("| " + " | ".join(headers) + " |")
-                            lines.append("| " + " | ".join("---" for _ in headers) + " |")
-                            lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+                            lines.extend(render_dict_table([item]))
                         else:
                             lines.append("-")
                             rendered = render_kora_node(item, heading_level)
@@ -719,10 +772,24 @@ def render_direct_body(title, projection):
 def strip_koda_technical_fields(node, depth=0):
     if isinstance(node, dict):
         cleaned = {}
+        semantic_siblings = []
+        for key in node.keys():
+            if depth == 0 and key in TOP_LEVEL_KODA_TECHNICAL_KEYS:
+                continue
+            if depth > 0 and key in NESTED_KODA_TECHNICAL_KEYS:
+                continue
+            semantic_siblings.append(key)
         for key, value in node.items():
             if depth == 0 and key in TOP_LEVEL_KODA_TECHNICAL_KEYS:
                 continue
             if depth > 0 and key in NESTED_KODA_TECHNICAL_KEYS:
+                continue
+            if (
+                key == "Content"
+                and isinstance(value, dict)
+                and ("Body_MD" in value or "Content" in value)
+                and any(sibling != "Content" for sibling in semantic_siblings)
+            ):
                 continue
             cleaned[key] = strip_koda_technical_fields(value, depth + 1)
         return cleaned
@@ -764,7 +831,11 @@ def embedded_markdown_looks_kora_like(text):
         r"BEGIN_LLM_INSTRUCTIONS",
         r"END_LLM_INSTRUCTIONS",
     )
-    return not any(re.search(pattern, text) for pattern in banned_patterns)
+    if any(re.search(pattern, text) for pattern in banned_patterns):
+        return False
+    if len(re.findall(r"(?m)^\s*###\s+Nombre\s*$", text)) >= 2 and len(re.findall(r"(?m)^\s*###\s+Def\s*$", text)) >= 2:
+        return False
+    return True
 
 
 def render_koda_hybrid_body(title, projection):
@@ -790,7 +861,6 @@ def render_composite_body(title, item, projections):
         return "\n".join(lines).strip() + "\n"
 
     primary_source, primary_projection = items[0]
-    lines.extend(["", "## Fuente principal", f"- `{primary_source}`"])
     if str(primary_source).endswith((".yml", ".yaml", ".json")):
         primary_body = render_koda_hybrid_body(title, primary_projection).splitlines()
         filtered = [line for line in primary_body if not line.startswith("# ")]

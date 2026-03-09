@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.28
+    cr: 2.39
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -42,20 +42,10 @@ extensions:
 MANUAL-DESARROLLO-ORG-01
 
 ## Authoritative Sources
--
-  ### Path
-  staging/temp/brutos ordenados/01_gestion_personas/res_exta_132_designa_encargado_y_referentes_tecnicos_cdc_2025_koda.yml
-  ### Type
-  CDC-Resolution
-  ### Priority
-  1
--
-  ### Path
-  staging/temp/brutos ordenados/01_gestion_personas/res_exta_817_define_equipos_trabajo_cdc_2025_koda.yml
-  ### Type
-  CDC-Teams-Resolution
-  ### Priority
-  1
+| Path | Type | Priority |
+| --- | --- | --- |
+| staging/temp/brutos ordenados/01_gestion_personas/res_exta_132_designa_encargado_y_referentes_tecnicos_cdc_2025_koda.yml | CDC-Resolution | 1 |
+| staging/temp/brutos ordenados/01_gestion_personas/res_exta_817_define_equipos_trabajo_cdc_2025_koda.yml | CDC-Teams-Resolution | 1 |
 
 ## Last Validated
 2025-12-18
@@ -115,15 +105,11 @@ Instrumento formal para evaluar el desempeño funcionario.
 #### Requisitos
 Anual (1 de septiembre al 31 de agosto).
 #### Etapas
-| Etapa | Resp | Def |
-| --- | --- | --- |
-| 1. Precalificación | Jefe Directo | Evalúa factores cualitativos y cuantitativos. |
 | Etapa | Def |
 | --- | --- |
+| 1. Precalificación | Evalúa factores cualitativos y cuantitativos. |
 | 2. Junta Calificadora | Comité colegiado que revisa las precalificaciones y asigna la nota final y Lista (1: Distinción, 2: Buena, 3: Condicional, 4: Eliminación). |
-| Etapa | Proc |
-| --- | --- |
-| 3. Apelación | ['Funcionario puede apelar ante la Junta', 'En segunda instancia, ante la Contraloría (por vicios de legalidad).'] |
+| 3. Apelación |  |
 #### 5 Metas y Compromisos PMG
 #### Metas de Gestion Institucional
 #### Definicion
@@ -158,7 +144,7 @@ Modalidad sujeta a factibilidad técnica y normativa específica (Ley de Presupu
 Este manual fomenta la carrera funcionaria y la profesionalización del capital humano regional. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml

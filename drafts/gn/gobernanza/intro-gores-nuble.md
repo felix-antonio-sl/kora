@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.77
+    cr: 2.93
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -144,15 +144,9 @@ Ley N°21.730 (2023).
 | Res |
 | --- |
 | Nuevos SEREMI de Seguridad Pública en cada región. |
-| Res | Resp |
-| --- | --- |
-| Fortalecimiento de Consejos Regionales de Seguridad Pública. | ['Preside Delegado Presidencial Regional (DPR).', 'Secretaría Ejecutiva a cargo del SEREMI de Seguridad Pública.'] |
-| Res |
-| --- |
+| Fortalecimiento de Consejos Regionales de Seguridad Pública. |
 | Dependencia administrativa de Carabineros y PDI del Ministerio de Seguridad Pública. |
-| Res | Ctx |
-| --- | --- |
-| Nueva coordinación GORE-Seguridad Pública. | Rol del GORE más explícito en prevención del delito, en coordinación con el nuevo ministerio. |
+| Nueva coordinación GORE-Seguridad Pública. |
 #### Avances Transformacion Digital y Proteccion Datos
 #### Transformacion Digital Ley 21180
 #### Cpt
@@ -205,14 +199,8 @@ Nueva estructura presupuestaria y fondos específicos.
 | Cpt | Ref |
 | --- | --- |
 | FNDR (Fondo Nacional de Desarrollo Regional). | GN-GLOS-FNDR |
-| Cpt | Ref | Ctx |
-| --- | --- | --- |
-| FRPD (Fondo Regional de Productividad y Desarrollo). | GN-GLOS-FRPD | Derivado del Royalty Minero, destinado a iniciativas de innovación, competitividad y fomento productivo. |
-| Cpt | Ref |
-| --- | --- |
+| FRPD (Fondo Regional de Productividad y Desarrollo). | GN-GLOS-FRPD |
 | Subvenciones 8% FNDR. | GN-GLOS-FNDR |
-| Cpt | Ref |
-| --- | --- |
 | FRIL (Fondo Regional de Iniciativa Local). | GN-GLOS-FRIL |
 #### Actualizacion Glosas Normas Ejecucion
 #### Cpt
@@ -297,23 +285,19 @@ Chillán.
 #### Definicion
 3 provincias, 21 comunas.
 #### Provincias
-| Nombre | Capital | Comunas |
-| --- | --- | --- |
-| Diguillín | {'Ctx': 'Capital.', 'Def': 'Bulnes.'} | {'Ctx': 'Comunas.', 'Def': 'Bulnes, Chillán, Chillán Viejo, El Carmen, Pemuco, Pinto, Quillón, San Ignacio, Yungay.'} |
-| Itata | {'Ctx': 'Capital.', 'Def': 'Quirihue.'} | {'Ctx': 'Comunas.', 'Def': 'Cobquecura, Coelemu, Ninhue, Portezuelo, Quirihue, Ránquil, Treguaco.'} |
-| Punilla | {'Ctx': 'Capital.', 'Def': 'San Carlos.'} | {'Ctx': 'Comunas.', 'Def': 'Coihueco, Ñiquén, San Carlos, San Fabián, San Nicolás.'} |
+| Nombre |
+| --- |
+| Diguillín |
+| Itata |
+| Punilla |
 #### Autoridades Regional y Comunales
 #### Autoridades Nacionales Con Representacion Regional
 #### Tabla Autoridades Nacionales
 | Cargo | Nombres |
 | --- | --- |
-| Senadores | ['Gustavo Sanhueza Dueñas', 'Loreto Carvajal Ambiado'] |
-| Cargo | Nombres |
-| --- | --- |
-| Diputados (Distrito 19) | ['Cristóbal Martínez Ramírez', 'Felipe Camaño Cárdenas', 'Frank Sauerbaum Muñoz', 'Marta Bravo Salinas', 'Sara Concha Smith'] |
-| Cargo | Nombre | Ctx |
-| --- | --- | --- |
-| Delegado Presidencial | Rodrigo García Hurtado | Rol definido en el marco institucional del Gobierno Interior (Delegado Presidencial Regional). |
+| Senadores | Gustavo Sanhueza Dueñas, Loreto Carvajal Ambiado |
+| Diputados (Distrito 19) | Cristóbal Martínez Ramírez, Felipe Camaño Cárdenas, Frank Sauerbaum Muñoz, Marta Bravo Salinas, Sara Concha Smith |
+| Delegado Presidencial |  |
 #### Autoridades Region y Comunas Detalle
 #### Gobernador Regional
 #### Tabla
@@ -1080,19 +1064,11 @@ Ciclo anual del presupuesto regional con fases definidas; la interacción con el
 #### Fases
 | Nombre | Act |
 | --- | --- |
-| Formulacion | ['La División de Presupuesto e Inversión Regional (DIPIR) lidera la formulación del presupuesto de inversión (ARI).', 'La División de Administración y Finanzas (DAF) lidera el presupuesto de funcionamiento.'] |
-| Nombre | Act | Ctx |
-| --- | --- | --- |
-| Aprobacion_y_Distribucion | ['El Gobernador propone la distribución del presupuesto al CORE para su aprobación.'] | ['El acto administrativo de aprobación debe ser visado por DIPRES y tomado de razón por la CGR para adquirir vigencia.'] |
-| Nombre | Act | Sistemas_Clave |
-| --- | --- | --- |
-| Ejecucion | ['DAF gestiona el registro financiero en SIGFE.', 'DIPIR monitorea el avance físico a través de sistemas como BIP.', 'Los pagos se ejecutan diariamente, sujetos a disponibilidad de caja.'] | [{'Cpt': 'Sistema financiero SIGFE.', 'Ref': 'GN-GLOS-SIGFE'}, {'Cpt': 'Sistema de seguimiento de inversión BIP.', 'Ref': 'GN-GLOS-BIP'}] |
-| Nombre | Act | Ctx |
-| --- | --- | --- |
-| Modificaciones | ['Las reasignaciones de recursos de inversión, por regla general, requieren aprobación del CORE.'] | ['Todas las modificaciones relevantes deben ser visadas por DIPRES y CGR, aun cuando no requieran aprobación del CORE.'] |
-| Nombre | Act |
-| --- | --- |
-| Cierre_y_Evaluacion | ['DAF calcula la deuda flotante y el saldo final.', 'DIPIR evalúa el cumplimiento de metas físicas.', 'Los resultados alimentan la formulación del ciclo siguiente.'] |
+| Formulacion | La División de Presupuesto e Inversión Regional (DIPIR) lidera la formulación del presupuesto de inversión (ARI)., La División de Administración y Finanzas (DAF) lidera el presupuesto de funcionamiento. |
+| Aprobacion_y_Distribucion | El Gobernador propone la distribución del presupuesto al CORE para su aprobación. |
+| Ejecucion | DAF gestiona el registro financiero en SIGFE., DIPIR monitorea el avance físico a través de sistemas como BIP., Los pagos se ejecutan diariamente, sujetos a disponibilidad de caja. |
+| Modificaciones | Las reasignaciones de recursos de inversión, por regla general, requieren aprobación del CORE. |
+| Cierre_y_Evaluacion | DAF calcula la deuda flotante y el saldo final., DIPIR evalúa el cumplimiento de metas físicas., Los resultados alimentan la formulación del ciclo siguiente. |
 ### Ejecucion Presupuestaria Historica 2020 2024
 #### Fuentes
 Serie de ejecución presupuestaria 2020-2024.
@@ -1212,10 +1188,10 @@ SISREC es la plataforma obligatoria para gestionar rendiciones de transferencias
 #### Flujo Simplificado
 | Paso | Actor | Act |
 | --- | --- | --- |
-| 1 | Entidad ejecutora | ['Ingresa gastos en SISREC, adjunta respaldos digitalizados y envía la rendición al GORE con firma electrónica.'] |
-| 2 | GORE-RTF | ['Revisa rendición en SISREC, aprueba o formula observaciones y, si corresponde, la deriva a DAF.'] |
-| 3 | GORE-DAF | ['Firma el informe de aprobación total o parcial con firma electrónica avanzada y valida la rendición.'] |
-| 4 | GORE-Contabilidad | ['Con el informe de aprobación, registra el gasto en SIGFE y archiva antecedentes.'] |
+| 1 | Entidad ejecutora | Ingresa gastos en SISREC, adjunta respaldos digitalizados y envía la rendición al GORE con firma electrónica. |
+| 2 | GORE-RTF | Revisa rendición en SISREC, aprueba o formula observaciones y, si corresponde, la deriva a DAF. |
+| 3 | GORE-DAF | Firma el informe de aprobación total o parcial con firma electrónica avanzada y valida la rendición. |
+| 4 | GORE-Contabilidad | Con el informe de aprobación, registra el gasto en SIGFE y archiva antecedentes. |
 #### Gobernanza del Control y Consecuencias
 #### Contexto
 El sistema de control contempla consecuencias directas ante incumplimientos en rendiciones de cuentas.
@@ -1225,43 +1201,25 @@ El sistema de control contempla consecuencias directas ante incumplimientos en r
 - Control externo de CGR, DIPRES y MDSF.
 #### Consecuencias Del Incumplimiento
 #### Elementos
-| Cpt | Prohib |
-| --- | --- |
-| Suspension_de_Nuevos_Fondos | El GORE no debe entregar nuevos recursos a entidades con rendiciones pendientes y exigibles. |
-| Cpt | Cause |
-| --- | --- |
-| Obligacion_de_Restituir | Rendiciones no presentadas, no aprobadas u observadas pueden generar obligación de reintegrar fondos. |
-| Cpt | Def |
-| --- | --- |
-| Responsabilidades | Las irregularidades pueden derivar en responsabilidad administrativa (sumarios), civil (juicios de cuentas) y penal (fraude al fisco). |
+| Cpt |
+| --- |
+| Suspension_de_Nuevos_Fondos |
+| Obligacion_de_Restituir |
+| Responsabilidades |
 
 ## Parte IV Diagnostico Estrategico Region Nuble
 ### Desafios Regionales
 #### Desafios
 | Nombre | Obj | Ctx |
 | --- | --- | --- |
-| Pobreza_y_Desigualdad | Abordar brechas socioeconómicas estructurales. | ['Foco en zonas rurales y grupos vulnerables.', 'Tasa de pobreza por ingresos en Ñuble de alrededor de 12.1%, superior al promedio nacional.', 'Comunas críticas incluyen territorios como Cobquecura y Pemuco con niveles de pobreza cercanos al 19%.'] |
-| Nombre | Obj | Ctx | Req |
-| --- | --- | --- | --- |
-| Diversificacion_Productiva | Superar dependencia del sector primario silvoagropecuario. | ['Base con más de siete mil empresas y decenas de miles de empleos ligados al agro.'] | ['Transición hacia agroindustria de mayor valor agregado, turismo y servicios.'] |
-| Nombre | Obj | Ctx |
-| --- | --- | --- |
-| Seguridad_Hidrica_y_Cambio_Climatico | Gestionar los recursos hídricos de forma sostenible y adaptarse al cambio climático. | ['Región afectada por déficit hídrico permanente y alta exposición a incendios forestales.'] |
-| Nombre | Obj | Ctx |
-| --- | --- | --- |
-| Conectividad | Cerrar brechas en caminos rurales, transporte público y acceso a internet de banda ancha fija. | ['Casi la mitad de los hogares depende exclusivamente de conexiones móviles, limitando el desarrollo.'] |
-| Nombre | Obj | Ctx |
-| --- | --- | --- |
-| Capital_Humano | Elevar la calificación de la población y retener talentos. | ['Escolaridad promedio bajo la media nacional y numerosas comunas con IDH bajo o medio-bajo.'] |
-| Nombre | Obj | Req |
-| --- | --- | --- |
-| Gobernanza | Fortalecer capacidades técnicas y de gestión del GORE. | ['Mejorar coordinación público-privada y profundizar la participación ciudadana.'] |
-| Nombre | Obj | Ctx |
-| --- | --- | --- |
-| Equilibrio_Territorial | Reducir disparidades entre el polo urbano Chillán y comunas vulnerables. | ['Presencia de comunas con IDH significativamente inferior al promedio regional.'] |
-| Nombre | Obj | Ctx | Ex |
-| --- | --- | --- | --- |
-| Seguridad_Publica | Alinear gestión con alta percepción de inseguridad y delitos de alta connotación regional. | ['Percepción ciudadana de aumento de la delincuencia.'] | ['Tasas elevadas de robo en lugar habitado y abigeato en comparación con el promedio nacional.'] |
+| Pobreza_y_Desigualdad | Abordar brechas socioeconómicas estructurales. | Foco en zonas rurales y grupos vulnerables., Tasa de pobreza por ingresos en Ñuble de alrededor de 12.1%, superior al promedio nacional., Comunas críticas incluyen territorios como Cobquecura y Pemuco con niveles de pobreza cercanos al 19%. |
+| Diversificacion_Productiva | Superar dependencia del sector primario silvoagropecuario. | Base con más de siete mil empresas y decenas de miles de empleos ligados al agro. |
+| Seguridad_Hidrica_y_Cambio_Climatico | Gestionar los recursos hídricos de forma sostenible y adaptarse al cambio climático. | Región afectada por déficit hídrico permanente y alta exposición a incendios forestales. |
+| Conectividad | Cerrar brechas en caminos rurales, transporte público y acceso a internet de banda ancha fija. | Casi la mitad de los hogares depende exclusivamente de conexiones móviles, limitando el desarrollo. |
+| Capital_Humano | Elevar la calificación de la población y retener talentos. | Escolaridad promedio bajo la media nacional y numerosas comunas con IDH bajo o medio-bajo. |
+| Gobernanza | Fortalecer capacidades técnicas y de gestión del GORE. |  |
+| Equilibrio_Territorial | Reducir disparidades entre el polo urbano Chillán y comunas vulnerables. | Presencia de comunas con IDH significativamente inferior al promedio regional. |
+| Seguridad_Publica | Alinear gestión con alta percepción de inseguridad y delitos de alta connotación regional. | Percepción ciudadana de aumento de la delincuencia. |
 ### Oportunidades Estrategicas
 #### Oportunidades
 | Nombre | Def |
@@ -1285,13 +1243,13 @@ Principal instrumento de planificación regional de largo plazo, estructurado en
 - OE: Objetivo Estratégico.
 - AE: Actividad Estratégica.
 #### Ejes
-| Nombre | Lineamientos |
-| --- | --- |
-| Territorio_y_Medio_Ambiente | [{'LE': 'Desarrollo territorial planificado y resiliente.', 'OE_Resum': 'Planificar territorio, mejorar infraestructura y conectividad, fortalecer resiliencia y seguridad hídrica.'}, {'LE': 'Habitabilidad_y_Servicios', 'OE_Resum': 'Mejorar habitabilidad, acceso a servicios y gestión de residuos con enfoque de sostenibilidad.'}, {'LE': 'Valores_Ambientales', 'OE_Resum': 'Educar en valores ambientales y proteger ecosistemas, promoviendo turismo sostenible.'}] |
-| Economia_Innovacion_y_Capital_Humano | [{'LE': 'Formacion_y_Retencion_de_Capital_Humano', 'OE_Resum': 'Promover innovación educativa y retener/atraer profesionales.'}, {'LE': 'Economia_Diversificada_con_Soporte', 'OE_Resum': 'Diversificar la matriz productiva, desarrollar CTI, fortalecer turismo y cadenas logísticas.'}] |
-| Desarrollo_Social_Inclusivo | [{'LE': 'Bienestar_y_Seguridad', 'OE_Resum': 'Reducir pobreza, fortalecer salud, educación y disminuir violencia de género.'}, {'LE': 'Inclusion_Social', 'OE_Resum': 'Mejorar bienestar de personas mayores y garantizar igualdad para personas con discapacidad y neurodivergencias.'}] |
-| Patrimonio_Cultura_e_Identidad | [{'LE': 'Desarrollo_Creativo_e_Identitario', 'OE_Resum': 'Fortalecer gestión cultural, economías creativas y visibilizar identidades locales y de pueblos originarios.'}, {'LE': 'Sustentabilidad_Patrimonial', 'OE_Resum': 'Investigar, valorizar y proteger el patrimonio cultural y arquitectónico.'}] |
-| Institucionalidad_y_Gobernanza | [{'LE': 'Institucionalidad_Descentralizada_y_Transparente', 'OE_Resum': 'Consolidar institucionalidad regional, formar gestores públicos, incorporar innovación tecnológica y fortalecer mecanismos de control.'}, {'LE': 'Participacion_y_Equidad_Territorial', 'OE_Resum': 'Fortalecer mecanismos de participación y la gestión integrada subregional.'}] |
+| Nombre |
+| --- |
+| Territorio_y_Medio_Ambiente |
+| Economia_Innovacion_y_Capital_Humano |
+| Desarrollo_Social_Inclusivo |
+| Patrimonio_Cultura_e_Identidad |
+| Institucionalidad_y_Gobernanza |
 #### Programa de Gobierno Regional 2025 2029
 #### Definicion
 Propuesta programática del Gobernador Regional que profundiza la ERD y organiza la acción de gobierno en ejes temáticos.
@@ -1387,22 +1345,12 @@ Resumir normativas técnicas que operativizan la Ley 21.180.
 #### Normas
 | Nombre | Purp | Req |
 | --- | --- | --- |
-| NT-Seguridad (DS N°7) | Establecer estándares de ciberseguridad basados en marcos como NIST. | ['Cada organismo debe contar con una Política de Seguridad de la Información.'] |
-| Nombre | Purp | Req |
-| --- | --- | --- |
-| NT-Autenticacion (DS N°9) | Regular el uso de mecanismos oficiales de autenticación. | ['Uso de ClaveÚnica para personas y Clave Tributaria para empresas.'] |
-| Nombre | Purp | Req |
-| --- | --- | --- |
-| NT-Interoperabilidad (DS N°12) | Regular el intercambio de datos a través de la Red de Interoperabilidad. | ['Uso de un Gestor de Acuerdos para formalizar intercambios y migrar desde plataformas heredadas.'] |
-| Nombre | Purp | Req |
-| --- | --- | --- |
-| NT-Documentos_y_Expedientes (DS N°10) | Definir estructura y metadatos de documentos y expedientes electrónicos. | ['Contar con una Política de Gestión Documental.'] |
-| Nombre | Purp |
-| --- | --- |
-| NT-Notificaciones (DS N°8) | Regular notificaciones vía Plataforma de Notificaciones y Domicilio Digital Único (DDU). |
-| Nombre | Purp | Req |
-| --- | --- | --- |
-| NT-Calidad (DS N°11) | Asegurar calidad y continuidad de plataformas electrónicas. | ['Elaborar Catálogo de Plataformas y Plan de Mejora Continua.'] |
+| NT-Seguridad (DS N°7) | Establecer estándares de ciberseguridad basados en marcos como NIST. | Cada organismo debe contar con una Política de Seguridad de la Información. |
+| NT-Autenticacion (DS N°9) | Regular el uso de mecanismos oficiales de autenticación. | Uso de ClaveÚnica para personas y Clave Tributaria para empresas. |
+| NT-Interoperabilidad (DS N°12) | Regular el intercambio de datos a través de la Red de Interoperabilidad. | Uso de un Gestor de Acuerdos para formalizar intercambios y migrar desde plataformas heredadas. |
+| NT-Documentos_y_Expedientes (DS N°10) | Definir estructura y metadatos de documentos y expedientes electrónicos. | Contar con una Política de Gestión Documental. |
+| NT-Notificaciones (DS N°8) | Regular notificaciones vía Plataforma de Notificaciones y Domicilio Digital Único (DDU). |  |
+| NT-Calidad (DS N°11) | Asegurar calidad y continuidad de plataformas electrónicas. | Elaborar Catálogo de Plataformas y Plan de Mejora Continua. |
 ### Pilares Habilitadores TDE para el GORE
 #### Proposito
 Describir componentes técnicos y de gestión que el GORE debe adoptar como base para su transformación digital.

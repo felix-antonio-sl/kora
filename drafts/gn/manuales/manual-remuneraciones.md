@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.58
+    cr: 2.76
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -69,23 +69,13 @@ Asignado según grado EUS.
 ### Seccion II Proceso de Calculo y Pago
 #### Ciclo Mensual de Remuneraciones
 #### Proceso
-| Paso | Act | Input |
-| --- | --- | --- |
-| 1. Recopilación y Apertura (Días 01 - 14) | Cierre de recepción de novedades (licencias, horas extra visadas, nuevos contratos). | Formularios GDP firmados y Decretos tramitados. |
 | Paso | Act |
 | --- | --- |
+| 1. Recopilación y Apertura (Días 01 - 14) | Cierre de recepción de novedades (licencias, horas extra visadas, nuevos contratos). |
 | 2. Proceso y Cálculo (Días 15 - 17) | Ingreso al sistema, cálculo de brutos, descuentos y líquidos. |
-| Paso | Act |
-| --- | --- |
 | 3. Validación y VB (Día 18) | Revisión de nóminas preliminares por Jefatura GDP y Control. |
-| Paso | Req |
-| --- | --- |
-| 4. Pago (Fecha Legal) | Día 19 del mes (o hábil anterior). Transferencia efectiva a cuentas funcionarios. |
-| Paso | Act |
-| --- | --- |
+| 4. Pago (Fecha Legal) |  |
 | 5. Reliquidaciones y Planilla Suplementaria (Días 19 - 25) | Pagos rechazados o ajustes de última hora. |
-| Paso | Act |
-| --- | --- |
 | 6. Pago Cotizaciones (Día 20-30) | Declaración y pago PREVIRED. |
 #### Horas Extraordinarias y Viaticos
 #### Horas Extras
@@ -130,7 +120,7 @@ Publicación mensual en sitio web de dotación de planta, contrata y honorarios 
 Este manual se complementa con el Manual 3.1 (Ciclo de Vida) para la fuente del dato (personas) y Manual 1.3 (Tesorería) para la ejecución del gasto. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml

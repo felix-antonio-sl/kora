@@ -40,7 +40,7 @@ extensions:
 
 # BPMN D07: Gestión de Personas (RRHH)
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -53,7 +53,7 @@ extensions:
 ### Subprocesos
 ~20
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.1410-1880
 
 ## Body MD

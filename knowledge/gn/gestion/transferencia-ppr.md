@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:transferencia-ppr
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/kb_gn_001_transferencia_ppr_koda.yml
 version: 2.0.0
 status: published
@@ -24,82 +24,22 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.07
+    cr: 2.92
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 20
-    meat_count: 611
+    skeleton_count: 6
+    meat_count: 581
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gestion__transferencia-ppr.md.json
 ---
 
 # Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
-## ID
-GN-PPR-TRANSFER-GUIDE-01
-
-## Version
-1.0.0
-
-## Status
-draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-11-28
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Guía operativa para la transferencia de Programas Públicos Regionales (PPR) a entidades públicas en el GORE Ñuble.
-
-## Primary Source
-kb_gn_001_guia_transferencia_programas_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning, Dln->Deadline.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documentos y fuentes legales se mencionan bajo Ctx: o Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content en idioma original (español). Nunca traduzcas el contenido.
-END_LLM_INSTRUCTIONS
-
-
 ## Glosario PPR Transferencia
-### ID
-GN-PPR-GLOSARIO-01
-### Purp
+### Proposito
 Definir conceptos, siglas y normas clave recurrentes en la guía de transferencia de Programas Públicos Regionales (PPR).
 ### Terminos
 | ID | Sigla | Cpt | Def |
@@ -119,34 +59,26 @@ Definir conceptos, siglas y normas clave recurrentes en la guía de transferenci
 | GN-PPR-GLOS-SISREC | SISREC | Sistema de Rendición Electrónica de Cuentas | Plataforma de la Contraloría General de la República para la rendición de transferencias de Subtítulos 24 y 33. |
 
 ## Parte 1 Marco General y Objeto
-### ID
-STS-KB-GN-PPR-MARCO-01
 ### Proposito y Alcance Guia
-#### ID
-STS-KB-GN-PPR-MARCO-PURP-01
-#### Purp
+#### Proposito
 Estandarizar el procedimiento de postulación, evaluación y transferencia de fondos FNDR para la ejecución de Programas Públicos Regionales (PPR) por parte de entidades públicas.
-#### Fnd
+#### Fundamento
 - Glosa 06, Partida 31, Ley de Presupuestos 2026 (Ley N°21.796).
 - Oficio Circular N°22 DIPRES.
-#### Ctx
+#### Contexto
 La guía regula específicamente los PPR (gasto corriente o mixto para la entrega de servicios) que, por ser ejecutados por un tercero público, están exentos de la evaluación ex-ante de DIPRES/SES. En consecuencia, la evaluación de mérito y diseño de estas iniciativas es competencia del Gobierno Regional de Ñuble.
-#### Warn
+#### Advertencias
 - Ámbito de aplicación estricto: este documento no aplica para proyectos de inversión (IDI) ni programas de ejecución directa del GORE.
 #### Exclusiones Ambito
-#### ID
-STS-KB-GN-PPR-MARCO-EXCLUSIONES-01
 #### Casos
 | Cpt | Def |
 | --- | --- |
 | Proyectos de Inversión (IDI) | Iniciativas de gasto de capital (obras, activos) regidas por el Sistema Nacional de Inversiones (SNI). Su transferencia sigue otros procedimientos. |
 | Programas de Ejecución Directa GORE | Programas ejecutados directamente por el GORE que sí requieren el ciclo de evaluación ex-ante de DIPRES/SES. |
-#### Ref
+#### Referencias
 - GN-PPR-GLOS-FNDR
 - GN-PPR-GLOS-GORE
 ### Entidades Postulantes Habilitadas
-#### ID
-STS-KB-GN-PPR-ENTIDADES-01
 #### Dest
 - Municipalidades de la Región de Ñuble.
 - Otros servicios públicos y entidades del Estado con competencia para ejecutar programas sociales, culturales o de fomento.
@@ -154,29 +86,25 @@ STS-KB-GN-PPR-ENTIDADES-01
 | Ex |
 | --- |
 | Universidades Estatales. |
-#### Fnd
+#### Fundamento
 - Decreto Ley 1.263 de 1975 (Ley de Administración Financiera del Estado).
 - Glosa 06 de Inversión Regional ("transferencias a otras entidades públicas y al gobierno central").
 ### Definicion PPR Transferible
-#### ID
-STS-KB-GN-PPR-DEF-PPR-01
-#### Def
+#### Definicion
 Conjunto integrado y articulado de acciones, prestaciones y beneficios (componentes) destinados a lograr un propósito específico en una población objetivo, de modo de resolver un problema o atender una necesidad que la afecte.
-#### Req
+#### Requisitos
 - Duración definida y finita.
-#### Prohib
+#### Prohibiciones
 - No debe constituir acciones permanentes de la entidad receptora, las cuales deben ser financiadas con su presupuesto regular.
 ### Criterios Focalizacion Inversion
-#### ID
-STS-KB-GN-PPR-FOCALIZACION-01
-#### Fnd
+#### Fundamento
 - Art. 74 del DFL 1-19.175 de 2005.
-#### Ctx
+#### Contexto
 El FNDR opera como programa de inversiones públicas para el desarrollo regional y la compensación territorial.
-#### Ref
+#### Referencias
 - GN-PPR-GLOS-FNDR
 - GN-PPR-GLOS-ERD
-#### Req
+#### Requisitos
 - El propósito del programa debe solucionar un problema regional definido, que permita su identificación, demostración y tenga indicadores de cumplimiento.
 - La formulación debe focalizarse en la disminución de brechas de un problema claramente definido.
 - La cobertura debe considerar el aspecto regional del FNDR y la dimensión del problema.
@@ -184,38 +112,30 @@ El FNDR opera como programa de inversiones públicas para el desarrollo regional
 - Se debe poner énfasis en equidad de acceso y pertinencia de beneficiarios, con mecanismos de selección transparentes y probos.
 - Debe considerarse una capacidad de gestión óptima con máxima optimización de recursos, cumpliendo principios de eficiencia y eficacia.
 ### Plazos Postulacion
-#### ID
-STS-KB-GN-PPR-PLAZOS-01
 #### Dln
 La postulación de programas para financiamiento con cargo al presupuesto del año 2026 se recibirá hasta el 30 de septiembre de 2026.
-#### Cond
+#### Condiciones
 - Propuestas ingresadas post-fecha, si son recomendadas favorablemente, podrían ser consideradas para el siguiente ejercicio presupuestario, sujeto a la normativa vigente.
 
 ## Parte 2 Proceso Postulacion y Evaluacion GORE
-### ID
-STS-KB-GN-PPR-PROCESO-01
-### Purp
+### Proposito
 Describir el flujo que debe seguir una entidad pública para postular un PPR a financiamiento GORE y el proceso de evaluación interna que este último realizará para asegurar la pertinencia y calidad de la propuesta.
 ### Metodologia Formulacion Obligatoria MML
-#### ID
-STS-KB-GN-PPR-MML-01
-#### Req
+#### Requisitos
 - Las propuestas de PPR deben ser formuladas utilizando la Metodología de Marco Lógico (MML).
-#### Warn
+#### Advertencias
 - No se debe utilizar la Ficha IDI, el código BIP ni la metodología de evaluación de proyectos de inversión para este tipo de iniciativas. La postulación no se realiza en el Banco Integrado de Proyectos (BIP).
-#### Src
+#### Fuentes
 - kb_gn_025_guia-programas_sts.md
 #### Rec
 - Se sugiere fuertemente a las entidades formuladoras capacitarse en MML para asegurar la calidad de sus propuestas.
 ### Documentacion Requerida Postulacion
-#### ID
-STS-KB-GN-PPR-DOCS-01
-#### Req
+#### Requisitos
 - La postulación debe realizarse mediante la plataforma GESDOC del GORE, adjuntando la documentación mínima definida a continuación.
 #### Plataforma
 #### Cpt
 Plataforma GESDOC del GORE Ñuble.
-#### Ref
+#### Referencias
 - GN-PPR-GLOS-GESDOC
 #### Documentos Clave
 | N | ID | Nombre | Ref-SFD |
@@ -232,50 +152,18 @@ Plataforma GESDOC del GORE Ñuble.
 | 10 | STS-KB-GN-PPR-DOC-10-DOCS-LEGALES | Documentos Legales de la Entidad (Estatutos, Personería) | N/A |
 | 11 | STS-KB-GN-PPR-DOC-11-OTROS-ANEXOS | Otros Anexos (si aplica) | N/A |
 ### Proceso Evaluacion Interna GORE
-#### ID
-STS-KB-GN-PPR-EVAL-01
-#### Ctx
+#### Contexto
 Dado que estos programas están exentos de evaluación central, el GORE realiza un proceso de evaluación de admisibilidad, pertinencia y mérito técnico, para resguardar el correcto uso de los fondos públicos.
 #### Pasos
--
-  #### Step
-  1
-  #### Nombre
-  Admisibilidad Documental
-  #### Resp
-  Departamento de Análisis y Evaluación (DAE).
-  #### Act
-  Verificar que la postulación contiene toda la documentación requerida en la sección 2.2 y que ha sido ingresada correctamente. Las postulaciones incompletas serán devueltas para subsanación en un plazo acotado.
--
-  #### Step
-  2
-  #### Nombre
-  Evaluación de Pertinencia Estratégica
-  #### Resp
-  Comité de Pertinencia Regional (o instancia que lo reemplace).
-  #### Act
-  Evaluar la alineación del programa con la Estrategia Regional de Desarrollo (ERD), el Plan de Gobierno Regional y las prioridades políticas definidas para el año.
--
-  #### Step
-  3
-  #### Nombre
-  Evaluación Técnica de Diseño
-  #### Resp
-  Departamento de Análisis y Evaluación (DAE).
-  #### Act
-  Revisión de fondo de la propuesta.
-  #### Criterios Clave
-  - Calidad y suficiencia del diagnóstico.
-  - Coherencia y robustez de la Matriz de Marco Lógico (causa-problema-propósito-componentes-actividades).
-  - Pertinencia y realismo de los indicadores propuestos.
-  - Factibilidad técnica y operativa del modelo de gestión.
-  - Racionalidad y eficiencia del presupuesto solicitado.
+| Step | Nombre | Resp | Act |
+| --- | --- | --- | --- |
+| 1 | Admisibilidad Documental | Departamento de Análisis y Evaluación (DAE). | Verificar que la postulación contiene toda la documentación requerida en la sección 2.2 y que ha sido ingresada correctamente. Las postulaciones incompletas serán devueltas para subsanación en un plazo acotado. |
+| 2 | Evaluación de Pertinencia Estratégica | Comité de Pertinencia Regional (o instancia que lo reemplace). | Evaluar la alineación del programa con la Estrategia Regional de Desarrollo (ERD), el Plan de Gobierno Regional y las prioridades políticas definidas para el año. |
+| 3 | Evaluación Técnica de Diseño | Departamento de Análisis y Evaluación (DAE). | Revisión de fondo de la propuesta. |
 #### Resultado Evaluacion
-#### ID
-STS-KB-GN-PPR-EVAL-RESULTADO-01
-#### Def
+#### Definicion
 La evaluación culmina con un Informe Técnico Favorable (ITF) emitido por la DAE.
-#### Warn
+#### Advertencias
 - Este informe NO es un RATE RS. Es un documento interno del GORE que valida técnicamente la propuesta para que pueda avanzar a la etapa de financiamiento.
 #### Calificaciones Posibles
 - Recomendado Favorablemente: La propuesta es sólida y se recomienda para su aprobación presupuestaria.
@@ -283,904 +171,161 @@ La evaluación culmina con un Informe Técnico Favorable (ITF) emitido por la DA
 - No Recomendado: La propuesta presenta debilidades técnicas o de pertinencia insalvables que no la hacen elegible para financiamiento.
 
 ## Parte 3 Restricciones Normativas y Financieras
-### ID
-STS-KB-GN-PPR-RESTRICCIONES-01
 ### Restricciones Generales
-#### ID
-STS-KB-GN-PPR-RESTR-GEN-01
-#### Prohib
+#### Prohibiciones
 - Postular programas cuyo objetivo o naturaleza sea distinto al descrito en la ley o decreto de creación de la institución.
-#### Cond
+#### Condiciones
 - Instituciones con convenios vigentes con el GORE deben acreditar su estado de rendiciones de cuentas.
-#### Fnd
+#### Fundamento
 - Resolución N°30 de 2015 de la Contraloría General de la República (CGR).
 ### Restricciones de Gasto
-#### ID
-STS-KB-GN-PPR-RESTR-GASTO-01
-#### Ctx
+#### Contexto
 Los recursos FNDR transferidos para programas tienen las siguientes restricciones de gasto:
-#### Prohib
+#### Prohibiciones
 - Otorgar préstamos o constituir/comprar sociedades con cargo a los recursos transferidos.
-#### Cond
+#### Condiciones
 - Gastos en Personal: la entidad receptora puede usar hasta un 5% del total de la transferencia para contratar personal a honorarios para la gestión del programa.
 - Gastos de Administración: el GORE puede destinar hasta un 5% del monto total a gastos de administración propios para la gestión y seguimiento. Este monto no forma parte de la transferencia.
-#### Fnd
+#### Fundamento
 - Glosa 06, Partida 31, Ley de Presupuestos 2026 (Ley N°21.796).
-#### Ref
+#### Referencias
 - GN-PPR-GLOS-FNDR
 ### Restricciones de Probidad
-#### ID
-STS-KB-GN-PPR-RESTR-PROBIDAD-01
-#### Cond
+#### Condiciones
 - La subcontratación es permitida solo para actividades que no constituyen el objeto principal del programa, debe estar justificada y detallada en el convenio.
-#### Prohib
+#### Prohibiciones
 - Subcontratar con personas jurídicas relacionadas (matriz, filial, etc. según Ley 18.046) o con personas naturales que tengan conflictos de interés por parentesco con autoridades regionales o directivos de la institución postulante.
 - Contratar para la ejecución del programa a cónyuges, convivientes civiles, o parientes hasta el tercer grado de consanguinidad y segundo de afinidad de autoridades y funcionarios directivos del GORE o de la institución postulante.
-#### Ref
+#### Referencias
 - GN-PPR-GLOS-GORE
 
 ## Parte 4 Formalizacion Ejecucion y Seguimiento
-### ID
-STS-KB-GN-PPR-FORMALIZACION-01
 ### Aprobacion Presupuestaria y Convenio
-#### ID
-STS-KB-GN-PPR-FORMAL-APROB-CONV-01
-#### Proc
--
-  #### Step
-  1
-  #### Nombre
-  Priorización y Aprobación de Recursos
-  #### Act
-  Los PPR con Informe Técnico Favorable (ITF) son presentados por la DIPIR al Gobernador(a) y, si corresponde por normativa presupuestaria, al Consejo Regional para la aprobación de los fondos.
--
-  #### Step
-  2
-  #### Nombre
-  Elaboración de Convenio de Transferencia
-  #### Act
-  El Departamento de Presupuesto del GORE elabora un convenio que formaliza la transferencia, el cual debe ser suscrito por los representantes legales de ambas instituciones.
--
-  #### Step
-  3
-  #### Nombre
-  Contenido Mínimo del Convenio
-  #### Req
-  - Partes, objeto del programa, monto total, calendario de transferencias, plazos, metas e indicadores de la MML, obligaciones de las partes, y cláusulas de rendición de cuentas y restitución de fondos.
-  - Incorporar las cláusulas de probidad y restricciones de gasto señaladas en la sección 3 de esta guía.
+#### Proceso
+| Step | Nombre | Act |
+| --- | --- | --- |
+| 1 | Priorización y Aprobación de Recursos | Los PPR con Informe Técnico Favorable (ITF) son presentados por la DIPIR al Gobernador(a) y, si corresponde por normativa presupuestaria, al Consejo Regional para la aprobación de los fondos. |
+| 2 | Elaboración de Convenio de Transferencia | El Departamento de Presupuesto del GORE elabora un convenio que formaliza la transferencia, el cual debe ser suscrito por los representantes legales de ambas instituciones. |
+| 3 | Contenido Mínimo del Convenio |  |
 ### Transferencia Recursos y Ejecucion
-#### ID
-STS-KB-GN-PPR-FORMAL-TRANSFER-EJEC-01
-#### Mech
+#### Mecanismo
 - La transferencia de fondos se realiza según lo estipulado en el convenio, usualmente contra la presentación de estados de avance o cumplimiento de hitos.
-#### Resp
+#### Responsables
 - La entidad pública receptora es la responsable de la ejecución técnica y financiera del programa, cumpliendo la normativa de compras públicas que le aplique.
 - El GORE, a través de su división patrocinante, supervisa el avance y cumplimiento del convenio.
 ### Seguimiento y Rendicion
-#### ID
-STS-KB-GN-PPR-FORMAL-SEGUIMIENTO-01
-#### Resp
+#### Responsables
 - La entidad ejecutora debe rendir cuenta de los fondos al GORE en los plazos y formatos estipulados en el convenio.
-#### Fnd
+#### Fundamento
 - La rendición se rige por la Resolución N°30 de 2015 de la CGR y sus modificaciones.
-#### Mech
+#### Mecanismo
 - El GORE podrá exigir la rendición vía plataforma SISREC o en formato físico, según se defina en el convenio.
-#### Src
+#### Fuentes
 - urn:gn:kb:gestion-rendiciones
-#### Ref
+#### Referencias
 - GN-PPR-GLOS-SISREC
 
 ## Parte 5 Formularios Estandarizados PPR
-### ID
-STS-KB-GN-PPR-FORMULARIOS-01
-### Ctx
+### Contexto
 Los formatos estandarizados para la postulación se encontrarán disponibles en la página web del Gobierno Regional de Ñuble. Su estructura detallada es la siguiente.
 ### Formulario Diseno Programa Publico PPR
-#### ID
-FORM-PPR-TRANSFER-PUBLIC-2026-V1
-#### Version
-1.0.0
-#### Status
-Published
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
 #### Campos
--
-  #### ID
-  FORM-PPR-TRANSFER-S1-NOMBRE-PROGRAMA
-  #### Seccion
-  Sección 1: Identificación del Programa
-  #### Field Label
-  Nombre del Programa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S1-MONTO-FNDR
-  #### Seccion
-  Sección 1: Identificación del Programa
-  #### Field Label
-  Monto total solicitado FNDR (M$)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S1-APORTE-PROPIO
-  #### Seccion
-  Sección 1: Identificación del Programa
-  #### Field Label
-  Aporte Propio / Otros Aportes (M$)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: optional.
--
-  #### ID
-  FORM-PPR-TRANSFER-S1-PLAZO-EJECUCION
-  #### Seccion
-  Sección 1: Identificación del Programa
-  #### Field Label
-  Plazo de ejecución (meses)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory. Min-Val: 1.
--
-  #### ID
-  FORM-PPR-TRANSFER-S1-ALINEACION-ERD
-  #### Seccion
-  Sección 1: Identificación del Programa
-  #### Field Label
-  Alineación con ERD (Indicar Eje, Lineamiento, Objetivo)
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S2-INSTITUCION
-  #### Seccion
-  Sección 2: Institución Postulante
-  #### Field Label
-  Institución o Servicio Postulante
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S2-OBJETO-SOCIAL
-  #### Seccion
-  Sección 2: Institución Postulante
-  #### Field Label
-  Objeto social de la institución (Resumen según estatuto/ley)
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S2-FUNDAMENTO-TRANSFERENCIA
-  #### Seccion
-  Sección 2: Institución Postulante
-  #### Field Label
-  Fundamento de la solicitud de transferencia (Justificar por qué su institución es la idónea para ejecutar el programa).
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S3-PROBLEMA-CENTRAL
-  #### Seccion
-  Sección 3: Diagnóstico y Problema (MML)
-  #### Field Label
-  Definición del problema central que afecta a la comunidad.
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Redactar como estado negativo, claro y preciso. Debe estar respaldado por datos.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S3-ANALISIS-CAUSAL
-  #### Seccion
-  Sección 3: Diagnóstico y Problema (MML)
-  #### Field Label
-  Análisis Causal: Causas y Efectos del Problema
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Describir las causas directas e indirectas que explican el problema, y los efectos que este genera. Adjuntar diagrama de árbol de problemas si es necesario.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S3-POBLACION
-  #### Seccion
-  Sección 3: Diagnóstico y Problema (MML)
-  #### Field Label
-  Caracterización y Cuantificación de la Población
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Describir y cuantificar la población potencial, la población objetivo y los beneficiarios anuales, indicando fuentes de datos.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S4-PROPOSITO
-  #### Seccion
-  Sección 4: Diseño de la Intervención (MML)
-  #### Field Label
-  Propósito del programa (Objetivo General)
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Debe ser la reversión en positivo del problema central. Único, medible y orientado a la población objetivo.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S4-COMPONENTES
-  #### Seccion
-  Sección 4: Diseño de la Intervención (MML)
-  #### Field Label
-  Componentes del Programa
-  #### Field Type
-  Repeater
-  #### Field Instr
-  Añada una fila por cada Componente (producto o servicio) que entregará el programa.
-  #### Field SubLabels
-  - Nombre del Componente
-  - Descripción del bien/servicio
-  - Causa del problema que aborda
-  - Unidad de medida y meta de producción anual
--
-  #### ID
-  FORM-PPR-TRANSFER-S4-MATRIZ-MML
-  #### Seccion
-  Sección 4: Diseño de la Intervención (MML)
-  #### Field Label
-  Matriz de Marco Lógico
-  #### Field Type
-  File
-  #### Field Instr
-  Adjuntar la Matriz de Marco Lógico completa (Fin, Propósito, Componentes, Actividades) con sus respectivos Indicadores, Medios de Verificación y Supuestos.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S5-MODELO-GESTION
-  #### Seccion
-  Sección 5: Operatividad y Presupuesto
-  #### Field Label
-  Modelo de Gestión y Carta Gantt
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Describir cómo se implementará el programa, el flujo del beneficiario, y adjuntar una Carta Gantt detallada de actividades y financiera.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S5-PRESUPUESTO
-  #### Seccion
-  Sección 5: Operatividad y Presupuesto
-  #### Field Label
-  Detalle del Presupuesto por Componente y Actividad
-  #### Field Type
-  File
-  #### Field Instr
-  Adjuntar planilla Excel con el desglose del presupuesto, justificando cada ítem de gasto y su coherencia con las actividades de la MML.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S6-FIRMA-FORMULADOR
-  #### Seccion
-  Sección 6: Firmas
-  #### Field Label
-  Nombre, firma y timbre del Formulador
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para firma.
--
-  #### ID
-  FORM-PPR-TRANSFER-S6-CONTACTO-FORMULADOR
-  #### Seccion
-  Sección 6: Firmas
-  #### Field Label
-  Fono y Mail contacto formulador
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-TRANSFER-S6-FIRMA-REPRESENTANTE
-  #### Seccion
-  Sección 6: Firmas
-  #### Field Label
-  Nombre firma y timbre del jefe de Servicio o Representante de la Institución
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para firma.
--
-  #### ID
-  FORM-PPR-TRANSFER-S6-CONTACTO-REPRESENTANTE
-  #### Seccion
-  Sección 6: Firmas
-  #### Field Label
-  Fono y Mail contacto representante
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
+| ID | Seccion | Field-Label | Field-Type | Field-Constraint | Field-Instr |
+| --- | --- | --- | --- | --- | --- |
+| FORM-PPR-TRANSFER-S1-NOMBRE-PROGRAMA | Sección 1: Identificación del Programa | Nombre del Programa | Text | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S1-MONTO-FNDR | Sección 1: Identificación del Programa | Monto total solicitado FNDR (M$) | Number | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S1-APORTE-PROPIO | Sección 1: Identificación del Programa | Aporte Propio / Otros Aportes (M$) | Number | Req: optional. |  |
+| FORM-PPR-TRANSFER-S1-PLAZO-EJECUCION | Sección 1: Identificación del Programa | Plazo de ejecución (meses) | Number | Req: mandatory. Min-Val: 1. |  |
+| FORM-PPR-TRANSFER-S1-ALINEACION-ERD | Sección 1: Identificación del Programa | Alineación con ERD (Indicar Eje, Lineamiento, Objetivo) | TextArea | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S2-INSTITUCION | Sección 2: Institución Postulante | Institución o Servicio Postulante | Text | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S2-OBJETO-SOCIAL | Sección 2: Institución Postulante | Objeto social de la institución (Resumen según estatuto/ley) | TextArea | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S2-FUNDAMENTO-TRANSFERENCIA | Sección 2: Institución Postulante | Fundamento de la solicitud de transferencia (Justificar por qué su institución es la idónea para ejecutar el programa). | TextArea | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S3-PROBLEMA-CENTRAL | Sección 3: Diagnóstico y Problema (MML) | Definición del problema central que afecta a la comunidad. | TextArea | Req: mandatory. | Redactar como estado negativo, claro y preciso. Debe estar respaldado por datos. |
+| FORM-PPR-TRANSFER-S3-ANALISIS-CAUSAL | Sección 3: Diagnóstico y Problema (MML) | Análisis Causal: Causas y Efectos del Problema | TextArea | Req: mandatory. | Describir las causas directas e indirectas que explican el problema, y los efectos que este genera. Adjuntar diagrama de árbol de problemas si es necesario. |
+| FORM-PPR-TRANSFER-S3-POBLACION | Sección 3: Diagnóstico y Problema (MML) | Caracterización y Cuantificación de la Población | TextArea | Req: mandatory. | Describir y cuantificar la población potencial, la población objetivo y los beneficiarios anuales, indicando fuentes de datos. |
+| FORM-PPR-TRANSFER-S4-PROPOSITO | Sección 4: Diseño de la Intervención (MML) | Propósito del programa (Objetivo General) | TextArea | Req: mandatory. | Debe ser la reversión en positivo del problema central. Único, medible y orientado a la población objetivo. |
+| FORM-PPR-TRANSFER-S4-COMPONENTES | Sección 4: Diseño de la Intervención (MML) | Componentes del Programa | Repeater |  | Añada una fila por cada Componente (producto o servicio) que entregará el programa. |
+| FORM-PPR-TRANSFER-S4-MATRIZ-MML | Sección 4: Diseño de la Intervención (MML) | Matriz de Marco Lógico | File | Req: mandatory. | Adjuntar la Matriz de Marco Lógico completa (Fin, Propósito, Componentes, Actividades) con sus respectivos Indicadores, Medios de Verificación y Supuestos. |
+| FORM-PPR-TRANSFER-S5-MODELO-GESTION | Sección 5: Operatividad y Presupuesto | Modelo de Gestión y Carta Gantt | TextArea | Req: mandatory. | Describir cómo se implementará el programa, el flujo del beneficiario, y adjuntar una Carta Gantt detallada de actividades y financiera. |
+| FORM-PPR-TRANSFER-S5-PRESUPUESTO | Sección 5: Operatividad y Presupuesto | Detalle del Presupuesto por Componente y Actividad | File | Req: mandatory. | Adjuntar planilla Excel con el desglose del presupuesto, justificando cada ítem de gasto y su coherencia con las actividades de la MML. |
+| FORM-PPR-TRANSFER-S6-FIRMA-FORMULADOR | Sección 6: Firmas | Nombre, firma y timbre del Formulador | Static-Text |  | Espacio reservado para firma. |
+| FORM-PPR-TRANSFER-S6-CONTACTO-FORMULADOR | Sección 6: Firmas | Fono y Mail contacto formulador | Text | Req: mandatory. |  |
+| FORM-PPR-TRANSFER-S6-FIRMA-REPRESENTANTE | Sección 6: Firmas | Nombre firma y timbre del jefe de Servicio o Representante de la Institución | Static-Text |  | Espacio reservado para firma. |
+| FORM-PPR-TRANSFER-S6-CONTACTO-REPRESENTANTE | Sección 6: Firmas | Fono y Mail contacto representante | Text | Req: mandatory. |  |
 ### Anexo Perfil y Descripcion de Cargos
-#### ID
-FORM-ANEXO1-PERFIL-CARGOS-V1
-#### Version
-1.0.0
-#### Status
-Published
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
 #### Campos
--
-  #### ID
-  FORM-ANEXO1-S1-PERFILES-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Perfiles Requeridos para la Iniciativa
-  #### Field Type
-  Repeater
-  #### Field Instr
-  Añada una entrada por cada tipo de cargo requerido.
--
-  #### ID
-  FORM-ANEXO1-S1-NOMBRE-CARGO-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Nombre del cargo
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-ANEXO1-S1-NUMERO-CARGOS-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  N° de Cargos
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory. Min-Val: 1.
--
-  #### ID
-  FORM-ANEXO1-S1-DEPTO-SUPERVISOR-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Departamento supervisor
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-ANEXO1-S1-PERFIL-CARGO-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Perfil del Cargo
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Detallar la formación, experiencia y competencias requeridas.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-ANEXO1-S1-PERIODO-CONTRATACION-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Periodo de contratación
-  #### Field Type
-  Text
-  #### Field Instr
-  Ej: 12 meses, media jornada.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-ANEXO1-S1-OBJETIVO-CARGO-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Objetivo del cargo
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-ANEXO1-S1-PRODUCTOS-ASOCIADOS-01
-  #### Seccion
-  Sección 1: Perfiles de Cargo
-  #### Field Label
-  Productos asociados a la contratación
-  #### Field Type
-  TextArea
-  #### Field Instr
-  Listar los entregables o productos verificables.
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-ANEXO1-S2-FIRMA-REP-LEGAL-01
-  #### Seccion
-  Sección 2: Firma
-  #### Field Label
-  Nombre, firma y timbre del representante legal
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para la firma manuscrita.
+| ID | Seccion | Field-Label | Field-Type | Field-Instr | Field-Constraint |
+| --- | --- | --- | --- | --- | --- |
+| FORM-ANEXO1-S1-PERFILES-01 | Sección 1: Perfiles de Cargo | Perfiles Requeridos para la Iniciativa | Repeater | Añada una entrada por cada tipo de cargo requerido. |  |
+| FORM-ANEXO1-S1-NOMBRE-CARGO-01 | Sección 1: Perfiles de Cargo | Nombre del cargo | Text |  | Req: mandatory. |
+| FORM-ANEXO1-S1-NUMERO-CARGOS-01 | Sección 1: Perfiles de Cargo | N° de Cargos | Number |  | Req: mandatory. Min-Val: 1. |
+| FORM-ANEXO1-S1-DEPTO-SUPERVISOR-01 | Sección 1: Perfiles de Cargo | Departamento supervisor | Text |  | Req: mandatory. |
+| FORM-ANEXO1-S1-PERFIL-CARGO-01 | Sección 1: Perfiles de Cargo | Perfil del Cargo | TextArea | Detallar la formación, experiencia y competencias requeridas. | Req: mandatory. |
+| FORM-ANEXO1-S1-PERIODO-CONTRATACION-01 | Sección 1: Perfiles de Cargo | Periodo de contratación | Text | Ej: 12 meses, media jornada. | Req: mandatory. |
+| FORM-ANEXO1-S1-OBJETIVO-CARGO-01 | Sección 1: Perfiles de Cargo | Objetivo del cargo | TextArea |  | Req: mandatory. |
+| FORM-ANEXO1-S1-PRODUCTOS-ASOCIADOS-01 | Sección 1: Perfiles de Cargo | Productos asociados a la contratación | TextArea | Listar los entregables o productos verificables. | Req: mandatory. |
+| FORM-ANEXO1-S2-FIRMA-REP-LEGAL-01 | Sección 2: Firma | Nombre, firma y timbre del representante legal | Static-Text | Espacio reservado para la firma manuscrita. |  |
 ### Certificado Pertinencia y Patrocinio GORE
-#### ID
-FORM-PPR-PATROCINIO-GORE-V1
-#### Version
-1.0.0
-#### Status
-Published
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
 #### Campos
--
-  #### ID
-  FORM-PPR-PATROCINIO-S1-NOMBRE-PROGRAMA
-  #### Seccion
-  Sección 1: Información del Programa
-  #### Field Label
-  NOMBRE DEL PROGRAMA
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S1-INSTITUCION
-  #### Seccion
-  Sección 1: Información del Programa
-  #### Field Label
-  INSTITUCIÓN POSTULANTE
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S1-PROPOSITO
-  #### Seccion
-  Sección 1: Información del Programa
-  #### Field Label
-  PROPÓSITO DEL PROGRAMA
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S1-MONTO-FNDR
-  #### Seccion
-  Sección 1: Información del Programa
-  #### Field Label
-  MONTO TOTAL SOLICITADO FNDR (M$)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S2-DIVISION-GORE
-  #### Seccion
-  Sección 2: Evaluación de Pertinencia de la División GORE
-  #### Field Instr
-  A ser completado por el/la Jefe/a de la División GORE correspondiente.
-  #### Field Label
-  División GORE Patrocinante
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S2-JUSTIFICACION-PERTINENCIA
-  #### Seccion
-  Sección 2: Evaluación de Pertinencia de la División GORE
-  #### Field Label
-  Justificar la ejecución del programa, describiendo su pertinencia y alineación con los objetivos estratégicos de la División y la Estrategia Regional de Desarrollo.
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S2-SINERGIA-DUPLICIDAD
-  #### Seccion
-  Sección 2: Evaluación de Pertinencia de la División GORE
-  #### Field Label
-  ¿Se identifica sinergia o duplicidad con otras iniciativas GORE en curso? Detallar.
-  #### Field Type
-  TextArea
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-PATROCINIO-S3-FIRMA-JEFE-DIVISION
-  #### Seccion
-  Sección 3: Firma
-  #### Field Label
-  Nombre, firma y timbre del Jefe de División patrocinante GORE
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para la firma manuscrita.
+| ID | Seccion | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- | --- |
+| FORM-PPR-PATROCINIO-S1-NOMBRE-PROGRAMA | Sección 1: Información del Programa | NOMBRE DEL PROGRAMA | Text | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S1-INSTITUCION | Sección 1: Información del Programa | INSTITUCIÓN POSTULANTE | Text | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S1-PROPOSITO | Sección 1: Información del Programa | PROPÓSITO DEL PROGRAMA | TextArea | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S1-MONTO-FNDR | Sección 1: Información del Programa | MONTO TOTAL SOLICITADO FNDR (M$) | Number | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S2-DIVISION-GORE | Sección 2: Evaluación de Pertinencia de la División GORE | División GORE Patrocinante | Text | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S2-JUSTIFICACION-PERTINENCIA | Sección 2: Evaluación de Pertinencia de la División GORE | Justificar la ejecución del programa, describiendo su pertinencia y alineación con los objetivos estratégicos de la División y la Estrategia Regional de Desarrollo. | TextArea | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S2-SINERGIA-DUPLICIDAD | Sección 2: Evaluación de Pertinencia de la División GORE | ¿Se identifica sinergia o duplicidad con otras iniciativas GORE en curso? Detallar. | TextArea | Req: mandatory. |
+| FORM-PPR-PATROCINIO-S3-FIRMA-JEFE-DIVISION | Sección 3: Firma | Nombre, firma y timbre del Jefe de División patrocinante GORE | Static-Text |  |
 ### Declaracion Jurada Rendiciones
-#### ID
-FORM-PPR-RENDICIONES-DJ-V1
-#### Version
-1.0.0
-#### Status
-Published
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
 #### Campos
--
-  #### ID
-  FORM-PPR-REN-S1-INSTR
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Instr
-  En el marco de la iniciativa...
--
-  #### ID
-  FORM-PPR-REN-S1-NOMBRE-PROGRAMA
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Nombre del Programa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Placeholder
-  _______NOMBRE DEL PROGRAMA _______________
--
-  #### ID
-  FORM-PPR-REN-S1-NOMBRE-REPRESENTANTE
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Nombre del Representante Legal
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Placeholder
-  _NOMBRE DEL REPRESENTANTE LEGAL ________________
--
-  #### ID
-  FORM-PPR-REN-S1-INSTITUCION
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Institución a la que representa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Placeholder
-  _INSTITUCIÓN A LA QUE REPRESENTA_________________________
--
-  #### ID
-  FORM-PPR-REN-S2-ESTADO-RENDICIONES
-  #### Seccion
-  Sección 2: Declaración
-  #### Field Label
-  La institución que represento actualmente, mantiene rendiciones de cuenta pendiente con el Gobierno Regional de Ñuble.
-  #### Field Type
-  Radio
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Options
-  - SI
-  - NO
--
-  #### ID
-  FORM-PPR-REN-S2-AVISO-CAUCION
-  #### Seccion
-  Sección 2: Declaración
-  #### Field Label
-  Aviso sobre Caución
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  En caso de tener rendiciones pendientes, al momento de celebrar convenio con el Gobierno Regional, esta institución deberá rendir caución de los montos pendientes, con el fin de garantizar el buen uso de los recursos públicos.
--
-  #### ID
-  FORM-PPR-REN-S2-COMPROMISO-RES30
-  #### Seccion
-  Sección 2: Declaración
-  #### Field Label
-  Declaro estar en conocimiento de los alcances y responsabilidades establecidas en la Resolución N°30 de 2015 de la Contraloría General de la República.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-REN-S2-COMPROMISO-SISREC
-  #### Seccion
-  Sección 2: Declaración
-  #### Field Label
-  Declaro que, en caso de ser aprobada, las rendiciones del programa deben realizarse por medio de plataforma SISREC de la Contraloría General de la República.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-REN-S3-FIRMA-REP-LEGAL
-  #### Seccion
-  Sección 3: Firma
-  #### Field Label
-  Nombre, firma y timbre del representante legal
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para la firma manuscrita.
+| ID | Seccion | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- | --- |
+| FORM-PPR-REN-S1-INSTR | Sección 1: Identificación |  |  |  |
+| FORM-PPR-REN-S1-NOMBRE-PROGRAMA | Sección 1: Identificación | Nombre del Programa | Text | Req: mandatory. |
+| FORM-PPR-REN-S1-NOMBRE-REPRESENTANTE | Sección 1: Identificación | Nombre del Representante Legal | Text | Req: mandatory. |
+| FORM-PPR-REN-S1-INSTITUCION | Sección 1: Identificación | Institución a la que representa | Text | Req: mandatory. |
+| FORM-PPR-REN-S2-ESTADO-RENDICIONES | Sección 2: Declaración | La institución que represento actualmente, mantiene rendiciones de cuenta pendiente con el Gobierno Regional de Ñuble. | Radio | Req: mandatory. |
+| FORM-PPR-REN-S2-AVISO-CAUCION | Sección 2: Declaración | Aviso sobre Caución | Static-Text |  |
+| FORM-PPR-REN-S2-COMPROMISO-RES30 | Sección 2: Declaración | Declaro estar en conocimiento de los alcances y responsabilidades establecidas en la Resolución N°30 de 2015 de la Contraloría General de la República. | Checkbox | Req: mandatory. |
+| FORM-PPR-REN-S2-COMPROMISO-SISREC | Sección 2: Declaración | Declaro que, en caso de ser aprobada, las rendiciones del programa deben realizarse por medio de plataforma SISREC de la Contraloría General de la República. | Checkbox | Req: mandatory. |
+| FORM-PPR-REN-S3-FIRMA-REP-LEGAL | Sección 3: Firma | Nombre, firma y timbre del representante legal | Static-Text |  |
 ### Declaracion Jurada No Fraccionamiento
-#### ID
-FORM-PPR-NO-FRACCION-DJ-V1
-#### Version
-1.0.0
-#### Status
-Published
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
 #### Campos
--
-  #### ID
-  FORM-PPR-NOFRACC-S1-INSTR
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Instr
-  En el marco de la iniciativa...
--
-  #### ID
-  FORM-PPR-NOFRACC-S1-NOMBRE-PROGRAMA
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Nombre del Programa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Placeholder
-  _______NOMBRE DEL PROGRAMA _______________
--
-  #### ID
-  FORM-PPR-NOFRACC-S1-NOMBRE-REPRESENTANTE
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Nombre del Representante Legal
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Placeholder
-  _NOMBRE DEL REPRESENTANTE LEGAL ________________
--
-  #### ID
-  FORM-PPR-NOFRACC-S1-INSTITUCION
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Institución a la que representa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Placeholder
-  _INSTITUCIÓN A LA QUE REPRESENTA_________________________
--
-  #### ID
-  FORM-PPR-NOFRACC-S2-DECLARACION-NOFRACC
-  #### Seccion
-  Sección 2: Declaración
-  #### Field Label
-  Declaro QUE EL PROGRAMA POSTULADO ABORDA UN OBJETIVO Y PROBLEMA ÚNICO, Y NO CONSTITUYE UN FRACCIONAMIENTO DE UNA INICIATIVA MAYOR.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-NOFRACC-S2-ACLARACION
-  #### Seccion
-  Sección 2: Declaración
-  #### Field Label
-  Aclaración sobre propósito único
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Esto es que el programa considera un propósito integral, no existiendo para estos efectos otros programas complementarios que busquen el mismo fin y que hayan sido presentados por separado para eludir controles de monto o evaluación.
--
-  #### ID
-  FORM-PPR-NOFRACC-S3-FIRMA-REP-LEGAL
-  #### Seccion
-  Sección 3: Firma
-  #### Field Label
-  Nombre, firma y timbre del representante legal
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para la firma manuscrita.
+| ID | Seccion | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- | --- |
+| FORM-PPR-NOFRACC-S1-INSTR | Sección 1: Identificación |  |  |  |
+| FORM-PPR-NOFRACC-S1-NOMBRE-PROGRAMA | Sección 1: Identificación | Nombre del Programa | Text | Req: mandatory. |
+| FORM-PPR-NOFRACC-S1-NOMBRE-REPRESENTANTE | Sección 1: Identificación | Nombre del Representante Legal | Text | Req: mandatory. |
+| FORM-PPR-NOFRACC-S1-INSTITUCION | Sección 1: Identificación | Institución a la que representa | Text | Req: mandatory. |
+| FORM-PPR-NOFRACC-S2-DECLARACION-NOFRACC | Sección 2: Declaración | Declaro QUE EL PROGRAMA POSTULADO ABORDA UN OBJETIVO Y PROBLEMA ÚNICO, Y NO CONSTITUYE UN FRACCIONAMIENTO DE UNA INICIATIVA MAYOR. | Checkbox | Req: mandatory. |
+| FORM-PPR-NOFRACC-S2-ACLARACION | Sección 2: Declaración | Aclaración sobre propósito único | Static-Text |  |
+| FORM-PPR-NOFRACC-S3-FIRMA-REP-LEGAL | Sección 3: Firma | Nombre, firma y timbre del representante legal | Static-Text |  |
 ### Certificado Compromiso Presupuesto y Finanzas
-#### ID
-FORM-PPR-FINANZAS-COMP-V1
-#### Version
-1.0.0
-#### Status
-Published
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
 #### Campos
--
-  #### ID
-  FORM-PPR-FIN-S1-INSTR
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Instr
-  En el marco de la iniciativa...
--
-  #### ID
-  FORM-PPR-FIN-S1-NOMBRE-PROGRAMA
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Nombre del Programa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S1-NOMBRE-ENCARGADO-FINANZAS
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Nombre del Encargado de Presupuesto o Finanzas
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S1-CARGO-ENCARGADO
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Cargo
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S1-INSTITUCION
-  #### Seccion
-  Sección 1: Identificación
-  #### Field Label
-  Institución a la que representa
-  #### Field Type
-  Text
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S2-INTENCION-CAPACIDAD
-  #### Seccion
-  Sección 2: Declaración de Compromiso
-  #### Field Label
-  Declaro que el servicio tiene la intención y capacidad administrativa para recibir la transferencia desde el Gobierno Regional de Ñuble y administrarla en una cuenta o centro de costo separado.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S2-MONTO-FNDR
-  #### Seccion
-  Sección 2: Declaración de Compromiso
-  #### Field Label
-  Monto FNDR solicitado (M$)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Instr
-  Debe ser igual al formulario principal.
--
-  #### ID
-  FORM-PPR-FIN-S2-MONTO-APORTE-PROPIO
-  #### Seccion
-  Sección 2: Declaración de Compromiso
-  #### Field Label
-  Monto Aporte Propio (M$)
-  #### Field Type
-  Number
-  #### Field Constraint
-  Req: mandatory.
-  #### Field Instr
-  Si no tiene aporte, poner M$0.
--
-  #### ID
-  FORM-PPR-FIN-S2-AUTORIZACION-APORTE-PROPIO
-  #### Seccion
-  Sección 2: Declaración de Compromiso
-  #### Field Label
-  Declaro que el aporte propio se encuentra autorizado y estará disponible según la programación financiera presentada.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: conditional. Visible si Monto Aporte Propio > 0.
--
-  #### ID
-  FORM-PPR-FIN-S2-NO-RESP-GORE
-  #### Seccion
-  Sección 2: Declaración de Compromiso
-  #### Field Label
-  Declaro que, en caso de ejecutar el programa, no será responsabilidad del Gobierno Regional el financiamiento posterior al término del mismo.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S2-CONTINUIDAD-GASTO-CORRIENTE
-  #### Seccion
-  Sección 2: Declaración de Compromiso
-  #### Field Label
-  Declaro que, en caso de que la entidad decida continuar la iniciativa post-convenio, los costos serán cargados al presupuesto regular del servicio.
-  #### Field Type
-  Checkbox
-  #### Field Constraint
-  Req: mandatory.
--
-  #### ID
-  FORM-PPR-FIN-S3-FIRMA-JEFE-ADMON-FIN
-  #### Seccion
-  Sección 3: Firma
-  #### Field Label
-  Nombre, firma y timbre del Jefe de División o Departamento de Administración y Finanzas
-  #### Field Type
-  Static-Text
-  #### Field Instr
-  Espacio reservado para la firma manuscrita.
+| ID | Seccion | Field-Label | Field-Type | Field-Constraint |
+| --- | --- | --- | --- | --- |
+| FORM-PPR-FIN-S1-INSTR | Sección 1: Identificación |  |  |  |
+| FORM-PPR-FIN-S1-NOMBRE-PROGRAMA | Sección 1: Identificación | Nombre del Programa | Text | Req: mandatory. |
+| FORM-PPR-FIN-S1-NOMBRE-ENCARGADO-FINANZAS | Sección 1: Identificación | Nombre del Encargado de Presupuesto o Finanzas | Text | Req: mandatory. |
+| FORM-PPR-FIN-S1-CARGO-ENCARGADO | Sección 1: Identificación | Cargo | Text | Req: mandatory. |
+| FORM-PPR-FIN-S1-INSTITUCION | Sección 1: Identificación | Institución a la que representa | Text | Req: mandatory. |
+| FORM-PPR-FIN-S2-INTENCION-CAPACIDAD | Sección 2: Declaración de Compromiso | Declaro que el servicio tiene la intención y capacidad administrativa para recibir la transferencia desde el Gobierno Regional de Ñuble y administrarla en una cuenta o centro de costo separado. | Checkbox | Req: mandatory. |
+| FORM-PPR-FIN-S2-MONTO-FNDR | Sección 2: Declaración de Compromiso | Monto FNDR solicitado (M$) | Number | Req: mandatory. |
+| FORM-PPR-FIN-S2-MONTO-APORTE-PROPIO | Sección 2: Declaración de Compromiso | Monto Aporte Propio (M$) | Number | Req: mandatory. |
+| FORM-PPR-FIN-S2-AUTORIZACION-APORTE-PROPIO | Sección 2: Declaración de Compromiso | Declaro que el aporte propio se encuentra autorizado y estará disponible según la programación financiera presentada. | Checkbox | Req: conditional. Visible si Monto Aporte Propio > 0. |
+| FORM-PPR-FIN-S2-NO-RESP-GORE | Sección 2: Declaración de Compromiso | Declaro que, en caso de ejecutar el programa, no será responsabilidad del Gobierno Regional el financiamiento posterior al término del mismo. | Checkbox | Req: mandatory. |
+| FORM-PPR-FIN-S2-CONTINUIDAD-GASTO-CORRIENTE | Sección 2: Declaración de Compromiso | Declaro que, en caso de que la entidad decida continuar la iniciativa post-convenio, los costos serán cargados al presupuesto regular del servicio. | Checkbox | Req: mandatory. |
+| FORM-PPR-FIN-S3-FIRMA-JEFE-ADMON-FIN | Sección 3: Firma | Nombre, firma y timbre del Jefe de División o Departamento de Administración y Finanzas | Static-Text |  |

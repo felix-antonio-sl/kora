@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-patrimonio
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_patrimonio_koda.yml
 version: 2.0.0
 status: published
@@ -24,92 +24,30 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.16
+    cr: 1.59
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 13
-    meat_count: 74
+    skeleton_count: 2
+    meat_count: 47
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/ris__ris-patrimonio.md.json
 ---
 
 # RIS Proyectos Patrimoniales (SNI 2024)
-## ID
-GN-RIS-PATRIMONIO-2024-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-11-28
-
-## Modification Date
-2025-11-28
-
-## Ctx
-Requisitos de información para proyectos de inversión en inmuebles patrimoniales que ingresan al Sistema Nacional de Inversiones (SNI), versión 2024.
-
 ## Source
-### Primary Source
-kb_gn_010_ris.md (sección RIS-PATRIMONIO-2024)
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf
 
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-GN-RIS-PATRIMONIO-2024-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing):
-  Act->Action, Cause->Cause, Cond->Condition, Cpt->Concept, Ctx->Context,
-  Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
-  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
-  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
-  Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
-  Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
-  Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-
 ## RIS Patrimonio 2024
-### ID
-RIS-PATRIMONIO-2024-META-01
 ### Fuente URL
 https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf
 ### Prop Doc
 Establecer requisitos de información para proyectos de inversión en inmuebles patrimoniales.
 ### Alcance
-#### ID
-RIS-PATRIMONIO-2024-ALCANCE-01
 #### Prop
 Preservar e incrementar patrimonio cultural nacional a través de inversiones en inmuebles patrimoniales.
 #### Tipos Inmuebles
@@ -117,8 +55,6 @@ Monumentos históricos, paleontológicos, arqueológicos, inmuebles de conservac
 #### Beneficios
 Recuperación de infraestructura, integración en educación formal, reconocimiento de diversidad cultural.
 ### Orientaciones Sectoriales
-#### ID
-RIS-PATRIMONIO-2024-ORIENTACIONES-SECTORIALES-01
 #### Planes Infraestructura
 - Origen: Generados por Ministerio de las Culturas, las Artes y el Patrimonio.
 - Prop-Plan: Poner en valor inmuebles patrimoniales y asegurar condiciones para bienes muebles protegidos.
@@ -129,11 +65,7 @@ RIS-PATRIMONIO-2024-ORIENTACIONES-SECTORIALES-01
 - Req-A-Riesgo-Desastres: Aplicar Metodología Complementaria (desde 2024) para instalaciones turísticas.
 - Req-B-Enfoque-Genero: Incorporar lineamientos específicos en la formulación de proyectos.
 ### Postulacion Por Etapas
-#### ID
-RIS-PATRIMONIO-2024-POSTULACION-ETAPAS-01
 #### Etapa Prefactibilidad Factibilidad
-#### ID
-RIS-PATRIMONIO-2024-ETAPA-PREFACT-FACT-01
 #### Formulacion Proyecto Req
 - Base-Metodologica: "Metodología para la formulación y evaluación socioeconómica de proyectos de patrimonio cultural inmueble".
 - Precios-Sociales: Aplicar en la evaluación.
@@ -151,8 +83,6 @@ Detallar requerimientos de profesionales especializados.
 #### Cronogramas Req
 Financiero y de actividades (Carta Gantt).
 #### Etapa Diseno
-#### ID
-RIS-PATRIMONIO-2024-ETAPA-DISEÑO-01
 #### Continuidad Formulacion Req
 Actualizar perfil usando misma Metodología, integrando resultados de etapa anterior.
 #### Documentacion Legal Req
@@ -168,8 +98,6 @@ Programa arquitectónico y modelo de gestión aprobado por unidad técnica y pro
 #### Cronogramas Req
 Carta Gantt (con procesos de licitación, adjudicación, contrato, control UT) y cronograma financiero.
 #### Etapa Ejecucion
-#### ID
-RIS-PATRIMONIO-2024-ETAPA-EJECUCION-01
 #### Formulacion Proyecto Req
 - Opcion-A (Directo-a-Ejecucion): Estudio de preinversión a nivel de perfil (con Metodología) y entrega de diseño terminado.
 - Opcion-B (Desde-Diseño): Resumen ejecutivo y entrega del diseño final.

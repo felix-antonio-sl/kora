@@ -40,7 +40,7 @@ extensions:
 
 # RIS Estudio Básico PMDT (SNI 2024)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_-_Estudio_basico_PMDT_2024.pdf
 
 ## RIS EB PMDT 2024

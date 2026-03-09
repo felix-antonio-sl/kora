@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:comunicaciones-oc
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml
 version: 2.0.0
 status: published
@@ -25,88 +25,28 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.04
+    cr: 1.08
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 84
+    skeleton_count: 1
+    meat_count: 54
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__comunicaciones-oc.md.json
 ---
 
 # Comunicaciones Oscar Crisóstomo
-## ID
-GN-COMUNICACIONES-OC-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Compilado de comunicaciones (LD/Crónica/Ex Ante) de Oscar Crisóstomo: ejecución presupuestaria, presupuesto regional, campañas, descentralización, seguridad, Procultura, obras e hitos de gestión.
-
-## Primary Source
-staging/gn/kodeando/kb_gn_008_comunicaciones_oc.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Comunicaciones Oscar Crisostomo
-### ID
-GN-COMUNICACIONES-OC-DOC-01
-### Title
+## Titulo
 Comunicaciones Oscar Crisóstomo
-### Sections
-#### Ld 11 07 24 sobre ejecucion presupuestaria
-#### ID
-GN-COM-SEC-0001
-#### Title
+## Secciones
+### Ld 11 07 24 sobre ejecucion presupuestaria
+#### Titulo
 LD 11/07/24 sobre ejecución presupuestaria
-#### Content
+#### Contenido
 
 El lunes recién pasado nos reunimos con el ministro Marcel, junto a  los gobernadores y gobernadoras de Chile, para poder analizar la ejecución presupuestaria y el mecanismo que se ha planteado este año, que como lo hemos reiterado en más de una jornada de trabajo, va en contra a descentralización pues afecta el normal desarrollo de los gobiernos regionales y cuando eso ocurre, son los habitantes del territorio quienes sufren las consecuencias. Con la Ley de Presupuesto vigente, el trabajo con los municipios, la entrega de ayudas técnicas o muchos de los programas sociales que veíamos trabajando con celeridad el 2022 y 2023, se ralentizaron en este ejercicio presupuestario, en otras palabras, se pisó el freno a la descentralización de Chile, gracias a una ley extremadamente restrictiva, de la que no teníamos ejemplo desde el retorno a la democracia.
 
@@ -121,22 +61,18 @@ Respecto  al proyecto de regiones más fuertes, lo que hemos solicitado al Minis
 En ese marco, acordamos comenzar nuevamente un proceso junto al Parlamento, para poder activar un proyecto de ley que está dentro de las medidas que también han sido acordada con el Ejecutivo, por cuanto esperamos próximamente también su aprobación, pues eso sería una señal clara de compromiso hacia la descentralización, porque lamentablemente lo que hemos visto hasta hoy, es que han sido muchas las expectativas que se han visto truncadas y no solamente por las situaciones que han vivido los gobiernos regionales, sino que principalmente, porque éste ha sido un pretexto para concentrar el poder en el nivel central.
 
 Cada una de las iniciativas que hemos emprendido de manera autónoma en nuestras regiones, han apuntado al corazón de los problemas que se han podido resolver, y en Ñuble tenemos pruebas concretas con el Centro Teletón, la carrera de medicina o toda la inversión en seguridad que hemos logrado para la región, son solo ejemplos de ámbitos de desarrollo impensados en un modelo centralista, por eso desde las regiones seguiremos insistiendo en una materia que resulta primordial, donde junto con tener más recursos, también existan los mecanismos eficientes para efectuar el gasto, cuestión que en este año, no ha ocurrido.
-#### Ld 07 09 24 sobre presupuesto regional
-#### ID
-GN-COM-SEC-0002
-#### Title
+### Ld 07 09 24 sobre presupuesto regional
+#### Titulo
 LD 07/09/24 sobre Presupuesto Regional
-#### Content
+#### Contenido
 
 Los beneficios que ha tenido la Región de Ñuble, en términos presupuestarios, se pueden resumir en dos grandes aspectos; siendo el primero y más importante, el poder contar con un presupuesto de inversión propio para el territorio, lo que permite focalizar los recursos de manera sustantiva, es decir, trabajar en una distribución con un criterio local y participativo para resolver las necesidades de las 21 comunas, lo que antes, como provincia dependiente del Biobío,  era mucho más complejo, burocrático y lento. Por otra parte, al transformarnos en región, sumamos un importante criterio de participación de  las provincias y comunas a través del Consejo Regional, para aprobar las iniciativas, planes y programas que se pueden financiar desde el Gobierno Regional, sumando una mayor representatividad ciudadana en la ejecución de estos recursos.  
 
 Ahora, con respecto a los desafíos para mejorar la ejecución del gasto, existen varios, entre ellos el más importante, orientado a fortalecer la cantidad y calidad de la cartera de iniciativas de inversión que ingresan al Gobierno Regional a través de un programa de asistencia técnica a los municipios y, por otro lado, ajustar los procesos administrativos internos, que permitan reducir los tiempos de acción en todo lo que implica el proceso de ejecución presupuestaria, para lo cual ya se estamos trabajando. Indudablemente también existe una deuda pendiente por parte del Gobierno Central, que debe acelerar los procesos de revisión y control, que en las regiones estamos de acuerdo en que existan, pero con tiempos de respuesta definidos para responder oportunamente a las necesidades de la comunidad  y hacerlo de manera eficiente.
-#### Ld 28 09 24 sobre campanas electorales
-#### ID
-GN-COM-SEC-0003
-#### Title
+### Ld 28 09 24 sobre campanas electorales
+#### Titulo
 LD 28/09/24  sobre campañas electorales
-#### Content
+#### Contenido
 
 Esta campaña tiene características muy desafiantes, que le dan una connotación distinta a procesos anteriores. Primero, porque se trata de una elección con voto obligatorio, lo que aumenta el número de personas que participan del proceso, lo que tendrá su estreno en elecciones unipersonales que se vivirán a fines de octubre; ya que este sistema se retomó  el 2022 y hasta ahora solo se ha puesto a prueba en los plebiscitos constituyentes.
 
@@ -145,12 +81,10 @@ Junto a este escenario que aumenta significativamente el universo de votantes, t
 Estos dos hechos marcan una diferencia con el escenario actual, donde  junto al mayor número de electores,  también existen todas las opciones de reunión sin restricciones sanitarias, por cuanto el diseño de nuestra campaña considera un amplio despliegue en terreno por las 21 comunas de la región, instancias donde daremos a conocer nuestras principales propuestas y recogeremos las inquietudes de la comunidad, las que también se reciben y difunden a través de los canales digitales (redes sociales y  sitio web), donde hemos desplegado una propuesta  participativa que permite a nuestros vecinos y vecinas verse reflejados en historias y proyectos; además de una oportunidad para transmitir  a diario el espíritu que inspira este nuevo desafío, lleno de alegría, con propuestas y un ánimo constructivo que siempre nos ha distinguido, al igual que el carácter transversal de la campaña que será similar al de nuestra gestión en el primer periodo liderando el Gobierno Regional.
 
 Por cierto también incluimos varios elementos de promoción más tradicionales como banderas, espacios radiales e informativos impresos, que nos permiten llegar públicos que no están presentes en los medios digitales.
-#### Ld 13 11 sobre eleccion de gobernadores y contrapeso al nivel central
-#### ID
-GN-COM-SEC-0004
-#### Title
+### Ld 13 11 sobre eleccion de gobernadores y contrapeso al nivel central
+#### Titulo
 LD 13/11 sobre elección de gobernadores y contrapeso al nivel central
-#### Content
+#### Contenido
 
 ¿Cómo influirá la tendencia de los futuros gobiernos regionales en el desarrollo de los territorios?
 
@@ -169,12 +103,10 @@ Espero que se mantenga la misma unidad de propósito que conseguimos en los prim
 El Presidente Boric declaró al inicio de su gestión que terminaría su periodo con menos poder en favor de las regiones; y desde esta vereda seguimos esperando señales que refrenden ese compromiso. Terminar con los delegados presidenciales; una mayor capacidad de gestión en materias de seguridad con pertinencia a cada región; la autonomía para la asignación de recursos con menos tiempos de espera (y no por eso menos control), son algunas de los desafíos que tiene el actual gobierno y de seguro, el próximo también.
 
 En el caso particular de Ñuble, también seguiremos exigiendo más eficiencia a las carteras sectoriales, promoviendo el gasto eficiente de los recursos, cuestión que está al debe en algunos ministerios como Obras Públicas; o una Subdere que de verdad lidere la implementación de las políticas y planes para el desarrollo regional; o en todos aquellos ámbitos que permitan culminar la instalación de la región, en aquellas áreas que facilitan la vida de las personas en las 21 comunas, acercando los servicios más utilizados por las personas a sus provincias.
-#### Preguntas ld 13 12 24 sobre recorte presupuestario
-#### ID
-GN-COM-SEC-0005
-#### Title
+### Preguntas ld 13 12 24 sobre recorte presupuestario
+#### Titulo
 PREGUNTAS LD 13.12.24 – Sobre recorte presupuestario
-#### Content
+#### Contenido
 
 El efecto es preocupante, porque la Ley de Presupuesto asignó un monto para cada una de las regiones durante el 2024; recursos con los que se debe financiar los proyectos de inversión que se están ejecutando o van a iniciar sus obras y, por tanto, si el Gobierno Central retiene parte de esa caja, se torna complejo desarrollar la cartera de inversiones y corren el riesgo de paralización de algunas obras. En el caso de Ñuble, del presupuesto que había comprometido el Gobierno para el funcionamiento del 2024, nos tienen retenidos más de 29 mil millones, eso es cerca el 40% de los recursos que con los que por ley contamos para las inversiones de este año. El Gobierno Regional programó la cartera de inversiones y los proyectos de acuerdo a los recursos que la Ley de Presupuesto nos asignó, que son más de 77 mil millones y lo mismo pasa en al menos 5 regiones del país, entre ellas Ñuble, Biobío, Valparaíso, Los Lagos y la Región Metropolitana;  por lo que es un escenario inédito, que nunca había sucedido y que debe resolverse a la brevedad.
 
@@ -197,12 +129,10 @@ De la deuda inicial de 34 mil millones, durante esta semana recibimos una transf
 Esperamos llegar a buen puerto, pues lo que estamos exigiendo no es un aumento de recursos, sino una respuesta al compromiso pactado en la Ley de Presupuestos vigente hasta el término de este año.
 
 Esta situación es inédita y se solucionaría de forma definitiva, si es que el Gobierno y el Congreso priorizan el proyecto de ley que le otorga mayor autonomía a loa Gobiernos Regionales, lo que implicaría en la práctica que desde las regiones tendríamos una capacidad distinta en términos de cómo administrar el presupuesto, con mayores mecanismos de control y transparencia, pero alejando la burocracia administrativa que solo entorpece el crecimiento y desarrollo de las regiones. Este proyecto lleva más de un año en el Congreso y su avance ha sido escaso. Es hora que los representantes de nuestra región en el parlamento, también contribuyan en este camino que indudablemente beneficiará a los ñublensinos y ñublensinas.
-#### Ld 28 12 24 balance fin de ano
-#### ID
-GN-COM-SEC-0006
-#### Title
+### Ld 28 12 24 balance fin de ano
+#### Titulo
 LD 28.12.24 Balance Fin de Año
-#### Content
+#### Contenido
 
 Ñuble frente a emergencias
 
@@ -237,22 +167,18 @@ A pesar de estos puntos divergentes, estamos conscientes que desde las regiones 
 Ciertamente existen desafíos pendientes y nos vamos a concentrar en ello durante el próximo período. Por un lado, trabajaremos con energía en afianzar el trabajo con los alcaldes de manera transversal. Con la mayoría de ellos ya hemos sostenido más de un encuentro y juntos tenemos el desafío de definir los proyectos prioritarios que nos permitirán suscribir un Acuerdo por el Desarrollo de Ñuble: el diálogo ha sido fluido y creemos que en todas las comunas llegaremos a un buen entendimiento, pensando en el desarrollo de cada territorio.
 
 Con el nivel central también tenemos desafíos y ciertamente, los pasos para afianzar la descentralización están claros y conversados con el Presidente Boric. Durante su última visita a la región, el mandatario se comprometió a dar curso a dos iniciativas claves: agilizar la tramitación de la ley de Regiones Más Fuertes, que nos permite gestionar el presupuesto de manera más directa, con mayor pertinencia y no por eso, con menos control. La situación que vivimos actualmente, con la restricción del Ministerio de Hacienda a la transferencia de recursos de nuestro presupuesto, enlenteció la gestión de los gobiernos regionales de forma inédita y muy perjudicial, por cuanto esperamos que se trate de una situación transitoria y excepcional. En el mismo nivel de acuerdos, también existe consenso respecto a contar con mayores competencias en materia de prevención del delito; dado que en el gobierno regional radica el liderazgo político y por ende, la conducción de la región, por cuanto no podemos estar ausentes de competencias en materias tan relevantes para la comunidad como trabajar por comunas y regiones más seguras, sobre todo, con el nivel de inversión que actualmente disponemos, tanto para las organizaciones sociales como para las policías, que gracias a ese presupuesto, se desarrollan y otorgan sus servicios con total eficacia.
-#### Ld 02 01 25 sobre ceremonia de juramento nuevo consejo regional
-#### ID
-GN-COM-SEC-0007
-#### Title
+### Ld 02 01 25 sobre ceremonia de juramento nuevo consejo regional
+#### Titulo
 LD - 02/01/25. Sobre Ceremonia de Juramento nuevo Consejo Regional
-#### Content
+#### Contenido
 
 Dada la importancia de la ceremonia, y tal como fue el año 2022, el equipo del Gobierno Regional se encuentra afinando todos los detalles para que sea una instancia protocolar y tenga la relevancia que corresponde, entendiendo que asumen las autoridades que van a liderar el Gobierno Regional y el Consejo Regional de Ñuble por los próximos cuatro años.
 
 Se tratará de una instancia que hemos pensando con un carácter ciudadano, donde al Gobernador y los consejeros y consejeros regionales, donde se les tomará el juramento dentro de una sesión extraordinaria del Consejo, tal como lo mandata la ley y donde el público asistente podrá ser testigo de este hito donde se constituye el segundo Consejo Regional integrado por representantes de las tres provincias de Ñuble.
-#### Ld 09 01 25 sobre proyecto de ley regiones mas fuertes
-#### ID
-GN-COM-SEC-0008
-#### Title
+### Ld 09 01 25 sobre proyecto de ley regiones mas fuertes
+#### Titulo
 LD 09-01-25 Sobre proyecto de ley Regiones Más Fuertes
-#### Content
+#### Contenido
 
 Gobernador de Ñuble insta al Congreso y al Ejecutivo a acelerar la aprobación del Proyecto de Ley "Regiones Más Fuertes"
 
@@ -279,12 +205,10 @@ Llamado a la acción
 “El proyecto es fundamental para cumplir con el objetivo de descentralización efectiva, acercando la democracia y las decisiones presupuestarias a las personas y dotando a las regiones de herramientas concretas para generar ingresos propios y desarrollar proyectos con pertinencia territorial”.
 
 “Chile no puede seguir postergando la descentralización. Las razones para avanzar están claras, y el tiempo apremia. Este proyecto debe ser una prioridad legislativa y zanjarse este año, permitiendo que las regiones ocupen el lugar que les corresponde en el desarrollo del país, por cuanto es hora de que pongamos las necesidades de las regiones en el centro de la agenda nacional.”
-#### Ld 15 01 25 respecto a conformacion de nuevo consejo y presidencias
-#### ID
-GN-COM-SEC-0009
-#### Title
+### Ld 15 01 25 respecto a conformacion de nuevo consejo y presidencias
+#### Titulo
 LD – 15/01/25 Respecto a conformación de nuevo Consejo y Presidencias
-#### Content
+#### Contenido
 
 El futuro de Ñuble primero
 
@@ -305,54 +229,44 @@ La gestión pública debe estar al servicio de las personas, no de intereses ele
 Lo que el delegado presidencial desconoce –o prefiere ignorar– es que el Gobierno Regional de Ñuble es autónomo del Gobierno Central. Los gobernadores regionales somos electos democráticamente por el pueblo, con un mandato claro y directo de la ciudadanía, a diferencia de los delegados presidenciales y seremis, que responden al cuoteo político de turno. Por lo tanto, no aceptaremos que se intente poner en el mismo nivel la gestión independiente de este Gobierno Regional con las decisiones político-partidarias que se han vuelto una práctica recurrente en el Ejecutivo.
 
 En momentos en que el país enfrenta desafíos que requieren unidad y cooperación, el comportamiento de ciertos sectores políticos no solo tensa innecesariamente el escenario, sino que también socava los esfuerzos por construir consensos en beneficio de la ciudadanía. La instrumentalización de las instituciones con fines partidistas no solo polariza el debate público, sino que impide avanzar en soluciones reales para las personas. Las autoridades tienen el deber de actuar con responsabilidad, priorizando el bienestar de la región y su gente, en lugar de alimentar conflictos que solo deterioran la confianza en la política y en la capacidad del Estado para responder a las necesidades de la población.
-#### Ld por aprobacion de competencias de seguridad en camara de diputados 19 03
-#### ID
-GN-COM-SEC-0010
-#### Title
+### Ld por aprobacion de competencias de seguridad en camara de diputados 19 03
+#### Titulo
 LD por Aprobación de competencias de Seguridad en Cámara de Diputados 19.03
-#### Content
+#### Contenido
 
 Valoro profundamente la reciente aprobación en la Cámara de Diputados del proyecto que otorga facultades en materia de seguridad a los Gobiernos Regionales. Esta medida responde directamente a nuestra constante preocupación sobre el tema y viene a responder una demanda histórica desde nuestra región, donde siempre hemos solicitado mayor autonomía para enfrentar los desafíos de seguridad que conocemos profundamente, gracias al contacto permanente con la comunidad y los municipios.
 
 Esta iniciativa nos permitirá fortalecer aún más los proyectos e inversiones que hemos desarrollado en materia de seguridad, como el sistema de televigilancia, infraestructura y equipamiento policial, áreas en las que ya hemos comprometido alrededor de 20 mil millones de pesos en los últimos años. Ahora, con facultades explícitas para diseñar, aprobar y ejecutar programas orientados a la prevención del delito, podremos actuar con mayor rapidez y pertinencia territorial, respondiendo oportunamente y sin burocracia a las necesidades reales de nuestras comunas.
 
 Valoramos especialmente que el trámite legislativo contó con el voto favorable de todos los diputados que representan a la región de Ñuble, reflejando un amplio respaldo político y ciudadano hacia una descentralización efectiva, particularmente en seguridad ciudadana. Desde Ñuble, reiteramos nuestro compromiso de seguir trabajando coordinadamente con todas las instituciones, para que estas nuevas facultades se traduzcan en soluciones concretas que impacten positivamente en la vida cotidiana de nuestras comunidades.
-#### Ex ante 19 03 25 por juicio de cuentas caso procultura
-#### ID
-GN-COM-SEC-0011
-#### Title
+### Ex ante 19 03 25 por juicio de cuentas caso procultura
+#### Titulo
 EX ANTE 19.03.25 por juicio de Cuentas caso Procultura
-#### Content
+#### Contenido
 
 Efectivamente la Contraloría inició un juicio de cuentas, proceso administrativo que se dirige a funcionarios públicos individualizados y que se enmarca en la investigación en torno al Convenio entre el Gobierno Regional de Ñuble y la Fundación Procultura.
 
 En este proceso, que actualmente se encuentra en la etapa de descargos, se entregarán los argumentos y antecedentes que permitan precisar la información, respecto a la correcta realización del Encuentro Binacional, razón que originó este convenio que finalizó hace más de un año y que se desarrolló logrando todos los objetivos propuestos.
-#### Ld 08 05 sobre habilitacion de aerodromo para vuelos comerciales
-#### ID
-GN-COM-SEC-0012
-#### Title
+### Ld 08 05 sobre habilitacion de aerodromo para vuelos comerciales
+#### Titulo
 LD 08.05 Sobre habilitación de aeródromo para vuelos comerciales
-#### Content
+#### Contenido
 
 La conversación que hemos sostenido es un preacuerdo en el cual la DGAC se compromete a tener habilitado para el 2026 el aeródromo para que puedan llegar charters, lo que implicaque las empresas interesadas tienen que hacer las solicitudes correspondientes y las visitas técnicas este año. Si eso no ocurre, finalmente esto no va a poder avanzar. Por lo tanto, hoy la situación no está en la DGAC, no es una situación de la región, sino que es del interés que puedan mostrar efectivamente las empresas que estén interesadas en llegar.
 
 Lo dijimos hace un tiempo atrás, para nosotros era relevante poder recibir pasajeros internacionales, principalmente en el tiempo invernal, donde tenemos el destino internacional del Valle de las Trancas, que indudablemente es uno de los mejores centros de Sudamérica, pero necesitamos dotarlo de mayor capacidad para que puedan llegar de buena manera a nuestra región”.  Es una buena noticia, sabiendo ya que hay una disposición por parte de la institucionalidad para poder recibir los charters durante el próximo año, solamente falta que el privado se pueda sumar, la industria se pueda sumar con mucho mayor fuerza.
-#### Cronica ch 09 05 25 sobre remodelacion de avenidas vicente mendez paul harris y
-#### ID
-GN-COM-SEC-0013
-#### Title
+### Cronica ch 09 05 25 sobre remodelacion de avenidas vicente mendez paul harris y
+#### Titulo
 Crónica CH 09.05.25 Sobre Remodelación de Avenidas Vicente Méndez, Paul Harris y Las Rosas en Chillán
-#### Content
+#### Contenido
 
 Desde el Gobierno Regional estamos diseñando e impulsando diferentes iniciativas que permitan a la capital regional contar con una conectividad fluida, y que respondan a un plan integral en cuanto a vialidad estructurante; una de ellas es el diseño del mejoramiento de la avenida Vicente Méndez, Paul Harris y Las Rosas en Chillán que financiaremos con recursos nuestros.
 
 Este proyecto se enmarca dentro del Plan Maestro de Transporte y esta licitación va a permitir contar con un diseño de ingeniería para el posterior desarrollo de obras que ayuden a mitigar la congestión vehicular que existe, especialmente, en el acceso de Coihueco hacia Chillán y va a ayudar a descomprimir muchas zonas que hoy presentan alta congestión de tránsito en la ciudad.
-#### Ld 09 05 25 sobre proyecto paso bajo nivel parque lantano
-#### ID
-GN-COM-SEC-0014
-#### Title
+### Ld 09 05 25 sobre proyecto paso bajo nivel parque lantano
+#### Titulo
 LD 09.05.25 Sobre proyecto Paso bajo nivel Parque Lantaño
-#### Content
+#### Contenido
 
 Como Gobierno Regional nos hemos propuesto conectar a la Región de Ñuble en todas sus dimensiones y una de ellas es para dar respuesta a lo que afecta a algunos sectores debido a la congestión vehicular, particularmente la zona de Parque Lantaño, donde por muchas décadas se ha hablado del paso a bajo nivel para solucionar esta problemática y hoy está dando pasos administrativos importantes y están asegurados los recursos para su ejecución.
 
@@ -369,12 +283,10 @@ Participación ciudadana
 Bueno en el diseño del paso bajo nivel existió participación ciudadana, de hecho, estuvimos presentes en más de una oportunidad; es una obra que contempla doble vía, ciclovías, mucha iluminación, va a reconfigurar también toda la intersección de la avenida Ecuador con la avenida Brasil, por lo tanto, creo que va a ser una intervención general que va a aliviar uno de los grandes dolores de cabeza que tiene ese sector que por lo demás
 
 Es importante recordar que el sector Ultraestación y Parque Lantaño ha tenido un aumento poblacional, de viviendas y departamentos importante, por lo que tenemos una responsabilidad en términos de ir dotando de una mejor conectividad y el paso bajo nivel que se ha esperado por tantos años.
-#### El mercurio 17 05 25 sobre caso procultura
-#### ID
-GN-COM-SEC-0015
-#### Title
+### El mercurio 17 05 25 sobre caso procultura
+#### Titulo
 EL MERCURIO 17.05.25 sobre caso Procultura
-#### Content
+#### Contenido
 
 1. ¿Cómo se originó el nexo con ProCultura?
 
@@ -391,12 +303,10 @@ En Ñuble actuamos de buena fe y de forma transparente. Diferente es hacer un an
 4. ¿Qué medidas se han tomado desde entonces?
 
 Desde el Gobierno Regional hemos adoptado medidas concretas para mejorar los controles, reforzando la evaluación técnica y jurídica de los convenios; fortaleciendo el rol del Consejo Regional en la priorización; y aumentando las exigencias de rendición y trazabilidad de los recursos. Además, hemos propuesto y respaldado cambios normativos que apunten a una mayor fiscalización y mecanismos de control. Nuestra convicción es clara: cada peso del presupuesto regional debe traducirse en beneficios reales para las personas y ejecutarse con total transparencia. Por eso hemos impulsando una cartera robusta de iniciativas públicas, preferentemente a través de municipios, pero también seguimos trabajando con fundaciones que han hecho un trabajo excepcional y que producto de este caso se vieron afectadas sin tener ningún reparo en su mecanismo de trabajo ni menos en el propósito que pretenden conseguir.
-#### Ld 21 05 25 sobre aprobacion facultades de seguridad en la camara de diputados
-#### ID
-GN-COM-SEC-0016
-#### Title
+### Ld 21 05 25 sobre aprobacion facultades de seguridad en la camara de diputados
+#### Titulo
 LD 21.05.25 sobre Aprobación facultades de seguridad en la Cámara de diputados
-#### Content
+#### Contenido
 
 Respecto al avance legislativo en materia de seguridad y prevención del delito
 
@@ -405,15 +315,13 @@ Valoro profundamente la aprobación en la Cámara de Diputadas y Diputados del p
 Solo en los últimos dos años, el Gobierno Regional de Ñuble ha destinado más de $20 mil millones a iniciativas de seguridad, financiando proyectos de iluminación pública, sistemas de televigilancia, equipamiento táctico para Carabineros, cámaras de vigilancia para municipios y drones para fiscalización costera. Esta inversión no se ha concentrado en zonas urbanas únicamente, sino que ha llegado a sectores rurales y costeros de comunas como Cobquecura, San Ignacio, Bulnes, San Carlos y Chillán, ampliando significativamente la cobertura territorial.
 
 La posibilidad de contar con una División de Prevención del Delito dentro del Gobierno Regional y de articular acciones junto a municipios y servicios públicos refuerza nuestra institucionalidad y permite avanzar hacia un modelo de seguridad más integral, eficaz y ajustado a las realidades locales. Esperamos que este proyecto avance con la misma convicción en el Senado, porque lo que está en juego no es una competencia de atribuciones, sino la capacidad del Estado de llegar con soluciones oportunas para construir territorios más seguros, cohesionados y protegidos.
-#### Ld 21 05 25 sobre dichos del gboernador de la araucania rene saffirio sobre agor
-#### ID
-GN-COM-SEC-0017
-#### Title
+### Ld 21 05 25 sobre dichos del gboernador de la araucania rene saffirio sobre agor
+#### Titulo
 LD 21.05.25 Sobre dichos del Gboernador de la Araucanía, René Saffirio sobre agorechi y  los gobernadores
-#### Content
+#### Contenido
 
 La actitud del gobernador Saffirio termina por aislar a su región de los espacios donde se están tomando decisiones clave para el desarrollo del país. Prueba de ello fue su ausencia en la reciente Cumbre del Eje Trasandino en Concepción, donde fue el único gobernador convocado que no asistió. En esa instancia se acordaron líneas de acción concretas para el desarrollo económico del centro sur de Chile, diálogo del cual La Araucanía quedó al margen. Las regiones no necesitan más divisiones, sino unidad para enfrentar con seriedad los desafíos del centralismo.
 
 Desde Ñuble reafirmamos nuestro compromiso con una descentralización basada en la colaboración, la responsabilidad y el trabajo conjunto. Los gobernadores hemos demostrado que, cuando se actúa con sentido de región, es posible avanzar en respuestas concretas para nuestras comunidades.
-### Content
+## Contenido
 \# Comunicaciones Oscar Crisóstomo

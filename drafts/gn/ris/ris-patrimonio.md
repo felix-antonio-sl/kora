@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.6
+    cr: 1.59
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -39,7 +39,7 @@ extensions:
 
 # RIS Proyectos Patrimoniales (SNI 2024)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf
 
 ## RIS Patrimonio 2024

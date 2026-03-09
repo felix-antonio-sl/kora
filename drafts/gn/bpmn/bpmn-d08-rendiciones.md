@@ -40,7 +40,7 @@ extensions:
 
 # BPMN D08: Gestión de Rendiciones de Cuentas
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -53,7 +53,7 @@ UCR/DAF
 ### Subprocesos
 ~10
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.3735-4140
 
 ## Body MD

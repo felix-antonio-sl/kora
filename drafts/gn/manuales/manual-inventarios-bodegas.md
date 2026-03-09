@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.93
+    cr: 3.2
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -82,40 +82,20 @@ Todo artículo debe estar registrado en el Catálogo Maestro antes de cualquier 
 | Campo | Def |
 | --- | --- |
 | Código Interno | Identificador único alfanumérico generado por el sistema. |
-| Campo | Def |
-| --- | --- |
 | Código de Barras | EAN-13 o Code-128 para lectura automática. |
-| Campo | Items |
-| --- | --- |
-| Clasificación Jerárquica | ['Familia (ej. Insumos de Oficina).', 'Línea (ej. Papelería).', 'Grupo (ej. Cuadernos).'] |
-| Campo | Def |
-| --- | --- |
+| Clasificación Jerárquica |  |
 | Unidad de Medida | Unidad base de control (unidad, caja, resma, litro, etc.). |
-| Campo | Def |
-| --- | --- |
 | Conversiones | Tabla de equivalencias (ej. 1 caja = 12 unidades). |
 #### Atributos del Articulo
 #### Campos
 | Campo | Def |
 | --- | --- |
 | Cuenta Contable | Asociación para generación automática de asientos. |
-| Campo | Def |
-| --- | --- |
 | Concepto de Gasto | Imputación presupuestaria (Subtítulo 22 generalmente). |
-| Campo | Def | Ctx_Optional |
-| --- | --- | --- |
-| Umbral de Capitalización | Bienes sobre 3 UTM se registran como Activo Fijo, no como existencias. | Manual 2.3: Activo Fijo (./manual_2_3_activo_fijo.md). |
-| Campo | Def |
-| --- | --- |
+| Umbral de Capitalización | Bienes sobre 3 UTM se registran como Activo Fijo, no como existencias. |
 | Control de Lote | Para artículos que requieren trazabilidad (medicamentos, alimentos). |
-| Campo | Req |
-| --- | --- |
-| Fecha de Vencimiento | Obligatorio para artículos perecibles. |
-| Campo | Def |
-| --- | --- |
+| Fecha de Vencimiento |  |
 | Imagen Referencial | Fotografía para identificación visual. |
-| Campo | Def |
-| --- | --- |
 | Stock Mínimo/Máximo | Parámetros para generación de alertas de reposición. |
 #### Proveedores Habituales
 #### Contexto
@@ -132,28 +112,16 @@ Flujo estándar para ingresos desde proveedores externos.
 | Paso | Act | Def |
 | --- | --- | --- |
 | 1 | Aviso de Entrega | El proveedor coordina fecha y hora de despacho. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 2 | Verificación Inicial | Contrastar guía de despacho con Orden de Compra. |
-| Paso | Act | Items |
-| --- | --- | --- |
-| 3 | Inspección Física | ['Contar unidades.', 'Verificar estado y calidad.', 'Controlar lotes y vencimientos (si aplica).'] |
-| Paso | Act | Def |
-| --- | --- | --- |
+| 3 | Inspección Física |  |
 | 4 | Registro en Sistema | Ingresar cantidades recibidas, vinculando a OC. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 5 | Documento Tributario | Asociar factura electrónica o guía de despacho. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 6 | Ubicación | Asignar ubicación física dentro de la bodega. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 7 | Recepción Conforme | Firma del Encargado de Bodega que habilita el devengo. |
 #### Ctx Clasificacion Bienes
 #### Contexto
 Los bienes recibidos deben clasificarse por tipología. Existencias (consumibles) van a Bodega según este manual; Activos Fijos (capitalizables) van al proceso de alta.
-#### Ctx Optional
+#### Contexto opcional
 Manual 2.3: Activo Fijo (./manual_2_3_activo_fijo.md).
 #### Recepcion con Capturador de Datos
 #### Items
@@ -179,14 +147,8 @@ Mecanismo formal para retirar artículos de bodega.
 | Paso | Def |
 | --- | --- |
 | Generación | Usuario solicitante crea pedido en sistema indicando artículos y cantidades. |
-| Paso | Req |
-| --- | --- |
-| Justificación | Campo obligatorio que describe el uso previsto. |
-| Paso | Def |
-| --- | --- |
+| Justificación |  |
 | Validación | El sistema verifica stock disponible antes de enviar a aprobación. |
-| Paso | Def |
-| --- | --- |
 | Flujo de Aprobación | Según monto o tipo de artículo, puede requerir V°B° de jefatura. |
 #### Despacho de Productos
 #### Proceso
@@ -217,12 +179,10 @@ Mecanismo formal para retirar artículos de bodega.
 #### Contexto
 Proceso obligatorio de verificación periódica.
 #### Frecuencia
-| Tipo | Req |
-| --- | --- |
-| Inventario General | Al menos una vez al año (obligatorio al 31/12). |
-| Tipo | Def |
-| --- | --- |
-| Inventarios Parciales | Por familia, ubicación o artículos críticos (mensual o trimestral). |
+| Tipo | Req | Def |
+| --- | --- | --- |
+| Inventario General | Al menos una vez al año (obligatorio al 31/12). |  |
+| Inventarios Parciales |  | Por familia, ubicación o artículos críticos (mensual o trimestral). |
 #### Planificacion
 #### Acciones
 Definir alcance, fechas, equipos de conteo y corte de operaciones.
@@ -285,18 +245,12 @@ Proceso para actualizar el costo de artículos ante cambios significativos.
 - Genera comprobante contable de ajuste de valor.
 #### Cierre Mensual de Bodega
 #### Pasos
-| Paso | Act | Req |
-| --- | --- | --- |
-| 1 | Corte de Movimientos | No ingresan ni egresan productos después del cierre. |
-| Paso | Act | Def |
-| --- | --- | --- |
-| 2 | Valorización Final | Cálculo del stock valorizado al último día del mes. |
-| Paso | Act | Def |
-| --- | --- | --- |
-| 3 | Generación de Comprobante | Asiento contable que registra el costo de lo consumido. |
-| Paso | Act | Req |
-| --- | --- | --- |
-| 4 | Cuadratura | Stock valorizado debe coincidir con cuenta contable de Existencias. |
+| Paso | Act | Req | Def |
+| --- | --- | --- | --- |
+| 1 | Corte de Movimientos | No ingresan ni egresan productos después del cierre. |  |
+| 2 | Valorización Final |  | Cálculo del stock valorizado al último día del mes. |
+| 3 | Generación de Comprobante |  | Asiento contable que registra el costo de lo consumido. |
+| 4 | Cuadratura | Stock valorizado debe coincidir con cuenta contable de Existencias. |  |
 #### Cierre Anual
 #### Requisitos
 - Inventario físico obligatorio.
@@ -322,12 +276,12 @@ Proceso para actualizar el costo de artículos ante cambios significativos.
 ### Referencias y Alcance
 #### Contexto
 Este manual complementa otros manuales de abastecimiento/patrimonio, enfocándose en la gestión física de existencias (consumibles) desde la recepción hasta el consumo.
-#### Ctx Optional
+#### Contexto opcional
 - Manual 2.1: Compras Públicas (./manual_2_1_compras.md).
 - Manual 2.3: Activo Fijo (./manual_2_3_activo_fijo.md).
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_3_activo_fijo.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml

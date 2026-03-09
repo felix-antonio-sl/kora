@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.27
+    cr: 2.47
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -67,31 +67,19 @@ La Tasa de Reemplazo para 2026 es de 1 por cada 3 vacantes producidas por retiro
 
 #### 2 Proceso de Reclutamiento y Seleccion
 #### Proceso
-| Paso | Act |
-| --- | --- |
-| 1. Levantamiento del Perfil | Jefatura requirente define competencias y requisitos (DFL). |
-| Paso | Act |
-| --- | --- |
-| 2. Autorización Presupuestaria | División de Administración y Finanzas (DAF) certifica disponibilidad de cupo y recursos (Subtítulo 21). |
-| Paso | Proc |
-| --- | --- |
-| 3. Concurso Público (Planta) | ['Publicación en Diario Oficial y sitio web.', 'Comité de Selección evalúa antecedentes y entrevistas.', 'Confección de terna y resolución del Gobernador(a).'] |
-| Paso | Proc |
-| --- | --- |
-| 4. Selección (Contrata/Honorarios) | ['Publicación de oferta (Empleos Públicos / Web GORE).', 'Evaluación curricular y psicológica.', 'Entrevista técnica.'] |
+| Paso | Act | Proc |
+| --- | --- | --- |
+| 1. Levantamiento del Perfil | Jefatura requirente define competencias y requisitos (DFL). |  |
+| 2. Autorización Presupuestaria | División de Administración y Finanzas (DAF) certifica disponibilidad de cupo y recursos (Subtítulo 21). |  |
+| 3. Concurso Público (Planta) |  | Publicación en Diario Oficial y sitio web., Comité de Selección evalúa antecedentes y entrevistas., Confección de terna y resolución del Gobernador(a). |
+| 4. Selección (Contrata/Honorarios) |  | Publicación de oferta (Empleos Públicos / Web GORE)., Evaluación curricular y psicológica., Entrevista técnica. |
 #### 3 Formalizacion del Ingreso
 #### Elementos
-| Elemento | Def |
-| --- | --- |
-| Decreto de Nombramiento (Planta/Contrata) | Registrado en SIAPER y tramitado ante Contraloría (Toma de Razón o Registro). |
 | Elemento | Req |
 | --- | --- |
+| Decreto de Nombramiento (Planta/Contrata) |  |
 | Contrato de Honorarios | Debe especificar labores, productos, monto y vigencia. |
-| Elemento | Req |
-| --- | --- |
 | Declaraciones Juradas | Intereses, Patrimonio, Inhabilidades e Incompatibilidades (Art. 12 Ley 19.653). |
-| Elemento | Req |
-| --- | --- |
 | Obligación de Informar (Art. 14 Ley Presupuestos 2026) | Informar trimestralmente a la CEMP y BCN la nómina de contrataciones (nombre, cargo, título). |
 ### Seccion II Induccion e Integracion
 #### Titulo
@@ -121,56 +109,36 @@ Como parte de la inducción, se deben cumplir los siguientes hitos:
 Sección III: Movilidad y Desarrollo
 #### 5 Encasillamiento y Promocion
 #### Elementos
-| Elemento | Def |
-| --- | --- |
-| Ascensos | Movimiento a un cargo de grado superior en la planta, por concurso interno o promoción automática (según DFL). |
-| Elemento | Req |
-| --- | --- |
-| Traspaso Honorarios a Contrata (Art. 15 Ley Presupuestos 2026) | ['Autorización anual máxima de cupos a nivel nacional (6.500 para 2026).', 'Requisitos: Antigüedad, funciones habituales.', 'Proceso regulado por Decreto de Hacienda. No puede significar aumento del gasto líquido mensualizado.'] |
+| Elemento | Def | Req |
+| --- | --- | --- |
+| Ascensos | Movimiento a un cargo de grado superior en la planta, por concurso interno o promoción automática (según DFL). |  |
+| Traspaso Honorarios a Contrata (Art. 15 Ley Presupuestos 2026) |  | Autorización anual máxima de cupos a nivel nacional (6.500 para 2026)., Requisitos: Antigüedad, funciones habituales., Proceso regulado por Decreto de Hacienda. No puede significar aumento del gasto líquido mensualizado. |
 #### 6 Suplencias y Reemplazos
 #### Elementos
-| Elemento | Def |
-| --- | --- |
-| Suplencia | Reemplazo de un cargo titular vacante o por ausencia del titular. |
-| Elemento | Req |
-| --- | --- |
-| Reemplazos Temporales (Art. 11 Ley Presupuestos 2026) | ['Para ausencias > 30 días corridos.', 'Contrato máximo 6 meses.', 'Requiere Autorización Previa de DIPRES, salvo Licencias Maternales/Parentales (que solo deben informarse).'] |
+| Elemento | Def | Req |
+| --- | --- | --- |
+| Suplencia | Reemplazo de un cargo titular vacante o por ausencia del titular. |  |
+| Reemplazos Temporales (Art. 11 Ley Presupuestos 2026) |  | Para ausencias > 30 días corridos., Contrato máximo 6 meses., Requiere Autorización Previa de DIPRES, salvo Licencias Maternales/Parentales (que solo deben informarse). |
 #### 7 Comisiones de Servicio y Cometidos
 #### Elementos
 | Elemento | Def |
 | --- | --- |
 | Comisión de Servicio | Destinación temporal a otra institución o lugar para funciones propias del cargo. |
-| Elemento | Def |
-| --- | --- |
 | Cometido Funcionario | Desplazamiento transitorio para una tarea específica con derecho a pasajes y viáticos (ver Manual 3.2). |
-| Elemento | Req |
-| --- | --- |
-| Registro | Obligatoriedad de Decreto Exento previo a la realización (salvo emergencias justificadas). |
+| Registro |  |
 ### Seccion IV Egreso y Desvinculacion
 #### Titulo
 Sección IV: Egreso y Desvinculación
 #### 8 Causales de Egreso
 #### Causales
-| Causal | Req |
-| --- | --- |
-| Renuncia Voluntaria | Debe ser aceptada por la autoridad (plazo máximo 30 días para retener). |
 | Causal | Def |
 | --- | --- |
+| Renuncia Voluntaria |  |
 | Jubilación | Cumplimiento de edad y requisitos previsionales. |
-| Causal | Def |
-| --- | --- |
 | Vacancia del Cargo | Por fallecimiento o inasistencia injustificada (>3 días seguidos). |
-| Causal | Def |
-| --- | --- |
-| Salud Incompatible | ['Declaración tras uso de licencias médicas por > 6 meses en 2 años (Art. 151 Estatuto Administrativo).', 'Nota: Al contratar reemplazos por licencias prolongadas, el Jefe de Servicio deberá considerar declarar la salud incompatible (Art 11 Ley Presupuestos 2026).'] |
-| Causal | Def |
-| --- | --- |
+| Salud Incompatible | Declaración tras uso de licencias médicas por > 6 meses en 2 años (Art. 151 Estatuto Administrativo)., Nota: Al contratar reemplazos por licencias prolongadas, el Jefe de Servicio deberá considerar declarar la salud incompatible (Art 11 Ley Presupuestos 2026). |
 | Calificación Deficiente | Lista 3 (Condicional) dos veces consecutivas o Lista 4 (Eliminación). |
-| Causal | Def |
-| --- | --- |
 | Destitución | Medida disciplinaria tras sumario administrativo. |
-| Causal | Def |
-| --- | --- |
 | Término de Contrata | No renovación al 31 de diciembre (aviso previo, principio de confianza legítima CGR). |
 #### 9 Procedimiento de Cierre
 #### Proceso
@@ -186,7 +154,7 @@ Sección IV: Egreso y Desvinculación
 Este manual se complementa con el Estatuto Administrativo (Ley 18.834), las instrucciones anuales de la Ley de Presupuestos y los protocolos de la Ley Karin (Ley 21.643). Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_4_desarrollo_organizacional.yml

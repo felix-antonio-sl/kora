@@ -140,6 +140,31 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("baseline auditado soporta solo Skills degenerados", content)
         self.assertNotIn("Skills siguen formato degenerate (CM-only) o extended (directorio)", content)
 
+    def test_forgemaster_generation_skills_keep_soul_minimal(self):
+        files = (
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertIn("Identidad Dialectica, Paradigma Cognitivo, Tono", content)
+        self.assertNotIn("Saludo", content)
+        self.assertNotIn("Estilo", content)
+        self.assertNotIn("Ejemplos", content)
+
+    def test_meta_context_managers_do_not_encode_fsm_destinations(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CONTEXT-MANAGER.md",
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-CONTEXT-MANAGER.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-CONTEXT-MANAGER.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("estado_destino", content)
+        self.assertNotIn("estado_fsm", content)
+        self.assertNotIn("estado_actual: FSMState", content)
+        self.assertNotIn("S-DISPATCHER", content)
+        self.assertNotIn("S-END", content)
+        self.assertIn("requiere_reclasificacion", content)
+
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")
         required_terms = (

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:estrategia-td-ia
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/tde/kb_gn_720_estrategia_td_ia_koda.yml
 version: 2.0.0
 status: published
@@ -24,108 +24,43 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.28
+    cr: 1.89
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 446
+    skeleton_count: 1
+    meat_count: 416
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__estrategia-td-ia.md.json
 ---
 
 # Estrategia y Plan de Transformación Digital e IA "Ñuble Aumentado" (2025–2028)
-## ID
-GN-ESTRATEGIA-TD-IA-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Estrategia de Transformación Digital e IA GORE Ñuble (STS)
-
-## Primary Source
-staging/gn/kodeando/kb_gn_720_estrategia_td_ia_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Estrategia y plan de transformacion digital e ia nuble aumentado 2025 2028
-### ID
-GN-ESTRATEGIA-TD-IA-DOC-01
-### Title
+## Titulo
 Estrategia y Plan de Transformación Digital e IA "Ñuble Aumentado" (2025–2028)
-### Sections
-#### Titulo hacia un gobierno regional aumentado ejecutando la vision nuble 250 con l
-#### ID
-GN-SEC-0001
-#### Title
+## Secciones
+### Titulo hacia un gobierno regional aumentado ejecutando la vision nuble 250 con l
+#### Titulo
 Título: Hacia un Gobierno Regional Aumentado: Ejecutando la Visión Ñuble 250 con Liderazgo, Datos y Valor Público
-#### Content
+#### Contenido
 
 ID: `PTN-VISION-01`
-#### Parte 0 marco filosofico y modelo de gestion estrategica
-#### ID
-GN-SEC-0002
-#### Title
+### Parte 0 marco filosofico y modelo de gestion estrategica
+#### Titulo
 Parte 0: Marco Filosófico y Modelo de Gestión Estratégica
-#### Content
+#### Contenido
 
 ID: `PTN-0-PHILOSOPHY-01`
 Fnd: El plan se basa en un marco de gestión pública moderna concebido como un sistema integrado.
 Obj: Cada decisión y acción debe ser coherente, deliberada y orientada a la creación de valor público para la Región de Ñuble.
 Cpt: Los modelos y principios de esta sección constituyen la estructura operativa de la transformación.
-#### Sections
+#### Secciones
 #### S 0 1 el triangulo estrategico como lente de decision
-#### ID
-GN-SEC-0003
-#### Title
+#### Titulo
 0.1. El Triángulo Estratégico como Lente de Decisión
-#### Content
+#### Contenido
 
 ID: `PTN-0-TRIANGLE-01`
 Fnd: Conforme al modelo de Mark Moore.
@@ -145,11 +80,9 @@ Cond: Una iniciativa es viable si logra un equilibrio dinámico entre tres vért
   - Cpt: Vértice enfocado en la capacidad de gestión interna para transformar la visión en una realidad predecible y de alta calidad.
 Req: Solo las iniciativas que demuestren ser sustantivas en valor público, legítimas en apoyo político y factibles en operación serán consideradas estratégicas.
 #### S 0 2 los 5 motores de valor publico del gore
-#### ID
-GN-SEC-0004
-#### Title
+#### Titulo
 0.2. Los 5 Motores de Valor Público del GORE
-#### Content
+#### Contenido
 
 ID: `PTN-0-MOTORS-01`
 Fnd: El modelo de gestión del plan se enfoca en la ejecución balanceada de cinco procesos fundamentales.
@@ -166,11 +99,9 @@ Warn: La deficiencia en uno de ellos compromete la efectividad del sistema compl
 5. Cpt: Sostenibilidad Financiera.
    - Def: Gestión rigurosa de recursos públicos para garantizar la viabilidad y continuidad de la misión del GORE a largo plazo.
 #### S 0 3 principios de liderazgo y ejecucion
-#### ID
-GN-SEC-0005
-#### Title
+#### Titulo
 0.3. Principios de Liderazgo y Ejecución
-#### Content
+#### Contenido
 
 ID: `PTN-0-LEADERSHIP-PRINCIPLES-01`
 Req: La ejecución del plan se regirá por un conjunto de principios no negociables.
@@ -191,11 +122,9 @@ Req: La ejecución del plan se regirá por un conjunto de principios no negociab
   - Def: Este Plan Maestro actúa como instrumento normativo para la arquitectura, gobernanza y financiamiento de toda Intervención Pública Regional (IPR) de base tecnológica.
   - Obj: Alinear la cartera de inversión con sus objetivos.
 #### S 0 4 principio rector nuble aumentado como sistema sociotecnico
-#### ID
-GN-SEC-0006
-#### Title
+#### Titulo
 0.4. Principio Rector: `Ñuble Aumentado` como Sistema Sociotécnico
-#### Content
+#### Contenido
 
 ID: `PTN-0-SOCIOTECHNICAL-PRINCIPLE-01`
 Fnd: El plan adopta el principio de gestionar la transformación como la evolución de un Sistema Sociotécnico Aumentado.
@@ -204,11 +133,9 @@ Def: La introducción de IA y digitalización es un rediseño del sistema, no un
 Obj: No es reemplazar el componente humano, sino "aumentarlo", creando una colaboración sinérgica.
 Mech: Los servicios cognitivos ejecutan tareas definidas y los funcionarios aportan juicio, estrategia y empatía.
 #### S 0 5 principio rector los datos como producto estrategico
-#### ID
-GN-SEC-0007
-#### Title
+#### Titulo
 0.5. Principio Rector: Los Datos como Producto Estratégico
-#### Content
+#### Contenido
 
 ID: `PTN-0-DAP-PRINCIPLE-01`
 Fnd: El plan adopta el principio de gestionar los datos como un producto (Data as a Product - DaP).
@@ -229,11 +156,9 @@ Fnd: El enfoque se sustenta en dos disciplinas clave.
   - Obj: Garantizar que todos los productos de datos sean consistentes.
 Res: Este enfoque asegura que los datos sean un activo estratégico, confiable y de alto valor.
 #### S 0 6 marco de gestion de la explotacion de ia
-#### ID
-GN-SEC-0008
-#### Title
+#### Titulo
 0.6. Marco de Gestión de la Explotación de IA
-#### Content
+#### Contenido
 
 ID: `PTN-0-AI-EXPLOITATION-FRAMEWORK-01`
 Purp: Asegurar que cada iniciativa de IA sea estratégica, gobernable y alineada a un propósito claro.
@@ -252,11 +177,9 @@ Req: Toda iniciativa será clasificada y gestionada según tres dimensiones.
 Res: Este marco será la herramienta central del Comité de Transformación Digital para evaluar, priorizar y auditar la cartera de proyectos de IA.
 Ref: PTN-2-TRANSPARENCY-01
 #### S 0 7 glosario y marco semantico
-#### ID
-GN-SEC-0009
-#### Title
+#### Titulo
 0.7. Glosario y Marco Semántico
-#### Content
+#### Contenido
 
 ID: `PTN-0-GLOSSARY-01`
 Fnd: El plan adopta formalmente la terminología y definiciones del artefacto `kb_gn_014_glosario_gore_nuble_sts.md` como fuente única de verdad.
@@ -272,30 +195,24 @@ Cpt: Nomenclatura oficial del ecosistema.
   - Def: `Servicio de Inteligencia Analítica y del Territorio`
   - Def: `Servicio de Asistencia Jurídica y de Conformidad`
   - Def: `Servicio de Asistencia Financiera y Presupuestaria`
-#### Parte i diagnostico estrategico y mandato de transformacion
-#### ID
-GN-SEC-0010
-#### Title
+### Parte i diagnostico estrategico y mandato de transformacion
+#### Titulo
 Parte I: Diagnóstico Estratégico y Mandato de Transformación
-#### Content
+#### Contenido
 
 ID: `PTN-1-DIAGNOSIS-01`
-#### Sections
+#### Secciones
 #### S 1 resumen ejecutivo para la alta direccion
-#### ID
-GN-SEC-0011
-#### Title
+#### Titulo
 1. Resumen Ejecutivo para la Alta Dirección
-#### Content
+#### Contenido
 
 ID: `PTN-1-EXEC-SUMMARY-01`
-#### Sections
+#### Secciones
 #### S 1 1 contexto estrategico y desafio de modernizacion
-#### ID
-GN-SEC-0012
-#### Title
+#### Titulo
 1.1. Contexto Estratégico y Desafío de Modernización
-#### Content
+#### Contenido
 
 ID: `PTN-1-EXEC-SUMMARY-CONTEXT-01`
 Ctx: El Gobierno Regional de Ñuble enfrenta desafíos estructurales significativos.
@@ -313,11 +230,9 @@ Cond: La institución debe decidir entre mantener un modelo de gestión tradicio
   - Def: Adoptar un rol de liderazgo en la materia, ejecutando una transformación digital coherente y proactiva que materialice la visión de un "Ñuble Inteligente".
 Res: Este plan maestro presenta la hoja de ruta para la segunda opción.
 #### S 1 2 analisis de riesgos y costos de la inaccion
-#### ID
-GN-SEC-0013
-#### Title
+#### Titulo
 1.2. Análisis de Riesgos y Costos de la Inacción
-#### Content
+#### Contenido
 
 ID: `PTN-1-EXEC-SUMMARY-RISKS-01`
 Warn: Mantener el modelo operativo actual presenta costos y riesgos crecientes.
@@ -333,11 +248,9 @@ Warn: Mantener el modelo operativo actual presenta costos y riesgos crecientes.
   - Fnd: La alta demanda del chatbot piloto para el 8% FNDR evidencia una expectativa ciudadana clara por servicios públicos más ágiles y accesibles.
   - Res: No escalar estas capacidades probadas deteriora la percepción de un gobierno moderno y eficiente.
 #### S 1 3 identificacion de activos estrategicos y oportunidades
-#### ID
-GN-SEC-0014
-#### Title
+#### Titulo
 1.3. Identificación de Activos Estratégicos y Oportunidades
-#### Content
+#### Contenido
 
 ID: `PTN-1-EXEC-SUMMARY-ASSETS-01`
 Cpt: El GORE Ñuble ya posee una capacidad institucional para el desarrollo de soluciones de IA.
@@ -350,11 +263,9 @@ Cpt: La coyuntura actual representa una oportunidad estratégica.
 - Obj: Formalizar, retener e industrializar esta capacidad interna.
 - Res: Transformarla de un activo informal en una ventaja competitiva sostenible para la región.
 #### S 1 4 curso de accion recomendado
-#### ID
-GN-SEC-0015
-#### Title
+#### Titulo
 1.4. Curso de Acción Recomendado
-#### Content
+#### Contenido
 
 ID: `PTN-1-EXEC-SUMMARY-ACTION-PLAN-01`
 Rec: No se propone iniciar una transformación desde cero, sino capitalizar e industrializar el éxito ya alcanzado.
@@ -370,22 +281,18 @@ Rec: Se recomienda a la Alta Dirección una decisión triple y secuencial.
    - Obj: Establecer el Comité de Transformación Digital y los protocolos necesarios para un uso de la IA seguro, auditable y escalable.
 Res: La decisión es consolidar una capacidad existente y probada para posicionar al GORE como un referente en modernización del Estado.
 #### S 2 imperativo de la modernizacion entorno y desafios regionales
-#### ID
-GN-SEC-0016
-#### Title
+#### Titulo
 2. Imperativo de la Modernización: Entorno y Desafíos Regionales
-#### Content
+#### Contenido
 
 ID: `PTN-1-IMPERATIVE-01`
 Fnd: La transformación es una respuesta directa a mandatos legales, desafíos operativos y riesgos institucionales.
 Warn: Ignorar este imperativo implica aceptar la obsolescencia, el incumplimiento y la pérdida de relevancia estratégica.
-#### Sections
+#### Secciones
 #### S 2 1 mandato legal y politico la obligacion de la tde ley 21 180 y la coordinac
-#### ID
-GN-SEC-0017
-#### Title
+#### Titulo
 2.1. Mandato Legal y Político: La Obligación de la TDE (Ley 21.180) y la Coordinación Territorial (DS N°28)
-#### Content
+#### Contenido
 
 ID: `PTN-1-LEGAL-MANDATE-01`
 Fnd: La modernización está impulsada por dos mandatos clave.
@@ -398,22 +305,18 @@ Fnd: La modernización está impulsada por dos mandatos clave.
   - Req: Exige que el GORE, a través de su Coordinador Regional, lidere la articulación de datos geoespaciales de la región.
   - Cpt: Este rol de liderazgo territorial es una competencia central y no delegable.
 #### S 2 2 brechas de datos y sistemas fragmentacion tensiones con gesdoc y el vacio
-#### ID
-GN-SEC-0018
-#### Title
+#### Titulo
 2.2. Brechas de Datos y Sistemas: Fragmentación, Tensiones con Gesdoc y el Vacío de Liderazgo TDE
-#### Content
+#### Contenido
 
 ID: `PTN-1-DATA-GAPS-01`
 Cpt: El GORE enfrenta una brecha crítica entre su mandato legal y su capacidad operativa actual.
 Cpt: Manifestada en tres problemas interconectados.
-#### Sections
+#### Secciones
 #### S 2 2 1 la fragmentacion como norma gestion basada en silos de informacion en co
-#### ID
-GN-SEC-0019
-#### Title
+#### Titulo
 2.2.1. La Fragmentación como Norma: Gestión Basada en Silos de Información en Contravención al Principio de Gobierno Integrado (Estrategia GD 2030)
-#### Content
+#### Contenido
 
 ID: `PTN-1-FRAGMENTATION-01`
 Nat: El modelo operativo actual se basa en la fragmentación.
@@ -428,11 +331,9 @@ Cpt: Brecha cuantificable (Fuente: Catastro de Procedimientos Administrativos y 
   - Def: Un 17% utiliza mecanismos de autenticación propios, evidenciando una heterogeneidad que dificulta la experiencia ciudadana.
 Warn: Esta práctica contraviene el principio de "Gobierno Integrado" de la Estrategia de Gobierno Digital 2030 y el mandato de interoperabilidad de la Ley N° 21.180.
 #### S 2 2 2 el cuello de botella gesdoc analisis de una solucion tactica con deuda e
-#### ID
-GN-SEC-0020
-#### Title
+#### Titulo
 2.2.2. El Cuello de Botella "Gesdoc": Análisis de una Solución Táctica con Deuda Estratégica (Ver Propuesta de Sucesión en Anexo G.2)
-#### Content
+#### Contenido
 
 ID: `PTN-1-GESDOC-BOTTLENECK-01`
 Cpt: La iniciativa Gesdoc, aunque busca digitalizar un proceso, representa un riesgo estratégico.
@@ -441,11 +342,9 @@ Cpt: La iniciativa Gesdoc, aunque busca digitalizar un proceso, representa un ri
 - Res: Profundiza el problema de los silos de información.
 - Warn: Continuar por esta vía significa acumular deuda técnica, dificultando la interoperabilidad futura y desviando recursos de una solución integral y sostenible.
 #### S 2 2 3 el vacio de liderazgo formal en tde un proceso descabezado y sus riesgos
-#### ID
-GN-SEC-0021
-#### Title
+#### Titulo
 2.2.3. El Vacío de Liderazgo Formal en TDE: Un Proceso "Descabezado" y sus Riesgos Asociados (Incumplimiento Normas Técnicas, Ciberseguridad, Inversión Ineficiente)
-#### Content
+#### Contenido
 
 ID: `PTN-1-TDE-LEADERSHIP-VOID-01`
 Fnd: Como se diagnostica en el informe de asesoría, el proceso de TDE en el GORE está "descabezado".
@@ -458,11 +357,9 @@ Cpt: Esta falta de liderazgo formal y hoja de ruta genera riesgos críticos.
 - Cpt: Ineficiencia.
   - Res: Promueve la aprobación de soluciones tecnológicas tácticas y descoordinadas, malgastando recursos.
 #### S 2 3 cumplimiento normativo en evolucion privacidad ley 21 719 e ia en tramite
-#### ID
-GN-SEC-0022
-#### Title
+#### Titulo
 2.3. Cumplimiento Normativo en Evolución: Privacidad (Ley 21.719) e IA en Trámite (Enfoque basado en Riesgo) (Ver Programa de Cumplimiento en Anexo B.1)
-#### Content
+#### Contenido
 
 ID: `PTN-1-REGULATORY-EVOLUTION-01`
 Fnd: El entorno normativo se está volviendo más exigente.
@@ -474,11 +371,9 @@ Fnd: El entorno normativo se está volviendo más exigente.
   - Req: Exigirá gobernanza y transparencia para sistemas de alto impacto.
 Res: Este plan maestro es una estrategia proactiva para cumplir con estas futuras regulaciones por diseño.
 #### S 2 4 riesgos y vulnerabilidades de ia en la administracion publica sesgos ciber
-#### ID
-GN-SEC-0023
-#### Title
+#### Titulo
 2.4. Riesgos y Vulnerabilidades de IA en la Administración Pública (Sesgos, Ciberseguridad, Workforce)
-#### Content
+#### Contenido
 
 ID: `PTN-1-AI-RISKS-01`
 Fnd: La integración de la IA no está exenta de riesgos, según literatura internacional.
@@ -494,11 +389,9 @@ Mech: Este plan aborda estos riesgos a través de sus pilares.
 - Cpt: Seguridad por Diseño.
 - Cpt: Programa de Desarrollo de Competencias Digitales.
 #### S 2 5 diagnostico de la cartera de inversion tecnologica actual
-#### ID
-GN-SEC-0024
-#### Title
+#### Titulo
 2.5. Diagnóstico de la Cartera de Inversión Tecnológica Actual
-#### Content
+#### Contenido
 
 ID: `PTN-1-INVESTMENT-DIAGNOSIS-01`
 Req: Se mandata un diagnóstico inmediato de la cartera de inversión y programas vigentes.
@@ -509,23 +402,19 @@ Req: Se mandata un diagnóstico inmediato de la cartera de inversión y programa
 - Cpt: 2.5.2. Identificación de Brechas y Duplicidades.
   - Act: El diagnóstico identificará brechas de inversión que el Plan viene a cerrar.
   - Act: Identificará duplicidades existentes con la oferta nacional o regional que deben ser racionalizadas.
-#### Parte ii estrategia que cambia y como se decide
-#### ID
-GN-SEC-0025
-#### Title
+### Parte ii estrategia que cambia y como se decide
+#### Titulo
 Parte II: Estrategia (Qué Cambia y Cómo se Decide)
-#### Content
+#### Contenido
 
 ID: `PTN-2-STRATEGY-01`
 Purp: Definir los objetivos y métodos de la transformación.
 Obj: Establecer el alcance, directrices y modelo de gobernanza para asegurar una ejecución coherente, auditable y alineada.
-#### Sections
+#### Secciones
 #### El campo de juego aumentando el ciclo de valor de la inversion regional
-#### ID
-GN-SEC-0026
-#### Title
+#### Titulo
 El Campo de Juego: Aumentando el Ciclo de Valor de la Inversión Regional
-#### Content
+#### Contenido
 
 ID: `PTN-2-VALUE-CYCLE-01`
 Fnd: Para que la transformación sea concreta y genere impacto medible, se concibe como una intervención sistémica sobre el "giro del negocio" del GORE.
@@ -546,20 +435,16 @@ Obj: Aumentar la eficiencia, inteligencia y transparencia de cada una de las cua
   - Obj: Convertir el cierre en un motor de aprendizaje organizacional que retroalimente y mejore el ciclo.
 Req: Cada pilar e iniciativa de este plan se aplicará sobre una o más de estas fases.
 #### S 3 marco alcance y reglas del juego
-#### ID
-GN-SEC-0027
-#### Title
+#### Titulo
 3. Marco, Alcance y Reglas del Juego
-#### Content
+#### Contenido
 
 ID: `PTN-2-FRAMEWORK-01`
-#### Sections
+#### Secciones
 #### S 3 1 alcance dual td gore puertas adentro y td regional liderazgo territorial
-#### ID
-GN-SEC-0028
-#### Title
+#### Titulo
 3.1. Alcance Dual: TD-GORE (Puertas Adentro) y TD-Regional (Liderazgo Territorial)
-#### Content
+#### Contenido
 
 ID: `PTN-2-DUAL-SCOPE-01`
 Cpt: La estrategia opera en dos frentes simultáneos y sinérgicos.
@@ -571,11 +456,9 @@ Cpt: La estrategia opera en dos frentes simultáneos y sinérgicos.
   - Obj: Ejercicio del rol de liderazgo regional mandatado por ley.
   - Act: El GORE actuará como un centro de capacidades, ofreciendo gobernanza, estándares y servicios a los 21 municipios y otros servicios públicos.
 #### S 3 2 alineacion con nuble 250 toda iniciativa digital mapea a un trazo pulso kp
-#### ID
-GN-SEC-0029
-#### Title
+#### Titulo
 3.2. Alineación con Ñuble 250: Toda Iniciativa Digital Mapea a un Trazo/Pulso/KPI
-#### Content
+#### Contenido
 
 ID: `PTN-2-ALIGNMENT-NUBLE250-01`
 Fnd: Este Plan Maestro es el principal vehículo de ejecución de la visión Ñuble 250.
@@ -587,11 +470,9 @@ Req: Se establece la siguiente regla de gobernanza para la inversión.
    - Def: Cada iniciativa deberá contribuir de forma medible a los "Pulsos" (proyectos detonantes) y a los KPIs de su trazo correspondiente.
 Res: Esta regla asegura que la tecnología sea siempre un medio para alcanzar un fin estratégico regional.
 #### S 3 3 ecosistema de integraciones expediente electronico identidad digital ri ge
-#### ID
-GN-SEC-0030
-#### Title
+#### Titulo
 3.3. Ecosistema de Integraciones (Expediente Electrónico, Identidad Digital, RI, Gesdoc y Criterios de Evolución)
-#### Content
+#### Contenido
 
 ID: `PTN-2-INTEGRATIONS-01`
 Obj: Construir un ecosistema tecnológico integrado y coherente con el marco nacional.
@@ -608,11 +489,9 @@ Fnd: Basado en interoperabilidad y apalancamiento de plataformas del Estado.
   - Ctx: Corto plazo: se integrará como una fuente de datos.
   - Ctx: Mediano plazo: será absorbido y sucedido por el Sistema de Gestión Integral de IPR.
 #### S 3 4 trazabilidad juridico administrativa seguridad por defecto ia responsable
-#### ID
-GN-SEC-0031
-#### Title
+#### Titulo
 3.4. Trazabilidad Jurídico-Administrativa, Seguridad por Defecto, IA Responsable, Privacidad por Diseño y Cumplimiento Normativo Estricto
-#### Content
+#### Contenido
 
 ID: `PTN-2-COMPLIANCE-PRINCIPLES-01`
 Req: Estas directrices son de cumplimiento obligatorio.
@@ -628,21 +507,17 @@ Req: Estas directrices son de cumplimiento obligatorio.
 - Cpt: Cumplimiento Normativo Estricto.
   - Req: Este plan y todas sus iniciativas se subordinan al marco legal que rige la Administración del Estado.
 #### S 4 el timon gobernanza y modelo de decision para la transformacion
-#### ID
-GN-SEC-0032
-#### Title
+#### Titulo
 4. El Timón: Gobernanza y Modelo de Decisión para la Transformación
-#### Content
+#### Contenido
 
 ID: `PTN-2-GOVERNANCE-01`
 Obj: Establecer un modelo de gobernanza robusto para canalizar la innovación, gestionar riesgos y alinear decisiones.
-#### Sections
+#### Secciones
 #### S 4 1 comite de transformacion digital ctd y subcomite ia mandato cadencia actas
-#### ID
-GN-SEC-0033
-#### Title
+#### Titulo
 4.1. Comité de Transformación Digital (CTD) y Subcomité IA: Mandato, Cadencia, Actas
-#### Content
+#### Contenido
 
 ID: `PTN-2-GOVERNANCE-COMMITTEES-01`
 
@@ -657,11 +532,9 @@ ID: `PTN-2-GOVERNANCE-COMMITTEES-01`
     - Req: El Subcomité de IA sesionará quincenalmente.
     - Req: Todas sus decisiones quedarán registradas en actas formales.
 #### S 4 2 raci ejecutivo gobernador core administradora duenos de proceso oficina di
-#### ID
-GN-SEC-0034
-#### Title
+#### Titulo
 4.2. RACI Ejecutivo: Gobernador/CORE, Administradora, Dueños de Proceso, Oficina Digital e IA (ODIA), Seguridad, Datos
-#### Content
+#### Contenido
 
 ID: `PTN-2-GOVERNANCE-RACI-01`
 
@@ -678,11 +551,9 @@ ID: `PTN-2-GOVERNANCE-RACI-01`
   - Cpt: Informado (Informed).
     - Req: Todas las Jefaturas de División y el Gabinete serán informados permanentemente.
 #### S 4 3 gates de cumplimiento ex ante ex post tde datos identidad sda ia cibersegu
-#### ID
-GN-SEC-0035
-#### Title
+#### Titulo
 4.3. "Gates" de Cumplimiento (Ex-ante/Ex-post): TDE, Datos, Identidad, SDA/IA, Ciberseguridad, Adquisiciones (EVALTIC) (Ver Matriz de Gates en Anexo A.1)
-#### Content
+#### Contenido
 
 ID: `PTN-2-GOVERNANCE-GATES-01`
 
@@ -695,11 +566,9 @@ ID: `PTN-2-GOVERNANCE-GATES-01`
   - Cpt: Gate de Ciberseguridad: Visto bueno del CISO.
   - Cpt: Gate de Adquisiciones: Cumplimiento de Ley N° 19.886 y proceso EVALTIC.
 #### S 4 4 mesa regional de td con municipios y servicios
-#### ID
-GN-SEC-0036
-#### Title
+#### Titulo
 4.4. Mesa Regional de TD con Municipios y Servicios
-#### Content
+#### Contenido
 
 ID: `PTN-2-GOVERNANCE-REGIONAL-TABLE-01`
 
@@ -721,23 +590,19 @@ ID: `PTN-2-GOVERNANCE-REGIONAL-TABLE-01`
   2. Obj: Definir Estándares y Acelerar la TDE Territorial: Acordar estándares comunes y elaborar un Plan Regional de Estandarización y Aceleración Digital.
   3. Obj: Co-crear Soluciones: Identificar desafíos comunes y levantar proyectos de colaboración.
 #### S 5 hoja de ruta de valor ciudadano que ganan las personas de nuble
-#### ID
-GN-SEC-0037
-#### Title
+#### Titulo
 5. Hoja de Ruta de Valor Ciudadano: ¿Qué Ganan las Personas de Ñuble?
-#### Content
+#### Contenido
 
 ID: `PTN-2-CITIZEN-VALUE-01`
 Fnd: La tecnología es solo un medio.
 Obj: El fin último es mejorar de forma medible la calidad de vida, la seguridad y las oportunidades de cada habitante.
 Purp: Articular la propuesta de valor directa a la ciudadanía.
-#### Sections
+#### Secciones
 #### S 5 1 mi nuble te cuida seguridad emergencias y resiliencia territorial
-#### ID
-GN-SEC-0038
-#### Title
+#### Titulo
 5.1. `Mi Ñuble` te Cuida: Seguridad, Emergencias y Resiliencia Territorial
-#### Content
+#### Contenido
 
 ID: `PTN-2-CITIZEN-VALUE-SECURITY-01`
 Fnd: Este pilar utiliza la tecnología como un escudo para proteger a la comunidad.
@@ -755,11 +620,9 @@ Obj: Pasar de un modelo reactivo a uno de prevención y anticipación de riesgos
   - Act: Serán difundidas masivamente a través de la aplicación `Mi Ñuble`.
   - Obj: Entregar a los ciudadanos la información que necesitan para protegerse a sí mismos y a sus familias.
 #### S 5 2 mi nuble te apoya competitividad emprendimiento y desarrollo sostenible
-#### ID
-GN-SEC-0039
-#### Title
+#### Titulo
 5.2. `Mi Ñuble` te Apoya: Competitividad, Emprendimiento y Desarrollo Sostenible
-#### Content
+#### Contenido
 
 ID: `PTN-2-CITIZEN-VALUE-COMPETITIVENESS-01`
 Obj: Democratizar el acceso a las oportunidades económicas, utilizando la IA para derribar barreras burocráticas.
@@ -788,11 +651,9 @@ Obj: Democratizar el acceso a las oportunidades económicas, utilizando la IA pa
   - Act: Se creará un tablero de control público e interactivo (Anexo F.1) que integrará los indicadores económicos, sociales y de inversión de la IDE Ñuble.
   - Obj: Permitir al sector privado, inversionistas y academia tomar decisiones estratégicas basadas en datos.
 #### S 5 3 mi nuble simplifica tu vida acceso a tramites e informacion del gore
-#### ID
-GN-SEC-0040
-#### Title
+#### Titulo
 5.3. `Mi Ñuble` Simplifica tu Vida: Acceso a Trámites e Información del GORE
-#### Content
+#### Contenido
 
 ID: `PTN-2-CITIZEN-VALUE-SIMPLIFICATION-01`
 Obj: Mejorar radicalmente la experiencia del ciudadano en su interacción con el GORE.
@@ -809,11 +670,9 @@ Obj: Mejorar radicalmente la experiencia del ciudadano en su interacción con el
   - Purp: Materialización del principio de un gobierno centrado en las personas, disponible 24/7 y al alcance de la mano.
   - Ref: PTN-E1-APP-PRD-DETAILS-01
 #### S 6 arquitectura de capacidades materializando la vision
-#### ID
-GN-SEC-0041
-#### Title
+#### Titulo
 6. Arquitectura de Capacidades: Materializando la Visión
-#### Content
+#### Contenido
 
 ID: `PTN-2-CAPABILITIES-ARCHITECTURE-01`
 Fnd: La estrategia se organiza en cinco pilares de acción desplegados sobre una arquitectura de capacidades institucionales coherente.
@@ -828,23 +687,19 @@ Cpt: El "stack" de capacidades se organiza en capas jerárquicas.
 - Cpt: Capa 4: Experiencia y Canales (Las Vitrinas).
   - Def: La capa de interacción con el usuario.
 Req: Cada pilar estratégico contribuye al desarrollo de una o más de estas capas.
-#### Sections
+#### Secciones
 #### S 6 1 pilar 1 gobernanza y modernizacion responde al trazo 5 de nuble 250
-#### ID
-GN-SEC-0042
-#### Title
+#### Titulo
 6.1. Pilar 1: Gobernanza y Modernización (Responde al Trazo 5 de Ñuble 250)
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR1-GOVERNANCE-01`
 Purp: Construye las Capas 1, 2 y 3. Establece las "reglas del juego" y desarrolla las capacidades núcleo.
-#### Sections
+#### Secciones
 #### S 6 1 1 sub pilar industrializacion de la capacidad de ia mediante la gobernanza
-#### ID
-GN-SEC-0043
-#### Title
+#### Titulo
 6.1.1. Sub-Pilar: Industrialización de la Capacidad de IA mediante la Gobernanza del Conocimiento y la Ingeniería de Agentes
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR1-AI-INDUSTRIALIZATION-01`
 
@@ -858,11 +713,9 @@ ID: `PTN-2-PILLAR1-AI-INDUSTRIALIZATION-01`
   - Act: Se formaliza el proceso de 6 fases (Sourcing, Staging, Audit, Publishing, Registration, Maintenance) descrito en la `Guía para la Gestión del Repositorio Central de Conocimiento`.
   - Obj: Garantizar la calidad, trazabilidad y vigencia de cada activo de conocimiento que alimenta a los asistentes.
 #### S 6 1 2 sub pilar automatizacion inteligente de procesos y orquestacion de la ge
-#### ID
-GN-SEC-0044
-#### Title
+#### Titulo
 6.1.2. Sub-Pilar: Automatización Inteligente de Procesos y Orquestación de la Gestión Pública
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR1-AUTOMATION-01`
 Purp: Re-arquitecturar los flujos de trabajo clave del GORE.
@@ -881,11 +734,9 @@ Cpt: Integración de servicios cognitivos en ciclos de gestión.
 - Cpt: Ciclo de Aprobaciones: Orquestación del flujo de Resoluciones y Decretos, con pre-auditoría.
 - Cpt: Ciclo de Compras Públicas: Se implementará un asistente que guiará en la correcta aplicación de la Ley N° 19.886.
 #### S 6 1 3 sub pilar fundamentos de ingenieria de datos
-#### ID
-GN-SEC-0045
-#### Title
+#### Titulo
 6.1.3. Sub-Pilar: Fundamentos de Ingeniería de Datos
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR1-DATA-ENGINEERING-01`
 Purp: Establecer la disciplina técnica para la captura, movimiento, almacenamiento, procesamiento y entrega de datos.
@@ -908,11 +759,9 @@ Cpt: KPIs asociados.
   - Def: Porcentaje de actos administrativos observados por Contraloría.
   - Mdl: Línea Base: X%, Meta 3 años: Reducción del 50%.
 #### S 6 2 pilar 2 competitividad y sostenibilidad responde a los trazos de crecimien
-#### ID
-GN-SEC-0046
-#### Title
+#### Titulo
 6.2. Pilar 2: Competitividad y Sostenibilidad (Responde a los Trazos de Crecimiento y Territorio de Ñuble 250)
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR2-COMPETITIVENESS-01`
 Purp: Aplicar las capacidades de la Capa 2 y 3 para generar valor público en dominios económicos y medioambientales.
@@ -922,21 +771,17 @@ Purp: Aplicar las capacidades de la Capa 2 y 3 para generar valor público en do
 - Cpt: Sub-Pilar: Economía Circular Basada en Datos.
   - Act: Se creará una plataforma regional que conecte a productores con gestores de residuos, usando la IDE Ñuble para mapear flujos.
 #### S 6 3 pilar 3 capital humano aumentado gestion del cambio y desarrollo de compet
-#### ID
-GN-SEC-0047
-#### Title
+#### Titulo
 6.3. Pilar 3: Capital Humano Aumentado: Gestión del Cambio y Desarrollo de Competencias (Responde a Trazos de Bienestar y Cultura de Ñuble 250)
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR3-HUMAN-CAPITAL-01`
 Nat: Pilar transversal enfocado en el componente humano de la Capa 1.
-#### Sections
+#### Secciones
 #### S 6 3 1 estrategia de gestion del cambio y adopcion interna
-#### ID
-GN-SEC-0048
-#### Title
+#### Titulo
 6.3.1. Estrategia de Gestión del Cambio y Adopción Interna
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR3-CHANGE-MANAGEMENT-01`
 
@@ -948,11 +793,9 @@ ID: `PTN-2-PILLAR3-CHANGE-MANAGEMENT-01`
   - Obj: Fomentar activamente la ruta "Connect" para compartir conocimiento tácito.
   - Act: Se lanzarán 2-3 pilotos iniciales.
 #### S 6 3 2 programa de desarrollo de competencias digitales y de ia
-#### ID
-GN-SEC-0049
-#### Title
+#### Titulo
 6.3.2. Programa de Desarrollo de Competencias Digitales y de IA
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR3-SKILLS-DEVELOPMENT-01`
 
@@ -963,11 +806,9 @@ ID: `PTN-2-PILLAR3-SKILLS-DEVELOPMENT-01`
 - Cpt: 6.3.2.3. Plataforma de Aprendizaje y Certificación Interna.
   - Act: Implementación de un sistema para la entrega, seguimiento y validación del aprendizaje.
 #### S 6 4 pilar 4 resiliencia y seguridad responde al trazo blanco y rojo de nuble 2
-#### ID
-GN-SEC-0050
-#### Title
+#### Titulo
 6.4. Pilar 4: Resiliencia y Seguridad (Responde al Trazo Blanco y Rojo de Ñuble 250)
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR4-RESILIENCE-01`
 Purp: Fortalecer la Capa 2, consolidando la infraestructura crítica de seguridad y gestión de desastres.
@@ -983,11 +824,9 @@ Purp: Fortalecer la Capa 2, consolidando la infraestructura crítica de segurida
     - Act: Monitoreo continuo de la salud, rendimiento y seguridad de la plataforma.
     - Act: Plan de recuperación ante desastres (DRP) para garantizar la continuidad de los servicios críticos.
 #### S 6 5 pilar 5 inteligencia territorial y gobernanza geoespacial
-#### ID
-GN-SEC-0051
-#### Title
+#### Titulo
 6.5. Pilar 5: Inteligencia Territorial y Gobernanza Geoespacial
-#### Content
+#### Contenido
 
 ID: `PTN-2-PILLAR5-TERRITORIAL-INTEL-01`
 Purp: Establecer al GORE como custodio y proveedor de datos geoespaciales (Capa 2). Cumple con el mandato del DS N°28.
@@ -1002,21 +841,17 @@ Purp: Establecer al GORE como custodio y proveedor de datos geoespaciales (Capa 
     - Act: Establecimiento de protocolos éticos para el uso de la información geoespacial.
   - Obj: Asegurar la calidad, interoperabilidad y acceso a los datos para todo el ecosistema regional.
 #### S 7 el compas y el espejo medicion de impacto y transparencia radical
-#### ID
-GN-SEC-0052
-#### Title
+#### Titulo
 7. El Compás y el Espejo: Medición de Impacto y Transparencia Radical
-#### Content
+#### Contenido
 
 ID: `PTN-2-MEASUREMENT-01`
 Purp: Establecer mecanismos de control y transparencia para medir el progreso real (compás) y comunicar avances (espejo).
-#### Sections
+#### Secciones
 #### S 7 1 kpis estrategicos servicio cumplimiento confianza costo con lineas base y
-#### ID
-GN-SEC-0053
-#### Title
+#### Titulo
 7.1. KPIs Estratégicos (Servicio, Cumplimiento, Confianza, Costo) con Líneas Base y Metas
-#### Content
+#### Contenido
 
 ID: `PTN-2-KPIS-01`
 Req: Se establecerá un conjunto acotado de KPIs transversales. La primera tarea será establecer una línea base.
@@ -1041,11 +876,9 @@ Req: Se establecerá un conjunto acotado de KPIs transversales. La primera tarea
   - Cpt: Calidad de la Inversión (Outcome 2° Nivel).
   - Cpt: Salud Financiera (Outcome 2° Nivel).
 #### S 7 2 observatorio sociotecnico activo observatorio nuble 360 ver especificacion
-#### ID
-GN-SEC-0054
-#### Title
+#### Titulo
 7.2. Observatorio Sociotécnico Activo ("Observatorio Ñuble 360") (Ver Especificaciones en Anexo F.1)
-#### Content
+#### Contenido
 
 ID: `PTN-2-OBSERVATORY-01`
 Fnd: El Observatorio Sociotécnico Activo "Ñuble 360" se establece como la plataforma central de inteligencia estratégica.
@@ -1066,11 +899,9 @@ Obj: Permitir a la alta dirección correlacionar inversión con impacto real.
 - Cpt: Monitor de Salud de Procesos Automatizados.
   - Mech: Incluirá un panel para la monitorización en tiempo real de la salud de los procesos automatizados.
 #### S 7 3 transparencia de asistentes sda y auditoria anual de ia continuidad ver gu
-#### ID
-GN-SEC-0055
-#### Title
+#### Titulo
 7.3. Transparencia de Asistentes (SDA) y Auditoría Anual de IA/Continuidad (Ver Guía y Ficha SDA en Anexo C.1)
-#### Content
+#### Contenido
 
 ID: `PTN-2-TRANSPARENCY-01`
 Fnd: Para construir confianza, el GORE adoptará una política de "transparencia radical" sobre su uso de la IA.
@@ -1082,20 +913,16 @@ Fnd: Para construir confianza, el GORE adoptará una política de "transparencia
 - Cpt: Auditoría Anual de Continuidad Operacional.
   - Req: Se auditará anualmente la robustez de los planes de continuidad operacional para sistemas críticos.
 #### S 8 gobernanza de la inversion y sostenibilidad financiera
-#### ID
-GN-SEC-0056
-#### Title
+#### Titulo
 8. Gobernanza de la Inversión y Sostenibilidad Financiera
-#### Content
+#### Contenido
 
 ID: `PTN-2-INVESTMENT-GOVERNANCE-01`
-#### Sections
+#### Secciones
 #### S 8 1 mapa de fuentes de financiamiento por pilar estrategico
-#### ID
-GN-SEC-0057
-#### Title
+#### Titulo
 8.1. Mapa de Fuentes de Financiamiento por Pilar Estratégico
-#### Content
+#### Contenido
 
 ID: `PTN-2-FUNDING-SOURCES-01`
 Instr: Los formuladores deben utilizar los instrumentos de financiamiento del GORE según la naturaleza de la IPR.
@@ -1125,11 +952,9 @@ Fnd: Basado en el árbol de decisión del `kb_gn_011_selector_ipr_sts`.
 - Cpt: `Mi Ñuble` (App Ciudadana).
   - Act: Iniciar desarrollo del backend y servicios base.
 #### S 8 2 politicas de formulacion de inversiones de cumplimiento obligatorio
-#### ID
-GN-SEC-0058
-#### Title
+#### Titulo
 8.2. Políticas de Formulación de Inversiones de Cumplimiento Obligatorio
-#### Content
+#### Contenido
 
 ID: `PTN-2-INVESTMENT-POLICIES-01`
 Req: El CTD velará por el cumplimiento estricto de las siguientes políticas para toda nueva IPR de base tecnológica.
@@ -1141,11 +966,9 @@ Req: El CTD velará por el cumplimiento estricto de las siguientes políticas pa
 - Cpt: 8.2.3. Política de Sostenibilidad Operacional.
   - Req: Toda IPR que genere gastos recurrentes deberá presentar un Plan de Sostenibilidad que comprometa financiamiento por un mínimo de 3 años post-inversión.
 #### S 8 3 modelo de financiamiento del plan maestro
-#### ID
-GN-SEC-0059
-#### Title
+#### Titulo
 8.3. Modelo de Financiamiento del Plan Maestro
-#### Content
+#### Contenido
 
 ID: `PTN-2-FUNDING-MODEL-01`
 Mech: El plan se financiará a través de una combinación de reasignación de recursos y la creación de un vehículo de inversión específico.
@@ -1154,12 +977,10 @@ Mech: El plan se financiará a través de una combinación de reasignación de r
   - Act: Se mandata a la División de Planificación y Desarrollo (DIPLADE) la formulación de un Programa Público Regional (PPR) paraguas, de ejecución directa del GORE y financiado vía FNDR.
   - Purp: Cubrirá los costos transversales y habilitantes del plan, incluyendo el equipo central de gobernanza, los servicios de ciberseguridad, y el mantenimiento de las plataformas tecnológicas comunes (RUC, IDE Ñuble, Ñuble App).
   - Obj: Asegurar la capacidad operativa para liderar la transformación.
-#### Parte iii plan de accion hoja de ruta 3 3 3
-#### ID
-GN-SEC-0060
-#### Title
+### Parte iii plan de accion hoja de ruta 3 3 3
+#### Titulo
 Parte III: Plan de Acción (Hoja de Ruta "3-3-3")
-#### Content
+#### Contenido
 
 ID: `PTN-3-ACTION-PLAN-01`
 Purp: Traducir la estrategia en un plan de acción concreto, fásico y con entregables verificables.
@@ -1168,22 +989,18 @@ Fnd: Estructurado bajo la metodología "3-3-3".
 - Cpt: Horizonte 3 semanas: Capitalizar urgencia y consolidar liderazgo.
 - Cpt: Horizonte 3 meses: Demostrar valor con pilotos controlados.
 - Cpt: Horizonte 3 años: Alcanzar escala regional y sostenibilidad.
-#### Sections
+#### Secciones
 #### S 9 programa por horizontes
-#### ID
-GN-SEC-0061
-#### Title
+#### Titulo
 9. Programa por Horizontes
-#### Content
+#### Contenido
 
 ID: `PTN-3-HORIZONS-PROGRAM-01`
-#### Sections
+#### Secciones
 #### S 9 1 horizonte 3 semanas instalar y proteger
-#### ID
-GN-SEC-0062
-#### Title
+#### Titulo
 9.1. Horizonte 3 Semanas (Instalar y Proteger)
-#### Content
+#### Contenido
 
 ID: `PTN-3-HORIZON-3W-01`
 Ctx: Sprint de alta intensidad a ejecutar antes del 30 de septiembre de 2025.
@@ -1222,21 +1039,17 @@ Obj: Político y de gobernanza: instalar estructuras de decisión y mitigar ries
   - Ctx: Contenido: Borrador de Resolución Exenta que establece principios, formaliza el Subcomité de IA, adopta la Ficha SDA, etc.
   - Def: DoD: Borrador de Resolución Exenta enviado a Asesoría Jurídica.
 #### S 10 cartera por frentes de trabajo workstreams
-#### ID
-GN-SEC-0063
-#### Title
+#### Titulo
 10. Cartera por Frentes de Trabajo (Workstreams)
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAMS-01`
 Purp: Organizar la ejecución del plan en frentes de trabajo concurrentes.
-#### Sections
+#### Secciones
 #### S 10 1 servicios mi nuble modulo mi seguridad
-#### ID
-GN-SEC-0064
-#### Title
+#### Titulo
 10.1. Servicios → `Mi Ñuble` / Módulo "Mi Seguridad"
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-SERVICES-01`
 Mssn: Diseñar, construir y evolucionar la aplicación `Mi Ñuble` como el ecosistema de servicios regional.
@@ -1249,11 +1062,9 @@ Mssn: Diseñar, construir y evolucionar la aplicación `Mi Ñuble` como el ecosi
   - Act: Integración de Módulos: Construir e integrar módulos prioritarios (Consulta de IPR, Postulación 8% FNDR, Módulo "Mi Seguridad").
   - Act: Evolución Continua: Recopilar feedback de usuarios para iterar y mejorar.
 #### S 10 2 ingenieria de conocimiento y orquestacion de procesos khm bpa modulos de
-#### ID
-GN-SEC-0065
-#### Title
+#### Titulo
 10.2. Ingeniería de Conocimiento y Orquestación de Procesos (KHM/BPA) → Módulos de `NEXO GORE`
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-KHM-01`
 Mssn: Industrializar la producción y operación de capacidades aumentadas.
@@ -1267,11 +1078,9 @@ Mssn: Industrializar la producción y operación de capacidades aumentadas.
   - Act: Implementación de un Motor de Orquestación de Procesos (BPMN).
   - Act: Refactorización de Asistentes como Servicios: Re-diseñar los servicios cognitivos para ser invocados vía API por el motor BPMN.
 #### S 10 3 ide nuble metadatos calidad publicacion ogc
-#### ID
-GN-SEC-0066
-#### Title
+#### Titulo
 10.3. IDE Ñuble → Metadatos, Calidad, Publicación OGC
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-IDE-01`
 Mssn: Posicionar al GORE como el nodo central de la información geoespacial de la región.
@@ -1285,11 +1094,9 @@ Mssn: Posicionar al GORE como el nodo central de la información geoespacial de 
   - Act: Calidad de Datos: Establecer un marco de calidad basado en la norma ISO 19157.
   - Act: Publicación de Servicios OGC: Configurar y publicar datos a través de servicios WMS, WFS.
 #### S 10 4 cies sitia convenio poc sop escalamiento municipal
-#### ID
-GN-SEC-0067
-#### Title
+#### Titulo
 10.4. CIES↔SITIA → Convenio, PoC, SOP, Escalamiento Municipal
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-CIES-01`
 Mssn: Integrar las capacidades de seguridad y emergencia del GORE con el sistema nacional.
@@ -1303,11 +1110,9 @@ Mssn: Integrar las capacidades de seguridad y emergencia del GORE con el sistema
   - Act: Desarrollo de SOPs (Standard Operating Procedures): Co-diseñar protocolos operativos.
   - Act: Plan de Escalamiento Municipal: Elaborar el plan técnico y de gobernanza.
 #### S 10 5 datos identidad e interoperabilidad politica catalogo claveunica
-#### ID
-GN-SEC-0068
-#### Title
+#### Titulo
 10.5. Datos, Identidad e Interoperabilidad → Política, Catálogo, ClaveÚnica
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-DATA-01`
 Mssn: Gobernanza de datos a nivel institucional.
@@ -1321,11 +1126,9 @@ Mssn: Gobernanza de datos a nivel institucional.
   - Mech: Se implementarán estándares como OpenLineage para capturar automáticamente el linaje a nivel de columna, asegurando la trazabilidad desde la fuente hasta el consumo.
   - Act: Integración de ClaveÚnica: Mandatar por norma interna que todo nuevo servicio digital que requiera autenticación de ciudadanos o funcionarios debe integrarse con ClaveÚnica.
 #### S 10 6 ia responsable y sda fichas evaluacion incidentes transparencia
-#### ID
-GN-SEC-0069
-#### Title
+#### Titulo
 10.6. IA Responsable y SDA → Fichas, Evaluación, Incidentes, Transparencia
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-RESPONSIBLE-AI-01`
 Mssn: Actuar como el guardián ético y de cumplimiento de todas las iniciativas de IA.
@@ -1339,11 +1142,9 @@ Mssn: Actuar como el guardián ético y de cumplimiento de todas las iniciativas
   - Act: Protocolo de Incidentes: Administrar el canal para reportar comportamientos anómalos.
   - Act: Portal de Transparencia de IA: Mantener la sección pública del sitio web.
 #### S 10 7 plataforma seguridad y continuidad hardening monitoreo dr
-#### ID
-GN-SEC-0070
-#### Title
+#### Titulo
 10.7. Plataforma, Seguridad y Continuidad → Hardening, Monitoreo, DR
-#### Content
+#### Contenido
 
 ID: `PTN-3-WORKSTREAM-PLATFORM-01`
 Mssn: Ser responsable de la infraestructura tecnológica subyacente.
@@ -1358,21 +1159,17 @@ Mssn: Ser responsable de la infraestructura tecnológica subyacente.
   - Act: Arquitectura Asíncrona y Resiliente: Adoptar un bus de mensajería asíncrona como componente central de la arquitectura para desacoplar los servicios.
   - Obj: Permitir absorber picos de carga y garantizar la entrega de transacciones, incluso ante fallos temporales de algún componente.
 #### S 11 gestion del plan y pilotaje estrategico
-#### ID
-GN-SEC-0071
-#### Title
+#### Titulo
 11. Gestión del Plan y Pilotaje Estratégico
-#### Content
+#### Contenido
 
 ID: `PTN-3-PLAN-MANAGEMENT-01`
 Purp: Detallar la gobernanza operativa, mecanismos de control de riesgos y modelo de reporte.
-#### Sections
+#### Secciones
 #### S 11 1 gobernanza operativa raci con nombres gates de cumplimiento y bitacora pu
-#### ID
-GN-SEC-0072
-#### Title
+#### Titulo
 11.1. Gobernanza Operativa: RACI con Nombres, Gates de Cumplimiento y Bitácora Pública
-#### Content
+#### Contenido
 
 ID: `PTN-3-OPERATIONAL-GOVERNANCE-01`
 
@@ -1386,11 +1183,9 @@ ID: `PTN-3-OPERATIONAL-GOVERNANCE-01`
 - Cpt: Bitácora Pública de Decisiones.
   - Mech: La Oficina ODIA mantendrá una Bitácora Pública en el Observatorio Ñuble 250.
 #### S 11 2 gestion de incertidumbre registro de raids riesgos supuestos issues depen
-#### ID
-GN-SEC-0073
-#### Title
+#### Titulo
 11.2. Gestión de Incertidumbre: Registro de RAIDs (Riesgos, Supuestos, Issues, Dependencias) con Mitigaciones
-#### Content
+#### Contenido
 
 ID: `PTN-3-UNCERTAINTY-MANAGEMENT-01`
 Mech: La Oficina ODIA mantendrá un Registro RAID centralizado.
@@ -1406,11 +1201,9 @@ Mech: La Oficina ODIA mantendrá un Registro RAID centralizado.
 - Cpt: Dependencias (Dependencies): Factores externos.
   - Ex: Integración CIES↔SITIA depende de Subsecretaría de Prevención del Delito. Gestión: Formalizar relación vía convenio.
 #### S 11 3 pilotaje estrategico dtpm reporte de favorabilidad trimestral para la alt
-#### ID
-GN-SEC-0074
-#### Title
+#### Titulo
 11.3. Pilotaje Estratégico (DTPM): Reporte de Favorabilidad Trimestral para la Alta Dirección
-#### Content
+#### Contenido
 
 ID: `PTN-3-STRATEGIC-PILOTING-01`
 Mech: La Oficina ODIA operará como una Dirección Táctica de Proyectos y Misiones (DTPM).
@@ -1420,11 +1213,9 @@ Cpt: Su principal herramienta será el Reporte de Favorabilidad Trimestral.
 - Cpt: Evaluación de Viabilidad Política: ¿Se mantiene el apoyo de los stakeholders clave?
 - Cpt: Evaluación de Capacidad Operativa: ¿La ejecución está dentro de plazos y presupuestos?
 #### S 11 4 finanzas y adquisiciones presupuesto trianual ruta evaltic y slas
-#### ID
-GN-SEC-0075
-#### Title
+#### Titulo
 11.4. Finanzas y Adquisiciones: Presupuesto Trianual, Ruta EVALTIC y SLAs
-#### Content
+#### Contenido
 
 ID: `PTN-3-FINANCE-ACQUISITIONS-01`
 
@@ -1436,11 +1227,9 @@ ID: `PTN-3-FINANCE-ACQUISITIONS-01`
   - Cpt: Internos: La Oficina ODIA establecerá SLAs claros con las divisiones del GORE.
   - Cpt: Externos: Todo contrato con proveedores tecnológicos incluirá SLAs estrictos.
 #### S 11 5 gobernanza operativa y financiera de datos dataops finops
-#### ID
-GN-SEC-0076
-#### Title
+#### Titulo
 11.5. Gobernanza Operativa y Financiera de Datos (DataOps/FinOps)
-#### Content
+#### Contenido
 
 ID: `PTN-3-DATA-FINOPS-01`
 
@@ -1449,42 +1238,34 @@ ID: `PTN-3-DATA-FINOPS-01`
 - Cpt: FinOps (Gestión de Costos de Datos).
   - Req: Se implementará un sistema de gestión financiera para la infraestructura de datos, exigiendo etiquetado de recursos en la nube.
 #### S 11 6 marco financiero y de metas preliminares
-#### ID
-GN-SEC-0077
-#### Title
+#### Titulo
 11.6. Marco Financiero y de Metas Preliminares
-#### Content
+#### Contenido
 
 ID: `PTN-3-FINANCIAL-FRAMEWORK-01`
 Req: Se establece como tarea prioritaria del CTD, a ejecutar en un plazo máximo de 30 días desde su constitución, la elaboración de dos artefactos.
 
 - Cpt: 1. El Modelo Financiero Trianual.
 - Cpt: 2. El Tablero de KPIs con Línea Base.
-#### Parte iv cierre transferencia y sostenibilidad
-#### ID
-GN-SEC-0078
-#### Title
+### Parte iv cierre transferencia y sostenibilidad
+#### Titulo
 Parte IV: Cierre, Transferencia y Sostenibilidad
-#### Content
+#### Contenido
 
 ID: `PTN-4-CLOSURE-01`
 Purp: Definir los criterios para considerar el plan como "cumplido", el modelo para transferir conocimiento y la estrategia para escalar el valor.
-#### Sections
+#### Secciones
 #### S 12 criterios de cierre y verificacion externa
-#### ID
-GN-SEC-0079
-#### Title
+#### Titulo
 12. Criterios de Cierre y Verificación Externa
-#### Content
+#### Contenido
 
 ID: `PTN-4-CLOSURE-CRITERIA-01`
-#### Sections
+#### Secciones
 #### S 12 1 listo cuando dod por frente de trabajo y medios de verificacion
-#### ID
-GN-SEC-0080
-#### Title
+#### Titulo
 12.1. "Listo-cuando" (DoD) por Frente de Trabajo y Medios de Verificación
-#### Content
+#### Contenido
 
 ID: `PTN-4-DOD-01`
 
@@ -1503,11 +1284,9 @@ ID: `PTN-4-DOD-01`
 - Cpt: Frente 7 (Plataforma, Seguridad y Continuidad).
   - Def: DoD: La infraestructura ha superado una auditoría de seguridad externa. El DRP ha sido probado exitosamente.
 #### S 12 2 transferencia de capacidades equipo campeon manuales institucionalizacion
-#### ID
-GN-SEC-0081
-#### Title
+#### Titulo
 12.2. Transferencia de Capacidades: Equipo Campeón, Manuales, Institucionalización
-#### Content
+#### Contenido
 
 ID: `PTN-4-CAPACITY-TRANSFER-01`
 
@@ -1522,11 +1301,9 @@ ID: `PTN-4-CAPACITY-TRANSFER-01`
 - Cpt: Institucionalización.
   - Mech: El proceso culminará con la propuesta de creación formal de la Oficina Digital e IA (ODIA).
 #### S 12 3 escalamiento regional asistentes como servicio para municipios
-#### ID
-GN-SEC-0082
-#### Title
+#### Titulo
 12.3. Escalamiento Regional: Asistentes como Servicio para Municipios
-#### Content
+#### Contenido
 
 ID: `PTN-4-REGIONAL-SCALING-01`
 Obj: Extender los beneficios a todo el territorio, posicionando al GORE como un habilitador de capacidades para los 21 municipios.
@@ -1538,22 +1315,18 @@ Obj: Extender los beneficios a todo el territorio, posicionando al GORE como un 
 - Cpt: Propuesta de Valor para Municipios.
   - Def: El GORE ofrecerá acceso a tecnología de vanguardia sin que ellos incurran en los altos costos de desarrollo.
 #### S 13 lecciones y mejora continua
-#### ID
-GN-SEC-0083
-#### Title
+#### Titulo
 13. Lecciones y Mejora Continua
-#### Content
+#### Contenido
 
 ID: `PTN-4-LESSONS-LEARNED-01`
 Fnd: Un plan estratégico en un entorno dinámico es un organismo vivo capaz de aprender y adaptarse.
 Purp: Establecer mecanismos formales para que el GORE aprenda de la ejecución.
-#### Sections
+#### Secciones
 #### S 13 1 ciclos de retrospectiva trimestral anual
-#### ID
-GN-SEC-0084
-#### Title
+#### Titulo
 13.1. Ciclos de Retrospectiva (Trimestral/Anual)
-#### Content
+#### Contenido
 
 ID: `PTN-4-RETROSPECTIVES-01`
 Mech: Se institucionalizarán Ciclos de Retrospectiva a dos niveles, liderados por la ODIA.
@@ -1569,11 +1342,9 @@ Mech: Se institucionalizarán Ciclos de Retrospectiva a dos niveles, liderados p
   - Proc: Revisar avance vs. KPIs, validez de supuestos, lecciones estratégicas y priorización.
   - Res: El Acta de la Retrospectiva Estratégica.
 #### S 13 2 actualizacion estrategica revision anual del plan maestro
-#### ID
-GN-SEC-0085
-#### Title
+#### Titulo
 13.2. Actualización Estratégica (Revisión Anual del Plan Maestro)
-#### Content
+#### Contenido
 
 ID: `PTN-4-STRATEGIC-UPDATE-01`
 Fnd: Este Plan Maestro es un documento versionado.
@@ -1583,43 +1354,35 @@ Fnd: Este Plan Maestro es un documento versionado.
   - Resp: La ODIA es responsable de redactar la nueva versión.
   - Cpt: Contenido de la Actualización: Ajuste de metas de KPIs, re-priorización de frentes, incorporación de nuevas iniciativas, descontinuación de iniciativas, actualización del marco normativo.
   - Req: Aprobación Formal: El borrador actualizado debe ser aprobado por el CTD.
-#### Parte v estrategia de comunicacion y adopcion ciudadana
-#### ID
-GN-SEC-0086
-#### Title
+### Parte v estrategia de comunicacion y adopcion ciudadana
+#### Titulo
 Parte V: Estrategia de Comunicación y Adopción Ciudadana
-#### Content
+#### Contenido
 
 ID: `PTN-5-COMMUNICATION-01`
 Fnd: La transformación digital es un cambio en la relación entre el GORE y los ciudadanos.
 Req: Una estrategia de comunicación y adopción es indispensable para construir legitimidad y gestionar expectativas.
-#### Sections
+#### Secciones
 #### S 14 mapeo de audiencias y narrativa central
-#### ID
-GN-SEC-0087
-#### Title
+#### Titulo
 14. Mapeo de Audiencias y Narrativa Central
-#### Content
+#### Contenido
 
 ID: `PTN-5-NARRATIVE-01`
-#### Sections
+#### Secciones
 #### S 14 1 el relato del gobierno regional aumentado articulacion de la vision centr
-#### ID
-GN-SEC-0088
-#### Title
+#### Titulo
 14.1. El Relato del "Gobierno Regional Aumentado": Articulación de la visión central para consumo público
-#### Content
+#### Contenido
 
 ID: `PTN-5-NARRATIVE-CORE-01`
 Cpt: La narrativa central se basará en el concepto del "Gobierno Regional Aumentado".
 Def: "Estamos construyendo un Gobierno Regional Aumentado, donde la tecnología y la inteligencia artificial no reemplazan a nuestros funcionarios, sino que potencian sus capacidades para servir mejor. Es un GORE que ve más lejos, anticipando los riesgos del territorio; que escucha mejor, entendiendo las necesidades de cada comuna; y que actúa más rápido, simplificando la vida de los ciudadanos y apoyando el desarrollo de nuestra región. No estamos reemplazando lo humano, lo estamos aumentando para construir juntos el Ñuble que soñamos."
 Fnd: Basado en los principios de la `kb_gn_030_guia_comunicaciones_sts.md`.
 #### S 14 2 segmentacion de audiencias clave
-#### ID
-GN-SEC-0089
-#### Title
+#### Titulo
 14.2. Segmentación de Audiencias Clave
-#### Content
+#### Contenido
 
 ID: `PTN-5-AUDIENCES-01`
 Req: La comunicación será finamente segmentada para resonar con cada actor clave.
@@ -1631,11 +1394,9 @@ Req: La comunicación será finamente segmentada para resonar con cada actor cla
 - Cpt: Academia y Centros de Investigación: Posicionados como socios en la innovación.
 - Cpt: Medios de Comunicación: Proveer narrativa de progreso, hitos concretos e historias de impacto.
 #### S 14 3 matriz de mensajes y beneficios por audiencia
-#### ID
-GN-SEC-0090
-#### Title
+#### Titulo
 14.3. Matriz de Mensajes y Beneficios por Audiencia
-#### Content
+#### Contenido
 
 ID: `PTN-5-MESSAGING-MATRIX-01`
 Purp: Para cada audiencia, se desarrollará una matriz que traduzca objetivos técnicos en propuestas de valor.
@@ -1647,30 +1408,24 @@ Purp: Para cada audiencia, se desarrollará una matriz que traduzca objetivos t�
 | **Ciudadanía** | "Tu GORE, más simple, seguro y cercano" | Acceso 24/7 a servicios, respuestas más rápidas ante emergencias. | `Mi Ñuble`, Redes Sociales, Medios Locales. |
 | **Gremios** | "Datos para competir, IA para crecer" | Inteligencia de mercado y herramientas para optimizar la producción y la innovación. | Observatorio, Talleres con el sector productivo. |
 #### S 15 plan de hitos comunicacionales y gestion de expectativas
-#### ID
-GN-SEC-0091
-#### Title
+#### Titulo
 15. Plan de Hitos Comunicacionales y Gestión de Expectativas
-#### Content
+#### Contenido
 
 ID: `PTN-5-MILESTONES-01`
 Fnd: La comunicación será proactiva y gestionada como una campaña permanente.
-#### Sections
+#### Secciones
 #### S 15 1 calendario de anuncios y lanzamientos
-#### ID
-GN-SEC-0092
-#### Title
+#### Titulo
 15.1. Calendario de Anuncios y Lanzamientos
-#### Content
+#### Contenido
 
 ID: `PTN-5-CALENDAR-01`
 Act: Se creará una hoja de ruta pública de hitos comunicacionales.
 #### S 15 2 protocolo de comunicacion de proyectos sensibles
-#### ID
-GN-SEC-0093
-#### Title
+#### Titulo
 15.2. Protocolo de Comunicación de Proyectos Sensibles
-#### Content
+#### Contenido
 
 ID: `PTN-5-SENSITIVE-PROJECTS-COMM-01`
 Cpt: Para iniciativas como CIES y uso de IA en seguridad, se diseñará un protocolo proactivo.
@@ -1679,11 +1434,9 @@ Cpt: Para iniciativas como CIES y uso de IA en seguridad, se diseñará un proto
 - Cpt: 2. Transparencia sobre los Límites.
 - Cpt: 3. Validación por Terceros.
 #### S 15 3 vocerias tecnicas y politicas
-#### ID
-GN-SEC-0094
-#### Title
+#### Titulo
 15.3. Vocerías Técnicas y Políticas
-#### Content
+#### Contenido
 
 ID: `PTN-5-SPOKESPERSONS-01`
 Act: Se designará y preparará un equipo de voceros.
@@ -1691,30 +1444,24 @@ Act: Se designará y preparará un equipo de voceros.
 - Cpt: Vocería Política (Gobernador/a Regional): Comunicará la visión estratégica.
 - Cpt: Vocería Técnica (Líder de TD / Oficina ODIA): Explicará el "cómo" a audiencias especializadas.
 #### S 16 programa de alfabetizacion y adopcion digital regional
-#### ID
-GN-SEC-0095
-#### Title
+#### Titulo
 16. Programa de Alfabetización y Adopción Digital Regional
-#### Content
+#### Contenido
 
 ID: `PTN-5-DIGITAL-LITERACY-01`
 Purp: Complementar la comunicación con un robusto programa de capacitación ciudadana.
-#### Sections
+#### Secciones
 #### S 16 1 diseno de talleres y material educativo
-#### ID
-GN-SEC-0096
-#### Title
+#### Titulo
 16.1. Diseño de Talleres y Material Educativo
-#### Content
+#### Contenido
 
 ID: `PTN-5-WORKSHOPS-01`
 Act: Se creará un "Kit de Adopción Digital" con material didáctico en formatos diversos.
 #### S 16 2 alianzas con la sociedad civil
-#### ID
-GN-SEC-0097
-#### Title
+#### Titulo
 16.2. Alianzas con la Sociedad Civil
-#### Content
+#### Contenido
 
 ID: `PTN-5-ALLIANCES-01`
 Act: El GORE forjará una red de alianzas estratégicas para maximizar el alcance.
@@ -1722,42 +1469,34 @@ Act: El GORE forjará una red de alianzas estratégicas para maximizar el alcanc
 - Cpt: Municipios: Se les proveerá del "Kit de Adopción Digital".
 - Cpt: Bibliotecas Públicas: Se convertirán en centros de capacitación.
 - Cpt: Organizaciones Sociales y Juntas de Vecinos: Se les capacitará como "Embajadores Digitales".
-#### Parte vi anexos ejecutables y de referencia
-#### ID
-GN-SEC-0098
-#### Title
+### Parte vi anexos ejecutables y de referencia
+#### Titulo
 Parte VI: Anexos Ejecutables y de Referencia
-#### Content
+#### Contenido
 
 ID: `PTN-6-ANNEXES-01`
 Purp: Contener los instrumentos operativos y de referencia que habilitan la ejecución gobernada y auditable del Plan Maestro.
 Req: Son herramientas de trabajo de cumplimiento obligatorio.
-#### Sections
+#### Secciones
 #### A gobernanza y cumplimiento
-#### ID
-GN-SEC-0099
-#### Title
+#### Titulo
 A. Gobernanza y Cumplimiento
-#### Content
+#### Contenido
 
 ID: `PTN-A-GOVERNANCE-01`
-#### Sections
+#### Secciones
 #### A 1 marco normativo operativo tde plantilla raci matriz de gates
-#### ID
-GN-SEC-0100
-#### Title
+#### Titulo
 A.1. Marco Normativo Operativo TDE; Plantilla RACI; Matriz de Gates
-#### Content
+#### Contenido
 
 ID: `PTN-A1-FRAMEWORK-01`
 Purp: Constituir el manual de operaciones para la gobernanza diaria.
-#### Sections
+#### Secciones
 #### S 1 marco normativo operativo de la transformacion digital del estado tde
-#### ID
-GN-SEC-0101
-#### Title
+#### Titulo
 **1. Marco Normativo Operativo de la Transformación Digital del Estado (TDE)**
-#### Content
+#### Contenido
 
 ID: `PTN-A1-TDE-FRAMEWORK-01`
 
@@ -1773,11 +1512,9 @@ ID: `PTN-A1-TDE-FRAMEWORK-01`
   - Cpt: Interoperabilidad (DS N°12): Antes de solicitar datos, debe verificar si están disponibles en la Red de Interoperabilidad.
   - Cpt: Calidad (DS N°11): Su división debe colaborar con la ODIA para registrar plataformas en el Catálogo.
 #### S 2 plantilla de matriz de responsabilidades raci
-#### ID
-GN-SEC-0102
-#### Title
+#### Titulo
 **2. Plantilla de Matriz de Responsabilidades (RACI)**
-#### Content
+#### Contenido
 
 ID: `PTN-A1-RACI-TEMPLATE-01`
 
@@ -1790,11 +1527,9 @@ ID: `PTN-A1-RACI-TEMPLATE-01`
 | **Adopción y Gestión del Cambio** | **I** | **C** | **R** | **A** | **I** | **I** |
 | **Reporte de KPIs y Favorabilidad** | **A** | **I** | **R** | **I** | **I** | **I** |
 #### S 3 matriz de gates de cumplimiento
-#### ID
-GN-SEC-0103
-#### Title
+#### Titulo
 **3. Matriz de "Gates" de Cumplimiento**
-#### Content
+#### Contenido
 
 ID: `PTN-A1-GATES-MATRIX-01`
 
@@ -1807,21 +1542,17 @@ ID: `PTN-A1-GATES-MATRIX-01`
 | **G5: Adquisiciones y Financiero** | Planificación | Proceso EVALTIC aprobado (si aplica). Cumplimiento Ley de Compras. Sostenibilidad financiera. | Oficio resultado EVALTIC. Orden de Compra tramitada. |
 | **G6: Puesta en Producción** | Ejecución | Plan de paso a producción aprobado. | Acta de aprobación del CTD para despliegue. |
 #### A 2 vademecum juridico administrativo del gore nuble para la td ia
-#### ID
-GN-SEC-0104
-#### Title
+#### Titulo
 A.2. Vademécum Jurídico-Administrativo del GORE Ñuble para la TD-IA
-#### Content
+#### Contenido
 
 ID: `PTN-A2-LEGAL-VADEMECUM-01`
 Purp: Consolidar el fundamento legal de las iniciativas del Plan Maestro.
-#### Sections
+#### Secciones
 #### S 1 mapeo de iniciativas a la ley n 19 175 loc gore
-#### ID
-GN-SEC-0105
-#### Title
+#### Titulo
 **1. Mapeo de Iniciativas a la Ley N° 19.175 (LOC GORE)**
-#### Content
+#### Contenido
 
 ID: `PTN-A2-LAW-MAPPING-01`
 
@@ -1833,11 +1564,9 @@ ID: `PTN-A2-LAW-MAPPING-01`
 | **Ñuble App, Asistentes Ciudadanos** | **Art. 19 b):** "Participar en acciones tendientes a facilitar el acceso de la población a la salud, educación y cultura". **Art. 16 j):** "Asesorar a las municipalidades". |
 | **CIES ↔ SITIA, Módulo Ñuble Seguro** | **Art. 16 i):** "Diseñar y ejecutar políticas, planes y programas regionales de prevención del delito y de asistencia a víctimas". **Art. 16 k):** "Adoptar las medidas necesarias para enfrentar situaciones de emergencia o catástrofe". |
 #### S 2 navegacion del ciclo presupuestario para proyectos td ia
-#### ID
-GN-SEC-0106
-#### Title
+#### Titulo
 **2. Navegación del Ciclo Presupuestario para Proyectos TD-IA**
-#### Content
+#### Contenido
 
 ID: `PTN-A2-BUDGET-CYCLE-01`
 Fnd: Basado en `kb_gn_018_gestion_prpto_sts.md`.
@@ -1846,11 +1575,9 @@ Fnd: Basado en `kb_gn_018_gestion_prpto_sts.md`.
 - Cpt: Aprobación: El "Programa Habilitante de Gobernanza TD-IA" será presentado al CORE para aprobación.
 - Cpt: Ejecución y Control: La ejecución será monitoreada a través de SIGFE (financiero) y BIP (físico).
 #### S 3 encuadre en el sistema nacional de inversiones sni y ley de compras publicas
-#### ID
-GN-SEC-0107
-#### Title
+#### Titulo
 **3. Encuadre en el Sistema Nacional de Inversiones (SNI) y Ley de Compras Públicas**
-#### Content
+#### Contenido
 
 ID: `PTN-A2-SNI-CHILECOMPRA-01`
 
@@ -1860,31 +1587,25 @@ ID: `PTN-A2-SNI-CHILECOMPRA-01`
 - Fnd: La formulación se rige por la `kb_gn_025_guia_programas_sts`.
 - Cpt: Adquisiciones (Ley N° 19.886): Toda adquisición se realizará a través de ChileCompra.
 #### B datos y privacidad
-#### ID
-GN-SEC-0108
-#### Title
+#### Titulo
 B. Datos y Privacidad
-#### Content
+#### Contenido
 
 ID: `PTN-B-DATA-PRIVACY-01`
 Purp: Establecer el marco de gobernanza para los datos.
-#### Sections
+#### Secciones
 #### B 1 programa de cumplimiento ley 21 719 politica de datos y catalogo guia de ano
-#### ID
-GN-SEC-0109
-#### Title
+#### Titulo
 B.1. Programa de Cumplimiento Ley 21.719; Política de Datos y Catálogo; Guía de Anonimización
-#### Content
+#### Contenido
 
 ID: `PTN-B1-COMPLIANCE-PROGRAM-01`
 Purp: Implementado por el CTD y supervisado por el DPO.
-#### Sections
+#### Secciones
 #### S 1 programa de cumplimiento de la ley n 21 719 de proteccion de datos personale
-#### ID
-GN-SEC-0110
-#### Title
+#### Titulo
 **1. Programa de Cumplimiento de la Ley N° 21.719 de Protección de Datos Personales**
-#### Content
+#### Contenido
 
 ID: `PTN-B1-LAW21719-COMPLIANCE-01`
 
@@ -1894,11 +1615,9 @@ ID: `PTN-B1-LAW21719-COMPLIANCE-01`
 - Act: Implementación de un procedimiento para gestionar derechos ARCO-P.
 - Act: Establecimiento de un Protocolo de Notificación de Brechas de Seguridad.
 #### S 2 politica de gobierno de datos del gore nuble y gestion de datos como product
-#### ID
-GN-SEC-0111
-#### Title
+#### Titulo
 **2. Política de Gobierno de Datos del GORE Ñuble y Gestión de Datos como Producto**
-#### Content
+#### Contenido
 
 ID: `PTN-B1-DATA-GOVERNANCE-POLICY-01`
 
@@ -1909,11 +1628,9 @@ ID: `PTN-B1-DATA-GOVERNANCE-POLICY-01`
 - Cpt: Ciclo de Vida del Producto de Datos: La creación y evolución seguirá un ciclo de vida gestionado.
 - Ctx: El ciclo de vida se detalla en el Anexo D.5.
 #### S 3 guia de anonimizacion y seudonimizacion de datos
-#### ID
-GN-SEC-0112
-#### Title
+#### Titulo
 **3. Guía de Anonimización y Seudonimización de Datos**
-#### Content
+#### Contenido
 
 ID: `PTN-B1-ANONYMIZATION-GUIDE-01`
 Fnd: Basada en las definiciones de la Ley N° 21.719.
@@ -1922,30 +1639,24 @@ Fnd: Basada en las definiciones de la Ley N° 21.719.
 - Cpt: Seudonimización: Para tratamientos internos, se utilizarán técnicas que permiten re-identificación controlada.
 - Req: Aplicación obligatoria en la preparación de datasets para entrenamiento de IA.
 #### C ia responsable y sda
-#### ID
-GN-SEC-0113
-#### Title
+#### Titulo
 C. IA Responsable y SDA
-#### Content
+#### Contenido
 
 ID: `PTN-C-RESPONSIBLE-AI-01`
 Purp: Establecer el marco operativo para el ciclo de vida de la IA.
-#### Sections
+#### Secciones
 #### C 1 guia de asistentes ficha sda marco de riesgos protocolo de incidentes
-#### ID
-GN-SEC-0114
-#### Title
+#### Titulo
 C.1. Guía de Asistentes (Ficha SDA); Marco de Riesgos; Protocolo de Incidentes
-#### Content
+#### Contenido
 
 ID: `PTN-C1-AI-GUIDE-01`
-#### Sections
+#### Secciones
 #### S 1 guia de asistentes y ficha de transparencia de sistemas de decision automati
-#### ID
-GN-SEC-0115
-#### Title
+#### Titulo
 **1. Guía de Asistentes y Ficha de Transparencia de Sistemas de Decisión Automatizada (SDA)**
-#### Content
+#### Contenido
 
 ID: `PTN-C1-SDA-FICHA-01`
 
@@ -1953,11 +1664,9 @@ ID: `PTN-C1-SDA-FICHA-01`
 - Cpt: Contenido de la Ficha SDA: Nombre, Objetivo, Responsable, Modelo Operativo, Funcionamiento, Datos Utilizados, Lógica de Decisión, Medidas de Mitigación, Canal de Consultas.
 - Req: Todas las Fichas SDA aprobadas serán publicadas en el Portal de Transparencia de IA.
 #### S 2 marco de gobernanza de ia basado en riesgos
-#### ID
-GN-SEC-0116
-#### Title
+#### Titulo
 **2. Marco de Gobernanza de IA Basado en Riesgos**
-#### Content
+#### Contenido
 
 ID: `PTN-C1-RISK-FRAMEWORK-01`
 Fnd: Adopción de un enfoque basado en riesgo.
@@ -1975,11 +1684,9 @@ Fnd: Adopción de un enfoque basado en riesgo.
   - Cpt: Riesgo de Impacto Laboral (Workforce).
 - Mech: El Subcomité de IA asignará un nivel de riesgo al sistema, lo que determinará los controles requeridos.
 #### S 3 protocolo de registro y gestion de incidentes de ia
-#### ID
-GN-SEC-0117
-#### Title
+#### Titulo
 **3. Protocolo de Registro y Gestión de Incidentes de IA**
-#### Content
+#### Contenido
 
 ID: `PTN-C1-INCIDENT-PROTOCOL-01`
 
@@ -1987,11 +1694,9 @@ ID: `PTN-C1-INCIDENT-PROTOCOL-01`
 - Act: Mantenimiento de un Registro Centralizado de Incidentes.
 - Act: Proceso de Escalamiento y Resolución para incidentes de criticidad Alta o Crítica.
 #### D capacidades nucleo aip alm ide cies
-#### ID
-GN-SEC-0118
-#### Title
+#### Titulo
 D. Capacidades Núcleo (AIP, ALM, IDE, CIES)
-#### Content
+#### Contenido
 
 ID: `PTN-D-CORE-CAPABILITIES-01`
 
@@ -2006,13 +1711,11 @@ ID: `PTN-D-CORE-CAPABILITIES-01`
   - Cpt: D.4.5. `Estándar para la Digitalización Estructurada de Formularios`
   - Cpt: D.4.6. `Ciclo de Vida Industrial del Producto de IA`
 - Cpt: D.5. Ciclo de Vida del Producto de Datos
-#### Sections
+#### Secciones
 #### D 4 1 marco metodologico para el ciclo de vida de asistentes de ia
-#### ID
-GN-SEC-0119
-#### Title
+#### Titulo
 **D.4.1. Marco Metodológico para el Ciclo de Vida de Asistentes de IA**
-#### Content
+#### Contenido
 
 ID: `PTN-D41-ALM-FRAMEWORK-01`
 
@@ -2022,11 +1725,9 @@ ID: `PTN-D41-ALM-FRAMEWORK-01`
   - Cpt: 2. Guardrails de Salida: Validación de Formato; Comprobación de Fidelidad; Sanitización de Seguridad y PII.
   - Cpt: 3. Guardrails Operacionales: Gestión de Excepciones y Rutas de Escalado; Límites de Recursos.
 #### D 4 6 ciclo de vida industrial del producto de ia
-#### ID
-GN-SEC-0120
-#### Title
+#### Titulo
 **D.4.6. Ciclo de Vida Industrial del Producto de IA**
-#### Content
+#### Contenido
 
 ID: `PTN-D46-AI-PRODUCT-LIFECYCLE-01`
 
@@ -2038,29 +1739,23 @@ ID: `PTN-D46-AI-PRODUCT-LIFECYCLE-01`
   - Req: Monitoreo Continuo de Deriva (Drift).
   - Req: Implementación del "Data Flywheel" para captura de feedback y mejora continua.
 #### E servicios ciudadanos
-#### ID
-GN-SEC-0121
-#### Title
+#### Titulo
 E. Servicios Ciudadanos
-#### Content
+#### Contenido
 
 ID: `PTN-E-CITIZEN-SERVICES-01`
-#### Sections
+#### Secciones
 #### E 1 prd nuble app y nuble seguro guia de estilo y lenguaje claro
-#### ID
-GN-SEC-0122
-#### Title
+#### Titulo
 E.1. PRD Ñuble App y Ñuble Seguro; Guía de Estilo y Lenguaje Claro
-#### Content
+#### Contenido
 
 ID: `PTN-E1-APP-PRD-01`
-#### Sections
+#### Secciones
 #### S 1 documento de requisitos de producto prd nuble app
-#### ID
-GN-SEC-0123
-#### Title
+#### Titulo
 **1. Documento de Requisitos de Producto (PRD): Ñuble App**
-#### Content
+#### Contenido
 
 ID: `PTN-E1-APP-PRD-DETAILS-01`
 
@@ -2092,11 +1787,9 @@ ID: `PTN-E1-APP-PRD-DETAILS-01`
   - Cpt: Escalabilidad: Arquitectura backend modular y basada en microservicios.
   - Cpt: Privacidad: Construida bajo el principio de privacidad por diseño.
 #### S 2 guia de estilo y lenguaje claro para servicios digitales ciudadanos
-#### ID
-GN-SEC-0124
-#### Title
+#### Titulo
 **2. Guía de Estilo y Lenguaje Claro para Servicios Digitales Ciudadanos**
-#### Content
+#### Contenido
 
 ID: `PTN-E1-STYLE-GUIDE-01`
 
@@ -2108,11 +1801,9 @@ ID: `PTN-E1-STYLE-GUIDE-01`
   - Cpt: Principio 3: Consistencia es Confianza.
 - Cpt: 2.4. Microcopy y UX Writing: Ejemplos Prácticos.
 #### F gestion del plan y sostenibilidad
-#### ID
-GN-SEC-0125
-#### Title
+#### Titulo
 F. Gestión del Plan y Sostenibilidad
-#### Content
+#### Contenido
 
 ID: `PTN-F-PLAN-MANAGEMENT-01`
 
@@ -2120,20 +1811,16 @@ ID: `PTN-F-PLAN-MANAGEMENT-01`
 - Cpt: F.2. Finanzas y Adquisiciones: Modelo Financiero Trianual; Formatos EVALTIC.
 - Cpt: F.3. Implementación: Mapa Estratégico de Implementación (Gantt Simplificado).
 #### G documentos fundacionales
-#### ID
-GN-SEC-0126
-#### Title
+#### Titulo
 G. Documentos Fundacionales
-#### Content
+#### Contenido
 
 ID: `PTN-G-FOUNDATIONAL-DOCS-01`
-#### Sections
+#### Secciones
 #### G 1 propuesta de resolucion exenta para la creacion de la oficina digital e ia o
-#### ID
-GN-SEC-0127
-#### Title
+#### Titulo
 G.1. Propuesta de Resolución Exenta para la Creación de la Oficina Digital e IA (ODIA)
-#### Content
+#### Contenido
 
 ID: `PTN-G1-ODIA-RESOLUTION-01`
 
@@ -2141,11 +1828,9 @@ ID: `PTN-G1-ODIA-RESOLUTION-01`
   - Fnd: VISTOS y CONSIDERANDO.
   - Act: RESUELVO: CRÉASE la ODIA; ESTABLÉCESE su misión; FIJANSE sus funciones; INSTRÚYESE colaboración.
 #### G 2 lineamientos estrategicos para la sucesion de gesdoc
-#### ID
-GN-SEC-0128
-#### Title
+#### Titulo
 G.2. Lineamientos Estratégicos para la Sucesión de Gesdoc
-#### Content
+#### Contenido
 
 ID: `PTN-G2-GESDOC-SUCCESSION-01`
 
@@ -2161,20 +1846,16 @@ ID: `PTN-G2-GESDOC-SUCCESSION-01`
   - Act: Decomisionamiento Controlado.
 - Cpt: 4. Propuesta de Valor y Beneficios del Enfoque.
 #### H comunicaciones y adopcion
-#### ID
-GN-SEC-0129
-#### Title
+#### Titulo
 H. Comunicaciones y Adopción
-#### Content
+#### Contenido
 
 ID: `PTN-H-COMMUNICATIONS-01`
-#### Sections
+#### Secciones
 #### H 1 kit de mensajes oficial definiciones y lineamientos para vocerias
-#### ID
-GN-SEC-0130
-#### Title
+#### Titulo
 H.1. Kit de Mensajes Oficial: Definiciones y lineamientos para vocerías
-#### Content
+#### Contenido
 
 ID: `PTN-H1-MESSAGING-KIT-01`
 
@@ -2182,20 +1863,16 @@ ID: `PTN-H1-MESSAGING-KIT-01`
 - Cpt: 2. Lineamientos Generales para Vocerías.
 - Cpt: 3. Preguntas y Respuestas Clave (Q&A Estratégico).
 #### I gestion del cambio y competencias internas
-#### ID
-GN-SEC-0131
-#### Title
+#### Titulo
 I. Gestión del Cambio y Competencias Internas
-#### Content
+#### Contenido
 
 ID: `PTN-I-CHANGE-MANAGEMENT-01`
-#### Sections
+#### Secciones
 #### I 1 borrador plan de comunicacion interna por fases
-#### ID
-GN-SEC-0132
-#### Title
+#### Titulo
 I.1. Borrador Plan de Comunicación Interna por Fases
-#### Content
+#### Contenido
 
 ID: `PTN-I1-INTERNAL-COMMS-PLAN-01`
 
@@ -2203,11 +1880,9 @@ ID: `PTN-I1-INTERNAL-COMMS-PLAN-01`
 - Cpt: Fase 2: Comprensión (Meses 2-6).
 - Cpt: Fase 3: Adopción y Refuerzo (Mes 7 en adelante).
 #### I 2 mapa de competencias digitales y de ia v1
-#### ID
-GN-SEC-0133
-#### Title
+#### Titulo
 I.2. Mapa de Competencias Digitales y de IA v1
-#### Content
+#### Contenido
 
 ID: `PTN-I2-SKILLS-MAP-01`
 
@@ -2217,11 +1892,9 @@ ID: `PTN-I2-SKILLS-MAP-01`
 | **Usuario Avanzado** | Profesionales y Analistas | Análisis de Datos; Gestión de Procesos Digitales; Uso Experto de Asistentes IA; Diseño de Flujos de Colaboración Humano-Agente. |
 | **Experto** | Oficina ODIA, Equipo Campeón, CISO/DPO | Ingeniería de Conocimiento; Ingeniería de Agentes; Gobernanza TD-IA; Análisis y Rediseño de Procesos. |
 #### I 3 propuesta de itinerarios formativos por perfil
-#### ID
-GN-SEC-0134
-#### Title
+#### Titulo
 I.3. Propuesta de Itinerarios Formativos por Perfil
-#### Content
+#### Contenido
 
 ID: `PTN-I3-TRAINING-PATHS-01`
 
@@ -2229,40 +1902,32 @@ ID: `PTN-I3-TRAINING-PATHS-01`
 - Cpt: Itinerario de Usuario Avanzado (Por rol).
 - Cpt: Itinerario de Experto (Para Equipo Campeón).
 #### J gobernanza de inversion y sostenibilidad
-#### ID
-GN-SEC-0135
-#### Title
+#### Titulo
 J. Gobernanza de Inversión y Sostenibilidad
-#### Content
+#### Contenido
 
 ID: `PTN-J-INVESTMENT-GOVERNANCE-01`
-#### Sections
+#### Secciones
 #### J 1 plantilla de analisis de no duplicidad
-#### ID
-GN-SEC-0136
-#### Title
+#### Titulo
 J.1. Plantilla de Análisis de No Duplicidad
-#### Content
+#### Contenido
 
 ID: `PTN-J1-NON-DUPLICATION-TEMPLATE-01`
 
 - Mdl: INICIATIVA, DIVISIÓN PROPONENTE, FECHA, Objetivo, Análisis Oferta Nacional, Análisis Oferta Regional/Local, Justificación de Unicidad.
 #### J 2 plantilla de informe de oportunidades de apalancamiento
-#### ID
-GN-SEC-0137
-#### Title
+#### Titulo
 J.2. Plantilla de Informe de Oportunidades de Apalancamiento
-#### Content
+#### Contenido
 
 ID: `PTN-J2-LEVERAGE-TEMPLATE-01`
 
 - Mdl: INICIATIVA, DIVISIÓN PROPONENTE, FECHA, Resumen, Identificación de Fondos, Acciones Realizadas, Propuesta de Modelo, Análisis de Riesgo.
 #### J 3 plantilla de plan de sostenibilidad operacional
-#### ID
-GN-SEC-0138
-#### Title
+#### Titulo
 J.3. Plantilla de Plan de Sostenibilidad Operacional
-#### Content
+#### Contenido
 
 ID: `PTN-J3-SUSTAINABILITY-TEMPLATE-01`
 

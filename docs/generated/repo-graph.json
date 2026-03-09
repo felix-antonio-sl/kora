@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 731,
     "node_count": 884,
-    "edge_count": 4217
+    "edge_count": 4235
   },
   "node_kind_counts": {
     "artifact": 226,
@@ -13,15 +13,15 @@
     "workspace": 45
   },
   "edge_kind_counts": {
-    "AllowsKB": 420,
-    "AllowsTool": 197,
+    "AllowsKB": 423,
+    "AllowsTool": 198,
     "ContainsArtifact": 225,
     "ContainsSkill": 236,
-    "DeclaresTool": 200,
-    "InvokesSkill": 217,
+    "DeclaresTool": 201,
+    "InvokesSkill": 220,
     "RoutesToAgent": 57,
     "TracesTo": 44,
-    "XRef": 2621
+    "XRef": 2631
   },
   "nodes": [
     {
@@ -9587,7 +9587,25 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:kora/guardian",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/guardian",
+      "target": "urn:kora:kb:skill-spec-md",
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/guardian",
       "target": "urn:kora:kb:spec-md",
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/guardian",
+      "target": "urn:kora:kb:swarm-spec-md",
       "source_path": "agents/kora/guardian/config.json"
     },
     {
@@ -10710,6 +10728,12 @@
       "kind": "AllowsTool",
       "source": "workspace:kora/guardian",
       "target": "tool:repo_health",
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/guardian",
+      "target": "tool:spec_consult",
       "source_path": "agents/kora/guardian/config.json"
     },
     {
@@ -14201,6 +14225,12 @@
     },
     {
       "kind": "DeclaresTool",
+      "source": "workspace:kora/guardian",
+      "target": "tool:spec_consult",
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
       "source": "workspace:kora/taskmaster",
       "target": "tool:catalog_resolve",
       "source_path": "agents/kora/taskmaster/TOOLS.md"
@@ -15506,6 +15536,24 @@
       "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
       "target": "urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0",
       "source_path": "agents/kora/forgemaster/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "target": "urn:kora:skill:guardian-context-manager:1.0.0",
+      "source_path": "agents/kora/guardian/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "target": "urn:kora:skill:guardian-spec-classifier:1.0.0",
+      "source_path": "agents/kora/guardian/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "target": "urn:kora:skill:guardian-spec-guard:1.0.0",
+      "source_path": "agents/kora/guardian/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -30808,7 +30856,28 @@
     {
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
+      "target": "urn:kora:kb:skill-spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
       "target": "urn:kora:kb:spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
+      "target": "urn:kora:kb:swarm-spec-md",
       "fragment": null,
       "source_path": "agents/kora/guardian/config.json"
     },
@@ -30823,6 +30892,55 @@
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
       "target": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:agent-spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:md-spec",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:skill-spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/guardian/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:kora:kb:swarm-spec-md",
       "fragment": null,
       "source_path": "agents/kora/guardian/TOOLS.md"
     },

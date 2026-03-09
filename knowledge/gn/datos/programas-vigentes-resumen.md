@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:programas-vigentes-resumen
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/05_data_raw/kb_gn_012_progs_vigentes.csv
 version: 1.0.0
 status: published
@@ -21,7 +21,7 @@ extensions:
     source_type: csv
     transformation_mode: derive_csv_scope
     fs: 100
-    cr: 45.4
+    cr: 55.75
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Resumen reproducible del dataset de programas vigentes.

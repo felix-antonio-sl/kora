@@ -39,7 +39,7 @@ extensions:
 
 # RIS Genéricas — Proyectos de Inversión (SNI 2023)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf
 - https://sni.gob.cl/requisitos-de-informacion-por-sector
 

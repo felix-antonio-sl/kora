@@ -39,7 +39,7 @@ extensions:
 
 # RIS Arte y Cultura (SNI 2024)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
 
 ## RIS Arte Cultura 2024

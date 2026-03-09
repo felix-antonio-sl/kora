@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.11
+    cr: 2.15
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -49,12 +49,12 @@ FS
 null
 
 ## Source
-### Ctx Required
+### Contexto requerido
 - Oficio Circular N°33 del Ministerio de Hacienda (2009).
 - Ley N°21.796 de Presupuestos del Sector Público 2026 (Partida 31, Programa 02).
 - Normas de Inversión Pública (NIP) y metodologías SNI complementarias.
 - Resolución Exenta que aprueba la Guía Operativa Circular 33 del GORE Ñuble.
-### Ctx Optional
+### Contexto opcional
 - Estrategia Regional de Desarrollo Ñuble 2022-2030.
 - Metodología General de evaluación de proyectos sociales SNI.
 
@@ -264,21 +264,13 @@ Resolución Exenta.
 - Estandarizar y normalizar procesos internos de formulación, revisión y tramitación administrativa para mejorar eficiencia en la ejecución presupuestaria.
 #### Marco Normativo Referencia
 #### Fuentes
-| ID | Cpt | Src |
-| --- | --- | --- |
-| C33-NORM-OFICIO-33-01 | Oficio Circular N°33 (2009). | ['Ministerio de Hacienda; establece procedimiento expedito para asignación de recursos a estudios del giro, ANF, emergencias y mantención de infraestructura pública.', 'URL de referencia en la guía original (sni.gob.cl).'] |
-| ID | Cpt | Nat | Ctx |
-| --- | --- | --- | --- |
-| C33-NORM-LEY-21796-01 | Ley N°21.796 (Presupuesto 2026). | Norma legal vigente sobre ingresos y gastos del sector público para 2026. | ['Clasificación institucional propia de los GORE en la partida 31.', 'Glosas comunes establecen mecanismo de financiamiento vía programa de inversión.'] |
 | ID | Cpt | Ctx |
 | --- | --- | --- |
-| C33-NORM-METOD-GRAL-01 | Metodología general de evaluación de proyectos sociales. | ['Metodología base cuando no existe metodología sectorial definida.', 'Validada por el Sistema Nacional de Inversiones (SNI), MIDESO.'] |
-| ID | Cpt | Purp | Ctx |
-| --- | --- | --- | --- |
-| C33-NORM-REEMPLAZO-EQUIPOS-01 | Metodología de reemplazo de equipos. | ['Entregar elementos para decidir adquisición o reemplazo de equipos y facilitar selección de alternativas.'] | ['Sirve como guía para análisis de costo marginal en reposición de ANF.'] |
-| ID | Cpt | Def |
-| --- | --- | --- |
-| C33-NORM-NIP-01 | Normas de Inversión Pública (NIP). | Normas que rigen la inversión del Estado bajo estándares técnicos y económicos para distribución eficiente de recursos. |
+| C33-NORM-OFICIO-33-01 | Oficio Circular N°33 (2009). |  |
+| C33-NORM-LEY-21796-01 | Ley N°21.796 (Presupuesto 2026). | Clasificación institucional propia de los GORE en la partida 31., Glosas comunes establecen mecanismo de financiamiento vía programa de inversión. |
+| C33-NORM-METOD-GRAL-01 | Metodología general de evaluación de proyectos sociales. | Metodología base cuando no existe metodología sectorial definida., Validada por el Sistema Nacional de Inversiones (SNI), MIDESO. |
+| C33-NORM-REEMPLAZO-EQUIPOS-01 | Metodología de reemplazo de equipos. | Sirve como guía para análisis de costo marginal en reposición de ANF. |
+| C33-NORM-NIP-01 | Normas de Inversión Pública (NIP). |  |
 #### Categorias Iniciativas Postulables
 #### Objetivos
 - Financiar proyectos en cuatro grandes líneas de inversión a través de Circular 33: estudios del giro, ANF, conservación de caminos, conservación de infraestructura pública y gastos en emergencias.
@@ -757,9 +749,9 @@ Aprobación técnica de la iniciativa; queda en condiciones de ser presentada pa
 #### Formularios Principales
 | ID | Cpt | Purp | Ref_Embedding |
 | --- | --- | --- | --- |
-| C33-ANEXO-1-FICHA-C33 | Ficha de Postulación Circular 33 (Anexo N°1). | Recopilar información básica de la iniciativa (identificación, tipología, montos, justificación). | ['GUIDE-SFD-STS-MASTER-01 FORM-C33-ANEXO1-V1 (bloque embebido en fuente STS).'] |
-| C33-ANEXO-2-FORM-ESTUDIOS | Perfil para Proyectos de Estudios (Anexo N°2). | Estructurar diagnóstico, objetivos, alcance y productos esperados del estudio. | ['GUIDE-SFD-STS-MASTER-01 FORM-ESTUDIOS-ANEXO2-V1.'] |
-| C33-ANEXO-3-FORM-ANF | Perfil para Proyectos de Adquisición de Activos No Financieros (ANF) (Anexo N°3). | Caracterizar situación actual, beneficiarios, descripción del proyecto y evaluación económica resumida. | ['GUIDE-SFD-STS-MASTER-01 FORM-ANF-ANEXO3-V1.'] |
-| C33-ANEXO-4-FORM-CONS | Perfil para Proyectos de Conservación (Anexo N°4). | Documentar diagnóstico de infraestructura, obras de conservación propuestas y pertinencia técnica/económica. | ['GUIDE-SFD-STS-MASTER-01 FORM-CONSERVACION-ANEXO4-V1.'] |
-| C33-ANEXO-4B-CERT-CONS-30 | Certificado de Conservación de Infraestructura Pública (Anexo N°4B). | Certificar que el costo de la conservación es ≤ 30% del costo de reposición y que el proyecto no enfrenta restricciones técnicas/legales. | ['GUIDE-SFD-STS-MASTER-01 FORM-CERTIFICADO-ANEXO4B-V1.'] |
-| C33-ANEXO-5-PRESUPUESTO-DETALLADO | Presupuesto Detallado para Proyectos de Conservación (Anexo N°5). | Estructurar partidas, unidades, cantidades, precios unitarios y totales, además del resumen de costos. | ['GUIDE-SFD-STS-MASTER-01 FORM-PRESUPUESTO-ANEXO5-V1.'] |
+| C33-ANEXO-1-FICHA-C33 | Ficha de Postulación Circular 33 (Anexo N°1). | Recopilar información básica de la iniciativa (identificación, tipología, montos, justificación). | GUIDE-SFD-STS-MASTER-01 FORM-C33-ANEXO1-V1 (bloque embebido en fuente STS). |
+| C33-ANEXO-2-FORM-ESTUDIOS | Perfil para Proyectos de Estudios (Anexo N°2). | Estructurar diagnóstico, objetivos, alcance y productos esperados del estudio. | GUIDE-SFD-STS-MASTER-01 FORM-ESTUDIOS-ANEXO2-V1. |
+| C33-ANEXO-3-FORM-ANF | Perfil para Proyectos de Adquisición de Activos No Financieros (ANF) (Anexo N°3). | Caracterizar situación actual, beneficiarios, descripción del proyecto y evaluación económica resumida. | GUIDE-SFD-STS-MASTER-01 FORM-ANF-ANEXO3-V1. |
+| C33-ANEXO-4-FORM-CONS | Perfil para Proyectos de Conservación (Anexo N°4). | Documentar diagnóstico de infraestructura, obras de conservación propuestas y pertinencia técnica/económica. | GUIDE-SFD-STS-MASTER-01 FORM-CONSERVACION-ANEXO4-V1. |
+| C33-ANEXO-4B-CERT-CONS-30 | Certificado de Conservación de Infraestructura Pública (Anexo N°4B). | Certificar que el costo de la conservación es ≤ 30% del costo de reposición y que el proyecto no enfrenta restricciones técnicas/legales. | GUIDE-SFD-STS-MASTER-01 FORM-CERTIFICADO-ANEXO4B-V1. |
+| C33-ANEXO-5-PRESUPUESTO-DETALLADO | Presupuesto Detallado para Proyectos de Conservación (Anexo N°5). | Estructurar partidas, unidades, cantidades, precios unitarios y totales, además del resumen de costos. | GUIDE-SFD-STS-MASTER-01 FORM-PRESUPUESTO-ANEXO5-V1. |

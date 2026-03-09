@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.21
+    cr: 1.23
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -49,9 +49,7 @@ extensions:
 | id | fecha | materia | extracto | aplicacion | umbral_utm |
 | --- | --- | --- | --- | --- | --- |
 | CGR-015234-2021 | 2021-04-12 | Umbral de Toma de Razón en GOREs | Los actos administrativos del GORE que superen 5.000 UTM están <br>afectos a Toma de Razón. Bajo ese umbral, pueden ser exentos <br>conforme a Resolución CGR N° 7 de 2019.<br> | Determinar si resolución es afecta o exenta | 5000 |
-| id | fecha | materia | extracto | aplicacion |
-| --- | --- | --- | --- | --- |
-| CGR-089123-2022 | 2022-12-01 | Convenios de programación y Toma de Razón | Los convenios de programación suscritos por GOREs están afectos <br>a Toma de Razón independiente del monto, por su naturaleza <br>plurianual y vinculante.<br> | Clasificación de convenios de programación |
+| CGR-089123-2022 | 2022-12-01 | Convenios de programación y Toma de Razón | Los convenios de programación suscritos por GOREs están afectos <br>a Toma de Razón independiente del monto, por su naturaleza <br>plurianual y vinculante.<br> | Clasificación de convenios de programación |  |
 ### Delegacion
 | id | fecha | materia | extracto | aplicacion |
 | --- | --- | --- | --- | --- |

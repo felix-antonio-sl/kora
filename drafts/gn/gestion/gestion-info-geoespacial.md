@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.81
+    cr: 1.88
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -39,7 +39,7 @@ extensions:
 
 # Gestión de Información Geoespacial en GORE Ñuble
 ## Source
-### Ctx Required
+### Contexto requerido
 - staging/gn/Kb_gn_090_gestion_informacion_geoespacial.md
 
 ## Glosario Geoespacial Clave
@@ -87,12 +87,10 @@ Mecanismo de coordinación interinstitucional para la gestión de información t
 #### Responsables
 - Secretaría Ejecutiva coordina operativamente las instancias públicas.
 #### Roles Clave
-| Cpt | Resp |
-| --- | --- |
-| Consejo de Ministros / Secretaría Ejecutiva | ['Conducción superior del Sistema (Consejo).', 'Coordinación operativa (Secretaría Ejecutiva).'] |
-| Cpt | Def | Resp |
+| Cpt | Resp | Def |
 | --- | --- | --- |
-| Coordinación Regional IDE | Función delegada por la autoridad regional para articular, conducir técnicamente y vincular al territorio con IDE Chile. | ['Articulación interinstitucional.', 'Conducción técnica de la IDE regional.', 'Vinculación permanente con Secretaría Ejecutiva IDE Chile.'] |
+| Consejo de Ministros / Secretaría Ejecutiva | Conducción superior del Sistema (Consejo)., Coordinación operativa (Secretaría Ejecutiva). |  |
+| Coordinación Regional IDE | Articulación interinstitucional., Conducción técnica de la IDE regional., Vinculación permanente con Secretaría Ejecutiva IDE Chile. | Función delegada por la autoridad regional para articular, conducir técnicamente y vincular al territorio con IDE Chile. |
 ### Obligaciones Institucionales
 #### Requisitos
 - Publicar y mantener características de la información territorial en catálogos y portales oficiales.
@@ -244,30 +242,20 @@ Integración nativa de metadatos (LAMPv2/Perfil Chileno) y CSW para cosecha y fe
 
 ## Licenciamiento y Terminos de Uso
 ### Cpt
-| Cpt | Rec |
-| --- | --- |
-| Datos abiertos | ['Aplicar licencias Creative Commons (por ejemplo, CC BY 4.0) para capas abiertas.', 'Aplicar ODbL para bases de datos cuando corresponda.'] |
-| Cpt | Req |
-| --- | --- |
-| Términos de uso | ['Definir con claridad atribución, limitaciones de responsabilidad, ausencia de garantías y restricciones sobre datos sensibles.'] |
-| Cpt | Def |
-| --- | --- |
-| Política institucional de licenciamiento | Plantilla de licencias, revisión jurídica y trazabilidad de decisiones. |
+| Cpt |
+| --- |
+| Datos abiertos |
+| Términos de uso |
+| Política institucional de licenciamiento |
 
 ## Etica de Datos Geoespaciales
 ### Cpt
 | Cpt | Req |
 | --- | --- |
-| Privacidad y proporcionalidad | ['Minimizar datos personales y granularidad cuando no sea necesaria.', 'Aplicar anonimización cuando corresponda.'] |
-| Cpt | Req |
-| --- | --- |
-| Consentimiento y transparencia | ['Declarar origen, finalidad, licencias y restricciones en metadatos y geoportal.'] |
-| Cpt | Req |
-| --- | --- |
-| Equidad y no daño | ['Evaluar impactos y sesgos potenciales.', 'Evitar visualizaciones que estigmaticen comunidades.'] |
-| Cpt | Def | Req |
-| --- | --- | --- |
-| Profesionalidad | Responsabilidad con la sociedad en la gestión de datos geoespaciales. | ['Tratar exactitud y calidad como deber público.'] |
+| Privacidad y proporcionalidad | Minimizar datos personales y granularidad cuando no sea necesaria., Aplicar anonimización cuando corresponda. |
+| Consentimiento y transparencia | Declarar origen, finalidad, licencias y restricciones en metadatos y geoportal. |
+| Equidad y no daño | Evaluar impactos y sesgos potenciales., Evitar visualizaciones que estigmaticen comunidades. |
+| Profesionalidad | Tratar exactitud y calidad como deber público. |
 
 ## Modelo Operativo y Trazabilidad
 ### Flujo Institucional

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-comunicaciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml
 version: 2.0.0
 status: published
@@ -24,98 +24,35 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.12
+    cr: 1.54
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 312
+    skeleton_count: 1
+    meat_count: 282
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/guias__guia-comunicaciones.md.json
 ---
 
 # Guía Integral de Comunicaciones GORE Ñuble
-## ID
-GN-GUIA-COMUNICACIONES-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-15
-
-## Modification Date
-2025-12-15
-
-## Ctx
-Guía integral de comunicaciones del GORE Ñuble (fuente STS). Fundamentos, ecosistema, audiencias, operación, marca, métricas y formatos administrativos.
-
-## Primary Source
-staging/gn/kodeando/kb_gn_030_guia_comunicaciones_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, ID->ID, Just->Justification, Mssn->Mission, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Warn->Warning, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: external URN (optionally with #ID fragment) only.
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-## Guia Comunicaciones GORE Nuble
-### ID
-GN-GUIA-COMUNICACIONES-DOC-01
-### Title
+## Titulo
 Guía Integral de Comunicaciones GORE Ñuble
-### Sections
-#### Parte i fundamentos estrategicos y principios rectores
-#### ID
-GN-GCOM-SEC-0001
-#### Title
+## Secciones
+### Parte i fundamentos estrategicos y principios rectores
+#### Titulo
 Parte I: Fundamentos Estratégicos y Principios Rectores
-#### Content
+#### Contenido
 
 ID: GNC-COM-P1-FUNDAMENTOS-01
 Purp: Establecer bases conceptuales, desafíos del entorno y principios inmutables de la comunicación del GORE.
-#### Sections
+#### Secciones
 #### Capitulo 1 mision y proposito de la comunicacion
-#### ID
-GN-GCOM-SEC-0002
-#### Title
+#### Titulo
 Capítulo 1: Misión y Propósito de la Comunicación
-#### Content
+#### Contenido
 
 ID: GNC-COM-P1-MISION-01
 
@@ -132,11 +69,9 @@ ID: GNC-COM-P1-MISION-01
 - Ctx: Alcance desde análisis del entorno hasta diseño de tácticas y gestión de percepción pública.
 - Ctx: Foco en maximizar eficacia comunicacional para objetivos de la Estrategia Regional de Desarrollo (ERD).
 #### Capitulo 2 principios rectores de la comunicacion
-#### ID
-GN-GCOM-SEC-0003
-#### Title
+#### Titulo
 Capítulo 2: Principios Rectores de la Comunicación
-#### Content
+#### Contenido
 
 ID: GNC-COM-P1-PRINCIPIOS-01
 Purp: Definir los pilares no negociables de toda pieza de comunicación.
@@ -150,11 +85,9 @@ Purp: Definir los pilares no negociables de toda pieza de comunicación.
 | Cpt: Enfoque ciudadano y territorial | Req: Anclar mensajes en cifras locales, testimonios de usuarios de Ñuble, ejemplos de servicios cercanos. |
 | Cpt: Identidad visual única | Req: Respetar logo, tipografía (Museo Sans), colores (Pantone 185C/293C) según manuales 2022-25. Ref: GNC-COM-P6-MARCA-01. |
 #### Capitulo 3 desafios comunicacionales especificos de nuble
-#### ID
-GN-GCOM-SEC-0004
-#### Title
+#### Titulo
 Capítulo 3: Desafíos Comunicacionales Específicos de Ñuble
-#### Content
+#### Contenido
 
 ID: GNC-COM-P1-DESAFIOS-01
 
@@ -171,31 +104,25 @@ ID: GNC-COM-P1-DESAFIOS-01
 - Cpt: Desafío 4 - Bajo Capital Humano.
   - Ctx: Años de escolaridad promedio 10.9 vs 11.7 nacional.
   - Act: Crear mensajes claros, accesibles y sin jerga técnica.
-#### Parte ii ecosistema politico y narrativa
-#### ID
-GN-GCOM-SEC-0005
-#### Title
+### Parte ii ecosistema politico y narrativa
+#### Titulo
 Parte II: Ecosistema Político y Narrativa
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-ECOSISTEMA-01
 Purp: Mapear el entorno de poder y definir el relato central del GORE.
-#### Sections
+#### Secciones
 #### Capitulo 4 mapeo del entorno institucional
-#### ID
-GN-GCOM-SEC-0006
-#### Title
+#### Titulo
 Capítulo 4: Mapeo del Entorno Institucional
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-MAPEO-01
-#### Sections
+#### Secciones
 #### S 4 1 el gore como institucion comunicadora
-#### ID
-GN-GCOM-SEC-0007
-#### Title
+#### Titulo
 4.1. El GORE como Institución Comunicadora
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-GORE-01
 
@@ -203,11 +130,9 @@ ID: GNC-COM-P2-GORE-01
 - Cpt: Visión. Def: Ser institución que inspira, lidera e impulsa la integración territorial.
 - Res: Toda comunicación debe reflejar y reforzar esta misión y visión. Cada acción comunica.
 #### S 4 2 relacion con nivel central dpr y seremis
-#### ID
-GN-GCOM-SEC-0008
-#### Title
+#### Titulo
 4.2. Relación con Nivel Central (DPR y SEREMIs)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-CENTRAL-01
 
@@ -216,11 +141,9 @@ ID: GNC-COM-P2-CENTRAL-01
 - Ctx: Dinámica. Def: Tensión inherente entre autonomía regional (GORE) y poder central (DPR).
 - Act: Gestionar tensión buscando coordinación sin subordinación. Establecer canales fluidos para evitar duplicidad y conflictos públicos.
 #### S 4 3 dinamica con gobiernos locales 21 municipalidades
-#### ID
-GN-GCOM-SEC-0009
-#### Title
+#### Titulo
 4.3. Dinámica con Gobiernos Locales (21 Municipalidades)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-MUNI-01
 
@@ -228,11 +151,9 @@ ID: GNC-COM-P2-MUNI-01
 - Ctx: Dinámica. Def: Relación de poder asimétrica (GORE financia, municipios ejecutan). Potencial de conflicto.
 - Act: Comunicación proactiva con alcaldes y SECPLAs. Posicionar al GORE como socio estratégico, no como mero financiador.
 #### S 4 4 el consejo regional core
-#### ID
-GN-GCOM-SEC-0010
-#### Title
+#### Titulo
 4.4. El Consejo Regional (CORE)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-CORE-01
 
@@ -240,20 +161,16 @@ ID: GNC-COM-P2-CORE-01
 - Res: El CORE es la primera y más importante audiencia política interna. Su apoyo es vital para la gobernabilidad.
 - Act: Mantener flujo de información constante. Presentar propuestas de forma clara y persuasiva. Anticipar y gestionar objeciones.
 #### Capitulo 5 construyendo la narrativa del gore nuble
-#### ID
-GN-GCOM-SEC-0011
-#### Title
+#### Titulo
 Capítulo 5: Construyendo la Narrativa del GORE Ñuble
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-NARRATIVA-01
-#### Sections
+#### Secciones
 #### S 5 1 del mensaje central al relato politico
-#### ID
-GN-GCOM-SEC-0012
-#### Title
+#### Titulo
 5.1. Del Mensaje Central al Relato Político
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-RELATO-01
 
@@ -261,11 +178,9 @@ ID: GNC-COM-P2-RELATO-01
 - Act: Traducir ejes de la ERD en un relato coherente, simple y movilizador.
 - Ex: Relato. "Ñuble, la región que se levanta desde sus raíces para construir un futuro más justo y sostenible".
 #### S 5 2 el discurso del gobernador a generos y funciones
-#### ID
-GN-GCOM-SEC-0013
-#### Title
+#### Titulo
 5.2. El Discurso del Gobernador/a: Géneros y Funciones
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-DISCURSO-01
 Purp: Cada tipo de discurso cumple una función específica.
@@ -275,11 +190,9 @@ Purp: Cada tipo de discurso cumple una función específica.
 - Cpt: Discursos en Crisis. Purp: Proyectar calma, autoridad y empatía. Ser la "voz de la región".
 - Cpt: Discursos de Identidad Regional. Purp: Fortalecer pertenencia celebrando hitos, tradiciones y personajes locales.
 #### S 5 3 navegando el partisanismo
-#### ID
-GN-GCOM-SEC-0014
-#### Title
+#### Titulo
 5.3. Navegando el Partisanismo
-#### Content
+#### Contenido
 
 ID: GNC-COM-P2-PARTIDOS-01
 
@@ -288,31 +201,25 @@ ID: GNC-COM-P2-PARTIDOS-01
 - Cpt: Estilo Demócrata (Teórico). Ctx: Tiende a ser más pragmático, enfocado en circunstancias y grupos específicos.
 - Act: Identificar estilos discursivos de actores políticos de Ñuble (autoridades, oposición) para anticipar argumentos.
 - Act: Aspirar a un tono transversal, pero reconociendo el lenguaje de la propia coalición.
-#### Parte iii la audiencia ciudadana
-#### ID
-GN-GCOM-SEC-0015
-#### Title
+### Parte iii la audiencia ciudadana
+#### Titulo
 Parte III: La Audiencia Ciudadana
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-AUDIENCIA-01
 Purp: Comprender las características demográficas, sociales y de consumo de medios de los habitantes de Ñuble.
-#### Sections
+#### Secciones
 #### Capitulo 6 perfil demografico y sociocultural
-#### ID
-GN-GCOM-SEC-0016
-#### Title
+#### Titulo
 Capítulo 6: Perfil Demográfico y Sociocultural
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-PERFIL-01
-#### Sections
+#### Secciones
 #### S 6 1 nuble en cifras implicancias comunicacionales
-#### ID
-GN-GCOM-SEC-0017
-#### Title
+#### Titulo
 6.1. Ñuble en Cifras: Implicancias Comunicacionales
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-CIFRAS-01
 
@@ -322,11 +229,9 @@ ID: GNC-COM-P3-CIFRAS-01
 - Cpt: Envejecimiento. Ctx: Comunas como Cobquecura, Portezuelo, Ránquil con >20% de población 65+.
   - Res: Segmentar mensajes para adultos mayores. Usar canales tradicionales (radio). Temas de interés: salud, pensiones, seguridad.
 #### S 6 2 brechas sociales y como comunicarlas
-#### ID
-GN-GCOM-SEC-0018
-#### Title
+#### Titulo
 6.2. Brechas Sociales y Cómo Comunicarlas
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-BRECHAS-01
 
@@ -337,11 +242,9 @@ ID: GNC-COM-P3-BRECHAS-01
 - Cpt: Carencia Servicios Básicos. Ctx: 17.8% de la población (vs 13.1% país), especialmente alto en Ninhue (50.6%), Cobquecura (43.3%).
   - Act: Inversión en APR e infraestructura es un mensaje de alto impacto. Visualizar "antes y después".
 #### S 6 3 capital humano foco en educacion salud calidad de vida
-#### ID
-GN-GCOM-SEC-0019
-#### Title
+#### Titulo
 6.3. Capital Humano: Foco en Educación, Salud, Calidad de Vida
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-CAPITAL-01
 
@@ -350,20 +253,16 @@ ID: GNC-COM-P3-CAPITAL-01
 - Cpt: Salud. Ctx: Alta inscripción en salud municipal (438k personas).
   - Act: Posicionar al GORE como actor clave en fortalecimiento de la red de salud (CESFAM, Postas Rurales). Comunicar inversión en equipamiento es altamente valorado.
 #### Capitulo 7 el consumo de medios en la region
-#### ID
-GN-GCOM-SEC-0020
-#### Title
+#### Titulo
 Capítulo 7: El Consumo de Medios en la Región
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-MEDIOS-01
-#### Sections
+#### Secciones
 #### S 7 1 canales de informacion broadcasting vs narrowcasting
-#### ID
-GN-GCOM-SEC-0021
-#### Title
+#### Titulo
 7.1. Canales de Información: Broadcasting vs. Narrowcasting
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-CANALES-01
 
@@ -371,11 +270,9 @@ ID: GNC-COM-P3-CANALES-01
 - Cpt: Narrowcasting (De Nicho). Ctx: Audiencias segmentadas (ej. radios comunitarias, grupos WhatsApp locales). Mensajes específicos, alta credibilidad en nicho.
 - Act: Estrategia dual. Usar broadcasting para construir agenda y narrowcasting para movilizar y persuadir.
 #### S 7 2 la dieta mediatica del ciudadano de nuble
-#### ID
-GN-GCOM-SEC-0022
-#### Title
+#### Titulo
 7.2. La Dieta Mediática del Ciudadano de Ñuble
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-DIETA-01
 
@@ -385,11 +282,9 @@ ID: GNC-COM-P3-DIETA-01
 - Cpt: Hipótesis 3. Ctx: Jóvenes urbanos consumen noticias vía redes sociales (Instagram, Facebook, TikTok).
 - Cpt: Hipótesis 4. Ctx: Creciente importancia de medios digitales locales y páginas "noticias" comunales en Facebook.
 #### S 7 3 conectividad digital brechas y oportunidades
-#### ID
-GN-GCOM-SEC-0023
-#### Title
+#### Titulo
 7.3. Conectividad Digital: Brechas y Oportunidades
-#### Content
+#### Contenido
 
 ID: GNC-COM-P3-DIGITAL-01
 
@@ -397,31 +292,25 @@ ID: GNC-COM-P3-DIGITAL-01
 - Cpt: Problema. Def: Dependencia de conexiones móviles implica menor estabilidad/velocidad. Brecha rural en fibra óptica.
 - Act: Campañas digitales no pueden depender de videos alta resolución. Privilegiar formatos bajo consumo de datos (texto, imágenes livianas).
 - Warn: Estrategia "Digital First" no es viable para toda la región.
-#### Parte iv caja de herramientas comunicacionales
-#### ID
-GN-GCOM-SEC-0024
-#### Title
+### Parte iv caja de herramientas comunicacionales
+#### Titulo
 Parte IV: Caja de Herramientas Comunicacionales
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-HERRAMIENTAS-01
 Purp: Detallar el conjunto de herramientas, tácticas, formatos y lineamientos editoriales para la ejecución de la estrategia.
-#### Sections
+#### Secciones
 #### Capitulo 8 lineamientos editoriales y tono de voz
-#### ID
-GN-GCOM-SEC-0025
-#### Title
+#### Titulo
 Capítulo 8: Lineamientos Editoriales y Tono de Voz
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-EDITORIAL-01
-#### Sections
+#### Secciones
 #### S 8 1 tono y estructura
-#### ID
-GN-GCOM-SEC-0026
-#### Title
+#### Titulo
 8.1. Tono y Estructura
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-TONO-01
 Purp: Definir los tonos de voz aplicables a las comunicaciones para asegurar coherencia y adecuación al contexto.
@@ -448,11 +337,9 @@ Purp: Definir los tonos de voz aplicables a las comunicaciones para asegurar coh
 | Cpt: Cuerpo | Rec: Datos, contexto, citas breves (≤ 20 palabras). |
 | Cpt: Cierre | Req: Llamado a la acción y contacto oficial (teléfono, URL gob.cl). |
 #### S 8 2 principios rectores de redaccion administrativa
-#### ID
-GN-GCOM-SEC-0027
-#### Title
+#### Titulo
 8.2. Principios Rectores de Redacción Administrativa
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-PRINCIPIOS-REDACT-01
 Purp: Establecer las reglas no negociables que deben regir la redacción de toda comunicación administrativa del GORE Ñuble.
@@ -467,11 +354,9 @@ Purp: Establecer las reglas no negociables que deben regir la redacción de toda
   - Req: Todo acto administrativo que cree, modifique o extinga derechos u obligaciones debe citar explícitamente su fundamento normativo en la sección VISTOS:.
   - Fnd: Principio de Legalidad (Art. 2, Ley N° 18.575) y Deber de Motivación de los actos administrativos (Art. 41, Ley N° 19.880).
 #### S 8 3 recursos narrativos storytelling
-#### ID
-GN-GCOM-SEC-0028
-#### Title
+#### Titulo
 8.3. Recursos Narrativos (Storytelling)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-STORYTELLING-01
 
@@ -481,20 +366,16 @@ ID: GNC-COM-P4-STORYTELLING-01
 - Cpt: Recurso 4. Def: Resultado medible (cifras o testimonios).
 - Ref: GNC-COM-P1-PRINCIPIOS-01
 #### Capitulo 9 el mix de canales y formatos
-#### ID
-GN-GCOM-SEC-0029
-#### Title
+#### Titulo
 Capítulo 9: El Mix de Canales y Formatos
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-MIX-01
-#### Sections
+#### Secciones
 #### S 9 1 comunicacion masiva broadcasting
-#### ID
-GN-GCOM-SEC-0030
-#### Title
+#### Titulo
 9.1. Comunicación Masiva (Broadcasting)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-MASIVA-01
 
@@ -504,11 +385,9 @@ ID: GNC-COM-P4-MASIVA-01
 - Cpt: Contenido-Tipo. Def: Hitos de gestión, campañas de bien público, llamados a participación.
 - Warn: Costosa, efectividad a corto plazo, requiere consistencia.
 #### S 9 2 comunicacion segmentada narrowcasting
-#### ID
-GN-GCOM-SEC-0031
-#### Title
+#### Titulo
 9.2. Comunicación Segmentada (Narrowcasting)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-SEGMENTADA-01
 
@@ -519,11 +398,9 @@ ID: GNC-COM-P4-SEGMENTADA-01
   - Cpt: Adultos Mayores. Ctx: Radios locales, prensa. Foco en salud, seguridad.
   - Cpt: Emprendedores. Ctx: Redes (LinkedIn), alianzas con cámaras de comercio. Foco en fondos (FRPD), capacitación.
 #### S 9 3 medios digitales y plataformas sociales
-#### ID
-GN-GCOM-SEC-0032
-#### Title
+#### Titulo
 9.3. Medios Digitales y Plataformas Sociales
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-DIGITAL-01
 
@@ -536,11 +413,9 @@ ID: GNC-COM-P4-DIGITAL-01
   - Cpt: YouTube. Def: Repositorio de videos (testimonios, resúmenes, explicaciones).
   - Cpt: WhatsApp. Def: Comunicación directa con líderes comunitarios, dirigentes, medios locales.
 #### S 9 4 portafolio de productos y formatos especificos
-#### ID
-GN-GCOM-SEC-0033
-#### Title
+#### Titulo
 9.4. Portafolio de Productos y Formatos Específicos
-#### Content
+#### Contenido
 
 ID: GNC-COM-P4-PORTAFOLIO-01
 
@@ -552,31 +427,25 @@ ID: GNC-COM-P4-PORTAFOLIO-01
 | Cpt: Post RR.SS. | Req: 120-150 car. + img 1:1 | Req: Título, link corto, ALT descriptivo |
 | Cpt: Nota de prensa | Req: 350-450 palabras | Req: Titular noticia, lead, cita Gobernador/a, call to action |
 | Cpt: Landing page | Req: 3 scrolls máx. | Req: H1 visible, subtítulos H2-H3, botón CTA, video ≤ 1 min. |
-#### Parte v gestion del debate y relacion con medios
-#### ID
-GN-GCOM-SEC-0034
-#### Title
+### Parte v gestion del debate y relacion con medios
+#### Titulo
 Parte V: Gestión del Debate y Relación con Medios
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-DEBATE-01
 Purp: Establecer las estrategias para interactuar con el debate público y los medios de comunicación como actores políticos.
-#### Sections
+#### Secciones
 #### Capitulo 10 la gestion del debate publico
-#### ID
-GN-GCOM-SEC-0035
-#### Title
+#### Titulo
 Capítulo 10: La Gestión del Debate Público
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-GESTION-DEBATE-01
-#### Sections
+#### Secciones
 #### S 10 1 debatir para educar y persuadir
-#### ID
-GN-GCOM-SEC-0036
-#### Title
+#### Titulo
 10.1. Debatir para Educar y Persuadir
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-EDUCAR-01
 
@@ -589,11 +458,9 @@ ID: GNC-COM-P5-EDUCAR-01
   - Req: Disciplina del Mensaje (volver siempre a los mensajes clave).
   - Rec: Técnica del Puente. Reconocer pregunta y "puentear" hacia el mensaje propio. Ex: "Esa es una pregunta interesante, pero lo que realmente preocupa a la gente de Ñuble es...".
 #### S 10 2 fomentando la participacion deliberativa
-#### ID
-GN-GCOM-SEC-0037
-#### Title
+#### Titulo
 10.2. Fomentando la Participación Deliberativa
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-DELIBERAR-01
 
@@ -605,20 +472,16 @@ ID: GNC-COM-P5-DELIBERAR-01
   - Cpt: Encuestas y Votaciones. Rec: En redes sociales para temas de bajo conflicto.
   - Cpt: Foros de Discusión Temáticos. Rec: En sitio web del GORE sobre proyectos específicos. Req: Moderación activa.
 #### Capitulo 11 los medios como actor politico
-#### ID
-GN-GCOM-SEC-0038
-#### Title
+#### Titulo
 Capítulo 11: Los Medios como Actor Político
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-MEDIOS-ACTOR-01
-#### Sections
+#### Secciones
 #### S 11 1 los medios como segunda legislatura
-#### ID
-GN-GCOM-SEC-0039
-#### Title
+#### Titulo
 11.1. Los Medios como "Segunda Legislatura"
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-SEGUNDA-LEGIS-01
 
@@ -626,22 +489,18 @@ ID: GNC-COM-P5-SEGUNDA-LEGIS-01
 - Res: Tratar a periodistas y editores como actores políticos con intereses propios.
 - Act: Construir relaciones, entender sus agendas, ofrecer historias (proactivo), no solo enviar comunicados (reactivo).
 #### S 11 2 fijando la agenda agenda setting
-#### ID
-GN-GCOM-SEC-0040
-#### Title
+#### Titulo
 11.2. Fijando la Agenda (Agenda-Setting)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-AGENDA-01
 
 - Def: Lograr que los temas prioritarios para el GORE sean también los temas prioritarios para los medios y el público.
 - Act: Consistencia de mensaje, creación de hitos noticiables, provisión de datos, acceso a voceros.
 #### S 11 3 la lucha por el encuadre framing
-#### ID
-GN-GCOM-SEC-0041
-#### Title
+#### Titulo
 11.3. La Lucha por el Encuadre (Framing)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-FRAMING-01
 
@@ -651,20 +510,16 @@ ID: GNC-COM-P5-FRAMING-01
   - Cpt: Marco Oposición (Potencial). Def: Inversión en camino rural -> "Gasto injustificado que beneficia a unos pocos".
 - Act: Anticipar marcos negativos, inocular el marco propio proactivamente, usar metáforas y lenguaje simple ("Justicia territorial").
 #### Capitulo 12 gestionando la percepcion mediatica
-#### ID
-GN-GCOM-SEC-0042
-#### Title
+#### Titulo
 Capítulo 12: Gestionando la Percepción Mediática
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-PERCEPCION-01
-#### Sections
+#### Secciones
 #### S 12 1 el efecto de medio hostil
-#### ID
-GN-GCOM-SEC-0043
-#### Title
+#### Titulo
 12.1. El "Efecto de Medio Hostil"
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-HOSTIL-01
 
@@ -672,44 +527,36 @@ ID: GNC-COM-P5-HOSTIL-01
 - Res: Es imposible lograr que los adherentes más fervientes se sientan 100% satisfechos.
 - Act: No sobrerreaccionar a quejas internas. Gestionar expectativas: el objetivo es cobertura justa, no propaganda.
 #### S 12 2 construyendo confianza con los medios
-#### ID
-GN-GCOM-SEC-0044
-#### Title
+#### Titulo
 12.2. Construyendo Confianza con los Medios
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-CONFIANZA-01
 
 - Purp: La confianza no es en el medio, sino en el GORE como fuente de información.
 - Act: Ser fuente confiable (nunca mentir), transparencia (reconocer errores), disponibilidad (incluso para malas noticias), relaciones profesionales.
 #### S 12 3 la exposicion selectiva y las burbujas informativas
-#### ID
-GN-GCOM-SEC-0045
-#### Title
+#### Titulo
 12.3. La Exposición Selectiva y las Burbujas Informativas
-#### Content
+#### Contenido
 
 ID: GNC-COM-P5-SELECTIVA-01
 
 - Cpt: Las audiencias eligen medios que confirman sus creencias, creando "cámaras de eco".
 - Res: Una estrategia basada en un solo tipo de medio está destinada al fracaso.
 - Act: Estrategia multicanal para alcanzar diferentes burbujas. Usar mensajeros diversos con credibilidad en distintas audiencias.
-#### Parte vi gobernanza y procesos internos
-#### ID
-GN-GCOM-SEC-0046
-#### Title
+### Parte vi gobernanza y procesos internos
+#### Titulo
 Parte VI: Gobernanza y Procesos Internos
-#### Content
+#### Contenido
 
 ID: GNC-COM-P6-GOBERNANZA-01
 Purp: Definir la estructura, roles, flujos de trabajo y métricas para la operación comunicacional.
-#### Sections
+#### Secciones
 #### Capitulo 13 identidad visual y uso de marca
-#### ID
-GN-GCOM-SEC-0047
-#### Title
+#### Titulo
 Capítulo 13: Identidad Visual y Uso de Marca
-#### Content
+#### Contenido
 
 ID: GNC-COM-P6-MARCA-01
 
@@ -717,11 +564,9 @@ ID: GNC-COM-P6-MARCA-01
 - Cpt: Área de Resguardo. Req: Mínimo la altura de la “x” del logotipo.
 - Cpt: Fotografía Oficial. Rec: Luz natural, fondos sobrios, protagonistas en primer plano.
 #### Capitulo 14 flujo de produccion y gobernanza
-#### ID
-GN-GCOM-SEC-0048
-#### Title
+#### Titulo
 Capítulo 14: Flujo de Producción y Gobernanza
-#### Content
+#### Contenido
 
 ID: GNC-COM-P6-FLUJO-01
 
@@ -743,11 +588,9 @@ ID: GNC-COM-P6-FLUJO-01
 | Cpt: Webmaster | Resp: SEO, UX, accesibilidad | Req: Recomendaciones Web 2024 |
 | Cpt: Analista RRSS | Resp: Métricas, escucha social | Req: Suite RRSS institucional |
 #### Capitulo 15 indicadores de exito kpis
-#### ID
-GN-GCOM-SEC-0049
-#### Title
+#### Titulo
 Capítulo 15: Indicadores de Éxito (KPIs)
-#### Content
+#### Contenido
 
 ID: GNC-COM-P6-KPIS-01
 
@@ -755,31 +598,25 @@ ID: GNC-COM-P6-KPIS-01
 - Obj: Claridad. Def: Reducción de reclamos por comprensión de texto en -25% vs 2024.
 - Obj: Alcance. Def: Alcance promedio RR.SS. +30% seguidores únicos.
 - Obj: Reputación. Def: Cobertura positiva en prensa local ≥ 75% de notas sobre programas regionales.
-#### Parte vii topicos especiales y desafios futuros
-#### ID
-GN-GCOM-SEC-0050
-#### Title
+### Parte vii topicos especiales y desafios futuros
+#### Titulo
 Parte VII: Tópicos Especiales y Desafíos Futuros
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-ESPECIALES-01
 Purp: Abordar escenarios comunicacionales complejos y anticipar tendencias.
-#### Sections
+#### Secciones
 #### Capitulo 16 comunicacion en tiempos de crisis
-#### ID
-GN-GCOM-SEC-0051
-#### Title
+#### Titulo
 Capítulo 16: Comunicación en Tiempos de Crisis
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-CRISIS-01
-#### Sections
+#### Secciones
 #### S 16 1 identificacion de riesgos en nuble
-#### ID
-GN-GCOM-SEC-0052
-#### Title
+#### Titulo
 16.1. Identificación de Riesgos en Ñuble
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-RIESGOS-01
 
@@ -788,11 +625,9 @@ ID: GNC-COM-P7-RIESGOS-01
 - Cpt: Amenaza 3 - Erupción Volcánica. Ctx: Prob. baja, impacto catastrófico (Nevados de Chillán).
 - Cpt: Amenaza 4 - Crisis Social/Política. Ex: Protestas, acusaciones de corrupción.
 #### S 16 2 protocolo de respuesta mediatica
-#### ID
-GN-GCOM-SEC-0053
-#### Title
+#### Titulo
 16.2. Protocolo de Respuesta Mediática
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-PROTOCOLO-01
 
@@ -800,20 +635,16 @@ ID: GNC-COM-P7-PROTOCOLO-01
 - Proc: Fase 1 - Primeras 24h. Act: Comunicar rápido ("estamos trabajando en..."), unificar vocería, mostrar empatía.
 - Proc: Fase 2 - Desarrollo. Act: Actualizaciones regulares, combatir desinformación con datos, mostrar acción concreta.
 #### Capitulo 17 conclusiones y futuro de la comunicacion
-#### ID
-GN-GCOM-SEC-0054
-#### Title
+#### Titulo
 Capítulo 17: Conclusiones y Futuro de la Comunicación
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-FUTURO-01
-#### Sections
+#### Secciones
 #### S 17 1 sintesis de principios estrategicos
-#### ID
-GN-GCOM-SEC-0055
-#### Title
+#### Titulo
 17.1. Síntesis de Principios Estratégicos
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-SINTESIS-01
 
@@ -823,11 +654,9 @@ ID: GNC-COM-P7-SINTESIS-01
 - Cpt: Principio 4 - Adaptabilidad. Def: Estrategia flexible, abierta a nuevos canales.
 - Cpt: Principio 5 - Autenticidad. Def: La confianza se basa en credibilidad y transparencia.
 #### S 17 2 tendencias y desafios futuros
-#### ID
-GN-GCOM-SEC-0056
-#### Title
+#### Titulo
 17.2. Tendencias y Desafíos Futuros
-#### Content
+#### Contenido
 
 ID: GNC-COM-P7-TENDENCIAS-01
 
@@ -835,32 +664,26 @@ ID: GNC-COM-P7-TENDENCIAS-01
 - Cpt: Tendencia 2 - Inteligencia Artificial. Purp: Para monitoreo, análisis y generación de contenido.
 - Cpt: Tendencia 3 - Desinformación como Arma. Req: Capacidades de respuesta rápida y fact-checking.
 - Cpt: Tendencia 4 - Video Vertical. Ctx: Formato (Reels, TikTok) se consolida para audiencias jóvenes.
-#### Anexo guia de estilo y formato para comunicaciones administrativas
-#### ID
-GN-GCOM-SEC-0057
-#### Title
+### Anexo guia de estilo y formato para comunicaciones administrativas
+#### Titulo
 Anexo: Guía de Estilo y Formato para Comunicaciones Administrativas
-#### Content
+#### Contenido
 
 ID: GNC-COM-ANEXO-FORMATOS-01
 Purp: Servir como guía de referencia rápida, estableciendo una taxonomía clara para el agente de IA, y detallando la estructura y estilo de los documentos administrativos más comunes.
-#### Sections
+#### Secciones
 #### S 1 principios generales de estilo y voz institucional
-#### ID
-GN-GCOM-SEC-0058
-#### Title
+#### Titulo
 1. Principios Generales de Estilo y Voz Institucional
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-ESTILO-VOZ-01
 Purp: Establecer el marco conceptual y los principios rectores que definen la identidad comunicacional del Gobierno Regional de Ñuble en sus actos y comunicaciones administrativas, asegurando consistencia, claridad y cumplimiento normativo.
-#### Sections
+#### Secciones
 #### S 1 1 mision comunicacional
-#### ID
-GN-GCOM-SEC-0059
-#### Title
+#### Titulo
 1.1. Misión Comunicacional
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-ESTILO-MISION-01
 Purp: Ejercer la autoridad pública y comunicar las decisiones administrativas del Gobierno Regional de Ñuble con la máxima claridad, precisión, transparencia y un enfoque centrado en el ciudadano.
@@ -868,11 +691,9 @@ Obj: Garantizar que todo acto administrativo, independientemente de su formalida
 Fnd: Ley N° 19.880, que Establece Bases de los Procedimientos Administrativos que Rigen los Actos de los Órganos de la Administración del Estado.
 Fnd: Ley N° 18.575, Orgánica Constitucional de Bases Generales de la Administración del Estado.
 #### S 1 2 tono de voz institucional
-#### ID
-GN-GCOM-SEC-0060
-#### Title
+#### Titulo
 1.2. Tono de Voz Institucional
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-ESTILO-TONO-01
 Purp: Definir los tonos de voz aplicables a las comunicaciones administrativas para asegurar la coherencia y adecuación al contexto de cada documento.
@@ -891,11 +712,9 @@ Purp: Definir los tonos de voz aplicables a las comunicaciones administrativas p
   - Mech: Se debe priorizar el uso de sustantivos genéricos o colectivos (ej. "el personal", "la ciudadanía", "el funcionariado", "la contraparte").
   - Prohib: Evitar el uso de desdoblamientos de género (ej. "los y las funcionarios/as") y el uso de caracteres como "@" o "x", ya que dificultan la lectura y el procesamiento automático.
 #### S 1 3 principios rectores de redaccion
-#### ID
-GN-GCOM-SEC-0061
-#### Title
+#### Titulo
 1.3. Principios Rectores de Redacción
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-ESTILO-PRINCIPIOS-01
 Purp: Establecer las reglas no negociables que deben regir la redacción de toda comunicación administrativa del GORE Ñuble.
@@ -912,22 +731,18 @@ Purp: Establecer las reglas no negociables que deben regir la redacción de toda
 - Cpt: Principio-4-Enfoque-Ciudadano.
   - Req: La justificación de los actos (CONSIDERANDO:) debe, siempre que sea pertinente, anclar la decisión en el beneficio público, el impacto territorial en la Región de Ñuble y los objetivos de la Estrategia Regional de Desarrollo.
 #### S 2 guia de formatos de documentos administrativos
-#### ID
-GN-GCOM-SEC-0062
-#### Title
+#### Titulo
 2. Guía de Formatos de Documentos Administrativos
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATOS-01
 Purp: Servir como contenedor principal y punto de referencia para las guías de formato de cada tipo de documento, estableciendo una taxonomía clara.
 Obj: Permitir identificar el tipo de documento correcto a generar en función del propósito y la audiencia de la comunicación solicitada.
-#### Sections
+#### Secciones
 #### S 2 1 taxonomia de documentos administrativos
-#### ID
-GN-GCOM-SEC-0063
-#### Title
+#### Titulo
 2.1. Taxonomía de Documentos Administrativos
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATOS-TAXONOMIA-01
 Cpt: La selección del formato de documento no es arbitraria; responde a una función jurídica y administrativa específica. La siguiente tabla establece un mapa decisional, vinculando el propósito de la comunicación con el artefacto documental correspondiente.
@@ -938,21 +753,17 @@ Cpt: La selección del formato de documento no es arbitraria; responde a una fun
 | Oficio | Comunicar formalmente entre órganos de la Administración del Estado o con entidades externas. Solicitar o remitir información, transcribir resoluciones, formular consultas. | Otros servicios públicos, autoridades (nacionales, regionales, locales), entidades privadas, organismos internacionales. | Alto | D.S. N° 291 de 1974, Ministerio del Interior. |
 | Memorándum | Comunicar internamente instrucciones, solicitudes, información o decisiones de carácter operativo. | Funcionarios y unidades internas del GORE Ñuble (Gobernador/a, Jefes de División, Jefes de Departamento, etc.). | Medio-Alto (Formalidad Interna) | Costumbre administrativa y normativa interna. |
 #### S 3 la resolucion exenta
-#### ID
-GN-GCOM-SEC-0064
-#### Title
+#### Titulo
 3. La Resolución Exenta
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-RESOLUCION-01
 Purp: Establecer la definición, estructura canónica, estilo y ejemplo de una Resolución Exenta para su correcta generación.
-#### Sections
+#### Secciones
 #### S 3 1 definicion y contexto juridico
-#### ID
-GN-GCOM-SEC-0065
-#### Title
+#### Titulo
 3.1. Definición y Contexto Jurídico
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-RESOLUCION-DEF-01
 Def: Acto administrativo terminal, formal y escrito, que contiene una declaración de voluntad de la autoridad competente (Gobernador/a Regional), destinada a producir efectos jurídicos sobre un caso particular o general.
@@ -962,11 +773,9 @@ Ctx: Exenta.
 - Def: Calificativo que indica que la resolución se encuentra exenta del trámite de Toma de Razón por parte de la Contraloría General de la República (CGR), de acuerdo con las resoluciones de la propia CGR que fijan las materias y montos exentos de dicho control previo.
 - Warn: La exención de la Toma de Razón no implica que el acto esté exento de un control de legalidad posterior por parte de la CGR o de los tribunales de justicia. El acto debe igualmente cumplir con todo el ordenamiento jurídico.
 #### S 3 2 estructura canonica
-#### ID
-GN-GCOM-SEC-0066
-#### Title
+#### Titulo
 3.2. Estructura Canónica
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-RESOLUCION-ESTRUCTURA-01
 Purp: Detallar la estructura obligatoria de una Resolución Exenta, explicando el propósito lógico de cada componente.
@@ -981,11 +790,9 @@ Fnd: La estructura VISTOS / CONSIDERANDO / RESUELVO no es una mera convención e
 | Cierre y Firma | Formalización y Autorización | - Req: Incluye la fórmula de cierre en mayúsculas: ANÓTESE, COMUNÍQUESE Y ARCHÍVESE. - Req: A continuación, la firma (manuscrita o electrónica avanzada) de la autoridad. - Req: Debajo de la firma, el nombre completo en mayúsculas y el cargo: \`\` GOBERNADOR/A REGIONAL REGIÓN DE ÑUBLE. |
 | Distribución | Comunicación y Archivo | - Req: Al final del documento, se lista a quiénes debe ser distribuida la resolución para su conocimiento y ejecución. - Ex: Distribución: - [Unidad Interna 1] - [Unidad Interna 2] - [Entidad Externa] - Oficina de Partes - Archivo |
 #### S 3 3 lineamientos de redaccion y estilo
-#### ID
-GN-GCOM-SEC-0067
-#### Title
+#### Titulo
 3.3. Lineamientos de Redacción y Estilo
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-RESOLUCION-ESTILO-01
 
@@ -1001,11 +808,9 @@ ID: GNC-GORENUBLE-FORMATO-RESOLUCION-ESTILO-01
 - Cpt: Numeración.
   - Req: Los párrafos en CONSIDERANDO: y los artículos en RESUELVO: deben estar siempre numerados con números arábigos seguidos de un punto y un guion (ej. 1.-, 2.-).
 #### S 3 4 ejemplo de aplicacion sts
-#### ID
-GN-GCOM-SEC-0068
-#### Title
+#### Titulo
 3.4. Ejemplo de Aplicación (STS)
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-RESOLUCION-EJEMPLO-STS-01
 Purp: Presentar un ejemplo completo de una Resolución Exenta refactorizada a formato STS.
@@ -1023,12 +828,10 @@ Nat: Acto Administrativo.
 Cpt: Tipo - Resolución Exenta.
 Dln: Fecha-Dictacion - 2025-07-10.
 Ctx: Lugar - Chillán.
-#### Vistos
-#### ID
-GN-GCOM-SEC-0069
-#### Title
+### Vistos
+#### Titulo
 VISTOS
-#### Content
+#### Contenido
 
 ID: GORENUBLE-REX-4587-VISTOS-01
 
@@ -1046,12 +849,10 @@ ID: GORENUBLE-REX-4587-VISTOS-01
   - Ctx: Solicitud de financiamiento para proyecto "Mejoramiento Plaza de Armas de San Carlos", código BIP 40012345-0.
 - Cpt: Potestad-Autoridad.
   - Fnd: Artículo 24 letra o), Ley N° 19.175.
-#### Considerando
-#### ID
-GN-GCOM-SEC-0070
-#### Title
+### Considerando
+#### Titulo
 CONSIDERANDO
-#### Content
+#### Contenido
 
 ID: GORENUBLE-REX-4587-CONSIDERANDO-01
 
@@ -1072,12 +873,10 @@ ID: GORENUBLE-REX-4587-CONSIDERANDO-01
 - Cpt: Párrafo-5.
   - Cond: Existe disponibilidad presupuestaria.
   - Ctx: Subtítulo 33, Ítem 03, Asignación 123, Presupuesto GORE Ñuble 2025.
-#### Resuelvo
-#### ID
-GN-GCOM-SEC-0071
-#### Title
+### Resuelvo
+#### Titulo
 RESUELVO
-#### Content
+#### Contenido
 
 ID: GORENUBLE-REX-4587-RESUELVO-01
 
@@ -1097,12 +896,10 @@ ID: GORENUBLE-REX-4587-RESUELVO-01
   - Fnd: Cláusulas del convenio respectivo.
 - Cpt: Artículo-4.
   - Act: IMPÚTESE el gasto al presupuesto del Gobierno Regional de Ñuble para el año 2025.
-#### Cierre
-#### ID
-GN-GCOM-SEC-0072
-#### Title
+### Cierre
+#### Titulo
 CIERRE
-#### Content
+#### Contenido
 
 ID: GORENUBLE-REX-4587-CIERRE-01
 
@@ -1118,13 +915,11 @@ ID: GORENUBLE-REX-4587-CIERRE-01
   - Dest: Oficina de Partes
   - Dest: Archivo
 ```
-#### Sections
+#### Secciones
 #### S 3 5 como deberia ser la salida para el humano
-#### ID
-GN-GCOM-SEC-0073
-#### Title
+#### Titulo
 3.5. Como debería ser la salida para el humano
-#### Content
+#### Contenido
 
 ```plaintext
 RESOLUCIÓN EXENTA N° 4587
@@ -1162,32 +957,26 @@ Distribución:
 - Archivo
 ```
 #### S 4 el oficio
-#### ID
-GN-GCOM-SEC-0074
-#### Title
+#### Titulo
 4. El Oficio
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-OFICIO-01
 Purp: Establecer la definición, estructura canónica, estilo y ejemplo de un Oficio.
-#### Sections
+#### Secciones
 #### S 4 1 definicion y contexto de uso
-#### ID
-GN-GCOM-SEC-0075
-#### Title
+#### Titulo
 4.1. Definición y Contexto de Uso
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-OFICIO-DEF-01
 Def: Documento oficial que sirve como vehículo para la comunicación formal y escrita entre distintas reparticiones de la Administración del Estado, y entre estas y entidades externas o particulares.
 Purp: Su propósito es variado y puede incluir solicitar o remitir información, impartir instrucciones a otros órganos, transcribir resoluciones, formular consultas, elevar antecedentes a una autoridad superior, entre otros.
 Fnd: Su estructura y uso están normados principalmente por el Decreto Supremo N° 291, de 1974, del Ministerio del Interior, que fija normas para la elaboración de documentos oficiales.
 #### S 4 2 estructura canonica
-#### ID
-GN-GCOM-SEC-0076
-#### Title
+#### Titulo
 4.2. Estructura Canónica
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-OFICIO-ESTRUCTURA-01
 Purp: Detallar la estructura obligatoria de un Oficio, conforme a la normativa vigente.
@@ -1205,11 +994,9 @@ Purp: Detallar la estructura obligatoria de un Oficio, conforme a la normativa v
 | Firma y Posfirma | Autorización | - Firma (manuscrita o electrónica avanzada). - Nombre completo en mayúsculas. - Cargo del firmante. |
 | Iniciales y Distribución | Trazabilidad Interna y Externa | - Margen inferior izquierdo. - Iniciales del firmante y transcriptor (ej. JPG/mfa). - Distribución: Lista de unidades o personas que reciben copia del documento. |
 #### S 4 3 lineamientos de redaccion y estilo
-#### ID
-GN-GCOM-SEC-0077
-#### Title
+#### Titulo
 4.3. Lineamientos de Redacción y Estilo
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-OFICIO-ESTILO-01
 
@@ -1222,11 +1009,9 @@ ID: GNC-GORENUBLE-FORMATO-OFICIO-ESTILO-01
 - Cpt: Referencias.
   - Req: Al referirse a otros documentos, se debe indicar su tipo, número y fecha.
 #### S 4 4 ejemplo de aplicacion sts
-#### ID
-GN-GCOM-SEC-0078
-#### Title
+#### Titulo
 4.4. Ejemplo de Aplicación (STS)
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-OFICIO-EJEMPLO-STS-01
 Purp: Presentar un ejemplo completo de un Oficio refactorizado a formato STS.
@@ -1243,12 +1028,10 @@ ID: GORENUBLE-OF-1250-20250710-01
 Nat: Comunicación Oficial.
 Cpt: Tipo - Oficio Ordinario.
 Cpt: Clasificacion - Público.
-#### Encabezado
-#### ID
-GN-GCOM-SEC-0079
-#### Title
+### Encabezado
+#### Titulo
 ENCABEZADO
-#### Content
+#### Contenido
 
 ID: GORENUBLE-OF-1250-ENCABEZADO-01
 
@@ -1256,12 +1039,10 @@ ID: GORENUBLE-OF-1250-ENCABEZADO-01
 - Cpt: Antecedente. Fnd: Convenio de Transferencia FNDR, Res. Ex. N° 3456 de 2024.
 - Cpt: Materia. Def: Solicita informe de avance de Programa "Fomento Pyme Ñuble".
 - Cpt: Lugar-Fecha. Def: CHILLÁN, 10 de julio de 2025.
-#### Remitente y destinatario
-#### ID
-GN-GCOM-SEC-0080
-#### Title
+### Remitente y destinatario
+#### Titulo
 REMITENTE Y DESTINATARIO
-#### Content
+#### Contenido
 
 ID: GORENUBLE-OF-1250-PARTES-01
 
@@ -1273,12 +1054,10 @@ ID: GORENUBLE-OF-1250-PARTES-01
   - Cpt: Nombre - SRA. MARÍA LUISA SOTO.
   - Cpt: Cargo - SECRETARIA REGIONAL MINISTERIAL DE ECONOMÍA, FOMENTO Y TURISMO.
   - Cpt: Entidad - REGIÓN DE ÑUBLE.
-#### Cuerpo
-#### ID
-GN-GCOM-SEC-0081
-#### Title
+### Cuerpo
+#### Titulo
 CUERPO
-#### Content
+#### Contenido
 
 ID: GORENUBLE-OF-1250-CUERPO-01
 
@@ -1300,12 +1079,10 @@ ID: GORENUBLE-OF-1250-CUERPO-01
   - Req: Remitir información solicitada.
   - Dln: Plazo máximo - 31 de julio de 2025.
   - Purp: Información será presentada al Consejo Regional.
-#### Cierre 2
-#### ID
-GN-GCOM-SEC-0082
-#### Title
+### Cierre 2
+#### Titulo
 CIERRE
-#### Content
+#### Contenido
 
 ID: GORENUBLE-OF-1250-CIERRE-01
 
@@ -1322,13 +1099,11 @@ ID: GORENUBLE-OF-1250-CIERRE-01
     - Dest: Oficina de Partes
     - Dest: Archivo
 ```
-#### Sections
+#### Secciones
 #### S 4 5 como deberia ser la salida para el humano
-#### ID
-GN-GCOM-SEC-0083
-#### Title
+#### Titulo
 4.5. Como debería ser la salida para el humano
-#### Content
+#### Contenido
 
 ```plaintext
 ORD. N° 1250/2025
@@ -1373,21 +1148,17 @@ Distribución:
 - Archivo
 ```
 #### S 5 el memorandum
-#### ID
-GN-GCOM-SEC-0084
-#### Title
+#### Titulo
 5. El Memorándum
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-MEMO-01
 Purp: Establecer la definición, estructura canónica, estilo y ejemplo de un Memorándum.
-#### Sections
+#### Secciones
 #### S 5 1 definicion y contexto de uso
-#### ID
-GN-GCOM-SEC-0085
-#### Title
+#### Titulo
 5.1. Definición y Contexto de Uso
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-MEMO-DEF-01
 Def: Documento de comunicación interna, de carácter breve y funcional, utilizado para transmitir información, instrucciones o solicitudes entre las distintas unidades y funcionarios del Gobierno Regional.
@@ -1395,11 +1166,9 @@ Fnd: A diferencia de la Resolución y el Oficio, el Memorándum no posee una est
 Purp: Su objetivo principal es la agilidad y la eficiencia en la gestión operativa interna. Se utiliza para impartir instrucciones, solicitar informes, comunicar decisiones de rutina, coordinar acciones, entre otros.
 Nat: Es menos formal que un Oficio y está orientado exclusivamente a la comunicación dentro del GORE Ñuble.
 #### S 5 2 estructura canonica
-#### ID
-GN-GCOM-SEC-0086
-#### Title
+#### Titulo
 5.2. Estructura Canónica
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-MEMO-ESTRUCTURA-01
 Purp: Estandarizar el formato del Memorándum para el GORE Ñuble.
@@ -1412,11 +1181,9 @@ Req: La siguiente estructura es la norma oficial para todos los memorándums gen
 | Cuerpo | Contenido Principal | - Mensaje directo, claro y conciso. - Se puede estructurar en párrafos o usar viñetas para listar instrucciones o puntos específicos. - No requiere la formalidad de los párrafos numerados del Oficio. |
 | Cierre | Autorización | - Saludo de despedida breve (ej. "Atentamente,"). - Firma del remitente. - Nombre y cargo del remitente. |
 #### S 5 3 lineamientos de redaccion y estilo
-#### ID
-GN-GCOM-SEC-0087
-#### Title
+#### Titulo
 5.3. Lineamientos de Redacción y Estilo
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-MEMO-ESTILO-01
 
@@ -1427,11 +1194,9 @@ ID: GNC-GORENUBLE-FORMATO-MEMO-ESTILO-01
 - Cpt: Claridad.
   - Req: La solicitud, instrucción o información debe ser inequívoca para evitar malas interpretaciones y re-consultas.
 #### S 5 4 ejemplo de aplicacion sts
-#### ID
-GN-GCOM-SEC-0088
-#### Title
+#### Titulo
 5.4. Ejemplo de Aplicación (STS)
-#### Content
+#### Contenido
 
 ID: GNC-GORENUBLE-FORMATO-MEMO-EJEMPLO-STS-01
 Purp: Presentar un ejemplo completo de un Memorándum refactorizado a formato STS.
@@ -1447,12 +1212,10 @@ Cpt: Transcripción-STS.
 ID: GORENUBLE-MEMO-550-20250710-01
 Nat: Comunicación Interna.
 Cpt: Tipo - Memorándum.
-#### Metadatos
-#### ID
-GN-GCOM-SEC-0089
-#### Title
+### Metadatos
+#### Titulo
 METADATOS
-#### Content
+#### Contenido
 
 ID: GORENUBLE-MEMO-550-METADATOS-01
 
@@ -1464,12 +1227,10 @@ ID: GORENUBLE-MEMO-550-METADATOS-01
   - Cpt: Cargo - JEFE DEPARTAMENTO DE RECURSOS HUMANOS.
 - Cpt: Fecha. Def: 10 de julio de 2025.
 - Cpt: Materia. Def: Solicita informe de ausentismo laboral primer semestre 2025.
-#### Cuerpo 2
-#### ID
-GN-GCOM-SEC-0090
-#### Title
+### Cuerpo 2
+#### Titulo
 CUERPO
-#### Content
+#### Contenido
 
 ID: GORENUBLE-MEMO-550-CUERPO-01
 
@@ -1483,12 +1244,10 @@ ID: GORENUBLE-MEMO-550-CUERPO-01
   - Req: Análisis comparativo con el mismo período del año 2024.
 - Cpt: Plazo.
   - Dln: Fecha máxima de entrega - 25 de julio de 2025.
-#### Cierre 3
-#### ID
-GN-GCOM-SEC-0091
-#### Title
+### Cierre 3
+#### Titulo
 CIERRE
-#### Content
+#### Contenido
 
 ID: GORENUBLE-MEMO-550-CIERRE-01
 
@@ -1497,13 +1256,11 @@ ID: GORENUBLE-MEMO-550-CIERRE-01
   - Resp: Ana Castro Rojas.
   - Cpt: Cargo - Jefa DAF.
 ```
-#### Sections
+#### Secciones
 #### S 5 5 como deberia ser la salida para el humano
-#### ID
-GN-GCOM-SEC-0092
-#### Title
+#### Titulo
 5.5. Como debería ser la salida para el humano
-#### Content
+#### Contenido
 
 ```plaintext
 MEMORÁNDUM N° 550/2025
@@ -1534,11 +1291,9 @@ Ana Castro Rojas
 Jefa DAF
 ```
 #### S 6 tipologia ampliada de documentos oficiales
-#### ID
-GN-GCOM-SEC-0093
-#### Title
+#### Titulo
 6. Tipología Ampliada de Documentos Oficiales
-#### Content
+#### Contenido
 
 ID: GNC-COM-ANEXO-TIPOLOGIA-AMPLIADA-01
 Purp: Servir como guía de referencia rápida para la identificación y redacción de una gama más amplia de documentos administrativos comunes, complementando la taxonomía detallada.
@@ -1557,7 +1312,7 @@ Purp: Servir como guía de referencia rápida para la identificación y redacci�
 | Cpt: Informe | Purp: Exponer antecedentes, análisis o propuestas. | Resp: Técnico o profesional. | Ctx: Intro, desarrollo, conclusión, recomendaciones. | Act: Asistir en la estructuración y redacción, organizando la información de forma lógica. |
 | Cpt: Proposición | Purp: Documento base para resolver una materia (ej. adjudicación). | Resp: Unidad técnica o de asesoría. | Ctx: Acompaña resolución/decreto. Fundamenta la decisión. | Act: Articular fundamentos técnicos y legales para respaldar una decisión. |
 | Cpt: Minuta | Purp: Resumir información clave para autoridades o reuniones. | Resp: Técnicos, asesores, jefaturas. | Ctx: Concisa, estructurada (antecedentes, análisis, conclusiones). | Act: Sintetizar información relevante, estructurar puntos clave de manera lógica. |
-### Content
+## Contenido
 \# Guía Integral de Comunicaciones GORE Ñuble
 
 ID: KB-GN-030-GUIA-COMUNICACIONES-V2

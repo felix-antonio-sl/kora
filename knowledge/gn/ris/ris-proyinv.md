@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-proyinv
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml
 version: 2.0.0
 status: published
@@ -24,93 +24,31 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.2
+    cr: 2.09
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 13
-    meat_count: 115
+    skeleton_count: 2
+    meat_count: 88
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/ris__ris-proyinv.md.json
 ---
 
 # RIS Genéricas — Proyectos de Inversión (SNI 2023)
-## ID
-GN-RIS-PROYINV-2023-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-11-28
-
-## Modification Date
-2025-11-28
-
-## Ctx
-Requisitos de información sectorial genéricos para Proyectos de Inversión que ingresan al Sistema Nacional de Inversiones (SNI), versión 2023.
-
 ## Source
-### Primary Source
-kb_gn_010_ris.md (sección RIS-PROYINV-2023)
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf
 - https://sni.gob.cl/requisitos-de-informacion-por-sector
 
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-GN-RIS-PROYINV-2023-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing):
-  Act->Action, Cause->Cause, Cond->Condition, Cpt->Concept, Ctx->Context,
-  Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
-  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
-  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
-  Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
-  Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
-  Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-
 ## RIS Proyectos Inversion 2023
-### ID
-RIS-PROYINV-2023-META-01
 ### Fuente URL
 https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf
 ### Prop Doc
 Establecer requisitos de información para la formulación y presentación de Proyectos de Inversión en sus distintas fases y etapas.
 ### Ciclo Vida Proyecto
-#### ID
-RIS-PROYINV-2023-CICLOVIDA-01
 #### Estados
 - Estado-1-Preinversion: Preparación y evaluación para determinar viabilidad.
 - Estado-2-Inversion: Diseño y ejecución de obras.
@@ -126,17 +64,11 @@ RIS-PROYINV-2023-CICLOVIDA-01
 - Etapa-1-Puesta-en-marcha
 - Etapa-2-Operacion-en-regimen
 ### Fase Preinversion
-#### ID
-RIS-PROYINV-2023-PREINVERSION-01
 #### Estudio Preinversional
-#### ID
-RIS-PROYINV-2023-PREINVERSION-ESTUDIO-01
 #### Cont Req
 - Item-1: Perfil del proyecto (cuando se postula a prefactibilidad).
 - Item-2: Respaldo con metodología aplicable (general o específica).
 #### TDR Estudio
-#### ID
-RIS-PROYINV-2023-PREINVERSION-TDR-01
 #### Prop
 Definir información básica y actividades del estudio.
 #### Cont Req
@@ -153,25 +85,17 @@ Definir información básica y actividades del estudio.
 - Sel-1: Selección mejor alternativa (con profundización en etapa de factibilidad).
 - Res-1: Resumen y conclusiones.
 #### Cronograma Actividades
-#### ID
-RIS-PROYINV-2023-PREINVERSION-CRONOGRAMA-01
 #### Formato
 Carta Gantt.
 #### Detalle Req
 Fuentes de financiamiento, especificación de jornada (completa, parcial, etc.).
 #### Resultados Esperados
-#### ID
-RIS-PROYINV-2023-PREINVERSION-RESULTADOS-01
 #### Enfoque
 Vinculados directamente a contenidos y objetivos del estudio.
 #### Implicancias Ambientales
-#### ID
-RIS-PROYINV-2023-PREINVERSION-AMBIENTAL-01
-#### Req
+#### Requisitos
 Evaluación de impactos ambientales del proyecto.
 #### Presupuesto Detallado
-#### ID
-RIS-PROYINV-2023-PREINVERSION-PRESUPUESTO-01
 #### Formato
 Desglose por asignaciones.
 #### Cont Req
@@ -183,11 +107,7 @@ Desglose por asignaciones.
 - Obs-2: Costo total debe incluir impuestos.
 - Obs-3: Alinear a Clasificador Presupuestario (ficha IDI).
 ### Fase Inversion
-#### ID
-RIS-PROYINV-2023-INVERSION-01
 #### Etapa Diseno
-#### ID
-RIS-PROYINV-2023-INVERSION-DISEÑO-01
 #### Docs Base Req
 - Doc-1: Estudio preinversional (perfil, prefactibilidad o factibilidad).
 - Doc-2: Programa arquitectónico (según especificaciones sectoriales).
@@ -206,8 +126,6 @@ Para contratación de especialistas (arquitectura, ingeniería, especialidades).
 - Unidades de medida: horas (RRHH) o unidades globales (otros).
 - Incluir impuestos.
 #### Etapa Ejecucion
-#### ID
-RIS-PROYINV-2023-INVERSION-EJECUCION-01
 #### Docs Req
 - Doc-1: Estudio preinversional actualizado con resultados de etapa de diseño.
 - Doc-2: Resultados completos de diseño (planos, especificaciones técnicas, presupuestos visados).
@@ -231,8 +149,6 @@ Detallado por actividad, con estimaciones de tiempo y fuentes de financiamiento.
 #### Fichas Registros Req
 - Coherencia con antecedentes de respaldo y fichas del IDI.
 ### Documentos Apoyo
-#### ID
-RIS-PROYINV-2023-APOYO-01
 #### Req Especificos
 | ID | Enunciado |
 | --- | --- |

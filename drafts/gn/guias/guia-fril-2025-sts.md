@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.26
+    cr: 2.38
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -39,7 +39,7 @@ extensions:
 
 # Instructivo FRIL 2025 – Región de Ñuble
 ## Source
-### Ctx Required
+### Contexto requerido
 - Guía Operativa FRIL – Resolución Exenta N° 15.051/2023 SUBDERE
 - Ley N° 21.796 – Ley de Presupuestos del Sector Público 2026 (Glosa 12, Programa 02, Subtítulo 33)
 - DFL 1-19.175 – Ley Orgánica Constitucional de Gobierno y Administración Regional (LOC GORE)
@@ -133,42 +133,20 @@ Aprobar instructivo para formulación y evaluación de iniciativas FRIL, año pr
 #### Cpt
 Marco normativo que sustenta la resolución.
 #### Fundamento
-| Ref | Detalle |
-| --- | --- |
-| GN-FRIL-NORM-CPR-01 | Constitución Política de la República, Artículo 111°. |
-| Ref | Cpt | Act | Ref_Normativa |
-| --- | --- | --- | --- |
-| GN-FRIL-NORM-LOC-GORE-01 | Atribuciones del Gobernador Regional. | ['Dictar resoluciones e instrucciones necesarias para la administración regional.'] | ['Art. 24, letra ñ, LOC GORE.'] |
 | Ref |
 | --- |
+| GN-FRIL-NORM-CPR-01 |
+| GN-FRIL-NORM-LOC-GORE-01 |
 | GN-FRIL-NORM-LEY-21074-01 |
-| Ref |
-| --- |
 | GN-FRIL-NORM-LEY-18575-01 |
-| Ref | Ctx |
-| --- | --- |
-| GN-FRIL-NORM-LEY-21796-01 | Partida 31 Gobiernos Regionales, Glosas Comunes programa 02 Inversión Regional. |
-| Ref |
-| --- |
+| GN-FRIL-NORM-LEY-21796-01 |
 | GN-FRIL-NORM-LEY-19880-01 |
-| Ref | Cpt |
-| --- | --- |
-| GN-FRIL-NORM-DL575-01 | FNDR como instrumento financiero de inversión pública de decisión regional y fuente flexible para los GORE. |
-| Ref | Ctx |
-| --- | --- |
-| GN-FRIL-NORM-RES36-CGR-2024-01 | Normas sobre exención del trámite de Toma de Razón. |
-| Ref |
-| --- |
+| GN-FRIL-NORM-DL575-01 |
+| GN-FRIL-NORM-RES36-CGR-2024-01 |
 | GN-FRIL-NORM-CIRC11-HACIENDA-2025-01 |
-| Ref | Ctx |
-| --- | --- |
-| GN-FRIL-NORM-RES15051-SUBDERE-2023-01 | Fija Guía Operativa FRIL nacional. |
-| Cpt |
-| --- |
-| Resoluciones internas del GORE Ñuble sobre estructura organizacional y procedimientos. |
-| Cpt |
-| --- |
-| Documentos de proclamación y nombramiento del Gobernador Regional para el período 2025-2029. |
+| GN-FRIL-NORM-RES15051-SUBDERE-2023-01 |
+|  |
+|  |
 #### Considerandos
 #### Cpt
 Razones que justifican la emisión del instructivo FRIL 2025.
@@ -205,12 +183,8 @@ Mecanismo de financiamiento para proyectos de inversión en infraestructura comu
 | Act |
 | --- |
 | Municipios formulan y presentan iniciativas. |
-| Act |
-| --- |
 | GORE evalúa iniciativas según Guía Operativa SUBDERE y lineamientos del instructivo regional. |
-| Resp |
-| --- |
-| GORE regula la distribución de recursos, con validación del CORE. |
+|  |
 #### Objetivo Fondo FRIL
 #### Objetivos
 Financiar proyectos de infraestructura comunal de menor tamaño que mejoren la calidad de vida de la población, tanto en zonas urbanas
@@ -282,12 +256,12 @@ Obras civiles FRIL.
 #### Contexto
 Resumen estructurado de categorías y subcategorías del instructivo.
 #### Grupos
-| Cpt | Subcategorias |
-| --- | --- |
-| A - Desarrollo Territorial | [{'ID': 'GN-FRIL-CAT-A1', 'Cpt': 'Integración Rural', 'Def': 'Infraestructura de servicios básicos y conectividad para zonas alejadas.'}, {'ID': 'GN-FRIL-CAT-A2', 'Cpt': 'Acceso al Agua', 'Ex': 'Sistemas APR, sistemas de impulsión/tratamiento/distribución, alcantarillado comunitario y pluvial.'}, {'ID': 'GN-FRIL-CAT-A3', 'Cpt': 'Vial', 'Ex': 'Aceras, baches, calles, caminos, cunetas, veredas, supresor de polvo, barreras de contención.'}] |
-| B - Servicios | [{'ID': 'GN-FRIL-CAT-B1', 'Cpt': 'Edificación Pública', 'Ex': 'Postas, centros de salud, escuelas, patios cubiertos, cuarteles de bomberos.'}, {'ID': 'GN-FRIL-CAT-B2', 'Cpt': 'Gestión de Riesgos', 'Ex': 'Muros de contención, drenajes, cortafuegos, desbroce.'}, {'ID': 'GN-FRIL-CAT-B3', 'Cpt': 'Seguridad', 'Ex': 'Luminarias, televigilancia, cierres perimetrales, refugios peatonales, fibra óptica.'}] |
-| C - Desarrollo Social y Económico | [{'ID': 'GN-FRIL-CAT-C1', 'Cpt': 'Inclusión', 'Ex': 'Infraestructura inclusiva, centros de terapia, centros de adulto mayor.'}, {'ID': 'GN-FRIL-CAT-C2', 'Cpt': 'Género', 'Ex': 'Centros de acogida para víctimas de violencia, casas de protección.'}, {'ID': 'GN-FRIL-CAT-C3', 'Cpt': 'Turismo', 'Ex': 'Pórticos, senderos turísticos, bordes costeros, miradores, señalética.'}] |
-| D - Medio Ambiente | [{'ID': 'GN-FRIL-CAT-D1', 'Cpt': 'Deportes', 'Ex': 'Canchas, multicanchas, estadios, piscinas, pistas de trote, plazas activas.'}, {'ID': 'GN-FRIL-CAT-D2', 'Cpt': 'Áreas Verdes', 'Ex': 'Paseos peatonales, plazas, parques, juegos de agua.'}, {'ID': 'GN-FRIL-CAT-D3', 'Cpt': 'Sustentabilidad', 'Ex': 'Paneles solares, energía eólica, riego eficiente, áreas verdes con reciclaje y compostaje.'}] |
+| Cpt |
+| --- |
+| A - Desarrollo Territorial |
+| B - Servicios |
+| C - Desarrollo Social y Económico |
+| D - Medio Ambiente |
 #### Reglas Especiales Postulacion
 #### Excepcion Conteo Proyectos
 #### Cpt
@@ -404,15 +378,9 @@ Recomendado Satisfactoriamente.
 | Cpt | Cond |
 | --- | --- |
 | FI (Falta Información) | Faltan antecedentes, existen errores de cálculo o se requieren ajustes subsanables. |
-| Cpt | Cond |
-| --- | --- |
 | OT (Objetado Técnicamente) | Iniciativa mal formulada o con problemas técnicos/normativos insubsanables. |
-| Cpt | Cond |
-| --- | --- |
-| NV (No Vigente) | ['No se cumplen plazos de subsanación.', 'El municipio informa que el proyecto ya no es de interés o se financió por otra vía.'] |
-| Cpt | Cond | Warn |
-| --- | --- | --- |
-| IN (Incumplimiento de Normativa) | ['Se asignan recursos, adjudica, ejecuta gasto o se modifican archivos en BIP después de la aprobación técnica sin informe favorable del GORE.'] | ['Esta situación será considerada falta en futuras postulaciones.'] |
+| NV (No Vigente) | No se cumplen plazos de subsanación., El municipio informa que el proyecto ya no es de interés o se financió por otra vía. |
+| IN (Incumplimiento de Normativa) | Se asignan recursos, adjudica, ejecuta gasto o se modifican archivos en BIP después de la aprobación técnica sin informe favorable del GORE. |
 #### Dln
 - Plazo para subsanar observaciones FI/OT: máximo 30 días hábiles, prorrogables a criterio del analista.
 ### Sec 9 Documentacion para Postulacion
@@ -455,11 +423,11 @@ El instructivo detalla un checklist exhaustivo de documentos obligatorios. Este 
 #### Casuistica
 | Cpt | Req |
 | --- | --- |
-| Caso A – Terreno Municipal | ['Escritura de la propiedad.', 'Certificado de Dominio Vigente con Hipotecas y Gravámenes (vigencia máxima 60 días).'] |
-| Caso B – BNUP administrado por municipio | ['Certificado DOM que acredite condición de BNUP (parques, plazas, calles).'] |
-| Caso C – BNUP no administrado por municipio | ['Concesión, autorización de uso o proyecto aprobado por la entidad responsable del BNUP.'] |
-| Caso D – Caminos Vecinales | ['Documentos que acrediten cumplimiento del Decreto 293/2008 del MOP.'] |
-| Caso E – Terreno Privado (Comodato/Usufructo) | ['Escritura de usufructo o contrato de comodato inscrito en CBR, con prohibición de enajenar por período no inferior a vida útil de obras.'] |
+| Caso A – Terreno Municipal | Escritura de la propiedad., Certificado de Dominio Vigente con Hipotecas y Gravámenes (vigencia máxima 60 días). |
+| Caso B – BNUP administrado por municipio | Certificado DOM que acredite condición de BNUP (parques, plazas, calles). |
+| Caso C – BNUP no administrado por municipio | Concesión, autorización de uso o proyecto aprobado por la entidad responsable del BNUP. |
+| Caso D – Caminos Vecinales | Documentos que acrediten cumplimiento del Decreto 293/2008 del MOP. |
+| Caso E – Terreno Privado (Comodato/Usufructo) | Escritura de usufructo o contrato de comodato inscrito en CBR, con prohibición de enajenar por período no inferior a vida útil de obras. |
 #### Otros Documentos Claves
 #### Incluye
 - Certificado Compromiso Operación y Mantención (con costos mensuales/anuales y vida útil).

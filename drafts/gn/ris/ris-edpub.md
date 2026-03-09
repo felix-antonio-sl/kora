@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.85
+    cr: 1.95
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -39,7 +39,7 @@ extensions:
 
 # RIS Edificación Pública (SNI 2024)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf
 
 ## RIS Edificacion Publica 2024
@@ -85,10 +85,8 @@ Edificación Pública.
 #### Req Generales
 | ID | Enunciado | Detalle |
 | --- | --- | --- |
-| Req-1 | Req-1: Formulación del proyecto conforme a: | ['Metodologia-1: "Metodología de Edificación Pública".', 'Metodologia-2: "Metodología de Riesgo de Desastre".'] |
-| ID | Enunciado |
-| --- | --- |
-| Req-2 | Req-2: Considerar estimaciones e información de fuentes secundarias. |
+| Req-1 | Req-1: Formulación del proyecto conforme a: | Metodologia-1: "Metodología de Edificación Pública"., Metodologia-2: "Metodología de Riesgo de Desastre". |
+| Req-2 | Req-2: Considerar estimaciones e información de fuentes secundarias. |  |
 ### Postulacion Diseno
 #### Req Generales
 | ID | Enunciado |
@@ -105,17 +103,9 @@ Edificación Pública.
 | ID | Enunciado |
 | --- | --- |
 | Req-1 | Req-1: Formulación del proyecto conforme a "Metodología de Edificación Pública" y "Metodología de Riesgo de Desastre" (para etapa de ejecución). |
-| ID | Enunciado | Nota |
-| --- | --- | --- |
-| Req-2 | Req-2: Cumplir requisitos de etapa de diseño (aplicable si se concentra funcionamiento de varios servicios públicos). | Nota: Aplica si no se postuló a Diseño en SNI. |
-| ID | Enunciado |
-| --- | --- |
+| Req-2 | Req-2: Cumplir requisitos de etapa de diseño (aplicable si se concentra funcionamiento de varios servicios públicos). |
 | Req-3 | Req-3: Presentar antecedentes según "Antecedentes Técnicos Requeridos para Proyectos que Consideran Edificación" para ejecución. |
-| ID | Enunciado |
-| --- | --- |
 | Req-4 | Req-4: Cuadro comparativo entre programa arquitectónico aprobado y diseño resultante, con justificación de diferencias. |
-| ID | Enunciado |
-| --- | --- |
 | Req-5 | Req-5: Cronograma de Actividades o Carta Gantt. |
 ### Postulacion Diseno Ejecucion Conjunta
 #### Req Generales

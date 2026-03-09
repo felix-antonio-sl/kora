@@ -39,7 +39,7 @@ extensions:
 
 # BPMN D04: Compras Públicas y Contrataciones
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -52,7 +52,7 @@ Unidad de Abastecimiento
 ### Subprocesos
 ~12
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.700-950
 
 ## Body MD

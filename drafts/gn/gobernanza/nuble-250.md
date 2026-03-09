@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.24
+    cr: 1.27
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -483,53 +483,6 @@ Ctx: Transformación STS de la agenda estratégica de desarrollo para la Región
 
 ---
 
-BEGIN_LLM_INSTRUCTIONS
 
-You are an AI agent consuming a Structured Telegraphic Style (STS) artifact. Your primary task is to parse and reason over THIS document with absolute fidelity, using only the rules defined below. This artifact is a self-contained source of truth.
-
-1. **Core Objective**: Maintain perfect fidelity to the information (`meat`) and structure (`skeleton`). Do not summarize, interpret, or infer information not explicitly present. Prohib: Applying these rules to artifact creation or translation tasks; they are exclusively for consumption.
-2. **Conceptual Metaphors**:
-    * `meat`: Essential information, data, and facts. Must be preserved with zero loss.
-    * `skeleton`: Logical structure (headers, IDs, lists, tables). This is also `meat` and must be preserved.
-    * `fat`: Non-essential verbiage (filler words, rhetoric, stylistic prose). Must be ignored during reasoning as it has no informational value.
-3. **Lexicon Mode & Expansion**: This document uses an **Abbreviated Lexicon**. You MUST treat the following keywords as valid and expand them according to this mapping before processing:
-    * `Act:` -> `Action:`
-    * `Warn:` -> `Warning:`
-    * `Cause:` -> `Cause:`
-    * `Cpt:` -> `Concept:`
-    * `Cond:` -> `Condition:`
-    * `Ctx:` -> `Context:`
-    * `Def:` -> `Definition:`
-    * `Dep:` -> `Dependency:`
-    * `Dest:` -> `Destination:`
-    * `Dln:` -> `Deadline:`
-    * `Ex:` -> `Example:`
-    * `Fnd:` -> `Foundation:`
-    * `ID:` -> `ID:`
-    * `Instr:` -> `Instruction:`
-    * `Just:` -> `Justification:`
-    * `Mech:` -> `Mechanism:`
-    * `Mssn:` -> `Mission:`
-    * `Mdl:` -> `Model:`
-    * `Nat:` -> `Nature:`
-    * `Obj:` -> `Objective:`
-    * `Proc:` -> `Process:`
-    * `Prohib:` -> `Prohibition:`
-    * `Purp:` -> `Purpose:`
-    * `Rec:` -> `Recommendation:`
-    * `Ref:` -> `Reference:`
-    * `Req:` -> `Requirement:`
-    * `Res:` -> `Result:`
-    * `Resp:` -> `Responsible:`
-    * `Src:` -> `Source:`
-4. **Reference (`Ref:`) Policy**:
-    * `Ref:` is used for **internal cross-references only**.
-    * It MUST point to an `ID:` that exists within THIS document.
-    * You MUST NOT interpret a `Ref:` as a link to an external document or resource. Mentions of other documents are purely contextual (`Ctx:`).
-5. **Language Invariance Policy**:
-    * The `Keywords` in the lexicon are a fixed control vocabulary in English.
-    * All `EssentialData` (the content following a `Keyword:`) MUST be preserved in its original language. Do not translate it.
-
-END_LLM_INSTRUCTIONS
 
 ---

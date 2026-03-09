@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 2.27
+    cr: 2.32
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Manual de induccion con mismatch historico entre nombre destino
@@ -51,21 +51,26 @@ Manual de Inducción del Gobierno Regional de Ñuble 2026
 #### Contexto
 En sus orientaciones para el proceso de inducción, el Servicio Civil considera esta como un proceso estratégico para la institución, cuyos objetivos son:
 #### Objetivos
-| Socializar |
-| --- |
-| {'Def': 'Proceso a través del cual el funcionario/a empieza a conocer e integrarse con las personas que forman parte de la institución, y particularmente, con su equipo de trabajo.'} |
-| Orientar |
-| --- |
-| {'Def': 'Proceso a través del cual se apoya al funcionario/a para que comience a comprender y aceptar los valores, normas, derechos, deberes y convicciones de la organización y su contexto.'} |
-| Entrenar |
-| --- |
-| {'Def': 'Proceso que facilita el aprendizaje inicial del funcionario/a en las funciones propias, y cómo estas se vinculan con las funciones de su equipo y con la misión y objetivos institucionales.'} |
-| Alinear_respecto_al_rol |
-| --- |
-| {'Def': 'Proceso de vinculación del desempeño esperado del funcionario/a con las definiciones y productos estratégicos de la institución, y sus propias expectativas al respecto.'} |
-| Fidelizar |
-| --- |
-| {'Def': 'Proceso de fortalecimiento de la identificación del funcionario/a con la función pública en general y con su servicio en particular, y la generación y/o profundización de un compromiso individual con sus funciones.'} |
+-
+  #### Socializar
+  #### Definicion
+  Proceso a través del cual el funcionario/a empieza a conocer e integrarse con las personas que forman parte de la institución, y particularmente, con su equipo de trabajo.
+-
+  #### Orientar
+  #### Definicion
+  Proceso a través del cual se apoya al funcionario/a para que comience a comprender y aceptar los valores, normas, derechos, deberes y convicciones de la organización y su contexto.
+-
+  #### Entrenar
+  #### Definicion
+  Proceso que facilita el aprendizaje inicial del funcionario/a en las funciones propias, y cómo estas se vinculan con las funciones de su equipo y con la misión y objetivos institucionales.
+-
+  #### Alinear respecto al rol
+  #### Definicion
+  Proceso de vinculación del desempeño esperado del funcionario/a con las definiciones y productos estratégicos de la institución, y sus propias expectativas al respecto.
+-
+  #### Fidelizar
+  #### Definicion
+  Proceso de fortalecimiento de la identificación del funcionario/a con la función pública en general y con su servicio en particular, y la generación y/o profundización de un compromiso individual con sus funciones.
 ### Beneficios
 #### Contexto
 El Servicio Civil en sus orientaciones reconoce como principales beneficios de contar con un programa de inducción los siguientes:
@@ -84,15 +89,18 @@ La inducción constituye un proceso crítico en el ciclo de vida laboral de las 
 #### Contexto
 Desde la perspectiva de proceso, un programa de inducción debe considerar al menos:
 #### Proceso
-| Fase_de_bienvenida |
-| --- |
-| {'Purp': 'Orientada a la recepción e integración que contempla actividades de acogida, presentación del equipo, de las instalaciones e interacción con las autoridades.'} |
-| Fase_informativa |
-| --- |
-| {'Purp': 'Actividades para entregar información clave sobre la institución respecto a estructura, estrategias y procesos.'} |
-| Fase_orientada_al_cargo |
-| --- |
-| {'Purp': 'Actividades para clarificar tareas, responsabilidades, funciones y metas esperadas (Servicio Civil, 2016).'} |
+-
+  #### Fase de bienvenida
+  #### Proposito
+  Orientada a la recepción e integración que contempla actividades de acogida, presentación del equipo, de las instalaciones e interacción con las autoridades.
+-
+  #### Fase informativa
+  #### Proposito
+  Actividades para entregar información clave sobre la institución respecto a estructura, estrategias y procesos.
+-
+  #### Fase orientada al cargo
+  #### Proposito
+  Actividades para clarificar tareas, responsabilidades, funciones y metas esperadas (Servicio Civil, 2016).
 ### Adaptacion y flexibilidad del proceso en la organizacion
 #### Contexto
 El proceso de inducción en el Gobierno Regional de Ñuble se concibe como una instancia flexible y adaptable a contingencias y recursos existentes al momento del ingreso del nuevo funcionario. Existirán actividades que son estándar, pero otras deberán ser adecuadas considerando el desempeño que se espera alcanzar según las funciones que se asumen, la procedencia de la persona (Sector Público o Sector Privado) y el nivel de experiencia en la función pública del nuevo funcionario.
@@ -146,33 +154,42 @@ Este marco normativo está en constante evolución, por lo que es deber de cada 
 
 ## Seccion 5 Principios Orientadores
 ### Principios
-| Compromiso |
-| --- |
-| {'Def': 'Nos identificamos con la institución, somos parte de ella y somos conscientes de nuestra responsabilidad con la comunidad, por lo que asumimos la función pública con responsabilidad y profesionalismo, brindando un servicio de excelencia a las personas que viven en nuestra Región. Asimismo, la institución reconoce la labor realizada por los(as) funcionarios(as) y les brinda un ambiente laboral con adecuadas condiciones, resguardando su dignidad y derechos y dándoles oportunidades de desarrollo.'} |
-| Eficiencia |
-| --- |
-| {'Def': 'Realizamos nuestro trabajo enfocándonos en las personas y en contribuir a mejorar su calidad de vida y satisfacer las necesidades que presentan las comunidades en el territorio de nuestra Región, usando de manera eficiente los recursos públicos disponibles y necesarios para cumplir nuestros objetivos institucionales con excelencia.'} |
-| Profesionalismo |
-| --- |
-| {'Def': 'Reconocemos que el ingreso a la Administración, su permanencia en ella y el desarrollo profesional de una carrera funcionaria dependen de nuestras capacidades y del correcto desempeño de nuestro cargo o función, por lo que velamos por la rectitud, probidad, idoneidad, honestidad e irrestricto apego a la normativa en el desempeño de nuestras funciones.'} |
-| Transparencia |
-| --- |
-| {'Def': 'Garantizamos y resguardamos el derecho a la ciudadanía de conocer y acceder a toda la información acerca de las actuaciones y decisiones de nuestra institución, posibilitando y facilitando que los ciudadanos conozcan y vigilen la función pública.'} |
-| Probidad |
-| --- |
-| {'Def': 'Mantenemos una conducta honesta e íntegra. Esto implica que el interés común prima sobre el particular, de modo que no utilizaremos ni el cargo ni los recursos públicos para obtener beneficios o privilegios personales y seremos imparciales en el ejercicio de nuestras funciones.'} |
-| Respeto |
-| --- |
-| {'Def': 'Realizaremos nuestras labores funcionarias en un marco de cordialidad, igualdad, respeto y libertades, dignidad e individualidad de cada persona.'} |
-| Inclusion |
-| --- |
-| {'Def': 'No realizaremos discriminación de ningún tipo entre funcionario(a), usuario(a) o beneficiario(a) alguno(a) y reconocemos los mismos derechos y oportunidades, garantizando las condiciones necesarias para practicar este principio. De esta manera pretendemos eliminar cualquier distinción, exclusión o preferencia fundada en razones arbitrarias y/o personales, como el sexo, la orientación sexual, la religión, la raza, la etnia, la nacionalidad, la adherencia política, entre otras.'} |
-| Sostenibilidad |
-| --- |
-| {'Def': 'Integramos la dimensión ambiental y la adaptación al cambio climático en nuestras políticas y proyectos, buscando un desarrollo regional que satisfaga las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas.'} |
-| Coherencia_y_Coordinacion |
-| --- |
-| {'Def': 'Actuamos en armonía con las políticas nacionales y en coordinación con otros órganos del Estado y los gobiernos locales, para optimizar el uso de los recursos y potenciar el impacto de la acción pública en el territorio.'} |
+-
+  #### Compromiso
+  #### Definicion
+  Nos identificamos con la institución, somos parte de ella y somos conscientes de nuestra responsabilidad con la comunidad, por lo que asumimos la función pública con responsabilidad y profesionalismo, brindando un servicio de excelencia a las personas que viven en nuestra Región. Asimismo, la institución reconoce la labor realizada por los(as) funcionarios(as) y les brinda un ambiente laboral con adecuadas condiciones, resguardando su dignidad y derechos y dándoles oportunidades de desarrollo.
+-
+  #### Eficiencia
+  #### Definicion
+  Realizamos nuestro trabajo enfocándonos en las personas y en contribuir a mejorar su calidad de vida y satisfacer las necesidades que presentan las comunidades en el territorio de nuestra Región, usando de manera eficiente los recursos públicos disponibles y necesarios para cumplir nuestros objetivos institucionales con excelencia.
+-
+  #### Profesionalismo
+  #### Definicion
+  Reconocemos que el ingreso a la Administración, su permanencia en ella y el desarrollo profesional de una carrera funcionaria dependen de nuestras capacidades y del correcto desempeño de nuestro cargo o función, por lo que velamos por la rectitud, probidad, idoneidad, honestidad e irrestricto apego a la normativa en el desempeño de nuestras funciones.
+-
+  #### Transparencia
+  #### Definicion
+  Garantizamos y resguardamos el derecho a la ciudadanía de conocer y acceder a toda la información acerca de las actuaciones y decisiones de nuestra institución, posibilitando y facilitando que los ciudadanos conozcan y vigilen la función pública.
+-
+  #### Probidad
+  #### Definicion
+  Mantenemos una conducta honesta e íntegra. Esto implica que el interés común prima sobre el particular, de modo que no utilizaremos ni el cargo ni los recursos públicos para obtener beneficios o privilegios personales y seremos imparciales en el ejercicio de nuestras funciones.
+-
+  #### Respeto
+  #### Definicion
+  Realizaremos nuestras labores funcionarias en un marco de cordialidad, igualdad, respeto y libertades, dignidad e individualidad de cada persona.
+-
+  #### Inclusion
+  #### Definicion
+  No realizaremos discriminación de ningún tipo entre funcionario(a), usuario(a) o beneficiario(a) alguno(a) y reconocemos los mismos derechos y oportunidades, garantizando las condiciones necesarias para practicar este principio. De esta manera pretendemos eliminar cualquier distinción, exclusión o preferencia fundada en razones arbitrarias y/o personales, como el sexo, la orientación sexual, la religión, la raza, la etnia, la nacionalidad, la adherencia política, entre otras.
+-
+  #### Sostenibilidad
+  #### Definicion
+  Integramos la dimensión ambiental y la adaptación al cambio climático en nuestras políticas y proyectos, buscando un desarrollo regional que satisfaga las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas.
+-
+  #### Coherencia y Coordinacion
+  #### Definicion
+  Actuamos en armonía con las políticas nacionales y en coordinación con otros órganos del Estado y los gobiernos locales, para optimizar el uso de los recursos y potenciar el impacto de la acción pública en el territorio.
 
 ## Seccion 6 Definiciones Relevantes Glosario
 ### Glosario
@@ -447,19 +464,27 @@ La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el
 - División de Desarrollo Social y Humano.
 - División de Infraestructura y Transportes.
 - División de Fomento e Industria.
-#### Ctx Optional
+#### Contexto opcional
 - Adicionalmente, la Ley N°19.175 (Art. 68) permite al Gobernador Regional, con acuerdo del CORE, crear una División de Prevención del Delito, encargada de las tareas de coordinación y gestión de las funciones del GORE en materia de seguridad y prevención.
 - Además, se conjugan una serie de otros departamentos y unidades, dependientes de las primeras, que apoyan y complementan la gestión tanto administrativa como financiera de la organización.
 ### Organigrama en detalle
 #### Contexto
 (El organigrama detallado presentado en el manual 2024 sigue vigente en sus líneas generales. Se debe consultar la última resolución oficial del GORE Ñuble para cualquier actualización específica de departamentos o unidades internas).
 #### Nivel Superior
-| Gobernador_Region_de_Nuble |
-| --- |
-| {'Items': ['Comunicaciones', 'Gabinete Gobernador', 'Centro Integral de Emergencia y Seguridad (CIES)', 'Administradora Regional', 'Corporación Regional de Desarrollo de Ñuble (u otras entidades asociativas)', 'Asesoría Jurídica']} |
-| Consejo_Region_de_Nuble |
-| --- |
-| {'Items': ['Secretaría Ejecutiva CORE', 'Unidad de Control']} |
+-
+  #### Gobernador Region de Nuble
+  #### Items
+  - Comunicaciones
+  - Gabinete Gobernador
+  - Centro Integral de Emergencia y Seguridad (CIES)
+  - Administradora Regional
+  - Corporación Regional de Desarrollo de Ñuble (u otras entidades asociativas)
+  - Asesoría Jurídica
+-
+  #### Consejo Region de Nuble
+  #### Items
+  - Secretaría Ejecutiva CORE
+  - Unidad de Control
 #### Nivel de Asesoria
 #### Items
 - Comité de Ciencia, Tecnología, Conocimiento e Innovación para el Desarrollo (CCTID)
@@ -468,27 +493,72 @@ La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el
 - Unidad de Calidad y Gestión Institucional
 - Oficina de Partes (y Archivo)
 #### Divisiones
-| Jefe_Division_de_Planificacion_y_Desarrollo_Regional_DIPLADE |
-| --- |
-| {'Items': ['Comité Pertinencia y Vinculación Estratégica', 'Departamento de Planificación Estratégica y Ordenamiento Territorial', 'Departamento de Desarrollo de Proyectos Estratégicos', 'Departamento de Desarrollo Urbano (y/o Área Metropolitana, si aplica)', 'Departamento de Puesta en Valor del Patrimonio']} |
-| Jefe_Division_de_Presupuesto_e_Inversion_Regional_DIPIR |
-| --- |
-| {'Items': ['Departamento de Análisis y Evaluación de Inversiones (SNI)', 'Departamento de Presupuesto Regional', 'Departamento de Gestión de Inversiones y Convenios']} |
-| Jefe_Division_de_Desarrollo_Social_y_Humano |
-| --- |
-| {'Departamentos': [{'Departamento_Fondos_Concursables_y_Programas_Sociales': {'Items': ['Unidad Subvenciones (Ej. 8% FNDR)', 'Unidad Programas Sociales Regionales']}}, {'Departamento_Analisis_y_Gestion_Territorial': {'Items': ['Unidad Participación Ciudadana', 'Unidad Territorial Provincial (si aplica)', 'Unidad de Seguimiento de Políticas, Planes y Programas Sociales']}}]} |
-| Jefe_Division_de_Fomento_e_Industria |
-| --- |
-| {'Items': ['Departamento Zonas en Desarrollo (Territorios Rezagados, Zonas Extremas)', 'Departamento Desarrollo Económico Local y PYMES', 'Departamento Ciencia, Tecnología e Innovación para la Competitividad (gestión FRPD)', 'Departamento de Desarrollo Empresarial y Atracción de Inversiones', 'Departamento de Riego y Medio Ambiente (o unidad específica de Medio Ambiente y Cambio Climático)']} |
-| Jefe_Division_de_Infraestructura_y_Transporte |
-| --- |
-| {'Departamentos': [{'Departamento_de_Infraestructura_y_Equipamiento_Regional': {'Items': ['Unidad Saneamiento Básico (APR, alcantarillado)']}}, {'Departamento_Gestion_en_Transporte_y_Telecomunicaciones': {'Items': ['Unidad Conectividad (digital y física)']}}]} |
-| Jefe_Division_de_Administracion_y_Finanzas_DAF |
-| --- |
-| {'Departamentos': [{'Departamento_de_Gestion_y_Desarrollo_de_Personas': {'Items': ['Unidad Gestión de Personas', 'Unidad Desarrollo de Personas (Capacitación)']}}, 'Departamento_de_Finanzas_y_Contabilidad', {'Unidad_de_Gestion_Operativa_Interna': {'Items': ['Servicios Generales, Adquisiciones']}}, 'Unidad_de_Abastecimiento', 'Unidad_de_Tecnologias_de_la_Informacion_y_Comunicaciones_TIC_y_Transformacion_Digital']} |
-| Opcional_Jefe_Division_de_Prevencion_del_Delito |
-| --- |
-| {'Ctx': 'Departamentos o unidades según las necesidades de la estrategia regional de prevención.'} |
+-
+  #### Jefe Division de Planificacion y Desarrollo Regional DIPLADE
+  #### Items
+  - Comité Pertinencia y Vinculación Estratégica
+  - Departamento de Planificación Estratégica y Ordenamiento Territorial
+  - Departamento de Desarrollo de Proyectos Estratégicos
+  - Departamento de Desarrollo Urbano (y/o Área Metropolitana, si aplica)
+  - Departamento de Puesta en Valor del Patrimonio
+-
+  #### Jefe Division de Presupuesto e Inversion Regional DIPIR
+  #### Items
+  - Departamento de Análisis y Evaluación de Inversiones (SNI)
+  - Departamento de Presupuesto Regional
+  - Departamento de Gestión de Inversiones y Convenios
+-
+  #### Jefe Division de Desarrollo Social y Humano
+  #### Departamentos
+  -
+    #### Departamento Fondos Concursables y Programas Sociales
+    #### Items
+    - Unidad Subvenciones (Ej. 8% FNDR)
+    - Unidad Programas Sociales Regionales
+  -
+    #### Departamento Analisis y Gestion Territorial
+    #### Items
+    - Unidad Participación Ciudadana
+    - Unidad Territorial Provincial (si aplica)
+    - Unidad de Seguimiento de Políticas, Planes y Programas Sociales
+-
+  #### Jefe Division de Fomento e Industria
+  #### Items
+  - Departamento Zonas en Desarrollo (Territorios Rezagados, Zonas Extremas)
+  - Departamento Desarrollo Económico Local y PYMES
+  - Departamento Ciencia, Tecnología e Innovación para la Competitividad (gestión FRPD)
+  - Departamento de Desarrollo Empresarial y Atracción de Inversiones
+  - Departamento de Riego y Medio Ambiente (o unidad específica de Medio Ambiente y Cambio Climático)
+-
+  #### Jefe Division de Infraestructura y Transporte
+  #### Departamentos
+  -
+    #### Departamento de Infraestructura y Equipamiento Regional
+    #### Items
+    - Unidad Saneamiento Básico (APR, alcantarillado)
+  -
+    #### Departamento Gestion en Transporte y Telecomunicaciones
+    #### Items
+    - Unidad Conectividad (digital y física)
+-
+  #### Jefe Division de Administracion y Finanzas DAF
+  #### Departamentos
+  -
+    #### Departamento de Gestion y Desarrollo de Personas
+    #### Items
+    - Unidad Gestión de Personas
+    - Unidad Desarrollo de Personas (Capacitación)
+  - Departamento_de_Finanzas_y_Contabilidad
+  -
+    #### Unidad de Gestion Operativa Interna
+    #### Items
+    - Servicios Generales, Adquisiciones
+  - Unidad_de_Abastecimiento
+  - Unidad_de_Tecnologias_de_la_Informacion_y_Comunicaciones_TIC_y_Transformacion_Digital
+-
+  #### Opcional Jefe Division de Prevencion del Delito
+  #### Contexto
+  Departamentos o unidades según las necesidades de la estrategia regional de prevención.
 ### Funciones de las Unidades Base Segun DFL 1 19175
 #### Items
 | Unidad | Def |
@@ -536,41 +606,17 @@ Sin perjuicio de lo anterior, los postulantes no deberán estar afectados a las 
 | Item | Def |
 | --- | --- |
 | 1. | Hacer uso de los feriados, permisos, licencias y participar en las acciones de capacitación. |
-| Item | Def |
-| --- | --- |
 | 2. | Gozar de todas las prestaciones y beneficios que contemplen los sistemas de previsión y bienestar social. |
-| Item | Def |
-| --- | --- |
 | 3. | Ser defendidos y exigir que la institución a que pertenezcan persiga la responsabilidad civil y criminal de las personas que atenten contra su vida o su integridad corporal, con motivo del desempeño de sus funciones, o que, por dicho motivo, los injurien o calumnien en cualquier forma. |
-| Item | Def |
-| --- | --- |
 | 4. | Percibir por sus servicios las remuneraciones y demás asignaciones adicionales. |
-| Item | Def | Items |
-| --- | --- | --- |
-| 5. | Percibir las siguientes asignaciones: | ['Horas extraordinarias.', 'Viático, pasajes u otros análogos.'] |
-| Item | Def |
-| --- | --- |
+| 5. | Percibir las siguientes asignaciones: |
 | 6. | Derecho a afiliarse a los Servicios de Bienestar (Depende si está creado). |
-| Item | Def |
-| --- | --- |
 | 7. | Derecho a Asignaciones Familiares. |
-| Item | Def |
-| --- | --- |
 | 8. | Derecho a formar y a afiliarse a Asociaciones de funcionarios. |
-| Item | Def |
-| --- | --- |
 | 9. | Gozar de estabilidad en el empleo. |
-| Item | Def |
-| --- | --- |
 | 10. | Ascender en el respectivo escalafón. |
-| Item | Def |
-| --- | --- |
 | 11. | Participar en concursos. |
-| Item | Def |
-| --- | --- |
 | 12. | Recibir asistencia en caso de accidente de trabajo o enfermedad profesional. |
-| Item | Def |
-| --- | --- |
 | 13. | Todos los funcionarios de planta o contrata que sufran un accidente de trabajo o un accidente de trayecto tienen el derecho a atenderse en los Servicios Médicos de la Mutual de Seguridad de la Cámara Chilena de la Construcción. |
 ### Licencias Medicas
 #### Contexto
@@ -589,7 +635,7 @@ Los y las funcionarias(os) que presenten una licencia médica deben asegurarse d
 | 5. | Bonificación de Salud y Bonificación Compensatoria Previsional: Los funcionarios regidos por la EUS tienen derecho a una bonificación de salud según lo establecido en el artículo 3° de la Ley 18.566. Además, existe la bonificación compensatoria previsional, regida por los artículos 10 y 1 de la Ley 18.675. |
 | 6. | Asignación de Responsabilidad Superior: Los funcionarios directivos entre los grados 1-A y 5 reciben una asignación de responsabilidad superior al 40% del sueldo base. |
 | 7. | Asignación Modernización: Dentro de los componentes comunes de la EUS, existe la Asignación de Modernización, regida por la Ley 19.553. |
-#### Ctx Optional
+#### Contexto opcional
 Nota sobre personal a contrata GORE (Ley de Presupuestos 2026): La Glosa 01, Partida 31 de la Ley N°21.796 (Presupuestos 2026) establece que para el personal a contrata de los GORE no regirá la limitación de antigüedad del Estatuto Administrativo. Asimismo, hasta un 20% del personal a contrata podrá desempeñar funciones directivas por encargo del Gobernador Regional. El personal a honorarios podrá tener calidad de Agente Público para efectos de responsabilidad.
 ### Permisos con Goce de Remuneraciones
 #### Contexto
@@ -607,7 +653,7 @@ Comúnmente conocidos como vacaciones, se utilizan para el descanso de los funci
 - De 1 a 15 años: 15 días hábiles
 - De 15 a 20 años: 20 días hábiles
 - Más de 20 años laborales: 25 días hábiles
-#### Ctx Optional
+#### Contexto opcional
 - Para justificar los años trabajados, se debe presentar un Certificado de Vacaciones Progresivas otorgado por la AFP.
 - Los feriados legales pueden o no ser utilizados durante el año. Si no se utilizan, pueden ser traspasados según la normativa vigente.
 - Para solicitar este permiso, se debe hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
@@ -618,7 +664,7 @@ Comúnmente conocidos como vacaciones, se utilizan para el descanso de los funci
 #### Proceso
 - Planificación de la actividad y detalles
 - Características reales del cometido, respaldadas por correo, invitación, planificación, etc.
-#### Ctx Optional
+#### Contexto opcional
 La Ley de Presupuestos 2026 (Artículo 22) instruye reducir las comisiones de servicio, especialmente al extranjero, a las imprescindibles.
 ### Jornada Horaria y Mecanismo de Control de Jornada
 #### Requisitos
@@ -629,7 +675,7 @@ La jornada laboral corresponde a 44 horas semanales, distribuidas de la siguient
 #### Items
 - Lunes a Jueves: 9 horas
 - Viernes: 8 horas
-#### Ctx Optional
+#### Contexto opcional
 - La hora de ingreso podrá ser entre las 8:00 y las 9:00 horas, y la hora de salida dependerá de la hora en que se cumplen las 9 horas (de lunes a jueves) y las 8 horas (los viernes).
 - Cuando por distintas razones el funcionario olvide marcar, deberá justificarse con la jefatura directa a través de correo electrónico con copia al GDP.
 ### Jornada Extraordinaria
@@ -640,57 +686,25 @@ Para trabajar jornadas extraordinarias, el funcionario deberá presentar el form
 Todos los años, se aprueba un Plan Anual de Capacitación, el cual establece las actividades de capacitación que se desarrollará el Gobierno Regional durante el año, y a quienes irán dirigidas. Existen diversas posibilidades de optar a actividades de capacitación, como Cursos de la Contraloría, Campus del Servicio Civil, Diplomados y Cursos de la SUBDERE, entre otros. Cada vez que un funcionario(a) quiera optar a estas actividades de perfeccionamiento, deberá presentar al Encargado de Capacitación del GORE un formulario firmado por su jefatura directa. Finalmente, al obtener su certificado de aprobación, deberá remitirlo al Encargado de Capacitación para su correspondiente registro.
 ### Proceso de Calificaciones Funcionarias
 #### Proceso
-| Item | Def |
-| --- | --- |
-| 1. | El sistema de calificación tendrá por objeto evaluar el desempeño y las aptitudes de cada funcionario, atendidas las exigencias y características de su cargo, y servirá de base para el ascenso, los estímulos y la eliminación del servicio. |
-| Item | Req | Items |
-| --- | --- | --- |
-| 2. | Todos los funcionarios, incluido el personal a contrata, deben ser calificados anualmente, en alguna de las siguientes listas: | ['Lista N° 1: Distinción', 'Lista N° 2: Buena', 'Lista N° 3: Condicional', 'Lista N° 4: Eliminación'] |
-| Item | Resp | Req |
-| --- | --- | --- |
-| 3. | El Jefe Superior de la institución | Será personalmente responsable del cumplimiento de este deber. |
-| Item | Cond |
-| --- | --- |
-| 4. | No serán calificados el Jefe Superior de la institución, su subrogante legal, los miembros de la Junta Calificadora Central y los delegados del personal, quienes conservarán la calificación del año anterior, cuando corresponda. Con todo, si el delegado del personal lo pidiere, será calificado por su Jefe Directo. |
 | Item | Req |
 | --- | --- |
+| 1. |  |
+| 2. | Todos los funcionarios, incluido el personal a contrata, deben ser calificados anualmente, en alguna de las siguientes listas: |
+| 3. | Será personalmente responsable del cumplimiento de este deber. |
+| 4. |  |
 | 5. | La calificación se hará por la Junta Calificadora. |
-| Item | Req |
-| --- | --- |
 | 6. | Las Juntas Calificadoras se integrarán según normativa. |
-| Item | Req |
-| --- | --- |
 | 7. | Los funcionarios elegirán un representante titular y un suplente. La Asociación de Funcionarios con mayor representación tendrá derecho a designar un delegado con voz. |
-| Item | Req |
-| --- | --- |
 | 8. | La Junta Calificadora será presidida por el funcionario de más alto nivel jerárquico. |
-| Item | Ctx |
-| --- | --- |
-| 9. | Las normas de este párrafo sirven de base para el reglamento de calificaciones. |
-| Item | Ctx |
-| --- | --- |
-| 10. | La calificación evaluará los doce meses de desempeño entre el 1° de septiembre y el 31 de agosto. |
-| Item | Req |
-| --- | --- |
+| 9. |  |
+| 10. |  |
 | 11. | El proceso de calificaciones deberá iniciarse el 1° de septiembre y terminarse a más tardar el 30 de noviembre. |
-| Item | Prohib |
-| --- | --- |
-| 12. | No serán calificados funcionarios con menos de seis meses de desempeño efectivo. |
-| Item | Req |
-| --- | --- |
+| 12. |  |
 | 13. | La Junta Calificadora considerará la precalificación del Jefe Directo y anotaciones de mérito o demérito. |
-| Item | Resp | Req |
-| --- | --- | --- |
-| 14. | Los jefes | Son responsables de las precalificaciones. |
-| Item | Ctx |
-| --- | --- |
-| 15. | Elementos básicos: hoja de vida y hoja de calificación. |
-| Item | Ctx |
-| --- | --- |
-| 16. | Infracción establecida en sumario se considera una vez. |
-| Item | Ctx |
-| --- | --- |
-| 17. | Anotaciones de mérito: por conducta o desempeño destacado. |
+| 14. | Son responsables de las precalificaciones. |
+| 15. |  |
+| 16. |  |
+| 17. |  |
 ### Prevencion de Riesgos Higiene y Seguridad
 #### Contexto
 El Gobierno Regional de Ñuble se encuentra adherido a la Mutual de Seguridad de la Cámara Chilena de la Construcción desde el año 2018 a la fecha. <www.mutual.cl>
@@ -705,9 +719,9 @@ El Gobierno Regional de Ñuble se encuentra adherido a la Mutual de Seguridad de
 #### Requisitos
 | Caso | Items |
 | --- | --- |
-| Accidentes del Trabajo | ['Denuncia Individual de Accidente del Trabajo (DIAT), Cédula de Identidad.'] |
-| Accidente de Trayecto | ['DIAT, Cédula de Identidad.'] |
-| Enfermedad Profesional | ['Denuncia Individual de Enfermedad Profesional (DIEP), Cédula de Identidad.'] |
+| Accidentes del Trabajo | Denuncia Individual de Accidente del Trabajo (DIAT), Cédula de Identidad. |
+| Accidente de Trayecto | DIAT, Cédula de Identidad. |
+| Enfermedad Profesional | Denuncia Individual de Enfermedad Profesional (DIEP), Cédula de Identidad. |
 ### Responsabilidad del Funcionario frente a un Accidente
 #### Requisitos
 - El funcionario debe informar a su Jefe directo y al Departamento de Gestión de Personas de cualquier accidente laboral. El reporte debe ser a la brevedad.
@@ -884,7 +898,7 @@ La transformación digital es un proceso continuo que busca modernizar la gesti�
 ## Seccion 19 Evaluacion de Induccion
 ### Contexto
 Como cierre del proceso de inducción, se debe contar con una fase de evaluación dirigida por el equipo de gestión de personas al funcionario que haya desarrollado este proceso formal de inducción, en la lógica de mejora continua, para obtener información significativa, monitorear si los objetivos se están logrando y realizar las adecuaciones pertinentes.
-### Ctx Optional
+### Contexto opcional
 Esta evaluación considera los siguientes ámbitos:
 ### Actividad de Bienvenida
 #### Table

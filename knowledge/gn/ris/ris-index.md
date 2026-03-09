@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-index
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_index_koda.yml
 version: 2.0.0
 status: published
@@ -24,82 +24,23 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.42
+    cr: 1.67
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 12
-    meat_count: 69
+    skeleton_count: 1
+    meat_count: 42
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/ris__ris-index.md.json
 ---
 
 # Índice RIS SNI — GORE Ñuble
-## ID
-GN-RIS-INDEX-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-11-28
-
-## Modification Date
-2025-11-28
-
-## Ctx
-Índice maestro de Requisitos de Información Sectorial (RIS) del Sistema Nacional de Inversiones (SNI) relevantes para el GORE Ñuble.
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-GN-RIS-INDEX-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing):
-  Act->Action, Cause->Cause, Cond->Condition, Cpt->Concept, Ctx->Context,
-  Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
-  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
-  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
-  Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
-  Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
-  Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
-
-## RIS Index
-### ID
-GN-RIS-INDEX-01
-### Purp
+## Proposito
 Servir como mapa de navegación para los diferentes RIS sectoriales utilizados por el GORE Ñuble.
-### Entradas
+## Entradas
 | ID | Cpt | Urn | Fuente-URL | Estado |
 | --- | --- | --- | --- | --- |
 | RIS-PROYINV-2023 | RIS Genéricas para Proyectos de Inversión (SNI 2023). | urn:gn:kb:ris-proyinv | https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf | draft |

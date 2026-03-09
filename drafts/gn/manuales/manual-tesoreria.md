@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.6
+    cr: 2.66
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -38,18 +38,12 @@ extensions:
 
 # Manual 1.3: Tesorería y Gestión de Ingresos
 ## Definitions
--
-  ### Definicion
-  Funcionario responsable de la custodia de fondos, valores y administración de cuentas corrientes.
--
-  ### Definicion
-  Programación Anual de Caja; herramienta de proyección de liquidez.
--
-  ### Definicion
-  Cuenta Única Fiscal del Banco Estado.
--
-  ### Definicion
-  Transferencia Electrónica de Fondos.
+| ID | Def |
+| --- | --- |
+| DEF-TESORERO | Funcionario responsable de la custodia de fondos, valores y administración de cuentas corrientes. |
+| DEF-PAC | Programación Anual de Caja; herramienta de proyección de liquidez. |
+| DEF-CUF | Cuenta Única Fiscal del Banco Estado. |
+| DEF-TEF | Transferencia Electrónica de Fondos. |
 
 ## Manual 1 3 Tesoreria y Gestión de Ingresos
 ### Objetivos
@@ -66,14 +60,10 @@ DEF-TESORERO
 | Firma Conjunta: Autorización de pagos junto a Jefe DAF o Jefe Finanzas. |
 #### 2 Seguridad de Valores
 #### Reqs
-| Act |
-| --- |
-| Arqueo de Caja sorpresivo (realizado por Finanzas o Auditoría). |
 | Req |
 | --- |
+|  |
 | Uso de Caja Fuerte ignífuga con acceso restringido. |
-| Req |
-| --- |
 | Póliza de Fidelidad Funcionaria para personal con manejo de fondos. |
 #### 3 Marco Normativo
 #### Fuentes
@@ -158,7 +148,7 @@ Pasar diferencias al día siguiente sin aclarar.
 Informe Diario de Disponibilidades y Deuda Flotante Diaria.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml

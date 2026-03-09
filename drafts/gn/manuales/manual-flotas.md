@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.6
+    cr: 3.79
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -57,35 +57,19 @@ Servicios transversales de apoyo a la operación institucional:
 | Servicio | Alcance |
 | --- | --- |
 | Mantención de Infraestructura | Edificios, instalaciones, sistemas eléctricos, sanitarios. |
-| Servicio | Alcance |
-| --- | --- |
 | Aseo y Ornato | Limpieza de oficinas, áreas comunes, jardines. |
-| Servicio | Alcance |
-| --- | --- |
 | Seguridad Física | Vigilancia, control de acceso, circuito cerrado. |
-| Servicio | Ctx |
-| --- | --- |
-| Cafetería y Servicios de Alimentación | Si aplica. |
-| Servicio | Alcance |
-| --- | --- |
+| Cafetería y Servicios de Alimentación |  |
 | Correo y Mensajería | Distribución interna y externa de correspondencia. |
-| Servicio | Alcance |
-| --- | --- |
 | Gestión de Estacionamientos | Asignación y control de espacios. |
 #### 2 Organizacion del Area
 #### Roles
 | Rol | Def |
 | --- | --- |
 | Jefe de Servicios Generales | Responsable de la coordinación integral. |
-| Rol | Areas |
-| --- | --- |
-| Supervisores por Área | ['Mantención', 'Aseo', 'Seguridad'] |
-| Rol | Def |
-| --- | --- |
+| Supervisores por Área |  |
 | Personal Operativo | Funcionarios propios o empresas contratadas. |
-| Rol | Purp |
-| --- | --- |
-| Coordinación con DAF | Para contrataciones, pagos y control presupuestario. |
+| Coordinación con DAF |  |
 #### 3 Contratos de Servicios Externalizados
 #### Definicion
 La mayoría de servicios generales se ejecutan mediante contratos externos:
@@ -293,14 +277,10 @@ Sección V: Control y Reportería
 - Incidentes: Número de accidentes, multas de tránsito.
 #### 19 Reportes Periodicos
 #### Reportes
-| Reporte | Contenido |
-| --- | --- |
-| Informe Mensual de Flota | ['Estado de cada vehículo.', 'Kilometraje recorrido.', 'Consumo de combustible.', 'Mantenciones realizadas.', 'Costos incurridos.'] |
 | Reporte | Def |
 | --- | --- |
+| Informe Mensual de Flota |  |
 | Informe de Vencimientos | Documentos próximos a vencer. |
-| Reporte | Def |
-| --- | --- |
 | Ranking de Conductores | Por consumo, incidentes, multas. |
 #### 20 Auditoria de Uso
 #### Acciones
@@ -334,7 +314,7 @@ Procedimiento según Manual 2.3 (Activo Fijo):
 #### Roles
 | Rol | Resp |
 | --- | --- |
-| Conductor | ['Uso correcto', 'Registro de bitácora', 'Reporte de fallas'] |
+| Conductor | Uso correcto, Registro de bitácora, Reporte de fallas |
 | Encargado de Flota | Planificación, asignación, control documental. |
 | Jefe de Servicios Generales | Supervisión integral del área. |
 | DAF | Control presupuestario y de contratos. |
@@ -343,7 +323,7 @@ Procedimiento según Manual 2.3 (Activo Fijo):
 Este manual establece los procedimientos para mantener la operatividad de los servicios de soporte institucional y la flota vehicular del GORE.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_3_activo_fijo.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml

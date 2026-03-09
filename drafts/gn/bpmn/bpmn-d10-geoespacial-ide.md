@@ -40,7 +40,7 @@ extensions:
 
 # BPMN D10: Gestión de Información Geoespacial (IDE/Geonodo)
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -53,7 +53,7 @@ Coordinador Regional IDE
 ### Subprocesos
 ~10
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.4308-4478
 
 ## Body MD

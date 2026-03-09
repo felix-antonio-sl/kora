@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 3.76
+    cr: 4.04
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Flujo de aprobacion documental operativo; revisar compresion
@@ -80,24 +80,12 @@ Este procedimiento se deduce de la aplicación de los principios de la Ley N° 1
 | Cpt | Resp | Ref | Act |
 | --- | --- | --- | --- |
 | Paso 1: Iniciación y Borrador | Unidad GORE competente (ej. DAF, DIDESOH, etc.). | KB-GN-102-ACTORES-MATRIZ-01 | La unidad identifica la necesidad y elabora el borrador del acto administrativo (ej. Resolución Exenta), fundamentando debidamente las razones de hecho y de derecho que lo motivan. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
 | Paso 2: Revisión Jurídica | Asesoría Jurídica. | KB-GN-102-ACTORES-MATRIZ-01 | El borrador se remite a la Asesoría Jurídica para un control de legalidad, verificando que el acto se ajuste a la normativa vigente y a las competencias del GORE. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
 | Paso 3: Visto Bueno (V°B°) de Control Interno | Unidad de Control. | KB-GN-102-ACTORES-MATRIZ-01 | La Unidad de Control revisa el borrador para asegurar su conformidad con los procedimientos internos y los principios de buena administración. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
 | Paso 4: V°B° de Jefaturas y Administrador/a Regional | Jefatura de División iniciadora; Administrador/a Regional. | KB-GN-102-ACTORES-MATRIZ-01 | El acto es visado por la jefatura de la división que lo origina. Posteriormente, es revisado y visado por el/la Administrador/a Regional, quien actúa como el último filtro de coordinación administrativa. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
-| Paso 5: Firma del Gobernador/a | Gobernador/a Regional. | ['KB-GN-102-ACTORES-MATRIZ-01', 'KB-GN-102-EXPEDIENTE-FEA-01'] | Una vez completados todos los V°B° internos, el acto es presentado al Gobernador/a para su firma mediante FEA. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
-| Paso 6: Notificación y Archivo | Unidad GORE competente; Oficina de Partes. | ['KB-GN-102-ACTORES-MATRIZ-01', 'KB-GN-102-EXPEDIENTE-FEA-01'] | El acto firmado se notifica a los interesados, si los hubiere, y se archiva en el expediente electrónico correspondiente. |
-| Cpt | Resp | Ref | Ctx |
-| --- | --- | --- | --- |
-| Control Externo | Contraloría General de la República (CGR). | KB-GN-102-ACTORES-MATRIZ-01 | Por regla general, los actos que no comprometen recursos presupuestarios están exentos del trámite de Toma de Razón previo. Sin embargo, la CGR siempre conserva la facultad de ejercer un control de legalidad posterior sobre ellos. |
+| Paso 5: Firma del Gobernador/a | Gobernador/a Regional. | KB-GN-102-ACTORES-MATRIZ-01, KB-GN-102-EXPEDIENTE-FEA-01 | Una vez completados todos los V°B° internos, el acto es presentado al Gobernador/a para su firma mediante FEA. |
+| Paso 6: Notificación y Archivo | Unidad GORE competente; Oficina de Partes. | KB-GN-102-ACTORES-MATRIZ-01, KB-GN-102-EXPEDIENTE-FEA-01 | El acto firmado se notifica a los interesados, si los hubiere, y se archiva en el expediente electrónico correspondiente. |
+| Control Externo | Contraloría General de la República (CGR). | KB-GN-102-ACTORES-MATRIZ-01 |  |
 
 ## Seccion 4 Flujos de Aprobacion para Iniciativas de Inversion IDI y Programas
 ### Proposito
@@ -175,15 +163,11 @@ La siguiente tabla clasifica los tipos de modificación presupuestaria y el acto
 #### Fundamento
 Por regla general, toda modificación que altere el presupuesto de inversión debe ser aprobada por el CORE. Sin embargo, la Ley de Presupuestos contempla excepciones para agilizar la gestión.
 #### Elementos
-| Cpt | Proc | Ref |
-| --- | --- | --- |
-| Aprobación CORE (Regla General) | La propuesta de modificación es preparada por DIPIR (inversión) y DAF (funcionamiento), presentada por el Gobernador y sometida a votación del CORE. | KB-GN-102-ACTORES-MATRIZ-01 |
-| Cpt | Def |
-| --- | --- |
-| Excepciones a la Aprobación CORE | La Glosa 01 de la Ley de Presupuestos permite al Gobernador realizar ciertas modificaciones sin acuerdo previo del CORE, como aumentos de costo de proyectos en ejecución (hasta un 10% con tope de 7.000 UTM) o la aplicación del 3% para emergencias. |
-| Req |
+| Cpt |
 | --- |
-| Aunque no requieren aprobación previa, el GORE debe informar mensualmente al CORE sobre estas modificaciones. |
+| Aprobación CORE (Regla General) |
+| Excepciones a la Aprobación CORE |
+|  |
 ### Seccion 5 3 Proceso de Aprobacion Externa Visacion DIPRES y Toma de Razon CGR
 #### Fundamento
 Las modificaciones presupuestarias, incluso las exentas de aprobación del CORE, deben pasar por un riguroso control externo antes de su vigencia.
@@ -233,15 +217,9 @@ Este flujo transforma una decisión de financiamiento (ej. un acuerdo del CORE) 
 | Cpt | Resp | Ref | Act |
 | --- | --- | --- | --- |
 | Paso 1: Elaboración del Borrador del Convenio | División técnica proponente (ej. DIDESOH, DIPIR). | KB-GN-102-ACTORES-MATRIZ-01 | Se redacta el borrador del convenio, especificando claramente el objeto, monto, plazos, productos esperados, obligaciones de las partes y los mecanismos de rendición de cuentas. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
 | Paso 2: Revisión Jurídica y Financiera | Asesoría Jurídica; DAF. | KB-GN-102-ACTORES-MATRIZ-01 | El borrador es revisado por la Asesoría Jurídica para garantizar su legalidad (esp. transferencias a privados según Ley de Presupuestos: concurso, garantías, etc.). La DAF revisa las cláusulas financieras y de rendición. |
-| Cpt | Resp | Ref | Act |
-| --- | --- | --- | --- |
 | Paso 3: Firma del Convenio | Gobernador/a Regional; Representante Legal de la entidad receptora. | KB-GN-102-ACTORES-MATRIZ-01 | El convenio es firmado por ambas partes, formalizando el acuerdo de voluntades. |
-| Cpt | Resp | Ref | Act | Warn |
-| --- | --- | --- | --- | --- |
-| Paso 4: Emisión de Resolución Aprobatoria y Toma de Razón | GORE; CGR. | KB-GN-102-ACTORES-MATRIZ-01 | El GORE emite una resolución que aprueba el convenio suscrito y autoriza la transferencia de fondos. Este acto, al comprometer gasto público, debe ser remitido obligatoriamente a CGR para su Toma de Razón. | La transferencia de fondos no puede realizarse hasta que la CGR tome razón de la resolución. |
+| Paso 4: Emisión de Resolución Aprobatoria y Toma de Razón | GORE; CGR. | KB-GN-102-ACTORES-MATRIZ-01 | El GORE emite una resolución que aprueba el convenio suscrito y autoriza la transferencia de fondos. Este acto, al comprometer gasto público, debe ser remitido obligatoriamente a CGR para su Toma de Razón. |
 
 ## Seccion 7 Conclusiones
 ### Proposito

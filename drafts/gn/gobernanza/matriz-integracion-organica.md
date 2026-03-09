@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 2.24
+    cr: 2.46
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Matriz editorial de integracion organica; mantener como artefacto
@@ -123,23 +123,13 @@ Indicadores y Estadísticas
 #### Titulo
 Gestión Institucional
 #### Artefactos
-| id | urn | titulo | path | tipo | resumen | XRef |
-| --- | --- | --- | --- | --- | --- | --- |
-| kb_gn_014 | urn:gn:kb:glosario-gore-nuble | Glosario GORE Ñuble | gestion/kb_gn_014_glosario_gore_nuble_koda.yml | KODA | Canon terminológico jurídico-administrativo: ~140 términos definidos. | ['GLOS-TERM-*'] |
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
+| kb_gn_014 | urn:gn:kb:glosario-gore-nuble | Glosario GORE Ñuble | gestion/kb_gn_014_glosario_gore_nuble_koda.yml | KODA | Canon terminológico jurídico-administrativo: ~140 términos definidos. |
 | kb_gn_017 | urn:gn:kb:manual-induccion-gore-nuble-2026 | Manual de Inducción 2025 | gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml | KODA | Guía de inducción para nuevos funcionarios del GORE Ñuble. |
-| id | urn | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- |
 | kb_gn_009 | urn:gn:kb:cuentas-publicas-2021-2024 | Cuentas Públicas 2021-2024 | gestion/kb_gn_009_cuentas_publicas_2021_2024_koda.yml | KODA | Síntesis de cuentas públicas del período 2021-2024. |
-| id | urn | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- |
 | kb_gn_015 | urn:gn:kb:flujos-aprobacion-documentos | Sistema de Aprobaciones | gestion/kb_gn_015_aprobaciones_koda.yml | KODA | Matrices de aprobación y flujos de autorización. |
-| id | urn | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- |
 | kb_gn_020 | urn:gn:kb:gestion-rendiciones | Gestión de Rendiciones | gestion/kb_gn_020_gestion_rendiciones_koda.yml | KODA | Procedimientos para rendición de cuentas (SISREC). |
-| id | urn | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- |
 | kb_gn_035 | urn:gn:kb:estrategia-gestion | Estrategia de Gestión | gestion/kb_gn_035_estrategia_gestion_koda.yml | KODA | Plan de gestión institucional del GORE. |
 #### Manuales Operativos
 #### Definicion
@@ -214,15 +204,9 @@ Arquitectura y Procesos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_050 | urn:gn:kb:aceleracion-regional | Aceleración Regional | arquitectura/kb_gn_050_aceleracion_regional_koda.yml | KODA | Plan de aceleración de capacidades del GORE. |
-| id | urn | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- |
 | kb_gn_080 | urn:gn:kb:cies-sitia | CIES/SITIA | arquitectura/kb_gn_080_cies_sitia_koda.yml | KODA | Sistemas CIES y SITIA: inteligencia y análisis territorial. |
-| id | urn | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- |
 | kb_gn_090 | urn:gn:kb:gestion-info-geoespacial | Gestión Geoespacial | arquitectura/kb_gn_090_gestion_informacion_geoespacial_koda.yml | KODA | Gestión de información geoespacial e IDE regional. |
-| id | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- |
-| catalog_procesos | Catálogo de Procesos | arquitectura/catalog_procesos_gore.yml | YAML | Índice de todos los procesos GORE documentados. |
+| catalog_procesos |  | Catálogo de Procesos | arquitectura/catalog_procesos_gore.yml | YAML | Índice de todos los procesos GORE documentados. |
 #### BPMN Procesos
 #### Definicion
 Diagramas BPMN de procesos institucionales
@@ -232,36 +216,16 @@ arquitectura/bpmn/
 | id | titulo | urn | path | koda_path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- | --- |
 | D01 | Actos Administrativos | urn:gn:kb:bpmn-d01-actos-administrativos | ../../../../sources/gn/arquitectura/bpmn/D01_actos_administrativos.md | arquitectura/bpmn/D01_actos_administrativos_koda.yml | BPMN | Proceso de emisión de actos administrativos. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D02 | Ciclo Presupuestario | urn:gn:kb:bpmn-d02-ciclo-presupuestario | arquitectura/bpmn/D02_ciclo_presupuestario.md | arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml | BPMN | Proceso del ciclo presupuestario anual. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D03 | Gestión IPR | urn:gn:kb:bpmn-d03-gestion-ipr | arquitectura/bpmn/D03_gestion_ipr.md | arquitectura/bpmn/D03_gestion_ipr_koda.yml | BPMN | Proceso de gestión de inversión pública regional. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D04 | Compras y Contrataciones | urn:gn:kb:bpmn-d04-compras-contrataciones | arquitectura/bpmn/D04_compras_contrataciones.md | arquitectura/bpmn/D04_compras_contrataciones_koda.yml | BPMN | Proceso de compras y contrataciones. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D05 | Inventarios y Activo Fijo | urn:gn:kb:bpmn-d05-inventarios-activo-fijo | arquitectura/bpmn/D05_inventarios_activo_fijo.md | arquitectura/bpmn/D05_inventarios_activo_fijo_koda.yml | BPMN | Proceso de control de inventarios. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D06 | Flota Vehicular | urn:gn:kb:bpmn-d06-flota-vehicular | arquitectura/bpmn/D06_flota_vehicular.md | arquitectura/bpmn/D06_flota_vehicular_koda.yml | BPMN | Proceso de gestión de flota. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D07 | Recursos Humanos | urn:gn:kb:bpmn-d07-rrhh | arquitectura/bpmn/D07_rrhh.md | arquitectura/bpmn/D07_rrhh_koda.yml | BPMN | Procesos de gestión de RRHH. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D08 | Rendiciones | urn:gn:kb:bpmn-d08-rendiciones | arquitectura/bpmn/D08_rendiciones.md | arquitectura/bpmn/D08_rendiciones_koda.yml | BPMN | Proceso de rendición de cuentas. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D09 | CIES/SITIA | urn:gn:kb:bpmn-d09-cies-sitia | arquitectura/bpmn/D09_cies_sitia.md | arquitectura/bpmn/D09_cies_sitia_koda.yml | BPMN | Procesos de inteligencia territorial. |
-| id | titulo | urn | path | koda_path | tipo | resumen |
-| --- | --- | --- | --- | --- | --- | --- |
 | D10 | Geoespacial/IDE | urn:gn:kb:bpmn-d10-geoespacial-ide | arquitectura/bpmn/D10_geoespacial_ide.md | arquitectura/bpmn/D10_geoespacial_ide_koda.yml | BPMN | Proceso de gestión geoespacial. |
-| id | titulo | path | tipo | resumen |
-| --- | --- | --- | --- | --- |
-| bpmn_index | Índice BPMN | arquitectura/bpmn/_index.yml | YAML | Índice de procesos BPMN. |
+| bpmn_index | Índice BPMN |  | arquitectura/bpmn/_index.yml |  | YAML | Índice de procesos BPMN. |
 ### Comunicaciones
 #### Titulo
 Comunicaciones Institucionales
@@ -296,11 +260,11 @@ Relaciones semánticas principales entre artefactos.
 | source | target | tipo | nota |
 | --- | --- | --- | --- |
 | kb_gn_000 | * | fundamenta | La guía intro es prerrequisito conceptual para todo el corpus. |
-| kb_gn_014 | ['kb_gn_018', 'kb_gn_019', 'kb_gn_020'] | define_términos | El glosario define la terminología usada en gestión. |
-| kb_gn_031 | ['kb_gn_210', 'kb_gn_211'] | norma | LOC GORE es el marco para ejecución presupuestaria. |
-| kb_gn_006 | ['kb_gn_019', 'kb_gn_011'] | orienta | La ERD orienta la priorización de inversiones. |
+| kb_gn_014 | kb_gn_018, kb_gn_019, kb_gn_020 | define_términos | El glosario define la terminología usada en gestión. |
+| kb_gn_031 | kb_gn_210, kb_gn_211 | norma | LOC GORE es el marco para ejecución presupuestaria. |
+| kb_gn_006 | kb_gn_019, kb_gn_011 | orienta | La ERD orienta la priorización de inversiones. |
 | IDX-BPMN | manual_* | describe_proceso | BPMN proporciona visión de proceso, manuales el detalle. |
-| kb_gn_720 | ['kb_gn_080', 'kb_gn_090'] | habilita | Estrategia TD+IA habilita sistemas de inteligencia. |
+| kb_gn_720 | kb_gn_080, kb_gn_090 | habilita | Estrategia TD+IA habilita sistemas de inteligencia. |
 
 ## Schema
 ### Titulo

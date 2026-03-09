@@ -25,7 +25,7 @@ extensions:
     source_type: mixed
     transformation_mode: korafy_composite
     fs: 100
-    cr: 3.46
+    cr: 3.47
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Organigrama operativo y estructura organica observables en la
@@ -43,9 +43,6 @@ extensions:
 
 ## Alcance
 Organigrama operativo y estructura organica observables en la fuente KODA y el slice TTL organizacional.
-
-## Fuente principal
-- `domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml`
 ## Proposito
 Describir estructura organizacional y funciones generales por unidad.
 

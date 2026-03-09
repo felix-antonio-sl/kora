@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:omega-ipr-gestion-fusion
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml
 version: 2.0.0
 status: published
@@ -23,15 +23,15 @@ extensions:
     source_type: ontology_yaml
     transformation_mode: derive_ttl_scope
     fs: 100
-    cr: 8.26
+    cr: 10.76
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Fusion semantica IPR/Gestion; requiere validacion de alcance.
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 10
-    meat_count: 647
+    skeleton_count: 8
+    meat_count: 637
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__omega-ipr-gestion-fusion.md.json
 ---

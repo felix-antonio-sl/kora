@@ -40,7 +40,7 @@ extensions:
 
 # RIS Infraestructura Deportiva (SNI 2024)
 ## Source
-### Ctx Required
+### Contexto requerido
 - https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf
 
 ## RIS Deportes 2024

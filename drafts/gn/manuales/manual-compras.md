@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.74
+    cr: 2.83
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -58,18 +58,10 @@ La gestión de compras del GORE se rige por:
 | Rango | Modalidad |
 | --- | --- |
 | < 3 UTM | Fondos Globales (Caja Chica) o Portal Mercado Público. |
-| Rango | Modalidad |
-| --- | --- |
 | 3 a 100 UTM | Compra Ágil (Preferente). Mínimo 3 cotizaciones en el sistema. |
-| Rango | Modalidad |
-| --- | --- |
 | 100 a 1.000 UTM | Licitación Pública (Normas Simplificadas). Contrato opcional (puede formalizarse con OC). |
-| Rango | Modalidad |
-| --- | --- |
 | > 1.000 UTM | Licitación Pública (Normas Generales). Contrato obligatorio y Garantía de Fiel Cumplimiento. |
-| Rango | Req |
-| --- | --- |
-| > 5.000 UTM | Garantía de Seriedad de la Oferta obligatoria (máximo 3% del monto). |
+| > 5.000 UTM |  |
 #### 2 Principios Rectores
 #### Principios
 | Principio | Req |
@@ -84,18 +76,10 @@ La gestión de compras del GORE se rige por:
 | ID | Sigla | Def |
 | --- | --- | --- |
 | MANUAL-COMPRAS-GLOS-PAC | PAC | Plan Anual de Compras. |
-| ID | Sigla | Def |
-| --- | --- | --- |
 | MANUAL-COMPRAS-GLOS-OC | OC | Orden de Compra emitida en Mercado Público. |
-| ID | Termino | Def |
-| --- | --- | --- |
-| MANUAL-COMPRAS-GLOS-CONVENIO-MARCO | Convenio Marco | Acuerdo suscrito por ChileCompra con proveedores para compras directas a precios predefinidos. |
-| ID | Sigla | Def |
-| --- | --- | --- |
+| MANUAL-COMPRAS-GLOS-CONVENIO-MARCO |  | Acuerdo suscrito por ChileCompra con proveedores para compras directas a precios predefinidos. |
 | MANUAL-COMPRAS-GLOS-CDP | CDP | Certificado de Disponibilidad Presupuestaria. |
-| ID | Termino | Def |
-| --- | --- | --- |
-| MANUAL-COMPRAS-GLOS-RECEPCION-CONFORME | Recepción Conforme | Acto formal que valida la entrega satisfactoria del bien o servicio. |
+| MANUAL-COMPRAS-GLOS-RECEPCION-CONFORME |  | Acto formal que valida la entrega satisfactoria del bien o servicio. |
 ### Seccion II Planificacion de Compras
 #### 4 Plan Anual de Compras PAC
 #### Definicion
@@ -264,12 +248,10 @@ Hito crítico que habilita el devengo y posterior pago.
 | Genera Acta de Recepción física o digital. |
 #### Servicios
 #### Proceso
-| Responsable |
-| --- |
-| Administrador del contrato |
-| Act |
-| --- |
-| Certifica el cumplimiento mediante Informe de Conformidad. |
+| Responsable | Act |
+| --- | --- |
+| Administrador del contrato |  |
+|  | Certifica el cumplimiento mediante Informe de Conformidad. |
 #### Integracion Contable
 #### Resultados
 La recepción conforme genera automáticamente el devengo presupuestario y el pasivo contable (Cuentas por Pagar).
@@ -281,7 +263,7 @@ Todos los pagos a proveedores deben realizarse exclusivamente mediante transfere
 #### Prohibiciones
 Pago en efectivo o cheque, salvo excepciones legalmente autorizadas.
 #### Nota Recepcion Fisica Bienes
-#### Ctx Optional
+#### Contexto opcional
 Para el procedimiento detallado de recepción física de bienes, consulte el Manual 2.2: Inventarios (./manual_2_2_inventarios.md) §7.
 #### 14 Devoluciones y Reclamos
 #### Plazo
@@ -349,14 +331,8 @@ Las garantías físicas (boletas, pólizas) se custodian en Tesorería. Las elec
 | Act |
 | --- |
 | Informe del administrador |
-| Act |
-| --- |
 | Notificación al proveedor |
-| Plazo |
-| --- |
-| Plazo de descargos (5 días hábiles) |
-| Act |
-| --- |
+|  |
 | Resolución que aplica o desestima la multa. |
 #### Cobro
 #### Proceso
@@ -418,7 +394,7 @@ Proveedores con evaluación deficiente pueden ser excluidos de futuras licitacio
 Este manual establece los lineamientos para una gestión de compras eficiente, transparente y conforme a la normativa de contratación pública.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:loc-gore
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/01_fundamentos/legal/kb_gn_031_loc_gore_koda.yml
 version: 2.0.0
 status: published
@@ -23,155 +23,67 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.07
+    cr: 1.82
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 19
-    meat_count: 445
+    skeleton_count: 5
+    meat_count: 423
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/normativa__loc-gore.md.json
 ---
 
 # Ley Orgánica Constitucional sobre Gobierno y Administración Regional
-## ID
-KB-GN-031-LOC-GORE-KODA
-
-## Version
-0.1.0
-
-## Status
-published
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-Cascade
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-11-27
-
-## Modification Date
-2025-11-27
-
-## Ctx
-LOC sobre Gobierno Interior y Administración de la Región (DFL 1-19.175)
-
-## Primary Source
-19175.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-LOC-GORE
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, relationships) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents use Ctx:, Ctx_Required:, or Ctx_Optional:.
-
-LANGUAGE POLICY: Keywords in English, content in original language (es-CL). Never translate content.
-END_LLM_INSTRUCTIONS
-
-
 ## Definiciones Centralizadas
-### ID
-DEF-LOC-GORE
-### Def
+### Definicion
 Conceptos orgánicos claves de la LOC de Gobierno y Administración Regional (DFL 1-19.175)
 ### GORE
-#### ID
-DEF-GORE
-#### Def
+#### Definicion
 Gobierno Regional. Administración superior de cada región, con personalidad jurídica de derecho público y patrimonio propio.
 ### Gobierno Interior Region
-#### ID
-DEF-GOB-INTERIOR
-#### Def
+#### Definicion
 Función de gobierno interior en cada región, ejercida por el Delegado Presidencial Regional como representante del Presidente.
 ### Delegado Presidencial Regional
-#### ID
-DEF-DEL-PRES-REG
-#### Def
+#### Definicion
 Representante natural e inmediato del Presidente de la República en la región; jefe del gobierno interior regional.
-#### Ref
+#### Referencias
 - DEF-GOB-INTERIOR
 - ORG-PRESIDENTE-CL
 ### Delegado Presidencial Provincial
-#### ID
-DEF-DEL-PRES-PROV
-#### Def
+#### Definicion
 Órgano territorialmente desconcentrado del Delegado Presidencial Regional que ejerce gobierno interior en la provincia.
 ### Gobernador Regional
-#### ID
-DEF-GOBERNADOR-REG
-#### Def
+#### Definicion
 Órgano ejecutivo del Gobierno Regional, elegido por sufragio universal, que preside el consejo regional.
 ### Consejo Regional
-#### ID
-DEF-CONSEJO-REG
-#### Def
+#### Definicion
 Órgano colegiado que, junto al Gobernador Regional, integra el Gobierno Regional y aprueba acuerdos y políticas regionales.
 ### Competencia Administrativa
-#### ID
-DEF-COMPETENCIA-ADM
-#### Def
+#### Definicion
 Facultad, función o atribución de ministerios o servicios públicos para satisfacer necesidades públicas en materias definidas por ley, excluida Ley de Presupuestos.
 ### Presidente Republica
-#### ID
-ORG-PRESIDENTE-CL
-#### Def
+#### Definicion
 Jefe de Estado y de Gobierno; ejerce el gobierno y la administración del Estado y designa a los delegados presidenciales regionales y provinciales.
 ### Contraloria General
-#### ID
-ORG-CGR
-#### Def
+#### Definicion
 Órgano superior de control de la legalidad de los actos de la Administración del Estado y del examen y juzgamiento de las cuentas.
 ### Tribunal Calificador Elecciones
-#### ID
-ORG-TRICEL
-#### Def
+#### Definicion
 Órgano jurisdiccional que conoce, califica y proclama elecciones y resuelve reclamaciones y causales de cesación en cargos de elección popular cuando la Constitución o la ley lo establecen.
 ### SUBDERE
-#### ID
-ORG-SUBDERE
-#### Def
+#### Definicion
 Subsecretaría de Desarrollo Regional y Administrativo. Órgano responsable de lineamientos operativos de descentralización y apoyo a gobiernos regionales y municipalidades.
 
 ## Contexto General
-### ID
-CTX-LOC-GORE
-### Purp
+### Proposito
 Sintetizar la arquitectura orgánica y funcional del Gobierno Interior de la Región y del Gobierno Regional.
 ### Src Oficial
-#### ID
-CTX-LOC-GORE-SRC
-#### Def
+#### Definicion
 DFL N° 1-19.175 que fija texto refundido, coordinado, sistematizado y actualizado de la Ley N° 19.175.
 ### Ambito Material
-#### ID
-CTX-LOC-GORE-AMBITO
 #### Items
 - Gobierno interior regional (Delegados Presidenciales Regionales y Provinciales).
 - Administración superior de la región (Gobierno Regional).
@@ -180,45 +92,33 @@ CTX-LOC-GORE-AMBITO
 - Órganos del Gobierno Regional y estatuto del Gobernador Regional.
 
 ## Gobierno Interior Region
-### ID
-MOD-GOB-INTERIOR
-### Ref
+### Referencias
 - DEF-DEL-PRES-REG
 - DEF-DEL-PRES-PROV
 ### Delegado Presidencial Regional
-#### ID
-MOD-DEL-PRES-REG
 #### Ref Def
 DEF-DEL-PRES-REG
-#### Ref
+#### Referencias
 - ORG-PRESIDENTE-CL
 #### Naturaleza Cargo
-#### ID
-DEL-PRES-REG-NAT
-#### Def
+#### Definicion
 Gobierno interior de cada región reside en el Delegado Presidencial Regional como representante inmediato del Presidente en el territorio.
-#### Req
+#### Requisitos
 - Nombrado y removido libremente por el Presidente.
 - Permanece en el cargo mientras goce de la confianza presidencial.
 - Ejerce funciones conforme a las leyes y a instrucciones del Presidente directamente o vía Ministerio del Interior.
 #### Rol Coordinacion
-#### ID
-DEL-PRES-REG-COORD
-#### Def
+#### Definicion
 Coordina a nivel regional la acción de gobierno y vela por adecuada gestión de servicios públicos, planes y programas en ejecución.
-#### Req
+#### Requisitos
 - Puede requerir informes a Secretarías Regionales Ministeriales sobre cumplimiento de funciones e instrucciones técnicas/administrativas de sus ministerios.
 #### Subrogancia y Suplencia
-#### ID
-DEL-PRES-REG-SUBR
-#### Def
+#### Definicion
 Subrogado por Delegado Presidencial Provincial que designe el Presidente.
-#### Req
+#### Requisitos
 - Presidente puede designar suplente sin límite temporal de subrogación previsto en Estatuto Administrativo.
 #### Atribuciones Principales
-#### ID
-DEL-PRES-REG-FUNC
-#### Def
+#### Definicion
 Conjunto de atribuciones en Art.2.
 #### Items
 - Dirigir tareas de gobierno interior en la región según orientaciones e instrucciones del Presidente o Ministerio del Interior.
@@ -241,41 +141,31 @@ Conjunto de atribuciones en Art.2.
 - Coordinar prevención y respuesta frente a conflictos sociales sin riesgo para seguridad pública.
 - Ejercer en la región funciones legales del Ministerio del Interior, conforme a instrucciones ministeriales.
 #### Delegacion Atribuciones
-#### ID
-DEL-PRES-REG-DELEG
-#### Def
+#### Definicion
 Puede delegar atribuciones en delegados presidenciales provinciales.
-#### Prohib
+#### Prohibiciones
 - No puede ejercer competencia delegada sin revocar previamente la delegación.
 #### Req Interactivo
 - Debe desempeñar el cargo dialogando con autoridades locales.
 - Debe respetar irrestrictamente planes de desarrollo comunales y regionales.
 ### Delegado Presidencial Provincial
-#### ID
-MOD-DEL-PRES-PROV
 #### Ref Def
 DEF-DEL-PRES-PROV
-#### Ref
+#### Referencias
 - DEF-DEL-PRES-REG
 #### Naturaleza Cargo
-#### ID
-DEL-PRES-PROV-NAT
-#### Def
+#### Definicion
 Delegación presidencial provincial es órgano territorialmente desconcentrado del Delegado Presidencial Regional.
-#### Req
+#### Requisitos
 - Delegado Presidencial Provincial es nombrado y removido libremente por el Presidente.
 - Ejerce, según instrucciones del Delegado Presidencial Regional, supervigilancia de servicios públicos existentes en la provincia que dependan o se relacionen con el Presidente vía ministerios.
 #### Subrogancia
-#### ID
-DEL-PRES-PROV-SUBR
-#### Def
+#### Definicion
 Subrogación regulada por Estatuto Administrativo.
-#### Req
+#### Requisitos
 - Se aplica régimen del Art.80 de la Ley N° 18.834, sin perjuicio de facultad presidencial para designar suplente sin sujeción a requisitos de tiempo.
 #### Atribuciones Principales
-#### ID
-DEL-PRES-PROV-FUNC
-#### Def
+#### Definicion
 Atribuciones propias más delegadas (Art.4).
 #### Items
 - Ejercer tareas de gobierno interior en la provincia.
@@ -285,43 +175,37 @@ Atribuciones propias más delegadas (Art.4).
 - Adoptar medidas para prevenir y enfrentar emergencias o catástrofes.
 - Velar por buen uso de la Bandera Nacional y autorizar uso de pabellones extranjeros conforme a ley.
 - Autorizar circulación de vehículos de servicios públicos fuera de horario laboral y excepciones de uso de disco fiscal.
--
-  #### Vigilar bienes del Estado, especialmente de uso público
-  impedir ocupaciones ilegales, usos ilegítimos y exigir restitución administrativa.
+| Vigilar bienes del Estado, especialmente de uso público |
+| --- |
+| impedir ocupaciones ilegales, usos ilegítimos y exigir restitución administrativa. |
 - Dictar resoluciones e instrucciones necesarias para ejercicio de atribuciones propias o delegadas.
 - Supervisar programas y proyectos de desarrollo de servicios públicos en la provincia que no dependan del Gobierno Regional.
 - Disponer medidas de coordinación para desarrollo provincial.
 - Representar necesidades del territorio al Delegado Presidencial Regional o SEREMI respectivos.
 - Ejercer en la provincia funciones que la ley entrega al Ministerio del Interior, conforme a instrucciones ministeriales.
 #### Encargados Locales
-#### ID
-DEL-PRES-PROV-ENCARGADOS
-#### Def
+#### Definicion
 Designación de encargados con atribuciones específicas en localidades aisladas (Art.5).
-#### Req
+#### Requisitos
 - Requiere autorización del Delegado Presidencial Regional.
 - Encargado debe ser ciudadano con derecho a sufragio y cumplir requisitos generales de ingreso a Administración Pública.
 - Resolución de designación debe fijar facultades específicas, plazo y ámbito territorial.
 - Si encargado es funcionario público, actúa en comisión de servicio sin límite de tiempo.
 - Si es persona ajena a la Administración, se desempeña ad honorem.
-#### Res
+#### Resultados
 - Encargado queda sujeto a responsabilidades administrativas, civiles y penales como funcionario público.
 - Extracto de la resolución se publica en Diario Oficial y diario de mayor circulación provincial.
 ### Disposiciones Comunes Delegados
-#### ID
-MOD-DELEG-COMUN
-#### Ref
+#### Referencias
 - DEF-DEL-PRES-REG
 - DEF-DEL-PRES-PROV
 #### Requisitos Para Cargo
-#### ID
-DEL-COMUN-REQ-CARGO
-#### Def
+#### Definicion
 Requisitos para ser Delegado Presidencial Regional o Provincial (Art.6).
-#### Ref
+#### Referencias
 - DEF-DEL-PRES-REG
 - DEF-DEL-PRES-PROV
-#### Req
+#### Requisitos
 - Ser ciudadano con derecho a sufragio.
 - Tener al menos 21 años y cumplir requisitos generales de ingreso a Administración Pública.
 - No estar inhabilitado para funciones o cargos públicos.
@@ -329,23 +213,17 @@ Requisitos para ser Delegado Presidencial Regional o Provincial (Art.6).
 - Residir en la región respectiva al menos 2 años previos a la designación.
 - No tener dependencia de sustancias o drogas estupefacientes o sicotrópicas ilegales, salvo uso médico justificado.
 #### Proc Acreditacion
-#### ID
-DEL-COMUN-REQ-ACRED
-#### Def
+#### Definicion
 Interesado debe prestar declaración jurada que acredite no encontrarse afecto a inhabilidad por dependencia de drogas.
 #### Incompatibilidades Cargos
-#### ID
-DEL-COMUN-INCOMP
-#### Def
+#### Definicion
 Incompatibilidad entre cargos regionales y locales (Art.7).
-#### Prohib
+#### Prohibiciones
 | No se puede ejercer simultáneamente |
 | --- |
 | Gobernador Regional, Delegado Presidencial Regional, Consejero Regional, Alcalde, Concejal, Delegado Presidencial Provincial ni Consejero Comunal de organizaciones de la sociedad civil. |
 #### Causales Cese
-#### ID
-DEL-COMUN-CESE
-#### Def
+#### Definicion
 Causales de cesación para Delegados Presidenciales Regionales y Provinciales (Art.8).
 #### Items
 - Pérdida de requisitos habilitantes.
@@ -355,40 +233,32 @@ Causales de cesación para Delegados Presidenciales Regionales y Provinciales (A
 - Remoción dispuesta por el Presidente.
 - Destitución por acuerdo del Senado conforme Art.53 N°1 de la Constitución.
 #### Ejercicio Funciones
-#### ID
-DEL-COMUN-EJERC
-#### Def
+#### Definicion
 Reglas de ejercicio territorial y deberes de información (Arts.9–12).
-#### Ref
+#### Referencias
 - ORG-CGR
-#### Req
+#### Requisitos
 - Ejercer funciones en capital regional o provincial, pudiendo hacerlo transitoriamente en otras localidades del territorio.
 - Pueden solicitar a jefes de organismos sujetos a su fiscalización los informes y antecedentes necesarios, quienes deben entregarlos oportunamente.
 - Deben poner en conocimiento de Contraloría General y tribunal competente hechos plausibles de responsabilidad administrativa, civil o penal de funcionarios fiscalizados.
 - Servicio de Gobierno Interior debe apoyar ejercicio de funciones y atribuciones de Delegados y prestar apoyo administrativo a SEREMI y Departamentos Provinciales de Seguridad Pública.
 
 ## Administracion Region GORE
-### ID
-MOD-ADM-REG
-### Ref
+### Referencias
 - DEF-GORE
 - DEF-CONSEJO-REG
 - DEF-GOBERNADOR-REG
 ### Naturaleza y Objetivo GORE
-#### ID
-GORE-NAT-OBJ
-#### Def
+#### Definicion
 Administración superior de cada región radicada en un Gobierno Regional (Art.13).
-#### Req
+#### Requisitos
 - GORE tiene personalidad jurídica de derecho público y patrimonio propio.
 - Ejerce funciones y atribuciones que la ley le confiere.
 - Puede ejercer competencias directamente o con colaboración de otros órganos de la Administración.
 - Administración financiera se rige por DL N° 1.263 y normas de administración financiera del Estado.
 - Nuevas funciones o atribuciones deben identificar fuente de financiamiento y contemplar recursos para su ejercicio.
 ### Principios Gestion Regional
-#### ID
-GORE-PRINCIPIOS
-#### Def
+#### Definicion
 Principios rectores de la administración interna de las regiones (Art.14).
 #### Items
 - Desarrollo armónico y equitativo de territorios regionales en dimensiones económica, social y cultural.
@@ -397,19 +267,15 @@ Principios rectores de la administración interna de las regiones (Art.14).
 - Preservación y mejoramiento del medio ambiente.
 - Sujeción a principios del Art.3 de la Ley N° 18.575.
 ### Sede GORE
-#### ID
-GORE-SEDE
-#### Def
+#### Definicion
 Sede y ejercicio territorial (Art.15).
-#### Req
+#### Requisitos
 - Sede del Gobierno Regional se ubica en la capital de la región.
 - Puede ejercer funciones transitoriamente en otras localidades de la región.
 ### Funciones Generales GORE
-#### ID
-GORE-FUNC-GEN
-#### Def
+#### Definicion
 Funciones generales del GORE (Art.16).
-#### Ref
+#### Referencias
 DEF-GORE
 #### Items
 - Diseñar, elaborar, aprobar y aplicar políticas, planes, programas y proyectos de desarrollo regional, ajustados al Presupuesto de la Nación, Estrategia Regional de Desarrollo e instrumentos de planificación comunal.
@@ -429,25 +295,19 @@ DEF-GORE
 - Elaborar y aprobar planes de inversiones en infraestructura de movilidad y espacio público asociados a planes reguladores metropolitanos o intercomunales, con consulta a municipalidades.
 - Coparticipar con el Comité Regional para el cambio climático en instrumentos de gestión del cambio climático a nivel regional.
 ### Ordenamiento Territorial
-#### ID
-GORE-ORD-TERR
-#### Def
+#### Definicion
 Funciones en materia de ordenamiento territorial (Art.17).
 #### Plan Regional Ordenamiento Territorial
-#### ID
-GORE-PROT
-#### Def
+#### Definicion
 Instrumento que orienta uso del territorio regional para desarrollo sustentable mediante lineamientos estratégicos y macrozonificación.
-#### Req
+#### Requisitos
 - Debe ser coherente con Estrategia Regional de Desarrollo, política nacional de ordenamiento territorial, estrategia climática de largo plazo y plan de acción regional de cambio climático.
 - Establece condiciones vinculantes de localización para disposición de residuos y para infraestructura y actividades productivas en zonas no urbanizadas, incluyendo áreas de localización preferente.
 - Reconoce áreas bajo protección oficial según legislación especial.
 - Es obligatorio para ministerios y servicios públicos que operen en la región.
 - No puede regular materias que excedan territorio regional ni áreas sometidas a planificación urbanística.
 #### Proc Elaboracion
-#### ID
-GORE-PROT-PROC
-#### Def
+#### Definicion
 Procedimiento de elaboración, consulta y actualización.
 #### Steps
 - Diagnóstico de características, tendencias, restricciones y potencialidades del territorio regional.
@@ -456,13 +316,9 @@ Procedimiento de elaboración, consulta y actualización.
 - Debe ajustarse a normativa ambiental (Ley N° 19.300, Párrafo 1° bis Título II).
 - Evaluación y actualización en ciclos no superiores a 10 años.
 #### Rol Comision Interministerial
-#### ID
-GORE-PROT-COMISION
-#### Def
+#### Definicion
 Comisión Interministerial de Ciudad, Vivienda y Territorio propone políticas nacionales de ordenamiento territorial y reglamentos de procedimientos aplicables al plan regional.
 #### Composicion
-#### ID
-GORE-PROT-COMISION-COMP
 #### Items
 - Ministro de Vivienda y Urbanismo (preside la comisión).
 - Ministro del Interior y Seguridad Pública.
@@ -476,11 +332,9 @@ GORE-PROT-COMISION-COMP
 - Ministro de Bienes Nacionales.
 - Ministro de Energía.
 - Ministro del Medio Ambiente.
-#### Src
+#### Fuentes
 Decreto supremo expedido por Ministerio del Interior y Seguridad Pública y suscrito por ministros integrantes.
 #### Otras Funciones Ordenamiento
-#### ID
-GORE-ORD-TERR-OTRAS
 #### Items
 - Establecer políticas y objetivos para desarrollo integral y armónico de asentamientos humanos de la región.
 - Participar en programas y proyectos de infraestructura y equipamiento regional.
@@ -491,11 +345,9 @@ GORE-ORD-TERR-OTRAS
 - Financiar estudios sobre localización y tratamiento de residuos, coordinando con SEREMI competentes.
 - Proponer territorios como zonas rezagadas en materia social y sus planes de desarrollo.
 ### Fomento Actividades Productivas
-#### ID
-GORE-FOMENTO-PROD
-#### Def
+#### Definicion
 Funciones en materia productiva (Art.18).
-#### Ref
+#### Referencias
 DEF-GORE
 #### Items
 - Formular políticas regionales de fomento productivo, apoyo al emprendimiento, innovación, capacitación, ciencia y tecnología aplicada, gestión y competitividad.
@@ -506,11 +358,9 @@ DEF-GORE
 - Promover investigación científica y tecnológica, y desarrollo de educación superior y media técnico profesional.
 - Elaborar y aprobar Política Regional de Ciencia, Tecnología, Conocimiento e Innovación para el Desarrollo, con lineamientos estratégicos y ámbitos de acción priorizados.
 ### Desarrollo Social y Cultural
-#### ID
-GORE-DES-SOC-CULT
-#### Def
+#### Definicion
 Funciones de desarrollo social y cultural (Art.19).
-#### Ref
+#### Referencias
 DEF-GORE
 #### Items
 - Establecer prioridades regionales para erradicación de la pobreza.
@@ -523,11 +373,9 @@ DEF-GORE
 - Proponer programas y proyectos de formación y práctica deportiva.
 - Mantener información actualizada sobre situación socioeconómica regional y proponer programas para superar pobreza y extrema pobreza.
 ### Atribuciones Generales GORE
-#### ID
-GORE-ATRIB-GEN
-#### Def
+#### Definicion
 Atribuciones para cumplir funciones (Art.20 y 20 bis, 21).
-#### Ref
+#### Referencias
 DEF-GORE
 #### Items
 - Aprobar y modificar normas reglamentarias regionales encargadas por ley, sin agregar requisitos adicionales a la normativa superior.
@@ -543,57 +391,45 @@ DEF-GORE
 - Diseñar, elaborar, aprobar y ejecutar políticas, planes, programas y proyectos dentro de su territorio.
 - Coparticipar en instrumentos regionales de gestión del cambio climático.
 #### Coherencia Politicas Nacionales
-#### ID
-GORE-COHER-NAC
-#### Def
+#### Definicion
 Las funciones generales, de ordenamiento territorial, fomento y desarrollo social/cultural deben ejercerse coherentemente con políticas públicas nacionales vigentes (Art.20 bis).
-#### Req
+#### Requisitos
 - Ejercicio de funciones no puede contradecir políticas nacionales ni principios que éstas establecen.
 - Debe actuarse coordinadamente, evitando duplicidad o interferencia de funciones, conforme Art.5 Ley N° 18.575.
 #### Roles
 - Ministro sectorial respectivo vela por coherencia entre ejercicio de funciones regionales y políticas nacionales.
 #### Coordinacion Informacion Con Otros Organos
-#### ID
-GORE-COORD-INFO
-#### Def
+#### Definicion
 Deber de información y coordinación con órganos y servicios del Estado (Art.21).
-#### Ref
+#### Referencias
 DEF-GORE
-#### Req
+#### Requisitos
 - Órganos y servicios de la Administración, empresas con participación fiscal y servicios públicos deben informar oportunamente a GORE sobre planes, programas y proyectos a ejecutar en la región.
 - Municipios deben remitir a GORE sus planes de desarrollo, políticas de prestación de servicios, políticas y proyectos de inversión, presupuestos y modificaciones.
 ### Transferencia de Competencias
-#### ID
-MOD-TRANSF-COMP
-#### Ref
+#### Referencias
 - DEF-COMPETENCIA-ADM
 - DEF-GORE
 ### Definicion y Ambito
-#### ID
-TRANSF-COMP-DEF
-#### Def
+#### Definicion
 Mecanismo por el cual el Presidente transfiere competencias de ministerios y servicios públicos a gobiernos regionales (Art.21 bis).
-#### Ref
+#### Referencias
 - DEF-COMPETENCIA-ADM
 - ORG-PRESIDENTE-CL
-#### Req
+#### Requisitos
 - Competencias transferibles se refieren a ordenamiento territorial, fomento productivo y desarrollo social y cultural.
 - Transferencias pueden ser temporales o definitivas.
 - Presidente ordena adecuaciones necesarias en órganos que ceden competencias.
 - Se entiende por competencia toda facultad, función o atribución legalmente asignada, excluyendo Ley de Presupuestos.
 ### Admisibilidad Solicitudes
-#### ID
-TRANSF-COMP-ADMIS
-#### Def
+#### Definicion
 Criterios de admisibilidad de solicitudes de transferencia (Art.21 ter).
-#### Req
+#### Requisitos
 - Solicitudes fuera de ámbitos de ordenamiento territorial, fomento productivo y desarrollo social/cultural son inadmisibles de plano.
 - Inadmisibilidad se declara por decreto exento fundado del Ministerio del Interior y Seguridad Pública, suscrito además por Ministros de Hacienda y Secretaría General de la Presidencia.
 - Gobernador Regional debe rechazar solicitudes del Consejo Regional que pidan competencias fuera de dichos ámbitos.
 ### Principios Seleccion Competencias
-#### ID
-TRANSF-COMP-PRINC
-#### Def
+#### Definicion
 Criterios para privilegiar competencias a transferir (Art.21 quáter).
 #### Items
 - Competencias con clara aplicación regional.
@@ -602,57 +438,43 @@ Criterios para privilegiar competencias a transferir (Art.21 quáter).
 - Idealmente susceptibles de ser ejercidas por mayoría de regiones, salvo casos específicamente territoriales.
 - Transferencia puede incluir adaptación, priorización y focalización de instrumentos nacionales y ejecución directa de recursos.
 ### Requisitos Generales Transferencia
-#### ID
-TRANSF-COMP-REQ-GEN
-#### Def
+#### Definicion
 Condiciones mínimas de toda transferencia (Art.21 quinquies).
 #### Recursos y Personal
-#### ID
-TRANSF-COMP-REQ-REC
-#### Def
+#### Definicion
 Debe considerar recursos económicos y personal necesario, según competencia y presupuesto disponible.
-#### Req
+#### Requisitos
 - En transferencias temporales, ministerio/servicio puede designar funcionarios en comisión de servicio en GORE, por plazo equivalente a duración de competencia.
 - En transferencias definitivas, comisión de servicio solo puede extenderse hasta plazo máximo del Estatuto Administrativo.
 - Órgano que transfiere no puede crear empleos a contrata para labores similares a las transferidas.
 - Recursos para ejercicio de competencia se transfieren mediante convenios GORE–órgano central o por Ley de Presupuestos.
 - Consejo de Evaluación de Competencias evalúa ejecución de recursos, considerando diversidad regional.
 #### No Duplicidad
-#### ID
-TRANSF-COMP-REQ-NO-DUP
-#### Def
+#### Definicion
 Debe evitarse duplicidad o interferencia con funciones de otros órganos.
 #### Plazo Temporalidad
-#### ID
-TRANSF-COMP-REQ-PLAZO
-#### Def
+#### Definicion
 Transferencias temporales deben indicar período de vigencia, no inferior a 1 año.
 ### Actores Involucrados
-#### ID
-TRANSF-COMP-ACTORES
-#### Def
+#### Definicion
 Actores formales del procedimiento (Art.21 sexies).
-#### Ref
+#### Referencias
 - ORG-PRESIDENTE-CL
 - ORG-SUBDERE
 #### Items
--
-  #### Presidente de la República
-  inicia procedimiento de oficio, resuelve transferencias mediante decreto supremo fundado cuando informe del Comité es positivo.
--
-  #### Comité Interministerial de Descentralización
-  presidido por Ministro del Interior, integrado por Ministros de Hacienda, Secretaría General de la Presidencia y ministros sectoriales; asesora al Presidente, cuenta con Secretaría Ejecutiva ejercida por la Subsecretaría de Desarrollo Regional y Administrativo, y formula recomendaciones sobre transferencias.
--
-  #### Comisiones de Estudios por Materias
-  integradas paritariamente por representantes del nivel central y del Gobierno Regional; analizan antecedentes y emiten informes fundados.
+| Presidente de la República |
+| --- |
+| inicia procedimiento de oficio, resuelve transferencias mediante decreto supremo fundado cuando informe del Comité es positivo. |
+| Comité Interministerial de Descentralización |
+| --- |
+| presidido por Ministro del Interior, integrado por Ministros de Hacienda, Secretaría General de la Presidencia y ministros sectoriales; asesora al Presidente, cuenta con Secretaría Ejecutiva ejercida por la Subsecretaría de Desarrollo Regional y Administrativo, y formula recomendaciones sobre transferencias. |
+| Comisiones de Estudios por Materias |
+| --- |
+| integradas paritariamente por representantes del nivel central y del Gobierno Regional; analizan antecedentes y emiten informes fundados. |
 ### Procedimiento Transferencia
-#### ID
-TRANSF-COMP-PROC
-#### Def
+#### Definicion
 Reglas procedimentales comunes y específicas (Art.21 septies).
 #### Procedimiento Solicitado por GORE
-#### ID
-TRANSF-COMP-PROC-GORE
 #### Steps
 - Consejo Regional aprueba solicitud (mayoría absoluta con propuesta del Gobernador o 2/3 si iniciativa propia), dentro de 24 meses desde inicio periodo presidencial.
 - Solicitud debe incluir estudios de impacto financiero, eficacia y eficiencia.
@@ -662,88 +484,68 @@ TRANSF-COMP-PROC-GORE
 - Presidente dicta decreto supremo fundado aprobando o rechazando transferencia, suscrito por ministros competentes.
 - Falta de pronunciamiento en 6 meses obliga al Comité a responder expresa y fundadamente.
 #### Procedimiento Iniciado de Oficio
-#### ID
-TRANSF-COMP-PROC-OFICIO
 #### Steps
 - Presidente instruye al Comité iniciar evaluación de transferencia específica.
 - Si Comité recomienda transferir, se remite propuesta al Gobierno Regional para ratificación del Consejo Regional (mayoría absoluta con Gobernador o 2/3 sin él).
 - Ratificada la propuesta, Presidente resuelve mediante decreto supremo suscrito por ministros competentes.
 - Si Comité recomienda no transferir o GORE no ratifica, procedimiento concluye sin transferencia, sin perjuicio de futura solicitud regional.
 #### Reglas Comunes y Evaluacion
-#### ID
-TRANSF-COMP-PROC-COMUN
-#### Req
+#### Requisitos
 - Decreto de transferencia debe indicar competencias y recursos transferidos, carácter temporal o definitivo, gradualidad, condiciones de ejercicio, exclusividad o coparticipación, mecanismos de seguimiento y evaluación, indicadores y fuentes de información.
 - Procedimiento tiene duración máxima de 6 meses desde solicitud o instrucción presidencial.
 - Reglamento dictado por Ministerio del Interior y Seguridad Pública (con Ministros de Hacienda y Secretaría General) fija condiciones y plazos detallados.
 #### Evaluacion Ejercicio Competencias
-#### ID
-TRANSF-COMP-EVAL
-#### Def
+#### Definicion
 Consejo de Evaluación de Competencias evalúa objetivamente el ejercicio (Art.21 septies D).
-#### Ref
+#### Referencias
 - ORG-SUBDERE
-#### Req
+#### Requisitos
 - Evaluación posterior al término del plazo temporal o a 3 años en transferencias definitivas.
 - Considera indicadores cualitativos y cuantitativos y formula recomendaciones de mejora.
 - Resultados pueden incorporarse en programas de mejoramiento de la gestión y metas de desempeño institucional.
 - Reglamento específico define procedimiento y metodología de la evaluación.
 - Resultados de la evaluación deben remitirse por la Subsecretaría de Desarrollo Regional y Administrativo, dentro de 30 días, al Presidente de la República, al Congreso Nacional y al gobierno regional respectivo.
 ### Revocacion Competencias
-#### ID
-TRANSF-COMP-REVOC
-#### Def
+#### Definicion
 Reglas de revocación de competencias transferidas (Art.21 octies).
-#### Req
+#### Requisitos
 - Competencias transferidas definitivamente solo pueden revocarse por ley.
--
-  #### Transferencias temporales pueden revocarse de oficio en forma fundada por
-  - Incumplimiento de condiciones de ejercicio.
-  - Deficiente prestación del servicio a la comunidad.
-  - Ejercicio incompatible con políticas públicas nacionales dictadas con posterioridad, sin que GORE ajuste dentro de 6 meses.
+| Transferencias temporales pueden revocarse de oficio en forma fundada por |
+| --- |
+| Incumplimiento de condiciones de ejercicio., Deficiente prestación del servicio a la comunidad., Ejercicio incompatible con políticas públicas nacionales dictadas con posterioridad, sin que GORE ajuste dentro de 6 meses. |
 - GORE puede solicitar revocación de competencias transferidas mediante acuerdo del Consejo Regional (mayoría absoluta con Gobernador o 2/3 sin él).
 - Comité Interministerial instruye comisión de estudio para recabar antecedentes, definir condiciones de corrección y plazo; si no se corrige, informa al Comité para decisión presidencial.
 - Revocación se resuelve por decreto supremo dictado a más tardar 30 de junio y entra en vigencia el 1 de enero del año siguiente.
 
 ## Organos Gobierno Regional y Gobernador
-### ID
-MOD-ORG-GORE
-### Ref
+### Referencias
 - DEF-GORE
 - DEF-GOBERNADOR-REG
 - DEF-CONSEJO-REG
 ### Organos Del GORE
-#### ID
-ORG-GORE-LIST
-#### Def
+#### Definicion
 Órganos que integran el Gobierno Regional (Art.22).
-#### Ref
+#### Referencias
 - DEF-GORE
 - DEF-CONSEJO-REG
 #### Items
 - Gobernador Regional.
 - Consejo Regional.
-#### Req
+#### Requisitos
 - Cuando la ley requiere opinión o acuerdo del Gobierno Regional, el Gobernador, como órgano ejecutivo, debe someterlo previamente al acuerdo del Consejo Regional.
 ### Gobernador Regional
-#### ID
-ORG-GOBERNADOR
 #### Ref Def
 DEF-GOBERNADOR-REG
 #### Naturaleza y Eleccion
-#### ID
-GOB-REG-NAT-ELEC
-#### Def
+#### Definicion
 Órgano ejecutivo del Gobierno Regional, preside el Consejo Regional (Art.23).
-#### Req
+#### Requisitos
 - Ejercicio de funciones conforme a la Constitución.
 - Es elegido por sufragio universal, en votación directa, en cédula separada y conjuntamente con la elección de consejeros regionales, conforme normas legales.
 #### Requisitos Para Ser Elegido
-#### ID
-GOB-REG-REQ-ELEC
-#### Def
+#### Definicion
 Requisitos de elegibilidad (Art.23 bis).
-#### Req
+#### Requisitos
 - Ser ciudadano con derecho a sufragio.
 - No estar inhabilitado para funciones o cargos públicos.
 - No estar sujeto a procedimiento concursal de liquidación ni haber sido condenado por crimen o simple delito.
@@ -752,9 +554,7 @@ Requisitos de elegibilidad (Art.23 bis).
 - No estar afecto a inhabilidades especiales establecidas en la ley.
 - No tener dependencia de drogas estupefacientes o sicotrópicas ilegales salvo uso médico justificado, acreditado mediante declaración jurada.
 #### Inhabilidades Para Candidaturas
-#### ID
-GOB-REG-INHAB-CAND
-#### Def
+#### Definicion
 Personas inhabilitadas para ser candidatas a Gobernador Regional (Art.23 ter).
 #### Items
 - Altas autoridades del nivel central (ministros, subsecretarios, delegados presidenciales, SEREMI, miembros de Banco Central, Contralor).
@@ -766,34 +566,24 @@ Personas inhabilitadas para ser candidatas a Gobernador Regional (Art.23 ter).
 - Personas sancionadas por infracciones graves a normas sobre financiamiento electoral.
 - Personas inscritas en el Registro Nacional de Deudores de Pensiones de Alimentos.
 #### Extensiones Temporales
-#### ID
-GOB-REG-INHAB-TIEMPO
-#### Def
+#### Definicion
 Algunas inhabilidades se aplican a quienes hayan ejercido cargos mencionados dentro del año anterior a la elección.
 #### Incompatibilidades Del Cargo
-#### ID
-GOB-REG-INCOMP
-#### Def
+#### Definicion
 Incompatibilidades funcionales del Gobernador Regional (Art.23 quáter).
-#### Prohib
+#### Prohibiciones
 - No puede ejercer simultáneamente cargos de Presidente de la República, parlamentario, consejero regional, alcalde, concejal u otros empleos o comisiones retribuidos con fondos públicos, salvo docencia hasta 12 horas semanales.
 - No puede ser director o consejero, aun ad honorem, en entidades autónomas fiscales, semifiscales o empresas estatales o con participación estatal.
 #### Inhabilidades Sobrevinientes
-#### ID
-GOB-REG-INHAB-SOBR
-#### Def
+#### Definicion
 Supuestos que inhabilitan para desempeñar el cargo (Art.23 quinquies).
 #### Items
 - Configuración de situaciones de conflicto económico con el GORE análogas a las de candidatos (contratos, cauciones, litigios).
 - Actuar como abogado o mandatario en juicios contra el respectivo GORE.
 #### Causales y Procedimiento Cese
-#### ID
-GOB-REG-CESE
-#### Def
+#### Definicion
 Causales de cesación y procedimientos (Art.23 sexies).
 #### Causales
-#### ID
-GOB-REG-CESE-CAUS
 #### Items
 - Pérdida de calidad de ciudadano.
 - Incapacidad psíquica o física para el cargo.
@@ -803,9 +593,7 @@ GOB-REG-CESE-CAUS
 - Condena en acusación constitucional.
 - Infracción grave a normas de transparencia, límites y control del gasto electoral.
 #### Organos Competentes y Procedimientos
-#### ID
-GOB-REG-CESE-PROC
-#### Ref
+#### Referencias
 - DEF-GOBERNADOR-REG
 - DEF-CONSEJO-REG
 - ORG-TRICEL

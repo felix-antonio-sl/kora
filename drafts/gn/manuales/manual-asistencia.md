@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.27
+    cr: 2.61
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -83,12 +83,10 @@ Sección II: Gestión de Derechos Estatutarios
 15 días hábiles con goce de sueldo tras 1 año de servicio (aumenta a 20 y 25 días según antigüedad).
 #### Solicitud
 #### Proceso
-| Act |
-| --- |
-| Vía sistema interno (workflow SIGPER). |
-| Req |
-| --- |
-| Aprobada por Jefatura Directa. |
+| Act | Req |
+| --- | --- |
+| Vía sistema interno (workflow SIGPER). |  |
+|  | Aprobada por Jefatura Directa. |
 #### Acumulacion
 #### Requisitos
 - Posible acumular hasta 2 períodos (requiere resolución fundada).
@@ -109,18 +107,12 @@ Devolución de tiempo por trabajos extraordinarios realizados en horario nocturn
 Sección III: Gestión de Licencias Médicas (LME)
 #### 6 Flujo de Tramitacion LME
 #### Proceso
-| Paso | Act | Dln |
-| --- | --- | --- |
-| 1. Recepción y Validación | El funcionario presenta LME (electrónica vía portal I-MED o manual en papel). | Max 3 días hábiles desde inicio del reposo. |
 | Paso | Act |
 | --- | --- |
+| 1. Recepción y Validación | El funcionario presenta LME (electrónica vía portal I-MED o manual en papel). |
 | 2. Registro y Certificación | GDP registra en SIGPER y emite Certificado de Remuneraciones (últimos 3 meses). |
-| Paso | Proc |
-| --- | --- |
-| 3. Tramitación Externa | [{'Cond': 'Afiliado FONASA con Caja Compensación (CCAF).', 'Act': 'Envío a CCAF dentro de 3 días hábiles.'}, {'Cond': 'Afiliado FONASA sin CCAF.', 'Act': 'Envío a COMPIN dentro de 3 días hábiles.'}, {'Cond': 'Afiliado ISAPRE.', 'Act': 'Envío a la Isapre respectiva dentro de 3 días hábiles.'}] |
-| Paso | Proc |
-| --- | --- |
-| 4. Resolución y Ajuste | ['Recepción de Resolución (Aprobad/Rechazada/Reducida).', 'Cálculo de SIL (Subsidio por Incapacidad Laboral) para recuperación.', 'En caso de Rechazo/Reducción: Generar descuento o reintegro inmediato tras notificación (Manual 3.2).'] |
+| 3. Tramitación Externa |  |
+| 4. Resolución y Ajuste |  |
 #### 7 Mantencion de Ingresos
 #### Requisitos
 El GORE garantiza el pago íntegro de la remuneración líquida mientras el funcionario mantenga el vínculo.
@@ -146,7 +138,7 @@ Cuidar su asistencia, registrar marcas biométricas, solicitar permisos a tiempo
 Este manual se complementa con el Reglamento Interno de Higiene y Seguridad del GORE Ñuble. Los procesos de LME se rigen por el D.S. N° 3 de 1984 del Minsal.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml

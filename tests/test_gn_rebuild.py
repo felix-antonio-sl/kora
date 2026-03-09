@@ -259,6 +259,80 @@ class GnRebuildTests(unittest.TestCase):
             self.assertNotIn("LLM_Parsing_Instructions", body)
             self.assertNotIn("PARSER-01", body)
 
+    def test_koda_hybrid_rejects_poor_embedded_record_lists_and_falls_back_to_structured_render(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/ipr").mkdir(parents=True, exist_ok=True)
+
+            hybrid_source = {
+                "_manifest": {"urn": "urn:test:kb:hybrid-glossary"},
+                "Content": {
+                    "Body_MD": {
+                        "Content": "# Glosario\n\n## Terminos\n-\n  ### Nombre\n  VAN\n  ### Def\n  |\n-\n  ### Nombre\n  TIR\n  ### Def\n  Tasa interna\n"
+                    }
+                },
+                "terminos": [
+                    {"nombre": "VAN", "def": "|"},
+                    {"nombre": "TIR", "def": "Tasa interna"},
+                ],
+            }
+            (source_root / "domains/gn/03_operacion/ipr/otroglosario.yml").write_text(
+                yaml.safe_dump(hybrid_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/gobernanza/glosario-ipr-consolidado.md",
+                "urn:gn:kb:glosario-ipr-consolidado",
+                "Glosario IPR",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/ipr/otroglosario.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "gobernanza/glosario-ipr-consolidado.md",
+                                "target_urn": "urn:gn:kb:glosario-ipr-consolidado",
+                                "transform_class": "korafy_koda_hybrid",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "hybridtable")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "hybridtable", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/glosario-ipr-consolidado.md")
+            self.assertIn("| nombre | def |", body)
+            self.assertIn("| VAN | \\| |", body)
+            self.assertNotIn("### Nombre", body)
+
     def test_korafy_direct_strips_koda_metadata_and_normalizes_columns_rows_tables(self):
         with TemporaryDirectory() as tmpdir:
             repo = Path(tmpdir) / "repo"
@@ -340,6 +414,77 @@ class GnRebuildTests(unittest.TestCase):
             self.assertNotIn("LLM Parsing Instructions", body)
             self.assertIn("| Item | Monto |", body)
             self.assertIn("| Ingresos | 100 |", body)
+
+    def test_korafy_direct_renders_homogeneous_dict_lists_as_tables_with_sparse_cells(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/ipr").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:glosario"},
+                "Glosario": {
+                    "Terminos": [
+                        {"nombre": "VAN", "def": "|"},
+                        {"nombre": "TIR"},
+                    ]
+                },
+            }
+            (source_root / "domains/gn/03_operacion/ipr/otroglosario.yml").write_text(
+                yaml.safe_dump(source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/gobernanza/glosario-ipr-consolidado.md",
+                "urn:gn:kb:glosario-ipr-consolidado",
+                "Glosario IPR",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/ipr/otroglosario.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "gobernanza/glosario-ipr-consolidado.md",
+                                "target_urn": "urn:gn:kb:glosario-ipr-consolidado",
+                                "transform_class": "korafy_direct",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "dictlist")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "dictlist", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/glosario-ipr-consolidado.md")
+            self.assertIn("| nombre | def |", body)
+            self.assertIn("| VAN | \\| |", body)
+            self.assertIn("| TIR |  |", body)
 
     def test_validate_rejects_koda_residue_in_body(self):
         with TemporaryDirectory() as tmpdir:
@@ -462,6 +607,81 @@ class GnRebuildTests(unittest.TestCase):
             self.assertNotEqual(validate.returncode, 0)
             self.assertIn("residuo KODA en headings", validate.stdout)
             self.assertIn("residuo KODA en cuerpo", validate.stdout)
+
+    def test_korafy_composite_omits_source_headings_from_body(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/01_fundamentos/intro").mkdir(parents=True, exist_ok=True)
+            (source_root / "ontologies/onto_gorenuble").mkdir(parents=True, exist_ok=True)
+
+            primary = {
+                "_manifest": {"urn": "urn:test:kb:organigrama"},
+                "Organigrama": {
+                    "Purp": "Describir estructura organizacional.",
+                    "Unidades": [{"nombre": "Gabinete", "dependencia": "Gobernador Regional"}],
+                },
+            }
+            secondary = "<a> <b> <c> .\n"
+            (source_root / "domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml").write_text(
+                yaml.safe_dump(primary, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+            (source_root / "ontologies/onto_gorenuble/organigrama.ttl").write_text(secondary, encoding="utf-8")
+
+            self._write_md(
+                repo / "knowledge/gn/gobernanza/organigrama.md",
+                "urn:gn:kb:organigrama",
+                "Organigrama",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": [
+                                    "domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml",
+                                    "ontologies/onto_gorenuble/organigrama.ttl",
+                                ],
+                                "source_type": "mixed",
+                                "target_path": "gobernanza/organigrama.md",
+                                "target_urn": "urn:gn:kb:organigrama",
+                                "transform_class": "korafy_composite",
+                                "scope_statement": "Vista compuesta de estructura organizacional.",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "composite")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "composite", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/organigrama.md")
+            self.assertNotIn("## Fuente principal", body)
+            self.assertIn("## Fuentes derivadas", body)
 
     def test_validate_rejects_public_target_urn_in_draft_evidence(self):
         with TemporaryDirectory() as tmpdir:

@@ -41,7 +41,7 @@ extensions:
 
 # BPMN D09: Gestión Operativa CIES/SITIA (Seguridad Pública)
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -54,7 +54,7 @@ Supervisor CIES
 ### Subprocesos
 ~8
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.4142-4306
 
 ## Body MD

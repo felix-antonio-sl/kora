@@ -39,7 +39,7 @@ extensions:
 
 # BPMN D02: Ciclo Presupuestario Regional
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 - knowledge/domains/gn/presupuesto/kb_gn_018_gestion_prpto_koda.yml
 
@@ -53,7 +53,7 @@ DAF (Funcionamiento) / DIPIR (Inversión)
 ### Subprocesos
 ~15
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.500-1886
 
 ## Mapa General Dominio
@@ -214,9 +214,9 @@ flowchart TD
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
-| D03 Gestión IPR | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md'] | CDP, financiamiento proyectos |
-| D08 Rendiciones | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md'] | Contabilización, SIGFE |
-| D04 Compras | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D04_compras_contrataciones.md'] | Órdenes de compra, contratos |
+| D03 Gestión IPR | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md | CDP, financiamiento proyectos |
+| D08 Rendiciones | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md | Contabilización, SIGFE |
+| D04 Compras | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D04_compras_contrataciones.md | Órdenes de compra, contratos |
 
 ## Ultima Actualizacion
 ### Cpt

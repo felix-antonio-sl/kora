@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.15
+    cr: 3.36
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -147,20 +147,10 @@ Distribución sistemática del valor del bien a lo largo de su vida útil.
 | Campo | Def |
 | --- | --- |
 | Método | Línea recta (más común en sector público). |
-| Campo | Def |
-| --- | --- |
 | Inicio | Mes siguiente a la fecha de puesta en marcha. |
-| Campo | Def | Items |
-| --- | --- | --- |
-| Vida Útil Estimada | Según tablas NICSP o definición institucional. | ['Edificios: 50-80 años.', 'Vehículos: 7-10 años.', 'Equipos computacionales: 3-5 años.', 'Mobiliario: 10-15 años.'] |
-| Campo | Def |
-| --- | --- |
+| Vida Útil Estimada | Según tablas NICSP o definición institucional. |
 | Valor Residual | Valor estimado al final de la vida útil (puede ser cero). |
-| Campo | Def |
-| --- | --- |
 | Cálculo Mensual | Depreciación = (Valor Inicial - Valor Residual) / Vida Útil en meses. |
-| Campo | Def |
-| --- | --- |
 | Contabilización | Asiento mensual automático (Gasto Depreciación / Depreciación Acumulada). |
 #### Revalorizacion
 #### Definicion
@@ -176,17 +166,11 @@ Ajuste del valor contable a valor razonable.
 #### Definicion
 Reconocimiento de pérdida de valor cuando el valor recuperable es inferior al valor libro.
 #### Parametros
-| Campo | Items |
-| --- | --- |
-| Indicadores | ['Daño físico.', 'Obsolescencia tecnológica.', 'Cambio de uso.'] |
 | Campo | Def |
 | --- | --- |
+| Indicadores |  |
 | Evaluación | Al menos anual para bienes significativos. |
-| Campo | Def |
-| --- | --- |
 | Registro | Gasto por deterioro y reducción del valor libro. |
-| Campo | Def |
-| --- | --- |
 | Reversión | Posible si las circunstancias cambian (con límite del valor original depreciado). |
 ### Seccion IV Movimientos de Bienes
 #### Traslado
@@ -203,12 +187,10 @@ Cambio de ubicación física dentro de la institución.
 - Respaldar con acta de entrega-recepción.
 #### Prestamo y Comodato
 #### Casos
-| Caso | Def |
-| --- | --- |
-| Préstamo Interno | Cesión temporal a otra unidad del GORE. |
 | Caso | Def | Req |
 | --- | --- | --- |
-| Comodato Externo | Cesión gratuita a terceros (municipalidades, organizaciones). | ['Requiere resolución fundada.', 'Contrato de comodato con plazo y obligaciones.', 'Registro del bien como "En Comodato" sin baja patrimonial.', 'Seguimiento de fecha de devolución.'] |
+| Préstamo Interno | Cesión temporal a otra unidad del GORE. |  |
+| Comodato Externo | Cesión gratuita a terceros (municipalidades, organizaciones). | Requiere resolución fundada., Contrato de comodato con plazo y obligaciones., Registro del bien como "En Comodato" sin baja patrimonial., Seguimiento de fecha de devolución. |
 #### Mantencion Mayor
 #### Definicion
 Erogaciones que extienden la vida útil o mejoran el rendimiento del bien.
@@ -246,18 +228,10 @@ Separación de un bien en sus componentes significativos para depreciación dife
 | Paso | Act | Def |
 | --- | --- | --- |
 | 1 | Informe Técnico | El área usuaria o mantención certifica el estado del bien. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 2 | Resolución de Baja | Acto administrativo firmado por autoridad competente. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 3 | Registro en Sistema | Cambio de estado a "Dado de Baja", fecha y causal. |
-| Paso | Act | Def |
-| --- | --- | --- |
 | 4 | Contabilización | Reverso del valor libro (Activo y Depreciación Acumulada) y reconocimiento de pérdida/utilidad si aplica. |
-| Paso | Act | Items |
-| --- | --- | --- |
-| 5 | Disposición Final | ['Destrucción certificada.', 'Entrega a beneficiario (donación).', 'Venta/remate.'] |
+| 5 | Disposición Final |  |
 #### Remate de Bienes
 #### Campos
 | Campo | Def |
@@ -294,12 +268,10 @@ Totalidad de bienes o por ubicación/responsable.
 Comparar inventario físico vs. registro en sistema.
 #### Tratamiento de Diferencias
 #### Casos
-| Caso | Def |
-| --- | --- |
-| Sobrante | Bien físico sin registro. Investigar origen y regularizar con alta por revalorización. |
 | Caso | Def | Proc |
 | --- | --- | --- |
-| Faltante | Registro sin respaldo físico. | ['Investigación administrativa.', 'Si hay responsabilidad: sumario y reintegro.', 'Si no hay responsabilidad demostrable: baja por pérdida.'] |
+| Sobrante | Bien físico sin registro. Investigar origen y regularizar con alta por revalorización. |  |
+| Faltante | Registro sin respaldo físico. | Investigación administrativa., Si hay responsabilidad: sumario y reintegro., Si no hay responsabilidad demostrable: baja por pérdida. |
 #### Asignacion de Responsables
 #### Requisitos
 - Cada bien debe tener un funcionario responsable de su custodia.
@@ -339,7 +311,7 @@ Comparar inventario físico vs. registro en sistema.
 - Integración con módulo de Flota.
 - Seguros obligatorios (SOAP) y voluntarios.
 - Control de mantenciones y combustible.
-#### Ctx Optional
+#### Contexto opcional
 Manual 2.4: Servicios y Flotas (./manual_2_4_servicios_flotas.md).
 #### Equipamiento TIC
 #### Items
@@ -351,21 +323,17 @@ Manual 2.4: Servicios y Flotas (./manual_2_4_servicios_flotas.md).
 #### Definicion
 Bienes recibidos o entregados en concesión con tratamiento NICSP específico.
 #### Campos
-| Campo | Items |
-| --- | --- |
-| Fases | ['Construcción.', 'Explotación.', 'Devolución.'] |
 | Campo | Def |
 | --- | --- |
+| Fases |  |
 | Registro | Según modelo NICSP 32 (Acuerdos de Concesión de Servicios). |
-| Campo | Def |
-| --- | --- |
 | Control | Seguimiento de obligaciones del concesionario. |
 ### Alcance
 #### Contexto
 Este manual establece el marco integral para la gestión patrimonial del GORE, desde la adquisición hasta la disposición final de los bienes.
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_2_inventarios.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_4_servicios_flotas_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml

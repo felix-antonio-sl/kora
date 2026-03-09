@@ -4,18 +4,18 @@
       "id": "guardian-governance-consistency-check",
       "workspace": "kora/guardian",
       "requires_states": ["S-GOVERNANCE", "S-VALIDATION"],
-      "requires_tools": ["kb_route", "repo_health"],
-      "requires_no_skills": true,
+      "requires_skills": ["CM-CONTEXT-MANAGER", "CM-SPEC-CLASSIFIER", "CM-SPEC-GUARD"],
+      "requires_tools": ["kb_route", "repo_health", "spec_consult"],
       "requires_routes": ["kora/forgemaster", "kora/curator", "kora/custodio"],
       "requires_allowed_kb_min": 4,
-      "requires_evidence_terms": ["CONSISTENCIA_NORMATIVA", "TRAZABILIDAD_FORMAL"]
+      "requires_evidence_terms": ["CONSISTENCIA_NORMATIVA", "TRAZABILIDAD_RESOLUBLE"]
     },
     {
       "id": "guardian-foundational-validation-audit",
       "workspace": "kora/guardian",
       "requires_states": ["S-VALIDATION"],
-      "requires_tools": ["repo_health"],
-      "requires_no_skills": true,
+      "requires_skills": ["CM-CONTEXT-MANAGER", "CM-SPEC-CLASSIFIER", "CM-SPEC-GUARD"],
+      "requires_tools": ["repo_health", "spec_consult"],
       "requires_routes": ["kora/forgemaster", "kora/curator", "kora/custodio"],
       "requires_allowed_terms": ["specs fundacionales", "gobernanza", "coherencia normativa"]
     },

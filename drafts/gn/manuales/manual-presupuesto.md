@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.04
+    cr: 3.28
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -109,14 +109,8 @@ Estructura presupuestaria GORE Ñuble.
 | Ref |
 | --- |
 | DEF-FNDR |
-| Ref |
-| --- |
 | DEF-FRPD |
-| Fuente | Def |
-| --- | --- |
-| Ingresos Propios | Recursos generados por venta de bienes, multas o servicios. |
-| Ref |
-| --- |
+|  |
 | DEF-PAC |
 #### Roles Presupuestarios
 #### Roles
@@ -133,12 +127,10 @@ Mayo-Junio del año anterior.
 #### Actividad
 DIPRES comunica 'Marco Exploratorio' (techo global estimado).
 #### Analisis Interno
-| Resp | Act |
-| --- | --- |
-| DIPIR | Proyectar 'Arrastres' (compromisos de años anteriores a pagar en año t+1). |
-| Resp | Res |
-| --- | --- |
-| DIPIR | Determinar 'Espacio Presupuestario' para nuevas iniciativas. |
+| Resp | Act | Res |
+| --- | --- | --- |
+| DIPIR | Proyectar 'Arrastres' (compromisos de años anteriores a pagar en año t+1). |  |
+| DIPIR |  | Determinar 'Espacio Presupuestario' para nuevas iniciativas. |
 #### Referencias
 - DEF-DIPRES
 - DEF-DIPIR
@@ -152,7 +144,7 @@ DIPRES comunica 'Marco Exploratorio' (techo global estimado).
 | Prioridad | Req |
 | --- | --- |
 | 1. Continuidad (Arrastre). | Asegurar financiamiento de obras en ejecución. |
-| 2. Nuevas Iniciativas. | ['Seleccionar proyectos con recomendación técnica favorable (RS).', 'Alinear con Estrategia Regional de Desarrollo (ERD).'] |
+| 2. Nuevas Iniciativas. | Seleccionar proyectos con recomendación técnica favorable (RS)., Alinear con Estrategia Regional de Desarrollo (ERD). |
 #### Ingreso SIGFE
 #### Acciones
 Cargar formulación en módulo de formulación del sistema central.
@@ -163,15 +155,9 @@ DEF-SIGFE
 | Etapa | Act |
 | --- | --- |
 | 1. Interna | DIPIR presenta propuesta consolidada a Gobernador y Administrador Regional. |
-| Etapa | Act |
-| --- | --- |
 | 2. CORE | Gobernador presenta proyecto al CORE (comisión y aprobación en pleno). |
-| Etapa | Proc |
-| --- | --- |
-| 3. DIPRES/Congreso | Discusión técnica con analistas DIPRES; trámite legislativo (Septiembre-Noviembre). |
-| Etapa | Res |
-| --- | --- |
-| 4. Promulgación | Publicación Ley de Presupuestos (Diciembre). |
+| 3. DIPRES/Congreso |  |
+| 4. Promulgación |  |
 #### Referencias
 - DEF-DIPIR
 - DEF-GOBERNADOR-REGIONAL
@@ -188,20 +174,12 @@ DEF-BIP
 #### Requisitos
 Todo gasto debe seguir estrictamente la cadena de afectación en SIGFE para asegurar trazabilidad y control financiero.
 #### Cadena Estandar
-| Etapa | Def |
-| --- | --- |
-| 0. Pre-afectación | Reserva preventiva de recursos al iniciar un proceso de compra o solicitud de gasto (interno). |
 | Etapa | Ref | Act |
 | --- | --- | --- |
+| 0. Pre-afectación |  |  |
 | 1. CDP | DEF-CDP | Emisión del certificado que bloquea el saldo presupuestario. |
-| Etapa | Ref | Act |
-| --- | --- | --- |
 | 2. Compromiso | DEF-COMPROMISO | Registro del acto administrativo (OC, Contrato, Resolución) que formaliza la obligación con un tercero. |
-| Etapa | Ref | Act |
-| --- | --- | --- |
 | 3. Devengo | DEF-DEVENGO | Reconocimiento de la obligación exigible tras recepción conforme o cumplimiento de hito. |
-| Etapa | Ref | Act |
-| --- | --- | --- |
 | 4. Pago | DEF-PAGO | Extinción de la obligación mediante transferencia electrónica. |
 #### Reglas Especificas de Devengo para Transferencias
 #### Fuentes
@@ -216,15 +194,11 @@ Minuta CGR-AGORECHI-DIPRES marzo 2025; Dictamen CGR N°E583841/2024.
 DEF-SIGFE
 #### Modificaciones Presupuestarias
 #### Niveles
-| Nivel | Nombre | Alcance | Aprobacion |
-| --- | --- | --- | --- |
-| 1 | Resolución GORE | Reasignaciones entre ítems del mismo subtítulo (con restricciones). | Gobernador. |
 | Nivel | Nombre | Alcance |
 | --- | --- | --- |
+| 1 | Resolución GORE | Reasignaciones entre ítems del mismo subtítulo (con restricciones). |
 | 2 | Resolución GORE con Toma de Razón | Reasignaciones entre subtítulos de misma naturaleza. |
-| Nivel | Nombre | Alcance | Req |
-| --- | --- | --- | --- |
-| 3 | Decreto de Hacienda | ['Suplementos de fondos.', 'Transferencias entre programas.', 'Creación de asignaciones.'] | Trámite en DIPRES. |
+| 3 | Decreto de Hacienda | Suplementos de fondos., Transferencias entre programas., Creación de asignaciones. |
 #### Excepciones Sin Acuerdo CORE Glosa 01
 #### Contexto
 Modificaciones que el Gobernador puede autorizar vía Resolución sin acuerdo CORE (Glosa 01, Circular 11).
@@ -267,11 +241,9 @@ DEF-IDI
 #### Definicion
 Mecanismo principal para ejecutar proyectos donde GORE no es unidad técnica.
 #### Tipos
-| Tipo | Def |
-| --- | --- |
-| Convenio Mandato | GORE encarga ejecución a tercero (MOP, SERVIU, Municipalidad); transfiere recursos contra avance (Estados de Pago). |
 | Tipo | Def | Req |
 | --- | --- | --- |
+| Convenio Mandato | GORE encarga ejecución a tercero (MOP, SERVIU, Municipalidad); transfiere recursos contra avance (Estados de Pago). |  |
 | Convenio de Transferencia | Entrega recursos para ejecución directa del beneficiario (subvenciones, fondos concursables). | Rendición estricta (SISREC/Contraloría). |
 #### Contexto
 - Unidades técnicas posibles: MOP, SERVIU, Municipalidad.
@@ -300,17 +272,11 @@ Exentos de evaluación ex-ante: programas 8% FNDR (Glosa 07) y tipologías FRPD 
 #### Fuentes
 Circular 11 DIPRES - Instrucciones Glosas GORES.
 #### Normas
-| Glosa | Prohib |
-| --- | --- |
-| 03 (Gastos en Personal) | No se puede imputar a inversión (Subtítulo 31) gastos en personal (Subtítulo 21), salvo contratación de inspección técnica de obras. |
 | Glosa | Req |
 | --- | --- |
+| 03 (Gastos en Personal) |  |
 | 06 (Programas GORE) | Ejecución directa requiere unidad técnica interna competente y resolución fundada. |
-| Glosa | Req |
-| --- | --- |
 | 07 (Subvenciones 8%) | Máximo 8% del presupuesto inversional. Asignación directa solo a entidades públicas o privadas sin fines de lucro, con justificación fundada. |
-| Glosa | Req |
-| --- | --- |
 | 12 (FRIL) | Proyectos menores a 5.000 UTM exentos de evaluación MDSyF (solo requieren elegibilidad técnica regional). |
 #### Programacion Financiera
 #### Coordinacion
@@ -324,7 +290,7 @@ DEF-PAC
 #### Requisitos
 - Evitar devengamiento masivo en diciembre.
 - Procesar estados de pago mensualmente para reflejar ejecución real.
-#### Ctx Optional
+#### Contexto opcional
 Para detalle operativo PAC y gestión de caja: Manual 1.3: Tesorería y Gestión de Ingresos (./manual_1_3_tesoreria.md).
 ### Seccion V Informes y Evaluacion
 #### Reporteria Oficial
@@ -369,7 +335,7 @@ DEF-SIC
 - urn:gn:kb:ley-presupuestos-2026-partida-31
 - urn:gn:kb:ley-presupuestos-2026-normas-generales
 - urn:gn:kb:gestion-prpto
-#### Ctx Optional
+#### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml

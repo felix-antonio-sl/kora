@@ -11,13 +11,19 @@
         ],
         "tool_names": [
           "kb_route",
-          "repo_health"
+          "repo_health",
+          "spec_consult"
         ],
         "tools_allow": [
           "kb_route",
-          "repo_health"
+          "repo_health",
+          "spec_consult"
         ],
-        "skill_refs": [],
+        "skill_refs": [
+          "CM-CONTEXT-MANAGER",
+          "CM-SPEC-CLASSIFIER",
+          "CM-SPEC-GUARD"
+        ],
         "handoff_targets": [
           "kora/curator",
           "kora/custodio",
@@ -29,8 +35,12 @@
           "kora/forgemaster"
         ],
         "sub_agents": [],
-        "evidence_lines": [],
-        "allowed_kb_count": 4,
+        "evidence_lines": [
+          "3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: Verificar consistencia entre specs fundacionales resolubles y toolchain visible del repo. Consolidar hallazgos normativos y operativos. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.",
+          "4. STATE: S-END -> ACT: Resumen: criterio emitido, hallazgos normativos, riesgos abiertos y siguientes pasos. -> Trans: [terminal].",
+          "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
+        ],
+        "allowed_kb_count": 7,
         "sources": {
           "agents": "agents/kora/guardian/AGENTS.md",
           "tools": "agents/kora/guardian/TOOLS.md",
@@ -777,7 +787,7 @@
   "totals": {
     "workspaces": 13,
     "states": 92,
-    "tools": 79,
+    "tools": 80,
     "handoffs": 35
   },
   "meta_kora": {
@@ -797,13 +807,19 @@
         ],
         "tool_names": [
           "kb_route",
-          "repo_health"
+          "repo_health",
+          "spec_consult"
         ],
         "tools_allow": [
           "kb_route",
-          "repo_health"
+          "repo_health",
+          "spec_consult"
         ],
-        "skill_refs": [],
+        "skill_refs": [
+          "CM-CONTEXT-MANAGER",
+          "CM-SPEC-CLASSIFIER",
+          "CM-SPEC-GUARD"
+        ],
         "handoff_targets": [
           "kora/curator",
           "kora/custodio",
@@ -815,8 +831,12 @@
           "kora/forgemaster"
         ],
         "sub_agents": [],
-        "evidence_lines": [],
-        "allowed_kb_count": 4,
+        "evidence_lines": [
+          "3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: Verificar consistencia entre specs fundacionales resolubles y toolchain visible del repo. Consolidar hallazgos normativos y operativos. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.",
+          "4. STATE: S-END -> ACT: Resumen: criterio emitido, hallazgos normativos, riesgos abiertos y siguientes pasos. -> Trans: [terminal].",
+          "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
+        ],
+        "allowed_kb_count": 7,
         "sources": {
           "agents": "agents/kora/guardian/AGENTS.md",
           "tools": "agents/kora/guardian/TOOLS.md",

@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.19
+    cr: 3.36
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -95,21 +95,13 @@ DEF-DIPIR
 #### Requisitos
 Gestión contable GORE se rige estrictamente por normativa y regulaciones listadas.
 #### Fuentes
-| Src |
-| --- |
-| Decreto Ley N° 1.263 (1975): Ley Orgánica de Administración Financiera del Estado. |
 | Src | Ref |
 | --- | --- |
-| Resolución N° 16 (2015) CGR: aprueba normativa Sistema de Contabilidad General de la Nación (NICSP-CGR). | ['DEF-CGR', 'DEF-NICSP'] |
-| Src | Ref |
-| --- | --- |
+| Decreto Ley N° 1.263 (1975): Ley Orgánica de Administración Financiera del Estado. |  |
+| Resolución N° 16 (2015) CGR: aprueba normativa Sistema de Contabilidad General de la Nación (NICSP-CGR). | DEF-CGR, DEF-NICSP |
 | Resolución N° 30 (2015) CGR: fija normas sobre rendición de cuentas. | DEF-CGR |
-| Src | Ref |
-| --- | --- |
 | Oficios Circulares CGR: instrucciones anuales sobre cierres contables y apertura de ejercicio. | DEF-CGR |
-| Src | Ref |
-| --- | --- |
-| Instrucciones DIPRES: Clasificador Presupuestario y manuales operativos SIGFE. | ['DEF-DIPRES', 'DEF-SIGFE'] |
+| Instrucciones DIPRES: Clasificador Presupuestario y manuales operativos SIGFE. | DEF-DIPRES, DEF-SIGFE |
 #### Glosario de Terminos Contables Clave
 #### Terminos
 | Ref |
@@ -129,21 +121,11 @@ DEF-CGR
 | Nivel | Ex |
 | --- | --- |
 | Título | Ej. 1 ACTIVO |
-| Nivel | Ex |
-| --- | --- |
 | Grupo | Ej. 11 ACTIVOS CIRCULANTES |
-| Nivel | Ex |
-| --- | --- |
 | Subgrupo | Ej. 111 DISPONIBILIDADES |
-| Nivel | Ex |
-| --- | --- |
 | Cuenta Nivel 1 | Ej. 11101 BANCO ESTADO |
-| Nivel | Ex |
-| --- | --- |
 | Cuenta Nivel 2 | Ej. 1110101 CUENTA ÚNICA FISCAL |
-| Nivel | Def | Ex |
-| --- | --- | --- |
-| Desagregados Institucionales | Niveles adicionales para control de gestión. | Ej. auxiliar por Proyecto/IPR. |
+| Desagregados Institucionales | Ej. auxiliar por Proyecto/IPR. |
 #### Cuentas de Orden
 #### Definicion
 Control de garantías (boletas, pólizas) y responsabilidades eventuales.
@@ -172,7 +154,7 @@ ERP opera con Asientos Tipo pre-parametrizados para evitar errores manuales en o
 #### Asientos Tipo
 | ID | Nombre | Def | Ref |
 | --- | --- | --- | --- |
-| GN-MANUAL-CONTAB-S2-ASIENTO-REM-01 | Devengo de Remuneraciones | Automático desde módulo SIGPER. | ['DEF-ASIENTO-TIPO', 'DEF-SIGPER'] |
+| GN-MANUAL-CONTAB-S2-ASIENTO-REM-01 | Devengo de Remuneraciones | Automático desde módulo SIGPER. | DEF-ASIENTO-TIPO, DEF-SIGPER |
 | GN-MANUAL-CONTAB-S2-ASIENTO-BYS-01 | Devengo de Bienes y Servicios | Automático desde módulo Adquisiciones/Activo Fijo. | DEF-ASIENTO-TIPO |
 | GN-MANUAL-CONTAB-S2-ASIENTO-ING-01 | Ingresos por Transferencia | Asiento tipo de recepción de aporte fiscal. | DEF-ASIENTO-TIPO |
 | GN-MANUAL-CONTAB-S2-ASIENTO-REND-01 | Rendiciones de Cuentas | Asiento tipo para regularizar anticipos. | DEF-ASIENTO-TIPO |
@@ -188,12 +170,10 @@ Comprobante Contable es documento fuente único de registro (papel o digital fir
 #### Referencias
 DEF-COMPROBANTE-CONTABLE
 #### Tipos
-| ID | Tipo | Def | Ex |
-| --- | --- | --- | --- |
-| GN-MANUAL-CONTAB-S3-COMPROB-AUTO-01 | Comprobantes Automáticos (Interfaz) | Se generan sin intervención humana directa al aprobarse hitos en módulos auxiliares. | ['Recepción Conforme en Bodega genera el devengo.'] |
-| ID | Tipo | Prohib | Req | Ref |
-| --- | --- | --- | --- | --- |
-| GN-MANUAL-CONTAB-S3-COMPROB-MAN-01 | Comprobantes Manuales | Uso fuera de: ajustes, regularizaciones, depreciaciones manuales, correcciones de errores. | ['V°B° de jefatura.', 'Adjuntar minuta explicativa.'] | DEF-MINUTA-EXPLICATIVA |
+| ID | Tipo | Def | Ex | Prohib | Req | Ref |
+| --- | --- | --- | --- | --- | --- | --- |
+| GN-MANUAL-CONTAB-S3-COMPROB-AUTO-01 | Comprobantes Automáticos (Interfaz) | Se generan sin intervención humana directa al aprobarse hitos en módulos auxiliares. | Recepción Conforme en Bodega genera el devengo. |  |  |  |
+| GN-MANUAL-CONTAB-S3-COMPROB-MAN-01 | Comprobantes Manuales |  |  | Uso fuera de: ajustes, regularizaciones, depreciaciones manuales, correcciones de errores. | V°B° de jefatura., Adjuntar minuta explicativa. | DEF-MINUTA-EXPLICATIVA |
 #### Validaciones Sistema
 #### Requisitos
 - Sistema bloquea comprobantes descuadrados.
@@ -206,9 +186,9 @@ Proceso crítico de integración de sistemas satélites al ERP Financiero.
 #### Casos
 | ID | Area | Proc | Ref |
 | --- | --- | --- | --- |
-| GN-MANUAL-CONTAB-S3-CENTRAL-REM-01 | Remuneraciones (SIGPER) | ['Centralizar mensualmente tras cierre de sueldos.', 'Validar integridad total: Monto Bruto = Líquido + Leyes Sociales + Retenciones.'] | DEF-SIGPER |
-| GN-MANUAL-CONTAB-S3-CENTRAL-AF-01 | Activo Fijo y Existencias (SIGAS) | ['Entrada de bodega genera alta de activo/existencia + pasivo con proveedor (Facturas por Recibir).', 'Consumo de bodega genera gasto patrimonial.'] | DEF-SIGAS |
-| GN-MANUAL-CONTAB-S3-CENTRAL-INTEROP-01 | Interoperabilidad Externa | ['Recepción automática de decretos de modificación presupuestaria desde DIPRES (si tecnología lo permite).', 'Recepción de cartolas bancarias.'] | ['DEF-DIPRES', 'DEF-INTEROPERABILIDAD'] |
+| GN-MANUAL-CONTAB-S3-CENTRAL-REM-01 | Remuneraciones (SIGPER) | Centralizar mensualmente tras cierre de sueldos., Validar integridad total: Monto Bruto = Líquido + Leyes Sociales + Retenciones. | DEF-SIGPER |
+| GN-MANUAL-CONTAB-S3-CENTRAL-AF-01 | Activo Fijo y Existencias (SIGAS) | Entrada de bodega genera alta de activo/existencia + pasivo con proveedor (Facturas por Recibir)., Consumo de bodega genera gasto patrimonial. | DEF-SIGAS |
+| GN-MANUAL-CONTAB-S3-CENTRAL-INTEROP-01 | Interoperabilidad Externa | Recepción automática de decretos de modificación presupuestaria desde DIPRES (si tecnología lo permite)., Recepción de cartolas bancarias. | DEF-DIPRES, DEF-INTEROPERABILIDAD |
 #### Gestion de Honorarios
 #### Definicion
 Registro de prestaciones de servicios personales (boletas de honorarios).
@@ -250,21 +230,15 @@ Transferencias a terceros (Subtítulos 24 y 33) deben rendirse obligatoriamente 
 | Paso | Act |
 | --- | --- |
 | 1. Recepción y Derivación | La UCR (Unidad de Control de Rendiciones) centraliza la recepción y deriva al Referente Técnico-Financiero (RTF). |
-| Paso | Act |
-| --- | --- |
 | 2. Revisión Técnica (Analista Otorgante) | Revisión física y financiera en SISREC. Aprobación o devolución por observaciones. |
-| Paso | Act |
-| --- | --- |
 | 3. Firma y Aprobación (Encargado Otorgante) | Firma del Informe de Aprobación por Jefatura DAF mediante Firma Electrónica Avanzada (FEA). |
-| Paso | Act | Dln |
-| --- | --- | --- |
-| 4. Contabilización SIGFE | Descarga del informe aprobado y ejecución del asiento de rendición en SIGFE (Reverso de Anticipos / Reconocimiento de Gasto). | 2 días hábiles tras aprobación técnica. |
+| 4. Contabilización SIGFE | Descarga del informe aprobado y ejecución del asiento de rendición en SIGFE (Reverso de Anticipos / Reconocimiento de Gasto). |
 #### Referencias
 - DEF-SISREC
 - DEF-CGR
 - DEF-SIGFE
 ### Seccion IV Integracion Bancaria y Conciliacion Contable
-#### Ctx Optional
+#### Contexto opcional
 Procedimientos operativos Tesorería (pagos, ingresos, garantías): Manual 1.3: Tesorería y Gestión de Ingresos (./manual_1_3_tesoreria.md).
 #### Administracion de Cuentas Corrientes
 #### Requisitos
@@ -309,21 +283,11 @@ Cronograma estricto para asegurar reportes oportunos (ej.: día 10 del mes sigui
 | Paso | Act |
 | --- | --- |
 | 1. Cierre de Módulos Auxiliares | Bodega, Activo Fijo, Remuneraciones, Tesorería (no más cheques con fecha del mes). |
-| Paso | Act |
-| --- | --- |
 | 2. Centralización | Ejecutar interfaces pendientes. |
-| Paso | Act |
-| --- | --- |
 | 3. Análisis de Cuentas | Revisar saldos anómalos (ej.: cuentas de activo con saldo acreedor). |
-| Paso | Act |
-| --- | --- |
 | 4. Cuadratura Inter-sistémica | Saldo Presupuestario vs. Contabilidad Patrimonial. |
-| Paso | Res |
-| --- | --- |
-| 5. Generación de Reportes | ['Balance de Comprobación y de Saldos.', 'Informe de Ejecución Presupuestaria.'] |
-| Paso | Act | Ref |
-| --- | --- | --- |
-| 6. Envío SIGFE | Generación y transmisión de XML/API a Contraloría/DIPRES. | ['DEF-SIGFE', 'DEF-CGR', 'DEF-DIPRES'] |
+| 5. Generación de Reportes |  |
+| 6. Envío SIGFE | Generación y transmisión de XML/API a Contraloría/DIPRES. |
 #### Cierre Anual y Apertura
 #### Definicion
 Proceso de fin de ejercicio.
@@ -394,7 +358,7 @@ Documento vivo: debe actualizarse ante cambios en normativa NICSP-CGR o en siste
 - DEF-CGR
 
 ## Referencias Cruzadas
-### Ctx Optional
+### Contexto opcional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_2_inventarios.yml

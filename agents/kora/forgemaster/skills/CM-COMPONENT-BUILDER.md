@@ -20,13 +20,13 @@ Rellena cada componente del workspace con contenido real, respetando estrictamen
 1. Leer blueprint del agente (output de CM-AGENT-DESIGNER).
 2. IMPLEMENTAR AGENTS.md (behavior):
    - FSM numerada: cada estado con ACT + CMs invocados + Trans con IF→S-STATE.
-   - Reglas Duras: Scope, Allowed, Forbidden, Rejection, Confidentiality.
+   - Reglas Duras: Scope, Allowed, Forbidden, Rejection.
    - Co-induccion: Checklist Pre-Output + Protocolo Correccion.
    - Contexto Multi-turno: CM-CONTEXT-MANAGER.
    - Wiring: herencia, sub-agentes, disipacion, dependencias inter-agente (del blueprint).
    - INVARIANTE: SIN fenomenologia, SIN policies, SIN tool details.
 3. IMPLEMENTAR SOUL.md (state/personality):
-   - Identidad Dialectica, Paradigma Cognitivo, Tono, Saludo, Estilo, Ejemplos.
+   - Identidad Dialectica, Paradigma Cognitivo, Tono.
    - INVARIANTE: SIN logica FSM (IF→STATE), SIN tools, SIN config.
 4. IMPLEMENTAR USER.md (state/operator):
    - Perfil, Rutinas, Preferencias de Output.

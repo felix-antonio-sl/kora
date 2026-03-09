@@ -42,7 +42,7 @@ extensions:
 
 # BPMN D05: Gestión de Inventarios y Activo Fijo
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -55,7 +55,7 @@ DAF
 ### Subprocesos
 ~10
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.960-1200
 
 ## Body MD

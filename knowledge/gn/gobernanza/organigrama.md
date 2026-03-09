@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:organigrama
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml; ontologies/onto_gorenuble/goreNubleOrgData.ttl
 version: 2.0.0
 status: published
@@ -25,7 +25,7 @@ extensions:
     source_type: mixed
     transformation_mode: korafy_composite
     fs: 100
-    cr: 3.01
+    cr: 3.47
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Organigrama operativo y estructura organica observables en la
@@ -33,8 +33,8 @@ extensions:
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 795
+    skeleton_count: 3
+    meat_count: 767
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__organigrama.md.json
 ---
@@ -43,53 +43,41 @@ extensions:
 
 ## Alcance
 Organigrama operativo y estructura organica observables en la fuente KODA y el slice TTL organizacional.
-
-## Fuente principal
-- `domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml`
-## ID
-GN-ORG-2026-01
-
-## Purp
+## Proposito
 Describir estructura organizacional y funciones generales por unidad.
 
-## Ctx
+## Contexto
 - Contenido redactado como descripciones funcionales (no incluye dotación/cargos específicos).
 - Orden de unidades preserva el orden del documento fuente.
 
 ## Maxima Autoridad
 ### Gobernador Regional
-#### ID
-GN-ORG-GOBERNADOR-01
-#### Def
+#### Definicion
 Máxima autoridad ejecutiva del Gobierno Regional; dirige la administración del Gobierno Regional.
-#### Src
+#### Fuentes
 - Ley Orgánica Constitucional de Gobierno y Administración Regional (LOCGAR), Ley N°19.175.
 - Constitución Política de la República.
-#### Act
+#### Acciones
 - Gestionar administración del Gobierno Regional.
 - Ejecutar funciones propias del servicio.
 - Coordinar trabajo de las divisiones del Gobierno Regional.
 - Presidir el Consejo Regional.
-#### Req
+#### Requisitos
 - Ejercer funciones con estricto apego a la Constitución Política de la República.
 
 ## Unidades y Organos
 ### Unidad de Gabinete y Participacion Social
-#### ID
-GN-ORG-GABINETE-01
-#### Purp
+#### Proposito
 Asesoría al Gobernador Regional y al equipo directivo; coordinación institucional.
-#### Act
+#### Acciones
 - Asesorar al Gobernador Regional y equipo directivo en materias específicas (principalmente administrativas y de gestión).
 - Coordinar agenda institucional, despliegue territorial y audiencias.
 - Preparar información de respaldo para actividades institucionales.
 - Contribuir a articulación con actores del sector público y privado.
 ### Departamento de Comunicaciones
-#### ID
-GN-ORG-COMUNICACIONES-01
-#### Purp
+#### Proposito
 Comunicación externa e interna del Gobierno Regional.
-#### Act
+#### Acciones
 - Diseñar, planificar y ejecutar estrategias de comunicación para mantener a la ciudadanía informada del quehacer, planes y objetivos del Gobierno Regional y su Consejo.
 - Gestionar vinculación con actores relacionados con la institución.
 - Gestionar relación formal con medios de comunicación e imagen institucional.
@@ -97,15 +85,13 @@ Comunicación externa e interna del Gobierno Regional.
 - Promover comunicación clara y cercana a la ciudadanía.
 - Fortalecer flujos de información interna para alinear equipos, fomentar cultura organizacional y mejorar compromiso con objetivos estratégicos.
 ### Unidad de Control
-#### ID
-GN-ORG-CONTROL-01
-#### Purp
+#### Proposito
 Auditoría operativa interna; control de legalidad y ejecución financiera/presupuestaria.
 #### Dependencia
 Gobernador Regional.
 #### Relacion
 - Colabora directamente con el Consejo Regional en su función de fiscalización.
-#### Act
+#### Acciones
 - Realizar auditoría operativa interna institucional.
 - Fiscalizar legalidad de actos del Gobierno Regional.
 - Controlar ejecución financiera y presupuestaria.
@@ -119,36 +105,30 @@ Gobernador Regional.
 - Seguimiento sistemático de ejecución presupuestaria.
 - Informar trimestralmente al Consejo Regional sobre avance financiero, procesos de contratación pública, licitaciones y materias relevantes para toma de decisiones.
 ### Consejo de la Sociedad Civil COSOC
-#### ID
-GN-ORG-COSOC-01
-#### Def
+#### Definicion
 Órgano colegiado y autónomo.
-#### Obj
+#### Objetivos
 - Promover y fortalecer participación ciudadana en gestión del Gobierno Regional.
 - Fiscalizar cumplimiento de normas de participación civil.
-#### Ctx
+#### Contexto
 - Con representación de organizaciones de la sociedad civil de la Región de Ñuble vinculadas a competencias del Gobierno Regional.
-#### Res
+#### Resultados
 - Contribuye a transparencia, eficacia y legitimidad de la acción gubernamental a nivel regional.
 ### Consejo Regional de Nuble CORE
-#### ID
-GN-ORG-CORE-01
-#### Def
+#### Definicion
 Órgano normativo, fiscalizador y decisorio del Gobierno Regional.
-#### Purp
+#### Proposito
 Hacer efectiva la participación de la comunidad regional en el gobierno regional.
-#### Ctx
+#### Contexto
 - Compuesto por 16 Consejeras y Consejeros Regionales.
 - Elegidos democráticamente para representar provincias: Diguillín, Punilla e Itata.
 - Presidido por el Gobernador Regional.
-#### Src
+#### Fuentes
 - Ley 19.175 Orgánica Constitucional sobre Gobierno y Administración Regional.
 ### Secretaria Ejecutiva del Consejo Regional
-#### ID
-GN-ORG-SEC-CORE-01
-#### Def
+#### Definicion
 Unidad administrativa, técnica y operativa que facilita y coordina funcionamiento del CORE.
-#### Act
+#### Acciones
 - Asegurar cumplimiento de acuerdos y resoluciones del Consejo.
 - Servir de enlace entre CORE, Gobernador Regional, unidades del Gobierno Regional y comunidad.
 - Coordinar, colaborar y asesorar desempeño de funciones del Consejo Regional.
@@ -156,34 +136,28 @@ Unidad administrativa, técnica y operativa que facilita y coordina funcionamien
 - Registrar acuerdos.
 - Elaborar actas de cada sesión.
 ### Administracion Regional
-#### ID
-GN-ORG-ADMIN-REGIONAL-01
-#### Purp
+#### Proposito
 Gestión administrativa integral y coordinación del accionar de jefaturas de divisiones.
-#### Act
+#### Acciones
 - Coordinar accionar de jefes/as de cada una de las divisiones.
 - Ejecutar materias propias del servicio.
 - Ejercer subrogancia del Gobernador Regional en caso de ausencia.
-#### Ctx
+#### Contexto
 - Desempeño del cargo bajo exclusiva confianza del Gobernador Regional.
 ### Corporacion Regional de Desarrollo
-#### ID
-GN-ORG-CORP-DESARROLLO-01
-#### Mssn
+#### Mision
 Entidad asesora del Gobierno Regional de Ñuble en planificación, gestión y desarrollo de políticas públicas.
-#### Obj
+#### Objetivos
 Promover desarrollo integral y articulado público-privado en áreas de interés de la región.
-#### Act
+#### Acciones
 - Contribuir a promoción, posicionamiento y avance de la región a nivel nacional e internacional.
 - Implementar iniciativas para disminuir desigualdades socio-territoriales.
-#### Ctx
+#### Contexto
 - Núcleo de intervención: provincias y comunas de la región.
 ### Auditoria Interna
-#### ID
-GN-ORG-AUD-INTERNA-01
-#### Def
+#### Definicion
 Unidad de monitoreo independiente y objetivo del sistema de control interno del Gobierno Regional.
-#### Act
+#### Acciones
 - Evaluación objetiva e independiente de gestión y desempeño del Gobierno Regional.
 - Examinar y analizar procesos administrativos, financieros y operativos para asegurar conformidad normativa y uso eficiente de recursos.
 - Realizar auditoría operativa interna del GORE.
@@ -191,22 +165,18 @@ Unidad de monitoreo independiente y objetivo del sistema de control interno del 
 - Asesorar al Gobernador Regional y jefaturas en asuntos de funcionamiento (excepto procesos disciplinarios).
 - Coordinar seguimiento de recomendaciones de la Contraloría General de la República.
 ### Departamento Juridico
-#### ID
-GN-ORG-JURIDICO-01
-#### Purp
+#### Proposito
 Asesoría legal interna; resguardo de legalidad institucional.
-#### Act
+#### Acciones
 - Asesorar en materias legales a distintas áreas del servicio.
 - Elaborar y supervisar actos administrativos.
 - Representación judicial y extrajudicial del Gobierno Regional.
 - Entregar lineamientos legales a la autoridad y unidades.
 - Mantener informados estamentos sobre normas legales y reglamentarias pertinentes.
 ### Departamento de Gestion Institucional
-#### ID
-GN-ORG-GESTION-INST-01
-#### Purp
+#### Proposito
 Planificación institucional y control de gestión para toma de decisiones.
-#### Act
+#### Acciones
 - Desarrollar sistema de planificación y control de gestión.
 - Formular, monitorear y dar seguimiento a indicadores de desempeño institucional.
 - Planificar, organizar y controlar procesos administrativos y estratégicos para asegurar cumplimiento de objetivos.
@@ -214,13 +184,11 @@ Planificación institucional y control de gestión para toma de decisiones.
 - Implementar políticas y mejora continua para asegurar buen funcionamiento administrativo y organizacional.
 #### Unidades Dependientes
 #### Oficina OIRS
-#### ID
-GN-ORG-OIRS-01
-#### Def
+#### Definicion
 Oficina de Informaciones, Reclamos y Sugerencias (OIRS).
-#### Purp
+#### Proposito
 Facilitar vínculo ciudadanía–Gobierno Regional.
-#### Act
+#### Acciones
 - Generar espacios de atención y participación ciudadana.
 - Facilitar interacción con la ciudadanía.
 - Garantizar derecho de acceso a la información pública.
@@ -228,122 +196,102 @@ Facilitar vínculo ciudadanía–Gobierno Regional.
 - Asegurar atención oportuna.
 - Retroalimentar administración con base en necesidades y sugerencias de la comunidad.
 ### Departamento Nuble 250
-#### ID
-GN-ORG-NUBLE-250-01
-#### Purp
+#### Proposito
 Articulación técnica y seguimiento de proyectos estratégicos priorizados (Agenda Ñuble 250).
-#### Ctx
+#### Contexto
 - Agenda Ñuble 250: hoja de ruta regional hacia 2028; concordante con el primer decenio de creación de la Región de Ñuble.
-#### Act
+#### Acciones
 - Articular técnicamente, coordinar, controlar y dar seguimiento a la gestión de proyectos estratégicos de la cartera de inversión priorizada.
 - Favorecer trabajo coordinado entre reparticiones públicas y divisiones del Gobierno Regional.
 - Fortalecer gobernanza territorial y coherencia de acción estatal en la región.
-#### Req
+#### Requisitos
 - Alineación con objetivos de la Estrategia de Desarrollo Regional.
 ### Unidad Regional de Asuntos Internacionales URAI
-#### ID
-GN-ORG-URAI-01
-#### Purp
+#### Proposito
 Gestión de internacionalización de la región.
-#### Act
+#### Acciones
 - Propiciar cooperación internacional.
 - Impulsar paradiplomacia.
 - Coordinar con entidades nacionales e internacionales.
 - Promover desarrollo regional y participación comunitaria en ámbito exterior.
 - Complementar funciones del gobierno central.
-#### Res
+#### Resultados
 - Contribuye a participación activa de la Región de Ñuble en escena internacional.
 ### Departamento Coordinacion Integral de Emergencia y Seguridad
-#### ID
-GN-ORG-EMERG-SEG-01
-#### Purp
+#### Proposito
 Mejorar respuesta oportuna y coordinada ante emergencias y seguridad pública.
-#### Mech
+#### Mecanismo
 - Integración de sistemas de comunicaciones, información, televigilancia y medios logísticos.
 - Colaboración entre distintas instituciones.
-#### Act
+#### Acciones
 - Formular, diseñar y evaluar políticas y estrategias en seguridad pública y gestión de riesgo de desastres.
 - Gestionar cartera de proyectos GORE en seguridad y gestión de riesgo de desastres.
 - Mantener coordinación permanente con municipalidades e instituciones de la región en estas materias.
 
 ## Divisiones
 ### Division de Planificacion y Desarrollo Regional
-#### ID
-GN-ORG-DIV-PLAN-01
-#### Purp
+#### Proposito
 Planificación territorial y apoyo a evaluación de políticas regionales.
-#### Act
+#### Acciones
 - Elaborar y proponer estrategias, políticas, planes, programas y proyectos para desarrollo armónico del territorio (incluye Plan Regional de Ordenamiento Territorial).
 - Basar procesos en insumos técnicos y participativos, conforme a prioridades definidas por el gobierno regional.
 - Apoyar al Gobernador Regional en evaluación de cumplimiento de políticas, planes, programas, proyectos y presupuestos de carácter regional.
 - Prestar asistencia técnica a municipalidades y otros organismos de la administración que lo requieran.
 #### Componentes
 #### Comite de Pertinencia y Vinculacion Estrategica
-#### ID
-GN-ORG-COMITE-PERTINENCIA-01
-#### Def
+#### Definicion
 Instancia formal de asesoría y análisis de proyectos.
 #### Integrantes
 - Administrador(a) Regional.
 - Jefaturas de Divisiones: Planificación y Desarrollo Regional (Presidente del Comité), Presupuesto e Inversión Regional, Fomento e Industria, Desarrollo Social y Humano, Infraestructura y Transporte.
-#### Act
+#### Acciones
 - Asesorar integralmente a la autoridad.
 - Analizar admisibilidad de proyectos postulados.
 - Analizar pertinencia regional con base en instrumentos de planificación regional y competencias determinadas en la Ley Orgánica de Gobierno y Administración Regional.
 #### Departamento de Planificacion Estrategica y Ordenamiento Territorial
-#### ID
-GN-ORG-DEP-PEOT-01
-#### Purp
+#### Proposito
 Planificación estratégica y ordenamiento territorial regional.
-#### Mssn
+#### Mision
 Impulsar desarrollo armónico y sostenible.
-#### Act
+#### Acciones
 - Elaborar y proponer planes de desarrollo local que integren necesidades de la comunidad con análisis de restricciones ambientales y particularidades geofísicas del territorio.
 - Considerar vocación productiva distintiva de cada comuna, infraestructura existente y proyecciones de crecimiento futuro.
 - Coordinar formulación y seguimiento del Anteproyecto Regional de Inversión (ARI).
 - Coordinar formulación y seguimiento del Programa Público de Inversión Regional (PROPIR).
 #### Departamento de Desarrollo de Proyectos Estrategicos
-#### ID
-GN-ORG-DEP-DPE-01
-#### Purp
+#### Proposito
 Gestión de iniciativas de alto impacto alineadas con visión regional.
-#### Act
+#### Acciones
 - Seleccionar, planificar y supervisar iniciativas de alto impacto.
 - Alinear operación diaria con visión de largo plazo del Gobierno Regional.
 - Facilitar vínculo entre visión de la autoridad regional, su Consejo y directivos.
 - Asegurar contribución de proyectos a competitividad, innovación y crecimiento territorial.
-#### Req
+#### Requisitos
 - Alineación con Estrategia Regional de Desarrollo.
 #### Departamento Zonas en Desarrollo
-#### ID
-GN-ORG-DEP-ZED-01
-#### Purp
+#### Proposito
 Acceso equitativo al desarrollo y fortalecimiento de descentralización.
-#### Ctx
+#### Contexto
 - Enfoque de derechos.
-#### Act
+#### Acciones
 - Promover inversión pública focalizada.
 - Fortalecer descentralización.
 - Promover participación de actores de la sociedad.
 - Promover desarrollo territorial integral y equilibrado con base en especificidades regionales.
 ### Division de Presupuesto e Inversion Regional
-#### ID
-GN-ORG-DIV-PRESUPUESTO-INVERSION-01
-#### Purp
+#### Proposito
 Presupuesto de inversión regional; ejecución, control y asesoría al Gobernador.
-#### Act
+#### Acciones
 - Elaborar proyectos de presupuestos de inversión del gobierno regional.
 - Ejecutar y controlar presupuesto de inversión y programas administrados por el gobierno regional.
 - Asesorar al Gobernador Regional en definición de proyectos de inversión a desarrollar o financiar según lineamientos y prioridades de instrumentos de planificación regional.
 #### Componentes
 #### Departamento de Analisis y Evaluacion
-#### ID
-GN-ORG-DEP-AE-01
-#### Purp
+#### Proposito
 Revisión y evaluación técnica de proyectos/programas postulados.
-#### Ctx
+#### Contexto
 - Postulación a financiamiento FNDR.
-#### Act
+#### Acciones
 - Evaluar pertinencia con lineamientos regionales.
 - Asesorar en determinación de proyectos a desarrollar.
 - Proporcionar proyectos con RS coordinando el Comité de Pertinencia y Vinculación Estratégica para análisis y priorización.
@@ -353,131 +301,109 @@ Revisión y evaluación técnica de proyectos/programas postulados.
 - Coordinar asesoría técnica a municipalidades y otros servicios para cumplimiento del desarrollo regional.
 #### Unidades Dependientes
 #### Unidad de Municipalidades y Conservaciones
-#### ID
-GN-ORG-UNID-MUNIC-CONS-01
-#### Def
+#### Definicion
 Unidad dependiente del Departamento de Análisis y Evaluación.
-#### Purp
+#### Proposito
 Evaluación de proyectos de inversión local.
-#### Ctx
+#### Contexto
 - Tipos: FRIL, Circular 33, PMU-PMB.
-#### Act
+#### Acciones
 - Evaluar técnica y administrativamente proyectos de inversión local.
 - Asegurar viabilidad normativa y financiera.
 - Fortalecer gestión comunal mediante asesoría directa y capacitación externa para optimizar formulación de iniciativas territoriales.
 - Tramitar convenios, resoluciones y registro en plataformas oficiales del Estado.
 #### Unidad de Proyectos y Programas
-#### ID
-GN-ORG-UNID-PP-01
-#### Purp
+#### Proposito
 Evaluación de iniciativas FNDR, programas y concursos asociados al programa de inversión regional.
-#### Ctx
+#### Contexto
 - Concursos: 8%, FRPD, otros; activos no financieros.
-#### Act
+#### Acciones
 - Evaluar técnica y administrativamente iniciativas FNDR, programas públicos y concursos.
 - Gestionar admisibilidad y visación ante el Ministerio de Desarrollo Social cuando corresponda.
 - Asesorar a divisiones regionales, servicios, universidades y organizaciones privadas para correcta formulación de proyectos.
 - Ejecutar planes de capacitación externa.
 #### Departamento de Presupuesto
-#### ID
-GN-ORG-DEP-PRESUPUESTO-01
-#### Purp
+#### Proposito
 Gestión integral del presupuesto de inversión.
-#### Act
+#### Acciones
 - Gestionar presupuesto desde identificación presupuestaria hasta control y seguimiento.
 - Elaborar resoluciones.
 - Gestionar caja.
 - Coordinar internamente con divisiones del Gobierno Regional.
 - Coordinar externamente con Dirección de Presupuestos (DIPRES), SUBDERE y Contraloría Regional.
 ### Division de Desarrollo Social y Humano
-#### ID
-GN-ORG-DIV-DSH-01
-#### Def
+#### Definicion
 Eje de la inversión social del Gobierno Regional de Ñuble.
-#### Purp
+#### Proposito
 Fortalecer desarrollo humano y reducir brechas estructurales.
-#### Act
+#### Acciones
 - Definir e implementar lineamientos estratégicos de inversión social.
 - Diseñar, ejecutar y dar seguimiento a políticas regionales, programas y proyectos sociales.
-#### Ctx
+#### Contexto
 - Ámbitos: pobreza, educación, salud, género, neurodiversidad, vivienda, entre otros.
-#### Obj
+#### Objetivos
 - Promover equidad territorial.
 - Promover inclusión social.
 - Resguardar dignidad humana.
-#### Res
+#### Resultados
 - Complementa y fortalece acción del Estado en la región.
 #### Componentes
 #### Departamento de Fondos Concursables y Programas Sociales
-#### ID
-GN-ORG-DEP-FCPS-01
-#### Purp
+#### Proposito
 Gestión de fondos concursables y programas sociales.
-#### Act
+#### Acciones
 - Planificar, coordinar, gestionar y supervisar inversión social mediante fondos concursables y programas sociales.
 - Asegurar asignación eficiente, transparente y pertinente de recursos públicos.
 - Promover iniciativas con impacto social, pertinencia territorial y enfoque de derechos.
 - Articular trabajo con municipios, servicios públicos, organizaciones de la sociedad civil y otras entidades ejecutoras.
 - Velar por ciclo de vida de iniciativas: diseño, evaluación, ejecución, seguimiento y cierre.
-#### Req
+#### Requisitos
 - Coherencia con Estrategia Regional de Desarrollo, políticas públicas vigentes y prioridades definidas por el Gobierno Regional.
 #### Departamento de Gestion Territorial
-#### ID
-GN-ORG-DEP-GT-01
-#### Purp
+#### Proposito
 Operativización y despliegue territorial de oferta programática.
-#### Act
+#### Acciones
 - Actuar como nexo de vinculación estratégica entre el Gobierno Regional de Ñuble y las personas de la región.
 - Fortalecer desarrollo social y comunitario.
 - Asegurar pertinencia territorial de actividades.
 - Contribuir a priorización de inversión regional.
 - Realizar seguimiento técnico de cartera de inversión social de la división.
 ### Division de Fomento e Industria
-#### ID
-GN-ORG-DIV-FOMENTO-01
-#### Purp
+#### Proposito
 Fomento productivo, ciencia, tecnología e innovación.
-#### Act
+#### Acciones
 - Proponer, promover y ejecutar planes y programas regionales para estimular desarrollo de ciencia, tecnología e innovación y nuevas capacidades empresariales.
 - Facilitar incorporación de nuevas tecnologías de la información para favorecer crecimiento sostenido, integrado y sustentable.
 - Proponer y promover instrumentos de fomento productivo.
 #### Componentes
 #### Departamento de Fomento y Desarrollo Productivo
-#### ID
-GN-ORG-DEP-FDP-01
-#### Purp
+#### Proposito
 Impulso a economía regional y emprendimiento.
-#### Act
+#### Acciones
 - Promover emprendimiento.
 - Diseñar políticas regionales de fomento y desarrollo productivo.
 - Ejecutar planes, programas e instrumentos de fomento productivo.
 - Lograr crecimiento sostenible, integrado y articulado con actores relevantes de la región.
 #### Departamento de Ciencia Tecnologia e Innovacion
-#### ID
-GN-ORG-DEP-CTI-01
-#### Purp
+#### Proposito
 Fomento del conocimiento, investigación y desarrollo tecnológico regional.
-#### Obj
+#### Objetivos
 Sostenibilidad y crecimiento económico.
-#### Act
+#### Acciones
 - Planificar, diseñar e implementar estrategias de CTI.
 - Coordinar y articular actores relevantes: sector público, academia y ámbito privado.
 - Contribuir a creación de políticas públicas.
 - Fortalecer ecosistema regional.
 ### Division de Infraestructura y Transportes
-#### ID
-GN-ORG-DIV-INFRA-TRANS-01
-#### Purp
+#### Proposito
 Obras de infraestructura y equipamiento regional; gestión en transportes.
-#### Act
+#### Acciones
 - Proponer, promover y ejecutar planes y programas regionales en infraestructura, equipamiento regional y transportes.
 #### Componentes
 #### Departamento de Infraestructura y Conectividad
-#### ID
-GN-ORG-DEP-INFRA-CONECT-01
-#### Purp
+#### Proposito
 Infraestructura, transporte, movilidad y conectividad (vial y digital).
-#### Act
+#### Acciones
 - Proponer y promover planes, estudios y programas regionales en coordinación con servicios públicos regionales.
 - Analizar e identificar brechas existentes en infraestructura, transporte, movilidad y conectividad en distintas escalas territoriales.
 - Entregar directrices para oferta de programas y servicios de conectividad.
@@ -486,119 +412,99 @@ Infraestructura, transporte, movilidad y conectividad (vial y digital).
 - Evaluar y coordinar con otras instituciones planes de inversiones en movilidad.
 - Estudiar y proponer sistemas de Transporte Inteligente.
 #### Departamento de Ejecucion y Supervision de Proyectos de Inversion
-#### ID
-GN-ORG-DEP-ESP-01
-#### Purp
+#### Proposito
 Supervisión de ejecución de proyectos de inversión regional.
-#### Act
+#### Acciones
 - Supervisar gestión eficiente de inversión regional mediante control riguroso de ejecución de proyectos asignados.
 - Fiscalización técnica (física) y presupuestaria (financiera) para resguardar integridad del proceso.
 - Coordinar con Contrapartes Técnicas para asegurar cumplimiento de objetivos institucionales.
 - Ejecutar de manera directa iniciativas de inversión que le sean encomendadas (responsabilidad técnica y administrativa).
 ### Division de Administracion y Finanzas
-#### ID
-GN-ORG-DIV-ADAF-01
-#### Purp
+#### Proposito
 Gestión administrativa y financiera; presupuesto de funcionamiento; servicios generales; personal.
-#### Src
+#### Fuentes
 - Ley N.º 19.175.
 - Ley N.º 18.834.
-#### Res
+#### Resultados
 Sustenta funcionamiento eficiente y transparente del Gobierno Regional.
 #### Componentes
 #### Oficina de Partes
-#### ID
-GN-ORG-OF-PARTES-01
-#### Purp
+#### Proposito
 Gestión documental institucional.
-#### Act
+#### Acciones
 - Recepción, distribución, archivo, registro y despacho de documentación de entrada y salida de servicios administrativos del Gobierno Regional de Ñuble.
 - Gestión de otras materias propias de su naturaleza y/o encomendadas o delegadas.
 #### Departamento de Gestion y Desarrollo de Personas
-#### ID
-GN-ORG-DEP-GDP-01
-#### Purp
+#### Proposito
 Estrategias, políticas y procesos del ciclo de vida laboral del personal.
-#### Act
+#### Acciones
 - Definir, elaborar e implementar estrategias, políticas y procesos institucionales de gestión de personas.
 - Asegurar equipo humano competente, motivado y alineado con objetivos de desarrollo regional.
-#### Req
+#### Requisitos
 - Concordancia con lineamientos de la autoridad regional.
 - Concordancia con normativa vigente aplicable al sector público.
 - Concordancia con instrumentos de gestión de personas del Estado.
 #### Departamento de Finanzas
-#### ID
-GN-ORG-DEP-FINANZAS-01
-#### Purp
+#### Proposito
 Revisión y control de información presupuestaria, contable y financiera.
-#### Act
+#### Acciones
 - Supervisar elaboración y ejecución del presupuesto.
 - Gestionar registro contable y elaboración de estados financieros.
 - Analizar situación económica para toma de decisiones.
 - Implementar políticas de control para seguridad de activos.
 - Optimizar uso de recursos.
-#### Res
+#### Resultados
 Garante de salud financiera y transparencia institucional.
 #### Unidades Dependientes
 #### Unidad de Tesoreria
-#### ID
-GN-ORG-UNID-TESORERIA-01
-#### Purp
+#### Proposito
 Administración y custodia de ingresos y egresos; pagos y flujo de caja.
-#### Act
+#### Acciones
 - Administrar, controlar y custodiar ingresos y egresos del Gobierno Regional.
 - Gestionar fondos institucionales, pagos y flujo de caja.
 - Velar por liquidez y estabilidad financiera.
-#### Res
+#### Resultados
 - Asegura cumplimiento de obligaciones financieras.
 - Asegura eficiencia en ejecución presupuestaria.
 #### Unidad de Contabilidad y Finanzas
-#### ID
-GN-ORG-UNID-CONTAB-FIN-01
-#### Purp
+#### Proposito
 Registro, control y análisis de información contable y presupuestaria.
-#### Act
+#### Acciones
 - Registrar, controlar y analizar información contable y presupuestaria.
 - Resguardar integridad de datos financieros y contables.
-#### Res
+#### Resultados
 - Permite gestión alineada con normativas vigentes y buenas prácticas del sector público.
 #### Unidad de Control de Rendiciones
-#### ID
-GN-ORG-UNID-RENDICIONES-01
-#### Purp
+#### Proposito
 Seguimiento y control de rendiciones de cuentas.
-#### Act
+#### Acciones
 - Seguimiento, monitoreo, control y contabilización de rendiciones de cuentas ingresadas al Gobierno Regional.
 - Asegurar uso de recursos conforme a normativa vigente, de forma eficiente, transparente y oportuna.
-#### Res
+#### Resultados
 - Resguarda correcta administración de fondos públicos.
 #### Unidad de Adquisiciones
-#### ID
-GN-ORG-UNID-ADQ-01
-#### Purp
+#### Proposito
 Procesos de compras de bienes y servicios.
-#### Req
+#### Requisitos
 - Apego a Ley de Compras Públicas y su reglamento.
-#### Act
+#### Acciones
 - Ejecutar procesos de adquisiciones de bienes y servicios necesarios para funcionamiento institucional.
 - Publicar y monitorear contrataciones especialmente encomendadas provenientes del programa de inversiones, junto a unidad técnica designada.
-#### Obj
+#### Objetivos
 - Eficiencia.
 - Transparencia.
 - Probidad.
 #### Unidad de Operaciones
-#### ID
-GN-ORG-UNID-OPERACIONES-01
-#### Purp
+#### Proposito
 Infraestructura física, flota vehicular y tecnologías de la información.
-#### Act
+#### Acciones
 - Gestionar infraestructura física (edificios e instalaciones) y flota de vehículos institucionales.
 - Coordinar mantenimiento preventivo, correctivo y respuesta a emergencias.
 - Asegurar operatividad, funcionalidad y seguridad de recursos físicos institucionales.
 - Gestionar y mantener infraestructura TI: red, servidores, hardware, software, sistemas de información.
 - Gestionar políticas de seguridad informática y protección de datos institucionales.
 - Desarrollar soluciones tecnológicas alineadas con objetivos estratégicos del Gobierno Regional.
-#### Src
+#### Fuentes
 - Ley de Transformación Digital.
 
 ## Fuentes derivadas
@@ -606,12 +512,4 @@ Infraestructura física, flota vehicular y tecnologías de la información.
 - Fuente: `ontologies/onto_gorenuble/goreNubleOrgData.ttl`
 - Tipo: TTL derivado
 - Hechos capturados: 448
-- Muestra:
-  - `<https://gorenuble.gob.cl/data/goreNubleOrgData>`
-  - `@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .`
-  - `@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .`
-  - `@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .`
-  - `@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .`
-  - `a gist:Assignment ;`
-  - `a gist:GovernmentOrganization ;`
-  - `a gnub:AdvisoryBody ;`
+- Presentacion: resumen de soporte derivado; detalles completos en evidence.

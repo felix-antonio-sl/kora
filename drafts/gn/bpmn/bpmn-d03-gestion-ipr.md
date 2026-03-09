@@ -39,7 +39,7 @@ extensions:
 
 # BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)
 ## Source
-### Ctx Required
+### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
@@ -52,7 +52,7 @@ Jefatura DIPIR
 ### Subprocesos
 ~25
 ### Ref Fuente
-#### Ctx Required
+#### Contexto requerido
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.1888-3727
 
 ## Mapa General Dominio
@@ -479,9 +479,9 @@ flowchart TD
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
-| D02 Ciclo Presupuestario | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md'] | CDP, modificaciones, SIGFE |
-| D08 Rendiciones | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md'] | Cierre financiero, SISREC |
-| D01 Actos Administrativos | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md'] | Resoluciones, Convenios |
+| D02 Ciclo Presupuestario | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md | CDP, modificaciones, SIGFE |
+| D08 Rendiciones | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md | Cierre financiero, SISREC |
+| D01 Actos Administrativos | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md | Resoluciones, Convenios |
 
 ## Ultima Actualizacion
 ### Cpt

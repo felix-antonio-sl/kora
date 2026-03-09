@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.11
+    cr: 2.26
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -39,7 +39,7 @@ extensions:
 
 # Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos Regionales
 ## Source
-### Ctx Required
+### Contexto requerido
 - NIP 2025 – Normas, Instrucciones y Procedimientos del Sistema Nacional de Inversiones
 - Metodología General del SNI (MDSF)
 - Metodologías sectoriales y complementarias SNI (Gestión de Riesgo de Desastres, Género, etc.)
@@ -261,50 +261,30 @@ Sistema que norma y rige el proceso de inversión pública en Chile.
 #### Actores
 | ID | Cpt | Resp |
 | --- | --- | --- |
-| SNI-ACTOR-MDSF-01 | Ministerio de Desarrollo Social y Familia (MDSF) | ['Conducir evaluación ex ante de IDI.', 'Emitir Resultado del Análisis Técnico-Económico (RATE).', 'Definir y actualizar metodologías de formulación y evaluación.', 'Calcular y publicar precios sociales.', 'Administrar el BIP en materias de evaluación.'] |
-| ID | Cpt | Dep | Resp |
-| --- | --- | --- | --- |
-| SNI-ACTOR-DIPRES-01 | Dirección de Presupuestos (DIPRES) | Ministerio de Hacienda. | ['Formulación del presupuesto del sector público.', 'Asignación de recursos y definición de normativas financieras.', 'Visar modificaciones presupuestarias de GOREs.', 'Impartir instrucciones para ejecución presupuestaria.'] |
-| ID | Cpt | Ctx | Proc | Resp |
-| --- | --- | --- | --- | --- |
-| SNI-ACTOR-GORE-01 | Gobiernos Regionales (GORE) | Actores fundamentales en el ciclo de IDI a nivel regional. | ['Identificación de necesidades y priorización.', 'Formulación de IDI y preparación de estudios preinversionales.', 'Gestión de financiamiento y, en muchos casos, ejecución y operación.'] | ['Profesional o equipo técnico del GORE o contratado para estudios y postulación al SNI.'] |
-| ID | Cpt | Subactores |
-| --- | --- | --- |
-| SNI-ACTOR-OTROS-01 | Instituciones clave relacionadas | ['Institución Formuladora: Prepara el estudio (GORE, municipio, servicio público).', 'Institución Financiera: Postula y financia la IDI (ej. GORE con FNDR).', 'Institución Técnica: Licita, contrata y fiscaliza ejecución.', 'Institución Responsable de Operación: Opera y mantiene el proyecto.'] |
+| SNI-ACTOR-MDSF-01 | Ministerio de Desarrollo Social y Familia (MDSF) | Conducir evaluación ex ante de IDI., Emitir Resultado del Análisis Técnico-Económico (RATE)., Definir y actualizar metodologías de formulación y evaluación., Calcular y publicar precios sociales., Administrar el BIP en materias de evaluación. |
+| SNI-ACTOR-DIPRES-01 | Dirección de Presupuestos (DIPRES) | Formulación del presupuesto del sector público., Asignación de recursos y definición de normativas financieras., Visar modificaciones presupuestarias de GOREs., Impartir instrucciones para ejecución presupuestaria. |
+| SNI-ACTOR-GORE-01 | Gobiernos Regionales (GORE) | Profesional o equipo técnico del GORE o contratado para estudios y postulación al SNI. |
+| SNI-ACTOR-OTROS-01 | Instituciones clave relacionadas |  |
 #### Herramientas y Normativas
 #### Herramientas
 | ID | Cpt | Def | Req | Ctx |
 | --- | --- | --- | --- | --- |
-| SNI-NIP-01 | Normas, Instrucciones y Procedimientos (NIP) | Documento rector anual que define reglas, plazos y procedimientos del proceso de inversión pública. | ['Usar siempre la versión vigente disponible en sni.gob.cl.'] | ['NIP 2025 es la base principal de la guía.'] |
-| ID | Cpt | Subtipos | Warn |
-| --- | --- | --- | --- |
-| SNI-METODOLOGIAS-01 | Metodologías de preparación y evaluación | ['Metodología General: Marco conceptual y pasos comunes del SNI.', 'Metodologías Sectoriales: Adaptaciones específicas por sector/tipología.', 'Metodologías Complementarias: Enfoques transversales (GRD, Género, etc.).'] | ['No aplicar metodologías sectoriales o complementarias cuando corresponda es causal de objeción.'] |
-| ID | Cpt | Def | Tipos | Req | Src |
-| --- | --- | --- | --- | --- | --- |
-| SNI-RIS-01 | Requisitos de Información Sectorial (RIS) | Documentos que especifican antecedentes mínimos para admisibilidad y evaluación. | ['Genéricos: Requisitos comunes.', 'Transversales: Temas aplicables a múltiples sectores (terrenos, SEIA, etc.).', 'Sectoriales/Específicos: Requisitos particulares que prevalecen sobre genéricos.'] | ['Cumplimiento estricto para admisibilidad y evaluación.'] | ['RIS y fichas en sni.gob.cl.'] |
-| ID | Cpt | Def | Req | Resp | Ctx |
-| --- | --- | --- | --- | --- | --- |
-| SNI-PRECIOS-SOCIALES-01 | Precios Sociales | Valores sombra que reflejan el costo/beneficio real para la sociedad. | ['Uso obligatorio en la evaluación socioeconómica.'] | ['MDSF calcula, publica y actualiza los precios sociales.'] | ['Informe de Precios Sociales (ej. 2025).'] |
-| ID | Cpt | Def | Func |
-| --- | --- | --- | --- |
-| SNI-BIP-01 | Banco Integrado de Proyectos (BIP) | Plataforma central para registro, postulación, almacenamiento y seguimiento de IDI. | ['Generar código BIP.', 'Mantener Carpeta Digital.', 'Registrar programación, solicitudes de financiamiento y RATE.'] |
-| ID | Cpt | Fnd | Ctx |
-| --- | --- | --- | --- |
-| SNI-MARCO-JURIDICO-01 | Marco jurídico principal del SNI | ['DL N°1.263/1975 (Art. 19 bis).', 'Ley N°20.530/2011 (crea MDSF).', 'DFL 1-19.175 (LOC GORE, Art. 75).', 'Ley de Presupuestos anual.'] | ['Detalle ampliado en artefacto de normativa financiera y SNI del GORE.'] |
+| SNI-NIP-01 | Normas, Instrucciones y Procedimientos (NIP) | Documento rector anual que define reglas, plazos y procedimientos del proceso de inversión pública. | Usar siempre la versión vigente disponible en sni.gob.cl. | NIP 2025 es la base principal de la guía. |
+| SNI-METODOLOGIAS-01 | Metodologías de preparación y evaluación |  |  |  |
+| SNI-RIS-01 | Requisitos de Información Sectorial (RIS) | Documentos que especifican antecedentes mínimos para admisibilidad y evaluación. | Cumplimiento estricto para admisibilidad y evaluación. |  |
+| SNI-PRECIOS-SOCIALES-01 | Precios Sociales | Valores sombra que reflejan el costo/beneficio real para la sociedad. | Uso obligatorio en la evaluación socioeconómica. | Informe de Precios Sociales (ej. 2025). |
+| SNI-BIP-01 | Banco Integrado de Proyectos (BIP) | Plataforma central para registro, postulación, almacenamiento y seguimiento de IDI. |  |  |
+| SNI-MARCO-JURIDICO-01 | Marco jurídico principal del SNI |  |  | Detalle ampliado en artefacto de normativa financiera y SNI del GORE. |
 ### Sec 2 Tipos IDI y Ciclo de Vida
 #### Clasificacion Presupuestaria Subt31
 #### Contexto
 Clasificación presupuestaria de Iniciativas de Inversión en Subtítulo 31.
 #### Tipos
-| ID | Cpt | Def | Excl | Procesos_Validos |
-| --- | --- | --- | --- | --- |
-| SNI-ITEM-01-ESTUDIOS-BASICOS-01 | Ítem 01 – Estudios Básicos | Gastos para generar información que permita identificar y formular nuevas IDI. | ['No incluye estudios preinversionales ni diseños de proyectos ya identificados.'] | ['Actualización, análisis, diagnóstico, exploración, prospección, investigación.'] |
-| ID | Cpt | Def | Asignaciones_Tipicas |
+| ID | Cpt | Def | Procesos_Validos |
 | --- | --- | --- | --- |
-| SNI-ITEM-02-PROYECTOS-01 | Ítem 02 – Proyectos | Gastos en estudios preinversionales, diseños y ejecución de obras/acciones para crear,<br>ampliar, mantener, mejorar o recuperar capacidad de producción de bienes/servicios.<br> | ['Gastos administrativos.', 'Consultorías (estudios y diseños).', 'Terrenos.', 'Obras civiles.', 'Equipamiento y equipos.', 'Vehículos.'] |
-| ID | Cpt | Def | Procesos_Validos | Warn |
-| --- | --- | --- | --- | --- |
-| SNI-ITEM-03-PROGRAMAS-01 | Ítem 03 – Programas de Inversión (Subt. 31) | IDI orientadas a incrementar, mantener o recuperar capacidad de un recurso humano o<br>físico, con duración finita y no inherentes a la misión permanente de la institución.<br> | ['Capacitación externa, control de plagas, difusión técnica, prevención, protección, saneamiento, transferencia.'] | ['No confundir con programas sociales de gasto corriente (Subt. 24).'] |
+| SNI-ITEM-01-ESTUDIOS-BASICOS-01 | Ítem 01 – Estudios Básicos | Gastos para generar información que permita identificar y formular nuevas IDI. | Actualización, análisis, diagnóstico, exploración, prospección, investigación. |
+| SNI-ITEM-02-PROYECTOS-01 | Ítem 02 – Proyectos | Gastos en estudios preinversionales, diseños y ejecución de obras/acciones para crear,<br>ampliar, mantener, mejorar o recuperar capacidad de producción de bienes/servicios.<br> |  |
+| SNI-ITEM-03-PROGRAMAS-01 | Ítem 03 – Programas de Inversión (Subt. 31) | IDI orientadas a incrementar, mantener o recuperar capacidad de un recurso humano o<br>físico, con duración finita y no inherentes a la misión permanente de la institución.<br> | Capacitación externa, control de plagas, difusión técnica, prevención, protección, saneamiento, transferencia. |
 #### Ciclo Vida IDI
 #### Fases Principales
 - Preinversión.
@@ -576,12 +556,10 @@ SNI-RIS-01
 - SNI-EVAL-SOC-PRIV-01
 - SNI-INDIC-ECO-01
 #### Fases
-| ID | Cpt | Def | Plazo_MDSF |
-| --- | --- | --- | --- |
-| SNI-ADMSBL-01 | Admisibilidad | Revisión formal y de completitud de antecedentes según RIS. | Máximo 5 días hábiles. |
-| ID | Cpt | Def | Plazo_Primer_RATE |
-| --- | --- | --- | --- |
-| SNI-ATE-01 | Análisis Técnico-Económico (ATE) | Evaluación en profundidad de conveniencia y calidad de la IDI. | Máximo 10 días hábiles desde la fecha de ingreso al SNI. |
+| ID | Cpt | Def | Plazo_MDSF | Plazo_Primer_RATE |
+| --- | --- | --- | --- | --- |
+| SNI-ADMSBL-01 | Admisibilidad | Revisión formal y de completitud de antecedentes según RIS. | Máximo 5 días hábiles. |  |
+| SNI-ATE-01 | Análisis Técnico-Económico (ATE) | Evaluación en profundidad de conveniencia y calidad de la IDI. |  | Máximo 10 días hábiles desde la fecha de ingreso al SNI. |
 #### Resultados RATE
 #### Tipos
 - RATE-RS: Recomendado Satisfactoriamente; habilita gestión de financiamiento.
@@ -666,8 +644,8 @@ GORE actúa como Unidad Técnica y Financiera, licitando, contratando y pagando 
 #### Tipos
 | ID | Cpt | Receptor_Tipico | Mech |
 | --- | --- | --- | --- |
-| SNI-TRANSF-NC-01 | Transferencia Directa (No Consolidable) | ['Municipalidades.', 'Entidades privadas sin fines de lucro.'] | ['Convenio de transferencia GORE–receptor.', 'Toma de razón (según corresponda).', 'Rendición de cuentas detallada al GORE.'] |
-| SNI-TRANSF-CONS-01 | Transferencia Consolidable | ['Ministerios y servicios públicos con presupuesto en Ley de Presupuestos.'] | ['Decreto de DIPRES que rebaja presupuesto del GORE y aumenta el de la entidad receptora.', 'Gasto se registra en presupuesto de la entidad receptora.'] |
+| SNI-TRANSF-NC-01 | Transferencia Directa (No Consolidable) | Municipalidades., Entidades privadas sin fines de lucro. | Convenio de transferencia GORE–receptor., Toma de razón (según corresponda)., Rendición de cuentas detallada al GORE. |
+| SNI-TRANSF-CONS-01 | Transferencia Consolidable | Ministerios y servicios públicos con presupuesto en Ley de Presupuestos. | Decreto de DIPRES que rebaja presupuesto del GORE y aumenta el de la entidad receptora., Gasto se registra en presupuesto de la entidad receptora. |
 #### Contexto
 - El GORE monitorea avance físico, incluso cuando la ejecución presupuestaria recae en otra entidad.
 ### Sec 7 Procedimientos Especiales
