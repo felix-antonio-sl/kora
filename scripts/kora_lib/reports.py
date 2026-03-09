@@ -1,5 +1,6 @@
 import json
 
+from .agent_audit import write_agent_audit_docs
 from .artifacts import load_yaml_safe
 from .config import AGENT_REQUIRED_FILES, CATALOG_PATH, GENERATED_DOCS_DIR
 from .contracts import build_operating_core_payload, render_operating_core_markdown
@@ -123,6 +124,7 @@ def sync_generated_docs():
     graph_payload, graph_json_path = write_generated_graph_docs()
     contracts_payload, contracts_json_path, contracts_md_path = write_generated_operating_core_docs()
     fxsl_payload, fxsl_json_path, fxsl_md_path = write_fxsl_cat_ledger_docs(GENERATED_DOCS_DIR)
+    audit_payload, audit_json_path, audit_md_path = write_agent_audit_docs(GENERATED_DOCS_DIR)
     return {
         "stats": {
             "payload": stats_payload,
@@ -142,5 +144,10 @@ def sync_generated_docs():
             "payload": fxsl_payload,
             "json_path": fxsl_json_path,
             "md_path": fxsl_md_path,
+        },
+        "agent_audit": {
+            "payload": audit_payload,
+            "json_path": audit_json_path,
+            "md_path": audit_md_path,
         },
     }

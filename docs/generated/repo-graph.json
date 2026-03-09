@@ -6487,7 +6487,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:agent-spec-md",
-      "title": "KORA/Agent-Spec v8.1.0",
+      "title": "KORA/Agent-Spec v8.3.0",
       "path": "specs/agent-spec-md.md",
       "namespace": "kora"
     },
@@ -6496,7 +6496,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:gobernanza",
-      "title": "KORA/Gobernanza v3.0.0",
+      "title": "KORA/Gobernanza v3.1.0",
       "path": "specs/gobernanza.md",
       "namespace": "kora"
     },
@@ -6505,7 +6505,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:md-spec",
-      "title": "KORA/MD v5.0.0",
+      "title": "KORA/MD v6.1.0",
       "path": "specs/md-spec.md",
       "namespace": "kora"
     },
@@ -6514,7 +6514,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:runtime-spec-md",
-      "title": "KORA/Runtime-Spec v3.1.0",
+      "title": "KORA/Runtime-Spec v3.2.0",
       "path": "specs/runtime-spec-md.md",
       "namespace": "kora"
     },
@@ -6523,7 +6523,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:skill-spec-md",
-      "title": "KORA/Skill-Spec v3.2.0",
+      "title": "KORA/Skill-Spec v3.4.0",
       "path": "specs/skill-spec-md.md",
       "namespace": "kora"
     },
@@ -6532,7 +6532,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:spec-md",
-      "title": "KORA/Spec-MD v5.0.0",
+      "title": "KORA/Spec-MD v5.1.0",
       "path": "specs/spec-md.md",
       "namespace": "kora"
     },
@@ -6541,7 +6541,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:swarm-spec-md",
-      "title": "KORA/Swarm-Spec v2.1.0",
+      "title": "KORA/Swarm-Spec v2.2.0",
       "path": "specs/swarm-spec-md.md",
       "namespace": "kora"
     },

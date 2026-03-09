@@ -295,22 +295,26 @@ def validate_workspace_semantics(workspace_dir, config_data, valid_tool_names):
     return failures
 
 
-def cmd_validate(profile="transitional", cohort=None):
-    print(f"Validating KORA agent workspaces against schema + semantic invariants ({profile})...")
+def validate_workspaces(profile="transitional", cohort=None, emit=True):
+    if emit:
+        print(f"Validating KORA agent workspaces against schema + semantic invariants ({profile})...")
     try:
         import jsonschema
     except ImportError:
-        print("Error: 'jsonschema' module is required for validation. Run 'pip install jsonschema'.")
+        if emit:
+            print("Error: 'jsonschema' module is required for validation. Run 'pip install jsonschema'.")
         raise SystemExit(1)
 
     schema, _ = load_yaml_safe(BOOTSTRAP_SCHEMA_PATH)
     if not schema:
-        print(f"Error: Could not load schema from {BOOTSTRAP_SCHEMA_PATH}")
+        if emit:
+            print(f"Error: Could not load schema from {BOOTSTRAP_SCHEMA_PATH}")
         raise SystemExit(1)
 
     config_schema, _ = load_yaml_safe(CONFIG_SCHEMA_PATH)
     if not config_schema:
-        print(f"Error: Could not load schema from {CONFIG_SCHEMA_PATH}")
+        if emit:
+            print(f"Error: Could not load schema from {CONFIG_SCHEMA_PATH}")
         raise SystemExit(1)
 
     workspace_valid = 0
@@ -318,13 +322,25 @@ def cmd_validate(profile="transitional", cohort=None):
     bootstrap_validated = 0
     global_failures = 0
     issue_counts = Counter()
+    issues = []
+
+    def report_issue(path, category, message, workspace=None):
+        entry = {
+            "path": str(path),
+            "workspace": str(workspace) if workspace else None,
+            "category": category,
+            "message": message,
+        }
+        issues.append(entry)
+        if emit:
+            print(f"[FAIL] {path} - {message}")
 
     for workspace_dir in iter_agent_workspaces(cohort=cohort):
         rel_workspace = workspace_dir.relative_to(KORA_ROOT)
         workspace_ok = True
         missing_files = get_workspace_missing_files(workspace_dir, AGENT_REQUIRED_FILES)
         if missing_files:
-            print(f"[FAIL] {rel_workspace} - missing required files: {', '.join(missing_files)}")
+            report_issue(rel_workspace, "missing_files", f"missing required files: {', '.join(missing_files)}", workspace=rel_workspace)
             issue_counts["missing_files"] += 1
             workspace_ok = False
 
@@ -334,7 +350,7 @@ def cmd_validate(profile="transitional", cohort=None):
             with open(config_path, "r", encoding="utf-8") as handle:
                 config_data = json.load(handle)
         except Exception as exc:
-            print(f"[FAIL] {config_path.relative_to(KORA_ROOT)} - invalid JSON: {exc}")
+            report_issue(config_path.relative_to(KORA_ROOT), "invalid_json", f"invalid JSON: {exc}", workspace=rel_workspace)
             issue_counts["invalid_json"] += 1
             workspace_ok = False
 
@@ -342,7 +358,7 @@ def cmd_validate(profile="transitional", cohort=None):
             try:
                 jsonschema.validate(instance=config_data, schema=config_schema)
             except jsonschema.exceptions.ValidationError as exc:
-                print(f"[FAIL] {config_path.relative_to(KORA_ROOT)} - {exc.message}")
+                report_issue(config_path.relative_to(KORA_ROOT), "config_schema", exc.message, workspace=rel_workspace)
                 issue_counts["config_schema"] += 1
                 workspace_ok = False
 
@@ -352,7 +368,7 @@ def cmd_validate(profile="transitional", cohort=None):
                 continue
             agent_data, err = load_yaml_safe(agent_path)
             if not agent_data:
-                print(f"[FAIL] Could not parse YAML: {agent_path.relative_to(KORA_ROOT)}. Error: {err}")
+                report_issue(agent_path.relative_to(KORA_ROOT), "bootstrap_parse", f"Could not parse YAML. Error: {err}", workspace=rel_workspace)
                 issue_counts["bootstrap_parse"] += 1
                 workspace_ok = False
                 continue
@@ -361,15 +377,18 @@ def cmd_validate(profile="transitional", cohort=None):
                 jsonschema.validate(instance=agent_data, schema=schema)
                 bootstrap_validated += 1
             except jsonschema.exceptions.ValidationError as exc:
-                print(f"[FAIL] {agent_path.relative_to(KORA_ROOT)} - {exc.message}")
+                report_issue(agent_path.relative_to(KORA_ROOT), "bootstrap_schema", exc.message, workspace=rel_workspace)
                 issue_counts["bootstrap_schema"] += 1
                 workspace_ok = False
 
             expected_type = expected_bootstrap_manifest_type(agent_path)
             actual_type = agent_data.get("_manifest", {}).get("type") if isinstance(agent_data, dict) else None
             if expected_type and actual_type != expected_type:
-                print(
-                    f"[FAIL] {agent_path.relative_to(KORA_ROOT)} - _manifest.type '{actual_type}' != '{expected_type}'"
+                report_issue(
+                    agent_path.relative_to(KORA_ROOT),
+                    "bootstrap_manifest_type",
+                    f"_manifest.type '{actual_type}' != '{expected_type}'",
+                    workspace=rel_workspace,
                 )
                 issue_counts["bootstrap_manifest_type"] += 1
                 workspace_ok = False
@@ -381,11 +400,16 @@ def cmd_validate(profile="transitional", cohort=None):
             _, valid_tool_names, invalid_tool_names = extract_declared_tool_headings(tools_path)
             if profile != "legacy":
                 for invalid_name in invalid_tool_names:
-                    print(f"[FAIL] {tools_path.relative_to(KORA_ROOT)} - invalid tool identifier '{invalid_name}'")
+                    report_issue(
+                        tools_path.relative_to(KORA_ROOT),
+                        "tool_identifier",
+                        f"invalid tool identifier '{invalid_name}'",
+                        workspace=rel_workspace,
+                    )
                     issue_counts["tool_identifier"] += 1
                     workspace_ok = False
                 for failure in validate_traces_semantics(tools_path, tools_text):
-                    print(f"[FAIL] {tools_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(tools_path.relative_to(KORA_ROOT), "trace_semantics", failure, workspace=rel_workspace)
                     issue_counts["trace_semantics"] += 1
                     workspace_ok = False
 
@@ -394,8 +418,11 @@ def cmd_validate(profile="transitional", cohort=None):
             declared_allow = config_data.get("tools", {}).get("allow", [])
         if profile != "legacy" and (valid_tool_names or declared_allow):
             if set(valid_tool_names) != set(declared_allow):
-                print(
-                    f"[FAIL] {rel_workspace} - TOOLS.md headings {sorted(valid_tool_names)} != config.json.tools.allow {sorted(declared_allow)}"
+                report_issue(
+                    rel_workspace,
+                    "tool_allow_mismatch",
+                    f"TOOLS.md headings {sorted(valid_tool_names)} != config.json.tools.allow {sorted(declared_allow)}",
+                    workspace=rel_workspace,
                 )
                 issue_counts["tool_allow_mismatch"] += 1
                 workspace_ok = False
@@ -407,23 +434,31 @@ def cmd_validate(profile="transitional", cohort=None):
             if agents_path.exists():
                 agents_text = agents_path.read_text(encoding="utf-8")
                 for failure in validate_agents_canonical_structure(agents_text):
-                    print(f"[FAIL] {agents_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(agents_path.relative_to(KORA_ROOT), "agents_grammar", failure, workspace=rel_workspace)
                     issue_counts["agents_grammar"] += 1
                     workspace_ok = False
                 for failure in validate_traces_semantics(agents_path, agents_text):
-                    print(f"[FAIL] {agents_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(agents_path.relative_to(KORA_ROOT), "trace_semantics", failure, workspace=rel_workspace)
                     issue_counts["trace_semantics"] += 1
                     workspace_ok = False
             for cm_ref in sorted(extract_cm_refs(agents_path)):
                 if cm_ref not in skill_names:
-                    print(f"[FAIL] {agents_path.relative_to(KORA_ROOT)} - missing referenced skill '{cm_ref}'")
+                    report_issue(
+                        agents_path.relative_to(KORA_ROOT),
+                        "missing_cm",
+                        f"missing referenced skill '{cm_ref}'",
+                        workspace=rel_workspace,
+                    )
                     issue_counts["missing_cm"] += 1
                     workspace_ok = False
 
             for namespace, name in sorted(extract_workspace_refs(agents_path)):
                 if not (KORA_ROOT / "agents" / namespace / name).is_dir():
-                    print(
-                        f"[FAIL] {agents_path.relative_to(KORA_ROOT)} - broken cross-agent route '{namespace}/{name}'"
+                    report_issue(
+                        agents_path.relative_to(KORA_ROOT),
+                        "broken_agent_route",
+                        f"broken cross-agent route '{namespace}/{name}'",
+                        workspace=rel_workspace,
                     )
                     issue_counts["broken_agent_route"] += 1
                     workspace_ok = False
@@ -432,25 +467,25 @@ def cmd_validate(profile="transitional", cohort=None):
             for skill_path in sorted(skill_dir.glob("*.md")):
                 skill_text = skill_path.read_text(encoding="utf-8")
                 for failure in validate_skill_file(skill_path):
-                    print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(skill_path.relative_to(KORA_ROOT), "skill_semantics", failure, workspace=rel_workspace)
                     issue_counts["skill_semantics"] += 1
                     workspace_ok = False
                 for failure in validate_skill_purity(skill_text):
-                    print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(skill_path.relative_to(KORA_ROOT), "skill_purity", failure, workspace=rel_workspace)
                     issue_counts["skill_purity"] += 1
                     workspace_ok = False
                 for failure in validate_skill_tool_closure(skill_text, valid_tool_names):
-                    print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(skill_path.relative_to(KORA_ROOT), "skill_tool_closure", failure, workspace=rel_workspace)
                     issue_counts["skill_tool_closure"] += 1
                     workspace_ok = False
                 for failure in validate_traces_semantics(skill_path, skill_text):
-                    print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")
+                    report_issue(skill_path.relative_to(KORA_ROOT), "trace_semantics", failure, workspace=rel_workspace)
                     issue_counts["trace_semantics"] += 1
                     workspace_ok = False
 
         if profile != "legacy":
             for failure in validate_workspace_semantics(workspace_dir, config_data, valid_tool_names):
-                print(f"[FAIL] {rel_workspace} - {failure}")
+                report_issue(rel_workspace, "workspace_semantics", failure, workspace=rel_workspace)
                 issue_counts["workspace_semantics"] += 1
                 workspace_ok = False
 
@@ -463,18 +498,35 @@ def cmd_validate(profile="transitional", cohort=None):
         for spec_path in sorted((KORA_ROOT / "specs").glob("*.md")):
             spec_text = spec_path.read_text(encoding="utf-8")
             for failure in validate_traces_semantics(spec_path, spec_text):
-                print(f"[FAIL] {spec_path.relative_to(KORA_ROOT)} - {failure}")
+                report_issue(spec_path.relative_to(KORA_ROOT), "spec_trace_semantics", failure, workspace=None)
                 issue_counts["spec_trace_semantics"] += 1
                 global_failures += 1
 
-    print(
-        "Validation complete! "
-        f"Workspaces valid: {workspace_valid}, Invalid: {workspace_invalid}, "
-        f"Bootstrap files validated: {bootstrap_validated}"
-    )
-    if issue_counts:
-        print("Issue breakdown:")
-        for issue, count in sorted(issue_counts.items()):
-            print(f"  {issue}: {count}")
-    if workspace_invalid or global_failures:
+    if emit:
+        print(
+            "Validation complete! "
+            f"Workspaces valid: {workspace_valid}, Invalid: {workspace_invalid}, "
+            f"Bootstrap files validated: {bootstrap_validated}"
+        )
+        if issue_counts:
+            print("Issue breakdown:")
+            for issue, count in sorted(issue_counts.items()):
+                print(f"  {issue}: {count}")
+
+    return {
+        "profile": profile,
+        "cohort": cohort,
+        "workspace_valid": workspace_valid,
+        "workspace_invalid": workspace_invalid,
+        "bootstrap_validated": bootstrap_validated,
+        "global_failures": global_failures,
+        "issue_counts": dict(sorted(issue_counts.items())),
+        "issues": issues,
+        "ok": workspace_invalid == 0 and global_failures == 0,
+    }
+
+
+def cmd_validate(profile="transitional", cohort=None):
+    result = validate_workspaces(profile=profile, cohort=cohort, emit=True)
+    if not result["ok"]:
         raise SystemExit(1)

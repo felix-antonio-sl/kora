@@ -53,3 +53,5 @@ def cmd_sync_docs():
     print(f"  {outputs['operating_core']['md_path'].relative_to(KORA_ROOT)}")
     print(f"  {outputs['fxsl_cat']['json_path'].relative_to(KORA_ROOT)}")
     print(f"  {outputs['fxsl_cat']['md_path'].relative_to(KORA_ROOT)}")
+    print(f"  {outputs['agent_audit']['json_path'].relative_to(KORA_ROOT)}")
+    print(f"  {outputs['agent_audit']['md_path'].relative_to(KORA_ROOT)}")

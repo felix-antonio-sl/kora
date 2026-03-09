@@ -35,6 +35,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         contracts_payload = json.loads((GENERATED_DOCS / "operating-core-contracts.json").read_text(encoding="utf-8"))
         contracts_markdown = (GENERATED_DOCS / "operating-core-contracts.md").read_text(encoding="utf-8")
         ledger_payload = json.loads((GENERATED_DOCS / "fxsl-cat-ledger.json").read_text(encoding="utf-8"))
+        audit_payload = json.loads((GENERATED_DOCS / "agent-audit.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
         self.assertIn("kora", contracts_payload["cohorts"])
         self.assertEqual(contracts_payload["totals"]["workspaces"], 13)
@@ -51,6 +52,8 @@ class KoraCliSmokeTests(unittest.TestCase):
         )
         self.assertIn("## Auditoria meta-kora", contracts_markdown)
         self.assertIn("promoted", ledger_payload["status_counts"])
+        self.assertIn("meta-kora", audit_payload["cohorts"])
+        self.assertIn("domains", audit_payload["cohorts"])
 
     def test_stats_json_matches_generated_payload(self):
         run_cli("sync-docs")
