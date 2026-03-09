@@ -9,6 +9,14 @@ BOOTSTRAP_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
 CONFIG_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-config-schema.json"
 AGENT_BOOTSTRAP_FILES = ("AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md")
 AGENT_REQUIRED_FILES = AGENT_BOOTSTRAP_FILES + ("config.json",)
+BOOTSTRAP_MANIFEST_TYPES = {
+    "AGENTS.md": "bootstrap_agents",
+    "SOUL.md": "bootstrap_soul",
+    "USER.md": "bootstrap_user",
+    "TOOLS.md": "bootstrap_tools",
+    "config.json": "bootstrap_config",
+}
+SKILL_MANIFEST_TYPE = "lazy_load_endofunctor"
 IGNORED_DIRS = {
     ".git",
     "build",
@@ -95,6 +103,16 @@ SEMANTIC_TURN_CONTROL_PATTERNS = (
     re.compile(r"\bsolicitar clarificaci[oó]n\b", re.IGNORECASE),
     re.compile(r"\bsolicitar aclaraci[oó]n\b", re.IGNORECASE),
     re.compile(r"\bsi el usuario desea continuar\b", re.IGNORECASE),
+)
+SKILL_RAW_COMMAND_PATTERNS = (
+    (re.compile(r"`(?:scripts/)?kora health`", re.IGNORECASE), "repo_health"),
+    (re.compile(r"`(?:scripts/)?kora validate`", re.IGNORECASE), "repo_health"),
+    (re.compile(r"`(?:scripts/)?kora stats`", re.IGNORECASE), "repo_health"),
+    (re.compile(r"`git status`", re.IGNORECASE), "git_status"),
+    (re.compile(r"`git log --oneline -5`", re.IGNORECASE), "git_status"),
+    (re.compile(r"`(?:scripts/)?kora index`", re.IGNORECASE), "catalog_sync"),
+    (re.compile(r"`(?:scripts/)?kora resolve", re.IGNORECASE), "urn_resolve"),
+    (re.compile(r"`(?:scripts/)?kora intake`", re.IGNORECASE), "intake_pipeline"),
 )
 SOUL_FORBIDDEN_PATTERNS = (
     re.compile(r"\bSTATE:"),

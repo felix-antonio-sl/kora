@@ -736,7 +736,7 @@
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 50,
+        "allowed_kb_count": 49,
         "sources": {
           "agents": "agents/gn/goreologo/AGENTS.md",
           "tools": "agents/gn/goreologo/TOOLS.md",

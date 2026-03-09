@@ -35,7 +35,15 @@ agents/{namespace}/{nombre}/
   skills/
 ```
 
-Los cuatro `.md` bootstrap usan identidad `agent-bootstrap`. `config.json` **PUEDE** incluir `_manifest` y, si lo hace, usa tambien `agent-bootstrap`.
+Los cuatro `.md` bootstrap usan identidad URN `agent-bootstrap`. `config.json` **PUEDE** incluir `_manifest` y, si lo hace, usa tambien `agent-bootstrap`.
+
+`_manifest.type` expresa el kind estructural del componente y **DEBE** usar:
+
+- `bootstrap_agents` para `AGENTS.md`
+- `bootstrap_soul` para `SOUL.md`
+- `bootstrap_user` para `USER.md`
+- `bootstrap_tools` para `TOOLS.md`
+- `bootstrap_config` para `config.json`
 
 ## 3. Segregacion
 

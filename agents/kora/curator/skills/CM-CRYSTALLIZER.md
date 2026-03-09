@@ -25,7 +25,7 @@ Ejecuta el Funtor C: {Decisiones + Practicas + Restricciones} → KORA/Spec-MD c
 ### Fase 2: Cristalizacion
 1. Convertir decisiones implicitas → reglas explicitas con keyword RFC 2119.
 2. Cada regla: exactamente una lectura posible.
-3. Keywords en **negrita** siempre.
+3. Keywords en mayusculas siempre.
 4. Version castellana de keywords (DEBE, NO DEBE, DEBERIA, NO DEBERIA, PUEDE).
 5. Equivalencia inglesa solo en primera mencion, nunca repetida.
 
@@ -56,7 +56,7 @@ Ejecuta el Funtor C: {Decisiones + Practicas + Restricciones} → KORA/Spec-MD c
 Checks spec-md §8:
 - Frontmatter valido
 - Numeracion secuencial de ##
-- Keywords RFC 2119 en negrita
+- Keywords RFC 2119 explicitas y en mayusculas
 - Headings descriptivos (no genericos)
 - Sin ambiguedad (cada regla una lectura)
 - Ejemplos presentes (reglas complejas)

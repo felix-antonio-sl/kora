@@ -19,6 +19,7 @@ from kora_lib.validation import (
     validate_config_semantics,
     validate_kb_pipeline_consistency,
     validate_skill_purity,
+    validate_skill_tool_closure,
     validate_soul_semantics,
     validate_tools_semantics,
     validate_traces_semantics,
@@ -147,6 +148,20 @@ class SemanticValidationTests(unittest.TestCase):
     def test_skill_purity_allows_structured_pending_state(self):
         failures = validate_skill_purity("Emitir gate_result.status = pending_approval hasta decision humana.\n")
         self.assertEqual(failures, [])
+
+    def test_skill_tool_closure_flags_raw_cli_when_semantic_tool_exists(self):
+        failures = validate_skill_tool_closure("1. Ejecutar `scripts/kora health`.\n", ["repo_health"])
+        self.assertEqual(
+            failures,
+            ["Skill describe plumbing crudo en vez de la tool semantica 'repo_health'"],
+        )
+
+    def test_skill_tool_closure_flags_missing_semantic_tool_for_raw_cli(self):
+        failures = validate_skill_tool_closure("1. Ejecutar `scripts/kora index`.\n", ["artifact_read"])
+        self.assertEqual(
+            failures,
+            ["Skill requiere la tool semantica 'catalog_sync' pero no esta declarada en TOOLS.md"],
+        )
 
     def test_tools_semantics_flags_runtime_permission_heading(self):
         content = "## filesystem_write\n- **Firma:** x\n"

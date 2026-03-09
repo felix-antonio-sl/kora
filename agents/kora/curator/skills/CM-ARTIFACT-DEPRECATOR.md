@@ -19,8 +19,8 @@ Gestiona el fin de vida de artefactos de conocimiento: identifica dependencias, 
 ## Procedimiento
 1. IDENTIFICAR DEPENDENCIAS:
    - Buscar en catalogo: ¿que otros artefactos referencian este URN?
-   - Buscar en agentes: ¿algun config.json lista este URN en allowed_kb?
-   - Buscar en skills: ¿algun CM referencia este artefacto?
+   - Buscar en artefactos KORA/MD y KORA/Spec-MD: ¿algun artefacto referencia este URN?
+   - Registrar si existe impacto potencial en agentes o catalogo como derivacion externa a custodio/forgemaster.
 2. EVALUAR IMPACTO:
    - Cantidad de dependencias.
    - Criticidad de las dependencias (specs fundacionales > KBs > guias).
@@ -36,14 +36,14 @@ Gestiona el fin de vida de artefactos de conocimiento: identifica dependencias, 
 4. PROPONER MIGRACION (si hay sucesor):
    - Listar artefactos que referencian el URN deprecado.
    - Para cada uno: proponer actualizacion de referencia al sucesor.
-   - Para config.json de agentes: proponer actualizacion de allowed_kb.
-5. REGISTRAR: Indicar al usuario: ejecutar `kora index` para actualizar catalogo.
+   - Si el cambio afecta agentes o catalogo, emitir recomendacion de handoff a custodio/forgemaster.
+5. REGISTRAR: Indicar si se requiere sincronizacion de catalogo via custodio.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | urn_deprecado | URN | URN del artefacto deprecado |
-| dependencias_encontradas | string[] | Artefactos que referencian el URN |
+| dependencias_encontradas | string[] | Artefactos de conocimiento que referencian el URN |
 | sucesor_urn | URN \| null | URN del sucesor (si aplica) |
 | migraciones_propuestas | string[] | Actualizaciones de referencia sugeridas |
-| catalogo_actualizado | bool | Si el usuario ejecuto kora index |
+| catalogo_sincronizacion_requerida | bool | Si hace falta coordinar sincronizacion con custodio |

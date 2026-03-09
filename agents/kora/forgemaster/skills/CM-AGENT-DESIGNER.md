@@ -17,7 +17,7 @@ Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capa
 - **Output:** AgentBlueprint (ver Signature Output)
 
 ## Procedimiento
-1. ELICITAR DOMINIO: ¿Que hace el agente? ¿En que namespace vive? ¿Con que agentes interactua? ¿Que restricciones tiene?
+1. ELICITAR DOMINIO: analizar dominio provisto, namespace destino, interacciones declaradas y restricciones recibidas.
 2. MODELAR BEHAVIOR (c): Identificar modos comportamentales → mapear a estados. Minimo S-DISPATCHER + S-END. Constraints: determinismo, alcanzabilidad, sin ciclos infinitos.
 3. MODELAR STATE (U): Definir identidad dialectica(SOUL.md), contexto operador(USER.md). Verificar ortogonalidad entre capas de estado.
 4. MODELAR INTERFACE (F): Identificar herramientas necesarias. Definir firmas inferenciales(input→output). Routing map si usa kb_route.

@@ -9,12 +9,14 @@ from .config import (
     AGENT_BOOTSTRAP_FILES,
     AGENT_REQUIRED_FILES,
     AGENTS_FORBIDDEN_PATTERNS,
+    BOOTSTRAP_MANIFEST_TYPES,
     BOOTSTRAP_SCHEMA_PATH,
     CONFIG_SCHEMA_PATH,
     KB_PIPELINE_PATTERN,
     KORA_ROOT,
     LOW_LEVEL_RUNTIME_HINTS,
     SEMANTIC_TOOL_DOC_MARKERS,
+    SKILL_RAW_COMMAND_PATTERNS,
     SEMANTIC_TURN_CONTROL_PATTERNS,
     SOUL_FORBIDDEN_PATTERNS,
     TOOL_IDENTIFIER_PATTERN,
@@ -29,6 +31,7 @@ from .workspaces import (
     get_workspace_missing_files,
     iter_markdown_headings,
     iter_agent_workspaces,
+    expected_bootstrap_manifest_type,
     validate_skill_file,
 )
 
@@ -80,6 +83,22 @@ def validate_skill_purity(text):
         SEMANTIC_TURN_CONTROL_PATTERNS,
         "Skill contiene control conversacional no permitido ('{match}')",
     )
+
+
+def validate_skill_tool_closure(text, valid_tool_names):
+    failures = []
+    for pattern, semantic_tool in SKILL_RAW_COMMAND_PATTERNS:
+        if not pattern.search(text):
+            continue
+        if semantic_tool in valid_tool_names:
+            failures.append(
+                f"Skill describe plumbing crudo en vez de la tool semantica '{semantic_tool}'"
+            )
+        else:
+            failures.append(
+                f"Skill requiere la tool semantica '{semantic_tool}' pero no esta declarada en TOOLS.md"
+            )
+    return failures
 
 
 def normalize_heading_token(text):
@@ -346,6 +365,15 @@ def cmd_validate(profile="transitional", cohort=None):
                 issue_counts["bootstrap_schema"] += 1
                 workspace_ok = False
 
+            expected_type = expected_bootstrap_manifest_type(agent_path)
+            actual_type = agent_data.get("_manifest", {}).get("type") if isinstance(agent_data, dict) else None
+            if expected_type and actual_type != expected_type:
+                print(
+                    f"[FAIL] {agent_path.relative_to(KORA_ROOT)} - _manifest.type '{actual_type}' != '{expected_type}'"
+                )
+                issue_counts["bootstrap_manifest_type"] += 1
+                workspace_ok = False
+
         tools_path = workspace_dir / "TOOLS.md"
         valid_tool_names = []
         if tools_path.exists():
@@ -410,6 +438,10 @@ def cmd_validate(profile="transitional", cohort=None):
                 for failure in validate_skill_purity(skill_text):
                     print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")
                     issue_counts["skill_purity"] += 1
+                    workspace_ok = False
+                for failure in validate_skill_tool_closure(skill_text, valid_tool_names):
+                    print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")
+                    issue_counts["skill_tool_closure"] += 1
                     workspace_ok = False
                 for failure in validate_traces_semantics(skill_path, skill_text):
                     print(f"[FAIL] {skill_path.relative_to(KORA_ROOT)} - {failure}")

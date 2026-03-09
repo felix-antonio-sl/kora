@@ -17,7 +17,7 @@ Planifica mejoras estructurales al repo KORA como entidad: reorganizacion de dir
 - **Output:** EvolutionPlan (ver Signature Output)
 
 ## Procedimiento
-1. Analizar estado actual: metricas (kora stats), estructura (filesystem scan), gaps detectados en auditorias previas.
+1. Analizar estado actual: metricas via `repo_health`, estructura via `filesystem_scan`, gaps detectados en auditorias previas.
 2. Identificar areas de friccion: procesos manuales repetitivos, convenciones inconsistentes, scripts faltantes, pipeline con cuellos de botella.
 3. Proponer mejoras como lista priorizada:
    - Impacto: alto|medio|bajo.
@@ -28,7 +28,7 @@ Planifica mejoras estructurales al repo KORA como entidad: reorganizacion de dir
    - Identificar archivos afectados.
    - Definir criterio de exito verificable.
 5. Implementar mejoras aprobadas secuencialmente solo sobre superficies operativas permitidas. Verificar cada paso.
-6. Post-implementacion: ejecutar kora health para confirmar que no se introdujeron regresiones.
+6. Post-implementacion: invocar `repo_health` para confirmar que no se introdujeron regresiones.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

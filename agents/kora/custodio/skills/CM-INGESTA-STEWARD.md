@@ -10,23 +10,21 @@ lang: es
 # CM-INGESTA-STEWARD
 
 ## Proposito
-Gestiona el pipeline de ingesta del repo KORA: monitorea objetos en cada etapa (inbox→source→drafts→knowledge), reporta estado y recomienda acciones.
+Gestiona el pipeline de ingesta del repo KORA usando la interfaz semantica del workspace: monitorea objetos en cada etapa, reporta estado y recomienda acciones.
 
 ## Input/Output
 - **Input:** (ninguno — escanea pipeline completo)
 - **Output:** IngestaReport (ver Signature Output)
 
 ## Procedimiento
-1. Ejecutar `scripts/kora intake` → capturar status de cada etapa del pipeline.
-2. Escanear inbox/: listar objetos crudos pendientes de curado (PDFs, libros, datasets).
-3. Escanear source/: listar extractos curados listos para transformacion.
-4. Escanear drafts/: listar artefactos WIP con su status (draft, review).
-5. Reportar conteos por etapa en tabla.
-6. Recomendar acciones:
-   - inbox→source: curar manualmente o con instrucciones al operador.
-   - source→drafts: delegar a kora/curator para koraficacion/cristalizacion.
-   - drafts→knowledge: delegar a kora/curator para publicacion.
-7. Si usuario aprueba delegacion, formular instruccion para kora/curator.
+1. Invocar `intake_pipeline` para capturar el status agregado de cada etapa del pipeline.
+2. Si se requiere detalle operativo adicional, invocar `filesystem_scan` sobre `inbox/`, `source/` y `drafts/`.
+3. Reportar conteos y objetos visibles por etapa en tabla.
+4. Recomendar acciones:
+   - inbox -> source: curar manualmente o con instrucciones al operador.
+   - source -> drafts: emitir recomendacion estructurada de derivacion a curaduria.
+   - drafts -> knowledge: emitir recomendacion estructurada de publicacion via curaduria.
+5. Si el usuario aprueba la derivacion, formular la instruccion estructurada correspondiente.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

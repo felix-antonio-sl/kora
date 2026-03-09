@@ -27,7 +27,7 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 | # | Check | Criterio | Accion si falla |
 |---|-------|----------|-----------------|
 | 1 | Frontmatter valido | Parsea sin error, sin campos prohibidos | Corregir YAML, eliminar campos no autorizados |
-| 2 | URN registrado | _manifest.urn existe en catalogo | Registrar via kora index |
+| 2 | URN registrado | _manifest.urn existe en catalogo | Solicitar sincronizacion de catalogo via custodio |
 | 3 | URN sin version | Ni en urn ni en refs cruzadas del cuerpo | Eliminar sufijo versional |
 | 4 | Sin grasa | Cero introducciones, transiciones, hedging, retorica | Remover |
 | 5 | Idioma preservado | lang coincide con idioma del documento fuente | Corregir lang o revertir traducciones |
@@ -46,7 +46,7 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 |---|-------|----------|-----------------|
 | 1 | Frontmatter valido | Parsea sin error, campos autorizados | Corregir YAML |
 | 2 | Numeracion secuencial | Secciones ## numeradas 1,2,3... (excluyendo fenced code blocks) | Renumerar |
-| 3 | Keywords RFC 2119 en negrita | Toda keyword normativa en **negrita** | Formatear |
+| 3 | Keywords RFC 2119 explicitas | Toda keyword normativa esta en mayusculas y explicita | Normalizar keyword |
 | 4 | Headings descriptivos | Ningun heading generico | Renombrar |
 | 5 | Sin ambiguedad | Cada regla exactamente una lectura | Reescribir o agregar ejemplo |
 | 6 | Ejemplos presentes | Reglas complejas con par Correcto/Incorrecto | Agregar ejemplos |

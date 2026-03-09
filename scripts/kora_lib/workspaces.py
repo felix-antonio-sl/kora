@@ -3,10 +3,12 @@ import re
 from .artifacts import load_yaml_safe
 from .config import (
     AGENT_ROUTE_PATTERN,
+    BOOTSTRAP_MANIFEST_TYPES,
     COHORT_NAMESPACE_GROUPS,
     COHORT_WORKSPACE_OVERRIDES,
     CM_REF_PATTERN,
     KORA_ROOT,
+    SKILL_MANIFEST_TYPE,
     SKILL_REQUIRED_HEADINGS,
     TOOL_IDENTIFIER_PATTERN,
 )
@@ -182,14 +184,21 @@ def validate_skill_file(skill_path):
         return failures
 
     urn = doc.get("_manifest", {}).get("urn", "")
+    manifest_type = doc.get("_manifest", {}).get("type", "")
     if urn and ":skill:" not in urn:
         failures.append(f"skill identity must use ':skill:' URN, found '{urn}'")
+    if manifest_type and manifest_type != SKILL_MANIFEST_TYPE:
+        failures.append(f"skill manifest type must be '{SKILL_MANIFEST_TYPE}', found '{manifest_type}'")
 
     headings = {f"## {heading}" for level, heading in iter_markdown_headings(content) if level == 2}
     for heading in SKILL_REQUIRED_HEADINGS:
         if heading not in headings:
             failures.append(f"missing required heading '{heading}'")
     return failures
+
+
+def expected_bootstrap_manifest_type(path):
+    return BOOTSTRAP_MANIFEST_TYPES.get(path.name)
 
 
 def workspace_exists_from_urn(urn):

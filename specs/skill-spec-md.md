@@ -56,6 +56,8 @@ Reglas:
 3. No mezcla FSM, tono, security ni wiring.
 4. Puede ser invocado por la FSM, pero no contiene control conversacional ni transiciones.
 
+La URN identitaria `skill` y el kind `_manifest.type = lazy_load_endofunctor` son ortogonales: la primera gobierna identidad ejecutable; la segunda gobierna la forma estructural del Skill degenerado.
+
 ## 4. Integracion con agent-spec-md
 
 | Relacion | Regla |

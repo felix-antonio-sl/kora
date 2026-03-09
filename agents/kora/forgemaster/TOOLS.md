@@ -59,6 +59,6 @@ _manifest:
 ## health_check
 
 - **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}
-- **Cuando usar:** Ejecutar validacion de conformidad completa contra agent-spec-md v8.1.0 (17 checks).
+- **Cuando usar:** Ejecutar validacion de conformidad completa contra el baseline publicado de agent-spec-md y skill-spec-md.
 - **Cuando NO usar:** Validaciones parciales o consultas rapidas.
 - **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente. El baseline auditado soporta solo Skills degenerados.

@@ -1,19 +1,19 @@
 {
   "meta": {
-    "scanned_files": 731,
-    "node_count": 884,
-    "edge_count": 4213
+    "scanned_files": 730,
+    "node_count": 883,
+    "edge_count": 4166
   },
   "node_kind_counts": {
     "artifact": 226,
-    "knowledge": 257,
+    "knowledge": 256,
     "skill": 236,
     "spec": 7,
     "tool": 113,
     "workspace": 45
   },
   "edge_kind_counts": {
-    "AllowsKB": 423,
+    "AllowsKB": 422,
     "AllowsTool": 198,
     "ContainsArtifact": 225,
     "ContainsSkill": 236,
@@ -21,7 +21,7 @@
     "InvokesSkill": 220,
     "RoutesToAgent": 57,
     "TracesTo": 44,
-    "XRef": 2609
+    "XRef": 2563
   },
   "nodes": [
     {
@@ -2671,7 +2671,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:gn:kb:gn-cqs-master",
-      "title": "Catálogo Maestro de Competency Questions",
+      "title": "Catálogo Maestro de Preguntas de Competencia",
       "path": "knowledge/gn/gn-cqs-master.md",
       "namespace": "gn"
     },
@@ -2934,15 +2934,6 @@
       "urn": "urn:gn:kb:marco-legal-gores",
       "title": "Compendio Jurídico para Gobiernos Regionales",
       "path": "knowledge/gn/normativa/marco-legal-gores.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:matriz-integracion-organica",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:matriz-integracion-organica",
-      "title": "Matriz de Integración Orgánica del Conocimiento GORE Ñuble",
-      "path": "knowledge/gn/gobernanza/matriz-integracion-organica.md",
       "namespace": "gn"
     },
     {
@@ -9150,12 +9141,6 @@
       "kind": "AllowsKB",
       "source": "workspace:gn/goreologo",
       "target": "urn:gn:kb:marco-legal-gores",
-      "source_path": "agents/gn/goreologo/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/goreologo",
-      "target": "urn:gn:kb:matriz-integracion-organica",
       "source_path": "agents/gn/goreologo/config.json"
     },
     {
@@ -18893,13 +18878,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:matriz-integracion-organica",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gn:kb:modelos-actos-juridicos",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -27517,13 +27495,6 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:goreologo-config:1.0.0",
-      "target": "urn:gn:kb:matriz-integracion-organica",
-      "fragment": null,
-      "source_path": "agents/gn/goreologo/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:1.0.0",
       "target": "urn:gn:kb:modelos-actos-juridicos",
       "fragment": null,
       "source_path": "agents/gn/goreologo/config.json"
@@ -27875,13 +27846,6 @@
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:goreologo-tools:2.4.0",
       "target": "urn:gn:kb:marco-legal-gores",
-      "fragment": null,
-      "source_path": "agents/gn/goreologo/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:2.4.0",
-      "target": "urn:gn:kb:matriz-integracion-organica",
       "fragment": null,
       "source_path": "agents/gn/goreologo/TOOLS.md"
     },
@@ -28552,6 +28516,20 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:gn:kb:gore-ideal",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/gore-ideal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gore-ideal",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/gore-ideal.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:gn:kb:guia-circular-33-sts",
       "target": "urn:gn:kb:guia-circular-33-sts",
       "fragment": null,
@@ -28568,6 +28546,13 @@
       "kind": "XRef",
       "source": "urn:gn:kb:guia-fril-2025-sts",
       "target": "urn:gn:kb:guia-fril-2025-sts",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-fril-2025-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-fril-2025-sts",
+      "target": "urn:gn:kb:loc-gore",
       "fragment": null,
       "source_path": "knowledge/gn/guias/guia-fril-2025-sts.md"
     },
@@ -28657,8 +28642,29 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/instructivo-subvencion-8-2025-sts.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:gn:kb:intro-gores-nuble",
       "target": "urn:gn:kb:intro-gores-nuble",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/intro-gores-nuble.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:intro-gores-nuble",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/intro-gores-nuble.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:intro-gores-nuble",
+      "target": "urn:gn:kb:loc-gore",
       "fragment": null,
       "source_path": "knowledge/gn/gobernanza/intro-gores-nuble.md"
     },
@@ -28742,6 +28748,27 @@
     {
       "kind": "XRef",
       "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
       "target": "urn:gn:kb:manual-induccion-gore-nuble-2026",
       "fragment": null,
       "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
@@ -28811,419 +28838,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:aceleracion-regional",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d07-rrhh",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d08-rendiciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:cies-sitia",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:comunicaciones-oc",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:cuentas-publicas-2021-2024",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:erd-nuble-2024-2030",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:estrategia-gestion",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:estrategia-td-ia",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:flujos-aprobacion-documentos",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:gestion-info-geoespacial",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:gestion-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:gestion-prpto",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:gestion-rendiciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:glosario-gore-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:gore-ideal",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:guia-circular-33-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:guia-comunicaciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:guia-fril-2025-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:guia-frpd-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:guia-idi-sni-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:guia-programas-directos-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:indicadores-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:intro-gores-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-activo-fijo",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-asistencia",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-bienestar",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-ciclo-vida",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-compras",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-contabilidad",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-desarrollo-organizacional",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-flotas",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-inventarios-bodegas",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-presupuesto",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-remuneraciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:manual-tesoreria",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:marco-legal-gores",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:matriz-integracion-organica",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:modelos-actos-juridicos",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:nuble-250",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:problemas-sociales-cl",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:selector-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:transferencia-ppr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:gn:kb:vision-desarrollo-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:matriz-integracion-organica",
-      "target": "urn:mgmt:kb:estructura-estado-chile",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/matriz-integracion-organica.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:gn:kb:modelos-actos-juridicos",
       "target": "urn:gn:kb:modelos-actos-juridicos",
       "fragment": null,
@@ -29239,9 +28853,30 @@
     {
       "kind": "XRef",
       "source": "urn:gn:kb:omega-ipr-gestion-fusion",
+      "target": "urn:gn:kb:gestion-ipr",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:omega-ipr-gestion-fusion",
       "target": "urn:gn:kb:omega-ipr-gestion-fusion",
       "fragment": null,
       "source_path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:omega-ipr-gestion-fusion",
+      "target": "urn:gn:kb:selector-ipr",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:organigrama",
+      "target": "urn:gn:kb:loc-gore",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/organigrama.md"
     },
     {
       "kind": "XRef",
@@ -29268,6 +28903,34 @@
       "kind": "XRef",
       "source": "urn:gn:kb:plan-potenciamiento-dgi",
       "target": "urn:mgmt:kb:lean6",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:lean6",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:lean6",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:meyer-org-structure",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:meyer-org-structure",
       "fragment": null,
       "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
     },

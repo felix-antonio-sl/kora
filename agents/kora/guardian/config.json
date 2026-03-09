@@ -24,9 +24,7 @@
     "deny": []
   },
   "runtime_capabilities": {
-    "allow": [
-      "analysis"
-    ],
+    "allow": [],
     "deny": [
       "filesystem_write",
       "deploy"

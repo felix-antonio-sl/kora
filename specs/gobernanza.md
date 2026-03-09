@@ -64,6 +64,16 @@ Estos artefactos participan en ejecucion, deployment o composicion operacional. 
 3. Un CM degenerado **ES** un Skill; **NO DEBE** usar identidad `agent-bootstrap`.
 4. Ninguna especificacion subordinada **PUEDE** definir un tercer regimen de identidad sin cambiar este documento.
 
+### 3.4 Manifest kind
+
+La identidad URN y `_manifest.type` son ortogonales.
+
+1. La URN gobierna el regimen identitario (`agent-bootstrap` o `skill`).
+2. `_manifest.type` gobierna el kind estructural del artefacto ejecutable.
+3. Para bootstraps de agente, los kinds permitidos son `bootstrap_agents`, `bootstrap_soul`, `bootstrap_user`, `bootstrap_tools`, `bootstrap_config`.
+4. Para Skills degenerados, el kind permitido es `lazy_load_endofunctor`.
+5. Ninguna spec subordinada **PUEDE** introducir kinds adicionales sin declararlos primero aqui.
+
 Traces to: formal/01 §5.2 (Substitutability) ; formal/05 §1.3 (Domain Disjointness)
 
 ## 4. Formal Layer

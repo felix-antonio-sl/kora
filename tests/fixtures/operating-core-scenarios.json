@@ -311,10 +311,10 @@
       }
     ],
     "sample_allowed_kb": [
-      "urn:gn:kb:matriz-integracion-organica",
       "urn:gn:kb:intro-gores-nuble",
-      "urn:gn:kb:gestion-prpto",
-      "urn:gn:kb:gestion-ipr"
+      "urn:gn:kb:organigrama",
+      "urn:gn:kb:marco-legal-gores",
+      "urn:gn:kb:modelos-actos-juridicos"
     ]
   },
   "secondary_domain_canary": {

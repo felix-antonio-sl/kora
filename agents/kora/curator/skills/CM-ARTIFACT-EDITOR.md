@@ -30,7 +30,7 @@ Modifica artefactos de conocimiento existentes preservando todos los invariantes
 4. APLICAR modificacion:
    - Preservar estilo telegrafico (KORA/MD) o normativo (KORA/Spec-MD).
    - Preservar idioma del artefacto.
-   - Si prescriptivo: keywords RFC 2119 en negrita, par Correcto/Incorrecto si aplica.
+   - Si prescriptivo: keywords RFC 2119 explicitas y en mayusculas, par Correcto/Incorrecto si aplica.
 5. BUMP VERSION (SemVer):
    - Patch: correccion sin cambio informativo/normativo.
    - Minor: info/regla nueva compatible con lo existente.

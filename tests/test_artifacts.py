@@ -131,6 +131,17 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in rejected_terms:
             self.assertNotIn(term, content)
 
+    def test_specs_declare_manifest_kind_taxonomy(self):
+        governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
+        agent_spec = (ROOT / "specs" / "agent-spec-md.md").read_text(encoding="utf-8")
+        skill_spec = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
+        self.assertIn("## 3.4 Manifest kind", governance)
+        self.assertIn("bootstrap_agents", governance)
+        self.assertIn("bootstrap_config", governance)
+        self.assertIn("lazy_load_endofunctor", governance)
+        self.assertIn("`_manifest.type` expresa el kind estructural del componente", agent_spec)
+        self.assertIn("La URN identitaria `skill` y el kind `_manifest.type = lazy_load_endofunctor` son ortogonales", skill_spec)
+
     def test_forgemaster_no_longer_claims_extended_skill_support(self):
         files = (
             ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md",
@@ -220,6 +231,49 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("Implementacion:", custodio_tools)
         self.assertNotIn("Invoca internamente", forgemaster_tools)
         self.assertNotIn("Leer todos los archivos del workspace", forgemaster_tools)
+
+    def test_custodio_operational_skills_use_semantic_tools(self):
+        files = (
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-HEALTH-INSPECTOR.md",
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-CATALOG-STEWARD.md",
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-INGESTA-STEWARD.md",
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertIn("repo_health", content)
+        self.assertIn("catalog_sync", content)
+        self.assertIn("urn_resolve", content)
+        self.assertIn("intake_pipeline", content)
+        self.assertNotIn("`scripts/kora health`", content)
+        self.assertNotIn("`scripts/kora index`", content)
+        self.assertNotIn("`scripts/kora intake`", content)
+        self.assertNotIn("`git status`", content)
+
+    def test_curator_spec_md_skills_do_not_require_bold_keywords(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-EDITOR.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("keywords RFC 2119 en negrita", content)
+        self.assertNotIn("Keywords en **negrita**", content)
+        self.assertIn("mayusculas", content)
+
+    def test_forgemaster_validator_drops_private_17_check_baseline(self):
+        files = (
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("17 checks", content)
+        self.assertNotIn("CMs huerfanos", content)
+        self.assertNotIn("EVALUACIONES", content)
+        self.assertIn("baseline publicado", content)
+
+    def test_guardian_runtime_capabilities_drop_analysis(self):
+        content = (ROOT / "agents" / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
+        self.assertNotIn('"analysis"', content)
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")
