@@ -8,26 +8,16 @@
     "domains/gn/01_fundamentos/legal/kb_gn_200_marco_legal_gores_koda.yml"
   ],
   "fs": 100,
-  "cr": 1.07,
+  "cr": 1.7,
   "review_gate": "auto",
-  "skeleton_count": 16,
-  "meat_count": 1151,
+  "skeleton_count": 3,
+  "meat_count": 1130,
   "fat_count": 0,
   "scope_statement": null,
   "expected_sections": [
     "Contenido"
   ],
   "preserved_facts": [
-    "Creation-Date=2025-11-27",
-    "Ctx=Transformación KODA/Spec del 'Compendio Jurídico para Gobiernos Regionales' usado por el Goreólogo.",
-    "Format=KODA/Spec",
-    "Human-Creator=FS",
-    "Human-Editor=FS",
-    "ID=KB-GN-200-MARCO-LEGAL-GORES-KODA",
-    "LLM_Parsing_Instructions.Content=BEGIN_LLM_INSTRUCTIONS\nYou are an AI agent consuming a KODA artifact. Parse with absolute fidelity.\n\nFIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, relationships) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).\n\nLEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation\n\nREFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents use Ctx:, Ctx_Required:, or Ctx_Optional:.\n\nLANGUAGE POLICY: Keywords in English, content in original language (es-CL). Never translate content.\nEND_LLM_INSTRUCTIONS\n",
-    "LLM_Parsing_Instructions.ID=KODA-LLM-PARSER-KB-GN-200",
-    "LLM_Parsing_Instructions.Prohib=Using for artifact creation or translation.",
-    "LLM_Parsing_Instructions.Req=Mandatory block following Metadata.",
     "Leyes_Clave_GORE.ID=LEYES-GORE-01",
     "Leyes_Clave_GORE.Ley_17336_Propiedad_Intelectual_Para_GORE.Fnd=Ley N° 17.336 sobre Propiedad Intelectual y normativa complementaria; en diálogo con la Ley 19.175 y la Ley 20.285.",
     "Leyes_Clave_GORE.Ley_17336_Propiedad_Intelectual_Para_GORE.GORE_Como_Creador_y_Comitente_de_Obras.Contratos_y_Bases_que_Encargan_Obras.Def[0]=Las bases de licitación, convenios y contratos mediante los cuales el GORE encarga estudios, contenidos audiovisuales, diseños, software u otras obras deben incluir cláusulas de cesión de derechos patrimoniales amplias y perpetuas a favor del GORE.",
@@ -1157,18 +1147,7 @@
     "Marco_Conceptual_Juridico_Transversal.Conceptos_Fundamentales.Transparencia_Administrativa.ID=DEF-TRANSPARENCIA-ADMINISTRATIVA-01",
     "Marco_Conceptual_Juridico_Transversal.ID=MCJT-01",
     "Marco_Conceptual_Juridico_Transversal.Purp=Establecer una SSoT de conceptos jurídicos transversales usados en el compendio, evitando redundancia y asegurando coherencia.",
-    "Model-Collaborator=Cascade",
-    "Modification-Date=2025-11-27",
-    "Primary-Source=kb_gn_200_marco_legal_gores.md",
-    "Purp=Concentrar en un solo artefacto KODA/Spec el marco legal clave que afecta a los Gobiernos Regionales (GORE), como base del Goreólogo.",
-    "Status=Draft",
-    "Version=0.1.0",
-    "_manifest.federation.license=Institutional Use Only",
-    "_manifest.federation.visibility=internal",
-    "_manifest.provenance.created_at=2026-02-19",
-    "_manifest.provenance.created_by=GORE Ñuble",
-    "_manifest.provenance.last_modified_at=2026-02-19",
-    "_manifest.urn=urn:knowledge:gorenuble:gn:marco-legal-gores:1.0.0"
+    "Purp=Concentrar en un solo artefacto KODA/Spec el marco legal clave que afecta a los Gobiernos Regionales (GORE), como base del Goreólogo."
   ],
   "non_equivalence_decisions": []
 }

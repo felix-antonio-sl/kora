@@ -1,0 +1,165 @@
+---
+_manifest:
+  urn: urn:gn:kb:manual-desarrollo-organizacional
+  provenance:
+    created_by: gn_rebuild.py
+    created_at: '2026-03-09'
+    source: domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml
+version: 2.0.0
+status: draft
+tags:
+- gore-nuble
+- gobierno-regional
+- desarrollo-organizacional
+- capacitacion
+- gestion-personas
+- gn
+lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml: 3263702921c6f5b970f42c120665e927fc6490c6f80daff6548ee571f120dc41
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 2.28
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 5
+    meat_count: 68
+    fat_count: 0
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-desarrollo-organizacional.md.json
+---
+
+# Manual 3.4: Desarrollo Organizacional y Capacitación
+## Source ID
+MANUAL-DESARROLLO-ORG-01
+
+## Authoritative Sources
+-
+  ### Path
+  staging/temp/brutos ordenados/01_gestion_personas/res_exta_132_designa_encargado_y_referentes_tecnicos_cdc_2025_koda.yml
+  ### Type
+  CDC-Resolution
+  ### Priority
+  1
+-
+  ### Path
+  staging/temp/brutos ordenados/01_gestion_personas/res_exta_817_define_equipos_trabajo_cdc_2025_koda.yml
+  ### Type
+  CDC-Teams-Resolution
+  ### Priority
+  1
+
+## Last Validated
+2025-12-18
+
+## Manual 3 4 Desarrollo Organizacional y Capacitacion
+### Titulo
+Manual 3.4: Desarrollo Organizacional y Capacitación
+### Objetivo
+#### Objetivos
+Potenciar las competencias de los funcionarios y promover un ambiente laboral positivo, alineado con los objetivos estratégicos del GORE Ñuble.
+### Seccion I Capacitacion y Formacion
+#### Titulo
+Sección I: Capacitación y Formación
+#### 1 Sistema de Capacitacion
+#### Contexto
+Regido por el Estatuto Administrativo y normas del Servicio Civil, busca perfeccionar los conocimientos y habilidades.
+#### 2 Deteccion de Necesidades de Capacitacion DNC
+#### Proceso
+| Act | Def |
+| --- | --- |
+| Proceso Anual | Consulta a jefaturas y funcionarios sobre brechas de competencias. |
+#### Fuentes de Informacion
+- Evaluación del desempeño.
+- Nuevas normativas o sistemas (ej. SIGFE, Transformación Digital).
+- Objetivos estratégicos regionales (ERD).
+#### 3 Plan Anual de Capacitacion PAC
+#### Elaboracion
+#### Responsables
+Área de Gestión de Personas
+#### Acciones
+Consolida el DNC.
+#### Comite Bipartito de Capacitacion
+#### Definicion
+Instancia consultiva con representantes de la asociación de funcionarios y la administración. Revisa y sugiere acciones.
+#### Aprobacion
+#### Requisitos
+Resolución Exenta del Gobernador(a).
+#### Ejecucion
+#### Proceso
+- Cursos internos
+- Cursos externos
+- e-learning
+#### Compromiso
+#### Requisitos
+- Funcionario capacitado debe replicar conocimientos o aplicarlos.
+- Renuncias post-curso pueden implicar devolución de costos (según reglamento).
+#### Rec Prioridad en Competencias Digitales Estrategia TDE
+#### Rec
+Se priorizarán acciones formativas en competencias digitales (uso de plataformas, firma electrónica, seguridad de la información), conforme a la Estrategia de Capacitación de la Transformación Digital del Estado.
+### Seccion II Gestion del Desempeno
+#### Titulo
+Sección II: Gestión del Desempeño
+#### 4 Sistema de Calificaciones
+#### Definicion
+Instrumento formal para evaluar el desempeño funcionario.
+#### Periodo
+#### Requisitos
+Anual (1 de septiembre al 31 de agosto).
+#### Etapas
+| Etapa | Resp | Def |
+| --- | --- | --- |
+| 1. Precalificación | Jefe Directo | Evalúa factores cualitativos y cuantitativos. |
+| Etapa | Def |
+| --- | --- |
+| 2. Junta Calificadora | Comité colegiado que revisa las precalificaciones y asigna la nota final y Lista (1: Distinción, 2: Buena, 3: Condicional, 4: Eliminación). |
+| Etapa | Proc |
+| --- | --- |
+| 3. Apelación | ['Funcionario puede apelar ante la Junta', 'En segunda instancia, ante la Contraloría (por vicios de legalidad).'] |
+#### 5 Metas y Compromisos PMG
+#### Metas de Gestion Institucional
+#### Definicion
+Definidas anualmente (ej. eficiencia presupuestaria, atención usuarios).
+#### Metas de Desempeno Colectivo
+#### Definicion
+Definidas por equipo/división.
+#### Evaluacion
+#### Resultados
+El cumplimiento determina el pago del Componente de Desempeño de la Asignación de Modernización (pagado trimestralmente).
+### Seccion III Desarrollo Organizacional
+#### Titulo
+Sección III: Desarrollo Organizacional
+#### 6 Clima Laboral
+#### Medicion
+#### Requisitos
+Aplicación bianual de encuestas de clima laboral (ej. ISTAS 21).
+#### Intervencion
+#### Proceso
+- Planes de acción para abordar brechas (liderazgo, comunicación, condiciones físicas).
+#### 7 Conciliacion Trabajo Vida
+#### Politicas
+#### Rec
+- Promoción de corresponsabilidad parental
+- Respeto de horarios
+- Derecho a desconexión
+#### Teletrabajo
+#### Condiciones
+Modalidad sujeta a factibilidad técnica y normativa específica (Ley de Presupuestos / Reglamento Interno), priorizando tareas que permitan medición por objetivos.
+### Nota Final
+#### Contexto
+Este manual fomenta la carrera funcionaria y la profesionalización del capital humano regional. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
+
+## Referencias Cruzadas
+### Ctx Optional
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml
+- knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml
