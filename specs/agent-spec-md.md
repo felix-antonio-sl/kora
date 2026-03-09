@@ -5,25 +5,36 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 04, 07"
-version: "8.2.0"
+version: "8.3.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
 ---
 
-# KORA/Agent-Spec v8.2.0
+# KORA/Agent-Spec v8.3.0
 
 ## 1. Definicion
 
 Un agente KORA es un workspace ejecutable compuesto por cinco componentes:
 
 1. `AGENTS.md` — behavior
-2. `TOOLS.md` — interfaz semántica
+2. `TOOLS.md` — interfaz semantica
 3. `SOUL.md` y `USER.md` — estado y contexto
 4. `config.json` — security y runtime envelope
 5. `skills/` — capabilities lazy-load
 
-## 2. Topologia obligatoria
+## 2. Definiciones
+
+| Termino     | Definicion                                                          |
+| ----------- | ------------------------------------------------------------------- |
+| Workspace   | Directorio autocontenido con los 5 componentes base del agente      |
+| FSM         | Maquina de estados finitos que gobierna el behavior del agente      |
+| Segregacion | Principio de que cada componente solo contiene su materia propia    |
+| Wiring      | Declaracion explicita de rutas de composicion inter-agente          |
+| CM          | Cognitive Model; archivo Skill degenerado en `skills/`              |
+| Discovery   | Proceso por el cual el agente encuentra y activa Skills disponibles |
+
+## 3. Topologia obligatoria
 
 ```text
 agents/{namespace}/{nombre}/
@@ -45,9 +56,9 @@ Los cuatro `.md` bootstrap usan identidad URN `agent-bootstrap`. `config.json` *
 - `bootstrap_tools` para `TOOLS.md`
 - `bootstrap_config` para `config.json`
 
-## 3. Segregacion
+## 4. Segregacion
 
-### 3.1 Gramatica canonica de `AGENTS.md`
+### 4.1 Gramatica canonica de `AGENTS.md`
 
 Todo `AGENTS.md` **DEBE** incluir, en este orden logico, las siguientes secciones:
 
@@ -59,7 +70,7 @@ Todo `AGENTS.md` **DEBE** incluir, en este orden logico, las siguientes seccione
 
 Se permiten secciones adicionales solo si no sustituyen ni mezclan esa columna vertebral.
 
-### 3.2 Sintaxis canonica de la FSM
+### 4.2 Sintaxis canonica de la FSM
 
 Cada estado **DEBE** declararse como una linea numerada con esta forma:
 
@@ -76,7 +87,27 @@ Reglas:
 5. `ACT` **PUEDE** invocar Skills, pero **NO DEBE** mezclar tono, security ni wiring oculto.
 6. Cuando multiples condiciones de transicion son evaluables simultaneamente, el estado **DEBE** declarar precedencia explicita (orden numerico, prioridad, o exclusion mutua). La ambiguedad implicita es invalida.
 
-### 3.3 Invariantes de behavior
+Correcto:
+
+```markdown
+3. STATE: S-ANALYSIS -> ACT: Evaluar input.
+   -> Trans: IF error_critico -> S-ESCALATE [prioridad 1]
+   -> Trans: IF requiere_revision -> S-REVIEW [prioridad 2]
+   -> Trans: IF completo -> S-OUTPUT [prioridad 3]
+```
+
+Incorrecto:
+
+```markdown
+3. STATE: S-ANALYSIS -> ACT: Evaluar input.
+   -> Trans: IF error_critico -> S-ESCALATE
+   -> Trans: IF requiere_revision -> S-REVIEW
+   -> Trans: IF completo -> S-OUTPUT
+```
+
+Rationale: Sin precedencia explicita, si `error_critico` y `requiere_revision` coexisten, el runtime no puede determinar cual transicion ejecutar.
+
+### 4.3 Invariantes de behavior
 
 1. La FSM **DEBE** tener `S-DISPATCHER` como punto de entrada y `S-END` como cierre canonico.
 2. Toda rama declarada **DEBE** ser alcanzable desde `S-DISPATCHER`.
@@ -86,7 +117,7 @@ Reglas:
 
 Traces to: formal/01 §3.2 (Determinism in M) ; formal/01 §3.3 (Co-induction at Terminal States)
 
-### 3.4 Segregacion de componentes
+### 4.4 Segregacion de componentes
 
 1. `AGENTS.md` **DEBE** contener FSM, reglas duras, co-induccion, contexto multi-turno y wiring.
 2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma.
@@ -97,15 +128,15 @@ Traces to: formal/01 §3.2 (Determinism in M) ; formal/01 §3.3 (Co-induction at
 
 Traces to: formal/01 §2.2 (Fiber Independence)
 
-## 4. Interfaz
+## 5. Interfaz
 
-`TOOLS.md` declara herramientas semánticas invocables por el LLM.
+`TOOLS.md` declara herramientas semanticas invocables por el LLM.
 
 `config.json.tools.allow` **DEBE** ser exactamente el conjunto de nombres declarados en `TOOLS.md`.
 
-`config.json.runtime_capabilities` declara permisos crudos del runtime y **NO DEBE** contaminar la interfaz semántica.
+`config.json.runtime_capabilities` declara permisos crudos del runtime y **NO DEBE** contaminar la interfaz semantica.
 
-## 5. Security y runtime envelope
+## 6. Security y runtime envelope
 
 Campos relevantes de `config.json`:
 
@@ -128,15 +159,15 @@ Reglas:
 
 Traces to: formal/01 §1.3 (M-Immutability) ; formal/04 §2.4 (Filtered Discovery)
 
-## 6. Skills
+## 7. Skills
 
 Todo CM referenciado en `AGENTS.md` **DEBE** existir en `skills/` como Skill degenerado conforme a `skill-spec-md`.
 
 El bootstrap del agente **NO DEBE** contener CM inline.
 
-## 7. Wiring
+## 8. Wiring
 
-Toda ruta a otro agente **DEBE** apuntar a un workspace resoluble. Las rutas lógicas no resolubles son inválidas.
+Toda ruta a otro agente **DEBE** apuntar a un workspace resoluble. Las rutas logicas no resolubles son invalidas.
 
 Reglas:
 
@@ -144,10 +175,11 @@ Reglas:
 2. El sub-agente **PUEDE** heredar behavior e interface solo en la medida declarada por el wiring.
 3. `SOUL.md` y `USER.md` **DEBEN** disiparse en sub-agentes salvo que una spec superior declare explicitamente otra cosa.
 4. El sistema compuesto **DEBE** ser razonable desde agentes + rutas declaradas, no desde side effects ocultos.
+5. En composiciones multi-agente (swarms), el wiring del swarm se materializa en el `AGENTS.md` del orquestador. `swarm-spec-md` gobierna la coordinacion; esta spec gobierna la topologia de cada agente participante.
 
 Traces to: formal/01 §2.3 (Dissipation) ; formal/01 §6.2 (Sub-Agent Adjunction) ; formal/01 §6.3 (Compositionality of Wiring)
 
-## 8. Validacion
+## 9. Validacion
 
 | Check                     | Criterio                                                                            | Enforcement | Accion si falla                          |
 | ------------------------- | ----------------------------------------------------------------------------------- | ----------- | ---------------------------------------- |

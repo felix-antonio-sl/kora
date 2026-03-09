@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 00-07, RFC 2119"
-version: "3.0.0"
+version: "3.1.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
 ---
 
-# KORA/Gobernanza v3.0.0
+# KORA/Gobernanza v3.1.0
 
 ## 1. Definicion
 
@@ -26,7 +26,18 @@ Todo lo demas pertenece a la especificacion del artefacto correspondiente.
 
 Traces to: formal/05 §1.2 (Bounded Lattice)
 
-## 2. Precedencia
+## 2. Definiciones
+
+| Termino                | Definicion                                                                                                      |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Artefacto conceptual   | Artefacto cuyo URN identifica el concepto, no el snapshot; describe conocimiento, reglas o referencias estables |
+| Artefacto ejecutable   | Artefacto cuyo URN identifica un snapshot que participa en ejecucion, deployment o composicion operacional      |
+| Regimen de identidad   | Esquema URN que gobierna como se identifica un artefacto: conceptual o ejecutable                               |
+| Formal Layer           | Capa de justificacion categorial oficial de KORA                                                                |
+| Extension de namespace | Artefacto KORA/Spec-MD que agrega restricciones sin relajar reglas base                                         |
+| Enforcement            | Nivel de verificabilidad de una regla: schema, lint, runtime, eval o manual                                     |
+
+## 3. Precedencia
 
 Cuando dos reglas se contradicen, prevalece la capa mas alta de esta jerarquia:
 
@@ -38,11 +49,11 @@ Cuando dos reglas se contradicen, prevalece la capa mas alta de esta jerarquia:
 
 Si un conflicto no puede resolverse por dominio, este documento **DEBE** actualizarse antes de aceptar la coexistencia de ambas reglas.
 
-## 3. Identidad
+## 4. Identidad
 
 KORA reconoce dos clases de artefacto.
 
-### 3.1 Artefactos conceptuales
+### 4.1 Artefactos conceptuales
 
 - Regimen: `urn:{namespace}:{type}:{id}`
 - Version: en el campo raiz `version`
@@ -50,21 +61,21 @@ KORA reconoce dos clases de artefacto.
 
 Estos artefactos describen conocimiento, reglas o referencias estables. Su URN identifica el concepto, no el snapshot.
 
-### 3.2 Artefactos ejecutables
+### 4.2 Artefactos ejecutables
 
 - Regimen: `urn:{namespace}:{type}:{id}:{version}`
 - Tipos: `agent-bootstrap`, `skill`
 
 Estos artefactos participan en ejecucion, deployment o composicion operacional. Su URN identifica un snapshot ejecutable.
 
-### 3.3 Reglas
+### 4.3 Reglas
 
 1. Un componente bootstrap de agente **DEBE** usar `agent-bootstrap`.
 2. Un Skill, degenerado o extendido, **DEBE** usar `skill`.
 3. Un CM degenerado **ES** un Skill; **NO DEBE** usar identidad `agent-bootstrap`.
 4. Ninguna especificacion subordinada **PUEDE** definir un tercer regimen de identidad sin cambiar este documento.
 
-### 3.4 Manifest kind
+### 4.4 Manifest kind
 
 La identidad URN y `_manifest.type` son ortogonales.
 
@@ -76,21 +87,21 @@ La identidad URN y `_manifest.type` son ortogonales.
 
 Traces to: formal/01 §5.2 (Substitutability) ; formal/05 §1.3 (Domain Disjointness)
 
-## 4. Formal Layer
+## 5. Formal Layer
 
-### 4.1 Capa oficial
+### 5.1 Capa oficial
 
 La unica Formal Layer oficial de KORA es `knowledge/kora/categorical-foundations/`.
 
 `Traces to:` **DEBE** referenciar exclusivamente documentos de esa capa.
 
-### 4.2 Corpus auxiliar
+### 5.2 Corpus auxiliar
 
-`knowledge/fxsl/cat/` y cualquier otro corpus categorial adicional son auxiliares. Pueden informar diseño, auditoría o crítica, pero **NO DEBEN** respaldar `Traces to:` directamente.
+`knowledge/fxsl/cat/` y cualquier otro corpus categorial adicional son auxiliares. Pueden informar diseno, auditoria o critica, pero **NO DEBEN** respaldar `Traces to:` directamente.
 
 Si un concepto auxiliar pasa a justificar reglas operacionales, **DEBE** absorberse mediante un documento puente dentro de la Formal Layer oficial.
 
-## 5. Extensiones
+## 6. Extensiones
 
 Una extension de namespace:
 
@@ -101,25 +112,33 @@ Una extension de namespace:
 
 Las extensiones de metadata se expresan unicamente dentro del campo `extensions.{namespace}` del artefacto gobernado.
 
-## 6. Enforcement
+## 7. Enforcement
 
-Toda regla importante de KORA cae en uno de cuatro niveles:
+Toda regla importante de KORA cae en uno de cinco niveles:
 
-| Nivel | Semantica |
-| --- | --- |
-| `schema` | Verificable por parseo o validacion estructural |
-| `lint` | Verificable por inspeccion estatica del repo |
-| `runtime` | Verificable solo durante ejecucion u orquestacion |
-| `manual` | Requiere juicio humano |
+| Nivel     | Semantica                                                            |
+| --------- | -------------------------------------------------------------------- |
+| `schema`  | Verificable por parseo o validacion estructural                      |
+| `lint`    | Verificable por inspeccion estatica del repo                         |
+| `runtime` | Verificable solo durante ejecucion u orquestacion                    |
+| `eval`    | Verificable mediante evaluacion funcional con inputs representativos |
+| `manual`  | Requiere juicio humano                                               |
 
 Reglas fundacionales que no admiten enforcement razonable **DEBERIAN** expresarse como `DEBERIA`, salvo invariantes identitarios, de seguridad o de trazabilidad.
 
-## 7. Validacion
+## 8. Invariantes
 
-| Check | Criterio | Enforcement | Accion si falla |
-| --- | --- | --- | --- |
-| Precedencia consistente | Ninguna spec subordinada contradice una capa superior | manual | Reescribir regla o actualizar gobernanza |
-| Identidad consistente | Solo existen los dos regímenes de identidad definidos en §3 | lint | Migrar URNs |
-| Traces oficiales | Toda línea `Traces to:` apunta a la Formal Layer oficial | lint | Corregir o degradar a `Rationale:` |
-| Extensiones acotadas | No hay metadata ad hoc fuera de `extensions.{namespace}` | schema | Reubicar extension |
-| Enforcement declarado | Las tablas nuevas o reescritas incluyen columna `Enforcement` | lint | Completar tabla |
+1. La jerarquia de precedencia **NO DEBE** alterarse por una spec subordinada sin actualizar este documento.
+2. Solo existen los regimenes de identidad definidos en §4.
+3. Toda linea `Traces to:` **DEBE** apuntar a la Formal Layer oficial.
+4. Ninguna extension **PUEDE** relajar reglas base.
+
+## 9. Validacion
+
+| Check                   | Criterio                                                      | Enforcement | Accion si falla                          |
+| ----------------------- | ------------------------------------------------------------- | ----------- | ---------------------------------------- |
+| Precedencia consistente | Ninguna spec subordinada contradice una capa superior         | manual      | Reescribir regla o actualizar gobernanza |
+| Identidad consistente   | Solo existen los dos regimenes de identidad definidos en §4   | lint        | Migrar URNs                              |
+| Traces oficiales        | Toda linea `Traces to:` apunta a la Formal Layer oficial      | lint        | Corregir o degradar a `Rationale:`       |
+| Extensiones acotadas    | No hay metadata ad hoc fuera de `extensions.{namespace}`      | schema      | Reubicar extension                       |
+| Enforcement declarado   | Las tablas nuevas o reescritas incluyen columna `Enforcement` | lint        | Completar tabla                          |

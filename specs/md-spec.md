@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-09"
     source: "KORA categorical-foundations 05, KORA/Gobernanza v3.0.0, refactor del contrato de compresion y realizacion superficial"
-version: "6.0.0"
+version: "6.1.0"
 status: published
 tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad]
 lang: es
 ---
 
-# KORA/MD v6.0.0
+# KORA/MD v6.1.0
 
 ## 1. Definicion
 
@@ -27,19 +27,19 @@ La audiencia primaria son runtimes y pipelines de recuperacion. La audiencia sec
 
 ## 2. Definiciones
 
-| Termino | Definicion |
-| --- | --- |
-| Artefacto KORA/MD | Archivo Markdown con frontmatter KORA y cuerpo descriptivo |
-| Koraficacion | Transformacion `DocHumano -> KORA/MD` que preserva verdad y elimina entropia comunicativa |
-| Chunk RAG | Unidad primaria de recuperacion delimitada por `##` |
-| Skeleton | Estructura del documento: titulo, headings, tablas, listas, jerarquia |
-| Meat | Hechos atomicos que deben preservarse: cifras, fechas, condiciones, excepciones, referencias, dependencias |
-| Fat | Retorica, hedging, transiciones y relleno editorial que debe eliminarse |
-| Realizacion superficial | Eleccion de la forma final visible del conocimiento: heading, prosa, lista o tabla |
-| Labelese | Salida que suena a serializacion de campos: `Asunto`, `Contenido`, `Tipo`, `Path`, etc. |
-| FS | Fidelity Score. Porcentaje de hechos preservados o comprimidos sin perdida semantica |
-| CR | Compression Ratio. Longitud fuente / longitud salida |
-| SSOT | Un hecho, un lugar |
+| Termino                 | Definicion                                                                                                 |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Artefacto KORA/MD       | Archivo Markdown con frontmatter KORA y cuerpo descriptivo                                                 |
+| Koraficacion            | Transformacion `DocHumano -> KORA/MD` que preserva verdad y elimina entropia comunicativa                  |
+| Chunk RAG               | Unidad primaria de recuperacion delimitada por `##`                                                        |
+| Skeleton                | Estructura del documento: titulo, headings, tablas, listas, jerarquia                                      |
+| Meat                    | Hechos atomicos que deben preservarse: cifras, fechas, condiciones, excepciones, referencias, dependencias |
+| Fat                     | Retorica, hedging, transiciones y relleno editorial que debe eliminarse                                    |
+| Realizacion superficial | Eleccion de la forma final visible del conocimiento: heading, prosa, lista o tabla                         |
+| Labelese                | Salida que suena a serializacion de campos: `Asunto`, `Contenido`, `Tipo`, `Path`, etc.                    |
+| FS                      | Fidelity Score. Porcentaje de hechos preservados o comprimidos sin perdida semantica                       |
+| CR                      | Compression Ratio. Longitud fuente / longitud salida                                                       |
+| SSOT                    | Un hecho, un lugar                                                                                         |
 
 ## 3. Anatomia del documento
 
@@ -124,12 +124,12 @@ Reglas:
 
 ### 5.1 Jerarquia de encabezados = esqueleto semantico
 
-| Nivel | Rol semantico |
-| --- | --- |
-| `#` | Titulo del artefacto |
-| `##` | Seccion primaria recuperable |
-| `###` | Subtopico o componente |
-| `####` | Detalle atomico |
+| Nivel  | Rol semantico                |
+| ------ | ---------------------------- |
+| `#`    | Titulo del artefacto         |
+| `##`   | Seccion primaria recuperable |
+| `###`  | Subtopico o componente       |
+| `####` | Detalle atomico              |
 
 Reglas:
 
@@ -142,13 +142,13 @@ Reglas:
 
 ### 5.2 Elementos de contenido
 
-| Elemento | Uso permitido | Funcion prohibida |
-| --- | --- | --- |
-| Negrita | definiciones, terminos clave | enfasis decorativo |
-| Cursiva | termino tecnico o extranjero | enfasis estilistico |
-| `codigo` | URNs, ids, comandos, literales | resaltado general |
-| Lista | enumeracion, procedimiento o desglose normativo | prosa fragmentada sin valor estructural |
-| Tabla | comparacion, condiciones, matrices, catalogos | dumping decorativo o serializacion cruda |
+| Elemento | Uso permitido                                   | Funcion prohibida                        |
+| -------- | ----------------------------------------------- | ---------------------------------------- |
+| Negrita  | definiciones, terminos clave                    | enfasis decorativo                       |
+| Cursiva  | termino tecnico o extranjero                    | enfasis estilistico                      |
+| `codigo` | URNs, ids, comandos, literales                  | resaltado general                        |
+| Lista    | enumeracion, procedimiento o desglose normativo | prosa fragmentada sin valor estructural  |
+| Tabla    | comparacion, condiciones, matrices, catalogos   | dumping decorativo o serializacion cruda |
 
 ### 5.3 Elementos prohibidos (grasa)
 
@@ -175,15 +175,15 @@ Definicion operativa:
 
 Reglas de transformacion obligatorias:
 
-| N° | Regla | Patron fuente | Transformacion |
-| --- | --- | --- | --- |
-| T1 | Eliminar perifrasis y verbos de enlace | "se podran traspasar recursos desde X" | "Traspaso permitido desde X" |
-| T2 | Nominalizar acciones cuando mejore densidad | "deberan informar trimestralmente" | "Informe trimestral obligatorio" |
-| T3 | Colapsar subordinadas condicionales a lista/tabla | "cuando el monto sea superior a X, se debera..." | Tabla `Condicion \| Resultado \| Base` |
-| T4 | Eliminar marcadores discursivos | "asimismo", "a continuacion", "por otro lado", "cabe señalar" | Eliminar sin reemplazo |
-| T5 | Comprimir enumeraciones embebidas en prosa a listas | "podran financiar A, B y C" | Lista con marcadores |
-| T6 | Eliminar sujetos redundantes | "El Gobierno Regional debera... El Gobierno Regional podra..." | Sujeto una vez en heading, luego implicito |
-| T7 | Promover comparaciones y condiciones a tablas | Parrafo con multiples "si X entonces Y" | Tabla `Condicion \| Resultado` |
+| N°  | Regla                                               | Patron fuente                                                  | Transformacion                             |
+| --- | --------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------ |
+| T1  | Eliminar perifrasis y verbos de enlace              | "se podran traspasar recursos desde X"                         | "Traspaso permitido desde X"               |
+| T2  | Nominalizar acciones cuando mejore densidad         | "deberan informar trimestralmente"                             | "Informe trimestral obligatorio"           |
+| T3  | Colapsar subordinadas condicionales a lista/tabla   | "cuando el monto sea superior a X, se debera..."               | Tabla `Condicion \| Resultado \| Base`     |
+| T4  | Eliminar marcadores discursivos                     | "asimismo", "a continuacion", "por otro lado", "cabe señalar"  | Eliminar sin reemplazo                     |
+| T5  | Comprimir enumeraciones embebidas en prosa a listas | "podran financiar A, B y C"                                    | Lista con marcadores                       |
+| T6  | Eliminar sujetos redundantes                        | "El Gobierno Regional debera... El Gobierno Regional podra..." | Sujeto una vez en heading, luego implicito |
+| T7  | Promover comparaciones y condiciones a tablas       | Parrafo con multiples "si X entonces Y"                        | Tabla `Condicion \| Resultado`             |
 
 Patrones estructurales obligatorios:
 
@@ -332,13 +332,21 @@ La spec general **DEBE** complementarse con invariantes por familia documental c
 
 Familias minimas:
 
-| Familia | Invariantes |
-| --- | --- |
-| `normative` | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto |
-| `glossary` | buckets recuperables; sin duplicados no resueltos; alias explicitos |
-| `organigram` | dependencias estructurales explicitas; no headings-campo para representar jerarquia |
-| `cq_catalog` | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento |
-| `inventory/control` | puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada |
+| Familia             | Invariantes                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `normative`         | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto |
+| `glossary`          | buckets recuperables; sin duplicados no resueltos; alias explicitos                                                         |
+| `organigram`        | dependencias estructurales explicitas; no headings-campo para representar jerarquia                                         |
+| `cq_catalog`        | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento                                   |
+| `inventory/control` | puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada                               |
+
+Clasificacion de familia:
+
+La familia de un artefacto **DEBE** identificarse por uno de estos mecanismos, en orden de precedencia:
+
+1. `extensions.family` explicito en el frontmatter.
+2. Convencion de directorio (e.g., `glossaries/`, `normative/`).
+3. Clasificacion manual del curador durante koraficacion.
 
 ## 6. Koraficacion
 
@@ -510,18 +518,18 @@ La compresion maxima **NO DEBE** producir headings truncados, chunks primarios p
 
 ## 9. Validacion
 
-| Check | Criterio | Enforcement | Accion si falla |
-| --- | --- | --- | --- |
-| Frontmatter valido | Cumple el sobre base y usa `extensions` para metadata extra | schema | Corregir frontmatter |
-| Regimen de identidad | URN tripartito y version fuera del URN | schema | Migrar identidad |
-| Referencias validas | URNs, headings y fragments resuelven | lint | Corregir referencias |
-| Gramatica estructural | Jerarquia y chunks cumplen `§5` | lint | Reescribir seccion |
-| Sin grasa | No hay introducciones, transiciones ni hedging residual | manual | Re-comprimir |
-| Fidelidad absoluta | `FS=100%` | manual | Restaurar hechos omitidos |
-| Compresion razonable | `CR>1.5` o justificacion explicita | manual | Reducir redundancia o documentar densidad |
-| Calidad de superficie | Sin headings truncados, labelese ni dumping | lint+manual | Re-realizar superficie |
-| Heading recuperable | Cada `##` expresa sujeto o alcance recuperable | lint | Renombrar heading |
-| Resumen obligatorio | Familias que lo exigen incluyen `## Resumen` no vacio | lint | Agregar o completar resumen |
-| Headings-campo prohibidos | KB publicada no serializa campos como headings | lint | Reestructurar seccion |
-| Estructuras preservadas | Tablas y listas no se degradan | manual | Restaurar estructura |
-| Catalogo derivado | El artefacto es indexable y regenerable por CLI | lint | Corregir manifest o indexador |
+| Check                     | Criterio                                                    | Enforcement | Accion si falla                           |
+| ------------------------- | ----------------------------------------------------------- | ----------- | ----------------------------------------- |
+| Frontmatter valido        | Cumple el sobre base y usa `extensions` para metadata extra | schema      | Corregir frontmatter                      |
+| Regimen de identidad      | URN tripartito y version fuera del URN                      | schema      | Migrar identidad                          |
+| Referencias validas       | URNs, headings y fragments resuelven                        | lint        | Corregir referencias                      |
+| Gramatica estructural     | Jerarquia y chunks cumplen `§5`                             | lint        | Reescribir seccion                        |
+| Sin grasa                 | No hay introducciones, transiciones ni hedging residual     | manual      | Re-comprimir                              |
+| Fidelidad absoluta        | `FS=100%`                                                   | manual      | Restaurar hechos omitidos                 |
+| Compresion razonable      | `CR>1.5` o justificacion explicita                          | manual      | Reducir redundancia o documentar densidad |
+| Calidad de superficie     | Sin headings truncados, labelese ni dumping                 | lint+manual | Re-realizar superficie                    |
+| Heading recuperable       | Cada `##` expresa sujeto o alcance recuperable              | lint        | Renombrar heading                         |
+| Resumen obligatorio       | Familias que lo exigen incluyen `## Resumen` no vacio       | lint        | Agregar o completar resumen               |
+| Headings-campo prohibidos | KB publicada no serializa campos como headings              | lint        | Reestructurar seccion                     |
+| Estructuras preservadas   | Tablas y listas no se degradan                              | manual      | Restaurar estructura                      |
+| Catalogo derivado         | El artefacto es indexable y regenerable por CLI             | lint        | Corregir manifest o indexador             |

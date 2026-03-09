@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 02, 04, KORA/Agent-Spec v8.1.0, descoping of non-enforced extended skills"
-version: "3.3.0"
+version: "3.4.0"
 status: published
 tags: [spec, skill, cm, degenerate, lazy-load]
 lang: es
 ---
 
-# KORA/Skill-Spec v3.3.0
+# KORA/Skill-Spec v3.4.0
 
 ## 1. Definicion
 
@@ -74,12 +74,12 @@ Un Skill **PUEDE** producir o evaluar contenido sobre behavior, interface, secur
 
 ## 4. Integracion con agent-spec-md
 
-| Relacion   | Regla                                                                        |
-| ---------- | ---------------------------------------------------------------------------- |
-| Grammar CM | Hereda el CM Core exigido por `agent-spec-md`                                |
-| Interface  | Toda invocacion de tool desde un CM debe estar respaldada por `TOOLS.md`     |
-| Security   | Todo Skill se ejecuta dentro del envelope de `config.json`                   |
-| Discovery  | El baseline gobierna discovery de Skills degenerados, no surfaces extendidas |
+| Relacion   | Regla                                                                        | Enforcement |
+| ---------- | ---------------------------------------------------------------------------- | ----------- |
+| Grammar CM | Hereda el CM Core exigido por `agent-spec-md`                                | lint        |
+| Interface  | Toda invocacion de tool desde un CM debe estar respaldada por `TOOLS.md`     | lint        |
+| Security   | Todo Skill se ejecuta dentro del envelope de `config.json`                   | runtime     |
+| Discovery  | El baseline gobierna discovery de Skills degenerados, no surfaces extendidas | runtime     |
 
 Regla de precedencia:
 

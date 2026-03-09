@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 04, 07, repair of cross-platform adapter contract"
-version: "3.1.0"
+version: "3.2.0"
 status: published
 tags: [spec, runtime, deployment, adapters, wrappers, fallback]
 lang: es
 ---
 
-# KORA/Runtime-Spec v3.1.0
+# KORA/Runtime-Spec v3.2.0
 
 ## 1. Definicion
 
@@ -31,14 +31,14 @@ Esta especificacion gobierna:
 
 ## 2. Definiciones
 
-| Termino | Definicion |
-| --- | --- |
-| Runtime | Entorno de ejecucion que consume un workspace KORA |
-| Platform Adapter | Modulo que mapea componentes KORA al formato nativo del runtime |
-| Wrapper | Artefacto derivado que adapta un workspace sin modificar sus fuentes |
-| Behavioral Equivalence | Equivalencia funcional razonable del mismo agente entre plataformas |
-| Fallback Chain | Cadena ordenada de modelos alternativos |
-| Budget Enforcement | Politica server-side de costo o tokens |
+| Termino                | Definicion                                                           |
+| ---------------------- | -------------------------------------------------------------------- |
+| Runtime                | Entorno de ejecucion que consume un workspace KORA                   |
+| Platform Adapter       | Modulo que mapea componentes KORA al formato nativo del runtime      |
+| Wrapper                | Artefacto derivado que adapta un workspace sin modificar sus fuentes |
+| Behavioral Equivalence | Equivalencia funcional razonable del mismo agente entre plataformas  |
+| Fallback Chain         | Cadena ordenada de modelos alternativos                              |
+| Budget Enforcement     | Politica server-side de costo o tokens                               |
 
 ## 3. Core agnostico de plataforma
 
@@ -53,13 +53,13 @@ Traces to: formal/07 §2 (Preservation by Interface) ; formal/01 §1.3 (Effect M
 
 ### 3.1 Preservacion de componentes
 
-| Componente | Regla de preservacion |
-| --- | --- |
-| `AGENTS.md` | La FSM y reglas duras se preservan como behavior |
-| `TOOLS.md` | Se mapea a la primitiva de tool-use nativa |
+| Componente            | Regla de preservacion                                                      |
+| --------------------- | -------------------------------------------------------------------------- |
+| `AGENTS.md`           | La FSM y reglas duras se preservan como behavior                           |
+| `TOOLS.md`            | Se mapea a la primitiva de tool-use nativa                                 |
 | `SOUL.md` / `USER.md` | Se inyectan solo donde corresponde; no se convierten en wiring ni security |
-| `config.json` | Se aplica fuera del LLM |
-| `skills/` | Se activa via lazy-load, no en bootstrap total |
+| `config.json`         | Se aplica fuera del LLM                                                    |
+| `skills/`             | Se activa via lazy-load, no en bootstrap total                             |
 
 ### 3.2 Reglas base
 
@@ -70,12 +70,12 @@ Traces to: formal/07 §2 (Preservation by Interface) ; formal/01 §1.3 (Effect M
 
 ## 4. Adapters por plataforma
 
-| Plataforma | Forma de behavior | Forma de tools | Nota |
-| --- | --- | --- | --- |
-| Claude | system prompt estructurado / XML o equivalente | tool_use | delimita bien secciones |
-| GPT | instructions Markdown estructuradas | function calling | nativo para tools |
-| Gemini | system instruction estructurada | function declarations | compatible con grounding |
-| OpenClaw | wrapper tipo `SKILL.md` o equivalente | gateway/platform config | nativo para skill-like wrappers |
+| Plataforma | Forma de behavior                              | Forma de tools          | Nota                                                  |
+| ---------- | ---------------------------------------------- | ----------------------- | ----------------------------------------------------- |
+| Claude     | system prompt estructurado / XML o equivalente | tool_use                | delimita bien secciones                               |
+| GPT        | instructions Markdown estructuradas            | function calling        | nativo para tools                                     |
+| Gemini     | system instruction estructurada                | function declarations   | compatible con grounding                              |
+| OpenClaw   | wrapper tipo `SKILL.md` o equivalente          | gateway/platform config | plataforma emergente; nativo para skill-like wrappers |
 
 Reglas:
 
@@ -110,7 +110,7 @@ Traces to: formal/01 §5.2 (Bisimulation as Substitutability) ; formal/07 §4.2 
 
 ### 6.2 Evaluacion de equivalencia
 
-Todo runtime serio **DEBERIA** verificar equivalencia con un conjunto pequeno de inputs representativos por agente y comparar:
+Todo runtime **DEBERIA** verificar equivalencia con un conjunto pequeno de inputs representativos por agente y comparar:
 
 - clasificacion o routing
 - citas o evidencia requerida
@@ -152,15 +152,22 @@ Reglas:
 
 Traces to: formal/01 §1.3 (Effect Monad M)
 
-## 9. Validacion
+## 10. Invariantes
 
-| Check | Criterio | Enforcement | Accion si falla |
-| --- | --- | --- | --- |
-| Preservacion estructural | Los 5 componentes siguen materializados | runtime | Corregir adapter |
-| Security server-side | `config.json` no se delega al LLM | runtime | Mover enforcement |
-| Frontmatter stripped | El wrapper no inyecta YAML al LLM | lint | Corregir pipeline |
-| Lazy-load preservado | Skills no se bootstrappean completos | runtime | Corregir adapter |
-| Tool mapping completo | Toda tool declarada tiene mapping o limitacion documentada | runtime | Completar mapping |
-| Routing segregado | Tier, fallback y budget viven en `config.json` | lint | Reubicar config |
-| Equivalencia minima | Inputs representativos no divergen funcionalmente | eval | Ajustar adapter o gating |
-| Wrapper inmutable | La fuente del workspace no se modifica | lint | Regenerar wrapper |
+1. Un cambio de plataforma o modelo **NO DEBE** alterar FSM, tools declaradas ni constraints.
+2. Las fuentes del workspace **NO DEBEN** modificarse durante la generacion de wrappers.
+3. `config.json` **NO DEBE** inyectarse como texto al LLM; su enforcement es server-side.
+4. Los Skills **NO DEBEN** bootstrappearse completos; lazy-load **DEBE** preservarse.
+
+## 11. Validacion
+
+| Check                    | Criterio                                                   | Enforcement | Accion si falla          |
+| ------------------------ | ---------------------------------------------------------- | ----------- | ------------------------ |
+| Preservacion estructural | Los 5 componentes siguen materializados                    | runtime     | Corregir adapter         |
+| Security server-side     | `config.json` no se delega al LLM                          | runtime     | Mover enforcement        |
+| Frontmatter stripped     | El wrapper no inyecta YAML al LLM                          | lint        | Corregir pipeline        |
+| Lazy-load preservado     | Skills no se bootstrappean completos                       | runtime     | Corregir adapter         |
+| Tool mapping completo    | Toda tool declarada tiene mapping o limitacion documentada | runtime     | Completar mapping        |
+| Routing segregado        | Tier, fallback y budget viven en `config.json`             | lint        | Reubicar config          |
+| Equivalencia minima      | Inputs representativos no divergen funcionalmente          | eval        | Ajustar adapter o gating |
+| Wrapper inmutable        | La fuente del workspace no se modifica                     | lint        | Regenerar wrapper        |

@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "RFC 2119, KORA categorical-foundations 05, KORA/Gobernanza v3.0.0, repair of crystallization contract"
-version: "5.0.0"
+version: "5.1.0"
 status: published
 tags: [spec, prescriptivo, formato, crystallization, enforcement, traces]
 lang: es
 ---
 
-# KORA/Spec-MD v5.0.0
+# KORA/Spec-MD v5.1.0
 
 ## 1. Definicion
 
@@ -64,15 +64,15 @@ Traces to: formal/05 §3.2 (Traceability Functor)
 
 ## 2. Definiciones
 
-| Termino | Definicion |
-| --- | --- |
-| Documento prescriptivo | Artefacto que define lo que debe ser |
-| Regla | Oracion con keyword RFC 2119 y semantica operativa |
-| Cristalizacion | Proceso `Decisiones + Practicas + Restricciones -> Spec-MD` |
-| Rationale | Explicacion auxiliar no normativa |
-| Traces to | Puente entre regla operacional y justificacion formal |
-| Auto-suficiencia | La regla se entiende sin depender de contexto omitido o implicito |
-| No-circularidad | La regla no se justifica solo remitiendo a otra regla igual de opaca |
+| Termino                | Definicion                                                           |
+| ---------------------- | -------------------------------------------------------------------- |
+| Documento prescriptivo | Artefacto que define lo que debe ser                                 |
+| Regla                  | Oracion con keyword RFC 2119 y semantica operativa                   |
+| Cristalizacion         | Proceso `Decisiones + Practicas + Restricciones -> Spec-MD`          |
+| Rationale              | Explicacion auxiliar no normativa                                    |
+| Traces to              | Puente entre regla operacional y justificacion formal                |
+| Auto-suficiencia       | La regla se entiende sin depender de contexto omitido o implicito    |
+| No-circularidad        | La regla no se justifica solo remitiendo a otra regla igual de opaca |
 
 ## 3. Anatomia del documento
 
@@ -130,12 +130,12 @@ Reglas:
 
 ### 5.1 Jerarquia de encabezados
 
-| Nivel | Rol |
-| --- | --- |
-| `#` | titulo del estandar |
-| `##` | seccion normativa principal |
-| `###` | subseccion o componente |
-| `####` | caso especial o excepcion |
+| Nivel  | Rol                         |
+| ------ | --------------------------- |
+| `#`    | titulo del estandar         |
+| `##`   | seccion normativa principal |
+| `###`  | subseccion o componente     |
+| `####` | caso especial o excepcion   |
 
 Reglas:
 
@@ -145,12 +145,12 @@ Reglas:
 
 ### 5.2 Elementos de contenido
 
-| Elemento | Uso permitido | Funcion prohibida |
-| --- | --- | --- |
-| Prosa explicativa | racionalizar, contextualizar, desambiguar | narracion, filler, transiciones |
-| `Correcto:` / `Incorrecto:` | anclar la interpretacion | decoracion |
-| `Rationale:` | registrar motivacion no normativa | introducir deberes nuevos |
-| tablas de validacion | checks y enforcement | listados esteticos sin criterio |
+| Elemento                    | Uso permitido                             | Funcion prohibida               |
+| --------------------------- | ----------------------------------------- | ------------------------------- |
+| Prosa explicativa           | racionalizar, contextualizar, desambiguar | narracion, filler, transiciones |
+| `Correcto:` / `Incorrecto:` | anclar la interpretacion                  | decoracion                      |
+| `Rationale:`                | registrar motivacion no normativa         | introducir deberes nuevos       |
+| tablas de validacion        | checks y enforcement                      | listados esteticos sin criterio |
 
 ### 5.3 Elementos prohibidos
 
@@ -172,7 +172,7 @@ La prosa explicativa **PUEDE** existir solo cuando cumple una funcion normativa 
 
 ## 6. Patron obligatorio: regla + ejemplo + traza
 
-Toda regla compleja o con riesgo de ambiguedad **DEBE** seguir este patron:
+Toda regla con mas de una condicion, alcance no obvio, o riesgo de interpretacion divergente **DEBE** seguir este patron:
 
 1. Regla normativa con keyword.
 2. `Correcto:` / `Incorrecto:` cuando la regla admita mala lectura.
@@ -210,16 +210,16 @@ Una regla **NO DEBE** justificarse solo remitiendo a otra regla igual de opaca. 
 
 ## 8. Validacion
 
-| Check | Criterio | Enforcement | Accion si falla |
-| --- | --- | --- | --- |
-| Frontmatter valido | Cumple el sobre base y usa `extensions` para metadata extra | schema | Corregir frontmatter |
-| Keyword explicita | Toda obligacion importante usa keyword RFC 2119 | lint | Reescribir regla |
-| Trazabilidad oficial | `Traces to:` solo referencia Formal Layer oficial | lint | Corregir o degradar a `Rationale:` |
-| Patron de regla | Reglas complejas incluyen ejemplo y soporte adecuado | manual | Completar regla |
-| Consistencia interna | No hay contradicciones no resueltas | manual | Reescribir o introducir precedencia |
-| Auto-suficiencia | Las reglas se entienden sin contexto omitido critico | manual | Reescribir seccion |
-| No-circularidad | Las referencias normativas no forman bucles opacos | manual | Aclarar dependencia |
-| Enforcement declarado | Toda tabla nueva o reescrita incluye columna `Enforcement` | lint | Completar tabla |
+| Check                 | Criterio                                                    | Enforcement | Accion si falla                     |
+| --------------------- | ----------------------------------------------------------- | ----------- | ----------------------------------- |
+| Frontmatter valido    | Cumple el sobre base y usa `extensions` para metadata extra | schema      | Corregir frontmatter                |
+| Keyword explicita     | Toda obligacion importante usa keyword RFC 2119             | lint        | Reescribir regla                    |
+| Trazabilidad oficial  | `Traces to:` solo referencia Formal Layer oficial           | lint        | Corregir o degradar a `Rationale:`  |
+| Patron de regla       | Reglas complejas incluyen ejemplo y soporte adecuado        | manual      | Completar regla                     |
+| Consistencia interna  | No hay contradicciones no resueltas                         | manual      | Reescribir o introducir precedencia |
+| Auto-suficiencia      | Las reglas se entienden sin contexto omitido critico        | manual      | Reescribir seccion                  |
+| No-circularidad       | Las referencias normativas no forman bucles opacos          | manual      | Aclarar dependencia                 |
+| Enforcement declarado | Toda tabla nueva o reescrita incluye columna `Enforcement`  | lint        | Completar tabla                     |
 
 ## 9. Ejemplo
 
@@ -240,4 +240,4 @@ Todo Spec-MD nuevo **DEBERIA** arrancar desde este esqueleto:
 4. `## N+1. Invariantes`
 5. `## N+2. Validacion`
 6. `## N+3. Ejemplos` (opcional)
-7. `## N+4. Migracion` (opcional)
+7. `## N+4. Migracion` (**DEBE** incluirse en major bumps; opcional en minor/patch)
