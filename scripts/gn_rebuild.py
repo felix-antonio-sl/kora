@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GN rebuild pipeline under KORA/MD v5."""
+"""GN rebuild pipeline aligned with KORA/MD v6.1."""
 
 import argparse
 import csv
@@ -1612,7 +1612,7 @@ def summarize_subject(text, max_words=10):
     words = first_clause.split()
     if len(words) <= max_words:
         return first_clause
-    return " ".join(words[:max_words]).strip(" ,.;:") + "..."
+    return " ".join(words[:max_words]).strip(" ,.;:")
 
 
 def derive_normative_subject(node, urn_alias_map, external_labels, urn_title_map):

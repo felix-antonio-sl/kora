@@ -151,17 +151,17 @@ Aplicable a Inversión Regional
 | Ñuble | 1.262.128 |  | 85.752.331 |
 | Total | 6.143.429 | 33.623.892 | 1.690.556.227 |
 
-## Glosa 03 - Los recursos de los presupuestos de inversión regional no podrán...
+## Glosa 03 - Los recursos de los presupuestos de inversión regional no podrán
 Los recursos de los presupuestos de inversión regional no podrán financiar préstamos, gastos en personal, o gastos en bienes y servicios de consumo de las entidades receptoras. Asimismo, no podrán destinarse para constituir, efectuar aportes o comprar sociedades o empresas.
 
-## Glosa 04 - Se podrán traspasar recursos desde cualquier Subtítulo e Ítem del...
+## Glosa 04 - Se podrán traspasar recursos desde cualquier Subtítulo e Ítem del
 Se podrán traspasar recursos desde cualquier Subtítulo e Ítem del presupuesto de inversión del Gobierno Regional respectivo a los Subtítulos 24, 26, 29, 31, 32.06, 33 y 34.07.
 Los gobiernos regionales podrán realizar convenios de mandato con los municipios de acuerdo con el artículo 16 de la ley N°18.091, para el financiamiento de estudios definidos en el subtítulo 22 ítem 11, del Decreto de Hacienda N° 854 del 2004, sobre clasificaciones presupuestarias.
 
-## Glosa 05 - Las transferencias de recursos realizadas a las universidades del artículo...
+## Glosa 05 - Las transferencias de recursos realizadas a las universidades del artículo
 Las transferencias de recursos realizadas a las universidades del artículo 3° del D.F.L. N° 2, que fija el texto refundido, coordinado y sistematizado del Estatuto Orgánico del Consejo de Rectores de las Universidades Chilenas, y aquellas que se han adscrito al Consejo conforme con el artículo 6 de la ley N° 21.091, sobre Educación Superior, y su normativa vigente, desde los gobiernos regionales, solo podrán ser ejecutadas y utilizadas para fines dentro del ámbito de competencia del establecimiento de educación superior que se los adjudicó. La ejecución de las acciones por las cuales se efectúa la transferencia de estos recursos se hará preferentemente a las universidades con sede en la región respectiva. Asimismo, deberá llevarse a cabo de manera íntegra por parte de la propia universidad. Estas transferencias se podrán exceptuar del mecanismo de concursabilidad establecido en el articulado de la presente ley.
 
-## Glosa 06 - Las transferencias corrientes del presupuesto de inversión regional de los...
+## Glosa 06 - Las transferencias corrientes del presupuesto de inversión regional de los
 Las transferencias corrientes del presupuesto de inversión regional de los gobiernos regionales (subtítulo 24) se regirán por las siguientes disposiciones:
 La oferta programática que ejecutan directamente los gobiernos regionales estará sujeta al Sistema de Evaluación y Monitoreo del Ministerio de Desarrollo Social y Familia y de la Dirección de Presupuestos.
 Se exceptuarán del proceso de evaluación ex ante:
@@ -214,7 +214,7 @@ b) Operación de alcantarillado.
 Asistencia Técnica:
 Programas destinados a financiar asistencia técnica a municipalidades para fortalecer su cartera de proyectos.
 
-## Glosa 07 - Aplicable al Subtítulo 24 de los presupuestos de inversión de...
+## Glosa 07 - Aplicable al Subtítulo 24 de los presupuestos de inversión de
 Aplicable al Subtítulo 24 de los presupuestos de inversión de los gobiernos regionales.
 En las transferencias corrientes se podrá financiar el Concurso de Vinculación con la Comunidad 8%.
 Los gobiernos regionales podrán destinar hasta un 8% del total de los recursos del presupuesto de inversión regional para subvencionar las siguientes actividades:
@@ -231,12 +231,12 @@ j) culturales y patrimoniales.
 Estas actividades podrán ser ejecutadas por municipalidades, otras entidades públicas, instituciones privadas sin fines de lucro, organizaciones de la sociedad civil y organizaciones comunitarias sin fines de lucro. La asignación de estos recursos deberá cumplir con lo dispuesto en el articulado de esta ley en lo que corresponda.
 Asimismo, se podrá asignar hasta un 10% de los recursos del Concurso de Vinculación con la Comunidad 8% para financiar, previo acuerdo del Consejo Regional, mediante asignaciones directas actividades asociadas con casos emblemáticos, excepcionales y emergentes, como por ejemplo deportistas destacados. Lo anterior, sujeto a lo dispuesto en la Resolución N°72 de fecha 08.01.2025 de la Dirección de Presupuestos y sus modificaciones, que imparte instrucciones sobre asignación directa en concurso de vinculación con la comunidad.
 
-## Glosa 08 - Respecto a los recursos que se destinen a las corporaciones...
+## Glosa 08 - Respecto a los recursos que se destinen a las corporaciones
 Respecto a los recursos que se destinen a las corporaciones, los gobiernos regionales deberán informar a la Dirección de Presupuestos, además de publicar en las páginas web de la corporación y del respectivo Gobierno Regional, a más tardar al término del primer trimestre: nombre o razón social de la corporación; misión, objetivos estratégicos y productos; composición del directorio; organigrama; instituciones que participan de su financiamiento (Gobierno Regional y otras entidades, públicas y privadas); vínculo de los objetivos de la corporación con los objetivos del Gobierno Regional; planificación anual (incluyendo objetivos del periodo, principales resultados esperados y actividades relevantes necesarias para alcanzarlos).
 En forma trimestral, dentro de los 30 días siguientes al término de cada trimestre: número de profesionales de la corporación, la remuneración asociada a éstos y su perfil profesional; concursos para la contratación de personal realizados en el periodo, identificando los perfiles de los cargos postulados y los resultados del concurso; recursos transferidos por el Gobierno Regional y ejecutados por la corporación en el periodo, y acumulados en el año; indicadores de gestión de la corporación, que den cuenta del avance físico y financiero de las iniciativas que le han sido encomendadas y financiadas por el Gobierno Regional.
 Las corporaciones y fundaciones constituidas con la participación del Gobierno Regional deberán dar cuenta pública anual de su gestión, mantener publicados sus estados financieros en su respectiva página web y en la del Gobierno Regional, y se regirán por la Ley N° 20.285 sobre acceso a la información pública, en todo aquello que le fuera aplicable.
 
-## Glosa 09 - La siguiente glosa aplica al Subtítulo 29 del presupuesto de...
+## Glosa 09 - La siguiente glosa aplica al Subtítulo 29 del presupuesto de
 La siguiente glosa aplica al Subtítulo 29 del presupuesto de inversión regional de los gobiernos regionales.
 Los gobiernos regionales podrán financiar la adquisición de activos no financieros de reposición al Gobierno Central y a otras instituciones públicas.
 Excepcionalmente se podrá comprar nuevos activos no financieros incorporando un certificado de disponibilidad presupuestaria para los gastos recurrentes que generen dichos activos. Este certificado deberá ser emitido por el Ministerio o la Subsecretaría respectiva.
@@ -246,7 +246,7 @@ El referido certificado deberá ser emitido por el Ministerio de Seguridad Públ
 Los gobiernos regionales podrán financiar la adquisición de activos no financieros a los cuerpos de bomberos regionales, para lo cual deberán contar con un certificado de pertinencia técnica emitido por la Junta Nacional de Bomberos de Chile.
 Los gobiernos regionales podrán financiar la compra de terrenos. Estas adquisiciones deberán efectuarse en coordinación con el SERVIU de la región respectiva, cuando corresponda.
 
-## Glosa 10 - La siguiente glosa aplica al Subtítulo 31 del presupuesto de...
+## Glosa 10 - La siguiente glosa aplica al Subtítulo 31 del presupuesto de
 La siguiente glosa aplica al Subtítulo 31 del presupuesto de inversión de los gobiernos regionales.
 La inversión pública deberá regirse dentro de los ámbitos de competencia del D.F.L. N°1-19.175. Adicionalmente, podrán ejecutarse las siguientes iniciativas de inversión pública:
 a) Construcción, conservación y mejoramiento de infraestructura pública en coordinación con el Ministerio sectorial respectivo.
@@ -284,7 +284,7 @@ Regional, reajustados a la moneda del año en curso.
 El personal contratado a honorarios para ejecución de proyectos tendrá la
 calidad de agente público.
 
-## Glosa 11 - La siguiente glosa aplica al subtítulo 33 del presupuesto de...
+## Glosa 11 - La siguiente glosa aplica al subtítulo 33 del presupuesto de
 La siguiente glosa aplica al subtítulo 33 del presupuesto de inversión de los gobiernos regionales.
 Las transferencias de capital deberán regirse por los ámbitos de competencia del D.F.L N°1-19.175. Adicionalmente, podrán financiarse las siguientes iniciativas:
 a) Proyectos de tipología PMU/PMB en coordinación con la Subsecretaría de Desarrollo Regional y Administrativo.
@@ -309,25 +309,25 @@ Los Gobiernos Regionales deberán contemplar, con cargo a los recursos del Fondo
 Las identificaciones presupuestarias de las iniciativas contratadas en años anteriores en ejecución y aquellas creadas en el mismo año, no requerirán una nueva aprobación del Consejo Regional, si los montos totales o resultantes son iguales o menores al 10% de los costos totales ya aprobados por el Consejo Regional, reajustados a la moneda del año en curso.
 El personal contratado a honorarios para ejecución de proyectos y/o programas tendrá la calidad de agente público.
 
-## Glosa 12 - Las transferencias de capital del presupuesto de inversión de los...
+## Glosa 12 - Las transferencias de capital del presupuesto de inversión de los
 Las transferencias de capital del presupuesto de inversión de los gobiernos regionales podrán financiar proyectos de municipalidades asociados al Fondo Regional de Iniciativa Local (FRIL). Estos proyectos deberán contar con informe favorable del Ministerio de Desarrollo Social y Familia y destinarse a ejecutar, mantener o conservar infraestructura pública.
 Los gobiernos regionales, siguiendo los lineamientos de la Guía Operativa del Fondo Regional de Iniciativa Local publicada por la Subsecretaría de Desarrollo Regional y Administrativo contenida en la Resolución Exenta N°15.051 del 29 de diciembre de 2023, mediante resolución podrán aprobar instructivos o bases que establezcan la metodología de distribución de los recursos entre comunas, los procedimientos de ejecución, de entrega de recursos, de rendición de gasto al Gobierno Regional y otros que permitan la mejor utilización de los recursos del Fondo Regional de Iniciativa Local. Una vez aprobados los montos para cada municipio, el compromiso de financiamiento será informado por el Gobierno Regional mediante oficio dirigido al municipio respectivo.
 Los proyectos que se ejecuten con recursos transferidos a los municipios, cuyo costo total por proyecto sea inferior a 5000 UTM, valorizadas al 1 de enero del ejercicio presupuestario vigente, no requerirán informe favorable del Ministerio de Desarrollo Social y Familia. Sin perjuicio de lo anterior, deberá ser ingresada al Sistema Nacional de Inversiones la información necesaria, según lo dispuesto en el Oficio Ordinario N°2 del 26 de enero de 2024, e instructivo asociado, del Ministerio de Hacienda y del Ministerio de Desarrollo Social y Familia.
 
-## Glosa 13 - Los recursos que se ejecuten con cargo al Fondo Regional...
+## Glosa 13 - Los recursos que se ejecuten con cargo al Fondo Regional
 Los recursos que se ejecuten con cargo al Fondo Regional para la Productividad y el Desarrollo se deberán destinar a los fines establecidos en el inciso segundo del artículo 13 de la ley N° 21.591, el Decreto N°1699 de fecha 6 de diciembre de 2025 del Ministerio de Hacienda, Resolución Exenta N° 33, de 2024, del Ministerio de Ciencias, Tecnología, Conocimiento e Innovación, y sus modificaciones, y la Resolución Exenta N°08, de 2025, de la Subsecretaria de Economía y Empresas de Menor Tamaño y sus modificaciones.
 Los gobiernos regionales, al momento de efectuar la distribución inicial de sus presupuestos de inversión regional, deberán crear una asignación de provisión sin distribuir para el Fondo Regional para la Productividad y el Desarrollo dentro del Ítem 33.03. En el transcurso del año presupuestario podrán reasignar desde esta provisión para el financiamiento de las iniciativas con cargo a este Fondo. No obstante lo anterior, en la resolución de apertura, los gobiernos regionales podrán crear las asignaciones de arrastres que se financien con estos fondos.
 Los gobiernos regionales podrán transferir directamente recursos a iniciativas que se ejecuten en la región y hayan sido seleccionadas mediante concurso convocado por CORFO o la ANID, y cuyas instituciones ejecutoras estén incluidas en la Resolución Exenta N° 33, de 2024, del Ministerio de Ciencias, Tecnología, Conocimiento e Innovación, y sus modificaciones.
 Asimismo, se faculta a los gobiernos regionales para efectuar las creaciones y modificaciones de asignaciones en sus presupuestos de inversión regional para el pago de los compromisos de arrastre de iniciativas ejecutadas por las instituciones elegibles del Fondo de Innovación y Competitividad.
 Con cargo a estos recursos, los gobiernos regionales podrán participar del financiamiento de iniciativas de los Programas de Desarrollo Productivo Sostenible del Ministerio de Economía, Fomento y Turismo, así como de iniciativas del Programa de Financiamiento Estructural I+D+i Universitario del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.
 
-## Glosa 14 - Se podrá traspasar hasta un 3% del presupuesto de inversión...
+## Glosa 14 - Se podrá traspasar hasta un 3% del presupuesto de inversión
 Se podrá traspasar hasta un 3% del presupuesto de inversión aprobado por el Congreso Nacional de cada Gobierno Regional, a requerimiento de la Subsecretaría del Interior a las asignaciones 24.03.002 y/o 33.03.001 del presupuesto de dicha Subsecretaría para enfrentar situaciones de emergencia.
 La Subsecretaría del Interior informará semestralmente sobre el uso de esos recursos de emergencia a la Comisión Especial Mixta de Presupuestos y a los Gobiernos Regionales que aportaron a ese Fondo de Emergencia.
 Asimismo, los gobiernos regionales podrán destinar hasta un 2% del presupuesto de Inversión Regional aprobado por el Congreso Nacional, para enfrentar situaciones de emergencia (en todas sus etapas) definidas mediante resolución por el Ministro o Subsecretario del Interior. Para materializar lo anterior, los gobiernos regionales deberán coordinarse con la Subsecretaría del Interior. La ejecución de estos recursos se podrá efectuar sin esperar la total tramitación del acto administrativo del Gobierno Regional.
 Trimestralmente, los gobiernos regionales informarán a la Comisión Especial Mixta de Presupuestos y a la Dirección de Presupuestos, sobre el uso de estos recursos.
 
-## Glosa 15 - Los gobiernos regionales podrán financiar la adquisición de terrenos para...
+## Glosa 15 - Los gobiernos regionales podrán financiar la adquisición de terrenos para
 Los gobiernos regionales podrán financiar la adquisición de terrenos para municipios y/o comunidades indígenas, destinados a la habilitación y/o ampliación de cementerios rurales situados en comunidades indígenas y que se encuentren en actual funcionamiento.
 En caso de que el inmueble a adquirir tenga la calidad de tierra indígena, se entenderá que el mismo, en la superficie destinada a la ampliación, cumple con la finalidad comunitaria exigida por el artículo 17 inciso segundo de la ley N° 19.253.
 La autorización exigida por esta disposición deberá otorgarse dentro del plazo de 30 días hábiles, contados desde el ingreso de la respectiva solicitud.

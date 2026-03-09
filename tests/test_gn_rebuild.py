@@ -1183,8 +1183,60 @@ class GnRebuildTests(unittest.TestCase):
             self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
 
             _frontmatter, body = load_markdown_parts(repo / "drafts/gn/normativa/glosa-demo.md")
-            self.assertIn("## Glosa 03 - Los recursos del presupuesto regional no podrán financiar gastos en...", body)
+            self.assertIn("## Glosa 03 - Los recursos del presupuesto regional no podrán financiar gastos en", body)
+            self.assertNotIn("...", body)
             self.assertNotIn("## Glosa 03\n", body)
+
+    def test_validate_rejects_truncated_heading_in_knowledge_doc(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("drafts/gn",):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            draft_path = repo / "drafts/gn/demo.md"
+            draft_path.write_text(
+                "\n".join(
+                    [
+                        "---",
+                        "_manifest:",
+                        "  urn: urn:gn:kb:demo",
+                        "  provenance:",
+                        "    created_by: fixture",
+                        "    created_at: '2026-03-09'",
+                        "    source: fixture",
+                        "version: 1.0.0",
+                        "status: draft",
+                        "tags: [gn, demo, test]",
+                        "lang: es",
+                        "extensions:",
+                        "  gn:",
+                        "    source_paths: [demo.yml]",
+                        "    source_hashes:",
+                        "      demo.yml: deadbeef",
+                        "    source_type: koda_yaml",
+                        "    transformation_mode: korafy_direct",
+                        "    document_family: normative",
+                        "    publication_class: knowledge",
+                        "    fs: 100",
+                        "    cr: 2.0",
+                        "    run_id: testrun",
+                        "    review_gate: auto",
+                        "---",
+                        "",
+                        "# Demo",
+                        "",
+                        "## Glosa 03 - Texto truncado...",
+                        "Contenido",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            from scripts.kora_lib.gn_validation import validate_gn_markdown
+
+            result = validate_gn_markdown(draft_path, expected_rel_path="demo.md", expected_urn="urn:gn:kb:demo")
+            self.assertTrue(any("heading truncado no permitido" in item for item in result["failures"]))
 
     def test_glossary_conflicts_can_be_resolved_in_map_contract(self):
         with TemporaryDirectory() as tmpdir:

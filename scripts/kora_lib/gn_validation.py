@@ -55,6 +55,7 @@ KODA_RESIDUE_PATTERNS = (
     re.compile(r"END_LLM_INSTRUCTIONS"),
     re.compile(r"\bLLM_Parsing_Instructions\b"),
 )
+TRUNCATED_HEADING_PATTERN = re.compile(r"\.\.\.$|…$")
 
 
 def slugify_heading(text):
@@ -248,6 +249,9 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
         residue_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in KODA_RESIDUE_HEADING_TITLES]
         if residue_headings:
             failures.append(f"residuo KODA en headings: {', '.join(sorted(dict.fromkeys(residue_headings))[:8])}")
+        truncated_headings = [title for _level, title in headings if TRUNCATED_HEADING_PATTERN.search(title.strip())]
+        if truncated_headings:
+            failures.append(f"heading truncado no permitido: {', '.join(sorted(dict.fromkeys(truncated_headings))[:8])}")
         if frontmatter.get("lang") == "es":
             english_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in ENGLISH_SCAFFOLD_TITLES]
             if english_headings:
