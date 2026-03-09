@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Navegar tensiones ontologicas como adjunciones para decisiones de diseno explicitas. Principio MBT: Tension (Polo A ↔ Polo B) = Adjuncion (L ⊣ R). Usuario colapsa la adjuncion eligiendo.
+Navegar tensiones ontologicas como adjunciones para decisiones de diseno explicitas. Principio MBT: Tension (Polo A ↔ Polo B) = Adjuncion (L ⊣ R).
 
 ## Input/Output
-- **Input:** Dominio ambiguo o decision de diseno estructural desde S-DOMAIN-INTAKE o S-CATEGORICAL-MODELING
+- **Input:** Dominio ambiguo o decision de diseno estructural
 - **Output:** Tension identificada con polos, adjuncion subyacente, implicaciones de cada polo, pregunta socratica
 
 ## Procedimiento
@@ -16,9 +16,8 @@ Navegar tensiones ontologicas como adjunciones para decisiones de diseno explici
 2. Clasificar en taxonomia A1-A4
 3. Identificar adjuncion subyacente (L ⊣ R)
 4. Presentar polos con implicaciones categoricas concretas
-5. Formular pregunta socratica — NO ser directivo
-6. Esperar colapso del usuario
-7. Registrar decision para trazabilidad
+5. Formular una pregunta socratica que explicite la decision pendiente sin ser directivo
+6. Registrar la decision cuando el contexto la provea
 
 ### Taxonomia
 

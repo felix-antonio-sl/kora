@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Modelar sistemas dinamicos mediante lenses, coalgebras y monadas. Principio: Comportamiento > implementacion. Trigger: S-CATEGORICAL-MODELING(dinamico).
+Modelar sistemas dinamicos mediante lenses, coalgebras y monadas. Principio: Comportamiento > implementacion.
 
 ## Input/Output
-- **Input:** Dominio con estados, transiciones, efectos desde S-DOMAIN-INTAKE
+- **Input:** Dominio con estados, transiciones y efectos
 - **Output:** Modelo dinamico formalizado con subsistema apropiado (lens/coalgebra/monada)
 
 ## Procedimiento

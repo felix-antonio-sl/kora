@@ -6,16 +6,25 @@ import textwrap
 import unittest
 from unittest.mock import patch
 
-from common import ROOT
+from common import ROOT, run_cli
 import kora_lib.audit as audit_module
 import kora_lib.validation as validation_module
+from kora_lib.artifacts import dump_yaml_frontmatter_and_body
 from kora_lib.graph import GraphEdge
 from kora_lib.validation import (
+    auto_fix_published_kora_markdown_parts,
     build_formal_trace_targets,
     cmd_validate,
+    find_empty_primary_wrapper_headings,
     find_field_like_markdown_headings,
+    find_html_fragments,
+    find_meta_intro_headings,
+    find_opaque_internal_refs,
+    find_oversized_primary_chunks,
     find_truncated_markdown_headings,
+    find_unverifiable_external_references,
     formal_section_exists,
+    lint_published_kora_markdown,
     validate_agents_canonical_structure,
     validate_agents_semantics,
     validate_config_semantics,
@@ -154,6 +163,133 @@ class SemanticValidationTests(unittest.TestCase):
         )
         self.assertEqual(headings, ["Titulo", "Path"])
 
+    def test_find_html_fragments_detects_raw_html(self):
+        findings = find_html_fragments("texto <a id=\"x\"></a>\n| A | B<br>C |\n")
+        self.assertEqual(findings, ['<a id="x">', '<br>'])
+
+    def test_find_opaque_internal_refs_detects_id_like_refs(self):
+        findings = find_opaque_internal_refs("[-> GORE-NUBLE-GUIA-CTX-01](#gore-nuble-guia-ctx-01)\n")
+        self.assertEqual(findings, ["GORE-NUBLE-GUIA-CTX-01"])
+
+    def test_find_unverifiable_external_references_detects_source_artifacts_and_aliases(self):
+        findings = find_unverifiable_external_references(
+            "Fuente: kb_gn_009_ccpp_sts.md\nBase: `CPR-ART111-01`\n"
+        )
+        self.assertEqual(findings, ["kb_gn_009_ccpp_sts.md", "`CPR-ART111-01`"])
+
+    def test_find_meta_intro_headings_detects_manual_prologue(self):
+        findings = find_meta_intro_headings(
+            "# Demo\n\n## Introduccion general\n\n### Proposito\n\n### Alcance\n"
+        )
+        self.assertEqual(findings, ["Introduccion general", "Proposito", "Alcance"])
+
+    def test_find_empty_primary_wrapper_headings_detects_heading_only_container(self):
+        findings = find_empty_primary_wrapper_headings("# Demo\n\n## Contenedor\n\n## Hijo real\n")
+        self.assertEqual(findings, ["Contenedor"])
+
+    def test_find_oversized_primary_chunks_flags_large_h2_block(self):
+        text = "# Demo\n\n## Grande\n" + "\n".join(f"- item {i}" for i in range(8))
+        findings = find_oversized_primary_chunks(text, max_lines=5)
+        self.assertEqual(findings, [("Grande", 9)])
+
+    def test_lint_published_kora_markdown_flags_kb_publication_issues(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "bad.md"
+            path.write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: "urn:kora:kb:test"
+                    version: "1.0.0"
+                    status: published
+                    tags: [a, b, c]
+                    lang: es
+                    ---
+
+                    # Demo
+
+                    ## Introduccion general
+
+                    ## Contenedor
+
+                    ## Hijo real
+
+                    Texto con <a id="x"></a>, `CPR-ART111-01` y [-> GORE-NUBLE-GUIA-CTX-01](#gore-nuble-guia-ctx-01).
+                    """
+                ),
+                encoding="utf-8",
+            )
+            failures = lint_published_kora_markdown(path, max_lines_per_h2=5)
+            joined = "\n".join(failures)
+            self.assertIn("meta_intro_heading", joined)
+            self.assertIn("html_raw", joined)
+            self.assertIn("opaque_internal_ref", joined)
+            self.assertIn("unverifiable_ref", joined)
+            self.assertIn("empty_primary_wrapper", joined)
+
+    def test_lint_published_kora_markdown_uses_family_specific_thresholds(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "normative.md"
+            path.write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: "urn:kora:kb:test-normative"
+                    version: "1.0.0"
+                    status: published
+                    tags: [a, b, c]
+                    lang: es
+                    extensions:
+                      kora:
+                        family: normative
+                    ---
+
+                    # Demo
+
+                    ## Glosa 01
+                    """
+                )
+                + "\n".join(f"- item {i}" for i in range(90))
+                + "\n",
+                encoding="utf-8",
+            )
+            failures = lint_published_kora_markdown(path)
+            self.assertTrue(any("oversized_primary_chunk" in item for item in failures))
+
+    def test_auto_fix_published_kora_markdown_parts_removes_html_and_semanticizes_refs(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix"},
+            "version": "1.0.0",
+            "status": "published",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = textwrap.dedent(
+            """\
+            # Demo
+
+            ## Introduccion general
+
+            Texto meta.
+
+            <a id="ANCLA"></a>
+
+            ## Tema real
+
+            ### Subtema resoluble
+
+            Texto con [-> GORE-NUBLE-GUIA-TEMA-01](#subtema-resoluble) y <br>.
+            """
+        )
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=20)
+        self.assertNotIn("<a id=", fixed)
+        self.assertNotIn("<br>", fixed)
+        self.assertNotIn("GORE-NUBLE-GUIA-TEMA-01", fixed)
+        self.assertIn("[-> Subtema resoluble](#subtema-resoluble)", fixed)
+        self.assertNotIn("## Introduccion general", fixed)
+
     def test_skill_purity_flags_conversational_turn_control(self):
         failures = validate_skill_purity("Si ambiguedad: preguntar al usuario\n")
         self.assertIn("Skill contiene control conversacional no permitido", failures[0])
@@ -274,6 +410,135 @@ class SemanticValidationTests(unittest.TestCase):
             )
             failures = validate_skill_file(path)
             self.assertIn("missing required heading '## Proposito'", failures)
+
+    def test_lint_md_cli_fails_on_published_markdown_with_html_and_opaq_refs(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "bad.md"
+            path.write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: "urn:kora:kb:test-cli"
+                    version: "1.0.0"
+                    status: published
+                    tags: [lint, md, test]
+                    lang: es
+                    ---
+
+                    # Demo
+
+                    ## Introduccion general
+
+                    Texto con <a id="x"></a> y [-> GORE-NUBLE-GUIA-CTX-01](#gore-nuble-guia-ctx-01).
+                    """
+                ),
+                encoding="utf-8",
+            )
+            result = run_cli("lint-md", str(path), check=False)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("meta_intro_heading", result.stdout)
+            self.assertIn("html_raw", result.stdout)
+            self.assertIn("opaque_internal_ref", result.stdout)
+
+    def test_lint_md_cli_fix_repairs_safe_structural_issues(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "fixable.md"
+            path.write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: "urn:kora:kb:test-cli-fix"
+                    version: "1.0.0"
+                    status: published
+                    tags: [lint, md, test]
+                    lang: es
+                    ---
+
+                    # Demo
+
+                    ## Introduccion general
+
+                    Texto meta.
+
+                    <a id="X"></a>
+
+                    ## Tema real
+
+                    ### Seccion valida
+
+                    Texto con [-> GORE-NUBLE-GUIA-CTX-01](#seccion-valida) y <br>.
+                    """
+                ),
+                encoding="utf-8",
+            )
+            result = run_cli("lint-md", str(path), "--fix", check=False)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            rewritten = path.read_text(encoding="utf-8")
+            self.assertNotIn("<a id=", rewritten)
+            self.assertNotIn("<br>", rewritten)
+            self.assertNotIn("GORE-NUBLE-GUIA-CTX-01", rewritten)
+
+    def test_dump_yaml_frontmatter_and_body_blocks_invalid_kb_when_safe_fix_is_insufficient(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "bad.md"
+            frontmatter = {
+                "_manifest": {"urn": "urn:kora:kb:test-dump"},
+                "version": "1.0.0",
+                "status": "draft",
+                "tags": ["a", "b", "c"],
+                "lang": "es",
+            }
+            body = "# Demo\n\n## Titulo\n\nTexto con `CPR-ART111-01`.\n"
+            with self.assertRaisesRegex(ValueError, "KORA/MD blocked by lint"):
+                dump_yaml_frontmatter_and_body(path, frontmatter, body)
+
+    def test_dump_yaml_frontmatter_and_body_autofixes_safe_kb_issues_before_write(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "fixed.md"
+            frontmatter = {
+                "_manifest": {"urn": "urn:kora:kb:test-dump-fix"},
+                "version": "1.0.0",
+                "status": "draft",
+                "tags": ["a", "b", "c"],
+                "lang": "es",
+            }
+            body = textwrap.dedent(
+                """\
+                # Demo
+
+                ## Introduccion general
+
+                Texto meta.
+
+                <a id="x"></a>
+
+                ## Tema real
+
+                ### Seccion util
+
+                Texto con [-> GORE-NUBLE-GUIA-CTX-01](#seccion-util) y <br>.
+                """
+            )
+            dump_yaml_frontmatter_and_body(path, frontmatter, body)
+            written = path.read_text(encoding="utf-8")
+            self.assertNotIn("<a id=", written)
+            self.assertNotIn("<br>", written)
+            self.assertNotIn("GORE-NUBLE-GUIA-CTX-01", written)
+            self.assertIn("[-> Seccion util](#seccion-util)", written)
+
+    def test_dump_yaml_frontmatter_and_body_allows_non_kb_published_bootstrap(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "agents.md"
+            frontmatter = {
+                "_manifest": {"urn": "urn:test:agent-bootstrap:sample-agents:1.0.0"},
+                "version": "1.0.0",
+                "status": "published",
+                "lang": "es",
+            }
+            dump_yaml_frontmatter_and_body(path, frontmatter, "# Demo\n")
+            self.assertTrue(path.exists())
 
     def test_cmd_validate_strict_rejects_agents_with_noncanonical_section_order(self):
         with TemporaryDirectory() as tmpdir:

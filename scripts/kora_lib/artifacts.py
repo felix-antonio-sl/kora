@@ -5,6 +5,16 @@ import yaml
 
 
 def dump_yaml_frontmatter_and_body(path, frontmatter, body):
+    urn = frontmatter.get("_manifest", {}).get("urn", "") if isinstance(frontmatter, dict) else ""
+    if isinstance(urn, str) and ":kb:" in urn:
+        from .validation import auto_fix_published_kora_markdown_parts, lint_kora_markdown_parts
+
+        body = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        failures = lint_kora_markdown_parts(frontmatter, body)
+        if failures:
+            joined = "; ".join(failures[:8])
+            raise ValueError(f"KORA/MD blocked by lint: {joined}")
+
     content = "---\n"
     content += yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"

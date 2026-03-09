@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 730,
     "node_count": 883,
-    "edge_count": 4166
+    "edge_count": 4158
   },
   "node_kind_counts": {
     "artifact": 226,
@@ -13,7 +13,7 @@
     "workspace": 45
   },
   "edge_kind_counts": {
-    "AllowsKB": 422,
+    "AllowsKB": 419,
     "AllowsTool": 198,
     "ContainsArtifact": 225,
     "ContainsSkill": 236,
@@ -21,7 +21,7 @@
     "InvokesSkill": 220,
     "RoutesToAgent": 57,
     "TracesTo": 44,
-    "XRef": 2563
+    "XRef": 2558
   },
   "nodes": [
     {
@@ -8252,72 +8252,6 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:capacitaciones-tde",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:cloud-publica",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:datosgob",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:identidad-digital",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:intro-tde",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:gov:kb:notificaciones",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:legal:kb:legislacion-ia-chile",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:legal:kb:ley-21658-segdig",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
-      "target": "urn:legal:kb:ley-21719-datos-personales",
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:gn/digitrans",
       "target": "urn:orko:kb:orko-fases",
       "source_path": "agents/gn/digitrans/config.json"
     },
@@ -8331,6 +8265,12 @@
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
       "target": "urn:orko:kb:orko-metodologia",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:claveunica-tyc",
       "source_path": "agents/gn/digitrans/config.json"
     },
     {
@@ -8384,7 +8324,19 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:guia-cloud-publica",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
       "target": "urn:tde:kb:guia-diseno-servicios",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:guia-estandares-datos-abiertos",
       "source_path": "agents/gn/digitrans/config.json"
     },
     {
@@ -8444,6 +8396,18 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:guia-sistema-tde-2025",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:guia-voz-tono",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
       "target": "urn:tde:kb:legislacion-ia-chile",
       "source_path": "agents/gn/digitrans/config.json"
     },
@@ -8480,6 +8444,12 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:manual-coordinadora-tde",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
       "target": "urn:tde:kb:manual-integracion-claveunica",
       "source_path": "agents/gn/digitrans/config.json"
     },
@@ -8492,7 +8462,19 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
       "target": "urn:tde:kb:manual-notificaciones-inicio",
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:gn/digitrans",
+      "target": "urn:tde:kb:manual-notificaciones-institucional",
       "source_path": "agents/gn/digitrans/config.json"
     },
     {
@@ -25416,83 +25398,6 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:capacitaciones-tde",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:cloud-publica",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:datosgob",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:identidad-digital",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:intro-tde",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:gov:kb:notificaciones",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:legal:kb:legislacion-ia-chile",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:legal:kb:ley-21658-segdig",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
-      "target": "urn:legal:kb:ley-21719-datos-personales",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:orko:kb:orko-fases",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
@@ -25508,6 +25413,13 @@
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:orko:kb:orko-metodologia",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:claveunica-tyc",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
     },
@@ -25570,7 +25482,21 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:guia-cloud-publica",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:tde:kb:guia-diseno-servicios",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:guia-estandares-datos-abiertos",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
     },
@@ -25640,6 +25566,20 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:guia-sistema-tde-2025",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:guia-voz-tono",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:tde:kb:legislacion-ia-chile",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
@@ -25682,6 +25622,13 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:manual-coordinadora-tde",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:tde:kb:manual-integracion-claveunica",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
@@ -25696,7 +25643,21 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
       "target": "urn:tde:kb:manual-notificaciones-inicio",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-config:2.0.0",
+      "target": "urn:tde:kb:manual-notificaciones-institucional",
       "fragment": null,
       "source_path": "agents/gn/digitrans/config.json"
     },
@@ -25766,83 +25727,6 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:capacitaciones-tde",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:cloud-publica",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:datosgob",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:identidad-digital",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:intro-tde",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:gov:kb:notificaciones",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:legal:kb:legislacion-ia-chile",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:legal:kb:ley-21658-segdig",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
-      "target": "urn:legal:kb:ley-21719-datos-personales",
-      "fragment": null,
-      "source_path": "agents/gn/digitrans/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:orko:kb:orko-fases",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
@@ -25858,6 +25742,13 @@
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:orko:kb:orko-metodologia",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:claveunica-tyc",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
     },
@@ -25899,6 +25790,13 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:glosario-simple",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:tde:kb:gobierno-digital-2030",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
@@ -25927,7 +25825,21 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:guia-cloud-publica",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:tde:kb:guia-diseno-servicios",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:guia-estandares-datos-abiertos",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
     },
@@ -25997,6 +25909,20 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:guia-sistema-tde-2025",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:guia-voz-tono",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:tde:kb:legislacion-ia-chile",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
@@ -26039,6 +25965,13 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:manual-coordinadora-tde",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:tde:kb:manual-integracion-claveunica",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
@@ -26053,7 +25986,21 @@
     {
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:tde:kb:manual-notificaciones-inicio",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:manual-notificaciones-institucional",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
     },

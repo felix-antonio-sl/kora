@@ -12,7 +12,7 @@
   "tools": {
     "allow": [
       "kb_route",
-      "resolve_urn",
+      "catalog_resolve",
       "search_kb"
     ],
     "deny": []

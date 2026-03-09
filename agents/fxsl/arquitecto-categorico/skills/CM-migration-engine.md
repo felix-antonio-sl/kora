@@ -5,7 +5,7 @@ _manifest:
 ---
 
 ## Proposito
-Disenar migraciones de esquemas via adjunciones Δ/Σ/Π. Principio: Migracion = adjuncion, no script. Trigger: S-CATEGORICAL-MODELING(migracion).
+Disenar migraciones de esquemas via adjunciones Δ/Σ/Π. Principio: Migracion = adjuncion, no script.
 
 ## Input/Output
 - **Input:** Schema fuente S₁, schema target S₂, morfismo de esquema F: S₁ → S₂

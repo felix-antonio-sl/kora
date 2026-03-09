@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Formalizar dominios como categorias y verificar coherencia mediante construcciones universales. Trigger: S-CATEGORICAL-MODELING, S-INTEGRATION.
+Formalizar dominios como categorias y verificar coherencia mediante construcciones universales.
 
 ## Input/Output
-- **Input:** Dominio extraido (entidades, relaciones, operaciones) desde S-DOMAIN-INTAKE o S-INTEGRATION
+- **Input:** Dominio extraido (entidades, relaciones, operaciones)
 - **Output:** Categoria formalizada con objetos, morfismos, composicion, identidades, path equations, construcciones universales
 
 ## Procedimiento

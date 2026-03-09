@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Auditoria DIK rigurosa de artefactos de datos. Principio: Artefacto bien formado = objeto en categoria verificable. Trigger: S-AUDIT.
+Auditoria DIK rigurosa de artefactos de datos. Principio: Artefacto bien formado = objeto en categoria verificable.
 
 ## Input/Output
-- **Input:** Artefacto a auditar (schema, modelo, API, KB) + clasificacion DIK desde S-AUDIT
+- **Input:** Artefacto a auditar (schema, modelo, API, KB) + clasificacion DIK
 - **Output:** Informe con nivel DIK, diagnostico por modo, issues con severidad, mejoras con patron
 
 ## Procedimiento

@@ -773,7 +773,7 @@
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 48,
+        "allowed_kb_count": 45,
         "sources": {
           "agents": "agents/gn/digitrans/AGENTS.md",
           "tools": "agents/gn/digitrans/TOOLS.md",

@@ -338,9 +338,9 @@
       "fuente oficial",
       "ORKO"
     ],
-    "requires_allowed_kb_min": 48,
+    "requires_allowed_kb_min": 40,
     "sample_allowed_kb": [
-      "urn:gov:kb:intro-tde",
+      "urn:tde:kb:guia-sistema-tde-2025",
       "urn:tde:kb:ley-21180-tde",
       "urn:tde:kb:manual-integracion-claveunica",
       "urn:tde:kb:guia-rapida-cpat",

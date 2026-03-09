@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Generar artefactos ejecutables desde modelos categoricos. Cada formato target es un funtor F: CategoricalModel → TargetLanguage. Trigger: S-ARTIFACT-GENERATION.
+Generar artefactos ejecutables desde modelos categoricos. Cada formato target es un funtor F: CategoricalModel → TargetLanguage.
 
 ## Input/Output
-- **Input:** Modelo categorico formalizado (objetos, morfismos, construcciones universales) desde S-ARTIFACT-DESIGN
+- **Input:** Modelo categorico formalizado (objetos, morfismos, construcciones universales)
 - **Output:** Artefacto en formato target con trazabilidad categorica
 
 ## Procedimiento

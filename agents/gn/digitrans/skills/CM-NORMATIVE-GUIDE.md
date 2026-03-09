@@ -18,7 +18,7 @@ Identificar, priorizar y sintetizar la normativa TDE aplicable a una consulta, p
 
 ## Procedimiento
 1. Clasificar si la consulta apunta a ley marco, decreto tecnico, obligacion procedimental o proteccion de datos.
-2. Resolver via kb_route y catalog_resolve los artefactos TDE y legales pertinentes.
+2. Resolver via kb_route y catalog_resolve los artefactos TDE pertinentes del corpus base.
 3. Separar obligaciones vigentes de contexto operativo o interpretacion institucional.
 4. Entregar sintesis normativa con citas del instrumento y seccion relevante.
 

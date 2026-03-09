@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Disenar y auditar capas de acceso a datos (DAL) con fundamento categorico. Principio: DAL = realizacion de construcciones universales. Trigger: S-DATA-ACCESS-LAYER.
+Disenar y auditar capas de acceso a datos (DAL) con fundamento categorico. Principio: DAL = realizacion de construcciones universales.
 
 ## Input/Output
-- **Input:** Dominio con requisitos de persistencia, API, repositorios desde S-DISPATCHER
+- **Input:** Dominio con requisitos de persistencia, API y repositorios
 - **Output:** Arquitectura DAL categorica con seleccion de storage, API, repository, ORM, pipeline
 
 ## Procedimiento

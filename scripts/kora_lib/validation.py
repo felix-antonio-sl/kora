@@ -3,8 +3,9 @@ import re
 import unicodedata
 from collections import Counter
 from functools import lru_cache
+from pathlib import Path
 
-from .artifacts import load_yaml_safe
+from .artifacts import load_markdown_parts, load_yaml_safe
 from .config import (
     AGENT_BOOTSTRAP_FILES,
     AGENT_REQUIRED_FILES,
@@ -44,6 +45,31 @@ CANONICAL_AGENT_SECTION_PATTERNS = (
     ("## 5. Wiring", re.compile(r"^5\.\s+wiring(?:\b|[\s(])")),
 )
 TRUNCATED_HEADING_PATTERN = re.compile(r"\.\.\.$|…$")
+HTML_TAG_PATTERN = re.compile(r"<[A-Za-z][^>]*>")
+OPAQUE_INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([A-Z0-9-]{8,})\]\(#([^)]+)\)")
+UNVERIFIABLE_REFERENCE_PATTERNS = (
+    re.compile(r"\bkb_[a-z0-9_]+\.md\b"),
+    re.compile(r"`[A-Z]{2,}(?:-[A-Z0-9]+){1,}`"),
+    re.compile(r"\bGUIDE-STS-[A-Z0-9-]*\b"),
+)
+META_INTRO_HEADING_TITLES = {
+    "introduccion",
+    "introduccion general",
+    "proposito",
+    "proposito alcance y estructura del manual",
+    "alcance",
+    "estructura",
+}
+DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK = 120
+FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
+    "generic": 120,
+    "normative": 80,
+    "glossary": 60,
+    "organigram": 90,
+    "cq_catalog": 90,
+    "inventory": 200,
+    "omega": 120,
+}
 
 
 def validate_patterns(text, patterns, message_template):
@@ -131,6 +157,332 @@ def find_field_like_markdown_headings(text, banned_titles):
         for _level, heading in collect_markdown_headings(text)
         if normalize_heading_token(heading) in banned
     ]
+
+
+def find_html_fragments(text):
+    return [match.group(0) for match in HTML_TAG_PATTERN.finditer(text)]
+
+
+def find_opaque_internal_refs(text):
+    return [match.group(1) for match in OPAQUE_INTERNAL_REF_PATTERN.finditer(text)]
+
+
+def find_unverifiable_external_references(text):
+    findings = []
+    for pattern in UNVERIFIABLE_REFERENCE_PATTERNS:
+        findings.extend(match.group(0) for match in pattern.finditer(text))
+    return findings
+
+
+def find_meta_intro_headings(text):
+    headings = collect_markdown_headings(text, min_level=2, max_level=4)
+    early_headings = headings[:6]
+    return [
+        heading
+        for _level, heading in early_headings
+        if normalize_heading_token(heading) in META_INTRO_HEADING_TITLES
+    ]
+
+
+def find_empty_primary_wrapper_headings(text):
+    lines = text.splitlines()
+    findings = []
+    for index, line in enumerate(lines):
+        if not line.startswith("## "):
+            continue
+        heading = line[3:].strip()
+        cursor = index + 1
+        while cursor < len(lines) and not lines[cursor].strip():
+            cursor += 1
+        if cursor < len(lines) and lines[cursor].startswith("## "):
+            findings.append(heading)
+    return findings
+
+
+def find_oversized_primary_chunks(text, max_lines=DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK):
+    lines = text.splitlines()
+    starts = [index for index, line in enumerate(lines) if line.startswith("## ")]
+    findings = []
+    for pos, start in enumerate(starts):
+        end = starts[pos + 1] if pos + 1 < len(starts) else len(lines)
+        size = end - start
+        if size > max_lines:
+            findings.append((lines[start][3:].strip(), size))
+    return findings
+
+
+def suggest_primary_chunk_splits(text, max_lines=DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK):
+    lines = text.splitlines()
+    starts = [index for index, line in enumerate(lines) if line.startswith("## ")]
+    suggestions = []
+    for pos, start in enumerate(starts):
+        end = starts[pos + 1] if pos + 1 < len(starts) else len(lines)
+        size = end - start
+        if size <= max_lines:
+            continue
+        child_h3 = [line[3:].strip() for line in lines[start + 1 : end] if line.startswith("### ")]
+        if child_h3:
+            suggestions.append((lines[start][3:].strip(), child_h3))
+    return suggestions
+
+
+def resolve_document_family(frontmatter):
+    if not isinstance(frontmatter, dict):
+        return "generic"
+    extensions = frontmatter.get("extensions", {})
+    if isinstance(extensions, dict):
+        kora_ext = extensions.get("kora")
+        if isinstance(kora_ext, dict) and kora_ext.get("family"):
+            return str(kora_ext["family"])
+        gn_ext = extensions.get("gn")
+        if isinstance(gn_ext, dict) and gn_ext.get("document_family"):
+            return str(gn_ext["document_family"])
+    return "generic"
+
+
+def resolve_max_lines_per_h2(frontmatter, explicit=None):
+    if explicit is not None:
+        return explicit
+    family = resolve_document_family(frontmatter)
+    return FAMILY_MAX_LINES_PER_PRIMARY_CHUNK.get(family, DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK)
+
+
+def should_enforce_published_kora_markdown(frontmatter, path):
+    if not isinstance(frontmatter, dict):
+        return False
+    if path.suffix != ".md":
+        return False
+    if frontmatter.get("status") != "published":
+        return False
+    urn = frontmatter.get("_manifest", {}).get("urn", "")
+    return isinstance(urn, str) and ":kb:" in urn
+
+
+def strip_html_anchor_lines(text):
+    return "\n".join(
+        line for line in text.splitlines() if not re.fullmatch(r'\s*<a id="[^"]+"></a>\s*', line)
+    )
+
+
+def replace_html_breaks(text):
+    return text.replace("<br>", "; ")
+
+
+def build_heading_slug_map(text):
+    mapping = {}
+    for _level, heading in collect_markdown_headings(text):
+        mapping[slugify_heading(heading)] = heading
+    return mapping
+
+
+def slugify_heading(text):
+    slug = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+    slug = slug.lower()
+    slug = re.sub(r"[^a-z0-9\s-]", "", slug)
+    slug = re.sub(r"\s+", "-", slug.strip())
+    slug = re.sub(r"-+", "-", slug)
+    return slug.strip("-")
+
+
+def semanticize_opaque_internal_refs(text):
+    slug_map = build_heading_slug_map(text)
+
+    def replace(match):
+        label, target = match.group(1), match.group(2)
+        if not re.fullmatch(r"[A-Z0-9-]{8,}", label):
+            return match.group(0)
+        semantic = slug_map.get(target)
+        if not semantic:
+            return match.group(0)
+        return f"[-> {semantic}](#{target})"
+
+    return OPAQUE_INTERNAL_REF_PATTERN.sub(replace, text)
+
+
+def remove_leading_meta_intro_sections(text):
+    lines = text.splitlines()
+    headings = [(index, line[3:].strip()) for index, line in enumerate(lines) if line.startswith("## ")]
+    to_remove = set()
+    cursor = 0
+    while cursor < len(headings):
+        start, title = headings[cursor]
+        normalized = normalize_heading_token(title).replace("-", " ")
+        if normalized not in META_INTRO_HEADING_TITLES:
+            break
+        end = headings[cursor + 1][0] if cursor + 1 < len(headings) else len(lines)
+        to_remove.update(range(start, end))
+        cursor += 1
+    if not to_remove:
+        return text
+    kept = [line for index, line in enumerate(lines) if index not in to_remove]
+    return "\n".join(kept)
+
+
+def remove_empty_primary_wrappers_body(text):
+    lines = text.splitlines()
+    out = []
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if line.startswith("## "):
+            cursor = index + 1
+            while cursor < len(lines) and not lines[cursor].strip():
+                cursor += 1
+            if cursor < len(lines) and lines[cursor].startswith("## "):
+                index += 1
+                continue
+        out.append(line)
+        index += 1
+    return "\n".join(out)
+
+
+def promote_nested_headings_in_oversized_chunks(text, max_lines):
+    lines = text.splitlines()
+    starts = [index for index, line in enumerate(lines) if line.startswith("## ")]
+    oversized_ranges = []
+    for pos, start in enumerate(starts):
+        end = starts[pos + 1] if pos + 1 < len(starts) else len(lines)
+        if end - start > max_lines:
+            oversized_ranges.append((start, end))
+    if not oversized_ranges:
+        return text
+
+    def in_oversized(index):
+        return any(start < index < end for start, end in oversized_ranges)
+
+    out = []
+    for index, line in enumerate(lines):
+        if in_oversized(index) and line.startswith("### "):
+            out.append("## " + line[4:])
+        elif in_oversized(index) and line.startswith("#### "):
+            out.append("### " + line[5:])
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+
+def normalize_blank_lines(text):
+    out = []
+    previous_blank = False
+    for line in text.splitlines():
+        blank = not line.strip()
+        if blank and previous_blank:
+            continue
+        out.append(line)
+        previous_blank = blank
+    return "\n".join(out).strip() + "\n"
+
+
+def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):
+    max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
+    current = body
+    for _ in range(4):
+        updated = current
+        updated = strip_html_anchor_lines(updated)
+        updated = replace_html_breaks(updated)
+        updated = semanticize_opaque_internal_refs(updated)
+        updated = remove_leading_meta_intro_sections(updated)
+        updated = remove_empty_primary_wrappers_body(updated)
+        updated = promote_nested_headings_in_oversized_chunks(updated, max_lines)
+        updated = remove_empty_primary_wrappers_body(updated)
+        updated = normalize_blank_lines(updated)
+        if updated == current:
+            break
+        current = updated
+    return current
+
+
+def lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):
+    max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
+    failures = []
+
+    for heading in find_meta_intro_headings(body):
+        failures.append(f"meta_intro_heading: heading introductorio no permitido '{heading}'")
+
+    for fragment in find_html_fragments(body):
+        failures.append(f"html_raw: HTML crudo no permitido '{fragment}'")
+
+    for ref in find_opaque_internal_refs(body):
+        failures.append(f"opaque_internal_ref: referencia interna usa id opaco '{ref}'")
+
+    for ref in find_unverifiable_external_references(body):
+        failures.append(f"unverifiable_ref: referencia no comprobable '{ref}'")
+
+    for heading in find_empty_primary_wrapper_headings(body):
+        failures.append(f"empty_primary_wrapper: '## {heading}' solo envuelve otros headings")
+
+    split_suggestions = dict(suggest_primary_chunk_splits(body, max_lines=max_lines))
+    for heading, size in find_oversized_primary_chunks(body, max_lines=max_lines):
+        suggestion = ""
+        if heading in split_suggestions:
+            promoted = ", ".join(split_suggestions[heading][:4])
+            suffix = "..." if len(split_suggestions[heading]) > 4 else ""
+            suggestion = f"; split sugerido via promotion de ###: {promoted}{suffix}"
+        failures.append(
+            f"oversized_primary_chunk: '## {heading}' ocupa {size} lineas (max {max_lines}){suggestion}"
+        )
+
+    banned_field_headings = {"titulo", "path", "artefactos", "contenido", "asunto", "tipo", "status", "source_id"}
+    for heading in find_field_like_markdown_headings(body, banned_field_headings):
+        failures.append(f"field_like_heading: heading serializado no permitido '{heading}'")
+
+    for heading in find_truncated_markdown_headings(body):
+        failures.append(f"truncated_heading: heading truncado '{heading}'")
+
+    return failures
+
+
+def lint_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):
+    urn = frontmatter.get("_manifest", {}).get("urn", "") if isinstance(frontmatter, dict) else ""
+    if not (isinstance(urn, str) and ":kb:" in urn):
+        return []
+    return lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=max_lines_per_h2)
+
+
+def lint_published_kora_markdown(path, max_lines_per_h2=None):
+    frontmatter, body = load_markdown_parts(path)
+    if not should_enforce_published_kora_markdown(frontmatter, path):
+        return []
+    return lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=max_lines_per_h2)
+
+
+def iter_markdown_lint_targets(paths):
+    for raw_path in paths:
+        path = Path(raw_path).expanduser().resolve()
+        if path.is_file() and path.suffix == ".md":
+            yield path
+            continue
+        if path.is_dir():
+            for child in sorted(path.rglob("*.md")):
+                yield child
+
+
+def lint_markdown_paths(paths, max_lines_per_h2=None, emit=True):
+    issue_counts = Counter()
+    issues = []
+
+    for path in iter_markdown_lint_targets(paths):
+        rel_path = path.relative_to(KORA_ROOT) if KORA_ROOT in path.parents or path == KORA_ROOT else path
+        for failure in lint_published_kora_markdown(path, max_lines_per_h2=max_lines_per_h2):
+            category = failure.split(":", 1)[0]
+            issue_counts[category] += 1
+            issues.append((rel_path, failure))
+            if emit:
+                print(f"[FAIL] {rel_path} - {failure}")
+
+    if emit:
+        total = sum(issue_counts.values())
+        print(f"Markdown lint complete. Issues: {total}")
+        if issue_counts:
+            print("Issue breakdown:")
+            for name, count in sorted(issue_counts.items()):
+                print(f"  {name}: {count}")
+
+    return {
+        "issues": issues,
+        "issue_counts": dict(sorted(issue_counts.items())),
+        "ok": not issues,
+    }
 
 
 def validate_agents_canonical_structure(text):
@@ -554,5 +906,32 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
 
 def cmd_validate(profile="transitional", cohort=None):
     result = validate_workspaces(profile=profile, cohort=cohort, emit=True)
+    if not result["ok"]:
+        raise SystemExit(1)
+
+
+def auto_fix_markdown_paths(paths, max_lines_per_h2=None, emit=True):
+    changed = []
+    for path in iter_markdown_lint_targets(paths):
+        frontmatter, body = load_markdown_parts(path)
+        if not should_enforce_published_kora_markdown(frontmatter, path):
+            continue
+        fixed_body = auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=max_lines_per_h2)
+        if fixed_body != body:
+            from .artifacts import dump_yaml_frontmatter_and_body
+
+            dump_yaml_frontmatter_and_body(path, frontmatter, fixed_body)
+            changed.append(path)
+            if emit:
+                rel_path = path.relative_to(KORA_ROOT) if KORA_ROOT in path.parents or path == KORA_ROOT else path
+                print(f"[FIX] {rel_path}")
+    return changed
+
+
+def cmd_lint_md(paths=None, max_lines_per_h2=None, fix=False):
+    target_paths = paths or [KORA_ROOT / "knowledge", KORA_ROOT / "drafts"]
+    if fix:
+        auto_fix_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)
+    result = lint_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)
     if not result["ok"]:
         raise SystemExit(1)

@@ -5,7 +5,7 @@ from .catalog import cmd_index, cmd_resolve
 from .commands import cmd_migrate, cmd_stats_json, cmd_sync_docs
 from .graph import cmd_graph
 from .intake import cmd_intake
-from .validation import cmd_validate
+from .validation import cmd_lint_md, cmd_validate
 
 
 def main():
@@ -32,6 +32,23 @@ def main():
         choices=("meta-kora", "dev", "ops", "domains"),
         default=None,
         help="Validate only one migration cohort",
+    )
+    p_lint_md = subparsers.add_parser("lint-md", help="Lint published KORA/MD artifacts")
+    p_lint_md.add_argument(
+        "paths",
+        nargs="*",
+        help="Markdown file or directory to lint. Defaults to knowledge/ and drafts/",
+    )
+    p_lint_md.add_argument(
+        "--max-lines-per-h2",
+        type=int,
+        default=None,
+        help="Maximum allowed lines per primary ## chunk; defaults by document family",
+    )
+    p_lint_md.add_argument(
+        "--fix",
+        action="store_true",
+        help="Apply safe structural auto-fixes before linting",
     )
 
     p_stats = subparsers.add_parser("stats", help="Show monorepo statistics for workspaces and catalog entries")
@@ -67,6 +84,8 @@ def main():
         cmd_health(strict=args.strict)
     elif args.command == "validate":
         cmd_validate(profile=args.profile, cohort=args.cohort)
+    elif args.command == "lint-md":
+        cmd_lint_md(paths=args.paths, max_lines_per_h2=args.max_lines_per_h2, fix=args.fix)
     elif args.command == "stats":
         cmd_stats_json(json_output=args.json)
     elif args.command == "migrate":

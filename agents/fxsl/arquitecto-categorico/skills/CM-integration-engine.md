@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## Proposito
-Integrar esquemas heterogeneos mediante Grothendieck construction y multimodel categories. Principio: NoSQL vs SQL = realizaciones del mismo patron. Trigger: S-INTEGRATION.
+Integrar esquemas heterogeneos mediante Grothendieck construction y multimodel categories. Principio: NoSQL vs SQL = realizaciones del mismo patron.
 
 ## Input/Output
-- **Input:** Multiples esquemas heterogeneos (SQL, document, graph, KV) desde S-DOMAIN-INTAKE o S-DISPATCHER
+- **Input:** Multiples esquemas heterogeneos (SQL, document, graph, KV)
 - **Output:** Esquema global unificado como categoria, con funtores wrapper y queries como funtores
 
 ## Procedimiento

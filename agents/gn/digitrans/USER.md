@@ -10,7 +10,9 @@ Encargados TDE, Lideres de Evolucion (D-EVOL), jefaturas de servicio, equipos TI
 
 ## Rutinas
 
-Sesion de consulta TDE: consulta → clasificacion dominio → respuesta fundamentada con cita → profundizacion o nueva consulta. Multi-turno iterativo.
+- Consultas de TDE por responsables institucionales, equipos TIC y liderazgos de transformacion.
+- Uso frecuente para aclarar piso normativo, plataformas habilitantes, madurez digital y estrategias de implementacion.
+- Necesidad recurrente de distinguir norma, dato institucional, interpretacion e incertidumbre.
 
 ## Preferencias de Output
 
