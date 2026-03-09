@@ -1443,6 +1443,10 @@ def make_normative_item_section(item_name, node, urn_alias_map, external_labels,
     title = headingify(item_name.replace("_", " "))
     if isinstance(node, dict) and node.get("Asunto"):
         title = f"{title} - {normalize_scalar(node['Asunto'])}"
+    elif re.fullmatch(r"Glosa\s+\d+", title):
+        derived_subject = derive_normative_subject(node, urn_alias_map, external_labels, urn_title_map)
+        if derived_subject:
+            title = f"{title} - {derived_subject}"
     section = SectionIR(title=title)
     if not isinstance(node, dict):
         section.blocks.append(ParagraphBlock(normalize_scalar(node)))
@@ -1598,6 +1602,39 @@ def definitions_are_equivalent(left, right):
 def pick_preferred_term_name(names):
     unique = sorted(dict.fromkeys(names), key=lambda item: (0 if re.fullmatch(r"[A-Z0-9%/\-]+", item) else 1, len(item), item.casefold()))
     return unique[0] if unique else ""
+
+
+def summarize_subject(text, max_words=10):
+    cleaned = re.sub(r"\s+", " ", normalize_scalar(text)).strip(" .;:")
+    if not cleaned:
+        return ""
+    first_clause = re.split(r"[.;:]", cleaned, maxsplit=1)[0].strip()
+    words = first_clause.split()
+    if len(words) <= max_words:
+        return first_clause
+    return " ".join(words[:max_words]).strip(" ,.;:") + "..."
+
+
+def derive_normative_subject(node, urn_alias_map, external_labels, urn_title_map):
+    if not isinstance(node, dict):
+        return ""
+    for key in ("Asunto", "Titulo", "Title", "Purp"):
+        value = node.get(key)
+        if isinstance(value, str) and value.strip():
+            return summarize_subject(value)
+    for key in ("Content", "Contenido", "Def", "Desc"):
+        if key in node:
+            text = inline_text_from_value(node.get(key), urn_alias_map, external_labels, urn_title_map)
+            if text:
+                return summarize_subject(text)
+    for value in node.values():
+        if isinstance(value, dict):
+            for key in ("Content", "Contenido", "Def", "Desc"):
+                if key in value:
+                    text = inline_text_from_value(value.get(key), urn_alias_map, external_labels, urn_title_map)
+                    if text:
+                        return summarize_subject(text)
+    return ""
 
 
 def build_glossary_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map):
@@ -1831,16 +1868,43 @@ def build_cq_catalog_document_ir(title, item, primary_projection):
         family="cq_catalog",
         publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
     )
+    domain_count = 0
+    total_questions = 0
+    bucket_totals = {"Existenciales": 0, "Relacionales": 0, "Temporales": 0, "Agregacion": 0}
+    if isinstance(data, dict):
+        for domain_key, domain in data.items():
+            if not str(domain_key).startswith("Dom_") or not isinstance(domain, dict):
+                continue
+            domain_count += 1
+            for bucket in bucket_totals:
+                values = domain.get(bucket, [])
+                if isinstance(values, list):
+                    bucket_totals[bucket] += len(values)
+                    total_questions += len(values)
     summary_items = []
     if "total_cqs" in stats:
         summary_items.append(f"Total de CQs: {stats['total_cqs']}")
+    elif total_questions:
+        summary_items.append(f"Total de CQs: {total_questions}")
     if "domains" in stats:
         summary_items.append(f"Dominios: {stats['domains']}")
+    elif domain_count:
+        summary_items.append(f"Dominios: {domain_count}")
     if isinstance(stats.get("types"), dict):
         for key, value in stats["types"].items():
             summary_items.append(f"{headingify(str(key))}: {value}")
+    else:
+        for key, value in bucket_totals.items():
+            if value:
+                summary_items.append(f"{field_label(key)}: {value}")
+    summary_blocks = []
+    if item.get("scope_statement"):
+        summary_blocks.append(ParagraphBlock(normalize_scalar(item["scope_statement"])))
     if summary_items:
-        document.sections.append(SectionIR(title="Resumen", blocks=[BulletListBlock(title="Estadísticas", items=summary_items)]))
+        summary_blocks.append(BulletListBlock(title="Estadísticas", items=summary_items))
+    if not summary_blocks:
+        summary_blocks.append(ParagraphBlock("Catálogo maestro de preguntas de competencia del dominio GN."))
+    document.sections.append(SectionIR(title="Resumen", blocks=summary_blocks))
 
     if not isinstance(data, dict):
         return document

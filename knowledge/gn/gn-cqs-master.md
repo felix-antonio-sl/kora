@@ -23,7 +23,7 @@ extensions:
     source_type: ontology_yaml
     transformation_mode: derive_ttl_scope
     fs: 100
-    cr: 1.35
+    cr: 1.36
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Preguntas de competencia maestras del bundle ontologico GN.
@@ -40,6 +40,17 @@ extensions:
 ---
 
 # Catálogo Maestro de Preguntas de Competencia
+
+## Resumen
+Preguntas de competencia maestras del bundle ontologico GN.
+
+### Estadísticas
+- Total de CQs: 472
+- Dominios: 20
+- Existenciales: 164
+- Relacionales: 126
+- Temporales: 68
+- Agregacion: 114
 
 ## 01 Estructura Organizacional
 

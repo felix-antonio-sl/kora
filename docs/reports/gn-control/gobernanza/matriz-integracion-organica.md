@@ -5,15 +5,12 @@ _manifest:
     created_by: gn_rebuild.py
     created_at: '2026-03-09'
     source: domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml
-version: 2.0.0
+version: 1.0.0
 status: published
 tags:
-- gore-nuble
-- gobierno-regional
-- taxonomia
-- indice-artefactos
-- gobernanza
 - gn
+- knowledge
+- matriz-integracion-organica
 lang: es
 extensions:
   gn:
@@ -41,7 +38,7 @@ extensions:
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__matriz-integracion-organica.md.json
 ---
 
-# Matriz de Integración Orgánica del Conocimiento GORE Ñuble
+# Matriz Integracion Organica
 
 ## Taxonomía
 Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.

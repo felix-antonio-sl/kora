@@ -47,6 +47,9 @@ FIELD_HEADING_TITLES_BY_FAMILY = {
 CONTAINER_ONLY_TITLES_BY_FAMILY = {
     "normative": {"glosas", "programas", "capitulos", "capítulos", "articulos", "artículos"},
 }
+REQUIRED_PRIMARY_TITLES_BY_FAMILY = {
+    "cq_catalog": {"resumen"},
+}
 KODA_RESIDUE_PATTERNS = (
     re.compile(r"BEGIN_LLM_INSTRUCTIONS"),
     re.compile(r"END_LLM_INSTRUCTIONS"),
@@ -266,12 +269,17 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
             failures.append("referencia local o path operativo en cuerpo")
 
         primary_sections = _collect_primary_sections(body or "")
+        present_primary_titles = {slugify_heading(section["title"]).replace("-", " ") for section in primary_sections}
         for section in primary_sections:
             normalized_title = slugify_heading(section["title"]).replace("-", " ")
             if not _section_has_substance(section["lines"]):
                 failures.append(f"seccion primaria vacia o contenedor sin sustancia: {section['title']}")
             if normalized_title in CONTAINER_ONLY_TITLES_BY_FAMILY.get(document_family, set()):
                 failures.append(f"seccion primaria contenedora no permitida para {document_family}: {section['title']}")
+        required_titles = REQUIRED_PRIMARY_TITLES_BY_FAMILY.get(document_family, set())
+        missing_titles = sorted(required_titles - present_primary_titles)
+        if missing_titles:
+            failures.append(f"secciones primarias obligatorias ausentes para {document_family}: {', '.join(missing_titles)}")
 
         field_titles = FIELD_HEADING_TITLES_BY_FAMILY.get(document_family, set())
         if field_titles:

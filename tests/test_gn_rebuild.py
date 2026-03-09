@@ -1112,6 +1112,80 @@ class GnRebuildTests(unittest.TestCase):
             self.assertNotIn("### Contenido", body)
             self.assertNotIn("{'Ref':", body)
 
+    def test_normative_glosa_heading_derives_subject_when_source_has_no_asunto(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/presupuesto").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:glosa"},
+                "Ley_Presupuestos": {
+                    "Glosas": {
+                        "Glosa_03": {
+                            "Contenido": "Los recursos del presupuesto regional no podrán financiar gastos en personal."
+                        }
+                    }
+                },
+            }
+            (source_root / "domains/gn/03_operacion/presupuesto/kb_gn_778_glosa_demo_koda.yml").write_text(
+                yaml.safe_dump(source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/normativa/glosa-demo.md",
+                "urn:gn:kb:glosa-demo",
+                "Glosa Demo",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "source_type": "koda_yaml",
+                            "transform_class": "korafy_direct",
+                            "document_family": "normative",
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/presupuesto/kb_gn_778_glosa_demo_koda.yml"],
+                                "target_path": "normativa/glosa-demo.md",
+                                "target_urn": "urn:gn:kb:glosa-demo",
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "glosasubject")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "glosasubject", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/normativa/glosa-demo.md")
+            self.assertIn("## Glosa 03 - Los recursos del presupuesto regional no podrán financiar gastos en...", body)
+            self.assertNotIn("## Glosa 03\n", body)
+
     def test_glossary_conflicts_can_be_resolved_in_map_contract(self):
         with TemporaryDirectory() as tmpdir:
             repo = Path(tmpdir) / "repo"
@@ -1299,6 +1373,80 @@ class GnRebuildTests(unittest.TestCase):
             self.assertNotIn("urn:knowledge:gorenuble:gn:selector-ipr:3.1.0", body)
             self.assertNotIn("urn:fxsl:cat:omega-opm-ws:1.0.0", body)
             self.assertNotIn("### Type", body)
+
+    def test_cq_catalog_always_emits_non_empty_summary(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "ontologies/onto_gorenuble").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "Dom_01_Estructura": {
+                    "Existenciales": [{"ID": "CQ-001", "Q": "¿Qué es un GORE?"}],
+                    "Relacionales": [{"ID": "CQ-002", "Q": "¿Qué división participa?"}],
+                }
+            }
+            (source_root / "ontologies/onto_gorenuble/goreNubleCQs_Master.yml").write_text(
+                yaml.safe_dump(source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/gn-cqs-master.md",
+                "urn:gn:kb:gn-cqs-master",
+                "Catálogo Maestro de Preguntas de Competencia",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["ontologies/onto_gorenuble/goreNubleCQs_Master.yml"],
+                                "source_type": "ontology_yaml",
+                                "target_path": "gn-cqs-master.md",
+                                "target_urn": "urn:gn:kb:gn-cqs-master",
+                                "transform_class": "derive_ttl_scope",
+                                "document_family": "cq_catalog",
+                                "scope_statement": "Preguntas maestras del dominio GN.",
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "cqsummary")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "cqsummary", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "cqsummary")
+            self.assertEqual(validate.returncode, 0, validate.stderr or validate.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gn-cqs-master.md")
+            self.assertIn("## Resumen", body)
+            self.assertIn("Preguntas maestras del dominio GN.", body)
+            self.assertIn("Total de CQs: 2", body)
 
     def test_cutover_routes_control_publication_out_of_knowledge(self):
         with TemporaryDirectory() as tmpdir:
