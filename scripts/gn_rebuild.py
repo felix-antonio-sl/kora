@@ -2417,6 +2417,7 @@ def evidence_relpath_for(target_path):
 def validate_build_evidence(knowledge_draft_root, control_draft_root, evidence_root, expected_targets):
     failures = []
     warnings = []
+    repo_root = knowledge_draft_root.parents[1]
     banned_fact_prefixes = (
         "LLM_Parsing_Instructions",
         "Format=",
@@ -2457,6 +2458,10 @@ def validate_build_evidence(knowledge_draft_root, control_draft_root, evidence_r
             failures.append(f"evidence document_family inconsistente en {evidence_path.name}")
         if evidence.get("publication_class") != meta.get("publication_class"):
             failures.append(f"evidence publication_class inconsistente en {evidence_path.name}")
+        if "autofix" not in evidence:
+            failures.append(f"evidence autofix ausente en {evidence_path.name}")
+        if "split" not in evidence:
+            failures.append(f"evidence split ausente en {evidence_path.name}")
 
         for fact in evidence.get("preserved_facts", []):
             if isinstance(fact, str) and fact.startswith(banned_fact_prefixes):
@@ -2476,6 +2481,16 @@ def validate_build_evidence(knowledge_draft_root, control_draft_root, evidence_r
 
         if meta.get("target_urn") and draft_urn != meta["target_urn"]:
             warnings.append(f"{rel_path}: draft_urn no alineada con target_urn esperada")
+
+        split_meta = evidence.get("split", {}) if isinstance(evidence.get("split"), dict) else {}
+        if split_meta.get("applied"):
+            shard_paths = split_meta.get("shard_paths", [])
+            if not shard_paths:
+                failures.append(f"evidence split aplicado sin shard_paths en {evidence_path.name}")
+            for shard_path in shard_paths:
+                candidate = repo_root / shard_path
+                if not candidate.exists():
+                    failures.append(f"shard inexistente declarado en evidence {evidence_path.name}: {shard_path}")
 
     return {"failures": failures, "warnings": warnings}
 
@@ -2526,7 +2541,22 @@ def build(args):
         ensure_dir(target_path.parent)
         evidence_relpath = evidence_relpath_for(item["target_path"])
         gn_ext["evidence_path"] = f"build/gn-rebuild/{run_id}/evidence/{evidence_relpath}"
-        dump_yaml_frontmatter_and_body(target_path, frontmatter, body)
+        write_report = dump_yaml_frontmatter_and_body(target_path, frontmatter, body)
+
+        split_report = dict(write_report.get("split", {}))
+        shard_paths = split_report.get("shard_paths", [])
+        if shard_paths:
+            normalized_paths = []
+            for raw_path in shard_paths:
+                raw = Path(raw_path)
+                if raw.is_absolute():
+                    try:
+                        normalized_paths.append(str(raw.relative_to(repo_root)))
+                    except ValueError:
+                        normalized_paths.append(str(raw))
+                else:
+                    normalized_paths.append(str(raw))
+            split_report["shard_paths"] = normalized_paths
 
         evidence_payload = {
             "target_path": item["target_path"],
@@ -2545,6 +2575,8 @@ def build(args):
             "expected_sections": gn_ext.get("expected_sections", []),
             "document_family": gn_ext.get("document_family"),
             "publication_class": gn_ext.get("publication_class"),
+            "autofix": write_report.get("autofix", {}),
+            "split": split_report,
             "preserved_facts": combined_facts,
             "non_equivalence_decisions": item.get("non_equivalence_decisions", []),
         }

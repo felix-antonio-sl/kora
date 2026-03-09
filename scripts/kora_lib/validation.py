@@ -70,6 +70,24 @@ FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "inventory": 200,
     "omega": 120,
 }
+FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
+    "generic": 320,
+    "normative": 280,
+    "glossary": 220,
+    "organigram": 260,
+    "cq_catalog": 260,
+    "inventory": 500,
+    "omega": 320,
+}
+FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
+    "generic": 10,
+    "normative": 8,
+    "glossary": 12,
+    "organigram": 10,
+    "cq_catalog": 10,
+    "inventory": 16,
+    "omega": 10,
+}
 
 
 def validate_patterns(text, patterns, message_template):
@@ -211,6 +229,16 @@ def find_oversized_primary_chunks(text, max_lines=DEFAULT_MAX_LINES_PER_PRIMARY_
     return findings
 
 
+def get_primary_chunk_sizes(text):
+    lines = text.splitlines()
+    starts = [index for index, line in enumerate(lines) if line.startswith("## ")]
+    sizes = []
+    for pos, start in enumerate(starts):
+        end = starts[pos + 1] if pos + 1 < len(starts) else len(lines)
+        sizes.append((lines[start][3:].strip(), end - start))
+    return sizes
+
+
 def suggest_primary_chunk_splits(text, max_lines=DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK):
     lines = text.splitlines()
     starts = [index for index, line in enumerate(lines) if line.startswith("## ")]
@@ -245,6 +273,16 @@ def resolve_max_lines_per_h2(frontmatter, explicit=None):
         return explicit
     family = resolve_document_family(frontmatter)
     return FAMILY_MAX_LINES_PER_PRIMARY_CHUNK.get(family, DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK)
+
+
+def resolve_max_total_lines_per_file(frontmatter):
+    family = resolve_document_family(frontmatter)
+    return FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT.get(family, FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT["generic"])
+
+
+def resolve_max_primary_sections_per_file(frontmatter):
+    family = resolve_document_family(frontmatter)
+    return FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE.get(family, FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE["generic"])
 
 
 def should_enforce_published_kora_markdown(frontmatter, path):
@@ -390,6 +428,142 @@ def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=N
             break
         current = updated
     return current
+
+
+def auto_fix_published_kora_markdown_parts_with_report(frontmatter, body, max_lines_per_h2=None):
+    before_anchor_lines = len(re.findall(r'(?m)^\s*<a id="[^"]+"></a>\s*$', body))
+    before_breaks = body.count("<br>")
+    before_opaque_refs = len(find_opaque_internal_refs(body))
+    before_meta_headings = len(find_meta_intro_headings(body))
+    before_empty_wrappers = len(find_empty_primary_wrapper_headings(body))
+    before_primary_chunks = get_primary_chunk_sizes(body)
+    before_h2_count = sum(1 for line in body.splitlines() if line.startswith("## "))
+
+    fixed = auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=max_lines_per_h2)
+
+    after_anchor_lines = len(re.findall(r'(?m)^\s*<a id="[^"]+"></a>\s*$', fixed))
+    after_breaks = fixed.count("<br>")
+    after_opaque_refs = len(find_opaque_internal_refs(fixed))
+    after_meta_headings = len(find_meta_intro_headings(fixed))
+    after_empty_wrappers = len(find_empty_primary_wrapper_headings(fixed))
+    after_primary_chunks = get_primary_chunk_sizes(fixed)
+    after_h2_count = sum(1 for line in fixed.splitlines() if line.startswith("## "))
+
+    report = {
+        "applied": fixed != body,
+        "html_anchor_lines_removed": max(0, before_anchor_lines - after_anchor_lines),
+        "html_breaks_replaced": max(0, before_breaks - after_breaks),
+        "opaque_internal_refs_semanticized": max(0, before_opaque_refs - after_opaque_refs),
+        "meta_intro_headings_removed": max(0, before_meta_headings - after_meta_headings),
+        "empty_primary_wrappers_removed": max(0, before_empty_wrappers - after_empty_wrappers),
+        "primary_heading_promotions": max(0, after_h2_count - before_h2_count),
+        "largest_primary_chunk_lines_before": max((size for _heading, size in before_primary_chunks), default=0),
+        "largest_primary_chunk_lines_after": max((size for _heading, size in after_primary_chunks), default=0),
+    }
+    return fixed, report
+
+
+def extract_markdown_title_and_sections(body):
+    lines = body.splitlines()
+    if not lines:
+        return None, [], []
+
+    title_index = None
+    title = None
+    for index, line in enumerate(lines):
+        if line.startswith("# "):
+            title_index = index
+            title = line[2:].strip()
+            break
+    if title_index is None:
+        return None, [], []
+
+    first_h2 = None
+    for index in range(title_index + 1, len(lines)):
+        if lines[index].startswith("## "):
+            first_h2 = index
+            break
+    preamble = lines[title_index + 1 : first_h2] if first_h2 is not None else lines[title_index + 1 :]
+
+    sections = []
+    if first_h2 is None:
+        return title, preamble, sections
+
+    starts = [index for index in range(first_h2, len(lines)) if lines[index].startswith("## ")]
+    for pos, start in enumerate(starts):
+        end = starts[pos + 1] if pos + 1 < len(starts) else len(lines)
+        sections.append(lines[start:end])
+    return title, preamble, sections
+
+
+def split_kora_markdown_parts(frontmatter, body):
+    family = resolve_document_family(frontmatter)
+    max_total_lines = resolve_max_total_lines_per_file(frontmatter)
+    max_primary_sections = resolve_max_primary_sections_per_file(frontmatter)
+    title, preamble, sections = extract_markdown_title_and_sections(body)
+    if not title or len(body.splitlines()) <= max_total_lines or len(sections) <= 1:
+        return [body], {
+            "applied": False,
+            "family": family,
+            "shard_count": 1,
+            "max_total_lines_per_file": max_total_lines,
+            "max_primary_sections_per_file": max_primary_sections,
+            "largest_shard_lines": len(body.splitlines()),
+        }
+
+    shards = []
+    current_sections = []
+    current_lines = len(preamble)
+
+    for section in sections:
+        section_lines = len(section)
+        exceeds_lines = current_sections and (current_lines + section_lines > max_total_lines)
+        exceeds_sections = current_sections and (len(current_sections) >= max_primary_sections)
+        if exceeds_lines or exceeds_sections:
+            shards.append(current_sections)
+            current_sections = []
+            current_lines = 0
+        current_sections.append(section)
+        current_lines += section_lines
+
+    if current_sections:
+        shards.append(current_sections)
+
+    if len(shards) <= 1:
+        return [body], {
+            "applied": False,
+            "family": family,
+            "shard_count": 1,
+            "max_total_lines_per_file": max_total_lines,
+            "max_primary_sections_per_file": max_primary_sections,
+            "largest_shard_lines": len(body.splitlines()),
+        }
+
+    bodies = []
+    shard_sizes = []
+    for index, shard_sections in enumerate(shards, start=1):
+        shard_lines = [f"# {title}" if index == 1 else f"# {title} - Parte {index:02d}", ""]
+        if index == 1 and preamble:
+            shard_lines.extend(preamble)
+            if preamble and preamble[-1].strip():
+                shard_lines.append("")
+        for section in shard_sections:
+            shard_lines.extend(section)
+            if section and section[-1].strip():
+                shard_lines.append("")
+        shard_body = "\n".join(shard_lines).rstrip() + "\n"
+        bodies.append(shard_body)
+        shard_sizes.append(len(shard_body.splitlines()))
+
+    return bodies, {
+        "applied": True,
+        "family": family,
+        "shard_count": len(bodies),
+        "max_total_lines_per_file": max_total_lines,
+        "max_primary_sections_per_file": max_primary_sections,
+        "largest_shard_lines": max(shard_sizes, default=0),
+        "total_lines_before_split": len(body.splitlines()),
+    }
 
 
 def lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):

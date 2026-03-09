@@ -1,25 +1,66 @@
 import json
 import re
+from copy import deepcopy
 
 import yaml
 
 
 def dump_yaml_frontmatter_and_body(path, frontmatter, body):
     urn = frontmatter.get("_manifest", {}).get("urn", "") if isinstance(frontmatter, dict) else ""
-    if isinstance(urn, str) and ":kb:" in urn:
-        from .validation import auto_fix_published_kora_markdown_parts, lint_kora_markdown_parts
+    write_report = {
+        "autofix": {"applied": False},
+        "split": {"applied": False, "shard_count": 1, "shard_paths": [str(path)]},
+    }
 
-        body = auto_fix_published_kora_markdown_parts(frontmatter, body)
-        failures = lint_kora_markdown_parts(frontmatter, body)
-        if failures:
-            joined = "; ".join(failures[:8])
-            raise ValueError(f"KORA/MD blocked by lint: {joined}")
+    if isinstance(urn, str) and ":kb:" in urn:
+        from .validation import (
+            auto_fix_published_kora_markdown_parts_with_report,
+            lint_kora_markdown_parts,
+            split_kora_markdown_parts,
+        )
+
+        body, autofix_report = auto_fix_published_kora_markdown_parts_with_report(frontmatter, body)
+        write_report["autofix"] = autofix_report
+        shard_bodies, split_report = split_kora_markdown_parts(frontmatter, body)
+        write_report["split"] = split_report
+
+        shard_paths = [path] + [path.with_name(f"{path.stem}--p{index:02d}{path.suffix}") for index in range(2, len(shard_bodies) + 1)]
+        for stale in sorted(path.parent.glob(f"{path.stem}--p*{path.suffix}")):
+            if stale not in shard_paths[1:]:
+                stale.unlink()
+
+        shard_urns = [urn] + [f"{urn}-p{index:02d}" for index in range(2, len(shard_bodies) + 1)]
+        write_report["split"]["shard_paths"] = [str(item) for item in shard_paths]
+        write_report["split"]["shard_urns"] = shard_urns
+
+        for index, (shard_path, shard_body, shard_urn) in enumerate(zip(shard_paths, shard_bodies, shard_urns), start=1):
+            shard_frontmatter = deepcopy(frontmatter)
+            shard_frontmatter.setdefault("_manifest", {})["urn"] = shard_urn
+            extensions = shard_frontmatter.setdefault("extensions", {})
+            kora_ext = extensions.setdefault("kora", {})
+            if isinstance(kora_ext, dict):
+                kora_ext["shard_index"] = index
+                kora_ext["shard_count"] = len(shard_bodies)
+                kora_ext["shard_root_urn"] = urn
+
+            failures = lint_kora_markdown_parts(shard_frontmatter, shard_body)
+            if failures:
+                joined = "; ".join(failures[:8])
+                raise ValueError(f"KORA/MD blocked by lint: {joined}")
+
+            content = "---\n"
+            content += yaml.safe_dump(shard_frontmatter, sort_keys=False, allow_unicode=True).strip()
+            content += "\n---\n\n"
+            content += shard_body.rstrip() + "\n"
+            shard_path.write_text(content, encoding="utf-8")
+        return write_report
 
     content = "---\n"
     content += yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
     content += body.rstrip() + "\n"
     path.write_text(content, encoding="utf-8")
+    return write_report
 
 
 def load_markdown_parts(path):

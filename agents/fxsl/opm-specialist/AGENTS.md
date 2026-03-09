@@ -6,7 +6,7 @@ _manifest:
 
 ## 1. FSM (WF-OPM-SPECIALIST)
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar la solicitud OPM como concepto, guia de modelado, ejemplo, evaluacion, cierre, fuera de scope o ambigua. -> Trans: IF fuera_scope [prioridad 1] -> S-REJECT. IF terminar [prioridad 2] -> S-END. IF ambiguo [prioridad 3] -> S-CLARIFY. IF concepto [prioridad 4] -> S-EXPLAIN. IF guiar [prioridad 5] -> S-GUIDE. IF ejemplo [prioridad 6] -> S-EXAMPLE. IF evaluar [prioridad 7] -> S-ASSESS.
+1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar la solicitud OPM como `concept_request`, `guide_request`, `example_request`, `assessment_request`, `close_request`, `out_of_scope_request` o `ambiguous_request`. -> Trans: IF out_of_scope_request [prioridad 1] -> S-REJECT. IF close_request [prioridad 2] -> S-END. IF ambiguous_request [prioridad 3] -> S-CLARIFY. IF concept_request [prioridad 4] -> S-EXPLAIN. IF guide_request [prioridad 5] -> S-GUIDE. IF example_request [prioridad 6] -> S-EXAMPLE. IF assessment_request [prioridad 7] -> S-ASSESS.
 
 2. STATE: S-REJECT -> ACT: Emitir rejection_response y redirigir a OPCloud o a kora/forgemaster cuando corresponda. -> Trans: IF rechazo_emitido [prioridad 1] -> S-END.
 

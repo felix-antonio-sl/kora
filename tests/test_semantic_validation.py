@@ -21,6 +21,7 @@ from kora_lib.validation import (
     find_meta_intro_headings,
     find_opaque_internal_refs,
     find_oversized_primary_chunks,
+    split_kora_markdown_parts,
     find_truncated_markdown_headings,
     find_unverifiable_external_references,
     formal_section_exists,
@@ -290,6 +291,24 @@ class SemanticValidationTests(unittest.TestCase):
         self.assertIn("[-> Subtema resoluble](#subtema-resoluble)", fixed)
         self.assertNotIn("## Introduccion general", fixed)
 
+    def test_split_kora_markdown_parts_splits_large_normative_body(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-split"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+            "extensions": {"kora": {"family": "normative"}},
+        }
+        sections = []
+        for idx in range(10):
+            sections.append(f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(25)))
+        body = "# Demo\n\n" + "\n\n".join(sections) + "\n"
+        shards, report = split_kora_markdown_parts(frontmatter, body)
+        self.assertTrue(report["applied"])
+        self.assertGreater(len(shards), 1)
+        self.assertEqual(report["shard_count"], len(shards))
+
     def test_skill_purity_flags_conversational_turn_control(self):
         failures = validate_skill_purity("Si ambiguedad: preguntar al usuario\n")
         self.assertIn("Skill contiene control conversacional no permitido", failures[0])
@@ -527,6 +546,27 @@ class SemanticValidationTests(unittest.TestCase):
             self.assertNotIn("<br>", written)
             self.assertNotIn("GORE-NUBLE-GUIA-CTX-01", written)
             self.assertIn("[-> Seccion util](#seccion-util)", written)
+
+    def test_dump_yaml_frontmatter_and_body_writes_split_shards_and_report(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "split.md"
+            frontmatter = {
+                "_manifest": {"urn": "urn:kora:kb:test-writer-split"},
+                "version": "1.0.0",
+                "status": "draft",
+                "tags": ["a", "b", "c"],
+                "lang": "es",
+                "extensions": {"kora": {"family": "normative"}},
+            }
+            body = "# Demo\n\n" + "\n\n".join(
+                f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(25))
+                for idx in range(10)
+            ) + "\n"
+            report = dump_yaml_frontmatter_and_body(path, frontmatter, body)
+            self.assertTrue(report["split"]["applied"])
+            self.assertGreater(report["split"]["shard_count"], 1)
+            self.assertTrue(path.exists())
+            self.assertTrue((path.parent / "split--p02.md").exists())
 
     def test_dump_yaml_frontmatter_and_body_allows_non_kb_published_bootstrap(self):
         with TemporaryDirectory() as tmpdir:

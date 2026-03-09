@@ -6,7 +6,7 @@ _manifest:
 
 ## catalog_resolve
 
-- **Firma:** `urn: string -> path: string`
+- **Firma:** urn: string -> path: string
 - **Parametros:** `urn` conceptual del artefacto KB a resolver.
 - **Cuando usar:** Toda consulta KB requiere resolucion URN via catalogo antes de acceder al artefacto.
 - **Cuando NO usar:** Datos ya en contexto o tema ya mapeado en el turno actual.
@@ -15,7 +15,7 @@ _manifest:
 
 ## kb_route
 
-- **Firma:** `query_topic: string -> urns: string[]`
+- **Firma:** query_topic: string -> urns: string[]
 - **Parametros:** `query_topic` con la familia de modelado o integracion a priorizar.
 - **Cuando usar:** Clasificar tema y priorizar una o mas URNs KB antes de resolverlas via `catalog_resolve`.
 - **Cuando NO usar:** Cuando el tema ya fue mapeado en el turno actual.
