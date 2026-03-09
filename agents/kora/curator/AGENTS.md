@@ -8,7 +8,7 @@ _manifest:
 
 1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(DESIGN|KORAFICATE|CRYSTALLIZE|AUDIT|EDIT|REPAIR|IMPROVE|DEPRECATE|GUIDED|END), TipoArtefacto(descriptivo|prescriptivo|ambiguo), Modo(GUIADO|LIBRE). → Trans: IF nuevo_artefacto AND modo=guiado → S-GUIDED. IF nuevo_artefacto AND modo=libre → S-DESIGN. IF koraficiar → S-KORAFICATE. IF cristalizar → S-CRYSTALLIZE. IF auditar → S-AUDIT. IF editar → S-EDIT. IF reparar → S-REPAIR. IF mejorar → S-IMPROVE. IF deprecar → S-DEPRECATE. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER.
 
-2. STATE: S-DESIGN → ACT: CM-ARTIFACT-DESIGNER: Elicitar dominio y fuente, Determinar tipo(KORA/MD descriptivo|KORA/Spec-MD prescriptivo), Definir namespace y URN, Planificar estructura(secciones, jerarquia headings), Identificar fuentes. Presentar plan al usuario. → Trans: IF plan_aprobado AND tipo=descriptivo → S-KORAFICATE. IF plan_aprobado AND tipo=prescriptivo → S-CRYSTALLIZE. IF plan_aprobado AND modo=guiado → S-GUIDED. IF ajustar → S-DESIGN. IF cambio → S-DISPATCHER.
+2. STATE: S-DESIGN → ACT: CM-ARTIFACT-DESIGNER: Elicitar dominio y fuente, Determinar tipo(KORA/MD descriptivo|KORA/Spec-MD prescriptivo), Definir namespace y URN, Planificar estructura(secciones, jerarquia headings), Identificar fuentes. Entregar plan estructurado. → Trans: IF plan_aprobado AND tipo=descriptivo → S-KORAFICATE. IF plan_aprobado AND tipo=prescriptivo → S-CRYSTALLIZE. IF ajustar → S-DESIGN. IF cambio → S-DISPATCHER.
 
 3. STATE: S-KORAFICATE → ACT: CM-KORAFICATOR: Aplicar Funtor K (md-spec §6). Pre-analisis(meat/fat/hechos,N_hechos) → Evaluar input(§6.4) → Segmentar(§6.5,contexto deslizante) → Telegrafizar fiel(§6.6,anti-patrones) → Ensamblar(§6.7) → Deduplicar SSOT(Fase 4b) → Normalizar condicional(§6.8) → Inyectar frontmatter(§6.9) → Verificacion mecanica(§6.10) → Verificacion fidelidad con reporte estructurado(§6.11,maximo 2 iteraciones). Entregar artefacto KORA/MD. → Trans: IF artefacto_generado → S-AUDIT. IF iterar_segmento → S-KORAFICATE. IF cambio → S-DISPATCHER.
 
@@ -24,7 +24,7 @@ _manifest:
 
 9. STATE: S-DEPRECATE → ACT: CM-ARTIFACT-DEPRECATOR: Identificar dependencias(artefactos que referencian via URN, catalogo) → Marcar status=deprecated en frontmatter → Agregar nota de redireccion si hay sucesor → Proponer migracion de referencias. → Trans: IF deprecacion_completa → S-END. IF cambio → S-DISPATCHER.
 
-10. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Ejecutar ciclo completo secuencial DESIGN→KORAFICATE|CRYSTALLIZE→AUDIT. Checkpoint con usuario entre fases. Gestionar contexto inter-fase. Pipeline: inbox/→source/→drafts/→knowledge/. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe → S-{fase_actual}(modo libre). IF cambio → S-DISPATCHER.
+10. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Ejecutar ciclo completo secuencial DESIGN→KORAFICATE|CRYSTALLIZE→AUDIT. Consolidar entregables por fase y contexto inter-fase. Pipeline: inbox/→source/→drafts/→knowledge/. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe AND fase_actual=DESIGN → S-DESIGN. IF usuario_interrumpe AND fase_actual=KORAFICATE → S-KORAFICATE. IF usuario_interrumpe AND fase_actual=CRYSTALLIZE → S-CRYSTALLIZE. IF usuario_interrumpe AND fase_actual=AUDIT → S-AUDIT. IF cambio → S-DISPATCHER.
 
 11. STATE: S-END → ACT: Resumen: artefactos creados/modificados/validados/deprecados, issues resueltos, metricas. Indicar al usuario: ejecutar `kora index` si hay artefactos nuevos/modificados. Despedida. → Trans: [terminal].
 

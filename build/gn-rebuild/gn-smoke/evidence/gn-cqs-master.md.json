@@ -8,10 +8,10 @@
     "ontologies/onto_gorenuble/goreNubleCQs_Master.yml"
   ],
   "fs": 100,
-  "cr": 3.07,
+  "cr": 1.84,
   "review_gate": "auto",
-  "skeleton_count": 23,
-  "meat_count": 1038,
+  "skeleton_count": 21,
+  "meat_count": 1024,
   "fat_count": 0,
   "scope_statement": "Preguntas de competencia maestras del bundle ontologico GN.",
   "expected_sections": [
@@ -991,10 +991,6 @@
     "Dom_20_Umbrales_Transversal.Relacionales[2].Q=¿Qué relación tiene la Glosa 03 con las prohibiciones de uso de recursos FNDR?",
     "Dom_20_Umbrales_Transversal.Temporales[0].ID=CQ-472",
     "Dom_20_Umbrales_Transversal.Temporales[0].Q=¿Cuál es la fecha de actualización del valor UTM usado como referencia para umbrales?",
-    "LLM_Parsing_Instructions.Content=BEGIN_LLM_INSTRUCTIONS\nYou are an AI agent consuming a KODA artifact. Parse with absolute fidelity.\n\nFIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).\n\nLEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation\n\nREFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.\n\nLANGUAGE POLICY: Keywords in English, content in original language. Never translate content.\nEND_LLM_INSTRUCTIONS\n",
-    "LLM_Parsing_Instructions.ID=KODA-LLM-PARSER-01",
-    "LLM_Parsing_Instructions.Prohib=Using for artifact creation or translation.",
-    "LLM_Parsing_Instructions.Req=Mandatory block following Metadata.",
     "Resumen_Estadistico.Parte_II_KODA=223",
     "Resumen_Estadistico.Parte_I_Ontologias=249",
     "Resumen_Estadistico.Por_Dominio[0].CQs=28",
@@ -1045,17 +1041,7 @@
     "Resumen_Estadistico.Por_Tipo[2].Tipo=Temporal",
     "Resumen_Estadistico.Por_Tipo[3].CQs=93",
     "Resumen_Estadistico.Por_Tipo[3].Tipo=Agregacion",
-    "Resumen_Estadistico.Total_CQs=472",
-    "_manifest.provenance.created_at=2025-01-23",
-    "_manifest.provenance.created_by=FS",
-    "_manifest.provenance.modified_at=2026-01-23",
-    "_manifest.statistics.domains=20",
-    "_manifest.statistics.total_cqs=472",
-    "_manifest.statistics.types.agregacion=93",
-    "_manifest.statistics.types.existencial=172",
-    "_manifest.statistics.types.relacional=138",
-    "_manifest.statistics.types.temporal=69",
-    "_manifest.urn=urn:knowledge:gorenuble:ontology:cqs-master:1.0.1"
+    "Resumen_Estadistico.Total_CQs=472"
   ],
   "non_equivalence_decisions": [
     "El derivado MD representa solo el scope declarado de CQs y no reemplaza la fuente ontologica completa."

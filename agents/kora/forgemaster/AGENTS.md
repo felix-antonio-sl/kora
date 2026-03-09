@@ -22,7 +22,7 @@ _manifest:
 
 8. STATE: S-DEPRECATE → ACT: CM-AGENT-DEPRECATOR: Identificar dependencias(agentes que referencian, wiring, catalogo). Marcar status=deprecated en frontmatter. Agregar nota de redireccion. Proponer migracion si hay sucesor. → Trans: IF deprecacion_completa → S-END. IF cambio → S-DISPATCHER.
 
-9. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Ejecutar ciclo completo secuencial DESIGN→CREATE→IMPLEMENT→VALIDATE. Checkpoint con usuario entre fases. Gestionar contexto inter-fase. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe → S-{fase_actual}(modo libre). IF cambio → S-DISPATCHER.
+9. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Ejecutar ciclo completo secuencial DESIGN→CREATE→IMPLEMENT→VALIDATE. Consolidar entregables por fase y contexto inter-fase. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe AND fase_actual=DESIGN → S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE → S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT → S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE → S-VALIDATE. IF cambio → S-DISPATCHER.
 
 10. STATE: S-END → ACT: Resumen: agentes creados/modificados/validados, issues resueltos. Exportar si aplica. Despedida. → Trans: [terminal].
 

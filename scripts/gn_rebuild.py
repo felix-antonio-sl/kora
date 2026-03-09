@@ -50,6 +50,99 @@ TOP_LEVEL_KODA_TECHNICAL_KEYS = {
 NESTED_KODA_TECHNICAL_KEYS = {
     "LLM_Parsing_Instructions",
 }
+KODA_BODY_EXCLUDED_KEYS = {
+    "ID",
+    "Version",
+    "Status",
+    "Format",
+    "Human-Creator",
+    "Human-Editor",
+    "Model-Collaborator",
+    "AI-Remediator",
+    "Creation-Date",
+    "Modification-Date",
+    "Primary-Source",
+    "Authoritative-Source",
+    "Source-Hierarchy",
+    "Ref-STS-Guide",
+    "LLM_Parsing_Instructions",
+}
+SEMANTIC_FIELD_LABELS = {
+    "Act": "Acciones",
+    "Alcance": "Alcance",
+    "Asunto": "Asunto",
+    "Cond": "Condiciones",
+    "Content": "Contenido",
+    "Contexto": "Contexto",
+    "Ctx": "Contexto",
+    "Def": "Definicion",
+    "Dependencia": "Dependencia",
+    "Destinatarios": "Destinatarios",
+    "Fnd": "Fundamento",
+    "Intro": "Introduccion",
+    "Mech": "Mecanismo",
+    "Mssn": "Mision",
+    "Obj": "Objetivos",
+    "Proc": "Proceso",
+    "Prohib": "Prohibiciones",
+    "Purp": "Proposito",
+    "Ref": "Referencias",
+    "Relacion": "Relacion",
+    "Req": "Requisitos",
+    "Res": "Resultados",
+    "Resp": "Responsables",
+    "Sections": "Secciones",
+    "Src": "Fuentes",
+    "Titulo": "Titulo",
+    "Title": "Titulo",
+    "Unidad_Monetaria": "Unidad monetaria",
+    "Warn": "Advertencias",
+}
+BULLET_FIELD_KEYS = {
+    "Act",
+    "Cond",
+    "Ctx",
+    "Def",
+    "Dependencia",
+    "Destinatarios",
+    "Fnd",
+    "Intro",
+    "Mech",
+    "Mssn",
+    "Obj",
+    "Proc",
+    "Prohib",
+    "Purp",
+    "Ref",
+    "Relacion",
+    "Req",
+    "Res",
+    "Resp",
+    "Sections",
+    "Src",
+    "Warn",
+}
+FIELD_HEADING_KEYS = {
+    "Act",
+    "Cond",
+    "Ctx",
+    "Def",
+    "Dependencia",
+    "Destinatarios",
+    "Fnd",
+    "Mech",
+    "Obj",
+    "Proc",
+    "Prohib",
+    "Ref",
+    "Relacion",
+    "Req",
+    "Res",
+    "Resp",
+    "Sections",
+    "Src",
+    "Warn",
+}
 URN_TOKEN_PATTERN = re.compile(r"urn:[A-Za-z0-9:_\-\.#]+")
 LEGACY_TARGET_ALIASES = {
     "cuentas-publicas-2021-2024": ["cuentas-publicas"],
@@ -140,6 +233,10 @@ def headingify(key):
     return text[0].upper() + text[1:]
 
 
+def field_label(key):
+    return SEMANTIC_FIELD_LABELS.get(key, headingify(str(key)))
+
+
 def normalize_scalar(value):
     if value is None:
         return "null"
@@ -148,6 +245,10 @@ def normalize_scalar(value):
     text = str(value)
     text = re.sub(r"(?m)^(#{1,6}\s)", r"\\\1", text)
     return text
+
+
+def escape_markdown_table_cell(value):
+    return normalize_scalar(value).replace("|", "\\|").replace("\n", "<br>")
 
 
 def legacy_namespace_from_source_path(source_path):
@@ -306,6 +407,126 @@ def is_table_candidate(items):
     return bool(key_sets) and all(keys == key_sets[0] for keys in key_sets)
 
 
+def is_columns_rows_table(node):
+    if not isinstance(node, dict):
+        return False
+    return isinstance(node.get("Columns"), list) and isinstance(node.get("Rows"), list)
+
+
+def render_columns_rows_table(node):
+    headers = [escape_markdown_table_cell(item) for item in node.get("Columns", [])]
+    rows = node.get("Rows", [])
+    if not headers:
+        return []
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join("---" for _ in headers) + " |",
+    ]
+    for row in rows:
+        if not isinstance(row, list):
+            continue
+        padded = list(row) + [""] * max(0, len(headers) - len(row))
+        lines.append("| " + " | ".join(escape_markdown_table_cell(item) for item in padded[: len(headers)]) + " |")
+    return lines
+
+
+def is_scalar_or_scalar_list(value):
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return True
+    if isinstance(value, list):
+        return all(not isinstance(item, (dict, list)) for item in value)
+    return False
+
+
+def render_field_block(label, value, level):
+    heading_level = min(level + 1, 4)
+    lines = [f"{'#' * heading_level} {label}"]
+    if isinstance(value, list):
+        if value and all(not isinstance(item, (dict, list)) for item in value):
+            lines.extend(f"- {normalize_scalar(item)}" for item in value)
+        elif is_table_candidate(value):
+            headers = list(value[0].keys())
+            lines.append("| " + " | ".join(headers) + " |")
+            lines.append("| " + " | ".join("---" for _ in headers) + " |")
+            for item in value:
+                lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+        else:
+            for item in value:
+                if isinstance(item, dict):
+                    lines.append("-")
+                    for row in render_kora_node(item, heading_level):
+                        lines.append(f"  {row}" if row else "")
+                else:
+                    lines.append(f"- {normalize_scalar(item)}")
+    elif isinstance(value, dict):
+        lines.extend(render_kora_node(value, heading_level))
+    else:
+        lines.append(normalize_scalar(value))
+    return lines
+
+
+def render_kora_node(node, level):
+    lines = []
+    if is_columns_rows_table(node):
+        lines.extend(render_columns_rows_table(node))
+        return lines
+
+    if isinstance(node, dict):
+        for key, value in node.items():
+            if key in KODA_BODY_EXCLUDED_KEYS:
+                continue
+            if is_columns_rows_table(value):
+                lines.append(f"{'#' * min(level + 1, 4)} {field_label(key)}")
+                lines.extend(render_columns_rows_table(value))
+                continue
+            if key in BULLET_FIELD_KEYS and is_scalar_or_scalar_list(value):
+                lines.extend(render_field_block(field_label(key), value, level))
+                continue
+            if isinstance(value, list) and is_table_candidate(value):
+                lines.append(f"{'#' * min(level + 1, 4)} {field_label(key)}")
+                headers = list(value[0].keys())
+                lines.append("| " + " | ".join(headers) + " |")
+                lines.append("| " + " | ".join("---" for _ in headers) + " |")
+                for item in value:
+                    lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+                continue
+
+            heading_level = min(level + 1, 4)
+            lines.append(f"{'#' * heading_level} {field_label(key)}")
+            if isinstance(value, dict):
+                lines.extend(render_kora_node(value, heading_level))
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        if is_table_candidate([item]):
+                            headers = list(item.keys())
+                            lines.append("| " + " | ".join(headers) + " |")
+                            lines.append("| " + " | ".join("---" for _ in headers) + " |")
+                            lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
+                        else:
+                            lines.append("-")
+                            rendered = render_kora_node(item, heading_level)
+                            lines.extend(f"  {line}" if line else "" for line in rendered)
+                    else:
+                        lines.append(f"- {normalize_scalar(item)}")
+            else:
+                lines.append(normalize_scalar(value))
+        return lines
+
+    if isinstance(node, list):
+        for item in node:
+            if isinstance(item, dict):
+                lines.append("-")
+                rendered = render_kora_node(item, level)
+                lines.extend(f"  {line}" if line else "" for line in rendered)
+            else:
+                lines.append(f"- {normalize_scalar(item)}")
+        return lines
+
+    lines.append(normalize_scalar(node))
+    return lines
+
+
 def canonical_scalar_facts(node, prefix="", facts=None):
     if facts is None:
         facts = []
@@ -330,6 +551,20 @@ def project_yaml_structured(doc):
         "meat_count": len(canonical_scalar_facts(doc)),
         "fat_count": 0,
         "data": doc,
+    }
+
+
+def project_koda_structured(doc):
+    semantic_doc = strip_koda_technical_fields(doc)
+    facts = canonical_scalar_facts(semantic_doc)
+    skeleton = sorted(semantic_doc.keys()) if isinstance(semantic_doc, dict) else []
+    return {
+        "kind": "koda_structured",
+        "facts": facts,
+        "skeleton": skeleton,
+        "meat_count": len(facts),
+        "fat_count": 0,
+        "data": semantic_doc,
     }
 
 
@@ -408,6 +643,8 @@ def project_source(path, source_type, scope_statement=None):
             doc, err = load_yaml_safe(path)
         if err:
             raise ValueError(f"no fue posible parsear {path}: {err}")
+        if source_type in {"koda_yaml", "ontology_yaml", "mixed"} and isinstance(doc, dict):
+            return project_koda_structured(doc)
         return project_yaml_structured(doc)
     if suffix == ".ttl":
         return project_ttl_scope(path.read_text(encoding="utf-8"), scope_statement or "")
@@ -426,11 +663,15 @@ def project_source(path, source_type, scope_statement=None):
 
 
 def render_markdown_value(value, level):
+    if is_columns_rows_table(value):
+        return render_columns_rows_table(value)
     lines = []
     if isinstance(value, dict):
         for key, child in value.items():
+            if key in KODA_BODY_EXCLUDED_KEYS:
+                continue
             heading_level = min(level + 1, 4)
-            lines.append(f"{'#' * heading_level} {headingify(str(key))}")
+            lines.append(f"{'#' * heading_level} {field_label(str(key))}")
             lines.extend(render_markdown_value(child, heading_level))
     elif isinstance(value, list):
         if is_table_candidate(value):
@@ -438,7 +679,7 @@ def render_markdown_value(value, level):
             lines.append("| " + " | ".join(headers) + " |")
             lines.append("| " + " | ".join("---" for _ in headers) + " |")
             for item in value:
-                lines.append("| " + " | ".join(normalize_scalar(item.get(header, "")) for header in headers) + " |")
+                lines.append("| " + " | ".join(escape_markdown_table_cell(item.get(header, "")) for header in headers) + " |")
         else:
             for item in value:
                 if isinstance(item, (dict, list)):
@@ -460,12 +701,18 @@ def render_direct_body(title, projection):
         if not top_keys:
             top_keys = list(data.keys())
         for key in top_keys:
-            lines.append(f"## {headingify(str(key))}")
-            lines.extend(render_markdown_value(data[key], 2))
+            if key in KODA_BODY_EXCLUDED_KEYS:
+                continue
+            if len(top_keys) == 1 and isinstance(data[key], dict):
+                lines.extend(render_kora_node(data[key], 1))
+                lines.append("")
+                continue
+            lines.append(f"## {field_label(str(key))}")
+            lines.extend(render_kora_node(data[key], 2))
             lines.append("")
     else:
         lines.append("## Contenido")
-        lines.extend(render_markdown_value(data, 2))
+        lines.extend(render_kora_node(data, 2))
     return "\n".join(line for line in lines if line is not None).strip() + "\n"
 
 
@@ -506,10 +753,24 @@ def find_embedded_markdown(node):
     return None
 
 
+def embedded_markdown_looks_kora_like(text):
+    banned_patterns = (
+        r"(?m)^##\s+ID\b",
+        r"(?m)^##\s+Version\b",
+        r"(?m)^##\s+Status\b",
+        r"(?m)^##\s+Format\b",
+        r"(?m)^##\s+LLM Parsing Instructions\b",
+        r"(?m)^#{2,4}\s+(Id|Urn|Path|Tipo)\b",
+        r"BEGIN_LLM_INSTRUCTIONS",
+        r"END_LLM_INSTRUCTIONS",
+    )
+    return not any(re.search(pattern, text) for pattern in banned_patterns)
+
+
 def render_koda_hybrid_body(title, projection):
     data = strip_koda_technical_fields(projection["data"])
     embedded_body = find_embedded_markdown(data)
-    if embedded_body:
+    if embedded_body and embedded_markdown_looks_kora_like(embedded_body):
         return embedded_body.rstrip() + "\n"
 
     if isinstance(data, dict):
@@ -593,10 +854,7 @@ def render_secondary_source_summary(source_path, projection):
     if projection["kind"] == "ttl_scope":
         lines.append(f"- Tipo: TTL derivado")
         lines.append(f"- Hechos capturados: {len(projection['facts'])}")
-        sample = projection["data"][: min(8, len(projection["data"]))]
-        if sample:
-            lines.append("- Muestra:")
-            lines.extend(f"  - `{item}`" for item in sample)
+        lines.append("- Presentacion: resumen de soporte derivado; detalles completos en evidence.")
         return lines
 
     data = projection["data"]
@@ -642,26 +900,18 @@ def render_cqs_catalog_body(title, item, data):
                 counts.append(f"{bucket}: {len(values)}")
         if counts:
             lines.append("- " + " | ".join(counts))
-
-        sample_rows = []
         for bucket in ("Existenciales", "Relacionales", "Temporales", "Agregacion"):
             values = domain.get(bucket, [])
-            for item_value in values[:2]:
+            if not values:
+                continue
+            lines.extend(["", f"### {field_label(bucket)}"])
+            lines.append("| ID | Pregunta |")
+            lines.append("| --- | --- |")
+            for item_value in values:
                 if isinstance(item_value, dict):
-                    sample_rows.append(
-                        {
-                            "Tipo": type_labels.get(bucket, bucket),
-                            "ID": item_value.get("ID", ""),
-                            "Pregunta": item_value.get("Q", ""),
-                        }
+                    lines.append(
+                        f"| {escape_markdown_table_cell(item_value.get('ID', ''))} | {escape_markdown_table_cell(item_value.get('Q', ''))} |"
                     )
-        if sample_rows:
-            lines.append("| Tipo | ID | Pregunta |")
-            lines.append("| --- | --- | --- |")
-            for row in sample_rows:
-                lines.append(
-                    f"| {normalize_scalar(row['Tipo'])} | {normalize_scalar(row['ID'])} | {normalize_scalar(row['Pregunta'])} |"
-                )
     return "\n".join(lines).strip() + "\n"
 
 
@@ -951,14 +1201,16 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, 
     skeleton_count = 0
     meat_count = 0
     fat_count = 0
+    semantic_source_len = 0
     for projection in projections.values():
         combined_facts.extend(projection["facts"])
         skeleton_count += len(projection.get("skeleton", []))
         meat_count += projection.get("meat_count", 0)
         fat_count += projection.get("fat_count", 0)
+        semantic_source_len += len("\n".join(projection["facts"]))
 
     body_len = max(len(body), 1)
-    source_len = sum(len(path.read_text(encoding="utf-8")) for path in mirrored_sources.values())
+    source_len = max(semantic_source_len, 1)
     cr = round(source_len / body_len, 2)
     gn_ext = {
         "source_paths": list(item["source_paths"]),
@@ -1019,6 +1271,19 @@ def evidence_relpath_for(target_path):
 def validate_build_evidence(draft_root, evidence_root, expected_targets):
     failures = []
     warnings = []
+    banned_fact_prefixes = (
+        "LLM_Parsing_Instructions",
+        "Format=",
+        "Version=",
+        "Status=",
+        "Human-Creator=",
+        "Human-Editor=",
+        "Model-Collaborator=",
+        "AI-Remediator=",
+        "Creation-Date=",
+        "Modification-Date=",
+        "Primary-Source=",
+    )
 
     for rel_path, meta in sorted(expected_targets.items()):
         draft_path = draft_root / rel_path
@@ -1041,6 +1306,11 @@ def validate_build_evidence(draft_root, evidence_root, expected_targets):
 
         if evidence.get("catalog_state") != "draft_unindexed":
             failures.append(f"evidence catalog_state invalido en {evidence_path.name}")
+
+        for fact in evidence.get("preserved_facts", []):
+            if isinstance(fact, str) and fact.startswith(banned_fact_prefixes):
+                failures.append(f"evidence preserva residuo KODA tecnico en {evidence_path.name}: {fact}")
+                break
 
         if not draft_path.exists():
             continue

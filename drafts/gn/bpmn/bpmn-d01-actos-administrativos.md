@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d01-actos-administrativos
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D01_actos_administrativos_koda.yml
 version: 2.0.0
 status: draft
@@ -25,84 +25,25 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.28
+    cr: 1.65
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 23
-    meat_count: 127
+    skeleton_count: 10
+    meat_count: 95
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-d01-actos-administrativos.md.json
 ---
 
 # BPMN D01: Tramitación de Actos Administrativos
-## ID
-BPMN-GN-D01-ACTOS-ADMIN-KODA
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-- Cascade
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-22
-
-## Modification Date
-2025-12-22
-
-## Ctx
-Especificación STS del dominio D01: Tramitación de Actos Administrativos del GORE Ñuble, modelado en BPMN.
-
 ## Source
 ### Ctx Required
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
-### Primary Source
-sources/gn/arquitectura/bpmn/D01_actos_administrativos.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx: or Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
 
 ## Metadatos Dominio
-### ID
-DOM-ACTOS-ADMIN
 ### Criticidad
 🟠 Alta
 ### Dueno
@@ -116,8 +57,6 @@ Unidad Jurídica
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.100-499
 
 ## Mapa General Dominio
-### ID
-BPMN-GN-ACTOS-ADMIN-MAPA-01
 ### Cpt
 Mapa general de los procesos de actos administrativos (resoluciones exentas y convenios/transferencias) y elementos transversales.
 ### Mermaid
@@ -141,8 +80,6 @@ flowchart LR
 
 
 ## P1 Flujo Resoluciones Exentas
-### ID
-BPMN-GN-RES-EXENTAS-FLUJO-01
 ### Fases
 7
 ### SLA
@@ -201,8 +138,6 @@ flowchart TD
     style T fill:#607D8B,color:#fff
 
 ### Roles por Fase
-#### ID
-BPMN-GN-RES-EXENTAS-ROLES-01
 #### Filas
 | Fase | Responsable |
 | --- | --- |
@@ -215,8 +150,6 @@ BPMN-GN-RES-EXENTAS-ROLES-01
 | Notificación y Archivo | Oficina de Partes |
 
 ## P2 Convenios y Transferencias
-### ID
-BPMN-GN-CONVENIOS-TRANSFERENCIAS-01
 ### Cpt
 Proceso para la tramitación de convenios y transferencias asociadas a actos administrativos.
 ### Diagrama de Flujo
@@ -232,8 +165,6 @@ flowchart TD
     G --> H["Ejecución y<br/>seguimiento"]
 
 ### Contenido Minimo Convenio
-#### ID
-BPMN-GN-CONVENIOS-CONTENIDO-01
 #### Filas
 | Elemento | Descripcion |
 | --- | --- |
@@ -246,8 +177,6 @@ BPMN-GN-CONVENIOS-CONTENIDO-01
 | Restitucion | Condiciones de devolución |
 | Probidad | Cláusulas anticorrupción |
 ### Criterios Toma de Razon
-#### ID
-BPMN-GN-CONVENIOS-TOMA-RAZON-01
 #### Mermaid
 flowchart TD
     A["Convenio<br/>firmado"] --> B{"Monto y<br/>naturaleza"}
@@ -260,8 +189,6 @@ flowchart TD
 
 
 ## Expediente Electronico Ley 21180
-### ID
-BPMN-GN-ACTOS-EXPEDIENTE-01
 ### Estructura Expediente
 #### Mermaid
 flowchart TD
@@ -277,8 +204,6 @@ flowchart TD
     style C fill:#2196F3,color:#fff
 
 ### Principios TDE
-#### ID
-BPMN-GN-ACTOS-TDE-PRINCIPIOS-01
 #### Filas
 | Principio | Aplicacion |
 | --- | --- |
@@ -288,8 +213,6 @@ BPMN-GN-ACTOS-TDE-PRINCIPIOS-01
 | Seguridad | Integridad, autenticidad, no repudio |
 
 ## Sistemas Involucrados
-### ID
-BPMN-GN-ACTOS-SISTEMAS-01
 ### Filas
 | Sistema | Funcion |
 | --- | --- |
@@ -299,8 +222,6 @@ BPMN-GN-ACTOS-SISTEMAS-01
 | SYS-TRANSPARENCIA | Publicación |
 
 ## Normativa Aplicable
-### ID
-BPMN-GN-ACTOS-NORMATIVA-01
 ### Filas
 | Norma | Alcance |
 | --- | --- |
@@ -311,8 +232,6 @@ BPMN-GN-ACTOS-NORMATIVA-01
 | Ley 19.886 | Contratación pública |
 
 ## Referencias Cruzadas
-### ID
-BPMN-GN-ACTOS-REFERENCIAS-01
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
@@ -321,7 +240,5 @@ BPMN-GN-ACTOS-REFERENCIAS-01
 | D08 Rendiciones | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md'] | Convenios de transferencia |
 
 ## Ultima Actualizacion
-### ID
-BPMN-GN-ACTOS-ULT-ACT-01
 ### Cpt
 Última actualización: 2025-12-16

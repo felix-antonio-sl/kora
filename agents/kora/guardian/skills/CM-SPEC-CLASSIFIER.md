@@ -13,18 +13,18 @@ lang: es
 Clasificar solicitudes relacionadas con specs fundacionales e invariantes estructurales.
 
 ## Input/Output
-- **Input:** Solicitud del operador y contexto de la sesion.
-- **Output:** Clasificacion `{capacidad, riesgo, target}`.
+- **Input:** solicitud: string, contexto_sesion: ContextSummary | null
+- **Output:** SpecClassification (ver Signature Output)
 
 ## Procedimiento
-1. Determinar si la solicitud es consulta, auditoria o proteccion.
+1. Determinar si la solicitud es governance, validation o end.
 2. Estimar riesgo sobre invariantes.
 3. Proponer target fundacional relevante.
 
 ## Signature Output
 ```yaml
 clasificacion:
-  capacidad: "CONSULTAR"
+  capacidad: "GOVERNANCE"
   riesgo: "medio"
-  target: "agent-spec"
+  target: "agent-spec-md"
 ```

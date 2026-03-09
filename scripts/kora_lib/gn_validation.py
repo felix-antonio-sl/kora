@@ -13,6 +13,29 @@ FAT_PATTERNS = (
 
 INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([^\]]+)\]")
 URN_REF_PATTERN = re.compile(r"\[[^\]]+\]\((urn:[^)]+)\)")
+KODA_RESIDUE_HEADING_TITLES = {
+    "id",
+    "version",
+    "status",
+    "format",
+    "human creator",
+    "human editor",
+    "model collaborator",
+    "ai remediator",
+    "creation date",
+    "modification date",
+    "llm parsing instructions",
+    "primary source",
+    "ctx required",
+    "ctx optional",
+    "columns",
+    "rows",
+}
+KODA_RESIDUE_PATTERNS = (
+    re.compile(r"BEGIN_LLM_INSTRUCTIONS"),
+    re.compile(r"END_LLM_INSTRUCTIONS"),
+    re.compile(r"\bLLM_Parsing_Instructions\b"),
+)
 
 
 def slugify_heading(text):
@@ -135,10 +158,17 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
             failures.append("debe existir exactamente un heading nivel #")
         if not any(level == 2 for level, _title in headings):
             failures.append("debe existir al menos una seccion ## recuperable")
+        residue_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in KODA_RESIDUE_HEADING_TITLES]
+        if residue_headings:
+            failures.append(f"residuo KODA en headings: {', '.join(sorted(dict.fromkeys(residue_headings))[:8])}")
 
     for pattern in FAT_PATTERNS:
         if pattern.search(body or ""):
             warnings.append(f"posible grasa detectada: {pattern.pattern}")
+
+    for pattern in KODA_RESIDUE_PATTERNS:
+        if pattern.search(body or ""):
+            failures.append(f"residuo KODA en cuerpo: {pattern.pattern}")
 
     failures.extend(_resolve_internal_refs(body or "", headings))
 

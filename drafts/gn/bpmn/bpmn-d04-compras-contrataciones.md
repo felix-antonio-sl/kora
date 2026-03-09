@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d04-compras-contrataciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D04_compras_contrataciones_koda.yml
 version: 2.0.0
 status: draft
@@ -23,84 +23,26 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.18
+    cr: 1.01
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 16
-    meat_count: 43
+    skeleton_count: 3
+    meat_count: 11
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-d04-compras-contrataciones.md.json
 ---
 
 # BPMN D04: Compras Públicas y Contrataciones
-## ID
-BPMN-GN-D04-COMPRAS-KODA
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-- Cascade
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-22
-
-## Modification Date
-2025-12-22
-
-## Ctx
-Especificación STS del dominio D04: Compras Públicas y Contrataciones del GORE Ñuble, modelado en BPMN.
-
 ## Source
 ### Ctx Required
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
-### Primary Source
-sources/gn/arquitectura/bpmn/D04_compras_contrataciones.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx: or Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
 
 ## Metadatos Dominio
-### ID
-DOM-COMPRAS
 ### Criticidad
 🟠 Alta
 ### Dueno
@@ -114,11 +56,9 @@ Unidad de Abastecimiento
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.700-950
 
 ## Body MD
-### ID
-BPMN-GN-D04-COMPRAS-BODY-01
-### Src
+### Fuentes
 sources/gn/arquitectura/bpmn/D04_compras_contrataciones.md
-### Content
+### Contenido
 \# D04: Compras Públicas y Contrataciones
 
 \## Metadatos del Dominio

@@ -10,45 +10,38 @@ lang: es
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
-Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FORGE (KORAFICATE|CRYSTALLIZE) → AUDIT, con checkpoints entre fases y gestion de contexto inter-fase.
+Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FORGE (KORAFICATE|CRYSTALLIZE) → AUDIT, consolidando entregables y contexto inter-fase.
 
 ## Input/Output
 - **Input:** intencion: IntentClassification (modo=GUIADO), fuentes: Document[] | null
 - **Output:** LifecycleSummary (ver Signature Output)
 
 ## Procedimiento
-### Fase 1: DESIGN (checkpoint)
+### Fase 1: DESIGN
 1. Invocar CM-ARTIFACT-DESIGNER.
-2. Presentar plan al usuario.
-3. Esperar aprobacion antes de continuar.
-4. Preservar contexto: {tipo, namespace, urn, fuente, estrategia}.
+2. Registrar ArtifactPlan, tipo, namespace, URN y fuentes relevantes.
+3. Emitir checkpoint estructurado de fase con los pendientes del plan.
 
-### Fase 2: FORGE (checkpoint)
+### Fase 2: FORGE
 1. Segun tipo:
    - Descriptivo → invocar CM-KORAFICATOR (Funtor K).
    - Prescriptivo → invocar CM-CRYSTALLIZER (Funtor C).
-2. Presentar artefacto preliminar al usuario.
-3. Esperar confirmacion o iteracion.
-4. Preservar contexto: {artefacto_generado, metricas}.
+2. Registrar artefacto preliminar, metricas y observaciones de fidelidad.
+3. Emitir checkpoint estructurado de fase con artefacto y pendientes.
 
-### Fase 3: AUDIT (checkpoint)
+### Fase 3: AUDIT
 1. Invocar CM-ARTIFACT-AUDITOR.
-2. Presentar reporte al usuario.
-3. Si PASS → proceder a cierre.
-4. Si FAIL → ofrecer:
-   - Reparar automaticamente (→ CM-ARTIFACT-SURGEON).
-   - Volver a Fase 2 para re-iterar.
-   - Dejar en draft para revision manual.
+2. Consolidar veredicto PASS|FAIL, checks y metricas finales.
+3. Si FAIL, registrar issues accionables para una futura fase de reparacion o re-iteracion.
 
 ### Cierre
-1. Indicar al usuario: ejecutar `kora index` para registrar en catalogo.
-2. Sugerir: cambiar status draft → published una vez verificado.
-3. Resumen final: tipo, URN, metricas, issues resueltos.
+1. Consolidar resumen final: tipo, URN, metricas, status_sugerido y issues resueltos.
+2. Registrar acciones operativas sugeridas posteriores al ciclo.
 
 ### Gestion de Contexto Inter-Fase
 - Mantener estado acumulado entre fases: {fase_actual, plan, artefacto, reporte}.
-- Si usuario interrumpe → transicionar a la fase actual en modo libre.
-- Si usuario cambia de tema → S-DISPATCHER.
+- Preservar solo datos necesarios para reanudar la fase activa sin recalcular entregables previos.
+- Separar checkpoint de fase de cualquier decision conversacional o transicion FSM.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

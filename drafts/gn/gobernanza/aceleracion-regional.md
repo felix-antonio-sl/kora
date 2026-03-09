@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:aceleracion-regional
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/arquitectura/kb_gn_050_aceleracion_regional_koda.yml
 version: 2.0.0
 status: draft
@@ -24,76 +24,24 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.06
+    cr: 1.0
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 13
-    meat_count: 30
+    skeleton_count: 1
+    meat_count: 2
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__aceleracion-regional.md.json
 ---
 
 # Estrategia de desarrollo exponencial
-## ID
-KB-GN-050-ACELERACION-REGIONAL-KODA-01
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-IA-CASCADE
-
-## Creation Date
-2025-12-14
-
-## Modification Date
-2025-12-14
-
-## Ctx
-Estrategia de desarrollo exponencial / aceleración regional: principios (triple bottom line adaptado), arquitectura 10x, modelo operativo ExO-GORE (SCALE/IDEAS), palancas y gobernanza.
-
-## Primary Source
+## Fuentes
 kb_gn_050_aceleracion_regional_sts.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Ctx->Context, Ctx_Required->Required External Reference, Ctx_Optional->Optional External Reference, Def->Definition, Ex->Example, Mssn->Mission, Obj->Objective, Proc->Process, Purp->Purpose, Ref->Reference, XRef->Cross-Artifact Reference, XRef_Required->Mandatory Cross-Artifact Reference, Req->Requirement, Res->Result, Src->Source, Prohib->Prohibition, Warn->Warning, Just->Justification, Rec->Recommendation
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. XRef/XRef_Required: are external only—must point to a URN (optionally with #ID fragment) in another artifact. External documents without specific ID use Ctx:, Ctx_Required:, or Ctx_Optional:.
-
-LANGUAGE POLICY: Keywords in English, content in original language. Never translate content.
-END_LLM_INSTRUCTIONS
-
-
-## Content
-### Src
-kb_gn_050_aceleracion_regional_sts.md
-### Body
+## Body
 \# Estrategia de desarrollo exponencial
 
 ID: KB-GN-050-ACELERACION-REGIONAL-01

@@ -13,17 +13,19 @@ lang: es
 Mantener continuidad conversacional y detectar desvio fuera del dominio de resguardo fundacional.
 
 ## Input/Output
-- **Input:** Tema actual, estado FSM y restricciones activas.
-- **Output:** Decision de continuidad con contexto retenido.
+- **Input:** mensaje_actual: string, contexto_previo: ContextSummary | null, invariantes_activos: string[] | null
+- **Output:** ContextDecision (ver Signature Output)
 
 ## Procedimiento
-1. Comparar tema actual con el estado activo.
+1. Comparar tema actual con el contexto retenido.
 2. Detectar continuidad, cierre o desvio de dominio.
 3. Retener solo restricciones e invariantes relevantes.
+4. Emitir clasificacion de continuidad sin codificar transiciones FSM.
 
 ## Signature Output
 ```yaml
 context_decision:
-  action: "keep"
-  next_state: "S-CONSULTA"
+  continuidad: "CONTINUA"
+  invariantes_retenidos:
+    - "precedencia_normativa"
 ```

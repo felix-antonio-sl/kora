@@ -24,9 +24,9 @@ Aplica reparaciones quirurgicas a componentes del repo KORA: minima modificacion
    - Identificar minimo cambio necesario.
    - Verificar que fix no rompe otros componentes (buscar referencias cruzadas).
    - Listar archivos que seran modificados.
-5. Presentar fix al usuario: {archivo, cambio_propuesto, impacto}.
-6. ESPERAR CONFIRMACION. No proceder sin aprobacion explicita.
-7. Aplicar fix. Verificar resultado (re-leer archivo, re-ejecutar health si aplica).
+5. Generar propuesta de fix estructurada: {archivo, cambio_propuesto, impacto, precondiciones}.
+6. Aplicar fix quirurgico solo dentro del envelope operativo ya resuelto por el agente.
+7. Verificar resultado (re-leer archivo, re-ejecutar health si aplica).
 8. Documentar: que se cambio, por que, cuando.
 
 ## Signature Output

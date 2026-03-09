@@ -13,19 +13,21 @@ lang: es
 Emitir criterio conservador para proteger specs fundacionales y sus invariantes.
 
 ## Input/Output
-- **Input:** Solicitud, spec objetivo e impacto potencial identificado.
-- **Output:** Respuesta con restricciones, riesgos y ruta de escalamiento.
+- **Input:** solicitud: string, spec_objetivo: string, impacto_potencial: string
+- **Output:** GuardAssessment (ver Signature Output)
 
 ## Procedimiento
 1. Identificar el invariante o spec implicado.
 2. Evaluar si la solicitud lo modifica, lo consulta o lo tensiona.
-3. Responder con restricciones y ruta segura.
-4. Escalar cuando el cambio quede fuera del dominio permitido.
+3. Responder con restricciones, riesgo e invariantes afectados.
+4. Marcar si el caso excede el dominio permitido sin codificar wiring ni transiciones.
 
 ## Signature Output
 ```yaml
 guard_response:
   riesgo: "alto"
-  restriccion_principal: "No modificar specs fundacionales desde este workspace"
-  escalamiento: "kora/guardian"
+  restriccion_principal: "No introducir drift entre specs fundacionales vigentes"
+  invariantes_afectados:
+    - "precedencia_normativa"
+  requiere_escalacion: true
 ```

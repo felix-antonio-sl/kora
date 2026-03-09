@@ -259,6 +259,210 @@ class GnRebuildTests(unittest.TestCase):
             self.assertNotIn("LLM_Parsing_Instructions", body)
             self.assertNotIn("PARSER-01", body)
 
+    def test_korafy_direct_strips_koda_metadata_and_normalizes_columns_rows_tables(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/presupuesto").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:ley"},
+                "ID": "GN-LEY-01",
+                "Version": "1.0.0",
+                "Status": "Draft",
+                "Format": "KODA/Spec",
+                "LLM_Parsing_Instructions": {"ID": "PARSER-01", "Content": "ignore"},
+                "Ley_Presupuestos": {
+                    "ID": "GN-LEY-PPTO",
+                    "Purp": "Norma presupuestaria.",
+                    "Resumen": {
+                        "Asunto": "Partida 31",
+                        "Tabla_Resumen": {
+                            "Columns": ["Item", "Monto"],
+                            "Rows": [["Ingresos", "100"], ["Gastos", "80"]],
+                        },
+                    },
+                },
+            }
+            (
+                source_root / "domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml"
+            ).write_text(yaml.safe_dump(source, sort_keys=False, allow_unicode=True), encoding="utf-8")
+
+            self._write_md(
+                repo / "knowledge/gn/normativa/ley-presupuestos-2026-partida-31.md",
+                "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                "Partida 31",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "normativa/ley-presupuestos-2026-partida-31.md",
+                                "target_urn": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                                "transform_class": "korafy_direct",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "directclean")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "directclean", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/normativa/ley-presupuestos-2026-partida-31.md")
+            self.assertNotIn("## ID", body)
+            self.assertNotIn("## Version", body)
+            self.assertNotIn("LLM Parsing Instructions", body)
+            self.assertIn("| Item | Monto |", body)
+            self.assertIn("| Ingresos | 100 |", body)
+
+    def test_validate_rejects_koda_residue_in_body(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/presupuesto").mkdir(parents=True, exist_ok=True)
+            yaml_source = {
+                "_manifest": {"urn": "urn:test:kb:src"},
+                "Resumen": {"Objetivo": "Mantener fidelidad"},
+            }
+            (source_root / "domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml").write_text(
+                yaml.safe_dump(yaml_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/normativa/ley-presupuestos-2026-partida-31.md",
+                "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                "Partida 31",
+            )
+
+            draft_path = repo / "drafts/gn/normativa/ley-presupuestos-2026-partida-31.md"
+            draft_path.parent.mkdir(parents=True, exist_ok=True)
+            draft_path.write_text(
+                "\n".join(
+                    [
+                        "---",
+                        "_manifest:",
+                        "  urn: urn:gn:kb:ley-presupuestos-2026-partida-31",
+                        "  provenance:",
+                        "    created_by: fixture",
+                        "    created_at: '2026-03-08'",
+                        "    source: fixture",
+                        "version: 1.0.0",
+                        "status: draft",
+                        "tags: [gn, normativa, presupuesto]",
+                        "lang: es",
+                        "extensions:",
+                        "  gn:",
+                        "    source_paths: [domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml]",
+                        "    source_hashes:",
+                        "      domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml: deadbeef",
+                        "    source_type: koda_yaml",
+                        "    transformation_mode: korafy_direct",
+                        "    fs: 100",
+                        "    cr: 2.0",
+                        "    run_id: residue",
+                        "    review_gate: auto",
+                        "---",
+                        "",
+                        "# Partida 31",
+                        "",
+                        "## ID",
+                        "GN-LEY-PPTO",
+                        "",
+                        "## Contenido",
+                        "BEGIN_LLM_INSTRUCTIONS",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "normativa/ley-presupuestos-2026-partida-31.md",
+                                "target_urn": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                                "transform_class": "korafy_direct",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "residue")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+
+            evidence_root = repo / "build/gn-rebuild/residue/evidence"
+            evidence_root.mkdir(parents=True, exist_ok=True)
+            (evidence_root / "normativa__ley-presupuestos-2026-partida-31.md.json").write_text(
+                json.dumps(
+                    {
+                        "target_path": "normativa/ley-presupuestos-2026-partida-31.md",
+                        "draft_urn": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                        "catalog_state": "draft_unindexed",
+                        "preserved_facts": ["Resumen.Objetivo=Mantener fidelidad"],
+                    },
+                    indent=2,
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "residue")
+            self.assertNotEqual(validate.returncode, 0)
+            self.assertIn("residuo KODA en headings", validate.stdout)
+            self.assertIn("residuo KODA en cuerpo", validate.stdout)
+
     def test_validate_rejects_public_target_urn_in_draft_evidence(self):
         with TemporaryDirectory() as tmpdir:
             repo = Path(tmpdir) / "repo"

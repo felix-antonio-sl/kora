@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-index
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/_index.yml
 version: 2.0.0
 status: draft
@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: index_only
     fs: 100
-    cr: 41.62
+    cr: 27.91
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -31,8 +31,8 @@ extensions:
     - bpmn/bpmn-d01-actos-administrativos.md
     expected_sections:
     - Contenido
-    skeleton_count: 15
-    meat_count: 88
+    skeleton_count: 2
+    meat_count: 54
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-index.md.json
 ---

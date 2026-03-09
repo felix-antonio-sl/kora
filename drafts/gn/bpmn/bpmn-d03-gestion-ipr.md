@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d03-gestion-ipr
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-08'
+    created_at: '2026-03-09'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D03_gestion_ipr_koda.yml
 version: 2.0.0
 status: draft
@@ -24,84 +24,25 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.24
+    cr: 1.53
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
-    skeleton_count: 28
-    meat_count: 182
+    skeleton_count: 15
+    meat_count: 152
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-d03-gestion-ipr.md.json
 ---
 
 # BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)
-## ID
-BPMN-GN-D03-GESTION-IPR-KODA
-
-## Version
-1.0.0
-
-## Status
-Draft
-
-## Format
-KODA/Spec
-
-## Human Creator
-FS
-
-## Human Editor
-FS
-
-## Model Collaborator
-- Cascade
-
-## AI Remediator
-KODA-TRANSFORMER
-
-## Creation Date
-2025-12-22
-
-## Modification Date
-2025-12-22
-
-## Ctx
-Especificación STS del dominio D03: Gestión de Intervenciones Públicas Regionales (IPR) del GORE Ñuble, modelado en BPMN.
-
 ## Source
 ### Ctx Required
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
-### Primary Source
-sources/gn/arquitectura/bpmn/D03_gestion_ipr.md
-
-## LLM Parsing Instructions
-### ID
-KODA-LLM-PARSER-01
-### Req
-Mandatory block following Metadata.
-### Prohib
-Using for artifact creation or translation.
-### Content
-BEGIN_LLM_INSTRUCTIONS
-You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
-
-FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
-
-LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning.
-
-REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx: or Src:.
-
-LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
-END_LLM_INSTRUCTIONS
-
 
 ## Metadatos Dominio
-### ID
-DOM-IPR
 ### Criticidad
 🔴 Crítica
 ### Dueno
@@ -115,8 +56,6 @@ Jefatura DIPIR
 - knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.1888-3727
 
 ## Mapa General Dominio
-### ID
-BPMN-GN-IPR-MAPA-01
 ### Cpt
 Mapa general del ciclo de vida de las Intervenciones Públicas Regionales (IPR), incluyendo pre-fase y fases P1–P7.
 ### Mermaid
@@ -149,8 +88,6 @@ flowchart LR
 
 
 ## P0 Selector de Vias de Financiamiento IPR
-### ID
-BPMN-GN-IPR-SELECTOR-00
 ### Tipo
 Pre-Fase (Decisión Estratégica)
 ### Objetivo
@@ -182,8 +119,6 @@ flowchart TD
     style I fill:#607D8B,color:#fff
 
 ### Matriz Decision
-#### ID
-BPMN-GN-IPR-SELECTOR-MATRIZ-01
 #### Filas
 | Via | Tipo | Ejecutor | Monto | Condicion_Clave |
 | --- | --- | --- | --- | --- |
@@ -196,8 +131,6 @@ BPMN-GN-IPR-SELECTOR-MATRIZ-01
 | Transferencia | Programa | Entidad pública | Variable | ITF interno |
 
 ## P1 Ingreso Pertinencia y Admisibilidad
-### ID
-BPMN-GN-IPR-FASE1-01
 ### Subprocesos
 - Recepción
 - CDR
@@ -250,8 +183,6 @@ flowchart TD
 | Analista Preinversión | Revisión documental exhaustiva |
 
 ## P2 Evaluacion Tecnico Economica
-### ID
-BPMN-GN-IPR-FASE2-01
 ### Tracks
 - A (SNI)
 - B (Glosa 06)
@@ -344,8 +275,6 @@ flowchart TD
 
 
 ## P3 Obtencion de Financiamiento
-### ID
-BPMN-GN-IPR-FASE3-01
 ### Rutas
 - A (Sin CORE)
 - B (Con CORE)
@@ -389,8 +318,6 @@ flowchart TD
 | Regularización de ingresos | ❌ No |
 
 ## P4 Formalizacion
-### ID
-BPMN-GN-IPR-FASE4-01
 ### Subprocesos
 - Actos
 - Convenio
@@ -422,8 +349,6 @@ flowchart TD
 | Servicios Públicos | Al aprobar rendición |
 
 ## P5 Ejecucion y Supervision
-### ID
-BPMN-GN-IPR-FASE5-01
 ### Subprocesos
 - Inicio
 - Licitación
@@ -469,8 +394,6 @@ flowchart TD
 | Recepción definitiva | UT |
 
 ## P6 Modificaciones en Ejecucion
-### ID
-BPMN-GN-IPR-FASE6-01
 ### Subprocesos
 - Solicitud
 - Evaluación
@@ -494,8 +417,6 @@ flowchart TD
 
 
 ## P7 Cierre Tecnico Financiero y Evaluacion Ex Post
-### ID
-BPMN-GN-IPR-FASE7-01
 ### Subprocesos
 - Cierre Técnico
 - Cierre Financiero
@@ -535,8 +456,6 @@ flowchart TD
 
 
 ## Sistemas Involucrados
-### ID
-BPMN-GN-IPR-SISTEMAS-01
 ### Filas
 | Sistema | Fases_de_Uso |
 | --- | --- |
@@ -546,8 +465,6 @@ BPMN-GN-IPR-SISTEMAS-01
 | SYS-SISREC | P7 |
 
 ## Normativa Aplicable
-### ID
-BPMN-GN-IPR-NORMATIVA-01
 ### Filas
 | Norma | Alcance |
 | --- | --- |
@@ -559,8 +476,6 @@ BPMN-GN-IPR-NORMATIVA-01
 | Normas SNI/MDSF | Track A |
 
 ## Referencias Cruzadas
-### ID
-BPMN-GN-IPR-REFERENCIAS-01
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
@@ -569,7 +484,5 @@ BPMN-GN-IPR-REFERENCIAS-01
 | D01 Actos Administrativos | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md'] | Resoluciones, Convenios |
 
 ## Ultima Actualizacion
-### ID
-BPMN-GN-IPR-ULT-ACT-01
 ### Cpt
 Última actualización: 2025-12-16
