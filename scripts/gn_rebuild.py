@@ -46,6 +46,7 @@ DEFAULT_CONTROL_DRAFT_ROOT = Path("drafts/gn-control")
 DEFAULT_CONTROL_ROOT = Path("docs/reports/gn-control")
 TOP_LEVEL_KODA_TECHNICAL_KEYS = {
     "_manifest",
+    "_meta",
     "ID",
     "Version",
     "Status",
@@ -56,8 +57,12 @@ TOP_LEVEL_KODA_TECHNICAL_KEYS = {
     "AI-Remediator",
     "Creation-Date",
     "Modification-Date",
+    "Source_ID",
     "Primary-Source",
     "Authoritative-Source",
+    "Authoritative-Sources",
+    "Authoritative_Sources",
+    "Last-Validated",
     "Source-Hierarchy",
     "Ref-STS-Guide",
     "Ctx",
@@ -77,11 +82,16 @@ KODA_BODY_EXCLUDED_KEYS = {
     "AI-Remediator",
     "Creation-Date",
     "Modification-Date",
+    "Source_ID",
     "Primary-Source",
     "Authoritative-Source",
+    "Authoritative-Sources",
+    "Authoritative_Sources",
+    "Last-Validated",
     "Source-Hierarchy",
     "Ref-STS-Guide",
     "LLM_Parsing_Instructions",
+    "_meta",
 }
 SEMANTIC_FIELD_LABELS = {
     "Act": "Acciones",
@@ -218,6 +228,7 @@ ENGLISH_SCAFFOLD_LABELS = {
 }
 CONTROL_PUBLICATION_CLASS = "control"
 KNOWLEDGE_PUBLICATION_CLASS = "knowledge"
+TITLE_LIKE_KEYS = {"Title", "Titulo", "title", "titulo", "Name", "Nombre", "name", "nombre"}
 SOURCE_TEXT_REFERENCE_ALIASES = (
     (
         re.compile(r"ley org[áa]nica constitucional.*gobierno y administraci[oó]n regional|locgar|ley\s*n[°º]?\s*19\.175", re.IGNORECASE),
@@ -380,6 +391,109 @@ def english_to_spanish_scaffold(text):
     return ENGLISH_SCAFFOLD_LABELS.get(text, text)
 
 
+def resolve_target_urn(base, urn_alias_map):
+    if not base:
+        return None
+    if base in urn_alias_map:
+        return urn_alias_map[base]
+    if base.startswith("urn:gn:kb:"):
+        return base
+    legacy_match = re.match(r"^urn:knowledge:gorenuble:([^:]+):([^:]+):([^:]+)$", base)
+    if legacy_match:
+        namespace, legacy_id, _version = legacy_match.groups()
+        candidates = (
+            f"urn:knowledge:gorenuble:{namespace}:{legacy_id}:1.0.0",
+            f"urn:knowledge:gorenuble:gn:{legacy_id}:1.0.0",
+        )
+        for candidate in candidates:
+            if candidate in urn_alias_map:
+                return urn_alias_map[candidate]
+    return None
+
+
+def render_reference_markdown(ref):
+    if ref.kind == "internal":
+        return f"[-> {ref.label}]"
+    return f"[{ref.label}]({ref.target})"
+
+
+def clean_joined_text(text):
+    text = re.sub(r"\s+([,.;:)\]])", r"\1", text)
+    text = re.sub(r"([(\[])\s+", r"\1", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
+
+
+def render_inline_fragment(fragment, urn_alias_map, external_labels, urn_title_map):
+    if fragment is None:
+        return ""
+    if isinstance(fragment, (str, int, float, bool)):
+        return normalize_scalar(fragment)
+    if isinstance(fragment, list):
+        parts = [render_inline_fragment(item, urn_alias_map, external_labels, urn_title_map) for item in fragment]
+        return clean_joined_text(" ".join(part for part in parts if part))
+    if isinstance(fragment, dict):
+        if not fragment:
+            return ""
+        if set(fragment.keys()) <= {"Ref"} and fragment.get("Ref") is not None:
+            return normalize_scalar(fragment["Ref"])
+        for key in ("XRef", "XRef_Required", "Src", "Source", "Ctx_Required", "Ctx_Optional", "Ref_Fuente"):
+            if key in fragment:
+                ref = source_text_to_reference(fragment.get(key), urn_alias_map, external_labels, urn_title_map)
+                if ref:
+                    return render_reference_markdown(ref)
+                return ""
+        for key in ("Content", "Contenido"):
+            if key in fragment:
+                return render_inline_fragment(fragment[key], urn_alias_map, external_labels, urn_title_map)
+        parts = [render_inline_fragment(value, urn_alias_map, external_labels, urn_title_map) for value in fragment.values()]
+        return clean_joined_text(" ".join(part for part in parts if part))
+    return normalize_scalar(fragment)
+
+
+def inline_text_from_value(value, urn_alias_map, external_labels, urn_title_map):
+    text = render_inline_fragment(value, urn_alias_map, external_labels, urn_title_map)
+    return text.strip()
+
+
+def content_blocks_from_mapping(node, urn_alias_map, external_labels, urn_title_map):
+    if not isinstance(node, dict):
+        return None
+    content_key = next((key for key in ("Content", "Contenido") if key in node), None)
+    allowed_keys = {"ID", "Content", "Contenido", "Src", "Source", "Ref_Fuente", "XRef", "XRef_Required", "Ctx_Required", "Ctx_Optional"}
+    if not content_key or any(key not in allowed_keys for key in node.keys()):
+        return None
+    text = inline_text_from_value(node.get(content_key), urn_alias_map, external_labels, urn_title_map)
+    blocks = []
+    if text:
+        blocks.append(ParagraphBlock(text))
+    refs_value = None
+    for key in ("Src", "Source", "Ref_Fuente", "XRef", "XRef_Required", "Ctx_Required", "Ctx_Optional"):
+        if key in node:
+            refs_value = node.get(key)
+            break
+    refs = scalar_reference_list("Referencias", refs_value, urn_alias_map, external_labels, urn_title_map)
+    if refs:
+        blocks.append(refs)
+    return blocks if blocks else None
+
+
+def section_title_from_mapping(fallback_title, mapping):
+    if not isinstance(mapping, dict):
+        return fallback_title
+    for key in ("Title", "Titulo"):
+        value = mapping.get(key)
+        if isinstance(value, str) and value.strip():
+            return english_to_spanish_scaffold(normalize_scalar(value))
+    return fallback_title
+
+
+def strip_title_like_fields(mapping):
+    if not isinstance(mapping, dict):
+        return mapping
+    return {key: value for key, value in mapping.items() if key not in TITLE_LIKE_KEYS}
+
+
 def normalize_body_urns(body, urn_alias_map, external_labels, urn_title_map):
     bare_urn_pattern = re.compile(r"(?<!\()urn:[A-Za-z0-9:_\-\.#]+")
 
@@ -391,11 +505,11 @@ def normalize_body_urns(body, urn_alias_map, external_labels, urn_title_map):
             token = token[:-1]
 
         base, fragment = token.split("#", 1) if "#" in token else (token, None)
-        if base in urn_alias_map:
-            normalized = urn_alias_map[base]
+        normalized = resolve_target_urn(base, urn_alias_map)
+        if normalized:
             if fragment and normalized not in FRAGMENTLESS_TARGET_URNS:
                 normalized = f"{normalized}#{fragment}"
-            label = urn_title_map.get(urn_alias_map[base], urn_title_map.get(normalized, normalized))
+            label = urn_title_map.get(normalized, normalized)
             return f"[{label}]({normalized})" + suffix
         if base in external_labels:
             return external_labels[base] + suffix
@@ -444,11 +558,11 @@ def source_text_to_reference(value, urn_alias_map, external_labels, urn_title_ma
     if urn_match:
         token = urn_match.group(0)
         base, fragment = token.split("#", 1) if "#" in token else (token, None)
-        if base in urn_alias_map:
-            normalized = urn_alias_map[base]
+        normalized = resolve_target_urn(base, urn_alias_map)
+        if normalized:
             if fragment and normalized not in FRAGMENTLESS_TARGET_URNS:
                 normalized = f"{normalized}#{fragment}"
-            return ReferenceIR(kind="kora", label=urn_title_map.get(urn_alias_map[base], urn_title_map.get(normalized, normalized)), target=normalized)
+            return ReferenceIR(kind="kora", label=urn_title_map.get(normalized, normalized), target=normalized)
         if base in external_labels:
             return None
     for pattern, urn, label in SOURCE_TEXT_REFERENCE_ALIASES:
@@ -717,6 +831,7 @@ def project_yaml_structured(doc):
         "meat_count": len(canonical_scalar_facts(doc)),
         "fat_count": 0,
         "data": doc,
+        "raw_data": doc,
     }
 
 
@@ -731,6 +846,7 @@ def project_koda_structured(doc):
         "meat_count": len(facts),
         "fat_count": 0,
         "data": semantic_doc,
+        "raw_data": doc,
     }
 
 
@@ -1237,14 +1353,18 @@ def generic_blocks_from_mapping(mapping, urn_alias_map, external_labels, urn_tit
     for key, value in mapping.items():
         if key in KODA_BODY_EXCLUDED_KEYS:
             continue
+        if key in TITLE_LIKE_KEYS and isinstance(value, str):
+            continue
         label = english_to_spanish_scaffold(field_label(key))
         if key in {"Src", "Ref", "Ctx_Required", "Ctx_Optional", "Source", "Ref_Fuente"} or label in {"Fuentes", "Referencias", "Contexto requerido", "Contexto opcional", "Fuente"}:
             ref_block = scalar_reference_list(label, value, urn_alias_map, external_labels, urn_title_map)
             if ref_block:
                 blocks.append(ref_block)
             continue
-        if key in {"Content", "Contenido"} and isinstance(value, str):
-            blocks.append(ParagraphBlock(normalize_scalar(value)))
+        if key in {"Content", "Contenido"}:
+            text = inline_text_from_value(value, urn_alias_map, external_labels, urn_title_map)
+            if text:
+                blocks.append(ParagraphBlock(text))
             continue
         if is_columns_rows_table(value) or is_headers_rows_table(value):
             blocks.append(table_ir_from_columns_rows(label, value))
@@ -1261,7 +1381,17 @@ def generic_blocks_from_mapping(mapping, urn_alias_map, external_labels, urn_tit
             blocks.append(BulletListBlock(title=label, items=[normalize_scalar(item) for item in value]))
             continue
         if isinstance(value, dict):
-            section = SectionIR(title=label, blocks=generic_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map))
+            content_blocks = content_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map)
+            if content_blocks:
+                if label == "Contenido":
+                    blocks.extend(content_blocks)
+                else:
+                    blocks.append(SectionIR(title=section_title_from_mapping(label, value), blocks=content_blocks))
+                continue
+            section = SectionIR(
+                title=section_title_from_mapping(label, value),
+                blocks=generic_blocks_from_mapping(strip_title_like_fields(value), urn_alias_map, external_labels, urn_title_map),
+            )
             if section.blocks:
                 blocks.append(section)
             continue
@@ -1269,8 +1399,9 @@ def generic_blocks_from_mapping(mapping, urn_alias_map, external_labels, urn_tit
             child_section = SectionIR(title=label)
             for index, item in enumerate(value, start=1):
                 if isinstance(item, dict):
-                    child_blocks = generic_blocks_from_mapping(item, urn_alias_map, external_labels, urn_title_map)
-                    child_title = item.get("titulo") or item.get("Title") or item.get("Titulo") or item.get("nombre") or f"Elemento {index}"
+                    content_blocks = content_blocks_from_mapping(item, urn_alias_map, external_labels, urn_title_map)
+                    child_title = item.get("titulo") or item.get("Title") or item.get("Titulo") or item.get("nombre") or item.get("Nombre") or f"Elemento {index}"
+                    child_blocks = content_blocks or generic_blocks_from_mapping(strip_title_like_fields(item), urn_alias_map, external_labels, urn_title_map)
                     child_section.blocks.append(SectionIR(title=english_to_spanish_scaffold(headingify(str(child_title))), blocks=child_blocks))
                 else:
                     child_section.blocks.append(BulletListBlock(items=[normalize_scalar(item)]))
@@ -1288,9 +1419,10 @@ def build_generic_document_ir(title, item, primary_projection, urn_alias_map, ex
         for key, value in data.items():
             if key in KODA_BODY_EXCLUDED_KEYS:
                 continue
-            section_title = english_to_spanish_scaffold(field_label(key))
+            section_title = section_title_from_mapping(english_to_spanish_scaffold(field_label(key)), value if isinstance(value, dict) else None)
             if isinstance(value, dict):
-                blocks = generic_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map)
+                content_blocks = content_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map)
+                blocks = content_blocks or generic_blocks_from_mapping(strip_title_like_fields(value), urn_alias_map, external_labels, urn_title_map)
             else:
                 blocks = generic_blocks_from_mapping({key: value}, urn_alias_map, external_labels, urn_title_map)
                 if len(blocks) == 1 and isinstance(blocks[0], SectionIR) and blocks[0].title == section_title:
@@ -1329,20 +1461,39 @@ def make_normative_item_section(item_name, node, urn_alias_map, external_labels,
         label = english_to_spanish_scaffold(field_label(key))
         if is_columns_rows_table(value) or is_headers_rows_table(value):
             section.blocks.append(table_ir_from_columns_rows(label, value))
+        elif key in {"Content", "Contenido"}:
+            text = inline_text_from_value(value, urn_alias_map, external_labels, urn_title_map)
+            if text:
+                section.blocks.append(ParagraphBlock(text))
         elif isinstance(value, dict) and "Content" in value and isinstance(value["Content"], str):
             child_blocks = [ParagraphBlock(normalize_scalar(value["Content"]))]
             refs = scalar_reference_list("Referencias", value.get("Src"), urn_alias_map, external_labels, urn_title_map)
             if refs:
                 child_blocks.append(refs)
             section.blocks.append(SectionIR(title=label, blocks=child_blocks))
-        elif isinstance(value, str) and key == "Content":
-            section.blocks.append(ParagraphBlock(normalize_scalar(value)))
         elif isinstance(value, list) and is_table_candidate(value):
             section.blocks.append(table_ir_from_dict_list(label, value))
         elif isinstance(value, list) and all(not isinstance(item, (dict, list)) for item in value):
             section.blocks.append(BulletListBlock(title=label, items=[normalize_scalar(item) for item in value]))
+        elif isinstance(value, list):
+            text = inline_text_from_value(value, urn_alias_map, external_labels, urn_title_map)
+            if text:
+                if label == "Contenido":
+                    section.blocks.append(ParagraphBlock(text))
+                else:
+                    section.blocks.append(SectionIR(title=label, blocks=[ParagraphBlock(text)]))
         elif isinstance(value, dict):
-            child = SectionIR(title=label, blocks=generic_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map))
+            content_blocks = content_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map)
+            if content_blocks:
+                if label == "Contenido":
+                    section.blocks.extend(content_blocks)
+                else:
+                    section.blocks.append(SectionIR(title=section_title_from_mapping(label, value), blocks=content_blocks))
+                continue
+            child = SectionIR(
+                title=section_title_from_mapping(label, value),
+                blocks=generic_blocks_from_mapping(strip_title_like_fields(value), urn_alias_map, external_labels, urn_title_map),
+            )
             if child.blocks:
                 section.blocks.append(child)
         else:
@@ -1455,6 +1606,11 @@ def build_glossary_document_ir(title, item, primary_projection, urn_alias_map, e
     if not isinstance(terms, list):
         return build_generic_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
 
+    resolutions = {
+        normalize_term_name(name).casefold(): payload
+        for name, payload in (item.get("glossary_conflict_resolutions") or {}).items()
+        if isinstance(payload, dict)
+    }
     defs_by_name = {}
     for term in terms:
         if not isinstance(term, dict):
@@ -1468,14 +1624,22 @@ def build_glossary_document_ir(title, item, primary_projection, urn_alias_map, e
 
     conflicts = 0
     groups_by_def = {}
-    for payload in defs_by_name.values():
+    for normalized_name, payload in defs_by_name.items():
         definitions = [item for item in payload["definitions"] if item]
         if not definitions:
             continue
-        canonical_definition = max(definitions, key=len)
-        if any(not definitions_are_equivalent(canonical_definition, other) for other in definitions):
-            conflicts += 1
-        groups_by_def.setdefault(canonical_definition, []).append(payload["display"])
+        resolution = resolutions.get(normalized_name)
+        if resolution:
+            canonical_definition = normalize_scalar(resolution.get("definition") or max(definitions, key=len)).strip()
+            canonical_name = normalize_term_name(resolution.get("canonical_name") or payload["display"])
+            aliases = [normalize_term_name(alias) for alias in resolution.get("aliases", []) if normalize_term_name(alias)]
+            merged_names = [canonical_name, *aliases]
+        else:
+            canonical_definition = max(definitions, key=len)
+            if any(not definitions_are_equivalent(canonical_definition, other) for other in definitions):
+                conflicts += 1
+            merged_names = [payload["display"]]
+        groups_by_def.setdefault(canonical_definition, []).extend(merged_names)
 
     rows = []
     for definition, names in groups_by_def.items():
@@ -1699,6 +1863,175 @@ def build_cq_catalog_document_ir(title, item, primary_projection):
     return document
 
 
+def build_omega_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map):
+    data = primary_projection["data"]
+    raw_data = primary_projection.get("raw_data", data)
+    meta = raw_data.get("_meta", {}) if isinstance(raw_data, dict) else {}
+    document = DocumentIR(
+        title=title,
+        family="omega",
+        publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+    )
+    summary_blocks = []
+    if item.get("scope_statement"):
+        summary_blocks.append(ParagraphBlock(normalize_scalar(item["scope_statement"])))
+    if meta.get("description"):
+        summary_blocks.append(ParagraphBlock(normalize_scalar(meta["description"])))
+    summary_items = []
+    if meta.get("type"):
+        summary_items.append(f"Tipo: {normalize_scalar(meta['type'])}")
+    if meta.get("date"):
+        summary_items.append(f"Fecha: {normalize_scalar(meta['date'])}")
+    if isinstance(data.get("omega_objects"), list):
+        summary_items.append(f"Objetos Ω: {len(data['omega_objects'])}")
+    if isinstance(data.get("omega_processes"), list):
+        summary_items.append(f"Procesos Ω: {len(data['omega_processes'])}")
+    if isinstance(data.get("omega_axioms"), list):
+        summary_items.append(f"Axiomas Ω: {len(data['omega_axioms'])}")
+    if summary_items:
+        summary_blocks.append(BulletListBlock(title="Estadísticas", items=summary_items))
+    based_on_refs = []
+    for raw_ref in meta.get("based_on", []) if isinstance(meta.get("based_on"), list) else []:
+        ref = source_text_to_reference(raw_ref, urn_alias_map, external_labels, urn_title_map)
+        if ref:
+            based_on_refs.append(ref)
+    if based_on_refs:
+        summary_blocks.append(ReferenceListBlock(title="Referencias", items=based_on_refs))
+    if summary_blocks:
+        document.sections.append(SectionIR(title="Resumen", blocks=summary_blocks))
+
+    if isinstance(data.get("omega_objects"), list) and data["omega_objects"]:
+        rows = []
+        for obj in data["omega_objects"]:
+            if not isinstance(obj, dict):
+                continue
+            rows.append(
+                [
+                    normalize_scalar(obj.get("id", "")),
+                    normalize_scalar(obj.get("type", "")),
+                    normalize_scalar(obj.get("description", "")),
+                ]
+            )
+        if rows:
+            document.sections.append(SectionIR(title="Objetos Ω", blocks=[TableIR(headers=["ID", "Tipo", "Descripción"], rows=rows)]))
+
+    if isinstance(data.get("omega_processes"), list) and data["omega_processes"]:
+        rows = []
+        for proc in data["omega_processes"]:
+            if not isinstance(proc, dict):
+                continue
+            rows.append(
+                [
+                    normalize_scalar(proc.get("id", "")),
+                    normalize_scalar(proc.get("name", "")),
+                    normalize_scalar(proc.get("type", "")),
+                    normalize_scalar(proc.get("actor", "")),
+                ]
+            )
+        if rows:
+            document.sections.append(SectionIR(title="Procesos Ω", blocks=[TableIR(headers=["ID", "Nombre", "Tipo", "Actor"], rows=rows)]))
+
+    coalgebra = data.get("omega_coalgebra") if isinstance(data, dict) else None
+    if isinstance(coalgebra, dict):
+        coalgebra_blocks = []
+        if coalgebra.get("functor"):
+            coalgebra_blocks.append(ParagraphBlock(f"Funtor: {normalize_scalar(coalgebra['functor'])}"))
+        state_space = coalgebra.get("state_space")
+        if isinstance(state_space, dict):
+            rows = []
+            for phase_name, states in state_space.items():
+                if isinstance(states, list):
+                    rows.append([headingify(str(phase_name).replace("_", " ")), ", ".join(normalize_scalar(state) for state in states)])
+            if rows:
+                coalgebra_blocks.append(TableIR(title="Espacio de estados", headers=["Fase", "Estados"], rows=rows))
+        transitions = coalgebra.get("transitions")
+        if isinstance(transitions, list):
+            rows = []
+            for transition in transitions:
+                if not isinstance(transition, dict):
+                    continue
+                rows.append(
+                    [
+                        normalize_scalar(transition.get("from", "")),
+                        normalize_scalar(transition.get("to", "")),
+                        normalize_scalar(transition.get("event", "")),
+                        normalize_scalar(transition.get("morphism", "")),
+                    ]
+                )
+            if rows:
+                coalgebra_blocks.append(TableIR(title="Transiciones", headers=["Desde", "Hacia", "Evento", "Morfismo"], rows=rows))
+        if coalgebra_blocks:
+            document.sections.append(SectionIR(title="Ciclo de vida Ω", blocks=coalgebra_blocks))
+
+    if isinstance(data.get("omega_constructions"), list) and data["omega_constructions"]:
+        rows = []
+        for construction in data["omega_constructions"]:
+            if not isinstance(construction, dict):
+                continue
+            rows.append(
+                [
+                    normalize_scalar(construction.get("id", "")),
+                    normalize_scalar(construction.get("type", "")),
+                    normalize_scalar(construction.get("name", "")),
+                ]
+            )
+        if rows:
+            document.sections.append(SectionIR(title="Construcciones Ω", blocks=[TableIR(headers=["ID", "Tipo", "Nombre"], rows=rows)]))
+
+    if isinstance(data.get("omega_monads"), list) and data["omega_monads"]:
+        rows = []
+        for monad in data["omega_monads"]:
+            if not isinstance(monad, dict):
+                continue
+            rows.append(
+                [
+                    normalize_scalar(monad.get("id", "")),
+                    normalize_scalar(monad.get("name", "")),
+                    normalize_scalar(monad.get("evaluator", "")),
+                    normalize_scalar(monad.get("structure", "")),
+                ]
+            )
+        if rows:
+            document.sections.append(SectionIR(title="Mónadas Ω", blocks=[TableIR(headers=["ID", "Nombre", "Evaluador", "Estructura"], rows=rows)]))
+
+    profunctor = data.get("omega_profunctor") if isinstance(data, dict) else None
+    if isinstance(profunctor, dict):
+        profunctor_blocks = []
+        if profunctor.get("signature"):
+            profunctor_blocks.append(ParagraphBlock(f"Signatura: {normalize_scalar(profunctor['signature'])}"))
+        if profunctor.get("composition_law"):
+            profunctor_blocks.append(ParagraphBlock(f"Ley de composición: {normalize_scalar(profunctor['composition_law'])}"))
+        mappings = profunctor.get("mappings")
+        if isinstance(mappings, list):
+            rows = []
+            for mapping in mappings:
+                if not isinstance(mapping, dict):
+                    continue
+                gestion = mapping.get("gestion", {})
+                rows.append(
+                    [
+                        normalize_scalar(mapping.get("selector", "")),
+                        normalize_scalar(gestion.get("fase2", "")),
+                        normalize_scalar(gestion.get("fase3", "")),
+                        normalize_scalar(gestion.get("dictamen", "")),
+                    ]
+                )
+            if rows:
+                profunctor_blocks.append(TableIR(title="Mapeos", headers=["Selector", "Fase 2", "Fase 3", "Dictamen"], rows=rows))
+        if profunctor_blocks:
+            document.sections.append(SectionIR(title="Profuntor Ω", blocks=profunctor_blocks))
+
+    if isinstance(data.get("omega_axioms"), list) and data["omega_axioms"]:
+        rows = []
+        for axiom in data["omega_axioms"]:
+            if not isinstance(axiom, dict):
+                continue
+            rows.append([normalize_scalar(axiom.get("id", "")), normalize_scalar(axiom.get("statement", ""))])
+        if rows:
+            document.sections.append(SectionIR(title="Axiomas Ω", blocks=[TableIR(headers=["ID", "Enunciado"], rows=rows)]))
+    return document
+
+
 def build_document_ir(title, item, projections, urn_alias_map, external_labels, urn_title_map):
     document_family = item.get("document_family", "generic")
     primary_projection = next(iter(projections.values()))
@@ -1712,6 +2045,8 @@ def build_document_ir(title, item, projections, urn_alias_map, external_labels, 
         return build_organigram_document_ir(title, item, primary_projection, projections, urn_alias_map, external_labels, urn_title_map)
     if document_family == "cq_catalog":
         return build_cq_catalog_document_ir(title, item, primary_projection)
+    if document_family == "omega":
+        return build_omega_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
     return build_generic_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
 
 
@@ -1843,6 +2178,7 @@ def freeze_source(args):
         ensure_dir(projection_path.parent)
         projection_payload = deepcopy(projection)
         projection_payload.pop("data", None)
+        projection_payload.pop("raw_data", None)
         projection_payload["path"] = rel
         projection_payload["sha256"] = sha256_file(source_file)
         projection_path.write_text(
@@ -1910,7 +2246,7 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, 
         )
 
     document_family = item.get("document_family", "generic")
-    semantic_families = {"generic", "normative", "glossary", "inventory", "organigram", "cq_catalog"}
+    semantic_families = {"generic", "normative", "glossary", "inventory", "organigram", "cq_catalog", "omega"}
     document = None
     if document_family in semantic_families and transform_class != "index_only":
         document = build_document_ir(title, item, projections, urn_alias_map, external_labels, urn_title_map)

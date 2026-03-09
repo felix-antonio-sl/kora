@@ -43,11 +43,6 @@ extensions:
 
 ## Manual 2 2 Gestion de Inventarios y Bodegas
 
-### Titulo
-
-#### Definicion
-Manual 2.2: Gestión de Inventarios y Bodegas
-
 ### Objetivo
 
 #### Objetivos

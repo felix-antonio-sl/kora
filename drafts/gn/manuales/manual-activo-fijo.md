@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.93
+    cr: 1.92
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -42,11 +42,6 @@ extensions:
 # Manual 2.3: Gestión del Ciclo de Vida del Activo Fijo
 
 ## Manual 2 3 Gestion del Ciclo de Vida del Activo Fijo
-
-### Titulo
-
-#### Definicion
-Manual 2.3: Gestión del Ciclo de Vida del Activo Fijo
 
 ### Objetivo
 

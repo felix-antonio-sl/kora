@@ -2158,7 +2158,7 @@ Catalog:
     file: knowledge/pro/hospitalizacion-domiciliaria/03-director-tecnico.md
     status: draft
   - urn: urn:gn:kb:gn-cqs-master
-    title: Catálogo Maestro de Competency Questions
+    title: Catálogo Maestro de Preguntas de Competencia
     file: knowledge/gn/gn-cqs-master.md
     status: published
   - urn: urn:gn:kb:guia-comunicaciones
@@ -2407,10 +2407,6 @@ Catalog:
   - urn: urn:gn:kb:gore-ideal
     title: GORE Ñuble Ideal / GORE 4.0
     file: knowledge/gn/gobernanza/gore-ideal.md
-    status: published
-  - urn: urn:gn:kb:matriz-integracion-organica
-    title: Matriz de Integración Orgánica del Conocimiento GORE Ñuble
-    file: knowledge/gn/gobernanza/matriz-integracion-organica.md
     status: published
   - urn: urn:gn:kb:organigrama
     title: Organigrama Institucional GORE Ñuble

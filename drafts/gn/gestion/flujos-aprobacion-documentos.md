@@ -162,33 +162,33 @@ Describir el proceso para ajustar el presupuesto regional aprobado. El flujo y e
 ### Restricciones Presupuesto 2026
 
 #### Glosa 10 Subt31 Excepcion Aprobacion CORE 10pct
-
-#### XRef Required
-- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
 Las identificaciones presupuestarias de las iniciativas contratadas en años
 anteriores en ejecución y aquellas creadas en el mismo año, no requerirán una
 nueva aprobación del Consejo Regional, si los montos totales o resultantes son
 iguales o menores al 10% de los costos totales ya aprobados por el Consejo
 Regional, reajustados a la moneda del año en curso.
+
+#### Referencias
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
 
 #### Glosa 11 Subt33 Excepcion Aprobacion CORE 10pct
-
-#### XRef Required
-- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
 Las identificaciones presupuestarias de las iniciativas contratadas en años
 anteriores en ejecución y aquellas creadas en el mismo año, no requerirán una
 nueva aprobación del Consejo Regional, si los montos totales o resultantes son
 iguales o menores al 10% de los costos totales ya aprobados por el Consejo
 Regional, reajustados a la moneda del año en curso.
 
-#### Glosa 14 Emergencias 3pct y 2pct
-
-#### XRef Required
+#### Referencias
 - [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
+
+#### Glosa 14 Emergencias 3pct y 2pct
 Se podrá traspasar hasta un 3% del presupuesto de inversión aprobado por el Congreso Nacional de cada Gobierno Regional, a requerimiento de la Subsecretaría del Interior a las asignaciones 24.03.002 y/o 33.03.001 del presupuesto de dicha Subsecretaría para enfrentar situaciones de emergencia.
 La Subsecretaría del Interior informará semestralmente sobre el uso de esos recursos de emergencia a la Comisión Especial Mixta de Presupuestos y a los Gobiernos Regionales que aportaron a ese Fondo de Emergencia.
 Asimismo, los gobiernos regionales podrán destinar hasta un 2% del presupuesto de Inversión Regional aprobado por el Congreso Nacional, para enfrentar situaciones de emergencia (en todas sus etapas) definidas mediante resolución por el Ministro o Subsecretario del Interior. Para materializar lo anterior, los gobiernos regionales deberán coordinarse con la Subsecretaría del Interior. La ejecución de estos recursos se podrá efectuar sin esperar la total tramitación del acto administrativo del Gobierno Regional.
 Trimestralmente, los gobiernos regionales informarán a la Comisión Especial Mixta de Presupuestos y a la Dirección de Presupuestos, sobre el uso de estos recursos.
+
+#### Referencias
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
 
 ### Seccion 5 1 Tipologia de Modificaciones y Acto Administrativo Requerido
 
@@ -237,15 +237,12 @@ La aprobación del convenio es un hito de control crítico que precede a cualqui
 ### Restricciones Presupuesto 2026
 
 #### Glosa 03 Restricciones Generales Inversion Regional
-
-#### XRef Required
-- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
 Los recursos de los presupuestos de inversión regional no podrán financiar préstamos, gastos en personal, o gastos en bienes y servicios de consumo de las entidades receptoras. Asimismo, no podrán destinarse para constituir, efectuar aportes o comprar sociedades o empresas.
 
-#### Articulo 07 Decretos Transferencias Subt24 33
+#### Referencias
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
 
-#### XRef Required
-- [Ley de Presupuestos 2026: Normas Generales](urn:gn:kb:ley-presupuestos-2026-normas-generales)
+#### Articulo 07 Decretos Transferencias Subt24 33
 Reglas para decretos con transferencias (Subtítulos 24 y 33).
 Transferencias corrientes a Unidades o Programas del Servicio, ejecutados total o parcialmente por éste
 Desc: Desglose previo a la ejecución presupuestaria en conceptos de gasto
@@ -259,6 +256,9 @@ Proc_Modificacion: Modificaciones mediante igual procedimiento
 Visacion: Puede efectuarse desde fecha publicación de esta ley
 Desc: No incluir recursos para gastos en personal ni bienes y servicios de consumo
 Cond: Salvo autorización por norma expresa en el respectivo presupuesto
+
+#### Referencias
+- [Ley de Presupuestos 2026: Normas Generales](urn:gn:kb:ley-presupuestos-2026-normas-generales)
 
 ### Seccion 6 1 Flujo para Convenios de Transferencia a Terceros Publicos y Privados
 

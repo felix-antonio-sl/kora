@@ -27,7 +27,7 @@
     "section[0].block[0].title=Estadísticas",
     "section[0].block[0].bullet[0]=Entradas fuente: 439",
     "section[0].block[0].bullet[1]=Entradas canónicas: 436",
-    "section[0].block[0].bullet[2]=Conflictos léxicos: 2",
+    "section[0].block[0].bullet[2]=Conflictos léxicos: 0",
     "section[1].title=Términos 1",
     "section[1].block[0].headers=término|definición|aliases",
     "section[1].block[0].row[0]=1er Llamado|Primer ciclo formal del año calendario para la presentación de proyectos a fondos concursables (como el 8% FNDR).|",
@@ -370,8 +370,8 @@
     "section[17].block[0].row[13]=Plataforma GESDOC del GORE Ñuble|Sistema centralizado de gestión interna que garantiza el flujo digital de los expedientes de inversión.|",
     "section[17].block[0].row[14]=Población Beneficiaria|Subconjunto de la población objetivo que efectivamente recibirá los beneficios del proyecto dados los recursos.|",
     "section[17].block[0].row[15]=Población beneficiaria anual|Número estimado de personas que reciben productos o servicios de una iniciativa en un ejercicio fiscal.|",
-    "section[17].block[0].row[16]=Población Objetivo|Grupo específico de personas afectadas por el problema central que el proyecto busca atender directamente.|",
-    "section[17].block[0].row[17]=Población Potencial|Población total que presenta la necesidad o problema, de la cual se recorta la población objetivo.|",
+    "section[17].block[0].row[16]=Población objetivo|Grupo específico de personas afectadas por el problema central que el proyecto busca atender directamente.|Población Objetivo",
+    "section[17].block[0].row[17]=Población potencial|Conjunto total de personas que sufren el problema y cumplen los requisitos para ser beneficiarios.|Población Potencial",
     "section[17].block[0].row[18]=Población y justificación|Sección del formulario IDI que explica a quién se ayuda y por qué es necesaria la intervención.|",
     "section[17].block[0].row[19]=Postulación|Acto formal de presentar un proyecto al GORE Ñuble para competir por recursos públicos.|",
     "section[17].block[0].row[20]=Postulación de IPR|IPR presentada para evaluación, antes de clasificación o aprobación.|",
@@ -514,5 +514,5 @@
     "section[24].block[0].row[6]=Ítem 03 – Programas de Inversión (Subt. 31)|Clasificación de gasto para iniciativas con enfoque en el desarrollo de capacidades humanas y fomento productivo regional.|"
   ],
   "non_equivalence_decisions": [],
-  "glossary_conflicts": 2
+  "glossary_conflicts": 0
 }

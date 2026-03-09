@@ -944,6 +944,448 @@ class GnRebuildTests(unittest.TestCase):
             frontmatter, _body = load_markdown_parts(promoted)
             self.assertEqual(frontmatter["status"], "published")
 
+    def test_generic_family_suppresses_source_metadata_and_local_paths(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/gestion").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:manual"},
+                "Source_ID": "SRC-01",
+                "Primary-Source": "staging/brow_speculativo/manual.md",
+                "Authoritative-Sources": [
+                    {
+                        "Path": "staging/temp/brutos/documento.yml",
+                        "Type": "Resolucion",
+                        "Priority": 1,
+                    }
+                ],
+                "Last-Validated": "2026-01-01",
+                "Manual_Demo": {
+                    "Title": "Manual Demo",
+                    "Objetivo": {"Obj": "Mantener estructura semántica."},
+                },
+                "Referencias_Cruzadas": {
+                    "Ctx_Optional": ["knowledge/domains/gn/manuales/manual_demo_previo.yml"]
+                },
+            }
+            (source_root / "domains/gn/03_operacion/gestion/kb_gn_500_manual_demo_koda.yml").write_text(
+                yaml.safe_dump(source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/manuales/manual-demo.md",
+                "urn:gn:kb:manual-demo",
+                "Manual Demo",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/gestion/kb_gn_500_manual_demo_koda.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "manuales/manual-demo.md",
+                                "target_urn": "urn:gn:kb:manual-demo",
+                                "transform_class": "korafy_direct",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "genericmeta")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "genericmeta", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "genericmeta")
+            self.assertEqual(validate.returncode, 0, validate.stderr or validate.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/manuales/manual-demo.md")
+            self.assertNotIn("Source ID", body)
+            self.assertNotIn("Authoritative Sources", body)
+            self.assertNotIn("staging/", body)
+            self.assertNotIn("knowledge/domains", body)
+
+    def test_normative_family_renders_mixed_content_without_field_heading_dump(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/presupuesto").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:normativa"},
+                "Ley_Presupuestos": {
+                    "Purp": "Regular la ejecución presupuestaria.",
+                    "Definiciones_Reutilizables": [{"ID": "LEY19886", "Def": "Ley de compras públicas."}],
+                    "Articulos": {
+                        "Articulo_01": {
+                            "Contenido": [
+                                "Aplica conforme a la",
+                                {"Ref": "LEY19886"},
+                                ".",
+                            ]
+                        }
+                    },
+                },
+            }
+            (
+                source_root / "domains/gn/03_operacion/presupuesto/kb_gn_777_normativa_demo_koda.yml"
+            ).write_text(yaml.safe_dump(source, sort_keys=False, allow_unicode=True), encoding="utf-8")
+
+            self._write_md(
+                repo / "knowledge/gn/normativa/normativa-demo.md",
+                "urn:gn:kb:normativa-demo",
+                "Normativa Demo",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "source_type": "koda_yaml",
+                            "transform_class": "korafy_direct",
+                            "document_family": "normative",
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/presupuesto/kb_gn_777_normativa_demo_koda.yml"],
+                                "target_path": "normativa/normativa-demo.md",
+                                "target_urn": "urn:gn:kb:normativa-demo",
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "normmixed")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "normmixed", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "normmixed")
+            self.assertEqual(validate.returncode, 0, validate.stderr or validate.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/normativa/normativa-demo.md")
+            self.assertIn("## Articulo 01", body)
+            self.assertIn("Aplica conforme a la LEY19886.", body)
+            self.assertNotIn("### Contenido", body)
+            self.assertNotIn("{'Ref':", body)
+
+    def test_glossary_conflicts_can_be_resolved_in_map_contract(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/ipr").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:glossary"},
+                "terminos": [
+                    {"nombre": "Población Objetivo", "def": "Grupo específico afectado por el problema central."},
+                    {"nombre": "Población objetivo", "def": "Segmento de personas al que se dirige la solución."},
+                ],
+            }
+            (source_root / "domains/gn/03_operacion/ipr/otroglosario.yml").write_text(
+                yaml.safe_dump(source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/gobernanza/glosario-ipr-consolidado.md",
+                "urn:gn:kb:glosario-ipr-consolidado",
+                "Glosario IPR",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "source_type": "koda_yaml",
+                            "transform_class": "korafy_koda_hybrid",
+                            "document_family": "glossary",
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/ipr/otroglosario.yml"],
+                                "target_path": "gobernanza/glosario-ipr-consolidado.md",
+                                "target_urn": "urn:gn:kb:glosario-ipr-consolidado",
+                                "glossary_conflict_resolutions": {
+                                    "población objetivo": {
+                                        "canonical_name": "Población objetivo",
+                                        "definition": "Grupo específico afectado por el problema central.",
+                                        "aliases": ["Población Objetivo"],
+                                    }
+                                },
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "glossaryres")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "glossaryres", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "glossaryres")
+            self.assertEqual(validate.returncode, 0, validate.stderr or validate.stdout)
+
+            frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/glosario-ipr-consolidado.md")
+            self.assertEqual(frontmatter["extensions"]["gn"]["glossary_conflicts"], 0)
+            self.assertIn("Población objetivo", body)
+            self.assertIn("Población Objetivo", body)
+
+    def test_omega_family_normalizes_legacy_urn_refs_and_omits_unpublishable_ones(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/ipr").mkdir(parents=True, exist_ok=True)
+
+            omega_source = {
+                "_meta": {
+                    "urn": "urn:gorenuble:omega:ontology:test:1.0.0",
+                    "type": "Ω-Ontology",
+                    "schema": "urn:goreos:omega:schema:2.0.0",
+                    "based_on": [
+                        "urn:knowledge:gorenuble:gn:selector-ipr:3.1.0",
+                        "urn:fxsl:cat:omega-opm-ws:1.0.0",
+                    ],
+                    "date": "2026-03-08",
+                },
+                "omega_objects": [{"id": "Ω-IPR", "type": "Ω-Object", "description": "Objeto base."}],
+                "omega_processes": [{"id": "P-INGRESAR", "name": "Ingresar", "type": "Ω-Transform", "actor": "GORE"}],
+                "omega_coalgebra": {
+                    "functor": "F(S)",
+                    "state_space": {"fase_1_ingreso": ["POSTULADA"]},
+                    "transitions": [{"from": "POSTULADA", "to": "ADMISIBLE", "event": "Revision", "morphism": "P-INGRESAR"}],
+                },
+                "omega_constructions": [{"id": "Ω-CONS", "type": "Adjunction", "name": "Construcción"}],
+                "omega_monads": [{"id": "Ω-MONAD", "name": "Monad", "evaluator": "GORE", "structure": "T(X)"}],
+                "omega_profunctor": {
+                    "signature": "Π: A × B",
+                    "composition_law": "Selector determina el dictamen",
+                    "mappings": [{"selector": "MEC-1", "gestion": {"fase2": "TRACK-A", "fase3": "TRACK-B", "dictamen": "RS"}}],
+                },
+                "omega_axioms": [{"id": "AX-1", "statement": "Todo mecanismo determina un track."}],
+            }
+            selector_source = {"_manifest": {"urn": "urn:test:kb:selector"}, "Selector": {"Resumen": {"Objetivo": "Clasificar IPR."}}}
+
+            (source_root / "domains/gn/03_operacion/ipr/kb_omega_test.yml").write_text(
+                yaml.safe_dump(omega_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+            (source_root / "domains/gn/03_operacion/ipr/kb_gn_011_selector_ipr_koda.yml").write_text(
+                yaml.safe_dump(selector_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(repo / "knowledge/gn/gobernanza/omega-test.md", "urn:gn:kb:omega-test", "Omega Test")
+            self._write_md(repo / "knowledge/gn/ris/selector-ipr.md", "urn:gn:kb:selector-ipr", "Selector IPR")
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/ipr/kb_gn_011_selector_ipr_koda.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "ris/selector-ipr.md",
+                                "target_urn": "urn:gn:kb:selector-ipr",
+                                "transform_class": "korafy_direct",
+                            },
+                            {
+                                "source_paths": ["domains/gn/03_operacion/ipr/kb_omega_test.yml"],
+                                "source_type": "ontology_yaml",
+                                "target_path": "gobernanza/omega-test.md",
+                                "target_urn": "urn:gn:kb:omega-test",
+                                "target_title": "Omega Test",
+                                "transform_class": "derive_ttl_scope",
+                                "document_family": "omega",
+                                "scope_statement": "Derivado Ω de prueba.",
+                            },
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "omegair")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "omegair", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+            validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "omegair")
+            self.assertEqual(validate.returncode, 0, validate.stderr or validate.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/omega-test.md")
+            self.assertIn("(urn:gn:kb:selector-ipr)", body)
+            self.assertNotIn("urn:knowledge:gorenuble:gn:selector-ipr:3.1.0", body)
+            self.assertNotIn("urn:fxsl:cat:omega-opm-ws:1.0.0", body)
+            self.assertNotIn("### Type", body)
+
+    def test_cutover_routes_control_publication_out_of_knowledge(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build", "docs/reports"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            self._write_kora_stub(repo)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/00_meta").mkdir(parents=True, exist_ok=True)
+
+            source = {
+                "_manifest": {"urn": "urn:test:kb:inventory"},
+                "Taxonomia_Conocimiento": {
+                    "Purp": "Organizar dominios.",
+                    "Gobernanza": {"Def": "Gobernanza", "Areas": ["Planificación"]},
+                },
+                "Indice_Artefactos": {
+                    "Gobernanza": {
+                        "Titulo": "Artefactos de gobernanza",
+                        "Artefactos": [{"id": "kb_gn_001", "nombre": "Documento base", "path": "gn/001.yml", "tipo": "KODA"}],
+                    }
+                },
+            }
+            (source_root / "domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml").write_text(
+                yaml.safe_dump(source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/gobernanza/matriz-integracion-organica.md",
+                "urn:gn:kb:matriz-integracion-organica",
+                "Matriz Integración Orgánica",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                            "control_draft_root": "drafts/gn-control",
+                            "control_root": "docs/reports/gn-control",
+                        },
+                        "defaults": {
+                            "source_type": "koda_yaml",
+                            "transform_class": "korafy_direct",
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml"],
+                                "target_path": "gobernanza/matriz-integracion-organica.md",
+                                "target_urn": "urn:gn:kb:matriz-integracion-organica",
+                                "document_family": "inventory",
+                                "publication_class": "control",
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "controlcut")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "controlcut", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+            cutover = self._run("--repo-root", str(repo), "--map-path", str(map_path), "cutover", "--run-id", "controlcut")
+            self.assertEqual(cutover.returncode, 0, cutover.stderr or cutover.stdout)
+
+            self.assertFalse((repo / "knowledge/gn/gobernanza/matriz-integracion-organica.md").exists())
+            control_doc = repo / "docs/reports/gn-control/gobernanza/matriz-integracion-organica.md"
+            self.assertTrue(control_doc.exists())
+            frontmatter, _body = load_markdown_parts(control_doc)
+            self.assertEqual(frontmatter["status"], "published")
+
 
 if __name__ == "__main__":
     unittest.main()

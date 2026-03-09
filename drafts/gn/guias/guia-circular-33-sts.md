@@ -55,10 +55,7 @@ FS
 ### Signature
 null
 
-## Guia Circular 33 GORE Nuble
-
-### Titulo
-Guía Operativa para la Formulación y Evaluación de Iniciativas Circular 33 del GORE Ñuble
+## Guía Operativa para la Formulación y Evaluación de Iniciativas Circular 33 del GORE Ñuble
 
 ### Proposito
 Orientar a las instituciones públicas que postulan iniciativas de inversión

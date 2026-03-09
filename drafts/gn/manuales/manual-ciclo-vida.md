@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.48
+    cr: 1.44
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -32,8 +32,8 @@ extensions:
     - Contenido
     document_family: generic
     publication_class: knowledge
-    skeleton_count: 3
-    meat_count: 112
+    skeleton_count: 2
+    meat_count: 111
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-ciclo-vida.md.json
@@ -41,23 +41,14 @@ extensions:
 
 # Manual 3.1: Ciclo de Vida del Funcionario
 
-## Source ID
-MANUAL-CICLO-VIDA-01
-
-## Manual 3 1 Ciclo de Vida del Funcionario
-
-### Titulo
-Manual 3.1: Ciclo de Vida del Funcionario
+## Manual 3.1: Ciclo de Vida del Funcionario
 
 ### Objetivo
 
 #### Objetivos
 Regular los procesos administrativos asociados a la trayectoria laboral de los funcionarios del Gobierno Regional de Ñuble, desde su ingreso hasta su egreso, asegurando el cumplimiento de la normativa estatutaria y presupuestaria vigente.
 
-### Seccion I Ingreso y Contratacion
-
-#### Titulo
-Sección I: Ingreso y Contratación
+### Sección I: Ingreso y Contratación
 
 #### 1 Calidad Juridica y Dotacion
 
@@ -99,10 +90,7 @@ La Tasa de Reemplazo para 2026 es de 1 por cada 3 vacantes producidas por retiro
 | Declaraciones Juradas | Intereses, Patrimonio, Inhabilidades e Incompatibilidades (Art. 12 Ley 19.653). |
 | Obligación de Informar (Art. 14 Ley Presupuestos 2026) | Informar trimestralmente a la CEMP y BCN la nómina de contrataciones (nombre, cargo, título). |
 
-### Seccion II Induccion e Integracion
-
-#### Titulo
-Sección II: Inducción e Integración
+### Sección II: Inducción e Integración
 
 #### 4 Programa de Induccion
 
@@ -130,10 +118,7 @@ Como parte de la inducción, se deben cumplir los siguientes hitos:
 3. Acuse de Recibo: El funcionario debe firmar la recepción de los protocolos y del Reglamento Interno de Higiene y Seguridad.
 4. Registro: Archivo de la firma en la carpeta personal del funcionario.
 
-### Seccion III Movilidad y Desarrollo
-
-#### Titulo
-Sección III: Movilidad y Desarrollo
+### Sección III: Movilidad y Desarrollo
 
 #### 5 Encasillamiento y Promocion
 
@@ -160,10 +145,7 @@ Sección III: Movilidad y Desarrollo
 | Cometido Funcionario | Desplazamiento transitorio para una tarea específica con derecho a pasajes y viáticos (ver Manual 3.2). |
 | Registro |  |
 
-### Seccion IV Egreso y Desvinculacion
-
-#### Titulo
-Sección IV: Egreso y Desvinculación
+### Sección IV: Egreso y Desvinculación
 
 #### 8 Causales de Egreso
 

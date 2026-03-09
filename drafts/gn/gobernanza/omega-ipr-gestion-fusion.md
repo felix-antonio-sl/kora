@@ -23,43 +23,26 @@ extensions:
     source_type: ontology_yaml
     transformation_mode: derive_ttl_scope
     fs: 100
-    cr: 1.53
+    cr: 1.25
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Fusion semantica IPR/Gestion; requiere validacion de alcance.
     dependencies: []
     expected_sections:
     - Contenido
-    document_family: generic
+    document_family: omega
     publication_class: knowledge
-    skeleton_count: 8
-    meat_count: 637
+    skeleton_count: 7
+    meat_count: 629
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__omega-ipr-gestion-fusion.md.json
 ---
 
 # Ontología Ω-IPR: Gestión y Fusión de Financiamiento
 
-## Meta
-
-### Urn
-urn:gorenuble:omega:ontology:ipr-gestion-fusion:1.0.0
-
-### Type
-Ω-Ontology
-
-### Schema
-Omega schema 2.0.0
-
-### Based on
-- urn:fxsl:cat:omega-opm-ws:1.0.0
-- [Gestión Operacional de Intervenciones Públicas Regionales (IPR)](urn:gn:kb:gestion-ipr)
-- urn:knowledge:gorenuble:gn:selector-ipr:3.1.0
-
-### Date
-2025-12-25
-
-### Description
+## Resumen
+Fusion semantica IPR/Gestion; requiere validacion de alcance.
 Fusión categorial profunda de los dominios de Gestión Operacional IPR y 
 Selector de Vías de Financiamiento. Utiliza construcciones universales:
 - Fibración de Grothendieck para polimorfismo de mecanismos
@@ -68,10 +51,19 @@ Selector de Vías de Financiamiento. Utiliza construcciones universales:
 - Pullback para admisibilidad documental
 - Profuntor Selector ↔ Gestión
 
-## Omega objects
+### Estadísticas
+- Tipo: Ω-Ontology
+- Fecha: 2025-12-25
+- Objetos Ω: 5
+- Procesos Ω: 15
+- Axiomas Ω: 9
 
-### Omega objects
-| id | type | description |
+### Referencias
+- [Gestión Operacional de Intervenciones Públicas Regionales (IPR)](urn:gn:kb:gestion-ipr)
+- [Selector de Vías de Financiamiento — IPR GORE Ñuble](urn:gn:kb:selector-ipr)
+
+## Objetos Ω
+| ID | Tipo | Descripción |
 | --- | --- | --- |
 | Ω-IPR | Ω-Object | Intervención Pública Regional: unidad atómica de financiamiento del GORE |
 | Ω-MECANISMO | Ω-Object (Fiber Index) | Vía de financiamiento que determina reglas, proceso y sistema de evaluación |
@@ -79,105 +71,42 @@ Selector de Vías de Financiamiento. Utiliza construcciones universales:
 | Ω-ACTOR | Ω-Object (Agent) | Agentes que participan en el ciclo de vida IPR |
 | Ω-DOCUMENTO | Ω-Object |  |
 
-## Omega processes
+## Procesos Ω
+| ID | Nombre | Tipo | Actor |
+| --- | --- | --- | --- |
+| P-INGRESAR | Ingresar Postulación | Ω-Transform | OFICINA-PARTES |
+| P-FILTRAR-CDR | Filtrar Pertinencia CDR | Ω-Transform | CDR |
+| P-REVISAR-FORMAL | Revisar Admisibilidad Formal | Ω-Transform | ANALISTA-DIPIR |
+| P-EVALUAR-SNI | Evaluar Técnico-Económico SNI | Kleisli(Ω-RATE) | MDSF |
+| P-EVALUAR-PPR | Evaluar Programa Glosa 06 | Kleisli(Ω-RF) | DIPRES/SES |
+| P-EVALUAR-TRANSFER | Evaluar Transferencia Pública | Kleisli(Ω-ITF) | GORE |
+| P-EVALUAR-CONCURSO | Evaluar Concurso Competitivo | Kleisli(Ω-CONCURSO) | COMITE-EVALUADOR |
+| P-APROBAR-CORE | Aprobar Financiamiento CORE | Ω-Align | CORE |
+| P-EMITIR-CDP | Emitir CDP | Ω-Transform | PRESUPUESTO |
+| P-FORMALIZAR-CONVENIO | Formalizar Convenio | Ω-Transform | ['GOBERNADOR', 'UT-RECEPTORA'] |
+| P-TRAMITAR-RESOLUCION | Tramitar Resolución Aprobatoria | Ω-Transform | ['PRESUPUESTO', 'CGR'] |
+| P-EJECUTAR | Ejecutar IPR | Coalgebra |  |
+| P-MODIFICAR | Gestionar Modificación | Ω-Transform | DIPIR |
+| P-CERRAR-TECNICO | Cierre Técnico | Ω-Transform | SUPERVISOR-GORE |
+| P-CERRAR-FINANCIERO | Cierre Financiero | Ω-Transform | DAF |
 
-### Omega processes
-| id | type | name | source | target | actor |
-| --- | --- | --- | --- | --- | --- |
-| P-INGRESAR | Ω-Transform | Ingresar Postulación | POSTULACION_EXTERNA | POSTULACION_REGISTRADA | OFICINA-PARTES |
-| P-FILTRAR-CDR | Ω-Transform | Filtrar Pertinencia CDR | POSTULACION_REGISTRADA | PRE_ADMISIBLE \| NO_PRE_ADMISIBLE | CDR |
-| P-REVISAR-FORMAL | Ω-Transform | Revisar Admisibilidad Formal | PRE_ADMISIBLE | ADMISIBLE \| ADMISIBLE_OBS \| INADMISIBLE | ANALISTA-DIPIR |
-| P-EVALUAR-SNI | Kleisli(Ω-RATE) | Evaluar Técnico-Económico SNI | Ω-IDI | T_RATE(Ω-IDI) | MDSF |
-| P-EVALUAR-PPR | Kleisli(Ω-RF) | Evaluar Programa Glosa 06 | Ω-PPR | T_RF(Ω-PPR) | DIPRES/SES |
-| P-EVALUAR-TRANSFER | Kleisli(Ω-ITF) | Evaluar Transferencia Pública | Ω-PPR-TRANSFER | T_ITF(Ω-PPR-TRANSFER) | GORE |
-| P-EVALUAR-CONCURSO | Kleisli(Ω-CONCURSO) | Evaluar Concurso Competitivo | Ω-SUBVENCION \| Ω-FRPD | T_CONC(IPR) | COMITE-EVALUADOR |
-| P-APROBAR-CORE | Ω-Align | Aprobar Financiamiento CORE | CARTERA_RS | APROBADO_CORE \| RECHAZADO_CORE | CORE |
-| P-EMITIR-CDP | Ω-Transform | Emitir CDP | APROBADO_CORE \| APROBADO_TECNICO | CDP_EMITIDO | PRESUPUESTO |
-| P-FORMALIZAR-CONVENIO | Ω-Transform | Formalizar Convenio | CDP_EMITIDO | CONVENIO_FIRMADO | ['GOBERNADOR', 'UT-RECEPTORA'] |
-| P-TRAMITAR-RESOLUCION | Ω-Transform | Tramitar Resolución Aprobatoria | CONVENIO_FIRMADO | CONVENIO_TRAMITADO | ['PRESUPUESTO', 'CGR'] |
-| P-EJECUTAR | Coalgebra | Ejecutar IPR | CONVENIO_TRAMITADO | EN_EJECUCION |  |
-| P-MODIFICAR | Ω-Transform | Gestionar Modificación | EN_EJECUCION | MODIFICACION_APROBADA \| MODIFICACION_RECHAZADA | DIPIR |
-| P-CERRAR-TECNICO | Ω-Transform | Cierre Técnico | EJECUCION_COMPLETA | CIERRE_TECNICO | SUPERVISOR-GORE |
-| P-CERRAR-FINANCIERO | Ω-Transform | Cierre Financiero | CIERRE_TECNICO | CERRADO | DAF |
+## Ciclo de vida Ω
+Funtor: F(S) = (Event × S) + Termination
 
-## Omega coalgebra
+### Espacio de estados
+| Fase | Estados |
+| --- | --- |
+| Fase 1 ingreso | FORMULACION, POSTULADA, PRE_ADMISIBLE_CDR, NO_PRE_ADMISIBLE, PARA_REVISION_TECNICA, EN_CARTERA_PRE_ADMISIBLE, ADMISIBLE, ADMISIBLE_OBS, INADMISIBLE |
+| Fase 2 evaluacion | ENVIADO_MDSF, ENVIADO_DIPRES, EN_EVALUACION_GORE, RS, RF, AD, FI, OT, ELEGIBLE, NO_ELEGIBLE, APROBADO_TECNICO |
+| Fase 3 financiamiento | CARTERA_CORE, APROBADO_CORE, RECHAZADO_CORE, CDP_EMITIDO, ENVIADO_FINANCIAMIENTO |
+| Fase 4 formalizacion | CONVENIO_FIRMADO, CONVENIO_TRAMITADO, TRANSFERENCIA_PROGRAMADA |
+| Fase 5 ejecucion | EN_EJECUCION, LICITACION_EN_CURSO, ADJUDICADO, CONTRATO_FIRMADO, OBRA_EN_TERRENO |
+| Fase 6 modificaciones | MODIFICACION_SOLICITADA, MODIFICACION_EN_EVALUACION, MODIFICACION_APROBADA, MODIFICACION_RECHAZADA |
+| Fase 7 cierre | RECEPCION_PROVISORIA, RECEPCION_DEFINITIVA, CIERRE_TECNICO, CIERRE_FINANCIERO, CERRADO |
+| Terminales | CERRADO, INADMISIBLE_INFORMADO, OT, RECHAZADO_CORE, NO_PRE_ADMISIBLE |
 
-### Id
-Ω-IPR-LIFECYCLE
-
-### Type
-Coalgebra
-
-### Functor
-F(S) = (Event × S) + Termination
-
-### State space
-
-#### Fase 1 ingreso
-- FORMULACION
-- POSTULADA
-- PRE_ADMISIBLE_CDR
-- NO_PRE_ADMISIBLE
-- PARA_REVISION_TECNICA
-- EN_CARTERA_PRE_ADMISIBLE
-- ADMISIBLE
-- ADMISIBLE_OBS
-- INADMISIBLE
-
-#### Fase 2 evaluacion
-- ENVIADO_MDSF
-- ENVIADO_DIPRES
-- EN_EVALUACION_GORE
-- RS
-- RF
-- AD
-- FI
-- OT
-- ELEGIBLE
-- NO_ELEGIBLE
-- APROBADO_TECNICO
-
-#### Fase 3 financiamiento
-- CARTERA_CORE
-- APROBADO_CORE
-- RECHAZADO_CORE
-- CDP_EMITIDO
-- ENVIADO_FINANCIAMIENTO
-
-#### Fase 4 formalizacion
-- CONVENIO_FIRMADO
-- CONVENIO_TRAMITADO
-- TRANSFERENCIA_PROGRAMADA
-
-#### Fase 5 ejecucion
-- EN_EJECUCION
-- LICITACION_EN_CURSO
-- ADJUDICADO
-- CONTRATO_FIRMADO
-- OBRA_EN_TERRENO
-
-#### Fase 6 modificaciones
-- MODIFICACION_SOLICITADA
-- MODIFICACION_EN_EVALUACION
-- MODIFICACION_APROBADA
-- MODIFICACION_RECHAZADA
-
-#### Fase 7 cierre
-- RECEPCION_PROVISORIA
-- RECEPCION_DEFINITIVA
-- CIERRE_TECNICO
-- CIERRE_FINANCIERO
-- CERRADO
-
-#### Terminales
-- CERRADO
-- INADMISIBLE_INFORMADO
-- OT
-- RECHAZADO_CORE
-- NO_PRE_ADMISIBLE
-
-### Transitions
-| from | to | event | morphism |
+### Transiciones
+| Desde | Hacia | Evento | Morfismo |
 | --- | --- | --- | --- |
 | FORMULACION | POSTULADA | Ingreso Oficio Oficina de Partes | P-INGRESAR |
 | POSTULADA | PRE_ADMISIBLE_CDR | Sesión CDR | P-FILTRAR-CDR |
@@ -192,60 +121,38 @@ F(S) = (Event × S) + Termination
 | EN_EJECUCION | CIERRE_TECNICO | Recepción definitiva | P-CERRAR-TECNICO |
 | CIERRE_TECNICO | CERRADO | Rendición aprobada | P-CERRAR-FINANCIERO |
 
-## Omega constructions
-
-### Omega constructions
-| id | type | name |
+## Construcciones Ω
+| ID | Tipo | Nombre |
 | --- | --- | --- |
 | Ω-MECANISMO-FIBRATION | GrothendieckFibration | Polimorfismo de Mecanismos de Financiamiento |
 | Ω-ADMISIBILIDAD-PULLBACK | Pullback | Admisibilidad como Límite |
 | Ω-SELECTOR-ADJUNCTION | Adjunction | Selector de Vías como Funtor Libre |
 
-## Omega monads
+## Mónadas Ω
+| ID | Nombre | Evaluador | Estructura |
+| --- | --- | --- | --- |
+| Ω-RATE-MONAD | Evaluación Técnico-Económica SNI | MDSF | T_RATE(X) = X × {RS} + X × {AD} + {FI(gaps)} + {OT(reason)} |
+| Ω-RF-MONAD | Evaluación Ex-Ante de Programas | DIPRES/SES | T_RF(X) = X × {RF} + {FI(obs)} + {OT(rechazo)} |
+| Ω-ITF-MONAD | Evaluación Interna de Transferencias | GORE | T_ITF(X) = X × {ITF_OK} + X × {ITF_OBS} + {NO_REC} |
+| Ω-CONCURSO-MONAD | Evaluación Competitiva por Mérito | Comité_Evaluador | T_CONC(X) = X × {ELEGIBLE, puntaje} + {NO_ELEGIBLE} + {LISTA_ESPERA} |
+| Ω-TECNICA-MONAD | Evaluación Técnica GORE (Exenta) | GORE (DIPRES/DIINF) | T_TEC(X) = X × {APROBADO} + {OBSERVADO} + {RECHAZADO} |
 
-### Omega monads
-| id | type | name | applies_to | evaluator | structure |
-| --- | --- | --- | --- | --- | --- |
-| Ω-RATE-MONAD | Monad | Evaluación Técnico-Económica SNI | ['MEC-SNI-GENERAL', 'MEC-C33-CONSERVACION', 'MEC-5000UTM'] | MDSF | T_RATE(X) = X × {RS} + X × {AD} + {FI(gaps)} + {OT(reason)} |
-| Ω-RF-MONAD | Monad | Evaluación Ex-Ante de Programas | ['MEC-G06-DIRECTA'] | DIPRES/SES | T_RF(X) = X × {RF} + {FI(obs)} + {OT(rechazo)} |
-| Ω-ITF-MONAD | Monad | Evaluación Interna de Transferencias | ['MEC-TRANSFER-PUB'] | GORE | T_ITF(X) = X × {ITF_OK} + X × {ITF_OBS} + {NO_REC} |
-| Ω-CONCURSO-MONAD | Monad | Evaluación Competitiva por Mérito | ['MEC-SUBV8', 'MEC-FRPD-CAPITAL', 'MEC-FRPD-PROGRAMA'] | Comité_Evaluador | T_CONC(X) = X × {ELEGIBLE, puntaje} + {NO_ELEGIBLE} + {LISTA_ESPERA} |
-| Ω-TECNICA-MONAD | Monad | Evaluación Técnica GORE (Exenta) | ['MEC-FRIL', 'MEC-5000UTM'] | GORE (DIPRES/DIINF) | T_TEC(X) = X × {APROBADO} + {OBSERVADO} + {RECHAZADO} |
+## Profuntor Ω
+Signatura: Π: Selector^op × Gestión → Set
+Ley de composición: Selector(M) determina unívocamente Track(Fase2) y Dictamen
 
-## Omega profunctor
+### Mapeos
+| Selector | Fase 2 | Fase 3 | Dictamen |
+| --- | --- | --- | --- |
+| MEC-SNI-GENERAL | GN-IPR-F2-TRACK-A-SNI | GN-IPR-F3-CON-CORE | RATE |
+| MEC-FRIL | GN-IPR-F2-C-FRIL-8FNDR-FRPD-CIRC33 | GN-IPR-F3-SIN-CORE | APROBACION_TECNICA |
+| MEC-G06-DIRECTA | GN-IPR-F2-TRACK-B-PPR | GN-IPR-F3-CON-CORE | RF |
+| MEC-TRANSFER-PUB | Evaluación_Interna_GORE | GN-IPR-F3-CON-CORE | ITF |
+| MEC-SUBV8 | Concurso_Competitivo | Asignación_Directa_o_Concurso | CONCURSO |
+| MEC-FRPD-CAPITAL | FRPD-FASE3-GORE | Depende_Tipo | CONCURSO |
 
-### Id
-Ω-GESTION-IPR-PROFUNCTOR
-
-### Type
-Profunctor
-
-### Signature
-Π: Selector^op × Gestión → Set
-
-### Source category
-kb_gn_011_selector_ipr_koda.yml
-
-### Target category
-kb_gn_019_gestion_ipr_koda.yml
-
-### Mappings
-| selector |
-| --- |
-| MEC-SNI-GENERAL |
-| MEC-FRIL |
-| MEC-G06-DIRECTA |
-| MEC-TRANSFER-PUB |
-| MEC-SUBV8 |
-| MEC-FRPD-CAPITAL |
-
-### Composition law
-Selector(M) determina unívocamente Track(Fase2) y Dictamen
-
-## Omega axioms
-
-### Omega axioms
-| id | statement |
+## Axiomas Ω
+| ID | Enunciado |
 | --- | --- |
 | AX-MECANISMO-DETERMINA-TRACK | El mecanismo de financiamiento determina unívocamente el track de evaluación |
 | AX-PULLBACK-ADMISIBILIDAD | La admisibilidad es el pullback de requisitos sobre documentos presentados |

@@ -13,7 +13,7 @@ _manifest:
 ## kb_route
 
 - **Firma:** query_topic: string -> urn: string
-- **Cuando usar:** Clasificar intent del usuario -> area taxonomica via routing map -> seleccionar artefacto -> resolver URN. Siempre consultar Matriz de Integracion Organica como indice primario: Taxonomia_Conocimiento -> Indice_Artefactos -> {area} -> Artefactos.
+- **Cuando usar:** Clasificar intent del usuario -> area taxonomica via routing map -> seleccionar artefacto -> resolver URN en catalogo. El routing map de este bootstrap es la referencia primaria y `catalog_master_kora.yml` sigue siendo el SSOT de resolucion.
 - **Cuando NO usar:** Tema ya mapeado en turno actual.
 - **Routing Map:**
 
@@ -68,4 +68,3 @@ _manifest:
 | Inventarios, bodegas | gestion (N3) | urn:gn:kb:manual-inventarios-bodegas |
 | Activo fijo | gestion (N3) | urn:gn:kb:manual-activo-fijo |
 | Desarrollo organizacional | gestion (N3) | urn:gn:kb:manual-desarrollo-organizacional |
-| Matriz integracion organica (INDICE PRIMARIO) | index | urn:gn:kb:matriz-integracion-organica |

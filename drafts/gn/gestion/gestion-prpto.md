@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.67
+    cr: 1.57
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -731,21 +731,7 @@ Describir subtítulos clave, su contenido y consideraciones operativas para la g
 Subtítulos clave: 21, 22, 23, 24, 26, 29, 31, 33, 34.
 
 ### Subtitulo 21 Gastos en Personal
-
-#### Contenido
-
-#### Cpt
-Remuneraciones y obligaciones del empleador del personal del GORE.
-
-#### Responsables
-DAF.
-
-#### Acciones
-Asegurar que pagos respeten dotaciones, topes de glosas y normativa.
-
-#### Ctx Flexibilidad 2026
-- Glosa 01 Partida 31: sin límite de antigüedad para contratas; contratas pueden ejercer funciones directivas (hasta 20%); honorarios pueden actuar como agente público.
-- Art. 05 Ley 21.796: suspensión de compatibilidad de cargo de planta con contrata.
+GORE-FIN-SUB-21-CONTENIDO-01 Remuneraciones y obligaciones del empleador del personal del GORE. DAF. Asegurar que pagos respeten dotaciones, topes de glosas y normativa. Glosa 01 Partida 31: sin límite de antigüedad para contratas; contratas pueden ejercer funciones directivas (hasta 20%); honorarios pueden actuar como agente público. Art. 05 Ley 21.796: suspensión de compatibilidad de cargo de planta con contrata.
 
 #### Items Relevantes
 
@@ -756,26 +742,7 @@ Asegurar que pagos respeten dotaciones, topes de glosas y normativa.
 - Ítem 03 Otras Remuneraciones / Asignación 001 Honorarios a Suma Alzada: permite contratar profesionales para asesoría o ejecución en programas de inversión, clave para programas directos (Glosa 06).
 
 ### Subtitulo 22 Bienes y Servicios
-
-#### Contenido
-
-#### Cpt
-Gastos operativos (insumos, servicios básicos, arriendos, pasajes).
-
-#### Responsables
-DAF.
-
-#### Acciones
-Gestionar adquisiciones vía Ley de Compras y buscar eficiencia.
-
-#### Prohibiciones
-Prohibido reasignar recursos de inversión hacia Subtítulo 22 (Glosa 04 Partida 31).
-
-#### Fundamento
-Incremento de Subtítulo 22 solo con ingresos propios o SIC.
-
-#### Contexto
-DIPIR interviene solo cuando programas directos (Glosa 06) destinan parte de su 5% a este subtítulo.
+GORE-FIN-SUB-22-CONTENIDO-01 Gastos operativos (insumos, servicios básicos, arriendos, pasajes). DAF. Gestionar adquisiciones vía Ley de Compras y buscar eficiencia. Prohibido reasignar recursos de inversión hacia Subtítulo 22 (Glosa 04 Partida 31). Incremento de Subtítulo 22 solo con ingresos propios o SIC. DIPIR interviene solo cuando programas directos (Glosa 06) destinan parte de su 5% a este subtítulo.
 
 #### Items Relevantes
 
@@ -786,63 +753,10 @@ DIPIR interviene solo cuando programas directos (Glosa 06) destinan parte de su 
 - Ítem 08 Servicios Generales / Asignación 007 Pasajes, Fletes y Bodegajes: algunos gastos de consumo se informan como inversión pública regional en Chileindica.
 
 ### Subtitulo 23 Prestaciones Seguridad Social
-
-#### Contenido
-
-#### Cpt
-Gastos por prestaciones previsionales y de asistencia social; uso en GORE generalmente bajo.
-
-#### Responsables
-DAF.
+GORE-FIN-SUB-23-CONTENIDO-01 Gastos por prestaciones previsionales y de asistencia social; uso en GORE generalmente bajo. DAF.
 
 ### Subtitulo 24 Transferencias Corrientes
-
-#### Contenido
-
-#### Cpt
-Recursos transferidos sin contraprestación directa para gastos corrientes de otras instituciones (funcionamiento e inversión asociados).
-
-#### Nat
-Doble componente (funcionamiento e inversión).
-
-#### Fundamento
-Transferencias a privados deben ser por concurso público y convenio (Art. 23-27 Ley 21.796).
-
-#### Reglas Transferencias Privados 2026
-
-#### Fundamento
-Art. 23-27 Ley 21.796.
-
-#### Req General
-- Transferencias corrientes y de capital a instituciones privadas deben ser resultado de concurso público abierto y transparente y materializarse mediante convenio.
-- La asignación directa sin concurso procede sólo de forma excepcional y debe acreditarse mediante resolución fundada.
-
-#### Causales Asignacion Directa Sin Concurso
-- En concursos respectivos no se presentaron interesados.
-- Sólo existe una persona jurídica como posible beneficiario o ejecutor.
-- Emergencia, urgencia o imprevisto debidamente calificados.
-
-#### Convenios Obligaciones y Prohibiciones
-- El convenio debe indicar objeto social/fines del receptor y acreditar su pertinencia previamente a la suscripción.
-- El convenio debe indicar actividades específicas y/o conceptos de gasto a financiar.
-- No puede establecer compromisos financieros que excedan el ejercicio presupuestario sin autorización previa DIPRES.
-- Debe condicionar la suscripción al cumplimiento íntegro de la Ley N°19.862.
-- Rendiciones de cuentas deben realizarse vía Sistema de Rendición Electrónica de Cuentas (SISREC) CGR, según instrucciones CGR.
-- Salvo plazo distinto en convenio, el organismo público tiene plazo máximo de 3 meses para pronunciarse fundadamente sobre la rendición.
-- Debe exigir restitución si recursos se destinan a finalidad distinta, no se utilizan, no se rinden o son observados.
-
-#### Reglas Ejecutoras Politica Publica
-- Para instituciones privadas ejecutoras de políticas públicas: exigir al menos 2 años de antigüedad y experiencia acreditada.
-- Exigir garantías cuando el total de recursos a transferir supere 1.000 UTM; garantía equivalente al 5% del monto total.
-
-#### Inhabilidades Concursos y Convenios
-- No podrán intervenir en procesos concursal/adjudicación/suscripción quienes tengan parentesco (hasta 4° consanguinidad/3° afinidad) con directivos o ejecutivos de institución participante.
-- No podrán intervenir quienes hayan trabajado o desempeñado labores directivas en institución participante en los 2 años anteriores al cargo público.
-- Debe dejarse constancia en actas de la nómina de funcionarias/os y personal a honorarios que intervino en el proceso.
-
-#### Restituciones y Reintegros
-- Los organismos públicos receptores que deban reintegrar recursos a rentas generales deben hacerlo a más tardar dentro del mes siguiente al cierre de la rendición.
-- El proceso de rendición no podrá extenderse por más de 6 meses desde la finalización de la ejecución del convenio.
+GORE-FIN-SUB-24-CONTENIDO-01 Recursos transferidos sin contraprestación directa para gastos corrientes de otras instituciones (funcionamiento e inversión asociados). Doble componente (funcionamiento e inversión). Transferencias a privados deben ser por concurso público y convenio (Art. 23-27 Ley 21.796). GORE-FIN-SUB-24-PRIVADOS-ART23-27-01 Art. 23-27 Ley 21.796. Transferencias corrientes y de capital a instituciones privadas deben ser resultado de concurso público abierto y transparente y materializarse mediante convenio. La asignación directa sin concurso procede sólo de forma excepcional y debe acreditarse mediante resolución fundada. En concursos respectivos no se presentaron interesados. Sólo existe una persona jurídica como posible beneficiario o ejecutor. Emergencia, urgencia o imprevisto debidamente calificados. El convenio debe indicar objeto social/fines del receptor y acreditar su pertinencia previamente a la suscripción. El convenio debe indicar actividades específicas y/o conceptos de gasto a financiar. No puede establecer compromisos financieros que excedan el ejercicio presupuestario sin autorización previa DIPRES. Debe condicionar la suscripción al cumplimiento íntegro de la Ley N°19.862. Rendiciones de cuentas deben realizarse vía Sistema de Rendición Electrónica de Cuentas (SISREC) CGR, según instrucciones CGR. Salvo plazo distinto en convenio, el organismo público tiene plazo máximo de 3 meses para pronunciarse fundadamente sobre la rendición. Debe exigir restitución si recursos se destinan a finalidad distinta, no se utilizan, no se rinden o son observados. Para instituciones privadas ejecutoras de políticas públicas: exigir al menos 2 años de antigüedad y experiencia acreditada. Exigir garantías cuando el total de recursos a transferir supere 1.000 UTM; garantía equivalente al 5% del monto total. No podrán intervenir en procesos concursal/adjudicación/suscripción quienes tengan parentesco (hasta 4° consanguinidad/3° afinidad) con directivos o ejecutivos de institución participante. No podrán intervenir quienes hayan trabajado o desempeñado labores directivas en institución participante en los 2 años anteriores al cargo público. Debe dejarse constancia en actas de la nómina de funcionarias/os y personal a honorarios que intervino en el proceso. Los organismos públicos receptores que deban reintegrar recursos a rentas generales deben hacerlo a más tardar dentro del mes siguiente al cierre de la rendición. El proceso de rendición no podrá extenderse por más de 6 meses desde la finalización de la ejecución del convenio.
 
 #### Items
 
@@ -950,38 +864,10 @@ Glosa 06 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-06).
 - Asistencia Técnica: asistencia técnica a municipalidades para fortalecer cartera de proyectos.
 
 ### Subtitulo 26 Otros Gastos Corrientes
-
-#### Contenido
-
-#### Cpt
-Devoluciones y compensaciones por daños a terceros (uso bajo pero posible).
-
-#### Items
-- Ítem 01 Devoluciones.
-- Ítem 02 Compensaciones por Daños.
-
-#### Responsables
-DAF.
+GORE-FIN-SUB-26-CONTENIDO-01 Devoluciones y compensaciones por daños a terceros (uso bajo pero posible). Ítem 01 Devoluciones. Ítem 02 Compensaciones por Daños. DAF.
 
 ### Subtitulo 29 Activos No Financieros
-
-#### Contenido
-
-#### Cpt
-Adquisición de bienes de capital del GORE (equipos, vehículos, terrenos).
-
-#### Proposito
-Financiar reposición de activos para otras instituciones públicas (Glosa 09 Partida 31).
-
-#### Condiciones
-- Activos nuevos requieren certificado de disponibilidad presupuestaria para los gastos recurrentes que generen dichos activos.
-- El certificado debe ser emitido por el Ministerio o la Subsecretaría respectiva.
-- Para Fuerzas de Orden y Seguridad Pública: certificado de pertinencia emitido por el Ministerio de Seguridad Pública.
-- Para Cuerpos de Bomberos: certificado de pertinencia técnica emitido por la Junta Nacional de Bomberos de Chile.
-- Compra de terrenos: coordinar con SERVIU de la región respectiva, cuando corresponda.
-
-#### Responsables
-DIPIR identifica necesidades; DAF ejecuta adquisición.
+GORE-FIN-SUB-29-CONTENIDO-01 Adquisición de bienes de capital del GORE (equipos, vehículos, terrenos). Financiar reposición de activos para otras instituciones públicas (Glosa 09 Partida 31). Activos nuevos requieren certificado de disponibilidad presupuestaria para los gastos recurrentes que generen dichos activos. El certificado debe ser emitido por el Ministerio o la Subsecretaría respectiva. Para Fuerzas de Orden y Seguridad Pública: certificado de pertinencia emitido por el Ministerio de Seguridad Pública. Para Cuerpos de Bomberos: certificado de pertinencia técnica emitido por la Junta Nacional de Bomberos de Chile. Compra de terrenos: coordinar con SERVIU de la región respectiva, cuando corresponda. DIPIR identifica necesidades; DAF ejecuta adquisición.
 
 #### Items
 
@@ -996,38 +882,7 @@ DIPIR identifica necesidades; DAF ejecuta adquisición.
 - Ítem 99 Otros Activos no Financieros.
 
 ### Subtitulo 31 Iniciativas Inversion Directa
-
-#### Contenido
-
-#### Cpt
-Inversión real ejecutada directamente por el GORE (unidad mandante).
-
-#### Fundamento
-Glosa 10 Partida 31.
-
-#### Requisitos
-- Respetar competencias GORE y someterse al SNI.
-- Licitación pública obligatoria si proyectos/programas de inversión superan 1.000 UTM (Art. 06 Ley 21.796).
-- Licitación pública obligatoria si estudios básicos superan 500 UTM (Art. 06 Ley 21.796).
-- Identificaciones presupuestarias de iniciativas contratadas en años anteriores en ejecución y aquellas creadas en el mismo año no requerirán nueva aprobación del CORE si los montos totales o resultantes son iguales o menores al 10% de los costos totales ya aprobados por el Consejo Regional, reajustados a la moneda del año en curso.
-
-#### Alcances Glosa10 2026
-
-#### Fundamento
-Glosa 10 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-10).
-
-#### Cpt
-- Iniciativas adicionales permitidas: infraestructura pública (construcción, conservación y mejoramiento) en coordinación con ministerio sectorial.
-- Iniciativas adicionales permitidas: transporte (coordinación MTT) en marco Ley N°20.378.
-- Iniciativas adicionales permitidas: electrificación, gas, energía, conectividad digital, telefonía celular y comunicaciones (incluye conexiones domiciliarias).
-- Iniciativas adicionales permitidas: agua potable y alcantarillado; proyectos sanitarios en áreas de concesión de empresas del sector público; APR y mitigación/reparación por cambio climático (pequeños productores y habitantes rurales).
-- Regla especial 2026: saneamiento rural o proyectos en territorios insulares (SSR) pueden definir como Unidad Técnica a empresa pública o privada que opere en la región, mediante resolución fundada.
-- DOH y Subdirección de Servicios Sanitarios Rurales informan a Gobiernos Regionales y Contraloría Regional regiones sin especialistas (20 enero y 30 junio).
-- Huellas y caminos vecinales privados de uso público: administración directa/contrato/compra servicio; requiere compromiso formal de transferencia de faja y visto bueno Dirección Regional de Vialidad.
-- Personal a honorarios para ejecución de proyectos tendrá calidad de agente público.
-
-#### Proceso
-GORE actúa como unidad mandante; DAF gestiona licitación y contratación.
+GORE-FIN-SUB-31-CONTENIDO-01 Inversión real ejecutada directamente por el GORE (unidad mandante). Glosa 10 Partida 31. Respetar competencias GORE y someterse al SNI. Licitación pública obligatoria si proyectos/programas de inversión superan 1.000 UTM (Art. 06 Ley 21.796). Licitación pública obligatoria si estudios básicos superan 500 UTM (Art. 06 Ley 21.796). Identificaciones presupuestarias de iniciativas contratadas en años anteriores en ejecución y aquellas creadas en el mismo año no requerirán nueva aprobación del CORE si los montos totales o resultantes son iguales o menores al 10% de los costos totales ya aprobados por el Consejo Regional, reajustados a la moneda del año en curso. GORE-FIN-SUB-31-GLO10-ALCANCE-01 Glosa 10 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-10). Iniciativas adicionales permitidas: infraestructura pública (construcción, conservación y mejoramiento) en coordinación con ministerio sectorial. Iniciativas adicionales permitidas: transporte (coordinación MTT) en marco Ley N°20.378. Iniciativas adicionales permitidas: electrificación, gas, energía, conectividad digital, telefonía celular y comunicaciones (incluye conexiones domiciliarias). Iniciativas adicionales permitidas: agua potable y alcantarillado; proyectos sanitarios en áreas de concesión de empresas del sector público; APR y mitigación/reparación por cambio climático (pequeños productores y habitantes rurales). Regla especial 2026: saneamiento rural o proyectos en territorios insulares (SSR) pueden definir como Unidad Técnica a empresa pública o privada que opere en la región, mediante resolución fundada. DOH y Subdirección de Servicios Sanitarios Rurales informan a Gobiernos Regionales y Contraloría Regional regiones sin especialistas (20 enero y 30 junio). Huellas y caminos vecinales privados de uso público: administración directa/contrato/compra servicio; requiere compromiso formal de transferencia de faja y visto bueno Dirección Regional de Vialidad. Personal a honorarios para ejecución de proyectos tendrá calidad de agente público. GORE actúa como unidad mandante; DAF gestiona licitación y contratación.
 
 #### Items
 
@@ -1037,36 +892,7 @@ GORE actúa como unidad mandante; DAF gestiona licitación y contratación.
 - Ítem 03 Programas de Inversión.
 
 ### Subtitulo 33 Transferencias Capital
-
-#### Contenido
-
-#### Cpt
-Transferencia de recursos a terceros para ejecutar proyectos de inversión; subtítulo de mayor peso.
-
-#### Responsables
-Municipalidades, servicios públicos, corporaciones, etc.
-
-#### Fundamento
-Glosa 11 Partida 31 y normativa complementaria.
-
-#### Requisitos
-- Cada transferencia debe formalizarse en un convenio con definición de objeto, monto, plazos, obligaciones, seguimiento y garantías.
-
-#### Alcances Glosa11 2026
-
-#### Fundamento
-Glosa 11 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-11).
-
-#### Cpt
-- Iniciativas adicionales permitidas: PMU/PMB en coordinación con SUBDERE.
-- Iniciativas adicionales permitidas: infraestructura social/deportiva en inmuebles con calidades jurídicas específicas y en inmuebles fiscales en tuición de organizaciones privadas sin fines de lucro con fines sociales.
-- Iniciativas adicionales permitidas: caminos comunitarios en territorios Ley N°19.253 o de comunidades agrícolas.
-- Iniciativas adicionales permitidas: fachadas de inmuebles privados con protección patrimonial.
-- Iniciativas adicionales permitidas: protección/puesta en valor de Monumentos Nacionales, Inmuebles de Conservación Histórica, zonas de conservación, UNESCO y Lista Tentativa (incluye ejecución con sector privado).
-- Iniciativas adicionales permitidas: subsidios a empresas (públicas o privadas) para inversión social (electrificación, gas, energía, telefonía/comunicaciones), evaluadas como iniciativa de inversión por MDSF.
-- APR/sanitarios rurales/desalinización: transferencia por resolución fundada del Gobernador Regional con efectos sin esperar total tramitación; requiere pronunciamiento técnico favorable Subdirección SSR.
-- Transferencias a municipalidades y empresas sanitarias para monitoreo, mantenciones, diseño de soluciones y trabajos preventivos ante filtraciones de redes agua potable/alcantarillado; incluye pavimentación post recambio de redes; previa visación del órgano competente regional.
-- Para proyectos de Construcción de Infraestructura Sanitaria financiados por GORE, rige límite de costo del art. 8° DS N°829/1998 del Ministerio del Interior y sus modificaciones.
+GORE-FIN-SUB-33-CONTENIDO-01 Transferencia de recursos a terceros para ejecutar proyectos de inversión; subtítulo de mayor peso. Municipalidades, servicios públicos, corporaciones, etc. Glosa 11 Partida 31 y normativa complementaria. Cada transferencia debe formalizarse en un convenio con definición de objeto, monto, plazos, obligaciones, seguimiento y garantías. GORE-FIN-SUB-33-GLO11-ALCANCE-01 Glosa 11 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-11). Iniciativas adicionales permitidas: PMU/PMB en coordinación con SUBDERE. Iniciativas adicionales permitidas: infraestructura social/deportiva en inmuebles con calidades jurídicas específicas y en inmuebles fiscales en tuición de organizaciones privadas sin fines de lucro con fines sociales. Iniciativas adicionales permitidas: caminos comunitarios en territorios Ley N°19.253 o de comunidades agrícolas. Iniciativas adicionales permitidas: fachadas de inmuebles privados con protección patrimonial. Iniciativas adicionales permitidas: protección/puesta en valor de Monumentos Nacionales, Inmuebles de Conservación Histórica, zonas de conservación, UNESCO y Lista Tentativa (incluye ejecución con sector privado). Iniciativas adicionales permitidas: subsidios a empresas (públicas o privadas) para inversión social (electrificación, gas, energía, telefonía/comunicaciones), evaluadas como iniciativa de inversión por MDSF. APR/sanitarios rurales/desalinización: transferencia por resolución fundada del Gobernador Regional con efectos sin esperar total tramitación; requiere pronunciamiento técnico favorable Subdirección SSR. Transferencias a municipalidades y empresas sanitarias para monitoreo, mantenciones, diseño de soluciones y trabajos preventivos ante filtraciones de redes agua potable/alcantarillado; incluye pavimentación post recambio de redes; previa visación del órgano competente regional. Para proyectos de Construcción de Infraestructura Sanitaria financiados por GORE, rige límite de costo del art. 8° DS N°829/1998 del Ministerio del Interior y sus modificaciones. GN-PPTO-GLOS-FNDR GN-PPTO-GLOS-FRIL GN-PPTO-GLOS-FRPD
 
 #### Items
 
@@ -1094,20 +920,7 @@ Glosa 11 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-11).
 - DAF elabora aspectos financieros de convenios, ejecuta transferencias y revisa rendiciones.
 
 ### Subtitulo 34 Servicio de Deuda
-
-#### Contenido
-
-#### Cpt
-Pagos asociados principalmente a la Deuda Flotante del año anterior.
-
-#### Prohibiciones
-GORE no puede endeudarse sin ley especial.
-
-#### Proposito
-Registrar y pagar la Deuda Flotante; uso de Ítem 34.07.
-
-#### Advertencias
-Alto nivel de deuda flotante recurrente indica gestión deficiente.
+GORE-FIN-SUB-34-CONTENIDO-01 Pagos asociados principalmente a la Deuda Flotante del año anterior. GORE no puede endeudarse sin ley especial. Registrar y pagar la Deuda Flotante; uso de Ítem 34.07. Alto nivel de deuda flotante recurrente indica gestión deficiente.
 
 ## Glosas Relevantes y Fondos
 

@@ -23,13 +23,15 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.86
+    cr: 1.53
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 12
     meat_count: 872
     fat_count: 0
@@ -37,9 +39,12 @@ extensions:
 ---
 
 # Gestión Financiera y Operativa del Presupuesto Regional 2026
+
 ## Glosario PPTO Clave
+
 ### Proposito
 Definir conceptos y siglas presupuestarias clave utilizados en la guía.
+
 ### Terminos
 | ID | Sigla | Nombre | Def |
 | --- | --- | --- | --- |
@@ -61,27 +66,31 @@ Definir conceptos y siglas presupuestarias clave utilizados en la guía.
 | GN-PPTO-GLOS-SISREC | SISREC | Sistema de Rendición Electrónica de Cuentas | Plataforma de la Contraloría General de la República para gestionar rendiciones de cuentas de transferencias. |
 
 ## Presentacion
+
 ### Asunto
 Guía técnico-operativa para gestión completa de presupuesto en GORE.
+
 ### Proposito
 Proveer marco de referencia para la gestión presupuestaria regional en todas sus etapas (formulación -> cierre).
+
 ### Dest
 - Jefaturas División Administración y Finanzas (DAF).
 - Jefaturas División Presupuesto e Inversión Regional (DIPIR).
 - Equipos técnicos GORE y actores regionales vinculados a la gestión presupuestaria.
-### Referencias
-- GN-PPTO-GLOS-GORE
-- GN-PPTO-GLOS-DAF
-- GN-PPTO-GLOS-DIPIR
 
 ## Contexto y Marco Normativo
+
 ### Introduccion
+
 #### Proposito
 Establecer propósito, alcance y marco normativo de la guía.
+
 #### Requisitos
 Claridad operativa y precisión técnica para gestión diaria del presupuesto regional.
+
 #### Cpt
 Aborda el ciclo presupuestario completo (formulación, aprobación, ejecución, modificaciones, control, cierre).
+
 #### Fundamento
 - D.F.L. N°1-19.175 (LOC GORE).
 - D.L. N°1.263/1975 (Administración Financiera del Estado).
@@ -89,94 +98,106 @@ Aborda el ciclo presupuestario completo (formulación, aprobación, ejecución, 
 - Normas DIPRES (oficios circulares, instructivos de ejecución).
 - Normas Contraloría General de la República (CGR) (resoluciones, instructivos).
 - Jerarquía normativa: Ley > Decreto > Resolución > Oficio Circular > Instructivo.
-#### Referencias
-- GN-PPTO-GLOS-GORE
-- GN-PPTO-GLOS-DIPRES
-- GN-PPTO-GLOS-CGR
-- GN-PPTO-GLOS-MDSF
+
 ### Cambios Presupuestarios 2025
+
 #### Asunto
 Cambios estructurales en presupuesto GORE desde 2025 (vigentes en 2026).
-#### Fuentes
-Oficio Circular N°11 DIPRES 2025 (última versión disponible en corpus).
+
 #### Cpt
 - Creación de 16 programas presupuestarios (uno por región) que integran funcionamiento e inversión.
 - Creación de programa especial 'Asociatividad y Planes Especiales' para asociatividad regional, zonas extremas y territorios rezagados.
+
 #### Cause
 Profundización del proceso de descentralización fiscal.
+
 #### Resultados
 Requiere coordinación estrecha DAF-DIPIR para gestionar un solo programa integrado.
+
 #### Contexto
 - Mayor oferta programática regional (ejecución directa y transferencias), incluyendo 8% FNDR y programas Glosa 06.
 - Dualidad de gestión: GORE debe administrar simultáneamente el Sistema Nacional de Inversiones (SNI) para proyectos de inversión y la evaluación ex-ante DIPRES/MDSF para programas.
+
 ### Ley Presupuestos 2026
+
 #### Proposito
 Referencia normativa base (KODA) para gestión presupuestaria 2026: normas generales + glosas y requerimientos de información de Partida 31.
-#### Ley
+
+#### LEY DE PRESUPUESTOS DEL SECTOR PÚBLICO CORRESPONDIENTE AL AÑO 2026
+
 #### Numero
 21.796
-#### Titulo
-LEY DE PRESUPUESTOS DEL SECTOR PÚBLICO CORRESPONDIENTE AL AÑO 2026
-#### Fuente
-#### Fuentes
-DIARIO OFICIAL DE LA REPUBLICA DE CHILE
-#### Fecha
-Viernes 12 de Diciembre de 2025
-#### CVE
-2741100
+
 #### XRef Required
-- urn:gn:kb:ley-presupuestos-2026-normas-generales
-- urn:gn:kb:glosas-gores-2026
-- urn:gn:kb:glosas-gores-2026
-#### Fuentes
-- knowledge/domains/gn/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml
-- knowledge/domains/gn/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml
+- [Ley de Presupuestos 2026: Normas Generales](urn:gn:kb:ley-presupuestos-2026-normas-generales)
+- [Glosas y Requerimientos de Información GORES 2026](urn:gn:kb:glosas-gores-2026)
+- [Glosas y Requerimientos de Información GORES 2026](urn:gn:kb:glosas-gores-2026)
 
 ## Conceptos Presupuestarios Fundamentales
+
 ### Introduccion
+
 #### Proposito
 Establecer conceptos básicos del sistema presupuestario chileno que dan contexto a la gestión GORE.
-#### Fuentes
-DL N°1.263/1975, Decreto N°854/2004 Hacienda y normativa presupuestaria general.
+
 ### Presupuesto Sector Publico
+
 #### Definicion
 Estimación financiera de ingresos y gastos del sector público para un año, que compatibiliza recursos disponibles con metas y objetivos preestablecidos.
+
 #### Fundamento
 Art. 11, DL N°1.263/1975.
+
 #### Nat
 Instrumento de política fiscal que refleja prioridades de gobierno y gestión; conjuga dimensión jurídica (Ley), técnica (clasificadores) y contable (recursos financieros).
+
 ### Principios Presupuestarios
+
 #### Asunto
 Principios rectores del presupuesto público.
+
 #### Cpt
 - Principio de Universalidad: todos los ingresos y gastos del Estado deben reflejarse en el presupuesto (Art. 4°, DL N°1.263/1975).
 - Principio de Anualidad: el ejercicio presupuestario coincide con el año calendario (Art. 12, DL N°1.263/1975).
+
 ### Clasificadores Presupuestarios
+
 #### Clasificacion Institucional
+
 #### Proposito
 Agrupar presupuestariamente los organismos incluidos en la Ley de Presupuestos.
+
 #### Cpt
 Estructura jerárquica: Partida → Capítulo → Programa.
+
 #### Detalle
 - Partida: nivel superior de agrupación (Presidencia, Congreso, Ministerios, Partida 50 Tesoro Público). Ejemplo: Partida 31 - Gobiernos Regionales.
 - Capítulo: subdivisión de la Partida; corresponde a cada organismo con presupuesto directo en la Ley. Ejemplo: un capítulo por cada uno de los 16 GORE.
 - Programa: división presupuestaria del Capítulo, asociada a funciones u objetivos específicos (ej. Programa 01 Funcionamiento, 02 Inversión Regional, 03 Asociatividad y Planes Especiales).
+
 #### Clasificacion Por Objeto
+
 #### Proposito
 Ordenar las transacciones según su origen (ingresos) o destino (gastos).
+
 #### Cpt
 Estructura jerárquica: Subtítulo → Ítem → Asignación → Sub-asignación.
+
 #### Ejemplos
 - Subtítulos de gasto: 21 Gastos en Personal, 22 Bienes y Servicios de Consumo, 33 Transferencias de Capital.
 - Subtítulos de ingreso: 08 Otros Ingresos Corrientes, 09 Aporte Fiscal, 15 Saldo Inicial de Caja.
 - Ítem: motivo significativo de ingreso o gasto (ej. Ítem 01 Personal de Planta).
 - Asignación: motivo específico (ej. Asignación 22.04.001 Materiales de Oficina).
 - Sub-asignación: desglose más particular (ej. 21.01.001-001 Sueldos Bases).
+
 #### Clasificacion Por Grado Afectacion
+
 #### Proposito
 Registrar y controlar instancias previas al devengo en la ejecución del presupuesto.
+
 #### Objetivos
 Conocer avance en la aplicación de los recursos y la calidad del compromiso fiscal.
+
 #### Etapas
 - Preafectación: intenciones de gasto sin obligación a terceros (llamados a licitación, cotizaciones).
 - Afectación: obligación sujeta a perfeccionamiento (adjudicación, selección de proveedor).
@@ -184,256 +205,290 @@ Conocer avance en la aplicación de los recursos y la calidad del compromiso fis
 - Compromiso Implícito: gasto y devengo ocurren simultáneamente (servicios básicos, peajes).
 
 ## Ciclo Presupuestario
-### Referencias
-- GN-PPTO-GLOS-GORE
-- GN-PPTO-GLOS-DAF
-- GN-PPTO-GLOS-DIPIR
-- GN-PPTO-GLOS-CORE
+
 ### Etapas Generales
+
 #### Proposito
 Describir las etapas del ciclo presupuestario y roles de DAF y DIPIR.
+
 #### Cpt
 - Etapas: 1) Formulación, 2) Aprobación / Distribución Inicial, 3) Ejecución, 4) Modificaciones, 5) Control y Seguimiento, 6) Cierre.
 - Rol general DAF: financiero-administrativo.
 - Rol general DIPIR: estratégico-programático de inversión (complementariedad de roles).
+
 ### Formulacion
+
 #### Rol DIPIR Proyecto Presupuesto
+
 #### Responsables
 DIPIR lidera elaboración del proyecto de presupuesto del GORE.
+
 #### Contexto
 Foco en inversión regional y oferta programática.
+
 #### Cpt Tareas Inversion
 - Elaborar proyecto de presupuesto de inversiones.
 - Asesorar al Gobernador en selección de proyectos.
 - Coordinar ARI (Anteproyecto Regional de Inversiones) y PROPIR (Programa de Inversión Regional).
 - Recopilar iniciativas de servicios públicos (plataforma Chileindica).
 - Asegurar alineación con la Estrategia Regional de Desarrollo (ERD) y coordinar con DIPLADE.
-#### Referencias
-- GN-PPTO-GLOS-DIPIR
+
 #### Rol DIPIR Oferta Programatica
+
 #### Cpt Tareas
 - Diseñar programas públicos ejecutados por el GORE usando Metodología de Marco Lógico.
 - Preparar antecedentes para evaluación ex-ante (DIPRES/MDSF) de programas Glosa 06.
 - Identificar programas nuevos o sustancialmente reformulados que requieren evaluación obligatoria.
 - Coordinar con DIPLADE y otras divisiones técnicas.
+
 #### Fundamento
 Glosa 06 Partida 31 Ley 21.796, Oficio Circular N°22 DIPRES.
-#### Referencias
-- GN-PPTO-GLOS-DIPIR
-- GN-PPTO-GLOS-DIPRES
-- GN-PPTO-GLOS-MDSF
+
 #### Rol DAF Proyecciones y Clasificacion
+
 #### Responsables
 DAF aporta información financiera y administrativa a la formulación.
+
 #### Cpt Tareas Funcionamiento
 - Proyectar gastos de funcionamiento (Subtítulos 21 y 22) con base en dotación vigente y gastos recurrentes.
 - Cumplir restricciones legales de gasto en personal y viáticos (ej. Art. 04 Ley 21.796).
+
 #### Cpt Tareas Clasificacion
 - Verificar correcta aplicación del clasificador presupuestario (Decreto N°854/2004).
 - Asegurar nivel de detalle adecuado (Subtítulo, Ítem, Asignación), especialmente en transferencias (Subt. 24 y 33).
 - Respetar principio de legalidad del gasto.
-#### Referencias
-- GN-PPTO-GLOS-DAF
+
 #### Coordinacion DIPIR DAF
+
 #### Responsables
 Responsabilidad compartida entre DIPIR y DAF.
+
 #### Cpt Tareas Glosas
 - Identificar y explicitar glosas aplicables (dotaciones, vehículos, viáticos, etc.).
 - Ejemplo: glosas de la Partida 31 en Ley de Presupuestos 2026.
+
 #### Cpt Tareas Provisiones
 - Crear provisiones específicas (ej. FRPD en ítem 33.03, FRIL, provisiones 8% FNDR).
+
 #### Cpt Tareas Justificacion Inversiones
 - Justificar técnica y socialmente las inversiones propuestas.
 - Obtener Recomendación Satisfactoria (RS) de MDSF para inclusión en presupuesto (salvo excepciones como FRIL).
 - Mantener todos los proyectos en SNI con código BIP para formulación y seguimiento físico-financiero.
-#### Referencias
-- GN-PPTO-GLOS-DIPIR
-- GN-PPTO-GLOS-DAF
-- GN-PPTO-GLOS-FNDR
-- GN-PPTO-GLOS-FRIL
-- GN-PPTO-GLOS-FRPD
-- GN-PPTO-GLOS-SNI
-- GN-PPTO-GLOS-BIP
+
 #### Coordinacion ARI PROPIR
+
 #### Asunto
 Coordinación regional del gasto público vía ARI y PROPIR.
-#### Fuentes
-Instructivo Coordinación Gasto Público ARI 2026 y PROPIR (año en curso; versión 2025 no disponible en este corpus).
+
 #### Definicion
 - ARI: estimación de inversión de GORE, ministerios y servicios para el año siguiente.
 - PROPIR: planificación y seguimiento del gasto público regional del año en curso.
+
 #### Mecanismo
 - Ambos se gestionan en plataforma Chileindica (<www.chileindica.cl>).
+
 #### Resp GORE
 - Gobernador conduce el proceso (puede delegar en Jefe DIPLADE).
 - DIPLADE lidera Secretaría Ejecutiva de la Coordinación Regional del Gasto Público (SEREMI y jefes de servicios).
 - Admisión de iniciativas, fijación de plazos de postulación ARI (máx. primeros 4 meses).
 - Informe trimestral PROPIR al CORE y envío ARI aprobado a ministerios.
+
 #### Resp Servicios Publicos
 - Ingresar iniciativas a Chileindica con desglose comunal, montos, fuente, beneficiarios y alineación con ERD.
 - Informar ejecución financiera mensual PROPIR y comunicar ausencia de inversión cuando aplique.
+
 #### Proc Discrepancias
 - Resolución en instancia regional.
 - Si persisten, tratamiento en comisiones técnicas de formulación presupuestaria a nivel central.
-#### Referencias
-- GN-PPTO-GLOS-ARI
-- GN-PPTO-GLOS-PROPIR
+
 ### Aprobacion y Distribucion Inicial
+
 #### Procedimiento Legal
+
 #### Asunto
 Procedimiento legal para aprobación de presupuesto inicial del GORE.
-#### Fuentes
-Glosa 01 Partida 31 Ley 21.796; Instructivo CGR Aprobación Presupuesto Inicial (vigente).
+
 #### Proc Fases y Plazos
 - Propuesta del Gobernador: presenta distribución inicial al CORE (10 días desde publicación de la Ley).
 - Aprobación CORE: se pronuncia en 10 días desde recepción.
 - Envío a DIPRES: Gobernador remite acuerdo aprobado en 5 días.
 - Resoluciones DIPRES: elabora resoluciones de presupuesto de funcionamiento e inversión (10 días).
 - Toma de Razón CGR: 15 días desde recepción (prorrogable por 15).
+
 #### Contenido y Requisitos
-#### Fuentes
-Instructivo CGR Aprobación Presupuesto Inicial (vigente).
+
 #### Req Generales
 - Desagregación según clasificador presupuestario a nivel de Subtítulo e Ítem.
 - Transferencias desagregadas a nivel de Asignación (Subt. 24 y 33).
 - Clasificaciones coherentes con naturaleza del gasto y receptor (legalidad del gasto).
 - Equilibrio entre ingresos y gastos; montos coinciden con Ley de Presupuestos.
 - Coherencia entre propuesta Gobernador, acuerdo CORE y resoluciones DIPRES.
+
 #### Req Presupuesto Funcionamiento
 - Incluir glosas obligatorias (dotación, vehículos, viáticos, gasto CORE en el extranjero).
 - Monto del Subtítulo 21 debe coincidir con lo autorizado en glosa específica.
+
 #### Req Presupuesto Inversion
 - Incluir arrastres de años anteriores conservando número de asignación y código BIP.
 - Incorporar nuevas iniciativas cumpliendo requisitos de glosas.
 - Para nuevas transferencias a privados: acreditar selección por concurso o causal de excepción y personalidad jurídica vigente.
 - Crear asignación para FRPD en ítem 33.03 y otras provisiones (FRIL, 8% FNDR).
+
 #### Req Acuerdo CORE
 - Voluntad del CORE debe ser clara en conceptos y montos y certificada por Secretario Ejecutivo.
+
 #### Rol CORE en Aprobacion
+
 #### Acciones
 Propuesta de distribución se somete al CORE para aprobación, modificación o sustitución (Art. 25 LOC GORE).
+
 #### Dln
 10 días corridos para pronunciarse.
+
 #### Fundamento
 Dictamen E548580/2024 CGR: decisiones informadas, razonadas y alineadas con intereses regionales.
+
 #### Proc Exposicion
 - DIPIR expone presupuesto de inversiones.
 - DAF expone presupuesto de funcionamiento.
 - Ambas divisiones responden consultas y ajustan propuesta si corresponde.
+
 #### Tramite DIPRES y CGR
+
 #### Acciones
 Gobernador remite distribución aprobada a DIPRES.
+
 #### Dln
 5 días desde aprobación CORE.
+
 #### Responsables
 DAF prepara oficio conductor y antecedentes.
+
 #### Req Documentos
 - Oficio firmado por Gobernador titular o subrogante con acto de delegación.
 - Contacto formal.
 - Acuerdo CORE certificado.
+
 #### Act DIPRES
 - Revisar y elaborar resoluciones de presupuesto inicial (10 días).
 - Subsanar errores materiales y reclasificar ingresos y gastos informando a GORE y CGR.
+
 #### ID Resolucion CGR
+
 #### Acciones
 DIPRES remite resoluciones a CGR para Toma de Razón.
+
 #### Nat
 Control previo obligatorio de legalidad.
+
 #### Dln
 15 días (prorrogable por 15).
+
 #### Contexto
 - CGR verifica clasificación presupuestaria, cumplimiento de glosas, conformidad normativa y coincidencia GORE-CORE-DIPRES.
 - Toma de Razón deja acto vigente; Representa rechaza por ilegalidad o formula alcances.
+
 #### Resultados
 DAF carga presupuesto en SIGFE (GORE-FIN-HERRAM-SIGFE-01).
+
 ### Ejecucion
+
 #### Programacion Ejecucion y Caja
+
 #### Asunto
 Programación de ejecución y de caja.
-#### Fuentes
-Instructivo DIPRES Ejecución Presupuestaria (vigente).
+
 #### Cpt
 - DIPRES elabora programa de ejecución inicial mensualizado; GORE propone su programa.
 - GORE remite actualizaciones mensuales a más tardar el día 15, detallando aporte fiscal y fuentes.
 - Programa de Caja Mensual se basa en ejecución programada menos saldos disponibles para calcular necesidades de aporte fiscal y evitar recursos ociosos.
-#### Referencias
-- GN-PPTO-GLOS-GORE
-- GN-PPTO-GLOS-DIPRES
+
 #### Rol DAF en Ejecucion
+
 #### Responsables
 DAF lidera administración financiera diaria.
+
 #### Cpt Gestion Financiera
 - Garantizar gasto dentro de montos y clasificaciones autorizadas.
 - Registrar preafectación, compromiso, devengo y pago en SIGFE.
 - Supervisar programación de caja con DIPRES.
+
 #### Cpt Pagos y Contabilidad
 - Tramitar órdenes de compra, afectar gastos y realizar pagos (obligatoriamente vía transferencia electrónica, Art. 08 Ley 21.796).
 - Cumplir normativa de compras públicas y rendición de cuentas.
 - Elaborar informes financieros periódicos para DIPRES.
 - Identificar mensualmente iniciativas de inversión (Subt. 31) por código BIP.
+
 #### Cpt Control Interno
 - Resguardar respaldo legal de cada desembolso.
 - Asegurar respeto al destino de fondos según glosas.
 - Certificar disponibilidad presupuestaria y límites legales con coordinación de Unidad de Control.
-#### Referencias
-- GN-PPTO-GLOS-DAF
-- GN-PPTO-GLOS-SIGFE
-- GN-PPTO-GLOS-DIPRES
+
 #### Rol DIPIR en Ejecucion
+
 #### Responsables
 DIPIR lidera seguimiento físico y presupuestario de la inversión.
+
 #### Cpt Monitoreo Proyectos
 - Revisar avance físico de obras e iniciativas (Subt. 31 y 33).
 - Detectar atrasos o desviaciones y proponer acciones correctivas.
 - Evaluar cumplimiento de hitos de convenios (trimestral) y preparar informes para instancias externas.
+
 #### Cpt Coord Externa
 - Articular con SEREMI, servicios públicos sectoriales y municipios beneficiarios.
+
 #### Cpt Uso Herramientas
 - Actualizar estados en BIP y cargar ejecución físico-financiera (primeros 8 días del mes siguiente).
 - Verificar vigencia técnica (RS) y usar SIGFE para seguimiento financiero.
 - Referencias: GORE-FIN-HERRAM-BIP-01, GORE-FIN-HERRAM-SIGFE-01.
-#### Referencias
-- GN-PPTO-GLOS-DIPIR
-- GN-PPTO-GLOS-BIP
-- GN-PPTO-GLOS-SIGFE
-- GN-PPTO-GLOS-SNI
+
 #### Regla Devengo Por Tipo Transferencia
+
 #### Asunto
 Reglas de devengo diferenciadas según tipo de transferencia.
-#### Fuentes
-Minuta CGR-AGORECHI-DIPRES marzo 2025; Dictamen CGR N°E583841/2024.
+
 #### Fundamento
 Momento del devengo varía según receptor y modalidad; impacta metas de ejecución.
+
 #### Casos
 - Transferencias extrapresupuestarias (Subt. 24-03, 33-03) a instituciones de la Ley de Presupuestos: devengo al aprobarse la rendición (no al transferir).
 - Transferencias presupuestarias consolidables o a municipios (Subt. 24-02, 33-02; 24-03, 33-03): regla general, devengo cuando la obligación es exigible (acto o convenio tramitado).
 - Transferencias a entidades privadas (Subt. 24-01, 33-01): devengo cuando la obligación es exigible conforme al convenio/acto.
-#### Referencias
-- GN-PPTO-GLOS-CGR
+
 #### Coordinacion DAF DIPIR
+
 #### Fundamento
 Comunicación constante DAF-DIPIR es esencial para gestionar modificaciones y ejecución.
+
 #### Ejemplos
 - DIPIR informa a DAF proyectos retrasados para evaluar modificación presupuestaria.
 - DAF alerta a DIPIR sobre partidas en agotamiento o riesgo de sobregiro.
+
 ### Modificaciones Presupuestarias
+
 #### Motivaciones y Plazos
+
 #### Cause
 Reubicar recursos, incorporar nuevos ingresos, ajustar costos o financiar imprevistos.
+
 #### Dln
 Solicitudes a DIPRES hasta 31 de octubre del año (según Instructivo DIPRES de ejecución).
+
 #### Responsables
 - DIPIR lidera modificaciones de inversión (reasignar fondos de proyectos retrasados, usar ingresos adicionales).
 - DAF lidera modificaciones de funcionamiento (suplementar partidas, incorporar Saldo Inicial de Caja).
+
 #### Advertencias
 Evitar solicitudes para regularizar hechos consumados, salvo excedibilidades legales.
+
 #### Tipos de Modificacion y Actos
+
 #### Asunto
 Tipología de modificaciones y actos administrativos requeridos.
-#### Fuentes
-Oficio Circular N°11 DIPRES 2025 (última versión disponible en corpus).
+
 #### Fundamento
 Naturaleza del acto depende si afecta presupuesto de la Partida 31 o solo el presupuesto interno del GORE.
+
 #### Tipos
 - Suplemento Presupuestario: aumenta presupuesto por mayor aporte fiscal; requiere Decreto Supremo DIPRES + Resolución GORE.
 - Incorporación/Reducción de Ingresos Ley: distribución de fondos concursables o de contingencia; requiere Decreto Supremo DIPRES + Resolución GORE.
@@ -442,34 +497,42 @@ Naturaleza del acto depende si afecta presupuesto de la Partida 31 o solo el pre
 - Financiamiento de emergencias (3%): uso fondo de emergencia; Decreto Supremo DIPRES + Resolución GORE.
 - Creación de iniciativas FRPD: uso de provisión en ítem 33.03; solo Resolución GORE.
 - Incorporación Deuda Flotante: si se financia con SIC basta Resolución GORE; si requiere mayor aporte fiscal, se suma Decreto DIPRES.
+
 #### Aprobacion Interna y Excepciones
+
 #### Requisitos
 Modificaciones que alteran presupuesto de inversión requieren acuerdo CORE, salvo excepciones explícitas.
+
 #### Cpt
 Glosa 01 y otros marcos definen casos sin acuerdo CORE (GORE-FIN-MOD-EXCEPCIONES-01).
+
 #### Responsables
 - DIPIR prepara propuesta técnica de modificación para CORE.
 - DAF provee respaldo financiero.
+
 #### Tramite Externo DIPRES CGR
+
 #### Acciones
 GORE emite resolución de modificación firmada por Gobernador y sujeta a visación DIPRES y Toma de Razón CGR.
+
 #### Proceso
 - Visación DIPRES: verifica cumplimiento normativo y devuelve si hay errores.
 - Toma de Razón CGR: revisa fundamento legal.
 - Post-TDR: DAF ajusta presupuesto en SIGFE y DIPIR notifica a unidades ejecutoras.
+
 #### Documentos Requeridos
-#### Fuentes
-Oficio Circular N°11 DIPRES 2025 (última versión disponible en corpus).
+
 #### Cpt
 - Certificado de acuerdo CORE cuando aplica.
 - Minuta explicativa (justificación, origen/destino fondos, glosa habilitante).
 - Informe favorable MDSF/DIPRES si financia programas directos nuevos.
 - Otros documentos de respaldo (certificados de disponibilidad, convenios, etc.).
+
 #### Excepciones sin Acuerdo CORE
+
 #### Asunto
 Casos de modificaciones de inversión sin acuerdo CORE.
-#### Fuentes
-Glosa 01 Partida 31 Ley 21.796; Oficio Circular N°11 DIPRES 2025 (última versión disponible en corpus).
+
 #### Cpt Casos
 - Aplicación de leyes generales (reajustes, sentencias, deuda flotante).
 - Regularización de ingresos sin incidencia en gastos.
@@ -477,41 +540,55 @@ Glosa 01 Partida 31 Ley 21.796; Oficio Circular N°11 DIPRES 2025 (última versi
 - Uso del 3% para emergencias (Glosa 14).
 - Aumento de costo de proyectos en ejecución hasta 10% del monto RS (tope 7.000 UTM).
 - Adjudicación de licitaciones con variación hasta 10% sobre RS (tope 7.000 UTM).
+
 #### Detalle Emergencias Glosa14 2026
+
 #### Fundamento
 Glosa 14 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-14).
+
 #### Cpt
 - Se podrá traspasar hasta un 3% del presupuesto de inversión aprobado por el Congreso Nacional de cada GORE, a requerimiento de la Subsecretaría del Interior, a asignaciones 24.03.002 y/o 33.03.001 del presupuesto de dicha Subsecretaría para enfrentar situaciones de emergencia.
 - Los GORE podrán destinar hasta un 2% del presupuesto de Inversión Regional aprobado por el Congreso Nacional para enfrentar situaciones de emergencia (todas sus etapas), definidas mediante resolución por el Ministro o Subsecretario del Interior, previa coordinación.
 - La ejecución de estos recursos se podrá efectuar sin esperar la total tramitación del acto administrativo del GORE.
 - Trimestralmente, los GORE informarán a la Comisión Especial Mixta de Presupuestos y a DIPRES sobre el uso de estos recursos.
+
 #### Advertencias
 Aunque no requieran CORE, sí exigen visación DIPRES, Toma de Razón CGR e información mensual al CORE.
+
 #### Sintesis Roles en Modificaciones
+
 #### Responsables
 - DIPIR lidera modificaciones de inversión (racionalidad técnico-programática).
 - DAF lidera modificaciones de funcionamiento (racionalidad financiero-legal).
+
 #### Cpt
 - Trabajo conjunto: DIPIR provee detalle de proyectos, DAF estructura modificación formal.
+
 #### Advertencias
 Antes de enviar, verificar que la modificación no vulnere normas (ej. prohibición de traspasar desde inversión a Subtítulo 22).
+
 #### Limites y Flexibilidades TrasPasos
+
 #### Fundamento
 Fondos de inversión no deben utilizarse para financiar gastos corrientes de funcionamiento salvo habilitación legal expresa.
-#### Fuentes
-DL N°1.263, Art. 04 Ley 21.796.
+
 #### Reglas Claves Glosas
+
 #### Cpt
 - Glosa 03: prohíbe usar inversión para préstamos, gasto en personal o bienes y servicios de consumo de entidades receptoras.
 - Glosa 04: permite traspasos entre subtítulos de inversión, excluyendo explícitamente al Subtítulo 22 como receptor.
 - Glosa 01 de Ley de Reajuste: habilita excepcionalmente uso de fondos de inversión para gasto en personal cuando otra ley lo mande.
 - Glosa 06: permite usar hasta 5% del monto del programa para gastos de administración del GORE (Subt. 21, 22, 29) y hasta 5% para honorarios de la entidad receptora.
 - Art. 07 Ley 21.796: refuerza necesidad de habilitación legal expresa para financiar gastos operativos con recursos de transferencia.
+
 #### Limites Incremento Gastos 2026
+
 #### Fundamento
 Art. 04 Ley 21.796.
+
 #### Req Gastos Corrientes
 - Se requiere autorización legal para incrementar la suma del valor neto de los gastos corrientes.
+
 #### Excepciones Gastos Corrientes
 - Ítems legalmente excedibles (art. 28 DL N°1.263/1975).
 - Glosa 01 Programa Operaciones Complementarias.
@@ -520,59 +597,85 @@ Art. 04 Ley 21.796.
 - Ingresos propios asignables.
 - Recursos de fondos concursables de entes públicos.
 - Art. 21 DL N°1.263/1975.
+
 #### Req Gastos Capital
 - Se requiere autorización legal para aumentar en más de 10% la suma aprobada en el Art. 1 de la Ley de Presupuestos para gastos de capital.
+
 #### Excepciones Gastos Capital
 - Reasignaciones presupuestarias desde gastos corrientes.
 - Mayores saldos iniciales de caja (excepto Partida Tesoro Público).
 - Venta de activos.
 - Fondos concursables.
 - Recuperación de anticipos.
+
 #### Transferencias Consolidables
+
 #### Definicion
 Transferencias desde un GORE a otras instituciones del Presupuesto del Sector Público para evitar doble contabilización del gasto.
+
 #### Fundamento
 Oficio Circular N°11 DIPRES 2025 (última versión disponible en corpus), Glosa 01 Partida 31, Art. 26 Ley 21.796.
+
 #### Proceso
 - GORE solicita formalmente a DIPRES la creación de la transferencia.
 - GORE emite resolución interna con rebaja presupuestaria.
 - Adjunta acuerdo CORE, justificación y aceptación del receptor.
 - DIPRES elabora Decreto Supremo que modifica presupuesto GORE; pasa a CGR para Toma de Razón.
 - Transferencias pueden efectuarse sin convenio formal si se cumple procedimiento presupuestario.
+
 #### Ejemplo
+
 #### Asunto
 Ejemplo de flujo para transferencia consolidable desde GORE X al Ministerio de Salud.
+
 #### Contexto
 - CORE aprueba; GORE envía oficio a DIPRES; emite resolución de rebaja. DIPRES emite Decreto que crea asignación y reasigna fondos, ajustando tanto presupuesto GORE como del ministerio.
+
 ### Control y Seguimiento
+
 #### Control Interno GORE
+
 #### Responsables
 Unidad de Control o auditoría interna del GORE.
+
 #### Acciones
 - Revisar actos administrativos de contenido financiero (control ex-ante).
 - Visar resoluciones, verificar respaldos y revisar rendiciones.
+
 #### Requisitos
 DAF colabora para subsanar observaciones.
+
 #### Control CGR
+
 #### Responsables
 Contraloría General de la República (CGR).
+
 #### Cpt
 - Control previo vía Toma de Razón de resoluciones y decretos presupuestarios.
 - Control posterior mediante auditorías e investigaciones especiales.
+
 #### Requisitos
 DIPIR y DAF deben mantener antecedentes ordenados para fiscalizaciones.
+
 #### Seguimiento DIPRES
+
 #### Responsables
 Dirección de Presupuestos (DIPRES).
+
 #### Acciones
 - Monitorea ejecución presupuestaria mensual de los GORE mediante informes, reuniones y alertas de baja ejecución.
+
 #### Requisitos
 GORE debe gestionar un calendario de hitos para asegurar cumplimiento.
+
 #### Transparencia y Control Social
+
 #### Nat
 Control social sobre inversión regional.
+
 #### Fundamento
 Ley N° 21.796 (Normas Generales) + Requerimientos de información Partida 31 (ver INFO-REQS-2026-GORES-01 en artefacto glosas GORES 2026).
+
 #### Requisitos
 - Publicar mensualmente en sitio web del GORE la cartera de proyectos financiados con inversión regional.
 - Publicar acuerdos del CORE en máximo 5 días hábiles.
@@ -587,127 +690,90 @@ Ley N° 21.796 (Normas Generales) + Requerimientos de información Partida 31 (v
 - Publicar en transparencia activa las actas de evaluación emitidas por comisiones evaluadoras de licitaciones y compras públicas (Ley N°19.886).
 - Procurar lenguaje claro y vincular el presupuesto a orientaciones estratégicas, objetivos prioritarios y resultados esperados.
 - Publicar de forma permanente en transparencia activa (literal k) art. 7 Ley N°20.285) los montos recibidos y ejecución presupuestaria del FRPD, incluyendo detalle de transferencias efectuadas.
+
 #### Responsables
 DIPIR compila información, DAF valida cifras.
+
 ### Cierre Presupuestario
+
 #### Compromisos y Cortes
+
 #### Acciones
 Definir fechas de corte para nuevos compromisos (usualmente diciembre) y comunicarlas.
+
 #### Responsables
 - DAF comunica fechas límite.
 - DIPIR verifica registro adecuado de compromisos.
+
 #### Deuda Flotante
+
 #### Definicion
 Obligaciones devengadas en el año pero pendientes de pago al 31 de diciembre.
+
 #### Responsables
 DAF calcula, registra y tramita su incorporación en el presupuesto del año siguiente mediante creación del ítem 34.07 Deuda Flotante.
+
 #### Fundamento
 Art. 34 Ley 21.796 permite exceder las sumas fijadas para este ítem.
+
 #### Cpt
 - Si el Saldo Inicial de Caja (SIC) supera la deuda flotante, se financia 100% con SIC (solo Resolución GORE).
 - Si SIC es insuficiente, se usa todo el SIC y la diferencia con mayor aporte fiscal (Resolución GORE + Decreto DIPRES).
+
 #### Advertencias
 Priorizar pago de deuda flotante al inicio del nuevo ejercicio.
+
 #### Evaluacion y Cierre Sistemas
+
 #### Acciones
 - DAF realiza ajustes contables, prepara Informe de Ejecución Anual y genera nuevo SIC.
 - DIPIR evalúa ejecución física de proyectos, identifica logros, retrasos y cuellos de botella, retroalimentando la siguiente formulación.
+
 #### ID Cierre Sistemas
+
 #### Acciones
 DAF realiza cierre en SIGFE y DIPIR actualiza estado final en BIP.
 
 ## Gestion Subtitulos Presupuestarios
+
 ### Introduccion
+
 #### Proposito
 Describir subtítulos clave, su contenido y consideraciones operativas para la gestión regional.
-#### Fuentes
-Chileindica y Ley de Presupuestos 2026.
+
 #### Contexto
 Subtítulos clave: 21, 22, 23, 24, 26, 29, 31, 33, 34.
-### Referencias
-- GN-PPTO-GLOS-FNDR
-- GN-PPTO-GLOS-FRIL
-- GN-PPTO-GLOS-FRPD
+
 ### Subtitulo 21 Gastos en Personal
-#### Contenido
-#### Cpt
-Remuneraciones y obligaciones del empleador del personal del GORE.
-#### Responsables
-DAF.
-#### Acciones
-Asegurar que pagos respeten dotaciones, topes de glosas y normativa.
-#### Ctx Flexibilidad 2026
-- Glosa 01 Partida 31: sin límite de antigüedad para contratas; contratas pueden ejercer funciones directivas (hasta 20%); honorarios pueden actuar como agente público.
-- Art. 05 Ley 21.796: suspensión de compatibilidad de cargo de planta con contrata.
+GORE-FIN-SUB-21-CONTENIDO-01 Remuneraciones y obligaciones del empleador del personal del GORE. DAF. Asegurar que pagos respeten dotaciones, topes de glosas y normativa. Glosa 01 Partida 31: sin límite de antigüedad para contratas; contratas pueden ejercer funciones directivas (hasta 20%); honorarios pueden actuar como agente público. Art. 05 Ley 21.796: suspensión de compatibilidad de cargo de planta con contrata.
+
 #### Items Relevantes
+
 #### Asunto
 Ítems del Subtítulo 21 relevantes para inversión regional.
-#### Fuentes
-Documentos curados presupuesto/Chileindica.
+
 #### Cpt
 - Ítem 03 Otras Remuneraciones / Asignación 001 Honorarios a Suma Alzada: permite contratar profesionales para asesoría o ejecución en programas de inversión, clave para programas directos (Glosa 06).
+
 ### Subtitulo 22 Bienes y Servicios
-#### Contenido
-#### Cpt
-Gastos operativos (insumos, servicios básicos, arriendos, pasajes).
-#### Responsables
-DAF.
-#### Acciones
-Gestionar adquisiciones vía Ley de Compras y buscar eficiencia.
-#### Prohibiciones
-Prohibido reasignar recursos de inversión hacia Subtítulo 22 (Glosa 04 Partida 31).
-#### Fundamento
-Incremento de Subtítulo 22 solo con ingresos propios o SIC.
-#### Contexto
-DIPIR interviene solo cuando programas directos (Glosa 06) destinan parte de su 5% a este subtítulo.
+GORE-FIN-SUB-22-CONTENIDO-01 Gastos operativos (insumos, servicios básicos, arriendos, pasajes). DAF. Gestionar adquisiciones vía Ley de Compras y buscar eficiencia. Prohibido reasignar recursos de inversión hacia Subtítulo 22 (Glosa 04 Partida 31). Incremento de Subtítulo 22 solo con ingresos propios o SIC. DIPIR interviene solo cuando programas directos (Glosa 06) destinan parte de su 5% a este subtítulo.
+
 #### Items Relevantes
+
 #### Asunto
 Ítems del Subtítulo 22 relevantes para la inversión regional.
+
 #### Cpt
 - Ítem 08 Servicios Generales / Asignación 007 Pasajes, Fletes y Bodegajes: algunos gastos de consumo se informan como inversión pública regional en Chileindica.
+
 ### Subtitulo 23 Prestaciones Seguridad Social
-#### Contenido
-#### Cpt
-Gastos por prestaciones previsionales y de asistencia social; uso en GORE generalmente bajo.
-#### Responsables
-DAF.
+GORE-FIN-SUB-23-CONTENIDO-01 Gastos por prestaciones previsionales y de asistencia social; uso en GORE generalmente bajo. DAF.
+
 ### Subtitulo 24 Transferencias Corrientes
-#### Contenido
-#### Cpt
-Recursos transferidos sin contraprestación directa para gastos corrientes de otras instituciones (funcionamiento e inversión asociados).
-#### Nat
-Doble componente (funcionamiento e inversión).
-#### Fundamento
-Transferencias a privados deben ser por concurso público y convenio (Art. 23-27 Ley 21.796).
-#### Reglas Transferencias Privados 2026
-#### Fundamento
-Art. 23-27 Ley 21.796.
-#### Req General
-- Transferencias corrientes y de capital a instituciones privadas deben ser resultado de concurso público abierto y transparente y materializarse mediante convenio.
-- La asignación directa sin concurso procede sólo de forma excepcional y debe acreditarse mediante resolución fundada.
-#### Causales Asignacion Directa Sin Concurso
-- En concursos respectivos no se presentaron interesados.
-- Sólo existe una persona jurídica como posible beneficiario o ejecutor.
-- Emergencia, urgencia o imprevisto debidamente calificados.
-#### Convenios Obligaciones y Prohibiciones
-- El convenio debe indicar objeto social/fines del receptor y acreditar su pertinencia previamente a la suscripción.
-- El convenio debe indicar actividades específicas y/o conceptos de gasto a financiar.
-- No puede establecer compromisos financieros que excedan el ejercicio presupuestario sin autorización previa DIPRES.
-- Debe condicionar la suscripción al cumplimiento íntegro de la Ley N°19.862.
-- Rendiciones de cuentas deben realizarse vía Sistema de Rendición Electrónica de Cuentas (SISREC) CGR, según instrucciones CGR.
-- Salvo plazo distinto en convenio, el organismo público tiene plazo máximo de 3 meses para pronunciarse fundadamente sobre la rendición.
-- Debe exigir restitución si recursos se destinan a finalidad distinta, no se utilizan, no se rinden o son observados.
-#### Reglas Ejecutoras Politica Publica
-- Para instituciones privadas ejecutoras de políticas públicas: exigir al menos 2 años de antigüedad y experiencia acreditada.
-- Exigir garantías cuando el total de recursos a transferir supere 1.000 UTM; garantía equivalente al 5% del monto total.
-#### Inhabilidades Concursos y Convenios
-- No podrán intervenir en procesos concursal/adjudicación/suscripción quienes tengan parentesco (hasta 4° consanguinidad/3° afinidad) con directivos o ejecutivos de institución participante.
-- No podrán intervenir quienes hayan trabajado o desempeñado labores directivas en institución participante en los 2 años anteriores al cargo público.
-- Debe dejarse constancia en actas de la nómina de funcionarias/os y personal a honorarios que intervino en el proceso.
-#### Restituciones y Reintegros
-- Los organismos públicos receptores que deban reintegrar recursos a rentas generales deben hacerlo a más tardar dentro del mes siguiente al cierre de la rendición.
-- El proceso de rendición no podrá extenderse por más de 6 meses desde la finalización de la ejecución del convenio.
+GORE-FIN-SUB-24-CONTENIDO-01 Recursos transferidos sin contraprestación directa para gastos corrientes de otras instituciones (funcionamiento e inversión asociados). Doble componente (funcionamiento e inversión). Transferencias a privados deben ser por concurso público y convenio (Art. 23-27 Ley 21.796). GORE-FIN-SUB-24-PRIVADOS-ART23-27-01 Art. 23-27 Ley 21.796. Transferencias corrientes y de capital a instituciones privadas deben ser resultado de concurso público abierto y transparente y materializarse mediante convenio. La asignación directa sin concurso procede sólo de forma excepcional y debe acreditarse mediante resolución fundada. En concursos respectivos no se presentaron interesados. Sólo existe una persona jurídica como posible beneficiario o ejecutor. Emergencia, urgencia o imprevisto debidamente calificados. El convenio debe indicar objeto social/fines del receptor y acreditar su pertinencia previamente a la suscripción. El convenio debe indicar actividades específicas y/o conceptos de gasto a financiar. No puede establecer compromisos financieros que excedan el ejercicio presupuestario sin autorización previa DIPRES. Debe condicionar la suscripción al cumplimiento íntegro de la Ley N°19.862. Rendiciones de cuentas deben realizarse vía Sistema de Rendición Electrónica de Cuentas (SISREC) CGR, según instrucciones CGR. Salvo plazo distinto en convenio, el organismo público tiene plazo máximo de 3 meses para pronunciarse fundadamente sobre la rendición. Debe exigir restitución si recursos se destinan a finalidad distinta, no se utilizan, no se rinden o son observados. Para instituciones privadas ejecutoras de políticas públicas: exigir al menos 2 años de antigüedad y experiencia acreditada. Exigir garantías cuando el total de recursos a transferir supere 1.000 UTM; garantía equivalente al 5% del monto total. No podrán intervenir en procesos concursal/adjudicación/suscripción quienes tengan parentesco (hasta 4° consanguinidad/3° afinidad) con directivos o ejecutivos de institución participante. No podrán intervenir quienes hayan trabajado o desempeñado labores directivas en institución participante en los 2 años anteriores al cargo público. Debe dejarse constancia en actas de la nómina de funcionarias/os y personal a honorarios que intervino en el proceso. Los organismos públicos receptores que deban reintegrar recursos a rentas generales deben hacerlo a más tardar dentro del mes siguiente al cierre de la rendición. El proceso de rendición no podrá extenderse por más de 6 meses desde la finalización de la ejecución del convenio.
+
 #### Items
+
 #### Cpt
 - Ítem 01 Al Sector Privado.
 - Ítem 03 A Otras Entidades Públicas.
@@ -715,28 +781,36 @@ Art. 23-27 Ley 21.796.
 - Ítem 05 A Empresas Públicas Financieras.
 - Ítem 08 A Instituciones Privadas Ejecutoras de Políticas Públicas.
 - Ítem 09 A Unidades o Programas del Servicio.
+
 #### Transferencias Item09 Unidades Programas Servicio 2026
+
 #### Fundamento
 Art. 07 Ley 21.796.
+
 #### Condiciones
 Transferencias corrientes a Unidades o Programas del Servicio, ejecutados total o parcialmente por éste.
+
 #### Requisitos
 - Desglose previo a la ejecución presupuestaria en conceptos de gasto, según visación DIPRES.
 - Reporte mensual a DIPRES: avance de actividades e información de ejecución presupuestaria.
+
 #### Resultados
 - El desglose constituye autorización máxima de gasto por concepto; modificaciones por igual procedimiento.
 - Personal contratado con cargo a dichos recursos no forma parte de la dotación del Servicio.
+
 #### Prohibiciones
 - No incluir recursos para gastos en personal ni bienes y servicios de consumo, salvo autorización por norma expresa en el respectivo presupuesto.
+
 #### Concurso 8pct FNDR
+
 #### Asunto
 Concurso de Vinculación con la Comunidad 8% FNDR.
-#### Fuentes
-Glosa 07 Partida 31 Ley 21.796.
+
 #### Condiciones
 - Límite hasta 8% del total del presupuesto de inversión regional; mínimo 1% a cultura y patrimonio.
 - Concursos exentos de evaluación ex-ante Glosa 06.
 - Se podrá asignar hasta un 10% de los recursos del Concurso 8% para asignaciones directas asociadas con casos emblemáticos, excepcionales y emergentes, previo acuerdo del CORE y sujeto a la Resolución N°72 de 08.01.2025 DIPRES y sus modificaciones.
+
 #### Contexto
 - Actividades financiables: deportivas y del programa Elige Vivir Sano.
 - Actividades financiables: seguridad ciudadana.
@@ -749,38 +823,50 @@ Glosa 07 Partida 31 Ley 21.796.
 - Actividades financiables: funcionamiento de teatros municipales o regionales y/o monumentos históricos con atención a público.
 - Actividades financiables: culturales y patrimoniales.
 - Ejecutores: municipalidades, otras entidades públicas, instituciones privadas sin fines de lucro, organizaciones de la sociedad civil y organizaciones comunitarias sin fines de lucro.
+
 #### Proceso
 - DIPIR elabora bases (aprueba CORE).
 - Comisiones evalúan.
 - CORE aprueba adjudicados.
 - DAF formaliza y fiscaliza transferencias.
+
 #### Programas y Transferencias Publicas
+
 #### Asunto
 Transferencias corrientes a entidades públicas y ejecución directa de programas.
+
 #### Fundamento
 Glosa 06 Partida 31 Ley 21.796.
+
 #### Condiciones
 - Programas nuevos de ejecución directa requieren evaluación ex-ante DIPRES/MDSF.
 - Prohibido usar inversión para financiar gastos permanentes de otros servicios (Glosa 03).
 - Receptor público puede usar hasta 5% para honorarios de gestión.
 - Glosa 06 habilita financiar áreas fuera de competencias LOC GORE en casos específicos.
+
 #### Reglas Oferta Programatica Glosa06 2026
+
 #### Fundamento
 Glosa 06 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-06).
+
 #### Excepciones Evaluacion ExAnte
 - Programas que hayan iniciado su ejecución en años anteriores.
 - Subvenciones asociadas al Concurso de Vinculación con la Comunidad 8%.
 - Transferencias a universidades, municipalidades, otras entidades públicas y gobierno central e instituciones privadas beneficiarias sin fines de lucro.
 - Ayudas tempranas e iniciativas de fomento productivo vinculadas a emergencias y desastres naturales, en coordinación con el Ministerio del Interior.
+
 #### Principios
 - Coherencia con políticas públicas nacionales, coordinación, unidad de acción, eficiencia y eficacia.
 - Evitar duplicidad o interferencia de funciones con otros órganos de la Administración del Estado.
+
 #### Regla 5pct Administracion GORE
 - Se podrá destinar hasta un 5% del monto total de la transferencia a gastos de administración en el GORE (personal, bienes y servicios de consumo y adquisición de activos no financieros) asociados a la ejecución del programa.
 - El personal contratado a honorarios con cargo al 5% tendrá la calidad de agente público.
+
 #### Regla 5pct Honorarios Receptor Publico
 - En la entidad pública receptora se podrá contratar personal a honorarios con cargo a la transferencia; vínculo cesará de pleno derecho al finalizar el convenio.
 - No podrá ser superior al 5% del total de la transferencia recibida.
+
 #### Ambitos Adicionales Permitidos
 - Emergencia: prevención/mitigación incendios forestales; labores preventivas por eventos climatológicos; gestión del riesgo de desastres (Ley N°21.364) y continuidad de servicios APR; sanitización y calefacción ante catástrofes; ayudas tempranas y reconstrucción (coordinación Subsecretaría del Interior); demolición de infraestructura en mal estado (certificada por municipalidad).
 - Seguridad Pública: iniciativas de prevención y seguridad ciudadana.
@@ -790,35 +876,15 @@ Glosa 06 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-06).
 - Energía, Transporte y Telecomunicaciones: autogeneración de energía; conectividad internet y radiocomunicaciones; subsidios Ley N°20.378; transporte escolar rural.
 - Gestión Hídrica: funcionamiento/mantención/reparación sistemas APR y sanitarios rurales y/o desalinización; operación alcantarillado.
 - Asistencia Técnica: asistencia técnica a municipalidades para fortalecer cartera de proyectos.
-#### Referencias
-- GN-PPTO-GLOS-FNDR
-- GN-PPTO-GLOS-FRIL
-- GN-PPTO-GLOS-DIPRES
-- GN-PPTO-GLOS-MDSF
+
 ### Subtitulo 26 Otros Gastos Corrientes
-#### Contenido
-#### Cpt
-Devoluciones y compensaciones por daños a terceros (uso bajo pero posible).
-#### Items
-- Ítem 01 Devoluciones.
-- Ítem 02 Compensaciones por Daños.
-#### Responsables
-DAF.
+GORE-FIN-SUB-26-CONTENIDO-01 Devoluciones y compensaciones por daños a terceros (uso bajo pero posible). Ítem 01 Devoluciones. Ítem 02 Compensaciones por Daños. DAF.
+
 ### Subtitulo 29 Activos No Financieros
-#### Contenido
-#### Cpt
-Adquisición de bienes de capital del GORE (equipos, vehículos, terrenos).
-#### Proposito
-Financiar reposición de activos para otras instituciones públicas (Glosa 09 Partida 31).
-#### Condiciones
-- Activos nuevos requieren certificado de disponibilidad presupuestaria para los gastos recurrentes que generen dichos activos.
-- El certificado debe ser emitido por el Ministerio o la Subsecretaría respectiva.
-- Para Fuerzas de Orden y Seguridad Pública: certificado de pertinencia emitido por el Ministerio de Seguridad Pública.
-- Para Cuerpos de Bomberos: certificado de pertinencia técnica emitido por la Junta Nacional de Bomberos de Chile.
-- Compra de terrenos: coordinar con SERVIU de la región respectiva, cuando corresponda.
-#### Responsables
-DIPIR identifica necesidades; DAF ejecuta adquisición.
+GORE-FIN-SUB-29-CONTENIDO-01 Adquisición de bienes de capital del GORE (equipos, vehículos, terrenos). Financiar reposición de activos para otras instituciones públicas (Glosa 09 Partida 31). Activos nuevos requieren certificado de disponibilidad presupuestaria para los gastos recurrentes que generen dichos activos. El certificado debe ser emitido por el Ministerio o la Subsecretaría respectiva. Para Fuerzas de Orden y Seguridad Pública: certificado de pertinencia emitido por el Ministerio de Seguridad Pública. Para Cuerpos de Bomberos: certificado de pertinencia técnica emitido por la Junta Nacional de Bomberos de Chile. Compra de terrenos: coordinar con SERVIU de la región respectiva, cuando corresponda. DIPIR identifica necesidades; DAF ejecuta adquisición.
+
 #### Items
+
 #### Cpt
 - Ítem 01 Terrenos.
 - Ítem 02 Edificios.
@@ -828,64 +894,22 @@ DIPIR identifica necesidades; DAF ejecuta adquisición.
 - Ítem 06 Equipos Informáticos.
 - Ítem 07 Programas Informáticos.
 - Ítem 99 Otros Activos no Financieros.
+
 ### Subtitulo 31 Iniciativas Inversion Directa
-#### Contenido
-#### Cpt
-Inversión real ejecutada directamente por el GORE (unidad mandante).
-#### Fundamento
-Glosa 10 Partida 31.
-#### Requisitos
-- Respetar competencias GORE y someterse al SNI.
-- Licitación pública obligatoria si proyectos/programas de inversión superan 1.000 UTM (Art. 06 Ley 21.796).
-- Licitación pública obligatoria si estudios básicos superan 500 UTM (Art. 06 Ley 21.796).
-- Identificaciones presupuestarias de iniciativas contratadas en años anteriores en ejecución y aquellas creadas en el mismo año no requerirán nueva aprobación del CORE si los montos totales o resultantes son iguales o menores al 10% de los costos totales ya aprobados por el Consejo Regional, reajustados a la moneda del año en curso.
-#### Alcances Glosa10 2026
-#### Fundamento
-Glosa 10 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-10).
-#### Cpt
-- Iniciativas adicionales permitidas: infraestructura pública (construcción, conservación y mejoramiento) en coordinación con ministerio sectorial.
-- Iniciativas adicionales permitidas: transporte (coordinación MTT) en marco Ley N°20.378.
-- Iniciativas adicionales permitidas: electrificación, gas, energía, conectividad digital, telefonía celular y comunicaciones (incluye conexiones domiciliarias).
-- Iniciativas adicionales permitidas: agua potable y alcantarillado; proyectos sanitarios en áreas de concesión de empresas del sector público; APR y mitigación/reparación por cambio climático (pequeños productores y habitantes rurales).
-- Regla especial 2026: saneamiento rural o proyectos en territorios insulares (SSR) pueden definir como Unidad Técnica a empresa pública o privada que opere en la región, mediante resolución fundada.
-- DOH y Subdirección de Servicios Sanitarios Rurales informan a Gobiernos Regionales y Contraloría Regional regiones sin especialistas (20 enero y 30 junio).
-- Huellas y caminos vecinales privados de uso público: administración directa/contrato/compra servicio; requiere compromiso formal de transferencia de faja y visto bueno Dirección Regional de Vialidad.
-- Personal a honorarios para ejecución de proyectos tendrá calidad de agente público.
-#### Proceso
-GORE actúa como unidad mandante; DAF gestiona licitación y contratación.
+GORE-FIN-SUB-31-CONTENIDO-01 Inversión real ejecutada directamente por el GORE (unidad mandante). Glosa 10 Partida 31. Respetar competencias GORE y someterse al SNI. Licitación pública obligatoria si proyectos/programas de inversión superan 1.000 UTM (Art. 06 Ley 21.796). Licitación pública obligatoria si estudios básicos superan 500 UTM (Art. 06 Ley 21.796). Identificaciones presupuestarias de iniciativas contratadas en años anteriores en ejecución y aquellas creadas en el mismo año no requerirán nueva aprobación del CORE si los montos totales o resultantes son iguales o menores al 10% de los costos totales ya aprobados por el Consejo Regional, reajustados a la moneda del año en curso. GORE-FIN-SUB-31-GLO10-ALCANCE-01 Glosa 10 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-10). Iniciativas adicionales permitidas: infraestructura pública (construcción, conservación y mejoramiento) en coordinación con ministerio sectorial. Iniciativas adicionales permitidas: transporte (coordinación MTT) en marco Ley N°20.378. Iniciativas adicionales permitidas: electrificación, gas, energía, conectividad digital, telefonía celular y comunicaciones (incluye conexiones domiciliarias). Iniciativas adicionales permitidas: agua potable y alcantarillado; proyectos sanitarios en áreas de concesión de empresas del sector público; APR y mitigación/reparación por cambio climático (pequeños productores y habitantes rurales). Regla especial 2026: saneamiento rural o proyectos en territorios insulares (SSR) pueden definir como Unidad Técnica a empresa pública o privada que opere en la región, mediante resolución fundada. DOH y Subdirección de Servicios Sanitarios Rurales informan a Gobiernos Regionales y Contraloría Regional regiones sin especialistas (20 enero y 30 junio). Huellas y caminos vecinales privados de uso público: administración directa/contrato/compra servicio; requiere compromiso formal de transferencia de faja y visto bueno Dirección Regional de Vialidad. Personal a honorarios para ejecución de proyectos tendrá calidad de agente público. GORE actúa como unidad mandante; DAF gestiona licitación y contratación.
+
 #### Items
+
 #### Cpt
 - Ítem 01 Estudios Básicos.
 - Ítem 02 Proyectos (estudios preinversionales y ejecución).
 - Ítem 03 Programas de Inversión.
+
 ### Subtitulo 33 Transferencias Capital
-#### Contenido
-#### Cpt
-Transferencia de recursos a terceros para ejecutar proyectos de inversión; subtítulo de mayor peso.
-#### Responsables
-Municipalidades, servicios públicos, corporaciones, etc.
-#### Fundamento
-Glosa 11 Partida 31 y normativa complementaria.
-#### Requisitos
-- Cada transferencia debe formalizarse en un convenio con definición de objeto, monto, plazos, obligaciones, seguimiento y garantías.
-#### Alcances Glosa11 2026
-#### Fundamento
-Glosa 11 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-11).
-#### Cpt
-- Iniciativas adicionales permitidas: PMU/PMB en coordinación con SUBDERE.
-- Iniciativas adicionales permitidas: infraestructura social/deportiva en inmuebles con calidades jurídicas específicas y en inmuebles fiscales en tuición de organizaciones privadas sin fines de lucro con fines sociales.
-- Iniciativas adicionales permitidas: caminos comunitarios en territorios Ley N°19.253 o de comunidades agrícolas.
-- Iniciativas adicionales permitidas: fachadas de inmuebles privados con protección patrimonial.
-- Iniciativas adicionales permitidas: protección/puesta en valor de Monumentos Nacionales, Inmuebles de Conservación Histórica, zonas de conservación, UNESCO y Lista Tentativa (incluye ejecución con sector privado).
-- Iniciativas adicionales permitidas: subsidios a empresas (públicas o privadas) para inversión social (electrificación, gas, energía, telefonía/comunicaciones), evaluadas como iniciativa de inversión por MDSF.
-- APR/sanitarios rurales/desalinización: transferencia por resolución fundada del Gobernador Regional con efectos sin esperar total tramitación; requiere pronunciamiento técnico favorable Subdirección SSR.
-- Transferencias a municipalidades y empresas sanitarias para monitoreo, mantenciones, diseño de soluciones y trabajos preventivos ante filtraciones de redes agua potable/alcantarillado; incluye pavimentación post recambio de redes; previa visación del órgano competente regional.
-- Para proyectos de Construcción de Infraestructura Sanitaria financiados por GORE, rige límite de costo del art. 8° DS N°829/1998 del Ministerio del Interior y sus modificaciones.
-#### Referencias
-- GN-PPTO-GLOS-FNDR
-- GN-PPTO-GLOS-FRIL
-- GN-PPTO-GLOS-FRPD
+GORE-FIN-SUB-33-CONTENIDO-01 Transferencia de recursos a terceros para ejecutar proyectos de inversión; subtítulo de mayor peso. Municipalidades, servicios públicos, corporaciones, etc. Glosa 11 Partida 31 y normativa complementaria. Cada transferencia debe formalizarse en un convenio con definición de objeto, monto, plazos, obligaciones, seguimiento y garantías. GORE-FIN-SUB-33-GLO11-ALCANCE-01 Glosa 11 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-11). Iniciativas adicionales permitidas: PMU/PMB en coordinación con SUBDERE. Iniciativas adicionales permitidas: infraestructura social/deportiva en inmuebles con calidades jurídicas específicas y en inmuebles fiscales en tuición de organizaciones privadas sin fines de lucro con fines sociales. Iniciativas adicionales permitidas: caminos comunitarios en territorios Ley N°19.253 o de comunidades agrícolas. Iniciativas adicionales permitidas: fachadas de inmuebles privados con protección patrimonial. Iniciativas adicionales permitidas: protección/puesta en valor de Monumentos Nacionales, Inmuebles de Conservación Histórica, zonas de conservación, UNESCO y Lista Tentativa (incluye ejecución con sector privado). Iniciativas adicionales permitidas: subsidios a empresas (públicas o privadas) para inversión social (electrificación, gas, energía, telefonía/comunicaciones), evaluadas como iniciativa de inversión por MDSF. APR/sanitarios rurales/desalinización: transferencia por resolución fundada del Gobernador Regional con efectos sin esperar total tramitación; requiere pronunciamiento técnico favorable Subdirección SSR. Transferencias a municipalidades y empresas sanitarias para monitoreo, mantenciones, diseño de soluciones y trabajos preventivos ante filtraciones de redes agua potable/alcantarillado; incluye pavimentación post recambio de redes; previa visación del órgano competente regional. Para proyectos de Construcción de Infraestructura Sanitaria financiados por GORE, rige límite de costo del art. 8° DS N°829/1998 del Ministerio del Interior y sus modificaciones. GN-PPTO-GLOS-FNDR GN-PPTO-GLOS-FRIL GN-PPTO-GLOS-FRPD
+
 #### Items
+
 #### Cpt
 - Ítem 01 Al Sector Privado.
 - Ítem 03 A Otras Entidades Públicas (ítem principal de inversión GORE).
@@ -893,54 +917,59 @@ Glosa 11 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-11).
 - Ítem 05 A Empresas Públicas Financieras.
 - Ítem 06 A Gobiernos Extranjeros.
 - Ítem 07 A Organismos Internacionales.
+
 #### Casos Especiales
+
 #### Cpt
 - FRIL: fondo para proyectos municipales de menor escala; seguir Guía Operativa FRIL SUBDERE (Resolución Exenta N°15.051 de 29 de diciembre de 2023).
 - FRIL: proyectos municipales con costo total por proyecto inferior a 5.000 UTM (valorizadas al 1 de enero del ejercicio presupuestario vigente) no requieren informe favorable MDSF; se debe ingresar al SNI la información necesaria según Oficio Ordinario N°2 de 26 de enero de 2024 e instructivo asociado.
 - FRIL: GORE puede aprobar por resolución instructivos o bases (metodología distribución entre comunas, procedimientos de ejecución, entrega de recursos, rendición y otros).
 - FRIL: una vez aprobados los montos por municipio, el compromiso de financiamiento debe informarse mediante oficio dirigido al municipio respectivo.
 - Emergencia hídrica: permite transferir a municipios y sanitarias para reparar redes de agua con visación de órgano técnico competente.
+
 #### Roles
+
 #### Responsables
 - DIPIR articula cartera de proyectos, coordina RS, prioriza y coordina convenios y seguimiento técnico.
 - DAF elabora aspectos financieros de convenios, ejecuta transferencias y revisa rendiciones.
+
 ### Subtitulo 34 Servicio de Deuda
-#### Contenido
-#### Cpt
-Pagos asociados principalmente a la Deuda Flotante del año anterior.
-#### Prohibiciones
-GORE no puede endeudarse sin ley especial.
-#### Proposito
-Registrar y pagar la Deuda Flotante; uso de Ítem 34.07.
-#### Advertencias
-Alto nivel de deuda flotante recurrente indica gestión deficiente.
+GORE-FIN-SUB-34-CONTENIDO-01 Pagos asociados principalmente a la Deuda Flotante del año anterior. GORE no puede endeudarse sin ley especial. Registrar y pagar la Deuda Flotante; uso de Ítem 34.07. Alto nivel de deuda flotante recurrente indica gestión deficiente.
 
 ## Glosas Relevantes y Fondos
-### Referencias
-- GN-PPTO-GLOS-FNDR
-- GN-PPTO-GLOS-FRPD
+
 ### FNDR
+
 #### Asunto
 Fondo Nacional de Desarrollo Regional.
+
 #### Definicion
 Principal fuente de financiamiento de inversión regional.
+
 #### Contexto
 - Distribución (referencial): 90% asignado por ley, 10% gestionado por SUBDERE/DIPRES.
 - DIPIR programa cartera para ejecutar 90%; DAF vigila uso autorizado de giros.
+
 #### Requisitos
 Ley de Presupuestos 2026 (Partida 31) establece requerimientos de información y publicación asociados a ejecución FNDR (ver INFO-REQS-2026-GORES-01).
+
 ### FRPD
+
 #### Asunto
 Fondo Regional para la Productividad y el Desarrollo (FRPD).
+
 #### Definicion
 Fondo que reemplaza al FIC, orientado a innovación, competitividad, ciencia y tecnología.
+
 #### Fundamento
 - Glosa 13 Partida 31 Ley 21.796.
 - Art. 13 Ley 21.591 (Royalty Minero) y reglamento específico.
 - Glosa 13 Partida 31 (GN-LEY-PPTO-2026-P31-GLO-13): Decreto N°1699 de 6 de diciembre de 2025 MH; Resolución Exenta N°33/2024 MinCiencia; Resolución Exenta N°08/2025 Subsecretaría de Economía y sus modificaciones.
+
 #### Proceso
 - Crear provisión FRPD en Ítem 33.03 del presupuesto inicial.
 - Reasignar durante el año a iniciativas específicas vía modificaciones presupuestarias.
+
 #### Cpt
 - Evita doble concursabilidad.
 - Tipología Innovación y Competitividad (Res. Ex. N°33 Subdere 2024) exenta de evaluación ex-ante Glosa 06; otras tipologías se rigen por normativa general.
@@ -948,42 +977,59 @@ Fondo que reemplaza al FIC, orientado a innovación, competitividad, ciencia y t
 - Se podrán efectuar creaciones y modificaciones de asignaciones para el pago de compromisos de arrastre de iniciativas ejecutadas por instituciones elegibles del Fondo de Innovación y Competitividad.
 - Se podrá participar del financiamiento de iniciativas de Programas de Desarrollo Productivo Sostenible (Ministerio de Economía) y del Programa de Financiamiento Estructural I+D+i Universitario (Ministerio de Ciencia).
 - DIPIR gestiona fondo; DAF maneja provisión y control financiero.
+
 ### Equidad y Territorios Rezagados
+
 #### Asunto
 Fondos para corregir desigualdades territoriales.
+
 #### Cpt
 - Fondo de Equidad Interregional, integrado al programa de inversión.
 - Planes de Zonas Extremas y Territorios Rezagados, financiados con programa especial de Asociatividad y Planes Especiales.
+
 ### Subvenciones 8pct
+
 #### Asunto
 Subvenciones concursables 8% FNDR.
+
 #### Fundamento
 Glosa 07 Partida 31 Ley 21.796; vinculado a GORE-FIN-SUB-24-CONCURSO-8FNDR-01.
+
 #### Requisitos
 - Proceso de asignación transparente mediante concursos.
 - Rendición de cuentas vía SISREC CGR (Art. 24 Ley 21.796).
+
 ### Asociatividad Regional
+
 #### Asunto
 Asociatividad regional y participación en personas jurídicas.
+
 #### Mecanismo
 GORE puede participar en corporaciones y fundaciones.
+
 #### Fundamento
 Art. 101 LOC GORE; programa especial de asociatividad; Glosa 08 Partida 31 Ley 21.796.
+
 #### Condiciones
 - Aporte máximo GORE: 5% del presupuesto de inversión.
 - Aportes para funcionamiento son anuales; no proceden convenios plurianuales.
 - Cofinanciamiento máximo 50% con recursos GORE.
 - Aportes privados pueden ser no pecuniarios, valorizados en convenio.
+
 #### Requisitos
 - Informar y publicar periódicamente sobre corporaciones financiadas.
 - Al término del primer trimestre: informar a DIPRES y publicar en webs del GORE y corporación: razón social; misión/objetivos/productos; directorio; organigrama; instituciones que financian; vínculo con objetivos del GORE; planificación anual con resultados esperados.
 - Trimestralmente (dentro de 30 días): número de profesionales, remuneración y perfil; concursos de contratación; recursos transferidos/ejecutados (período y acumulado); indicadores de gestión (avance físico y financiero de iniciativas).
 - Dar cuenta pública anual; mantener estados financieros publicados; regirse por Ley N°20.285 en lo aplicable.
+
 ### Universidades Regionales
+
 #### Asunto
 Transferencias a universidades regionales.
+
 #### Fundamento
 Glosa 05 Partida 31 Ley 21.796.
+
 #### Cpt
 - Habilita transferencias a universidades del DFL N°4 de 1981 con casa central en la región.
 - Fines deben estar dentro de competencia universitaria y sujetarse a reglas de concursabilidad cuando aplique.
@@ -991,51 +1037,65 @@ Glosa 05 Partida 31 Ley 21.796.
 - Ejecución preferente por universidades con sede en la región respectiva.
 - Ejecución íntegra por la propia universidad.
 - Estas transferencias se podrán exceptuar del mecanismo de concursabilidad establecido en el articulado de la ley.
+
 ### Region Nuble Programa 19 2026
+
 #### Fundamento
 Glosas específicas Gobierno Regional Región de Ñuble (Programa 19) Partida 31 Ley 21.796: GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19.
+
 #### Funcionamiento Regional
+
 #### Fundamento
 GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19.
+
 #### Cpt
 - Dotación máxima de vehículos: 5 (GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19-GLO-01).
 - Gastos en personal: 4.222.003 miles (GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19-GLO-02).
 - Incluye dotación máxima de personal 101, horas extraordinarias (Miles de $9.928), viáticos territorio nacional (Miles de $19.802) y exterior (Miles de $17.100), convenios con personas naturales (N°3; Miles de $115.294), funciones críticas (N°2; Miles de $23.242) (GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19-GLO-03).
 - Monto máximo para gastos en el ítem de publicidad: 84.272 miles (GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19-GLO-05).
+
 #### Informes Especificos 2026
+
 #### Cpt
 - Informar trimestralmente a la Comisión Especial Mixta de Presupuestos sobre convenios y montos para compra y distribución de agua vía camiones aljibe u otros medios, comunas, población beneficiada y acciones para incentivar competencia (GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19-GLO-06).
 - Informar trimestralmente a Comisiones de Economía del Senado y de la Cámara sobre proyectos de inversión a implementarse en Ñuble y efecto en generación de empleo regional (GN-LEY-PPTO-2026-P31-REG-NUB-PROG-19-GLO-07).
 
 ## Control Externo y Documentacion
+
 ### Toma de Razon y Control CGR
+
 #### Asunto
 Toma de Razón y control de legalidad por CGR.
+
 #### Cpt Hitos
 - Resolución de presupuesto inicial.
 - Resoluciones de modificaciones presupuestarias (previa visación DIPRES).
 - Decretos Supremos.
 - Convenios relevantes.
+
 #### Rec
 - Planificar tiempos, asegurar calidad documental y archivar actos tramitados para futuras revisiones.
-#### Referencias
-- GN-PPTO-GLOS-CGR
+
 ### Documentacion DIPRES
+
 #### Asunto
 Preparación de antecedentes para DIPRES.
+
 #### Cpt Reportes
 - Programa de ejecución y caja mensual.
 - Ejecución presupuestaria mensual.
 - Reporte trimestral de transferencias.
 - Ejecución de inversión Subt. 31 por código BIP.
 - Informe mensual de dotación de personal.
+
 #### Requerimientos de Informacion Partida 31 2026
+
 #### Proposito
 Checklist operacional de requerimientos de información/publicación asociados a Ley de Presupuestos 2026 (Partida 31: Gobiernos Regionales).
-#### Fuentes
-kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml#INFO-REQS-2026-GORES-01
+
 #### XRef Required
-- urn:gn:kb:glosas-gores-2026
+- [Glosas y Requerimientos de Información GORES 2026](urn:gn:kb:glosas-gores-2026)
+
 #### Requisitos
 - INFO-REQ-01 (Semestral) SUBDERE → CEMP: Informará los montos destinados regionalmente para proyectos de conectividad digital, que incluyan servicios de telecomunicaciones y cobertura digital, de zonas rezagadas que no sean cubiertas por el Fondo de Desarrollo para las Telecomunicaciones.
 - INFO-REQ-02 (Mensual + 5 días hábiles) GORES: Publicar mensualmente en sus respectivas páginas web la cartera de proyectos financiada con cargo a los presupuestos de inversión de los gobiernos regionales; y publicar los acuerdos adoptados por los respectivos consejos regionales dentro de los 5 días hábiles siguientes, contados desde la adopción del respectivo acuerdo.
@@ -1055,36 +1115,43 @@ kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml#INFO-REQS-2026-GORES-
 - INFO-REQ-14 (Semestral) GORES → CEMP: Informar, a través de informe consolidado, respecto de la ejecución presupuestaria e información sobre el avance de las iniciativas financiadas a través de los Planes Especiales de Zonas Extremas.
 - INFO-REQ-15 (Anual) GORES → CEMP: Informarán los recursos destinados a abastecimiento mediante camiones aljibe en situaciones de emergencia hídrica.
 - INFO-REQ-16 (Anual) Gobierno Regional → CEMP: Informará las acciones de coordinación con la Dirección de Obras Hidráulicas para atender emergencias APR, detallando tiempos de respuesta y mecanismos de seguimiento.
+
 #### Rec
 Ante dudas, solicitar dictamen a DIPRES o CGR antes de ejecutar.
-#### Referencias
-- GN-PPTO-GLOS-DIPRES
-- GN-PPTO-GLOS-CGR
+
 ### Formatos y Anexos DIPRES
+
 #### Asunto
 Formatos y anexos requeridos por DIPRES.
-#### Fuentes
-Oficio Circular N°11 DIPRES 2025 (última versión disponible en corpus).
+
 #### Proposito
 Estandarizar información remitida.
+
 #### Cpt Anexos
 - Anexo 1: Certificado de Acuerdo CORE.
 - Anexo 2: Reporte Mensual de Ejecución.
 - Anexo 3: Reporte Trimestral de Transferencias.
 
 ## Instrumentos de Ejecucion
+
 ### Convenios y Transferencias
+
 #### Cpt
 El convenio de transferencia es la herramienta jurídica central para materializar transferencias Subt. 24 y 33.
+
 #### Proposito
 Formalizar relaciones entre GORE y receptor, definir obligaciones y asegurar rendición.
+
 #### Fundamento
 Art. 23-27 Ley 21.796 para transferencias a privados y normativa complementaria para entidades públicas.
+
 #### Req Contenido Minimo
 - Partes, objeto, monto, plazos y productos.
 - Obligaciones de ejecución y seguimiento.
 - Reglas de rendición de cuentas, reintegro de saldos y garantías.
+
 #### Proceso
+
 #### Secuencia
 - Elaboración de borrador.
 - Suscripción por las partes.
@@ -1093,122 +1160,134 @@ Art. 23-27 Ley 21.796 para transferencias a privados y normativa complementaria 
 - Ejecución (pago y monitoreo).
 - Rendición (SISREC).
 - Cierre (aprobación rendición y reintegro de saldos).
-#### Referencias
-- GN-PPTO-GLOS-CGR
-- GN-PPTO-GLOS-DIPRES
-- GN-PPTO-GLOS-SIGFE
-- GN-PPTO-GLOS-SISREC
+
 ### Programas Directos GORE
+
 #### Marco
+
 #### Asunto
 Programas ejecutados directamente por el GORE (oferta programática adicional).
+
 #### Fundamento
 Art. 20 letra k) LOC GORE; Glosa 06 Partida 31 Ley 21.796.
+
 #### Mecanismo
 - GORE desarrolla programas con cargo a presupuesto de inversión, ejecutados directamente o vía privados a través de concursos.
+
 #### Evaluacion ExAnte
+
 #### Requisitos
 - Programas nuevos ejecutados directamente por GORE deben someterse a evaluación ex-ante de diseño por MDSF/DIPRES (Glosa 06).
-#### Fuentes
-Oficio Circular N°22 DIPRES.
+
 #### Proceso
 - GORE nomina contraparte.
 - Presenta perfil de programa.
 - Completa Formulario de Diseño Ex-Ante.
 - SES/DIPRES revisan y emiten certificado.
+
 #### Resultados
 Recomendado Favorablemente (RF) es requisito para financiar el programa.
+
 #### Cond Excepciones
 - Continuidad de programas existentes.
 - Concursos 8% FNDR.
 - Transferencias a entidades públicas.
 - Emergencias.
 - Programas con RF previo o FRPD según Res. 33/2024.
+
 #### Gastos Administracion Programas
+
 #### Cpt Regla Clave
 - GORE puede destinar hasta 5% del monto de cada programa a gastos de administración propios.
 - Receptor público puede usar hasta 5% para contratar honorarios de gestión.
 
 ## Cumplimiento Hitos y KPIs
+
 ### Sistema Seguimiento Hitos
+
 #### Proposito
 Instaurar sistema interno de seguimiento de hitos de ejecución física y financiera.
+
 #### Proceso
 - Planificación anual: DIPIR y DAF definen hitos y cronograma maestro.
 - Monitoreo periódico: reuniones técnicas mensuales y directivas trimestrales.
 - Coordinación interinstitucional con unidades técnicas.
 - Alertas tempranas para detectar problemas y reaccionar oportunamente.
-#### Referencias
-- GN-PPTO-GLOS-DIPIR
-- GN-PPTO-GLOS-DAF
+
 ### Indicadores Desempeno
+
 #### Asunto
 Indicadores clave para monitoreo de desempeño.
-#### Fuentes
-Indicadores GORE Ñuble en Ley de Presupuestos (vigente).
+
 #### Contexto
 La Ley fija indicadores de eficacia, eficiencia, calidad y economía para cada GORE.
+
 #### Ejemplos Nuble
 - % de proyectos Subt. 31 y 33 (incluyendo FRIL) con visita en terreno.
 - % de iniciativas FNDR del PROPIR georreferenciadas y pertinentes.
 - % de iniciativas de fomento productivo que benefician a mujeres.
+
 #### Objetivos
 Lograr gestión por resultados evitando ejecución apresurada de fin de año ('dicembreo').
-#### Referencias
-- GN-PPTO-GLOS-FNDR
-- GN-PPTO-GLOS-FRIL
-- GN-PPTO-GLOS-PROPIR
 
 ## Herramientas de Soporte
+
 ### SIGFE
+
 #### Definicion
 Sistema de Información para la Gestión Financiera del Estado, contable-presupuestario y transaccional.
+
 #### Responsables
 DAF.
+
 #### Proposito
 - Control presupuestario en línea.
 - Generación de reportes para DIPRES.
 - Gestión de pagos y registro de todas las etapas del gasto.
+
 #### Rec
 DIPIR debiera contar con usuarios de consulta para seguimiento de ejecución por iniciativa.
-#### Referencias
-- GN-PPTO-GLOS-SIGFE
+
 ### BIP
+
 #### Definicion
 Banco Integrado de Proyectos, plataforma del SNI para registro y seguimiento de iniciativas de inversión.
+
 #### Nat
 Registro único nacional de proyectos con código BIP.
+
 #### Responsables
 DIPIR.
+
 #### Proposito
 - Evaluación ex-ante y obtención de RS/AD.
 - Seguimiento físico y planificación multianual (ARI).
+
 #### Advertencias
 Interoperabilidad limitada con SIGFE; requiere conciliaciones manuales.
-#### Referencias
-- GN-PPTO-GLOS-BIP
-- GN-PPTO-GLOS-SNI
+
 ### Chileindica
+
 #### Asunto
 Plataforma Chileindica.
-#### Fuentes
-Guías Chileindica e instructivo de coordinación ARI-PROPIR.
+
 #### Definicion
 Plataforma para coordinación y seguimiento de inversión pública regional (ARI y PROPIR).
+
 #### Contexto
 URL: <www.chileindica.cl>.
+
 #### Proposito
 - Formulación y aprobación de ARI y PROPIR.
 - Seguimiento de ejecución del PROPIR.
+
 #### Responsables
 SEREMI y servicios públicos regionales, en coordinación con GORE.
-#### Referencias
-- GN-PPTO-GLOS-ARI
-- GN-PPTO-GLOS-PROPIR
-- GN-PPTO-GLOS-GORE
 
 ## Conclusion General
+
 ### Sintesis
+
 #### Cpt
 - La gestión presupuestaria GORE es un proceso complejo que exige trabajo colaborativo entre DAF y DIPIR.
 - DAF aporta rigor financiero, cumplimiento normativo y control de fondos.
@@ -1216,9 +1295,6 @@ SEREMI y servicios públicos regionales, en coordinación con GORE.
 - Objetivo cuantitativo: ejecutar 100% del presupuesto.
 - Objetivo cualitativo: ejecutar con eficiencia, legalidad y pertinencia territorial.
 - Claves del éxito: dominar el ciclo presupuestario, aplicar correctamente clasificador y glosas, documentar actos y someterse a controles, usando esta guía como referencia.
+
 #### Resultados
 Una gestión presupuestaria sólida y confiable respalda los objetivos de desarrollo regional y la legitimidad del GORE frente a la ciudadanía y los órganos de control.
-#### Referencias
-- GN-PPTO-GLOS-GORE
-- GN-PPTO-GLOS-DAF
-- GN-PPTO-GLOS-DIPIR

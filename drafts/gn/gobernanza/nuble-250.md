@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.26
+    cr: 1.13
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -41,15 +41,9 @@ extensions:
 
 # Agenda Estratégica Ñuble 250
 
-## Titulo
-Artefacto STS: Agenda Estratégica "Ñuble 250"
-
 ## Secciones
 
-### S 1 definicion general
-
-#### Titulo
-1. Definición General
+### 1. Definición General
 ID: N250-DEFINITION-01
 Def: "Ñuble 250" es una agenda estratégica de desarrollo regional para la Región de Ñuble, Chile.
 Mssn: Una región integrada, bella y funcional, con identidad viva, patrimonio activado y bienestar cotidiano medible.
@@ -61,10 +55,7 @@ Purp: Conmemorar dos hitos fundamentales que convergen en 2028.
 * Cpt: Hito 2. Def: 250 aniversario del natalicio de Bernardo O'Higgins.
 Ctx: Bernardo O'Higgins es la figura inspiradora de la agenda, basada en sus valores de coraje, sentido de futuro y confianza.
 
-### S 2 genesis y caracter participativo
-
-#### Titulo
-2. Génesis y Carácter Participativo
+### 2. Génesis y Carácter Participativo
 Fnd: La agenda es el resultado de un exhaustivo proceso de participación ciudadana y multisectorial.
 Obj: Asegurar que la agenda responda de manera auténtica a las necesidades y aspiraciones de los habitantes de la región.
 Res: Se construyó un diagnóstico claro de necesidades, avances, urgencias y desafíos.
@@ -72,10 +63,7 @@ Dep: Trabajo colectivo entre sector público, privado y academia.
 
 #### Secciones
 
-#### S 2 1 instancias de participacion
-
-#### Titulo
-2.1. Instancias de Participación
+#### 2.1. Instancias de Participación
 Cpt: Resumen cuantitativo.
 * Res: 64 instancias de participación.
 * Res: 2.297 personas involucradas.
@@ -98,10 +86,7 @@ Cpt: Detalle del proceso.
   * Proc: Revisión de las carteras de iniciativas de cada municipio con miras al 2028.
   * Purp: Asegurar la alineación de proyectos locales con objetivos regionales.
 
-### S 3 avances y logros de la region
-
-#### Titulo
-3. Avances y Logros de la Región
+### 3. Avances y Logros de la Región
 Src: Discurso del Gobernador Óscar Crisóstomo en el Primer Cabildo Regional.
 Ctx: Avances logrados desde la constitución de Ñuble como región independiente hace siete años.
 * Cpt: Presupuesto Regional.
@@ -129,42 +114,27 @@ Ctx: Avances logrados desde la constitución de Ñuble como región independient
   * Warn: Desempleo regional.
   * Act: Abordar urgencias con impulso de autoridades centrales y trabajo colectivo.
 
-### S 4 problema y solucion
-
-#### Titulo
-4. Problema y Solución
+### 4. Problema y Solución
 
 #### Secciones
 
-#### S 4 1 el desafio
-
-#### Titulo
-4.1. El Desafío
+#### 4.1. El Desafío
 Cause: Fragmentación de iniciativas y pérdida de sinergias.
 Cause: Proyectos valiosos sin conexión territorial ni social.
 Cause: Falta de "dirección de arte" público que alinee carteras sectoriales y comunales.
 
-#### S 4 2 la solucion
-
-#### Titulo
-4.2. La Solución
+#### 4.2. La Solución
 Def: Una hoja de ruta única e integradora.
 Mdl: Programa-cartera que articula Estado, municipios, empresas y comunidades.
 Mech: Organizado en "trazos" temáticos con proyectos detonantes ("pulsos"), metas y transparencia continua.
 
-### S 5 estructura de la agenda dimensiones y trazos
-
-#### Titulo
-5. Estructura de la Agenda: Dimensiones y Trazos
+### 5. Estructura de la Agenda: Dimensiones y Trazos
 ID: N250-STRUCTURE-01
 Def: La agenda se estructura en tres grandes dimensiones, cada una desglosada en tres "trazos" (líneas de trabajo).
 
 #### Secciones
 
-#### S 5 1 dimension 1 territorio vivo
-
-#### Titulo
-5.1. Dimensión 1: Territorio Vivo
+#### 5.1. Dimensión 1: Territorio Vivo
 Mssn: Nuestra Naturaleza y Patrimonio como Base de Desarrollo.
 * Cpt: Trazo Azul: Soberanía Marítima.
   * Purp: Impulsar proyectos de infraestructura para el borde costero.
@@ -182,10 +152,7 @@ Mssn: Nuestra Naturaleza y Patrimonio como Base de Desarrollo.
   * Obj: Buscar equidad territorial.
   * Obj: Consolidar su potencial como reserva de biodiversidad y destino turístico sostenible.
 
-#### S 5 2 dimension 2 conectividad y produccion
-
-#### Titulo
-5.2. Dimensión 2: Conectividad y Producción
+#### 5.2. Dimensión 2: Conectividad y Producción
 Mssn: Mover Personas y Economía con Inteligencia y Eficiencia.
 * Cpt: Trazo Rojo: Conectividad Integral.
   * Ctx: Convenio con MOP para pavimentar 780 km adicionales de rutas al 2030. Ref: N250-ACHIEVEMENTS-01.
@@ -201,10 +168,7 @@ Mssn: Mover Personas y Economía con Inteligencia y Eficiencia.
   * Obj: Conectar con los principales puertos del centro-sur para ofrecer productos al Asia Pacífico.
   * Ctx: Se acompaña la atracción de inversiones y el impulso de emprendedores junto a CORFO.
 
-#### S 5 3 dimension 3 bienestar
-
-#### Titulo
-5.3. Dimensión 3: Bienestar
+#### 5.3. Dimensión 3: Bienestar
 Mssn: Movilidad Limpia, Energía Justa y Red de Ciudades y Valles donde la Vida Cotidiana Mejora.
 * Cpt: Trazo Verde: Energía Limpia.
   * Purp: Acelerar la transición energética con miras a la descarbonización, disminución de costos energéticos y renovación de equipos de calefacción.
@@ -216,10 +180,7 @@ Mssn: Movilidad Limpia, Energía Justa y Red de Ciudades y Valles donde la Vida 
   * Ctx: Incluye el plan "21 canchas para Ñuble" (10 ya inauguradas).
   * Ctx: Convenio con el Ministerio de Salud que abarca 40 proyectos (CESFAM, postas rurales, equipos para diagnóstico precoz).
 
-### S 6 proyectos detonantes y emblematicos
-
-#### Titulo
-6. Proyectos Detonantes y Emblemáticos
+### 6. Proyectos Detonantes y Emblemáticos
 Cpt: Proyectos concretos y de alto impacto anunciados.
 * Cpt: Entrega del Diseño del Anfiteatro de la Costa (Cobquecura).
   * Obj: Potenciar el turismo en la zona costera.
@@ -234,19 +195,13 @@ Cpt: Proyectos concretos y de alto impacto anunciados.
   * Req: Conservar su distintivo estilo Art Decó Tropical.
   * Obj: Proyectar a Ñuble como una región abierta a la cultura, el conocimiento y la ciencia.
 
-### S 7 modelo de gestion y gobernanza
-
-#### Titulo
-7. Modelo de Gestión y Gobernanza
+### 7. Modelo de Gestión y Gobernanza
 Fnd: "Hacer que las cosas pasen".
 Src: Cita del Gobernador Óscar Crisóstomo: *"Ñuble 250 es mucho más que una cartera de proyectos; es nuestra gran agenda regional para construir juntos nuestro futuro"*.
 
 #### Secciones
 
-#### S 7 1 gobernanza y roles clave
-
-#### Titulo
-7.1. Gobernanza y Roles Clave
+#### 7.1. Gobernanza y Roles Clave
 * Cpt: Gobernador.
   * Resp: Conducción política.
 * Cpt: Comité Ejecutivo Ñuble 250.
@@ -261,10 +216,7 @@ Src: Cita del Gobernador Óscar Crisóstomo: *"Ñuble 250 es mucho más que una 
   * Ctx: Territorial; Conectividad y Crecimiento; Bienestar.
   * Ref: N250-GOVERNANCE-CABILDOS-01.
 
-#### S 7 2 equipo nuble 250 la secretaria tecnica
-
-#### Titulo
-7.2. Equipo Ñuble 250: La Secretaría Técnica
+#### 7.2. Equipo Ñuble 250: La Secretaría Técnica
 ID: N250-GOVERNANCE-TEAM-01
 Purp: Monitorear y gestionar la implementación de la agenda.
 Cpt: Integrantes.
@@ -277,10 +229,7 @@ Cpt: Integrantes.
   * Ctx: Arquitecto, Universidad de Concepción. Ex secretario técnico, Consejo de Monumentos Nacionales. Cofundador, Unidad de Patrimonio de la Municipalidad de Chillán (UPA).
   * Res: UPA fue distinguida con el Premio Conservación de Monumentos Nacionales en 2014.
 
-#### S 7 3 roles operativos nucleares
-
-#### Titulo
-7.3. Roles Operativos Nucleares
+#### 7.3. Roles Operativos Nucleares
 * Resp: Planificación urbana y diseño.
 * Resp: Infraestructura y obras.
 * Resp: Control financiero y gestión administrativa.
@@ -297,10 +246,7 @@ Cpt: Integrantes.
   * Resp: Resolución de nudos críticos.
   * Resp: Definición de productos.
 
-#### S 7 4 los cabildos instancias de gobernanza participativa
-
-#### Titulo
-7.4. Los Cabildos: Instancias de Gobernanza Participativa
+#### 7.4. Los Cabildos: Instancias de Gobernanza Participativa
 ID: N250-GOVERNANCE-CABILDOS-01
 Def: Corazón de la gobernanza participativa de "Ñuble 250".
 Nat: Instancias cruciales para transformar ideas y necesidades in obras concretas.
@@ -326,10 +272,7 @@ Cpt: Primer Cabildo Regional.
 * Res: Explicación en detalle de la Agenda Ñuble 250 y el rol de la Secretaría Técnica.
 * Res: Concluyó con un diálogo abierto para seguir aportando al "gran acuerdo por el futuro de Ñuble".
 
-#### S 7 5 transparencia participacion y comunicacion
-
-#### Titulo
-7.5. Transparencia, Participación y Comunicación
+#### 7.5. Transparencia, Participación y Comunicación
 * Cpt: Participación Ciudadana.
   * Resp: Diseño y seguimiento de procesos.
 * Cpt: Observatorio.
@@ -344,17 +287,11 @@ Cpt: Primer Cabildo Regional.
   * Cpt: Noticias. Def: Mantener informada a la comunidad sobre avances.
   * Cpt: Galería Fotográfica. Def: Imágenes de eventos relevantes.
 
-### S 8 plan de implementacion
-
-#### Titulo
-8. Plan de Implementación
+### 8. Plan de Implementación
 
 #### Secciones
 
-#### S 8 1 consolidacion de carteras
-
-#### Titulo
-8.1. Consolidación de Carteras
+#### 8.1. Consolidación de Carteras
 Req: Estructura única de portafolio.
 * Cpt: Ejes.
   * Def: Trazos (Azul, Celeste, Blanco, Rojo, Naranja, Café, Verde, Amarillo, Morado). Ref: N250-STRUCTURE-01.
@@ -373,10 +310,7 @@ Req: Estructura única de portafolio.
   * Req: Cada proyecto se mapea a un trazo y a un cabildo.
   * Prohib: "Proyecto huérfano".
 
-#### S 8 2 programacion y metas 2025 2026
-
-#### Titulo
-8.2. Programación y Metas 2025–2026
+#### 8.2. Programación y Metas 2025–2026
 Cpt: Hitos transversales.
 * Dln: Q2-2025.
   * Res: Portafolio consolidado y priorizado.
@@ -402,10 +336,7 @@ Cpt: Metas cuantitativas mínimas.
 * Obj: ≥90% con trazabilidad pública en Observatorio.
 * Obj: ≥70% de hitos de participación ciudadana ejecutados según calendario.
 
-#### S 8 3 plan de gestion priorizado 30 60 90 dias
-
-#### Titulo
-8.3. Plan de Gestión Priorizado (30-60-90 días)
+#### 8.3. Plan de Gestión Priorizado (30-60-90 días)
 * Cpt: Días 0–30.
   * Act: Instalar Comité Ejecutivo y Secretaría Ejecutiva con RACI.
   * Act: Aprobar taxonomía de trazos y plantilla única de ficha de proyecto.
@@ -422,10 +353,7 @@ Cpt: Metas cuantitativas mínimas.
   * Act: Acuerdos interinstitucionales: INDESPA–SERNAPESCA; MINVU; MOP; convenios municipales.
   * Act: Roadmap 2026 cerrado con metas trimestrales.
 
-#### S 8 4 riesgos y mitigacion
-
-#### Titulo
-8.4. Riesgos y Mitigación
+#### 8.4. Riesgos y Mitigación
 |Riesgo|Mitigación|
 |-|-|
 |Fragmentación institucional|Gobernanza formal, RACI y reuniones de control quincenales.|
@@ -433,10 +361,7 @@ Cpt: Metas cuantitativas mínimas.
 |Brechas de datos|Ficha única, interoperabilidad mínima y Observatorio como “fuente única de verdad”.|
 |Falta de aceptación social|Participación temprana por cabildos y comunicación de beneficios tangibles.|
 
-#### S 8 5 requerimientos habilitantes
-
-#### Titulo
-8.5. Requerimientos Habilitantes
+#### 8.5. Requerimientos Habilitantes
 * Cpt: Financiamiento.
   * Req: FNDR, sectoriales, convenios INDESPA–SERNAPESCA, apalancamiento privado donde proceda.
 * Cpt: Gestión.

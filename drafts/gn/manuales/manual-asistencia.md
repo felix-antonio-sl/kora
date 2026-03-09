@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.01
+    cr: 2.0
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -33,16 +33,13 @@ extensions:
     - Contenido
     document_family: generic
     publication_class: knowledge
-    skeleton_count: 3
-    meat_count: 65
+    skeleton_count: 2
+    meat_count: 64
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-asistencia.md.json
 ---
 
 # Manual 3.3: Gestión del Tiempo y Ausentismo
-
-## Source ID
-MANUAL-TIEMPO-AUSENTISMO-01
 
 ## Manual 3 3 Gestion del Tiempo y Ausentismo
 
@@ -97,10 +94,7 @@ Suma de atrasos y tiempos menores de jornada en el periodo mensual.
 #### Requisitos
 Si el total acumulado supera los 59 minutos, genera descuento proporcional en las remuneraciones del funcionario (PR-DAF-0004).
 
-### Seccion II Gestion de Derechos Estatutarios Ausencias Planificadas
-
-#### Titulo
-Sección II: Gestión de Derechos Estatutarios
+### Sección II: Gestión de Derechos Estatutarios
 
 #### 3 Feriado Legal Vacaciones
 
@@ -142,10 +136,7 @@ Pueden tomarse por días completos o medios días (mañana/tarde).
 #### Contexto
 Devolución de tiempo por trabajos extraordinarios realizados en horario nocturno, festivo o fines de semana, autorizada previamente por Resolución.
 
-### Seccion III Licencias Medicas Ausencias No Planificadas
-
-#### Titulo
-Sección III: Gestión de Licencias Médicas (LME)
+### Sección III: Gestión de Licencias Médicas (LME)
 
 #### 6 Flujo de Tramitacion LME
 
@@ -165,10 +156,7 @@ El GORE garantiza el pago íntegro de la remuneración líquida mientras el func
 #### Recuperacion
 GDP tramita ante el ente pagador (Caja/Compin/Isapre) la devolución del subsidio correspondiente al empleador.
 
-### Seccion IV Responsabilidades
-
-#### Titulo
-Sección IV: Responsabilidades
+### Sección IV: Responsabilidades
 
 #### Funcionario
 

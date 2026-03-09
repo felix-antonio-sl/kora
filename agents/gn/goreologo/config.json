@@ -4,7 +4,6 @@
     "type": "bootstrap_config"
   },
   "allowed_kb": [
-    "urn:gn:kb:matriz-integracion-organica",
     "urn:mgmt:kb:estructura-estado-chile",
     "urn:gn:kb:intro-gores-nuble",
     "urn:gn:kb:organigrama",

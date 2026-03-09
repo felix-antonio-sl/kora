@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.04
+    cr: 2.0
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -32,31 +32,22 @@ extensions:
     - Contenido
     document_family: generic
     publication_class: knowledge
-    skeleton_count: 3
-    meat_count: 54
+    skeleton_count: 2
+    meat_count: 53
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-bienestar.md.json
 ---
 
 # Manual 3.5: Bienestar y Calidad de Vida
 
-## Source ID
-MANUAL-BIENESTAR-01
-
-## Manual 3 5 Bienestar y Calidad de Vida
-
-### Titulo
-Manual 3.5: Bienestar y Calidad de Vida
+## Manual 3.5: Bienestar y Calidad de Vida
 
 ### Objetivo
 
 #### Objetivos
 Gestionar los beneficios y prestaciones sociales destinados a mejorar la calidad de vida de los funcionarios y sus cargas familiares.
 
-### Seccion I Servicio de Bienestar
-
-#### Titulo
-Sección I: Servicio de Bienestar
+### Sección I: Servicio de Bienestar
 
 #### 1 Afiliacion y Aportes
 
@@ -85,10 +76,7 @@ Funcionarios de Planta y Contrata (y jubilados que deseen permanecer).
 | Consejo Administrativo | Órgano colegiado con representantes de la institución y de los socios (electos). Decide sobre presupuestos y beneficios. |
 | Unidad de Bienestar | Ejecuta las decisiones del Consejo y administra los fondos. |
 
-### Seccion II Beneficios y Prestaciones
-
-#### Titulo
-Sección II: Beneficios y Prestaciones
+### Sección II: Beneficios y Prestaciones
 
 #### 3 Ayudas Medicas y Dentales
 
@@ -144,10 +132,7 @@ Descuentos en farmacias, gimnasios, ópticas, librerías, etc.
 #### Definicion
 Acuerdos con Cajas de Compensación (CCAF) para créditos sociales y turismo.
 
-### Seccion III Calidad de Vida
-
-#### Titulo
-Sección III: Calidad de Vida
+### Sección III: Calidad de Vida
 
 #### 7 Actividades Recreativas y Culturales
 

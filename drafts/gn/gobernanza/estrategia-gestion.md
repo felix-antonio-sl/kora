@@ -73,10 +73,7 @@ Sintetizar conceptos y siglas clave utilizados en la guía de estrategia y gesti
 | GORE-GLOS-PMO | PMO | Oficina de Gestión de Proyectos | Unidad responsable de estandarizar y profesionalizar la gestión de cartera de proyectos y programas del GORE. |
 | GORE-GLOS-SINAPRED | SINAPRED | Sistema Nacional de Prevención y Respuesta ante Desastres | Sistema que organiza la gestión del riesgo de desastres en Chile, asignando roles específicos a los gobiernos regionales. |
 
-## Parte I Fundamentos Gestion Publica Regional
-
-### Titulo
-Parte I: Fundamentos de la Gestión Pública Regional en Chile
+## Parte I: Fundamentos de la Gestión Pública Regional en Chile
 
 ### Proposito
 Establecer fundamentos conceptuales y contextuales de la gestión pública regional y del rol de los GORE en Chile.
@@ -361,10 +358,7 @@ Intraemprendedor del Estado como agente de cambio que impulsa ideas, desafía st
 - Aprovechar nuevas competencias transferidas.
 - Fomentar cultura de mejora continua.
 
-## Parte II Modernizacion y Herramientas Gestion GORE
-
-### Titulo
-Parte II: Modernización y Herramientas para la Gestión Estratégica y Operativa del GORE
+## Parte II: Modernización y Herramientas para la Gestión Estratégica y Operativa del GORE
 
 ### Proposito
 Traducir fundamentos y diagnósticos en una hoja de ruta de modernización, fortalecimiento institucional y mejora continua.

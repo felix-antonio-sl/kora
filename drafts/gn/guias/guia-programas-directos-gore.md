@@ -63,10 +63,7 @@ Definir conceptos, siglas y normas clave recurrentes en la guía de PPR de ejecu
 | GN-PPR-GLOS-SIVUST | SIVUST | Sistema de Indicadores de Vulnerabilidad Socioterritorial | Sistema que mide vulnerabilidad socioterritorial mediante un índice global y otros indicadores a nivel territorial. |
 | GN-PPR-GLOS-BIPS | BIPS | Banco Integrado de Programas Sociales | Plataforma del Ministerio de Desarrollo Social y Familia para consultar la oferta programática evaluada y sus principales características. |
 
-## Guia PPR Ejecucion Directa GORE
-
-### Titulo
-Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa del GORE vía Glosa 06
+## Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa del GORE vía Glosa 06
 
 ### Proposito
 Orientar a los equipos del Gobierno Regional en el diseño, formulación y

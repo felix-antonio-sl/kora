@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.58
+    cr: 1.56
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -91,10 +91,7 @@ Registrar las principales normas legales y administrativas que sustentan el Conc
 | GN-CONC8-NORM-LEY-19300-01 | Ley N° 19.300 – Bases Generales del Medio Ambiente | Marco general para la gestión ambiental y la protección del medio ambiente. |
 | GN-CONC8-NORM-LEY-21302-01 | Ley N° 21.302 – Servicio Nacional de Protección Especializada a la Niñez y Adolescencia | Crea el Servicio Mejor Niñez y regula residencias familiares que pueden ser beneficiarias en líneas específicas. |
 
-## Instructivo Concurso Vinculacion Comunidad 8 2025
-
-### Titulo
-Instructivo Concurso de Vinculación con la Comunidad 8% 2025 – Región de Ñuble
+## Instructivo Concurso de Vinculación con la Comunidad 8% 2025 – Región de Ñuble
 
 ### Proposito
 Establecer reglas, requisitos, procesos, fondos, áreas de postulación y
@@ -1466,55 +1463,16 @@ Acreditar la identidad, objetivos y experiencia de la organización postulante.
 
 #### Proposito
 Declarar el cumplimiento de las restricciones de las letras B y C del instructivo (Restricciones del Fondo y Gastos No Financiables).
-
-#### Contenido
-
-#### Field Label
-Texto Declaración
-
-#### Field Type
-Static-Text
-
-#### Field Value
-Declaro; Que la Institución cumple con lo establecido en las letras B y C "DE LAS RESTRICCIONES DEL FONDO Y LOS GASTOS NO FINANCIABLES". Acepto la anulación absoluta de mi postulación en el evento de comprobarse la falsedad de alguno de los antecedentes presentados.
-
-#### Field Instr
-Requiere identificación de la comuna, fecha, nombre y RUT del representante legal, y firma/timbre.
+Texto Declaración Static-Text Declaro; Que la Institución cumple con lo establecido en las letras B y C "DE LAS RESTRICCIONES DEL FONDO Y LOS GASTOS NO FINANCIABLES". Acepto la anulación absoluta de mi postulación en el evento de comprobarse la falsedad de alguno de los antecedentes presentados. Requiere identificación de la comuna, fecha, nombre y RUT del representante legal, y firma/timbre.
 
 #### Anexo 7 Declaracion Jurada B
 
 #### Proposito
 Declarar el cumplimiento de la restricción de la letra m) del instructivo (Restricciones del Fondo y Gastos No Financiables).
-
-#### Contenido
-
-#### Field Label
-Texto Declaración
-
-#### Field Type
-Static-Text
-
-#### Field Value
-Declaro; Que la Institución cumple con lo establecido en la letra m) "DE LAS RESTRICCIONES DEL FONDO Y LOS GASTOS NO FINANCIABLES". Acepto la anulación absoluta de mi postulación en el evento de comprobarse la falsedad de alguno de los antecedentes presentados.
-
-#### Field Instr
-Requiere identificación de la comuna, fecha, nombre y RUT del representante legal, y firma/timbre.
+Texto Declaración Static-Text Declaro; Que la Institución cumple con lo establecido en la letra m) "DE LAS RESTRICCIONES DEL FONDO Y LOS GASTOS NO FINANCIABLES". Acepto la anulación absoluta de mi postulación en el evento de comprobarse la falsedad de alguno de los antecedentes presentados. Requiere identificación de la comuna, fecha, nombre y RUT del representante legal, y firma/timbre.
 
 #### Anexo 8 Carta Compromiso Prevencion
 
 #### Proposito
 Comprometer a la organización a prevenir actos de violencia y consumo de alcohol/drogas en actividades financiadas por el concurso.
-
-#### Contenido
-
-#### Field Label
-Texto Declaración
-
-#### Field Type
-Static-Text
-
-#### Field Value
-Declaro que la organización que represento se compromete a generar todas las acciones que sean necesarias para prevenir actos de violencia, consumo de alcohol y drogas en recintos que se ejecuten actividades con recursos obtenidos por la subvención del "CONCURSO DE VINCULACIÓN CON LA COMUNIDAD 8% 2025".
-
-#### Field Instr
-Requiere identificación de la comuna, fecha, nombre y RUT del representante legal, y firma/timbre.
+Texto Declaración Static-Text Declaro que la organización que represento se compromete a generar todas las acciones que sean necesarias para prevenir actos de violencia, consumo de alcohol y drogas en recintos que se ejecuten actividades con recursos obtenidos por la subvención del "CONCURSO DE VINCULACIÓN CON LA COMUNIDAD 8% 2025". Requiere identificación de la comuna, fecha, nombre y RUT del representante legal, y firma/timbre.

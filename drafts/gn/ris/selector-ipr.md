@@ -847,9 +847,6 @@ Normas carácter general proveen marco fundamental toda inversión regional
 
 #### LOC GORE
 
-#### Nombre
-Ley Orgánica Constitucional Gobiernos Regionales (DFL 1-19.175)
-
 #### Fundamento
 Otorga GORE facultad "Decidir inversión" (Art.16f), "Ejecutar programas regionales" (Art.20k)
 
@@ -858,16 +855,10 @@ Conecta administración fondos (FNDR) con obligación evaluación técnica (Art.
 
 #### DL 1263
 
-#### Nombre
-Decreto Ley N°1.263 (Adm. Financiera Estado)
-
 #### Fundamento
 Establece base SNI, exige informe favorable iniciativas inversión (Art.19bis)
 
 #### Ley Presupuestos
-
-#### Nombre
-Ley Presupuestos Sector Público (Anual)
 
 #### Fundamento
 Instrumento operativo asigna recursos, establece reglas específicas (Glosas)
@@ -881,9 +872,6 @@ Usar recursos inversión regional para financiar préstamos o gastos en personal
 - kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml#GN-LEY-PPTO-2026-P31-GLO-03
 
 #### Normas Generales 2026
-
-#### Nombre
-Ley de Presupuestos 2026 - Normas Generales
 
 #### Fundamento
 Reglas transversales (licitación por umbrales, decretos/transferencias, autorizaciones previas DIPRES).

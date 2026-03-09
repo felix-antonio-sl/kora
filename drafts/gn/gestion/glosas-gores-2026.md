@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.8
+    cr: 1.79
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica
@@ -74,10 +74,7 @@ Transformación KODA de glosas y requerimientos de información de la Ley de Pre
 | ITEM-3303 | Ítem 33.03 |
 | RES-EX-33-2024-MCTCI | Resolución Exenta N° 33, de 2024 (Ministerio de Ciencias, Tecnología, Conocimiento e Innovación) |
 
-## Law Budget 2026
-
-### Titulo
-LEY DE PRESUPUESTOS AÑO 2026
+## LEY DE PRESUPUESTOS AÑO 2026
 
 ### Partida
 Financiamiento Gobiernos Regionales

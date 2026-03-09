@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.06
+    cr: 2.01
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -33,31 +33,22 @@ extensions:
     - Contenido
     document_family: generic
     publication_class: knowledge
-    skeleton_count: 3
-    meat_count: 249
+    skeleton_count: 2
+    meat_count: 248
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-flotas.md.json
 ---
 
 # Manual 2.4: Servicios Generales y Gestión de Flotas
 
-## Source ID
-MANUAL-SERVICIOS-FLOTAS-01
-
-## Manual 2 4 Servicios Generales y Gestion de Flotas
-
-### Titulo
-Manual 2.4: Servicios Generales y Gestión de Flotas
+## Manual 2.4: Servicios Generales y Gestión de Flotas
 
 ### Objetivo
 
 #### Objetivos
 Operativizar los servicios de soporte institucional y administrar eficientemente la flota vehicular del GORE, garantizando disponibilidad, seguridad y control de costos.
 
-### Seccion I Servicios Generales
-
-#### Titulo
-Sección I: Servicios Generales
+### Sección I: Servicios Generales
 
 #### 1 Alcance de Servicios Generales
 
@@ -106,10 +97,7 @@ La mayoría de servicios generales se ejecutan mediante contratos externos:
 - Evaluación periódica del servicio.
 - Aplicación de multas según bases contractuales.
 
-### Seccion II Mantencion de Infraestructura
-
-#### Titulo
-Sección II: Mantención de Infraestructura
+### Sección II: Mantención de Infraestructura
 
 #### 4 Tipos de Mantencion
 
@@ -129,12 +117,7 @@ Anual
 
 #### Base
 Inventario de instalaciones y equipos.
-
-#### Contenido
-- Listado de equipos e instalaciones a mantener.
-- Frecuencia de intervención (mensual, trimestral, anual).
-- Responsable de ejecución (interno o contratista).
-- Presupuesto estimado.
+Listado de equipos e instalaciones a mantener. Frecuencia de intervención (mensual, trimestral, anual). Responsable de ejecución (interno o contratista). Presupuesto estimado.
 
 #### Seguimiento
 
@@ -149,12 +132,7 @@ Instrumento formal para solicitar y documentar intervenciones.
 #### Generacion
 - Por usuario (falla reportada)
 - Automática (plan preventivo)
-
-#### Contenido
-- Descripción del requerimiento.
-- Ubicación y equipo afectado.
-- Prioridad (alta, media, baja).
-- Fecha de solicitud.
+Descripción del requerimiento. Ubicación y equipo afectado. Prioridad (alta, media, baja). Fecha de solicitud.
 
 #### Asignacion
 - A técnico interno
@@ -178,10 +156,7 @@ Instrumento formal para solicitar y documentar intervenciones.
 - Señalética de evacuación.
 - Detectores de humo y alarmas.
 
-### Seccion III Gestion de Flota Vehicular
-
-#### Titulo
-Sección III: Gestión de Flota Vehicular
+### Sección III: Gestión de Flota Vehicular
 
 #### Restricciones Legales Adquisicion
 
@@ -293,10 +268,7 @@ Asignada a cada vehículo (ej. ServiEstado, Copec).
 - Proyección de mantenciones según kilometraje.
 - Detección de usos no autorizados.
 
-### Seccion IV Mantencion de Vehiculos
-
-#### Titulo
-Sección IV: Mantención de Vehículos
+### Sección IV: Mantención de Vehículos
 
 #### 14 Plan de Mantencion Vehicular
 
@@ -333,10 +305,7 @@ Alertas automáticas para vencimientos:
 | Documento | Frecuencia | Responsable |
 | --- | --- | --- |
 
-#### 17 Siniestros y Accidentes
-
-#### Titulo
-Procedimiento ante accidente:
+#### Procedimiento ante accidente:
 
 #### Proceso
 - 1. Asegurar integridad de personas.
@@ -347,10 +316,7 @@ Procedimiento ante accidente:
 - 6. Evaluar responsabilidad del conductor (posible sumario).
 - 7. Reparación o baja del vehículo según daño.
 
-### Seccion V Control y Reporteria
-
-#### Titulo
-Sección V: Control y Reportería
+### Sección V: Control y Reportería
 
 #### 18 Indicadores de Gestion de Flota
 
@@ -377,10 +343,7 @@ Sección V: Control y Reportería
 - Detección de usos no autorizados o fuera de horario.
 - Cruce con comisiones de servicio autorizadas.
 
-### Seccion VI Disposiciones Especiales
-
-#### Titulo
-Sección VI: Disposiciones Especiales
+### Sección VI: Disposiciones Especiales
 
 #### 21 Vehiculos en Comodato o Arriendo
 

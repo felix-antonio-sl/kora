@@ -56,10 +56,7 @@ Definir conceptos, siglas y normas clave recurrentes en la Guía Operativa FRPD 
 | GN-FRPD-GLOS-RATE | RATE | Resultado de la Evaluación Técnica | Clasificaciones RS, FI, OT y NV que resumen el resultado de la evaluación técnica de una iniciativa. |
 | GN-FRPD-GLOS-RS | RS | Recomendado Favorablemente | Calificación que indica aprobación técnica y habilita la obtención de RS para financiamiento. |
 
-## Guia Operativa FRPD Ñuble 2025
-
-### Titulo
-Guía Operativa FRPD Ñuble 2025
+## Guía Operativa FRPD Ñuble 2025
 
 ### Proposito
 Regular el concurso FRPD 2025 para la asignación de recursos del Fondo

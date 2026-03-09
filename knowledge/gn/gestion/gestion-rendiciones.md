@@ -25,43 +25,29 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.57
+    cr: 1.35
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 9
     meat_count: 663
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gestion__gestion-rendiciones.md.json
 ---
 
 # Gestión de Rendiciones de Cuentas - GORE Ñuble
+
 ## Glosario Rendiciones GORE Nuble
+
 ### Proposito
 Definir conceptos, siglas y normas clave recurrentes en la gestión de rendiciones del GORE Ñuble.
-### Referencias
-- GN-REN-GLOS-REN
-- GN-REN-GLOS-GORE
-- GN-REN-GLOS-ENT-EJEC
-- GN-REN-GLOS-SISREC
-- GN-REN-GLOS-SIGFE
-- GN-REN-GLOS-EXPEDIENTE
-- GN-REN-GLOS-DAF
-- GN-REN-GLOS-UCR
-- GN-REN-GLOS-RTF
-- GN-REN-GLOS-FNDR
-- GN-REN-GLOS-FRIL
-- GN-REN-GLOS-FRPD
-- GN-REN-GLOS-SUBV8
-- GN-REN-GLOS-LOCBGAE
-- GN-REN-GLOS-LBPA
-- GN-REN-GLOS-LEY21180
-- GN-REN-GLOS-LEY21719
-- GN-REN-GLOS-RES30
-- GN-REN-GLOS-RES1858
+
 ### Terminos
 | ID | Cpt | Def |
 | --- | --- | --- |
@@ -86,43 +72,53 @@ Definir conceptos, siglas y normas clave recurrentes en la gestión de rendicion
 | GN-REN-GLOS-RES1858 | Resolución Exenta N°1.858/2023 CGR | Acto que establece la obligatoriedad del uso de SISREC para rendiciones de transferencias de Subtítulos 24 y 33. |
 
 ## Parte 1 Marco Conceptual y Normativo
+
 ### Proposito
 Establecer los fundamentos conceptuales y el marco legal que rigen la rendición de cuentas en el sector público chileno, con aplicabilidad directa al GORE Ñuble.
+
 ### Definicion y Principios
+
 #### Definicion Rendicion Cuentas
-#### Fuentes
-- @guia_rendiciones_gores.md
-- @generalidades_sistema_rendicion_electronica_cuentas_sisrec.md
-#### Referencias
-- GN-REN-GLOS-REN
+
 #### Elementos
-| Def |
-| --- |
-| Procedimiento administrativo y de control. |
-| Resp |
-| --- |
-| Toda persona o entidad (pública/privada) que custodia, administra, recauda, recibe, invierte o paga fondos públicos. |
-| Obj |
-| --- |
-| Demostrar y justificar la correcta utilización de dichos recursos. |
-| Req |
-| --- |
-| Conforme a los fines para los cuales fueron otorgados. |
-| Req |
-| --- |
-| En cumplimiento de la normativa vigente. |
-| Mssn |
-| --- |
-| Comprobar cómo se realizó el ingreso, egreso o traspaso de los recursos públicos. |
-| Cpt |
-| --- |
-| Deber de informar, explicar y responder por la gestión y resultados. |
+
+#### Elemento 1
+
+#### Definicion
+Procedimiento administrativo y de control.
+
+#### Elemento 2
+
+#### Responsables
+Toda persona o entidad (pública/privada) que custodia, administra, recauda, recibe, invierte o paga fondos públicos.
+
+#### Elemento 3
+
+#### Objetivos
+Demostrar y justificar la correcta utilización de dichos recursos.
+
+#### Elemento 4
+
+#### Requisitos
+Conforme a los fines para los cuales fueron otorgados.
+
+#### Elemento 5
+
+#### Requisitos
+En cumplimiento de la normativa vigente.
+
+#### Elemento 6
+
+#### Mision
+Comprobar cómo se realizó el ingreso, egreso o traspaso de los recursos públicos.
+
+#### Elemento 7
+
+#### Cpt
+Deber de informar, explicar y responder por la gestión y resultados.
+
 #### Principios Rectores
-#### Fuentes
-@guia_rendiciones_gores.md (Res. 30/2015 CGR)
-#### Referencias
-- GN-REN-GLOS-LOCBGAE
-- GN-REN-GLOS-RES30
+
 #### Principios
 | Cpt | Def |
 | --- | --- |
@@ -134,35 +130,31 @@ Establecer los fundamentos conceptuales y el marco legal que rigen la rendición
 | Transparencia | Proceso y resultados accesibles al control ciudadano y fiscalizador. |
 | Eficiencia-Eficacia | Uso de fondos orientado al logro óptimo de objetivos institucionales. |
 | Probidad | Actuación recta y leal, con preeminencia del interés general; la rendición es mecanismo de verificación. |
+
 ### Marco Normativo Aplicable
+
 #### Proposito
 Detallar el conjunto de normas, desde la Constitución hasta las resoluciones específicas, que regulan la rendición de cuentas para el GORE Ñuble.
-#### Referencias
-- GN-REN-GLOS-LOCBGAE
-- GN-REN-GLOS-LBPA
-- GN-REN-GLOS-LEY21180
-- GN-REN-GLOS-LEY21719
-- GN-REN-GLOS-RES30
-- GN-REN-GLOS-RES1858
+
 #### Normas
 | ID | Cpt | Src | Ref |
 | --- | --- | --- | --- |
 | STS-KB-GN-RENDICION-NORMA-CPR-01 | Constitución Política de la República | @guia_rendiciones_gores.md |  |
-| STS-KB-GN-RENDICION-NORMA-RES30-01 | Resolución N°30 de 2015, CGR | @resolucion_30_2015_cgr_rendicion_cuentas.txt | GN-REN-GLOS-RES30 |
-| STS-KB-GN-RENDICION-NORMA-LOCBGAE-01 | Ley N°18.575 (LOCBGAE) | @guia_rendiciones_gores.md | GN-REN-GLOS-LOCBGAE |
-| STS-KB-GN-RENDICION-NORMA-LBPA-01 | Ley N°19.880 (LBPA) | @guia_rendiciones_gores.md | GN-REN-GLOS-LBPA |
+| STS-KB-GN-RENDICION-NORMA-RES30-01 | Resolución N°30 de 2015, CGR | @resolucion_30_2015_cgr_rendicion_cuentas.txt | ['GN-REN-GLOS-RES30'] |
+| STS-KB-GN-RENDICION-NORMA-LOCBGAE-01 | Ley N°18.575 (LOCBGAE) | @guia_rendiciones_gores.md | ['GN-REN-GLOS-LOCBGAE'] |
+| STS-KB-GN-RENDICION-NORMA-LBPA-01 | Ley N°19.880 (LBPA) | @guia_rendiciones_gores.md | ['GN-REN-GLOS-LBPA'] |
 | STS-KB-GN-RENDICION-NORMA-LEYPPTOS-01 | Ley de Presupuestos del Sector Público (Anual) | @guia_rendiciones_gores.md, @kb_021_extractos_legales.md |  |
-| STS-KB-GN-RENDICION-NORMA-LEY21180-01 | Ley N°21.180 (Transformación Digital del Estado) | @guia_rendiciones_gores.md | GN-REN-GLOS-LEY21180 |
-| STS-KB-GN-RENDICION-NORMA-LEY21719-01 | Ley N°21.719 (Protección de Datos Personales) | @guia_rendiciones_gores.md, @kb_021_extractos_legales.md | GN-REN-GLOS-LEY21719 |
-| STS-KB-GN-RENDICION-NORMA-RES1858-01 | Resolución Exenta N°1.858 de 2023, CGR | @manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md | GN-REN-GLOS-RES1858 |
+| STS-KB-GN-RENDICION-NORMA-LEY21180-01 | Ley N°21.180 (Transformación Digital del Estado) | @guia_rendiciones_gores.md | ['GN-REN-GLOS-LEY21180'] |
+| STS-KB-GN-RENDICION-NORMA-LEY21719-01 | Ley N°21.719 (Protección de Datos Personales) | @guia_rendiciones_gores.md, @kb_021_extractos_legales.md | ['GN-REN-GLOS-LEY21719'] |
+| STS-KB-GN-RENDICION-NORMA-RES1858-01 | Resolución Exenta N°1.858 de 2023, CGR | @manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md | ['GN-REN-GLOS-RES1858'] |
 
 ## Parte 2 Actores y Responsabilidades
+
 ### Proposito
 Definir los roles y responsabilidades de cada actor involucrado en el ciclo de rendición de cuentas del GORE Ñuble.
-### Fuentes
-- @guia_rendiciones_gores.md
-- @manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md
+
 ### Actores Internos GORE
+
 #### Actores
 | ID | Cpt | Rol |
 | --- | --- | --- |
@@ -174,9 +166,12 @@ Definir los roles y responsabilidades de cada actor involucrado en el ciclo de r
 | STS-KB-GN-RENDICION-ACTOR-DIVISIONES-01 | Divisiones Técnicas (DIPIR, DIDESOH, DIFOI, DIT) | Albergan a los Referentes Técnicos y Financieros (RTF) de proyectos/programas. |
 | STS-KB-GN-RENDICION-ACTOR-RTF-01 | Referente Técnico-Financiero (RTF) | Primera línea de revisión y seguimiento de un proyecto/programa. |
 | STS-KB-GN-RENDICION-ACTOR-CONTROLINTERNO-01 | Unidad de Control Interno del GORE | Control preventivo y posterior de la legalidad. |
+
 ### Entidades Ejecutoras
+
 #### Rol
 Receptoras de fondos GORE; principales responsables de la correcta ejecución y rendición.
+
 #### Deberes
 | Req |
 | --- |
@@ -186,26 +181,31 @@ Receptoras de fondos GORE; principales responsables de la correcta ejecución y 
 | Presentar rendiciones en forma y plazos establecidos (vía SISREC). |
 | Subsanar observaciones oportunamente. |
 | Reintegrar fondos no utilizados o mal rendidos. |
+
 #### Tipologias
 | ID | Cpt | Ctx | Req |
 | --- | --- | --- | --- |
-| STS-KB-GN-RENDICION-EJECUTOR-MUNI-01 | Municipalidades | Receptoras de FNDR, FRIL, 8% FNDR. | Obligadas a usar SISREC para rendir al GORE (Res. Ex. 1858/2023 CGR). |
-| STS-KB-GN-RENDICION-EJECUTOR-SSPP-01 | Otros Servicios Públicos Sectoriales | SERVIU, Vialidad, etc. | Rinden al GORE según convenio., CGR examina inversión en sede del servicio ejecutor (Res. 30 CGR, Art. 26). |
-| STS-KB-GN-RENDICION-EJECUTOR-PRIVADO-01 | Entidades Privadas (Corporaciones, Fundaciones, ONGs) | Receptoras de 8% FNDR, FRPD, etc. | Sujetos a marco regulatorio estricto (Ley Presupuestos 2026, Art. 23-26)., Inscripción en Registro de Colaboradores del Estado (Ley 19.862)., Obligadas a usar SISREC para rendir al GORE. |
+| STS-KB-GN-RENDICION-EJECUTOR-MUNI-01 | Municipalidades | Receptoras de FNDR, FRIL, 8% FNDR. | ['Obligadas a usar SISREC para rendir al GORE (Res. Ex. 1858/2023 CGR).'] |
+| STS-KB-GN-RENDICION-EJECUTOR-SSPP-01 | Otros Servicios Públicos Sectoriales | SERVIU, Vialidad, etc. | ['Rinden al GORE según convenio.', 'CGR examina inversión en sede del servicio ejecutor (Res. 30 CGR, Art. 26).'] |
+| STS-KB-GN-RENDICION-EJECUTOR-PRIVADO-01 | Entidades Privadas (Corporaciones, Fundaciones, ONGs) | Receptoras de 8% FNDR, FRPD, etc. | ['Sujetos a marco regulatorio estricto (Ley Presupuestos 2026, Art. 23-26).', 'Inscripción en Registro de Colaboradores del Estado (Ley 19.862).', 'Obligadas a usar SISREC para rendir al GORE.'] |
+
 ### Organismos Control Externo
+
 #### Organismos
 | ID | Cpt | Ref | Rol |
 | --- | --- | --- | --- |
-| STS-KB-GN-RENDICION-EXTERNO-CGR-01 | Contraloría General de la República (CGR) | GN-REN-GLOS-RES30 | Principal órgano de control externo. |
+| STS-KB-GN-RENDICION-EXTERNO-CGR-01 | Contraloría General de la República (CGR) | ['GN-REN-GLOS-RES30'] | Principal órgano de control externo. |
 | STS-KB-GN-RENDICION-EXTERNO-DIPRES-01 | Dirección de Presupuestos (DIPRES) |  | Control y seguimiento de ejecución presupuestaria y programática. |
 
 ## Parte 3 Proceso Operativo Rendicion
+
 ### Proposito
 Describir la documentación requerida y los flujos de trabajo para la gestión de rendiciones en el GORE Ñuble, distinguiendo la modalidad legado de la modalidad estándar vía SISREC.
+
 ### Documentacion y Expediente
+
 #### Componentes Esenciales
-#### Fuentes
-@resolucion_30_2015_cgr_rendicion_cuentas.txt (Art. 2)
+
 #### Elementos
 | Cpt | Def |
 | --- | --- |
@@ -215,9 +215,9 @@ Describir la documentación requerida y los flujos de trabajo para la gestión d
 | Comprobantes de Traspasos | Documentos de operaciones contables sin movimiento de efectivo. |
 | Registro Ley N°19.862 |  |
 | Medios de Verificación | Evidencia de cumplimiento de objetivos (informes técnicos, fotos, listas, etc.). |
+
 #### Documentacion Autentica y Respaldo
-#### Fuentes
-@resolucion_30_2015_cgr_rendicion_cuentas.txt (Art. 4, 5)
+
 #### Elementos
 | Cpt | Def |
 | --- | --- |
@@ -225,11 +225,12 @@ Describir la documentación requerida y los flujos de trabajo para la gestión d
 | Soporte Electrónico | Documento electrónico según Ley 19.799, con firma electrónica. |
 | Documento Digitalizado | Se considera copia simple, salvo que sea autentificado con firma electrónica; en SISREC el Ministro de Fe del ejecutor cumple esta función. |
 | Tipos Comunes | Facturas y boletas electrónicas, contratos, liquidaciones de sueldo, comprobantes de cotizaciones, comprobantes de transferencia bancaria, actas de recepción, etc. |
+
 ### Flujo Sin SISREC Modalidad Legado
+
 #### Contexto
 Aplicable a convenios antiguos no migrados a SISREC.
-#### Fuentes
-@manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md (Sec. 7.1)
+
 #### Pasos
 | Step | Resp | Act | Dln |
 | --- | --- | --- | --- |
@@ -240,53 +241,52 @@ Aplicable a convenios antiguos no migrados a SISREC.
 | 5 | U.C.R./DAF | Recibe rendición aprobada por RTF, realiza control final mediante checklist. | 4 días hábiles (GORE). |
 | 6 | U.C.R./DAF | Contabiliza en SIGFE. | 2 días hábiles (GORE). |
 | 7 | U.C.R./DAF | Archiva expediente. | 1 día hábil (GORE). |
+
 ### Flujo Con SISREC Modalidad Estandar
+
 #### Contexto
 Procedimiento obligatorio para nuevas transferencias S.24 y S.33.
+
 #### XRef Required
-- urn:gn:kb:ley-presupuestos-2026-normas-generales
-#### Fuentes
-- @generalidades_sistema_rendicion_electronica_cuentas_sisrec.md
-- @manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md (Sec. 7.2)
-#### Referencias
-- GN-REN-GLOS-SISREC
-- GN-REN-GLOS-SIGFE
-- GN-REN-GLOS-ENT-EJEC
+- [Ley de Presupuestos 2026: Normas Generales](urn:gn:kb:ley-presupuestos-2026-normas-generales)
+
 #### Flujo Entidad Otorgante GORE
+
 #### Pasos
 | Step | Resp | Activities |
 | --- | --- | --- |
-| 1 | Analista Otorgante (RTF) | Crea Programa/Proyecto en SISREC., Registra y envía transferencia a Ejecutor., Recibe y revisa rendición del Ejecutor (Dln: 7 días hábiles GORE)., Aprueba/Observa cada transacción., Envía a Encargado Otorgante para firma. |
-| 2 | Encargado Otorgante (Jefe DAF) | Recibe rendición del Analista., Revisa propuesta. |
-| 3 | Analista Otorgante (RTF) | Descarga Informe de Aprobación firmado., Deriva a U.C.R./DAF para contabilización. |
-| 4 | U.C.R./DAF | Recibe informe., Contabiliza en SIGFE (Dln: 2 días hábiles GORE)., Archiva registro (Dln: 2 días hábiles GORE). |
+| 1 | Analista Otorgante (RTF) | ['Crea Programa/Proyecto en SISREC.', 'Registra y envía transferencia a Ejecutor.', 'Recibe y revisa rendición del Ejecutor (Dln: 7 días hábiles GORE).', 'Aprueba/Observa cada transacción.', 'Envía a Encargado Otorgante para firma.'] |
+| 2 | Encargado Otorgante (Jefe DAF) | ['Recibe rendición del Analista.', 'Revisa propuesta.'] |
+| 3 | Analista Otorgante (RTF) | ['Descarga Informe de Aprobación firmado.', 'Deriva a U.C.R./DAF para contabilización.'] |
+| 4 | U.C.R./DAF | ['Recibe informe.', 'Contabiliza en SIGFE (Dln: 2 días hábiles GORE).', 'Archiva registro (Dln: 2 días hábiles GORE).'] |
+
 #### Flujo Entidad Ejecutora
+
 #### Pasos
 | Step | Resp | Activities |
 | --- | --- | --- |
-| 1 | Analista Ejecutor | Recibe y acepta transferencia del GORE en SISREC., Crea informe de rendición (mensual, regularización, sin movimiento) con Dln: 15 días hábiles mes siguiente., Ingresa transacciones y adjunta documentos de respaldo digitalizados., Envía a Ministro de Fe. |
-| 2 | Ministro de Fe del Ejecutor | Revisa autenticidad de documentos. |
-| 3 | Encargado Ejecutor | Revisa rendición. |
-| 4 | Analista Ejecutor (si hay devolución del GORE) | Recibe rendición observada., Crea informe de 'Regularización'., Corrige transacciones observadas y reenvía por el mismo flujo. |
+| 1 | Analista Ejecutor | ['Recibe y acepta transferencia del GORE en SISREC.', 'Crea informe de rendición (mensual, regularización, sin movimiento) con Dln: 15 días hábiles mes siguiente.', 'Ingresa transacciones y adjunta documentos de respaldo digitalizados.', 'Envía a Ministro de Fe.'] |
+| 2 | Ministro de Fe del Ejecutor | ['Revisa autenticidad de documentos.'] |
+| 3 | Encargado Ejecutor | ['Revisa rendición.'] |
+| 4 | Analista Ejecutor (si hay devolución del GORE) | ['Recibe rendición observada.', "Crea informe de 'Regularización'.", 'Corrige transacciones observadas y reenvía por el mismo flujo.'] |
 
 ## Parte 4 Rendicion por Tipologia de Fondos
+
 ### Proposito
 Detallar las particularidades de la rendición de cuentas para los principales fondos y programas gestionados por el GORE Ñuble.
-### Fuentes
-- @guia_rendiciones_gores.md
-- kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml
-- kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml
+
 ### Fondos Principales
 | ID | Cpt | Ref |
 | --- | --- | --- |
-| STS-KB-GN-RENDICION-FONDOS-FNDR-01 | Fondo Nacional de Desarrollo Regional (FNDR) | GN-REN-GLOS-FNDR, GN-REN-GLOS-FRIL, GN-REN-GLOS-FRPD |
+| STS-KB-GN-RENDICION-FONDOS-FNDR-01 | Fondo Nacional de Desarrollo Regional (FNDR) | ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-FRIL', 'GN-REN-GLOS-FRPD'] |
 
 ## Parte 5 Control Fiscalizacion y Transparencia
+
 ### Proposito
 Describir mecanismos de control, rol de la fiscalización externa y obligaciones de transparencia asociadas a las rendiciones.
-### Fuentes
-@guia_rendiciones_gores.md
+
 ### Control Interno GORE
+
 #### Mecanismos
 | Mech | Proc |
 | --- | --- |
@@ -294,53 +294,63 @@ Describir mecanismos de control, rol de la fiscalización externa y obligaciones
 | Unidad de Control Interno | Realiza revisión preventiva y auditorías selectivas sobre el proceso de rendición; informa al Gobernador y al CORE. |
 | Listas de Chequeo | Aplicación de checklists estandarizadas para revisión formal, documental, financiera y técnica de cada rendición. |
 | Seguimiento Físico-Financiero | Verificar que el gasto se traduzca en avances concretos; requiere análisis integrado de informes y visitas a terreno por parte de los RTF. |
+
 ### Fiscalizacion Externa
+
 #### Elementos
 | Resp | Act |
 | --- | --- |
 |  |  |
-| Contraloría General de la República (CGR) | Examen y juzgamiento de cuentas para verificar legalidad, fidelidad y exactitud de rendiciones., Auditorías financieras y de cumplimiento al GORE., Formulación de observaciones y reparos., Juicios de Cuentas para responsabilidades pecuniarias. |
-| Dirección de Presupuestos (DIPRES) | Monitoreo de ejecución presupuestaria y programática del GORE., Evaluación de programas regionales para medir eficacia. |
+| Contraloría General de la República (CGR) | ['Examen y juzgamiento de cuentas para verificar legalidad, fidelidad y exactitud de rendiciones.', 'Auditorías financieras y de cumplimiento al GORE.', 'Formulación de observaciones y reparos.', 'Juicios de Cuentas para responsabilidades pecuniarias.'] |
+| Dirección de Presupuestos (DIPRES) | ['Monitoreo de ejecución presupuestaria y programática del GORE.', 'Evaluación de programas regionales para medir eficacia.'] |
+
 ### Transparencia y Acceso a Informacion
-#### Fuentes
-Ley N°20.285 (Transparencia)
+
 #### Elementos
 | Req | Cpt |
 | --- | --- |
 |  |  |
 | Transparencia Activa | Publicación proactiva y mensual de convenios de transferencia, detalle de transferencias, nóminas de beneficiarios, presupuesto y ejecución, resultados de auditorías. |
 | Transparencia Pasiva | Respuesta a solicitudes de acceso a la información dentro de plazos legales, resguardando datos personales sensibles. |
+
 #### Obligaciones Presupuesto 2026 Partida 31
+
 #### XRef Required
-- urn:gn:kb:ley-presupuestos-2026-partida-31
-- urn:gn:kb:ley-presupuestos-2026-partida-31
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
+
 #### Corporaciones y Fundaciones
+
 #### XRef Required
-- urn:gn:kb:ley-presupuestos-2026-partida-31
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
+
 #### Requisitos
 - Informar a DIPRES y publicar en las páginas web de la corporación y del Gobierno Regional información institucional (misión, objetivos, directorio, financiamiento, planificación anual) a más tardar al término del primer trimestre.
 - Informar y publicar trimestralmente, dentro de los 30 días siguientes al término de cada trimestre, información de ejecución y gestión (dotación, remuneraciones, concursos, recursos transferidos/ejecutados, indicadores).
 - Exigir cuenta pública anual, estados financieros publicados y cumplimiento de Ley N°20.285 cuando corresponda.
+
 #### Requerimientos Informacion y Publicacion
+
 #### XRef Required
-- urn:gn:kb:ley-presupuestos-2026-partida-31
+- [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31)
+
 #### Requisitos
 - Publicar mensualmente la cartera de proyectos financiada con cargo a presupuestos de inversión regional y publicar acuerdos CORE dentro de 5 días hábiles desde su adopción.
 - Informar trimestralmente el uso de recursos (beneficiarios, comuna, instituciones receptoras, montos, productos del convenio y su aplicación regional) a las instancias definidas en la glosa, y publicar la información en los mismos plazos cuando corresponda.
 - Publicar trimestralmente e informar a senadores y diputados de la región los proyectos adjudicados/contratados con cargo a Subtítulos 24, 31 y 33, incluyendo identificación de proyecto, montos, postulantes, pauta de evaluación, seleccionado, presupuesto aprobado y votaciones CORE.
 
 ## Parte 6 Responsabilidades y Sanciones
+
 ### Proposito
 Detallar el régimen de responsabilidades y las posibles sanciones derivadas de irregularidades en el proceso de rendición.
-### Fuentes
-- @guia_rendiciones_gores.md
-- @kb_021_extractos_legales.md
+
 ### Tipos Responsabilidad
 | Cpt | Cause | Proc | Res |
 | --- | --- | --- | --- |
 | Responsabilidad Administrativa | Infracción a deberes de cuidado, supervisión o probidad por parte de funcionarios del GORE. | Sumario administrativo. | Censura, multa, suspensión o destitución (Ley 18.834). |
 | Responsabilidad Civil | Perjuicio patrimonial al Fisco por acción negligente o dolosa. | Juicio de Cuentas ante CGR o demanda civil ante tribunales. | Orden de restituir los fondos. |
 | Responsabilidad Penal | Hechos constitutivos de delito (malversación, fraude al fisco, cohecho, etc.). | Investigación del Ministerio Público y juicio penal. | Multas, inhabilitación, penas privativas de libertad. |
+
 ### Consecuencias Directas por Rendiciones Pendientes o Observadas
 | Cpt | Cause | Res |
 | --- | --- | --- |
@@ -348,17 +358,12 @@ Detallar el régimen de responsabilidades y las posibles sanciones derivadas de 
 | Suspensión de Nuevas Transferencias | Existencia de rendiciones exigibles pendientes. | GORE no debe entregar nuevos fondos (Res. 30 CGR, Art. 18). |
 
 ## Parte 7 Gestion Estrategica y Contingencias
+
 ### Proposito
 Ofrecer recomendaciones para una gestión de excelencia y planes para contingencias operativas.
-### Fuentes
-- @guia_rendiciones_gores.md
-- @manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md
+
 ### Buenas Practicas
-#### Referencias
-- GN-REN-GLOS-DAF
-- GN-REN-GLOS-ENT-EJEC
-- GN-REN-GLOS-SISREC
-- GN-REN-GLOS-SIGFE
+
 #### Recomendaciones
 | Rec |
 | --- |
@@ -370,9 +375,9 @@ Ofrecer recomendaciones para una gestión de excelencia y planes para contingenc
 | Gestión de riesgos (fraude, errores, demoras) con medidas preventivas y de control. |
 | Fomento de cultura de probidad y transparencia. |
 | Enfoque en resultados, articulando rendición financiera con medición de impacto. |
+
 ### Contingencias y Planes Accion
-#### Fuentes
-@manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md (Sec. 7.3)
+
 #### Casos
 | Cpt | Proc |
 | --- | --- |
@@ -381,46 +386,36 @@ Ofrecer recomendaciones para una gestión de excelencia y planes para contingenc
 | Demoras en revisión interna por alta carga de trabajo | Usar planificación anual para anticipar peaks, reasignar revisores y priorizar rendiciones que habilitan transferencias críticas. |
 
 ## Parte 8 Procedimientos Contables Clave
+
 ### Proposito
 Detallar los procedimientos contables en SIGFE para registrar transferencias y rendiciones vinculadas a transferencias condicionadas.
-### Fuentes
-@manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md (Sec. 8)
-### Referencias
-- GN-REN-GLOS-SIGFE
-- GN-REN-GLOS-FNDR
-- GN-REN-GLOS-FRIL
-- GN-REN-GLOS-FRPD
-- GN-REN-GLOS-SUBV8
-- GN-REN-GLOS-ENT-EJEC
-- GN-REN-GLOS-DAF
+
 ### Advertencias
 Los números de cuenta corresponden al Plan de Cuentas del Sector Público.
+
 ### F07 Transferencias Condicionadas Sector Privado
+
 #### Contexto
 Aplicación en Subvenciones 8% FNDR y programas con ONGs.
-#### Referencias
-- GN-REN-GLOS-SUBV8
-- GN-REN-GLOS-SIGFE
-- GN-REN-GLOS-ENT-EJEC
+
 #### Fases
 | Cpt | Proc |
 | --- | --- |
-| Fase 1 - Entrega de Fondos | Devengo de obligación: Debe 12106 Deudores por Transferencias Reintegrables / Haber 21524 Cuentas por Pagar - Transf. Corrientes o 21533 Cuentas por Pagar - Transf. de Capital., Pago: Debe 21524/21533 / Haber 11102/11103 Banco. |
-| Fase 2 - Aprobación Rendición | Reconocimiento del gasto: Debe 54101 Transf. Corr. Sector Privado o 54201 Transf. Cap. Sector Privado / Haber 12106 Deudores por Transferencias Reintegrables. |
-| Fase 3 - Reintegro | Devengo del cobro: Debe 11508 Cuentas por Cobrar / Haber 12106 Deudores por Transferencias Reintegrables., Recepción del pago: Debe 11102/11103 Banco / Haber 11508 Cuentas por Cobrar. |
+| Fase 1 - Entrega de Fondos | ['Devengo de obligación: Debe 12106 Deudores por Transferencias Reintegrables / Haber 21524 Cuentas por Pagar - Transf. Corrientes o 21533 Cuentas por Pagar - Transf. de Capital.', 'Pago: Debe 21524/21533 / Haber 11102/11103 Banco.'] |
+| Fase 2 - Aprobación Rendición | ['Reconocimiento del gasto: Debe 54101 Transf. Corr. Sector Privado o 54201 Transf. Cap. Sector Privado / Haber 12106 Deudores por Transferencias Reintegrables.'] |
+| Fase 3 - Reintegro | ['Devengo del cobro: Debe 11508 Cuentas por Cobrar / Haber 12106 Deudores por Transferencias Reintegrables.', 'Recepción del pago: Debe 11102/11103 Banco / Haber 11508 Cuentas por Cobrar.'] |
+
 ### F08 Transferencias Condicionadas Sector Publico
+
 #### Contexto
 Aplicación en FNDR a Municipalidades (FRIL, proyectos) y transferencias a otros Servicios Públicos.
+
 #### Advertencias
 Para transferencias a otros Servicios Públicos (no Municipalidades), el devengo del gasto se realiza al aprobar la rendición; para Municipalidades, al momento de la transferencia.
-#### Referencias
-- GN-REN-GLOS-FNDR
-- GN-REN-GLOS-FRIL
-- GN-REN-GLOS-SIGFE
-- GN-REN-GLOS-ENT-EJEC
+
 #### Fases
 | Cpt | Proc |
 | --- | --- |
-| Fase 1 - Entrega de Fondos | Devengo de obligación: Debe 12106 Deudores por Transferencias Reintegrables / Haber 21524/21533., Pago: Debe 21524/21533 / Haber 11102/11103 Banco. |
-| Fase 2 - Aprobación Rendición | Reconocimiento del gasto: Debe 54103 Transf. Corr. Otras Ent. Públicas o 54203 Transf. Cap. Otras Ent. Públicas / Haber 12106 Deudores por Transferencias Reintegrables. |
-| Fase 3 - Reintegro | Devengo del cobro: Debe 11508 Cuentas por Cobrar / Haber 12106 Deudores por Transferencias Reintegrables., Recepción del pago: Debe 11102/11103 Banco / Haber 11508 Cuentas por Cobrar. |
+| Fase 1 - Entrega de Fondos | ['Devengo de obligación: Debe 12106 Deudores por Transferencias Reintegrables / Haber 21524/21533.', 'Pago: Debe 21524/21533 / Haber 11102/11103 Banco.'] |
+| Fase 2 - Aprobación Rendición | ['Reconocimiento del gasto: Debe 54103 Transf. Corr. Otras Ent. Públicas o 54203 Transf. Cap. Otras Ent. Públicas / Haber 12106 Deudores por Transferencias Reintegrables.'] |
+| Fase 3 - Reintegro | ['Devengo del cobro: Debe 11508 Cuentas por Cobrar / Haber 12106 Deudores por Transferencias Reintegrables.', 'Recepción del pago: Debe 11102/11103 Banco / Haber 11508 Cuentas por Cobrar.'] |

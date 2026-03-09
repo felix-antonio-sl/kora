@@ -207,6 +207,17 @@ entries:
       - domains/gn/03_operacion/ipr/otroglosario.yml
     transform_class: korafy_koda_hybrid
     document_family: glossary
+    glossary_conflict_resolutions:
+      población objetivo:
+        canonical_name: Población objetivo
+        definition: Grupo específico de personas afectadas por el problema central que el proyecto busca atender directamente.
+        aliases:
+          - Población Objetivo
+      población potencial:
+        canonical_name: Población potencial
+        definition: Conjunto total de personas que sufren el problema y cumplen los requisitos para ser beneficiarios.
+        aliases:
+          - Población Potencial
     review_gate: auto
     scope_statement: Glosario consolidado IPR; requiere verificacion terminologica.
 
@@ -250,6 +261,7 @@ entries:
     source_paths:
       - domains/gn/03_operacion/ipr/kb_omega_ipr_gestion_fusion.yml
     transform_class: derive_ttl_scope
+    document_family: omega
     source_type: ontology_yaml
     review_gate: auto
     scope_statement: Fusion semantica IPR/Gestion; requiere validacion de alcance.

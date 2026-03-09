@@ -78,10 +78,7 @@ Facilitar la lectura del artefacto mediante definiciones breves de siglas y conc
 | GN-GLOS-SGD | SGD | Secretaría de Gobierno Digital | Órgano rector de la Estrategia de Gobierno Digital y de las plataformas transversales de transformación digital del Estado. |
 | GN-GLOS-TDE | TDE | Transformación Digital del Estado | Proceso de modernización del Estado basado en el uso estratégico de tecnologías digitales, datos e identidad digital. |
 
-## Parte I Fundamentos y Contexto
-
-### Titulo
-Parte I: Fundamentos y Contexto de la Administración Regional en Ñuble
+## Parte I: Fundamentos y Contexto de la Administración Regional en Ñuble
 
 ### Introduccion General
 
@@ -1770,9 +1767,6 @@ Detallar institucionalidad que gobierna la TDE y normas que el GORE debe cumplir
 #### Institucionalidad Rectora
 
 #### Organo Rector
-
-#### Nombre
-Secretaría de Gobierno Digital (SGD)
 
 #### Dep
 Subsecretaría de Hacienda.

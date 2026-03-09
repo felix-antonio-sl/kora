@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.98
+    cr: 2.03
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -33,42 +33,22 @@ extensions:
     - Contenido
     document_family: generic
     publication_class: knowledge
-    skeleton_count: 5
-    meat_count: 68
+    skeleton_count: 2
+    meat_count: 60
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-desarrollo-organizacional.md.json
 ---
 
 # Manual 3.4: Desarrollo Organizacional y Capacitación
 
-## Source ID
-MANUAL-DESARROLLO-ORG-01
-
-## Authoritative Sources
-
-### Authoritative Sources
-| Path | Type | Priority |
-| --- | --- | --- |
-| staging/temp/brutos ordenados/01_gestion_personas/res_exta_132_designa_encargado_y_referentes_tecnicos_cdc_2025_koda.yml | CDC-Resolution | 1 |
-| staging/temp/brutos ordenados/01_gestion_personas/res_exta_817_define_equipos_trabajo_cdc_2025_koda.yml | CDC-Teams-Resolution | 1 |
-
-## Last Validated
-2025-12-18
-
-## Manual 3 4 Desarrollo Organizacional y Capacitacion
-
-### Titulo
-Manual 3.4: Desarrollo Organizacional y Capacitación
+## Manual 3.4: Desarrollo Organizacional y Capacitación
 
 ### Objetivo
 
 #### Objetivos
 Potenciar las competencias de los funcionarios y promover un ambiente laboral positivo, alineado con los objetivos estratégicos del GORE Ñuble.
 
-### Seccion I Capacitacion y Formacion
-
-#### Titulo
-Sección I: Capacitación y Formación
+### Sección I: Capacitación y Formación
 
 #### 1 Sistema de Capacitacion
 
@@ -125,10 +105,7 @@ Resolución Exenta del Gobernador(a).
 #### Rec
 Se priorizarán acciones formativas en competencias digitales (uso de plataformas, firma electrónica, seguridad de la información), conforme a la Estrategia de Capacitación de la Transformación Digital del Estado.
 
-### Seccion II Gestion del Desempeno
-
-#### Titulo
-Sección II: Gestión del Desempeño
+### Sección II: Gestión del Desempeño
 
 #### 4 Sistema de Calificaciones
 
@@ -164,10 +141,7 @@ Definidas por equipo/división.
 #### Resultados
 El cumplimiento determina el pago del Componente de Desempeño de la Asignación de Modernización (pagado trimestralmente).
 
-### Seccion III Desarrollo Organizacional
-
-#### Titulo
-Sección III: Desarrollo Organizacional
+### Sección III: Desarrollo Organizacional
 
 #### 6 Clima Laboral
 

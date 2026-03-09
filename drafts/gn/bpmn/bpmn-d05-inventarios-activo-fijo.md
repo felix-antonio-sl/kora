@@ -26,7 +26,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.05
+    cr: 1.04
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null

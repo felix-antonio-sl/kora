@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.82
+    cr: 1.8
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -86,10 +86,7 @@ Registrar las normas principales usadas como fundamento del instructivo FRIL 202
 | GN-FRIL-NORM-CIRC11-HACIENDA-2025-01 | Circular N° 11/2025 Ministerio de Hacienda | Imparte instrucciones sobre aplicación de glosas presupuestarias de Gobiernos Regionales. |
 | GN-FRIL-NORM-RES15051-SUBDERE-2023-01 | Resolución Exenta N° 15.051/2023 SUBDERE | Fija Guía Operativa FRIL a nivel nacional. |
 
-## Instructivo FRIL 2025
-
-### Titulo
-Instructivo FRIL 2025 – Región de Ñuble
+## Instructivo FRIL 2025 – Región de Ñuble
 
 ### Proposito
 Establecer reglas, requisitos, procesos y documentación para la formulación,
@@ -1071,15 +1068,7 @@ Certificados de ensayos de materiales.
 
 #### Prohibiciones
 - No se puede añadir logotipo de la constructora; solo su nombre en sección 'Contratista'.
-
-#### Contenido
-- Nombre del proyecto (según Ficha IDI).
-- Financia: Gobierno Regional de Ñuble.
-- Inversión: monto total en M$.
-- Fecha de inicio (según acta entrega de terreno).
-- Plazo de ejecución (según oferta adjudicada).
-- Unidad técnica.
-- Contratista.
+Nombre del proyecto (según Ficha IDI). Financia: Gobierno Regional de Ñuble. Inversión: monto total en M$. Fecha de inicio (según acta entrega de terreno). Plazo de ejecución (según oferta adjudicada). Unidad técnica. Contratista.
 
 #### Estructura Valla
 
@@ -1102,10 +1091,7 @@ Certificados de ensayos de materiales.
 - Material: acero fotograbado bajo relieve.
 - Medidas mínimas: 80 cm (ancho) x 60 cm (alto).
 - Debe usar marco oficial del GORE descargable desde sitio web.
-
-#### Contenido
-- Nombre del proyecto y logos (GORE y organización) del mismo tamaño.
-- Frase: 'Iniciativa realizada con apoyo del Gobierno Regional de Ñuble, siendo Gobernador (nombre del Gobernador Regional)'.
+Nombre del proyecto y logos (GORE y organización) del mismo tamaño. Frase: 'Iniciativa realizada con apoyo del Gobierno Regional de Ñuble, siendo Gobernador (nombre del Gobernador Regional)'.
 
 #### Obra Gruesa y Firmas
 

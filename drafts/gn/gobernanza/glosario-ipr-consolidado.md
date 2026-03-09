@@ -35,7 +35,7 @@ extensions:
     skeleton_count: 1
     meat_count: 878
     fat_count: 0
-    glossary_conflicts: 2
+    glossary_conflicts: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__glosario-ipr-consolidado.md.json
 ---
@@ -47,7 +47,7 @@ extensions:
 ### Estadísticas
 - Entradas fuente: 439
 - Entradas canónicas: 436
-- Conflictos léxicos: 2
+- Conflictos léxicos: 0
 
 ## Términos 1
 | término | definición | aliases |
@@ -424,8 +424,8 @@ extensions:
 | Plataforma GESDOC del GORE Ñuble | Sistema centralizado de gestión interna que garantiza el flujo digital de los expedientes de inversión. |  |
 | Población Beneficiaria | Subconjunto de la población objetivo que efectivamente recibirá los beneficios del proyecto dados los recursos. |  |
 | Población beneficiaria anual | Número estimado de personas que reciben productos o servicios de una iniciativa en un ejercicio fiscal. |  |
-| Población Objetivo | Grupo específico de personas afectadas por el problema central que el proyecto busca atender directamente. |  |
-| Población Potencial | Población total que presenta la necesidad o problema, de la cual se recorta la población objetivo. |  |
+| Población objetivo | Grupo específico de personas afectadas por el problema central que el proyecto busca atender directamente. | Población Objetivo |
+| Población potencial | Conjunto total de personas que sufren el problema y cumplen los requisitos para ser beneficiarios. | Población Potencial |
 | Población y justificación | Sección del formulario IDI que explica a quién se ayuda y por qué es necesaria la intervención. |  |
 | Postulación | Acto formal de presentar un proyecto al GORE Ñuble para competir por recursos públicos. |  |
 | Postulación de IPR | IPR presentada para evaluación, antes de clasificación o aprobación. |  |

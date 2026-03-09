@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.38
+    cr: 1.21
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -42,22 +42,13 @@ extensions:
 
 # Cuentas Públicas Gobierno Regional de Ñuble (2021-2024)
 
-## Titulo
-Cuentas Públicas Gobierno Regional de Ñuble
-
 ## Secciones
 
-### Cp 2024 introduccion 01 cuenta publica gestion 2024
-
-#### Titulo
-CP-2024-INTRODUCCION-01: Cuenta Pública Gestión 2024
+### CP-2024-INTRODUCCION-01: Cuenta Pública Gestión 2024
 
 #### Secciones
 
-#### Cp 2024 mensaje gobernador 01 mensaje del gobernador oscar crisostomo
-
-#### Titulo
-CP-2024-MENSAJE-GOBERNADOR-01: Mensaje del Gobernador Óscar Crisóstomo
+#### CP-2024-MENSAJE-GOBERNADOR-01: Mensaje del Gobernador Óscar Crisóstomo
 ID: CP-2024-MENSAJE-GOBERNADOR-01
 Resp: Óscar Crisóstomo Llanos, Gobernador Regional de Ñuble.
 Purp: Compartir avances principales de gestión 2024.
@@ -68,10 +59,7 @@ Purp: Proyectos que transforman territorios, fortalecen identidad y autonomía r
 
 #### Secciones
 
-#### Cp 2024 ejes gestion 01 ejes de gestion
-
-#### Titulo
-CP-2024-EJES-GESTION-01: Ejes de Gestión
+#### CP-2024-EJES-GESTION-01: Ejes de Gestión
 ID: CP-2024-EJES-GESTION-01
 Src: Mensaje del Gobernador.
 - Cpt: Economía, Innovación y Capital Humano
@@ -100,28 +88,19 @@ Cpt: Agradecimientos
 Dest: Consejeros/as regionales, municipios, organizaciones comunitarias, habitantes de Ñuble.
 Cpt: Lema. Def: "Ñuble no espera. Ñuble avanza."
 
-#### Cp 2024 estructura gore 01 gobierno regional y su estructura
-
-#### Titulo
-CP-2024-ESTRUCTURA-GORE-01: Gobierno Regional y su Estructura
+#### CP-2024-ESTRUCTURA-GORE-01: Gobierno Regional y su Estructura
 ID: CP-2024-ESTRUCTURA-GORE-01
 
 #### Secciones
 
-#### Cp 2024 marco legal gore 01 marco legal y funciones
-
-#### Titulo
-CP-2024-MARCO-LEGAL-GORE-01: Marco Legal y Funciones
+#### CP-2024-MARCO-LEGAL-GORE-01: Marco Legal y Funciones
 ID: CP-2024-MARCO-LEGAL-GORE-01
 Fnd: Ley 19.175 sobre Gobierno y Administración Regional.
 Obj: Desarrollo social, cultural y económico de la región.
 Cpt: Composición. Def: Gobernador Regional + Consejo Regional.
 Nat: Persona jurídica de derecho público, patrimonio propio.
 
-#### Cp 2024 gobernador regional 01 gobernador regional
-
-#### Titulo
-CP-2024-Gobernador-Regional-01: Gobernador Regional
+#### CP-2024-Gobernador-Regional-01: Gobernador Regional
 ID: CP-2024-Gobernador-Regional-01
 Cpt: Rol. Def: Órgano ejecutivo del Gobierno Regional.
 Cpt: Funciones Principales
@@ -132,10 +111,7 @@ Cpt: Funciones Principales
 Resp: Gobernador Regional, Óscar Crisóstomo Llanos.
 Resp: Administradora Regional, Claudia Cabrera Torres.
 
-#### Cp 2024 divisiones gore 01 divisiones del gore
-
-#### Titulo
-CP-2024-DIVISIONES-GORE-01: Divisiones del GORE
+#### CP-2024-DIVISIONES-GORE-01: Divisiones del GORE
 ID: CP-2024-DIVISIONES-GORE-01
 Ctx: Cantidad 6.
 | División |
@@ -147,10 +123,7 @@ Ctx: Cantidad 6.
 | Infraestructura y Transportes |
 | Desarrollo Social y Humano |
 
-#### Cp 2024 consejo regional 01 consejo regional
-
-#### Titulo
-CP-2024-CONSEJO-REGIONAL-01: Consejo Regional
+#### CP-2024-CONSEJO-REGIONAL-01: Consejo Regional
 ID: CP-2024-CONSEJO-REGIONAL-01
 Ctx: Inicio de funciones del periodo es el 6 de enero de 2025 (post elección octubre 2024).
 Fnd: Art. 111 Constitución, Art. 22 Ley N°19.175.
@@ -164,10 +137,7 @@ Cpt: Organización Interna. Def: Comisiones de Trabajo.
 
 #### Secciones
 
-#### Cp 2024 consejeros 2025 2029 01 consejeros as regionales 2025 2029
-
-#### Titulo
-CP-2024-CONSEJEROS-2025-2029-01: Consejeros/as Regionales 2025-2029
+#### CP-2024-CONSEJEROS-2025-2029-01: Consejeros/as Regionales 2025-2029
 ID: CP-2024-CONSEJEROS-2025-2029-01
 | Provincia | Consejero/a |
 | :--- | :--- |
@@ -188,18 +158,12 @@ ID: CP-2024-CONSEJEROS-2025-2029-01
 | Diguillín | Christopher Casanova González |
 | Diguillín | Geraldine Aravena Godoy |
 
-#### Cp 2024 ejecucion presupuestaria 01 ejecucion presupuestaria 2024
-
-#### Titulo
-CP-2024-EJECUCION-PRESUPUESTARIA-01: Ejecución Presupuestaria 2024
+#### CP-2024-EJECUCION-PRESUPUESTARIA-01: Ejecución Presupuestaria 2024
 ID: CP-2024-EJECUCION-PRESUPUESTARIA-01
 
 #### Secciones
 
-#### Cp 2024 presupuesto historico 01 ejecucion presupuestaria 2020 2024
-
-#### Titulo
-CP-2024-PRESUPUESTO-HISTORICO-01: Ejecución Presupuestaria 2020-2024
+#### CP-2024-PRESUPUESTO-HISTORICO-01: Ejecución Presupuestaria 2020-2024
 ID: CP-2024-PRESUPUESTO-HISTORICO-01
 | Año | Presupuesto (M$) | Marco Presupuestario (M$) | % Ejec. |
 | :--- | :--- | :--- | :--- |
@@ -209,20 +173,14 @@ ID: CP-2024-PRESUPUESTO-HISTORICO-01
 | 2023 | 59.441.127 | 60.015.566 | 99.04% |
 | 2024 | 63.330.546 | 69.956.822 | 90.53% |
 
-#### Cp 2024 inversion por origen 01 inversion regional 2024 por origen de iniciativa
-
-#### Titulo
-CP-2024-INVERSION-POR-ORIGEN-01: Inversión Regional 2024 por Origen de Iniciativa
+#### CP-2024-INVERSION-POR-ORIGEN-01: Inversión Regional 2024 por Origen de Iniciativa
 ID: CP-2024-INVERSION-POR-ORIGEN-01
 | Origen | Monto (M$) |
 | :--- | :--- |
 | Municipal | 30.711.393 |
 | Sectorial | 32.568.413 |
 
-#### Cp 2024 ejecucion por subtitulo 01 distribucion ejecucion regional 2024 por subt
-
-#### Titulo
-CP-2024-EJECUCION-POR-SUBTITULO-01: Distribución Ejecución Regional 2024 por Subtítulo
+#### CP-2024-EJECUCION-POR-SUBTITULO-01: Distribución Ejecución Regional 2024 por Subtítulo
 ID: CP-2024-EJECUCION-POR-SUBTITULO-01
 | Subtítulo | Monto (M$) |
 | :--- | :--- |
@@ -233,10 +191,7 @@ ID: CP-2024-EJECUCION-POR-SUBTITULO-01
 | FRIL | 11.877.101 |
 | SUBT 33 | 2.877.064 |
 
-#### Cp 2024 inversion por provincia 01 inversion regional 2024 por provincia
-
-#### Titulo
-CP-2024-INVERSION-POR-PROVINCIA-01: Inversión Regional 2024 por Provincia
+#### CP-2024-INVERSION-POR-PROVINCIA-01: Inversión Regional 2024 por Provincia
 ID: CP-2024-INVERSION-POR-PROVINCIA-01
 | Provincia | Monto (M$) | Nº Iniciativas |
 | :--- | :--- | :--- |
@@ -245,10 +200,7 @@ ID: CP-2024-INVERSION-POR-PROVINCIA-01
 | Diguillín | 21.731.882 | 98 |
 | Itata | 7.910.943 | 64 |
 
-#### Cp 2024 fril historico 01 iniciativas fril ejecutadas 2020 2024
-
-#### Titulo
-CP-2024-FRIL-HISTORICO-01: Iniciativas FRIL Ejecutadas 2020-2024
+#### CP-2024-FRIL-HISTORICO-01: Iniciativas FRIL Ejecutadas 2020-2024
 ID: CP-2024-FRIL-HISTORICO-01
 | Año | Monto (M$) | Nº Iniciativas |
 | :--- | :--- | :--- |
@@ -258,18 +210,12 @@ ID: CP-2024-FRIL-HISTORICO-01
 | FRIL 2021 | 1.485.473 | 36 |
 | FRIL 2020 | 1.589.025 | 45 |
 
-#### Cp 2024 eje economia innovacion 01 eje 1 economia innovacion y capital humano
-
-#### Titulo
-CP-2024-EJE-ECONOMIA-INNOVACION-01: Eje 1: Economía, Innovación y Capital Humano
+#### CP-2024-EJE-ECONOMIA-INNOVACION-01: Eje 1: Economía, Innovación y Capital Humano
 ID: CP-2024-EJE-ECONOMIA-INNOVACION-01
 
 #### Secciones
 
-#### Cp 2024 economia inversion 01 economia e inversion
-
-#### Titulo
-CP-2024-ECONOMIA-INVERSION-01: Economía e Inversión
+#### CP-2024-ECONOMIA-INVERSION-01: Economía e Inversión
 ID: CP-2024-ECONOMIA-INVERSION-01
 Purp: Coordinar actores para desarrollar potencial de Ñuble.
 - Act: Constitución de la Unidad Regional de Atracción de Inversiones.
@@ -284,10 +230,7 @@ Purp: Coordinar actores para desarrollar potencial de Ñuble.
 
 #### Secciones
 
-#### Cp 2024 proyectos ifi 01 proyectos ifi beneficiados
-
-#### Titulo
-CP-2024-PROYECTOS-IFI-01: Proyectos IFI Beneficiados
+#### CP-2024-PROYECTOS-IFI-01: Proyectos IFI Beneficiados
 ID: CP-2024-PROYECTOS-IFI-01
 - Cpt: Softserve - Expansión de Talento
   - Purp: Crear centro de desarrollo de software para exportación.
@@ -312,10 +255,7 @@ ID: CP-2024-PROYECTOS-IFI-01
   - Dest: 20 empresas de India.
   - Res: Formación Consorcio de la India para exportación de productos de Ñuble.
 
-#### Cp 2024 cdpr 01 comite de desarrollo productivo cdpr
-
-#### Titulo
-CP-2024-CDPR-01: Comité de Desarrollo Productivo (CDPR)
+#### CP-2024-CDPR-01: Comité de Desarrollo Productivo (CDPR)
 ID: CP-2024-CDPR-01
 Act: Instalación junto a Corfo.
 Obj: Otorgar mayor poder de decisión a las regiones en desarrollo económico.
@@ -331,10 +271,7 @@ Ctx: Gestión del primer año.
   - Cpt: Actividades - Formación exportadora (incl. industrias creativas), participación en ferias, misiones comerciales.
   - Cause: Empresas no agro/forestal limitadas a demanda local.
 
-#### Cp 2024 alianza sercotec 01 alianza gore sercotec
-
-#### Titulo
-CP-2024-ALIANZA-SERCOTEC-01: Alianza GORE-Sercotec
+#### CP-2024-ALIANZA-SERCOTEC-01: Alianza GORE-Sercotec
 ID: CP-2024-ALIANZA-SERCOTEC-01
 Obj: Apoyo a pequeñas y medianas empresas.
 Cpt: Convenio GORE-Sercotec ~$4.700 millones.
@@ -345,10 +282,7 @@ Cpt: Iniciativa Específica - Rezago Almacén.
 - Ctx: Rubros - Restaurantes, comercio.
 - Purp: Potenciar desarrollo económico en Zona de Rezago.
 
-#### Cp 2024 zona rezago 01 acciones en zona de rezago
-
-#### Titulo
-CP-2024-ZONA-REZAGO-01: Acciones en Zona de Rezago
+#### CP-2024-ZONA-REZAGO-01: Acciones en Zona de Rezago
 ID: CP-2024-ZONA-REZAGO-01
 - Cpt: Programa Transferencia Revalorización Procesos Vitivinícolas.
   - Resp: UBB.
@@ -359,10 +293,7 @@ ID: CP-2024-ZONA-REZAGO-01
   - Act: Apoyo a 70 productores.
   - Ctx: Inversión $200 millones.
 
-#### Cp 2024 levantemos ferias 01 programa levantemos las ferias nuble
-
-#### Titulo
-CP-2024-LEVANTEMOS-FERIAS-01: Programa "Levantemos las Ferias Ñuble"
+#### CP-2024-LEVANTEMOS-FERIAS-01: Programa "Levantemos las Ferias Ñuble"
 ID: CP-2024-LEVANTEMOS-FERIAS-01
 Resp: Desafío Levantemos Chile.
 Ctx: Costo $343.958.000.
@@ -370,10 +301,7 @@ Dest: 500 comerciantes de Ñuble.
 Cpt: Acciones - Capacitación, digitalización, mejoras colaborativas.
 Dest: Comunas de Quillón, Bulnes, Ninhue, Chillán, San Carlos, San Nicolás.
 
-#### Cp 2024 desarrollo agricola 01 desarrollo agricola
-
-#### Titulo
-CP-2024-DESARROLLO-AGRICOLA-01: Desarrollo Agrícola
+#### CP-2024-DESARROLLO-AGRICOLA-01: Desarrollo Agrícola
 ID: CP-2024-DESARROLLO-AGRICOLA-01
 - Act: Convenio GORE-CNR.
   - Ctx: Monto $5.600 millones (segundo acuerdo).
@@ -419,10 +347,7 @@ ID: CP-2024-DESARROLLO-AGRICOLA-01
     - Inversión en infraestructura/implementos para valor agregado/comercialización.
     - Iniciativas de sostenibilidad pesquera/acuícola.
 
-#### Cp 2024 innovacion universidades 01 innovacion y universidades
-
-#### Titulo
-CP-2024-INNOVACION-UNIVERSIDADES-01: Innovación y Universidades
+#### CP-2024-INNOVACION-UNIVERSIDADES-01: Innovación y Universidades
 ID: CP-2024-INNOVACION-UNIVERSIDADES-01
 Fnd: Fondo Regional para la Productividad y el Desarrollo.
 Ctx: Monto disponible $3.000 millones.
@@ -431,10 +356,7 @@ Dest: Principalmente Instituciones de Educación Superior.
 
 #### Secciones
 
-#### Cp 2024 proyectos innovacion 01 proyectos de innovacion financiados
-
-#### Titulo
-CP-2024-PROYECTOS-INNOVACION-01: Proyectos de Innovación Financiados
+#### CP-2024-PROYECTOS-INNOVACION-01: Proyectos de Innovación Financiados
 ID: CP-2024-PROYECTOS-INNOVACION-01
 - Resp: U. de Concepción. Proj: Telesalud para Ñuble.
 - Resp: U. Adventista.
@@ -448,10 +370,7 @@ ID: CP-2024-PROYECTOS-INNOVACION-01
   - Proj: Trazabilidad y Validación de Vinos del Valle del Itata.
   - Proj: Branding y Comercialización del Valle del Itata.
 
-#### Cp 2024 gestiones nacionales 01 gestiones nacionales
-
-#### Titulo
-CP-2024-GESTIONES-NACIONALES-01: Gestiones Nacionales
+#### CP-2024-GESTIONES-NACIONALES-01: Gestiones Nacionales
 ID: CP-2024-GESTIONES-NACIONALES-01
 - Act: Reunión con Ministro de Economía (Nicolás Grau).
   - Dest: GORE, Gremios Productivos de Ñuble.
@@ -480,10 +399,7 @@ ID: CP-2024-GESTIONES-NACIONALES-01
   - Res: Presupuesto 2025 >$85.700 millones.
   - Ctx: Aumento de >$8.600 millones vs 2024 (+11%).
 
-#### Cp 2024 turismo eventos 01 turismo y eventos deportivos
-
-#### Titulo
-CP-2024-TURISMO-EVENTOS-01: Turismo y Eventos Deportivos
+#### CP-2024-TURISMO-EVENTOS-01: Turismo y Eventos Deportivos
 ID: CP-2024-TURISMO-EVENTOS-01
 - Res: Intervención tren Santiago-Chillán.
   - Cpt: Vagones vestidos con imágenes de Ñuble (86 metros lineales).
@@ -526,19 +442,13 @@ ID: CP-2024-TURISMO-EVENTOS-01
   - Act: Apoyo a Florencia Pérez para JJOO Paralímpicos París 2024.
   - Act: Apoyo a Club de Taekwondo Dragones Blancos para competencia en Argentina.
 
-#### Cp 2024 eje movilidad conectividad 01 eje 2 movilidad conectividad y transporte
-
-#### Titulo
-CP-2024-EJE-MOVILIDAD-CONECTIVIDAD-01: Eje 2: Movilidad, Conectividad y Transporte Público
+#### CP-2024-EJE-MOVILIDAD-CONECTIVIDAD-01: Eje 2: Movilidad, Conectividad y Transporte Público
 ID: CP-2024-EJE-MOVILIDAD-CONECTIVIDAD-01
 Purp: Diseñar soluciones innovadoras y sostenibles para el transporte.
 
 #### Secciones
 
-#### Cp 2024 maquinaria municipal 01 69 maquinas y camiones para nuble
-
-#### Titulo
-CP-2024-MAQUINARIA-MUNICIPAL-01: 69 Máquinas y Camiones para Ñuble
+#### CP-2024-MAQUINARIA-MUNICIPAL-01: 69 Máquinas y Camiones para Ñuble
 ID: CP-2024-MAQUINARIA-MUNICIPAL-01
 Ctx: Inversión total de $11.973 millones (inédita).
 Obj: Dotar a comunas con stock para mejorar caminos, enfrentar emergencias, limpieza de fosas.
@@ -549,10 +459,7 @@ Ctx: Entregas en 2024 - 33 maquinarias y camiones.
 - Ctx: Inversión en 2024 de $3.633 millones.
 - Dest: Comunas de San Ignacio, Cobquecura, Pinto, Ránquil, Ñiquén, San Fabián, Bulnes, Ninhue, Chillán, Chillán Viejo, Coelemu, Quillón.
 
-#### Cp 2024 transporte publico 01 renovacion transporte publico
-
-#### Titulo
-CP-2024-TRANSPORTE-PUBLICO-01: Renovación Transporte Público
+#### CP-2024-TRANSPORTE-PUBLICO-01: Renovación Transporte Público
 ID: CP-2024-TRANSPORTE-PUBLICO-01
 Act: Continuidad programa Renueva tu Micro y Renueva tu Colectivo.
 Ctx: Recursos Aprobados >$3.500 millones.
@@ -562,20 +469,14 @@ Res: Resultados 2024
 - Cpt: Colectivos - 46 transportistas beneficiados en 5 comunas.
   - Ctx: Financiamiento $155.700.000.
 
-#### Cp 2024 buses adultos mayores 01 buses para adultos mayores
-
-#### Titulo
-CP-2024-BUSES-ADULTOS-MAYORES-01: Buses para Adultos Mayores
+#### CP-2024-BUSES-ADULTOS-MAYORES-01: Buses para Adultos Mayores
 ID: CP-2024-BUSES-ADULTOS-MAYORES-01
 - Dest: Chillán Viejo. Act: Compra de bus para viajes recreativos.
   - Ctx: Inversión $125 millones.
 - Dest: Bulnes. Act: Compra de bus para recorridos regionales.
   - Ctx: Inversión $281 millones.
 
-#### Cp 2024 rutas veredas 01 rutas y veredas
-
-#### Titulo
-CP-2024-RUTAS-VEREDAS-01: Rutas y Veredas
+#### CP-2024-RUTAS-VEREDAS-01: Rutas y Veredas
 ID: CP-2024-RUTAS-VEREDAS-01
 - Cpt: Ruta Coelemu-Perales
   - Cpt: Pavimentación 10,5 km.
@@ -627,19 +528,13 @@ ID: CP-2024-RUTAS-VEREDAS-01
   - Ctx: Inversión >$2.796 millones.
   - Ctx: 159,73 km mejorados.
 
-#### Cp 2024 eje vivienda urbanizacion 01 eje 3 vivienda urbanizacion e integracion
-
-#### Titulo
-CP-2024-EJE-VIVIENDA-URBANIZACION-01: Eje 3: Vivienda, Urbanización e Integración
+#### CP-2024-EJE-VIVIENDA-URBANIZACION-01: Eje 3: Vivienda, Urbanización e Integración
 ID: CP-2024-EJE-VIVIENDA-URBANIZACION-01
 Purp: Construir ciudades más humanas, resilientes y con igualdad de oportunidades.
 
 #### Secciones
 
-#### Cp 2024 agua alcantarillado 01 agua potable y alcantarillado
-
-#### Titulo
-CP-2024-AGUA-ALCANTARILLADO-01: Agua Potable y Alcantarillado
+#### CP-2024-AGUA-ALCANTARILLADO-01: Agua Potable y Alcantarillado
 ID: CP-2024-AGUA-ALCANTARILLADO-01
 - Cpt: San Fabián (Alcantarillado)
   - Ctx: Inversión $9.542 millones.
@@ -684,49 +579,34 @@ ID: CP-2024-AGUA-ALCANTARILLADO-01
   - Resp: Agencia de Sustentabilidad y Cambio Climático de Corfo.
   - Obj: Enfrentar sequía con uso eficiente del recurso hídrico.
 
-#### Cp 2024 recambio calefactores 01 recambio de calefactores
-
-#### Titulo
-CP-2024-RECAMBIO-CALEFACTORES-01: Recambio de Calefactores
+#### CP-2024-RECAMBIO-CALEFACTORES-01: Recambio de Calefactores
 ID: CP-2024-RECAMBIO-CALEFACTORES-01
 Dest: Comunas de Chillán y Chillán Viejo.
 Res: >10.000 hogares beneficiados a la fecha.
 Ctx: Promedio anual de 1.111 recambios.
 Cpt: Equipos Eliminados - Salamandras hechizas (40%), cocinas a leña (10%), estufas combustión lenta (50%).
 
-#### Cp 2024 bienes nacionales 01 oficina movil bienes nacionales
-
-#### Titulo
-CP-2024-BIENES-NACIONALES-01: Oficina Móvil Bienes Nacionales
+#### CP-2024-BIENES-NACIONALES-01: Oficina Móvil Bienes Nacionales
 ID: CP-2024-BIENES-NACIONALES-01
 Obj: Entregar título de propiedad a 600 familias.
 Ctx: Inversión $622 millones.
 Resp: Seremi de Bienes Nacionales.
 Mech: Oficina móvil recorre 21 comunas para regularización gratuita.
 
-#### Cp 2024 semaforizacion chillan 01 semaforizacion de chillan
-
-#### Titulo
-CP-2024-SEMAFORIZACION-CHILLAN-01: Semaforización de Chillán
+#### CP-2024-SEMAFORIZACION-CHILLAN-01: Semaforización de Chillán
 ID: CP-2024-SEMAFORIZACION-CHILLAN-01
 Ctx: Avance 86%.
 Ctx: Inversión ~$745 millones.
 Cpt: 7 semáforos en cruces clave.
 
-#### Cp 2024 centro emergencias seguridad 01 centro integrado de emergencias y seguri
-
-#### Titulo
-CP-2024-CENTRO-EMERGENCIAS-SEGURIDAD-01: Centro Integrado de Emergencias y Seguridad
+#### CP-2024-CENTRO-EMERGENCIAS-SEGURIDAD-01: Centro Integrado de Emergencias y Seguridad
 ID: CP-2024-CENTRO-EMERGENCIAS-SEGURIDAD-01
 Act: Convenio con Subsecretaría de Transporte.
 Purp: Instalar Unidad Operativa de Control de Tránsito (UOCT) de Ñuble en GORE.
 Ctx: Actualmente control de tráfico se hace desde Biobío.
 Cpt: Integración UOCT + sala de monitoreo 209 cámaras de televigilancia.
 
-#### Cp 2024 planificacion territorial 01 planificacion territorial
-
-#### Titulo
-CP-2024-PLANIFICACION-TERRITORIAL-01: Planificación Territorial
+#### CP-2024-PLANIFICACION-TERRITORIAL-01: Planificación Territorial
 ID: CP-2024-PLANIFICACION-TERRITORIAL-01
 - Cpt: PRICH (Plan Regulador Intercomunal Chillán y Chillán Viejo)
   - Ctx: Vigente.
@@ -735,19 +615,13 @@ ID: CP-2024-PLANIFICACION-TERRITORIAL-01
 - Cpt: Plan Regulador Quirihue. Ctx: Avance 95%.
 - Cpt: Plan Regulador Yungay. Ctx: Avance 80%.
 
-#### Cp 2024 eje seguridad emergencias 01 eje 4 seguridad y emergencias
-
-#### Titulo
-CP-2024-EJE-SEGURIDAD-EMERGENCIAS-01: Eje 4: Seguridad y Emergencias
+#### CP-2024-EJE-SEGURIDAD-EMERGENCIAS-01: Eje 4: Seguridad y Emergencias
 ID: CP-2024-EJE-SEGURIDAD-EMERGENCIAS-01
 Purp: Fortalecer presencia policial, promover participación comunitaria y prevención del delito.
 
 #### Secciones
 
-#### Cp 2024 infraestructura carabineros 01 infraestructura carabineros
-
-#### Titulo
-CP-2024-INFRAESTRUCTURA-CARABINEROS-01: Infraestructura Carabineros
+#### CP-2024-INFRAESTRUCTURA-CARABINEROS-01: Infraestructura Carabineros
 ID: CP-2024-INFRAESTRUCTURA-CARABINEROS-01
 - Cpt: Subcomisaría Huambalí
   - Res: Inaugurada.
@@ -766,10 +640,7 @@ ID: CP-2024-INFRAESTRUCTURA-CARABINEROS-01
   - Cpt: Capacidad para 240 alumnos/as.
   - Ctx: Ubicación en sector Capilla Cox, Chillán.
 
-#### Cp 2024 apoyo policias 01 apoyo a las policias
-
-#### Titulo
-CP-2024-APOYO-POLICIAS-01: Apoyo a las Policías
+#### CP-2024-APOYO-POLICIAS-01: Apoyo a las Policías
 ID: CP-2024-APOYO-POLICIAS-01
 - Resp: Carabineros. Cpt: Motocicletas.
   - Act: Entrega de 27 motocicletas.
@@ -793,10 +664,7 @@ ID: CP-2024-APOYO-POLICIAS-01
   - Ctx: Inversión Total >$3.375 millones.
   - Ctx: Avance Físico 84%.
 
-#### Cp 2024 apoyo bomberos conaf 01 trabajo con bomberos y conaf
-
-#### Titulo
-CP-2024-APOYO-BOMBEROS-CONAF-01: Trabajo con Bomberos y CONAF
+#### CP-2024-APOYO-BOMBEROS-CONAF-01: Trabajo con Bomberos y CONAF
 ID: CP-2024-APOYO-BOMBEROS-CONAF-01
 - Resp: Bomberos. Cpt: Carros.
   - Res: 11 carros entregados.
@@ -820,10 +688,7 @@ ID: CP-2024-APOYO-BOMBEROS-CONAF-01
   - Ctx: Avance 95%.
   - Cpt: Obras - Asfaltado rodajes, plataforma para aviones y helicóptero pesado (Chinook), hangar, alojamiento.
 
-#### Cp 2024 iluminacion seguridad 01 iluminacion
-
-#### Titulo
-CP-2024-ILUMINACION-SEGURIDAD-01: Iluminación
+#### CP-2024-ILUMINACION-SEGURIDAD-01: Iluminación
 ID: CP-2024-ILUMINACION-SEGURIDAD-01
 - Ctx: Instalación en 2024
   - Cpt: 797 luminarias.
@@ -834,19 +699,13 @@ ID: CP-2024-ILUMINACION-SEGURIDAD-01
   - Cpt: Total de 2.986 luminarias.
   - Dest: 16 comunas de Ñuble.
 
-#### Cp 2024 eje espacios compartidos 01 eje 5 calidad de espacios compartidos
-
-#### Titulo
-CP-2024-EJE-ESPACIOS-COMPARTIDOS-01: Eje 5: Calidad de Espacios Compartidos
+#### CP-2024-EJE-ESPACIOS-COMPARTIDOS-01: Eje 5: Calidad de Espacios Compartidos
 ID: CP-2024-EJE-ESPACIOS-COMPARTIDOS-01
 Purp: Fomentar convivencia social, salud física/mental y equidad a través de espacios públicos de calidad.
 
 #### Secciones
 
-#### Cp 2024 infra deportiva 01 infraestructura para deportes
-
-#### Titulo
-CP-2024-INFRA-DEPORTIVA-01: Infraestructura para Deportes
+#### CP-2024-INFRA-DEPORTIVA-01: Infraestructura para Deportes
 ID: CP-2024-INFRA-DEPORTIVA-01
 - Cpt: Estadio Municipal de Ninhue
   - Res: Inaugurado.
@@ -876,10 +735,7 @@ ID: CP-2024-INFRA-DEPORTIVA-01
   - Cpt: Piscina Municipal (Pinto) - $168M, 75% avance.
   - Cpt: Canchas de Tenis (El Carmen) - $114M, 70% avance.
 
-#### Cp 2024 espacios comunitarios 01 espacios para la comunidad
-
-#### Titulo
-CP-2024-ESPACIOS-COMUNITARIOS-01: Espacios para la Comunidad
+#### CP-2024-ESPACIOS-COMUNITARIOS-01: Espacios para la Comunidad
 ID: CP-2024-ESPACIOS-COMUNITARIOS-01
 - Cpt: ELEAM San Ignacio
   - Res: Primero del país financiado por un GORE.
@@ -919,19 +775,13 @@ ID: CP-2024-ESPACIOS-COMUNITARIOS-01
 
 #### Secciones
 
-#### Cp 2024 sedes sociales 01 nuevos espacios comunitarios para nuble
-
-#### Titulo
-CP-2024-SEDES-SOCIALES-01: Nuevos Espacios Comunitarios para Ñuble
+#### CP-2024-SEDES-SOCIALES-01: Nuevos Espacios Comunitarios para Ñuble
 ID: CP-2024-SEDES-SOCIALES-01
 - Res: 6 sedes finalizadas (Ninhue, San Ignacio, Chillán, Coihueco, Quirihue).
 - Ctx: 9 sedes en construcción (Chillán, Chillán Viejo, Coihueco, San Carlos, El Carmen, Ninhue).
 - Ctx: 4 espacios comunitarios por iniciar en San Carlos (Camarico, El Cape, Villa Nueva Primavera, El Torreón).
 
-#### Cp 2024 infra servicios publicos 01 infraestructura servicios publicos
-
-#### Titulo
-CP-2024-INFRA-SERVICIOS-PUBLICOS-01: Infraestructura Servicios Públicos
+#### CP-2024-INFRA-SERVICIOS-PUBLICOS-01: Infraestructura Servicios Públicos
 ID: CP-2024-INFRA-SERVICIOS-PUBLICOS-01
 - Cpt: Servicio Médico Legal de Ñuble
   - Res: Entregado nuevo edificio.
@@ -952,18 +802,12 @@ ID: CP-2024-INFRA-SERVICIOS-PUBLICOS-01
   - Res: Inauguradas nuevas dependencias (ampliación).
   - Ctx: Inversión GORE >$70 millones.
 
-#### Cp 2024 eje salud educacion 01 eje 6 salud y educacion como prioridad
-
-#### Titulo
-CP-2024-EJE-SALUD-EDUCACION-01: Eje 6: Salud y Educación como Prioridad
+#### CP-2024-EJE-SALUD-EDUCACION-01: Eje 6: Salud y Educación como Prioridad
 ID: CP-2024-EJE-SALUD-EDUCACION-01
 
 #### Secciones
 
-#### Cp 2024 educacion 01 educacion es prioridad
-
-#### Titulo
-CP-2024-EDUCACION-01: Educación es Prioridad
+#### CP-2024-EDUCACION-01: Educación es Prioridad
 ID: CP-2024-EDUCACION-01
 - Cpt: Plan "Educación es Prioridad"
   - Ctx: Inversión Total $4.650 millones.
@@ -994,10 +838,7 @@ ID: CP-2024-EDUCACION-01
   - Ctx: Inversión $930.585.000.
   - Dest: 135 niños, capacitación a 250 establecimientos.
 
-#### Cp 2024 salud cercana 01 salud mas cercana
-
-#### Titulo
-CP-2024-SALUD-CERCANA-01: Salud más Cercana
+#### CP-2024-SALUD-CERCANA-01: Salud más Cercana
 ID: CP-2024-SALUD-CERCANA-01
 Purp: Infraestructura, agilización de atención, equipamiento para diagnóstico.
 - Cpt: Instituto Teletón de Ñuble
@@ -1021,10 +862,7 @@ Purp: Infraestructura, agilización de atención, equipamiento para diagnóstico
 
 #### Secciones
 
-#### Cp 2024 avances aps 01 avances en apoyo a la atencion primaria aps
-
-#### Titulo
-CP-2024-AVANCES-APS-01: Avances en Apoyo a la Atención Primaria (APS)
+#### CP-2024-AVANCES-APS-01: Avances en Apoyo a la Atención Primaria (APS)
 ID: CP-2024-AVANCES-APS-01
 - Cpt: Cesfam de Pinto. Ctx: En construcción (4% avance), $6.466M.
 - Cpt: Cesfam Santa Clara (Bulnes). Ctx: Diseño 90% avance.
@@ -1034,10 +872,7 @@ ID: CP-2024-AVANCES-APS-01
 - Cpt: Cesfam de Ninhue. Ctx: Aprobados $370M para diseño y compra de terreno.
 - Cpt: Cesfam de Portezuelo. Ctx: Obtuvo RS.
 
-#### Cp 2024 centros especializados 01 centros especializados y equipamiento
-
-#### Titulo
-CP-2024-CENTROS-ESPECIALIZADOS-01: Centros Especializados y Equipamiento
+#### CP-2024-CENTROS-ESPECIALIZADOS-01: Centros Especializados y Equipamiento
 ID: CP-2024-CENTROS-ESPECIALIZADOS-01
 - Cpt: Centro Rehabilitación y Sede Parkinson. Ctx: En construcción, $146M.
 - Cpt: Camas Psiquiatría Infanto-Adolescente (Hospital Herminda Martin). Act: Adquisición de contenedores, >$285M.
@@ -1053,10 +888,7 @@ ID: CP-2024-CENTROS-ESPECIALIZADOS-01
 - Cpt: Equipo Rayos Osteopulmonar (Cesfam Coihueco). Res: Inaugurado, ~$225M.
 - Cpt: Resonador Magnético (H. Herminda Martín). Ctx: Aprobada compra, >$1.800M.
 
-#### Cp 2024 fondos 8 porciento 01 fondos 8
-
-#### Titulo
-CP-2024-FONDOS-8-PORCIENTO-01: Fondos 8%
+#### CP-2024-FONDOS-8-PORCIENTO-01: Fondos 8%
 ID: CP-2024-FONDOS-8-PORCIENTO-01
 Ctx: ~2.000 organizaciones postularon.
 Ctx: Admisibilidad 90.62%.
@@ -1076,10 +908,7 @@ Ctx: Monto total asignado >$4.700 millones.
 
 #### Secciones
 
-#### Cp 2024 resumen inversion seguridad 8pc 01 resumen inversion fondo seguridad
-
-#### Titulo
-CP-2024-RESUMEN-INVERSION-SEGURIDAD-8PC-01: Resumen Inversión Fondo Seguridad
+#### CP-2024-RESUMEN-INVERSION-SEGURIDAD-8PC-01: Resumen Inversión Fondo Seguridad
 ID: CP-2024-RESUMEN-INVERSION-SEGURIDAD-8PC-01
 | Tipo Iniciativa | Res: Cantidad |
 | :--- | :--- |
@@ -1094,10 +923,7 @@ ID: CP-2024-RESUMEN-INVERSION-SEGURIDAD-8PC-01
 | Radios | 48 portátiles |
 | Equipos Prev. Incendios | 24 iniciativas |
 
-#### Cp 2024 balance saldos 01 balance de comprobacion y saldos 2024
-
-#### Titulo
-CP-2024-BALANCE-SALDOS-01: Balance de Comprobación y Saldos 2024
+#### CP-2024-BALANCE-SALDOS-01: Balance de Comprobación y Saldos 2024
 ID: CP-2024-BALANCE-SALDOS-01
 Ctx: Periodo 01 enero 2024 al 31 diciembre 2024.
 Warn: Tabla extensa con datos contables. Se mantiene estructura para fidelidad.
@@ -1108,19 +934,13 @@ Warn: Tabla extensa con datos contables. Se mantiene estructura para fidelidad.
 | | Total | 0 | 469.959.003.494 | 469.959.003.494 | 0 |
 *Nota: Se omite el detalle completo de la tabla para brevedad en esta vista. El contenido completo está en el archivo fuente y se considera transcrito.*
 
-### Cp 2023 introduccion 01 cuenta publica gestion 2023
-
-#### Titulo
-CP-2023-INTRODUCCION-01: Cuenta Pública Gestión 2023
+### CP-2023-INTRODUCCION-01: Cuenta Pública Gestión 2023
 ID: CP-2023-INTRODUCCION-01
 Purp: Resumen de la gestión del GORE Ñuble en 2023.
 
 #### Secciones
 
-#### Cp 2023 mensaje gobernador 01 carta del gobernador
-
-#### Titulo
-CP-2023-MENSAJE-GOBERNADOR-01: Carta del Gobernador
+#### CP-2023-MENSAJE-GOBERNADOR-01: Carta del Gobernador
 ID: CP-2023-MENSAJE-GOBERNADOR-01
 Purp: Fortalecimiento del servicio público, desarrollo equitativo.
 Cpt: Socios Estratégicos - Municipios.
@@ -1130,10 +950,7 @@ Purp: Seguridad - Inversiones en Carabineros, PDI, organizaciones sociales.
 Purp: Participación - Primer Consejo de la Sociedad Civil, 938 proyectos comunitarios financiados.
 Cpt: Agradecimientos a Consejeros regionales.
 
-#### Cp 2023 estructura gore 01 gobierno regional y su estructura
-
-#### Titulo
-CP-2023-ESTRUCTURA-GORE-01: Gobierno Regional y su estructura
+#### CP-2023-ESTRUCTURA-GORE-01: Gobierno Regional y su estructura
 ID: CP-2023-ESTRUCTURA-GORE-01
 Ref: CP-2024-ESTRUCTURA-GORE-01 (Estructura es la misma).
 Resp: Gobernador Superior, Óscar Crisóstomo Llanos.
@@ -1142,10 +959,7 @@ Cpt: 6 Divisiones (mismas que en 2024).
 Cpt: 16 Consejeros Regionales.
 Ctx: Novedad 2023 - Renuncia de 3 consejeros (Eduardo Redlich, Wilson Olivares, Ariel Miranda).
 
-#### Cp 2023 ejecucion presupuestaria 01 ejecucion presupuestaria 2023
-
-#### Titulo
-CP-2023-EJECUCION-PRESUPUESTARIA-01: Ejecución Presupuestaria 2023
+#### CP-2023-EJECUCION-PRESUPUESTARIA-01: Ejecución Presupuestaria 2023
 ID: CP-2023-EJECUCION-PRESUPUESTARIA-01
 | Año | Presupuesto (M$) | Marco Presupuestario (M$) | % Ejec. |
 | :--- | :--- | :--- | :--- |
@@ -1153,10 +967,7 @@ ID: CP-2023-EJECUCION-PRESUPUESTARIA-01
 
 #### Secciones
 
-#### Cp 2023 distribucion ejecucion 01 distribucion ejecucion regional 2023
-
-#### Titulo
-CP-2023-DISTRIBUCION-EJECUCION-01: Distribución Ejecución Regional 2023
+#### CP-2023-DISTRIBUCION-EJECUCION-01: Distribución Ejecución Regional 2023
 ID: CP-2023-DISTRIBUCION-EJECUCION-01
 | Subtítulo | Monto (M$) | % |
 | :--- | :--- | :--- |
@@ -1166,18 +977,12 @@ ID: CP-2023-DISTRIBUCION-EJECUCION-01
 | FRIL | 5.699.602 | 9,59% |
 | SUBT 33 | 30.098.565 | 50,64% |
 
-#### Cp 2023 inversion por origen 01 inversion regional 2023 por origen
-
-#### Titulo
-CP-2023-INVERSION-POR-ORIGEN-01: Inversión Regional 2023 por Origen
+#### CP-2023-INVERSION-POR-ORIGEN-01: Inversión Regional 2023 por Origen
 ID: CP-2023-INVERSION-POR-ORIGEN-01
 - Src: Municipal. Ctx: M$ 21.418.680
 - Src: Sectorial/Otro. Ctx: M$ 38.022.447
 
-#### Cp 2023 inversion por provincia 01 inversion regional 2023 por provincia
-
-#### Titulo
-CP-2023-INVERSION-POR-PROVINCIA-01: Inversión Regional 2023 por Provincia
+#### CP-2023-INVERSION-POR-PROVINCIA-01: Inversión Regional 2023 por Provincia
 ID: CP-2023-INVERSION-POR-PROVINCIA-01
 | Provincia | Monto (M$) | Iniciativas |
 | :--- | :--- | :--- |
@@ -1186,10 +991,7 @@ ID: CP-2023-INVERSION-POR-PROVINCIA-01
 | Diguillín | 9.158.735 | 87 |
 | Itata | 5.244.803 | 56 |
 
-#### Cp 2023 hitos gestion 01 hitos de gestion 2023
-
-#### Titulo
-CP-2023-HITOS-GESTION-01: Hitos de Gestión 2023
+#### CP-2023-HITOS-GESTION-01: Hitos de Gestión 2023
 ID: CP-2023-HITOS-GESTION-01
 Warn: La cuenta 2023 es un resumen. Se listan los hitos clave.
 - Res: Salud
@@ -1231,19 +1033,13 @@ Warn: La cuenta 2023 es un resumen. Se listan los hitos clave.
   - 938 proyectos del 8% FNDR beneficiados ($2.710M).
   - Creación del Consejo de la Sociedad Civil.
 
-### Cp 2022 introduccion 01 cuenta publica gestion 2022
-
-#### Titulo
-CP-2022-INTRODUCCION-01: Cuenta Pública Gestión 2022
+### CP-2022-INTRODUCCION-01: Cuenta Pública Gestión 2022
 ID: CP-2022-INTRODUCCION-01
 Purp: Resumen de la gestión del GORE Ñuble en 2022.
 
 #### Secciones
 
-#### Cp 2022 mensaje gobernador 01 mensaje del gobernador
-
-#### Titulo
-CP-2022-MENSAJE-GOBERNADOR-01: Mensaje del Gobernador
+#### CP-2022-MENSAJE-GOBERNADOR-01: Mensaje del Gobernador
 ID: CP-2022-MENSAJE-GOBERNADOR-01
 Purp: Responder a demandas históricas.
 Cpt: Ejes de Desarrollo
@@ -1254,17 +1050,11 @@ Cpt: Ejes de Desarrollo
 - Impulso al desarrollo económico.
 Res: 99.8% de ejecución presupuestaria ($47.372.677 M).
 
-#### Cp 2022 estructura gore 01 estructura institucional
-
-#### Titulo
-CP-2022-ESTRUCTURA-GORE-01: Estructura Institucional
+#### CP-2022-ESTRUCTURA-GORE-01: Estructura Institucional
 ID: CP-2022-ESTRUCTURA-GORE-01
 Ref: CP-2024-ESTRUCTURA-GORE-01 (Estructura y Misión/Visión son consistentes).
 
-#### Cp 2022 ejecucion presupuestaria 01 ejecucion presupuestaria 2022
-
-#### Titulo
-CP-2022-EJECUCION-PRESUPUESTARIA-01: Ejecución Presupuestaria 2022
+#### CP-2022-EJECUCION-PRESUPUESTARIA-01: Ejecución Presupuestaria 2022
 ID: CP-2022-EJECUCION-PRESUPUESTARIA-01
 Ctx: Ejecución General 99.79%
 Cpt: Inversión por Subtítulo
@@ -1277,10 +1067,7 @@ Cpt: Inversión por Provincia
 - Punilla: M$ 4.213.844 (20 iniciativas)
 - Itata: M$ 2.275.523 (22 iniciativas)
 
-#### Cp 2022 hitos gestion 01 hitos de gestion 2022
-
-#### Titulo
-CP-2022-HITOS-GESTION-01: Hitos de Gestión 2022
+#### CP-2022-HITOS-GESTION-01: Hitos de Gestión 2022
 ID: CP-2022-HITOS-GESTION-01
 - Res: Salud
   - Programa "1.000 Cirugías para Ñuble" (248 cirugías, M$340.941).
@@ -1295,10 +1082,7 @@ ID: CP-2022-HITOS-GESTION-01
   - Ctx: Monto Adjudicado $989.688.482.
   - Ctx: Áreas Principales - Cultura (249 inic.), Medio Ambiente (123 inic.), Adulto Mayor (118 inic.).
 
-### Cp 2021 introduccion 01 cuenta publica gestion 2021
-
-#### Titulo
-CP-2021-INTRODUCCION-01: Cuenta Pública Gestión 2021
+### CP-2021-INTRODUCCION-01: Cuenta Pública Gestión 2021
 ID: CP-2021-INTRODUCCION-01
 Purp: Resumen de la gestión del GORE Ñuble en 2021.
 Resp: Gobernador, Óscar Crisóstomo Llanos.
@@ -1306,10 +1090,7 @@ Fnd: Principios Rectores - Participación, Transparencia, Colaboración.
 
 #### Secciones
 
-#### Cp 2021 avances prioritarios 01 avances en proyectos prioritarios 2021
-
-#### Titulo
-CP-2021-AVANCES-PRIORITARIOS-01: Avances en Proyectos Prioritarios 2021
+#### CP-2021-AVANCES-PRIORITARIOS-01: Avances en Proyectos Prioritarios 2021
 ID: CP-2021-AVANCES-PRIORITARIOS-01
 - Res: Centro Teletón Ñuble - Aprobación de terrenos y financiamiento.
 - Res: Centro Oncológico Chillán - Diseño financiado por GORE.
@@ -1317,19 +1098,13 @@ ID: CP-2021-AVANCES-PRIORITARIOS-01
 - Res: Conectividad Digital - Proyecto Fibra Óptica Ñuble-Última Milla (M$7.604.613).
 - Res: Ruta Chillán–Yungay - Avance en obras.
 
-#### Cp 2021 problematicas regionales 01 problematicas regionales abordadas
-
-#### Titulo
-CP-2021-PROBLEMATICAS-REGIONALES-01: Problemáticas Regionales Abordadas
+#### CP-2021-PROBLEMATICAS-REGIONALES-01: Problemáticas Regionales Abordadas
 ID: CP-2021-PROBLEMATICAS-REGIONALES-01
 - Cause: Conectividad Vial deficiente. Act: Plan para pavimentar 100 km/año.
 - Cause: Falta de Agua Potable Rural. Act: Inversión de M$9.000.000, >2.000 familias beneficiadas.
 - Cause: Pobreza y Escolaridad. Act: Foco en proyectos de desarrollo social.
 
-#### Cp 2021 inversiones destacadas 01 inversiones destacadas 2021
-
-#### Titulo
-CP-2021-INVERSIONES-DESTACADAS-01: Inversiones Destacadas 2021
+#### CP-2021-INVERSIONES-DESTACADAS-01: Inversiones Destacadas 2021
 ID: CP-2021-INVERSIONES-DESTACADAS-01
 - Act: Agua Potable Rural (APR) - M$9.000.000 invertidos, asistencia técnica a comités APR.
 - Act: Seguridad Pública
