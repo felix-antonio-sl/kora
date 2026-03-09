@@ -259,7 +259,7 @@ GN-MANUAL-INDUCCION-S07
 ### ID
 GN-MANUAL-INDUCCION-S08
 ### Ctx
-La organización de la administración pública en Chile se estructura de manera que permite una gestión eficiente y ordenada del Estado, asegurando el cumplimiento de sus funciones y la prestación de servicios a los ciudadanos. A continuación, se describen los aspectos generales de esta organización:
+La organización de la administración pública en Chile se estructura de manera que permite una gestión eficiente y ordenada del Estado, asegurando el cumplimiento de sus funciones y la prestación de servicios a los ciudadanos. Se describen los aspectos generales de esta organización:
 ### Division de Poderes
 #### Ctx
 La administración pública se organiza bajo el principio de la separación de poderes, dividiéndose en tres poderes principales:
@@ -772,7 +772,7 @@ La jornada laboral corresponde a 44 horas semanales, distribuidas de la siguient
 Para trabajar jornadas extraordinarias, el funcionario deberá presentar el formulario N°1 correspondiente a Planificación de Trabajo Extraordinario, el cual debe ser autorizado por la jefatura. Una vez transcurrido el período autorizado para el trabajo extraordinario, se procederá a calcular el tiempo acumulado que exceda el período laboral, el cual será reconocido a través de una resolución que contempla un Formulario N°2 y los respaldos del sistema de control. Una vez reconocido el tiempo de trabajo extraordinario, se registrará en una cuenta a nombre del funcionario, quien podrá utilizarlo como tiempo compensado durante dos años. Posteriormente, se extinguirá. Para solicitar este permiso, se deberá tener claridad de cuánto tiempo posee el funcionario y hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
 ### Formacion y Capacitacion Funcionaria
 #### Ctx
-Todos los años, se aprueba un Plan Anual de Capacitación, el cual establece las actividades de capacitación que se desarrollará el Gobierno Regional durante el año, y a quienes irán dirigidas. Por otro lado, existen diversas posibilidades de optar a actividades de capacitación, como Cursos de la Contraloría, Campus del Servicio Civil, Diplomados y Cursos de la SUBDERE, entre otros. Cada vez que un funcionario(a) quiera optar a estas actividades de perfeccionamiento, deberá presentar al Encargado de Capacitación del GORE un formulario firmado por su jefatura directa. Finalmente, al obtener su certificado de aprobación, deberá remitirlo al Encargado de Capacitación para su correspondiente registro.
+Todos los años, se aprueba un Plan Anual de Capacitación, el cual establece las actividades de capacitación que se desarrollará el Gobierno Regional durante el año, y a quienes irán dirigidas. Existen diversas posibilidades de optar a actividades de capacitación, como Cursos de la Contraloría, Campus del Servicio Civil, Diplomados y Cursos de la SUBDERE, entre otros. Cada vez que un funcionario(a) quiera optar a estas actividades de perfeccionamiento, deberá presentar al Encargado de Capacitación del GORE un formulario firmado por su jefatura directa. Finalmente, al obtener su certificado de aprobación, deberá remitirlo al Encargado de Capacitación para su correspondiente registro.
 ### Proceso de Calificaciones Funcionarias
 #### Proc
 -

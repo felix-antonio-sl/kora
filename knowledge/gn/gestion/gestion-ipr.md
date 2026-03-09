@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:gn:kb:gestion-ipr
   provenance:
-    created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE Ñuble"
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml
 version: 2.0.0
 status: published
 tags:
@@ -15,261 +15,1308 @@ tags:
 - ipr
 - gn
 lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml: 14828ff570b8161d675fbc73a4f35979e959d3e94b0b4d6c9ddec35fbea50d79
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.18
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 13
+    meat_count: 771
+    fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gestion__gestion-ipr.md.json
 ---
 
 # Gestión Operacional de Intervenciones Públicas Regionales (IPR)
-
-## Glosario y Conceptos Operativos
-
-| Sigla | Nombre | Definición |
-| :--- | :--- | :--- |
-| IPR | Intervención Pública Regional | Término paraguas: proyecto, programa o estudio financiado por GORE para objetivos de desarrollo. |
-| IDI | Iniciativa de Inversión | IPR de capital (obras, activos); sujeta a evaluación SNI. |
-| PPR | Programa Público Regional | IPR de gasto corriente o mixto (servicios, subvenciones). |
-| RS | Recomendación Satisfactoria | Resultado favorable evaluación SNI/MDSF para IDI de mayor envergadura. |
-| RF | Recomendación Favorable | Resultado favorable evaluación programas Glosa 06 (DIPRES/SES). |
-| AD | Admisible para financiamiento | Resultado MDSF para proyectos de conservación; habilita financiamiento sin RS. |
-| FI | Falta Información | RATE MDSF: observaciones subsanables (máx. 60 días hábiles). |
-| OT | Objetado Técnicamente | RATE MDSF: rechazo técnico; requiere reformulación. |
-| CDP | Certificado de Disponibilidad Presupuestaria | Documento DAF que acredita fondos disponibles para financiar IPR. |
-| BIP | Banco Integrado de Proyectos | Sistema SNI de registro y seguimiento de IDI. |
-| SIGFE | Sistema de Información Financiera del Estado | Registro contable-presupuestario oficial. |
-| SISREC | Sistema de Rendición Electrónica de Cuentas | Plataforma CGR para rendición de transferencias Subt. 24 y 33. |
-| DIPIR | División de Presupuesto e Inversión Regional | Responsable de presupuesto inversión y gestión IPR. |
-| DIPLADE | División de Planificación y Desarrollo Regional | Lidera planificación y preside CDR. |
-| CORE | Consejo Regional | Órgano colegiado que aprueba o rechaza financiamiento de IPR. |
-| CDR | Comité Directivo Regional | Filtro técnico-político interno de pertinencia estratégica. |
-| MDSF | Ministerio de Desarrollo Social y Familia | Evaluación técnico-económica de IDI en el SNI. |
-| SGDOC | Sistema de Gestión Documental | Plataforma de ingreso y numeración de documentos en Oficina de Partes. |
-| FNDR | Fondo Nacional de Desarrollo Regional | Principal fuente de financiamiento inversión regional. |
-| FRIL | Fondo Regional de Iniciativa Local | Proyectos municipales < 5.000 UTM. |
-| FRPD | Fondo Regional para la Productividad y el Desarrollo | Royalty Minero; innovación y competitividad. |
-| ERD | Estrategia Regional de Desarrollo | Instrumento estratégico de prioridades regionales. |
-
-### Estados de Admisibilidad IPR
-
-- PRE-ADMISIBLE CDR
-- NO PRE-ADMISIBLE CDR
-- ADMISIBLE
-- ADMISIBLE CON OBSERVACIONES
-- INADMISIBLE
-
-### Estados de Financiamiento IPR
-
-- PARA REVISIÓN TÉCNICA
-- EN CARTERA PRE-ADMISIBLE
-- ENVIADO A MDSF
-- APROBADO TÉCNICAMENTE (RS / RF / AD / Exento RS)
-- CARTERA ENVIADA A CORE
-- CERTIFICADO CORE OK
-- ENVIADO A FINANCIAMIENTO
-- TRANSFERENCIA PROGRAMADA
-- CONVENIO FORMALIZADO
-
-## Marco Normativo
-
-- **LOC GORE:** Arts. 16, 24, 36, 78.
-- **DL N°1.263/1975:** Art. 19 bis (Administración Financiera del Estado).
-- **Ley 20.530:** Crea Ministerio de Desarrollo Social y Familia (MDSF).
-- **Ley de Presupuestos 2026 (Partida 31):** Glosas 01, 06, 07, 12.
-- **Normas Generales Ley 2026:** Arts. 06, 23, 24, 25, 26.
-- **Resolución 30/2015 CGR:** Rendición de cuentas.
-- **Normativa DIPRES/MDSF:** Procedimientos SNI, BIP y procedimientos especiales.
-
-## Fase 1: Ingreso, Pertinencia y Admisibilidad
-
-### 2.1 Recepción y Registro
-
-| Paso | Responsable | Actividades | Resultado |
-| :--- | :--- | :--- | :--- |
-| 1 | Unidad Formuladora | Preparar IPR según guías del mecanismo. Ingresar oficio conductor firmado por máxima autoridad. | Oficio y antecedentes presentados al GORE. |
-| 2 | Oficina de Partes GORE | Recepcionar oficio y documentación. Asignar número SGDOC. Derivar a Jefatura DIPIR. | Postulación registrada y derivada formalmente. |
-| 3 | Jefatura DIPIR | Registrar datos básicos en sistema de seguimiento interno. Poner postulación a disposición del CDR. | Postulación disponible para revisión CDR. |
-
-Advertencia: Calidad de formulación inicial es crítica para el resto del ciclo.
-
-### 2.2 Análisis de Pertinencia Estratégica (Filtro CDR)
-
-Composición CDR: Jefaturas de División, Jefatura de Rezago, Administrador/a Regional. Preside DIPLADE.
-
-| Paso | Responsable | Actividades | Resultado |
-| :--- | :--- | :--- | :--- |
-| 1 | Jefatura DIPLADE | Recibir listado de postulaciones. Convocar sesión CDR. | CDR convocado con cartera a revisar. |
-| 2 | CDR | Analizar alineación con ERD y prioridades estratégicas. Evaluar viabilidad preliminar. Generar acta con categorización. | `PRE-ADMISIBLE CDR` o `NO PRE-ADMISIBLE CDR` |
-| 3 | Jefatura DIPIR | Evaluar marco presupuestario para IPR PRE-ADMISIBLES. Priorizar para revisión técnica. | `PARA REVISIÓN TÉCNICA` o `EN CARTERA PRE-ADMISIBLE` |
-
-### 2.3 Revisión de Admisibilidad Formal
-
-| Paso | Responsable | Actividades | Resultado |
-| :--- | :--- | :--- | :--- |
-| 1 | Jefatura Preinversión (DIPIR) | Asignar analista según tipología. Formalizar apoyos interdivisionales. | IPR derivada a analista. |
-| 2 | Analista Preinversión (DIPIR) | Revisión documental exhaustiva. Verificar requisitos guía operativa. Comprobar carga en Carpeta Digital BIP. | `ADMISIBLE` / `ADMISIBLE CON OBSERVACIONES` / `INADMISIBLE` |
-| 3 | Unidad Formuladora | (Solo si ADMISIBLE CON OBSERVACIONES) Corregir antecedentes en plazo definido. | Documentación subsanada. |
-| 4 | Jefatura Preinversión (DIPIR) | Si INADMISIBLE: despachar oficio. Si ADMISIBLE: declarar lista para Fase 2. | `INADMISIBLE INFORMADO` o `LISTA PARA FASE 2` |
-
-Advertencia: No subsanar en plazo deriva en estado INADMISIBLE.
-
-## Fase 2: Evaluación Técnico-Económica
-
-### Track A — SNI (IDI Nivel 2 y 3, Requieren RS)
-
-| Paso | Responsable | Actividades | Resultado |
-| :--- | :--- | :--- | :--- |
-| 1 | Analista GORE (DIPIR) | Revisión de fondo. Verificar RIS y metodologías SNI. Asegurar calidad estudios preinversionales. Elaborar Acta de Admisibilidad interna. | `ADMISIBLE PARA ENVÍO A MDSF` |
-| 2 | Jefatura DIPIR / Gobernador/a | Elaborar y visar oficio a SEREMI MDSF. Gestionar cadena V°B° interno. | Oficio despachado a MDSF. |
-| 3 | Jefatura Preinversión (DIPIR) | Registrar "Informar Postulación" en BIP. | Iniciativa `ENVIADO A MDSF` en BIP. |
-| 4 | Analista MDSF | Admisibilidad (5 días orientativos). ATE (10 días orientativos). | RATE: `RS` / `FI` / `OT` |
-| 5 | Unidad Formuladora / Analista GORE | Si RS: registrar aprobación. Si FI/OT: apoyar subsanación (máx. 60 días hábiles). | `APROBADO TÉCNICAMENTE (RS)` |
-| 6 | Jefatura Preinversión (DIPIR) | Monitorear BIP. Informar cartera RS para priorización. | Cartera RS disponible. |
-
-### Track B — Programas Públicos Regionales (Glosa 06)
-
-Aplica a: continuidad de programas, subvenciones 8% FNDR, transferencias entidades públicas, emergencias, FRPD Innovación (Res. 33/2024).
-
-Restricciones financieras Glosa 06:
-- Hasta 5% del monto total de la transferencia para gastos de administración GORE (Subt. 21, 22, 29).
-- Hasta 5% del monto para honorarios en entidad receptora; cese automático al finalizar convenio.
-- Personal a honorarios tiene calidad de agente público según convenio.
-
-| Paso | Responsable | Actividades | Resultado |
-| :--- | :--- | :--- | :--- |
-| 1 | División Proponente / DIPIR | Elaborar Formulario de Perfil de Programa. Definir contraparte única GORE frente a DIPRES/SES. | Formulario enviado a DIPRES/SES. |
-| 2 | DIPRES/SES | Evaluar pertinencia del perfil. | Aprobado (solicita Diseño) o Rechazado. |
-| 3 | División Proponente / DIPIR | (Solo si solicitan Diseño) Elaborar Formulario de Diseño con Marco Lógico. | Formulario Diseño enviado. |
-| 4 | DIPRES/SES | Revisión iterativa. Emisión observaciones/subsanaciones. | Calificación: `RF` / `OT` / `FI` |
-| 5 | División Proponente / DIPIR | Subsanar hasta lograr RF. | `APROBADO TÉCNICAMENTE (RF)` |
-
-Advertencia: Solo RF habilita programa para solicitar financiamiento.
-
-### Track C — Vías Simplificadas y Procedimientos Especiales
-
-#### Proyectos < 5.000 UTM (Exención RS)
-
-| Paso | Responsable | Actividades |
-| :--- | :--- | :--- |
-| 1 | Unidad Formuladora | Postular en BIP usando descriptor "Proyecto menor a 5.000 UTM". Verificar ausencia de causales de exclusión: fraccionamiento, EIA/CMN, problemas terreno. |
-| 2 | Unidad Formuladora | Cargar estudio preinversional simplificado en Carpeta Digital BIP. |
-| 3 | GORE (Institución Financiera) | Enviar Carta de Responsabilidad a MDSF declarando ausencia de impedimentos. |
-| 4 | Jefatura Preinversión (DIPIR) | Evaluar y otorgar aprobación interna GORE. | Resultado: `Exento RS` |
-
-#### Proyectos de Conservación (Costo ≤ 30% valor reposición)
-- MDSF verifica clasificación como "Conservación".
-- Resultado: RATE `AD` (Admisible); no equivale a RS completo.
-
-#### FRIL, 8% FNDR, FRPD y Circular 33
-- **FRIL:** Evaluación de mérito por GORE. Informe MDSF requerido si es transferencia de capital. Proyectos < 5.000 UTM exentos de informe MDSF (Oficio N°2/2024 Hacienda), pero requieren ingreso a SNI.
-- **8% FNDR:** Concurso público con bases; exigencia de garantías (pagaré) a privados; mínimo 1% para cultura.
-- **FRPD (Royalty):** Tipología Innovación exenta evaluación ex ante Glosa 06 (Res. 33/2024 MCTCI).
-- **Circular 33:** Tramitación y aprobación vía DIPRES.
-
-## Fase 3: Financiamiento y Aprobación Presupuestaria
-
-### 4.1 Modificaciones sin Acuerdo Obligatorio CORE (≤ 7.000 UTM / 10%)
-
-1. **Solicitud CDP:** DIPIR solicita al Depto. Presupuesto (DAF).
-2. **Emisión CDP:** DAF verifica disponibilidad y emite Certificado de Disponibilidad Presupuestaria.
-3. **Instrucción:** Unidad Patrocinante instruye tramitación de modificación presupuestaria.
-
-### 4.2 Iniciativas con Aprobación CORE (> 7.000 UTM)
-
-| Paso | Responsable | Actividades | Resultado |
-| :--- | :--- | :--- | :--- |
-| 1 | DIPIR | Elaborar carpeta CORE (fichas IDI, antecedentes técnicos y financieros). | Carpeta CORE lista. |
-| 2 | Gobernador/a | Remitir cartera formal al CORE. | `CARTERA ENVIADA A CORE` |
-| 3 | CORE | Análisis en comisiones; votación en Pleno. | Acuerdo aprobatorio o rechazo. |
-| 4 | Secretario Ejecutivo CORE | Emitir Certificado de Acuerdo CORE (formato DIPRES). | `CERTIFICADO CORE OK` |
-
-## Fase 4: Gestión Presupuestaria y Formalización
-
-### 5.1 Tramitación de Actos Administrativos
-
-1. **Borrador:** Depto. Presupuesto elabora Resolución (interna) o solicita Decreto (Partida 31 si aplica).
-2. **Visación:** V°B° Jurídico → Presupuesto → DIPIR → Administrador Regional.
-3. **Formalización:** Firma Gobernador/a. Toma de Razón CGR cuando corresponda.
-
-### 5.2 Elaboración y Firma de Convenio
-
-Contenido mínimo del convenio:
-- Partes, objeto, monto total, calendario de transferencias, plazos, metas e indicadores MML.
-- Obligaciones de rendición (SISREC), restitución de fondos y cláusulas de probidad.
-- Prohibición de contratar parientes hasta 3° consanguinidad/2° afinidad de autoridades GORE o directivos de entidad ejecutora.
-
-Condiciones adicionales:
-- **Privados:** Verificación de concurso, objeto social, cumplimiento de obligaciones previas (Res. 30 CGR).
-- **Garantías:** Exigibles según umbrales de monto y Ley de Presupuestos.
-- **Suscripción:** Firma Gobernador/a y Representante Legal de entidad receptora.
-
-### 5.3 Formalización Final y Devengo
-
-| Paso | Responsable | Actividades |
-| :--- | :--- | :--- |
-| 1 | Depto. Presupuesto | Elaborar Resolución aprobatoria del convenio. |
-| 2 | GORE / CGR | Firmar resolución; enviar a CGR para Toma de Razón si corresponde. |
-| 3 | DAF / DIPIR | Programar transferencias según regla de devengo: Privados/Municipios = devengo al ser exigible; Servicios Públicos = devengo al aprobarse rendición. |
-
-Resultado: `CONVENIO FORMALIZADO` → `TRANSFERENCIA PROGRAMADA`
-
-## Fase 5: Ejecución y Seguimiento
-
-### 6.1 Inicio y Coordinación
-
-1. **Control Técnico:** División Patrocinante verifica EE.TT., planos y antecedentes aprobados.
-2. **Reunión Arranque:** GORE y UT receptora definen roles, hitos de control, plazos y procedimientos de rendición. Acta de acuerdos.
-3. **Carpeta de Seguimiento:** Supervisor/a GORE crea carpeta digital/física con todos los antecedentes.
-
-### 6.2 Licitación y Adjudicación
-
-| Requisito | Umbral | Excepción |
-| :--- | :--- | :--- |
-| Licitación pública — Inversión | > 1.000 UTM | Emergencia según normativa. |
-| Licitación pública — Estudios | > 500 UTM | Emergencia según normativa. |
-
-Proceso UT Receptora: publicar en Mercado Público → adjudicar → firmar contrato → Acta de Entrega de Terreno u Orden de Inicio.
-
-### 6.3 Supervisión y Control
-
-| Actor | Actividades |
-| :--- | :--- |
-| Supervisor/a GORE | Visitas a terreno periódicas; revisar informes de avance; gestionar Estados de Pago; actualizar BIP con % avance físico. |
-| Analista Financiero (DAF/DIPIR) | Monitorear SIGFE; revisar rendiciones SISREC; alertar sobre sub-ejecución o desviaciones. |
-| Comité de Seguimiento | Reuniones periódicas GORE-UT; actas con acuerdos y planes de acción. |
-
-## Fase 6: Gestión de Modificaciones
-
-### 7.1 Solicitud de Modificación (UT Receptora)
-1. Detectar necesidad (sobrecosto, obra adicional, imprevisto).
-2. Preparar informe técnico/financiero justificativo.
-3. Enviar oficio formal al Gobernador/a con antecedentes (presupuestos actualizados, planos, etc.).
-
-### 7.2 Evaluación y Reevaluación (GORE)
-1. **Análisis:** Supervisor/a GORE y Analista DIPIR verifican pertinencia; confirman que no se altera objetivo sustancial.
-2. **Pronunciamiento:** DIPIR/DIPLADE verifican si nuevo costo supera umbrales que exigen nuevo CORE o SNI.
-3. **Decisión:** Aprobación o rechazo formal mediante informe técnico de Jefatura DIPIR.
-
-### 7.3 Tramitación de Cambios
-1. **Aumento Presupuesto:** Repetición de Fase 3 (CORE si aplica).
-2. **Formalización:** Modificación presupuestaria (Resolución/Decreto) y addendum de convenio.
-
-## Fase 7: Cierre y Evaluación Ex-Post
-
-### 8.1 Cierre Técnico
-
-| Paso | Responsable | Actividades |
-| :--- | :--- | :--- |
-| 1 | UT Receptora | Recepción provisoria y definitiva de obras al contratista. Acta de Recepción Definitiva tras período de garantía. |
-| 2 | UT Técnica / Supervisor GORE | Elaborar informe final (productos, metas, resultados). Validar informe GORE. |
-
-### 8.2 Cierre Financiero y Administrativo
-
-| Paso | Responsable | Actividades |
-| :--- | :--- | :--- |
-| 1 | UT Receptora | Presentar rendición final en SISREC CGR sin saldos pendientes. |
-| 2 | DAF (Analista Financiero) | Revisar y aprobar rendición final de manera fundada. Solicitar reintegros de saldos no utilizados o gastos rechazados. Pronunciarse en plazo legal. |
-| 3 | Depto. Presupuesto | Elaborar Resolución que aprueba rendición y declara cierre de convenio. |
-| 4 | DAF / Entidad Receptora | Devolver garantías tras formalización del cierre. |
-
-### 8.3 Evaluación Ex-Post
-
-1. **Selección:** MDSF/GORE seleccionan muestra de IPR relevantes.
-2. **Estudio:** Evaluación comparativa situación "con proyecto" vs "sin proyecto".
-3. **Retroalimentación:** Lecciones aprendidas incorporadas al ciclo de inversión regional.
+## ID
+GN-IPR-GESTION-OPERACIONAL-01
+
+## Version
+1.0.0
+
+## Status
+Draft
+
+## Human Creator
+FS
+
+## Human Editor
+FS
+
+## Model Collaborator
+IA-CASCADE
+
+## Creation Date
+2025-11-27
+
+## Modification Date
+2025-12-15
+
+## Ctx
+Guía operacional completa para la gestión de Intervenciones Públicas Regionales (IPR) en el GORE Ñuble, desde el ingreso hasta el cierre y evaluación ex-post.
+
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning.
+
+REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx: or Src:.
+
+LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
+END_LLM_INSTRUCTIONS
+
+
+## Glosario IPR Gestion
+### ID
+GN-IPR-GLOSARIO-01
+### Purp
+Definir conceptos y siglas operativas recurrentes en la gestión de IPR.
+### Terminos
+-
+  #### ID
+  GN-IPR-GLOS-IPR
+  #### Sigla
+  IPR
+  #### Nombre
+  Intervención Pública Regional
+  #### Def
+  Término paraguas para cualquier acción (proyecto, programa, estudio) financiada por el GORE para objetivos de desarrollo.
+-
+  #### ID
+  GN-IPR-GLOS-IDI
+  #### Sigla
+  IDI
+  #### Nombre
+  Iniciativa de Inversión
+  #### Def
+  Tipo de IPR asociada a proyectos de capital (obras, activos).
+-
+  #### ID
+  GN-IPR-GLOS-PPR
+  #### Sigla
+  PPR
+  #### Nombre
+  Programa Público Regional
+  #### Def
+  Tipo de IPR de gasto corriente o mixto (servicios, subvenciones).
+-
+  #### ID
+  GN-IPR-GLOS-POSTULACION
+  #### Sigla
+  Postulación
+  #### Nombre
+  Postulación de IPR
+  #### Def
+  IPR presentada para evaluación, antes de clasificación o aprobación.
+-
+  #### ID
+  GN-IPR-GLOS-RS
+  #### Sigla
+  RS
+  #### Nombre
+  Recomendación Satisfactoria
+  #### Def
+  Resultado favorable de evaluación SNI/MDSF para IDI de mayor envergadura.
+-
+  #### ID
+  GN-IPR-GLOS-RF
+  #### Sigla
+  RF
+  #### Nombre
+  Recomendación Favorable
+  #### Def
+  Resultado favorable de evaluación de programas en Glosa 06 u otros mecanismos.
+-
+  #### ID
+  GN-IPR-GLOS-AD
+  #### Sigla
+  AD
+  #### Nombre
+  Admisible para financiamiento (Conservación)
+  #### Def
+  Resultado favorable de evaluación MDSF para proyectos de conservación; habilita financiamiento sin ser RS.
+-
+  #### ID
+  GN-IPR-GLOS-CDP
+  #### Sigla
+  CDP
+  #### Nombre
+  Certificado de Disponibilidad Presupuestaria
+  #### Def
+  Documento del Depto. Presupuesto que acredita fondos para financiar una IPR.
+-
+  #### ID
+  GN-IPR-GLOS-BIP
+  #### Sigla
+  BIP
+  #### Nombre
+  Banco Integrado de Proyectos
+  #### Def
+  Sistema para registro y seguimiento de IDI.
+-
+  #### ID
+  GN-IPR-GLOS-SIGFE
+  #### Sigla
+  SIGFE
+  #### Nombre
+  Sistema de Información para la Gestión Financiera del Estado
+  #### Def
+  Sistema contable-financiero donde se registra ejecución presupuestaria.
+-
+  #### ID
+  GN-IPR-GLOS-SISREC
+  #### Sigla
+  SISREC
+  #### Nombre
+  Sistema de Rendición Electrónica de Cuentas
+  #### Def
+  Plataforma de la Contraloría General de la República para rendiciones de cuentas de transferencias.
+-
+  #### ID
+  GN-IPR-GLOS-DIPIR
+  #### Sigla
+  DIPIR
+  #### Nombre
+  División de Presupuesto e Inversión Regional
+  #### Def
+  División GORE responsable de presupuesto de inversión y gestión de IPR.
+-
+  #### ID
+  GN-IPR-GLOS-DIPLADE
+  #### Sigla
+  DIPLADE
+  #### Nombre
+  División de Planificación y Desarrollo Regional
+  #### Def
+  División que lidera planificación y presidencia del Comité Directivo Regional.
+-
+  #### ID
+  GN-IPR-GLOS-CORE
+  #### Sigla
+  CORE
+  #### Nombre
+  Consejo Regional
+  #### Def
+  Órgano colegiado que aprueba o rechaza financiamiento de IPR según normativa y acuerdos regionales.
+-
+  #### ID
+  GN-IPR-GLOS-CDR
+  #### Sigla
+  CDR
+  #### Nombre
+  Comité Directivo Regional
+  #### Def
+  Instancia técnico-política interna para filtro de pertinencia estratégica de IPR.
+-
+  #### ID
+  GN-IPR-GLOS-MDSF
+  #### Sigla
+  MDSF
+  #### Nombre
+  Ministerio de Desarrollo Social y Familia
+  #### Def
+  Organismo responsable de evaluación técnico-económica de IDI en el SNI.
+-
+  #### ID
+  GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+  #### Nombre
+  Estados de admisibilidad IPR
+  #### Def
+  Categorías clave: PRE-ADMISIBLE CDR, NO PRE-ADMISIBLE CDR, ADMISIBLE, ADMISIBLE CON OBSERVACIONES, INADMISIBLE.
+-
+  #### ID
+  GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+  #### Nombre
+  Estados de financiamiento IPR
+  #### Def
+  Categorías clave: PARA REVISIÓN TÉCNICA, EN CARTERA PRE-ADMISIBLE, ENVIADO A MDSF, APROBADO TÉCNICAMENTE (RS/RF/AD/Exento RS), CARTERA ENVIADA A CORE, CERTIFICADO CORE OK, ENVIADO A FINANCIAMIENTO, TRANSFERENCIA PROGRAMADA, CONVENIO FORMALIZADO.
+
+## Proceso Gestion Operacional IPR
+### ID
+GN-IPR-PROCESO-END-TO-END
+### Purp
+Estandarizar el flujo completo de gestión de IPR en GORE Ñuble: desde el ingreso hasta el cierre.
+### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-IDI
+- GN-IPR-GLOS-PPR
+### Res
+- Secuencia clara de fases, actores, decisiones y documentos clave.
+- Trazabilidad normativa y documental de cada hito.
+### Fnd
+- LOC GORE (Art. 16, 24, 36, 78).
+- DL N°1.263/1975 (Art. 19 bis).
+- Ley 20.530 (Crea MDSF).
+- Glosas 01, 06, 07 Ley de Presupuestos 2026 (Partida 31).
+- Normas Generales Ley de Presupuestos 2026 (Art. 23-26).
+- Res. 30/2015 CGR (Rendiciones).
+- Normativa DIPRES/MDSF sobre SNI, BIP, procedimientos especiales.
+### Src
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
+### Fases
+| Ref |
+| --- |
+| GN-IPR-FASE1-INGRESO |
+| GN-IPR-FASE2-EVAL |
+| GN-IPR-FASE3-FINANC |
+| GN-IPR-FASE4-GESTION-PPT |
+| GN-IPR-FASE5-EJECUCION |
+| GN-IPR-FASE6-MODIFICACIONES |
+| GN-IPR-FASE7-CIERRE |
+### Fase 1 Ingreso Pertinencia Admisibilidad
+#### ID
+GN-IPR-FASE1-INGRESO
+#### Purp
+Recepcionar, registrar y filtrar postulaciones de IPR para decidir cuáles avanzan a evaluación técnica.
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-POSTULACION
+#### Res
+- Lista de IPR con registro formal y trazabilidad.
+- Clasificación estratégica inicial y decisión de admisibilidad formal.
+#### Fnd
+- LOC GORE Art. 16 y 24.
+#### Secciones
+-
+  #### ID
+  GN-IPR-F1-RECEPCION-REGISTRO
+  #### Titulo
+  2.1 Recepción y Registro
+  #### Purp
+  Formalizar ingreso de postulaciones y derivarlas a DIPIR.
+  #### Ref
+  - GN-IPR-GLOS-POSTULACION
+  - GN-IPR-GLOS-DIPIR
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Unidad Formuladora (Externa)
+    #### Ref
+    - GN-IPR-GLOS-IPR
+    - GN-IPR-GLOS-POSTULACION
+    #### Activities
+    - Preparar y presentar IPR según guías del mecanismo de financiamiento.
+    #### Req
+    - Ingresar oficio conductor firmado por máxima autoridad de la entidad postulante.
+    #### Warn
+    - La calidad de la formulación inicial es crítica para el resto del ciclo.
+    #### Output
+    Oficio y antecedentes completos presentados al GORE.
+  -
+    #### Step
+    2
+    #### Resp
+    Oficina de Partes GORE
+    #### Activities
+    - Recepcionar oficio y documentación física/digital.
+    - Asignar número de ingreso único en sistema de gestión documental (ej. SGDOC).
+    - Derivar antecedentes completos a Jefatura DIPIR.
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    #### Output
+    Postulación registrada y derivada formalmente a DIPIR.
+  -
+    #### Step
+    3
+    #### Resp
+    Jefatura DIPIR
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-CDR
+    #### Activities
+    - Registrar datos básicos de la IPR en sistema de seguimiento interno.
+    - Poner la postulación a disposición del Comité Directivo Regional (CDR).
+    #### Output
+    Postulación disponible para revisión del CDR.
+-
+  #### ID
+  GN-IPR-F1-PERTINENCIA-CDR
+  #### Titulo
+  2.2 Análisis de Pertinencia Estratégica (Filtro Político-Técnico)
+  #### Purp
+  Evaluar alineación de la IPR con prioridades estratégicas antes de invertir en evaluación técnica.
+  #### Resp Principal
+  Comité Directivo Regional (CDR).
+  #### Ref
+  - GN-IPR-GLOS-CDR
+  - GN-IPR-GLOS-DIPLADE
+  - GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Jefatura DIPLADE
+    #### Ref
+    - GN-IPR-GLOS-DIPLADE
+    #### Activities
+    - Recibir listado de postulaciones ingresadas.
+    - Convocar a sesión del CDR como presidente de la instancia.
+    #### Cpt
+    Composición del CDR: Jefaturas de División, Jefatura de Rezago, Administrador/a Regional.
+    #### Output
+    CDR convocado con cartera de IPR a revisar.
+  -
+    #### Step
+    2
+    #### Resp
+    CDR
+    #### Ref
+    - GN-IPR-GLOS-CDR
+    - GN-IPR-GLOS-IPR
+    #### Activities
+    - Analizar cada IPR desde perspectiva técnico-política.
+    - Evaluar coherencia con ERD y prioridades estratégicas del GORE.
+    - Evaluar viabilidad preliminar y pertinencia.
+    - Generar acta de sesión con categorización y observaciones por IPR.
+    #### Output
+    - `PRE-ADMISIBLE CDR`
+    - `NO PRE-ADMISIBLE CDR`
+  -
+    #### Step
+    3
+    #### Resp
+    Jefatura DIPIR
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+    - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+    #### Activities
+    - Recibir acta del CDR.
+    - Para IPR PRE-ADMISIBLES, evaluar marco presupuestario disponible y cartera de inversiones vigente.
+    - Priorizar IPR para revisión técnica según relevancia y factibilidad de financiamiento.
+    #### Output
+    - `PARA REVISIÓN TÉCNICA`
+    - `EN CARTERA PRE-ADMISIBLE`
+-
+  #### ID
+  GN-IPR-F1-ADMISIBILIDAD-FORMAL
+  #### Titulo
+  2.3 Revisión de Admisibilidad Formal (Filtro Documental)
+  #### Purp
+  Verificar requisitos formales y documentales exigidos por el mecanismo de financiamiento.
+  #### Ctx
+  Revisión realizada por analista asignado; resultado condiciona el paso a evaluación técnica.
+  #### Ref
+  - GN-IPR-GLOS-DIPIR
+  - GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Jefatura de Preinversión (DIPIR)
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    #### Activities
+    - Recibir instrucción de Jefatura DIPIR para iniciar revisión.
+    - Asignar la IPR a analista competente según tipología.
+    - Formalizar apoyos interdivisionales si se requieren.
+    #### Output
+    IPR derivada formalmente a analista.
+  -
+    #### Step
+    2
+    #### Resp
+    Analista de Preinversión (DIPIR)
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+    #### Activities
+    - Realizar revisión documental exhaustiva.
+    - Verificar cumplimiento de requisitos de la guía operativa del mecanismo.
+    - Comprobar correcta carga en Carpeta Digital del BIP cuando aplique.
+    #### Output
+    - `ADMISIBLE`
+    - `ADMISIBLE CON OBSERVACIONES`
+    - `INADMISIBLE`
+  -
+    #### Step
+    3
+    #### Resp
+    Unidad Formuladora (Externa)
+    #### Cond
+    Solo si estado = ADMISIBLE CON OBSERVACIONES.
+    #### Ref
+    - GN-IPR-GLOS-IPR
+    - GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+    #### Activities
+    - Corregir antecedentes dentro del plazo definido por el GORE.
+    #### Warn
+    - No subsanar en plazo puede derivar en estado INADMISIBLE.
+    #### Output
+    Documentación subsanada.
+  -
+    #### Step
+    4
+    #### Resp
+    Jefatura de Preinversión (DIPIR)
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD
+    - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+    #### Activities
+    - Si estado final es INADMISIBLE, elaborar y despachar oficio de inadmisibilidad.
+    - Si es ADMISIBLE o subsanada, declarar estado PARA EVALUACIÓN TÉCNICA.
+    #### Output
+    - `INADMISIBLE INFORMADO`
+    - `LISTA PARA FASE 2`
+### Fase 2 Evaluacion Tecnica Economica
+#### ID
+GN-IPR-FASE2-EVAL
+#### Purp
+Analizar en profundidad la IPR para determinar calidad, viabilidad y conveniencia, aplicando principio de proporcionalidad.
+#### Fnd
+- Art. 19 bis DL N°1.263/1975.
+- Ley 20.530 (Crea MDSF).
+#### Warn
+- Proceso y criterios varían según nivel de proporcionalidad y mecanismo de financiamiento.
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-IDI
+- GN-IPR-GLOS-PPR
+- GN-IPR-GLOS-MDSF
+- GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+#### Tracks
+-
+  #### ID
+  GN-IPR-F2-TRACK-A-SNI
+  #### Titulo
+  3.1 Track A – SNI (Análisis Estándar y Enriquecido, Nivel 2 y 3)
+  #### Purp
+  Evaluar IDI de mayor envergadura que requieren RS de MDSF.
+  #### Ref
+  - GN-IPR-GLOS-IDI
+  - GN-IPR-GLOS-MDSF
+  - GN-IPR-GLOS-RS
+  - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+  #### Tabla Pasos
+  | Step | Resp | Ref | Activities | Output |
+  | --- | --- | --- | --- | --- |
+  | 1 | Analista GORE (DIPIR) | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-IDI', 'GN-IPR-GLOS-ESTADOS-ADMISIBILIDAD'] | ['Revisión de fondo considerando antecedentes de Fase 1.', 'Verificar cumplimiento de RIS y metodologías SNI aplicables.', 'Asegurar calidad de estudios preinversionales (Perfil, Prefactibilidad, etc.).', 'Elaborar Acta de Admisibilidad interna GORE.'] | ['`ADMISIBLE PARA ENVÍO A MDSF`', '`INADMISIBLE`'] |
+  | 2 | Jefatura DIPIR / Gobernador/a | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-MDSF'] | ['Elaborar y visar oficio solicitando evaluación ex ante al SEREMI MDSF.', 'Gestionar cadena de V°B° interno y firma del Gobernador/a.'] | Oficio despachado a MDSF. |
+  | 3 | Jefatura de Preinversión (DIPIR) | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-BIP', 'GN-IPR-GLOS-MDSF'] | ["Registrar formalmente la 'Informar Postulación' en el BIP."] | Iniciativa `ENVIADO A MDSF` en BIP. |
+  | 4 | Analista MDSF | ['GN-IPR-GLOS-MDSF', 'GN-IPR-GLOS-RS'] | ['Realizar evaluación de admisibilidad (plazo orientativo: 5 días).', 'Realizar análisis técnico-económico (ATE) (plazo orientativo: 10 días).'] | ['RATE: `RS`, `FI`, u `OT`.'] |
+  | 5 | Unidad Formuladora / Analista GORE | ['GN-IPR-GLOS-IPR', 'GN-IPR-GLOS-RS', 'GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO'] | ['Si RS: registrar aprobación técnica y preparar paso a financiamiento.', 'Si FI u OT: apoyar a la Unidad Formuladora en subsanar observaciones (plazo máx. 60 días hábiles).'] | ['`APROBADO TÉCNICAMENTE (RS)`', '`OBSERVACIONES SUBSANADAS`'] |
+  | 6 | Jefatura de Preinversión (DIPIR) | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-BIP', 'GN-IPR-GLOS-RS'] | ['Monitorear BIP para obtener resultado de MDSF.', 'Informar cartera con RS a Jefatura DIPIR para preparación de presentación al Gobernador/a.'] | Cartera RS disponible para priorización. |
+-
+  #### ID
+  GN-IPR-F2-TRACK-B-PPR
+  #### Titulo
+  3.2 Track B – Programas Públicos Regionales (Glosa 06)
+  #### Purp
+  Evaluar programas de gasto corriente/mixto ejecutados por el GORE según proceso bifásico DIPRES/SES.
+  #### Ref
+  - GN-IPR-GLOS-PPR
+  - GN-IPR-GLOS-RF
+  - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+  #### Ctx
+  - Programas en continuidad.
+  - Subvenciones 8% FNDR.
+  - Transferencias a entidades públicas.
+  - Ayudas tempranas por emergencia.
+  - Programas FRPD bajo Res. 33 (Innovación).
+  #### Req
+  - Se podrá destinar hasta un 5% del monto total de la transferencia a gastos de administración de las iniciativas en el Gobierno Regional, según glosa aplicable.
+  - Con cargo a esta transferencia se podrá contratar en la entidad pública receptora a personal a honorarios cuyo vínculo cesará una vez finalizado el convenio, dentro del límite establecido por la glosa aplicable.
+  - Cuando corresponda, considerar la calidad de agente público para honorarios según glosa aplicable.
+  #### Src
+  - urn:gn:kb:ley-presupuestos-2026-partida-31
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    División Proponente GORE / DIPIR
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-PPR
+    #### Activities
+    - Elaborar Formulario de Perfil de Programa Público GORE.
+    #### Req
+    - Visión concisa y fundamentada.
+    - Definir contraparte única GORE frente a DIPRES/SES.
+    #### Output
+    Formulario de Perfil enviado a DIPRES/SES.
+  -
+    #### Step
+    2
+    #### Resp
+    DIPRES / SES
+    #### Activities
+    - Evaluar si iniciativa corresponde a programa y si es pertinente.
+    #### Output
+    - Aprobado: solicitud formal a GORE para elaborar Diseño.
+    - Rechazado: proceso se detiene.
+  -
+    #### Step
+    3
+    #### Resp
+    División Proponente GORE / DIPIR
+    #### Cond
+    Solo si DIPRES/SES solicita Diseño.
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-PPR
+    #### Activities
+    - Elaborar Formulario de Diseño con Metodología de Marco Lógico.
+    #### Output
+    Formulario de Diseño enviado.
+  -
+    #### Step
+    4
+    #### Resp
+    DIPRES / SES
+    #### Activities
+    - Revisión iterativa de diseño.
+    - Emisión de observaciones y recepción de subsanaciones.
+    #### Output
+    - Calificación final: `RF`, `OT` o `FI`.
+  -
+    #### Step
+    5
+    #### Resp
+    División Proponente GORE / DIPIR
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-RF
+    - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+    #### Activities
+    - Subsanar observaciones hasta lograr RF.
+    #### Warn
+    - Solo RF habilita programa para solicitar financiamiento.
+    #### Output
+    `APROBADO TÉCNICAMENTE (RF)`
+-
+  #### ID
+  GN-IPR-F2-TRACK-C-ESPECIALES
+  #### Titulo
+  3.3 Track C – Vías Simplificadas y Procedimientos Especiales
+  #### Purp
+  Detallar procesos de evaluación para mecanismos agilizados.
+  #### Ref
+  - GN-IPR-GLOS-IDI
+  - GN-IPR-GLOS-MDSF
+  - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+  #### Subtracks
+  -
+    #### ID
+    GN-IPR-F2-C-5000UTM
+    #### Titulo
+    Proyectos < 5.000 UTM (Exención de RS)
+    #### Ref
+    - GN-IPR-GLOS-IDI
+    - GN-IPR-GLOS-RS
+    - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+    #### Tabla Pasos
+    -
+      #### Step
+      1
+      #### Resp
+      Unidad Formuladora
+      #### Ref
+      - GN-IPR-GLOS-IDI
+      #### Activities
+      - Postular proyecto en BIP a etapa Ejecución o Diseño.
+      #### Req
+      - Usar descriptor 'Proyecto menor a 5.000 UTM'.
+      - Verificar que no existan causales de exclusión (fraccionamiento, EIA/CMN, problemas de terreno, etc.).
+      #### Output
+      IDI postulada con descriptor específico.
+    -
+      #### Step
+      2
+      #### Resp
+      Unidad Formuladora
+      #### Ref
+      - GN-IPR-GLOS-IDI
+      - GN-IPR-GLOS-BIP
+      #### Activities
+      - Cargar en BIP estudio preinversional simplificado y demás antecedentes exigidos.
+      #### Output
+      Carpeta digital completa.
+    -
+      #### Step
+      3
+      #### Resp
+      Institución Financiera (GORE)
+      #### Ref
+      - GN-IPR-GLOS-MDSF
+      #### Activities
+      - Enviar carta de responsabilidad a MDSF declarando ausencia de impedimentos y fraccionamiento.
+      #### Output
+      Carta enviada a MDSF.
+    -
+      #### Step
+      4
+      #### Resp
+      DIPIR GORE
+      #### Ref
+      - GN-IPR-GLOS-DIPIR
+      - GN-IPR-GLOS-IDI
+      #### Activities
+      - Verificar cumplimiento del procedimiento y antecedentes.
+      #### Ctx
+      La aprobación técnica la otorga el propio GORE.
+      #### Output
+      `APROBADO TÉCNICAMENTE (Exento RS)`
+  -
+    #### ID
+    GN-IPR-F2-C-CONSERVACION
+    #### Titulo
+    Proyectos de Conservación
+    #### Ref
+    - GN-IPR-GLOS-IDI
+    - GN-IPR-GLOS-AD
+    - GN-IPR-GLOS-MDSF
+    #### Tabla Pasos
+    -
+      #### Step
+      1
+      #### Resp
+      Unidad Formuladora
+      #### Ref
+      - GN-IPR-GLOS-IDI
+      #### Activities
+      - Postular IDI en BIP con proceso 'Conservación'.
+      #### Req
+      - Costo total <= 30% del costo de reposición del activo.
+      - Cargar antecedentes: Memoria, Certificado de Conservación, etc.
+      #### Output
+      IDI postulada correctamente.
+    -
+      #### Step
+      2
+      #### Resp
+      Analista GORE (DIPIR)
+      #### Ref
+      - GN-IPR-GLOS-DIPIR
+      #### Activities
+      - Revisar coherencia de postulación con instructivo de conservación.
+      #### Output
+      V°B° para envío a MDSF.
+    -
+      #### Step
+      3
+      #### Resp
+      Jefatura DIPIR / GORE
+      #### Ref
+      - GN-IPR-GLOS-DIPIR
+      - GN-IPR-GLOS-MDSF
+      #### Activities
+      - Enviar oficio a MDSF solicitando evaluación de admisibilidad.
+      #### Output
+      IDI `ENVIADA A MDSF` en BIP.
+    -
+      #### Step
+      4
+      #### Resp
+      Analista MDSF
+      #### Ref
+      - GN-IPR-GLOS-MDSF
+      - GN-IPR-GLOS-AD
+      - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+      #### Activities
+      - Verificar que IDI clasifique como conservación.
+      - Emitir RATE AD.
+      #### Output
+      `APROBADO TÉCNICAMENTE (AD)`
+  -
+    #### ID
+    GN-IPR-F2-C-FRIL-8FNDR-FRPD-CIRC33
+    #### Titulo
+    FRIL, 8% FNDR, FRPD y Circular 33
+    #### Ctx
+    Mecanismos con lógicas de evaluación propias detalladas en sus guías específicas.
+    #### Src
+    - urn:gn:kb:ley-presupuestos-2026-partida-31
+    - urn:gn:kb:ley-presupuestos-2026-partida-31
+    #### Elementos
+    -
+      #### Cpt
+      FRIL.
+      #### Def
+      Evaluación de mérito realizada por el GORE según instructivo. Aprobación técnica interna. Considerar informe favorable del MDSF cuando aplique financiamiento vía transferencias de capital (FRIL), según glosa aplicable.
+    -
+      #### Cpt
+      8% FNDR.
+      #### Def
+      Concurso público con bases y pautas específicas; evalúa y puntúa iniciativas.
+      #### Warn
+      - No financia programas públicos complejos, sino actividades acotadas.
+      #### Req
+      - Exigir garantías (pagaré) a instituciones privadas adjudicatarias.
+      - Asignaciones directas excepcionales: aplicar límites y condiciones de la glosa vigente, previo acuerdo del CORE cuando corresponda.
+    -
+      #### Cpt
+      FRPD (Royalty).
+      #### Def
+      Fondo evaluado según bases del concurso FRPD.
+      #### Ctx
+      - Tipología Innovación.
+      - Exenta de evaluación ex ante Glosa 06 (Res. 33/2024 MCTCI).
+    -
+      #### Cpt
+      Circular 33 (ANF, Estudios).
+      #### Def
+      Tramitación vía DIPRES y V°B° DIPRES como aprobación técnica GORE.
+### Fase 3 Financiamiento y Aprobacion Presupuestaria
+#### ID
+GN-IPR-FASE3-FINANC
+#### Purp
+Gestionar asignación de recursos presupuestarios para IPR con aprobación técnica, incluyendo aprobación CORE cuando aplique.
+#### Fnd
+- LOC GORE Art. 36 y 78.
+- Glosa 01, Partida 31, Ley Presupuestos 2026.
+#### Src
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-CORE
+- GN-IPR-GLOS-CDP
+- GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+#### Secciones
+-
+  #### ID
+  GN-IPR-F3-SIN-CORE
+  #### Titulo
+  4.1 Modificaciones Presupuestarias sin Acuerdo Obligatorio CORE
+  #### Ref
+  - GN-IPR-GLOS-CDP
+  - GN-IPR-GLOS-DIPIR
+  #### Tabla Pasos
+  | Step | Resp | Ref | Activities | Output |
+  | --- | --- | --- | --- | --- |
+  | 1 | Jefatura DIPIR | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-CDP'] | ['Analizar cartera de IPR con aprobación técnica.', 'Solicitar al Depto. Presupuesto la emisión del CDP.'] | Solicitud de CDP enviada. |
+  | 2 | Jefatura Depto. Presupuesto (DAF) | ['GN-IPR-GLOS-CDP'] | ['Verificar disponibilidad de fondos.', 'Elaborar y enviar CDP a unidad solicitante.'] | CDP emitido. |
+  | 3 | Jefatura de Preinversión / Unidad Patrocinante | ['GN-IPR-GLOS-IPR', 'GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO'] | ['Recibir CDP.', 'Enviar memo al Depto. Presupuesto instruyendo iniciar tramitación de modificación presupuestaria.'] | `ENVIADO A FINANCIAMIENTO` |
+-
+  #### ID
+  GN-IPR-F3-CON-CORE
+  #### Titulo
+  4.2 Iniciativas con Aprobación Obligatoria del CORE
+  #### Ctx
+  Aplica a mayoría de proyectos de inversión (>7.000 UTM) y a otras IPR que se definan políticamente.
+  #### Ref
+  - GN-IPR-GLOS-CORE
+  - GN-IPR-GLOS-DIPIR
+  - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+  #### Tabla Pasos
+  | Step | Resp | Ref | Activities | Output |
+  | --- | --- | --- | --- | --- |
+  | 1 | Jefatura DIPIR | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-IPR'] | ['Analizar cartera de IPR con aprobación técnica.', 'Solicitar preparación de documentación para CORE.'] | `INSTRUCCIÓN PARA PREPARAR ENVÍO A CORE` |
+  | 2 | Jefatura de Preinversión (DIPIR) | ['GN-IPR-GLOS-DIPIR'] | ['Elaborar carpeta CORE (oficios, fichas IDI, antecedentes de respaldo).'] | `CARTERA DISPONIBLE PARA ENVÍO A CORE` |
+  | 3 | Jefatura DIPIR / Gobernador/a | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-CORE'] | ['Presentar cartera al Gobernador/a para V°B° final.', 'Firmar oficio y enviar formalmente cartera al CORE.'] | `CARTERA ENVIADA A CORE` |
+  | 4 | CORE | ['GN-IPR-GLOS-CORE', 'GN-IPR-GLOS-IPR'] | ['Analizar cartera en comisiones y sesión plenaria.', 'Votar aprobación o rechazo del financiamiento.'] | `IPR APROBADAS/RECHAZADAS` |
+  | 5 | Secretario/a Ejecutivo CORE | ['GN-IPR-GLOS-CORE', 'GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO'] | ['Comunicar resultados y emitir Certificado de Acuerdo CORE.', 'Usar formato estandarizado de certificado indicado por DIPRES para el año presupuestario vigente.'] | `CERTIFICADO CORE OK` |
+  | 6 | Jefatura DIPIR / Jefatura Preinversión | ['GN-IPR-GLOS-DIPIR', 'GN-IPR-GLOS-IPR'] | ['Con certificado CORE, solicitar al Depto. Presupuesto la creación de asignación presupuestaria.'] | `ENVIADA A CREACIÓN PPT.` |
+### Fase 4 Gestion Presupuestaria y Formalizacion
+#### ID
+GN-IPR-FASE4-GESTION-PPT
+#### Purp
+Traducir aprobación de financiamiento en actos administrativos y convenios que permitan ejecutar y transferir recursos.
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+#### Secciones
+-
+  #### ID
+  GN-IPR-F4-ACTOS-ADMIN
+  #### Titulo
+  5.1 Tramitación de Actos Administrativos (Decretos y Resoluciones)
+  #### Ctx
+  Tipo de acto según si modificación afecta solo presupuesto interno o Partida 31 nacional.
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Profesional Depto. Presupuesto
+    #### Activities
+    - Elaborar borrador de Resolución (modificación interna) o solicitud a DIPRES para Decreto (afecta Partida 31).
+    #### Output
+    Borrador de Resolución / Solicitud de Decreto.
+  -
+    #### Step
+    2
+    #### Resp
+    DAF / DIPIR / Unidad de Control
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    #### Req
+    - Acto debe obtener V°B° internos (Jurídico, Jefatura Presupuesto, Jefatura DIPIR, Administrador/a Regional).
+    #### Output
+    Acto visado internamente.
+  -
+    #### Step
+    3
+    #### Resp
+    Gobernador/a
+    #### Activities
+    - Firmar resolución interna o oficio a DIPRES para tramitación del Decreto.
+    #### Output
+    Acto firmado.
+  -
+    #### Step
+    4
+    #### Resp
+    GORE / DIPRES / CGR
+    #### Activities
+    - Si Resolución GORE: enviar a DIPRES para visación y a CGR para Toma de Razón.
+    - Si Decreto DIPRES: DIPRES elabora, envía a CGR para Toma de Razón y publica.
+    #### Output
+    `RESOLUCIÓN/DECRETO CON TOMA DE RAZÓN`
+-
+  #### ID
+  GN-IPR-F4-CONVENIO
+  #### Titulo
+  5.2 Elaboración y Firma de Convenio
+  #### Warn
+  - La transferencia de recursos solo puede materializarse después de la total tramitación del convenio.
+  #### Src
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Profesional Depto. Presupuesto
+    #### Ref
+    - GN-IPR-GLOS-IPR
+    #### Activities
+    - Con asignación presupuestaria asegurada, elaborar borrador de Convenio de Transferencia.
+    #### Req
+    - Contenido mínimo: partes, objeto, monto, plazos, productos, obligaciones, rendición de cuentas, restitución.
+    - Cuando la transferencia corresponda a institución privada: verificar régimen de concurso y convenio, y condiciones de asignación directa excepcional, según normas vigentes.
+    - Acreditar objeto social/fines pertinentes de la institución receptora y condicionar la suscripción al cumplimiento íntegro de obligaciones aplicables.
+    - Incluir cláusulas de rendición de cuentas vía SISREC CGR, restitución y prohibición de financiar gastos no permitidos, según glosa aplicable.
+    - Si aplica a ejecutoras de políticas públicas y el monto supera el umbral correspondiente: exigir garantías y requisitos adicionales según normas vigentes.
+    #### Output
+    Borrador de Convenio.
+  -
+    #### Step
+    2
+    #### Resp
+    DIPIR / Jurídico / Unidad Técnica Receptora
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    #### Activities
+    - Revisar y visar borrador del convenio.
+    #### Output
+    Convenio visado internamente.
+  -
+    #### Step
+    3
+    #### Resp
+    Gabinete / Oficina de Partes
+    #### Activities
+    - Coordinar firma de convenio entre Gobernador/a y representante legal de entidad receptora.
+    #### Output
+    `CONVENIO FIRMADO`
+-
+  #### ID
+  GN-IPR-F4-FORMALIZACION-DEVENGO
+  #### Titulo
+  5.3 Formalización Final y Devengo Presupuestario
+  #### Purp
+  Tramitar actos que aprueban convenio y aplicar reglas de devengo.
+  #### Ref
+  - GN-IPR-GLOS-SIGFE
+  - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Profesional Depto. Presupuesto
+    #### Activities
+    - Elaborar Resolución que aprueba convenio y lo deja formalmente vigente.
+    #### Output
+    Borrador de Resolución de aprobación.
+  -
+    #### Step
+    2
+    #### Resp
+    GORE / CGR
+    #### Activities
+    - Firmar resolución.
+    - Si corresponde según normativa CGR aplicable, enviar a CGR para Toma de Razón.
+    #### Output
+    `CONVENIO FORMALIZADO (TRAMITADO)`
+  -
+    #### Step
+    3
+    #### Resp
+    Profesional DAF / DIPIR
+    #### Ctx
+    - Con convenio tramitado, obligación se vuelve exigible.
+    - Regla de devengo varía según tipo de receptor.
+    #### Ref
+    - GN-IPR-GLOS-SIGFE
+    - GN-IPR-GLOS-SISREC
+    #### Activities
+    - Programar transferencias considerando:
+    #### Detalle Devengo
+    - Transferencias a privados y municipios: devengo cuando obligación es exigible (convenio tramitado).
+    - Transferencias a otros servicios públicos no consolidables: devengo cuando se aprueba la rendición de cuentas.
+    #### Src
+    - Normativa CGR y DIPRES sobre devengo y procedimientos internos del GORE.
+    #### Output
+    `TRANSFERENCIA PROGRAMADA`
+### Fase 5 Ejecucion y Seguimiento
+#### ID
+GN-IPR-FASE5-EJECUCION
+#### Purp
+Monitorear desarrollo de la IPR, asegurando cumplimiento técnico y uso correcto de recursos.
+#### Fnd
+- Ley 19.886 (Compras Públicas).
+- Res. 30/2015 CGR (Rendiciones).
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-BIP
+- GN-IPR-GLOS-SIGFE
+- GN-IPR-GLOS-SISREC
+#### Secciones
+-
+  #### ID
+  GN-IPR-F5-INICIO-COORDINACION
+  #### Titulo
+  6.1 Inicio del Proyecto y Reuniones de Coordinación
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    División Patrocinante / Depto. Inversiones
+    #### Ref
+    - GN-IPR-GLOS-IPR
+    #### Activities
+    - Antes del inicio, chequear documentación técnica aprobada (EE.TT., planos, etc.).
+    #### Output
+    Revisión conforme de antecedentes.
+  -
+    #### Step
+    2
+    #### Resp
+    División Patrocinante / Depto. Presupuesto / Unidad Técnica Receptora
+    #### Activities
+    - Convocar reunión formal GORE–UT receptora.
+    - Aclarar roles, responsabilidades, plazos, hitos de control y procedimientos de rendición.
+    #### Output
+    Acta de reunión con acuerdos.
+  -
+    #### Step
+    3
+    #### Resp
+    Supervisor/a del Proyecto (GORE)
+    #### Activities
+    - Crear carpeta de seguimiento (digital/física) con todos los antecedentes del proyecto.
+    #### Output
+    Carpeta de seguimiento creada.
+-
+  #### ID
+  GN-IPR-F5-LICITACION
+  #### Titulo
+  6.2 Licitación y Adjudicación (cuando aplica)
+  #### Ctx
+  Cuando corresponda, aplicar exigencias de licitación pública obligatoria y sus excepciones según normativa vigente.
+  #### Req
+  - Proyectos y programas de inversión: licitación pública obligatoria cuando el monto sea superior a 1.000 UTM, salvo excepciones por emergencia según normativa aplicable.
+  - Estudios básicos: licitación pública obligatoria cuando el monto sea superior a 500 UTM, salvo excepciones por emergencia según normativa aplicable.
+  #### Src
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  #### Tabla Pasos
+  | Step | Resp | Activities | Output |
+  | --- | --- | --- | --- |
+  | 1 | Unidad Técnica Receptora | ['Elaborar bases de licitación y publicar en Mercado Público.', 'Gestionar proceso de licitación para contratar ejecución.'] | Licitación adjudicada. |
+  | 2 | Unidad Técnica Receptora | ['Firmar contrato con adjudicatario.'] | Contrato firmado. |
+  | 3 | Unidad Técnica Receptora | ['Formalizar inicio de ejecución física (Entrega de Terreno u Orden de Inicio).'] | Acta de Entrega de Terreno u Orden de Inicio. |
+-
+  #### ID
+  GN-IPR-F5-SEGUIMIENTO
+  #### Titulo
+  6.3 Seguimiento y Supervisión
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Supervisor/a del Proyecto (GORE)
+    #### Ref
+    - GN-IPR-GLOS-BIP
+    #### Activities
+    - Realizar visitas a terreno periódicas.
+    - Revisar informes de avance de la UT.
+    - Gestionar Estados de Pago cuando aplique.
+    - Actualizar BIP con % de avance físico.
+    #### Output
+    Informes de visita y supervisión, avance en BIP.
+  -
+    #### Step
+    2
+    #### Resp
+    Analista Financiero (DAF/DIPIR)
+    #### Ref
+    - GN-IPR-GLOS-SIGFE
+    - GN-IPR-GLOS-SISREC
+    #### Activities
+    - Monitorear ejecución presupuestaria en SIGFE.
+    - Revisar rendiciones de cuentas en SISREC.
+    - Alertar sobre sub-ejecución o desviaciones.
+    #### Src
+    - Normativa CGR sobre rendiciones y lineamientos internos del GORE.
+    #### Output
+    Informes de ejecución financiera.
+  -
+    #### Step
+    3
+    #### Resp
+    Comité de Seguimiento (si aplica)
+    #### Activities
+    - Realizar reuniones periódicas GORE–UT para revisar estado integral de la IPR.
+    #### Output
+    Actas de reunión con acuerdos y planes de acción.
+### Fase 6 Gestion de Modificaciones IPR
+#### ID
+GN-IPR-FASE6-MODIFICACIONES
+#### Purp
+Gestionar formalmente cambios durante la ejecución, asegurando viabilidad y legalidad.
+#### Fnd
+- LOC GORE Art. 36.
+- Glosa 01 Ley de Presupuestos 2026 (Partida 31).
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-DIPIR
+- GN-IPR-GLOS-CORE
+- GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+#### Secciones
+-
+  #### ID
+  GN-IPR-F6-SOLICITUD
+  #### Titulo
+  7.1 Solicitud de Modificación
+  #### Tabla Pasos
+  | Step | Resp | Ref | Activities | Output |
+  | --- | --- | --- | --- | --- |
+  | 1 | Unidad Técnica Receptora | ['GN-IPR-GLOS-IPR'] | ['Detectar necesidad de modificación (sobrecosto, obra adicional, imprevisto, etc.).', 'Preparar informe técnico y financiero que justifique la modificación.'] | Informe de solicitud de modificación. |
+  | 2 | Unidad Técnica Receptora | ['GN-IPR-GLOS-IPR'] | ['Enviar oficio al Gobernador/a solicitando formalmente la modificación, adjuntando informe y antecedentes (nuevos presupuestos, planos, etc.).'] | Solicitud formal ingresada al GORE. |
+-
+  #### ID
+  GN-IPR-F6-REEVALUACION
+  #### Titulo
+  7.2 Evaluación de la Modificación (Reevaluación)
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Supervisor/a GORE / Analista DIPIR
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    #### Activities
+    - Analizar pertinencia y justificación técnica de la modificación.
+    - Verificar que no altere sustancialmente el objetivo del proyecto.
+    #### Output
+    Informe técnico GORE sobre modificación.
+  -
+    #### Step
+    2
+    #### Resp
+    DIPIR / DIPLADE
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-DIPLADE
+    #### Activities
+    - Si cambio es significativo, reevaluar conveniencia de la IPR.
+    - Verificar si nuevo costo total supera umbrales que exigen nuevo pronunciamiento CORE o SNI.
+    #### Src
+    - Normativa e instructivos internos del GORE sobre umbrales de reingreso al CORE y SNI.
+    #### Output
+    Pronunciamiento técnico sobre viabilidad de modificación.
+  -
+    #### Step
+    3
+    #### Resp
+    Jefatura DIPIR / GORE
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-CORE
+    #### Activities
+    - Con base en informes técnicos, aprobar o rechazar la modificación.
+    #### Output
+    Decisión formal sobre modificación.
+-
+  #### ID
+  GN-IPR-F6-TRAMITACION
+  #### Titulo
+  7.3 Tramitación de la Modificación
+  #### Ctx
+  Proceso similar a Fases 3 y 4, aplicado a una modificación.
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    DIPIR / CORE
+    #### Ref
+    - GN-IPR-GLOS-DIPIR
+    - GN-IPR-GLOS-CORE
+    - GN-IPR-GLOS-ESTADOS-FINANCIAMIENTO
+    #### Cond
+    Solo si modificación implica aumento de presupuesto.
+    #### Activities
+    - Repetir proceso de solicitud de financiamiento y, si aplica, paso por CORE.
+    #### Output
+    Fondos adicionales aprobados.
+  -
+    #### Step
+    2
+    #### Resp
+    DAF / Depto. Presupuesto
+    #### Activities
+    - Tramitar modificación presupuestaria (Resolución/Decreto).
+    - Modificar convenio de transferencia según corresponda.
+    #### Output
+    Convenio y presupuesto modificados y tramitados.
+### Fase 7 Cierre y Evaluacion ExPost
+#### ID
+GN-IPR-FASE7-CIERRE
+#### Purp
+Formalizar finalización de la IPR y generar lecciones aprendidas mediante evaluación ex-post cuando corresponda.
+#### Fnd
+- Res. 30/2015 CGR.
+#### Ref
+- GN-IPR-GLOS-IPR
+- GN-IPR-GLOS-CORE
+- GN-IPR-GLOS-SISREC
+#### Secciones
+-
+  #### ID
+  GN-IPR-F7-CIERRE-TECNICO
+  #### Titulo
+  8.1 Cierre Técnico
+  #### Tabla Pasos
+  | Step | Resp | Ref | Activities | Output |
+  | --- | --- | --- | --- | --- |
+  | 1 | Unidad Técnica Receptora | ['GN-IPR-GLOS-IPR'] | ['Realizar recepción provisoria y definitiva de obras al contratista.', 'Tras período de garantía, formalizar recepción definitiva.'] | Acta de Recepción Definitiva de Obras. |
+  | 2 | Unidad Técnica / Supervisor GORE | ['GN-IPR-GLOS-IPR'] | ['Elaborar informe final de ejecución (productos, metas, resultados).', 'Validar informe por parte del Supervisor GORE.'] | Informe final técnico aprobado. |
+-
+  #### ID
+  GN-IPR-F7-CIERRE-FINANCIERO
+  #### Titulo
+  8.2 Cierre Financiero y Administrativo
+  #### Src
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    Unidad Técnica Receptora
+    #### Ref
+    - GN-IPR-GLOS-SISREC
+    #### Activities
+    - Presentar rendición final de cuentas en SISREC CGR, sin saldos por rendir.
+    #### Src
+    - Normativa CGR de rendiciones y manual interno de gestión de rendiciones del GORE.
+    #### Output
+    Rendición final presentada.
+  -
+    #### Step
+    2
+    #### Resp
+    Analista Financiero GORE (DAF)
+    #### Ref
+    - GN-IPR-GLOS-SISREC
+    #### Activities
+    - Revisar y aprobar rendición final según guía específica.
+    - Solicitar reintegro de saldos no utilizados o gastos rechazados.
+    - Pronunciarse de manera fundada sobre la rendición dentro del plazo máximo aplicable, salvo que el convenio establezca un plazo diferente.
+    #### Src
+    - Procedimientos internos y normativa CGR vigente.
+    #### Output
+    Rendición final aprobada y saldos reintegrados.
+  -
+    #### Step
+    3
+    #### Resp
+    Profesional Depto. Presupuesto
+    #### Ref
+    - GN-IPR-GLOS-IPR
+    #### Activities
+    - Elaborar resolución que aprueba la rendición de cuentas y declara cierre del convenio.
+    #### Output
+    Resolución de Cierre de Convenio.
+  -
+    #### Step
+    4
+    #### Resp
+    DAF / Entidad Receptora
+    #### Activities
+    - Una vez cerrado el convenio, gestionar devolución de garantías.
+    #### Output
+    Garantías devueltas.
+-
+  #### ID
+  GN-IPR-F7-EVAL-EXPOST
+  #### Titulo
+  8.3 Evaluación Ex-Post
+  #### Tabla Pasos
+  -
+    #### Step
+    1
+    #### Resp
+    MDSF / GORE
+    #### Ref
+    - GN-IPR-GLOS-MDSF
+    - GN-IPR-GLOS-IPR
+    #### Activities
+    - Seleccionar IPR relevantes para evaluación ex-post.
+    #### Output
+    Muestra de IPR a evaluar.
+  -
+    #### Step
+    2
+    #### Resp
+    Equipo Evaluador Externo/Interno
+    #### Activities
+    - Realizar estudio comparando situación 'con proyecto' vs. 'sin proyecto'.
+    #### Output
+    Informe de Evaluación Ex-Post.
+  -
+    #### Step
+    3
+    #### Resp
+    GORE / SNI
+    #### Activities
+    - Utilizar conclusiones y lecciones aprendidas para mejorar formulación y evaluación de futuras IPR.
+    #### Output
+    Lecciones aprendidas incorporadas al ciclo de inversión.

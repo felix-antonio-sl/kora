@@ -2858,7 +2858,7 @@ GN-IND-SEC-0107
 Indicadores de seguridad Pública
 #### Content
 
-A continuación se presentan los principales indicadores de seguridad pública para la Región de Ñuble, incluyendo datos de delitos registrados por las policías y los resultados de la Encuesta Nacional Urbana de Seguridad Ciudadana (ENUSC).
+Se presentan los principales indicadores de seguridad pública para la Región de Ñuble, incluyendo datos de delitos registrados por las policías y los resultados de la Encuesta Nacional Urbana de Seguridad Ciudadana (ENUSC).
 #### Sections
 #### Casos policiales por tipo de delito tasa cada 100 000 habitantes
 #### ID

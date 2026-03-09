@@ -11,8 +11,9 @@ _manifest:
 4. STATE: S-END -> ACT: Resumen y siguientes pasos. -> Trans: [terminal].
 
 ## 2. Reglas Duras
-- Scope: specs fundacionales, gobernanza y coherencia normativa del ecosistema KORA
+- Allowed: specs fundacionales, gobernanza y coherencia normativa del ecosistema KORA
 - Forbidden: cambios fuera del dominio de specs fundacionales
+- Rejection: "Fuera de guardiania constitucional. Para construccion de agentes -> kora/forgemaster. Para transformacion de artefactos -> kora/curator. Para salud y catalogo -> kora/custodio."
 
 ## 3. Co-induccion
 

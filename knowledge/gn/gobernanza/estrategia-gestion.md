@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:gn:kb:estrategia-gestion
   provenance:
-    created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/03_operacion/gestion/kb_gn_035_estrategia_gestion_koda.yml
 version: 2.0.0
 status: published
 tags:
@@ -14,271 +14,1249 @@ tags:
 - estrategia
 - gn
 lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/gestion/kb_gn_035_estrategia_gestion_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/gestion/kb_gn_035_estrategia_gestion_koda.yml: bc05a25cfc0dfda4a239a7436a4170f0e141e4e12df446b52c199ffa5e8b8489
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.11
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 19
+    meat_count: 694
+    fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__estrategia-gestion.md.json
 ---
 
 # Estrategia y Gestión del GORE en Chile
+## ID
+KB-GN-035-ESTRATEGIA-GESTION-STS
 
-## Glosario de Conceptos Clave
+## Version
+1.0.0
 
-| Sigla | Nombre | Definición |
-| :--- | :--- | :--- |
-| **GORE** | Gobierno Regional | Entidad pública autónoma; administración superior de la región. |
-| **CORE** | Consejo Regional | Órgano colegiado; facultades normativas, resolutivas y fiscalizadoras. |
-| **ERD** | Estrategia Regional de Desarrollo | Instrumento rector de largo plazo; define visión y objetivos regionales. |
-| **PROT** | Plan Regional de Ordenamiento Territorial | Orienta uso del territorio y localización de inversiones. |
-| **FNDR** | Fondo Nacional de Desarrollo Regional | Principal fondo de inversión para proyectos de desarrollo. |
-| **FRIL** | Fondo Regional de Iniciativa Local | Proyectos de infraestructura local menor; ejecutados por municipios. |
-| **FRPD** | Fondo Regional para la Productividad y el Desarrollo | Financiado por Royalty Minero; productividad e innovación. |
-| **SNI** | Sistema Nacional de Inversiones | Marco para evaluación técnico-económica de inversiones públicas. |
-| **IPR** | Intervención Pública Regional | Proyectos, programas e iniciativas financiadas por el GORE. |
-| **DPR** | Delegado Presidencial Regional | Representante del Presidente; gobierno interior y coordinación de servicios nacionales. |
-| **SEREMI** | Secretaría Regional Ministerial | Representante regional ministerial; implementa políticas sectoriales. |
-| **DIPIR** | División de Presupuesto e Inversión Regional | Elaboración, ejecución y control del presupuesto de inversión. |
-| **DIPLADE** | División de Planificación y Desarrollo Regional | Formulación de instrumentos de planificación y coordinación estratégica. |
-| **DAF** | División de Administración y Finanzas | Gestión administrativa interna, finanzas, RRHH y abastecimiento. |
-| **DIDESO** | División de Desarrollo Social y Humano | Programas de cohesión social, inclusión y acceso a servicios. |
-| **UCI** | Unidad de Control Interno | Gestión de riesgos y mejora de procesos; contraparte de Contraloría. |
-| **COSOC** | Consejo de la Sociedad Civil Regional | Órgano consultivo de participación ciudadana (Ley 20.500 y 21.074). |
-| **CCTID** | Comité Regional de Ciencia, Tecnología e Innovación | Órgano asesor en materias de ciencia y tecnología. |
-| **SIGFE** | Sistema de Información para la Gestión Financiera del Estado | Registro oficial de movimientos presupuestarios. |
-| **RF** | Recomendación Favorable | Resultado favorable de evaluación de programas (Glosa 06). |
-| **PMO** | Oficina de Gestión de Proyectos | Estandarización y profesionalización de cartera de proyectos. |
-| **SINAPRED** | Sistema Nacional de Prevención y Respuesta ante Desastres | Organización de gestión del riesgo de desastres. |
+## Status
+Draft
 
-## Parte I: Fundamentos de la Gestión Pública Regional
+## Format
+KODA/Spec
 
-### Desafíos y Singularidades de la Gestión GORE
+## Human Creator
+FSA
 
-- **Principio de Legalidad:** Directivo público solo realiza lo expresamente permitido por ley (vs. gerente privado que hace lo no prohibido).
-- **Marco Jurídico Fundamental:**
+## Human Editor
+IA-GEMINI
+
+## Model Collaborator
+IA-GEMINI
+
+## AI Remediator
+KODA-TRANSFORMER
+
+## Creation Date
+2024-06-30
+
+## Modification Date
+2024-07-31
+
+## Primary Source
+kb_gn_035_estrategia_gestion_gn.md
+
+## Ref STS Guide
+GUIDE-STS-MASTER-01
+
+## Ctx
+Guía integral de estrategia, gestión pública y modernización institucional aplicada a Gobiernos Regionales (GORE) de Chile, con foco aplicable al GORE de Ñuble.
+
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
+
+LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning, Just->Justification, Rec->Recommendation, Dest->Destination.
+
+REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx: or Src:.
+
+LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
+END_LLM_INSTRUCTIONS
+
+
+## Glosario Conceptos Clave
+### ID
+GORE-ESTRATEGIA-GESTION-GLOSARIO-01
+### Purp
+Sintetizar conceptos y siglas clave utilizados en la guía de estrategia y gestión del GORE.
+### Terminos
+-
+  #### ID
+  GORE-GLOS-GORE
+  #### Sigla
+  GORE
+  #### Nombre
+  Gobierno Regional
+  #### Def
+  Entidad pública autónoma de nivel regional, con personalidad jurídica y patrimonio propio, encargada de la administración superior de la región.
+-
+  #### ID
+  GORE-GLOS-CORE
+  #### Sigla
+  CORE
+  #### Nombre
+  Consejo Regional
+  #### Def
+  Órgano colegiado del GORE, con facultades normativas, resolutivas y fiscalizadoras.
+-
+  #### ID
+  GORE-GLOS-ERD
+  #### Sigla
+  ERD
+  #### Nombre
+  Estrategia Regional de Desarrollo
+  #### Def
+  Instrumento rector de largo plazo que define visión, ejes y objetivos estratégicos del desarrollo regional.
+-
+  #### ID
+  GORE-GLOS-PROT
+  #### Sigla
+  PROT
+  #### Nombre
+  Plan Regional de Ordenamiento Territorial
+  #### Def
+  Instrumento que orienta el uso del territorio y la localización de inversiones.
+-
+  #### ID
+  GORE-GLOS-FNDR
+  #### Sigla
+  FNDR
+  #### Nombre
+  Fondo Nacional de Desarrollo Regional
+  #### Def
+  Principal fondo de inversión de los GORE para proyectos de desarrollo regional.
+-
+  #### ID
+  GORE-GLOS-FRIL
+  #### Sigla
+  FRIL
+  #### Nombre
+  Fondo Regional de Iniciativa Local
+  #### Def
+  Fondo orientado a proyectos de infraestructura local de menor escala, ejecutados principalmente por municipalidades.
+-
+  #### ID
+  GORE-GLOS-FRPD
+  #### Sigla
+  FRPD
+  #### Nombre
+  Fondo Regional para la Productividad y el Desarrollo
+  #### Def
+  Fondo financiado por Royalty Minero para iniciativas de productividad, innovación y desarrollo regional.
+-
+  #### ID
+  GORE-GLOS-SNI
+  #### Sigla
+  SNI
+  #### Nombre
+  Sistema Nacional de Inversiones
+  #### Def
+  Marco y plataforma para evaluación técnico-económica de inversiones públicas.
+-
+  #### ID
+  GORE-GLOS-VALOR-PUBLICO
+  #### Nombre
+  Valor Público
+  #### Def
+  Mejora concreta y sostenible en la calidad de vida de las personas y el desarrollo de la región, derivada de la acción del Estado.
+-
+  #### ID
+  GORE-GLOS-IPR
+  #### Sigla
+  IPR
+  #### Nombre
+  Intervención Pública Regional
+  #### Def
+  Término paraguas para proyectos, programas y otras iniciativas financiadas por el GORE.
+-
+  #### ID
+  GORE-GLOS-DPR
+  #### Sigla
+  DPR
+  #### Nombre
+  Delegado Presidencial Regional
+  #### Def
+  Representante del Presidente de la República que ejerce el gobierno interior de la región y coordina servicios públicos nacionales.
+-
+  #### ID
+  GORE-GLOS-SEREMI
+  #### Sigla
+  SEREMI
+  #### Nombre
+  Secretaría Regional Ministerial
+  #### Def
+  Representante regional de un ministerio, responsable de implementar políticas sectoriales en la región.
+-
+  #### ID
+  GORE-GLOS-DIPIR
+  #### Sigla
+  DIPIR
+  #### Nombre
+  División de Presupuesto e Inversión Regional
+  #### Def
+  División del GORE encargada de elaborar, ejecutar y controlar el presupuesto de inversión regional.
+-
+  #### ID
+  GORE-GLOS-DIPLADE
+  #### Sigla
+  DIPLADE
+  #### Nombre
+  División de Planificación y Desarrollo Regional
+  #### Def
+  División responsable de formular instrumentos de planificación y coordinar la estrategia de desarrollo regional.
+-
+  #### ID
+  GORE-GLOS-DAF
+  #### Sigla
+  DAF
+  #### Nombre
+  División de Administración y Finanzas
+  #### Def
+  División encargada de la gestión administrativa interna, finanzas, recursos humanos y abastecimiento del GORE.
+-
+  #### ID
+  GORE-GLOS-DIDESOH
+  #### Sigla
+  DIDESOH
+  #### Nombre
+  División de Desarrollo Social y Humano
+  #### Def
+  División encargada de programas e iniciativas orientadas a cohesión social, inclusión y acceso a servicios.
+-
+  #### ID
+  GORE-GLOS-UCI
+  #### Sigla
+  UCI
+  #### Nombre
+  Unidad de Control Interno
+  #### Def
+  Unidad asesora del GORE que impulsa gestión de riesgos, control interno y mejora de procesos, y actúa como contraparte técnica de la Contraloría.
+-
+  #### ID
+  GORE-GLOS-COSOC
+  #### Sigla
+  COSOC
+  #### Nombre
+  Consejo de la Sociedad Civil Regional
+  #### Def
+  Órgano consultivo de participación ciudadana del GORE, regulado por la Ley N°20.500 y la Ley N°21.074.
+-
+  #### ID
+  GORE-GLOS-CCTID
+  #### Sigla
+  CCTID
+  #### Nombre
+  Comité Regional de Ciencia, Tecnología e Innovación para el Desarrollo
+  #### Def
+  Órgano asesor del GORE en materias de ciencia, tecnología e innovación para el desarrollo regional.
+-
+  #### ID
+  GORE-GLOS-SIGFE
+  #### Sigla
+  SIGFE
+  #### Nombre
+  Sistema de Información para la Gestión Financiera del Estado
+  #### Def
+  Sistema contable-financiero oficial donde se registran los movimientos presupuestarios del GORE.
+-
+  #### ID
+  GORE-GLOS-RF
+  #### Sigla
+  RF
+  #### Nombre
+  Recomendación Favorable
+  #### Def
+  Resultado favorable de evaluación de programas en Glosa 06 u otros mecanismos de programas públicos.
+-
+  #### ID
+  GORE-GLOS-MML
+  #### Sigla
+  MML
+  #### Nombre
+  Metodología Marco Lógico
+  #### Def
+  Herramienta de planificación y gestión de proyectos y programas orientada a resultados.
+-
+  #### ID
+  GORE-GLOS-PMO
+  #### Sigla
+  PMO
+  #### Nombre
+  Oficina de Gestión de Proyectos
+  #### Def
+  Unidad responsable de estandarizar y profesionalizar la gestión de cartera de proyectos y programas del GORE.
+-
+  #### ID
+  GORE-GLOS-SINAPRED
+  #### Sigla
+  SINAPRED
+  #### Nombre
+  Sistema Nacional de Prevención y Respuesta ante Desastres
+  #### Def
+  Sistema que organiza la gestión del riesgo de desastres en Chile, asignando roles específicos a los gobiernos regionales.
+
+## Parte I Fundamentos Gestion Publica Regional
+### ID
+GORE-FUNDAMENTOS-01
+### Titulo
+Parte I: Fundamentos de la Gestión Pública Regional en Chile
+### Purp
+Establecer fundamentos conceptuales y contextuales de la gestión pública regional y del rol de los GORE en Chile.
+### Ref
+- GORE-GLOS-GORE
+- GORE-GLOS-CORE
+### Desafio Gestion Publica Regional
+#### ID
+GORE-FUNDAMENTOS-DESAFIO-01
+#### Purp
+Caracterizar los desafíos y singularidades de la gestión pública en los Gobiernos Regionales chilenos.
+#### Ctx
+Nivel de análisis: GORE, en el marco de Estado unitario y descentralización en curso.
+#### Singularidad Gestion GORE
+#### ID
+GORE-FUNDAMENTOS-GESTION-SINGULARIDAD-01
+#### Conceptos
+-
+  #### Cpt
+  Principio-Actuacion-Directivo-Publico
+  #### Ctx
+  Comparación Gerente Privado vs Directivo Público Regional.
+  #### Nat
+  - Gerente privado puede hacer todo lo que la ley no prohíbe.
+  - Directivo público solo puede hacer lo que la ley permite expresamente.
+  #### Fnd
+  Característica central del Estado de Derecho.
+  #### Purp
+  Limitar la arbitrariedad y asegurar ejercicio del poder público dentro de cauces normativos.
+-
+  #### Cpt
+  Marco-Juridico-GORE
+  #### ID
+  GORE-MARCO-JURIDICO-01
+  #### Def
+  Conjunto de normativas que rigen creación, organización y funcionamiento de los GORE.
+  #### Componentes
   - Constitución Política de la República.
-  - **Ley 19.175:** Orgánica Constitucional sobre Gobierno y Administración Regional.
-  - **Ley 21.074:** Fortalecimiento de la Regionalización (modificaciones sustantivas).
-- **Autonomía Regional:** Personalidad jurídica de derecho público; patrimonio propio; autonomía administrativa en competencias.
-- **Ecosistema de Stakeholders:** CORE, DPR, SEREMIs, Municipios, Sociedad Civil (COSOC), Sector Privado, Órganos de Control (CGR).
-- **Rol del Directivo:** Alta capacidad de articulación y liderazgo político-técnico en Estado unitario.
-
-### Propósito y Valor Público Regional
-
-- **Misión (Ley 19.175):** Impulsar desarrollo social, cultural y económico de la región.
-- **Valor Público:** Mejora concreta y sostenible de calidad de vida territorial.
-- **Instrumentos de Valor:** Estrategia Regional de Desarrollo (ERD) y Plan Regional de Ordenamiento Territorial (PROT).
-- **Acciones Clave:**
-  - Responder a necesidades poblacionales prioritarias.
-  - Diseño de políticas eficaces (FNDR, FRPD, FRIL).
-  - Participación ciudadana en toma de decisiones.
-  - Abordaje de fallas de valor público no cubiertas por mercado o nivel central.
-
-### Motor de Valor: Cinco Procesos Esenciales
-
-| Proceso | Descripción |
-| :--- | :--- |
-| **Creación de Valor** | Descubrimiento de necesidades y diseño de soluciones (políticas/proyectos). |
-| **Comunicación y Legitimidad** | Construcción de apoyo y difusión del valor creado. |
-| **Adopción Ciudadana** | Conversión del interés en acción concreta de socios y ciudadanía. |
-| **Provisión y Entrega** | Ejecución eficaz y eficiente de lo prometido. |
-| **Sostenibilidad Financiera** | Gestión de recursos para continuidad operacional e inversión. |
-
-### Lecciones y Aprendizajes de Gestión
-
-- **Desafío de Implementación:** Resultados dependen de capacidad de gestión y procesos, no solo de formulación.
-- **Foco Técnico:** Gestión orientada a resultados; evitar clientelismo o capturas institucionales.
-- **Capacidades Institucionales:** Inversión en equipos humanos, modernización de sistemas y adopción de mejores prácticas.
-- **Transparencia:** Rendición de cuentas activa y comunicación de impacto real.
-
-## Entorno y Marco de Actuación del GORE
-
-### GORE en el Estado Unitario y Descentralización
-
-- **Estado de Chile:** Unitario; administración funcional y territorialmente descentralizada.
-- **Impactos Ley 21.074:**
+  - Ley 19.175: Ley Orgánica Constitucional sobre Gobierno y Administración Regional (DFL N°1-19.175/2005).
+  - Ley 21.074: Fortalecimiento de la Regionalización, que modifica sustantivamente la Ley 19.175.
+-
+  #### Cpt
+  Autonomia-GORE
+  #### ID
+  GORE-AUTONOMIA-01
+  #### Src
+  Normativa del marco jurídico GORE.
+  #### Nat
+  - Personas jurídicas de derecho público.
+  - Patrimonio propio.
+  - Autonomía para administrar asuntos de su competencia.
+  #### Cond
+  La autonomía se ejerce en un Estado unitario, requiriendo coordinación con políticas y directrices nacionales.
+-
+  #### Cpt
+  Ecosistema-Stakeholders-GORE
+  #### ID
+  GORE-STAKEHOLDERS-01
+  #### Nat
+  Complejidad de actores y relaciones.
+  #### Stakeholders
+  - Consejo Regional (CORE).
+  - Delegado Presidencial Regional (DPR).
+  - SEREMIs y servicios públicos desconcentrados.
+  - Municipios de la región.
+  - Organizaciones de la sociedad civil.
+  - Sector privado regional.
+  - Órganos de control (CGR, otros).
+  #### Req
+  El directivo GORE requiere alta capacidad de articulación y liderazgo político-técnico.
+### Proposito y Valor Publico Regional
+#### ID
+GORE-FUNDAMENTOS-VALOR-PUBLICO-01
+#### Purp
+Definir el propósito fundamental del GORE y su rol en la creación de valor público regional.
+#### Proposito Fundamental GORE
+#### ID
+GORE-PROPOSITO-FUNDAMENTAL-01
+#### Src
+Ley 19.175.
+#### Def
+Impulsar el desarrollo social, cultural y económico de la región.
+#### Res
+Creación de valor público para sus habitantes.
+#### Definicion Valor Publico Regional
+#### ID
+GORE-VALOR-PUBLICO-REGIONAL-01
+#### Ctx
+Aplicado a la acción del GORE.
+#### Res
+Mejora concreta y sostenible de la calidad de vida en el territorio regional.
+#### Ref
+- GORE-GLOS-VALOR-PUBLICO
+- GORE-GLOS-ERD
+- GORE-GLOS-PROT
+#### Instrumentos Clave
+| Cpt | ID |
+| --- | --- |
+| Estrategia Regional de Desarrollo (ERD). | GORE-INSTRUMENTO-ERD-01 |
+| Plan Regional de Ordenamiento Territorial (PROT). | GORE-INSTRUMENTO-PROT-01 |
+#### Actuaciones Creacion Valor
+#### ID
+GORE-ACTUACIONES-VALOR-01
+#### Ref
+- GORE-FUNDAMENTOS-MOTOR-VALOR-01
+#### Act
+- Identificar y responder a necesidades y prioridades de la población regional.
+- Diseñar e implementar políticas, planes, programas y proyectos de inversión pertinentes, eficaces y eficientes (ej. FNDR, FRPD, FRIL).
+- Fomentar participación ciudadana en la toma de decisiones.
+- Abordar fallas de valor público que el mercado y otros niveles del Estado no cubren.
+#### Motor Valor Cinco Procesos
+#### ID
+GORE-FUNDAMENTOS-MOTOR-VALOR-01
+#### Purp
+Adaptar la lógica de modelo de negocio para identificar cinco procesos esenciales del GORE.
+#### Cpt
+Falla en uno de los procesos compromete el sistema completo.
+#### Procesos
+| Cpt | Def |
+| --- | --- |
+| Creacion-Valor-Publico | Descubrir necesidades y diseñar soluciones (políticas, programas, proyectos). |
+| Comunicacion-Estrategica-y-Legitimidad | Comunicar valor creado y construir apoyo y legitimidad. |
+| Adopcion-y-Participacion-Ciudadana | Convertir el interés en acción concreta de ciudadanía y socios. |
+| Provision-y-Entrega-de-Valor | Ejecutar eficaz y eficientemente lo prometido. |
+| Sostenibilidad-Financiera-y-Presupuestaria | Gestionar recursos para mantener continuidad operacional y de inversión. |
+### Aprendizajes Gestion Publica Latinoamericana
+#### ID
+GORE-FUNDAMENTOS-APRENDIZAJES-LATAM-01
+#### Purp
+Extraer aprendizajes de la experiencia latinoamericana en gestión pública e implementación.
+#### Conceptos
+-
+  #### Cpt
+  Desafio-Implementacion
+  #### Def
+  No basta formular buenas estrategias; sin capacidad de gestión, procesos adecuados y voluntad política, los resultados no se materializan.
+-
+  #### Cpt
+  Foco-en-Gestion-sobre-Politica-Contingente
+  #### Req
+  La gestión técnica orientada a resultados no debe supeditarse a clientelismo, cálculos electorales de corto plazo ni capturas institucionales.
+-
+  #### Cpt
+  Construccion-Capacidades-Institucionales
+  #### Act
+  - Invertir en desarrollo de equipos humanos.
+  - Modernizar sistemas de gestión.
+  - Adoptar buenas prácticas de gestión.
+-
+  #### Cpt
+  Rendicion-Cuentas-y-Transparencia
+  #### Act
+  Fortalecer transparencia (activa y pasiva) y comunicar impacto de la gestión del GORE.
+### GORE y Entorno
+#### ID
+GORE-ENTORNO-MARCO-ACTUACION-01
+#### Purp
+Comprender la posición del GORE en el Estado unitario descentralizado, tensiones intergubernamentales y herramientas de intervención.
+#### Ref
+- GORE-GLOS-GORE
+- GORE-GLOS-CORE
+#### GORE en Estado Unitario
+#### ID
+GORE-ENTORNO-ESTADO-UNITARIO-01
+#### Ctx
+Marco constitucional y legal que define posición del GORE.
+#### Conceptos
+-
+  #### Cpt
+  Estado-Chile
+  #### Nat
+  - Estado unitario.
+  #### Principios
+  - Administración del Estado funcional y territorialmente descentralizada o desconcentrada.
+-
+  #### Cpt
+  GORE-en-Estado
+  #### Def
+  Principal expresión de administración descentralizada a nivel regional.
+  #### Regulacion
+  - Ley 19.175 (LOC GORE).
+  - Ley 21.074 (Fortalecimiento de la Regionalización).
+  #### Cambios Clave Ley 21074
   - Elección directa de Gobernadores Regionales.
-  - Rediseño de estructura interna.
-  - Mecanismo formal de transferencia de competencias.
-- **Tensiones Intergubernamentales:**
-  - **Vertical:** GORE vs. Gobierno Central (recursos, autonomía).
-  - **Horizontal:** GORE vs. Municipios u otras regiones (competencia por influencia).
-- **Estrategia ante Tensiones:** Construcción de coaliciones para superar vulnerabilidad.
+  - Rediseño de estructura interna del GORE.
+  - Ampliación de competencias y mecanismo formal de transferencia.
+#### Tensiones Politicas Intergubernamentales
+#### ID
+GORE-ENTORNO-TENSIONES-01
+#### Purp
+- Entender el conflicto intergubernamental como rasgo inherente de sistemas descentralizados.
+- Identificar impulsores y tipos de fricción para diseñar estrategias del GORE.
+#### Impulsores
+- Descentralización: devolución de poder a niveles subnacionales con electorados propios.
+- Democratización: doble legitimidad democrática entre autoridades nacionales y subnacionales.
+- Liberalización: reformas de mercado con ganadores y perdedores territoriales.
+#### Tipos Friccion
+- Vertical: GORE vs Gobierno Central (recursos, competencias, autonomía).
+- Horizontal: GORE vs Municipios u otras regiones (competencia por recursos e influencia).
+#### Estrategia GORE
+#### Act
+- Construir coaliciones horizontales y verticales para superar vulnerabilidad e aislamiento.
+#### Principios Descentralizacion Fiscal
+#### ID
+GORE-ENTORNO-PRINCIPIOS-FISCALES-01
+#### Purp
+Sintetizar principios económicos de diseño fiscal para GORE.
+#### Asignacion Gasto
+#### ID
+GORE-PRINCIPIOS-GASTO-01
+#### Fnd
+Finance must follow function.
+#### Principios
+- Correspondencia: jurisdicción coincide con área beneficiaria del servicio.
+- Subsidiariedad: responsabilidad al nivel más bajo compatible con área de beneficio.
+- Rendición de cuentas: mayor eficiencia cuando gasto se financia con recursos de sus propios votantes.
+#### Asignacion Ingresos
+#### ID
+GORE-PRINCIPIOS-INGRESO-01
+#### Principios
+- Impuestos sobre bases móviles deben ser centrales para evitar competencia fiscal dañina.
+- Impuestos sobre bases inmóviles son adecuados para SNG.
+- Impuestos redistributivos deben ser nacionales.
+- Impuestos subnacionales deben ser visibles a votantes.
+#### Transferencias Intergubernamentales
+#### ID
+GORE-PRINCIPIOS-TRANSFERENCIAS-01
+#### Obj
+- Cerrar desequilibrios fiscales verticales.
+- Corregir desequilibrios fiscales horizontales (ecualización).
+- Compensar externalidades.
+- Asegurar estándares mínimos en bienes preferentes.
+- Alinear prioridades subnacionales con objetivos nacionales.
+#### Formas Intervencion GORE
+#### ID
+GORE-ENTORNO-INTERVENCION-01
+#### Purp
+Detallar herramientas de intervención: sermones, zanahorias y garrotes.
+#### Sermones
+#### Cpt
+Informacion-Planificacion-Coordinacion
+#### Act
+- Planificación estratégica (ERD, PROT, otros planes regionales).
+- Coordinación interinstitucional.
+- Promoción y difusión (identidad regional, turismo, oportunidades).
+#### Zanahorias
+#### Cpt
+Inversion-Fomento-Programas
+#### Act
+- Inversión pública con FNDR y otros fondos.
+- Fomento productivo vía FRPD.
+- Programas sociales y de desarrollo, subvenciones 8% FNDR.
+- Apoyo a municipios mediante transferencias y asistencia técnica.
+#### Garrotes
+#### Cpt
+Potestad-Normativa-y-Fiscalizacion
+#### Nat
+Poder coercitivo directo limitado, pero con herramientas normativas y regulatorias.
+#### Act
+- Ordenanzas y reglamentos regionales dentro de competencias.
+- Fiscalización del CORE.
+- Rol en ordenamiento territorial (PRI, incidencia en PRC).
+#### Ciclo Politicas Publicas en GORE
+#### ID
+GORE-ENTORNO-CICLO-POLITICAS-01
+#### Purp
+Describir ciclo completo desde definición estratégica hasta evaluación y retroalimentación.
+#### Fases
+- Fase 1: Definición de la política pública regional (ERD, PROT, participación).
+- Fase 2: Gestión y asignación de recursos (DIPLADE, DIPIR, DAF; presupuesto regional y fondos).
+- Fase 3: Implementación (ejecución directa del GORE y vía convenios).
+- Fase 4: Resultados (outputs y outcomes, comunicación centrada en impacto).
+- Fase 5: Evaluación (control interno, control externo, evaluación de inversiones y programas).
+- Fase 6: Retroalimentación (actualización ERD, planes, reasignación de recursos).
+#### GORE y Problemas Wicked
+#### ID
+GORE-ENTORNO-WICKED-PROBLEMS-01
+#### Cpt
+Problemas complejos, interdependientes y sin soluciones únicas (pobreza multidimensional, seguridad, cambio climático, equidad territorial).
+#### Req
+Adoptar pensamiento sistémico, colaboración y co-creación de soluciones; la suma de acciones aisladas no basta.
+#### GORE en Red
+#### ID
+GORE-ENTORNO-RED-01
+#### Cpt
+Transición de modelo burocrático tradicional a 'Estado en red' ciudadano-céntrico, colaborativo e interoperable.
+#### Ejes
+- Gestion ciudadano-céntrica (diseño de servicios desde el usuario).
+- Colaboración interinstitucional (nivel central, municipios, sociedad civil y sector privado).
+- Interoperabilidad y transformación digital (Ley 21.180, plataformas SIGFE, BIP, ChileIndica).
+### Directivo Publico Regional y Liderazgo
+#### ID
+GORE-DIRECTIVO-01
+#### Purp
+Analizar rol, desafíos y competencias del directivo público regional en el GORE.
+#### Perfiles Clave Direccion GORE
+#### ID
+GORE-DIRECTIVO-PERFILES-01
+#### Perfiles
+-
+  #### Cpt
+  Gobernador/a Regional
+  #### ID
+  GORE-ROL-GOBERNADOR-01
+  #### Nat
+  Máxima autoridad ejecutiva regional, elegida democráticamente.
+  #### Resp
+  - Liderar formulación ERD.
+  - Proponer presupuesto regional.
+  - Coordinar acción integral del GORE.
+-
+  #### Cpt
+  Administrador/a Regional
+  #### ID
+  GORE-ROL-ADMINISTRADOR-01
+  #### Nat
+  Funcionario de exclusiva confianza del Gobernador/a.
+  #### Resp
+  - Gestión administrativa y coordinación de divisiones.
+  - Subrogante legal del Gobernador/a.
+-
+  #### Cpt
+  Jefes/as de División
+  #### ID
+  GORE-ROL-JEFE-DIVISION-01
+  #### Resp
+  Liderar divisiones especializadas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESOH, Prevención Delito).
+#### Desafio Comun
+Equilibrar demandas técnicas y políticas, presiones externas y recursos limitados, visión de largo plazo y urgencias.
+#### Triangulo Estrategico Moore
+#### ID
+GORE-DIRECTIVO-TRIANGULO-MOORE-01
+#### Purp
+Aplicar el triángulo de Moore a la gestión regional.
+#### Dimensiones
+| ID | Cpt | Ctx |
+| --- | --- | --- |
+| GORE-TRIANGULO-VALOR-PUBLICO-01 | Creación de valor público regional | Qué valor significativo se genera para habitantes; cómo contribuyen acciones al desarrollo. |
+| GORE-TRIANGULO-VIABILIDAD-POLITICA-01 | Viabilidad política y legal | Apoyo político, legitimidad y respaldo normativo; coordinación con CORE, nivel central y municipios. |
+| GORE-TRIANGULO-CAPACIDAD-OPERATIVA-01 | Capacidad operativa y administrativa | Estructura, procesos, recursos y sistemas para implementar eficazmente. |
+#### Res
+El directivo GORE exitoso alinea simultáneamente las tres dimensiones.
+#### BATNA en Negociacion Regional
+#### ID
+GORE-TRIANGULO-BATNA-01
+#### Purp
+Usar la Mejor Alternativa a un Acuerdo (BATNA) como herramienta de poder en negociaciones con nivel central y otros actores.
+#### Competencias Clave Directivos GORE
+#### ID
+GORE-DIRECTIVO-COMPETENCIAS-01
+#### Competencias
+- Visión estratégica territorial.
+- Gestión de proyectos y programas regionales.
+- Liderazgo externo y articulación de redes.
+- Manejo de crisis regionales.
+- Liderazgo interno y gestión de personas.
+- Innovación y flexibilidad.
+- Conocimientos normativos y experiencia en gestión pública regional.
+#### Intraemprendimiento Publico
+#### ID
+GORE-DIRECTIVO-INTRAEMPRENDIMIENTO-01
+#### Cpt
+Intraemprendedor del Estado como agente de cambio que impulsa ideas, desafía statu quo y moderniza la gestión.
+#### Purp
+- Modernizar procesos y tecnologías.
+- Responder a nuevos desafíos (cambio climático, reconversión productiva).
+- Aprovechar nuevas competencias transferidas.
+- Fomentar cultura de mejora continua.
 
-### Principios de Descentralización Fiscal
+## Parte II Modernizacion y Herramientas Gestion GORE
+### ID
+GORE-MODERNIZACION-01
+### Titulo
+Parte II: Modernización y Herramientas para la Gestión Estratégica y Operativa del GORE
+### Purp
+Traducir fundamentos y diagnósticos en una hoja de ruta de modernización, fortalecimiento institucional y mejora continua.
+### Hoja Ruta Modernizacion
+#### ID
+GORE-MODERNIZACION-HOJA-RUTA-01
+#### Purp
+Adaptar un 'mapa rutero' de transformación institucional al contexto GORE.
+#### Etapas
+#### Preparacion Previa
+#### ID
+GORE-HOJA-RUTA-ETAPA-A-01
+#### Purp
+Cimentar liderazgo, diagnóstico y diseño estratégico antes de cambios profundos.
+#### Componentes
+- Liderazgo y equipo directivo consolidado.
+- Diagnóstico institucional y territorial profundo.
+- (Re)definición ERD y PROT sobre base del diagnóstico.
+- Diseño de arquitectura organizacional y tecnológica.
+#### Carretera Operacional
+#### ID
+GORE-HOJA-RUTA-ETAPA-B-01
+#### Purp
+Asegurar capacidades operacionales básicas (UCI, DAF, DIPIR, DIPLADE, jurídica, innovación, PMO).
+#### Ruta Excelencia
+#### ID
+GORE-HOJA-RUTA-ETAPA-C-01
+#### Purp
+Implementar cambios estratégicos: proyectos, programas, nuevas competencias, transformación digital, gestión de personas, participación.
+#### Liderazgo y Gestion Cambio
+#### ID
+GORE-HOJA-RUTA-ETAPA-D-01
+#### Purp
+Acompañar la modernización técnica con un proyecto robusto de gestión del cambio.
+### Diagnostico Institucional
+#### ID
+GORE-MODERNIZACION-DIAGNOSTICO-01
+#### Purp
+Realizar diagnóstico profundo del GORE y su entorno como base de la modernización.
+#### Metodologia
+#### ID
+GORE-DIAGNOSTICO-METODOLOGIA-01
+#### Proc
+- Definir propósito y alcance del diagnóstico.
+- Organizar trabajo y levantar información secundaria (marco legal, documentos estratégicos, informes, datos de desempeño, información pública).
+- Construir modelo de agregación de valor público (canvas público).
+- Levantamiento de percepciones (entrevistas y encuestas a actores internos y externos).
+- Análisis integrado con herramientas como Ishikawa y árboles de problemas.
+- Discusión, validación y priorización de hallazgos.
+#### Pauta Priorizacion
+#### ID
+GORE-DIAGNOSTICO-PRIORIZACION-01
+#### Purp
+Evaluar problemas/iniciativas con criterios cuantificados (urgencia, tamaño, costo-beneficio, etc.).
+### Modelo Agregacion Valor Publico
+#### ID
+GORE-DIAGNOSTICO-MODELO-VALOR-01
+#### Purp
+Mapear cómo el GORE crea, entrega y captura valor público en la práctica actual.
+#### Componentes
+- Propuesta de valor público.
+- Segmentos de ciudadanos/usuarios/clientes.
+- Relaciones con usuarios y canales de entrega.
+- Actividades clave (planificación, inversión, programas, coordinación, fomento).
+- Recursos clave (capital humano, financiero, sistemas, legitimidad, redes).
+- Alianzas clave (nivel central, municipios, CORE, CGR, universidades, sector privado, OSC).
+- Estructura de costos y fuentes de financiamiento (FNDR, FRIL, FRPD, ISAR, ingresos propios, fondos especiales).
+### Gestion Estrategica GORE
+#### ID
+GORE-MODERNIZACION-ESTRATEGIA-01
+#### Purp
+Orientar la toma de decisiones y asignación de recursos para crear valor público.
+#### Ref
+- GORE-VALOR-PUBLICO-REGIONAL-01
+- GORE-INSTRUMENTO-ERD-01
+- GORE-INSTRUMENTO-PROT-01
+#### ERD como Instrumento Rector
+#### ID
+GORE-ESTRATEGIA-ERD-01
+#### Purp
+Definir visión compartida, ejes, objetivos y líneas de acción de largo plazo.
+#### Req
+- Liderazgo del Gobernador/a y DIPLADE.
+- Participación ciudadana y de actores clave.
+- Fundamento en diagnóstico riguroso.
+- Aprobación por CORE y actualización periódica.
+#### Definiciones Estrategicas Clave
+#### ID
+GORE-ESTRATEGIA-DEFINICIONES-01
+#### Cpt
+- Segmentación y priorización de ciudadanos y usuarios regionales.
+- Cartera de servicios y productos GORE alineada con ERD.
+- Canales de entrega y participación, con énfasis en transformación digital.
+- Propuesta de valor público regional clara y coherente.
+- Recursos y procesos críticos para cumplir la propuesta de valor.
+#### Formulacion y Alineamiento
+#### ID
+GORE-ESTRATEGIA-FORMULACION-01
+#### Proc
+- Formulación estratégica con participación y evidencia.
+- Alineamiento multinivel con políticas nacionales y planes comunales.
+- Implementación y seguimiento mediante POA, presupuesto y sistemas de monitoreo.
+### Arquitectura Organizacional GORE
+#### ID
+GORE-MODERNIZACION-ARQUITECTURA-01
+#### Purp
+Diseñar o ajustar arquitectura organizacional para implementar la estrategia.
+#### Estructura Formal
+#### ID
+GORE-ARQUITECTURA-ESTRUCTURA-FORMAL-01
+#### Src
+Ley 19.175 y Ley 21.074.
+#### Ref
+- GORE-GLOS-DAF
+- GORE-GLOS-DIPLADE
+- GORE-GLOS-DIPIR
+- GORE-GLOS-DIDESOH
+- GORE-GLOS-UCI
+#### Componentes
+- Autoridades electas: Gobernador/a Regional, CORE.
+- Gestión administrativa: Administrador/a Regional, UCI, divisiones mínimas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESOH, Prevención Delito).
+- Departamento Área Metropolitana si aplica.
+#### Warn
+Evitar insularidad y silos divisionales.
+#### Coordinacion Interna y Externa
+#### ID
+GORE-ARQUITECTURA-COORDINACION-01
+#### Cpt
+- Coordinación interdivisional (equipos directivos, comités, sistemas compartidos, RACI).
+- Coordinación con órganos auxiliares (COSOC, comités de alcaldes, CCTID, corporaciones regionales).
+- Mecanismos de coordinación externa con DPR, SEREMIs, municipios, nivel central, asociatividad territorial.
+#### Ref
+- GORE-GLOS-COSOC
+- GORE-GLOS-CCTID
+- GORE-GLOS-DPR
+- GORE-GLOS-SEREMI
+#### RACI Procesos Claves
+#### ID
+GORE-ARQUITECTURA-RACI-01
+#### Purp
+Clarificar responsabilidades en procesos transversales mediante matriz RACI.
+### Sistemas Control Gestion y Desempeno
+#### ID
+GORE-MODERNIZACION-CONTROL-GESTION-01
+#### Purp
+Implementar un Sistema de Control de Gestión (SCG) que conecte estrategia, presupuesto y resultados.
+#### Ref
+- GORE-MODERNIZACION-ESTRATEGIA-01
+- GORE-CONTROL-GESTION-INDICADORES-01
+#### Vinculacion Estrategia Presupuesto
+#### ID
+GORE-CONTROL-GESTION-VINCULACION-01
+#### Cpt
+- ERD como punto de partida.
+- POA que desagregan ERD en metas divisionales.
+- Presupuesto regional alineado con ERD y POA.
+- SCG que cierra ciclo planificación-ejecución-evaluación-retroalimentación.
+#### Indicadores Desempeno
+#### ID
+GORE-CONTROL-GESTION-INDICADORES-01
+#### Purp
+Medir lo sustantivo para la misión del GORE con indicadores SMART.
+#### Tipologia
+- Eficacia.
+- Eficiencia (incluyendo throughput de procesos clave).
+- Calidad (satisfacción y tiempos de respuesta).
+- Impacto (outcomes en empleo, brechas sociales, competitividad, cohesión).
+#### Integracion Sistemas Nacionales
+#### ID
+GORE-CONTROL-GESTION-SISTEMAS-NACIONALES-01
+#### Ref
+- GORE-GLOS-SNI
+- GORE-GLOS-RF
+- GORE-GLOS-SIGFE
+#### Cpt
+- SNI para inversiones de capital (registro BIP, RS).
+- Sistema de evaluación y monitoreo de programas públicos (RF).
+- SIGFE para ejecución presupuestaria.
+- Hacia presupuesto por resultados y convenios de desempeño para directivos y unidades.
+### Gestion Personas en GORE
+#### ID
+GORE-MODERNIZACION-PERSONAS-01
+#### Purp
+Instalar gestión de personas moderna y estratégica como pilar de la modernización.
+#### Desafios GRH
+#### ID
+GORE-PERSONAS-DESAFIOS-01
+#### Cpt
+- Marco normativo complejo.
+- Diversos tipos de contratación (planta, contrata, honorarios).
+- Atracción y retención de talento en regiones.
+- Cultura burocrática y aversión al riesgo.
+#### Procesos Clave GRH
+#### ID
+GORE-PERSONAS-PROCESOS-CLAVE-01
+#### Proc
+- Reclutamiento y selección por mérito.
+- Inducción estructurada para nuevos funcionarios y autoridades.
+- Sistema de calificaciones significativo.
+- Capacitación y desarrollo de competencias (incluyendo oferta Academia SUBDERE).
+- Desarrollo de carrera funcionaria transparente.
+#### Motivacion y Clima
+#### ID
+GORE-PERSONAS-MOTIVACION-01
+#### Purp
+Aumentar motivación intrínseca mediante reconocimiento, desarrollo, buen clima, autonomía y sentido de impacto público.
+### Gestion Riesgos en GORE
+#### ID
+GORE-MODERNIZACION-RIESGOS-01
+#### Purp
+Gestionar riesgos de manera proactiva para minimizar impactos y aprovechar oportunidades.
+#### Ref
+- GORE-GLOS-UCI
+- GORE-GLOS-SINAPRED
+#### Identificacion y Matriz
+#### ID
+GORE-RIESGOS-IDENTIFICACION-01
+#### Cpt
+Mapeo de riesgos políticos, financieros, operacionales, de probidad y reputacionales.
+#### Herramientas
+- Mapa de stakeholders clave y sus intereses/poder.
+- Matriz de riesgos (probabilidad x impacto, controles, tratamientos, responsables, plazos, monitoreo).
+#### Rol UCI
+#### ID
+GORE-RIESGOS-UCI-01
+#### Cpt
+Unidad de Control Interno como asesor metodológico, monitor de controles y promotor de cultura de gestión de riesgos.
+### Transformacion Digital y Datos
+#### ID
+GORE-MODERNIZACION-DIGITAL-01
+#### Purp
+Abordar pilares legislativos y de gestión para modernización tecnológica y protección de datos.
+#### Ley 21180 Transformacion Digital
+#### ID
+GORE-DIGITAL-LEY-21180-01
+#### Ejes
+- Digitalización de procedimientos administrativos ('cero papel').
+- Firma electrónica y gestión documental electrónica.
+- Interoperabilidad y no repetir información al ciudadano.
+- Ciberseguridad y protección de infraestructura y datos.
+#### Ley 21719 Proteccion Datos
+#### ID
+GORE-DIGITAL-LEY-21719-01
+#### Ejes
+- Aplicación de principios de protección de datos.
+- Coordinación con Agencia de Protección de Datos.
+- Designación y rol del Delegado de Protección de Datos.
+- Gestión de bases de datos personales (inventario, EIPD, seguridad desde el diseño).
+### Gestion Procesos Clave
+#### ID
+GORE-MODERNIZACION-PROCESOS-01
+#### Purp
+Optimizar procesos críticos para eficiencia, transparencia y calidad.
+#### Identificacion y Rediseno
+#### ID
+GORE-PROCESOS-IDENTIFICACION-01
+#### Cpt
+Procesos críticos: ciclo proyectos FNDR, FRIL, subvenciones 8%, transferencia y asunción de competencias, atención ciudadana y participación.
+#### Proc
+Mapeo de flujos, métricas, problemas y rediseño (incluyendo automatización y simplificación).
+#### Tecnologia como Habilitador
+#### ID
+GORE-PROCESOS-TECNOLOGIA-01
+#### Warn
+No 'ponerle tecnología' a procesos defectuosos; primero rediseñar, luego automatizar.
+#### Mejora Continua y Escalabilidad
+#### ID
+GORE-PROCESOS-MEJORA-CONTINUA-01
+#### Mech
+- Monitoreo con indicadores y dueños de proceso.
+- Revisiones periódicas y feedback de usuarios.
+- Diseño de procesos escalables y replicables en territorios.
+### Innovacion Publica Regional
+#### ID
+GORE-MODERNIZACION-INNOVACION-01
+#### Purp
+Fomentar búsqueda de soluciones innovadoras para problemas y oportunidades regionales.
+#### Ref
+- GORE-INNOVACION-OMVP-01
+- GORE-INNOVACION-FRPD-01
+- GORE-GLOS-FRPD
+#### Ecosistema Innovacion
+#### ID
+GORE-INNOVACION-ECOSISTEMA-01
+#### Componentes
+- Liderazgo comprometido con experimentación.
+- Identificación estratégica de desafíos.
+- Gestión participativa de ideas (embudo de innovación).
+- Prototipos, pilotos y tolerancia al fracaso.
+- Recursos dedicados a innovación.
+#### OMVP
+#### ID
+GORE-INNOVACION-OMVP-01
+#### Def
+Oferta Mínima Viable Pública: versión más simple y de menor costo de un programa/servicio para validar hipótesis con beneficiarios reales.
+#### FRPD como Instrumento
+#### ID
+GORE-INNOVACION-FRPD-01
+#### Cpt
+FRPD como instrumento clave para fomento productivo, I+D+i y desarrollo regional, alineado con ERD y Política Regional CTCI.
+### Gestion Proyectos y Programas
+#### ID
+GORE-MODERNIZACION-PROYECTOS-01
+#### Purp
+Gestionar eficazmente cartera de proyectos y programas de desarrollo regional.
+#### Gestion por Fondos
+#### ID
+GORE-PROYECTOS-FONDOS-01
+#### Cpt
+- FNDR: fondo principal, ciclo SNI completo.
+- FRIL: infraestructura menor escala municipal, lógica SNI simplificada.
+- FRPD: productividad e innovación, concursos y transferencias.
+- Programas Subt. 24: gasto corriente, Marco Lógico y evaluación Glosa 06.
+#### Ref
+- GORE-GLOS-FNDR
+- GORE-GLOS-FRIL
+- GORE-GLOS-FRPD
+- GORE-GLOS-SNI
+- GORE-GLOS-IPR
+#### Oficina Gestion Proyectos PMO
+#### ID
+GORE-MODERNIZACION-PROYECTOS-PMO-01
+#### Purp
+Centralizar y profesionalizar gestión de cartera de proyectos y programas.
+#### Ref
+- GORE-GLOS-PMO
+- GORE-GLOS-MML
+- GORE-GLOS-SNI
+#### Funciones
+- Gestión de cartera y catastro consolidado.
+- Apoyo metodológico y capacitación (SNI, MML).
+- Monitoreo y alerta temprana.
+- Coordinación, estandarización y gestión del conocimiento.
+#### Convenios Programacion
+#### ID
+GORE-PROYECTOS-CONVENIOS-PROGRAMACION-01
+#### Purp
+Abordar inversiones estratégicas de gran escala y largo plazo entre GORE y ministerios.
+### Gobernanza Colaborativa y Probidad
+#### ID
+GORE-MODERNIZACION-COORDINACION-01
+#### Purp
+Construir gobernanza colaborativa, gestionar expectativas ciudadanas y resguardar probidad y transparencia.
+#### Ref
+- GORE-MODERNIZACION-RIESGOS-01
+- GORE-MODERNIZACION-CONTROL-GESTION-01
+- GORE-MODERNIZACION-PROYECTOS-01
+#### Coordinacion Interinstitucional
+#### ID
+GORE-COORDINACION-ESTRATEGIAS-01
+#### Cpt
+- Coordinación con nivel central (DPR, SEREMIs, ministerios, DIPRES, SUBDERE).
+- Relación estratégica con municipios y asociaciones de municipios.
+- Asociatividad interregional y transfronteriza.
+#### Seguridad Publica Regional y Adopcion
+#### ID
+GORE-COORDINACION-SEGURIDAD-01
+#### Purp
+- Definir rol del GORE en prevención del delito y gestión de emergencias.
+- Guiar la gestión de adopción de programas por parte de comunidad y actores.
+#### Herramientas Adopcion
+#### ID
+GORE-COORDINACION-ADOPCION-01
+#### Purp
+Identificar y superar barreras de adopción de iniciativas públicas.
+#### Gestion Expectativas Ciudadanas
+#### ID
+GORE-ENTREGA-VALOR-EXPECTATIVAS-01
+#### Cpt
+Calidad percibida como diferencia entre rendimiento real y expectativas previas; prometer realista y entregar por sobre lo prometido.
+#### Probidad y Transparencia
+#### ID
+GORE-MODERNIZACION-PROBIDAD-01
+#### Purp
+Asegurar probidad, transparencia y prevención de corrupción en el GORE.
+#### Ref
+- GORE-RIESGOS-IDENTIFICACION-01
+- GORE-RIESGOS-UCI-01
+#### Leyes Claves
+#### ID
+GORE-PROBIDAD-LEYES-01
+#### Cpt
+- Ley 20.880 (Declaración de Intereses y Patrimonio, deberes de abstención).
+- Ley 20.285 (Transparencia activa y pasiva; rol CPLT).
+#### Riesgos y Estrategias Preventivas
+#### ID
+GORE-PROBIDAD-RIESGOS-01
+#### Ctx
+Licitaciones, transferencias, subvenciones, contratación de personal, ordenamiento territorial, convenios.
+#### Act
+- Fortalecer UCI.
+- Transparencia proactiva.
+- Estandarización y digitalización de procesos.
+- Comités de evaluación plurales.
+- Rotación en áreas sensibles.
+- Canales de denuncia seguros.
+- Capacitación en probidad y fomento de control social.
+#### Rol UCI y CGR
+#### ID
+GORE-PROBIDAD-CONTROL-01
+#### Cpt
+UCI como contraparte técnica de CGR, con rol preventivo y fiscalizador; CGR como órgano de control preventivo y posterior, con dictámenes vinculantes.
+### Sintesis y Desafios
+#### ID
+GORE-CONCLUSIONES-SINTESIS-01
+#### Purp
+Resumir principios y herramientas esenciales y explicitar desafíos persistentes y futuros.
+#### Principios Esenciales
+#### ID
+GORE-SINTESIS-PRINCIPIOS-01
+#### Ref
+- GORE-VALOR-PUBLICO-REGIONAL-01
+- GORE-MODERNIZACION-ESTRATEGIA-01
+- GORE-MODERNIZACION-ARQUITECTURA-01
+- GORE-MODERNIZACION-CONTROL-GESTION-01
+- GORE-MODERNIZACION-PROYECTOS-01
+- GORE-MODERNIZACION-PERSONAS-01
+- GORE-MODERNIZACION-RIESGOS-01
+- GORE-MODERNIZACION-DIGITAL-01
+- GORE-MODERNIZACION-PROCESOS-01
+- GORE-MODERNIZACION-INNOVACION-01
+- GORE-MODERNIZACION-PROYECTOS-PMO-01
+- GORE-MODERNIZACION-PROBIDAD-01
+- GORE-MODERNIZACION-COORDINACION-01
+#### Lista
+- Principios que condensan la guía: valor público, estrategia, capacidades, control, innovación y probidad.
+- Sirven como checklist ejecutivo para orientar decisiones del Gobernador y equipo directivo.
+#### Desafios Persistentes
+#### ID
+GORE-SINTESIS-DESAFIOS-01
+#### Ref
+- GORE-ENTORNO-PRINCIPIOS-FISCALES-01
+- GORE-MODERNIZACION-RIESGOS-01
+- GORE-MODERNIZACION-PERSONAS-01
+- GORE-MODERNIZACION-PROYECTOS-01
+- GORE-MODERNIZACION-DIGITAL-01
+- GORE-MODERNIZACION-COORDINACION-01
+#### Lista
+- Desafíos estructurales pendientes en financiamiento, capacidades, coordinación y equidad territorial.
+- Requieren reformas graduales, fortalecimiento institucional y acuerdos políticos de largo plazo.
 
-- **Asignación de Gasto:** "La finanza sigue a la función".
-  - **Correspondencia:** Jurisdicción coincide con área beneficiaria.
-  - **Subsidiariedad:** Responsabilidad al nivel más bajo compatible con el beneficio.
-  - **Rendición:** Eficiencia vinculada a financiamiento por propios votantes.
-- **Asignación de Ingresos:**
-  - Impuestos sobre bases móviles: Centrales.
-  - Impuestos sobre bases inmóviles: Adecuados para niveles subnacionales.
-- **Transferencias:** Objetivos de cierre de brechas verticales/horizontales y alineación de prioridades nacionales.
-
-### Herramientas de Intervención Regional
-
-- **Sermones (Información/Planificación):** ERD, PROT, coordinación interinstitucional, promoción identidad regional.
-- **Zanahorias (Inversión/Fomento):** FNDR, FRPD, programas sociales, subvenciones 8%, apoyo técnico a municipios.
-- **Garrotes (Normativa/Fiscalización):** Ordenanzas, fiscalización del CORE, incidencia en ordenamiento territorial (PRI/PRC).
-
-### Ciclo de Políticas Públicas y Problemas Complejos
-
-- **Ciclo de Gestión:**
-  1. Definición estratégica (ERD/PROT).
-  2. Asignación de recursos (Presupuesto/Fondos).
-  3. Implementación (Ejecución directa/convenios).
-  4. Resultados (Outputs/Outcomes).
-  5. Evaluación (Control interno/externo).
-  6. Retroalimentación (Actualización de planes).
-- **Wicked Problems:** Problemas complejos (pobreza, seguridad, clima) sin solución única; requieren pensamiento sistémico y colaboración.
-- **Estado en Red:** Transición de burocracia tradicional a modelo colaborativo, interoperable y ciudadano-céntrico (Ley 21.180).
-
-## Liderazgo y Directivo Público Regional
-
-### Perfiles de Dirección en el GORE
-
-- **Gobernador/a Regional:** Máxima autoridad electa; lidera ERD y propone presupuesto.
-- **Administrador/a Regional:** Exclusiva confianza; gestión administrativa y coordinación de divisiones.
-- **Jefes/as de División:** Liderazgo de áreas especializadas (DAF, DIPLADE, DIPIR, etc.).
-- **Desafío Central:** Equilibrio técnica-política, visión largo plazo vs. urgencias.
-
-### Triángulo Estratégico (Moore) en Gestión Regional
-
-| Dimensión | Enfoque Regional |
-| :--- | :--- |
-| **Valor Público** | Generación de beneficios significativos para habitantes. |
-| **Viabilidad Política/Legal** | Apoyo de CORE, nivel central, municipios y respaldo normativo. |
-| **Capacidad Operativa** | Estructura, procesos y recursos para implementación eficaz. |
-
-- **BATNA:** Mejor alternativa a un acuerdo; herramienta de poder en negociaciones con nivel central.
-- **Intraemprendimiento:** Agentes de cambio internos para modernizar procesos y responder a nuevos desafíos (clima, competencias).
-
-## Parte II: Modernización y Herramientas de Gestión
-
-### Hoja de Ruta de Modernización Institucional
-
-- **Etapa A (Preparación):** Liderazgo consolidado, diagnóstico profundo, definición ERD/PROT, diseño arquitectura organizacional.
-- **Etapa B (Carretera Operacional):** Aseguramiento de capacidades básicas (UCI, DAF, DIPIR, Jurídica, PMO).
-- **Etapa C (Ruta Excelencia):** Implementación de cambios estratégicos, transformación digital, gestión de personas.
-- **Etapa D (Gestión del Cambio):** Acompañamiento robusto a la modernización técnica.
-
-### Diagnóstico Institucional y Modelo de Valor
-
-- **Metodología:** Propósito -> Levantamiento información -> Canvas público -> Análisis causas (Ishikawa) -> Priorización hallazgos.
-- **Pauta de Priorización:** Evaluación por urgencia, tamaño del problema y costo-beneficio.
-- **Componentes del Modelo de Valor:**
-  - Propuesta de valor público.
-  - Segmentos de ciudadanos/usuarios.
-  - Actividades clave: Planificación, inversión, fomento.
-  - Recursos críticos: Capital humano, financiero, legitimidad.
-  - Alianzas: Municipios, CORE, CGR, Universidades.
-
-### Arquitectura Organizacional y Coordinación
-
-- **Estructura Formal (Ley 19.175/21.074):** Gobernador, CORE, Administrador, UCI, Divisiones mínimas (DAF, DIPLADE, DIPIR, Fomento, Infraestructura, DIDESO, Prevención Delito).
-- **Coordinación Interna:** Equipos directivos, sistemas compartidos, matriz RACI para procesos transversales.
-- **Coordinación Externa:** Órganos auxiliares (COSOC, CCTID), DPR, SEREMIs, asociatividad territorial.
-- **Riesgo:** Evitar silos divisionales e insularidad.
-
-## Sistemas de Control, Desempeño y Riesgos
-
-### Control de Gestión y Presupuesto
-
-- **Alineamiento:** ERD -> POA (Metas divisionales) -> Presupuesto regional -> Sistema de Control de Gestión (SCG).
-- **Indicadores SMART:**
-  - **Eficacia:** Cumplimiento de objetivos.
-  - **Eficiencia:** Throughput de procesos.
-  - **Calidad:** Satisfacción y tiempos de respuesta.
-  - **Impacto:** Outcomes sociales y económicos.
-- **Integración Nacional:** BIP/RS (Inversiones), SIGFE (Finanzas), RF (Programas).
-
-### Gestión de Riesgos y Personas
-
-- **Gestión de Personas:**
-  - Reclutamiento por mérito.
-  - Inducción estructurada.
-  - Capacitación (Academia SUBDERE).
-  - Motivación intrínseca: Sentido de impacto público.
-- **Gestión de Riesgos:**
-  - Matriz de riesgos: Probabilidad x Impacto.
-  - Tipos: Políticos, financieros, operacionales, probidad.
-  - **Rol UCI:** Monitor de controles y promotor de cultura de riesgo.
-
-### Transformación Digital (Leyes 21.180 y 21.719)
-
-- **Ley 21.180 (Transformación Digital):**
-  - Cero papel y firma electrónica.
-  - Interoperabilidad obligatoria.
-  - Ciberseguridad de infraestructura.
-- **Ley 21.719 (Protección de Datos):**
-  - Designación de Delegado de Protección de Datos.
-  - Seguridad desde el diseño.
-  - Inventario de bases de datos personales.
-
-## Innovación y Gestión de Proyectos Regionales
-
-### Gestión por Fondos y PMO
-
-- **Tipología de Fondos:**
-  - **FNDR:** Ciclo SNI completo; inversión de capital.
-  - **FRIL:** Infraestructura municipal; SNI simplificado.
-  - **FRPD:** Productividad; concursos y transferencias.
-  - **Subtítulo 24 (Programas):** Gasto corriente; Marco Lógico; Glosa 06.
-- **Funciones PMO (Oficina de Proyectos):**
-  - Catastro consolidado de cartera.
-  - Apoyo metodológico (SNI, MML).
-  - Alerta temprana y monitoreo.
-- **Convenios de Programación:** Inversiones estratégicas de gran escala con ministerios.
-
-### Innovación Pública Regional
-
-- **Ecosistema:** Liderazgo para experimentación, identificación de desafíos y tolerancia al fracaso.
-- **OMVP (Oferta Mínima Viable Pública):** Versión simple para validar hipótesis con beneficiarios.
-- **FRPD:** Instrumento clave para I+D+i alineado con Estrategia Regional CTCI.
-
-## Gobernanza, Probidad y Transparencia
-
-- **Probidad (Ley 20.880):** Declaración de intereses, patrimonio y deberes de abstención.
-- **Transparencia (Ley 20.285):** Transparencia activa/pasiva; rol fiscalizador del CPLT.
-- **Riesgos de Corrupción:** Licitaciones, transferencias directas, ordenamiento territorial.
-- **Estrategias Preventivas:**
-  - Comités de evaluación plurales.
-  - Canales de denuncia seguros.
-  - Digitalización de procesos para trazabilidad.
-  - Rol preventivo de UCI y dictámenes de CGR.
-- **Gestión de Expectativas:** Calidad percibida = Rendimiento real - Expectativas. Prometer realista, entregar con excelencia.
-
-## Modelos Mentales para la Gestión Regional
-
-### Modelos Financiero-Estratégicos
-
-- **Sostenibilidad Presupuestaria:** Fin del GORE es el valor público, no ganancias.
-- **VLT (Valor a Largo Plazo del Territorio):** Impacto acumulado en el ciudadano.
-- **Conceptos de Decisión:**
-  - **Costo de Oportunidad:** Qué se deja de hacer al invertir.
-  - **Falacia de Coste Hundido:** Decidir por beneficios futuros, no gastos pasados.
-  - **Apalancamiento:** Cofinanciamiento y convenios para multiplicar recursos.
-  - **Degradación Incremental:** Pérdida de valor público por recortes sucesivos.
-
-### Decisión, Acción y Eficacia Personal
-
-- **Estado Fisiológico:** Rendimiento mental depende del cuidado personal del directivo.
-- **Sesgos Cognitivos:** Aversión a la pérdida, ceguera a la carencia, percepción por contraste.
-- **Eficacia Personal:**
-  - Foco en "Siguiente Acción".
-  - Gestión de energía vs. gestión de tiempo.
-  - TMI (Tareas Más Importantes) diarias.
-
-### Liderazgo y Colaboración
-
-- **Influencia:** Liderazgo basado en reputación más que en coacción.
-- **Dinámicas de Equipo:** Tamaño óptimo; evitar apatía del testigo; "Objetivo del Comandante".
-- **Fundamentos Humanos:** Necesidad de valoración y seguridad; poder del "porque".
-- **Errores de Liderazgo:** Foco en alternativas vs. problemas; efecto Pigmalión.
-
-### Pensamiento Sistémico y Mejora de Sistemas
-
-- **Ley de Gall:** Evolucionar sistemas desde versiones simples; evitar megaproyectos Big Bang.
-- **Teoría de Restricciones:** Identificar cuellos de botella (ej. procesos burocráticos).
-- **Bucles de Feedback:** Efectos de segundo orden de las políticas públicas.
-- **Optimización:**
-  - Regla 80-20 (Minoría Crucial) en cartera de proyectos.
-  - Checklist para reducción de errores operativos.
-  - Resiliencia institucional (Tortuga vs. Tigre): Priorizar robustez ante incertidumbre (Cisnes Negros).
-- **Modelo Adaptativo:** Innovación ágil; centralidad en usuario; Cuádruple Hélice (Gobierno, Academia, Industria, Sociedad).
+## Modelos Mentales y Sistemas para Gestion Regional
+### ID
+GORE-MODELOS-MENTALES-SISTEMAS-01
+### Purp
+Proveer modelos mentales financiero-estratégicos, psicológicos y de pensamiento sistémico para mejorar decisión, acción y resiliencia institucional.
+### Ref
+- GORE-FUNDAMENTOS-MOTOR-VALOR-01
+- GORE-ENTORNO-WICKED-PROBLEMS-01
+- GORE-MODERNIZACION-CONTROL-GESTION-01
+- GORE-MODERNIZACION-PROYECTOS-01
+### Modelos Financiero Estrategicos
+#### ID
+GORE-MODERNIZACION-MODELOS-FINANCIEROS-01
+#### Purp
+Adaptar modelos de finanzas y estrategia privada a la lógica de valor público y sostenibilidad presupuestaria.
+#### Ref
+- GORE-PROYECTOS-FONDOS-01
+- GORE-CONTROL-GESTION-SISTEMAS-NACIONALES-01
+#### Conceptos
+| ID | Cpt |
+| --- | --- |
+| GORE-MODELOS-FIN-SOSTENIBILIDAD-01 | Sostenibilidad presupuestaria como fin del GORE (no maximización de ganancias). |
+| GORE-MODELOS-FIN-POTENCIAR-IMPACTO-01 | Cuatro vías para potenciar impacto regional: más beneficiarios, mayor valor por intervención, mayor frecuencia, mejor eficiencia. |
+| GORE-MODELOS-FIN-VLT-01 | Valor a Largo Plazo del Territorio/Ciudadano (VLT). |
+| GORE-MODELOS-FIN-CIP-01 | Costo de Involucramiento Permitido (CIP) proporcional al VLT esperado. |
+| GORE-MODELOS-FIN-COSTE-HUNDIDO-01 | Falacia del coste hundido y necesidad de decidir por costos/beneficios futuros. |
+| GORE-MODELOS-FIN-COSTE-OPORTUNIDAD-01 | Costo de oportunidad en decisión de inversión pública. |
+| GORE-MODELOS-FIN-VALOR-TEMPORAL-01 | Valor temporal de recursos públicos y relevancia de la tasa social de descuento. |
+| GORE-MODELOS-FIN-APALANCAMIENTO-01 | Apalancamiento regional mediante cofinanciamiento y convenios de programación. |
+| GORE-MODELOS-FIN-DEGRADACION-INCREMENTAL-01 | Degradación incremental del valor público por recortes sucesivos. |
+| GORE-MODELOS-FIN-ENDEUDAMIENTO-01 | Endeudamiento subnacional responsable y disciplina fiscal. |
+### Modelos Mentales Decision Accion
+#### ID
+GORE-MODELOS-MENTALES-DECISION-ACCION-01
+#### Purp
+- Equipar al directivo público con modelos mentales sobre funcionamiento de la mente humana.
+- Mejorar calidad de decisiones y evitar errores de juicio.
+#### Bloques
+| ID | Cpt |
+| --- | --- |
+| GORE-MODELOS-MENTALES-CEREBRO-FISICO-01 | El rendimiento mental depende del estado fisiológico del cuerpo; cuidado personal como requisito de desempeño sostenido. |
+| GORE-MODELOS-MENTALES-CONDUCTA-01 | Modelo operativo de la conducta basado en control de percepciones, ahorro de energía, estructura guía y comprensión del conflicto. |
+| GORE-MODELOS-MENTALES-SESGOS-01 | Conjunto de sesgos cognitivos relevantes (aversión a la pérdida, ceguera a la carencia, percepción por contraste, escasez, novedad) y sus implicancias para GORE. |
+### Metodologias Eficacia Personal
+#### ID
+GORE-METODOLOGIAS-EFICACIA-01
+#### Purp
+Proveer técnicas para gestionar energía, foco y carga de trabajo de directivos públicos.
+#### Bloques
+| ID | Cpt |
+| --- | --- |
+| GORE-EFICACIA-FOCO-ENERGIA-01 | Estado de flujo, penalización por cambio cognitivo, ciclos de energía. |
+| GORE-EFICACIA-TAREAS-OBJETIVOS-01 | Cuatro métodos para afrontar tareas, Tareas Más Importantes (TMI) y 'siguiente acción'. |
+| GORE-EFICACIA-MARCOS-MENTALES-01 | Ámbito de control, mentalidad de crecimiento, exteriorización y simulación contrafactual. |
+### Principios Interaccion y Liderazgo Equipos
+#### ID
+GORE-PRINCIPIOS-INTERACCION-LIDERAZGO-01
+#### Purp
+Entregar un 'manual' de principios para liderar personas y equipos en contexto regional.
+#### Bloques
+| ID | Cpt |
+| --- | --- |
+| GORE-INTERACCION-PODER-INFLUENCIA-01 | Poder, influencia y reputación; liderazgo basado en influencia más que coacción. |
+| GORE-INTERACCION-COLABORACION-01 | Ventaja comparativa, tamaño óptimo de equipos, 'objetivo del comandante', apatía del testigo. |
+| GORE-INTERACCION-FUNDAMENTOS-HUMANOS-01 | Necesidades humanas de sentirse valorado y seguro, poder del 'porque', prueba social y autoridad, compromiso y coherencia. |
+| GORE-INTERACCION-ERRORES-LIDERAZGO-01 | Errores comunes: error fundamental de atribución, efecto Pigmalión, foco en alternativas vs problemas. |
+### Pensamiento Sistemico y Analisis Sistemas
+#### ID
+GORE-MODELOS-MENTALES-SISTEMAS-BASE-01
+#### Purp
+Aplicar principios de pensamiento sistémico a gestión regional y del GORE.
+#### Ref
+- GORE-ENTORNO-WICKED-PROBLEMS-01
+- GORE-MODERNIZACION-RIESGOS-01
+#### Bloques
+| ID | Cpt |
+| --- | --- |
+| GORE-SISTEMAS-LEY-GALL-01 | Ley de Gall: evolucionar sistemas desde versiones simples; evitar megaproyectos 'Big Bang'. |
+| GORE-SISTEMAS-FLUJO-STOCK-SLACK-01 | Flujos, existencias y holgura organizacional; equilibrio entre eficiencia y resiliencia. |
+| GORE-SISTEMAS-RESTRICCIONES-01 | Teoría de las restricciones: desempeño limitado por cuello de botella principal. |
+| GORE-SISTEMAS-FEEDBACK-LOOP-01 | Bucles de feedback y efectos de segundo orden en políticas públicas. |
+| GORE-SISTEMAS-ENTORNO-INCERTIDUMBRE-01 | Entorno, controles de selección e incertidumbre (cisnes negros); construir resiliencia en vez de predecir futuro. |
+| GORE-SISTEMAS-INTERDEPENDENCIA-01 | Interdependencia y vinculación de sistemas (estrechamente vs débilmente vinculados). |
+| GORE-SISTEMAS-EFECTOS-SECUNDARIOS-01 | Efectos secundarios y consecuencias inesperadas; usar pilotos y monitoreo. |
+### Herramientas Analisis y Mejora Sistemas
+#### ID
+GORE-ANALISIS-SISTEMOS-01
+#### Purp
+Aplicar herramientas de análisis y mejora de sistemas regionales y organizacionales.
+#### Ref
+- GORE-CONTROL-GESTION-INDICADORES-01
+- GORE-MODERNIZACION-PROCESOS-01
+#### Analisis Sistemas
+#### Bloques
+| ID | Cpt |
+| --- | --- |
+| GORE-ANALISIS-DECONSTRUCCION-01 | Deconstrucción de procesos en subsistemas con desencadenantes, flujos, condicionantes y puntos finales. |
+| GORE-ANALISIS-MEDICION-KPI-01 | Definición de KPIs estratégicos derivados de los 5 procesos fundamentales del GORE. |
+| GORE-ANALISIS-CALIDAD-DATOS-01 | Principio GIGO y honestidad en datos; rol de UCI. |
+| GORE-ANALISIS-HERRAMIENTAS-01 | Contexto, muestreo, ratios, correlación vs causalidad, benchmarks, proxies, segmentación y humanización de datos. |
+#### Mejora y Resiliencia
+#### ID
+GORE-MEJORA-SISTEMAS-01
+#### Bloques
+| ID | Cpt |
+| --- | --- |
+| GORE-MEJORA-OPTIMIZACION-REFACTORIZACION-01 | Optimización y refactorización de procesos públicos. |
+| GORE-MEJORA-MINORIA-CRUCIAL-01 | Minoría crucial (regla 80-20) aplicada a cartera de proyectos, problemas y ejecución. |
+| GORE-MEJORA-FRICCION-AUTOMATIZACION-01 | Fricción y automatización en gestión pública; paradoja de automatización. |
+| GORE-MEJORA-POS-CHECKLIST-01 | Procedimientos operativos estándar y checklists para reducir errores. |
+| GORE-MEJORA-RESILIENCIA-01 | Resiliencia institucional (pensar como tortuga, no como tigre); evitar optimización cortoplacista a costa de resiliencia. |
+### Modelo Innovacion Adaptativa
+#### ID
+GORE-MODELO-INNOVACION-ADAPTATIVA-01
+#### Purp
+Integrar agilidad e innovación abierta en un modelo adaptativo para la gestión regional.
+#### Componentes
+| ID | Cpt |
+| --- | --- |
+| GORE-INNOVACION-FUND-AGIL-01 | Innovación ágil: desarrollo iterativo, equipos transfuncionales, planificación adaptativa, centralidad en ciudadano y mejora continua. |
+| GORE-INNOVACION-FUND-ABIERTA-01 | Innovación abierta: flujos de conocimiento outside-in e inside-out, inteligencia colectiva. |
+| GORE-INNOVACION-ACTORES-QUADHELIX-01 | Modelo de Cuádruple Hélice: gobierno, academia, industria y sociedad civil como actores clave. |
+| GORE-INNOVACION-CICLO-ADAPTIVO-01 | Ciclo de innovación adaptativa de cinco fases: definir áreas de foco, gestionar ideas, desarrollar conceptos, implementar pilotos/OMVP, evaluar y escalar. |

@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:gn:kb:cies-sitia
   provenance:
-    created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml
 version: 2.0.0
 status: published
 tags:
@@ -15,83 +15,556 @@ tags:
 - sitia
 - gn
 lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml
+    source_hashes:
+      domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml: 2e65308d557054d6aaac05e2bc0f238dc5cd5c29391108605cf5827bd3ed8796
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.11
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 20
+    meat_count: 238
+    fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__cies-sitia.md.json
 ---
 
 # Centro Integrado de Emergencia y Seguridad (CIES) - SITIA Ñuble
+## ID
+CIES-SITIA-MASTER-01
 
-## Descripción General y Alianza SITIA
-*   **Definición:** Centro Integrado de Emergencia y Seguridad de Ñuble (CIES-NUBLE).
-*   **Alcance:** Cobertura estratégica en las 21 comunas de la Región de Ñuble.
-*   **Propósito:** Fortalecimiento de seguridad pública y gestión integral de riesgos.
-*   **Integración SITIA:** Alianza con el Sistema Integrado de Teleprotección con Inteligencia Artificial (Subsecretaría de Prevención del Delito - SPD).
-*   **Objetivo Integración:** Potenciar detección de prófugos, personas desaparecidas y vehículos con encargo mediante analítica avanzada nacional.
+## Version
+1.0.0
 
-## Infraestructura Tecnológica: Sala de Monitoreo Central
-*   **Ubicación:** Gobierno Regional (GORE) de Ñuble.
-*   **Especificaciones Físicas:**
-    *   Superficie: 77,03 m².
-    *   Normativa: Diseño según ISO 11064 (Ergonomía).
-    *   Zonificación: Áreas operativas, técnicas, supervisión y descanso.
-*   **Visualización Centralizada:**
-    *   Video Wall: 6x2 metros (LED modulares 4K).
-    *   Capacidad: Visualización simultánea de hasta 16 vistas.
-*   **Estaciones de Trabajo:**
-    *   Dotación CIES: 7 estaciones (6 operadores, 1 supervisor).
-    *   Dotación UOCT: 3 estaciones adicionales para Unidad Operativa de Control de Tránsito.
-    *   Equipamiento: Monitores Full HD 32", teclados ergonómicos, joysticks para cámaras PTZ.
-*   **Centro de Datos:**
-    *   Racks: APC NetShelter SX.
-    *   Servidores: Dell PowerEdge R740 (redundantes).
-    *   Energía: Sistemas de Alimentación Ininterrumpida (UPS) para operación 24/7.
+## Status
+Draft
 
-## Sistema de Cámaras y Red Regional
-| Componente | Detalle Técnico |
-| :--- | :--- |
-| **Puntos de Vigilancia** | 209 puntos distribuidos en 21 comunas. |
-| **Tipología Cámaras** | 140 cámaras PTZ 4K; 69 cámaras multisensor/panorámicas. |
-| **Conectividad** | Red híbrida de 316 nodos (80% fibra óptica 100Mbps, 20% inalámbrica 50Mbps). |
-| **Arquitectura** | Modelo federado (gestión centralizada con autonomía local). |
-| **VMS** | Plataforma HikCentral (compatible con estándar ONVIF). |
-| **Almacenamiento** | Capacidad para 60 días a máxima resolución; redundancia RAID/ANR y cifrado. |
+## Format
+KODA/Spec
 
-## Capacidades de Analítica e Integración SITIA
-| Módulo SITIA | Función Principal | Mecanismo / Tecnología |
-| :--- | :--- | :--- |
-| **SITIA-Patentes** | Lectura de placas nacional. | Contraste en tiempo real con registros oficiales de búsqueda. |
-| **SITIA-Evidencia** | Gestión de evidencia digital. | Basado en Genetec Clearance; asegura cadena de custodia digital. |
-| **SITIA-Armas** | Detección de armas de fuego. | Modelos IA (YOLOv11) con alertas automáticas en tiempo real. |
-| **Unificación Video** | Interfaz única nacional. | Acceso centralizado para Carabineros de Chile y coordinación nacional. |
-| **VCA Local** | Analítica base CIES. | Detección de movimiento, seguimiento, conteo e intrusión. |
+## Human Creator
+FS
 
-## Estructura Operativa y Personal
-*   **Dotación por Turno:** 3 operadores y 1 supervisor (incluye integración UOCT).
-*   **Régimen Horario:**
-    *   Fase Inicial: 16 horas diarias (08:00 a 00:00) en dos turnos rotativos.
-    *   Proyección: Escalabilidad a régimen 24/7.
-*   **Roles y Responsabilidades:**
-    *   Operadores: Detección temprana, clasificación de incidentes y seguimiento.
-    *   Supervisores: Gestión de incidentes críticos y enlace interinstitucional.
-    *   Soporte Técnico: Mantenimiento preventivo y correctivo.
-*   **Enlaces Directos:** Carabineros, PDI, Bomberos, SAMU y las 21 municipalidades.
+## Human Editor
+FS
 
-## Marco Legal, Privacidad y Protocolos
-*   **Base Normativa:** Cumplimiento estricto de Ley N° 19.628 (Protección de la Vida Privada).
-*   **Manual de Operaciones:** Rige todas las actuaciones, monitoreo y clasificación de prioridades.
-*   **Gestión de Grabaciones:**
-    *   Almacenamiento Estándar: 30 días corridos.
-    *   Eliminación: Proceso seguro e irreversible tras el plazo.
-    *   Cautela de Evidencia: Solicitud ciudadana (víctimas/testigos) por hasta 6 meses.
-*   **Cadena de Custodia:** Entrega de grabaciones solo mediante requerimiento judicial o del Ministerio Público.
-*   **Resiliencia:** Plan de contingencia ante fallos técnicos, cortes de energía o desastres naturales.
+## Model Collaborator
+- IA-GEMINI
+- Cascade
 
-## Sostenibilidad y Modelo de Gestión
-*   **Financiamiento:** Continuidad mediante presupuesto anual GORE Ñuble (RR.HH., mantenimiento, servicios).
-*   **Garantía Técnica:** 22 meses de cobertura integral.
-*   **Mantenimiento:** Plan preventivo programado con frecuencia trimestral.
-*   **Gobernanza:** Formalizada vía Convenio Marco entre Subsecretaría de Prevención del Delito y GORE Ñuble.
+## AI Remediator
+KODA-TRANSFORMER
 
-## Impacto y Beneficios Regionales
-*   **Prevención:** Mayor disuasión y reducción de tiempos de respuesta ante emergencias.
-*   **Judicial:** Generación de evidencia estandarizada de alta calidad para procesos fiscales.
-*   **Inteligencia:** Acceso a red nacional para análisis predictivo y detección de patrones delictuales.
-*   **Desarrollo:** Mejora del entorno para inversión y seguridad comunitaria en las 21 comunas.
+## Creation Date
+2025-10-06
+
+## Modification Date
+2025-11-27
+
+## Ctx
+Plan de Transformación Digital y IA para GORE Ñuble.
+
+## Source
+### Ctx Required
+- staging/gn/kb_gn_080_cies_sitia.md
+- CIES SITIA.md
+- Ley N° 19.628 sobre Protección de la Vida Privada
+### Ctx Optional
+- knowledge/domains/gn/kb_gn_200_marco_legal_gores_koda.yml
+### Primary Source
+kb_gn_080_cies_sitia.md
+
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-CIES-SITIA-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact in Structured Telegraphic Style (STS).
+Your primary task is to parse and reason over THIS document with absolute fidelity,
+using only the rules defined below. This artifact is a self-contained source of truth.
+
+1. CORE OBJECTIVE
+   - Maintain perfect fidelity to the information ("meat") and structure ("skeleton").
+   - Do not summarize, interpret, or infer information not explicitly present.
+   - Prohibition: These rules are exclusively for artifact CONSUMPTION, not for creation.
+
+2. CONCEPTUAL METAPHORS
+   - "meat": Essential information, data, and facts. Must be preserved with zero loss.
+   - "skeleton": Logical structure (headers, IDs, lists, relationships). Also considered "meat".
+   - "fat": Non-essential verbiage (filler, rhetoric, stylistic prose). Ignore for reasoning.
+
+3. LEXICON MODE & EXPANSION
+   This document uses an abbreviated control lexicon. Expand keywords as follows BEFORE processing:
+   Act->Action, Cause->Cause, Cpt->Concept, Cond->Condition, Ctx->Context,
+   Def->Definition, Dep->Dependency, Dest->Destination, Dln->Deadline,
+   Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction, Just->Justification,
+   Mech->Mechanism, Mssn->Mission, Mdl->Model, Nat->Nature, Obj->Objective,
+   Proc->Process, Prohib->Prohibition, Purp->Purpose, Rec->Recommendation,
+   Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source,
+   Warn->Warning.
+
+4. REFERENCE POLICY
+   - Ref: is used for internal cross-references ONLY.
+   - Every Ref: MUST point to an ID: that exists within THIS document.
+   - Mentions of external documents are contextual only and appear under Ctx:, Ctx_Required:, Ctx_Optional: or Src:.
+
+5. LANGUAGE INVARIANCE POLICY
+   - Keywords use the fixed control vocabulary in English (and the abbreviated forms listed).
+   - All essential content following a Keyword: MUST remain in its original language (es-CL).
+   - Never translate content when reasoning over this artifact.
+END_LLM_INSTRUCTIONS
+
+
+## Glosario Conceptos Clave
+### ID
+CIES-SITIA-GLOSARIO-01
+### Purp
+Definir y referenciar conceptos estructurales del CIES y de la integración SITIA.
+### Terminos
+-
+  #### ID
+  CIES-SITIA-GLOS-CIES
+  #### Ref
+  CIES-SITIA-DESC-CIES-NUBLE-01
+  #### Cpt
+  CIES-NUBLE
+-
+  #### ID
+  CIES-SITIA-GLOS-SITIA-PATENTES
+  #### Ref
+  CIES-SITIA-CAP-SITIA-PATENTES-01
+  #### Cpt
+  SITIA-Patentes
+-
+  #### ID
+  CIES-SITIA-GLOS-SITIA-EVIDENCIA
+  #### Ref
+  CIES-SITIA-CAP-SITIA-EVIDENCIA-01
+  #### Cpt
+  SITIA-Evidencia
+-
+  #### ID
+  CIES-SITIA-GLOS-SITIA-ARMAS
+  #### Ref
+  CIES-SITIA-CAP-SITIA-ARMAS-01
+  #### Cpt
+  SITIA-Armas
+-
+  #### ID
+  CIES-SITIA-GLOS-SITIA-UNIF-VID
+  #### Ref
+  CIES-SITIA-CAP-SITIA-UNIF-VID-01
+  #### Cpt
+  SITIA-Unificacion-Videos
+-
+  #### ID
+  CIES-SITIA-GLOS-GOB-DATOS
+  #### Ref
+  CIES-SITIA-DESC-GOB-DATOS-01
+  #### Cpt
+  Gobernanza-Datos
+-
+  #### ID
+  CIES-SITIA-GLOS-SPD
+  #### Cpt
+  Subsecretaría de Prevención del Delito (SPD)
+  #### Src
+  - KB-GN-200-MARCO-LEGAL-GORES-KODA / LMSP-SPD-01
+-
+  #### ID
+  CIES-SITIA-GLOS-CADENA-CUSTODIA
+  #### Ref
+  CIES-SITIA-PROC-CADENA-CUST-01
+  #### Cpt
+  Cadena-Custodia-Digital
+
+## Descripcion General
+### ID
+CIES-SITIA-DESC-01
+### Conceptos
+-
+  #### ID
+  CIES-SITIA-DESC-CIES-NUBLE-01
+  #### Cpt
+  CIES-NUBLE
+  #### Def
+  Centro Integrado de Emergencia y Seguridad de Ñuble.
+  #### Nat
+  Iniciativa estratégica del Gobierno Regional.
+  #### Purp
+  Fortalecer la seguridad pública y la gestión integral de riesgos.
+  #### Ctx
+  Aplicado a las 21 comunas de la región de Ñuble.
+-
+  #### ID
+  CIES-SITIA-DESC-FUNC-PRINC-01
+  #### Cpt
+  Funcionalidad-Principal
+  #### Nat
+  Núcleo para vigilancia, coordinación y respuesta ante emergencias y delitos.
+  #### Mech
+  Utiliza tecnología de punta y colaboración interinstitucional.
+-
+  #### ID
+  CIES-SITIA-DESC-ALIANZA-01
+  #### Cpt
+  Alianza-Estrategica
+  #### Def
+  Colaboración con el Sistema Integrado de Teleprotección con Inteligencia Artificial (SITIA).
+  #### Resp
+  Subsecretaría de Prevención del Delito.
+  #### Ref
+  CIES-SITIA-GLOS-SPD
+  #### Purp
+  Potenciar capacidades del CIES.
+  #### Mech
+  Integrar capacidades locales del CIES con plataformas de analítica avanzada a nivel nacional.
+-
+  #### ID
+  CIES-SITIA-DESC-CAP-POT-01
+  #### Cpt
+  Capacidades-Potenciadas
+  #### Obj
+  - Reforzar la detección de prófugos.
+  - Reforzar la búsqueda de personas desaparecidas.
+  - Reforzar la localización de vehículos con encargo de búsqueda.
+-
+  #### ID
+  CIES-SITIA-DESC-GOB-DATOS-01
+  #### Cpt
+  Gobernanza-Datos
+  #### Req
+  Gobernanza de datos transparente.
+  #### Fnd
+  Pleno respeto de la Ley N° 19.628.
+
+## Objetivos
+### ID
+CIES-SITIA-OBJ-01
+### Obj
+-
+  #### Obj
+  Mejorar capacidad de prevención y respuesta ante emergencias y delitos en la región.
+-
+  #### Obj
+  Fortalecer coordinación interinstitucional para gestión efectiva de seguridad pública.
+-
+  #### Obj
+  Potenciar análisis de video con herramientas de IA de nivel nacional.
+  #### Purp
+  - Anticipar riesgos.
+  - Optimizar gestión de emergencias.
+-
+  #### Obj
+  Facilitar intercambio de evidencia digital con Ministerio Público y policías.
+  #### Mech
+  A través de plataformas unificadas.
+-
+  #### Obj
+  Contribuir al desarrollo social, económico y territorial de Ñuble.
+  #### Mech
+  Mediante la reducción de riesgos y amenazas.
+
+## Componentes Clave
+### ID
+CIES-SITIA-COMP-01
+### Infraestructura Tecnologica y Fisica
+#### ID
+CIES-SITIA-COMP-INFRA-01
+#### Sala Monitoreo Central
+#### ID
+CIES-SITIA-COMP-INFRA-SALA-01
+#### Ctx
+Ubicada en GORE Ñuble.
+#### Caracteristicas
+-
+  #### Cpt
+  Diseño-Ergonomia
+  #### Def
+  Sala de 77,03 m².
+  #### Fnd
+  Diseñada según norma ISO 11064.
+  #### Ctx
+  Incluye zonas operativas, técnicas, de supervisión y de descanso.
+  #### Purp
+  Garantizar rendimiento óptimo y bienestar del personal.
+-
+  #### Cpt
+  Visualizacion-Centralizada
+  #### Def
+  Video Wall de 6x2 metros.
+  #### Ctx
+  Pantallas LED modulares 4K.
+  #### Mech
+  Capaz de mostrar hasta 16 vistas simultáneas.
+  #### Purp
+  Permitir monitoreo global y detallado de puntos críticos.
+-
+  #### Cpt
+  Estaciones-Trabajo
+  #### Def
+  7 estaciones de trabajo (6 operadores, 1 supervisor).
+  #### Ctx
+  - 3 estaciones adicionales para Unidad Operativa de Control de Tránsito (UOCT).
+  - Cada estación equipada con monitor Full HD 32", teclado ergonómico, joystick.
+  #### Purp
+  Control preciso de cámaras PTZ.
+-
+  #### Cpt
+  Centro-Datos
+  #### Def
+  Infraestructura robusta.
+  #### Ctx
+  - Racks APC NetShelter SX.
+  - Servidores redundantes Dell PowerEdge R740.
+  - Sistemas de Alimentación Ininterrumpida (UPS).
+  #### Purp
+  Garantizar operación continua 24/7.
+#### Sistema Integrado Camaras y Red
+#### ID
+CIES-SITIA-COMP-INFRA-CAMNET-01
+#### Elementos
+-
+  #### Cpt
+  Cobertura-Regional
+  #### Def
+  209 puntos de vigilancia en 21 comunas.
+  #### Ctx
+  140 cámaras PTZ 4K y 69 cámaras multisensor/panorámicas.
+-
+  #### Cpt
+  Conectividad
+  #### Def
+  Red híbrida de alta velocidad con 316 nodos.
+  #### Ctx
+  80% fibra óptica (100Mbps) y 20% enlaces inalámbricos (50Mbps).
+-
+  #### Cpt
+  Arquitectura-Federacion
+  #### Def
+  Modelo federado para gestión centralizada con autonomía local.
+  #### Res
+  Garantiza resiliencia, robustez y escalabilidad.
+-
+  #### Cpt
+  Software-Gestion-VMS
+  #### Def
+  Plataforma HikCentral.
+  #### Mech
+  Permite gestión centralizada, acceso a video grabado, notificaciones.
+  #### Ctx
+  Compatibilidad con estándar ONVIF.
+-
+  #### Cpt
+  Almacenamiento-Seguro
+  #### Def
+  Capacidad para 60 días de grabaciones a máxima resolución.
+  #### Mech
+  Redundancia (RAID, ANR) y cifrado para proteger integridad de datos.
+#### Capacidades Analitica Avanzada CIES SITIA
+#### ID
+CIES-SITIA-COMP-INFRA-ANALITICA-01
+#### Fnd
+El sistema CIES cuenta con analítica de video (VCA) para funciones base (detección de movimiento, seguimiento, conteo, intrusión).
+#### Cpt
+La capacidad es potenciada por la integración con plataformas especializadas de SITIA.
+#### Capacidades
+-
+  #### ID
+  CIES-SITIA-CAP-SITIA-PATENTES-01
+  #### Cpt
+  SITIA-Patentes
+  #### Purp
+  Complementar la lectura de placas local con una red integrada nacional (pórticos públicos y privados).
+  #### Mech
+  Datos contrastados en tiempo real con registro oficial de vehículos con encargo de búsqueda.
+  #### Res
+  Genera dashboards dinámicos sobre zonas críticas de robo y rutas probables.
+-
+  #### ID
+  CIES-SITIA-CAP-SITIA-EVIDENCIA-01
+  #### Cpt
+  SITIA-Evidencia
+  #### Def
+  Plataforma digital para la gestión de evidencias.
+  #### Fnd
+  Basada en Genetec Clearance.
+  #### Purp
+  Facilitar solicitud, almacenamiento y compartición segura de pruebas audiovisuales.
+  #### Dest
+  - Municipios.
+  - Policías.
+  - Fiscalía.
+  #### Res
+  Asegura cadena de custodia digital y reduce tiempos de investigación.
+-
+  #### ID
+  CIES-SITIA-CAP-SITIA-ARMAS-01
+  #### Cpt
+  SITIA-Armas
+  #### Mech
+  Implementa modelos de IA (basados en YOLOv11) en la red de cámaras.
+  #### Purp
+  Generar alertas automáticas en tiempo real al detectar un arma de fuego en la vía pública.
+  #### Res
+  Apoya labores de fiscalización y control.
+-
+  #### ID
+  CIES-SITIA-CAP-SITIA-UNIF-VID-01
+  #### Cpt
+  SITIA-Unificacion-Videos
+  #### Purp
+  Centralizar las señales de las cámaras del CIES en una interfaz única a nivel nacional.
+  #### Mech
+  Permite acceso a Carabineros de Chile.
+  #### Res
+  Refuerza la coordinación y la capacidad de respuesta ante emergencias.
+### Personal y Estructura Operativa
+#### ID
+CIES-SITIA-COMP-OPER-01
+#### Componentes
+-
+  #### Cpt
+  Equipo-Humano
+  #### Def
+  3 operadores y 1 supervisor por turno en la sala.
+  #### Ctx
+  Se integra personal de la UOCT.
+-
+  #### Cpt
+  Turnos-Operacion
+  #### Def
+  Cobertura inicial de 16 horas diarias (08:00 a 00:00).
+  #### Ctx
+  Dos turnos rotativos.
+  #### Obj
+  Proyección de extenderse a 24/7.
+-
+  #### Cpt
+  Roles-Capacitacion
+  #### Fnd
+  Personal capacitado conforme al Manual de Operaciones.
+  #### Subroles
+  | Cpt | Resp |
+  | --- | --- |
+  | Operadores | Detección temprana, clasificación de incidentes, seguimiento en tiempo real. |
+  | Supervisores | Gestión de incidentes críticos, articulación de recursos, enlace interinstitucional. |
+  | Soporte-Tecnico | Mantenimiento preventivo y correctivo de la plataforma. |
+-
+  #### Cpt
+  Enlaces-Interinstitucionales
+  #### Def
+  Personal que actúa como facilitador de comunicación directa.
+  #### Dest
+  - Carabineros.
+  - PDI.
+  - Bomberos.
+  - SAMU.
+  - 21 municipios.
+### Procesos y Protocolos Marco Operativo Legal
+#### ID
+CIES-SITIA-COMP-PROC-01
+#### Fnd
+Todas las actuaciones se rigen por un estricto Manual de Operaciones.
+#### Req
+Garantizar el cumplimiento de la Ley N° 19.628 sobre Protección de la Vida Privada.
+#### Procesos
+-
+  #### Cpt
+  Protocolos-Vigilancia-Respuesta
+  #### Def
+  Procedimientos estandarizados para monitoreo, detección, clasificación y escalamiento de incidentes.
+  #### Ctx
+  Clasificación por prioridad (alta, media, baja).
+-
+  #### ID
+  CIES-SITIA-PROC-CADENA-CUST-01
+  #### Cpt
+  Cadena-Custodia-Digital
+  #### Def
+  Las grabaciones son consideradas evidencia legal.
+  #### Proc
+  Su entrega se realiza únicamente bajo requerimiento formal (orden judicial o del Ministerio Público).
+  #### Req
+  Utilizar medios seguros y controlados para garantizar validez.
+-
+  #### Cpt
+  Gestion-Privacidad
+  #### Proc
+  Grabaciones se almacenan por un máximo de 30 días.
+  #### Act
+  Eliminación segura e irreversible posterior al plazo.
+  #### Mech
+  Ciudadanos pueden solicitar cautela de una grabación por hasta 6 meses.
+  #### Cond
+  Si son víctimas o testigos de un delito.
+-
+  #### Cpt
+  Plan-Contingencia
+  #### Def
+  Análisis de riesgos y plan de acción.
+  #### Purp
+  Enfrentar fallos técnicos, cortes de energía o desastres naturales.
+  #### Res
+  Asegurar la continuidad operativa.
+-
+  #### Cpt
+  Coordinacion-Interinstitucional
+  #### Def
+  Canales de comunicación directos y protocolos de acción conjunta.
+  #### Ctx
+  Con todas las entidades de seguridad y emergencia.
+
+## Sostenibilidad y Modelo Gestion
+### ID
+CIES-SITIA-SOST-01
+### Componentes
+-
+  #### Cpt
+  Financiamiento-Operativo
+  #### Mech
+  Continuidad garantizada a través de presupuesto anual.
+  #### Purp
+  Cubrir gastos recurrentes (RR.HH., mantenimiento, servicios).
+-
+  #### Cpt
+  Mantenimiento-Garantia
+  #### Def
+  Garantía técnica de 22 meses.
+  #### Ctx
+  Incluye mantenimiento preventivo trimestral.
+-
+  #### Cpt
+  Convenio-Colaboracion
+  #### Mech
+  La relación con SITIA se formaliza a través de un convenio marco de colaboración.
+  #### Resp
+  Subsecretaría de Prevención del Delito y Gobierno Regional.
+  #### Ref
+  CIES-SITIA-GLOS-SPD
+  #### Purp
+  Establecer los ejes de cooperación en integración tecnológica, intercambio de datos y capacitación.
+
+## Beneficios Para Region
+### ID
+CIES-SITIA-BENEF-01
+### Res
+- Mayor seguridad y protección (disuasión y respuesta rápida).
+- Mejora en los tiempos de respuesta ante emergencias, minimizando daños.
+- Fortalecimiento de la coordinación interinstitucional, optimizando uso de recursos.
+- Generación de evidencia de alta calidad y estandarizada para apoyar procesos judiciales.
+- Acceso a una red de inteligencia nacional, mejorando capacidad de análisis y prevención.
+- Creación de un entorno más seguro para la inversión y la vida en comunidad en Ñuble.

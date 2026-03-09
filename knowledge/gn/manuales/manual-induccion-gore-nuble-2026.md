@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:gn:kb:manual-induccion-gore-nuble-2026
   provenance:
-    created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE Ñuble"
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml
 version: 2.0.0
 status: published
 tags:
@@ -14,260 +14,1117 @@ tags:
 - gestion-personas
 - gn
 lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml: e36da1f09911c2657522f02b4d7d35b277a63007ef31508c74535ffe6f61c315
+    source_type: koda_yaml
+    transformation_mode: korafy_koda_hybrid
+    fs: 100
+    cr: 1.14
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: Manual de induccion con mismatch historico entre nombre destino
+      y fuente 2025.
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 13
+    meat_count: 821
+    fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-induccion-gore-nuble-2026.md.json
 ---
 
 # Manual de Inducción del Gobierno Regional de Ñuble 2026
+## ID
+GN-MANUAL-INDUCCION-2026-01
 
-Siglas: GORE = Gobierno Regional · CORE = Consejo Regional · DAF = División de Administración y Finanzas · DIPLADE = División de Planificación y Desarrollo Regional · DIPIR = División de Presupuesto e Inversión Regional · GDP = Gestión y Desarrollo de Personas · FNDR = Fondo Nacional de Desarrollo Regional · FRPD = Fondo Regional para la Productividad y el Desarrollo · ERD = Estrategia Regional de Desarrollo · SIGFE = Sistema de Información para la Gestión Financiera del Estado · CGR = Contraloría General de la República · CPHS = Comité Paritario de Higiene y Seguridad · EUS = Escala Única de Sueldos · TDE = Transformación Digital del Estado.
+## Titulo
+### Def
+Manual de Inducción del Gobierno Regional de Ñuble 2026
 
-## Proceso de Inducción
+## Seccion 1 Introduccion
+### ID
+GN-MANUAL-INDUCCION-S01
+### Que es la induccion
+#### Def
+- La inducción es una herramienta de gestión que apunta a integrar de manera planificada a las personas que ingresan a la organización o cambian de funciones, a través de un proceso de acompañamiento tendiente a ofrecer la información necesaria para desempeñarse en forma cómoda y eficaz. Permite conocer y comprender los aspectos específicos del trabajo y los procedimientos de la institución, promoviendo la adaptación a las características organizacionales (Servicio Civil, 2016).
+- Dicho de otro modo, la inducción busca contribuir a un ajuste entre persona/puesto/organización a través de acciones deliberadas tendientes a apoyar a las nuevas personas en su integración a la cultura organizacional (Servicio Civil, 2016). Es un proceso que, además de entregar una visión global de la organización, sus proyectos y dar calidez al ingreso, involucra el inicio de la interiorización en los valores institucionales, conocer las prácticas predominantes y los comportamientos acordes a las expectativas de un sistema social estable. Implica el desafío de incorporar e integrar a un nuevo colaborador a una cultura colectiva que determina la manera de actuar (Servicio Civil, 2016).
+### Objetivos del proceso de induccion
+#### Ctx
+En sus orientaciones para el proceso de inducción, el Servicio Civil considera esta como un proceso estratégico para la institución, cuyos objetivos son:
+#### Obj
+-
+  #### Socializar
+  #### Def
+  Proceso a través del cual el funcionario/a empieza a conocer e integrarse con las personas que forman parte de la institución, y particularmente, con su equipo de trabajo.
+-
+  #### Orientar
+  #### Def
+  Proceso a través del cual se apoya al funcionario/a para que comience a comprender y aceptar los valores, normas, derechos, deberes y convicciones de la organización y su contexto.
+-
+  #### Entrenar
+  #### Def
+  Proceso que facilita el aprendizaje inicial del funcionario/a en las funciones propias, y cómo estas se vinculan con las funciones de su equipo y con la misión y objetivos institucionales.
+-
+  #### Alinear respecto al rol
+  #### Def
+  Proceso de vinculación del desempeño esperado del funcionario/a con las definiciones y productos estratégicos de la institución, y sus propias expectativas al respecto.
+-
+  #### Fidelizar
+  #### Def
+  Proceso de fortalecimiento de la identificación del funcionario/a con la función pública en general y con su servicio en particular, y la generación y/o profundización de un compromiso individual con sus funciones.
+### Beneficios
+#### Ctx
+El Servicio Civil en sus orientaciones reconoce como principales beneficios de contar con un programa de inducción los siguientes:
+#### Res
+- Atender adecuadamente la forma en la que se insertan y se adaptan las personas en una organización.
+- Incorporar de manera más efectiva a las personas a sus nuevas funciones, contexto y grupo humano de trabajo.
+- Favorecer el contrato psicológico entre las personas y la institución, es decir, entre las expectativas del servicio y las que las personas tienen respecto a su desarrollo en el mismo.
+- Contribuir al logro de los resultados de desempeño del nuevo funcionario/a.
+- Posibilitar que las personas se sientan parte y se identifiquen con la institución.
+- Facilitar y direccionar las potencialidades de las personas hacia los objetivos institucionales.
+- Facilitar que la persona demuestre en el corto plazo resultados en su propio desempeño y en su aporte a la consecución de los resultados de la institución.
+### Induccion y ciclo de vida laboral
+#### Ctx
+La inducción constituye un proceso crítico en el ciclo de vida laboral de las personas en cualquier organización. Una buena recepción e incorporación no sólo resulta relevante en tanto acogida, sino que también puede contribuir al sentido de compromiso del funcionario con su desempeño, equipo de trabajo, institución y con la función pública. La organización define e implementa programas que apuntan a integrar de manera planificada a las personas, a través de un proceso de acompañamiento y actividades que permitan transmitir a los nuevos funcionarios actitudes, estándares, valores y patrones de conducta prevalecientes que espera la organización para alcanzar mejores estándares de desempeño en el menor tiempo posible (Servicio Civil, 2016).
+### Fases generales del proceso
+#### Ctx
+Desde la perspectiva de proceso, un programa de inducción debe considerar al menos:
+#### Proc
+-
+  #### Fase de bienvenida
+  #### Purp
+  Orientada a la recepción e integración que contempla actividades de acogida, presentación del equipo, de las instalaciones e interacción con las autoridades.
+-
+  #### Fase informativa
+  #### Purp
+  Actividades para entregar información clave sobre la institución respecto a estructura, estrategias y procesos.
+-
+  #### Fase orientada al cargo
+  #### Purp
+  Actividades para clarificar tareas, responsabilidades, funciones y metas esperadas (Servicio Civil, 2016).
+### Adaptacion y flexibilidad del proceso en la organizacion
+#### Ctx
+El proceso de inducción en el Gobierno Regional de Ñuble se concibe como una instancia flexible y adaptable a contingencias y recursos existentes al momento del ingreso del nuevo funcionario. Existirán actividades que son estándar, pero otras deberán ser adecuadas considerando el desempeño que se espera alcanzar según las funciones que se asumen, la procedencia de la persona (Sector Público o Sector Privado) y el nivel de experiencia en la función pública del nuevo funcionario.
 
-Inducción: herramienta de gestión para integración planificada de nuevos funcionarios o cambios de funciones. Proceso de acompañamiento con entrega de información clave para desempeño eficaz. Contribuye al calce persona/puesto/organización. (Fuente: Servicio Civil, 2016).
+## Seccion 2 Objetivos
+### ID
+GN-MANUAL-INDUCCION-S02
+### General
+#### Obj
+Socializar, orientar, entrenar, alinear y fidelizar al funcionario o funcionaria que ingrese a desempeñar funciones al Gobierno Regional de Ñuble de una manera sistematizada y formal, que contribuya a que éste asimile con rapidez la cultura de la organización, se reduzca el tiempo de adaptación al puesto de trabajo y facilite el proceso de integración a la institución, logrando una adecuada satisfacción laboral y un mejor desempeño para la organización.
+### Especificos
+#### Obj
+- Presentar a la persona que se integra a los miembros de la institución, informando quiénes son sus superiores y compañeros de trabajo.
+- Entregar información sobre las funciones y responsabilidades en el marco de la estructura y metas organizacionales.
+- Facilitar el aprendizaje de las metas de la organización, cómo lograrlas, sus tareas y responsabilidades, y los comportamientos de trabajo aceptados y no aceptados.
+- Apoyar al funcionario en el conocimiento de las políticas y reglas necesarias para el desempeño en el lugar de trabajo.
+- Facilitar el conocimiento de la cultura organizacional y su adaptación a ésta, familiarizándose con los valores institucionales, la historia organizacional, las prestaciones que ofrece y las características relevantes.
+- Contemplar los tiempos necesarios que demanda la incorporación de un nuevo funcionario, su adaptación y aprendizaje de los objetivos y funciones del cargo, niveles de exigencia de las tareas, normativas existentes, contexto institucional, integración al equipo de trabajo y adaptación a la cultura organizacional.
 
-**Objetivos del proceso:**
+## Seccion 3 Alcance o Cobertura
+### ID
+GN-MANUAL-INDUCCION-S03
+### Ctx
+Aplica a todos los nuevos funcionarios y funcionarias que ingresen a desempeñar funciones al Gobierno Regional de Ñuble, independiente de su situación contractual.
 
-| Objetivo | Descripción |
-|---------|-------------|
-| Socializar | Integración con personas y equipo de trabajo |
-| Orientar | Comprensión de valores, normas, derechos, deberes |
-| Entrenar | Aprendizaje inicial de funciones y vínculo con misión institucional |
-| Alinear | Vinculación del desempeño con productos estratégicos |
-| Fidelizar | Fortalecimiento del compromiso con la función pública |
-
-**Fases:** Bienvenida (recepción, presentación de equipo e instalaciones) · Informativa (estructura, estrategias, procesos clave) · Orientada al Cargo (tareas, responsabilidades, metas).
-
-**Flexibilidad:** Instancia adaptable a contingencias y recursos. Adecuación según procedencia (Público/Privado) y nivel de experiencia. Actividades base complementadas con inducción específica por cargo.
-
-**Alcance:** Todos los nuevos funcionarios y funcionarias del GORE Ñuble, independiente de la situación contractual (Planta, Contrata, Honorarios, Código del Trabajo).
-
-## Marco Normativo Fundamental
-
-**Leyes generales:**
+## Seccion 4 Marco Normativo
+### ID
+GN-MANUAL-INDUCCION-S04
+### Ctx
+El funcionamiento del Gobierno Regional de Ñuble y la labor de sus funcionarios se rigen por un conjunto de normativas fundamentales, entre las que destacan:
+### Src
 - Constitución Política de la República de Chile.
-- Ley N°18.575: Bases Generales de la Administración del Estado.
-- Ley N°18.834: Estatuto Administrativo (DFL N°29 de 2004).
-- DL N°1.263: Administración Financiera del Estado.
-- DL N°2.421: Ley de Organización de la Contraloría General de la República.
+- Ley N°18.575: Ley Orgánica Constitucional de Bases Generales de la Administración del Estado (texto refundido por DFL N°1/19.653 de 2000).
+- Ley N°18.834: Estatuto Administrativo (texto refundido por DFL N°29 de 2004).
+- Ley N°19.175: Orgánica Constitucional Sobre Gobierno y Administración Regional (texto refundido por DFL N°1-19.175 de 2005, y sus modificaciones posteriores, especialmente las Leyes N°21.073 y N°21.074).
+- Ley N°21.033: Crea la XVI Región de Ñuble y las Provincias de Diguillín, Punilla e Itata.
+- Ley N°21.074: Fortalecimiento de la Regionalización del País.
+- Ley N°21.073: Regula la Elección de Gobernadores Regionales y Realiza Adecuaciones a Diversos Cuerpos Legales.
+- Decreto Ley N°1.263 de 1975: Ley Orgánica de Administración Financiera del Estado.
+- Ley de Presupuestos del Sector Público para el año 2026 (Ley N°21.796) y sus respectivas glosas aplicables a Gobiernos Regionales.
+- Ley N°19.628: Sobre Protección de la Vida Privada (modificada significativamente por la Ley N°21.719 sobre Protección de Datos Personales).
+- Ley N°19.880: Establece Bases de los Procedimientos Administrativos que Rigen los Actos de la Administración del Estado (modificada por la Ley N°21.180 sobre Transformación Digital).
+- Ley N°20.035: Introduce Modificaciones en la Ley N°19.175, Orgánica Constitucional Sobre Gobierno y Administración Regional, en lo Relativo a la Estructura y Funciones de los Gobiernos Regionales.
+- Ley N°20.285: Sobre Acceso a la Información Pública y su Reglamento (DS N°13/2009 SEGPRES).
+- Ley N°20.730: Regula el Lobby y las Gestiones que Representen Intereses Particulares Ante las Autoridades y Funcionarios.
+- Ley N°20.880: Sobre Probidad en la Función Pública y Prevención de los Conflictos de Intereses.
+- Ley N°21.180: Sobre Transformación Digital del Estado y sus normas técnicas asociadas (DS N°7, N°8, N°9, N°10, N°11, N°12 de 2023).
+- Ley N°21.364: Establece el Sistema Nacional de Prevención y Respuesta ante Desastres (SINAPRED) y sus reglamentos (DS N°234/2022 MININTER).
+- Ley N°21.659: Sobre Seguridad Privada.
+- Ley N°21.719: Modifica la Ley N°19.628, sobre Protección de Datos Personales.
+- Ley N°21.730: Crea el Ministerio de Seguridad Pública.
+- Decreto N°2.421 de 1964: Fija el Texto Refundido de la Ley de Organización de la Contraloría General de la República (Ley N°10.336).
+- Resolución N°30 de 2015 de la Contraloría General de la República: Fija Normas de Procedimiento sobre Rendición de Cuentas (y sus modificaciones).
+- Instructivos y Circulares de la Dirección de Presupuestos (DIPRES) y de la Contraloría General de la República (CGR) aplicables a la gestión presupuestaria y administrativa.
+### Req
+Este marco normativo está en constante evolución, por lo que es deber de cada funcionario mantenerse actualizado respecto a las leyes y reglamentos que rigen su actuar.
 
-**Leyes regionales:**
-- Ley N°19.175: Orgánica Constitucional sobre Gobierno y Administración Regional.
-- Ley N°21.033: Crea la XVI Región de Ñuble.
-- Ley N°21.074: Fortalecimiento de la Regionalización.
-- Ley N°21.073: Elección de Gobernadores Regionales.
+## Seccion 5 Principios Orientadores
+### ID
+GN-MANUAL-INDUCCION-S05
+### Principios
+-
+  #### Compromiso
+  #### Def
+  Nos identificamos con la institución, somos parte de ella y somos conscientes de nuestra responsabilidad con la comunidad, por lo que asumimos la función pública con responsabilidad y profesionalismo, brindando un servicio de excelencia a las personas que viven en nuestra Región. Asimismo, la institución reconoce la labor realizada por los(as) funcionarios(as) y les brinda un ambiente laboral con adecuadas condiciones, resguardando su dignidad y derechos y dándoles oportunidades de desarrollo.
+-
+  #### Eficiencia
+  #### Def
+  Realizamos nuestro trabajo enfocándonos en las personas y en contribuir a mejorar su calidad de vida y satisfacer las necesidades que presentan las comunidades en el territorio de nuestra Región, usando de manera eficiente los recursos públicos disponibles y necesarios para cumplir nuestros objetivos institucionales con excelencia.
+-
+  #### Profesionalismo
+  #### Def
+  Reconocemos que el ingreso a la Administración, su permanencia en ella y el desarrollo profesional de una carrera funcionaria dependen de nuestras capacidades y del correcto desempeño de nuestro cargo o función, por lo que velamos por la rectitud, probidad, idoneidad, honestidad e irrestricto apego a la normativa en el desempeño de nuestras funciones.
+-
+  #### Transparencia
+  #### Def
+  Garantizamos y resguardamos el derecho a la ciudadanía de conocer y acceder a toda la información acerca de las actuaciones y decisiones de nuestra institución, posibilitando y facilitando que los ciudadanos conozcan y vigilen la función pública.
+-
+  #### Probidad
+  #### Def
+  Mantenemos una conducta honesta e íntegra. Esto implica que el interés común prima sobre el particular, de modo que no utilizaremos ni el cargo ni los recursos públicos para obtener beneficios o privilegios personales y seremos imparciales en el ejercicio de nuestras funciones.
+-
+  #### Respeto
+  #### Def
+  Realizaremos nuestras labores funcionarias en un marco de cordialidad, igualdad, respeto y libertades, dignidad e individualidad de cada persona.
+-
+  #### Inclusion
+  #### Def
+  No realizaremos discriminación de ningún tipo entre funcionario(a), usuario(a) o beneficiario(a) alguno(a) y reconocemos los mismos derechos y oportunidades, garantizando las condiciones necesarias para practicar este principio. De esta manera pretendemos eliminar cualquier distinción, exclusión o preferencia fundada en razones arbitrarias y/o personales, como el sexo, la orientación sexual, la religión, la raza, la etnia, la nacionalidad, la adherencia política, entre otras.
+-
+  #### Sostenibilidad
+  #### Def
+  Integramos la dimensión ambiental y la adaptación al cambio climático en nuestras políticas y proyectos, buscando un desarrollo regional que satisfaga las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas.
+-
+  #### Coherencia y Coordinacion
+  #### Def
+  Actuamos en armonía con las políticas nacionales y en coordinación con otros órganos del Estado y los gobiernos locales, para optimizar el uso de los recursos y potenciar el impacto de la acción pública en el territorio.
 
-**Normativas transversales:**
-- Ley N°21.796: Presupuestos del Sector Público 2026.
-- Ley N°21.719: Protección de Datos Personales (modifica Ley N°19.628).
-- Ley N°21.180: Transformación Digital del Estado.
-- Ley N°20.285: Acceso a la Información Pública (Transparencia).
-- Ley N°20.730: Lobby y Gestión de Intereses Particulares.
-- Ley N°20.880: Probidad en la Función Pública.
-- Ley N°21.364: Sistema Nacional de Prevención y Respuesta ante Desastres (SINAPRED).
-- Ley N°21.663: Ley Marco de Ciberseguridad.
+## Seccion 6 Definiciones Relevantes Glosario
+### ID
+GN-MANUAL-INDUCCION-S06
+### Glosario
+| Termino | Def |
+| --- | --- |
+| Inducción | Proceso mediante el cual se integra a un nuevo empleado en la organización, proporcionándole la información y herramientas necesarias para que pueda desempeñar su trabajo de manera eficiente y adaptarse a la cultura organizacional. |
+| Cultura Organizacional | Conjunto de valores, creencias, normas y prácticas compartidas que caracterizan a una organización y guían el comportamiento de sus miembros. |
+| Política del Servicio o Institución | Conjunto de directrices y normas que rigen las acciones y decisiones dentro de la organización. Incluye políticas de recursos humanos, de seguridad, de conducta, entre otras. |
+| Procedimiento | Serie de pasos secuenciales y detallados que deben seguirse para completar una tarea específica de manera eficiente y conforme a las normas establecidas. |
+| Manual de Inducción | Documento que recopila toda la información relevante para la incorporación de nuevos empleados, incluyendo la misión, visión, valores de la empresa, políticas, procedimientos, derechos y responsabilidades del empleado. |
+| Misión | Propósito fundamental de la organización, lo que busca lograr a largo plazo. |
+| Visión | Declaración que describe lo que la organización aspira ser o lograr en el futuro. |
+| Valores | Principios y creencias fundamentales que guían el comportamiento y la toma de decisiones en la organización. |
+| Descripción de Puesto | Documento que detalla las responsabilidades, deberes y requisitos de un puesto específico dentro de la organización. |
+| Evaluación de Desempeño | Proceso sistemático para evaluar el rendimiento de los empleados en relación con sus responsabilidades laborales, metas y objetivos. |
+| Plan de Capacitación | Programa diseñado para mejorar las habilidades y conocimientos de los empleados, permitiéndoles desempeñar sus funciones de manera más efectiva y avanzar en su carrera profesional. |
+| Derechos del Empleado | Beneficios y protecciones legales que un empleado tiene en su relación laboral, incluyendo salario justo, condiciones de trabajo seguras y no discriminación. |
+| Responsabilidades del Empleado | Deberes y obligaciones que un empleado tiene hacia su empleador, incluyendo la realización de tareas asignadas, cumplimiento de políticas de la empresa y mantenimiento de la confidencialidad. |
+| Código de Conducta | Conjunto de normas y principios que regulan el comportamiento de los empleados dentro de la organización, promoviendo un ambiente de trabajo ético y respetuoso. |
+| Integración | Proceso mediante el cual un nuevo empleado se familiariza y se adapta a su nuevo entorno laboral, colegas y tareas. |
+| Bienestar Laboral | Estado de satisfacción y salud física y mental de los empleados, influenciado por las condiciones de trabajo, relaciones interpersonales y políticas de la institución. |
+| Comunicación Interna | Intercambio de información entre los miembros de la organización a través de diversos canales y métodos, con el objetivo de coordinar actividades y mantener a todos informados. |
+| Feedback | Retroalimentación constructiva sobre el desempeño laboral, que puede ser tanto positiva como negativa, y que busca mejorar la eficacia y satisfacción en el trabajo. |
+| Mentoría | Relación de apoyo y orientación entre un empleado con experiencia y uno nuevo, destinada a facilitar la adaptación y el desarrollo profesional del nuevo empleado. |
+| Seguridad y Salud Ocupacional | Conjunto de prácticas y normativas destinadas a garantizar un entorno de trabajo seguro y saludable para todos los empleados. |
+| Transformación Digital | Proceso de modernización de la gestión pública mediante el uso estratégico de tecnologías digitales, incluyendo la digitalización de procedimientos, el uso de firma electrónica, la interoperabilidad y la gestión de datos. |
+| Ley N°21.180 | Ley sobre Transformación Digital del Estado, que mandata la tramitación electrónica de los procedimientos administrativos. |
+| Protección de Datos Personales (Ley N°21.719) | Marco normativo que regula el tratamiento de datos personales por parte de organismos públicos y privados, estableciendo principios, derechos y obligaciones. |
+| Gobernanza de Datos | Conjunto de políticas, roles, responsabilidades y procesos para gestionar los datos como un activo estratégico, asegurando su calidad, seguridad y uso ético. |
+| Interoperabilidad | Capacidad de los sistemas de información de diferentes organizaciones para intercambiar datos y operar conjuntamente de manera eficiente. |
+| SIGFE (Sistema de Información para la Gestión Financiera del Estado) | Plataforma oficial para el registro y control de la ejecución presupuestaria del sector público. |
+| BIP (Banco Integrado de Proyectos) | Sistema donde se registran y evalúan las iniciativas de inversión pública. |
+| FNDR (Fondo Nacional de Desarrollo Regional) | Principal fuente de financiamiento para la inversión de los Gobiernos Regionales. |
+| FRPD (Fondo Regional para la Productividad y el Desarrollo) | Fondo destinado a iniciativas de innovación, competitividad, ciencia y tecnología regional. |
+| Glosas Presupuestarias | Disposiciones específicas en la Ley de Presupuestos que regulan el uso de ciertos fondos o establecen condiciones para su ejecución. |
+### Res
+Estas definiciones ayudarán a los nuevos empleados a entender mejor los conceptos clave y a adaptarse más rápidamente a la organización.
 
-## Principios Orientadores Institucionales
+## Seccion 7 Roles y Responsabilidades
+### ID
+GN-MANUAL-INDUCCION-S07
+### Roles
+| Rol | Def |
+| --- | --- |
+| GOBERNADOR REGIONAL | Su rol es brindar el respaldo al Área de Gestión de Personas para que la inducción sea relevada al interior de la organización. Esto incluye la asignación de los recursos humanos, financieros y materiales necesarios para su realización, y su propia participación en aquellas actividades que así lo consignen. |
+| JEFATURA DIRECTA | Es responsable de garantizar los tiempos y generar las condiciones necesarias para que el nuevo funcionario participe del proceso de inducción. Debe escoger un agente inductor que asegure una adecuada supervisión, seguimiento y orientación del nuevo funcionario. La jefatura directa es la responsable de entregar al nuevo funcionario una descripción clara de las tareas que debe desempeñar, clarificar sus funciones y contextualizar con la estrategia institucional, suministrando toda la información técnica acerca de cómo realizarlas, y será la responsable de retroalimentar al inducido al final del proceso. |
+| ÁREA DE GESTIÓN DE PERSONAS | Responsable del proceso general de inducción. Debe coordinar y monitorear el proceso de inducción y sus actividades. Asimismo, debe controlar la efectiva participación de las personas e introducir los ajustes que determinadas coyunturas pueden demandar. Adicionalmente, debe coordinar una evaluación periódica del proceso de inducción institucional y realizar las acciones de inducción específica que le correspondan en cada caso. Entre las acciones específicas está informar cuáles son las políticas de la organización en gestión de personas, deberes y derechos que le corresponden como funcionario, y familiarizarse con la estructura de la organización (áreas, unidades, infraestructura, entre otros). |
+| AGENTE INDUCTOR, MENTOR O TUTOR | Par de la persona inducida o un miembro de la organización reconocido por ser confiable y experimentado, que pueda responder preguntas sobre la organización y mantenerse cerca durante el periodo inicial. Su rol fundamental es facilitar la interrelación de la persona con su equipo de trabajo directo y con las otras áreas. |
 
-**Valores éticos y de gestión:** Compromiso · Eficiencia · Profesionalismo (probidad, rectitud, apego normativo) · Transparencia · Probidad (interés general sobre particular) · Respeto (cordialidad, igualdad, dignidad).
+## Seccion 8 Aspectos Generales Organizacion Administracion Publica
+### ID
+GN-MANUAL-INDUCCION-S08
+### Ctx
+La organización de la administración pública en Chile se estructura de manera que permite una gestión eficiente y ordenada del Estado, asegurando el cumplimiento de sus funciones y la prestación de servicios a los ciudadanos. Se describen los aspectos generales de esta organización:
+### Division de Poderes
+#### Ctx
+La administración pública se organiza bajo el principio de la separación de poderes, dividiéndose en tres poderes principales:
+#### Poderes
+- Poder Ejecutivo: Encabezado por el Presidente de la República, quien es responsable de la administración general del país.
+- Poder Legislativo: Compuesto por el Congreso Nacional, que incluye la Cámara de Diputados y el Senado. Su función es la creación de leyes y la fiscalización de las actividades del Ejecutivo.
+- Poder Judicial: Encargado de la administración de justicia, independiente del Ejecutivo y Legislativo.
+### Presidencia de la Republica
+#### Ctx
+El Presidente de la República es la máxima autoridad del Poder Ejecutivo y tiene la facultad de nombrar ministros, subsecretarios y jefes de servicios públicos. Además, es responsable de la administración del Estado y la conducción de la política gubernamental.
+### Ministerios
+#### Ctx
+- Cada ministerio está encabezado por un ministro y se encarga de áreas específicas de la política pública. Los ministerios pueden tener una o más subsecretarías y en regiones son representados por sus respectivos secretarios regionales ministeriales (SEREMIs).
+- Con la creación del Ministerio de Seguridad Pública (Ley N°21.730), esta cartera asume las funciones específicas de seguridad ciudadana y orden público, antes radicadas principalmente en el Ministerio del Interior.
+#### Items
+- Ministerio del Interior
+- Ministerio de Seguridad Pública.
+- Ministerio de Relaciones Exteriores.
+- Ministerio de Defensa Nacional.
+- Ministerio de Hacienda.
+- Ministerio de Economía, Fomento y Turismo.
+- Ministerio de Desarrollo Social y Familia.
+- Ministerio Secretaría General de la Presidencia.
+- Ministerio Secretaría General de Gobierno.
+- Ministerio de Educación.
+- Ministerio de Justicia y Derechos Humanos.
+- Ministerio de Trabajo y Previsión Social.
+- Ministerio de Obras Públicas.
+- Ministerio de Salud.
+- Ministerio de Vivienda y Urbanismo.
+- Ministerio de Agricultura.
+- Ministerio de Minería.
+- Ministerio de Transporte y Telecomunicaciones.
+- Ministerio de Bienes Nacionales.
+- Ministerio de Energía.
+- Ministerio del Medio Ambiente.
+- Ministerio del Deporte.
+- Ministerio de las Culturas, las Artes y el Patrimonio.
+- Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.
+- Ministerio de la Mujer y la Equidad de Género.
+### Subsecretarias
+#### Ctx
+Son órganos dependientes de los ministerios, encargados de áreas específicas dentro de la competencia del ministerio. Las subsecretarías tienen funciones de planificación, coordinación y supervisión de políticas públicas. La Subsecretaría de Desarrollo Regional y Administrativo (SUBDERE), dependiente del Ministerio del Interior, juega un rol clave en la coordinación y apoyo a los Gobiernos Regionales.
+### Servicios Publicos Descentralizados y Desconcentrados
+#### Items
+- Descentralizados: Organismos con personalidad jurídica y patrimonio propio que ejecutan políticas específicas y prestan servicios directos a la ciudadanía (Ej. Servicio de Impuestos Internos - SII, Instituto Nacional de Estadísticas - INE, Superintendencias). Los Gobiernos Regionales son entidades descentralizadas.
+- Desconcentrados: Unidades de ministerios o servicios nacionales que operan a nivel regional o provincial para acercar la gestión a los territorios (Ej. Direcciones Regionales de SERVIU, SAG, CONAF; Secretarías Regionales Ministeriales - SEREMI).
+### Gobiernos Regionales y Locales
+#### Items
+- Gobiernos Regionales (GORE): Encargados de la administración superior de la región, con foco en el desarrollo social, cultural y económico. Están constituidos por un Gobernador Regional (electo) y un Consejo Regional (electo). (Ley N°19.175 y sus modificaciones).
+- Gobiernos Locales (Municipalidades): Encabezados por alcaldes y concejos municipales (electos), responsables de la administración local y la prestación de servicios municipales.
+### Organos Autonomos
+#### Ctx
+Existen varios órganos autónomos que operan independientemente del Poder Ejecutivo para garantizar la imparcialidad y el control en diferentes áreas:
+#### Items
+- Contraloría General de la República: Supervisa la legalidad de los actos de la administración pública y el correcto uso de los fondos públicos.
+- Banco Central de Chile: Encargado de la política monetaria y financiera.
+- Tribunal Constitucional: Vigila la constitucionalidad de las leyes.
+- Ministerio Público (Fiscalía): Investiga y persigue delitos.
+- Servicio Electoral (SERVEL): Organiza y fiscaliza los procesos eleccionarios.
+- Agencia de Protección de Datos Personales (creada por Ley N°21.719).
+- Agencia Nacional de Ciberseguridad (ANCI) (creada por Ley N°21.663).
+#### Res
+Estos aspectos generales describen cómo se estructura y funciona la administración pública en Chile, asegurando que el Estado pueda cumplir sus responsabilidades de manera eficiente y efectiva.
 
-**Valores sociales y ambientales:** Inclusión (cero discriminación por sexo, religión, etnia o adherencia política) · Sostenibilidad (dimensión ambiental, adaptación al cambio climático) · Coherencia (armonía con políticas nacionales, coordinación inter-estatal).
+## Seccion 9 Gobiernos Regionales
+### ID
+GN-MANUAL-INDUCCION-S09
+### Descentralizacion y Desconcentracion
+#### Ctx
+- La Constitución Política de la República señala en su artículo 3° que:
+- "El Estado de Chile es unitario".
+- "La administración del Estado será funcional y territorialmente descentralizada, o desconcentrada en su caso, de conformidad a la ley".
+- "Los órganos del Estado promoverán el fortalecimiento de la regionalización del país y el desarrollo equitativo y solidario entre las regiones, provincias y comunas del territorio nacional".
+- Esto relaciona los conceptos de descentralización y desconcentración con la capacidad de accionar de los órganos del Estado que describe el citado artículo. (Servicio Civil, 2017)
+- Mientras que la descentralización es la transferencia de parte del poder y recursos del Estado Central a las instancias del nivel regional o local, en donde la toma de decisiones se radica en el nivel regional o local, respondiendo y dando cuenta ante ese mismo nivel; la desconcentración consiste en transferir algunas funciones administrativas y/o técnicas a niveles más bajos de administración, pero manteniendo el poder de decisión a nivel central. Es decir, aunque el decisor se radique en el nivel regional o local, sigue respondiendo ante el nivel central por el resultado de sus decisiones (Servicio Civil, 2017).
+- La Ley N°21.074 de Fortalecimiento de la Regionalización estableció mecanismos para la transferencia de competencias desde ministerios y servicios públicos nacionales hacia los GORE, profundizando el proceso de descentralización funcional.
+### Funciones Atribuciones y Competencias
+#### Ctx
+La Ley Orgánica Constitucional sobre Gobierno y Administración Regional (LOCGAR, DFL N°1-19.175 y sus modificaciones) establece la estructura de los Gobiernos Regionales, sus funciones, atribuciones y competencias. Como principales funciones de estos se distinguen:
+#### Items
+- La elaboración y aprobación de las políticas, planes y programas de desarrollo de la región, así como su proyecto de presupuesto, ajustados a la Política Nacional de Desarrollo y al Presupuesto de la Nación.
+- Resolver la inversión de los recursos que a la región correspondan en la distribución del Fondo Nacional de Desarrollo Regional (FNDR) y de aquellos que procedan de acuerdo con la normativa aplicable.
+- Dictar normas de carácter general para regular las materias de su competencia, con sujeción a las disposiciones legales y a los decretos supremos reglamentarios, todas las cuales están sujetas al trámite de toma de razón por parte de la Contraloría General de la República y se publicarán en el Diario Oficial.
+### Funciones Generales Art 16 Ley 19175
+#### Ctx
+FUNCIONES GENERALES DE LOS GOBIERNOS REGIONALES (Art. 16, Ley N°19.175)
+#### Items
+| Item | Def |
+| --- | --- |
+| a) | Diseñar, elaborar, aprobar y aplicar las políticas, planes, programas y proyectos de desarrollo de la región en el ámbito de sus competencias, ajustándose al presupuesto de la Nación; a la estrategia regional de desarrollo y a los instrumentos de planificación comunal. El Gobierno Regional podrá convocar a los directores regionales de los servicios públicos que dependan o se relacionen con el Presidente de la República o a los secretarios regionales ministeriales para abordar la contribución sectorial en el cumplimiento de los planes, programas y proyectos de desarrollo de la región, según corresponda. |
+| b) | Efectuar estudios, análisis y proposiciones relativos al desarrollo regional. |
+| c) | Orientar el desarrollo territorial de la región en coordinación con los servicios públicos y municipalidades localizados en ella. |
+| d) | Elaborar y aprobar su proyecto de presupuesto, ajustándose a las orientaciones que se emitan para la formulación del proyecto de Ley de Presupuestos del Sector Público. |
+| e) | Administrar fondos y programas de aplicación regional. |
+| f) | Resolver la inversión de los recursos que a la región correspondan en la distribución del Fondo Nacional de Desarrollo Regional (FNDR) y de aquellos que procedan de acuerdo al artículo 74 de esta ley, en conformidad con la normativa aplicable. |
+| g) | Decidir la destinación a proyectos específicos de los recursos de los programas de inversión sectorial de asignación regional, que contemple anualmente la Ley de Presupuestos de la Nación. |
+| h) | Dictar normas de carácter general para regular las materias de su competencia, con sujeción a las disposiciones legales y a los decretos supremos reglamentarios. |
+| i) | Diseñar, aprobar, ejecutar y aplicar políticas, planes, programas y proyectos regionales en materia de prevención social, situacional y comunitaria del delito, así como en materias de atención y asistencia a víctimas, en coordinación con los organismos públicos competentes y el ministerio encargado de la seguridad pública (incorporado por Ley N°21.730). |
+| j) | Asesorar a las municipalidades, cuando éstas lo soliciten, especialmente en la formulación de sus planes y programas de desarrollo, así como en la formulación e implementación de sus planes comunales de seguridad pública. |
+| k) | Adoptar las medidas necesarias para enfrentar situaciones de emergencia o catástrofe (SINAPRED, Ley N°21.364), y desarrollar programas de prevención y protección ante situaciones de desastre. |
+| l) | Participar en acciones de cooperación internacional en la región. |
+| m) | Ejercer las competencias que le sean transferidas. |
+| n) | Mantener relación permanente con el gobierno nacional y sus distintos organismos. |
+| ñ) | Construir, reponer, conservar y administrar obras de pavimentación de aceras y calzadas. |
+| o) | Elaborar y aprobar los planes de inversiones en infraestructura de movilidad y espacio público asociados a planes reguladores metropolitanos o intercomunales. |
+| p) | Coparticipar con el Comité Regional para el cambio climático en la elaboración y aprobación de los instrumentos para la gestión del cambio climático a nivel regional. |
+### Funciones Ordenamiento Territorial Art 17
+#### Ctx
+Principales funciones del Gobierno Regional en materia de Ordenamiento Territorial (Art. 17)
+#### Items
+| Item | Def |
+| --- | --- |
+| a) | Elaborar y aprobar el plan regional de ordenamiento territorial (PROT). |
+| b) | Establecer políticas y objetivos para el desarrollo integral y armónico del sistema de asentamientos humanos de la región. |
+| c) | Participar en programas y proyectos de dotación y mantenimiento de obras de infraestructura y de equipamiento en la región. |
+| d) | Fomentar y velar por la protección, conservación y mejoramiento del medio ambiente. |
+| e) | Fomentar y velar por el buen funcionamiento de la prestación de los servicios en materia de transporte intercomunal, interprovincial e internacional fronterizo en la región. |
+| f) | Fomentar y propender al desarrollo de áreas rurales y localidades aisladas en la región. |
+| g) | Proponer a la autoridad competente la localidad en que deberán radicarse las secretarías regionales ministeriales y las direcciones regionales de los servicios públicos. |
+| h) | Financiar estudios que definan las condiciones de localización para la disposición de los distintos tipos de residuos. |
+| i) | Proponer territorios como zonas rezagadas en materia social y su respectivo plan de desarrollo. |
+### Funciones Fomento Actividades Productivas Art 18
+#### Ctx
+Principales funciones del Gobierno Regional en materia de fomento de las actividades productivas (Art. 18)
+#### Items
+| Item | Def |
+| --- | --- |
+| a) | Formular políticas regionales de fomento de las actividades productivas, apoyo al emprendimiento, innovación, capacitación laboral, ciencia y tecnología. |
+| b) | Establecer las prioridades estratégicas regionales en materia de fomento productivo e innovación para la competitividad. |
+| c) | Aprobar el plan regional de desarrollo turístico (PLADETUR). |
+| d) | Promover y diseñar programas y proyectos de fomento productivo. |
+| e) | Promover y apoyar oficinas comunales de fomento productivo. |
+| f) | Promover la investigación científica y tecnológica y el desarrollo de la educación superior y técnico profesional. |
+| g) | Elaborar y aprobar la Política Regional de Ciencia, Tecnología, Conocimiento e Innovación para el Desarrollo. |
+### Funciones Desarrollo Social y Cultural Art 19
+#### Ctx
+Principales funciones del Gobierno Regional en materia de desarrollo social y cultural (Art. 19)
+#### Items
+| Item | Def |
+| --- | --- |
+| a) | Establecer prioridades regionales para la erradicación de la pobreza. |
+| b) | Participar en acciones para facilitar el acceso de la población de escasos recursos a salud, educación, cultura, vivienda, seguridad social, deportes, recreación y asistencia judicial. |
+| c) | Proponer programas y proyectos con énfasis en grupos vulnerables. |
+| d) | Distribuir recursos para financiamiento de beneficios y programas sociales administrados por municipalidades. |
+| e) | Realizar estudios sobre condiciones, nivel y calidad de vida de los habitantes. |
+| f) | Fomentar expresiones culturales, cautelar el patrimonio, y velar por la protección y desarrollo de etnias originarias. |
+| g) | Proponer programas y proyectos que fomenten la formación deportiva y la práctica del deporte. |
+| h) | Mantener información actualizada sobre la situación socioeconómica regional. |
+### Atribuciones Art 20
+#### Ctx
+ATRIBUCIONES DE LOS GOBIERNOS REGIONALES (Art. 20)
+#### Items
+| Item | Def |
+| --- | --- |
+| a) | Aprobar y modificar normas reglamentarias regionales. |
+| b) | Adquirir, administrar y disponer de sus bienes y recursos. |
+| c) | Convenir programas anuales o plurianuales de inversiones con impacto regional. |
+| d) | Disponer, supervisar y fiscalizar iniciativas con cargo a su presupuesto. |
+| e) | Aplicar políticas definidas en la estrategia regional de desarrollo. |
+| f) | Aprobar planes regionales de ordenamiento territorial, planes reguladores metropolitanos, intercomunales, comunales, seccionales y planes de inversiones en infraestructura de movilidad y espacio público. |
+| g) | Formular y priorizar proyectos de infraestructura social básica y evaluar programas. |
+| h) | Proponer criterios para la distribución de subvenciones a programas sociales. |
+| i) | Aplicar tributos regionales para financiar obras de desarrollo regional (según ley). |
+| j) | Aprobar banderas, escudos e himnos regionales. |
+| k) | Diseñar, elaborar, aprobar y ejecutar políticas, planes, programas y proyectos dentro de su territorio. |
+| l) | Ejercer demás atribuciones necesarias para el ejercicio de sus funciones. |
+| m) | Coparticipar con el Comité Regional para el cambio climático en la elaboración y aprobación de los instrumentos para la gestión del cambio climático a nivel regional. |
+### Marco Juridico Regulatorio
+#### Ctx
+Se reitera el marco normativo general presentado en la Sección 4, enfatizando la Ley N°19.175 y sus modificaciones como el cuerpo legal central para los GORE, junto con las leyes de presupuesto anuales y normativas específicas sobre probidad, transparencia, lobby, transformación digital, protección de datos, y las referidas a nuevas competencias como seguridad y gestión de desastres.
 
-## Roles y Responsabilidades en Inducción
-
-| Rol | Responsabilidad |
-|-----|----------------|
-| Gobernador Regional | Respaldo político, asignación de recursos, participación en hitos |
-| Jefatura Directa | Garantía de tiempos, selección de agente inductor, clarificación de funciones y retroalimentación final |
-| Área GDP | Coordinación general, monitoreo, ajustes, evaluación periódica; informa políticas de RRHH, deberes y derechos |
-| Agente Inductor/Mentor | Par experimentado; facilita interrelación con equipo y áreas de la organización |
-
-## Administración Pública en Chile
-
-**División de poderes:** Ejecutivo (Presidente) · Legislativo (Congreso) · Judicial (independiente).
-
-**Estructura ejecutiva:** 25 Ministerios · Subsecretarías (ej. SUBDERE para regiones) · Servicios Descentralizados (personalidad jurídica propia, ej. SII, Gobiernos Regionales) · Servicios Desconcentrados (unidades regionales de ministerios, ej. SEREMIs).
-
-**Órganos autónomos:** CGR (control de legalidad y fondos públicos) · Banco Central · Ministerio Público · Agencia de Protección de Datos Personales (Ley N°21.719) · Agencia Nacional de Ciberseguridad ANCI (Ley N°21.663).
-
-**Gobiernos Regionales (GORE):** Descentralización = transferencia de poder y recursos con toma de decisiones local. Entidades con personalidad jurídica de derecho público y patrimonio propio.
-
-**Funciones GORE (Art. 16 Ley 19.175):** Elaboración de políticas, planes y programas de desarrollo regional · administración del presupuesto regional y resolución de inversión FNDR · prevención social del delito y asistencia a víctimas · adopción de medidas ante emergencias y catástrofes (SINAPRED) · dictación de normas generales para materias de competencia regional.
-
-| Área de Competencia | Funciones Clave |
-|--------------------|----------------|
-| Ordenamiento Territorial | Elaboración del PROT, planes reguladores, protección ambiental |
-| Fomento Productivo | Políticas de innovación, PLADETUR, gestión del FRPD |
-| Desarrollo Social | Erradicación de la pobreza, cultura, deporte, grupos vulnerables |
-
-## GORE Ñuble
-
-**Reseña:** Creado el 6 de septiembre de 2018 (separación de Región del Biobío). 21 comunas en 3 provincias (Diguillín, Punilla, Itata).
-
-**Misión 2025–2026:** Liderar desarrollo sustentable mediante inversión eficiente y coordinación pública-privada de cordillera a mar.
-
-**Visión:** Territorio reconocido por calidad de vida, cultura y fortalecimiento de capital humano.
-
-**Objetivos estratégicos institucionales:**
-
-| Prioridad | Objetivo | Enfoque Género | Cambio Climático |
-|-----------|---------|:--------------:|:----------------:|
-| 1 | Planificación regional con información territorial integrada | Sí | Sí |
-| 2 | Financiamiento de inversión pública regional en fomento e innovación | Sí | Sí |
-| 3 | Fortalecimiento de capacidades de actores para gestión eficaz del FNDR | Sí | No |
-
-**Bienes y servicios que entrega el GORE:**
-- Políticas, planes, programas y proyectos de alcance regional: PROT, ERD, Política Regional de CTiD, ARI, PROPIR.
-- Financiamiento de iniciativas de inversión y gasto público regional.
+## Seccion 10 Gobierno Regional de Nuble
+### ID
+GN-MANUAL-INDUCCION-S10
+### Ctx
+El Gobierno Regional de Ñuble se estableció el 6 de septiembre de 2018, tras la creación de la Región de Ñuble, la cual se separó de la Región del Biobío. Este cambio significativo en la división política-administrativa de Chile fue el resultado de un largo proceso de descentralización y regionalización del país. El Gobierno Regional de Ñuble tiene como objetivo principal promover el desarrollo económico, social y cultural de la región, así como gestionar de manera eficiente los recursos públicos para satisfacer las necesidades de la población local. Desde su creación, ha trabajado en estrecha colaboración con los municipios de la región y la comunidad para impulsar el progreso y el bienestar de las 21 comunas que componen la Región de Ñuble.
+### Mision y Vision Actualizado 2025 2026
+#### Mssn
+Liderar e impulsar el desarrollo sustentable de la Región de Ñuble, mediante la gestión eficiente de la inversión pública, la responsabilidad presupuestaria, y la coordinación entre la institucionalidad pública y privada para contribuir al desarrollo territorial armónico, de cordillera a mar.
+#### Vision
+#### Def
+Que Ñuble sea un territorio reconocido por su calidad de vida, su aporte cultural y su fortalecimiento del capital humano, con una matriz productiva diversificada y una mejora especial en la calidad de vida de adultos mayores y población rural.
+#### Ctx
+Contexto ERD 2024-2030
+### Objetivos Estrategicos Institucionales 2025 2026
+#### Table
+#### Columns
+- Prioridad
+- Tipo_de_Objetivo
+- Descripcion
+- Enfoque_de_Genero
+- Cambio_Climatico
+#### Rows
+| Prioridad | Tipo_de_Objetivo | Descripcion | Enfoque_de_Genero | Cambio_Climatico |
+| --- | --- | --- | --- | --- |
+| 1 | Estratégico | Desarrollar estrategias, políticas e instrumentos con enfoque de género para la Planificación Regional, la gestión de la Información territorial regional, y la gestión de los distintos actores del territorio, contribuyendo al desarrollo regional participativo y territorialmente integrado. | Sí | Sí |
+| 2 | Estratégico | Financiar una cartera anual de iniciativas de Inversión Pública Regional en las áreas de fomento productivo e innovación, que considere la perspectiva de género, y sea desarrollada en conjunto con los actores estratégicos público-privado del territorio, contribuyendo a mejorar las condiciones económicas y sociales de la región. | Sí | Sí |
+| 3 | Estratégico | Implementar instancias de participación, actualización, fortalecimiento de capacidades y articulación de los actores estratégicos público-privado del territorio y con perspectiva de género, en materia de formulación, evaluación y/o ejecución de iniciativas de inversión regional con financiamiento público del Fondo Regional de Desarrollo Regional, contribuyendo a una gestión eficaz, eficiente y oportuna del FNDR. | Sí | No |
+### Alineacion con ERD Nuble 2024 2030
+#### Ctx
+Estos objetivos se alinean con los ejes de la Estrategia Regional de Desarrollo Ñuble 2024-2030, que son:
+#### Items
+- Territorio y Medio Ambiente.
+- Economía, Innovación y Capital Humano.
+- Desarrollo Social Inclusivo.
+- Patrimonio, Cultura e Identidad.
+- Institucionalidad y Gobernanza Regional.
+### Bienes y Servicios que Entrega el Gobierno Regional de Nuble
+#### Items
+- Políticas, planes, programas y proyectos de alcance regional: PROT, ERD, Política Regional de CTiD, ARI, PROPIR, entre otros.
+- Financiamiento de Iniciativas de Inversión y Gasto público regional.
 - Financiamiento de proyectos de infraestructura, equipamiento y gestión de alcance regional.
-- Financiamiento de proyectos a organizaciones y entidades públicas y privadas.
-- Financiamiento de subvenciones en cultura, deporte, seguridad, género, social, medio ambiente (ej. Concurso 8% FNDR).
-- Financiamiento de conservación, activos no financieros, FRIL.
-- Financiamiento del FRPD.
+- Financiamiento de Proyectos a organizaciones y entidades públicas y privadas.
+- Financiamiento de subvenciones en áreas de cultura, deporte, seguridad, género, social, medio ambiente, etc. (Ej. Concurso 8% FNDR).
+- Financiamiento de proyectos de conservación, activos no financieros, FRIL, entre otros.
+- Financiamiento del Fondo Regional para la Productividad y el Desarrollo (FRPD).
 - Coordinación y articulación de actores públicos y privados para el desarrollo regional.
-- Asesoría y asistencia técnica a municipalidades.
-- Promoción de la participación ciudadana.
+- Asesoría y asistencia técnica a municipalidades en materias de competencia regional.
+- Promoción de la participación ciudadana en la gestión regional.
+#### Src
+(Ejemplos concretos de la gestión 2023 incluyen: Mejoras en salud (CESFAM, hospitales), Agua Potable Rural, Espacios Públicos, Maquinaria municipal, programas de apoyo a PYMES, seguridad (infraestructura policial, prevención), apoyo a la agricultura y riego, proyectos de innovación, programas para zonas de rezago, y respuesta a emergencias. Fuente: Cuenta Pública GORE Ñuble 2023).
+### Estructura Organizacional del Gobierno Regional de Nuble
+#### Ctx
+La estructura organizacional del Gobierno Regional de Ñuble fue aprobada por el Consejo Regional, según Certificado CORE 579 del 22 de diciembre de 2022, y posteriormente por Resolución Exenta N° 00056 del 16 de enero de 2023. Esta consta de acuerdo al DFL 1-19175, como base de:
+#### Items
+- Un Gobernador/a Regional.
+- Un Consejo Regional.
+- Un Administrador/a Regional.
+- Una Unidad de Control.
+- Seis Divisiones:
+#### Divisiones Base
+- División de Planificación y Desarrollo Regional.
+- División de Presupuesto e Inversión Regional.
+- División de Administración y Finanzas.
+- División de Desarrollo Social y Humano.
+- División de Infraestructura y Transportes.
+- División de Fomento e Industria.
+#### Ctx Optional
+- Adicionalmente, la Ley N°19.175 (Art. 68) permite al Gobernador Regional, con acuerdo del CORE, crear una División de Prevención del Delito, encargada de las tareas de coordinación y gestión de las funciones del GORE en materia de seguridad y prevención.
+- Además, se conjugan una serie de otros departamentos y unidades, dependientes de las primeras, que apoyan y complementan la gestión tanto administrativa como financiera de la organización.
+### Organigrama en detalle
+#### Ctx
+(El organigrama detallado presentado en el manual 2024 sigue vigente en sus líneas generales. Se debe consultar la última resolución oficial del GORE Ñuble para cualquier actualización específica de departamentos o unidades internas).
+#### Nivel Superior
+-
+  #### Gobernador Region de Nuble
+  #### Items
+  - Comunicaciones
+  - Gabinete Gobernador
+  - Centro Integral de Emergencia y Seguridad (CIES)
+  - Administradora Regional
+  - Corporación Regional de Desarrollo de Ñuble (u otras entidades asociativas)
+  - Asesoría Jurídica
+-
+  #### Consejo Region de Nuble
+  #### Items
+  - Secretaría Ejecutiva CORE
+  - Unidad de Control
+#### Nivel de Asesoria
+#### Items
+- Comité de Ciencia, Tecnología, Conocimiento e Innovación para el Desarrollo (CCTID)
+- Consejo de la Sociedad Civil (COSOC)
+- Auditoría (puede ser parte de Unidad de Control o externa según necesidad)
+- Unidad de Calidad y Gestión Institucional
+- Oficina de Partes (y Archivo)
+#### Divisiones
+-
+  #### Jefe Division de Planificacion y Desarrollo Regional DIPLADE
+  #### Items
+  - Comité Pertinencia y Vinculación Estratégica
+  - Departamento de Planificación Estratégica y Ordenamiento Territorial
+  - Departamento de Desarrollo de Proyectos Estratégicos
+  - Departamento de Desarrollo Urbano (y/o Área Metropolitana, si aplica)
+  - Departamento de Puesta en Valor del Patrimonio
+-
+  #### Jefe Division de Presupuesto e Inversion Regional DIPIR
+  #### Items
+  - Departamento de Análisis y Evaluación de Inversiones (SNI)
+  - Departamento de Presupuesto Regional
+  - Departamento de Gestión de Inversiones y Convenios
+-
+  #### Jefe Division de Desarrollo Social y Humano
+  #### Departamentos
+  -
+    #### Departamento Fondos Concursables y Programas Sociales
+    #### Items
+    - Unidad Subvenciones (Ej. 8% FNDR)
+    - Unidad Programas Sociales Regionales
+  -
+    #### Departamento Analisis y Gestion Territorial
+    #### Items
+    - Unidad Participación Ciudadana
+    - Unidad Territorial Provincial (si aplica)
+    - Unidad de Seguimiento de Políticas, Planes y Programas Sociales
+-
+  #### Jefe Division de Fomento e Industria
+  #### Items
+  - Departamento Zonas en Desarrollo (Territorios Rezagados, Zonas Extremas)
+  - Departamento Desarrollo Económico Local y PYMES
+  - Departamento Ciencia, Tecnología e Innovación para la Competitividad (gestión FRPD)
+  - Departamento de Desarrollo Empresarial y Atracción de Inversiones
+  - Departamento de Riego y Medio Ambiente (o unidad específica de Medio Ambiente y Cambio Climático)
+-
+  #### Jefe Division de Infraestructura y Transporte
+  #### Departamentos
+  -
+    #### Departamento de Infraestructura y Equipamiento Regional
+    #### Items
+    - Unidad Saneamiento Básico (APR, alcantarillado)
+  -
+    #### Departamento Gestion en Transporte y Telecomunicaciones
+    #### Items
+    - Unidad Conectividad (digital y física)
+-
+  #### Jefe Division de Administracion y Finanzas DAF
+  #### Departamentos
+  -
+    #### Departamento de Gestion y Desarrollo de Personas
+    #### Items
+    - Unidad Gestión de Personas
+    - Unidad Desarrollo de Personas (Capacitación)
+  - Departamento_de_Finanzas_y_Contabilidad
+  -
+    #### Unidad de Gestion Operativa Interna
+    #### Items
+    - Servicios Generales, Adquisiciones
+  - Unidad_de_Abastecimiento
+  - Unidad_de_Tecnologias_de_la_Informacion_y_Comunicaciones_TIC_y_Transformacion_Digital
+-
+  #### Opcional Jefe Division de Prevencion del Delito
+  #### Ctx
+  Departamentos o unidades según las necesidades de la estrategia regional de prevención.
+### Funciones de las Unidades Base Segun DFL 1 19175
+#### Items
+| Unidad | Def |
+| --- | --- |
+| Gobernador Regional | Órgano ejecutivo del gobierno regional, preside el consejo regional. Ejerce funciones con arreglo a la Constitución y leyes. (Revisar en profundidad Art. 24 de la Ley N°19.175 para detalle de funciones). |
+| Consejo Regional (CORE) | Órgano normativo, resolutivo y fiscalizador, que busca hacer efectiva la participación de la comunidad regional. Integrado por consejeros elegidos por sufragio universal. (Revisar en profundidad Art. 36 de la Ley N°19.175 para detalle de funciones). |
+| Administrador/a Regional | Colaborador directo del gobernador regional, encargado de la gestión administrativa del gobierno regional y la coordinación de los jefes de división. |
+| Unidad de Control | Responsable de la auditoría operativa interna, fiscalización de legalidad y control de ejecución financiera y presupuestaria. Colabora con el CORE en su función fiscalizadora. Emite informes trimestrales y representa actos ilegales al Gobernador. |
+| DIVISIÓN DE PLANIFICACIÓN Y DESARROLLO REGIONAL (DIPLADE) | Elabora y propone estrategias, políticas, planes (incluido PROT), programas y proyectos para el desarrollo armónico del territorio, conforme a prioridades del GORE. Apoya al gobernador en evaluación y presta asistencia técnica. |
+| DIVISIÓN DE PRESUPUESTO E INVERSIÓN REGIONAL (DIPIR) | Elabora proyectos de presupuesto de inversión, ejecuta y controla dicho presupuesto y programas, asesorando al gobernador en proyectos de inversión según planificación regional. |
+| DIVISIÓN DE ADMINISTRACIÓN Y FINANZAS (DAF) | Gestión administrativa interna y provisión de servicios generales del GORE. |
+| DIVISIÓN DE FOMENTO E INDUSTRIA | Propone, promueve y ejecuta planes y programas regionales para estimular ciencia, tecnología, conocimiento, innovación, desarrollo empresarial y competitividad, facilitando la incorporación de TICs y proponiendo instrumentos de fomento. |
+| DIVISIÓN DE INFRAESTRUCTURA Y TRANSPORTES | Propone, promueve y ejecuta planes y programas regionales en materia de obras de infraestructura, equipamiento regional y gestión de transporte. |
+| DIVISIÓN DE DESARROLLO SOCIAL Y HUMANO | Propone, promueve y ejecuta planes y programas regionales conducentes a la igualdad de derechos, oportunidades y cohesión social. |
+| DIVISIÓN DE PREVENCIÓN DEL DELITO (si se crea) | Encargada de tareas de coordinación y gestión de funciones del GORE en materia de prevención del delito y atención a víctimas, en coordinación con la institucionalidad de seguridad pública. |
+#### Req
+Las divisiones de Fomento e Industria, Infraestructura y Transportes, y Desarrollo Social y Humano (y Prevención del Delito, si existe) deben coordinar el accionar de los servicios públicos regionales que dependan o se relacionen con el gobierno regional.
 
-**Estructura organizacional** (aprobada por Certificado CORE 579 del 22/12/2022, Resolución Exenta N° 00056 del 16/01/2023):
-- Gobernador/a Regional (+ Comunicaciones, Gabinete, CIES).
-- Consejo Regional (CORE) (+ Secretaría Ejecutiva CORE, Unidad de Control).
-- Administrador/a Regional.
-- Nivel asesor: CCTID, COSOC, Auditoría, Unidad de Calidad y Gestión Institucional, Oficina de Partes.
+## Seccion 11 Derechos y Deberes Funcionarios
+### ID
+GN-MANUAL-INDUCCION-S11
+### Requisitos de Ingreso
+#### Ctx
+Requisitos Generales: Los postulantes deberán cumplir con los siguientes requisitos generales señalados en el Artículo 12 del Estatuto Administrativo, el cual señala que para ingresar a la Administración del Estado será necesario:
+#### Req
+| Item | Def |
+| --- | --- |
+| a) | Ser ciudadano. |
+| b) | Haber cumplido con la ley de reclutamiento y movilización, cuando fuere procedente. |
+| c) | Tener salud compatible con el desempeño del cargo. |
+| d) | Haber aprobado la educación básica y poseer el nivel educacional o título profesional o técnico que por la naturaleza del empleo exija la ley. |
+| e) | No haber cesado en un cargo público como consecuencia de haber obtenido una calificación deficiente, o por medida disciplinaria, salvo que hayan transcurrido más de cinco años desde la fecha de expiración de funciones. |
+| f) | No estar inhabilitado para el ejercicio de funciones o cargos públicos, ni hallarse condenado por crimen o simple delito. |
+### Prohibiciones Inhabilidades e Incompatibilidades Funcionarias
+#### Ctx
+Sin perjuicio de lo anterior, los postulantes no deberán estar afectados a las inhabilidades e incompatibilidades contenidas en los artículos 54 y 56 del DFL N° 1/19653 de 2000 del Ministerio Secretaría General de la Presidencia, que fija el texto refundido, coordinado y sistematizado de la Ley N° 18.575, Orgánica Constitucional de Bases Generales de la Administración del Estado. Estas inhabilidades e incompatibilidades son:
+#### Prohib
+| Item | Def |
+| --- | --- |
+| a) | Tener vigentes o suscribir, por sí o por terceros, contratos o cauciones ascendientes a 200 UTM o más, con el Servicio. |
+| b) | Tener litigios pendientes con el Servicio, a menos que se refieran al ejercicio de derechos propios, de su cónyuge, hijos, adoptados o parientes hasta el tercer grado de consanguinidad y segundo de afinidad inclusive. |
+| c) | Ser director, administrador, representante o socio titular del 10% o más de los derechos de cualquier clase de sociedad, cuando ésta tenga contratos o cauciones vigentes ascendientes a 200 UTM o más, o litigios pendientes con el Servicio. |
+| d) | Ser cónyuge, hijo, adoptado o pariente hasta el tercer grado de consanguinidad o segundo por afinidad inclusive de las autoridades y de los funcionarios directivos del Servicio hasta el nivel de Jefe de Departamento inclusive. |
+| e) | Desarrollar actividades particulares en los mismos horarios de labores dentro del Servicio, o que interfieran con su desempeño funcionario, salvo actividades de tipo docente, con un máximo de 12 horas semanales. |
+### Derechos Funcionarios
+#### Res
+-
+  #### Item
+  1.
+  #### Def
+  Hacer uso de los feriados, permisos, licencias y participar en las acciones de capacitación.
+-
+  #### Item
+  2.
+  #### Def
+  Gozar de todas las prestaciones y beneficios que contemplen los sistemas de previsión y bienestar social.
+-
+  #### Item
+  3.
+  #### Def
+  Ser defendidos y exigir que la institución a que pertenezcan persiga la responsabilidad civil y criminal de las personas que atenten contra su vida o su integridad corporal, con motivo del desempeño de sus funciones, o que, por dicho motivo, los injurien o calumnien en cualquier forma.
+-
+  #### Item
+  4.
+  #### Def
+  Percibir por sus servicios las remuneraciones y demás asignaciones adicionales.
+-
+  #### Item
+  5.
+  #### Def
+  Percibir las siguientes asignaciones:
+  #### Items
+  - Horas extraordinarias.
+  - Viático, pasajes u otros análogos.
+-
+  #### Item
+  6.
+  #### Def
+  Derecho a afiliarse a los Servicios de Bienestar (Depende si está creado).
+-
+  #### Item
+  7.
+  #### Def
+  Derecho a Asignaciones Familiares.
+-
+  #### Item
+  8.
+  #### Def
+  Derecho a formar y a afiliarse a Asociaciones de funcionarios.
+-
+  #### Item
+  9.
+  #### Def
+  Gozar de estabilidad en el empleo.
+-
+  #### Item
+  10.
+  #### Def
+  Ascender en el respectivo escalafón.
+-
+  #### Item
+  11.
+  #### Def
+  Participar en concursos.
+-
+  #### Item
+  12.
+  #### Def
+  Recibir asistencia en caso de accidente de trabajo o enfermedad profesional.
+-
+  #### Item
+  13.
+  #### Def
+  Todos los funcionarios de planta o contrata que sufran un accidente de trabajo o un accidente de trayecto tienen el derecho a atenderse en los Servicios Médicos de la Mutual de Seguridad de la Cámara Chilena de la Construcción.
+### Licencias Medicas
+#### Ctx
+Los y las funcionarias(os) que presenten una licencia médica deben asegurarse de que esta sea remitida por el médico o centro de salud al empleador por los medios electrónicos correspondientes dentro de los tres días desde la emisión de la licencia (es el plazo que tiene el trabajador para presentar la licencia médica al empleador). En el caso de que la licencia sea emitida en papel, el funcionario tendrá tres días para hacerla llegar al Gobierno Regional entregándola por oficina de partes (o digitalizándola según los procedimientos de transformación digital). Por último, el funcionario(a) deberá estar atento(a) a la resolución de la ISAPRE o COMPIN, la cual autorizará, rechazará o reducirá los días de licencia otorgados. Para lo cual, en los casos que corresponda, deberá presentar mayores antecedentes para apelar al dictamen.
+### Remuneraciones Asignaciones e Incentivos
+#### Ctx
+- Las remuneraciones del sector público están regidas por diversas escalas, siendo la Escala Única de Sueldos la norma general. Las remuneraciones de la Escala Única de Sueldos (EUS) se conforman por el sueldo base y por un conjunto de asignaciones que dependen de las responsabilidades y características del cargo, de los títulos académicos del trabajador y de la institución en la que trabajan.
+- Los funcionarios del Gobierno Regional se rigen por el Estatuto Administrativo, Ley 18.834 de 1989. La remuneración constituye la sumatoria de los siguientes estipendios según corresponda:
+#### Items
+| Item | Def |
+| --- | --- |
+| 1. | Sueldo Base: El sueldo base de los trabajadores del Gobierno Central está regido en el artículo 1º de la EUS del Decreto Ley Nº 249, donde se establecen los grados y la renta mensual. |
+| 2. | Bonificación Art. 18 DL 19185: Además del sueldo base, existen un conjunto de asignaciones reguladas por el artículo 18 de la Ley 19.185, las cuales siguen la clasificación de grados establecida en el DL Nº 1. |
+| 3. | Asignación Profesional: Los profesionales regidos por la EUS tienen derecho a una Asignación Profesional, según lo establecido en el artículo 19 de la Ley 19.185. |
+| 4. | Asignación de Dirección Superior: En el artículo 1º de la Ley 19.863 se establece la Asignación de Dirección Superior. |
+| 5. | Bonificación de Salud y Bonificación Compensatoria Previsional: Los funcionarios regidos por la EUS tienen derecho a una bonificación de salud según lo establecido en el artículo 3° de la Ley 18.566. Además, existe la bonificación compensatoria previsional, regida por los artículos 10 y 1 de la Ley 18.675. |
+| 6. | Asignación de Responsabilidad Superior: Los funcionarios directivos entre los grados 1-A y 5 reciben una asignación de responsabilidad superior al 40% del sueldo base. |
+| 7. | Asignación Modernización: Dentro de los componentes comunes de la EUS, existe la Asignación de Modernización, regida por la Ley 19.553. |
+#### Ctx Optional
+Nota sobre personal a contrata GORE (Ley de Presupuestos 2026): La Glosa 01, Partida 31 de la Ley N°21.796 (Presupuestos 2026) establece que para el personal a contrata de los GORE no regirá la limitación de antigüedad del Estatuto Administrativo. Asimismo, hasta un 20% del personal a contrata podrá desempeñar funciones directivas por encargo del Gobernador Regional. El personal a honorarios podrá tener calidad de Agente Público para efectos de responsabilidad.
+### Permisos con Goce de Remuneraciones
+#### Ctx
+Estos permisos, comúnmente llamados permisos administrativos, corresponden a 6 días asignados a todo funcionario público en el período de un año, y se pueden fraccionar en medios días, sean estos AM o PM. Si el funcionario no hace uso de estos días durante el período de un año calendario, se pierden sin que se tenga derecho a utilizarlos en un próximo período. Para solicitar este permiso, se debe hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
+### Permisos sin Goce de Remuneraciones
+#### Ctx
+Estos permisos deben ser autorizados por la jefatura directa. Un funcionario podrá solicitar este permiso por:
+#### Items
+- Motivos particulares, hasta seis meses en cada año calendario.
+- Permanecer en el extranjero, hasta por dos años.
+### Feriado Legal
+#### Ctx
+Comúnmente conocidos como vacaciones, se utilizan para el descanso de los funcionarios durante un año calendario. Los días de feriado legal varían según la antigüedad laboral:
+#### Items
+- De 1 a 15 años: 15 días hábiles
+- De 15 a 20 años: 20 días hábiles
+- Más de 20 años laborales: 25 días hábiles
+#### Ctx Optional
+- Para justificar los años trabajados, se debe presentar un Certificado de Vacaciones Progresivas otorgado por la AFP.
+- Los feriados legales pueden o no ser utilizados durante el año. Si no se utilizan, pueden ser traspasados según la normativa vigente.
+- Para solicitar este permiso, se debe hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
+### Destinaciones Comisiones de Servicio y Cometidos
+#### Ctx
+- Toda actividad laboral desarrollada por los funcionarios fuera de las dependencias físicas del Gobierno Regional se considera un cometido funcional. Este debe ser respaldado por un formulario creado para tal efecto (preferentemente electrónico), que debe detallar la actividad a realizar, el tiempo que se utilizará y la fecha en la cual se llevará a cabo. El formulario consta de dos partes:
+- Todo funcionario que incurra en un cometido deberá llenar la primera parte del formulario, y una vez realizado el cometido, deberá completar la segunda parte, que debe ser firmada por la jefatura directa, quien indicará si existe derecho a viático y a qué porcentaje. Finalmente, el formulario debe ser entregado al Departamento de Gestión y Desarrollo de Personas.
+#### Proc
+- Planificación de la actividad y detalles
+- Características reales del cometido, respaldadas por correo, invitación, planificación, etc.
+#### Ctx Optional
+La Ley de Presupuestos 2026 (Artículo 22) instruye reducir las comisiones de servicio, especialmente al extranjero, a las imprescindibles.
+### Jornada Horaria y Mecanismo de Control de Jornada
+#### Req
+- Todo funcionario en Calidad Jurídica Planta, Contrata o Código del Trabajo deberá registrar su ingreso y salida de la jornada laboral en el sistema de control dispuesto para tal efecto.
+- Para ello, deberá ponerse en contacto con el Departamento de Gestión y Desarrollo de Personas para registrar sus datos.
+#### Ctx
+La jornada laboral corresponde a 44 horas semanales, distribuidas de la siguiente manera:
+#### Items
+- Lunes a Jueves: 9 horas
+- Viernes: 8 horas
+#### Ctx Optional
+- La hora de ingreso podrá ser entre las 8:00 y las 9:00 horas, y la hora de salida dependerá de la hora en que se cumplen las 9 horas (de lunes a jueves) y las 8 horas (los viernes).
+- Cuando por distintas razones el funcionario olvide marcar, deberá justificarse con la jefatura directa a través de correo electrónico con copia al GDP.
+### Jornada Extraordinaria
+#### Ctx
+Para trabajar jornadas extraordinarias, el funcionario deberá presentar el formulario N°1 correspondiente a Planificación de Trabajo Extraordinario, el cual debe ser autorizado por la jefatura. Una vez transcurrido el período autorizado para el trabajo extraordinario, se procederá a calcular el tiempo acumulado que exceda el período laboral, el cual será reconocido a través de una resolución que contempla un Formulario N°2 y los respaldos del sistema de control. Una vez reconocido el tiempo de trabajo extraordinario, se registrará en una cuenta a nombre del funcionario, quien podrá utilizarlo como tiempo compensado durante dos años. Posteriormente, se extinguirá. Para solicitar este permiso, se deberá tener claridad de cuánto tiempo posee el funcionario y hacer una solicitud a la jefatura directa a través de un formulario destinado para tal efecto (preferentemente electrónico).
+### Formacion y Capacitacion Funcionaria
+#### Ctx
+Todos los años, se aprueba un Plan Anual de Capacitación, el cual establece las actividades de capacitación que se desarrollará el Gobierno Regional durante el año, y a quienes irán dirigidas. Existen diversas posibilidades de optar a actividades de capacitación, como Cursos de la Contraloría, Campus del Servicio Civil, Diplomados y Cursos de la SUBDERE, entre otros. Cada vez que un funcionario(a) quiera optar a estas actividades de perfeccionamiento, deberá presentar al Encargado de Capacitación del GORE un formulario firmado por su jefatura directa. Finalmente, al obtener su certificado de aprobación, deberá remitirlo al Encargado de Capacitación para su correspondiente registro.
+### Proceso de Calificaciones Funcionarias
+#### Proc
+-
+  #### Item
+  1.
+  #### Def
+  El sistema de calificación tendrá por objeto evaluar el desempeño y las aptitudes de cada funcionario, atendidas las exigencias y características de su cargo, y servirá de base para el ascenso, los estímulos y la eliminación del servicio.
+-
+  #### Item
+  2.
+  #### Req
+  Todos los funcionarios, incluido el personal a contrata, deben ser calificados anualmente, en alguna de las siguientes listas:
+  #### Items
+  - Lista N° 1: Distinción
+  - Lista N° 2: Buena
+  - Lista N° 3: Condicional
+  - Lista N° 4: Eliminación
+-
+  #### Item
+  3.
+  #### Resp
+  El Jefe Superior de la institución
+  #### Req
+  Será personalmente responsable del cumplimiento de este deber.
+-
+  #### Item
+  4.
+  #### Cond
+  No serán calificados el Jefe Superior de la institución, su subrogante legal, los miembros de la Junta Calificadora Central y los delegados del personal, quienes conservarán la calificación del año anterior, cuando corresponda. Con todo, si el delegado del personal lo pidiere, será calificado por su Jefe Directo.
+-
+  #### Item
+  5.
+  #### Req
+  La calificación se hará por la Junta Calificadora.
+-
+  #### Item
+  6.
+  #### Req
+  Las Juntas Calificadoras se integrarán según normativa.
+-
+  #### Item
+  7.
+  #### Req
+  Los funcionarios elegirán un representante titular y un suplente. La Asociación de Funcionarios con mayor representación tendrá derecho a designar un delegado con voz.
+-
+  #### Item
+  8.
+  #### Req
+  La Junta Calificadora será presidida por el funcionario de más alto nivel jerárquico.
+-
+  #### Item
+  9.
+  #### Ctx
+  Las normas de este párrafo sirven de base para el reglamento de calificaciones.
+-
+  #### Item
+  10.
+  #### Ctx
+  La calificación evaluará los doce meses de desempeño entre el 1° de septiembre y el 31 de agosto.
+-
+  #### Item
+  11.
+  #### Req
+  El proceso de calificaciones deberá iniciarse el 1° de septiembre y terminarse a más tardar el 30 de noviembre.
+-
+  #### Item
+  12.
+  #### Prohib
+  No serán calificados funcionarios con menos de seis meses de desempeño efectivo.
+-
+  #### Item
+  13.
+  #### Req
+  La Junta Calificadora considerará la precalificación del Jefe Directo y anotaciones de mérito o demérito.
+-
+  #### Item
+  14.
+  #### Resp
+  Los jefes
+  #### Req
+  Son responsables de las precalificaciones.
+-
+  #### Item
+  15.
+  #### Ctx
+  Elementos básicos: hoja de vida y hoja de calificación.
+-
+  #### Item
+  16.
+  #### Ctx
+  Infracción establecida en sumario se considera una vez.
+-
+  #### Item
+  17.
+  #### Ctx
+  Anotaciones de mérito: por conducta o desempeño destacado.
+### Prevencion de Riesgos Higiene y Seguridad
+#### Ctx
+El Gobierno Regional de Ñuble se encuentra adherido a la Mutual de Seguridad de la Cámara Chilena de la Construcción desde el año 2018 a la fecha. <www.mutual.cl>
+### Definiciones Importantes Accidentes y Enfermedades
+#### Def
+| Item | Termino | Def |
+| --- | --- | --- |
+| a) | Accidentes del Trabajo | Toda lesión que una persona sufra a causa o con ocasión del trabajo, y que le produzca incapacidad o muerte. |
+| b) | Enfermedad Profesional | Causada directamente por el ejercicio de una profesión o trabajo, que produzca incapacidad o muerte. |
+| c) | Accidente de Trayecto | Ocurrido en el trayecto "directo" de ida o regreso, entre la habitación y el lugar de trabajo. |
+### Documentacion Exigida para Notificar
+#### Req
+| Caso | Items |
+| --- | --- |
+| Accidentes del Trabajo | ['Denuncia Individual de Accidente del Trabajo (DIAT), Cédula de Identidad.'] |
+| Accidente de Trayecto | ['DIAT, Cédula de Identidad.'] |
+| Enfermedad Profesional | ['Denuncia Individual de Enfermedad Profesional (DIEP), Cédula de Identidad.'] |
+### Responsabilidad del Funcionario frente a un Accidente
+#### Req
+- El funcionario debe informar a su Jefe directo y al Departamento de Gestión de Personas de cualquier accidente laboral. El reporte debe ser a la brevedad.
+- Tras ser atendido, debe entregar el "Informe de atención" y, si hay reposo, el "Alta Médica" antes de reintegrarse.
+- El funcionario que retorne de reposo por Accidente del Trabajo deberá tener una entrevista con el Comité Paritario de Higiene y Seguridad.
 
-**Divisiones base (DFL 1-19175):**
+## Seccion 12 Comites Paritarios de Higiene y Seguridad
+### ID
+GN-MANUAL-INDUCCION-S12
+### Def
+El Comité Paritario de Higiene y Seguridad (CPHS) es una unidad técnica de trabajo conjunto entre la empresa y los trabajadores, para detectar y evaluar riesgos de accidentes y enfermedades profesionales, y buscar estrategias de prevención.
+### Integracion
+#### Def
+Está integrado por tres representantes titulares designados por la administración y tres representantes titulares elegidos por los funcionarios, más sus respectivos suplentes.
+### Contacto
+#### Ctx
+Para contactar al Comité Paritario de Higiene y Seguridad del Gobierno Regional, puedes escribir a: comité<.paritario@goredenuble.cl>
+### Principales Funciones
+#### Act
+- Asesorar e instruir a los trabajadores para la correcta utilización de los instrumentos de protección.
+- Vigilar el cumplimiento de las medidas de prevención, higiene y seguridad.
+- Investigar las causas de los accidentes del trabajo y enfermedades profesionales.
+- Decidir si el accidente o la enfermedad profesional se debió a negligencia inexcusable del trabajador.
+- Indicar la adopción de todas las medidas de higiene y seguridad.
+- Promover la realización de cursos de capacitación profesional.
 
-| División | Sigla | Funciones principales |
-|---------|-------|----------------------|
-| Planificación y Desarrollo Regional | DIPLADE | Estrategias, políticas, PROT, ERD; asistencia técnica |
-| Presupuesto e Inversión Regional | DIPIR | Presupuesto de inversión, ejecución y control; SNI |
-| Administración y Finanzas | DAF | Gestión administrativa interna; GDP, Finanzas, TIC, Abastecimiento |
-| Desarrollo Social y Humano | DIDESO | Planes sociales, subvenciones, participación ciudadana |
-| Infraestructura y Transportes | DIT | Infraestructura, equipamiento, APR, conectividad |
-| Fomento e Industria | DIFOI | Innovación, FRPD, zonas rezagadas, desarrollo empresarial |
-| Prevención del Delito (opcional Art. 68) | — | Coordinación de seguridad y prevención |
+## Seccion 13 Probidad y Transparencia
+### ID
+GN-MANUAL-INDUCCION-S13
+### Ctx
+Concepto de probidad y su aplicación al funcionario público (Ley 19.653 y Ley 18.575)
+### Def
+El principio de probidad en la función pública consiste en observar una conducta funcionaria intachable, un desempeño honesto y leal de la función o cargo con preeminencia del interés general sobre el particular.
+### Componentes
+| Item | Req |
+| --- | --- |
+| a) | Observar una conducta funcionaria intachable. |
+| b) | Desempeñar honesta y lealmente la función o cargo. |
+| c) | Darle preeminencia al interés general sobre el particular. |
+### Alcance
+#### Ctx
+Están sujetos al principio de probidad todas las personas que prestan servicios en o para la Administración Central del Estado y los Gobiernos Regionales, ya sea en cargos de planta, empleos a contrata, contratos a honorarios y contratos regidos por las normas del Código del Trabajo.
 
-## Derechos y Deberes del Funcionario
+## Seccion 14 Declaraciones de Intereses y Patrimonios DIP Ley 20880
+### ID
+GN-MANUAL-INDUCCION-S14
+### Ctx
+- Para el debido cumplimiento del principio de probidad, esta ley determina las autoridades y funcionarios que deberán declarar sus intereses y patrimonio en forma pública. Para el GORE Ñuble, esto incluye al Gobernador Regional, Consejeros Regionales, Administrador Regional, Jefes de División y otros funcionarios hasta el tercer nivel jerárquico o con funciones de fiscalización, así como ciertos contratados a honorarios.
+- Gestión de Personas debe ingresar al nuevo funcionario (si corresponde) a la plataforma <www.declaracionjurada.cl>, administrada por la Contraloría General de la República. Esta declaración debe confeccionarse dentro de los primeros 30 días corridos desde el ingreso, actualizarse cada mes de marzo (plazo máximo 31 de marzo), y realizarse una declaración de cese de funciones dentro de los 30 días posteriores al término del vínculo.
 
-**Requisitos de ingreso (Art. 12 Estatuto Administrativo):**
-- Ser ciudadano.
-- Haber cumplido con la ley de reclutamiento y movilización, cuando proceda.
-- Tener salud compatible con el desempeño del cargo.
-- Haber aprobado la educación básica y poseer el nivel educacional o título exigido por la naturaleza del empleo.
-- No haber cesado en cargo público por calificación deficiente o medida disciplinaria en los últimos 5 años.
-- No estar inhabilitado para el ejercicio de cargos públicos ni haber sido condenado por crimen o simple delito.
+## Seccion 15 Consejo para la Transparencia y Ley 20285
+### ID
+GN-MANUAL-INDUCCION-S15
+### Def
+El Consejo para la Transparencia (CPLT) es una corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, creado por la Ley de Transparencia de la Función Pública y de Acceso a la Información de la Administración del Estado.
+### Obj
+- Garantizar el principio de transparencia y el derecho de acceso a la información pública. Velar por el adecuado cumplimiento de la Ley de Protección de Datos Personales.
+- Fiscalizar el cumplimiento de las normas de transparencia y acceso a la información, aplicando sanciones.
+- Promover y difundir el principio de transparencia y el derecho de acceso a la información.
 
-**Inhabilidades e incompatibilidades (Arts. 54 y 56, Ley 18.575):**
-- No tener contratos vigentes > 200 UTM con el Servicio.
-- No tener litigios pendientes con el Servicio (salvo derechos propios o de familiares directos).
-- No ser socio (>10%) de sociedades con contratos > 200 UTM con el Servicio.
-- No ser cónyuge, hijo, adoptado o pariente hasta tercer grado de consanguinidad o segundo por afinidad de autoridades o jefes del Servicio hasta nivel Jefe de Departamento inclusive (Nepotismo).
-- No desarrollar actividades particulares en horario laboral, salvo docencia (máximo 12 horas semanales).
+## Seccion 16 Ley de Acceso a la Informacion Transparencia Activa y Pasiva Lobby
+### ID
+GN-MANUAL-INDUCCION-S16
+### Transparencia
+#### Def
+La Ley de Acceso a la Información (Ley 20.285) establece dos modalidades de transparencia: activa y pasiva.
+#### Transparencia Activa
+#### Req
+- Los servicios públicos, incluyendo el GORE Ñuble, deben mantener actualizados sus sitios web (ej. <www.goredenuble.cl> sección Transparencia Activa), permitiendo el acceso a información relevante.
+- El CPLT dispone el portal web [www.portaltransparencia.cl](http://www.portaltransparencia.cl), donde los servicios públicos deben ingresar mensualmente información como:
+#### Items
+- Actos y documentos publicados en Diario Oficial.
+- Potestades y Marco Normativo.
+- Estructura orgánica y facultades, funciones y atribuciones.
+- Personal y remuneraciones.
+- Adquisiciones y contrataciones.
+- Transferencias de fondos y aportes económicos entregados.
+- Actos y resoluciones con efectos sobre terceras personas.
+- Subsidios y beneficios.
+- Mecanismos de participación ciudadana.
+- Información Presupuestaria.
+- Auditorías al ejercicio presupuestario.
+- Participación en otras entidades.
+- Antecedentes preparatorios de normas.
+- Lobby y gestión de intereses (Ley N°20.730).
+- Declaración de patrimonio e intereses (Ley N°20.880).
+- Sanciones por incumplimiento Ley de Transparencia.
+- Acceso a Información Pública.
+- Transparencia proactiva.
+#### Warn
+La falta, omisión o alteración de esta información conlleva multas.
+#### Transparencia Pasiva
+#### Def
+- Consiste en la entrega de información a las personas que la soliciten al GORE Ñuble a través de los mecanismos dispuestos (link en web, formulario del portal de transparencia, formato físico en Oficina de Partes).
+- Las solicitudes deben ser respondidas mediante oficio y la información proporcionada en el formato solicitado, dentro del plazo legal, para evitar multas.
+### Lobby
+#### Def
+La Ley N°20.730 regula el Lobby y las gestiones que representen intereses particulares ante las autoridades y funcionarios. Su objetivo es regular la publicidad en estas actividades para fortalecer la transparencia y probidad.
+#### Sujetos Pasivos en el GORE
+#### Def
+Gobernador Regional, Consejeros Regionales, Secretario Ejecutivo del CORE, jefes de gabinete, y funcionarios con atribuciones decisorias relevantes o que influyan en ellas, designados por resolución.
+#### Sujetos Activos
+#### Def
+Quienes realizan lobby o gestión de interés particular.
+#### Deberes de Sujetos Pasivos
+#### Req
+- Registro de agenda pública (audiencias, reuniones, viajes, donativos).
+- Publicidad de los registros (en <www.leylobby.gob.cl>).
+- Deber de Igualdad de trato.
+#### Resp
+El GORE Ñuble es responsable de nombrar a los funcionarios que cumplen rol de sujeto pasivo.
 
-**Derechos del funcionario:** Feriados, permisos, licencias y capacitación · prestaciones previsionales y de bienestar · defensa institucional ante agresiones por desempeño del cargo · remuneraciones, asignaciones, viáticos y horas extraordinarias · estabilidad en el empleo y derecho a ascenso · afiliación a Servicio de Bienestar y a Asociaciones de Funcionarios · asistencia ante accidente de trabajo o enfermedad profesional (Mutual de Seguridad).
+## Seccion 17 Asignacion de Equipos Institucionales y Seguridad de la Informacion
+### ID
+GN-MANUAL-INDUCCION-S17
+### Asignacion de Equipos
+#### Ctx
+- Asignación de Equipos: La DAF proporciona equipos necesarios (computadoras, teléfonos, etc.).
+- Entrega de Equipos: Documentada y firmada.
+- Solicitud de Equipos Móviles: Justificada y aprobada por jefatura y DAF, según disponibilidad.
+- Registro de Equipos: Detalla equipos asignados.
+### Tratamiento y Seguridad de la Informacion
+#### Ctx
+Tratamiento y Seguridad de la Información (Ley N°21.719 y Ley N°21.663): Conjunto de políticas y procedimientos para proteger la información contra accesos no autorizados, alteraciones, pérdida o destrucción, en cumplimiento con la Ley de Protección de Datos Personales y la Ley Marco de Ciberseguridad.
+#### Req
+- Políticas de Seguridad de la Información: Normas y directrices sobre uso de contraseñas, acceso a sistemas, manejo de datos sensibles, etc.
+- Confidencialidad: Proteger información sensible y privada.
+- Integridad de la Información: Mantener datos precisos y completos.
+- Disponibilidad de la Información: Asegurar acceso a funcionarios autorizados.
+- Backup y Recuperación de Datos: Realizar copias de seguridad.
+- Uso Adecuado de Equipos: Normas de uso responsable y prevención de daños.
+- Devolución de Equipos: Al finalizar relación laboral o cuando no sean necesarios.
+- Capacitación en Seguridad y Protección de Datos: Programas de formación sobre mejores prácticas, reconocimiento de amenazas, protección de datos y ciberseguridad.
+- Acceso a Sistemas y Redes: Políticas de acceso y autorización. Asignación de correo electrónico y acceso a intranet y plataformas electrónicas.
+- Incidentes de Seguridad y Brechas de Datos: Procedimientos para identificar, reportar y manejar incidentes de seguridad y violaciones de datos personales (notificación a la Agencia de Protección de Datos Personales y a la Agencia Nacional de Ciberseguridad, según corresponda).
+- Responsabilidad del Usuario: Cumplir políticas de seguridad, notificar incidentes, y proteger equipos e información.
+- Protección de Datos por Diseño y por Defecto: Aplicar medidas para proteger datos desde la concepción de sistemas y procesos.
+- Evaluación de Impacto en Protección de Datos (EIPD): Realizarla previo a tratamientos de alto riesgo.
+- Delegado de Protección de Datos (DPD): Considerar su designación para velar por el cumplimiento de la Ley N°21.719.
+### Procedimientos Especificos
+#### Proc
+- Asignación y Entrega de Equipos: Solicitud del jefe de departamento, aprobación DAF, registro, entrega con firma de recepción.
+- Solicitud de Equipos Móviles: Justificación a supervisor, revisión, aprobación DAF, entrega y registro.
+- Tratamiento y Seguridad de la Información:
+#### Steps
+| Item | Act |
+| --- | --- |
+| 1. | Capacitación Inicial: Inducción sobre políticas de seguridad, protección de datos y ciberseguridad. |
+| 2. | Uso de Contraseñas Seguras y doble factor de autenticación cuando proceda. |
+| 3. | Acceso a Sistemas según rol. |
+| 4. | Backup Regular. |
+| 5. | Reporte de Incidentes al encargado de ciberseguridad y Dpto. de Informática. |
 
-## Remuneraciones, Asignaciones e Incentivos
+## Seccion 18 Transformacion Digital del Estado Ley 21180
+### ID
+GN-MANUAL-INDUCCION-S18
+### Ctx
+La Ley N°21.180 de Transformación Digital del Estado, publicada en 2019 y con implementación gradual hasta 2027, mandata a todos los órganos de la Administración del Estado, incluyendo el Gobierno Regional de Ñuble, a realizar sus procedimientos administrativos por medios electrónicos.
+### Principios y Objetivos
+#### Req
+- Procedimientos Electrónicos: La regla general es la tramitación electrónica, utilizando expedientes digitales.
+- Cero Papel: Eliminar progresivamente el uso del papel en la gestión administrativa.
+- Firma Electrónica: Uso de firma electrónica (simple o avanzada según el acto) para dar validez a documentos digitales.
+- Notificaciones Electrónicas: Las comunicaciones a los interesados se realizan por medios electrónicos, preferentemente a través de un Domicilio Digital Único.
+- Interoperabilidad: Los sistemas del GORE deben poder intercambiar información con otros órganos del Estado de forma segura y estandarizada, utilizando la Plataforma de Interoperabilidad del Estado (PISEE).
+- Seguridad y Protección de Datos: La transformación digital debe realizarse resguardando la seguridad de la información y cumpliendo con la normativa de protección de datos personales (Ley N°21.719) y ciberseguridad (Ley N°21.663).
+### Plataformas Transversales y su Aplicacion en el GORE Nuble
+#### Ctx
+El Estado ha desarrollado plataformas para apoyar esta transformación, que el GORE Ñuble debe utilizar o integrar:
+#### Items
+- ClaveÚnica: Sistema de autenticación centralizado para que ciudadanos y funcionarios accedan a servicios digitales. El GORE debe integrar ClaveÚnica en sus trámites en línea.
+- FirmaGob: Plataforma para la firma electrónica avanzada de documentos por parte de funcionarios públicos. Facilita la firma de resoluciones, oficios, etc.
+- DocDigital: Sistema para el envío y recepción de comunicaciones oficiales electrónicas entre organismos públicos, reemplazando el oficio en papel. Su uso es obligatorio.
+- CPAT (Catálogo de Procedimientos Administrativos y Tramitaciones): Herramienta para registrar y diagnosticar el estado de digitalización de todos los trámites del GORE. Es de uso obligatorio y alimenta el portal de trámites del Estado.
+- SIMPLE: Plataforma para crear trámites digitales de baja complejidad sin necesidad de programación. El GORE puede usarla para digitalizar rápidamente formularios y flujos de trabajo.
+- PISEE (Plataforma de Integración de Servicios Electrónicos del Estado): Infraestructura para el intercambio seguro de datos entre instituciones, fundamental para el principio de "no pedir al ciudadano información que el Estado ya posee".
+- Portal de Datos Abiertos (datos.gob.cl): Para la publicación de datos públicos del GORE en formatos reutilizables.
+### Implementacion en el GORE Nuble
+#### Items
+- Plan de Transformación Digital: El GORE debe contar con un plan estratégico para abordar la digitalización, identificando trámites prioritarios, necesidades de infraestructura, capacitación y adecuación normativa interna.
+- Gobernanza Digital: Se recomienda designar un Coordinador de Transformación Digital y un Delegado de Protección de Datos.
+- Gestión Documental Electrónica: Implementar o adoptar un sistema de gestión de expedientes electrónicos que cumpla con las normas técnicas.
+- Capacitación y Gestión del Cambio: Es fundamental capacitar al personal y gestionar el cambio cultural asociado a la digitalización.
+- Registro en Plataformas: El nuevo funcionario, según su rol, será registrado y capacitado en el uso de DocDigital, FirmaGob (si corresponde), y otras plataformas institucionales.
+#### Res
+La transformación digital es un proceso continuo que busca modernizar la gestión regional, hacerla más eficiente, transparente y cercana a las necesidades de los habitantes de Ñuble. El GORE Ñuble está comprometido con este proceso, avanzando hacia la digitalización completa de sus servicios y procedimientos para el año 2027.
 
-Estructura salarial regida por EUS (EUS = Escala Única de Sueldos, DL N°249):
-
-| Componente | Base legal |
-|-----------|-----------|
-| Sueldo Base | Art. 1° DL N°249 (grado y renta mensual) |
-| Bonificación Art. 18 | DL 19185 |
-| Asignación Profesional | Art. 19 Ley 19.185 |
-| Asignación de Dirección Superior | Art. 1° Ley 19.863 |
-| Bonificación de Salud | Art. 3° Ley 18.566 |
-| Bonificación Compensatoria Previsional | Arts. 10 y 1° Ley 18.675 |
-| Asignación de Responsabilidad Superior | Grados 1-A a 5; 40% del sueldo base |
-| Asignación de Modernización | Ley 19.553 |
-
-Nota (Ley de Presupuestos 2026, Glosa 01, Partida 31): para personal a contrata de los GORE no rige la limitación de antigüedad del EA. Hasta un 20% del personal a contrata puede desempeñar funciones directivas por encargo del Gobernador Regional. El personal a honorarios puede tener calidad de Agente Público para efectos de responsabilidad.
-
-## Jornada Laboral y Asistencia
-
-**Carga horaria:** 44 horas semanales. Lunes a jueves: 9 horas. Viernes: 8 horas. Horario de ingreso: entre 08:00 y 09:00.
-
-Registro obligatorio de entrada y salida en sistema de control de asistencia (Planta, Contrata y Código del Trabajo). Olvido de marcación: justificar con jefatura directa por correo con copia al GDP.
-
-## Permisos y Ausencias
-
-**Permisos administrativos (con goce de remuneración):** 6 días anuales; fraccionables en medios días (AM o PM). No trasladables al año siguiente. Solicitud vía formulario a jefatura directa (preferentemente electrónico).
-
-**Permisos sin goce de remuneración:** Motivos particulares, hasta 6 meses por año calendario. Permanencia en el extranjero, hasta 2 años. Requieren autorización de jefatura directa.
-
-**Feriado legal (vacaciones):**
-
-| Antigüedad | Días hábiles |
-|-----------|-------------|
-| 1 a 15 años | 15 días |
-| 15 a 20 años | 20 días |
-| Más de 20 años | 25 días |
-
-Certificado de Vacaciones Progresivas otorgado por la AFP para acreditar antigüedad. Solicitud vía formulario a jefatura directa.
-
-**Jornada extraordinaria:** Formulario N°1 (Planificación) autorizado por jefatura → Formulario N°2 (registro) con respaldo del sistema de control → tiempo reconocido por resolución → acumulable en cuenta por 2 años; luego se extingue.
-
-**Licencias médicas (LME):** Remisión electrónica por médico/centro de salud al empleador dentro de 3 días desde emisión. Licencias en papel: funcionario la entrega por Oficina de Partes dentro de 3 días. Funcionario atento a resolución de ISAPRE o COMPIN (aprobación, rechazo o reducción). En caso de rechazo, puede apelar presentando mayores antecedentes.
-
-**Cometidos funcionales:** Toda actividad laboral fuera de las dependencias del GORE requiere formulario (electrónico preferente) con: planificación de la actividad, detalles, características reales del cometido (respaldadas por correo o invitación). Después del cometido, jefatura firma segunda parte e indica si hay derecho a viático y porcentaje. Formulario se entrega al GDP. Ley de Presupuestos 2026 (Art. 22): reducir comisiones de servicio al extranjero a las imprescindibles.
-
-## Capacitación y Calificaciones
-
-**Capacitación:** Plan Anual de Capacitación aprobado anualmente (cursos internos, externos, e-learning). Opciones adicionales: Contraloría, Campus Servicio Civil, SUBDERE. Solicitud via formulario firmado por jefatura directa. Certificado de aprobación debe remitirse al Encargado de Capacitación.
-
-**Calificaciones funcionarias:**
-- Período: 1 de septiembre al 31 de agosto.
-- Proceso inicia el 1 de septiembre; termina a más tardar el 30 de noviembre.
-- Listas: N°1 Distinción · N°2 Buena · N°3 Condicional · N°4 Eliminación.
-- No se califican: Jefe Superior, subrogante legal, miembros de Junta Calificadora Central, delegados del personal (conservan calificación anterior, salvo solicitud expresa).
-- No se califican funcionarios con menos de 6 meses de desempeño efectivo.
-- Proceso: precalificación por jefe directo → revisión por Junta Calificadora (integrada por representantes de la institución y de los funcionarios) → resultado final.
-- Función del sistema: base para ascenso, estímulos y eliminación del servicio.
-
-## Probidad, Transparencia y Lobby
-
-**Probidad administrativa:** Conducta intachable, desempeño honesto y preeminencia del interés general. Aplica a todo el personal (Planta, Contrata, Honorarios, Código del Trabajo). Declaración de Intereses y Patrimonio (DIP): obligatoria para autoridades y jefaturas en Plataforma CGR dentro de 30 días del ingreso.
-
-**Transparencia y acceso a la información (Ley 20.285):**
-- Transparencia Activa: publicación mensual obligatoria en web institucional (sueldos, compras, marco normativo, presupuesto).
-- Transparencia Pasiva: derecho ciudadano a solicitar información; plazo de respuesta legal bajo sanción de multa.
-
-**Ley de Lobby (Ley 20.730):** Publicidad de reuniones, viajes y donativos que busquen influir en decisiones. Sujetos pasivos: Gobernador, Consejeros, Jefes de División y funcionarios decisores designados. Obligación: registro de agenda pública en plataforma oficial.
-
-## Seguridad de la Información y Transformación Digital
-
-**Seguridad de la información (Leyes 21.719 y 21.663):** Protección de datos personales y ciberseguridad. Directrices: contraseñas seguras, doble factor de autenticación, reporte de incidentes. Backup regular, integridad de datos y confidencialidad estricta.
-
-**Transformación Digital (Ley 21.180):** Tramitación electrónica obligatoria de procedimientos administrativos (meta 2027). Principios: Cero Papel · Interoperabilidad (PISEE) · Notificación Electrónica.
-
-| Plataforma | Función |
-|-----------|---------|
-| ClaveÚnica | Autenticación |
-| FirmaGob | Firma electrónica avanzada para funcionarios |
-| DocDigital | Comunicaciones oficiales electrónicas entre organismos |
-| CPAT | Catálogo de trámites digitales |
-
-## Salud Ocupacional y Prevención de Riesgos
-
-GORE Ñuble adherido a la Mutual de Seguridad de la Cámara Chilena de la Construcción desde 2018 (www.mutual.cl).
-
-**Definiciones (Ley 16.744):**
-- Accidente del Trabajo: lesión a causa o con ocasión del trabajo que produzca incapacidad o muerte.
-- Enfermedad Profesional: causada directamente por el ejercicio de la profesión o trabajo.
-- Accidente de Trayecto: ocurrido en trayecto directo entre habitación y lugar de trabajo.
-
-**Documentación para notificar:**
-
-| Caso | Documentos |
-|------|-----------|
-| Accidente del Trabajo | DIAT + Cédula de Identidad |
-| Accidente de Trayecto | DIAT + Cédula de Identidad |
-| Enfermedad Profesional | DIEP + Cédula de Identidad |
-
-**CPHS (Comité Paritario de Higiene y Seguridad):** 3 representantes patronales + 3 de trabajadores (+ suplentes). Funciones: investigar accidentes, vigilar medidas de prevención, instruir sobre uso de elementos de protección. Contacto: comité.paritario@goredenuble.cl
-
-## Evaluación del Proceso de Inducción
-
-Documento de cierre para mejora continua del programa.
-
-**Ámbitos de evaluación:**
-1. Actividad de Bienvenida: recepción por jefatura, conocimiento del equipo, disponibilidad de puesto de trabajo y equipamiento (PC/Teléfono).
-2. Relación con el Cargo: claridad sobre objetivos, metas, medios y rol a desempeñar.
-3. Relación con la Institución: comprensión de misión, objetivos estratégicos, organigrama y valores.
+## Seccion 19 Evaluacion de Induccion
+### ID
+GN-MANUAL-INDUCCION-S19
+### Ctx
+Como cierre del proceso de inducción, se debe contar con una fase de evaluación dirigida por el equipo de gestión de personas al funcionario que haya desarrollado este proceso formal de inducción, en la lógica de mejora continua, para obtener información significativa, monitorear si los objetivos se están logrando y realizar las adecuaciones pertinentes.
+### Ctx Optional
+Esta evaluación considera los siguientes ámbitos:
+### Actividad de Bienvenida
+#### Table
+#### Columns
+- Actividad
+- SI_NO
+- Comentarios_u_Observaciones
+- Check_GDP
+#### Rows
+| Actividad | SI_NO | Comentarios_u_Observaciones | Check_GDP |
+| --- | --- | --- | --- |
+| Fue recibido por su jefatura directa |  |  |  |
+| Tuvo la oportunidad de conocer los compañeros de trabajo |  |  |  |
+| El lugar físico de desempeño |  |  |  |
+| Recibió algún set con material que contenga la información relevante de la organización |  |  |  |
+| Contó al momento de ingreso con un puesto de trabajo. |  |  |  |
+| Contó al momento de ingreso con un PC. |  |  |  |
+| Contó al momento de ingreso con un teléfono. |  |  |  |
+### Relacionadas con el Cargo
+#### Table
+#### Columns
+- Actividad
+- SI_NO
+- Comentarios_u_Observaciones
+- Check_GDP
+#### Rows
+| Actividad | SI_NO | Comentarios_u_Observaciones | Check_GDP |
+| --- | --- | --- | --- |
+| Se logró claridad sobre los objetivos del cargo. |  |  |  |
+| Se logró claridad sobre las metas y los medios para alcanzarlas |  |  |  |
+| Se logró claridad sobre el rol que desempeñará |  |  |  |
+| Se logró claridad sobre con quiénes debe interactuar |  |  |  |
+| Recibió la información necesaria para iniciar sus tareas. |  |  |  |
+### Relacionadas con la Institucion
+#### Table
+#### Columns
+- Actividad
+- SI_NO
+- Comentarios_u_Observaciones
+- Check_GDP
+#### Rows
+| Actividad | SI_NO | Comentarios_u_Observaciones | Check_GDP |
+| --- | --- | --- | --- |
+| Se logró claridad sobre la misión de la organización. |  |  |  |
+| Se logró claridad sobre los objetivos estratégicos, de la organización. |  |  |  |
+| Se logró claridad sobre el organigrama de la organización |  |  |  |
+| Se logró claridad sobre los deberes y obligaciones como funcionario de la organización. |  |  |  |
+| Se logró claridad sobre los valores de la organización. |  |  |  |
+| Se logró claridad sobre las normas de la organización |  |  |  |

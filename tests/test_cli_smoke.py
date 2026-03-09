@@ -37,10 +37,14 @@ class KoraCliSmokeTests(unittest.TestCase):
         ledger_payload = json.loads((GENERATED_DOCS / "fxsl-cat-ledger.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
         self.assertIn("kora", contracts_payload["cohorts"])
-        self.assertEqual(contracts_payload["totals"]["workspaces"], 12)
+        self.assertEqual(contracts_payload["totals"]["workspaces"], 13)
         self.assertEqual(contracts_payload["meta_kora"]["summary"]["total_workspaces"], 6)
-        self.assertEqual(contracts_payload["meta_kora"]["summary"]["operating_core"], 3)
-        self.assertEqual(contracts_payload["meta_kora"]["summary"]["auxiliary"], 3)
+        self.assertEqual(contracts_payload["meta_kora"]["summary"]["operating_core"], 4)
+        self.assertEqual(contracts_payload["meta_kora"]["summary"]["auxiliary"], 2)
+        self.assertIn(
+            "kora/guardian",
+            {item["workspace"] for item in contracts_payload["cohorts"]["kora"]},
+        )
         self.assertIn(
             "gn/digitrans",
             {item["workspace"] for item in contracts_payload["cohorts"]["domain_canary"]},

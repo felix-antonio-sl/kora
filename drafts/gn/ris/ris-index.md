@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.35
+    cr: 1.42
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -102,11 +102,11 @@ Servir como mapa de navegación para los diferentes RIS sectoriales utilizados p
 ### Entradas
 | ID | Cpt | Urn | Fuente-URL | Estado |
 | --- | --- | --- | --- | --- |
-| RIS-PROYINV-2023 | RIS Genéricas para Proyectos de Inversión (SNI 2023). | urn:knowledge:gorenuble:gn:ris-proyinv:1.0.0 | https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf | draft |
-| RIS-PROGINV-2025 | RIS para Programas de Inversión (Genérico, 2025). | urn:knowledge:gorenuble:gn:ris-proginv:1.0.0 | null | draft |
-| RIS-EMPUB-2024 | RIS para Estudios y Proyectos de Empresas del Estado (2024). | urn:knowledge:gorenuble:gn:ris-empub:1.0.0 | https://sni.gob.cl/storage/docs/RIS_-_Estudios_y_Proyectos_de_Empresas_del_Estado_2024.pdf | draft |
-| RIS-EB-PMDT-2024 | RIS para Estudios Básicos PMDT (Planes Maestros de Desarrollo Territorial, 2024). | urn:knowledge:gorenuble:gn:ris-pmdt:1.0.0 | https://sni.gob.cl/storage/docs/RIS_-_Estudio_basico_PMDT_2024.pdf | draft |
-| RIS-EDPUB-2024 | RIS para Proyectos de Edificación Pública (2024). | urn:knowledge:gorenuble:gn:ris-edpub:1.0.0 | https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf | draft |
-| RIS-ARTCULT-2024 | RIS para Proyectos de Arte y Cultura (2024). | urn:knowledge:gorenuble:gn:ris-artcult:1.0.0 | https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf | draft |
-| RIS-PATRIMONIO-2024 | RIS para Proyectos Patrimoniales (2024). | urn:knowledge:gorenuble:gn:ris-patrimonio:1.0.0 | https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf | draft |
-| RIS-DEPORTES-2024 | RIS para Proyectos de Infraestructura Deportiva (2024). | urn:knowledge:gorenuble:gn:ris-deportes:1.0.0 | https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf | draft |
+| RIS-PROYINV-2023 | RIS Genéricas para Proyectos de Inversión (SNI 2023). | urn:gn:kb:ris-proyinv | https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf | draft |
+| RIS-PROGINV-2025 | RIS para Programas de Inversión (Genérico, 2025). | urn:gn:kb:ris-proginv | null | draft |
+| RIS-EMPUB-2024 | RIS para Estudios y Proyectos de Empresas del Estado (2024). | urn:gn:kb:ris-empub | https://sni.gob.cl/storage/docs/RIS_-_Estudios_y_Proyectos_de_Empresas_del_Estado_2024.pdf | draft |
+| RIS-EB-PMDT-2024 | RIS para Estudios Básicos PMDT (Planes Maestros de Desarrollo Territorial, 2024). | urn:gn:kb:ris-pmdt | https://sni.gob.cl/storage/docs/RIS_-_Estudio_basico_PMDT_2024.pdf | draft |
+| RIS-EDPUB-2024 | RIS para Proyectos de Edificación Pública (2024). | urn:gn:kb:ris-edpub | https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf | draft |
+| RIS-ARTCULT-2024 | RIS para Proyectos de Arte y Cultura (2024). | urn:gn:kb:ris-artcult | https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf | draft |
+| RIS-PATRIMONIO-2024 | RIS para Proyectos Patrimoniales (2024). | urn:gn:kb:ris-patrimonio | https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf | draft |
+| RIS-DEPORTES-2024 | RIS para Proyectos de Infraestructura Deportiva (2024). | urn:gn:kb:ris-deportes | https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf | draft |

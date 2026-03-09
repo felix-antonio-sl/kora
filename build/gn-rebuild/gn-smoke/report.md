@@ -5,9 +5,9 @@
 - drafts/gn representa artefactos no promovidos; su evidencia usa catalog_state `draft_unindexed` hasta cutover.
 
 ## Structural Diff
-- Added: 1
+- Added: 0
 - Removed: 0
-- Changed: 77
+- Changed: 3
 
 ## Review Gates
 - none

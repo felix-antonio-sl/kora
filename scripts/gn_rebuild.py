@@ -22,7 +22,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from kora_lib.artifacts import dump_yaml_frontmatter_and_body, load_markdown_parts, load_yaml_safe
-from kora_lib.gn_validation import validate_gn_tree
+from kora_lib.gn_validation import slugify_heading, validate_gn_tree
 
 
 DEFAULT_REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +49,36 @@ TOP_LEVEL_KODA_TECHNICAL_KEYS = {
 }
 NESTED_KODA_TECHNICAL_KEYS = {
     "LLM_Parsing_Instructions",
+}
+URN_TOKEN_PATTERN = re.compile(r"urn:[A-Za-z0-9:_\-\.#]+")
+LEGACY_TARGET_ALIASES = {
+    "cuentas-publicas-2021-2024": ["cuentas-publicas"],
+    "flujos-aprobacion-documentos": ["aprobaciones"],
+    "gestion-info-geoespacial": ["gestion-informacion-geoespacial"],
+    "guia-circular-33-sts": ["guia-circ33"],
+    "guia-fril-2025-sts": ["guia-fril"],
+    "guia-frpd-nuble": ["guia-frpd"],
+    "guia-idi-sni-sts": ["guia-idi-sni"],
+    "guia-programas-directos-gore": ["guia-programas"],
+    "instructivo-subvencion-8-2025-sts": ["instructivo-subvencion-8"],
+    "ley-presupuestos-2026-normas-generales": ["ley-presupuestos-2026-normas"],
+    "ley-presupuestos-2026-partida-31": ["ley-presupuestos-2026-p31"],
+    "manual-induccion-gore-nuble-2026": ["manual-induccion"],
+    "nuble-250": ["nuble250"],
+}
+STATIC_URN_ALIASES = {
+    "urn:knowledge:gorenuble:core:gestion:lean6:1.0.1": "urn:mgmt:kb:lean6",
+    "urn:knowledge:gorenuble:core:gestion:meyer-org-structure:1.0.0": "urn:mgmt:kb:meyer-org-structure",
+    "urn:knowledge:gorenuble:estadocl:estructura-estado-chile:1.0.0": "urn:mgmt:kb:estructura-estado-chile",
+}
+UNRESOLVABLE_URN_LABELS = {
+    "urn:goreos:omega:schema:2.0.0": "Omega schema 2.0.0",
+    "urn:knowledge:koda:core:spec:1.0.0": "KODA Core Spec 1.0.0",
+}
+FRAGMENTLESS_TARGET_URNS = {
+    "urn:gn:kb:glosas-gores-2026",
+    "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+    "urn:gn:kb:ley-presupuestos-2026-partida-31",
 }
 
 
@@ -118,6 +148,155 @@ def normalize_scalar(value):
     text = str(value)
     text = re.sub(r"(?m)^(#{1,6}\s)", r"\\\1", text)
     return text
+
+
+def legacy_namespace_from_source_path(source_path):
+    parts = Path(source_path).parts
+    try:
+        domains_index = parts.index("domains")
+    except ValueError:
+        return None
+    if len(parts) <= domains_index + 4:
+        return None
+    return parts[domains_index + 3]
+
+
+def legacy_slug_from_source_path(source_path):
+    stem = Path(source_path).stem
+    for suffix in ("_koda", "_master", "_catalog", "_index"):
+        if stem.endswith(suffix):
+            stem = stem[: -len(suffix)]
+            break
+    parts = stem.split("_")
+    if len(parts) >= 4 and parts[0] == "kb" and parts[2].isdigit():
+        stem = "_".join(parts[3:])
+    elif len(parts) >= 5 and parts[0] == "kb" and parts[1] == "core" and parts[3].isdigit():
+        stem = "_".join(parts[4:])
+    return stem.replace("_", "-")
+
+
+def build_urn_alias_maps(map_doc):
+    alias_map = dict(STATIC_URN_ALIASES)
+    external_labels = dict(UNRESOLVABLE_URN_LABELS)
+    for entry in map_doc.get("entries", []):
+        target_urn = entry.get("target_urn")
+        if not target_urn:
+            continue
+        target_slug = Path(entry["target_path"]).stem
+        legacy_ids = {target_slug}
+        legacy_ids.update(LEGACY_TARGET_ALIASES.get(target_slug, []))
+        namespaces = set()
+        for source_path in entry.get("source_paths", []):
+            source_slug = legacy_slug_from_source_path(source_path)
+            if source_slug:
+                legacy_ids.add(source_slug)
+                namespace = legacy_namespace_from_source_path(source_path)
+                if namespace:
+                    namespaces.add(namespace)
+                    alias_map[f"urn:knowledge:gorenuble:{namespace}:{source_slug}:1.0.0"] = target_urn
+        for legacy_id in legacy_ids:
+            alias_map[f"urn:knowledge:gorenuble:gn:{legacy_id}:1.0.0"] = target_urn
+            for namespace in namespaces:
+                alias_map[f"urn:knowledge:gorenuble:{namespace}:{legacy_id}:1.0.0"] = target_urn
+    return alias_map, external_labels
+
+
+def normalize_body_urns(body, urn_alias_map, external_labels):
+    def replace(match):
+        token = match.group(0)
+        suffix = ""
+        while token and token[-1] in ".,;:":
+            suffix = token[-1] + suffix
+            token = token[:-1]
+
+        base, fragment = token.split("#", 1) if "#" in token else (token, None)
+        if base in urn_alias_map:
+            normalized = urn_alias_map[base]
+            if fragment and normalized not in FRAGMENTLESS_TARGET_URNS:
+                normalized = f"{normalized}#{fragment}"
+            return normalized + suffix
+        if base in external_labels:
+            return external_labels[base] + suffix
+        return token + suffix
+
+    return URN_TOKEN_PATTERN.sub(replace, body)
+
+
+def normalize_editorial_phrasing(body):
+    replacements = (
+        ("A continuación se define su estructura detallada.", "Su estructura detallada es la siguiente."),
+        ("A continuación se presentan ", "Se presentan "),
+        ("A continuación, se describen ", "Se describen "),
+        (
+            "Por otro lado, existen diversas posibilidades de optar a actividades de capacitación,",
+            "Existen diversas posibilidades de optar a actividades de capacitación,",
+        ),
+    )
+    for old, new in replacements:
+        body = body.replace(old, new)
+    return body
+
+
+def collect_tree_manifest_urns(tree_root):
+    urns = set()
+    if not tree_root.exists():
+        return urns
+    for path in tree_root.rglob("*.md"):
+        frontmatter, _body = load_markdown_parts(path)
+        if not isinstance(frontmatter, dict):
+            continue
+        urn = frontmatter.get("_manifest", {}).get("urn")
+        if urn:
+            urns.add(urn)
+    return urns
+
+
+def collect_tree_fragments(tree_root):
+    fragments = {}
+    if not tree_root.exists():
+        return fragments
+    for path in tree_root.rglob("*.md"):
+        frontmatter, body = load_markdown_parts(path)
+        if not isinstance(frontmatter, dict):
+            continue
+        urn = frontmatter.get("_manifest", {}).get("urn")
+        if not urn:
+            continue
+        anchors = set()
+        for line in (body or "").splitlines():
+            match = re.match(r"^(#{1,6})\s+(.+)$", line.strip())
+            if match:
+                anchors.add(slugify_heading(match.group(2).strip()))
+        for explicit in re.findall(r"\{#([^}]+)\}", body or ""):
+            anchors.add(explicit.strip())
+        fragments[urn] = anchors
+    return fragments
+
+
+def rewrite_tree_status(tree_root, status):
+    for path in sorted(tree_root.rglob("*.md")):
+        frontmatter, body = load_markdown_parts(path)
+        if not isinstance(frontmatter, dict):
+            continue
+        frontmatter["status"] = status
+        dump_yaml_frontmatter_and_body(path, frontmatter, body)
+
+
+def validate_body_urn_resolution(tree_root, allowed_urns, fragment_catalog=None):
+    failures = []
+    for path in sorted(tree_root.rglob("*.md")):
+        _frontmatter, body = load_markdown_parts(path)
+        for token in URN_TOKEN_PATTERN.findall(body or ""):
+            normalized = token.rstrip(".,;:")
+            base, fragment = normalized.split("#", 1) if "#" in normalized else (normalized, None)
+            if base not in allowed_urns:
+                failures.append(f"{path.relative_to(tree_root)}: URN no resoluble en cuerpo: {base}")
+                continue
+            if fragment and fragment_catalog is not None:
+                known_fragments = fragment_catalog.get(base, set())
+                if fragment not in known_fragments:
+                    failures.append(f"{path.relative_to(tree_root)}: fragmento URN no resoluble: {base}#{fragment}")
+    return failures
 
 
 def is_table_candidate(items):
@@ -740,7 +919,7 @@ def resolve_current_target_metadata(knowledge_root, target_rel_path):
     }
 
 
-def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id):
+def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, urn_alias_map, external_labels):
     transform_class = item["transform_class"]
     title = item.get("target_title") or current_meta["title"]
     projections = {}
@@ -765,6 +944,8 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id):
         body = render_index_body(title, item)
     else:
         raise ValueError(f"transform_class no soportada: {transform_class}")
+    body = normalize_body_urns(body, urn_alias_map, external_labels)
+    body = normalize_editorial_phrasing(body)
 
     combined_facts = []
     skeleton_count = 0
@@ -893,6 +1074,7 @@ def build(args):
 
     evidence_root = roots["build_root"] / run_id / "evidence"
     ensure_dir(evidence_root)
+    urn_alias_map, external_labels = build_urn_alias_maps(map_doc)
 
     for item in map_doc.get("entries", []):
         current_meta = resolve_current_target_metadata(roots["knowledge_root"], item["target_path"])
@@ -905,7 +1087,15 @@ def build(args):
             mirrored_sources[source_path] = full_path
             source_hashes[source_path] = sha256_file(full_path)
 
-        frontmatter, body, gn_ext, combined_facts = build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id)
+        frontmatter, body, gn_ext, combined_facts = build_artifact(
+            item,
+            current_meta,
+            mirrored_sources,
+            source_hashes,
+            run_id,
+            urn_alias_map,
+            external_labels,
+        )
         target_path = draft_root / item["target_path"]
         ensure_dir(target_path.parent)
         evidence_relpath = evidence_relpath_for(item["target_path"])
@@ -952,6 +1142,14 @@ def validate(args):
     evidence_result = validate_build_evidence(roots["draft_root"], evidence_root, expected_targets)
     tree_result["failures"].extend(evidence_result["failures"])
     tree_result["warnings"].extend(evidence_result["warnings"])
+    allowed_urns = collect_tree_manifest_urns(repo_root / "knowledge")
+    allowed_urns.difference_update(collect_tree_manifest_urns(roots["knowledge_root"]))
+    allowed_urns.update(meta.get("target_urn") for meta in expected_targets.values() if meta.get("target_urn"))
+    fragment_catalog = collect_tree_fragments(repo_root / "knowledge")
+    for urn in collect_tree_manifest_urns(roots["knowledge_root"]):
+        fragment_catalog.pop(urn, None)
+    fragment_catalog.update(collect_tree_fragments(roots["draft_root"]))
+    tree_result["failures"].extend(validate_body_urn_resolution(roots["draft_root"], allowed_urns, fragment_catalog))
 
     lock_paths = {item["path"] for item in lock.get("files", [])}
     mapped_paths = {source_path for entry in map_doc.get("entries", []) for source_path in entry.get("source_paths", [])}
@@ -971,6 +1169,17 @@ def validate(args):
     if tree_result["failures"]:
         raise SystemExit(1)
     print("GN validation passed.")
+
+
+def validate_promoted_knowledge_tree(knowledge_root, expected_targets):
+    tree_result = validate_gn_tree(knowledge_root, expected_targets=expected_targets)
+    for failure in tree_result["failures"]:
+        print(f"[FAIL] {failure}")
+    for warning in tree_result["warnings"]:
+        print(f"[WARN] {warning}")
+    if tree_result["failures"]:
+        raise SystemExit(1)
+    print("GN promoted-tree validation passed.")
 
 
 def structural_diff(knowledge_root, draft_root):
@@ -1056,6 +1265,10 @@ def cutover(args):
     repo_root = Path(args.repo_root).resolve()
     map_doc = load_rebuild_map(Path(args.map_path).resolve())
     roots = get_roots(repo_root, map_doc.get("config", {}))
+    expected_targets = {
+        entry["target_path"]: {"target_urn": entry.get("target_urn")}
+        for entry in map_doc.get("entries", [])
+    }
 
     validate(
         argparse.Namespace(
@@ -1073,6 +1286,7 @@ def cutover(args):
     if roots["knowledge_root"].exists():
         shutil.rmtree(roots["knowledge_root"])
     shutil.copytree(roots["draft_root"], roots["knowledge_root"])
+    rewrite_tree_status(roots["knowledge_root"], "published")
 
     index_result = run_kora_command(repo_root, "index")
     if index_result.returncode != 0:
@@ -1080,6 +1294,7 @@ def cutover(args):
     health_result = run_kora_command(repo_root, "health", "--strict")
     if health_result.returncode != 0:
         raise SystemExit(health_result.stderr or health_result.stdout)
+    validate_promoted_knowledge_tree(roots["knowledge_root"], expected_targets)
     print("cutover complete")
 
 

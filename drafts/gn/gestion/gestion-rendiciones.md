@@ -25,7 +25,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.09
+    cr: 1.11
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -433,14 +433,14 @@ Detallar el conjunto de normas, desde la Constitución hasta las resoluciones es
   #### Src
   @guia_rendiciones_gores.md, @kb_021_extractos_legales.md
   #### XRef Required
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART07
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART23
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART24
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART25
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART26
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-08
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-12
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-16
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-partida-31
+  - urn:gn:kb:ley-presupuestos-2026-partida-31
+  - urn:gn:kb:ley-presupuestos-2026-partida-31
   #### Elementos
   -
     #### Nat
@@ -693,9 +693,9 @@ Receptoras de fondos GORE; principales responsables de la correcta ejecución y 
   #### Ctx
   Receptoras de 8% FNDR, FRPD, etc.
   #### XRef Required
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART23
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART24
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART26
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
   #### Req
   - Sujetos a marco regulatorio estricto (Ley Presupuestos 2026, Art. 23-26).
   - Inscripción en Registro de Colaboradores del Estado (Ley 19.862).
@@ -876,7 +876,7 @@ STS-KB-GN-RENDICION-PROCESO-CON-SISREC-01
 #### Ctx
 Procedimiento obligatorio para nuevas transferencias S.24 y S.33.
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART07
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
 #### Src
 - @generalidades_sistema_rendicion_electronica_cuentas_sisrec.md
 - @manual_procedimientos_rendicion_cuentas_st24_st33_gore_ñuble.md (Sec. 7.2)
@@ -989,7 +989,7 @@ Detallar las particularidades de la rendición de cuentas para los principales f
 ### Fondos Principales
 | ID | Cpt | Ref | Subtipos |
 | --- | --- | --- | --- |
-| STS-KB-GN-RENDICION-FONDOS-FNDR-01 | Fondo Nacional de Desarrollo Regional (FNDR) | ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-FRIL', 'GN-REN-GLOS-FRPD'] | [{'ID': 'STS-KB-GN-RENDICION-FNDR-S31-01', 'Cpt': 'Iniciativas de Inversión (Subtítulo 31 - Ejecución Directa GORE)', 'Ctx': ['Obras, adquisición de activos, estudios de preinversión ejecutados directamente por el GORE.', '@kb_024_guia_idi_sni.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-SIGFE'], 'Elementos': [{'Cpt': 'Rendición', 'Def': 'Rendición interna de gastos y cumplimiento de etapas.'}, {'Cpt': 'Respaldo Clave', 'Ex': 'Contratos, estados de pago visados por ITO, facturas, resoluciones de adjudicación, boletas de garantía.'}, {'Cpt': 'Sistema', 'Req': 'Gastos se imputan al código BIP en SIGFE; se actualiza avance físico-financiero en BIP.'}, {'Cpt': 'Contabilización', 'Proc': 'DAF verifica disponibilidad y correcta imputación en S.31.'}, {'Cpt': 'Cierre', 'Req': 'Completar Carpeta Digital Ex Post en BIP al finalizar el proyecto.'}]}, {'ID': 'STS-KB-GN-RENDICION-FNDR-S33-01', 'Cpt': 'Transferencias de Capital (Subtítulo 33 - Ejecución por Terceros)', 'Ctx': ['Modalidad más común; GORE transfiere a Municipalidades, Servicios Públicos o privados.', '@kb_024_guia_idi_sni.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-SISREC', 'GN-REN-GLOS-ENT-EJEC'], 'Elementos': [{'Fnd': 'Convenio de Transferencia detalla proyecto, monto, plazos y obligaciones.'}, {'Cpt': 'Rendición Ejecutor', 'Req': 'Obligatoria vía SISREC, con informe, comprobantes de gasto, informes de avance y actas de recepción.'}, {'Cpt': 'Revisión GORE', 'Proc': 'RTF revisa coherencia técnica-financiera; DAF/U.C.R. revisan legalidad y documentación.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-FRIL-01', 'Cpt': 'Fondo Regional de Iniciativa Local (FRIL)', 'XRef_Required': ['urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-12'], 'Ctx': ['Asignación FNDR para proyectos de inversión de pequeña escala municipal.', '@kb_026_guia_fril.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-FRIL', 'GN-REN-GLOS-SISREC'], 'Elementos': [{'Cpt': 'Informe favorable MDSF', 'Req': 'Proyectos FRIL deben contar con informe favorable del Ministerio de Desarrollo Social y Familia, salvo excepción bajo 5000 UTM.'}, {'Cpt': 'Excepción <5000 UTM', 'Req': 'Los proyectos cuyo costo total por proyecto sea inferior a 5000 UTM, valorizadas al 1 de enero del ejercicio presupuestario vigente, no requerirán informe favorable del MDSF. Sin perjuicio de lo anterior, deberá ser ingresada al Sistema Nacional de Inversiones la información necesaria, según lo dispuesto en el Oficio Ordinario N°2 del 26 de enero de 2024, e instructivo asociado, del Ministerio de Hacienda y del Ministerio de Desarrollo Social y Familia.'}, {'Prohib': 'Financiar proyectos por etapas o fraccionados.'}, {'Cpt': 'Rendición', 'Proc': 'Municipalidades rinden al GORE vía SISREC, acreditando gastos y avance de obras.'}, {'Cpt': 'Supervisión GORE', 'Proc': 'Verifica cumplimiento de guía operativa y aplicación correcta de los requisitos MDSF/excepción <5000 UTM y del registro en SNI.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-FRPD-01', 'Cpt': 'Fondo Regional para la Productividad y el Desarrollo (FRPD)', 'Ctx': ['Fondos de Royalty Minero para innovación, competitividad y CTI.', '@kb_027_guia_frpd.md'], 'Ref': ['GN-REN-GLOS-FRPD', 'GN-REN-GLOS-SISREC'], 'Elementos': [{'Resp': 'Universidades, centros de investigación, corporaciones, empresas.'}, {'Cpt': 'Rendición', 'Req': 'Vía SISREC, acreditando gasto financiero y logro de hitos, productos y resultados de I+D+i.'}, {'Cpt': 'Supervisión GORE', 'Proc': 'DIFOI y DIPIR siguen cumplimiento de metas.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-SUBV8-01', 'Cpt': 'Subvenciones de Vinculación con la Comunidad (8% FNDR)', 'Ctx': ['@kb_028_guia_subv8.md'], 'Ref': ['GN-REN-GLOS-SUBV8', 'GN-REN-GLOS-FNDR', 'GN-REN-GLOS-SISREC'], 'Elementos': [{'Ctx': 'Fondos concursables para cultura, deporte, seguridad, medio ambiente, destinados a municipalidades y entidades privadas sin fines de lucro.'}, {'Fnd': 'Glosa 07 Ley de Presupuestos, bases del concurso, instructivo regional.'}, {'Cpt': 'Rendición', 'Req': 'Vía SISREC, con énfasis en coherencia del gasto con el proyecto adjudicado.'}, {'Cpt': 'Respaldo Clave', 'Ex': 'Boletas de honorarios con cotizaciones, facturas específicas de la actividad.'}, {'Cpt': 'Medios de Verificación', 'Req': 'Listas de asistencia, fotos, material de difusión.'}, {'Cpt': 'Restricciones', 'Req': 'Bases definen gastos prohibidos (operativos, premios en dinero, alcohol, etc.) que deben fiscalizarse.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-PROG-GLOSA06-01', 'Cpt': 'Programas FNDR (Subtítulo 24 Inversión - Ejecución Directa GORE)', 'Ctx': ['@kb_gn_025_guia_programas.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-DAF'], 'Elementos': [{'Ctx': 'Programas ejecutados directamente por el GORE.'}, {'Fnd': 'Glosa 06 Ley de Presupuestos, evaluación ex ante DIPRES/SES.'}, {'Cpt': 'Gasto Administrativo', 'Req': 'Hasta 5% del programa puede destinarse a gastos de administración del GORE, imputados al presupuesto del programa.'}, {'Cpt': 'Rendición Interna', 'Proc': 'DAF controla tope del 5% y correcta imputación.'}, {'Cpt': 'Rendición Externa', 'Proc': 'Se rinde cumplimiento de componentes y metas, coherente con diseño aprobado ex ante.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-C33-01', 'Cpt': 'Conservación de Infraestructura (Circular 33)', 'Ctx': ['@kb_gn_029_guia_circ33.md'], 'Elementos': [{'Ctx': 'Iniciativas de mantención/reparación de infraestructura que no afectan capacidad original.'}, {'Fnd': 'Oficio Circular N°33/2009 MINHAC, NIP 2025.'}, {'Proc': "Uso del BIP para obtener RATE 'AD (Admisible para Financiamiento)' del MDSF."}, {'Prohib': 'Costo de reparación > 30% del costo de reposición del activo (si ocurre, debe ir a SNI estándar).'}, {'Cpt': 'Rendición', 'Proc': 'Sigue flujo estándar de proyecto de inversión, acreditando partidas de conservación.'}]}] |
+| STS-KB-GN-RENDICION-FONDOS-FNDR-01 | Fondo Nacional de Desarrollo Regional (FNDR) | ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-FRIL', 'GN-REN-GLOS-FRPD'] | [{'ID': 'STS-KB-GN-RENDICION-FNDR-S31-01', 'Cpt': 'Iniciativas de Inversión (Subtítulo 31 - Ejecución Directa GORE)', 'Ctx': ['Obras, adquisición de activos, estudios de preinversión ejecutados directamente por el GORE.', '@kb_024_guia_idi_sni.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-SIGFE'], 'Elementos': [{'Cpt': 'Rendición', 'Def': 'Rendición interna de gastos y cumplimiento de etapas.'}, {'Cpt': 'Respaldo Clave', 'Ex': 'Contratos, estados de pago visados por ITO, facturas, resoluciones de adjudicación, boletas de garantía.'}, {'Cpt': 'Sistema', 'Req': 'Gastos se imputan al código BIP en SIGFE; se actualiza avance físico-financiero en BIP.'}, {'Cpt': 'Contabilización', 'Proc': 'DAF verifica disponibilidad y correcta imputación en S.31.'}, {'Cpt': 'Cierre', 'Req': 'Completar Carpeta Digital Ex Post en BIP al finalizar el proyecto.'}]}, {'ID': 'STS-KB-GN-RENDICION-FNDR-S33-01', 'Cpt': 'Transferencias de Capital (Subtítulo 33 - Ejecución por Terceros)', 'Ctx': ['Modalidad más común; GORE transfiere a Municipalidades, Servicios Públicos o privados.', '@kb_024_guia_idi_sni.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-SISREC', 'GN-REN-GLOS-ENT-EJEC'], 'Elementos': [{'Fnd': 'Convenio de Transferencia detalla proyecto, monto, plazos y obligaciones.'}, {'Cpt': 'Rendición Ejecutor', 'Req': 'Obligatoria vía SISREC, con informe, comprobantes de gasto, informes de avance y actas de recepción.'}, {'Cpt': 'Revisión GORE', 'Proc': 'RTF revisa coherencia técnica-financiera; DAF/U.C.R. revisan legalidad y documentación.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-FRIL-01', 'Cpt': 'Fondo Regional de Iniciativa Local (FRIL)', 'XRef_Required': ['urn:gn:kb:ley-presupuestos-2026-partida-31'], 'Ctx': ['Asignación FNDR para proyectos de inversión de pequeña escala municipal.', '@kb_026_guia_fril.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-FRIL', 'GN-REN-GLOS-SISREC'], 'Elementos': [{'Cpt': 'Informe favorable MDSF', 'Req': 'Proyectos FRIL deben contar con informe favorable del Ministerio de Desarrollo Social y Familia, salvo excepción bajo 5000 UTM.'}, {'Cpt': 'Excepción <5000 UTM', 'Req': 'Los proyectos cuyo costo total por proyecto sea inferior a 5000 UTM, valorizadas al 1 de enero del ejercicio presupuestario vigente, no requerirán informe favorable del MDSF. Sin perjuicio de lo anterior, deberá ser ingresada al Sistema Nacional de Inversiones la información necesaria, según lo dispuesto en el Oficio Ordinario N°2 del 26 de enero de 2024, e instructivo asociado, del Ministerio de Hacienda y del Ministerio de Desarrollo Social y Familia.'}, {'Prohib': 'Financiar proyectos por etapas o fraccionados.'}, {'Cpt': 'Rendición', 'Proc': 'Municipalidades rinden al GORE vía SISREC, acreditando gastos y avance de obras.'}, {'Cpt': 'Supervisión GORE', 'Proc': 'Verifica cumplimiento de guía operativa y aplicación correcta de los requisitos MDSF/excepción <5000 UTM y del registro en SNI.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-FRPD-01', 'Cpt': 'Fondo Regional para la Productividad y el Desarrollo (FRPD)', 'Ctx': ['Fondos de Royalty Minero para innovación, competitividad y CTI.', '@kb_027_guia_frpd.md'], 'Ref': ['GN-REN-GLOS-FRPD', 'GN-REN-GLOS-SISREC'], 'Elementos': [{'Resp': 'Universidades, centros de investigación, corporaciones, empresas.'}, {'Cpt': 'Rendición', 'Req': 'Vía SISREC, acreditando gasto financiero y logro de hitos, productos y resultados de I+D+i.'}, {'Cpt': 'Supervisión GORE', 'Proc': 'DIFOI y DIPIR siguen cumplimiento de metas.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-SUBV8-01', 'Cpt': 'Subvenciones de Vinculación con la Comunidad (8% FNDR)', 'Ctx': ['@kb_028_guia_subv8.md'], 'Ref': ['GN-REN-GLOS-SUBV8', 'GN-REN-GLOS-FNDR', 'GN-REN-GLOS-SISREC'], 'Elementos': [{'Ctx': 'Fondos concursables para cultura, deporte, seguridad, medio ambiente, destinados a municipalidades y entidades privadas sin fines de lucro.'}, {'Fnd': 'Glosa 07 Ley de Presupuestos, bases del concurso, instructivo regional.'}, {'Cpt': 'Rendición', 'Req': 'Vía SISREC, con énfasis en coherencia del gasto con el proyecto adjudicado.'}, {'Cpt': 'Respaldo Clave', 'Ex': 'Boletas de honorarios con cotizaciones, facturas específicas de la actividad.'}, {'Cpt': 'Medios de Verificación', 'Req': 'Listas de asistencia, fotos, material de difusión.'}, {'Cpt': 'Restricciones', 'Req': 'Bases definen gastos prohibidos (operativos, premios en dinero, alcohol, etc.) que deben fiscalizarse.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-PROG-GLOSA06-01', 'Cpt': 'Programas FNDR (Subtítulo 24 Inversión - Ejecución Directa GORE)', 'Ctx': ['@kb_gn_025_guia_programas.md'], 'Ref': ['GN-REN-GLOS-FNDR', 'GN-REN-GLOS-DAF'], 'Elementos': [{'Ctx': 'Programas ejecutados directamente por el GORE.'}, {'Fnd': 'Glosa 06 Ley de Presupuestos, evaluación ex ante DIPRES/SES.'}, {'Cpt': 'Gasto Administrativo', 'Req': 'Hasta 5% del programa puede destinarse a gastos de administración del GORE, imputados al presupuesto del programa.'}, {'Cpt': 'Rendición Interna', 'Proc': 'DAF controla tope del 5% y correcta imputación.'}, {'Cpt': 'Rendición Externa', 'Proc': 'Se rinde cumplimiento de componentes y metas, coherente con diseño aprobado ex ante.'}]}, {'ID': 'STS-KB-GN-RENDICION-FONDOS-C33-01', 'Cpt': 'Conservación de Infraestructura (Circular 33)', 'Ctx': ['@kb_gn_029_guia_circ33.md'], 'Elementos': [{'Ctx': 'Iniciativas de mantención/reparación de infraestructura que no afectan capacidad original.'}, {'Fnd': 'Oficio Circular N°33/2009 MINHAC, NIP 2025.'}, {'Proc': "Uso del BIP para obtener RATE 'AD (Admisible para Financiamiento)' del MDSF."}, {'Prohib': 'Costo de reparación > 30% del costo de reposición del activo (si ocurre, debe ir a SNI estándar).'}, {'Cpt': 'Rendición', 'Proc': 'Sigue flujo estándar de proyecto de inversión, acreditando partidas de conservación.'}]}] |
 
 ## Parte 5 Control Fiscalizacion y Transparencia
 ### ID
@@ -1066,13 +1066,13 @@ Ley N°20.285 (Transparencia)
 #### ID
 STS-KB-GN-RENDICION-TRANSP-PPTO-2026-P31-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-08
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-16
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Corporaciones y Fundaciones
 #### ID
 STS-KB-GN-RENDICION-TRANSP-PPTO-2026-P31-GLO08-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-08
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Req
 - Informar a DIPRES y publicar en las páginas web de la corporación y del Gobierno Regional información institucional (misión, objetivos, directorio, financiamiento, planificación anual) a más tardar al término del primer trimestre.
 - Informar y publicar trimestralmente, dentro de los 30 días siguientes al término de cada trimestre, información de ejecución y gestión (dotación, remuneraciones, concursos, recursos transferidos/ejecutados, indicadores).
@@ -1081,7 +1081,7 @@ STS-KB-GN-RENDICION-TRANSP-PPTO-2026-P31-GLO08-01
 #### ID
 STS-KB-GN-RENDICION-TRANSP-PPTO-2026-P31-GLO16-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-16
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Req
 - Publicar mensualmente la cartera de proyectos financiada con cargo a presupuestos de inversión regional y publicar acuerdos CORE dentro de 5 días hábiles desde su adopción.
 - Informar trimestralmente el uso de recursos (beneficiarios, comuna, instituciones receptoras, montos, productos del convenio y su aplicación regional) a las instancias definidas en la glosa, y publicar la información en los mismos plazos cuando corresponda.

@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.16
+    cr: 1.17
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -900,9 +900,9 @@ SNI-RATE-VIGENCIA-01
 #### ID
 SNI-GORE-SEC-6-EJECUCION
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-03
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-04
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART07
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
 #### Restricciones Presupuesto 2026
 #### ID
 SNI-RESTR-PPTO-2026-SEC6-01
@@ -910,7 +910,7 @@ SNI-RESTR-PPTO-2026-SEC6-01
 #### ID
 SNI-RESTR-PPTO-2026-SEC6-GLO03-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-03
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Content
 Los recursos de los presupuestos de inversión regional no podrán financiar préstamos, gastos en personal, o gastos en bienes y servicios de consumo de las entidades receptoras. Asimismo, no podrán destinarse para constituir, efectuar aportes o comprar sociedades o empresas.
 
@@ -918,7 +918,7 @@ Los recursos de los presupuestos de inversión regional no podrán financiar pr�
 #### ID
 SNI-RESTR-PPTO-2026-SEC6-GLO04-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-04
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Content
 Se podrán traspasar recursos desde cualquier Subtítulo e Ítem del presupuesto de inversión del Gobierno Regional respectivo a los Subtítulos 24, 26, 29, 31, 32.06, 33 y 34.07.
 Los gobiernos regionales podrán realizar convenios de mandato con los municipios de acuerdo con el artículo 16 de la ley N°18.091, para el financiamiento de estudios definidos en el subtítulo 22 ítem 11, del Decreto de Hacienda N° 854 del 2004, sobre clasificaciones presupuestarias.
@@ -927,7 +927,7 @@ Los gobiernos regionales podrán realizar convenios de mandato con los municipio
 #### ID
 SNI-RESTR-PPTO-2026-SEC6-ART07-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART07
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
 #### Purp
 Reglas para decretos con transferencias (Subtítulos 24 y 33).
 #### Decretos Transferencias

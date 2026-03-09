@@ -1,6 +1,25 @@
 {
   "agent_scenarios": [
     {
+      "id": "guardian-governance-consistency-check",
+      "workspace": "kora/guardian",
+      "requires_states": ["S-GOVERNANCE", "S-VALIDATION"],
+      "requires_tools": ["kb_route", "repo_health"],
+      "requires_no_skills": true,
+      "requires_routes": ["kora/forgemaster", "kora/curator", "kora/custodio"],
+      "requires_allowed_kb_min": 4,
+      "requires_evidence_terms": ["CONSISTENCIA_NORMATIVA", "TRAZABILIDAD_FORMAL"]
+    },
+    {
+      "id": "guardian-foundational-validation-audit",
+      "workspace": "kora/guardian",
+      "requires_states": ["S-VALIDATION"],
+      "requires_tools": ["repo_health"],
+      "requires_no_skills": true,
+      "requires_routes": ["kora/forgemaster", "kora/curator", "kora/custodio"],
+      "requires_allowed_terms": ["specs fundacionales", "gobernanza", "coherencia normativa"]
+    },
+    {
       "id": "forgemaster-create-valid-workspace",
       "workspace": "kora/forgemaster",
       "requires_states": ["S-CREATE", "S-VALIDATE"],
@@ -332,11 +351,11 @@
   "meta_kora": {
     "summary": {
       "total_workspaces": 6,
-      "operating_core": 3,
-      "auxiliary": 3
+      "operating_core": 4,
+      "auxiliary": 2
     },
     "statuses": {
-      "kora/guardian": "auxiliary",
+      "kora/guardian": "operating_core",
       "kora/forgemaster": "operating_core",
       "kora/curator": "operating_core",
       "kora/custodio": "operating_core",
@@ -345,14 +364,6 @@
     }
   },
   "meta_auxiliary_scenarios": [
-    {
-      "workspace": "kora/guardian",
-      "requires_states": ["S-GOVERNANCE", "S-VALIDATION"],
-      "requires_tools": ["kb_route", "repo_health"],
-      "requires_no_skills": true,
-      "requires_no_handoffs": true,
-      "requires_allowed_kb_min": 4
-    },
     {
       "workspace": "kora/clawmaster",
       "requires_states": ["S-CONSULT", "S-AUDIT", "S-TROUBLESHOOT"],

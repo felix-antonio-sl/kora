@@ -7,7 +7,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 - Agent workspaces completos: 45
 - Workspaces incompletos: 0
 - Artefactos bootstrap de agente: 225
-- Entradas totales de catalogo: 727
+- Entradas totales de catalogo: 728
 
 ## Catalogo por categoria
 
@@ -15,7 +15,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 |-----------|--------|
 | Agents | 225 |
 | Skills | 236 |
-| Knowledge | 266 |
+| Knowledge | 267 |
 | Documents | 0 |
 | Other | 0 |
 
@@ -23,7 +23,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Namespace | Entradas |
 |-----------|----------|
-| gn | 168 |
+| gn | 169 |
 | kora | 127 |
 | fxsl | 117 |
 | dev | 81 |

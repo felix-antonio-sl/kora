@@ -2,6 +2,42 @@
   "cohorts": {
     "kora": [
       {
+        "workspace": "kora/guardian",
+        "state_names": [
+          "S-DISPATCHER",
+          "S-END",
+          "S-GOVERNANCE",
+          "S-VALIDATION"
+        ],
+        "tool_names": [
+          "kb_route",
+          "repo_health"
+        ],
+        "tools_allow": [
+          "kb_route",
+          "repo_health"
+        ],
+        "skill_refs": [],
+        "handoff_targets": [
+          "kora/curator",
+          "kora/custodio",
+          "kora/forgemaster"
+        ],
+        "route_targets": [
+          "kora/curator",
+          "kora/custodio",
+          "kora/forgemaster"
+        ],
+        "sub_agents": [],
+        "evidence_lines": [],
+        "allowed_kb_count": 4,
+        "sources": {
+          "agents": "agents/kora/guardian/AGENTS.md",
+          "tools": "agents/kora/guardian/TOOLS.md",
+          "config": "agents/kora/guardian/config.json"
+        }
+      },
+      {
         "workspace": "kora/forgemaster",
         "state_names": [
           "S-CREATE",
@@ -739,16 +775,16 @@
     ]
   },
   "totals": {
-    "workspaces": 12,
-    "states": 88,
-    "tools": 77,
-    "handoffs": 32
+    "workspaces": 13,
+    "states": 92,
+    "tools": 79,
+    "handoffs": 35
   },
   "meta_kora": {
     "summary": {
       "total_workspaces": 6,
-      "operating_core": 3,
-      "auxiliary": 3
+      "operating_core": 4,
+      "auxiliary": 2
     },
     "workspaces": [
       {
@@ -768,8 +804,16 @@
           "repo_health"
         ],
         "skill_refs": [],
-        "handoff_targets": [],
-        "route_targets": [],
+        "handoff_targets": [
+          "kora/curator",
+          "kora/custodio",
+          "kora/forgemaster"
+        ],
+        "route_targets": [
+          "kora/curator",
+          "kora/custodio",
+          "kora/forgemaster"
+        ],
         "sub_agents": [],
         "evidence_lines": [],
         "allowed_kb_count": 4,
@@ -778,9 +822,9 @@
           "tools": "agents/kora/guardian/TOOLS.md",
           "config": "agents/kora/guardian/config.json"
         },
-        "status": "auxiliary",
-        "status_reason": "Gobierno fundacional de specs; valido y resoluble, pero fuera de los loops operativos endurecidos.",
-        "in_operating_core": false
+        "status": "operating_core",
+        "status_reason": "Nucleo operativo constitucional: gobierna coherencia de specs, precedencia y validacion fundacional.",
+        "in_operating_core": true
       },
       {
         "workspace": "kora/forgemaster",

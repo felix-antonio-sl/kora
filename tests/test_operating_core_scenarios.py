@@ -83,7 +83,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
 
     def test_operating_core_payload_matches_declared_core(self):
         payload = build_operating_core_payload()
-        self.assertEqual(payload["totals"]["workspaces"], 12)
+        self.assertEqual(payload["totals"]["workspaces"], 13)
         self.assertEqual(set(payload["cohorts"].keys()), {"kora", "dev", "ops", "domain_canary"})
 
     def test_meta_kora_audit_is_materialized_with_explicit_status(self):

@@ -366,7 +366,7 @@ STS-KB-GN-PPR-FORMAL-SEGUIMIENTO-01
 #### Mech
 - El GORE podrá exigir la rendición vía plataforma SISREC o en formato físico, según se defina en el convenio.
 #### Src
-- urn:knowledge:gorenuble:gn:gestion-rendiciones:1.0.0
+- urn:gn:kb:gestion-rendiciones
 #### Ref
 - GN-PPR-GLOS-SISREC
 
@@ -374,7 +374,7 @@ STS-KB-GN-PPR-FORMAL-SEGUIMIENTO-01
 ### ID
 STS-KB-GN-PPR-FORMULARIOS-01
 ### Ctx
-Los formatos estandarizados para la postulación se encontrarán disponibles en la página web del Gobierno Regional de Ñuble. A continuación se define su estructura detallada.
+Los formatos estandarizados para la postulación se encontrarán disponibles en la página web del Gobierno Regional de Ñuble. Su estructura detallada es la siguiente.
 ### Formulario Diseno Programa Publico PPR
 #### ID
 FORM-PPR-TRANSFER-PUBLIC-2026-V1

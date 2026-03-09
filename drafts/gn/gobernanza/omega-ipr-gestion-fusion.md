@@ -23,7 +23,7 @@ extensions:
     source_type: ontology_yaml
     transformation_mode: derive_ttl_scope
     fs: 100
-    cr: 8.23
+    cr: 8.26
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Fusion semantica IPR/Gestion; requiere validacion de alcance.
@@ -43,7 +43,7 @@ Fusion semantica IPR/Gestion; requiere validacion de alcance.
 
 ## Resumen
 - Tipo: Ω-Ontology
-- Schema: `urn:goreos:omega:schema:2.0.0`
+- Schema: `Omega schema 2.0.0`
 - Basado en: 3 artefactos
 - Omega objects: 5
 

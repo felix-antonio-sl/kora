@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:gn:kb:guia-programas-directos-gore
   provenance:
-    created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE \xD1uble"
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/03_operacion/ipr/kb_gn_025_guia_programas_koda.yml
 version: 2.0.0
 status: published
 tags:
@@ -15,111 +15,1050 @@ tags:
 - glosa-06
 - gn
 lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/03_operacion/ipr/kb_gn_025_guia_programas_koda.yml
+    source_hashes:
+      domains/gn/03_operacion/ipr/kb_gn_025_guia_programas_koda.yml: e04ab2f83baec33555190bfda2fc00e63e72911cc74318f605a2f84b09eabe46
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.16
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 16
+    meat_count: 634
+    fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/guias__guia-programas-directos-gore.md.json
 ---
 
 # Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa GORE (Vía Glosa 06)
+## ID
+GN-GUIA-PPR-GORE-DIRECTO-2025-01
 
-## Marco Conceptual y Definiciones Clave
-- **PPR de Ejecución Directa:** Conjunto articulado de acciones, prestaciones y beneficios ejecutados directamente por el GORE mediante gasto corriente o mixto.
-- **Propósito:** Resolver problemas públicos específicos o atender necesidades de la población objetivo regional.
-- **Foco de Intervención:** Servicios, cambios de comportamiento o capacidades; no creación de activos físicos durables.
-- **Financiamiento:** Principalmente Subtítulo 24 (Transferencias Corrientes) FNDR vía Glosa 06.
-- **Diferencia vs Proyectos (IDI):** PPR se centran en servicios a personas/hogares; proyectos IDI se enfocan en infraestructura y equipamiento físico.
-- **Rol Estratégico GORE:** Respuesta pertinente al territorio, fomento endógeno, reducción de brechas y ejercicio de autonomía responsable.
+## Version
+1.0.0
 
-## Glosario Técnico
-| Sigla | Concepto | Definición |
-| :--- | :--- | :--- |
-| **PPR** | Programa Público Regional | Acciones integradas para resolver necesidades de una población objetivo. |
-| **FNDR** | Fondo Nacional de Desarrollo Regional | Principal fuente de financiamiento para inversión y programas regionales. |
-| **DIPRES** | Dirección de Presupuestos | Órgano de Hacienda que regula formulación y ejecución presupuestaria. |
-| **SES** | Subsecretaría de Evaluación Social | Responsable de evaluación ex ante y metodología de Marco Lógico. |
-| **ERD** | Estrategia Regional de Desarrollo | Instrumento de planificación regional con el que deben alinearse los PPR. |
-| **FRPD** | Fondo Regional Productividad y Desarrollo | Fondo asociado a Royalty para innovación e infraestructura habilitante. |
-| **RSH** | Registro Social de Hogares | Instrumento de caracterización socioeconómica para focalización. |
-| **SIVUST** | Sistema Indicadores Vulnerabilidad | Medición de vulnerabilidad a nivel socioterritorial. |
-| **BIPS** | Banco Integrado de Programas Sociales | Plataforma de consulta de oferta programática evaluada. |
+## Status
+Draft
 
-## Marco Normativo y Principios Rectores
-- **LOCGAR:** Habilita a Gobiernos Regionales para diseñar y ejecutar programas dentro de sus competencias.
-- **Glosa 06 (Ley de Presupuestos):** Norma anual de inversión regional que obliga a la evaluación ex ante de programas.
-- **Ley N° 20.530:** Regula la función de SES y DIPRES en la evaluación de programas sociales.
-- **Oficios Circulares DIPRES:** Establecen plazos, formatos y procedimientos operativos anuales.
+## Format
+KODA/Spec
 
-#### Principios Administrativos
-- **Probidad:** Mecanismos transparentes de selección de beneficiarios.
-- **Transparencia:** Acceso público a objetivos, presupuestos y resultados.
-- **Participación:** Involucramiento de la comunidad y COSOC en diagnóstico y diseño.
-- **Eficiencia/Eficacia:** Optimización de recursos y logro efectivo de cambios esperados.
-- **Equidad/Inclusión:** Focalización en grupos vulnerables y territorios rezagados.
+## Human Creator
+FS
 
-## Proceso de Evaluación Ex Ante (Bifásico)
-- **Alcance:** Programas nuevos o reformulaciones sustantivas financiados vía FNDR Subtítulo 24 de ejecución directa GORE.
-- **Carácter Obligatorio:** Sin aprobación (RF) no se puede solicitar financiamiento vía Glosa 06.
+## Human Editor
+FS
 
-### Fase 1: Perfil de Programa
-- **Instrumento:** Formulario de Perfil de Programa Público GORE.
-- **Objetivo:** Primer filtro de pertinencia técnica y factibilidad.
-- **Resultados:**
-  - **Aprobado:** Habilita el desarrollo de la Fase 2 (Diseño).
-  - **Rechazado:** Detención del proceso por fallas conceptuales o no correspondencia a programa.
+## Model Collaborator
+IA-CASCADE
 
-### Fase 2: Diseño de Programa
-- **Condición:** Aprobación previa del Perfil.
-- **Instrumento:** Formulario de Diseño (Metodología de Marco Lógico).
-- **Plazos:**
-  - Envío inicial: 20 días hábiles desde notificación de aprobación de Perfil.
-  - Corrección de observaciones: 20 días hábiles tras cada retroalimentación.
-- **Calificaciones Finales:**
-  - **RF (Recomendado Favorablemente):** Habilita financiamiento.
-  - **OT (Objetado Técnicamente):** Requiere reformulación profunda por deficiencias de diseño.
-  - **FI (Falta de Información):** Antecedentes insuficientes para emitir juicio.
+## AI Remediator
+KODA-TRANSFORMER
 
-## Metodología de Marco Lógico: Diagnóstico
-- **Problema Público:** Situación negativa y concreta respaldada por evidencia trazable (INE, CASEN, RSH, SIVUST).
-- **Análisis Causal (Árbol de Problemas):**
-  - **Tronco:** Problema central (evitar formularlo como "falta de solución").
-  - **Raíces:** Causas directas e indirectas (foco en las que el GORE tiene incidencia).
-  - **Ramas:** Efectos directos e indirectos.
-- **Cuantificación de Poblaciones:**
-  - **Potencial:** Universo total afectado por el problema.
-  - **Objetivo:** Subconjunto definido por criterios de focalización (edad, RSH, comuna).
-  - **Beneficiaria Anual:** Meta efectiva de atención según capacidad operativa anual.
-- **Pertinencia:** Demostrar valor agregado regional y no duplicidad con programas nacionales o municipales.
+## Creation Date
+2025-11-28
 
-## Metodología de Marco Lógico: Diseño y Monitoreo
-- **Propósito:** Reversión positiva del problema central (único, medible y realista).
-- **Componentes:** Bienes o servicios directos entregados (productos). No confundir con tareas de gestión interna.
-- **Estrategia de Intervención:** Describe el flujo del beneficiario (ingreso -> ruta de atención -> egreso).
-- **Indicadores SMART:**
-  - **Dimensiones:** Eficacia, Eficiencia, Economía y Calidad.
-  - **Niveles:** Propósito (resultado) y Componente (producto).
-  - **Requisitos:** Nombre, fórmula, unidad de medida, medios de verificación, línea base y metas.
-- **Presupuesto:**
-  - Detallado por componente e ítem presupuestario (Subt. 21, 22, 24, 29).
-  - **Gastos Administrativos:** Límite máximo establecido por Glosa 06/Oficios DIPRES (típicamente 5%).
-- **Sistemas de Información:** Registro obligatorio de beneficiarios y seguimiento según Ley N° 19.628.
+## Modification Date
+2025-11-28
 
-## Enfoques Transversales y Recursos
-- **Género:** Diagnóstico diferenciado, acciones afirmativas e indicadores desagregados.
-- **Derechos Humanos:** Adecuación para NNA, discapacidad, pueblos indígenas y migrantes.
-- **Territorial:** Uso de SIVUST para identificar zonas prioritarias y adaptar a ruralidad.
+## Ctx
+Guía metodológica y operativa para la formulación, evaluación ex ante y diseño
+de Programas Públicos Regionales (PPR) de ejecución directa del Gobierno
+Regional (GORE), sujetos a evaluación de DIPRES y SES vía Glosa 06.
 
-#### Herramientas de Apoyo
-- **Registro Social de Hogares (RSH):** Fuente primaria para diagnóstico y focalización socioeconómica.
-- **Base Personas Cuidadoras (BPC):** Focalización específica para programas de dependencia.
-- **BIPS:** Consulta de metodologías y evaluaciones de programas sociales.
 
-## Checklists de Autoevaluación
-#### Calidad del Perfil
-- [ ] Nombre breve y representativo del propósito.
-- [ ] Ejecución directa GORE confirmada.
-- [ ] Problema definido como situación negativa existente.
-- [ ] Población afectada identificada y cuantificada preliminarmente.
+## Source
+### Primary Source
+kb_gn_025_guia_programas_sts.md
+### Ctx Required
+- Glosa 06 de la Ley de Presupuestos vigente (Inversión Regional).
+- Normativa y oficios circulares DIPRES sobre evaluación de programas GORE.
+- Normativa SES/MDSF sobre evaluación ex ante de programas.
+- Formularios oficiales de Perfil y Diseño de Programas Públicos GORE.
+### Ctx Optional
+- Banco Integrado de Programas Sociales (BIPS).
+- Estrategia Regional de Desarrollo (ERD) y planes regionales vigentes.
 
-#### Calidad del Diseño
-- [ ] Diagnóstico respaldado con datos oficiales recientes.
-- [ ] Propósito es la reversión directa del problema central.
-- [ ] Componentes son bienes/servicios vinculados a causas directas.
-- [ ] Indicadores cumplen estándar SMART con línea base definida.
-- [ ] Presupuesto coherente con metas y dentro de límites de gastos administrativos.
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-GN-GUIA-PPR-GORE-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
+
+FIDELITY: Preserve meat (essential information) and skeleton (structure:
+headers, IDs, lists, tables) with zero loss. Ignore fat (filler words,
+retórica, redundancias).
+
+LEXICON (expand before processing):
+  Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context,
+  Def->Definition, Dest->Destination, Dln->Deadline,
+  Ex->Example, Fnd->Foundation, ID->ID, Instr->Instruction,
+  Just->Justification, Mech->Mechanism, Mssn->Mission, Mdl->Model,
+  Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition,
+  Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result,
+  Resp->Responsible, Src->Source, Warn->Warning.
+
+REFERENCE POLICY:
+  - Ref: is internal only—must point to an existing ID defined within
+    THIS document.
+  - External documents (leyes, oficios, glosas, formularios, guías
+    complementarias, sitios web) se mencionan bajo Ctx:, Src:,
+    Ctx_Required: o Ctx_Optional:, nunca bajo Ref:.
+
+LANGUAGE POLICY:
+  - Keywords in English (and abbreviated forms as listed).
+  - Content in original language (Spanish). Never translate content.
+END_LLM_INSTRUCTIONS
+
+
+## Glosario PPR
+### ID
+GN-PPR-GLOSARIO-01
+### Purp
+Definir conceptos, siglas y normas clave recurrentes en la guía de PPR de ejecución directa del GORE.
+### Terminos
+| ID | Sigla | Cpt | Def |
+| --- | --- | --- | --- |
+| GN-PPR-GLOS-PPR | PPR | Programa Público Regional | Conjunto integrado y articulado de acciones, prestaciones y beneficios destinados a un propósito específico en una población objetivo, para resolver un problema o necesidad. |
+| GN-PPR-GLOS-FNDR | FNDR | Fondo Nacional de Desarrollo Regional | Principal fuente de financiamiento de proyectos y programas regionales administrada por los Gobiernos Regionales. |
+| GN-PPR-GLOS-GORE | GORE | Gobierno Regional | Administración superior de la región, con personalidad jurídica y patrimonio propio, responsable de la inversión y programas regionales. |
+| GN-PPR-GLOS-DAE | DAE | Departamento de Análisis y Evaluación | Unidad del GORE responsable de la evaluación técnica de programas y proyectos. |
+| GN-PPR-GLOS-DIPIR | DIPIR | División de Presupuesto e Inversión Regional | División encargada del presupuesto de inversión y de la oferta programática regional. |
+| GN-PPR-GLOS-DIPRES | DIPRES | Dirección de Presupuestos | Órgano técnico del Ministerio de Hacienda a cargo de la formulación, ejecución y control del Presupuesto del Sector Público. |
+| GN-PPR-GLOS-SES | SES | Subsecretaría de Evaluación Social | Unidad del Ministerio de Desarrollo Social y Familia responsable de la evaluación ex ante de programas sociales y de la metodología de Marco Lógico. |
+| GN-PPR-GLOS-ERD | ERD | Estrategia Regional de Desarrollo | Instrumento estratégico que orienta las prioridades de desarrollo regional y con el que deben alinearse los PPR. |
+| GN-PPR-GLOS-FRPD | FRPD | Fondo Regional para la Productividad y el Desarrollo | Fondo asociado al Royalty Minero destinado a financiar iniciativas de innovación, competitividad, ciencia, tecnología e infraestructura habilitante. |
+| GN-PPR-GLOS-RSH | RSH | Registro Social de Hogares | Principal instrumento de caracterización socioeconómica de hogares en Chile. |
+| GN-PPR-GLOS-BPC | BPC | Base de Personas Cuidadoras | Módulo complementario del Registro Social de Hogares que identifica a personas cuidadoras y a quienes requieren cuidados. |
+| GN-PPR-GLOS-SIVUST | SIVUST | Sistema de Indicadores de Vulnerabilidad Socioterritorial | Sistema que mide vulnerabilidad socioterritorial mediante un índice global y otros indicadores a nivel territorial. |
+| GN-PPR-GLOS-BIPS | BIPS | Banco Integrado de Programas Sociales | Plataforma del Ministerio de Desarrollo Social y Familia para consultar la oferta programática evaluada y sus principales características. |
+
+## Guia PPR Ejecucion Directa GORE
+### ID
+GN-GUIA-PPR-GORE-DIRECTO-2025-01
+### Titulo
+Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa del GORE vía Glosa 06
+### Purp
+Orientar a los equipos del Gobierno Regional en el diseño, formulación y
+evaluación ex ante de Programas Públicos Regionales (PPR) de ejecución
+directa, asegurando cumplimiento normativo, calidad metodológica y
+pertinencia territorial, de acuerdo con Glosa 06 y lineamientos DIPRES/SES.
+
+### Destinatarios
+- Profesionales y equipos del GORE que formulan y gestionan PPR de ejecución directa.
+- Unidades técnicas sectoriales del GORE (DIPIR, divisiones de fomento, social, etc.).
+- Autoridades regionales que deciden sobre priorización programática.
+### Alcance
+- Aplica exclusivamente a programas de ejecución directa GORE financiados con FNDR (Subt. 24) vía Glosa 06.
+- No aplica a proyectos de inversión (SNI) ni a PPR transferidos a entidades públicas u organizaciones privadas (ver guía específica de transferencias PPR).
+### Objetivos Especificos
+- Definir el marco conceptual y normativo de los PPR GORE de ejecución directa.
+- Explicar el proceso de evaluación ex ante bifásico (Perfil y Diseño) conducido por DIPRES/SES.
+- Guiar el uso de la Metodología de Marco Lógico (MML) para formular PPR.
+- Orientar el llenado de los formularios oficiales de Perfil y Diseño.
+- Proveer checklists de autoevaluación y herramientas de apoyo (Sistemas de Información Social, catálogos de beneficios, etc.).
+### Ref
+- GN-PPR-GLOS-PPR
+- GN-PPR-GLOS-GORE
+### Estructura Secciones
+| ID | Cpt |
+| --- | --- |
+| GN-PPR-SEC-1-MARCO | Marco conceptual, ciclo de vida y rol estratégico de los PPR GORE. |
+| GN-PPR-SEC-2-EVAL-EXANTE | Proceso bifásico de evaluación ex ante vía Glosa 06. |
+| GN-PPR-SEC-3-MML | Metodología de Marco Lógico aplicada a PPR (diagnóstico, lógica de intervención, monitoreo y presupuesto). |
+| GN-PPR-SEC-4-FORMULARIOS | Guía de llenado de Formularios de Perfil y Diseño de PPR GORE. |
+| GN-PPR-SEC-5-CHECKLISTS | Checklists de calidad, uso de sistemas de información social y recursos complementarios. |
+### Nodos Centrales
+#### ID
+GN-PPR-NODOS-CENTRALES-01
+#### Reglas Sobre Uso Instrumentos Oficiales
+#### ID
+GN-PPR-REG-INSTR-OFICIALES-01
+#### Def
+Reglas generales sobre uso obligatorio de instrumentos oficiales específicos para PPR GORE y prohibición de usar instrumentos del sistema central cuando no corresponda.
+#### Req
+- Utilizar siempre los formularios oficiales vigentes de Perfil y Diseño para PPR GORE.
+- Aplicar metodologías, checklists y plantillas emitidas por SES y DIPRES para programas del GORE.
+#### Prohib
+- Usar Ficha IDI, RIS y formularios del Sistema Nacional de Inversiones para PPR de ejecución directa.
+- Mezclar versiones desactualizadas de instrumentos con versiones vigentes sin justificación.
+#### Importancia Diagnostico
+#### ID
+GN-PPR-IMPORT-DIAG-01
+#### Def
+Principio que establece que un diagnóstico robusto y basado en evidencia es la base del diseño de todo PPR.
+#### Req
+- Invertir tiempo significativo en caracterizar problema, población, oferta y brechas.
+- Respaldar el diagnóstico con evidencia cuantitativa y cualitativa actualizada y trazable.
+#### Warn
+- Un diagnóstico débil puede invalidar la propuesta, aunque el problema sea real.
+#### Alineacion con ERD y Plan Regional
+#### ID
+GN-PPR-ALINE-ERD-PLAN-01
+#### Def
+Regla de alineamiento estratégico obligatorio entre los PPR de ejecución directa, la ERD y los principales planes regionales.
+#### Req
+- Citar explícitamente los ejes, lineamientos y objetivos de la ERD y planes regionales que justifican el programa.
+- Verificar coherencia entre objetivos del programa y prioridades estratégicas regionales vigentes.
+#### Warn
+- Una baja alineación con la ERD y los planes regionales reduce la atingencia del programa y la probabilidad de obtener RF.
+### Sec 1 Marco Conceptual y Rol Estrategico
+#### ID
+GN-PPR-SEC-1-MARCO
+#### Definicion PPR
+#### ID
+GN-PPR-DEF-01
+#### Cpt
+Programa Público Regional (PPR) de Ejecución Directa.
+#### Def
+Conjunto integrado y articulado de acciones, prestaciones y beneficios
+(componentes) orientados a un propósito específico sobre una población
+objetivo regional, ejecutados directamente por el GORE a través de
+gasto corriente o mixto.
+
+#### Purp
+- Resolver un problema público definido o atender una necesidad específica de la población objetivo.
+#### Caracteristicas Claves
+- Enfoque en servicios, cambios de comportamiento o capacidades; no en creación de activos físicos durables como objetivo principal.
+- Financiamiento típico en Subtítulo 24 (Transferencias Corrientes) u otros subtítulos corrientes/mix.
+- Duración definida; no confundir con funciones permanentes del GORE.
+#### Distincion vs Proyectos Inversion
+#### ID
+GN-PPR-DEF-DIF-IDI-01
+#### Cpt
+Diferencia principal entre PPR y proyectos de inversión (IDI).
+#### Def
+Los PPR se centran en la provisión de servicios y beneficios a
+personas, hogares u organizaciones, mientras que los proyectos de
+inversión (IDI) del SNI se enfocan en infraestructura, equipamiento
+y otros activos físicos.
+
+#### Warn
+- No utilizar formularios, metodologías ni RIS del Sistema Nacional de Inversiones para PPR.
+- Confundir PPR con proyectos de inversión conlleva rechazo o derivación de la iniciativa.
+#### Ciclo Vida PPR
+#### ID
+GN-PPR-CICLO-VIDA-01
+#### Cpt
+Fases principales de un PPR GORE.
+#### Fases
+-
+  #### ID
+  GN-PPR-CICLO-1-DISENO-FORM
+  #### Cpt
+  Fase 1 – Diseño y Formulación.
+  #### Ctx
+  Foco principal de la guía.
+  #### SubEtapas
+  -
+    #### ID
+    GN-PPR-DISENO-ETAPA-1-DIAG
+    #### Cpt
+    Sub-etapa 1: Identificación y diagnóstico.
+    #### Act
+    - Detectar y analizar el problema público (causas, efectos, población afectada).
+  -
+    #### ID
+    GN-PPR-DISENO-ETAPA-2-FORM
+    #### Cpt
+    Sub-etapa 2: Formulación.
+    #### Act
+    - Definir propósito, componentes, actividades, indicadores, población objetivo, estrategia y presupuesto.
+    - Aplicar Metodología de Marco Lógico (MML) como requisito metodológico.
+  -
+    #### ID
+    GN-PPR-DISENO-ETAPA-3-EVAL-EXANTE
+    #### Cpt
+    Sub-etapa 3: Evaluación ex ante del diseño.
+    #### Act
+    - Someter el diseño a revisión técnica de DIPRES y/o SES.
+    #### Resp
+    - DIPRES y Subsecretaría de Evaluación Social (SES).
+-
+  #### ID
+  GN-PPR-CICLO-2-EJECUCION
+  #### Cpt
+  Fase 2 – Ejecución e implementación.
+  #### Act
+  - Puesta en marcha del programa y operación regular.
+  - Gestión de recursos, ejecución de actividades y monitoreo continuo.
+-
+  #### ID
+  GN-PPR-CICLO-3-EVAL-RETRO
+  #### Cpt
+  Fase 3 – Evaluación y retroalimentación.
+  #### Act
+  - Medición de resultados e impactos (evaluación ex post).
+  - Rendición de cuentas y aprendizaje para mejora continua.
+#### Rol Estrategico PPR GORE
+#### ID
+GN-PPR-ROL-ESTRATEGICO-01
+#### Purp
+Ubicar a los PPR como herramienta estratégica del GORE.
+#### Funciones Claves
+| ID | Cpt | Def |
+| --- | --- | --- |
+| GN-PPR-ROL-RESPUESTA-PERT-01 | Respuesta pertinente al territorio. | Permitir soluciones ajustadas a necesidades y características específicas de la región (ej. Ñuble). |
+| GN-PPR-ROL-FOMENTO-ENDOGENO-01 | Fomento endógeno. | Desarrollar capacidades locales, innovación y diversificación económica o social. |
+| GN-PPR-ROL-BRECHAS-01 | Reducción de brechas y equidad. | Focalizar en grupos vulnerables y territorios rezagados para disminuir brechas. |
+| GN-PPR-ROL-ARTICULACION-01 | Articulación de actores. | Movilizar y coordinar sector público, privado y sociedad civil. |
+| GN-PPR-ROL-AUTONOMIA-RESP-01 | Ejercicio de autonomía responsable. | Usar recursos regionales de forma eficaz para generar valor público. |
+#### Marco Normativo Claves
+#### ID
+GN-PPR-MARCO-NORM-01
+#### Purp
+Identificar las normas que habilitan y regulan los PPR GORE de ejecución directa.
+#### Ref
+- GN-PPR-GLOS-ERD
+- GN-PPR-GLOS-FNDR
+#### Componentes
+-
+  #### ID
+  GN-PPR-NORM-LOCGAR-01
+  #### Cpt
+  LOCGAR.
+  #### Def
+  Habilita a los Gobiernos Regionales para diseñar y ejecutar programas.
+  #### Ctx
+  Define competencias y marco de actuación regional.
+-
+  #### ID
+  GN-PPR-NORM-GLOSA06-01
+  #### Cpt
+  Ley de Presupuestos – Glosa 06.
+  #### Def
+  Norma anualmente la vía programática sobre FNDR para programas regionales, estableciendo la obligación de evaluación ex ante.
+-
+  #### ID
+  GN-PPR-NORM-LEY20530-01
+  #### Cpt
+  Ley N° 20.530 y normativa DIPRES.
+  #### Def
+  Regulan rol de SES y DIPRES en evaluación ex ante de programas públicos.
+-
+  #### ID
+  GN-PPR-NORM-OFICIOS-DIPRES-01
+  #### Cpt
+  Oficios Circulares DIPRES anuales.
+  #### Def
+  Detallan procedimientos operativos, formatos, plazos y requisitos para evaluación de programas GORE.
+#### Principios Rectores Formulacion
+#### ID
+GN-PPR-PRINCIPIOS-01
+#### Ctx
+Principios de administración pública aplicables a la formulación de PPR.
+#### Principios
+-
+  #### ID
+  GN-PPR-PRINC-PROBIDAD-01
+  #### Cpt
+  Probidad administrativa.
+  #### Act
+  - Actuar con rectitud y primacía del interés general.
+  #### Req
+  - Diseñar mecanismos transparentes y objetivos para selección de beneficiarios y uso de fondos.
+-
+  #### ID
+  GN-PPR-PRINC-TRANSPARENCIA-01
+  #### Cpt
+  Transparencia y publicidad.
+  #### Act
+  - Asegurar acceso a información clave: objetivos, beneficiarios, presupuesto, resultados.
+-
+  #### ID
+  GN-PPR-PRINC-PARTICIPACION-01
+  #### Cpt
+  Participación ciudadana.
+  #### Act
+  - Involucrar a la comunidad y beneficiarios en diagnóstico y diseño.
+  #### Rec
+  - Utilizar insumos del Consejo de la Sociedad Civil (COSOC) y otros espacios participativos.
+-
+  #### ID
+  GN-PPR-PRINC-EFICIENCIA-01
+  #### Cpt
+  Eficiencia y eficacia.
+  #### Act
+  - Buscar la forma óptima de alcanzar objetivos minimizando costos (eficiencia).
+  - Asegurar el logro de los cambios esperados (eficacia).
+-
+  #### ID
+  GN-PPR-PRINC-EQUIDAD-01
+  #### Cpt
+  Equidad e inclusión.
+  #### Act
+  - Focalizar en grupos vulnerables y territorios rezagados.
+  #### Req
+  - Promover igualdad de oportunidades y no discriminación (género, discapacidad, etc.).
+-
+  #### ID
+  GN-PPR-PRINC-RESPONSABILIDAD-01
+  #### Cpt
+  Responsabilidad.
+  #### Act
+  - Asumir cumplimiento de objetivos y correcta administración de fondos públicos.
+-
+  #### ID
+  GN-PPR-PRINC-COORDINACION-01
+  #### Cpt
+  Coordinación.
+  #### Act
+  - Articular el programa con otros órganos del Estado y programas existentes para evitar duplicidades y potenciar sinergias.
+### Sec 2 Proceso Evaluacion ExAnte Glosa06
+#### ID
+GN-PPR-SEC-2-EVAL-EXANTE
+#### Vision General Proceso
+#### ID
+GN-PPR-EVAL-EXANTE-01
+#### Obj
+Describir el flujo operativo desde la idea de programa hasta su habilitación para financiamiento.
+#### Cpt
+- Proceso bifásico y secuencial con dos filtros obligatorios (Perfil y Diseño).
+- Sin aprobación satisfactoria de ambas fases no se puede financiar el programa con cargo a FNDR vía Glosa 06.
+#### Resp
+- Subsecretaría de Evaluación Social (SES).
+- Dirección de Presupuestos (DIPRES).
+#### Interlocutor GORE
+#### Cpt
+Contraparte única designada por el GORE (idealmente Jefatura de DIPIR o Administración Regional).
+#### Ref
+- GN-PPR-GLOS-SES
+- GN-PPR-GLOS-DIPRES
+- GN-PPR-GLOS-DIPIR
+#### Fase 1 Perfil Programa
+#### ID
+GN-PPR-EVAL-FASE1-PERFIL-01
+#### Obj
+Presentar una visión concisa y fundamentada de la iniciativa para el primer filtro de pertinencia y factibilidad.
+#### Instrumento Clave
+#### Cpt
+Formulario de Perfil de Programa Público GORE.
+#### Actores y Flujo
+- El formulador completa rigurosamente el Formulario de Perfil.
+- La contraparte operativa del GORE presenta el Perfil a SES/DIPRES.
+#### Resultados Posibles
+| ID | Cpt | Def |
+| --- | --- | --- |
+| GN-PPR-PERFIL-APROBADO-01 | Perfil aprobado. | La iniciativa corresponde efectivamente a un programa y es pertinente; se solicita formalmente al GORE elaborar el diseño detallado (Fase 2). |
+| GN-PPR-PERFIL-RECHAZADO-01 | Perfil rechazado. | La iniciativa no corresponde a programa (ej. es proyecto de inversión) o presenta debilidades conceptuales insalvables; el proceso se detiene hasta subsanar. |
+#### Fase 2 Diseno Programa
+#### ID
+GN-PPR-EVAL-FASE2-DISENO-01
+#### Cond Previa
+- Haber recibido solicitud formal de DIPRES/SES tras aprobación del Perfil.
+#### Obj
+Desarrollar en profundidad todos los aspectos del programa aplicando Metodología de Marco Lógico (MML).
+#### Instrumento Clave
+#### Cpt
+Formulario de Diseño de Programa Público GORE.
+#### Plazos Clave
+- El GORE debe enviar el Formulario de Diseño en un plazo máximo de 20 días hábiles desde la notificación de la solicitud.
+- Tras cada retroalimentación, el GORE dispone de 20 días hábiles para corregir y reenviar.
+#### Proceso Evaluacion
+#### Cpt
+Iterativo, con observaciones, subsanaciones y reenvíos hasta alcanzar un resultado definitivo.
+#### Calificaciones Finales
+| ID | Cpt | Def |
+| --- | --- | --- |
+| GN-PPR-CALIF-RF-01 | RF – Recomendado Favorablemente. | Cumple requisitos técnicos; única calificación que habilita a solicitar financiamiento. |
+| GN-PPR-CALIF-OT-01 | OT – Objetado Técnicamente. | Presenta deficiencias importantes en el diseño; no financiable hasta reformulación sustantiva. |
+| GN-PPR-CALIF-FI-01 | FI – Falta de Información. | Antecedentes insuficientes para emitir juicio; el GORE debe complementar. |
+#### Alcance y Excepciones Evaluacion
+#### ID
+GN-PPR-ALCANCE-EXCEPCIONES-01
+#### Regla General
+#### Def
+Un programa debe entrar a evaluación ex ante si cumple simultáneamente todas las condiciones siguientes.
+#### Cond
+- Es un Programa Público (no un proyecto de inversión).
+- Es nuevo o corresponde a una reformulación sustantiva.
+- Se financia con cargo a Subtítulo 24 del presupuesto de inversión regional (FNDR).
+- La responsabilidad principal de implementación recae en el GORE (ejecución directa).
+- Se enmarca en facultades del GORE (LOCGAR o habilitaciones especiales de Glosa 06).
+#### Excepciones Evaluacion
+#### Def
+Casos exentos del proceso bifásico central. Deben revisarse anualmente según Glosa 06 y oficios DIPRES.
+#### Casos Tipicos
+- Programas en continuidad sin cambios sustantivos.
+- Subvenciones de concursos 8% FNDR para organizaciones privadas (ver guías específicas).
+- Transferencias a otras entidades públicas para que estas ejecuten el programa (responsabilidad y evaluación recaen en el receptor público).
+- Ayudas tempranas e iniciativas de fomento productivo vinculadas a emergencias según normativa anual.
+- Programas que ya obtuvieron calificación RF en ciclo anterior y no han sido modificados.
+#### Criterios Clave Evaluacion DIPRES SES
+#### ID
+GN-PPR-CRITERIOS-EVAL-01
+#### Criterios
+| ID | Cpt | Pregunta_Clave | SubCriterios |
+| --- | --- | --- | --- |
+| GN-PPR-CRIT-ATINGENCIA-01 | Atingencia del programa. | ¿Es el programa correcto para el problema y el contexto? | ['Vínculo consistente Problema–Diagnóstico–Intervención.', 'Relación clara con la Estrategia Regional de Desarrollo (ERD) y otras políticas relevantes.', 'Definición correcta de la población objetivo.', 'No duplicidad con programas existentes.'] |
+| GN-PPR-CRIT-COHERENCIA-01 | Coherencia interna del diseño. | ¿La lógica del programa es sólida y está bien articulada? | ['Coherencia de la cadena causal MML (Problema -> Propósito -> Componentes).', 'Estrategia y modelo de gestión claros.', 'Incorporación de enfoques transversales pertinentes.'] |
+| GN-PPR-CRIT-CONSISTENCIA-01 | Consistencia del diseño. | ¿La propuesta es operativamente viable y monitoreable? | ['Indicadores de desempeño SMART y suficientes.', 'Sistemas de información adecuados.', 'Presupuesto coherente y suficiente con las metas.'] |
+### Sec 3 Metodologia Marco Logico PPR
+#### ID
+GN-PPR-SEC-3-MML
+#### Fase Diagnostico
+#### ID
+GN-PPR-MML-DIAGNOSTICO-01
+#### Obj
+Fundamentar la necesidad, pertinencia y alcance del programa.
+#### Ref
+- GN-PPR-IMPORT-DIAG-01
+- GN-PPR-ALINE-ERD-PLAN-01
+#### Definicion Problema Publico
+#### ID
+GN-PPR-PROBLEMA-PUBLICO-01
+#### Def
+Situación negativa, concreta y verificable que afecta a una población
+regional definida y cuya solución corresponde al interés colectivo y
+al ámbito de competencias del GORE.
+
+#### Cond
+- La solución es de interés colectivo y corresponde a competencias GORE.
+- El problema no puede ser resuelto solo por los afectados.
+#### Criterios Buena Definicion
+- Concreto y específico; evitar generalidades y problemas múltiples en una sola frase.
+- Formulado como situación existente, no como falta de un programa o solución.
+- Población afectada claramente identificada.
+- Respaldado por evidencia cuantitativa y cualitativa de fuentes confiables (INE, CASEN, RSH, estudios sectoriales).
+- Relevancia regional y alineamiento con ERD.
+#### Ejemplos Buenos Malos
+#### Ex
+- Correcto: 'Bajos niveles de empleabilidad juvenil en la comuna X'.
+- Incorrecto: 'Falta de programas para jóvenes'.
+#### Analisis Causal Arbol Problemas
+#### ID
+GN-PPR-ARBOL-PROBLEMAS-01
+#### Purp
+Entender por qué ocurre el problema (causas) y qué consecuencias genera (efectos).
+#### Conceptos Claves
+- Problema central (tronco).
+- Causas directas e indirectas (raíces).
+- Efectos directos e indirectos (ramas).
+#### Metodologia
+#### Proc
+- Redactar problema central.
+- Identificar causas directas preguntando '¿por qué ocurre este problema?'.
+- Para cada causa directa, identificar causas indirectas.
+- Identificar efectos directos e indirectos preguntando '¿qué consecuencias genera este problema?'.
+#### Reglas Disenyo
+- El programa debe focalizarse en causas donde el GORE puede incidir.
+- Cada causa abordada debe ser atendida por al menos un componente.
+- Las causas deben estar respaldadas por datos o análisis técnico.
+#### Poblacion Potencial Objetivo Beneficiaria
+#### ID
+GN-PPR-POBLACION-01
+#### Ctx
+Identificar y cuantificar correctamente quiénes experimentan el problema, quiénes serán objetivo del programa y quiénes serán beneficiarios anuales.
+#### Tipos Poblacion
+-
+  #### ID
+  GN-PPR-POB-POTENCIAL-01
+  #### Cpt
+  Población potencial.
+  #### Def
+  Universo total de unidades (personas, hogares, empresas, organizaciones) que experimentan el problema.
+  #### Act
+  - Caracterizar atributos relevantes (demográficos, socioeconómicos, geográficos).
+  - Cuantificar con fuentes oficiales y actualizadas.
+-
+  #### ID
+  GN-PPR-POB-OBJETIVO-01
+  #### Cpt
+  Población objetivo.
+  #### Def
+  Subconjunto de la población potencial al que se desea llegar a mediano plazo mediante criterios de focalización.
+  #### Cpt Criterios Focalizacion
+  Condiciones objetivas y verificables (edad, tramo RSH, comuna, situación de discapacidad, etc.).
+-
+  #### ID
+  GN-PPR-POB-BENEF-ANUAL-01
+  #### Cpt
+  Población beneficiaria anual.
+  #### Def
+  Subconjunto de la población objetivo que el programa espera atender efectivamente en un año, según cupos y capacidad operativa.
+#### Errores Comunes
+- Definir población objetivo que no es subconjunto de la población potencial.
+- No cuantificar con fuentes o hacerlo con fuentes no confiables.
+- Confundir criterios de focalización con mera descripción general.
+#### Justificacion Intervencion Regional
+#### ID
+GN-PPR-JUST-INTERV-01
+#### Purp
+Argumentar por qué el GORE debe implementar el programa y cómo aporta valor agregado.
+#### Componentes
+- Atingencia con ERD y prioridades regionales.
+- Pertinencia regional: valor agregado del GORE (cubre brechas, adapta a especificidades territoriales, pilota innovación).
+- Análisis de oferta y no duplicidad: mapeo de programas existentes (nacionales, GORE, municipales) para evitar superposición.
+- Vinculación con competencias GORE (LOCGAR, habilitaciones especiales de Glosa 06).
+#### Fase Diseno Logica Intervencion
+#### ID
+GN-PPR-MML-DISENO-01
+#### Proposito Programa
+#### ID
+GN-PPR-PROPOSITO-01
+#### Def
+Cambio específico esperado en la población objetivo que constituye el núcleo del programa.
+#### Regla Formulacion
+Debe ser la reversión positiva del problema central.
+#### Estructura Rec
+[Población objetivo] + [Verbo de cambio] + [Variable a cambiar].
+#### Criterios
+- Único por programa.
+- Orientado a la población objetivo (no a actividades internas del GORE).
+- Realista y alcanzable con los recursos disponibles.
+- Medible mediante indicadores adecuados.
+#### Errores Comunes
+- Confundir el propósito con fines superiores o con componentes/actividades.
+- Formular un propósito múltiple, vago o sin población identificada.
+#### Diseno Componentes
+#### ID
+GN-PPR-COMPONENTES-01
+#### Def
+Productos (bienes) o resultados directos (servicios) entregados a la población objetivo para alcanzar el propósito.
+#### Regla Vinculacion
+Cada componente debe abordar al menos una causa directa relevante del problema.
+#### Caracteristicas
+- Tangibles y claramente definibles.
+- Necesarios y en conjunto suficientes para lograr el propósito.
+- Orientados a beneficiarios finales o intermedios relevantes.
+#### Distincion Importante
+- Componentes son bienes/servicios entregados a beneficiarios.
+- Actividades de gestión interna del GORE (estudios, sistemas, contratación de personal) forman parte de la estrategia y presupuesto, pero no son componentes por sí mismos.
+#### Req Definicion Por Componente
+- Nombre del componente.
+- Tipo de beneficio y beneficio específico según catálogos oficiales.
+- Causa del problema que atiende.
+- Descripción detallada del bien/servicio.
+- Población destinataria.
+- Forma de producción/entrega.
+- Unidad de medida y producción estimada.
+- Gasto asociado por componente.
+#### Estrategia Intervencion y Modelo Gestion
+#### ID
+GN-PPR-ESTRATEGIA-01
+#### Def
+Combinación de componentes y definiciones operativas que explican cómo se logrará el propósito.
+#### Preguntas Guia
+- ¿Qué hace el programa?
+- ¿Cómo lo hace (modalidades y secuencia)?
+- ¿Con quién se implementa (colaboraciones)?
+- ¿Quién ejecuta y con qué responsabilidades?
+#### Elementos Claves
+- Articulación y secuencia de componentes (simultáneos, consecutivos, por cohortes).
+- Flujo del beneficiario (ingreso, ruta de atención, egreso).
+- Modalidad de ejecución principal: ejecución directa GORE (obligatoria para aplicación de Glosa 06).
+- Opciones de colaboración y complementariedad con otras instituciones sin trasladar responsabilidad principal de ejecución.
+#### Ctx Transferencias
+#### Cpt
+Cuando la ejecución se transfiere a otra entidad pública, el régimen normativo y de evaluación cambia; se rige por la guía de transferencias PPR.
+#### Supuestos y Riesgos
+#### ID
+GN-PPR-SUP-RIESGOS-01
+#### Supuestos Criticos
+#### Def
+Condiciones externas necesarias para que la cadena Actividades -> Componentes -> Propósito -> Fin funcione adecuadamente.
+#### Analisis Riesgos
+#### Def
+Identificación de eventos inciertos con impacto negativo (externos, de gestión, de participación), priorizando los más críticos.
+#### Estrategias Mitigacion
+#### Cpt
+Medidas preventivas o correctivas para riesgos prioritarios, integradas en el diseño y en el modelo de gestión.
+#### Fase Monitoreo Indicadores y Presupuesto
+#### ID
+GN-PPR-MML-MONITOREO-01
+#### Indicadores Desempeno
+#### ID
+GN-PPR-INDICADORES-01
+#### Def
+Herramientas para medir objetivamente cambios y desempeño del programa.
+#### Req SMART
+#### Def
+Indicadores Específicos, Medibles, Alcanzables, Relevantes y Acotados en el tiempo.
+#### Dimensiones
+- Eficacia (grado de cumplimiento de objetivos).
+- Eficiencia (relación productos/recursos).
+- Economía (capacidad de administrar recursos financieros).
+- Calidad (atributos de bienes/servicios para satisfacer necesidades).
+#### Tipos
+| ID | Cpt |
+| --- | --- |
+| GN-PPR-IND-PROPOSITO-01 | Indicadores de propósito (resultado). |
+| GN-PPR-IND-COMPONENTE-01 | Indicadores de componente (producto/proceso). |
+#### Req Definicion
+- Nombre claro del indicador.
+- Fórmula y descripción de variables.
+- Unidad de medida y sentido (ascendente/descendente).
+- Medios de verificación y fuentes.
+- Línea base y metas cuantificables.
+#### Fuentes y Medios Verificacion
+#### ID
+GN-PPR-FUENTES-MDV-01
+#### Req
+- Definir para cada indicador cómo se obtendrán los datos.
+#### Medios Verificacion
+- Listas de asistencia, registros de sistemas, encuestas, evaluaciones.
+#### Fuentes Informacion
+- Primarias: datos recolectados por el propio programa.
+- Secundarias: registros administrativos (RSH, bases sectoriales), estadísticas oficiales.
+#### Linea Base y Metas
+#### ID
+GN-PPR-LINEA-METAS-01
+#### Def Linea Base
+Valor del indicador antes de la intervención.
+#### Def Metas
+Valores esperados del indicador en puntos específicos del tiempo, coherentes y fundamentados.
+#### Rec
+- Fundamentar metas en comportamiento histórico, benchmarks y resultados de programas similares.
+#### Sistemas Informacion
+#### ID
+GN-PPR-SISTEMAS-INFO-01
+#### Req
+- Todo programa debe contar con un sistema de registro y monitoreo proporcional a su escala.
+#### Funcionalidades Claves
+- Registro de beneficiarios y seguimiento de atenciones/beneficios.
+- Cálculo y seguimiento de indicadores.
+- Reportes para gestión interna y rendición de cuentas.
+#### Tipos
+- Desde planillas electrónicas estructuradas hasta software especializado.
+#### Req Legal
+- Cumplir Ley N°19.628 de Protección de Datos Personales y normativa asociada.
+#### Presupuesto Detallado
+#### ID
+GN-PPR-PRESUPUESTO-01
+#### Principios
+- Integralidad, coherencia, eficiencia y transparencia.
+#### Fuentes Financiamiento
+- FNDR (Subt. 24, Glosa 06).
+- FRPD (Royalty) y otros fondos regionales cuando corresponda.
+#### Enfoques Estimacion Costos
+- Por componentes (costos directos por bien/servicio).
+- Por tipo de gasto según Clasificador Presupuestario (Subt. 21, 22, 24, 29, etc.).
+#### Rec Metodologia
+- Uso de costos unitarios multiplicados por cantidades (ej. valor hora relator x N° horas).
+- Respaldo mediante cotizaciones, precios de Mercado Público o convenios marco.
+#### Restricciones Gastos Administrativos
+#### Ctx
+Glosa 06 y oficios DIPRES fijan límites estrictos al gasto administrativo.
+#### Warn
+- El GORE solo puede destinar hasta un porcentaje máximo (p.ej. 5% según normativa vigente) del monto total a gastos administrativos propios de gestión del programa; debe justificarse detalladamente.
+#### Req Coherencia
+- El presupuesto debe ser realista y suficiente para alcanzar las metas definidas.
+#### Ref
+- GN-PPR-GLOS-FNDR
+- GN-PPR-GLOS-FRPD
+#### Enfoques Transversales
+#### ID
+GN-PPR-ENFOQUES-TRANS-01
+#### Purp
+Asegurar que el programa promueva equidad, respete derechos y responda a brechas específicas.
+#### Enfoques Claves
+-
+  #### ID
+  GN-PPR-ENF-GENERO-01
+  #### Cpt
+  Perspectiva de género.
+  #### Act
+  - Realizar diagnóstico diferenciado por sexo/género.
+  - Diseñar acciones afirmativas o transformadoras.
+  - Definir indicadores desagregados.
+-
+  #### ID
+  GN-PPR-ENF-DDHH-01
+  #### Cpt
+  Enfoque de Derechos Humanos.
+  #### Req
+  - Considerar particularidades de NNA, personas con discapacidad, pueblos indígenas, migrantes y otros grupos.
+-
+  #### ID
+  GN-PPR-ENF-TERRITORIAL-01
+  #### Cpt
+  Pertinencia territorial e interculturalidad.
+  #### Act
+  - Adaptar el programa a contextos urbanos/rurales y a diversidad cultural.
+  - Usar herramientas como SIVUST para identificar territorios prioritarios.
+### Sec 4 Guia Llenado Formularios Oficiales
+#### ID
+GN-PPR-SEC-4-FORMULARIOS
+#### Formulario Perfil Programa Publico GORE
+#### ID
+GN-PPR-FORM-PERFIL-01
+#### Purp
+Entrega visión concisa y completa de la iniciativa para el filtro de pertinencia (Fase 1).
+#### Dest
+Sistema de evaluación ex ante administrado por DIPRES y SES.
+#### Secciones Claves
+-
+  #### ID
+  GN-PPR-PERFIL-SEC-I-ANTECEDENTES-01
+  #### Cpt
+  Sección I: Antecedentes.
+  #### Campos Ejemplo
+  - Nombre de la iniciativa: debe ser breve, claro y representar el propósito (evitar nombres genéricos/extensos).
+  - Gobierno Regional proponente.
+  - Contraparte operativa: nombre completo, rol y correo institucional.
+-
+  #### ID
+  GN-PPR-PERFIL-SEC-II-PERFIL-01
+  #### Cpt
+  Sección II: Perfil del Programa.
+  #### Campos Claves
+  - Ejecución anterior: identifica si la iniciativa es nueva o de continuidad.
+  - Entidad responsable de ejecución: define si corresponde a ejecución directa GORE o colaboración.
+  - Competencia principal en que se enmarca el programa (LOCGAR o habilitación de Glosa 06).
+  - Vinculación con FRPD cuando aplica.
+  - Justificación frente a programas similares: valor agregado y no duplicidad.
+  - Definición del problema público que se busca solucionar.
+  - Población afectada directamente y su cuantificación preliminar.
+  - Resultado específico esperado en la población (propósito).
+  - Bienes y servicios principales (componentes) a entregar.
+  - Idea preliminar de cómo se verificará el logro del cambio (variables, fuentes).
+#### Reglas Estimadas
+- Respetar extensiones máximas por campo (palabras/caracteres).
+- Redactar problema como situación negativa y concreta, no como ausencia de programa.
+- Describir brevemente componentes, sin perder claridad sobre su vínculo con el propósito.
+#### Ref
+- GN-PPR-REG-INSTR-OFICIALES-01
+- GN-PPR-IMPORT-DIAG-01
+- GN-PPR-ALINE-ERD-PLAN-01
+#### Formulario Diseno Programa Publico GORE
+#### ID
+GN-PPR-FORM-DISENO-01
+#### Purp
+Documenta en detalle el diseño del programa para evaluación de fondo (Fase 2).
+#### Cond Previa
+- Solo se completa cuando el Perfil ha sido aprobado y SES/DIPRES solicitan su envío.
+#### Secciones Claves
+-
+  #### ID
+  GN-PPR-DISENO-SEC-I-ANTECEDENTES-01
+  #### Cpt
+  Sección I: Antecedentes.
+  #### Cont
+  - Nombre del programa (usualmente precargado).
+  - Código del programa asignado por la entidad evaluadora.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-II-DIAGNOSTICO-01
+  #### Cpt
+  Sección II: Diagnóstico.
+  #### Campos
+  - Problema que el programa busca resolver (coherente con Perfil).
+  - Desarrollo del diagnóstico con datos (magnitud, evolución, caracterización).
+  - Causas principales del problema y respaldo de evidencia.
+  - Listado de fuentes y bibliografía utilizada.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-III-PROPOSITO-FOCALIZACION-01
+  #### Cpt
+  Sección III: Propósito y Focalización.
+  #### Cont
+  - Propósito del programa (único, medible y reversión del problema).
+  - Población potencial, objetivo y beneficiaria: descripción, cuantificación y fuente.
+  - Unidad de medida de la población (personas, hogares, empresas, etc.).
+  - Metodología para cuantificar población objetivo y beneficiaria.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-IV-ESTRATEGIA-01
+  #### Cpt
+  Sección IV: Estrategia.
+  #### Campos
+  - Descripción de la estrategia de intervención y flujo del beneficiario.
+  - Número de componentes y tabla de detalle para cada uno (nombre, tipo de beneficio, descripción, población, forma de entrega, unidad de medida, metas).
+  - Duración del programa y criterio de egreso.
+  - Reglas sobre reingreso o acceso más de una vez.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-V-EJECUTORES-01
+  #### Cpt
+  Sección V: Ejecutores y Complementariedades.
+  #### Cont
+  - Participación de otras instituciones en ejecución (sin traspasar responsabilidad principal).
+  - Número de instituciones y roles definidos para cada una.
+  - Complementariedad con otros programas (servicio responsable, programa, acciones conjuntas).
+-
+  #### ID
+  GN-PPR-DISENO-SEC-VI-ENFOQUES-01
+  #### Cpt
+  Sección VI: Enfoques y Derechos Humanos.
+  #### Campos
+  - Objetivo principal en igualdad de género, si aplica.
+  - Medidas afirmativas y/o transformadoras para igualdad de género.
+  - Enfoques de Derechos Humanos aplicados (discapacidad, pertinencia territorial, etc.) y acciones concretas.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-VII-INDICADORES-01
+  #### Cpt
+  Sección VII: Indicadores.
+  #### Cont
+  - Al menos un indicador de propósito (resultado) pertinente.
+  - Indicadores de componente (producto/proceso).
+  - Metodología de cálculo, medios de verificación, línea base y metas.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-VIII-SISTEMAS-INFO-01
+  #### Cpt
+  Sección VIII: Sistemas de Información.
+  #### Cont
+  - Descripción de sistemas existentes o a desarrollar para registro y seguimiento.
+-
+  #### ID
+  GN-PPR-DISENO-SEC-IX-GASTOS-01
+  #### Cpt
+  Sección IX: Gastos.
+  #### Cont
+  - Tabla detallada de gastos por componente e ítems presupuestarios.
+  - Identificación y justificación de gastos administrativos, resguardando el límite normativo.
+#### Advertencias Generales
+#### Warn
+- Indicadores de simple cobertura, planificación o satisfacción usuaria no son suficientes para medir logro del propósito.
+- Un diseño débil en diagnóstico, indicadores o presupuesto reduce significativamente las probabilidades de obtener RF.
+#### Ref
+- GN-PPR-REG-INSTR-OFICIALES-01
+- GN-PPR-IMPORT-DIAG-01
+- GN-PPR-ALINE-ERD-PLAN-01
+### Sec 5 Checklists Herramientas y Recursos
+#### ID
+GN-PPR-SEC-5-CHECKLISTS
+#### Checklists Evaluacion
+#### ID
+GN-PPR-CHECKLISTS-01
+#### Purp
+Permitir autoevaluar la calidad del Perfil y del Diseño antes de su envío oficial.
+#### Checklist Perfil
+#### ID
+GN-PPR-CHECKLIST-PERFIL-01
+#### Criterios
+- Nombre de la iniciativa claro y representativo.
+- Contraparte única designada con datos de contacto.
+- Correcta identificación de si es iniciativa nueva o de continuidad.
+- Modalidad de ejecución definida y coherente con Glosa 06 (ejecución directa GORE).
+- Competencia principal correctamente seleccionada.
+- Uso o no de FRPD claramente indicado.
+- Justificación de valor agregado y no duplicidad.
+- Problema definido como situación negativa, concreta y con población afectada.
+- Población descrita y cuantificada preliminarmente.
+- Resultado esperado como reversión positiva del problema, medible.
+- Componentes coherentes con problema y resultado.
+- Idea plausible de cómo se medirá el éxito.
+#### Checklist Diseno
+#### ID
+GN-PPR-CHECKLIST-DISENO-01
+#### Dimensiones
+| Cpt | Criterios |
+| --- | --- |
+| Problema público central. | ['Definido como situación negativa, concreta y verificable.', 'Específico y no múltiple.', 'No formulado como ausencia de solución.', 'Población afectada clara y respaldada por evidencia reciente.'] |
+| Análisis causal y de efectos. | ['Causas directas/indirectas relevantes e incidibles por el programa.', 'Efectos principales identificados.'] |
+| Población y justificación. | ['Población potencial/objetivo/beneficiaria bien definidas y cuantificadas con fuentes.', 'Análisis de oferta existente y valor agregado del GORE.'] |
+| Propósito y componentes. | ['Propósito es reversión del problema, único, claro y medible.', 'Componentes son bienes/servicios principales y no tareas internas.', 'Cada componente vinculado a una causa relevante.'] |
+| Estrategia, enfoques y riesgos. | ['Estrategia de intervención y flujo del beneficiario descritos.', 'Enfoques transversales incorporados con medidas concretas.', 'Supuestos y riesgos críticos identificados con estrategias de mitigación.'] |
+| Indicadores, sistemas y presupuesto. | ['Indicadores de propósito y componente de calidad (SMART).', 'Medios de verificación y fuentes definidos.', 'Línea base y metas justificadas.', 'Sistema de información planificado.', 'Presupuesto completo, coherente y compatible con límites normativos (incluyendo tope a gastos administrativos).'] |
+#### Ref
+- GN-PPR-IMPORT-DIAG-01
+- GN-PPR-ALINE-ERD-PLAN-01
+#### Sistemas Informacion Social
+#### ID
+GN-PPR-SISTEMAS-SOCIALES-01
+#### Ctx
+Herramientas clave provistas por MDSF para diagnóstico y focalización de PPR.
+#### Herramientas
+-
+  #### ID
+  GN-PPR-RSH-01
+  #### Cpt
+  Registro Social de Hogares (RSH).
+  #### Def
+  Principal instrumento de caracterización socioeconómica de hogares en Chile.
+  #### Utilidad PPR
+  - Cuantificación y caracterización de población potencial y objetivo.
+  - Focalización mediante la Calificación Socioeconómica y otros módulos.
+  #### Ctx
+  - GOREs pueden solicitar acceso a datos vía SES y Repositorio de Información Social (RIS).
+  #### Ref
+  - GN-PPR-GLOS-RSH
+-
+  #### ID
+  GN-PPR-BPC-01
+  #### Cpt
+  Base de Personas Cuidadoras (BPC).
+  #### Purp
+  Identificar y focalizar programas relacionados con cuidados y dependencia.
+  #### Ref
+  - GN-PPR-GLOS-BPC
+-
+  #### ID
+  GN-PPR-SIVUST-01
+  #### Cpt
+  Sistema de Indicadores de Vulnerabilidad Socioterritorial (SIVUST).
+  #### Def
+  Sistema que mide vulnerabilidad socioterritorial mediante un índice global y otros indicadores a nivel territorial.
+  #### Utilidad PPR
+  - Diagnóstico territorial.
+  - Focalización territorial de programas y justificación de pertinencia regional.
+  #### Ref
+  - GN-PPR-GLOS-SIVUST
+-
+  #### ID
+  GN-PPR-OTROS-RECURSOS-MDSF-01
+  #### Cpt
+  Otros recursos MDSF.
+  #### Ctx
+  - Banco Integrado de Datos (BIDAT).
+  - Analista Digital de Información Social (ADIS).
+  - Observatorio Social (CASEN, otros estudios).
+#### Catalogo Beneficios y Unidades Medida
+#### ID
+GN-PPR-CATALOGO-BENEF-01
+#### Purp
+Apoyar la clasificación de componentes según catálogos estandarizados DIPRES/SES.
+#### Categorias Ejemplo
+- Apoyo psicosocial (unidades: N° sesiones, N° personas atendidas).
+- Monetario – bonos, subsidios, becas (N° beneficios, monto transferido).
+- Capacitaciones/cursos (N° personas certificadas, N° cursos ejecutados).
+- Servicios generales – alimentación, transporte, residencial (N° raciones, cupos).
+- Financiamiento de proyectos – fomento productivo, capital semilla (N° proyectos, monto).
+- Asesorías técnicas (N° personas/empresas asesoradas, horas de asistencia).
+- Materiales y campañas (material distribuido, alcance).
+#### Directorio Contactos y Enlaces
+#### ID
+GN-PPR-DIRECTORIO-01
+#### Cpt Contactos
+- DIPRES – www.dipres.gob.cl (metodologías, informes de evaluación, circulares).
+- SES/MDSF – www.desarrollosocialyfamilia.gob.cl (metodologías MML, evaluación de programas).
+- Correo evaluación ex ante GORE – evaluacionexantegore@desarrollosocial.gob.cl.
+- Correo asistencia técnica – asistenciatecnicadps@desarrollosocial.gob.cl.
+- BIPS – https://bips.ministeriodesarrollosocial.gob.cl (oferta programática y evaluaciones).
+- CGR – www.contraloria.cl (rendición de cuentas, dictámenes, SISREC).
+- SUBDERE – www.subdere.gov.cl (programas de financiamiento regional).
+- BCN/Ley Chile – www.bcn.cl/leychile (normativa actualizada).
+#### Ref
+- GN-PPR-GLOS-BIPS
+#### Recomendaciones Formulacion Exitosa
+#### ID
+GN-PPR-RECOMENDACIONES-01
+#### Estrategia Formulacion
+- Invertir tiempo significativo en un diagnóstico robusto, con evidencia suficiente.
+- Utilizar siempre los instrumentos oficiales específicos para PPR GORE (Perfil y Diseño) y versiones vigentes.
+- Coordinar tempranamente con SES/DIPRES para resolver dudas metodológicas.
+- Usar checklists antes de enviar los formularios para minimizar observaciones.
+- Alinear el programa con la ERD y planes sectoriales regionales para fortalecer atingencia.
+#### Advertencias
+- Un diagnóstico débil o sin evidencia invalida la propuesta, incluso si el problema es real.
+- El uso incorrecto de instrumentos del sistema central (no adaptados a GORE) puede llevar al rechazo.
+- Subestimar el tiempo requerido para ajustar observaciones retrasa la obtención de RF y el acceso a financiamiento.
+#### Ref
+- GN-PPR-IMPORT-DIAG-01
+- GN-PPR-REG-INSTR-OFICIALES-01
+- GN-PPR-ALINE-ERD-PLAN-01

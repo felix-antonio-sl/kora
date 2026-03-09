@@ -2158,7 +2158,7 @@ Catalog:
     file: knowledge/pro/hospitalizacion-domiciliaria/03-director-tecnico.md
     status: draft
   - urn: urn:gn:kb:gn-cqs-master
-    title: 01 Estructura Organizacional
+    title: Catálogo Maestro de Competency Questions
     file: knowledge/gn/gn-cqs-master.md
     status: published
   - urn: urn:gn:kb:guia-comunicaciones
@@ -2191,6 +2191,10 @@ Catalog:
   - urn: urn:gn:kb:guia-frpd-nuble
     title: Guía Operativa FRPD Ñuble 2025
     file: knowledge/gn/guias/guia-frpd-nuble.md
+    status: published
+  - urn: urn:gn:kb:programas-vigentes-resumen
+    title: Programas Vigentes Resumen
+    file: knowledge/gn/datos/programas-vigentes-resumen.md
     status: published
   - urn: urn:gn:kb:manual-desarrollo-organizacional
     title: 'Manual 3.4: Desarrollo Organizacional y Capacitación'

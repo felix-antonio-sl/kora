@@ -69,7 +69,7 @@ manual_operacional_dgi.md
 Manual Operacional del Departamento de Gestión Institucional GORE Ñuble
 
 ## XRef Required
-urn:knowledge:koda:core:spec:1.0.0
+KODA Core Spec 1.0.0
 
 ## LLM Parsing Instructions
 ### ID

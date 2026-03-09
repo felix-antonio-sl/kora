@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:gn:kb:bpmn-d10-geoespacial-ide
   provenance:
-    created_by: FS
-    created_at: '2026-01-29'
-    source: "GORE Ñuble"
+    created_by: gn_rebuild.py
+    created_at: '2026-03-08'
+    source: domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml
 version: 2.0.0
 status: published
 tags:
@@ -15,147 +15,409 @@ tags:
 - bpmn
 - gn
 lang: es
+extensions:
+  gn:
+    source_paths:
+    - domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml
+    source_hashes:
+      domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml: c7aed58a04063ab80e5e43dbb12003236eef581694c4330a58040ce480848294
+    source_type: koda_yaml
+    transformation_mode: korafy_direct
+    fs: 100
+    cr: 1.18
+    run_id: gn-smoke
+    review_gate: auto
+    scope_statement: null
+    dependencies: []
+    expected_sections:
+    - Contenido
+    skeleton_count: 16
+    meat_count: 43
+    fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
+    evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-d10-geoespacial-ide.md.json
 ---
 
 # BPMN D10: Gestión de Información Geoespacial (IDE/Geonodo)
+## ID
+BPMN-GN-D10-GEOESPACIAL-IDE-KODA
 
-## Metadatos del Dominio
+## Version
+1.0.0
 
-| Atributo | Valor |
-| :--- | :--- |
-| ID | DOM-GEO |
-| Criticidad | Media |
-| Dueño | Coordinador Regional IDE |
-| Procesos | 3 (Ciclo de Vida, Publicación, Gobernanza) |
-| Subprocesos | ~10 |
+## Status
+Draft
 
-## Marco Estratégico
+## Format
+KODA/Spec
 
-| Aspecto | Alineamiento |
-| :--- | :--- |
-| ERD Ñuble | Gestión territorial informada |
-| IDE Chile | Interoperabilidad nacional |
-| ISO/TC 211 | Estándares geoespaciales |
-| OGC | Servicios web abiertos |
+## Human Creator
+FS
 
-## P1: Ciclo de Vida de Datos Geoespaciales
+## Human Editor
+FS
 
-**Fases:** 6. Ciclo con mejora continua: evaluación retroalimenta planificación.
+## Model Collaborator
+- Cascade
 
-### Fases y Responsables
+## AI Remediator
+KODA-TRANSFORMER
 
-| Fase | Actividades | Responsable |
-| :--- | :--- | :--- |
-| 1. Planificar | Definir necesidades (UN-IGIF), especificaciones (ISO 19131), catálogo objetos (ISO 19110) | Coord. Regional IDE |
-| 2. Capturar/Integrar | Formularios/recolectores, ETL desde fuentes, control de versiones | UGIT / Equipo SIG |
-| 3. Calidad | QA/QC (ISO 19157), validaciones automatizadas | UGIT / Equipo SIG |
-| 4. Documentar | Metadatos (ISO 19115-1), URL descarga/servicios, licencias | UGIT / Equipo SIG |
-| 5. Publicar | WMS/WFS/WCS, API endpoints, Geoportal, Registro CSW | UGIT / Equipo SIG |
-| 6. Usar y Evaluar | Tableros/dashboards, indicadores uso/impacto, retroalimentación | Divisiones usuarias |
+## Creation Date
+2025-12-22
 
-## P2: Publicación e Interoperabilidad
+## Modification Date
+2025-12-22
 
-### Servicios OGC
+## Ctx
+Especificación STS del dominio D10: Gestión de Información Geoespacial (IDE/Geonodo) del GORE Ñuble, modelado en BPMN.
 
-| Servicio | Tipo de datos |
-| :--- | :--- |
-| WMS | Visualización de capas |
-| WFS | Entidades vectoriales |
-| WCS | Coberturas raster |
+## Source
+### Ctx Required
+- knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
+### Primary Source
+sources/gn/arquitectura/bpmn/D10_geoespacial_ide.md
 
-Formatos de exportación desde WFS: GeoJSON, GML, KML, Shapefile.
+## LLM Parsing Instructions
+### ID
+KODA-LLM-PARSER-01
+### Req
+Mandatory block following Metadata.
+### Prohib
+Using for artifact creation or translation.
+### Content
+BEGIN_LLM_INSTRUCTIONS
+You are an AI agent consuming a KODA artifact. Parse with absolute fidelity.
 
-### API Institucional REST
+FIDELITY: Preserve meat (essential information) and skeleton (structure: headers, IDs, lists, tables) with zero loss. Ignore fat (filler words, rhetoric, stylistic prose).
 
-| Endpoint | Función |
-| :--- | :--- |
-| /datasets | Listar conjuntos de datos |
-| /datasets/{id} | Detalle del conjunto |
-| /tiles/{z}/{x}/{y} | Teselas |
-| /search | Búsqueda avanzada |
+LEXICON (expand before processing): Act->Action, Cond->Condition, Cpt->Concept, Ctx->Context, Def->Definition, Fnd->Foundation, ID->ID, Mech->Mechanism, Mssn->Mission, Nat->Nature, Obj->Objective, Proc->Process, Prohib->Prohibition, Purp->Purpose, Ref->Reference, Req->Requirement, Res->Result, Resp->Responsible, Src->Source, Warn->Warning.
 
-Respuesta: JSON.
+REFERENCE POLICY: Ref: is internal only—must point to existing ID within THIS document. External documents and legal sources are mentioned as contextual information under Ctx: or Src:.
 
-### Geoportal
+LANGUAGE POLICY: Keywords in English (and abbreviated forms as listed), content in original language (Spanish). Never translate content.
+END_LLM_INSTRUCTIONS
 
-| Funcionalidad | Descripción |
-| :--- | :--- |
-| Búsqueda | Por tema, palabra clave, ubicación |
-| Previsualización | Visor WMS integrado |
-| Descarga | Múltiples formatos |
-| Tutoriales | Guías por perfil de usuario |
 
-## P3: Gobernanza de Datos Geoespaciales
+## Metadatos Dominio
+### ID
+DOM-GEO
+### Criticidad
+🟡 Media
+### Dueno
+Coordinador Regional IDE
+### Procesos
+3
+### Subprocesos
+~10
+### Ref Fuente
+#### Ctx Required
+- knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.4308-4478
 
-### Roles de Gobernanza
+## Body MD
+### ID
+BPMN-GN-D10-GEOESPACIAL-IDE-BODY-01
+### Src
+sources/gn/arquitectura/bpmn/D10_geoespacial_ide.md
+### Content
+\# D10: Gestión de Información Geoespacial (IDE/Geonodo)
 
-| Rol | Nivel | Función |
-| :--- | :--- | :--- |
-| Gobernador/a | Estratégico | Patrocinio del Comité Geo Institucional |
-| Coord. Regional IDE | Operativo | Liderazgo técnico |
-| UGIT / Equipo SIG | Operativo | Operación técnica |
-| Puntos Focales Sectoriales | Operativo | Representación por división |
-| Jurídica | Soporte | Licencias |
-| TI | Soporte | Infraestructura |
-| Comunicaciones | Soporte | Difusión |
+\## Metadatos del Dominio
 
-### Trazabilidad y Versionamiento
+| Campo           | Valor                                                                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **ID**          | `DOM-GEO`                                                                                                                                              |
+| **Criticidad**  | 🟡 Media                                                                                                                                                |
+| **Dueño**       | Coordinador Regional IDE                                                                                                                               |
+| **Procesos**    | 3                                                                                                                                                      |
+| **Subprocesos** | ~10                                                                                                                                                    |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.4308-4478 |
 
-1. Cambio en capa → commit en GitHub institucional
-2. Actualizar versión en metadatos
-3. Notificar a consumidores
+---
 
-### Licenciamiento
+\## Mapa General del Dominio
 
-| Tipo de Capa | Licencia recomendada |
-| :--- | :--- |
-| Datos abiertos | CC BY 4.0 |
-| Bases de datos | ODbL |
-| Datos restringidos | Acuerdo específico |
+```mermaid
+flowchart LR
+    subgraph CICLO["🗺️ Ciclo de Datos Geoespaciales"]
+        P1["P1: Ciclo de Vida<br/>de Datos"]
+        P2["P2: Publicación e<br/>Interoperabilidad"]
+        P3["P3: Gobernanza<br/>de Datos"]
+    end
 
-## Ética de Datos Geoespaciales
+    subgraph INFRAESTRUCTURA["🏗️ Infraestructura"]
+        I1["Geonodo"]
+        I2["Servicios OGC"]
+        I3["Geoportal"]
+        I4["API"]
+    end
 
-| Principio | Aplicación |
-| :--- | :--- |
-| Minimización | Evitar granularidad innecesaria |
-| Anonimización | Cuando corresponda |
-| Transparencia | Declarar origen y licencias |
-| No estigmatización | Evitar visualizaciones dañinas |
-| Calidad | Tratarla como deber público |
+    P1 --> P2 --> P3
+    P2 <--> I1 & I2 & I3 & I4
 
-## Plan de Implementación (180 días)
+    style P1 fill:#2196F3,color:#fff
+    style P2 fill:#4CAF50,color:#fff
+    style P3 fill:#9C27B0,color:#fff
+```
 
-| Fase | Período | Hitos |
-| :--- | :--- | :--- |
-| Fase 0 (0–30 días) | Enero 2025 | Comité Geo constituido; inventario y diagnóstico |
-| Fase 1 (30–90 días) | Febrero–Marzo 2025 | Política y guía metadatos; Geonodo operativo; piloto 5 conjuntos |
-| Fase 2 (90–150 días) | Abril 2025 | Geoportal y API; integración servicios externos |
-| Fase 3 (150–180 días) | Mayo 2025 | Evaluación KPIs; capacitación y plan anual |
+---
 
-## Sistemas Involucrados
+\## Marco Estratégico
 
-| Sistema | Función |
-| :--- | :--- |
-| SYS-GEONODO | Plataforma geoespacial |
-| SYS-CSW | Catálogo de metadatos |
-| SYS-OGC-SERVICES | WMS/WFS/WCS |
-| SYS-GEO-PORTAL | Portal público |
-| SYS-GEO-API | API REST |
-| SYS-GITHUB-INSTITUCIONAL | Versionamiento de capas |
+| Aspecto        | Alineamiento                  |
+| -------------- | ----------------------------- |
+| **ERD Ñuble**  | Gestión territorial informada |
+| **IDE Chile**  | Interoperabilidad nacional    |
+| **ISO/TC 211** | Estándares geoespaciales      |
+| **OGC**        | Servicios web abiertos        |
 
-## Normativa Aplicable
+---
 
-| Norma | Alcance |
-| :--- | :--- |
-| ISO 19115-1 | Metadatos geoespaciales |
-| ISO 19157 | Calidad de datos |
-| ISO 19131 | Especificaciones de productos |
-| Política IDE Chile | Interoperabilidad nacional |
-| Ley 21.455 | Cambio climático (datos territoriales) |
+\## P1: Ciclo de Vida de Datos Geoespaciales
 
-## Referencias Cruzadas
+| Campo     | Valor                       |
+| --------- | --------------------------- |
+| **ID**    | `BPMN-GN-GEO-FLUJO-INST-01` |
+| **Fases** | 6                           |
 
-| Dominio | Vínculo |
-| :--- | :--- |
-| D03 Gestión IPR | Georreferenciación de proyectos |
-| D09 CIES/SITIA | Ubicación de cámaras |
+\### Diagrama de Flujo
+
+```mermaid
+flowchart TD
+    subgraph PLANIFICAR["📋 1. Planificar"]
+        A["Definir necesidades<br/>(UN-IGIF)"]
+        B["Especificaciones<br/>(ISO 19131)"]
+        C["Catálogo objetos<br/>(ISO 19110)"]
+    end
+
+    subgraph CAPTURAR["📥 2. Capturar/Integrar"]
+        D["Formularios/<br/>recolectores"]
+        E["ETL desde fuentes"]
+        F["Control de versiones"]
+    end
+
+    subgraph CALIDAD["✅ 3. Calidad"]
+        G["QA/QC<br/>(ISO 19157)"]
+        H["Validaciones<br/>automatizadas"]
+    end
+
+    subgraph DOCUMENTAR["📝 4. Documentar"]
+        I["Metadatos<br/>(ISO 19115-1)"]
+        J["URL descarga/<br/>servicios"]
+        K["Licencias"]
+    end
+
+    subgraph PUBLICAR["🌐 5. Publicar"]
+        L["WMS/WFS/WCS"]
+        M["API endpoints"]
+        N["Geoportal"]
+        O["Registro CSW"]
+    end
+
+    subgraph USAR["📊 6. Usar y Evaluar"]
+        P["Tableros/<br/>dashboards"]
+        Q["Indicadores<br/>uso/impacto"]
+        R["Retroalimentación"]
+    end
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K --> L --> M --> N --> O --> P --> Q --> R
+    R -.->|"Mejora continua"| A
+
+    style N fill:#4CAF50,color:#fff
+```
+
+\### Responsables por Etapa
+
+| Etapa               | Responsable         |
+| ------------------- | ------------------- |
+| Planificar          | Coord. Regional IDE |
+| Capturar/Calidad    | UGIT / Equipo SIG   |
+| Documentar/Publicar | UGIT / Equipo SIG   |
+| Usar y Evaluar      | Divisiones usuarias |
+
+---
+
+\## P2: Publicación e Interoperabilidad
+
+| Campo  | Valor                                |
+| ------ | ------------------------------------ |
+| **ID** | `BPMN-GN-GEO-PUBLICACION-DETALLE-01` |
+
+\### Servicios OGC
+
+```mermaid
+flowchart LR
+    subgraph CAPAS["📦 Datos Procesados"]
+        A["Capa temática"]
+    end
+
+    subgraph SERVICIOS["🌐 Servicios OGC"]
+        B["WMS<br/>(visualización)"]
+        C["WFS<br/>(entidades)"]
+        D["WCS<br/>(coberturas)"]
+    end
+
+    subgraph FORMATOS["📄 Formatos"]
+        E["GeoJSON"]
+        F["GML"]
+        G["KML"]
+        H["Shapefile"]
+    end
+
+    A --> B & C & D
+    C --> E & F & G & H
+
+    style B fill:#2196F3,color:#fff
+    style C fill:#4CAF50,color:#fff
+```
+
+\### API Institucional
+
+```mermaid
+flowchart TD
+    A["Cliente externo"] --> B{"Endpoint"}
+    B -->|"/datasets"| C["Listar conjuntos"]
+    B -->|"/datasets/{id}"| D["Detalle conjunto"]
+    B -->|"/tiles/{z}/{x}/{y}"| E["Teselas"]
+    B -->|"/search"| F["Búsqueda avanzada"]
+    C & D & E & F --> G["Respuesta JSON"]
+
+    style G fill:#4CAF50,color:#fff
+```
+
+\### Geoportal
+
+| Funcionalidad    | Descripción                        |
+| ---------------- | ---------------------------------- |
+| Búsqueda         | Por tema, palabra clave, ubicación |
+| Previsualización | Visor WMS integrado                |
+| Descarga         | Múltiples formatos                 |
+| Tutoriales       | Guías por perfil de usuario        |
+
+---
+
+\## P3: Gobernanza de Datos Geoespaciales
+
+| Campo  | Valor                       |
+| ------ | --------------------------- |
+| **ID** | `BPMN-GN-GEO-GOBERNANZA-01` |
+
+\### Roles de Gobernanza
+
+```mermaid
+flowchart TD
+    subgraph COMITE["👥 Comité Geo Institucional"]
+        A["Gobernador/a<br/>(Patrocinio)"]
+    end
+
+    subgraph OPERATIVO["⚙️ Nivel Operativo"]
+        B["Coord. Regional IDE<br/>(Liderazgo)"]
+        C["UGIT / Equipo SIG<br/>(Operación técnica)"]
+        D["Puntos Focales<br/>Sectoriales"]
+    end
+
+    subgraph SOPORTE["🔧 Soporte"]
+        E["Jurídica<br/>(Licencias)"]
+        F["TI<br/>(Infraestructura)"]
+        G["Comunicaciones<br/>(Difusión)"]
+    end
+
+    A --> B --> C & D
+    B --> E & F & G
+
+    style B fill:#4CAF50,color:#fff
+```
+
+\### Trazabilidad y Versionamiento
+
+```mermaid
+flowchart LR
+    A["Cambio en capa"] --> B["Commit en<br/>GitHub institucional"]
+    B --> C["Actualizar versión<br/>en metadatos"]
+    C --> D["Notificar<br/>consumidores"]
+
+    style D fill:#FF9800,color:#fff
+```
+
+\### Licenciamiento
+
+| Tipo de Capa       | Licencia Recomendada |
+| ------------------ | -------------------- |
+| Datos abiertos     | CC BY 4.0            |
+| Bases de datos     | ODbL                 |
+| Datos restringidos | Acuerdo específico   |
+
+---
+
+\## Ética de Datos Geoespaciales
+
+\### Principios
+
+| Principio          | Aplicación                      |
+| ------------------ | ------------------------------- |
+| Minimización       | Evitar granularidad innecesaria |
+| Anonimización      | Cuando corresponda              |
+| Transparencia      | Declarar origen y licencias     |
+| No estigmatización | Evitar visualizaciones dañinas  |
+| Calidad            | Tratarla como deber público     |
+
+---
+
+\## Plan de Implementación (180 días)
+
+```mermaid
+gantt
+    title Plan IDE GORE Ñuble
+    dateFormat  YYYY-MM-DD
+    section Fase 0 (0-30)
+    Comité Geo constituido           :a1, 2025-01-15, 15d
+    Inventario y diagnóstico         :a2, 2025-01-20, 15d
+    section Fase 1 (30-90)
+    Política y guía metadatos        :b1, 2025-02-01, 30d
+    Geonodo operativo                :b2, 2025-02-15, 30d
+    Piloto 5 conjuntos               :b3, 2025-03-01, 30d
+    section Fase 2 (90-150)
+    Geoportal y API                  :c1, 2025-04-01, 30d
+    Integración servicios externos   :c2, 2025-04-15, 30d
+    section Fase 3 (150-180)
+    Evaluación KPIs                  :d1, 2025-05-15, 15d
+    Capacitación y plan anual        :d2, 2025-05-25, 15d
+```
+
+---
+
+\## Sistemas Involucrados
+
+| Sistema                    | Función                |
+| -------------------------- | ---------------------- |
+| `SYS-GEONODO`              | Plataforma geoespacial |
+| `SYS-CSW`                  | Catálogo de metadatos  |
+| `SYS-OGC-SERVICES`         | WMS/WFS/WCS            |
+| `SYS-GEO-PORTAL`           | Portal público         |
+| `SYS-GEO-API`              | API REST               |
+| `SYS-GITHUB-INSTITUCIONAL` | Versionamiento         |
+
+---
+
+\## Normativa Aplicable
+
+| Norma                  | Alcance                    |
+| ---------------------- | -------------------------- |
+| **ISO 19115-1**        | Metadatos                  |
+| **ISO 19157**          | Calidad de datos           |
+| **ISO 19131**          | Especificaciones           |
+| **Política IDE Chile** | Interoperabilidad nacional |
+| **Ley 21.455**         | Cambio climático (datos)   |
+
+---
+
+\## Referencias Cruzadas
+
+| Dominio Relacionado                                                                                                          | Vínculo                      |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| [D03 Gestión IPR](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md) | Georreferenciación proyectos |
+| [D09 CIES/SITIA](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D09_cies_sitia.md)   | Ubicación cámaras            |
+
+---
+
+*Última actualización: 2025-12-16*

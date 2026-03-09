@@ -147,8 +147,8 @@ COHORT_WORKSPACE_OVERRIDES = {
 }
 META_KORA_STATUS = {
     "kora/guardian": {
-        "status": "auxiliary",
-        "reason": "Gobierno fundacional de specs; valido y resoluble, pero fuera de los loops operativos endurecidos.",
+        "status": "operating_core",
+        "reason": "Nucleo operativo constitucional: gobierna coherencia de specs, precedencia y validacion fundacional.",
     },
     "kora/forgemaster": {
         "status": "operating_core",
@@ -173,6 +173,7 @@ META_KORA_STATUS = {
 }
 OPERATING_CORE_COHORTS = {
     "kora": (
+        "kora/guardian",
         "kora/forgemaster",
         "kora/curator",
         "kora/custodio",

@@ -591,9 +591,9 @@ DEF-SIC
 #### ID
 GN-MANUAL-PPTO-XREF-01
 #### XRef
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0
-- urn:knowledge:gorenuble:gn:gestion-prpto:1.0.0
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
+- urn:gn:kb:gestion-prpto
 #### Ctx Optional
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml
 - knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml

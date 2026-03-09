@@ -4,20 +4,20 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen
 
-- Workspaces cubiertos: 12
-- Estados declarados: 88
-- Tools semanticas declaradas: 77
-- Handoffs declarados: 32
+- Workspaces cubiertos: 13
+- Estados declarados: 92
+- Tools semanticas declaradas: 79
+- Handoffs declarados: 35
 
 ## Auditoria meta-kora
 
 - Meta agentes auditados: 6
-- Meta agentes en nucleo operativo endurecido: 3
-- Meta agentes auxiliares explicitamente descopados: 3
+- Meta agentes en nucleo operativo endurecido: 4
+- Meta agentes auxiliares explicitamente descopados: 2
 
 | Workspace | Estatus | Estados | Skills | Tools | Handoffs | Motivo |
 |-----------|---------|---------|--------|-------|----------|--------|
-| kora/guardian | auxiliary | 4 | 0 | 2 | 0 | Gobierno fundacional de specs; valido y resoluble, pero fuera de los loops operativos endurecidos. |
+| kora/guardian | operating_core | 4 | 0 | 2 | 3 | Nucleo operativo constitucional: gobierna coherencia de specs, precedencia y validacion fundacional. |
 | kora/forgemaster | operating_core | 10 | 10 | 7 | 2 | Nucleo operativo: disena, crea, valida y entrega handoff al custodio. |
 | kora/curator | operating_core | 11 | 11 | 7 | 2 | Nucleo operativo: korafica, audita y entrega handoff al custodio. |
 | kora/custodio | operating_core | 8 | 8 | 8 | 2 | Nucleo operativo: cierra salud, catalogo e ingesta del repo. |
@@ -28,6 +28,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Workspace | Estados | Tools | Handoffs |
 |-----------|---------|-------|----------|
+| kora/guardian | 4 | 2 | 3 |
 | kora/forgemaster | 10 | 7 | 2 |
 | kora/curator | 11 | 7 | 2 |
 | kora/custodio | 8 | 8 | 2 |

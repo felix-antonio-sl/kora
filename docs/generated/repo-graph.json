@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 730,
-    "node_count": 883,
-    "edge_count": 4171
+    "scanned_files": 731,
+    "node_count": 884,
+    "edge_count": 4217
   },
   "node_kind_counts": {
     "artifact": 226,
-    "knowledge": 256,
+    "knowledge": 257,
     "skill": 236,
     "spec": 7,
     "tool": 113,
@@ -21,7 +21,7 @@
     "InvokesSkill": 217,
     "RoutesToAgent": 57,
     "TracesTo": 44,
-    "XRef": 2575
+    "XRef": 2621
   },
   "nodes": [
     {
@@ -2671,7 +2671,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:gn:kb:gn-cqs-master",
-      "title": "01 Estructura Organizacional",
+      "title": "Catálogo Maestro de Competency Questions",
       "path": "knowledge/gn/gn-cqs-master.md",
       "namespace": "gn"
     },
@@ -2997,6 +2997,15 @@
       "urn": "urn:gn:kb:problemas-sociales-cl",
       "title": "Catálogo de Problemas Sociales de Chile (STS)",
       "path": "knowledge/gn/gobernanza/problemas-sociales-cl.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:kb:programas-vigentes-resumen",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gn:kb:programas-vigentes-resumen",
+      "title": "Programas Vigentes Resumen",
+      "path": "knowledge/gn/datos/programas-vigentes-resumen.md",
       "namespace": "gn"
     },
     {
@@ -18885,6 +18894,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:kb:programas-vigentes-resumen",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gn:kb:ris-artcult",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -28202,84 +28218,7 @@
     {
       "kind": "XRef",
       "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d07-rrhh",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d08-rendiciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
       "target": "urn:gn:kb:bpmn-index",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:matriz-integracion-organica",
       "fragment": null,
       "source_path": "knowledge/gn/bpmn/bpmn-index.md"
     },
@@ -28341,6 +28280,76 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:flujos-aprobacion-documentos",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:gn:kb:gestion-info-geoespacial",
       "target": "urn:gn:kb:gestion-info-geoespacial",
       "fragment": null,
@@ -28350,6 +28359,97 @@
       "kind": "XRef",
       "source": "urn:gn:kb:gestion-ipr",
       "target": "urn:gn:kb:gestion-ipr",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-ipr",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "knowledge/gn/gestion/gestion-ipr.md"
     },
@@ -28369,8 +28469,155 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:gn:kb:gestion-prpto-2026",
+      "target": "urn:gn:kb:glosas-gores-2026",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-prpto-2026",
+      "target": "urn:gn:kb:glosas-gores-2026",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-prpto-2026",
+      "target": "urn:gn:kb:glosas-gores-2026",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-prpto-2026",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:gn:kb:gestion-rendiciones",
       "target": "urn:gn:kb:gestion-rendiciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:gestion-rendiciones",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
     },
@@ -28441,6 +28688,48 @@
       "kind": "XRef",
       "source": "urn:gn:kb:guia-idi-sni-sts",
       "target": "urn:gn:kb:guia-idi-sni-sts",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-idi-sni-sts",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-idi-sni-sts",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-idi-sni-sts",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-idi-sni-sts",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-idi-sni-sts",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:guia-idi-sni-sts",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
     },
@@ -29076,10 +29365,45 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:lean6",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:lean6",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:meyer-org-structure",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:plan-potenciamiento-dgi",
+      "target": "urn:mgmt:kb:meyer-org-structure",
+      "fragment": null,
+      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:gn:kb:problemas-sociales-cl",
       "target": "urn:gn:kb:problemas-sociales-cl",
       "fragment": null,
       "source_path": "knowledge/gn/gobernanza/problemas-sociales-cl.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:programas-vigentes-resumen",
+      "target": "urn:gn:kb:programas-vigentes-resumen",
+      "fragment": null,
+      "source_path": "knowledge/gn/datos/programas-vigentes-resumen.md"
     },
     {
       "kind": "XRef",
@@ -29206,6 +29530,13 @@
       "target": "urn:gn:kb:selector-ipr",
       "fragment": null,
       "source_path": "knowledge/gn/ris/selector-ipr.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:transferencia-ppr",
+      "target": "urn:gn:kb:gestion-rendiciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/gestion/transferencia-ppr.md"
     },
     {
       "kind": "XRef",

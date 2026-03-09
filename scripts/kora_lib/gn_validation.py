@@ -6,11 +6,9 @@ from .artifacts import load_markdown_parts
 
 FAT_PATTERNS = (
     re.compile(r"\bEn este documento veremos\b", re.IGNORECASE),
-    re.compile(r"\bA continuaci[oó]n\b", re.IGNORECASE),
-    re.compile(r"\bPor otro lado\b", re.IGNORECASE),
+    re.compile(r"(?m)^\s*(?:[-*]\s+)?A continuaci[oó]n\b", re.IGNORECASE),
+    re.compile(r"(?m)^\s*(?:[-*]\s+)?Por otro lado\b", re.IGNORECASE),
     re.compile(r"\bprobablemente\b", re.IGNORECASE),
-    re.compile(r"\ben general\b", re.IGNORECASE),
-    re.compile(r"\bsuele\b", re.IGNORECASE),
 )
 
 INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([^\]]+)\]")

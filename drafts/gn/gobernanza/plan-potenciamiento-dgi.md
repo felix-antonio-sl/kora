@@ -30,7 +30,7 @@ extensions:
     source_type: mixed
     transformation_mode: korafy_composite
     fs: 100
-    cr: 26.19
+    cr: 26.45
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Plan DGI con dependencias core declaradas.
@@ -54,9 +54,9 @@ Plan DGI con dependencias core declaradas.
 implementation_plan.md
 
 ## XRef Required
-- urn:knowledge:koda:core:spec:1.0.0
-- urn:knowledge:gorenuble:core:gestion:meyer-org-structure:1.0.0
-- urn:knowledge:gorenuble:core:gestion:lean6:1.0.1
+- KODA Core Spec 1.0.0
+- urn:mgmt:kb:meyer-org-structure
+- urn:mgmt:kb:lean6
 
 ## Scope
 ### Includes
@@ -84,7 +84,7 @@ implementation_plan.md
   #### Title
   Perspectiva Meyer: Estructura como Ciencia
   #### XRef
-  urn:knowledge:gorenuble:core:gestion:meyer-org-structure:1.0.0
+  urn:mgmt:kb:meyer-org-structure
   #### Principles
   | ID | Name | Application |
   | --- | --- | --- |
@@ -101,7 +101,7 @@ implementation_plan.md
   #### Title
   Perspectiva Lean Six Sigma: Mejora Sistemática
   #### XRef
-  urn:knowledge:gorenuble:core:gestion:lean6:1.0.1
+  urn:mgmt:kb:lean6
   #### Concepts
   | ID | Name | Application |
   | --- | --- | --- |

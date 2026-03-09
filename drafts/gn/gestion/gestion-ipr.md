@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.16
+    cr: 1.18
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -273,8 +273,8 @@ Estandarizar el flujo completo de gestión de IPR en GORE Ñuble: desde el ingre
 - Res. 30/2015 CGR (Rendiciones).
 - Normativa DIPRES/MDSF sobre SNI, BIP, procedimientos especiales.
 ### Src
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-NORMAS-GENERALES
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
 ### Fases
 | Ref |
 | --- |
@@ -545,7 +545,7 @@ Analizar en profundidad la IPR para determinar calidad, viabilidad y convenienci
   - Con cargo a esta transferencia se podrá contratar en la entidad pública receptora a personal a honorarios cuyo vínculo cesará una vez finalizado el convenio, dentro del límite establecido por la glosa aplicable.
   - Cuando corresponda, considerar la calidad de agente público para honorarios según glosa aplicable.
   #### Src
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-06
+  - urn:gn:kb:ley-presupuestos-2026-partida-31
   #### Tabla Pasos
   -
     #### Step
@@ -753,8 +753,8 @@ Analizar en profundidad la IPR para determinar calidad, viabilidad y convenienci
     #### Ctx
     Mecanismos con lógicas de evaluación propias detalladas en sus guías específicas.
     #### Src
-    - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-07
-    - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-12
+    - urn:gn:kb:ley-presupuestos-2026-partida-31
+    - urn:gn:kb:ley-presupuestos-2026-partida-31
     #### Elementos
     -
       #### Cpt
@@ -793,7 +793,7 @@ Gestionar asignación de recursos presupuestarios para IPR con aprobación técn
 - LOC GORE Art. 36 y 78.
 - Glosa 01, Partida 31, Ley Presupuestos 2026.
 #### Src
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-01
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Ref
 - GN-IPR-GLOS-IPR
 - GN-IPR-GLOS-CORE
@@ -898,10 +898,10 @@ Traducir aprobación de financiamiento en actos administrativos y convenios que 
   #### Warn
   - La transferencia de recursos solo puede materializarse después de la total tramitación del convenio.
   #### Src
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART23
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART24
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART25
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART26
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
   #### Tabla Pasos
   -
     #### Step
@@ -1051,7 +1051,7 @@ Monitorear desarrollo de la IPR, asegurando cumplimiento técnico y uso correcto
   - Proyectos y programas de inversión: licitación pública obligatoria cuando el monto sea superior a 1.000 UTM, salvo excepciones por emergencia según normativa aplicable.
   - Estudios básicos: licitación pública obligatoria cuando el monto sea superior a 500 UTM, salvo excepciones por emergencia según normativa aplicable.
   #### Src
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART06
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
   #### Tabla Pasos
   | Step | Resp | Activities | Output |
   | --- | --- | --- | --- |
@@ -1233,8 +1233,8 @@ Formalizar finalización de la IPR y generar lecciones aprendidas mediante evalu
   #### Titulo
   8.2 Cierre Financiero y Administrativo
   #### Src
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART24
-  - urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART26
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
+  - urn:gn:kb:ley-presupuestos-2026-normas-generales
   #### Tabla Pasos
   -
     #### Step

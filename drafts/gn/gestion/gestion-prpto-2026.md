@@ -195,9 +195,9 @@ Viernes 12 de Diciembre de 2025
 #### CVE
 2741100
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-NORMAS-GENERALES-01
-- urn:knowledge:gorenuble:presupuesto:glosas-gores-2026:1.0.0#GLOSAS-GORES-2026-01
-- urn:knowledge:gorenuble:presupuesto:glosas-gores-2026:1.0.0#INFO-REQS-2026-GORES-01
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
+- urn:gn:kb:glosas-gores-2026
+- urn:gn:kb:glosas-gores-2026
 #### Src
 - knowledge/domains/gn/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml
 - knowledge/domains/gn/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml
@@ -1293,7 +1293,7 @@ Checklist operacional de requerimientos de información/publicación asociados a
 #### Src
 kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml#INFO-REQS-2026-GORES-01
 #### XRef Required
-- urn:knowledge:gorenuble:presupuesto:glosas-gores-2026:1.0.0#INFO-REQS-2026-GORES-01
+- urn:gn:kb:glosas-gores-2026
 #### Req
 - INFO-REQ-01 (Semestral) SUBDERE → CEMP: Informará los montos destinados regionalmente para proyectos de conectividad digital, que incluyan servicios de telecomunicaciones y cobertura digital, de zonas rezagadas que no sean cubiertas por el Fondo de Desarrollo para las Telecomunicaciones.
 - INFO-REQ-02 (Mensual + 5 días hábiles) GORES: Publicar mensualmente en sus respectivas páginas web la cartera de proyectos financiada con cargo a los presupuestos de inversión de los gobiernos regionales; y publicar los acuerdos adoptados por los respectivos consejos regionales dentro de los 5 días hábiles siguientes, contados desde la adopción del respectivo acuerdo.

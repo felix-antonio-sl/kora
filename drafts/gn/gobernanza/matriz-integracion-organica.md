@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.38
+    cr: 1.47
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Matriz editorial de integracion organica; mantener como artefacto
@@ -94,9 +94,9 @@ Introducción y Fundamentos
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_000 | urn:knowledge:gorenuble:gn:intro-gores-nuble:1.0.0 | Guía Integral GORE Ñuble | intro/kb_gn_000_intro_gores_nuble_koda.yml | KODA | Guía técnico-operativa integral: marco constitucional, estructura GORE, contexto Ñuble, autoridades. |
-| kb_gn_013 | urn:knowledge:gorenuble:gn:vision-desarrollo-nuble:1.0.0 | Visión de Desarrollo Ñuble | intro/kb_gn_013_vision_desarrollo_nuble_koda.yml | KODA | Visión estratégica de desarrollo para la Región de Ñuble. |
-| kb_gn_900 | urn:knowledge:gorenuble:gn:gore-ideal:1.0.0 | GORE Ideal | intro/kb_gn_900_gore_ideal_koda.yml | KODA | Modelo aspiracional del GORE, buenas prácticas y referentes. |
+| kb_gn_000 | urn:gn:kb:intro-gores-nuble | Guía Integral GORE Ñuble | intro/kb_gn_000_intro_gores_nuble_koda.yml | KODA | Guía técnico-operativa integral: marco constitucional, estructura GORE, contexto Ñuble, autoridades. |
+| kb_gn_013 | urn:gn:kb:vision-desarrollo-nuble | Visión de Desarrollo Ñuble | intro/kb_gn_013_vision_desarrollo_nuble_koda.yml | KODA | Visión estratégica de desarrollo para la Región de Ñuble. |
+| kb_gn_900 | urn:gn:kb:gore-ideal | GORE Ideal | intro/kb_gn_900_gore_ideal_koda.yml | KODA | Modelo aspiracional del GORE, buenas prácticas y referentes. |
 ### Legal
 #### ID
 IDX-LEGAL
@@ -105,8 +105,8 @@ Marco Legal y Normativo
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_031 | urn:knowledge:gorenuble:gn:loc-gore:1.0.0 | LOC GORE | legal/kb_gn_031_loc_gore_koda.yml | KODA | Ley Orgánica Constitucional sobre Gobiernos Regionales (Ley 19.175). |
-| kb_gn_200 | urn:knowledge:gorenuble:gn:marco-legal-gores:1.0.0 | Marco Legal GOREs | legal/kb_gn_200_marco_legal_gores_koda.yml | KODA | Compilación del marco legal aplicable a los Gobiernos Regionales. |
+| kb_gn_031 | urn:gn:kb:loc-gore | LOC GORE | legal/kb_gn_031_loc_gore_koda.yml | KODA | Ley Orgánica Constitucional sobre Gobiernos Regionales (Ley 19.175). |
+| kb_gn_200 | urn:gn:kb:marco-legal-gores | Marco Legal GOREs | legal/kb_gn_200_marco_legal_gores_koda.yml | KODA | Compilación del marco legal aplicable a los Gobiernos Regionales. |
 ### Estadocl
 #### ID
 IDX-ESTADOCL
@@ -115,7 +115,7 @@ Estructura del Estado de Chile
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_core_007 | urn:knowledge:gorenuble:estadocl:estructura-estado-chile:1.0.0 | Estructura del Estado de Chile | ../../estadocl/kb_core_007_estructura_estado_chile_koda.yml | KODA | Organización general del Estado chileno: poderes, niveles, instituciones. |
+| kb_core_007 | urn:mgmt:kb:estructura-estado-chile | Estructura del Estado de Chile | ../../estadocl/kb_core_007_estructura_estado_chile_koda.yml | KODA | Organización general del Estado chileno: poderes, niveles, instituciones. |
 ### Estrategia
 #### ID
 IDX-ESTRATEGIA
@@ -124,8 +124,8 @@ Planificación Estratégica
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_006 | urn:knowledge:gorenuble:gn:erd-nuble-2024-2030:1.0.0 | ERD Ñuble 2024-2030 | estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml | KODA | Estrategia Regional de Desarrollo 2024-2030: ejes, objetivos, metas. |
-| kb_gn_056 | urn:knowledge:gorenuble:gn:nuble250:1.0.0 | Ñuble250 | estrategia/kb_gn_056_nuble250_koda.yml | KODA | Plan de Aceleración Regional Ñuble250. |
+| kb_gn_006 | urn:gn:kb:erd-nuble-2024-2030 | ERD Ñuble 2024-2030 | estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml | KODA | Estrategia Regional de Desarrollo 2024-2030: ejes, objetivos, metas. |
+| kb_gn_056 | urn:gn:kb:nuble-250 | Ñuble250 | estrategia/kb_gn_056_nuble250_koda.yml | KODA | Plan de Aceleración Regional Ñuble250. |
 ### Social
 #### ID
 IDX-SOCIAL
@@ -134,7 +134,7 @@ Diagnóstico Social
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_004 | urn:knowledge:gorenuble:gn:problemas-sociales-cl:1.0.0 | Problemas Sociales Chile | social/kb_gn_004_problemas_sociales_cl_koda.yml | KODA | Diagnóstico de problemas sociales en Chile con foco regional. |
+| kb_gn_004 | urn:gn:kb:problemas-sociales-cl | Problemas Sociales Chile | social/kb_gn_004_problemas_sociales_cl_koda.yml | KODA | Diagnóstico de problemas sociales en Chile con foco regional. |
 ### Estadisticas
 #### ID
 IDX-ESTADISTICAS
@@ -143,7 +143,7 @@ Indicadores y Estadísticas
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_005 | urn:knowledge:gorenuble:gn:indicadores-nuble:1.0.0 | Indicadores Ñuble | estadisticas/kb_gn_005_indicadores_nuble_koda.yml | KODA | Indicadores socioeconómicos, demográficos y de desarrollo de Ñuble. |
+| kb_gn_005 | urn:gn:kb:indicadores-nuble | Indicadores Ñuble | estadisticas/kb_gn_005_indicadores_nuble_koda.yml | KODA | Indicadores socioeconómicos, demográficos y de desarrollo de Ñuble. |
 ### Gestion
 #### ID
 IDX-GESTION
@@ -154,7 +154,7 @@ Gestión Institucional
   #### Id
   kb_gn_014
   #### Urn
-  urn:knowledge:gorenuble:gn:glosario-gore-nuble:1.0.0
+  urn:gn:kb:glosario-gore-nuble
   #### Titulo
   Glosario GORE Ñuble
   #### Path
@@ -169,7 +169,7 @@ Gestión Institucional
   #### Id
   kb_gn_017
   #### Urn
-  urn:knowledge:gorenuble:gn:manual-induccion:1.0.0
+  urn:gn:kb:manual-induccion-gore-nuble-2026
   #### Titulo
   Manual de Inducción 2025
   #### Path
@@ -182,7 +182,7 @@ Gestión Institucional
   #### Id
   kb_gn_009
   #### Urn
-  urn:knowledge:gorenuble:gn:cuentas-publicas:1.0.0
+  urn:gn:kb:cuentas-publicas-2021-2024
   #### Titulo
   Cuentas Públicas 2021-2024
   #### Path
@@ -195,7 +195,7 @@ Gestión Institucional
   #### Id
   kb_gn_015
   #### Urn
-  urn:knowledge:gorenuble:gn:aprobaciones:1.0.0
+  urn:gn:kb:flujos-aprobacion-documentos
   #### Titulo
   Sistema de Aprobaciones
   #### Path
@@ -208,7 +208,7 @@ Gestión Institucional
   #### Id
   kb_gn_020
   #### Urn
-  urn:knowledge:gorenuble:gn:gestion-rendiciones:1.0.0
+  urn:gn:kb:gestion-rendiciones
   #### Titulo
   Gestión de Rendiciones
   #### Path
@@ -221,7 +221,7 @@ Gestión Institucional
   #### Id
   kb_gn_035
   #### Urn
-  urn:knowledge:gorenuble:gn:estrategia-gestion:1.0.0
+  urn:gn:kb:estrategia-gestion
   #### Titulo
   Estrategia de Gestión
   #### Path
@@ -238,18 +238,18 @@ Manuales de procedimientos por área funcional.
 #### Artefactos
 | id | titulo | urn | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| manual_1_1 | Manual Presupuesto | urn:knowledge:gorenuble:gn:manual-presupuesto:1.0.0 | gestion/kb_gn_043_manual_presupuesto_koda.yml | KODA | Procedimientos de gestión presupuestaria. |
-| manual_1_2 | Manual Contabilidad | urn:knowledge:gorenuble:gn:manual-contabilidad:1.0.0 | gestion/kb_gn_044_manual_contabilidad_koda.yml | KODA | Procedimientos contables y registro. |
-| manual_1_3 | Manual Tesorería | urn:knowledge:gorenuble:gn:manual-tesoreria:1.0.0 | gestion/kb_gn_045_manual_tesoreria_koda.yml | KODA | Procedimientos de tesorería y pagos. |
-| manual_2_1 | Manual Compras | urn:knowledge:gorenuble:gn:manual-compras:1.0.0 | gestion/kb_gn_046_manual_compras_koda.yml | KODA | Procedimientos de compras y contrataciones. |
-| manual_2_2 | Manual Inventarios | urn:knowledge:gorenuble:gn:manual-inventarios-bodegas:1.0.0 | gestion/kb_gn_040_manual_inventarios_bodegas_koda.yml | KODA | Gestión de inventarios. |
-| manual_2_3 | Manual Activo Fijo | urn:knowledge:gorenuble:gn:manual-activo-fijo:1.0.0 | gestion/kb_gn_041_manual_activo_fijo_koda.yml | KODA | Control de activos fijos. |
-| manual_2_4 | Manual Flotas | urn:knowledge:gorenuble:gn:manual-flotas:1.0.0 | gestion/kb_gn_047_manual_flotas_koda.yml | KODA | Gestión de vehículos y flotas. |
-| manual_3_1 | Manual Ciclo de Vida | urn:knowledge:gorenuble:gn:manual-ciclo-vida:1.0.0 | gestion/kb_gn_048_manual_ciclo_vida_koda.yml | KODA | Ciclo de vida del funcionario. |
-| manual_3_2 | Manual Remuneraciones | urn:knowledge:gorenuble:gn:manual-remuneraciones:1.0.0 | gestion/kb_gn_049_manual_remuneraciones_koda.yml | KODA | Gestión de remuneraciones. |
-| manual_3_3 | Manual Tiempo y Ausentismo | urn:knowledge:gorenuble:gn:manual-asistencia:1.0.0 | gestion/kb_gn_051_manual_asistencia_koda.yml | KODA | Control de asistencia y ausentismo. |
-| manual_3_4 | Manual Desarrollo Organizacional | urn:knowledge:gorenuble:gn:manual-desarrollo-organizacional:1.0.0 | gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml | KODA | Desarrollo organizacional y capacitación. |
-| manual_3_5 | Manual Bienestar | urn:knowledge:gorenuble:gn:manual-bienestar:1.0.0 | gestion/kb_gn_052_manual_bienestar_koda.yml | KODA | Programas de bienestar funcionario. |
+| manual_1_1 | Manual Presupuesto | urn:gn:kb:manual-presupuesto | gestion/kb_gn_043_manual_presupuesto_koda.yml | KODA | Procedimientos de gestión presupuestaria. |
+| manual_1_2 | Manual Contabilidad | urn:gn:kb:manual-contabilidad | gestion/kb_gn_044_manual_contabilidad_koda.yml | KODA | Procedimientos contables y registro. |
+| manual_1_3 | Manual Tesorería | urn:gn:kb:manual-tesoreria | gestion/kb_gn_045_manual_tesoreria_koda.yml | KODA | Procedimientos de tesorería y pagos. |
+| manual_2_1 | Manual Compras | urn:gn:kb:manual-compras | gestion/kb_gn_046_manual_compras_koda.yml | KODA | Procedimientos de compras y contrataciones. |
+| manual_2_2 | Manual Inventarios | urn:gn:kb:manual-inventarios-bodegas | gestion/kb_gn_040_manual_inventarios_bodegas_koda.yml | KODA | Gestión de inventarios. |
+| manual_2_3 | Manual Activo Fijo | urn:gn:kb:manual-activo-fijo | gestion/kb_gn_041_manual_activo_fijo_koda.yml | KODA | Control de activos fijos. |
+| manual_2_4 | Manual Flotas | urn:gn:kb:manual-flotas | gestion/kb_gn_047_manual_flotas_koda.yml | KODA | Gestión de vehículos y flotas. |
+| manual_3_1 | Manual Ciclo de Vida | urn:gn:kb:manual-ciclo-vida | gestion/kb_gn_048_manual_ciclo_vida_koda.yml | KODA | Ciclo de vida del funcionario. |
+| manual_3_2 | Manual Remuneraciones | urn:gn:kb:manual-remuneraciones | gestion/kb_gn_049_manual_remuneraciones_koda.yml | KODA | Gestión de remuneraciones. |
+| manual_3_3 | Manual Tiempo y Ausentismo | urn:gn:kb:manual-asistencia | gestion/kb_gn_051_manual_asistencia_koda.yml | KODA | Control de asistencia y ausentismo. |
+| manual_3_4 | Manual Desarrollo Organizacional | urn:gn:kb:manual-desarrollo-organizacional | gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml | KODA | Desarrollo organizacional y capacitación. |
+| manual_3_5 | Manual Bienestar | urn:gn:kb:manual-bienestar | gestion/kb_gn_052_manual_bienestar_koda.yml | KODA | Programas de bienestar funcionario. |
 ### Presupuesto
 #### ID
 IDX-PRESUPUESTO
@@ -258,9 +258,9 @@ Gestión Presupuestaria
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_018 | urn:knowledge:gorenuble:gn:gestion-prpto:1.0.0 | Gestión Presupuestaria | presupuesto/kb_gn_018_gestion_prpto_koda.yml | KODA | Marco general de gestión presupuestaria del GORE. |
-| kb_gn_210 | urn:knowledge:gorenuble:gn:ley-presupuestos-2026-p31:1.0.0 | Ley Presupuestos 2026 - Partida 31 | presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml | KODA | Extracto de la Ley de Presupuestos 2026, Partida 31 (GOREs). |
-| kb_gn_211 | urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas:1.0.0 | Ley Presupuestos 2026 - Normas Generales | presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml | KODA | Normas generales de ejecución presupuestaria. |
+| kb_gn_018 | urn:gn:kb:gestion-prpto | Gestión Presupuestaria | presupuesto/kb_gn_018_gestion_prpto_koda.yml | KODA | Marco general de gestión presupuestaria del GORE. |
+| kb_gn_210 | urn:gn:kb:ley-presupuestos-2026-partida-31 | Ley Presupuestos 2026 - Partida 31 | presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml | KODA | Extracto de la Ley de Presupuestos 2026, Partida 31 (GOREs). |
+| kb_gn_211 | urn:gn:kb:ley-presupuestos-2026-normas-generales | Ley Presupuestos 2026 - Normas Generales | presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml | KODA | Normas generales de ejecución presupuestaria. |
 ### Ipr
 #### ID
 IDX-IPR
@@ -269,15 +269,15 @@ Inversión Pública Regional
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_001 | urn:knowledge:gorenuble:gn:transferencia-ppr:1.0.0 | Transferencia PPR | ipr/kb_gn_001_transferencia_ppr_koda.yml | KODA | Procedimiento de transferencia de programas públicos regionales. |
-| kb_gn_011 | urn:knowledge:gorenuble:gn:selector-ipr:1.0.0 | Selector IPR | ipr/kb_gn_011_selector_ipr_koda.yml | KODA | Árbol de decisión para clasificar IPR (IDI vs PPR). |
-| kb_gn_019 | urn:knowledge:gorenuble:gn:gestion-ipr:1.0.0 | Gestión IPR | ipr/kb_gn_019_gestion_ipr_koda.yml | KODA | Ciclo completo de gestión de inversión pública regional. |
-| kb_gn_024 | urn:knowledge:gorenuble:gn:guia-idi-sni:1.0.0 | Guía IDI/SNI | ipr/kb_gn_024_guia_idi_sni_koda.yml | KODA | Guía para formulación de iniciativas de inversión en SNI. |
-| kb_gn_025 | urn:knowledge:gorenuble:gn:guia-programas:1.0.0 | Guía Programas | ipr/kb_gn_025_guia_programas_koda.yml | KODA | Guía para formulación de programas públicos. |
-| kb_gn_026 | urn:knowledge:gorenuble:gn:guia-fril:1.0.0 | Guía FRIL | ipr/kb_gn_026_guia_fril_koda.yml | KODA | Guía del Fondo Regional de Iniciativa Local. |
-| kb_gn_027 | urn:knowledge:gorenuble:gn:guia-frpd:1.0.0 | Guía FRPD | ipr/kb_gn_027_guia_frpd_koda.yml | KODA | Guía del Fondo Regional para la Productividad y el Desarrollo. |
-| kb_gn_028 | urn:knowledge:gorenuble:gn:instructivo-subvencion-8:1.0.0 | Instructivo Subvención 8% | ipr/kb_gn_028_instructivo_subvencion_8_koda.yml | KODA | Instructivo para subvenciones del 8% FNDR. |
-| kb_gn_029 | urn:knowledge:gorenuble:gn:guia-circ33:1.0.0 | Guía Circular 33 | ipr/kb_gn_029_guia_circ33_koda.yml | KODA | Guía de la Circular 33 sobre evaluación socioeconómica. |
+| kb_gn_001 | urn:gn:kb:transferencia-ppr | Transferencia PPR | ipr/kb_gn_001_transferencia_ppr_koda.yml | KODA | Procedimiento de transferencia de programas públicos regionales. |
+| kb_gn_011 | urn:gn:kb:selector-ipr | Selector IPR | ipr/kb_gn_011_selector_ipr_koda.yml | KODA | Árbol de decisión para clasificar IPR (IDI vs PPR). |
+| kb_gn_019 | urn:gn:kb:gestion-ipr | Gestión IPR | ipr/kb_gn_019_gestion_ipr_koda.yml | KODA | Ciclo completo de gestión de inversión pública regional. |
+| kb_gn_024 | urn:gn:kb:guia-idi-sni-sts | Guía IDI/SNI | ipr/kb_gn_024_guia_idi_sni_koda.yml | KODA | Guía para formulación de iniciativas de inversión en SNI. |
+| kb_gn_025 | urn:gn:kb:guia-programas-directos-gore | Guía Programas | ipr/kb_gn_025_guia_programas_koda.yml | KODA | Guía para formulación de programas públicos. |
+| kb_gn_026 | urn:gn:kb:guia-fril-2025-sts | Guía FRIL | ipr/kb_gn_026_guia_fril_koda.yml | KODA | Guía del Fondo Regional de Iniciativa Local. |
+| kb_gn_027 | urn:gn:kb:guia-frpd-nuble | Guía FRPD | ipr/kb_gn_027_guia_frpd_koda.yml | KODA | Guía del Fondo Regional para la Productividad y el Desarrollo. |
+| kb_gn_028 | urn:gn:kb:instructivo-subvencion-8-2025-sts | Instructivo Subvención 8% | ipr/kb_gn_028_instructivo_subvencion_8_koda.yml | KODA | Instructivo para subvenciones del 8% FNDR. |
+| kb_gn_029 | urn:gn:kb:guia-circular-33-sts | Guía Circular 33 | ipr/kb_gn_029_guia_circ33_koda.yml | KODA | Guía de la Circular 33 sobre evaluación socioeconómica. |
 #### Repertorio Intervenciones
 #### ID
 IDX-RIS
@@ -305,7 +305,7 @@ Actos Jurídicos
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_100 | urn:knowledge:gorenuble:gn:modelos-actos-juridicos:1.0.0 | Modelos de Actos Jurídicos | juridico/kb_gn_100_modelos_actos_juridicos_koda.yml | KODA | Templates de resoluciones, convenios y otros actos administrativos. |
+| kb_gn_100 | urn:gn:kb:modelos-actos-juridicos | Modelos de Actos Jurídicos | juridico/kb_gn_100_modelos_actos_juridicos_koda.yml | KODA | Templates de resoluciones, convenios y otros actos administrativos. |
 ### Arquitectura
 #### ID
 IDX-ARQUITECTURA
@@ -316,7 +316,7 @@ Arquitectura y Procesos
   #### Id
   kb_gn_050
   #### Urn
-  urn:knowledge:gorenuble:gn:aceleracion-regional:1.0.0
+  urn:gn:kb:aceleracion-regional
   #### Titulo
   Aceleración Regional
   #### Path
@@ -329,7 +329,7 @@ Arquitectura y Procesos
   #### Id
   kb_gn_080
   #### Urn
-  urn:knowledge:gorenuble:gn:cies-sitia:1.0.0
+  urn:gn:kb:cies-sitia
   #### Titulo
   CIES/SITIA
   #### Path
@@ -342,7 +342,7 @@ Arquitectura y Procesos
   #### Id
   kb_gn_090
   #### Urn
-  urn:knowledge:gorenuble:gn:gestion-informacion-geoespacial:1.0.0
+  urn:gn:kb:gestion-info-geoespacial
   #### Titulo
   Gestión Geoespacial
   #### Path
@@ -376,7 +376,7 @@ arquitectura/bpmn/
   #### Titulo
   Actos Administrativos
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d01-actos-administrativos:1.0.0
+  urn:gn:kb:bpmn-d01-actos-administrativos
   #### Path
   ../../../../sources/gn/arquitectura/bpmn/D01_actos_administrativos.md
   #### Koda path
@@ -391,7 +391,7 @@ arquitectura/bpmn/
   #### Titulo
   Ciclo Presupuestario
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d02-ciclo-presupuestario:1.0.0
+  urn:gn:kb:bpmn-d02-ciclo-presupuestario
   #### Path
   arquitectura/bpmn/D02_ciclo_presupuestario.md
   #### Koda path
@@ -406,7 +406,7 @@ arquitectura/bpmn/
   #### Titulo
   Gestión IPR
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d03-gestion-ipr:1.0.0
+  urn:gn:kb:bpmn-d03-gestion-ipr
   #### Path
   arquitectura/bpmn/D03_gestion_ipr.md
   #### Koda path
@@ -421,7 +421,7 @@ arquitectura/bpmn/
   #### Titulo
   Compras y Contrataciones
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d04-compras-contrataciones:1.0.0
+  urn:gn:kb:bpmn-d04-compras-contrataciones
   #### Path
   arquitectura/bpmn/D04_compras_contrataciones.md
   #### Koda path
@@ -436,7 +436,7 @@ arquitectura/bpmn/
   #### Titulo
   Inventarios y Activo Fijo
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d05-inventarios-activo-fijo:1.0.0
+  urn:gn:kb:bpmn-d05-inventarios-activo-fijo
   #### Path
   arquitectura/bpmn/D05_inventarios_activo_fijo.md
   #### Koda path
@@ -451,7 +451,7 @@ arquitectura/bpmn/
   #### Titulo
   Flota Vehicular
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d06-flota-vehicular:1.0.0
+  urn:gn:kb:bpmn-d06-flota-vehicular
   #### Path
   arquitectura/bpmn/D06_flota_vehicular.md
   #### Koda path
@@ -466,7 +466,7 @@ arquitectura/bpmn/
   #### Titulo
   Recursos Humanos
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d07-rrhh:1.0.0
+  urn:gn:kb:bpmn-d07-rrhh
   #### Path
   arquitectura/bpmn/D07_rrhh.md
   #### Koda path
@@ -481,7 +481,7 @@ arquitectura/bpmn/
   #### Titulo
   Rendiciones
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d08-rendiciones:1.0.0
+  urn:gn:kb:bpmn-d08-rendiciones
   #### Path
   arquitectura/bpmn/D08_rendiciones.md
   #### Koda path
@@ -496,7 +496,7 @@ arquitectura/bpmn/
   #### Titulo
   CIES/SITIA
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d09-cies-sitia:1.0.0
+  urn:gn:kb:bpmn-d09-cies-sitia
   #### Path
   arquitectura/bpmn/D09_cies_sitia.md
   #### Koda path
@@ -511,7 +511,7 @@ arquitectura/bpmn/
   #### Titulo
   Geoespacial/IDE
   #### Urn
-  urn:knowledge:gorenuble:gn:bpmn-d10-geoespacial-ide:1.0.0
+  urn:gn:kb:bpmn-d10-geoespacial-ide
   #### Path
   arquitectura/bpmn/D10_geoespacial_ide.md
   #### Koda path
@@ -539,8 +539,8 @@ Comunicaciones Institucionales
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_008 | urn:knowledge:gorenuble:gn:comunicaciones-oc:1.0.0 | Comunicaciones Oficinas de Comunicaciones | comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml | KODA | Roles y funciones del área de comunicaciones. |
-| kb_gn_030 | urn:knowledge:gorenuble:gn:guia-comunicaciones:1.0.0 | Guía de Comunicaciones | comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml | KODA | Manual de estilo y protocolos de comunicación institucional. |
+| kb_gn_008 | urn:gn:kb:comunicaciones-oc | Comunicaciones Oficinas de Comunicaciones | comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml | KODA | Roles y funciones del área de comunicaciones. |
+| kb_gn_030 | urn:gn:kb:guia-comunicaciones | Guía de Comunicaciones | comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml | KODA | Manual de estilo y protocolos de comunicación institucional. |
 ### Tde
 #### ID
 IDX-TDE
@@ -549,8 +549,8 @@ Transformación Digital
 #### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
-| kb_gn_710 | urn:knowledge:gorenuble:gn:informe-estado-inicial-gore-pre-td:1.0.0 | Estado Inicial Pre-TD | tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml | KODA | Diagnóstico del estado inicial del GORE previo a transformación digital. |
-| kb_gn_720 | urn:knowledge:gorenuble:gn:estrategia-td-ia:1.0.0 | Estrategia TD+IA | tde/kb_gn_720_estrategia_td_ia_koda.yml | KODA | Estrategia de Transformación Digital e Inteligencia Artificial. |
+| kb_gn_710 | urn:gn:kb:informe-estado-inicial-gore-pre-td | Estado Inicial Pre-TD | tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml | KODA | Diagnóstico del estado inicial del GORE previo a transformación digital. |
+| kb_gn_720 | urn:gn:kb:estrategia-td-ia | Estrategia TD+IA | tde/kb_gn_720_estrategia_td_ia_koda.yml | KODA | Estrategia de Transformación Digital e Inteligencia Artificial. |
 ### Data
 #### ID
 IDX-DATA

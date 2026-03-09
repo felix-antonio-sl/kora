@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.22
+    cr: 1.25
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Flujo de aprobacion documental operativo; revisar compresion
@@ -234,9 +234,9 @@ KB-GN-102-FLUJOS-MOD-PPTO-01
 ### Purp
 Describir el proceso para ajustar el presupuesto regional aprobado. El flujo y el instrumento legal requerido dependen críticamente del alcance de la modificación: si afecta solo al presupuesto interno del GORE o si impacta la estructura presupuestaria nacional (Partida 31).
 ### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-10
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-11
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-14
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 ### Restricciones Presupuesto 2026
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC5-01
@@ -244,7 +244,7 @@ KB-GN-102-RESTR-PPTO-2026-SEC5-01
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC5-GLO10-10PCT-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-10
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Content
 Las identificaciones presupuestarias de las iniciativas contratadas en años
 anteriores en ejecución y aquellas creadas en el mismo año, no requerirán una
@@ -256,7 +256,7 @@ Regional, reajustados a la moneda del año en curso.
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC5-GLO11-10PCT-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-11
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Content
 Las identificaciones presupuestarias de las iniciativas contratadas en años
 anteriores en ejecución y aquellas creadas en el mismo año, no requerirán una
@@ -268,7 +268,7 @@ Regional, reajustados a la moneda del año en curso.
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC5-GLO14-EMERG-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-14
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Content
 Se podrá traspasar hasta un 3% del presupuesto de inversión aprobado por el Congreso Nacional de cada Gobierno Regional, a requerimiento de la Subsecretaría del Interior a las asignaciones 24.03.002 y/o 33.03.001 del presupuesto de dicha Subsecretaría para enfrentar situaciones de emergencia.
 La Subsecretaría del Interior informará semestralmente sobre el uso de esos recursos de emergencia a la Comisión Especial Mixta de Presupuestos y a los Gobiernos Regionales que aportaron a ese Fondo de Emergencia.
@@ -335,8 +335,8 @@ Detallar el flujo para la formalización de la entrega de recursos a terceros, u
 ### Fnd
 La aprobación del convenio es un hito de control crítico que precede a cualquier desembolso.
 ### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-03
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART07
+- urn:gn:kb:ley-presupuestos-2026-partida-31
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
 ### Restricciones Presupuesto 2026
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC6-01
@@ -344,7 +344,7 @@ KB-GN-102-RESTR-PPTO-2026-SEC6-01
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC6-GLO03-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-03
+- urn:gn:kb:ley-presupuestos-2026-partida-31
 #### Content
 Los recursos de los presupuestos de inversión regional no podrán financiar préstamos, gastos en personal, o gastos en bienes y servicios de consumo de las entidades receptoras. Asimismo, no podrán destinarse para constituir, efectuar aportes o comprar sociedades o empresas.
 
@@ -352,7 +352,7 @@ Los recursos de los presupuestos de inversión regional no podrán financiar pr�
 #### ID
 KB-GN-102-RESTR-PPTO-2026-SEC6-ART07-01
 #### XRef Required
-- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0#GN-LEY-PPTO-2026-ART07
+- urn:gn:kb:ley-presupuestos-2026-normas-generales
 #### Content
 Reglas para decretos con transferencias (Subtítulos 24 y 33).
 Transferencias corrientes a Unidades o Programas del Servicio, ejecutados total o parcialmente por éste

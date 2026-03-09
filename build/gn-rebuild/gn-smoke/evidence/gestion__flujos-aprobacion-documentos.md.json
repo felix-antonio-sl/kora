@@ -8,7 +8,7 @@
     "domains/gn/03_operacion/gestion/kb_gn_015_aprobaciones_koda.yml"
   ],
   "fs": 100,
-  "cr": 1.22,
+  "cr": 1.25,
   "review_gate": "auto",
   "skeleton_count": 16,
   "meat_count": 291,

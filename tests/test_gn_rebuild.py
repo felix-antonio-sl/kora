@@ -53,6 +53,28 @@ class GnRebuildTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+    def _write_kora_stub(self, repo):
+        script = repo / "scripts/kora"
+        script.write_text(
+            "\n".join(
+                [
+                    "#!/usr/bin/env python3",
+                    "import sys",
+                    "command = sys.argv[1] if len(sys.argv) > 1 else ''",
+                    "if command == 'index':",
+                    "    print('indexed')",
+                    "    raise SystemExit(0)",
+                    "if command == 'health' and '--strict' in sys.argv[2:]:",
+                    "    print('healthy')",
+                    "    raise SystemExit(0)",
+                    "raise SystemExit(1)",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        script.chmod(0o755)
+
     def test_freeze_build_validate_report_flow(self):
         with TemporaryDirectory() as tmpdir:
             repo = Path(tmpdir) / "repo"
@@ -305,6 +327,198 @@ class GnRebuildTests(unittest.TestCase):
             validate = self._run("--repo-root", str(repo), "--map-path", str(map_path), "validate", "--run-id", "badurn")
             self.assertNotEqual(validate.returncode, 0)
             self.assertIn("evidence expone target_urn publico antes de cutover", validate.stdout)
+
+    def test_build_normalizes_legacy_and_external_urns_in_body(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/gestion").mkdir(parents=True, exist_ok=True)
+            (source_root / "domains/gn/03_operacion/presupuesto").mkdir(parents=True, exist_ok=True)
+
+            manual_source = {
+                "_manifest": {"urn": "urn:test:kb:manual"},
+                "Resumen": {"Objetivo": "Mantener fidelidad"},
+            }
+            composite_source = {
+                "_manifest": {"urn": "urn:test:kb:composite"},
+                "Content": {
+                    "Body_MD": {
+                        "Content": "\n".join(
+                            [
+                                "# Manual Operacional DGI",
+                                "",
+                                "## Referencias",
+                                "- urn:knowledge:gorenuble:gn:manual-presupuesto:1.0.0",
+                                "- urn:knowledge:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0#GN-LEY-PPTO-2026-P31-GLO-03",
+                                "- urn:knowledge:koda:core:spec:1.0.0",
+                                "",
+                            ]
+                        )
+                    }
+                },
+            }
+
+            (source_root / "domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml").write_text(
+                yaml.safe_dump(manual_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+            (source_root / "domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml").write_text(
+                yaml.safe_dump(manual_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+            (source_root / "domains/gn/03_operacion/gestion/kb_gn_099_manual_operacional_dgi_koda.yml").write_text(
+                yaml.safe_dump(composite_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+
+            self._write_md(
+                repo / "knowledge/gn/manuales/manual-presupuesto.md",
+                "urn:gn:kb:manual-presupuesto",
+                "Manual Presupuesto",
+            )
+            self._write_md(
+                repo / "knowledge/gn/manuales/manual-operacional-dgi.md",
+                "urn:gn:kb:manual-operacional-dgi",
+                "Manual Operacional DGI",
+            )
+            self._write_md(
+                repo / "knowledge/gn/normativa/ley-presupuestos-2026-partida-31.md",
+                "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                "Partida 31",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "defaults": {
+                            "source_type": "koda_yaml",
+                            "review_gate": "auto",
+                            "dependencies": [],
+                            "expected_sections": ["Contenido"],
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml"],
+                                "target_path": "manuales/manual-presupuesto.md",
+                                "target_urn": "urn:gn:kb:manual-presupuesto",
+                                "transform_class": "korafy_direct",
+                            },
+                            {
+                                "source_paths": ["domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml"],
+                                "target_path": "normativa/ley-presupuestos-2026-partida-31.md",
+                                "target_urn": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+                                "transform_class": "korafy_direct",
+                            },
+                            {
+                                "source_paths": ["domains/gn/03_operacion/gestion/kb_gn_099_manual_operacional_dgi_koda.yml"],
+                                "target_path": "manuales/manual-operacional-dgi.md",
+                                "target_urn": "urn:gn:kb:manual-operacional-dgi",
+                                "transform_class": "korafy_koda_hybrid",
+                            },
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "urnnorm")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "urnnorm", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            _frontmatter, body = load_markdown_parts(repo / "drafts/gn/manuales/manual-operacional-dgi.md")
+            self.assertIn("urn:gn:kb:manual-presupuesto", body)
+            self.assertNotIn("urn:knowledge:gorenuble:gn:manual-presupuesto:1.0.0", body)
+            self.assertIn("urn:gn:kb:ley-presupuestos-2026-partida-31", body)
+            self.assertNotIn("#GN-LEY-PPTO-2026-P31-GLO-03", body)
+            self.assertIn("KODA Core Spec 1.0.0", body)
+            self.assertNotIn("urn:knowledge:koda:core:spec:1.0.0", body)
+
+    def test_cutover_promotes_drafts_and_revalidates_knowledge_tree(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            for directory in ("scripts", "knowledge/gn", "inbox/gn", "source/gn", "drafts/gn", "build"):
+                (repo / directory).mkdir(parents=True, exist_ok=True)
+
+            self._write_kora_stub(repo)
+
+            source_root = Path(tmpdir) / "source"
+            (source_root / "domains/gn/03_operacion/gestion").mkdir(parents=True, exist_ok=True)
+            yaml_source = {
+                "_manifest": {"urn": "urn:test:kb:src"},
+                "ID": "GN-MANUAL-PPTO",
+                "Resumen": {"Objetivo": "Mantener fidelidad", "Pasos": ["Uno", "Dos"]},
+            }
+            (source_root / "domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml").write_text(
+                yaml.safe_dump(yaml_source, sort_keys=False, allow_unicode=True),
+                encoding="utf-8",
+            )
+            self._write_md(
+                repo / "knowledge/gn/manuales/manual-presupuesto.md",
+                "urn:gn:kb:manual-presupuesto",
+                "Manual Presupuesto",
+            )
+
+            map_path = repo / "scripts/gn_rebuild_map.yml"
+            map_path.write_text(
+                yaml.safe_dump(
+                    {
+                        "config": {
+                            "source_root": str(source_root),
+                            "inbox_root": "inbox/gn",
+                            "source_mirror_root": "source/gn",
+                            "draft_root": "drafts/gn",
+                            "knowledge_root": "knowledge/gn",
+                        },
+                        "entries": [
+                            {
+                                "source_paths": ["domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml"],
+                                "source_type": "koda_yaml",
+                                "target_path": "manuales/manual-presupuesto.md",
+                                "target_urn": "urn:gn:kb:manual-presupuesto",
+                                "transform_class": "korafy_direct",
+                                "review_gate": "auto",
+                                "dependencies": [],
+                                "expected_sections": ["Contenido"],
+                            }
+                        ],
+                        "exclusions": [],
+                    },
+                    sort_keys=False,
+                    allow_unicode=True,
+                ),
+                encoding="utf-8",
+            )
+
+            freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "cutrun")
+            self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
+            build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "cutrun", "--clean")
+            self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
+
+            cutover = self._run("--repo-root", str(repo), "--map-path", str(map_path), "cutover", "--run-id", "cutrun")
+            self.assertEqual(cutover.returncode, 0, cutover.stderr or cutover.stdout)
+            self.assertIn("GN promoted-tree validation passed.", cutover.stdout)
+            self.assertIn("cutover complete", cutover.stdout)
+            promoted = repo / "knowledge/gn/manuales/manual-presupuesto.md"
+            self.assertTrue(promoted.exists())
+            frontmatter, _body = load_markdown_parts(promoted)
+            self.assertEqual(frontmatter["status"], "published")
 
 
 if __name__ == "__main__":
