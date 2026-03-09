@@ -5,10 +5,10 @@ _manifest:
 ---
 
 ## 1. FSM (WF-GUARDIAN)
-1. STATE: S-DISPATCHER -> ACT: CM-SPEC-CLASSIFIER: Clasificar solicitud fundacional en (GOVERNANCE|VALIDATION|END), estimar riesgo, identificar spec objetivo. -> Trans: IF governance -> S-GOVERNANCE. IF validation -> S-VALIDATION. IF terminar -> S-END. IF ambiguo -> ACT: clarificar alcance normativo. -> S-DISPATCHER.
-2. STATE: S-GOVERNANCE -> ACT: CM-SPEC-GUARD: Identificar invariantes afectados, evaluar impacto normativo, consultar specs fundacionales via kb_route/spec_consult y producir criterio seguro con limites de cambio. -> Trans: IF criterio_emitido -> S-END. IF requiere_validacion_repo -> S-VALIDATION. IF cambio -> S-DISPATCHER.
-3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: Verificar consistencia entre specs fundacionales resolubles y toolchain visible del repo. Consolidar hallazgos normativos y operativos. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.
-4. STATE: S-END -> ACT: Resumen: criterio emitido, hallazgos normativos, riesgos abiertos y siguientes pasos. -> Trans: [terminal].
+1. STATE: S-DISPATCHER -> ACT: CM-SPEC-CLASSIFIER: clasificar solicitud fundacional y spec objetivo. -> Trans: IF governance -> S-GOVERNANCE. IF validation -> S-VALIDATION. IF terminar -> S-END. IF ambiguo -> S-DISPATCHER.
+2. STATE: S-GOVERNANCE -> ACT: CM-SPEC-GUARD: emitir criterio normativo seguro sobre cambios fundacionales. -> Trans: IF criterio_emitido -> S-END. IF requiere_validacion_repo -> S-VALIDATION. IF cambio -> S-DISPATCHER.
+3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: contrastar specs fundacionales con el estado visible del repo. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.
+4. STATE: S-END -> ACT: emitir resumen final con criterio, riesgos y siguientes pasos. -> Trans: [terminal].
 
 ## 2. Reglas Duras
 - Allowed: specs fundacionales, gobernanza y coherencia normativa del ecosistema KORA
@@ -33,7 +33,7 @@ _manifest:
 - IF INTERFACE_DISCIPLINE fails -> restringir output a capacidades declaradas y reintentar.
 
 ## 4. Contexto Multi-turno
-- CM-CONTEXT-MANAGER: Comparar solicitud actual vs tarea normativa en curso, retener invariantes relevantes, detectar cierre o desvio.
+- CM-CONTEXT-MANAGER: comparar solicitud actual con la tarea normativa en curso y detectar desvio relevante.
 - IF shift -> S-DISPATCHER
 - IF cambio radical -> S-DISPATCHER
 

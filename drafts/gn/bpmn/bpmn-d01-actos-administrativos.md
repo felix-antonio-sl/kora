@@ -25,66 +25,69 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.65
+    cr: 1.39
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 10
     meat_count: 95
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-d01-actos-administrativos.md.json
 ---
 
 # BPMN D01: Tramitación de Actos Administrativos
-## Source
-### Contexto requerido
-- knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
 
 ## Metadatos Dominio
+
 ### Criticidad
 🟠 Alta
+
 ### Dueno
 Unidad Jurídica
+
 ### Procesos
 2
+
 ### Subprocesos
 ~14 fases
-### Ref Fuente
-#### Contexto requerido
-- knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.100-499
 
 ## Mapa General Dominio
+
 ### Cpt
 Mapa general de los procesos de actos administrativos (resoluciones exentas y convenios/transferencias) y elementos transversales.
+
 ### Mermaid
 flowchart LR
     subgraph PROCESOS["📋 Procesos de Actos Administrativos"]
         P1["P1: Resoluciones<br/>Exentas"]
         P2["P2: Convenios y<br/>Transferencias"]
     end
-
     subgraph TRANSVERSAL["🔧 Elementos Transversales"]
         T1["Expediente<br/>Electrónico"]
         T2["Firma Electrónica<br/>Avanzada"]
         T3["Toma de Razón<br/>(cuando aplica)"]
     end
-
     P1 --> T1 & T2
     P2 --> T1 & T2 & T3
-
     style P1 fill:#2196F3,color:#fff
     style P2 fill:#4CAF50,color:#fff
 
-
 ## P1 Flujo Resoluciones Exentas
+
 ### Fases
 7
+
 ### SLA
 15 días hábiles
+
 ### Diagrama de Flujo Completo
+
 #### Mermaid
 flowchart TD
     subgraph FASE1["1️⃣ Iniciación"]
@@ -92,7 +95,6 @@ flowchart TD
         B["Adjuntar<br/>antecedentes"]
         C["Ingresar al SGD"]
     end
-
     subgraph FASE2["2️⃣ Revisión Jurídica"]
         D["Jurídica recibe<br/>expediente"]
         E["Verificar legalidad<br/>y forma"]
@@ -100,44 +102,38 @@ flowchart TD
         G["✅ V°B° Jurídico"]
         H["❌ Observar"]
     end
-
     subgraph FASE3["3️⃣ Gestión"]
         I["Centro Gestión:<br/>Asignar N° resolución"]
         J["Completar<br/>formalidades"]
     end
-
     subgraph FASE4["4️⃣ Control"]
         K["Unidad Control:<br/>Verificar procedencia"]
         L{"¿Conforme?"}
         M["✅ V°B° Control"]
         N["❌ Reparar"]
     end
-
     subgraph FASE5["5️⃣ V°B° Administrador/a"]
         O["Administrador/a Regional:<br/>Revisar y visar"]
     end
-
     subgraph FASE6["6️⃣ Firma"]
         P["Gobernador/a:<br/>Firma con FEA"]
     end
-
     subgraph FASE7["7️⃣ Notificación y Archivo"]
         Q["Oficina Partes:<br/>Numerar y fechar"]
         R["Notificar a<br/>interesados"]
         S["Publicar si<br/>corresponde"]
         T["Archivar expediente"]
     end
-
     A --> B --> C --> D --> E --> F
     F -->|"Sí"| G --> I --> J --> K --> L
     F -->|"No"| H --> A
     L -->|"Sí"| M --> O --> P --> Q --> R --> S --> T
     L -->|"No"| N --> A
-
     style P fill:#4CAF50,color:#fff
     style T fill:#607D8B,color:#fff
 
 ### Roles por Fase
+
 #### Filas
 | Fase | Responsable |
 | --- | --- |
@@ -150,9 +146,12 @@ flowchart TD
 | Notificación y Archivo | Oficina de Partes |
 
 ## P2 Convenios y Transferencias
+
 ### Cpt
 Proceso para la tramitación de convenios y transferencias asociadas a actos administrativos.
+
 ### Diagrama de Flujo
+
 #### Mermaid
 flowchart TD
     A["Área requirente<br/>propone convenio"] --> B["Elaborar borrador<br/>de convenio"]
@@ -165,6 +164,7 @@ flowchart TD
     G --> H["Ejecución y<br/>seguimiento"]
 
 ### Contenido Minimo Convenio
+
 #### Filas
 | Elemento | Descripcion |
 | --- | --- |
@@ -176,20 +176,22 @@ flowchart TD
 | Rendicion | Modalidad, plazos, SISREC |
 | Restitucion | Condiciones de devolución |
 | Probidad | Cláusulas anticorrupción |
+
 ### Criterios Toma de Razon
+
 #### Mermaid
 flowchart TD
     A["Convenio<br/>firmado"] --> B{"Monto y<br/>naturaleza"}
     B -->|"Supera umbral<br/>CGR"| C["Requiere<br/>Toma de Razón"]
     B -->|"Bajo umbral"| D["Exento"]
     B -->|"Normativa<br/>específica"| E["Consultar<br/>Res. CGR"]
-
     style C fill:#f44336,color:#fff
     style D fill:#4CAF50,color:#fff
 
-
 ## Expediente Electronico Ley 21180
+
 ### Estructura Expediente
+
 #### Mermaid
 flowchart TD
     subgraph EXPEDIENTE["📁 Expediente Electrónico"]
@@ -198,12 +200,11 @@ flowchart TD
         C["Firmas:<br/>• FEA funcionarios<br/>• FEA autoridad"]
         D["Trazabilidad:<br/>• Log de acciones<br/>• Fechas/horas"]
     end
-
     A --> B --> C --> D
-
     style C fill:#2196F3,color:#fff
 
 ### Principios TDE
+
 #### Filas
 | Principio | Aplicacion |
 | --- | --- |
@@ -213,6 +214,7 @@ flowchart TD
 | Seguridad | Integridad, autenticidad, no repudio |
 
 ## Sistemas Involucrados
+
 ### Filas
 | Sistema | Funcion |
 | --- | --- |
@@ -222,6 +224,7 @@ flowchart TD
 | SYS-TRANSPARENCIA | Publicación |
 
 ## Normativa Aplicable
+
 ### Filas
 | Norma | Alcance |
 | --- | --- |
@@ -232,13 +235,15 @@ flowchart TD
 | Ley 19.886 | Contratación pública |
 
 ## Referencias Cruzadas
+
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
-| D03 Gestión IPR | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md | Fase 4 Formalización |
-| D02 Ciclo Presupuestario | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md | Modificaciones, resoluciones |
-| D08 Rendiciones | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md | Convenios de transferencia |
+| D03 Gestión IPR | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md'] | Fase 4 Formalización |
+| D02 Ciclo Presupuestario | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md'] | Modificaciones, resoluciones |
+| D08 Rendiciones | ['file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md'] | Convenios de transferencia |
 
 ## Ultima Actualizacion
+
 ### Cpt
 Última actualización: 2025-12-16

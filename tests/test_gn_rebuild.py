@@ -681,7 +681,7 @@ class GnRebuildTests(unittest.TestCase):
 
             _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/organigrama.md")
             self.assertNotIn("## Fuente principal", body)
-            self.assertIn("## Fuentes derivadas", body)
+            self.assertNotIn("## Fuentes derivadas", body)
 
     def test_validate_rejects_public_target_urn_in_draft_evidence(self):
         with TemporaryDirectory() as tmpdir:

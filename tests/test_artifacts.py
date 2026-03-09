@@ -151,6 +151,22 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("Estilo", content)
         self.assertNotIn("Ejemplos", content)
 
+    def test_meta_core_agents_keep_control_layer_compact(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "AGENTS.md",
+            ROOT / "agents" / "kora" / "custodio" / "AGENTS.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "AGENTS.md",
+            ROOT / "agents" / "kora" / "guardian" / "AGENTS.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("REFINE_DRAFT", content)
+        self.assertNotIn("-> CONTEXT_SHIFT", content)
+        self.assertNotIn("→ ACT:", content)
+        self.assertNotIn("Pre-analisis(", content)
+        self.assertNotIn("Elicitar dominio y fuente", content)
+        self.assertNotIn("Ejecutar kora health", content)
+        self.assertNotIn("Ejecutar ciclo completo secuencial", content)
+
     def test_meta_context_managers_do_not_encode_fsm_destinations(self):
         files = (
             ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CONTEXT-MANAGER.md",
@@ -164,6 +180,46 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("S-DISPATCHER", content)
         self.assertNotIn("S-END", content)
         self.assertIn("requiere_reclasificacion", content)
+
+    def test_forgemaster_scaffolder_uses_requested_namespace_in_bootstrap_urns(self):
+        content = (
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-agents:1.0.0", content)
+        self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-soul:1.0.0", content)
+        self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-user:1.0.0", content)
+        self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-tools:1.0.0", content)
+        self.assertNotIn("urn:kora:agent-bootstrap:{nombre}-agents:1.0.0", content)
+
+    def test_custodio_scope_excludes_agent_and_kb_mutation(self):
+        agents = (ROOT / "agents" / "kora" / "custodio" / "AGENTS.md").read_text(encoding="utf-8")
+        surgeon = (
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-SURGEON.md"
+        ).read_text(encoding="utf-8")
+        evolution = (
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("fuera de `agents/`, specs fundacionales y contenido KB", agents)
+        self.assertIn("sin intervenir `agents/`, specs fundacionales ni contenido KB", surgeon)
+        self.assertIn("fuera de `agents/`, specs fundacionales y contenido KB", evolution)
+
+    def test_curator_and_custodio_soul_avoid_operational_policy_leakage(self):
+        curator = (ROOT / "agents" / "kora" / "curator" / "SOUL.md").read_text(encoding="utf-8")
+        custodio = (ROOT / "agents" / "kora" / "custodio" / "SOUL.md").read_text(encoding="utf-8")
+        self.assertNotIn("FS=100%", curator)
+        self.assertNotIn("CR>1.5", curator)
+        self.assertNotIn("Pipeline de ingesta", curator)
+        self.assertNotIn("catalog_master_kora.yml", custodio)
+        self.assertNotIn("Pipeline como flujo", custodio)
+
+    def test_meta_core_tools_stay_semantic(self):
+        custodio_tools = (ROOT / "agents" / "kora" / "custodio" / "TOOLS.md").read_text(encoding="utf-8")
+        forgemaster_tools = (
+            ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("Implementacion:", custodio_tools)
+        self.assertNotIn("Invoca internamente", forgemaster_tools)
+        self.assertNotIn("Leer todos los archivos del workspace", forgemaster_tools)
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")

@@ -17,6 +17,8 @@
   "expected_sections": [
     "Contenido"
   ],
+  "document_family": "generic",
+  "publication_class": "knowledge",
   "preserved_facts": [
     "Indice_BPMN.ID=IDX-BPMN-KODA",
     "Indice_BPMN.Procesos[0].ID=D01",

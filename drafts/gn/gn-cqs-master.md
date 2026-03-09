@@ -23,28 +23,25 @@ extensions:
     source_type: ontology_yaml
     transformation_mode: derive_ttl_scope
     fs: 100
-    cr: 1.84
+    cr: 1.35
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Preguntas de competencia maestras del bundle ontologico GN.
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: cq_catalog
+    publication_class: knowledge
     skeleton_count: 21
     meat_count: 1024
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gn-cqs-master.md.json
 ---
 
-# Catálogo Maestro de Competency Questions
-
-## Scope
-Preguntas de competencia maestras del bundle ontologico GN.
-
-## Resumen
+# Catálogo Maestro de Preguntas de Competencia
 
 ## 01 Estructura Organizacional
-- Existenciales: 8 | Relacionales: 8 | Temporales: 4 | Agregacion: 8
 
 ### Existenciales
 | ID | Pregunta |
@@ -91,7 +88,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-028 | ¿Cuántas unidades formuladoras están registradas en la región? |
 
 ## 02 IPR
-- Existenciales: 10 | Relacionales: 10 | Temporales: 5 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -142,7 +138,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-060 | ¿Cuántas IPR por sector/área temática existen? |
 
 ## 03 Financiamiento
-- Existenciales: 10 | Relacionales: 7 | Temporales: 4 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -189,7 +184,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-088 | ¿Cuántas glosas presupuestarias aplican al GORE Ñuble? |
 
 ## 04 Evaluacion
-- Existenciales: 12 | Relacionales: 7 | Temporales: 5 | Agregacion: 6
 
 ### Existenciales
 | ID | Pregunta |
@@ -238,7 +232,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-118 | ¿Cuál es la tasa de aprobación (RS) de IPR evaluadas? |
 
 ## 05 Aprobacion
-- Existenciales: 6 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -279,7 +272,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-140 | ¿Cuántas sesiones de CORE se realizaron en el año? |
 
 ## 06 Convenios
-- Existenciales: 5 | Relacionales: 5 | Temporales: 3 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -318,7 +310,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-160 | ¿Cuál es el umbral de 1.000 UTM para garantías a privados? |
 
 ## 07 Ejecucion
-- Existenciales: 6 | Relacionales: 5 | Temporales: 4 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -359,7 +350,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-182 | ¿Cuál es la tasa de cumplimiento de plazos de ejecución? |
 
 ## 08 Rendicion
-- Existenciales: 5 | Relacionales: 4 | Temporales: 3 | Agregacion: 6
 
 ### Existenciales
 | ID | Pregunta |
@@ -396,7 +386,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-200 | ¿Cuál es la tasa de aprobación de rendiciones? |
 
 ## 09 Normativo
-- Existenciales: 8 | Relacionales: 8 | Temporales: 3 | Agregacion: 6
 
 ### Existenciales
 | ID | Pregunta |
@@ -440,7 +429,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-225 | ¿Cuántas normas de probidad aplican a funcionarios GORE? |
 
 ## 10 TDE
-- Existenciales: 8 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -483,7 +471,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-249 | ¿Cuál es el nivel de madurez digital del GORE Ñuble? |
 
 ## 11 Gestion Operacional IPR
-- Existenciales: 10 | Relacionales: 8 | Temporales: 5 | Agregacion: 3
 
 ### Existenciales
 | ID | Pregunta |
@@ -528,7 +515,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-275 | ¿Cuántas etapas contempla la Fase 1 (Ingreso y Admisibilidad)? |
 
 ## 12 Selector Vias Financiamiento
-- Existenciales: 10 | Relacionales: 6 | Temporales: 3 | Agregacion: 3
 
 ### Existenciales
 | ID | Pregunta |
@@ -569,7 +555,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-297 | ¿Cuántos fondos temáticos componen el Concurso 8%? |
 
 ## 13 Guia IDI SNI
-- Existenciales: 12 | Relacionales: 7 | Temporales: 3 | Agregacion: 3
 
 ### Existenciales
 | ID | Pregunta |
@@ -613,7 +598,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-322 | ¿Cuántos subsistemas tiene el SNI? |
 
 ## 14 PPR Ejecucion Directa
-- Existenciales: 9 | Relacionales: 6 | Temporales: 3 | Agregacion: 3
 
 ### Existenciales
 | ID | Pregunta |
@@ -653,7 +637,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-343 | ¿Cuántas dimensiones de indicadores de desempeño existen? |
 
 ## 15 FRIL
-- Existenciales: 8 | Relacionales: 6 | Temporales: 5 | Agregacion: 6
 
 ### Existenciales
 | ID | Pregunta |
@@ -697,7 +680,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-368 | ¿Cuántos grupos de categorías FRIL existen? |
 
 ## 16 FRPD
-- Existenciales: 7 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -739,7 +721,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-391 | ¿Cuál es el límite de gastos administrativos sobre el total postulado FRPD? |
 
 ## 17 Transferencia PPR
-- Existenciales: 6 | Relacionales: 5 | Temporales: 2 | Agregacion: 3
 
 ### Existenciales
 | ID | Pregunta |
@@ -774,7 +755,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-407 | ¿Cuántos documentos mínimos se requieren para postular un PPR transferible? |
 
 ## 18 Concurso 8 Porciento
-- Existenciales: 11 | Relacionales: 6 | Temporales: 3 | Agregacion: 7
 
 ### Existenciales
 | ID | Pregunta |
@@ -820,7 +800,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-434 | ¿Cuál es el porcentaje del tiraje a entregar al GORE para material editado? |
 
 ## 19 Circular 33
-- Existenciales: 10 | Relacionales: 7 | Temporales: 3 | Agregacion: 6
 
 ### Existenciales
 | ID | Pregunta |
@@ -865,7 +844,6 @@ Preguntas de competencia maestras del bundle ontologico GN.
 | CQ-460 | ¿Cuántas categorías principales de iniciativas C33 existen? |
 
 ## 20 Umbrales Transversal
-- Existenciales: 3 | Relacionales: 3 | Temporales: 1 | Agregacion: 5
 
 ### Existenciales
 | ID | Pregunta |

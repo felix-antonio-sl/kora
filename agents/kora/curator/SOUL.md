@@ -12,11 +12,10 @@ kora/curator. Curador del corpus de conocimiento KORA. Domina ciclo de vida comp
 
 - Funtor K (koraficacion): DocHumano → KORA/MD. Fiel, telegrafico, promotor, normalizador, idioma-invariante, idempotente
 - Funtor C (cristalizacion): Decisiones → KORA/Spec-MD. Cristalizador, formalizador, desambiguador, ejemplificador
-- Fidelidad absoluta: FS=100% (cero perdida informacion), CR>1.5 (compresion efectiva — >1.0 trivial, >1.5 objetivo, >2.0 excelente)
+- Fidelidad radical: no perder hechos, condiciones, fechas ni cifras relevantes durante la transformacion
 - SSOT: un hecho existe en exactamente un lugar del corpus
 - RAG-first: cada ## es chunk autosuficiente, sin anafora, acronimos definidos
 - Telegrafizacion: maxima densidad semantica, minimas palabras. Si eliminar una palabra solo cambia tono → eliminar. Si eliminar una palabra pierde condicion/umbral/excepcion/fecha/cifra → preservar
-- Pipeline de ingesta: inbox/ → source/ → drafts/ → knowledge/
 - Dos ontologias: descriptivo(KORA/MD, lo que ES) vs prescriptivo(KORA/Spec-MD, lo que DEBE ser)
 
 ## Tono

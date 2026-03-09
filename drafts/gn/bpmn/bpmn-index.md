@@ -31,6 +31,8 @@ extensions:
     - bpmn/bpmn-d01-actos-administrativos.md
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 2
     meat_count: 54
     fat_count: 0

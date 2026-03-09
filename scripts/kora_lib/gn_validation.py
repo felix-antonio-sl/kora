@@ -13,6 +13,9 @@ FAT_PATTERNS = (
 
 INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([^\]]+)\]")
 URN_REF_PATTERN = re.compile(r"\[[^\]]+\]\((urn:[^)]+)\)")
+MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+BARE_URN_PATTERN = re.compile(r"urn:[A-Za-z0-9:_\-\.#]+")
+LOCAL_PATH_PATTERN = re.compile(r"(?m)(^|[\s`])(staging/|domains/|source/|sources/|drafts/|build/|knowledge/|\.\./)")
 KODA_RESIDUE_HEADING_TITLES = {
     "id",
     "version",
@@ -26,6 +29,23 @@ KODA_RESIDUE_HEADING_TITLES = {
     "modification date",
     "llm parsing instructions",
     "primary source",
+}
+ENGLISH_SCAFFOLD_TITLES = {
+    "scope",
+    "summary",
+    "references",
+    "reference",
+    "sources",
+    "source",
+    "content",
+}
+FIELD_HEADING_TITLES_BY_FAMILY = {
+    "inventory": {"id", "urn", "path", "tipo", "titulo", "artefactos"},
+    "normative": {"contenido", "fuentes"},
+    "glossary": {"nombre", "def"},
+}
+CONTAINER_ONLY_TITLES_BY_FAMILY = {
+    "normative": {"glosas", "programas", "capitulos", "capítulos", "articulos", "artículos"},
 }
 KODA_RESIDUE_PATTERNS = (
     re.compile(r"BEGIN_LLM_INSTRUCTIONS"),
@@ -49,6 +69,70 @@ def _collect_headings(body):
         if match:
             headings.append((len(match.group(1)), match.group(2).strip()))
     return headings
+
+
+def _collect_primary_sections(body):
+    lines = body.splitlines()
+    headings = []
+    for index, line in enumerate(lines):
+        match = re.match(r"^(#{1,6})\s+(.+)$", line.strip())
+        if match:
+            headings.append((index, len(match.group(1)), match.group(2).strip()))
+    sections = []
+    for idx, (line_index, level, title) in enumerate(headings):
+        if level != 2:
+            continue
+        end = len(lines)
+        for next_index, next_level, _next_title in headings[idx + 1 :]:
+            if next_level <= 2:
+                end = next_index
+                break
+        sections.append({"title": title, "lines": lines[line_index + 1 : end]})
+    return sections
+
+
+def _section_has_substance(lines):
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if stripped.startswith("#"):
+            continue
+        return True
+    return False
+
+
+def _reference_section_failures(body):
+    failures = []
+    lines = body.splitlines()
+    headings = []
+    for index, line in enumerate(lines):
+        match = re.match(r"^(#{1,6})\s+(.+)$", line.strip())
+        if match:
+            headings.append((index, len(match.group(1)), match.group(2).strip()))
+    for idx, (line_index, level, title) in enumerate(headings):
+        normalized = slugify_heading(title).replace("-", " ")
+        if normalized not in {"fuentes", "referencias"}:
+            continue
+        end = len(lines)
+        for next_index, next_level, _next_title in headings[idx + 1 :]:
+            if next_level <= level:
+                end = next_index
+                break
+        for line in lines[line_index + 1 : end]:
+            stripped = line.strip()
+            if not stripped or stripped.startswith("#"):
+                continue
+            candidate = re.sub(r"^[-*]\s*", "", stripped)
+            if candidate.startswith("[-> "):
+                continue
+            link_match = MARKDOWN_LINK_PATTERN.search(candidate)
+            if link_match:
+                target = link_match.group(1)
+                if target.startswith("urn:") or target.startswith("https://"):
+                    continue
+            failures.append(f"referencia invalida en seccion {title}: {stripped}")
+    return failures
 
 
 def _resolve_internal_refs(body, headings):
@@ -113,6 +197,8 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
         "source_hashes",
         "source_type",
         "transformation_mode",
+        "document_family",
+        "publication_class",
         "fs",
         "cr",
         "run_id",
@@ -134,6 +220,8 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
 
     source_paths = gn_ext.get("source_paths", [])
     source_hashes = gn_ext.get("source_hashes", {})
+    document_family = gn_ext.get("document_family", "generic")
+    publication_class = gn_ext.get("publication_class", "knowledge")
     if isinstance(source_paths, list):
         missing_hashes = [item for item in source_paths if item not in source_hashes]
         if missing_hashes:
@@ -157,6 +245,10 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
         residue_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in KODA_RESIDUE_HEADING_TITLES]
         if residue_headings:
             failures.append(f"residuo KODA en headings: {', '.join(sorted(dict.fromkeys(residue_headings))[:8])}")
+        if frontmatter.get("lang") == "es":
+            english_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in ENGLISH_SCAFFOLD_TITLES]
+            if english_headings:
+                failures.append(f"heading scaffold no español: {', '.join(sorted(dict.fromkeys(english_headings))[:8])}")
 
     for pattern in FAT_PATTERNS:
         if pattern.search(body or ""):
@@ -167,10 +259,36 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
             failures.append(f"residuo KODA en cuerpo: {pattern.pattern}")
 
     failures.extend(_resolve_internal_refs(body or "", headings))
+    failures.extend(_reference_section_failures(body or ""))
+
+    if publication_class == "knowledge":
+        if LOCAL_PATH_PATTERN.search(body or ""):
+            failures.append("referencia local o path operativo en cuerpo")
+
+        primary_sections = _collect_primary_sections(body or "")
+        for section in primary_sections:
+            normalized_title = slugify_heading(section["title"]).replace("-", " ")
+            if not _section_has_substance(section["lines"]):
+                failures.append(f"seccion primaria vacia o contenedor sin sustancia: {section['title']}")
+            if normalized_title in CONTAINER_ONLY_TITLES_BY_FAMILY.get(document_family, set()):
+                failures.append(f"seccion primaria contenedora no permitida para {document_family}: {section['title']}")
+
+        field_titles = FIELD_HEADING_TITLES_BY_FAMILY.get(document_family, set())
+        if field_titles:
+            field_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in field_titles]
+            if field_headings:
+                failures.append(f"heading-campo no permitido para {document_family}: {', '.join(sorted(dict.fromkeys(field_headings))[:8])}")
+
+        if document_family == "glossary" and gn_ext.get("glossary_conflicts", 0):
+            failures.append(f"conflictos de glosario sin resolver: {gn_ext.get('glossary_conflicts')}")
 
     for urn_ref in URN_REF_PATTERN.findall(body or ""):
         if not urn_ref.startswith("urn:"):
             failures.append(f"referencia URN invalida: {urn_ref}")
+    if publication_class == "knowledge":
+        body_without_links = MARKDOWN_LINK_PATTERN.sub("", body or "")
+        if BARE_URN_PATTERN.search(body_without_links):
+            failures.append("URN desnudo en cuerpo; usar referencia KORA con markdown")
 
     return {
         "failures": failures,

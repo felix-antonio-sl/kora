@@ -4,10 +4,14 @@ config:
   source_mirror_root: source/gn
   draft_root: drafts/gn
   knowledge_root: knowledge/gn
+  control_draft_root: drafts/gn-control
+  control_root: docs/reports/gn-control
 
 defaults:
   source_type: koda_yaml
   transform_class: korafy_direct
+  document_family: generic
+  publication_class: knowledge
   review_gate: auto
   dependencies: []
   expected_sections:
@@ -146,10 +150,11 @@ entries:
 
   - target_path: gn-cqs-master.md
     target_urn: urn:gn:kb:gn-cqs-master
-    target_title: Catálogo Maestro de Competency Questions
+    target_title: Catálogo Maestro de Preguntas de Competencia
     source_paths:
       - ontologies/onto_gorenuble/goreNubleCQs_Master.yml
     transform_class: derive_ttl_scope
+    document_family: cq_catalog
     source_type: ontology_yaml
     review_gate: auto
     scope_statement: Preguntas de competencia maestras del bundle ontologico GN.
@@ -201,6 +206,7 @@ entries:
     source_paths:
       - domains/gn/03_operacion/ipr/otroglosario.yml
     transform_class: korafy_koda_hybrid
+    document_family: glossary
     review_gate: auto
     scope_statement: Glosario consolidado IPR; requiere verificacion terminologica.
 
@@ -229,6 +235,8 @@ entries:
     source_paths:
       - domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml
     transform_class: korafy_koda_hybrid
+    document_family: inventory
+    publication_class: control
     review_gate: auto
     scope_statement: Matriz editorial de integracion organica; mantener como artefacto de control.
 
@@ -254,6 +262,7 @@ entries:
       - domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml
       - ontologies/onto_gorenuble/goreNubleOrgData.ttl
     transform_class: korafy_composite
+    document_family: organigram
     source_type: mixed
     review_gate: auto
     scope_statement: Organigrama operativo y estructura organica observables en la fuente KODA y el slice TTL organizacional.
@@ -400,11 +409,13 @@ entries:
     target_urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
     source_paths:
       - domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml
+    document_family: normative
 
   - target_path: normativa/ley-presupuestos-2026-partida-31.md
     target_urn: urn:gn:kb:ley-presupuestos-2026-partida-31
     source_paths:
       - domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml
+    document_family: normative
 
   - target_path: normativa/loc-gore.md
     target_urn: urn:gn:kb:loc-gore

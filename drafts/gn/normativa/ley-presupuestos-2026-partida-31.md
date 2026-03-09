@@ -23,31 +23,39 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.99
+    cr: 1.28
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: normative
+    publication_class: knowledge
     skeleton_count: 1
     meat_count: 3200
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/normativa__ley-presupuestos-2026-partida-31.md.json
 ---
 
 # Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026
-## Proposito
+
+## Resumen
 Preservar glosas y cuadros presupuestarios (ingresos/gastos) de Partida 31 para Gobiernos Regionales (Ley de Presupuestos 2026).
-## Unidad monetaria
-Miles de $
-## Resumen Partida 31
+
+### Datos clave
+- Unidad monetaria: Miles de $
+
 ### Asunto
 Partida 31: Financiamiento Gobiernos Regionales
+
 ### Unidad monetaria
 Miles de $
+
 ### Alcance
 Gobiernos Regionales (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16)
+
 ### Tabla Resumen Ingresos Gastos
 | Sub-Título | Clasificación Económica | Total Bruto | Transferencias | Total |
 | --- | --- | --- | --- | --- |
@@ -58,32 +66,29 @@ Gobiernos Regionales (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16)
 |  | GASTOS | 1.900.047.503 |  | 1.900.047.503 |
 | 24 | TRANSFERENCIAS CORRIENTES | 128.872.343 |  | 128.872.343 |
 | 33 | TRANSFERENCIAS DE CAPITAL | 1.771.175.160 |  | 1.771.175.160 |
-## Glosas
-### Glosa 01
-#### Asunto
+
+## Glosa 01 - Aplicable a Funcionamiento Regional
 Aplicable a Funcionamiento Regional
-#### Asociada al Subtitulo 21 Gasto en Personal
-#### Contenido
+
+### Asociada al Subtitulo 21 Gasto en Personal
 No regirá la limitación establecida en el inciso segundo del artículo 10 del D.F.L N°29, de 2005, del Ministerio de Hacienda, respecto de los empleos a contrata, incluidos en las dotaciones máximas de personal de este programa.
 El personal a contrata podrá desempeñar funciones de carácter directivo que se le asignen o deleguen, mediante resolución fundada del Jefe de Servicio, la que deberá precisar las funciones delegadas. Dicho personal no podrá exceder del 20% del total del personal a contrata.
 El personal a honorarios podrá tener la calidad de Agente Público, para efectos de lo dispuesto en el Decreto Ley N°799, de 1974; para el desempeño de labores de fiscalización o certificación y hacer efectiva su responsabilidad administrativa, civil y penal por el desempeño de sus labores, de acuerdo con lo que se establezca en el respectivo convenio.
 Los Gobiernos Regionales deberán informar durante el primer trimestre del año 2026 a la Comisión de Hacienda de la Cámara de Diputados, sobre las iniciativas legales y administrativas tendientes al traspaso de la calidad contractual de funcionarios de Gobiernos Regionales de Honorarios a Contrata y el fortalecimiento de los derechos laborales de estos funcionarios.
 No regirá la limitación establecida en el artículo 3° de la Ley N°20.035, en lo relativo a la estructura y funciones de los gobiernos regionales.
 
-#### Asociada al Subtitulo 24 Transferencias Corrientes
-#### Contenido
+### Asociada al Subtitulo 24 Transferencias Corrientes
 Mediante reglamento regional se determinarán los gastos de traslado y reembolso de los consejeros regionales, cuando correspondiese.
 Respecto del gasto en cometidos al extranjero de los consejeros regionales se deberá considerar como máximo el 10% del gasto del Subtítulo 24 e incorporarlo en las glosas correspondientes en la resolución de distribución inicial.
 La dotación de vehículos del Gobierno Regional podrá utilizarse en el traslado de los consejeros regionales, en cumplimiento de funciones encomendadas por el Consejo Regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 02
-#### Asunto
+## Glosa 02 - Aplicable a Inversión Regional
 Aplicable a Inversión Regional
-#### Unidad monetaria
-Miles de $
-#### Tabla Distribucion 02A
+
+### Datos clave
+- Unidad monetaria: Miles de $
+
+### Tabla Distribucion 02A
 | Gobierno Regional | Fondo Nacional de Desarrollo Regional | Fondo de Apoyo al Transporte Público y la Conectividad Regional | Fondo de Equidad Interregional | Fondo para la Productividad y el Desarrollo | Tesoro Público Ley N° 21.210, Modernización Tributaria |
 | --- | --- | --- | --- | --- | --- |
 | Tarapacá | 35.359.987 | 16.045.986 |  | 10.955.743 | 2.639.730 |
@@ -103,7 +108,8 @@ Miles de $
 | Arica y Parinacota | 26.094.386 | 11.882.961 | 6.269.416 | 8.113.349 | 1.954.870 |
 | Ñuble | 41.562.476 | 18.790.488 | 6.353.223 | 12.829.611 | 3.091.230 |
 | Total | 726.681.770 | 333.727.188 | 190.192.191 | 227.859.438 | 54.901.571 |
-#### Tabla Distribucion 02B
+
+### Tabla Distribucion 02B
 | Gobierno Regional | Subsecretaría de la Cultura y las Artes | Tesoro Público Ley N° 19.275, Fondo de Desarrollo de Magallanes | Tesoro Público - Ley N° 19.143, Patentes Mineras | Tesoro Público Ley N° 19.657, Patentes Geotérmicas | Tesoro Público Art. 129 bis 19 Ley N° 20.017, Código de Aguas |
 | --- | --- | --- | --- | --- | --- |
 | Tarapacá | 778.732 |  | 7.523.467 |  | 112.589 |
@@ -123,7 +129,8 @@ Miles de $
 | Arica y Parinacota | 595.047 |  | 1.097.872 |  | 51.491 |
 | Ñuble | 881.003 |  | 299.326 |  | 682.846 |
 | Total | 17.827.479 | 11.690.896 | 64.223.530 | 254.274 | 23.430.569 |
-#### Tabla Distribucion 02C
+
+### Tabla Distribucion 02C
 | Gobierno Regional | Tesoro Público D.L. N°430, de 1992 (E.F. y T.), Patentes de Acuicultura | Fondo de Inversión y Reconversión Regional | Total |
 | --- | --- | --- | --- |
 | Tarapacá | 9.737 | 2.089.574 | 75.515.545 |
@@ -143,27 +150,18 @@ Miles de $
 | Arica y Parinacota | 4.976 | 798.160 | 56.862.528 |
 | Ñuble | 1.262.128 |  | 85.752.331 |
 | Total | 6.143.429 | 33.623.892 | 1.690.556.227 |
-### Glosa 03
-#### Contenido
+
+## Glosa 03
 Los recursos de los presupuestos de inversión regional no podrán financiar préstamos, gastos en personal, o gastos en bienes y servicios de consumo de las entidades receptoras. Asimismo, no podrán destinarse para constituir, efectuar aportes o comprar sociedades o empresas.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 04
-#### Contenido
+## Glosa 04
 Se podrán traspasar recursos desde cualquier Subtítulo e Ítem del presupuesto de inversión del Gobierno Regional respectivo a los Subtítulos 24, 26, 29, 31, 32.06, 33 y 34.07.
 Los gobiernos regionales podrán realizar convenios de mandato con los municipios de acuerdo con el artículo 16 de la ley N°18.091, para el financiamiento de estudios definidos en el subtítulo 22 ítem 11, del Decreto de Hacienda N° 854 del 2004, sobre clasificaciones presupuestarias.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 05
-#### Contenido
+## Glosa 05
 Las transferencias de recursos realizadas a las universidades del artículo 3° del D.F.L. N° 2, que fija el texto refundido, coordinado y sistematizado del Estatuto Orgánico del Consejo de Rectores de las Universidades Chilenas, y aquellas que se han adscrito al Consejo conforme con el artículo 6 de la ley N° 21.091, sobre Educación Superior, y su normativa vigente, desde los gobiernos regionales, solo podrán ser ejecutadas y utilizadas para fines dentro del ámbito de competencia del establecimiento de educación superior que se los adjudicó. La ejecución de las acciones por las cuales se efectúa la transferencia de estos recursos se hará preferentemente a las universidades con sede en la región respectiva. Asimismo, deberá llevarse a cabo de manera íntegra por parte de la propia universidad. Estas transferencias se podrán exceptuar del mecanismo de concursabilidad establecido en el articulado de la presente ley.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 06
-#### Contenido
+## Glosa 06
 Las transferencias corrientes del presupuesto de inversión regional de los gobiernos regionales (subtítulo 24) se regirán por las siguientes disposiciones:
 La oferta programática que ejecutan directamente los gobiernos regionales estará sujeta al Sistema de Evaluación y Monitoreo del Ministerio de Desarrollo Social y Familia y de la Dirección de Presupuestos.
 Se exceptuarán del proceso de evaluación ex ante:
@@ -216,10 +214,7 @@ b) Operación de alcantarillado.
 Asistencia Técnica:
 Programas destinados a financiar asistencia técnica a municipalidades para fortalecer su cartera de proyectos.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 07
-#### Contenido
+## Glosa 07
 Aplicable al Subtítulo 24 de los presupuestos de inversión de los gobiernos regionales.
 En las transferencias corrientes se podrá financiar el Concurso de Vinculación con la Comunidad 8%.
 Los gobiernos regionales podrán destinar hasta un 8% del total de los recursos del presupuesto de inversión regional para subvencionar las siguientes actividades:
@@ -236,18 +231,12 @@ j) culturales y patrimoniales.
 Estas actividades podrán ser ejecutadas por municipalidades, otras entidades públicas, instituciones privadas sin fines de lucro, organizaciones de la sociedad civil y organizaciones comunitarias sin fines de lucro. La asignación de estos recursos deberá cumplir con lo dispuesto en el articulado de esta ley en lo que corresponda.
 Asimismo, se podrá asignar hasta un 10% de los recursos del Concurso de Vinculación con la Comunidad 8% para financiar, previo acuerdo del Consejo Regional, mediante asignaciones directas actividades asociadas con casos emblemáticos, excepcionales y emergentes, como por ejemplo deportistas destacados. Lo anterior, sujeto a lo dispuesto en la Resolución N°72 de fecha 08.01.2025 de la Dirección de Presupuestos y sus modificaciones, que imparte instrucciones sobre asignación directa en concurso de vinculación con la comunidad.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 08
-#### Contenido
+## Glosa 08
 Respecto a los recursos que se destinen a las corporaciones, los gobiernos regionales deberán informar a la Dirección de Presupuestos, además de publicar en las páginas web de la corporación y del respectivo Gobierno Regional, a más tardar al término del primer trimestre: nombre o razón social de la corporación; misión, objetivos estratégicos y productos; composición del directorio; organigrama; instituciones que participan de su financiamiento (Gobierno Regional y otras entidades, públicas y privadas); vínculo de los objetivos de la corporación con los objetivos del Gobierno Regional; planificación anual (incluyendo objetivos del periodo, principales resultados esperados y actividades relevantes necesarias para alcanzarlos).
 En forma trimestral, dentro de los 30 días siguientes al término de cada trimestre: número de profesionales de la corporación, la remuneración asociada a éstos y su perfil profesional; concursos para la contratación de personal realizados en el periodo, identificando los perfiles de los cargos postulados y los resultados del concurso; recursos transferidos por el Gobierno Regional y ejecutados por la corporación en el periodo, y acumulados en el año; indicadores de gestión de la corporación, que den cuenta del avance físico y financiero de las iniciativas que le han sido encomendadas y financiadas por el Gobierno Regional.
 Las corporaciones y fundaciones constituidas con la participación del Gobierno Regional deberán dar cuenta pública anual de su gestión, mantener publicados sus estados financieros en su respectiva página web y en la del Gobierno Regional, y se regirán por la Ley N° 20.285 sobre acceso a la información pública, en todo aquello que le fuera aplicable.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 09
-#### Contenido
+## Glosa 09
 La siguiente glosa aplica al Subtítulo 29 del presupuesto de inversión regional de los gobiernos regionales.
 Los gobiernos regionales podrán financiar la adquisición de activos no financieros de reposición al Gobierno Central y a otras instituciones públicas.
 Excepcionalmente se podrá comprar nuevos activos no financieros incorporando un certificado de disponibilidad presupuestaria para los gastos recurrentes que generen dichos activos. Este certificado deberá ser emitido por el Ministerio o la Subsecretaría respectiva.
@@ -257,10 +246,7 @@ El referido certificado deberá ser emitido por el Ministerio de Seguridad Públ
 Los gobiernos regionales podrán financiar la adquisición de activos no financieros a los cuerpos de bomberos regionales, para lo cual deberán contar con un certificado de pertinencia técnica emitido por la Junta Nacional de Bomberos de Chile.
 Los gobiernos regionales podrán financiar la compra de terrenos. Estas adquisiciones deberán efectuarse en coordinación con el SERVIU de la región respectiva, cuando corresponda.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 10
-#### Contenido
+## Glosa 10
 La siguiente glosa aplica al Subtítulo 31 del presupuesto de inversión de los gobiernos regionales.
 La inversión pública deberá regirse dentro de los ámbitos de competencia del D.F.L. N°1-19.175. Adicionalmente, podrán ejecutarse las siguientes iniciativas de inversión pública:
 a) Construcción, conservación y mejoramiento de infraestructura pública en coordinación con el Ministerio sectorial respectivo.
@@ -298,10 +284,7 @@ Regional, reajustados a la moneda del año en curso.
 El personal contratado a honorarios para ejecución de proyectos tendrá la
 calidad de agente público.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 11
-#### Contenido
+## Glosa 11
 La siguiente glosa aplica al subtítulo 33 del presupuesto de inversión de los gobiernos regionales.
 Las transferencias de capital deberán regirse por los ámbitos de competencia del D.F.L N°1-19.175. Adicionalmente, podrán financiarse las siguientes iniciativas:
 a) Proyectos de tipología PMU/PMB en coordinación con la Subsecretaría de Desarrollo Regional y Administrativo.
@@ -326,46 +309,31 @@ Los Gobiernos Regionales deberán contemplar, con cargo a los recursos del Fondo
 Las identificaciones presupuestarias de las iniciativas contratadas en años anteriores en ejecución y aquellas creadas en el mismo año, no requerirán una nueva aprobación del Consejo Regional, si los montos totales o resultantes son iguales o menores al 10% de los costos totales ya aprobados por el Consejo Regional, reajustados a la moneda del año en curso.
 El personal contratado a honorarios para ejecución de proyectos y/o programas tendrá la calidad de agente público.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 12
-#### Contenido
+## Glosa 12
 Las transferencias de capital del presupuesto de inversión de los gobiernos regionales podrán financiar proyectos de municipalidades asociados al Fondo Regional de Iniciativa Local (FRIL). Estos proyectos deberán contar con informe favorable del Ministerio de Desarrollo Social y Familia y destinarse a ejecutar, mantener o conservar infraestructura pública.
 Los gobiernos regionales, siguiendo los lineamientos de la Guía Operativa del Fondo Regional de Iniciativa Local publicada por la Subsecretaría de Desarrollo Regional y Administrativo contenida en la Resolución Exenta N°15.051 del 29 de diciembre de 2023, mediante resolución podrán aprobar instructivos o bases que establezcan la metodología de distribución de los recursos entre comunas, los procedimientos de ejecución, de entrega de recursos, de rendición de gasto al Gobierno Regional y otros que permitan la mejor utilización de los recursos del Fondo Regional de Iniciativa Local. Una vez aprobados los montos para cada municipio, el compromiso de financiamiento será informado por el Gobierno Regional mediante oficio dirigido al municipio respectivo.
 Los proyectos que se ejecuten con recursos transferidos a los municipios, cuyo costo total por proyecto sea inferior a 5000 UTM, valorizadas al 1 de enero del ejercicio presupuestario vigente, no requerirán informe favorable del Ministerio de Desarrollo Social y Familia. Sin perjuicio de lo anterior, deberá ser ingresada al Sistema Nacional de Inversiones la información necesaria, según lo dispuesto en el Oficio Ordinario N°2 del 26 de enero de 2024, e instructivo asociado, del Ministerio de Hacienda y del Ministerio de Desarrollo Social y Familia.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 13
-#### Contenido
+## Glosa 13
 Los recursos que se ejecuten con cargo al Fondo Regional para la Productividad y el Desarrollo se deberán destinar a los fines establecidos en el inciso segundo del artículo 13 de la ley N° 21.591, el Decreto N°1699 de fecha 6 de diciembre de 2025 del Ministerio de Hacienda, Resolución Exenta N° 33, de 2024, del Ministerio de Ciencias, Tecnología, Conocimiento e Innovación, y sus modificaciones, y la Resolución Exenta N°08, de 2025, de la Subsecretaria de Economía y Empresas de Menor Tamaño y sus modificaciones.
 Los gobiernos regionales, al momento de efectuar la distribución inicial de sus presupuestos de inversión regional, deberán crear una asignación de provisión sin distribuir para el Fondo Regional para la Productividad y el Desarrollo dentro del Ítem 33.03. En el transcurso del año presupuestario podrán reasignar desde esta provisión para el financiamiento de las iniciativas con cargo a este Fondo. No obstante lo anterior, en la resolución de apertura, los gobiernos regionales podrán crear las asignaciones de arrastres que se financien con estos fondos.
 Los gobiernos regionales podrán transferir directamente recursos a iniciativas que se ejecuten en la región y hayan sido seleccionadas mediante concurso convocado por CORFO o la ANID, y cuyas instituciones ejecutoras estén incluidas en la Resolución Exenta N° 33, de 2024, del Ministerio de Ciencias, Tecnología, Conocimiento e Innovación, y sus modificaciones.
 Asimismo, se faculta a los gobiernos regionales para efectuar las creaciones y modificaciones de asignaciones en sus presupuestos de inversión regional para el pago de los compromisos de arrastre de iniciativas ejecutadas por las instituciones elegibles del Fondo de Innovación y Competitividad.
 Con cargo a estos recursos, los gobiernos regionales podrán participar del financiamiento de iniciativas de los Programas de Desarrollo Productivo Sostenible del Ministerio de Economía, Fomento y Turismo, así como de iniciativas del Programa de Financiamiento Estructural I+D+i Universitario del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 14
-#### Contenido
+## Glosa 14
 Se podrá traspasar hasta un 3% del presupuesto de inversión aprobado por el Congreso Nacional de cada Gobierno Regional, a requerimiento de la Subsecretaría del Interior a las asignaciones 24.03.002 y/o 33.03.001 del presupuesto de dicha Subsecretaría para enfrentar situaciones de emergencia.
 La Subsecretaría del Interior informará semestralmente sobre el uso de esos recursos de emergencia a la Comisión Especial Mixta de Presupuestos y a los Gobiernos Regionales que aportaron a ese Fondo de Emergencia.
 Asimismo, los gobiernos regionales podrán destinar hasta un 2% del presupuesto de Inversión Regional aprobado por el Congreso Nacional, para enfrentar situaciones de emergencia (en todas sus etapas) definidas mediante resolución por el Ministro o Subsecretario del Interior. Para materializar lo anterior, los gobiernos regionales deberán coordinarse con la Subsecretaría del Interior. La ejecución de estos recursos se podrá efectuar sin esperar la total tramitación del acto administrativo del Gobierno Regional.
 Trimestralmente, los gobiernos regionales informarán a la Comisión Especial Mixta de Presupuestos y a la Dirección de Presupuestos, sobre el uso de estos recursos.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 15
-#### Contenido
+## Glosa 15
 Los gobiernos regionales podrán financiar la adquisición de terrenos para municipios y/o comunidades indígenas, destinados a la habilitación y/o ampliación de cementerios rurales situados en comunidades indígenas y que se encuentren en actual funcionamiento.
 En caso de que el inmueble a adquirir tenga la calidad de tierra indígena, se entenderá que el mismo, en la superficie destinada a la ampliación, cumple con la finalidad comunitaria exigida por el artículo 17 inciso segundo de la ley N° 19.253.
 La autorización exigida por esta disposición deberá otorgarse dentro del plazo de 30 días hábiles, contados desde el ingreso de la respectiva solicitud.
 Los beneficiarios de la adquisición se harán cargo de los gastos derivados de esta.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-### Glosa 16
-#### Contenido
+## Glosa 16
 Requerimientos de información:
 1.- La Subsecretaría de Desarrollo Regional y Administrativo informará semestralmente a la Comisión Especial Mixta de Presupuestos los montos destinados regionalmente para proyectos de conectividad digital, que incluyan servicios de telecomunicaciones y cobertura digital, de zonas rezagadas que no sean cubiertas por el Fondo de Desarrollo para las Telecomunicaciones.
 2.- La cartera de proyectos financiada con cargo a los presupuestos de inversión de los gobiernos regionales deberá ser publicada mensualmente en sus respectivas páginas web. Asimismo, deberán ser publicados los acuerdos adoptados por los respectivos consejos regionales, dentro de los 5 días hábiles siguientes, contados desde la adopción del respectivo acuerdo.
@@ -387,21 +355,22 @@ b) El destino de los recursos del Fondo Nacional de Desarrollo Regional a proyec
 16.- El Gobierno Regional informará anualmente a la Comisión Especial Mixta de Presupuestos las acciones de coordinación con la Dirección de Obras Hidráulicas para atender emergencias APR, detallando tiempos de respuesta y mecanismos de seguimiento.
 17.- El Gobierno Regional deberá remitir a la Comisión Especial Mixta de Presupuestos, a la Comisión de Zonas Extremas y Antártica Chilena de la Cámara de Diputados y a la Comisión de Zonas Extremas y Territorios Especiales del Senado, a más tardar el 1 de junio del 2025, un informe consolidado del avance financiero de sus programas de inversión asociados a políticas de zonas extremas, especificando las iniciativas financiadas mediante el FONDEMA y Planes de Desarrollo para Territorios Rezagados.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
-## Programas
-### Programa 03 Asociatividad y Planes Especiales
-#### Partida
-31
-#### Capitulo
-01
-#### Programa
-03
-#### Asunto
+## Programa 03 Asociatividad y Planes Especiales - Asociatividad y Planes Especiales (01,06)
 Asociatividad y Planes Especiales (01,06)
-#### Unidad monetaria
-Miles de $
-#### Tabla Presupuesto
+
+### Datos clave
+- Unidad monetaria: Miles de $
+
+### Partida
+31
+
+### Capitulo
+01
+
+### Programa
+03
+
+### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
 | 09 |  |  | INGRESOS |  | 80.618.943 |
@@ -419,66 +388,58 @@ Miles de $
 | 33 | 03 | 060 | Planes Especiales de Zonas Extremas | 03 | 70.442.245 |
 | 33 | 03 | 070 | Planes de Desarrollo para Territorios Rezagados | 04 | 8.114.688 |
 | 33 | 03 | 090 | Fondo Áreas Metropolitanas | 05 | 2.062.000 |
-#### Glosas
+
+### Glosas
+
 #### Glosa 01
-#### Contenido
 Se deberá informar trimestralmente a la Comisión Especial Mixta de Presupuestos respecto a los avances en el proceso de elaboración de los Estatutos Especiales para las comunas de Rapa Nui y Juan Fernández, así como la implementación del estudio de capacidad de carga para esta última.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Los gobiernos regionales, con cargo a su programa de funcionamiento, podrán transferir recursos al Programa Asociatividad y Planes Especiales para el financiamiento de la operación de la Asociación de Gobernadores Regionales en ejercicio. Los recursos transferidos podrán destinarse a financiar todo tipo de gastos, incluyendo gastos en personal para un máximo de 5 personas, y bienes y servicios de consumo. La transferencia de estos recursos a dicha Asociación se efectuará por decreto conjunto emitido por el Ministerio de Hacienda y el Ministerio del Interior, dictado bajo la fórmula “Por orden del Presidente de la República”.
 Trimestralmente, la Asociación de Gobernadores Regionales informará a la Comisión Especial Mixta de Presupuestos sobre la ejecución y el destino de los recursos asignados.
 Asimismo, con cargo a los recursos para funcionamiento regional, los Gobiernos Regionales podrán contribuir al financiamiento de la operación de la Asociación Nacional de Consejeros Regionales en ejercicio.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Estos recursos se destinarán a la ejecución de iniciativas de los Planes Especiales de Zonas Extremas o de la Política Nacional de Zonas Extremas. Los gobiernos regionales podrán solicitar la aplicación de estos recursos una vez publicada esta Ley de Presupuestos, indicando las iniciativas que priorizan y el programa de ejecución que proponen para cada una de ellas. Corresponderá a la Subsecretaría de Desarrollo Regional y Administrativo, en conjunto con la Dirección de Presupuestos, distribuir los recursos e informar lo resuelto a los gobiernos regionales respectivos. A más tardar dentro del primer trimestre del año de vigencia de la presente ley deberán estar distribuidos los recursos comprometidos en proyectos de arrastre.
 Semestralmente el Gobierno Regional respectivo informará a la Comisión de Zonas Extremas y Antártica Chilena de la Cámara de Diputados y a la Comisión Especial de Zonas Extremas y Territorios Especiales del Senado, como asimismo a la Comisión Especial Mixta de Presupuestos, acerca de la ejecución presupuestaria y los planes generados en virtud de la Política Nacional de Zonas Extremas, correspondiente a la Región de Aysén del General Carlos Ibáñez del Campo.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Estos recursos se destinarán a iniciativas en los territorios incluidos en el Plan de Desarrollo para Territorios Rezagados, establecido mediante el Decreto N° 90 de 2023 del Ministerio del Interior y Seguridad Pública, y sus modificaciones.
 Un monto no superior a $388.359 miles podrá ser destinado a cualquier tipo de gasto, incluso en bienes y servicios de consumo y en personal para actividades transitorias, así como para la elaboración de estudios, realización de talleres e información a la comunidad, para fortalecer los equipos de apoyo para la formulación de nuevos planes de territorios rezagados, en conformidad al reglamento definido en el Decreto N° 90 de 2023, del Ministerio del Interior y Seguridad Pública y sus modificaciones, y para el monitoreo de los planes definidos para los territorios rezagados. Con este objeto, los recursos podrán transferirse a los programas de funcionamiento de esta Partida o a programas de la Subsecretaría de Desarrollo Regional y Administrativo.
 Los gobiernos regionales que tengan aprobados Territorios Rezagados definidos por la Subsecretaría de Desarrollo Regional y Administrativo podrán solicitar a esta misma la aplicación de estos recursos una vez publicada esta Ley de Presupuestos, indicando las iniciativas de arrastres y nuevas que priorizan, y el programa de ejecución que proponen para cada una de ellas. Adicionalmente, dicha Subsecretaría deberá publicar trimestralmente en su página web el criterio y distribución de los recursos entre regiones y la cartera de proyectos que con ellos se financie.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Estos recursos se podrán incorporar en los presupuestos de los gobiernos regionales que hayan constituido áreas metropolitanas de acuerdo con lo establecido en la Ley N° 21.074 y el Decreto N° 98, de 2019 del Ministerio del Interior, que aprueba reglamento que fija los estándares mínimos para el establecimiento de las áreas metropolitanas y establece normas para su constitución y sus modificaciones.
 El financiamiento de las etapas de inversión o preinversión de infraestructura y servicios urbanos a escala metropolitana que incluye, entre otras, proyectos de gestión de residuos, iniciativas que tengan incidencia o impacto en dos o más comunas de una misma región, que provean servicios a población de dos más comunas de una región, o se emplacen en un área metropolitana constituida mediante decreto supremo, se regularán por las siguientes reglas especiales:
 a) Mediante resolución, la Subsecretaria de Desarrollo Regional y Administrativo deberá calificar las iniciativas de infraestructura o servicios urbanos a escala metropolitana factibles de ejecutar y financiar con este fondo.
 b) Estos recursos podrán incorporarse en los presupuestos de los gobiernos regionales, que tengan aprobadas áreas metropolitanas, para el financiamiento de los gastos necesarios que permitan el cumplimiento de las iniciativas aprobadas.
 c) Asimismo, con estos recursos se podrá financiar adquisición de equipos y equipamiento, asistencias técnicas e inspecciones técnicas y legales, para el diseño, ejecución, supervisión y seguimiento de iniciativas aprobadas.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 Los Gobiernos Regionales deberán remitir a la Comisión Especial Mixta de Presupuesto, a la Comisión de Zonas Extremas de la Cámara de Diputados y Diputadas y a la Comisión de Zonas Extremas del Senado, a mas tardar el 01 de junio del 2026, un informe consolidado del avance financiero de sus programas de inversión asociados a políticas de zonas extremas, especificando las iniciativas financiadas mediante el FONDEMA, el PEDZE y Planes de Desarrollo para Territorios Rezagados.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ## Capitulos Regionales
+
 ### Region Tarapaca Programa 04
+
 #### Region
 Tarapacá
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 04
+
 #### Asunto
 Gobierno Regional Región de Tarapacá
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -504,21 +465,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 75.515.545 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 75.515.545 |
 | 33 | 03 | 150 | Inversión Regional |  | 75.515.545 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.514.029
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 136
 b) Horas extraordinarias año
@@ -533,35 +489,34 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 3
 - Miles de $ 44.591
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 17.113
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 13.547
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Antofagasta Programa 05
+
 #### Region
 Antofagasta
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 05
+
 #### Asunto
 Gobierno Regional Región de Antofagasta
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -589,21 +544,16 @@ Miles de $
 | 33 | 03 |  | A Otras Entidades Públicas |  | 118.874.766 |
 | 33 | 03 | 135 | Fondo de Desarrollo Región de Antofagasta Convenio Litio | 06 | 10 |
 | 33 | 03 | 150 | Inversión Regional |  | 118.874.756 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.895.380
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 133
 b) Horas extraordinarias año
@@ -618,42 +568,38 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 3
 - Miles de $ 39.290
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 12.279
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 85.799
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 Estos recursos se deberán destinar al financiamiento de proyectos/o programas según los estipulados en el Convenio de Aportes entre SQM Salar S.A. y el Gobierno Regional de Antofagasta con la presencia de la Corporación de Fomento de la Producción.
 Trimestralmente el Gobierno Regional deberá informar a la Comisión Especial Mixta de Presupuestos sobre el uso de estos recursos.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Atacama Programa 06
+
 #### Region
 Atacama
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 06
+
 #### Asunto
 Gobierno Regional Región de Atacama
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -679,21 +625,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 91.687.296 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 91.687.296 |
 | 33 | 03 | 150 | Inversión Regional |  | 91.687.296 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.486.858
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 135
 b) Horas extraordinarias año
@@ -708,41 +649,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 52.913
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 12.826
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 5.922
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Coquimbo Programa 07
+
 #### Region
 Coquimbo
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 07
+
 #### Asunto
 Gobierno Regional Región de Coquimbo(06)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -768,21 +705,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 97.641.340 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 97.641.340 |
 | 33 | 03 | 150 | Inversión Regional |  | 97.641.340 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 7
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.902.999
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 154
 b) Horas extraordinarias año
@@ -797,41 +729,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 58.638
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 25.669
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 20.069
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Valparaiso Programa 08
+
 #### Region
 Valparaíso
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 08
+
 #### Asunto
 Gobierno Regional Región de Valparaíso
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -857,21 +785,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 103.834.655 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 103.834.655 |
 | 33 | 03 | 150 | Inversión Regional | 06 | 103.834.655 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 7
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $6.342.041
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 161
 b) Horas extraordinarias año
@@ -886,43 +809,39 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 5
 - Miles de $ 71.919
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 23.957
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 72.251
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 Incluye recursos para ser destinados a la adquisición de activos no financieros y a la ejecución de programas e iniciativas de inversión en los territorios insulares, proyectos de inversión de mejoramiento de obras portuarias, mantención y reparación que sean administradas por la empresa Sociedad Agrícola y Servicios Isla de Pascua (SASIPA) Sociedad por Acciones (Spa), que decida financiar el Gobierno Regional. En tales casos la unidad técnica será la empresa SASIPA. Estos proyectos podrán, dentro de sus objetivos, mejorar accesibilidad de servicios, el turismo y la recreación. El Gobierno Regional podrá efectuar transferencias a la Dirección de Obras Portuarias para financiar estudios de factibilidad e iniciativas que propendan al mejoramiento de la eficiencia del sistema portuario de los territorios insulares y podrá transferir los resultados y las obras en administración a SASIPA Sociedad por Acciones (SpA).
 Asimismo, se podrá financiar subsidios o aportes reembolsables a empresas de los sectores público o privado incluyendo a SASIPA Sociedad por Acciones (SpA), para proyectos de inversión de interés social en las áreas de electrificación, gas, generación de energía, telefonía celular y comunicaciones, en áreas rurales, y de agua potable y alcantarillado, previamente identificados de acuerdo al procedimiento que establece el artículo 19 bis del decreto ley N°1.263, de 1975.
 Los recursos que reciban las delegaciones presidenciales provinciales de Isla de Pascua y Valparaíso, para ser invertidos en los territorios insulares de la región, podrán aplicarse en la adquisición de activos no financieros, en iniciativas de inversión que cuenten con recomendación favorable del Ministerio de Desarrollo Social y Familia, en proyectos menores de 2.000 UTM y de conservación de infraestructura pública.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region OHiggins Programa 09
+
 #### Region
 O'Higgins
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 09
+
 #### Asunto
 Gobierno Regional Región del Libertador General Bernardo O'higgins(07,08)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -948,21 +867,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 89.511.721 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 89.511.721 |
 | 33 | 03 | 150 | Inversión Regional | 06 | 89.511.721 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 6
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $4.823.380
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 135
 b) Horas extraordinarias año
@@ -977,53 +891,43 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 46.483
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 21.391
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 18.063
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional podrá financiar iniciativas de gastos de capital asociadas con el proyecto de ampliación de la Universidad de O´Higgins.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 07
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 08
-#### Contenido
 El Gobierno Regional de la Región del Libertador General Bernardo O’higgins, informará trimestralmente a la Comisión de Gobierno Interior, Nacionalidad, Ciudadanía y Regionalización de la Cámara de Diputados, sobre la cartera de proyectos a financiar. La información proporcionada deberá incluir detalles de localización geográfica, estado de avance, descripción de los proyectos, y entidades responsables de la ejecución. Además, se incluirá el monto de la inversión, los plazos de ejecución y los objetivos específicos a lograr.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Maule Programa 10
+
 #### Region
 Maule
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 10
+
 #### Asunto
 Gobierno Regional Región del Maule(07)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1049,21 +953,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 118.908.023 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 118.908.023 |
 | 33 | 03 | 150 | Inversión Regional | 06 | 118.908.023 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 6
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.829.780
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 166
 b) Horas extraordinarias año
@@ -1075,47 +974,40 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 5
 - Miles de $ 63.746
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 13.543
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 27.095
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional de la región del Maule informará a las Comisiones de Obras Públicas de ambas Cámaras, a los parlamentarios de la Región del Maule y a la Comisión Especial Mixta de Presupuestos, antes del 31 de enero de 2026, sobre la cartera de proyectos a financiar. La información proporcionada deberá incluir detalles de localización geográfica, estado de avance, descripción de los proyectos, y entidades responsables de la ejecución. Además, se incluirá el monto de la inversión, los plazos de ejecución y los objetivos específicos a lograr. Se suministrarán informes trimestrales a partir del 31 de marzo de 2026 para actualizar sobre los avances de los proyectos.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 07
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Biobio Programa 11
+
 #### Region
 Biobío
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 11
+
 #### Asunto
 Gobierno Regional Región del Biobío(06)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1141,21 +1033,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 117.951.572 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 117.951.572 |
 | 33 | 03 | 150 | Inversión Regional |  | 117.951.572 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 7
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $7.172.977
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 188
 b) Horas extraordinarias año
@@ -1170,41 +1057,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 5
 - Miles de $ 69.070
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 42.840
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 45.157
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region La Araucania Programa 12
+
 #### Region
 Araucanía
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 12
+
 #### Asunto
 Gobierno Regional Región de La Araucanía(06)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1230,21 +1113,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 180.278.375 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 180.278.375 |
 | 33 | 03 | 150 | Inversión Regional |  | 180.278.375 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 7
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $6.595.633
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 158
 b) Horas extraordinarias año
@@ -1259,41 +1137,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 63.577
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 12.835
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 36.806
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Los Lagos Programa 13
+
 #### Region
 Los Lagos
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 13
+
 #### Asunto
 Gobierno Regional Región de Los Lagos(06)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1319,21 +1193,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 114.575.108 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 114.575.108 |
 | 33 | 03 | 150 | Inversión Regional |  | 114.575.108 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 6
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $6.821.700
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 177
 b) Horas extraordinarias año
@@ -1348,41 +1217,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 70.917
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 30.802
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 25.534
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Aysen Programa 14
+
 #### Region
 Aysén
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 14
+
 #### Asunto
 Gobierno Regional Región de Aysén del General Carlos Ibáñez del Campo
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1408,21 +1273,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 81.866.726 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 81.866.726 |
 | 33 | 03 | 150 | Inversión Regional | 06 | 81.866.726 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $6.763.065
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 143
 b) Horas extraordinarias año
@@ -1437,41 +1297,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 52.610
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 10.268
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 58.705
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional deberá informar semestralmente a la Comisión Especial Mixta de Presupuestos sobre los proyectos de inversión financiados con esta Asignación, identificando el efecto empleo en la región.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Magallanes Programa 15
+
 #### Region
 Magallanes
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 15
+
 #### Asunto
 Gobierno Regional Región de Magallanes y de la Antártica Chilena
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1499,21 +1355,16 @@ Miles de $
 | 33 | 03 |  | A Otras Entidades Públicas |  | 82.658.522 |
 | 33 | 03 | 120 | Fondo de Desarrollo de Magallanes |  | 11.690.896 |
 | 33 | 03 | 150 | Inversión Regional |  | 70.967.626 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $6.144.017
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 134
 b) Horas extraordinarias año
@@ -1528,35 +1379,34 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 3
 - Miles de $ 43.777
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 11.392
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 17.399
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Metropolitana Programa 16
+
 #### Region
 Metropolitana
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 16
+
 #### Asunto
 Gobierno Regional Región Metropolitana de Santiago(06)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1582,21 +1432,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 196.739.075 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 196.739.075 |
 | 33 | 03 | 150 | Inversión Regional |  | 196.739.075 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 6
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $9.402.278
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 223
 b) Horas extraordinarias año
@@ -1611,41 +1456,37 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 8
 - Miles de $ 92.096
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 34.225
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 5.017
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Los Rios Programa 17
+
 #### Region
 Los Ríos
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 17
+
 #### Asunto
 Gobierno Regional Región de Los Ríos(06,07)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1671,21 +1512,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 77.898.644 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 77.898.644 |
 | 33 | 03 | 150 | Inversión Regional |  | 77.898.644 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.707.506
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 147
 b) Horas extraordinarias año
@@ -1700,47 +1536,40 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 4
 - Miles de $ 72.028
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 15.133
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 27.095
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 07
-#### Contenido
 Se informará trimestralmente a la Cámara de Diputados sobre los avances en la planificación, acciones y desarrollo de las inversiones y proyectos destinados exclusivamente al Plan Bicentenario de Chiloé que se conmemorará el año 2026.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Arica y Parinacota Programa 18
+
 #### Region
 Arica y Parinacota
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 18
+
 #### Asunto
 Gobierno Regional Región de Arica y Parinacota
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1766,21 +1595,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 56.862.528 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 56.862.528 |
 | 33 | 03 | 150 | Inversión Regional |  | 56.862.528 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $5.558.914
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 144
 b) Horas extraordinarias año
@@ -1795,35 +1619,34 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 3
 - Miles de $ 48.111
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 12.835
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 46.162
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 ### Region Nuble Programa 19
+
 #### Region
 Ñuble
+
 #### Partida
 31
+
 #### Capitulo
 01
+
 #### Programa
 19
+
 #### Asunto
 Gobierno Regional Región de Ñuble(06)
+
 #### Unidad monetaria
 Miles de $
+
 #### Tabla Presupuesto
 | Sub-Título | Ítem | Asig. | Denominaciones | Glosa N° | Moneda Nacional (Miles de $) |
 | --- | --- | --- | --- | --- | --- |
@@ -1848,21 +1671,16 @@ Miles de $
 | 33 |  |  | TRANSFERENCIAS DE CAPITAL |  | 85.752.331 |
 | 33 | 03 |  | A Otras Entidades Públicas |  | 85.752.331 |
 | 33 | 03 | 150 | Inversión Regional | 07 | 85.752.331 |
+
 #### Glosas
+
 #### Glosa 01
-#### Contenido
 Dotación máxima de vehículos 5
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 02
-#### Contenido
 Gastos en personal, en miles de $ 4.222.003
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 03
-#### Contenido
 Incluye:
 a) Dotación máxima de personal 101
 b) Horas extraordinarias año
@@ -1877,31 +1695,16 @@ e) Autorización máxima para cumplimiento artículo septuagésimo tercero de la
 - N° de personas 2
 - Miles de $ 23.242
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 04
-#### Contenido
 Incluye:
 Capacitación y perfeccionamiento, D.F.L. N°1 / 19.653, de 2001, Ministerio Secretaría General de la Presidencia
 - Miles de $ 12.835
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 05
-#### Contenido
 Monto máximo para gastos en el ítem de publicidad Miles de $ 84.272
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 06
-#### Contenido
 El Gobierno Regional informará trimestralmente a la Comisión Especial Mixta de Presupuestos sobre los convenios que se suscriban y montos que se destinan para la compra y distribución de agua vía camiones aljibe u otros medios similares, con indicación de las comunas de la región, la población beneficiada, y las políticas o acciones llevadas a cabo para incentivar la competencia e incorporación de nuevos actores que puedan proveer de este servicio a la población regional.
 
-#### Fuentes
-staging/ppto_2026_p31/p31.md
 #### Glosa 07
-#### Contenido
 El Gobierno Regional informará trimestralmente a las Comisiones de Economía del Senado y de Comisión de Economía, Fomento; Micro, Pequeña y Mediana Empresa; Protección de los Consumidores y Turismo de la Cámara de Diputados sobre los proyectos de inversión que se implementarán en la Región de Ñuble y el efecto en la generación de empleo regional.
-
-#### Fuentes
-staging/ppto_2026_p31/p31.md

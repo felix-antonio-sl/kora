@@ -24,23 +24,29 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 2.92
+    cr: 1.27
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 6
     meat_count: 581
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gestion__transferencia-ppr.md.json
 ---
 
 # Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
+
 ## Glosario PPR Transferencia
+
 ### Proposito
 Definir conceptos, siglas y normas clave recurrentes en la guía de transferencia de Programas Públicos Regionales (PPR).
+
 ### Terminos
 | ID | Sigla | Cpt | Def |
 | --- | --- | --- | --- |
@@ -59,51 +65,64 @@ Definir conceptos, siglas y normas clave recurrentes en la guía de transferenci
 | GN-PPR-GLOS-SISREC | SISREC | Sistema de Rendición Electrónica de Cuentas | Plataforma de la Contraloría General de la República para la rendición de transferencias de Subtítulos 24 y 33. |
 
 ## Parte 1 Marco General y Objeto
+
 ### Proposito y Alcance Guia
+
 #### Proposito
 Estandarizar el procedimiento de postulación, evaluación y transferencia de fondos FNDR para la ejecución de Programas Públicos Regionales (PPR) por parte de entidades públicas.
+
 #### Fundamento
 - Glosa 06, Partida 31, Ley de Presupuestos 2026 (Ley N°21.796).
 - Oficio Circular N°22 DIPRES.
+
 #### Contexto
 La guía regula específicamente los PPR (gasto corriente o mixto para la entrega de servicios) que, por ser ejecutados por un tercero público, están exentos de la evaluación ex-ante de DIPRES/SES. En consecuencia, la evaluación de mérito y diseño de estas iniciativas es competencia del Gobierno Regional de Ñuble.
+
 #### Advertencias
 - Ámbito de aplicación estricto: este documento no aplica para proyectos de inversión (IDI) ni programas de ejecución directa del GORE.
+
 #### Exclusiones Ambito
+
 #### Casos
 | Cpt | Def |
 | --- | --- |
 | Proyectos de Inversión (IDI) | Iniciativas de gasto de capital (obras, activos) regidas por el Sistema Nacional de Inversiones (SNI). Su transferencia sigue otros procedimientos. |
 | Programas de Ejecución Directa GORE | Programas ejecutados directamente por el GORE que sí requieren el ciclo de evaluación ex-ante de DIPRES/SES. |
-#### Referencias
-- GN-PPR-GLOS-FNDR
-- GN-PPR-GLOS-GORE
+
 ### Entidades Postulantes Habilitadas
+
 #### Dest
 - Municipalidades de la Región de Ñuble.
 - Otros servicios públicos y entidades del Estado con competencia para ejecutar programas sociales, culturales o de fomento.
+
 #### Ejemplos
 | Ex |
 | --- |
 | Universidades Estatales. |
+
 #### Fundamento
 - Decreto Ley 1.263 de 1975 (Ley de Administración Financiera del Estado).
 - Glosa 06 de Inversión Regional ("transferencias a otras entidades públicas y al gobierno central").
+
 ### Definicion PPR Transferible
+
 #### Definicion
 Conjunto integrado y articulado de acciones, prestaciones y beneficios (componentes) destinados a lograr un propósito específico en una población objetivo, de modo de resolver un problema o atender una necesidad que la afecte.
+
 #### Requisitos
 - Duración definida y finita.
+
 #### Prohibiciones
 - No debe constituir acciones permanentes de la entidad receptora, las cuales deben ser financiadas con su presupuesto regular.
+
 ### Criterios Focalizacion Inversion
+
 #### Fundamento
 - Art. 74 del DFL 1-19.175 de 2005.
+
 #### Contexto
 El FNDR opera como programa de inversiones públicas para el desarrollo regional y la compensación territorial.
-#### Referencias
-- GN-PPR-GLOS-FNDR
-- GN-PPR-GLOS-ERD
+
 #### Requisitos
 - El propósito del programa debe solucionar un problema regional definido, que permita su identificación, demostración y tenga indicadores de cumplimiento.
 - La formulación debe focalizarse en la disminución de brechas de un problema claramente definido.
@@ -111,32 +130,41 @@ El FNDR opera como programa de inversiones públicas para el desarrollo regional
 - Debe existir coherencia con la Estrategia Regional de Desarrollo (ERD) Ñuble 2022-2030, el Plan de Gobierno Regional y/o la Estrategia Regional de CTCI.
 - Se debe poner énfasis en equidad de acceso y pertinencia de beneficiarios, con mecanismos de selección transparentes y probos.
 - Debe considerarse una capacidad de gestión óptima con máxima optimización de recursos, cumpliendo principios de eficiencia y eficacia.
+
 ### Plazos Postulacion
+
 #### Dln
 La postulación de programas para financiamiento con cargo al presupuesto del año 2026 se recibirá hasta el 30 de septiembre de 2026.
+
 #### Condiciones
 - Propuestas ingresadas post-fecha, si son recomendadas favorablemente, podrían ser consideradas para el siguiente ejercicio presupuestario, sujeto a la normativa vigente.
 
 ## Parte 2 Proceso Postulacion y Evaluacion GORE
+
 ### Proposito
 Describir el flujo que debe seguir una entidad pública para postular un PPR a financiamiento GORE y el proceso de evaluación interna que este último realizará para asegurar la pertinencia y calidad de la propuesta.
+
 ### Metodologia Formulacion Obligatoria MML
+
 #### Requisitos
 - Las propuestas de PPR deben ser formuladas utilizando la Metodología de Marco Lógico (MML).
+
 #### Advertencias
 - No se debe utilizar la Ficha IDI, el código BIP ni la metodología de evaluación de proyectos de inversión para este tipo de iniciativas. La postulación no se realiza en el Banco Integrado de Proyectos (BIP).
-#### Fuentes
-- kb_gn_025_guia-programas_sts.md
+
 #### Rec
 - Se sugiere fuertemente a las entidades formuladoras capacitarse en MML para asegurar la calidad de sus propuestas.
+
 ### Documentacion Requerida Postulacion
+
 #### Requisitos
 - La postulación debe realizarse mediante la plataforma GESDOC del GORE, adjuntando la documentación mínima definida a continuación.
+
 #### Plataforma
+
 #### Cpt
 Plataforma GESDOC del GORE Ñuble.
-#### Referencias
-- GN-PPR-GLOS-GESDOC
+
 #### Documentos Clave
 | N | ID | Nombre | Ref-SFD |
 | --- | --- | --- | --- |
@@ -151,86 +179,113 @@ Plataforma GESDOC del GORE Ñuble.
 | 9 | STS-KB-GN-PPR-DOC-09-COMPROMISO-FINANCIERO | Certificado de Compromiso Financiero | FORM-PPR-FINANZAS-COMP-V1 |
 | 10 | STS-KB-GN-PPR-DOC-10-DOCS-LEGALES | Documentos Legales de la Entidad (Estatutos, Personería) | N/A |
 | 11 | STS-KB-GN-PPR-DOC-11-OTROS-ANEXOS | Otros Anexos (si aplica) | N/A |
+
 ### Proceso Evaluacion Interna GORE
+
 #### Contexto
 Dado que estos programas están exentos de evaluación central, el GORE realiza un proceso de evaluación de admisibilidad, pertinencia y mérito técnico, para resguardar el correcto uso de los fondos públicos.
+
 #### Pasos
 | Step | Nombre | Resp | Act |
 | --- | --- | --- | --- |
 | 1 | Admisibilidad Documental | Departamento de Análisis y Evaluación (DAE). | Verificar que la postulación contiene toda la documentación requerida en la sección 2.2 y que ha sido ingresada correctamente. Las postulaciones incompletas serán devueltas para subsanación en un plazo acotado. |
 | 2 | Evaluación de Pertinencia Estratégica | Comité de Pertinencia Regional (o instancia que lo reemplace). | Evaluar la alineación del programa con la Estrategia Regional de Desarrollo (ERD), el Plan de Gobierno Regional y las prioridades políticas definidas para el año. |
 | 3 | Evaluación Técnica de Diseño | Departamento de Análisis y Evaluación (DAE). | Revisión de fondo de la propuesta. |
+
 #### Resultado Evaluacion
+
 #### Definicion
 La evaluación culmina con un Informe Técnico Favorable (ITF) emitido por la DAE.
+
 #### Advertencias
 - Este informe NO es un RATE RS. Es un documento interno del GORE que valida técnicamente la propuesta para que pueda avanzar a la etapa de financiamiento.
+
 #### Calificaciones Posibles
 - Recomendado Favorablemente: La propuesta es sólida y se recomienda para su aprobación presupuestaria.
 - Recomendado con Observaciones: La propuesta es pertinente pero requiere ajustes para ser financiada. La entidad postulante deberá subsanar las observaciones en un plazo definido.
 - No Recomendado: La propuesta presenta debilidades técnicas o de pertinencia insalvables que no la hacen elegible para financiamiento.
 
 ## Parte 3 Restricciones Normativas y Financieras
+
 ### Restricciones Generales
+
 #### Prohibiciones
 - Postular programas cuyo objetivo o naturaleza sea distinto al descrito en la ley o decreto de creación de la institución.
+
 #### Condiciones
 - Instituciones con convenios vigentes con el GORE deben acreditar su estado de rendiciones de cuentas.
+
 #### Fundamento
 - Resolución N°30 de 2015 de la Contraloría General de la República (CGR).
+
 ### Restricciones de Gasto
+
 #### Contexto
 Los recursos FNDR transferidos para programas tienen las siguientes restricciones de gasto:
+
 #### Prohibiciones
 - Otorgar préstamos o constituir/comprar sociedades con cargo a los recursos transferidos.
+
 #### Condiciones
 - Gastos en Personal: la entidad receptora puede usar hasta un 5% del total de la transferencia para contratar personal a honorarios para la gestión del programa.
 - Gastos de Administración: el GORE puede destinar hasta un 5% del monto total a gastos de administración propios para la gestión y seguimiento. Este monto no forma parte de la transferencia.
+
 #### Fundamento
 - Glosa 06, Partida 31, Ley de Presupuestos 2026 (Ley N°21.796).
-#### Referencias
-- GN-PPR-GLOS-FNDR
+
 ### Restricciones de Probidad
+
 #### Condiciones
 - La subcontratación es permitida solo para actividades que no constituyen el objeto principal del programa, debe estar justificada y detallada en el convenio.
+
 #### Prohibiciones
 - Subcontratar con personas jurídicas relacionadas (matriz, filial, etc. según Ley 18.046) o con personas naturales que tengan conflictos de interés por parentesco con autoridades regionales o directivos de la institución postulante.
 - Contratar para la ejecución del programa a cónyuges, convivientes civiles, o parientes hasta el tercer grado de consanguinidad y segundo de afinidad de autoridades y funcionarios directivos del GORE o de la institución postulante.
-#### Referencias
-- GN-PPR-GLOS-GORE
 
 ## Parte 4 Formalizacion Ejecucion y Seguimiento
+
 ### Aprobacion Presupuestaria y Convenio
+
 #### Proceso
 | Step | Nombre | Act |
 | --- | --- | --- |
 | 1 | Priorización y Aprobación de Recursos | Los PPR con Informe Técnico Favorable (ITF) son presentados por la DIPIR al Gobernador(a) y, si corresponde por normativa presupuestaria, al Consejo Regional para la aprobación de los fondos. |
 | 2 | Elaboración de Convenio de Transferencia | El Departamento de Presupuesto del GORE elabora un convenio que formaliza la transferencia, el cual debe ser suscrito por los representantes legales de ambas instituciones. |
 | 3 | Contenido Mínimo del Convenio |  |
+
 ### Transferencia Recursos y Ejecucion
+
 #### Mecanismo
 - La transferencia de fondos se realiza según lo estipulado en el convenio, usualmente contra la presentación de estados de avance o cumplimiento de hitos.
+
 #### Responsables
 - La entidad pública receptora es la responsable de la ejecución técnica y financiera del programa, cumpliendo la normativa de compras públicas que le aplique.
 - El GORE, a través de su división patrocinante, supervisa el avance y cumplimiento del convenio.
+
 ### Seguimiento y Rendicion
+
 #### Responsables
 - La entidad ejecutora debe rendir cuenta de los fondos al GORE en los plazos y formatos estipulados en el convenio.
+
 #### Fundamento
 - La rendición se rige por la Resolución N°30 de 2015 de la CGR y sus modificaciones.
+
 #### Mecanismo
 - El GORE podrá exigir la rendición vía plataforma SISREC o en formato físico, según se defina en el convenio.
+
 #### Fuentes
-- urn:gn:kb:gestion-rendiciones
-#### Referencias
-- GN-PPR-GLOS-SISREC
+- [Gestión de Rendiciones de Cuentas - GORE Ñuble](urn:gn:kb:gestion-rendiciones)
 
 ## Parte 5 Formularios Estandarizados PPR
+
 ### Contexto
 Los formatos estandarizados para la postulación se encontrarán disponibles en la página web del Gobierno Regional de Ñuble. Su estructura detallada es la siguiente.
+
 ### Formulario Diseno Programa Publico PPR
+
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
+
 #### Campos
 | ID | Seccion | Field-Label | Field-Type | Field-Constraint | Field-Instr |
 | --- | --- | --- | --- | --- | --- |
@@ -254,9 +309,12 @@ GUIDE-SFD-STS-MASTER-01
 | FORM-PPR-TRANSFER-S6-CONTACTO-FORMULADOR | Sección 6: Firmas | Fono y Mail contacto formulador | Text | Req: mandatory. |  |
 | FORM-PPR-TRANSFER-S6-FIRMA-REPRESENTANTE | Sección 6: Firmas | Nombre firma y timbre del jefe de Servicio o Representante de la Institución | Static-Text |  | Espacio reservado para firma. |
 | FORM-PPR-TRANSFER-S6-CONTACTO-REPRESENTANTE | Sección 6: Firmas | Fono y Mail contacto representante | Text | Req: mandatory. |  |
+
 ### Anexo Perfil y Descripcion de Cargos
+
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
+
 #### Campos
 | ID | Seccion | Field-Label | Field-Type | Field-Instr | Field-Constraint |
 | --- | --- | --- | --- | --- | --- |
@@ -269,9 +327,12 @@ GUIDE-SFD-STS-MASTER-01
 | FORM-ANEXO1-S1-OBJETIVO-CARGO-01 | Sección 1: Perfiles de Cargo | Objetivo del cargo | TextArea |  | Req: mandatory. |
 | FORM-ANEXO1-S1-PRODUCTOS-ASOCIADOS-01 | Sección 1: Perfiles de Cargo | Productos asociados a la contratación | TextArea | Listar los entregables o productos verificables. | Req: mandatory. |
 | FORM-ANEXO1-S2-FIRMA-REP-LEGAL-01 | Sección 2: Firma | Nombre, firma y timbre del representante legal | Static-Text | Espacio reservado para la firma manuscrita. |  |
+
 ### Certificado Pertinencia y Patrocinio GORE
+
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
+
 #### Campos
 | ID | Seccion | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- | --- |
@@ -283,9 +344,12 @@ GUIDE-SFD-STS-MASTER-01
 | FORM-PPR-PATROCINIO-S2-JUSTIFICACION-PERTINENCIA | Sección 2: Evaluación de Pertinencia de la División GORE | Justificar la ejecución del programa, describiendo su pertinencia y alineación con los objetivos estratégicos de la División y la Estrategia Regional de Desarrollo. | TextArea | Req: mandatory. |
 | FORM-PPR-PATROCINIO-S2-SINERGIA-DUPLICIDAD | Sección 2: Evaluación de Pertinencia de la División GORE | ¿Se identifica sinergia o duplicidad con otras iniciativas GORE en curso? Detallar. | TextArea | Req: mandatory. |
 | FORM-PPR-PATROCINIO-S3-FIRMA-JEFE-DIVISION | Sección 3: Firma | Nombre, firma y timbre del Jefe de División patrocinante GORE | Static-Text |  |
+
 ### Declaracion Jurada Rendiciones
+
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
+
 #### Campos
 | ID | Seccion | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- | --- |
@@ -298,9 +362,12 @@ GUIDE-SFD-STS-MASTER-01
 | FORM-PPR-REN-S2-COMPROMISO-RES30 | Sección 2: Declaración | Declaro estar en conocimiento de los alcances y responsabilidades establecidas en la Resolución N°30 de 2015 de la Contraloría General de la República. | Checkbox | Req: mandatory. |
 | FORM-PPR-REN-S2-COMPROMISO-SISREC | Sección 2: Declaración | Declaro que, en caso de ser aprobada, las rendiciones del programa deben realizarse por medio de plataforma SISREC de la Contraloría General de la República. | Checkbox | Req: mandatory. |
 | FORM-PPR-REN-S3-FIRMA-REP-LEGAL | Sección 3: Firma | Nombre, firma y timbre del representante legal | Static-Text |  |
+
 ### Declaracion Jurada No Fraccionamiento
+
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
+
 #### Campos
 | ID | Seccion | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- | --- |
@@ -311,9 +378,12 @@ GUIDE-SFD-STS-MASTER-01
 | FORM-PPR-NOFRACC-S2-DECLARACION-NOFRACC | Sección 2: Declaración | Declaro QUE EL PROGRAMA POSTULADO ABORDA UN OBJETIVO Y PROBLEMA ÚNICO, Y NO CONSTITUYE UN FRACCIONAMIENTO DE UNA INICIATIVA MAYOR. | Checkbox | Req: mandatory. |
 | FORM-PPR-NOFRACC-S2-ACLARACION | Sección 2: Declaración | Aclaración sobre propósito único | Static-Text |  |
 | FORM-PPR-NOFRACC-S3-FIRMA-REP-LEGAL | Sección 3: Firma | Nombre, firma y timbre del representante legal | Static-Text |  |
+
 ### Certificado Compromiso Presupuesto y Finanzas
+
 #### Ref SFD Guide
 GUIDE-SFD-STS-MASTER-01
+
 #### Campos
 | ID | Seccion | Field-Label | Field-Type | Field-Constraint |
 | --- | --- | --- | --- | --- |

@@ -36,8 +36,6 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: Verificar consistencia entre specs fundacionales resolubles y toolchain visible del repo. Consolidar hallazgos normativos y operativos. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.",
-          "4. STATE: S-END -> ACT: Resumen: criterio emitido, hallazgos normativos, riesgos abiertos y siguientes pasos. -> Trans: [terminal].",
           "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
         ],
         "allowed_kb_count": 7,
@@ -101,8 +99,9 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v8.1.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
-          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}"
+          "5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok -> S-END. IF validacion_falla -> S-OPERATE. IF cambio -> S-DISPATCHER.",
+          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
+          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente. El baseline auditado soporta solo Skills degenerados."
         ],
         "allowed_kb_count": 7,
         "sources": {
@@ -167,8 +166,8 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "3. STATE: S-KORAFICATE → ACT: CM-KORAFICATOR: Aplicar Funtor K (md-spec §6). Pre-analisis(meat/fat/hechos,N_hechos) → Evaluar input(§6.4) → Segmentar(§6.5,contexto deslizante) → Telegrafizar fiel(§6.6,anti-patrones) → Ensamblar(§6.7) → Deduplicar SSOT(Fase 4b) → Normalizar condicional(§6.8) → Inyectar frontmatter(§6.9) → Verificacion mecanica(§6.10) → Verificacion fidelidad con reporte estructurado(§6.11,maximo 2 iteraciones). Entregar artefacto KORA/MD. → Trans: IF artefacto_generado → S-AUDIT. IF iterar_segmento → S-KORAFICATE. IF cambio → S-DISPATCHER.",
-          "5. STATE: S-AUDIT → ACT: CM-ARTIFACT-AUDITOR: Leer artefacto → Clasificar tipo(descriptivo→md-spec §9, prescriptivo→spec-md §8) → Ejecutar checklist completo → Calcular metricas(FS, CR si aplica) → Generar reporte PASS|FAIL con correcciones por item. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-REPAIR. IF cambio → S-DISPATCHER.",
+          "3. STATE: S-KORAFICATE -> ACT: CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD conforme a md-spec y emitir reporte estructurado de fidelidad. -> Trans: IF artefacto_generado -> S-AUDIT. IF iterar_segmento -> S-KORAFICATE. IF cambio -> S-DISPATCHER.",
+          "5. STATE: S-AUDIT -> ACT: CM-ARTIFACT-AUDITOR: verificar conformidad, trazabilidad y fidelidad del artefacto y emitir reporte PASS|FAIL con metricas. -> Trans: IF validacion_ok -> S-END. IF validacion_falla -> S-REPAIR. IF cambio -> S-DISPATCHER.",
           "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
         ],
         "allowed_kb_count": 3,
@@ -230,9 +229,8 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "2. STATE: S-SALUD → ACT: CM-HEALTH-INSPECTOR: Ejecutar kora health(broken URNs), kora validate(agentes), kora stats(metricas), git status(repo). Consolidar reporte con severidad (ERROR|WARNING|OK). → Trans: IF error_critico → S-CIRUGIA. IF todo_ok → S-DISPATCHER. IF requiere_auditoria_profunda → S-AUDITORIA. IF cambio → S-DISPATCHER.",
-          "3. STATE: S-CATALOGO → ACT: CM-CATALOG-STEWARD: Ejecutar kora index(reconstruir catalogo), detectar URNs rotas(kora health), resolver URNs(kora resolve). Reporte: entradas nuevas, actualizadas, eliminadas, rotas. → Trans: IF broken_refs → S-CIRUGIA. IF catalogo_sincronizado → S-DISPATCHER. IF cambio → S-DISPATCHER.",
-          "5. STATE: S-AUDITORIA → ACT: CM-ESTRUCTURA-AUDITOR: Escanear estructura monorepo. Verificar: directorios esperados existen, convenciones naming, archivos huerfanos, workspaces incompletos, frontmatter valido. Reporte con hallazgos. → Trans: IF hallazgos_criticos → S-CIRUGIA. IF hallazgos_menores → reporte + S-DISPATCHER. IF limpio → S-DISPATCHER. IF cambio → S-DISPATCHER."
+          "2. STATE: S-SALUD -> ACT: CM-HEALTH-INSPECTOR: consolidar estado actual del repo, metricas y severidad ERROR|WARNING|OK en un reporte. -> Trans: IF error_critico -> S-CIRUGIA. IF todo_ok -> S-DISPATCHER. IF requiere_auditoria_profunda -> S-AUDITORIA. IF cambio -> S-DISPATCHER.",
+          "5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos -> S-CIRUGIA. IF hallazgos_menores -> S-DISPATCHER. IF limpio -> S-DISPATCHER. IF cambio -> S-DISPATCHER."
         ],
         "allowed_kb_count": 4,
         "sources": {
@@ -832,8 +830,6 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: Verificar consistencia entre specs fundacionales resolubles y toolchain visible del repo. Consolidar hallazgos normativos y operativos. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.",
-          "4. STATE: S-END -> ACT: Resumen: criterio emitido, hallazgos normativos, riesgos abiertos y siguientes pasos. -> Trans: [terminal].",
           "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
         ],
         "allowed_kb_count": 7,
@@ -900,8 +896,9 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "5. STATE: S-VALIDATE → ACT: CM-AGENT-VALIDATOR: Checklist conformidad agent-spec-md v8.1.0: segregacion(behavior/interface/state/security/wiring aislados), co-induccion(nodos terminales verifican), URNs(formato valido, resolubles), token_economy(lazy load, inyeccion asincrona), completitud(5 componentes presentes), FSM(determinismo, alcanzabilidad, S-DISPATCHER+S-END minimo). Reporte PASS|FAIL con correcciones. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-OPERATE. IF cambio → S-DISPATCHER.",
-          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}"
+          "5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok -> S-END. IF validacion_falla -> S-OPERATE. IF cambio -> S-DISPATCHER.",
+          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
+          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente. El baseline auditado soporta solo Skills degenerados."
         ],
         "allowed_kb_count": 7,
         "sources": {
@@ -969,8 +966,8 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "3. STATE: S-KORAFICATE → ACT: CM-KORAFICATOR: Aplicar Funtor K (md-spec §6). Pre-analisis(meat/fat/hechos,N_hechos) → Evaluar input(§6.4) → Segmentar(§6.5,contexto deslizante) → Telegrafizar fiel(§6.6,anti-patrones) → Ensamblar(§6.7) → Deduplicar SSOT(Fase 4b) → Normalizar condicional(§6.8) → Inyectar frontmatter(§6.9) → Verificacion mecanica(§6.10) → Verificacion fidelidad con reporte estructurado(§6.11,maximo 2 iteraciones). Entregar artefacto KORA/MD. → Trans: IF artefacto_generado → S-AUDIT. IF iterar_segmento → S-KORAFICATE. IF cambio → S-DISPATCHER.",
-          "5. STATE: S-AUDIT → ACT: CM-ARTIFACT-AUDITOR: Leer artefacto → Clasificar tipo(descriptivo→md-spec §9, prescriptivo→spec-md §8) → Ejecutar checklist completo → Calcular metricas(FS, CR si aplica) → Generar reporte PASS|FAIL con correcciones por item. → Trans: IF validacion_ok → S-END. IF validacion_falla → S-REPAIR. IF cambio → S-DISPATCHER.",
+          "3. STATE: S-KORAFICATE -> ACT: CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD conforme a md-spec y emitir reporte estructurado de fidelidad. -> Trans: IF artefacto_generado -> S-AUDIT. IF iterar_segmento -> S-KORAFICATE. IF cambio -> S-DISPATCHER.",
+          "5. STATE: S-AUDIT -> ACT: CM-ARTIFACT-AUDITOR: verificar conformidad, trazabilidad y fidelidad del artefacto y emitir reporte PASS|FAIL con metricas. -> Trans: IF validacion_ok -> S-END. IF validacion_falla -> S-REPAIR. IF cambio -> S-DISPATCHER.",
           "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
         ],
         "allowed_kb_count": 3,
@@ -1035,9 +1032,8 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "2. STATE: S-SALUD → ACT: CM-HEALTH-INSPECTOR: Ejecutar kora health(broken URNs), kora validate(agentes), kora stats(metricas), git status(repo). Consolidar reporte con severidad (ERROR|WARNING|OK). → Trans: IF error_critico → S-CIRUGIA. IF todo_ok → S-DISPATCHER. IF requiere_auditoria_profunda → S-AUDITORIA. IF cambio → S-DISPATCHER.",
-          "3. STATE: S-CATALOGO → ACT: CM-CATALOG-STEWARD: Ejecutar kora index(reconstruir catalogo), detectar URNs rotas(kora health), resolver URNs(kora resolve). Reporte: entradas nuevas, actualizadas, eliminadas, rotas. → Trans: IF broken_refs → S-CIRUGIA. IF catalogo_sincronizado → S-DISPATCHER. IF cambio → S-DISPATCHER.",
-          "5. STATE: S-AUDITORIA → ACT: CM-ESTRUCTURA-AUDITOR: Escanear estructura monorepo. Verificar: directorios esperados existen, convenciones naming, archivos huerfanos, workspaces incompletos, frontmatter valido. Reporte con hallazgos. → Trans: IF hallazgos_criticos → S-CIRUGIA. IF hallazgos_menores → reporte + S-DISPATCHER. IF limpio → S-DISPATCHER. IF cambio → S-DISPATCHER."
+          "2. STATE: S-SALUD -> ACT: CM-HEALTH-INSPECTOR: consolidar estado actual del repo, metricas y severidad ERROR|WARNING|OK en un reporte. -> Trans: IF error_critico -> S-CIRUGIA. IF todo_ok -> S-DISPATCHER. IF requiere_auditoria_profunda -> S-AUDITORIA. IF cambio -> S-DISPATCHER.",
+          "5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos -> S-CIRUGIA. IF hallazgos_menores -> S-DISPATCHER. IF limpio -> S-DISPATCHER. IF cambio -> S-DISPATCHER."
         ],
         "allowed_kb_count": 4,
         "sources": {

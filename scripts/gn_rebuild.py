@@ -6,6 +6,7 @@ import csv
 import hashlib
 import json
 import math
+import itertools
 import os
 import re
 import shutil
@@ -24,11 +25,25 @@ if str(SCRIPT_DIR) not in sys.path:
 
 from kora_lib.artifacts import dump_yaml_frontmatter_and_body, load_markdown_parts, load_yaml_safe
 from kora_lib.gn_validation import slugify_heading, validate_gn_tree
+from kora_lib.gn_semantics import (
+    BulletListBlock,
+    DocumentIR,
+    ParagraphBlock,
+    RecordSetIR,
+    ReferenceIR,
+    ReferenceListBlock,
+    SectionIR,
+    TableIR,
+    document_facts,
+    render_document,
+)
 
 
 DEFAULT_REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAP_PATH = DEFAULT_REPO_ROOT / "scripts" / "gn_rebuild_map.yml"
 DEFAULT_SOURCE_ROOT = Path("/Users/felixsanhueza/Developer/gorenuble/knowledge")
+DEFAULT_CONTROL_DRAFT_ROOT = Path("drafts/gn-control")
+DEFAULT_CONTROL_ROOT = Path("docs/reports/gn-control")
 TOP_LEVEL_KODA_TECHNICAL_KEYS = {
     "_manifest",
     "ID",
@@ -75,6 +90,8 @@ SEMANTIC_FIELD_LABELS = {
     "Columns": "Columnas",
     "Cond": "Condiciones",
     "Content": "Contenido",
+    "Definitions": "Definiciones",
+    "Definition": "Definición",
     "Ctx_Optional": "Contexto opcional",
     "Ctx_Required": "Contexto requerido",
     "Contexto": "Contexto",
@@ -92,6 +109,7 @@ SEMANTIC_FIELD_LABELS = {
     "Prohib": "Prohibiciones",
     "Purp": "Proposito",
     "Ref": "Referencias",
+    "Ref_Fuente": "Referencias",
     "Relacion": "Relacion",
     "Req": "Requisitos",
     "Res": "Resultados",
@@ -189,6 +207,24 @@ FRAGMENTLESS_TARGET_URNS = {
     "urn:gn:kb:ley-presupuestos-2026-normas-generales",
     "urn:gn:kb:ley-presupuestos-2026-partida-31",
 }
+ENGLISH_SCAFFOLD_LABELS = {
+    "Scope": "Alcance",
+    "Summary": "Resumen",
+    "Sources": "Fuentes",
+    "Source": "Fuente",
+    "Content": "Contenido",
+    "References": "Referencias",
+    "Question": "Pregunta",
+}
+CONTROL_PUBLICATION_CLASS = "control"
+KNOWLEDGE_PUBLICATION_CLASS = "knowledge"
+SOURCE_TEXT_REFERENCE_ALIASES = (
+    (
+        re.compile(r"ley org[áa]nica constitucional.*gobierno y administraci[oó]n regional|locgar|ley\s*n[°º]?\s*19\.175", re.IGNORECASE),
+        "urn:gn:kb:loc-gore",
+        "LOC GORE",
+    ),
+)
 
 
 def sha256_file(path):
@@ -323,7 +359,30 @@ def build_urn_alias_maps(map_doc):
     return alias_map, external_labels
 
 
-def normalize_body_urns(body, urn_alias_map, external_labels):
+def build_urn_title_map(map_doc, knowledge_root):
+    title_map = {}
+    for entry in map_doc.get("entries", []):
+        target_urn = entry.get("target_urn")
+        if not target_urn:
+            continue
+        current_meta = resolve_current_target_metadata(knowledge_root, entry["target_path"])
+        title_map[target_urn] = entry.get("target_title") or current_meta["title"]
+    title_map.update(
+        {
+            "urn:gn:kb:loc-gore": "LOC GORE",
+            "urn:mgmt:kb:estructura-estado-chile": "Estructura del Estado de Chile",
+        }
+    )
+    return title_map
+
+
+def english_to_spanish_scaffold(text):
+    return ENGLISH_SCAFFOLD_LABELS.get(text, text)
+
+
+def normalize_body_urns(body, urn_alias_map, external_labels, urn_title_map):
+    bare_urn_pattern = re.compile(r"(?<!\()urn:[A-Za-z0-9:_\-\.#]+")
+
     def replace(match):
         token = match.group(0)
         suffix = ""
@@ -336,12 +395,66 @@ def normalize_body_urns(body, urn_alias_map, external_labels):
             normalized = urn_alias_map[base]
             if fragment and normalized not in FRAGMENTLESS_TARGET_URNS:
                 normalized = f"{normalized}#{fragment}"
-            return normalized + suffix
+            label = urn_title_map.get(urn_alias_map[base], urn_title_map.get(normalized, normalized))
+            return f"[{label}]({normalized})" + suffix
         if base in external_labels:
             return external_labels[base] + suffix
         return token + suffix
 
-    return URN_TOKEN_PATTERN.sub(replace, body)
+    return bare_urn_pattern.sub(replace, body)
+
+
+def target_root_for_entry(roots, entry):
+    publication_class = entry.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS)
+    if publication_class == CONTROL_PUBLICATION_CLASS:
+        return roots["control_draft_root"]
+    return roots["draft_root"]
+
+
+def publication_output_root(roots, entry):
+    publication_class = entry.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS)
+    if publication_class == CONTROL_PUBLICATION_CLASS:
+        return roots["control_root"]
+    return roots["knowledge_root"]
+
+
+def entry_expected_meta(entry):
+    return {
+        "target_urn": entry.get("target_urn"),
+        "document_family": entry.get("document_family", "generic"),
+        "publication_class": entry.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+    }
+
+
+def looks_like_local_path(value):
+    text = str(value).strip()
+    return bool(re.search(r"(^|[\s`])(staging/|domains/|source/|sources/|build/|drafts/|knowledge/|\.\./)", text))
+
+
+def source_text_to_reference(value, urn_alias_map, external_labels, urn_title_map):
+    if value is None:
+        return None
+    text = normalize_scalar(value).strip()
+    if not text or looks_like_local_path(text):
+        return None
+    if text.startswith("https://"):
+        label = re.sub(r"^https://", "", text).strip("/")
+        return ReferenceIR(kind="external", label=label or text, target=text)
+    urn_match = URN_TOKEN_PATTERN.search(text)
+    if urn_match:
+        token = urn_match.group(0)
+        base, fragment = token.split("#", 1) if "#" in token else (token, None)
+        if base in urn_alias_map:
+            normalized = urn_alias_map[base]
+            if fragment and normalized not in FRAGMENTLESS_TARGET_URNS:
+                normalized = f"{normalized}#{fragment}"
+            return ReferenceIR(kind="kora", label=urn_title_map.get(urn_alias_map[base], urn_title_map.get(normalized, normalized)), target=normalized)
+        if base in external_labels:
+            return None
+    for pattern, urn, label in SOURCE_TEXT_REFERENCE_ALIASES:
+        if pattern.search(text):
+            return ReferenceIR(kind="kora", label=label, target=urn)
+    return None
 
 
 def normalize_editorial_phrasing(body):
@@ -1000,18 +1113,18 @@ def count_nested_items(node):
 
 
 def render_omega_body(title, item, data):
-    lines = [f"# {title}", "", "## Scope", item["scope_statement"], "", "## Resumen"]
+    lines = [f"# {title}", "", "## Alcance", item["scope_statement"], "", "## Resumen"]
     meta = data.get("_meta", {})
     if meta:
         if meta.get("type"):
             lines.append(f"- Tipo: {meta['type']}")
         if meta.get("schema"):
-            lines.append(f"- Schema: `{meta['schema']}`")
+            lines.append(f"- Esquema: {meta['schema']}")
         based_on = meta.get("based_on", [])
         if based_on:
             lines.append(f"- Basado en: {len(based_on)} artefactos")
     if data.get("omega_objects"):
-        lines.append(f"- Omega objects: {len(data['omega_objects'])}")
+        lines.append(f"- Objetos Ω: {len(data['omega_objects'])}")
 
     for obj in data.get("omega_objects", []):
         if not isinstance(obj, dict):
@@ -1057,7 +1170,549 @@ def render_omega_body(title, item, data):
                     else:
                         lines.append(f"  - `{subkey}` {normalize_scalar(subvalue)}")
 
-    return "\n".join(lines).strip() + "\n"
+    body = "\n".join(lines)
+    body = body.replace("### Id", "### Identificador")
+    body = body.replace("### Type", "### Tipo")
+    body = body.replace("### Schema", "### Esquema")
+    body = body.replace("## Omega objects", "## Objetos Ω")
+    body = body.replace("## Omega processes", "## Procesos Ω")
+    body = body.replace("## Omega coalgebra", "## Coalgebra Ω")
+    return body.strip() + "\n"
+
+
+def unwrap_single_semantic_root(data):
+    if isinstance(data, dict):
+        keys = [key for key in data.keys() if key != "_manifest"]
+        if len(keys) == 1 and isinstance(data[keys[0]], dict):
+            return data[keys[0]]
+    return data
+
+
+def table_ir_from_columns_rows(title, node):
+    raw_headers = node.get("Columns") if "Columns" in node else node.get("Headers", [])
+    headers = [normalize_scalar(item) for item in raw_headers]
+    rows = []
+    for row in node.get("Rows", []):
+        if not isinstance(row, list):
+            continue
+        rows.append([normalize_scalar(item) for item in row])
+    return TableIR(title=english_to_spanish_scaffold(title), headers=headers, rows=rows)
+
+
+def table_ir_from_dict_list(title, items):
+    headers = [normalize_scalar(header) for header in dict_list_headers(items)]
+    rows = []
+    for item in items:
+        rows.append([normalize_scalar(item.get(header, "")) for header in headers])
+    return TableIR(title=english_to_spanish_scaffold(title), headers=headers, rows=rows)
+
+
+def scalar_reference_list(title, value, urn_alias_map, external_labels, urn_title_map):
+    candidates = list(iter_reference_candidates(value))
+    refs = []
+    for candidate in candidates:
+        ref = source_text_to_reference(candidate, urn_alias_map, external_labels, urn_title_map)
+        if ref:
+            refs.append(ref)
+    if not refs:
+        return None
+    return ReferenceListBlock(title=english_to_spanish_scaffold(title), items=refs)
+
+
+def iter_reference_candidates(value):
+    if isinstance(value, dict):
+        for child in value.values():
+            yield from iter_reference_candidates(child)
+        return
+    if isinstance(value, list):
+        for child in value:
+            yield from iter_reference_candidates(child)
+        return
+    if value is not None:
+        yield value
+
+
+def generic_blocks_from_mapping(mapping, urn_alias_map, external_labels, urn_title_map):
+    blocks = []
+    for key, value in mapping.items():
+        if key in KODA_BODY_EXCLUDED_KEYS:
+            continue
+        label = english_to_spanish_scaffold(field_label(key))
+        if key in {"Src", "Ref", "Ctx_Required", "Ctx_Optional", "Source", "Ref_Fuente"} or label in {"Fuentes", "Referencias", "Contexto requerido", "Contexto opcional", "Fuente"}:
+            ref_block = scalar_reference_list(label, value, urn_alias_map, external_labels, urn_title_map)
+            if ref_block:
+                blocks.append(ref_block)
+            continue
+        if key in {"Content", "Contenido"} and isinstance(value, str):
+            blocks.append(ParagraphBlock(normalize_scalar(value)))
+            continue
+        if is_columns_rows_table(value) or is_headers_rows_table(value):
+            blocks.append(table_ir_from_columns_rows(label, value))
+            continue
+        if isinstance(value, list) and is_table_candidate(value):
+            if label in {"Fuentes", "Referencias"}:
+                ref_block = scalar_reference_list(label, value, urn_alias_map, external_labels, urn_title_map)
+                if ref_block:
+                    blocks.append(ref_block)
+                continue
+            blocks.append(table_ir_from_dict_list(label, value))
+            continue
+        if isinstance(value, list) and all(not isinstance(item, (dict, list)) for item in value):
+            blocks.append(BulletListBlock(title=label, items=[normalize_scalar(item) for item in value]))
+            continue
+        if isinstance(value, dict):
+            section = SectionIR(title=label, blocks=generic_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map))
+            if section.blocks:
+                blocks.append(section)
+            continue
+        if isinstance(value, list):
+            child_section = SectionIR(title=label)
+            for index, item in enumerate(value, start=1):
+                if isinstance(item, dict):
+                    child_blocks = generic_blocks_from_mapping(item, urn_alias_map, external_labels, urn_title_map)
+                    child_title = item.get("titulo") or item.get("Title") or item.get("Titulo") or item.get("nombre") or f"Elemento {index}"
+                    child_section.blocks.append(SectionIR(title=english_to_spanish_scaffold(headingify(str(child_title))), blocks=child_blocks))
+                else:
+                    child_section.blocks.append(BulletListBlock(items=[normalize_scalar(item)]))
+            if child_section.blocks:
+                blocks.append(child_section)
+            continue
+        blocks.append(SectionIR(title=label, blocks=[ParagraphBlock(normalize_scalar(value))]))
+    return blocks
+
+
+def build_generic_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map):
+    data = unwrap_single_semantic_root(primary_projection["data"])
+    sections = []
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key in KODA_BODY_EXCLUDED_KEYS:
+                continue
+            section_title = english_to_spanish_scaffold(field_label(key))
+            if isinstance(value, dict):
+                blocks = generic_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map)
+            else:
+                blocks = generic_blocks_from_mapping({key: value}, urn_alias_map, external_labels, urn_title_map)
+                if len(blocks) == 1 and isinstance(blocks[0], SectionIR) and blocks[0].title == section_title:
+                    sections.append(blocks[0])
+                    continue
+            sections.append(SectionIR(title=section_title, blocks=blocks))
+    else:
+        sections.append(SectionIR(title="Contenido", blocks=[ParagraphBlock(normalize_scalar(data))]))
+    return DocumentIR(
+        title=title,
+        family=item.get("document_family", "generic"),
+        publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+        sections=[section for section in sections if section.blocks],
+    )
+
+
+def make_normative_item_section(item_name, node, urn_alias_map, external_labels, urn_title_map):
+    title = headingify(item_name.replace("_", " "))
+    if isinstance(node, dict) and node.get("Asunto"):
+        title = f"{title} - {normalize_scalar(node['Asunto'])}"
+    section = SectionIR(title=title)
+    if not isinstance(node, dict):
+        section.blocks.append(ParagraphBlock(normalize_scalar(node)))
+        return section
+
+    if node.get("Asunto"):
+        section.blocks.append(ParagraphBlock(normalize_scalar(node["Asunto"])))
+    if node.get("Purp"):
+        section.blocks.append(ParagraphBlock(normalize_scalar(node["Purp"])))
+    if node.get("Unidad_Monetaria"):
+        section.blocks.append(BulletListBlock(title="Datos clave", items=[f"Unidad monetaria: {normalize_scalar(node['Unidad_Monetaria'])}"]))
+
+    for key, value in node.items():
+        if key in {"ID", "Asunto", "Purp", "Src", "Unidad_Monetaria"}:
+            continue
+        label = english_to_spanish_scaffold(field_label(key))
+        if is_columns_rows_table(value) or is_headers_rows_table(value):
+            section.blocks.append(table_ir_from_columns_rows(label, value))
+        elif isinstance(value, dict) and "Content" in value and isinstance(value["Content"], str):
+            child_blocks = [ParagraphBlock(normalize_scalar(value["Content"]))]
+            refs = scalar_reference_list("Referencias", value.get("Src"), urn_alias_map, external_labels, urn_title_map)
+            if refs:
+                child_blocks.append(refs)
+            section.blocks.append(SectionIR(title=label, blocks=child_blocks))
+        elif isinstance(value, str) and key == "Content":
+            section.blocks.append(ParagraphBlock(normalize_scalar(value)))
+        elif isinstance(value, list) and is_table_candidate(value):
+            section.blocks.append(table_ir_from_dict_list(label, value))
+        elif isinstance(value, list) and all(not isinstance(item, (dict, list)) for item in value):
+            section.blocks.append(BulletListBlock(title=label, items=[normalize_scalar(item) for item in value]))
+        elif isinstance(value, dict):
+            child = SectionIR(title=label, blocks=generic_blocks_from_mapping(value, urn_alias_map, external_labels, urn_title_map))
+            if child.blocks:
+                section.blocks.append(child)
+        else:
+            section.blocks.append(SectionIR(title=label, blocks=[ParagraphBlock(normalize_scalar(value))]))
+
+    refs = scalar_reference_list("Referencias", node.get("Src"), urn_alias_map, external_labels, urn_title_map)
+    if refs:
+        section.blocks.append(refs)
+    return section
+
+
+def build_normative_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map):
+    data = unwrap_single_semantic_root(primary_projection["data"])
+    document = DocumentIR(
+        title=title,
+        family="normative",
+        publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+    )
+    if not isinstance(data, dict):
+        document.sections.append(SectionIR(title="Contenido", blocks=[ParagraphBlock(normalize_scalar(data))]))
+        return document
+
+    summary = SectionIR(title="Resumen")
+    if data.get("Purp"):
+        summary.blocks.append(ParagraphBlock(normalize_scalar(data["Purp"])))
+    summary_items = []
+    if data.get("Unidad_Monetaria"):
+        summary_items.append(f"Unidad monetaria: {normalize_scalar(data['Unidad_Monetaria'])}")
+    if summary_items:
+        summary.blocks.append(BulletListBlock(title="Datos clave", items=summary_items))
+    if isinstance(data.get("Ley"), dict):
+        ley = data["Ley"]
+        ley_items = []
+        for key in ("Numero", "Titulo"):
+            if ley.get(key):
+                ley_items.append(f"{english_to_spanish_scaffold(field_label(key))}: {normalize_scalar(ley[key])}")
+        if ley_items:
+            summary.blocks.append(BulletListBlock(title="Ley", items=ley_items))
+    if isinstance(data.get("Definiciones_Reutilizables"), list) and data["Definiciones_Reutilizables"]:
+        rows = []
+        for item_value in data["Definiciones_Reutilizables"]:
+            if isinstance(item_value, dict):
+                rows.append([normalize_scalar(item_value.get("ID", "")), normalize_scalar(item_value.get("Def", ""))])
+        if rows:
+            summary.blocks.append(TableIR(title="Definiciones reutilizables", headers=["ID", "Definición"], rows=rows))
+    for key in [key for key in data.keys() if key.startswith("Resumen")]:
+        value = data[key]
+        if isinstance(value, dict):
+            for child_key, child_value in value.items():
+                if child_key == "ID":
+                    continue
+                label = english_to_spanish_scaffold(field_label(child_key))
+                if is_columns_rows_table(child_value) or is_headers_rows_table(child_value):
+                    summary.blocks.append(table_ir_from_columns_rows(label, child_value))
+                elif isinstance(child_value, str):
+                    summary.blocks.append(SectionIR(title=label, blocks=[ParagraphBlock(normalize_scalar(child_value))]))
+                else:
+                    child_section = SectionIR(title=label, blocks=generic_blocks_from_mapping({child_key: child_value}, urn_alias_map, external_labels, urn_title_map))
+                    if child_section.blocks:
+                        summary.blocks.append(child_section)
+    if summary.blocks:
+        document.sections.append(summary)
+
+    for container_name in ("Glosas", "Articulos", "Programas", "Capitulos"):
+        container = data.get(container_name)
+        if isinstance(container, dict):
+            for item_name, item_value in container.items():
+                document.sections.append(make_normative_item_section(item_name, item_value, urn_alias_map, external_labels, urn_title_map))
+
+    for key, value in data.items():
+        if key in {"ID", "Purp", "Unidad_Monetaria", "Ley", "Definiciones_Reutilizables", "Preambulo", "Glosas", "Articulos", "Programas", "Capitulos"} or key.startswith("Resumen"):
+            continue
+        section = make_normative_item_section(key, value, urn_alias_map, external_labels, urn_title_map)
+        if section.blocks:
+            document.sections.append(section)
+
+    if isinstance(data.get("Preambulo"), dict) and data["Preambulo"].get("Contenido"):
+        document.sections.insert(
+            1 if document.sections else 0,
+            SectionIR(title="Preámbulo", blocks=[ParagraphBlock(normalize_scalar(data["Preambulo"]["Contenido"]))]),
+        )
+    return document
+
+
+def normalize_term_name(name):
+    return re.sub(r"\s+", " ", str(name).strip())
+
+
+def normalized_definition_signature(text):
+    tokens = re.findall(r"[a-záéíóúñ0-9]+", str(text).casefold())
+    return {token for token in tokens if len(token) > 2}
+
+
+def definitions_are_equivalent(left, right):
+    left_tokens = normalized_definition_signature(left)
+    right_tokens = normalized_definition_signature(right)
+    if not left_tokens or not right_tokens:
+        return normalize_scalar(left).strip().casefold() == normalize_scalar(right).strip().casefold()
+    return len(left_tokens & right_tokens) / max(len(left_tokens | right_tokens), 1) >= 0.5
+
+
+def pick_preferred_term_name(names):
+    unique = sorted(dict.fromkeys(names), key=lambda item: (0 if re.fullmatch(r"[A-Z0-9%/\-]+", item) else 1, len(item), item.casefold()))
+    return unique[0] if unique else ""
+
+
+def build_glossary_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map):
+    data = unwrap_single_semantic_root(primary_projection["data"])
+    terms = data.get("terminos") if isinstance(data, dict) else None
+    if not isinstance(terms, list):
+        return build_generic_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
+
+    defs_by_name = {}
+    for term in terms:
+        if not isinstance(term, dict):
+            continue
+        name = normalize_term_name(term.get("nombre", ""))
+        definition = normalize_scalar(term.get("def", "")).strip()
+        if not name:
+            continue
+        defs_by_name.setdefault(name.casefold(), {"display": name, "definitions": []})
+        defs_by_name[name.casefold()]["definitions"].append(definition)
+
+    conflicts = 0
+    groups_by_def = {}
+    for payload in defs_by_name.values():
+        definitions = [item for item in payload["definitions"] if item]
+        if not definitions:
+            continue
+        canonical_definition = max(definitions, key=len)
+        if any(not definitions_are_equivalent(canonical_definition, other) for other in definitions):
+            conflicts += 1
+        groups_by_def.setdefault(canonical_definition, []).append(payload["display"])
+
+    rows = []
+    for definition, names in groups_by_def.items():
+        preferred = pick_preferred_term_name(names)
+        aliases = [name for name in dict.fromkeys(names) if name != preferred]
+        row = {
+            "término": preferred,
+            "definición": definition,
+            "aliases": ", ".join(aliases),
+        }
+        rows.append(row)
+    rows.sort(key=lambda row: (row["término"][:1].casefold(), row["término"].casefold()))
+
+    document = DocumentIR(
+        title=title,
+        family="glossary",
+        publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+        metadata={"glossary_conflicts": conflicts},
+    )
+    summary = SectionIR(
+        title="Resumen",
+        blocks=[
+            BulletListBlock(
+                title="Estadísticas",
+                items=[
+                    f"Entradas fuente: {len(terms)}",
+                    f"Entradas canónicas: {len(rows)}",
+                    f"Conflictos léxicos: {conflicts}",
+                ],
+            )
+        ],
+    )
+    document.sections.append(summary)
+
+    for letter, bucket_rows in itertools.groupby(rows, key=lambda row: re.sub(r"[^A-Z0-9]", "", row["término"].upper()[:1]) or "#"):
+        materialized_rows = list(bucket_rows)
+        headers = ["término", "definición", "aliases"]
+        section_rows = [[row.get(header, "") for header in headers] for row in materialized_rows]
+        document.sections.append(SectionIR(title=f"Términos {letter}", blocks=[TableIR(headers=headers, rows=section_rows)]))
+    return document
+
+
+def inventory_subsections(key, node):
+    title = normalize_scalar(node.get("Titulo") or node.get("Title") or headingify(key))
+    section = SectionIR(title=title)
+    if node.get("Def"):
+        section.blocks.append(ParagraphBlock(normalize_scalar(node["Def"])))
+    if node.get("Purp"):
+        section.blocks.append(ParagraphBlock(normalize_scalar(node["Purp"])))
+    artefactos = node.get("Artefactos")
+    if isinstance(artefactos, list) and is_table_candidate(artefactos):
+        section.blocks.append(table_ir_from_dict_list("Artefactos", artefactos))
+    for child_key, child_value in node.items():
+        if child_key in {"ID", "Titulo", "Title", "Def", "Purp", "Artefactos"}:
+            continue
+        if isinstance(child_value, dict):
+            child_section = inventory_subsections(child_key, child_value)
+            if child_section.blocks:
+                section.blocks.append(child_section)
+    return section
+
+
+def build_inventory_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map):
+    data = primary_projection["data"]
+    document = DocumentIR(
+        title=title,
+        family="inventory",
+        publication_class=item.get("publication_class", CONTROL_PUBLICATION_CLASS),
+    )
+    taxonomy = data.get("Taxonomia_Conocimiento", {}) if isinstance(data, dict) else {}
+    if isinstance(taxonomy, dict):
+        taxonomy_section = SectionIR(title="Taxonomía")
+        if taxonomy.get("Purp"):
+            taxonomy_section.blocks.append(ParagraphBlock(normalize_scalar(taxonomy["Purp"])))
+        for key, value in taxonomy.items():
+            if key in {"ID", "Purp"} or not isinstance(value, dict):
+                continue
+            area_items = [normalize_scalar(item) for item in value.get("Areas", []) if not isinstance(item, (dict, list))]
+            child = SectionIR(title=normalize_scalar(value.get("Def") or headingify(key)))
+            if area_items:
+                child.blocks.append(BulletListBlock(title="Áreas", items=area_items))
+            taxonomy_section.blocks.append(child)
+        if taxonomy_section.blocks:
+            document.sections.append(taxonomy_section)
+
+    index = data.get("Indice_Artefactos", {}) if isinstance(data, dict) else {}
+    if isinstance(index, dict):
+        index_section = SectionIR(title="Índice de artefactos")
+        for key, value in index.items():
+            if key == "ID" or not isinstance(value, dict):
+                continue
+            area_section = inventory_subsections(key, value)
+            if area_section.blocks:
+                index_section.blocks.append(area_section)
+        if index_section.blocks:
+            document.sections.append(index_section)
+    return document
+
+
+def add_organigram_unit(unit_name, node, top_section, parent_title, urn_alias_map, external_labels, urn_title_map):
+    title = headingify(unit_name.replace("_", " "))
+    section = SectionIR(title=title)
+    if parent_title:
+        section.blocks.append(ReferenceListBlock(title="Depende de", items=[ReferenceIR(kind="internal", label=parent_title, target=parent_title)]))
+    if not isinstance(node, dict):
+        section.blocks.append(ParagraphBlock(normalize_scalar(node)))
+        top_section.blocks.append(section)
+        return
+
+    if node.get("Def"):
+        section.blocks.append(SectionIR(title="Definición", blocks=[ParagraphBlock(normalize_scalar(node["Def"]))]))
+    if node.get("Purp"):
+        section.blocks.append(SectionIR(title="Propósito", blocks=[ParagraphBlock(normalize_scalar(node["Purp"]))]))
+    if node.get("Mssn"):
+        section.blocks.append(SectionIR(title="Misión", blocks=[ParagraphBlock(normalize_scalar(node["Mssn"]))]))
+    for key in ("Act", "Obj", "Req", "Ctx", "Res", "Relacion", "Mech"):
+        value = node.get(key)
+        if isinstance(value, list) and value:
+            section.blocks.append(BulletListBlock(title=english_to_spanish_scaffold(field_label(key)), items=[normalize_scalar(item) for item in value]))
+        elif isinstance(value, str):
+            section.blocks.append(SectionIR(title=english_to_spanish_scaffold(field_label(key)), blocks=[ParagraphBlock(normalize_scalar(value))]))
+
+    refs = scalar_reference_list("Referencias", node.get("Src"), urn_alias_map, external_labels, urn_title_map)
+    if refs:
+        section.blocks.append(refs)
+
+    dependent_titles = []
+    for relation_key in ("Unidades_Dependientes", "Componentes"):
+        relation_value = node.get(relation_key)
+        if isinstance(relation_value, dict):
+            for child_name, child_node in relation_value.items():
+                dependent_titles.append(headingify(child_name.replace("_", " ")))
+                add_organigram_unit(child_name, child_node, top_section, title, urn_alias_map, external_labels, urn_title_map)
+    if dependent_titles:
+        section.blocks.append(
+            ReferenceListBlock(
+                title="Unidades dependientes",
+                items=[ReferenceIR(kind="internal", label=child_title, target=child_title) for child_title in dependent_titles],
+            )
+        )
+    top_section.blocks.append(section)
+
+
+def build_organigram_document_ir(title, item, primary_projection, projections, urn_alias_map, external_labels, urn_title_map):
+    data = unwrap_single_semantic_root(primary_projection["data"])
+    document = DocumentIR(
+        title=title,
+        family="organigram",
+        publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+    )
+    summary = SectionIR(title="Resumen")
+    if isinstance(data, dict):
+        if data.get("Purp"):
+            summary.blocks.append(ParagraphBlock(normalize_scalar(data["Purp"])))
+        if data.get("Ctx"):
+            summary.blocks.append(BulletListBlock(title="Contexto", items=[normalize_scalar(item) for item in (data["Ctx"] if isinstance(data["Ctx"], list) else [data["Ctx"]])]))
+    if summary.blocks:
+        document.sections.append(summary)
+
+    if not isinstance(data, dict):
+        return document
+
+    for top_key in ("Maxima_Autoridad", "Unidades_y_Organos", "Divisiones"):
+        top_value = data.get(top_key)
+        if not isinstance(top_value, dict):
+            continue
+        top_section = SectionIR(title=headingify(top_key.replace("_", " ")))
+        for child_name, child_value in top_value.items():
+            add_organigram_unit(child_name, child_value, top_section, None, urn_alias_map, external_labels, urn_title_map)
+        if top_section.blocks:
+            document.sections.append(top_section)
+
+    secondary_sources = [path for path in projections.keys() if path != next(iter(projections.keys()))]
+    ref_items = []
+    for source_path in secondary_sources:
+        ref = source_text_to_reference(source_path, urn_alias_map, external_labels, urn_title_map)
+        if ref:
+            ref_items.append(ref)
+    if ref_items:
+        document.sections[0].blocks.append(ReferenceListBlock(title="Referencias", items=ref_items))
+    return document
+
+
+def build_cq_catalog_document_ir(title, item, primary_projection):
+    data = primary_projection["data"]
+    stats = data.get("_manifest", {}).get("statistics", {}) if isinstance(data, dict) else {}
+    document = DocumentIR(
+        title=title,
+        family="cq_catalog",
+        publication_class=item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
+    )
+    summary_items = []
+    if "total_cqs" in stats:
+        summary_items.append(f"Total de CQs: {stats['total_cqs']}")
+    if "domains" in stats:
+        summary_items.append(f"Dominios: {stats['domains']}")
+    if isinstance(stats.get("types"), dict):
+        for key, value in stats["types"].items():
+            summary_items.append(f"{headingify(str(key))}: {value}")
+    if summary_items:
+        document.sections.append(SectionIR(title="Resumen", blocks=[BulletListBlock(title="Estadísticas", items=summary_items)]))
+
+    if not isinstance(data, dict):
+        return document
+
+    for domain_key, domain in data.items():
+        if not str(domain_key).startswith("Dom_") or not isinstance(domain, dict):
+            continue
+        section = SectionIR(title=headingify(domain_key.replace("Dom_", "").replace("_", " ")))
+        for bucket in ("Existenciales", "Relacionales", "Temporales", "Agregacion"):
+            values = domain.get(bucket, [])
+            if not isinstance(values, list) or not values:
+                continue
+            rows = []
+            for value in values:
+                if isinstance(value, dict):
+                    rows.append([normalize_scalar(value.get("ID", "")), normalize_scalar(value.get("Q", ""))])
+            section.blocks.append(TableIR(title=english_to_spanish_scaffold(field_label(bucket)), headers=["ID", "Pregunta"], rows=rows))
+        if section.blocks:
+            document.sections.append(section)
+    return document
+
+
+def build_document_ir(title, item, projections, urn_alias_map, external_labels, urn_title_map):
+    document_family = item.get("document_family", "generic")
+    primary_projection = next(iter(projections.values()))
+    if document_family == "normative":
+        return build_normative_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
+    if document_family == "glossary":
+        return build_glossary_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
+    if document_family == "inventory":
+        return build_inventory_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
+    if document_family == "organigram":
+        return build_organigram_document_ir(title, item, primary_projection, projections, urn_alias_map, external_labels, urn_title_map)
+    if document_family == "cq_catalog":
+        return build_cq_catalog_document_ir(title, item, primary_projection)
+    return build_generic_document_ir(title, item, primary_projection, urn_alias_map, external_labels, urn_title_map)
 
 
 def load_rebuild_map(map_path):
@@ -1067,6 +1722,8 @@ def load_rebuild_map(map_path):
     if not isinstance(data, dict):
         raise SystemExit("Mapa GN invalido")
     defaults = deepcopy(data.get("defaults", {}))
+    defaults.setdefault("document_family", "generic")
+    defaults.setdefault("publication_class", KNOWLEDGE_PUBLICATION_CLASS)
     normalized_entries = []
     for raw_entry in data.get("entries", []):
         entry = deepcopy(defaults)
@@ -1089,6 +1746,8 @@ def get_roots(repo_root, config):
         "source_mirror_root": repo_root / config.get("source_mirror_root", "source/gn"),
         "draft_root": repo_root / config.get("draft_root", "drafts/gn"),
         "knowledge_root": repo_root / config.get("knowledge_root", "knowledge/gn"),
+        "control_draft_root": repo_root / config.get("control_draft_root", str(DEFAULT_CONTROL_DRAFT_ROOT)),
+        "control_root": repo_root / config.get("control_root", str(DEFAULT_CONTROL_ROOT)),
         "build_root": repo_root / "build" / "gn-rebuild",
     }
 
@@ -1239,7 +1898,7 @@ def resolve_current_target_metadata(knowledge_root, target_rel_path):
     }
 
 
-def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, urn_alias_map, external_labels):
+def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, urn_alias_map, external_labels, urn_title_map):
     transform_class = item["transform_class"]
     title = item.get("target_title") or current_meta["title"]
     projections = {}
@@ -1250,21 +1909,28 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, 
             item.get("scope_statement"),
         )
 
-    if transform_class == "korafy_direct":
-        body = render_direct_body(title, next(iter(projections.values())))
-    elif transform_class == "korafy_koda_hybrid":
-        body = render_koda_hybrid_body(title, next(iter(projections.values())))
-    elif transform_class == "korafy_composite":
-        body = render_composite_body(title, item, projections)
-    elif transform_class == "derive_ttl_scope":
-        body = render_ttl_body(title, item, next(iter(projections.values())))
-    elif transform_class == "derive_csv_scope":
-        body = render_csv_body(title, item, next(iter(projections.values())))
+    document_family = item.get("document_family", "generic")
+    semantic_families = {"generic", "normative", "glossary", "inventory", "organigram", "cq_catalog"}
+    document = None
+    if document_family in semantic_families and transform_class != "index_only":
+        document = build_document_ir(title, item, projections, urn_alias_map, external_labels, urn_title_map)
+        body = render_document(document)
     elif transform_class == "index_only":
         body = render_index_body(title, item)
     else:
-        raise ValueError(f"transform_class no soportada: {transform_class}")
-    body = normalize_body_urns(body, urn_alias_map, external_labels)
+        if transform_class == "korafy_direct":
+            body = render_direct_body(title, next(iter(projections.values())))
+        elif transform_class == "korafy_koda_hybrid":
+            body = render_koda_hybrid_body(title, next(iter(projections.values())))
+        elif transform_class == "korafy_composite":
+            body = render_composite_body(title, item, projections)
+        elif transform_class == "derive_ttl_scope":
+            body = render_ttl_body(title, item, next(iter(projections.values())))
+        elif transform_class == "derive_csv_scope":
+            body = render_csv_body(title, item, next(iter(projections.values())))
+        else:
+            raise ValueError(f"transform_class no soportada: {transform_class}")
+    body = normalize_body_urns(body, urn_alias_map, external_labels, urn_title_map)
     body = normalize_editorial_phrasing(body)
 
     combined_facts = []
@@ -1273,11 +1939,17 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, 
     fat_count = 0
     semantic_source_len = 0
     for projection in projections.values():
-        combined_facts.extend(projection["facts"])
         skeleton_count += len(projection.get("skeleton", []))
         meat_count += projection.get("meat_count", 0)
         fat_count += projection.get("fat_count", 0)
         semantic_source_len += len("\n".join(projection["facts"]))
+
+    if document is not None:
+        combined_facts = document_facts(document)
+        semantic_source_len = len("\n".join(combined_facts))
+    else:
+        for projection in projections.values():
+            combined_facts.extend(projection["facts"])
 
     body_len = max(len(body), 1)
     source_len = max(semantic_source_len, 1)
@@ -1294,10 +1966,14 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, 
         "scope_statement": item.get("scope_statement"),
         "dependencies": item.get("dependencies", []),
         "expected_sections": item.get("expected_sections", []),
+        "document_family": document_family,
+        "publication_class": item.get("publication_class", KNOWLEDGE_PUBLICATION_CLASS),
         "skeleton_count": skeleton_count,
         "meat_count": meat_count,
         "fat_count": fat_count,
     }
+    if document is not None and document_family == "glossary":
+        gn_ext["glossary_conflicts"] = document.metadata.get("glossary_conflicts", 0)
     if cr < 1.5:
         gn_ext["cr_justification"] = "Fuente altamente estructurada o derivacion de alcance acotado."
 
@@ -1338,7 +2014,7 @@ def evidence_relpath_for(target_path):
     return f"{target_path.replace('/', '__')}.json"
 
 
-def validate_build_evidence(draft_root, evidence_root, expected_targets):
+def validate_build_evidence(knowledge_draft_root, control_draft_root, evidence_root, expected_targets):
     failures = []
     warnings = []
     banned_fact_prefixes = (
@@ -1356,6 +2032,7 @@ def validate_build_evidence(draft_root, evidence_root, expected_targets):
     )
 
     for rel_path, meta in sorted(expected_targets.items()):
+        draft_root = control_draft_root if meta.get("publication_class") == CONTROL_PUBLICATION_CLASS else knowledge_draft_root
         draft_path = draft_root / rel_path
         evidence_path = evidence_root / evidence_relpath_for(rel_path)
         if not evidence_path.exists():
@@ -1376,6 +2053,10 @@ def validate_build_evidence(draft_root, evidence_root, expected_targets):
 
         if evidence.get("catalog_state") != "draft_unindexed":
             failures.append(f"evidence catalog_state invalido en {evidence_path.name}")
+        if evidence.get("document_family") != meta.get("document_family"):
+            failures.append(f"evidence document_family inconsistente en {evidence_path.name}")
+        if evidence.get("publication_class") != meta.get("publication_class"):
+            failures.append(f"evidence publication_class inconsistente en {evidence_path.name}")
 
         for fact in evidence.get("preserved_facts", []):
             if isinstance(fact, str) and fact.startswith(banned_fact_prefixes):
@@ -1411,10 +2092,14 @@ def build(args):
     if args.clean and draft_root.exists():
         shutil.rmtree(draft_root)
     ensure_dir(draft_root)
+    if args.clean and roots["control_draft_root"].exists():
+        shutil.rmtree(roots["control_draft_root"])
+    ensure_dir(roots["control_draft_root"])
 
     evidence_root = roots["build_root"] / run_id / "evidence"
     ensure_dir(evidence_root)
     urn_alias_map, external_labels = build_urn_alias_maps(map_doc)
+    urn_title_map = build_urn_title_map(map_doc, roots["knowledge_root"])
 
     for item in map_doc.get("entries", []):
         current_meta = resolve_current_target_metadata(roots["knowledge_root"], item["target_path"])
@@ -1435,8 +2120,9 @@ def build(args):
             run_id,
             urn_alias_map,
             external_labels,
+            urn_title_map,
         )
-        target_path = draft_root / item["target_path"]
+        target_path = target_root_for_entry(roots, item) / item["target_path"]
         ensure_dir(target_path.parent)
         evidence_relpath = evidence_relpath_for(item["target_path"])
         gn_ext["evidence_path"] = f"build/gn-rebuild/{run_id}/evidence/{evidence_relpath}"
@@ -1457,9 +2143,13 @@ def build(args):
             "fat_count": gn_ext["fat_count"],
             "scope_statement": gn_ext.get("scope_statement"),
             "expected_sections": gn_ext.get("expected_sections", []),
+            "document_family": gn_ext.get("document_family"),
+            "publication_class": gn_ext.get("publication_class"),
             "preserved_facts": combined_facts,
             "non_equivalence_decisions": item.get("non_equivalence_decisions", []),
         }
+        if "glossary_conflicts" in gn_ext:
+            evidence_payload["glossary_conflicts"] = gn_ext["glossary_conflicts"]
         evidence_path = evidence_root / evidence_relpath
         evidence_path.write_text(json.dumps(evidence_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -1473,13 +2163,16 @@ def validate(args):
     lock_path = locate_lock(roots, args.run_id)
     lock = read_source_lock(lock_path)
 
-    expected_targets = {
-        entry["target_path"]: {"target_urn": entry.get("target_urn")}
-        for entry in map_doc.get("entries", [])
-    }
-    tree_result = validate_gn_tree(roots["draft_root"], expected_targets=expected_targets)
+    expected_targets = {entry["target_path"]: entry_expected_meta(entry) for entry in map_doc.get("entries", [])}
+    knowledge_targets = {path: meta for path, meta in expected_targets.items() if meta.get("publication_class") != CONTROL_PUBLICATION_CLASS}
+    control_targets = {path: meta for path, meta in expected_targets.items() if meta.get("publication_class") == CONTROL_PUBLICATION_CLASS}
+    tree_result = validate_gn_tree(roots["draft_root"], expected_targets=knowledge_targets)
+    if control_targets:
+        control_result = validate_gn_tree(roots["control_draft_root"], expected_targets=control_targets)
+        tree_result["failures"].extend(control_result["failures"])
+        tree_result["warnings"].extend(control_result["warnings"])
     evidence_root = roots["build_root"] / lock["run_id"] / "evidence"
-    evidence_result = validate_build_evidence(roots["draft_root"], evidence_root, expected_targets)
+    evidence_result = validate_build_evidence(roots["draft_root"], roots["control_draft_root"], evidence_root, expected_targets)
     tree_result["failures"].extend(evidence_result["failures"])
     tree_result["warnings"].extend(evidence_result["warnings"])
     allowed_urns = collect_tree_manifest_urns(repo_root / "knowledge")
@@ -1489,7 +2182,11 @@ def validate(args):
     for urn in collect_tree_manifest_urns(roots["knowledge_root"]):
         fragment_catalog.pop(urn, None)
     fragment_catalog.update(collect_tree_fragments(roots["draft_root"]))
+    if control_targets:
+        fragment_catalog.update(collect_tree_fragments(roots["control_draft_root"]))
     tree_result["failures"].extend(validate_body_urn_resolution(roots["draft_root"], allowed_urns, fragment_catalog))
+    if control_targets:
+        tree_result["failures"].extend(validate_body_urn_resolution(roots["control_draft_root"], allowed_urns, fragment_catalog))
 
     lock_paths = {item["path"] for item in lock.get("files", [])}
     mapped_paths = {source_path for entry in map_doc.get("entries", []) for source_path in entry.get("source_paths", [])}
@@ -1544,11 +2241,16 @@ def report(args):
     lock = read_source_lock(lock_path)
     run_id = lock["run_id"]
     diff = structural_diff(roots["knowledge_root"], roots["draft_root"])
+    control_diff = structural_diff(roots["control_root"], roots["control_draft_root"]) if roots["control_root"].exists() and roots["control_draft_root"].exists() else {"added": [], "removed": [], "changed": []}
     mapped_paths = {source_path for entry in map_doc.get("entries", []) for source_path in entry.get("source_paths", [])}
     lock_paths = {item["path"] for item in lock.get("files", [])}
     unused = sorted(path for path in lock_paths if path not in mapped_paths and path not in set(map_doc.get("exclusions", [])))
     pending_review = [entry["target_path"] for entry in map_doc.get("entries", []) if entry.get("review_gate") != "auto"]
-    missing_targets = [entry["target_path"] for entry in map_doc.get("entries", []) if not (roots["draft_root"] / entry["target_path"]).exists()]
+    missing_targets = []
+    for entry in map_doc.get("entries", []):
+        target_root = target_root_for_entry(roots, entry)
+        if not (target_root / entry["target_path"]).exists():
+            missing_targets.append(entry["target_path"])
     non_equivalence = {
         entry["target_path"]: entry.get("non_equivalence_decisions", [])
         for entry in map_doc.get("entries", [])
@@ -1569,6 +2271,11 @@ def report(args):
         f"- Added: {len(diff['added'])}",
         f"- Removed: {len(diff['removed'])}",
         f"- Changed: {len(diff['changed'])}",
+        "",
+        "## Control Diff",
+        f"- Added: {len(control_diff['added'])}",
+        f"- Removed: {len(control_diff['removed'])}",
+        f"- Changed: {len(control_diff['changed'])}",
         "",
         "## Review Gates",
     ]
@@ -1605,10 +2312,8 @@ def cutover(args):
     repo_root = Path(args.repo_root).resolve()
     map_doc = load_rebuild_map(Path(args.map_path).resolve())
     roots = get_roots(repo_root, map_doc.get("config", {}))
-    expected_targets = {
-        entry["target_path"]: {"target_urn": entry.get("target_urn")}
-        for entry in map_doc.get("entries", [])
-    }
+    expected_targets = {entry["target_path"]: entry_expected_meta(entry) for entry in map_doc.get("entries", [])}
+    knowledge_targets = {path: meta for path, meta in expected_targets.items() if meta.get("publication_class") != CONTROL_PUBLICATION_CLASS}
 
     validate(
         argparse.Namespace(
@@ -1627,6 +2332,11 @@ def cutover(args):
         shutil.rmtree(roots["knowledge_root"])
     shutil.copytree(roots["draft_root"], roots["knowledge_root"])
     rewrite_tree_status(roots["knowledge_root"], "published")
+    if roots["control_root"].exists():
+        shutil.rmtree(roots["control_root"])
+    if roots["control_draft_root"].exists():
+        shutil.copytree(roots["control_draft_root"], roots["control_root"])
+        rewrite_tree_status(roots["control_root"], "published")
 
     index_result = run_kora_command(repo_root, "index")
     if index_result.returncode != 0:
@@ -1634,7 +2344,7 @@ def cutover(args):
     health_result = run_kora_command(repo_root, "health", "--strict")
     if health_result.returncode != 0:
         raise SystemExit(health_result.stderr or health_result.stdout)
-    validate_promoted_knowledge_tree(roots["knowledge_root"], expected_targets)
+    validate_promoted_knowledge_tree(roots["knowledge_root"], knowledge_targets)
     print("cutover complete")
 
 

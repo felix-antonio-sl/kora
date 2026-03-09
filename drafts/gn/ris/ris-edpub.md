@@ -24,13 +24,15 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.95
+    cr: 1.57
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 2
     meat_count: 63
     fat_count: 0
@@ -38,56 +40,83 @@ extensions:
 ---
 
 # RIS Edificación Pública (SNI 2024)
-## Source
+
+## Fuente
+
 ### Contexto requerido
-- https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf
+- [sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf](https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf)
 
 ## RIS Edificacion Publica 2024
+
 ### Fuente URL
 https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Edificacion_publica_-_26-04-2024.pdf
+
 ### Prop Doc
 Establecer requisitos para proyectos de edificación pública que buscan ampliar capacidad y mejorar dependencias institucionales.
+
 ### Alcance
+
 #### Prop
 Ampliar capacidad y mejorar dependencias institucionales.
+
 #### Meta
 Optimizar cumplimiento de actividades organizacionales.
+
 #### Nota Dudas
 Aspectos no tratados se resuelven por Jefatura de la División de Evaluación Social de Inversiones.
+
 ### Orientaciones Sectoriales
+
 #### Arquitectura Sustentable
+
 #### Req Diseño
 Integrado (climatización, iluminación, sanitario, aguas lluvias, estructuras, redes, energías renovables, paisajismo).
+
 #### Prop
 Uso eficiente de energía, agua y otros recursos.
+
 #### Meta
 Minimizar impacto ambiental y dependencia de hidrocarburos.
+
 #### Accesibilidad
+
 #### Requisitos
 Proveer libre acceso y circulación para personas con capacidades diferentes.
+
 #### Normativa
 - Ley N°20.530, art. 13.
 - DS N° 47 de 1992 (Ordenanza General de Urbanismo y Construcciones - OGUC).
 - DS N° 50 de 2015 (MINVU).
+
 #### Competencia Analisis
+
 #### Nivel Regional Comunal
 Análisis por Secretarías Regionales Ministeriales de Desarrollo Social.
+
 #### Nivel Nacional
 Análisis conjunto con Nivel Central del MDSF.
+
 #### Clasificacion BIP
+
 #### Sector
 Multisectorial.
+
 #### Subsector
 Administración Multisector.
+
 #### Descriptor
 Edificación Pública.
+
 ### Postulacion Prefactibilidad Factibilidad
+
 #### Req Generales
 | ID | Enunciado | Detalle |
 | --- | --- | --- |
-| Req-1 | Req-1: Formulación del proyecto conforme a: | Metodologia-1: "Metodología de Edificación Pública"., Metodologia-2: "Metodología de Riesgo de Desastre". |
+| Req-1 | Req-1: Formulación del proyecto conforme a: | ['Metodologia-1: "Metodología de Edificación Pública".', 'Metodologia-2: "Metodología de Riesgo de Desastre".'] |
 | Req-2 | Req-2: Considerar estimaciones e información de fuentes secundarias. |  |
+
 ### Postulacion Diseno
+
 #### Req Generales
 | ID | Enunciado |
 | --- | --- |
@@ -98,7 +127,9 @@ Edificación Pública.
 | Req-5 | Req-5: Cumplimiento de "Antecedentes Técnicos Requeridos para Proyectos que Consideran Edificación". |
 | Req-6 | Req-6: Carta de compromiso de traslado al nuevo recinto por cada servicio involucrado. |
 | Req-7 | Req-7: Documento firmado por responsables de la administración de la infraestructura (jefes de servicios participantes). |
+
 ### Postulacion Ejecucion
+
 #### Req Generales
 | ID | Enunciado |
 | --- | --- |
@@ -107,7 +138,9 @@ Edificación Pública.
 | Req-3 | Req-3: Presentar antecedentes según "Antecedentes Técnicos Requeridos para Proyectos que Consideran Edificación" para ejecución. |
 | Req-4 | Req-4: Cuadro comparativo entre programa arquitectónico aprobado y diseño resultante, con justificación de diferencias. |
 | Req-5 | Req-5: Cronograma de Actividades o Carta Gantt. |
+
 ### Postulacion Diseno Ejecucion Conjunta
+
 #### Req Generales
 | ID | Enunciado |
 | --- | --- |

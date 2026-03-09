@@ -24,31 +24,29 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 3.14
+    cr: 1.36
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
     dependencies: []
     expected_sections:
     - Contenido
+    document_family: generic
+    publication_class: knowledge
     skeleton_count: 7
     meat_count: 202
     fat_count: 0
+    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__cies-sitia.md.json
 ---
 
 # Centro Integrado de Emergencia y Seguridad (CIES) - SITIA Ñuble
-## Source
-### Contexto requerido
-- staging/gn/kb_gn_080_cies_sitia.md
-- CIES SITIA.md
-- Ley N° 19.628 sobre Protección de la Vida Privada
-### Contexto opcional
-- knowledge/domains/gn/kb_gn_200_marco_legal_gores_koda.yml
 
 ## Glosario Conceptos Clave
+
 ### Proposito
 Definir y referenciar conceptos estructurales del CIES y de la integración SITIA.
+
 ### Terminos
 | ID | Ref | Cpt |
 | --- | --- | --- |
@@ -62,6 +60,7 @@ Definir y referenciar conceptos estructurales del CIES y de la integración SITI
 | CIES-SITIA-GLOS-CADENA-CUSTODIA | CIES-SITIA-PROC-CADENA-CUST-01 | Cadena-Custodia-Digital |
 
 ## Descripcion General
+
 ### Conceptos
 | ID | Cpt |
 | --- | --- |
@@ -72,6 +71,7 @@ Definir y referenciar conceptos estructurales del CIES y de la integración SITI
 | CIES-SITIA-DESC-GOB-DATOS-01 | Gobernanza-Datos |
 
 ## Objetivos
+
 ### Objetivos
 | Obj |
 | --- |
@@ -82,18 +82,24 @@ Definir y referenciar conceptos estructurales del CIES y de la integración SITI
 | Contribuir al desarrollo social, económico y territorial de Ñuble. |
 
 ## Componentes Clave
+
 ### Infraestructura Tecnologica y Fisica
+
 #### Sala Monitoreo Central
+
 #### Contexto
 Ubicada en GORE Ñuble.
+
 #### Caracteristicas
 | Cpt | Def | Ctx | Purp |
 | --- | --- | --- | --- |
 | Diseño-Ergonomia | Sala de 77,03 m². | Incluye zonas operativas, técnicas, de supervisión y de descanso. | Garantizar rendimiento óptimo y bienestar del personal. |
 | Visualizacion-Centralizada | Video Wall de 6x2 metros. | Pantallas LED modulares 4K. | Permitir monitoreo global y detallado de puntos críticos. |
-| Estaciones-Trabajo | 7 estaciones de trabajo (6 operadores, 1 supervisor). | 3 estaciones adicionales para Unidad Operativa de Control de Tránsito (UOCT)., Cada estación equipada con monitor Full HD 32", teclado ergonómico, joystick. | Control preciso de cámaras PTZ. |
-| Centro-Datos | Infraestructura robusta. | Racks APC NetShelter SX., Servidores redundantes Dell PowerEdge R740., Sistemas de Alimentación Ininterrumpida (UPS). | Garantizar operación continua 24/7. |
+| Estaciones-Trabajo | 7 estaciones de trabajo (6 operadores, 1 supervisor). | ['3 estaciones adicionales para Unidad Operativa de Control de Tránsito (UOCT).', 'Cada estación equipada con monitor Full HD 32", teclado ergonómico, joystick.'] | Control preciso de cámaras PTZ. |
+| Centro-Datos | Infraestructura robusta. | ['Racks APC NetShelter SX.', 'Servidores redundantes Dell PowerEdge R740.', 'Sistemas de Alimentación Ininterrumpida (UPS).'] | Garantizar operación continua 24/7. |
+
 #### Sistema Integrado Camaras y Red
+
 #### Elementos
 | Cpt | Def | Ctx |
 | --- | --- | --- |
@@ -102,11 +108,15 @@ Ubicada en GORE Ñuble.
 | Arquitectura-Federacion | Modelo federado para gestión centralizada con autonomía local. |  |
 | Software-Gestion-VMS | Plataforma HikCentral. | Compatibilidad con estándar ONVIF. |
 | Almacenamiento-Seguro | Capacidad para 60 días de grabaciones a máxima resolución. |  |
+
 #### Capacidades Analitica Avanzada CIES SITIA
+
 #### Fundamento
 El sistema CIES cuenta con analítica de video (VCA) para funciones base (detección de movimiento, seguimiento, conteo, intrusión).
+
 #### Cpt
 La capacidad es potenciada por la integración con plataformas especializadas de SITIA.
+
 #### Capacidades
 | ID | Cpt | Purp | Mech | Res |
 | --- | --- | --- | --- | --- |
@@ -114,7 +124,9 @@ La capacidad es potenciada por la integración con plataformas especializadas de
 | CIES-SITIA-CAP-SITIA-EVIDENCIA-01 | SITIA-Evidencia | Facilitar solicitud, almacenamiento y compartición segura de pruebas audiovisuales. |  | Asegura cadena de custodia digital y reduce tiempos de investigación. |
 | CIES-SITIA-CAP-SITIA-ARMAS-01 | SITIA-Armas | Generar alertas automáticas en tiempo real al detectar un arma de fuego en la vía pública. | Implementa modelos de IA (basados en YOLOv11) en la red de cámaras. | Apoya labores de fiscalización y control. |
 | CIES-SITIA-CAP-SITIA-UNIF-VID-01 | SITIA-Unificacion-Videos | Centralizar las señales de las cámaras del CIES en una interfaz única a nivel nacional. | Permite acceso a Carabineros de Chile. | Refuerza la coordinación y la capacidad de respuesta ante emergencias. |
+
 ### Personal y Estructura Operativa
+
 #### Componentes
 | Cpt | Def | Ctx |
 | --- | --- | --- |
@@ -122,11 +134,15 @@ La capacidad es potenciada por la integración con plataformas especializadas de
 | Turnos-Operacion | Cobertura inicial de 16 horas diarias (08:00 a 00:00). | Dos turnos rotativos. |
 | Roles-Capacitacion |  |  |
 | Enlaces-Interinstitucionales | Personal que actúa como facilitador de comunicación directa. |  |
+
 ### Procesos y Protocolos Marco Operativo Legal
+
 #### Fundamento
 Todas las actuaciones se rigen por un estricto Manual de Operaciones.
+
 #### Requisitos
 Garantizar el cumplimiento de la Ley N° 19.628 sobre Protección de la Vida Privada.
+
 #### Procesos
 | Cpt | Def |
 | --- | --- |
@@ -137,6 +153,7 @@ Garantizar el cumplimiento de la Ley N° 19.628 sobre Protección de la Vida Pri
 | Coordinacion-Interinstitucional | Canales de comunicación directos y protocolos de acción conjunta. |
 
 ## Sostenibilidad y Modelo Gestion
+
 ### Componentes
 | Cpt | Mech | Purp |
 | --- | --- | --- |
@@ -145,6 +162,7 @@ Garantizar el cumplimiento de la Ley N° 19.628 sobre Protección de la Vida Pri
 | Convenio-Colaboracion | La relación con SITIA se formaliza a través de un convenio marco de colaboración. | Establecer los ejes de cooperación en integración tecnológica, intercambio de datos y capacitación. |
 
 ## Beneficios Para Region
+
 ### Resultados
 - Mayor seguridad y protección (disuasión y respuesta rápida).
 - Mejora en los tiempos de respuesta ante emergencias, minimizando daños.

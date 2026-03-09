@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 731,
     "node_count": 884,
-    "edge_count": 4235
+    "edge_count": 4213
   },
   "node_kind_counts": {
     "artifact": 226,
@@ -21,7 +21,7 @@
     "InvokesSkill": 220,
     "RoutesToAgent": 57,
     "TracesTo": 44,
-    "XRef": 2631
+    "XRef": 2609
   },
   "nodes": [
     {
@@ -28420,76 +28420,6 @@
     {
       "kind": "XRef",
       "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
       "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "knowledge/gn/gestion/gestion-ipr.md"
@@ -28554,90 +28484,6 @@
       "kind": "XRef",
       "source": "urn:gn:kb:gestion-rendiciones",
       "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
     },
