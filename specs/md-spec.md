@@ -344,7 +344,7 @@ Clasificacion de familia:
 
 La familia de un artefacto **DEBE** identificarse por uno de estos mecanismos, en orden de precedencia:
 
-1. `extensions.family` explicito en el frontmatter.
+1. `extensions.{namespace}.family` explicito en el frontmatter.
 2. Convencion de directorio (e.g., `glossaries/`, `normative/`).
 3. Clasificacion manual del curador durante koraficacion.
 

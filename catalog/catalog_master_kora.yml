@@ -1852,31 +1852,31 @@ Catalog:
     status: published
   Knowledge:
   - urn: urn:kora:kb:skill-spec-md
-    title: KORA/Skill-Spec v3.3.0
+    title: KORA/Skill-Spec v3.4.0
     file: specs/skill-spec-md.md
     status: published
   - urn: urn:kora:kb:agent-spec-md
-    title: KORA/Agent-Spec v8.2.0
+    title: KORA/Agent-Spec v8.3.0
     file: specs/agent-spec-md.md
     status: published
   - urn: urn:kora:kb:spec-md
-    title: KORA/Spec-MD v5.0.0
+    title: KORA/Spec-MD v5.1.0
     file: specs/spec-md.md
     status: published
   - urn: urn:kora:kb:md-spec
-    title: KORA/MD v6.0.0
+    title: KORA/MD v6.1.0
     file: specs/md-spec.md
     status: published
   - urn: urn:kora:kb:runtime-spec-md
-    title: KORA/Runtime-Spec v3.1.0
+    title: KORA/Runtime-Spec v3.2.0
     file: specs/runtime-spec-md.md
     status: published
   - urn: urn:kora:kb:swarm-spec-md
-    title: KORA/Swarm-Spec v2.1.0
+    title: KORA/Swarm-Spec v2.2.0
     file: specs/swarm-spec-md.md
     status: published
   - urn: urn:kora:kb:gobernanza
-    title: KORA/Gobernanza v3.0.0
+    title: KORA/Gobernanza v3.1.0
     file: specs/gobernanza.md
     status: published
   - urn: urn:fxsl:kb:mbse-consistency

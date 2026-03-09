@@ -84,7 +84,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v6.0.0",
+            "KORA/MD v6.1.0",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -141,7 +141,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
         agent_spec = (ROOT / "specs" / "agent-spec-md.md").read_text(encoding="utf-8")
         skill_spec = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
-        self.assertIn("## 3.4 Manifest kind", governance)
+        self.assertIn("### 4.4 Manifest kind", governance)
         self.assertIn("bootstrap_agents", governance)
         self.assertIn("bootstrap_config", governance)
         self.assertIn("lazy_load_endofunctor", governance)
