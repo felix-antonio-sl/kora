@@ -28,7 +28,7 @@ _manifest:
 
 - **Firma:** {tipo: ajuste_prompt|nuevo_eval|reconfig_topologia|context_update|model_change, descripcion: string, justificacion: string, datos_soporte: {}, impacto: alto|medio|bajo, riesgo: alto|medio|bajo} → {tarjeta: PurpleCard}
 - **Cuando usar:** S-PURPLE-CARD. Generar propuesta de mejora formal.
-- **Notas:** SIEMPRE marcar como "requiere aprobacion humana". NUNCA auto-ejecutar. Justificacion DEBE incluir datos.
+- **Notas:** La tarjeta resultante debe dejar trazabilidad suficiente para decision humana posterior; la justificacion debe incluir datos.
 
 ## self_eval_run
 

@@ -10,44 +10,24 @@ lang: es
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
-Orquesta el ciclo de vida completo de un artefacto en modo guiado: DESIGN → FORGE (KORAFICATE|CRYSTALLIZE) → AUDIT, consolidando entregables y contexto inter-fase.
+Consolida checkpoints y entregables del modo guiado de curaduria sin gobernar transiciones FSM ni secuenciar el agente desde el skill.
 
 ## Input/Output
-- **Input:** intencion: IntentClassification (modo=GUIADO), fuentes: Document[] | null
+- **Input:** fase_activa: string, entregables: object, fuentes: Document[] | null
 - **Output:** LifecycleSummary (ver Signature Output)
 
 ## Procedimiento
-### Fase 1: DESIGN
-1. Invocar CM-ARTIFACT-DESIGNER.
-2. Registrar ArtifactPlan, tipo, namespace, URN y fuentes relevantes.
-3. Emitir checkpoint estructurado de fase con los pendientes del plan.
-
-### Fase 2: FORGE
-1. Segun tipo:
-   - Descriptivo → invocar CM-KORAFICATOR (Funtor K).
-   - Prescriptivo → invocar CM-CRYSTALLIZER (Funtor C).
-2. Registrar artefacto preliminar, metricas y observaciones de fidelidad.
-3. Emitir checkpoint estructurado de fase con artefacto y pendientes.
-
-### Fase 3: AUDIT
-1. Invocar CM-ARTIFACT-AUDITOR.
-2. Consolidar veredicto PASS|FAIL, checks y metricas finales.
-3. Si FAIL, registrar issues accionables para una futura fase de reparacion o re-iteracion.
-
-### Cierre
-1. Consolidar resumen final: tipo, URN, metricas, status_sugerido y issues resueltos.
-2. Registrar acciones operativas sugeridas posteriores al ciclo.
-
-### Gestion de Contexto Inter-Fase
-- Mantener estado acumulado entre fases: {fase_actual, plan, artefacto, reporte}.
-- Preservar solo datos necesarios para reanudar la fase activa sin recalcular entregables previos.
-- Separar checkpoint de fase de cualquier decision conversacional o transicion FSM.
+1. Recibir la fase guiada activa y los entregables ya producidos por la FSM o por skills previos.
+2. Normalizar el checkpoint de la fase activa: plan, artefacto, metricas, observaciones y pendientes.
+3. Consolidar checkpoints compatibles de design, forge y audit en un resumen acumulado del ciclo guiado.
+4. Emitir un resumen estructurado que permita continuar el trabajo sin recodificar control del agente dentro del skill.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| fases_completadas | string[] | Fases ejecutadas en el ciclo |
-| tipo | enum(descriptivo\|prescriptivo) | Tipo de artefacto generado |
-| urn | URN | URN del artefacto resultante |
-| metricas_finales | {FS: number, CR: number} | Metricas del artefacto validado |
-| status_sugerido | enum(draft\|published) | Status sugerido post-ciclo |
+| fase_activa | string | Fase guiada actualmente consolidada |
+| fases_registradas | string[] | Fases con checkpoint disponible |
+| tipo | enum(descriptivo\|prescriptivo)\|null | Tipo de artefacto si ya fue clasificado |
+| urn | URN \| null | URN del artefacto si ya existe |
+| metricas_visibles | {FS: number, CR: number} \| null | Metricas acumuladas visibles |
+| pendientes | string[] | Pendientes para continuar el ciclo |

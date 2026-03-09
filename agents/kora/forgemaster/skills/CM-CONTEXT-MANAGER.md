@@ -22,11 +22,11 @@ Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante
 3. Comparar tema entrante vs foco actual: coherente(mismo hilo), nuevo(tema diferente), atras(retomar fase anterior), terminar(finalizar sesion), fuera_de_scope(ajeno a ciclo de vida agentes).
 4. Clasificar tipo de cambio:
    - coherente → continuar sin interrupcion.
-   - nuevo → marcar requiere_reclasificacion.
-   - atras → recuperar fase recordada y marcar requiere_reclasificacion.
+   - nuevo → marcar requiere_revision_de_foco.
+   - atras → recuperar referencia previa y marcar requiere_revision_de_foco.
    - terminar → marcar cierre solicitado.
    - fuera_de_scope → aplicar Guard Set (REJECT_OUT_OF_SCOPE).
-5. Si cambio radical(tema completamente distinto) → marcar requiere_reclasificacion.
+5. Si cambio radical(tema completamente distinto) → marcar requiere_revision_de_foco.
 6. Actualizar contexto de sesion con foco nuevo y tema actual.
 
 ## Signature Output
@@ -34,6 +34,6 @@ Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante
 |-------|------|-------------|
 | tipo_cambio | enum(coherente\|nuevo\|atras\|terminar\|fuera_de_scope) | Tipo de cambio detectado |
 | accion | string | Accion semantica a tomar (continuar, reclasificar, cerrar_sesion, reject) |
-| requiere_reclasificacion | bool | True si la FSM debe volver a despachar |
+| requiere_revision_de_foco | bool | True si el trabajo actual debe reinterpretarse |
 | fase_recordada | string\|null | Etiqueta semantica de la fase previa si aplica |
 | mensaje_usuario | string\|null | Mensaje al usuario si aplica |

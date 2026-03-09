@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 
 from .artifacts import load_markdown_parts
+from .validation import find_field_like_markdown_headings, find_truncated_markdown_headings
 
 
 FAT_PATTERNS = (
@@ -55,7 +56,11 @@ KODA_RESIDUE_PATTERNS = (
     re.compile(r"END_LLM_INSTRUCTIONS"),
     re.compile(r"\bLLM_Parsing_Instructions\b"),
 )
-TRUNCATED_HEADING_PATTERN = re.compile(r"\.\.\.$|…$")
+NONRECOVERABLE_PRIMARY_PATTERNS_BY_FAMILY = {
+    "normative": (
+        re.compile(r"^(?:glosa|articulo|artículo|programa|capitulo|capítulo)\s+\d+$", re.IGNORECASE),
+    ),
+}
 
 
 def slugify_heading(text):
@@ -249,7 +254,7 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
         residue_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in KODA_RESIDUE_HEADING_TITLES]
         if residue_headings:
             failures.append(f"residuo KODA en headings: {', '.join(sorted(dict.fromkeys(residue_headings))[:8])}")
-        truncated_headings = [title for _level, title in headings if TRUNCATED_HEADING_PATTERN.search(title.strip())]
+        truncated_headings = find_truncated_markdown_headings(body or "")
         if truncated_headings:
             failures.append(f"heading truncado no permitido: {', '.join(sorted(dict.fromkeys(truncated_headings))[:8])}")
         if frontmatter.get("lang") == "es":
@@ -280,6 +285,9 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
                 failures.append(f"seccion primaria vacia o contenedor sin sustancia: {section['title']}")
             if normalized_title in CONTAINER_ONLY_TITLES_BY_FAMILY.get(document_family, set()):
                 failures.append(f"seccion primaria contenedora no permitida para {document_family}: {section['title']}")
+            for pattern in NONRECOVERABLE_PRIMARY_PATTERNS_BY_FAMILY.get(document_family, ()):
+                if pattern.fullmatch(section["title"].strip()):
+                    failures.append(f"heading primario no recuperable para {document_family}: {section['title']}")
         required_titles = REQUIRED_PRIMARY_TITLES_BY_FAMILY.get(document_family, set())
         missing_titles = sorted(required_titles - present_primary_titles)
         if missing_titles:
@@ -287,7 +295,7 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
 
         field_titles = FIELD_HEADING_TITLES_BY_FAMILY.get(document_family, set())
         if field_titles:
-            field_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in field_titles]
+            field_headings = find_field_like_markdown_headings(body or "", field_titles)
             if field_headings:
                 failures.append(f"heading-campo no permitido para {document_family}: {', '.join(sorted(dict.fromkeys(field_headings))[:8])}")
 

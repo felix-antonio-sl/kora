@@ -36,8 +36,6 @@
   },
   "runtime_capabilities": {
     "allow": [
-      "analysis",
-      "planning",
       "kb_read"
     ],
     "deny": [

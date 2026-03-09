@@ -23,7 +23,7 @@ _manifest:
 - **Firma:** {historia: string} → {who_what_why, criterios_aceptacion[], valor: int, complejidad: simple|estandar|complejo|critico, riesgo: lectura|escritura|destructiva, dependencias[], tier_modelo: T1|T2|T3|T4}
 - **Cuando usar:** S-HISTORIA. Refinar una historia con los 5 elementos completos.
 - **Cuando NO usar:** Si la historia ya tiene los 5 elementos verificados.
-- **Notas:** Complejidad determina tier de modelo via Model Router. Riesgo determina si requiere aprobacion humana pre-ejecucion.
+- **Notas:** Complejidad y riesgo informan el nivel de criticidad y la profundidad de trabajo requerida por la historia.
 
 ## backlog_prioritize
 

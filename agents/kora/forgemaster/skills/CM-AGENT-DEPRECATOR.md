@@ -20,7 +20,7 @@ Gestiona el retiro ordenado de un agente KORA: identifica dependencias, marca de
 1. IDENTIFICAR DEPENDENCIAS: Buscar en catalogo y otros agentes referencias al agente objetivo (URNs, wiring, sub_agents).
 2. EVALUAR IMPACTO: ¿Cuantos agentes dependen de este? ¿Hay sucesor definido? ¿Hay usuarios activos?
 3. PROPONER MIGRACION: Si hay sucesor, documentar mapping de capacidades antiguo→nuevo. Si no hay sucesor, advertir.
-4. MARCAR DEPRECATED: Agregar status: deprecated y deprecated_by en frontmatter de todos los archivos del workspace.
+4. MARCAR DEPRECATED: Agregar `status: deprecated` en el frontmatter de los archivos del workspace y registrar el sucesor en una nota o extension normada si corresponde.
 5. ACTUALIZAR REFERENCIAS: En agentes dependientes, actualizar wiring/sub_agents apuntando al sucesor.
 6. NOTIFICAR: Generar resumen de deprecacion con lista de cambios realizados.
 

@@ -43,6 +43,7 @@ CANONICAL_AGENT_SECTION_PATTERNS = (
     ("## 4. Contexto Multi-turno", re.compile(r"^4\.\s+contexto multi-turno(?:\b|[\s(])")),
     ("## 5. Wiring", re.compile(r"^5\.\s+wiring(?:\b|[\s(])")),
 )
+TRUNCATED_HEADING_PATTERN = re.compile(r"\.\.\.$|…$")
 
 
 def validate_patterns(text, patterns, message_template):
@@ -105,6 +106,31 @@ def normalize_heading_token(text):
     normalized = unicodedata.normalize("NFKD", text)
     normalized = normalized.encode("ascii", "ignore").decode("ascii")
     return re.sub(r"\s+", " ", normalized.strip().lower())
+
+
+def collect_markdown_headings(text, min_level=1, max_level=6):
+    return [
+        (level, heading)
+        for level, heading in iter_markdown_headings(text)
+        if min_level <= level <= max_level
+    ]
+
+
+def find_truncated_markdown_headings(text):
+    return [
+        heading
+        for _level, heading in collect_markdown_headings(text)
+        if TRUNCATED_HEADING_PATTERN.search(heading.strip())
+    ]
+
+
+def find_field_like_markdown_headings(text, banned_titles):
+    banned = {normalize_heading_token(title) for title in banned_titles}
+    return [
+        heading
+        for _level, heading in collect_markdown_headings(text)
+        if normalize_heading_token(heading) in banned
+    ]
 
 
 def validate_agents_canonical_structure(text):

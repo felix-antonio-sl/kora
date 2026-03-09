@@ -49,9 +49,7 @@
   },
   "runtime_capabilities": {
     "allow": [
-      "code_read",
-      "analysis",
-      "eval_execution"
+      "code_read"
     ],
     "deny": [
       "filesystem_write",

@@ -26,18 +26,18 @@ class AgentAuditTests(unittest.TestCase):
             findings = audit_agents_file("test/sample", path)
             self.assertEqual(findings[0]["rule_id"], "agent.fsm_pseudostate_destination")
 
-    def test_agents_audit_flags_missing_transition_precedence(self):
+    def test_agents_audit_ignores_act_arrows_and_only_inspects_transitions(self):
         import tempfile
         from pathlib import Path
 
         with tempfile.TemporaryDirectory() as tmpdir:
             path = Path(tmpdir) / "AGENTS.md"
             path.write_text(
-                "1. STATE: S-DISPATCHER -> ACT: clasificar -> Trans: IF a -> S-A. IF b -> S-B.\n",
+                "1. STATE: S-DISPATCHER -> ACT: DESIGN -> CREATE -> IMPLEMENT -> Trans: IF a -> S-A.\n",
                 encoding="utf-8",
             )
             findings = audit_agents_file("test/sample", path)
-            self.assertTrue(any(item["rule_id"] == "agent.missing_transition_precedence" for item in findings))
+            self.assertEqual(findings, [])
 
     def test_tools_audit_flags_policy_leakage(self):
         import tempfile
@@ -72,7 +72,7 @@ class AgentAuditTests(unittest.TestCase):
                 textwrap.dedent(
                     """\
                     ## Input/Output
-                    - **Input:** estado_actual: FSMState
+                    - **Input:** estado_fsm: FSMState
                     ## Procedimiento
                     1. Si CR < 1.5, aceptar por densidad.
                     2. La FSM debe volver a despachar.

@@ -13,13 +13,17 @@ lang: es
 Mantiene coherencia de la conversacion y detecta cambios de hilo.
 
 ## Input/Output
-- **Input:** estado_actual, mensaje_usuario
-- **Output:** context_shift, siguiente_estado
+- **Input:** foco_actual: string | null, mensaje_usuario: string
+- **Output:** ContextDecision (ver Signature Output)
 
 ## Procedimiento
-1. Recibir y estructurar el input relevante.
-2. Aplicar la transformacion cognitiva segun el dominio.
-3. Entregar un output claro y reutilizable por la FSM.
+1. Recibir y estructurar el foco actual y el mensaje del usuario.
+2. Clasificar si el mensaje continua el hilo actual, abre uno nuevo, retoma uno previo o cierra la tarea.
+3. Preservar solo el contexto semantico necesario para continuar o reiniciar el trabajo.
 
 ## Signature Output
-Resultado estructurado consistente con el dominio del skill.
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| clasificacion | enum(CONTINUA\|NUEVO\|ATRAS\|TERMINAR\|FUERA) | Tipo de cambio de contexto |
+| requiere_revision_de_foco | bool | True si el foco actual debe reinterpretarse |
+| foco_recomendado | string \| null | Referencia semantica al foco resultante |

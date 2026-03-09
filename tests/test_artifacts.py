@@ -200,7 +200,33 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("estado_actual: FSMState", content)
         self.assertNotIn("S-DISPATCHER", content)
         self.assertNotIn("S-END", content)
-        self.assertIn("requiere_reclasificacion", content)
+        self.assertNotIn("la FSM debe volver a despachar", content)
+        self.assertIn("requiere_revision_de_foco", content)
+
+    def test_meta_intent_classifiers_do_not_receive_fsm_state(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-INTENT-CLASSIFIER.md",
+            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-INTENT-CLASSIFIER.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
+            ROOT / "agents" / "kora" / "clawmaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("FSMState", content)
+        self.assertNotIn("|END)", content)
+        self.assertIn("cierre_solicitado", content)
+
+    def test_meta_lifecycle_orchestrators_do_not_control_agent_phases(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+            ROOT / "agents" / "kora" / "clawmaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("### Fase 1:", content)
+        self.assertNotIn("### Fase 2:", content)
+        self.assertNotIn("### Fase 3:", content)
+        self.assertNotIn("transicionar a S-{fase_actual}", content)
+        self.assertIn("checkpoint", content)
 
     def test_forgemaster_scaffolder_uses_requested_namespace_in_bootstrap_urns(self):
         content = (
@@ -284,6 +310,41 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_guardian_runtime_capabilities_drop_analysis(self):
         content = (ROOT / "agents" / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
         self.assertNotIn('"analysis"', content)
+
+    def test_dev_context_managers_drop_state_machine_control(self):
+        files = (
+            ROOT / "agents" / "dev" / "analyst" / "skills" / "CM-CONTEXT-MANAGER.md",
+            ROOT / "agents" / "dev" / "planner" / "skills" / "CM-CONTEXT-MANAGER.md",
+            ROOT / "agents" / "dev" / "reviewer" / "skills" / "CM-CONTEXT-MANAGER.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("estado_actual", content)
+        self.assertNotIn("estado_destino", content)
+        self.assertNotIn("fase_actual", content)
+        self.assertNotIn("S-DISPATCHER", content)
+        self.assertIn("requiere_revision_de_foco", content)
+
+    def test_dev_runtime_capabilities_drop_semantic_faculties(self):
+        files = (
+            ROOT / "agents" / "dev" / "analyst" / "config.json",
+            ROOT / "agents" / "dev" / "planner" / "config.json",
+            ROOT / "agents" / "dev" / "reviewer" / "config.json",
+            ROOT / "agents" / "dev" / "sentinel" / "config.json",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn('"analysis"', content)
+        self.assertNotIn('"planning"', content)
+        self.assertNotIn('"eval_execution"', content)
+        self.assertNotIn('"eval_audit"', content)
+
+    def test_dev_tools_drop_operational_policy_leakage(self):
+        files = (
+            ROOT / "agents" / "dev" / "planner" / "TOOLS.md",
+            ROOT / "agents" / "dev" / "sentinel" / "TOOLS.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("requiere aprobacion humana", content)
+        self.assertNotIn("NUNCA auto-ejecutar", content)
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")

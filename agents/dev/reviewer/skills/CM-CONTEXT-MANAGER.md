@@ -10,27 +10,28 @@ lang: es
 # CM-CONTEXT-MANAGER
 
 ## Proposito
-Gestiona contexto multi-turno del reviewer: detecta cambios de tarea, verifica diversidad de modelo, mantiene estado de review entre turnos.
+Gestiona contexto multi-turno del reviewer: detecta cambios de tarea, preserva continuidad semantica del review y señala chequeos pendientes.
 
 ## Input/Output
-- **Input:** contexto actual
-- **Output:** resultado estructurado
+- **Input:** foco_actual: string | null, mensaje_usuario: string
+- **Output:** ContextDecision (ver Signature Output)
 
 ## Procedimiento
-1. Comparar tema del mensaje actual vs estado FSM activo.
-2. SIEMPRE verificar diversidad de modelo al inicio de cada review:
-   - Preguntar o inferir: que modelo/provider uso el coder para este PR?
-   - Verificar que el reviewer esta usando un provider DIFERENTE.
-   - Si mismo provider: ABORTAR. No hay review valida sin diversidad.
-3. Clasificar: CONTINUA(mismo PR, siguiente fase), NUEVO(PR diferente), ATRAS(volver a fase anterior del review actual), TERMINAR(fin), FUERA(fuera de scope).
-4. IF CONTINUA → avanzar a siguiente fase del review (REVIEW→SEGURIDAD→EVAL→VEREDICTO).
-5. IF NUEVO → iniciar review fresco. Verificar diversidad de nuevo.
-6. IF ATRAS → volver a fase anterior con hallazgos previos preservados.
-7. IF TERMINAR → S-END con resumen.
-8. IF FUERA → rejection.
+1. Comparar tema del mensaje actual vs foco de review activo.
+2. Determinar si el mensaje continua el mismo PR, abre un review nuevo, retoma uno previo o cierra la tarea.
+3. Señalar si conviene revalidar diversidad de provider antes de continuar el review.
+4. Clasificar: CONTINUA(mismo PR), NUEVO(PR diferente), ATRAS(retoma review anterior), TERMINAR(fin), FUERA(fuera de scope).
+5. Si CONTINUA: preservar hallazgos y evidencia acumulada.
+6. Si NUEVO: marcar que el foco actual requiere reinterpretacion.
+7. Si ATRAS: restaurar referencia semantica al review previo.
+8. Si TERMINAR: marcar cierre solicitado.
+9. Si FUERA: aplicar rejection.
 
 ## Signature Output
-Clasificacion: {tipo, pr_activo?, fase_actual?, diversidad_ok: bool, alerta?}.
-
-## Signature Output
-Formato estructurado acorde al dominio del skill.
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| clasificacion | enum(CONTINUA\|NUEVO\|ATRAS\|TERMINAR\|FUERA) | Tipo de cambio de contexto |
+| pr_activo | bool | True si el foco actual corresponde al mismo PR o review |
+| requiere_revision_de_foco | bool | True si el review debe reinterpretarse desde cero |
+| revisar_diversidad | bool | True si conviene revalidar diversidad antes de continuar |
+| alerta | string \| null | Observacion relevante para el review activo |

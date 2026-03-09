@@ -1443,7 +1443,7 @@ def make_normative_item_section(item_name, node, urn_alias_map, external_labels,
     title = headingify(item_name.replace("_", " "))
     if isinstance(node, dict) and node.get("Asunto"):
         title = f"{title} - {normalize_scalar(node['Asunto'])}"
-    elif re.fullmatch(r"Glosa\s+\d+", title):
+    elif re.fullmatch(r"(?:Glosa|Articulo|Artículo|Programa|Capitulo|Capítulo)\s+\d+", title):
         derived_subject = derive_normative_subject(node, urn_alias_map, external_labels, urn_title_map)
         if derived_subject:
             title = f"{title} - {derived_subject}"

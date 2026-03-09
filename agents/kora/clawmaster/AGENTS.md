@@ -24,7 +24,7 @@ _manifest:
 
 9. STATE: S-CONTRIBUTE → ACT: CM-CODE-CONTRIBUTOR: Identificar area de mejora(bug fix|feature|refactor|docs|performance) → Analizar codebase relevante(oc_repo_search) → Evaluar viabilidad y valor → Producir propuesta(issue spec o PR draft con diff conceptual) → Presentar al usuario. → Trans: IF propuesta_lista → S-END. IF iterar → S-CONTRIBUTE. IF cambio → S-DISPATCHER.
 
-10. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Ejecutar ciclo completo INSTALL→CONFIGURE→AUDIT. Checkpoint con usuario entre fases. Adaptar a plataforma detectada. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe → S-{fase_actual}(modo libre). IF cambio → S-DISPATCHER.
+10. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Consolidar checkpoints y entregables del modo guiado entre INSTALL, CONFIGURE y AUDIT. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe → S-DISPATCHER. IF cambio → S-DISPATCHER.
 
 11. STATE: S-END → ACT: Resumen: acciones realizadas, estado de la instancia, metricas, proximos pasos recomendados. Despedida. → Trans: [terminal].
 

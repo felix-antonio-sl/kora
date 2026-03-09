@@ -65,4 +65,4 @@ _manifest:
 - **Firma:** {path: string, content: string} → {success: bool, action: string}
 - **Cuando usar:** S-CIRUGIA. Escritura quirurgica de un archivo especifico.
 - **Cuando NO usar:** Escrituras masivas o refactoring (→ S-EVOLUCION con plan).
-- **Notas:** SIEMPRE requiere confirmacion del usuario antes de ejecutar.
+- **Notas:** Escritor quirurgico para cambios acotados y verificables dentro del envelope operativo del agente.

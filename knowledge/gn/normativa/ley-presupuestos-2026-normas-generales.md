@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.61
+    cr: 1.58
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -141,7 +141,7 @@ CORRESPONDIENTE AL AÑO 2026
 Teniendo presente que el H. Congreso Nacional ha dado su aprobación al siguiente
 Proyecto de ley:
 
-## Articulo 01
+## Articulo 01 - Aprobar Presupuesto Ingresos y Gastos Sector Público 2026
 Aprobar Presupuesto Ingresos y Gastos Sector Público 2026.
 
 ### Presupuesto Moneda Nacional
@@ -261,7 +261,7 @@ Miles de US$
 | SERVICIO DE LA DEUDA | 3.514.078 | null | 3.514.078 |
 | SALDO FINAL DE CAJA | 2.0 | null | 2.0 |
 
-## Articulo 02
+## Articulo 02 - Autorizar garantía estatal a créditos/bonos empresas públicas y universidades estatales
 Autorizar garantía estatal a créditos/bonos empresas públicas y universidades estatales.
 
 ### Garantia Estatal
@@ -329,7 +329,7 @@ No sujeta a
 10 días siguientes a contratación
 monto, condiciones, objetivos, resultados esperados
 
-## Articulo 03
+## Articulo 03 - Autorizar endeudamiento público 2026
 Autorizar endeudamiento público 2026.
 
 ### Autorizacion Endeudamiento
@@ -373,7 +373,7 @@ Comisiones Hacienda Senado y Cámara Diputados
 #### Plazo
 15 días siguientes a total tramitación
 
-## Articulo 04
+## Articulo 04 - Establecer límites incremento gastos corrientes y de capital
 Establecer límites incremento gastos corrientes y de capital.
 
 ### Gastos Corrientes
@@ -425,7 +425,7 @@ Fondo de Estabilización Económica y Social (ley N° 20.128)
 #### Requisitos
 Autorización legal si uso acumulado anual >0,3% PIB
 
-## Articulo 05
+## Articulo 05 - Suspender compatibilidad planta-contrata 2026
 Suspender compatibilidad planta-contrata 2026.
 
 ### Suspension
@@ -445,7 +445,7 @@ Contratar personal suplente en cargos planta no desempeñados por titular (por a
 ### Excepcion
 Personas usando excepciones al momento publicación ley
 
-## Articulo 06
+## Articulo 06 - Establecer umbrales licitación pública inversión 2026
 Establecer umbrales licitación pública inversión 2026.
 
 ### Licitacion Publica Obligatoria
@@ -493,7 +493,7 @@ Certificado cumplimiento obligaciones laborales y remuneración
 #### Prohibiciones
 Contratar con Estado si incumplimiento registrado o sin certificado
 
-## Articulo 07
+## Articulo 07 - Reglas para decretos con transferencias (Subtítulos 24 y 33)
 Reglas para decretos con transferencias (Subtítulos 24 y 33).
 
 ### Ctx Transferencias
@@ -555,7 +555,7 @@ Salvo autorización por norma expresa en el respectivo presupuesto
 #### Resultados
 Personal contratado con cargo a dichos recursos no forma parte de la dotación del Servicio
 
-## Articulo 08
+## Articulo 08 - Pagos 2026 a proveedores mediante transferencia electrónica y cumplimiento Ley
 Pagos 2026 a proveedores mediante transferencia electrónica y cumplimiento Ley 19.983.
 
 ### Contexto
@@ -586,7 +586,7 @@ Pleno cumplimiento
 | Requerir información necesaria a proveedores para realizar transferencias |  |
 | Cumplir instrucciones técnicas generales emitidas por | DIPRES |
 
-## Articulo 09
+## Articulo 09 - Prohibir edificios para casas habitación personal
 Prohibir edificios para casas habitación personal; establecer excepciones.
 
 ### Prohibiciones
@@ -600,7 +600,7 @@ Adquisición, construcción o arrendamiento de edificios para destinarlos a casa
 ### Excepcion
 Programas sobre esta materia incorporados en presupuestos del Poder Judicial Programas sobre esta materia incorporados en presupuestos del Ministerio Público Programas sobre esta materia incorporados en presupuestos del Ministerio de Defensa Nacional Programas sobre esta materia incorporados en presupuestos de Carabineros de Chile Programas sobre esta materia incorporados en presupuestos de la Policía de Investigaciones de Chile Programas sobre esta materia incorporados en presupuestos de Gendarmería de Chile viviendas para personal de educación y de la salud en zonas apartadas y localidades rurales
 
-## Articulo 10
+## Articulo 10 - Reglas 2026 para dotación, horas, cupos honorarios/contrata y reposiciones
 Reglas 2026 para dotación, horas, cupos honorarios/contrata y reposiciones.
 
 ### Ajuste Dotacion Horas
@@ -693,7 +693,7 @@ Certificación se acompaña al acto administrativo
 #### Desc
 Acto que disponga reposición debe contener identificación decretos o resoluciones de cesación de funciones en que se fundamenta
 
-## Articulo 11
+## Articulo 11 - Reglas para contratación de reemplazos en servicios públicos
 Reglas para contratación de reemplazos en servicios públicos.
 
 ### Reemplazos
@@ -742,7 +742,7 @@ Reemplazo de funcionaria/o con licencia médica (lapso continuo o discontinuo) >
 #### Requisitos
 Jefe superior del servicio considerar ejercicio declaración salud incompatible con desempeño del cargo
 
-## Articulo 12
+## Articulo 12 - Autorizaciones previas DIPRES para TIC y adquisiciones de vehículos
 Autorizaciones previas DIPRES para TIC y adquisiciones de vehículos; excepciones; parámetros e instrucciones.
 
 ### Contexto
@@ -810,7 +810,7 @@ Disposiciones anteriores
 #### Rec
 Establecer mecanismos de adquisición de productos o contratación de servicios, y otras modalidades o procedimientos que determine
 
-## Articulo 13
+## Articulo 13 - Distribución producto ventas bienes inmuebles fiscales 2026
 Distribución producto ventas bienes inmuebles fiscales 2026; excepciones; regla reventa; uso recursos Fuerzas Armadas.
 
 ### Contexto
@@ -874,10 +874,10 @@ Recursos sólo podrán emplearse en:
 habitabilidad y mejoramiento condiciones de vida de todo el personal integrante)
 - Proyectos de infraestructura militar
 
-## Articulo 14
+## Articulo 14 - Artículo 14
 Artículo 14.- Los órganos del Estado regidos por esta ley, o los que se especifiquen en los numerales siguientes, informarán a la CEMP, con copia a la BCN, lo siguiente: 1. Un cronograma mensual, desagregado por programa presupuestario y por Subtítulos, de gastos del año en curso, que deberá ser enviado durante el mes de marzo, y actualizado en el mes de julio, junto con una explicación de los principales cambios ocurridos en el transcurso del primer semestre y consignados en dicha actualización. 2. Copia de los informes derivados de estudios e investigaciones contratados en virtud de la asignación 22.11.001, dentro de los ciento ochenta días siguientes a la recepción de su informe final. 3. La nómina de los proyectos o programas desarrollados interna y/o externamente que permitan, en lo específico, su posterior uso como tecnologías duales, con identificación de proyectos nuevos o de arrastre, breve descripción de su objetivo, presupuesto anual, organismos involucrados, y su fecha de inicio y de término, lo que será informado antes del 31 de marzo, mediante documento electrónico que permita el tratamiento de sus datos. En el mismo formato y con igual desagregación, se enviará trimestralmente el presupuesto vigente, treinta días después de terminado el trimestre respectivo, estado de avance físico y financiero de los proyectos o programas, así como las modificaciones que en el período informado hayan experimentado. 4. Cada gobierno regional deberá informar los estudios básicos, proyectos y programas de inversión que realizará en la región y que haya identificado conforme a lo dispuesto en el DL1263_ART19BIS. Tal información comprenderá el nombre del estudio, proyecto o programa, su monto y demás características, y se remitirá P30TERM del mes de total tramitación de los respectivos decretos. 5. El Comité Sistema de Empresas de la Corporación de Fomento de la Producción o quien lo suceda o reemplace, remitirá un informe financiero trimestral de las empresas del Estado, y de aquellas en que el Estado, sus instituciones o empresas tengan aportes de capital igual o superior al cincuenta por ciento, que comprenderá un balance consolidado por empresa y estado de resultados, a nivel consolidado y por empresa. Dicho informe será remitido dentro de los quince días siguientes a la fecha de vencimiento del respectivo plazo de presentación fijado por la Comisión para el Mercado Financiero. La misma obligación tendrán Televisión Nacional de Chile y la Corporación Nacional del Cobre de Chile (CODELCO), las cuales deberán remitir los informes financieros trimestrales directamente a la CEMP. 6. El monto ejecutado por concepto de publicidad y difusión, imputados al Subtítulo 22, ítem 07, en que haya incurrido, por programa presupuestario, en el formato que definirá para tal efecto el Ministerio Secretaría General de Gobierno. Asimismo, informará el detalle del gasto por concepto de publicidad, difusión o relaciones públicas en general, y para ello distinguirá entre avisos, promoción en periódicos, radios, televisión, medios digitales, cines, teatros, revistas, contratos con agencias publicitarias y/o servicios de exposiciones e indicará los proveedores de cada uno de ellos, si éstos tienen una clara identificación local y si pertenecen a un holding, conglomerado o cadena de comunicación. Respecto de estos últimos, se adjuntará además la nómina de las entidades ejecutoras de dichas actividades, su mecanismo de contratación y el monto adjudicado, desagregado por programa. Esta información se remitirá trimestralmente, P30TERM del respectivo trimestre. 7. Sobre las comisiones de servicio en el país y en el extranjero. Se deberá detallar el número de comisiones y cometidos funcionarios, funcionarias y funcionarios designados, su destino, viático recibido y sus fundamentos y el detalle de los pasajes utilizados en dichas comisiones de servicios, y se indicará el titular de éstos, destino, valor y fecha, a excepción de aquellas que tengan el carácter de reservadas, las que deberán informarse en sesión secreta. Esta información se remitirá trimestralmente. 8. Las contrataciones y desvinculaciones realizadas durante cada trimestre. En ambos casos, se deberá consignar el nombre, cargo y título de educación superior si lo hubiera. En el caso de las desvinculaciones, deberá consignarse la cantidad de funcionarias y funcionarios que cesen en sus funciones en cada uno de los servicios públicos con los que se relacionen, la antigüedad en el cargo, la fecha y la causal de cesación. 9. Los recursos que son implementados directamente por la institución, aquellos que son ejecutados por medio de convenio marco, licitación pública, licitación privada o trato directo, en cada uno de los programas que constituyen la respectiva Partida. Esta información se remitirá trimestralmente, P30TERM del respectivo trimestre e incluirá a la Comisión de Hacienda de la Cámara de Diputados. 10. Los gastos asociados a remuneraciones de trabajadores, con indicación de la calidad jurídica de los contratos y los porcentajes de tipos de contratación en relación con el total del personal, diferenciado según género y por estamento, la duración media y promedio de cada contrato, y el número de veces que ha sido contratado bajo esta modalidad por la entidad pública referida. Esta información se remitirá semestralmente e incluirá a la Comisión de Hacienda de la Cámara de Diputados. 11. Los gastos asociados al arriendo de terrenos u otros bienes inmuebles que sirvan de dependencias para las actividades propias del ministerio. Se informará trimestralmente, treinta días después del término del trimestre respectivo, e incluirá a la Comisión de Vivienda y Urbanismo del Senado, y a la Comisión de Vivienda, Desarrollo Urbano y Bienes Nacionales de la Cámara de Diputados. 12. El Ministerio del Interior informará antes del 31 de enero de 2026 acerca de los resultados de la implementación y desarrollo del Plan Buen Vivir durante el año 2025, salvo en lo relativo al Programa de Infraestructura del referido Plan, que corresponderá informar, en igual fecha, al Ministerio de Obras Públicas. Asimismo, los ministerios indicados en el párrafo anterior deberán informar, en el mismo plazo y cada uno en el ámbito de sus competencias relativas al Plan, sobre la planificación presupuestaria, objetivos y metas que éste tendrá para el año 2026. Además, trimestralmente, el Ministerio del Interior informará de las actividades desarrolladas en el marco del Plan Buen Vivir. En tanto, el Ministerio de Obras Públicas informará de las obras ejecutadas y su nivel de avance, con indicación de la cobertura de población, desagregadas por comuna. 13. Durante el año 2026, la Empresa Nacional de Minería, creada por el decreto con fuerza de ley N° 153, de 1960, del Ministerio de Hacienda, deberá informar respecto de las enajenaciones de activos que su directorio apruebe realizar. 14. Los ministerios de Obras Públicas, de Vivienda y Urbanismo, de Salud y de Educación, y la Subsecretaría de Desarrollo Regional y Administrativo y los gobiernos regionales informarán, a más tardar en el mes de enero de 2026, la nómina con los proyectos de inversión identificados de acuerdo con lo establecido en el DL1263_ART19BIS, incluidos en esta ley. Esa nómina contendrá el nombre, localización por comuna y región, estado, fecha de ejecución e inversión estimada total y de cada una de las etapas que conforman el proyecto, y precisará, específicamente, las obras y recursos que se ejecutarán durante el año 2026. Asimismo, a partir de febrero de 2026, deberán enviar mensualmente un informe de actualización que contenga, respecto de cada uno de ellos, su estado de avance y la inversión materializada durante el año 2026. 15. Mensualmente la DIPRES deberá informar la nómina de proyectos de inversión presupuestados en los Subtítulos 29, 31 y 33 por Partida, y para ello desagregará la información por etapa de diseño, ejecución y fecha de entrega prevista. 16. Trimestralmente se informará sobre las instituciones de las señaladas en el artículo 2 y el monto, la duración y las condiciones en que han tomado deuda con garantía estatal. 17. Semestralmente, las empresas públicas creadas por ley, las empresas del Estado y las sociedades en que éste tenga aporte, participación accionaria superior al cincuenta por ciento o mayoría en el directorio, cualquiera sea el estatuto por el que se rijan, incluso aquellas que de acuerdo a su ley orgánica deban ser expresamente mencionadas para quedar obligadas al cumplimiento de ciertas disposiciones, deberán remitir la información relativa al total de deuda que poseen, con indicación del porcentaje de ella que ha sido tomada con garantía estatal y las fechas y condiciones de su vencimiento. 18. Un reporte trimestral desagregado por ministerio y por región, que dé cuenta de los proyectos o programas identificados con el etiquetado de “Género” y de “Cambio Climático” a nivel de Subtítulo. 19. El Ministerio de Economía, Fomento y Turismo informará semestralmente el estado de la implementación del Plan de Acción del Corredor Bioceánico Vial, con detalle de los convenios suscritos y su estado de ejecución. Esta información se remitirá semestralmente, treinta días después de terminado el semestre respectivo, e incluirá a la Comisión de Economía, Fomento; Micro, Pequeña y Mediana Empresa; Protección de los Consumidores y Turismo de la Cámara de Diputados y a la Comisión de Economía del Senado. Asimismo, los órganos del Estado regidos por esta ley deberán cumplir con las siguientes obligaciones de información y publicación: a) Publicar en su sitio electrónico institucional un informe trimestral que contenga, en su caso, la individualización de los proyectos beneficiados con cargo a los Subtítulos 24 y 33, nómina de beneficiarios, metodología de elección de éstos, las personas o entidades ejecutoras de los recursos, los montos asignados, la modalidad de asignación, las actividades financiadas, los objetivos y metas anuales, los montos y porcentajes de ejecución, desagregados por programa presupuestario, región y comuna según sea el caso, P30TERM del respectivo trimestre. En caso de contener coberturas y recursos asignados en glosa, la información deberá presentarse con dicho nivel de desagregación. Si las asignaciones a las que hace mención el párrafo precedente corresponden a transferencias a municipios, el informe respectivo también deberá contener una copia de los convenios firmados con los alcaldes, el desglose por municipio de los montos transferidos y el criterio bajo el cual éstos fueron distribuidos. La precitada información deberá ser remitida en igual plazo y con el mismo detalle a la CEMP. b) Publicar en sus respectivos portales de transparencia activa las actas de evaluación emitidas por las comisiones evaluadoras de licitaciones y compras públicas de bienes y servicios que realicen en el marco de la ley N° 19.886, P30TERM del respectivo proceso. La precitada información deberá ser remitida a la CEMP trimestralmente, dentro de los treinta días posteriores al término del trimestre respectivo con el mismo detalle. c) Cada ministerio y los demás órganos de la Administración del Estado deberán publicar en sus respectivos sitios electrónicos institucionales la información relativa al presupuesto asignado por esta ley. Para estos efectos procurarán utilizar un lenguaje claro que permita ser comprendido por la mayor cantidad de personas, con utilización de gráficos y otros mecanismos que permitan comprender, de manera sencilla, la composición del presupuesto y de los distintos elementos que lo integran, y vincularán esta información a las orientaciones estratégicas, objetivos prioritarios y resultados esperados para el período. Se deberán contemplar mecanismos de participación ciudadana que permitan recoger inquietudes y realizar consultas sobre iniciativas en estudio o para la priorización de acciones futuras, a través de consejos de la sociedad civil, de carácter consultivo, conformados acorde con lo establecido en el artículo 74 del decreto con fuerza de ley N° 1-19.653, de 2000, del Ministerio Secretaría General de la Presidencia. Toda información deberá ser proporcionada en formato digital, legible y procesable, que no consista solamente en imagen de la respectiva documentación, desagregada por sexo, cuando corresponda. Asimismo, todo deber de información que no señale una fecha de entrega deberá ser cumplido antes del comienzo de la tramitación de la Ley de Presupuestos del Sector Público para el año siguiente. La información que, de acuerdo con lo establecido en esta ley, deba ser remitida a cualquiera de las comisiones de la Cámara de Diputados o del Senado, se entenderá que debe ser remitida también a la CEMP. La Cámara de Diputados y el Senado deberán disponer en un repositorio electrónico de acceso público la información remitida de acuerdo con lo establecido en esta ley. Para tal efecto, se podrá disponer de una plataforma web, a través de la cual las instituciones públicas incluidas en la presente ley deberán disponer la respectiva información. Sin perjuicio de lo anterior, la CEMP deberá remitir la información que le corresponda recibir a las comisiones permanentes de la Cámara de Diputados y del Senado cuyas materias de competencia se relacionen con la Partida respectiva, dentro del plazo de treinta días contado desde su recepción. La información que se remita de acuerdo con lo establecido en el presente artículo deberá considerar las particularidades, condiciones y desagregación vigente en la Ley de Presupuestos. Para dar cumplimiento a lo señalado en este artículo, la información indicada deberá ser puesta a disposición por los organismos correspondientes de conformidad a las instrucciones impartidas para tal efecto por la DIPRES. Asimismo, los organismos públicos obligados a remitir la información señalada en el presente artículo deberán ponerla a disposición en los sitios electrónicos en los que dan cumplimiento a las obligaciones de transparencia activa. La omisión de la publicación en la forma señalada o su falta de actualización podrá reclamarse en conformidad con lo dispuesto en el artículo 8 de la Ley de Transparencia de la Función Pública y de Acceso a la Información de la Administración del Estado, contenida en el artículo primero de la LEY20285, sobre Acceso a la Información Pública.
 
-## Articulo 15
+## Articulo 15 - Regular traspaso honorarios suma alzada a contrata y ajustes asociados
 Regular traspaso honorarios suma alzada a contrata y ajustes asociados, año 2026.
 
 ### Traspasos Honorarios A Contrata
@@ -968,10 +968,10 @@ Renovar contrataciones de personal a honorarios sin quedar sujeto a limitaciones
 #### Resultados
 Reemplazos del personal a honorarios no quedan afectos a la limitación antes señalada
 
-## Articulo 16
+## Articulo 16 - Artículo 16
 Artículo 16.- La DIPRES proporcionará a las comisiones de Hacienda del Senado y de la Cámara de Diputados, a la CEMP y a la BCN los informes y documentos que se señalan, en la forma y oportunidades que a continuación se indican: 1. Informe de ejecución presupuestaria mensual de ingresos y gastos del Gobierno Central, a nivel de Subtítulos, P30TERM del respectivo mes. Este informe deberá incluir la ejecución mensual de gastos correspondientes a los Subtítulos 30 “Adquisición de Activos Financieros” y 32 “Préstamos”, del clasificador de gastos. 2. Informe de ejecución presupuestaria trimestral de ingresos y gastos del Gobierno Central, a nivel de Subtítulos, P30TERM del respectivo trimestre, e incluirá en anexos un desglose de los ingresos tributarios del período, otras fuentes de financiamiento y saldo de la deuda bruta del Gobierno Central. Del mismo modo, deberá incluir en anexos información del gasto devengado en el Gobierno Central del Subtítulo 22, ítem 07, Publicidad y Difusión, desagregado por asignación, y detallará el gasto por Partida y su variación real respecto de igual trimestre del año anterior y de las asignaciones comprendidas en los Subtítulos 24 y 33, para cada uno de los programas de esta ley. 3. Informe de la ejecución trimestral del presupuesto de ingresos y gastos de las Partidas de esta ley, al nivel de Partidas, Capítulos y Programas aprobados respecto de cada una de ellas, estructurado en presupuesto inicial, presupuesto vigente y monto ejecutado a la fecha respectiva, incluido el gasto de todas las glosas de esta ley, P30TERM del respectivo trimestre. 4. Copia de los decretos de modificaciones presupuestarias totalmente tramitados durante cada mes y un informe consolidado de las modificaciones presupuestarias efectuadas en dicho mes por Partida, que contenga una descripción que indique si se trata de incrementos por aplicación de leyes, reducciones por ajuste fiscal, o modificaciones por decisiones de política, con especificación de los montos incrementados o disminuidos por Subtítulo y Partida, dentro de los treinta días siguientes a su término. 5. Informe semestral de la deuda pública bruta y neta del Gobierno Central con sus notas explicativas y antecedentes complementarios, dentro de los sesenta y noventa días siguientes al término del correspondiente semestre, respectivamente. 6. Informe trimestral sobre los Activos Financieros del Tesoro Público, P30TERM del respectivo trimestre. 7. Informe trimestral sobre el Fondo de Reserva de Pensiones y el Fondo de Estabilización Económica y Social, dentro de los noventa días siguientes al término del respectivo trimestre. 8. Informe trimestral de las operaciones de cobertura de riesgo de activos y pasivos autorizados en el artículo 5 de la ley N° 19.908, P30TERM del respectivo trimestre. 9. Informe trimestral con la actualización del escenario fiscal que considere una proyección de ingresos y gastos, junto a la correspondiente proyección del balance efectivo y cíclicamente ajustado, la proyección de deuda y la posición financiera neta para el año 2026 y para el programa financiero en cada caso, adicional al Informe sobre Finanzas Públicas establecido en el número 22 del artículo 2° del decreto con fuerza de ley N° 106, de 1960, del Ministerio de Hacienda. En la misma oportunidad se informará acerca de la necesidad de financiamiento que deba ser atendida con cargo a la autorización de endeudamiento otorgada de conformidad al artículo 3. La entrega de esa información respetará los deberes de reserva de información establecidos en leyes especiales. En estos informes se actualizará la proyección de ingresos efectivos y estructurales del Gobierno Central, habida consideración de la recaudación efectiva del año 2025, los ajustes metodológicos que se implementen y la actualización de proyecciones macroeconómicas para el año. Sobre esta base la DIPRES determinará el nivel de gastos compatible con el cumplimiento de la meta fiscal del año y los ajustes que se requieran para su logro. 10. Antecedentes relativos a la planificación estratégica de los órganos de la Administración del Estado, excluidos el Congreso Nacional, el Poder Judicial, la CGR, el Ministerio Público, el Servicio Electoral y las Fuerzas Armadas. Dichos antecedentes deberán contemplar, a lo menos: a) Definiciones estratégicas, incluida la misión institucional, identificación de sus prioridades a través de objetivos estratégicos y bienes y servicios provistos a sus usuarios. b) Indicadores de desempeño vinculados a los objetivos estratégicos institucionales. c) Medición efectiva de los indicadores de desempeño del año anterior. Para lo anterior, la DIPRES podrá enviar instrucciones específicas. La información correspondiente a la medición de los indicadores de desempeño del año anterior se remitirá durante el mes de mayo y la información correspondiente a la planificación estratégica del periodo 2026–2029 se remitirá en el mes de septiembre. 11. Antecedentes relativos al diseño y desempeño de la oferta programática vigente de los órganos de la Administración del Estado. Se entenderá por tales a los ministerios y sus respectivos órganos desconcentrados, y servicios públicos. Dichos antecedentes deberán contemplar: a) La información que la DIPRES y la Subsecretaría de Evaluación Social recaben en virtud del monitoreo del desempeño de los programas públicos correspondientes a la oferta programática ejecutada el año anterior. Esta información deberá remitirse en el mes de mayo. b) La información que la DIPRES y la Subsecretaría de Evaluación Social recaben en virtud de la evaluación ex ante de diseño de los programas nuevos o aquellos que reformulen su diseño en forma significativa presentados en el marco del proceso de formulación presupuestaria del año siguiente. Dicha información deberá remitirse cuarenta y cinco días antes de que comience la discusión presupuestaria del año siguiente. c) La información recabada de la Evaluación de Programas Gubernamentales (EPG) de acuerdo con lo establecido en el artículo 52 del DL1263, Orgánico de Administración Financiera del Estado y en el reglamento fijado a través del decreto N° 2.068, de 2022, del Ministerio de Hacienda. Esta información deberá remitirse quince días antes de que comience la discusión presupuestaria del año siguiente. 12. Durante el primer trimestre del año la DIPRES informará, de forma agregada, y a nivel de Partida, Capítulo y Programa, los gastos en personal que son imputados al Subtítulo 24, y señalará el monto que la Ley de Presupuestos autoriza al respecto y, a la fecha, la ejecución de dichos recursos y el número de personas que se desempeñan en dichos cargos, según corresponda. De la misma forma, y como parte integrante de los antecedentes que acompañan los contenidos del proyecto de ley de presupuestos del año siguiente, se informará de forma agregada, y a nivel de Partida, Capítulo y Programa, los gastos en personal que se propone serán imputados al Subtítulo 24, junto con una estimación del número de personas que se espera se desempeñen en dichos cargos. Se actualizará la información señalada precedentemente, de forma que permita su comparación respecto de los recursos autorizados por la ley, su ejecución a la fecha y el número de personas que se desempeñan en dichos cargos, según corresponda. 13. En el marco de la regla fiscal el Ministerio de Hacienda, por intermedio de la DIPRES, remitirá mensualmente a la CEMP un informe de avance hacia la meta de balance estructural comprometida para el año 2026, e incluirá: a) la estimación de balance estructural acumulado. b) la comparación con la trayectoria trimestral de referencia. c) las medidas de corrección adoptadas. La información señalada en los párrafos precedentes, además, deberá publicarse en el sitio electrónico de la DIPRES. Para dar cumplimiento a lo señalado en los numerales 1 al 11 anteriores, la información indicada deberá ser entregada por los organismos correspondientes de conformidad a las instrucciones impartidas para tal efecto por la DIPRES. Además, dicha información deberá ser publicada en los mismos plazos en los respectivos sitios electrónicos de los organismos obligados a proporcionarla. Durante el mes de marzo de 2026 se conformará una instancia de coordinación entre ambas cámaras del Congreso Nacional y la DIPRES, para efectos de acordar formatos y precisiones respecto de la información de la que trata este artículo.
 
-## Articulo 17
+## Articulo 17 - Reglas para afiliación/asociación a organismos internacionales y aumento de cuotas
 Reglas para afiliación/asociación a organismos internacionales y aumento de cuotas.
 
 ### Autorizacion Previa
@@ -1002,7 +1002,7 @@ Visación condicionada a disponibilidad presupuestaria
 #### Verifica
 DIPRES
 
-## Articulo 18
+## Articulo 18 - Reglas para decretos supremos, visaciones, autorizaciones y procedimientos DIPRES/MH
 Reglas para decretos supremos, visaciones, autorizaciones y procedimientos DIPRES/MH.
 
 ### Decretos Supremos MINHACIENDA
@@ -1086,7 +1086,7 @@ Subsecretaria o subsecretario respectivo
 #### Rec
 Puede delegar en secretaria o secretario regional ministerial correspondiente
 
-## Articulo 19
+## Articulo 19 - Establecer calidad de agentes públicos y deber de probidad para
 Establecer calidad de agentes públicos y deber de probidad para encargados de programas a honorarios.
 
 ### Condiciones
@@ -1106,7 +1106,7 @@ Sin perjuicio de la responsabilidad correspondiente de su superior jerárquico
 #### Requisitos
 Ajustar su labor al principio de probidad administrativa contemplado en las leyes
 
-## Articulo 20
+## Articulo 20 - Reglas de avisaje/publicaciones en medios y obligaciones de transparencia asociadas
 Reglas de avisaje/publicaciones en medios y obligaciones de transparencia asociadas.
 
 ### Medios Comunicacion Social
@@ -1171,7 +1171,7 @@ Formato y lineamientos serán proporcionados oportunamente por SEGEGOB
 #### Desc
 SEGEGOB hará seguimiento del cumplimiento de la obligación establecida en el inciso anterior
 
-## Articulo 21
+## Articulo 21 - Límites y reglas para gastos publicidad y difusión 2026 (por
 Límites y reglas para gastos publicidad y difusión 2026 (por Partida) y definiciones asociadas.
 
 ### Limite Gastos Publicidad Difusion 2026
@@ -1281,7 +1281,7 @@ Suscripciones a revistas, diarios y servicios de información (papel o medios el
 #### Requisitos
 Limitar gasto al estrictamente indispensable para el quehacer de los servicios
 
-## Articulo 22
+## Articulo 22 - Regular comisiones de servicio, comitivas, plan anual de viajes al
 Regular comisiones de servicio, comitivas, plan anual de viajes al extranjero y prohibición duplicidad viáticos.
 
 ### Comisiones Servicio
@@ -1382,7 +1382,7 @@ Consideradas comisiones de servicio de interés para la política exterior del p
 #### Prohibiciones
 Duplicidad en el pago de viáticos
 
-## Articulo 23
+## Articulo 23 - Reglas para asignación de recursos (transferencias corrientes y de capital)
 Reglas para asignación de recursos (transferencias corrientes y de capital) a instituciones privadas.
 
 ### Regla General Asignacion
@@ -1498,19 +1498,19 @@ Incluye casos en que transferencias se efectúen sin concurso por disposición d
 #### Condiciones
 En todo aquello en que no sean contradictorias
 
-## Articulo 24
+## Articulo 24 - Artículo 24
 Artículo 24.- Los convenios de transferencia a los que hace referencia el artículo anterior estarán sujetos a las siguientes obligaciones y prohibiciones, tanto cuando se trate de transferencias corrientes a instituciones privadas beneficiarias como a instituciones privadas ejecutoras de políticas públicas: 1. Deberán indicar el objeto social o fines que establecen los estatutos o el acta de constitución de la institución privada con la cual se suscriba el convenio. El objeto social se acreditará de manera previa a la suscripción del convenio de transferencia, y deberá ser pertinente con la actividad a desarrollar. 2. Deberán indicar las actividades específicas a desarrollar y/o los conceptos de gastos que se financiarán. 3. No podrán establecer compromisos financieros que excedan el ejercicio presupuestario, salvo que cuenten con la autorización previa de la DIPRES. 4. Deberán condicionar la suscripción del convenio al cumplimiento íntegro de las obligaciones establecidas en la ley N° 19.862. 5. Las rendiciones de cuentas se deberán realizar a través del Sistema de Rendición Electrónica de Cuentas de la CGR. La incorporación al sistema y las modalidades de uso se deberán realizar de acuerdo con las instrucciones que la CGR emita al efecto. Lo anterior, sin perjuicio de las autorizaciones vigentes otorgadas por la CGR a determinados organismos públicos para el uso de sistemas digitales propios de rendición de cuentas. Será responsabilidad de los órganos y servicios públicos velar por el buen uso de la plataforma y por la veracidad de la información que en ella se registre. Asimismo, será responsabilidad de dichos órganos y servicios exigir que los receptores cumplan con la obligación de rendir cuentas, verificar el correcto uso de los recursos y exigir sus restituciones, si correspondiere. Salvo que los respectivos convenios dispongan un plazo diferente, los organismos públicos tendrán el plazo máximo de tres meses para pronunciarse de manera fundada acerca de la rendición de cuentas otorgadas por las instituciones privadas respectivas. 6. Deberá acreditarse que el receptor ha cumplido con las obligaciones de rendir cuenta respecto de cualquier otro convenio suscrito con el órgano que efectúa la transferencia, en su caso. Deberá incorporarse una cláusula que exija la restitución de los recursos transferidos en caso de que éstos sean destinados a una finalidad distinta de aquella para la cual fueron asignados, o bien, no hayan sido utilizados o rendidos o hayan sido observados en el proceso de revisión de la rendición de cuentas.
 
-## Articulo 25
+## Articulo 25 - Artículo 25
 Artículo 25.- Además de los requisitos del artículo anterior, los convenios que se suscriban en que se establezcan transferencias de recursos a instituciones privadas ejecutoras de políticas públicas deberán cumplir con lo siguiente: a) Sólo se podrán suscribir convenios con aquellas instituciones privadas que al momento de la postulación tengan a lo menos dos años de antigüedad contados desde su constitución, y que demuestren experiencia en el área de ejecución del convenio. Para estos efectos, al momento de suscribir el convenio se deberá requerir un certificado de vigencia otorgado por el organismo competente en que se acredite la antigüedad de la institución. Asimismo, al momento de la postulación, se requerirán antecedentes que demuestren la experiencia de la institución privada o de los responsables del equipo de trabajo que ejecuten el proyecto asociado al convenio. b) Las instituciones privadas que suscriban convenios deberán constituir una o más garantías a favor del órgano de la Administración, con el objeto de garantizar el fiel cumplimiento de las obligaciones establecidas en el convenio, cuando el total del monto de los recursos que se transfieran supere las 1.000 unidades tributarias mensuales. Dichas garantías deberán consistir en vales vistas, boletas de garantía, pólizas de seguro, depósitos a plazo, certificados de fianza u otros instrumentos que permitan su cobro inmediato, y deberán ascender al cinco por ciento del monto total de los recursos a transferir. Para estos efectos, se considerará el valor de la unidad tributaria mensual correspondiente al mes de enero del año de suscripción del convenio de transferencia. Los costos financieros en que incurran las instituciones privadas con motivo del proyecto o iniciativa podrán ser considerados en los convenios de transferencias correspondientes. c) Deberán considerar, como condición a la transferencia de los recursos, el cumplimiento de hitos diferidos en el tiempo, relacionados con el cumplimiento del objetivo para el que fueran asignados. Se podrán realizar anticipos por hasta el veinte por ciento, de conformidad a lo que establezca el convenio. Si es que la prestación carece de hitos específicos, se deberán establecer transferencias parceladas en el tiempo. d) Se podrá autorizar la subcontratación con terceros para las actividades que no constituyan el objeto principal del convenio, las cuales deberán estar claramente precisadas en éste. Excepcionalmente, se podrá autorizar la subcontratación del objeto principal del convenio cuando se advierta la imposibilidad de darle cumplimiento. Para estos efectos, el jefe de servicio deberá emitir una resolución fundada que especifique las razones de la subcontratación. El convenio deberá incorporar todas las actividades, los montos y las instituciones que serán subcontratadas. En ningún caso dicha subcontratación se podrá realizar con personas relacionadas, en conformidad a lo dispuesto en el artículo 100 de la ley N° 18.045. Se deberá enviar a las Comisiones de Hacienda de la Cámara de Diputados y del Senado una copia de la resolución y el convenio de cada excepcionalidad. e) No se podrá fraccionar en distintos convenios la asignación de recursos a una misma institución privada, cuando éstos estén destinados a un mismo objetivo dentro de una región o a nivel nacional y, además, provengan de una misma asignación o programa presupuestario. Para estos efectos, deberá dejarse constancia en el convenio de la existencia de otros convenios suscritos por la institución privada con el mismo organismo y que se encuentren vigentes. Los organismos públicos deberán publicar el llamado a postulación al concurso público, su acta de evaluación, el acto administrativo de adjudicación, el proyecto y presupuesto adjudicado y el convenio asociado a éste en los sitios electrónicos en los que dan cumplimiento a las obligaciones de transparencia activa, de forma permanente, completa y actualizada, en el plazo no mayor de quince días corridos una vez firmado el mencionado convenio. La misma obligación recaerá sobre la institución privada receptora de transferencias por un monto mayor a 2.000 unidades tributarias mensuales, la cual además del proyecto y presupuesto adjudicado y el convenio asociado a éste, deberá publicar en su sitio electrónico los estados financieros, balance y memoria anual de actividades. Asimismo, deberá publicar la nómina de su directorio en ejercicio o de su órgano superior de administración, administradores principales y los recursos recibidos por fecha, monto y organismo otorgante. La institución privada receptora, en la misma oportunidad en la que realice las mencionadas publicaciones, deberá remitir dicha información al organismo público correspondiente, el cual deberá publicarla en el sitio electrónico en el que da cumplimiento a las obligaciones de transparencia activa. De acuerdo con lo dispuesto en el artículo 8° del artículo primero de la LEY20285, sobre acceso a la información pública, cualquier persona podrá reclamar ante el Consejo para la Transparencia, si el organismo público correspondiente no realiza las publicaciones indicadas en este inciso, o no actualiza la información. El Ministerio de Hacienda podrá impartir instrucciones complementarias de aplicación general respecto del contenido de los convenios, o de las reglas a que deben atenerse los concursos para su adjudicación. El jefe de servicio o la máxima autoridad del órgano respectivo velará por el íntegro cumplimiento de estas instrucciones.
 
-## Articulo 26
+## Articulo 26 - Artículo 26
 Artículo 26.- Los organismos públicos receptores de recursos provenientes de transferencias, que deban reintegrarlos a rentas generales de la nación, porque no han sido utilizados o por cualquier otro motivo, deberán hacerlo a más tardar dentro del mes siguiente al cierre de la rendición de cuentas del respectivo convenio. El proceso de rendición de cuentas no podrá extenderse por más de seis meses contados desde la finalización de la ejecución del convenio. Los receptores privados que se encuentren en la obligación de restituir recursos transferidos deberán hacerlo al organismo público correspondiente, dentro del plazo máximo de sesenta días hábiles contado desde el término del respectivo convenio. Luego de la recepción de los recursos, el organismo público deberá reintegrar dichos recursos a rentas generales de la Nación, a más tardar al mes siguiente de su recepción. En el caso de los organismos públicos, se entenderá por recursos transferidos no utilizados, los saldos no utilizados al término de la ejecución de las actividades convenidas. Si se trata de instituciones privadas, serán los que se encuentren en dicha situación al término del respectivo convenio. Si se trata de transferencias consolidables entre organismos del Sector Público, éstas podrán efectuarse sin necesidad de suscripción de un convenio por parte de los organismos involucrados, mediante resoluciones exentas de los respectivos jefes de servicio, sin perjuicio de su posterior envío a la CGR. Lo anterior, no obstante lo que dispongan las glosas aplicables de esta ley o de las facultades de las jefas y los jefes de servicio en este sentido. Los convenios de transferencias a municipalidades deberán incluir la información de las contrataciones de personal que se vayan a celebrar para el cumplimiento del objeto del convenio, así como su calidad jurídica. Los convenios de transferencia deberán regular el destino de los bienes muebles adquiridos con cargo a los recursos transferidos, al término de la ejecución de los programas. Con autorización previa de la DIPRES los órganos públicos podrán comprometer transferencias a otros órganos del Sector Público que excedan el ejercicio presupuestario.
 
-## Articulo 27
+## Articulo 27 - Artículo 27
 Artículo 27.- Sin perjuicio de lo dispuesto en el artículo 12 de la ley N° 19.880, las autoridades, las funcionarias y los funcionarios públicos y el personal contratado sobre la base de honorarios, no podrán participar o intervenir en modo alguno en el proceso de concursabilidad, adjudicación o suscripción de un convenio, cuando se encuentren en las siguientes situaciones: 1. Cuando tengan la calidad de cónyuge, conviviente civil, o parientes hasta el cuarto grado de consanguinidad o tercero de afinidad inclusive, o tengan hijo o hija en común, con los miembros del directorio o de los ejecutivos o administradores principales de una institución privada que forme parte de un proceso concursal. 2. Cuando hayan trabajado, prestado servicios remunerados o no, o desempeñado labores directivas en una institución privada que forme parte de un proceso concursal, en los dos años inmediatamente anteriores contados desde que asumieron el cargo público que desempeñan. 3. Cuando hayan emitido opinión, por cualquier medio, sobre un procedimiento concursal en curso y cuya resolución de adjudicación se encuentre pendiente. En el acta o las actas que se levanten durante el proceso concursal deberá dejarse constancia de la nómina de las funcionarias y los funcionarios públicos y del personal contratado sobre la base de honorarios que intervinieron en éste.
 
-## Articulo 28
+## Articulo 28 - Permitir asignación conjunta de transferencias corrientes/capital con mismo objeto y
 Permitir asignación conjunta de transferencias corrientes/capital con mismo objeto y denominación.
 
 ### Condiciones
@@ -1552,7 +1552,7 @@ Regularizar asignación de recursos asociados a estas transferencias
 #### Desc
 Asignación de recursos no podrá superar la suma de los ítems involucrados en conjunto
 
-## Articulo 29
+## Articulo 29 - Mantener vigencia de actos/contratos previos con imputación distinta, hasta su
 Mantener vigencia de actos/contratos previos con imputación distinta, hasta su terminación.
 
 ### Condiciones
@@ -1567,7 +1567,7 @@ Continuarán produciendo efectos hasta su terminación
 ### Contexto
 Con cargo a la asignación/ítem/subtítulo que corresponda de acuerdo con esta ley
 
-## Articulo 30
+## Articulo 30 - Reglas sobre arriendo de infraestructura, recuperación subsidios licencias médicas, aplicabilidad
 Reglas sobre arriendo de infraestructura, recuperación subsidios licencias médicas, aplicabilidad y obligatoriedad de instructivos.
 
 ### Arriendo Infraestructura Actividades Institucionales
@@ -1672,7 +1672,7 @@ Serán obligatorios
 - Órganos de la Administración Central del Estado
 - Gobiernos regionales
 
-## Articulo 31
+## Articulo 31 - Facultar al Ministerio de Hacienda para impartir instrucciones a empresas
 Facultar al Ministerio de Hacienda para impartir instrucciones a empresas del Estado y sociedades con capital estatal >=50%.
 
 ### Instrucciones MINHACIENDA
@@ -1722,7 +1722,7 @@ Enviar copia de estas instrucciones a
 #### Plazo
 A más tardar treinta días después de que sean emitidas
 
-## Articulo 32
+## Articulo 32 - Prohibir dieta/remuneración por integrar órganos en empresas/entidades públicas que incrementen
 Prohibir dieta/remuneración por integrar órganos en empresas/entidades públicas que incrementen remuneración del cargo.
 
 ### Sujetos
@@ -1736,7 +1736,7 @@ No tendrán derecho a percibir dieta o remuneración por integrar consejos o jun
 #### Condiciones
 Empresas o entidades públicas que incrementen la remuneración correspondiente a los cargos regulados por las leyes señaladas
 
-## Articulo 33
+## Articulo 33 - Reglas dotación máxima vehículos motorizados y procedimiento de aumento/traspaso
 Reglas dotación máxima vehículos motorizados y procedimiento de aumento/traspaso.
 
 ### Dotacion Maxima Vehiculos
@@ -1776,7 +1776,7 @@ No aumentar en caso alguno la dotación máxima del ministerio de que se trate
 - Vehículos deberán ser debidamente identificados
 - Inscripción en Registro de Vehículos Motorizados del Servicio de Registro Civil e Identificación
 
-## Articulo 34
+## Articulo 34 - Autorizar pagos/giros excedibles y regularización posterior por decretos
 Autorizar pagos/giros excedibles y regularización posterior por decretos.
 
 ### Sujetos
@@ -1808,7 +1808,7 @@ Mediante decretos del
 #### Desc
 Dictados en la forma dispuesta en
 
-## Articulo 35
+## Articulo 35 - Estándar de entrega de información digital procesable y consecuencias por
 Estándar de entrega de información digital procesable y consecuencias por incumplimiento.
 
 ### Req Formato Informacion
@@ -1851,7 +1851,7 @@ Presidenta o Presidente de la Cámara de Diputados o del Senado remitirá antece
 #### Requisitos
 Dar cuenta de dicha acción en la respectiva sesión
 
-## Articulo 36
+## Articulo 36 - Autorizar postergar cumplimiento obligación transitoria Ley 21
 Autorizar postergar cumplimiento obligación transitoria Ley 21.174 hasta vigencia de esta ley; resguardar obligaciones Ley 18.948.
 
 ### Postergacion
@@ -1878,7 +1878,7 @@ Traspaso de saldos al Fondo de Contingencia Estratégico
 #### Desc
 Lo dispuesto en el inciso anterior no afectará en modo alguno el cumplimiento de obligaciones derivadas de la aplicación del artículo 102
 
-## Articulo 37
+## Articulo 37 - Reglas informe CGR para gastos reservados 2026 (suscripción conjunta +
 Reglas informe CGR para gastos reservados 2026 (suscripción conjunta + visto bueno ministro + contenido suficiente).
 
 ### Contexto
@@ -1924,7 +1924,7 @@ Contar con información suficiente para permitir al Contralor General de la Rep�
 - Cumplimiento fines establecidos en artículo 2
 - Cumplimiento de lo dispuesto en artículo 6
 
-## Articulo 38
+## Articulo 38 - Visaciones e informes previos para enajenación de inmuebles (patrimonios afectación
 Visaciones e informes previos para enajenación de inmuebles (patrimonios afectación fiscal) durante 2026.
 
 ### Periodo
@@ -1963,7 +1963,7 @@ Según corresponda
 
 #### Elemento 2
 
-## Articulo 39
+## Articulo 39 - Límite anual 2026 para operaciones cobertura riesgos financieros (entidades autorizadas
 Límite anual 2026 para operaciones cobertura riesgos financieros (entidades autorizadas Ley 19.908).
 
 ### Periodo
@@ -1982,7 +1982,7 @@ No exceder de US$4.000.000 miles o equivalente en moneda nacional
 #### Desc
 Operaciones deben efectuarse con sujeción a lo dispuesto en
 
-## Articulo 40
+## Articulo 40 - Coordinación y excepciones presupuestarias ante emergencias/desastres/catástrofes
 Coordinación y excepciones presupuestarias ante emergencias/desastres/catástrofes; reglas rehabilitación/reconstrucción.
 
 ### Emergencia Declarada
@@ -2097,7 +2097,7 @@ Disponer procedimiento abreviado para declaración de admisibilidad de iniciativ
 #### Plazo
 Debe estar publicado a más tardar el 31 de enero de 2026
 
-## Articulo 41
+## Articulo 41 - Suspender traspaso servicio educacional a SLEP durante 2026
 Suspender traspaso servicio educacional a SLEP durante 2026; habilitar ajustes presupuestarios por decreto.
 
 ### Traspaso Servicio Educacional
@@ -2137,7 +2137,7 @@ Decreto expedido por intermedio del
 #### Contexto
 Bajo la fórmula "por orden del Presidente de la República"
 
-## Articulo 42
+## Articulo 42 - Plataforma informática MINHACIENDA para publicación de recursos asignados, ejecución transaccional
 Plataforma informática MINHACIENDA para publicación de recursos asignados, ejecución transaccional y respaldos.
 
 ### Plataforma Informatica
@@ -2156,7 +2156,7 @@ Recursos asignados Ejecución mensual a nivel transaccional para organismos del 
 - Principales receptores de recursos
 - Proveedores del Estado
 
-## Articulo 43
+## Articulo 43 - Habilitar uso de caja (recursos autorizados + ingresos propios) para
 Habilitar uso de caja (recursos autorizados + ingresos propios) para financiar conceptos legales de gasto, resguardando fines.
 
 ### Criterio
@@ -2180,7 +2180,7 @@ En caso alguno supone destinar recursos a fines distintos a los establecidos por
 #### Resultados
 Garantiza atender de manera más eficaz y eficiente necesidades de los órganos o servicios públicos
 
-## Articulo 44
+## Articulo 44 - Ajustar fecha obligatoriedad de régimen Título III DFL 1/1996 para
 Ajustar fecha obligatoriedad de régimen Título III DFL 1/1996 para profesionales de educación (Ley 20.903); establecer excepción por evaluación.
 
 ### Regla Obligatoriedad
@@ -2227,7 +2227,7 @@ Profesionales de la educación que hayan rendido instrumentos de evaluación con
 #### Desc
 Además sean reconocidos en resolución que establece
 
-## Articulo 45
+## Articulo 45 - Traspasar personal Programa Asuntos Indígenas desde MDSF a Ministerio del
 Traspasar personal Programa Asuntos Indígenas desde MDSF a Ministerio del Interior, sin solución de continuidad.
 
 ### Traspaso
@@ -2267,7 +2267,7 @@ Expedido bajo la fórmula "por orden del Presidente de la República"
 #### Resultados
 Individualizará a funcionarios a contrata y personas contratadas sobre base honorarios traspasados
 
-## Articulo 46
+## Articulo 46 - Autorizar aporte fiscal 2026 a Fondo de Garantías Especiales
 Autorizar aporte fiscal 2026 a Fondo de Garantías Especiales.
 
 ### Periodo
@@ -2294,7 +2294,7 @@ Persona jurídica de derecho público denominada
 #### Desc
 Creada por
 
-## Articulo 47
+## Articulo 47 - Plan de Ejecución y Recuperación de Saldos para sostenedores con
 Plan de Ejecución y Recuperación de Saldos para sostenedores con saldos SEP registrados por Superintendencia de Educación; reintegros, cobro y reportes.
 
 ### Sujetos
@@ -2494,7 +2494,7 @@ Dentro de los treinta días siguientes al término del respectivo trimestre
 - Comisiones de Educación de la Cámara de Diputados
 - Comisiones de Educación del Senado
 
-## Articulo 48
+## Articulo 48 - Vigencia ley 2026 y habilitación de actos desde publicación
 Vigencia ley 2026 y habilitación de actos desde publicación.
 
 ### Vigencia
@@ -2515,7 +2515,7 @@ A contar de la fecha de publicación de esta ley
 #### Rec
 Esta ley y las instrucciones para su ejecución podrán ser publicadas en su integridad para su distribución
 
-## Articulo 49
+## Articulo 49 - Prohibir celebraciones con gasto fiscal
 Prohibir celebraciones con gasto fiscal; establecer excepción.
 
 ### Prohibiciones
@@ -2531,7 +2531,7 @@ Embajadas y consulados en el extranjero
 #### Contexto
 Conmemoración del día de la independencia nacional
 
-## Articulo 50
+## Articulo 50 - Instrucciones DIPRES para resguardar cumplimiento política fiscal
 Instrucciones DIPRES para resguardar cumplimiento política fiscal.
 
 ### Condiciones
@@ -2548,7 +2548,7 @@ Impartirá instrucciones con objetivo resguardar cumplimiento de política fisca
 #### Desc
 Política fiscal establecida de conformidad con el artículo 1°
 
-## Articulo 51
+## Articulo 51 - Preferencia asignación vacantes admisión escolar 2027 según nacionalidad/regularidad migratoria
 Preferencia asignación vacantes admisión escolar 2027 según nacionalidad/regularidad migratoria.
 
 ### Condiciones
@@ -2571,7 +2571,7 @@ Postulantes en condición migratoria irregular
 #### Requisitos
 Establecimientos educacionales deberán proceder a enrolamiento y registro conforme a artículo 44
 
-## Articulo 52
+## Articulo 52 - Condicionar dictación de decreto supremo (Ley 21
 Condicionar dictación de decreto supremo (Ley 21.600) a dictación previa de reglamento.
 
 ### Periodo
@@ -2587,7 +2587,7 @@ Dictación del decreto supremo al que hace referencia el artículo octavo transi
 #### Desc
 Requerirá previamente dictación del reglamento a que se refiere el artículo 29 de la misma ley
 
-## Articulo 53
+## Articulo 53 - Reporte semestral DIPRES sobre deudas públicas/obligaciones pago del Estado (consolidado
 Reporte semestral DIPRES sobre deudas públicas/obligaciones pago del Estado (consolidado + detalle).
 
 ### Informe Semestral Deudas Publicas
@@ -2614,7 +2614,7 @@ Facilitar fiscalización parlamentaria gestión financiera
 #### Obj Adicional
 Servir de insumo para formulación de la Ley de Presupuestos del Sector Público del año siguiente
 
-## Articulo 54
+## Articulo 54 - Reportes sobre procedimientos disciplinarios por uso indebido de licencias médicas
 Reportes sobre procedimientos disciplinarios por uso indebido de licencias médicas (a DIPRES, CEMP y otros destinatarios) y deber coordinación.
 
 ### Informe Servicios A DIPRES
@@ -2690,7 +2690,7 @@ Informar trimestralmente lo indicado en los numerales anteriores, junto con desc
 #### Desc
 Dar cumplimiento al deber de coordinación establecido en
 
-## Articulo 55
+## Articulo 55 - Determinar sujeto responsable de deber de informar (Ley 20
 Determinar sujeto responsable de deber de informar (Ley 20.285) y sanciones por incumplimiento.
 
 ### Responsable Informacion
@@ -2711,7 +2711,7 @@ En caso de incumplimiento
 #### Desc
 Aplicación de sanciones previstas en artículo 45
 
-## Articulo 56
+## Articulo 56 - Informar reasignaciones que disminuyan presupuestos de instituciones de defensa/seguridad/justicia
 Informar reasignaciones que disminuyan presupuestos de instituciones de defensa/seguridad/justicia.
 
 ### Condiciones
@@ -2738,7 +2738,7 @@ Deberán ser informadas dentro del mes siguiente a
 - Comisión de Seguridad Pública del Senado
 - Comisión de Seguridad Ciudadana de la Cámara de Diputados
 
-## Articulo 57
+## Articulo 57 - Promover coordinación interinstitucional formal y rendición de cuentas
 Promover coordinación interinstitucional formal y rendición de cuentas; reporte trimestral de convenios/colaboraciones.
 
 ### Ambito

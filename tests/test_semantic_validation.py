@@ -13,6 +13,8 @@ from kora_lib.graph import GraphEdge
 from kora_lib.validation import (
     build_formal_trace_targets,
     cmd_validate,
+    find_field_like_markdown_headings,
+    find_truncated_markdown_headings,
     formal_section_exists,
     validate_agents_canonical_structure,
     validate_agents_semantics,
@@ -140,6 +142,17 @@ class SemanticValidationTests(unittest.TestCase):
             "Texto menciona ## 1. FSM y ## 5. Wiring pero no como headings reales.\n"
         )
         self.assertIn("AGENTS.md carece de seccion canonica '## 1. FSM'", failures)
+
+    def test_find_truncated_markdown_headings_detects_ellipsis_suffix(self):
+        headings = find_truncated_markdown_headings("# Demo\n\n## Glosa 03 - Texto truncado...\n")
+        self.assertEqual(headings, ["Glosa 03 - Texto truncado..."])
+
+    def test_find_field_like_markdown_headings_detects_serialized_fields(self):
+        headings = find_field_like_markdown_headings(
+            "# Demo\n\n## Taxonomía\n\n### Titulo\n\n### Path\n",
+            {"titulo", "path"},
+        )
+        self.assertEqual(headings, ["Titulo", "Path"])
 
     def test_skill_purity_flags_conversational_turn_control(self):
         failures = validate_skill_purity("Si ambiguedad: preguntar al usuario\n")

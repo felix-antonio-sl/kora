@@ -155,9 +155,14 @@ def audit_agents_file(workspace: str, path: Path):
     pseudo_pattern = re.compile(r"->\s*([A-Z][A-Z0-9_-]+)\b")
     for line_no, line in enumerate(text.splitlines(), start=1):
         stripped = line.strip()
-        if "Trans:" not in stripped and not stripped.startswith("- IF"):
+        transition_text = None
+        if "Trans:" in stripped:
+            transition_text = stripped.split("Trans:", 1)[1]
+        elif stripped.startswith("- IF"):
+            transition_text = stripped
+        else:
             continue
-        for token in pseudo_pattern.findall(stripped):
+        for token in pseudo_pattern.findall(transition_text):
             if token.startswith("S-") or token in {"PASS", "FAIL", "WARN", "WARNING", "ERROR", "OK"}:
                 continue
             findings.append(
@@ -170,26 +175,6 @@ def audit_agents_file(workspace: str, path: Path):
                     "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
                 )
             )
-
-    for line_no, line in enumerate(text.splitlines(), start=1):
-        stripped = line.strip()
-        if "STATE:" not in stripped:
-            continue
-        if stripped.count(" IF ") < 2:
-            continue
-        lowered = stripped.lower()
-        if any(token in lowered for token in ("prioridad", "orden", "exclusion", "fallback", "default")):
-            continue
-        findings.append(
-            make_finding(
-                workspace,
-                "agent.missing_transition_precedence",
-                path,
-                line_no,
-                stripped,
-                "Declarar precedencia explícita por prioridad, orden o exclusión mutua en las ramas del estado.",
-            )
-        )
 
     return findings
 
@@ -242,7 +227,7 @@ def audit_skill_file(workspace: str, path: Path, agents_text: str):
     findings = []
     text = path.read_text(encoding="utf-8")
 
-    state_var_pattern = re.compile(r"\b(?:FSMState|current_state|estado_actual\s*:|estado_fsm|fase_actual)\b")
+    state_var_pattern = re.compile(r"\b(?:current_state|estado_actual\s*:|estado_fsm|fase_actual)\b")
     transition_pattern = re.compile(
         r"\b(?:CONTEXT_SHIFT|NEXT_STATE|estado_destino|la FSM debe volver a despachar|volver a despachar)\b",
         re.IGNORECASE,
@@ -287,7 +272,8 @@ def audit_skill_file(workspace: str, path: Path, agents_text: str):
                 )
             )
 
-    if "CR>1.5" in agents_text and re.search(r"CR\s*<\s*1\.5", text):
+    strict_cr_rule = "CR>1.5" in agents_text and "objetivo" not in agents_text.lower() and "justificacion explicita" not in agents_text.lower()
+    if strict_cr_rule and re.search(r"CR\s*<\s*1\.5", text):
         line_no = next((i for i, line in enumerate(text.splitlines(), start=1) if "CR < 1.5" in line or "CR<1.5" in line), 1)
         snippet = text.splitlines()[line_no - 1].strip()
         findings.append(

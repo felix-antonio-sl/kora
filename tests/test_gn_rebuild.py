@@ -1238,6 +1238,55 @@ class GnRebuildTests(unittest.TestCase):
             result = validate_gn_markdown(draft_path, expected_rel_path="demo.md", expected_urn="urn:gn:kb:demo")
             self.assertTrue(any("heading truncado no permitido" in item for item in result["failures"]))
 
+    def test_validate_rejects_nonrecoverable_normative_primary_heading(self):
+        with TemporaryDirectory() as tmpdir:
+            repo = Path(tmpdir) / "repo"
+            repo.mkdir()
+            draft_path = repo / "drafts/gn/demo.md"
+            draft_path.parent.mkdir(parents=True, exist_ok=True)
+            draft_path.write_text(
+                "\n".join(
+                    [
+                        "---",
+                        "_manifest:",
+                        "  urn: urn:gn:kb:demo",
+                        "  provenance:",
+                        "    created_by: fixture",
+                        "    created_at: '2026-03-09'",
+                        "    source: fixture",
+                        "version: 1.0.0",
+                        "status: draft",
+                        "tags: [gn, demo, test]",
+                        "lang: es",
+                        "extensions:",
+                        "  gn:",
+                        "    source_paths: [demo.yml]",
+                        "    source_hashes:",
+                        "      demo.yml: deadbeef",
+                        "    source_type: koda_yaml",
+                        "    transformation_mode: korafy_direct",
+                        "    document_family: normative",
+                        "    publication_class: knowledge",
+                        "    fs: 100",
+                        "    cr: 2.0",
+                        "    run_id: testrun",
+                        "    review_gate: auto",
+                        "---",
+                        "",
+                        "# Demo",
+                        "",
+                        "## Glosa 03",
+                        "Contenido",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            from scripts.kora_lib.gn_validation import validate_gn_markdown
+
+            result = validate_gn_markdown(draft_path, expected_rel_path="demo.md", expected_urn="urn:gn:kb:demo")
+            self.assertTrue(any("heading primario no recuperable" in item for item in result["failures"]))
+
     def test_glossary_conflicts_can_be_resolved_in_map_contract(self):
         with TemporaryDirectory() as tmpdir:
             repo = Path(tmpdir) / "repo"

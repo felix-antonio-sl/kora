@@ -10,25 +10,22 @@ lang: es
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
-Orquesta la secuencia completa del ciclo de vida DESIGN→CREATE→IMPLEMENT→VALIDATE, consolidando entregables y contexto inter-fase.
+Consolida checkpoints y entregables del modo guiado del ciclo DESIGN -> CREATE -> IMPLEMENT -> VALIDATE sin gobernar transiciones FSM.
 
 ## Input/Output
-- **Input:** dominio: string (descripcion del agente a crear), namespace: string, restricciones: string[] | null
+- **Input:** fase_activa: string, entregables: object, observaciones: string[] | null
 - **Output:** LifecycleReport (ver Signature Output)
 
 ## Procedimiento
-1. INICIAR CICLO: establecer fase_actual=DESIGN y registrar contexto base del workspace objetivo.
-2. FASE DESIGN: invocar CM-AGENT-DESIGNER, registrar blueprint y pendientes estructurales.
-3. FASE CREATE: invocar CM-WORKSPACE-SCAFFOLDER, registrar workspace creado y componentes bootstrap materializados.
-4. FASE IMPLEMENT: invocar CM-COMPONENT-BUILDER, consolidar componentes implementados y skills materializados.
-5. FASE VALIDATE: invocar CM-AGENT-VALIDATOR, consolidar veredicto PASS|FAIL e issues accionables.
-6. REANUDACION: preservar fase_actual y artefactos de fase para permitir continuidad sin recalcular etapas ya cerradas.
-7. COMPLETAR: emitir resumen del ciclo completo con agente, fases ejecutadas, resultado y observaciones.
+1. Recibir la fase activa y los entregables ya producidos por la FSM o por skills previos.
+2. Normalizar el checkpoint de la fase activa: objetivos cubiertos, artefactos producidos, pendientes y riesgos.
+3. Consolidar los checkpoints previos compatibles en un resumen acumulado del ciclo guiado.
+4. Emitir un reporte estructurado de continuidad que permita retomar el trabajo sin reintroducir control secuencial dentro del skill.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| agente | string | Nombre del agente creado |
-| fases_completadas | string[] | Fases del ciclo ejecutadas |
-| resultado_validacion | enum(PASS\|FAIL) | Resultado final de validacion |
-| observaciones | string | Notas relevantes del ciclo |
+| fase_activa | string | Fase guiada actualmente consolidada |
+| fases_registradas | string[] | Fases con checkpoint disponible |
+| pendientes | string[] | Pendientes visibles para continuar el ciclo |
+| observaciones | string[] | Notas relevantes del ciclo guiado |

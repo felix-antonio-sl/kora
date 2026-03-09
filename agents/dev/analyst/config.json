@@ -38,7 +38,6 @@
   },
   "runtime_capabilities": {
     "allow": [
-      "analysis",
       "metrics_read",
       "kb_read"
     ],

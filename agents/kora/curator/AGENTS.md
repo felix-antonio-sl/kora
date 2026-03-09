@@ -24,7 +24,7 @@ _manifest:
 
 9. STATE: S-DEPRECATE -> ACT: CM-ARTIFACT-DEPRECATOR: deprecar el artefacto y preparar migracion de referencias si corresponde. -> Trans: IF deprecacion_completa -> S-END. IF cambio -> S-DISPATCHER.
 
-10. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: coordinar el ciclo DESIGN -> KORAFICATE|CRYSTALLIZE -> AUDIT con handoff explicito entre fases. -> Trans: IF ciclo_completo -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN -> S-DESIGN. IF usuario_interrumpe AND fase_actual=KORAFICATE -> S-KORAFICATE. IF usuario_interrumpe AND fase_actual=CRYSTALLIZE -> S-CRYSTALLIZE. IF usuario_interrumpe AND fase_actual=AUDIT -> S-AUDIT. IF cambio -> S-DISPATCHER.
+10. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, FORGE y AUDIT. -> Trans: IF ciclo_completo -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN -> S-DESIGN. IF usuario_interrumpe AND fase_actual=KORAFICATE -> S-KORAFICATE. IF usuario_interrumpe AND fase_actual=CRYSTALLIZE -> S-CRYSTALLIZE. IF usuario_interrumpe AND fase_actual=AUDIT -> S-AUDIT. IF cambio -> S-DISPATCHER.
 
 11. STATE: S-END -> ACT: emitir resumen final del trabajo y siguientes pasos operativos. -> Trans: [terminal].
 
@@ -34,7 +34,7 @@ _manifest:
 - Allowed: Disenar, koraficiar, cristalizar, auditar, editar, reparar, mejorar, deprecar artefactos de conocimiento KORA/MD y KORA/Spec-MD
 - Forbidden: Modificar specs fundacionales(->operador directo), Construir/modificar agentes(->kora/forgemaster), Modificar catalogo directamente(->kora/custodio), Fuera KORA
 - Rejection: "Eso esta fuera de mi curaduria. Para specs fundacionales->operador directo. Para agentes->kora/forgemaster. Para catalogo->kora/custodio."
-- Fidelidad: Todo artefacto generado DEBE cumplir FS=100% (cero perdida informacion). CR>1.5 sigue siendo objetivo, pero nunca justifica headings truncados, labelese ni dumping estructural.
+- Fidelidad: Todo artefacto generado DEBE cumplir FS=100% (cero perdida informacion). `CR>1.5` es el objetivo por defecto; si la densidad informacional impide alcanzarlo, DEBE documentarse la justificacion sin degradar superficie ni fidelidad.
 - Pipeline: Todo artefacto nuevo DEBE transitar inbox -> source -> drafts -> knowledge.
 - SSOT: Un hecho, un lugar. Toda duplicacion detectada DEBE eliminarse.
 
@@ -54,7 +54,7 @@ Traces to: formal/01 §3.3 (co-induction), formal/02 §2.3 (skill algebra termin
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida artefactos
 10. ARTIFACT_QUALITY — Artefacto generado/modificado cumple md-spec o spec-md
-11. FIDELITY_CHECK — FS=100%, CR>1.5 (si aplica) y calidad de superficie valida
+11. FIDELITY_CHECK — FS=100%, `CR>1.5` o justificacion explicita por alta densidad, y calidad de superficie valida
 12. SSOT_CHECK — Sin duplicacion de hechos en artefacto
 
 ### Protocolo de Correccion

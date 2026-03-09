@@ -10,23 +10,23 @@ lang: es
 # CM-CONTEXT-MANAGER
 
 ## Proposito
-Gestiona contexto multi-turno para sesiones de soporte OpenClaw. Detecta cambios de tema, preserva estado de instancia entre turnos, y rutea transiciones de estado FSM.
+Gestiona contexto multi-turno para sesiones de soporte OpenClaw. Detecta cambios de tema y preserva contexto de instancia entre turnos.
 
 ## Input/Output
-- **Input:** mensaje_actual: string (mensaje del usuario), estado_fsm: FSMState, contexto_sesion: SessionContext | null
+- **Input:** mensaje_actual: string (mensaje del usuario), foco_actual: string | null, contexto_sesion: SessionContext | null
 - **Output:** ContextClassification (ver Signature Output)
 
 ## Procedimiento
 ### Deteccion de Cambio
-Comparar mensaje actual vs estado FSM activo:
+Comparar mensaje actual vs foco operativo activo:
 
 | Patron | Clasificacion | Accion |
 |--------|--------------|--------|
-| Misma instancia, mismo tema | CONTINUAR | Permanecer en estado actual |
-| Misma instancia, tema diferente | NUEVO | Evaluar si requiere cambio de estado |
-| Instancia diferente | CAMBIO_INSTANCIA | Guardar contexto anterior, iniciar nuevo |
+| Misma instancia, mismo tema | CONTINUAR | Mantener foco actual |
+| Misma instancia, tema diferente | NUEVO | Revisar foco de trabajo |
+| Instancia diferente | CAMBIO_INSTANCIA | Guardar contexto anterior e iniciar nuevo foco |
 | Volver a tema anterior | ATRAS | Restaurar contexto previo |
-| Finalizar | TERMINAR | → S-END |
+| Finalizar | TERMINAR | Marcar cierre solicitado |
 | Fuera de OpenClaw | FUERA | Rejection scope |
 
 ### Estado Persistente
@@ -39,16 +39,14 @@ Preservar entre turnos:
 - `issues_abiertos`: problemas detectados no resueltos
 - `historial_acciones`: log de acciones ejecutadas en sesion
 
-### Transiciones
+### Gestion del foco
 
-```
-CONTINUAR → mantener estado FSM, seguir procedimiento
-NUEVO → CM-INTENT-CLASSIFIER → reclasificar → S-{nuevo_estado}
-CAMBIO_INSTANCIA → preservar contexto_anterior, → S-DISPATCHER
-ATRAS → restaurar contexto_anterior, → S-{estado_anterior}
-TERMINAR → S-END
-FUERA → rejection, → S-DISPATCHER
-```
+- CONTINUAR -> mantener foco de trabajo
+- NUEVO -> marcar revision del foco
+- CAMBIO_INSTANCIA -> preservar contexto anterior e iniciar nuevo foco
+- ATRAS -> restaurar referencia semantica previa
+- TERMINAR -> marcar cierre solicitado
+- FUERA -> aplicar rejection semantico
 
 ### Heuristica de Deteccion
 - Palabras clave de cambio: "otra cosa", "ahora", "cambiando de tema", "tambien"
@@ -61,6 +59,6 @@ FUERA → rejection, → S-DISPATCHER
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | clasificacion | enum(CONTINUAR\|NUEVO\|CAMBIO_INSTANCIA\|ATRAS\|TERMINAR\|FUERA) | Tipo de cambio de contexto |
-| estado_anterior | string | Estado FSM antes de transicion |
-| estado_nuevo | string \| null | Estado FSM destino |
+| foco_anterior | string \| null | Referencia semantica al foco previo |
+| requiere_revision_de_foco | bool | True si el trabajo actual debe reinterpretarse |
 | contexto_preservado | string[] | Keys del contexto preservado |
