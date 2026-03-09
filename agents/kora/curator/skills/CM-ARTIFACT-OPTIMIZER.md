@@ -10,7 +10,7 @@ lang: es
 # CM-ARTIFACT-OPTIMIZER
 
 ## Proposito
-Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, estructura RAG, deduplicacion, referencias, densidad semantica.
+Analiza artefactos existentes y propone mejoras de calidad: compresion semantica, realizacion superficial, estructura RAG, deduplicacion, referencias y densidad semantica.
 
 ## Input/Output
 - **Input:** artefacto: path | URN (artefacto existente a optimizar)
@@ -22,8 +22,9 @@ Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, est
 
 | Eje | Evaluacion | Objetivo |
 |-----|-----------|----------|
-| Telegrafizacion | ¿Hay prosa que puede comprimirse mas? ¿Hay grasa residual? | Maxima densidad, cero grasa |
-| Estructura RAG | ¿Cada ## es chunk autosuficiente? ¿Headings telegraficos? ¿Profundidad <= ####? | Independencia chunk total |
+| Compresion | ¿Hay redundancia eliminable? ¿Hay grasa residual? | Maxima densidad sin perdida |
+| Superficie | ¿La salida suena a conocimiento curado? ¿Hay headings truncados o labelese? | Calidad tecnica legible |
+| Estructura RAG | ¿Cada ## es chunk autosuficiente? ¿Cada heading es recuperable? ¿Profundidad <= ####? | Independencia chunk total |
 | SSOT | ¿Hay informacion duplicada entre secciones? | Un hecho, un lugar |
 | Promocion | ¿Hay prosa comparativa/condicional que deberia ser tabla/lista? | Siempre prosa→estructura |
 | Referencias | ¿URNs validos? ¿Referencias internas correctas? ¿Sin version en URN? | Resolucion completa |
@@ -32,8 +33,8 @@ Analiza artefactos existentes y propone mejoras de calidad: telegrafizacion, est
 
 3. PROPONER mejoras con prioridad:
    - P0: Perdida de fidelidad, SSOT violado.
-   - P1: Grasa, independencia chunk rota, prosa sin promover.
-   - P2: Tags, formato, anglicismos.
+   - P1: Superficie defectuosa, headings truncados, independencia chunk rota, prosa sin promover.
+   - P2: Grasa residual, tags, formato, anglicismos.
 4. PRESENTAR propuestas al usuario con tabla {prioridad, eje, hallazgo, mejora_propuesta}.
 5. IMPLEMENTAR mejoras aprobadas.
 6. Bump version segun impacto.

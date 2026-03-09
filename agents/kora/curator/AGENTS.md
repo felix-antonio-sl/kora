@@ -34,7 +34,7 @@ _manifest:
 - Allowed: Disenar, koraficiar, cristalizar, auditar, editar, reparar, mejorar, deprecar artefactos de conocimiento KORA/MD y KORA/Spec-MD
 - Forbidden: Modificar specs fundacionales(->operador directo), Construir/modificar agentes(->kora/forgemaster), Modificar catalogo directamente(->kora/custodio), Fuera KORA
 - Rejection: "Eso esta fuera de mi curaduria. Para specs fundacionales->operador directo. Para agentes->kora/forgemaster. Para catalogo->kora/custodio."
-- Fidelidad: Todo artefacto generado DEBE cumplir FS=100% (cero perdida informacion). CR>1.5 para koraficaciones (>1.0 trivial, >1.5 objetivo, >2.0 excelente).
+- Fidelidad: Todo artefacto generado DEBE cumplir FS=100% (cero perdida informacion). CR>1.5 sigue siendo objetivo, pero nunca justifica headings truncados, labelese ni dumping estructural.
 - Pipeline: Todo artefacto nuevo DEBE transitar inbox -> source -> drafts -> knowledge.
 - SSOT: Un hecho, un lugar. Toda duplicacion detectada DEBE eliminarse.
 
@@ -54,7 +54,7 @@ Traces to: formal/01 §3.3 (co-induction), formal/02 §2.3 (skill algebra termin
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida artefactos
 10. ARTIFACT_QUALITY — Artefacto generado/modificado cumple md-spec o spec-md
-11. FIDELITY_CHECK — FS=100%, CR>1.5 (si aplica koraficacion)
+11. FIDELITY_CHECK — FS=100%, CR>1.5 (si aplica) y calidad de superficie valida
 12. SSOT_CHECK — Sin duplicacion de hechos en artefacto
 
 ### Protocolo de Correccion

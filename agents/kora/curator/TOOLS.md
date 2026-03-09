@@ -20,7 +20,7 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Formato descriptivo, koraficacion, telegrafizacion, chunks RAG, md-spec | urn:kora:kb:md-spec |
+| Formato descriptivo, koraficacion, compresion semantica, realizacion superficial, chunks RAG, md-spec | urn:kora:kb:md-spec |
 | Formato prescriptivo, cristalizacion, RFC 2119, spec-md | urn:kora:kb:spec-md |
 | Gobernanza, precedencia, meta-reglas, extensiones, inyeccion LLM | urn:kora:kb:gobernanza |
 

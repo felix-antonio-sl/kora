@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 04, 07"
-version: "8.1.0"
+version: "8.2.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
 ---
 
-# KORA/Agent-Spec v8.1.0
+# KORA/Agent-Spec v8.2.0
 
 ## 1. Definicion
 
@@ -74,6 +74,7 @@ Reglas:
 3. Los self-loops **DEBEN** declararse de forma explicita.
 4. Los estados terminales **DEBEN** usar `Trans: [terminal]` o devolver control a un estado no terminal declarado.
 5. `ACT` **PUEDE** invocar Skills, pero **NO DEBE** mezclar tono, security ni wiring oculto.
+6. Cuando multiples condiciones de transicion son evaluables simultaneamente, el estado **DEBE** declarar precedencia explicita (orden numerico, prioridad, o exclusion mutua). La ambiguedad implicita es invalida.
 
 ### 3.3 Invariantes de behavior
 
@@ -90,7 +91,7 @@ Traces to: formal/01 §3.2 (Determinism in M) ; formal/01 §3.3 (Co-induction at
 1. `AGENTS.md` **DEBE** contener FSM, reglas duras, co-induccion, contexto multi-turno y wiring.
 2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma.
 3. `USER.md` **DEBE** contener solo contexto del operador.
-4. `TOOLS.md` **DEBE** contener solo interfaz semantica.
+4. `TOOLS.md` **DEBE** contener solo interfaz semantica: nombre, firma, parametros, cuando usar, cuando NO usar, notas semanticas y descripcion funcional. **NO DEBE** contener politica operativa (confirmaciones, aprobaciones, restricciones de uso) ni comportamiento condicional runtime; esas reglas viven en `config.json`.
 5. `config.json` **DEBE** contener solo constraints, runtime capabilities y politica operativa precompilada.
 6. Ningun componente **DEBE** contener contenido rector de otro; en especial, la fenomenologia **NO DEBE** contaminar la FSM y la seguridad **NO DEBE** vivir en prosa de bootstrap.
 
@@ -148,16 +149,17 @@ Traces to: formal/01 §2.3 (Dissipation) ; formal/01 §6.2 (Sub-Agent Adjunction
 
 ## 8. Validacion
 
-| Check | Criterio | Enforcement | Accion si falla |
-| --- | --- | --- | --- |
-| Gramatica de behavior | `AGENTS.md` contiene FSM, Reglas Duras, Co-induccion, Contexto Multi-turno y Wiring | lint | Normalizar bootstrap |
-| FSM canonica | Estados `S-*`, transiciones explicitas, `S-DISPATCHER` y `S-END` presentes | lint | Reescribir FSM |
-| Topologia workspace | Existen los 5 componentes base | lint | Crear faltantes |
-| Segregacion | Ningun componente invade el rol de otro | manual | Reescribir componente |
-| Behavior puro | La FSM no mezcla fenomenologia ni security | lint | Extraer contenido al componente correcto |
-| Interfaz cerrada | `TOOLS.md` = `config.json.tools.allow` | lint | Alinear interfaz |
-| Runtime segregado | Permisos crudos viven en `runtime_capabilities` | lint | Mover permisos |
-| Skills resolubles | Todo CM referido existe | lint | Crear o corregir skill |
-| Discovery filtrado | Security puede excluir skills incompatibles | runtime | Ajustar policy |
-| Co-induccion terminal | Existe verificacion terminal antes del output final | manual | Declarar o reforzar protocolo terminal |
-| Routing resoluble | Toda ruta inter-agente existe | lint | Corregir o crear destino |
+| Check                     | Criterio                                                                            | Enforcement | Accion si falla                          |
+| ------------------------- | ----------------------------------------------------------------------------------- | ----------- | ---------------------------------------- |
+| Gramatica de behavior     | `AGENTS.md` contiene FSM, Reglas Duras, Co-induccion, Contexto Multi-turno y Wiring | lint        | Normalizar bootstrap                     |
+| FSM canonica              | Estados `S-*`, transiciones explicitas, `S-DISPATCHER` y `S-END` presentes          | lint        | Reescribir FSM                           |
+| Topologia workspace       | Existen los 5 componentes base                                                      | lint        | Crear faltantes                          |
+| Segregacion               | Ningun componente invade el rol de otro                                             | manual      | Reescribir componente                    |
+| Behavior puro             | La FSM no mezcla fenomenologia ni security                                          | lint        | Extraer contenido al componente correcto |
+| Interfaz cerrada          | `TOOLS.md` = `config.json.tools.allow`                                              | lint        | Alinear interfaz                         |
+| Runtime segregado         | Permisos crudos viven en `runtime_capabilities`                                     | lint        | Mover permisos                           |
+| Skills resolubles         | Todo CM referido existe                                                             | lint        | Crear o corregir skill                   |
+| Discovery filtrado        | Security puede excluir skills incompatibles                                         | runtime     | Ajustar policy                           |
+| Co-induccion terminal     | Existe verificacion terminal antes del output final                                 | manual      | Declarar o reforzar protocolo terminal   |
+| Skill no relaja bootstrap | Ningun CM redefine, relaja o condiciona reglas duras de `AGENTS.md`                 | manual      | Mover regla al bootstrap o spec          |
+| Routing resoluble         | Toda ruta inter-agente existe                                                       | lint        | Corregir o crear destino                 |

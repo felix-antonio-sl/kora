@@ -1852,11 +1852,11 @@ Catalog:
     status: published
   Knowledge:
   - urn: urn:kora:kb:skill-spec-md
-    title: KORA/Skill-Spec v3.2.0
+    title: KORA/Skill-Spec v3.3.0
     file: specs/skill-spec-md.md
     status: published
   - urn: urn:kora:kb:agent-spec-md
-    title: KORA/Agent-Spec v8.1.0
+    title: KORA/Agent-Spec v8.2.0
     file: specs/agent-spec-md.md
     status: published
   - urn: urn:kora:kb:spec-md
@@ -1864,7 +1864,7 @@ Catalog:
     file: specs/spec-md.md
     status: published
   - urn: urn:kora:kb:md-spec
-    title: KORA/MD v5.0.0
+    title: KORA/MD v6.0.0
     file: specs/md-spec.md
     status: published
   - urn: urn:kora:kb:runtime-spec-md

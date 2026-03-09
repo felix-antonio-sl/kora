@@ -37,8 +37,11 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 | 9 | Fidelidad | Toda cifra, fecha, excepcion, condicion del original presente | Restaurar informacion perdida |
 | 10 | Estructuras preservadas | Toda lista N items, toda tabla MxK | Restaurar items/filas/columnas |
 | 11 | Tags | Minimo 3 tags semanticos en frontmatter | Agregar tags |
-| 12 | Compresion razonable | CR > 1.5 o justificacion explicita por alta densidad | Re-telegrafizar o documentar densidad |
-| 13 | Catalogo derivado | El artefacto es indexable y resoluble via CLI | Corregir manifest o reindexar |
+| 12 | Compresion razonable | CR > 1.5 o justificacion explicita por alta densidad | Reducir redundancia o documentar densidad |
+| 13 | Calidad de superficie | Sin headings truncados, labelese ni dumping estructural | Re-realizar superficie |
+| 14 | Heading recuperable | Cada ## expresa sujeto o alcance recuperable | Renombrar headings |
+| 15 | Resumen obligatorio | Familias que lo exigen incluyen ## Resumen no vacio | Agregar o completar resumen |
+| 16 | Catalogo derivado | El artefacto es indexable y resoluble via CLI | Corregir manifest o reindexar |
 
 ### Paso 3: Checklist KORA/Spec-MD (spec-md §8, si prescriptivo)
 
@@ -62,6 +65,7 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 ### Paso 4: Calcular Metricas (si aplica)
 - FS (Fidelity Score): % informacion fuente representada en output. Objetivo: 100%.
 - CR (Compression Ratio): caracteres_original / caracteres_kora. Objetivo: >1.5 o justificacion explicita por alta densidad.
+- Calidad de superficie: PASS cuando la salida conserva legibilidad tecnica y evita serializacion de campos.
 
 ### Paso 5: Generar Reporte
 

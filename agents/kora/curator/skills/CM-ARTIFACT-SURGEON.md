@@ -25,7 +25,7 @@ Diagnostica y repara artefactos de conocimiento rotos o no conformes. Aplica fix
 2. CLASIFICAR SEVERIDAD:
    - Critica: frontmatter invalido (no parsea), URN malformado, archivo corrupto.
    - Alta: perdida de fidelidad (info faltante), violacion SSOT, referencia rota.
-   - Media: grasa presente, headings no telegraficos, independencia chunk violada.
+   - Media: grasa presente, headings no recuperables o superficie defectuosa, independencia chunk violada.
    - Baja: tags insuficientes, formato suboptimo, anglicismo sin controlar.
 3. PLANIFICAR FIX:
    - Priorizar por severidad (critica primero).

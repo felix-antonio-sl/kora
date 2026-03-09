@@ -84,17 +84,23 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
+            "KORA/MD v6.0.0",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
             "fat",
             "FS=100%",
             "CR>1.5",
+            "### 5.4.2 Realizacion superficial",
+            "### 5.6 Familias documentales",
+            "Heading truncado",
+            "Calidad de superficie",
             "### 6.10 Verificacion mecanica",
             "### 6.11 Verificacion de fidelidad",
         )
         for term in required_terms:
             self.assertIn(term, content)
+        self.assertNotIn("test de bolsillo", content)
 
     def test_spec_md_restores_crystallization_contract(self):
         content = (ROOT / "specs" / "spec-md.md").read_text(encoding="utf-8")
@@ -141,6 +147,10 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("lazy_load_endofunctor", governance)
         self.assertIn("`_manifest.type` expresa el kind estructural del componente", agent_spec)
         self.assertIn("La URN identitaria `skill` y el kind `_manifest.type = lazy_load_endofunctor` son ortogonales", skill_spec)
+        self.assertIn("firma, parametros, cuando usar, cuando NO usar, notas semanticas", agent_spec)
+        self.assertIn("Orquestacion de fases del agente", skill_spec)
+        self.assertIn("Composicion inter-componente operativa", skill_spec)
+        self.assertIn("Un Skill **PUEDE** producir o evaluar contenido sobre behavior, interface, security o wiring", skill_spec)
 
     def test_forgemaster_no_longer_claims_extended_skill_support(self):
         files = (
