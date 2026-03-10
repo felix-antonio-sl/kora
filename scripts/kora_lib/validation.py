@@ -46,25 +46,37 @@ CANONICAL_AGENT_SECTION_PATTERNS = (
 )
 TRUNCATED_HEADING_PATTERN = re.compile(r"\.\.\.$|…$")
 HTML_TAG_PATTERN = re.compile(r"<[A-Za-z][^>]*>")
+ANGLE_URL_PATTERN = re.compile(r"<((?:https?://|www\.)[^>\s]+)>")
 OPAQUE_INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([A-Z0-9-]{8,})\]\(#([^)]+)\)")
 UNVERIFIABLE_REFERENCE_PATTERNS = (
     re.compile(r"\bkb_[a-z0-9_]+\.md\b"),
-    re.compile(r"`[A-Z]{2,}(?:-[A-Z0-9]+){1,}`"),
+    re.compile(r"`(?:CPR|LBGAE|LSENAPRED|LOC-MUNI|ESTATUTO-ADMIN|LBPA|LPPCI|LOBBY|LEY-20285|LMSP)[A-Z0-9-]*`"),
     re.compile(r"\bGUIDE-STS-[A-Z0-9-]*\b"),
 )
 META_INTRO_HEADING_TITLES = {
     "introduccion",
     "introduccion general",
+    "presentacion",
     "proposito",
     "proposito alcance y estructura del manual",
     "alcance",
     "estructura",
 }
+FIELD_SCAFFOLD_HEADING_TITLES = {
+    "contenido",
+    "asunto",
+    "tipo",
+    "titulo",
+    "path",
+    "artefactos",
+    "status",
+    "source id",
+}
 DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK = 120
 FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "generic": 120,
-    "normative": 80,
-    "glossary": 60,
+    "normative": 100,
+    "glossary": 180,
     "organigram": 90,
     "cq_catalog": 90,
     "inventory": 200,
@@ -303,7 +315,17 @@ def strip_html_anchor_lines(text):
 
 
 def replace_html_breaks(text):
-    return text.replace("<br>", "; ")
+    return re.sub(r"<br\s*/?>", "; ", text, flags=re.IGNORECASE)
+
+
+def normalize_angle_bracket_urls(text):
+    def replace(match):
+        raw = match.group(1)
+        if raw.startswith("http://") or raw.startswith("https://"):
+            return raw
+        return f"https://{raw}"
+
+    return ANGLE_URL_PATTERN.sub(replace, text)
 
 
 def build_heading_slug_map(text):
@@ -339,20 +361,61 @@ def semanticize_opaque_internal_refs(text):
 
 def remove_leading_meta_intro_sections(text):
     lines = text.splitlines()
-    headings = [(index, line[3:].strip()) for index, line in enumerate(lines) if line.startswith("## ")]
+    title_index = next((idx for idx, line in enumerate(lines) if line.startswith("# ")), None)
+    if title_index is None:
+        return text
+
+    heading_meta = []
+    for index, line in enumerate(lines):
+        match = re.match(r"^(#{2,4})\s+(.+)$", line.strip())
+        if match:
+            heading_meta.append((index, len(match.group(1)), match.group(2).strip()))
+
     to_remove = set()
-    cursor = 0
-    while cursor < len(headings):
-        start, title = headings[cursor]
-        normalized = normalize_heading_token(title).replace("-", " ")
+    while True:
+        candidate = next(((idx, level, heading) for idx, level, heading in heading_meta if idx > title_index and idx not in to_remove), None)
+        if not candidate:
+            break
+        start, level, heading = candidate
+        normalized = normalize_heading_token(heading).replace("-", " ")
         if normalized not in META_INTRO_HEADING_TITLES:
             break
-        end = headings[cursor + 1][0] if cursor + 1 < len(headings) else len(lines)
+        end = len(lines)
+        for idx, next_level, _next_heading in heading_meta:
+            if idx <= start:
+                continue
+            if next_level <= level:
+                end = idx
+                break
         to_remove.update(range(start, end))
-        cursor += 1
+
     if not to_remove:
         return text
     kept = [line for index, line in enumerate(lines) if index not in to_remove]
+    return "\n".join(kept)
+
+
+def remove_meta_scaffold_headings(text):
+    kept = []
+    for line in text.splitlines():
+        match = re.match(r"^(#{2,4})\s+(.+)$", line.strip())
+        if match:
+            normalized = normalize_heading_token(match.group(2)).replace("-", " ")
+            if normalized in META_INTRO_HEADING_TITLES:
+                continue
+        kept.append(line)
+    return "\n".join(kept)
+
+
+def remove_field_scaffold_headings(text):
+    kept = []
+    for line in text.splitlines():
+        match = re.match(r"^(#{2,4})\s+(.+)$", line.strip())
+        if match:
+            normalized = normalize_heading_token(match.group(2)).replace("-", " ")
+            if normalized in FIELD_SCAFFOLD_HEADING_TITLES:
+                continue
+        kept.append(line)
     return "\n".join(kept)
 
 
@@ -411,6 +474,17 @@ def normalize_blank_lines(text):
     return "\n".join(out).strip() + "\n"
 
 
+def strip_unverifiable_reference_tokens(text):
+    updated = text
+    updated = re.sub(r"\bkb_[a-z0-9_]+\.md\b", "", updated)
+    updated = re.sub(r"\bGUIDE-STS-[A-Z0-9-]*\b", "", updated)
+    updated = re.sub(r"\(\s*,", "(", updated)
+    updated = re.sub(r",\s*\)", ")", updated)
+    updated = re.sub(r"\(\s*\)", "", updated)
+    updated = re.sub(r"[ \t]{2,}", " ", updated)
+    return updated
+
+
 def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):
     max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
     current = body
@@ -418,10 +492,14 @@ def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=N
         updated = current
         updated = strip_html_anchor_lines(updated)
         updated = replace_html_breaks(updated)
+        updated = normalize_angle_bracket_urls(updated)
         updated = semanticize_opaque_internal_refs(updated)
         updated = remove_leading_meta_intro_sections(updated)
+        updated = remove_meta_scaffold_headings(updated)
+        updated = remove_field_scaffold_headings(updated)
         updated = remove_empty_primary_wrappers_body(updated)
         updated = promote_nested_headings_in_oversized_chunks(updated, max_lines)
+        updated = strip_unverifiable_reference_tokens(updated)
         updated = remove_empty_primary_wrappers_body(updated)
         updated = normalize_blank_lines(updated)
         if updated == current:

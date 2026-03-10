@@ -37,6 +37,10 @@ extensions:
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__omega-ipr-gestion-fusion.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:omega-ipr-gestion-fusion
 ---
 
 # Ontología Ω-IPR: Gestión y Fusión de Financiamiento
@@ -69,7 +73,7 @@ Selector de Vías de Financiamiento. Utiliza construcciones universales:
 | Ω-MECANISMO | Ω-Object (Fiber Index) | Vía de financiamiento que determina reglas, proceso y sistema de evaluación |
 | Ω-DICTAMEN | Ω-Object (Effect Constructor) | Resultado de evaluación según sistema aplicable |
 | Ω-ACTOR | Ω-Object (Agent) | Agentes que participan en el ciclo de vida IPR |
-| Ω-DOCUMENTO | Ω-Object |  |
+| Ω-DOCUMENTO | Ω-Object | |
 
 ## Procesos Ω
 | ID | Nombre | Tipo | Actor |
@@ -85,7 +89,7 @@ Selector de Vías de Financiamiento. Utiliza construcciones universales:
 | P-EMITIR-CDP | Emitir CDP | Ω-Transform | PRESUPUESTO |
 | P-FORMALIZAR-CONVENIO | Formalizar Convenio | Ω-Transform | ['GOBERNADOR', 'UT-RECEPTORA'] |
 | P-TRAMITAR-RESOLUCION | Tramitar Resolución Aprobatoria | Ω-Transform | ['PRESUPUESTO', 'CGR'] |
-| P-EJECUTAR | Ejecutar IPR | Coalgebra |  |
+| P-EJECUTAR | Ejecutar IPR | Coalgebra | |
 | P-MODIFICAR | Gestionar Modificación | Ω-Transform | DIPIR |
 | P-CERRAR-TECNICO | Cierre Técnico | Ω-Transform | SUPERVISOR-GORE |
 | P-CERRAR-FINANCIERO | Cierre Financiero | Ω-Transform | DAF |
@@ -111,7 +115,7 @@ Funtor: F(S) = (Event × S) + Termination
 | FORMULACION | POSTULADA | Ingreso Oficio Oficina de Partes | P-INGRESAR |
 | POSTULADA | PRE_ADMISIBLE_CDR | Sesión CDR | P-FILTRAR-CDR |
 | PRE_ADMISIBLE_CDR | ADMISIBLE | Revisión Formal OK | P-REVISAR-FORMAL |
-| ADMISIBLE | ENVIADO_MDSF | Oficio a MDSF |  |
+| ADMISIBLE | ENVIADO_MDSF | Oficio a MDSF | |
 | ENVIADO_MDSF | RS | RATE favorable | P-EVALUAR-SNI |
 | RS | APROBADO_CORE | Votación CORE | P-APROBAR-CORE |
 | APROBADO_CORE | CDP_EMITIDO | Emisión CDP | P-EMITIR-CDP |

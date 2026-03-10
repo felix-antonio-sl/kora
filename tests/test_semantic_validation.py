@@ -26,6 +26,7 @@ from kora_lib.validation import (
     find_unverifiable_external_references,
     formal_section_exists,
     lint_published_kora_markdown,
+    normalize_angle_bracket_urls,
     validate_agents_canonical_structure,
     validate_agents_semantics,
     validate_config_semantics,
@@ -168,6 +169,10 @@ class SemanticValidationTests(unittest.TestCase):
         findings = find_html_fragments("texto <a id=\"x\"></a>\n| A | B<br>C |\n")
         self.assertEqual(findings, ['<a id="x">', '<br>'])
 
+    def test_normalize_angle_bracket_urls_converts_web_host_notation(self):
+        fixed = normalize_angle_bracket_urls("Plataforma: <www.chileindica.cl>\n")
+        self.assertEqual(fixed, "Plataforma: https://www.chileindica.cl\n")
+
     def test_find_opaque_internal_refs_detects_id_like_refs(self):
         findings = find_opaque_internal_refs("[-> GORE-NUBLE-GUIA-CTX-01](#gore-nuble-guia-ctx-01)\n")
         self.assertEqual(findings, ["GORE-NUBLE-GUIA-CTX-01"])
@@ -252,7 +257,7 @@ class SemanticValidationTests(unittest.TestCase):
                     ## Glosa 01
                     """
                 )
-                + "\n".join(f"- item {i}" for i in range(90))
+                + "\n".join(f"- item {i}" for i in range(120))
                 + "\n",
                 encoding="utf-8",
             )
@@ -290,6 +295,57 @@ class SemanticValidationTests(unittest.TestCase):
         self.assertNotIn("GORE-NUBLE-GUIA-TEMA-01", fixed)
         self.assertIn("[-> Subtema resoluble](#subtema-resoluble)", fixed)
         self.assertNotIn("## Introduccion general", fixed)
+
+    def test_auto_fix_published_kora_markdown_parts_removes_nested_intro_prologue(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-intro"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\n### Introduccion\n\nTexto meta.\n\n## Tema real\n\nContenido.\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertNotIn("### Introduccion", fixed)
+        self.assertIn("## Tema real", fixed)
+
+    def test_auto_fix_published_kora_markdown_parts_removes_nested_presentacion_heading(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-presentacion"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\n## Presentacion\n\nTexto util.\n\n## Tema real\n\nContenido.\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertNotIn("## Presentacion", fixed)
+        self.assertNotIn("Texto util.", fixed)
+
+    def test_auto_fix_published_kora_markdown_parts_removes_field_scaffold_heading(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-field"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\n## Tema\n\n### Contenido\n\nTexto util.\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertNotIn("### Contenido", fixed)
+        self.assertIn("Texto util.", fixed)
+
+    def test_auto_fix_published_kora_markdown_parts_strips_unverifiable_kb_file_refs(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-kbref"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\n## Tema\n\nReferencia: kb_021_extractos_legales.md\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertNotIn("kb_021_extractos_legales.md", fixed)
 
     def test_split_kora_markdown_parts_splits_large_normative_body(self):
         frontmatter = {
@@ -559,8 +615,8 @@ class SemanticValidationTests(unittest.TestCase):
                 "extensions": {"kora": {"family": "normative"}},
             }
             body = "# Demo\n\n" + "\n\n".join(
-                f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(25))
-                for idx in range(10)
+                f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(30))
+                for idx in range(12)
             ) + "\n"
             report = dump_yaml_frontmatter_and_body(path, frontmatter, body)
             self.assertTrue(report["split"]["applied"])

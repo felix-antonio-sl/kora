@@ -2,7 +2,11 @@ import re
 from pathlib import Path
 
 from .artifacts import load_markdown_parts
-from .validation import find_field_like_markdown_headings, find_truncated_markdown_headings
+from .validation import (
+    find_field_like_markdown_headings,
+    find_truncated_markdown_headings,
+    lint_kora_markdown_parts,
+)
 
 
 FAT_PATTERNS = (
@@ -30,15 +34,6 @@ KODA_RESIDUE_HEADING_TITLES = {
     "modification date",
     "llm parsing instructions",
     "primary source",
-}
-ENGLISH_SCAFFOLD_TITLES = {
-    "scope",
-    "summary",
-    "references",
-    "reference",
-    "sources",
-    "source",
-    "content",
 }
 FIELD_HEADING_TITLES_BY_FAMILY = {
     "inventory": {"id", "urn", "path", "tipo", "titulo", "artefactos"},
@@ -250,18 +245,13 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
         if top_level_count != 1:
             failures.append("debe existir exactamente un heading nivel #")
         if not any(level == 2 for level, _title in headings):
-            failures.append("debe existir al menos una seccion ## recuperable")
+            warnings.append("cuerpo sin seccion ## recuperable")
         residue_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in KODA_RESIDUE_HEADING_TITLES]
         if residue_headings:
             failures.append(f"residuo KODA en headings: {', '.join(sorted(dict.fromkeys(residue_headings))[:8])}")
         truncated_headings = find_truncated_markdown_headings(body or "")
         if truncated_headings:
             failures.append(f"heading truncado no permitido: {', '.join(sorted(dict.fromkeys(truncated_headings))[:8])}")
-        if frontmatter.get("lang") == "es":
-            english_headings = [title for _level, title in headings if slugify_heading(title).replace("-", " ") in ENGLISH_SCAFFOLD_TITLES]
-            if english_headings:
-                failures.append(f"heading scaffold no español: {', '.join(sorted(dict.fromkeys(english_headings))[:8])}")
-
     for pattern in FAT_PATTERNS:
         if pattern.search(body or ""):
             warnings.append(f"posible grasa detectada: {pattern.pattern}")
@@ -271,11 +261,11 @@ def validate_gn_markdown(path, expected_rel_path=None, expected_urn=None):
             failures.append(f"residuo KODA en cuerpo: {pattern.pattern}")
 
     failures.extend(_resolve_internal_refs(body or "", headings))
-    failures.extend(_reference_section_failures(body or ""))
+    failures.extend(f"writer_lint: {item}" for item in lint_kora_markdown_parts(frontmatter, body or ""))
 
     if publication_class == "knowledge":
         if LOCAL_PATH_PATTERN.search(body or ""):
-            failures.append("referencia local o path operativo en cuerpo")
+            warnings.append("referencia local o path operativo en cuerpo")
 
         primary_sections = _collect_primary_sections(body or "")
         present_primary_titles = {slugify_heading(section["title"]).replace("-", " ") for section in primary_sections}

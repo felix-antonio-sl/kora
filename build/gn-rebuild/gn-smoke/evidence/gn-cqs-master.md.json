@@ -19,6 +19,38 @@
   ],
   "document_family": "cq_catalog",
   "publication_class": "knowledge",
+  "autofix": {
+    "applied": false,
+    "html_anchor_lines_removed": 0,
+    "html_breaks_replaced": 0,
+    "opaque_internal_refs_semanticized": 0,
+    "meta_intro_headings_removed": 0,
+    "empty_primary_wrappers_removed": 0,
+    "primary_heading_promotions": 0,
+    "largest_primary_chunk_lines_before": 50,
+    "largest_primary_chunk_lines_after": 50
+  },
+  "split": {
+    "applied": true,
+    "family": "cq_catalog",
+    "shard_count": 4,
+    "max_total_lines_per_file": 260,
+    "max_primary_sections_per_file": 10,
+    "largest_shard_lines": 244,
+    "total_lines_before_split": 844,
+    "shard_paths": [
+      "drafts/gn/gn-cqs-master.md",
+      "drafts/gn/gn-cqs-master--p02.md",
+      "drafts/gn/gn-cqs-master--p03.md",
+      "drafts/gn/gn-cqs-master--p04.md"
+    ],
+    "shard_urns": [
+      "urn:gn:kb:gn-cqs-master",
+      "urn:gn:kb:gn-cqs-master-p02",
+      "urn:gn:kb:gn-cqs-master-p03",
+      "urn:gn:kb:gn-cqs-master-p04"
+    ]
+  },
   "preserved_facts": [
     "document.title=Catálogo Maestro de Preguntas de Competencia",
     "document.family=cq_catalog",

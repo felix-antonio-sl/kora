@@ -20,6 +20,40 @@
   ],
   "document_family": "organigram",
   "publication_class": "knowledge",
+  "autofix": {
+    "applied": true,
+    "html_anchor_lines_removed": 0,
+    "html_breaks_replaced": 0,
+    "opaque_internal_refs_semanticized": 0,
+    "meta_intro_headings_removed": 0,
+    "empty_primary_wrappers_removed": 0,
+    "primary_heading_promotions": 41,
+    "largest_primary_chunk_lines_before": 470,
+    "largest_primary_chunk_lines_after": 26
+  },
+  "split": {
+    "applied": true,
+    "family": "organigram",
+    "shard_count": 5,
+    "max_total_lines_per_file": 260,
+    "max_primary_sections_per_file": 10,
+    "largest_shard_lines": 175,
+    "total_lines_before_split": 677,
+    "shard_paths": [
+      "drafts/gn/gobernanza/organigrama.md",
+      "drafts/gn/gobernanza/organigrama--p02.md",
+      "drafts/gn/gobernanza/organigrama--p03.md",
+      "drafts/gn/gobernanza/organigrama--p04.md",
+      "drafts/gn/gobernanza/organigrama--p05.md"
+    ],
+    "shard_urns": [
+      "urn:gn:kb:organigrama",
+      "urn:gn:kb:organigrama-p02",
+      "urn:gn:kb:organigrama-p03",
+      "urn:gn:kb:organigrama-p04",
+      "urn:gn:kb:organigrama-p05"
+    ]
+  },
   "preserved_facts": [
     "document.title=Organigrama Institucional GORE Ñuble",
     "document.family=organigram",

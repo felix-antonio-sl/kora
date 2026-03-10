@@ -749,6 +749,15 @@ def render_field_block(label, value, level):
     return lines
 
 
+def render_scalar_field_pair(key, value):
+    label = field_label(key)
+    if isinstance(value, list):
+        rendered = ", ".join(normalize_scalar(item) for item in value)
+    else:
+        rendered = normalize_scalar(value)
+    return f"- **{label}:** {rendered}"
+
+
 def render_kora_node(node, level):
     lines = []
     if is_columns_rows_table(node) or is_headers_rows_table(node):
@@ -759,7 +768,25 @@ def render_kora_node(node, level):
         return lines
 
     if isinstance(node, dict):
+        scalar_items = []
+        complex_items = []
         for key, value in node.items():
+            if key in KODA_BODY_EXCLUDED_KEYS:
+                continue
+            if (
+                not is_columns_rows_table(value)
+                and not is_headers_rows_table(value)
+                and not (isinstance(value, list) and is_table_candidate(value))
+                and is_scalar_or_scalar_list(value)
+            ):
+                scalar_items.append((key, value))
+            else:
+                complex_items.append((key, value))
+
+        for key, value in scalar_items:
+            lines.append(render_scalar_field_pair(key, value))
+
+        for key, value in complex_items:
             if key in KODA_BODY_EXCLUDED_KEYS:
                 continue
             if is_columns_rows_table(value) or is_headers_rows_table(value):
@@ -949,9 +976,23 @@ def render_markdown_value(value, level):
         return render_columns_rows_table(value)
     lines = []
     if isinstance(value, dict):
+        scalar_items = []
+        complex_items = []
         for key, child in value.items():
             if key in KODA_BODY_EXCLUDED_KEYS:
                 continue
+            if (
+                not is_columns_rows_table(child)
+                and not is_headers_rows_table(child)
+                and not (isinstance(child, list) and is_table_candidate(child))
+                and is_scalar_or_scalar_list(child)
+            ):
+                scalar_items.append((key, child))
+            else:
+                complex_items.append((key, child))
+        for key, child in scalar_items:
+            lines.append(render_scalar_field_pair(key, child))
+        for key, child in complex_items:
             heading_level = min(level + 1, 4)
             lines.append(f"{'#' * heading_level} {field_label(str(key))}")
             lines.extend(render_markdown_value(child, heading_level))
@@ -1335,6 +1376,13 @@ def scalar_reference_list(title, value, urn_alias_map, external_labels, urn_titl
     return ReferenceListBlock(title=english_to_spanish_scaffold(title), items=refs)
 
 
+def scalar_value_block(label, value):
+    if isinstance(value, list):
+        items = [normalize_scalar(item) for item in value]
+        return BulletListBlock(title=label, items=items)
+    return BulletListBlock(items=[f"**{label}:** {normalize_scalar(value)}"])
+
+
 def iter_reference_candidates(value):
     if isinstance(value, dict):
         for child in value.values():
@@ -1408,7 +1456,7 @@ def generic_blocks_from_mapping(mapping, urn_alias_map, external_labels, urn_tit
             if child_section.blocks:
                 blocks.append(child_section)
             continue
-        blocks.append(SectionIR(title=label, blocks=[ParagraphBlock(normalize_scalar(value))]))
+        blocks.append(scalar_value_block(label, value))
     return blocks
 
 
@@ -2313,8 +2361,11 @@ def build_artifact(item, current_meta, mirrored_sources, source_hashes, run_id, 
     semantic_families = {"generic", "normative", "glossary", "inventory", "organigram", "cq_catalog", "omega"}
     document = None
     if document_family in semantic_families and transform_class != "index_only":
-        document = build_document_ir(title, item, projections, urn_alias_map, external_labels, urn_title_map)
-        body = render_document(document)
+        if document_family == "generic" and transform_class in {"korafy_direct", "korafy_koda_hybrid"}:
+            body = render_koda_hybrid_body(title, next(iter(projections.values())))
+        else:
+            document = build_document_ir(title, item, projections, urn_alias_map, external_labels, urn_title_map)
+            body = render_document(document)
     elif transform_class == "index_only":
         body = render_index_body(title, item)
     else:
@@ -2541,7 +2592,10 @@ def build(args):
         ensure_dir(target_path.parent)
         evidence_relpath = evidence_relpath_for(item["target_path"])
         gn_ext["evidence_path"] = f"build/gn-rebuild/{run_id}/evidence/{evidence_relpath}"
-        write_report = dump_yaml_frontmatter_and_body(target_path, frontmatter, body)
+        try:
+            write_report = dump_yaml_frontmatter_and_body(target_path, frontmatter, body)
+        except Exception as exc:
+            raise RuntimeError(f"build failed for {item['target_path']}: {exc}") from exc
 
         split_report = dict(write_report.get("split", {}))
         shard_paths = split_report.get("shard_paths", [])

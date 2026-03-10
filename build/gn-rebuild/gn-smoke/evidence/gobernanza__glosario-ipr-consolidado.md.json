@@ -19,6 +19,36 @@
   ],
   "document_family": "glossary",
   "publication_class": "knowledge",
+  "autofix": {
+    "applied": true,
+    "html_anchor_lines_removed": 0,
+    "html_breaks_replaced": 0,
+    "opaque_internal_refs_semanticized": 0,
+    "meta_intro_headings_removed": 0,
+    "empty_primary_wrappers_removed": 0,
+    "primary_heading_promotions": 0,
+    "largest_primary_chunk_lines_before": 64,
+    "largest_primary_chunk_lines_after": 64
+  },
+  "split": {
+    "applied": true,
+    "family": "glossary",
+    "shard_count": 3,
+    "max_total_lines_per_file": 220,
+    "max_primary_sections_per_file": 12,
+    "largest_shard_lines": 219,
+    "total_lines_before_split": 540,
+    "shard_paths": [
+      "drafts/gn/gobernanza/glosario-ipr-consolidado.md",
+      "drafts/gn/gobernanza/glosario-ipr-consolidado--p02.md",
+      "drafts/gn/gobernanza/glosario-ipr-consolidado--p03.md"
+    ],
+    "shard_urns": [
+      "urn:gn:kb:glosario-ipr-consolidado",
+      "urn:gn:kb:glosario-ipr-consolidado-p02",
+      "urn:gn:kb:glosario-ipr-consolidado-p03"
+    ]
+  },
   "preserved_facts": [
     "document.title=Glosario Consolidado IPR - GORE Ñuble",
     "document.family=glossary",

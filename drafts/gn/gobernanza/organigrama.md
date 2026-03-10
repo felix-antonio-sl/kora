@@ -39,9 +39,14 @@ extensions:
     meat_count: 767
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__organigrama.md.json
+  kora:
+    shard_index: 1
+    shard_count: 5
+    shard_root_urn: urn:gn:kb:organigrama
 ---
 
 # Organigrama Institucional GORE Ñuble
+
 
 ## Resumen
 Describir estructura organizacional y funciones generales por unidad.
@@ -69,25 +74,21 @@ Máxima autoridad ejecutiva del Gobierno Regional; dirige la administración del
 #### Referencias
 - [LOC GORE](urn:gn:kb:loc-gore)
 
-## Unidades y Organos
+## Unidad de Gabinete y Participacion Social
 
-### Unidad de Gabinete y Participacion Social
-
-#### Propósito
 Asesoría al Gobernador Regional y al equipo directivo; coordinación institucional.
 
-#### Acciones
+### Acciones
 - Asesorar al Gobernador Regional y equipo directivo en materias específicas (principalmente administrativas y de gestión).
 - Coordinar agenda institucional, despliegue territorial y audiencias.
 - Preparar información de respaldo para actividades institucionales.
 - Contribuir a articulación con actores del sector público y privado.
 
-### Departamento de Comunicaciones
+## Departamento de Comunicaciones
 
-#### Propósito
 Comunicación externa e interna del Gobierno Regional.
 
-#### Acciones
+### Acciones
 - Diseñar, planificar y ejecutar estrategias de comunicación para mantener a la ciudadanía informada del quehacer, planes y objetivos del Gobierno Regional y su Consejo.
 - Gestionar vinculación con actores relacionados con la institución.
 - Gestionar relación formal con medios de comunicación e imagen institucional.
@@ -95,12 +96,11 @@ Comunicación externa e interna del Gobierno Regional.
 - Promover comunicación clara y cercana a la ciudadanía.
 - Fortalecer flujos de información interna para alinear equipos, fomentar cultura organizacional y mejorar compromiso con objetivos estratégicos.
 
-### Unidad de Control
+## Unidad de Control
 
-#### Propósito
 Auditoría operativa interna; control de legalidad y ejecución financiera/presupuestaria.
 
-#### Acciones
+### Acciones
 - Realizar auditoría operativa interna institucional.
 - Fiscalizar legalidad de actos del Gobierno Regional.
 - Controlar ejecución financiera y presupuestaria.
@@ -114,43 +114,42 @@ Auditoría operativa interna; control de legalidad y ejecución financiera/presu
 - Seguimiento sistemático de ejecución presupuestaria.
 - Informar trimestralmente al Consejo Regional sobre avance financiero, procesos de contratación pública, licitaciones y materias relevantes para toma de decisiones.
 
-#### Relacion
+### Relacion
 - Colabora directamente con el Consejo Regional en su función de fiscalización.
 
-### Consejo de la Sociedad Civil COSOC
+## Consejo de la Sociedad Civil COSOC
 
-#### Definición
+### Definición
 Órgano colegiado y autónomo.
 
-#### Objetivos
+### Objetivos
 - Promover y fortalecer participación ciudadana en gestión del Gobierno Regional.
 - Fiscalizar cumplimiento de normas de participación civil.
 
-#### Contexto
+### Contexto
 - Con representación de organizaciones de la sociedad civil de la Región de Ñuble vinculadas a competencias del Gobierno Regional.
 
-#### Resultados
+### Resultados
 - Contribuye a transparencia, eficacia y legitimidad de la acción gubernamental a nivel regional.
 
-### Consejo Regional de Nuble CORE
+## Consejo Regional de Nuble CORE
 
-#### Definición
+### Definición
 Órgano normativo, fiscalizador y decisorio del Gobierno Regional.
 
-#### Propósito
 Hacer efectiva la participación de la comunidad regional en el gobierno regional.
 
-#### Contexto
+### Contexto
 - Compuesto por 16 Consejeras y Consejeros Regionales.
 - Elegidos democráticamente para representar provincias: Diguillín, Punilla e Itata.
 - Presidido por el Gobernador Regional.
 
-### Secretaria Ejecutiva del Consejo Regional
+## Secretaria Ejecutiva del Consejo Regional
 
-#### Definición
+### Definición
 Unidad administrativa, técnica y operativa que facilita y coordina funcionamiento del CORE.
 
-#### Acciones
+### Acciones
 - Asegurar cumplimiento de acuerdos y resoluciones del Consejo.
 - Servir de enlace entre CORE, Gobernador Regional, unidades del Gobierno Regional y comunidad.
 - Coordinar, colaborar y asesorar desempeño de funciones del Consejo Regional.
@@ -158,605 +157,29 @@ Unidad administrativa, técnica y operativa que facilita y coordina funcionamien
 - Registrar acuerdos.
 - Elaborar actas de cada sesión.
 
-### Administracion Regional
+## Administracion Regional
 
-#### Propósito
 Gestión administrativa integral y coordinación del accionar de jefaturas de divisiones.
 
-#### Acciones
+### Acciones
 - Coordinar accionar de jefes/as de cada una de las divisiones.
 - Ejecutar materias propias del servicio.
 - Ejercer subrogancia del Gobernador Regional en caso de ausencia.
 
-#### Contexto
+### Contexto
 - Desempeño del cargo bajo exclusiva confianza del Gobernador Regional.
 
-### Corporacion Regional de Desarrollo
+## Corporacion Regional de Desarrollo
 
-#### Misión
+### Misión
 Entidad asesora del Gobierno Regional de Ñuble en planificación, gestión y desarrollo de políticas públicas.
 
-#### Acciones
+### Acciones
 - Contribuir a promoción, posicionamiento y avance de la región a nivel nacional e internacional.
 - Implementar iniciativas para disminuir desigualdades socio-territoriales.
 
-#### Objetivos
+### Objetivos
 Promover desarrollo integral y articulado público-privado en áreas de interés de la región.
 
-#### Contexto
+### Contexto
 - Núcleo de intervención: provincias y comunas de la región.
-
-### Auditoria Interna
-
-#### Definición
-Unidad de monitoreo independiente y objetivo del sistema de control interno del Gobierno Regional.
-
-#### Acciones
-- Evaluación objetiva e independiente de gestión y desempeño del Gobierno Regional.
-- Examinar y analizar procesos administrativos, financieros y operativos para asegurar conformidad normativa y uso eficiente de recursos.
-- Realizar auditoría operativa interna del GORE.
-- Velar por transparencia activa según ley de acceso a la información pública.
-- Asesorar al Gobernador Regional y jefaturas en asuntos de funcionamiento (excepto procesos disciplinarios).
-- Coordinar seguimiento de recomendaciones de la Contraloría General de la República.
-
-### Departamento Juridico
-
-#### Propósito
-Asesoría legal interna; resguardo de legalidad institucional.
-
-#### Acciones
-- Asesorar en materias legales a distintas áreas del servicio.
-- Elaborar y supervisar actos administrativos.
-- Representación judicial y extrajudicial del Gobierno Regional.
-- Entregar lineamientos legales a la autoridad y unidades.
-- Mantener informados estamentos sobre normas legales y reglamentarias pertinentes.
-
-### Oficina OIRS
-
-#### Depende de
-- [-> Departamento de Gestion Institucional]
-
-#### Definición
-Oficina de Informaciones, Reclamos y Sugerencias (OIRS).
-
-#### Propósito
-Facilitar vínculo ciudadanía–Gobierno Regional.
-
-#### Acciones
-- Generar espacios de atención y participación ciudadana.
-- Facilitar interacción con la ciudadanía.
-- Garantizar derecho de acceso a la información pública.
-- Gestionar y canalizar reclamos, sugerencias y felicitaciones recibidos en la institución.
-- Asegurar atención oportuna.
-- Retroalimentar administración con base en necesidades y sugerencias de la comunidad.
-
-### Departamento de Gestion Institucional
-
-#### Propósito
-Planificación institucional y control de gestión para toma de decisiones.
-
-#### Acciones
-- Desarrollar sistema de planificación y control de gestión.
-- Formular, monitorear y dar seguimiento a indicadores de desempeño institucional.
-- Planificar, organizar y controlar procesos administrativos y estratégicos para asegurar cumplimiento de objetivos.
-- Optimizar recursos y lograr objetivos de calidad y eficiencia.
-- Implementar políticas y mejora continua para asegurar buen funcionamiento administrativo y organizacional.
-
-#### Unidades dependientes
-- [-> Oficina OIRS]
-
-### Departamento Nuble 250
-
-#### Propósito
-Articulación técnica y seguimiento de proyectos estratégicos priorizados (Agenda Ñuble 250).
-
-#### Acciones
-- Articular técnicamente, coordinar, controlar y dar seguimiento a la gestión de proyectos estratégicos de la cartera de inversión priorizada.
-- Favorecer trabajo coordinado entre reparticiones públicas y divisiones del Gobierno Regional.
-- Fortalecer gobernanza territorial y coherencia de acción estatal en la región.
-
-#### Requisitos
-- Alineación con objetivos de la Estrategia de Desarrollo Regional.
-
-#### Contexto
-- Agenda Ñuble 250: hoja de ruta regional hacia 2028; concordante con el primer decenio de creación de la Región de Ñuble.
-
-### Unidad Regional de Asuntos Internacionales URAI
-
-#### Propósito
-Gestión de internacionalización de la región.
-
-#### Acciones
-- Propiciar cooperación internacional.
-- Impulsar paradiplomacia.
-- Coordinar con entidades nacionales e internacionales.
-- Promover desarrollo regional y participación comunitaria en ámbito exterior.
-- Complementar funciones del gobierno central.
-
-#### Resultados
-- Contribuye a participación activa de la Región de Ñuble en escena internacional.
-
-### Departamento Coordinacion Integral de Emergencia y Seguridad
-
-#### Propósito
-Mejorar respuesta oportuna y coordinada ante emergencias y seguridad pública.
-
-#### Acciones
-- Formular, diseñar y evaluar políticas y estrategias en seguridad pública y gestión de riesgo de desastres.
-- Gestionar cartera de proyectos GORE en seguridad y gestión de riesgo de desastres.
-- Mantener coordinación permanente con municipalidades e instituciones de la región en estas materias.
-
-#### Mecanismo
-- Integración de sistemas de comunicaciones, información, televigilancia y medios logísticos.
-- Colaboración entre distintas instituciones.
-
-## Divisiones
-
-### Comite de Pertinencia y Vinculacion Estrategica
-
-#### Depende de
-- [-> Division de Planificacion y Desarrollo Regional]
-
-#### Definición
-Instancia formal de asesoría y análisis de proyectos.
-
-#### Acciones
-- Asesorar integralmente a la autoridad.
-- Analizar admisibilidad de proyectos postulados.
-- Analizar pertinencia regional con base en instrumentos de planificación regional y competencias determinadas en la Ley Orgánica de Gobierno y Administración Regional.
-
-### Departamento de Planificacion Estrategica y Ordenamiento Territorial
-
-#### Depende de
-- [-> Division de Planificacion y Desarrollo Regional]
-
-#### Propósito
-Planificación estratégica y ordenamiento territorial regional.
-
-#### Misión
-Impulsar desarrollo armónico y sostenible.
-
-#### Acciones
-- Elaborar y proponer planes de desarrollo local que integren necesidades de la comunidad con análisis de restricciones ambientales y particularidades geofísicas del territorio.
-- Considerar vocación productiva distintiva de cada comuna, infraestructura existente y proyecciones de crecimiento futuro.
-- Coordinar formulación y seguimiento del Anteproyecto Regional de Inversión (ARI).
-- Coordinar formulación y seguimiento del Programa Público de Inversión Regional (PROPIR).
-
-### Departamento de Desarrollo de Proyectos Estrategicos
-
-#### Depende de
-- [-> Division de Planificacion y Desarrollo Regional]
-
-#### Propósito
-Gestión de iniciativas de alto impacto alineadas con visión regional.
-
-#### Acciones
-- Seleccionar, planificar y supervisar iniciativas de alto impacto.
-- Alinear operación diaria con visión de largo plazo del Gobierno Regional.
-- Facilitar vínculo entre visión de la autoridad regional, su Consejo y directivos.
-- Asegurar contribución de proyectos a competitividad, innovación y crecimiento territorial.
-
-#### Requisitos
-- Alineación con Estrategia Regional de Desarrollo.
-
-### Departamento Zonas en Desarrollo
-
-#### Depende de
-- [-> Division de Planificacion y Desarrollo Regional]
-
-#### Propósito
-Acceso equitativo al desarrollo y fortalecimiento de descentralización.
-
-#### Acciones
-- Promover inversión pública focalizada.
-- Fortalecer descentralización.
-- Promover participación de actores de la sociedad.
-- Promover desarrollo territorial integral y equilibrado con base en especificidades regionales.
-
-#### Contexto
-- Enfoque de derechos.
-
-### Division de Planificacion y Desarrollo Regional
-
-#### Propósito
-Planificación territorial y apoyo a evaluación de políticas regionales.
-
-#### Acciones
-- Elaborar y proponer estrategias, políticas, planes, programas y proyectos para desarrollo armónico del territorio (incluye Plan Regional de Ordenamiento Territorial).
-- Basar procesos en insumos técnicos y participativos, conforme a prioridades definidas por el gobierno regional.
-- Apoyar al Gobernador Regional en evaluación de cumplimiento de políticas, planes, programas, proyectos y presupuestos de carácter regional.
-- Prestar asistencia técnica a municipalidades y otros organismos de la administración que lo requieran.
-
-#### Unidades dependientes
-- [-> Comite de Pertinencia y Vinculacion Estrategica]
-- [-> Departamento de Planificacion Estrategica y Ordenamiento Territorial]
-- [-> Departamento de Desarrollo de Proyectos Estrategicos]
-- [-> Departamento Zonas en Desarrollo]
-
-### Unidad de Municipalidades y Conservaciones
-
-#### Depende de
-- [-> Departamento de Analisis y Evaluacion]
-
-#### Definición
-Unidad dependiente del Departamento de Análisis y Evaluación.
-
-#### Propósito
-Evaluación de proyectos de inversión local.
-
-#### Acciones
-- Evaluar técnica y administrativamente proyectos de inversión local.
-- Asegurar viabilidad normativa y financiera.
-- Fortalecer gestión comunal mediante asesoría directa y capacitación externa para optimizar formulación de iniciativas territoriales.
-- Tramitar convenios, resoluciones y registro en plataformas oficiales del Estado.
-
-#### Contexto
-- Tipos: FRIL, Circular 33, PMU-PMB.
-
-### Unidad de Proyectos y Programas
-
-#### Depende de
-- [-> Departamento de Analisis y Evaluacion]
-
-#### Propósito
-Evaluación de iniciativas FNDR, programas y concursos asociados al programa de inversión regional.
-
-#### Acciones
-- Evaluar técnica y administrativamente iniciativas FNDR, programas públicos y concursos.
-- Gestionar admisibilidad y visación ante el Ministerio de Desarrollo Social cuando corresponda.
-- Asesorar a divisiones regionales, servicios, universidades y organizaciones privadas para correcta formulación de proyectos.
-- Ejecutar planes de capacitación externa.
-
-#### Contexto
-- Concursos: 8%, FRPD, otros; activos no financieros.
-
-### Departamento de Analisis y Evaluacion
-
-#### Depende de
-- [-> Division de Presupuesto e Inversion Regional]
-
-#### Propósito
-Revisión y evaluación técnica de proyectos/programas postulados.
-
-#### Acciones
-- Evaluar pertinencia con lineamientos regionales.
-- Asesorar en determinación de proyectos a desarrollar.
-- Proporcionar proyectos con RS coordinando el Comité de Pertinencia y Vinculación Estratégica para análisis y priorización.
-- Establecer metodologías y analizar normativa técnica y presupuestaria para postulación a financiamiento.
-- Controlar solicitudes de financiamiento de inversión regional.
-- Apoyar formulación de proyectos y programas regionales.
-- Coordinar asesoría técnica a municipalidades y otros servicios para cumplimiento del desarrollo regional.
-
-#### Contexto
-- Postulación a financiamiento FNDR.
-
-#### Unidades dependientes
-- [-> Unidad de Municipalidades y Conservaciones]
-- [-> Unidad de Proyectos y Programas]
-
-### Departamento de Presupuesto
-
-#### Depende de
-- [-> Division de Presupuesto e Inversion Regional]
-
-#### Propósito
-Gestión integral del presupuesto de inversión.
-
-#### Acciones
-- Gestionar presupuesto desde identificación presupuestaria hasta control y seguimiento.
-- Elaborar resoluciones.
-- Gestionar caja.
-- Coordinar internamente con divisiones del Gobierno Regional.
-- Coordinar externamente con Dirección de Presupuestos (DIPRES), SUBDERE y Contraloría Regional.
-
-### Division de Presupuesto e Inversion Regional
-
-#### Propósito
-Presupuesto de inversión regional; ejecución, control y asesoría al Gobernador.
-
-#### Acciones
-- Elaborar proyectos de presupuestos de inversión del gobierno regional.
-- Ejecutar y controlar presupuesto de inversión y programas administrados por el gobierno regional.
-- Asesorar al Gobernador Regional en definición de proyectos de inversión a desarrollar o financiar según lineamientos y prioridades de instrumentos de planificación regional.
-
-#### Unidades dependientes
-- [-> Departamento de Analisis y Evaluacion]
-- [-> Departamento de Presupuesto]
-
-### Departamento de Fondos Concursables y Programas Sociales
-
-#### Depende de
-- [-> Division de Desarrollo Social y Humano]
-
-#### Propósito
-Gestión de fondos concursables y programas sociales.
-
-#### Acciones
-- Planificar, coordinar, gestionar y supervisar inversión social mediante fondos concursables y programas sociales.
-- Asegurar asignación eficiente, transparente y pertinente de recursos públicos.
-- Promover iniciativas con impacto social, pertinencia territorial y enfoque de derechos.
-- Articular trabajo con municipios, servicios públicos, organizaciones de la sociedad civil y otras entidades ejecutoras.
-- Velar por ciclo de vida de iniciativas: diseño, evaluación, ejecución, seguimiento y cierre.
-
-#### Requisitos
-- Coherencia con Estrategia Regional de Desarrollo, políticas públicas vigentes y prioridades definidas por el Gobierno Regional.
-
-### Departamento de Gestion Territorial
-
-#### Depende de
-- [-> Division de Desarrollo Social y Humano]
-
-#### Propósito
-Operativización y despliegue territorial de oferta programática.
-
-#### Acciones
-- Actuar como nexo de vinculación estratégica entre el Gobierno Regional de Ñuble y las personas de la región.
-- Fortalecer desarrollo social y comunitario.
-- Asegurar pertinencia territorial de actividades.
-- Contribuir a priorización de inversión regional.
-- Realizar seguimiento técnico de cartera de inversión social de la división.
-
-### Division de Desarrollo Social y Humano
-
-#### Definición
-Eje de la inversión social del Gobierno Regional de Ñuble.
-
-#### Propósito
-Fortalecer desarrollo humano y reducir brechas estructurales.
-
-#### Acciones
-- Definir e implementar lineamientos estratégicos de inversión social.
-- Diseñar, ejecutar y dar seguimiento a políticas regionales, programas y proyectos sociales.
-
-#### Objetivos
-- Promover equidad territorial.
-- Promover inclusión social.
-- Resguardar dignidad humana.
-
-#### Contexto
-- Ámbitos: pobreza, educación, salud, género, neurodiversidad, vivienda, entre otros.
-
-#### Resultados
-- Complementa y fortalece acción del Estado en la región.
-
-#### Unidades dependientes
-- [-> Departamento de Fondos Concursables y Programas Sociales]
-- [-> Departamento de Gestion Territorial]
-
-### Departamento de Fomento y Desarrollo Productivo
-
-#### Depende de
-- [-> Division de Fomento e Industria]
-
-#### Propósito
-Impulso a economía regional y emprendimiento.
-
-#### Acciones
-- Promover emprendimiento.
-- Diseñar políticas regionales de fomento y desarrollo productivo.
-- Ejecutar planes, programas e instrumentos de fomento productivo.
-- Lograr crecimiento sostenible, integrado y articulado con actores relevantes de la región.
-
-### Departamento de Ciencia Tecnologia e Innovacion
-
-#### Depende de
-- [-> Division de Fomento e Industria]
-
-#### Propósito
-Fomento del conocimiento, investigación y desarrollo tecnológico regional.
-
-#### Acciones
-- Planificar, diseñar e implementar estrategias de CTI.
-- Coordinar y articular actores relevantes: sector público, academia y ámbito privado.
-- Contribuir a creación de políticas públicas.
-- Fortalecer ecosistema regional.
-
-#### Objetivos
-Sostenibilidad y crecimiento económico.
-
-### Division de Fomento e Industria
-
-#### Propósito
-Fomento productivo, ciencia, tecnología e innovación.
-
-#### Acciones
-- Proponer, promover y ejecutar planes y programas regionales para estimular desarrollo de ciencia, tecnología e innovación y nuevas capacidades empresariales.
-- Facilitar incorporación de nuevas tecnologías de la información para favorecer crecimiento sostenido, integrado y sustentable.
-- Proponer y promover instrumentos de fomento productivo.
-
-#### Unidades dependientes
-- [-> Departamento de Fomento y Desarrollo Productivo]
-- [-> Departamento de Ciencia Tecnologia e Innovacion]
-
-### Departamento de Infraestructura y Conectividad
-
-#### Depende de
-- [-> Division de Infraestructura y Transportes]
-
-#### Propósito
-Infraestructura, transporte, movilidad y conectividad (vial y digital).
-
-#### Acciones
-- Proponer y promover planes, estudios y programas regionales en coordinación con servicios públicos regionales.
-- Analizar e identificar brechas existentes en infraestructura, transporte, movilidad y conectividad en distintas escalas territoriales.
-- Entregar directrices para oferta de programas y servicios de conectividad.
-- Promover y coordinar iniciativas para ampliar cobertura y calidad del transporte colectivo.
-- Proponer iniciativas para intermovilidad segura mediante programas y obras.
-- Evaluar y coordinar con otras instituciones planes de inversiones en movilidad.
-- Estudiar y proponer sistemas de Transporte Inteligente.
-
-### Departamento de Ejecucion y Supervision de Proyectos de Inversion
-
-#### Depende de
-- [-> Division de Infraestructura y Transportes]
-
-#### Propósito
-Supervisión de ejecución de proyectos de inversión regional.
-
-#### Acciones
-- Supervisar gestión eficiente de inversión regional mediante control riguroso de ejecución de proyectos asignados.
-- Fiscalización técnica (física) y presupuestaria (financiera) para resguardar integridad del proceso.
-- Coordinar con Contrapartes Técnicas para asegurar cumplimiento de objetivos institucionales.
-- Ejecutar de manera directa iniciativas de inversión que le sean encomendadas (responsabilidad técnica y administrativa).
-
-### Division de Infraestructura y Transportes
-
-#### Propósito
-Obras de infraestructura y equipamiento regional; gestión en transportes.
-
-#### Acciones
-- Proponer, promover y ejecutar planes y programas regionales en infraestructura, equipamiento regional y transportes.
-
-#### Unidades dependientes
-- [-> Departamento de Infraestructura y Conectividad]
-- [-> Departamento de Ejecucion y Supervision de Proyectos de Inversion]
-
-### Oficina de Partes
-
-#### Depende de
-- [-> Division de Administracion y Finanzas]
-
-#### Propósito
-Gestión documental institucional.
-
-#### Acciones
-- Recepción, distribución, archivo, registro y despacho de documentación de entrada y salida de servicios administrativos del Gobierno Regional de Ñuble.
-- Gestión de otras materias propias de su naturaleza y/o encomendadas o delegadas.
-
-### Departamento de Gestion y Desarrollo de Personas
-
-#### Depende de
-- [-> Division de Administracion y Finanzas]
-
-#### Propósito
-Estrategias, políticas y procesos del ciclo de vida laboral del personal.
-
-#### Acciones
-- Definir, elaborar e implementar estrategias, políticas y procesos institucionales de gestión de personas.
-- Asegurar equipo humano competente, motivado y alineado con objetivos de desarrollo regional.
-
-#### Requisitos
-- Concordancia con lineamientos de la autoridad regional.
-- Concordancia con normativa vigente aplicable al sector público.
-- Concordancia con instrumentos de gestión de personas del Estado.
-
-### Unidad de Tesoreria
-
-#### Depende de
-- [-> Departamento de Finanzas]
-
-#### Propósito
-Administración y custodia de ingresos y egresos; pagos y flujo de caja.
-
-#### Acciones
-- Administrar, controlar y custodiar ingresos y egresos del Gobierno Regional.
-- Gestionar fondos institucionales, pagos y flujo de caja.
-- Velar por liquidez y estabilidad financiera.
-
-#### Resultados
-- Asegura cumplimiento de obligaciones financieras.
-- Asegura eficiencia en ejecución presupuestaria.
-
-### Unidad de Contabilidad y Finanzas
-
-#### Depende de
-- [-> Departamento de Finanzas]
-
-#### Propósito
-Registro, control y análisis de información contable y presupuestaria.
-
-#### Acciones
-- Registrar, controlar y analizar información contable y presupuestaria.
-- Resguardar integridad de datos financieros y contables.
-
-#### Resultados
-- Permite gestión alineada con normativas vigentes y buenas prácticas del sector público.
-
-### Unidad de Control de Rendiciones
-
-#### Depende de
-- [-> Departamento de Finanzas]
-
-#### Propósito
-Seguimiento y control de rendiciones de cuentas.
-
-#### Acciones
-- Seguimiento, monitoreo, control y contabilización de rendiciones de cuentas ingresadas al Gobierno Regional.
-- Asegurar uso de recursos conforme a normativa vigente, de forma eficiente, transparente y oportuna.
-
-#### Resultados
-- Resguarda correcta administración de fondos públicos.
-
-### Unidad de Adquisiciones
-
-#### Depende de
-- [-> Departamento de Finanzas]
-
-#### Propósito
-Procesos de compras de bienes y servicios.
-
-#### Acciones
-- Ejecutar procesos de adquisiciones de bienes y servicios necesarios para funcionamiento institucional.
-- Publicar y monitorear contrataciones especialmente encomendadas provenientes del programa de inversiones, junto a unidad técnica designada.
-
-#### Objetivos
-- Eficiencia.
-- Transparencia.
-- Probidad.
-
-#### Requisitos
-- Apego a Ley de Compras Públicas y su reglamento.
-
-### Unidad de Operaciones
-
-#### Depende de
-- [-> Departamento de Finanzas]
-
-#### Propósito
-Infraestructura física, flota vehicular y tecnologías de la información.
-
-#### Acciones
-- Gestionar infraestructura física (edificios e instalaciones) y flota de vehículos institucionales.
-- Coordinar mantenimiento preventivo, correctivo y respuesta a emergencias.
-- Asegurar operatividad, funcionalidad y seguridad de recursos físicos institucionales.
-- Gestionar y mantener infraestructura TI: red, servidores, hardware, software, sistemas de información.
-- Gestionar políticas de seguridad informática y protección de datos institucionales.
-- Desarrollar soluciones tecnológicas alineadas con objetivos estratégicos del Gobierno Regional.
-
-### Departamento de Finanzas
-
-#### Depende de
-- [-> Division de Administracion y Finanzas]
-
-#### Propósito
-Revisión y control de información presupuestaria, contable y financiera.
-
-#### Acciones
-- Supervisar elaboración y ejecución del presupuesto.
-- Gestionar registro contable y elaboración de estados financieros.
-- Analizar situación económica para toma de decisiones.
-- Implementar políticas de control para seguridad de activos.
-- Optimizar uso de recursos.
-
-#### Resultados
-Garante de salud financiera y transparencia institucional.
-
-#### Unidades dependientes
-- [-> Unidad de Tesoreria]
-- [-> Unidad de Contabilidad y Finanzas]
-- [-> Unidad de Control de Rendiciones]
-- [-> Unidad de Adquisiciones]
-- [-> Unidad de Operaciones]
-
-### Division de Administracion y Finanzas
-
-#### Propósito
-Gestión administrativa y financiera; presupuesto de funcionamiento; servicios generales; personal.
-
-#### Resultados
-Sustenta funcionamiento eficiente y transparente del Gobierno Regional.
-
-#### Unidades dependientes
-- [-> Oficina de Partes]
-- [-> Departamento de Gestion y Desarrollo de Personas]
-- [-> Departamento de Finanzas]

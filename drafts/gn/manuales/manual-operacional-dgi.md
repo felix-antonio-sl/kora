@@ -23,7 +23,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.42
+    cr: 11.26
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -35,44 +35,31 @@ extensions:
     skeleton_count: 12
     meat_count: 553
     fat_count: 0
-    cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/manuales__manual-operacional-dgi.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:manual-operacional-dgi
 ---
 
 # Manual Operacional DGI
+## Source
+manual_operacional_dgi.md
 
 ## XRef Required
 KODA Core Spec 1.0.0
 
-## Alcance
-
-### Includes
-- Marco institucional y normativo del DGI
-- Estructura organizacional y roles
-- Procesos operativos de las 4 áreas
-- Protocolos de coordinación institucional
-
-### Excludes
-- Plantillas vacías
-- Anexos de formularios
+## Scope
+- **Includes:** Marco institucional y normativo del DGI, Estructura organizacional y roles, Procesos operativos de las 4 áreas, Protocolos de coordinación institucional
+- **Excludes:** Plantillas vacías, Anexos de formularios
 
 ## Metrics
-
-### Source Chars
-42255
-
-### Artifact Chars
-28000
-
-### CR
-1.51
-
-### FS
-100%
+- **Source Chars:** 42255
+- **Artifact Chars:** 28000
+- **CR:** 1.51
+- **FS:** 100%
 
 ## GeneralProvisions
-
-### GeneralProvisions
 | ID | Title |
 | --- | --- |
 | DGI-GEN-01 | Objeto del Manual |
@@ -82,8 +69,6 @@ KODA Core Spec 1.0.0
 | DGI-GEN-05 | Principios Rectores |
 
 ## OrganizationalStructure
-
-### OrganizationalStructure
 | ID | Title |
 | --- | --- |
 | DGI-ORG-01 | Misión DGI |
@@ -93,28 +78,22 @@ KODA Core Spec 1.0.0
 | DGI-ORG-05 | Matriz RACI |
 
 ## ControlGestion
-
-### ControlGestion
 | ID | Title | Obj |
 | --- | --- | --- |
 | DGI-CG-01 | Monitoreo de Indicadores Institucionales | Mantener visibilidad permanente sobre el estado de gestión del GORE |
-| DGI-CG-02 | Tipos de Dashboard |  |
+| DGI-CG-02 | Tipos de Dashboard | |
 | DGI-CG-03 | Detección de Cuellos de Botella | Identificar proactivamente puntos de fricción en la operación |
-| DGI-CG-04 | Estructura Informe Estado Situacional |  |
+| DGI-CG-04 | Estructura Informe Estado Situacional | |
 
 ## ModernizacionProcesos
-
-### ModernizacionProcesos
 | ID | Title | Obj |
 | --- | --- | --- |
 | DGI-MP-01 | Levantamiento y Modelado BPMN | Documentar los procesos institucionales de manera estandarizada |
 | DGI-MP-02 | Análisis de Oportunidades de Mejora | Identificar y priorizar mejoras a los procesos levantados |
-| DGI-MP-03 | Tipos de Automatización |  |
-| DGI-MP-04 | Proceso de Implementación |  |
+| DGI-MP-03 | Tipos de Automatización | |
+| DGI-MP-04 | Proceso de Implementación | |
 
 ## TransformacionDigital
-
-### TransformacionDigital
 | ID | Title | Obj |
 | --- | --- | --- |
 | DGI-TD-01 | Coordinación Cumplimiento Ley 21.180 | Asegurar que el GORE avance hacia el cumplimiento de la TDE |
@@ -123,8 +102,6 @@ KODA Core Spec 1.0.0
 | DGI-TD-04 | Interoperabilidad y Datos | Avanzar hacia un ecosistema de datos integrado |
 
 ## GestionConocimiento
-
-### GestionConocimiento
 | ID | Title | Obj |
 | --- | --- | --- |
 | DGI-KC-01 | Curación y Actualización de KB | Mantener la base de conocimiento institucional actualizada y útil |
@@ -132,17 +109,13 @@ KODA Core Spec 1.0.0
 | DGI-KC-03 | Capacitación y Gestión del Cambio | Facilitar la adopción de nuevas prácticas y herramientas |
 
 ## EnablementFunctions
-
-### EnablementFunctions
 | ID | Title | Purpose | KeyConcepts |
 | --- | --- | --- | --- |
-| DGI-EF-01 | Gestión Arquitectural | Diseñar estructura organizacional saludable (Meyer) | ['Golden Rule: Autoridad = Responsabilidad', 'Dominios Precisos: Sin superposiciones', 'Sinergias: Agrupación de especialistas'] |
-| DGI-EF-02 | Dinámica de Producción | Gestionar flujo de trabajo (Lean/Kanban) | ['Visualización de flujo (Tableros)', 'Límites WIP', 'Métricas: Throughput, Lead Time'] |
-| DGI-EF-03 | Navegación Social | Gestión del cambio y relaciones (ADKAR) | ['Lobbista Interno: Facilitar, no imponer', 'Modelo ADKAR: Awareness, Desire, Knowledge, Ability, Reinforcement', 'Influencia Ética: Reciprocidad, prueba social'] |
+| DGI-EF-01 | Gestión Arquitectural | Diseñar estructura organizacional saludable (Meyer) | Golden Rule: Autoridad = Responsabilidad, Dominios Precisos: Sin superposiciones, Sinergias: Agrupación de especialistas |
+| DGI-EF-02 | Dinámica de Producción | Gestionar flujo de trabajo (Lean/Kanban) | Visualización de flujo (Tableros), Límites WIP, Métricas: Throughput, Lead Time |
+| DGI-EF-03 | Navegación Social | Gestión del cambio y relaciones (ADKAR) | Lobbista Interno: Facilitar, no imponer, Modelo ADKAR: Awareness, Desire, Knowledge, Ability, Reinforcement, Influencia Ética: Reciprocidad, prueba social |
 
 ## CoordinacionInstitucional
-
-### CoordinacionInstitucional
 | ID | Title |
 | --- | --- |
 | DGI-CI-01 | Relación con Administración Regional |

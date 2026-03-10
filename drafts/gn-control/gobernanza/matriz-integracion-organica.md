@@ -36,6 +36,10 @@ extensions:
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__matriz-integracion-organica.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:matriz-integracion-organica
 ---
 
 # Matriz Integracion Organica
@@ -76,7 +80,6 @@ Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.
 
 ### Introducción y Fundamentos
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_000 | [Guía Integral de la Administración Regional de Ñuble](urn:gn:kb:intro-gores-nuble) | Guía Integral GORE Ñuble | intro/kb_gn_000_intro_gores_nuble_koda.yml | KODA | Guía técnico-operativa integral: marco constitucional, estructura GORE, contexto Ñuble, autoridades. |
@@ -85,7 +88,6 @@ Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.
 
 ### Marco Legal y Normativo
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_031 | [LOC GORE](urn:gn:kb:loc-gore) | LOC GORE | legal/kb_gn_031_loc_gore_koda.yml | KODA | Ley Orgánica Constitucional sobre Gobiernos Regionales (Ley 19.175). |
@@ -93,14 +95,12 @@ Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.
 
 ### Estructura del Estado de Chile
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_core_007 | [Estructura del Estado de Chile](urn:mgmt:kb:estructura-estado-chile) | Estructura del Estado de Chile | ../../estadocl/kb_core_007_estructura_estado_chile_koda.yml | KODA | Organización general del Estado chileno: poderes, niveles, instituciones. |
 
 ### Planificación Estratégica
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_006 | [Estrategia Regional de Desarrollo Ñuble 2024 - 2030](urn:gn:kb:erd-nuble-2024-2030) | ERD Ñuble 2024-2030 | estrategia/kb_gn_006_erd_nuble_2024_2030_koda.yml | KODA | Estrategia Regional de Desarrollo 2024-2030: ejes, objetivos, metas. |
@@ -108,21 +108,18 @@ Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.
 
 ### Diagnóstico Social
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_004 | [Catálogo de Problemas Sociales de Chile (STS)](urn:gn:kb:problemas-sociales-cl) | Problemas Sociales Chile | social/kb_gn_004_problemas_sociales_cl_koda.yml | KODA | Diagnóstico de problemas sociales en Chile con foco regional. |
 
 ### Indicadores y Estadísticas
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_005 | [Indicadores regionales y comunales región de Ñuble](urn:gn:kb:indicadores-nuble) | Indicadores Ñuble | estadisticas/kb_gn_005_indicadores_nuble_koda.yml | KODA | Indicadores socioeconómicos, demográficos y de desarrollo de Ñuble. |
 
 ### Gestión Institucional
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_014 | [Glosario Unificado GORE Ñuble](urn:gn:kb:glosario-gore-nuble) | Glosario GORE Ñuble | gestion/kb_gn_014_glosario_gore_nuble_koda.yml | KODA | Canon terminológico jurídico-administrativo: ~140 términos definidos. |
@@ -135,7 +132,6 @@ Clasificación jerárquica de las 13 áreas de conocimiento del GORE Ñuble.
 #### Manuales Operativos
 Manuales de procedimientos por área funcional.
 
-#### Artefactos
 | id | titulo | urn | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | manual_1_1 | Manual Presupuesto | [Manual 1.1: Formulación y Ejecución Presupuestaria](urn:gn:kb:manual-presupuesto) | gestion/kb_gn_043_manual_presupuesto_koda.yml | KODA | Procedimientos de gestión presupuestaria. |
@@ -153,7 +149,6 @@ Manuales de procedimientos por área funcional.
 
 ### Gestión Presupuestaria
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_018 | [Gestión Financiera y Operativa del Presupuesto Regional (GORE)](urn:gn:kb:gestion-prpto) | Gestión Presupuestaria | presupuesto/kb_gn_018_gestion_prpto_koda.yml | KODA | Marco general de gestión presupuestaria del GORE. |
@@ -162,7 +157,6 @@ Manuales de procedimientos por área funcional.
 
 ### Inversión Pública Regional
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_001 | [Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas](urn:gn:kb:transferencia-ppr) | Transferencia PPR | ipr/kb_gn_001_transferencia_ppr_koda.yml | KODA | Procedimiento de transferencia de programas públicos regionales. |
@@ -178,7 +172,6 @@ Manuales de procedimientos por área funcional.
 #### Repertorio Intervenciones
 Repertorio de Intervenciones Sectoriales
 
-#### Artefactos
 | id | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- |
 | kb_gn_010_index | RIS - Índice | ipr/kb_gn_010_ris/kb_gn_010_ris_index_koda.yml | KODA | Índice del repertorio de intervenciones sectoriales. |
@@ -193,25 +186,22 @@ Repertorio de Intervenciones Sectoriales
 
 ### Actos Jurídicos
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_100 | [Modelos de Actos Jurídicos GORE Ñuble](urn:gn:kb:modelos-actos-juridicos) | Modelos de Actos Jurídicos | juridico/kb_gn_100_modelos_actos_juridicos_koda.yml | KODA | Templates de resoluciones, convenios y otros actos administrativos. |
 
 ### Arquitectura y Procesos
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_050 | [Estrategia de desarrollo exponencial](urn:gn:kb:aceleracion-regional) | Aceleración Regional | arquitectura/kb_gn_050_aceleracion_regional_koda.yml | KODA | Plan de aceleración de capacidades del GORE. |
 | kb_gn_080 | [Centro Integrado de Emergencia y Seguridad (CIES) - SITIA Ñuble](urn:gn:kb:cies-sitia) | CIES/SITIA | arquitectura/kb_gn_080_cies_sitia_koda.yml | KODA | Sistemas CIES y SITIA: inteligencia y análisis territorial. |
 | kb_gn_090 | [Gestión de Información Geoespacial en GORE Ñuble](urn:gn:kb:gestion-info-geoespacial) | Gestión Geoespacial | arquitectura/kb_gn_090_gestion_informacion_geoespacial_koda.yml | KODA | Gestión de información geoespacial e IDE regional. |
-| catalog_procesos |  | Catálogo de Procesos | arquitectura/catalog_procesos_gore.yml | YAML | Índice de todos los procesos GORE documentados. |
+| catalog_procesos | | Catálogo de Procesos | arquitectura/catalog_procesos_gore.yml | YAML | Índice de todos los procesos GORE documentados. |
 
 #### BPMN Procesos
 Diagramas BPMN de procesos institucionales
 
-#### Artefactos
 | id | titulo | urn | path | koda_path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- | --- |
 | D01 | Actos Administrativos | [BPMN D01: Tramitación de Actos Administrativos](urn:gn:kb:bpmn-d01-actos-administrativos) | ../../../../sources/gn/arquitectura/bpmn/D01_actos_administrativos.md | arquitectura/bpmn/D01_actos_administrativos_koda.yml | BPMN | Proceso de emisión de actos administrativos. |
@@ -224,11 +214,10 @@ Diagramas BPMN de procesos institucionales
 | D08 | Rendiciones | [BPMN D08: Gestión de Rendiciones de Cuentas](urn:gn:kb:bpmn-d08-rendiciones) | arquitectura/bpmn/D08_rendiciones.md | arquitectura/bpmn/D08_rendiciones_koda.yml | BPMN | Proceso de rendición de cuentas. |
 | D09 | CIES/SITIA | [BPMN D09: Gestión Operativa CIES/SITIA (Seguridad Pública)](urn:gn:kb:bpmn-d09-cies-sitia) | arquitectura/bpmn/D09_cies_sitia.md | arquitectura/bpmn/D09_cies_sitia_koda.yml | BPMN | Procesos de inteligencia territorial. |
 | D10 | Geoespacial/IDE | [BPMN D10: Gestión de Información Geoespacial (IDE/Geonodo)](urn:gn:kb:bpmn-d10-geoespacial-ide) | arquitectura/bpmn/D10_geoespacial_ide.md | arquitectura/bpmn/D10_geoespacial_ide_koda.yml | BPMN | Proceso de gestión geoespacial. |
-| bpmn_index | Índice BPMN |  | arquitectura/bpmn/_index.yml |  | YAML | Índice de procesos BPMN. |
+| bpmn_index | Índice BPMN | | arquitectura/bpmn/_index.yml | | YAML | Índice de procesos BPMN. |
 
 ### Comunicaciones Institucionales
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_008 | [Comunicaciones Oscar Crisóstomo](urn:gn:kb:comunicaciones-oc) | Comunicaciones Oficinas de Comunicaciones | comunicaciones/kb_gn_008_comunicaciones_oc_koda.yml | KODA | Roles y funciones del área de comunicaciones. |
@@ -236,7 +225,6 @@ Diagramas BPMN de procesos institucionales
 
 ### Transformación Digital
 
-#### Artefactos
 | id | urn | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- |
 | kb_gn_710 | [Informe Estado Inicial GORE Ñuble Pre-Transformación Digital](urn:gn:kb:informe-estado-inicial-gore-pre-td) | Estado Inicial Pre-TD | tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml | KODA | Diagnóstico del estado inicial del GORE previo a transformación digital. |
@@ -244,7 +232,6 @@ Diagramas BPMN de procesos institucionales
 
 ### Datos Estructurados
 
-#### Artefactos
 | id | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- |
 | kb_gn_002 | Noticias GORE | ../../../../sources/gn/data/kb_gn_002_noticias.csv | CSV | Histórico de noticias institucionales. |

@@ -37,6 +37,10 @@ extensions:
     meat_count: 54
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/bpmn__bpmn-index.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:bpmn-index
 ---
 
 # Índice de Procesos BPMN — GORE Ñuble

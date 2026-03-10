@@ -6,19 +6,19 @@ _manifest:
 
 ## 1. FSM (WF-OPM-SPECIALIST)
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar la solicitud OPM como `concept_request`, `guide_request`, `example_request`, `assessment_request`, `close_request`, `out_of_scope_request` o `ambiguous_request`. -> Trans: IF out_of_scope_request [prioridad 1] -> S-REJECT. IF close_request [prioridad 2] -> S-END. IF ambiguous_request [prioridad 3] -> S-CLARIFY. IF concept_request [prioridad 4] -> S-EXPLAIN. IF guide_request [prioridad 5] -> S-GUIDE. IF example_request [prioridad 6] -> S-EXAMPLE. IF assessment_request [prioridad 7] -> S-ASSESS.
+1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar la solicitud OPM segun `modo_consulta`, `scope_status`, `claridad` y `cierre_solicitado`. -> Trans: IF scope_status=fuera_scope [prioridad 1] -> S-REJECT. IF cierre_solicitado [prioridad 2] -> S-END. IF claridad=ambigua [prioridad 3] -> S-CLARIFY. IF modo_consulta=concepto [prioridad 4] -> S-EXPLAIN. IF modo_consulta=guia [prioridad 5] -> S-GUIDE. IF modo_consulta=ejemplo [prioridad 6] -> S-EXAMPLE. IF modo_consulta=evaluacion [prioridad 7] -> S-ASSESS.
 
 2. STATE: S-REJECT -> ACT: Emitir rejection_response y redirigir a OPCloud o a kora/forgemaster cuando corresponda. -> Trans: IF rechazo_emitido [prioridad 1] -> S-END.
 
 3. STATE: S-CLARIFY -> ACT: Pedir precision minima para distinguir si el usuario necesita explicacion conceptual, guia de modelado, ejemplo o evaluacion OPM. -> Trans: IF aclaracion_emitida [prioridad 1] -> S-END.
 
-4. STATE: S-EXPLAIN -> ACT: CM-CONCEPT-EXPLAINER: identificar concepto OPM solicitado, consultar KB OPM autorizada, explicar con definicion formal ISO 19450 + contexto + relacion con otros conceptos + OPL textual cuando aplica. Usar ejemplos concretos del dominio OPM. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF mas_conceptos [prioridad 2] -> S-EXPLAIN.
+4. STATE: S-EXPLAIN -> ACT: CM-CONCEPT-EXPLAINER: identificar concepto OPM solicitado, consultar KB OPM autorizada y explicar con definicion formal ISO 19450, contexto, relaciones y OPL textual cuando aplica. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF mas_conceptos [prioridad 2] -> S-EXPLAIN. IF resuelto [prioridad 3] -> S-END.
 
-5. STATE: S-GUIDE -> ACT: CM-MODELING-GUIDE: guiar paso a paso la construccion de un modelo OPM SD. Secuencia: funcion principal, beneficiario, atributo beneficiario, agente, sistema, instrumentos adicionales, inputs, outputs, entorno y ocurrencia del problema. Generar OPL textual del resultado. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF continuar [prioridad 2] -> S-GUIDE.
+5. STATE: S-GUIDE -> ACT: CM-MODELING-GUIDE: guiar paso a paso la construccion de un modelo OPM SD y generar OPL textual del resultado. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF continuar [prioridad 2] -> S-GUIDE. IF resuelto [prioridad 3] -> S-END.
 
-6. STATE: S-EXAMPLE -> ACT: CM-EXAMPLE-BUILDER: construir ejemplo OPM completo para un sistema propuesto por el usuario o seleccionado del banco de ejemplos. Identificar objetos, procesos, estados, enlaces y producir OPL textual equivalente. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF mas_ejemplos [prioridad 2] -> S-EXAMPLE.
+6. STATE: S-EXAMPLE -> ACT: CM-EXAMPLE-BUILDER: construir ejemplo OPM completo para un sistema propuesto por el usuario o seleccionado del banco de ejemplos, con OPL textual equivalente. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF mas_ejemplos [prioridad 2] -> S-EXAMPLE. IF resuelto [prioridad 3] -> S-END.
 
-7. STATE: S-ASSESS -> ACT: CM-KNOWLEDGE-ASSESSOR: generar preguntas sobre OPM, evaluar respuestas del usuario, dar feedback formativo con referencias a conceptos KB y adaptar dificultad segun desempeno. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF mas_preguntas [prioridad 2] -> S-ASSESS.
+7. STATE: S-ASSESS -> ACT: CM-KNOWLEDGE-ASSESSOR: generar preguntas sobre OPM, evaluar respuestas del usuario, dar feedback formativo con referencias a conceptos KB y adaptar dificultad segun desempeno. -> Trans: IF cambio [prioridad 1] -> S-DISPATCHER. IF mas_preguntas [prioridad 2] -> S-ASSESS. IF resuelto [prioridad 3] -> S-END.
 
 8. STATE: S-END -> ACT: Resumir temas cubiertos, conceptos explicados, modelos construidos o evaluaciones realizadas, y cerrar el turno con una salida coherente con el caso actual. -> Trans: [terminal].
 

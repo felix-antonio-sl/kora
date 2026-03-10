@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_direct
     fs: 100
-    cr: 1.04
+    cr: 1.37
     run_id: gn-smoke
     review_gate: auto
     scope_statement: null
@@ -38,16 +38,14 @@ extensions:
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/ris__ris-index.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ris-index
 ---
 
 # Índice RIS SNI — GORE Ñuble
-
-## Proposito
-Servir como mapa de navegación para los diferentes RIS sectoriales utilizados por el GORE Ñuble.
-
 ## Entradas
-
-### Entradas
 | ID | Cpt | Urn | Fuente-URL | Estado |
 | --- | --- | --- | --- | --- |
 | RIS-PROYINV-2023 | RIS Genéricas para Proyectos de Inversión (SNI 2023). | [RIS Genéricas — Proyectos de Inversión (SNI 2023)](urn:gn:kb:ris-proyinv) | https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf | draft |

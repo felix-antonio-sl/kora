@@ -24,7 +24,7 @@ extensions:
     source_type: koda_yaml
     transformation_mode: korafy_koda_hybrid
     fs: 100
-    cr: 1.79
+    cr: 19.32
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Glosas GORE 2026 y su uso operativo; revisar ubicacion semantica
@@ -38,23 +38,24 @@ extensions:
     meat_count: 698
     fat_count: 0
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gestion__glosas-gores-2026.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:glosas-gores-2026
 ---
 
 # Glosas y Requerimientos de Información GORES 2026
+## Source
+/Users/felixsanhueza/Developer/gorenuble/staging/glosas gores 2026/glosas_gores_2026.md
 
-## Proposito
 Transformación KODA de glosas y requerimientos de información de la Ley de Presupuestos Año 2026 (Partida: Financiamiento Gobiernos Regionales).
 
 ## Objetivos
-
-### Objetivos
 - FS=100%: preservar contenido normativo + estructura (tablas, numerales, listas).
 - Deduplicación: usar Ref para entidades recurrentes.
 - Estructura RAG: secciones, actores, restricciones, montos, reporting.
 
 ## Definiciones
-
-### Definiciones
 | ID | Def |
 | --- | --- |
 | ACTOR-GORES | gobiernos regionales |
@@ -74,27 +75,21 @@ Transformación KODA de glosas y requerimientos de información de la Ley de Pre
 | ITEM-3303 | Ítem 33.03 |
 | RES-EX-33-2024-MCTCI | Resolución Exenta N° 33, de 2024 (Ministerio de Ciencias, Tecnología, Conocimiento e Innovación) |
 
-## LEY DE PRESUPUESTOS AÑO 2026
-
-### Partida
-Financiamiento Gobiernos Regionales
-
-### Units
-Miles de $
-
+## Law Budget 2026
+- **Titulo:** LEY DE PRESUPUESTOS AÑO 2026
+- **Partida:** Financiamiento Gobiernos Regionales
+- **Units:** Miles de $
 ### Economic Classification Incomes Expenses
-
 #### Table
 | Sub-Título | Clasificación Económica | Gobiernos Regionales (01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16) |
 | --- | --- | --- |
-| INGRESOS |  | 1.900.047.503 |
+| INGRESOS | | 1.900.047.503 |
 | 05 | Transferencias Corrientes | 17.827.479 |
 | 09 | Aporte Fiscal | 1.124.303.237 |
 | 13 | Transferencias para Gastos de Capital | 757.916.787 |
-| GASTOS |  | 1.900.047.503 |
+| GASTOS | | 1.900.047.503 |
 | 24 | Transferencias Corrientes | 128.872.343 |
 | 33 | Transferencias de Capital | 1.771.175.160 |
-
 ### Glosses
 | ID | Title |
 | --- | --- |
@@ -109,9 +104,7 @@ Miles de $
 | GLOSA-09-S29-ACTIVOS-NO-FINANCIEROS | 09 Aplica a Subtítulo 29 (presupuesto de inversión regional) |
 | GLOSA-10-S31-INVERSION-PUBLICA | 10 Aplica a Subtítulo 31 (presupuesto de inversión) |
 | GLOSA-11-S33-TRANSFERENCIAS-CAPITAL | 11 Transferencias de Capital (Subtítulo 33) |
-
 ### Information Requirements
-
 #### Items
 | ID |
 | --- |
@@ -135,52 +128,23 @@ Miles de $
 | INFO-REQ-16 |
 
 ## Validation Report
-
 ### Syntax
-
-#### Resultados
-YAML parse OK (ruby psych).
-
+- **Resultados:** YAML parse OK (ruby psych).
+### References
+- **Resultados:** IDs únicos y Refs resolubles (verificación automática).
 ### Metrics
-
 #### TER Approx
-
-#### Formula
-(source_tokens - artifact_tokens) / source_tokens
-
-#### Method
-Heurística chars/4; misma regla en ambos.
-
-#### Resultados
-TER ≈ -2,9%: artefacto > fuente (fuente legal ya es densa; overhead YAML/metadata/estructura semántica aumenta tamaño).
-
+- **Formula:** (source_tokens - artifact_tokens) / source_tokens
+- **Method:** Heurística chars/4; misma regla en ambos.
+- **Resultados:** TER ≈ -2,9%: artefacto > fuente (fuente legal ya es densa; overhead YAML/metadata/estructura semántica aumenta tamaño).
 #### RD
-
-#### Formula
-Ref_usages / total_definitions
-
-#### Ref Usages
-65
-
-#### Definiciones
-16
-
-#### RD
-4.06
-
+- **Formula:** Ref_usages / total_definitions
+- **Ref Usages:** 65
+- **Definiciones:** 16
+- **RD:** 4.06
 #### FS
-
-#### Formula
-(preserved_facts / source_facts) * 100
-
-#### Method
-Revisión manual/estructural (sin extracción automática de hechos).
-
-#### Target
-100
-
-#### FS
-100
-
-#### Advertencias
-FS=100 declarado por revisión manual; si necesitas auditoría estricta, hacemos diff factual (CM-DIFF-ENGINE) con checklist.
+- **Formula:** (preserved_facts / source_facts) * 100
+- **Method:** Revisión manual/estructural (sin extracción automática de hechos).
+- **Target:** 100
+- **FS:** 100
+- **Advertencias:** FS=100 declarado por revisión manual; si necesitas auditoría estricta, hacemos diff factual (CM-DIFF-ENGINE) con checklist.

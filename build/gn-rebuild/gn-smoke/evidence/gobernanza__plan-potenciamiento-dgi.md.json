@@ -10,7 +10,7 @@
     "core/gestion/kb_gn_meyer_org_structure_koda.yml"
   ],
   "fs": 100,
-  "cr": 1.36,
+  "cr": 1.32,
   "review_gate": "auto",
   "skeleton_count": 21,
   "meat_count": 1170,
@@ -21,6 +21,31 @@
   ],
   "document_family": "generic",
   "publication_class": "knowledge",
+  "autofix": {
+    "applied": true,
+    "html_anchor_lines_removed": 0,
+    "html_breaks_replaced": 0,
+    "opaque_internal_refs_semanticized": 0,
+    "meta_intro_headings_removed": 1,
+    "empty_primary_wrappers_removed": 0,
+    "primary_heading_promotions": 0,
+    "largest_primary_chunk_lines_before": 12,
+    "largest_primary_chunk_lines_after": 16
+  },
+  "split": {
+    "applied": false,
+    "family": "generic",
+    "shard_count": 1,
+    "max_total_lines_per_file": 320,
+    "max_primary_sections_per_file": 10,
+    "largest_shard_lines": 72,
+    "shard_paths": [
+      "drafts/gn/gobernanza/plan-potenciamiento-dgi.md"
+    ],
+    "shard_urns": [
+      "urn:gn:kb:plan-potenciamiento-dgi"
+    ]
+  },
   "preserved_facts": [
     "document.title=Plan de Potenciamiento DGI",
     "document.family=generic",
@@ -39,14 +64,10 @@
     "section[1].block[1].title=Excludes",
     "section[1].block[1].bullet[0]=Plantillas vacías para proyectos específicos",
     "section[2].title=Metrics",
-    "section[2].block[0].title=Source Chars",
-    "section[2].block[0].block[0].paragraph=24568",
-    "section[2].block[1].title=Artifact Chars",
-    "section[2].block[1].block[0].paragraph=18500",
-    "section[2].block[2].title=CR",
-    "section[2].block[2].block[0].paragraph=1.33",
-    "section[2].block[3].title=FS",
-    "section[2].block[3].block[0].paragraph=100%",
+    "section[2].block[0].bullet[0]=**Source Chars:** 24568",
+    "section[2].block[1].bullet[0]=**Artifact Chars:** 18500",
+    "section[2].block[2].bullet[0]=**CR:** 1.33",
+    "section[2].block[3].bullet[0]=**FS:** 100%",
     "section[3].title=PerspectiveSynthesis",
     "section[3].block[0].title=PerspectiveSynthesis",
     "section[3].block[0].headers=ID|Title|XRef",

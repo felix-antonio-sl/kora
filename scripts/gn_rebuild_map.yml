@@ -200,6 +200,7 @@ entries:
     target_urn: urn:gn:kb:glosario-gore-nuble
     source_paths:
       - domains/gn/03_operacion/gestion/kb_gn_014_glosario_gore_nuble_koda.yml
+    document_family: glossary
 
   - target_path: gobernanza/glosario-ipr-consolidado.md
     target_urn: urn:gn:kb:glosario-ipr-consolidado

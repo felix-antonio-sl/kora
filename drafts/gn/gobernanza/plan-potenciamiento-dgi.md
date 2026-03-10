@@ -30,7 +30,7 @@ extensions:
     source_type: mixed
     transformation_mode: korafy_composite
     fs: 100
-    cr: 1.36
+    cr: 1.32
     run_id: gn-smoke
     review_gate: auto
     scope_statement: Plan DGI con dependencias core declaradas.
@@ -44,6 +44,10 @@ extensions:
     fat_count: 0
     cr_justification: Fuente altamente estructurada o derivacion de alcance acotado.
     evidence_path: build/gn-rebuild/gn-smoke/evidence/gobernanza__plan-potenciamiento-dgi.md.json
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:plan-potenciamiento-dgi
 ---
 
 # Plan de Potenciamiento DGI
@@ -55,8 +59,6 @@ extensions:
 - [urn:mgmt:kb:meyer-org-structure](urn:mgmt:kb:meyer-org-structure)
 - [urn:mgmt:kb:lean6](urn:mgmt:kb:lean6)
 
-## Alcance
-
 ### Includes
 - Síntesis de perspectivas Meyer y Lean Six Sigma
 - Modelo de integración estructural y metodológico
@@ -67,18 +69,10 @@ extensions:
 - Plantillas vacías para proyectos específicos
 
 ## Metrics
-
-### Source Chars
-24568
-
-### Artifact Chars
-18500
-
-### CR
-1.33
-
-### FS
-100%
+- **Source Chars:** 24568
+- **Artifact Chars:** 18500
+- **CR:** 1.33
+- **FS:** 100%
 
 ## PerspectiveSynthesis
 

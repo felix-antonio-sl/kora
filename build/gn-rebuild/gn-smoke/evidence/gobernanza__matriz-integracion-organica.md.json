@@ -19,6 +19,31 @@
   ],
   "document_family": "inventory",
   "publication_class": "control",
+  "autofix": {
+    "applied": true,
+    "html_anchor_lines_removed": 0,
+    "html_breaks_replaced": 0,
+    "opaque_internal_refs_semanticized": 0,
+    "meta_intro_headings_removed": 0,
+    "empty_primary_wrappers_removed": 0,
+    "primary_heading_promotions": 0,
+    "largest_primary_chunk_lines_before": 179,
+    "largest_primary_chunk_lines_after": 162
+  },
+  "split": {
+    "applied": false,
+    "family": "inventory",
+    "shard_count": 1,
+    "max_total_lines_per_file": 500,
+    "max_primary_sections_per_file": 16,
+    "largest_shard_lines": 196,
+    "shard_paths": [
+      "drafts/gn-control/gobernanza/matriz-integracion-organica.md"
+    ],
+    "shard_urns": [
+      "urn:gn:kb:matriz-integracion-organica"
+    ]
+  },
   "preserved_facts": [
     "document.title=Matriz Integracion Organica",
     "document.family=inventory",
