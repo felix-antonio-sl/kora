@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:gn-cqs-master-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: ontologies/onto_gorenuble/goreNubleCQs_Master.yml
 version: 2.0.0
 status: draft

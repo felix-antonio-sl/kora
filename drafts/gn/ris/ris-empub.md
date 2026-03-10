@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-empub
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_empub_koda.yml
 version: 2.0.0
 status: draft
@@ -44,7 +44,6 @@ extensions:
 ---
 
 # RIS Estudios y Proyectos de Empresas del Estado (SNI 2024)
-## Source
 - **Contexto requerido:** https://sni.gob.cl/storage/docs/RIS_-_Estudios_y_Proyectos_de_Empresas_del_Estado_2024.pdf
 
 ## RIS Empresas Publicas 2024

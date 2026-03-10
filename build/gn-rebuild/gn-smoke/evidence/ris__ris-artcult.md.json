@@ -36,7 +36,7 @@
     "shard_count": 1,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 47,
+    "largest_shard_lines": 46,
     "shard_paths": [
       "drafts/gn/ris/ris-artcult.md"
     ],

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-proyinv
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_proyinv_koda.yml
 version: 2.0.0
 status: draft
@@ -44,7 +44,6 @@ extensions:
 ---
 
 # RIS Genéricas — Proyectos de Inversión (SNI 2023)
-## Source
 - **Contexto requerido:** https://sni.gob.cl/storage/docs/RIS_genericas_para_proyectos_de_inversion_2023.pdf, https://sni.gob.cl/requisitos-de-informacion-por-sector
 
 ## RIS Proyectos Inversion 2023

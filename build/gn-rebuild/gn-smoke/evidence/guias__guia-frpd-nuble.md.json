@@ -26,7 +26,7 @@
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 15,
+    "primary_heading_promotions": 14,
     "largest_primary_chunk_lines_before": 303,
     "largest_primary_chunk_lines_after": 89
   },
@@ -36,8 +36,8 @@
     "shard_count": 2,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 266,
-    "total_lines_before_split": 408,
+    "largest_shard_lines": 248,
+    "total_lines_before_split": 407,
     "shard_paths": [
       "drafts/gn/guias/guia-frpd-nuble.md",
       "drafts/gn/guias/guia-frpd-nuble--p02.md"

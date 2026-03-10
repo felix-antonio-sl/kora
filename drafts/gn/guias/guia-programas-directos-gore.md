@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-programas-directos-gore
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_025_guia_programas_koda.yml
 version: 2.0.0
 status: draft
@@ -45,7 +45,6 @@ extensions:
 
 # Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa GORE (Vía Glosa 06)
 
-## Source
 - **Contexto requerido:** Glosa 06 de la Ley de Presupuestos vigente (Inversión Regional)., Normativa y oficios circulares DIPRES sobre evaluación de programas GORE., Normativa SES/MDSF sobre evaluación ex ante de programas., Formularios oficiales de Perfil y Diseño de Programas Públicos GORE.
 - **Contexto opcional:** Banco Integrado de Programas Sociales (BIPS)., Estrategia Regional de Desarrollo (ERD) y planes regionales vigentes.
 

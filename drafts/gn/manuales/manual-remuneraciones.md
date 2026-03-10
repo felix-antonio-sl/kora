@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-remuneraciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_049_manual_remuneraciones_koda.yml
 version: 2.0.0
 status: draft
@@ -98,4 +98,4 @@ extensions:
 - **Contexto:** Este manual se complementa con el Manual 3.1 (Ciclo de Vida) para la fuente del dato (personas) y Manual 1.3 (Tesorería) para la ejecución del gasto. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml
+- **Contexto opcional:** , , , , ,

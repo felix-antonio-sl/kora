@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-index
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/_index.yml
 version: 2.0.0
 status: draft

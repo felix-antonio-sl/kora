@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d10-geoespacial-ide
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D10_geoespacial_ide_koda.yml
 version: 2.0.0
 status: draft
@@ -55,7 +55,7 @@ extensions:
 | **Dueño** | Coordinador Regional IDE |
 | **Procesos** | 3 |
 | **Subprocesos** | ~10 |
-| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.4308-4478 |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml] L.4308-4478 |
 
 ---
 
@@ -339,8 +339,8 @@ gantt
 
 | Dominio Relacionado | Vínculo |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [D03 Gestión IPR](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md) | Georreferenciación proyectos |
-| [D09 CIES/SITIA](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D09_cies_sitia.md) | Ubicación cámaras |
+| [D03 Gestión IPR] | Georreferenciación proyectos |
+| [D09 CIES/SITIA] | Ubicación cámaras |
 
 ---
 

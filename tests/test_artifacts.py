@@ -307,6 +307,23 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("EVALUACIONES", content)
         self.assertIn("baseline publicado", content)
 
+    def test_forgemaster_tracks_current_spec_versions_and_fsm_precedence(self):
+        agents = (ROOT / "agents" / "kora" / "forgemaster" / "AGENTS.md").read_text(encoding="utf-8")
+        skills = "\n".join(
+            path.read_text(encoding="utf-8")
+            for path in (
+                ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR.md",
+                ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-DESIGNER.md",
+                ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
+            )
+        )
+        self.assertIn("[prioridad 1]", agents)
+        self.assertIn("agent-spec-md v8.3.0", agents)
+        self.assertIn("agent-spec-md v8.3.0", skills)
+        self.assertIn("skill-spec-md v3.4.0", skills)
+        self.assertNotIn("agent-spec-md v8.1.0", skills)
+        self.assertNotIn("skill-spec-md v3.2.0", skills)
+
     def test_guardian_runtime_capabilities_drop_analysis(self):
         content = (ROOT / "agents" / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
         self.assertNotIn('"analysis"', content)

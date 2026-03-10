@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-frpd-nuble
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_027_guia_frpd_koda.yml
 version: 2.0.0
 status: draft
@@ -44,7 +44,6 @@ extensions:
 
 # Guía Operativa FRPD Ñuble 2025
 
-## Source
 - **Contexto requerido:** Marco legal de Royalty Minero y FRPD (FIN-GORE-NORMATIVA-LEY-ROYALTY-01, FIN-GORE-NORMATIVA-GLOSA-13-01, FIN-GORE-NORMATIVA-FRPD-REGULACION-OPERATIVA-01)., Glosa 06 de la Ley de Presupuestos y Circular N°22 de DIPRES., Resolución Exenta N°33 de la SUBCTCI (31-Ene-2024) sobre instituciones habilitadas., Guía de Proyectos SNI ., Guía de Programas Públicos Regionales ., Guía Operativa del Departamento de Análisis y Evaluación del GORE Ñuble para obtención de RS.
 - **Contexto opcional:** Estrategia Regional de Desarrollo (ERD) Ñuble 2023-2030., Estrategia Regional de Ciencia, Tecnología, Conocimiento e Innovación (ER-CTCI) 2022-2030., Planes regionales y sectoriales de fomento productivo pertinentes.
 
@@ -201,3 +200,21 @@ instituciones habilitadas.
 - **Requisitos:** A. Registro en línea completo., B. Vinculación en el registro con pilar estratégico, sector y focos prioritarios (GUIDE-GN-FRPD-STRATEGIC-PILLARS-01, GUIDE-GN-FRPD-PRIORITY-SECTORS-01, GUIDE-GN-FRPD-PRIORITY-FOCUSES-01)., C. Formulario de admisibilidad completo., D. Postulante perteneciente a categorías habilitadas (GUIDE-GN-FRPD-ELIGIBLE-APPLICANTS-01)., E. Personalidad jurídica acreditada., F. Máximo 2 iniciativas por postulante (se consideran las 2 primeras ingresadas cronológicamente)., G. Carta de patrocinio firmada por Rector, Director o Jefe de Servicio., H. Máximo 30% del monto total a remuneraciones con cargo al fondo regional., I. Plazo máximo de ejecución de 30 meses., J. Alcance regional (21 comunas) o justificación suficiente para un territorio particular (p.ej. Valle del Itata)., K. Mínimo 1 profesional residente en Ñuble contratado (adjuntar certificado)., L. Certificado que acredite que viáticos, alimentación, pasajes, peajes y estacionamiento son asumidos por la institución ejecutora.
 ### Consecuencia Incumplimiento
 - **Resultados:** La iniciativa se declara inadmisible.
+
+## Sec 7 Admisibilidad Tecnica
+- **Proposito:** Tomar la mejor decisión de inversión basada en la información presentada.
+- **Objetivos:** Evaluar aplicación de las bases, pertinencia local y factibilidad técnica.
+### Comision Evaluadora
+- **Composicion:** Máximo 11 representantes del territorio vinculados a fomento e innovación.
+- **Quorum Minimo:** 6
+- **Facultades:** Realizar observaciones a las iniciativas.
+### Variables Evaluacion
+- **Variables:** A. Coherencia global de la iniciativa., B. Coherencia con objetivos de desarrollo regional., C. Coherencia entre componentes, propósito y actividades., D. Mérito innovador.
+### Criterios Puntuacion
+- **Escala:** 1 – Interés: Nulo., 3 – Interés: Bajo., 5 – Interés: Medio., 7 – Interés: Alto.
+### Ponderacion Variables
+- **Tabla:** Coherencia global – 10%., Coherencia con objetivos de desarrollo regional – 30%., Coherencia componentes/propósito/actividades – 20%., Mérito innovador – 40%.
+### Calculo Puntaje Final
+- **Cpt:** Promedio ponderado de todos los evaluadores.
+- **Puntaje Minimo Elegibilidad:** 5
+- **Resultados:** Se construye un ranking de iniciativas 'Elegibles' de mayor a menor puntuación., Iniciativas 'Elegibles' pasan a Evaluación Técnica.

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-frpd-nuble-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_027_guia_frpd_koda.yml
 version: 2.0.0
 status: draft
@@ -43,24 +43,6 @@ extensions:
 ---
 
 # Guía Operativa FRPD Ñuble 2025 - Parte 02
-
-## Sec 7 Admisibilidad Tecnica
-- **Proposito:** Tomar la mejor decisión de inversión basada en la información presentada.
-- **Objetivos:** Evaluar aplicación de las bases, pertinencia local y factibilidad técnica.
-### Comision Evaluadora
-- **Composicion:** Máximo 11 representantes del territorio vinculados a fomento e innovación.
-- **Quorum Minimo:** 6
-- **Facultades:** Realizar observaciones a las iniciativas.
-### Variables Evaluacion
-- **Variables:** A. Coherencia global de la iniciativa., B. Coherencia con objetivos de desarrollo regional., C. Coherencia entre componentes, propósito y actividades., D. Mérito innovador.
-### Criterios Puntuacion
-- **Escala:** 1 – Interés: Nulo., 3 – Interés: Bajo., 5 – Interés: Medio., 7 – Interés: Alto.
-### Ponderacion Variables
-- **Tabla:** Coherencia global – 10%., Coherencia con objetivos de desarrollo regional – 30%., Coherencia componentes/propósito/actividades – 20%., Mérito innovador – 40%.
-### Calculo Puntaje Final
-- **Cpt:** Promedio ponderado de todos los evaluadores.
-- **Puntaje Minimo Elegibilidad:** 5
-- **Resultados:** Se construye un ranking de iniciativas 'Elegibles' de mayor a menor puntuación., Iniciativas 'Elegibles' pasan a Evaluación Técnica.
 
 ## Sec 8 Evaluacion Tecnica y Antecedentes
 - **Objetivos:** Aplicar evaluación técnica a iniciativas declaradas 'Elegibles' en etapas anteriores.

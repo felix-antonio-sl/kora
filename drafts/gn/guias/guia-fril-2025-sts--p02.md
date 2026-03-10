@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-fril-2025-sts-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
 version: 2.0.0
 status: draft
@@ -44,18 +44,6 @@ extensions:
 ---
 
 # Instructivo FRIL 2025 – Región de Ñuble - Parte 02
-
-## Sec 6 Situaciones Especiales de Terrenos
-### Proyectos en Terrenos Privados
-- **Condiciones:** Se permiten proyectos en terrenos privados bajo condiciones específicas que resguarden el uso público y la vida útil de las obras.
-### Proyectos Ley Indigena
-- **Condiciones:** Proyectos de infraestructura social o deportiva en inmuebles que son bienes comunes de comunidades conformadas según Ley N° 19.253.
-- **Requisitos:** Certificación de tenencia/posesión emitida por el Alcalde., Certificado de CONADI que acredite la condición de comunidad indígena.
-### Personas Juridicas Sin Fines de Lucro
-- **Requisitos:** Acreditar calidad de persona jurídica sin fines de lucro, con documento municipal que indique directiva vigente., Acreditar que el privado otorga a la municipalidad el uso y goce de la propiedad por un período no inferior a la vida útil de las obras (usufructo o comodato)., Presentar escritura pública inscrita en el Conservador de Bienes Raíces, incorporando la prohibición de enajenar por al menos 20 años., Adjuntar certificado simple de la unidad jurídica municipal que respalde la información legal de la propiedad.
-### Control GORE
-- **Cpt:** Control jurídico adicional del GORE.
-- **Mecanismo:** El departamento jurídico del GORE podrá realizar análisis adicionales y solicitar más antecedentes si existen dudas.
 
 ## Sec 7 Periodos y Plazos
 ### Difusion
@@ -253,3 +241,7 @@ extensions:
 ### Operatividad GESDOC
 - **Conting:** Si el sistema GESDOC no está completamente operativo, la División de Planificación y Desarrollo Regional adoptará medidas para asegurar la postulación y resguardo de la información.
 - **Acciones:** Dichas medidas deberán ser informadas oportunamente a cada municipalidad.
+
+## Firmas y Distribucion
+- **Acciones:** Se adjuntan certificados de acuerdo del CORE y oficio de visación de SUBDERE como anexos de la resolución., La resolución es firmada por el Gobernador Regional de Ñuble.
+- **Dest:** Administración Regional – GORE Ñuble., División de Presupuesto e Inversión Regional – GORE Ñuble., División de Planificación y Desarrollo Regional – GORE Ñuble., División de Desarrollo Social y Humano – GORE Ñuble., División de Infraestructura y Transporte – GORE Ñuble., División de Fomento e Industria – GORE Ñuble., Departamento de Análisis y Evaluación DIPIR – GORE Ñuble., Departamento de Presupuesto de Inversión Regional – GORE Ñuble., Oficina de Partes.

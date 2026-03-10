@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ley-presupuestos-2026-partida-31
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/presupuesto/kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml
 version: 2.0.0
 status: draft

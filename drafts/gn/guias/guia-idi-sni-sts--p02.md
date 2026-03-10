@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-idi-sni-sts-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_024_guia_idi_sni_koda.yml
 version: 2.0.0
 status: draft

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-presupuesto
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_043_manual_presupuesto_koda.yml
 version: 2.0.0
 status: draft
@@ -258,7 +258,7 @@ extensions:
 - **Referencias:** DEF-ITEM-DEUDA-FLOTANTE
 ## Ctx Related Knowledge
 - **XRef:** [Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026](urn:gn:kb:ley-presupuestos-2026-partida-31), [Ley de Presupuestos 2026: Normas Generales](urn:gn:kb:ley-presupuestos-2026-normas-generales), [Gestión Financiera y Operativa del Presupuesto Regional (GORE)](urn:gn:kb:gestion-prpto)
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
+- **Contexto opcional:** , , , 
 
 ## Just
 Manual orientado a disciplina fiscal y cumplimiento de metas de ejecución del Gobierno Regional.

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:aceleracion-regional
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/kb_gn_050_aceleracion_regional_koda.yml
 version: 2.0.0
 status: draft

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:cuentas-publicas-2021-2024
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_009_cuentas_publicas_2021_2024_koda.yml
 version: 2.0.0
 status: draft
@@ -44,6 +44,8 @@ extensions:
 ---
 
 # Cuentas Públicas Gobierno Regional de Ñuble
+
+## Resumen
 
 ID: KB-GN-009-CP-2021-2024-STS-01
 Version: 1.0.0

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:glosas-gores-2026
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml
 version: 2.0.0
 status: draft
@@ -45,8 +45,7 @@ extensions:
 ---
 
 # Glosas y Requerimientos de Información GORES 2026
-## Source
-/Users/felixsanhueza/Developer/gorenuble/staging/glosas gores 2026/glosas_gores_2026.md
+/Users/felixsanhueza/Developer/gorenuble/ gores 2026/glosas_gores_2026.md
 
 Transformación KODA de glosas y requerimientos de información de la Ley de Presupuestos Año 2026 (Partida: Financiamiento Gobiernos Regionales).
 

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-fril-2025-sts-p03
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
 version: 2.0.0
 status: draft
@@ -45,10 +45,6 @@ extensions:
 
 # Instructivo FRIL 2025 – Región de Ñuble - Parte 03
 
-## Firmas y Distribucion
-- **Acciones:** Se adjuntan certificados de acuerdo del CORE y oficio de visación de SUBDERE como anexos de la resolución., La resolución es firmada por el Gobernador Regional de Ñuble.
-- **Dest:** Administración Regional – GORE Ñuble., División de Presupuesto e Inversión Regional – GORE Ñuble., División de Planificación y Desarrollo Regional – GORE Ñuble., División de Desarrollo Social y Humano – GORE Ñuble., División de Infraestructura y Transporte – GORE Ñuble., División de Fomento e Industria – GORE Ñuble., Departamento de Análisis y Evaluación DIPIR – GORE Ñuble., Departamento de Presupuesto de Inversión Regional – GORE Ñuble., Oficina de Partes.
-
 ## Anexos Operativos
 - **Proposito:** Resumir anexos críticos (checklist, planillas y certificados) y remitir a plantillas detalladas en documentos fuente.
 
@@ -85,3 +81,6 @@ extensions:
 
 ## Archivos Obra
 - **Requisitos:** Mantener en obra un juego completo de planos actualizados y ordenados., Solo tendrán validez planos firmados y timbrados en original.
+
+## Permisos
+- **Responsables:** El Contratista es responsable de cancelar todos los permisos y derechos asociados a la construcción (rotura de vías, empalmes, etc.).

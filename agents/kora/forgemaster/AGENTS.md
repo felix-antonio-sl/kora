@@ -6,23 +6,23 @@ _manifest:
 
 ## 1. FSM (WF-FORGEMASTER)
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud y modo de trabajo para el ciclo de vida del agente. -> Trans: IF nuevo_agente AND modo=guiado -> S-GUIDED. IF nuevo_agente AND modo=libre -> S-DESIGN. IF crear -> S-CREATE. IF implementar -> S-IMPLEMENT. IF validar -> S-VALIDATE. IF operar|arreglar|mantener -> S-OPERATE. IF mejorar -> S-IMPROVE. IF deprecar -> S-DEPRECATE. IF terminar -> S-END. IF ambiguo -> S-DISPATCHER.
+1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud y modo de trabajo para el ciclo de vida del agente. -> Trans: IF terminar [prioridad 1] -> S-END. IF nuevo_agente AND modo=guiado [prioridad 2] -> S-GUIDED. IF nuevo_agente AND modo=libre [prioridad 3] -> S-DESIGN. IF crear [prioridad 4] -> S-CREATE. IF implementar [prioridad 5] -> S-IMPLEMENT. IF validar [prioridad 6] -> S-VALIDATE. IF operar|arreglar|mantener [prioridad 7] -> S-OPERATE. IF mejorar [prioridad 8] -> S-IMPROVE. IF deprecar [prioridad 9] -> S-DEPRECATE. IF ambiguo [prioridad 10] -> S-DISPATCHER.
 
-2. STATE: S-DESIGN -> ACT: CM-AGENT-DESIGNER: producir blueprint estructural y limites operativos del agente. -> Trans: IF diseno_aprobado AND modo=guiado -> S-CREATE. IF diseno_aprobado AND modo=libre -> S-END. IF ajustar -> S-DESIGN. IF cambio -> S-DISPATCHER.
+2. STATE: S-DESIGN -> ACT: CM-AGENT-DESIGNER: producir blueprint estructural y limites operativos del agente. -> Trans: IF diseno_aprobado AND modo=guiado [prioridad 1] -> S-CREATE. IF diseno_aprobado AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-DESIGN. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-3. STATE: S-CREATE -> ACT: CM-WORKSPACE-SCAFFOLDER: generar workspace canonico con URNs del namespace solicitado. -> Trans: IF scaffold_completo AND modo=guiado -> S-IMPLEMENT. IF scaffold_completo AND modo=libre -> S-END. IF error -> S-CREATE. IF cambio -> S-DISPATCHER.
+3. STATE: S-CREATE -> ACT: CM-WORKSPACE-SCAFFOLDER: generar workspace canonico con URNs del namespace solicitado. -> Trans: IF scaffold_completo AND modo=guiado [prioridad 1] -> S-IMPLEMENT. IF scaffold_completo AND modo=libre [prioridad 2] -> S-END. IF error [prioridad 3] -> S-CREATE. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-4. STATE: S-IMPLEMENT -> ACT: CM-COMPONENT-BUILDER: materializar componentes y skills respetando segregacion estricta. -> Trans: IF implementacion_completa AND modo=guiado -> S-VALIDATE. IF implementacion_completa AND modo=libre -> S-END. IF ajustar -> S-IMPLEMENT. IF cambio -> S-DISPATCHER.
+4. STATE: S-IMPLEMENT -> ACT: CM-COMPONENT-BUILDER: materializar componentes y skills respetando segregacion estricta. -> Trans: IF implementacion_completa AND modo=guiado [prioridad 1] -> S-VALIDATE. IF implementacion_completa AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-IMPLEMENT. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok -> S-END. IF validacion_falla -> S-OPERATE. IF cambio -> S-DISPATCHER.
+5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-6. STATE: S-OPERATE -> ACT: CM-AGENT-SURGEON: aplicar fix minimo sobre el workspace manteniendo invariantes del agente. -> Trans: IF fix_aplicado -> S-VALIDATE. IF requiere_rediseno -> S-DESIGN. IF cambio -> S-DISPATCHER.
+6. STATE: S-OPERATE -> ACT: CM-AGENT-SURGEON: aplicar fix minimo sobre el workspace manteniendo invariantes del agente. -> Trans: IF fix_aplicado [prioridad 1] -> S-VALIDATE. IF requiere_rediseno [prioridad 2] -> S-DESIGN. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-7. STATE: S-IMPROVE -> ACT: CM-AGENT-EVOLVER: proponer e implementar mejoras aprobadas sobre agentes existentes. -> Trans: IF mejora_aplicada -> S-VALIDATE. IF descartar -> S-END. IF cambio -> S-DISPATCHER.
+7. STATE: S-IMPROVE -> ACT: CM-AGENT-EVOLVER: proponer e implementar mejoras aprobadas sobre agentes existentes. -> Trans: IF mejora_aplicada [prioridad 1] -> S-VALIDATE. IF descartar [prioridad 2] -> S-END. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-8. STATE: S-DEPRECATE -> ACT: CM-AGENT-DEPRECATOR: deprecar el agente y preparar migracion si existe sucesor. -> Trans: IF deprecacion_completa -> S-END. IF cambio -> S-DISPATCHER.
+8. STATE: S-DEPRECATE -> ACT: CM-AGENT-DEPRECATOR: deprecar el agente y preparar migracion si existe sucesor. -> Trans: IF deprecacion_completa [prioridad 1] -> S-END. IF cambio [prioridad 2] -> S-DISPATCHER.
 
-9. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE. -> Trans: IF ciclo_completo -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE -> S-VALIDATE. IF cambio -> S-DISPATCHER.
+9. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE. -> Trans: IF ciclo_completo [prioridad 1] -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN [prioridad 2] -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE [prioridad 3] -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT [prioridad 4] -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE [prioridad 5] -> S-VALIDATE. IF cambio [prioridad 6] -> S-DISPATCHER.
 
 10. STATE: S-END -> ACT: emitir resumen final del estado del agente y de los cambios aplicados. -> Trans: [terminal].
 
@@ -48,7 +48,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida agentes
-10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.1.0
+10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.3.0
 11. SEGREGATION_CHECK — Componentes ortogonales no mezclados
 
 ### Protocolo de Correccion

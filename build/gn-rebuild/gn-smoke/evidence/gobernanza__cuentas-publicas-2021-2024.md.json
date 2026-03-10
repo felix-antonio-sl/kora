@@ -26,9 +26,9 @@
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 0,
+    "primary_heading_promotions": 1,
     "largest_primary_chunk_lines_before": 0,
-    "largest_primary_chunk_lines_after": 0
+    "largest_primary_chunk_lines_after": 13
   },
   "split": {
     "applied": false,
@@ -36,7 +36,7 @@
     "shard_count": 1,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 13,
+    "largest_shard_lines": 15,
     "shard_paths": [
       "drafts/gn/gobernanza/cuentas-publicas-2021-2024.md"
     ],

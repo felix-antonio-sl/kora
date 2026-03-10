@@ -26,7 +26,7 @@
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 13,
+    "primary_heading_promotions": 12,
     "largest_primary_chunk_lines_before": 687,
     "largest_primary_chunk_lines_after": 82
   },
@@ -36,8 +36,8 @@
     "shard_count": 3,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 315,
-    "total_lines_before_split": 729,
+    "largest_shard_lines": 314,
+    "total_lines_before_split": 728,
     "shard_paths": [
       "drafts/gn/guias/instructivo-subvencion-8-2025-sts.md",
       "drafts/gn/guias/instructivo-subvencion-8-2025-sts--p02.md",

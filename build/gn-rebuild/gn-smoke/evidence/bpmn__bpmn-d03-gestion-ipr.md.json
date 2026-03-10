@@ -36,8 +36,8 @@
     "shard_count": 2,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 321,
-    "total_lines_before_split": 403,
+    "largest_shard_lines": 320,
+    "total_lines_before_split": 402,
     "shard_paths": [
       "drafts/gn/bpmn/bpmn-d03-gestion-ipr.md",
       "drafts/gn/bpmn/bpmn-d03-gestion-ipr--p02.md"

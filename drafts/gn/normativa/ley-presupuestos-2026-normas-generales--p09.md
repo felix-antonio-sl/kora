@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ley-presupuestos-2026-normas-generales-p09
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/presupuesto/kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml
 version: 2.0.0
 status: draft

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-operacional-dgi
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/dgi/kb_gn_manual_operacional_dgi_koda.yml
 version: 2.0.0
 status: draft
@@ -43,7 +43,6 @@ extensions:
 ---
 
 # Manual Operacional DGI
-## Source
 manual_operacional_dgi.md
 
 ## XRef Required

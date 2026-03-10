@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-pmdt
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_pmdt_koda.yml
 version: 2.0.0
 status: draft
@@ -45,7 +45,6 @@ extensions:
 ---
 
 # RIS Estudio Básico PMDT (SNI 2024)
-## Source
 - **Contexto requerido:** https://sni.gob.cl/storage/docs/RIS_-_Estudio_basico_PMDT_2024.pdf
 
 ## RIS EB PMDT 2024

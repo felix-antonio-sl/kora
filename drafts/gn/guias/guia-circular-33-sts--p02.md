@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-circular-33-sts-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml
 version: 2.0.0
 status: draft
@@ -44,11 +44,6 @@ extensions:
 ---
 
 # Guía Operativa Circular 33 GORE Ñuble - Parte 02
-
-## Doc 1 Oficio Conductor
-- **Requisitos:** Firmado por Jefe de Servicio o Alcalde(sa)., Dirigido al Gobernador Regional., Debe contener nombre del proyecto (concordante con Ficha IDI) y código BIP., Debe explicitar relación con Estrategia Regional de Desarrollo Ñuble 2022-2030 (Eje, Lineamiento, Objetivo, Acción)., Si postula Municipalidad, debe indicar relación con PLADECO comunal (Eje, Lineamiento, Acción).
-- **Proceso:** Ingresar a plataforma GESDOC., Cargar oficio firmado en carpeta digital del BIP, subcarpeta 'oficios'.
-- **Advertencias:** El incumplimiento de requisitos de contenido o carga de archivos resultará en declaración de INADMISIBLE de la iniciativa.
 
 ## Doc 2 Ficha IDI
 - **Requisitos:** Descargada del BIP con el código del proyecto., Debe corresponder al año presupuestario en ejercicio., La etapa a postular debe ser 'Ejecución'., Para ANF, el descriptor debe indicar 'Subtítulo 29'., Información coherente con antecedentes de respaldo y presupuesto., Clasificador presupuestario alineado con presupuesto detallado., En cofinanciamiento, registrar aporte en cuadro de solicitud de financiamiento., El monto total (FNDR, Sectorial, otros) debe ser igual en ficha IDI, presupuesto y oficio conductor.
@@ -95,4 +90,9 @@ extensions:
 ## Doc 10 Cotizaciones Tasaciones
 - **Contexto:** Para adquisición/reposición de ANF.
 - **Requisitos:** Adjuntar 3 cotizaciones de distintos proveedores., En proveedor único, adjuntar informe justificando inexistencia de más proveedores, firmado por Jefe de Servicio o Alcalde., Para terrenos y edificios, presentar Certificado de Avalúo Fiscal vigente (<60 días) y 3 tasaciones de distintos proveedores.
+- **Proceso:** Formato libre; cargar en BIP (subcarpeta 'Anexos') y GESDOC.
+
+## Doc 11 Cert Dotacion Vehiculos
+- **Definicion:** Detalle de toda la flota de la institución postulante (marca, año, patente, estado).
+- **Contexto:** Si postula Municipalidad, debe ser avalado por el Concejo Municipal.
 - **Proceso:** Formato libre; cargar en BIP (subcarpeta 'Anexos') y GESDOC.

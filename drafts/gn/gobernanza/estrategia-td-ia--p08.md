@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:estrategia-td-ia-p08
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/tde/kb_gn_720_estrategia_td_ia_koda.yml
 version: 2.0.0
 status: draft

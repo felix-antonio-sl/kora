@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:gestion-ipr
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_019_gestion_ipr_koda.yml
 version: 2.0.0
 status: draft

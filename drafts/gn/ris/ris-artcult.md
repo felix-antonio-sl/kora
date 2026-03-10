@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:ris-artcult
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_010_ris/kb_gn_010_ris_artcult_koda.yml
 version: 2.0.0
 status: draft
@@ -44,7 +44,6 @@ extensions:
 ---
 
 # RIS Arte y Cultura (SNI 2024)
-## Source
 - **Contexto requerido:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
 
 ## RIS Arte Cultura 2024

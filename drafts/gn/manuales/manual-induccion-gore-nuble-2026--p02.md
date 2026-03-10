@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-induccion-gore-nuble-2026-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml
 version: 2.0.0
 status: draft

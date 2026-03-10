@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:modelos-actos-juridicos
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/juridico/kb_gn_100_modelos_actos_juridicos_koda.yml
 version: 2.0.0
 status: draft
@@ -44,6 +44,8 @@ extensions:
 ---
 
 # Modelos de Actos Jurídicos GORE Ñuble
+
+## Resumen
 
 ID: KB-GN-100-MODELOS-ACTOS-JURIDICOS-STS-V3
 Version: 3.0.0

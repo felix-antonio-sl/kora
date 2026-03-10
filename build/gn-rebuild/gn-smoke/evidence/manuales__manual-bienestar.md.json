@@ -20,7 +20,7 @@
   "document_family": "generic",
   "publication_class": "knowledge",
   "autofix": {
-    "applied": false,
+    "applied": true,
     "html_anchor_lines_removed": 0,
     "html_breaks_replaced": 0,
     "opaque_internal_refs_semanticized": 0,

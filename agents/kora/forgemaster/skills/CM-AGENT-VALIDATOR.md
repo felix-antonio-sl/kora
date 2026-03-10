@@ -10,7 +10,7 @@ lang: es
 # CM-AGENT-VALIDATOR
 
 ## Proposito
-Valida un workspace KORA completo contra agent-spec-md v8.1.0 §8 y skill-spec-md v3.2.0 §7, produciendo un reporte trazable a la spec publicada.
+Valida un workspace KORA completo contra agent-spec-md v8.3.0 §9 y skill-spec-md v3.4.0 §7, produciendo un reporte trazable a la spec publicada.
 
 ## Input/Output
 - **Input:** agent_path: string (ruta al workspace del agente)

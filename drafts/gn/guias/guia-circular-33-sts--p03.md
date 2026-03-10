@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-circular-33-sts-p03
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml
 version: 2.0.0
 status: draft
@@ -44,11 +44,6 @@ extensions:
 ---
 
 # Guía Operativa Circular 33 GORE Ñuble - Parte 03
-
-## Doc 11 Cert Dotacion Vehiculos
-- **Definicion:** Detalle de toda la flota de la institución postulante (marca, año, patente, estado).
-- **Contexto:** Si postula Municipalidad, debe ser avalado por el Concejo Municipal.
-- **Proceso:** Formato libre; cargar en BIP (subcarpeta 'Anexos') y GESDOC.
 
 ## Doc 12 Cert Tecnico Mal Estado
 - **Contexto:** Aplica sólo para reposición de activo.
@@ -107,3 +102,7 @@ extensions:
 ## Doc 20 Cert Participacion Ciudadana
 - **Requisitos:** Realizar al menos una instancia de Participación Ciudadana (recomendable dos)., Debe existir reunión con beneficiarios, municipio y representante de División de Desarrollo Social del GORE como ministro de fe.
 - **Proceso:** Cargar certificado firmado en BIP (subcarpeta 'Anexos').
+
+## Doc 21 Visacion Servicio
+- **Requisitos:** Proyectos que involucren competencia de otros servicios deben acreditar su aprobación., Para riberas (lagos, ríos, playas), se requiere concesión de uso., Intervenciones en cursos de agua pueden requerir visación de Gobernación Marítima., Proyectos con resolución sanitaria (plantas de tratamiento, piscinas) deben presentar proyecto aprobado por SEREMI de Salud., Conservación de graderías (>100 personas) requiere memoria de cálculo., Construcción en área rural requiere Informe Favorable para la Construcción (Art. 55 LGUC).
+- **Proceso:** Cargar antecedentes con timbres de visación en BIP y GESDOC.

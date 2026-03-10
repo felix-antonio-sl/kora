@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d02-ciclo-presupuestario
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml
 version: 2.0.0
 status: draft
@@ -44,8 +44,7 @@ extensions:
 ---
 
 # BPMN D02: Ciclo Presupuestario Regional
-## Source
-- **Contexto requerido:** knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml, knowledge/domains/gn/presupuesto/kb_gn_018_gestion_prpto_koda.yml
+- **Contexto requerido:** , 
 
 ## Metadatos Dominio
 - **Criticidad:** 🔴 Crítica
@@ -53,7 +52,7 @@ extensions:
 - **Procesos:** 5
 - **Subprocesos:** ~15
 ### Referencias
-- **Contexto requerido:** knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.500-1886
+- **Contexto requerido:** L.500-1886
 
 ## Mapa General Dominio
 - **Cpt:** Mapa general del ciclo anual del presupuesto regional (P1–P5) y proceso transversal de modificaciones presupuestarias.
@@ -202,9 +201,9 @@ extensions:
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
-| D03 Gestión IPR | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md | CDP, financiamiento proyectos |
-| D08 Rendiciones | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md | Contabilización, SIGFE |
-| D04 Compras | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D04_compras_contrataciones.md | Órdenes de compra, contratos |
+| D03 Gestión IPR | | CDP, financiamiento proyectos |
+| D08 Rendiciones | | Contabilización, SIGFE |
+| D04 Compras | | Órdenes de compra, contratos |
 
 ## Ultima Actualizacion
 - **Cpt:** Última actualización: 2025-12-16

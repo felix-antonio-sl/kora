@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-fril-2025-sts
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
 version: 2.0.0
 status: draft
@@ -45,7 +45,6 @@ extensions:
 
 # Instructivo FRIL 2025 – Región de Ñuble
 
-## Source
 - **Contexto requerido:** Guía Operativa FRIL – Resolución Exenta N° 15.051/2023 SUBDERE, Ley N° 21.796 – Ley de Presupuestos del Sector Público 2026 (Glosa 12, Programa 02, Subtítulo 33), DFL 1-19.175 – Ley Orgánica Constitucional de Gobierno y Administración Regional (LOC GORE), Ley N° 18.575 – Bases Generales de la Administración del Estado, Ley N° 19.880 – Bases de los Procedimientos Administrativos, Ley N° 21.074 – Fortalecimiento de la Regionalización, Circular N° 11/2025 del Ministerio de Hacienda (Glosas GORE), Resolución N° 36/2024 de la Contraloría General de la República (Exención Toma de Razón)
 
 ## Glosario FRIL Conceptos Clave
@@ -230,3 +229,15 @@ como rurales, priorizando iniciativas con alto impacto social y territorial.
 - **Contexto:** El terreno se identifica por el mismo rol de avalúo., El tramo vial se verifica con coordenadas y archivos KMZ, a criterio del GORE.
 ### Vinculo ERD
 - **Prohibiciones:** Postular proyectos que no indiquen su relación con la Estrategia Regional de Desarrollo de Ñuble 2020–2028 en el oficio conductor.
+
+## Sec 6 Situaciones Especiales de Terrenos
+### Proyectos en Terrenos Privados
+- **Condiciones:** Se permiten proyectos en terrenos privados bajo condiciones específicas que resguarden el uso público y la vida útil de las obras.
+### Proyectos Ley Indigena
+- **Condiciones:** Proyectos de infraestructura social o deportiva en inmuebles que son bienes comunes de comunidades conformadas según Ley N° 19.253.
+- **Requisitos:** Certificación de tenencia/posesión emitida por el Alcalde., Certificado de CONADI que acredite la condición de comunidad indígena.
+### Personas Juridicas Sin Fines de Lucro
+- **Requisitos:** Acreditar calidad de persona jurídica sin fines de lucro, con documento municipal que indique directiva vigente., Acreditar que el privado otorga a la municipalidad el uso y goce de la propiedad por un período no inferior a la vida útil de las obras (usufructo o comodato)., Presentar escritura pública inscrita en el Conservador de Bienes Raíces, incorporando la prohibición de enajenar por al menos 20 años., Adjuntar certificado simple de la unidad jurídica municipal que respalde la información legal de la propiedad.
+### Control GORE
+- **Cpt:** Control jurídico adicional del GORE.
+- **Mecanismo:** El departamento jurídico del GORE podrá realizar análisis adicionales y solicitar más antecedentes si existen dudas.

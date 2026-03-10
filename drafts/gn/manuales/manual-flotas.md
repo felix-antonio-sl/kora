@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-flotas
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_047_manual_flotas_koda.yml
 version: 2.0.0
 status: draft
@@ -202,4 +202,4 @@ Los vehículos estatales no pueden circular en días sábados, domingos ni festi
 - **Definicion:** Este manual establece los procedimientos para mantener la operatividad de los servicios de soporte institucional y la flota vehicular del GORE.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_3_activo_fijo.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml
+- **Contexto opcional:** , ,

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d07-rrhh-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D07_rrhh_koda.yml
 version: 2.0.0
 status: draft
@@ -112,8 +112,8 @@ flowchart TD
 
 | Dominio Relacionado | Vínculo |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
-| [D02 Ciclo Presupuestario](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md) | Subtítulo 21, Remuneraciones |
-| [D01 Actos Administrativos](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md) | Resoluciones de nombramiento |
+| [D02 Ciclo Presupuestario] | Subtítulo 21, Remuneraciones |
+| [D01 Actos Administrativos] | Resoluciones de nombramiento |
 
 ---
 

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-activo-fijo
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_041_manual_activo_fijo_koda.yml
 version: 2.0.0
 status: draft
@@ -223,4 +223,4 @@ extensions:
 - **Contexto:** Este manual establece el marco integral para la gestión patrimonial del GORE, desde la adquisición hasta la disposición final de los bienes.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_2_inventarios.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_4_servicios_flotas_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml
+- **Contexto opcional:** , , ,

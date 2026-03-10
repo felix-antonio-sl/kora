@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-idi-sni-sts
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_024_guia_idi_sni_koda.yml
 version: 2.0.0
 status: draft
@@ -45,7 +45,6 @@ extensions:
 
 # Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos Regionales
 
-## Source
 - **Contexto requerido:** NIP 2025 – Normas, Instrucciones y Procedimientos del Sistema Nacional de Inversiones, Metodología General del SNI (MDSF), Metodologías sectoriales y complementarias SNI (Gestión de Riesgo de Desastres, Género, etc.), RIS genéricas y sectoriales disponibles en https://sni.gob.cl, Curso SNI (Unidades 1–3, MDSF)
 
 ## Guia IDI SNI GOREs

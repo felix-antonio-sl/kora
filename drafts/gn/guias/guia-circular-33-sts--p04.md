@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-circular-33-sts-p04
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml
 version: 2.0.0
 status: draft
@@ -44,10 +44,6 @@ extensions:
 ---
 
 # Guía Operativa Circular 33 GORE Ñuble - Parte 04
-
-## Doc 21 Visacion Servicio
-- **Requisitos:** Proyectos que involucren competencia de otros servicios deben acreditar su aprobación., Para riberas (lagos, ríos, playas), se requiere concesión de uso., Intervenciones en cursos de agua pueden requerir visación de Gobernación Marítima., Proyectos con resolución sanitaria (plantas de tratamiento, piscinas) deben presentar proyecto aprobado por SEREMI de Salud., Conservación de graderías (>100 personas) requiere memoria de cálculo., Construcción en área rural requiere Informe Favorable para la Construcción (Art. 55 LGUC).
-- **Proceso:** Cargar antecedentes con timbres de visación en BIP y GESDOC.
 
 ## Doc 22 Cert Titulo Profesional
 - **Contexto:** Exigible sólo para proyectos de Conservación.
@@ -91,3 +87,7 @@ extensions:
 ## Doc 30 Compromiso Financiamiento Compartido
 - **Definicion:** Certificado de la División/Dirección de Finanzas del servicio autorizando el aporte para financiamiento compartido.
 - **Contexto:** Relaciona con ANF (Subt. 29, ítems 03-05).
+
+## Doc 31 Cert Conservacion 30
+- **Definicion:** Certificado que indica que el costo del proyecto de conservación es ≤ 30% del costo de reposición total del activo.
+- **Referencias:** Formato Anexo 4B (GORENUBLE-GUIA-C33-ANEXOS-FORMULARIOS-01).

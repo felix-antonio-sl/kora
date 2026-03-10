@@ -36,7 +36,7 @@
     "shard_count": 1,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 186,
+    "largest_shard_lines": 185,
     "shard_paths": [
       "drafts/gn/bpmn/bpmn-d01-actos-administrativos.md"
     ],

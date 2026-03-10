@@ -26,7 +26,7 @@
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 59,
+    "primary_heading_promotions": 58,
     "largest_primary_chunk_lines_before": 469,
     "largest_primary_chunk_lines_after": 67
   },
@@ -36,8 +36,8 @@
     "shard_count": 7,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 210,
-    "total_lines_before_split": 501,
+    "largest_shard_lines": 202,
+    "total_lines_before_split": 500,
     "shard_paths": [
       "drafts/gn/guias/guia-fril-2025-sts.md",
       "drafts/gn/guias/guia-fril-2025-sts--p02.md",

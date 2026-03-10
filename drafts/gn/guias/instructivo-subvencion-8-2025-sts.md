@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:instructivo-subvencion-8-2025-sts
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_028_instructivo_subvencion_8_koda.yml
 version: 2.0.0
 status: draft
@@ -44,7 +44,6 @@ extensions:
 
 # Instructivo Concurso de Vinculación con la Comunidad 8% 2025 – Región de Ñuble
 
-## Source
 - **Contexto requerido:** Ley N° 21.796 – Ley de Presupuestos del Sector Público 2026 (Glosa 07, Subtítulo 24, subvenciones GORE)., Ley N° 19.175 – Ley Orgánica Constitucional sobre Gobierno y Administración Regional (LOC GORE)., Ley N° 19.880 – Bases de los Procedimientos Administrativos., Ley N° 18.575 – Bases Generales de la Administración del Estado., Ley N° 19.862 – Registro de Colaboradores del Estado., Ley N° 19.886 – Ley de Bases sobre Contratos Administrativos de Suministro y Prestación de Servicios., Ley N° 19.418 – Sobre Juntas de Vecinos y demás organizaciones comunitarias., Ley N° 19.253 – Ley Indígena., Ley N° 19.712 – Ley del Deporte., Ley N° 21.015 – Inclusión Laboral., Ley N° 19.300 – Bases Generales del Medio Ambiente., Ley N° 21.302 – Crea el Servicio Nacional de Protección Especializada a la Niñez y Adolescencia (Mejor Niñez)., Estrategia Regional de Desarrollo Región de Ñuble 2024–2030., Estrategia Quinquenal Regional del Ministerio de las Culturas 2024–2025., Plan Nacional de Seguridad 2022–2024.
 - **Contexto opcional:** Política Nacional de Actividad Física y Deporte 2016–2025., Documentos operativos internos del GORE Ñuble sobre subvenciones concursables 8%.
 

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d01-actos-administrativos
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D01_actos_administrativos_koda.yml
 version: 2.0.0
 status: draft
@@ -45,8 +45,7 @@ extensions:
 ---
 
 # BPMN D01: Tramitación de Actos Administrativos
-## Source
-- **Contexto requerido:** knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
+- **Contexto requerido:** 
 
 ## Metadatos Dominio
 - **Criticidad:** 🟠 Alta
@@ -54,7 +53,7 @@ extensions:
 - **Procesos:** 2
 - **Subprocesos:** ~14 fases
 ### Referencias
-- **Contexto requerido:** knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.100-499
+- **Contexto requerido:** L.100-499
 
 ## Mapa General Dominio
 - **Cpt:** Mapa general de los procesos de actos administrativos (resoluciones exentas y convenios/transferencias) y elementos transversales.
@@ -224,9 +223,9 @@ extensions:
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
-| D03 Gestión IPR | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md | Fase 4 Formalización |
-| D02 Ciclo Presupuestario | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md | Modificaciones, resoluciones |
-| D08 Rendiciones | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md | Convenios de transferencia |
+| D03 Gestión IPR | | Fase 4 Formalización |
+| D02 Ciclo Presupuestario | | Modificaciones, resoluciones |
+| D08 Rendiciones | | Convenios de transferencia |
 
 ## Ultima Actualizacion
 - **Cpt:** Última actualización: 2025-12-16

@@ -20,7 +20,7 @@
   "document_family": "generic",
   "publication_class": "knowledge",
   "autofix": {
-    "applied": false,
+    "applied": true,
     "html_anchor_lines_removed": 0,
     "html_breaks_replaced": 0,
     "opaque_internal_refs_semanticized": 0,
@@ -36,7 +36,7 @@
     "shard_count": 1,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 54,
+    "largest_shard_lines": 53,
     "shard_paths": [
       "drafts/gn/ris/ris-proyinv.md"
     ],

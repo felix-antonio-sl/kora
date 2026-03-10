@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-tesoreria
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_045_manual_tesoreria_koda.yml
 version: 2.0.0
 status: draft
@@ -133,4 +133,4 @@ extensions:
 - **Reporte:** Informe Diario de Disponibilidades y Deuda Flotante Diaria.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml
+- **Contexto opcional:** , ,

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:gestion-rendiciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_020_gestion_rendiciones_koda.yml
 version: 2.0.0
 status: draft

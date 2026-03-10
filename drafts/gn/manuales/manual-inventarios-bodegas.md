@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-inventarios-bodegas
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_040_manual_inventarios_bodegas_koda.yml
 version: 2.0.0
 status: draft
@@ -225,4 +225,4 @@ extensions:
 - **Contexto opcional:** Manual 2.1: Compras Públicas (./manual_2_1_compras.md)., Manual 2.3: Activo Fijo (./manual_2_3_activo_fijo.md).
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_1_compras_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_3_activo_fijo.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml
+- **Contexto opcional:** , , ,

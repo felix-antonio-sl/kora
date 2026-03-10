@@ -26,9 +26,9 @@
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 0,
+    "primary_heading_promotions": 5,
     "largest_primary_chunk_lines_before": 0,
-    "largest_primary_chunk_lines_after": 0
+    "largest_primary_chunk_lines_after": 47
   },
   "split": {
     "applied": false,

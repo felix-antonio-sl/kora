@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:plan-potenciamiento-dgi
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/dgi/kb_gn_plan_potenciamiento_dgi_koda.yml; core/gestion/kb_gn_lean6_core_koda.yml;
       core/gestion/kb_gn_meyer_org_structure_koda.yml
 version: 2.0.0

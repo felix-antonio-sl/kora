@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d05-inventarios-activo-fijo
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D05_inventarios_activo_fijo_koda.yml
 version: 2.0.0
 status: draft
@@ -57,7 +57,7 @@ extensions:
 | **Dueño** | DAF |
 | **Procesos** | 2 |
 | **Subprocesos** | ~10 |
-| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.960-1200 |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml] L.960-1200 |
 
 ---
 
@@ -320,8 +320,8 @@ flowchart LR
 
 | Dominio Relacionado | Vínculo |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| [D04 Compras](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D04_compras_contrataciones.md) | Recepción desde OC |
-| [D02 Ciclo Presupuestario](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md) | Contabilización AF |
+| [D04 Compras] | Recepción desde OC |
+| [D02 Ciclo Presupuestario] | Contabilización AF |
 
 ---
 

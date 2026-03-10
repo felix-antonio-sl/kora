@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d06-flota-vehicular
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D06_flota_vehicular_koda.yml
 version: 2.0.0
 status: draft
@@ -54,7 +54,7 @@ extensions:
 | **Criticidad** | 🟡 Media |
 | **Dueño** | Jefe Servicios Generales |
 | **Procesos** | 1 (con 6 subprocesos) |
-| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.1210-1400 |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml] L.1210-1400 |
 
 ---
 
@@ -268,8 +268,8 @@ flowchart TD
 
 | Dominio Relacionado | Vínculo |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| [D05 Inventarios y AF](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D05_inventarios_activo_fijo.md) | Vehículos como activo fijo |
-| [D04 Compras](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D04_compras_contrataciones.md) | Adquisición vehículos, combustible |
+| [D05 Inventarios y AF] | Vehículos como activo fijo |
+| [D04 Compras] | Adquisición vehículos, combustible |
 
 ---
 

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:gore-ideal
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/01_fundamentos/intro/kb_gn_900_gore_ideal_koda.yml
 version: 2.0.0
 status: draft
@@ -44,9 +44,8 @@ extensions:
 ---
 
 # GORE Ñuble Ideal / GORE 4.0
-## Source
-- **Contexto requerido:** staging/gn/, DFL N° 1-19.175 (LOC GORE)
-- **Contexto opcional:** knowledge/domains/gn/kb_gn_000_intro_gores_nuble_koda.yml
+- **Contexto requerido:** , DFL N° 1-19.175 (LOC GORE)
+- **Contexto opcional:** 
 
 ## Glosario Conceptos Clave
 - **Proposito:** Definir conceptos estructurales recurrentes del Gobierno Regional y del modelo GORE 4.0.

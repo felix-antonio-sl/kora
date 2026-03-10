@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d08-rendiciones-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D08_rendiciones_koda.yml
 version: 2.0.0
 status: draft
@@ -132,8 +132,8 @@ flowchart TD
 
 | Dominio Relacionado | Vínculo |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| [D03 Gestión IPR](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D03_gestion_ipr.md) | Cierre financiero Fase 7 |
-| [D02 Ciclo Presupuestario](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md) | Contabilización, devengo |
+| [D03 Gestión IPR] | Cierre financiero Fase 7 |
+| [D02 Ciclo Presupuestario] | Contabilización, devengo |
 
 ---
 

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-compras
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_046_manual_compras_koda.yml
 version: 2.0.0
 status: draft
@@ -343,4 +343,4 @@ extensions:
 - **Contexto:** Este manual establece los lineamientos para una gestión de compras eficiente, transparente y conforme a la normativa de contratación pública.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_2_contabilidad.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_3_tesoreria_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_2_2_inventarios.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml
+- **Contexto opcional:** , , , ,

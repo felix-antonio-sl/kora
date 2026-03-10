@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-bienestar
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_052_manual_bienestar_koda.yml
 version: 2.0.0
 status: draft
@@ -98,4 +98,4 @@ extensions:
 - **Contexto:** Este manual se rige por el Reglamento General de Servicios de Bienestar y el Reglamento Interno Específico del GORE Ñuble. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_4_desarrollo_organizacional.yml
+- **Contexto opcional:** , ,

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-desarrollo-organizacional
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_042_manual_desarrollo_organizacional_koda.yml
 version: 2.0.0
 status: draft
@@ -107,4 +107,4 @@ extensions:
 - **Contexto:** Este manual fomenta la carrera funcionaria y la profesionalización del capital humano regional. Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml
+- **Contexto opcional:** , , ,

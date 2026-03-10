@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d08-rendiciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D08_rendiciones_koda.yml
 version: 2.0.0
 status: draft
@@ -56,7 +56,7 @@ extensions:
 | **Dueño** | UCR/DAF |
 | **Procesos** | 3 |
 | **Subprocesos** | ~10 |
-| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.3735-4140 |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml] L.3735-4140 |
 
 ---
 

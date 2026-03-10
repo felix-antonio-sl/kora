@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:problemas-sociales-cl-p09
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/02_estrategia/social/kb_gn_004_problemas_sociales_cl_koda.yml
 version: 2.0.0
 status: draft

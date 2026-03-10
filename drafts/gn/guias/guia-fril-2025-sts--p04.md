@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-fril-2025-sts-p04
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
 version: 2.0.0
 status: draft
@@ -45,9 +45,6 @@ extensions:
 
 # Instructivo FRIL 2025 – Región de Ñuble - Parte 04
 
-## Permisos
-- **Responsables:** El Contratista es responsable de cancelar todos los permisos y derechos asociados a la construcción (rotura de vías, empalmes, etc.).
-
 ## Inspeccion Tecnica Obra
 - **Responsables:** El control de la obra estará a cargo de la ITO, nombrada por el mandante.
 - **Requisitos:** El contratista debe cumplir estrictamente todas las instrucciones de la ITO, registradas en el Libro de Obra.
@@ -82,3 +79,7 @@ extensions:
 - **Spec:** Tamaño tipo 00: 5,00 m (ancho) x 2,00 m (alto)., Impresión en vinilo PVC o autoadhesivo de alta calidad, resistente al agua, con tintas con filtro UV (garantía 3 años)., Tipografía obligatoria: Museo Sans.
 - **Prohibiciones:** No se puede añadir logotipo de la constructora; solo su nombre en sección 'Contratista'.
 - **Contenido:** Nombre del proyecto (según Ficha IDI)., Financia: Gobierno Regional de Ñuble., Inversión: monto total en M$., Fecha de inicio (según acta entrega de terreno)., Plazo de ejecución (según oferta adjudicada)., Unidad técnica., Contratista.
+
+## Estructura Valla
+- **Spec:** Pilares: 3 unidades, perfil rectangular 100x100x3 mm., Vientos: diagonales, perfil 50x50x3 mm., Fundación: hormigón, profundidad mínima 0,75 m., Marco: perfil 20x20x2 mm, 5,0x2,0 m., Soporte gráfica: plancha de zinc 0,5 mm.
+- **Advertencias:** Especificaciones estructurales son mínimas y deben corroborarse con memoria de cálculo.

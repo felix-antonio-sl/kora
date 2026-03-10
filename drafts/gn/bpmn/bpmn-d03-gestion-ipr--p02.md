@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d03-gestion-ipr-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D03_gestion_ipr_koda.yml
 version: 2.0.0
 status: draft
@@ -121,9 +121,9 @@ extensions:
 ### Filas
 | Dominio_Relacionado | Ctx_Optional | Vinculo |
 | --- | --- | --- |
-| D02 Ciclo Presupuestario | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md | CDP, modificaciones, SIGFE |
-| D08 Rendiciones | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D08_rendiciones.md | Cierre financiero, SISREC |
-| D01 Actos Administrativos | file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md | Resoluciones, Convenios |
+| D02 Ciclo Presupuestario | | CDP, modificaciones, SIGFE |
+| D08 Rendiciones | | Cierre financiero, SISREC |
+| D01 Actos Administrativos | | Resoluciones, Convenios |
 
 ## Ultima Actualizacion
 - **Cpt:** Última actualización: 2025-12-16

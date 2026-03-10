@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d09-cies-sitia
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D09_cies_sitia_koda.yml
 version: 2.0.0
 status: draft
@@ -56,7 +56,7 @@ extensions:
 | **Dueño** | Supervisor CIES |
 | **Procesos** | 3 |
 | **Subprocesos** | ~8 |
-| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.4142-4306 |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml] L.4142-4306 |
 
 ---
 
@@ -344,7 +344,7 @@ flowchart LR
 
 | Dominio Relacionado | Vínculo |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
-| [D01 Actos Administrativos](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md) | Convenios con entidades |
+| [D01 Actos Administrativos] | Convenios con entidades |
 
 ---
 

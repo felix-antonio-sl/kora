@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:informe-estado-inicial-gore-pre-td-p03
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/tde/kb_gn_710_informe_estado_inicial_gore_pre_td_koda.yml
 version: 2.0.0
 status: draft

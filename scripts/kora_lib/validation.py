@@ -68,6 +68,7 @@ FIELD_SCAFFOLD_HEADING_TITLES = {
     "tipo",
     "titulo",
     "path",
+    "source",
     "artefactos",
     "status",
     "source id",
@@ -485,6 +486,46 @@ def strip_unverifiable_reference_tokens(text):
     return updated
 
 
+def strip_local_path_tokens(text):
+    updated = text
+    updated = re.sub(r"file:///[^)\s]+", "", updated)
+    updated = re.sub(r"\bknowledge/[^\s,)]+", "", updated)
+    updated = re.sub(r"\b(?:staging|domains|source|sources|drafts|build)/[^\s,)]+", "", updated)
+    updated = re.sub(r"\(\s*,", "(", updated)
+    updated = re.sub(r",\s*\)", ")", updated)
+    updated = re.sub(r"\(\s*\)", "", updated)
+    updated = re.sub(r"[ \t]{2,}", " ", updated)
+    return updated
+
+
+def promote_enumerated_outline_headings(text):
+    out = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if re.fullmatch(r"\d+\.\s+[A-ZÁÉÍÓÚÑ0-9][A-ZÁÉÍÓÚÑ0-9 ,:;()\-]+", stripped):
+            out.append("## " + re.sub(r"^\d+\.\s+", "", stripped).strip())
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+
+def ensure_primary_summary_section(text):
+    promoted = promote_enumerated_outline_headings(text)
+    if any(line.startswith("## ") for line in promoted.splitlines()):
+        return promoted
+    if any(line.startswith("## ") for line in text.splitlines()):
+        return text
+    lines = promoted.splitlines()
+    title_index = next((idx for idx, line in enumerate(lines) if line.startswith("# ")), None)
+    if title_index is None:
+        return text
+    prefix = lines[: title_index + 1]
+    remainder = lines[title_index + 1 :]
+    if not any(line.strip() for line in remainder):
+        return text
+    return "\n".join(prefix + ["", "## Resumen", ""] + remainder)
+
+
 def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):
     max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
     current = body
@@ -500,7 +541,9 @@ def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=N
         updated = remove_empty_primary_wrappers_body(updated)
         updated = promote_nested_headings_in_oversized_chunks(updated, max_lines)
         updated = strip_unverifiable_reference_tokens(updated)
+        updated = strip_local_path_tokens(updated)
         updated = remove_empty_primary_wrappers_body(updated)
+        updated = ensure_primary_summary_section(updated)
         updated = normalize_blank_lines(updated)
         if updated == current:
             break

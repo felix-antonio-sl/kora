@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:cies-sitia
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/kb_gn_080_cies_sitia_koda.yml
 version: 2.0.0
 status: draft
@@ -44,9 +44,8 @@ extensions:
 ---
 
 # Centro Integrado de Emergencia y Seguridad (CIES) - SITIA Ñuble
-## Source
-- **Contexto requerido:** staging/gn/, CIES SITIA.md, Ley N° 19.628 sobre Protección de la Vida Privada
-- **Contexto opcional:** knowledge/domains/gn/kb_gn_200_marco_legal_gores_koda.yml
+- **Contexto requerido:** , CIES SITIA.md, Ley N° 19.628 sobre Protección de la Vida Privada
+- **Contexto opcional:** 
 
 ## Glosario Conceptos Clave
 - **Proposito:** Definir y referenciar conceptos estructurales del CIES y de la integración SITIA.

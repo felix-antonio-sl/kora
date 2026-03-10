@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-circular-33-sts
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml
 version: 2.0.0
 status: draft
@@ -51,7 +51,6 @@ extensions:
 - **Last modified at:** 2025-11-28
 - **Signature:** null
 
-## Source
 - **Contexto requerido:** Oficio Circular N°33 del Ministerio de Hacienda (2009)., Ley N°21.796 de Presupuestos del Sector Público 2026 (Partida 31, Programa 02)., Normas de Inversión Pública (NIP) y metodologías SNI complementarias., Resolución Exenta que aprueba la Guía Operativa Circular 33 del GORE Ñuble.
 - **Contexto opcional:** Estrategia Regional de Desarrollo Ñuble 2022-2030., Metodología General de evaluación de proyectos sociales SNI.
 
@@ -202,3 +201,8 @@ regional, sin formar parte de proyectos de inversión más amplios.
 
 ## Reglas Generales Documentacion
 - **Cpt:** Toda la trazabilidad del proyecto debe desarrollarse en la plataforma GESDOC., Los antecedentes finales deben quedar respaldados en el Banco Integrado de Proyectos (BIP) del SNI de manera ordenada y definitiva.
+
+## Doc 1 Oficio Conductor
+- **Requisitos:** Firmado por Jefe de Servicio o Alcalde(sa)., Dirigido al Gobernador Regional., Debe contener nombre del proyecto (concordante con Ficha IDI) y código BIP., Debe explicitar relación con Estrategia Regional de Desarrollo Ñuble 2022-2030 (Eje, Lineamiento, Objetivo, Acción)., Si postula Municipalidad, debe indicar relación con PLADECO comunal (Eje, Lineamiento, Acción).
+- **Proceso:** Ingresar a plataforma GESDOC., Cargar oficio firmado en carpeta digital del BIP, subcarpeta 'oficios'.
+- **Advertencias:** El incumplimiento de requisitos de contenido o carga de archivos resultará en declaración de INADMISIBLE de la iniciativa.

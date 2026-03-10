@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-ciclo-vida
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_048_manual_ciclo_vida_koda.yml
 version: 2.0.0
 status: draft
@@ -141,4 +141,4 @@ Como parte de la inducción, se deben cumplir los siguientes hitos:
 - **Contexto:** Este manual se complementa con el Estatuto Administrativo (Ley 18.834), las instrucciones anuales de la Ley de Presupuestos y los protocolos de la Ley Karin (Ley 21.643). Los procesos aquí descritos se gestionan operativamente a través del sistema SIGPER.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_3_tiempo_ausentismo_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_4_desarrollo_organizacional.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_1_1_presupuesto.yml
+- **Contexto opcional:** , , , ,

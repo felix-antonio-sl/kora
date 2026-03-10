@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-fril-2025-sts-p06
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
 version: 2.0.0
 status: draft
@@ -45,9 +45,6 @@ extensions:
 
 # Instructivo FRIL 2025 – Región de Ñuble - Parte 06
 
-## Resumen Costos
-- **Requisitos:** Presentar COSTO NETO como suma de todos los precios totales., Calcular IVA 19% sobre costo neto., Calcular COSTO TOTAL PROYECTO como suma de costo neto + IVA.
-
 ## Firmas
 - **Requisitos:** Presupuesto debe ser firmado por Profesional Responsable (nombre, RUT, firma)., Presupuesto debe ser firmado por Alcalde(sa) (nombre, RUT, firma).
 
@@ -79,3 +76,8 @@ extensions:
 ## Opcion 3 Informe Tecnico Profesional
 - **Contexto:** Aplicable a proyectos que no requieren Permiso de Edificación (por ejemplo, mejoramiento, habilitación, normalización).
 - **Requisitos:** Indicar explícitamente el cumplimiento del proyecto con la Ordenanza General de Urbanismo y Construcción (OGUC)., Estar firmado por profesional competente y por Director(a) SECPLA o Director(a) de Obras Municipales.
+
+## Anexo 6 Certificado Pertinencia Tecnica
+- **Proposito:** Establecer documentación obligatoria para certificar pertinencia técnica de la iniciativa y ausencia de duplicidad de financiamiento.
+- **Requisitos:** Se debe presentar uno de los dos tipos de certificados, según la naturaleza del proyecto.
+- **Fuentes:** – Sección 4.2 a 4.6 (Anexos 2–6).

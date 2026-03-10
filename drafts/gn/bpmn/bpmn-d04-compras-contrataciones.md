@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d04-compras-contrataciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D04_compras_contrataciones_koda.yml
 version: 2.0.0
 status: draft
@@ -54,7 +54,7 @@ extensions:
 | **Dueño** | Unidad de Abastecimiento |
 | **Procesos** | 4 |
 | **Subprocesos** | ~12 |
-| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml) L.700-950 |
+| **Ref. Fuente** | [kb_gn_054_bpmn_c4_koda.yml] L.700-950 |
 
 ---
 
@@ -310,9 +310,9 @@ flowchart TD
 
 | Dominio Relacionado | Vínculo |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
-| [D02 Ciclo Presupuestario](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D02_ciclo_presupuestario.md) | CDP, compromisos |
-| [D05 Inventarios](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D05_inventarios_activo_fijo.md) | Recepción de bienes |
-| [D01 Actos Administrativos](file:///Users/felixsanhueza/Developer/gorenuble/knowledge/domains/gn/arquitectura/bpmn/D01_actos_administrativos.md) | Resoluciones de adjudicación |
+| [D02 Ciclo Presupuestario] | CDP, compromisos |
+| [D05 Inventarios] | Recepción de bienes |
+| [D01 Actos Administrativos] | Resoluciones de adjudicación |
 
 ---
 

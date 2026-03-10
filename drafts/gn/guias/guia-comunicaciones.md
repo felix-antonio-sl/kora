@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-comunicaciones
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml
 version: 2.0.0
 status: draft
@@ -53,6 +53,8 @@ Cpt: Transcripción-STS.
 
 ```sts
 # Resolución Exenta N° 4587
+
+## Resumen
 
 ID: GORENUBLE-REX-4587-20250710-01
 Nat: Acto Administrativo.

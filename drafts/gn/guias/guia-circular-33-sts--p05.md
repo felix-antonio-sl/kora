@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-circular-33-sts-p05
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_029_guia_circ33_koda.yml
 version: 2.0.0
 status: draft
@@ -44,10 +44,6 @@ extensions:
 ---
 
 # Guía Operativa Circular 33 GORE Ñuble - Parte 05
-
-## Doc 31 Cert Conservacion 30
-- **Definicion:** Certificado que indica que el costo del proyecto de conservación es ≤ 30% del costo de reposición total del activo.
-- **Referencias:** Formato Anexo 4B (GORENUBLE-GUIA-C33-ANEXOS-FORMULARIOS-01).
 
 ## Sec 4 Proceso Evaluacion y Tramitacion
 ### Unidades Responsables y Directrices

@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:matriz-integracion-organica
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/00_meta/kb_gn_999_matriz_integracion_organica_koda.yml
 version: 1.0.0
 status: draft
@@ -204,7 +204,7 @@ Diagramas BPMN de procesos institucionales
 
 | id | titulo | urn | path | koda_path | tipo | resumen |
 | --- | --- | --- | --- | --- | --- | --- |
-| D01 | Actos Administrativos | [BPMN D01: Tramitación de Actos Administrativos](urn:gn:kb:bpmn-d01-actos-administrativos) | ../../../../sources/gn/arquitectura/bpmn/D01_actos_administrativos.md | arquitectura/bpmn/D01_actos_administrativos_koda.yml | BPMN | Proceso de emisión de actos administrativos. |
+| D01 | Actos Administrativos | [BPMN D01: Tramitación de Actos Administrativos](urn:gn:kb:bpmn-d01-actos-administrativos) | ../../../../ | arquitectura/bpmn/D01_actos_administrativos_koda.yml | BPMN | Proceso de emisión de actos administrativos. |
 | D02 | Ciclo Presupuestario | [BPMN D02: Ciclo Presupuestario Regional](urn:gn:kb:bpmn-d02-ciclo-presupuestario) | arquitectura/bpmn/D02_ciclo_presupuestario.md | arquitectura/bpmn/D02_ciclo_presupuestario_koda.yml | BPMN | Proceso del ciclo presupuestario anual. |
 | D03 | Gestión IPR | [BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)](urn:gn:kb:bpmn-d03-gestion-ipr) | arquitectura/bpmn/D03_gestion_ipr.md | arquitectura/bpmn/D03_gestion_ipr_koda.yml | BPMN | Proceso de gestión de inversión pública regional. |
 | D04 | Compras y Contrataciones | [BPMN D04: Compras Públicas y Contrataciones](urn:gn:kb:bpmn-d04-compras-contrataciones) | arquitectura/bpmn/D04_compras_contrataciones.md | arquitectura/bpmn/D04_compras_contrataciones_koda.yml | BPMN | Proceso de compras y contrataciones. |
@@ -234,7 +234,7 @@ Diagramas BPMN de procesos institucionales
 
 | id | titulo | path | tipo | resumen |
 | --- | --- | --- | --- | --- |
-| kb_gn_002 | Noticias GORE | ../../../../sources/gn/data/kb_gn_002_noticias.csv | CSV | Histórico de noticias institucionales. |
+| kb_gn_002 | Noticias GORE | ../../../../ | CSV | Histórico de noticias institucionales. |
 | kb_gn_003 | IDIs Históricas | data/kb_gn_003_idis.csv | CSV | Base de datos de iniciativas de inversión históricas. |
 | kb_gn_012 | Programas Vigentes | data/kb_gn_012_progs_vigentes.csv | CSV | Listado de programas públicos regionales vigentes. |
 | kb_gn_110 | Convenios 2022-2025 | data/kb_gn_110_convenios_2022_2025.csv | CSV | Base de datos de convenios del período 2022-2025. |

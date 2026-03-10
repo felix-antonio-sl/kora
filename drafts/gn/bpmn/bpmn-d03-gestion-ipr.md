@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:bpmn-d03-gestion-ipr
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/04_habilitadores/arquitectura/bpmn/D03_gestion_ipr_koda.yml
 version: 2.0.0
 status: draft
@@ -45,8 +45,7 @@ extensions:
 
 # BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)
 
-## Source
-- **Contexto requerido:** knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml
+- **Contexto requerido:** 
 
 ## Metadatos Dominio
 - **Criticidad:** 🔴 Crítica
@@ -54,7 +53,7 @@ extensions:
 - **Procesos:** 9
 - **Subprocesos:** ~25
 ### Referencias
-- **Contexto requerido:** knowledge/domains/gn/arquitectura/kb_gn_054_bpmn_c4_koda.yml L.1888-3727
+- **Contexto requerido:** L.1888-3727
 
 ## Mapa General Dominio
 - **Cpt:** Mapa general del ciclo de vida de las Intervenciones Públicas Regionales (IPR), incluyendo pre-fase y fases P1–P7.

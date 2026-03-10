@@ -347,6 +347,44 @@ class SemanticValidationTests(unittest.TestCase):
         fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
         self.assertNotIn("kb_021_extractos_legales.md", fixed)
 
+    def test_auto_fix_published_kora_markdown_parts_strips_local_paths(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-path"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\n## Tema\n\nFuente: knowledge/domains/gn/foo.md y file:///tmp/bar.md\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertNotIn("knowledge/domains/gn/foo.md", fixed)
+        self.assertNotIn("file:///tmp/bar.md", fixed)
+
+    def test_auto_fix_published_kora_markdown_parts_adds_primary_summary_when_missing(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-summary"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\nTexto sin chunk primario.\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertIn("## Resumen", fixed)
+
+    def test_auto_fix_published_kora_markdown_parts_promotes_enumerated_outline_to_h2(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:test-fix-outline"},
+            "version": "1.0.0",
+            "status": "draft",
+            "tags": ["a", "b", "c"],
+            "lang": "es",
+        }
+        body = "# Demo\n\n1. EJE TERRITORIO Y MEDIO AMBIENTE\n- item\n"
+        fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
+        self.assertIn("## EJE TERRITORIO Y MEDIO AMBIENTE", fixed)
+        self.assertNotIn("## Resumen", fixed)
+
     def test_split_kora_markdown_parts_splits_large_normative_body(self):
         frontmatter = {
             "_manifest": {"urn": "urn:kora:kb:test-split"},

@@ -20,15 +20,15 @@
   "document_family": "generic",
   "publication_class": "knowledge",
   "autofix": {
-    "applied": false,
+    "applied": true,
     "html_anchor_lines_removed": 0,
     "html_breaks_replaced": 0,
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 0,
+    "primary_heading_promotions": 1,
     "largest_primary_chunk_lines_before": 0,
-    "largest_primary_chunk_lines_after": 0
+    "largest_primary_chunk_lines_after": 7
   },
   "split": {
     "applied": false,
@@ -36,7 +36,7 @@
     "shard_count": 1,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 16,
+    "largest_shard_lines": 18,
     "shard_paths": [
       "drafts/gn/guias/guia-comunicaciones.md"
     ],

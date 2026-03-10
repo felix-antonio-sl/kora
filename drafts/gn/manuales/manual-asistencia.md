@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:manual-asistencia
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/gestion/kb_gn_051_manual_asistencia_koda.yml
 version: 2.0.0
 status: draft
@@ -116,4 +116,4 @@ extensions:
 - **Contexto:** Este manual se complementa con el Reglamento Interno de Higiene y Seguridad del GORE Ñuble. Los procesos de LME se rigen por el D.S. N° 3 de 1984 del Minsal.
 
 ## Referencias Cruzadas
-- **Contexto opcional:** knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_1_ciclo_vida_koda.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_2_remuneraciones.yml, knowledge/domains/gn/gestion/pseudo_manuales_operativos/manual_3_5_bienestar_koda.yml
+- **Contexto opcional:** , ,

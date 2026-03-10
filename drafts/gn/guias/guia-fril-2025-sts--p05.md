@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:guia-fril-2025-sts-p05
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/03_operacion/ipr/kb_gn_026_guia_fril_koda.yml
 version: 2.0.0
 status: draft
@@ -45,10 +45,6 @@ extensions:
 
 # Instructivo FRIL 2025 – Región de Ñuble - Parte 05
 
-## Estructura Valla
-- **Spec:** Pilares: 3 unidades, perfil rectangular 100x100x3 mm., Vientos: diagonales, perfil 50x50x3 mm., Fundación: hormigón, profundidad mínima 0,75 m., Marco: perfil 20x20x2 mm, 5,0x2,0 m., Soporte gráfica: plancha de zinc 0,5 mm.
-- **Advertencias:** Especificaciones estructurales son mínimas y deben corroborarse con memoria de cálculo.
-
 ## Placa Informativa
 - **Requisitos:** Instalar al menos una placa informativa.
 - **Spec:** Material: acero fotograbado bajo relieve., Medidas mínimas: 80 cm (ancho) x 60 cm (alto)., Debe usar marco oficial del GORE descargable desde sitio web.
@@ -82,3 +78,6 @@ extensions:
 ## Tabla Resumen
 - **Contexto:** La planilla debe contemplar, al menos, los siguientes grupos de partidas, siguiendo el detalle del instructivo:
 - **Grupos:** 1 GASTOS GENERALES (letrero de obra, ensayos de laboratorio, fletes, permisos y derechos, utilidades)., 2 OBRAS PROVISIONALES (instalaciones y construcciones provisorias)., 3 TRABAJOS PREVIOS (limpieza, escarpe, nivelación, demoliciones)., 4 OBRA GRUESA (excavaciones, hormigones, moldajes, enfierraduras, estructuras, albañilería, tabiquería, techumbre)., 5 TERMINACIONES (revestimientos, puertas, ventanas, pinturas)., 6 INSTALACIONES (alcantarillado, agua potable, electricidad, gas, climatización)., 7 OBRAS EXTERIORES (cierros, pavimentos exteriores, áreas verdes, iluminación exterior)., 8 EQUIPAMIENTO Y EQUIPOS., 9 OTROS (ítems específicos adicionales).
+
+## Resumen Costos
+- **Requisitos:** Presentar COSTO NETO como suma de todos los precios totales., Calcular IVA 19% sobre costo neto., Calcular COSTO TOTAL PROYECTO como suma de costo neto + IVA.

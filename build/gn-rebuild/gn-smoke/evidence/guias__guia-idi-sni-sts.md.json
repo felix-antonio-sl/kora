@@ -26,7 +26,7 @@
     "opaque_internal_refs_semanticized": 0,
     "meta_intro_headings_removed": 0,
     "empty_primary_wrappers_removed": 0,
-    "primary_heading_promotions": 10,
+    "primary_heading_promotions": 9,
     "largest_primary_chunk_lines_before": 337,
     "largest_primary_chunk_lines_after": 80
   },
@@ -36,8 +36,8 @@
     "shard_count": 2,
     "max_total_lines_per_file": 320,
     "max_primary_sections_per_file": 10,
-    "largest_shard_lines": 290,
-    "total_lines_before_split": 340,
+    "largest_shard_lines": 289,
+    "total_lines_before_split": 339,
     "shard_paths": [
       "drafts/gn/guias/guia-idi-sni-sts.md",
       "drafts/gn/guias/guia-idi-sni-sts--p02.md"

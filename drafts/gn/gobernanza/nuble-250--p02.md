@@ -3,7 +3,7 @@ _manifest:
   urn: urn:gn:kb:nuble-250-p02
   provenance:
     created_by: gn_rebuild.py
-    created_at: '2026-03-09'
+    created_at: '2026-03-10'
     source: domains/gn/02_estrategia/estrategia/kb_gn_056_nuble250_koda.yml
 version: 2.0.0
 status: draft
