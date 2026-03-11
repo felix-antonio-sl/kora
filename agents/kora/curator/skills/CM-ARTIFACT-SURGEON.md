@@ -20,7 +20,7 @@ Diagnostica y repara artefactos de conocimiento rotos o no conformes. Aplica fix
 1. DIAGNOSTICAR:
    - Leer artefacto completo.
    - Clasificar tipo (descriptivo/prescriptivo).
-   - Ejecutar checklist correspondiente (CM-ARTIFACT-AUDITOR).
+   - Ejecutar el checklist de la spec rectora (`md-spec` §9 o `spec-md` §8).
    - Identificar cada issue: componente afectado, severidad(critica|alta|media|baja).
 2. CLASIFICAR SEVERIDAD:
    - Critica: frontmatter invalido (no parsea), URN malformado, archivo corrupto.

@@ -40,10 +40,10 @@ AGENT_RULES = {
     },
     "agent.missing_transition_precedence": {
         "label": "Precedencia de transiciones no declarada",
-        "severity": "P2",
+        "severity": "P1",
         "spec_rule": "agent-spec-md §4.2.6",
         "closure_type": "agent_fix",
-        "enforcement_candidate": "manual",
+        "enforcement_candidate": "lint",
         "why": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
     },
     "tools.policy_leakage": {
@@ -88,6 +88,14 @@ SKILL_RULES = {
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "El control secuencial del ciclo del agente no debe vivir dentro del CM degenerado.",
+    },
+    "skill.operational_skill_composition": {
+        "label": "Skill compone otro skill operativamente",
+        "severity": "P2",
+        "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
+        "closure_type": "agent_fix",
+        "enforcement_candidate": "lint",
+        "why": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
     },
     "skill.relaxes_hard_rule": {
         "label": "Skill relaja o reinterpreta una regla dura del bootstrap",
@@ -148,6 +156,44 @@ def make_finding(workspace, rule_id, path, line, snippet, fix, closure_type=None
     }
 
 
+def iter_fsm_state_blocks(text: str):
+    in_fsm = False
+    current = None
+    state_pattern = re.compile(r"^\d+\.\s+STATE:\s+(S-[A-Z0-9_-]+)")
+
+    for line_no, raw_line in enumerate(text.splitlines(), start=1):
+        stripped = raw_line.strip()
+        if stripped.startswith("## 1. FSM"):
+            in_fsm = True
+            continue
+        if in_fsm and stripped.startswith("## 2. "):
+            break
+        if not in_fsm:
+            continue
+
+        match = state_pattern.match(stripped)
+        if match:
+            if current:
+                yield current
+            current = {
+                "state": match.group(1),
+                "line": line_no,
+                "lines": [stripped],
+            }
+            continue
+
+        if current and (
+            "Trans:" in stripped
+            or stripped.startswith("-> Trans:")
+            or stripped.startswith("- IF")
+            or stripped.startswith("IF ")
+        ):
+            current["lines"].append(stripped)
+
+    if current:
+        yield current
+
+
 def audit_agents_file(workspace: str, path: Path):
     findings = []
     text = path.read_text(encoding="utf-8")
@@ -175,6 +221,41 @@ def audit_agents_file(workspace: str, path: Path):
                     "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
                 )
             )
+
+    priority_pattern = re.compile(r"\[prioridad\s+\d+\]", re.IGNORECASE)
+    exclusion_pattern = re.compile(
+        r"\b(?:mutuamente excluyentes?|exclusion mutua|condiciones excluyentes?|exclusive conditions?)\b",
+        re.IGNORECASE,
+    )
+    if_pattern = re.compile(r"\bIF\b")
+    for block in iter_fsm_state_blocks(text):
+        transition_lines = []
+        for snippet in block["lines"]:
+            if "Trans:" in snippet:
+                transition_lines.append(snippet.split("Trans:", 1)[1].strip())
+            elif snippet.startswith("-> Trans:"):
+                transition_lines.append(snippet.split("-> Trans:", 1)[1].strip())
+            elif snippet.startswith("- IF") or snippet.startswith("IF "):
+                transition_lines.append(snippet)
+        if_count = sum(len(if_pattern.findall(snippet)) for snippet in transition_lines)
+        if if_count <= 1:
+            continue
+        priority_count = sum(len(priority_pattern.findall(snippet)) for snippet in transition_lines)
+        if priority_count >= if_count:
+            continue
+        combined = " ".join(transition_lines)
+        if exclusion_pattern.search(combined):
+            continue
+        findings.append(
+            make_finding(
+                workspace,
+                "agent.missing_transition_precedence",
+                path,
+                block["line"],
+                block["lines"][0],
+                "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
+            )
+        )
 
     return findings
 
@@ -232,6 +313,10 @@ def audit_skill_file(workspace: str, path: Path, agents_text: str):
         r"\b(?:CONTEXT_SHIFT|NEXT_STATE|estado_destino|la FSM debe volver a despachar|volver a despachar)\b",
         re.IGNORECASE,
     )
+    operational_skill_pattern = re.compile(
+        r"\b(?:invocar|ejecutar|re-?ejecutar|delegar|re-?validar|validar)\b[^.\n]{0,120}\bCM-[A-Z0-9-]+\b",
+        re.IGNORECASE,
+    )
     phase_pattern = re.compile(r"^###\s+Fase\s+[0-9]+", re.IGNORECASE)
     deprecated_pattern = re.compile(r"\bdeprecated_by\b")
 
@@ -256,6 +341,18 @@ def audit_skill_file(workspace: str, path: Path, agents_text: str):
                 line_no,
                 snippet,
                 "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
+            )
+        )
+
+    for line_no, snippet in line_numbers_matching(text, operational_skill_pattern):
+        findings.append(
+            make_finding(
+                workspace,
+                "skill.operational_skill_composition",
+                path,
+                line_no,
+                snippet,
+                "Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora.",
             )
         )
 

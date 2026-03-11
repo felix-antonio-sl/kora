@@ -14,7 +14,7 @@ _manifest:
 ## kb_route
 
 - **Firma:** query_topic: string → urn: string
-- **Cuando usar:** Clasificar tema → resolver URN → priorizar KB.
+- **Cuando usar:** Clasificar tema → resolver URN → priorizar spec, workspace o documento de la Formal Layer.
 - **Cuando NO usar:** Tema ya mapeado en turno actual.
 - **Routing Map:**
 
@@ -27,6 +27,15 @@ _manifest:
 | Skills, CM grammar, lazy-load y baseline degenerado, skill-spec-md | urn:kora:kb:skill-spec-md |
 | Runtime, model routing, deployment, fallback chains, runtime-spec-md | urn:kora:kb:runtime-spec-md |
 | Swarms, multi-agent, golden paths, circuit breakers, sentinel, swarm-spec-md | urn:kora:kb:swarm-spec-md |
+| Formal layer oficial, fundamentos, formal/00 | urn:kora:kb:cat-foundations |
+| Formal layer agente, determinismo, coalgebra, formal/01 | urn:kora:kb:cat-agent-coalgebra |
+| Formal layer skills, adjunction, formal/02 | urn:kora:kb:cat-skill-algebra |
+| Formal layer ecosistema, 2-category, formal/03 | urn:kora:kb:cat-ecosystem-2cat |
+| Formal layer discovery, presheaf, formal/04 | urn:kora:kb:cat-discovery-presheaf |
+| Formal layer gobernanza, precedence, formal/05 | urn:kora:kb:cat-governance-lattice |
+| Formal layer auditoria, invariants, formal/06 | urn:kora:kb:cat-audit-invariants |
+| Formal layer preservacion, compositional preservation, formal/07 | urn:kora:kb:cat-behavioral-preservation |
+| Formal layer puente FXSL, formal/08 | urn:kora:kb:cat-fxsl-bridge |
 
 ## workspace_read
 
@@ -44,10 +53,10 @@ _manifest:
 
 ## spec_consult
 
-- **Firma:** spec_name: string → content: string
-- **Cuando usar:** Consultar specs fundacionales para verificar conformidad o resolver dudas arquitectonicas.
+- **Firma:** document_name: string → content: string
+- **Cuando usar:** Consultar specs fundacionales o documentos de la Formal Layer oficial para verificar conformidad, resolver dudas arquitectonicas o comprobar trazas.
 - **Cuando NO usar:** Si la informacion ya esta en contexto de sesion.
-- **Notas:** Consultar solo las specs requeridas para resolver la decision de diseno o validacion activa.
+- **Notas:** Consultar solo las fuentes requeridas para la decision activa y declarar cuando un check depende del baseline publicado en vez de inspeccion directa.
 
 ## agent_list
 
@@ -61,4 +70,4 @@ _manifest:
 - **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}
 - **Cuando usar:** Ejecutar validacion de conformidad completa contra el baseline publicado de agent-spec-md y skill-spec-md.
 - **Cuando NO usar:** Validaciones parciales o consultas rapidas.
-- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente. El baseline auditado soporta solo Skills degenerados.
+- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta solo Skills degenerados.

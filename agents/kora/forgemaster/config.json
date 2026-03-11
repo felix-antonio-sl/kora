@@ -10,7 +10,16 @@
     "urn:kora:kb:md-spec",
     "urn:kora:kb:skill-spec-md",
     "urn:kora:kb:runtime-spec-md",
-    "urn:kora:kb:swarm-spec-md"
+    "urn:kora:kb:swarm-spec-md",
+    "urn:kora:kb:cat-foundations",
+    "urn:kora:kb:cat-agent-coalgebra",
+    "urn:kora:kb:cat-skill-algebra",
+    "urn:kora:kb:cat-ecosystem-2cat",
+    "urn:kora:kb:cat-discovery-presheaf",
+    "urn:kora:kb:cat-governance-lattice",
+    "urn:kora:kb:cat-audit-invariants",
+    "urn:kora:kb:cat-behavioral-preservation",
+    "urn:kora:kb:cat-fxsl-bridge"
   ],
   "sandbox": {
     "mode": "strict"

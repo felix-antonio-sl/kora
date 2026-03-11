@@ -1031,7 +1031,7 @@ Catalog:
     file: agents/fxsl/opm-specialist/skills/CM-MODELING-GUIDE.md
     status: published
   - urn: urn:fxsl:skill:opm-specialist-intent-classifier:1.0.0
-    title: CM-INTENT-CLASSIFIER.md
+    title: CM-INTENT-CLASSIFIER
     file: agents/fxsl/opm-specialist/skills/CM-INTENT-CLASSIFIER.md
     status: published
   - urn: urn:fxsl:skill:opm-specialist-example-builder:1.0.0
@@ -2127,35 +2127,17 @@ Catalog:
     title: Gestión de Redes Asistenciales — Marco General
     file: knowledge/pro/gestion-redes/01-gestion-redes-general.md
     status: draft
-  - urn: urn:pro:kb:manual-hospitalizacion-domiciliaria-alta-complejidad
-    title: 'MANUAL TÉCNICO Y OPERATIVO: HOSPITALIZACIÓN DOMICILIARIA (HaH) DE ALTA
-      COMPLEJIDAD'
-    file: knowledge/pro/hodom/manual-hospitalizacion-domiciliaria-alta-complejidad.md
+  - urn: urn:pro:kb:hodom-direccion-tecnica
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria
+    file: knowledge/pro/hodom/01-manual-direccion-tecnica.md
     status: draft
-  - urn: urn:pro:kb:informe-situacion-hospitalizacion-domiciliaria-chile-2026
-    title: 'INFORME TÉCNICO: ESTADO Y SITUACIÓN DE LA HOSPITALIZACIÓN DOMICILIARIA
-      EN CHILE (2024-2026)'
-    file: knowledge/pro/hodom/informe-situacion-hospitalizacion-domiciliaria-chile-2026.md
+  - urn: urn:pro:kb:hodom-situacion-chile-2026
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
+    file: knowledge/pro/hodom/03-situacion-chile-2026.md
     status: draft
-  - urn: urn:pro:kb:manual-direccion-tecnica-hospitalizacion-domiciliaria
-    title: MANUAL DE DIRECCIÓN TÉCNICA PARA UNIDADES DE HOSPITALIZACIÓN DOMICILIARIA
-    file: knowledge/pro/hodom/manual-direccion-tecnica-hospitalizacion-domiciliaria.md
-    status: draft
-  - urn: urn:pro:kb:hodom-situacion-chile
-    title: Hospitalización Domiciliaria en Chile — Situación 2024-2026
-    file: knowledge/pro/hospitalizacion-domiciliaria/01-situacion-chile.md
-    status: draft
-  - urn: urn:pro:kb:hodom-indice
-    title: Hospitalización Domiciliaria — Índice General
-    file: knowledge/pro/hospitalizacion-domiciliaria/00-indice.md
-    status: draft
-  - urn: urn:pro:kb:hodom-manual-hah
-    title: Hospital at Home (HaH) — Manual Técnico y Operativo
-    file: knowledge/pro/hospitalizacion-domiciliaria/02-manual-hah.md
-    status: draft
-  - urn: urn:pro:kb:hodom-director-tecnico
-    title: Dirección Técnica HD — Manual Normativo y Operativo (Chile)
-    file: knowledge/pro/hospitalizacion-domiciliaria/03-director-tecnico.md
+  - urn: urn:pro:kb:hodom-manual-alta-complejidad
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad
+    file: knowledge/pro/hodom/02-manual-alta-complejidad.md
     status: draft
   - urn: urn:gn:kb:gn-cqs-master
     title: Catálogo Maestro de Preguntas de Competencia
@@ -2360,6 +2342,66 @@ Catalog:
     title: 'BPMN D01: Tramitación de Actos Administrativos'
     file: knowledge/gn/bpmn/bpmn-d01-actos-administrativos.md
     status: published
+  - urn: urn:gnub:kb:ssot-territorio
+    title: SSOT — Territorio GORE Ñuble
+    file: knowledge/gn/ssot/ssot-territorio.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-organica
+    title: SSOT — Estructura orgánica GORE Ñuble
+    file: knowledge/gn/ssot/ssot-organica.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-convenios
+    title: SSOT — Convenios GORE Ñuble
+    file: knowledge/gn/ssot/ssot-convenios.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-rendiciones
+    title: SSOT — Rendiciones SISREC
+    file: knowledge/gn/ssot/ssot-rendiciones.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-operaciones
+    title: SSOT — Procesos operativos GORE Ñuble
+    file: knowledge/gn/ssot/ssot-operaciones.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-presupuesto
+    title: SSOT — Presupuesto GORE Ñuble
+    file: knowledge/gn/ssot/ssot-presupuesto.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-relaciones-dominio
+    title: SSOT — Relaciones de dominio
+    file: knowledge/gn/ssot/ssot-relaciones-dominio.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-dgi
+    title: SSOT — DGI (Gestión Institucional)
+    file: knowledge/gn/ssot/ssot-dgi.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-actos-admin
+    title: SSOT — Actos administrativos
+    file: knowledge/gn/ssot/ssot-actos-admin.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-ecosistema
+    title: SSOT — Ecosistema institucional GORE Ñuble
+    file: knowledge/gn/ssot/ssot-ecosistema.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-tde
+    title: SSOT — Transformación Digital del Estado (TDE)
+    file: knowledge/gn/ssot/ssot-tde.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-mecanismos
+    title: SSOT — Reglas operativas por mecanismo de financiamiento
+    file: knowledge/gn/ssot/ssot-mecanismos.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-master
+    title: SSOT GORE Ñuble — Índice Maestro
+    file: knowledge/gn/ssot/ssot-master.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-ipr-lifecycle
+    title: SSOT — Ciclo de vida IPR
+    file: knowledge/gn/ssot/ssot-ipr-lifecycle.md
+    status: draft
+  - urn: urn:gnub:kb:ssot-legal
+    title: SSOT — Marco normativo GORE Ñuble
+    file: knowledge/gn/ssot/ssot-legal.md
+    status: draft
   - urn: urn:gn:kb:transferencia-ppr
     title: Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
     file: knowledge/gn/gestion/transferencia-ppr.md

@@ -68,12 +68,15 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 - Calidad de superficie: PASS cuando la salida conserva legibilidad tecnica y evita serializacion de campos.
 
 ### Paso 5: Generar Reporte
+1. Consolidar checks fallidos por familia operativa: fidelidad, ssot, conformidad, catalogo o superficie.
+2. Si el resultado es FAIL, identificar `causa_principal` segun la familia que define el reingreso minimo del workflow.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | resultado | enum(PASS\|FAIL) | Resultado global de auditoria |
 | tipo | enum(descriptivo\|prescriptivo) | Tipo clasificado |
+| causa_principal | enum(fidelidad\|ssot\|conformidad\|catalogo\|superficie) \| null | Familia dominante de falla para reingreso del workflow |
 | checks | {nombre, status, detalle, correccion}[] | Checklist con resultado por item |
 | metricas | {FS: number, CR: number} \| null | Metricas de fidelidad y compresion (si aplica) |
 | resumen | string | Resumen ejecutivo del reporte |

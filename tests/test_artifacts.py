@@ -238,6 +238,19 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-tools:1.0.0", content)
         self.assertNotIn("urn:kora:agent-bootstrap:{nombre}-agents:1.0.0", content)
 
+    def test_forgemaster_scaffolder_declares_bootstrap_manifest_types(self):
+        content = (
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER.md"
+        ).read_text(encoding="utf-8")
+        for manifest_type in (
+            "bootstrap_agents",
+            "bootstrap_soul",
+            "bootstrap_user",
+            "bootstrap_tools",
+            "bootstrap_config",
+        ):
+            self.assertIn(manifest_type, content)
+
     def test_custodio_scope_excludes_agent_and_kb_mutation(self):
         agents = (ROOT / "agents" / "kora" / "custodio" / "AGENTS.md").read_text(encoding="utf-8")
         surgeon = (
@@ -323,6 +336,22 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("skill-spec-md v3.4.0", skills)
         self.assertNotIn("agent-spec-md v8.1.0", skills)
         self.assertNotIn("skill-spec-md v3.2.0", skills)
+
+    def test_forgemaster_validator_aligns_section_refs_and_formal_layer_access(self):
+        validator = (
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR.md"
+        ).read_text(encoding="utf-8")
+        tools = (ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md").read_text(encoding="utf-8")
+        config = (ROOT / "agents" / "kora" / "forgemaster" / "config.json").read_text(encoding="utf-8")
+        self.assertIn("agent-spec-md §4.1", validator)
+        self.assertIn("agent-spec-md §4.2-§4.3", validator)
+        self.assertIn("gobernanza.md §5 y §8", validator)
+        self.assertNotIn("GRAMATICA DE BEHAVIOR (§3.1)", validator)
+        self.assertNotIn("FSM CANONICA (§3.2)", validator)
+        self.assertIn("Formal layer oficial, fundamentos, formal/00", tools)
+        self.assertIn("Formal layer agente, determinismo, coalgebra, formal/01", tools)
+        self.assertIn('"urn:kora:kb:cat-foundations"', config)
+        self.assertIn('"urn:kora:kb:cat-behavioral-preservation"', config)
 
     def test_guardian_runtime_capabilities_drop_analysis(self):
         content = (ROOT / "agents" / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
@@ -519,6 +548,44 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("Funtor G", content)
         self.assertNotIn("md-spec §8", content)
         self.assertNotIn("verificacion adversarial", content)
+
+    def test_curator_declares_fsm_precedence_and_type_safe_fidelity_routing(self):
+        agents = (ROOT / "agents" / "kora" / "curator" / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("[prioridad 1]", agents)
+        self.assertIn(
+            "IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE",
+            agents,
+        )
+        self.assertIn(
+            "IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=prescriptivo [prioridad 3] -> S-CRYSTALLIZE",
+            agents,
+        )
+        self.assertNotIn("IF FIDELITY_CHECK fails -> S-KORAFICATE", agents)
+
+    def test_curator_guided_mode_uses_declared_transform_phases_only(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "AGENTS.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("FORGE", content)
+        self.assertIn("KORAFICATE", content)
+        self.assertIn("CRYSTALLIZE", content)
+
+    def test_meta_skills_do_not_operationally_compose_other_meta_skills(self):
+        files = (
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-EDITOR.md",
+            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-SURGEON.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-EVOLVER.md",
+            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-SURGEON.md",
+        )
+        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
+        self.assertNotIn("CM-ARTIFACT-AUDITOR mentalmente", content)
+        self.assertNotIn("Ejecutar checklist correspondiente (CM-ARTIFACT-AUDITOR)", content)
+        self.assertNotIn("CM-AGENT-VALIDATOR post-mejora", content)
+        self.assertNotIn("Re-ejecutar CM-AGENT-VALIDATOR", content)
+        self.assertIn("md-spec` §9 o `spec-md` §8", content)
+        self.assertIn("agent-spec-md` v8.3.0 y `skill-spec-md` v3.4.0", content)
 
     def test_ops_core_agents_follow_canonical_agent_sections(self):
         files = (

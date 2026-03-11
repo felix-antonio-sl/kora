@@ -11,8 +11,8 @@
   },
   "tools": {
     "allow": [
-      "kb_route",
       "catalog_resolve",
+      "kb_route",
       "search_kb"
     ],
     "deny": []

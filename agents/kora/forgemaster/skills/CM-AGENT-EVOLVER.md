@@ -24,7 +24,7 @@ Analiza un agente existente y propone mejoras iterativas: optimizar FSM, refinar
 5. ANALIZAR TOOLS: ¿Herramientas suficientes? ¿Firmas correctas? ¿Routing map actualizado?
 6. PROPONER MEJORAS: Lista priorizada con impacto(alto|medio|bajo) y esfuerzo(alto|medio|bajo). Recomendar quick wins primero.
 7. IMPLEMENTAR MEJORAS APROBADAS: Aplicar cambios respetando segregacion. Una modificacion logica por iteracion.
-8. RE-VALIDAR: CM-AGENT-VALIDATOR post-mejora.
+8. CONSOLIDAR EVIDENCIA DE CONFORMIDAD: contrastar los cambios contra `agent-spec-md` v8.3.0 y `skill-spec-md` v3.4.0, registrando cualquier desvio residual para la validacion posterior del workspace.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
@@ -33,4 +33,4 @@ Analiza un agente existente y propone mejoras iterativas: optimizar FSM, refinar
 | analisis | {fsm: string, skills: string, soul: string, tools: string} | Resultado del analisis por area |
 | mejoras_propuestas | {descripcion: string, impacto: enum, esfuerzo: enum}[] | Mejoras priorizadas |
 | mejoras_aplicadas | string[] | Mejoras implementadas |
-| validacion_post | enum(PASS\|FAIL) | Resultado de re-validacion |
+| verificacion_local | enum(alineado\|desvio_detectado) | Resultado del contraste local contra el baseline vigente |

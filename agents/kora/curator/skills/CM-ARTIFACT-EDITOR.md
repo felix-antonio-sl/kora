@@ -35,7 +35,7 @@ Modifica artefactos de conocimiento existentes preservando todos los invariantes
    - Patch: correccion sin cambio informativo/normativo.
    - Minor: info/regla nueva compatible con lo existente.
    - Major: cambio que invalida lecturas previas.
-6. VERIFICAR resultado contra checklist correspondiente (invocar CM-ARTIFACT-AUDITOR mentalmente).
+6. VERIFICAR resultado contra el checklist de la spec rectora (`md-spec` §9 o `spec-md` §8) y registrar cualquier desvio pendiente.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 730,
-    "node_count": 883,
-    "edge_count": 4158
+    "scanned_files": 745,
+    "node_count": 898,
+    "edge_count": 4242
   },
   "node_kind_counts": {
-    "artifact": 226,
-    "knowledge": 256,
+    "artifact": 230,
+    "knowledge": 267,
     "skill": 236,
     "spec": 7,
     "tool": 113,
     "workspace": 45
   },
   "edge_kind_counts": {
-    "AllowsKB": 419,
+    "AllowsKB": 428,
     "AllowsTool": 198,
     "ContainsArtifact": 225,
     "ContainsSkill": 236,
     "DeclaresTool": 201,
     "InvokesSkill": 220,
-    "RoutesToAgent": 57,
+    "RoutesToAgent": 56,
     "TracesTo": 44,
-    "XRef": 2558
+    "XRef": 2634
   },
   "nodes": [
     {
@@ -2055,6 +2055,26 @@
       "namespace": "pro"
     },
     {
+      "id": "urn:pro:kb:hodom-director-tecnico",
+      "kind": "artifact",
+      "urn": "urn:pro:kb:hodom-director-tecnico"
+    },
+    {
+      "id": "urn:pro:kb:hodom-indice",
+      "kind": "artifact",
+      "urn": "urn:pro:kb:hodom-indice"
+    },
+    {
+      "id": "urn:pro:kb:hodom-manual-hah",
+      "kind": "artifact",
+      "urn": "urn:pro:kb:hodom-manual-hah"
+    },
+    {
+      "id": "urn:pro:kb:hodom-situacion-chile",
+      "kind": "artifact",
+      "urn": "urn:pro:kb:hodom-situacion-chile"
+    },
+    {
       "id": "urn:fxsl:kb:action-primary-key",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -3108,6 +3128,141 @@
       "namespace": "gn"
     },
     {
+      "id": "urn:gnub:kb:ssot-actos-admin",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-actos-admin",
+      "title": "SSOT — Actos administrativos",
+      "path": "knowledge/gn/ssot/ssot-actos-admin.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-convenios",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-convenios",
+      "title": "SSOT — Convenios GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-convenios.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-dgi",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-dgi",
+      "title": "SSOT — DGI (Gestión Institucional)",
+      "path": "knowledge/gn/ssot/ssot-dgi.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-ecosistema",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-ecosistema",
+      "title": "SSOT — Ecosistema institucional GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-ecosistema.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "title": "SSOT — Ciclo de vida IPR",
+      "path": "knowledge/gn/ssot/ssot-ipr-lifecycle.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-legal",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-legal",
+      "title": "SSOT — Marco normativo GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-legal.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-master",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-master",
+      "title": "SSOT GORE Ñuble — Índice Maestro",
+      "path": "knowledge/gn/ssot/ssot-master.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-mecanismos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-mecanismos",
+      "title": "SSOT — Reglas operativas por mecanismo de financiamiento",
+      "path": "knowledge/gn/ssot/ssot-mecanismos.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-operaciones",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-operaciones",
+      "title": "SSOT — Procesos operativos GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-operaciones.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-organica",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-organica",
+      "title": "SSOT — Estructura orgánica GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-organica.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-presupuesto",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-presupuesto",
+      "title": "SSOT — Presupuesto GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-presupuesto.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-relaciones-dominio",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-relaciones-dominio",
+      "title": "SSOT — Relaciones de dominio",
+      "path": "knowledge/gn/ssot/ssot-relaciones-dominio.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-rendiciones",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-rendiciones",
+      "title": "SSOT — Rendiciones SISREC",
+      "path": "knowledge/gn/ssot/ssot-rendiciones.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-tde",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-tde",
+      "title": "SSOT — Transformación Digital del Estado (TDE)",
+      "path": "knowledge/gn/ssot/ssot-tde.md",
+      "namespace": "gnub"
+    },
+    {
+      "id": "urn:gnub:kb:ssot-territorio",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gnub:kb:ssot-territorio",
+      "title": "SSOT — Territorio GORE Ñuble",
+      "path": "knowledge/gn/ssot/ssot-territorio.md",
+      "namespace": "gnub"
+    },
+    {
       "id": "urn:gov:kb:capacitaciones-tde",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -3927,66 +4082,30 @@
       "namespace": "pro"
     },
     {
-      "id": "urn:pro:kb:hodom-director-tecnico",
+      "id": "urn:pro:kb:hodom-direccion-tecnica",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:pro:kb:hodom-director-tecnico",
-      "title": "Dirección Técnica HD — Manual Normativo y Operativo (Chile)",
-      "path": "knowledge/pro/hospitalizacion-domiciliaria/03-director-tecnico.md",
+      "urn": "urn:pro:kb:hodom-direccion-tecnica",
+      "title": "Direccion Tecnica en Hospitalizacion Domiciliaria",
+      "path": "knowledge/pro/hodom/01-manual-direccion-tecnica.md",
       "namespace": "pro"
     },
     {
-      "id": "urn:pro:kb:hodom-indice",
+      "id": "urn:pro:kb:hodom-manual-alta-complejidad",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:pro:kb:hodom-indice",
-      "title": "Hospitalización Domiciliaria — Índice General",
-      "path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md",
+      "urn": "urn:pro:kb:hodom-manual-alta-complejidad",
+      "title": "Manual de Hospitalizacion Domiciliaria de Alta Complejidad",
+      "path": "knowledge/pro/hodom/02-manual-alta-complejidad.md",
       "namespace": "pro"
     },
     {
-      "id": "urn:pro:kb:hodom-manual-hah",
+      "id": "urn:pro:kb:hodom-situacion-chile-2026",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:pro:kb:hodom-manual-hah",
-      "title": "Hospital at Home (HaH) — Manual Técnico y Operativo",
-      "path": "knowledge/pro/hospitalizacion-domiciliaria/02-manual-hah.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:kb:hodom-situacion-chile",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:pro:kb:hodom-situacion-chile",
-      "title": "Hospitalización Domiciliaria en Chile — Situación 2024-2026",
-      "path": "knowledge/pro/hospitalizacion-domiciliaria/01-situacion-chile.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:kb:informe-situacion-hospitalizacion-domiciliaria-chile-2026",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:pro:kb:informe-situacion-hospitalizacion-domiciliaria-chile-2026",
-      "title": "INFORME TÉCNICO: ESTADO Y SITUACIÓN DE LA HOSPITALIZACIÓN DOMICILIARIA EN CHILE (2024-2026)",
-      "path": "knowledge/pro/hodom/informe-situacion-hospitalizacion-domiciliaria-chile-2026.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:kb:manual-direccion-tecnica-hospitalizacion-domiciliaria",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:pro:kb:manual-direccion-tecnica-hospitalizacion-domiciliaria",
-      "title": "MANUAL DE DIRECCIÓN TÉCNICA PARA UNIDADES DE HOSPITALIZACIÓN DOMICILIARIA",
-      "path": "knowledge/pro/hodom/manual-direccion-tecnica-hospitalizacion-domiciliaria.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:kb:manual-hospitalizacion-domiciliaria-alta-complejidad",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:pro:kb:manual-hospitalizacion-domiciliaria-alta-complejidad",
-      "title": "MANUAL TÉCNICO Y OPERATIVO: HOSPITALIZACIÓN DOMICILIARIA (HaH) DE ALTA COMPLEJIDAD",
-      "path": "knowledge/pro/hodom/manual-hospitalizacion-domiciliaria-alta-complejidad.md",
+      "urn": "urn:pro:kb:hodom-situacion-chile-2026",
+      "title": "Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026",
+      "path": "knowledge/pro/hodom/03-situacion-chile-2026.md",
       "namespace": "pro"
     },
     {
@@ -5101,7 +5220,7 @@
       "kind": "skill",
       "category": "Skills",
       "urn": "urn:fxsl:skill:opm-specialist-intent-classifier:1.0.0",
-      "title": "CM-INTENT-CLASSIFIER.md",
+      "title": "CM-INTENT-CLASSIFIER",
       "path": "agents/fxsl/opm-specialist/skills/CM-INTENT-CLASSIFIER.md",
       "namespace": "fxsl"
     },
@@ -9500,6 +9619,60 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-audit-invariants",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-ecosystem-2cat",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-foundations",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-fxsl-bridge",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
       "target": "urn:kora:kb:gobernanza",
       "source_path": "agents/kora/forgemaster/config.json"
     },
@@ -10334,13 +10507,13 @@
     {
       "kind": "AllowsTool",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:kb_route",
+      "target": "tool:catalog_resolve",
       "source_path": "agents/fxsl/pensador-generador/config.json"
     },
     {
       "kind": "AllowsTool",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:resolve_urn",
+      "target": "tool:kb_route",
       "source_path": "agents/fxsl/pensador-generador/config.json"
     },
     {
@@ -13827,13 +14000,13 @@
     {
       "kind": "DeclaresTool",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:kb_route",
+      "target": "tool:catalog_resolve",
       "source_path": "agents/fxsl/pensador-generador/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:resolve_urn",
+      "target": "tool:kb_route",
       "source_path": "agents/fxsl/pensador-generador/TOOLS.md"
     },
     {
@@ -16088,12 +16261,6 @@
     },
     {
       "kind": "RoutesToAgent",
-      "source": "workspace:fxsl/opm-specialist",
-      "target": "workspace:kora/forgemaster",
-      "source_path": "agents/fxsl/opm-specialist/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
       "source": "workspace:kora/clawmaster",
       "target": "workspace:kora/curator",
       "source_path": "agents/kora/clawmaster/AGENTS.md"
@@ -16609,6 +16776,13 @@
       "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:.gemini/GEMINI.md",
+      "target": "urn:kora:kb:agent-spec-md",
+      "fragment": null,
+      "source_path": ".gemini/GEMINI.md"
     },
     {
       "kind": "XRef",
@@ -19175,6 +19349,111 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-actos-admin",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-convenios",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-dgi",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-ecosistema",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-mecanismos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-operaciones",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-organica",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-presupuesto",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-relaciones-dominio",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-rendiciones",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-tde",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gnub:kb:ssot-territorio",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gov:kb:capacitaciones-tde",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -21226,49 +21505,21 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:hodom-director-tecnico",
+      "target": "urn:pro:kb:hodom-direccion-tecnica",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:hodom-indice",
+      "target": "urn:pro:kb:hodom-manual-alta-complejidad",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:hodom-manual-hah",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:hodom-situacion-chile",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:informe-situacion-hospitalizacion-domiciliaria-chile-2026",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:manual-direccion-tecnica-hospitalizacion-domiciliaria",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:manual-hospitalizacion-domiciliaria-alta-complejidad",
+      "target": "urn:pro:kb:hodom-situacion-chile-2026",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -23516,13 +23767,6 @@
       "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-agents:1.0.0",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-agents:1.0.0",
-      "fragment": null,
-      "source_path": "agents/fxsl/opm-specialist/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:opm-specialist-agents:1.0.0",
-      "target": "urn:fxsl:kb:opm-methodology",
       "fragment": null,
       "source_path": "agents/fxsl/opm-specialist/AGENTS.md"
     },
@@ -25959,6 +26203,20 @@
       "kind": "XRef",
       "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
       "target": "urn:tde:kb:manual-claveunica-boton",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:manual-coordinadora-tde",
+      "fragment": null,
+      "source_path": "agents/gn/digitrans/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:agent-bootstrap:digitrans-tools:2.0.0",
+      "target": "urn:tde:kb:manual-coordinadora-tde",
       "fragment": null,
       "source_path": "agents/gn/digitrans/TOOLS.md"
     },
@@ -29240,6 +29498,391 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-actos-admin",
+      "target": "urn:gnub:kb:ssot-actos-admin",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-actos-admin.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-actos-admin",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-actos-admin.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-convenios",
+      "target": "urn:gnub:kb:ssot-convenios",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-convenios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-convenios",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-convenios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-convenios",
+      "target": "urn:gnub:kb:ssot-rendiciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-convenios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-dgi",
+      "target": "urn:gnub:kb:ssot-dgi",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-dgi",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-dgi",
+      "target": "urn:gnub:kb:ssot-organica",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ecosistema",
+      "target": "urn:gnub:kb:ssot-ecosistema",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ecosistema.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ecosistema",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ecosistema.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ecosistema",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ecosistema.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ecosistema",
+      "target": "urn:gnub:kb:ssot-mecanismos",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ecosistema.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ecosistema",
+      "target": "urn:gnub:kb:ssot-rendiciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ecosistema.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "target": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ipr-lifecycle.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-ipr-lifecycle.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-legal",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-legal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-legal",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-legal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-legal",
+      "target": "urn:gnub:kb:ssot-presupuesto",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-legal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-actos-admin",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-convenios",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-dgi",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-ecosistema",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-mecanismos",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-operaciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-organica",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-presupuesto",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-relaciones-dominio",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-rendiciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-tde",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-master",
+      "target": "urn:gnub:kb:ssot-territorio",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-master.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-mecanismos",
+      "target": "urn:gnub:kb:ssot-ipr-lifecycle",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-mecanismos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-mecanismos",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-mecanismos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-mecanismos",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-mecanismos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-mecanismos",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-mecanismos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-mecanismos",
+      "target": "urn:gnub:kb:ssot-mecanismos",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-mecanismos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-operaciones",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-operaciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-operaciones",
+      "target": "urn:gnub:kb:ssot-operaciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-operaciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-organica",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-organica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-organica",
+      "target": "urn:gnub:kb:ssot-organica",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-organica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-presupuesto",
+      "target": "urn:gnub:kb:ssot-legal",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-presupuesto.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-presupuesto",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-presupuesto.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-presupuesto",
+      "target": "urn:gnub:kb:ssot-presupuesto",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-presupuesto.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-relaciones-dominio",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-relaciones-dominio.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-relaciones-dominio",
+      "target": "urn:gnub:kb:ssot-relaciones-dominio",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-relaciones-dominio.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-rendiciones",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-rendiciones",
+      "target": "urn:gnub:kb:ssot-rendiciones",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-rendiciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-tde",
+      "target": "urn:gnub:kb:ssot-dgi",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-tde.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-tde",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-tde.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-tde",
+      "target": "urn:gnub:kb:ssot-tde",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-tde.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-territorio",
+      "target": "urn:gnub:kb:ssot-master",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-territorio.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gnub:kb:ssot-territorio",
+      "target": "urn:gnub:kb:ssot-territorio",
+      "fragment": null,
+      "source_path": "knowledge/gn/ssot/ssot-territorio.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:gov:kb:capacitaciones-tde",
       "target": "urn:gov:kb:capacitaciones-tde",
       "fragment": null,
@@ -30165,6 +30808,69 @@
     {
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-audit-invariants",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-ecosystem-2cat",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-foundations",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-fxsl-bridge",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
       "target": "urn:kora:kb:gobernanza",
       "fragment": null,
       "source_path": "agents/kora/forgemaster/config.json"
@@ -30222,6 +30928,69 @@
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
       "target": "urn:kora:kb:agent-spec-md",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-audit-invariants",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-ecosystem-2cat",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-foundations",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-fxsl-bridge",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "agents/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "agents/kora/forgemaster/TOOLS.md"
     },
@@ -33846,94 +34615,24 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:pro:kb:hodom-director-tecnico",
-      "target": "urn:pro:kb:hodom-director-tecnico",
+      "source": "urn:pro:kb:hodom-direccion-tecnica",
+      "target": "urn:pro:kb:hodom-direccion-tecnica",
       "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/03-director-tecnico.md"
+      "source_path": "knowledge/pro/hodom/01-manual-direccion-tecnica.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:gestion-redes-unidades",
+      "source": "urn:pro:kb:hodom-manual-alta-complejidad",
+      "target": "urn:pro:kb:hodom-manual-alta-complejidad",
       "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
+      "source_path": "knowledge/pro/hodom/02-manual-alta-complejidad.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:hodom-director-tecnico",
+      "source": "urn:pro:kb:hodom-situacion-chile-2026",
+      "target": "urn:pro:kb:hodom-situacion-chile-2026",
       "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:hodom-director-tecnico",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:hodom-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:hodom-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:hodom-manual-hah",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-indice",
-      "target": "urn:pro:kb:hodom-situacion-chile",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-manual-hah",
-      "target": "urn:pro:kb:hodom-manual-hah",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/02-manual-hah.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:hodom-situacion-chile",
-      "target": "urn:pro:kb:hodom-situacion-chile",
-      "fragment": null,
-      "source_path": "knowledge/pro/hospitalizacion-domiciliaria/01-situacion-chile.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:informe-situacion-hospitalizacion-domiciliaria-chile-2026",
-      "target": "urn:pro:kb:informe-situacion-hospitalizacion-domiciliaria-chile-2026",
-      "fragment": null,
-      "source_path": "knowledge/pro/hodom/informe-situacion-hospitalizacion-domiciliaria-chile-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:manual-direccion-tecnica-hospitalizacion-domiciliaria",
-      "target": "urn:pro:kb:manual-direccion-tecnica-hospitalizacion-domiciliaria",
-      "fragment": null,
-      "source_path": "knowledge/pro/hodom/manual-direccion-tecnica-hospitalizacion-domiciliaria.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:manual-hospitalizacion-domiciliaria-alta-complejidad",
-      "target": "urn:pro:kb:manual-hospitalizacion-domiciliaria-alta-complejidad",
-      "fragment": null,
-      "source_path": "knowledge/pro/hodom/manual-hospitalizacion-domiciliaria-alta-complejidad.md"
+      "source_path": "knowledge/pro/hodom/03-situacion-chile-2026.md"
     },
     {
       "kind": "XRef",

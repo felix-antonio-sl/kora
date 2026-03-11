@@ -39,6 +39,19 @@ class AgentAuditTests(unittest.TestCase):
             findings = audit_agents_file("test/sample", path)
             self.assertEqual(findings, [])
 
+    def test_agents_audit_flags_missing_transition_precedence(self):
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "AGENTS.md"
+            path.write_text(
+                "## 1. FSM\n1. STATE: S-DISPATCHER -> ACT: clasificar -> Trans: IF terminar -> S-END. IF crear -> S-CREATE. IF ambiguo -> S-DISPATCHER.\n## 2. Reglas Duras\n",
+                encoding="utf-8",
+            )
+            findings = audit_agents_file("test/sample", path)
+            self.assertEqual(findings[0]["rule_id"], "agent.missing_transition_precedence")
+
     def test_tools_audit_flags_policy_leakage(self):
         import tempfile
         from pathlib import Path
@@ -85,6 +98,19 @@ class AgentAuditTests(unittest.TestCase):
             self.assertIn("skill.state_variable_leak", rule_ids)
             self.assertIn("skill.transition_classifier_leak", rule_ids)
             self.assertIn("skill.relaxes_hard_rule", rule_ids)
+
+    def test_skill_audit_flags_operational_skill_composition(self):
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "CM-TEST.md"
+            path.write_text(
+                "## Procedimiento\n1. Re-ejecutar CM-AGENT-VALIDATOR despues del fix.\n",
+                encoding="utf-8",
+            )
+            findings = audit_skill_file("test/sample", path, "")
+            self.assertEqual(findings[0]["rule_id"], "skill.operational_skill_composition")
 
     def test_build_agent_audit_payload_has_expected_shape(self):
         payload = build_agent_audit_payload()
