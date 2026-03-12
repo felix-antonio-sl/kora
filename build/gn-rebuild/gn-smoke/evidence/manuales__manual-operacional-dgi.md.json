@@ -597,7 +597,7 @@
     "TransformacionDigital[3].Principles[1]=Fuente única de verdad: Cada dato tiene una fuente autoritativa definida",
     "TransformacionDigital[3].Principles[2]=Interoperabilidad por diseño: Los sistemas deben poder intercambiar datos",
     "TransformacionDigital[3].Title=Interoperabilidad y Datos",
-    "XRef_Required=urn:knowledge:koda:core:spec:1.0.0"
+    "XRef_Required=urn:kora:kb:spec:1.0.0"
   ],
   "non_equivalence_decisions": []
 }

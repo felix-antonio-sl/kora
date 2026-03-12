@@ -4,14 +4,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "KORA categorical-foundations 00-07, RFC 2119"
-version: "3.1.0"
+    source: "KORA categorical-foundations 00-07, formal restoration of governed extended skills, RFC 2119"
+version: "3.2.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
 ---
 
-# KORA/Gobernanza v3.1.0
+# KORA/Gobernanza v3.2.0
 
 ## 1. Definicion
 
@@ -33,6 +33,8 @@ Traces to: formal/05 §1.2 (Bounded Lattice)
 | Artefacto conceptual   | Artefacto cuyo URN identifica el concepto, no el snapshot; describe conocimiento, reglas o referencias estables |
 | Artefacto ejecutable   | Artefacto cuyo URN identifica un snapshot que participa en ejecucion, deployment o composicion operacional      |
 | Regimen de identidad   | Esquema URN que gobierna como se identifica un artefacto: conceptual o ejecutable                               |
+| Entrypoint ejecutable  | Archivo que porta la identidad y el `_manifest.type` efectivos de un artefacto ejecutable                       |
+| Fibra adjunta          | Material subordinado a un artefacto ejecutable que no introduce identidad ni kind propios                       |
 | Formal Layer           | Capa de justificacion categorial oficial de KORA                                                                |
 | Extension de namespace | Artefacto KORA/Spec-MD que agrega restricciones sin relajar reglas base                                         |
 | Enforcement            | Nivel de verificabilidad de una regla: schema, lint, runtime, eval o manual                                     |
@@ -82,8 +84,9 @@ La identidad URN y `_manifest.type` son ortogonales.
 1. La URN gobierna el regimen identitario (`agent-bootstrap` o `skill`).
 2. `_manifest.type` gobierna el kind estructural del artefacto ejecutable.
 3. Para bootstraps de agente, los kinds permitidos son `bootstrap_agents`, `bootstrap_soul`, `bootstrap_user`, `bootstrap_tools`, `bootstrap_config`.
-4. Para Skills degenerados, el kind permitido es `lazy_load_endofunctor`.
-5. Ninguna spec subordinada **PUEDE** introducir kinds adicionales sin declararlos primero aqui.
+4. Para todo Skill, degenerado (`skills/CM-*.md`) o extendido (`skills/CM-*/SKILL.md`), el kind permitido del entrypoint es `lazy_load_endofunctor`.
+5. Los directorios adjuntos `scripts/`, `references/` y `assets/` de un Skill extendido son fibras del mismo Skill y **NO** introducen kind ni identidad propios.
+6. Ninguna spec subordinada **PUEDE** introducir kinds adicionales sin declararlos primero aqui.
 
 Traces to: formal/01 §5.2 (Substitutability) ; formal/05 §1.3 (Domain Disjointness)
 
@@ -112,6 +115,8 @@ Una extension de namespace:
 
 Las extensiones de metadata se expresan unicamente dentro del campo `extensions.{namespace}` del artefacto gobernado.
 
+En Skills extendidos, la metadata del bundle **DEBE** vivir bajo `extensions.{namespace}.skill` del `SKILL.md` entrypoint. Los directorios adjuntos no son un canal alterno de metadata raiz.
+
 ## 7. Enforcement
 
 Toda regla importante de KORA cae en uno de cinco niveles:
@@ -132,6 +137,7 @@ Reglas fundacionales que no admiten enforcement razonable **DEBERIAN** expresars
 2. Solo existen los regimenes de identidad definidos en §4.
 3. Toda linea `Traces to:` **DEBE** apuntar a la Formal Layer oficial.
 4. Ninguna extension **PUEDE** relajar reglas base.
+5. Una fibra adjunta de Skill extendido **NO PUEDE** introducir identidad, kind ni precedencia paralelos al entrypoint que la gobierna.
 
 ## 9. Validacion
 
@@ -139,6 +145,7 @@ Reglas fundacionales que no admiten enforcement razonable **DEBERIAN** expresars
 | ----------------------- | ------------------------------------------------------------- | ----------- | ---------------------------------------- |
 | Precedencia consistente | Ninguna spec subordinada contradice una capa superior         | manual      | Reescribir regla o actualizar gobernanza |
 | Identidad consistente   | Solo existen los dos regimenes de identidad definidos en §4   | lint        | Migrar URNs                              |
+| Kind de Skill consistente | Todo entrypoint de Skill usa `lazy_load_endofunctor` y las fibras adjuntas no crean kinds nuevos | lint/manual | Corregir entrypoint o bundle             |
 | Traces oficiales        | Toda linea `Traces to:` apunta a la Formal Layer oficial      | lint        | Corregir o degradar a `Rationale:`       |
 | Extensiones acotadas    | No hay metadata ad hoc fuera de `extensions.{namespace}`      | schema      | Reubicar extension                       |
 | Enforcement declarado   | Las tablas nuevas o reescritas incluyen columna `Enforcement` | lint        | Completar tabla                          |

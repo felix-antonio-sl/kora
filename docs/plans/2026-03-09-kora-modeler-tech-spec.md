@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:knowledge:kora:core:specs:modeler:1.0.0"
+  urn: "urn:kora:kb:specs:modeler:1.0.0"
   provenance:
     created_by: "gemini-cli"
     created_at: "2026-03-09"
@@ -13,7 +13,7 @@ type: technical-specification
 # 📄 Especificación Técnica: Kora Modeler (v1.0)
 
 **Estado:** Draft para Sprint 0  
-**Referencia:** urn:knowledge:kora:core:specs:modeler:1.0.0  
+**Referencia:** urn:kora:kb:specs:modeler:1.0.0  
 **Filosofía:** "El modelo es el Grafo; el Diagrama y el Lenguaje son proyecciones".
 
 ---

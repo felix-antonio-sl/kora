@@ -10,7 +10,7 @@ lang: es
 # CM-AGENT-DESIGNER
 
 ## Proposito
-Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capas de estado, interface y security. Produce blueprint arquitectonico completo. Referencia: agent-spec-md v8.3.0.
+Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capas de estado, interface y security. Produce blueprint arquitectonico completo, incluyendo la materializacion de Skills degenerados o extendidos gobernados. Referencia: agent-spec-md v8.4.0.
 
 ## Input/Output
 - **Input:** dominio: string (descripcion del dominio del agente), namespace: string, restricciones: string[] | null
@@ -23,8 +23,15 @@ Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capa
 4. MODELAR INTERFACE (F): Identificar herramientas necesarias. Definir firmas inferenciales(input→output). Routing map si usa kb_route.
 5. MODELAR SECURITY (M): Definir allowed_kb, sandbox mode, tools allow/deny, sub_agents limits.
 6. MODELAR WIRING (W): ¿Es sub-agente de alguien? ¿Tiene sub-agentes? Declarar herencia y disipacion.
-7. IDENTIFICAR SKILLS: Logica >5 pasos → CM. Listar CMs necesarios con proposito y estado que los invoca.
-8. Presentar blueprint al usuario: tabla de componentes, diagrama FSM, lista de skills.
+7. IDENTIFICAR SKILLS: Logica >5 pasos → Skill. Para cada `CM-*`, elegir forma:
+   - degenerado: `skills/CM-*.md`
+   - extendido: `skills/CM-*/SKILL.md` + `scripts/`, `references/`, `assets/` si la capacidad requiere bundle gobernado
+8. MODELAR SKILL BUNDLES: si un Skill es extendido, declarar:
+   - entrypoint `SKILL.md` como portador del `CM Core`
+   - fibras adjuntas necesarias (`scripts/`, `references/`, `assets/`)
+   - metadata del bundle en `extensions.{namespace}.skill`
+   - compatibilidad `allowed_tools ⊆ TOOLS.md` y `requires ⊆ config.json`
+9. Presentar blueprint al usuario: tabla de componentes, diagrama FSM, lista de skills con su materializacion.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
@@ -35,5 +42,5 @@ Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capa
 | state | {soul: SoulSpec, user: UserSpec} | Capas de estado (identidad + operador) |
 | tools | ToolSpec[] | Herramientas con firmas inferenciales |
 | config | ConfigSpec | Security: allowed_kb, sandbox, tools, sub_agents |
-| skills | SkillSpec[] | CMs necesarios con proposito |
+| skills | SkillSpec[] | Skills necesarios con proposito, materializacion (`degenerado` o `extendido`) y fibras adjuntas si aplica |
 | wiring | WiringSpec[] | Herencia y disipacion si aplica |

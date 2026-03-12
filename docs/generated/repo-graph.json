@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 745,
-    "node_count": 898,
-    "edge_count": 4242
+    "scanned_files": 616,
+    "node_count": 880,
+    "edge_count": 3865
   },
   "node_kind_counts": {
-    "artifact": 230,
-    "knowledge": 267,
+    "artifact": 350,
+    "knowledge": 129,
     "skill": 236,
     "spec": 7,
     "tool": 113,
@@ -20,8 +20,8 @@
     "DeclaresTool": 201,
     "InvokesSkill": 220,
     "RoutesToAgent": 56,
-    "TracesTo": 44,
-    "XRef": 2634
+    "TracesTo": 47,
+    "XRef": 2254
   },
   "nodes": [
     {
@@ -1240,6 +1240,353 @@
       "namespace": "gn"
     },
     {
+      "id": "urn:gn:kb:aceleracion-regional",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:aceleracion-regional"
+    },
+    {
+      "id": "urn:gn:kb:cies-sitia",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:cies-sitia"
+    },
+    {
+      "id": "urn:gn:kb:comunicaciones-oc",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:comunicaciones-oc"
+    },
+    {
+      "id": "urn:gn:kb:cuentas-publicas-2021-2024",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:cuentas-publicas-2021-2024"
+    },
+    {
+      "id": "urn:gn:kb:dictamenes-cgr-gore",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:dictamenes-cgr-gore"
+    },
+    {
+      "id": "urn:gn:kb:erd-nuble-2024-2030",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:erd-nuble-2024-2030"
+    },
+    {
+      "id": "urn:gn:kb:estrategia-gestion",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:estrategia-gestion"
+    },
+    {
+      "id": "urn:gn:kb:estrategia-td-ia",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:estrategia-td-ia"
+    },
+    {
+      "id": "urn:gn:kb:flujos-aprobacion-documentos",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:flujos-aprobacion-documentos"
+    },
+    {
+      "id": "urn:gn:kb:gestion-info-geoespacial",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:gestion-info-geoespacial"
+    },
+    {
+      "id": "urn:gn:kb:gestion-ipr",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:gestion-ipr"
+    },
+    {
+      "id": "urn:gn:kb:gestion-prpto",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:gestion-prpto"
+    },
+    {
+      "id": "urn:gn:kb:gestion-rendiciones",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:gestion-rendiciones"
+    },
+    {
+      "id": "urn:gn:kb:glosario-gore-nuble",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:glosario-gore-nuble"
+    },
+    {
+      "id": "urn:gn:kb:gore-ideal",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:gore-ideal"
+    },
+    {
+      "id": "urn:gn:kb:guia-circular-33-sts",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:guia-circular-33-sts"
+    },
+    {
+      "id": "urn:gn:kb:guia-comunicaciones",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:guia-comunicaciones"
+    },
+    {
+      "id": "urn:gn:kb:guia-fril-2025-sts",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:guia-fril-2025-sts"
+    },
+    {
+      "id": "urn:gn:kb:guia-frpd-nuble",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:guia-frpd-nuble"
+    },
+    {
+      "id": "urn:gn:kb:guia-idi-sni-sts",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:guia-idi-sni-sts"
+    },
+    {
+      "id": "urn:gn:kb:guia-programas-directos-gore",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:guia-programas-directos-gore"
+    },
+    {
+      "id": "urn:gn:kb:indicadores-nuble",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:indicadores-nuble"
+    },
+    {
+      "id": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:informe-estado-inicial-gore-pre-td"
+    },
+    {
+      "id": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:instructivo-subvencion-8-2025-sts"
+    },
+    {
+      "id": "urn:gn:kb:intro-gores-nuble",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:intro-gores-nuble"
+    },
+    {
+      "id": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ley-presupuestos-2026-normas-generales"
+    },
+    {
+      "id": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31"
+    },
+    {
+      "id": "urn:gn:kb:loc-gore",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:loc-gore"
+    },
+    {
+      "id": "urn:gn:kb:manual-activo-fijo",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-activo-fijo"
+    },
+    {
+      "id": "urn:gn:kb:manual-asistencia",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-asistencia"
+    },
+    {
+      "id": "urn:gn:kb:manual-bienestar",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-bienestar"
+    },
+    {
+      "id": "urn:gn:kb:manual-ciclo-vida",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-ciclo-vida"
+    },
+    {
+      "id": "urn:gn:kb:manual-compras",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-compras"
+    },
+    {
+      "id": "urn:gn:kb:manual-contabilidad",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-contabilidad"
+    },
+    {
+      "id": "urn:gn:kb:manual-desarrollo-organizacional",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-desarrollo-organizacional"
+    },
+    {
+      "id": "urn:gn:kb:manual-flotas",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-flotas"
+    },
+    {
+      "id": "urn:gn:kb:manual-induccion-gore-nuble-2026",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-induccion-gore-nuble-2026"
+    },
+    {
+      "id": "urn:gn:kb:manual-inventarios-bodegas",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-inventarios-bodegas"
+    },
+    {
+      "id": "urn:gn:kb:manual-operacional-dgi",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-operacional-dgi"
+    },
+    {
+      "id": "urn:gn:kb:manual-presupuesto",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-presupuesto"
+    },
+    {
+      "id": "urn:gn:kb:manual-remuneraciones",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-remuneraciones"
+    },
+    {
+      "id": "urn:gn:kb:manual-tesoreria",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:manual-tesoreria"
+    },
+    {
+      "id": "urn:gn:kb:marco-legal-gores",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:marco-legal-gores"
+    },
+    {
+      "id": "urn:gn:kb:modelos-actos-juridicos",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:modelos-actos-juridicos"
+    },
+    {
+      "id": "urn:gn:kb:nuble-250",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:nuble-250"
+    },
+    {
+      "id": "urn:gn:kb:organigrama",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:organigrama"
+    },
+    {
+      "id": "urn:gn:kb:plan-potenciamiento-dgi",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:plan-potenciamiento-dgi"
+    },
+    {
+      "id": "urn:gn:kb:problemas-sociales-cl",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:problemas-sociales-cl"
+    },
+    {
+      "id": "urn:gn:kb:ris-artcult",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-artcult"
+    },
+    {
+      "id": "urn:gn:kb:ris-deportes",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-deportes"
+    },
+    {
+      "id": "urn:gn:kb:ris-edpub",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-edpub"
+    },
+    {
+      "id": "urn:gn:kb:ris-empub",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-empub"
+    },
+    {
+      "id": "urn:gn:kb:ris-index",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-index"
+    },
+    {
+      "id": "urn:gn:kb:ris-patrimonio",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-patrimonio"
+    },
+    {
+      "id": "urn:gn:kb:ris-pmdt",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-pmdt"
+    },
+    {
+      "id": "urn:gn:kb:ris-proginv",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-proginv"
+    },
+    {
+      "id": "urn:gn:kb:ris-proyinv",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:ris-proyinv"
+    },
+    {
+      "id": "urn:gn:kb:selector-ipr",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:selector-ipr"
+    },
+    {
+      "id": "urn:gn:kb:transferencia-ppr",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:transferencia-ppr"
+    },
+    {
+      "id": "urn:gn:kb:vision-desarrollo-nuble",
+      "kind": "artifact",
+      "urn": "urn:gn:kb:vision-desarrollo-nuble"
+    },
+    {
+      "id": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "title": "GN-IPR-GESTION-OPERACIONAL-01",
+      "path": "tmp_kb_gn_019_gestion_ipr_koda.yml",
+      "namespace": "gorenuble"
+    },
+    {
+      "id": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
+      "title": "GN-CONC-8-STS-2025-01",
+      "path": "tmp_kb_gn_028_instructivo_subvencion_8_koda.yml",
+      "namespace": "gorenuble"
+    },
+    {
+      "id": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "kind": "artifact",
+      "urn": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0"
+    },
+    {
+      "id": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0",
+      "kind": "artifact",
+      "urn": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0"
+    },
+    {
+      "id": "urn:gorenuble:gn:selector-ipr:1.0.0",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:gorenuble:gn:selector-ipr:1.0.0",
+      "title": "tmp_kb_gn_011_selector_ipr_koda.yml",
+      "path": "tmp_kb_gn_011_selector_ipr_koda.yml",
+      "namespace": "gorenuble"
+    },
+    {
+      "id": "urn:gov:kb:intro-tde",
+      "kind": "artifact",
+      "urn": "urn:gov:kb:intro-tde"
+    },
+    {
+      "id": "urn:gov:kb:lexicon-wikiguias",
+      "kind": "artifact",
+      "urn": "urn:gov:kb:lexicon-wikiguias"
+    },
+    {
       "id": "urn:kora:agent-bootstrap:clawmaster-agents:1.0.0",
       "kind": "artifact",
       "category": "Agents",
@@ -1515,6 +1862,16 @@
       "urn": "urn:kora:catalog:master:2.0.0"
     },
     {
+      "id": "urn:kora:kb:spec:1.0.0",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:spec:1.0.0"
+    },
+    {
+      "id": "urn:kora:kb:transform:1.0.0",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:transform:1.0.0"
+    },
+    {
       "id": "urn:korvo:agent-bootstrap:korax-agents:2.0.0",
       "kind": "artifact",
       "category": "Agents",
@@ -1558,6 +1915,21 @@
       "title": "USER.md",
       "path": "agents/korvo/korax/USER.md",
       "namespace": "korvo"
+    },
+    {
+      "id": "urn:mgmt:kb:estructura-estado-chile",
+      "kind": "artifact",
+      "urn": "urn:mgmt:kb:estructura-estado-chile"
+    },
+    {
+      "id": "urn:mgmt:kb:lean6",
+      "kind": "artifact",
+      "urn": "urn:mgmt:kb:lean6"
+    },
+    {
+      "id": "urn:mgmt:kb:meyer-org-structure",
+      "kind": "artifact",
+      "urn": "urn:mgmt:kb:meyer-org-structure"
     },
     {
       "id": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
@@ -1875,6 +2247,41 @@
       "namespace": "ops"
     },
     {
+      "id": "urn:orko:kb:impl-orko-toolkit",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:impl-orko-toolkit"
+    },
+    {
+      "id": "urn:orko:kb:orko-arquitectura",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:orko-arquitectura"
+    },
+    {
+      "id": "urn:orko:kb:orko-fases",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:orko-fases"
+    },
+    {
+      "id": "urn:orko:kb:orko-fundamentos",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:orko-fundamentos"
+    },
+    {
+      "id": "urn:orko:kb:orko-metodologia",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:orko-metodologia"
+    },
+    {
+      "id": "urn:orko:kb:orko-tejidos",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:orko-tejidos"
+    },
+    {
+      "id": "urn:orko:kb:orko-toolkit",
+      "kind": "artifact",
+      "urn": "urn:orko:kb:orko-toolkit"
+    },
+    {
       "id": "urn:pro:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
       "kind": "artifact",
       "category": "Agents",
@@ -2073,6 +2480,211 @@
       "id": "urn:pro:kb:hodom-situacion-chile",
       "kind": "artifact",
       "urn": "urn:pro:kb:hodom-situacion-chile"
+    },
+    {
+      "id": "urn:tde:kb:claveunica-tyc",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:claveunica-tyc"
+    },
+    {
+      "id": "urn:tde:kb:decreto-4-procedimiento-digital",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:decreto-4-procedimiento-digital"
+    },
+    {
+      "id": "urn:tde:kb:estrategia-capacitaciones-tde",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:estrategia-capacitaciones-tde"
+    },
+    {
+      "id": "urn:tde:kb:estrategia-datos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:estrategia-datos"
+    },
+    {
+      "id": "urn:tde:kb:estrategia-identidad-digital",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:estrategia-identidad-digital"
+    },
+    {
+      "id": "urn:tde:kb:glosario-simple",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:glosario-simple"
+    },
+    {
+      "id": "urn:tde:kb:gobierno-digital-2030",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:gobierno-digital-2030"
+    },
+    {
+      "id": "urn:tde:kb:guia-anonimizacion-datos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-anonimizacion-datos"
+    },
+    {
+      "id": "urn:tde:kb:guia-calidad-web",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-calidad-web"
+    },
+    {
+      "id": "urn:tde:kb:guia-cloud-publica",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-cloud-publica"
+    },
+    {
+      "id": "urn:tde:kb:guia-diseno-servicios",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-diseno-servicios"
+    },
+    {
+      "id": "urn:tde:kb:guia-estandares-datos-abiertos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-estandares-datos-abiertos"
+    },
+    {
+      "id": "urn:tde:kb:guia-evaltic",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-evaltic"
+    },
+    {
+      "id": "urn:tde:kb:guia-gestion-tic",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-gestion-tic"
+    },
+    {
+      "id": "urn:tde:kb:guia-marco-gestion-datos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-marco-gestion-datos"
+    },
+    {
+      "id": "urn:tde:kb:guia-metadatos-documentos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-metadatos-documentos"
+    },
+    {
+      "id": "urn:tde:kb:guia-metodologia-proyectos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-metodologia-proyectos"
+    },
+    {
+      "id": "urn:tde:kb:guia-rapida-cpat",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-rapida-cpat"
+    },
+    {
+      "id": "urn:tde:kb:guia-registro-tratamiento-datos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-registro-tratamiento-datos"
+    },
+    {
+      "id": "urn:tde:kb:guia-seguridad-ciberseguridad",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-seguridad-ciberseguridad"
+    },
+    {
+      "id": "urn:tde:kb:guia-sistema-tde-2025",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-sistema-tde-2025"
+    },
+    {
+      "id": "urn:tde:kb:guia-voz-tono",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:guia-voz-tono"
+    },
+    {
+      "id": "urn:tde:kb:legislacion-ia-chile",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:legislacion-ia-chile"
+    },
+    {
+      "id": "urn:tde:kb:ley-19880-procedimiento-administrativo",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:ley-19880-procedimiento-administrativo"
+    },
+    {
+      "id": "urn:tde:kb:ley-21180-tde",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:ley-21180-tde"
+    },
+    {
+      "id": "urn:tde:kb:ley-21658-ciberseguridad",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:ley-21658-ciberseguridad"
+    },
+    {
+      "id": "urn:tde:kb:ley-21719-datos-personales",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:ley-21719-datos-personales"
+    },
+    {
+      "id": "urn:tde:kb:manual-claveunica-boton",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-claveunica-boton"
+    },
+    {
+      "id": "urn:tde:kb:manual-coordinadora-tde",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-coordinadora-tde"
+    },
+    {
+      "id": "urn:tde:kb:manual-integracion-claveunica",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-integracion-claveunica"
+    },
+    {
+      "id": "urn:tde:kb:manual-integracion-notificaciones",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-integracion-notificaciones"
+    },
+    {
+      "id": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-notificaciones-atencion-ciudadana"
+    },
+    {
+      "id": "urn:tde:kb:manual-notificaciones-inicio",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-notificaciones-inicio"
+    },
+    {
+      "id": "urn:tde:kb:manual-notificaciones-institucional",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-notificaciones-institucional"
+    },
+    {
+      "id": "urn:tde:kb:manual-simple-saas",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:manual-simple-saas"
+    },
+    {
+      "id": "urn:tde:kb:nt-autenticacion",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:nt-autenticacion"
+    },
+    {
+      "id": "urn:tde:kb:nt-documentos-expedientes",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:nt-documentos-expedientes"
+    },
+    {
+      "id": "urn:tde:kb:nt-interoperabilidad",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:nt-interoperabilidad"
+    },
+    {
+      "id": "urn:tde:kb:nt-notificaciones",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:nt-notificaciones"
+    },
+    {
+      "id": "urn:tde:kb:nt-plataformas-procedimientos",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:nt-plataformas-procedimientos"
+    },
+    {
+      "id": "urn:tde:kb:nt-seguridad-ciberseguridad",
+      "kind": "artifact",
+      "urn": "urn:tde:kb:nt-seguridad-ciberseguridad"
     },
     {
       "id": "urn:fxsl:kb:action-primary-key",
@@ -2435,696 +3047,12 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:gn:kb:aceleracion-regional",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:aceleracion-regional",
-      "title": "Estrategia de desarrollo exponencial",
-      "path": "knowledge/gn/gobernanza/aceleracion-regional.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "title": "BPMN D01: Tramitación de Actos Administrativos",
-      "path": "knowledge/gn/bpmn/bpmn-d01-actos-administrativos.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "title": "BPMN D02: Ciclo Presupuestario Regional",
-      "path": "knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "title": "BPMN D03: Gestión de Intervenciones Públicas Regionales (IPR)",
-      "path": "knowledge/gn/bpmn/bpmn-d03-gestion-ipr.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "title": "BPMN D04: Compras Públicas y Contrataciones",
-      "path": "knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "title": "BPMN D05: Gestión de Inventarios y Activo Fijo",
-      "path": "knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "title": "BPMN D06: Gestión de Flota Vehicular",
-      "path": "knowledge/gn/bpmn/bpmn-d06-flota-vehicular.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d07-rrhh",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d07-rrhh",
-      "title": "BPMN D07: Gestión de Personas (RRHH)",
-      "path": "knowledge/gn/bpmn/bpmn-d07-rrhh.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d08-rendiciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d08-rendiciones",
-      "title": "BPMN D08: Gestión de Rendiciones de Cuentas",
-      "path": "knowledge/gn/bpmn/bpmn-d08-rendiciones.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "title": "BPMN D09: Gestión Operativa CIES/SITIA (Seguridad Pública)",
-      "path": "knowledge/gn/bpmn/bpmn-d09-cies-sitia.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "title": "BPMN D10: Gestión de Información Geoespacial (IDE/Geonodo)",
-      "path": "knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:bpmn-index",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:bpmn-index",
-      "title": "Índice de Procesos BPMN — GORE Ñuble",
-      "path": "knowledge/gn/bpmn/bpmn-index.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:cies-sitia",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:cies-sitia",
-      "title": "Centro Integrado de Emergencia y Seguridad (CIES) - SITIA Ñuble",
-      "path": "knowledge/gn/gobernanza/cies-sitia.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:comunicaciones-oc",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:comunicaciones-oc",
-      "title": "Comunicaciones Oscar Crisóstomo",
-      "path": "knowledge/gn/gobernanza/comunicaciones-oc.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:cuentas-publicas-2021-2024",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:cuentas-publicas-2021-2024",
-      "title": "Cuentas Públicas Gobierno Regional de Ñuble (2021-2024)",
-      "path": "knowledge/gn/gobernanza/cuentas-publicas-2021-2024.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:dictamenes-cgr-gore",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:dictamenes-cgr-gore",
-      "title": "Dictámenes CGR para Gobiernos Regionales",
-      "path": "knowledge/gn/normativa/dictamenes-cgr-gore.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:erd-nuble-2024-2030",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:erd-nuble-2024-2030",
-      "title": "Estrategia Regional de Desarrollo Ñuble 2024 - 2030",
-      "path": "knowledge/gn/gobernanza/erd-nuble-2024-2030.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:estrategia-gestion",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:estrategia-gestion",
-      "title": "Estrategia y Gestión del GORE en Chile",
-      "path": "knowledge/gn/gobernanza/estrategia-gestion.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:estrategia-td-ia",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:estrategia-td-ia",
-      "title": "Estrategia y Plan de Transformación Digital e IA \"Ñuble Aumentado\" (2025–2028)",
-      "path": "knowledge/gn/gobernanza/estrategia-td-ia.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:flujos-aprobacion-documentos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:flujos-aprobacion-documentos",
-      "title": "Flujos de Aprobación de Documentos — GORE Ñuble",
-      "path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:gestion-info-geoespacial",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:gestion-info-geoespacial",
-      "title": "Gestión de Información Geoespacial en GORE Ñuble",
-      "path": "knowledge/gn/gestion/gestion-info-geoespacial.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:gestion-ipr",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:gestion-ipr",
-      "title": "Gestión Operacional de Intervenciones Públicas Regionales (IPR)",
-      "path": "knowledge/gn/gestion/gestion-ipr.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:gestion-prpto",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:gestion-prpto",
-      "title": "Gestión Financiera y Operativa del Presupuesto Regional (GORE)",
-      "path": "knowledge/gn/gestion/gestion-prpto.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:gestion-prpto-2026",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:gestion-prpto-2026",
-      "title": "Gestión Financiera y Operativa del Presupuesto Regional 2026",
-      "path": "knowledge/gn/gestion/gestion-prpto-2026.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:gestion-rendiciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:gestion-rendiciones",
-      "title": "Gestión de Rendiciones de Cuentas - GORE Ñuble",
-      "path": "knowledge/gn/gestion/gestion-rendiciones.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:glosario-gore-nuble",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:glosario-gore-nuble",
-      "title": "Glosario Unificado GORE Ñuble",
-      "path": "knowledge/gn/gobernanza/glosario-gore-nuble.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:glosario-ipr-consolidado",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:glosario-ipr-consolidado",
-      "title": "Glosario Consolidado IPR - GORE Ñuble",
-      "path": "knowledge/gn/gobernanza/glosario-ipr-consolidado.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:glosas-gores-2026",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:glosas-gores-2026",
-      "title": "Glosas y Requerimientos de Información GORES 2026",
-      "path": "knowledge/gn/gestion/glosas-gores-2026.md",
-      "namespace": "gn"
-    },
-    {
       "id": "urn:gn:kb:gn-cqs-master",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:gn:kb:gn-cqs-master",
       "title": "Catálogo Maestro de Preguntas de Competencia",
-      "path": "knowledge/gn/gn-cqs-master.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:gore-ideal",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:gore-ideal",
-      "title": "GORE Ñuble Ideal / GORE 4.0",
-      "path": "knowledge/gn/gobernanza/gore-ideal.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:guia-circular-33-sts",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:guia-circular-33-sts",
-      "title": "Guía Operativa Circular 33 GORE Ñuble",
-      "path": "knowledge/gn/guias/guia-circular-33-sts.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:guia-comunicaciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:guia-comunicaciones",
-      "title": "Guía Integral de Comunicaciones GORE Ñuble",
-      "path": "knowledge/gn/guias/guia-comunicaciones.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:guia-fril-2025-sts",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:guia-fril-2025-sts",
-      "title": "Instructivo FRIL 2025 – Región de Ñuble",
-      "path": "knowledge/gn/guias/guia-fril-2025-sts.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:guia-frpd-nuble",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:guia-frpd-nuble",
-      "title": "Guía Operativa FRPD Ñuble 2025",
-      "path": "knowledge/gn/guias/guia-frpd-nuble.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:guia-idi-sni-sts",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:guia-idi-sni-sts",
-      "title": "Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos Regionales",
-      "path": "knowledge/gn/guias/guia-idi-sni-sts.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:guia-programas-directos-gore",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:guia-programas-directos-gore",
-      "title": "Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa GORE (Vía Glosa 06)",
-      "path": "knowledge/gn/guias/guia-programas-directos-gore.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:indicadores-nuble",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:indicadores-nuble",
-      "title": "Indicadores regionales y comunales región de Ñuble",
-      "path": "knowledge/gn/gobernanza/indicadores-nuble.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
-      "title": "Informe Estado Inicial GORE Ñuble Pre-Transformación Digital",
-      "path": "knowledge/gn/gobernanza/informe-estado-inicial-gore-pre-td.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "title": "Instructivo Concurso de Vinculación con la Comunidad 8% 2025 – Región de Ñuble",
-      "path": "knowledge/gn/guias/instructivo-subvencion-8-2025-sts.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:intro-gores-nuble",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:intro-gores-nuble",
-      "title": "Guía Integral de la Administración Regional de Ñuble",
-      "path": "knowledge/gn/gobernanza/intro-gores-nuble.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "title": "Ley de Presupuestos 2026: Normas Generales",
-      "path": "knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "title": "Partida 31: Gobiernos Regionales - Ley de Presupuestos 2026",
-      "path": "knowledge/gn/normativa/ley-presupuestos-2026-partida-31.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:loc-gore",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:loc-gore",
-      "title": "Ley Orgánica Constitucional sobre Gobierno y Administración Regional",
-      "path": "knowledge/gn/normativa/loc-gore.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-activo-fijo",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-activo-fijo",
-      "title": "Manual 2.3: Gestión del Ciclo de Vida del Activo Fijo",
-      "path": "knowledge/gn/manuales/manual-activo-fijo.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-asistencia",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-asistencia",
-      "title": "Manual 3.3: Gestión del Tiempo y Ausentismo",
-      "path": "knowledge/gn/manuales/manual-asistencia.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-bienestar",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-bienestar",
-      "title": "Manual 3.5: Bienestar y Calidad de Vida",
-      "path": "knowledge/gn/manuales/manual-bienestar.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-ciclo-vida",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-ciclo-vida",
-      "title": "Manual 3.1: Ciclo de Vida del Funcionario",
-      "path": "knowledge/gn/manuales/manual-ciclo-vida.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-compras",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-compras",
-      "title": "Manual 2.1: Compras Públicas y Contrataciones",
-      "path": "knowledge/gn/manuales/manual-compras.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-contabilidad",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-contabilidad",
-      "title": "Manual 1.2: Contabilidad Gubernamental y Cierre Financiero",
-      "path": "knowledge/gn/manuales/manual-contabilidad.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-desarrollo-organizacional",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-desarrollo-organizacional",
-      "title": "Manual 3.4: Desarrollo Organizacional y Capacitación",
-      "path": "knowledge/gn/manuales/manual-desarrollo-organizacional.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-flotas",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-flotas",
-      "title": "Manual 2.4: Servicios Generales y Gestión de Flotas",
-      "path": "knowledge/gn/manuales/manual-flotas.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "title": "Manual de Inducción del Gobierno Regional de Ñuble 2026",
-      "path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-inventarios-bodegas",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-inventarios-bodegas",
-      "title": "Manual 2.2: Gestión de Inventarios y Bodegas",
-      "path": "knowledge/gn/manuales/manual-inventarios-bodegas.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-operacional-dgi",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-operacional-dgi",
-      "title": "Manual Operacional DGI",
-      "path": "knowledge/gn/manuales/manual-operacional-dgi.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-presupuesto",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-presupuesto",
-      "title": "Manual 1.1: Formulación y Ejecución Presupuestaria",
-      "path": "knowledge/gn/manuales/manual-presupuesto.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-remuneraciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-remuneraciones",
-      "title": "Manual 3.2: Remuneraciones y Compensaciones",
-      "path": "knowledge/gn/manuales/manual-remuneraciones.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:manual-tesoreria",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:manual-tesoreria",
-      "title": "Manual 1.3: Tesorería y Gestión de Ingresos",
-      "path": "knowledge/gn/manuales/manual-tesoreria.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:marco-legal-gores",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:marco-legal-gores",
-      "title": "Compendio Jurídico para Gobiernos Regionales",
-      "path": "knowledge/gn/normativa/marco-legal-gores.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:modelos-actos-juridicos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:modelos-actos-juridicos",
-      "title": "Modelos de Actos Jurídicos GORE Ñuble",
-      "path": "knowledge/gn/normativa/modelos-actos-juridicos.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:nuble-250",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:nuble-250",
-      "title": "Agenda Estratégica Ñuble 250",
-      "path": "knowledge/gn/gobernanza/nuble-250.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "title": "Ontología Ω-IPR: Gestión y Fusión de Financiamiento",
-      "path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:organigrama",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:organigrama",
-      "title": "Organigrama Institucional GORE Ñuble",
-      "path": "knowledge/gn/gobernanza/organigrama.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:plan-potenciamiento-dgi",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:plan-potenciamiento-dgi",
-      "title": "Plan de Potenciamiento DGI",
-      "path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:problemas-sociales-cl",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:problemas-sociales-cl",
-      "title": "Catálogo de Problemas Sociales de Chile (STS)",
-      "path": "knowledge/gn/gobernanza/problemas-sociales-cl.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:programas-vigentes-resumen",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:programas-vigentes-resumen",
-      "title": "Programas Vigentes Resumen",
-      "path": "knowledge/gn/datos/programas-vigentes-resumen.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-artcult",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-artcult",
-      "title": "RIS Arte y Cultura (SNI 2024)",
-      "path": "knowledge/gn/ris/ris-artcult.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-deportes",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-deportes",
-      "title": "RIS Infraestructura Deportiva (SNI 2024)",
-      "path": "knowledge/gn/ris/ris-deportes.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-edpub",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-edpub",
-      "title": "RIS Edificación Pública (SNI 2024)",
-      "path": "knowledge/gn/ris/ris-edpub.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-empub",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-empub",
-      "title": "RIS Estudios y Proyectos de Empresas del Estado (SNI 2024)",
-      "path": "knowledge/gn/ris/ris-empub.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-index",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-index",
-      "title": "Índice RIS SNI — GORE Ñuble",
-      "path": "knowledge/gn/ris/ris-index.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-patrimonio",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-patrimonio",
-      "title": "RIS Proyectos Patrimoniales (SNI 2024)",
-      "path": "knowledge/gn/ris/ris-patrimonio.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-pmdt",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-pmdt",
-      "title": "RIS Estudio Básico PMDT (SNI 2024)",
-      "path": "knowledge/gn/ris/ris-pmdt.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-proginv",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-proginv",
-      "title": "RIS Genéricas — Programas de Inversión (SNI 2025)",
-      "path": "knowledge/gn/ris/ris-proginv.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:ris-proyinv",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:ris-proyinv",
-      "title": "RIS Genéricas — Proyectos de Inversión (SNI 2023)",
-      "path": "knowledge/gn/ris/ris-proyinv.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:selector-ipr",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:selector-ipr",
-      "title": "Selector de Vías de Financiamiento — IPR GORE Ñuble",
-      "path": "knowledge/gn/ris/selector-ipr.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:transferencia-ppr",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:transferencia-ppr",
-      "title": "Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas",
-      "path": "knowledge/gn/gestion/transferencia-ppr.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:kb:vision-desarrollo-nuble",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gn:kb:vision-desarrollo-nuble",
-      "title": "Visión de Desarrollo GORE Ñuble",
-      "path": "knowledge/gn/gobernanza/vision-desarrollo-nuble.md",
+      "path": "knowledge/gn/onto_gorenuble/gn-cqs-master.md",
       "namespace": "gn"
     },
     {
@@ -3261,87 +3189,6 @@
       "title": "SSOT — Territorio GORE Ñuble",
       "path": "knowledge/gn/ssot/ssot-territorio.md",
       "namespace": "gnub"
-    },
-    {
-      "id": "urn:gov:kb:capacitaciones-tde",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:capacitaciones-tde",
-      "title": "Estrategia de Capacitaciones para la Transformación Digital del Estado",
-      "path": "knowledge/gov/capacitaciones_tde.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:cloud-publica",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:cloud-publica",
-      "title": "Recomendaciones Técnicas para la Adquisición de Servicios de Cloud Pública",
-      "path": "knowledge/gov/cloud_publica.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:datos-administracion-estado",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:datos-administracion-estado",
-      "title": "Estrategia de Datos de la Administración del Estado",
-      "path": "knowledge/gov/datos_administracion_estado.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:datosgob",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:datosgob",
-      "title": "Portal de Datos Abiertos del Estado — Datos.gob.cl",
-      "path": "knowledge/gov/datosgob.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:identidad-digital",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:identidad-digital",
-      "title": "Estrategia de Identidad Digital",
-      "path": "knowledge/gov/identidad_digital.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:intro-tde",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:intro-tde",
-      "title": "Guía Maestra de Transformación Digital del Estado (TDE)",
-      "path": "knowledge/gov/intro_tde.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:lexicon-wikiguias",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:lexicon-wikiguias",
-      "title": "Lexicón WikiGuías SGD — Definiciones Canónicas TDE",
-      "path": "knowledge/gov/lexicon_wikiguias.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:metodologia-proyectos-tic",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:metodologia-proyectos-tic",
-      "title": "Metodología para la Gestión de Proyectos TIC",
-      "path": "knowledge/gov/metodologia_proyectos_tic.md",
-      "namespace": "gov"
-    },
-    {
-      "id": "urn:gov:kb:notificaciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:gov:kb:notificaciones",
-      "title": "Plataforma de Notificaciones Electrónicas del Estado",
-      "path": "knowledge/gov/notificaciones.md",
-      "namespace": "gov"
     },
     {
       "id": "urn:kora:kb:00-fundamentos-previos",
@@ -3911,114 +3758,6 @@
       "namespace": "legal"
     },
     {
-      "id": "urn:mgmt:kb:estructura-estado-chile",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:mgmt:kb:estructura-estado-chile",
-      "title": "Estructura del Estado de Chile",
-      "path": "knowledge/mgmt/estructura-estado-chile.md",
-      "namespace": "mgmt"
-    },
-    {
-      "id": "urn:mgmt:kb:lean6",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:mgmt:kb:lean6",
-      "title": "Lean Six Sigma — Core Concepts",
-      "path": "knowledge/mgmt/lean6.md",
-      "namespace": "mgmt"
-    },
-    {
-      "id": "urn:mgmt:kb:meyer-org-structure",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:mgmt:kb:meyer-org-structure",
-      "title": "Principle-based Organizational Structure",
-      "path": "knowledge/mgmt/meyer-org-structure.md",
-      "namespace": "mgmt"
-    },
-    {
-      "id": "urn:mgmt:kb:mw-waissbluth",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:mgmt:kb:mw-waissbluth",
-      "title": "Introducción a la Gestión Pública (Waissbluth)",
-      "path": "knowledge/mgmt/mw-waissbluth.md",
-      "namespace": "mgmt"
-    },
-    {
-      "id": "urn:orko:kb:impl-orko-toolkit",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:impl-orko-toolkit",
-      "title": "ORKO - Toolkit Implementación (Layer 4-5)",
-      "path": "knowledge/orko/impl-orko-toolkit.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-arquitectura",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-arquitectura",
-      "title": "ORKO - Arquitectura Organizacional (Layer 1)",
-      "path": "knowledge/orko/orko-arquitectura.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-fases",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-fases",
-      "title": "ORKO - Fases Metodología WSLC (Layer 3)",
-      "path": "knowledge/orko/orko-fases.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-fundamentos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-fundamentos",
-      "title": "ORKO - Fundamentos Teóricos (Layer 0)",
-      "path": "knowledge/orko/orko-fundamentos.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-metodologia",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-metodologia",
-      "title": "ORKO - Metodología (Layer 3)",
-      "path": "knowledge/orko/orko-metodologia.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-playbooks",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-playbooks",
-      "title": "ORKO - Catálogo Playbooks (P01-P15)",
-      "path": "knowledge/orko/orko-playbooks.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-tejidos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-tejidos",
-      "title": "ORKO - Tejidos Tecnológicos (Layer 2)",
-      "path": "knowledge/orko/orko-tejidos.md",
-      "namespace": "orko"
-    },
-    {
-      "id": "urn:orko:kb:orko-toolkit",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:orko:kb:orko-toolkit",
-      "title": "ORKO - Toolkit de Implementación (Layer 4)",
-      "path": "knowledge/orko/orko-toolkit.md",
-      "namespace": "orko"
-    },
-    {
       "id": "urn:pro:kb:firs-framework-integrado-razonamiento-salud",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -4107,375 +3846,6 @@
       "title": "Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026",
       "path": "knowledge/pro/hodom/03-situacion-chile-2026.md",
       "namespace": "pro"
-    },
-    {
-      "id": "urn:tde:kb:claveunica-tyc",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:claveunica-tyc",
-      "title": "Términos y condiciones de ClaveÚnica",
-      "path": "knowledge/tde/plataformas/claveunica-tyc.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:decreto-4-procedimiento-digital",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:decreto-4-procedimiento-digital",
-      "title": "Decreto N 4 -- Reglamento Procedimientos Administrativos Electrónicos",
-      "path": "knowledge/tde/leyes/decreto-4-procedimiento-digital.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:estrategia-capacitaciones-tde",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:estrategia-capacitaciones-tde",
-      "title": "Estrategia de Capacitaciones para la Transformación Digital del Estado",
-      "path": "knowledge/tde/estrategia/estrategia-capacitaciones-tde.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:estrategia-datos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:estrategia-datos",
-      "title": "Estrategia de Datos de la Administración del Estado",
-      "path": "knowledge/tde/estrategia/estrategia-datos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:estrategia-identidad-digital",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:estrategia-identidad-digital",
-      "title": "Estrategia de Identidad Digital",
-      "path": "knowledge/tde/estrategia/estrategia-identidad-digital.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:glosario-simple",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:glosario-simple",
-      "title": "Glosario SIMPLE",
-      "path": "knowledge/tde/plataformas/glosario-simple.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:gobierno-digital-2030",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:gobierno-digital-2030",
-      "title": "Estrategia de Gobierno Digital 2030",
-      "path": "knowledge/tde/estrategia/gobierno-digital-2030.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-anonimizacion-datos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-anonimizacion-datos",
-      "title": "Guía Introductoria a la Anonimización de Datos",
-      "path": "knowledge/tde/guias/guia-anonimizacion-datos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-calidad-web",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-calidad-web",
-      "title": "Guía de Evaluación de Calidad en Sitios Web y Servicios Digitales del Estado",
-      "path": "knowledge/tde/guias/guia-calidad-web.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-cloud-publica",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-cloud-publica",
-      "title": "Recomendaciones técnicas para adquisición de Cloud Pública en OAE",
-      "path": "knowledge/tde/guias/guia-cloud-publica.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-diseno-servicios",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-diseno-servicios",
-      "title": "Recomendaciones para el Diseno de Servicios en el Estado",
-      "path": "knowledge/tde/plataformas/guia-diseno-servicios.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-estandares-datos-abiertos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-estandares-datos-abiertos",
-      "title": "Estándares para apertura y reutilización de Datos Abiertos",
-      "path": "knowledge/tde/guias/guia-estandares-datos-abiertos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-evaltic",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-evaltic",
-      "title": "Guía Técnica: Marco para las Inversiones y el Gasto en Gobierno Digital (EVALTIC)",
-      "path": "knowledge/tde/guias/guia-evaltic.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-gestion-tic",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-gestion-tic",
-      "title": "Orientaciones básicas para la gestión de TIC",
-      "path": "knowledge/tde/guias/guia-gestion-tic.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-marco-gestion-datos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-marco-gestion-datos",
-      "title": "Guía Técnica: Marco de Referencia de Gestión de Datos del Estado (MGDE)",
-      "path": "knowledge/tde/guias/guia-marco-gestion-datos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-metadatos-documentos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-metadatos-documentos",
-      "title": "Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos",
-      "path": "knowledge/tde/guias/guia-metadatos-documentos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-metodologia-proyectos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-metodologia-proyectos",
-      "title": "Metodología para la gestión de proyectos TIC",
-      "path": "knowledge/tde/guias/guia-metodologia-proyectos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-rapida-cpat",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-rapida-cpat",
-      "title": "Guía rápida CPAT",
-      "path": "knowledge/tde/guias/guia-rapida-cpat.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-registro-tratamiento-datos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-registro-tratamiento-datos",
-      "title": "Registro de Actividades de Tratamiento (RAT)",
-      "path": "knowledge/tde/guias/guia-registro-tratamiento-datos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-seguridad-ciberseguridad",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-seguridad-ciberseguridad",
-      "title": "Guía Técnica de Seguridad de la Información y Ciberseguridad",
-      "path": "knowledge/tde/guias/guia-seguridad-ciberseguridad.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-sistema-tde-2025",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-sistema-tde-2025",
-      "title": "Guía Metodológica del Sistema de Transformación Digital 2025",
-      "path": "knowledge/tde/guias/guia-sistema-tde-2025.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:guia-voz-tono",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:guia-voz-tono",
-      "title": "Guia de Voz y Tono — Plataformas de Gobierno Digital",
-      "path": "knowledge/tde/plataformas/guia-voz-tono.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:legislacion-ia-chile",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:legislacion-ia-chile",
-      "title": "Proyecto de Ley de Inteligencia Artificial — Chile",
-      "path": "knowledge/tde/leyes/legislacion-ia-chile.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:ley-19880-procedimiento-administrativo",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:ley-19880-procedimiento-administrativo",
-      "title": "Ley N 19.880 -- Bases Procedimientos Administrativos",
-      "path": "knowledge/tde/leyes/ley-19880-procedimiento-administrativo.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:ley-21180-tde",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:ley-21180-tde",
-      "title": "Ley N 21.180 -- Transformación Digital del Estado",
-      "path": "knowledge/tde/leyes/ley-21180-tde.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:ley-21658-ciberseguridad",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:ley-21658-ciberseguridad",
-      "title": "Ley N 21.658 -- Crea Secretaría de Gobierno Digital",
-      "path": "knowledge/tde/leyes/ley-21658-ciberseguridad.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:ley-21719-datos-personales",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:ley-21719-datos-personales",
-      "title": "Ley 21.719 — Protección de Datos Personales",
-      "path": "knowledge/tde/leyes/ley-21719-datos-personales.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-claveunica-boton",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-claveunica-boton",
-      "title": "Manual de uso botón ClaveÚnica",
-      "path": "knowledge/tde/plataformas/manual-claveunica-boton.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-coordinadora-tde",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-coordinadora-tde",
-      "title": "Manual del Coordinador/a de Transformacion Digital",
-      "path": "knowledge/tde/plataformas/manual-coordinadora-tde.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-integracion-claveunica",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-integracion-claveunica",
-      "title": "Manual de integración de ClaveÚnica",
-      "path": "knowledge/tde/plataformas/manual-integracion-claveunica.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-integracion-notificaciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-integracion-notificaciones",
-      "title": "Manual de integracion — Plataforma de Notificaciones del Estado",
-      "path": "knowledge/tde/plataformas/manual-integracion-notificaciones.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
-      "title": "Manual de atencion ciudadana — Plataforma de Notificaciones",
-      "path": "knowledge/tde/plataformas/manual-notificaciones-atencion-ciudadana.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-notificaciones-inicio",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-notificaciones-inicio",
-      "title": "Manual de inicio — Plataforma de Notificaciones Electronicas del Estado",
-      "path": "knowledge/tde/plataformas/manual-notificaciones-inicio.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-notificaciones-institucional",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-notificaciones-institucional",
-      "title": "Manual usuario institucional — Plataforma de Notificaciones del Estado (CasillaUnica)",
-      "path": "knowledge/tde/plataformas/manual-notificaciones-institucional.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:manual-simple-saas",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:manual-simple-saas",
-      "title": "Manual de uso SIMPLE en modalidad SaaS",
-      "path": "knowledge/tde/plataformas/manual-simple-saas.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:nt-autenticacion",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:nt-autenticacion",
-      "title": "DS 9 — Norma Tecnica de Autenticacion",
-      "path": "knowledge/tde/normas_tecnicas/nt-autenticacion.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:nt-documentos-expedientes",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:nt-documentos-expedientes",
-      "title": "DS 10 — Norma Tecnica de Documentos y Expedientes Electronicos",
-      "path": "knowledge/tde/normas_tecnicas/nt-documentos-expedientes.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:nt-interoperabilidad",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:nt-interoperabilidad",
-      "title": "DS 12 — Norma Tecnica de Interoperabilidad",
-      "path": "knowledge/tde/normas_tecnicas/nt-interoperabilidad.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:nt-notificaciones",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:nt-notificaciones",
-      "title": "DS 8 — Norma Tecnica de Notificaciones",
-      "path": "knowledge/tde/normas_tecnicas/nt-notificaciones.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:nt-plataformas-procedimientos",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:nt-plataformas-procedimientos",
-      "title": "DS 11 — Norma Tecnica de Calidad y Funcionamiento de Plataformas Electronicas",
-      "path": "knowledge/tde/normas_tecnicas/nt-plataformas-procedimientos.md",
-      "namespace": "tde"
-    },
-    {
-      "id": "urn:tde:kb:nt-seguridad-ciberseguridad",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:tde:kb:nt-seguridad-ciberseguridad",
-      "title": "DS 7 — Norma Tecnica de Seguridad de la Informacion y Ciberseguridad",
-      "path": "knowledge/tde/normas_tecnicas/nt-seguridad-ciberseguridad.md",
-      "namespace": "tde"
     },
     {
       "id": "urn:dev:skill:analyst-backlog-health-checker:1.0.0",
@@ -5608,7 +4978,7 @@
       "category": "Skills",
       "urn": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "title": "CM-ARTIFACT-AUDITOR",
-      "path": "agents/kora/curator/skills/CM-ARTIFACT-AUDITOR.md",
+      "path": "agents/kora/curator/skills/CM-ARTIFACT-AUDITOR/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -5626,7 +4996,7 @@
       "category": "Skills",
       "urn": "urn:kora:skill:curator-artifact-designer:2.0.0",
       "title": "CM-ARTIFACT-DESIGNER",
-      "path": "agents/kora/curator/skills/CM-ARTIFACT-DESIGNER.md",
+      "path": "agents/kora/curator/skills/CM-ARTIFACT-DESIGNER/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -5815,7 +5185,7 @@
       "category": "Skills",
       "urn": "urn:kora:skill:forgemaster-agent-validator:2.0.0",
       "title": "CM-AGENT-VALIDATOR",
-      "path": "agents/kora/forgemaster/skills/CM-AGENT-VALIDATOR.md",
+      "path": "agents/kora/forgemaster/skills/CM-AGENT-VALIDATOR/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -5860,7 +5230,7 @@
       "category": "Skills",
       "urn": "urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0",
       "title": "CM-WORKSPACE-SCAFFOLDER",
-      "path": "agents/kora/forgemaster/skills/CM-WORKSPACE-SCAFFOLDER.md",
+      "path": "agents/kora/forgemaster/skills/CM-WORKSPACE-SCAFFOLDER/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -6606,7 +5976,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:agent-spec-md",
-      "title": "KORA/Agent-Spec v8.3.0",
+      "title": "KORA/Agent-Spec v8.4.0",
       "path": "specs/agent-spec-md.md",
       "namespace": "kora"
     },
@@ -6615,7 +5985,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:gobernanza",
-      "title": "KORA/Gobernanza v3.1.0",
+      "title": "KORA/Gobernanza v3.2.0",
       "path": "specs/gobernanza.md",
       "namespace": "kora"
     },
@@ -6633,7 +6003,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:runtime-spec-md",
-      "title": "KORA/Runtime-Spec v3.2.0",
+      "title": "KORA/Runtime-Spec v3.3.0",
       "path": "specs/runtime-spec-md.md",
       "namespace": "kora"
     },
@@ -6642,7 +6012,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:skill-spec-md",
-      "title": "KORA/Skill-Spec v3.4.0",
+      "title": "KORA/Skill-Spec v4.0.0",
       "path": "specs/skill-spec-md.md",
       "namespace": "kora"
     },
@@ -16689,6 +16059,27 @@
     {
       "kind": "TracesTo",
       "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-discovery-presheaf",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:cat-skill-algebra",
+      "fragment": null,
+      "source_path": "specs/skill-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:kora:kb:skill-spec-md",
       "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "specs/skill-spec-md.md"
@@ -18628,539 +18019,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:aceleracion-regional",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d07-rrhh",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d08-rendiciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:bpmn-index",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:cies-sitia",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:comunicaciones-oc",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:cuentas-publicas-2021-2024",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:dictamenes-cgr-gore",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:erd-nuble-2024-2030",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:estrategia-gestion",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:estrategia-td-ia",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:flujos-aprobacion-documentos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:gestion-info-geoespacial",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:gestion-ipr",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:gestion-prpto",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:gestion-prpto-2026",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:gestion-rendiciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:glosario-gore-nuble",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:glosario-ipr-consolidado",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:glosas-gores-2026",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gn:kb:gn-cqs-master",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:gore-ideal",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:guia-circular-33-sts",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:guia-comunicaciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:guia-fril-2025-sts",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:guia-frpd-nuble",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:guia-idi-sni-sts",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:guia-programas-directos-gore",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:indicadores-nuble",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:intro-gores-nuble",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-activo-fijo",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-asistencia",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-bienestar",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-ciclo-vida",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-compras",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-contabilidad",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-desarrollo-organizacional",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-flotas",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-inventarios-bodegas",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-operacional-dgi",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-presupuesto",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-remuneraciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:manual-tesoreria",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:marco-legal-gores",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:modelos-actos-juridicos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:nuble-250",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:organigrama",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:plan-potenciamiento-dgi",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:problemas-sociales-cl",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:programas-vigentes-resumen",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-artcult",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-deportes",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-edpub",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-empub",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-index",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-patrimonio",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-pmdt",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-proginv",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:ris-proyinv",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:selector-ipr",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:transferencia-ppr",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:kb:vision-desarrollo-nuble",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19454,63 +18313,21 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:capacitaciones-tde",
+      "target": "urn:gorenuble:gn:gestion-ipr:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:cloud-publica",
+      "target": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:datosgob",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:identidad-digital",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:intro-tde",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:metodologia-proyectos-tic",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gov:kb:notificaciones",
+      "target": "urn:gorenuble:gn:selector-ipr:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20672,34 +19489,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:mgmt:kb:estructura-estado-chile",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:mgmt:kb:lean6",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:mgmt:kb:meyer-org-structure",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:mgmt:kb:mw-waissbluth",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -21239,62 +20028,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:impl-orko-toolkit",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-arquitectura",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-fases",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-fundamentos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-metodologia",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-playbooks",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-tejidos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:orko:kb:orko-toolkit",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:pro:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -21450,27 +20183,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:pro:kb:gestion-redes-herramientas",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:kb:gestion-redes-indice",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21667,293 +20379,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:pro:skill:salubrista-report-builder:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:claveunica-tyc",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:decreto-4-procedimiento-digital",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:estrategia-capacitaciones-tde",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:estrategia-datos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:estrategia-identidad-digital",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:glosario-simple",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:gobierno-digital-2030",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-anonimizacion-datos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-calidad-web",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-cloud-publica",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-diseno-servicios",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-estandares-datos-abiertos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-gestion-tic",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-marco-gestion-datos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-metadatos-documentos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-metodologia-proyectos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-rapida-cpat",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-registro-tratamiento-datos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-seguridad-ciberseguridad",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-sistema-tde-2025",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:guia-voz-tono",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:legislacion-ia-chile",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:ley-19880-procedimiento-administrativo",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:ley-21180-tde",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:ley-21658-ciberseguridad",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:ley-21719-datos-personales",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-claveunica-boton",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-coordinadora-tde",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-integracion-claveunica",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-integracion-notificaciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-notificaciones-inicio",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-notificaciones-institucional",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:manual-simple-saas",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:nt-autenticacion",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:nt-documentos-expedientes",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:nt-interoperabilidad",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:nt-notificaciones",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:nt-plataformas-procedimientos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:tde:kb:nt-seguridad-ciberseguridad",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -28357,962 +26782,10 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:kb:aceleracion-regional",
-      "target": "urn:gn:kb:aceleracion-regional",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/aceleracion-regional.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "target": "urn:gn:kb:bpmn-d01-actos-administrativos",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d01-actos-administrativos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "target": "urn:gn:kb:bpmn-d02-ciclo-presupuestario",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d02-ciclo-presupuestario.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "target": "urn:gn:kb:bpmn-d03-gestion-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d03-gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "target": "urn:gn:kb:bpmn-d04-compras-contrataciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d04-compras-contrataciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "target": "urn:gn:kb:bpmn-d05-inventarios-activo-fijo",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d05-inventarios-activo-fijo.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "target": "urn:gn:kb:bpmn-d06-flota-vehicular",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d06-flota-vehicular.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d07-rrhh",
-      "target": "urn:gn:kb:bpmn-d07-rrhh",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d07-rrhh.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d08-rendiciones",
-      "target": "urn:gn:kb:bpmn-d08-rendiciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d08-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "target": "urn:gn:kb:bpmn-d09-cies-sitia",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d09-cies-sitia.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "target": "urn:gn:kb:bpmn-d10-geoespacial-ide",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-d10-geoespacial-ide.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:bpmn-index",
-      "target": "urn:gn:kb:bpmn-index",
-      "fragment": null,
-      "source_path": "knowledge/gn/bpmn/bpmn-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:cies-sitia",
-      "target": "urn:gn:kb:cies-sitia",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/cies-sitia.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:comunicaciones-oc",
-      "target": "urn:gn:kb:comunicaciones-oc",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/comunicaciones-oc.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:cuentas-publicas-2021-2024",
-      "target": "urn:gn:kb:cuentas-publicas-2021-2024",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/cuentas-publicas-2021-2024.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:dictamenes-cgr-gore",
-      "target": "urn:gn:kb:dictamenes-cgr-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/normativa/dictamenes-cgr-gore.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:erd-nuble-2024-2030",
-      "target": "urn:gn:kb:erd-nuble-2024-2030",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/erd-nuble-2024-2030.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:estrategia-gestion",
-      "target": "urn:gn:kb:estrategia-gestion",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/estrategia-gestion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:estrategia-td-ia",
-      "target": "urn:gn:kb:estrategia-td-ia",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/estrategia-td-ia.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:flujos-aprobacion-documentos",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:flujos-aprobacion-documentos",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/flujos-aprobacion-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-info-geoespacial",
-      "target": "urn:gn:kb:gestion-info-geoespacial",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-info-geoespacial.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:gestion-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-ipr",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-prpto",
-      "target": "urn:gn:kb:gestion-prpto",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-prpto.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-prpto-2026",
-      "target": "urn:gn:kb:gestion-prpto-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-prpto-2026",
-      "target": "urn:gn:kb:glosas-gores-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-prpto-2026",
-      "target": "urn:gn:kb:glosas-gores-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-prpto-2026",
-      "target": "urn:gn:kb:glosas-gores-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-prpto-2026",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-prpto-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:gestion-rendiciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gestion-rendiciones",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/gestion-rendiciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:glosario-gore-nuble",
-      "target": "urn:gn:kb:glosario-gore-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/glosario-gore-nuble.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:glosario-ipr-consolidado",
-      "target": "urn:gn:kb:glosario-ipr-consolidado",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/glosario-ipr-consolidado.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:glosas-gores-2026",
-      "target": "urn:gn:kb:glosas-gores-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/glosas-gores-2026.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:gn:kb:gn-cqs-master",
       "target": "urn:gn:kb:gn-cqs-master",
       "fragment": null,
-      "source_path": "knowledge/gn/gn-cqs-master.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gore-ideal",
-      "target": "urn:gn:kb:gore-ideal",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/gore-ideal.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gore-ideal",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/gore-ideal.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:gore-ideal",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/gore-ideal.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-circular-33-sts",
-      "target": "urn:gn:kb:guia-circular-33-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-circular-33-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-comunicaciones",
-      "target": "urn:gn:kb:guia-comunicaciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-comunicaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-fril-2025-sts",
-      "target": "urn:gn:kb:guia-fril-2025-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-fril-2025-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-fril-2025-sts",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-fril-2025-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-frpd-nuble",
-      "target": "urn:gn:kb:guia-frpd-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-frpd-nuble.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:guia-idi-sni-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-idi-sni-sts",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-idi-sni-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:guia-programas-directos-gore",
-      "target": "urn:gn:kb:guia-programas-directos-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/guia-programas-directos-gore.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:indicadores-nuble",
-      "target": "urn:gn:kb:indicadores-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/indicadores-nuble.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
-      "target": "urn:gn:kb:informe-estado-inicial-gore-pre-td",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/informe-estado-inicial-gore-pre-td.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "target": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/instructivo-subvencion-8-2025-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/guias/instructivo-subvencion-8-2025-sts.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:intro-gores-nuble",
-      "target": "urn:gn:kb:intro-gores-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/intro-gores-nuble.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:intro-gores-nuble",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/intro-gores-nuble.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:intro-gores-nuble",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/intro-gores-nuble.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/normativa/ley-presupuestos-2026-normas-generales.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/normativa/ley-presupuestos-2026-partida-31.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:loc-gore",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/normativa/loc-gore.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-activo-fijo",
-      "target": "urn:gn:kb:manual-activo-fijo",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-activo-fijo.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-asistencia",
-      "target": "urn:gn:kb:manual-asistencia",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-asistencia.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-bienestar",
-      "target": "urn:gn:kb:manual-bienestar",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-bienestar.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-ciclo-vida",
-      "target": "urn:gn:kb:manual-ciclo-vida",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-ciclo-vida.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-compras",
-      "target": "urn:gn:kb:manual-compras",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-compras.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-contabilidad",
-      "target": "urn:gn:kb:manual-contabilidad",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-contabilidad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-desarrollo-organizacional",
-      "target": "urn:gn:kb:manual-desarrollo-organizacional",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-desarrollo-organizacional.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-flotas",
-      "target": "urn:gn:kb:manual-flotas",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-flotas.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "target": "urn:gn:kb:manual-induccion-gore-nuble-2026",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-induccion-gore-nuble-2026.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-inventarios-bodegas",
-      "target": "urn:gn:kb:manual-inventarios-bodegas",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-inventarios-bodegas.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-operacional-dgi",
-      "target": "urn:gn:kb:manual-operacional-dgi",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-operacional-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-presupuesto",
-      "target": "urn:gn:kb:gestion-prpto",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-presupuesto.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-presupuesto",
-      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-presupuesto.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-presupuesto",
-      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-presupuesto.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-presupuesto",
-      "target": "urn:gn:kb:manual-presupuesto",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-presupuesto.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-remuneraciones",
-      "target": "urn:gn:kb:manual-remuneraciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-remuneraciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:manual-tesoreria",
-      "target": "urn:gn:kb:manual-tesoreria",
-      "fragment": null,
-      "source_path": "knowledge/gn/manuales/manual-tesoreria.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:marco-legal-gores",
-      "target": "urn:gn:kb:marco-legal-gores",
-      "fragment": null,
-      "source_path": "knowledge/gn/normativa/marco-legal-gores.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:modelos-actos-juridicos",
-      "target": "urn:gn:kb:modelos-actos-juridicos",
-      "fragment": null,
-      "source_path": "knowledge/gn/normativa/modelos-actos-juridicos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:nuble-250",
-      "target": "urn:gn:kb:nuble-250",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/nuble-250.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "target": "urn:gn:kb:gestion-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "target": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:omega-ipr-gestion-fusion",
-      "target": "urn:gn:kb:selector-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/omega-ipr-gestion-fusion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:organigrama",
-      "target": "urn:gn:kb:loc-gore",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/organigrama.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:organigrama",
-      "target": "urn:gn:kb:organigrama",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/organigrama.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:gn:kb:plan-potenciamiento-dgi",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:lean6",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:lean6",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:lean6",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:lean6",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:meyer-org-structure",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:meyer-org-structure",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:meyer-org-structure",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:plan-potenciamiento-dgi",
-      "target": "urn:mgmt:kb:meyer-org-structure",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/plan-potenciamiento-dgi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:problemas-sociales-cl",
-      "target": "urn:gn:kb:problemas-sociales-cl",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/problemas-sociales-cl.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:programas-vigentes-resumen",
-      "target": "urn:gn:kb:programas-vigentes-resumen",
-      "fragment": null,
-      "source_path": "knowledge/gn/datos/programas-vigentes-resumen.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-artcult",
-      "target": "urn:gn:kb:ris-artcult",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-artcult.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-deportes",
-      "target": "urn:gn:kb:ris-deportes",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-deportes.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-edpub",
-      "target": "urn:gn:kb:ris-edpub",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-edpub.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-empub",
-      "target": "urn:gn:kb:ris-empub",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-empub.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-artcult",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-deportes",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-edpub",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-empub",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-index",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-patrimonio",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-pmdt",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-proginv",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-index",
-      "target": "urn:gn:kb:ris-proyinv",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-patrimonio",
-      "target": "urn:gn:kb:ris-patrimonio",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-patrimonio.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-pmdt",
-      "target": "urn:gn:kb:ris-pmdt",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-pmdt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-proginv",
-      "target": "urn:gn:kb:ris-proginv",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-proginv.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:ris-proyinv",
-      "target": "urn:gn:kb:ris-proyinv",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/ris-proyinv.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:selector-ipr",
-      "target": "urn:gn:kb:selector-ipr",
-      "fragment": null,
-      "source_path": "knowledge/gn/ris/selector-ipr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:transferencia-ppr",
-      "target": "urn:gn:kb:gestion-rendiciones",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/transferencia-ppr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:transferencia-ppr",
-      "target": "urn:gn:kb:transferencia-ppr",
-      "fragment": null,
-      "source_path": "knowledge/gn/gestion/transferencia-ppr.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gn:kb:vision-desarrollo-nuble",
-      "target": "urn:gn:kb:vision-desarrollo-nuble",
-      "fragment": null,
-      "source_path": "knowledge/gn/gobernanza/vision-desarrollo-nuble.md"
+      "source_path": "knowledge/gn/onto_gorenuble/gn-cqs-master.md"
     },
     {
       "kind": "XRef",
@@ -29883,325 +27356,143 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:capacitaciones-tde",
-      "target": "urn:gov:kb:capacitaciones-tde",
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:gestion-ipr:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/capacitaciones_tde.md"
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:capacitaciones-tde",
-      "target": "urn:gov:kb:capacitaciones-tde",
-      "fragment": null,
-      "source_path": "knowledge/gov/capacitaciones_tde.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-NORMAS-GENERALES",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:cloud-publica",
-      "target": "urn:gov:kb:cloud-publica",
-      "fragment": null,
-      "source_path": "knowledge/gov/cloud_publica.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART23",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:cloud-publica",
-      "target": "urn:gov:kb:cloud-publica",
-      "fragment": null,
-      "source_path": "knowledge/gov/cloud_publica.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART24",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datos-administracion-estado",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "fragment": null,
-      "source_path": "knowledge/gov/datos_administracion_estado.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART25",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datos-administracion-estado",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "fragment": null,
-      "source_path": "knowledge/gov/datos_administracion_estado.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART26",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datos-administracion-estado",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "fragment": null,
-      "source_path": "knowledge/gov/datos_administracion_estado.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART06",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:gov:kb:datos-administracion-estado",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART24",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:gov:kb:datosgob",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-normas-generales:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-ART26",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:gov:kb:datosgob",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-P31",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-P31-GLO-06",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-P31-GLO-07",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:tde:kb:guia-marco-gestion-datos",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-P31-GLO-12",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:datosgob",
-      "target": "urn:tde:kb:guia-sistema-tde-2025",
-      "fragment": null,
-      "source_path": "knowledge/gov/datosgob.md"
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:ley-presupuestos-2026-partida-31:1.0.0",
+      "fragment": "GN-LEY-PPTO-2026-P31-GLO-01",
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:identidad-digital",
-      "target": "urn:gov:kb:identidad-digital",
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:kora:kb:spec:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/identidad_digital.md"
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:identidad-digital",
-      "target": "urn:gov:kb:identidad-digital",
+      "source": "urn:gorenuble:gn:gestion-ipr:1.0.0",
+      "target": "urn:kora:kb:transform:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/identidad_digital.md"
+      "source_path": "tmp_kb_gn_019_gestion_ipr_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:gov:kb:capacitaciones-tde",
+      "source": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
+      "target": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
+      "source_path": "tmp_kb_gn_028_instructivo_subvencion_8_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:gov:kb:intro-tde",
+      "source": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
+      "target": "urn:kora:kb:spec:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
+      "source_path": "tmp_kb_gn_028_instructivo_subvencion_8_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:gov:kb:intro-tde",
+      "source": "urn:gorenuble:gn:instructivo-subvencion-8-2025-sts:1.0.0",
+      "target": "urn:kora:kb:transform:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
+      "source_path": "tmp_kb_gn_028_instructivo_subvencion_8_koda.yml"
     },
     {
       "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:gov:kb:lexicon-wikiguias",
+      "source": "urn:gorenuble:gn:selector-ipr:1.0.0",
+      "target": "urn:gorenuble:gn:selector-ipr:1.0.0",
       "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:legal:kb:ley-21658-segdig",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:legal:kb:ley-21719-datos-personales",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:guia-rapida-cpat",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:ley-19880-procedimiento-administrativo",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:ley-21180-tde",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:nt-autenticacion",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:nt-documentos-expedientes",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:nt-interoperabilidad",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:nt-notificaciones",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:nt-seguridad-ciberseguridad",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:intro-tde",
-      "target": "urn:tde:kb:nt-seguridad-ciberseguridad",
-      "fragment": null,
-      "source_path": "knowledge/gov/intro_tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:lexicon-wikiguias",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "fragment": null,
-      "source_path": "knowledge/gov/lexicon_wikiguias.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:lexicon-wikiguias",
-      "target": "urn:gov:kb:lexicon-wikiguias",
-      "fragment": null,
-      "source_path": "knowledge/gov/lexicon_wikiguias.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:metodologia-proyectos-tic",
-      "target": "urn:gov:kb:metodologia-proyectos-tic",
-      "fragment": null,
-      "source_path": "knowledge/gov/metodologia_proyectos_tic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:metodologia-proyectos-tic",
-      "target": "urn:gov:kb:metodologia-proyectos-tic",
-      "fragment": null,
-      "source_path": "knowledge/gov/metodologia_proyectos_tic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:metodologia-proyectos-tic",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "knowledge/gov/metodologia_proyectos_tic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:metodologia-proyectos-tic",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "knowledge/gov/metodologia_proyectos_tic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:gov:kb:notificaciones",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:gov:kb:notificaciones",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:tde:kb:guia-rapida-cpat",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:tde:kb:guia-sistema-tde-2025",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:tde:kb:manual-integracion-claveunica",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:tde:kb:nt-documentos-expedientes",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:tde:kb:nt-interoperabilidad",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:gov:kb:notificaciones",
-      "target": "urn:tde:kb:nt-notificaciones",
-      "fragment": null,
-      "source_path": "knowledge/gov/notificaciones.md"
+      "source_path": "tmp_kb_gn_011_selector_ipr_koda.yml"
     },
     {
       "kind": "XRef",
@@ -31958,7 +29249,7 @@
       "source": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "target": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "fragment": null,
-      "source_path": "agents/kora/curator/skills/CM-ARTIFACT-AUDITOR.md"
+      "source_path": "agents/kora/curator/skills/CM-ARTIFACT-AUDITOR/SKILL.md"
     },
     {
       "kind": "XRef",
@@ -31972,7 +29263,7 @@
       "source": "urn:kora:skill:curator-artifact-designer:2.0.0",
       "target": "urn:kora:skill:curator-artifact-designer:2.0.0",
       "fragment": null,
-      "source_path": "agents/kora/curator/skills/CM-ARTIFACT-DESIGNER.md"
+      "source_path": "agents/kora/curator/skills/CM-ARTIFACT-DESIGNER/SKILL.md"
     },
     {
       "kind": "XRef",
@@ -32119,7 +29410,7 @@
       "source": "urn:kora:skill:forgemaster-agent-validator:2.0.0",
       "target": "urn:kora:skill:forgemaster-agent-validator:2.0.0",
       "fragment": null,
-      "source_path": "agents/kora/forgemaster/skills/CM-AGENT-VALIDATOR.md"
+      "source_path": "agents/kora/forgemaster/skills/CM-AGENT-VALIDATOR/SKILL.md"
     },
     {
       "kind": "XRef",
@@ -32154,7 +29445,7 @@
       "source": "urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0",
       "target": "urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0",
       "fragment": null,
-      "source_path": "agents/kora/forgemaster/skills/CM-WORKSPACE-SCAFFOLDER.md"
+      "source_path": "agents/kora/forgemaster/skills/CM-WORKSPACE-SCAFFOLDER/SKILL.md"
     },
     {
       "kind": "XRef",
@@ -32596,34 +29887,6 @@
       "target": "urn:legal:kb:terminacion",
       "fragment": null,
       "source_path": "knowledge/legal/terminacion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:mgmt:kb:estructura-estado-chile",
-      "target": "urn:mgmt:kb:estructura-estado-chile",
-      "fragment": null,
-      "source_path": "knowledge/mgmt/estructura-estado-chile.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:mgmt:kb:lean6",
-      "target": "urn:mgmt:kb:lean6",
-      "fragment": null,
-      "source_path": "knowledge/mgmt/lean6.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:mgmt:kb:meyer-org-structure",
-      "target": "urn:mgmt:kb:meyer-org-structure",
-      "fragment": null,
-      "source_path": "knowledge/mgmt/meyer-org-structure.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:mgmt:kb:mw-waissbluth",
-      "target": "urn:mgmt:kb:mw-waissbluth",
-      "fragment": null,
-      "source_path": "knowledge/mgmt/mw-waissbluth.md"
     },
     {
       "kind": "XRef",
@@ -33502,62 +30765,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:orko:kb:impl-orko-toolkit",
-      "target": "urn:orko:kb:impl-orko-toolkit",
-      "fragment": null,
-      "source_path": "knowledge/orko/impl-orko-toolkit.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-arquitectura",
-      "target": "urn:orko:kb:orko-arquitectura",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-arquitectura.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-fases",
-      "target": "urn:orko:kb:orko-fases",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-fases.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-fundamentos",
-      "target": "urn:orko:kb:orko-fundamentos",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-fundamentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-metodologia",
-      "target": "urn:orko:kb:orko-metodologia",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-metodologia.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-playbooks",
-      "target": "urn:orko:kb:orko-playbooks",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-playbooks.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-tejidos",
-      "target": "urn:orko:kb:orko-tejidos",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-tejidos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:orko:kb:orko-toolkit",
-      "target": "urn:orko:kb:orko-toolkit",
-      "fragment": null,
-      "source_path": "knowledge/orko/orko-toolkit.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:pro:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
       "target": "urn:pro:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
       "fragment": null,
@@ -34261,27 +31468,6 @@
       "source": "urn:pro:kb:gestion-redes-indice",
       "target": "urn:pro:kb:gestion-redes-general",
       "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-general",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-general",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-general",
-      "fragment": null,
       "source_path": "knowledge/pro/gestion-redes/00-indice.md"
     },
     {
@@ -34289,70 +31475,7 @@
       "source": "urn:pro:kb:gestion-redes-indice",
       "target": "urn:pro:kb:gestion-redes-herramientas",
       "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-herramientas",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-herramientas",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-herramientas",
-      "fragment": null,
       "source_path": "knowledge/pro/gestion-redes/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
     },
     {
       "kind": "XRef",
@@ -34373,27 +31496,6 @@
       "source": "urn:pro:kb:gestion-redes-indice",
       "target": "urn:pro:kb:gestion-redes-salud-mental",
       "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-salud-mental",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-salud-mental",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-salud-mental",
-      "fragment": null,
       "source_path": "knowledge/pro/gestion-redes/00-indice.md"
     },
     {
@@ -34401,91 +31503,7 @@
       "source": "urn:pro:kb:gestion-redes-indice",
       "target": "urn:pro:kb:gestion-redes-unidades",
       "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-unidades",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-unidades",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-unidades",
-      "fragment": null,
       "source_path": "knowledge/pro/gestion-redes/00-indice.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-chatgpt.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-claude.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:kb:gestion-redes-indice",
-      "target": "urn:pro:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/framework-gemini.md"
     },
     {
       "kind": "XRef",
@@ -34927,293 +31945,6 @@
       "target": "urn:pro:skill:salubrista-report-builder:1.0.0",
       "fragment": null,
       "source_path": "agents/pro/salubrista/skills/CM-REPORT-BUILDER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:claveunica-tyc",
-      "target": "urn:tde:kb:claveunica-tyc",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/claveunica-tyc.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:decreto-4-procedimiento-digital",
-      "target": "urn:tde:kb:decreto-4-procedimiento-digital",
-      "fragment": null,
-      "source_path": "knowledge/tde/leyes/decreto-4-procedimiento-digital.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:estrategia-capacitaciones-tde",
-      "target": "urn:tde:kb:estrategia-capacitaciones-tde",
-      "fragment": null,
-      "source_path": "knowledge/tde/estrategia/estrategia-capacitaciones-tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:estrategia-datos",
-      "target": "urn:tde:kb:estrategia-datos",
-      "fragment": null,
-      "source_path": "knowledge/tde/estrategia/estrategia-datos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:estrategia-identidad-digital",
-      "target": "urn:tde:kb:estrategia-identidad-digital",
-      "fragment": null,
-      "source_path": "knowledge/tde/estrategia/estrategia-identidad-digital.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:glosario-simple",
-      "target": "urn:tde:kb:glosario-simple",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/glosario-simple.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:gobierno-digital-2030",
-      "target": "urn:tde:kb:gobierno-digital-2030",
-      "fragment": null,
-      "source_path": "knowledge/tde/estrategia/gobierno-digital-2030.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-anonimizacion-datos",
-      "target": "urn:tde:kb:guia-anonimizacion-datos",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-anonimizacion-datos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-calidad-web",
-      "target": "urn:tde:kb:guia-calidad-web",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-calidad-web.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-cloud-publica",
-      "target": "urn:tde:kb:guia-cloud-publica",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-cloud-publica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-diseno-servicios",
-      "target": "urn:tde:kb:guia-diseno-servicios",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/guia-diseno-servicios.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-estandares-datos-abiertos",
-      "target": "urn:tde:kb:guia-estandares-datos-abiertos",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-estandares-datos-abiertos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-evaltic",
-      "target": "urn:tde:kb:guia-evaltic",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-evaltic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-gestion-tic",
-      "target": "urn:tde:kb:guia-gestion-tic",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-gestion-tic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-marco-gestion-datos",
-      "target": "urn:tde:kb:guia-marco-gestion-datos",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-marco-gestion-datos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-metadatos-documentos",
-      "target": "urn:tde:kb:guia-metadatos-documentos",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-metadatos-documentos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-metodologia-proyectos",
-      "target": "urn:tde:kb:guia-metodologia-proyectos",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-metodologia-proyectos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-rapida-cpat",
-      "target": "urn:tde:kb:guia-rapida-cpat",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-rapida-cpat.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-registro-tratamiento-datos",
-      "target": "urn:tde:kb:guia-registro-tratamiento-datos",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-registro-tratamiento-datos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-seguridad-ciberseguridad",
-      "target": "urn:tde:kb:guia-seguridad-ciberseguridad",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-seguridad-ciberseguridad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-sistema-tde-2025",
-      "target": "urn:tde:kb:guia-sistema-tde-2025",
-      "fragment": null,
-      "source_path": "knowledge/tde/guias/guia-sistema-tde-2025.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:guia-voz-tono",
-      "target": "urn:tde:kb:guia-voz-tono",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/guia-voz-tono.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:legislacion-ia-chile",
-      "target": "urn:tde:kb:legislacion-ia-chile",
-      "fragment": null,
-      "source_path": "knowledge/tde/leyes/legislacion-ia-chile.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:ley-19880-procedimiento-administrativo",
-      "target": "urn:tde:kb:ley-19880-procedimiento-administrativo",
-      "fragment": null,
-      "source_path": "knowledge/tde/leyes/ley-19880-procedimiento-administrativo.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:ley-21180-tde",
-      "target": "urn:tde:kb:ley-21180-tde",
-      "fragment": null,
-      "source_path": "knowledge/tde/leyes/ley-21180-tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:ley-21658-ciberseguridad",
-      "target": "urn:tde:kb:ley-21658-ciberseguridad",
-      "fragment": null,
-      "source_path": "knowledge/tde/leyes/ley-21658-ciberseguridad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:ley-21719-datos-personales",
-      "target": "urn:tde:kb:ley-21719-datos-personales",
-      "fragment": null,
-      "source_path": "knowledge/tde/leyes/ley-21719-datos-personales.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-claveunica-boton",
-      "target": "urn:tde:kb:manual-claveunica-boton",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-claveunica-boton.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-coordinadora-tde",
-      "target": "urn:tde:kb:manual-coordinadora-tde",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-coordinadora-tde.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-integracion-claveunica",
-      "target": "urn:tde:kb:manual-integracion-claveunica",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-integracion-claveunica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-integracion-notificaciones",
-      "target": "urn:tde:kb:manual-integracion-notificaciones",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-integracion-notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
-      "target": "urn:tde:kb:manual-notificaciones-atencion-ciudadana",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-notificaciones-atencion-ciudadana.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-notificaciones-inicio",
-      "target": "urn:tde:kb:manual-notificaciones-inicio",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-notificaciones-inicio.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-notificaciones-institucional",
-      "target": "urn:tde:kb:manual-notificaciones-institucional",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-notificaciones-institucional.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:manual-simple-saas",
-      "target": "urn:tde:kb:manual-simple-saas",
-      "fragment": null,
-      "source_path": "knowledge/tde/plataformas/manual-simple-saas.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:nt-autenticacion",
-      "target": "urn:tde:kb:nt-autenticacion",
-      "fragment": null,
-      "source_path": "knowledge/tde/normas_tecnicas/nt-autenticacion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:nt-documentos-expedientes",
-      "target": "urn:tde:kb:nt-documentos-expedientes",
-      "fragment": null,
-      "source_path": "knowledge/tde/normas_tecnicas/nt-documentos-expedientes.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:nt-interoperabilidad",
-      "target": "urn:tde:kb:nt-interoperabilidad",
-      "fragment": null,
-      "source_path": "knowledge/tde/normas_tecnicas/nt-interoperabilidad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:nt-notificaciones",
-      "target": "urn:tde:kb:nt-notificaciones",
-      "fragment": null,
-      "source_path": "knowledge/tde/normas_tecnicas/nt-notificaciones.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:nt-plataformas-procedimientos",
-      "target": "urn:tde:kb:nt-plataformas-procedimientos",
-      "fragment": null,
-      "source_path": "knowledge/tde/normas_tecnicas/nt-plataformas-procedimientos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:tde:kb:nt-seguridad-ciberseguridad",
-      "target": "urn:tde:kb:nt-seguridad-ciberseguridad",
-      "fragment": null,
-      "source_path": "knowledge/tde/normas_tecnicas/nt-seguridad-ciberseguridad.md"
     }
   ]
 }

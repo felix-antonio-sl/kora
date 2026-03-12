@@ -4,14 +4,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "KORA categorical-foundations 01, 04, 07"
-version: "8.3.0"
+    source: "KORA categorical-foundations 01, 02, 04, 07"
+version: "8.4.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
 ---
 
-# KORA/Agent-Spec v8.3.0
+# KORA/Agent-Spec v8.4.0
 
 ## 1. Definicion
 
@@ -21,7 +21,7 @@ Un agente KORA es un workspace ejecutable compuesto por cinco componentes:
 2. `TOOLS.md` — interfaz semantica
 3. `SOUL.md` y `USER.md` — estado y contexto
 4. `config.json` — security y runtime envelope
-5. `skills/` — capabilities lazy-load
+5. `skills/` — capabilities lazy-load degeneradas o extendidas
 
 ## 2. Definiciones
 
@@ -31,7 +31,7 @@ Un agente KORA es un workspace ejecutable compuesto por cinco componentes:
 | FSM         | Maquina de estados finitos que gobierna el behavior del agente      |
 | Segregacion | Principio de que cada componente solo contiene su materia propia    |
 | Wiring      | Declaracion explicita de rutas de composicion inter-agente          |
-| CM          | Cognitive Model; archivo Skill degenerado en `skills/`              |
+| CM          | Identificador simbolico de Skill activable por la FSM; se resuelve a `skills/CM-*.md` o `skills/CM-*/SKILL.md` |
 | Discovery   | Proceso por el cual el agente encuentra y activa Skills disponibles |
 
 ## 3. Topologia obligatoria
@@ -44,6 +44,12 @@ agents/{namespace}/{nombre}/
   TOOLS.md
   config.json
   skills/
+    CM-EJEMPLO.md
+    CM-EJEMPLO/
+      SKILL.md
+      scripts/
+      references/
+      assets/
 ```
 
 Los cuatro `.md` bootstrap usan identidad URN `agent-bootstrap`. `config.json` **PUEDE** incluir `_manifest` y, si lo hace, usa tambien `agent-bootstrap`.
@@ -86,6 +92,7 @@ Reglas:
 4. Los estados terminales **DEBEN** usar `Trans: [terminal]` o devolver control a un estado no terminal declarado.
 5. `ACT` **PUEDE** invocar Skills, pero **NO DEBE** mezclar tono, security ni wiring oculto.
 6. Cuando multiples condiciones de transicion son evaluables simultaneamente, el estado **DEBE** declarar precedencia explicita (orden numerico, prioridad, o exclusion mutua). La ambiguedad implicita es invalida.
+7. La FSM **DEBE** referir Skills por su identificador simbolico `CM-*`; la materializacion degenerada o extendida del Skill se resuelve fuera de `AGENTS.md`.
 
 Correcto:
 
@@ -155,15 +162,22 @@ Reglas:
 
 1. `sub_agents.max_concurrent` **PUEDE** omitirse; si existe, **DEBE** ser `>= 1`.
 2. `config.json` es inmutable desde el LLM.
-3. Discovery de skills **DEBE** filtrarse por security.
+3. Discovery de Skills, degenerados o extendidos, **DEBE** filtrarse por security.
 
 Traces to: formal/01 §1.3 (M-Immutability) ; formal/04 §2.4 (Filtered Discovery)
 
 ## 7. Skills
 
-Todo CM referenciado en `AGENTS.md` **DEBE** existir en `skills/` como Skill degenerado conforme a `skill-spec-md`.
+Todo `CM-*` referenciado en `AGENTS.md` **DEBE** resolverse en `skills/` como:
+
+1. Skill degenerado: `skills/CM-*.md`, o
+2. Skill extendido: `skills/CM-*/SKILL.md`
+
+conforme a `skill-spec-md`.
 
 El bootstrap del agente **NO DEBE** contener CM inline.
+
+Los directorios adjuntos de un Skill extendido permanecen dentro de la fibra `skills/` y **NO** constituyen un sexto componente del workspace.
 
 ## 8. Wiring
 
@@ -190,8 +204,9 @@ Traces to: formal/01 §2.3 (Dissipation) ; formal/01 §6.2 (Sub-Agent Adjunction
 | Behavior puro             | La FSM no mezcla fenomenologia ni security                                          | lint        | Extraer contenido al componente correcto |
 | Interfaz cerrada          | `TOOLS.md` = `config.json.tools.allow`                                              | lint        | Alinear interfaz                         |
 | Runtime segregado         | Permisos crudos viven en `runtime_capabilities`                                     | lint        | Mover permisos                           |
-| Skills resolubles         | Todo CM referido existe                                                             | lint        | Crear o corregir skill                   |
+| Skills resolubles         | Todo `CM-*` referido resuelve a `skills/CM-*.md` o `skills/CM-*/SKILL.md`          | lint        | Crear o corregir skill                   |
 | Discovery filtrado        | Security puede excluir skills incompatibles                                         | runtime     | Ajustar policy                           |
 | Co-induccion terminal     | Existe verificacion terminal antes del output final                                 | manual      | Declarar o reforzar protocolo terminal   |
 | Skill no relaja bootstrap | Ningun CM redefine, relaja o condiciona reglas duras de `AGENTS.md`                 | manual      | Mover regla al bootstrap o spec          |
+| Bundle no relaja bootstrap | Ningun `SKILL.md` ni bundle extendido relaja reglas duras, interfaz o envelope     | manual      | Corregir bundle o mover regla            |
 | Routing resoluble         | Toda ruta inter-agente existe                                                       | lint        | Corregir o crear destino                 |

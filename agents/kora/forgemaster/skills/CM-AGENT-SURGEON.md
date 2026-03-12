@@ -23,7 +23,7 @@ Diagnostica y repara agentes KORA con precision quirurgica: minima modificacion,
 4. CLASIFICAR SEVERIDAD: CRITICAL(agente no funciona), HIGH(funciona mal), MEDIUM(suboptimo), LOW(cosmetico).
 5. PLANIFICAR FIX: Describir cambio minimo necesario. Verificar que el fix no rompe otros componentes (efecto colateral).
 6. APLICAR FIX: Modificar solo lo necesario. Preservar frontmatter, URNs existentes, estructura general.
-7. VERIFICAR POST-FIX: Contrastar el componente modificado contra `agent-spec-md` v8.3.0 y `skill-spec-md` v3.4.0, confirmando si el fix resuelve el problema o deja desvio residual documentado.
+7. VERIFICAR POST-FIX: Contrastar el componente modificado contra `agent-spec-md` v8.4.0 y `skill-spec-md` v4.0.0, confirmando si el fix resuelve el problema o deja desvio residual documentado.
 8. DOCUMENTAR: Registrar que se cambio, por que, y que se verifico.
 
 ## Signature Output

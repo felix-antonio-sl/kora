@@ -5,24 +5,21 @@
   "catalog_counts": {
     "Agents": 225,
     "Skills": 236,
-    "Knowledge": 277,
+    "Knowledge": 136,
     "Documents": 0,
-    "Other": 0
+    "Other": 3
   },
-  "total_catalog_entries": 738,
+  "total_catalog_entries": 600,
   "by_namespace": {
-    "gn": 168,
     "kora": 127,
     "fxsl": 117,
+    "gn": 92,
     "dev": 81,
     "ops": 77,
-    "pro": 54,
-    "tde": 41,
+    "pro": 51,
     "legal": 21,
     "korvo": 16,
     "gnub": 15,
-    "gov": 9,
-    "orko": 8,
-    "mgmt": 4
+    "gorenuble": 3
   }
 }

@@ -4,14 +4,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "KORA categorical-foundations 01, 04, 07, repair of cross-platform adapter contract"
-version: "3.2.0"
+    source: "KORA categorical-foundations 01, 02, 04, 07, repair of cross-platform adapter contract"
+version: "3.3.0"
 status: published
 tags: [spec, runtime, deployment, adapters, wrappers, fallback]
 lang: es
 ---
 
-# KORA/Runtime-Spec v3.2.0
+# KORA/Runtime-Spec v3.3.0
 
 ## 1. Definicion
 
@@ -36,6 +36,8 @@ Esta especificacion gobierna:
 | Runtime                | Entorno de ejecucion que consume un workspace KORA                   |
 | Platform Adapter       | Modulo que mapea componentes KORA al formato nativo del runtime      |
 | Wrapper                | Artefacto derivado que adapta un workspace sin modificar sus fuentes |
+| Source Skill Bundle    | Skill extendido fuente materializado como `skills/CM-*/SKILL.md` y fibras adjuntas |
+| Activation Projection  | Proyeccion `Forget(SKILL)` que expone solo el `CM Core` en tiempo de activacion |
 | Behavioral Equivalence | Equivalencia funcional razonable del mismo agente entre plataformas  |
 | Fallback Chain         | Cadena ordenada de modelos alternativos                              |
 | Budget Enforcement     | Politica server-side de costo o tokens                               |
@@ -59,7 +61,7 @@ Traces to: formal/07 §2 (Preservation by Interface) ; formal/01 §1.3 (Effect M
 | `TOOLS.md`            | Se mapea a la primitiva de tool-use nativa                                 |
 | `SOUL.md` / `USER.md` | Se inyectan solo donde corresponde; no se convierten en wiring ni security |
 | `config.json`         | Se aplica fuera del LLM                                                    |
-| `skills/`             | Se activa via lazy-load, no en bootstrap total                             |
+| `skills/`             | Se activa via lazy-load, preservando tanto `CM-*.md` como `SKILL.md` extendidos |
 
 ### 3.2 Reglas base
 
@@ -95,6 +97,30 @@ Los wrappers son artefactos derivados. Las fuentes del workspace **NO DEBEN** mo
 3. El wrapper **DEBE** respetar la segregacion original de componentes.
 4. El wrapper **DEBERIA** declarar claramente la plataforma target.
 
+### 5.2 Source Skill vs Wrapper
+
+Reglas:
+
+1. `skills/CM-*/SKILL.md` es un artefacto fuente del workspace; **NO** es un wrapper.
+2. Un wrapper `SKILL.md` generado para una plataforma **DEBE** vivir fuera del workspace fuente.
+3. La coincidencia de nombre `SKILL.md` entre fuente y wrapper **NO DEBE** usarse para colapsar ambas superficies.
+
+### 5.3 Discover, Activate, Execute
+
+Para Skills extendidos, el runtime **DEBE** preservar tres fases:
+
+1. **Discover** — proyectar solo metadata minima del bundle
+2. **Activate** — inyectar `Forget(SKILL)` como `CM Core`
+3. **Execute** — montar `scripts/`, `references/` y `assets/` solo despues de la activacion
+
+Reglas:
+
+1. Discover **NO DEBE** montar el bundle completo.
+2. Activate **DEBE** preservar el `CM Core` observacional del Skill.
+3. Execute **PUEDE** montar el bundle completo, pero **NO DEBE** mutar `AGENTS.md`, `TOOLS.md` ni `config.json`.
+4. Todo adapter **DEBE** documentar si opera en modo `Activate` (solo `CM Core`) o en modo `Execute` (bundle completo).
+5. La ausencia de bundle completo **NO DEBE** alterar el comportamiento del `CM Core` ya activado.
+
 ## 6. Platform equivalence
 
 La equivalencia cross-platform no exige bisimulacion textual estricta. Exige preservacion funcional de comportamiento e interfaz.
@@ -107,6 +133,7 @@ Traces to: formal/01 §5.2 (Bisimulation as Substitutability) ; formal/07 §4.2 
 2. Mismas tools declaradas -> misma interfaz efectiva.
 3. Mismas constraints -> misma fuerza de enforcement.
 4. Mismo wiring y misma disponibilidad de Skills.
+5. Misma proyeccion de activacion para todo Skill extendido activado.
 
 ### 6.2 Evaluacion de equivalencia
 
@@ -158,6 +185,7 @@ Traces to: formal/01 §1.3 (Effect Monad M)
 2. Las fuentes del workspace **NO DEBEN** modificarse durante la generacion de wrappers.
 3. `config.json` **NO DEBE** inyectarse como texto al LLM; su enforcement es server-side.
 4. Los Skills **NO DEBEN** bootstrappearse completos; lazy-load **DEBE** preservarse.
+5. La activacion de un Skill extendido **DEBE** factorizar por `Forget(SKILL)` antes de cualquier montaje de bundle.
 
 ## 11. Validacion
 
@@ -168,6 +196,8 @@ Traces to: formal/01 §1.3 (Effect Monad M)
 | Frontmatter stripped     | El wrapper no inyecta YAML al LLM                          | lint        | Corregir pipeline        |
 | Lazy-load preservado     | Skills no se bootstrappean completos                       | runtime     | Corregir adapter         |
 | Tool mapping completo    | Toda tool declarada tiene mapping o limitacion documentada | runtime     | Completar mapping        |
+| Source/wrapper segregado | `skills/CM-*/SKILL.md` fuente no se confunde con wrapper   | lint        | Corregir pipeline        |
+| Activacion por Forget    | Un Skill extendido se activa via `CM Core` antes del bundle| runtime     | Corregir adapter         |
 | Routing segregado        | Tier, fallback y budget viven en `config.json`             | lint        | Reubicar config          |
 | Equivalencia minima      | Inputs representativos no divergen funcionalmente          | eval        | Ajustar adapter o gating |
 | Wrapper inmutable        | La fuente del workspace no se modifica                     | lint        | Regenerar wrapper        |

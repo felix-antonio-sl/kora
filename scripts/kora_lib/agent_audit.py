@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .config import GENERATED_DOCS_DIR, KORA_ROOT
 from .validation import validate_workspaces
-from .workspaces import iter_agent_workspaces
+from .workspaces import iter_agent_workspaces, iter_skill_entrypoints
 
 
 DOMAIN_SUBGROUPS = ("gn", "pro", "fxsl", "korvo")
@@ -415,7 +415,7 @@ def audit_workspace(workspace_dir: Path):
     if config_path.exists():
         findings.extend(audit_config_file(workspace, config_path))
     if skill_dir.exists():
-        for skill_path in sorted(skill_dir.glob("*.md")):
+        for skill_path in iter_skill_entrypoints(skill_dir):
             findings.extend(audit_skill_file(workspace, skill_path, agents_text))
     return findings
 

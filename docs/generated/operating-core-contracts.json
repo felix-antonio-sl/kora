@@ -101,7 +101,7 @@
         "evidence_lines": [
           "5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
           "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
-          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta solo Skills degenerados."
+          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`."
         ],
         "allowed_kb_count": 16,
         "sources": {
@@ -900,7 +900,7 @@
         "evidence_lines": [
           "5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
           "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
-          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta solo Skills degenerados."
+          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`."
         ],
         "allowed_kb_count": 16,
         "sources": {

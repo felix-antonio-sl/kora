@@ -48,7 +48,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida agentes
-10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.3.0
+10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.4.0
 11. SEGREGATION_CHECK — Componentes ortogonales no mezclados
 
 ### Protocolo de Correccion

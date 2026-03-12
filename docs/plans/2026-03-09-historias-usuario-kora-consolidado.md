@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:knowledge:kora:core:specs:user-stories:1.0.0"
+  urn: "urn:kora:kb:specs:user-stories:1.0.0"
   provenance:
     created_by: "gemini-cli"
     created_at: "2026-03-09"

@@ -170,6 +170,49 @@ def extract_workspace_refs(agents_path):
     return set(AGENT_ROUTE_PATTERN.findall(content))
 
 
+def iter_skill_entrypoints(skill_dir):
+    if not skill_dir.exists():
+        return []
+    return sorted(skill_dir.glob("CM-*.md")) + sorted(skill_dir.glob("CM-*/SKILL.md"))
+
+
+def extract_skill_symbols(skill_dir):
+    if not skill_dir.exists():
+        return set()
+    return {path.stem for path in skill_dir.glob("CM-*.md")} | {
+        path.parent.name for path in skill_dir.glob("CM-*/SKILL.md")
+    }
+
+
+def iter_skill_bundle_dirs(skill_dir):
+    if not skill_dir.exists():
+        return []
+    return sorted(path for path in skill_dir.glob("CM-*") if path.is_dir())
+
+
+def validate_skill_bundle_dir(bundle_dir):
+    failures = []
+    entrypoint = bundle_dir / "SKILL.md"
+    if not entrypoint.exists():
+        failures.append(f"extended skill bundle '{bundle_dir.name}' missing entrypoint 'SKILL.md'")
+        return failures
+    allowed_children = {"SKILL.md", "scripts", "references", "assets"}
+    extra_children = sorted(path.name for path in bundle_dir.iterdir() if path.name not in allowed_children)
+    if extra_children:
+        failures.append(
+            f"extended skill bundle '{bundle_dir.name}' contains unsupported children {extra_children}"
+        )
+    return failures
+
+
+def find_skill_materialization_conflicts(skill_dir):
+    if not skill_dir.exists():
+        return []
+    degenerate = {path.stem for path in skill_dir.glob("CM-*.md")}
+    extended = {path.parent.name for path in skill_dir.glob("CM-*/SKILL.md")}
+    return sorted(degenerate & extended)
+
+
 def validate_skill_file(skill_path):
     failures = []
     content = ""

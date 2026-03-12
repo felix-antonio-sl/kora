@@ -7,7 +7,7 @@ import re
 from .catalog import load_catalog
 from .config import AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT, URN_REF_PATTERN
 from .artifacts import load_yaml_safe
-from .workspaces import extract_cm_refs, extract_declared_tool_headings, iter_agent_workspaces
+from .workspaces import extract_cm_refs, extract_declared_tool_headings, iter_agent_workspaces, iter_skill_entrypoints
 
 FORMAL_TRACE_PATTERN = re.compile(r"formal/([0-9]{2})")
 
@@ -119,6 +119,12 @@ def tool_node_id(tool_name):
     return f"tool:{tool_name}"
 
 
+def skill_symbol_from_path(path):
+    if path.name == "SKILL.md":
+        return path.parent.name
+    return path.stem
+
+
 def classify_catalog_node_kind(entry):
     urn = entry.get("urn", "")
     file_path = entry.get("file", "")
@@ -160,7 +166,7 @@ def build_graph_payload():
             }
             path_to_urn[str(abs_path)] = urn
             if node_kind == "skill":
-                workspace_skill_urns[(str(abs_path.parent.parent), abs_path.stem)] = urn
+                workspace_skill_urns[(str(abs_path.parent.parent if abs_path.name == "SKILL.md" else abs_path.parent), skill_symbol_from_path(abs_path))] = urn
 
     for workspace_dir in iter_agent_workspaces():
         namespace = workspace_dir.parent.name
@@ -192,7 +198,7 @@ def build_graph_payload():
                     "target": config_urn,
                 }
             )
-        for skill_path in sorted((workspace_dir / "skills").glob("*.md")) if (workspace_dir / "skills").exists() else []:
+        for skill_path in iter_skill_entrypoints(workspace_dir / "skills"):
             skill_urn = path_to_urn.get(str(skill_path))
             if skill_urn:
                 edges_payload.append(
@@ -234,7 +240,11 @@ def build_graph_payload():
             target_id = workspace_skill_urns.get((str(source_path.parent), edge.target))
             if not target_id:
                 skill_file = source_path.parent / "skills" / f"{edge.target}.md"
-                target_id = path_to_urn.get(str(skill_file), f"missing-skill:{source_path.parent.name}/{edge.target}")
+                extended_entrypoint = source_path.parent / "skills" / edge.target / "SKILL.md"
+                target_id = path_to_urn.get(
+                    str(skill_file),
+                    path_to_urn.get(str(extended_entrypoint), f"missing-skill:{source_path.parent.name}/{edge.target}"),
+                )
             edges_payload.append(
                 {
                     "kind": edge.kind,

@@ -28,11 +28,16 @@ from .config import (
 from .workspaces import (
     extract_cm_refs,
     extract_declared_tool_headings,
+    extract_skill_symbols,
     extract_workspace_refs,
+    find_skill_materialization_conflicts,
     get_workspace_missing_files,
     iter_markdown_headings,
     iter_agent_workspaces,
+    iter_skill_bundle_dirs,
+    iter_skill_entrypoints,
     expected_bootstrap_manifest_type,
+    validate_skill_bundle_dir,
     validate_skill_file,
 )
 
@@ -1102,7 +1107,7 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
 
         agents_path = workspace_dir / "AGENTS.md"
         skill_dir = workspace_dir / "skills"
-        skill_names = {path.stem for path in skill_dir.glob("*.md")} if skill_dir.exists() else set()
+        skill_names = extract_skill_symbols(skill_dir)
         if profile != "legacy":
             if agents_path.exists():
                 agents_text = agents_path.read_text(encoding="utf-8")
@@ -1137,7 +1142,21 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                     workspace_ok = False
 
         if profile != "legacy" and skill_dir.exists():
-            for skill_path in sorted(skill_dir.glob("*.md")):
+            for symbol in find_skill_materialization_conflicts(skill_dir):
+                report_issue(
+                    skill_dir.relative_to(KORA_ROOT),
+                    "skill_conflict",
+                    f"skill '{symbol}' materialized as both degenerate file and extended bundle",
+                    workspace=rel_workspace,
+                )
+                issue_counts["skill_conflict"] += 1
+                workspace_ok = False
+            for bundle_dir in iter_skill_bundle_dirs(skill_dir):
+                for failure in validate_skill_bundle_dir(bundle_dir):
+                    report_issue(bundle_dir.relative_to(KORA_ROOT), "skill_bundle", failure, workspace=rel_workspace)
+                    issue_counts["skill_bundle"] += 1
+                    workspace_ok = False
+            for skill_path in iter_skill_entrypoints(skill_dir):
                 skill_text = skill_path.read_text(encoding="utf-8")
                 for failure in validate_skill_file(skill_path):
                     report_issue(skill_path.relative_to(KORA_ROOT), "skill_semantics", failure, workspace=rel_workspace)
