@@ -10,46 +10,50 @@ lang: es
 # CM-REPORT-BUILDER
 
 ## Proposito
-Construir informes estructurados que integran análisis FIRS, recomendaciones con evidencia, KPIs (BSC 4 perspectivas cuando aplique) y trazabilidad normativa. Output final orientado a decisión de gestión, clínica o de política sanitaria.
+Construir informes estructurados para apoyar decisiones sobre sistemas de hospitalizacion integrados. Integra analisis del sistema, diseno, continuidad del cuidado, HD, capacidad, implementacion, KPIs y trazabilidad normativa en un formato util para la conduccion humana.
 
 ## Input/Output
-- **Input:** contenido_analisis: object (output de CMs previos en sesión), tipo_informe: string, audiencia: string
-- **Output:** Report { encabezado, resumen_ejecutivo, posicion_firs, analisis, recomendaciones[], kpis[], trazabilidad_normativa[], disclaimer }
+- **Input:** contenido_analisis: object, tipo_informe: string, audiencia: string
+- **Output:** Report { encabezado, resumen_ejecutivo, escala, modalidad, analisis, opciones: string[], implementacion: string[], kpis: string[], riesgos: string[], trazabilidad: string[], disclaimer }
 
 ## Procedimiento
-1. RECIBIR contenido acumulado de sesión (outputs de CM-FIRS-REASONER, CM-NETWORK-ANALYST, CM-QUALITY-AUDITOR o CM-EPI-VIGILANCE).
-2. IDENTIFICAR TIPO DE INFORME:
-   - Clínico-epidemiológico (problema individual o poblacional)
-   - Gestión de red (análisis sistémico, rediseño, mejora)
-   - Auditoría / calidad / seguridad paciente
-   - Vigilancia / alertas sanitarias
-   - Estratégico (decisión de política sanitaria)
-3. IDENTIFICAR AUDIENCIA: alta dirección / equipos clínicos / organismos reguladores / organismos internacionales → calibrar tecnicidad y registro.
-4. ESTRUCTURAR INFORME:
-   - **Encabezado**: Título, fecha, dimensión(es) FIRS trabajadas, nivel de análisis, autor/agente
-   - **Resumen ejecutivo**: 3-5 líneas — problema, hallazgo principal, recomendación prioritaria
-   - **Posición FIRS**: declarar dimensión(es) y ejes transversales aplicados
-   - **Análisis**: síntesis del razonamiento (Dim I/II/III según corresponda). Incluir incertidumbre residual si existe.
-   - **Tensiones navegadas**: si el análisis involucra tensiones estructurales FIRS → explicitar cómo se navegaron
-   - **Recomendaciones**: con prioridad (Alta/Media/Baja), responsable sugerido, fuente de evidencia, plazo orientativo
-   - **KPIs propuestos** (si aplica): tabla estándar (Indicador | Fórmula | Meta | Benchmark | Fuente | Periodicidad)
-   - **BSC si gestión**: 4 perspectivas (paciente, financiera, procesos internos, crecimiento/aprendizaje) → KPIs por perspectiva
-   - **Trazabilidad normativa**: OPS/OMS + guías internacionales + normativa local si provista por usuario
-   - **Disclaimer**: "Informe de apoyo analítico. Decisiones clínicas y de gestión requieren validación profesional in situ y adherencia al marco normativo local vigente."
-5. VERIFICAR COHERENCIA: ¿recomendaciones son consistentes con el nivel de análisis declarado? ¿No hay cruce de nivel sin mediación? ¿Herramientas correctamente identificadas (≠ marcos)?
-6. SI WEB_SEARCH requerido para evidencia faltante → ejecutar, integrar, citar.
+1. RECIBIR contenido acumulado desde analisis del sistema, HD, implementacion, evaluacion o vigilancia.
+2. IDENTIFICAR tipo de informe:
+   - diagnostico del sistema de hospitalizacion
+   - propuesta de rediseño hospital-domicilio
+   - plan de implementacion
+   - evaluacion de desempeno
+   - cumplimiento normativo HD
+   - alerta o vigilancia
+3. IDENTIFICAR audiencia: medico salubrista, direccion hospitalaria, DT HD, coordinacion de camas, red territorial, regulador u otra autoridad.
+4. ESTRUCTURAR informe:
+   - problema, escala y modalidad dominante
+   - trayectoria asistencial involucrada
+   - hallazgos principales
+   - opciones de decision o rediseño
+   - riesgos y continuidad del cuidado
+   - implicancias de implementacion
+   - KPIs y criterios de seguimiento
+   - trazabilidad de evidencia y normativa
+   - disclaimer de rol de copiloto
+5. VERIFICAR coherencia:
+   - hospital y domicilio no aparecen como silos
+   - la modalidad esta justificada
+   - la decision final queda en la conduccion humana
+6. SI `web_search` fue necesario para evidencia faltante o vigencia normativa -> integrar y citar.
 
 ## Signature Output
-| Campo | Tipo | Descripción |
+| Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| tipo_informe | string | Clínico-epi / Gestión / Auditoría / Vigilancia / Estratégico |
-| audiencia | string | Dirección / Clínicos / Reguladores / Internacional |
-| resumen_ejecutivo | string | 3-5 líneas: problema + hallazgo + recomendación prioritaria |
-| posicion_firs | string | Dimensiones y ejes aplicados |
-| analisis | string | Razonamiento completo con incertidumbre declarada |
-| tensiones_navegadas | string[] | Tensiones FIRS relevantes + cómo se navegaron |
-| recomendaciones | Recomendacion[] | {texto, prioridad, responsable, evidencia, plazo} |
-| kpis | KPISpec[] | Tabla KPI estándar |
-| bsc | BSCSpec? | Solo si gestión: KPIs por perspectiva BSC |
-| trazabilidad_normativa | string[] | OPS/OMS + guías + normativa local |
-| disclaimer | string | Fijo: apoyo analítico, validación profesional requerida |
+| tipo_informe | string | Tipo de producto generado |
+| audiencia | string | Destinatario principal |
+| resumen_ejecutivo | string | Sintesis para decision |
+| escala | string | Escala del problema |
+| modalidad | string | Modalidad dominante |
+| analisis | string | Analisis principal |
+| opciones | string[] | Opciones o cursos de accion |
+| implementacion | string[] | Implicancias operativas o siguientes pasos |
+| kpis | string[] | Indicadores de seguimiento |
+| riesgos | string[] | Riesgos, tradeoffs y dependencias |
+| trazabilidad | string[] | Evidencia y normativa citada |
+| disclaimer | string | Apoyo tecnico; la conduccion y decision final permanecen en la persona responsable |

@@ -10,16 +10,19 @@ lang: es
 # CM-HAH-SPECIALIST
 
 ## Proposito
-Resolver problemas específicos de Hospitalización Domiciliaria (HD / HaH): criterios de admisión/egreso, gestión operacional, cargo Director Técnico, y evidencia internacional. Norma primaria: DS 1/2022 + DE 31/2024 (Chile). Evidencia base: Johns Hopkins HaH Program, Cochrane/Shepperd, CMS AHCAH. Consultar corpus hodom-* antes que web o modelo.
+Resolver el componente de Hospitalizacion Domiciliaria (HD / HaH) dentro del sistema de hospitalizacion integrado: elegibilidad, operaciones, direccion tecnica, continuidad hospital-domicilio y evidencia. Foco operativo: asistir a Direcciones Tecnicas HD y a la conduccion hospitalaria con criterios, brechas, prioridades y trazabilidad normativa accionable; si el caso viene explicitamente enmarcado en un establecimiento, aterrizar alli el analisis. La normativa y los benchmarks especificos deben extraerse del corpus vigente y, si dependen de vigencia o cifras actuales, verificarse con `web_search` antes de afirmarlos como hechos cerrados.
 
 ## Input/Output
-- **Input:** subruta: "Admission"|"Operations"|"Director"|"Evidence", problema: string, contexto: object
+- **Input:** subruta: "Eligibility"|"Operations"|"Director"|"Continuity"|"Evidence", problema: string, contexto: object
 - **Output:** HAHResult { subruta, análisis, criterios_evaluados: [], recomendaciones: [], trazabilidad_normativa: [], alertas: [], disclaimer }
 
 ## Procedimiento
-### Sub-ruta A — ADMISSION (criterios ingreso/egreso)
+### Sub-ruta A — ELIGIBILITY (criterios ingreso/egreso y pertinencia de modalidad)
 
-**INGRESO** — Verificar 7 criterios copulativos (art. 15 DS 1/2022, TODOS deben cumplirse):
+1. RESOLVER via `kb_route` los temas normativos de ingreso/egreso HD y recuperar con `knowledge_retrieval` el reglamento base y la norma tecnica pertinentes; si la consulta es de implementacion local del Director Tecnico, complementar con direccion tecnica.
+2. RECUPERAR knowledge_retrieval sobre los URNs resueltos y usar ese contenido normativo como baseline antes de evaluar el caso.
+
+**INGRESO** — Verificar los criterios normativos vigentes de ingreso HD y justificar por que HD es la modalidad mas apropiada dentro del continuo hospital-domicilio. Contrastar al menos:
 
 | # | Criterio | Preguntas de verificación |
 |---|----------|--------------------------|
@@ -31,10 +34,11 @@ Resolver problemas específicos de Hospitalización Domiciliaria (HD / HaH): cri
 | 6 | Red de apoyo | ¿Familiar o tutor presente que acompañe y actúe como nexo de comunicación? |
 | 7 | Consentimiento informado | ¿Firmado por paciente/representante? + Carta Derechos/Deberes + formulario reclamos |
 
-TIPOLOGÍA: clasificar paciente (agudo / crónico reagudizado / condición estable).
-RIESGO: identificar criterio más frágil. Declarar condición explícitamente si marginal.
+TIPOLOGIA: clasificar paciente (agudo / crónico reagudizado / condición estable) segun la definicion recuperada del corpus.
+RIESGO: identificar criterio mas fragil. Declarar condicion explicita si marginal.
+CONTINUIDAD: explicitar articulacion con hospital de origen, equipo HD, cuidador y ruta de rescate.
 
-**EXCLUSIÓN** — Verificar criterios (art. 17 DS 1/2022):
+**EXCLUSION** — Verificar criterios normativos vigentes de exclusion y rescate:
 - Inestabilidad hemodinámica / signos vitales fluctuantes / riesgo descompensación → soporte vital avanzado o UPC → EXCLUIR
 - Baja complejidad resoluble ambulatoriamente (art. 3: modalidad ambulatoria excluida de regulación HD) → EXCLUIR
 - Domicilio sin servicios básicos o sin cuidador responsable → EXCLUIR
@@ -45,11 +49,12 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 - Reingreso hospitalario: pérdida condición clínica estable → traslado expedito con soporte vital básico continuo
 - Fallecimiento en domicilio: certificación médica, retiro dispositivos, apoyo familiares
 
-### Sub-ruta B — OPERATIONS (gestión clínica diaria)
+### Sub-ruta B — OPERATIONS (gestion clinica y logistica de la unidad HD)
 
-1. CONSULTAR kb_route → `urn:pro:kb:hodom-director-tecnico` (§§ 7-10).
+1. RESOLVER via `kb_route` los temas de direccion tecnica, operacion HD y norma tecnica pertinente, y recuperar el contenido con `knowledge_retrieval`.
+2. RECUPERAR knowledge_retrieval sobre los URNs resueltos y usar ese contenido como baseline operativo antes de evaluar la unidad.
 
-**Pase de visita diario** (obligatorio en cada visita):
+**Pase de visita diario**:
 - Signos vitales: PA + FC + FR + SatO2 → registro en ficha
 - Evaluación respuesta terapéutica por cada profesional según rol
 - Revisión dispositivos invasivos si aplica (funcionalidad + complicaciones)
@@ -63,12 +68,12 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 - CUP: técnica aséptica, fijación anti-trauma, circuito cerrado, educación tutor (riesgo CAUTI)
 - TQT/TET: aspiración secreciones, curación estoma, recambio cánulas — riesgo vital: O2 + aspiración obligatorios en terreno
 
-**IAAS domiciliaria** (RE 60/2022 MINSAL):
+**IAAS domiciliaria**:
 - Precauciones estándar + aislamientos (contacto/gotitas/respiratorio) adaptados a domicilio
 - EPP: inventario en bodega base + dotación en cada vehículo
 - Educación cuidadores: higiene de manos, manejo dispositivos, signos alarma infección
 
-**REAS** (DS 6/2009 MINSAL):
+**REAS**:
 - Segregación: contenedores rígidos corto-punzante + bolsas normadas en domicilio
 - Transporte bioseguro: sellados en vehículo, prevenir volcamientos
 - Almacenamiento: área exclusiva en base (autorización sanitaria si aplica)
@@ -84,14 +89,14 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 - Cálculo simultaneidad: DT debe calcular equipos simultáneos en terreno → cada vehículo porta equipamiento mínimo
 - Comunicaciones 24/7: sistema telefónico/radial permanente; trazabilidad de llamadas (fecha, hora, nombres, derivación)
 
-**Emergencia clínica**:
-- RCP+DEA: todo el personal, mínimo 3h, vigencia 5 años (DE 52/2022 MINSAL)
+**Emergencia clinica**:
+- Competencias de RCP/DEA, equipamiento y protocolos segun la norma vigente recuperada del corpus
 - Monitor signos vitales en cada vehículo; O2 si aplica
 - Comunicación 24/7 hábil e inhábil; Resumen Clínico en Domicilio disponible para SAMU
 - Reingreso: traslado expedito + soporte vital básico continuo
 - Plan contingencia cortes energía prolongados (aprobado DT)
 
-**Seguridad personal en terreno** (DE 31/2024 Cap. IV):
+**Seguridad personal en terreno**:
 - Protocolo agresiones (obligatorio, aprobado DT)
 - Evaluación preventiva entorno: animales peligrosos, conflictos familiares, inseguridad barrial
 - Entorno hostil grave → criterio egreso inmediato + reingreso hospitalario
@@ -110,31 +115,29 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 - Pendientes: exámenes, muestras, interconsultas, recetas
 - Articulación ruta del día: dotación vehicular, equipos, monitores
 
-### Sub-ruta C — DIRECTOR (cargo Director Técnico)
+### Sub-ruta C — DIRECTOR (cargo Director Tecnico)
 
-1. CONSULTAR kb_route → `urn:pro:kb:hodom-director-tecnico` (§§ 2-5).
+1. RESOLVER via `kb_route` los temas de direccion tecnica, reglamento base y norma tecnica HD, y recuperar el contenido con `knowledge_retrieval`.
+2. RECUPERAR knowledge_retrieval sobre los URNs resueltos y usar ese contenido como baseline del cargo antes de emitir obligaciones o brechas.
 
-**Requisitos legales cargo DT** (art. 9 DS 1/2022):
-- Médico cirujano habilitado (inscripción vigente Superintendencia Salud)
-- Postítulo/postgrado gestión en salud (IES reconocida)
-- Curso IAAS ≥80h, vigencia máxima 5 años
-- Experiencia clínica ≥2 años (acreditada con contratos/finiquitos/certificados)
-- Jornada mínima 22h semanales en el establecimiento
+**Requisitos legales cargo DT**:
+- Extraer y citar desde el corpus vigente los requisitos formales del cargo
+- Verificar habilitacion profesional, formacion, experiencia, dedicacion y otros requisitos exigibles por la norma vigente
 
-**Responsabilidad legal** (art. 7 DS 1/2022) — 3 dimensiones:
+**Responsabilidad legal**:
 - **A. Técnico-clínico**: aprobación exclusiva y actualización permanente de todos los manuales y protocolos; supervisión calidad/riesgos/IAAS; supervisión egreso clínico
 - **B. Administrativo-organizacional**: Manual de Organización Interna; sistema comunicación trazable; resguardo fichas clínicas; responsabilidad final sobre habilitaciones del equipo (art. 14)
 - **C. Frente a SEREMI**: preparación permanente para fiscalizaciones; notificación inmediata de cambio de DT (art. 10)
 
-**Plan de sucesión** (art. 10 DS 1/2022):
+**Plan de sucesion**:
 - Designación formal por escrito del reemplazante
-- Requisitos del reemplazante: idénticos al titular (médico + postgrado + IAAS 80h + 2 años experiencia)
+- Requisitos del reemplazante: extraer y citar equivalencia exigida por la norma vigente
 - Notificación inmediata a SEREMI + carpeta completa con certificados
 
-**Manuales obligatorios** (DE 31/2024, mandatado por art. 18 DS 1/2022):
+**Manuales obligatorios**:
 - Manual de Organización Interna: organigrama, roles, turnos, reglamento higiene
 - Manuales de protocolos clínicos: todos aprobados exclusivamente por DT
-- PAC (Plan Anual de Capacitación): incluye inducción 44h + IAAS + RCP + humanización
+- PAC (Plan Anual de Capacitacion): verificar contenidos y exigencias vigentes en el corpus
 - Protocolo comunicación urgencias (hábil e inhábil)
 - Protocolo agresiones en terreno
 - Plan contingencia cortes de energía
@@ -142,27 +145,46 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 **RRHH bajo responsabilidad DT**:
 - Listado actualizado personal con habilitaciones (art. 14): a disposición permanente de SEREMI
 - Verificar: inscripción Superintendencia; IAAS vigente; RCP vigente; experiencia acreditada
-- HD pediátrica/psiquiátrica: médico especialista o ≥2 años experiencia en servicio de especialidad
+- HD pediatrica/psiquiatrica: verificar exigencias especificas vigentes en el corpus
+- Si el contexto esta explicitamente enmarcado en un establecimiento: traducir estos requisitos a matriz de cumplimiento local, brechas priorizadas, responsables y evidencia documental exigible para fiscalizacion
 
-### Sub-ruta D — EVIDENCE (evidencia internacional)
+### Sub-ruta D — CONTINUITY (transicion hospital-domicilio y rescate)
 
-1. CONSULTAR kb_route → `urn:pro:kb:hodom-manual-hah`.
-2. SI necesario → web_search para evidencia actualizada.
+1. RESOLVER via `kb_route` los temas de articulacion hospital-domicilio, modelo HaH de alta complejidad y requisitos tecnicos pertinentes, y recuperar el contenido con `knowledge_retrieval`.
+2. RECUPERAR knowledge_retrieval sobre los URNs resueltos y usar ese contenido como baseline antes de emitir recomendaciones.
+
+**Trayectoria integrada**:
+- Ingreso a HD desde hospital: criterios clinicos, administrativos y de capacidad
+- Plan de egreso precoz: objetivos, ventana de transicion, pendientes criticos
+- Resumen de alta / traslado: informacion minima, medicamentos, examenes, alarmas, contacto 24/7
+- Coordinacion con APS, rehabilitacion, paliativos u otros dispositivos cuando corresponda
+- Ruta de rescate y reingreso: gatillos, responsable de activacion, circuito de traslado
+- Cierre del episodio domiciliario: criterios de egreso, seguimiento postalta y prevencion de reingreso evitable
+
+**Riesgos de continuidad**:
+- ruptura de informacion
+- cuidador insuficientemente preparado
+- retraso en rescate
+- duplicidad o vacio de responsabilidades
+- desalineacion entre capacidad hospitalaria y capacidad HD
+
+### Sub-ruta E — EVIDENCE (evidencia internacional y situacion local)
+
+1. RESOLVER via `kb_route` el tema de evidencia y benchmarks HaH, y recuperar el contenido con `knowledge_retrieval`.
+2. RECUPERAR knowledge_retrieval sobre el URN resuelto y usar ese contenido como baseline antes de complementar con evidencia externa.
+3. SI necesario → web_search para evidencia actualizada.
 
 **Johns Hopkins HaH Program (Leff et al.)**:
-- Referente global fundacional
-- Criterios admisión específicos, vías clínicas estructuradas, outcomes
-- Resultados: reducción costos 30-50% vs hospitalización, sin incremento mortalidad
+- Referente fundacional para criterios de admision, vias clinicas y estructura del modelo
+- Extraer del corpus o verificar por web los outcomes y limites relevantes antes de citarlos como benchmark
 
 **Cochrane Review (Shepperd et al.)**:
-- Evidencia de alta calidad para HaH como alternativa a hospitalización aguda
-- Efectividad similar en outcomes clínicos; mayor satisfacción paciente/cuidador
-- Reducción de reingresos en ciertos perfiles
+- Usar como base para sintetizar efectividad comparada, satisfaccion y limitaciones de la evidencia
+- Verificar por web si la pregunta depende de actualizaciones o metaanalisis mas recientes
 
 **CMS AHCAH (EE.UU.)**:
-- Marco regulatorio exenciones reglamentarias; paridad DRG hasta septiembre 2030
-- Habilitó >300 hospitales, >100.000 pacientes admitidos
-- Estándar de facto para protocolos de seguridad y tecnología RPM
+- Usar como referencia regulatoria y operacional solo tras verificar vigencia y estado actual
+- No fijar cifras o plazos regulatorios sin validacion web cuando sean relevantes para la respuesta
 
 **Tendencias internacionales**:
 - RPM/IoT: telemonitorización continua; FDA Digital Health Framework
@@ -171,14 +193,14 @@ RIESGO: identificar criterio más frágil. Declarar condición explícitamente s
 - ACOs con HaH integrada: valor longitudinal, no episódico
 
 **Benchmarks Chile**:
-- Consultar kb_route → `urn:pro:kb:hodom-situacion-chile` para datos DEIS, producción, brechas actuales
+- Resolver via `kb_route` el tema de situacion Chile y recuperar con `knowledge_retrieval` datos DEIS, produccion y brechas actuales
 
 ## Signature Output
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| subruta | string | Admission / Operations / Director / Evidence |
+| subruta | string | Eligibility / Operations / Director / Continuity / Evidence |
 | análisis | string | Diagnóstico del problema con evidencia/normativa |
-| criterios_evaluados | object[] | Solo Admission: {criterio, cumple: bool, observacion} |
+| criterios_evaluados | object[] | Solo Eligibility: {criterio, cumple: bool, observacion} |
 | recomendaciones | string[] | Con fuente (DS art. / DE Cap. / evidencia) |
 | trazabilidad_normativa | string[] | Normativa citada con artículo específico |
 | alertas | string[] | Criterios frágiles o riesgos identificados |

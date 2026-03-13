@@ -6,49 +6,47 @@ _manifest:
 
 ## kb_route
 
-- **Firma:** topic: string → urn: string
-- **Cuando usar:** Todo problema HD específico — criterios ingreso/egreso, cargo DT, operaciones domiciliarias, IAAS domiciliaria, REAS, protocolos dispositivos invasivos, normativa chilena HD, evidencia internacional HaH. Consultar ANTES que web o modelo.
-- **Cuando NO usar:** Si tema ya mapeado en turno actual. Si el problema es de gestión de red general sin componente HD específico.
-- **Routing map HaH:**
+- **Firma:** topic: string -> urn: string
+- **Cuando usar:** Primer paso semantico para resolver el corpus rector antes del analisis. Usar en problemas de hospitalizacion integrada, gestion de camas, continuidad del cuidado, hospitalizacion domiciliaria, implementacion y evaluacion.
+- **Cuando NO usar:** Si el mismo tema ya fue resuelto y recuperado en el turno actual.
+- **Routing map hospitalizacion integrada:**
 
 | Topic | URN |
 |-------|-----|
-| Índice general, glosario HD, normativa chilena HD, control versiones | `urn:pro:kb:hodom-indice` |
-| Situación HD en Chile 2024-2026: epidemiología, normativa, producción DEIS, financiamiento MCC/GRD, brechas | `urn:pro:kb:hodom-situacion-chile` |
-| Modelo HaH internacional: Johns Hopkins, Cochrane, CMS AHCAH, operaciones, tecnología RPM/IoT, economía backfill, barreras, futuro | `urn:pro:kb:hodom-manual-hah` |
-| Cargo DT: requisitos legales, responsabilidad art. 7, RRHH, inducción, PAC, infraestructura, farmacia, IAAS, REAS, flujo clínico, registros obligatorios, manuales, seguridad personal terreno | `urn:pro:kb:hodom-director-tecnico` |
+| Gobernanza hospitalaria, procesos transversales, calidad, RRHH, gestion del cambio, operacion de establecimientos | `urn:pro:kb:gestion-redes-general` |
+| Unidades hospitalarias, hospitalizacion, articulacion de modalidades, HaH, continuidad funcional entre dispositivos | `urn:pro:kb:gestion-redes-unidades` |
+| Red de urgencias, ingresos hospitalarios, SAMU, descompensaciones, rescate y transiciones tiempo-sensibles | `urn:pro:kb:gestion-redes-urgencias` |
+| KPIs, BPMN, simulacion, plantillas operativas, madurez digital y soporte instrumental | `urn:pro:kb:gestion-redes-herramientas` |
+| Indice general, glosario, normativa y contextualizacion local | `urn:pro:kb:gestion-redes-indice` |
 
-## kb_route
+- **Nota:** Este bloque es el baseline del componente intrahospitalario. Si el caso exige detalle hospitalario especifico no cubierto por estos URNs, declararlo y complementar con `web_search`.
 
-- **Firma:** topic: string → urn: string
-- **Cuando usar:** Problemas de gestión de redes asistenciales generales, o HD en contexto de red. Consultar ANTES que web o modelo.
-- **Cuando NO usar:** Si tema ya mapeado en turno actual o si el corpus HaH cubre el tema.
-- **Routing map gestión-redes:**
+- **Routing map HD / hospital-domicilio:**
 
 | Topic | URN |
 |-------|-----|
-| Gobernanza de red, modelo atención integrado, procesos, calidad, digital, finanzas, RRHH, cambio | `urn:pro:kb:gestion-redes-general` |
-| Unidades ambulatorias (APS/CESFAM), hospitalarias, HaH (Cap. 17) | `urn:pro:kb:gestion-redes-unidades` |
-| Red urgencias, SUH, EMS/SAMU, triage, protocolos tiempo-dependientes, MCI, desastres | `urn:pro:kb:gestion-redes-urgencias` |
-| Red salud mental, continuidad, crisis, TUS, derechos | `urn:pro:kb:gestion-redes-salud-mental` |
-| KPIs, BPMN, plantillas, FHIR/HL7, simulación, modelo de madurez | `urn:pro:kb:gestion-redes-herramientas` |
-| Índice general, glosario, normativa | `urn:pro:kb:gestion-redes-indice` |
+| Reglamento base HD: autorizacion, direccion tecnica, ingreso/egreso, articulado central | `urn:pro:kb:hodom-reglamento-ds1-2022` |
+| Decreto aprobatorio y fundamento juridico de la norma tecnica HD 2024 | `urn:pro:kb:hodom-decreto-exento-31-2024` |
+| Norma tecnica HD 2024: personal, infraestructura, equipamiento, registros, protocolos, PAC, seguridad | `urn:pro:kb:hodom-norma-tecnica-2024` |
+| Direccion Tecnica HD: art. 7-10, RRHH, manuales, fiscalizacion, sucesion, operacion local del DT | `urn:pro:kb:hodom-direccion-tecnica` |
+| Modelo HaH de alta complejidad: benchmarks, operaciones, RPM/IoT, pathways, backfill y continuidad | `urn:pro:kb:hodom-manual-alta-complejidad` |
+| Situacion de Chile 2024-2026: DEIS, financiamiento, GRD/MCC, brechas de red | `urn:pro:kb:hodom-situacion-chile-2026` |
 
-## kb_route
+- **Routing map salud publica aplicada:**
 
-- **Firma:** topic: string → urn:pro:kb:firs-framework-integrado-razonamiento-salud
-- **Cuando usar:** Razonamiento clínico (Dim I), epidemiológico/causal (Dim II), gestión macro (Dim III), ejes transversales, puentes metodológicos, tensiones estructurales del framework.
-- **Cuando NO usar:** Si FIRS ya consultado en turno actual para el mismo tema.
+| Topic | URN |
+|-------|-----|
+| Epidemiologia aplicada, riesgos, brotes, razonamiento sanitario integrado y pensamiento sistemico | `urn:pro:kb:firs-framework-integrado-razonamiento-salud` |
 
 ## knowledge_retrieval
 
-- **Firma:** urn: string → content: string
-- **Cuando usar:** Recuperar sección específica del corpus después de kb_route. En HaH: ej. `urn:pro:kb:hodom-director-tecnico §7` para art. 7 DS 1/2022. En gestión-redes: sección específica de capítulo.
-- **Cuando NO usar:** Si contenido ya en contexto de turno actual.
+- **Firma:** urn: string -> content: string
+- **Cuando usar:** Recuperar el contenido del corpus inmediatamente despues de `kb_route`. En problemas de hospitalizacion integrada, recuperar primero gestion-redes y sumar corpus HD cuando la trayectoria hospital-domicilio o la normativa sean relevantes.
+- **Cuando NO usar:** Si el contenido ya esta en contexto de turno actual.
 
 ## web_search
 
-- **Firma:** query: string → SearchResult[]
-- **Cuando usar:** Complementar corpus con evidencia actualizada, normativa MINSAL más reciente, datos epidemiológicos actuales, estudios HaH publicados, benchmarks internacionales. SIEMPRE subordinado al corpus: verificar coherencia antes de integrar. Citar fuente web en output.
-- **Cuando NO usar:** Si el corpus ya cubre adecuadamente el tema.
-- **Notas:** Habilitado por defecto. Para HaH: preferir Johns Hopkins, Cochrane, CMS, MINSAL.gov.cl, journals (Lancet, NEJM, BMJ, JAMA, Ann Intern Med). Para gestión: OPS, OMS, IHI, NICE, AHRQ.
+- **Firma:** query: string -> SearchResult[]
+- **Cuando usar:** Complementar corpus con evidencia actualizada, normativa MINSAL vigente, datos epidemiologicos actuales, benchmarks de hospitalizacion integrada o estudios recientes de HD y continuidad del cuidado. Citar fuente web en output.
+- **Cuando NO usar:** Si el corpus ya cubre adecuadamente el tema. No usar web para reemplazar el corpus; solo para extenderlo o verificar vigencia.
+- **Notas:** Preferir MINSAL, OPS, OMS, IHI, NICE, AHRQ, Cochrane, Johns Hopkins, CMS y journals indexados. Usar especialmente cuando el problema requiera detalle intrahospitalario no disponible en `gestion-redes-*` o vigencia normativa/benchmark actual.

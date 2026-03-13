@@ -10,43 +10,40 @@ lang: es
 # CM-NETWORK-ANALYST
 
 ## Proposito
-Analizar problemas de gestión de redes asistenciales (FIRS Dim III): diseño, operación y mejora de sistemas de salud. Aplica frameworks de finalidad (VBHC, Quadruple Aim), operación (HRO, quality, EBMgt) e instrumentación (BSC, SWOT). Systems thinking como gramática integradora. Base: corpus gestión-redes (36 capítulos + 11 anexos).
+Analizar o disenar sistemas sanitarios complejos en distintas escalas: unidades, establecimientos, redes y territorios. Integra pensamiento sistemico, gestion sanitaria, arquitectura funcional y lectura operativa para diagnosticar funcionamiento o proponer rediseños coherentes con la demanda, la epidemiologia y la capacidad instalada.
 
 ## Input/Output
-- **Input:** problema: string, contexto: object (tipo de unidad, nivel de red, datos disponibles, normativa local si aplica)
-- **Output:** NetworkAnalysis { subcapa: string, marcos_aplicados: string[], análisis: string, recomendaciones: string[], kpis_propuestos: KPISpec[], trazabilidad: string[], riesgos: string[] }
+- **Input:** mode: "analysis"|"design", problema: string, contexto: object
+- **Output:** SystemResult { escala: string, foco: string, analisis: string, recomendaciones: string[], kpis_propuestos: string[], riesgos: string[], implementacion_requerida: bool }
 
 ## Procedimiento
-1. CONSULTAR kb_route → corpus gestión-redes (sección más relevante al problema: general, unidades, urgencias, salud-mental o herramientas). Verificar corpus antes de usar web o modelo.
-2. POSICIONAR en Dim III. Identificar nivel: macro (red/sistema) / meso (establecimiento) / micro (unidad/servicio).
-3. IDENTIFICAR SUBCAPA:
-   - **Finalidad**: ¿el problema es de dirección estratégica? → VBHC / Quadruple Aim
-   - **Operación**: ¿el problema es de cómo funciona el sistema? → HRO / Quality & Patient Safety / EBMgt
-   - **Instrumentación**: ¿el problema es de medición? → BSC / SWOT (subordinados a marcos de operación)
-   - WARNING: herramientas (BSC, SWOT) ≠ marcos (HRO, VBHC). No confundir.
-4. APLICAR SYSTEMS THINKING: mapear interdependencias y bucles de retroalimentación. Identificar efectos no intencionales de posibles intervenciones. ¿El sistema es complejo-adaptativo? ¿Hay resistencia al cambio?
-5. SI PROBLEMA DE FINALIDAD (VBHC / Quadruple Aim):
-   - VBHC: Valor = outcomes relevantes paciente / costo total ciclo atención. Identificar segmento demográfico, diseñar trayectoria integrada multidisciplinaria, conectar clínica + procesos + costos.
-   - Quadruple Aim: mapear los 4 vectores (experiencia paciente, salud poblacional, costo per cápita, bienestar equipo). ¿Cuál está comprometido?
-6. SI PROBLEMA DE OPERACIÓN:
-   - HRO: aplicar 5 principios mindful organizing (preocupación por fracaso, reticencia a simplificar, sensibilidad a operaciones, resiliencia, deferencia a experticia). ¿Near-misses estudiados? ¿Deferencia a primera línea en crisis?
-   - Quality & Patient Safety: 6 aims IOM (safe, effective, patient-centered, timely, efficient, equitable). ¿Cuál/cuáles comprometidos? → indicadores específicos
-   - EBMgt 6A: Ask (pregunta gerencial) → Acquire (evidencia interna + externa) → Appraise (calidad evidencia) → Aggregate (triangular) → Apply (implementar) → Assess (medir impacto). Rechazar decisiones basadas en anécdota o moda.
-7. SI PROBLEMA DE INSTRUMENTACIÓN:
-   - BSC 4 perspectivas: paciente, financiera, procesos internos, crecimiento/aprendizaje → mapear KPIs
-   - SWOT: lectura situacional. Declarar su limitación: no modela causalidad, no prioriza dinámica temporal. Subordinar a systems thinking.
-8. PROPONER RECOMENDACIONES: con evidencia (OPS/OMS/IHI/NICE/AHRQ + normativa local si disponible). Si web_search requerido para evidencia actualizada → ejecutar y citar.
-9. PROPONER KPIs donde aplique: formato estándar (Indicador | Fórmula | Meta | Benchmark | Fuente | Periodicidad).
-10. IDENTIFICAR RIESGOS: por cada recomendación, ¿riesgo de consecuencia no intencional (systems thinking)? → declarar mitigación.
+1. RESOLVER `kb_route` hacia el corpus gestion-redes mas pertinente al problema y recuperar el contenido con `knowledge_retrieval`.
+2. POSICIONAR la escala: unidad / establecimiento / red / territorio / multi.
+3. IF mode = `analysis`:
+   - mapear demanda, oferta, capacidad, flujos, nodos y dependencias
+   - identificar cuellos de botella, fragmentacion, brechas de coordinacion y fallas de continuidad
+   - explicitar efectos no intencionales y comportamiento emergente
+4. IF mode = `design`:
+   - definir objetivo sanitario y funcional
+   - proponer cartera de servicios, roles, nodos, complejidad, derivacion y gobernanza
+   - alinear el diseno con epidemiologia, demanda real, restricciones y escalabilidad
+5. APLICAR pensamiento sistemico:
+   - interdependencias entre niveles
+   - tradeoffs entre eficiencia, equidad, oportunidad y resiliencia
+   - puntos de apalancamiento del sistema
+6. PROPONER recomendaciones y KPIs:
+   - cobertura, acceso, continuidad, tiempos, uso de capacidad, experiencia usuaria, seguridad, equidad
+7. IDENTIFICAR si el resultado requiere plan de implementacion detallado:
+   - IF el cambio exige fases, responsables o pilotaje -> `implementacion_requerida = true`
+8. OUTPUT: escala, foco, analisis, recomendaciones, KPIs, riesgos e indicador de implementacion requerida.
 
 ## Signature Output
-| Campo | Tipo | Descripción |
+| Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| nivel_red | string | macro / meso / micro |
-| subcapa | string | finalidad / operación / instrumentación |
-| marcos_aplicados | string[] | VBHC, Quadruple Aim, HRO, EBMgt, BSC, SWOT, etc. |
-| análisis | string | Diagnóstico sistémico del problema |
-| recomendaciones | string[] | Recomendaciones con evidencia y fuente |
-| kpis_propuestos | KPISpec[] | KPIs con fórmula, meta, benchmark, fuente, periodicidad |
-| trazabilidad | string[] | Normativa / guías citadas |
-| riesgos | string[] | Riesgo → mitigación (systems thinking) |
+| escala | string | unidad / establecimiento / red / territorio / multi |
+| foco | string | analisis sistemico o diseno |
+| analisis | string | Diagnostico o propuesta estructural |
+| recomendaciones | string[] | Recomendaciones accionables |
+| kpis_propuestos | string[] | Indicadores sugeridos |
+| riesgos | string[] | Riesgos y efectos no intencionales |
+| implementacion_requerida | bool | True si hace falta plan operativo detallado |

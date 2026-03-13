@@ -2067,17 +2067,29 @@ Catalog:
     title: Gestión de Redes Asistenciales — Marco General
     file: knowledge/pro/salubrista/gestion-redes/01-gestion-redes-general.md
     status: draft
+  - urn: urn:pro:kb:hodom-reglamento-ds1-2022
+    title: Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalizacion Domiciliaria
+    file: knowledge/pro/hodom/normativa/01-reglamento-hodom-ds1-2022.md
+    status: draft
+  - urn: urn:pro:kb:hodom-decreto-exento-31-2024
+    title: Decreto Exento N 31/2024 que Aprueba la Norma Tecnica para Hospitalizacion Domiciliaria
+    file: knowledge/pro/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md
+    status: draft
+  - urn: urn:pro:kb:hodom-norma-tecnica-2024
+    title: Norma Tecnica para Establecimientos que Otorgan Prestaciones de Hospitalizacion Domiciliaria
+    file: knowledge/pro/hodom/normativa/03-norma-tecnica-hodom-2024.md
+    status: draft
   - urn: urn:pro:kb:hodom-direccion-tecnica
     title: Direccion Tecnica en Hospitalizacion Domiciliaria
-    file: knowledge/pro/hodom/01-manual-direccion-tecnica.md
+    file: knowledge/pro/hodom/director/01-manual-direccion-tecnica.md
     status: draft
   - urn: urn:pro:kb:hodom-situacion-chile-2026
     title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
-    file: knowledge/pro/hodom/03-situacion-chile-2026.md
+    file: knowledge/pro/hodom/director/03-situacion-chile-2026.md
     status: draft
   - urn: urn:pro:kb:hodom-manual-alta-complejidad
     title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad
-    file: knowledge/pro/hodom/02-manual-alta-complejidad.md
+    file: knowledge/pro/hodom/director/02-manual-alta-complejidad.md
     status: draft
   - urn: urn:gn:kb:gn-cqs-master
     title: Catálogo Maestro de Preguntas de Competencia
