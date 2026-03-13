@@ -23,38 +23,43 @@ lang: en
 
 Ctx: The Knowledge Base as a well-formed category with global invariants.
 XRef: `urn:fxsl:kb:seven-sketches`
+Notes: under current KORA governance, artifact identity is derived from filesystem + valid manifests, while the catalog is only a generated resolver. In this corpus, only `XRef` is materially encoded today; stronger relation kinds require a normalized relation block before they become auditable.
 
-**KB** = category where Ob(KB) = artifacts and Hom(KB) = relations between them.
+**KB** = category where Ob(KB) = artifacts and Hom(KB) = materially encoded relations plus explicitly normalized future relation edges.
 
-Objects: each artifact registered in the master catalog (seven_sketches, algebraic_databases, categorical_systems_theory, coalgebras, unified_multimodel, data_lakes_ct, cql_data_integration, mathematical_modelling, mbse_consistency, cognitive_toolkit, audit_patterns, kb_category, constraint_logic, schema_evolution).
+Objects: each Markdown artifact under `knowledge/fxsl/cat/` with valid front matter (`urn`, `version`, `status`, etc.). The generated catalog may be checked afterward as a derivative index, but it is not the source of truth.
 
 Identity: each artifact has trivial self-reference morphism.
 
-Composition: if A XRef→ B and B XRef→ C, path A → B → C exists.
+Composition: if A XRef→ B and B XRef→ C, path A → B → C exists. Today this composition is only guaranteed over materialized `XRef` edges.
 
 ## Morphism Types
 
-| Type | Direction | Semantics |
-|---|---|---|
-| XRef | A → B | A cites/uses B; weak dependency |
-| requires | A → B | A cannot function without B; strict dependency |
-| refines | A → B | A more specific; faithful functor F: Cat(A) → Cat(B) exists |
-| generalizes | A → B | A = colimit of family including B |
-| equivalent_to | A ↔ B | Functors F: A→B, G: B→A with GF ≅ id, FG ≅ id |
+| Type | Direction | Materialization | Semantics |
+|---|---|---|---|
+| XRef | A → B | Materialized today via `XRef:` lines | A cites/uses B; weak dependency |
+| requires | A → B | Deferred until normalized relation block exists | A cannot function without B; strict dependency |
+| refines | A → B | Deferred until normalized relation block exists | A more specific; faithful functor F: Cat(A) → Cat(B) exists |
+| generalizes | A → B | Deferred until normalized relation block exists | A = colimit of family including B |
+| equivalent_to | A ↔ B | Deferred until normalized relation block exists | Functors F: A→B, G: B→A with GF ≅ id, FG ≅ id |
 
-## Global Invariants
+## Global Invariants (Active)
 
-**KB-INV-NO-DANGLING** (Severity: HIGH) — No dangling references. ∀ XRef in artifact A: target(XRef) ∈ Ob(KB) ∨ target is resolvable external URN. Procedure: extract all XRef; verify URN in master catalog or known external; if #ID fragment present, verify ID exists in target.
+**KB-INV-NO-DANGLING** (Severity: HIGH) — No dangling `XRef` references. ∀ `XRef` in artifact A: target(`XRef`) ∈ Ob(KB) ∨ target is resolvable external URN. Procedure: scan filesystem artifacts, extract `XRef`, resolve URNs via the current index/catalog or known external targets, and verify `#fragment` anchors when present.
 
-**KB-INV-NO-BAD-CYCLES** (Severity: MEDIUM) — No refinement cycles without declared equivalence. If A refines B and B refines A → A equivalent_to B must be declared. Procedure: build directed graph of REFINES; detect cycles; for each cycle verify EQUIVALENT between nodes.
+**KB-INV-FILESYSTEM-MANIFEST-COMPLETE** (Severity: MEDIUM) — ∀ artifact in `knowledge/fxsl/cat/`: valid front matter exists and the artifact is indexable. Procedure: list all Markdown artifacts in `knowledge/fxsl/cat/`, parse manifests, verify required metadata, then compare against a freshly regenerated catalog only as a derivative consistency check.
 
-**KB-INV-REQUIRES-ACYCLIC** (Severity: CRITICAL) — requires graph is acyclic (DAG). No chain A requires B requires ... requires A. Procedure: directed graph of REQUIRES; DFS or Kahn cycle detection; cycle → CRITICAL.
+**KB-INV-URN-UNIQUE** (Severity: CRITICAL) — ∀ URN u: |{A ∈ KB : urn(A) = u}| = 1. Procedure: extract URNs directly from manifests in the filesystem and detect duplicates.
 
-**KB-INV-CATALOG-COMPLETE** (Severity: MEDIUM) — ∀ artifact in `knowledge/fxsl/cat/`: ∃ entry in `catalog/catalog_master_kora.yml`. Procedure: list all Markdown artifacts in `knowledge/fxsl/cat/`; extract URN from each; verify in `catalog/catalog_master_kora.yml`.
+**KB-INV-VERSION-DECLARED** (Severity: HIGH) — ∀ A ∈ KB: `version` is explicit in front matter and follows SemVer. Procedure: parse `version` from metadata, validate syntax, and compare derivative registries only after reindex when needed.
 
-**KB-INV-URN-UNIQUE** (Severity: CRITICAL) — ∀ URN u: |{A ∈ KB : urn(A) = u}| = 1. Procedure: extract all URNs from catalog; detect duplicates.
+**KB-INV-RELATION-SCHEMA-GATED** (Severity: HIGH) — Invariants over `requires`, `refines`, `generalizes` and `equivalent_to` are `DEFERRED` until a normalized relation block exists in each artifact. Procedure: if the relation schema is absent, emit `DEFERRED` instead of `PASS`/`FAIL`.
 
-**KB-INV-VERSION-CONSISTENT** (Severity: HIGH) — ∀ A ∈ KB: A.Version = extract_version(A.urn). Procedure: compare Version in metadata vs. version segment in URN.
+## Deferred Invariants (Require Normalized Relation Metadata)
+
+**KB-INV-NO-BAD-CYCLES** (Severity: MEDIUM) — No refinement cycles without declared equivalence. If A refines B and B refines A -> A equivalent_to B must be declared. Procedure: once relation blocks exist, build directed graph of `refines`; detect cycles; for each cycle verify `equivalent_to`.
+
+**KB-INV-REQUIRES-ACYCLIC** (Severity: CRITICAL) — `requires` graph is acyclic (DAG). No chain A requires B requires ... requires A. Procedure: once relation blocks exist, build directed graph of `requires`; run DFS or Kahn cycle detection; any cycle -> CRITICAL.
 
 ## Universal Constructions in KB
 
@@ -87,16 +92,16 @@ Use: identify conceptual overlap between artifacts.
 ## Global Audit Procedure
 
 Steps:
-1. Inventory: list all artifacts in `knowledge/fxsl/cat/**/*.md`; list catalog entries; compare (orphans and ghosts).
-2. Verify KB-INV-CATALOG-COMPLETE.
+1. Inventory: list all artifacts in `knowledge/fxsl/cat/**/*.md` directly from the filesystem and parse manifests.
+2. Verify KB-INV-FILESYSTEM-MANIFEST-COMPLETE.
 3. Verify KB-INV-URN-UNIQUE.
-4. Verify KB-INV-VERSION-CONSISTENT.
-5. Build KB graph: nodes = artifacts; edges = XRef, requires, refines, generalizes, equivalent_to (labeled by type).
-6. Verify KB-INV-NO-DANGLING (all edges have valid targets).
-7. Verify KB-INV-REQUIRES-ACYCLIC (requires subgraph is DAG).
-8. Verify KB-INV-NO-BAD-CYCLES (refines cycles have equivalent_to).
-9. Individual artifact audit (AUDIT-PROC-FULL per artifact).
-10. Generate global report.
+4. Verify KB-INV-VERSION-DECLARED.
+5. Rebuild or reconcile the catalog only as a derivative consistency check when the audit requires resolver parity.
+6. Build the active KB graph: nodes = artifacts; edges = materialized `XRef`.
+7. Verify KB-INV-NO-DANGLING over the active graph.
+8. If normalized relation blocks exist, extend the graph with `requires`, `refines`, `generalizes`, `equivalent_to` and activate the deferred invariants; otherwise report them as `DEFERRED`.
+9. Individual artifact audit (`AUDIT-PROC-FULL` per artifact).
+10. Generate global report, explicitly separating active checks from deferred ones.
 
 Output format:
 
@@ -109,19 +114,19 @@ Output format:
 - Orphans: 0
 
 ### 2. Global Invariants
-| Invariant | Status | Details |
-|-----------|--------|---------|
+| Invariant | State | Details |
+|-----------|-------|---------|
 | NO-DANGLING | ✓/✗ | ... |
-| NO-BAD-CYCLES | ✓/✗ | ... |
-| REQUIRES-ACYCLIC | ✓/✗ | ... |
-| CATALOG-COMPLETE | ✓/✗ | ... |
+| FILESYSTEM-MANIFEST-COMPLETE | ✓/✗ | ... |
 | URN-UNIQUE | ✓/✗ | ... |
-| VERSION-CONSISTENT | ✓/✗ | ... |
+| VERSION-DECLARED | ✓/✗ | ... |
+| NO-BAD-CYCLES | ACTIVE/DEFERRED | ... |
+| REQUIRES-ACYCLIC | ACTIVE/DEFERRED | ... |
 
 ### 3. KB Graph
 - Nodes: N artifacts
 - XRef edges: M
-- requires edges: K
+- Deferred relation edges: K
 - Density: X%
 
 ### 4. Issues by Artifact

@@ -10,32 +10,34 @@ lang: es
 # CM-INTENT-FIRS
 
 ## Proposito
-Clasificar la intención del usuario y posicionar el problema en la dimensión FIRS correcta (I/II/III), determinando el estado FSM destino. Previene errores de nivel antes de activar razonamiento.
+Clasificar semánticamente la intención del usuario y posicionar el problema en la dimensión FIRS correcta (I/II/III), detectando continuidad conversacional y necesidad de aclaración mínima. Produce una señal neutral para despacho; no decide transiciones FSM.
 
 ## Input/Output
 - **Input:** consulta: string (texto libre del usuario)
-- **Output:** IntentResult { dimension: "I"|"II"|"III"|"multi", estado_destino: string, nivel_analisis: string, clarificacion_requerida: bool }
+- **Output:** IntentResult { dimension: "I"|"II"|"III"|"multi"|"na", intencion_primaria: string, nivel_analisis: string, continuidad: string, clarificacion_requerida: bool }
 
 ## Procedimiento
-1. LEER consulta completa. Identificar objeto principal: ¿es un individuo/paciente? ¿es una población/grupo? ¿es una red/sistema/organización?
-2. POSICIONAR en FIRS:
-   - IF objeto = individuo + razonamiento clínico/diagnóstico/terapéutico → Dim I → S-CLINICAL
-   - IF objeto = población + inferencia causal/brote/dinámica transmisión → Dim II → S-EPI
-   - IF objeto = red/sistema/establecimiento/gestión → Dim III → S-NETWORK
-   - IF objeto = evaluación/calidad/auditoría/GPC/mejora continua → S-AUDIT
-   - IF objeto = alerta/brote activo/vigilancia/RSI → S-VIGILANCE
-   - IF objeto = informe/reporte formal/BSC/KPIs → S-REPORT
-   - IF multi-dimensión → identificar Dim primaria + notar Dims secundarias para puentes posteriores
-3. IDENTIFICAR nivel de análisis explícito: individuo / equipo / servicio / red / población
-4. VERIFICAR: ¿la consulta es ambigua? IF ambigua → formular pregunta de clarificación mínima (una sola pregunta)
-5. OUTPUT: declarar Dim FIRS + estado destino + nivel de análisis + si requiere clarificación
+1. LEER consulta completa. Identificar objeto principal y continuidad: ¿es un caso nuevo, continuación, cambio de dimensión o cambio radical de tema?
+2. POSICIONAR en FIRS y etiquetar intención dominante:
+   - IF objeto = individuo + razonamiento clínico/diagnóstico/terapéutico → dimension "I" + intención `clinical`
+   - IF objeto = población + inferencia causal/brote/dinámica transmisión → dimension "II" + intención `epi`
+   - IF objeto = red/sistema/establecimiento/gestión → dimension "III" + intención `network`
+   - IF objeto = evaluación/calidad/auditoría/GPC/mejora continua → conservar dimensión del objeto auditado si es inferible; en caso contrario `multi` + intención `audit`
+   - IF objeto = alerta/brote activo/vigilancia/RSI → dimension "II" o `multi` según alcance + intención `vigilance`
+   - IF objeto = informe/reporte formal/BSC/KPIs → conservar dimensión dominante si ya es inferible; en caso contrario `multi` + intención `report`
+   - IF objeto = cierre explícito de la sesión → dimension `na` + intención `end`
+   - IF multi-dimensión → identificar dimensión primaria + notar dimensiones secundarias para puentes posteriores
+3. IDENTIFICAR nivel de análisis explícito: individuo / equipo / servicio / red / población / no_aplica.
+4. VERIFICAR: ¿la consulta es ambigua? IF ambigua → formular una sola pregunta de clarificación y emitir intención `clarify` con dimension `na`.
+5. OUTPUT: declarar dimensión FIRS + intención primaria + nivel de análisis + continuidad + si requiere clarificación.
 
 ## Signature Output
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| dimension | string | "I" / "II" / "III" / "multi" |
-| estado_destino | string | S-CLINICAL / S-EPI / S-NETWORK / S-AUDIT / S-VIGILANCE / S-REPORT |
-| nivel_analisis | string | individuo / equipo / servicio / red / población |
+| dimension | string | "I" / "II" / "III" / "multi" / "na" |
+| intencion_primaria | string | `clinical` / `epi` / `network` / `audit` / `vigilance` / `report` / `end` / `clarify` |
+| nivel_analisis | string | individuo / equipo / servicio / red / población / no_aplica |
+| continuidad | string | nueva / continuacion / cambio_dimension / cambio_radical |
 | dims_secundarias | string[] | Dimensiones FIRS adicionales si multi-nivel |
 | clarificacion_requerida | bool | True si consulta ambigua |
 | pregunta_clarificacion | string? | Solo si clarificacion_requerida = true |

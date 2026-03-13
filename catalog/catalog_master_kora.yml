@@ -2041,31 +2041,31 @@ Catalog:
     status: published
   - urn: urn:pro:kb:firs-framework-integrado-razonamiento-salud
     title: FIRS — Framework Integrado de Razonamiento en Salud
-    file: knowledge/pro/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.md
+    file: knowledge/pro/salubrista/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.md
     status: draft
   - urn: urn:pro:kb:gestion-redes-urgencias
     title: Gestión de Redes Asistenciales — Red de Urgencias
-    file: knowledge/pro/gestion-redes/03-urgencias.md
+    file: knowledge/pro/salubrista/gestion-redes/03-urgencias.md
     status: draft
   - urn: urn:pro:kb:gestion-redes-salud-mental
     title: Gestión de Redes — Salud Mental y Adicciones
-    file: knowledge/pro/gestion-redes/04-salud-mental.md
+    file: knowledge/pro/salubrista/gestion-redes/04-salud-mental.md
     status: draft
   - urn: urn:pro:kb:gestion-redes-herramientas
     title: Gestión de Redes Asistenciales — Herramientas y Anexos
-    file: knowledge/pro/gestion-redes/05-herramientas-anexos.md
+    file: knowledge/pro/salubrista/gestion-redes/05-herramientas-anexos.md
     status: draft
   - urn: urn:pro:kb:gestion-redes-indice
     title: Gestión de Redes Asistenciales — Índice General
-    file: knowledge/pro/gestion-redes/00-indice.md
+    file: knowledge/pro/salubrista/gestion-redes/00-indice.md
     status: draft
   - urn: urn:pro:kb:gestion-redes-unidades
     title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad
-    file: knowledge/pro/gestion-redes/02-unidades-asistenciales.md
+    file: knowledge/pro/salubrista/gestion-redes/02-unidades-asistenciales.md
     status: draft
   - urn: urn:pro:kb:gestion-redes-general
     title: Gestión de Redes Asistenciales — Marco General
-    file: knowledge/pro/gestion-redes/01-gestion-redes-general.md
+    file: knowledge/pro/salubrista/gestion-redes/01-gestion-redes-general.md
     status: draft
   - urn: urn:pro:kb:hodom-direccion-tecnica
     title: Direccion Tecnica en Hospitalizacion Domiciliaria
