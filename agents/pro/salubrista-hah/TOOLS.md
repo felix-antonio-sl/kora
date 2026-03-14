@@ -7,7 +7,7 @@ _manifest:
 ## kb_route
 
 - **Firma:** topic: string -> urn: string
-- **Cuando usar:** Primer paso semantico para resolver el corpus rector antes del analisis. Usar en problemas de hospitalizacion integrada, gestion de camas, continuidad del cuidado, hospitalizacion domiciliaria, implementacion y evaluacion.
+- **Cuando usar:** Primer paso semantico para resolver el corpus rector antes del analisis. Usar en problemas de hospitalizacion integrada, gestion de camas, continuidad del cuidado, hospitalizacion domiciliaria, implementacion, evaluacion y aterrizajes psiquiatricos vinculados a HD.
 - **Cuando NO usar:** Si el mismo tema ya fue resuelto y recuperado en el turno actual.
 - **Routing map hospitalizacion integrada:**
 
@@ -16,6 +16,7 @@ _manifest:
 | Gobernanza hospitalaria, procesos transversales, calidad, RRHH, gestion del cambio, operacion de establecimientos | `urn:pro:kb:gestion-redes-general` |
 | Unidades hospitalarias, hospitalizacion, articulacion de modalidades, HaH, continuidad funcional entre dispositivos | `urn:pro:kb:gestion-redes-unidades` |
 | Red de urgencias, ingresos hospitalarios, SAMU, descompensaciones, rescate y transiciones tiempo-sensibles | `urn:pro:kb:gestion-redes-urgencias` |
+| Crisis de salud mental, continuidad psiquiatrica o articulacion con COSAM/rehabilitacion en trayectorias hospital-domicilio | `urn:pro:kb:gestion-redes-salud-mental` |
 | KPIs, BPMN, simulacion, plantillas operativas, madurez digital y soporte instrumental | `urn:pro:kb:gestion-redes-herramientas` |
 | Indice general, glosario, normativa y contextualizacion local | `urn:pro:kb:gestion-redes-indice` |
 

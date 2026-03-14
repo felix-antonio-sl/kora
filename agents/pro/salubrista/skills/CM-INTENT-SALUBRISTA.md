@@ -10,11 +10,11 @@ lang: es
 # CM-INTENT-SALUBRISTA
 
 ## Proposito
-Clasificar semanticamente la solicitud del usuario para un agente salubrista orientado a analisis, gestion, diseno, implementacion, evaluacion y vigilancia. Determina escala operativa y tipo de tarea sin decidir transiciones FSM ni continuidad conversacional.
+Clasificar semanticamente la solicitud del usuario para un agente salubrista orientado a analisis, gestion, diseno, implementacion, evaluacion y vigilancia. Determina escala operativa, tipo de tarea y si conviene derivacion especializada a la extension `pro/salubrista-hah`, sin decidir transiciones FSM ni continuidad conversacional.
 
 ## Input/Output
 - **Input:** consulta: string
-- **Output:** IntentResult { escala: "unidad"|"establecimiento"|"red"|"territorio"|"nacional"|"multi"|"na", intencion_primaria: string, objeto: string, tipo_producto: string|null, clarificacion_requerida: bool, motivo_ambiguedad: string? }
+- **Output:** IntentResult { escala: "unidad"|"establecimiento"|"red"|"territorio"|"nacional"|"multi"|"na", intencion_primaria: string, objeto: string, tipo_producto: string|null, derivacion_especializada: "salubrista_hah"|null, escalas_secundarias: string[], clarificacion_requerida: bool, motivo_ambiguedad: string? }
 
 ## Procedimiento
 1. LEER la consulta completa e identificar el problema principal y la escala dominante.
@@ -30,14 +30,17 @@ Clasificar semanticamente la solicitud del usuario para un agente salubrista ori
    - IF objeto = cierre explicito de la sesion -> `end`
 3. IDENTIFICAR la escala principal: unidad / establecimiento / red / territorio / nacional / multi.
 4. IDENTIFICAR el objeto operativo: programa, servicio, unidad, establecimiento, red, territorio, politica, evento, tablero, otro.
-5. IF `intencion_primaria = product`, IDENTIFICAR `tipo_producto`:
+5. DETECTAR especializacion:
+   - IF foco dominante = hospitalizacion integrada, continuidad hospital-domicilio, capacidad de camas con componente HD, direccion tecnica HD o normativa HD -> `derivacion_especializada = salubrista_hah`
+   - ELSE `derivacion_especializada = null`
+6. IF `intencion_primaria = product`, IDENTIFICAR `tipo_producto`:
    - `gap_map`
    - `risk_map`
    - `monitoring_dashboard`
    - `policy_brief`
    - `decision_scenarios`
-6. VERIFICAR ambiguedad: IF la consulta no permite diferenciar intencion o escala -> emitir `clarify` con motivo explicito.
-7. OUTPUT: devolver escala, intencion primaria, objeto, tipo de producto si aplica y necesidad de clarificacion.
+7. VERIFICAR ambiguedad: IF la consulta no permite diferenciar intencion o escala -> emitir `clarify` con motivo explicito.
+8. OUTPUT: devolver escala, intencion primaria, objeto, tipo de producto si aplica, derivacion especializada y necesidad de clarificacion.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
@@ -46,6 +49,7 @@ Clasificar semanticamente la solicitud del usuario para un agente salubrista ori
 | intencion_primaria | string | `epi` / `system` / `design` / `implementation` / `evaluation` / `vigilance` / `product` / `report` / `end` / `clarify` |
 | objeto | string | Unidad operativa del problema |
 | tipo_producto | string? | `gap_map` / `risk_map` / `monitoring_dashboard` / `policy_brief` / `decision_scenarios` |
+| derivacion_especializada | string? | `salubrista_hah` si conviene encaminar a la extension heredada |
 | escalas_secundarias | string[] | Escalas adicionales si el problema es multi-nivel |
 | clarificacion_requerida | bool | True si la consulta es ambigua |
 | motivo_ambiguedad | string? | Solo si clarificacion_requerida = true |
