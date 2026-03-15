@@ -9,7 +9,7 @@ KORA organiza el ecosistema en cuatro estratos:
 - `specs/`: ley operativa del sistema.
 - `knowledge/`: artefactos descriptivos KORA/MD.
 - `agents/`: workspaces ejecutables KORA.
-- `scripts/`: CLI oficial para indexar, validar, migrar y auditar.
+- `scripts/`: CLI oficial y utilitarios auxiliares. La frontera operativa esta documentada en `scripts/README.md`.
 
 La Formal Layer oficial vive en `knowledge/kora/categorical-foundations/`. El corpus `knowledge/fxsl/cat/` permanece como material auxiliar y solo entra a la ley operativa por absorcion formal explicita.
 
@@ -25,7 +25,7 @@ kora/
   catalog/                      vista materializada del grafo de artefactos
   docs/generated/               salidas vivas generadas por la CLI
   schemas/                      contratos JSON para bootstrap y config
-  scripts/                      CLI oficial
+  scripts/                      CLI oficial + soporte acotado + legacy
 ```
 
 ## Gobernanza

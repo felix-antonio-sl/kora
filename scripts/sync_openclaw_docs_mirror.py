@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import subprocess
 from dataclasses import dataclass
@@ -12,9 +13,10 @@ import yaml
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SOURCE_REPO = Path("/Users/felixsanhueza/Developer/_workspaces/openclaw")
-DEFAULT_SOURCE_DOCS = DEFAULT_SOURCE_REPO / "docs"
 DEFAULT_DEST = REPO_ROOT / "KNOWLEDGE/agengai/openclaw/documentacion-oficial"
+SOURCE_REPO_ENV = "KORA_OPENCLAW_SOURCE_REPO"
+SOURCE_DOCS_ENV = "KORA_OPENCLAW_SOURCE_DOCS"
+DEST_ENV = "KORA_OPENCLAW_DEST"
 CONTROL_FILES = {"_mirror.yml", "README.md"}
 EXCLUDED_NAMES = {
     ".DS_Store",
@@ -34,18 +36,18 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--source-docs",
-        default=str(DEFAULT_SOURCE_DOCS),
-        help="Path to the upstream OpenClaw docs directory.",
+        default=None,
+        help=f"Path to the upstream OpenClaw docs directory. Fallback: ${SOURCE_DOCS_ENV}.",
     )
     parser.add_argument(
         "--source-repo",
-        default=str(DEFAULT_SOURCE_REPO),
-        help="Path to the upstream OpenClaw git clone.",
+        default=None,
+        help=f"Path to the upstream OpenClaw git clone. Fallback: ${SOURCE_REPO_ENV}.",
     )
     parser.add_argument(
         "--dest",
         default=str(DEFAULT_DEST),
-        help="Destination mirror directory inside KORA.",
+        help=f"Destination mirror directory inside KORA. Fallback: ${DEST_ENV}.",
     )
     parser.add_argument(
         "--dry-run",
@@ -174,9 +176,25 @@ def update_manifest(
 
 def main() -> int:
     args = parse_args()
-    source_docs = Path(args.source_docs).expanduser().resolve()
-    source_repo = Path(args.source_repo).expanduser().resolve()
-    dest_root = Path(args.dest).expanduser().resolve()
+    source_repo_raw = args.source_repo or None
+    if source_repo_raw is None:
+        source_repo_raw = os.environ.get(SOURCE_REPO_ENV)
+
+    source_docs_raw = args.source_docs or None
+    if source_docs_raw is None:
+        source_docs_raw = os.environ.get(SOURCE_DOCS_ENV)
+    if source_docs_raw is None and source_repo_raw is not None:
+        source_docs_raw = str(Path(source_repo_raw).expanduser() / "docs")
+    if source_docs_raw is None:
+        raise SystemExit(
+            f"Source docs directory not configured. Usa --source-docs, {SOURCE_DOCS_ENV} o --source-repo/{SOURCE_REPO_ENV}."
+        )
+
+    dest_raw = os.environ.get(DEST_ENV) or args.dest
+
+    source_docs = Path(source_docs_raw).expanduser().resolve()
+    source_repo = Path(source_repo_raw).expanduser().resolve() if source_repo_raw is not None else source_docs.parent
+    dest_root = Path(dest_raw).expanduser().resolve()
 
     if not source_docs.exists():
         raise SystemExit(f"Source docs directory not found: {source_docs}")

@@ -3,9 +3,8 @@
 source_mapper.py — KORA Phase 1 Source Mapping Generator
 Generated: 2026-02-24
 
-Reads all knowledge files from /Users/felixsanhueza/Developer/kora/knowledge/,
-cross-references with known source locations, and outputs a YAML mapping to
-/Users/felixsanhueza/Developer/kora/docs/plans/source-mapping.yml
+Resolves knowledge and external source roots from the active clone and the
+environment, then emits a YAML source-mapping plan under docs/plans/.
 """
 
 import os
@@ -13,26 +12,51 @@ import glob
 from pathlib import Path
 from datetime import date
 
-KNOWLEDGE_ROOT = Path("/Users/felixsanhueza/Developer/kora/knowledge")
-OUTPUT_FILE = Path("/Users/felixsanhueza/Developer/kora/docs/plans/source-mapping.yml")
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
-WIKIGUIAS = Path("/Users/felixsanhueza/Developer/tde/sources/wikiguias_corpus")
-POSIBLES = Path("/Users/felixsanhueza/posibles fuentes")
-GORE = POSIBLES / "gore_desde_0"
+
+def _default_knowledge_root():
+    upper = REPO_ROOT / "KNOWLEDGE"
+    lower = REPO_ROOT / "knowledge"
+    return upper if upper.exists() else lower
+
+
+def _resolve_env_path(env_name, default=None):
+    raw_value = os.environ.get(env_name)
+    value = raw_value if raw_value not in (None, "") else default
+    if value in (None, ""):
+        return None
+    path = Path(value).expanduser()
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+    return path.resolve()
+
+
+KNOWLEDGE_ROOT = _resolve_env_path("KORA_SOURCE_MAPPER_KNOWLEDGE_ROOT", str(_default_knowledge_root()))
+OUTPUT_FILE = _resolve_env_path("KORA_SOURCE_MAPPER_OUTPUT", "docs/plans/source-mapping.yml")
+WIKIGUIAS = _resolve_env_path("KORA_SOURCE_MAPPER_WIKIGUIAS_ROOT")
+POSIBLES = _resolve_env_path("KORA_SOURCE_MAPPER_POSIBLES_ROOT")
+GORE = _resolve_env_path("KORA_SOURCE_MAPPER_GORE_ROOT", str(POSIBLES / "gore_desde_0") if POSIBLES else None)
 
 
 def w(subdir, filename):
     """Return full path inside wikiguias corpus."""
+    if WIKIGUIAS is None:
+        return None
     return str(WIKIGUIAS / subdir / filename)
 
 
 def p(filename):
     """Return full path inside posibles fuentes."""
+    if POSIBLES is None:
+        return None
     return str(POSIBLES / filename)
 
 
 def g(filename):
     """Return full path inside gore_desde_0."""
+    if GORE is None:
+        return None
     return str(GORE / filename)
 
 
@@ -626,7 +650,12 @@ def write_output(mappings_dict, output_path, strategy_counts, total):
 
 def main():
     print("KORA Source Mapper — Phase 1")
+    print(f"Repo root: {REPO_ROOT}")
     print(f"Knowledge root: {KNOWLEDGE_ROOT}")
+    print(f"Output file: {OUTPUT_FILE}")
+    print(f"Wikiguias root: {WIKIGUIAS}")
+    print(f"Posibles root: {POSIBLES}")
+    print(f"GORE root: {GORE}")
     print()
 
     # Validate source paths

@@ -75,6 +75,7 @@ class GnRebuildTests(unittest.TestCase):
         )
         script.chmod(0o755)
 
+
     def test_freeze_build_validate_report_flow(self):
         with TemporaryDirectory() as tmpdir:
             repo = Path(tmpdir) / "repo"
