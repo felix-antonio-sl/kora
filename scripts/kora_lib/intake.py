@@ -3,12 +3,21 @@ from pathlib import Path
 
 from .artifacts import load_yaml_safe
 from .catalog import load_catalog
-from .config import KORA_ROOT
+from .config import KORA_ROOT, physical_to_logical_repo_path, resolve_logical_repo_path, resolve_operational_dir
+
+
+def provenance_source_from_artifact(artifact):
+    provenance = artifact.get("_manifest", {}).get("provenance", {})
+    if isinstance(provenance, dict):
+        return provenance.get("source", "")
+    if isinstance(provenance, str):
+        return provenance
+    return ""
 
 
 def cmd_intake():
-    source_dir = KORA_ROOT / "source"
-    drafts_dir = KORA_ROOT / "drafts"
+    source_dir = resolve_operational_dir("source")
+    drafts_dir = resolve_operational_dir("drafts")
 
     if not source_dir.exists():
         print("No source/ directory found.")
@@ -34,7 +43,7 @@ def cmd_intake():
                 file_path = KORA_ROOT / item.get("file", "")
                 artifact, _ = load_yaml_safe(file_path)
                 if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
-                    prov_source = artifact["_manifest"].get("provenance", {}).get("source", "")
+                    prov_source = provenance_source_from_artifact(artifact)
                     if prov_source:
                         catalog_sources[prov_source] = {
                             "urn": urn,
@@ -51,7 +60,7 @@ def cmd_intake():
                 draft_path = Path(root) / file_name
                 artifact, _ = load_yaml_safe(draft_path)
                 if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
-                    prov_source = artifact["_manifest"].get("provenance", {}).get("source", "")
+                    prov_source = provenance_source_from_artifact(artifact)
                     if prov_source:
                         draft_sources[prov_source] = str(draft_path.relative_to(KORA_ROOT))
 
@@ -59,7 +68,7 @@ def cmd_intake():
     counts = {"PENDING": 0, "PROCESSING": 0, "PUBLISHED": 0}
 
     for source_file in sorted(source_files):
-        rel = str(source_file.relative_to(KORA_ROOT))
+        rel = str(physical_to_logical_repo_path(source_file))
         if rel in catalog_sources:
             status = "PUBLISHED"
             info = catalog_sources[rel]
@@ -74,7 +83,7 @@ def cmd_intake():
 
     orphan_count = 0
     for source_path, info in catalog_sources.items():
-        if source_path.startswith("source/") and not (KORA_ROOT / source_path).exists():
+        if source_path.startswith("source/") and not resolve_logical_repo_path(source_path).exists():
             print(f"  [ORPHAN] {info['file']} → {source_path} (source missing)")
             orphan_count += 1
 

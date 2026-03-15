@@ -42,7 +42,7 @@ from kora_lib.gn_semantics import (
 DEFAULT_REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAP_PATH = DEFAULT_REPO_ROOT / "scripts" / "gn_rebuild_map.yml"
 DEFAULT_SOURCE_ROOT = Path("/Users/felixsanhueza/Developer/gorenuble/knowledge")
-DEFAULT_CONTROL_DRAFT_ROOT = Path("drafts/gn-control")
+DEFAULT_CONTROL_DRAFT_ROOT = Path("OPERATIONS/drafts/gn-control")
 DEFAULT_CONTROL_ROOT = Path("docs/reports/gn-control")
 TOP_LEVEL_KODA_TECHNICAL_KEYS = {
     "_manifest",
@@ -542,7 +542,7 @@ def entry_expected_meta(entry):
 
 def looks_like_local_path(value):
     text = str(value).strip()
-    return bool(re.search(r"(^|[\s`])(staging/|domains/|source/|sources/|build/|drafts/|knowledge/|\.\./)", text))
+    return bool(re.search(r"(^|[\s`])(staging/|domains/|source/|sources/|build/|drafts/|OPERATIONS/|knowledge/|\.\./)", text))
 
 
 def source_text_to_reference(value, urn_alias_map, external_labels, urn_title_map):
@@ -2189,13 +2189,13 @@ def get_roots(repo_root, config):
     return {
         "repo_root": repo_root,
         "source_root": source_root,
-        "inbox_root": repo_root / config.get("inbox_root", "inbox/gn"),
-        "source_mirror_root": repo_root / config.get("source_mirror_root", "source/gn"),
-        "draft_root": repo_root / config.get("draft_root", "drafts/gn"),
+        "inbox_root": repo_root / config.get("inbox_root", "OPERATIONS/inbox/gn"),
+        "source_mirror_root": repo_root / config.get("source_mirror_root", "OPERATIONS/source/gn"),
+        "draft_root": repo_root / config.get("draft_root", "OPERATIONS/drafts/gn"),
         "knowledge_root": repo_root / config.get("knowledge_root", "knowledge/gn"),
         "control_draft_root": repo_root / config.get("control_draft_root", str(DEFAULT_CONTROL_DRAFT_ROOT)),
         "control_root": repo_root / config.get("control_root", str(DEFAULT_CONTROL_ROOT)),
-        "build_root": repo_root / "build" / "gn-rebuild",
+        "build_root": repo_root / "OPERATIONS" / "build" / "gn-rebuild",
     }
 
 

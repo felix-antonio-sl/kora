@@ -25,6 +25,7 @@ from .config import (
     TRACES_TO_DOC_PATTERN,
     TRACES_TO_SECTION_PATTERN,
     USER_FORBIDDEN_PATTERNS,
+    resolve_operational_dir,
 )
 from .workspaces import (
     extract_cm_refs,
@@ -1244,7 +1245,7 @@ def auto_fix_markdown_paths(paths, max_lines_per_h2=None, emit=True):
 
 
 def cmd_lint_md(paths=None, max_lines_per_h2=None, fix=False):
-    target_paths = paths or [KORA_ROOT / "knowledge", KORA_ROOT / "drafts"]
+    target_paths = paths or [KORA_ROOT / "knowledge", resolve_operational_dir("drafts")]
     if fix:
         auto_fix_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)
     result = lint_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)

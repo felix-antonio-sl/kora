@@ -157,7 +157,7 @@ class GnRebuildTests(unittest.TestCase):
             self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
             manual = repo / "drafts/gn/manuales/manual-presupuesto.md"
             csv_doc = repo / "drafts/gn/datos/programas-vigentes-resumen.md"
-            evidence = repo / "build/gn-rebuild/testrun/evidence/datos__programas-vigentes-resumen.md.json"
+            evidence = repo / "OPERATIONS/build/gn-rebuild/testrun/evidence/datos__programas-vigentes-resumen.md.json"
             self.assertTrue(manual.exists())
             self.assertTrue(csv_doc.exists())
             self.assertTrue(evidence.exists())
@@ -174,7 +174,7 @@ class GnRebuildTests(unittest.TestCase):
 
             report = self._run("--repo-root", str(repo), "--map-path", str(map_path), "report", "--run-id", "testrun")
             self.assertEqual(report.returncode, 0, report.stderr or report.stdout)
-            report_path = repo / "build/gn-rebuild/testrun/report.md"
+            report_path = repo / "OPERATIONS/build/gn-rebuild/testrun/report.md"
             self.assertTrue(report_path.exists())
             self.assertIn("Structural Diff", report_path.read_text(encoding="utf-8"))
             self.assertIn("build/ queda fuera de index, graph y health por diseno", report_path.read_text(encoding="utf-8"))
@@ -587,7 +587,7 @@ class GnRebuildTests(unittest.TestCase):
             freeze = self._run("--repo-root", str(repo), "--map-path", str(map_path), "freeze-source", "--run-id", "residue")
             self.assertEqual(freeze.returncode, 0, freeze.stderr or freeze.stdout)
 
-            evidence_root = repo / "build/gn-rebuild/residue/evidence"
+            evidence_root = repo / "OPERATIONS/build/gn-rebuild/residue/evidence"
             evidence_root.mkdir(parents=True, exist_ok=True)
             (evidence_root / "normativa__ley-presupuestos-2026-partida-31.md.json").write_text(
                 json.dumps(
@@ -744,7 +744,7 @@ class GnRebuildTests(unittest.TestCase):
             build = self._run("--repo-root", str(repo), "--map-path", str(map_path), "build", "--run-id", "badurn", "--clean")
             self.assertEqual(build.returncode, 0, build.stderr or build.stdout)
 
-            evidence_path = repo / "build/gn-rebuild/badurn/evidence/manuales__manual-presupuesto.md.json"
+            evidence_path = repo / "OPERATIONS/build/gn-rebuild/badurn/evidence/manuales__manual-presupuesto.md.json"
             payload = json.loads(evidence_path.read_text(encoding="utf-8"))
             payload["target_urn"] = payload["draft_urn"]
             evidence_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

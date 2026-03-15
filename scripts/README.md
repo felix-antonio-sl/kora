@@ -2,6 +2,8 @@
 
 Este directorio mezcla toolchain activa, soporte de namespace y utilitarios historicos. No todo lo que vive en `scripts/` forma parte del core operativo del repo.
 
+Las superficies operacionales locales (`inbox/`, `source/`, `drafts/`, `build/`) viven fisicamente bajo `OPERATIONS/` en la raiz del repo y quedan fuera del clone portable via `.gitignore`.
+
 ## Core Soportado
 
 - `kora`: entrypoint oficial de la CLI del monorepo.

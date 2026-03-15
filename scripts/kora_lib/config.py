@@ -4,6 +4,8 @@ import re
 
 KORA_ROOT = Path(__file__).resolve().parents[2]
 AGENTS_ROOT = KORA_ROOT / "AGENTS" if (KORA_ROOT / "AGENTS").exists() else KORA_ROOT / "agents"
+OPERATIONS_ROOT_NAME = "OPERATIONS"
+OPERATIONS_ROOT = KORA_ROOT / OPERATIONS_ROOT_NAME
 CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
 GENERATED_DOCS_DIR = KORA_ROOT / "docs" / "generated"
 BOOTSTRAP_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
@@ -28,6 +30,7 @@ IGNORED_DIRS = {
     "inbox",
     "source",
     "drafts",
+    OPERATIONS_ROOT_NAME,
     ".claude",
     ".agent",
     ".venv",
@@ -45,7 +48,7 @@ SKILL_REQUIRED_HEADINGS = (
 )
 TOOL_IDENTIFIER_PATTERN = re.compile(r"^/?[A-Za-z0-9._-]+$")
 URN_REF_PATTERN = re.compile(
-    r"(urn:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9._/-]+(?::[A-Za-z0-9._-]+)?(?:#[A-Za-z0-9._-]+)?)"
+    r"(urn:[a-z0-9-]+:[a-z0-9-]+:(?:[A-Za-z0-9._/-]+:)*[A-Za-z0-9._/-]+(?:#[A-Za-z0-9._-]+)?)"
 )
 AGENT_ROUTE_PATTERN = re.compile(r"(?:->|→)([a-z0-9-]+)/([A-Za-z0-9_-]+)")
 CM_REF_PATTERN = re.compile(r"CM-[A-Za-z0-9_-]+")
@@ -266,3 +269,34 @@ MISSING_SKILL_SPECS = {
         ),
     },
 }
+
+
+def operations_dir(name: str) -> Path:
+    return OPERATIONS_ROOT / name
+
+
+def resolve_operational_dir(name: str) -> Path:
+    preferred = operations_dir(name)
+    legacy = KORA_ROOT / name
+    return preferred if preferred.exists() or not legacy.exists() else legacy
+
+
+def resolve_logical_repo_path(path_str: str) -> Path:
+    path = Path(path_str)
+    if not path.parts:
+        return KORA_ROOT
+    root_name = path.parts[0]
+    if root_name in {"inbox", "source", "drafts", "build"}:
+        return resolve_operational_dir(root_name).joinpath(*path.parts[1:])
+    return KORA_ROOT / path
+
+
+def physical_to_logical_repo_path(path: Path) -> Path:
+    resolved = path.resolve()
+    for root_name in ("inbox", "source", "drafts", "build"):
+        physical_root = operations_dir(root_name).resolve()
+        legacy_root = (KORA_ROOT / root_name).resolve()
+        for candidate in (physical_root, legacy_root):
+            if resolved == candidate or candidate in resolved.parents:
+                return Path(root_name) / resolved.relative_to(candidate)
+    return resolved.relative_to(KORA_ROOT.resolve())

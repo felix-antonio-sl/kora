@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 from common import ROOT, run_cli
 import kora_lib.audit as audit_module
+from kora_lib.config import URN_REF_PATTERN
 import kora_lib.validation as validation_module
 from kora_lib.artifacts import dump_yaml_frontmatter_and_body
 from kora_lib.graph import GraphEdge
@@ -62,6 +63,10 @@ def write_bootstrap(path, urn, body):
 
 
 class SemanticValidationTests(unittest.TestCase):
+    def test_urn_ref_pattern_keeps_nested_kb_urns_intact(self):
+        text = 'urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0'
+        self.assertEqual(URN_REF_PATTERN.findall(text), [text])
+
     def test_soul_semantics_flags_explicit_fsm_syntax(self):
         failures = validate_soul_semantics("STATE: S-DISPATCHER -> ACT: clasificar\n")
         self.assertIn("SOUL contiene leakage de behavior/state-machine", failures[0])

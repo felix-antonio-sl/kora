@@ -1,10 +1,10 @@
 config:
   source_root: /Users/felixsanhueza/Developer/gorenuble/knowledge
-  inbox_root: inbox/gn
-  source_mirror_root: source/gn
-  draft_root: drafts/gn
+  inbox_root: OPERATIONS/inbox/gn
+  source_mirror_root: OPERATIONS/source/gn
+  draft_root: OPERATIONS/drafts/gn
   knowledge_root: knowledge/gn
-  control_draft_root: drafts/gn-control
+  control_draft_root: OPERATIONS/drafts/gn-control
   control_root: docs/reports/gn-control
 
 defaults:

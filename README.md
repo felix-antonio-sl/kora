@@ -11,6 +11,14 @@ KORA organiza el ecosistema en cuatro estratos:
 - `agents/`: workspaces ejecutables KORA.
 - `scripts/`: CLI oficial y utilitarios auxiliares. La frontera operativa esta documentada en `scripts/README.md`.
 
+Ademas, el repo opera sobre un pipeline de transformacion de artefactos:
+
+- `OPERATIONS/inbox/`: bandeja de entrada operacional local.
+- `OPERATIONS/source/`: insumos fuente aun no publicados.
+- `OPERATIONS/drafts/`: artefactos transformados en prepublicacion.
+- `KNOWLEDGE/`: conocimiento publicado.
+- `OPERATIONS/build/`: evidencia tecnica de corridas; no forma parte de la base de conocimiento.
+
 La Formal Layer oficial vive en `knowledge/kora/categorical-foundations/`. El corpus `knowledge/fxsl/cat/` permanece como material auxiliar y solo entra a la ley operativa por absorcion formal explicita.
 
 ## Arquitectura
@@ -26,7 +34,32 @@ kora/
   docs/generated/               salidas vivas generadas por la CLI
   schemas/                      contratos JSON para bootstrap y config
   scripts/                      CLI oficial + soporte acotado + legacy
+  OPERATIONS/                   superficies operacionales locales no portables
+    inbox/                      cola operacional de ingesta
+    source/                     insumos fuente
+    drafts/                     prepublicacion
+    build/                      evidencia tecnica de procesos
+  KNOWLEDGE/                    conocimiento publicado
 ```
+
+## Pipeline Operativo
+
+El ciclo normal de incorporacion de artefactos es:
+
+```text
+OPERATIONS/inbox/ -> OPERATIONS/source/ -> OPERATIONS/drafts/ -> KNOWLEDGE/
+                                         \-> OPERATIONS/build/   (evidencia tecnica paralela)
+```
+
+Semantica de cada etapa:
+
+- `OPERATIONS/inbox/`: activa trabajo pendiente o registra una corrida operacional.
+- `OPERATIONS/source/`: conserva materia prima o insumo semiestructurado.
+- `OPERATIONS/drafts/`: contiene artefactos ya transformados pero aun no promovidos.
+- `KNOWLEDGE/`: contiene artefactos publicados y catalogables.
+- `OPERATIONS/build/`: guarda locks, projections, reports y evidence; queda fuera de `index`, `graph` y `health` por diseno.
+
+`OPERATIONS/` es local-only: queda fuera del clone portable de KORA y se excluye via `.gitignore`.
 
 ## Gobernanza
 

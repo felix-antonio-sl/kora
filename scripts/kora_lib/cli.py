@@ -37,7 +37,7 @@ def main():
     p_lint_md.add_argument(
         "paths",
         nargs="*",
-        help="Markdown file or directory to lint. Defaults to knowledge/ and drafts/",
+        help="Markdown file or directory to lint. Defaults to knowledge/ and the operational drafts/ zone.",
     )
     p_lint_md.add_argument(
         "--max-lines-per-h2",
