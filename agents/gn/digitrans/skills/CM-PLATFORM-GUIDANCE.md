@@ -1,13 +1,8 @@
 ---
 _manifest:
-  urn: urn:gn:skill:digitrans-platform-guidance:1.0.0
+  urn: urn:gn:skill:digitrans-platform-guidance:2.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 ---
-
-# CM-PLATFORM-GUIDANCE
 
 ## Proposito
 Explicar plataformas TDE y sus requisitos de integracion desde una perspectiva institucional, no de soporte tecnico operativo.

@@ -7,7 +7,7 @@ _manifest:
 ## catalog_resolve
 
 - **Firma:** urn: string → path: string
-- **Parametros:** `urn` conceptual del artefacto TDE u ORKO a resolver.
+- **Parametros:** `urn` conceptual del artefacto TDE a resolver.
 - **Cuando usar:** Toda consulta KB requiere resolucion URN via catalogo.
 - **Cuando NO usar:** Datos ya en contexto o tema ya mapeado en turno actual.
 - **Descripcion funcional:** Resuelve una URN del catalogo vivo a una ruta local consultable por el agente.
@@ -25,58 +25,50 @@ _manifest:
 | Topic | URN |
 |-------|-----|
 | **CORE** | |
-| Introduccion TDE, sistema TDE, panorama general | urn:tde:kb:guia-sistema-tde-2025 |
-| Gobierno Digital 2030, Principios, Objetivos | urn:tde:kb:gobierno-digital-2030 |
-| Glosario, lenguaje institucional, terminos de plataforma | urn:tde:kb:glosario-simple |
+| Introduccion TDE, sistema TDE, panorama general | urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0 |
+| Gobierno Digital 2030, Principios, Objetivos | urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0 |
+| Glosario, lenguaje institucional, terminos de plataforma | urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0 |
 | **LEYES** | |
-| Ley 21.180, TDE | urn:tde:kb:ley-21180-tde |
-| Ley 19.880, LBPA, Procedimiento Administrativo | urn:tde:kb:ley-19880-procedimiento-administrativo |
-| Ley 21.658, SEGDIG / Ciberseguridad | urn:tde:kb:ley-21658-ciberseguridad |
-| Ley 21.719, Datos Personales | urn:tde:kb:ley-21719-datos-personales |
-| IA, Legislacion | urn:tde:kb:legislacion-ia-chile |
-| Decreto Supremo 4, Procedimiento Digital | urn:tde:kb:decreto-4-procedimiento-digital |
+| Ley 21.180, TDE | urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0 |
+| Ley 19.880, LBPA, Procedimiento Administrativo | urn:kora:kb:tde:regulacion:ley-19880-bases-procedimientos-administrativos:1.0.0 |
+| Ley 21.658, SEGDIG / Ciberseguridad | urn:kora:kb:tde:regulacion:ley-21658:1.0.0 |
+| Decreto Supremo 4, Procedimiento Digital | urn:kora:kb:tde:regulacion:decreto-4-procedimientos-electronicos:1.0.0 |
 | **NORMAS TECNICAS** | |
-| Dec.10, Documentos Expedientes | urn:tde:kb:nt-documentos-expedientes |
-| Dec.12, Interoperabilidad | urn:tde:kb:nt-interoperabilidad |
-| Dec.8, Notificaciones | urn:tde:kb:nt-notificaciones |
-| Dec.7, Seguridad Ciberseguridad | urn:tde:kb:nt-seguridad-ciberseguridad |
-| Dec.9, Autenticacion | urn:tde:kb:nt-autenticacion |
-| Dec.11, Plataformas Procedimientos | urn:tde:kb:nt-plataformas-procedimientos |
+| Dec.10, Documentos Expedientes | urn:kora:kb:tde:lineamientos-normas:decreto-10-documentos-expedientes-electronicos:1.0.0 |
+| Dec.12, Interoperabilidad | urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0 |
+| Dec.8, Notificaciones | urn:kora:kb:tde:lineamientos-normas:decreto-8-norma-notificaciones:1.0.0 |
+| Dec.7, Seguridad Ciberseguridad | urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0 |
+| Dec.9, Autenticacion | urn:kora:kb:tde:lineamientos-normas:decreto-9-norma-autenticacion:1.0.0 |
+| Dec.11, Plataformas Procedimientos | urn:kora:kb:tde:lineamientos-normas:decreto-11-plataformas-electronicas:1.0.0 |
 | **PLATAFORMAS** | |
-| ClaveUnica, Integracion | urn:tde:kb:manual-integracion-claveunica |
-| ClaveUnica, Boton Implementacion | urn:tde:kb:manual-claveunica-boton |
-| Notificaciones, Onboarding | urn:tde:kb:manual-notificaciones-inicio |
-| Notificaciones, Integracion Tecnica | urn:tde:kb:manual-integracion-notificaciones |
-| Notificaciones, Uso institucional | urn:tde:kb:manual-notificaciones-institucional |
-| Notificaciones, Atencion ciudadana | urn:tde:kb:manual-notificaciones-atencion-ciudadana |
-| SIMPLE | urn:tde:kb:manual-simple-saas |
-| SIMPLE, Glosario | urn:tde:kb:glosario-simple |
-| DocDigital | urn:tde:kb:manual-coordinadora-tde |
-| PISEE, Red de Interoperabilidad del Estado | urn:tde:kb:manual-coordinadora-tde |
-| ClaveUnica, terminos y condiciones | urn:tde:kb:claveunica-tyc |
-| Coordinacion institucional TDE | urn:tde:kb:manual-coordinadora-tde |
+| ClaveUnica, Integracion | urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0 |
+| ClaveUnica, Boton Implementacion | urn:kora:kb:tde:plataformas-manuales:manual-uso-boton-claveunica:1.0.0 |
+| Notificaciones, Onboarding | urn:kora:kb:tde:plataformas-manuales:manual-inicio-notificaciones-electronicas:1.0.0 |
+| Notificaciones, Integracion Tecnica | urn:kora:kb:tde:plataformas-manuales:manual-integracion-notificaciones:1.0.0 |
+| Notificaciones, Uso institucional | urn:kora:kb:tde:plataformas-manuales:manual-usuario-institucional-notificaciones:1.0.0 |
+| Notificaciones, Atencion ciudadana | urn:kora:kb:tde:plataformas-manuales:manual-atencion-ciudadana-notificaciones:1.0.0 |
+| SIMPLE | urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0 |
+| SIMPLE, Glosario | urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0 |
+| DocDigital, Coordinacion TDE | urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0 |
+| ClaveUnica, terminos y condiciones | urn:kora:kb:tde:plataformas-terminos:terminos-condiciones-claveunica:1.0.0 |
 | **ESTRATEGIAS** | |
-| Estrategia Datos | urn:tde:kb:estrategia-datos |
-| Identidad Digital | urn:tde:kb:estrategia-identidad-digital |
-| Gobierno Digital 2030 | urn:tde:kb:gobierno-digital-2030 |
-| Capacitaciones TDE | urn:tde:kb:estrategia-capacitaciones-tde |
-| Sistema TDE 2025 | urn:tde:kb:guia-sistema-tde-2025 |
+| Estrategia Datos | urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0 |
+| Identidad Digital | urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0 |
+| Gobierno Digital 2030 | urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0 |
+| Capacitaciones TDE | urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0 |
+| Sistema TDE 2025 | urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0 |
 | **GUIAS** | |
-| CPAT, Guia Rapida | urn:tde:kb:guia-rapida-cpat |
-| MGDE, Marco Gestion Datos | urn:tde:kb:guia-marco-gestion-datos |
-| Cloud Publica | urn:tde:kb:guia-cloud-publica |
-| Estandares de datos abiertos | urn:tde:kb:guia-estandares-datos-abiertos |
-| Metadatos Documentos | urn:tde:kb:guia-metadatos-documentos |
-| EVALTIC | urn:tde:kb:guia-evaltic |
-| Calidad Web | urn:tde:kb:guia-calidad-web |
-| Diseno Servicios | urn:tde:kb:guia-diseno-servicios |
-| Anonimizacion Datos | urn:tde:kb:guia-anonimizacion-datos |
-| Gestion TIC, Orientaciones | urn:tde:kb:guia-gestion-tic |
-| Seguridad Ciberseguridad, Guia | urn:tde:kb:guia-seguridad-ciberseguridad |
-| Registro Tratamiento Datos, RAT | urn:tde:kb:guia-registro-tratamiento-datos |
-| Metodologia Proyectos TIC | urn:tde:kb:guia-metodologia-proyectos |
-| Voz y tono institucional | urn:tde:kb:guia-voz-tono |
-| **ORKO BRIDGE** | |
-| ORKO, Metodologia WSLC | urn:orko:kb:orko-metodologia |
-| ORKO, Fases WSLC | urn:orko:kb:orko-fases |
-| ORKO, Fundamentos y H_org | urn:orko:kb:orko-fundamentos |
+| CPAT, Guia Rapida | urn:kora:kb:tde:lineamientos-guias:guia-rapida-cpat:1.0.0 |
+| MGDE, Marco Gestion Datos | urn:kora:kb:tde:lineamientos-guias:guia-tecnica-marco-gestion-datos:1.0.0 |
+| Cloud Publica | urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0 |
+| Estandares de datos abiertos | urn:kora:kb:tde:lineamientos-estandares:estandares-apertura-reutilizacion-datos-abiertos:1.0.0 |
+| Metadatos Documentos | urn:kora:kb:tde:lineamientos-guias:guia-tecnica-metadatos-documentos-expedientes:1.0.0 |
+| EVALTIC | urn:kora:kb:tde:lineamientos-guias:guia-tecnica-evaltic-inversiones-gobierno-digital:1.0.0 |
+| Calidad Web | urn:kora:kb:tde:lineamientos-guias:guia-calidad-web:1.0.0 |
+| Diseno Servicios | urn:kora:kb:tde:plataformas-manuales:recomendaciones-diseno-servicios-estado:1.0.0 |
+| Anonimizacion Datos | urn:kora:kb:tde:lineamientos-guias:guia-introductoria-anonimizacion-datos:1.0.0 |
+| Gestion TIC, Orientaciones | urn:kora:kb:tde:lineamientos-guias:orientaciones-basicas-gestion-tic:1.0.0 |
+| Seguridad Ciberseguridad, Guia | urn:kora:kb:tde:lineamientos-guias:guia-tecnica-seguridad-informacion-ciberseguridad:1.0.0 |
+| Registro Tratamiento Datos, RAT | urn:kora:kb:tde:proteccion-datos:registro-actividades-tratamiento:1.0.0 |
+| Metodologia Proyectos TIC | urn:kora:kb:tde:lineamientos-guias:metodologia-gestion-proyectos:1.0.0 |
+| Voz y tono institucional | urn:kora:kb:tde:plataformas-manuales:guia-voz-y-tono:1.0.0 |

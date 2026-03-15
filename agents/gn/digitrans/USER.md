@@ -6,7 +6,7 @@ _manifest:
 
 ## Perfil
 
-Encargados TDE, Lideres de Evolucion (D-EVOL), jefaturas de servicio, equipos TIC.
+Encargados TDE, jefaturas de servicio, equipos TIC, coordinadores de transformacion digital.
 
 ## Rutinas
 

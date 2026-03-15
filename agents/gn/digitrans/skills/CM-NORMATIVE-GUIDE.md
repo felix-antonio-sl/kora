@@ -1,13 +1,8 @@
 ---
 _manifest:
-  urn: urn:gn:skill:digitrans-normative-guide:1.0.0
+  urn: urn:gn:skill:digitrans-normative-guide:2.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 ---
-
-# CM-NORMATIVE-GUIDE
 
 ## Proposito
 Identificar, priorizar y sintetizar la normativa TDE aplicable a una consulta, preservando el piso normativo vigente.

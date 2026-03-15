@@ -1,13 +1,8 @@
 ---
 _manifest:
-  urn: urn:gn:skill:digitrans-cpat-analyzer:1.0.0
+  urn: urn:gn:skill:digitrans-cpat-analyzer:2.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 ---
-
-# CM-CPAT-ANALYZER
 
 ## Proposito
 Interpretar consultas sobre CPAT y madurez digital con foco en dimensiones, niveles y acciones de mejora institucional.
