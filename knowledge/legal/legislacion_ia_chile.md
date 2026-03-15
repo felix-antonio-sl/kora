@@ -32,7 +32,11 @@ Hitos procesales:
 
 ## Estructura del Proyecto de Ley
 
-31 artículos permanentes y 3 artículos transitorios. Títulos:
+Versión en tramitación (analizada en este artefacto): 31 artículos permanentes y 3 artículos transitorios.
+
+**Texto aprobado por Cámara (Oficio Nº 20.843, 13 oct 2025):** 19 artículos + 1 transitorio — estructura simplificada respecto a la versión en tramitación; eliminados títulos de Incidentes Graves, Gobernanza de IA y Disposiciones Finales. Ver: `urn:legal:kb:ley-ia-chile-texto-aprobado-camara`
+
+Títulos de la versión en tramitación:
 - Disposiciones Generales (objeto, ámbito, definiciones, clasificación de riesgos).
 - Sistemas de Riesgo Inaceptable.
 - Sistemas de IA de Alto Riesgo.
@@ -177,4 +181,4 @@ Excepción: sistemas autorizados por ley para investigación criminal o enjuicia
 | 04-03-2025 | Segunda ronda de indicaciones del Ejecutivo |
 | 04-08-2025 | Aprobación en general en Sala de la Cámara de Diputados |
 | 19-08-2025 | Tercera ronda de indicaciones del Ejecutivo |
-| Próximos | Votación en particular y paso al Senado |
+| 13-10-2025 | Aprobación por Cámara de Diputados (Oficio Nº 20.843); texto final: 19 arts + 1 transitorio → Senado |

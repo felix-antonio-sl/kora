@@ -1,13 +1,13 @@
 {
   "meta": {
-    "scanned_files": 1377,
-    "node_count": 927,
-    "edge_count": 4137
+    "scanned_files": 1379,
+    "node_count": 921,
+    "edge_count": 4144
   },
   "node_kind_counts": {
-    "artifact": 308,
-    "knowledge": 202,
-    "skill": 249,
+    "artifact": 300,
+    "knowledge": 203,
+    "skill": 250,
     "spec": 7,
     "tool": 117,
     "workspace": 44
@@ -16,12 +16,12 @@
     "AllowsKB": 460,
     "AllowsTool": 204,
     "ContainsArtifact": 220,
-    "ContainsSkill": 249,
+    "ContainsSkill": 250,
     "DeclaresTool": 205,
-    "InvokesSkill": 233,
+    "InvokesSkill": 234,
     "RoutesToAgent": 60,
     "TracesTo": 45,
-    "XRef": 2461
+    "XRef": 2466
   },
   "nodes": [
     {
@@ -574,10 +574,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
+      "id": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
       "title": "config.json",
       "path": "AGENTS/fxsl/pensador-generador/config.json",
       "namespace": "fxsl"
@@ -1538,46 +1538,6 @@
       "id": "urn:kora:catalog:master:2.0.0",
       "kind": "artifact",
       "urn": "urn:kora:catalog:master:2.0.0"
-    },
-    {
-      "id": "urn:kora:kb:tde:estrategia",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:estrategia"
-    },
-    {
-      "id": "urn:kora:kb:tde:lineamientos-estandares",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:lineamientos-estandares"
-    },
-    {
-      "id": "urn:kora:kb:tde:lineamientos-guias",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:lineamientos-guias"
-    },
-    {
-      "id": "urn:kora:kb:tde:lineamientos-normas",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:lineamientos-normas"
-    },
-    {
-      "id": "urn:kora:kb:tde:plataformas-manuales",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:plataformas-manuales"
-    },
-    {
-      "id": "urn:kora:kb:tde:plataformas-terminos",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:plataformas-terminos"
-    },
-    {
-      "id": "urn:kora:kb:tde:proteccion-datos",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:proteccion-datos"
-    },
-    {
-      "id": "urn:kora:kb:tde:regulacion",
-      "kind": "artifact",
-      "urn": "urn:kora:kb:tde:regulacion"
     },
     {
       "id": "urn:korvo:agent-bootstrap:korax-agents:2.0.0",
@@ -3588,37 +3548,37 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:kb:tde:estrategia:estrategia-capacitaciones-transformacion-digital:1.0.0",
+      "id": "urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:kora:kb:tde:estrategia:estrategia-capacitaciones-transformacion-digital:1.0.0",
+      "urn": "urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0",
       "title": "Estrategia de Capacitaciones para la Transformación Digital del Estado",
       "path": "KNOWLEDGE/tde/estrategias/estrategia-capacitaciones-transformacion-digital.md",
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:kb:tde:estrategia:estrategia-datos-administracion-estado:1.0.0",
+      "id": "urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:kora:kb:tde:estrategia:estrategia-datos-administracion-estado:1.0.0",
+      "urn": "urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0",
       "title": "Estrategia de Datos de la Administración del Estado",
       "path": "KNOWLEDGE/tde/estrategias/estrategia-datos-administracion-estado.md",
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:kb:tde:estrategia:estrategia-gobierno-digital-2030:1.0.0",
+      "id": "urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:kora:kb:tde:estrategia:estrategia-gobierno-digital-2030:1.0.0",
+      "urn": "urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0",
       "title": "Estrategia de Gobierno Digital 2030",
       "path": "KNOWLEDGE/tde/estrategias/estrategia-gobierno-digital-2030.md",
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:kb:tde:estrategia:estrategia-identidad-digital:1.0.0",
+      "id": "urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:kora:kb:tde:estrategia:estrategia-identidad-digital:1.0.0",
+      "urn": "urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0",
       "title": "Estrategia de Identidad Digital",
       "path": "KNOWLEDGE/tde/estrategias/estrategia-identidad-digital.md",
       "namespace": "kora"
@@ -4107,6 +4067,15 @@
       "urn": "urn:legal:kb:ley-21719-datos-personales",
       "title": "Ley N° 21.719 de Protección de Datos Personales",
       "path": "KNOWLEDGE/legal/ley_21719_datos_personales.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
+      "title": "Ley que Regula los Sistemas de Inteligencia Artificial — Texto Aprobado Cámara (Boletines 15.869-19 y 16.821-19)",
+      "path": "KNOWLEDGE/legal/ley-ia-chile-texto-aprobado-camara.md",
       "namespace": "legal"
     },
     {
@@ -5028,12 +4997,21 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
+      "title": "CM-DIAGNOSTICADOR.md",
+      "path": "AGENTS/fxsl/pensador-generador/skills/CM-DIAGNOSTICADOR.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
       "kind": "skill",
       "category": "Skills",
       "urn": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
-      "title": "CM-navegador-tensiones.md",
-      "path": "AGENTS/fxsl/pensador-generador/skills/CM-navegador-tensiones.md",
+      "title": "CM-NAVEGADOR-TENSIONES.md",
+      "path": "AGENTS/fxsl/pensador-generador/skills/CM-NAVEGADOR-TENSIONES.md",
       "namespace": "fxsl"
     },
     {
@@ -5041,17 +5019,17 @@
       "kind": "skill",
       "category": "Skills",
       "urn": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
-      "title": "CM-posicionador.md",
-      "path": "AGENTS/fxsl/pensador-generador/skills/CM-posicionador.md",
+      "title": "CM-POSICIONADOR.md",
+      "path": "AGENTS/fxsl/pensador-generador/skills/CM-POSICIONADOR.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
+      "id": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
-      "title": "CM-RAZONAMIENTO-CLINICO",
-      "path": "AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md",
+      "urn": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
+      "title": "CM-PRODUCCION.md",
+      "path": "AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md",
       "namespace": "fxsl"
     },
     {
@@ -11753,7 +11731,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0"
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12973,6 +12951,11 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/pensador-generador",
+      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:fxsl/pensador-generador",
       "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0"
     },
     {
@@ -12983,7 +12966,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0"
+      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -15473,6 +15456,12 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
+      "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
       "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
@@ -15485,7 +15474,7 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
+      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
     {
@@ -17852,7 +17841,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18391,6 +18380,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -18405,7 +18401,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
+      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19896,273 +19892,273 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:estrategia",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:estrategia",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:estrategia",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:estrategia",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-estandares",
+      "target": "urn:kora:kb:tde:lineamientos-estandares:estandares-apertura-reutilizacion-datos-abiertos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-calidad-web:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-introductoria-anonimizacion-datos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-rapida-cpat:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-evaltic-inversiones-gobierno-digital:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-marco-gestion-datos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-metadatos-documentos-expedientes:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-seguridad-informacion-ciberseguridad:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:metodologia-gestion-proyectos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:orientaciones-basicas-gestion-tic:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-10-documentos-expedientes-electronicos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-11-plataformas-electronicas:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-8-norma-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-9-norma-autenticacion:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:guia-voz-y-tono:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-atencion-ciudadana-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-inicio-notificaciones-electronicas:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-integracion-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-uso-boton-claveunica:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-usuario-institucional-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:recomendaciones-diseno-servicios-estado:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:plataformas-terminos",
+      "target": "urn:kora:kb:tde:plataformas-terminos:terminos-condiciones-claveunica:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:proteccion-datos",
+      "target": "urn:kora:kb:tde:proteccion-datos:registro-actividades-tratamiento:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:decreto-4-procedimientos-electronicos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:ley-19880-bases-procedimientos-administrativos:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:ley-21658:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20667,6 +20663,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:legal:kb:ley-21719-datos-personales",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -23773,14 +23776,14 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/pensador-generador/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-config:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
       "target": "urn:fxsl:kb:fx-tensiones",
       "fragment": null,
       "source_path": "AGENTS/fxsl/pensador-generador/config.json"
@@ -24501,24 +24504,31 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
+      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-DIAGNOSTICADOR.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
       "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
       "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-navegador-tensiones.md"
+      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-NAVEGADOR-TENSIONES.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
       "target": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
       "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-posicionador.md"
+      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-POSICIONADOR.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
+      "source": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
+      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md"
+      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md"
     },
     {
       "kind": "XRef",
@@ -30304,274 +30314,274 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:kb:tde:estrategia:estrategia-capacitaciones-transformacion-digital:1.0.0",
-      "target": "urn:kora:kb:tde:estrategia",
+      "source": "urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/estrategias/estrategia-capacitaciones-transformacion-digital.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:kb:tde:estrategia:estrategia-datos-administracion-estado:1.0.0",
-      "target": "urn:kora:kb:tde:estrategia",
+      "source": "urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/estrategias/estrategia-datos-administracion-estado.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:kb:tde:estrategia:estrategia-gobierno-digital-2030:1.0.0",
-      "target": "urn:kora:kb:tde:estrategia",
+      "source": "urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/estrategias/estrategia-gobierno-digital-2030.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:kb:tde:estrategia:estrategia-identidad-digital:1.0.0",
-      "target": "urn:kora:kb:tde:estrategia",
+      "source": "urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0",
+      "target": "urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/estrategias/estrategia-identidad-digital.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-estandares:estandares-apertura-reutilizacion-datos-abiertos:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-estandares",
+      "target": "urn:kora:kb:tde:lineamientos-estandares:estandares-apertura-reutilizacion-datos-abiertos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-estandares/estandares-apertura-reutilizacion-datos-abiertos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-calidad-web:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-calidad-web:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-calidad-web.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-introductoria-anonimizacion-datos:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-introductoria-anonimizacion-datos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-introductoria-anonimizacion-datos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-metodologica-sistema-transformacion-digital-2025.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-rapida-cpat:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-rapida-cpat:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-rapida-cpat.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-evaltic-inversiones-gobierno-digital:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-evaltic-inversiones-gobierno-digital:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-evaltic-inversiones-gobierno-digital.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-marco-gestion-datos:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-marco-gestion-datos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-marco-gestion-datos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-metadatos-documentos-expedientes:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-metadatos-documentos-expedientes:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-metadatos-documentos-expedientes.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-seguridad-informacion-ciberseguridad:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-seguridad-informacion-ciberseguridad:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-seguridad-informacion-ciberseguridad.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:metodologia-gestion-proyectos:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:metodologia-gestion-proyectos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/metodologia-gestion-proyectos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:orientaciones-basicas-gestion-tic:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:orientaciones-basicas-gestion-tic:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/orientaciones-basicas-gestion-tic.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-guias",
+      "target": "urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-guias/recomendaciones-tecnicas-cloud-publica.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-normas:decreto-10-documentos-expedientes-electronicos:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-10-documentos-expedientes-electronicos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-normas/decreto-10-documentos-expedientes-electronicos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-normas:decreto-11-plataformas-electronicas:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-11-plataformas-electronicas:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-normas/decreto-11-plataformas-electronicas.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-normas/decreto-12-interoperabilidad.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-normas/decreto-7-norma-seguridad-informacion.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-normas:decreto-8-norma-notificaciones:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-8-norma-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-normas/decreto-8-norma-notificaciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:lineamientos-normas:decreto-9-norma-autenticacion:1.0.0",
-      "target": "urn:kora:kb:tde:lineamientos-normas",
+      "target": "urn:kora:kb:tde:lineamientos-normas:decreto-9-norma-autenticacion:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/lineamientos-normas/decreto-9-norma-autenticacion.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/glosario-plataforma-simple.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:guia-voz-y-tono:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:guia-voz-y-tono:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/guia-voz-y-tono.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-atencion-ciudadana-notificaciones:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-atencion-ciudadana-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-atencion-ciudadana-notificaciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-coordinadora-transformacion-digital.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-inicio-notificaciones-electronicas:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-inicio-notificaciones-electronicas:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-inicio-notificaciones-electronicas.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-integracion-claveunica.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-integracion-notificaciones:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-integracion-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-integracion-notificaciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-uso-boton-claveunica:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-uso-boton-claveunica:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-uso-boton-claveunica.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-uso-simple-saas.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:manual-usuario-institucional-notificaciones:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:manual-usuario-institucional-notificaciones:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/manual-usuario-institucional-notificaciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-manuales:recomendaciones-diseno-servicios-estado:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-manuales",
+      "target": "urn:kora:kb:tde:plataformas-manuales:recomendaciones-diseno-servicios-estado:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-manuales/recomendaciones-diseno-servicios-estado.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:plataformas-terminos:terminos-condiciones-claveunica:1.0.0",
-      "target": "urn:kora:kb:tde:plataformas-terminos",
+      "target": "urn:kora:kb:tde:plataformas-terminos:terminos-condiciones-claveunica:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/plataformas-terminos/terminos-condiciones-claveunica.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:proteccion-datos:registro-actividades-tratamiento:1.0.0",
-      "target": "urn:kora:kb:tde:proteccion-datos",
+      "target": "urn:kora:kb:tde:proteccion-datos:registro-actividades-tratamiento:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/proteccion-datos/registro-actividades-tratamiento.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:regulacion:decreto-4-procedimientos-electronicos:1.0.0",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:decreto-4-procedimientos-electronicos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:regulacion:ley-19880-bases-procedimientos-administrativos:1.0.0",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:ley-19880-bases-procedimientos-administrativos:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/regulacion/ley-21180-transformacion-digital-estado.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:tde:regulacion:ley-21658:1.0.0",
-      "target": "urn:kora:kb:tde:regulacion",
+      "target": "urn:kora:kb:tde:regulacion:ley-21658:1.0.0",
       "fragment": null,
       "source_path": "KNOWLEDGE/tde/regulacion/ley-21658.md"
     },
@@ -31200,6 +31210,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:legal:kb:legislacion-ia-chile",
+      "target": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/legislacion_ia_chile.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:legal:kb:ley-15076",
       "target": "urn:legal:kb:ley-15076",
       "fragment": null,
@@ -31232,6 +31249,13 @@
       "target": "urn:legal:kb:ley-21719-datos-personales",
       "fragment": null,
       "source_path": "KNOWLEDGE/legal/ley_21719_datos_personales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
+      "target": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/ley-ia-chile-texto-aprobado-camara.md"
     },
     {
       "kind": "XRef",
