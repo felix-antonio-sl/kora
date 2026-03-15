@@ -3,6 +3,7 @@ import re
 
 
 KORA_ROOT = Path(__file__).resolve().parents[2]
+AGENTS_ROOT = KORA_ROOT / "AGENTS" if (KORA_ROOT / "AGENTS").exists() else KORA_ROOT / "agents"
 CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
 GENERATED_DOCS_DIR = KORA_ROOT / "docs" / "generated"
 BOOTSTRAP_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
@@ -157,8 +158,6 @@ META_KORA_AUDIT_WORKSPACES = (
     "kora/forgemaster",
     "kora/curator",
     "kora/custodio",
-    "kora/clawmaster",
-    "kora/taskmaster",
 )
 COHORT_WORKSPACE_OVERRIDES = {
     "meta-kora": {workspace.split("/", 1)[1] for workspace in META_KORA_AUDIT_WORKSPACES},
@@ -179,14 +178,6 @@ META_KORA_STATUS = {
     "kora/custodio": {
         "status": "operating_core",
         "reason": "Nucleo operativo: cierra salud, catalogo e ingesta del repo.",
-    },
-    "kora/clawmaster": {
-        "status": "auxiliary",
-        "reason": "Especialista OpenClaw/Codex; valido y resoluble, pero fuera de los loops institucionales de KORA.",
-    },
-    "kora/taskmaster": {
-        "status": "auxiliary",
-        "reason": "Soporte de tareas y priorizacion; valido y resoluble, pero fuera del nucleo operativo endurecido.",
     },
 }
 OPERATING_CORE_COHORTS = {

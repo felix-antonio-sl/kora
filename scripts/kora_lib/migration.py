@@ -5,6 +5,7 @@ import yaml
 
 from .artifacts import dump_yaml_frontmatter_and_body, load_markdown_parts
 from .config import (
+    AGENTS_ROOT,
     BROKEN_ROUTE_MAPPINGS,
     KB_PIPELINE_NORMALIZATION,
     KORA_ROOT,
@@ -234,7 +235,7 @@ def ensure_missing_skills(workspace_dir):
 
 
 def ensure_guardian_workspace():
-    workspace_dir = KORA_ROOT / "agents" / "kora" / "guardian"
+    workspace_dir = AGENTS_ROOT / "kora" / "guardian"
     changed = []
     if workspace_dir.exists():
         return changed

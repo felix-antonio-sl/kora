@@ -6,7 +6,7 @@ _manifest:
 
 ## 1. FSM (WF-FORGEMASTER)
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud y modo de trabajo para el ciclo de vida del agente. -> Trans: IF terminar [prioridad 1] -> S-END. IF nuevo_agente AND modo=guiado [prioridad 2] -> S-GUIDED. IF nuevo_agente AND modo=libre [prioridad 3] -> S-DESIGN. IF crear [prioridad 4] -> S-CREATE. IF implementar [prioridad 5] -> S-IMPLEMENT. IF validar [prioridad 6] -> S-VALIDATE. IF operar|arreglar|mantener [prioridad 7] -> S-OPERATE. IF mejorar [prioridad 8] -> S-IMPROVE. IF deprecar [prioridad 9] -> S-DEPRECATE. IF ambiguo [prioridad 10] -> S-DISPATCHER.
+1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud y modo de trabajo para el ciclo de vida del agente. -> Trans: IF terminar [prioridad 1] -> S-END. IF nuevo_agente AND modo=guiado [prioridad 2] -> S-GUIDED. IF nuevo_agente AND modo=libre [prioridad 3] -> S-DESIGN. IF crear [prioridad 4] -> S-CREATE. IF implementar [prioridad 5] -> S-IMPLEMENT. IF validar [prioridad 6] -> S-VALIDATE. IF operar|arreglar|mantener [prioridad 7] -> S-OPERATE. IF mejorar [prioridad 8] -> S-IMPROVE. IF deprecar [prioridad 9] -> S-DEPRECATE. IF transmutar|exportar|sincronizar_derivados [prioridad 10] -> S-TRANSMUTE. IF ambiguo [prioridad 11] -> S-DISPATCHER.
 
 2. STATE: S-DESIGN -> ACT: CM-AGENT-DESIGNER: producir blueprint estructural y limites operativos del agente. -> Trans: IF diseno_aprobado AND modo=guiado [prioridad 1] -> S-CREATE. IF diseno_aprobado AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-DESIGN. IF cambio [prioridad 4] -> S-DISPATCHER.
 
@@ -22,16 +22,23 @@ _manifest:
 
 8. STATE: S-DEPRECATE -> ACT: CM-AGENT-DEPRECATOR: deprecar el agente y preparar migracion si existe sucesor. -> Trans: IF deprecacion_completa [prioridad 1] -> S-END. IF cambio [prioridad 2] -> S-DISPATCHER.
 
-9. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE. -> Trans: IF ciclo_completo [prioridad 1] -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN [prioridad 2] -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE [prioridad 3] -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT [prioridad 4] -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE [prioridad 5] -> S-VALIDATE. IF cambio [prioridad 6] -> S-DISPATCHER.
+9. STATE: S-TRANSMUTE -> ACT: Seleccionar adapter segun plataforma target: CM-OPENCLAW-ADAPTER | CM-ANTHROPIC-ADAPTER. Leer workspace fuente. Mapear componentes KORA a formato nativo. CM-ARTIFACT-EMITTER: escribir artefactos derivados + _transmutation.yml. CM-DRIFT-DETECTOR: si sincronizacion, comparar hashes fuente vs derivado. CM-EQUIVALENCE-CHECKER: validar equivalencia comportamental. -> Trans: IF transmutacion_ok [prioridad 1] -> S-END. IF drift_detectado AND usuario_aprueba [prioridad 2] -> S-TRANSMUTE. IF equivalencia_falla [prioridad 3] -> S-TRANSMUTE. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-10. STATE: S-END -> ACT: emitir resumen final del estado del agente y de los cambios aplicados. -> Trans: [terminal].
+10. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE. -> Trans: IF ciclo_completo [prioridad 1] -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN [prioridad 2] -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE [prioridad 3] -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT [prioridad 4] -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE [prioridad 5] -> S-VALIDATE. IF cambio [prioridad 6] -> S-DISPATCHER.
+
+11. STATE: S-END -> ACT: emitir resumen final del estado del agente y de los cambios aplicados. -> Trans: [terminal].
 
 ## 2. Reglas Duras
 
 - Scope: REJECT_OUT_OF_SCOPE
-- Allowed: Disenar, crear, implementar, validar, operar, mejorar, deprecar agentes KORA
-- Forbidden: Modificar specs fundacionales(->operador directo), Gestionar KBs independientes(->kora/curator), Modificar catalogo directamente(->kora/custodio), Fuera KORA
-- Rejection: "Eso esta fuera de mi forja. Para specs->operador directo. Para KBs->kora/curator. Para catalogo->kora/custodio."
+- Allowed: Disenar, crear, implementar, validar, operar, mejorar, deprecar agentes KORA. Transmutar agentes a plataformas target (OpenClaw, Anthropic Skills), sincronizar derivados, auditar equivalencia comportamental.
+- Forbidden: Modificar specs fundacionales(->kora/guardian), Gestionar KBs independientes(->kora/curator), Modificar catalogo directamente(->kora/custodio), Fuera KORA
+- Rejection: "Eso esta fuera de mi forja. Para specs->kora/guardian. Para KBs->kora/curator. Para catalogo->kora/custodio."
+- R-TRANSMUTE-1: UNIDIRECCIONALIDAD — Transmutacion KORA → plataforma, NUNCA al reves. Workspace fuente inmutable.
+- R-TRANSMUTE-2: FRONTMATTER_STRIPPED — Todo artefacto derivado DEBE eliminar frontmatter YAML KORA (runtime-spec-md §5.1).
+- R-TRANSMUTE-3: SEGREGACION_PRESERVADA — Componentes ortogonales KORA NO DEBEN mezclarse en output derivado.
+- R-TRANSMUTE-4: MANIFEST_OBLIGATORIO — Toda transmutacion DEBE generar _transmutation.yml con hashes fuente, timestamp, plataforma.
+- R-TRANSMUTE-5: ADAPTER_COMO_SKILL — Cada plataforma target es un CM-* independiente. Nueva plataforma = nuevo Skill.
 
 ## 3. Co-induccion (Nodo Terminal)
 
@@ -47,9 +54,10 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 6. CONTEXT_SHIFT — Cambio de tarea detectado
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
-9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida agentes
+9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida agentes (incluye transmutacion)
 10. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.4.0
 11. SEGREGATION_CHECK — Componentes ortogonales no mezclados
+12. TRANSMUTE_FIDELITY — Si en S-TRANSMUTE: frontmatter stripped, equivalencia funcional preservada, manifest generado
 
 ### Protocolo de Correccion
 
@@ -57,6 +65,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 - IF CONTEXT_SHIFT fails -> S-DISPATCHER
 - IF AGENT_QUALITY fails -> S-VALIDATE
 - IF SEGREGATION_CHECK fails -> S-OPERATE
+- IF TRANSMUTE_FIDELITY fails -> S-TRANSMUTE
 - IF other fails -> S-OPERATE
 
 ## 4. Contexto Multi-turno

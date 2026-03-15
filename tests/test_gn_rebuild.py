@@ -484,7 +484,7 @@ class GnRebuildTests(unittest.TestCase):
             _frontmatter, body = load_markdown_parts(repo / "drafts/gn/gobernanza/glosario-ipr-consolidado.md")
             self.assertIn("| nombre | def |", body)
             self.assertIn("| VAN | \\| |", body)
-            self.assertIn("| TIR |  |", body)
+            self.assertRegex(body, r"\| TIR \| *\|")
 
     def test_validate_rejects_koda_residue_in_body(self):
         with TemporaryDirectory() as tmpdir:

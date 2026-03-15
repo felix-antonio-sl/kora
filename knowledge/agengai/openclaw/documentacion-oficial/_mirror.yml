@@ -1,0 +1,20 @@
+upstream:
+  repo: https://github.com/openclaw/openclaw.git
+  local_clone: /Users/felixsanhueza/Developer/_workspaces/openclaw
+  root: docs
+sync:
+  mode: mirror-1to1
+  excludes:
+  - .DS_Store
+policy:
+  knowledge_class: external-mirror
+  per_file_frontmatter: false
+  catalog_strategy: collection-index
+state:
+  last_sync_at: '2026-03-15T04:04:16+00:00'
+  last_sync_commit: b5b589d99d3839b6cf0d3689bb56aec30d0d17e0
+  dest_root: /Users/felixsanhueza/Developer/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial
+  file_count: 727
+  deleted_files: 0
+  deleted_dirs: 0
+  dry_run: false

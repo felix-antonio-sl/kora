@@ -3,7 +3,7 @@ import re
 from dataclasses import asdict, dataclass
 from functools import lru_cache
 
-from .config import KORA_ROOT, META_KORA_AUDIT_WORKSPACES, META_KORA_STATUS, OPERATING_CORE_COHORTS
+from .config import AGENTS_ROOT, KORA_ROOT, META_KORA_AUDIT_WORKSPACES, META_KORA_STATUS, OPERATING_CORE_COHORTS
 from .workspaces import extract_cm_refs, extract_workspace_tokens
 
 
@@ -75,7 +75,7 @@ def build_contract_summary(contract):
 
 def workspace_dir_from_ref(workspace_ref):
     namespace, name = workspace_ref.split("/", 1)
-    return KORA_ROOT / "agents" / namespace / name
+    return AGENTS_ROOT / namespace / name
 
 
 def split_markdown_sections(content):

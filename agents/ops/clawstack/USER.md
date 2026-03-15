@@ -1,0 +1,27 @@
+---
+_manifest:
+  urn: urn:ops:agent-bootstrap:clawstack-user:1.0.0
+  type: bootstrap_user
+---
+
+## Perfil del Operador
+
+DevOps Engineers, SREs, AI Engineers, KORA Operators. Personas que administran instancias OpenClaw en produccion o desarrollo sobre servidores Unix, con o sin Docker, necesitando control full-stack desde host hasta agente.
+
+## Rutinas
+
+- **Provisioning inicial**: Servidor nuevo -> hardening host -> Docker setup -> OpenClaw deploy -> configurar canales -> auditar.
+- **Operacion diaria**: Verificar status, revisar logs, diagnosticar issues, aplicar fixes, monitorear token economy.
+- **Mantenimiento periodico**: Upgrades de stack (apt + Docker + OpenClaw), auditorias de seguridad, optimizacion de bootstrap y memoria.
+- **Troubleshooting urgente**: Agente no responde, canal desconectado, gateway caido, container crasheando. Diagnostico cross-layer.
+- **Consulta arquitectonica**: Entender como funciona un componente, evaluar opciones de diseno, decidir entre heartbeat vs cron vs hooks.
+
+## Preferencias de Output
+
+- Idioma: es-CL
+- Formato: Markdown con comandos CLI en bloques de codigo
+- Diagnosticos: tablas con sintoma, capa, causa, fix, referencia al manual
+- Config: JSON5 con comentarios, diff antes/despues
+- Citacion: Cap N §S.s del manual o path de doc oficial
+- Procedimientos: checklists numerados con verificacion post-paso
+- Confirmacion: siempre preguntar antes de ejecutar destructivos

@@ -36,6 +36,8 @@ _manifest:
 | Formal layer auditoria, invariants, formal/06 | urn:kora:kb:cat-audit-invariants |
 | Formal layer preservacion, compositional preservation, formal/07 | urn:kora:kb:cat-behavioral-preservation |
 | Formal layer puente FXSL, formal/08 | urn:kora:kb:cat-fxsl-bridge |
+| Anthropic skills, Claude Code, skill format, triggers, MCP | urn:kora:kb:skills-anthropic |
+| OpenClaw, workspace, config, sub-agents, gating, channels | urn:kora:kb:openclaw-integration |
 
 ## workspace_read
 
@@ -71,3 +73,21 @@ _manifest:
 - **Cuando usar:** Ejecutar validacion de conformidad completa contra el baseline publicado de agent-spec-md y skill-spec-md.
 - **Cuando NO usar:** Validaciones parciales o consultas rapidas.
 - **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`.
+
+## artifact_read
+
+- **Firma:** path: string → content: string
+- **Cuando usar:** Leer artefacto derivado existente para comparar con fuente o auditar equivalencia durante transmutacion.
+- **Cuando NO usar:** Si el artefacto no existe aun (primera transmutacion).
+
+## artifact_write
+
+- **Firma:** {path: string, content: string} → result: string
+- **Cuando usar:** Escribir artefacto derivado a directorio de output despues de transmutacion.
+- **Cuando NO usar:** Para modificar workspace fuente KORA (prohibido por R-TRANSMUTE-1).
+
+## diff_compute
+
+- **Firma:** {source_path: string, derived_path: string} → {drift: boolean, changes: Change[]}
+- **Cuando usar:** Comparar workspace fuente KORA vs artefacto derivado para detectar drift durante sincronizacion.
+- **Cuando NO usar:** Si no existe artefacto derivado previo (primera transmutacion).

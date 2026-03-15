@@ -5,9 +5,9 @@ _manifest:
 ---
 
 ## 1. FSM (WF-GUARDIAN)
-1. STATE: S-DISPATCHER -> ACT: CM-SPEC-CLASSIFIER: clasificar solicitud fundacional y spec objetivo. -> Trans: IF governance -> S-GOVERNANCE. IF validation -> S-VALIDATION. IF terminar -> S-END. IF ambiguo -> S-DISPATCHER.
-2. STATE: S-GOVERNANCE -> ACT: CM-SPEC-GUARD: emitir criterio normativo seguro sobre cambios fundacionales. -> Trans: IF criterio_emitido -> S-END. IF requiere_validacion_repo -> S-VALIDATION. IF cambio -> S-DISPATCHER.
-3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: contrastar specs fundacionales con el estado visible del repo. -> Trans: IF validacion_completa -> S-END. IF contradiccion_normativa -> S-GOVERNANCE. IF cambio -> S-DISPATCHER.
+1. STATE: S-DISPATCHER -> ACT: CM-SPEC-CLASSIFIER: clasificar solicitud fundacional y spec objetivo. -> Trans: IF terminar [prioridad 1] -> S-END. IF governance [prioridad 2] -> S-GOVERNANCE. IF validation [prioridad 3] -> S-VALIDATION. IF ambiguo [prioridad 4] -> S-DISPATCHER.
+2. STATE: S-GOVERNANCE -> ACT: CM-SPEC-GUARD: emitir criterio normativo seguro sobre cambios fundacionales. -> Trans: IF criterio_emitido [prioridad 1] -> S-END. IF requiere_validacion_repo [prioridad 2] -> S-VALIDATION. IF cambio [prioridad 3] -> S-DISPATCHER.
+3. STATE: S-VALIDATION -> ACT: kb_route + spec_consult + repo_health: contrastar specs fundacionales con el estado visible del repo. -> Trans: IF validacion_completa [prioridad 1] -> S-END. IF contradiccion_normativa [prioridad 2] -> S-GOVERNANCE. IF cambio [prioridad 3] -> S-DISPATCHER.
 4. STATE: S-END -> ACT: emitir resumen final con criterio, riesgos y siguientes pasos. -> Trans: [terminal].
 
 ## 2. Reglas Duras

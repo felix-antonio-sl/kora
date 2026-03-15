@@ -6,19 +6,19 @@ _manifest:
 
 ## 1. FSM (WF-CUSTODIO)
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud operacional del repo. -> Trans: IF salud|diagnostico|health|validate|stats -> S-SALUD. IF catalogo|index|urn|broken -> S-CATALOGO. IF ingesta|inbox|pipeline -> S-INGESTA. IF auditar|estructura|topologia|convenciones -> S-AUDITORIA. IF reparar|fix|cirugia -> S-CIRUGIA. IF mejorar|evolucionar|planificar -> S-EVOLUCION. IF terminar -> S-END. IF ambiguo -> S-DISPATCHER.
+1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud operacional del repo. -> Trans: IF terminar [prioridad 1] -> S-END. IF salud|diagnostico|health|validate|stats [prioridad 2] -> S-SALUD. IF catalogo|index|urn|broken [prioridad 3] -> S-CATALOGO. IF ingesta|inbox|pipeline [prioridad 4] -> S-INGESTA. IF auditar|estructura|topologia|convenciones [prioridad 5] -> S-AUDITORIA. IF reparar|fix|cirugia [prioridad 6] -> S-CIRUGIA. IF mejorar|evolucionar|planificar [prioridad 7] -> S-EVOLUCION. IF ambiguo [prioridad 8] -> S-DISPATCHER.
 
-2. STATE: S-SALUD -> ACT: CM-HEALTH-INSPECTOR: consolidar estado actual del repo, metricas y severidad ERROR|WARNING|OK en un reporte. -> Trans: IF error_critico -> S-CIRUGIA. IF todo_ok -> S-DISPATCHER. IF requiere_auditoria_profunda -> S-AUDITORIA. IF cambio -> S-DISPATCHER.
+2. STATE: S-SALUD -> ACT: CM-HEALTH-INSPECTOR: consolidar estado actual del repo, metricas y severidad ERROR|WARNING|OK en un reporte. -> Trans: IF error_critico [prioridad 1] -> S-CIRUGIA. IF requiere_auditoria_profunda [prioridad 2] -> S-AUDITORIA. IF todo_ok [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-3. STATE: S-CATALOGO -> ACT: CM-CATALOG-STEWARD: sincronizar catalogo y revisar resolubilidad de referencias. -> Trans: IF broken_refs -> S-CIRUGIA. IF catalogo_sincronizado -> S-DISPATCHER. IF cambio -> S-DISPATCHER.
+3. STATE: S-CATALOGO -> ACT: CM-CATALOG-STEWARD: sincronizar catalogo y revisar resolubilidad de referencias. -> Trans: IF broken_refs [prioridad 1] -> S-CIRUGIA. IF catalogo_sincronizado [prioridad 2] -> S-DISPATCHER. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-4. STATE: S-INGESTA -> ACT: CM-INGESTA-STEWARD: inspeccionar el estado del pipeline inbox -> source -> drafts -> knowledge y sus pendientes. -> Trans: IF objetos_pendientes -> S-DISPATCHER. IF pipeline_limpio -> S-DISPATCHER. IF cambio -> S-DISPATCHER.
+4. STATE: S-INGESTA -> ACT: CM-INGESTA-STEWARD: inspeccionar el estado del pipeline inbox -> source -> drafts -> knowledge y sus pendientes. -> Trans: IF objetos_pendientes [prioridad 1] -> S-DISPATCHER. IF pipeline_limpio [prioridad 2] -> S-DISPATCHER. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos -> S-CIRUGIA. IF hallazgos_menores -> S-DISPATCHER. IF limpio -> S-DISPATCHER. IF cambio -> S-DISPATCHER.
+5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos [prioridad 1] -> S-CIRUGIA. IF hallazgos_menores [prioridad 2] -> S-DISPATCHER. IF limpio [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-6. STATE: S-CIRUGIA -> ACT: CM-SURGEON: aplicar fix minimo sobre superficies operativas del repo excluyendo `agents/`, specs fundacionales y contenido KB. -> Trans: IF fix_aplicado -> S-SALUD. IF requiere_rediseno -> S-EVOLUCION. IF cambio -> S-DISPATCHER.
+6. STATE: S-CIRUGIA -> ACT: CM-SURGEON: aplicar fix minimo sobre superficies operativas del repo excluyendo `agents/`, specs fundacionales y contenido KB. -> Trans: IF fix_aplicado [prioridad 1] -> S-SALUD. IF requiere_rediseno [prioridad 2] -> S-EVOLUCION. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-7. STATE: S-EVOLUCION -> ACT: CM-EVOLUCION-PLANNER: planificar e implementar mejoras aprobadas sobre catalogo, scripts, pipeline y estructura operativa no-agentica. -> Trans: IF mejora_aplicada -> S-SALUD. IF descartar -> S-DISPATCHER. IF cambio -> S-DISPATCHER.
+7. STATE: S-EVOLUCION -> ACT: CM-EVOLUCION-PLANNER: planificar e implementar mejoras aprobadas sobre catalogo, scripts, pipeline y estructura operativa no-agentica. -> Trans: IF mejora_aplicada [prioridad 1] -> S-SALUD. IF descartar [prioridad 2] -> S-DISPATCHER. IF cambio [prioridad 3] -> S-DISPATCHER.
 
 8. STATE: S-END -> ACT: emitir resumen final del estado operativo del repo y de las acciones aplicadas. -> Trans: [terminal].
 

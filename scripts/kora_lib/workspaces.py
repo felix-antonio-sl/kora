@@ -2,6 +2,7 @@ import re
 
 from .artifacts import load_yaml_safe
 from .config import (
+    AGENTS_ROOT,
     AGENT_ROUTE_PATTERN,
     BOOTSTRAP_MANIFEST_TYPES,
     COHORT_NAMESPACE_GROUPS,
@@ -38,7 +39,7 @@ def workspace_in_cohort(workspace_dir, cohort=None):
 
 
 def iter_agent_workspaces(cohort=None):
-    agents_root = KORA_ROOT / "agents"
+    agents_root = AGENTS_ROOT
     if not agents_root.exists():
         return []
 
@@ -85,7 +86,7 @@ def workspace_ref_exists(workspace_ref):
         namespace, name = workspace_ref.split("/", 1)
     except ValueError:
         return False
-    return (KORA_ROOT / "agents" / namespace / name).is_dir()
+    return (AGENTS_ROOT / namespace / name).is_dir()
 
 
 def extract_workspace_tokens(text, self_workspace=None):
@@ -250,4 +251,4 @@ def workspace_exists_from_urn(urn):
     if not match:
         return False
     namespace, workspace_name = match.groups()
-    return (KORA_ROOT / "agents" / namespace / workspace_name).is_dir()
+    return (AGENTS_ROOT / namespace / workspace_name).is_dir()

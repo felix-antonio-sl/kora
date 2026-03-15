@@ -5,31 +5,29 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 ## Resumen
 
 - Workspaces cubiertos: 13
-- Estados declarados: 94
-- Tools semanticas declaradas: 80
-- Handoffs declarados: 35
+- Estados declarados: 95
+- Tools semanticas declaradas: 83
+- Handoffs declarados: 36
 
 ## Auditoria meta-kora
 
-- Meta agentes auditados: 6
+- Meta agentes auditados: 4
 - Meta agentes en nucleo operativo endurecido: 4
-- Meta agentes auxiliares explicitamente descopados: 2
+- Meta agentes auxiliares explicitamente descopados: 0
 
 | Workspace | Estatus | Estados | Skills | Tools | Handoffs | Motivo |
 |-----------|---------|---------|--------|-------|----------|--------|
 | kora/guardian | operating_core | 4 | 3 | 3 | 3 | Nucleo operativo constitucional: gobierna coherencia de specs, precedencia y validacion fundacional. |
-| kora/forgemaster | operating_core | 10 | 10 | 7 | 2 | Nucleo operativo: disena, crea, valida y entrega handoff al custodio. |
+| kora/forgemaster | operating_core | 11 | 15 | 10 | 3 | Nucleo operativo: disena, crea, valida y entrega handoff al custodio. |
 | kora/curator | operating_core | 11 | 11 | 7 | 2 | Nucleo operativo: korafica, audita y entrega handoff al custodio. |
 | kora/custodio | operating_core | 8 | 8 | 8 | 2 | Nucleo operativo: cierra salud, catalogo e ingesta del repo. |
-| kora/clawmaster | auxiliary | 11 | 11 | 6 | 3 | Especialista OpenClaw/Codex; valido y resoluble, pero fuera de los loops institucionales de KORA. |
-| kora/taskmaster | auxiliary | 6 | 5 | 2 | 3 | Soporte de tareas y priorizacion; valido y resoluble, pero fuera del nucleo operativo endurecido. |
 
 ## Cohorte kora
 
 | Workspace | Estados | Tools | Handoffs |
 |-----------|---------|-------|----------|
 | kora/guardian | 4 | 3 | 3 |
-| kora/forgemaster | 10 | 7 | 2 |
+| kora/forgemaster | 11 | 10 | 3 |
 | kora/curator | 11 | 7 | 2 |
 | kora/custodio | 8 | 8 | 2 |
 

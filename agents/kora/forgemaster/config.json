@@ -19,7 +19,9 @@
     "urn:kora:kb:cat-governance-lattice",
     "urn:kora:kb:cat-audit-invariants",
     "urn:kora:kb:cat-behavioral-preservation",
-    "urn:kora:kb:cat-fxsl-bridge"
+    "urn:kora:kb:cat-fxsl-bridge",
+    "urn:kora:kb:skills-anthropic",
+    "urn:kora:kb:openclaw-integration"
   ],
   "sandbox": {
     "mode": "strict"
@@ -27,7 +29,10 @@
   "tools": {
     "allow": [
       "agent_list",
+      "artifact_read",
+      "artifact_write",
       "catalog_resolve",
+      "diff_compute",
       "health_check",
       "kb_route",
       "spec_consult",

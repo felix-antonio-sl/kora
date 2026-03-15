@@ -1,5 +1,5 @@
 from .catalog import build_catalog_lookup, load_catalog
-from .config import KORA_ROOT
+from .config import AGENTS_ROOT, KORA_ROOT
 from .graph import build_reference_graph
 from .workspaces import fragment_exists
 
@@ -44,7 +44,7 @@ def cmd_health(strict=False):
 
         elif edge.kind == "RoutesToAgent":
             namespace, name = edge.target.split("/", 1)
-            if not (KORA_ROOT / "agents" / namespace / name).is_dir():
+            if not (AGENTS_ROOT / namespace / name).is_dir():
                 print(f"[BROKEN-AGENT] In {edge.source.relative_to(KORA_ROOT)}: {edge.target}")
                 broken_agent_routes += 1
 

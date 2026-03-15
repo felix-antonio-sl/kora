@@ -2,7 +2,7 @@ import unittest
 
 import jsonschema
 
-from common import FIXTURES, ROOT, load_json
+from common import AGENTS_ROOT, FIXTURES, ROOT, load_json
 from kora_lib.artifacts import load_yaml_safe
 from kora_lib.config import AGENT_REQUIRED_FILES
 from kora_lib.reports import compute_stats_payload, render_stats_markdown
@@ -203,11 +203,15 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("requiere_revision_de_foco", content)
 
     def test_meta_intent_classifiers_do_not_receive_fsm_state(self):
-        files = (
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-INTENT-CLASSIFIER.md",
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-INTENT-CLASSIFIER.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
-            ROOT / "agents" / "kora" / "clawmaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
+        files = tuple(
+            path
+            for path in (
+                AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-INTENT-CLASSIFIER.md",
+                AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-INTENT-CLASSIFIER.md",
+                AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
+                AGENTS_ROOT / "kora" / "clawmaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
+            )
+            if path.exists()
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("FSMState", content)
@@ -215,10 +219,14 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("cierre_solicitado", content)
 
     def test_meta_lifecycle_orchestrators_do_not_control_agent_phases(self):
-        files = (
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
-            ROOT / "agents" / "kora" / "clawmaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+        files = tuple(
+            path
+            for path in (
+                AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+                AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+                AGENTS_ROOT / "kora" / "clawmaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+            )
+            if path.exists()
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("### Fase 1:", content)

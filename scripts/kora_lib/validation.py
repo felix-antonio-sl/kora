@@ -9,6 +9,7 @@ from .artifacts import load_markdown_parts, load_yaml_safe
 from .config import (
     AGENT_BOOTSTRAP_FILES,
     AGENT_REQUIRED_FILES,
+    AGENTS_ROOT,
     AGENTS_FORBIDDEN_PATTERNS,
     BOOTSTRAP_MANIFEST_TYPES,
     BOOTSTRAP_SCHEMA_PATH,
@@ -1131,7 +1132,7 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                     workspace_ok = False
 
             for namespace, name in sorted(extract_workspace_refs(agents_path)):
-                if not (KORA_ROOT / "agents" / namespace / name).is_dir():
+                if not (AGENTS_ROOT / namespace / name).is_dir():
                     report_issue(
                         agents_path.relative_to(KORA_ROOT),
                         "broken_agent_route",
