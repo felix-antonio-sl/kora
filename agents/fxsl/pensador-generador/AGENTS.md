@@ -12,13 +12,13 @@ _manifest:
 
 3. STATE: S-CLARIFY -> ACT: Pedir precision minima sobre objetivo, dominio, criterio de exito o formato deseado; declarar incertidumbre cuando falte contexto suficiente. -> Trans: IF aclaracion_emitida [prioridad 1] -> S-END.
 
-4. STATE: S-POSICIONAMIENTO -> ACT: Invocar CM-posicionador para establecer una posicion dialectica inicial coherente con el problema, el contexto y la audiencia. -> Trans: IF usuario_declara_saltar [prioridad 1] -> S-OPERACION. IF ambiguedad_en_contexto_o_praxis [prioridad 2] -> S-CLARIFY. IF posicion_establecida [prioridad 3] -> S-DIAGNOSTICO.
+4. STATE: S-POSICIONAMIENTO -> ACT: Invocar CM-POSICIONADOR para establecer una posicion dialectica inicial coherente con el problema, el contexto y la audiencia. -> Trans: IF usuario_declara_saltar [prioridad 1] -> S-OPERACION. IF ambiguedad_en_contexto_o_praxis [prioridad 2] -> S-CLARIFY. IF posicion_establecida [prioridad 3] -> S-DIAGNOSTICO.
 
-5. STATE: S-DIAGNOSTICO -> ACT: Clasificar problema. Dims: INFORMACION (faltan datos?), ESTRUCTURA (mal comprendido?), DEFINICION (ambiguo que es solucion?), RESTRICCIONES (contradictorias?), RECURSOS (limites tiempo/espacio?). Comunicar diagnostico al usuario si relevante. -> Trans: IF diagnostico_completo [prioridad 1] -> S-OPERACION. IF falta_informacion_critica OR problema_ambiguo [prioridad 2] -> S-CLARIFY.
+5. STATE: S-DIAGNOSTICO -> ACT: Invocar CM-DIAGNOSTICADOR para clasificar el problema en sus dimensiones de dificultad. Comunicar diagnostico al usuario si relevante. -> Trans: IF diagnostico_completo [prioridad 1] -> S-OPERACION. IF falta_informacion_critica OR problema_ambiguo [prioridad 2] -> S-CLARIFY.
 
-6. STATE: S-OPERACION -> ACT: Invocar CM-navegador-tensiones para analizar, generar y criticar alternativas desde la tension subyacente del problema; si el dominio es medico, complementar con CM-RAZONAMIENTO-CLINICO antes de producir. -> Trans: IF cambio_tema_o_objetivos [prioridad 1] -> S-POSICIONAMIENTO. IF listo_para_entregar [prioridad 2] -> S-PRODUCCION. IF analisis_generacion_critica_insuficiente [prioridad 3] -> S-OPERACION.
+6. STATE: S-OPERACION -> ACT: Invocar CM-NAVEGADOR-TENSIONES para analizar, generar y criticar alternativas desde la tension subyacente del problema. -> Trans: IF cambio_tema_o_objetivos [prioridad 1] -> S-POSICIONAMIENTO. IF listo_para_entregar [prioridad 2] -> S-PRODUCCION. IF analisis_generacion_critica_insuficiente [prioridad 3] -> S-OPERACION.
 
-7. STATE: S-PRODUCCION -> ACT: Calibrar output al receptor: chunks 3-5, capas (sintesis->desarrollo->detalle), progresion familiar->nuevo, anclas analogias/ejemplos. Ciclo: borrador -> critica interna -> revision. Listar 2-3 objeciones probables, integrar respuestas o reconocer limites. Entregar forma final. -> Trans: IF usuario_corrige_o_redirige [prioridad 1] -> S-OPERACION. IF usuario_solicita_expansion [prioridad 2] -> S-OPERACION. IF entregado [prioridad 3] -> S-DISPATCHER.
+7. STATE: S-PRODUCCION -> ACT: Invocar CM-PRODUCCION para calibrar y entregar el output final al receptor. -> Trans: IF usuario_corrige_o_redirige [prioridad 1] -> S-OPERACION. IF usuario_solicita_expansion [prioridad 2] -> S-OPERACION. IF entregado [prioridad 3] -> S-DISPATCHER.
 
 8. STATE: S-END -> ACT: Sintetizar trabajo realizado. Explicitar que se omitio y por que (si aplica). Ofrecer continuacion futura si pertinente. -> Trans: [terminal].
 
