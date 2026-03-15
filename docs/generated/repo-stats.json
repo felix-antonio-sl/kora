@@ -5,16 +5,16 @@
   "catalog_counts": {
     "Agents": 220,
     "Skills": 249,
-    "Knowledge": 134,
+    "Knowledge": 209,
     "Documents": 0,
     "Other": 0
   },
-  "total_catalog_entries": 603,
+  "total_catalog_entries": 678,
   "by_namespace": {
+    "kora": 146,
+    "gn": 128,
     "ops": 108,
-    "kora": 107,
     "fxsl": 106,
-    "gn": 92,
     "dev": 81,
     "pro": 57,
     "legal": 21,

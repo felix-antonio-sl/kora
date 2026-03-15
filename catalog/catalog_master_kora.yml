@@ -2106,6 +2106,153 @@ Catalog:
       Domiciliaria
     file: KNOWLEDGE/pro/hodom/normativa/01-reglamento-hodom-ds1-2022.md
     status: draft
+  - urn: urn:gn:kb:guia-comunicaciones
+    title: Guía Integral de Comunicaciones GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_030_guia_comunicaciones.md
+    status: draft
+  - urn: urn:gn:kb:organigrama
+    title: Organigrama Institucional GORE Ñuble 2026
+    file: KNOWLEDGE/gn/kb/kb_gn_002_organigrama.md
+    status: draft
+  - urn: urn:gn:kb:manual-operacional-dgi
+    title: Manual Operacional del Departamento de Gestión Institucional
+    file: KNOWLEDGE/gn/kb/kb_gn_manual_operacional_dgi.md
+    status: draft
+  - urn: urn:gn:kb:estrategia-gestion
+    title: Estrategia y Gestión del Gobierno Regional en Chile
+    file: KNOWLEDGE/gn/kb/kb_gn_035_estrategia_gestion.md
+    status: draft
+  - urn: urn:gn:kb:plan-potenciamiento-dgi
+    title: Plan de Potenciamiento DGI
+    file: KNOWLEDGE/gn/kb/kb_gn_plan_potenciamiento_dgi.md
+    status: draft
+  - urn: urn:gn:kb:gestion-prpto
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026
+    file: KNOWLEDGE/gn/kb/kb_gn_018_gestion_prpto_2026.md
+    status: draft
+  - urn: urn:gn:kb:ley-presupuestos-2026-glosas-gore
+    title: Ley de Presupuestos 2026 — Glosas Gobiernos Regionales
+    file: KNOWLEDGE/gn/kb/kb_gn_211_ley_presupuestos_2026_glosas.md
+    status: draft
+  - urn: urn:gn:kb:comunicaciones-oc
+    title: Comunicaciones Oscar Crisóstomo — Gobernador Regional de Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_008_comunicaciones_oc.md
+    status: draft
+  - urn: urn:gn:kb:gestion-rendiciones
+    title: Gestión de Rendiciones de Cuentas — GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_020_gestion_rendiciones.md
+    status: draft
+  - urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
+    title: Ley N° 21.796 — Normas Generales Ley de Presupuestos 2026
+    file: KNOWLEDGE/gn/kb/kb_gn_211_ley_presupuestos_2026_normas_generales.md
+    status: draft
+  - urn: urn:gn:kb:nuble-250
+    title: Agenda Estratégica Ñuble 250
+    file: KNOWLEDGE/gn/kb/kb_gn_056_nuble250.md
+    status: draft
+  - urn: urn:gn:kb:marco-legal-gores
+    title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico
+    file: KNOWLEDGE/gn/kb/kb_gn_200_marco_legal_gores.md
+    status: draft
+  - urn: urn:gn:kb:manual-induccion-gore-nuble-2026
+    title: Manual de Inducción del Gobierno Regional de Ñuble 2026
+    file: KNOWLEDGE/gn/kb/kb_gn_017_manual_induccion.md
+    status: draft
+  - urn: urn:gn:kb:vision-desarrollo-nuble
+    title: Visión de Desarrollo GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
+    status: draft
+  - urn: urn:gn:kb:gore-ideal
+    title: 'GORE Ideal y GORE 4.0: Anatomía, Límites y Potencial del Gobierno Regional'
+    file: KNOWLEDGE/gn/kb/kb_gn_900_gore_ideal.md
+    status: draft
+  - urn: urn:gn:kb:erd-nuble-2024-2030
+    title: Estrategia Regional de Desarrollo Ñuble 2024–2030
+    file: KNOWLEDGE/gn/kb/kb_gn_006_erd_nuble.md
+    status: draft
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales'
+    file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31.md
+    status: draft
+  - urn: urn:gn:kb:cuentas-publicas-2021-2024
+    title: Cuentas Públicas GORE Ñuble 2021–2024
+    file: KNOWLEDGE/gn/kb/kb_gn_009_cuentas_publicas.md
+    status: draft
+  - urn: urn:gn:kb:flujos-aprobacion-documentos
+    title: Flujos de Aprobación de Documentos — GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_015_aprobaciones.md
+    status: draft
+  - urn: urn:gn:kb:estructura-estado-chile
+    title: Estructura del Estado de Chile
+    file: KNOWLEDGE/gn/kb/kb_gn_007_estructura_estado_chile.md
+    status: draft
+  - urn: urn:gn:kb:modelos-actos-juridicos
+    title: Modelos de Actos Jurídicos GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_100_modelos_actos_juridicos.md
+    status: draft
+  - urn: urn:gn:kb:intro-gores-nuble
+    title: Introducción al Gobierno Regional de Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_000_intro_gores_nuble.md
+    status: draft
+  - urn: urn:gn:kb:dictamenes-cgr-gore
+    title: Dictámenes CGR Relevantes para GOREs
+    file: KNOWLEDGE/gn/kb/kb_gn_101_dictamenes_cgr.md
+    status: draft
+  - urn: urn:gn:kb:loc-gore
+    title: LOC sobre Gobierno y Administración Regional (DFL 1-19.175)
+    file: KNOWLEDGE/gn/kb/kb_gn_031_loc_gore.md
+    status: draft
+  - urn: urn:gn:kb:modernizacion-estado-waissbluth
+    title: Introducción a la Gestión Pública (Waissbluth)
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_mw_waissbluth.md
+    status: draft
+  - urn: urn:gn:kb:lean6-gestion-core
+    title: 'Lean Six Sigma: Core Methods and Tools'
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_lean6_core.md
+    status: draft
+  - urn: urn:gn:kb:meyer-estructura-organizacional
+    title: Principle-based Organizational Structure
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_meyer_org_structure.md
+    status: draft
+  - urn: urn:gn:kb:instructivo-subvencion-8-2025-sts
+    title: Instructivo Concurso Vinculación con la Comunidad 8% 2025 – Región de Ñuble
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_028_instructivo_subvencion_8.md
+    status: draft
+  - urn: urn:gn:kb:guia-idi-sni-sts
+    title: Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos
+      Regionales
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_024_guia_idi_sni.md
+    status: draft
+  - urn: urn:gn:kb:selector-ipr
+    title: Selector de Vías de Financiamiento para Iniciativas Públicas Regionales
+      (IPR)
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_011_selector_ipr.md
+    status: draft
+  - urn: urn:gn:kb:guia-programas-directos-gore
+    title: Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución
+      Directa GORE – Glosa 06
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_025_guia_programas.md
+    status: draft
+  - urn: urn:gn:kb:guia-frpd-nuble
+    title: Guía Operativa FRPD Ñuble 2025
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_027_guia_frpd.md
+    status: draft
+  - urn: urn:gn:kb:transferencia-ppr
+    title: Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_001_transferencia_ppr.md
+    status: draft
+  - urn: urn:gn:kb:gestion-ipr
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR)
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_019_gestion_ipr.md
+    status: draft
+  - urn: urn:gn:kb:guia-fril-2025-sts
+    title: Instructivo FRIL 2025 – Región de Ñuble
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_026_guia_fril.md
+    status: draft
+  - urn: urn:gn:kb:guia-circular-33-sts
+    title: Guía Operativa Circular 33 – GORE Ñuble
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_029_guia_circ33.md
+    status: draft
   - urn: urn:gn:kb:gn-cqs-master
     title: Catálogo Maestro de Preguntas de Competencia
     file: KNOWLEDGE/gn/onto_gorenuble/gn-cqs-master.md
@@ -2422,6 +2569,168 @@ Catalog:
   - urn: urn:kora:kb:18-modelo-seguridad
     title: Capítulo 18 — Modelo de Seguridad
     file: KNOWLEDGE/agengai/openclaw/manual-openclaw/18-modelo-seguridad.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-terminos:terminos-condiciones-claveunica:1.0.0
+    title: 'Términos y Condiciones: integración y uso del Sistema de ClaveÚnica'
+    file: KNOWLEDGE/tde/plataformas-terminos/terminos-condiciones-claveunica.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-estandares:estandares-apertura-reutilizacion-datos-abiertos:1.0.0
+    title: Estándares para la apertura y reutilización de Datos Abiertos
+    file: KNOWLEDGE/tde/lineamientos-estandares/estandares-apertura-reutilizacion-datos-abiertos.md
+    status: published
+  - urn: urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0
+    title: Estrategia de Datos de la Administración del Estado
+    file: KNOWLEDGE/tde/estrategias/estrategia-datos-administracion-estado.md
+    status: published
+  - urn: urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0
+    title: Estrategia de Identidad Digital
+    file: KNOWLEDGE/tde/estrategias/estrategia-identidad-digital.md
+    status: published
+  - urn: urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0
+    title: Estrategia de Capacitaciones para la Transformación Digital del Estado
+    file: KNOWLEDGE/tde/estrategias/estrategia-capacitaciones-transformacion-digital.md
+    status: published
+  - urn: urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0
+    title: Estrategia de Gobierno Digital 2030
+    file: KNOWLEDGE/tde/estrategias/estrategia-gobierno-digital-2030.md
+    status: published
+  - urn: urn:kora:kb:tde:proteccion-datos:registro-actividades-tratamiento:1.0.0
+    title: Registro de Actividades de Tratamiento (RAT) — SGD
+    file: KNOWLEDGE/tde/proteccion-datos/registro-actividades-tratamiento.md
+    status: published
+  - urn: urn:kora:kb:tde:regulacion:decreto-4-procedimientos-electronicos:1.0.0
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos.md
+    status: published
+  - urn: urn:kora:kb:tde:regulacion:ley-19880-bases-procedimientos-administrativos:1.0.0
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos.md
+    status: published
+  - urn: urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0
+    title: Ley N° 21.180 — Transformación Digital del Estado
+    file: KNOWLEDGE/tde/regulacion/ley-21180-transformacion-digital-estado.md
+    status: published
+  - urn: urn:kora:kb:tde:regulacion:ley-21658:1.0.0
+    title: Ley N° 21.658 — Crea la Secretaría de Gobierno Digital en la Subsecretaría
+      de Hacienda
+    file: KNOWLEDGE/tde/regulacion/ley-21658.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0
+    title: Decreto 7 — Norma Técnica de Seguridad de la Información y Ciberseguridad
+    file: KNOWLEDGE/tde/lineamientos-normas/decreto-7-norma-seguridad-informacion.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-normas:decreto-8-norma-notificaciones:1.0.0
+    title: Decreto 8 — Norma Técnica de Notificaciones
+    file: KNOWLEDGE/tde/lineamientos-normas/decreto-8-norma-notificaciones.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-normas:decreto-9-norma-autenticacion:1.0.0
+    title: Decreto 9 — Norma Técnica de Autenticación
+    file: KNOWLEDGE/tde/lineamientos-normas/decreto-9-norma-autenticacion.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0
+    title: Decreto 12 — Norma Técnica de Interoperabilidad
+    file: KNOWLEDGE/tde/lineamientos-normas/decreto-12-interoperabilidad.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-normas:decreto-11-plataformas-electronicas:1.0.0
+    title: Decreto 11 — Norma Técnica de Calidad y Funcionamiento de Plataformas Electrónicas
+    file: KNOWLEDGE/tde/lineamientos-normas/decreto-11-plataformas-electronicas.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-normas:decreto-10-documentos-expedientes-electronicos:1.0.0
+    title: Decreto 10 — Norma Técnica de Documentos y Expedientes Electrónicos
+    file: KNOWLEDGE/tde/lineamientos-normas/decreto-10-documentos-expedientes-electronicos.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-atencion-ciudadana-notificaciones:1.0.0
+    title: Manual de Atención Ciudadana — Plataforma de Notificaciones
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-atencion-ciudadana-notificaciones.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0
+    title: Manual de Integración — ClaveÚnica
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-integracion-claveunica.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0
+    title: 'Manual de uso: SIMPLE en modalidad SaaS'
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-uso-simple-saas.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-usuario-institucional-notificaciones:1.0.0
+    title: 'Manual de usuario institucional: Plataforma de Notificaciones del Estado
+      (CasillaÚnica)'
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-usuario-institucional-notificaciones.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0
+    title: Manual del Coordinador/a de Transformación Digital (CTD)
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-coordinadora-transformacion-digital.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:recomendaciones-diseno-servicios-estado:1.0.0
+    title: Recomendaciones para el Diseño de Servicios en el Estado
+    file: KNOWLEDGE/tde/plataformas-manuales/recomendaciones-diseno-servicios-estado.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-integracion-notificaciones:1.0.0
+    title: Manual de Integración — Plataforma de Notificaciones del Estado
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-integracion-notificaciones.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:guia-voz-y-tono:1.0.0
+    title: Guía de Voz y Tono — Wiki de Plataformas
+    file: KNOWLEDGE/tde/plataformas-manuales/guia-voz-y-tono.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-inicio-notificaciones-electronicas:1.0.0
+    title: Manual de Inicio — Plataforma de Notificaciones Electrónicas del Estado
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-inicio-notificaciones-electronicas.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0
+    title: Glosario — Plataforma SIMPLE
+    file: KNOWLEDGE/tde/plataformas-manuales/glosario-plataforma-simple.md
+    status: published
+  - urn: urn:kora:kb:tde:plataformas-manuales:manual-uso-boton-claveunica:1.0.0
+    title: 'Manual de uso: Botón ClaveÚnica'
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-uso-boton-claveunica.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:orientaciones-basicas-gestion-tic:1.0.0
+    title: Orientaciones Básicas para la Gestión de las TIC
+    file: KNOWLEDGE/tde/lineamientos-guias/orientaciones-basicas-gestion-tic.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-rapida-cpat:1.0.0
+    title: Guía rápida CPAT
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-rapida-cpat.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-tecnica-metadatos-documentos-expedientes:1.0.0
+    title: Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-metadatos-documentos-expedientes.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-introductoria-anonimizacion-datos:1.0.0
+    title: Guía introductoria a la anonimización de datos
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-introductoria-anonimizacion-datos.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0
+    title: Recomendaciones Técnicas para la Adquisición de Servicios de Cloud Pública
+      en los OAE
+    file: KNOWLEDGE/tde/lineamientos-guias/recomendaciones-tecnicas-cloud-publica.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0
+    title: Guía Metodológica del Sistema de Transformación Digital 2025
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-metodologica-sistema-transformacion-digital-2025.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-calidad-web:1.0.0
+    title: 'Guía de uso: Instrumento de evaluación de calidad en sitios web y servicios
+      digitales del Estado'
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-calidad-web.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:metodologia-gestion-proyectos:1.0.0
+    title: Metodología para la Gestión de Proyectos TIC
+    file: KNOWLEDGE/tde/lineamientos-guias/metodologia-gestion-proyectos.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-tecnica-seguridad-informacion-ciberseguridad:1.0.0
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-seguridad-informacion-ciberseguridad.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-tecnica-evaltic-inversiones-gobierno-digital:1.0.0
+    title: 'Guía Técnica: Marco para las Inversiones y el Gasto en Gobierno Digital
+      (EVALTIC)'
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-evaltic-inversiones-gobierno-digital.md
+    status: published
+  - urn: urn:kora:kb:tde:lineamientos-guias:guia-tecnica-marco-gestion-datos:1.0.0
+    title: 'Guía Técnica: aplicación del Marco de Referencia de Gestión de Datos del
+      Estado (MGDE)'
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-marco-gestion-datos.md
     status: published
   Documents: []
   Other: []
