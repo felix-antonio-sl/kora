@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 1378,
-    "node_count": 882,
-    "edge_count": 4123
+    "scanned_files": 1380,
+    "node_count": 884,
+    "edge_count": 4127
   },
   "node_kind_counts": {
     "artifact": 262,
-    "knowledge": 202,
+    "knowledge": 204,
     "skill": 250,
     "spec": 7,
     "tool": 117,
@@ -21,7 +21,7 @@
     "InvokesSkill": 234,
     "RoutesToAgent": 60,
     "TracesTo": 45,
-    "XRef": 2451
+    "XRef": 2455
   },
   "nodes": [
     {
@@ -2815,6 +2815,24 @@
       "urn": "urn:gn:kb:plan-potenciamiento-dgi",
       "title": "Plan de Potenciamiento DGI",
       "path": "KNOWLEDGE/gn/kb/kb_gn_plan_potenciamiento_dgi.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:kb:ris-energia-comunicaciones",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gn:kb:ris-energia-comunicaciones",
+      "title": "Requisitos de Información SNI — Energía, Electrificación y Comunicaciones",
+      "path": "KNOWLEDGE/gn/ris-energia-comunicaciones.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:kb:ris-genericos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gn:kb:ris-genericos",
+      "title": "Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos, Empresas Públicas)",
+      "path": "KNOWLEDGE/gn/ris-genericos.md",
       "namespace": "gn"
     },
     {
@@ -18859,6 +18877,20 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:kb:ris-energia-comunicaciones",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:kb:ris-genericos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gn:kb:selector-ipr",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -28179,6 +28211,20 @@
       "target": "urn:gn:kb:plan-potenciamiento-dgi",
       "fragment": null,
       "source_path": "KNOWLEDGE/gn/kb/kb_gn_plan_potenciamiento_dgi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:ris-energia-comunicaciones",
+      "target": "urn:gn:kb:ris-energia-comunicaciones",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/gn/ris-energia-comunicaciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:ris-genericos",
+      "target": "urn:gn:kb:ris-genericos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/gn/ris-genericos.md"
     },
     {
       "kind": "XRef",

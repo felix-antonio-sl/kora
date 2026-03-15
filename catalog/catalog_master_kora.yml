@@ -2110,6 +2110,52 @@ Catalog:
       Domiciliaria
     file: KNOWLEDGE/pro/hodom/normativa/01-reglamento-hodom-ds1-2022.md
     status: draft
+  - urn: urn:gn:kb:ris-transporte
+    title: 'Requisitos de Información SNI — Transporte: Aéreo, Ferroviario, Portuario
+      y Conexión'
+    file: KNOWLEDGE/gn/ris-transporte.md
+    status: published
+  - urn: urn:gn:kb:ris-vivienda-urbanismo
+    title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
+    file: KNOWLEDGE/gn/ris-vivienda-urbanismo.md
+    status: published
+  - urn: urn:gn:kb:ris-agua-saneamiento
+    title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos
+    file: KNOWLEDGE/gn/ris-agua-saneamiento.md
+    status: published
+  - urn: urn:gn:kb:ris-vialidad
+    title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal
+    file: KNOWLEDGE/gn/ris-vialidad.md
+    status: published
+  - urn: urn:gn:kb:ris-genericos
+    title: Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos,
+      Empresas Públicas)
+    file: KNOWLEDGE/gn/ris-genericos.md
+    status: published
+  - urn: urn:gn:kb:ris-educacion
+    title: Requisitos de Información SNI — Infraestructura Educacional
+    file: KNOWLEDGE/gn/ris-educacion.md
+    status: published
+  - urn: urn:gn:kb:ris-seguridad-justicia
+    title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
+    file: KNOWLEDGE/gn/ris-seguridad-justicia.md
+    status: published
+  - urn: urn:gn:kb:ris-equipamiento-social
+    title: Requisitos de Información SNI — Equipamiento Social y Comunitario
+    file: KNOWLEDGE/gn/ris-equipamiento-social.md
+    status: published
+  - urn: urn:gn:kb:ris-energia-comunicaciones
+    title: Requisitos de Información SNI — Energía, Electrificación y Comunicaciones
+    file: KNOWLEDGE/gn/ris-energia-comunicaciones.md
+    status: published
+  - urn: urn:gn:kb:ris-salud
+    title: Requisitos de Información SNI — Infraestructura de Salud
+    file: KNOWLEDGE/gn/ris-salud.md
+    status: published
+  - urn: urn:gn:kb:ris-cultura-deporte-turismo
+    title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
+    file: KNOWLEDGE/gn/ris-cultura-deporte-turismo.md
+    status: published
   - urn: urn:gn:kb:guia-comunicaciones
     title: Guía Integral de Comunicaciones GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_030_guia_comunicaciones.md
