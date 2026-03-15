@@ -319,12 +319,12 @@
   },
   "secondary_domain_canary": {
     "workspace": "gn/digitrans",
-    "requires_states": ["S-NORMATIVO", "S-PLATAFORMAS", "S-ORKO-BRIDGE", "S-CPAT"],
+    "requires_states": ["S-NORMATIVO", "S-PLATAFORMAS", "S-ESTRATEGIAS", "S-CPAT"],
     "requires_skills": [
       "CM-INTAKE",
       "CM-NORMATIVE-GUIDE",
       "CM-PLATFORM-GUIDANCE",
-      "CM-ORKO-BRIDGE",
+      "CM-STRATEGIC-GUIDE",
       "CM-CPAT-ANALYZER",
       "CM-SYNTHESIZER"
     ],
@@ -335,17 +335,14 @@
       "[dato institucional]",
       "[interpretacion]",
       "[incertidumbre]",
-      "fuente oficial",
-      "ORKO"
+      "fuente oficial"
     ],
-    "requires_allowed_kb_min": 40,
+    "requires_allowed_kb_min": 39,
     "sample_allowed_kb": [
-      "urn:tde:kb:guia-sistema-tde-2025",
-      "urn:tde:kb:ley-21180-tde",
-      "urn:tde:kb:manual-integracion-claveunica",
-      "urn:tde:kb:guia-rapida-cpat",
-      "urn:orko:kb:orko-metodologia",
-      "urn:orko:kb:orko-fundamentos"
+      "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0",
+      "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0",
+      "urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0",
+      "urn:kora:kb:tde:lineamientos-guias:guia-rapida-cpat:1.0.0"
     ]
   },
   "meta_kora": {

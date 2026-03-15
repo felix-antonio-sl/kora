@@ -15,7 +15,6 @@ Estos artefactos son la superficie estable que debe funcionar en cualquier clon 
 ## Soporte Acotado
 
 - `sync_openclaw_docs_mirror.py`: mirror operativo para `KNOWLEDGE/agengai/openclaw/documentacion-oficial`. Esta coleccion es una excepcion explicita y soportada dentro del repo, aunque el script siga requiriendo root upstream explicito por CLI o variables de entorno.
-- `gn_rebuild.py`, `gn_rebuild_map.yml`: pipeline de rebuild del dominio `gn`. No forman parte del core general de KORA.
 
 Estos scripts pueden seguir siendo utiles, pero no deben confundirse con la CLI base del repo.
 

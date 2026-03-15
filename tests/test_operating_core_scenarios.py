@@ -132,7 +132,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
             self.assertTrue(urn.startswith("urn:gn:kb:"), msg=f"unexpected canary KB URN {urn}")
         for urn in SCENARIOS["secondary_domain_canary"]["sample_allowed_kb"]:
             self.assertTrue(
-                urn.startswith(("urn:gn:kb:", "urn:tde:kb:", "urn:orko:kb:")),
+                urn.startswith(("urn:gn:kb:", "urn:tde:kb:", "urn:orko:kb:", "urn:kora:kb:tde:")),
                 msg=f"unexpected secondary canary KB URN {urn}",
             )
 

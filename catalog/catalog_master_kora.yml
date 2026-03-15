@@ -1218,28 +1218,28 @@ Catalog:
     title: CM-INTAKE
     file: AGENTS/gn/goreologo/skills/CM-INTAKE.md
     status: published
-  - urn: urn:gn:skill:digitrans-normative-guide:1.0.0
-    title: CM-NORMATIVE-GUIDE
+  - urn: urn:gn:skill:digitrans-normative-guide:2.0.0
+    title: CM-NORMATIVE-GUIDE.md
     file: AGENTS/gn/digitrans/skills/CM-NORMATIVE-GUIDE.md
     status: published
-  - urn: urn:gn:skill:digitrans-orko-bridge:1.0.0
-    title: CM-ORKO-BRIDGE
-    file: AGENTS/gn/digitrans/skills/CM-ORKO-BRIDGE.md
+  - urn: urn:gn:skill:digitrans-strategic-guide:2.0.0
+    title: CM-STRATEGIC-GUIDE.md
+    file: AGENTS/gn/digitrans/skills/CM-STRATEGIC-GUIDE.md
     status: published
-  - urn: urn:gn:skill:digitrans-synthesizer:1.0.0
-    title: CM-SYNTHESIZER
+  - urn: urn:gn:skill:digitrans-synthesizer:2.0.0
+    title: CM-SYNTHESIZER.md
     file: AGENTS/gn/digitrans/skills/CM-SYNTHESIZER.md
     status: published
-  - urn: urn:gn:skill:digitrans-platform-guidance:1.0.0
-    title: CM-PLATFORM-GUIDANCE
+  - urn: urn:gn:skill:digitrans-platform-guidance:2.0.0
+    title: CM-PLATFORM-GUIDANCE.md
     file: AGENTS/gn/digitrans/skills/CM-PLATFORM-GUIDANCE.md
     status: published
-  - urn: urn:gn:skill:digitrans-cpat-analyzer:1.0.0
-    title: CM-CPAT-ANALYZER
+  - urn: urn:gn:skill:digitrans-cpat-analyzer:2.0.0
+    title: CM-CPAT-ANALYZER.md
     file: AGENTS/gn/digitrans/skills/CM-CPAT-ANALYZER.md
     status: published
-  - urn: urn:gn:skill:digitrans-intake:1.0.0
-    title: CM-INTAKE
+  - urn: urn:gn:skill:digitrans-intake:2.0.0
+    title: CM-INTAKE.md
     file: AGENTS/gn/digitrans/skills/CM-INTAKE.md
     status: published
   - urn: urn:gn:skill:visionario-gore-4-0-func:2.0.0
@@ -2257,10 +2257,6 @@ Catalog:
     title: Guía Operativa Circular 33 – GORE Ñuble
     file: KNOWLEDGE/gn/kb/ipr/kb_gn_029_guia_circ33.md
     status: draft
-  - urn: urn:gn:kb:gn-cqs-master
-    title: Catálogo Maestro de Preguntas de Competencia
-    file: KNOWLEDGE/gn/onto_gorenuble/gn-cqs-master.md
-    status: published
   - urn: urn:gnub:kb:ssot-territorio
     title: SSOT — Territorio GORE Ñuble
     file: KNOWLEDGE/gn/ssot/ssot-territorio.md

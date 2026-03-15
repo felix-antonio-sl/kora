@@ -764,8 +764,8 @@
           "S-CPAT",
           "S-DISPATCHER",
           "S-END",
+          "S-ESTRATEGIAS",
           "S-NORMATIVO",
-          "S-ORKO-BRIDGE",
           "S-PLATAFORMAS",
           "S-REJECT"
         ],
@@ -781,15 +781,15 @@
           "CM-CPAT-ANALYZER",
           "CM-INTAKE",
           "CM-NORMATIVE-GUIDE",
-          "CM-ORKO-BRIDGE",
           "CM-PLATFORM-GUIDANCE",
+          "CM-STRATEGIC-GUIDE",
           "CM-SYNTHESIZER"
         ],
         "handoff_targets": [],
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 45,
+        "allowed_kb_count": 39,
         "sources": {
           "agents": "AGENTS/gn/digitrans/AGENTS.md",
           "tools": "AGENTS/gn/digitrans/TOOLS.md",
