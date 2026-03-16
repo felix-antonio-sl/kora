@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENTS_ROOT = ROOT / "AGENTS" if (ROOT / "AGENTS").exists() else ROOT / "agents"
+KNOWLEDGE_ROOT = ROOT / "KNOWLEDGE" if (ROOT / "KNOWLEDGE").exists() else ROOT / "knowledge"
 SCRIPTS_DIR = ROOT / "scripts"
 SCRIPT_PATH = SCRIPTS_DIR / "kora"
 FIXTURES = ROOT / "tests" / "fixtures"
