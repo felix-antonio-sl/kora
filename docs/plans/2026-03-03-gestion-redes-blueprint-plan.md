@@ -4,7 +4,7 @@
 
 **Goal:** Transformar el cheatsheet monolítico (1.740 líneas, calidad 2.9/5) en un corpus multi-archivo KORA/MD de alta calidad (~5.500 líneas, 6 archivos) con profundidad uniforme, KPIs benchmarkeados, tablas IF/THEN, referencias normativas y estructura RAG-optimizada.
 
-**Architecture:** 6 archivos en `knowledge/pro/gestion-redes/` con numeración continua de capítulos (1-36). Cada archivo tiene frontmatter KORA, cada `##` es chunk RAG autosuficiente. PARTE I define marcos genéricos; PARTE III y IV referencian vía URN + deltas.
+**Architecture:** 6 archivos en `knowledge/salud/gestion-redes/` con numeración continua de capítulos (1-36). Cada archivo tiene frontmatter KORA, cada `##` es chunk RAG autosuficiente. PARTE I define marcos genéricos; PARTE III y IV referencian vía URN + deltas.
 
 **Tech Stack:** Markdown (KORA/MD v3.0.0), YAML frontmatter, Python (`scripts/kora index` para catalogar).
 
@@ -57,18 +57,18 @@ No todas las subsecciones requieren TODOS los bloques — usar los que apliquen.
 ## Task 1: Crear directorio y estructura base
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/` (directorio)
+- Create: `knowledge/salud/gestion-redes/` (directorio)
 
 **Step 1: Crear directorio**
 
 ```bash
-mkdir -p /Users/felixsanhueza/Developer/kora/knowledge/pro/gestion-redes
+mkdir -p /Users/felixsanhueza/Developer/kora/knowledge/salud/gestion-redes
 ```
 
-**Step 2: Verificar que el directorio knowledge/pro/ existe**
+**Step 2: Verificar que el directorio knowledge/salud/ existe**
 
 ```bash
-ls -la /Users/felixsanhueza/Developer/kora/knowledge/pro/
+ls -la /Users/felixsanhueza/Developer/kora/knowledge/salud/
 ```
 
 Expected: directorio `gestion-redes/` visible.
@@ -76,8 +76,8 @@ Expected: directorio `gestion-redes/` visible.
 **Step 3: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes
-git commit -m "feat(pro): crear directorio knowledge/pro/gestion-redes para blueprint asistencial"
+git add knowledge/salud/gestion-redes
+git commit -m "feat(pro): crear directorio knowledge/salud/gestion-redes para blueprint asistencial"
 ```
 
 ---
@@ -85,7 +85,7 @@ git commit -m "feat(pro): crear directorio knowledge/pro/gestion-redes para blue
 ## Task 2: Escribir 00-indice.md (Mapa + glosario + normativa)
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/00-indice.md`
+- Create: `knowledge/salud/gestion-redes/00-indice.md`
 - Read: fuente primaria (líneas 1-76 del cheatsheet original para front matter, glosario, leyenda)
 
 **Step 1: Escribir el archivo**
@@ -107,11 +107,11 @@ Tabla con columnas: `Archivo | URN | Capítulos | Dominio | Audiencia primaria`
 
 | Archivo | URN | Capítulos | Dominio |
 |---------|-----|-----------|---------|
-| 01-gestion-redes-general.md | urn:pro:kb:gestion-redes-general | 1-14 | Framework general: gobernanza, procesos, calidad, digital, finanzas, cambio |
-| 02-unidades-asistenciales.md | urn:pro:kb:gestion-redes-unidades | 15-17 | Gestión por tipo de unidad: ambulatorias, hospitalarias, HaH |
-| 03-urgencias.md | urn:pro:kb:gestion-redes-urgencias | 18-26 | Red de urgencias: EMS, SUH, protocolos tiempo-dependientes, desastres |
-| 04-salud-mental.md | urn:pro:kb:gestion-redes-salud-mental | 27-36 | Red de salud mental: continuidad, crisis, TUS, derechos |
-| 05-herramientas-anexos.md | urn:pro:kb:gestion-redes-herramientas | Anexos A-K | KPIs, BPMN, plantillas, FHIR, simulación, modelo de madurez |
+| 01-gestion-redes-general.md | urn:salud:kb:gestion-redes-general | 1-14 | Framework general: gobernanza, procesos, calidad, digital, finanzas, cambio |
+| 02-unidades-asistenciales.md | urn:salud:kb:gestion-redes-unidades | 15-17 | Gestión por tipo de unidad: ambulatorias, hospitalarias, HaH |
+| 03-urgencias.md | urn:salud:kb:gestion-redes-urgencias | 18-26 | Red de urgencias: EMS, SUH, protocolos tiempo-dependientes, desastres |
+| 04-salud-mental.md | urn:salud:kb:gestion-redes-salud-mental | 27-36 | Red de salud mental: continuidad, crisis, TUS, derechos |
+| 05-herramientas-anexos.md | urn:salud:kb:gestion-redes-herramientas | Anexos A-K | KPIs, BPMN, plantillas, FHIR, simulación, modelo de madurez |
 
 ```
 ## 3. Leyenda de formato
@@ -166,15 +166,15 @@ Tabla SemVer: `Versión | Fecha | Cambios | Autor`
 **Step 2: Verificar frontmatter**
 
 ```bash
-head -18 knowledge/pro/gestion-redes/00-indice.md
+head -18 knowledge/salud/gestion-redes/00-indice.md
 ```
 
-Expected: frontmatter YAML válido con `urn: "urn:pro:kb:gestion-redes-indice"`
+Expected: frontmatter YAML válido con `urn: "urn:salud:kb:gestion-redes-indice"`
 
 **Step 3: Verificar estructura de headings**
 
 ```bash
-grep "^## " knowledge/pro/gestion-redes/00-indice.md
+grep "^## " knowledge/salud/gestion-redes/00-indice.md
 ```
 
 Expected: 7 secciones `##` numeradas 1-7.
@@ -182,7 +182,7 @@ Expected: 7 secciones `##` numeradas 1-7.
 **Step 4: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes/00-indice.md
+git add knowledge/salud/gestion-redes/00-indice.md
 git commit -m "feat(pro): crear 00-indice.md — mapa, glosario y marco normativo del corpus de redes asistenciales"
 ```
 
@@ -191,7 +191,7 @@ git commit -m "feat(pro): crear 00-indice.md — mapa, glosario y marco normativ
 ## Task 3: Escribir 01-gestion-redes-general.md (PARTE I — cap 1-14)
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/01-gestion-redes-general.md`
+- Create: `knowledge/salud/gestion-redes/01-gestion-redes-general.md`
 - Read: fuente primaria (líneas 79-746 del cheatsheet original)
 
 **Step 1: Escribir el archivo**
@@ -233,7 +233,7 @@ Para CADA una de las ~70 subsecciones:
 
 **Capítulos que requieren atención especial:**
 
-- **Cap 4 (Integración clínica):** §4.3 Gestión de transiciones (alta segura) — tabla IF/THEN por tipo de alta (médica, SUH, HaH, psiquiátrica). Referenciar HaH vía URN a `urn:pro:kb:gestion-redes-unidades`.
+- **Cap 4 (Integración clínica):** §4.3 Gestión de transiciones (alta segura) — tabla IF/THEN por tipo de alta (médica, SUH, HaH, psiquiátrica). Referenciar HaH vía URN a `urn:salud:kb:gestion-redes-unidades`.
 - **Cap 10 (Calidad + riesgos):** Fusionar calidad del paciente (PDSA, seguridad medicamento, EA, PROMs) con gestión de riesgos (BIA, BCP/DRP, HICS, simulacros). Este capítulo es el marco genérico que PARTE III y IV referenciarán.
 - **Cap 11 (Salud digital):** Marco genérico de HIS/EHR, FHIR, telemedicina, IA, gobierno de datos. Las PARTEs III y IV solo agregarán deltas (EDIS, telepsiquiatría, etc.).
 - **Cap 14 (Cambio + implementación):** Fusionar metodologías de cambio (ADKAR, Lean-Agile) con implementación por etapas (30-60-90, MVP, hitos). Resultado: un capítulo cohesivo de "cómo llegar de aquí a allá".
@@ -241,13 +241,13 @@ Para CADA una de las ~70 subsecciones:
 **Step 2: Verificar estructura**
 
 ```bash
-grep "^## \|^### " knowledge/pro/gestion-redes/01-gestion-redes-general.md | wc -l
+grep "^## \|^### " knowledge/salud/gestion-redes/01-gestion-redes-general.md | wc -l
 ```
 
 Expected: ~84 headings (14 `##` + ~70 `###`).
 
 ```bash
-grep "^## " knowledge/pro/gestion-redes/01-gestion-redes-general.md
+grep "^## " knowledge/salud/gestion-redes/01-gestion-redes-general.md
 ```
 
 Expected: 14 capítulos numerados 1-14.
@@ -255,7 +255,7 @@ Expected: 14 capítulos numerados 1-14.
 **Step 3: Verificar que no hay prosa introductoria (grasa KORA/MD)**
 
 ```bash
-grep -i "en esta sección\|a continuación\|como se mencionó\|cabe destacar\|es importante" knowledge/pro/gestion-redes/01-gestion-redes-general.md
+grep -i "en esta sección\|a continuación\|como se mencionó\|cabe destacar\|es importante" knowledge/salud/gestion-redes/01-gestion-redes-general.md
 ```
 
 Expected: 0 resultados.
@@ -263,7 +263,7 @@ Expected: 0 resultados.
 **Step 4: Verificar KPIs con benchmarks**
 
 ```bash
-grep -c "| Indicador |" knowledge/pro/gestion-redes/01-gestion-redes-general.md
+grep -c "| Indicador |" knowledge/salud/gestion-redes/01-gestion-redes-general.md
 ```
 
 Expected: ≥14 tablas KPI (al menos 1 por capítulo).
@@ -271,7 +271,7 @@ Expected: ≥14 tablas KPI (al menos 1 por capítulo).
 **Step 5: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes/01-gestion-redes-general.md
+git add knowledge/salud/gestion-redes/01-gestion-redes-general.md
 git commit -m "feat(pro): crear 01-gestion-redes-general.md — PARTE I con 14 capítulos profundizados"
 ```
 
@@ -280,7 +280,7 @@ git commit -m "feat(pro): crear 01-gestion-redes-general.md — PARTE I con 14 c
 ## Task 4: Escribir 05-herramientas-anexos.md (PARTE V — Anexos A-K)
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/05-herramientas-anexos.md`
+- Create: `knowledge/salud/gestion-redes/05-herramientas-anexos.md`
 - Read: fuente primaria (líneas 1524-1740 del cheatsheet original)
 
 **Razón del orden:** Este archivo se escribe ANTES que 02, 03 y 04 porque contiene los KPIs centralizados y plantillas que esas partes referencian.
@@ -357,7 +357,7 @@ Formato textual por swimlane:
 **Step 2: Verificar conteo de KPIs**
 
 ```bash
-grep -c "^|" knowledge/pro/gestion-redes/05-herramientas-anexos.md
+grep -c "^|" knowledge/salud/gestion-redes/05-herramientas-anexos.md
 ```
 
 Expected: >200 filas de tabla (KPIs + otras tablas).
@@ -365,7 +365,7 @@ Expected: >200 filas de tabla (KPIs + otras tablas).
 **Step 3: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes/05-herramientas-anexos.md
+git add knowledge/salud/gestion-redes/05-herramientas-anexos.md
 git commit -m "feat(pro): crear 05-herramientas-anexos.md — catálogo KPI, BPMN, plantillas, modelo de madurez"
 ```
 
@@ -374,7 +374,7 @@ git commit -m "feat(pro): crear 05-herramientas-anexos.md — catálogo KPI, BPM
 ## Task 5: Escribir 02-unidades-asistenciales.md (PARTE II — cap 15-17)
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/02-unidades-asistenciales.md`
+- Create: `knowledge/salud/gestion-redes/02-unidades-asistenciales.md`
 - Read: fuente primaria (líneas 750-995 del cheatsheet, incluyendo HaH)
 
 **Step 1: Escribir el archivo**
@@ -425,7 +425,7 @@ Ya tiene buena profundidad. Aplicar las mismas mejoras de calidad:
 **Step 2: Verificar que 15.10 distingue explícitamente de HaH**
 
 ```bash
-grep -A5 "15.10" knowledge/pro/gestion-redes/02-unidades-asistenciales.md | head -6
+grep -A5 "15.10" knowledge/salud/gestion-redes/02-unidades-asistenciales.md | head -6
 ```
 
 Expected: mención explícita de que atención domiciliaria de baja complejidad ≠ HaH (cap 17).
@@ -433,7 +433,7 @@ Expected: mención explícita de que atención domiciliaria de baja complejidad 
 **Step 3: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes/02-unidades-asistenciales.md
+git add knowledge/salud/gestion-redes/02-unidades-asistenciales.md
 git commit -m "feat(pro): crear 02-unidades-asistenciales.md — ambulatorias, hospitalarias y HaH profundizados"
 ```
 
@@ -442,7 +442,7 @@ git commit -m "feat(pro): crear 02-unidades-asistenciales.md — ambulatorias, h
 ## Task 6: Escribir 03-urgencias.md (PARTE III — cap 18-26)
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/03-urgencias.md`
+- Create: `knowledge/salud/gestion-redes/03-urgencias.md`
 - Read: fuente primaria (líneas 1000-1280 del cheatsheet renumerado)
 
 **Step 1: Escribir el archivo**
@@ -467,14 +467,14 @@ Similar para IAM (22.2), Sepsis (22.3), Trauma (22.4), Paro (22.5), Tóxicos (22
 2. **Cap 20 (Flujo intrahospitalario SUH):** Incluir diagrama de flujo textual completo (pre-arribo → triaje → circuitos → diagnóstico → interconsulta → UOCS → destino). Referenciar BPMN detallado en Anexo B vía URN.
 
 3. **Secciones delta (cap 23, 24, 26):** Estas secciones tratan calidad, tecnología y talento en urgencias. DEBEN:
-   - Abrir con referencia explícita al marco genérico de PARTE I: `Marco base: ver [Calidad y seguridad](urn:pro:kb:gestion-redes-general) cap 10. Esta sección agrega los deltas específicos de urgencias.`
+   - Abrir con referencia explícita al marco genérico de PARTE I: `Marco base: ver [Calidad y seguridad](urn:salud:kb:gestion-redes-general) cap 10. Esta sección agrega los deltas específicos de urgencias.`
    - Solo incluir contenido que sea DIFERENTE o ADICIONAL al marco genérico
    - No repetir lo que ya está en PARTE I
 
 **Step 2: Verificar tablas de tiempos**
 
 ```bash
-grep -c "Door-to\|FMC-to\|bundle\|≤.*min" knowledge/pro/gestion-redes/03-urgencias.md
+grep -c "Door-to\|FMC-to\|bundle\|≤.*min" knowledge/salud/gestion-redes/03-urgencias.md
 ```
 
 Expected: ≥15 menciones de hitos tiempo-dependientes.
@@ -482,7 +482,7 @@ Expected: ≥15 menciones de hitos tiempo-dependientes.
 **Step 3: Verificar referencias delta a PARTE I**
 
 ```bash
-grep -c "urn:pro:kb:gestion-redes-general" knowledge/pro/gestion-redes/03-urgencias.md
+grep -c "urn:salud:kb:gestion-redes-general" knowledge/salud/gestion-redes/03-urgencias.md
 ```
 
 Expected: ≥3 referencias URN a PARTE I (en cap 23, 24, 26).
@@ -490,7 +490,7 @@ Expected: ≥3 referencias URN a PARTE I (en cap 23, 24, 26).
 **Step 4: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes/03-urgencias.md
+git add knowledge/salud/gestion-redes/03-urgencias.md
 git commit -m "feat(pro): crear 03-urgencias.md — protocolos tiempo-dependientes, flujo SUH, desastres"
 ```
 
@@ -499,7 +499,7 @@ git commit -m "feat(pro): crear 03-urgencias.md — protocolos tiempo-dependient
 ## Task 7: Escribir 04-salud-mental.md (PARTE IV — cap 27-36)
 
 **Files:**
-- Create: `knowledge/pro/gestion-redes/04-salud-mental.md`
+- Create: `knowledge/salud/gestion-redes/04-salud-mental.md`
 - Read: fuente primaria (líneas 1283-1520 del cheatsheet renumerado)
 
 **Step 1: Escribir el archivo**
@@ -555,7 +555,7 @@ git commit -m "feat(pro): crear 03-urgencias.md — protocolos tiempo-dependient
 **Step 2: Verificar tabla de riesgo suicida**
 
 ```bash
-grep -c "Bajo\|Moderado\|Alto\|Inminente" knowledge/pro/gestion-redes/04-salud-mental.md
+grep -c "Bajo\|Moderado\|Alto\|Inminente" knowledge/salud/gestion-redes/04-salud-mental.md
 ```
 
 Expected: ≥4 (niveles de riesgo en la tabla IF/THEN).
@@ -563,7 +563,7 @@ Expected: ≥4 (niveles de riesgo en la tabla IF/THEN).
 **Step 3: Verificar Ley 21.331**
 
 ```bash
-grep -c "21.331" knowledge/pro/gestion-redes/04-salud-mental.md
+grep -c "21.331" knowledge/salud/gestion-redes/04-salud-mental.md
 ```
 
 Expected: ≥3 referencias a la ley de derechos de personas con enfermedad mental.
@@ -571,7 +571,7 @@ Expected: ≥3 referencias a la ley de derechos de personas con enfermedad menta
 **Step 4: Commit**
 
 ```bash
-git add knowledge/pro/gestion-redes/04-salud-mental.md
+git add knowledge/salud/gestion-redes/04-salud-mental.md
 git commit -m "feat(pro): crear 04-salud-mental.md — crisis, suicidio, TUS, derechos con Ley 21.331"
 ```
 
@@ -580,12 +580,12 @@ git commit -m "feat(pro): crear 04-salud-mental.md — crisis, suicidio, TUS, de
 ## Task 8: Verificación cruzada de coherencia
 
 **Files:**
-- Read: todos los archivos en `knowledge/pro/gestion-redes/`
+- Read: todos los archivos en `knowledge/salud/gestion-redes/`
 
 **Step 1: Verificar numeración continua de capítulos (1-36)**
 
 ```bash
-grep "^## [0-9]" knowledge/pro/gestion-redes/0[1-4]*.md | sort -t: -k2 -V
+grep "^## [0-9]" knowledge/salud/gestion-redes/0[1-4]*.md | sort -t: -k2 -V
 ```
 
 Expected: secuencia continua 1, 2, 3, ..., 36 sin saltos ni duplicados.
@@ -593,21 +593,21 @@ Expected: secuencia continua 1, 2, 3, ..., 36 sin saltos ni duplicados.
 **Step 2: Verificar que todas las URN internas resuelven**
 
 ```bash
-grep -oh "urn:pro:kb:gestion-redes-[a-z-]*" knowledge/pro/gestion-redes/*.md | sort -u
+grep -oh "urn:salud:kb:gestion-redes-[a-z-]*" knowledge/salud/gestion-redes/*.md | sort -u
 ```
 
 Expected: solo URNs que correspondan a archivos existentes:
-- urn:pro:kb:gestion-redes-indice
-- urn:pro:kb:gestion-redes-general
-- urn:pro:kb:gestion-redes-unidades
-- urn:pro:kb:gestion-redes-urgencias
-- urn:pro:kb:gestion-redes-salud-mental
-- urn:pro:kb:gestion-redes-herramientas
+- urn:salud:kb:gestion-redes-indice
+- urn:salud:kb:gestion-redes-general
+- urn:salud:kb:gestion-redes-unidades
+- urn:salud:kb:gestion-redes-urgencias
+- urn:salud:kb:gestion-redes-salud-mental
+- urn:salud:kb:gestion-redes-herramientas
 
 **Step 3: Verificar que no hay grasa KORA/MD en ningún archivo**
 
 ```bash
-grep -ri "en esta sección\|a continuación\|como se mencionó\|cabe destacar\|es importante señalar\|por otro lado" knowledge/pro/gestion-redes/*.md
+grep -ri "en esta sección\|a continuación\|como se mencionó\|cabe destacar\|es importante señalar\|por otro lado" knowledge/salud/gestion-redes/*.md
 ```
 
 Expected: 0 resultados.
@@ -617,7 +617,7 @@ Expected: 0 resultados.
 Verificar que términos clave se usan de forma consistente (no "SUH" en un archivo y "servicio de urgencia" en otro):
 
 ```bash
-grep -c "SUH\|servicio de urgencia" knowledge/pro/gestion-redes/*.md
+grep -c "SUH\|servicio de urgencia" knowledge/salud/gestion-redes/*.md
 ```
 
 Expected: "SUH" domina; "servicio de urgencia" solo aparece como definición en glosario.
@@ -625,7 +625,7 @@ Expected: "SUH" domina; "servicio de urgencia" solo aparece como definición en 
 **Step 5: Contar KPIs totales**
 
 ```bash
-grep -c "| Indicador |" knowledge/pro/gestion-redes/*.md
+grep -c "| Indicador |" knowledge/salud/gestion-redes/*.md
 ```
 
 Expected: ≥40 tablas KPI distribuidas entre los 6 archivos.
@@ -633,7 +633,7 @@ Expected: ≥40 tablas KPI distribuidas entre los 6 archivos.
 **Step 6: Verificar conteo total de líneas**
 
 ```bash
-wc -l knowledge/pro/gestion-redes/*.md
+wc -l knowledge/salud/gestion-redes/*.md
 ```
 
 Expected: ~5.000-6.000 líneas totales.
@@ -641,7 +641,7 @@ Expected: ~5.000-6.000 líneas totales.
 **Step 7: Commit (si hubo correcciones)**
 
 ```bash
-git add knowledge/pro/gestion-redes/
+git add knowledge/salud/gestion-redes/
 git commit -m "fix(pro): correcciones de coherencia cruzada en corpus de redes asistenciales"
 ```
 
@@ -677,7 +677,7 @@ Expected: 0 URNs rotas.
 
 ```bash
 git add catalog/catalog_master_kora.yml
-git commit -m "chore(catalog): indexar 6 artefactos de knowledge/pro/gestion-redes"
+git commit -m "chore(catalog): indexar 6 artefactos de knowledge/salud/gestion-redes"
 ```
 
 ---

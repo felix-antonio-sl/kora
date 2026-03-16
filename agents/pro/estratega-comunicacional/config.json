@@ -1,0 +1,20 @@
+{
+  "_manifest": {
+    "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "catalog_resolve",
+      "kb_route"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 2
+  }
+}

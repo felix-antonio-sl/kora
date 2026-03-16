@@ -3,7 +3,7 @@
 **Fecha:** 2026-03-03
 **Autor:** FS + Claude
 **Estado:** Aprobado
-**URN base:** `urn:pro:kb:gestion-redes-*`
+**URN base:** `urn:salud:kb:gestion-redes-*`
 
 ---
 
@@ -34,13 +34,13 @@ El archivo `manual_gestion_redes_cheatsheet.md` (~1.740 líneas, 62 KB) es un í
 ## 3. Arquitectura de archivos
 
 ```
-knowledge/pro/gestion-redes/
-├── 00-indice.md                     urn:pro:kb:gestion-redes-indice
-├── 01-gestion-redes-general.md      urn:pro:kb:gestion-redes-general
-├── 02-unidades-asistenciales.md     urn:pro:kb:gestion-redes-unidades
-├── 03-urgencias.md                  urn:pro:kb:gestion-redes-urgencias
-├── 04-salud-mental.md               urn:pro:kb:gestion-redes-salud-mental
-└── 05-herramientas-anexos.md        urn:pro:kb:gestion-redes-herramientas
+knowledge/salud/gestion-redes/
+├── 00-indice.md                     urn:salud:kb:gestion-redes-indice
+├── 01-gestion-redes-general.md      urn:salud:kb:gestion-redes-general
+├── 02-unidades-asistenciales.md     urn:salud:kb:gestion-redes-unidades
+├── 03-urgencias.md                  urn:salud:kb:gestion-redes-urgencias
+├── 04-salud-mental.md               urn:salud:kb:gestion-redes-salud-mental
+└── 05-herramientas-anexos.md        urn:salud:kb:gestion-redes-herramientas
 ```
 
 ### 3.1 Frontmatter estándar (cada archivo)
@@ -48,7 +48,7 @@ knowledge/pro/gestion-redes/
 ```yaml
 ---
 _manifest:
-  urn: "urn:pro:kb:gestion-redes-{parte}"
+  urn: "urn:salud:kb:gestion-redes-{parte}"
   provenance:
     created_by: "FS"
     created_at: "2026-03-03"

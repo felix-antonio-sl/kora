@@ -1,0 +1,36 @@
+{
+  "_manifest": {
+    "urn": "urn:salud:agent-bootstrap:salubrista-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:salud:kb:gestion-redes-indice",
+    "urn:salud:kb:gestion-redes-general",
+    "urn:salud:kb:gestion-redes-unidades",
+    "urn:salud:kb:gestion-redes-urgencias",
+    "urn:salud:kb:gestion-redes-salud-mental",
+    "urn:salud:kb:gestion-redes-herramientas",
+    "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "kb_route",
+      "knowledge_retrieval",
+      "web_search"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  },
+  "runtime_capabilities": {
+    "deny": [
+      "code_execution",
+      "workspace_write",
+      "agent_deploy"
+    ]
+  }
+}
