@@ -15,6 +15,7 @@ from .config import (
     BOOTSTRAP_SCHEMA_PATH,
     CONFIG_SCHEMA_PATH,
     KB_PIPELINE_PATTERN,
+    KNOWLEDGE_ROOT,
     KORA_ROOT,
     LOW_LEVEL_RUNTIME_HINTS,
     SEMANTIC_TOOL_DOC_MARKERS,
@@ -496,7 +497,7 @@ def strip_unverifiable_reference_tokens(text):
 def strip_local_path_tokens(text):
     updated = text
     updated = re.sub(r"file:///[^)\s]+", "", updated)
-    updated = re.sub(r"\bknowledge/[^\s,)]+", "", updated)
+    updated = re.sub(r"(?i)\bknowledge/[^\s,)]+", "", updated)
     updated = re.sub(r"\b(?:staging|domains|source|sources|drafts|build)/[^\s,)]+", "", updated)
     updated = re.sub(r"\(\s*,", "(", updated)
     updated = re.sub(r",\s*\)", ")", updated)
@@ -872,7 +873,7 @@ def validate_kb_pipeline_consistency(texts):
 @lru_cache(maxsize=1)
 def build_formal_trace_targets():
     targets = {}
-    formal_root = KORA_ROOT / "knowledge" / "kora" / "categorical-foundations"
+    formal_root = KNOWLEDGE_ROOT / "kora" / "categorical-foundations"
     for path in sorted(formal_root.glob("*.md")):
         doc, _ = load_yaml_safe(path)
         urn = doc.get("_manifest", {}).get("urn") if isinstance(doc, dict) else None
@@ -1245,7 +1246,7 @@ def auto_fix_markdown_paths(paths, max_lines_per_h2=None, emit=True):
 
 
 def cmd_lint_md(paths=None, max_lines_per_h2=None, fix=False):
-    target_paths = paths or [KORA_ROOT / "knowledge", resolve_operational_dir("drafts")]
+    target_paths = paths or [KNOWLEDGE_ROOT, resolve_operational_dir("drafts")]
     if fix:
         auto_fix_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)
     result = lint_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)

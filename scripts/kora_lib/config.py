@@ -4,6 +4,7 @@ import re
 
 KORA_ROOT = Path(__file__).resolve().parents[2]
 AGENTS_ROOT = KORA_ROOT / "AGENTS" if (KORA_ROOT / "AGENTS").exists() else KORA_ROOT / "agents"
+KNOWLEDGE_ROOT = KORA_ROOT / "KNOWLEDGE" if (KORA_ROOT / "KNOWLEDGE").exists() else KORA_ROOT / "knowledge"
 OPERATIONS_ROOT_NAME = "OPERATIONS"
 OPERATIONS_ROOT = KORA_ROOT / OPERATIONS_ROOT_NAME
 CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"

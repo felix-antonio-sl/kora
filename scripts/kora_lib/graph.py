@@ -5,7 +5,7 @@ import os
 import re
 
 from .catalog import load_catalog
-from .config import AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT, URN_REF_PATTERN
+from .config import AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
 from .artifacts import load_yaml_safe
 from .workspaces import extract_cm_refs, extract_declared_tool_headings, iter_agent_workspaces, iter_skill_entrypoints
 
@@ -34,7 +34,7 @@ def iter_repository_files():
 @lru_cache(maxsize=1)
 def build_formal_trace_lookup():
     lookup = {}
-    formal_root = KORA_ROOT / "knowledge" / "kora" / "categorical-foundations"
+    formal_root = KNOWLEDGE_ROOT / "kora" / "categorical-foundations"
     if not formal_root.exists():
         return lookup
 

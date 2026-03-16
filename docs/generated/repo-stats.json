@@ -5,13 +5,13 @@
   "catalog_counts": {
     "Agents": 205,
     "Skills": 256,
-    "Knowledge": 233,
+    "Knowledge": 234,
     "Documents": 0,
     "Other": 0
   },
-  "total_catalog_entries": 694,
+  "total_catalog_entries": 695,
   "by_namespace": {
-    "gn": 142,
+    "gn": 143,
     "fxsl": 118,
     "ops": 108,
     "dev": 81,

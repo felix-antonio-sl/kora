@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 1393,
-    "node_count": 853,
-    "edge_count": 4130
+    "scanned_files": 1394,
+    "node_count": 854,
+    "edge_count": 4135
   },
   "node_kind_counts": {
     "artifact": 206,
-    "knowledge": 226,
+    "knowledge": 227,
     "skill": 256,
     "spec": 7,
     "tool": 117,
@@ -21,7 +21,7 @@
     "InvokesSkill": 237,
     "RoutesToAgent": 63,
     "TracesTo": 45,
-    "XRef": 2483
+    "XRef": 2488
   },
   "nodes": [
     {
@@ -2691,6 +2691,15 @@
       "urn": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
       "title": "Ley de Presupuestos 2026 — Glosas Gobiernos Regionales",
       "path": "KNOWLEDGE/gn/kb/kb_gn_211_ley_presupuestos_2026_glosas.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "title": "Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble",
+      "path": "KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md",
       "namespace": "gn"
     },
     {
@@ -18690,6 +18699,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -27989,6 +28005,34 @@
       "target": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
       "fragment": null,
       "source_path": "KNOWLEDGE/gn/kb/kb_gn_211_ley_presupuestos_2026_glosas.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "target": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "target": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md"
     },
     {
       "kind": "XRef",

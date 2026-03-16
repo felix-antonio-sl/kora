@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from .config import KORA_ROOT, LEGACY_FXSL_SIGNALS
+from .config import KNOWLEDGE_ROOT, KORA_ROOT, LEGACY_FXSL_SIGNALS
 
 
 PROMOTED_FXSL_TARGETS = {
@@ -77,7 +77,7 @@ def classify_fxsl_cat_file(path):
 
 
 def build_fxsl_cat_ledger():
-    root = KORA_ROOT / "knowledge" / "fxsl" / "cat"
+    root = KNOWLEDGE_ROOT / "fxsl" / "cat"
     entries = [classify_fxsl_cat_file(path) for path in sorted(root.glob("*.md"))]
     counts = {}
     for item in entries:
