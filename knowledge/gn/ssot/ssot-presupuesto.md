@@ -77,7 +77,8 @@ Operador: `<` (menor que) per DipirRules.ttl. Omega es inconsistente internament
 
 | Período | Fase |
 |---------|------|
-| T-1 (Jul-Dic) | Formulación |
+| T-1 (May-Jun) | Preparación exploratoria (marco DIPRES, arrastres, espacio presupuestario — interno GORE) |
+| T-1 (Jul-Dic) | Formulación formal, aprobación CORE y promulgación Ley |
 | T (Ene-Dic) | Ejecución (4 trimestres) |
 | T+1 (Ene-Jun) | Rendición y auditoría |
 
@@ -188,21 +189,22 @@ Patrón ontológico `gist:Aspect` para tracking de ejecución:
 
 **Reconciliación:** GORE_OS materializa 5 de 7 aspectos como campos directos en `core.budget_program` (`initial_amount`, `current_amount`, `committed_amount`, `accrued_amount`, `paid_amount`). Pre-afectado y Disponible se calculan en runtime. La ontología modela todos como aspectos de magnitud sobre `BudgetaryAccount`.
 
-## Tipos de modificación presupuestaria (7)
+## Tipos de modificación presupuestaria (8)
 
 | Tipo | Afecta Partida 31 | Acto requerido | Excepción CORE |
 |------|-------------------|----------------|----------------|
-| Reasignación interna | No | Resolución GORE | — |
-| Creación iniciativas FRPD | No | Resolución GORE | — |
-| Suplementación presupuestaria | Sí | Decreto Supremo + Resolución | — |
-| Transferencia otros organismos | Sí | Decreto Supremo + Resolución | — |
-| Emergencias 3% SUBINT | Sí | Decreto Supremo + Resolución | Traspasable a Subsecretaría Interior |
-| Emergencias 2% GORE | Sí | Resolución GORE | Uso interno GORE |
-| Aumento ≤10% costo aprobado | No | Resolución GORE | Glosa 10/11: no requiere nueva aprobación CORE |
+| Suplemento Presupuestario (mayor aporte fiscal) | Sí | DS DIPRES + Resolución GORE | — |
+| Incorporación/Reducción de Ingresos Ley | Sí | DS DIPRES + Resolución GORE | — |
+| Reasignación Presupuestaria Interna | No | Resolución GORE | — |
+| Transferencias consolidables a otros organismos | Sí | DS DIPRES + Resolución GORE | — |
+| Financiamiento emergencias (3%, Glosa 14) | Sí | DS DIPRES + Resolución GORE | Traspasable a Subsecretaría Interior |
+| Creación iniciativas FRPD (ítem 33.03) | No | Resolución GORE | — |
+| Incorporación Deuda Flotante con SIC | No | Resolución GORE | — |
+| Incorporación Deuda Flotante con mayor aporte fiscal | Sí | Resolución GORE + DS DIPRES | — |
 
-Fuente: Omega v2.6.0. Flujo: DIPIR prepara → DAF revisa → Gobernador/a presenta → CORE aprueba → DIPRES visa → CGR TdR → vigencia (ajuste SIGFE).
+Fuente: Oficio Circular N°11 DIPRES 2025 (canónico). Flujo: DIPIR prepara → DAF revisa → Gobernador/a presenta → CORE aprueba → DIPRES visa → CGR TdR → vigencia (ajuste SIGFE).
 
-**Reconciliación:** La ontología define dos clases para modificaciones — `BudgetModificationEvent` (subClass `BudgetaryTransaction`) y `BudgetModification` (subClass `gist:Event`) — con jerarquías incompatibles. Pendiente: deprecar una. Los 7 tipos provienen del Omega; no están enumerados como instancias en ningún TTL.
+**Reconciliación:** La ontología define dos clases para modificaciones — `BudgetModificationEvent` (subClass `BudgetaryTransaction`) y `BudgetModification` (subClass `gist:Event`) — con jerarquías incompatibles. Pendiente: deprecar una. Los 8 tipos provienen del Oficio Circular N°11 DIPRES 2025; superan los 7 del Omega v2.6.0 (que no distinguía los dos subtipos de Deuda Flotante ni incluía Incorporación/Reducción de Ingresos). No están enumerados como instancias en ningún TTL.
 
 ## Arrastre presupuestario
 

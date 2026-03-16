@@ -38,6 +38,21 @@ Descartado: IPRData.ttl modela 8 fases (F0-F7) donde F5=Ejecución, F6=Modificac
 
 Nombres canónicos: ReferenceData.ttl prevalece (Postulación, Evaluación, Priorización) sobre IPRData (Formulación e Ingreso, Evaluación Técnica, Aprobación Presupuestaria) y Omega (Formulación & Ingreso, Priorización & Asignación).
 
+### Mapeo al modelo operativo (8 fases)
+
+La guía operativa ([urn:gn:kb:gestion-ipr](urn:gn:kb:gestion-ipr)) y el BPMN D03 usan un modelo de 8 fases (P0-P7) con mayor granularidad en ejecución y cierre. Mapeo:
+
+| Canónico (6) | Operativo (8) | Nota |
+|---|---|---|
+| — | P0 Selector de Vías | Pre-fase de decisión estratégica; no tiene equivalente canónico |
+| F0 Postulación + F1 Admisibilidad | P1 Ingreso y Admisibilidad | El modelo operativo fusiona F0 y F1 |
+| F2 Evaluación | P2 Evaluación Técnico-Económica | Equivalente directo |
+| F3 Priorización | P3 Obtención de Financiamiento | Nombre operativo enfatiza el resultado |
+| F4 Formalización | P4 Gestión Presupuestaria y Formalización | Equivalente directo |
+| F4 Formalización (subproceso) | P5 Ejecución y Supervisión | El canónico subsume ejecución en F4 |
+| F4 Formalización (subproceso) | P6 Modificaciones en Ejecución | El canónico subsume modificaciones en F4 |
+| F5 Cierre | P7 Cierre y Evaluación Ex-Post | Equivalente directo |
+
 ## Tipos IPR (4 subclases)
 
 | Tipo | Subtítulo | Crea activo | Superclase |
@@ -127,6 +142,17 @@ La ontología define además `gnub:ANFAcquisition` como sub-subclase de `IPRProj
 **Reconciliación:** Omega define 7 tracks (A-E2). IPRData.ttl modela 4 tracks (RATE, Glosa06, LocalGORE, CTCI) — granularidad menor que agrupa sub-tracks del Omega bajo tracks amplios. Canónico: 7 tracks del Omega por mayor resolución operativa. Relación `skos:broader` pendiente en ontología.
 
 Excepción al criterio de autoridad: se adoptan los 7 tracks del Omega (prioridad 3) sobre los 4 tracks de la ontología (prioridad 2) porque la granularidad del Omega refleja mejor la realidad operativa de GORE_OS. La ontología agrupa tracks bajo categorías amplias (RATE, LocalGORE) que pierden la distinción entre mecanismos.
+
+### Mapeo al modelo operativo (4 tracks)
+
+La guía operativa ([urn:gn:kb:gestion-ipr](urn:gn:kb:gestion-ipr)) usa 4 tracks que agrupan los 7 canónicos:
+
+| Operativo (4) | Canónico (7) agrupados |
+|---|---|
+| Track A — SNI/MDSF | A (SNI General) |
+| Track B — Glosa 06/DIPRES | D1 (Glosa 06) |
+| Track C — Vías Simplificadas | C (FRIL), B (Circular 33), E1 (Subvención 8%), E2 (FRPD) |
+| Track D — Transferencias ITF | D2 (Transferencia PPR) |
 
 ## Resultados de evaluación (10)
 
