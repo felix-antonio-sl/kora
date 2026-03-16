@@ -71,3 +71,6 @@ _manifest:
 | CIES SITIA seguridad publica | procesos (N3) | urn:gn:kb:bpmn-cies-sitia |
 | Geoespacial IDE Geonodo SIG | procesos (N3) | urn:gn:kb:bpmn-geoespacial-ide |
 | Indicadores regionales comunales | estrategia (N2) | urn:gn:kb:indicadores-nuble |
+| Convenios, estados, cuotas, FSM | ipr (N3) | urn:gn:kb:convenios-estados-fases |
+| Actores externos, SEREMIAs, servicios, plazos | intro (N1) | urn:gn:kb:ecosistema-instituciones |
+| Matriz comparativa mecanismos, arbol decision | ipr (N3) | urn:gn:kb:mecanismos-matriz-decision |

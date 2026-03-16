@@ -20,7 +20,8 @@
     "urn:gn:kb:vision-desarrollo-nuble",
     "urn:gn:kb:guia-comunicaciones",
     "urn:gn:kb:comunicaciones-oc",
-    "urn:gn:kb:indicadores-nuble"
+    "urn:gn:kb:indicadores-nuble",
+    "urn:gn:kb:ecosistema-instituciones"
   ],
   "sandbox": {
     "mode": "strict"

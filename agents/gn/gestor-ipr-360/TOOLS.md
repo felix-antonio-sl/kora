@@ -62,6 +62,9 @@ _manifest:
 | Presupuesto/SIGFE | urn:gn:kb:gestion-prpto |
 | Ciclo Vida IPR 7 Fases | urn:gn:kb:gestion-ipr |
 | Rendiciones/SISREC | urn:gn:kb:gestion-rendiciones |
+| Convenios, estados, cuotas, FSM | urn:gn:kb:convenios-estados-fases |
+| Actores externos, SEREMIAs, servicios, plazos | urn:gn:kb:ecosistema-instituciones |
+| Matriz comparativa mecanismos, arbol decision | urn:gn:kb:mecanismos-matriz-decision |
 
 ### Estrategia y Sistemas
 

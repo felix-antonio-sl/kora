@@ -37,3 +37,4 @@ _manifest:
 | Comunicaciones, estrategia comunicacional | urn:gn:kb:guia-comunicaciones |
 | Comunicaciones OC, protocolo | urn:gn:kb:comunicaciones-oc |
 | Indicadores regionales, datos comunales, demografia | urn:gn:kb:indicadores-nuble |
+| Actores externos, SEREMIAs, relaciones institucionales | urn:gn:kb:ecosistema-instituciones |

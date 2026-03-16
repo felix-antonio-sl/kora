@@ -20,7 +20,9 @@
     "urn:gn:kb:estrategia-gestion",
     "urn:gn:kb:cuentas-publicas-2021-2024",
     "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
-    "urn:gn:kb:bpmn-actos-administrativos"
+    "urn:gn:kb:bpmn-actos-administrativos",
+    "urn:gn:kb:convenios-estados-fases",
+    "urn:gn:kb:ecosistema-instituciones"
   ],
   "sandbox": {
     "mode": "strict"

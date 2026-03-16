@@ -35,7 +35,10 @@
     "urn:gn:kb:ris-salud",
     "urn:gn:kb:ris-cultura-deporte-turismo",
     "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
-    "urn:gn:kb:indicadores-nuble"
+    "urn:gn:kb:indicadores-nuble",
+    "urn:gn:kb:convenios-estados-fases",
+    "urn:gn:kb:ecosistema-instituciones",
+    "urn:gn:kb:mecanismos-matriz-decision"
   ],
   "sandbox": {
     "mode": "strict"

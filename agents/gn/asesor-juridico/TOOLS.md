@@ -37,3 +37,5 @@ _manifest:
 | Cuentas publicas, rendicion gestion | urn:gn:kb:cuentas-publicas-2021-2024 |
 | Glosas GORE, Ley Presupuestos | urn:gn:kb:ley-presupuestos-2026-glosas-gore |
 | Tramitacion actos, BPMN aprobacion, flujo actos | urn:gn:kb:bpmn-actos-administrativos |
+| Convenios, estados, cuotas, formalización | urn:gn:kb:convenios-estados-fases |
+| Actores externos, competencias, marco institucional | urn:gn:kb:ecosistema-instituciones |

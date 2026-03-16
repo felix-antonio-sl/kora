@@ -55,7 +55,10 @@
     "urn:gn:kb:bpmn-actos-administrativos",
     "urn:gn:kb:bpmn-cies-sitia",
     "urn:gn:kb:bpmn-geoespacial-ide",
-    "urn:gn:kb:indicadores-nuble"
+    "urn:gn:kb:indicadores-nuble",
+    "urn:gn:kb:convenios-estados-fases",
+    "urn:gn:kb:ecosistema-instituciones",
+    "urn:gn:kb:mecanismos-matriz-decision"
   ],
   "sandbox": {
     "mode": "strict"

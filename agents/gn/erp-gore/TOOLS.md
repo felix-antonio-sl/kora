@@ -37,3 +37,4 @@ _manifest:
 | Rendiciones, SISREC, control CGR | urn:gn:kb:gestion-rendiciones |
 | Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
 | Modelos actos juridicos, plantillas | urn:gn:kb:modelos-actos-juridicos |
+| Convenios, estados, cuotas, pagos | urn:gn:kb:convenios-estados-fases |

@@ -2043,6 +2043,10 @@ Catalog:
     title: Estrategia y Gestión del Gobierno Regional en Chile
     file: KNOWLEDGE/gn/kb/kb_gn_035_estrategia_gestion.md
     status: published
+  - urn: urn:gn:kb:mecanismos-matriz-decision
+    title: Matriz Unificada de Mecanismos de Financiamiento — GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_mecanismos_matriz_decision.md
+    status: published
   - urn: urn:gn:kb:plan-potenciamiento-dgi
     title: Plan de Potenciamiento DGI
     file: KNOWLEDGE/gn/kb/kb_gn_plan_potenciamiento_dgi.md
@@ -2099,6 +2103,10 @@ Catalog:
     title: Visión de Desarrollo GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
     status: published
+  - urn: urn:gn:kb:convenios-estados-fases
+    title: Convenios GORE Ñuble — Estados y Ciclo de Vida
+    file: KNOWLEDGE/gn/kb/kb_gn_convenios_estados_fases.md
+    status: published
   - urn: urn:gn:kb:gore-ideal
     title: 'GORE Ideal y GORE 4.0: Anatomía, Límites y Potencial del Gobierno Regional'
     file: KNOWLEDGE/gn/kb/kb_gn_900_gore_ideal.md
@@ -2114,6 +2122,10 @@ Catalog:
   - urn: urn:gn:kb:ley-presupuestos-2026-partida-31
     title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales'
     file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31.md
+    status: published
+  - urn: urn:gn:kb:ecosistema-instituciones
+    title: Ecosistema Institucional Externo — GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_ecosistema_instituciones.md
     status: published
   - urn: urn:gn:kb:cuentas-publicas-2021-2024
     title: Cuentas Públicas GORE Ñuble 2021–2024

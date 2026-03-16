@@ -20,7 +20,8 @@
     "urn:gn:kb:organigrama",
     "urn:gn:kb:gestion-rendiciones",
     "urn:gn:kb:flujos-aprobacion-documentos",
-    "urn:gn:kb:modelos-actos-juridicos"
+    "urn:gn:kb:modelos-actos-juridicos",
+    "urn:gn:kb:convenios-estados-fases"
   ],
   "sandbox": {
     "mode": "strict"
