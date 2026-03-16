@@ -30,9 +30,9 @@ Genera la estructura de directorio completa de un workspace KORA canonico: 5 arc
 
 ## Procedimiento
 1. Cargar el contrato de bootstrap desde `references/bootstrap-contract.md` y usar `assets/bootstrap-frontmatter-examples.md` como apoyo para la forma minima de manifests y stubs.
-2. Validar input: nombre del agente, namespace destino. Verificar que no exista workspace en agents/{namespace}/{nombre}/.
-3. Crear directorio: agents/{namespace}/{nombre}/ y agents/{namespace}/{nombre}/skills/.
-4. Si el blueprint declara Skills extendidos: crear por cada uno `agents/{namespace}/{nombre}/skills/CM-{id}/` con entrypoint vacio `SKILL.md` y directorios `scripts/`, `references/`, `assets/` solo cuando el blueprint los requiera.
+2. Validar input: nombre del agente, namespace destino. Verificar que no exista workspace en AGENTS/{namespace}/{nombre}/.
+3. Crear directorio: AGENTS/{namespace}/{nombre}/ y AGENTS/{namespace}/{nombre}/skills/.
+4. Si el blueprint declara Skills extendidos: crear por cada uno `AGENTS/{namespace}/{nombre}/skills/CM-{id}/` con entrypoint vacio `SKILL.md` y directorios `scripts/`, `references/`, `assets/` solo cuando el blueprint los requiera.
 5. Generar AGENTS.md: frontmatter con urn:{namespace}:agent-bootstrap:{nombre}-agents:1.0.0, `_manifest.type=bootstrap_agents` y secciones canonicas (`## 1. FSM`, `## 2. Reglas Duras`, `## 3. Co-induccion`, `## 4. Contexto Multi-turno`, `## 5. Wiring`).
 6. Generar SOUL.md: frontmatter con urn:{namespace}:agent-bootstrap:{nombre}-soul:1.0.0, `_manifest.type=bootstrap_soul` y secciones base de identidad, paradigma y tono.
 7. Generar USER.md: frontmatter con urn:{namespace}:agent-bootstrap:{nombre}-user:1.0.0, `_manifest.type=bootstrap_user` y secciones base de perfil operador, rutinas y preferencias.

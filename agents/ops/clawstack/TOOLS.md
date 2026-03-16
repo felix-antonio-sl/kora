@@ -52,7 +52,7 @@ _manifest:
 ## oc_docs_search
 
 - **Firma:** query: string -> SearchResult[]
-- **Cuando usar:** Buscar en documentacion oficial OpenClaw (knowledge/agengai/openclaw/documentacion-oficial/) para detalle de API, config reference, platform-specific, troubleshooting puntual.
+- **Cuando usar:** Buscar en documentacion oficial OpenClaw (KNOWLEDGE/agengai/openclaw/documentacion-oficial/) para detalle de API, config reference, platform-specific, troubleshooting puntual.
 - **Cuando NO usar:** Para conceptos arquitectonicos (usar manual via kb_route primero).
 
 ## host_exec

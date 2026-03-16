@@ -901,7 +901,7 @@ def validate_traces_semantics(path, text):
     for line in text.splitlines():
         if not line.strip().startswith("Traces to:"):
             continue
-        if "knowledge/fxsl/cat" in line or "urn:fxsl:" in line:
+        if "KNOWLEDGE/fxsl/cat" in line or "knowledge/fxsl/cat" in line or "urn:fxsl:" in line:
             failures.append("Traces to referencia corpus FXSL auxiliar en vez de la formal layer oficial")
         doc_refs = TRACES_TO_DOC_PATTERN.findall(line)
         section_refs = TRACES_TO_SECTION_PATTERN.findall(line)

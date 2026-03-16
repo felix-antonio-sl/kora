@@ -7,8 +7,8 @@ Monorepo de especificaciones, conocimiento y workspaces de agentes gobernados po
 KORA organiza el ecosistema en cuatro estratos:
 
 - `specs/`: ley operativa del sistema.
-- `knowledge/`: artefactos descriptivos KORA/MD.
-- `agents/`: workspaces ejecutables KORA.
+- `KNOWLEDGE/`: artefactos descriptivos KORA/MD.
+- `AGENTS/`: workspaces ejecutables KORA.
 - `scripts/`: CLI oficial y utilitarios auxiliares. La frontera operativa esta documentada en `scripts/README.md`.
 
 Ademas, el repo opera sobre un pipeline de transformacion de artefactos:
@@ -19,19 +19,22 @@ Ademas, el repo opera sobre un pipeline de transformacion de artefactos:
 - `KNOWLEDGE/`: conocimiento publicado.
 - `OPERATIONS/build/`: evidencia tecnica de corridas; no forma parte de la base de conocimiento.
 
-La Formal Layer oficial vive en `knowledge/kora/categorical-foundations/`. El corpus `knowledge/fxsl/cat/` permanece como material auxiliar y solo entra a la ley operativa por absorcion formal explicita.
+La Formal Layer oficial vive en `KNOWLEDGE/kora/categorical-foundations/`. El corpus `KNOWLEDGE/fxsl/cat/` permanece como material auxiliar y solo entra a la ley operativa por absorcion formal explicita.
 
 ## Arquitectura
 
 ```text
 kora/
   specs/                        constitucion y specs derivadas
-  knowledge/                    KBs por namespace
+  KNOWLEDGE/                    KBs por namespace
     kora/categorical-foundations/   formal layer oficial (00-08)
     fxsl/cat/                       corpus categorial auxiliar
-  agents/                       workspaces de agentes por namespace
+  AGENTS/                       workspaces de agentes por namespace
   catalog/                      vista materializada del grafo de artefactos
-  docs/generated/               salidas vivas generadas por la CLI
+  docs/                         capa documental auxiliar (ver docs/README.md)
+    generated/                 salidas vivas generadas por la CLI
+    plans/                     planes, blueprints y handoffs
+    reports/                   evidencia y reportes de corridas
   schemas/                      contratos JSON para bootstrap y config
   scripts/                      CLI oficial + soporte acotado + legacy
   OPERATIONS/                   superficies operacionales locales no portables
@@ -72,12 +75,41 @@ La precedencia normativa es:
 
 Reglas clave del nuevo regimen:
 
-- `Traces to:` solo puede apuntar a `knowledge/kora/categorical-foundations/`.
+- `Traces to:` solo puede apuntar a `KNOWLEDGE/kora/categorical-foundations/`.
 - `Rationale:` absorbe apoyo no normativo o pragmatica operativa.
 - `TOOLS.md` declara interfaz semantica.
 - `config.json.tools.allow` debe coincidir exactamente con esa interfaz.
 - `config.json.runtime_capabilities` contiene permisos crudos del runtime.
 - el catalogo no es source of truth; es una vista derivada del filesystem y sus manifests.
+
+## Rol De Docs
+
+`docs/` no es fuente canonica del sistema. Su rol es documental:
+
+- `docs/generated/` contiene artefactos derivados y regenerables.
+- `docs/plans/` contiene planes, blueprints y handoffs de trabajo.
+- `docs/reports/` contiene reportes de corridas o evidencia historica.
+
+La convencion completa vive en [`docs/README.md`](docs/README.md).
+
+## Valor De Directorios Base
+
+Estos directorios no cumplen el mismo papel. Su valor dentro del repo es distinto:
+
+- `specs/`: constitucion operativa de KORA. Aqui vive la ley del sistema: precedencia, grammar, agent spec, skill spec, runtime spec y swarm spec. Si otro artefacto contradice `specs/`, manda `specs/`.
+- `catalog/`: indice materializado del repo. Su valor es operativo: resolver URNs, alimentar stats, graph, health y docs generadas. Es critico para observabilidad y tooling, pero sigue siendo derivado del filesystem y sus manifests.
+- `schemas/`: contratos mecanicos minimos para bootstrap y config. Su valor es de enforcement estructural: permiten validar forma, envelope y campos obligatorios antes de entrar a validaciones semanticas mas profundas.
+- `scripts/`: toolchain ejecutable del monorepo. Su valor es convertir la ley y el filesystem en operaciones reales: indexar, resolver, validar, auditar, generar docs e intake. La convencion de su superficie soportada vive en `scripts/README.md`.
+- `tests/`: verificador ejecutable del sistema. Su valor es institucionalizar supuestos y detectar drift, regresiones o falsos verdes del tooling. Si `specs/` define la ley, `tests/` verifica que la implementacion siga obedeciendola.
+
+Lectura rapida:
+
+- `specs/` define
+- `schemas/` restringe
+- `scripts/` opera
+- `catalog/` indexa
+- `tests/` verifica
+- `docs/` explica
 
 ## Comandos
 

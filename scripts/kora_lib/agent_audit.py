@@ -11,7 +11,7 @@ from .validation import validate_workspaces
 from .workspaces import iter_agent_workspaces, iter_skill_entrypoints
 
 
-DOMAIN_SUBGROUPS = ("gn", "pro", "fxsl", "korvo")
+DOMAIN_SUBGROUPS = ("gn", "pro", "salud", "fxsl", "korvo")
 BASELINE_SPECS = [
     "specs/gobernanza.md",
     "specs/agent-spec-md.md",

@@ -10,7 +10,7 @@ Base normativa y operativa ya presente en el repo para diseno de artefactos KORA
 
 - `specs/md-spec.md`
 - `specs/spec-md.md`
-- `knowledge/kora/sys/pipeline-ingesta.md`
+- `KNOWLEDGE/kora/sys/pipeline-ingesta.md`
 - `tests/fixtures/valid-kora-md.md`
 - `tests/fixtures/valid-kora-spec.md`
 

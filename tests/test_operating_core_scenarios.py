@@ -1,6 +1,7 @@
 import unittest
 
 from common import AGENTS_ROOT, FIXTURES, GENERATED_DOCS, ROOT, load_json, run_cli
+from kora_lib.artifacts import load_yaml_safe
 from kora_lib.catalog import build_catalog_lookup, load_catalog
 from kora_lib.contracts import build_operating_core_payload, load_workspace_contract
 
@@ -15,6 +16,15 @@ def load_contract_text(contract):
         if abs_path.exists():
             parts.append(abs_path.read_text(encoding="utf-8"))
     return "\n".join(parts)
+
+
+def load_manifest_urn(path):
+    if path.suffix == ".json":
+        return load_json(path)["_manifest"]["urn"]
+    doc, err = load_yaml_safe(path)
+    if err:
+        raise RuntimeError(f"Could not parse manifest from {path}: {err}")
+    return doc["_manifest"]["urn"]
 
 
 def assert_terms_present(test_case, haystack, terms, label):
@@ -143,17 +153,18 @@ class OperatingCoreScenarioTests(unittest.TestCase):
             self.assertTrue(all(urn.startswith("urn:") for urn in contract.allowed_kb), msg=f"{workspace} has non-URN allowed_kb")
 
     def test_domain_canary_agent_urns_resolve_via_cli(self):
-        expected = {
-            "urn:gn:agent-bootstrap:goreologo-agents:2.4.0": str(AGENTS_ROOT / "gn" / "goreologo" / "AGENTS.md"),
-            "urn:gn:agent-bootstrap:goreologo-tools:2.4.0": str(AGENTS_ROOT / "gn" / "goreologo" / "TOOLS.md"),
-            "urn:gn:agent-bootstrap:goreologo-config:1.0.0": str(AGENTS_ROOT / "gn" / "goreologo" / "config.json"),
-            "urn:gn:agent-bootstrap:digitrans-agents:2.0.0": str(AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md"),
-            "urn:gn:agent-bootstrap:digitrans-tools:2.0.0": str(AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md"),
-            "urn:gn:agent-bootstrap:digitrans-config:2.0.0": str(AGENTS_ROOT / "gn" / "digitrans" / "config.json"),
-        }
-        for urn, rel_path in expected.items():
+        manifest_paths = (
+            AGENTS_ROOT / "gn" / "goreologo" / "AGENTS.md",
+            AGENTS_ROOT / "gn" / "goreologo" / "TOOLS.md",
+            AGENTS_ROOT / "gn" / "goreologo" / "config.json",
+            AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md",
+            AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md",
+            AGENTS_ROOT / "gn" / "digitrans" / "config.json",
+        )
+        for path in manifest_paths:
+            urn = load_manifest_urn(path)
             result = run_cli("resolve", urn)
-            self.assertIn(rel_path, result.stdout)
+            self.assertIn(str(path.resolve()), result.stdout)
 
 
 def make_agent_scenario_test(scenario):

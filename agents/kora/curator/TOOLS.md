@@ -36,7 +36,7 @@ _manifest:
 - **Firma:** {path: string, content: string} → result: string
 - **Cuando usar:** Escribir artefacto nuevo o actualizar existente despues de koraficiar, cristalizar, editar, reparar o mejorar.
 - **Cuando NO usar:** Sin validacion previa del contenido. Nunca escribir sin haber verificado estructura y fidelidad.
-- **Notas:** Contenido DEBE incluir frontmatter + cuerpo completo. Respetar pipeline: drafts/ para WIP, knowledge/ para publicado.
+- **Notas:** Contenido DEBE incluir frontmatter + cuerpo completo. Respetar pipeline: drafts/ para WIP, KNOWLEDGE/ para publicado.
 
 ## artifact_validate
 

@@ -21,8 +21,8 @@ KORA es un monorepo gobernado por specs y soportado por una capa formal categori
 
 ## Formal Layer
 
-- La unica Formal Layer oficial es `knowledge/kora/categorical-foundations/`.
-- `knowledge/fxsl/cat/` es corpus auxiliar.
+- La unica Formal Layer oficial es `KNOWLEDGE/kora/categorical-foundations/`.
+- `KNOWLEDGE/fxsl/cat/` es corpus auxiliar.
 - `Traces to:` solo puede apuntar a documentos de la Formal Layer oficial.
 - Si una idea viene de `fxsl/cat` y no ha sido absorbida formalmente, usala como `Rationale:`, no como traza oficial.
 

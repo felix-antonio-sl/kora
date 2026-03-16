@@ -37,7 +37,7 @@ Un agente KORA es un workspace ejecutable compuesto por cinco componentes:
 ## 3. Topologia obligatoria
 
 ```text
-agents/{namespace}/{nombre}/
+AGENTS/{namespace}/{nombre}/
   AGENTS.md
   SOUL.md
   USER.md

@@ -145,7 +145,7 @@ KB_PIPELINE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 LEGACY_FXSL_SIGNALS = (
-    "/knowledge/cat/",
+    "/KNOWLEDGE/cat/",
     ".koda.yml",
     "catalog_master_fxsl.yml",
     "work in progress",
@@ -154,7 +154,7 @@ COHORT_NAMESPACE_GROUPS = {
     "meta-kora": {"kora"},
     "dev": {"dev"},
     "ops": {"ops"},
-    "domains": {"fxsl", "pro", "gn", "korvo"},
+    "domains": {"fxsl", "pro", "salud", "gn", "korvo"},
 }
 META_KORA_AUDIT_WORKSPACES = (
     "kora/guardian",
@@ -215,7 +215,7 @@ SEMANTIC_TOOL_DOC_MARKERS = (
     "Cuando NO usar:",
 )
 MISSING_SKILL_SPECS = {
-    "agents/kora/taskmaster": {
+    "AGENTS/kora/taskmaster": {
         "CM-CONTEXT-MANAGER": (
             "Mantiene coherencia de la conversacion y detecta cambios de hilo.",
             "estado_actual, mensaje_usuario",
@@ -242,7 +242,7 @@ MISSING_SKILL_SPECS = {
             "status_report",
         ),
     },
-    "agents/pro/abogado-legislacion-medica": {
+    "AGENTS/salud/abogado-legislacion-medica": {
         "CM-CONSULTA-CLASSIFIER": (
             "Clasifica consultas legales en estatuto, derechos, procedimiento o materia especial.",
             "consulta_usuario",
@@ -254,14 +254,14 @@ MISSING_SKILL_SPECS = {
             "ruta_normativa",
         ),
     },
-    "agents/fxsl/pensador-generador": {
+    "AGENTS/fxsl/pensador-generador": {
         "CM-RAZONAMIENTO-CLINICO": (
             "Aplica razonamiento clinico estructurado cuando el problema cae en dominio medico.",
             "problema_clinico",
             "analisis_clinico",
         ),
     },
-    "agents/fxsl/ingeniero-sistemas-composicional": {
+    "AGENTS/fxsl/ingeniero-sistemas-composicional": {
         "CM-CONTEXT-ANALYZER": (
             "Analiza escala, perspectiva, rol y fase del sistema antes de modelar.",
             "solicitud_usuario",

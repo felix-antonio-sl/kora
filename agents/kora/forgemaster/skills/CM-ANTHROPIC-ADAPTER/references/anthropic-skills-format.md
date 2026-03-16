@@ -6,7 +6,7 @@ lang: es
 
 # Anthropic Skills Format Reference
 
-Referencia operativa para el mapeo KORA → Anthropic Skill (Claude Code). Fuente: knowledge/eng/skills-anthropic.md.
+Referencia operativa para el mapeo KORA → Anthropic Skill (Claude Code). Fuente: KNOWLEDGE/agengai/skills-anthropic.md.
 
 ## Estructura de un Skill
 

@@ -10,7 +10,7 @@ lang: es
 # CM-SURGEON
 
 ## Proposito
-Aplica reparaciones quirurgicas a superficies operativas del repo KORA: minima modificacion, preservar invariantes, no romper dependencias y sin intervenir `agents/`, specs fundacionales ni contenido KB.
+Aplica reparaciones quirurgicas a superficies operativas del repo KORA: minima modificacion, preservar invariantes, no romper dependencias y sin intervenir `AGENTS/`, specs fundacionales ni contenido KB.
 
 ## Input/Output
 - **Input:** diagnostico: {componente: string, severidad: string, causa_raiz: string} (problema detectado por CM-HEALTH-INSPECTOR o CM-ESTRUCTURA-AUDITOR)

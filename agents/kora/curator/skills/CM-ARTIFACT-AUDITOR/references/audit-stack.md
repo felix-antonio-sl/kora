@@ -11,7 +11,7 @@ Recursos del repo ya disponibles para auditoria de artefactos KORA:
 - `specs/md-spec.md`
 - `specs/spec-md.md`
 - `specs/gobernanza.md`
-- `knowledge/kora/sys/pipeline-ingesta.md`
+- `KNOWLEDGE/kora/sys/pipeline-ingesta.md`
 - `scripts/kora_lib/validation.py`
 - `scripts/kora_lib/artifacts.py`
 - `scripts/kora_lib/catalog.py`

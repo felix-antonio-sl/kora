@@ -24,4 +24,3 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| OPM, Object Process Methodology, ISO 19450, objetos, procesos, enlaces, OPD, OPL, SD, modelado conceptual, MBSE | `urn:fxsl:kb:opm-methodology` |

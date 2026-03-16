@@ -2,6 +2,7 @@ import json
 import unittest
 
 from common import AGENTS_ROOT, GENERATED_DOCS, ROOT, run_cli
+from kora_lib.config import OPERATING_CORE_COHORTS
 
 
 class KoraCliSmokeTests(unittest.TestCase):
@@ -41,7 +42,11 @@ class KoraCliSmokeTests(unittest.TestCase):
         audit_payload = json.loads((GENERATED_DOCS / "agent-audit.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
         self.assertIn("kora", contracts_payload["cohorts"])
-        self.assertEqual(contracts_payload["totals"]["workspaces"], 13)
+        self.assertEqual(
+            contracts_payload["totals"]["workspaces"],
+            sum(len(workspaces) for workspaces in OPERATING_CORE_COHORTS.values()),
+        )
+        self.assertEqual(set(contracts_payload["cohorts"].keys()), set(OPERATING_CORE_COHORTS.keys()))
         self.assertEqual(contracts_payload["meta_kora"]["summary"]["total_workspaces"], 4)
         self.assertEqual(contracts_payload["meta_kora"]["summary"]["operating_core"], 4)
         self.assertEqual(contracts_payload["meta_kora"]["summary"]["auxiliary"], 0)
@@ -49,10 +54,11 @@ class KoraCliSmokeTests(unittest.TestCase):
             "kora/guardian",
             {item["workspace"] for item in contracts_payload["cohorts"]["kora"]},
         )
-        self.assertIn(
-            "gn/digitrans",
-            {item["workspace"] for item in contracts_payload["cohorts"]["domain_canary"]},
-        )
+        for workspace in OPERATING_CORE_COHORTS["domain_canary"]:
+            self.assertIn(
+                workspace,
+                {item["workspace"] for item in contracts_payload["cohorts"]["domain_canary"]},
+            )
         self.assertIn("## Auditoria meta-kora", contracts_markdown)
         self.assertIn("promoted", ledger_payload["status_counts"])
         self.assertIn("meta-kora", audit_payload["cohorts"])

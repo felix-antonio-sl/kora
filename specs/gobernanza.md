@@ -94,13 +94,13 @@ Traces to: formal/01 §5.2 (Substitutability) ; formal/05 §1.3 (Domain Disjoint
 
 ### 5.1 Capa oficial
 
-La unica Formal Layer oficial de KORA es `knowledge/kora/categorical-foundations/`.
+La unica Formal Layer oficial de KORA es `KNOWLEDGE/kora/categorical-foundations/`.
 
 `Traces to:` **DEBE** referenciar exclusivamente documentos de esa capa.
 
 ### 5.2 Corpus auxiliar
 
-`knowledge/fxsl/cat/` y cualquier otro corpus categorial adicional son auxiliares. Pueden informar diseno, auditoria o critica, pero **NO DEBEN** respaldar `Traces to:` directamente.
+`KNOWLEDGE/fxsl/cat/` y cualquier otro corpus categorial adicional son auxiliares. Pueden informar diseno, auditoria o critica, pero **NO DEBEN** respaldar `Traces to:` directamente.
 
 Si un concepto auxiliar pasa a justificar reglas operacionales, **DEBE** absorberse mediante un documento puente dentro de la Formal Layer oficial.
 

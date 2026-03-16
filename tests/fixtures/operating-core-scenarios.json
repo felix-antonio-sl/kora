@@ -294,7 +294,7 @@
   ],
   "domain_canary": {
     "workspace": "gn/goreologo",
-    "requires_states": ["S-ANALISIS"],
+    "requires_states": ["S-SINTESIS"],
     "requires_skills": ["CM-INTAKE", "CM-KB-GUIDANCE", "CM-DOMAIN-ANALYZER", "CM-SYNTHESIZER"],
     "requires_tools": ["catalog_resolve", "kb_route"],
     "requires_allowed_kb_min": 20,

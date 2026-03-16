@@ -119,6 +119,7 @@ class AgentAuditTests(unittest.TestCase):
         self.assertIn("global_summary", payload)
         self.assertIn("top_systemic_debts", payload["global_summary"])
         self.assertIn("top_false_greens", payload["global_summary"])
+        self.assertIn("salud", payload["cohorts"]["domains"]["subgroups"])
 
     def test_sync_docs_generates_agent_audit_docs(self):
         run_cli("sync-docs")

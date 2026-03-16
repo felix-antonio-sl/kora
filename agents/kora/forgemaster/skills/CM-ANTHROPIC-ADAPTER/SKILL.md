@@ -44,7 +44,7 @@ Mapea un workspace KORA normalizado al formato Anthropic Skill (Claude Code), co
 3. COMPILAR INSTRUCCIONES INICIALES:
    - Parrafo introductorio: "Al activar esta skill, adoptas la identidad y comportamiento de {namespace}/{nombre}."
    - Referencia a specs si aplica.
-   - Instruccion de lazy-load: "Los skills (CM-*.md) se encuentran en `agents/{namespace}/{nombre}/skills/` y se cargan on-demand."
+   - Instruccion de lazy-load: "Los skills (CM-*.md) se encuentran en `AGENTS/{namespace}/{nombre}/skills/` y se cargan on-demand."
 4. COMPILAR AGENTS.md → `<kora_bootstrap component="agents">`:
    - Incluir FSM completa con estados, transiciones, prioridades.
    - Incluir reglas duras.

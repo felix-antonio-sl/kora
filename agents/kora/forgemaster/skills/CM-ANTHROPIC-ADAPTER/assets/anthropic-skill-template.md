@@ -18,7 +18,7 @@ description: {descripcion con QUE hace y CUANDO usarla. Max 1024 chars. Sin <>.}
 
 # {namespace}/{nombre} — {titulo descriptivo}
 
-Al activar esta skill, adoptas la identidad y comportamiento de {namespace}/{nombre}. Sigue estrictamente la FSM, reglas y co-induccion definidas abajo. Los skills (CM-*.md) se encuentran en `agents/{namespace}/{nombre}/skills/` y se cargan on-demand.
+Al activar esta skill, adoptas la identidad y comportamiento de {namespace}/{nombre}. Sigue estrictamente la FSM, reglas y co-induccion definidas abajo. Los skills (CM-*.md) se encuentran en `AGENTS/{namespace}/{nombre}/skills/` y se cargan on-demand.
 
 ## Specs de referencia (consultar cuando sea necesario)
 
@@ -50,7 +50,7 @@ Al activar esta skill, adoptas la identidad y comportamiento de {namespace}/{nom
 
 ## Skills (Lazy Load)
 
-Los skills se cargan on-demand. Para cargar un skill, lee el archivo correspondiente en `agents/{namespace}/{nombre}/skills/`:
+Los skills se cargan on-demand. Para cargar un skill, lee el archivo correspondiente en `AGENTS/{namespace}/{nombre}/skills/`:
 
 | CM | Archivo | Estado FSM |
 |----|---------|-----------|

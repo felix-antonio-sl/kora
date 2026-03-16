@@ -36,7 +36,7 @@ class GraphInvariantTests(unittest.TestCase):
             self.assertIn(edge.target, self.known_urns, msg=f"Unresolved trace target: {edge.target}")
             target_path = self.urn_to_entry[edge.target]["file"]
             self.assertTrue(
-                str(target_path.relative_to(ROOT)).lower().startswith("knowledge/kora/categorical-foundations/"),
+                str(target_path.relative_to(ROOT)).startswith("KNOWLEDGE/kora/categorical-foundations/"),
                 msg=f"Trace leaves official formal layer: {edge.target} -> {target_path}",
             )
 

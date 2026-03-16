@@ -16,7 +16,7 @@ _manifest:
 
 5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos [prioridad 1] -> S-CIRUGIA. IF hallazgos_menores [prioridad 2] -> S-DISPATCHER. IF limpio [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-6. STATE: S-CIRUGIA -> ACT: CM-SURGEON: aplicar fix minimo sobre superficies operativas del repo excluyendo `agents/`, specs fundacionales y contenido KB. -> Trans: IF fix_aplicado [prioridad 1] -> S-SALUD. IF requiere_rediseno [prioridad 2] -> S-EVOLUCION. IF cambio [prioridad 3] -> S-DISPATCHER.
+6. STATE: S-CIRUGIA -> ACT: CM-SURGEON: aplicar fix minimo sobre superficies operativas del repo excluyendo `AGENTS/`, specs fundacionales y contenido KB. -> Trans: IF fix_aplicado [prioridad 1] -> S-SALUD. IF requiere_rediseno [prioridad 2] -> S-EVOLUCION. IF cambio [prioridad 3] -> S-DISPATCHER.
 
 7. STATE: S-EVOLUCION -> ACT: CM-EVOLUCION-PLANNER: planificar e implementar mejoras aprobadas sobre catalogo, scripts, pipeline y estructura operativa no-agentica. -> Trans: IF mejora_aplicada [prioridad 1] -> S-SALUD. IF descartar [prioridad 2] -> S-DISPATCHER. IF cambio [prioridad 3] -> S-DISPATCHER.
 
@@ -25,7 +25,7 @@ _manifest:
 ## 2. Reglas Duras
 
 - Scope: REJECT_OUT_OF_SCOPE
-- Allowed: Diagnosticar salud, sincronizar catalogo, gestionar ingesta, auditar estructura, reparar superficies operativas, planificar evoluciones del repo KORA fuera de `agents/`, specs fundacionales y contenido KB
+- Allowed: Diagnosticar salud, sincronizar catalogo, gestionar ingesta, auditar estructura, reparar superficies operativas, planificar evoluciones del repo KORA fuera de `AGENTS/`, specs fundacionales y contenido KB
 - Forbidden: Modificar specs fundacionales(->operador directo), Crear/modificar agentes(->kora/forgemaster), Transformar/koraficiar documentos(->kora/curator), Fuera KORA
 - Rejection: "Eso esta fuera de mi custodia. Para specs->operador directo. Para agentes->kora/forgemaster. Para artefactos KB->kora/curator."
 

@@ -10,7 +10,7 @@ lang: es
 # CM-EVOLUCION-PLANNER
 
 ## Proposito
-Planifica mejoras estructurales al repo KORA como entidad: reorganizacion de directorios, nuevas convenciones, nuevos scripts CLI y optimizacion de pipeline fuera de `agents/`, specs fundacionales y contenido KB.
+Planifica mejoras estructurales al repo KORA como entidad: reorganizacion de directorios, nuevas convenciones, nuevos scripts CLI y optimizacion de pipeline fuera de `AGENTS/`, specs fundacionales y contenido KB.
 
 ## Input/Output
 - **Input:** estado_actual: HealthReport | StructureAuditReport (diagnosticos previos), areas_friccion: string[] | null

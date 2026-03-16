@@ -71,14 +71,14 @@ def file_exists(path):
 # Each entry: (relative_kb_path, source_path_or_None, strategy, notes)
 # ---------------------------------------------------------------------------
 
-TDE_BASE = "knowledge/tde"
-GN_BASE = "knowledge/gn"
-FXSL_BASE = "knowledge/fxsl"
-LEGAL_BASE = "knowledge/legal"
-GOV_BASE = "knowledge/gov"
-ORKO_BASE = "knowledge/orko"
-MGMT_BASE = "knowledge/mgmt"
-KORA_BASE = "knowledge/kora"
+TDE_BASE = "KNOWLEDGE/tde"
+GN_BASE = "KNOWLEDGE/gn"
+FXSL_BASE = "KNOWLEDGE/fxsl"
+LEGAL_BASE = "KNOWLEDGE/legal"
+GOV_BASE = "KNOWLEDGE/gov"
+ORKO_BASE = "KNOWLEDGE/orko"
+MGMT_BASE = "KNOWLEDGE/mgmt"
+KORA_BASE = "KNOWLEDGE/kora"
 
 # ---------------------------------------------------------------------------
 # TDE — 29 KBs

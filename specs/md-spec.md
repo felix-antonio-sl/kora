@@ -352,7 +352,7 @@ La familia de un artefacto **DEBE** identificarse por uno de estos mecanismos, e
 
 ### 6.1 Entrada
 
-Cualquier documento originalmente escrito para humanos **PUEDE** usarse como entrada. Todo documento que ingrese al monorepo para koraficacion **DEBE** transitar por el pipeline `inbox/ -> source/ -> drafts/ -> knowledge/`.
+Cualquier documento originalmente escrito para humanos **PUEDE** usarse como entrada. Todo documento que ingrese al monorepo para koraficacion **DEBE** transitar por el pipeline `inbox/ -> source/ -> drafts/ -> KNOWLEDGE/`.
 
 ### 6.2 El proceso de koraficacion
 

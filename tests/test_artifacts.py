@@ -262,7 +262,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         content = (
             ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("agents/{namespace}/{nombre}/skills/CM-{id}/", content)
+        self.assertIn("AGENTS/{namespace}/{nombre}/skills/CM-{id}/", content)
         self.assertIn("skills/CM-{id}/", content)
         self.assertIn("SKILL.md", content)
         self.assertIn("scripts/", content)
@@ -277,9 +277,9 @@ class ArtifactFixtureTests(unittest.TestCase):
         evolution = (
             ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("fuera de `agents/`, specs fundacionales y contenido KB", agents)
-        self.assertIn("sin intervenir `agents/`, specs fundacionales ni contenido KB", surgeon)
-        self.assertIn("fuera de `agents/`, specs fundacionales y contenido KB", evolution)
+        self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", agents)
+        self.assertIn("sin intervenir `AGENTS/`, specs fundacionales ni contenido KB", surgeon)
+        self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", evolution)
 
     def test_curator_and_custodio_soul_avoid_operational_policy_leakage(self):
         curator = (ROOT / "agents" / "kora" / "curator" / "SOUL.md").read_text(encoding="utf-8")
@@ -649,7 +649,7 @@ class ArtifactFixtureTests(unittest.TestCase):
                 self.assertIn(term, content)
 
     def test_all_agents_follow_canonical_section_order(self):
-        for path in ROOT.glob("agents/*/*/AGENTS.md"):
+        for path in ROOT.glob("AGENTS/*/*/AGENTS.md"):
             content = path.read_text(encoding="utf-8")
             self.assertEqual(validate_agents_canonical_structure(content), [], path.as_posix())
 

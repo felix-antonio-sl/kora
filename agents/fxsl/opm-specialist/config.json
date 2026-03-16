@@ -3,9 +3,7 @@
     "urn": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
     "type": "bootstrap_config"
   },
-  "allowed_kb": [
-    "urn:fxsl:kb:opm-methodology"
-  ],
+  "allowed_kb": [],
   "sandbox": {
     "mode": "strict"
   },

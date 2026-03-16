@@ -17,7 +17,7 @@ def load_json(path: Path):
 
 def main() -> int:
     if len(sys.argv) != 2:
-        print("Usage: validate_workspace.py /abs/path/to/agents/<namespace>/<name>")
+        print("Usage: validate_workspace.py /abs/path/to/AGENTS/<namespace>/<name>")
         return 2
 
     workspace = Path(sys.argv[1]).expanduser().resolve()
