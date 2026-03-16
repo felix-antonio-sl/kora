@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:gn:skill:visionario-arquitecto-erd:2.0.0
+  urn: urn:gn:skill:gobernador-virtual-arquitecto-erd:1.0.0
   type: lazy_load_endofunctor
 ---
 

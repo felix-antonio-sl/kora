@@ -19,12 +19,12 @@ Identificar y priorizar las fuentes KB relevantes para una consulta DGI, orienta
 ## Procedimiento
 1. Analizar el tema de la consulta e identificar el dominio principal (gestion, procesos, TDE, legal, estructura).
 2. Mapear el tema a los KB disponibles segun routing:
-   - Procesos/BPMN/Lean → knowledge/gn/bpmn/, knowledge/mgmt/
-   - Estructura/Meyer → knowledge/mgmt/meyer-org-structure.md
-   - TDE/digital → knowledge/tde/, knowledge/gov/
-   - Marco legal GORE → knowledge/gn/normativa/, knowledge/legal/
-   - Gestion DGI/interna → knowledge/gn/gobernanza/, knowledge/gn/manuales/
-   - Presupuesto/rendiciones → knowledge/gn/gestion/
+   - Procesos/BPMN/Lean → KNOWLEDGE/gn/bpmn/, KNOWLEDGE/mgmt/
+   - Estructura/Meyer → KNOWLEDGE/mgmt/meyer-org-structure.md
+   - TDE/digital → KNOWLEDGE/tde/, KNOWLEDGE/gov/
+   - Marco legal GORE → KNOWLEDGE/gn/normativa/, KNOWLEDGE/legal/
+   - Gestion DGI/interna → KNOWLEDGE/gn/gobernanza/, KNOWLEDGE/gn/manuales/
+   - Presupuesto/rendiciones → KNOWLEDGE/gn/gestion/
 3. Resolver URNs de los KB priorizados via CM-CATALOG-RESOLVER.
 4. Indicar al agente cuales KB consultar y en que orden de prioridad.
 5. Si ningun KB cubre el tema → declarar incertidumbre y ofrecer orientacion general desde conocimiento DGI.

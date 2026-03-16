@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:gn:agent-bootstrap:gestor-ipr-360-config:1.0.0",
+    "urn": "urn:gn:agent-bootstrap:gestor-ipr-360-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
@@ -15,21 +15,26 @@
     "urn:gn:kb:guia-frpd-nuble",
     "urn:gn:kb:instructivo-subvencion-8-2025-sts",
     "urn:gn:kb:guia-circular-33-sts",
-    "urn:gn:kb:ris-index",
-    "urn:gn:kb:ris-artcult",
-    "urn:gn:kb:ris-deportes",
-    "urn:gn:kb:ris-edpub",
-    "urn:gn:kb:ris-empub",
-    "urn:gn:kb:ris-patrimonio",
-    "urn:gn:kb:ris-pmdt",
-    "urn:gn:kb:ris-proginv",
-    "urn:gn:kb:ris-proyinv",
     "urn:gn:kb:gestion-prpto",
     "urn:gn:kb:gestion-ipr",
     "urn:gn:kb:gestion-rendiciones",
     "urn:gn:kb:estrategia-gestion",
-    "urn:gn:kb:gestion-info-geoespacial",
-    "urn:gn:kb:gore-ideal"
+    "urn:gn:kb:gore-ideal",
+    "urn:gn:kb:erd-nuble-2024-2030",
+    "urn:gn:kb:nuble-250",
+    "urn:gn:kb:ley-presupuestos-2026-partida-31",
+    "urn:gn:kb:ris-transporte",
+    "urn:gn:kb:ris-vivienda-urbanismo",
+    "urn:gn:kb:ris-agua-saneamiento",
+    "urn:gn:kb:ris-vialidad",
+    "urn:gn:kb:ris-genericos",
+    "urn:gn:kb:ris-educacion",
+    "urn:gn:kb:ris-seguridad-justicia",
+    "urn:gn:kb:ris-equipamiento-social",
+    "urn:gn:kb:ris-energia-comunicaciones",
+    "urn:gn:kb:ris-salud",
+    "urn:gn:kb:ris-cultura-deporte-turismo",
+    "urn:gn:kb:ley-presupuestos-2026-glosas-gore"
   ],
   "sandbox": {
     "mode": "strict"

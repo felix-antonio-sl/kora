@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:gestor-ipr-360-tools:2.0.0"
+  urn: "urn:gn:agent-bootstrap:gestor-ipr-360-tools:3.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -43,15 +43,17 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Indice RIS | urn:gn:kb:ris-index |
-| Arte/Cultura | urn:gn:kb:ris-artcult |
-| Deportes | urn:gn:kb:ris-deportes |
-| Edificacion | urn:gn:kb:ris-edpub |
-| Empresas Publicas | urn:gn:kb:ris-empub |
-| Patrimonio | urn:gn:kb:ris-patrimonio |
-| PMDT | urn:gn:kb:ris-pmdt |
-| Programas Inversion | urn:gn:kb:ris-proginv |
-| Proyectos Inversion | urn:gn:kb:ris-proyinv |
+| RIS Transporte | urn:gn:kb:ris-transporte |
+| RIS Vivienda y Urbanismo | urn:gn:kb:ris-vivienda-urbanismo |
+| RIS Agua y Saneamiento | urn:gn:kb:ris-agua-saneamiento |
+| RIS Vialidad | urn:gn:kb:ris-vialidad |
+| RIS Genericos | urn:gn:kb:ris-genericos |
+| RIS Educacion | urn:gn:kb:ris-educacion |
+| RIS Seguridad y Justicia | urn:gn:kb:ris-seguridad-justicia |
+| RIS Equipamiento Social | urn:gn:kb:ris-equipamiento-social |
+| RIS Energia y Comunicaciones | urn:gn:kb:ris-energia-comunicaciones |
+| RIS Salud | urn:gn:kb:ris-salud |
+| RIS Cultura, Deporte y Turismo | urn:gn:kb:ris-cultura-deporte-turismo |
 
 ### Gestion Operacional
 
@@ -66,5 +68,13 @@ _manifest:
 | Topic | URN |
 |-------|-----|
 | Estrategia/Modernizacion | urn:gn:kb:estrategia-gestion |
-| Geoespacial/SIG | urn:gn:kb:gestion-info-geoespacial |
 | Vision GORE | urn:gn:kb:gore-ideal |
+
+### Inversion Estrategica y Territorio
+
+| Topic | URN |
+|-------|-----|
+| ERD, ejes estrategicos, vision 2030 | urn:gn:kb:erd-nuble-2024-2030 |
+| Nuble 250, proyectos emblematicos | urn:gn:kb:nuble-250 |
+| Ley Presupuestos, Partida 31, umbrales | urn:gn:kb:ley-presupuestos-2026-partida-31 |
+| Glosas GORE, Ley Presupuestos | urn:gn:kb:ley-presupuestos-2026-glosas-gore |

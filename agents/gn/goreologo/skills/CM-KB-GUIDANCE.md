@@ -18,13 +18,13 @@ Identificar y priorizar las fuentes KB del repositorio KORA relevantes para una 
 
 ## Procedimiento
 1. Analizar el tema y mapear a dominios KB disponibles:
-   - Marco legal GORE → knowledge/gn/normativa/ (LOC, ley presupuestos, CGR)
-   - Gestion/inversiones → knowledge/gn/gestion/ (presupuesto, rendiciones, IPR)
-   - Gobernanza Nuble → knowledge/gn/gobernanza/ (ERD, organigrama, indicadores)
-   - Procesos operativos → knowledge/gn/bpmn/, knowledge/gn/manuales/
-   - Guias fondos → knowledge/gn/guias/ (FNDR, FRIL, FRPD, circular 33)
-   - TDE/digital → knowledge/tde/, knowledge/gov/
-   - Normativa legal transversal → knowledge/legal/
+   - Marco legal GORE → KNOWLEDGE/gn/normativa/ (LOC, ley presupuestos, CGR)
+   - Gestion/inversiones → KNOWLEDGE/gn/gestion/ (presupuesto, rendiciones, IPR)
+   - Gobernanza Nuble → KNOWLEDGE/gn/gobernanza/ (ERD, organigrama, indicadores)
+   - Procesos operativos → KNOWLEDGE/gn/bpmn/, KNOWLEDGE/gn/manuales/
+   - Guias fondos → KNOWLEDGE/gn/guias/ (FNDR, FRIL, FRPD, circular 33)
+   - TDE/digital → KNOWLEDGE/tde/, KNOWLEDGE/gov/
+   - Normativa legal transversal → KNOWLEDGE/legal/
 2. Resolver URNs de los KB priorizados via catalog_resolve.
 3. Ordenar KB por relevancia directa al tema consultado.
 4. Indicar si el tema requiere cruzar multiples KB (consulta multidimensional).

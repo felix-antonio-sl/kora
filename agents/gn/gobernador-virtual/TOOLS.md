@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:gobernador-virtual-tools:2.0.0"
+  urn: "urn:gn:agent-bootstrap:gobernador-virtual-tools:3.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -26,13 +26,13 @@ _manifest:
 | GORE Ideal, vision institucional | urn:gn:kb:gore-ideal |
 | Presupuesto, Partida 31 | urn:gn:kb:ley-presupuestos-2026-partida-31 |
 | IPR, inversion, proyectos | urn:gn:kb:gestion-ipr |
-| Indicadores, estadisticas | urn:gn:kb:indicadores-nuble |
-| Estructura Estado Chile | urn:mgmt:kb:estructura-estado-chile |
+| Estructura Estado Chile | urn:gn:kb:estructura-estado-chile |
 | Intro GOREs Nuble | urn:gn:kb:intro-gores-nuble |
 | Marco legal GOREs | urn:gn:kb:marco-legal-gores |
-| Glosario GORE Nuble | urn:gn:kb:glosario-gore-nuble |
-| Aceleracion regional | urn:gn:kb:aceleracion-regional |
 | Gestion presupuestaria | urn:gn:kb:gestion-prpto |
 | Cuentas publicas 2021-2024 | urn:gn:kb:cuentas-publicas-2021-2024 |
 | Estrategia gestion | urn:gn:kb:estrategia-gestion |
 | Flujos aprobacion documentos | urn:gn:kb:flujos-aprobacion-documentos |
+| Vision desarrollo, escenarios, prospectiva | urn:gn:kb:vision-desarrollo-nuble |
+| Comunicaciones, estrategia comunicacional | urn:gn:kb:guia-comunicaciones |
+| Comunicaciones OC, protocolo | urn:gn:kb:comunicaciones-oc |

@@ -1,12 +1,12 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:gestor-ipr-360-user:2.0.0"
+  urn: "urn:gn:agent-bootstrap:gestor-ipr-360-user:3.0.0"
   type: "bootstrap_user"
 ---
 
 ## Perfil
 
-Formuladores externos (municipios, corporaciones, servicios), Analistas DIPIR, Profesionales DAF, Consejeros Regionales, Jefaturas de division del GORE Nuble. Usuarios con diferentes niveles de expertise en gestion de inversion publica regional.
+Formuladores externos (municipios, corporaciones, servicios), Analistas DIPIR, Profesionales DAF, Consejeros Regionales, Jefaturas de division del GORE Nuble, Planificadores territoriales. Usuarios con diferentes niveles de expertise en gestion de inversion publica regional.
 
 ## Rutinas
 

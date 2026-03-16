@@ -24,16 +24,12 @@ _manifest:
 | LOC, ley, normativa, juridico, competencias, marco legal, reforma | legal (N1) | urn:gn:kb:loc-gore |
 | Marco legal GOREs | legal (N1) | urn:gn:kb:marco-legal-gores |
 | Modelos actos juridicos, resoluciones, decretos, convenios | juridico (N3) | urn:gn:kb:modelos-actos-juridicos |
-| Estado Chile, poderes, estructura nacional, descentralizacion | estadocl (N1) | urn:mgmt:kb:estructura-estado-chile |
+| Estado Chile, poderes, estructura nacional, descentralizacion | estadocl (N1) | urn:gn:kb:estructura-estado-chile |
 | ERD, vision, desarrollo, planificacion, Nuble250, estrategia, GORE ideal | estrategia (N2) | urn:gn:kb:erd-nuble-2024-2030 |
 | GORE ideal | estrategia (N2) | urn:gn:kb:gore-ideal |
 | Nuble 250 | estrategia (N2) | urn:gn:kb:nuble-250 |
-| Aceleracion regional | estrategia (N2) | urn:gn:kb:aceleracion-regional |
 | Vision desarrollo Nuble | estrategia (N2) | urn:gn:kb:vision-desarrollo-nuble |
-| Problemas sociales, diagnostico social, brechas, vulnerabilidad | social (N2) | urn:gn:kb:problemas-sociales-cl |
-| Indicadores, estadisticas, datos, demografia | estadisticas (N2) | urn:gn:kb:indicadores-nuble |
 | Manual, induccion, glosario, cuentas publicas | gestion (N3) | urn:gn:kb:manual-induccion-gore-nuble-2026 |
-| Glosario GORE | gestion (N3) | urn:gn:kb:glosario-gore-nuble |
 | Rendiciones, SISREC | gestion (N3) | urn:gn:kb:gestion-rendiciones |
 | Cuentas publicas | gestion (N3) | urn:gn:kb:cuentas-publicas-2021-2024 |
 | Flujos aprobacion, visado | gestion (N3) | urn:gn:kb:flujos-aprobacion-documentos |
@@ -43,28 +39,25 @@ _manifest:
 | IPR, inversion, proyectos, circular 33, RIS, IDI, BIP, FRIL, FRPD, PPR | ipr (N3) | urn:gn:kb:gestion-ipr |
 | Selector IPR | ipr (N3) | urn:gn:kb:selector-ipr |
 | Transferencia PPR | ipr (N3) | urn:gn:kb:transferencia-ppr |
-| RIS index | ipr (N3) | urn:gn:kb:ris-index |
-| RIS proyectos inversion | ipr (N3) | urn:gn:kb:ris-proyinv |
-| RIS programas inversion | ipr (N3) | urn:gn:kb:ris-proginv |
-| RIS empresas publicas | ipr (N3) | urn:gn:kb:ris-empub |
-| RIS PMDT | ipr (N3) | urn:gn:kb:ris-pmdt |
-| RIS educacion publica | ipr (N3) | urn:gn:kb:ris-edpub |
-| RIS arte cultura | ipr (N3) | urn:gn:kb:ris-artcult |
-| RIS patrimonio | ipr (N3) | urn:gn:kb:ris-patrimonio |
-| RIS deportes | ipr (N3) | urn:gn:kb:ris-deportes |
 | Guia IDI SNI STS | guias (N3) | urn:gn:kb:guia-idi-sni-sts |
 | Guia programas directos GORE | guias (N3) | urn:gn:kb:guia-programas-directos-gore |
 | Guia FRIL 2025 | guias (N3) | urn:gn:kb:guia-fril-2025-sts |
 | Guia FRPD Nuble | guias (N3) | urn:gn:kb:guia-frpd-nuble |
 | Instructivo subvencion 8% | guias (N3) | urn:gn:kb:instructivo-subvencion-8-2025-sts |
 | Guia circular 33 | guias (N3) | urn:gn:kb:guia-circular-33-sts |
-| Procesos, sistemas, geoespacial, CIES, SITIA | arquitectura (N4) | urn:gn:kb:cies-sitia |
-| Gestion info geoespacial | arquitectura (N4) | urn:gn:kb:gestion-info-geoespacial |
 | Comunicaciones, prensa, difusion, redes sociales | comunicaciones (N4) | urn:gn:kb:guia-comunicaciones |
 | Comunicaciones OC | comunicaciones (N4) | urn:gn:kb:comunicaciones-oc |
-| TDE, Ley 21.180, ClaveUnica, digital, transformacion, ciberseguridad | tde (N4) | urn:gn:kb:estrategia-td-ia |
-| Informe estado inicial GORE pre-TD | tde (N4) | urn:gn:kb:informe-estado-inicial-gore-pre-td |
 | Estrategia gestion | gestion (N3) | urn:gn:kb:estrategia-gestion |
-| Inventarios, bodegas | gestion (N3) | urn:gn:kb:manual-inventarios-bodegas |
-| Activo fijo | gestion (N3) | urn:gn:kb:manual-activo-fijo |
-| Desarrollo organizacional | gestion (N3) | urn:gn:kb:manual-desarrollo-organizacional |
+| Modernizacion Estado, Waissbluth | gestion (N3) | urn:gn:kb:modernizacion-estado-waissbluth |
+| Glosas GORE, Ley Presupuestos | presupuesto (N3) | urn:gn:kb:ley-presupuestos-2026-glosas-gore |
+| RIS Transporte | ipr (N3) | urn:gn:kb:ris-transporte |
+| RIS Vivienda y Urbanismo | ipr (N3) | urn:gn:kb:ris-vivienda-urbanismo |
+| RIS Agua y Saneamiento | ipr (N3) | urn:gn:kb:ris-agua-saneamiento |
+| RIS Vialidad | ipr (N3) | urn:gn:kb:ris-vialidad |
+| RIS Genericos | ipr (N3) | urn:gn:kb:ris-genericos |
+| RIS Educacion | ipr (N3) | urn:gn:kb:ris-educacion |
+| RIS Seguridad y Justicia | ipr (N3) | urn:gn:kb:ris-seguridad-justicia |
+| RIS Equipamiento Social | ipr (N3) | urn:gn:kb:ris-equipamiento-social |
+| RIS Energia y Comunicaciones | ipr (N3) | urn:gn:kb:ris-energia-comunicaciones |
+| RIS Salud | ipr (N3) | urn:gn:kb:ris-salud |
+| RIS Cultura, Deporte y Turismo | ipr (N3) | urn:gn:kb:ris-cultura-deporte-turismo |

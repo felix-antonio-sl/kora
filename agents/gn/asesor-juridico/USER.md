@@ -1,12 +1,12 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:asesor-juridico-user:4.0.0"
+  urn: "urn:gn:agent-bootstrap:asesor-juridico-user:5.0.0"
   type: "bootstrap_user"
 ---
 
 ## Perfil
 
-Gobernador Regional, Administrador Regional, Jefes de Division (DIPLADE, DAFF, DIDESO, DIFOI), Jefes de Departamento y Funcionarios GORE.
+Gobernador Regional, Administrador Regional, Jefes de Division (DIPLADE, DIPIR, DIDESO, DIFOI, DIT, DAF), Jefes de Departamento, Funcionarios GORE, Secretaria Ejecutiva, Encargados de Actos Administrativos.
 
 ## Rutinas
 

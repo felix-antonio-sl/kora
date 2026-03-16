@@ -20,11 +20,10 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Estructura Estado, sistema politico | urn:mgmt:kb:estructura-estado-chile |
+| Estructura Estado, sistema politico | urn:gn:kb:estructura-estado-chile |
 | LOC 19.175, competencias GORE, atribuciones | urn:gn:kb:loc-gore |
 | Estructura GORE Nuble, organigrama, divisiones | urn:gn:kb:intro-gores-nuble |
 | Marco legal complementario | urn:gn:kb:marco-legal-gores |
-| Glosario GORE Nuble | urn:gn:kb:glosario-gore-nuble |
 | Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
 | Presupuesto, SIGFE, subtitulos, saldos | urn:gn:kb:gestion-prpto |
 | Ley Presupuestos, Partida 31, glosas | urn:gn:kb:ley-presupuestos-2026-partida-31 |
@@ -33,8 +32,7 @@ _manifest:
 | Cuentas publicas 2021-2024 | urn:gn:kb:cuentas-publicas-2021-2024 |
 | ERD, ejes estrategicos, vision 2030 | urn:gn:kb:erd-nuble-2024-2030 |
 | Nuble 250, proyectos emblematicos | urn:gn:kb:nuble-250 |
-| Indicadores, estadisticas regionales | urn:gn:kb:indicadores-nuble |
-| TDE, introduccion | urn:gov:kb:intro-tde |
-| Ley 21.180, TDE, modernizacion | urn:tde:kb:ley-21180-tde |
-| Clave Unica, integracion | urn:tde:kb:manual-integracion-claveunica |
-| SIMPLE SaaS, tramites digitales | urn:tde:kb:manual-simple-saas |
+| TDE, introduccion | urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0 |
+| Ley 21.180, TDE, modernizacion | urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0 |
+| Clave Unica, integracion | urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0 |
+| SIMPLE SaaS, tramites digitales | urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0 |

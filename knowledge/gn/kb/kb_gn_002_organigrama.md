@@ -29,6 +29,7 @@ Base legal: Ley N°19.175, Art. 23; Constitución Política.
 Máxima autoridad ejecutiva del Gobierno Regional. Dirige la administración del GORE; coordina el trabajo de las divisiones; preside el Consejo Regional. Ejercicio con estricto apego a la Constitución.
 
 Acciones principales:
+
 - Gestionar la administración del Gobierno Regional.
 - Coordinar trabajo de las divisiones.
 - Presidir el Consejo Regional.
@@ -46,6 +47,7 @@ Base legal: Ley N°19.175 (Ley Orgánica Constitucional sobre Gobierno y Adminis
 Unidad administrativa, técnica y operativa que facilita y coordina el funcionamiento del CORE.
 
 Funciones:
+
 - Asegurar cumplimiento de acuerdos y resoluciones del Consejo.
 - Servir de enlace entre CORE, Gobernador, unidades del GORE y comunidad.
 - Planificación anual, registro de acuerdos y elaboración de actas de cada sesión.
@@ -55,6 +57,7 @@ Funciones:
 Órgano colegiado y autónomo. Con representación de organizaciones de la sociedad civil de la Región de Ñuble vinculadas a competencias del GORE.
 
 Objetivos:
+
 - Promover y fortalecer la participación ciudadana en la gestión del GORE.
 - Fiscalizar cumplimiento de normas de participación civil.
 
@@ -67,6 +70,7 @@ Resultado: contribuye a transparencia, eficacia y legitimidad de la acción gube
 Asesoría al Gobernador Regional y al equipo directivo; coordinación institucional.
 
 Funciones:
+
 - Asesorar en materias administrativas y de gestión.
 - Coordinar agenda institucional, despliegue territorial y audiencias.
 - Preparar información de respaldo para actividades institucionales.
@@ -77,6 +81,7 @@ Funciones:
 Comunicación externa e interna del GORE.
 
 Funciones:
+
 - Diseñar, planificar y ejecutar estrategias de comunicación institucional.
 - Gestionar vinculación con actores relacionados y relación formal con medios.
 - Fortalecer flujos de información interna para alinear equipos y cultura organizacional.
@@ -88,6 +93,7 @@ Dependencia: Gobernador Regional. Colaboración directa con el CORE en función 
 Auditoría operativa interna; control de legalidad y ejecución financiera/presupuestaria.
 
 Funciones:
+
 - Fiscalizar legalidad de actos del GORE.
 - Controlar ejecución financiera y presupuestaria.
 - Emitir informes trimestrales al CORE.
@@ -101,6 +107,7 @@ Funciones:
 Unidad de monitoreo independiente y objetivo del sistema de control interno del GORE.
 
 Funciones:
+
 - Evaluación objetiva e independiente de gestión y desempeño del GORE.
 - Examinar procesos administrativos, financieros y operativos para asegurar conformidad normativa y uso eficiente de recursos.
 - Velar por transparencia activa según la ley de acceso a información pública.
@@ -112,6 +119,7 @@ Funciones:
 Asesoría legal interna; resguardo de legalidad institucional.
 
 Funciones:
+
 - Asesorar en materias legales a distintas áreas del servicio.
 - Elaborar y supervisar actos administrativos.
 - Representación judicial y extrajudicial del GORE.
@@ -122,6 +130,7 @@ Funciones:
 Gestión administrativa integral y coordinación del accionar de jefaturas de divisiones. Cargo bajo exclusiva confianza del Gobernador Regional.
 
 Funciones:
+
 - Coordinar accionar de jefes/as de cada división.
 - Ejecutar materias propias del servicio.
 - Ejercer subrogancia del Gobernador en caso de ausencia.
@@ -133,6 +142,7 @@ Funciones:
 Planificación institucional y control de gestión para toma de decisiones.
 
 Funciones:
+
 - Desarrollar sistema de planificación y control de gestión.
 - Formular, monitorear y dar seguimiento a indicadores de desempeño institucional.
 - Optimizar recursos y asegurar calidad y eficiencia administrativa.
@@ -142,6 +152,7 @@ Funciones:
 Oficina de Informaciones, Reclamos y Sugerencias. Facilita el vínculo ciudadanía–GORE.
 
 Funciones:
+
 - Generar espacios de atención y participación ciudadana.
 - Garantizar derecho de acceso a la información pública.
 - Gestionar y canalizar reclamos, sugerencias y felicitaciones.
@@ -154,6 +165,7 @@ Articulación técnica y seguimiento de proyectos estratégicos priorizados (Age
 Agenda Ñuble 250: hoja de ruta regional hacia 2028; concordante con el primer decenio de creación de la Región de Ñuble.
 
 Funciones:
+
 - Articular técnicamente, coordinar, controlar y dar seguimiento a proyectos estratégicos de la cartera de inversión priorizada.
 - Favorecer trabajo coordinado entre reparticiones públicas y divisiones del GORE.
 - Fortalecer gobernanza territorial y coherencia de acción estatal en la región.
@@ -165,6 +177,7 @@ Requisito: alineación con objetivos de la Estrategia de Desarrollo Regional.
 Gestión de internacionalización de la región.
 
 Funciones:
+
 - Propiciar cooperación internacional e impulsar paradiplomacia.
 - Coordinar con entidades nacionales e internacionales.
 - Promover desarrollo regional y participación comunitaria en el ámbito exterior.
@@ -174,6 +187,7 @@ Funciones:
 Mejorar respuesta oportuna y coordinada ante emergencias y seguridad pública, mediante integración de sistemas de comunicaciones, información, televigilancia y medios logísticos.
 
 Funciones:
+
 - Formular, diseñar y evaluar políticas y estrategias en seguridad pública y gestión de riesgo de desastres.
 - Gestionar cartera de proyectos GORE en seguridad y gestión de riesgo de desastres.
 - Coordinación permanente con municipalidades e instituciones de la región.
@@ -185,6 +199,7 @@ Entidad asesora del GORE en planificación, gestión y desarrollo de políticas 
 Misión: promover desarrollo integral y articulado público-privado en áreas de interés de la región.
 
 Funciones:
+
 - Contribuir a promoción, posicionamiento y avance de la región a nivel nacional e internacional.
 - Implementar iniciativas para disminuir desigualdades socio-territoriales.
 
@@ -195,6 +210,7 @@ Funciones:
 Planificación territorial y apoyo a evaluación de políticas regionales.
 
 Funciones:
+
 - Elaborar y proponer estrategias, políticas, planes, programas y proyectos para desarrollo armónico del territorio, incluido el Plan Regional de Ordenamiento Territorial (PROT).
 - Apoyar al Gobernador en evaluación del cumplimiento de políticas, planes y presupuestos regionales.
 - Prestar asistencia técnica a municipalidades y otros organismos que lo requieran.
@@ -212,6 +228,7 @@ Funciones: asesorar integralmente a la autoridad; analizar admisibilidad de proy
 Planificación estratégica y ordenamiento territorial regional; desarrollo armónico y sostenible.
 
 Funciones:
+
 - Elaborar y proponer planes de desarrollo local integrando necesidades comunitarias, restricciones ambientales y particularidades geofísicas.
 - Coordinar formulación y seguimiento del Anteproyecto Regional de Inversión (ARI) y del Programa Público de Inversión Regional (PROPIR).
 
@@ -220,6 +237,7 @@ Funciones:
 Gestión de iniciativas de alto impacto alineadas con visión regional.
 
 Funciones:
+
 - Seleccionar, planificar y supervisar iniciativas de alto impacto.
 - Facilitar vínculo entre visión de la autoridad regional, el CORE y los directivos.
 - Asegurar contribución de proyectos a competitividad, innovación y crecimiento territorial.
@@ -231,6 +249,7 @@ Requisito: alineación con Estrategia Regional de Desarrollo.
 Acceso equitativo al desarrollo y fortalecimiento de la descentralización; enfoque de derechos.
 
 Funciones:
+
 - Promover inversión pública focalizada y participación de actores de la sociedad.
 - Promover desarrollo territorial integral y equilibrado con base en especificidades regionales.
 
@@ -239,6 +258,7 @@ Funciones:
 Presupuesto de inversión regional; ejecución, control y asesoría al Gobernador.
 
 Funciones:
+
 - Elaborar proyectos de presupuestos de inversión.
 - Ejecutar y controlar presupuesto de inversión y programas administrados por el GORE.
 - Asesorar al Gobernador en definición de proyectos de inversión según lineamientos y prioridades regionales.
@@ -248,6 +268,7 @@ Funciones:
 Revisión y evaluación técnica de proyectos/programas postulados a financiamiento FNDR.
 
 Funciones:
+
 - Evaluar pertinencia con lineamientos regionales; asesorar en determinación de proyectos.
 - Proporcionar proyectos con RS coordinando el Comité de Pertinencia para análisis y priorización.
 - Establecer metodologías y analizar normativa técnica y presupuestaria.
@@ -270,6 +291,7 @@ Eje de la inversión social del GORE. Fortalecer el desarrollo humano y reducir 
 Objetivos: promover equidad territorial, inclusión social y resguardar la dignidad humana.
 
 Funciones:
+
 - Definir e implementar lineamientos estratégicos de inversión social.
 - Diseñar, ejecutar y dar seguimiento a políticas regionales, programas y proyectos sociales.
 
@@ -278,6 +300,7 @@ Funciones:
 Gestión de fondos concursables y programas sociales.
 
 Funciones:
+
 - Planificar, coordinar, gestionar y supervisar la inversión social mediante fondos concursables.
 - Asegurar asignación eficiente, transparente y pertinente de recursos públicos.
 - Articular con municipios, servicios públicos, organizaciones de la sociedad civil y otras entidades ejecutoras.
@@ -290,6 +313,7 @@ Requisito: coherencia con Estrategia Regional de Desarrollo, políticas vigentes
 Operativización y despliegue territorial de la oferta programática. Nexo de vinculación estratégica entre el GORE y las personas de la región.
 
 Funciones:
+
 - Fortalecer desarrollo social y comunitario; asegurar pertinencia territorial.
 - Contribuir a priorización de inversión regional.
 - Realizar seguimiento técnico de la cartera de inversión social de la división.
@@ -299,6 +323,7 @@ Funciones:
 Fomento productivo, ciencia, tecnología e innovación.
 
 Funciones:
+
 - Proponer, promover y ejecutar planes y programas regionales de ciencia, tecnología, innovación y nuevas capacidades empresariales.
 - Facilitar incorporación de nuevas tecnologías de la información para crecimiento sostenido, integrado y sustentable.
 - Proponer y promover instrumentos de fomento productivo.
@@ -308,6 +333,7 @@ Funciones:
 Impulso a la economía regional y el emprendimiento.
 
 Funciones:
+
 - Promover emprendimiento; diseñar políticas regionales de fomento y desarrollo productivo.
 - Ejecutar planes, programas e instrumentos de fomento productivo.
 - Lograr crecimiento sostenible e integrado con actores relevantes de la región.
@@ -317,6 +343,7 @@ Funciones:
 Fomento del conocimiento, investigación y desarrollo tecnológico regional; sostenibilidad y crecimiento económico.
 
 Funciones:
+
 - Planificar, diseñar e implementar estrategias de CTI.
 - Coordinar y articular actores: sector público, academia y ámbito privado.
 - Contribuir a creación de políticas públicas y fortalecer el ecosistema regional.
@@ -332,6 +359,7 @@ Función: proponer, promover y ejecutar planes y programas regionales en infraes
 Infraestructura, transporte, movilidad y conectividad (vial y digital).
 
 Funciones:
+
 - Analizar e identificar brechas en infraestructura, transporte, movilidad y conectividad.
 - Promover y coordinar iniciativas para ampliar cobertura y calidad del transporte colectivo.
 - Proponer iniciativas para intermovilidad segura; estudiar y proponer sistemas de Transporte Inteligente.
@@ -341,6 +369,7 @@ Funciones:
 Supervisión de ejecución de proyectos de inversión regional.
 
 Funciones:
+
 - Supervisar gestión eficiente de inversión regional mediante control riguroso de ejecución.
 - Fiscalización técnica (física) y presupuestaria (financiera).
 - Coordinar con Contrapartes Técnicas para asegurar cumplimiento de objetivos.
@@ -361,6 +390,7 @@ Gestión documental institucional: recepción, distribución, archivo, registro 
 Estrategias, políticas y procesos del ciclo de vida laboral del personal.
 
 Funciones:
+
 - Definir, elaborar e implementar estrategias, políticas y procesos de gestión de personas.
 - Asegurar equipo humano competente, motivado y alineado con objetivos de desarrollo regional.
 
@@ -371,6 +401,7 @@ Requisito: concordancia con lineamientos de la autoridad, normativa vigente del 
 Revisión y control de información presupuestaria, contable y financiera.
 
 Funciones:
+
 - Supervisar elaboración y ejecución del presupuesto.
 - Gestionar registro contable y elaboración de estados financieros.
 - Implementar políticas de control para seguridad de activos; optimizar uso de recursos.

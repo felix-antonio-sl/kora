@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:asesor-juridico-tools:4.0.0"
+  urn: "urn:gn:agent-bootstrap:asesor-juridico-tools:5.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -23,8 +23,6 @@ _manifest:
 | Organigrama, estructura GORE | urn:gn:kb:organigrama |
 | Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
 | Plantillas actos juridicos | urn:gn:kb:modelos-actos-juridicos |
-| Manual compras publicas | urn:gn:kb:manual-compras |
-| Manual presupuesto | urn:gn:kb:manual-presupuesto |
 | Rendiciones, control, CGR | urn:gn:kb:gestion-rendiciones |
 | LOC 19.175, competencias GORE | urn:gn:kb:loc-gore |
 | Marco legal complementario | urn:gn:kb:marco-legal-gores |
@@ -35,3 +33,6 @@ _manifest:
 | Selector IPR, vias financiamiento | urn:gn:kb:selector-ipr |
 | Gestion presupuestaria | urn:gn:kb:gestion-prpto |
 | Ley Presupuestos 2026, Partida 31, umbrales | urn:gn:kb:ley-presupuestos-2026-partida-31 |
+| Estrategia gestion, planificacion | urn:gn:kb:estrategia-gestion |
+| Cuentas publicas, rendicion gestion | urn:gn:kb:cuentas-publicas-2021-2024 |
+| Glosas GORE, Ley Presupuestos | urn:gn:kb:ley-presupuestos-2026-glosas-gore |

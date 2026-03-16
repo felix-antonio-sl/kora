@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:gn:skill:visionario-gore-4-0-func:2.0.0
+  urn: urn:gn:skill:gobernador-virtual-gore-4-0:1.0.0
   type: lazy_load_endofunctor
 ---
 

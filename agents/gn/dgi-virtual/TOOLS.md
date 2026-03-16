@@ -23,12 +23,13 @@ _manifest:
 | Estructura GORE Nuble, organigrama, divisiones | urn:gn:kb:intro-gores-nuble |
 | Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
 | ERD, ejes estrategicos, vision 2030 | urn:gn:kb:erd-nuble-2024-2030 |
-| TDE, Ley 21.180, modernizacion | urn:tde:kb:ley-21180-tde |
-| Introduccion TDE | urn:gov:kb:intro-tde |
+| TDE, Ley 21.180, modernizacion | urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0 |
+| Introduccion TDE | urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0 |
 | Control de gestion, indicadores, dashboards, alertas | urn:gn:kb:manual-operacional-dgi |
 | Procesos, BPMN, modelado, automatizacion | urn:gn:kb:manual-operacional-dgi |
-| DMAIC, Lean, Six Sigma, mejora continua | urn:mgmt:kb:lean6 |
-| Estructura organizacional, principios Meyer | urn:mgmt:kb:meyer-org-structure |
+| DMAIC, Lean, Six Sigma, mejora continua | urn:gn:kb:lean6-gestion-core |
+| Estructura organizacional, principios Meyer | urn:gn:kb:meyer-estructura-organizacional |
 | Stakeholders, ADKAR, gestion del cambio, navegacion social | urn:gn:kb:plan-potenciamiento-dgi |
 | Presupuesto, gestion financiera | urn:gn:kb:gestion-prpto |
-| Estructura Estado Chile | urn:mgmt:kb:estructura-estado-chile |
+| Estructura Estado Chile | urn:gn:kb:estructura-estado-chile |
+| Modernizacion Estado, Waissbluth | urn:gn:kb:modernizacion-estado-waissbluth |

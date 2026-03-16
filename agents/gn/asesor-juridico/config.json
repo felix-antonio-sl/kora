@@ -1,14 +1,12 @@
 {
   "_manifest": {
-    "urn": "urn:gn:agent-bootstrap:asesor-juridico-config:1.0.0",
+    "urn": "urn:gn:agent-bootstrap:asesor-juridico-config:2.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
     "urn:gn:kb:organigrama",
     "urn:gn:kb:flujos-aprobacion-documentos",
     "urn:gn:kb:modelos-actos-juridicos",
-    "urn:gn:kb:manual-compras",
-    "urn:gn:kb:manual-presupuesto",
     "urn:gn:kb:gestion-rendiciones",
     "urn:gn:kb:loc-gore",
     "urn:gn:kb:marco-legal-gores",
@@ -18,7 +16,10 @@
     "urn:gn:kb:transferencia-ppr",
     "urn:gn:kb:selector-ipr",
     "urn:gn:kb:gestion-prpto",
-    "urn:gn:kb:ley-presupuestos-2026-partida-31"
+    "urn:gn:kb:ley-presupuestos-2026-partida-31",
+    "urn:gn:kb:estrategia-gestion",
+    "urn:gn:kb:cuentas-publicas-2021-2024",
+    "urn:gn:kb:ley-presupuestos-2026-glosas-gore"
   ],
   "sandbox": {
     "mode": "strict"
