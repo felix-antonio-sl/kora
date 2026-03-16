@@ -726,9 +726,10 @@
       {
         "workspace": "gn/goreologo",
         "state_names": [
-          "S-ANALISIS",
           "S-DISPATCHER",
-          "S-END"
+          "S-END",
+          "S-ROUTING",
+          "S-SINTESIS"
         ],
         "tool_names": [
           "catalog_resolve",
@@ -742,15 +743,22 @@
           "CM-DOMAIN-ANALYZER",
           "CM-INTAKE",
           "CM-KB-GUIDANCE",
+          "CM-SPECIALIST-ROUTER",
           "CM-SYNTHESIZER"
         ],
         "handoff_targets": [
-          "gn/dgi-virtual"
+          "gn/ar-virtual",
+          "gn/asesor-juridico",
+          "gn/dgi-virtual",
+          "gn/digitrans",
+          "gn/erp-gore",
+          "gn/gestor-ipr-360",
+          "gn/gobernador-virtual"
         ],
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 49,
+        "allowed_kb_count": 42,
         "sources": {
           "agents": "AGENTS/gn/goreologo/AGENTS.md",
           "tools": "AGENTS/gn/goreologo/TOOLS.md",
@@ -800,9 +808,9 @@
   },
   "totals": {
     "workspaces": 13,
-    "states": 95,
+    "states": 96,
     "tools": 83,
-    "handoffs": 36
+    "handoffs": 42
   },
   "meta_kora": {
     "summary": {

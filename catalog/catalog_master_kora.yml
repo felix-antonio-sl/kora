@@ -5,6 +5,26 @@ _manifest:
   description: Auto-generated Kora Monorepo Catalog
 Catalog:
   Agents:
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-config:1.0.0
+    title: config.json
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/config.json
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0
+    title: USER.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/USER.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0
+    title: SOUL.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0
+    title: AGENTS.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md
+    status: published
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-tools:1.0.0
+    title: TOOLS.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/TOOLS.md
+    status: published
   - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-config:1.0.0
     title: config.json
     file: AGENTS/fxsl/arquitecto-sistemas-informacion/config.json
@@ -125,85 +145,25 @@ Catalog:
     title: TOOLS.md
     file: AGENTS/fxsl/arquitecto-categorico/TOOLS.md
     status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-config:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0
     title: config.json
-    file: AGENTS/pro/salubrista/config.json
+    file: AGENTS/pro/estratega-comunicacional/config.json
     status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-user:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0
     title: USER.md
-    file: AGENTS/pro/salubrista/USER.md
+    file: AGENTS/pro/estratega-comunicacional/USER.md
     status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-soul:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0
     title: SOUL.md
-    file: AGENTS/pro/salubrista/SOUL.md
+    file: AGENTS/pro/estratega-comunicacional/SOUL.md
     status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-agents:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0
     title: AGENTS.md
-    file: AGENTS/pro/salubrista/AGENTS.md
+    file: AGENTS/pro/estratega-comunicacional/AGENTS.md
     status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-tools:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0
     title: TOOLS.md
-    file: AGENTS/pro/salubrista/TOOLS.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:abogado-legislacion-medica-config:1.0.0
-    title: config.json
-    file: AGENTS/pro/abogado-legislacion-medica/config.json
-    status: published
-  - urn: urn:pro:agent-bootstrap:abogado-legislacion-medica-user:1.0.0
-    title: USER.md
-    file: AGENTS/pro/abogado-legislacion-medica/USER.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0
-    title: SOUL.md
-    file: AGENTS/pro/abogado-legislacion-medica/SOUL.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0
-    title: AGENTS.md
-    file: AGENTS/pro/abogado-legislacion-medica/AGENTS.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:abogado-legislacion-medica-tools:1.0.0
-    title: TOOLS.md
-    file: AGENTS/pro/abogado-legislacion-medica/TOOLS.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-hah-config:1.0.0
-    title: config.json
-    file: AGENTS/pro/salubrista-hah/config.json
-    status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-hah-user:1.0.0
-    title: USER.md
-    file: AGENTS/pro/salubrista-hah/USER.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-hah-soul:1.0.0
-    title: SOUL.md
-    file: AGENTS/pro/salubrista-hah/SOUL.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-hah-agents:1.0.0
-    title: AGENTS.md
-    file: AGENTS/pro/salubrista-hah/AGENTS.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:salubrista-hah-tools:1.0.0
-    title: TOOLS.md
-    file: AGENTS/pro/salubrista-hah/TOOLS.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-config:2.0.0
-    title: config.json
-    file: AGENTS/pro/medico-urgencias/config.json
-    status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-user:2.0.0
-    title: USER.md
-    file: AGENTS/pro/medico-urgencias/USER.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-soul:2.0.0
-    title: SOUL.md
-    file: AGENTS/pro/medico-urgencias/SOUL.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-agents:2.0.0
-    title: AGENTS.md
-    file: AGENTS/pro/medico-urgencias/AGENTS.md
-    status: published
-  - urn: urn:pro:agent-bootstrap:medico-urgencias-tools:2.0.0
-    title: TOOLS.md
-    file: AGENTS/pro/medico-urgencias/TOOLS.md
+    file: AGENTS/pro/estratega-comunicacional/TOOLS.md
     status: published
   - urn: urn:gn:agent-bootstrap:dgi-virtual-config:1.0.0
     title: config.json
@@ -225,43 +185,23 @@ Catalog:
     title: TOOLS.md
     file: AGENTS/gn/dgi-virtual/TOOLS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-config:1.0.0
-    title: config.json
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/config.json
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0
-    title: USER.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0
-    title: SOUL.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0
-    title: AGENTS.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:arquitecto-automatizacion-organizacional-tools:1.0.0
-    title: TOOLS.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-config:1.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-config:2.0.0
     title: config.json
     file: AGENTS/gn/gestor-ipr-360/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-user:2.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-user:3.0.0
     title: USER.md
     file: AGENTS/gn/gestor-ipr-360/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-soul:2.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0
     title: SOUL.md
     file: AGENTS/gn/gestor-ipr-360/SOUL.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-agents:2.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0
     title: AGENTS.md
     file: AGENTS/gn/gestor-ipr-360/AGENTS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-tools:2.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-tools:3.0.0
     title: TOOLS.md
     file: AGENTS/gn/gestor-ipr-360/TOOLS.md
     status: published
@@ -273,57 +213,17 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/goreologo/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-soul:2.4.0
+  - urn: urn:gn:agent-bootstrap:goreologo-soul:3.0.0
     title: SOUL.md
     file: AGENTS/gn/goreologo/SOUL.md
     status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-agents:2.4.0
+  - urn: urn:gn:agent-bootstrap:goreologo-agents:3.0.0
     title: AGENTS.md
     file: AGENTS/gn/goreologo/AGENTS.md
     status: published
   - urn: urn:gn:agent-bootstrap:goreologo-tools:2.4.0
     title: TOOLS.md
     file: AGENTS/gn/goreologo/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-config:1.0.0
-    title: config.json
-    file: AGENTS/gn/eacs/config.json
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-user:2.0.0
-    title: USER.md
-    file: AGENTS/gn/eacs/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-soul:2.0.0
-    title: SOUL.md
-    file: AGENTS/gn/eacs/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-agents:2.0.0
-    title: AGENTS.md
-    file: AGENTS/gn/eacs/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:eacs-tools:2.0.0
-    title: TOOLS.md
-    file: AGENTS/gn/eacs/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:banca-inversion-config:1.0.0
-    title: config.json
-    file: AGENTS/gn/banca-inversion/config.json
-    status: published
-  - urn: urn:gn:agent-bootstrap:banca-inversion-user:2.0.0
-    title: USER.md
-    file: AGENTS/gn/banca-inversion/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:banca-inversion-soul:2.0.0
-    title: SOUL.md
-    file: AGENTS/gn/banca-inversion/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:banca-inversion-agents:2.0.0
-    title: AGENTS.md
-    file: AGENTS/gn/banca-inversion/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:banca-inversion-tools:2.0.0
-    title: TOOLS.md
-    file: AGENTS/gn/banca-inversion/TOOLS.md
     status: published
   - urn: urn:gn:agent-bootstrap:digitrans-config:2.0.0
     title: config.json
@@ -345,65 +245,25 @@ Catalog:
     title: TOOLS.md
     file: AGENTS/gn/digitrans/TOOLS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-config:1.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-config:2.0.0
     title: config.json
     file: AGENTS/gn/gobernador-virtual/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-user:2.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-user:3.0.0
     title: USER.md
     file: AGENTS/gn/gobernador-virtual/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-soul:2.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0
     title: SOUL.md
     file: AGENTS/gn/gobernador-virtual/SOUL.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-agents:2.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0
     title: AGENTS.md
     file: AGENTS/gn/gobernador-virtual/AGENTS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-tools:2.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-tools:3.0.0
     title: TOOLS.md
     file: AGENTS/gn/gobernador-virtual/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-config:1.0.0
-    title: config.json
-    file: AGENTS/gn/estratega-comunicacional/config.json
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-user:1.0.0
-    title: USER.md
-    file: AGENTS/gn/estratega-comunicacional/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-soul:1.0.0
-    title: SOUL.md
-    file: AGENTS/gn/estratega-comunicacional/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-agents:1.0.0
-    title: AGENTS.md
-    file: AGENTS/gn/estratega-comunicacional/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:estratega-comunicacional-tools:1.0.0
-    title: TOOLS.md
-    file: AGENTS/gn/estratega-comunicacional/TOOLS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:visionario-config:1.0.0
-    title: config.json
-    file: AGENTS/gn/visionario/config.json
-    status: published
-  - urn: urn:gn:agent-bootstrap:visionario-user:2.0.0
-    title: USER.md
-    file: AGENTS/gn/visionario/USER.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:visionario-soul:2.0.0
-    title: SOUL.md
-    file: AGENTS/gn/visionario/SOUL.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:visionario-agents:2.0.0
-    title: AGENTS.md
-    file: AGENTS/gn/visionario/AGENTS.md
-    status: published
-  - urn: urn:gn:agent-bootstrap:visionario-tools:2.0.0
-    title: TOOLS.md
-    file: AGENTS/gn/visionario/TOOLS.md
     status: published
   - urn: urn:gn:agent-bootstrap:ar-virtual-config:1.0.0
     title: config.json
@@ -445,23 +305,23 @@ Catalog:
     title: TOOLS.md
     file: AGENTS/gn/erp-gore/TOOLS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-config:1.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-config:2.0.0
     title: config.json
     file: AGENTS/gn/asesor-juridico/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-user:4.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-user:5.0.0
     title: USER.md
     file: AGENTS/gn/asesor-juridico/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-soul:4.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0
     title: SOUL.md
     file: AGENTS/gn/asesor-juridico/SOUL.md
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-agents:4.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0
     title: AGENTS.md
     file: AGENTS/gn/asesor-juridico/AGENTS.md
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-tools:4.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-tools:5.0.0
     title: TOOLS.md
     file: AGENTS/gn/asesor-juridico/TOOLS.md
     status: published
@@ -544,6 +404,66 @@ Catalog:
   - urn: urn:kora:agent-bootstrap:guardian-tools:1.0.0
     title: TOOLS.md
     file: AGENTS/kora/guardian/TOOLS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-config:1.0.0
+    title: config.json
+    file: AGENTS/salud/salubrista/config.json
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-user:1.0.0
+    title: USER.md
+    file: AGENTS/salud/salubrista/USER.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-soul:1.0.0
+    title: SOUL.md
+    file: AGENTS/salud/salubrista/SOUL.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-agents:1.0.0
+    title: AGENTS.md
+    file: AGENTS/salud/salubrista/AGENTS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-tools:1.0.0
+    title: TOOLS.md
+    file: AGENTS/salud/salubrista/TOOLS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0
+    title: config.json
+    file: AGENTS/salud/salubrista-hah/config.json
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0
+    title: USER.md
+    file: AGENTS/salud/salubrista-hah/USER.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0
+    title: SOUL.md
+    file: AGENTS/salud/salubrista-hah/SOUL.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0
+    title: AGENTS.md
+    file: AGENTS/salud/salubrista-hah/AGENTS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0
+    title: TOOLS.md
+    file: AGENTS/salud/salubrista-hah/TOOLS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:medico-urgencias-config:2.0.0
+    title: config.json
+    file: AGENTS/salud/medico-urgencias/config.json
+    status: published
+  - urn: urn:salud:agent-bootstrap:medico-urgencias-user:2.0.0
+    title: USER.md
+    file: AGENTS/salud/medico-urgencias/USER.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:medico-urgencias-soul:2.0.0
+    title: SOUL.md
+    file: AGENTS/salud/medico-urgencias/SOUL.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0
+    title: AGENTS.md
+    file: AGENTS/salud/medico-urgencias/AGENTS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:medico-urgencias-tools:2.0.0
+    title: TOOLS.md
+    file: AGENTS/salud/medico-urgencias/TOOLS.md
     status: published
   - urn: urn:dev:agent-bootstrap:reviewer-config:1.0.0
     title: config.json
@@ -865,6 +785,26 @@ Catalog:
     title: TOOLS.md
     file: AGENTS/ops/verificador/TOOLS.md
     status: published
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-config:1.0.0
+    title: config.json
+    file: AGENTS/legal/abogado-legislacion-medica/config.json
+    status: published
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-user:1.0.0
+    title: USER.md
+    file: AGENTS/legal/abogado-legislacion-medica/USER.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0
+    title: SOUL.md
+    file: AGENTS/legal/abogado-legislacion-medica/SOUL.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0
+    title: AGENTS.md
+    file: AGENTS/legal/abogado-legislacion-medica/AGENTS.md
+    status: published
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-tools:1.0.0
+    title: TOOLS.md
+    file: AGENTS/legal/abogado-legislacion-medica/TOOLS.md
+    status: published
   - urn: urn:korvo:agent-bootstrap:korax-config:2.0.0
     title: config.json
     file: AGENTS/korvo/korax/config.json
@@ -886,6 +826,22 @@ Catalog:
     file: AGENTS/korvo/korax/TOOLS.md
     status: published
   Skills:
+  - urn: urn:fxsl:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0
+    title: CM-LLM-ENGINEERING.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-LLM-ENGINEERING.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0
+    title: CM-SYSTEMS-LENS.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-SYSTEMS-LENS.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0
+    title: CM-DIAGNOSTIC.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-DIAGNOSTIC.md
+    status: published
+  - urn: urn:fxsl:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0
+    title: CM-AUTOMATION-PATTERNS.md
+    file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-AUTOMATION-PATTERNS.md
+    status: published
   - urn: urn:fxsl:skill:arquitecto-sistemas-informacion-integration-architect:1.0.0
     title: CM-integration-architect.md
     file: AGENTS/fxsl/arquitecto-sistemas-informacion/skills/CM-integration-architect.md
@@ -921,6 +877,10 @@ Catalog:
   - urn: urn:fxsl:skill:pensador-generador-posicionador:2.0.0
     title: CM-POSICIONADOR.md
     file: AGENTS/fxsl/pensador-generador/skills/CM-POSICIONADOR.md
+    status: published
+  - urn: urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0
+    title: CM-RAZONAMIENTO-CLINICO
+    file: AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md
     status: published
   - urn: urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0
     title: CM-NAVEGADOR-TENSIONES.md
@@ -1058,102 +1018,6 @@ Catalog:
     title: CM-behavior-engine.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-behavior-engine.md
     status: published
-  - urn: urn:pro:skill:salubrista-quality-auditor:1.0.0
-    title: CM-QUALITY-AUDITOR
-    file: AGENTS/pro/salubrista/skills/CM-QUALITY-AUDITOR.md
-    status: published
-  - urn: urn:pro:skill:salubrista-epi-analyst:1.0.0
-    title: CM-EPI-ANALYST
-    file: AGENTS/pro/salubrista/skills/CM-EPI-ANALYST.md
-    status: published
-  - urn: urn:pro:skill:salubrista-epi-vigilance:1.0.0
-    title: CM-EPI-VIGILANCE
-    file: AGENTS/pro/salubrista/skills/CM-EPI-VIGILANCE.md
-    status: published
-  - urn: urn:pro:skill:salubrista-intent:1.0.0
-    title: CM-INTENT-SALUBRISTA
-    file: AGENTS/pro/salubrista/skills/CM-INTENT-SALUBRISTA.md
-    status: published
-  - urn: urn:pro:skill:salubrista-report-builder:1.0.0
-    title: CM-REPORT-BUILDER
-    file: AGENTS/pro/salubrista/skills/CM-REPORT-BUILDER.md
-    status: published
-  - urn: urn:pro:skill:salubrista-network-analyst:1.0.0
-    title: CM-NETWORK-ANALYST
-    file: AGENTS/pro/salubrista/skills/CM-NETWORK-ANALYST.md
-    status: published
-  - urn: urn:pro:skill:salubrista-product-builder:1.0.0
-    title: CM-PRODUCT-BUILDER
-    file: AGENTS/pro/salubrista/skills/CM-PRODUCT-BUILDER.md
-    status: published
-  - urn: urn:pro:skill:salubrista-implementation-planner:1.0.0
-    title: CM-IMPLEMENTATION-PLANNER
-    file: AGENTS/pro/salubrista/skills/CM-IMPLEMENTATION-PLANNER.md
-    status: published
-  - urn: urn:pro:skill:abogado-legislacion-medica-consulta-classifier:1.0.0
-    title: CM-CONSULTA-CLASSIFIER
-    file: AGENTS/pro/abogado-legislacion-medica/skills/CM-CONSULTA-CLASSIFIER.md
-    status: published
-  - urn: urn:pro:skill:abogado-legislacion-medica-kb-guidance:1.0.0
-    title: CM-kb-guidance.md
-    file: AGENTS/pro/abogado-legislacion-medica/skills/CM-kb-guidance.md
-    status: published
-  - urn: urn:pro:skill:abogado-legislacion-medica-estatuto-selector:1.0.0
-    title: CM-estatuto-selector.md
-    file: AGENTS/pro/abogado-legislacion-medica/skills/CM-estatuto-selector.md
-    status: published
-  - urn: urn:pro:skill:abogado-legislacion-medica-materia-router:1.0.0
-    title: CM-MATERIA-ROUTER
-    file: AGENTS/pro/abogado-legislacion-medica/skills/CM-MATERIA-ROUTER.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-hah-specialist:1.0.0
-    title: CM-HAH-SPECIALIST
-    file: AGENTS/pro/salubrista-hah/skills/CM-HAH-SPECIALIST.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-quality-auditor:1.0.0
-    title: CM-QUALITY-AUDITOR
-    file: AGENTS/pro/salubrista-hah/skills/CM-QUALITY-AUDITOR.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-hospital-system-analyst:1.0.0
-    title: CM-HOSPITAL-SYSTEM-ANALYST
-    file: AGENTS/pro/salubrista-hah/skills/CM-HOSPITAL-SYSTEM-ANALYST.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-intent-hospitalization:1.0.0
-    title: CM-INTENT-HOSPITALIZATION
-    file: AGENTS/pro/salubrista-hah/skills/CM-INTENT-HOSPITALIZATION.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-epi-vigilance:1.0.0
-    title: CM-EPI-VIGILANCE
-    file: AGENTS/pro/salubrista-hah/skills/CM-EPI-VIGILANCE.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-report-builder:1.0.0
-    title: CM-REPORT-BUILDER
-    file: AGENTS/pro/salubrista-hah/skills/CM-REPORT-BUILDER.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-product-builder:1.0.0
-    title: CM-PRODUCT-BUILDER
-    file: AGENTS/pro/salubrista-hah/skills/CM-PRODUCT-BUILDER.md
-    status: published
-  - urn: urn:pro:skill:salubrista-hah-implementation-planner:1.0.0
-    title: CM-IMPLEMENTATION-PLANNER
-    file: AGENTS/pro/salubrista-hah/skills/CM-IMPLEMENTATION-PLANNER.md
-    status: published
-  - urn: urn:pro:skill:medico-urgencias-interpretador-imagenes:2.0.0
-    title: CM-interpretador-imagenes.md
-    file: AGENTS/pro/medico-urgencias/skills/CM-interpretador-imagenes.md
-    status: published
-  - urn: urn:pro:skill:medico-urgencias-razonamiento-clinico:2.0.0
-    title: CM-RAZONAMIENTO-CLINICO.md
-    file: AGENTS/pro/medico-urgencias/skills/CM-RAZONAMIENTO-CLINICO.md
-    status: published
-  - urn: urn:pro:skill:medico-urgencias-context-manager:2.0.0
-    title: CM-CONTEXT-MANAGER.md
-    file: AGENTS/pro/medico-urgencias/skills/CM-CONTEXT-MANAGER.md
-    status: published
-  - urn: urn:pro:skill:medico-urgencias-generador-documentos:2.0.0
-    title: CM-GENERADOR-DOCUMENTOS.md
-    file: AGENTS/pro/medico-urgencias/skills/CM-GENERADOR-DOCUMENTOS.md
-    status: published
   - urn: urn:gn:skill:dgi-virtual-lean-thinking:1.0.0
     title: CM-LEAN-THINKING
     file: AGENTS/gn/dgi-virtual/skills/CM-LEAN-THINKING.md
@@ -1186,21 +1050,17 @@ Catalog:
     title: CM-SOCIAL-NAVIGATION.md
     file: AGENTS/gn/dgi-virtual/skills/CM-SOCIAL-NAVIGATION.md
     status: published
-  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0
-    title: CM-LLM-ENGINEERING.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/skills/CM-LLM-ENGINEERING.md
+  - urn: urn:gn:skill:gestor-ipr-360-ipr-selector:1.0.0
+    title: CM-IPR-SELECTOR.md
+    file: AGENTS/gn/gestor-ipr-360/skills/CM-IPR-SELECTOR.md
     status: published
-  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0
-    title: CM-SYSTEMS-LENS.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/skills/CM-SYSTEMS-LENS.md
+  - urn: urn:gn:skill:gestor-ipr-360-strategic-investment:1.0.0
+    title: CM-STRATEGIC-INVESTMENT.md
+    file: AGENTS/gn/gestor-ipr-360/skills/CM-STRATEGIC-INVESTMENT.md
     status: published
-  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0
-    title: CM-DIAGNOSTIC.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/skills/CM-DIAGNOSTIC.md
-    status: published
-  - urn: urn:gn:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0
-    title: CM-AUTOMATION-PATTERNS.md
-    file: AGENTS/gn/arquitecto-automatizacion-organizacional/skills/CM-AUTOMATION-PATTERNS.md
+  - urn: urn:gn:skill:gestor-ipr-360-ipr-intake:1.0.0
+    title: CM-IPR-INTAKE.md
+    file: AGENTS/gn/gestor-ipr-360/skills/CM-IPR-INTAKE.md
     status: published
   - urn: urn:gn:skill:goreologo-kb-guidance:1.0.0
     title: CM-KB-GUIDANCE
@@ -1210,11 +1070,15 @@ Catalog:
     title: CM-SYNTHESIZER
     file: AGENTS/gn/goreologo/skills/CM-SYNTHESIZER.md
     status: published
+  - urn: urn:gn:skill:goreologo-specialist-router:1.0.0
+    title: CM-SPECIALIST-ROUTER
+    file: AGENTS/gn/goreologo/skills/CM-SPECIALIST-ROUTER.md
+    status: published
   - urn: urn:gn:skill:goreologo-domain-analyzer:1.0.0
     title: CM-DOMAIN-ANALYZER
     file: AGENTS/gn/goreologo/skills/CM-DOMAIN-ANALYZER.md
     status: published
-  - urn: urn:gn:skill:goreologo-intake:1.0.0
+  - urn: urn:gn:skill:goreologo-intake:2.0.0
     title: CM-INTAKE
     file: AGENTS/gn/goreologo/skills/CM-INTAKE.md
     status: published
@@ -1242,21 +1106,25 @@ Catalog:
     title: CM-INTAKE.md
     file: AGENTS/gn/digitrans/skills/CM-INTAKE.md
     status: published
-  - urn: urn:gn:skill:visionario-gore-4-0-func:2.0.0
-    title: CM-gore-4-0-func.md
-    file: AGENTS/gn/visionario/skills/CM-gore-4-0-func.md
+  - urn: urn:gn:skill:gobernador-virtual-palancas-exo:1.0.0
+    title: CM-PALANCAS-EXO.md
+    file: AGENTS/gn/gobernador-virtual/skills/CM-PALANCAS-EXO.md
     status: published
-  - urn: urn:gn:skill:visionario-palancas-exo:2.0.0
-    title: CM-palancas-exo.md
-    file: AGENTS/gn/visionario/skills/CM-palancas-exo.md
+  - urn: urn:gn:skill:gobernador-virtual-arquitecto-erd:1.0.0
+    title: CM-ARQUITECTO-ERD.md
+    file: AGENTS/gn/gobernador-virtual/skills/CM-ARQUITECTO-ERD.md
     status: published
-  - urn: urn:gn:skill:visionario-arquitecto-erd:2.0.0
-    title: CM-arquitecto-erd.md
-    file: AGENTS/gn/visionario/skills/CM-arquitecto-erd.md
+  - urn: urn:gn:skill:gobernador-virtual-gore-4-0:1.0.0
+    title: CM-GORE-4-0.md
+    file: AGENTS/gn/gobernador-virtual/skills/CM-GORE-4-0.md
     status: published
-  - urn: urn:gn:skill:visionario-prospectiva-territorial:2.0.0
-    title: CM-prospectiva-territorial.md
-    file: AGENTS/gn/visionario/skills/CM-prospectiva-territorial.md
+  - urn: urn:gn:skill:gobernador-virtual-prospectiva-territorial:1.0.0
+    title: CM-PROSPECTIVA-TERRITORIAL.md
+    file: AGENTS/gn/gobernador-virtual/skills/CM-PROSPECTIVA-TERRITORIAL.md
+    status: published
+  - urn: urn:gn:skill:asesor-juridico-clasificador-acto:1.0.0
+    title: CM-CLASIFICADOR-ACTO.md
+    file: AGENTS/gn/asesor-juridico/skills/CM-CLASIFICADOR-ACTO.md
     status: published
   - urn: urn:kora:skill:forgemaster-agent-evolver:2.0.0
     title: CM-AGENT-EVOLVER
@@ -1405,6 +1273,86 @@ Catalog:
   - urn: urn:kora:skill:guardian-spec-guard:1.0.0
     title: CM-SPEC-GUARD
     file: AGENTS/kora/guardian/skills/CM-SPEC-GUARD.md
+    status: published
+  - urn: urn:salud:skill:salubrista-quality-auditor:1.0.0
+    title: CM-QUALITY-AUDITOR
+    file: AGENTS/salud/salubrista/skills/CM-QUALITY-AUDITOR.md
+    status: published
+  - urn: urn:salud:skill:salubrista-epi-analyst:1.0.0
+    title: CM-EPI-ANALYST
+    file: AGENTS/salud/salubrista/skills/CM-EPI-ANALYST.md
+    status: published
+  - urn: urn:salud:skill:salubrista-epi-vigilance:1.0.0
+    title: CM-EPI-VIGILANCE
+    file: AGENTS/salud/salubrista/skills/CM-EPI-VIGILANCE.md
+    status: published
+  - urn: urn:salud:skill:salubrista-intent:1.0.0
+    title: CM-INTENT-SALUBRISTA
+    file: AGENTS/salud/salubrista/skills/CM-INTENT-SALUBRISTA.md
+    status: published
+  - urn: urn:salud:skill:salubrista-report-builder:1.0.0
+    title: CM-REPORT-BUILDER
+    file: AGENTS/salud/salubrista/skills/CM-REPORT-BUILDER.md
+    status: published
+  - urn: urn:salud:skill:salubrista-network-analyst:1.0.0
+    title: CM-NETWORK-ANALYST
+    file: AGENTS/salud/salubrista/skills/CM-NETWORK-ANALYST.md
+    status: published
+  - urn: urn:salud:skill:salubrista-product-builder:1.0.0
+    title: CM-PRODUCT-BUILDER
+    file: AGENTS/salud/salubrista/skills/CM-PRODUCT-BUILDER.md
+    status: published
+  - urn: urn:salud:skill:salubrista-implementation-planner:1.0.0
+    title: CM-IMPLEMENTATION-PLANNER
+    file: AGENTS/salud/salubrista/skills/CM-IMPLEMENTATION-PLANNER.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-hah-specialist:1.0.0
+    title: CM-HAH-SPECIALIST
+    file: AGENTS/salud/salubrista-hah/skills/CM-HAH-SPECIALIST.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-quality-auditor:1.0.0
+    title: CM-QUALITY-AUDITOR
+    file: AGENTS/salud/salubrista-hah/skills/CM-QUALITY-AUDITOR.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0
+    title: CM-HOSPITAL-SYSTEM-ANALYST
+    file: AGENTS/salud/salubrista-hah/skills/CM-HOSPITAL-SYSTEM-ANALYST.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0
+    title: CM-INTENT-HOSPITALIZATION
+    file: AGENTS/salud/salubrista-hah/skills/CM-INTENT-HOSPITALIZATION.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0
+    title: CM-EPI-VIGILANCE
+    file: AGENTS/salud/salubrista-hah/skills/CM-EPI-VIGILANCE.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-report-builder:1.0.0
+    title: CM-REPORT-BUILDER
+    file: AGENTS/salud/salubrista-hah/skills/CM-REPORT-BUILDER.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-product-builder:1.0.0
+    title: CM-PRODUCT-BUILDER
+    file: AGENTS/salud/salubrista-hah/skills/CM-PRODUCT-BUILDER.md
+    status: published
+  - urn: urn:salud:skill:salubrista-hah-implementation-planner:1.0.0
+    title: CM-IMPLEMENTATION-PLANNER
+    file: AGENTS/salud/salubrista-hah/skills/CM-IMPLEMENTATION-PLANNER.md
+    status: published
+  - urn: urn:salud:skill:medico-urgencias-interpretador-imagenes:2.0.0
+    title: CM-interpretador-imagenes.md
+    file: AGENTS/salud/medico-urgencias/skills/CM-interpretador-imagenes.md
+    status: published
+  - urn: urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0
+    title: CM-RAZONAMIENTO-CLINICO.md
+    file: AGENTS/salud/medico-urgencias/skills/CM-RAZONAMIENTO-CLINICO.md
+    status: published
+  - urn: urn:salud:skill:medico-urgencias-context-manager:2.0.0
+    title: CM-CONTEXT-MANAGER.md
+    file: AGENTS/salud/medico-urgencias/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:salud:skill:medico-urgencias-generador-documentos:2.0.0
+    title: CM-GENERADOR-DOCUMENTOS.md
+    file: AGENTS/salud/medico-urgencias/skills/CM-GENERADOR-DOCUMENTOS.md
     status: published
   - urn: urn:dev:skill:reviewer-eval-executor:1.0.0
     title: CM-EVAL-EXECUTOR
@@ -1842,6 +1790,22 @@ Catalog:
     title: CM-DIVERSITY-LAYER.md
     file: AGENTS/ops/verificador/skills/CM-DIVERSITY-LAYER.md
     status: published
+  - urn: urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0
+    title: CM-CONSULTA-CLASSIFIER
+    file: AGENTS/legal/abogado-legislacion-medica/skills/CM-CONSULTA-CLASSIFIER.md
+    status: published
+  - urn: urn:salud:skill:abogado-legislacion-medica-kb-guidance:1.0.0
+    title: CM-kb-guidance.md
+    file: AGENTS/legal/abogado-legislacion-medica/skills/CM-kb-guidance.md
+    status: published
+  - urn: urn:salud:skill:abogado-legislacion-medica-estatuto-selector:1.0.0
+    title: CM-estatuto-selector.md
+    file: AGENTS/legal/abogado-legislacion-medica/skills/CM-estatuto-selector.md
+    status: published
+  - urn: urn:salud:skill:abogado-legislacion-medica-materia-router:1.0.0
+    title: CM-MATERIA-ROUTER
+    file: AGENTS/legal/abogado-legislacion-medica/skills/CM-MATERIA-ROUTER.md
+    status: published
   - urn: urn:korvo:skill:korax-companion:1.0.0
     title: CM-COMPANION.md
     file: AGENTS/korvo/korax/skills/CM-COMPANION.md
@@ -2055,107 +2019,6 @@ Catalog:
     title: About gist
     file: KNOWLEDGE/fxsl/gist/fx-readme.md
     status: published
-  - urn: urn:pro:kb:firs-framework-integrado-razonamiento-salud
-    title: FIRS — Framework Integrado de Razonamiento en Salud
-    file: KNOWLEDGE/pro/salubrista/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.md
-    status: draft
-  - urn: urn:pro:kb:gestion-redes-urgencias
-    title: Gestión de Redes Asistenciales — Red de Urgencias
-    file: KNOWLEDGE/pro/salubrista/gestion-redes/03-urgencias.md
-    status: draft
-  - urn: urn:pro:kb:gestion-redes-salud-mental
-    title: Gestión de Redes — Salud Mental y Adicciones
-    file: KNOWLEDGE/pro/salubrista/gestion-redes/04-salud-mental.md
-    status: draft
-  - urn: urn:pro:kb:gestion-redes-herramientas
-    title: Gestión de Redes Asistenciales — Herramientas y Anexos
-    file: KNOWLEDGE/pro/salubrista/gestion-redes/05-herramientas-anexos.md
-    status: draft
-  - urn: urn:pro:kb:gestion-redes-indice
-    title: Gestión de Redes Asistenciales — Índice General
-    file: KNOWLEDGE/pro/salubrista/gestion-redes/00-indice.md
-    status: draft
-  - urn: urn:pro:kb:gestion-redes-unidades
-    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad
-    file: KNOWLEDGE/pro/salubrista/gestion-redes/02-unidades-asistenciales.md
-    status: draft
-  - urn: urn:pro:kb:gestion-redes-general
-    title: Gestión de Redes Asistenciales — Marco General
-    file: KNOWLEDGE/pro/salubrista/gestion-redes/01-gestion-redes-general.md
-    status: draft
-  - urn: urn:pro:kb:hodom-direccion-tecnica
-    title: Direccion Tecnica en Hospitalizacion Domiciliaria
-    file: KNOWLEDGE/pro/hodom/director/01-manual-direccion-tecnica.md
-    status: draft
-  - urn: urn:pro:kb:hodom-situacion-chile-2026
-    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
-    file: KNOWLEDGE/pro/hodom/director/03-situacion-chile-2026.md
-    status: draft
-  - urn: urn:pro:kb:hodom-manual-alta-complejidad
-    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad
-    file: KNOWLEDGE/pro/hodom/director/02-manual-alta-complejidad.md
-    status: draft
-  - urn: urn:pro:kb:hodom-decreto-exento-31-2024
-    title: Decreto Exento N° 31/2024 que Aprueba la Norma Técnica para Hospitalización
-      Domiciliaria
-    file: KNOWLEDGE/pro/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md
-    status: draft
-  - urn: urn:pro:kb:hodom-norma-tecnica-2024
-    title: Norma Técnica para Establecimientos que Otorgan Prestaciones de Hospitalización
-      Domiciliaria
-    file: KNOWLEDGE/pro/hodom/normativa/03-norma-tecnica-hodom-2024.md
-    status: draft
-  - urn: urn:pro:kb:hodom-reglamento-ds1-2022
-    title: Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización
-      Domiciliaria
-    file: KNOWLEDGE/pro/hodom/normativa/01-reglamento-hodom-ds1-2022.md
-    status: draft
-  - urn: urn:gn:kb:ris-transporte
-    title: 'Requisitos de Información SNI — Transporte: Aéreo, Ferroviario, Portuario
-      y Conexión'
-    file: KNOWLEDGE/gn/ris-transporte.md
-    status: published
-  - urn: urn:gn:kb:ris-vivienda-urbanismo
-    title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
-    file: KNOWLEDGE/gn/ris-vivienda-urbanismo.md
-    status: published
-  - urn: urn:gn:kb:ris-agua-saneamiento
-    title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos
-    file: KNOWLEDGE/gn/ris-agua-saneamiento.md
-    status: published
-  - urn: urn:gn:kb:ris-vialidad
-    title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal
-    file: KNOWLEDGE/gn/ris-vialidad.md
-    status: published
-  - urn: urn:gn:kb:ris-genericos
-    title: Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos,
-      Empresas Públicas)
-    file: KNOWLEDGE/gn/ris-genericos.md
-    status: published
-  - urn: urn:gn:kb:ris-educacion
-    title: Requisitos de Información SNI — Infraestructura Educacional
-    file: KNOWLEDGE/gn/ris-educacion.md
-    status: published
-  - urn: urn:gn:kb:ris-seguridad-justicia
-    title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
-    file: KNOWLEDGE/gn/ris-seguridad-justicia.md
-    status: published
-  - urn: urn:gn:kb:ris-equipamiento-social
-    title: Requisitos de Información SNI — Equipamiento Social y Comunitario
-    file: KNOWLEDGE/gn/ris-equipamiento-social.md
-    status: published
-  - urn: urn:gn:kb:ris-energia-comunicaciones
-    title: Requisitos de Información SNI — Energía, Electrificación y Comunicaciones
-    file: KNOWLEDGE/gn/ris-energia-comunicaciones.md
-    status: published
-  - urn: urn:gn:kb:ris-salud
-    title: Requisitos de Información SNI — Infraestructura de Salud
-    file: KNOWLEDGE/gn/ris-salud.md
-    status: published
-  - urn: urn:gn:kb:ris-cultura-deporte-turismo
-    title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
-    file: KNOWLEDGE/gn/ris-cultura-deporte-turismo.md
-    status: published
   - urn: urn:gn:kb:guia-comunicaciones
     title: Guía Integral de Comunicaciones GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_030_guia_comunicaciones.md
@@ -2303,6 +2166,52 @@ Catalog:
     title: Guía Operativa Circular 33 – GORE Ñuble
     file: KNOWLEDGE/gn/kb/ipr/kb_gn_029_guia_circ33.md
     status: draft
+  - urn: urn:gn:kb:ris-transporte
+    title: 'Requisitos de Información SNI — Transporte: Aéreo, Ferroviario, Portuario
+      y Conexión'
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-transporte.md
+    status: published
+  - urn: urn:gn:kb:ris-vivienda-urbanismo
+    title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-vivienda-urbanismo.md
+    status: published
+  - urn: urn:gn:kb:ris-agua-saneamiento
+    title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-agua-saneamiento.md
+    status: published
+  - urn: urn:gn:kb:ris-vialidad
+    title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-vialidad.md
+    status: published
+  - urn: urn:gn:kb:ris-genericos
+    title: Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos,
+      Empresas Públicas)
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-genericos.md
+    status: published
+  - urn: urn:gn:kb:ris-educacion
+    title: Requisitos de Información SNI — Infraestructura Educacional
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-educacion.md
+    status: published
+  - urn: urn:gn:kb:ris-seguridad-justicia
+    title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-seguridad-justicia.md
+    status: published
+  - urn: urn:gn:kb:ris-equipamiento-social
+    title: Requisitos de Información SNI — Equipamiento Social y Comunitario
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-equipamiento-social.md
+    status: published
+  - urn: urn:gn:kb:ris-energia-comunicaciones
+    title: Requisitos de Información SNI — Energía, Electrificación y Comunicaciones
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-energia-comunicaciones.md
+    status: published
+  - urn: urn:gn:kb:ris-salud
+    title: Requisitos de Información SNI — Infraestructura de Salud
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-salud.md
+    status: published
+  - urn: urn:gn:kb:ris-cultura-deporte-turismo
+    title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-cultura-deporte-turismo.md
+    status: published
   - urn: urn:gnub:kb:ssot-territorio
     title: SSOT — Territorio GORE Ñuble
     file: KNOWLEDGE/gn/ssot/ssot-territorio.md
@@ -2415,6 +2324,61 @@ Catalog:
     title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget'
     file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra.md
     status: published
+  - urn: urn:salud:kb:firs-framework-integrado-razonamiento-salud
+    title: FIRS — Framework Integrado de Razonamiento en Salud
+    file: KNOWLEDGE/salud/salubrista/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.md
+    status: draft
+  - urn: urn:salud:kb:gestion-redes-urgencias
+    title: Gestión de Redes Asistenciales — Red de Urgencias
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias.md
+    status: draft
+  - urn: urn:salud:kb:gestion-redes-salud-mental
+    title: Gestión de Redes — Salud Mental y Adicciones
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental.md
+    status: draft
+  - urn: urn:salud:kb:gestion-redes-herramientas
+    title: Gestión de Redes Asistenciales — Herramientas y Anexos
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/05-herramientas-anexos.md
+    status: draft
+  - urn: urn:salud:kb:gestion-redes-indice
+    title: Gestión de Redes Asistenciales — Índice General
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/00-indice.md
+    status: draft
+  - urn: urn:salud:kb:gestion-redes-unidades
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/02-unidades-asistenciales.md
+    status: draft
+  - urn: urn:salud:kb:gestion-redes-general
+    title: Gestión de Redes Asistenciales — Marco General
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general.md
+    status: draft
+  - urn: urn:salud:kb:hodom-direccion-tecnica
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria
+    file: KNOWLEDGE/salud/hodom/director/01-manual-direccion-tecnica.md
+    status: draft
+  - urn: urn:salud:kb:hodom-situacion-chile-2026
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
+    file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026.md
+    status: draft
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad
+    file: KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad.md
+    status: draft
+  - urn: urn:salud:kb:hodom-decreto-exento-31-2024
+    title: Decreto Exento N° 31/2024 que Aprueba la Norma Técnica para Hospitalización
+      Domiciliaria
+    file: KNOWLEDGE/salud/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md
+    status: draft
+  - urn: urn:salud:kb:hodom-norma-tecnica-2024
+    title: Norma Técnica para Establecimientos que Otorgan Prestaciones de Hospitalización
+      Domiciliaria
+    file: KNOWLEDGE/salud/hodom/normativa/03-norma-tecnica-hodom-2024.md
+    status: draft
+  - urn: urn:salud:kb:hodom-reglamento-ds1-2022
+    title: Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización
+      Domiciliaria
+    file: KNOWLEDGE/salud/hodom/normativa/01-reglamento-hodom-ds1-2022.md
+    status: draft
   - urn: urn:legal:kb:terminacion
     title: Terminación de la Relación Laboral y Funcionaria
     file: KNOWLEDGE/legal/terminacion.md

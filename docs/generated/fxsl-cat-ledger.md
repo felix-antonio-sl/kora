@@ -1,6 +1,6 @@
 # FXSL/Cat Absorption Ledger
 
-Este documento es generado por `scripts/kora sync-docs`. Resume el estado institucional de `knowledge/fxsl/cat`.
+Este documento es generado por `scripts/kora sync-docs`. Resume el estado institucional de `KNOWLEDGE/fxsl/cat`.
 
 ## Resumen
 

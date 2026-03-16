@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "KORA Agent Config Schema",
-  "description": "Validates the executable config.json envelope for KORA agent workspaces.",
+  "description": "Minimal structural validation of the executable config.json envelope for KORA agent workspaces; stronger semantic invariants are enforced by scripts/kora_lib/validation.py.",
   "type": "object",
   "required": ["allowed_kb", "sandbox"],
   "properties": {
