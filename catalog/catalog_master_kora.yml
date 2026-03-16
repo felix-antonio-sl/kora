@@ -2111,6 +2111,10 @@ Catalog:
     title: 'GORE Ideal y GORE 4.0: Anatomía, Límites y Potencial del Gobierno Regional'
     file: KNOWLEDGE/gn/kb/kb_gn_900_gore_ideal.md
     status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble
+    file: KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md
+    status: published
   - urn: urn:gn:kb:manual-flota-servicios-generales
     title: Gestion de Flota Vehicular y Servicios Generales — GORE Nuble
     file: KNOWLEDGE/gn/kb/manual-flota-servicios-generales.md
