@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:19-operaciones
+  urn: urn:agengai:kb:19-operaciones
   provenance:
     created_by: FS
     created_at: '2026-02-24'

@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-03"
     source: "Síntesis multi-fuente: OPS, IHI, NICE, AHRQ, MINSAL, Cochrane, NotebookLM HaH"
 version: "2.0.0"
-status: draft
+status: published
 tags: [gestion-redes, kpi, bpmn, plantillas, fhir, simulacion, madurez, herramientas]
 lang: es
 ---

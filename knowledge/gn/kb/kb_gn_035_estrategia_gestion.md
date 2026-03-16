@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_035_estrategia_gestion_gn.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [gestion-publica, gore, modernizacion-institucional, estrategia, descentralizacion]
 lang: es
 extensions:

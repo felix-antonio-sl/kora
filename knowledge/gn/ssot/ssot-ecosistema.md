@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-ecosistema"
+  urn: "urn:gn:kb:ssot-ecosistema"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "omega_gore_nuble_mermaid.md v2.6.0, LOC GORE DFL 1-19.175"
 version: "1.1.1"
-status: draft
+status: published
 tags: [ssot, ecosistema, actores-externos, leyes, planificacion, probidad, seremias]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Ecosistema institucional GORE Ñuble
@@ -94,7 +94,7 @@ DIPIR financia proyectos vía servicios. DIFOI articula fomento productivo. DIDE
 | Ley 21.719 | Protección de Datos Personales | Tratamiento datos en SISREC, funcionarios, beneficiarios |
 | Ley 21.730 | Seguridad Pública (Nuevo Ministerio) | Consejo Regional de Seguridad, coordinación DPR-SEREMI |
 
-[ver 3 leyes con artículos modelados en ontología](urn:gnub:kb:ssot-legal)
+[ver 3 leyes con artículos modelados en ontología](urn:gn:kb:ssot-legal)
 
 ### Artículos LOC GORE no modelados en ontología
 
@@ -133,7 +133,7 @@ DIPIR financia proyectos vía servicios. DIFOI articula fomento productivo. DIDE
 | PROPIR (Programa Público Inversión Regional) | 1 año | Programación inversión pública regional |
 | PLADETUR (Plan Regional Desarrollo Turístico) | 4-10 años | Fomento turismo regional |
 
-**PLADECO** (Plan de Desarrollo Comunal) — instrumento municipal. [ver definición](urn:gnub:kb:ssot-mecanismos)
+**PLADECO** (Plan de Desarrollo Comunal) — instrumento municipal. [ver definición](urn:gn:kb:ssot-mecanismos)
 
 ### Jerarquía entre instrumentos
 
@@ -161,7 +161,7 @@ Registro público de audiencias, viajes y donativos.
 
 ### Responsabilidades por incumplimiento
 
-[ver responsabilidades por incumplimiento](urn:gnub:kb:ssot-rendiciones)
+[ver responsabilidades por incumplimiento](urn:gn:kb:ssot-rendiciones)
 
 ## Motor de 5 funciones del GORE
 

@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_024_guia_idi_sni_sts.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [idi, sni, formulacion, evaluacion-social, bip, ris, gore-nuble, preinversion, proporcionalidad]
 lang: es
 extensions:

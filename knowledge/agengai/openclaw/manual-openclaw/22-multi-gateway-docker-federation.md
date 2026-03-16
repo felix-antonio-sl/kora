@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:22-multi-gateway-docker-federation
+  urn: urn:agengai:kb:22-multi-gateway-docker-federation
   provenance:
     created_by: FS
     created_at: '2026-02-24'

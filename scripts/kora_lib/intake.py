@@ -9,10 +9,14 @@ from .config import KORA_ROOT, physical_to_logical_repo_path, resolve_logical_re
 def provenance_source_from_artifact(artifact):
     provenance = artifact.get("_manifest", {}).get("provenance", {})
     if isinstance(provenance, dict):
-        return provenance.get("source", "")
-    if isinstance(provenance, str):
-        return provenance
-    return ""
+        source = provenance.get("source", "")
+    elif isinstance(provenance, str):
+        source = provenance
+    else:
+        source = ""
+    if isinstance(source, list):
+        return " + ".join(str(s) for s in source)
+    return source
 
 
 def cmd_intake():

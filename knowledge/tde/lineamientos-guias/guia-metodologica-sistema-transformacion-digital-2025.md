@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0"
+  urn: "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025"
   provenance: "https://wikiguias.digital.gob.cl/guias/guia-metodologica-std"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, std, pmg, transformacion-digital, gobernanza]
 lang: es
 ---

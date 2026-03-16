@@ -16,10 +16,11 @@
     "urn:gn:kb:cuentas-publicas-2021-2024",
     "urn:gn:kb:erd-nuble-2024-2030",
     "urn:gn:kb:nuble-250",
-    "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0",
-    "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0",
-    "urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0",
-    "urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0"
+    "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025",
+    "urn:tde:kb:ley-21180-transformacion-digital-estado",
+    "urn:tde:kb:manual-integracion-claveunica",
+    "urn:tde:kb:manual-uso-simple-saas",
+    "urn:gn:kb:indicadores-nuble"
   ],
   "sandbox": {
     "mode": "strict"

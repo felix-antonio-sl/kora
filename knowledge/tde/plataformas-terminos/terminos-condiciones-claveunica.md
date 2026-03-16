@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-terminos:terminos-condiciones-claveunica:1.0.0"
+  urn: "urn:tde:kb:terminos-condiciones-claveunica"
   provenance: "https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-terminos, claveunica, identidad-digital, términos-y-condiciones, plataformas-compartidas]
 lang: es
 ---

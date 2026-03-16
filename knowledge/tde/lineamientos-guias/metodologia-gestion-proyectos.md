@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:metodologia-gestion-proyectos:1.0.0"
+  urn: "urn:tde:kb:metodologia-gestion-proyectos"
   provenance: "https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, guia-tecnica, proyectos, tecnologias-de-la-informacion, tic]
 lang: es
 ---

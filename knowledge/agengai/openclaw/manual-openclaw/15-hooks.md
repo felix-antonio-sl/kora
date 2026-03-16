@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:15-hooks
+  urn: urn:agengai:kb:15-hooks
   provenance:
     created_by: FS
     created_at: '2026-02-24'

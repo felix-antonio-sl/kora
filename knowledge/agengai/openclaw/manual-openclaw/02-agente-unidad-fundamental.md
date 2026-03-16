@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:02-agente-unidad-fundamental
+  urn: urn:agengai:kb:02-agente-unidad-fundamental
   provenance:
     created_by: FS
     created_at: '2026-02-24'

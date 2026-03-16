@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:04-modelos-failover
+  urn: urn:agengai:kb:04-modelos-failover
   provenance:
     created_by: FS
     created_at: '2026-02-24'

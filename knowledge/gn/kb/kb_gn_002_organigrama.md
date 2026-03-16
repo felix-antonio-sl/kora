@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "KODA-TRANSFORMER"
     created_at: "2026-03-15"
-    source: "staging/organigrama_gore_2026.md — Organigrama institucional GORE Ñuble versión 2026"
+    source: "source/gn/gorenuble_koda/domains/gn/01_fundamentos/intro/kb_gn_002_organigrama_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [gore-nuble, organigrama, estructura-institucional, divisiones, unidades]
 lang: es
 extensions:

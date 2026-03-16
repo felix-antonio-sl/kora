@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "staging/gn/kb_core_007_estructura_estado_chile.md"
+    source: "source/gn/gorenuble_koda/domains/estadocl/kb_core_007_estructura_estado_chile_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [estado-chile, administracion-publica, estructura-institucional, gore, descentralizacion, poderes-del-estado]
 lang: es
 extensions:

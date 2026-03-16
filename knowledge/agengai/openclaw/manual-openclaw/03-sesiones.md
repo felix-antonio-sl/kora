@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:03-sesiones
+  urn: urn:agengai:kb:03-sesiones
   provenance:
     created_by: FS
     created_at: '2026-02-24'

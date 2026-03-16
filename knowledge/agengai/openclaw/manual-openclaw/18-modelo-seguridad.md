@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:18-modelo-seguridad
+  urn: urn:agengai:kb:18-modelo-seguridad
   provenance:
     created_by: FS
     created_at: '2026-02-24'

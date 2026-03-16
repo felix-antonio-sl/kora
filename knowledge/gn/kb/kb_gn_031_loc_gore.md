@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "19175.md — DFL N° 1-19.175 LOC Gobierno y Administración Regional"
 version: "1.0.0"
-status: draft
+status: published
 tags: [loc-gore, gobierno-regional, delegado-presidencial, transferencia-competencias, gobernador-regional, descentralizacion]
 lang: es
 extensions:

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:01-arquitectura-gateway
+  urn: urn:agengai:kb:01-arquitectura-gateway
   provenance:
     created_by: FS
     created_at: '2026-02-24'

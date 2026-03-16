@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:readme
+  urn: urn:agengai:kb:readme
   provenance:
     created_by: FS
     created_at: '2026-02-24'

@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0"
+  urn: "urn:tde:kb:decreto-7-norma-seguridad-informacion"
   provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto7"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-normas, decreto, norma-tecnica, seguridad-de-la-informacion, ciberseguridad]
 lang: es
 ---

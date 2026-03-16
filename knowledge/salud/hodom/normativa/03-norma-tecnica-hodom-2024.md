@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-13"
     source: "source/pro/hodom/normativa-hodom/NORMA-TECNICA-DECRETO-EXENTO-N°-31-SRA-2024.md"
 version: "1.0.1"
-status: draft
+status: published
 tags: [hodom, norma-técnica, minsal, hospitalización-domiciliaria, requisitos]
 lang: es
 extensions:

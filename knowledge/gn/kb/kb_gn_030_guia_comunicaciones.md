@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "staging/gn/kodeando/kb_gn_030_guia_comunicaciones_sts.md"
+    source: "source/gn/gorenuble_koda/domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [comunicaciones, guia-editorial, documentos-administrativos, gore-nuble, estrategia-comunicacional]
 lang: es
 extensions:

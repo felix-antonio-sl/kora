@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:estrategias:estrategia-capacitaciones-transformacion-digital:1.0.0"
+  urn: "urn:tde:kb:estrategia-capacitaciones-transformacion-digital"
   provenance: "https://wikiguias.digital.gob.cl/Estrategias/estrategia-de-capacitaciones"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, estrategia, transformación digital, capacitaciones, talento digital, gobierno digital]
 lang: es
 ---

@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "Introducción a la Gestión Pública, Mario Waissbluth — versión ETE"
 version: "1.0.0"
-status: draft
+status: published
 tags: [gestion-publica, modernizacion-estado, valor-publico, directivo-publico, politicas-publicas, diagnostico-institucional, arquitectura-organizacional, stakeholders, corrupcion-probidad]
 lang: es
 extensions:

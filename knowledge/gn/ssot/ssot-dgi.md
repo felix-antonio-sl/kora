@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-dgi"
+  urn: "urn:gn:kb:ssot-dgi"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleOrgData.ttl (posición orgánica), GORE_OS/CLAUDE.md (contenido funcional)"
 version: "1.1.0"
-status: draft
+status: published
 tags: [ssot, dgi, indicadores, iniciativas, reportes, senales]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — DGI (Gestión Institucional)
@@ -23,7 +23,7 @@ Departamento de Gestión Institucional — unidad de staff del Administrador Reg
 
 ## Posición orgánica
 
-[ver detalle en estructura orgánica](urn:gnub:kb:ssot-organica)
+[ver detalle en estructura orgánica](urn:gn:kb:ssot-organica)
 
 ## Roles DGI (4)
 

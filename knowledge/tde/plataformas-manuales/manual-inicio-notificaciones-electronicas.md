@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:manual-inicio-notificaciones-electronicas:1.0.0"
+  urn: "urn:tde:kb:manual-inicio-notificaciones-electronicas"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/manual-de-inicio-notificaciones"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, notificaciones, plataforma, manuales]
 lang: es
 ---

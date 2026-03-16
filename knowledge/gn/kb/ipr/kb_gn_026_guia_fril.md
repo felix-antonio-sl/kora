@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "staging/gn/kodeando/kb_gn_026_guia_fril_sts.md"
+    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_026_guia_fril_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [fril, gore-nuble, infraestructura-comunal, municipalidades, fndr, subdere, evaluacion-tecnica]
 lang: es
 extensions:

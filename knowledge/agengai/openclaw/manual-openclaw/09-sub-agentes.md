@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:09-sub-agentes
+  urn: urn:agengai:kb:09-sub-agentes
   provenance:
     created_by: FS
     created_at: '2026-02-24'

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:16-webhooks
+  urn: urn:agengai:kb:16-webhooks
   provenance:
     created_by: FS
     created_at: '2026-02-24'

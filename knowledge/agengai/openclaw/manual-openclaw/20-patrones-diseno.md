@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:20-patrones-diseno
+  urn: urn:agengai:kb:20-patrones-diseno
   provenance:
     created_by: FS
     created_at: '2026-02-24'

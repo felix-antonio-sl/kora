@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:21-decisiones-arquitectura
+  urn: urn:agengai:kb:21-decisiones-arquitectura
   provenance:
     created_by: FS
     created_at: '2026-02-24'

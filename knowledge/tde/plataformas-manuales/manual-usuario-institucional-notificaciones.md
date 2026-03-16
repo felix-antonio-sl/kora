@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:manual-usuario-institucional-notificaciones:1.0.0"
+  urn: "urn:tde:kb:manual-usuario-institucional-notificaciones"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/instituciones-plataforma-de-notificaciones"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, notificaciones, casilla-única, instituciones, oae]
 lang: es
 ---

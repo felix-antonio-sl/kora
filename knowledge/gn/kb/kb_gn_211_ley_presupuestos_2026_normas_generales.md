@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_211_ley_presupuestos_2026_normas_generales_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [ley-presupuestos-2026, normas-generales, ley-21796, sector-publico, hacienda, dipres]
 lang: es
 extensions:

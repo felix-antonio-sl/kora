@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "Cuentas Públicas de Gestión del Gobierno Regional de Ñuble, periodos 2021, 2022, 2023, 2024"
 version: "1.0.0"
-status: draft
+status: published
 tags: [cuentas-publicas, ejecucion-presupuestaria, gore-nuble, inversion-regional, gestion-gobernador]
 lang: es
 extensions:

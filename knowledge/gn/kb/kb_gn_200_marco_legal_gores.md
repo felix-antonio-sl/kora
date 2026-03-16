@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_200_marco_legal_gores.md — Compendio Jurídico para Gobiernos Regionales"
 version: "1.0.0"
-status: draft
+status: published
 tags: [marco-legal, gore, compendio-juridico, probidad, transferencias, contratacion-publica, descentralizacion]
 lang: es
 extensions:

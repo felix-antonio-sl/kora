@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_210_ley_presupuestos_2026_partida_31_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [presupuesto, ley-presupuestos-2026, partida-31, gobiernos-regionales, glosas, gore-nuble]
 lang: es
 extensions:

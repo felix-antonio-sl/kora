@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-normas:decreto-8-norma-notificaciones:1.0.0"
+  urn: "urn:tde:kb:decreto-8-norma-notificaciones"
   provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto8"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-normas, decreto, norma-tecnica, notificaciones, casilla-unica, domicilio-digital-unico]
 lang: es
 ---

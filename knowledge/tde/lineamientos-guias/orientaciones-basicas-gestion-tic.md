@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:orientaciones-basicas-gestion-tic:1.0.0"
+  urn: "urn:tde:kb:orientaciones-basicas-gestion-tic"
   provenance: "https://wikiguias.digital.gob.cl/guias/orientaciones-TIC"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, tic, guias, institucionalidad]
 lang: es
 ---

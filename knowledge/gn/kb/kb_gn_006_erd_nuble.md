@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_006_erd.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [estrategia-regional, desarrollo-territorial, ñuble, planificacion, gobernanza]
 lang: es
 extensions:

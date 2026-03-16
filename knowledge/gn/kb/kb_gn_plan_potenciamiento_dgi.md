@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "implementation_plan.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [dgi, plan-potenciamiento, meyer, lean-six-sigma, gestion-del-cambio]
 lang: es
 extensions:

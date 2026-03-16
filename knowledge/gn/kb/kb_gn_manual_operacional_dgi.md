@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "manual_operacional_dgi.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [dgi, manual-operacional, gestion-institucional, gore-nuble, transformacion-digital]
 lang: es
 extensions:

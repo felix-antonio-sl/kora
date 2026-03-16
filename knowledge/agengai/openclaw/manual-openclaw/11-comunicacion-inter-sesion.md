@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:11-comunicacion-inter-sesion
+  urn: urn:agengai:kb:11-comunicacion-inter-sesion
   provenance:
     created_by: FS
     created_at: '2026-02-24'

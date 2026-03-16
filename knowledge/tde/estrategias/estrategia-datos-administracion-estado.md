@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:estrategias:estrategia-datos-administracion-estado:1.0.0"
+  urn: "urn:tde:kb:estrategia-datos-administracion-estado"
   provenance: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia_Datos"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, estrategia, datos, gobierno digital, interoperabilidad, datos abiertos, inteligencia artificial]
 lang: es
 ---

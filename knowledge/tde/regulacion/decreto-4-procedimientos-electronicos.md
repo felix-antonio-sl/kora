@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:regulacion:decreto-4-procedimientos-electronicos:1.0.0"
+  urn: "urn:tde:kb:decreto-4-procedimientos-electronicos"
   provenance: "https://wikiguias.digital.gob.cl/Leyes/Decreto_4"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, regulacion, decreto, leyes, procedimiento-administrativo]
 lang: es
 ---

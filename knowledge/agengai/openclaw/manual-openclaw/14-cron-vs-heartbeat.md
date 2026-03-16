@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:14-cron-vs-heartbeat
+  urn: urn:agengai:kb:14-cron-vs-heartbeat
   provenance:
     created_by: FS
     created_at: '2026-02-24'

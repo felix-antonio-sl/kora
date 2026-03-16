@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-estandares:estandares-apertura-reutilizacion-datos-abiertos:1.0.0"
+  urn: "urn:tde:kb:estandares-apertura-reutilizacion-datos-abiertos"
   provenance: "https://wikiguias.digital.gob.cl/Est%C3%A1ndares/Datos-Abiertos"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-estandares, datos-abiertos, open-data, datos, gobernanza]
 lang: es
 ---

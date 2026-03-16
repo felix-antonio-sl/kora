@@ -1,12 +1,12 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:opcloud-tutorial-videos"
+  urn: "urn:fxsl:kb:opcloud-tutorial-videos"
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-12"
     source: "opcloud videos"
 version: "1.0.0"
-status: draft
+status: published
 tags: [opcloud, opm, tutorial, modelado, youtube, video-course]
 lang: en
 extensions:

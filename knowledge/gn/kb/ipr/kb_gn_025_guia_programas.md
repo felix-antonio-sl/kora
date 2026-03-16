@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_025_guia_programas_sts.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [programas-ppr, gore-nuble, evaluacion-exante, marco-logico, glosa-06, fndr, dipres, ses]
 lang: es
 extensions:

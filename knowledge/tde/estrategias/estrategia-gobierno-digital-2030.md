@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:estrategias:estrategia-gobierno-digital-2030:1.0.0"
+  urn: "urn:tde:kb:estrategia-gobierno-digital-2030"
   provenance: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia-2030"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, estrategia, gobierno digital 2030, transformación digital, servicios digitales, gobernanza, identidad digital, datos]
 lang: es
 ---

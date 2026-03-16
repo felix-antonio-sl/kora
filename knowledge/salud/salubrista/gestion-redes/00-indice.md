@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-03"
     source: "Síntesis multi-fuente: OPS, IHI, NICE, AHRQ, MINSAL, Cochrane, NotebookLM 46 fuentes HaH"
 version: "2.0.0"
-status: draft
+status: published
 tags: [gestion-redes, asistencial, indice, glosario, normativa, kpi, blueprint]
 lang: es
 ---

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:05-memoria
+  urn: urn:agengai:kb:05-memoria
   provenance:
     created_by: FS
     created_at: '2026-02-24'

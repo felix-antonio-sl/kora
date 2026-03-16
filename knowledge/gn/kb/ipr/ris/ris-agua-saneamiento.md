@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "OPERATIONS/source/gn/gorenuble_sts/kb_gn_010_ris.md"
+    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
 version: 1.0.0
 status: published
 tags:

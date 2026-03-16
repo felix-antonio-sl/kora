@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:08-patrones-multitenant
+  urn: urn:agengai:kb:08-patrones-multitenant
   provenance:
     created_by: FS
     created_at: '2026-02-24'

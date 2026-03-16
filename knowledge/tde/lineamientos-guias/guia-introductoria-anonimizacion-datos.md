@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:guia-introductoria-anonimizacion-datos:1.0.0"
+  urn: "urn:tde:kb:guia-introductoria-anonimizacion-datos"
   provenance: "https://wikiguias.digital.gob.cl/guias/Guia_anonimizacion"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, datos, guia-tecnica, anonimizacion, privacidad]
 lang: es
 ---

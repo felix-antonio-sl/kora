@@ -78,3 +78,4 @@ _manifest:
 | Nuble 250, proyectos emblematicos | urn:gn:kb:nuble-250 |
 | Ley Presupuestos, Partida 31, umbrales | urn:gn:kb:ley-presupuestos-2026-partida-31 |
 | Glosas GORE, Ley Presupuestos | urn:gn:kb:ley-presupuestos-2026-glosas-gore |
+| Indicadores regionales, datos comunales, brechas | urn:gn:kb:indicadores-nuble |

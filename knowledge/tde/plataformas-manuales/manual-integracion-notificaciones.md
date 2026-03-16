@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:manual-integracion-notificaciones:1.0.0"
+  urn: "urn:tde:kb:manual-integracion-notificaciones"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, notificaciones, casilla-unica, manuales]
 lang: es
 ---

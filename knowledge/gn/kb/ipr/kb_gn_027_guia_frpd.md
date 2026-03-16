@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_027_guia_frpd_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [frpd, royalty-minero, fomento-productivo, ctci, gore-nuble, concurso, evaluacion]
 lang: es
 extensions:

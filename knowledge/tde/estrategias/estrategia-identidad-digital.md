@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:estrategias:estrategia-identidad-digital:1.0.0"
+  urn: "urn:tde:kb:estrategia-identidad-digital"
   provenance: "https://wikiguias.digital.gob.cl/Estrategias/identidad-digital"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, estrategia, identidad digital, ClaveÚnica, cédula digital, autenticación, gobernanza digital]
 lang: es
 ---

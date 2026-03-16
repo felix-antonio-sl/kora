@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-ipr-lifecycle"
+  urn: "urn:gn:kb:ssot-ipr-lifecycle"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleReferenceData.ttl, goreNubleIPRData.ttl, goreNubleOntology.ttl, omega_gore_nuble_mermaid.md v2.6.0, goreNubleCQs_Master.yml"
 version: "1.2.1"
-status: draft
+status: published
 tags: [ssot, ipr, ciclo-vida, fases, estados, tracks, evaluacion]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Ciclo de vida IPR

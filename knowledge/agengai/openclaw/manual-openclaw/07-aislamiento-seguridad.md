@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:07-aislamiento-seguridad
+  urn: urn:agengai:kb:07-aislamiento-seguridad
   provenance:
     created_by: FS
     created_at: '2026-02-24'

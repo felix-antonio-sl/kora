@@ -13,32 +13,32 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| TOC, indice, estructura del manual | urn:kora:kb:00-toc |
-| Fundamentos LLMs, tool use, arquitectura cliente-servidor | urn:kora:kb:00-fundamentos-previos |
-| Arquitectura gateway, agent loop, wire protocol, prompt assembly | urn:kora:kb:01-arquitectura-gateway |
-| Agente como unidad, workspace, agentDir, bootstrap files | urn:kora:kb:02-agente-unidad-fundamental |
-| Sesiones, session keys, DM scope, compaction, persistencia | urn:kora:kb:03-sesiones |
-| Modelos, failover, auth profiles, fallback chains | urn:kora:kb:04-modelos-failover |
-| Memoria, MEMORY.md, daily logs, busqueda hibrida, embeddings | urn:kora:kb:05-memoria |
-| Multi-agent routing, bindings, aislamiento | urn:kora:kb:06-multi-agent-routing |
-| Aislamiento, seguridad por agente, sandbox, tool policy, elevated | urn:kora:kb:07-aislamiento-seguridad |
-| Patrones multi-tenant, un canal multiples personas | urn:kora:kb:08-patrones-multitenant |
-| Sub-agentes, sessions_spawn, tool policy, concurrency | urn:kora:kb:09-sub-agentes |
-| Sub-agentes anidados, maxSpawnDepth, orchestrator pattern | urn:kora:kb:10-sub-agentes-anidados |
-| Comunicacion inter-sesion, sessions_send, agent-to-agent | urn:kora:kb:11-comunicacion-inter-sesion |
-| Heartbeats, periodic agent turns, config | urn:kora:kb:12-heartbeats |
-| Cron jobs, schedule, payload, delivery | urn:kora:kb:13-cron-jobs |
-| Cron vs heartbeat, arbol de decision | urn:kora:kb:14-cron-vs-heartbeat |
-| Hooks, event-driven automation, TypeScript handlers | urn:kora:kb:15-hooks |
-| Webhooks, HTTP triggers, session key policy | urn:kora:kb:16-webhooks |
-| Lobster, workflow runtime, DSL, approval gates | urn:kora:kb:17-lobster |
-| Modelo de seguridad, threat model, DM/group policies | urn:kora:kb:18-modelo-seguridad |
-| Operaciones, status, doctor, maintenance, backup | urn:kora:kb:19-operaciones |
-| Patrones de diseno, single agent, agent per concern, orchestrator | urn:kora:kb:20-patrones-diseno |
-| Decisiones de arquitectura, decision records | urn:kora:kb:21-decisiones-arquitectura |
-| Multi-gateway dockerizado, federacion, hub-and-spoke | urn:kora:kb:22-multi-gateway-docker-federation |
-| Apendices, config reference, glosario, checklists | urn:kora:kb:apendices |
-| Cheatsheet, referencia rapida | urn:kora:kb:cheatsheet |
+| TOC, indice, estructura del manual | urn:agengai:kb:00-toc |
+| Fundamentos LLMs, tool use, arquitectura cliente-servidor | urn:agengai:kb:00-fundamentos-previos |
+| Arquitectura gateway, agent loop, wire protocol, prompt assembly | urn:agengai:kb:01-arquitectura-gateway |
+| Agente como unidad, workspace, agentDir, bootstrap files | urn:agengai:kb:02-agente-unidad-fundamental |
+| Sesiones, session keys, DM scope, compaction, persistencia | urn:agengai:kb:03-sesiones |
+| Modelos, failover, auth profiles, fallback chains | urn:agengai:kb:04-modelos-failover |
+| Memoria, MEMORY.md, daily logs, busqueda hibrida, embeddings | urn:agengai:kb:05-memoria |
+| Multi-agent routing, bindings, aislamiento | urn:agengai:kb:06-multi-agent-routing |
+| Aislamiento, seguridad por agente, sandbox, tool policy, elevated | urn:agengai:kb:07-aislamiento-seguridad |
+| Patrones multi-tenant, un canal multiples personas | urn:agengai:kb:08-patrones-multitenant |
+| Sub-agentes, sessions_spawn, tool policy, concurrency | urn:agengai:kb:09-sub-agentes |
+| Sub-agentes anidados, maxSpawnDepth, orchestrator pattern | urn:agengai:kb:10-sub-agentes-anidados |
+| Comunicacion inter-sesion, sessions_send, agent-to-agent | urn:agengai:kb:11-comunicacion-inter-sesion |
+| Heartbeats, periodic agent turns, config | urn:agengai:kb:12-heartbeats |
+| Cron jobs, schedule, payload, delivery | urn:agengai:kb:13-cron-jobs |
+| Cron vs heartbeat, arbol de decision | urn:agengai:kb:14-cron-vs-heartbeat |
+| Hooks, event-driven automation, TypeScript handlers | urn:agengai:kb:15-hooks |
+| Webhooks, HTTP triggers, session key policy | urn:agengai:kb:16-webhooks |
+| Lobster, workflow runtime, DSL, approval gates | urn:agengai:kb:17-lobster |
+| Modelo de seguridad, threat model, DM/group policies | urn:agengai:kb:18-modelo-seguridad |
+| Operaciones, status, doctor, maintenance, backup | urn:agengai:kb:19-operaciones |
+| Patrones de diseno, single agent, agent per concern, orchestrator | urn:agengai:kb:20-patrones-diseno |
+| Decisiones de arquitectura, decision records | urn:agengai:kb:21-decisiones-arquitectura |
+| Multi-gateway dockerizado, federacion, hub-and-spoke | urn:agengai:kb:22-multi-gateway-docker-federation |
+| Apendices, config reference, glosario, checklists | urn:agengai:kb:apendices |
+| Cheatsheet, referencia rapida | urn:agengai:kb:cheatsheet |
 | Agent spec KORA, componentes, FSM | urn:kora:kb:agent-spec-md |
 | Gobernanza KORA, precedencia | urn:kora:kb:gobernanza |
 

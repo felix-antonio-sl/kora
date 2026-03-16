@@ -61,3 +61,13 @@ _manifest:
 | RIS Energia y Comunicaciones | ipr (N3) | urn:gn:kb:ris-energia-comunicaciones |
 | RIS Salud | ipr (N3) | urn:gn:kb:ris-salud |
 | RIS Cultura, Deporte y Turismo | ipr (N3) | urn:gn:kb:ris-cultura-deporte-turismo |
+| Compras, contrataciones, licitaciones | operacional (N3) | urn:gn:kb:manual-compras-contrataciones |
+| Contabilidad, SIGFE, cierre financiero | operacional (N3) | urn:gn:kb:manual-contabilidad |
+| Tesoreria, pagos, ingresos | operacional (N3) | urn:gn:kb:manual-tesoreria |
+| RRHH, gestion personas, remuneraciones | operacional (N3) | urn:gn:kb:manual-gestion-personas |
+| Inventarios, activo fijo, bodegas | operacional (N3) | urn:gn:kb:manual-inventarios-activo-fijo |
+| Flota vehicular, servicios generales | operacional (N3) | urn:gn:kb:manual-flota-servicios-generales |
+| BPMN actos administrativos | procesos (N3) | urn:gn:kb:bpmn-actos-administrativos |
+| CIES SITIA seguridad publica | procesos (N3) | urn:gn:kb:bpmn-cies-sitia |
+| Geoespacial IDE Geonodo SIG | procesos (N3) | urn:gn:kb:bpmn-geoespacial-ide |
+| Indicadores regionales comunales | estrategia (N2) | urn:gn:kb:indicadores-nuble |

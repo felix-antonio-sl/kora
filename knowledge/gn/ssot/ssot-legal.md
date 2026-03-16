@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-legal"
+  urn: "urn:gn:kb:ssot-legal"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleLegalData.ttl, omega_gore_nuble_mermaid.md v2.6.0, goreNubleIPRData.ttl"
 version: "1.1.0"
-status: draft
+status: published
 tags: [ssot, legal, normativo, glosas, loc-gore, presupuestos]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Marco normativo GORE Ñuble
@@ -87,4 +87,4 @@ Circular 33: exige 20% aporte propio en Activos No Financieros. `requiresCoFinan
 
 ## Jerarquía presupuestaria
 
-[ver clasificador completo](urn:gnub:kb:ssot-presupuesto)
+[ver clasificador completo](urn:gn:kb:ssot-presupuesto)

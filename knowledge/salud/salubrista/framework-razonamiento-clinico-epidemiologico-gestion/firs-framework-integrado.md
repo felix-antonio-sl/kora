@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-03-03"
     source: "Integración dialéctica: Framework ChatGPT (taxonomía ontológica) + Framework Gemini/FIRS (narrativa académica, 83 fuentes)"
 version: "1.0.0"
-status: draft
+status: published
 tags: [razonamiento-clinico, epidemiologia, gestion-sanitaria, framework-integrado, FIRS, bayesiano, HRO, VBHC, systems-thinking]
 lang: es
 ---

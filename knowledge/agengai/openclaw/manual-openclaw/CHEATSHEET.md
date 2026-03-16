@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:cheatsheet
+  urn: urn:agengai:kb:cheatsheet
   provenance:
     created_by: FS
     created_at: '2026-02-24'

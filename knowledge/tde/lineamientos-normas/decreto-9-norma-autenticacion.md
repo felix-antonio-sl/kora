@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-normas:decreto-9-norma-autenticacion:1.0.0"
+  urn: "urn:tde:kb:decreto-9-norma-autenticacion"
   provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto9"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-normas, decreto, norma-tecnica, autenticacion, clave-unica, clave-tributaria]
 lang: es
 ---

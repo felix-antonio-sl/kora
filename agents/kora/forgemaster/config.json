@@ -20,8 +20,8 @@
     "urn:kora:kb:cat-audit-invariants",
     "urn:kora:kb:cat-behavioral-preservation",
     "urn:kora:kb:cat-fxsl-bridge",
-    "urn:kora:kb:skills-anthropic",
-    "urn:kora:kb:openclaw-integration"
+    "urn:agengai:kb:skills-anthropic",
+    "urn:agengai:kb:openclaw-integration"
   ],
   "sandbox": {
     "mode": "strict"

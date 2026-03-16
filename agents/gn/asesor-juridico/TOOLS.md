@@ -36,3 +36,4 @@ _manifest:
 | Estrategia gestion, planificacion | urn:gn:kb:estrategia-gestion |
 | Cuentas publicas, rendicion gestion | urn:gn:kb:cuentas-publicas-2021-2024 |
 | Glosas GORE, Ley Presupuestos | urn:gn:kb:ley-presupuestos-2026-glosas-gore |
+| Tramitacion actos, BPMN aprobacion, flujo actos | urn:gn:kb:bpmn-actos-administrativos |

@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "Catálogo de Flujos de Aprobación de Documentos para el GORE Ñuble"
 version: "1.0.0"
-status: draft
+status: published
 tags: [aprobaciones, flujos-administrativos, gore-nuble, actos-administrativos, control-legalidad]
 lang: es
 extensions:

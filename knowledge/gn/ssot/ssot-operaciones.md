@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-operaciones"
+  urn: "urn:gn:kb:ssot-operaciones"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleOntology.ttl, goreNubleReferenceData.ttl, GORE_OS/CLAUDE.md"
 version: "1.0.1"
-status: draft
+status: published
 tags: [ssot, operaciones, alertas, compromisos, problemas, hitos, reuniones]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Procesos operativos GORE Ñuble

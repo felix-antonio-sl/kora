@@ -1,25 +1,25 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-mecanismos"
+  urn: "urn:gn:kb:ssot-mecanismos"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "omega_gore_nuble_mermaid.md v2.6.0, goreNubleIPRData.ttl, GORE_OS/CLAUDE.md"
 version: "1.1.1"
-status: draft
+status: published
 tags: [ssot, mecanismos, tracks, fril, frpd, subv8, c33, ppr, sni, evaluacion]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Reglas operativas por mecanismo de financiamiento
 
 ## Resumen
 
-Reglas de negocio detalladas para cada uno de los 7 mecanismos de financiamiento. Complementa [ssot-ipr-lifecycle](urn:gnub:kb:ssot-ipr-lifecycle) (clasificación y tracks) con plazos, criterios de evaluación, admisibilidad y restricciones operativas por mecanismo. Fuente principal: Omega v2.6.0.
+Reglas de negocio detalladas para cada uno de los 7 mecanismos de financiamiento. Complementa [ssot-ipr-lifecycle](urn:gn:kb:ssot-ipr-lifecycle) (clasificación y tracks) con plazos, criterios de evaluación, admisibilidad y restricciones operativas por mecanismo. Fuente principal: Omega v2.6.0.
 
 ## Definiciones transversales
 
@@ -137,7 +137,7 @@ RS válido por 3 años presupuestarios consecutivos (año obtención + 2 siguien
 
 ### Reglas operativas C33
 
-- Cofinanciamiento ANF: 20% aporte propio obligatorio ([ver regla](urn:gnub:kb:ssot-legal))
+- Cofinanciamiento ANF: 20% aporte propio obligatorio ([ver regla](urn:gn:kb:ssot-legal))
 - Plazo postulación: 31 de octubre de cada año
 - Metodología conservación/reposición: CAE o Costo-Eficiencia
 
@@ -338,7 +338,7 @@ Lógica simplificada de routing:
 | Glosa 06 | Admin GORE max 5% | Rechazo DIPRES |
 | Transfer | Honorarios max 5% | Ajuste o rechazo |
 | Subv8 | Rendiciones pendientes | Inhabilidad total (bloqueo) |
-| C33 | Cofinanciamiento ANF 20% ([ver legal](urn:gnub:kb:ssot-legal)) | Requisito habilitante |
+| C33 | Cofinanciamiento ANF 20% ([ver legal](urn:gn:kb:ssot-legal)) | Requisito habilitante |
 | FRPD | Garantía >1.000 UTM | 5% total + 90d post-término |
 
 ## Catálogo unificado de mecanismos

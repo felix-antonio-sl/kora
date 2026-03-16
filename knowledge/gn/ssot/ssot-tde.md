@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-tde"
+  urn: "urn:gn:kb:ssot-tde"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "Ley 21.180, Ley 19.799, digital.gob.cl, omega_gore_nuble_mermaid.md v2.6.0"
 version: "1.0.0"
-status: draft
+status: published
 tags: [ssot, tde, transformacion-digital, fea, gesdoc, interoperabilidad, clave-unica]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Transformación Digital del Estado (TDE)
@@ -119,4 +119,4 @@ Red de interoperabilidad: conexiones directas y seguras vía internet. Organismo
 
 ## Rol DGI en TDE
 
-ESP_TD (Especialista en Transformación Digital, sort_order 8) lidera la implementación interna. [ver roles DGI](urn:gnub:kb:ssot-dgi)
+ESP_TD (Especialista en Transformación Digital, sort_order 8) lidera la implementación interna. [ver roles DGI](urn:gn:kb:ssot-dgi)

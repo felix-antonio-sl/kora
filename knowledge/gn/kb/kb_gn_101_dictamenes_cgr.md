@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "Compilación de dictámenes CGR aplicables a Gobiernos Regionales — GORE Ñuble"
 version: "1.0.0"
-status: draft
+status: published
 tags: [dictamenes-cgr, jurisprudencia-administrativa, gore-nuble, contraloria, legalidad]
 lang: es
 extensions:

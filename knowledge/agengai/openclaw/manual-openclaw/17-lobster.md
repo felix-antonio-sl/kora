@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:17-lobster
+  urn: urn:agengai:kb:17-lobster
   provenance:
     created_by: FS
     created_at: '2026-02-24'

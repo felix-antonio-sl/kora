@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:recomendaciones-diseno-servicios-estado:1.0.0"
+  urn: "urn:tde:kb:recomendaciones-diseno-servicios-estado"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, guía, diseño-de-servicios]
 lang: es
 ---

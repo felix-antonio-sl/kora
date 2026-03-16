@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "Codex"
     created_at: "2026-03-10"
-    source: "/Users/felixsanhueza/Developer/kora/source/pro/hodom/manual-general-hodom-2026.md"
+    source: "source/pro/hodom/manual-general-hodom-2026.md"
 version: "1.1.1"
-status: draft
+status: published
 tags: [hodom, hospitalizacion-domiciliaria, alta-complejidad, hospital-at-home, gestion-clinica]
 lang: es
 extensions:

@@ -1,16 +1,16 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-master"
+  urn: "urn:gn:kb:ssot-master"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "Auditoría de consistencia v2.0 — organigrama, ontología (12 TTL), omega v2.6.0, CQs v1.0.1"
 version: "1.5.0"
-status: draft
+status: published
 tags: [ssot, gore-nuble, reconciliacion, fundamentos, indice]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
     bundle_version: "1.5.0"
     satellites: 14
@@ -37,20 +37,20 @@ Fuente de verdad reconciliada del dominio GORE Ñuble. Bundle de 15 artefactos K
 
 | URN | Título | Fuentes primarias | Status |
 |-----|--------|-------------------|--------|
-| `urn:gnub:kb:ssot-organica` | Estructura orgánica | Organigrama > OrgData.ttl > Omega | draft |
-| `urn:gnub:kb:ssot-territorio` | Territorio | OrgData.ttl > Omega > CQs | draft |
-| `urn:gnub:kb:ssot-legal` | Marco normativo | LegalData.ttl > Omega | draft |
-| `urn:gnub:kb:ssot-ipr-lifecycle` | Ciclo de vida IPR | ReferenceData.ttl + IPRData.ttl > Omega > CQs | draft |
-| `urn:gnub:kb:ssot-presupuesto` | Presupuesto | LegalData.ttl > Omega > ReferenceData.ttl | draft |
-| `urn:gnub:kb:ssot-convenios` | Convenios | ApprovalData.ttl > ReferenceData.ttl > Omega | draft |
-| `urn:gnub:kb:ssot-rendiciones` | Rendiciones SISREC | RenditionData.ttl > ReferenceData.ttl > Omega | draft |
-| `urn:gnub:kb:ssot-actos-admin` | Actos administrativos | ApprovalData.ttl > DipirOntology.ttl > DipirRules.ttl | draft |
-| `urn:gnub:kb:ssot-operaciones` | Procesos operativos | Ontology.ttl + ReferenceData.ttl + GORE_OS | draft |
-| `urn:gnub:kb:ssot-mecanismos` | Reglas operativas por mecanismo | Omega v2.6.0 + IPRData.ttl + GORE_OS | draft |
-| `urn:gnub:kb:ssot-ecosistema` | Ecosistema institucional externo | Omega v2.6.0 + LOC GORE | draft |
-| `urn:gnub:kb:ssot-relaciones-dominio` | Relaciones de dominio (modelo categórico) | Ontology.ttl TBox + DipirOntology.ttl | draft |
-| `urn:gnub:kb:ssot-tde` | Transformación Digital del Estado | Ley 21.180 + Ley 19.799 + digital.gob.cl | draft |
-| `urn:gnub:kb:ssot-dgi` | DGI | OrgData.ttl (orgánica) + GORE_OS (funcional) | draft |
+| `urn:gn:kb:ssot-organica` | Estructura orgánica | Organigrama > OrgData.ttl > Omega | draft |
+| `urn:gn:kb:ssot-territorio` | Territorio | OrgData.ttl > Omega > CQs | draft |
+| `urn:gn:kb:ssot-legal` | Marco normativo | LegalData.ttl > Omega | draft |
+| `urn:gn:kb:ssot-ipr-lifecycle` | Ciclo de vida IPR | ReferenceData.ttl + IPRData.ttl > Omega > CQs | draft |
+| `urn:gn:kb:ssot-presupuesto` | Presupuesto | LegalData.ttl > Omega > ReferenceData.ttl | draft |
+| `urn:gn:kb:ssot-convenios` | Convenios | ApprovalData.ttl > ReferenceData.ttl > Omega | draft |
+| `urn:gn:kb:ssot-rendiciones` | Rendiciones SISREC | RenditionData.ttl > ReferenceData.ttl > Omega | draft |
+| `urn:gn:kb:ssot-actos-admin` | Actos administrativos | ApprovalData.ttl > DipirOntology.ttl > DipirRules.ttl | draft |
+| `urn:gn:kb:ssot-operaciones` | Procesos operativos | Ontology.ttl + ReferenceData.ttl + GORE_OS | draft |
+| `urn:gn:kb:ssot-mecanismos` | Reglas operativas por mecanismo | Omega v2.6.0 + IPRData.ttl + GORE_OS | draft |
+| `urn:gn:kb:ssot-ecosistema` | Ecosistema institucional externo | Omega v2.6.0 + LOC GORE | draft |
+| `urn:gn:kb:ssot-relaciones-dominio` | Relaciones de dominio (modelo categórico) | Ontology.ttl TBox + DipirOntology.ttl | draft |
+| `urn:gn:kb:ssot-tde` | Transformación Digital del Estado | Ley 21.180 + Ley 19.799 + digital.gob.cl | draft |
+| `urn:gn:kb:ssot-dgi` | DGI | OrgData.ttl (orgánica) + GORE_OS (funcional) | draft |
 
 ## Glosario de reconciliación
 
@@ -84,7 +84,7 @@ Términos donde las fuentes difieren. El valor canónico es el declarado aquí.
 
 ### Fases IPR: 6 vs 8
 
-6 fases canónicas (F0-F5). [ver análisis completo](urn:gnub:kb:ssot-ipr-lifecycle)
+6 fases canónicas (F0-F5). [ver análisis completo](urn:gn:kb:ssot-ipr-lifecycle)
 
 ### Clases duplicadas en TBox
 

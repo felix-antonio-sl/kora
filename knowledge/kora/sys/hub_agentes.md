@@ -19,7 +19,7 @@ lang: es
 # Hub de Agentes TDE
 
 ID: TDE-HUB-AGENTES-030 | Dominio: tde_lineamientos
-XRef: urn:kora:kb:workflow-wikiguias, urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0
+XRef: urn:kora:kb:workflow-wikiguias, urn:tde:kb:decreto-7-norma-seguridad-informacion
 
 ## Contexto Operativo
 
@@ -76,7 +76,7 @@ Métricas TDE_AUDITOR_KB:
 
 - Clasificación: activo de información crítico.
 - Políticas: control de cambios, respaldos, trazabilidad de commits y parches.
-- Normativa: urn:kora:kb:tde:lineamientos-normas:decreto-7-norma-seguridad-informacion:1.0.0; GU-CIBER-001.
+- Normativa: urn:tde:kb:decreto-7-norma-seguridad-informacion; GU-CIBER-001.
 
 ## Articulación con Workflow 029 (ID: TDE_HUB_AGENTES_ART_029_001)
 
@@ -90,4 +90,4 @@ Métricas TDE_AUDITOR_KB:
 | Término | Ref | XRef |
 |---------|-----|------|
 
-XRef relacionados: urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0, urn:kora:kb:tde:lineamientos-guias:guia-tecnica-marco-gestion-datos:1.0.0
+XRef relacionados: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025, urn:tde:kb:guia-tecnica-marco-gestion-datos

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:13-cron-jobs
+  urn: urn:agengai:kb:13-cron-jobs
   provenance:
     created_by: FS
     created_at: '2026-02-24'

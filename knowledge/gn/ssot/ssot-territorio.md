@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-territorio"
+  urn: "urn:gn:kb:ssot-territorio"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleOrgData.ttl, omega_gore_nuble_mermaid.md v2.6.0, Ley 21.033"
 version: "1.0.0"
-status: draft
+status: published
 tags: [ssot, territorio, provincias, comunas, nuble]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Territorio GORE Ñuble

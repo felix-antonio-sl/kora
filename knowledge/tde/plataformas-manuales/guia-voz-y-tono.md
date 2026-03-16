@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:guia-voz-y-tono:1.0.0"
+  urn: "urn:tde:kb:guia-voz-y-tono"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/Voz_Tono"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, experiencia-usuaria, como-usar, voz-y-tono]
 lang: es
 ---

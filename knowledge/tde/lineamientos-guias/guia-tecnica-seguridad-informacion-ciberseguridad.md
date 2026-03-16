@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-seguridad-informacion-ciberseguridad:1.0.0"
+  urn: "urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad"
   provenance: "https://wikiguias.digital.gob.cl/guias/GU-CIBER-001"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, seguridad-de-la-informacion, ciberseguridad, datos, guia-tecnica]
 lang: es
 ---

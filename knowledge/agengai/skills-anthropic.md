@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:skills-anthropic"
+  urn: "urn:agengai:kb:skills-anthropic"
   provenance:
     created_by: Anthropic
     created_at: "2026-01-15"

@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0"
+  urn: "urn:tde:kb:decreto-12-interoperabilidad"
   provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto12"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-normas, decreto, norma-tecnica, interoperabilidad, nodo, gestor-de-codigos]
 lang: es
 ---

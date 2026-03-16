@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_001_guia_transferencia_programas_sts.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [transferencia, programas-publicos-regionales, ppr, fndr, gore-nuble, evaluacion-tecnica, marco-logico]
 lang: es
 extensions:

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:10-sub-agentes-anidados
+  urn: urn:agengai:kb:10-sub-agentes-anidados
   provenance:
     created_by: FS
     created_at: '2026-02-24'

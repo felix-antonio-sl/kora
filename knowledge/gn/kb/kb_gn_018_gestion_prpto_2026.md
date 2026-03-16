@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "kb_gn_018_gestion_prpto.md — Guía técnico-operativa gestión presupuestaria regional 2026"
-version: "1.0.0"
-status: draft
+    source: "kb_gn_018_gestion_prpto.md + D02_ciclo_presupuestario_koda.yml + kb_gn_043_manual_presupuesto_koda.yml"
+version: "1.1.0"
+status: published
 tags: [presupuesto, gore, gestion-financiera, ciclo-presupuestario, daf-dipir]
 lang: es
 extensions:
@@ -96,12 +96,67 @@ Estructura: **Subtítulo → Ítem → Asignación → Sub-asignación**
 
 ## Ciclo Presupuestario
 
+```mermaid
+flowchart LR
+    subgraph CICLO["Ciclo Anual"]
+        P0["P0: Preparacion<br/>exploratoria<br/>(May-Jun)"]
+        P1["P1: Formulacion<br/>formal<br/>(Jul-Ago)"]
+        P2["P2: Aprobacion<br/>(Sep-Nov)"]
+        P3["P3: Distribucion<br/>(Dic-Ene)"]
+        P4["P4: Ejecucion<br/>(Todo el anio)"]
+        P5["P5: Control y<br/>Cierre (Dic-Ene)"]
+    end
+
+    subgraph TRANSVERSAL["Transversal"]
+        PM["Modificaciones<br/>Presupuestarias"]
+    end
+
+    P0 --> P1 --> P2 --> P3 --> P4 --> P5
+    P4 <--> PM
+    P5 -.->|"Retroalimentacion"| P1
+
+    style P1 fill:#2196F3,color:#fff
+    style P2 fill:#4CAF50,color:#fff
+    style P3 fill:#FF9800,color:#fff
+    style P4 fill:#9C27B0,color:#fff
+    style P5 fill:#607D8B,color:#fff
+    style PM fill:#E91E63,color:#fff
+```
+
 **Etapas:** 1) Formulación, 2) Aprobación / Distribución Inicial, 3) Ejecución, 4) Modificaciones, 5) Control y Seguimiento, 6) Cierre
 
 - **Rol DAF:** financiero-administrativo
 - **Rol DIPIR:** estratégico-programático de inversión
 
 ### Formulación
+
+```mermaid
+flowchart TD
+    A["DIPRES emite<br/>instructivo y clasificador"] --> B["Definir techos<br/>preliminares"]
+
+    subgraph INVERSION["Inversion (DIPIR)"]
+        C1["Propuesta marco<br/>de inversion"]
+        C2["Cartera proyectos<br/>con RS vigente"]
+        C3["Asignaciones por<br/>fuente (FNDR/FRIL/FRPD)"]
+    end
+
+    subgraph FUNCIONAMIENTO["Funcionamiento (DAF)"]
+        D1["Personal (Subt. 21)"]
+        D2["Bienes/Servicios (Subt. 22)"]
+        D3["Transferencias (Subt. 24)"]
+    end
+
+    B --> C1 & D1
+    C1 --> C2 --> C3
+    D1 --> D2 --> D3
+    C3 & D3 --> E["Consolidacion<br/>propuesta"]
+    E --> F["Presentacion a<br/>Gobernador/a"]
+    F --> G["Ajustes segun<br/>prioridades ERD"]
+    G --> H["Envio a DIPRES"]
+
+    style A fill:#2196F3,color:#fff
+    style H fill:#4CAF50,color:#fff
+```
 
 **DIPIR — Inversión:**
 - Elaborar proyecto de presupuesto de inversiones; asesorar al Gobernador en selección de proyectos.
@@ -350,6 +405,8 @@ Fuente: Oficio Circular N°11 DIPRES 2025.
 - Cada transferencia debe formalizarse en convenio con objeto, monto, plazos, obligaciones, seguimiento y garantías.
 - Ítems: 01 Al Sector Privado; 03 A Otras Entidades Públicas; 04 A Empresas Públicas no Financieras; 05 A Empresas Públicas Financieras; 06 A Gobiernos Extranjeros; 07 A Organismos Internacionales.
 
+**Convenio Mandato vs. Convenio de Transferencia:** Cuando el GORE no es la unidad técnica ejecutora, la inversión se canaliza mediante dos modalidades de convenio con naturaleza jurídica y operativa distinta. El **Convenio Mandato** es aquel en que el GORE encarga la ejecución de una iniciativa a un tercero con capacidad técnica (MOP, SERVIU, Municipalidad u otra entidad pública habilitada); los recursos se transfieren contra avance mediante Estados de Pago, y la entidad mandataria actúa como unidad técnica bajo supervisión del GORE. El **Convenio de Transferencia** entrega recursos para ejecución directa por parte del beneficiario (subvenciones, fondos concursables, programas Glosa 06); la rendición es estricta vía SISREC/CGR. La distinción es relevante para determinar el momento de devengo, los requisitos de rendición y el grado de control que ejerce el GORE sobre la ejecución.
+
 **Iniciativas adicionales permitidas (Glosa 11):**
 - PMU/PMB en coordinación con SUBDERE.
 - Infraestructura social/deportiva en inmuebles: bienes comunes de comunidades agrícolas; condominios de viviendas sociales; conformados según leyes N°15.020, N°16.640 y N°19.253; inmuebles fiscales en tuición de organizaciones privadas sin fines de lucro con fines sociales.
@@ -362,7 +419,7 @@ Fuente: Oficio Circular N°11 DIPRES 2025.
 - Proyectos de Construcción de Infraestructura Sanitaria: rige límite de costo art. 8° DS N°829/1998 Ministerio del Interior y sus modificaciones.
 
 **FRIL:**
-- Proyectos municipales con costo total inferior a 5.000 UTM (valorizadas al 1 enero del ejercicio) no requieren informe favorable MDSF; se debe ingresar al SNI la información necesaria (Oficio Ordinario N°2 de 26.01.2024).
+- Proyectos municipales con costo total inferior a 4.545 UTM (Glosa 12 Partida 31) no requieren informe favorable MDSF; se debe ingresar al SNI la información necesaria.
 - GORE puede aprobar por resolución instructivos o bases (metodología distribución entre comunas, procedimientos de ejecución, entrega de recursos, rendición y otros).
 - Una vez aprobados los montos por municipio, el compromiso debe informarse mediante oficio al municipio respectivo.
 - Guía Operativa FRIL SUBDERE: Resolución Exenta N°15.051 de 29-12-2023.
@@ -488,7 +545,46 @@ Fuente: Oficio Circular N°11 DIPRES 2025.
 
 ## Cierre Presupuestario
 
+```mermaid
+flowchart TD
+    subgraph CONTROL["Control Durante el Anio"]
+        A["Control interno<br/>(DAF, DIPIR, U. Control)"]
+        B["Seguimiento DIPRES<br/>(mensual)"]
+        C["Sistema KPIs y<br/>alertas tempranas"]
+    end
+
+    subgraph CIERRE["Cierre 31/12"]
+        D["Consolidar<br/>informacion (DAF)"]
+        E["Cerrar cuentas<br/>en SIGFE"]
+        F["Calcular deuda<br/>flotante"]
+        G["Regularizar<br/>deuda flotante"]
+        H["Informe cierre<br/>a DIPRES/CGR"]
+    end
+
+    subgraph EVALUACION["Evaluacion"]
+        I["Evaluar resultados<br/>fisicos y financieros"]
+        J["Informe evaluacion<br/>ex post (DIPIR)"]
+    end
+
+    A & B & C --> D --> E --> F --> G --> H
+    H --> I --> J
+
+    style H fill:#607D8B,color:#fff
+    style J fill:#9C27B0,color:#fff
+```
+
 ### Deuda Flotante
+
+```mermaid
+flowchart TD
+    A["Obligaciones devengadas<br/>al 31/12 pendientes<br/>de pago"] --> B{"SIC<br/>suficiente?"}
+    B -->|"Si"| C["Financiar con<br/>SIC"]
+    B -->|"No"| D["SIC + Mayor<br/>aporte fiscal"]
+    C & D --> E["Incorporar en<br/>presupuesto anio siguiente"]
+    E --> F["Primera prioridad<br/>de pago"]
+
+    style F fill:#FF9800,color:#fff
+```
 
 - Obligaciones devengadas en el año pero pendientes de pago al 31 de diciembre.
 - DAF calcula, registra y tramita incorporación en el año siguiente mediante creación del ítem 34.07.
@@ -501,6 +597,14 @@ Fuente: Oficio Circular N°11 DIPRES 2025.
 - DAF: ajustes contables, Informe de Ejecución Anual, nuevo SIC.
 - DIPIR: evalúa ejecución física de proyectos, identifica logros/retrasos/cuellos de botella; retroalimenta la siguiente formulación.
 - Cierre en SIGFE (DAF) y actualización estado final en BIP (DIPIR).
+
+## Sistemas de Información
+
+| Sistema | Responsable | Función Principal |
+|---------|-------------|-------------------|
+| SIGFE | DAF | Gestión financiera central: registro de todas las etapas del gasto (preafectación, compromiso, devengo, pago), control presupuestario en línea, generación de reportes para DIPRES y gestión de pagos |
+| BIP-SNI | DIPIR | Inversión pública: evaluación ex-ante y Recomendación Satisfactoria, seguimiento físico-financiero de iniciativas, planificación multianual (ARI). Interoperabilidad limitada con SIGFE; requiere conciliaciones manuales |
+| Transparencia | GORE (DAF/DIPIR) | Publicación de información: cartera de proyectos, acuerdos CORE, ejecución presupuestaria, transferencias FRPD y reportes trimestrales conforme Ley N°20.285 y glosas de Partida 31 |
 
 ## Herramientas de Soporte
 

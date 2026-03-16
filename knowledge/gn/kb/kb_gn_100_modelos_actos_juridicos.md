@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "staging/gn/kodeando/kb_gn_100_modelos_actos_juridicos_sts.md"
+    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/juridico/kb_gn_100_modelos_actos_juridicos_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [actos-juridicos, resoluciones, procedimiento-administrativo, gore-nuble, modelos-documentales]
 lang: es
 extensions:

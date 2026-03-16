@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:openclaw-integration"
+  urn: "urn:agengai:kb:openclaw-integration"
   provenance:
     created_by: kora/transmutador
     created_at: "2026-03-14"

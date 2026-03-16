@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "Guía integrada para la gestión de rendiciones de cuentas en el Gobierno Regional de Ñuble (GORE Ñuble)"
-version: "1.0.0"
-status: draft
-tags: [rendiciones, control-financiero, gore-nuble, sisrec, transferencias]
+    source: "Guía integrada para la gestión de rendiciones de cuentas en el GORE Ñuble + BPMN D08 Rendiciones + ssot-rendiciones v1.2.1 + goreNubleRenditionData.ttl + goreNubleReferenceData.ttl"
+version: "1.2.0"
+status: published
+tags: [rendiciones, control-financiero, gore-nuble, sisrec, transferencias, estados, escalation, sla]
 lang: es
 extensions:
   gn:
@@ -18,7 +18,7 @@ extensions:
 
 ## Resumen
 
-Guía integrada para la gestión de rendiciones de cuentas en el GORE Ñuble. Cubre marco normativo, actores y responsabilidades, procesos operativos (modalidad legado y SISREC), particularidades por tipología de fondos, control y fiscalización, responsabilidades, sanciones y procedimientos contables en SIGFE.
+Guía integrada para la gestión de rendiciones de cuentas en el GORE Ñuble. Cubre marco normativo, actores y responsabilidades, procesos operativos (modalidad legado y SISREC), estados canónicos y GORE_OS con mapeo ontológico, subfases de revisión, SLAs por etapa, sistema de escalation 3 niveles, rendición por tipología de fondos con tabla consolidada, control y fiscalización, responsabilidades, sanciones y procedimientos contables en SIGFE.
 
 ## Glosario
 
@@ -113,11 +113,67 @@ Guía integrada para la gestión de rendiciones de cuentas en el GORE Ñuble. Cu
 
 Tipos comunes: facturas y boletas electrónicas, contratos, liquidaciones de sueldo, comprobantes de cotizaciones, comprobantes de transferencia bancaria, actas de recepción.
 
+## Mapa general de procesos de rendición
+
+```mermaid
+flowchart LR
+    subgraph PROCESOS["Procesos de Rendición"]
+        P1["P1: Rendición Tradicional"]
+        P2["P2: Rendición vía SISREC"]
+        P3["P3: Rendición por Tipología de Fondos"]
+    end
+
+    subgraph SOPORTE["Soporte"]
+        S1["Marco Normativo"]
+        S2["Expediente y Documentación"]
+        S3["Control y Transparencia"]
+    end
+
+    P1 --> S1 & S2 & S3
+    P2 --> S1 & S2 & S3
+    P3 --> P1 & P2
+
+    style P2 fill:#4CAF50,color:#fff
+    style P1 fill:#FF9800,color:#fff
+```
+
+Criticidad: alta. Dueño funcional: UCR/DAF.
+
+**SLA:**
+- Operativo (suma de etapas): 18 días hábiles GORE (2+2+7+4+2+1) + 15 días EE presentación.
+- Meta interna GORE: 14 días hábiles para completar ciclo de revisión GORE (target aspiracional de implementación; el desglose por etapa suma 18 días).
+- Plazo máximo pronunciamiento sobre rendición: 3 meses desde finalización del convenio (Art. 23-26 Ley 21.796).
+
 ## Proceso operativo de rendición
 
 ### Flujo sin SISREC (modalidad legado)
 
 Aplicable a convenios antiguos no migrados a SISREC.
+
+```mermaid
+flowchart TD
+    subgraph EE["Entidad Ejecutora"]
+        A["Preparar rendición en papel/digital"]
+    end
+
+    subgraph GORE["GORE Ñuble"]
+        B["OP: Recepcionar (2 días)"]
+        C["UCR: Registrar y asignar (2 días)"]
+        D["RTF: Revisión técnico-financiera (7 días)"]
+        E{"¿OK?"}
+        F["Certificado aprobación"]
+        G["Observar"]
+        H["UCR: Control final (4 días)"]
+        I["Contabilizar SIGFE (2 días)"]
+        J["Archivar (1 día)"]
+    end
+
+    A -->|"15 días del mes sig."| B --> C --> D --> E
+    E -->|"OK"| F --> H --> I --> J
+    E -->|"Observa"| G --> A
+
+    style J fill:#4CAF50,color:#fff
+```
 
 | Paso | Responsable | Acción | Plazo |
 | :--- | :--- | :--- | :--- |
@@ -133,7 +189,65 @@ Aplicable a convenios antiguos no migrados a SISREC.
 
 Procedimiento obligatorio para nuevas transferencias Subtítulos 24 y 33.
 
+```mermaid
+flowchart LR
+    subgraph GORE["GORE (Otorgante)"]
+        G1["Crear programa"]
+        G2["Registrar transferencia"]
+        G3["Revisar rendición"]
+        G4["Aprobar/Observar"]
+        G5["Contabilizar"]
+    end
+
+    subgraph EE["Entidad Ejecutora"]
+        E1["Aceptar transferencia"]
+        E2["Crear informe"]
+        E3["Ingresar transacciones"]
+        E4["Ministro Fe certifica"]
+        E5["Firmar y enviar"]
+    end
+
+    G1 --> G2 --> E1 --> E2 --> E3 --> E4 --> E5 --> G3 --> G4 --> G5
+
+    style G5 fill:#4CAF50,color:#fff
+```
+
 **Flujo de la Entidad Otorgante (GORE):**
+
+```mermaid
+flowchart TD
+    subgraph RTF["RTF (Analista Otorgante)"]
+        A["Crear Programa en SISREC"]
+        B["Registrar y enviar transferencia"]
+        C["Recibir informe de rendición"]
+        D["Revisar transacciones"]
+        E{"¿Correcto?"}
+        F["Aprobar"]
+        G["Observar"]
+        H["Enviar a Jefe DAF"]
+    end
+
+    subgraph JEFE_DAF["Jefe DAF"]
+        I{"¿Conforme?"}
+        J["Firmar con FEA"]
+        K["Devolver (1 día)"]
+    end
+
+    subgraph UCR["UCR/DAF"]
+        L["Descargar informe aprobación"]
+        M["Contabilizar SIGFE (2 días)"]
+        N["Archivar (2 días)"]
+    end
+
+    A --> B --> C --> D --> E
+    E -->|"Sí"| F --> H
+    E -->|"No"| G --> H
+    H --> I
+    I -->|"Sí"| J --> L --> M --> N
+    I -->|"No"| K
+
+    style N fill:#4CAF50,color:#fff
+```
 
 | Paso | Responsable | Acciones | Plazo / Condición |
 | :--- | :--- | :--- | :--- |
@@ -144,6 +258,40 @@ Procedimiento obligatorio para nuevas transferencias Subtítulos 24 y 33.
 
 **Flujo de la Entidad Ejecutora:**
 
+```mermaid
+flowchart TD
+    subgraph ANALISTA["Analista Ejecutor"]
+        A["Recibir transferencia en SISREC"]
+        B["Aceptar transferencia"]
+        C["Crear informe rendición"]
+        D["Ingresar transacciones"]
+        E["Adjuntar respaldos digitalizados"]
+        F["Enviar a Ministro Fe"]
+    end
+
+    subgraph MF["Ministro de Fe"]
+        G["Revisar autenticidad"]
+        H{"¿Auténtico?"}
+        I["Certificar"]
+        J["Devolver"]
+    end
+
+    subgraph ENCARGADO["Encargado Ejecutor"]
+        K["Revisar informe"]
+        L{"¿Conforme?"}
+        M["Firmar FEA y enviar a GORE"]
+        N["Devolver"]
+    end
+
+    A --> B --> C --> D --> E --> F --> G --> H
+    H -->|"Sí"| I --> K --> L
+    H -->|"No"| J --> D
+    L -->|"Sí"| M
+    L -->|"No"| N --> D
+
+    style M fill:#4CAF50,color:#fff
+```
+
 | Paso | Responsable | Acciones | Plazo / Condición |
 | :--- | :--- | :--- | :--- |
 | 1 | Analista Ejecutor | Acepta transferencia en SISREC; crea informe de rendición (mensual, regularización o sin movimiento); ingresa transacciones y adjunta documentos digitalizados; envía a Ministro de Fe. | 15 días hábiles del mes siguiente |
@@ -151,7 +299,150 @@ Procedimiento obligatorio para nuevas transferencias Subtítulos 24 y 33.
 | 3 | Encargado Ejecutor | Revisa rendición. Si OK: firma Informe de Rendición con FEA y envía al GORE. Si observa: devuelve a Analista Ejecutor. | — |
 | 4 | Analista Ejecutor (si hay devolución del GORE) | Recibe rendición observada; crea informe de "Regularización"; corrige transacciones observadas y reenvía por el mismo flujo. | — |
 
+### Tipos de informe SISREC
+
+| Tipo | Uso |
+| :--- | :--- |
+| Mensual | Rendición regular con transacciones del período |
+| Regularización | Corrección de transacciones observadas por el GORE |
+| Sin Movimiento | Período sin gastos ejecutados |
+
+---
+
+## Estados de rendición — Modelo canónico y GORE_OS
+
+### Estados canónicos ontológicos (6)
+
+Fuente autoritativa: RenditionData.ttl (`gnub:RenditionState`, 6 instancias secuenciadas).
+
+| Seq | Estado | Descripción |
+|-----|--------|-------------|
+| 1 | Pendiente | No presentada por entidad ejecutora |
+| 2 | En Revisión | Recibida, en revisión por RTF/Analista Otorgante |
+| 3 | Observada | Devuelta para subsanación |
+| 4 | Aprobada Parcialmente | Aprobada con transacciones observadas pendientes de regularización |
+| 5 | Aprobada Totalmente | Aprobada en totalidad, firmada con FEA por Encargado Otorgante |
+| 6 | Contabilizada | Registrada en SIGFE, archivada por UCR/DAF |
+
+### Mapeo ontológico ↔ GORE_OS (8 estados)
+
+GORE_OS granulariza "En Revisión" en 3 subfases y agrega RECHAZADA. "Aprobada Parcialmente" (ontológico seq 4) se subsume bajo APROBADA sin distinción explícita en GORE_OS.
+
+| Estado GORE_OS | Mapeo ontológico | Nota |
+|----------------|-----------------|------|
+| PENDIENTE | Pendiente (seq 1) | Equivalente directo |
+| EN_REVISION_RTF | En Revisión (seq 2) — subfase RTF | Split: primera revisión técnico-financiera |
+| VISADA_RTF | — (estado intermedio GORE_OS) | RTF aprobó, pendiente derivación a UCR |
+| EN_REVISION_UCR | — (estado intermedio GORE_OS) | UCR contabiliza y realiza control final |
+| OBSERVADA | Observada (seq 3) | Equivalente directo |
+| APROBADA | Aprobada Totalmente (seq 5) | Subsume parcial + total |
+| RECHAZADA | — (de ReferenceData, no en RenditionData) | Estado GORE_OS sin equivalente ontológico canónico |
+| Archivada | Contabilizada (seq 6) | Vía campo `archived_at` |
+
+Aritmética: 6 ontológicos - 1 reemplazado (En Revisión) + 3 subfases + 1 nuevo (RECHAZADA) - 1 subsumido (Aprobada Parcial) = 8 estados GORE_OS.
+
+### Subfases de revisión GORE_OS
+
+El estado ontológico "En Revisión" (seq 2) se descompone en 3 fases operativas:
+
+```
+EN_REVISION_RTF → VISADA_RTF → EN_REVISION_UCR
+```
+
+| Subfase | Responsable | Acción | Salida |
+|---------|-------------|--------|--------|
+| EN_REVISION_RTF | Analista Otorgante (RTF) | Revisa transacciones, coherencia técnico-financiera, documentación de respaldo | Aprobación RTF o devolución (→ OBSERVADA) |
+| VISADA_RTF | Encargado Otorgante (Jefe DAF) | Revisa propuesta RTF, firma Informe de Aprobación con FEA | Visa o devuelve a RTF |
+| EN_REVISION_UCR | UCR/DAF | Control final, contabilización SIGFE, archivo | Rendición contabilizada (→ Archivada) |
+
+### SLAs canónicos por etapa
+
+Definidos en GORE_OS (no en ontología). Meta CGR: 14 días totales para ciclo de revisión GORE.
+
+| Etapa | Plazo | Responsable |
+|-------|-------|-------------|
+| Presentación rendición | 15 del mes siguiente | Entidad Ejecutora |
+| Revisión técnica RTF | 7 días hábiles | Analista Otorgante |
+| Devolución por observación | 1 día hábil | Jefe DAF |
+| Contabilización UCR | 2 días hábiles | UCR/DAF |
+| Resubsanación (OBSERVADA) | 15 días hábiles | Entidad Ejecutora |
+| Plazo máximo pronunciamiento | 3 meses desde finalización convenio | GORE (Art. 23-26 Ley 21.796) |
+
+Desglose operativo sin SISREC suma 18 días hábiles GORE (2+2+7+4+2+1). La meta de 14 días es aspiracional.
+
+### Sistema de escalation (3 niveles)
+
+Escalation automático basado en antigüedad respecto al SLA de cada etapa.
+
+| Nivel | Umbral | Acción |
+|-------|--------|--------|
+| 1 — Atención | 1× SLA (plazo cumplido) | Alerta automática al responsable directo |
+| 2 — Advertencia | 1,5× SLA | Escalamiento a jefatura de la unidad responsable |
+| 3 — Crítico | 2× SLA | Escalamiento a DAF y alerta a nivel directivo |
+
+Cálculo SLA-accurate: basado en `phase_entered_at` por cada `core.rendition_phase`. Seed: 8 fases en `core.rendition_phase`, 3 niveles en `core.rendition_escalation`.
+
+### Excepción SISREC para montos menores
+
+Rendiciones de convenios cuyo monto total sea ≤500 UTM bajo Subvención 8% pueden rendirse fuera de SISREC (modalidad papel). Aplica exclusivamente a Subvención 8%; todas las demás transferencias Subtítulos 24 y 33 requieren SISREC sin excepción (Res. Ex. 1858/2023 CGR).
+
+### Reconciliación ontológica — RenditionState vs AccountabilityState
+
+Dos clases coexisten en la ontología sin `owl:equivalentClass`:
+
+| Aspecto | RenditionState (RenditionData.ttl) | AccountabilityState (ReferenceData.ttl) |
+|---------|-----------------------------------|----------------------------------------|
+| Instancias | 6 estados secuenciados | 5 estados (Pending, InReview, Observed, Approved, Rejected) |
+| Granularidad | Distingue Aprobada Parcial vs Total | Solo "Approved" genérico; agrega "Rejected" |
+| Dominio | `Rendition` | `AccountabilityProcess` |
+| Superclase | `gist:Category` | `gist:Category` |
+| Canónico | **Sí** — mayor granularidad refleja realidad CGR | No — pendiente deprecar |
+
+Ambas clases comparten superclase `gist:Category` pero con dominios disjuntos (`Rendition` vs `AccountabilityProcess`) sin `owl:sameAs`. Pendiente: consolidar en ontología deprecando `AccountabilityState`.
+
+---
+
+## Rendición consolidada por fondo
+
+| Fondo | Plataforma | Requisito especial | Documentos clave |
+|-------|-----------|-------------------|-----------------|
+| FNDR S.31 (ejecución directa) | BIP + SIGFE | Estado de pago ITO | Certificado recepción provisoria/definitiva |
+| FNDR S.33 (transferencias) | BIP + SISREC | Convenio vigente | Informe avance + comprobantes |
+| FRIL | BIP + SISREC | Convenio transferencia municipal | Estado de pago municipal + informe ITO |
+| FRPD CTCI | SISREC | Acreditación hitos I+D+i | Informes técnicos ANID/CORFO |
+| Subvención 8% | SISREC (≤500 UTM: papel) | Pagaré notarial vigente | Rendición detallada por ítem + medios verificación |
+| Glosa 06 Directa | SISREC | Informe evaluación SES | Rendición mensual ejecución + tope 5% admin |
+| C33 Conservación | SISREC | Certificación estado actual ≤30% costo reposición | Informe técnico conservación |
+
+---
+
 ## Rendición por tipología de fondos
+
+```mermaid
+flowchart TD
+    subgraph FNDR["FNDR"]
+        F1["Subtítulo 31 (Ejecución GORE)"]
+        F2["Subtítulo 33 (Transferencias)"]
+    end
+
+    subgraph MECANISMOS["Mecanismos Específicos"]
+        M1["FRIL"]
+        M2["FRPD"]
+        M3["8% FNDR"]
+        M4["Programas Subt. 24"]
+        M5["Circular 33"]
+    end
+
+    F1 --> R1["Imputación BIP/SIGFE + Actualizar avance BIP"]
+    F2 --> R2["SISREC obligatorio + RTF + UCR revisan"]
+    M1 --> R3["SISREC + Informe ITO"]
+    M2 --> R4["SISREC + Seguimiento división patrocinante"]
+    M3 --> R5["SISREC + Medios verificación"]
+    M4 --> R6["Tope 5% gastos admin"]
+    M5 --> R7["BIP + RATE + Conservación"]
+
+    style R2 fill:#4CAF50,color:#fff
+```
 
 ### FNDR — Iniciativas de Inversión (Subtítulo 31, ejecución directa GORE)
 
@@ -293,3 +584,12 @@ Advertencia: Para transferencias a otros Servicios Públicos (no Municipalidades
 | Fase 3 — Reintegro | Devengo del cobro: Debe 11508 Cuentas por Cobrar / Haber 12106. Recepción: Debe 11102/11103 Banco / Haber 11508. |
 
 Los números de cuenta corresponden al Plan de Cuentas del Sector Público.
+
+## Sistemas de información
+
+| Sistema | Función en rendiciones |
+| :--- | :--- |
+| SISREC | Rendición electrónica de cuentas (CGR); plataforma obligatoria para Subtítulos 24 y 33 |
+| SIGFE | Contabilización de transferencias, devengos, pagos y reintegros |
+| BIP-SNI | Seguimiento de avance físico-financiero de iniciativas de inversión |
+| FIRMAGOB | Firma Electrónica Avanzada para resoluciones e informes oficiales |

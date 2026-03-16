@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "KODA-TRANSFORMER"
     created_at: "2026-03-15"
-    source: "complement/meyer.md — Principle-based Organizational Structure"
+    source: "source/gn/gorenuble_koda/core/gestion/kb_gn_meyer_org_structure_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [estructura-organizacional, principios-organizacionales, diseño-organizacional, especialización, empoderamiento, bloques-construccion, teamwork]
 lang: en
 extensions:

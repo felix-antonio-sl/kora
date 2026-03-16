@@ -34,7 +34,8 @@
     "urn:gn:kb:ris-energia-comunicaciones",
     "urn:gn:kb:ris-salud",
     "urn:gn:kb:ris-cultura-deporte-turismo",
-    "urn:gn:kb:ley-presupuestos-2026-glosas-gore"
+    "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
+    "urn:gn:kb:indicadores-nuble"
   ],
   "sandbox": {
     "mode": "strict"

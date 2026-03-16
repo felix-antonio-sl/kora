@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-13"
     source: "source/pro/hodom/normativa-hodom/norma-1181901-reglamento-hodom.md"
 version: "1.0.1"
-status: draft
+status: published
 tags: [hodom, reglamento, normativa, hospitalización-domiciliaria, minsal]
 lang: es
 extensions:

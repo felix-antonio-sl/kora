@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "KODA-TRANSFORMER"
     created_at: "2026-03-15"
-    source: "knowledge/domains/gore_nuble/kb_013_vision_gn.md — Visión de Desarrollo GORE Ñuble"
+    source: "source/gn/gorenuble_koda/domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [gore-nuble, vision-estrategica, propuesta-programatica, nuble-inteligente, ejes-estrategicos]
 lang: es
 extensions:

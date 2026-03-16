@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "staging/gn/kb_gn_900_gore_ideal.md — Ensayo analítico sobre anatomía, límites y potencial del Gobierno Regional"
+    source: "source/gn/gorenuble_koda/domains/gn/01_fundamentos/intro/kb_gn_900_gore_ideal_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [gore-nuble, gore-ideal, descentralizacion, competencias, gore-4-0]
 lang: es
 extensions:

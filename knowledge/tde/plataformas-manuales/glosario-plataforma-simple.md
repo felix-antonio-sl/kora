@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:glosario-plataforma-simple:1.0.0"
+  urn: "urn:tde:kb:glosario-plataforma-simple"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales]
 lang: es
 ---

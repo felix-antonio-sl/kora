@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0"
+  urn: "urn:tde:kb:manual-coordinadora-transformacion-digital"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, casilla-única, clave-única, coordinadores-de-transformación-digital, datos-abiertos, plataforma, docdigital, pisee, firma, simple, habilitacion]
 lang: es
 ---

@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-actos-admin"
+  urn: "urn:gn:kb:ssot-actos-admin"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleApprovalData.ttl, goreNubleDipirOntology.ttl, goreNubleDipirRules.ttl, omega_gore_nuble_mermaid.md v2.6.0"
 version: "1.1.1"
-status: draft
+status: published
 tags: [ssot, actos-administrativos, aprobacion, visacion, toma-razon, decretos]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Actos administrativos

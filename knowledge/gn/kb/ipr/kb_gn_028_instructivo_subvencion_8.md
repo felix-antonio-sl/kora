@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_028_instructivo_subvencion_8_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [subvencion-8pct, concurso-vinculacion, fndr, gore-nuble, cultura, deporte, social, seguridad-ciudadana, municipalidades]
 lang: es
 extensions:

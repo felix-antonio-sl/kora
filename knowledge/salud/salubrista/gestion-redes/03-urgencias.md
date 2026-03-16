@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-03"
     source: "Síntesis multi-fuente: OPS, IHI, NICE, AHRQ, MINSAL, AHA, ACC, ESC, Cochrane"
 version: "2.0.0"
-status: draft
+status: published
 tags: [gestion-redes, urgencias, emergencias, EMS, SUH, protocolos, triaje, desastres, MCI]
 lang: es
 ---

@@ -19,7 +19,8 @@
     "urn:gn:kb:flujos-aprobacion-documentos",
     "urn:gn:kb:vision-desarrollo-nuble",
     "urn:gn:kb:guia-comunicaciones",
-    "urn:gn:kb:comunicaciones-oc"
+    "urn:gn:kb:comunicaciones-oc",
+    "urn:gn:kb:indicadores-nuble"
   ],
   "sandbox": {
     "mode": "strict"

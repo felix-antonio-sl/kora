@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-03"
     source: "Síntesis multi-fuente: OPS, OMS mhGAP, NICE, MINSAL, Ley 21.331"
 version: "2.0.0"
-status: draft
+status: published
 tags: [gestion-redes, salud-mental, adicciones, crisis, suicidio, TUS, derechos, PROMs]
 lang: es
 ---

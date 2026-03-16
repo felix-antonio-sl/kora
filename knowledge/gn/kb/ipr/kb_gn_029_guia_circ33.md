@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_029_guia_circ33_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [circular-33, fndr, anf, conservacion-infraestructura, gore-nuble, evaluacion-tecnica, rate, bip]
 lang: es
 extensions:

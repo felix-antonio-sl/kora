@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "KODA-TRANSFORMER"
     created_at: "2026-03-15"
-    source: "staging/gn/kodeando/manual_induccion_gore_ñuble_2024.md"
+    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/gestion/kb_gn_017_manual_induccion_gore_nuble_2025_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [induccion, gestion-personas, gore-nuble, funcionarios, normativa]
 lang: es
 extensions:

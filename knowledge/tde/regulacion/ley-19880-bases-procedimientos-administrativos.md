@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:regulacion:ley-19880-bases-procedimientos-administrativos:1.0.0"
+  urn: "urn:tde:kb:ley-19880-bases-procedimientos-administrativos"
   provenance: "https://wikiguias.digital.gob.cl/Leyes/Ley19880"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, regulacion, ley, procedimiento-administrativo, actos-administrativos, administracion-publica]
 lang: es
 ---

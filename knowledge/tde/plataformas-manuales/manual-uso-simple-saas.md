@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0"
+  urn: "urn:tde:kb:manual-uso-simple-saas"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/Simple_SaaS"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, cómo-usar, manuales, simple, saas]
 lang: es
 ---

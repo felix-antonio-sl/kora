@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:guia-calidad-web:1.0.0"
+  urn: "urn:tde:kb:guia-calidad-web"
   provenance: "https://wikiguias.digital.gob.cl/guias/Guia_Web"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, calidad, experiencia-usuaria, servicios-digitales]
 lang: es
 ---

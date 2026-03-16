@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:guia-tecnica-evaltic-inversiones-gobierno-digital:1.0.0"
+  urn: "urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital"
   provenance: "https://wikiguias.digital.gob.cl/guias/guias/guia_evaltic"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, evaltic, guia-tecnica, inversiones-tic, gobierno-digital]
 lang: es
 ---

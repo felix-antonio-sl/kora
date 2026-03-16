@@ -10,7 +10,17 @@
     "urn:gn:kb:manual-induccion-gore-nuble-2026",
     "urn:gn:kb:manual-operacional-dgi",
     "urn:gn:kb:intro-gores-nuble",
-    "urn:gn:kb:ley-presupuestos-2026-glosas-gore"
+    "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
+    "urn:gn:kb:manual-compras-contrataciones",
+    "urn:gn:kb:manual-contabilidad",
+    "urn:gn:kb:manual-tesoreria",
+    "urn:gn:kb:manual-gestion-personas",
+    "urn:gn:kb:manual-inventarios-activo-fijo",
+    "urn:gn:kb:manual-flota-servicios-generales",
+    "urn:gn:kb:organigrama",
+    "urn:gn:kb:gestion-rendiciones",
+    "urn:gn:kb:flujos-aprobacion-documentos",
+    "urn:gn:kb:modelos-actos-juridicos"
   ],
   "sandbox": {
     "mode": "strict"

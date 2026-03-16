@@ -27,3 +27,13 @@ _manifest:
 | DGI, operaciones, control gestion, reportes | urn:gn:kb:manual-operacional-dgi |
 | Intro GOREs Nuble | urn:gn:kb:intro-gores-nuble |
 | Glosas GORE, Ley Presupuestos | urn:gn:kb:ley-presupuestos-2026-glosas-gore |
+| Compras, licitaciones, ChileCompra, convenio marco | urn:gn:kb:manual-compras-contrataciones |
+| Contabilidad gubernamental, SIGFE, NICSP, devengos | urn:gn:kb:manual-contabilidad |
+| Tesoreria, pagos, garantias, conciliacion bancaria | urn:gn:kb:manual-tesoreria |
+| RRHH, remuneraciones, ciclo vida funcionario | urn:gn:kb:manual-gestion-personas |
+| Inventarios, activo fijo, bodegas, patrimonio | urn:gn:kb:manual-inventarios-activo-fijo |
+| Flota vehicular, logistica, mantencion | urn:gn:kb:manual-flota-servicios-generales |
+| Organigrama, estructura GORE | urn:gn:kb:organigrama |
+| Rendiciones, SISREC, control CGR | urn:gn:kb:gestion-rendiciones |
+| Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
+| Modelos actos juridicos, plantillas | urn:gn:kb:modelos-actos-juridicos |

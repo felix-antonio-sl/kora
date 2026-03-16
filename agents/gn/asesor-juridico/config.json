@@ -19,7 +19,8 @@
     "urn:gn:kb:ley-presupuestos-2026-partida-31",
     "urn:gn:kb:estrategia-gestion",
     "urn:gn:kb:cuentas-publicas-2021-2024",
-    "urn:gn:kb:ley-presupuestos-2026-glosas-gore"
+    "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
+    "urn:gn:kb:bpmn-actos-administrativos"
   ],
   "sandbox": {
     "mode": "strict"

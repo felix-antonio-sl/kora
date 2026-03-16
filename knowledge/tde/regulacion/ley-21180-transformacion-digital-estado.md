@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0"
+  urn: "urn:tde:kb:ley-21180-transformacion-digital-estado"
   provenance: "https://wikiguias.digital.gob.cl/Leyes/Ley21180"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, regulacion, ley, transformacion-digital, documentos-electronicos, procedimiento-administrativo-electronico, gestion-documental-electronica]
 lang: es
 ---

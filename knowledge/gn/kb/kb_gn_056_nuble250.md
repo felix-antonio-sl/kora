@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-15"
-    source: "staging/gn/kodeando/kb_gn_056_nuble250_sts.md"
+    source: "source/gn/gorenuble_koda/domains/gn/02_estrategia/estrategia/kb_gn_056_nuble250_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [nuble-250, agenda-estrategica, desarrollo-regional, gobernanza, proyectos-emblematicos]
 lang: es
 extensions:

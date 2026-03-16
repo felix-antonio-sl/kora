@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "Codex"
     created_at: "2026-03-10"
-    source: "/Users/felixsanhueza/Developer/kora/source/pro/hodom/situacion-hodom-chile-2026.md"
+    source: "source/pro/hodom/situacion-hodom-chile-2026.md"
 version: "1.0.1"
-status: draft
+status: published
 tags: [hodom, hospitalizacion-domiciliaria, chile, salud-publica, analisis-situacional]
 lang: es
 extensions:

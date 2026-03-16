@@ -36,8 +36,8 @@ _manifest:
 | Formal layer auditoria, invariants, formal/06 | urn:kora:kb:cat-audit-invariants |
 | Formal layer preservacion, compositional preservation, formal/07 | urn:kora:kb:cat-behavioral-preservation |
 | Formal layer puente FXSL, formal/08 | urn:kora:kb:cat-fxsl-bridge |
-| Anthropic skills, Claude Code, skill format, triggers, MCP | urn:kora:kb:skills-anthropic |
-| OpenClaw, workspace, config, sub-agents, gating, channels | urn:kora:kb:openclaw-integration |
+| Anthropic skills, Claude Code, skill format, triggers, MCP | urn:agengai:kb:skills-anthropic |
+| OpenClaw, workspace, config, sub-agents, gating, channels | urn:agengai:kb:openclaw-integration |
 
 ## workspace_read
 

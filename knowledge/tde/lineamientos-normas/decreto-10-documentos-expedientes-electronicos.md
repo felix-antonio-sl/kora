@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-normas:decreto-10-documentos-expedientes-electronicos:1.0.0"
+  urn: "urn:tde:kb:decreto-10-documentos-expedientes-electronicos"
   provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto10"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-normas, decreto, expediente-electronico, norma-tecnica, comunicacion-oficial, gestion-documental]
 lang: es
 ---

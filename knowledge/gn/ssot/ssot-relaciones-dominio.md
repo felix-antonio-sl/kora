@@ -1,18 +1,18 @@
 ---
 _manifest:
-  urn: "urn:gnub:kb:ssot-relaciones-dominio"
+  urn: "urn:gn:kb:ssot-relaciones-dominio"
   provenance:
     created_by: "FS"
     created_at: "2026-03-10"
     source: "goreNubleOntology.ttl (TBox), goreNubleDipirOntology.ttl, GORE_OS/CLAUDE.md"
 version: "2.0.0"
-status: draft
+status: published
 tags: [ssot, relaciones, dominio, ipr, convenio, resolucion, morfismos, categorico]
 lang: es
 extensions:
-  gnub:
+  gn:
     family: ssot
-    bundle: "urn:gnub:kb:ssot-master"
+    bundle: "urn:gn:kb:ssot-master"
 ---
 
 # SSOT — Relaciones de dominio

@@ -448,8 +448,8 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("urn:legal:kb:legislacion-ia-chile", tools)
         self.assertNotIn("urn:gov:kb:intro-tde", config)
         self.assertNotIn("urn:legal:kb:ley-21658-segdig", config)
-        self.assertIn("urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0", tools)
-        self.assertIn("urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0", config)
+        self.assertIn("urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025", tools)
+        self.assertIn("urn:tde:kb:recomendaciones-tecnicas-cloud-publica", config)
         self.assertNotIn("urn:orko:kb:orko-metodologia", config)
 
     def test_digitrans_bootstrap_matches_current_agent_spec(self):
@@ -483,8 +483,8 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_digitrans_tools_route_docdigital_and_pisee_explicitly(self):
         tools = (ROOT / "agents" / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
-        self.assertIn("| DocDigital, Coordinacion TDE | urn:kora:kb:tde:plataformas-manuales:manual-coordinadora-transformacion-digital:1.0.0 |", tools)
-        self.assertIn("| Dec.12, Interoperabilidad | urn:kora:kb:tde:lineamientos-normas:decreto-12-interoperabilidad:1.0.0 |", tools)
+        self.assertIn("| DocDigital, Coordinacion TDE | urn:tde:kb:manual-coordinadora-transformacion-digital |", tools)
+        self.assertIn("| Dec.12, Interoperabilidad | urn:tde:kb:decreto-12-interoperabilidad |", tools)
 
     def test_pensador_generador_normalizes_control_targets_and_soul(self):
         agents = (ROOT / "agents" / "fxsl" / "pensador-generador" / "AGENTS.md").read_text(encoding="utf-8")

@@ -10,13 +10,16 @@
     "urn:gn:kb:flujos-aprobacion-documentos",
     "urn:gn:kb:gestion-prpto",
     "urn:gn:kb:erd-nuble-2024-2030",
-    "urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0",
-    "urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0",
+    "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025",
+    "urn:tde:kb:ley-21180-transformacion-digital-estado",
     "urn:gn:kb:manual-operacional-dgi",
     "urn:gn:kb:plan-potenciamiento-dgi",
     "urn:gn:kb:meyer-estructura-organizacional",
     "urn:gn:kb:lean6-gestion-core",
-    "urn:gn:kb:modernizacion-estado-waissbluth"
+    "urn:gn:kb:modernizacion-estado-waissbluth",
+    "urn:gn:kb:bpmn-actos-administrativos",
+    "urn:gn:kb:bpmn-cies-sitia",
+    "urn:gn:kb:bpmn-geoespacial-ide"
   ],
   "sandbox": {
     "mode": "strict"

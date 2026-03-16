@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_011_selector_ipr.md"
 version: "1.0.0"
-status: draft
+status: published
 tags: [selector, financiamiento, ipr, fndr, fril, frpd, gore-nuble, vias-financiamiento, decision]
 lang: es
 extensions:

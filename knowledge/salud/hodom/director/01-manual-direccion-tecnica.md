@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "Codex"
     created_at: "2026-03-10"
-    source: "/Users/felixsanhueza/Developer/kora/source/pro/hodom/manual-director-tecnico-hodom.md"
+    source: "source/pro/hodom/manual-director-tecnico-hodom.md"
 version: "1.0.1"
-status: draft
+status: published
 tags: [hodom, hospitalizacion-domiciliaria, direccion-tecnica, regulacion, gestion-clinica]
 lang: es
 extensions:

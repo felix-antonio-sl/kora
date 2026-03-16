@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "felixsanhueza"
     created_at: "2026-03-15"
-    source: "complement/lean6.md"
+    source: "source/gn/gorenuble_koda/core/gestion/kb_gn_lean6_core_koda.yml"
 version: "1.0.0"
-status: draft
+status: published
 tags: [lean-six-sigma, mejora-continua, optimizacion-procesos, manufactura, calidad, dmaic, kanban, value-stream]
 lang: en
 extensions:

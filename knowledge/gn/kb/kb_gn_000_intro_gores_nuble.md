@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-15"
     source: "kb_gn_000_inicio_intro_gores_nuble_koda.yml — Guía técnico-operativa integral GORE Ñuble"
 version: "1.0.0"
-status: draft
+status: published
 tags: [gore-nuble, gobierno-regional, descentralizacion, marco-legal, region-nuble]
 lang: es
 extensions:

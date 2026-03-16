@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:lineamientos-guias:recomendaciones-tecnicas-cloud-publica:1.0.0"
+  urn: "urn:tde:kb:recomendaciones-tecnicas-cloud-publica"
   provenance: "https://wikiguias.digital.gob.cl/guias/guias/recomendaciones_cloud"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, lineamientos-guias, guia-tecnica, cloud]
 lang: es
 ---

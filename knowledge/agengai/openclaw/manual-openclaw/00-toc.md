@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:00-toc
+  urn: urn:agengai:kb:00-toc
   provenance:
     created_by: FS
     created_at: '2026-02-24'

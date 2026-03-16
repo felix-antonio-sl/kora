@@ -45,7 +45,17 @@
     "urn:gn:kb:ris-salud",
     "urn:gn:kb:ris-cultura-deporte-turismo",
     "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
-    "urn:gn:kb:modernizacion-estado-waissbluth"
+    "urn:gn:kb:modernizacion-estado-waissbluth",
+    "urn:gn:kb:manual-compras-contrataciones",
+    "urn:gn:kb:manual-contabilidad",
+    "urn:gn:kb:manual-tesoreria",
+    "urn:gn:kb:manual-gestion-personas",
+    "urn:gn:kb:manual-inventarios-activo-fijo",
+    "urn:gn:kb:manual-flota-servicios-generales",
+    "urn:gn:kb:bpmn-actos-administrativos",
+    "urn:gn:kb:bpmn-cies-sitia",
+    "urn:gn:kb:bpmn-geoespacial-ide",
+    "urn:gn:kb:indicadores-nuble"
   ],
   "sandbox": {
     "mode": "strict"

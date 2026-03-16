@@ -23,8 +23,8 @@ _manifest:
 | Estructura GORE Nuble, organigrama, divisiones | urn:gn:kb:intro-gores-nuble |
 | Flujos aprobacion, visado, resoluciones | urn:gn:kb:flujos-aprobacion-documentos |
 | ERD, ejes estrategicos, vision 2030 | urn:gn:kb:erd-nuble-2024-2030 |
-| TDE, Ley 21.180, modernizacion | urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0 |
-| Introduccion TDE | urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0 |
+| TDE, Ley 21.180, modernizacion | urn:tde:kb:ley-21180-transformacion-digital-estado |
+| Introduccion TDE | urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025 |
 | Control de gestion, indicadores, dashboards, alertas | urn:gn:kb:manual-operacional-dgi |
 | Procesos, BPMN, modelado, automatizacion | urn:gn:kb:manual-operacional-dgi |
 | DMAIC, Lean, Six Sigma, mejora continua | urn:gn:kb:lean6-gestion-core |
@@ -33,3 +33,6 @@ _manifest:
 | Presupuesto, gestion financiera | urn:gn:kb:gestion-prpto |
 | Estructura Estado Chile | urn:gn:kb:estructura-estado-chile |
 | Modernizacion Estado, Waissbluth | urn:gn:kb:modernizacion-estado-waissbluth |
+| BPMN actos administrativos, tramitacion | urn:gn:kb:bpmn-actos-administrativos |
+| CIES, SITIA, seguridad publica, videovigilancia | urn:gn:kb:bpmn-cies-sitia |
+| Geoespacial, IDE, Geonodo, SIG | urn:gn:kb:bpmn-geoespacial-ide |

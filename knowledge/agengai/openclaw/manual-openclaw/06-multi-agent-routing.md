@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:kb:06-multi-agent-routing
+  urn: urn:agengai:kb:06-multi-agent-routing
   provenance:
     created_by: FS
     created_at: '2026-02-24'

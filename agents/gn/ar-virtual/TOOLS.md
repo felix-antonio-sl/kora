@@ -32,7 +32,8 @@ _manifest:
 | Cuentas publicas 2021-2024 | urn:gn:kb:cuentas-publicas-2021-2024 |
 | ERD, ejes estrategicos, vision 2030 | urn:gn:kb:erd-nuble-2024-2030 |
 | Nuble 250, proyectos emblematicos | urn:gn:kb:nuble-250 |
-| TDE, introduccion | urn:kora:kb:tde:lineamientos-guias:guia-metodologica-sistema-transformacion-digital-2025:1.0.0 |
-| Ley 21.180, TDE, modernizacion | urn:kora:kb:tde:regulacion:ley-21180-transformacion-digital-estado:1.0.0 |
-| Clave Unica, integracion | urn:kora:kb:tde:plataformas-manuales:manual-integracion-claveunica:1.0.0 |
-| SIMPLE SaaS, tramites digitales | urn:kora:kb:tde:plataformas-manuales:manual-uso-simple-saas:1.0.0 |
+| TDE, introduccion | urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025 |
+| Ley 21.180, TDE, modernizacion | urn:tde:kb:ley-21180-transformacion-digital-estado |
+| Clave Unica, integracion | urn:tde:kb:manual-integracion-claveunica |
+| SIMPLE SaaS, tramites digitales | urn:tde:kb:manual-uso-simple-saas |
+| Indicadores regionales, datos comunales | urn:gn:kb:indicadores-nuble |

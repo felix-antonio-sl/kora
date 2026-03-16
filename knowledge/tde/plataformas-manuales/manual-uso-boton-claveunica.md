@@ -1,9 +1,9 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:tde:plataformas-manuales:manual-uso-boton-claveunica:1.0.0"
+  urn: "urn:tde:kb:manual-uso-boton-claveunica"
   provenance: "https://wikiguias.digital.gob.cl/Manuales/Bot%C3%B3nCU"
 version: 1.0.0
-status: draft
+status: published
 tags: [tde, plataformas-manuales, clave-única, cómo-usar, manuales, integración]
 lang: es
 ---
