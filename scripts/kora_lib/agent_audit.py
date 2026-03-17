@@ -125,7 +125,10 @@ def iter_cohort_workspaces():
 
 
 def rel_path(path: Path) -> str:
-    return str(path.relative_to(KORA_ROOT))
+    try:
+        return str(path.relative_to(KORA_ROOT))
+    except ValueError:
+        return str(path)
 
 
 def line_numbers_matching(text: str, pattern: re.Pattern[str]):
@@ -145,7 +148,7 @@ def make_finding(workspace, rule_id, path, line, snippet, fix, closure_type=None
         "severity": rule["severity"],
         "spec_rule": rule["spec_rule"],
         "evidence": {
-            "path": str(path),
+            "path": rel_path(path),
             "line": line,
             "snippet": snippet,
         },
@@ -530,7 +533,7 @@ def build_agent_audit_payload():
 
     return {
         "generated_at": date.today().isoformat(),
-        "baseline_specs": [str(KORA_ROOT / rel) for rel in BASELINE_SPECS],
+        "baseline_specs": list(BASELINE_SPECS),
         "methodology": {
             "cohort_order": ["meta-kora", "dev", "ops", "domains"],
             "rules": [

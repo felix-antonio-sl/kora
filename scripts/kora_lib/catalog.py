@@ -53,9 +53,9 @@ def cmd_index():
     extensions = {".yaml", ".yml", ".md", ".json"}
 
     for root, dirs, files in os.walk(KORA_ROOT):
-        dirs[:] = [directory for directory in dirs if directory not in IGNORED_DIRS]
+        dirs[:] = sorted(directory for directory in dirs if directory not in IGNORED_DIRS)
 
-        for file_name in files:
+        for file_name in sorted(files):
             file_path = KORA_ROOT / os.path.relpath(os.path.join(root, file_name), KORA_ROOT)
             if file_name in IGNORED_FILES and file_path.parent == KORA_ROOT:
                 continue
@@ -101,6 +101,9 @@ def cmd_index():
                     catalog["Catalog"]["Other"].append(entry)
 
                 count += 1
+
+    for category in catalog["Catalog"]:
+        catalog["Catalog"][category].sort(key=lambda e: e.get("urn", ""))
 
     CATALOG_PATH.parent.mkdir(exist_ok=True)
     with open(CATALOG_PATH, "w", encoding="utf-8") as handle:

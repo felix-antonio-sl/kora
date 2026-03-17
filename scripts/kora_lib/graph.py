@@ -22,8 +22,8 @@ class GraphEdge:
 
 def iter_repository_files():
     for root, dirs, files in os.walk(KORA_ROOT):
-        dirs[:] = [directory for directory in dirs if directory not in IGNORED_DIRS]
-        for file_name in files:
+        dirs[:] = sorted(directory for directory in dirs if directory not in IGNORED_DIRS)
+        for file_name in sorted(files):
             file_path = os.path.join(root, file_name)
             path = KORA_ROOT / os.path.relpath(file_path, KORA_ROOT)
             if file_name in IGNORED_FILES and path.parent == KORA_ROOT:
