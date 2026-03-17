@@ -255,13 +255,6 @@ MISSING_SKILL_SPECS = {
             "ruta_normativa",
         ),
     },
-    "AGENTS/fxsl/pensador-generador": {
-        "CM-RAZONAMIENTO-CLINICO": (
-            "Aplica razonamiento clinico estructurado cuando el problema cae en dominio medico.",
-            "problema_clinico",
-            "analisis_clinico",
-        ),
-    },
     "AGENTS/fxsl/ingeniero-sistemas-composicional": {
         "CM-CONTEXT-ANALYZER": (
             "Analiza escala, perspectiva, rol y fase del sistema antes de modelar.",

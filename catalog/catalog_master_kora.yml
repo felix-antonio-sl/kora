@@ -1198,10 +1198,6 @@ Catalog:
     title: CM-PRODUCCION.md
     file: AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md
     status: published
-  - urn: urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0
-    title: CM-RAZONAMIENTO-CLINICO
-    file: AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md
-    status: published
   - urn: urn:gn:skill:asesor-juridico-clasificador-acto:1.0.0
     title: CM-CLASIFICADOR-ACTO.md
     file: AGENTS/gn/asesor-juridico/skills/CM-CLASIFICADOR-ACTO.md

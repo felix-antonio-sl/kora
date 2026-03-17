@@ -1,13 +1,13 @@
 {
   "meta": {
-    "scanned_files": 1405,
-    "node_count": 875,
-    "edge_count": 4191
+    "scanned_files": 1416,
+    "node_count": 874,
+    "edge_count": 4188
   },
   "node_kind_counts": {
     "artifact": 206,
     "knowledge": 241,
-    "skill": 253,
+    "skill": 252,
     "spec": 7,
     "tool": 127,
     "workspace": 41
@@ -16,12 +16,12 @@
     "AllowsKB": 444,
     "AllowsTool": 207,
     "ContainsArtifact": 205,
-    "ContainsSkill": 253,
+    "ContainsSkill": 252,
     "DeclaresTool": 208,
     "InvokesSkill": 234,
     "RoutesToAgent": 63,
     "TracesTo": 45,
-    "XRef": 2532
+    "XRef": 2530
   },
   "nodes": [
     {
@@ -4878,15 +4878,6 @@
       "urn": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "title": "CM-PRODUCCION.md",
       "path": "AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
-      "title": "CM-RAZONAMIENTO-CLINICO",
-      "path": "AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md",
       "namespace": "fxsl"
     },
     {
@@ -12705,11 +12696,6 @@
     },
     {
       "kind": "ContainsSkill",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
       "source": "workspace:gn/asesor-juridico",
       "target": "urn:gn:skill:asesor-juridico-clasificador-acto:1.0.0"
     },
@@ -18448,13 +18434,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -24743,13 +24722,6 @@
       "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md"
     },
     {
       "kind": "XRef",
