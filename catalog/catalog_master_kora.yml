@@ -1198,10 +1198,6 @@ Catalog:
     title: CM-PRODUCCION.md
     file: AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md
     status: published
-  - urn: urn:fxsl:skill:pensador-generador-razonamiento-clinico:1.0.0
-    title: CM-RAZONAMIENTO-CLINICO
-    file: AGENTS/fxsl/pensador-generador/skills/CM-RAZONAMIENTO-CLINICO.md
-    status: published
   - urn: urn:gn:skill:asesor-juridico-clasificador-acto:1.0.0
     title: CM-CLASIFICADOR-ACTO.md
     file: AGENTS/gn/asesor-juridico/skills/CM-CLASIFICADOR-ACTO.md
@@ -2591,15 +2587,15 @@ Catalog:
     file: KNOWLEDGE/salud/dbt/dbt-oxford-adaptations-a.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-adaptations-b
-    title: The Oxford Handbook of DBT -- Adaptations (Part B)
+    title: The Oxford Handbook of DBT — Adaptations (Part B)
     file: KNOWLEDGE/salud/dbt/dbt-oxford-adaptations-b.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-clinical-a
-    title: The Oxford Handbook of DBT --- Clinical Applications (Part A)
+    title: The Oxford Handbook of DBT — Clinical Applications (Part A)
     file: KNOWLEDGE/salud/dbt/dbt-oxford-clinical-a.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-clinical-b
-    title: The Oxford Handbook of DBT -- Clinical Applications (Part B)
+    title: The Oxford Handbook of DBT — Clinical Applications (Part B)
     file: KNOWLEDGE/salud/dbt/dbt-oxford-clinical-b.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-evidence
@@ -2607,7 +2603,7 @@ Catalog:
     file: KNOWLEDGE/salud/dbt/dbt-oxford-evidence.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-implementation
-    title: The Oxford Handbook of DBT -- Implementation
+    title: The Oxford Handbook of DBT — Implementation
     file: KNOWLEDGE/salud/dbt/dbt-oxford-implementation.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-introduction
@@ -2623,7 +2619,7 @@ Catalog:
     file: KNOWLEDGE/salud/dbt/dbt-oxford-structure.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-theoretical
-    title: The Oxford Handbook of DBT -- Theoretical Underpinnings
+    title: The Oxford Handbook of DBT — Theoretical Underpinnings
     file: KNOWLEDGE/salud/dbt/dbt-oxford-theoretical.md
     status: draft
   - urn: urn:salud:kb:dbt-oxford-training
