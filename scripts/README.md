@@ -24,6 +24,29 @@ Estos scripts pueden seguir siendo utiles, pero no deben confundirse con la CLI 
 - Su mecanismo de sincronizacion soportado es `scripts/sync_openclaw_docs_mirror.py`.
 - Esta excepcion no convierte el resto de utilitarios de `scripts/` en superficie core.
 
+### Automatizacion del mirror
+
+Desde 2026-03-17, el mirror se sincroniza automaticamente tras cada `git pull` en el repo upstream gracias a un hook `post-merge` instalado en `_workspaces/openclaw/.git/hooks/post-merge`.
+
+- **Trigger:** `git pull` exitoso en `_workspaces/openclaw/`
+- **Accion:** ejecuta `python3 scripts/sync_openclaw_docs_mirror.py --source-repo $HOME/Developer/_workspaces/openclaw`
+- **Limitacion:** el hook vive en `.git/hooks/` (no versionado por git). Si se reclona el repo upstream, debe reinstalarse manualmente:
+
+```bash
+cat > ~/Developer/_workspaces/openclaw/.git/hooks/post-merge << 'HOOK'
+#!/usr/bin/env bash
+KORA_ROOT="$HOME/Developer/kora"
+SYNC_SCRIPT="$KORA_ROOT/scripts/sync_openclaw_docs_mirror.py"
+SOURCE_REPO="$HOME/Developer/_workspaces/openclaw"
+if [ -f "$SYNC_SCRIPT" ]; then
+    echo "[kora-mirror] Sincronizando docs OpenClaw → KORA..."
+    python3 "$SYNC_SCRIPT" --source-repo "$SOURCE_REPO" 2>&1 | tail -5
+    echo "[kora-mirror] Sync completado."
+fi
+HOOK
+chmod +x ~/Developer/_workspaces/openclaw/.git/hooks/post-merge
+```
+
 ## Utilitarios Ad-Hoc
 
 - `source_mapper.py`: generador de mapeo de fuentes para trabajo editorial y de migracion.
