@@ -153,8 +153,8 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_tracks_governed_extended_skill_support(self):
         files = (
-            ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("baseline auditado soporta Skills degenerados y entrypoints extendidos", content)
@@ -162,8 +162,8 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_generation_skills_keep_soul_minimal(self):
         files = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("Identidad Dialectica, Paradigma Cognitivo, Tono", content)
@@ -173,10 +173,10 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_meta_core_agents_keep_control_layer_compact(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "AGENTS.md",
-            ROOT / "agents" / "kora" / "custodio" / "AGENTS.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "AGENTS.md",
-            ROOT / "agents" / "kora" / "guardian" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "curator" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "custodio" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "guardian" / "AGENTS.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("REFINE_DRAFT", content)
@@ -189,9 +189,9 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_meta_context_managers_do_not_encode_fsm_destinations(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CONTEXT-MANAGER.md",
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-CONTEXT-MANAGER.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-CONTEXT-MANAGER.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-CONTEXT-MANAGER.md",
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-CONTEXT-MANAGER.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-CONTEXT-MANAGER.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("estado_destino", content)
@@ -237,7 +237,7 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_scaffolder_uses_requested_namespace_in_bootstrap_urns(self):
         content = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
         ).read_text(encoding="utf-8")
         self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-agents:1.0.0", content)
         self.assertIn("urn:{namespace}:agent-bootstrap:{nombre}-soul:1.0.0", content)
@@ -247,7 +247,7 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_scaffolder_declares_bootstrap_manifest_types(self):
         content = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
         ).read_text(encoding="utf-8")
         for manifest_type in (
             "bootstrap_agents",
@@ -260,7 +260,7 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_scaffolder_supports_extended_skill_layout(self):
         content = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
         ).read_text(encoding="utf-8")
         self.assertIn("AGENTS/{namespace}/{nombre}/skills/CM-{id}/", content)
         self.assertIn("skills/CM-{id}/", content)
@@ -270,20 +270,20 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("assets/", content)
 
     def test_custodio_scope_excludes_agent_and_kb_mutation(self):
-        agents = (ROOT / "agents" / "kora" / "custodio" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "kora" / "custodio" / "AGENTS.md").read_text(encoding="utf-8")
         surgeon = (
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-SURGEON.md"
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-SURGEON.md"
         ).read_text(encoding="utf-8")
         evolution = (
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md"
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md"
         ).read_text(encoding="utf-8")
         self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", agents)
         self.assertIn("sin intervenir `AGENTS/`, specs fundacionales ni contenido KB", surgeon)
         self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", evolution)
 
     def test_curator_and_custodio_soul_avoid_operational_policy_leakage(self):
-        curator = (ROOT / "agents" / "kora" / "curator" / "SOUL.md").read_text(encoding="utf-8")
-        custodio = (ROOT / "agents" / "kora" / "custodio" / "SOUL.md").read_text(encoding="utf-8")
+        curator = (AGENTS_ROOT / "kora" / "curator" / "SOUL.md").read_text(encoding="utf-8")
+        custodio = (AGENTS_ROOT / "kora" / "custodio" / "SOUL.md").read_text(encoding="utf-8")
         self.assertNotIn("FS=100%", curator)
         self.assertNotIn("CR>1.5", curator)
         self.assertNotIn("Pipeline de ingesta", curator)
@@ -291,9 +291,9 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("Pipeline como flujo", custodio)
 
     def test_meta_core_tools_stay_semantic(self):
-        custodio_tools = (ROOT / "agents" / "kora" / "custodio" / "TOOLS.md").read_text(encoding="utf-8")
+        custodio_tools = (AGENTS_ROOT / "kora" / "custodio" / "TOOLS.md").read_text(encoding="utf-8")
         forgemaster_tools = (
-            ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md"
+            AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md"
         ).read_text(encoding="utf-8")
         self.assertNotIn("Implementacion:", custodio_tools)
         self.assertNotIn("Invoca internamente", forgemaster_tools)
@@ -301,10 +301,10 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_custodio_operational_skills_use_semantic_tools(self):
         files = (
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-HEALTH-INSPECTOR.md",
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-CATALOG-STEWARD.md",
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-INGESTA-STEWARD.md",
-            ROOT / "agents" / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md",
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-HEALTH-INSPECTOR.md",
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-CATALOG-STEWARD.md",
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-INGESTA-STEWARD.md",
+            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("repo_health", content)
@@ -318,9 +318,9 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_curator_spec_md_skills_do_not_require_bold_keywords(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-EDITOR.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-EDITOR.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("keywords RFC 2119 en negrita", content)
@@ -329,9 +329,9 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_curator_tracks_governed_extended_skill_support(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "TOOLS.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-DESIGNER" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "curator" / "TOOLS.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-DESIGNER" / "SKILL.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("artifact_validate", content)
@@ -341,8 +341,8 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_validator_drops_private_17_check_baseline(self):
         files = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("17 checks", content)
@@ -351,13 +351,13 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("baseline publicado", content)
 
     def test_forgemaster_tracks_current_spec_versions_and_fsm_precedence(self):
-        agents = (ROOT / "agents" / "kora" / "forgemaster" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "kora" / "forgemaster" / "AGENTS.md").read_text(encoding="utf-8")
         skills = "\n".join(
             path.read_text(encoding="utf-8")
             for path in (
-                ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
-                ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-DESIGNER.md",
-                ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
+                AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
+                AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-DESIGNER.md",
+                AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
             )
         )
         self.assertIn("[prioridad 1]", agents)
@@ -369,10 +369,10 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_validator_aligns_section_refs_and_formal_layer_access(self):
         validator = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md"
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md"
         ).read_text(encoding="utf-8")
-        tools = (ROOT / "agents" / "kora" / "forgemaster" / "TOOLS.md").read_text(encoding="utf-8")
-        config = (ROOT / "agents" / "kora" / "forgemaster" / "config.json").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md").read_text(encoding="utf-8")
+        config = (AGENTS_ROOT / "kora" / "forgemaster" / "config.json").read_text(encoding="utf-8")
         self.assertIn("agent-spec-md §4.1", validator)
         self.assertIn("agent-spec-md §4.2-§4.3", validator)
         self.assertIn("gobernanza.md §5 y §8", validator)
@@ -385,10 +385,10 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_forgemaster_extended_skill_docs_cover_design_build_and_validation(self):
         files = (
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-DESIGNER.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-DESIGNER.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-COMPONENT-BUILDER.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("skills/CM-{id}/SKILL.md", content)
@@ -399,14 +399,14 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("assets/", content)
 
     def test_guardian_runtime_capabilities_drop_analysis(self):
-        content = (ROOT / "agents" / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
+        content = (AGENTS_ROOT / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
         self.assertNotIn('"analysis"', content)
 
     def test_dev_context_managers_drop_state_machine_control(self):
         files = (
-            ROOT / "agents" / "dev" / "analyst" / "skills" / "CM-CONTEXT-MANAGER.md",
-            ROOT / "agents" / "dev" / "planner" / "skills" / "CM-CONTEXT-MANAGER.md",
-            ROOT / "agents" / "dev" / "reviewer" / "skills" / "CM-CONTEXT-MANAGER.md",
+            AGENTS_ROOT / "dev" / "analyst" / "skills" / "CM-CONTEXT-MANAGER.md",
+            AGENTS_ROOT / "dev" / "planner" / "skills" / "CM-CONTEXT-MANAGER.md",
+            AGENTS_ROOT / "dev" / "reviewer" / "skills" / "CM-CONTEXT-MANAGER.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("estado_actual", content)
@@ -417,10 +417,10 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_dev_runtime_capabilities_drop_semantic_faculties(self):
         files = (
-            ROOT / "agents" / "dev" / "analyst" / "config.json",
-            ROOT / "agents" / "dev" / "planner" / "config.json",
-            ROOT / "agents" / "dev" / "reviewer" / "config.json",
-            ROOT / "agents" / "dev" / "sentinel" / "config.json",
+            AGENTS_ROOT / "dev" / "analyst" / "config.json",
+            AGENTS_ROOT / "dev" / "planner" / "config.json",
+            AGENTS_ROOT / "dev" / "reviewer" / "config.json",
+            AGENTS_ROOT / "dev" / "sentinel" / "config.json",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn('"analysis"', content)
@@ -430,16 +430,16 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_dev_tools_drop_operational_policy_leakage(self):
         files = (
-            ROOT / "agents" / "dev" / "planner" / "TOOLS.md",
-            ROOT / "agents" / "dev" / "sentinel" / "TOOLS.md",
+            AGENTS_ROOT / "dev" / "planner" / "TOOLS.md",
+            AGENTS_ROOT / "dev" / "sentinel" / "TOOLS.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("requiere aprobacion humana", content)
         self.assertNotIn("NUNCA auto-ejecutar", content)
 
     def test_digitrans_uses_tde_as_primary_corpus(self):
-        tools = (ROOT / "agents" / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
-        config = (ROOT / "agents" / "gn" / "digitrans" / "config.json").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
+        config = (AGENTS_ROOT / "gn" / "digitrans" / "config.json").read_text(encoding="utf-8")
         self.assertNotIn("urn:gov:kb:intro-tde", tools)
         self.assertNotIn("urn:gov:kb:lexicon-wikiguias", tools)
         self.assertNotIn("urn:gov:kb:datosgob", tools)
@@ -453,11 +453,11 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("urn:orko:kb:orko-metodologia", config)
 
     def test_digitrans_bootstrap_matches_current_agent_spec(self):
-        agents = (ROOT / "agents" / "gn" / "digitrans" / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (ROOT / "agents" / "gn" / "digitrans" / "SOUL.md").read_text(encoding="utf-8")
-        user = (ROOT / "agents" / "gn" / "digitrans" / "USER.md").read_text(encoding="utf-8")
-        tools = (ROOT / "agents" / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
-        intake = (ROOT / "agents" / "gn" / "digitrans" / "skills" / "CM-INTAKE.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md").read_text(encoding="utf-8")
+        soul = (AGENTS_ROOT / "gn" / "digitrans" / "SOUL.md").read_text(encoding="utf-8")
+        user = (AGENTS_ROOT / "gn" / "digitrans" / "USER.md").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
+        intake = (AGENTS_ROOT / "gn" / "digitrans" / "skills" / "CM-INTAKE.md").read_text(encoding="utf-8")
         self.assertIn("[prioridad 1]", agents)
         self.assertIn("dominio=normativo", agents)
         self.assertIn("S-REJECT", agents)
@@ -474,7 +474,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("cierre_solicitado", intake)
 
     def test_digitrans_dispatcher_exits_scope_and_ambiguity_without_self_loop(self):
-        agents = (ROOT / "agents" / "gn" / "digitrans" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md").read_text(encoding="utf-8")
         self.assertNotIn("IF fuera_scope [prioridad 1] -> S-DISPATCHER", agents)
         self.assertNotIn("IF ambiguo [prioridad 7] -> S-DISPATCHER", agents)
         self.assertIn("IF fuera_scope [prioridad 1] -> S-REJECT", agents)
@@ -482,15 +482,15 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("IF tema != dominio TDE -> S-REJECT", agents)
 
     def test_digitrans_tools_route_docdigital_and_pisee_explicitly(self):
-        tools = (ROOT / "agents" / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
         self.assertIn("| DocDigital, Coordinacion TDE | urn:tde:kb:manual-coordinadora-transformacion-digital |", tools)
         self.assertIn("| Dec.12, Interoperabilidad | urn:tde:kb:decreto-12-interoperabilidad |", tools)
 
     def test_pensador_generador_normalizes_control_targets_and_soul(self):
-        agents = (ROOT / "agents" / "fxsl" / "pensador-generador" / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (ROOT / "agents" / "fxsl" / "pensador-generador" / "SOUL.md").read_text(encoding="utf-8")
-        tools = (ROOT / "agents" / "fxsl" / "pensador-generador" / "TOOLS.md").read_text(encoding="utf-8")
-        config = (ROOT / "agents" / "fxsl" / "pensador-generador" / "config.json").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "AGENTS.md").read_text(encoding="utf-8")
+        soul = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "SOUL.md").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "TOOLS.md").read_text(encoding="utf-8")
+        config = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "config.json").read_text(encoding="utf-8")
         self.assertNotIn("REFINE_DRAFT", agents)
         self.assertNotIn("CONTEXT_SHIFT ->", agents)
         self.assertIn("IF other fails -> S-PRODUCCION", agents)
@@ -507,10 +507,10 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("VINDICATE", agents)
 
     def test_opm_specialist_uses_neutral_intent_classification_and_clarify_state(self):
-        agents = (ROOT / "agents" / "fxsl" / "opm-specialist" / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (ROOT / "agents" / "fxsl" / "opm-specialist" / "SOUL.md").read_text(encoding="utf-8")
-        tools = (ROOT / "agents" / "fxsl" / "opm-specialist" / "TOOLS.md").read_text(encoding="utf-8")
-        classifier = (ROOT / "agents" / "fxsl" / "opm-specialist" / "skills" / "CM-INTENT-CLASSIFIER.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "AGENTS.md").read_text(encoding="utf-8")
+        soul = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "SOUL.md").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "TOOLS.md").read_text(encoding="utf-8")
+        classifier = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "skills" / "CM-INTENT-CLASSIFIER.md").read_text(encoding="utf-8")
         self.assertIn("S-CLARIFY", agents)
         self.assertNotIn("IF ambiguo -> ACT: clarificar. -> S-DISPATCHER", agents)
         self.assertNotIn("REFINE_DRAFT", agents)
@@ -533,10 +533,10 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("terminar|fuera_scope|ambiguo", classifier)
 
     def test_arquitecto_categorico_removes_skill_state_leakage_and_aligns_tools(self):
-        agents = (ROOT / "agents" / "fxsl" / "arquitecto-categorico" / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (ROOT / "agents" / "fxsl" / "arquitecto-categorico" / "SOUL.md").read_text(encoding="utf-8")
-        tools = (ROOT / "agents" / "fxsl" / "arquitecto-categorico" / "TOOLS.md").read_text(encoding="utf-8")
-        skill_dir = ROOT / "agents" / "fxsl" / "arquitecto-categorico" / "skills"
+        agents = (AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "AGENTS.md").read_text(encoding="utf-8")
+        soul = (AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "SOUL.md").read_text(encoding="utf-8")
+        tools = (AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "TOOLS.md").read_text(encoding="utf-8")
+        skill_dir = AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "skills"
         skills = "\n".join(path.read_text(encoding="utf-8") for path in sorted(skill_dir.glob("CM-*.md")))
         self.assertIn("[prioridad 1]", agents)
         self.assertIn("IF resuelto [prioridad 2] -> S-DISPATCHER", agents)
@@ -576,14 +576,14 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_curator_tracks_restored_md_and_spec_contracts(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "AGENTS.md",
-            ROOT / "agents" / "kora" / "curator" / "SOUL.md",
-            ROOT / "agents" / "kora" / "curator" / "TOOLS.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-KORAFICATOR.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-DESIGNER" / "SKILL.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+            AGENTS_ROOT / "kora" / "curator" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "curator" / "SOUL.md",
+            AGENTS_ROOT / "kora" / "curator" / "TOOLS.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-KORAFICATOR.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-DESIGNER" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("Funtor K", content)
@@ -595,7 +595,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("verificacion adversarial", content)
 
     def test_curator_declares_fsm_precedence_and_type_safe_fidelity_routing(self):
-        agents = (ROOT / "agents" / "kora" / "curator" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "kora" / "curator" / "AGENTS.md").read_text(encoding="utf-8")
         self.assertIn("[prioridad 1]", agents)
         self.assertIn(
             "IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE",
@@ -609,8 +609,8 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_curator_guided_mode_uses_declared_transform_phases_only(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "AGENTS.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
+            AGENTS_ROOT / "kora" / "curator" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("FORGE", content)
@@ -619,10 +619,10 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_meta_skills_do_not_operationally_compose_other_meta_skills(self):
         files = (
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-EDITOR.md",
-            ROOT / "agents" / "kora" / "curator" / "skills" / "CM-ARTIFACT-SURGEON.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-EVOLVER.md",
-            ROOT / "agents" / "kora" / "forgemaster" / "skills" / "CM-AGENT-SURGEON.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-EDITOR.md",
+            AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-SURGEON.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-EVOLVER.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-SURGEON.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("CM-ARTIFACT-AUDITOR mentalmente", content)
@@ -634,9 +634,9 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_ops_core_agents_follow_canonical_agent_sections(self):
         files = (
-            ROOT / "agents" / "ops" / "orquestador-swarm" / "AGENTS.md",
-            ROOT / "agents" / "ops" / "security" / "AGENTS.md",
-            ROOT / "agents" / "ops" / "verificador" / "AGENTS.md",
+            AGENTS_ROOT / "ops" / "orquestador-swarm" / "AGENTS.md",
+            AGENTS_ROOT / "ops" / "security" / "AGENTS.md",
+            AGENTS_ROOT / "ops" / "verificador" / "AGENTS.md",
         )
         required_terms = (
             "## 3. Co-induccion",
@@ -655,9 +655,9 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_orquestador_swarm_drops_dead_swarm_section_refs(self):
         files = (
-            ROOT / "agents" / "ops" / "orquestador-swarm" / "AGENTS.md",
-            ROOT / "agents" / "ops" / "orquestador-swarm" / "TOOLS.md",
-            ROOT / "agents" / "ops" / "orquestador-swarm" / "skills" / "CM-CIRCUIT-BREAKER-MANAGER.md",
+            AGENTS_ROOT / "ops" / "orquestador-swarm" / "AGENTS.md",
+            AGENTS_ROOT / "ops" / "orquestador-swarm" / "TOOLS.md",
+            AGENTS_ROOT / "ops" / "orquestador-swarm" / "skills" / "CM-CIRCUIT-BREAKER-MANAGER.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("Swarm::Ops §10", content)

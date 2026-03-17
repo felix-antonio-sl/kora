@@ -6,7 +6,7 @@ import textwrap
 import unittest
 from unittest.mock import patch
 
-from common import ROOT, run_cli
+from common import AGENTS_ROOT, ROOT, run_cli
 import kora_lib.audit as audit_module
 from kora_lib.config import URN_REF_PATTERN
 import kora_lib.validation as validation_module
@@ -836,7 +836,7 @@ class SemanticValidationTests(unittest.TestCase):
             self.assertIn("'allowed_kb' is a required property", output.getvalue())
 
     def test_cmd_health_rejects_legacy_agent_urn_not_in_catalog(self):
-        source_path = ROOT / "agents" / "gn" / "dgi-virtual" / "AGENTS.md"
+        source_path = AGENTS_ROOT / "gn" / "dgi-virtual" / "AGENTS.md"
         fake_catalog = {
             "_manifest": {"urn": "urn:kora:catalog:master:2.0.0"},
             "Catalog": {
