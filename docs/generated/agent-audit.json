@@ -733,21 +733,21 @@
     },
     "ops": {
       "name": "ops",
-      "workspace_count": 9,
+      "workspace_count": 8,
       "validate_strict": {
         "profile": "strict",
         "cohort": "ops",
-        "workspace_valid": 9,
+        "workspace_valid": 8,
         "workspace_invalid": 0,
-        "bootstrap_validated": 36,
+        "bootstrap_validated": 32,
         "global_failures": 0,
         "issue_counts": {},
         "issues": [],
         "ok": true
       },
       "summary": {
-        "findings_total": 68,
-        "p1": 67,
+        "findings_total": 58,
+        "p1": 57,
         "p2": 1,
         "p3": 0,
         "strict_validate_green": true
@@ -827,166 +827,6 @@
             "path": "AGENTS/ops/ci-assistant/AGENTS.md",
             "line": 17,
             "snippet": "5. STATE: S-CREATOR → ACT: Recopilar requisitos (cuando, que, outputs). Construir estructura (name, on, jobs, steps). Generar YAML valido con comentarios. → Trans: IF creado → S-DISPATCHER. IF explicar → S-EDUCATOR. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(CONSULT|INSTALL|CONFIGURE|AUDIT|TROUBLESHOOT|OPTIMIZE|UPGRADE|CONTRIBUTE|GUIDED|END), Plataforma(macos|linux|docker|cloud|rpi|windows-wsl|unknown), Urgencia(critica|normal|exploratoria). → Trans: IF consulta → S-CONSULT. IF instalar → S-INSTALL. IF configurar → S-CONFIGURE. IF auditar → S-AUDIT. IF problema|error|roto → S-TROUBLESHOOT. IF optimizar → S-OPTIMIZE. IF actualizar|migrar → S-UPGRADE. IF mejorar_codigo|contribuir|proponer → S-CONTRIBUTE. IF ciclo_completo AND modo=guiado → S-GUIDED. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-CONSULT → ACT: CM-KNOWLEDGE-NAVIGATOR: Clasificar dominio(arquitectura|agentes|sesiones|modelos|memoria|multi-agent|seguridad|automatizacion|operaciones|patrones|avanzado) → kb_route para fuente KORA → oc_docs_search para docs oficiales si necesario → oc_repo_search para codigo fuente si necesario. Respuesta precisa con cita de fuente y seccion. → Trans: IF resuelto → S-DISPATCHER. IF requiere_accion → S-{estado correspondiente}. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-INSTALL → ACT: CM-PLATFORM-INSTALLER: Detectar plataforma target → Seleccionar procedimiento(npm|docker|source|nix|ansible|cloud) → Ejecutar paso a paso con verificacion → Post-install: openclaw onboard + daemon. → Trans: IF instalacion_ok → S-CONFIGURE. IF instalacion_ok AND modo=guiado → S-CONFIGURE. IF error → S-TROUBLESHOOT. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-CONFIGURE → ACT: CM-CONFIGURATOR: Identificar scope(gateway|channels|models|agents|security|automation|multi-agent|sandbox|memory|skills) → Leer config actual → Aplicar configuracion → Validar resultado(openclaw doctor). → Trans: IF config_ok → S-AUDIT. IF config_ok AND modo=libre → S-DISPATCHER. IF error → S-TROUBLESHOOT. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-AUDIT → ACT: CM-INSTANCE-AUDITOR: openclaw status → openclaw doctor → openclaw security audit → Evaluar(health|security|performance|config_quality) → Generar reporte PASS|WARN|FAIL con hallazgos y correcciones. → Trans: IF audit_pass → S-END. IF audit_warn → S-OPTIMIZE. IF audit_fail → S-TROUBLESHOOT. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-TROUBLESHOOT → ACT: CM-TROUBLESHOOTER: Recopilar sintomas(logs, error messages, estado) → Clasificar problema(connectivity|auth|model|channel|session|config|performance|sandbox|upgrade) → Arbol diagnostico por categoria → Aplicar fix → Verificar resolucion. → Trans: IF resuelto → S-AUDIT. IF requiere_config → S-CONFIGURE. IF requiere_upgrade → S-UPGRADE. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 21,
-            "snippet": "7. STATE: S-OPTIMIZE → ACT: CM-PERFORMANCE-OPTIMIZER: Evaluar(token_economy|context_window|model_selection|caching|bootstrap_size|session_management|memory_config|sandbox_overhead) → Proponer mejoras con impacto estimado → Implementar aprobadas. → Trans: IF optimizado → S-AUDIT. IF descartar → S-END. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 23,
-            "snippet": "8. STATE: S-UPGRADE → ACT: CM-VERSION-MANAGER: Identificar version actual → Consultar release channel(stable|beta|dev) → Evaluar breaking changes → Planificar migracion → Ejecutar(openclaw update) → Post-upgrade verification. → Trans: IF upgrade_ok → S-AUDIT. IF error → S-TROUBLESHOOT. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 25,
-            "snippet": "9. STATE: S-CONTRIBUTE → ACT: CM-CODE-CONTRIBUTOR: Identificar area de mejora(bug fix|feature|refactor|docs|performance) → Analizar codebase relevante(oc_repo_search) → Evaluar viabilidad y valor → Producir propuesta(issue spec o PR draft con diff conceptual) → Presentar al usuario. → Trans: IF propuesta_lista → S-END. IF iterar → S-CONTRIBUTE. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawmaster",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/clawmaster/AGENTS.md",
-            "line": 27,
-            "snippet": "10. STATE: S-GUIDED → ACT: CM-LIFECYCLE-ORCHESTRATOR: Consolidar checkpoints y entregables del modo guiado entre INSTALL, CONFIGURE y AUDIT. → Trans: IF ciclo_completo → S-END. IF usuario_interrumpe → S-DISPATCHER. IF cambio → S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -1847,10 +1687,9 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "count": 51,
+          "count": 41,
           "workspaces": [
             "ops/ci-assistant",
-            "ops/clawmaster",
             "ops/deployer",
             "ops/integrador",
             "ops/observer",
@@ -4585,7 +4424,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 157,
+        "count": 147,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4606,7 +4445,6 @@
           "gn/gobernador-virtual",
           "gn/goreologo",
           "ops/ci-assistant",
-          "ops/clawmaster",
           "ops/deployer",
           "ops/integrador",
           "ops/observer",
@@ -4680,7 +4518,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 157,
+        "count": 147,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4701,7 +4539,6 @@
           "gn/gobernador-virtual",
           "gn/goreologo",
           "ops/ci-assistant",
-          "ops/clawmaster",
           "ops/deployer",
           "ops/integrador",
           "ops/observer",

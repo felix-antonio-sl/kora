@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1416,
-    "node_count": 874,
-    "edge_count": 4188
+    "scanned_files": 1400,
+    "node_count": 856,
+    "edge_count": 4031
   },
   "node_kind_counts": {
-    "artifact": 206,
+    "artifact": 201,
     "knowledge": 241,
-    "skill": 252,
+    "skill": 241,
     "spec": 7,
-    "tool": 127,
-    "workspace": 41
+    "tool": 126,
+    "workspace": 40
   },
   "edge_kind_counts": {
-    "AllowsKB": 444,
-    "AllowsTool": 207,
-    "ContainsArtifact": 205,
-    "ContainsSkill": 252,
-    "DeclaresTool": 208,
-    "InvokesSkill": 234,
-    "RoutesToAgent": 63,
-    "TracesTo": 45,
-    "XRef": 2530
+    "AllowsKB": 417,
+    "AllowsTool": 201,
+    "ContainsArtifact": 200,
+    "ContainsSkill": 241,
+    "DeclaresTool": 202,
+    "InvokesSkill": 223,
+    "RoutesToAgent": 60,
+    "TracesTo": 43,
+    "XRef": 2444
   },
   "nodes": [
     {
@@ -1287,51 +1287,6 @@
       "urn": "urn:ops:agent-bootstrap:ci-assistant-user:1.0.0",
       "title": "USER.md",
       "path": "AGENTS/ops/ci-assistant/USER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "title": "AGENTS.md",
-      "path": "AGENTS/ops/clawmaster/AGENTS.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "title": "config.json",
-      "path": "AGENTS/ops/clawmaster/config.json",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:agent-bootstrap:clawmaster-soul:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawmaster-soul:1.0.0",
-      "title": "SOUL.md",
-      "path": "AGENTS/ops/clawmaster/SOUL.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "title": "TOOLS.md",
-      "path": "AGENTS/ops/clawmaster/TOOLS.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:agent-bootstrap:clawmaster-user:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawmaster-user:1.0.0",
-      "title": "USER.md",
-      "path": "AGENTS/ops/clawmaster/USER.md",
       "namespace": "ops"
     },
     {
@@ -5529,105 +5484,6 @@
       "namespace": "korvo"
     },
     {
-      "id": "urn:ops:skill:clawmaster-code-contributor:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-code-contributor:1.0.0",
-      "title": "CM-CODE-CONTRIBUTOR",
-      "path": "AGENTS/ops/clawmaster/skills/CM-CODE-CONTRIBUTOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-configurator:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-configurator:1.0.0",
-      "title": "CM-CONFIGURATOR",
-      "path": "AGENTS/ops/clawmaster/skills/CM-CONFIGURATOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-context-manager:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-context-manager:1.0.0",
-      "title": "CM-CONTEXT-MANAGER",
-      "path": "AGENTS/ops/clawmaster/skills/CM-CONTEXT-MANAGER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-instance-auditor:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-instance-auditor:1.0.0",
-      "title": "CM-INSTANCE-AUDITOR",
-      "path": "AGENTS/ops/clawmaster/skills/CM-INSTANCE-AUDITOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-intent-classifier:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-intent-classifier:1.0.0",
-      "title": "CM-INTENT-CLASSIFIER",
-      "path": "AGENTS/ops/clawmaster/skills/CM-INTENT-CLASSIFIER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0",
-      "title": "CM-KNOWLEDGE-NAVIGATOR",
-      "path": "AGENTS/ops/clawmaster/skills/CM-KNOWLEDGE-NAVIGATOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0",
-      "title": "CM-LIFECYCLE-ORCHESTRATOR",
-      "path": "AGENTS/ops/clawmaster/skills/CM-LIFECYCLE-ORCHESTRATOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0",
-      "title": "CM-PERFORMANCE-OPTIMIZER",
-      "path": "AGENTS/ops/clawmaster/skills/CM-PERFORMANCE-OPTIMIZER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-platform-installer:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-platform-installer:1.0.0",
-      "title": "CM-PLATFORM-INSTALLER",
-      "path": "AGENTS/ops/clawmaster/skills/CM-PLATFORM-INSTALLER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-troubleshooter:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-troubleshooter:1.0.0",
-      "title": "CM-TROUBLESHOOTER",
-      "path": "AGENTS/ops/clawmaster/skills/CM-TROUBLESHOOTER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawmaster-version-manager:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawmaster-version-manager:1.0.0",
-      "title": "CM-VERSION-MANAGER",
-      "path": "AGENTS/ops/clawmaster/skills/CM-VERSION-MANAGER.md",
-      "namespace": "ops"
-    },
-    {
       "id": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -6785,11 +6641,6 @@
       "name": "oc_docs_search"
     },
     {
-      "id": "tool:oc_repo_search",
-      "kind": "tool",
-      "name": "oc_repo_search"
-    },
-    {
       "id": "tool:okr_structure",
       "kind": "tool",
       "name": "okr_structure"
@@ -7211,13 +7062,6 @@
       "workspace": "ops/ci-assistant",
       "namespace": "ops",
       "path": "AGENTS/ops/ci-assistant"
-    },
-    {
-      "id": "workspace:ops/clawmaster",
-      "kind": "workspace",
-      "workspace": "ops/clawmaster",
-      "namespace": "ops",
-      "path": "AGENTS/ops/clawmaster"
     },
     {
       "id": "workspace:ops/clawstack",
@@ -9388,168 +9232,6 @@
     },
     {
       "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:00-fundamentos-previos",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:00-toc",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:01-arquitectura-gateway",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:02-agente-unidad-fundamental",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:03-sesiones",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:04-modelos-failover",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:05-memoria",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:06-multi-agent-routing",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:07-aislamiento-seguridad",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:08-patrones-multitenant",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:09-sub-agentes",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:10-sub-agentes-anidados",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:12-heartbeats",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:13-cron-jobs",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:14-cron-vs-heartbeat",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:15-hooks",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:16-webhooks",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:17-lobster",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:18-modelo-seguridad",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:19-operaciones",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:20-patrones-diseno",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:21-decisiones-arquitectura",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:apendices",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:cheatsheet",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:agengai:kb:readme",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsKB",
       "source": "workspace:ops/clawstack",
       "target": "urn:agengai:kb:00-fundamentos-previos",
       "source_path": "AGENTS/ops/clawstack/config.json"
@@ -10810,42 +10492,6 @@
     },
     {
       "kind": "AllowsTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:oc_cli",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:oc_docs_search",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:oc_repo_search",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:spec_consult",
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "AllowsTool",
       "source": "workspace:ops/clawstack",
       "target": "tool:catalog_resolve",
       "source_path": "AGENTS/ops/clawstack/config.json"
@@ -11928,31 +11574,6 @@
       "kind": "ContainsArtifact",
       "source": "workspace:ops/ci-assistant",
       "target": "urn:ops:agent-bootstrap:ci-assistant-user:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:agent-bootstrap:clawmaster-soul:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:agent-bootstrap:clawmaster-user:1.0.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -13073,61 +12694,6 @@
       "kind": "ContainsSkill",
       "source": "workspace:legal/abogado-legislacion-medica",
       "target": "urn:salud:skill:abogado-legislacion-medica-materia-router:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-code-contributor:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-configurator:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-context-manager:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-instance-auditor:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-intent-classifier:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-platform-installer:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-troubleshooter:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawmaster",
-      "target": "urn:ops:skill:clawmaster-version-manager:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -14334,42 +13900,6 @@
       "source": "workspace:ops/ci-assistant",
       "target": "tool:web_search",
       "source_path": "AGENTS/ops/ci-assistant/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:oc_cli",
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:oc_docs_search",
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:oc_repo_search",
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawmaster",
-      "target": "tool:spec_consult",
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
@@ -15657,72 +15187,6 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-code-contributor:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-configurator:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-context-manager:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-instance-auditor:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-intent-classifier:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-platform-installer:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-troubleshooter:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:skill:clawmaster-version-manager:1.0.0",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
       "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
@@ -16341,24 +15805,6 @@
     },
     {
       "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawmaster",
-      "target": "workspace:kora/curator",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawmaster",
-      "target": "workspace:kora/forgemaster",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawmaster",
-      "target": "workspace:kora/guardian",
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
       "source": "workspace:ops/clawstack",
       "target": "workspace:kora/curator",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
@@ -16819,20 +16265,6 @@
       "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
     },
     {
       "kind": "XRef",
@@ -20274,41 +19706,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawmaster-soul:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawmaster-user:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -20548,83 +19945,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:agent-bootstrap:verificador-user:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-code-contributor:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-configurator:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-context-manager:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-instance-auditor:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-intent-classifier:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-platform-installer:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-troubleshooter:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawmaster-version-manager:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -31018,419 +30338,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawmaster-agents:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:00-fundamentos-previos",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:00-toc",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:01-arquitectura-gateway",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:02-agente-unidad-fundamental",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:03-sesiones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:04-modelos-failover",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:05-memoria",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:06-multi-agent-routing",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:07-aislamiento-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:08-patrones-multitenant",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:09-sub-agentes",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:10-sub-agentes-anidados",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:12-heartbeats",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:13-cron-jobs",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:14-cron-vs-heartbeat",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:15-hooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:16-webhooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:17-lobster",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:18-modelo-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:19-operaciones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:20-patrones-diseno",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:21-decisiones-arquitectura",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:apendices",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:cheatsheet",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:agengai:kb:readme",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawmaster-config:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawmaster-soul:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/SOUL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:00-fundamentos-previos",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:00-toc",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:01-arquitectura-gateway",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:02-agente-unidad-fundamental",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:03-sesiones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:04-modelos-failover",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:05-memoria",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:06-multi-agent-routing",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:07-aislamiento-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:08-patrones-multitenant",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:09-sub-agentes",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:10-sub-agentes-anidados",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:12-heartbeats",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:13-cron-jobs",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:14-cron-vs-heartbeat",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:15-hooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:16-webhooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:17-lobster",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:18-modelo-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:19-operaciones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:20-patrones-diseno",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:21-decisiones-arquitectura",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:apendices",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:cheatsheet",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:agengai:kb:readme",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawmaster-tools:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawmaster-user:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawmaster-user:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/USER.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
       "target": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
       "fragment": null,
@@ -32359,83 +31266,6 @@
       "target": "urn:ops:agent-bootstrap:verificador-user:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/ops/verificador/USER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-code-contributor:1.0.0",
-      "target": "urn:ops:skill:clawmaster-code-contributor:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-CODE-CONTRIBUTOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-configurator:1.0.0",
-      "target": "urn:ops:skill:clawmaster-configurator:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-CONFIGURATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-context-manager:1.0.0",
-      "target": "urn:ops:skill:clawmaster-context-manager:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-CONTEXT-MANAGER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-instance-auditor:1.0.0",
-      "target": "urn:ops:skill:clawmaster-instance-auditor:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-INSTANCE-AUDITOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-intent-classifier:1.0.0",
-      "target": "urn:ops:skill:clawmaster-intent-classifier:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-INTENT-CLASSIFIER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0",
-      "target": "urn:ops:skill:clawmaster-knowledge-navigator:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-KNOWLEDGE-NAVIGATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0",
-      "target": "urn:ops:skill:clawmaster-lifecycle-orchestrator:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-LIFECYCLE-ORCHESTRATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0",
-      "target": "urn:ops:skill:clawmaster-performance-optimizer:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-PERFORMANCE-OPTIMIZER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-platform-installer:1.0.0",
-      "target": "urn:ops:skill:clawmaster-platform-installer:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-PLATFORM-INSTALLER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-troubleshooter:1.0.0",
-      "target": "urn:ops:skill:clawmaster-troubleshooter:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-TROUBLESHOOTER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawmaster-version-manager:1.0.0",
-      "target": "urn:ops:skill:clawmaster-version-manager:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawmaster/skills/CM-VERSION-MANAGER.md"
     },
     {
       "kind": "XRef",

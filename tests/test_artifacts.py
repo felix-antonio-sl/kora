@@ -209,7 +209,6 @@ class ArtifactFixtureTests(unittest.TestCase):
                 AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-INTENT-CLASSIFIER.md",
                 AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-INTENT-CLASSIFIER.md",
                 AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
-                AGENTS_ROOT / "kora" / "clawmaster" / "skills" / "CM-INTENT-CLASSIFIER.md",
             )
             if path.exists()
         )
@@ -224,7 +223,6 @@ class ArtifactFixtureTests(unittest.TestCase):
             for path in (
                 AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
                 AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
-                AGENTS_ROOT / "kora" / "clawmaster" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
             )
             if path.exists()
         )

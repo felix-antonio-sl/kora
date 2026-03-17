@@ -13,7 +13,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 157 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 147 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -23,7 +23,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 157 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 147 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -104,10 +104,10 @@ Hallazgos repetidos:
 
 ## Cohorte ops
 
-- Workspaces auditados: 9
+- Workspaces auditados: 8
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 68
-- P1: 67 | P2: 1 | P3: 0
+- Hallazgos manuales: 58
+- P1: 57 | P2: 1 | P3: 0
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
@@ -116,16 +116,6 @@ Hallazgos repetidos:
 | ops/ci-assistant | Precedencia de transiciones no declarada | P1 | AGENTS/ops/ci-assistant/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | ops/ci-assistant | Precedencia de transiciones no declarada | P1 | AGENTS/ops/ci-assistant/AGENTS.md:15 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | ops/ci-assistant | Precedencia de transiciones no declarada | P1 | AGENTS/ops/ci-assistant/AGENTS.md:17 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:15 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:17 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:19 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:21 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:23 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:25 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawmaster | Precedencia de transiciones no declarada | P1 | AGENTS/ops/clawmaster/AGENTS.md:27 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | ops/clawstack | Destino de control no declarado | P1 | AGENTS/ops/clawstack/AGENTS.md:68 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | ops/clawstack | Skill degenerado recibe o emite estado FSM | P1 | AGENTS/ops/clawstack/skills/CM-CONTEXT-MANAGER.md:13 | Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md. | agent_fix |
 | ops/clawstack | Skill degenerado recibe o emite estado FSM | P1 | AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md:13 | Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md. | agent_fix |
@@ -184,7 +174,7 @@ Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 51 | ops/ci-assistant, ops/clawmaster, ops/deployer, ops/integrador, ops/observer, ops/orquestador-swarm | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 41 | ops/ci-assistant, ops/deployer, ops/integrador, ops/observer, ops/orquestador-swarm, ops/security | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
 | Destino de control no declarado | P1 | 1 | ops/clawstack | agent_fix |
