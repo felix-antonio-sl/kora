@@ -204,8 +204,15 @@ Resultado estructurado consistente con el dominio del skill.
     return frontmatter, body
 
 
-def ensure_missing_skills(workspace_dir):
+def ensure_missing_skills(workspace_dir, newly_scaffolded):
+    """Create stub skills only for workspaces scaffolded in this migration run.
+
+    This prevents resurrecting skills that were intentionally deleted from
+    pre-existing workspaces.
+    """
     changed_files = []
+    if workspace_dir not in newly_scaffolded:
+        return changed_files
     rel = str(workspace_dir.relative_to(KORA_ROOT))
     skill_specs = MISSING_SKILL_SPECS.get(rel, {})
     if not skill_specs:
@@ -331,8 +338,11 @@ Markdown breve, con reglas, riesgos y decisiones explicitas.
 
 def migrate_agents(profile="transitional", dry_run=False, cohort=None):
     changed_paths = []
+    newly_scaffolded = set()
     if profile != "legacy":
-        changed_paths.extend(ensure_guardian_workspace() if not dry_run else [])
+        scaffolded = ensure_guardian_workspace() if not dry_run else []
+        changed_paths.extend(scaffolded)
+        newly_scaffolded.update(scaffolded)
 
     for workspace_dir in iter_agent_workspaces(cohort=cohort):
         agents_path = workspace_dir / "AGENTS.md"
@@ -386,6 +396,6 @@ def migrate_agents(profile="transitional", dry_run=False, cohort=None):
                     changed_paths.append(skill_path)
 
         if profile != "legacy" and not dry_run:
-            changed_paths.extend(ensure_missing_skills(workspace_dir))
+            changed_paths.extend(ensure_missing_skills(workspace_dir, newly_scaffolded))
 
     return changed_paths

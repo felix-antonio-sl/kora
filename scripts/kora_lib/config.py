@@ -215,54 +215,7 @@ SEMANTIC_TOOL_DOC_MARKERS = (
     "Cuando usar:",
     "Cuando NO usar:",
 )
-MISSING_SKILL_SPECS = {
-    "AGENTS/kora/taskmaster": {
-        "CM-CONTEXT-MANAGER": (
-            "Mantiene coherencia de la conversacion y detecta cambios de hilo.",
-            "estado_actual, mensaje_usuario",
-            "context_shift, siguiente_estado",
-        ),
-        "CM-ISSUE-BUILDER": (
-            "Construye un issue accionable con descripcion, alcance y criterios de aceptacion.",
-            "solicitud_usuario",
-            "issue_template",
-        ),
-        "CM-PRIORITY-MATRIX": (
-            "Prioriza tareas segun impacto y urgencia.",
-            "items",
-            "items_priorizados",
-        ),
-        "CM-REQUEST-CLASSIFIER": (
-            "Clasifica la intencion del usuario dentro del dominio de gestion de tareas.",
-            "mensaje_usuario",
-            "intent_classification",
-        ),
-        "CM-STATUS-REPORTER": (
-            "Resume estado de backlog y ejecucion por columnas.",
-            "scope",
-            "status_report",
-        ),
-    },
-    "AGENTS/salud/abogado-legislacion-medica": {
-        "CM-CONSULTA-CLASSIFIER": (
-            "Clasifica consultas legales en estatuto, derechos, procedimiento o materia especial.",
-            "consulta_usuario",
-            "clasificacion_consulta",
-        ),
-        "CM-MATERIA-ROUTER": (
-            "Ruta materias especiales hacia la base normativa pertinente.",
-            "consulta_clasificada",
-            "ruta_normativa",
-        ),
-    },
-    "AGENTS/fxsl/ingeniero-sistemas-composicional": {
-        "CM-CONTEXT-ANALYZER": (
-            "Analiza escala, perspectiva, rol y fase del sistema antes de modelar.",
-            "solicitud_usuario",
-            "contexto_sistemas",
-        ),
-    },
-}
+MISSING_SKILL_SPECS = {}  # Only for newly-scaffolded workspaces; never for pre-existing ones
 
 
 def operations_dir(name: str) -> Path:

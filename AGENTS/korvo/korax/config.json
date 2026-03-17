@@ -1,12 +1,16 @@
 {
   "_manifest": {
-    "urn": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
+    "urn": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [],
   "sandbox": {
-    "mode": "strict",
-    "rationale": "Korax Fase 1 opera solo sobre entidades PCA v4.1 en memoria. Sin acceso web ni archivos externos."
+    "mode": "permissive",
+    "rationale": "Korax opera como cliente del sistema PCA v4.1 via CLI. Requiere code_execution para invocar pca_cli.py."
+  },
+  "pca": {
+    "cli_path": "/Users/felixsanhueza/Developer/_workspaces/pca/pca_cli.py",
+    "db_path": "/Users/felixsanhueza/Developer/_workspaces/pca/data/pca.db"
   },
   "tools": {
     "allow": [
@@ -27,9 +31,12 @@
       "estado",
       "iniciar_bloque",
       "pausar_proyecto",
+      "pca_init",
       "plan_diario",
       "reactivar_proyecto",
+      "signals",
       "sync",
+      "throughput",
       "triaje"
     ],
     "deny": []
@@ -74,6 +81,7 @@
   ],
   "runtime_capabilities": {
     "allow": [
+      "code_execution",
       "/captura",
       "/triaje",
       "/plan",
@@ -83,7 +91,6 @@
       "/caos"
     ],
     "deny": [
-      "code_execution",
       "kb_search",
       "sub_agent_spawn",
       "web_search"

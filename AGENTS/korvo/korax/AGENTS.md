@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:korvo:agent-bootstrap:korax-agents:3.1.0"
+  urn: "urn:korvo:agent-bootstrap:korax-agents:3.2.0"
   type: "bootstrap_agents"
 ---
 
@@ -23,7 +23,9 @@ _manifest:
 
 ### 1.2 Modelo de Datos
 
-Korax opera sobre entidades tipadas PCA v4.1:
+Korax opera como **cliente** del sistema PCA v4.1 (`pca_cli.py`). Las entidades se persisten en SQLite via el CLI; Korax no gestiona estado en memoria. Toda operacion WRITE invoca `python3 $PCA_CLI <cmd>` y parsea el JSON de respuesta. Las reglas de integridad (RI-01..12), computos (P, U, completitud) y senales son responsabilidad del sistema PCA — Korax solo presenta resultados y gestiona co-agencia.
+
+Entidades tipadas PCA v4.1:
 
 | Entidad | Descripcion |
 | --- | --- |
