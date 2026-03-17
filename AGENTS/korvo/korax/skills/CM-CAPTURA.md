@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:cm-captura:1.0.0
+  urn: urn:korvo:skill:cm-captura:1.1.0
   type: lazy_load_endofunctor
 ---
 

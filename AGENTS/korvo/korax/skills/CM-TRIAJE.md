@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:cm-triaje:3.0.0
+  urn: urn:korvo:skill:cm-triaje:3.1.0
   type: lazy_load_endofunctor
 ---
 

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:korvo:agent-bootstrap:korax-agents:3.0.0"
+  urn: "urn:korvo:agent-bootstrap:korax-agents:3.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -28,10 +28,27 @@ Korax opera sobre entidades tipadas PCA v4.1:
 | Entidad | Descripcion |
 | --- | --- |
 | **Candidato** | Input capturado sin procesar. Estados: `capturado \| en_triaje \| promovido \| incubado \| descartado`. Campos: id, texto, fuente (telegram\|email\|conversacion\|nota\|otro), capturado_at, destino_tipo?, destino_id? (cuando promovido, per RI-10). |
-| **UT** (Unidad de Trabajo) | Atomo ejecutable. Estados: `pendiente \| en_progreso \| bloqueada \| completada \| descartada`. Campos: id, titulo, modo (set de `FM\|SR\|MK`), timebox (`15\|30\|60\|90`), deadline?, proyecto_id? (membresia exclusiva), P (prioridad derivada), U (urgencia derivada), bloquea_a[], bloqueada_por[], contribuye_a[] (solo free-floating per RI-07), situacion_temporal?, situacion_fisica?. |
-| **Proyecto** | Contenedor de UTs con membresia exclusiva. Estados: `activo \| pausado \| completado \| descartado`. FSM propio. Polo B al descartar. Se crea en planificacion, no en triaje. |
-| **Objetivo** | Coproducto de dos subtipos. PROPOSITO: anti_vision?, restricciones? (limites no negociables, verificados por Korax per RI-12). RESULTADO: parent_id? (FK a PROPOSITO), contribuciones[], motivo? (texto + tipo adverso\|favorable + urgencia? + ventana_fin?). Estados: `activo \| logrado \| descartado`. |
-| **Contribucion** | Relacion tipada. Campos: fuente_tipo (Proyecto\|UT), fuente_id, resultado_id (siempre RESULTADO, nunca PROPOSITO per RI-03), tipo (`constitutiva \| instrumental \| evidencial`). |
+| **UT** (Unidad de Trabajo) | Atomo ejecutable. Estados: `pendiente \| en_progreso \| bloqueada \| completada \| descartada`. Campos: id, titulo, modo (set de `FM\|SR\|MK`), timebox (`15\|30\|60\|90`), deadline?, proyecto_id? (membresia exclusiva), P (prioridad derivada), U (urgencia derivada), bloquea_a[], bloqueada_por[], contribuye_a[] (solo free-floating per RI-07), situacion_temporal?, situacion_fisica?, creado_at (ISO8601), actualizado_at (ISO8601 — ultimo cambio de estado). |
+| **Proyecto** | Contenedor de UTs con membresia exclusiva. Estados: `activo \| pausado \| completado \| descartado`. Campos: id, titulo, contribuciones[], uts[], estado, creado_at (ISO8601). FSM propio. Polo B al descartar. Se crea en planificacion, no en triaje. |
+| **Objetivo** | Coproducto de dos subtipos. Campos comunes: id, tipo (PROPOSITO\|RESULTADO), titulo, estado, creado_at (ISO8601). PROPOSITO: anti_vision?, restricciones? (limites no negociables, verificados por Korax per RI-12). RESULTADO: parent_id? (FK a PROPOSITO), contribuciones[], motivo? (texto + tipo adverso\|favorable + urgencia? + ventana_fin?). Estados: `activo \| logrado \| descartado`. |
+| **Contribucion** | Relacion tipada. Campos: id (identificador unico), fuente_tipo (Proyecto\|UT), fuente_id, resultado_id (siempre RESULTADO, nunca PROPOSITO per RI-03), tipo (`constitutiva \| instrumental \| evidencial`). |
+
+**Situacion Temporal (ST) — sub-campos de UT:**
+
+| Campo | Tipo | Semantica |
+| --- | --- | --- |
+| `ventana_inicio` | time? | Hora minima de inicio (ej. 09:00) |
+| `ventana_fin` | time? | Hora maxima de fin (ej. 18:00) |
+| `dias_semana` | set(enum)? | Dias validos para ejecucion |
+| `restriccion` | string? | Descripcion libre de restriccion temporal |
+
+**Situacion Fisica (SF) — sub-campos de UT:**
+
+| Campo | Tipo | Semantica |
+| --- | --- | --- |
+| `lugares` | list(string)? | Lugares donde puede ejecutarse |
+| `herramientas` | list(string)? | Apps o herramientas requeridas |
+| `conectividad` | enum? | `online \| offline \| indiferente` |
 
 ### 1.2.1 Dimensiones del Trabajo (§5 PCA v4.1)
 
@@ -47,7 +64,7 @@ Korax opera sobre entidades tipadas PCA v4.1:
 
 | Combinacion | Bloque | Timebox tipico |
 | --- | --- | --- |
-| `MK` solo | DEEP | 60-90 min, energia alta, cero interrupciones |
+| `MK` solo | DEEP | 60-120 min, energia alta, cero interrupciones |
 | `FM` o `MK+FM` | SHALLOW | 15-45 min, energia media |
 | `SR` (con otros) | SOCIAL | Variable, requiere disponibilidad externa |
 
@@ -77,6 +94,25 @@ U = min(1.0, 1 / dias_a_deadline)  si dias_a_deadline > 0
 U = 1.0                            si deadline pasado (overdue)
 ```
 
+**Interpretacion de P:**
+
+| P | Interpretacion |
+| --- | --- |
+| >= 0.7 | Trabajo critico para objetivos primarios |
+| 0.4-0.7 | Trabajo relevante, RESULTADO sin ancla estrategica |
+| < 0.4 | Trabajo de bajo peso estrategico |
+
+**Interpretacion de U:**
+
+| U | Interpretacion |
+| --- | --- |
+| >= 0.8 | Critico: menos de ~3 dias |
+| 0.5-0.8 | Urgente: menos de ~7 dias |
+| 0.2-0.5 | Proximo: menos de ~2 semanas |
+| < 0.2 | Sin presion inmediata |
+
+**Umbral critico:** U > 0.8 activa alerta automatica del agente.
+
 **Matriz PxU -> accion del agente:**
 
 | P \ U | Baja (< 0.5) | Alta (>= 0.5) |
@@ -96,6 +132,39 @@ completitud(PROPOSITO) =
 ```
 
 Condiciones: completitud=1.0 -> senalizar `logrado` (no declarar autonomamente). Sin constitutivas -> null.
+
+**Nota categorica:** completitud() es una transformacion natural del funtor Hom(Contribucion_constitutiva, —) al funtor de medida [0,1]. La naturalidad garantiza que al agregar/remover un RESULTADO de un PROPOSITO, la medida se recalcula coherentemente.
+
+### 1.2.2 Estructura Coalgebraica
+
+Las FSMs de entidad son coalgebras c: S -> F(S):
+
+| Entidad | Coalgebra | Funtor F | Terminales |
+| --- | --- | --- | --- |
+| Candidato | c_C: Estado_C -> (Evento -> Estado_C + 1) | Evento -> Estado + Terminal | promovido, incubado, descartado |
+| UT | c_UT: Estado_UT -> (Evento x Actor -> Estado_UT + 1) | Evento x {Usuario, Agente} -> Estado + Terminal | completada, descartada |
+| Proyecto | c_P: Estado_P -> (Evento -> Estado_P + 1) | Evento -> Estado + Terminal | completado, descartado |
+
+Dos componentes son sustituibles sii existe bisimulacion R tal que si s1 R s2 entonces F(R)(c(s1), c(s2)).
+
+La FSM del agente (C_Korax, 10 estados, 35 transiciones) es una coalgebra de segundo orden que actua como endofuntor sobre el producto de coalgebras de entidad.
+
+**Observaciones canonicas de C_Korax (bisimulacion de referencia):**
+
+Cualquier reimplementacion de Korax es bisimilar si preserva estas observaciones:
+
+| Estado | Observacion canonica |
+| --- | --- |
+| S-IDLE | Acepta eventos, no produce output no solicitado |
+| S-CAPTURE | Produce Candidato con texto + fuente + timestamp, sin metadatos |
+| S-TRIAGE | Presenta arbol N1/N2/N3, senaliza tipo lexico, espera decision |
+| S-PLAN | Ordena UTs por PxU, propone bloques por modo, verifica RI-12 |
+| S-EXECUTE | Protege timebox, registra inicio/fin de bloque |
+| S-SYNC | Presenta completitud + throughput + 4 preguntas, espera decisiones |
+| S-CLOSE | Ejecuta micro-check de senales §2.2, ofrece captura residual |
+| S-CHAOS | Silencio total, heartbeats encolados |
+| S-COLLAPSE | Evalua 5 senales booleanas, ejecuta bancarrota 3 fases si confirmado |
+| S-ABANDON | Escala 3d->7d->14d, presenta opciones, espera respuesta |
 
 ### 1.3 Funcion de Transicion
 
@@ -195,6 +264,8 @@ Excepcion: heartbeat_collapse con >= 4 senales **PUEDE** interrumpir cualquier e
 | INV-11 | Micro-check senales **DEBE** ejecutarse en cada heartbeat_evening. |
 | INV-12 | Toda accion significativa **DEBE** ser propuesta y confirmada por el operador antes de ejecutarse. |
 | INV-13 | Al descartar un Proyecto, aplicar Polo B: reubicar o descartar UTs activas, marcar Contribuciones constitutivas como rotas. |
+| INV-14 | Un PROPOSITO **NO PUEDE** ser hijo de otro PROPOSITO. Profundidad maxima del arbol de objetivos: 2 niveles (PROPOSITO -> RESULTADO). |
+| INV-15 | Contribucion.resultado_id **SIEMPRE** apunta a RESULTADO, **NUNCA** a PROPOSITO. El trabajo no contribuye directamente a aspiraciones (refuerza RI-03). |
 
 ### 2.2 Senales del Agente (per PCA v4.1 §7)
 
@@ -227,11 +298,30 @@ El agente **DEBE** senalar al operador cuando detecte:
 | RI-05 | Proyecto completado requiere todas UTs en completada/descartada | Guard en completar_proyecto |
 | RI-06 | UT bloqueada tiene al menos una UT en bloqueada_por en pendiente/en_progreso | Senal al descartar UT bloqueante |
 | RI-07 | UT con proyecto_id tiene contribuye_a = []; contribucion va via Proyecto | Validacion en asignar_ut_proyecto, crear_contribucion |
+
+**Nota categorica (RI-07):** Esta regla codifica una fibracion: UT = UT_member + UT_ff (coproducto). La fibra de Contribucion sobre UT_member es vacia (contribucion va via Proyecto); la fibra sobre UT_ff es no-vacia. Los dos paths hacia RESULTADO (UT->Proyecto->Contribucion->RESULTADO y UT->Contribucion->RESULTADO) son fibras disjuntas, no paths paralelos.
+
 | RI-08 | RESULTADO con motivo.tipo=adverso requiere motivo.urgencia | Validacion en CM-TRIAJE N3-RESULTADO |
 | RI-09 | RESULTADO con motivo.tipo=favorable requiere motivo.ventana_fin | Validacion en CM-TRIAJE N3-RESULTADO |
 | RI-10 | Candidato promovido tiene destino_tipo + destino_id | Tracking en CM-TRIAJE |
 | RI-11 | UT activa no apunta a Proyecto completado/descartado; Polo B al descartar | Senal en descartar_proyecto |
 | RI-12 | Korax verifica UTs contra restricciones de PROPOSITO ancestral; senaliza, no filtra | Check en CM-PLANIFICACION |
+
+### 2.4 Modelo de Lectura
+
+Korax puede leer del modelo sin confirmacion del operador:
+
+| Dato | Fuente |
+| --- | --- |
+| Estado de todas las entidades activas | Candidato, UT, Proyecto, Objetivo |
+| P y U de todas las UTs activas | Computo derivado §1.2.1 |
+| completitud(RESULTADO) y completitud(PROPOSITO) | Funcion derivada on-demand §1.2.1 |
+| Dias sin actividad de cada entidad | actualizado_at vs now |
+| motivo.ventana_fin de RESULTADOS favorables | Objetivo.motivo |
+| motivo.urgencia de RESULTADOS adversos | Objetivo.motivo |
+| restricciones de PROPOSITOS activos | Objetivo.restricciones |
+| Dependencias de bloqueo cross-project | UT.bloqueada_por con proyecto_id distinto |
+| Buffer de Candidatos pendientes | count(Candidato where estado=capturado) |
 
 ## 3. Co-induccion
 

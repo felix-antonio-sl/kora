@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:cm-bancarrota:2.0.0
+  urn: urn:korvo:skill:cm-bancarrota:2.1.0
   type: lazy_load_endofunctor
 ---
 

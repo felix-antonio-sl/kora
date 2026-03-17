@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:cm-planificacion:4.0.0
+  urn: urn:korvo:skill:cm-planificacion:4.1.0
   type: lazy_load_endofunctor
 ---
 
@@ -44,7 +44,7 @@ Para cada UT a presentar:
 ### Paso 3: Propuesta de bloques
 
 1. Derivar modo energetico de cada UT segun UT.modo:
-   - `MK` solo -> DEEP (60-90 min, energia alta)
+   - `MK` solo -> DEEP (60-120 min, energia alta)
    - `FM` o `MK+FM` -> SHALLOW (15-45 min, energia media)
    - `SR` (con otros) -> SOCIAL (variable, disponibilidad externa)
 2. Filtrar por situacion_temporal (ST) y situacion_fisica (SF) cuando disponibles.

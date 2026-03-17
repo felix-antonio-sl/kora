@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 1405,
     "node_count": 875,
-    "edge_count": 4169
+    "edge_count": 4191
   },
   "node_kind_counts": {
     "artifact": 206,
@@ -21,7 +21,7 @@
     "InvokesSkill": 234,
     "RoutesToAgent": 63,
     "TracesTo": 45,
-    "XRef": 2510
+    "XRef": 2532
   },
   "nodes": [
     {
@@ -1200,46 +1200,46 @@
       "urn": "urn:kora:catalog:master:2.0.0"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
+      "id": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/korvo/korax/AGENTS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-config:3.0.0",
+      "id": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-config:3.0.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
       "title": "config.json",
       "path": "AGENTS/korvo/korax/config.json",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-soul:3.0.0",
+      "id": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.0.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/korvo/korax/SOUL.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-tools:3.0.0",
+      "id": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.0.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
       "title": "TOOLS.md",
       "path": "AGENTS/korvo/korax/TOOLS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-user:3.0.0",
+      "id": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-user:3.0.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
       "title": "USER.md",
       "path": "AGENTS/korvo/korax/USER.md",
       "namespace": "korvo"
@@ -3490,7 +3490,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:salud:kb:dbt-oxford-adaptations-b",
-      "title": "The Oxford Handbook of DBT -- Adaptations (Part B)",
+      "title": "The Oxford Handbook of DBT — Adaptations (Part B)",
       "path": "KNOWLEDGE/salud/dbt/dbt-oxford-adaptations-b.md",
       "namespace": "salud"
     },
@@ -3499,7 +3499,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:salud:kb:dbt-oxford-clinical-a",
-      "title": "The Oxford Handbook of DBT --- Clinical Applications (Part A)",
+      "title": "The Oxford Handbook of DBT — Clinical Applications (Part A)",
       "path": "KNOWLEDGE/salud/dbt/dbt-oxford-clinical-a.md",
       "namespace": "salud"
     },
@@ -3508,7 +3508,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:salud:kb:dbt-oxford-clinical-b",
-      "title": "The Oxford Handbook of DBT -- Clinical Applications (Part B)",
+      "title": "The Oxford Handbook of DBT — Clinical Applications (Part B)",
       "path": "KNOWLEDGE/salud/dbt/dbt-oxford-clinical-b.md",
       "namespace": "salud"
     },
@@ -3526,7 +3526,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:salud:kb:dbt-oxford-implementation",
-      "title": "The Oxford Handbook of DBT -- Implementation",
+      "title": "The Oxford Handbook of DBT — Implementation",
       "path": "KNOWLEDGE/salud/dbt/dbt-oxford-implementation.md",
       "namespace": "salud"
     },
@@ -3562,7 +3562,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:salud:kb:dbt-oxford-theoretical",
-      "title": "The Oxford Handbook of DBT -- Theoretical Underpinnings",
+      "title": "The Oxford Handbook of DBT — Theoretical Underpinnings",
       "path": "KNOWLEDGE/salud/dbt/dbt-oxford-theoretical.md",
       "namespace": "salud"
     },
@@ -5466,73 +5466,73 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:korvo:skill:cm-bancarrota:2.0.0",
+      "id": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-bancarrota:2.0.0",
+      "urn": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "title": "CM-BANCARROTA.md",
       "path": "AGENTS/korvo/korax/skills/CM-BANCARROTA.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-captura:1.0.0",
+      "id": "urn:korvo:skill:cm-captura:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-captura:1.0.0",
+      "urn": "urn:korvo:skill:cm-captura:1.1.0",
       "title": "CM-CAPTURA.md",
       "path": "AGENTS/korvo/korax/skills/CM-CAPTURA.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-close:3.0.0",
+      "id": "urn:korvo:skill:cm-close:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-close:3.0.0",
+      "urn": "urn:korvo:skill:cm-close:3.1.0",
       "title": "CM-CLOSE.md",
       "path": "AGENTS/korvo/korax/skills/CM-CLOSE.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-deteccion-abandono:2.0.0",
+      "id": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-deteccion-abandono:2.0.0",
+      "urn": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "title": "CM-DETECCION-ABANDONO.md",
       "path": "AGENTS/korvo/korax/skills/CM-DETECCION-ABANDONO.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-deteccion-colapso:2.0.0",
+      "id": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-deteccion-colapso:2.0.0",
+      "urn": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "title": "CM-DETECCION-COLAPSO.md",
       "path": "AGENTS/korvo/korax/skills/CM-DETECCION-COLAPSO.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-planificacion:4.0.0",
+      "id": "urn:korvo:skill:cm-planificacion:4.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-planificacion:4.0.0",
+      "urn": "urn:korvo:skill:cm-planificacion:4.1.0",
       "title": "CM-PLANIFICACION.md",
       "path": "AGENTS/korvo/korax/skills/CM-PLANIFICACION.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-sincronizacion:2.0.0",
+      "id": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-sincronizacion:2.0.0",
+      "urn": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "title": "CM-SINCRONIZACION.md",
       "path": "AGENTS/korvo/korax/skills/CM-SINCRONIZACION.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:skill:cm-triaje:3.0.0",
+      "id": "urn:korvo:skill:cm-triaje:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:korvo:skill:cm-triaje:3.0.0",
+      "urn": "urn:korvo:skill:cm-triaje:3.1.0",
       "title": "CM-TRIAJE.md",
       "path": "AGENTS/korvo/korax/skills/CM-TRIAJE.md",
       "namespace": "korvo"
@@ -11866,27 +11866,27 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.0.0"
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.0.0"
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.0.0"
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.0.0"
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.0.0"
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -13031,42 +13031,42 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-bancarrota:2.0.0"
+      "target": "urn:korvo:skill:cm-bancarrota:2.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-captura:1.0.0"
+      "target": "urn:korvo:skill:cm-captura:1.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-close:3.0.0"
+      "target": "urn:korvo:skill:cm-close:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-deteccion-abandono:2.0.0"
+      "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-deteccion-colapso:2.0.0"
+      "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-planificacion:4.0.0"
+      "target": "urn:korvo:skill:cm-planificacion:4.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-sincronizacion:2.0.0"
+      "target": "urn:korvo:skill:cm-sincronizacion:2.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:skill:cm-triaje:3.0.0"
+      "target": "urn:korvo:skill:cm-triaje:3.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -15623,50 +15623,50 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-bancarrota:2.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-captura:1.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-captura:1.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-close:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-close:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-deteccion-abandono:2.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-deteccion-colapso:2.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-planificacion:4.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-sincronizacion:2.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:skill:cm-triaje:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
@@ -20008,35 +20008,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.0.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.0.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.0.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.0.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20050,56 +20050,56 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-bancarrota:2.0.0",
+      "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-captura:1.0.0",
+      "target": "urn:korvo:skill:cm-captura:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-close:3.0.0",
+      "target": "urn:korvo:skill:cm-close:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-deteccion-abandono:2.0.0",
+      "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-deteccion-colapso:2.0.0",
+      "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-planificacion:4.0.0",
+      "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-sincronizacion:2.0.0",
+      "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:skill:cm-triaje:3.0.0",
+      "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -30584,36 +30584,36 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-config:3.0.0",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-soul:3.0.0",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-tools:3.0.0",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-user:3.0.0",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.0.0",
+      "source": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/USER.md"
     },
@@ -30626,57 +30626,57 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-bancarrota:2.0.0",
-      "target": "urn:korvo:skill:cm-bancarrota:2.0.0",
+      "source": "urn:korvo:skill:cm-bancarrota:2.1.0",
+      "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-BANCARROTA.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-captura:1.0.0",
-      "target": "urn:korvo:skill:cm-captura:1.0.0",
+      "source": "urn:korvo:skill:cm-captura:1.1.0",
+      "target": "urn:korvo:skill:cm-captura:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-CAPTURA.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-close:3.0.0",
-      "target": "urn:korvo:skill:cm-close:3.0.0",
+      "source": "urn:korvo:skill:cm-close:3.1.0",
+      "target": "urn:korvo:skill:cm-close:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-CLOSE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-deteccion-abandono:2.0.0",
-      "target": "urn:korvo:skill:cm-deteccion-abandono:2.0.0",
+      "source": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
+      "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-DETECCION-ABANDONO.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-deteccion-colapso:2.0.0",
-      "target": "urn:korvo:skill:cm-deteccion-colapso:2.0.0",
+      "source": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
+      "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-DETECCION-COLAPSO.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-planificacion:4.0.0",
-      "target": "urn:korvo:skill:cm-planificacion:4.0.0",
+      "source": "urn:korvo:skill:cm-planificacion:4.1.0",
+      "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-PLANIFICACION.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-sincronizacion:2.0.0",
-      "target": "urn:korvo:skill:cm-sincronizacion:2.0.0",
+      "source": "urn:korvo:skill:cm-sincronizacion:2.1.0",
+      "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-SINCRONIZACION.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:skill:cm-triaje:3.0.0",
-      "target": "urn:korvo:skill:cm-triaje:3.0.0",
+      "source": "urn:korvo:skill:cm-triaje:3.1.0",
+      "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-TRIAJE.md"
     },
@@ -33595,7 +33595,161 @@
     {
       "kind": "XRef",
       "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-adaptations-a",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-adaptations-a",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-adaptations-b",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-adaptations-b",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-clinical-a",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-clinical-a",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-clinical-b",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-clinical-b",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-evidence",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-evidence",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-implementation",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-implementation",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-introduction",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-introduction",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
       "target": "urn:salud:kb:dbt-oxford-overview",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-overview",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-overview",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-structure",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-structure",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-theoretical",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-theoretical",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-training",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:dbt-oxford-overview",
+      "target": "urn:salud:kb:dbt-oxford-training",
       "fragment": null,
       "source_path": "KNOWLEDGE/salud/dbt/dbt-oxford-overview.md"
     },
