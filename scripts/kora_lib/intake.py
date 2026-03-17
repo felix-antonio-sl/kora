@@ -29,7 +29,7 @@ def cmd_intake():
 
     source_files = []
     for root, _dirs, files in os.walk(source_dir):
-        for file_name in files:
+        for file_name in sorted(files):
             if file_name.startswith("."):
                 continue
             source_files.append(Path(root) / file_name)
@@ -58,7 +58,7 @@ def cmd_intake():
     draft_sources = {}
     if drafts_dir.exists():
         for root, _dirs, files in os.walk(drafts_dir):
-            for file_name in files:
+            for file_name in sorted(files):
                 if not file_name.endswith(".md") or file_name.startswith("."):
                     continue
                 draft_path = Path(root) / file_name
