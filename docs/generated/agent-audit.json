@@ -1767,9 +1767,9 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 76,
+        "findings_total": 75,
         "p1": 74,
-        "p2": 2,
+        "p2": 1,
         "p3": 0,
         "strict_validate_green": true
       },
@@ -2960,22 +2960,6 @@
         },
         {
           "workspace": "korvo/korax",
-          "rule_id": "tools.policy_leakage",
-          "rule": "Policy operativa filtrada en TOOLS.md",
-          "severity": "P2",
-          "spec_rule": "agent-spec-md §4.4.4",
-          "evidence": {
-            "path": "AGENTS/korvo/korax/TOOLS.md",
-            "line": 138,
-            "snippet": "- **Notas:** Siempre requiere confirmacion del operador."
-          },
-          "why_real": "TOOLS.md gobierna interfaz semántica; confirmaciones y restricciones operativas pertenecen a config o runtime.",
-          "minimal_fix": "Mover la política operativa a `config.json` o al runtime y dejar en TOOLS.md solo semántica de interfaz.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "korvo/korax",
           "rule_id": "skill.operational_skill_composition",
           "rule": "Skill compone otro skill operativamente",
           "severity": "P2",
@@ -3033,17 +3017,6 @@
         {
           "rule_id": "skill.operational_skill_composition",
           "rule": "Skill compone otro skill operativamente",
-          "severity": "P2",
-          "count": 1,
-          "workspaces": [
-            "korvo/korax"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "rule_id": "tools.policy_leakage",
-          "rule": "Policy operativa filtrada en TOOLS.md",
           "severity": "P2",
           "count": 1,
           "workspaces": [
@@ -4359,22 +4332,6 @@
           "findings": [
             {
               "workspace": "korvo/korax",
-              "rule_id": "tools.policy_leakage",
-              "rule": "Policy operativa filtrada en TOOLS.md",
-              "severity": "P2",
-              "spec_rule": "agent-spec-md §4.4.4",
-              "evidence": {
-                "path": "AGENTS/korvo/korax/TOOLS.md",
-                "line": 138,
-                "snippet": "- **Notas:** Siempre requiere confirmacion del operador."
-              },
-              "why_real": "TOOLS.md gobierna interfaz semántica; confirmaciones y restricciones operativas pertenecen a config o runtime.",
-              "minimal_fix": "Mover la política operativa a `config.json` o al runtime y dejar en TOOLS.md solo semántica de interfaz.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "korvo/korax",
               "rule_id": "skill.operational_skill_composition",
               "rule": "Skill compone otro skill operativamente",
               "severity": "P2",
@@ -4394,17 +4351,6 @@
             {
               "rule_id": "skill.operational_skill_composition",
               "rule": "Skill compone otro skill operativamente",
-              "severity": "P2",
-              "count": 1,
-              "workspaces": [
-                "korvo/korax"
-              ],
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "rule_id": "tools.policy_leakage",
-              "rule": "Policy operativa filtrada en TOOLS.md",
               "severity": "P2",
               "count": 1,
               "workspaces": [
@@ -4608,6 +4554,7 @@
       }
     ],
     "rules_absorbed": [
+      "tools.policy_leakage",
       "config.semantic_runtime_capability",
       "skill.agent_phase_orchestration",
       "skill.relaxes_hard_rule",
@@ -4616,7 +4563,6 @@
     "rules_not_institutionalized": [
       "agent.fsm_pseudostate_destination",
       "agent.missing_transition_precedence",
-      "tools.policy_leakage",
       "skill.state_variable_leak",
       "skill.transition_classifier_leak",
       "skill.operational_skill_composition"
@@ -4624,7 +4570,6 @@
     "enforcement_rollout": {
       "lint": [
         "Destino de control no declarado",
-        "Policy operativa filtrada en TOOLS.md",
         "Precedencia de transiciones no declarada",
         "Skill compone otro skill operativamente",
         "Skill degenerado clasifica transiciones o continuidad FSM",

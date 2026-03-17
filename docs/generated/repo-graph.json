@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1400,
-    "node_count": 856,
-    "edge_count": 4031
+    "scanned_files": 1401,
+    "node_count": 861,
+    "edge_count": 4043
   },
   "node_kind_counts": {
-    "artifact": 201,
-    "knowledge": 241,
+    "artifact": 202,
+    "knowledge": 242,
     "skill": 241,
     "spec": 7,
-    "tool": 126,
+    "tool": 129,
     "workspace": 40
   },
   "edge_kind_counts": {
     "AllowsKB": 417,
-    "AllowsTool": 201,
+    "AllowsTool": 204,
     "ContainsArtifact": 200,
     "ContainsSkill": 241,
-    "DeclaresTool": 202,
+    "DeclaresTool": 205,
     "InvokesSkill": 223,
     "RoutesToAgent": 60,
     "TracesTo": 43,
-    "XRef": 2444
+    "XRef": 2450
   },
   "nodes": [
     {
@@ -1200,46 +1200,46 @@
       "urn": "urn:kora:catalog:master:2.0.0"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "id": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "title": "AGENTS.md",
       "path": "AGENTS/korvo/korax/AGENTS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
+      "id": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
       "title": "config.json",
       "path": "AGENTS/korvo/korax/config.json",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
+      "id": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
       "title": "SOUL.md",
       "path": "AGENTS/korvo/korax/SOUL.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
+      "id": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
       "title": "TOOLS.md",
       "path": "AGENTS/korvo/korax/TOOLS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
+      "id": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
       "title": "USER.md",
       "path": "AGENTS/korvo/korax/USER.md",
       "namespace": "korvo"
@@ -1828,6 +1828,11 @@
       "title": "USER.md",
       "path": "AGENTS/salud/salubrista/USER.md",
       "namespace": "salud"
+    },
+    {
+      "id": "urn:salud:kb:dbt-oxford-",
+      "kind": "artifact",
+      "urn": "urn:salud:kb:dbt-oxford-"
     },
     {
       "id": "urn:agengai:kb:00-fundamentos-previos",
@@ -3222,6 +3227,15 @@
       "urn": "urn:korvo:kb:dan-koe-filosofia-creador",
       "title": "Creator Philosophy: Dan Koe — Synthesized Corpus",
       "path": "KNOWLEDGE/korvo/dan-koe-filosofia-creador.md",
+      "namespace": "korvo"
+    },
+    {
+      "id": "urn:korvo:kb:manual-de-vida",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:korvo:kb:manual-de-vida",
+      "title": "Manual de Vida",
+      "path": "KNOWLEDGE/korvo/manual-de-vida.md",
       "namespace": "korvo"
     },
     {
@@ -6661,6 +6675,11 @@
       "name": "pausar_proyecto"
     },
     {
+      "id": "tool:pca_init",
+      "kind": "tool",
+      "name": "pca_init"
+    },
+    {
       "id": "tool:plan_diario",
       "kind": "tool",
       "name": "plan_diario"
@@ -6761,6 +6780,11 @@
       "name": "semantic_merge"
     },
     {
+      "id": "tool:signals",
+      "kind": "tool",
+      "name": "signals"
+    },
+    {
       "id": "tool:spec_consult",
       "kind": "tool",
       "name": "spec_consult"
@@ -6809,6 +6833,11 @@
       "id": "tool:test_write",
       "kind": "tool",
       "name": "test_write"
+    },
+    {
+      "id": "tool:throughput",
+      "kind": "tool",
+      "name": "throughput"
     },
     {
       "id": "tool:trend_analyze",
@@ -10433,6 +10462,12 @@
     {
       "kind": "AllowsTool",
       "source": "workspace:korvo/korax",
+      "target": "tool:pca_init",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
       "target": "tool:plan_diario",
       "source_path": "AGENTS/korvo/korax/config.json"
     },
@@ -10445,7 +10480,19 @@
     {
       "kind": "AllowsTool",
       "source": "workspace:korvo/korax",
+      "target": "tool:signals",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
       "target": "tool:sync",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:throughput",
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
@@ -11503,27 +11550,27 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.1.0"
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.1.0"
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.1.0"
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.1.0"
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.1.0"
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -13844,6 +13891,12 @@
     {
       "kind": "DeclaresTool",
       "source": "workspace:korvo/korax",
+      "target": "tool:pca_init",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
       "target": "tool:plan_diario",
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
@@ -13856,7 +13909,19 @@
     {
       "kind": "DeclaresTool",
       "source": "workspace:korvo/korax",
+      "target": "tool:signals",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
       "target": "tool:sync",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:throughput",
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
     {
@@ -15139,49 +15204,49 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-captura:1.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-close:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
@@ -19419,35 +19484,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19455,6 +19520,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:korvo:kb:dan-koe-filosofia-creador",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:korvo:kb:manual-de-vida",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -29876,36 +29948,36 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.1.0",
+      "source": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/USER.md"
     },
@@ -29915,6 +29987,41 @@
       "target": "urn:korvo:kb:dan-koe-filosofia-creador",
       "fragment": null,
       "source_path": "KNOWLEDGE/korvo/dan-koe-filosofia-creador.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:kb:manual-de-vida",
+      "target": "urn:fxsl:kb:procrastination-sirois",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:kb:manual-de-vida",
+      "target": "urn:korvo:kb:dan-koe-filosofia-creador",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:kb:manual-de-vida",
+      "target": "urn:korvo:kb:manual-de-vida",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:kb:manual-de-vida",
+      "target": "urn:pro:kb:mba-personal-kaufman",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:kb:manual-de-vida",
+      "target": "urn:salud:kb:dbt-oxford-",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
     },
     {
       "kind": "XRef",

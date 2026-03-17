@@ -6,8 +6,8 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 - Fecha: 2026-03-17
 - Cohortes auditadas: meta-kora, dev, ops, domains
-- Reglas absorbidas sin hallazgos manuales: 4
-- Reglas aun no institucionalizadas: 6
+- Reglas absorbidas sin hallazgos manuales: 5
+- Reglas aun no institucionalizadas: 5
 
 ## Top 5 deudas sistemicas
 
@@ -184,8 +184,8 @@ Hallazgos repetidos:
 
 - Workspaces auditados: 20
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 76
-- P1: 74 | P2: 2 | P3: 0
+- Hallazgos manuales: 75
+- P1: 74 | P2: 1 | P3: 0
 
 ### Subgrupo gn
 
@@ -323,11 +323,10 @@ Hallazgos repetidos:
 ### Subgrupo korvo
 
 - Workspaces: 1
-- Hallazgos: 2
+- Hallazgos: 1
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
-| korvo/korax | Policy operativa filtrada en TOOLS.md | P2 | AGENTS/korvo/korax/TOOLS.md:138 | Mover la política operativa a `config.json` o al runtime y dejar en TOOLS.md solo semántica de interfaz. | agent_fix |
 | korvo/korax | Skill compone otro skill operativamente | P2 | AGENTS/korvo/korax/skills/CM-CLOSE.md:19 | Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora. | agent_fix |
 
 Hallazgos repetidos:
@@ -335,9 +334,8 @@ Hallazgos repetidos:
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
 | Skill compone otro skill operativamente | P2 | 1 | korvo/korax | agent_fix |
-| Policy operativa filtrada en TOOLS.md | P2 | 1 | korvo/korax | agent_fix |
 
 ## Rollout de enforcement
 
-- Pasar a lint: Destino de control no declarado, Policy operativa filtrada en TOOLS.md, Precedencia de transiciones no declarada, Skill compone otro skill operativamente, Skill degenerado clasifica transiciones o continuidad FSM, Skill degenerado recibe o emite estado FSM
+- Pasar a lint: Destino de control no declarado, Precedencia de transiciones no declarada, Skill compone otro skill operativamente, Skill degenerado clasifica transiciones o continuidad FSM, Skill degenerado recibe o emite estado FSM
 - Mantener manual: ninguno

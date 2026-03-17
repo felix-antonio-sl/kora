@@ -5,11 +5,11 @@
   "catalog_counts": {
     "Agents": 200,
     "Skills": 241,
-    "Knowledge": 248,
+    "Knowledge": 249,
     "Documents": 0,
     "Other": 0
   },
-  "total_catalog_entries": 689,
+  "total_catalog_entries": 690,
   "by_namespace": {
     "gn": 143,
     "fxsl": 118,
@@ -20,7 +20,7 @@
     "tde": 39,
     "agengai": 29,
     "legal": 22,
-    "korvo": 14,
+    "korvo": 15,
     "pro": 6
   }
 }
