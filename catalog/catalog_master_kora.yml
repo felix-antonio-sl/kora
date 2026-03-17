@@ -525,23 +525,23 @@ Catalog:
     title: USER.md
     file: AGENTS/kora/guardian/USER.md
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-agents:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-agents:3.0.0
     title: AGENTS.md
     file: AGENTS/korvo/korax/AGENTS.md
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-config:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-config:3.0.0
     title: config.json
     file: AGENTS/korvo/korax/config.json
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-soul:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-soul:3.0.0
     title: SOUL.md
     file: AGENTS/korvo/korax/SOUL.md
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-tools:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-tools:3.0.0
     title: TOOLS.md
     file: AGENTS/korvo/korax/TOOLS.md
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-user:2.0.0
+  - urn: urn:korvo:agent-bootstrap:korax-user:3.0.0
     title: USER.md
     file: AGENTS/korvo/korax/USER.md
     status: published
@@ -1458,47 +1458,35 @@ Catalog:
     title: CM-SPEC-GUARD
     file: AGENTS/kora/guardian/skills/CM-SPEC-GUARD.md
     status: published
-  - urn: urn:korvo:skill:korax-advisor:1.0.0
-    title: CM-ADVISOR.md
-    file: AGENTS/korvo/korax/skills/CM-ADVISOR.md
-    status: published
-  - urn: urn:korvo:skill:korax-bancarrota:1.0.0
+  - urn: urn:korvo:skill:cm-bancarrota:2.0.0
     title: CM-BANCARROTA.md
     file: AGENTS/korvo/korax/skills/CM-BANCARROTA.md
     status: published
-  - urn: urn:korvo:skill:korax-close:2.0.0
+  - urn: urn:korvo:skill:cm-captura:1.0.0
+    title: CM-CAPTURA.md
+    file: AGENTS/korvo/korax/skills/CM-CAPTURA.md
+    status: published
+  - urn: urn:korvo:skill:cm-close:3.0.0
     title: CM-CLOSE.md
     file: AGENTS/korvo/korax/skills/CM-CLOSE.md
     status: published
-  - urn: urn:korvo:skill:korax-companion:1.0.0
-    title: CM-COMPANION.md
-    file: AGENTS/korvo/korax/skills/CM-COMPANION.md
-    status: published
-  - urn: urn:korvo:skill:korax-delegacion:1.0.0
-    title: CM-DELEGACION.md
-    file: AGENTS/korvo/korax/skills/CM-DELEGACION.md
-    status: published
-  - urn: urn:korvo:skill:korax-deteccion-abandono:1.0.0
+  - urn: urn:korvo:skill:cm-deteccion-abandono:2.0.0
     title: CM-DETECCION-ABANDONO.md
     file: AGENTS/korvo/korax/skills/CM-DETECCION-ABANDONO.md
     status: published
-  - urn: urn:korvo:skill:korax-deteccion-colapso:1.0.0
+  - urn: urn:korvo:skill:cm-deteccion-colapso:2.0.0
     title: CM-DETECCION-COLAPSO.md
     file: AGENTS/korvo/korax/skills/CM-DETECCION-COLAPSO.md
     status: published
-  - urn: urn:korvo:skill:korax-planificacion:2.0.0
+  - urn: urn:korvo:skill:cm-planificacion:4.0.0
     title: CM-PLANIFICACION.md
     file: AGENTS/korvo/korax/skills/CM-PLANIFICACION.md
     status: published
-  - urn: urn:korvo:skill:korax-problem-solver:1.0.0
-    title: CM-PROBLEM-SOLVER.md
-    file: AGENTS/korvo/korax/skills/CM-PROBLEM-SOLVER.md
-    status: published
-  - urn: urn:korvo:skill:korax-sincronizacion:1.0.0
+  - urn: urn:korvo:skill:cm-sincronizacion:2.0.0
     title: CM-SINCRONIZACION.md
     file: AGENTS/korvo/korax/skills/CM-SINCRONIZACION.md
     status: published
-  - urn: urn:korvo:skill:korax-triaje:1.0.0
+  - urn: urn:korvo:skill:cm-triaje:3.0.0
     title: CM-TRIAJE.md
     file: AGENTS/korvo/korax/skills/CM-TRIAJE.md
     status: published
@@ -2079,6 +2067,10 @@ Catalog:
     title: OPCloud Tutorial Videos
     file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md
     status: published
+  - urn: urn:fxsl:kb:procrastination-sirois
+    title: Procrastination — Sirois (2022)
+    file: KNOWLEDGE/fxsl/procrastination-sirois.md
+    status: published
   - urn: urn:fxsl:kb:schema-evolution
     title: Schema Evolution and Behavioral Audit
     file: KNOWLEDGE/fxsl/cat/schema-evolution.md
@@ -2496,6 +2488,10 @@ Catalog:
     title: TDE-WORKFLOW-WIKIGUIAS-029
     file: KNOWLEDGE/kora/sys/workflow_wikiguias.md
     status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus'
+    file: KNOWLEDGE/korvo/dan-koe-filosofia-creador.md
+    status: published
   - urn: urn:legal:kb:acoso-laboral
     title: Acoso Laboral y Sexual en el Ámbito Médico
     file: KNOWLEDGE/legal/acoso_laboral.md
@@ -2586,6 +2582,54 @@ Catalog:
     title: Terminación de la Relación Laboral y Funcionaria
     file: KNOWLEDGE/legal/terminacion.md
     status: published
+  - urn: urn:pro:kb:mba-personal-kaufman
+    title: MBA Personal — Modelos Mentales de Negocios
+    file: KNOWLEDGE/pro/mba-personal-kaufman.md
+    status: published
+  - urn: urn:salud:kb:dbt-oxford-adaptations-a
+    title: The Oxford Handbook of DBT — Adaptations (Part A)
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-adaptations-a.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-adaptations-b
+    title: The Oxford Handbook of DBT -- Adaptations (Part B)
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-adaptations-b.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-clinical-a
+    title: The Oxford Handbook of DBT --- Clinical Applications (Part A)
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-clinical-a.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-clinical-b
+    title: The Oxford Handbook of DBT -- Clinical Applications (Part B)
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-clinical-b.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-evidence
+    title: The Oxford Handbook of DBT — Evidence Base
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-evidence.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-implementation
+    title: The Oxford Handbook of DBT -- Implementation
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-implementation.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-introduction
+    title: The Oxford Handbook of DBT — Introduction
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-introduction.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-overview
+    title: The Oxford Handbook of Dialectical Behaviour Therapy — Overview
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-overview.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-structure
+    title: The Oxford Handbook of DBT — Structure of Treatment
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-structure.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-theoretical
+    title: The Oxford Handbook of DBT -- Theoretical Underpinnings
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-theoretical.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-training
+    title: The Oxford Handbook of DBT — Training and Conclusion
+    file: KNOWLEDGE/salud/dbt/dbt-oxford-training.md
+    status: draft
   - urn: urn:salud:kb:firs-framework-integrado-razonamiento-salud
     title: FIRS — Framework Integrado de Razonamiento en Salud
     file: KNOWLEDGE/salud/salubrista/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.md

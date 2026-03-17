@@ -1,40 +1,44 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:korax-deteccion-colapso:1.0.0
+  urn: urn:korvo:skill:cm-deteccion-colapso:2.0.0
   type: lazy_load_endofunctor
 ---
 
 ## Proposito
-Evaluación booleana de señales de sobrecarga del operador. Determina si el sistema **DEBE** activar S_COLLAPSE (INV-07).
+
+Evaluacion booleana de senales de sobrecarga sobre metricas PCA v4.1. Determina si el sistema DEBE activar S-COLLAPSE (INV-06: >= 3 senales).
 
 ## Input/Output
-- **Input:** state: {gtd_files, interaction_history}
-- **Output:** evaluation: CollapseEval {señales: bool[5], conteo: int, resultado: NORMAL|COLAPSO}
+
+- **Input:** estado de entidades (Candidatos, UTs, Proyectos, historial de interaccion)
+- **Output:** CollapseEval { senales: bool[5], conteo: int, resultado: "NORMAL" | "COLAPSO" }
 
 ## Procedimiento
-1. Evaluar 5 señales booleanas:
 
-| # | Señal | Umbral |
-|---|---|---|
-| 1 | Buffer explosivo | >30 items + creciendo |
-| 2 | Waiting acumulado | >8 items |
-| 3 | Bloques DEEP = 0 | 2 semanas seguidas |
-| 4 | Todo urgente | >50% items marcados alta criticidad |
-| 5 | Horarios nocturnos | >3 interacciones después de 23:00 |
+1. Evaluar 5 senales booleanas:
 
-2. Contar señales activas.
-3. Si ≥3 → resultado: COLAPSO. Disparar transición a S_COLLAPSE.
-4. Si <3 → resultado: NORMAL. Reportar estado.
+| # | Senal | Umbral | Metrica PCA v4.1 |
+| --- | --- | --- | --- |
+| 1 | Buffer explosivo | >30 Candidatos + creciendo | count(Candidato where estado=capturado) |
+| 2 | UTs bloqueadas | >50% UTs pendientes bloqueadas | count(UT where estado=bloqueada) / count(UT where estado in pendiente,bloqueada) |
+| 3 | Bloques DEEP = 0 | 2+ semanas sin bloque MK completado | count(UT where MK in modo and estado=completada and completada_en > 14d_ago) |
+| 4 | completitud estancada | Algun RESULTADO sin progreso > 14d | completitud(resultado_id) sin cambio en 14d |
+| 5 | Bloqueos cross-project | Bloqueo entre Proyectos > 7d | UT.bloqueada_por pertenece a otro Proyecto, duracion > 7d |
 
-**Duración:** <1 minuto (evaluación automática).
+2. Contar senales activas.
+3. Si >= 3 -> resultado: COLAPSO. Proponer transicion a S-COLLAPSE al operador.
+4. Si < 3 -> resultado: NORMAL. Reportar estado.
+
+**Duracion:** <1 minuto (evaluacion automatica).
 
 ## Signature Output
+
 ```
-🔍 Evaluación de colapso:
-- Buffer: {✓|✗} ({n} items)
-- Waiting: {✓|✗} ({n} items)
-- DEEP: {✓|✗} ({n} bloques en 14d)
-- Urgente: {✓|✗} ({n}% alta criticidad)
-- Nocturno: {✓|✗} ({n} interacciones post-23:00)
-Señales: {n}/5 → {NORMAL|COLAPSO}
+🔍 Evaluacion de colapso:
+- Buffer: {✓|✗} (<n> candidatos)
+- Bloqueo UTs: {✓|✗} (<n>% bloqueadas)
+- DEEP: {✓|✗} (<n> bloques en 14d)
+- Estancamiento: {✓|✗} (<n> objetivos sin progreso)
+- Cross-project: {✓|✗} (<n> bloqueos >7d)
+Senales: <n>/5 -> {NORMAL|COLAPSO}
 ```

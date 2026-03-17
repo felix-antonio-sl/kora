@@ -1,43 +1,50 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:korax-deteccion-abandono:1.0.0
+  urn: urn:korvo:skill:cm-deteccion-abandono:2.0.0
   type: lazy_load_endofunctor
 ---
 
 ## Proposito
-Detección y reactivación suave ante abandono del sistema. Escala en 3 niveles calibrados (INV-08: 3d → 7d → 14d, sin saltar niveles).
+
+Deteccion y reactivacion suave ante abandono del sistema. Escala en 3 niveles calibrados sobre actividad de entidades PCA v4.1 (INV-07: 3d -> 7d -> 14d, sin saltar niveles).
 
 ## Input/Output
-- **Input:** last_activity: timestamp, buffer_state: {count, ages}
-- **Output:** reactivation: AbandonResult {nivel, mensaje, opciones}
+
+- **Input:** ultima actividad sobre entidades (timestamp), estado de Candidatos, UTs y Proyectos
+- **Output:** AbandonResult { nivel: 1|2|3, dias_sin_actividad: int, candidatos_pendientes: int, opciones: string[] }
 
 ## Procedimiento
-### Detección (<1 minuto, automática)
 
-Evaluar nivel según tiempo sin triaje/actividad:
+### Deteccion (<1 minuto)
 
-| Nivel | Umbral | Acción |
-|---|---|---|
-| 1 | ≥3 días sin triaje | Alerta suave: "Han pasado 3 días. Tienes {n} items esperando. ¿Triaje rápido, mañana, o bancarrota del buffer?" |
-| 2 | ≥7 días sin triaje | Propuesta de bancarrota selectiva: eliminar todo >7 días, mantener últimos 3 días. |
-| 3 | ≥14 días sin actividad | Proponer pausa del sistema o conversación abierta. |
+Evaluar nivel segun tiempo sin actividad sobre entidades (no archivos):
 
-### Rama Autónoma (delegation_scope ⊇ maintenance)
+| Nivel | Umbral | Accion |
+| --- | --- | --- |
+| 1 | >= 3 dias sin triaje ni completar UT | Alerta suave: *"Han pasado <n> dias. Tienes <n> candidatos esperando. Triaje rapido, manana, o bancarrota del buffer?"* |
+| 2 | >= 7 dias sin actividad significativa | Propuesta de bancarrota selectiva: descartar Candidatos > 7d, mantener ultimos 3d. Revisar UTs bloqueadas. |
+| 3 | >= 14 dias sin actividad | Proponer pausa del sistema o conversacion abierta. Sin presion. |
 
-En nivel 1 (≥3 días), Korax **PUEDE** ejecutar triaje rápido automático:
-1. Eliminar items >7 días.
-2. Mantener items <3 días.
-3. Incubar el resto a SOMEDAY.md.
-4. **DEBE** reportar acciones al siguiente contacto.
+### Escalacion
 
-**Duración:** <1 minuto (detección). Reactivación: variable según nivel.
+- Nivel 1 -> 2 -> 3 estrictamente secuencial (INV-07). No se salta niveles.
+- Cada nivel se evalua una sola vez por umbral alcanzado.
+- Si el operador responde en cualquier nivel, se reinicia el contador.
+
+### Co-agencia fija
+
+En todos los niveles, Korax presenta opciones y espera decision del operador. No ejecuta acciones autonomas.
+
+**Duracion:** <1 minuto (deteccion). Reactivacion: variable segun nivel.
 
 ## Signature Output
+
 ```
-👋 Nivel {1|2|3}: {n} días sin {triaje|actividad}.
-Buffer: {n} items ({n} >7 días).
+👋 Nivel <1|2|3>: <n> dias sin actividad.
+Candidatos pendientes: <n>
+UTs bloqueadas: <n>
 Opciones:
-1️⃣ {opción según nivel}
-2️⃣ {opción según nivel}
-3️⃣ {opción según nivel}
+1️⃣ <opcion segun nivel>
+2️⃣ <opcion segun nivel>
+3️⃣ <opcion segun nivel>
 ```

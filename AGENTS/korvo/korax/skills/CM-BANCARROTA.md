@@ -1,44 +1,59 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:korax-bancarrota:1.0.0
+  urn: urn:korvo:skill:cm-bancarrota:2.0.0
   type: lazy_load_endofunctor
 ---
 
 ## Proposito
-Protocolo de bancarrota asistida para reiniciar el sistema desde estado limpio. Se activa tras S_COLLAPSE confirmado por el operador.
+
+Protocolo de bancarrota asistida sobre entidades PCA v4.1. Se activa tras S-COLLAPSE confirmado. Tres fases: bancarrota (revision de entidades), gracia (48h), reconstruccion gradual (14d). Aplica Polo B al descartar Proyectos.
 
 ## Input/Output
-- **Input:** confirmation: bool (operador acepta emergencia), gtd_files: {NEXT.md, WAITING.md, SOMEDAY.md}
-- **Output:** rebuild: BankruptcyResult {mantenidos, soltados, renegociados, fase_actual}
+
+- **Input:** confirmacion del operador, entidades activas (UTs, Proyectos, Objetivos, Contribuciones)
+- **Output:** BankruptcyResult { fase: 1|2|3, revisados: int, mantenidos: int, descartados: int, renegociados: int }
 
 ## Procedimiento
+
 ### Fase 1: Bancarrota (15-30 min)
 
-1. Listar todos los compromisos activos (NEXT.md + WAITING.md).
-2. Por cada compromiso, operador decide: "mantener" o "soltar".
-3. Para compromisos soltados con interlocutores: ayudar a redactar mensajes de renegociación.
-4. Reportar resultado.
+1. Listar todas las entidades activas:
+   - UTs pendientes y en_progreso
+   - Proyectos activos
+   - RESULTADOS con ventana_fin proxima
+2. Por cada Proyecto, operador decide: "mantener" o "descartar".
+   - Si descartar: aplicar Polo B (INV-13).
+     - Reubicar o descartar UTs activas del Proyecto.
+     - Marcar Contribuciones constitutivas como rotas.
+     - Evaluar impacto en RESULTADO asociado.
+3. Por cada UT suelta, operador decide: "mantener" o "descartar".
+4. Para compromisos con interlocutores: ayudar a redactar mensajes de renegociacion.
+5. Reportar resultado.
 
-### Fase 2: Gracia (48 horas exactas — INV-09)
+### Fase 2: Gracia (48 horas exactas — INV-08)
 
-1. Solo alertas críticas (deadlines HOY).
-2. Cero triaje, cero sincronización.
-3. Check-in suave al final de las 48h.
+1. Solo alertas criticas (RESULTADO con ventana_fin HOY).
+2. Cero triaje, cero sincronizacion.
+3. Heartbeats se encolan (excepto collapse con >= 4 senales).
+4. Check-in suave al final de las 48h.
 
-### Fase 3: Reconstrucción (Gradual, 14 días)
+### Fase 3: Reconstruccion (Gradual, 14 dias)
 
-1. Día 3: captura mínima habilitada.
-2. Día 7: primer triaje.
-3. Día 14: sistema completo si el operador se siente listo.
-
-**Duración:** Variable (fase 1: 15-30min, fase 2: 48h, fase 3: 14 días).
+1. Dia 3: captura minima habilitada (CM-CAPTURA).
+2. Dia 7: primer triaje (CM-TRIAJE).
+3. Dia 14: sistema completo si el operador se siente listo.
+4. Si el operador no esta listo al dia 14, extender gracia sin presion.
 
 ## Signature Output
+
 ```
-🛑 MODO EMERGENCIA — Fase {n}/3
-Compromisos revisados: {n}
-- Mantenidos: {n}
-- Soltados: {n}
-- Renegociados: {n}
-Próximo: {descripción fase siguiente}
+🛑 MODO EMERGENCIA — Fase <n>/3
+
+Entidades revisadas: <n>
+- Proyectos mantenidos: <n> | descartados: <n>
+- UTs mantenidas: <n> | descartadas: <n>
+- Contribuciones rotas: <n>
+- Renegociaciones: <n>
+
+Proximo: <descripcion fase siguiente>
 ```

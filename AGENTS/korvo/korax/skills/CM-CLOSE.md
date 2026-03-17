@@ -1,30 +1,53 @@
 ---
 _manifest:
-  urn: urn:korvo:skill:korax-close:2.0.0
+  urn: urn:korvo:skill:cm-close:3.0.0
   type: lazy_load_endofunctor
 ---
 
 ## Proposito
-Ritual de cierre vespertino (PCA Módulo 3: "Noche — 2min de Cierre"). Cierra el día, vacía micro-capturas, ejecuta micro-check de Waiting (INV-12) y ofrece espacio para reflexión.
+
+Cierre nocturno con micro-check de senales PCA v4.1 (per S7). Vacia capturas residuales, evalua senales criticas del dia, y ofrece espacio para reflexion breve.
 
 ## Input/Output
-- **Input:** day_state: {bloques_ejecutados, capturas_pendientes, waiting_items}
-- **Output:** close: CloseResult {capturas_nuevas, waiting_alertas, triaje_recordado, reflexion}
+
+- **Input:** estado actual de entidades (Candidatos, UTs, Proyectos, Objetivos)
+- **Output:** CloseResult { capturas_nuevas: int, alertas: Alerta[], triaje_recordado: bool }
 
 ## Procedimiento
-1. Preguntar: "¿Algo que capturar antes de cerrar?"
-2. Si no hubo triaje hoy → recordar suavemente (vinculado a triaje vespertino, que el operador inicia manualmente con `/triaje`).
-3. **Micro-check Waiting (INV-12):** ¿Algo en WAITING.md >3 días? → Alertar con lista.
-4. Recordar vaciar micro-capturas del día al buffer.
-5. **Reflexión breve (opcional):** "¿Cómo fue el día?" Si el operador quiere hablar → escuchar en registro relacional (no operacional). Si no → cerrar sin insistir.
-6. Confirmar cierre.
 
-**Duración:** 2-5 minutos (2 base + reflexión opcional).
+1. Preguntar: *"Algo que capturar antes de cerrar?"*
+   - Si hay capturas -> ejecutar CM-CAPTURA para cada una.
+
+2. Si no hubo triaje hoy -> recordar suavemente: *"Sin triaje hoy — mañana pendiente."*
+
+3. **Micro-check senales (INV-11, per §7):**
+   - UTs bloqueadas > 7d -> alertar con lista.
+   - UTs sin actividad > 30d -> alerta suave de drift.
+   - UTs con U > 0.8 -> alertar urgencia critica.
+   - RESULTADO adverso sin trabajo > 14d -> alertar como candidato a revision.
+   - RESULTADO favorable con ventana_fin < 7d -> alertar con urgencia.
+   - Objetivo sin contribuciones constitutivas -> alertar trabajo sin ancla.
+   - Candidatos en buffer > 30 -> sugerir triaje urgente.
+   - Proyecto con todas UTs completadas/descartadas -> senalizar `completado` para confirmacion.
+
+4. Recordar vaciar micro-capturas del dia al buffer.
+
+5. Confirmar cierre.
+
+**Duracion:** 2-5 minutos.
 
 ## Signature Output
+
 ```
-🌙 Cierre del día.
-{⚠️ Sin triaje hoy — ¿hacemos uno rápido? | ✓ Triaje hecho}
-{⚠️ Waiting >3d: {lista} | ✓ Waiting OK}
-¿Algo que capturar antes de cerrar?
+🌙 Cierre del dia.
+{⚠️ Sin triaje hoy | ✓ Triaje hecho}
+{⚠️ Bloqueos >7d: <lista> | ✓ Sin bloqueos prolongados}
+{⚠️ Drift >30d: <lista> | }
+{⚠️ Urgencia U>0.8: <lista> | }
+{⚠️ RESULTADO adverso sin trabajo: <lista> | }
+{⚠️ RESULTADO ventana <7d: <lista> | }
+{⚠️ Objetivo sin constitutivas: <lista> | }
+{⚠️ Proyecto completable: <lista> | }
+{⚠️ Buffer: <N> candidatos | ✓ Buffer OK}
+Algo que capturar?
 ```

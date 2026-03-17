@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-16",
+  "generated_at": "2026-03-17",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/agent-spec-md.md",
@@ -1928,9 +1928,9 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 75,
-        "p1": 75,
-        "p2": 0,
+        "findings_total": 76,
+        "p1": 74,
+        "p2": 2,
         "p3": 0,
         "strict_validate_green": true
       },
@@ -3121,17 +3121,33 @@
         },
         {
           "workspace": "korvo/korax",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
+          "rule_id": "tools.policy_leakage",
+          "rule": "Policy operativa filtrada en TOOLS.md",
+          "severity": "P2",
+          "spec_rule": "agent-spec-md §4.4.4",
           "evidence": {
-            "path": "AGENTS/korvo/korax/skills/CM-BANCARROTA.md",
-            "line": 12,
-            "snippet": "- **Output:** rebuild: BankruptcyResult {mantenidos, soltados, renegociados, fase_actual}"
+            "path": "AGENTS/korvo/korax/TOOLS.md",
+            "line": 138,
+            "snippet": "- **Notas:** Siempre requiere confirmacion del operador."
           },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
+          "why_real": "TOOLS.md gobierna interfaz semántica; confirmaciones y restricciones operativas pertenecen a config o runtime.",
+          "minimal_fix": "Mover la política operativa a `config.json` o al runtime y dejar en TOOLS.md solo semántica de interfaz.",
+          "closure_type": "agent_fix",
+          "enforcement_candidate": "lint"
+        },
+        {
+          "workspace": "korvo/korax",
+          "rule_id": "skill.operational_skill_composition",
+          "rule": "Skill compone otro skill operativamente",
+          "severity": "P2",
+          "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
+          "evidence": {
+            "path": "AGENTS/korvo/korax/skills/CM-CLOSE.md",
+            "line": 19,
+            "snippet": "- Si hay capturas -> ejecutar CM-CAPTURA para cada una."
+          },
+          "why_real": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
+          "minimal_fix": "Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora.",
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
         }
@@ -3176,9 +3192,20 @@
           "enforcement_candidate": "lint"
         },
         {
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
+          "rule_id": "skill.operational_skill_composition",
+          "rule": "Skill compone otro skill operativamente",
+          "severity": "P2",
+          "count": 1,
+          "workspaces": [
+            "korvo/korax"
+          ],
+          "closure_type": "agent_fix",
+          "enforcement_candidate": "lint"
+        },
+        {
+          "rule_id": "tools.policy_leakage",
+          "rule": "Policy operativa filtrada en TOOLS.md",
+          "severity": "P2",
           "count": 1,
           "workspaces": [
             "korvo/korax"
@@ -4493,26 +4520,53 @@
           "findings": [
             {
               "workspace": "korvo/korax",
-              "rule_id": "skill.state_variable_leak",
-              "rule": "Skill degenerado recibe o emite estado FSM",
-              "severity": "P1",
-              "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
+              "rule_id": "tools.policy_leakage",
+              "rule": "Policy operativa filtrada en TOOLS.md",
+              "severity": "P2",
+              "spec_rule": "agent-spec-md §4.4.4",
               "evidence": {
-                "path": "AGENTS/korvo/korax/skills/CM-BANCARROTA.md",
-                "line": 12,
-                "snippet": "- **Output:** rebuild: BankruptcyResult {mantenidos, soltados, renegociados, fase_actual}"
+                "path": "AGENTS/korvo/korax/TOOLS.md",
+                "line": 138,
+                "snippet": "- **Notas:** Siempre requiere confirmacion del operador."
               },
-              "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-              "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
+              "why_real": "TOOLS.md gobierna interfaz semántica; confirmaciones y restricciones operativas pertenecen a config o runtime.",
+              "minimal_fix": "Mover la política operativa a `config.json` o al runtime y dejar en TOOLS.md solo semántica de interfaz.",
+              "closure_type": "agent_fix",
+              "enforcement_candidate": "lint"
+            },
+            {
+              "workspace": "korvo/korax",
+              "rule_id": "skill.operational_skill_composition",
+              "rule": "Skill compone otro skill operativamente",
+              "severity": "P2",
+              "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
+              "evidence": {
+                "path": "AGENTS/korvo/korax/skills/CM-CLOSE.md",
+                "line": 19,
+                "snippet": "- Si hay capturas -> ejecutar CM-CAPTURA para cada una."
+              },
+              "why_real": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
+              "minimal_fix": "Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora.",
               "closure_type": "agent_fix",
               "enforcement_candidate": "lint"
             }
           ],
           "repeated_findings": [
             {
-              "rule_id": "skill.state_variable_leak",
-              "rule": "Skill degenerado recibe o emite estado FSM",
-              "severity": "P1",
+              "rule_id": "skill.operational_skill_composition",
+              "rule": "Skill compone otro skill operativamente",
+              "severity": "P2",
+              "count": 1,
+              "workspaces": [
+                "korvo/korax"
+              ],
+              "closure_type": "agent_fix",
+              "enforcement_candidate": "lint"
+            },
+            {
+              "rule_id": "tools.policy_leakage",
+              "rule": "Policy operativa filtrada en TOOLS.md",
+              "severity": "P2",
               "count": 1,
               "workspaces": [
                 "korvo/korax"
@@ -4569,9 +4623,8 @@
         "rule_id": "skill.state_variable_leak",
         "rule": "Skill degenerado recibe o emite estado FSM",
         "severity": "P1",
-        "count": 12,
+        "count": 11,
         "workspaces": [
-          "korvo/korax",
           "ops/clawstack",
           "ops/deployer",
           "ops/integrador",
@@ -4613,8 +4666,9 @@
         "rule_id": "skill.operational_skill_composition",
         "rule": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "count": 1,
+        "count": 2,
         "workspaces": [
+          "korvo/korax",
           "ops/orquestador-swarm"
         ],
         "closure_type": "agent_fix",
@@ -4664,9 +4718,8 @@
         "rule_id": "skill.state_variable_leak",
         "rule": "Skill degenerado recibe o emite estado FSM",
         "severity": "P1",
-        "count": 12,
+        "count": 11,
         "workspaces": [
-          "korvo/korax",
           "ops/clawstack",
           "ops/deployer",
           "ops/integrador",
@@ -4708,8 +4761,9 @@
         "rule_id": "skill.operational_skill_composition",
         "rule": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "count": 1,
+        "count": 2,
         "workspaces": [
+          "korvo/korax",
           "ops/orquestador-swarm"
         ],
         "closure_type": "agent_fix",
@@ -4717,7 +4771,6 @@
       }
     ],
     "rules_absorbed": [
-      "tools.policy_leakage",
       "config.semantic_runtime_capability",
       "skill.agent_phase_orchestration",
       "skill.relaxes_hard_rule",
@@ -4726,6 +4779,7 @@
     "rules_not_institutionalized": [
       "agent.fsm_pseudostate_destination",
       "agent.missing_transition_precedence",
+      "tools.policy_leakage",
       "skill.state_variable_leak",
       "skill.transition_classifier_leak",
       "skill.operational_skill_composition"
@@ -4733,6 +4787,7 @@
     "enforcement_rollout": {
       "lint": [
         "Destino de control no declarado",
+        "Policy operativa filtrada en TOOLS.md",
         "Precedencia de transiciones no declarada",
         "Skill compone otro skill operativamente",
         "Skill degenerado clasifica transiciones o continuidad FSM",
