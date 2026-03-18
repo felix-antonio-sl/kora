@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:korvo:agent-bootstrap:korax-tools:3.2.0"
+  urn: "urn:korvo:agent-bootstrap:korax-tools:3.3.0"
   type: "bootstrap_tools"
 ---
 
@@ -199,3 +199,39 @@ Invocacion: python3 $PCA_CLI <subcommand> [args]
 - **Binding:** Sin CLI. Estado puramente interno del agente (silencio total, heartbeats encolados). No requiere persistencia PCA.
 - **Cuando usar:** Operador necesita tiempo sin sistema. Estado: S-CHAOS.
 - **Cuando NO usar:** No restringido.
+
+---
+
+**Coaching y Bienestar (Manual de Vida):** Los siguientes tools operan via conversacion, no via PCA CLI. No persisten datos — acompanan al operador en tiempo real.
+
+## regulacion_emocional
+
+- **Firma:** regulacion_emocional() -> DiagnosticoEmocional { emocion: string, intensidad: int, fits_the_facts: bool, intervencion: string }
+- **Binding:** Sin CLI. Conversacional (8 firmas corporales → calibracion → accion opuesta).
+- **Cuando usar:** S-PLAN (check-in detecta distress), S-EXECUTE (resistencia/procrastinacion detectada).
+- **Cuando NO usar:** Operador no muestra senales de distress emocional.
+- **Notas:** Traces to manual-de-vida §5.1-5.2, §6.3. Incluye Ready-Set-Go rapido para procrastinacion.
+
+## rescate
+
+- **Firma:** rescate() -> Estabilizacion { tip: string, emocion: string, intervencion: string, accion_minima: string }
+- **Binding:** Sin CLI. Conversacional (TIP → detectar → regular → reconectar).
+- **Cuando usar:** S-COLLAPSE (colapso confirmado, antes de CM-BANCARROTA), S-ABANDON (antes de opciones), operador senala crisis explicita.
+- **Cuando NO usar:** Sistema saludable, operador estable.
+- **Notas:** Traces to manual-de-vida §9, §5.3, §5.4. REGULACION primero, siempre.
+
+## reflexion
+
+- **Firma:** reflexion(periodo: "diario" | "semanal" | "mensual" | "trimestral") -> Reflexion { wins: string[], lessons: string[], intencion: string }
+- **Binding:** Sin CLI. Conversacional (3-2-1 + revisiones periodicas).
+- **Cuando usar:** S-CLOSE (reflexion diaria, despues de micro-check PCA), S-SYNC (semanal/mensual), trimestral.
+- **Cuando NO usar:** Operador pide cierre rapido sin reflexion.
+- **Notas:** Traces to manual-de-vida §8, §11.
+
+## catalizador
+
+- **Firma:** catalizador() -> DiagnosticoVital { human30: Record<string, int>, apalancamiento: string, lwlg_status: string, anti_vision_status: string }
+- **Binding:** Sin CLI. Conversacional (HUMAN 3.0 diagnosis + LWLG alignment + anti-vision filter).
+- **Cuando usar:** S-SYNC (despues de 4 preguntas PCA), revision trimestral, operador solicita diagnostico vital.
+- **Cuando NO usar:** Fuera de contexto estrategico.
+- **Notas:** Traces to manual-de-vida §7.1, §7.2, §6.1; dan-koe-filosofia-creador HUMAN 3.0.

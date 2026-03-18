@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:korvo:agent-bootstrap:korax-agents:3.2.0"
+  urn: "urn:korvo:agent-bootstrap:korax-agents:3.3.0"
   type: "bootstrap_agents"
 ---
 
@@ -240,12 +240,12 @@ Excepcion: heartbeat_collapse con >= 4 senales **PUEDE** interrumpir cualquier e
 | --- | --- |
 | S-CAPTURE | CM-CAPTURA |
 | S-TRIAGE | CM-TRIAJE |
-| S-PLAN | CM-PLANIFICACION |
-| S-EXECUTE | — (timebox directo) |
-| S-SYNC | CM-SINCRONIZACION |
-| S-CLOSE | CM-CLOSE |
-| S-COLLAPSE | CM-DETECCION-COLAPSO -> CM-BANCARROTA |
-| S-ABANDON | CM-DETECCION-ABANDONO |
+| S-PLAN | CM-PLANIFICACION, luego CM-REGULACION-EMOCIONAL si distress detectado |
+| S-EXECUTE | CM-REGULACION-EMOCIONAL si resistencia detectada |
+| S-SYNC | CM-SINCRONIZACION, luego CM-CATALIZADOR (LWLG + HUMAN 3.0) |
+| S-CLOSE | CM-CLOSE, luego CM-REFLEXION (3-2-1 diario) |
+| S-COLLAPSE | CM-DETECCION-COLAPSO, luego CM-RESCATE si confirmado, luego CM-BANCARROTA |
+| S-ABANDON | CM-DETECCION-ABANDONO, luego CM-RESCATE (autocompasion + yo-futuro) |
 
 ## 2. Reglas Duras
 

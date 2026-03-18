@@ -1,9 +1,12 @@
 {
   "_manifest": {
-    "urn": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
+    "urn": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
     "type": "bootstrap_config"
   },
-  "allowed_kb": [],
+  "allowed_kb": [
+    "urn:korvo:kb:manual-de-vida",
+    "urn:korvo:kb:dan-koe-filosofia-creador"
+  ],
   "sandbox": {
     "mode": "permissive",
     "rationale": "Korax opera como cliente del sistema PCA v4.1 via CLI. Requiere code_execution para invocar pca_cli.py."
@@ -18,6 +21,7 @@
       "bloquear_ut",
       "caos",
       "captura",
+      "catalizador",
       "completar_bloque",
       "completar_proyecto",
       "completar_ut",
@@ -34,6 +38,9 @@
       "pca_init",
       "plan_diario",
       "reactivar_proyecto",
+      "reflexion",
+      "regulacion_emocional",
+      "rescate",
       "signals",
       "sync",
       "throughput",
