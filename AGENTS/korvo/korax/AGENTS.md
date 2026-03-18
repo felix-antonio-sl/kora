@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:korvo:agent-bootstrap:korax-agents:3.3.0"
+  urn: "urn:korvo:agent-bootstrap:korax-agents:3.4.0"
   type: "bootstrap_agents"
 ---
 
@@ -35,22 +35,7 @@ Entidades tipadas PCA v4.1:
 | **Objetivo** | Coproducto de dos subtipos. Campos comunes: id, tipo (PROPOSITO\|RESULTADO), titulo, estado, creado_at (ISO8601). PROPOSITO: anti_vision?, restricciones? (limites no negociables, verificados por Korax per RI-12). RESULTADO: parent_id? (FK a PROPOSITO), contribuciones[], motivo? (texto + tipo adverso\|favorable + urgencia? + ventana_fin?). Estados: `activo \| logrado \| descartado`. |
 | **Contribucion** | Relacion tipada. Campos: id (identificador unico), fuente_tipo (Proyecto\|UT), fuente_id, resultado_id (siempre RESULTADO, nunca PROPOSITO per RI-03), tipo (`constitutiva \| instrumental \| evidencial`). |
 
-**Situacion Temporal (ST) — sub-campos de UT:**
-
-| Campo | Tipo | Semantica |
-| --- | --- | --- |
-| `ventana_inicio` | time? | Hora minima de inicio (ej. 09:00) |
-| `ventana_fin` | time? | Hora maxima de fin (ej. 18:00) |
-| `dias_semana` | set(enum)? | Dias validos para ejecucion |
-| `restriccion` | string? | Descripcion libre de restriccion temporal |
-
-**Situacion Fisica (SF) — sub-campos de UT:**
-
-| Campo | Tipo | Semantica |
-| --- | --- | --- |
-| `lugares` | list(string)? | Lugares donde puede ejecutarse |
-| `herramientas` | list(string)? | Apps o herramientas requeridas |
-| `conectividad` | enum? | `online \| offline \| indiferente` |
+**Sub-campos opcionales de UT:** situacion_temporal (ventana_inicio, ventana_fin, dias_semana, restriccion) y situacion_fisica (lugares, herramientas, conectividad). Gestionados por PCA CLI.
 
 ### 1.2.1 Dimensiones del Trabajo (§5 PCA v4.1)
 
@@ -134,39 +119,6 @@ completitud(PROPOSITO) =
 ```
 
 Condiciones: completitud=1.0 -> senalizar `logrado` (no declarar autonomamente). Sin constitutivas -> null.
-
-**Nota categorica:** completitud() es una transformacion natural del funtor Hom(Contribucion_constitutiva, —) al funtor de medida [0,1]. La naturalidad garantiza que al agregar/remover un RESULTADO de un PROPOSITO, la medida se recalcula coherentemente.
-
-### 1.2.2 Estructura Coalgebraica
-
-Las FSMs de entidad son coalgebras c: S -> F(S):
-
-| Entidad | Coalgebra | Funtor F | Terminales |
-| --- | --- | --- | --- |
-| Candidato | c_C: Estado_C -> (Evento -> Estado_C + 1) | Evento -> Estado + Terminal | promovido, incubado, descartado |
-| UT | c_UT: Estado_UT -> (Evento x Actor -> Estado_UT + 1) | Evento x {Usuario, Agente} -> Estado + Terminal | completada, descartada |
-| Proyecto | c_P: Estado_P -> (Evento -> Estado_P + 1) | Evento -> Estado + Terminal | completado, descartado |
-
-Dos componentes son sustituibles sii existe bisimulacion R tal que si s1 R s2 entonces F(R)(c(s1), c(s2)).
-
-La FSM del agente (C_Korax, 10 estados, 35 transiciones) es una coalgebra de segundo orden que actua como endofuntor sobre el producto de coalgebras de entidad.
-
-**Observaciones canonicas de C_Korax (bisimulacion de referencia):**
-
-Cualquier reimplementacion de Korax es bisimilar si preserva estas observaciones:
-
-| Estado | Observacion canonica |
-| --- | --- |
-| S-IDLE | Acepta eventos, no produce output no solicitado |
-| S-CAPTURE | Produce Candidato con texto + fuente + timestamp, sin metadatos |
-| S-TRIAGE | Presenta arbol N1/N2/N3, senaliza tipo lexico, espera decision |
-| S-PLAN | Ordena UTs por PxU, propone bloques por modo, verifica RI-12 |
-| S-EXECUTE | Protege timebox, registra inicio/fin de bloque |
-| S-SYNC | Presenta completitud + throughput + 4 preguntas, espera decisiones |
-| S-CLOSE | Ejecuta micro-check de senales §2.2, ofrece captura residual |
-| S-CHAOS | Silencio total, heartbeats encolados |
-| S-COLLAPSE | Evalua 5 senales booleanas, ejecuta bancarrota 3 fases si confirmado |
-| S-ABANDON | Escala 3d->7d->14d, presenta opciones, espera respuesta |
 
 ### 1.3 Funcion de Transicion
 
@@ -300,8 +252,6 @@ El agente **DEBE** senalar al operador cuando detecte:
 | RI-05 | Proyecto completado requiere todas UTs en completada/descartada | Guard en completar_proyecto |
 | RI-06 | UT bloqueada tiene al menos una UT en bloqueada_por en pendiente/en_progreso | Senal al descartar UT bloqueante |
 | RI-07 | UT con proyecto_id tiene contribuye_a = []; contribucion va via Proyecto | Validacion en asignar_ut_proyecto, crear_contribucion |
-
-**Nota categorica (RI-07):** Esta regla codifica una fibracion: UT = UT_member + UT_ff (coproducto). La fibra de Contribucion sobre UT_member es vacia (contribucion va via Proyecto); la fibra sobre UT_ff es no-vacia. Los dos paths hacia RESULTADO (UT->Proyecto->Contribucion->RESULTADO y UT->Contribucion->RESULTADO) son fibras disjuntas, no paths paralelos.
 
 | RI-08 | RESULTADO con motivo.tipo=adverso requiere motivo.urgencia | Validacion en CM-TRIAJE N3-RESULTADO |
 | RI-09 | RESULTADO con motivo.tipo=favorable requiere motivo.ventana_fin | Validacion en CM-TRIAJE N3-RESULTADO |

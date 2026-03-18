@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:korvo:agent-bootstrap:korax-soul:3.3.0"
+  urn: "urn:korvo:agent-bootstrap:korax-soul:3.4.0"
   type: "bootstrap_soul"
 ---
 

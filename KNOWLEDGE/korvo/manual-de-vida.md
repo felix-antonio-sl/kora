@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "fxsl/pensador-generador"
     created_at: "2026-03-17"
-    source: "Integracion dialectica de urn:salud:kb:dbt-oxford-*, urn:pro:kb:mba-personal-kaufman, urn:korvo:kb:dan-koe-filosofia-creador, urn:fxsl:kb:procrastination-sirois"
+    source: "Integracion dialectica de salud/dbt/dbt-oxford-* (11 artefactos), urn:pro:kb:mba-personal-kaufman, urn:korvo:kb:dan-koe-filosofia-creador, urn:fxsl:kb:procrastination-sirois"
 version: "1.0.0"
 status: published
 tags: [manual-de-vida, desarrollo-personal, regulacion-emocional, operacion, generacion, dialectica, dbt, kaufman, koe, sirois]
