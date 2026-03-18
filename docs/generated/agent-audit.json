@@ -62,9 +62,9 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 42,
-        "p1": 41,
-        "p2": 1,
+        "findings_total": 40,
+        "p1": 40,
+        "p2": 0,
         "p3": 0,
         "strict_validate_green": true
       },
@@ -630,38 +630,6 @@
           "enforcement_candidate": "lint"
         },
         {
-          "workspace": "dev/steipete",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/steipete/AGENTS.md",
-            "line": 74,
-            "snippet": "9. STATE: S-CONSULT -> ACT: Clasificar dominio de consulta."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/steipete",
-          "rule_id": "skill.operational_skill_composition",
-          "rule": "Skill compone otro skill operativamente",
-          "severity": "P2",
-          "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
-          "evidence": {
-            "path": "AGENTS/dev/steipete/skills/CM-PARALLEL-DISPATCH.md",
-            "line": 27,
-            "snippet": "5. Invocar CM-PROMPT-CRAFT para cada paquete."
-          },
-          "why_real": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
-          "minimal_fix": "Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
           "workspace": "dev/tester",
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
@@ -747,7 +715,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "count": 41,
+          "count": 40,
           "workspaces": [
             "dev/analyst",
             "dev/coder",
@@ -755,19 +723,7 @@
             "dev/refactorer",
             "dev/reviewer",
             "dev/sentinel",
-            "dev/steipete",
             "dev/tester"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "rule_id": "skill.operational_skill_composition",
-          "rule": "Skill compone otro skill operativamente",
-          "severity": "P2",
-          "count": 1,
-          "workspaces": [
-            "dev/steipete"
           ],
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
@@ -4414,7 +4370,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 148,
+        "count": 147,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4422,7 +4378,6 @@
           "dev/refactorer",
           "dev/reviewer",
           "dev/sentinel",
-          "dev/steipete",
           "dev/tester",
           "fxsl/arquitecto-automatizacion-organizacional",
           "fxsl/arquitecto-sistemas-informacion",
@@ -4495,9 +4450,8 @@
         "rule_id": "skill.operational_skill_composition",
         "rule": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "count": 3,
+        "count": 2,
         "workspaces": [
-          "dev/steipete",
           "korvo/korax",
           "ops/orquestador-swarm"
         ],
@@ -4510,7 +4464,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 148,
+        "count": 147,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4518,7 +4472,6 @@
           "dev/refactorer",
           "dev/reviewer",
           "dev/sentinel",
-          "dev/steipete",
           "dev/tester",
           "fxsl/arquitecto-automatizacion-organizacional",
           "fxsl/arquitecto-sistemas-informacion",
@@ -4591,9 +4544,8 @@
         "rule_id": "skill.operational_skill_composition",
         "rule": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "count": 3,
+        "count": 2,
         "workspaces": [
-          "dev/steipete",
           "korvo/korax",
           "ops/orquestador-swarm"
         ],

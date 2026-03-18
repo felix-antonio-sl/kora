@@ -13,21 +13,21 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 148 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 147 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
-| Skill compone otro skill operativamente | P2 | 3 | dev/steipete, korvo/korax, ops/orquestador-swarm | agent_fix |
+| Skill compone otro skill operativamente | P2 | 2 | korvo/korax, ops/orquestador-swarm | agent_fix |
 
 ## Top 5 falsos verdes del validator actual
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 148 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 147 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
-| Skill compone otro skill operativamente | P2 | 3 | dev/steipete, korvo/korax, ops/orquestador-swarm | agent_fix |
+| Skill compone otro skill operativamente | P2 | 2 | korvo/korax, ops/orquestador-swarm | agent_fix |
 
 ## Cohorte meta-kora
 
@@ -50,8 +50,8 @@ Hallazgos repetidos:
 
 - Workspaces auditados: 8
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 42
-- P1: 41 | P2: 1 | P3: 0
+- Hallazgos manuales: 40
+- P1: 40 | P2: 0 | P3: 0
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
@@ -90,8 +90,6 @@ Hallazgos repetidos:
 | dev/sentinel | Precedencia de transiciones no declarada | P1 | AGENTS/dev/sentinel/AGENTS.md:15 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | dev/sentinel | Precedencia de transiciones no declarada | P1 | AGENTS/dev/sentinel/AGENTS.md:17 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | dev/sentinel | Precedencia de transiciones no declarada | P1 | AGENTS/dev/sentinel/AGENTS.md:19 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| dev/steipete | Precedencia de transiciones no declarada | P1 | AGENTS/dev/steipete/AGENTS.md:74 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| dev/steipete | Skill compone otro skill operativamente | P2 | AGENTS/dev/steipete/skills/CM-PARALLEL-DISPATCH.md:27 | Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora. | agent_fix |
 | dev/tester | Precedencia de transiciones no declarada | P1 | AGENTS/dev/tester/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | dev/tester | Precedencia de transiciones no declarada | P1 | AGENTS/dev/tester/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | dev/tester | Precedencia de transiciones no declarada | P1 | AGENTS/dev/tester/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
@@ -102,8 +100,7 @@ Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 41 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
-| Skill compone otro skill operativamente | P2 | 1 | dev/steipete | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 40 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 
 ## Cohorte ops
 

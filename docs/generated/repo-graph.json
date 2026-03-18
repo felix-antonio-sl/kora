@@ -1,13 +1,13 @@
 {
   "meta": {
-    "scanned_files": 1409,
-    "node_count": 893,
-    "edge_count": 4198
+    "scanned_files": 1411,
+    "node_count": 894,
+    "edge_count": 4205
   },
   "node_kind_counts": {
     "artifact": 207,
     "knowledge": 244,
-    "skill": 254,
+    "skill": 255,
     "spec": 7,
     "tool": 140,
     "workspace": 41
@@ -15,13 +15,13 @@
   "edge_kind_counts": {
     "AllowsKB": 421,
     "AllowsTool": 217,
-    "ContainsArtifact": 205,
-    "ContainsSkill": 254,
+    "ContainsArtifact": 206,
+    "ContainsSkill": 255,
     "DeclaresTool": 218,
-    "InvokesSkill": 235,
+    "InvokesSkill": 237,
     "RoutesToAgent": 60,
     "TracesTo": 43,
-    "XRef": 2545
+    "XRef": 2548
   },
   "nodes": [
     {
@@ -295,46 +295,46 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/steipete/AGENTS.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "id": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
       "title": "config.json",
       "path": "AGENTS/dev/steipete/config.json",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "id": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "title": "Identidad",
       "path": "AGENTS/dev/steipete/SOUL.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "id": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
       "title": "TOOLS.md",
       "path": "AGENTS/dev/steipete/TOOLS.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "id": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
       "title": "Perfil",
       "path": "AGENTS/dev/steipete/USER.md",
       "namespace": "dev"
@@ -1245,46 +1245,55 @@
       "urn": "urn:kora:catalog:master:2.0.0"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "id": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "title": "AGENTS.md",
       "path": "AGENTS/korvo/korax/AGENTS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "id": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
       "title": "config.json",
       "path": "AGENTS/korvo/korax/config.json",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
+      "id": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
+      "title": "IDENTITY.md",
+      "path": "AGENTS/korvo/korax/IDENTITY.md",
+      "namespace": "korvo"
+    },
+    {
+      "id": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
       "title": "SOUL.md",
       "path": "AGENTS/korvo/korax/SOUL.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
+      "id": "urn:korvo:agent-bootstrap:korax-tools:3.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.4.0",
       "title": "TOOLS.md",
       "path": "AGENTS/korvo/korax/TOOLS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
+      "id": "urn:korvo:agent-bootstrap:korax-user:3.4.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-user:3.4.0",
       "title": "USER.md",
       "path": "AGENTS/korvo/korax/USER.md",
       "namespace": "korvo"
@@ -1873,11 +1882,6 @@
       "title": "USER.md",
       "path": "AGENTS/salud/salubrista/USER.md",
       "namespace": "salud"
-    },
-    {
-      "id": "urn:salud:kb:dbt-oxford-",
-      "kind": "artifact",
-      "urn": "urn:salud:kb:dbt-oxford-"
     },
     {
       "id": "urn:agengai:kb:00-fundamentos-previos",
@@ -4139,28 +4143,28 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:blast-radius:1.0.0",
+      "id": "urn:dev:skill:blast-radius:1.0.1",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:blast-radius:1.0.0",
+      "urn": "urn:dev:skill:blast-radius:1.0.1",
       "title": "CM-BLAST-RADIUS.md",
       "path": "AGENTS/dev/steipete/skills/CM-BLAST-RADIUS.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:captura-dialectica:1.0.0",
+      "id": "urn:dev:skill:captura-dialectica:1.1.1",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:captura-dialectica:1.0.0",
+      "urn": "urn:dev:skill:captura-dialectica:1.1.1",
       "title": "CM-CAPTURA-DIALECTICA.md",
       "path": "AGENTS/dev/steipete/skills/CM-CAPTURA-DIALECTICA.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:close-the-loop:1.0.0",
+      "id": "urn:dev:skill:close-the-loop:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:close-the-loop:1.0.0",
+      "urn": "urn:dev:skill:close-the-loop:1.1.0",
       "title": "CM-CLOSE-THE-LOOP.md",
       "path": "AGENTS/dev/steipete/skills/CM-CLOSE-THE-LOOP.md",
       "namespace": "dev"
@@ -4229,37 +4233,37 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:context-hygiene:1.0.0",
+      "id": "urn:dev:skill:context-hygiene:1.1.1",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:context-hygiene:1.0.0",
+      "urn": "urn:dev:skill:context-hygiene:1.1.1",
       "title": "CM-CONTEXT-HYGIENE.md",
       "path": "AGENTS/dev/steipete/skills/CM-CONTEXT-HYGIENE.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:decomposition:1.0.0",
+      "id": "urn:dev:skill:decomposition:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:decomposition:1.0.0",
+      "urn": "urn:dev:skill:decomposition:1.1.0",
       "title": "CM-DECOMPOSITION.md",
       "path": "AGENTS/dev/steipete/skills/CM-DECOMPOSITION.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "id": "urn:dev:skill:openclaw-expertise:1.1.1",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "urn": "urn:dev:skill:openclaw-expertise:1.1.1",
       "title": "CM-OPENCLAW-EXPERTISE.md",
       "path": "AGENTS/dev/steipete/skills/CM-OPENCLAW-EXPERTISE.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "id": "urn:dev:skill:parallel-dispatch:1.2.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "urn": "urn:dev:skill:parallel-dispatch:1.2.0",
       "title": "CM-PARALLEL-DISPATCH.md",
       "path": "AGENTS/dev/steipete/skills/CM-PARALLEL-DISPATCH.md",
       "namespace": "dev"
@@ -4328,19 +4332,19 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:praxis:1.0.0",
+      "id": "urn:dev:skill:praxis:1.0.1",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:praxis:1.0.0",
+      "urn": "urn:dev:skill:praxis:1.0.1",
       "title": "CM-PRAXIS.md",
       "path": "AGENTS/dev/steipete/skills/CM-PRAXIS.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:prompt-craft:1.0.0",
+      "id": "urn:dev:skill:prompt-craft:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:prompt-craft:1.0.0",
+      "urn": "urn:dev:skill:prompt-craft:1.1.0",
       "title": "CM-PROMPT-CRAFT.md",
       "path": "AGENTS/dev/steipete/skills/CM-PROMPT-CRAFT.md",
       "namespace": "dev"
@@ -4568,6 +4572,15 @@
       "urn": "urn:dev:skill:tester-test-executor:1.0.0",
       "title": "CM-TEST-EXECUTOR",
       "path": "AGENTS/dev/tester/skills/CM-TEST-EXECUTOR.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:tooling-advisor:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:tooling-advisor:1.0.0",
+      "title": "CM-TOOLING-ADVISOR.md",
+      "path": "AGENTS/dev/steipete/skills/CM-TOOLING-ADVISOR.md",
       "namespace": "dev"
     },
     {
@@ -11394,27 +11407,27 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-config:1.0.0"
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-soul:1.0.0"
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.0.0"
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-user:1.0.0"
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.3.1"
     },
     {
       "kind": "ContainsArtifact",
@@ -11919,27 +11932,32 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.3.0"
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.4.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.3.0"
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.4.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.3.0"
+      "target": "urn:korvo:agent-bootstrap:korax-identity:3.4.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.3.0"
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.4.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.3.0"
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.4.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:korvo/korax",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.4.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12469,47 +12487,52 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:blast-radius:1.0.0"
+      "target": "urn:dev:skill:blast-radius:1.0.1"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:captura-dialectica:1.0.0"
+      "target": "urn:dev:skill:captura-dialectica:1.1.1"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:close-the-loop:1.0.0"
+      "target": "urn:dev:skill:close-the-loop:1.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:context-hygiene:1.0.0"
+      "target": "urn:dev:skill:context-hygiene:1.1.1"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:decomposition:1.0.0"
+      "target": "urn:dev:skill:decomposition:1.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:openclaw-expertise:1.0.0"
+      "target": "urn:dev:skill:openclaw-expertise:1.1.1"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:parallel-dispatch:1.0.0"
+      "target": "urn:dev:skill:parallel-dispatch:1.2.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:praxis:1.0.0"
+      "target": "urn:dev:skill:praxis:1.0.1"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:prompt-craft:1.0.0"
+      "target": "urn:dev:skill:prompt-craft:1.1.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:tooling-advisor:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -15086,50 +15109,62 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:blast-radius:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:blast-radius:1.0.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:captura-dialectica:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:captura-dialectica:1.1.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:close-the-loop:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:close-the-loop:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:decomposition:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:context-hygiene:1.1.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:decomposition:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:openclaw-expertise:1.1.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:praxis:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:parallel-dispatch:1.2.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:skill:prompt-craft:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:praxis:1.0.1",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:prompt-craft:1.1.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:skill:tooling-advisor:1.0.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
@@ -15764,73 +15799,73 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-captura:1.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-catalizador:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-close:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-reflexion:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-rescate:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
@@ -17338,35 +17373,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17583,21 +17618,21 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:blast-radius:1.0.0",
+      "target": "urn:dev:skill:blast-radius:1.0.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:captura-dialectica:1.0.0",
+      "target": "urn:dev:skill:captura-dialectica:1.1.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:close-the-loop:1.0.0",
+      "target": "urn:dev:skill:close-the-loop:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17653,28 +17688,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:context-hygiene:1.0.0",
+      "target": "urn:dev:skill:context-hygiene:1.1.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:decomposition:1.0.0",
+      "target": "urn:dev:skill:decomposition:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "target": "urn:dev:skill:openclaw-expertise:1.1.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "target": "urn:dev:skill:parallel-dispatch:1.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17730,14 +17765,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:praxis:1.0.0",
+      "target": "urn:dev:skill:praxis:1.0.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:prompt-craft:1.0.0",
+      "target": "urn:dev:skill:prompt-craft:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17913,6 +17948,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:skill:tester-test-executor:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:tooling-advisor:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20292,35 +20334,42 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.4.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.4.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -22762,71 +22811,71 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
       "target": "urn:dev:kb:agentic-engineering-praxis",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
-      "target": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
       "target": "urn:dev:kb:agentic-engineering-praxis",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
-      "target": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
-      "target": "urn:dev:kb:agentic-engineering-praxis",
-      "fragment": null,
-      "source_path": "AGENTS/dev/steipete/SOUL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
-      "target": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "source": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/USER.md"
     },
@@ -23210,22 +23259,22 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:blast-radius:1.0.0",
-      "target": "urn:dev:skill:blast-radius:1.0.0",
+      "source": "urn:dev:skill:blast-radius:1.0.1",
+      "target": "urn:dev:skill:blast-radius:1.0.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-BLAST-RADIUS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:captura-dialectica:1.0.0",
-      "target": "urn:dev:skill:captura-dialectica:1.0.0",
+      "source": "urn:dev:skill:captura-dialectica:1.1.1",
+      "target": "urn:dev:skill:captura-dialectica:1.1.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-CAPTURA-DIALECTICA.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:close-the-loop:1.0.0",
-      "target": "urn:dev:skill:close-the-loop:1.0.0",
+      "source": "urn:dev:skill:close-the-loop:1.1.0",
+      "target": "urn:dev:skill:close-the-loop:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-CLOSE-THE-LOOP.md"
     },
@@ -23280,29 +23329,29 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:context-hygiene:1.0.0",
-      "target": "urn:dev:skill:context-hygiene:1.0.0",
+      "source": "urn:dev:skill:context-hygiene:1.1.1",
+      "target": "urn:dev:skill:context-hygiene:1.1.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-CONTEXT-HYGIENE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:decomposition:1.0.0",
-      "target": "urn:dev:skill:decomposition:1.0.0",
+      "source": "urn:dev:skill:decomposition:1.1.0",
+      "target": "urn:dev:skill:decomposition:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-DECOMPOSITION.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:openclaw-expertise:1.0.0",
-      "target": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "source": "urn:dev:skill:openclaw-expertise:1.1.1",
+      "target": "urn:dev:skill:openclaw-expertise:1.1.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-OPENCLAW-EXPERTISE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:parallel-dispatch:1.0.0",
-      "target": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "source": "urn:dev:skill:parallel-dispatch:1.2.0",
+      "target": "urn:dev:skill:parallel-dispatch:1.2.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-PARALLEL-DISPATCH.md"
     },
@@ -23357,15 +23406,15 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:praxis:1.0.0",
-      "target": "urn:dev:skill:praxis:1.0.0",
+      "source": "urn:dev:skill:praxis:1.0.1",
+      "target": "urn:dev:skill:praxis:1.0.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-PRAXIS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:prompt-craft:1.0.0",
-      "target": "urn:dev:skill:prompt-craft:1.0.0",
+      "source": "urn:dev:skill:prompt-craft:1.1.0",
+      "target": "urn:dev:skill:prompt-craft:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-PROMPT-CRAFT.md"
     },
@@ -23543,6 +23592,13 @@
       "target": "urn:dev:skill:tester-test-executor:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/dev/tester/skills/CM-TEST-EXECUTOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:tooling-advisor:1.0.0",
+      "target": "urn:dev:skill:tooling-advisor:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-TOOLING-ADVISOR.md"
     },
     {
       "kind": "XRef",
@@ -31155,50 +31211,57 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
       "target": "urn:korvo:kb:dan-koe-filosofia-creador",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
       "target": "urn:korvo:kb:manual-de-vida",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/IDENTITY.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-tools:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.4.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
+      "source": "urn:korvo:agent-bootstrap:korax-user:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.4.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/USER.md"
     },
@@ -31234,13 +31297,6 @@
       "kind": "XRef",
       "source": "urn:korvo:kb:manual-de-vida",
       "target": "urn:pro:kb:mba-personal-kaufman",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:korvo:kb:manual-de-vida",
-      "target": "urn:salud:kb:dbt-oxford-",
       "fragment": null,
       "source_path": "KNOWLEDGE/korvo/manual-de-vida.md"
     },
