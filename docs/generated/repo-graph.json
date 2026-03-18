@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1401,
-    "node_count": 861,
-    "edge_count": 4043
+    "scanned_files": 1409,
+    "node_count": 893,
+    "edge_count": 4198
   },
   "node_kind_counts": {
-    "artifact": 202,
-    "knowledge": 242,
-    "skill": 241,
+    "artifact": 207,
+    "knowledge": 244,
+    "skill": 254,
     "spec": 7,
-    "tool": 129,
-    "workspace": 40
+    "tool": 140,
+    "workspace": 41
   },
   "edge_kind_counts": {
-    "AllowsKB": 417,
-    "AllowsTool": 204,
-    "ContainsArtifact": 200,
-    "ContainsSkill": 241,
-    "DeclaresTool": 205,
-    "InvokesSkill": 223,
+    "AllowsKB": 421,
+    "AllowsTool": 217,
+    "ContainsArtifact": 205,
+    "ContainsSkill": 254,
+    "DeclaresTool": 218,
+    "InvokesSkill": 235,
     "RoutesToAgent": 60,
     "TracesTo": 43,
-    "XRef": 2450
+    "XRef": 2545
   },
   "nodes": [
     {
@@ -292,6 +292,51 @@
       "urn": "urn:dev:agent-bootstrap:sentinel-user:1.0.0",
       "title": "USER.md",
       "path": "AGENTS/dev/sentinel/USER.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "title": "AGENTS.md",
+      "path": "AGENTS/dev/steipete/AGENTS.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "title": "config.json",
+      "path": "AGENTS/dev/steipete/config.json",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "title": "Identidad",
+      "path": "AGENTS/dev/steipete/SOUL.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "title": "TOOLS.md",
+      "path": "AGENTS/dev/steipete/TOOLS.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "title": "Perfil",
+      "path": "AGENTS/dev/steipete/USER.md",
       "namespace": "dev"
     },
     {
@@ -1200,46 +1245,46 @@
       "urn": "urn:kora:catalog:master:2.0.0"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "id": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "title": "AGENTS.md",
       "path": "AGENTS/korvo/korax/AGENTS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
+      "id": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
       "title": "config.json",
       "path": "AGENTS/korvo/korax/config.json",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
+      "id": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
       "title": "SOUL.md",
       "path": "AGENTS/korvo/korax/SOUL.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
+      "id": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
       "title": "TOOLS.md",
       "path": "AGENTS/korvo/korax/TOOLS.md",
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
+      "id": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
       "title": "USER.md",
       "path": "AGENTS/korvo/korax/USER.md",
       "namespace": "korvo"
@@ -2094,6 +2139,24 @@
       "title": "The Complete Guide to Building Skills for Claude",
       "path": "KNOWLEDGE/agengai/skills-anthropic.md",
       "namespace": "agengai"
+    },
+    {
+      "id": "urn:dev:kb:agentic-engineering-praxis",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:dev:kb:agentic-engineering-praxis",
+      "title": "Ingenieria Agéntica: Praxis de Peter Steinberger",
+      "path": "KNOWLEDGE/dev/agentic-engineering-praxis.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:kb:agentic-tooling-inventory",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:dev:kb:agentic-tooling-inventory",
+      "title": "Claude Code detecta automáticamente",
+      "path": "KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md",
+      "namespace": "dev"
     },
     {
       "id": "urn:fxsl:kb:action-primary-key",
@@ -4076,6 +4139,33 @@
       "namespace": "dev"
     },
     {
+      "id": "urn:dev:skill:blast-radius:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:blast-radius:1.0.0",
+      "title": "CM-BLAST-RADIUS.md",
+      "path": "AGENTS/dev/steipete/skills/CM-BLAST-RADIUS.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:captura-dialectica:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:captura-dialectica:1.0.0",
+      "title": "CM-CAPTURA-DIALECTICA.md",
+      "path": "AGENTS/dev/steipete/skills/CM-CAPTURA-DIALECTICA.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:close-the-loop:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:close-the-loop:1.0.0",
+      "title": "CM-CLOSE-THE-LOOP.md",
+      "path": "AGENTS/dev/steipete/skills/CM-CLOSE-THE-LOOP.md",
+      "namespace": "dev"
+    },
+    {
       "id": "urn:dev:skill:coder-bug-hunter:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -4139,6 +4229,42 @@
       "namespace": "dev"
     },
     {
+      "id": "urn:dev:skill:context-hygiene:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:context-hygiene:1.0.0",
+      "title": "CM-CONTEXT-HYGIENE.md",
+      "path": "AGENTS/dev/steipete/skills/CM-CONTEXT-HYGIENE.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:decomposition:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:decomposition:1.0.0",
+      "title": "CM-DECOMPOSITION.md",
+      "path": "AGENTS/dev/steipete/skills/CM-DECOMPOSITION.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "title": "CM-OPENCLAW-EXPERTISE.md",
+      "path": "AGENTS/dev/steipete/skills/CM-OPENCLAW-EXPERTISE.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "title": "CM-PARALLEL-DISPATCH.md",
+      "path": "AGENTS/dev/steipete/skills/CM-PARALLEL-DISPATCH.md",
+      "namespace": "dev"
+    },
+    {
       "id": "urn:dev:skill:planner-backlog-curator:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -4199,6 +4325,24 @@
       "urn": "urn:dev:skill:planner-story-refiner:1.0.0",
       "title": "CM-STORY-REFINER",
       "path": "AGENTS/dev/planner/skills/CM-STORY-REFINER.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:praxis:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:praxis:1.0.0",
+      "title": "CM-PRAXIS.md",
+      "path": "AGENTS/dev/steipete/skills/CM-PRAXIS.md",
+      "namespace": "dev"
+    },
+    {
+      "id": "urn:dev:skill:prompt-craft:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:dev:skill:prompt-craft:1.0.0",
+      "title": "CM-PROMPT-CRAFT.md",
+      "path": "AGENTS/dev/steipete/skills/CM-PROMPT-CRAFT.md",
       "namespace": "dev"
     },
     {
@@ -5444,6 +5588,15 @@
       "namespace": "korvo"
     },
     {
+      "id": "urn:korvo:skill:cm-catalizador:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:korvo:skill:cm-catalizador:1.0.0",
+      "title": "CM-CATALIZADOR.md",
+      "path": "AGENTS/korvo/korax/skills/CM-CATALIZADOR.md",
+      "namespace": "korvo"
+    },
+    {
       "id": "urn:korvo:skill:cm-close:3.1.0",
       "kind": "skill",
       "category": "Skills",
@@ -5477,6 +5630,33 @@
       "urn": "urn:korvo:skill:cm-planificacion:4.1.0",
       "title": "CM-PLANIFICACION.md",
       "path": "AGENTS/korvo/korax/skills/CM-PLANIFICACION.md",
+      "namespace": "korvo"
+    },
+    {
+      "id": "urn:korvo:skill:cm-reflexion:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:korvo:skill:cm-reflexion:1.0.0",
+      "title": "CM-REFLEXION.md",
+      "path": "AGENTS/korvo/korax/skills/CM-REFLEXION.md",
+      "namespace": "korvo"
+    },
+    {
+      "id": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
+      "title": "CM-REGULACION-EMOCIONAL.md",
+      "path": "AGENTS/korvo/korax/skills/CM-REGULACION-EMOCIONAL.md",
+      "namespace": "korvo"
+    },
+    {
+      "id": "urn:korvo:skill:cm-rescate:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:korvo:skill:cm-rescate:1.0.0",
+      "title": "CM-RESCATE.md",
+      "path": "AGENTS/korvo/korax/skills/CM-RESCATE.md",
       "namespace": "korvo"
     },
     {
@@ -6340,6 +6520,11 @@
       "name": "bloquear_ut"
     },
     {
+      "id": "tool:cancel_worker",
+      "kind": "tool",
+      "name": "cancel_worker"
+    },
+    {
       "id": "tool:caos",
       "kind": "tool",
       "name": "caos"
@@ -6348,6 +6533,11 @@
       "id": "tool:captura",
       "kind": "tool",
       "name": "captura"
+    },
+    {
+      "id": "tool:catalizador",
+      "kind": "tool",
+      "name": "catalizador"
     },
     {
       "id": "tool:catalog_resolve",
@@ -6510,6 +6700,11 @@
       "name": "diff_compute"
     },
     {
+      "id": "tool:dispatch_worker",
+      "kind": "tool",
+      "name": "dispatch_worker"
+    },
+    {
       "id": "tool:diversity_check",
       "kind": "tool",
       "name": "diversity_check"
@@ -6645,6 +6840,11 @@
       "name": "metrics_collect"
     },
     {
+      "id": "tool:monitor_workers",
+      "kind": "tool",
+      "name": "monitor_workers"
+    },
+    {
       "id": "tool:oc_cli",
       "kind": "tool",
       "name": "oc_cli"
@@ -6720,9 +6920,19 @@
       "name": "reactivar_proyecto"
     },
     {
+      "id": "tool:read_codebase",
+      "kind": "tool",
+      "name": "read_codebase"
+    },
+    {
       "id": "tool:refactor_apply",
       "kind": "tool",
       "name": "refactor_apply"
+    },
+    {
+      "id": "tool:reflexion",
+      "kind": "tool",
+      "name": "reflexion"
     },
     {
       "id": "tool:regression_run",
@@ -6730,9 +6940,19 @@
       "name": "regression_run"
     },
     {
+      "id": "tool:regulacion_emocional",
+      "kind": "tool",
+      "name": "regulacion_emocional"
+    },
+    {
       "id": "tool:repo_health",
       "kind": "tool",
       "name": "repo_health"
+    },
+    {
+      "id": "tool:rescate",
+      "kind": "tool",
+      "name": "rescate"
     },
     {
       "id": "tool:resolve_urn",
@@ -6743,6 +6963,11 @@
       "id": "tool:retro_report",
       "kind": "tool",
       "name": "retro_report"
+    },
+    {
+      "id": "tool:review_diff",
+      "kind": "tool",
+      "name": "review_diff"
     },
     {
       "id": "tool:rollback_execute",
@@ -6758,6 +6983,16 @@
       "id": "tool:search_kb",
       "kind": "tool",
       "name": "search_kb"
+    },
+    {
+      "id": "tool:search_openclaw",
+      "kind": "tool",
+      "name": "search_openclaw"
+    },
+    {
+      "id": "tool:search_tooling",
+      "kind": "tool",
+      "name": "search_tooling"
     },
     {
       "id": "tool:security_scan",
@@ -6930,6 +7165,13 @@
       "workspace": "dev/sentinel",
       "namespace": "dev",
       "path": "AGENTS/dev/sentinel"
+    },
+    {
+      "id": "workspace:dev/steipete",
+      "kind": "workspace",
+      "workspace": "dev/steipete",
+      "namespace": "dev",
+      "path": "AGENTS/dev/steipete"
     },
     {
       "id": "workspace:dev/tester",
@@ -7314,6 +7556,18 @@
       "source": "workspace:dev/sentinel",
       "target": "urn:fxsl:kb:xanpan-agents-metodologia",
       "source_path": "AGENTS/dev/sentinel/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:kb:agentic-engineering-praxis",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "source_path": "AGENTS/dev/steipete/config.json"
     },
     {
       "kind": "AllowsKB",
@@ -9135,6 +9389,18 @@
     },
     {
       "kind": "AllowsKB",
+      "source": "workspace:korvo/korax",
+      "target": "urn:korvo:kb:dan-koe-filosofia-creador",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:korvo/korax",
+      "target": "urn:korvo:kb:manual-de-vida",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsKB",
       "source": "workspace:legal/abogado-legislacion-medica",
       "target": "urn:legal:kb:acoso-laboral",
       "source_path": "AGENTS/legal/abogado-legislacion-medica/config.json"
@@ -9927,6 +10193,60 @@
     },
     {
       "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:cancel_worker",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:catalog_resolve",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:dispatch_worker",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:monitor_workers",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:read_codebase",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:review_diff",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:search_kb",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:search_openclaw",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:search_tooling",
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "AllowsTool",
       "source": "workspace:dev/tester",
       "target": "tool:ac_parse",
       "source_path": "AGENTS/dev/tester/config.json"
@@ -10384,6 +10704,12 @@
     {
       "kind": "AllowsTool",
       "source": "workspace:korvo/korax",
+      "target": "tool:catalizador",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
       "target": "tool:completar_bloque",
       "source_path": "AGENTS/korvo/korax/config.json"
     },
@@ -10475,6 +10801,24 @@
       "kind": "AllowsTool",
       "source": "workspace:korvo/korax",
       "target": "tool:reactivar_proyecto",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:reflexion",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:regulacion_emocional",
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:rescate",
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
@@ -11049,6 +11393,31 @@
     },
     {
       "kind": "ContainsArtifact",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
       "source": "workspace:dev/tester",
       "target": "urn:dev:agent-bootstrap:tester-agents:1.0.0"
     },
@@ -11550,27 +11919,27 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.2.0"
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.2.0"
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.2.0"
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.2.0"
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.2.0"
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12096,6 +12465,51 @@
       "kind": "ContainsSkill",
       "source": "workspace:dev/sentinel",
       "target": "urn:dev:skill:sentinel-swarm-auditor:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:blast-radius:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:captura-dialectica:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:close-the-loop:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:context-hygiene:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:decomposition:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:openclaw-expertise:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:parallel-dispatch:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:praxis:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:dev/steipete",
+      "target": "urn:dev:skill:prompt-craft:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -12695,6 +13109,11 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
+      "target": "urn:korvo:skill:cm-catalizador:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:korvo/korax",
       "target": "urn:korvo:skill:cm-close:3.1.0"
     },
     {
@@ -12711,6 +13130,21 @@
       "kind": "ContainsSkill",
       "source": "workspace:korvo/korax",
       "target": "urn:korvo:skill:cm-planificacion:4.1.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:korvo/korax",
+      "target": "urn:korvo:skill:cm-reflexion:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:korvo/korax",
+      "target": "urn:korvo:skill:cm-regulacion-emocional:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:korvo/korax",
+      "target": "urn:korvo:skill:cm-rescate:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -13356,6 +13790,60 @@
     },
     {
       "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:cancel_worker",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:catalog_resolve",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:dispatch_worker",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:monitor_workers",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:read_codebase",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:review_diff",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:search_kb",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:search_openclaw",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:dev/steipete",
+      "target": "tool:search_tooling",
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
       "source": "workspace:dev/tester",
       "target": "tool:ac_parse",
       "source_path": "AGENTS/dev/tester/TOOLS.md"
@@ -13813,6 +14301,12 @@
     {
       "kind": "DeclaresTool",
       "source": "workspace:korvo/korax",
+      "target": "tool:catalizador",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
       "target": "tool:completar_bloque",
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
@@ -13904,6 +14398,24 @@
       "kind": "DeclaresTool",
       "source": "workspace:korvo/korax",
       "target": "tool:reactivar_proyecto",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:reflexion",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:regulacion_emocional",
+      "source_path": "AGENTS/korvo/korax/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:korvo/korax",
+      "target": "tool:rescate",
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
     {
@@ -14574,6 +15086,54 @@
     },
     {
       "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:blast-radius:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:captura-dialectica:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:close-the-loop:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:decomposition:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:praxis:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:skill:prompt-craft:1.0.0",
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
       "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
       "target": "urn:dev:skill:tester-acceptance-test-generator:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
@@ -15204,49 +15764,73 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-captura:1.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "target": "urn:korvo:skill:cm-catalizador:1.0.0",
+      "source_path": "AGENTS/korvo/korax/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-close:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "target": "urn:korvo:skill:cm-reflexion:1.0.0",
+      "source_path": "AGENTS/korvo/korax/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "target": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
+      "source_path": "AGENTS/korvo/korax/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "target": "urn:korvo:skill:cm-rescate:1.0.0",
+      "source_path": "AGENTS/korvo/korax/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
@@ -16754,6 +17338,41 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -16783,6 +17402,132 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:agent-bootstrap:tester-user:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-engineering-praxis",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16838,6 +17583,27 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:blast-radius:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:captura-dialectica:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:close-the-loop:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:skill:coder-bug-hunter:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -16887,6 +17653,34 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:context-hygiene:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:decomposition:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:skill:planner-backlog-curator:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -16930,6 +17724,20 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:skill:planner-story-refiner:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:praxis:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:skill:prompt-craft:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19484,35 +20292,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19547,6 +20355,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:korvo:skill:cm-catalizador:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:korvo:skill:cm-close:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -19569,6 +20384,27 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:korvo:skill:cm-planificacion:4.1.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:korvo:skill:cm-reflexion:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:korvo:skill:cm-rescate:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21926,6 +22762,76 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.0.0",
+      "target": "urn:dev:kb:agentic-engineering-praxis",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "target": "urn:dev:kb:agentic-engineering-praxis",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/SOUL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-soul:1.0.0",
+      "target": "urn:dev:kb:agentic-engineering-praxis",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/SOUL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.0.0",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/USER.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
       "target": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
       "fragment": null,
@@ -22017,6 +22923,244 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:dev:kb:agentic-engineering-praxis",
+      "target": "urn:dev:kb:agentic-engineering-praxis",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-engineering-praxis.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/_index.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/_selection-matrix.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/_selection-matrix.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/codex-cli.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/codex-cli.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/gemini-cli.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/gemini-cli.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/opencode.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/opencode.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/anthropic.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/anthropic.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/deepseek.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/deepseek.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/glm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/glm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/google.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/google.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/kimi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/kimi.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/meta.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/meta.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/minimax.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/minimax.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/mistral.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/mistral.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/openai.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/openai.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/qwen.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/qwen.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:dev:skill:analyst-backlog-health-checker:1.0.0",
       "target": "urn:dev:skill:analyst-backlog-health-checker:1.0.0",
       "fragment": null,
@@ -22063,6 +23207,27 @@
       "target": "urn:dev:skill:analyst-trend-analyzer:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/dev/analyst/skills/CM-TREND-ANALYZER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:blast-radius:1.0.0",
+      "target": "urn:dev:skill:blast-radius:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-BLAST-RADIUS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:captura-dialectica:1.0.0",
+      "target": "urn:dev:skill:captura-dialectica:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-CAPTURA-DIALECTICA.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:close-the-loop:1.0.0",
+      "target": "urn:dev:skill:close-the-loop:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-CLOSE-THE-LOOP.md"
     },
     {
       "kind": "XRef",
@@ -22115,6 +23280,34 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:dev:skill:context-hygiene:1.0.0",
+      "target": "urn:dev:skill:context-hygiene:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-CONTEXT-HYGIENE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:decomposition:1.0.0",
+      "target": "urn:dev:skill:decomposition:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-DECOMPOSITION.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "target": "urn:dev:skill:openclaw-expertise:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-OPENCLAW-EXPERTISE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "target": "urn:dev:skill:parallel-dispatch:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-PARALLEL-DISPATCH.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:dev:skill:planner-backlog-curator:1.0.0",
       "target": "urn:dev:skill:planner-backlog-curator:1.0.0",
       "fragment": null,
@@ -22161,6 +23354,20 @@
       "target": "urn:dev:skill:planner-story-refiner:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/dev/planner/skills/CM-STORY-REFINER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:praxis:1.0.0",
+      "target": "urn:dev:skill:praxis:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-PRAXIS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:skill:prompt-craft:1.0.0",
+      "target": "urn:dev:skill:prompt-craft:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/skills/CM-PROMPT-CRAFT.md"
     },
     {
       "kind": "XRef",
@@ -29948,36 +31155,50 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
-      "target": "urn:korvo:agent-bootstrap:korax-config:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "target": "urn:korvo:kb:dan-koe-filosofia-creador",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:agent-bootstrap:korax-config:3.3.0",
+      "target": "urn:korvo:kb:manual-de-vida",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
-      "target": "urn:korvo:agent-bootstrap:korax-tools:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-tools:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
-      "target": "urn:korvo:agent-bootstrap:korax-user:3.2.0",
+      "source": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
+      "target": "urn:korvo:agent-bootstrap:korax-user:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/USER.md"
     },
@@ -30039,6 +31260,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:korvo:skill:cm-catalizador:1.0.0",
+      "target": "urn:korvo:skill:cm-catalizador:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/skills/CM-CATALIZADOR.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:korvo:skill:cm-close:3.1.0",
       "target": "urn:korvo:skill:cm-close:3.1.0",
       "fragment": null,
@@ -30064,6 +31292,27 @@
       "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/skills/CM-PLANIFICACION.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:skill:cm-reflexion:1.0.0",
+      "target": "urn:korvo:skill:cm-reflexion:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/skills/CM-REFLEXION.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
+      "target": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/skills/CM-REGULACION-EMOCIONAL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:korvo:skill:cm-rescate:1.0.0",
+      "target": "urn:korvo:skill:cm-rescate:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/korvo/korax/skills/CM-RESCATE.md"
     },
     {
       "kind": "XRef",
