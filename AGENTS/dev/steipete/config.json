@@ -1,0 +1,44 @@
+{
+  "_manifest": {
+    "urn": "urn:dev:agent-bootstrap:steipete-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:dev:kb:agentic-engineering-praxis",
+    "urn:dev:kb:agentic-tooling-inventory"
+  ],
+  "sandbox": {
+    "mode": "permissive"
+  },
+  "tools": {
+    "allow": [
+      "cancel_worker",
+      "catalog_resolve",
+      "dispatch_worker",
+      "monitor_workers",
+      "read_codebase",
+      "review_diff",
+      "search_kb",
+      "search_openclaw",
+      "search_tooling"
+    ],
+    "deny": []
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "code_execution"
+    ],
+    "deny": [
+      "sub_agent_spawn",
+      "web_search"
+    ]
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1
+  },
+  "limits": {
+    "max_tokens": 8000,
+    "max_response_time_ms": 60000
+  }
+}
