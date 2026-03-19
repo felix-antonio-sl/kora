@@ -295,10 +295,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "id": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/steipete/AGENTS.md",
       "namespace": "dev"
@@ -322,10 +322,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
+      "id": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
       "title": "TOOLS.md",
       "path": "AGENTS/dev/steipete/TOOLS.md",
       "namespace": "dev"
@@ -4152,10 +4152,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:captura-dialectica:1.1.1",
+      "id": "urn:dev:skill:captura-dialectica:1.1.2",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:captura-dialectica:1.1.1",
+      "urn": "urn:dev:skill:captura-dialectica:1.1.2",
       "title": "CM-CAPTURA-DIALECTICA.md",
       "path": "AGENTS/dev/steipete/skills/CM-CAPTURA-DIALECTICA.md",
       "namespace": "dev"
@@ -4233,10 +4233,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:skill:context-hygiene:1.1.1",
+      "id": "urn:dev:skill:context-hygiene:1.1.2",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:dev:skill:context-hygiene:1.1.1",
+      "urn": "urn:dev:skill:context-hygiene:1.1.2",
       "title": "CM-CONTEXT-HYGIENE.md",
       "path": "AGENTS/dev/steipete/skills/CM-CONTEXT-HYGIENE.md",
       "namespace": "dev"
@@ -11407,7 +11407,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.0"
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.1"
     },
     {
       "kind": "ContainsArtifact",
@@ -11422,7 +11422,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.0"
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.1"
     },
     {
       "kind": "ContainsArtifact",
@@ -12492,7 +12492,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:captura-dialectica:1.1.1"
+      "target": "urn:dev:skill:captura-dialectica:1.1.2"
     },
     {
       "kind": "ContainsSkill",
@@ -12502,7 +12502,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:skill:context-hygiene:1.1.1"
+      "target": "urn:dev:skill:context-hygiene:1.1.2"
     },
     {
       "kind": "ContainsSkill",
@@ -15109,61 +15109,61 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:blast-radius:1.0.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
-      "target": "urn:dev:skill:captura-dialectica:1.1.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "target": "urn:dev:skill:captura-dialectica:1.1.2",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:close-the-loop:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
-      "target": "urn:dev:skill:context-hygiene:1.1.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "target": "urn:dev:skill:context-hygiene:1.1.2",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:decomposition:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:openclaw-expertise:1.1.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:parallel-dispatch:1.2.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:praxis:1.0.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:prompt-craft:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:skill:tooling-advisor:1.0.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
@@ -17373,7 +17373,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17394,7 +17394,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17625,7 +17625,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:captura-dialectica:1.1.1",
+      "target": "urn:dev:skill:captura-dialectica:1.1.2",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17688,7 +17688,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:skill:context-hygiene:1.1.1",
+      "target": "urn:dev:skill:context-hygiene:1.1.2",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -22811,21 +22811,21 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:kb:agentic-engineering-praxis",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.0",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
@@ -22860,14 +22860,14 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.0",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
@@ -23266,8 +23266,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:captura-dialectica:1.1.1",
-      "target": "urn:dev:skill:captura-dialectica:1.1.1",
+      "source": "urn:dev:skill:captura-dialectica:1.1.2",
+      "target": "urn:dev:skill:captura-dialectica:1.1.2",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-CAPTURA-DIALECTICA.md"
     },
@@ -23329,8 +23329,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:skill:context-hygiene:1.1.1",
-      "target": "urn:dev:skill:context-hygiene:1.1.1",
+      "source": "urn:dev:skill:context-hygiene:1.1.2",
+      "target": "urn:dev:skill:context-hygiene:1.1.2",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/skills/CM-CONTEXT-HYGIENE.md"
     },
