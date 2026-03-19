@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 1411,
-    "node_count": 894,
-    "edge_count": 4205
+    "scanned_files": 1412,
+    "node_count": 895,
+    "edge_count": 4207
   },
   "node_kind_counts": {
     "artifact": 207,
-    "knowledge": 244,
+    "knowledge": 245,
     "skill": 255,
     "spec": 7,
     "tool": 140,
@@ -21,7 +21,7 @@
     "InvokesSkill": 237,
     "RoutesToAgent": 60,
     "TracesTo": 43,
-    "XRef": 2548
+    "XRef": 2550
   },
   "nodes": [
     {
@@ -3502,6 +3502,15 @@
       "title": "Terminación de la Relación Laboral y Funcionaria",
       "path": "KNOWLEDGE/legal/terminacion.md",
       "namespace": "legal"
+    },
+    {
+      "id": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "title": "Tutorial: Desplegar un agente KORA en OpenClaw",
+      "path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md",
+      "namespace": "ops"
     },
     {
       "id": "urn:pro:kb:mba-personal-kaufman",
@@ -20908,6 +20917,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -32678,6 +32694,13 @@
       "target": "urn:ops:agent-bootstrap:verificador-user:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/ops/verificador/USER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md"
     },
     {
       "kind": "XRef",

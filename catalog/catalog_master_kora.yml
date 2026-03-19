@@ -2670,6 +2670,10 @@ Catalog:
     title: Terminación de la Relación Laboral y Funcionaria
     file: KNOWLEDGE/legal/terminacion.md
     status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw'
+    file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md
+    status: published
   - urn: urn:pro:kb:mba-personal-kaufman
     title: MBA Personal — Modelos Mentales de Negocios
     file: KNOWLEDGE/pro/mba-personal-kaufman.md
