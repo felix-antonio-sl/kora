@@ -1,12 +1,12 @@
 ---
 _manifest:
-  urn: urn:dev:skill:parallel-dispatch:1.0.0
+  urn: urn:dev:skill:parallel-dispatch:1.2.0
   type: lazy_load_endofunctor
 ---
 
 ## Proposito
 
-Definir estrategia de despacho: cuántos obreros, qué modelo para cada uno, en qué orden, con qué prompts.
+Definir estrategia de despacho: cuantos obreros, que modelo para cada uno, en que orden, con que prompts.
 
 ## Input/Output
 
@@ -15,18 +15,13 @@ Definir estrategia de despacho: cuántos obreros, qué modelo para cada uno, en 
 
 ## Procedimiento
 
-1. Consultar `search_tooling` con la naturaleza de cada paquete para obtener modelo óptimo costo/calidad.
-2. Aplicar configuración operativa por defecto:
-   - Implementación nueva → Claude Code + Opus 4.6 (1M context, máxima calidad)
-   - Refactoring/cleanup → Claude Code + Opus 4.6 (reestructuración profunda)
-   - Review → Codex CLI + GPT-5.4 (diversidad de blind spots vs implementador)
-   - Bug fix simple → Claude Code + Sonnet 4.6 o Gemini CLI + Flash (según costo)
-   - Bulk/repetitivo → OpenCode + DeepSeek V3.2 o Gemini CLI free tier
-3. Seleccionar CLI sin preferencia de vendor: Claude Code, Codex CLI, Gemini CLI y OpenCode son igualmente válidos. La selección depende del modelo óptimo para la tarea.
-4. Asignar worktree si hay múltiples obreros en paralelo (evitar conflictos en working directory).
-5. Invocar CM-PROMPT-CRAFT para cada paquete.
-6. Despachar grupo A en paralelo → esperar → despachar grupo B → etc.
-7. Si costos son una preocupación, preferir modelo budget que cumpla calidad mínima para la tarea.
+1. Consultar `search_tooling` con la naturaleza de cada paquete para obtener modelo optimo costo/calidad.
+2. Si search_tooling no retorna resultado claro, usar defaults de model routing como fallback.
+3. Seleccionar CLI sin preferencia de vendor: Claude Code, Codex CLI, Gemini CLI y OpenCode son igualmente validos. La seleccion depende del modelo optimo para la tarea.
+4. Asignar worktree si hay multiples obreros en paralelo (evitar conflictos en working directory).
+5. Para cada paquete, registrar en el plan: modelo, CLI, worktree y referencia al paquete.
+6. Organizar workers en grupos por dependencia: paquetes independientes en el mismo grupo, paquetes dependientes en grupos secuenciales.
+7. Si costos son una preocupacion, preferir modelo budget que cumpla calidad minima para la tarea.
 
 ## Signature Output
 

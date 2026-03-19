@@ -1,23 +1,23 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:steipete-user:1.0.0"
+  urn: "urn:dev:agent-bootstrap:steipete-user:1.3.1"
   type: "bootstrap_user"
 ---
 
 # Perfil
 
-Felix Sanhueza. Líder multidisciplinario. Opera repositorios de software aplicativo. Comunica via mensajería (Telegram/Discord/WhatsApp). Espera respuestas operativas, no académicas. Tiene buen gusto arquitectónico pero delega implementación. Valora la velocidad y la iteración sobre la perfección.
+Felix Sanhueza. Lider multidisciplinario. Opera repositorios de software aplicativo. Comunica via mensajeria (Telegram/Discord/WhatsApp). Espera respuestas operativas, no academicas. Tiene buen gusto arquitectonico pero delega implementacion. Valora la velocidad y la iteracion sobre la perfeccion.
 
 # Rutinas
 
-- Sesiones de desarrollo asíncronas via mensajería
-- Flujo típico: idea → conversación dialéctica con steipete → steipete despacha obreros → reporta resultado → Felix decide merge/ajuste
-- Puede enviar ideas parciales, screenshots, o instrucciones mínimas ("haz que funcione X")
+- Sesiones de desarrollo asincronas via mensajeria
+- Flujo tipico: idea → conversacion dialectica con steipete → steipete despacha obreros → reporta resultado → Felix decide merge/ajuste
+- Puede enviar ideas parciales, screenshots, o instrucciones minimas ("haz que funcione X")
 - Espera que steipete proponga activamente, no que espere specs
 
 # Preferencias de Output
 
 - Idioma: es-CL
-- Formato: Telegráfico para status, detallado para decisiones arquitectónicas
-- No quiere: jerga motivacional, resúmenes redundantes, preguntas abstractas
-- Sí quiere: propuestas concretas, métricas de ejecución (archivos, tests, tiempo), honestidad sobre fallos
+- Formato: Telegrafico para status, detallado para decisiones arquitectonicas
+- No quiere: jerga motivacional, resumenes redundantes, preguntas abstractas
+- Si quiere: propuestas concretas, metricas de ejecucion (archivos, tests, tiempo), honestidad sobre fallos

@@ -1,25 +1,24 @@
 ---
 _manifest:
-  urn: urn:dev:skill:context-hygiene:1.0.0
+  urn: urn:dev:skill:context-hygiene:1.1.2
   type: lazy_load_endofunctor
 ---
 
 ## Proposito
 
-Auditar y mantener higiene de contexto. Detectar bloat, herramientas innecesarias, degradación de sesión.
+Auditar y mantener higiene de contexto. Detectar bloat, herramientas innecesarias, degradacion de sesion.
 
 ## Input/Output
 
-- **Input:** Estado de sesión actual (tokens usados, herramientas cargadas, turnos transcurridos)
+- **Input:** Estado de sesion actual (tokens usados, herramientas cargadas, turnos transcurridos)
 - **Output:** Recomendaciones: { compact_needed, tools_to_remove, session_reset_recommended, cleanup_actions }
 
 ## Procedimiento
 
-1. Tokens usados > 70% de ventana? → recomendar compaction o session reset.
-2. Herramientas cargadas que no se han usado en >5 turnos? → recomendar remoción.
-3. MCPs activos? → recomendar eliminación (anti-patrón).
-4. CLAUDE.md del repo target actualizado con learnings de la sesión? → recomendar update.
-5. Steinberger: "MCPs are constant context cost and garbage."
+1. Tokens usados > 70% de ventana? -> recomendar compaction o session reset.
+2. Herramientas cargadas que no se han usado en >5 turnos? -> recomendar remocion.
+3. MCPs activos? -> recomendar eliminacion (anti-patron por costo constante de contexto).
+4. CLAUDE.md del repo target necesita actualizacion con learnings de la sesion? -> recomendar despacho de worker para update.
 
 ## Signature Output
 
