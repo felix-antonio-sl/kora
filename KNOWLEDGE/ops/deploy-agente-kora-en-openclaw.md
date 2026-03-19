@@ -227,19 +227,40 @@ services:
     image: gateway-agent:latest
     container_name: kora-<nombre>
     restart: unless-stopped
+    init: true                          # CRITICO: PID 1 signal handling (patron canonico OpenClaw)
     env_file: .env
+    environment:
+      HOME: /home/node                  # Canonico OpenClaw
+      TERM: xterm-256color
     ports:
-      - "127.0.0.1:18789:18789"
+      - "127.0.0.1:18789:18789"        # Loopback only — Telegram usa long-polling outbound
     volumes:
-      - ../config/<gateway>/openclaw.json5:/home/node/.openclaw/openclaw.json:ro
-      - ../workspaces/<gateway>/agents/<agent>:/home/node/.openclaw/workspace
-      - ../knowledge:/home/node/knowledge:ro
-      - agent-data:/home/node/.openclaw/agents
+      - agent-data:/home/node/.openclaw                                     # Named volume para state (config, identity, sessions, credentials)
+      # Config se copia al volume via init — NO bind mount de archivo individual
+      # (OpenClaw usa atomic rename que falla sobre bind mounts de archivos)
+      - ../workspaces/<gateway>/agents/<agent>:/home/node/.openclaw/workspace  # Bind mount — permite hot-reload
+      - ../knowledge:/home/node/knowledge:ro                                   # KBs read-only
     networks:
       - kora-federation
     depends_on:
       sidecar:
         condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 2G                    # OpenClaw necesita ~1.5G con skills discovery
+          cpus: "2.0"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:18789/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   sidecar:
     image: kora-sidecar:latest
@@ -249,31 +270,43 @@ services:
       - sidecar-data:/app/data
     networks:
       - kora-federation
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.5"
+    healthcheck:
+      test: ["CMD", "python3", "-c", "from urllib.request import urlopen; urlopen('http://localhost:8100/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
 
 networks:
   kora-federation:
     driver: bridge
+    name: kora-federation
 
 volumes:
   agent-data:
   sidecar-data:
 ```
 
+> **Por que NO se bind-mountea el config directamente:** OpenClaw escribe su config via atomic rename (write-to-tmp + rename). Un bind mount de archivo individual causa `EBUSY` porque el filesystem del host no permite rename sobre el mount point. La solucion es usar un named volume para todo `/home/node/.openclaw/` y copiar el config al volume en un paso de init (ver seccion 6.5).
+
 **c) openclaw.json5:**
 
 ```json5
 {
-  identity: {
-    name: "<NombreAgente>",
-    theme: "<descripcion>",
-    emoji: "<emoji>",
-  },
   agents: {
     defaults: {
       workspace: "/home/node/.openclaw/workspace",
-      model: {
-        primary: "anthropic/claude-opus-4-6",
-      },
+      model: { primary: "anthropic/claude-opus-4-6" },
       models: {
         "anthropic/claude-opus-4-6": {
           params: {
@@ -282,24 +315,33 @@ volumes:
           },
         },
       },
+      memorySearch: { enabled: false },  // desactivar si no hay embedding provider
     },
+    list: [
+      {
+        id: "<agent-id>",
+        default: true,
+        identity: {                      // identity va DENTRO de agents.list[], NO top-level
+          name: "<NombreAgente>",
+          theme: "<descripcion>",
+          emoji: "<emoji>",
+        },
+      }
+    ],
   },
-  session: {
-    scope: "per-sender",
-    reset: { mode: "manual" },
-  },
+  session: { scope: "per-sender" },      // reset.mode solo acepta "daily"|"idle"
   gateway: {
     mode: "local",
     port: 18789,
-    bind: "0.0.0.0",
+    bind: "loopback",                    // valores validos: "auto"|"lan"|"loopback"|"custom"|"tailnet"
     controlUi: { enabled: true, basePath: "/openclaw" },
-    auth: { mode: "token" },
+    auth: { mode: "token" },             // doctor genera el token automaticamente
   },
   channels: {
     telegram: {
       enabled: true,
       dmPolicy: "allowlist",
-      allowFrom: ["<TELEGRAM_USER_ID>"],  // numerico, de @userinfobot
+      allowFrom: [<TELEGRAM_USER_ID>],   // numerico (integer), de @userinfobot
       groupPolicy: "disabled",
       streaming: "partial",
       ackReaction: "<emoji>",
@@ -311,6 +353,15 @@ volumes:
   },
 }
 ```
+
+> **Errores comunes en openclaw.json5** (todos causan `Config invalid` al arrancar):
+>
+> | Error | Sintoma | Fix |
+> |-------|---------|-----|
+> | `identity` como key top-level | `identity was moved; use agents.list[].identity` | Mover a `agents.list[0].identity` |
+> | `session.reset.mode: "manual"` | `Invalid input` | Usar `"daily"` o `"idle"`, o no incluir `reset` |
+> | `gateway.bind: "0.0.0.0"` | `Invalid input` | Usar `"loopback"` (o `"lan"` si necesitas acceso LAN) |
+> | `allowFrom: ["123"]` | String en vez de number | Usar `allowFrom: [123]` (integer sin comillas) |
 
 **d) .env:**
 
@@ -471,6 +522,60 @@ nano /srv/kora/compose/.env
 # OPENCLAW_AUTH_TOKEN=<ya generado con openssl rand -hex 32>
 ```
 
+### 6.5 Inicializar el volume del gateway
+
+El named volume se crea como root. OpenClaw necesita que sea owned por uid 1000 (node). Ademas, hay que copiar el config al volume (no se puede bind-mountear — ver nota en seccion 3.4b).
+
+```bash
+cd /srv/kora/compose
+
+# Paso 1: Pre-seed directorios con ownership correcta
+docker compose run --rm --user root --no-deps --entrypoint sh kora-personal -c "
+mkdir -p /home/node/.openclaw/agents/<agent>/sessions \
+         /home/node/.openclaw/identity \
+         /home/node/.openclaw/credentials \
+         /home/node/.openclaw/logs &&
+find /home/node/.openclaw -not -name openclaw.json -exec chown node:node {} + 2>/dev/null
+chmod 700 /home/node/.openclaw
+"
+
+# Paso 2: Copiar config al volume
+docker compose run --rm --user root --no-deps --entrypoint sh kora-personal -c "
+cp /dev/stdin /home/node/.openclaw/openclaw.json &&
+chown node:node /home/node/.openclaw/openclaw.json &&
+chmod 600 /home/node/.openclaw/openclaw.json
+" < ../config/personal/openclaw.json5
+```
+
+### 6.6 Validar config con doctor
+
+```bash
+docker compose run --rm kora-personal openclaw doctor
+```
+
+Doctor debe reportar **cero errores de config**. Warnings aceptables:
+
+| Warning | Evaluacion |
+|---------|-----------|
+| `Gateway auth token missing` | Se genera automaticamente al primer `up` |
+| `Config file world-readable` | Dentro del volume, aislado por container |
+| `systemd unavailable` | Normal en container — docker compose es el supervisor |
+| `Memory search disabled` | Correcto si no hay embedding provider |
+
+Si doctor reporta `Config invalid`, corregir antes de continuar. **No ignorar errores de validacion.**
+
+### 6.7 Re-sync de config al volume
+
+Cuando modifiques `openclaw.json5` en el host despues del deploy inicial:
+
+```bash
+cd /srv/kora/compose
+docker compose run --rm --user root --no-deps --entrypoint sh kora-personal -c \
+  "cp /dev/stdin /home/node/.openclaw/openclaw.json && chown node:node /home/node/.openclaw/openclaw.json" \
+  < ../config/personal/openclaw.json5
+docker compose restart kora-personal
+```
+
 ---
 
 ## 7. Deploy
@@ -591,6 +696,68 @@ Lo que NO cambia:
 
 ---
 
+## 10. Gotchas descubiertos en produccion
+
+Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de troubleshooting.
+
+### 10.1 Bind mount de archivo individual → EBUSY
+
+**Sintoma:** `Error: EBUSY: resource busy or locked, rename '...openclaw.json.tmp' -> '...openclaw.json'`
+
+**Causa:** OpenClaw usa escritura atomica (write-to-tmp + rename) para no corromper el config. Un bind mount de un archivo individual (`openclaw.json5:/home/node/.openclaw/openclaw.json`) no permite rename sobre el mount point.
+
+**Fix:** Usar named volume para todo `/home/node/.openclaw/` y copiar el config al volume en un paso de init (seccion 6.5). Los bind mounts de **directorios** (workspace, knowledge) funcionan sin problema.
+
+### 10.2 Schema de OpenClaw cambia entre versiones
+
+**Sintoma:** `Config invalid` con mensajes como `identity was moved`, `Invalid input`.
+
+**Causa:** OpenClaw 2026.2.27 movio `identity` de top-level a `agents.list[].identity`. Tambien cambio los valores validos de `session.reset.mode` y `gateway.bind`.
+
+**Fix:** Siempre validar con `openclaw doctor` antes de `up`. Si hay migraciones pendientes, `openclaw doctor --fix` las aplica automaticamente. Mantener los templates de este tutorial actualizados con la version de OpenClaw en uso.
+
+### 10.3 Named volume ownership = root
+
+**Sintoma:** `Error: EACCES: permission denied, mkdir '/home/node/.openclaw/identity'`
+
+**Causa:** Docker crea named volumes como root. OpenClaw corre como uid 1000 (node) y no puede escribir.
+
+**Fix:** Pre-seed el volume con un container efimero `--user root` que crea los directorios y fija ownership (seccion 6.5). Esto se hace una sola vez.
+
+### 10.4 Memory limit insuficiente para doctor
+
+**Sintoma:** `FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory` al correr `openclaw doctor`.
+
+**Causa:** El memory limit de 1G no alcanza para skills discovery + plugin loading. La imagen OpenClaw tiene `NODE_OPTIONS=--max-old-space-size=2048` pero el cgroup limit del container lo mata antes.
+
+**Fix:** Memory limit minimo de 2G para el gateway. Con 62Gi de RAM en el host, no es restriccion.
+
+### 10.5 config.json de KORA tiene paths locales
+
+**Sintoma:** `config.json` del workspace referencia paths macOS (`/Users/...`) que no existen en el server.
+
+**Causa:** `config.json` es metadata de gobernanza KORA, no config de OpenClaw. Pero si se copia al workspace, el agente podria intentar usar esos paths.
+
+**Fix:** Actualizar `config.json` del workspace (no del repo) para reflejar el binding HTTP:
+
+```json
+"pca": {
+  "api_base": "http://kora-pca:8100/api",
+  "mode": "http",
+  "rationale": "En deploy Docker, PCA es sidecar HTTP. CLI path no aplica."
+}
+```
+
+### 10.6 Telegram bot — verificar allowFrom es integer
+
+**Sintoma:** Bot no responde a DMs aunque el token y user ID son correctos.
+
+**Causa:** `allowFrom: ["7192195698"]` (string) no matchea contra el user ID numerico que Telegram envia como integer.
+
+**Fix:** `allowFrom: [7192195698]` — sin comillas. JSON5 acepta trailing commas pero no perdona tipos incorrectos en runtime.
+
+---
+
 ## Apendice: Caso real — korax v3.4.0
 
 ### Metricas del deploy
@@ -598,13 +765,14 @@ Lo que NO cambia:
 | Metrica | Valor |
 |---------|-------|
 | Bootstrap total (sin frontmatter) | 34,886 chars (limit 150K) |
-| Archivo mayor (AGENTS.md) | 16,352 chars (limit 20K) |
-| Skills lazy-load | 12 (31,718 chars total) |
-| KB montada | 85,170 chars (2 archivos, read-only) |
+| Archivo mayor (AGENTS.md) | 16,378 chars (limit 20K) |
+| Skills lazy-load | 12 (30,585 chars total) |
+| KB montada | 84,258 chars (2 archivos, read-only) |
 | Endpoints PCA HTTP | 22 (8 GET + 14 POST) |
 | Dependencias PCA | 0 (stdlib puro) |
-| Containers | 2 (gateway 1G/2cpu + sidecar 128M/0.5cpu) |
-| Tiempo bootstrap → deploy | ~3 horas (incluye preparacion local) |
+| Containers | 2 (gateway 2G/2cpu + sidecar 128M/0.5cpu) |
+| Imagenes Docker | openclaw-local 4.4GB + kora-personal ~0B (thin layer) + kora-pca 181MB |
+| Tiempo total deploy | ~2 horas (incluye troubleshooting de gotchas) |
 
 ### Optimizaciones aplicadas
 
@@ -612,6 +780,13 @@ Lo que NO cambia:
 2. **PCA como sidecar:** Imagen OpenClaw intacta, upgrades sin rebuild custom
 3. **KB como archivos montados:** 85K chars que no entran en bootstrap van como referencia filesystem read-only
 4. **Cache long:** Bootstrap de ~35K chars se cachea ~1h, reduciendo costo por turno
+
+### Correciones aplicadas durante deploy
+
+1. **openclaw.json5:** `identity` movido a `agents.list[0].identity`, `session.reset.mode` eliminado, `gateway.bind` cambiado de `"0.0.0.0"` a `"loopback"`, `memorySearch.enabled: false` agregado
+2. **docker-compose.yml:** `init: true` agregado, config bind mount reemplazado por named volume + copy, memory limit subido de 1G a 2G, `environment: HOME, TERM` agregados
+3. **config.json workspace:** paths macOS reemplazados por binding HTTP (`api_base: "http://kora-pca:8100/api"`)
+4. **Volume init:** paso de pre-seed agregado (chown node:node, mkdir de subdirs requeridos)
 
 ### Validacion pre-deploy
 
@@ -621,5 +796,22 @@ Lo que NO cambia:
 728 artefactos indexados
 PCA HTTP: 22 endpoints testados e2e
 Compose YAML: syntax valida
-Preflight: 17/17 checks passed
+openclaw doctor: 0 errores de config
+```
+
+### Secuencia real de verificacion post-deploy
+
+```
+$ docker compose ps
+kora-pca        kora-pca:latest        Up (healthy)     8100/tcp
+kora-personal   kora-personal:latest   Up (healthy)     127.0.0.1:18789->18789/tcp
+
+$ docker compose logs kora-personal --tail 5
+[gateway]    agent model: anthropic/claude-opus-4-6
+[gateway]    listening on ws://127.0.0.1:18789
+[telegram]   [default] starting provider (@korax_kv_bot)
+
+$ # Test end-to-end via Telegram:
+$ # /captura Probar que korax funciona end-to-end via Telegram
+$ # → "📥 Capturado → C-20260319013342918302"
 ```
