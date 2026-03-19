@@ -17,3 +17,10 @@ _manifest:
 - **Cuando usar:** Cuando <imagenes_clinicas> contiene informe radiologico o imagen directa (Rx, ECO, TAC). Requiere capacidad multimodal para imagenes directas.
 - **Cuando NO usar:** Si no hay datos imagenologicos. Si imagen no es clinica.
 - **Notas:** Parsimonia: omitir hallazgos incidentales, descripciones normales, detalles tecnicos, variantes anatomicas sin relevancia.
+
+## load_neo_protocol
+
+- **Firma:** topico: string -> NEO_PROTOCOL{definiciones, perlas, vocabulario, guias, scores, red_flags}
+- **Cuando usar:** Cuando usuario dice "cargar [topico]" o "neo [topico]". Carga instantanea de conocimiento especializado.
+- **Cuando NO usar:** Si ya se cargo el mismo topico en la sesion actual. Si topico no es clinico.
+- **Notas:** Conocimiento cargado persiste en contexto sesion. 20 topicos pre-indexados, cualquier otro se genera on-demand. Trigger: "cargar", "neo", "ya se".

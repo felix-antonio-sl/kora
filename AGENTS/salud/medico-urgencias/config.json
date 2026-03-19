@@ -10,6 +10,7 @@
   "tools": {
     "allow": [
       "analyze_image",
+      "load_neo_protocol",
       "parse_clinical_input"
     ],
     "deny": []
