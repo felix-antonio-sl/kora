@@ -1794,6 +1794,10 @@ Catalog:
     title: CM-EPI-VIGILANCE
     file: AGENTS/salud/salubrista/skills/CM-EPI-VIGILANCE.md
     status: published
+  - urn: urn:salud:skill:salubrista-hah-clarifier:1.0.0
+    title: CM-CLARIFIER
+    file: AGENTS/salud/salubrista-hah/skills/CM-CLARIFIER.md
+    status: published
   - urn: urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0
     title: CM-EPI-VIGILANCE
     file: AGENTS/salud/salubrista-hah/skills/CM-EPI-VIGILANCE.md
