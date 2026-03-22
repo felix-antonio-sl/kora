@@ -26,7 +26,8 @@
       "kb_route",
       "knowledge_retrieval",
       "web_search"
-    ]
+    ],
+    "deny": []
   },
   "sub_agents": {
     "max_depth": 0

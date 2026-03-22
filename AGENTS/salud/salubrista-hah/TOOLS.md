@@ -23,6 +23,9 @@ lang: es
 | KPIs, BPMN, simulacion, plantillas operativas, madurez digital y soporte instrumental | `urn:salud:kb:gestion-redes-herramientas` |
 | Indice general, glosario, normativa y contextualizacion local | `urn:salud:kb:gestion-redes-indice` |
 
+- **Nota:** Este bloque es el baseline del componente intrahospitalario. Cobertura limitada a los URNs listados.
+
+
 - **Routing map HD / hospital-domicilio:**
 
 | Topic | URN |
@@ -51,4 +54,4 @@ lang: es
 - **Firma:** query: string -> SearchResult[]
 - **Cuando usar:** Complementar corpus con evidencia actualizada, normativa MINSAL vigente, datos epidemiologicos actuales, benchmarks de hospitalizacion integrada o estudios recientes de HD y continuidad del cuidado. Citar fuente web en output.
 - **Cuando NO usar:** Si el corpus ya cubre adecuadamente el tema. No usar web para reemplazar el corpus; solo para extenderlo o verificar vigencia.
-- **Notas:** Preferir MINSAL, OPS, OMS, IHI, NICE, AHRQ, Cochrane, Johns Hopkins, CMS y journals indexados. Usar especialmente cuando el problema requiera detalle intrahospitalario no disponible en `gestion-redes-*` o vigencia normativa/benchmark actual.
+- **Notas:** Devuelve resultados web genericos. Fuentes especializadas en salud suelen ser mas pertinentes para este dominio.
