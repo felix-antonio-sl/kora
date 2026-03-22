@@ -11,10 +11,10 @@ policy:
   per_file_frontmatter: false
   catalog_strategy: collection-index
 state:
-  last_sync_at: '2026-03-22T02:51:25+00:00'
-  last_sync_commit: 8e6a4c2d8271d4e780b15b74e3e5486d2fb722f4
+  last_sync_at: '2026-03-22T17:40:48+00:00'
+  last_sync_commit: 719bfb46ff3f0383d11839723babfb7bda984ffd
   dest_root: /Users/felixsanhueza/Developer/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial
-  file_count: 734
-  deleted_files: 1
+  file_count: 743
+  deleted_files: 0
   deleted_dirs: 0
   dry_run: false
