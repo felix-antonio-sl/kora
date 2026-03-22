@@ -399,10 +399,6 @@ Vertexes: black dots on links. Click to add routing vertex; drag to merge back. 
 
 ## Summary
 
-Complete OPCloud workflow coverage:
+Complete OPCloud workflow coverage across fundamentals, modelling, simulation, governance, analysis and operations.
 
-1. Fundamentals: create objects, processes, links, save/load, navigate OPDs.
-2. Core modelling: states, links, inner/outer objects, styles, search, OPL pane.
-3. Advanced work: computational processes, simulation, range validation, conditions, loops, user input.
-4. Governance and scale: templates, permissions, sub-models, ontology enforcement, requirements, analysis.
-5. Operations: import, stereotypes, OPD3 management, bring-connected workflows, alignment.
+Compression rationale: this tutorial contains many atomic UI actions, control distinctions and click-path dependencies. More aggressive compression would reduce recoverability of operational workflows.

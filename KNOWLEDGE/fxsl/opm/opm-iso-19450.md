@@ -700,7 +700,7 @@ A **scenario** is a set of one or more path labels that define a specific collec
 
 ---
 
-## Context Management and OPD Trees
+## Context Management and Refinement
 
 ### Completing the SD
 
@@ -722,7 +722,7 @@ Four unfolding-folding pairs correspond to four fundamental relations: aggregati
 
 **View Diagrams**: an OPD that collects model facts from multiple OPDs to explain a specific phenomenon or emphasize a particular aspect. Created by selecting any element and adding connected elements from any OPD. View diagrams are distinct from process tree and object tree OPDs.
 
-### OPD Trees
+## OPD Trees and Implicit Control
 
 **OPD process tree**: root = SD, each node = OPD from process in-zooming. Primary navigation mechanism. Labels: `SD`, `SD1`, `SD1.1`, `SD1.1.1`, etc.
 
@@ -741,7 +741,7 @@ Two implicit invocation forms govern synchronous in-zoomed execution:
 
 This captures the substance of ISO Table 24: invocation order can be encoded without explicit invocation arrows when the in-zoom layout already fixes temporal order.
 
-### Link Distribution Across Context
+## Link Distribution Across Context
 
 Links attached to the **outer contour** of an in-zoomed process have **distributive semantics** — they distribute to all subprocesses (analogous to algebraic parentheses).
 
@@ -751,9 +751,9 @@ Links attached to the **outer contour** of an in-zoomed process have **distribut
 - **Event links from systemic objects/states MUST NOT cross the boundary** of an in-zoomed process to initiate subprocesses — this would interfere with the prescribed temporal order. Environmental event links that cross require explicit contingency modelling.
 - If a condition link causes a subprocess to be skipped and there is a next subprocess in the in-zoom context, execution control initiates that next subprocess.
 
-**Valid vs invalid distribution example**: Process P zooms into P1, P2, P3. Agent A handles P (valid: distributes to all subprocesses). Instrument D required by P (valid: distributes). But `P consumes C` — **NOT VALID** because P1 consumes C first; C doesn't exist when P2/P3 perform. And `P yields B` — **NOT VALID** because B can only be created once. Correct: P1 consumes C, P2 yields B, P3 affects B (assign to specific subprocesses).
+**Valid vs invalid distribution example**: Process P zooms into P1, P2, P3. Agent A handles P (valid: distributes to all subprocesses). Instrument D required by P (valid: distributes). But `P consumes C` — **NOT VALID** because P1 consumes C first; C doesn't exist when P2/P3 perform. And `P yields B` — **NOT VALID** because B can only be created once. Correct: P1 consumes C, P2 yields B, P3 affects B (assign to specific subprocesses). ISO illustrates the equivalence and restriction pattern explicitly in Figure 50 and Figure 51.
 
-### Split State-Specified Transforming Links
+## Split State-Specified Transforming Links
 
 When an input-output-specified effect link (Process changes Object from s1 to s2) is in-zoomed and contains multiple subprocesses, the model becomes **underspecified** — it's unclear which subprocess takes Object out of s1 and which puts it into s2.
 
@@ -770,11 +770,11 @@ Summary of the split pair:
 |------|---------|--------|-------------|
 | Split input-output specified effect link pair | Early subprocess takes the object out of its input state; later subprocess places it in the output state | input state + late subprocess | early subprocess + output state |
 
-This is the recoverable core of ISO Table 25.
+This is the recoverable core of ISO Table 25. ISO Figure 52 provides the canonical underspecified middle case and the repaired split-link case.
 
 **Abstraction role shift**: an object may be an instrument at an abstract level (e.g., Dishwasher as instrument of Dish Washing in SD) and become an affectee at a detailed level (Dish Loading changes Dishwasher from empty to loaded, Dish Unloading changes back to empty in SD1). This is valid because the initial and final states are the same at the abstract level.
 
-### Link Precedence During Out-Zooming
+## Link Precedence During Out-Zooming
 
 When out-zooming, procedural links from sub-processes migrate to the parent process. **Semantic strength** determines which link prevails:
 
@@ -790,7 +790,7 @@ Result + consumption to same object = invalid (can't both create and destroy). W
 
 Primary precedence order: consumption = result > effect > agent > instrument. State-specified links have higher precedence than basic links. Secondary: event > non-control > condition within each kind.
 
-### OPD Labels and Navigation
+## OPD Labels and Navigation
 
 **SD contains exactly one systemic process** (the system function). It may contain one or more environmental processes. OPD labels: `SD` (tier 0), `SD1` (tier 1), etc.
 
@@ -801,6 +801,31 @@ Primary precedence order: consumption = result > effect > agent > instrument. St
 ### Whole-System OPL
 
 Whole-system OPL is the concatenated textual specification obtained by traversing the OPD tree and composing the OPL paragraphs in model order. Its purpose is to provide a complete textual rendering of the entire model, not just the current context. The canonical ISO example is the Dish Washing System whole-system OPL table: local OPD paragraphs remain context-specific, while whole-system OPL restores end-to-end textual continuity across SD, descendants, states and refinements.
+
+Recoverable core of Table 26 for Dish Washing System:
+
+- `Household User handles Dish Washing.`
+- `Dish Washing requires Dishwasher.`
+- `Dish Washing consumes Soap.`
+- `Dish Washing affects Dish Set.`
+- `SD is refined by in-zooming Dish Washing in SD1.`
+- `Dishwasher consists of Soap Compartment and other parts.`
+- `Dishwasher can be empty or loaded.`
+- `State empty of Dishwasher is initial and final.`
+- `Soap Compartment can be empty or loaded.`
+- `State empty of Soap Compartment is initial.`
+- `Dish Set exhibits Cleanliness.`
+- `Cleanliness of Dish Set can be dirty or clean.`
+- `State dirty of Cleanliness of Dish Set is initial.`
+- `State clean of Cleanliness of Dish Set is final.`
+- `Dish Washing zooms into Dish Loading, Detergent Inserting, Dish Cleaning & Drying, and Dish Unloading, in that sequence.`
+- `Dish Loading changes Dishwasher from empty to loaded.`
+- `Detergent Inserting requires Soap.`
+- `Detergent Inserting changes Soap Compartment from empty to loaded.`
+- `Dish Cleaning & Drying requires Dishwasher.`
+- `Dish Cleaning & Drying consumes Soap.`
+- `Dish Cleaning & Drying changes Cleanliness of Dish Set from dirty to clean.`
+- `Dish Unloading changes Dishwasher from loaded to empty.`
 
 **OPD simplification**: in-diagram out-zooming + new-diagram in-zooming can simplify an overloaded OPD. Restriction: an object cannot become part of the abstracted set if its links would create direct process-to-process procedural links (which OPM does not define semantics for, except invocation and exception links).
 
@@ -1175,10 +1200,10 @@ System time unit is default for all processes unless explicitly overridden.
 
 Annex D adds four recoverable example patterns:
 
-1. **Processing Duration metamodel**: compact process notation can encode minimal, expected and maximal duration together with distribution parameters; actual `Duration` remains a runtime property.
-2. **Distribution variants**: exponential, normal and uniform distributions can parameterize the same process depending on domain assumptions and time units.
-3. **Overtime exception**: if actual duration exceeds maximal duration, Overtime Exception Handling occurs and may affect the same affectee as the main process.
-4. **Undertime exception**: if actual duration falls short of the minimal threshold, Undertime Exception Handling occurs under the symmetric rule.
+1. **Figure D.5 / Processing Duration metamodel**: compact process notation can encode minimal, expected and maximal duration together with distribution parameters; actual `Duration` remains a runtime property. Canonical values: `Duration [min] = 63.3`, `Expected Duration = 45.6`, `Maximal Duration = 60.0`, distribution `normal, mean=45.6, sd=7.3`.
+2. **Figure D.6 / Distribution variants**: exponential, normal and uniform distributions can parameterize the same process depending on domain assumptions and time units. Canonical examples: `exponential, lambda=5.6`, `normal, mean=1.63, sd=0.16`, `uniform, a=3, b=5`.
+3. **Figure D.7 / Overtime exception**: if actual duration exceeds maximal duration, Overtime Exception Handling occurs and may affect the same affectee as the main process. Canonical case: `Processing [min] (30.0, 45.6, 60.0)`, `uniform, a=5.0, b=70.0`, runtime duration `63.3`, instance id `1`.
+4. **Figure D.8 / Undertime exception**: if actual duration falls short of the minimal threshold, Undertime Exception Handling occurs under the symmetric rule. Canonical case: the same duration envelope and distribution, runtime duration `23.4`, instance id `2`.
 
 ---
 
