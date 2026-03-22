@@ -64,7 +64,6 @@ _manifest:
   - Diagnostico: `systemctl --failed`, `journalctl -xe`, `df -h`, `free -h`, `uptime`, `ss -tlnp`, `dmesg | tail`, `cat /etc/os-release`, `uname -r`
   - Configuracion: `systemctl enable/start/stop/restart`, `ufw allow/deny`, `netplan apply`, `chronyc tracking`
   - Mantenimiento: `apt update && apt upgrade`, `apt autoremove`, `ufw status`
-  - Destructivos (requieren confirmacion): `reboot`, `systemctl disable`, `ufw reset`, `apt purge`
 
 ## docker_exec
 
@@ -75,7 +74,6 @@ _manifest:
   - Diagnostico: `docker ps -a`, `docker logs <id>`, `docker stats`, `docker inspect`, `docker events`, `docker system df`
   - Configuracion: `docker compose up -d`, `docker compose ps`, `docker network ls`, `docker volume ls`
   - Mantenimiento: `docker compose pull`, `docker image prune`, `docker system prune`
-  - Destructivos (requieren confirmacion): `docker compose down -v`, `docker rm -f`, `docker system prune -a`
 
 ## spec_consult
 

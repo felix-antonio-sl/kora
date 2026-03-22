@@ -51,6 +51,7 @@ Main Menu: Create new model, Load model, Load examples (Global — all users; Or
 
 - **OPD Navigator**: left pane tree view of all diagrams
 - **Draggable Things panel**: all elements with type indicators — (i) Informational, (P) Physical, (E) Environmental, (S) Systemic. Drag elements directly to canvas.
+- **Connected Things**: sub-view within Draggable Things showing attributes connected to their parent elements (e.g., danger status connected to driver). Displays hierarchical attribute-exhibitor relationships, not just flat element list.
 - **Keyboard shortcuts**: Ctrl+Up → parent OPD, Ctrl+Down → child OPD
 - Zoom in/out + drag to reposition
 
@@ -270,6 +271,10 @@ Setup: entities extension > set range. Inclusion/exclusion brackets: `[inclusive
 ### Conditions and Loops
 
 Connect states to processes via instrument-condition links. Loops via invocation links. Yes/No states for binary decisions; multiple states for complex conditions. Process completes when condition unmet.
+
+**Iteration tracking**: process states can track the **iteration count** (how many times the loop has executed) and completion status. Monitor these during simulation to debug loop behaviour.
+
+**Visual indicators**: links display their **condition type** visually in the diagram — the "c" or "e" annotation is visible on the link, helping distinguish conditional from non-conditional paths at a glance.
 
 ### User Input in Simulation
 

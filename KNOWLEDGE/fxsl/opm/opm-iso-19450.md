@@ -505,7 +505,9 @@ Process invocation: a process initiates another process. Semantically implies cr
 | Invocation | lightning jagged line with arrowhead | `Invoking-process invokes invoked-process.` |
 | Self-invocation | pair of invocation links head-to-tail back to origin | `Invoking-process invokes itself.` |
 
-**Implicit invocation** within in-zoomed process: sub-process termination invokes the one immediately below it. No explicit link; relative height implies temporal order (top to bottom).
+**Implicit invocation** within in-zoomed process: sub-process termination invokes the one(s) immediately below it. No explicit link; relative height implies temporal order (top to bottom). When two or more subprocesses have top points at the same height, they start in parallel; the one completing last initiates the next subprocess.
+
+**Cyclic invocation with conditional bypass**: use invocation links to model iterative/cyclical behaviour. After each cycle, a boolean decision node evaluates whether to loop back. Subprocesses whose entry conditions are already met can be skipped on re-entry. Example: in a refrigeration system, Evaporating invokes Vapor Compression Refrigerating, expressing the continuous refrigerant cycle. Identifying the refrigerant state at each stage helps determine which component fails.
 
 ---
 
@@ -557,7 +559,17 @@ Specializations inherit from the general: all parts, all features, all tagged st
 
 ### State-Specified Structural Links
 
-State-specified characterization links associate specialized objects with specific attribute values. Seven kinds of state-specified tagged structural links exist (source, destination, or both state-specified × unidirectional, bidirectional, reciprocal).
+State-specified characterization links associate specialized objects with specific attribute values.
+
+Seven kinds of state-specified tagged structural links decompose into 3 groups:
+
+| Group | Unidirectional | Bidirectional | Reciprocal |
+|-------|---------------|---------------|------------|
+| **Source** state-specified | `Specified-state Source tag Destination.` | `Specified-state Source f-tag Dest.` / `Dest b-tag Specified-state Source.` | `Dest and Specified-state Source are reciprocal-tag.` |
+| **Destination** state-specified | `Source tag Specified-state Dest.` | — | — |
+| **Source-and-destination** state-specified | `Sa Source tag Sb Dest.` | `Sa Source f-tag Sb Dest.` / `Sb Dest b-tag Sa Source.` | `Sa Source and Sb Dest are reciprocal-tag.` |
+
+Bidirectional and reciprocal variants do not exist for destination-only specification (hence 7 kinds, not 9).
 
 ---
 
@@ -579,6 +591,16 @@ Range syntax: `qmin..qmax` (closed). Multiple ranges separated by comma. Arithme
 **Participation constraints do NOT apply to processes.** Sequential repetition of a process uses a recurrent process with an iteration counter. Parallel repetition uses synchronous/asynchronous subprocesses within an in-zoomed process.
 
 **Type declaration**: objects may declare a computational type. OPL: `Object is of type type-identifier.` Types: boolean, string, integer, float, double, short, long, enumerated.
+
+**Optionality examples** (visual reference):
+- `Car has an optional Sunroof.` — question mark (?) near Sunroof link
+- `Car is equipped with optional Airbags.` — asterisk (*) near Airbag link
+- `Car is steered by Steering Wheel.` — no annotation (1..1 default)
+- `Car carries at least one Spare Tire.` — plus (+) near Spare Tire link
+
+**Parametric multiplicity example** (Blade Replacing system): Jet Engine consists of **b Installed Blades**. **k** (k=2..4) Aviation Engine Mechanics handle Blade Replacing, using **k Blade Fastening Tools**. 1..2 Aerospace Engineers handle Blade Replacing. Blade Replacing consumes **i inspected Blades** and **(b−i) new Blades**, yields **b Dismantled Blades**. Blade Inspecting yields **a (a≤b) inspected Blades**.
+
+**Multi-constraint example** (Airplane): `Airplane consists of Body, 2 Wings, and e Engines, where e≥1, e=b+2*w.` Each Wing has **w Engines** (0≤w≤3). Body has **b Engines** (b∈{0,1}).
 
 ### Attribute Value Constraints
 
@@ -606,12 +628,12 @@ XOR and OR apply to all procedural link families. The convergent end is the comm
 
 **Consumption and result link fans:**
 
-| Fan type | XOR OPL | OR OPL |
-|----------|---------|--------|
-| Converging consumption (objects → process) | `P consumes exactly one of A, B, or C.` | `P consumes at least one of A, B, or C.` |
-| Diverging consumption (object → processes) | `Exactly one of P, Q, or R consumes B.` | `At least one of P, Q, or R consumes B.` |
-| Converging result (processes → object) | `Exactly one of P, Q, or R yields B.` | `At least one of P, Q, or R yields B.` |
-| Diverging result (process → objects) | `P yields exactly one of A, B, or C.` | `P yields at least one of A, B, or C.` |
+| Fan type | OPD visual | XOR OPL | OR OPL |
+|----------|-----------|---------|--------|
+| Converging consumption (objects → process) | Objects A, B, C each with closed arrowhead to process P; dashed arc at P end | `P consumes exactly one of A, B, or C.` | `P consumes at least one of A, B, or C.` |
+| Diverging consumption (object → processes) | Object B with closed arrowheads diverging to P, Q, R; dashed arc at B end | `Exactly one of P, Q, or R consumes B.` | `At least one of P, Q, or R consumes B.` |
+| Converging result (processes → object) | Processes P, Q, R with closed arrowheads converging to object B; dashed arc at B end | `Exactly one of P, Q, or R yields B.` | `At least one of P, Q, or R yields B.` |
+| Diverging result (process → objects) | Process P with closed arrowheads diverging to A, B, C; dashed arc at P end | `P yields exactly one of A, B, or C.` | `P yields at least one of A, B, or C.` |
 
 **Effect link fans** (bidirectional — no converging/diverging distinction):
 
@@ -634,13 +656,43 @@ XOR and OR apply to all procedural link families. The convergent end is the comm
 | Diverging | `P invokes exactly one of Q or R.` | `P invokes at least one of Q or R.` |
 | Converging | `Exactly one of P or Q invokes R.` | `At least one of P or Q invokes R.` |
 
-**Control-modified link fans:** Each XOR fan for consumption, result, effect and enabling links has event and condition variants. Event fans add "initiates" semantics; condition fans add bypass semantics ("otherwise these processes are skipped"). State-specified versions exist for all.
+### AND Visual Examples
 
-**Probabilistic link fans** annotate each link with `Pr=p` where probabilities sum to 1. For a result link to a stateful object with n states without specifying a state, default probability per state = 1/n. If the object has m initial states, creation probability per initial state = 1/m.
+AND requires **non-touching links** on process contour. Three canonical examples:
+
+- **Agent AND**: Safe Owner A and Safe Owner B handle Safe Opening — two separate agent links (black lollipops) from each owner to the process, links not touching on ellipse contour. Both must be present.
+- **Instrument AND**: Safe Opening requires Key A, Key B, and Key C — three separate instrument links (white lollipops), non-touching. All three keys needed.
+- **Result AND**: Meal Preparing yields Starter, Entree and Dessert — three separate result links from process to each object. All three created.
+- **Effect AND with input-output pairs**: Interest Rate Raising changes Exchange Rate from low to high, Price Index from low to high, and Interest Rate from low to high — three pairs of input-output-specified effect links.
+
+### Control-Modified Link Fans
+
+Each XOR fan has event and condition variants:
+
+| Base fan | Event variant OPD | Event OPL | Condition variant OPD | Condition OPL |
+|----------|------------------|-----------|----------------------|---------------|
+| Effect (multiple processes) | Bidirectional arrows B↔P,Q,R with "e" near each process | `B initiates exactly one of P, Q, or R, which affects B.` | Same with "c" | `Exactly one of P, Q, R occurs if B exists, otherwise skipped.` |
+| Consumption | Arrowheads B→P,Q,R with "e" | `s2 B initiates exactly one of P, Q, R, which consumes B.` | Same with "c" | `Exactly one of P, Q, R occurs if B is s2, otherwise skipped.` |
+| Agent | Black lollipops B→P,Q,R with "e" | `s2 B initiates and handles exactly one of P, Q, R.` | Same with "c" | `B handles exactly one of P, Q, R if B is s2, otherwise skipped.` |
+| Instrument | White lollipops B→P,Q,R with "e" | `s2 B initiates exactly one of P, Q, R, which requires s2 B.` | Same with "c" | `Exactly one of P, Q, R requires B is s2, otherwise skipped.` |
+
+Every XOR fan in the table has an **OR counterpart** where "exactly" is replaced by "at least" and the single dashed arc becomes a double dashed arc.
+
+### Probabilistic Link Fans
+
+Annotate each fan link with `Pr=p` where probabilities sum to 1.
+
+**Numeric example**: Process P can create object B in three states — s1 (Pr=0.32), s2 (Pr=0.24), s3 (Pr=0.44). Graphically, three result links from P to each state of B, each annotated with its probability. Without annotation, default probability = 1/n (here 1/3 each). If the object has m initial states, creation probability per initial state = 1/m.
+
+**Mixed example**: P yields one of objects A, B, or C at state sc1, with probabilities annotated per link. Source objects may have or lack state specifications within the same fan.
 
 ### Execution Path and Path Labels
 
 Path labels along procedural links resolve ambiguity when multiple output options exist. On process exit, the link with the same label as the entry link is followed. OPL: `Following path label, Process consumes/yields Object.`
+
+A **scenario** is a set of one or more path labels that define a specific collection of procedural links to follow through the model. Scenarios are a compact alternative to creating additional OPDs for each execution variant. Their utility grows with system complexity.
+
+**Example** (Food Preparing): Two scenarios — "herbivore" and "carnivore". Following path **carnivore**: Food Preparing consumes Meat, yields Stew and Steak. Following path **herbivore**: Food Preparing consumes Cucumber and Tomato, yields Salad.
 
 ---
 
@@ -684,16 +736,36 @@ Links attached to the **outer contour** of an in-zoomed process have **distribut
 - **Event links from systemic objects/states MUST NOT cross the boundary** of an in-zoomed process to initiate subprocesses — this would interfere with the prescribed temporal order. Environmental event links that cross require explicit contingency modelling.
 - If a condition link causes a subprocess to be skipped and there is a next subprocess in the in-zoom context, execution control initiates that next subprocess.
 
+**Valid vs invalid distribution example**: Process P zooms into P1, P2, P3. Agent A handles P (valid: distributes to all subprocesses). Instrument D required by P (valid: distributes). But `P consumes C` — **NOT VALID** because P1 consumes C first; C doesn't exist when P2/P3 perform. And `P yields B` — **NOT VALID** because B can only be created once. Correct: P1 consumes C, P2 yields B, P3 affects B (assign to specific subprocesses).
+
+### Split State-Specified Transforming Links
+
+When an input-output-specified effect link (Process changes Object from s1 to s2) is in-zoomed and contains multiple subprocesses, the model becomes **underspecified** — it's unclear which subprocess takes Object out of s1 and which puts it into s2.
+
+Resolution procedure (3 steps):
+1. **Original**: `P changes A from s1 to s2` (single process, unambiguous)
+2. **In-zoomed, UNDERSPECIFIED**: P zooms into P1 and P2. `P changes A from s1 to s2` — could mean P1 or P2 or split
+3. **Resolved with split links**: `P1 changes A from s1.` (split input link) + `P2 changes A to s2.` (split output link)
+
+The split input link connects from the input state of the affectee to the early subprocess. The split output link connects from the late subprocess to the output state. This is the only mechanism to resolve underspecification in in-zoomed effect links.
+
+**Abstraction role shift**: an object may be an instrument at an abstract level (e.g., Dishwasher as instrument of Dish Washing in SD) and become an affectee at a detailed level (Dish Loading changes Dishwasher from empty to loaded, Dish Unloading changes back to empty in SD1). This is valid because the initial and final states are the same at the abstract level.
+
+### Link Precedence During Out-Zooming
+
 When out-zooming, procedural links from sub-processes migrate to the parent process. **Semantic strength** determines which link prevails:
 
-```
-consumption event > consumption = result > consumption condition >
-effect event > effect > effect condition >
-agent event > agent > agent condition >
-instrument event > instrument > instrument condition
-```
+**Transforming link precedence matrix** (when two links of different kinds compete for B↔P after out-zooming):
 
-State-specified links have higher precedence than basic links.
+| B↔P1 \ B↔P2 | Effect | Result | Consumption |
+|-------------|--------|--------|-------------|
+| **Effect** | Effect | Result | Consumption |
+| **Result** | Result | Invalid | Effect |
+| **Consumption** | Consumption | Effect | Invalid |
+
+Result + consumption to same object = invalid (can't both create and destroy). When both compete, effect prevails (implicit existence cycle).
+
+Primary precedence order: consumption = result > effect > agent > instrument. State-specified links have higher precedence than basic links. Secondary: event > non-control > condition within each kind.
 
 ### OPD Labels and Navigation
 
@@ -1053,6 +1125,8 @@ Shows for any point in time: which objects exist, what state each is at, and whi
 | Duration Distribution | Probability function (Normal, Uniform, Exponential) with parameters |
 
 System time unit is default for all processes unless explicitly overridden.
+
+**Graphical placement**: duration values display **inside the process ellipse**, below the process name and time unit. Minimal duration appears to the **left**, expected duration in the **center**, maximal duration to the **right**. Example: `Processing [min] (30.0, 45.6, 60.0)` with distribution `normal, mean=45.6, sd=7.3`.
 
 ---
 

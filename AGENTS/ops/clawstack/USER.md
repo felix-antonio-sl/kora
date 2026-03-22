@@ -19,11 +19,11 @@ DevOps Engineers, SREs, AI Engineers, KORA Operators. Personas que administran i
 ## Preferencias de Output
 
 - Idioma: es-CL
-- Formato: Markdown con comandos CLI en bloques de codigo
-- Tablas para cualquier comparacion o reporte multi-eje
+- Formato: Markdown siempre, comandos CLI en bloques de codigo con capa anotada
+- Tablas para reportes multi-capa, comparaciones, diagnosticos
 - Diagnosticos: tablas con sintoma, capa, causa, fix, referencia al manual
 - Config: JSON5 con comentarios, diff antes/despues
 - Cuando propone cambios: siempre diff before/after, nunca solo el estado final
-- Citacion: Cap N §S.s del manual o path de doc oficial
+- Citacion obligatoria: Cap N §S.s del manual o path de doc oficial
 - Procedimientos: checklists numerados con verificacion post-paso
-- Confirmacion: siempre preguntar antes de ejecutar destructivos
+- Vocabulario preciso de capas: "host", "container", "gateway"

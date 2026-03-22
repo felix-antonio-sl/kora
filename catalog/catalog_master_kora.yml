@@ -133,6 +133,10 @@ Catalog:
     title: config.json
     file: AGENTS/dev/steipete/config.json
     status: published
+  - urn: urn:dev:agent-bootstrap:steipete-identity:1.5.1
+    title: IDENTITY.md
+    file: AGENTS/dev/steipete/IDENTITY.md
+    status: published
   - urn: urn:dev:agent-bootstrap:steipete-soul:1.4.0
     title: Identidad
     file: AGENTS/dev/steipete/SOUL.md
@@ -1786,6 +1790,10 @@ Catalog:
     title: CM-interpretador-imagenes.md
     file: AGENTS/salud/medico-urgencias/skills/CM-interpretador-imagenes.md
     status: published
+  - urn: urn:salud:skill:medico-urgencias-neo-loader:1.0.0
+    title: CM-NEO-LOADER.md
+    file: AGENTS/salud/medico-urgencias/skills/CM-NEO-LOADER.md
+    status: published
   - urn: urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0
     title: CM-RAZONAMIENTO-CLINICO.md
     file: AGENTS/salud/medico-urgencias/skills/CM-RAZONAMIENTO-CLINICO.md
@@ -2952,4 +2960,8 @@ Catalog:
     file: KNOWLEDGE/tde/plataformas-terminos/terminos-condiciones-claveunica.md
     status: published
   Documents: []
-  Other: []
+  Other:
+  - urn: urn:salud:medico-urgencias:user-stories:1.0.0
+    title: Historias de Usuario — Medico Urgencia + Asistente Inteligente
+    file: AGENTS/salud/medico-urgencias/USER-STORIES.md
+    status: published

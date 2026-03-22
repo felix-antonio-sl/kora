@@ -43,7 +43,7 @@ _manifest:
 
 ## 3. Co-induccion (Nodo Terminal)
 
-Traces to: 01-agent-coalgebra §3.3 (co-induction as terminal verification)
+Traces to: formal/01 §3.3 (co-induction as terminal verification)
 
 ### Checklist Pre-Output
 
