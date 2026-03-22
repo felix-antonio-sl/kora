@@ -40,6 +40,7 @@ Main toolbar buttons: Undo, Redo, Save, Load, Share, Execution (simulation mode)
 Main Menu: Create new model, Load model, Load examples (Global — all users; Organizational — admin-created). Save options: Quick save (current location), Save as (new location/rename).
 
 **Model Options** (Main Menu):
+
 - System map — visual overview of all OPDs
 - Copy link — shareable model URL
 - **Model validation** — validate computational values and ranges
@@ -130,6 +131,7 @@ Create link: right-click source → drag to destination. Link Table: configure p
 - **Specialization**: represent generalization relationships between things
 
 **Visual Instances**: same logical entity with different visual representation in different OPDs.
+
 - Create with "use existing thing" option on naming conflict
 - **Restriction**: cannot create visual instance between different element types (object → process forbidden)
 - Visual instance = same thing, different view. Logical instance = inheritance relationship (classification-instantiation)
@@ -162,6 +164,7 @@ Long press as alternative to right-click. Gesture-based OPD navigation. See user
 ### Halo and Quick Commands
 
 Click element → show halo (three dots near selection). Commands:
+
 - Unfold/In-Zoom: navigate to or create child OPD
 - **Convert to Computational**: change to calculation-capable process
 - Delete: multi-instance handling (shows all instances for selection)
@@ -277,6 +280,7 @@ Convert via halo or computation option. Value types: integer, float, string, cha
 **User-Defined Functions**: custom calculations integrated via API. OPCloud provides built-in functions accessible in the calculation dropdown.
 
 **Point-Slope example** (canonical computational workflow):
+
 1. Define two Point objects (e.g., Point1, Point2)
 2. Set X and Y as **computational attributes** on each Point (type: float, with aliases e.g. "x1", "y1", "x2", "y2")
 3. Create a **calculation process** (shows braces `{}` in diagram)
@@ -302,6 +306,7 @@ Connect states to processes via instrument-condition links. Loops via invocation
 **Agent requirement**: user must be connected via agent link to process.
 
 Workflow:
+
 1. Create user as physical object
 2. Connect user to process via **agent link** (black lollipop)
 3. Mark process to "get user input" during simulation
@@ -336,6 +341,7 @@ Premium feature. Access: Settings > Analyze Model > Model Knowledge. OPPL senten
 ### Identification of Missing Knowledge
 
 Access: Settings > Analyze Model > Model Knowledge > Identification of Missing Knowledge. Two algorithms:
+
 - **Pistol**: fast, browser-based, good for initial filtering, may have suggestion limitations
 - **RGCN**: Python-based, more accurate — **currently disabled**
 
@@ -354,6 +360,7 @@ Access: Generative AI menu > AI Requirement Generation. Output: Excel download o
 Bulk add attribute instances and values. Access: select object > entities extension > add attribute instances and values from CSV. **Restriction**: object must not be an instance (not connected via instance structure link).
 
 Options:
+
 - **Ignore existing**: update existing attribute values (default)
 - **Create non-existing**: add new attributes
 - **Non-computational instances**: create with single state
@@ -368,6 +375,7 @@ Preview before import. CSV format: column-based with attribute names and values.
 Pre-defined templates for common patterns (e.g., Security Level Computing). Admin creates for organisation. Apply: select thing > entities extension > set stereotype. Components include sub-components with parameter ranges. Global (G icon) vs Organizational.
 
 Removal options:
+
 - **Unlink**: remove stereotype but keep components in diagram
 - **Unlink and remove**: remove stereotype AND all added components
 

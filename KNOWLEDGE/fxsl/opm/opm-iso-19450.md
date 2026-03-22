@@ -137,6 +137,7 @@ No normative references.
 | 3.83 | Whole | An aggregate |
 
 Key normative notes on glossary terms:
+
 - **Property vs attribute (3.60)**: unlike an attribute, a property value **cannot change** during simulation or operational implementation. Cardinalities, tags and path labels are properties.
 - **No process states (3.68)**: OPM has no concept of process state ("started", "in process", "finished"). Instead, model subprocesses such as Starting, Processing, Finishing.
 - **Every thing implies instances (3.28/3.29)**: by creating a thing in the conceptual model, the modeller implies that at least one operational instance of that thing (or a specialization) can exist during system operation.
@@ -555,6 +556,7 @@ Specializations inherit from the general: all parts, all features, all tagged st
 **Runtime existence rule**: a specialized thing instance does not exist in the absence of the more general thing instance from which it inherits.
 
 **Procedure to create a general from existing specializations**:
+
 1. Identify common features and participants across candidate specializations
 2. Create a new general thing with those common elements
 3. Connect general to specializations via generalization-specialization link
@@ -597,6 +599,7 @@ Range syntax: `qmin..qmax` (closed). Multiple ranges separated by comma. Arithme
 **Type declaration**: objects may declare a computational type. OPL: `Object is of type type-identifier.` Types: boolean, string, integer, float, double, short, long, enumerated.
 
 **Optionality examples** (visual reference):
+
 - `Car has an optional Sunroof.` — question mark (?) near Sunroof link
 - `Car is equipped with optional Airbags.` — asterisk (*) near Airbag link
 - `Car is steered by Steering Wheel.` — no annotation (1..1 default)
@@ -746,6 +749,7 @@ This captures the substance of ISO Table 24: invocation order can be encoded wit
 Links attached to the **outer contour** of an in-zoomed process have **distributive semantics** — they distribute to all subprocesses (analogous to algebraic parentheses).
 
 **Critical restrictions:**
+
 - **Consumption and result links MUST NOT attach to the outer contour** of an in-zoomed process. A distributed consumption link would consume an already-consumed object; a distributed result link would create an already-existing instance. Both violate temporal logic.
 - When a process is in-zoomed, all consumption and result links initially migrate **to the first subprocess by default**. The modeller then reassigns to the correct subprocess.
 - **Event links from systemic objects/states MUST NOT cross the boundary** of an in-zoomed process to initiate subprocesses — this would interfere with the prescribed temporal order. Environmental event links that cross require explicit contingency modelling.
@@ -758,6 +762,7 @@ Links attached to the **outer contour** of an in-zoomed process have **distribut
 When an input-output-specified effect link (Process changes Object from s1 to s2) is in-zoomed and contains multiple subprocesses, the model becomes **underspecified** — it's unclear which subprocess takes Object out of s1 and which puts it into s2.
 
 Resolution procedure (3 steps):
+
 1. **Original**: `P changes A from s1 to s2` (single process, unambiguous)
 2. **In-zoomed, UNDERSPECIFIED**: P zooms into P1 and P2. `P changes A from s1 to s2` — could mean P1 or P2 or split
 3. **Resolved with split links**: `P1 changes A from s1.` (split input link) + `P2 changes A to s2.` (split output link)
@@ -915,6 +920,7 @@ A **decision node** is an informatical object representing a choice point. Best 
 ### Condition vs Non-Condition Instrument Link
 
 Critical distinction:
+
 - **Condition instrument link** (with "c"): if the instrument does not exist or is not in the required state, the process is **skipped** and execution continues to the next process
 - **Non-condition instrument link** (without "c"): if the instrument is missing, execution **stops and waits** until the instrument exists or transitions to the required state
 
@@ -939,6 +945,7 @@ Model-Based Systems Engineering (MBSE) uses conceptual models to design and deve
 ### Alternative Solution Concepts
 
 Procedure for generating alternative solutions:
+
 1. Create at least 3 distinct conceptual models
 2. Apply holistic creative thinking
 3. Distill the central concept of each — the underlying physical or logical principle of the architecture
@@ -1146,6 +1153,7 @@ Canonical self-referential OPM model demonstrating a complete in-zoomed process 
 **SD1.1.1: Precondition Evaluating** — Decomposes into Enabler Set Checking → Consumee & Affectee Set Checking → (Precondition Refuting | Precondition Confirming). Each check produces positive/negative results. If any negative → Precondition Refuting resets Status to idle. If all positive → Precondition Confirming sets Precondition to true.
 
 **SD1.2: Process Performing** — Decomposes into Initial Process Performing → Main Process Performing → Final Process Performing.
+
 - Initial: parallel Input State Exiting + Consumee Set Consuming. Status changes from started(t=0) to operating(time less than n).
 - Main: loop of Elapsed Time & Duration Comparing → Enabler & Affectee Set Checking → Process Executing & Time Incrementing (invokes back to comparing). If Set Approval denied → Aborting & Notifying. If elapsed time equals duration → Finalizing. If elapsed time exceeds duration → Overtime Exception Handling.
 - Final: parallel Resultee Set Generating + Output State Entering + Success Notifying. Status → completed(t=n), Postcondition → true.
@@ -1266,6 +1274,7 @@ Key visual: state-specified links originate from/terminate at specific rounded-c
 Object: Check (states: blank → signed → endorsed → cashed & cancelled). Attribute: Keeper (states: payer → payee → financial institution). Agents: Payer, Payee, Bank.
 
 SD1 shows Check-Based Paying in-zoomed into 4 sequential subprocesses:
+
 1. Writing & Signing — changes Check blank→signed (Payer handles)
 2. Delivering & Accepting — changes Keeper payer→payee (Payer and Payee handle)
 3. Endorsing & Submitting — changes Check signed→endorsed and Keeper payee→financial institution (Payee handles)
@@ -1314,7 +1323,5 @@ Purpose: change Business Success of Company Stakeholder Group from current to im
 - **Online Professional Identity Management**: online profile can represent the user through a tagged structural link; the identity-management system and internet connection act as instruments/environment.
 - **Baggage Transportation**: main function changes baggage location from origin airport to destination airport; useful for state change and SD function framing.
 - **Conference System**: organizer and ushers are agents; facilities/equipment are instruments; weather can be environmental despite the system being social.
-
-
 
 For OPCloud tool procedures, UI workflows and feature details, see `urn:fxsl:kb:opcloud-tutorial-videos`.
