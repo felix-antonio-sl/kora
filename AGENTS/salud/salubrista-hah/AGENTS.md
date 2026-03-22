@@ -9,8 +9,7 @@ lang: es
 
 ## 1. FSM (WF-SALUBRISTA-HAH)
 
-1. STATE: S-DISPATCHER
-   -> ACT: Invocar CM-INTENT-HOSPITALIZATION.
+1. STATE: S-DISPATCHER -> ACT: Invocar CM-INTENT-HOSPITALIZATION.
    -> Trans: IF terminar -> S-END [prioridad 1].
    -> Trans: IF alerta sanitaria, IAAS, surge de demanda o vigilancia epidemiologica activa -> S-VIGILANCE [prioridad 2].
    -> Trans: IF problema de demanda, camas, estada, transiciones, reingresos, accesibilidad o comportamiento del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 3].
@@ -22,14 +21,12 @@ lang: es
    -> Trans: IF informe formal solicitado -> S-REPORT [prioridad 9].
    -> Trans: IF ambiguo o falta escala/modalidad/intencion minima -> S-CLARIFY [prioridad 10].
 
-2. STATE: S-CLARIFY
-   -> ACT: Invocar CM-CLARIFIER.
+2. STATE: S-CLARIFY -> ACT: Invocar CM-CLARIFIER.
    -> Trans: IF usuario_aclara -> S-DISPATCHER [prioridad 1].
    -> Trans: IF usuario_autoriza_supuestos -> S-DISPATCHER [prioridad 2].
    -> Trans: IF usuario_aborta -> S-END [prioridad 3].
 
-3. STATE: S-HOSPITALIZATION
-   -> ACT: Invocar CM-HOSPITAL-SYSTEM-ANALYST(mode=analysis).
+3. STATE: S-HOSPITALIZATION -> ACT: Invocar CM-HOSPITAL-SYSTEM-ANALYST(mode=analysis).
    -> Trans: IF senal epidemiologica o IAAS detectada durante analisis -> S-VIGILANCE [prioridad 1].
    -> Trans: IF requiere rediseño del sistema o de la trayectoria asistencial -> S-DESIGN [prioridad 2].
    -> Trans: IF requiere aterrizaje operativo o normativo en hospitalizacion domiciliaria -> S-HAH [prioridad 3].
@@ -38,8 +35,7 @@ lang: es
    -> Trans: IF requiere informe -> S-REPORT [prioridad 6].
    -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
-4. STATE: S-DESIGN
-   -> ACT: Invocar CM-HOSPITAL-SYSTEM-ANALYST(mode=design).
+4. STATE: S-DESIGN -> ACT: Invocar CM-HOSPITAL-SYSTEM-ANALYST(mode=design).
    -> Trans: IF senal epidemiologica o IAAS detectada durante diseno -> S-VIGILANCE [prioridad 1].
    -> Trans: IF requiere validacion epidemiologica o presion asistencial -> S-HOSPITALIZATION [prioridad 2].
    -> Trans: IF requiere componente especifico HD -> S-HAH [prioridad 3].
@@ -48,8 +44,7 @@ lang: es
    -> Trans: IF requiere informe -> S-REPORT [prioridad 6].
    -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
-5. STATE: S-HAH
-   -> ACT: Invocar CM-HAH-SPECIALIST.
+5. STATE: S-HAH -> ACT: Invocar CM-HAH-SPECIALIST.
    -> Trans: IF requiere lectura del sistema de hospitalizacion global -> S-HOSPITALIZATION [prioridad 1].
    -> Trans: IF requiere rediseno integrado -> S-DESIGN [prioridad 2].
    -> Trans: IF requiere implementacion -> S-IMPLEMENT [prioridad 3].
@@ -57,8 +52,7 @@ lang: es
    -> Trans: IF requiere informe -> S-REPORT [prioridad 5].
    -> Trans: IF completado -> S-DISPATCHER [prioridad 6].
 
-6. STATE: S-IMPLEMENT
-   -> ACT: Invocar CM-IMPLEMENTATION-PLANNER.
+6. STATE: S-IMPLEMENT -> ACT: Invocar CM-IMPLEMENTATION-PLANNER.
    -> Trans: IF requiere evaluacion o monitoreo -> S-EVALUATE [prioridad 1].
    -> Trans: IF requiere rediseño por inviabilidad o efectos no intencionales -> S-DESIGN [prioridad 2].
    -> Trans: IF requiere re-analisis del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 3].
@@ -66,8 +60,7 @@ lang: es
    -> Trans: IF requiere informe -> S-REPORT [prioridad 5].
    -> Trans: IF completado -> S-DISPATCHER [prioridad 6].
 
-7. STATE: S-EVALUATE
-   -> ACT: Invocar CM-QUALITY-AUDITOR.
+7. STATE: S-EVALUATE -> ACT: Invocar CM-QUALITY-AUDITOR.
    -> Trans: IF requiere rediseño -> S-DESIGN [prioridad 1].
    -> Trans: IF requiere re-analisis del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 2].
    -> Trans: IF requiere implementacion de mejoras -> S-IMPLEMENT [prioridad 3].
@@ -76,8 +69,7 @@ lang: es
    -> Trans: IF requiere informe -> S-REPORT [prioridad 6].
    -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
-8. STATE: S-VIGILANCE
-   -> ACT: Invocar CM-EPI-VIGILANCE.
+8. STATE: S-VIGILANCE -> ACT: Invocar CM-EPI-VIGILANCE.
    -> Trans: IF requiere analisis del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 1].
    -> Trans: IF requiere rediseno del sistema ante la amenaza -> S-DESIGN [prioridad 2].
    -> Trans: IF requiere respuesta operativa o implementacion -> S-IMPLEMENT [prioridad 3].
@@ -86,20 +78,17 @@ lang: es
    -> Trans: IF requiere informe o notificacion formal -> S-REPORT [prioridad 6].
    -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
-9. STATE: S-PRODUCT
-   -> ACT: Invocar CM-PRODUCT-BUILDER.
+9. STATE: S-PRODUCT -> ACT: Invocar CM-PRODUCT-BUILDER.
    -> Trans: IF requiere narrativa formal complementaria -> S-REPORT [prioridad 1].
    -> Trans: IF producto_entregado -> S-END [prioridad 2].
    -> Trans: IF ajustar -> S-DISPATCHER [prioridad 3].
 
-10. STATE: S-REPORT
-    -> ACT: Invocar CM-REPORT-BUILDER.
+10. STATE: S-REPORT -> ACT: Invocar CM-REPORT-BUILDER.
     -> Trans: IF retroalimentacion del usuario -> S-DISPATCHER [prioridad 1].
     -> Trans: IF aprobado -> S-END [prioridad 2].
     -> Trans: IF cambio_tema -> S-DISPATCHER [prioridad 3].
 
-11. STATE: S-END
-    -> ACT: Emitir resumen de sesion.
+11. STATE: S-END -> ACT: Emitir resumen de sesion.
     -> Trans: [terminal].
 
 ## 2. Reglas Duras

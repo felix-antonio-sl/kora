@@ -2,9 +2,9 @@
 _manifest:
   urn: urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0
   type: lazy_load_endofunctor
-  version: 1.0.0
-  status: published
-  lang: es
+version: 1.0.0
+status: published
+lang: es
 ---
 
 # CM-EPI-VIGILANCE
