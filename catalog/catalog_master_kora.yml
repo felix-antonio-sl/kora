@@ -197,7 +197,7 @@ Catalog:
     title: config.json
     file: AGENTS/fxsl/arquitecto-categorico/config.json
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0
     title: SOUL.md
     file: AGENTS/fxsl/arquitecto-categorico/SOUL.md
     status: published
@@ -205,7 +205,7 @@ Catalog:
     title: TOOLS.md
     file: AGENTS/fxsl/arquitecto-categorico/TOOLS.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0
     title: USER.md
     file: AGENTS/fxsl/arquitecto-categorico/USER.md
     status: published
@@ -1074,35 +1074,35 @@ Catalog:
     title: CM-SYSTEMS-LENS.md
     file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-SYSTEMS-LENS.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0
     title: CM-ARTIFACT-GENERATOR.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-ARTIFACT-GENERATOR.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0
     title: CM-AUDIT-ENGINE.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-AUDIT-ENGINE.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0
     title: CM-BEHAVIOR-ENGINE.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-BEHAVIOR-ENGINE.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0
     title: CM-DAL-ENGINE.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-DAL-ENGINE.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0
     title: CM-INTEGRATION-ENGINE.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-INTEGRATION-ENGINE.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0
     title: CM-MIGRATION-ENGINE.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-MIGRATION-ENGINE.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0
     title: CM-STRUCTURE-ENGINE.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-STRUCTURE-ENGINE.md
     status: published
-  - urn: urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0
+  - urn: urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0
     title: CM-TENSION-EXPLORER.md
     file: AGENTS/fxsl/arquitecto-categorico/skills/CM-TENSION-EXPLORER.md
     status: published
@@ -2164,13 +2164,13 @@ Catalog:
     file: KNOWLEDGE/fxsl/cat/multicategory-multimodel-query-processing.md
     status: published
   - urn: urn:fxsl:kb:opcloud-tutorial-videos
-    title: OPCloud Tutorial
+    title: OPCloud Tutorial Videos
     file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md
-    status: draft
+    status: published
   - urn: urn:fxsl:kb:opm-iso-19450
     title: OPM ISO/PAS 19450 — Object-Process Methodology
     file: KNOWLEDGE/fxsl/opm/opm-iso-19450.md
-    status: draft
+    status: published
   - urn: urn:fxsl:kb:procrastination-sirois
     title: Procrastination — Sirois (2022)
     file: KNOWLEDGE/fxsl/procrastination-sirois.md

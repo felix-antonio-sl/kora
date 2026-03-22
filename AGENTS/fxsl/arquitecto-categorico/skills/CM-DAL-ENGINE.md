@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0
+  urn: urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0
   type: lazy_load_endofunctor
 ---
 

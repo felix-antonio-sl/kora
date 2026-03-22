@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0"
+  urn: "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0"
   type: "bootstrap_soul"
 ---
 
