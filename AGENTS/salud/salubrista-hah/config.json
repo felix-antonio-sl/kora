@@ -33,6 +33,7 @@
     "max_depth": 0
   },
   "runtime_capabilities": {
+    "allow": [],
     "deny": [
       "code_execution",
       "workspace_write",

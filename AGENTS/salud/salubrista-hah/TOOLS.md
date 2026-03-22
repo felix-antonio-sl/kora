@@ -54,4 +54,4 @@ lang: es
 - **Firma:** query: string -> SearchResult[]
 - **Cuando usar:** Complementar corpus con evidencia actualizada, normativa MINSAL vigente, datos epidemiologicos actuales, benchmarks de hospitalizacion integrada o estudios recientes de HD y continuidad del cuidado. Citar fuente web en output.
 - **Cuando NO usar:** Si el corpus ya cubre adecuadamente el tema. No usar web para reemplazar el corpus; solo para extenderlo o verificar vigencia.
-- **Notas:** Devuelve resultados web genericos. Fuentes especializadas en salud suelen ser mas pertinentes para este dominio.
+- **Notas:** Devuelve resultados web genericos. Preferir fuentes autoritativas: MINSAL, OPS, OMS, IHI, NICE, AHRQ, Cochrane, Johns Hopkins, CMS y journals indexados. Especialmente pertinente cuando el problema requiera detalle intrahospitalario no disponible en gestion-redes o vigencia normativa/benchmark actual.

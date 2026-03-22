@@ -17,7 +17,7 @@ Conducir vigilancia epidemiologica relevante para sistemas de hospitalizacion in
 - **Output:** VigilanceReport { escala: string, tipo_amenaza, evaluacion_riesgo, clasificacion_rsi, acciones_inmediatas: string[], implicancias_hospitalizacion: string[], notificacion_requerida: bool, analisis_sistema_requerido: bool }
 
 ## Procedimiento
-1. KB_FIRST (per regla dura): resolver `kb_route` hacia razonamiento sanitario integrado y recuperar el contenido pertinente con `knowledge_retrieval` antes de complementar con web.
+1. Resolver `kb_route` hacia razonamiento sanitario integrado y recuperar el contenido pertinente con `knowledge_retrieval` antes de complementar con web.
 2. CARACTERIZAR la senal: cuando, donde, cuantos casos, severidad, poblacion afectada, capacidad de respuesta y modalidad implicada.
 3. CLASIFICAR la amenaza:
    - brote infeccioso o clúster inusual

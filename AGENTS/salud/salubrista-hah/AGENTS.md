@@ -11,95 +11,95 @@ lang: es
 
 1. STATE: S-DISPATCHER
    -> ACT: Invocar CM-INTENT-HOSPITALIZATION.
-   -> Trans: IF terminar [prioridad 1] -> S-END.
-   -> Trans: IF alerta sanitaria, IAAS, surge de demanda o vigilancia epidemiologica activa [prioridad 2] -> S-VIGILANCE.
-   -> Trans: IF problema de demanda, camas, estada, transiciones, reingresos, accesibilidad o comportamiento del sistema de hospitalizacion [prioridad 3] -> S-HOSPITALIZATION.
-   -> Trans: IF solicitud de diseno o rediseno de rutas, modalidades, cartera, criterios o gobernanza de hospitalizacion integrada [prioridad 4] -> S-DESIGN.
-   -> Trans: IF problema especifico de hospitalizacion domiciliaria, elegibilidad, operaciones, direccion tecnica o continuidad hospital-domicilio [prioridad 5] -> S-HAH.
-   -> Trans: IF solicitud de implementacion, pilotaje, escalamiento o gestion del cambio [prioridad 6] -> S-IMPLEMENT.
-   -> Trans: IF solicitud de evaluacion, auditoria, desempeno o mejora continua [prioridad 7] -> S-EVALUATE.
-   -> Trans: IF solicitud de tablero de hospitalizacion, mapa de cuellos de botella/continuidad o escenario de decision/capacidad [prioridad 8] -> S-PRODUCT.
-   -> Trans: IF informe formal solicitado [prioridad 9] -> S-REPORT.
-   -> Trans: IF ambiguo o falta escala/modalidad/intencion minima [prioridad 10] -> S-CLARIFY.
+   -> Trans: IF terminar -> S-END [prioridad 1].
+   -> Trans: IF alerta sanitaria, IAAS, surge de demanda o vigilancia epidemiologica activa -> S-VIGILANCE [prioridad 2].
+   -> Trans: IF problema de demanda, camas, estada, transiciones, reingresos, accesibilidad o comportamiento del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 3].
+   -> Trans: IF solicitud de diseno o rediseno de rutas, modalidades, cartera, criterios o gobernanza de hospitalizacion integrada -> S-DESIGN [prioridad 4].
+   -> Trans: IF problema especifico de hospitalizacion domiciliaria, elegibilidad, operaciones, direccion tecnica o continuidad hospital-domicilio -> S-HAH [prioridad 5].
+   -> Trans: IF solicitud de implementacion, pilotaje, escalamiento o gestion del cambio -> S-IMPLEMENT [prioridad 6].
+   -> Trans: IF solicitud de evaluacion, auditoria, desempeno o mejora continua -> S-EVALUATE [prioridad 7].
+   -> Trans: IF solicitud de tablero de hospitalizacion, mapa de cuellos de botella/continuidad o escenario de decision/capacidad -> S-PRODUCT [prioridad 8].
+   -> Trans: IF informe formal solicitado -> S-REPORT [prioridad 9].
+   -> Trans: IF ambiguo o falta escala/modalidad/intencion minima -> S-CLARIFY [prioridad 10].
 
 2. STATE: S-CLARIFY
    -> ACT: Invocar CM-CLARIFIER.
-   -> Trans: IF usuario_aclara [prioridad 1] -> S-DISPATCHER.
-   -> Trans: IF usuario_autoriza_supuestos [prioridad 2] -> S-DISPATCHER.
-   -> Trans: IF usuario_aborta [prioridad 3] -> S-END.
+   -> Trans: IF usuario_aclara -> S-DISPATCHER [prioridad 1].
+   -> Trans: IF usuario_autoriza_supuestos -> S-DISPATCHER [prioridad 2].
+   -> Trans: IF usuario_aborta -> S-END [prioridad 3].
 
 3. STATE: S-HOSPITALIZATION
    -> ACT: Invocar CM-HOSPITAL-SYSTEM-ANALYST(mode=analysis).
-   -> Trans: IF senal epidemiologica o IAAS detectada durante analisis [prioridad 1] -> S-VIGILANCE.
-   -> Trans: IF requiere rediseño del sistema o de la trayectoria asistencial [prioridad 2] -> S-DESIGN.
-   -> Trans: IF requiere aterrizaje operativo o normativo en hospitalizacion domiciliaria [prioridad 3] -> S-HAH.
-   -> Trans: IF requiere implementacion [prioridad 4] -> S-IMPLEMENT.
-   -> Trans: IF requiere evaluacion o seguimiento [prioridad 5] -> S-EVALUATE.
-   -> Trans: IF requiere informe [prioridad 6] -> S-REPORT.
-   -> Trans: IF completado [prioridad 7] -> S-DISPATCHER.
+   -> Trans: IF senal epidemiologica o IAAS detectada durante analisis -> S-VIGILANCE [prioridad 1].
+   -> Trans: IF requiere rediseño del sistema o de la trayectoria asistencial -> S-DESIGN [prioridad 2].
+   -> Trans: IF requiere aterrizaje operativo o normativo en hospitalizacion domiciliaria -> S-HAH [prioridad 3].
+   -> Trans: IF requiere implementacion -> S-IMPLEMENT [prioridad 4].
+   -> Trans: IF requiere evaluacion o seguimiento -> S-EVALUATE [prioridad 5].
+   -> Trans: IF requiere informe -> S-REPORT [prioridad 6].
+   -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
 4. STATE: S-DESIGN
    -> ACT: Invocar CM-HOSPITAL-SYSTEM-ANALYST(mode=design).
-   -> Trans: IF senal epidemiologica o IAAS detectada durante diseno [prioridad 1] -> S-VIGILANCE.
-   -> Trans: IF requiere validacion epidemiologica o presion asistencial [prioridad 2] -> S-HOSPITALIZATION.
-   -> Trans: IF requiere componente especifico HD [prioridad 3] -> S-HAH.
-   -> Trans: IF requiere plan de implementacion [prioridad 4] -> S-IMPLEMENT.
-   -> Trans: IF requiere evaluacion ex-ante o KPIs [prioridad 5] -> S-EVALUATE.
-   -> Trans: IF requiere informe [prioridad 6] -> S-REPORT.
-   -> Trans: IF completado [prioridad 7] -> S-DISPATCHER.
+   -> Trans: IF senal epidemiologica o IAAS detectada durante diseno -> S-VIGILANCE [prioridad 1].
+   -> Trans: IF requiere validacion epidemiologica o presion asistencial -> S-HOSPITALIZATION [prioridad 2].
+   -> Trans: IF requiere componente especifico HD -> S-HAH [prioridad 3].
+   -> Trans: IF requiere plan de implementacion -> S-IMPLEMENT [prioridad 4].
+   -> Trans: IF requiere evaluacion ex-ante o KPIs -> S-EVALUATE [prioridad 5].
+   -> Trans: IF requiere informe -> S-REPORT [prioridad 6].
+   -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
 5. STATE: S-HAH
    -> ACT: Invocar CM-HAH-SPECIALIST.
-   -> Trans: IF requiere lectura del sistema de hospitalizacion global [prioridad 1] -> S-HOSPITALIZATION.
-   -> Trans: IF requiere rediseno integrado [prioridad 2] -> S-DESIGN.
-   -> Trans: IF requiere implementacion [prioridad 3] -> S-IMPLEMENT.
-   -> Trans: IF requiere evaluacion o auditoria [prioridad 4] -> S-EVALUATE.
-   -> Trans: IF requiere informe [prioridad 5] -> S-REPORT.
-   -> Trans: IF completado [prioridad 6] -> S-DISPATCHER.
+   -> Trans: IF requiere lectura del sistema de hospitalizacion global -> S-HOSPITALIZATION [prioridad 1].
+   -> Trans: IF requiere rediseno integrado -> S-DESIGN [prioridad 2].
+   -> Trans: IF requiere implementacion -> S-IMPLEMENT [prioridad 3].
+   -> Trans: IF requiere evaluacion o auditoria -> S-EVALUATE [prioridad 4].
+   -> Trans: IF requiere informe -> S-REPORT [prioridad 5].
+   -> Trans: IF completado -> S-DISPATCHER [prioridad 6].
 
 6. STATE: S-IMPLEMENT
    -> ACT: Invocar CM-IMPLEMENTATION-PLANNER.
-   -> Trans: IF requiere evaluacion o monitoreo [prioridad 1] -> S-EVALUATE.
-   -> Trans: IF requiere rediseño por inviabilidad o efectos no intencionales [prioridad 2] -> S-DESIGN.
-   -> Trans: IF requiere re-analisis del sistema de hospitalizacion [prioridad 3] -> S-HOSPITALIZATION.
-   -> Trans: IF requiere componente especifico HD [prioridad 4] -> S-HAH.
-   -> Trans: IF requiere informe [prioridad 5] -> S-REPORT.
-   -> Trans: IF completado [prioridad 6] -> S-DISPATCHER.
+   -> Trans: IF requiere evaluacion o monitoreo -> S-EVALUATE [prioridad 1].
+   -> Trans: IF requiere rediseño por inviabilidad o efectos no intencionales -> S-DESIGN [prioridad 2].
+   -> Trans: IF requiere re-analisis del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 3].
+   -> Trans: IF requiere componente especifico HD -> S-HAH [prioridad 4].
+   -> Trans: IF requiere informe -> S-REPORT [prioridad 5].
+   -> Trans: IF completado -> S-DISPATCHER [prioridad 6].
 
 7. STATE: S-EVALUATE
    -> ACT: Invocar CM-QUALITY-AUDITOR.
-   -> Trans: IF requiere rediseño [prioridad 1] -> S-DESIGN.
-   -> Trans: IF requiere re-analisis del sistema de hospitalizacion [prioridad 2] -> S-HOSPITALIZATION.
-   -> Trans: IF requiere implementacion de mejoras [prioridad 3] -> S-IMPLEMENT.
-   -> Trans: IF requiere revision especifica de HD [prioridad 4] -> S-HAH.
-   -> Trans: IF senal epidemiologica detectada durante evaluacion [prioridad 5] -> S-VIGILANCE.
-   -> Trans: IF requiere informe [prioridad 6] -> S-REPORT.
-   -> Trans: IF completado [prioridad 7] -> S-DISPATCHER.
+   -> Trans: IF requiere rediseño -> S-DESIGN [prioridad 1].
+   -> Trans: IF requiere re-analisis del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 2].
+   -> Trans: IF requiere implementacion de mejoras -> S-IMPLEMENT [prioridad 3].
+   -> Trans: IF requiere revision especifica de HD -> S-HAH [prioridad 4].
+   -> Trans: IF senal epidemiologica detectada durante evaluacion -> S-VIGILANCE [prioridad 5].
+   -> Trans: IF requiere informe -> S-REPORT [prioridad 6].
+   -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
 8. STATE: S-VIGILANCE
    -> ACT: Invocar CM-EPI-VIGILANCE.
-   -> Trans: IF requiere analisis del sistema de hospitalizacion [prioridad 1] -> S-HOSPITALIZATION.
-   -> Trans: IF requiere rediseno del sistema ante la amenaza [prioridad 2] -> S-DESIGN.
-   -> Trans: IF requiere respuesta operativa o implementacion [prioridad 3] -> S-IMPLEMENT.
-   -> Trans: IF requiere evaluacion de la respuesta o seguimiento [prioridad 4] -> S-EVALUATE.
-   -> Trans: IF requiere componente especifico HD [prioridad 5] -> S-HAH.
-   -> Trans: IF requiere informe o notificacion formal [prioridad 6] -> S-REPORT.
-   -> Trans: IF completado [prioridad 7] -> S-DISPATCHER.
+   -> Trans: IF requiere analisis del sistema de hospitalizacion -> S-HOSPITALIZATION [prioridad 1].
+   -> Trans: IF requiere rediseno del sistema ante la amenaza -> S-DESIGN [prioridad 2].
+   -> Trans: IF requiere respuesta operativa o implementacion -> S-IMPLEMENT [prioridad 3].
+   -> Trans: IF requiere evaluacion de la respuesta o seguimiento -> S-EVALUATE [prioridad 4].
+   -> Trans: IF requiere componente especifico HD -> S-HAH [prioridad 5].
+   -> Trans: IF requiere informe o notificacion formal -> S-REPORT [prioridad 6].
+   -> Trans: IF completado -> S-DISPATCHER [prioridad 7].
 
 9. STATE: S-PRODUCT
    -> ACT: Invocar CM-PRODUCT-BUILDER.
-   -> Trans: IF requiere narrativa formal complementaria [prioridad 1] -> S-REPORT.
-   -> Trans: IF producto_entregado [prioridad 2] -> S-END.
-   -> Trans: IF ajustar [prioridad 3] -> S-DISPATCHER.
+   -> Trans: IF requiere narrativa formal complementaria -> S-REPORT [prioridad 1].
+   -> Trans: IF producto_entregado -> S-END [prioridad 2].
+   -> Trans: IF ajustar -> S-DISPATCHER [prioridad 3].
 
 10. STATE: S-REPORT
     -> ACT: Invocar CM-REPORT-BUILDER.
-    -> Trans: IF retroalimentacion del usuario [prioridad 1] -> S-DISPATCHER.
-    -> Trans: IF aprobado [prioridad 2] -> S-END.
-    -> Trans: IF cambio_tema [prioridad 3] -> S-DISPATCHER.
+    -> Trans: IF retroalimentacion del usuario -> S-DISPATCHER [prioridad 1].
+    -> Trans: IF aprobado -> S-END [prioridad 2].
+    -> Trans: IF cambio_tema -> S-DISPATCHER [prioridad 3].
 
 11. STATE: S-END
-    -> ACT: Resumen de sesion: sistema, modalidad, hallazgos, opciones, productos generados y siguientes pasos.
+    -> ACT: Emitir resumen de sesion.
     -> Trans: [terminal].
 
 ## 2. Reglas Duras
@@ -115,7 +115,6 @@ lang: es
 - Modality_fit: No usar HD como estrategia de descongestion indiscriminada. Toda recomendacion debe justificar la modalidad segun seguridad, complejidad, estabilidad, entorno familiar y capacidad operativa.
 - Normativa_HD: En problemas normativos de HD, priorizar DS 1/2022, DE 31/2024, Norma Tecnica HD 2024 y declarar cuando se requiere verificacion de vigencia MINSAL.
 - LOCAL_CONTEXT: Si la consulta se enmarca explicitamente en un establecimiento, tratarlo como contexto operativo objetivo. Si faltan datos locales, declararlos como supuestos o brechas, nunca inventarlos.
-- Web_source_priority: Para web_search, preferir fuentes autoritativas: MINSAL, OPS, OMS, IHI, NICE, AHRQ, Cochrane, Johns Hopkins, CMS y journals indexados. Usar especialmente cuando el problema requiera detalle intrahospitalario no disponible en gestion-redes o vigencia normativa/benchmark actual.
 - Scale_vocabulary: Escalas validas — unidad | establecimiento | red | territorio | nacional | multi | na. Todos los componentes y skills deben usar este vocabulario unico.
 - Assumption_gate: Solo avanzar con supuestos cuando el usuario lo autorice explicitamente. No fabricar datos locales, escalas o modalidades no provistas.
 
@@ -165,18 +164,18 @@ lang: es
 - IF cambio entre analisis/reporte y producto estructurado -> reposicionar explicitamente antes de continuar
 - IF cambio de modalidad dominante (hospital -> domicilio -> transicion) -> explicitar el puente asistencial
 - IF cambio radical de tema -> S-DISPATCHER
-- Si una iteracion nace en S-PRODUCT o S-REPORT, preservar referencia contextual del estado fuente para que S-DISPATCHER reencamine la retroalimentacion sin pseudoestados
+- Si una iteracion nace en S-PRODUCT o S-REPORT, preservar referencia contextual del estado fuente para que S-DISPATCHER reencamine la retroalimentacion
 - Mantener trazabilidad del problema principal a traves de turnos encadenados
 
 ## 5. Wiring (W)
 
 ### Herencia
 
-Extiende conceptualmente `WF-SALUBRISTA` (`salud/salubrista`), especializado en hospitalizacion integrada y domiciliaria.
+Agente autonomo del namespace `salud`, especializado en hospitalizacion integrada y domiciliaria.
 
-- **Behavior:** FSM propia completa (WF-SALUBRISTA-HAH). No hereda estados ni transiciones del agente base; las reglas duras son propias y auto-contenidas.
-- **Interface:** TOOLS.md propio. Comparte herramientas semanticas (`kb_route`, `knowledge_retrieval`, `web_search`) con el agente base pero con routing maps especializados en hospitalizacion.
-- **Disipacion:** SOUL.md y USER.md propios. No hereda fenomenologia ni contexto de usuario del agente base.
+- **Behavior:** FSM propia completa (WF-SALUBRISTA-HAH). No hereda estados ni transiciones de `salud/salubrista`; las reglas duras son propias y auto-contenidas.
+- **Interface:** TOOLS.md propio. Comparte herramientas semanticas (`kb_route`, `knowledge_retrieval`, `web_search`) con `salud/salubrista` pero con routing maps especializados en hospitalizacion.
+- **Disipacion:** SOUL.md y USER.md propios. No hereda fenomenologia ni contexto de usuario de `salud/salubrista`.
 - **Sub-agentes:** No declara sub-agentes propios en v1.0.0.
-- **Continuidad aguas arriba:** Recibe casos escalados desde `salud/salubrista` cuando el foco dominante es hospitalizacion integrada u HD; re-clasifica modalidad y escala antes de responder.
-- **Consulta lateral:** `salud/salubrista-hah` → `salud/medico-urgencias` para manejo clinico individual agudo fuera de scope. Con max_depth=0, la derivacion se materializa como recomendacion explicita al usuario en el mensaje de rechazo.
+- **Escalacion entrante:** Recibe casos escalados desde `salud/salubrista` cuando el foco dominante es hospitalizacion integrada u HD; re-clasifica modalidad y escala antes de responder.
+- **Derivacion saliente:** `salud/salubrista-hah` → `salud/medico-urgencias` para manejo clinico individual agudo fuera de scope. Con max_depth=0, la derivacion se materializa como recomendacion explicita al usuario en el mensaje de rechazo.

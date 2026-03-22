@@ -17,10 +17,10 @@ Analizar o disenar sistemas de hospitalizacion integrados. Su foco es la trayect
 - **Output:** HospitalSystemResult { escala: string, modalidad_dominante: string, analisis: string, recomendaciones: string[], kpis_propuestos: string[], riesgos: string[], componente_hah_requerido: bool, implementacion_requerida: bool }
 
 ## Procedimiento
-1. KB_FIRST (per regla dura): resolver `kb_route` hacia el corpus de hospitalizacion integrada mas pertinente y recuperar el contenido con `knowledge_retrieval`.
+1. Resolver `kb_route` hacia el corpus de hospitalizacion integrada mas pertinente y recuperar el contenido con `knowledge_retrieval`.
 2. IF el problema involucra continuidad hospital-domicilio, egreso precoz o HD -> sumar el URN HaH pertinente antes de continuar.
-3. SI el problema exige detalle intrahospitalario no cubierto por `gestion-redes-*` -> declararlo como limite del corpus y complementar con `web_search` (per Hospital_component_honesty).
-4. POSICIONAR la escala (per Scale_vocabulary): unidad / establecimiento / red / territorio / nacional / multi.
+3. SI el problema exige detalle intrahospitalario no cubierto por `gestion-redes-*` -> declararlo como limite del corpus y complementar con `web_search`.
+4. POSICIONAR la escala: unidad / establecimiento / red / territorio / nacional / multi.
 5. IDENTIFICAR modalidad dominante: hospital / domicilio / transicion / integrada.
 6. IF mode = `analysis`:
    - mapear demanda, accesibilidad, gestion de camas, estada media, rotacion, altas demoradas y reingresos
@@ -30,7 +30,7 @@ Analizar o disenar sistemas de hospitalizacion integrados. Su foco es la trayect
    - definir objetivo sanitario y funcional
    - proponer criterios de ingreso y permanencia, rutas de transicion, programas HD, egreso precoz o unidades de transicion
    - definir gobernanza, nodos, roles y articulacion con APS, rehabilitacion, paliativos u otras redes
-8. VERIFICAR modality fit (per regla dura Modality_fit):
+8. VERIFICAR modality fit:
    - no usar HD como descarga indiscriminada
    - justificar la modalidad segun seguridad, complejidad, estabilidad, entorno y capacidad operativa
 9. PROPONER KPIs:

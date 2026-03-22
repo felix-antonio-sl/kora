@@ -19,7 +19,7 @@ Evaluar desempeno, calidad y mejora continua de sistemas de hospitalizacion inte
 ## Procedimiento
 1. DETERMINAR mode segun la intencion del usuario: `evaluation` (desempeno, mejora continua, seguimiento de indicadores) | `audit` (auditoria formal, cumplimiento normativo, fiscalizacion).
 2. DEFINIR alcance y escala (per Scale_vocabulary): unidad, establecimiento, red, territorio, nacional, multi o na.
-3. KB_FIRST (per regla dura): resolver `kb_route` hacia gestion-redes y, si aplica, sumar corpus HaH pertinente. Recuperar baseline con `knowledge_retrieval`.
+3. Resolver `kb_route` hacia gestion-redes y, si aplica, sumar corpus HaH pertinente. Recuperar baseline con `knowledge_retrieval`.
 4. FIJAR criterios de evaluacion segun mode:
    - IF mode = `evaluation`: foco en desempeno, calidad, KPIs, resultados, experiencia usuaria y mejora continua. Criterios: seguridad, oportunidad, eficiencia, continuidad del cuidado, experiencia usuaria y del cuidador, equidad, sostenibilidad.
    - IF mode = `audit`: foco en cumplimiento normativo, fiscalizacion, trazabilidad documental y brechas regulatorias. Criterios: conformidad normativa (DS 1/2022, DE 31/2024, Norma Tecnica HD si aplica), completitud de registros, trazabilidad de procesos, condiciones de autorizacion sanitaria.
