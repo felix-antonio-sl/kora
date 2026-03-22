@@ -1,7 +1,22 @@
 ---
 _manifest:
-  urn: urn:ops:skill:clawstack-knowledge-navigator:1.0.0
+  urn: urn:ops:skill:clawstack-knowledge-navigator:1.1.0
   type: lazy_load_endofunctor
+version: 1.1.0
+status: published
+lang: es
+extensions:
+  ops:
+    skill:
+      form: extended
+      allowed_tools:
+        - kb_route
+        - oc_docs_search
+        - catalog_resolve
+      requires: []
+      references:
+        - references/unix-ubuntu-docs-map.md
+        - references/docker-docs-map.md
 ---
 
 # CM-KNOWLEDGE-NAVIGATOR

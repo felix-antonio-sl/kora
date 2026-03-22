@@ -537,8 +537,8 @@ class ArtifactFixtureTests(unittest.TestCase):
         skill_dir = AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "skills"
         skills = "\n".join(path.read_text(encoding="utf-8") for path in sorted(skill_dir.glob("CM-*.md")))
         self.assertIn("[prioridad 1]", agents)
-        self.assertIn("IF resuelto [prioridad 2] -> S-DISPATCHER", agents)
-        self.assertIn("IF auditado [prioridad 2] -> S-END", agents)
+        self.assertIn("IF resuelto [prioridad 3] -> S-END", agents)
+        self.assertIn("IF auditado [prioridad 3] -> S-END", agents)
         self.assertNotIn("## Saludo", soul)
         self.assertNotIn("## Estilo", soul)
         self.assertIn("query_topic: string -> urns: string[]", tools)

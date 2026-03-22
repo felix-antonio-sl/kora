@@ -4,7 +4,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-03-21
+- Fecha: 2026-03-22
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 5
 - Reglas aun no institucionalizadas: 5
@@ -13,7 +13,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 147 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 145 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -23,7 +23,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 147 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 145 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -106,8 +106,8 @@ Hallazgos repetidos:
 
 - Workspaces auditados: 8
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 58
-- P1: 57 | P2: 1 | P3: 0
+- Hallazgos manuales: 59
+- P1: 58 | P2: 1 | P3: 0
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
@@ -116,7 +116,8 @@ Hallazgos repetidos:
 | ops/ci-assistant | Precedencia de transiciones no declarada | P1 | AGENTS/ops/ci-assistant/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | ops/ci-assistant | Precedencia de transiciones no declarada | P1 | AGENTS/ops/ci-assistant/AGENTS.md:15 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | ops/ci-assistant | Precedencia de transiciones no declarada | P1 | AGENTS/ops/ci-assistant/AGENTS.md:17 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| ops/clawstack | Destino de control no declarado | P1 | AGENTS/ops/clawstack/AGENTS.md:68 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| ops/clawstack | Destino de control no declarado | P1 | AGENTS/ops/clawstack/AGENTS.md:69 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| ops/clawstack | Destino de control no declarado | P1 | AGENTS/ops/clawstack/AGENTS.md:70 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | ops/clawstack | Skill degenerado recibe o emite estado FSM | P1 | AGENTS/ops/clawstack/skills/CM-CONTEXT-MANAGER.md:13 | Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md. | agent_fix |
 | ops/clawstack | Skill degenerado recibe o emite estado FSM | P1 | AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md:13 | Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md. | agent_fix |
 | ops/deployer | Precedencia de transiciones no declarada | P1 | AGENTS/ops/deployer/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
@@ -177,20 +178,20 @@ Hallazgos repetidos:
 | Precedencia de transiciones no declarada | P1 | 41 | ops/ci-assistant, ops/deployer, ops/integrador, ops/observer, ops/orquestador-swarm, ops/security | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
-| Destino de control no declarado | P1 | 1 | ops/clawstack | agent_fix |
+| Destino de control no declarado | P1 | 2 | ops/clawstack | agent_fix |
 | Skill compone otro skill operativamente | P2 | 1 | ops/orquestador-swarm | agent_fix |
 
 ## Cohorte domains
 
 - Workspaces auditados: 20
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 75
-- P1: 74 | P2: 1 | P3: 0
+- Hallazgos manuales: 72
+- P1: 71 | P2: 1 | P3: 0
 
 ### Subgrupo gn
 
 - Workspaces: 8
-- Hallazgos: 30
+- Hallazgos: 27
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
@@ -220,17 +221,14 @@ Hallazgos repetidos:
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:23 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:25 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:27 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| gn/goreologo | Destino de control no declarado | P1 | AGENTS/gn/goreologo/AGENTS.md:49 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | gn/goreologo | Destino de control no declarado | P1 | AGENTS/gn/goreologo/AGENTS.md:55 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
-| gn/goreologo | Precedencia de transiciones no declarada | P1 | AGENTS/gn/goreologo/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| gn/goreologo | Precedencia de transiciones no declarada | P1 | AGENTS/gn/goreologo/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 
 Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 24 | gn/ar-virtual, gn/asesor-juridico, gn/dgi-virtual, gn/erp-gore, gn/gestor-ipr-360, gn/gobernador-virtual | agent_fix |
-| Destino de control no declarado | P1 | 6 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 22 | gn/ar-virtual, gn/asesor-juridico, gn/dgi-virtual, gn/erp-gore, gn/gestor-ipr-360, gn/gobernador-virtual | agent_fix |
+| Destino de control no declarado | P1 | 5 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo | agent_fix |
 
 ### Subgrupo pro
 

@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:gn:agent-bootstrap:goreologo-config:1.0.0",
+    "urn": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
@@ -58,7 +58,28 @@
     "urn:gn:kb:indicadores-nuble",
     "urn:gn:kb:convenios-estados-fases",
     "urn:gn:kb:ecosistema-instituciones",
-    "urn:gn:kb:mecanismos-matriz-decision"
+    "urn:gn:kb:mecanismos-matriz-decision",
+    "urn:gn:kb:dictamenes-cgr-gore",
+    "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+    "urn:gn:kb:manual-operacional-dgi",
+    "urn:gn:kb:plan-potenciamiento-dgi",
+    "urn:gn:kb:lean6-gestion-core",
+    "urn:gn:kb:meyer-estructura-organizacional",
+    "urn:gn:kb:ssot-master",
+    "urn:gn:kb:ssot-actos-admin",
+    "urn:gn:kb:ssot-convenios",
+    "urn:gn:kb:ssot-dgi",
+    "urn:gn:kb:ssot-ecosistema",
+    "urn:gn:kb:ssot-ipr-lifecycle",
+    "urn:gn:kb:ssot-legal",
+    "urn:gn:kb:ssot-mecanismos",
+    "urn:gn:kb:ssot-operaciones",
+    "urn:gn:kb:ssot-organica",
+    "urn:gn:kb:ssot-presupuesto",
+    "urn:gn:kb:ssot-relaciones-dominio",
+    "urn:gn:kb:ssot-rendiciones",
+    "urn:gn:kb:ssot-tde",
+    "urn:gn:kb:ssot-territorio"
   ],
   "sandbox": {
     "mode": "strict"
@@ -70,8 +91,7 @@
     ]
   },
   "sub_agents": {
-    "max_depth": 0,
-    "max_concurrent": 1
+    "max_depth": 0
   },
   "runtime_capabilities": {
     "deny": [

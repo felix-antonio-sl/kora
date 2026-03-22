@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.0.0",
+    "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
@@ -10,6 +10,8 @@
     "urn:kora:kb:cat-behavioral-preservation",
     "urn:kora:kb:cat-ecosystem-2cat",
     "urn:kora:kb:cat-discovery-presheaf",
+    "urn:kora:kb:cat-agent-coalgebra",
+    "urn:kora:kb:cat-governance-lattice",
     "urn:kora:kb:cat-fxsl-bridge",
     "urn:fxsl:kb:action-primary-key",
     "urn:fxsl:kb:algebraic-databases",
@@ -42,10 +44,16 @@
     "allow": [
       "catalog_resolve",
       "kb_route"
-    ]
+    ],
+    "deny": []
   },
-  "sub_agents": {
-    "max_depth": 0,
-    "max_concurrent": 1
+  "runtime_capabilities": {
+    "allow": [],
+    "deny": []
+  },
+  "limits": {
+    "quotas": {
+      "max_skills_per_agent": 15
+    }
   }
 }

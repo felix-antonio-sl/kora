@@ -7,7 +7,7 @@ _manifest:
 ## kb_route
 
 - **Firma:** query_topic: string -> urn: string
-- **Cuando usar:** Clasificar tema y resolver URN antes de acceder KB. Jerarquia: manual KORA > docs oficiales > conocimiento general.
+- **Cuando usar:** Clasificar tema y resolver URN antes de acceder KB.
 - **Cuando NO usar:** Tema ya mapeado en turno actual.
 - **Routing Map:**
 
@@ -60,14 +60,22 @@ _manifest:
 - **Firma:** command: string -> output: string
 - **Cuando usar:** Ejecutar comandos en el host Unix para diagnostico, configuracion o mantenimiento del sistema operativo.
 - **Cuando NO usar:** Para operaciones OpenClaw (usar oc_cli) o Docker (usar docker_exec).
-- **Comandos frecuentes:** systemctl status/start/stop/restart, apt update/upgrade, ufw status/allow/deny, ss -tlnp, journalctl, df -h, free -h, uptime, cat /etc/os-release.
+- **Comandos frecuentes:**
+  - Diagnostico: `systemctl --failed`, `journalctl -xe`, `df -h`, `free -h`, `uptime`, `ss -tlnp`, `dmesg | tail`, `cat /etc/os-release`, `uname -r`
+  - Configuracion: `systemctl enable/start/stop/restart`, `ufw allow/deny`, `netplan apply`, `chronyc tracking`
+  - Mantenimiento: `apt update && apt upgrade`, `apt autoremove`, `ufw status`
+  - Destructivos (requieren confirmacion): `reboot`, `systemctl disable`, `ufw reset`, `apt purge`
 
 ## docker_exec
 
 - **Firma:** command: string -> output: string
 - **Cuando usar:** Ejecutar comandos Docker para gestionar contenedores, imagenes, redes y volumes.
 - **Cuando NO usar:** Para operaciones host (usar host_exec) o OpenClaw (usar oc_cli).
-- **Comandos frecuentes:** docker ps, docker logs, docker stats, docker compose up/down/ps, docker images, docker system df, docker inspect.
+- **Comandos frecuentes:**
+  - Diagnostico: `docker ps -a`, `docker logs <id>`, `docker stats`, `docker inspect`, `docker events`, `docker system df`
+  - Configuracion: `docker compose up -d`, `docker compose ps`, `docker network ls`, `docker volume ls`
+  - Mantenimiento: `docker compose pull`, `docker image prune`, `docker system prune`
+  - Destructivos (requieren confirmacion): `docker compose down -v`, `docker rm -f`, `docker system prune -a`
 
 ## spec_consult
 

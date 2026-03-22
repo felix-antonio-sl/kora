@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:goreologo-tools:2.4.0"
+  urn: "urn:gn:agent-bootstrap:goreologo-tools:3.0.0"
   type: "bootstrap_tools"
 ---
 
@@ -74,3 +74,24 @@ _manifest:
 | Convenios, estados, cuotas, FSM | ipr (N3) | urn:gn:kb:convenios-estados-fases |
 | Actores externos, SEREMIAs, servicios, plazos | intro (N1) | urn:gn:kb:ecosistema-instituciones |
 | Matriz comparativa mecanismos, arbol decision | ipr (N3) | urn:gn:kb:mecanismos-matriz-decision |
+| Dictamenes CGR, contraloria, jurisprudencia administrativa | juridico (N3) | urn:gn:kb:dictamenes-cgr-gore |
+| Ley presupuestos GORE Nuble, marco operativo regional | presupuesto (N3) | urn:gn:kb:ley-presupuestos-2026-gore-nuble |
+| Manual operacional DGI, gestion institucional | gestion (N3) | urn:gn:kb:manual-operacional-dgi |
+| Plan potenciamiento DGI, mejoramiento | gestion (N3) | urn:gn:kb:plan-potenciamiento-dgi |
+| Lean Six Sigma, mejora continua, DMAIC | gestion (N3) | urn:gn:kb:lean6-gestion-core |
+| Estructura organizacional, principios, Meyer | gestion (N3) | urn:gn:kb:meyer-estructura-organizacional |
+| SSOT indice maestro, fuente de verdad consolidada | ssot (N2) | urn:gn:kb:ssot-master |
+| SSOT actos administrativos | ssot (N3) | urn:gn:kb:ssot-actos-admin |
+| SSOT convenios GORE | ssot (N3) | urn:gn:kb:ssot-convenios |
+| SSOT DGI gestion institucional | ssot (N3) | urn:gn:kb:ssot-dgi |
+| SSOT ecosistema institucional | ssot (N2) | urn:gn:kb:ssot-ecosistema |
+| SSOT ciclo vida IPR inversion | ssot (N3) | urn:gn:kb:ssot-ipr-lifecycle |
+| SSOT marco normativo legal | ssot (N3) | urn:gn:kb:ssot-legal |
+| SSOT mecanismos financiamiento | ssot (N3) | urn:gn:kb:ssot-mecanismos |
+| SSOT procesos operativos | ssot (N3) | urn:gn:kb:ssot-operaciones |
+| SSOT estructura organica | ssot (N2) | urn:gn:kb:ssot-organica |
+| SSOT presupuesto | ssot (N3) | urn:gn:kb:ssot-presupuesto |
+| SSOT relaciones inter-dominio | ssot (N2) | urn:gn:kb:ssot-relaciones-dominio |
+| SSOT rendiciones SISREC | ssot (N3) | urn:gn:kb:ssot-rendiciones |
+| SSOT transformacion digital TDE | ssot (N3) | urn:gn:kb:ssot-tde |
+| SSOT territorio Nuble | ssot (N2) | urn:gn:kb:ssot-territorio |

@@ -17,16 +17,17 @@ Identificar y priorizar las fuentes KB del repositorio KORA relevantes para una 
 - **Output:** Lista priorizada de KB con URNs resueltos, razon de relevancia y gaps de cobertura
 
 ## Procedimiento
-1. Analizar el tema y mapear a dominios KB disponibles:
-   - Marco legal GORE → KNOWLEDGE/gn/normativa/ (LOC, ley presupuestos, CGR)
-   - Gestion/inversiones → KNOWLEDGE/gn/gestion/ (presupuesto, rendiciones, IPR)
-   - Gobernanza Nuble → KNOWLEDGE/gn/gobernanza/ (ERD, organigrama, indicadores)
-   - Procesos operativos → KNOWLEDGE/gn/bpmn/, KNOWLEDGE/gn/manuales/
-   - Guias fondos → KNOWLEDGE/gn/guias/ (FNDR, FRIL, FRPD, circular 33)
-   - TDE/digital → KNOWLEDGE/tde/, KNOWLEDGE/gov/
-   - Normativa legal transversal → KNOWLEDGE/legal/
+1. Analizar el tema y mapear a areas del routing map de TOOLS.md (kb_route):
+   - Marco legal GORE → area: legal, juridico (LOC, ley presupuestos, CGR, dictamenes)
+   - Gestion/inversiones → area: presupuesto, ipr, gestion (presupuesto, rendiciones, IPR, guias fondos)
+   - Gobernanza Nuble → area: intro, estrategia (ERD, organigrama, indicadores, vision)
+   - Procesos operativos → area: procesos, operacional (BPMN, manuales, compras, RRHH)
+   - Guias fondos → area: guias (FNDR, FRIL, FRPD, circular 33, IDI)
+   - TDE/digital → area: procesos (TDE, Ley 21.180)
+   - Comunicaciones → area: comunicaciones
+   - Fuentes consolidadas → area: ssot (SSOT por dominio, indice maestro)
 2. Resolver URNs de los KB priorizados via catalog_resolve.
-3. Ordenar KB por relevancia directa al tema consultado.
+3. Ordenar KB por relevancia directa al tema consultado. Priorizar SSOTs como fuente consolidada cuando exista uno para el dominio consultado.
 4. Indicar si el tema requiere cruzar multiples KB (consulta multidimensional).
 5. Declarar cuando el tema excede cobertura KB: distinguir [dato KB] de [interpretacion].
 

@@ -28,8 +28,7 @@ Detecta cambios de contexto durante la conversacion multi-turno, preservando est
    - modelo_principal configurado
    - issues_abiertos de la sesion
    - historial_acciones aplicadas
-4. Si shift=fuera -> activar SCOPE_COMPLIANCE en co-induccion.
-5. Si shift=nuevo -> evaluar si requiere S-DISPATCHER.
+4. Emitir clasificacion con shift y detalle para consumo de la FSM.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

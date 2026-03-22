@@ -33,9 +33,9 @@ Ejecuta provisioning full-stack desde cero: host Ubuntu hardened -> Docker con a
 
 0. VALIDAR ALCANCE:
    - Este skill cubre provisioning host-based sobre Ubuntu Server.
-   - Si el operador ya trae un host Docker existente o esta en macOS, salir de PROVISION y derivar a CONFIGURE/AUDIT con prerequisitos explicitos en vez de ejecutar esta receta.
+   - Si el operador ya trae un host Docker existente o esta en macOS, emitir error: "Plataforma no soportada por este skill. Host Docker existente o macOS requiere otro path." y terminar procedimiento.
 
-### Fase 1: Host Ubuntu
+### Capa Host Ubuntu
 1. Verificar acceso SSH y version OS: `cat /etc/os-release`, `uname -r`.
 2. Actualizar sistema: `apt update && apt upgrade -y`.
 3. Configurar SSH hardened: deshabilitar root login, solo key auth, puerto custom si aplica.
@@ -43,14 +43,14 @@ Ejecuta provisioning full-stack desde cero: host Ubuntu hardened -> Docker con a
 5. Configurar chrony para sincronizacion horaria.
 6. Verificar: `systemctl status ssh`, `ufw status`, `chronyc tracking`.
 
-### Fase 2: Docker
+### Capa Docker
 1. Instalar Docker Engine (repo oficial, no snap): `apt install docker-ce docker-ce-cli containerd.io`.
 2. Configurar Docker: daemon.json con log rotation, storage driver, userns-remap si aplica.
 3. Instalar Docker Compose v2.
 4. Verificar: `docker info`, `docker compose version`.
 5. Si deploy via compose: generar docker-compose.yml desde template (ver assets/compose-templates.md).
 
-### Fase 3: OpenClaw
+### Capa OpenClaw
 1. Instalar Node.js >= 22.12.0 (via NodeSource o nvm).
 2. Instalar OpenClaw: `npm install -g openclaw`.
 3. Ejecutar onboarding: `openclaw onboard`.

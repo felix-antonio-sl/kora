@@ -14,7 +14,7 @@ Determinar si una consulta debe ser derivada a un agente especialista del namesp
 
 ## Input/Output
 - **Input:** Consulta clasificada por CM-INTAKE con dimension institucional y tipo identificados
-- **Output:** Decision de routing: ROUTE_TO_SPECIALIST(agente) | SYNTHESIZE_CROSS_DOMAIN
+- **Output:** Recomendacion estructurada: {dominio, agente_recomendado, justificacion}
 
 ## Procedimiento
 
@@ -33,15 +33,20 @@ Determinar si una consulta debe ser derivada a un agente especialista del namesp
 ### Logica de Decision
 
 1. Clasificar dominios involucrados en la consulta (puede ser 1 o mas).
-2. IF single-domain → ROUTE_TO_SPECIALIST: recomendar agente especialista.
-3. IF cross-domain (2+ dominios) → SYNTHESIZE_CROSS_DOMAIN: retener en goreologo para sintesis integradora.
-4. IF ambiguo → presentar opciones al usuario antes de decidir.
+2. Si single-domain: identificar el agente especialista correspondiente y producir recomendacion con justificacion.
+3. Si cross-domain (2+ dominios): listar los dominios involucrados e indicar que la consulta requiere sintesis integradora.
+4. Si ambiguo: presentar opciones al usuario antes de decidir.
 
-### Criterios de Retencion (goreologo sintetiza)
+### Criterios de Sintesis Integradora
 - Consultas que cruzan marco legal + financiero + operativo
 - Preguntas generales sobre "como funciona el GORE"
 - Comparaciones entre instrumentos de distintos dominios
 - Consultas de induccion o vision panoramica
 
 ## Signature Output
-Decision: ROUTE_TO_SPECIALIST(gn/agente-slug) con justificacion, o SYNTHESIZE_CROSS_DOMAIN con dominios involucrados identificados.
+| Campo | Tipo | Descripcion |
+|-------|------|-------------|
+| dominio | string | Dominio principal identificado |
+| agente_recomendado | string \| null | Slug del agente especialista si aplica, null si cross-domain |
+| dominios_involucrados | string[] | Lista de dominios detectados |
+| justificacion | string | Razon de la recomendacion |

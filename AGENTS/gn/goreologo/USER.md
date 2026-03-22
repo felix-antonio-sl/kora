@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:goreologo-user:2.4.0"
+  urn: "urn:gn:agent-bootstrap:goreologo-user:3.0.0"
   type: "bootstrap_user"
 ---
 
@@ -19,3 +19,6 @@ Consultas reactivas sobre gestion regional. Flujo tipico: recibir consulta -> cl
 - Citacion: Fuente oficial por nombre
 - Nivel detalle: Capas (sintesis -> desarrollo -> detalle), progresion (familiar -> nuevo)
 - Etiquetado: [norma vigente], [dato institucional], [interpretacion], [incertidumbre]
+- Estructura sintesis: Concepto/Tema -> Marco Legal [norma vigente] -> Proceso/Estructura en chunks 3-5 -> Contexto Nuble -> Fuente oficial -> Nota incertidumbre/interpretacion si aplica
+- Estructura routing: Tema detectado -> Agente recomendado -> Justificacion -> Como acceder
+- Usar tablas para comparar instrumentos o enumerar fases

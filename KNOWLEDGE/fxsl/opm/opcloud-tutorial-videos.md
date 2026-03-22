@@ -3,219 +3,135 @@ _manifest:
   urn: "urn:fxsl:kb:opcloud-tutorial-videos"
   provenance:
     created_by: "kora/curator"
-    created_at: "2026-03-12"
-    source: "opcloud videos"
-version: "1.0.0"
-status: published
-tags: [opcloud, opm, tutorial, modelado, youtube, video-course]
+    created_at: "2026-03-22"
+    source: "OPCloud video tutorial series (50 videos) + opcloud-tutorial-videos source"
+version: "2.0.0"
+status: draft
+tags: [opcloud, opm, tutorial, modelado, video-course, cloud-tool, simulation]
 lang: en
 extensions:
-  family: tutorial
-  video_count: 50
+  kora:
+    family: tutorial
+    video_count: 50
 ---
 
-# OPCloud Tutorial Videos
+# OPCloud Tutorial
 
-Comprehensive guide to Object-Process Methodology (OPM) modeling in OPCloud. Covers fundamental concepts, advanced features, simulation, and integration capabilities.
+OPCloud is the dedicated cloud-based software for Object-Process Methodology (OPM) modelling. It provides bimodal graphic-text editing: OPL sentences are generated automatically as OPDs are constructed. This tutorial covers the complete OPCloud workflow based on a 50-video course using the OnStar system as primary example (emergency assistance, GPS navigation, cellular communication, advisor interaction).
 
-This tutorial series uses the OnStar system as the primary example throughout the course. The OnStar model demonstrates emergency assistance, GPS navigation, cellular communication, and advisor interaction workflows.
+For OPM formal specification, notation and methodology, see `urn:fxsl:kb:opm-iso-19450`.
 
 ---
 
 ## Getting Started
 
-### Creating Objects and Processes
+### Creating Elements
 
-- **Create Process**: 
-  1. Click process button in main toolbar (blue ribbon)
-  2. Drag to canvas (OPD area)
-  3. Enter name in popup text box
-  4. Click update or press Enter to confirm
-- **Create Object**: 
-  1. Click object button in main toolbar
-  2. Drag to canvas
-  3. Enter name in popup
-  4. Click update or press Enter
-- **Auto Format**: Toggle checkbox to auto-capitalize each word; disable for custom naming (e.g., "onstar" instead of "OnStar")
-- **Connect Elements**: Click empty area (non-text), drag to target element to create link
-- **Auto Capitalization**: Default behavior capitalizes first letter of each word
+- **Create process**: click process button in main toolbar (blue ribbon) → drag to canvas → enter name in popup → click Update or press Enter
+- **Create object**: click object button → drag to canvas → enter name → Update/Enter
+- **Create link**: click empty area (non-text part of element), drag to target element
+- **Auto Format**: toggle checkbox to auto-capitalize each word; disable for custom naming (e.g., "onstar" instead of "OnStar")
 
-### Saving and Loading Models
+### Saving and Loading
 
-- **Main Toolbar Buttons**:
-  - Undo: Revert last action
-  - Redo: Restore undone action
-  - Save: Quick save to current location
-  - Load: Open model browser
-  - Share: Generate shareable link
-  - Execution: Open simulation/execution mode
-- **Main Menu Options**:
-  - Create new model: Start fresh model
-  - Load model: Open from storage
-  - Load examples: 
-    - Global examples: Available to all OPCloud users
-    - Organizational examples: Created by organization admin
-- **Save Options**: 
-  - Quick save: Save to current location
-  - Save as: Save to new location or rename
-- **Model Options**:
-  - System map: Visual overview of all OPDs
-  - Copy link: Generate shareable model link
-  - Model validation: Validate computational values and ranges
-  - Compare models: Compare two model versions
-  - Mark things: Color-code elements for team visibility
-- **Auto Save**: Models automatically save when switching between tabs
-- **Unsaved Indicator**: Tab shows "not saved" until first save
+Main toolbar buttons: Undo, Redo, Save, Load, Share, Execution (simulation mode).
+
+Main Menu: Create new model, Load model, Load examples (Global — all users; Organizational — admin-created). Save options: Quick save (current location), Save as (new location/rename).
+
+**Model Options** (Main Menu):
+- System map — visual overview of all OPDs
+- Copy link — shareable model URL
+- **Model validation** — validate computational values and ranges
+- **Compare models** — diff two model versions
+- Mark things — colour-code elements for team visibility
+
+**Auto Save**: models save automatically on tab switch. Unsaved indicator shows "not saved" until first save.
 
 ### Model Navigation
 
-- **OPD Navigator**: Left pane tree view showing all diagrams in model
-- **Draggable Things**: Panel showing all elements with type indicators:
-  - Informational (i): Abstract data, calls, messages
-  - Physical (P): Tangible objects, devices
-  - Environmental (E): External factors, drivers
-  - Systemic (S): Control systems
-- **Connected Things**: Attributes shown connected to parent elements (e.g., danger status with driver)
-- **Zoom**: 
-  - Zoom in: Make diagram larger
-  - Zoom out: Make diagram smaller
-  - Drag: Reposition view
-- **Keyboard Shortcuts**: 
-  - Ctrl+Up: Navigate to parent OPD in tree
-  - Ctrl+Down: Navigate to child OPD in tree
-- **Drag and Drop**: Drag elements from draggable thing directly to canvas
+- **OPD Navigator**: left pane tree view of all diagrams
+- **Draggable Things panel**: all elements with type indicators — (i) Informational, (P) Physical, (E) Environmental, (S) Systemic. Drag elements directly to canvas.
+- **Keyboard shortcuts**: Ctrl+Up → parent OPD, Ctrl+Down → child OPD
+- Zoom in/out + drag to reposition
 
 ### Model Wizard
 
-- **Access**: Main Menu > New Model by Wizard
-- **Purpose**: Guide new OPM users through model creation step-by-step
-- **Stage Count**: 12 sequential stages
-- **Coverage**: Not all OPCloud options; focuses on OPM methodology essentials
-- **Example Model**: OnStar system (similar to Examples but with guidance)
-- **Help Features**: Hover hints, assistant tooltips on bold items
-- **Starting Point**: Creates System Diagram as top-level entry point
-- **Limitations**: Not all features covered; manual extension required after completion
-- **Workflow**: User defines motivation, system process, input/output/beneficiaries, connections
+Access: Main Menu > New Model by Wizard. Implements the OPM SD construction procedure (see `urn:fxsl:kb:opm-iso-19450` § SD Construction Procedure) as a guided 12-stage interactive workflow.
+
+**Help features**: hover hints on UI elements, assistant tooltips on bold items. Example model: OnStar system.
+
+**12 Stages:**
+
+| Stage | Wizard prompt | User action | OPM element created |
+|-------|--------------|-------------|---------------------|
+| 1 | System's main functionality | Write name of main process (must end in "-ing") | Main process (ellipse) in SD |
+| 2 | Beneficiary group | Name the beneficiary (singular; "Set" for inanimate, "Group" for humans) | Beneficiary object (rectangle) |
+| 3 | Beneficiary attribute | Name the attribute that describes how the beneficiary benefits | Attribute object (exhibition-characterization link) |
+| 4 | Input/output states | Define input state (current, problematic) and output state (desired, satisfactory) of the attribute | States (rountangles) inside attribute + input-output effect link pair |
+| 5 | Agent | "Is the beneficiary also the agent?" If not, name agent(s). Max 3, separated by Enter | Agent object(s) + agent link(s) (black lollipop) |
+| 6 | System name | Default: main process name + "System". Or define custom name | System object (instrument of main process) |
+| 7 | Instruments | Name instruments required for the process. Max 3, singular, Enter-separated. Select physical ones | Instrument objects + instrument links (white lollipop) |
+| 8 | Inputs | Name objects consumed by the process. Max 3, Enter-separated. If affected → must also be output | Consumee objects + consumption links |
+| 9 | Outputs | Select whether output is also an input. Name output objects | Resultee objects + result links |
+| 10 | Environmental objects | Select from previously defined objects or add new | Environmental objects (dashed contour) |
+| 11 | Connections | Review and adjust links between all elements | Link verification |
+| 12 | Review | Final SD overview with OPD + OPL | System Diagram complete |
+
+**Produces**: a complete System Diagram as top-level entry point with OPD + corresponding OPL paragraph.
+
+**Limitations**: does not cover all OPCloud features (computational objects, simulation, templates, sub-models, etc.). Manual extension required after completion. Not all link types available in wizard — only basic transforming and enabling links.
 
 ---
 
 ## Core Features
 
-### OPD3 and Diagram Management
+### OPD Diagram Management
 
-- **Create OPD**: Auto-generated when using in-zoom or unfold on element
-- **OPD Naming Convention**: 
-  - SD: System Diagram (top level)
-  - SD1: First child diagram
-  - SD1.1: Child of SD1
-  - SD1.1.1: Grandchild of SD1
-- **Delete OPD**: 
-  - Only leaf nodes deletable (no children)
-  - Inner nodes protected to maintain tree integrity
-  - Error message for inner node deletion attempts
-- **Expand/Collapse**: 
-  - Right-click menu for options
-  - Expand all: Show entire tree
-  - Collapse all: Hide all children
-  - Hide names: Show only OPD numbers
-  - Show names: Display full OPD names
-- **Partial Expansion**: Models >20 OPDs show only current level expanded by default
-- **Right-Click Menu**: Remove, expand all, collapse all, hide/show names
+OPDs auto-generate when using in-zoom or unfold. Naming convention: SD (top), SD1, SD1.1, SD1.1.1.
+
+**Deletion rule**: only leaf nodes are deletable — inner nodes protected to maintain tree integrity. Error message on inner node deletion attempt.
+
+Expand/collapse via right-click: expand all, collapse all, hide/show names. **Partial expansion**: models with >20 OPDs show only current level expanded by default.
 
 ### Searching Elements
 
-- **Search Tool**: Secondary toolbar search button opens model search
-- **Filter Options**: 
-  - All elements
-  - Processes only
-  - Objects only
-- **Search Input**: Type name to filter matching elements
-- **Results**: Shows all elements containing search term
-- **Location Column**: Shows OPD where element exists
-- **Navigation**: Click location to switch to specific OPD and focus on element
-- **Draggable Thing Search**: Right-click element name in draggable thing to filter
+Secondary toolbar > search button. Filter: all elements, processes only, objects only. Results show Location column (OPD where element exists). Click location → navigate to OPD and focus on element. Right-click in Draggable Things panel to filter by element name.
 
 ### Objects and Processes
 
-- **Essence Types**: 
-  - Physical: Tangible things (cars, devices)
-  - Informational: Abstract data, call records, messages
-  - Environmental: External factors (weather, drivers)
-  - Systemic: Systems that control or coordinate
-- **Change Essence**: Secondary toolbar > change essence button
-- **Description**: Add text, URLs, notes via double-click
-- **URL Links**: Add via entities extension > view URL (images, videos, articles)
-- **Unfold**: View sub-components (creates child OPDs)
-- **Fold**: Collapse to compact view (bold contour indicator)
-- **Update Button**: Confirm changes after editing names
-- **Auto Format Toggle**: Control capitalization (OnStar vs onstar)
-- **Inside Objects**: Objects created inside in-zoom processes
-- **Outside Objects**: Objects created at system diagram level
+Four essence types: Physical (tangible), Informational (abstract data), Environmental (external factors), Systemic (control systems). Change essence via secondary toolbar button.
+
+- **Description**: add text, URLs, notes via double-click
+- **URL links**: entities extension > view URL (images, videos, articles)
+- **Unfold**: creates child OPD showing sub-components
+- **Fold**: compact view with bold contour indicator
+- **Inside objects**: created within in-zoom processes, exist only in process scope, **deleted when parent process deleted**
+- **Outside objects**: created at system diagram level, exist independently, referenceable across OPDs
+- **Conversion**: delete and recreate, or copy from Draggable Things to target location
+- **Enveloping**: process enlargement can "swallow" outer objects (appear inside but revert when moved)
 
 ### States
 
-- **Add States**: Click halo > add states OR secondary toolbar add state button
-- **Default Naming**: state1, state2 (lowercase, left to right)
-- **State Links**: Effect link or in-out link pairs
-- **Exchange Symbol**: Toggle between effect and in-out link
-- **State Examples**: "requested call", "online" for call object
-- **Update Behavior**: Clicking update advances to next state name automatically
-- **Conditional Transitions**: Connect states to processes via instrument-condition links
-- **Multiple States**: Add additional states by clicking add state button repeatedly
+Add via halo > add states OR secondary toolbar button. Default naming: state1, state2 (lowercase, left to right). **Exchange Symbol** toggles between effect link and in-out link pair. Clicking Update advances automatically to next state name.
 
 ### Links and Connections
 
-- **Link Types**: Structural (exhibition/characterization), Instrumental, Consumption, Effect
-- **Create Link**: Right-click source, drag to destination
-- **Link Table**: Configure link properties, multiplicity, tags
-- **Multiplicity**: Define number of objects required (e.g., "2 drivers")
-- **Path**: Conditional paths (e.g., different cars for different routes)
-- **Agent Links**: Connect human agents to processes
-- **Instance Links**: Create specific instances of objects
-- **Visual Instances**: Same logical entity with different visual representation
-  - **Creation**: Use "use existing thing" option when naming conflict occurs
-  - **Restriction**: Cannot create visual instance between different element types (e.g., object to process)
-  - **Use Case**: Same entity appears in multiple OPDs with different visual context
-  - **vs Logical Instance**: Visual = same thing different view; Logical = inheritance relationship
-- **Specialization**: Generalization relationships between objects
+Create link: right-click source → drag to destination. Link Table: configure properties, multiplicity, tags, path probability.
 
-### Link Properties
+**Visual Instances**: same logical entity with different visual representation in different OPDs.
+- Create with "use existing thing" option on naming conflict
+- **Restriction**: cannot create visual instance between different element types (object → process forbidden)
+- Visual instance = same thing, different view. Logical instance = inheritance relationship (classification-instantiation)
 
-- **Access**: Right-click link > properties
-- **Properties**: Source multiplicity, target multiplicity, tag, path probability, style
-- **Link Style**: Color (hex), width, copy style to other links
+Link properties: right-click link > properties. Source/target multiplicity, tag, path probability, style. Link style: colour (hex), width; copy style to other links.
 
 ### Advanced OPL Panel
 
-- **Shift Pane**: Move OPL panel to left side using button
-- **Toggle Numbering**: Enable/disable line numbers in OPL view
-- **Minimize Panel**: Stop rendering OPL for cleaner OPD workspace
-- **Purpose**: Improve performance on crowded diagrams
-- **Manual Editing**: Direct OPL script modification available
+Shift Pane: move OPL panel to left side. Toggle numbering on/off. **Minimize Panel**: stop rendering OPL for better performance on crowded diagrams. **Manual editing**: direct OPL script modification available.
 
 ### Touch Screen Support
 
-- **Long Press**: Alternative to right-click on touch devices
-- **Gesture Navigation**: Touch-based OPD navigation supported
-- **Reference**: User manual for complete gesture list
-
-### Inner and Outer Objects
-
-- **Inner Objects**: 
-  - Created inside in-zoom processes
-  - Exist only within process scope
-  - Cannot exist outside parent process
-  - Deleted when parent process deleted
-- **Outer Objects**: 
-  - Created at system diagram level
-  - Can be referenced in multiple OPDs
-  - Exist independently of any single process
-- **Conversion Methods**:
-  - Delete and recreate inside/outside
-  - Copy from draggable thing into target location
-- **Drag Behavior**: Warning message when trying to drag outer object inside
-- **Enveloping**: Process enlargement can "swallow" outer objects (appears inside but reverts when moved)
-- **Visual Indicator**: Inner objects show inside-process notation
+Long press as alternative to right-click. Gesture-based OPD navigation. See user manual for complete gesture list.
 
 ---
 
@@ -223,85 +139,34 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### Halo and Quick Commands
 
-- **Access**: Click element to show halo (three dots near selection)
-- **Unfold/In-Zoom**: Navigate to existing OPD or create new diagram
-- **Convert to Computational**: Change process type for calculations
-- **Delete**: Remove element with instance handling options
-  - Multiple instances: Shows all instances for selection
-  - Single instance: Removes directly
-- **Time Duration**: Set process duration for exception links
-- **Style Element**: Quick styling access for visual customization
-- **Bring Connected**: Load related elements from other OPDs
-- **Secondary Toolbar**: Same options available on toolbar for accessibility
+Click element → show halo (three dots near selection). Commands:
+- Unfold/In-Zoom: navigate to or create child OPD
+- **Convert to Computational**: change to calculation-capable process
+- Delete: multi-instance handling (shows all instances for selection)
+- **Time Duration**: set process duration for exception links
+- Style Element: quick visual customization
+- **Bring Connected**: load related elements from other OPDs
+- Secondary toolbar provides same options
 
 ### Semi-Folding
 
-- **Purpose**: View object parts without overcrowding diagram
-- **Activation**: Select object > semi-folded view option
-- **Compact View**: Shows part names inside object container
-- **Extract Part**: Double-click specific part to bring to main diagram
-- **Missing Parts Indicator**: Number showing hidden parts in link (e.g., "2 more")
-- **Restore**: Click link icon to return parts to semi-folded view
-- **vs Full Unfold**: Semi-folded shows names; full unfold shows full details
+View object parts without overcrowding. Activation: select object > semi-folded view. Compact view shows part names inside object container. **Extract Part**: double-click specific part to bring to main diagram. **Missing Parts Indicator**: number on link (e.g., "2 more") showing hidden parts. Restore: click link icon. Semi-folded shows names only; full unfold shows complete details.
 
 ### Text and Style
 
-- **Style Options**: 
-  - Reset: Return to default styling
-  - Font Size: Smaller or larger (via setting menu)
-  - Font Family: Change typeface
-  - Text Color: Custom color picker
-  - Border: Element border styling
-  - Alignment: Left, center, right
-- **Manual Positioning**: Control X/Y axis for precise text placement
-- **Position Presets**: Up, down, left, right, center options
-- **Link Style**: Right-click link > style > color (hex code), width
-- **Copy Style**: Copy link style and apply to other links
-- **Reset Text Position**: Close manual positioning to reset
+Style options: Reset, Font Size, Font Family, Text Color, Border, Alignment (left/center/right). Manual Positioning: X/Y control for precise text placement. Position presets: up, down, left, right, center. Link style via right-click > style > colour (hex), width. Copy Style to other links.
 
 ### Resizing and Auto-Size
 
-- **Default Size**: OPCloud has minimum size for objects and processes
-- **Fit to Text**: Entities extension > shrink to text
-  - Automatically shrinks element to fit text
-  - Maintains auto-resizing (will revert if text changes)
-- **Toggle Auto-Sizing**: Entities extension > toggle auto-resizing
-  - Disable to freely resize manually
-  - Re-enable to return to automatic sizing
-- **Manual Sizing**: 
-  - Make longer, narrower, or custom shapes
-  - Cannot type beyond element bounds when auto-sizing disabled
-  - Text remains visible when typing
-- **Toggle Back**: Re-enable auto-sizing in entities extension
+OPCloud has default minimum size for elements. **Fit to Text**: entities extension > shrink to text (maintains auto-resizing). **Toggle Auto-Sizing**: entities extension > disable for manual resize, re-enable for automatic. With auto-sizing disabled, text cannot exceed element bounds.
 
 ### Grid Feature
 
-- **Activation**: Secondary toolbar > grid option button
-- **Default State**: Off (must enable manually)
-- **Settings**: 
-  - Grid on/off toggle
-  - Size: Movement increment in pixels (default: 5)
-  - Color: Grid line color
-  - Thickness: Line thickness (higher = thicker)
-  - Scale Factor: Lines visible (higher = fewer lines, lower = more lines)
-- **Purpose**: Align elements, especially important for in-zoom process ordering
-- **Process Order**: In-zoom process height/level determines execution order in OPM
-- **Example**: Set size=5 for 5-pixel movement increments
+Secondary toolbar > grid option. Default: off. Settings: Size (pixel increment, default: 5), Colour, Thickness, Scale Factor (higher = fewer lines). Critical for in-zoom process ordering — process height determines execution order in OPM.
 
 ### Images in Things
 
-- **Image Sources**:
-  - URL: External image link (must end with .jpeg, .png, etc.)
-  - Heading Pool: Internal OPCloud image library
-  - OPD Capture: Screenshot of current diagram
-- **URL Requirements**: Must end with image extension (.jpg, .jpeg, .png, .gif)
-- **Display Options**: 
-  - Show both text and image simultaneously
-  - Toggle between text-only and image-only
-- **Edit Mode**: Right-click to toggle view
-- **Camera Icon**: Indicates embedded image in element
-- **Multiple Images**: Cycle through with multiple clicks
-- **Preview**: Check image before embedding
+Three sources: **URL** (must end in .jpg/.jpeg/.png/.gif), **Heading Pool** (internal OPCloud library), **OPD Capture** (screenshot of current diagram). Display: show text+image simultaneously or toggle text-only/image-only. Camera icon indicates embedded image. Cycle multiple images with clicks. Preview before embedding.
 
 ---
 
@@ -309,95 +174,34 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### Export Options
 
-- **Export OPL**: Generate OPL text, with/without numbering
-- **Export OPD as Image**: 
-  - Formats: JPEG, GIF
-  - Resolution: 100 DPI (default), 300 DPI (high quality)
-  - Scope: Current OPD, entire OPD tree, or system diagram only
-  - Tooltip Display: Show computational process tooltips in export
-- **Export PDF**: 
-  - Include model URL for direct access
-  - Choose OPD range (specific diagrams or full model)
-  - Quality options for printing
-- **File Naming**: Default uses model name; custom names supported
+- **Export OPL**: text with/without numbering
+- **Export OPD as image**: JPEG or GIF, 100 DPI (default) or 300 DPI (high quality). Scope: current OPD, entire OPD tree, or system diagram only. Option to show computational process tooltips.
+- **Export PDF**: include model URL, choose OPD range (specific or full), quality options
+- File naming: default = model name; custom names supported
 
 ### Model Templates
 
-- **Access**: Secondary toolbar > insert template button
-- **Template Types**:
-  - Private: Created by current user
-  - Organizational: Shared within organization (admin-created)
-  - Global: Available to all OPCloud users (system admin-created)
-- **Usage**: 
-  - Preview: Hover to see system diagram popup
-  - Load: Insert into current model
-  - Double-click: Alternative to load button
-- **Multi-OPD Templates**: Inserted under current OPD; creates child diagrams
-- **Folder Support**: Organize templates in folders similar to regular models
-- **Template Updates**: Changes to source template don't automatically update inserted copies
+Access: secondary toolbar > insert template. Three tiers: Private (user), Organizational (admin), Global (system admin). Preview: hover for system diagram popup. Load: insert button or double-click. Multi-OPD templates insert under current OPD as child diagrams. Folder support for organization. **Template updates do NOT propagate** — changes to source template do not update inserted copies.
 
 ### Organization Ontology
 
-- **Purpose**: Enforce consistent terminology across organization
-- **Enforcement Levels**:
-  - None: No restrictions
-  - Suggest: Popup suggests correct term (current default)
-  - Enforce: Prevents non-standard terms
-- **Synonym Handling**: Suggestion popup when using non-standard term
-- **Replacement**: Click suggested term to replace automatically
-- **Auto Format Interaction**: Disabling auto format when selecting suggested term
-- **Admin Setup**: Settings > Organization Management
-- **Enforcement Setting**: OPCloud Settings page > Ontology Enforcement Level
+Enforce consistent terminology. Three enforcement levels: None, Suggest (popup suggests correct term, current default), Enforce (prevents non-standard terms). Click suggested term → auto-replace. Admin setup: Settings > Organization Management. Enforcement config: OPCloud Settings > Ontology Enforcement Level.
 
 ### Name Coherency
 
-- **Duplicate Prevention**: Warning when creating object with existing name
-- **Warning Dialog**: Shows where existing item is located in model
-- **Options**:
-  - Use existing thing: Create same logical thing with different visual instance
-  - Rename: Change to unique name
-  - Close: Keep default name (not recommended)
-- **Visual Instance Restriction**: Cannot make different-type things visual instances of each other
-- **Same-Type Requirement**: Visual instances only work for identical element types
-- **In-Zoom Context**: Creating objects with same name in different OPD contexts
+Warning on duplicate names. Dialog shows where existing item is located. Options: Use existing thing (create visual instance), Rename, Close (not recommended). Visual instance restriction: same element type only.
 
 ### Model Permissions
 
-- **Share Options**:
-  - Read permission: View-only access
-  - Edit (writable) permission: Modify model
-- **Group Sharing**: Select entire group or specific users
-- **Organization Limitation**: Cannot share across organizations
-- **Access Location**: Share button near model name
-- **Owner Icon**: Key icon indicates model owner
-- **Edit Token**: Pen icon shows current editor
-- **Permission Hierarchy**: Must have read before write permission
-- **Admin Override**: Owner or admin can modify permissions at any time
+Share options: read (view-only), edit (writable). Group sharing: select entire group or specific users. **Cannot share across organizations**. Owner icon: key. Edit token: pen icon (current editor). Permission hierarchy: read required before write. Admin/owner override available.
 
 ### Moving Models
 
-- **Cut/Paste**: Use cut model and paste in destination folder
-- **Versions**: Move includes auto-save and version history
-- **Detailed View**: Alternative to icon view for model management
-- **Workflow**: 
-  1. Open load menu
-  2. Select model to move
-  3. Use cut model
-  4. Navigate to destination folder
-  5. Use paste model
-  6. Confirm warning dialog
-- **Show Versions Toggle**: View version history alongside model
-- **Auto-Save Inclusion**: Version folder moves with model
+Cut/Paste workflow: (1) open load menu → (2) select model → (3) cut → (4) navigate to destination → (5) paste → (6) confirm warning. Move includes auto-save and version history. Show Versions toggle alongside model.
 
 ### Sub-Models
 
-- **Purpose**: Allow concurrent work on subsystems by different modelers
-- **Minimal Interconnection**: Keep main model and sub-model connections minimal
-- **Creation**: Select subsystem element > create sub-model
-- **Integration**: Maintain OPM methodology compatibility
-- **Benefits**: Multiple team members can work simultaneously
-- **First Implementation**: Initial version with planned future enhancements
-- **Scope**: Subsystem-level separation; not full model branching
+Concurrent work on subsystems by different modellers. Keep main-submodel connections minimal. Creation: select subsystem element > create sub-model. First implementation with planned enhancements. Scope: subsystem separation, not full model branching.
 
 ---
 
@@ -405,27 +209,20 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### User Settings
 
-- **Profile**: Name, address, access level management
-- **Password Reset**: Via email (not available for SSO users)
-- **OPL Settings**:
-  - Language: Chinese, French, German, Korean, and more (continuously expanding)
-  - Thing's Default Essence: Physical (default) or Informational organizational default
-  - OPL Display: Show all sentences or only non-default essence sentences
-  - Units Display: Always show, hide, or only when applicable
-  - Alias Display: Toggle visibility of aliases
-  - Numbering: Toggle OPL numbering on/off
-- **Access Methods**: Main Menu > User Settings OR gear icon near modeler name
+Access: Main Menu > User Settings OR gear icon near modeller name.
+
+- Profile: name, address, access level
+- Password reset via email (not available for SSO users)
+- **OPL Language**: Chinese, French, German, Korean, and more (continuously expanding)
+- Thing's Default Essence: Physical (default) or Informational as organizational default
+- OPL Display: all sentences or only non-default essence
+- Units Display: always / hide / only when applicable
+- Alias Display: toggle visibility
+- Numbering: toggle on/off
 
 ### Model Settings
 
-- **OPD3 Arrangement**: 
-  - Automatic: Tree reorders based on in-zoom process order
-  - Manual: User controls exact ordering
-- **Organization Defaults**: 
-  - Inherited from org admin settings
-  - User can override in personal settings
-  - Affects new models unless changed
-- **Access**: Settings > OPCloud Settings
+**OPD3 Arrangement**: Automatic (tree reorders based on in-zoom process order) or Manual (user controls exact ordering). Organization defaults inherited from admin; user can override. Access: Settings > OPCloud Settings.
 
 ---
 
@@ -433,31 +230,11 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### MQTT Protocol
 
-- **Purpose**: Connect to IoT devices (Arduino, ESP8266, ESP32, etc.)
-- **Configuration**: Settings > configure MQTT server (default: localhost:1883)
-- **Publish/Subscribe**: Define topics for sensor data (e.g., ldr1, ldr2 topics)
-- **Real-time Simulation**: Test IoT systems in OPCloud
-- **Example Model**: Optimal Light Power Consumption
-  - LDRs (Light Dependent Resistors): Light sensors
-  - Microcontroller: Processing unit
-  - Room Light: Controlled output
-  - Power Calculation: Average of two sensors
-  - Self-invocation: Infinite loop for continuous monitoring
-- **Setup**: Configure raw server and MQTT server in preferences
+Connect to IoT devices (Arduino, ESP8266, ESP32). Configuration: Settings > configure MQTT server (default: localhost:1883). Define publish/subscribe topics for sensor data. Example: Optimal Light Power Consumption — LDRs + microcontroller + room light, power = average of two sensors, self-invocation for continuous monitoring loop. Setup requires raw server AND MQTT server in preferences.
 
 ### ROS Connection
 
-- **Purpose**: Connect to Robot Operating System (ROS)
-- **Requirements**: Advanced feature; requires ROS knowledge, ROS architecture understanding
-- **Message Types**: Create, publish messages to ROS master
-- **Subscription**: Receive messages from ROS topics
-- **Example Model**: Turtle Scene (standard ROS example)
-- **Workflow**: 
-  1. Define message creation process
-  2. Publish to ROS master
-  3. Monitor feedback loop
-  4. Handle conditions and iteration counters
-- **Integration**: Messages connect to actual robot for real-world control
+Connect to Robot Operating System. Requires ROS knowledge and architecture understanding. Create and publish messages to ROS master. Subscribe to ROS topics. Example: Turtle Scene (standard ROS example). Workflow: (1) define message creation → (2) publish to ROS master → (3) monitor feedback loop → (4) handle conditions and iteration counters. Messages connect to actual robot for real-world control.
 
 ---
 
@@ -465,104 +242,35 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### Conceptual Simulation
 
-- **Access**: Main toolbar > simulation/execution button
-- **Simulation Toolbar**: Multiple buttons for various options (sink simulation, stop, etc.)
-- **Animation Speed**: Adjust slider (default: 1 second per operation)
-- **Token Flow**: Visual representation of process execution with moving tokens
-- **Validation**: Check if model behaves as expected
-- **Process Order**: Tokens follow in-zoom process hierarchy (top to bottom)
-- **Common Issues**: Process execution order may need adjustment (e.g., location calculation before call transmission)
-- **Conceptual vs Execution**: Conceptual = visual simulation; Execution = actual calculations
+Access: main toolbar > simulation/execution button. Animation speed slider (default: 1 second/operation). Token flow visualises process execution with moving tokens. Tokens follow in-zoom hierarchy top → bottom. **Conceptual = visual simulation; Execution = actual calculations**. Common issue: process execution order may need adjustment.
 
 ### Computational Objects and Processes
 
-- **Convert to Computational**: Select object/process > computation option
-- **Value Types**: Integer, float, string, character, boolean
-- **Units**: Define measurement units (meters, centimeters, seconds, etc.)
-- **Alias**: Short name for use in calculations (e.g., "o1", "o2")
-- **Predefined Functions**: Addition, subtraction, multiplication, division, average, custom
-- **Update**: Click update or press Enter to confirm changes
-- **Tooltip Display**: Visual indicator of computational nature
-- **Computation Process**: Changed to show braces {} in diagram
+Convert via halo or computation option. Value types: integer, float, string, character, boolean. Define measurement units. Alias: short name for calculations (e.g., "o1"). Predefined functions: addition, subtraction, multiplication, division, average, custom. Tooltip indicates computational nature. Computation process shows **braces {}** in diagram.
 
 ### Advanced Calculations
 
-- **Stereotypes**: Define parameter types (e.g., Point with X/Y coordinates)
-  - Global stereotypes: Available to all users (marked with G icon)
-  - Organizational stereotypes: Created by org admin (no G icon)
-- **User-Defined Functions**: Custom calculations integrated via API
-- **Point-Slope Example**: Two-point calculation demonstrating computational modeling
-  - Define two points as objects
-  - Set X and Y coordinates as computational attributes
-  - Create calculation process using formula
-- **API Integration**: OPCloud provides built-in functions accessible in calculations
-- **Stereotype Components**: Parameters with ranges for each element
+**Stereotypes**: parameter type templates (e.g., Point with X/Y coordinates). Global (G icon) vs Organizational (no icon). **User-Defined Functions**: custom calculations via API. **API Integration**: OPCloud provides built-in functions accessible in calculations. Stereotype components: parameters with ranges per element.
 
 ### Range Validation
 
-- **Setup**: Select computational object > entities extension > set range
-- **Value Types**: Integer, float, string, character, boolean
-- **Range Definition**:
-  - Start value and end value
-  - Inclusion/exclusion brackets: [inclusive, (exclusive
-  - Multiple ranges supported (e.g., 1-10 and 20-30)
-- **Range Format Example**: [1,10][20,30] means 1-10 and 20-30 inclusive
-- **State Indication**: Current state shows which range is active
-- **Type Attribute**: Automatically created attribute called "type" with range options
-- **Validation**: System enforces valid input ranges during simulation
+Setup: entities extension > set range. Inclusion/exclusion brackets: `[inclusive`, `(exclusive`. Multiple ranges: `[1,10][20,30]`. State indication shows active range. Auto-created "type" attribute with range options. System enforces valid ranges during simulation.
 
 ### Conditions and Loops
 
-- **Conditions**: Connect states to processes via instrument-condition links
-- **Loop Creation**: Use invocation links for iteration
-- **Process States**: Track iteration count and completion
-- **State-Based Logic**:
-  - Yes/No states for binary decisions
-  - Multiple states for complex conditions
-- **Visual Indicators**: Links show condition type in diagram
-- **Termination**: Process completes when condition is not met
+Connect states to processes via instrument-condition links. Loops via invocation links. Yes/No states for binary decisions; multiple states for complex conditions. Process completes when condition unmet.
 
 ### User Input in Simulation
 
-- **Agent Requirement**: User must be connected via agent link to process
-- **Input Process**: Mark process to get user input during simulation
-- **Input Object**: Create computational object to receive user values
-- **Computational Integration**: Use user-defined functions with input variables
-- **User Input Variable**: Pre-defined in API (available in function dropdown)
-- **Effect Links**: Use to update computational objects with user-provided values
-- **Workflow**: 
-  1. Create user as physical object
-  2. Connect to process via agent link
-  3. Mark process to get input
-  4. Create input object (computational)
-  5. Link process to input object
+**Agent requirement**: user must be connected via agent link to process. Mark process to get user input during simulation. Create computational input object. **User Input Variable**: pre-defined in API (available in function dropdown). Workflow: (1) create user as physical object → (2) connect via agent link → (3) mark process for input → (4) create computational input object → (5) link process to input object.
 
 ---
 
-## Requirements Modeling
+## Requirements Modelling
 
-- **Purpose**: Add, remove, and view requirements on model elements
-- **Access**: Select element > OPM Requirements group > Add requirements
-- **Actions**:
-  - Add requirements: Attach requirements to elements
-  - Remove requirements: Delete requirements from elements
-  - Create requirements view: Generate consolidated view of all requirements
-- **Link Types for Requirements**:
-  - Exhibition: Shows presence or absence
-  - Characterization: Shows characteristics or attributes
-  - Aggregation Participation: Shows part-whole relationships (e.g., door consists of peephole)
-- **Requirements View**: Create consolidated view showing all requirements across model
-- **Application**: Attach requirements to elements, links, or entire diagrams
+Add, remove and view requirements on model elements. Access: select element > OPM Requirements group > Add requirements. Actions: add, remove, create consolidated requirements view. Link types: Exhibition (presence/absence), Characterization (attributes), Aggregation Participation (part-whole). Apply requirements to elements, links, or entire diagrams.
 
-### Requirements Example (Door-Peephole System)
-
-- **System**: Door with peephole
-- **Requirements**:
-  - Peephole is part of door (aggregation participation link)
-  - Typical height: 56-64 inches
-  - Components: lens and sleeves (two parts)
-  - Optional: peephole cover
-  - Function: One-way view for seeing visitors
+Example (Door-Peephole): peephole is part of door (aggregation). Height: 56-64 inches. Components: lens + sleeves. Optional: peephole cover. Function: one-way view for seeing visitors.
 
 ---
 
@@ -570,66 +278,23 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### System Map
 
-- **Purpose**: Visual overview of entire model OPD tree as minimized icons
-- **Creation**: Main Menu > Model Options > System Map
-- **Display**: Each node minimized as icon showing connections
-- **Navigation**: Click any OPD to navigate directly
-- **Interconnections**: Shows in-zoom and unfold relationships
-- **Large Models**: Essential for understanding complex model structure
-- **Exit**: Double-click or close to return to standard view
+Visual overview of entire OPD tree as minimised icons. Access: Main Menu > Model Options > System Map. Click any OPD to navigate. Shows in-zoom and unfold relationships. Essential for large models. Exit: double-click or close.
 
 ### Model Informativeness Grading
 
-- **Access**: Settings > Analyze Model > Model Knowledge (premium feature)
-- **Classification**: OPPL sentences categorized as:
-  - Definition: What things are
-  - Structural: How things connect
-  - Procedural: How processes work
-  - Meta: Information about the model
-  - Unknown: Unclassified
-- **Scoring**: Weighted informative score per category
-- **Metrics**:
-  - Total informative level
-  - Weighted informative score
-  - INF average of model
-  - Total OPPL sentences count
-- **Purpose**: Identify missing precedence links, processes without inputs/outputs
-- **Enhancement**: Compare model versions over time for improvement tracking
+Premium feature. Access: Settings > Analyze Model > Model Knowledge. OPPL sentences classified: Definition, Structural, Procedural, Meta, Unknown. Metrics: total informative level, weighted score, INF average, total OPPL sentence count. Identifies missing precedence links, processes without inputs/outputs. **Compare model versions over time** for improvement tracking.
 
-### Identification of Missing Knowledge
+### Missing Knowledge Identification
 
-- **Access**: Settings > Analyze Model > Model Knowledge > Identification of Missing Knowledge
-- **Reasoning Types**:
-  - **Pistol**: Fast browser-based algorithm (quick results, may have limitations)
-    - Quick online algorithm
-    - Runs in browser
-    - Good for initial filtering
-    - May have suggestion limitations
-  - **RGCN**: Python-based (better results, currently disabled)
-    - Behind the scenes processing
-    - More accurate suggestions
-- **Confidence Threshold**: Filter suggestions by confidence level (default: 0.5 = 50%)
-- **Filtering**: Adjust threshold higher for more confident suggestions only
-- **Suggestions**: Objects, links, or other relations that may be missing
+Access: Settings > Analyze Model > Model Knowledge > Identification of Missing Knowledge. Two algorithms:
+- **Pistol**: fast, browser-based, good for initial filtering, may have suggestion limitations
+- **RGCN**: Python-based, more accurate — **currently disabled**
+
+Confidence threshold: filter by level (default: 0.5 = 50%). Adjust higher for more confident suggestions.
 
 ### AI Requirements Generation
 
-- **Access**: Generative AI menu > AI Requirement Generation
-- **Output Options**: 
-  - Download as Excel file
-  - Copy to clipboard
-- **Content Generated**:
-  - Requirement text
-  - Verification type
-  - Acceptance criteria
-  - Model triplets (source, target, link relationships)
-- **Processing**: 
-  - Takes model OPPL as input
-  - Generates requirements based on OPM specification
-  - Ensures readability and guidelines compliance
-- **Processing Time**: Varies with model size; larger models take longer
-- **Limitations**: Auto-generated; not guaranteed to cover everything
-- **Copy Workflow**: Generate > Copy to clipboard > Paste in document
+Access: Generative AI menu > AI Requirement Generation. Output: Excel download or clipboard copy. Generated content: requirement text, **verification type**, **acceptance criteria**, **model triplets** (source, target, link relationships). Takes model OPPL as input. Processing time varies with model size. Auto-generated — not guaranteed complete.
 
 ---
 
@@ -637,48 +302,33 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### CSV Import for Attributes
 
-- **Purpose**: Bulk add attribute instances and values efficiently
-- **Access**: Select object > entities extension > add attribute instances and values from CSV
-- **Requirements**: Object must not be an instance itself (not connected via instance structure link)
-- **Options**:
-  - File Selection: Browse and select CSV file
-  - Ignore existing: Update existing attribute values (default: ignore)
-  - Create non-existing: Add new attributes that don't exist
-  - Non-computational instances: Create as non-computational with single state
-  - Auto format: Toggle capitalization (default: enabled)
-- **Preview**: Review before importing to verify data
-- **CSV Format**: Column-based with attribute names and values
+Bulk add attribute instances and values. Access: select object > entities extension > add attribute instances and values from CSV. **Restriction**: object must not be an instance (not connected via instance structure link).
+
+Options:
+- **Ignore existing**: update existing attribute values (default)
+- **Create non-existing**: add new attributes
+- **Non-computational instances**: create with single state
+- **Auto format**: toggle capitalisation (default: enabled)
+
+Preview before import. CSV format: column-based with attribute names and values.
 
 ---
 
 ## Stereotypes
 
-- **Purpose**: Pre-defined templates for common patterns (e.g., Security Level Computing)
-- **Creation**: Admin creates stereotypes for organization
-- **Usage**: Select thing > entities extension > set stereotype
-- **Components**: Stereotypes can include sub-components with parameter ranges
-- **Global vs Organizational**: Identified by icon (G = global, none = organizational)
-- **Removal Options**:
-  - Unlink: Remove stereotype but keep components in diagram
-  - Unlink and remove: Remove stereotype and all added components
-- **Bring Connected**: View stereotype components in other OPDs
-- **Semi-Folding**: Alternative to view internal structure
+Pre-defined templates for common patterns (e.g., Security Level Computing). Admin creates for organisation. Apply: select thing > entities extension > set stereotype. Components include sub-components with parameter ranges. Global (G icon) vs Organizational.
+
+Removal options:
+- **Unlink**: remove stereotype but keep components in diagram
+- **Unlink and remove**: remove stereotype AND all added components
+
+Bring Connected to view stereotype components in other OPDs. Semi-Folding as alternative for internal structure view.
 
 ---
 
-## OPD3 Management
+## OPD Management
 
-- **Access**: Secondary toolbar > OPD management button
-- **Features**:
-  - Search OPD by name or number (use filter)
-  - Hide/show names: Toggle between numbers and full names
-  - Open: Navigate to specific OPD
-  - Cut: Remove OPD from current location
-  - Remove: Delete OPD from model
-  - Paste: Insert OPD in new location
-  - Drag: Reposition OPD in tree
-- **Auto-Arrangement**: Drag to reorder; affects automatic tree layout
-- **Tree Navigation**: Parent-child relationships maintained
+Secondary toolbar > OPD management button. Features: search by name/number, hide/show names, open, cut, remove, paste, drag. Auto-arrangement: drag to reorder affects automatic tree layout.
 
 ---
 
@@ -686,48 +336,12 @@ This tutorial series uses the OnStar system as the primary example throughout th
 
 ### Bring Connected Things
 
-- **From Secondary Toolbar**: Select element > bring connected elements
-- **Link Types**: 
-  - Procedural links (default): Instrument, consumption, effect
-  - Fundamental links: Exhibition, characterization
-- **Filtered Bring**: Select specific things, then bring links between selected entities only
-- **Direct Connection**: Only directly connected things brought; not parent-child relations
-- **Example Workflow**: 
-  1. Select source element
-  2. Choose link type filter
-  3. Click bring to add connected elements
+Select element > bring connected. Link type filter: Procedural (instrument, consumption, effect) or Fundamental (exhibition, characterisation). **Filtered Bring**: select specific things first, then bring links only between selected entities. Only directly connected things brought — not parent-child relations.
 
 ### Multiple Selection
 
-- **Ctrl+Key**: Hold Ctrl and click to select multiple elements
-- **Lasso Selection**: Drag rectangle to select area (all elements in range)
-- **Bulk Operations**: Connect multiple elements at once
-  - Select all target elements
-  - Connect to single destination
-  - Creates links to all selected
-- **Deselection**: Click outside selection to clear
+Ctrl+Click for multiple elements. Lasso: drag rectangle to select area. **Bulk Operations**: select all targets → connect to single destination → creates links to all selected.
 
 ### Alignment
 
-- **Vertexes**: Black dots on links; click to add vertex for routing
-- **Vertex Addition**: Click on link line to create new routing point
-- **Vertex Removal**: Drag vertex to merge back into line
-- **Grid**: Use grid feature for precise alignment
-- **Auto-Arrange**: System map provides automatic layout
-- **Manual Adjustment**: Drag elements after auto-arrange for fine-tuning
-
----
-
-## Summary
-
-This tutorial series covers the complete OPCloud workflow:
-
-1. **Fundamentals**: Create objects, processes, links, save/load
-2. **Core Features**: OPD navigation, states, styles, search
-3. **Advanced Modeling**: Inner/outer objects, semi-folding, in-zoom/unfold
-4. **Management**: Export, templates, permissions, sub-models
-5. **Requirements**: Add, remove, view requirements with aggregation links
-6. **Analysis**: System map, informativeness grading, missing knowledge
-7. **Integration**: MQTT, ROS connections
-8. **Simulation**: Conceptual and computational, conditions, loops, user input
-9. **Automation**: CSV import, AI requirements generation
+Vertexes: black dots on links. Click to add routing vertex; drag to merge back. Grid for precise alignment. Auto-Arrange via system map. Manual adjustment after auto-arrange.

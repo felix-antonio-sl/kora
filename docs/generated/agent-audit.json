@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21",
+  "generated_at": "2026-03-22",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/agent-spec-md.md",
@@ -746,8 +746,8 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 58,
-        "p1": 57,
+        "findings_total": 59,
+        "p1": 58,
         "p2": 1,
         "p3": 0,
         "strict_validate_green": true
@@ -841,7 +841,23 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/ops/clawstack/AGENTS.md",
-            "line": 68,
+            "line": 69,
+            "snippet": "- IF FACTUAL_ACCURACY fails -> CM-KNOWLEDGE-NAVIGATOR (consultar fuente primaria via kb_route o oc_docs_search), corregir"
+          },
+          "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
+          "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
+          "closure_type": "agent_fix",
+          "enforcement_candidate": "lint"
+        },
+        {
+          "workspace": "ops/clawstack",
+          "rule_id": "agent.fsm_pseudostate_destination",
+          "rule": "Destino de control no declarado",
+          "severity": "P1",
+          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "evidence": {
+            "path": "AGENTS/ops/clawstack/AGENTS.md",
+            "line": 70,
             "snippet": "- IF other fails -> REFINE_DRAFT"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -1731,7 +1747,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "count": 1,
+          "count": 2,
           "workspaces": [
             "ops/clawstack"
           ],
@@ -1767,8 +1783,8 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 75,
-        "p1": 74,
+        "findings_total": 72,
+        "p1": 71,
         "p2": 1,
         "p3": 0,
         "strict_validate_green": true
@@ -2198,59 +2214,11 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 49,
+            "line": 55,
             "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
           "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "gn/goreologo",
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
-          "evidence": {
-            "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 55,
-            "snippet": "- IF tema != dominio GOREs -> CONTEXT_SHIFT -> S-DISPATCHER"
-          },
-          "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-          "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "gn/goreologo",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-ROUTING -> ACT: Aplicar CM-SPECIALIST-ROUTER. Identificar agente especialista segun tabla dominio→agente. Recomendar derivacion con justificacion. -> Trans: IF usuario prefiere sintesis [prioridad 1] → S-SINTESIS. IF especialista identificado [prioridad 2] → S-END (con recomendacion). IF ambiguo [ultima prioridad] → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "gn/goreologo",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-SINTESIS -> ACT: Aplicar skill CM-KB-GUIDANCE para identificar fuentes. Aplicar skill CM-DOMAIN-ANALYZER segun tipo consulta. Aplicar CM-SYNTHESIZER (integrar + calibrar + etiquetar). Entregar respuesta con estructura visible. -> Trans: IF profundizar [prioridad 1] → S-SINTESIS. IF respuesta entregada [prioridad 2] → S-DISPATCHER. IF cambio de tema [ultima prioridad] → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
         },
@@ -2980,7 +2948,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "count": 66,
+          "count": 64,
           "workspaces": [
             "fxsl/arquitecto-automatizacion-organizacional",
             "fxsl/arquitecto-sistemas-informacion",
@@ -2992,7 +2960,6 @@
             "gn/erp-gore",
             "gn/gestor-ipr-360",
             "gn/gobernador-virtual",
-            "gn/goreologo",
             "pro/estratega-comunicacional",
             "salud/medico-urgencias"
           ],
@@ -3003,7 +2970,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "count": 8,
+          "count": 7,
           "workspaces": [
             "gn/dgi-virtual",
             "gn/gestor-ipr-360",
@@ -3454,59 +3421,11 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 49,
+                "line": 55,
                 "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
               "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "gn/goreologo",
-              "rule_id": "agent.fsm_pseudostate_destination",
-              "rule": "Destino de control no declarado",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
-              "evidence": {
-                "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 55,
-                "snippet": "- IF tema != dominio GOREs -> CONTEXT_SHIFT -> S-DISPATCHER"
-              },
-              "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-              "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "gn/goreologo",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 11,
-                "snippet": "2. STATE: S-ROUTING -> ACT: Aplicar CM-SPECIALIST-ROUTER. Identificar agente especialista segun tabla dominio→agente. Recomendar derivacion con justificacion. -> Trans: IF usuario prefiere sintesis [prioridad 1] → S-SINTESIS. IF especialista identificado [prioridad 2] → S-END (con recomendacion). IF ambiguo [ultima prioridad] → S-DISPATCHER."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "gn/goreologo",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 13,
-                "snippet": "3. STATE: S-SINTESIS -> ACT: Aplicar skill CM-KB-GUIDANCE para identificar fuentes. Aplicar skill CM-DOMAIN-ANALYZER segun tipo consulta. Aplicar CM-SYNTHESIZER (integrar + calibrar + etiquetar). Entregar respuesta con estructura visible. -> Trans: IF profundizar [prioridad 1] → S-SINTESIS. IF respuesta entregada [prioridad 2] → S-DISPATCHER. IF cambio de tema [ultima prioridad] → S-DISPATCHER."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
               "closure_type": "agent_fix",
               "enforcement_candidate": "lint"
             }
@@ -3516,15 +3435,14 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "count": 24,
+              "count": 22,
               "workspaces": [
                 "gn/ar-virtual",
                 "gn/asesor-juridico",
                 "gn/dgi-virtual",
                 "gn/erp-gore",
                 "gn/gestor-ipr-360",
-                "gn/gobernador-virtual",
-                "gn/goreologo"
+                "gn/gobernador-virtual"
               ],
               "closure_type": "agent_fix",
               "enforcement_candidate": "lint"
@@ -3533,7 +3451,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "count": 6,
+              "count": 5,
               "workspaces": [
                 "gn/dgi-virtual",
                 "gn/gestor-ipr-360",
@@ -4370,7 +4288,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 147,
+        "count": 145,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4389,7 +4307,6 @@
           "gn/erp-gore",
           "gn/gestor-ipr-360",
           "gn/gobernador-virtual",
-          "gn/goreologo",
           "ops/ci-assistant",
           "ops/deployer",
           "ops/integrador",
@@ -4464,7 +4381,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 147,
+        "count": 145,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4483,7 +4400,6 @@
           "gn/erp-gore",
           "gn/gestor-ipr-360",
           "gn/gobernador-virtual",
-          "gn/goreologo",
           "ops/ci-assistant",
           "ops/deployer",
           "ops/integrador",

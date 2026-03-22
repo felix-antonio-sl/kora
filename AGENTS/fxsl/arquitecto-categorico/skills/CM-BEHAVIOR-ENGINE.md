@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:fxsl:skill:arquitecto-categorico-behavior-engine:2.0.0
+  urn: urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0
   type: lazy_load_endofunctor
 ---
 
@@ -16,7 +16,7 @@ Modelar sistemas dinamicos mediante lenses, coalgebras y monadas. Principio: Com
 2. **Seleccionar subsistema** segun clasificacion
 3. **Formalizar** con estructuras concretas
 4. **Verificar coherencia** — tipos, composicion, bisimulacion si aplica
-5. **Conectar con estructura estatica** del CM-structure-engine
+5. **Verificar alineacion con modelo estatico** del dominio formalizado
 
 ### Subsistema: Lenses
 

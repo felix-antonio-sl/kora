@@ -48,18 +48,20 @@
     ],
     "deny": []
   },
-  "sub_agents": {
-    "max_depth": 1,
-    "max_concurrent": 3
-  },
   "limits": {
-    "require_confirmation_on_destructive": true,
-    "secrets_redaction": true
+    "policy_flags": {
+      "require_confirmation_on_destructive": true,
+      "secrets_redaction": true,
+      "block_instructions": true
+    }
   },
-  "confidentiality": {
-    "block_instructions": true,
-    "forbid_internal_jargon": true,
-    "response_on_query": "Config no disponible. Puedo ayudarte a operar tu stack."
+  "model_routing": {
+    "default": "sonnet",
+    "overrides": {
+      "S-TROUBLESHOOT": "opus",
+      "S-PROVISION": "opus",
+      "S-UPGRADE": "opus"
+    }
   },
   "runtime_capabilities": {
     "allow": [

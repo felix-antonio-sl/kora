@@ -726,6 +726,8 @@
       {
         "workspace": "gn/goreologo",
         "state_names": [
+          "S-ANALYSIS",
+          "S-CALIBRATE",
           "S-DISPATCHER",
           "S-END",
           "S-ROUTING",
@@ -740,6 +742,7 @@
           "kb_route"
         ],
         "skill_refs": [
+          "CM-CONTEXT-MANAGER",
           "CM-DOMAIN-ANALYZER",
           "CM-INTAKE",
           "CM-KB-GUIDANCE",
@@ -758,7 +761,7 @@
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 55,
+        "allowed_kb_count": 76,
         "sources": {
           "agents": "AGENTS/gn/goreologo/AGENTS.md",
           "tools": "AGENTS/gn/goreologo/TOOLS.md",
@@ -808,7 +811,7 @@
   },
   "totals": {
     "workspaces": 13,
-    "states": 96,
+    "states": 98,
     "tools": 83,
     "handoffs": 42
   },
