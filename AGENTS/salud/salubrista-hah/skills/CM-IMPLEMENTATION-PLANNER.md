@@ -14,10 +14,10 @@ Traducir disenos o mejoras del sistema de hospitalizacion integrado en planes de
 
 ## Input/Output
 - **Input:** propuesta: string, contexto: object
-- **Output:** ImplementationPlan { objetivo_operativo, supuestos: string[], fases: string[], responsables: string[], riesgos: string[], indicadores: string[], continuidad_asegurada: string }
+- **Output:** ImplementationPlan { escala: string, objetivo_operativo, supuestos: string[], fases: string[], responsables: string[], riesgos: string[], indicadores: string[], continuidad_asegurada: string }
 
 ## Procedimiento
-1. KB_FIRST: resolver `kb_route` hacia gestion-redes general, unidades u herramientas y recuperar el contenido con `knowledge_retrieval`.
+1. KB_FIRST (per regla dura): resolver `kb_route` hacia gestion-redes general, unidades u herramientas y recuperar el contenido con `knowledge_retrieval`.
 2. SI la propuesta involucra HD o transicion hospital-domicilio -> sumar el URN HaH pertinente.
 3. DEFINIR el objetivo operativo del cambio.
 4. EVALUAR factibilidad:
@@ -57,6 +57,7 @@ Traducir disenos o mejoras del sistema de hospitalizacion integrado en planes de
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
+| escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
 | objetivo_operativo | string | Resultado operativo buscado |
 | supuestos | string[] | Condiciones necesarias |
 | fases | string[] | Secuencia de implementacion |

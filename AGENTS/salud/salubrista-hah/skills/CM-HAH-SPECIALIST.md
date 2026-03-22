@@ -14,10 +14,10 @@ Resolver el componente de Hospitalizacion Domiciliaria (HD / HaH) dentro del sis
 
 ## Input/Output
 - **Input:** subruta: "Eligibility"|"Operations"|"Director"|"Continuity"|"Evidence", problema: string, contexto: object
-- **Output:** HAHResult { subruta, analisis: string, criterios_extraidos: {fuente: string, criterio: string, aplica_a: string, observacion: string}[], recomendaciones: string[], trazabilidad_normativa: string[], limites_corpus: string[], alertas: string[], disclaimer: string }
+- **Output:** HAHResult { escala: string, subruta, analisis: string, criterios_extraidos: {fuente: string, criterio: string, aplica_a: string, observacion: string}[], recomendaciones: string[], trazabilidad_normativa: string[], limites_corpus: string[], alertas: string[], disclaimer: string }
 
 ## Procedimiento
-1. KB_FIRST: resolver via `kb_route` el baseline pertinente segun la subruta y recuperar el contenido con `knowledge_retrieval` antes de razonar con el modelo. No fijar criterios normativos ni operativos que no hayan sido extraidos del corpus recuperado.
+1. KB_FIRST (per regla dura): resolver via `kb_route` el baseline pertinente segun la subruta y recuperar el contenido con `knowledge_retrieval` antes de razonar con el modelo. No fijar criterios normativos ni operativos que no hayan sido extraidos del corpus recuperado.
 2. SELECCIONAR baseline por subruta:
    - `Eligibility`: reglamento base HD + norma tecnica HD; sumar direccion tecnica si la consulta aterriza en un establecimiento o en el rol DT.
    - `Operations`: norma tecnica HD + direccion tecnica; sumar manual HaH de alta complejidad si la pregunta involucra mayor complejidad, teleapoyo, dispositivos o continuidad avanzada.
@@ -43,7 +43,7 @@ Resolver el componente de Hospitalizacion Domiciliaria (HD / HaH) dentro del sis
 7. SUBRUTA `Continuity`:
    - mapear la trayectoria hospital -> domicilio -> rescate -> reingreso -> cierre del episodio usando primero el corpus recuperado
    - explicitar puntos de quiebre de informacion, responsabilidad, capacidad y seguridad
-   - si el detalle intrahospitalario requerido no esta cubierto por `gestion-redes-*`, declararlo como limite del corpus y complementar con `web_search` o evidencia externa trazada antes de afirmar recomendaciones especificas
+   - si el detalle intrahospitalario requerido no esta cubierto por `gestion-redes-*`, declararlo como limite del corpus y complementar con `web_search` (per Hospital_component_honesty)
 8. SUBRUTA `Evidence`:
    - usar el corpus como baseline para sintetizar benchmarks, evidencia internacional y situacion Chile
    - si la respuesta depende de vigencia, cifras actuales, estado regulatorio, outcomes puntuales o programas vigentes, verificar con `web_search` antes de presentarlo como hecho cerrado
@@ -60,6 +60,7 @@ Resolver el componente de Hospitalizacion Domiciliaria (HD / HaH) dentro del sis
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
+| escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
 | subruta | string | Eligibility / Operations / Director / Continuity / Evidence |
 | analisis | string | Diagnostico del problema con evidencia/normativa recuperada |
 | criterios_extraidos | object[] | {fuente, criterio, aplica_a, observacion} solo con traza real al corpus o web |

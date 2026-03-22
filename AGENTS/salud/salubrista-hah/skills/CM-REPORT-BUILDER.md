@@ -14,7 +14,7 @@ Construir informes estructurados para apoyar decisiones sobre sistemas de hospit
 
 ## Input/Output
 - **Input:** contenido_analisis: object, tipo_informe: string, audiencia: string
-- **Output:** Report { encabezado, resumen_ejecutivo, escala, modalidad, analisis, opciones: string[], implementacion: string[], kpis: string[], riesgos: string[], trazabilidad: string[], disclaimer }
+- **Output:** Report { tipo_informe: string, audiencia: string, resumen_ejecutivo: string, escala: string, modalidad: string, analisis: string, opciones: string[], implementacion: string[], kpis: string[], riesgos: string[], trazabilidad: string[], disclaimer: string }
 
 ## Procedimiento
 1. RECIBIR contenido acumulado desde analisis del sistema, HD, implementacion, evaluacion o vigilancia.
@@ -48,7 +48,7 @@ Construir informes estructurados para apoyar decisiones sobre sistemas de hospit
 | tipo_informe | string | Tipo de producto generado |
 | audiencia | string | Destinatario principal |
 | resumen_ejecutivo | string | Sintesis para decision |
-| escala | string | Escala del problema |
+| escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
 | modalidad | string | Modalidad dominante |
 | analisis | string | Analisis principal |
 | opciones | string[] | Opciones o cursos de accion |

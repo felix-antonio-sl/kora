@@ -27,7 +27,7 @@ Clasificar semanticamente la solicitud para un agente especializado en sistemas 
    - IF objeto = brote, IAAS, surge de demanda, vigilancia, RAM, evento sanitario -> `vigilance`
    - IF objeto = tablero de hospitalizacion, mapa de cuellos de botella, mapa de riesgos de continuidad, brief de politica/gestion o escenario de capacidad/decision -> `product`
    - IF objeto = informe formal narrativo o reporte ejecutivo -> `report`
-   - IF objeto = cierre explicito de sesion -> `end`
+   - IF objeto = cierre explicito de sesion -> `cierre_sesion`
 3. IDENTIFICAR escala: unidad / establecimiento / red / territorio / nacional / multi.
 4. IDENTIFICAR modalidades y escala secundarias si el problema es multi-nivel o mixto.
 5. IDENTIFICAR modalidad dominante: hospital / domicilio / transicion / integrada / na.
@@ -46,7 +46,7 @@ Clasificar semanticamente la solicitud para un agente especializado en sistemas 
 |-------|------|-------------|
 | escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
 | modalidad | string | hospital / domicilio / transicion / integrada / na |
-| intencion_primaria | string | `hospital_analysis` / `hospital_design` / `hah` / `implementation` / `evaluation` / `vigilance` / `product` / `report` / `end` / `clarify` |
+| intencion_primaria | string | `hospital_analysis` / `hospital_design` / `hah` / `implementation` / `evaluation` / `vigilance` / `product` / `report` / `cierre_sesion` / `clarify` |
 | objeto | string | Objeto operativo dominante |
 | tipo_producto | string? | `hospitalization_dashboard` / `continuity_risk_map` / `capacity_bottleneck_map` / `policy_brief` / `decision_scenarios` |
 | escalas_secundarias | string[] | Escalas adicionales si el problema es multi-nivel |

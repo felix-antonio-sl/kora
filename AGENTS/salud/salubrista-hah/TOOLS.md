@@ -2,6 +2,9 @@
 _manifest:
   urn: "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0"
   type: "bootstrap_tools"
+version: 1.0.0
+status: published
+lang: es
 ---
 
 ## kb_route
@@ -19,8 +22,6 @@ _manifest:
 | Crisis de salud mental, continuidad psiquiatrica o articulacion con COSAM/rehabilitacion en trayectorias hospital-domicilio | `urn:salud:kb:gestion-redes-salud-mental` |
 | KPIs, BPMN, simulacion, plantillas operativas, madurez digital y soporte instrumental | `urn:salud:kb:gestion-redes-herramientas` |
 | Indice general, glosario, normativa y contextualizacion local | `urn:salud:kb:gestion-redes-indice` |
-
-- **Nota:** Este bloque es el baseline del componente intrahospitalario. Si el caso exige detalle hospitalario especifico no cubierto por estos URNs, declararlo y complementar con `web_search`.
 
 - **Routing map HD / hospital-domicilio:**
 

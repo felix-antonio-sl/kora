@@ -13,12 +13,12 @@ lang: es
 Conducir vigilancia epidemiologica relevante para sistemas de hospitalizacion integrados: brotes, IAAS, presion estacional, RAM, exposicion del personal y eventos que tensionan la seguridad, la capacidad o la continuidad del cuidado entre hospital y domicilio.
 
 ## Input/Output
-- **Input:** señal: string, contexto: object
-- **Output:** VigilanceReport { tipo_amenaza, evaluacion_riesgo, clasificacion_rsi, acciones_inmediatas: string[], implicancias_hospitalizacion: string[], notificacion_requerida: bool, analisis_sistema_requerido: bool }
+- **Input:** senal: string, contexto: object
+- **Output:** VigilanceReport { escala: string, tipo_amenaza, evaluacion_riesgo, clasificacion_rsi, acciones_inmediatas: string[], implicancias_hospitalizacion: string[], notificacion_requerida: bool, analisis_sistema_requerido: bool }
 
 ## Procedimiento
-1. KB_FIRST: resolver `kb_route` hacia razonamiento sanitario integrado y recuperar el contenido pertinente con `knowledge_retrieval` antes de complementar con web.
-2. CARACTERIZAR la señal: cuando, donde, cuantos casos, severidad, poblacion afectada, capacidad de respuesta y modalidad implicada.
+1. KB_FIRST (per regla dura): resolver `kb_route` hacia razonamiento sanitario integrado y recuperar el contenido pertinente con `knowledge_retrieval` antes de complementar con web.
+2. CARACTERIZAR la senal: cuando, donde, cuantos casos, severidad, poblacion afectada, capacidad de respuesta y modalidad implicada.
 3. CLASIFICAR la amenaza:
    - brote infeccioso o clúster inusual
    - IAAS o evento de seguridad asociado a hospitalizacion
@@ -46,6 +46,7 @@ Conducir vigilancia epidemiologica relevante para sistemas de hospitalizacion in
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
+| escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
 | tipo_amenaza | string | Infecciosa / IAAS / RAM / Ocupacional / Surge |
 | evaluacion_riesgo | string | Gravedad x propagacion x impacto operacional |
 | clasificacion_rsi | string | Clasificacion operacional del evento |

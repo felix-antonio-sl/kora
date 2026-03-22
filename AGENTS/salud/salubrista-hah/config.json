@@ -29,8 +29,7 @@
     ]
   },
   "sub_agents": {
-    "max_depth": 0,
-    "max_concurrent": 1
+    "max_depth": 0
   },
   "runtime_capabilities": {
     "deny": [

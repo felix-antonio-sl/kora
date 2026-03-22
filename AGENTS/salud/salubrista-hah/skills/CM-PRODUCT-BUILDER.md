@@ -14,7 +14,7 @@ Construir productos estructurados para decisiones sobre sistemas de hospitalizac
 
 ## Input/Output
 - **Input:** contenido_analisis: object, tipo_producto: "hospitalization_dashboard"|"continuity_risk_map"|"capacity_bottleneck_map"|"policy_brief"|"decision_scenarios", audiencia: string
-- **Output:** Product { tipo_producto, estructura, componentes: string[], criterios_uso: string[], trazabilidad: string[], disclaimer }
+- **Output:** Product { escala: string, tipo_producto, estructura, componentes: string[], criterios_uso: string[], trazabilidad: string[], disclaimer }
 
 ## Procedimiento
 1. RECIBIR el contenido acumulado desde analisis del sistema, HD, implementacion, evaluacion o vigilancia.
@@ -38,6 +38,7 @@ Construir productos estructurados para decisiones sobre sistemas de hospitalizac
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
+| escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
 | tipo_producto | string | hospitalization_dashboard / continuity_risk_map / capacity_bottleneck_map / policy_brief / decision_scenarios |
 | estructura | string | Forma general del producto |
 | componentes | string[] | Campos o secciones del producto |

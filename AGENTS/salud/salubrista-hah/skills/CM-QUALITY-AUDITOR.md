@@ -14,21 +14,17 @@ Evaluar desempeno, calidad y mejora continua de sistemas de hospitalizacion inte
 
 ## Input/Output
 - **Input:** mode: "evaluation"|"audit", alcance: string, datos: object
-- **Output:** EvaluationReport { alcance, criterios_evaluacion: string[], hallazgos: string[], plan_mejora: string[], kpis_seguimiento: string[], trazabilidad_normativa: string[] }
+- **Output:** EvaluationReport { escala: string, mode: string, alcance: string, criterios_evaluacion: string[], hallazgos: string[], plan_mejora: string[], kpis_seguimiento: string[], trazabilidad_normativa: string[], resumen_ejecutivo: string }
 
 ## Procedimiento
-1. DEFINIR alcance y escala: unidad, establecimiento, red, programa HD o trayectoria hospital-domicilio.
-2. KB_FIRST: resolver `kb_route` hacia gestion-redes y, si aplica, sumar corpus HaH pertinente. Recuperar baseline con `knowledge_retrieval`.
-3. FIJAR criterios de evaluacion:
-   - seguridad
-   - oportunidad
-   - eficiencia
-   - continuidad del cuidado
-   - experiencia usuaria y del cuidador
-   - equidad
-   - sostenibilidad
+1. DEFINIR alcance y escala (per Scale_vocabulary): unidad, establecimiento, red, territorio, nacional, multi o na.
+2. KB_FIRST (per regla dura): resolver `kb_route` hacia gestion-redes y, si aplica, sumar corpus HaH pertinente. Recuperar baseline con `knowledge_retrieval`.
+3. FIJAR criterios de evaluacion segun mode:
+   - IF mode = `evaluation`: foco en desempeno, calidad, KPIs, resultados, experiencia usuaria y mejora continua. Criterios: seguridad, oportunidad, eficiencia, continuidad del cuidado, experiencia usuaria y del cuidador, equidad, sostenibilidad.
+   - IF mode = `audit`: foco en cumplimiento normativo, fiscalizacion, trazabilidad documental y brechas regulatorias. Criterios: conformidad normativa (DS 1/2022, DE 31/2024, Norma Tecnica HD si aplica), completitud de registros, trazabilidad de procesos, condiciones de autorizacion sanitaria.
 4. ORGANIZAR evidencia:
-   - ocupacion, estada, rotacion, altas demoradas, reingresos, rescates, eventos adversos, IAAS, trazabilidad
+   - IF mode = `evaluation`: ocupacion, estada, rotacion, altas demoradas, reingresos, rescates, eventos adversos, IAAS, continuidad, experiencia
+   - IF mode = `audit`: documentos exigibles, protocolos, registros clinicos, cumplimiento de dotacion, condiciones de infraestructura, evidencia de fiscalizacion
 5. IDENTIFICAR hallazgos:
    - fortalezas
    - cuellos de botella
@@ -44,13 +40,15 @@ Evaluar desempeno, calidad y mejora continua de sistemas de hospitalizacion inte
    - responsable
    - plazo
    - indicador
-8. OUTPUT: criterios, hallazgos, plan de mejora, KPIs y trazabilidad.
+8. OUTPUT: escala, criterios, hallazgos, plan de mejora, KPIs y trazabilidad.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
+| escala | string | unidad / establecimiento / red / territorio / nacional / multi / na |
+| mode | string | evaluation / audit |
 | alcance | string | Objeto evaluado |
-| criterios_evaluacion | string[] | Dimensiones usadas |
+| criterios_evaluacion | string[] | Dimensiones usadas (diferenciadas por mode) |
 | hallazgos | string[] | Hallazgos principales |
 | plan_mejora | string[] | Acciones priorizadas |
 | kpis_seguimiento | string[] | Indicadores de seguimiento |

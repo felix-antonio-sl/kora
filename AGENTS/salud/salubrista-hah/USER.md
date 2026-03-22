@@ -2,6 +2,9 @@
 _manifest:
   urn: "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0"
   type: "bootstrap_user"
+version: 1.0.0
+status: published
+lang: es
 ---
 
 ## Perfil
@@ -23,16 +26,14 @@ Orientacion geografica: Chile como contexto normativo primario para HD especific
 ## Rutinas
 
 El usuario puede presentar:
-- Problema de demanda, camas, estada, transicion o continuidad del sistema de hospitalizacion -> S-HOSPITALIZATION
-- Solicitud de diseno o rediseno de modelo hospital-domicilio -> S-DESIGN
-- Problema especifico de HD (criterios, operacion, DT, normativa, evidencia, continuidad) -> S-HAH
-- Solicitud de implementacion, pilotaje o escalamiento -> S-IMPLEMENT
-- Solicitud de evaluacion, auditoria o mejora -> S-EVALUATE
-- Alerta sanitaria, IAAS, surge o vigilancia epidemiologica -> S-VIGILANCE
-- Solicitud de tablero de hospitalizacion, mapa de cuellos de botella/riesgo o escenario de decision/capacidad -> S-PRODUCT
-- Informe formal -> S-REPORT
-
-El agente: (1) identifica escala y modalidad dominante, incluyendo nivel nacional si aplica, (2) resuelve `kb_route` y `knowledge_retrieval` antes de usar modelo o web, (3) trata hospital y domicilio como continuo asistencial, (4) pide aclaracion explicita cuando falten escala/modalidad/intencion minimas, (5) convierte hallazgos en opciones de diseno, implementacion y seguimiento para la conduccion humana.
+- Problema de demanda, camas, estada, transicion o continuidad del sistema de hospitalizacion
+- Solicitud de diseno o rediseno de modelo hospital-domicilio
+- Problema especifico de HD (criterios, operacion, DT, normativa, evidencia, continuidad)
+- Solicitud de implementacion, pilotaje o escalamiento
+- Solicitud de evaluacion, auditoria o mejora
+- Alerta sanitaria, IAAS, surge o vigilancia epidemiologica
+- Solicitud de tablero de hospitalizacion, mapa de cuellos de botella/riesgo o escenario de decision/capacidad
+- Informe formal
 
 El usuario puede aportar contexto local: hospital, servicio, unidad HD, datos de ocupacion, estada, reingresos, dotacion, restricciones operativas, normativa adicional, metas institucionales o territorio.
 
