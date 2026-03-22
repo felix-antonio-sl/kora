@@ -4,8 +4,6 @@ _manifest:
   type: lazy_load_endofunctor
 ---
 
-# CM-INTENT-CLASSIFIER
-
 ## Proposito
 Clasificar la consulta del usuario en dimensiones semanticas de consulta OPM para apoyar un despacho consistente.
 

@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1448,
-    "node_count": 902,
-    "edge_count": 4313
+    "scanned_files": 1453,
+    "node_count": 904,
+    "edge_count": 4333
   },
   "node_kind_counts": {
     "artifact": 209,
-    "knowledge": 246,
+    "knowledge": 248,
     "skill": 258,
     "spec": 7,
     "tool": 141,
     "workspace": 41
   },
   "edge_kind_counts": {
-    "AllowsKB": 444,
+    "AllowsKB": 446,
     "AllowsTool": 218,
     "ContainsArtifact": 208,
     "ContainsSkill": 258,
     "DeclaresTool": 219,
-    "InvokesSkill": 248,
+    "InvokesSkill": 243,
     "RoutesToAgent": 59,
     "TracesTo": 48,
-    "XRef": 2611
+    "XRef": 2634
   },
   "nodes": [
     {
@@ -2181,6 +2181,15 @@
       "namespace": "dev"
     },
     {
+      "id": "urn:dev:kb:claude-code-mastery",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:dev:kb:claude-code-mastery",
+      "title": "Agent SDK, Headless Mode y Automatización",
+      "path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md",
+      "namespace": "dev"
+    },
+    {
       "id": "urn:fxsl:kb:action-primary-key",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -3537,6 +3546,15 @@
       "urn": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "title": "Tutorial: Desplegar un agente KORA en OpenClaw",
       "path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md",
+      "namespace": "ops"
+    },
+    {
+      "id": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "title": "Principios de transmutacion KORA → OpenClaw",
+      "path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md",
       "namespace": "ops"
     },
     {
@@ -6469,7 +6487,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:runtime-spec-md",
-      "title": "KORA/Runtime-Spec v3.3.0",
+      "title": "KORA/Runtime-Spec v3.4.0",
       "path": "specs/runtime-spec-md.md",
       "namespace": "kora"
     },
@@ -7979,6 +7997,18 @@
       "source": "workspace:fxsl/ontologista-gist",
       "target": "urn:fxsl:kb:fx-uom-model",
       "source_path": "AGENTS/fxsl/ontologista-gist/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:fxsl/opm-specialist",
+      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:fxsl/opm-specialist",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
     },
     {
       "kind": "AllowsKB",
@@ -16019,18 +16049,6 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-anthropic-adapter:1.0.0",
-      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
-      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
       "target": "urn:kora:skill:forgemaster-component-builder:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
@@ -16043,18 +16061,6 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-drift-detector:1.0.0",
-      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-equivalence-checker:1.0.0",
-      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
       "target": "urn:kora:skill:forgemaster-intent-classifier:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
@@ -16062,12 +16068,6 @@
       "kind": "InvokesSkill",
       "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
       "target": "urn:kora:skill:forgemaster-lifecycle-orchestrator:2.0.0",
-      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
@@ -17908,6 +17908,34 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:kb:claude-code-mastery",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21274,6 +21302,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -23604,6 +23639,76 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:agentic-tooling-inventory",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/configuracion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/configuracion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/extensibilidad.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/extensibilidad.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/index.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:claude-code-mastery",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:dev:skill:analyst-backlog-health-checker:1.0.0",
       "target": "urn:dev:skill:analyst-backlog-health-checker:1.0.0",
       "fragment": null,
@@ -24976,6 +25081,20 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
+      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-soul:1.0.0",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-soul:1.0.0",
       "fragment": null,
@@ -24985,6 +25104,20 @@
       "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
+      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
+      "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
     },
@@ -33436,6 +33569,34 @@
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:kora:kb:agent-spec-md",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
     },
     {
       "kind": "XRef",

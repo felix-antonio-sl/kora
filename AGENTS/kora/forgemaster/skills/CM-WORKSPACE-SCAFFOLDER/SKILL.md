@@ -39,6 +39,7 @@ Genera la estructura de directorio completa de un workspace KORA canonico: 5 arc
 8. Generar TOOLS.md: frontmatter con urn:{namespace}:agent-bootstrap:{nombre}-tools:1.0.0, `_manifest.type=bootstrap_tools` y secciones vacias para cada tool del blueprint.
 9. Generar config.json: `_manifest.type=bootstrap_config` + estructura con allowed_kb[], sandbox, tools, sub_agents del blueprint.
 10. Verificar topologia: 5 archivos presentes, cada bootstrap con su `_manifest.type` esperado, headings canonicos materializados, directorio `skills/` existente y, si aplica, entrypoints `skills/CM-*/SKILL.md` con fibras adjuntas solo bajo `scripts/`, `references/`, `assets/`.
+11. Verificar que el scaffold producido satisfaga agent-spec-md vigente (skill-spec §6 inv.7).
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

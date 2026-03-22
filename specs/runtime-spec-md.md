@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07, repair of cross-platform adapter contract"
-version: "3.3.0"
+version: "3.4.0"
 status: published
 tags: [spec, runtime, deployment, adapters, wrappers, fallback]
 lang: es
 ---
 
-# KORA/Runtime-Spec v3.3.0
+# KORA/Runtime-Spec v3.4.0
 
 ## 1. Definicion
 
@@ -179,6 +179,87 @@ Reglas:
 
 Traces to: formal/01 §1.3 (Effect Monad M)
 
+## 9. Transmutacion
+
+La transmutacion es la materializacion de un workspace KORA en un runtime concreto preservando la semantica del agente.
+
+### 9.1 Pipeline canonico
+
+Todo proceso de transmutacion **DEBE** ejecutar esta secuencia:
+
+1. Strip frontmatter YAML de todos los `.md` del workspace.
+2. Excluir `config.json` del workspace target.
+3. Generar artefactos requeridos por la plataforma (e.g., `IDENTITY.md`) derivandolos de componentes KORA existentes.
+4. Copiar componentes de bootstrap al workspace target.
+5. Verificar con toolchain de plataforma antes de deploy.
+
+### 9.2 Reglas de exclusion
+
+1. `config.json` **DEBE** excluirse del workspace target. Su informacion informa la config de plataforma pero **NO** se copia.
+2. Frontmatter YAML **DEBE** strippearse de todos los archivos copiados.
+3. Bloques `_manifest` **DEBEN** removerse antes de inyeccion al runtime.
+
+### 9.3 Reglas de generacion
+
+1. Para plataformas que requieren identidad publica (e.g., `IDENTITY.md` en OpenClaw), el proceso **DEBE** generar el artefacto derivando nombre y descripcion de `SOUL.md`. Este artefacto vive en el workspace target, **NO** en el workspace fuente KORA.
+2. La config de plataforma (e.g., `openclaw.json`) **DEBE** configurarse informada por `config.json` pero **NO DEBE** ser copia mecanica.
+
+### 9.4 Limites de bootstrap
+
+Todo runtime **PUEDE** imponer limites de tamaño al bootstrap inyectado. Cuando la plataforma declare limites, el proceso de transmutacion **DEBERIA** verificar que los componentes no excedan esos limites. Si exceden, los componentes **DEBERIAN** compactarse o particionarse en skills lazy-load.
+
+### 9.5 Runtime drift
+
+El workspace runtime opera como extension gobernada del workspace canonico (repo KORA). Se aplica el principio de extensiones (`gobernanza §6`):
+
+1. **PUEDE** agregar: reglas, checks, skills, memory, conocimiento.
+2. **NO PUEDE** relajar: eliminar reglas, debilitar restricciones, saltarse checks existentes.
+3. **NO PUEDE** mutar identidad: la FSM, `SOUL.md` y `TOOLS.md` son contrato identitario del agente — modificarlos requiere backport al repo y re-auditoria.
+
+Tipos de drift y su gestion:
+
+| Tipo                    | Ejemplo                                 | Clasificacion       | Accion                  |
+| ----------------------- | --------------------------------------- | ------------------- | ----------------------- |
+| State legitimo          | `memory/`, `MEMORY.md`, `HEARTBEAT.md`  | Normal              | Sin accion              |
+| Extension aditiva       | Regla dura nueva, check co-induccion    | Extension §6        | Evaluar backport        |
+| Skill emergente         | Nuevo `CM-*.md` en `skills/`            | Extension §6        | Backport si pasa purity |
+| Violacion sustractiva   | Regla eliminada, check removido         | Prohibido           | Corregir en runtime     |
+| Mutacion identitaria    | FSM modificada, `SOUL.md` reescrito     | Prohibido           | Revertir o backportear via repo |
+
+### 9.5.1 Reconciliacion
+
+Periodicamente, el operador **DEBE** ejecutar reconciliacion:
+
+1. Detectar drift: `diff` entre workspace repo (stripped) y workspace runtime.
+2. Clasificar cada diferencia segun la tabla anterior.
+3. Backportear extensiones valiosas al repo KORA.
+4. Auditar backport (`gobernanza §10`).
+5. Corregir violaciones en runtime.
+
+Un re-deploy **NO DEBE** copiar el workspace del repo sobre el workspace desplegado sin ejecutar `diff` previo. El drift detectado **DEBE** evaluarse antes de descartarse.
+
+### 9.5.2 Source of truth
+
+El repo KORA es fuente de verdad normativa. El workspace runtime es fuente de verdad operativa. Cuando divergen, la normativa prevalece — pero la operativa puede alimentar la normativa a traves de la reconciliacion.
+
+### 9.6 Verificacion
+
+1. Pre-deploy: `kora validate --profile strict` + toolchain de plataforma (e.g., `openclaw doctor`).
+2. Post-deploy: verificar cadena e2e.
+3. El toolchain de plataforma **DEBE** ejecutarse antes de declarar deploy exitoso.
+
+### 9.7 Tabla de mapping (referencia)
+
+| KORA          | Workspace target                       | Notas                          |
+| ------------- | -------------------------------------- | ------------------------------ |
+| `AGENTS.md`   | `AGENTS.md` (stripped)                 | Sin frontmatter                |
+| `SOUL.md`     | `SOUL.md` (stripped)                   | Sin frontmatter                |
+| `USER.md`     | `USER.md` (stripped)                   | Sin frontmatter                |
+| `TOOLS.md`    | `TOOLS.md` (stripped)                  | Sin frontmatter                |
+| `skills/`     | `skills/` (stripped)                   | Sin frontmatter en cada CM     |
+| `config.json` | **EXCLUIDO**                           | Informa config plataforma      |
+| —             | `IDENTITY.md` (si plataforma requiere) | Derivado de `SOUL.md`          |
+
 ## 10. Invariantes
 
 1. Un cambio de plataforma o modelo **NO DEBE** alterar FSM, tools declaradas ni constraints.
@@ -201,3 +282,6 @@ Traces to: formal/01 §1.3 (Effect Monad M)
 | Routing segregado        | Tier, fallback y budget viven en `config.json`             | lint        | Reubicar config          |
 | Equivalencia minima      | Inputs representativos no divergen funcionalmente          | eval        | Ajustar adapter o gating |
 | Wrapper inmutable        | La fuente del workspace no se modifica                     | lint        | Regenerar wrapper        |
+| config.json excluido     | `config.json` no esta presente en workspace target         | lint        | Excluir del pipeline     |
+| Drift pre-redeploy       | Re-deploy ejecuta diff antes de sobreescribir              | manual      | Ejecutar diff y evaluar  |
+| Transmutacion verificada | Pipeline §9 completado antes de deploy                     | manual      | Completar pipeline       |

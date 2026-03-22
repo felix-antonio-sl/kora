@@ -85,7 +85,8 @@ Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando wor
      - Preservar CM Core (Proposito, Input/Output, Procedimiento, Signature Output).
    - Para skills extendidos: copiar fibras adjuntas (scripts/, references/, assets/).
 8. Usar `assets/openclaw-workspace-template.md` como referencia de estructura output.
-9. Retornar lista de TransmutedArtifact[] con ruta relativa y contenido de cada artefacto.
+9. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico (skill-spec §6 inv.7).
+10. Retornar lista de TransmutedArtifact[] con ruta relativa y contenido de cada artefacto.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

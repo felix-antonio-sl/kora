@@ -66,7 +66,8 @@ Mapea un workspace KORA normalizado al formato Anthropic Skill (Claude Code), co
    - Saludo del agente (de SOUL.md).
    - Estado inicial: S-DISPATCHER.
 9. Usar `assets/anthropic-skill-template.md` como esqueleto de referencia.
-10. Retornar TransmutedArtifact[] con el SKILL.md compilado.
+10. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico (skill-spec §6 inv.7).
+11. Retornar TransmutedArtifact[] con el SKILL.md compilado.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

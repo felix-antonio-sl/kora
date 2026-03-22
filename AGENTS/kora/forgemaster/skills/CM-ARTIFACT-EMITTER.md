@@ -16,7 +16,7 @@ Escribe artefactos derivados de transmutacion al directorio de output, generando
 ## Procedimiento
 1. Validar directorio de output: crear si no existe, verificar permisos de escritura.
 2. Para cada artefacto en artifacts[]:
-   - Verificar que contenido no contiene frontmatter YAML KORA residual (R2).
+   - Verificar que contenido no contiene frontmatter YAML KORA residual (runtime-spec §9.2).
    - Escribir archivo en ruta especificada dentro de output_dir.
    - Registrar ruta y hash del artefacto escrito.
 3. Generar `_transmutation.yml` con:
@@ -36,7 +36,8 @@ Escribe artefactos derivados de transmutacion al directorio de output, generando
      transmutador_version: 1.0.0
    ```
 4. Escribir `_transmutation.yml` en output_dir.
-5. Presentar tabla resumen: archivo | tipo | tamano | hash.
+5. Verificar que ningun artefacto emitido contiene frontmatter KORA ni _manifest residual (runtime-spec §9.2, skill-spec §6 inv.7).
+6. Presentar tabla resumen: archivo | tipo | tamano | hash.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

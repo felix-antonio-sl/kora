@@ -1219,7 +1219,7 @@ Catalog:
     file: AGENTS/fxsl/opm-specialist/skills/CM-EXAMPLE-BUILDER.md
     status: published
   - urn: urn:fxsl:skill:opm-specialist-intent-classifier:1.0.0
-    title: CM-INTENT-CLASSIFIER
+    title: CM-INTENT-CLASSIFIER.md
     file: AGENTS/fxsl/opm-specialist/skills/CM-INTENT-CLASSIFIER.md
     status: published
   - urn: urn:fxsl:skill:opm-specialist-knowledge-assessor:1.0.0
@@ -2055,6 +2055,22 @@ Catalog:
     title: Claude Code detecta automáticamente
     file: KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md
     status: published
+  - urn: urn:dev:kb:claude-code-mastery
+    title: Configuración, Modelos y Costos
+    file: KNOWLEDGE/dev/claude-code-mastery/configuracion.md
+    status: published
+  - urn: urn:dev:kb:claude-code-mastery
+    title: 'Extensibilidad: Hooks, Skills, Agentes, MCP, Plugins, Channels'
+    file: KNOWLEDGE/dev/claude-code-mastery/extensibilidad.md
+    status: published
+  - urn: urn:dev:kb:claude-code-mastery
+    title: Claude Code Mastery — Guía Operativa de Maximización
+    file: KNOWLEDGE/dev/claude-code-mastery/index.md
+    status: published
+  - urn: urn:dev:kb:claude-code-mastery
+    title: Agent SDK, Headless Mode y Automatización
+    file: KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md
+    status: published
   - urn: urn:fxsl:kb:action-primary-key
     title: Action as Primary Key
     file: KNOWLEDGE/fxsl/cat/action-primary-key.md
@@ -2569,7 +2585,7 @@ Catalog:
     file: KNOWLEDGE/kora/sys/pipeline-ingesta.md
     status: published
   - urn: urn:kora:kb:runtime-spec-md
-    title: KORA/Runtime-Spec v3.3.0
+    title: KORA/Runtime-Spec v3.4.0
     file: specs/runtime-spec-md.md
     status: published
   - urn: urn:kora:kb:skill-spec-md
@@ -2693,6 +2709,10 @@ Catalog:
   - urn: urn:ops:kb:deploy-agente-kora-en-openclaw
     title: 'Tutorial: Desplegar un agente KORA en OpenClaw'
     file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md
+    status: published
+  - urn: urn:ops:kb:principios-transmutacion-kora-openclaw
+    title: Principios de transmutacion KORA → OpenClaw
+    file: KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md
     status: published
   - urn: urn:pro:kb:mba-personal-kaufman
     title: MBA Personal — Modelos Mentales de Negocios

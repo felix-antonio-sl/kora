@@ -32,6 +32,7 @@ Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capa
    - metadata del bundle en `extensions.{namespace}.skill`
    - compatibilidad `allowed_tools ⊆ TOOLS.md` y `requires ⊆ config.json`
 9. Presentar blueprint al usuario: tabla de componentes, diagrama FSM, lista de skills con su materializacion.
+10. Verificar que el blueprint producido, al materializarse, satisfaga agent-spec-md vigente (skill-spec §6 inv.7).
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

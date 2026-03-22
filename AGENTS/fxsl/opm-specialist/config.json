@@ -3,7 +3,10 @@
     "urn": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
     "type": "bootstrap_config"
   },
-  "allowed_kb": [],
+  "allowed_kb": [
+    "urn:fxsl:kb:opm-iso-19450",
+    "urn:fxsl:kb:opcloud-tutorial-videos"
+  ],
   "sandbox": {
     "mode": "strict"
   },

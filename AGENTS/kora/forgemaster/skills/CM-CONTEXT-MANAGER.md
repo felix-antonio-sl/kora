@@ -25,7 +25,7 @@ Detecta cambios de contexto entre turnos comparando el tema del mensaje entrante
    - nuevo → marcar requiere_revision_de_foco.
    - atras → recuperar referencia previa y marcar requiere_revision_de_foco.
    - terminar → marcar cierre solicitado.
-   - fuera_de_scope → aplicar Guard Set (REJECT_OUT_OF_SCOPE).
+   - fuera_de_scope → aplicar rechazo conforme a las reglas duras del workspace.
 5. Si cambio radical(tema completamente distinto) → marcar requiere_revision_de_foco.
 6. Actualizar contexto de sesion con foco nuevo y tema actual.
 

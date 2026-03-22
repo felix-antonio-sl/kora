@@ -45,6 +45,7 @@ Rellena cada componente del workspace con contenido real, respetando estrictamen
    - URN del entrypoint: `urn:{ns}:skill:{agente}-{id}:{version}`.
    - INVARIANTE: no coexistir `skills/CM-{id}.md` y `skills/CM-{id}/SKILL.md` para el mismo identificador simbolico.
 8. Verificar segregacion cruzada: ningun componente contiene contenido de otro y ningun bundle extendido fuga fuera de la fibra `skills/`.
+9. Verificar que el workspace materializado satisfaga agent-spec-md y skill-spec-md vigentes (skill-spec §6 inv.7).
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
