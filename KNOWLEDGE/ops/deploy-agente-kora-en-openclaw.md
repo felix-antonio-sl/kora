@@ -251,7 +251,8 @@ services:
           memory: 2G                    # Minimo 2G para skills discovery
           cpus: "2.0"
     healthcheck:
-      test: ["CMD", "node", "-e", "fetch('http://localhost:<puerto>/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      test: ["CMD", "node", "-e", "fetch('http://localhost:<puerto>/openclaw/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      # NOTA: el path /openclaw/health depende de controlUi.basePath (ver §10.7)
       interval: 30s
       timeout: 10s
       retries: 3
@@ -324,8 +325,8 @@ volumes:
       models: {
         "anthropic/claude-opus-4-6": {
           params: {
-            context1m: true,         // 1M tokens de contexto
             cacheRetention: "long",  // cache de bootstrap ~1h
+            // context1m: true,      // Solo con API key directa, NO con OAuth/setup-token
           },
         },
       },
@@ -811,6 +812,36 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 **Causa:** `allowFrom: ["7192195698"]` (string) no matchea contra el user ID numerico que Telegram envia como integer.
 
 **Fix:** `allowFrom: [7192195698]` — sin comillas. JSON5 acepta trailing commas pero no perdona tipos incorrectos en runtime.
+
+### 10.7 Healthcheck path depende de controlUi.basePath
+
+**Sintoma:** Container queda `unhealthy` permanentemente aunque el gateway funciona y Telegram responde.
+
+**Causa:** Si `controlUi.basePath` es `"/openclaw"`, el health endpoint se sirve en `/openclaw/health`, no en `/health`. Un healthcheck que apunta a `/health` recibe 404.
+
+**Fix:** El healthcheck debe usar el basePath configurado:
+
+```yaml
+# Si basePath: "/openclaw"
+healthcheck:
+  test: ["CMD", "node", "-e", "fetch('http://localhost:PORT/openclaw/health').then(...)"]
+```
+
+### 10.8 context1m no funciona con OAuth token auth
+
+**Sintoma:** Log warning: `ignoring context1m for OAuth token auth on anthropic/claude-opus-4-6; Anthropic rejects context-1m beta with OAuth auth`
+
+**Causa:** El parametro `context1m: true` activa el beta de 1M tokens de Anthropic, pero este no es compatible con tokens OAuth (setup-token de Claude Max). Solo funciona con API keys directas (`sk-ant-api03-...`).
+
+**Fix:** Remover `context1m: true` de los params del modelo si se usa OAuth. El contexto efectivo con OAuth es el default del modelo (~200K).
+
+### 10.9 Multi-gateway: port spacing minimo 20
+
+**Sintoma:** Conflictos potenciales de puerto entre gateways si se colocan en puertos consecutivos.
+
+**Causa:** OpenClaw deriva puertos adicionales del base: browser control = base+2, CDP = base+9..+108. Dos gateways en 18789 y 18790 tendrian browser control en 18791 y 18792 — funciona, pero CDP podria colisionar.
+
+**Fix:** Espaciar puertos base al menos 20. Ejemplo: korax=18789, steipete=18810, siguiente=18830.
 
 ---
 
