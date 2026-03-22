@@ -4,29 +4,30 @@ _manifest:
   provenance:
     created_by: "ops/clawstack"
     created_at: "2026-03-19"
+    updated_at: "2026-03-21"
     source: "Experiencia operacional desplegando korax v3.4.0 en Hetzner sobre OpenClaw + PCA sidecar"
-version: "1.0.0"
+version: "1.1.0"
 status: published
-tags: [deploy, openclaw, docker, tutorial, operaciones, korax, pca]
+tags: [deploy, openclaw, docker, tutorial, operaciones, transmutacion]
 lang: es
 ---
 
 # Tutorial: Desplegar un agente KORA en OpenClaw
 
-Este tutorial documenta el proceso completo de tomar un agente del ecosistema KORA y desplegarlo como gateway OpenClaw en un servidor remoto. Usa como caso real el deploy de **korax v3.4.0** (exoesqueleto cognitivo) con **PCA v4.1** como sidecar HTTP en un servidor Hetzner.
+Proceso completo para transmutar un agente del ecosistema KORA a un gateway OpenClaw corriendo en Docker sobre un servidor remoto. Generalizable a cualquier agente KORA — con o sin servicios externos.
 
-El proceso es generalizable a cualquier agente KORA.
+El apendice documenta el caso real de korax v3.4.0 con PCA sidecar en Hetzner.
 
 ---
 
 ## 1. Entender las dos capas
 
-Un agente KORA vive en el repositorio como un **workspace** — un directorio con archivos markdown que definen su comportamiento, personalidad, herramientas y skills. OpenClaw es el **runtime** que encarna ese workspace: le da un gateway HTTP, canales de comunicación (Telegram, Discord), persistencia de sesión, y acceso a modelos LLM.
+Un agente KORA vive en el repositorio como un **workspace** — un directorio con archivos markdown que definen su comportamiento, personalidad, herramientas y skills. OpenClaw es el **runtime** que encarna ese workspace: le da un gateway HTTP, canales de comunicacion (Telegram, Discord, WhatsApp), persistencia de sesion, y acceso a modelos LLM.
 
 ```
 KORA (especificacion)              OpenClaw (runtime)
 ─────────────────────              ──────────────────
-AGENTS/korvo/korax/                ~/.openclaw/workspace/
+AGENTS/<ns>/<agent>/               ~/.openclaw/workspace/
 ├── AGENTS.md        ──strip──▶   ├── AGENTS.md
 ├── SOUL.md          ──strip──▶   ├── SOUL.md
 ├── TOOLS.md         ──strip──▶   ├── TOOLS.md
@@ -42,7 +43,7 @@ AGENTS/korvo/korax/                ~/.openclaw/workspace/
 
 | Archivo | KORA | OpenClaw | Funcion |
 |---------|------|----------|---------|
-| **AGENTS.md** | Comportamiento formal (FSM, transiciones, invariantes, reglas de integridad) | Inyectado en cada turno (main + sub-agentes) | Define QUE hace el agente y COMO opera |
+| **AGENTS.md** | Comportamiento formal (FSM, transiciones, invariantes, reglas) | Inyectado en cada turno (main + sub-agentes) | Define QUE hace el agente y COMO opera |
 | **SOUL.md** | Identidad dialectica, paradigma cognitivo, tono | Inyectado solo en main | Define QUIEN es el agente |
 | **TOOLS.md** | Interfaz semantica declarada con bindings | Inyectado en cada turno | Define CON QUE opera el agente |
 | **USER.md** | Perfil del operador, preferencias | Inyectado solo en main | Define PARA QUIEN trabaja |
@@ -65,39 +66,37 @@ Tecnicas de compresion sin perder semantica:
 
 ## 2. Decidir la arquitectura de servicios
 
-Un agente KORA puede necesitar servicios externos. korax usa **PCA v4.1** (sistema de persistencia con SQLite). La pregunta clave: ¿donde corre ese servicio?
+No todos los agentes KORA necesitan servicios externos. La decision depende de lo que declara `TOOLS.md`:
 
-### Opcion A: Dentro del container (volume mount)
+### Caso A: Agente puramente conversacional (sin sidecar)
+
+Si el agente solo usa conversacion y tools nativos de OpenClaw (filesystem, code_execution, web), no necesita sidecar. Ejemplos: agentes consultivos, asesores, analistas.
 
 ```
-┌─────────────────────┐
-│  OpenClaw + Python3  │
-│  + PCA CLI mounted   │
-└─────────────────────┘
+┌─────────────────┐
+│  OpenClaw        │
+│  (imagen intacta)│
+└─────────────────┘
 ```
 
-- Requiere Dockerfile custom (agrega python3 a imagen Node.js)
-- Se rompe en cada upgrade de OpenClaw
-- Mezcla runtimes — viola principio de superficie minima
+Un solo container. Sin Dockerfile custom. Sin compose `depends_on`. La configuracion mas simple posible.
 
-### Opcion B: Sidecar HTTP (recomendada)
+### Caso B: Agente con servicio externo (sidecar HTTP)
+
+Si el agente invoca un servicio con estado propio (base de datos, API, daemon), ese servicio corre como sidecar en su propio container.
 
 ```
 ┌─────────────────┐    ┌──────────────┐
-│  OpenClaw        │───▶│  PCA HTTP     │
-│  (imagen intacta)│HTTP│  (python3)    │
+│  OpenClaw        │───▶│  Servicio     │
+│  (imagen intacta)│HTTP│  (container)  │
 └─────────────────┘    └──────────────┘
 ```
 
-- Imagen OpenClaw no se modifica — upgrades limpios
-- PCA escala y se monitorea independientemente
-- Requiere un wrapper HTTP sobre la API existente
+**Por que sidecar y no dentro del container:** Mezclar runtimes (Node.js + Python, por ejemplo) en un solo container requiere Dockerfile custom que se rompe en cada upgrade de OpenClaw. El sidecar mantiene la imagen OpenClaw intacta — upgrades son `docker pull` limpios.
 
-**Elegimos opcion B.** El wrapper HTTP es trivial si la API del servicio ya esta bien estructurada.
+### 2.1 Escribir el wrapper HTTP (solo caso B)
 
-### 2.1 Escribir el wrapper HTTP
-
-Si el servicio tiene una API Python limpia (funciones que reciben parametros y devuelven datos), el wrapper es mecanico:
+Si el servicio tiene una API limpia (funciones que reciben parametros y devuelven datos), el wrapper HTTP es mecanico. Usar solo stdlib para cero dependencias externas:
 
 ```python
 #!/usr/bin/env python3
@@ -110,19 +109,15 @@ class Handler(BaseHTTPRequestHandler):
         if self.path == "/health":
             self._respond({"status": "ok"})
         elif self.path == "/api/estado":
-            conn = get_db()
-            self._respond(api.estado(conn))
-            conn.close()
-        # ... mapear cada endpoint
+            self._respond(service.estado())
+        # ... mapear cada endpoint de lectura
 
     def do_POST(self):
         body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
-        if self.path == "/api/captura":
-            conn = get_db()
-            result = api.captura(conn, body["texto"], body.get("fuente", "otro"))
-            self._respond({"id": result.id, "texto": result.texto})
-            conn.close()
-        # ... mapear cada endpoint
+        if self.path == "/api/accion":
+            result = service.accion(body["param"])
+            self._respond(result)
+        # ... mapear cada endpoint de escritura
 
     def _respond(self, data, code=200):
         body = json.dumps(data, ensure_ascii=False, default=str).encode()
@@ -133,20 +128,18 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 ```
 
-**Clave:** usar solo stdlib (`http.server`, `json`). Cero dependencias externas = imagen Docker minima.
-
 ### 2.2 Actualizar los bindings en TOOLS.md
 
-Los bindings del agente deben reflejar el protocolo real. Antes (CLI):
+Los bindings del agente deben reflejar el protocolo real del deploy. Si el agente usaba CLI local:
 
 ```
-- **Binding:** `python3 $PCA_CLI captura "<texto>" [--fuente <f>]`
+- **Binding:** `python3 $CLI comando "<arg>"`
 ```
 
-Despues (HTTP sidecar):
+Cambiar a HTTP sidecar:
 
 ```
-- **Binding:** `POST $PCA_API/captura` body: `{"texto": "<texto>", "fuente": "<f>"}`
+- **Binding:** `POST $API/comando` body: `{"arg": "<valor>"}`
 ```
 
 El agente usara `curl` via code_execution para invocar el sidecar. `curl` esta disponible en la imagen base de OpenClaw.
@@ -155,7 +148,7 @@ El agente usara `curl` via code_execution para invocar el sidecar. `curl` esta d
 
 ## 3. Preparar el paquete de deploy (local)
 
-Antes de tocar el servidor, preparar todo localmente.
+Antes de tocar el servidor, preparar todo localmente. R5: observe before act.
 
 ### 3.1 Crear IDENTITY.md
 
@@ -173,7 +166,7 @@ emoji: <emoji>
 vibe: <descripcion corta del agente>
 ```
 
-### 3.2 Auditar tamaños de bootstrap
+### 3.2 Auditar tamanos de bootstrap
 
 ```bash
 for f in AGENTS/<ns>/<agent>/*.md; do
@@ -184,25 +177,35 @@ done
 
 Si algun archivo excede 17K, comprimir. Si el total excede 100K, evaluar mover contenido a skills lazy-load.
 
-### 3.3 Verificar dependencias del servicio externo
+### 3.3 Verificar dependencias del servicio externo (solo caso B)
 
 ```bash
-# Si el servicio es Python, verificar que es stdlib puro
+# Ejemplo para servicio Python: verificar que es stdlib puro
 python3 -c "
 import ast, sys
 from pathlib import Path
 stdlib = set(sys.stdlib_module_names)
-# ... analizar imports
+external = set()
+for f in Path('src').rglob('*.py'):
+    for node in ast.walk(ast.parse(f.read_text())):
+        if isinstance(node, ast.Import):
+            for a in node.names:
+                m = a.name.split('.')[0]
+                if m not in stdlib and m not in {'mi_paquete'}:
+                    external.add(m)
+        elif isinstance(node, ast.ImportFrom) and node.module:
+            m = node.module.split('.')[0]
+            if m not in stdlib and m not in {'mi_paquete'}:
+                external.add(m)
+print(f'Externas: {external}' if external else 'CLEAN: stdlib puro')
 "
 ```
 
-Si tiene dependencias externas, agregarlas al Dockerfile del sidecar.
+Si tiene dependencias externas, agregarlas al Dockerfile del sidecar con `pip install`.
 
 ### 3.4 Escribir los archivos de deploy
 
-Se necesitan 4 archivos:
-
-**a) Dockerfile del sidecar:**
+#### a) Dockerfile del sidecar (solo caso B)
 
 ```dockerfile
 FROM python:3.13-slim-bookworm
@@ -219,39 +222,36 @@ HEALTHCHECK --interval=15s --timeout=5s --retries=3 \
 CMD ["python3", "server.py"]
 ```
 
-**b) docker-compose.yml:**
+#### b) docker-compose.yml
+
+**Caso A — agente sin sidecar:**
 
 ```yaml
 services:
   gateway:
-    image: gateway-agent:latest
+    image: openclaw-local:latest
     container_name: kora-<nombre>
     restart: unless-stopped
-    init: true                          # CRITICO: PID 1 signal handling (patron canonico OpenClaw)
+    init: true                          # CRITICO: PID 1 signal handling
     env_file: .env
     environment:
-      HOME: /home/node                  # Canonico OpenClaw
+      HOME: /home/node
       TERM: xterm-256color
     ports:
-      - "127.0.0.1:18789:18789"        # Loopback only — Telegram usa long-polling outbound
+      - "127.0.0.1:<puerto>:<puerto>"
     volumes:
-      - agent-data:/home/node/.openclaw                                     # Named volume para state (config, identity, sessions, credentials)
-      # Config se copia al volume via init — NO bind mount de archivo individual
-      # (OpenClaw usa atomic rename que falla sobre bind mounts de archivos)
-      - ../workspaces/<gateway>/agents/<agent>:/home/node/.openclaw/workspace  # Bind mount — permite hot-reload
-      - ../knowledge:/home/node/knowledge:ro                                   # KBs read-only
+      - agent-data:/home/node/.openclaw
+      - ../workspaces/<gateway>/agents/<agent>:/home/node/.openclaw/workspace
+      - ../knowledge:/home/node/knowledge:ro
     networks:
       - kora-federation
-    depends_on:
-      sidecar:
-        condition: service_healthy
     deploy:
       resources:
         limits:
-          memory: 2G                    # OpenClaw necesita ~1.5G con skills discovery
+          memory: 2G                    # Minimo 2G para skills discovery
           cpus: "2.0"
     healthcheck:
-      test: ["CMD", "node", "-e", "fetch('http://localhost:18789/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      test: ["CMD", "node", "-e", "fetch('http://localhost:<puerto>/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -262,9 +262,28 @@ services:
         max-size: "10m"
         max-file: "3"
 
+networks:
+  kora-federation:
+    driver: bridge
+    name: kora-federation
+
+volumes:
+  agent-data:
+```
+
+**Caso B — agente con sidecar:** agregar el service sidecar y `depends_on`:
+
+```yaml
+services:
+  gateway:
+    # ... igual que caso A, mas:
+    depends_on:
+      sidecar:
+        condition: service_healthy
+
   sidecar:
-    image: kora-sidecar:latest
-    container_name: kora-sidecar
+    image: kora-<servicio>:latest
+    container_name: kora-<servicio>
     restart: unless-stopped
     volumes:
       - sidecar-data:/app/data
@@ -287,19 +306,14 @@ services:
         max-size: "5m"
         max-file: "3"
 
-networks:
-  kora-federation:
-    driver: bridge
-    name: kora-federation
-
 volumes:
   agent-data:
   sidecar-data:
 ```
 
-> **Por que NO se bind-mountea el config directamente:** OpenClaw escribe su config via atomic rename (write-to-tmp + rename). Un bind mount de archivo individual causa `EBUSY` porque el filesystem del host no permite rename sobre el mount point. La solucion es usar un named volume para todo `/home/node/.openclaw/` y copiar el config al volume en un paso de init (ver seccion 6.5).
+> **Por que NO se bind-mountea el config directamente:** OpenClaw escribe su config via atomic rename (write-to-tmp + rename). Un bind mount de archivo individual causa `EBUSY` porque el filesystem del host no permite rename sobre el mount point. La solucion es usar un named volume para todo `/home/node/.openclaw/` y copiar el config al volume en un paso de init (ver seccion 6.4). Los bind mounts de **directorios** (workspace, knowledge) funcionan sin problema.
 
-**c) openclaw.json5:**
+#### c) openclaw.json5
 
 ```json5
 {
@@ -363,7 +377,7 @@ volumes:
 > | `gateway.bind: "0.0.0.0"` | `Invalid input` | Usar `"loopback"` (o `"lan"` si necesitas acceso LAN) |
 > | `allowFrom: ["123"]` | String en vez de number | Usar `allowFrom: [123]` (integer sin comillas) |
 
-**d) .env:**
+#### d) .env
 
 ```bash
 TELEGRAM_BOT_TOKEN=<token de @BotFather>
@@ -395,9 +409,18 @@ NODE_ENV=production
 │       ├── skills/
 │       └── memory/             (persistente)
 ├── knowledge/                  (rsync desde repo KORA, read-only)
+│   └── <namespace>/            (solo KBs que el agente necesita, per allowed_kb)
 ├── comms/                      (buzones inter-cuadrilla, futuro)
 ├── scripts/
 └── backups/
+```
+
+```bash
+# Crear estructura (reemplazar <gateway> y <agent>)
+sudo mkdir -p /srv/kora/{compose,config/<gateway>,scripts,backups,comms}
+sudo mkdir -p /srv/kora/workspaces/<gateway>/agents/<agent>/{skills,memory}
+sudo mkdir -p /srv/kora/knowledge/<namespace>
+sudo chown -R $(whoami):$(whoami) /srv/kora
 ```
 
 ### 4.2 Strip de frontmatter KORA
@@ -418,37 +441,40 @@ open('$dst', 'w').write(content)
 "
 }
 
-# Uso:
-SRC=/home/felix/projects/kora/AGENTS/korvo/korax
-DST=/srv/kora/workspaces/personal/agents/korax
+# Reemplazar paths con los de tu agente:
+KORA_REPO=/home/felix/projects/kora
+SRC=$KORA_REPO/AGENTS/<namespace>/<agent>
+DST=/srv/kora/workspaces/<gateway>/agents/<agent>
 
 for file in AGENTS.md SOUL.md TOOLS.md USER.md IDENTITY.md; do
-    strip_frontmatter "$SRC/$file" "$DST/$file"
+    [ -f "$SRC/$file" ] && strip_frontmatter "$SRC/$file" "$DST/$file"
 done
 
 for skill in "$SRC"/skills/CM-*.md; do
-    strip_frontmatter "$skill" "$DST/skills/$(basename $skill)"
+    [ -f "$skill" ] && strip_frontmatter "$skill" "$DST/skills/$(basename $skill)"
 done
 ```
 
 ### 4.3 Sync de Knowledge Base
 
-Las KBs se copian (tambien sin frontmatter) como archivos de referencia que el agente puede leer bajo demanda via filesystem:
+Copiar solo las KBs declaradas en `config.json → allowed_kb`. Tambien sin frontmatter:
 
 ```bash
+# Por cada KB en allowed_kb, resolver path y copiar
+# Ejemplo: urn:korvo:kb:manual-de-vida → KNOWLEDGE/korvo/manual-de-vida.md
 strip_frontmatter \
-    /home/felix/projects/kora/KNOWLEDGE/korvo/manual-de-vida.md \
-    /srv/kora/knowledge/korvo/manual-de-vida.md
+    $KORA_REPO/KNOWLEDGE/<namespace>/<archivo>.md \
+    /srv/kora/knowledge/<namespace>/<archivo>.md
 ```
 
-**No van en el bootstrap** (serian 85K chars extra que explotarian la ventana). Van como archivos montados que el agente lee cuando los necesita.
+**Las KBs no van en el bootstrap** (pueden ser decenas de KB extra que explotarian la ventana). Van como archivos montados read-only que el agente lee bajo demanda via filesystem.
 
 ### 4.4 Permisos
 
 OpenClaw corre como uid 1000 (usuario `node`) dentro del container:
 
 ```bash
-sudo chown -R 1000:1000 /srv/kora/workspaces/personal/agents/korax
+sudo chown -R 1000:1000 /srv/kora/workspaces/<gateway>/agents/<agent>
 chmod 600 /srv/kora/compose/.env
 ```
 
@@ -458,8 +484,6 @@ chmod 600 /srv/kora/compose/.env
 
 ### 5.1 Imagen base OpenClaw
 
-Si tienes el source de OpenClaw:
-
 ```bash
 cd /home/felix/projects/openclaw
 docker build -t openclaw-local:latest .
@@ -467,27 +491,47 @@ docker build -t openclaw-local:latest .
 
 ### 5.2 Imagen del gateway
 
-Si el agente no necesita nada extra (caso ideal con sidecar HTTP):
+**Caso A (sin sidecar):** usar directamente `openclaw-local:latest` en el compose. No se necesita build custom.
+
+**Caso B (con sidecar):** agregar solo el ENV que indica donde esta el sidecar:
 
 ```bash
+cd /home/felix/projects/openclaw
 echo 'FROM openclaw-local:latest
-ENV PCA_API=http://kora-pca:8100/api' | docker build -t kora-personal:latest -f - .
+ENV SERVICE_API=http://kora-<servicio>:8100/api' | docker build -t kora-<gateway>:latest -f - .
 ```
 
-La imagen OpenClaw queda intacta. Solo se agrega un ENV para que el agente sepa donde esta el sidecar.
+### 5.3 Imagen del sidecar (solo caso B)
 
-### 5.3 Imagen del sidecar
+Escribir el Dockerfile a disco y buildear:
 
 ```bash
-cd /home/felix/projects/pca
-docker build -t kora-pca:latest -f /tmp/Dockerfile.pca .
+cd /home/felix/projects/<servicio>
+
+cat > /tmp/Dockerfile.sidecar << 'EOF'
+FROM python:3.13-slim-bookworm
+RUN useradd -r -s /usr/sbin/nologin app
+WORKDIR /app
+COPY server.py ./
+COPY src/ ./src/
+RUN mkdir -p /app/data && chown app:app /app/data
+USER app
+ENV PYTHONUNBUFFERED=1
+EXPOSE 8100
+HEALTHCHECK --interval=15s --timeout=5s --retries=3 \
+    CMD python3 -c "from urllib.request import urlopen; urlopen('http://localhost:8100/health')"
+CMD ["python3", "server.py"]
+EOF
+
+docker build -t kora-<servicio>:latest -f /tmp/Dockerfile.sidecar .
+rm /tmp/Dockerfile.sidecar
 ```
 
 ---
 
-## 6. Configuracion interactiva
+## 6. Configuracion
 
-Estos pasos requieren interaccion humana.
+Estos pasos se ejecutan en orden. Los primeros son interactivos (requieren datos humanos), los siguientes son mecanicos.
 
 ### 6.1 Crear bot de Telegram
 
@@ -501,56 +545,64 @@ Estos pasos requieren interaccion humana.
 1. Buscar **@userinfobot** en Telegram
 2. Enviar cualquier mensaje
 3. Copiar el numero (formato: `8734062810`)
-4. Pegar en `openclaw.json5` → `channels.telegram.allowFrom`
+4. Pegar en `openclaw.json5` → `channels.telegram.allowFrom` **como integer, sin comillas**
 
-### 6.3 Configurar autenticacion Anthropic
-
-Para Claude Max (OAuth):
+### 6.3 Rellenar .env y openclaw.json5
 
 ```bash
-cd /srv/kora/compose
-docker compose run --rm kora-personal openclaw models auth setup-token --provider anthropic
+# Generar token de gateway
+GATEWAY_TOKEN=$(openssl rand -hex 32)
+
+# Escribir .env
+cat > /srv/kora/compose/.env << EOF
+TELEGRAM_BOT_TOKEN=<token de paso 6.1>
+OPENCLAW_AUTH_TOKEN=$GATEWAY_TOKEN
+NODE_ENV=production
+EOF
+chmod 600 /srv/kora/compose/.env
+
+# Editar openclaw.json5 con tu Telegram user ID (integer)
+nano /srv/kora/config/<gateway>/openclaw.json5
 ```
 
-Sigue las instrucciones en pantalla para autorizar el acceso.
+### 6.4 Inicializar el volume del gateway
 
-### 6.4 Rellenar .env
-
-```bash
-nano /srv/kora/compose/.env
-# TELEGRAM_BOT_TOKEN=<token de paso 6.1>
-# OPENCLAW_AUTH_TOKEN=<ya generado con openssl rand -hex 32>
-```
-
-### 6.5 Inicializar el volume del gateway
-
-El named volume se crea como root. OpenClaw necesita que sea owned por uid 1000 (node). Ademas, hay que copiar el config al volume (no se puede bind-mountear — ver nota en seccion 3.4b).
+El named volume se crea como root. OpenClaw necesita que sea owned por uid 1000 (node). Ademas, hay que copiar el config al volume (no se puede bind-mountear — ver nota en §3.4b).
 
 ```bash
 cd /srv/kora/compose
 
 # Paso 1: Pre-seed directorios con ownership correcta
-docker compose run --rm --user root --no-deps --entrypoint sh kora-personal -c "
-mkdir -p /home/node/.openclaw/agents/<agent>/sessions \
-         /home/node/.openclaw/identity \
-         /home/node/.openclaw/credentials \
-         /home/node/.openclaw/logs &&
-find /home/node/.openclaw -not -name openclaw.json -exec chown node:node {} + 2>/dev/null
+docker compose run --rm --user root --no-deps --entrypoint sh gateway -c "
+mkdir -p /home/node/.openclaw/agents /home/node/.openclaw/identity \
+         /home/node/.openclaw/credentials /home/node/.openclaw/logs &&
+find /home/node/.openclaw -exec chown node:node {} + 2>/dev/null
 chmod 700 /home/node/.openclaw
 "
 
 # Paso 2: Copiar config al volume
-docker compose run --rm --user root --no-deps --entrypoint sh kora-personal -c "
-cp /dev/stdin /home/node/.openclaw/openclaw.json &&
-chown node:node /home/node/.openclaw/openclaw.json &&
-chmod 600 /home/node/.openclaw/openclaw.json
-" < ../config/personal/openclaw.json5
+docker compose run --rm --user root --no-deps --entrypoint sh gateway -c \
+  "cp /dev/stdin /home/node/.openclaw/openclaw.json && chown node:node /home/node/.openclaw/openclaw.json && chmod 600 /home/node/.openclaw/openclaw.json" \
+  < ../config/<gateway>/openclaw.json5
 ```
+
+### 6.5 Configurar autenticacion del modelo
+
+Para Anthropic con Claude Max (OAuth):
+
+```bash
+cd /srv/kora/compose
+docker compose run --rm --no-deps gateway openclaw models auth setup-token --provider anthropic
+```
+
+`--no-deps` evita intentar levantar el sidecar durante el setup interactivo.
+
+Para API key (sin OAuth): agregar `ANTHROPIC_API_KEY=sk-ant-...` al `.env`.
 
 ### 6.6 Validar config con doctor
 
 ```bash
-docker compose run --rm kora-personal openclaw doctor
+docker compose run --rm --no-deps gateway openclaw doctor
 ```
 
 Doctor debe reportar **cero errores de config**. Warnings aceptables:
@@ -570,10 +622,10 @@ Cuando modifiques `openclaw.json5` en el host despues del deploy inicial:
 
 ```bash
 cd /srv/kora/compose
-docker compose run --rm --user root --no-deps --entrypoint sh kora-personal -c \
+docker compose run --rm --user root --no-deps --entrypoint sh gateway -c \
   "cp /dev/stdin /home/node/.openclaw/openclaw.json && chown node:node /home/node/.openclaw/openclaw.json" \
-  < ../config/personal/openclaw.json5
-docker compose restart kora-personal
+  < ../config/<gateway>/openclaw.json5
+docker compose restart gateway
 ```
 
 ---
@@ -592,14 +644,10 @@ Verificar:
 docker compose ps
 
 # Logs del gateway
-docker compose logs -f kora-personal
+docker compose logs -f gateway
 
-# Logs del sidecar
-docker compose logs -f kora-pca
-
-# Health del sidecar
-docker compose exec kora-pca python3 -c \
-    "from urllib.request import urlopen; import json; print(json.dumps(json.loads(urlopen('http://localhost:8100/health').read()), indent=2))"
+# Logs del sidecar (caso B)
+docker compose logs -f sidecar
 ```
 
 ### 7.1 Pair de Telegram
@@ -608,23 +656,19 @@ docker compose exec kora-pca python3 -c \
 2. En el server:
 
 ```bash
-docker compose exec kora-personal openclaw pairing list telegram
-docker compose exec kora-personal openclaw pairing approve telegram <CODE>
+docker compose exec gateway openclaw pairing list telegram
+docker compose exec gateway openclaw pairing approve telegram <CODE>
 ```
 
 ### 7.2 Verificacion end-to-end
 
-Enviar por Telegram:
+Enviar cualquier mensaje al bot por Telegram. Si el agente responde coherentemente con su personalidad (SOUL.md) y comportamiento (AGENTS.md), la cadena completa funciona:
 
 ```
-/captura Probar que el agente funciona end-to-end via Telegram
+Telegram → OpenClaw gateway → agente (bootstrap) → respuesta → Telegram
 ```
 
-Si el agente responde con un ID de candidato y confirma la captura, la cadena completa funciona:
-
-```
-Telegram → OpenClaw gateway → agente (bootstrap) → curl PCA HTTP → SQLite → respuesta → Telegram
-```
+Si el agente tiene sidecar, verificar que tambien accede al servicio externo (la respuesta debe incluir datos del sidecar, no solo texto conversacional).
 
 ---
 
@@ -636,63 +680,83 @@ Cuando cambies el agente en el repo KORA:
 
 ```bash
 cd /home/felix/projects/kora && git pull --ff-only
-# Repetir strip_frontmatter para cada archivo cambiado
-# Restart del gateway:
-docker compose -f /srv/kora/compose/docker-compose.yml restart kora-personal
+
+# Re-strip bootstrap files (§4.2)
+SRC=$KORA_REPO/AGENTS/<namespace>/<agent>
+DST=/srv/kora/workspaces/<gateway>/agents/<agent>
+for file in AGENTS.md SOUL.md TOOLS.md USER.md IDENTITY.md; do
+    [ -f "$SRC/$file" ] && strip_frontmatter "$SRC/$file" "$DST/$file"
+done
+for skill in "$SRC"/skills/CM-*.md; do
+    [ -f "$skill" ] && strip_frontmatter "$skill" "$DST/skills/$(basename $skill)"
+done
+
+# Si cambio openclaw.json5, tambien re-sync al volume (§6.7)
+
+# Restart
+docker compose -f /srv/kora/compose/docker-compose.yml restart gateway
 ```
 
 ### 8.2 Backup de datos
 
 ```bash
-# PCA DB
-docker cp kora-pca:/app/data/pca.db /srv/kora/backups/pca-$(date +%Y%m%d).db
-
 # Sesiones OpenClaw
-docker cp kora-personal:/home/node/.openclaw/agents /srv/kora/backups/agents-$(date +%Y%m%d)
+docker cp kora-<nombre>:/home/node/.openclaw/agents /srv/kora/backups/agents-$(date +%Y%m%d)
+
+# Sidecar data (caso B)
+docker cp kora-<servicio>:/app/data /srv/kora/backups/<servicio>-$(date +%Y%m%d)
 ```
 
-### 8.3 Monitoreo
-
-```bash
-# Estado del sistema PCA
-docker compose exec kora-pca python3 -c \
-    "from urllib.request import urlopen; import json; print(json.dumps(json.loads(urlopen('http://localhost:8100/api/estado').read()), indent=2))"
-
-# Senales activas
-docker compose exec kora-pca python3 -c \
-    "from urllib.request import urlopen; import json; print(json.dumps(json.loads(urlopen('http://localhost:8100/api/signals').read()), indent=2))"
-```
-
-### 8.4 Troubleshooting
+### 8.3 Troubleshooting
 
 | Problema | Diagnostico | Solucion |
 |----------|------------|----------|
-| Gateway no arranca | `docker compose logs kora-personal` | Revisar syntax de openclaw.json5 |
-| Sidecar unhealthy | `docker compose logs kora-pca` | Verificar puerto 8100 libre en red interna |
-| Telegram no responde | Verificar `.env` tiene TELEGRAM_BOT_TOKEN | Verificar allowFrom tiene tu user ID numerico |
-| "model not available" | `docker compose logs kora-personal \| grep auth` | Re-ejecutar setup-token |
-| Respuestas truncadas | AGENTS.md > 20K chars | Comprimir bootstrap |
-| PCA retorna 422 | Violacion de regla de integridad | Normal — el agente debe manejar el error |
-| Container en restart loop | `docker compose logs --tail 50` | Verificar limites de memoria en compose |
+| Gateway no arranca | `docker compose logs gateway` | Revisar syntax de openclaw.json5 con `openclaw doctor` |
+| Sidecar unhealthy | `docker compose logs sidecar` | Verificar puerto libre en red kora-federation |
+| Telegram no responde | Verificar `.env` y `allowFrom` | allowFrom debe ser integer, no string |
+| "model not available" | Logs del gateway, grep `auth` | Re-ejecutar setup-token (§6.5) |
+| Respuestas truncadas | AGENTS.md > 20K chars | Comprimir bootstrap (§1.2) |
+| Sidecar retorna 422 | Violacion de regla del servicio | Normal — el agente debe manejar el error |
+| Container en restart loop | `docker compose logs --tail 50` | Verificar limites de memoria (minimo 2G gateway) |
+| `EBUSY` al arrancar | Bind mount de archivo individual | Usar named volume + copy (§6.4) |
+| `EACCES` permission denied | Volume owned by root | Pre-seed con `--user root` (§6.4) |
+| `Config invalid` | Schema mismatch con version OpenClaw | `openclaw doctor --fix` para migrar (§10.2) |
 
 ---
 
 ## 9. Generalizacion: cualquier agente KORA
 
-El proceso es identico para cualquier agente del ecosistema. Lo que cambia:
+### Lo que cambia por agente
 
-1. **Path del workspace:** `AGENTS/<namespace>/<agent>/`
-2. **Servicios externos:** No todos los agentes necesitan sidecar. Si el agente es puramente conversacional (sin persistencia externa), no necesita sidecar ni Dockerfile custom
-3. **allowed_kb:** Las KBs que necesita el agente (de `config.json`)
-4. **Canal:** Puede ser Discord, HTTP webhook, u otro en vez de Telegram
-5. **Modelo:** Puede ser otro provider (OpenAI, Gemini, etc.) con su propia auth
+| Variable | Donde se define | Ejemplo |
+|----------|----------------|---------|
+| Path del workspace | `AGENTS/<namespace>/<agent>/` | `AGENTS/korvo/korax/` |
+| Servicios externos | `TOOLS.md` bindings | PCA HTTP, API externa, DB |
+| KBs requeridas | `config.json → allowed_kb` | `manual-de-vida.md` |
+| Canal de entrada | Requisito operacional | Telegram, Discord, WhatsApp, HTTP |
+| Modelo LLM | Requisito de capacidad | Opus 4.6, Sonnet 4.5, GPT-4o |
+| Puerto gateway | Compose | 18789, 18790, ... |
 
-Lo que NO cambia:
+### Lo que NO cambia
 
 - Strip de frontmatter KORA → workspace OpenClaw
 - Estructura de directorios en `/srv/kora/`
-- docker-compose con red kora-federation
-- Flujo de provision → build → config → deploy → pair
+- Named volume para `/home/node/.openclaw/` (nunca bind mount de archivo)
+- Pre-seed de volume con `--user root`
+- `init: true` en compose
+- `openclaw doctor` antes de `up`
+- Red kora-federation para comunicacion inter-cuadrilla
+- Flujo: provision → build → config → doctor → deploy → pair
+
+### Arbol de decision rapido
+
+```
+¿El agente tiene TOOLS.md con bindings a servicios externos?
+├── NO → Caso A: 1 container, imagen openclaw-local directa
+└── SI → ¿El servicio tiene API limpia (funciones → datos)?
+    ├── SI → Caso B: wrapper HTTP + sidecar container
+    └── NO → Evaluar: adaptar API, o montar como volume con runtime extra
+```
 
 ---
 
@@ -706,7 +770,7 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 
 **Causa:** OpenClaw usa escritura atomica (write-to-tmp + rename) para no corromper el config. Un bind mount de un archivo individual (`openclaw.json5:/home/node/.openclaw/openclaw.json`) no permite rename sobre el mount point.
 
-**Fix:** Usar named volume para todo `/home/node/.openclaw/` y copiar el config al volume en un paso de init (seccion 6.5). Los bind mounts de **directorios** (workspace, knowledge) funcionan sin problema.
+**Fix:** Usar named volume para todo `/home/node/.openclaw/` y copiar el config al volume en un paso de init (§6.4). Los bind mounts de **directorios** (workspace, knowledge) funcionan sin problema.
 
 ### 10.2 Schema de OpenClaw cambia entre versiones
 
@@ -722,7 +786,7 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 
 **Causa:** Docker crea named volumes como root. OpenClaw corre como uid 1000 (node) y no puede escribir.
 
-**Fix:** Pre-seed el volume con un container efimero `--user root` que crea los directorios y fija ownership (seccion 6.5). Esto se hace una sola vez.
+**Fix:** Pre-seed el volume con un container efimero `--user root` que crea los directorios y fija ownership (§6.4). Esto se hace una sola vez.
 
 ### 10.4 Memory limit insuficiente para doctor
 
@@ -730,23 +794,15 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 
 **Causa:** El memory limit de 1G no alcanza para skills discovery + plugin loading. La imagen OpenClaw tiene `NODE_OPTIONS=--max-old-space-size=2048` pero el cgroup limit del container lo mata antes.
 
-**Fix:** Memory limit minimo de 2G para el gateway. Con 62Gi de RAM en el host, no es restriccion.
+**Fix:** Memory limit minimo de 2G para el gateway.
 
 ### 10.5 config.json de KORA tiene paths locales
 
-**Sintoma:** `config.json` del workspace referencia paths macOS (`/Users/...`) que no existen en el server.
+**Sintoma:** `config.json` del workspace referencia paths de la maquina de desarrollo (`/Users/...`) que no existen en el server.
 
-**Causa:** `config.json` es metadata de gobernanza KORA, no config de OpenClaw. Pero si se copia al workspace, el agente podria intentar usar esos paths.
+**Causa:** `config.json` es metadata de gobernanza KORA, no config de OpenClaw. No debe copiarse al workspace. Pero si accidentalmente se copia, el agente podria intentar usar esos paths.
 
-**Fix:** Actualizar `config.json` del workspace (no del repo) para reflejar el binding HTTP:
-
-```json
-"pca": {
-  "api_base": "http://kora-pca:8100/api",
-  "mode": "http",
-  "rationale": "En deploy Docker, PCA es sidecar HTTP. CLI path no aplica."
-}
-```
+**Fix:** No copiar `config.json` al workspace (el `strip_frontmatter` loop de §4.2 ya lo excluye). Si el agente necesita saber la URL del sidecar, eso va en un ENV del container, no en config.json.
 
 ### 10.6 Telegram bot — verificar allowFrom es integer
 
@@ -760,6 +816,10 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 
 ## Apendice: Caso real — korax v3.4.0
 
+### Contexto
+
+korax es un exoesqueleto cognitivo de productividad y bienestar (namespace korvo). Usa PCA v4.1 como sistema de persistencia (Candidato, UT, Proyecto, Objetivo, Contribucion) con 22 endpoints HTTP. Desplegado en Hetzner i7-7700 / 62GB RAM / Ubuntu 24.04 / Docker 29.3.0.
+
 ### Metricas del deploy
 
 | Metrica | Valor |
@@ -768,8 +828,8 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 | Archivo mayor (AGENTS.md) | 16,378 chars (limit 20K) |
 | Skills lazy-load | 12 (30,585 chars total) |
 | KB montada | 84,258 chars (2 archivos, read-only) |
-| Endpoints PCA HTTP | 22 (8 GET + 14 POST) |
-| Dependencias PCA | 0 (stdlib puro) |
+| Endpoints sidecar | 22 (8 GET + 14 POST) |
+| Dependencias sidecar | 0 (stdlib puro) |
 | Containers | 2 (gateway 2G/2cpu + sidecar 128M/0.5cpu) |
 | Imagenes Docker | openclaw-local 4.4GB + kora-personal ~0B (thin layer) + kora-pca 181MB |
 | Tiempo total deploy | ~2 horas (incluye troubleshooting de gotchas) |
@@ -781,25 +841,13 @@ Lecciones del deploy real de korax v3.4.0 (2026-03-19). Cada una costo tiempo de
 3. **KB como archivos montados:** 85K chars que no entran en bootstrap van como referencia filesystem read-only
 4. **Cache long:** Bootstrap de ~35K chars se cachea ~1h, reduciendo costo por turno
 
-### Correciones aplicadas durante deploy
+### Correcciones aplicadas durante deploy
 
 1. **openclaw.json5:** `identity` movido a `agents.list[0].identity`, `session.reset.mode` eliminado, `gateway.bind` cambiado de `"0.0.0.0"` a `"loopback"`, `memorySearch.enabled: false` agregado
 2. **docker-compose.yml:** `init: true` agregado, config bind mount reemplazado por named volume + copy, memory limit subido de 1G a 2G, `environment: HOME, TERM` agregados
-3. **config.json workspace:** paths macOS reemplazados por binding HTTP (`api_base: "http://kora-pca:8100/api"`)
-4. **Volume init:** paso de pre-seed agregado (chown node:node, mkdir de subdirs requeridos)
+3. **Volume init:** paso de pre-seed agregado (chown node:node, mkdir de subdirs requeridos)
 
-### Validacion pre-deploy
-
-```
-41/41 workspaces KORA validos
-0 URNs rotas
-728 artefactos indexados
-PCA HTTP: 22 endpoints testados e2e
-Compose YAML: syntax valida
-openclaw doctor: 0 errores de config
-```
-
-### Secuencia real de verificacion post-deploy
+### Verificacion post-deploy
 
 ```
 $ docker compose ps

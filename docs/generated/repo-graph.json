@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 1412,
     "node_count": 895,
-    "edge_count": 4207
+    "edge_count": 4206
   },
   "node_kind_counts": {
     "artifact": 207,
@@ -19,7 +19,7 @@
     "ContainsSkill": 255,
     "DeclaresTool": 218,
     "InvokesSkill": 237,
-    "RoutesToAgent": 60,
+    "RoutesToAgent": 59,
     "TracesTo": 43,
     "XRef": 2550
   },
@@ -16651,12 +16651,6 @@
       "source": "workspace:salud/salubrista",
       "target": "workspace:salud/salubrista-hah",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:salud/salubrista-hah",
-      "target": "workspace:salud/medico-urgencias",
-      "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "TracesTo",
