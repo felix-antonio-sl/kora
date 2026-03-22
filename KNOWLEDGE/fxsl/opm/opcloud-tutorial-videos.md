@@ -250,7 +250,18 @@ Convert via halo or computation option. Value types: integer, float, string, cha
 
 ### Advanced Calculations
 
-**Stereotypes**: parameter type templates (e.g., Point with X/Y coordinates). Global (G icon) vs Organizational (no icon). **User-Defined Functions**: custom calculations via API. **API Integration**: OPCloud provides built-in functions accessible in calculations. Stereotype components: parameters with ranges per element.
+**Stereotypes**: parameter type templates. Global (G icon, all users) vs Organizational (no icon, admin-created). Components: sub-parameters with ranges per element.
+
+**User-Defined Functions**: custom calculations integrated via API. OPCloud provides built-in functions accessible in the calculation dropdown.
+
+**Point-Slope example** (canonical computational workflow):
+1. Define two Point objects (e.g., Point1, Point2)
+2. Set X and Y as **computational attributes** on each Point (type: float, with aliases e.g. "x1", "y1", "x2", "y2")
+3. Create a **calculation process** (shows braces `{}` in diagram)
+4. Define the formula using the aliases (e.g., slope = (y2-y1)/(x2-x1))
+5. The calculation process consumes/affects the point objects and yields the result
+
+This workflow demonstrates the pattern: stereotype defines the parameter structure → computational attributes hold values → calculation process applies the formula.
 
 ### Range Validation
 
@@ -262,7 +273,17 @@ Connect states to processes via instrument-condition links. Loops via invocation
 
 ### User Input in Simulation
 
-**Agent requirement**: user must be connected via agent link to process. Mark process to get user input during simulation. Create computational input object. **User Input Variable**: pre-defined in API (available in function dropdown). Workflow: (1) create user as physical object → (2) connect via agent link → (3) mark process for input → (4) create computational input object → (5) link process to input object.
+**Agent requirement**: user must be connected via agent link to process.
+
+Workflow:
+1. Create user as physical object
+2. Connect user to process via **agent link** (black lollipop)
+3. Mark process to "get user input" during simulation
+4. Create computational input object to receive user values
+5. Connect process to input object via **effect link** (bidirectional arrowheads) — required link type for updating computational objects with user-provided values
+6. In the computation, use **user-defined functions** with input variables — select **"User Input"** from the predefined API function dropdown to bind the input object to user interaction
+
+**User Input Variable**: pre-defined in API (available in function dropdown). Without steps 5-6, the input object will not receive values during simulation.
 
 ---
 
