@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:goreologo-tools:3.0.0"
+  urn: "urn:gn:agent-bootstrap:goreologo-tools:3.2.0"
   type: "bootstrap_tools"
 ---
 

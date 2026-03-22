@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:goreologo-user:3.0.0"
+  urn: "urn:gn:agent-bootstrap:goreologo-user:3.2.0"
   type: "bootstrap_user"
 ---
 

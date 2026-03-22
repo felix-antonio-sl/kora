@@ -4,14 +4,18 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-22"
-    source: "ISO/PAS 19450:2015 + OPM complementary corpus (opm_youtube, OPM version felix, opcloud-tutorial-videos)"
-version: "1.0.0"
-status: draft
+    source: "source/fxsl/opm-methodology/opm-iso.md"
+version: "1.1.0"
+status: published
 tags: [opm, iso-19450, systems-engineering, conceptual-modeling, bimodal-representation, mbse, opcloud]
 lang: en
 extensions:
   kora:
     family: specification
+    supplementary_sources:
+      - "source/fxsl/opm-methodology/opm_youtube.md"
+      - "source/fxsl/opm-methodology/OPM version felix.md"
+      - "source/fxsl/opm-methodology/opcloud-tutorial-videos.md"
 ---
 
 # OPM ISO/PAS 19450 — Object-Process Methodology
@@ -726,6 +730,17 @@ Four unfolding-folding pairs correspond to four fundamental relations: aggregati
 
 Timeline within in-zoomed process flows top → bottom. Sub-process reference points at same height execute in parallel.
 
+### Implicit Invocation Links Summary
+
+Two implicit invocation forms govern synchronous in-zoomed execution:
+
+| Form | Semantics | Structural cue |
+|------|-----------|----------------|
+| Implicit invocation link | A subprocess invokes the subprocess immediately below it as soon as it completes | successive ellipse top points arranged vertically |
+| Parallel implicit invocation link set | Multiple subprocesses start together when their ellipse top points are aligned at the same height | equal-height ellipse top points within the same in-zoom context |
+
+This captures the substance of ISO Table 24: invocation order can be encoded without explicit invocation arrows when the in-zoom layout already fixes temporal order.
+
 ### Link Distribution Across Context
 
 Links attached to the **outer contour** of an in-zoomed process have **distributive semantics** — they distribute to all subprocesses (analogous to algebraic parentheses).
@@ -748,6 +763,14 @@ Resolution procedure (3 steps):
 3. **Resolved with split links**: `P1 changes A from s1.` (split input link) + `P2 changes A to s2.` (split output link)
 
 The split input link connects from the input state of the affectee to the early subprocess. The split output link connects from the late subprocess to the output state. This is the only mechanism to resolve underspecification in in-zoomed effect links.
+
+Summary of the split pair:
+
+| Pair | Meaning | Source | Destination |
+|------|---------|--------|-------------|
+| Split input-output specified effect link pair | Early subprocess takes the object out of its input state; later subprocess places it in the output state | input state + late subprocess | early subprocess + output state |
+
+This is the recoverable core of ISO Table 25.
 
 **Abstraction role shift**: an object may be an instrument at an abstract level (e.g., Dishwasher as instrument of Dish Washing in SD) and become an affectee at a detailed level (Dish Loading changes Dishwasher from empty to loaded, Dish Unloading changes back to empty in SD1). This is valid because the initial and final states are the same at the abstract level.
 
@@ -774,6 +797,10 @@ Primary precedence order: consumption = result > effect > agent > instrument. St
 **OPD tree edge labels**: each edge in the OPD process tree uses a unidirectional tagged structural link with tag `"is refined by in-zooming ProcessName in"` or `"is refined by unfolding ProcessName in"`. OPL refinement sentence: `Tierₙ OPD label is refined by in-zooming Refineable Process Name in Tierₙ₊₁ OPD Label.`
 
 **OPL specification ordering**: the sequence of OPL paragraphs generally follows **breadth-first order** starting from SD.
+
+### Whole-System OPL
+
+Whole-system OPL is the concatenated textual specification obtained by traversing the OPD tree and composing the OPL paragraphs in model order. Its purpose is to provide a complete textual rendering of the entire model, not just the current context. The canonical ISO example is the Dish Washing System whole-system OPL table: local OPD paragraphs remain context-specific, while whole-system OPL restores end-to-end textual continuity across SD, descendants, states and refinements.
 
 **OPD simplification**: in-diagram out-zooming + new-diagram in-zooming can simplify an overloaded OPD. Restriction: an object cannot become part of the abstracted set if its links would create direct process-to-process procedural links (which OPM does not define semantics for, except invocation and exception links).
 
@@ -917,7 +944,7 @@ Advanced technique: integration of conceptual hardware models with actual execut
 
 ---
 
-## OPL Formal Syntax (EBNF Summary)
+## OPL Formal Syntax: Core EBNF
 
 OPL conforms to ISO/IEC 14977:1996 EBNF. The formal syntax is necessarily incomplete for probability (§12.7), execution paths (§13), and complex participation constraints.
 
@@ -960,6 +987,8 @@ tag expression = non capitalized phrase ;
 ```
 
 Object names: capitalized singular/plural noun phrases. Process names: capitalized gerund phrases. State names: non-capitalized. Tags: non-capitalized phrases.
+
+## OPL Formal Syntax: Sentence Families
 
 ### Thing Description Sentences
 
@@ -1065,22 +1094,36 @@ Basic Structural Construct = Refineable + Refinee + Structural Link. Five varian
 
 Basic Procedural Construct = Object + Process + Procedural Link. Semantics: transformation, enablement, transformation & control, enablement & control. Transformation constructs decompose into Consumption, Effect and Result constructs. Enablement constructs decompose into Agent and Instrument constructs.
 
+### New-Diagram In-Zooming and Out-Zooming Models
+
+Annex C models in-zooming and out-zooming as first-class OPM processes:
+
+- **New-Diagram In-Zooming**: requires `SDn`, performs Content Showing then Link Refining, yields `SDn+1`
+- **New-Diagram Out-Zooming**: requires `SDn+1`, performs Link Abstracting then Content Hiding, yields `SDn`
+- **Semi-Zoomed OPD**: transient intermediate object that exists only inside these transformations
+
+Figure C.19 establishes the symmetric pair. Figure C.20 elaborates the migration of links from a refined process `P` toward subprocesses `P1`, `P2`, `P3` with consumee, agent, instrument and resultee links reassigned at the detailed level.
+
+### Simplifying an OPD
+
+Figure C.21 formalizes OPD simplification: an overloaded OPD can be reduced by abstracting a bounded set of processes and objects into a higher-level construct, provided the abstraction does not create illegal direct procedural links between peer processes. Simplification is therefore constrained by semantics, not just by layout.
+
 ### Process Performance Controlling Model (Annex C.6)
 
 Canonical self-referential OPM model demonstrating a complete in-zoomed process hierarchy (SD → SD1 → SD1.1 → SD1.1.1 → SD1.1.1.1 → SD1.2 → SD1.2.1 → SD1.2.2 → SD1.2.3). Models how OPM controls process execution at runtime.
 
 **SD: Process Performance Controlling** — An Executable Process invokes Process Performance Controlling, which affects the Involved Object Set (union of Preprocess Object Set, size r≥0, and Postprocess Object Set, size s≥0) and yields either a Success Message or a Failure Message (Abort Message or Cancel Message).
 
-**SD1: In-zoomed** — Process Performance Controlling decomposes into Process Initiating → Process Performing, in sequence. Process Status tracks states: idle → started(t=0) → operating(t<n) → completing(t=n) → completed(t=n) or aborted. Postcondition object: false → true.
+**SD1: In-zoomed** — Process Performance Controlling decomposes into Process Initiating → Process Performing, in sequence. Process Status tracks states: idle → started(t=0) → operating(time less than n) → completing(t=n) → completed(t=n) or aborted. Postcondition object: false → true.
 
 **SD1.1: Process Initiating** — Decomposes into Precondition Evaluating → (Cancelling | Starting). If Precondition is false → Cancelling yields Cancel Message, Process Status returns to idle. If Precondition is true → Starting consumes Precondition, yields false Postcondition, changes Process Status to started(t=0).
 
 **SD1.1.1: Precondition Evaluating** — Decomposes into Enabler Set Checking → Consumee & Affectee Set Checking → (Precondition Refuting | Precondition Confirming). Each check produces positive/negative results. If any negative → Precondition Refuting resets Status to idle. If all positive → Precondition Confirming sets Precondition to true.
 
 **SD1.2: Process Performing** — Decomposes into Initial Process Performing → Main Process Performing → Final Process Performing.
-- Initial: parallel Input State Exiting + Consumee Set Consuming. Status changes from started(t=0) to operating(t<n).
-- Main: loop of Elapsed Time & Duration Comparing → Enabler & Affectee Set Checking → Process Executing & Time Incrementing (invokes back to comparing). If Set Approval denied → Aborting & Notifying. If e=d → Finalizing. If e>d → Overtime Exception Handling.
-- Final: parallel Resultsee Set Generating + Output State Entering + Success Notifying. Status → completed(t=n), Postcondition → true.
+- Initial: parallel Input State Exiting + Consumee Set Consuming. Status changes from started(t=0) to operating(time less than n).
+- Main: loop of Elapsed Time & Duration Comparing → Enabler & Affectee Set Checking → Process Executing & Time Incrementing (invokes back to comparing). If Set Approval denied → Aborting & Notifying. If elapsed time equals duration → Finalizing. If elapsed time exceeds duration → Overtime Exception Handling.
+- Final: parallel Resultee Set Generating + Output State Entering + Success Notifying. Status → completed(t=n), Postcondition → true.
 
 This model demonstrates: multi-level in-zooming, state transitions across hierarchy levels, condition links for bypass, exception handling, parallel subprocesses, and the instrument-to-affectee role shift across abstraction levels.
 
@@ -1127,6 +1170,15 @@ Shows for any point in time: which objects exist, what state each is at, and whi
 System time unit is default for all processes unless explicitly overridden.
 
 **Graphical placement**: duration values display **inside the process ellipse**, below the process name and time unit. Minimal duration appears to the **left**, expected duration in the **center**, maximal duration to the **right**. Example: `Processing [min] (30.0, 45.6, 60.0)` with distribution `normal, mean=45.6, sd=7.3`.
+
+### Duration Examples
+
+Annex D adds four recoverable example patterns:
+
+1. **Processing Duration metamodel**: compact process notation can encode minimal, expected and maximal duration together with distribution parameters; actual `Duration` remains a runtime property.
+2. **Distribution variants**: exponential, normal and uniform distributions can parameterize the same process depending on domain assumptions and time units.
+3. **Overtime exception**: if actual duration exceeds maximal duration, Overtime Exception Handling occurs and may affect the same affectee as the main process.
+4. **Undertime exception**: if actual duration falls short of the minimal threshold, Undertime Exception Handling occurs under the symmetric rule.
 
 ---
 
@@ -1229,6 +1281,14 @@ Structure: Coffee Machine consists of Water Tank, Milk Frother, Water Heater, Ca
 ### Electric Car Operation (SD Components)
 
 Purpose: change Business Success of Company Stakeholder Group from current to improved. Function: Electric Car Operating (main process) changes Electric Car from stopped to moving. Agents: Driver. Instruments: Electric Car Operating System. Environment: Terrain Type, Regulations. Problem: traditional human-centered manufacturing → partial automation level.
+
+### Auxiliary Social and Socio-Technical Examples
+
+- **Air Traffic Control**: Pilot and Air Traffic Controller are agents; Control Tower is an instrument. Used to contrast agent vs instrument semantics.
+- **MOOC Learning**: Student Group acts as agent; MOOC platform acts as instrument. Useful for non-physical socio-technical systems.
+- **Online Professional Identity Management**: online profile can represent the user through a tagged structural link; the identity-management system and internet connection act as instruments/environment.
+- **Baggage Transportation**: main function changes baggage location from origin airport to destination airport; useful for state change and SD function framing.
+- **Conference System**: organizer and ushers are agents; facilities/equipment are instruments; weather can be environmental despite the system being social.
 
 
 

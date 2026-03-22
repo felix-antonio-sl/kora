@@ -4,9 +4,9 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-22"
-    source: "OPCloud video tutorial series (50 videos) + opcloud-tutorial-videos source"
-version: "2.0.0"
-status: draft
+    source: "source/fxsl/opm-methodology/opcloud-tutorial-videos.md"
+version: "2.1.0"
+status: published
 tags: [opcloud, opm, tutorial, modelado, video-course, cloud-tool, simulation]
 lang: en
 extensions:
@@ -15,7 +15,7 @@ extensions:
     video_count: 50
 ---
 
-# OPCloud Tutorial
+# OPCloud Tutorial Videos
 
 OPCloud is the dedicated cloud-based software for Object-Process Methodology (OPM) modelling. It provides bimodal graphic-text editing: OPL sentences are generated automatically as OPDs are constructed. This tutorial covers the complete OPCloud workflow based on a 50-video course using the OnStar system as primary example (emergency assistance, GPS navigation, cellular communication, advisor interaction).
 
@@ -25,14 +25,15 @@ For OPM formal specification, notation and methodology, see `urn:fxsl:kb:opm-iso
 
 ## Getting Started
 
-### Creating Elements
+### Creating Objects and Processes
 
 - **Create process**: click process button in main toolbar (blue ribbon) → drag to canvas → enter name in popup → click Update or press Enter
 - **Create object**: click object button → drag to canvas → enter name → Update/Enter
 - **Create link**: click empty area (non-text part of element), drag to target element
 - **Auto Format**: toggle checkbox to auto-capitalize each word; disable for custom naming (e.g., "onstar" instead of "OnStar")
+- **Auto Capitalization**: default behaviour capitalizes the first letter of each word
 
-### Saving and Loading
+### Saving and Loading Models
 
 Main toolbar buttons: Undo, Redo, Save, Load, Share, Execution (simulation mode).
 
@@ -86,7 +87,7 @@ Access: Main Menu > New Model by Wizard. Implements the OPM SD construction proc
 
 ## Core Features
 
-### OPD Diagram Management
+### OPD3 and Diagram Management
 
 OPDs auto-generate when using in-zoom or unfold. Naming convention: SD (top), SD1, SD1.1, SD1.1.1.
 
@@ -106,6 +107,7 @@ Four essence types: Physical (tangible), Informational (abstract data), Environm
 - **URL links**: entities extension > view URL (images, videos, articles)
 - **Unfold**: creates child OPD showing sub-components
 - **Fold**: compact view with bold contour indicator
+- **Update Button**: confirms name edits after modification
 - **Inside objects**: created within in-zoom processes, exist only in process scope, **deleted when parent process deleted**
 - **Outside objects**: created at system diagram level, exist independently, referenceable across OPDs
 - **Conversion**: delete and recreate, or copy from Draggable Things to target location
@@ -115,14 +117,24 @@ Four essence types: Physical (tangible), Informational (abstract data), Environm
 
 Add via halo > add states OR secondary toolbar button. Default naming: state1, state2 (lowercase, left to right). **Exchange Symbol** toggles between effect link and in-out link pair. Clicking Update advances automatically to next state name.
 
+- **State Examples**: `"requested call"`, `"online"` for a call object
+- **Conditional Transitions**: states can connect to processes via instrument-condition links
+- **Multiple States**: additional states created by repeating the add-state action
+
 ### Links and Connections
 
 Create link: right-click source → drag to destination. Link Table: configure properties, multiplicity, tags, path probability.
+
+- **Agent Links**: connect human agents to processes
+- **Instance Links**: create specific instances of objects
+- **Specialization**: represent generalization relationships between things
 
 **Visual Instances**: same logical entity with different visual representation in different OPDs.
 - Create with "use existing thing" option on naming conflict
 - **Restriction**: cannot create visual instance between different element types (object → process forbidden)
 - Visual instance = same thing, different view. Logical instance = inheritance relationship (classification-instantiation)
+
+### Link Properties
 
 Link properties: right-click link > properties. Source/target multiplicity, tag, path probability, style. Link style: colour (hex), width; copy style to other links.
 
@@ -133,6 +145,15 @@ Shift Pane: move OPL panel to left side. Toggle numbering on/off. **Minimize Pan
 ### Touch Screen Support
 
 Long press as alternative to right-click. Gesture-based OPD navigation. See user manual for complete gesture list.
+
+### Inner and Outer Objects
+
+- **Inner Objects**: created inside in-zoom processes; exist only within process scope; deleted when parent process is deleted
+- **Outer Objects**: created at system diagram level; can be referenced across multiple OPDs
+- **Conversion Methods**: delete/recreate or copy from Draggable Things into the target context
+- **Drag Behavior**: dragging an outer object inside a process raises a warning
+- **Visual Indicator**: inner objects use inside-process notation
+- **Enveloping**: process enlargement can visually swallow an outer object, but the object reverts when moved
 
 ---
 
@@ -292,9 +313,11 @@ Workflow:
 
 ---
 
-## Requirements Modelling
+## Requirements Modeling
 
 Add, remove and view requirements on model elements. Access: select element > OPM Requirements group > Add requirements. Actions: add, remove, create consolidated requirements view. Link types: Exhibition (presence/absence), Characterization (attributes), Aggregation Participation (part-whole). Apply requirements to elements, links, or entire diagrams.
+
+### Requirements Example (Door-Peephole System)
 
 Example (Door-Peephole): peephole is part of door (aggregation). Height: 56-64 inches. Components: lens + sleeves. Optional: peephole cover. Function: one-way view for seeing visitors.
 
@@ -310,7 +333,7 @@ Visual overview of entire OPD tree as minimised icons. Access: Main Menu > Model
 
 Premium feature. Access: Settings > Analyze Model > Model Knowledge. OPPL sentences classified: Definition, Structural, Procedural, Meta, Unknown. Metrics: total informative level, weighted score, INF average, total OPPL sentence count. Identifies missing precedence links, processes without inputs/outputs. **Compare model versions over time** for improvement tracking.
 
-### Missing Knowledge Identification
+### Identification of Missing Knowledge
 
 Access: Settings > Analyze Model > Model Knowledge > Identification of Missing Knowledge. Two algorithms:
 - **Pistol**: fast, browser-based, good for initial filtering, may have suggestion limitations
@@ -352,7 +375,7 @@ Bring Connected to view stereotype components in other OPDs. Semi-Folding as alt
 
 ---
 
-## OPD Management
+## OPD3 Management
 
 Secondary toolbar > OPD management button. Features: search by name/number, hide/show names, open, cut, remove, paste, drag. Auto-arrangement: drag to reorder affects automatic tree layout.
 
@@ -371,3 +394,15 @@ Ctrl+Click for multiple elements. Lasso: drag rectangle to select area. **Bulk O
 ### Alignment
 
 Vertexes: black dots on links. Click to add routing vertex; drag to merge back. Grid for precise alignment. Auto-Arrange via system map. Manual adjustment after auto-arrange.
+
+---
+
+## Summary
+
+Complete OPCloud workflow coverage:
+
+1. Fundamentals: create objects, processes, links, save/load, navigate OPDs.
+2. Core modelling: states, links, inner/outer objects, styles, search, OPL pane.
+3. Advanced work: computational processes, simulation, range validation, conditions, loops, user input.
+4. Governance and scale: templates, permissions, sub-models, ontology enforcement, requirements, analysis.
+5. Operations: import, stereotypes, OPD3 management, bring-connected workflows, alignment.
