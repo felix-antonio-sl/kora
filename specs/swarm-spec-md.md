@@ -120,7 +120,7 @@ Todo swarm operativo **DEBE** materializar respuestas para, al menos:
 
 1. Todo path **DEBE** tener un Circuit Breaker asociado.
 2. Los umbrales de retry, timeout o saturacion **DEBERIAN** vivir en config operativa, no en la FSM textual.
-3. Tras un fallo, el swarm **NO DEBE** continuar sin una verificacion de health suficiente.
+3. Tras un fallo, el swarm **NO DEBE** continuar sin una verificacion de health suficiente. Health suficiente requiere como minimo: (a) el agente afectado responde, (b) el estado del circuit breaker se evalua, y (c) no se detectan fallos en cascada en agentes dependientes.
 
 Traces to: formal/01 §3.3 (Co-induction at Terminal States)
 
@@ -132,7 +132,7 @@ Backpressure es el control de flujo que reduce o encola trabajo cuando la cola s
 
 1. El orquestador **DEBE** declarar un umbral de backpressure verificable.
 2. Cuando se supera el umbral, el dispatch **DEBE** reducirse, encolarse o rechazarse explicitamente.
-3. Backpressure **NO DEBE** quedar como prosa aspiracional sin politica verificable.
+3. Backpressure **NO DEBE** quedar como prosa aspiracional sin politica verificable. Una politica es verificable si declara: (a) condicion de activacion, (b) accion concreta (reducir, encolar o rechazar), y (c) criterio de recuperacion. Si falta alguno de los tres, la politica es prosa aspiracional.
 
 ## 7. Event Routing
 
@@ -159,7 +159,7 @@ Traces to: formal/04 §2.4 (Filtered Discovery)
 ## 8. Invariantes
 
 1. `SOUL.md` y `USER.md` del orquestador se disipan en sub-agentes.
-2. El wiring del swarm **DEBE** seguir siendo razonable sin inspeccionar estados ocultos.
+2. El wiring del swarm **DEBE** seguir siendo razonable sin inspeccionar estados ocultos. Operativamente: un observador con acceso solo al `AGENTS.md` del orquestador y los wiring declarados **DEBE** poder predecir el routing de cada clase de evento.
 3. Un agente del swarm **NO DEBE** modificar `config.json` de otro agente.
 4. La composicion de paths **NO DEBE** romper las interfaces efectivas declaradas.
 
@@ -192,8 +192,8 @@ Reglas:
 | Orquestador unico       | Existe exactamente un hub de routing                | manual      | Reestructurar swarm   |
 | Rutas resolubles        | Toda delegacion apunta a workspace existente        | lint        | Corregir wiring       |
 | Golden paths completos  | Trigger, secuencia, gates, abort y exito declarados | manual      | Completar declaracion |
-| Circuit Breakers reales | Hay politicas verificables, no solo prosa           | runtime     | Materializar policy   |
-| Backpressure            | Existe umbral o politica operativa verificable      | runtime     | Declarar policy       |
+| Circuit Breakers reales | Cada policy declara activacion, accion y recuperacion | runtime     | Materializar policy   |
+| Backpressure            | Umbral con activacion, accion y recuperacion declarados | runtime     | Declarar policy       |
 | Eventos tipados         | Cada evento tiene clase y path                      | lint        | Tipar evento          |
 | Security inter-agente   | Inputs se filtran y estructuran                     | runtime     | Endurecer gateway     |
 | Dissipation             | `SOUL.md` / `USER.md` no se heredan indebidamente   | runtime     | Corregir bootstrap    |

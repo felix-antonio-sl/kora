@@ -84,7 +84,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v6.1.0",
+            "KORA/MD v6.2.1",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -359,9 +359,9 @@ class ArtifactFixtureTests(unittest.TestCase):
             )
         )
         self.assertIn("[prioridad 1]", agents)
-        self.assertIn("agent-spec-md v8.4.0", agents)
-        self.assertIn("agent-spec-md v8.4.0", skills)
-        self.assertIn("skill-spec-md v4.0.0", skills)
+        self.assertIn("agent-spec-md v8.6.0", agents)
+        self.assertIn("agent-spec-md v8.6.0", skills)
+        self.assertIn("skill-spec-md v4.1.0", skills)
         self.assertNotIn("agent-spec-md v8.3.0", skills)
         self.assertNotIn("skill-spec-md v3.4.0", skills)
 
@@ -628,7 +628,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("CM-AGENT-VALIDATOR post-mejora", content)
         self.assertNotIn("Re-ejecutar CM-AGENT-VALIDATOR", content)
         self.assertIn("md-spec` §9 o `spec-md` §8", content)
-        self.assertIn("agent-spec-md` v8.4.0 y `skill-spec-md` v4.0.0", content)
+        self.assertIn("agent-spec-md` v8.6.0 y `skill-spec-md` v4.1.0", content)
 
     def test_ops_core_agents_follow_canonical_agent_sections(self):
         files = (

@@ -163,12 +163,14 @@ Cada elemento de la siguiente lista **NO DEBE** incluirse en Spec-MD:
 
 ### 5.4 Prosa explicativa
 
-La prosa explicativa **PUEDE** existir solo cuando cumple una funcion normativa clara:
+La prosa explicativa **PUEDE** existir solo cuando cumple una de estas funciones normativas (lista exhaustiva):
 
 - justificar una regla
 - prevenir ambiguedad
 - contextualizar una restriccion
 - advertir un limite del enforcement
+
+Prosa que no satisface ninguna de estas cuatro funciones es grasa y **DEBE** eliminarse.
 
 ## 6. Patron obligatorio: regla + ejemplo + traza
 

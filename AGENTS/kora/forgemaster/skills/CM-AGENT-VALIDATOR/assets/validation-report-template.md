@@ -10,7 +10,7 @@ lang: es
 
 - Workspace: `{workspace}`
 - Resultado global: `PASS|FAIL`
-- Baseline: `agent-spec-md v8.4.0 / skill-spec-md v4.0.0 / gobernanza.md v3.2.0`
+- Baseline: `agent-spec-md v8.6.0 / skill-spec-md v4.1.0 / gobernanza.md v3.3.1`
 
 ## Checks
 

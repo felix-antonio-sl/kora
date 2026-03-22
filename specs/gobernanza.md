@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 00-07, formal restoration of governed extended skills, RFC 2119"
-version: "3.2.0"
+version: "3.3.1"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
 ---
 
-# KORA/Gobernanza v3.2.0
+# KORA/Gobernanza v3.3.1
 
 ## 1. Definicion
 
@@ -90,6 +90,19 @@ La identidad URN y `_manifest.type` son ortogonales.
 
 Traces to: formal/01 §5.2 (Substitutability) ; formal/05 §1.3 (Domain Disjointness)
 
+### 4.5 Migracion de identidad
+
+Cuando un artefacto cambia de namespace (e.g., `gnub` -> `gn`, `kora` -> `tde`), la operacion **DEBE** ejecutarse como migracion atomica:
+
+1. **Renombrar URNs**: actualizar `_manifest.urn` en todos los artefactos migrados. Enforcement: lint.
+2. **Mover archivos**: reubicar bajo el directorio del namespace destino.
+3. **Actualizar refs cruzadas**: toda referencia al URN anterior en otros artefactos **DEBE** actualizarse. Enforcement: lint (`kora health --strict`).
+4. **Actualizar `allowed_kb`**: todo `config.json` de agente que referencie URNs migradas **DEBE** actualizarse. Enforcement: lint.
+5. **Re-indexar**: ejecutar `kora index` tras la migracion.
+6. **Verificar**: `kora health --strict` **DEBE** pasar sin errores tras la migracion.
+
+Una migracion parcial (archivos movidos sin actualizar URNs o refs) es invalida y **DEBE** completarse o revertirse antes de cualquier otra operacion.
+
 ## 5. Formal Layer
 
 ### 5.1 Capa oficial
@@ -131,6 +144,28 @@ Toda regla importante de KORA cae en uno de cinco niveles:
 
 Reglas fundacionales que no admiten enforcement razonable **DEBERIAN** expresarse como `DEBERIA`, salvo invariantes identitarios, de seguridad o de trazabilidad.
 
+Una regla admite enforcement razonable si cumple al menos una de estas condiciones:
+
+1. Es verificable por parseo o inspeccion estatica (`schema` o `lint`).
+2. Es verificable mediante test suite o inputs representativos (`eval`).
+3. Es verificable durante ejecucion u orquestacion (`runtime`).
+
+Si ninguna de las tres condiciones se satisface, la regla es `manual`. Una regla `manual` que no toque invariantes identitarios, de seguridad ni de trazabilidad **DEBERIA** expresarse como `DEBERIA` en lugar de `DEBE`.
+
+### 7.1 Binding enforcement-toolchain
+
+Cada nivel de enforcement **DEBE** tener al menos un mecanismo de verificacion concreto:
+
+| Nivel     | Mecanismo de verificacion                                   |
+| --------- | ----------------------------------------------------------- |
+| `schema`  | `python3 scripts/kora validate --profile strict`            |
+| `lint`    | `python3 scripts/kora health --strict` + `kora validate`    |
+| `runtime` | Evaluacion durante deployment o ejecucion del agente        |
+| `eval`    | Test suite (`python3 -m unittest discover -s tests`) + inputs representativos |
+| `manual`  | Documentado en reporte de auditoria con evidencia explicita |
+
+Los checks `schema` y `lint` de las tablas de validacion de cada spec **DEBEN** tener cobertura en el toolchain. Si un check declarado como `lint` no tiene implementacion, **DEBE** documentarse como `manual` o implementarse.
+
 ## 8. Invariantes
 
 1. La jerarquia de precedencia **NO DEBE** alterarse por una spec subordinada sin actualizar este documento.
@@ -138,6 +173,7 @@ Reglas fundacionales que no admiten enforcement razonable **DEBERIAN** expresars
 3. Toda linea `Traces to:` **DEBE** apuntar a la Formal Layer oficial.
 4. Ninguna extension **PUEDE** relajar reglas base.
 5. Una fibra adjunta de Skill extendido **NO PUEDE** introducir identidad, kind ni precedencia paralelos al entrypoint que la gobierna.
+6. Los directorios raiz del monorepo **DEBEN** usar casing canonico en mayusculas: `AGENTS/`, `KNOWLEDGE/`, `OPERATIONS/`. El toolchain **DEBE** usar constantes (`AGENTS_ROOT`, `KNOWLEDGE_ROOT`) y no paths hardcodeados.
 
 ## 9. Validacion
 
@@ -149,3 +185,51 @@ Reglas fundacionales que no admiten enforcement razonable **DEBERIAN** expresars
 | Traces oficiales        | Toda linea `Traces to:` apunta a la Formal Layer oficial      | lint        | Corregir o degradar a `Rationale:`       |
 | Extensiones acotadas    | No hay metadata ad hoc fuera de `extensions.{namespace}`      | schema      | Reubicar extension                       |
 | Enforcement declarado   | Las tablas nuevas o reescritas incluyen columna `Enforcement` | lint        | Completar tabla                          |
+| Casing canonico         | Directorios raiz usan mayusculas (`AGENTS/`, `KNOWLEDGE/`, `OPERATIONS/`) | lint | Renombrar directorio                     |
+| Migracion atomica       | No existen migraciones parciales (URNs sin mover o refs sin actualizar) | lint | Completar o revertir migracion           |
+
+## 10. Protocolo de auditoria
+
+Toda auditoria de artefactos KORA (workspaces, artefactos KORA/MD, specs) **DEBE** seguir este protocolo antes de declarar resultado.
+
+### 10.1 Severidades
+
+| Nivel    | Semantica                                                      | Efecto sobre PASS |
+| -------- | -------------------------------------------------------------- | ----------------- |
+| CRITICAL | Viola invariante de spec fundacional o rompe integridad repo   | Bloquea PASS      |
+| HIGH     | Viola regla DEBE sin ser invariante                            | Bloquea PASS salvo excepcion documentada |
+| MEDIUM   | Viola regla DEBERIA o afecta calidad sin romper invariante     | Debe documentarse |
+| LOW      | Observacion informativa o mejora opcional                      | Informativa       |
+
+### 10.2 Condiciones para PASS
+
+Un artefacto **DEBE** cumplir todas estas condiciones antes de declararse PASS:
+
+1. Todos los checks con enforcement `schema` y `lint` de la spec gobernante **DEBEN** pasar sin fallo.
+2. Los checks con enforcement `manual` **DEBEN** documentarse con evidencia explicita en el reporte.
+3. El toolchain **DEBE** ejecutarse antes de declarar PASS: `kora health --strict` y `kora validate --profile strict`.
+4. No **DEBE** existir ningun hallazgo CRITICAL ni HIGH sin resolver.
+
+### 10.3 Condiciones para PASS de koraficacion
+
+Ademas de §10.2, un artefacto koraficado **DEBE**:
+
+1. Pasar verificacion mecanica (`md-spec §6.10`).
+2. Pasar verificacion de fidelidad y calidad (`md-spec §6.11`).
+3. Documentar `FS` y `CR` en el reporte.
+4. Si `CR < 1.5`, documentar justificacion explicita en el reporte.
+5. **NO DEBE** transitar a `status: published` sin cumplir las condiciones anteriores.
+
+### 10.4 Cross-validacion
+
+La verificacion de fidelidad (`FS`) **NO DEBERIA** ser auto-reportada por el mismo agente que ejecuto la transformacion. Cuando sea posible, la verificacion **DEBERIA** ejecutarse por un agente distinto o por toolchain mecanico.
+
+Rationale: Agentes de baja capacidad tienden a inflar `FS` auto-reportado (evidencia operativa: FS declarado 100% vs mecanico 86-94%).
+
+### 10.5 Convergencia
+
+Si una auditoria requiere mas de 3 iteraciones sin alcanzar PASS, el artefacto **DEBERIA** re-evaluarse para rediseno en lugar de correccion incremental.
+
+### 10.6 Reporte de auditoria
+
+Todo reporte de auditoria **DEBERIA** registrarse en `docs/reports/` con formato `{fecha}-{scope}-{tipo}.md`.

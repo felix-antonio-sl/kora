@@ -25,7 +25,7 @@ extensions:
 # CM-AGENT-VALIDATOR
 
 ## Proposito
-Valida un workspace KORA completo contra agent-spec-md v8.4.0 §9, skill-spec-md v4.0.0 §7 y gobernanza.md v3.2.0 §9, produciendo un reporte trazable al baseline publicado y apoyandose en el stack validado del repo cuando conviene ejecutar verificacion mecanica reproducible.
+Valida un workspace KORA completo contra agent-spec-md v8.6.0 §10, skill-spec-md v4.1.0 §7 y gobernanza.md v3.3.1 §9, produciendo un reporte trazable al baseline publicado y apoyandose en el stack validado del repo cuando conviene ejecutar verificacion mecanica reproducible.
 
 ## Input/Output
 - **Input:** agent_path: string (ruta al workspace del agente)

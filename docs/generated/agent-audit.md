@@ -13,7 +13,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 145 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 146 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -23,7 +23,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 145 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 146 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -185,8 +185,8 @@ Hallazgos repetidos:
 
 - Workspaces auditados: 20
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 72
-- P1: 71 | P2: 1 | P3: 0
+- Hallazgos manuales: 73
+- P1: 72 | P2: 1 | P3: 0
 
 ### Subgrupo gn
 
@@ -221,7 +221,7 @@ Hallazgos repetidos:
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:23 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:25 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:27 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| gn/goreologo | Destino de control no declarado | P1 | AGENTS/gn/goreologo/AGENTS.md:55 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| gn/goreologo | Destino de control no declarado | P1 | AGENTS/gn/goreologo/AGENTS.md:61 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 
 Hallazgos repetidos:
 
@@ -255,11 +255,11 @@ Hallazgos repetidos:
 ### Subgrupo salud
 
 - Workspaces: 3
-- Hallazgos: 8
+- Hallazgos: 9
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
-| salud/medico-urgencias | Destino de control no declarado | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:68 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| salud/medico-urgencias | Destino de control no declarado | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:70 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
@@ -267,12 +267,13 @@ Hallazgos repetidos:
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:17 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:19 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:21 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
+| salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:23 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 
 Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 7 | salud/medico-urgencias | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 8 | salud/medico-urgencias | agent_fix |
 | Destino de control no declarado | P1 | 1 | salud/medico-urgencias | agent_fix |
 
 ### Subgrupo fxsl

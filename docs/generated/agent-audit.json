@@ -1783,8 +1783,8 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 72,
-        "p1": 71,
+        "findings_total": 73,
+        "p1": 72,
         "p2": 1,
         "p3": 0,
         "strict_validate_green": true
@@ -2214,7 +2214,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 55,
+            "line": 61,
             "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -2342,7 +2342,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
-            "line": 68,
+            "line": 70,
             "snippet": "- IF other fails -> REFINE_DRAFT"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -2359,7 +2359,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 9,
-            "snippet": "1. STATE: S-RECEPTOR -> ACT: Recibir info paciente. Parsear etiquetas XML (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output). IF imagenes_clinicas presente -> skill CM-interpretador-imagenes. Invocar skill CM-CONTEXT-MANAGER para determinar: nuevo paciente, continuacion, retorno clarificacion. Invocar skill CM-RAZONAMIENTO-CLINICO sobre datos parseados (RED_FLAGS/VINDICATE, INTERACTION_CHECK, PHYSIO_INTEGRATION, CONTEXT_MODULATION). -> Trans: IF sintesis -> S-SINTESIS. IF alta ambulatoria -> S-ALTA. IF hospitalizacion -> S-HOSPITALIZACION. IF interconsulta -> S-INTERCONSULTA. IF epicrisis -> S-EPICRISIS. IF terminar sesion -> S-END. IF tipo_output no reconocido o ausente -> S-CLARIFICADOR."
+            "snippet": "1. STATE: S-RECEPTOR -> ACT: Recibir info paciente. Parsear etiquetas XML (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output). IF imagenes_clinicas presente -> skill CM-interpretador-imagenes. IF mensaje contiene \"cargar [topico]\" o \"neo [topico]\" -> S-NEO. Invocar skill CM-CONTEXT-MANAGER para determinar: nuevo paciente, continuacion, retorno clarificacion. Invocar skill CM-RAZONAMIENTO-CLINICO sobre datos parseados (RED_FLAGS/VINDICATE, INTERACTION_CHECK, PHYSIO_INTEGRATION, CONTEXT_MODULATION). -> Trans: IF cargar/neo -> S-NEO. IF sintesis -> S-SINTESIS. IF alta ambulatoria -> S-ALTA. IF hospitalizacion -> S-HOSPITALIZACION. IF interconsulta -> S-INTERCONSULTA. IF epicrisis -> S-EPICRISIS. IF terminar sesion -> S-END. IF tipo_output no reconocido o ausente -> S-CLARIFICADOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2455,7 +2455,23 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 21,
-            "snippet": "7. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-RECEPTOR."
+            "snippet": "7. STATE: S-NEO -> ACT: Invocar skill CM-NEO-LOADER(topico). Generar paquete conocimiento comprimido: definiciones, perlas, vocabulario especialista, guias accion, scores, red flags. Conocimiento cargado persiste en contexto sesion para uso en evaluaciones posteriores del mismo turno. -> Trans: IF completado -> S-RECEPTOR. IF topico no reconocido -> S-CLARIFICADOR (solicitar especificacion topico)."
+          },
+          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
+          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
+          "closure_type": "agent_fix",
+          "enforcement_candidate": "lint"
+        },
+        {
+          "workspace": "salud/medico-urgencias",
+          "rule_id": "agent.missing_transition_precedence",
+          "rule": "Precedencia de transiciones no declarada",
+          "severity": "P1",
+          "spec_rule": "agent-spec-md §4.2.6",
+          "evidence": {
+            "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
+            "line": 23,
+            "snippet": "8. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-RECEPTOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2948,7 +2964,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "count": 64,
+          "count": 65,
           "workspaces": [
             "fxsl/arquitecto-automatizacion-organizacional",
             "fxsl/arquitecto-sistemas-informacion",
@@ -3421,7 +3437,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 55,
+                "line": 61,
                 "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3614,7 +3630,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
-                "line": 68,
+                "line": 70,
                 "snippet": "- IF other fails -> REFINE_DRAFT"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3631,7 +3647,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 9,
-                "snippet": "1. STATE: S-RECEPTOR -> ACT: Recibir info paciente. Parsear etiquetas XML (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output). IF imagenes_clinicas presente -> skill CM-interpretador-imagenes. Invocar skill CM-CONTEXT-MANAGER para determinar: nuevo paciente, continuacion, retorno clarificacion. Invocar skill CM-RAZONAMIENTO-CLINICO sobre datos parseados (RED_FLAGS/VINDICATE, INTERACTION_CHECK, PHYSIO_INTEGRATION, CONTEXT_MODULATION). -> Trans: IF sintesis -> S-SINTESIS. IF alta ambulatoria -> S-ALTA. IF hospitalizacion -> S-HOSPITALIZACION. IF interconsulta -> S-INTERCONSULTA. IF epicrisis -> S-EPICRISIS. IF terminar sesion -> S-END. IF tipo_output no reconocido o ausente -> S-CLARIFICADOR."
+                "snippet": "1. STATE: S-RECEPTOR -> ACT: Recibir info paciente. Parsear etiquetas XML (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output). IF imagenes_clinicas presente -> skill CM-interpretador-imagenes. IF mensaje contiene \"cargar [topico]\" o \"neo [topico]\" -> S-NEO. Invocar skill CM-CONTEXT-MANAGER para determinar: nuevo paciente, continuacion, retorno clarificacion. Invocar skill CM-RAZONAMIENTO-CLINICO sobre datos parseados (RED_FLAGS/VINDICATE, INTERACTION_CHECK, PHYSIO_INTEGRATION, CONTEXT_MODULATION). -> Trans: IF cargar/neo -> S-NEO. IF sintesis -> S-SINTESIS. IF alta ambulatoria -> S-ALTA. IF hospitalizacion -> S-HOSPITALIZACION. IF interconsulta -> S-INTERCONSULTA. IF epicrisis -> S-EPICRISIS. IF terminar sesion -> S-END. IF tipo_output no reconocido o ausente -> S-CLARIFICADOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3727,7 +3743,23 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 21,
-                "snippet": "7. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-RECEPTOR."
+                "snippet": "7. STATE: S-NEO -> ACT: Invocar skill CM-NEO-LOADER(topico). Generar paquete conocimiento comprimido: definiciones, perlas, vocabulario especialista, guias accion, scores, red flags. Conocimiento cargado persiste en contexto sesion para uso en evaluaciones posteriores del mismo turno. -> Trans: IF completado -> S-RECEPTOR. IF topico no reconocido -> S-CLARIFICADOR (solicitar especificacion topico)."
+              },
+              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
+              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
+              "closure_type": "agent_fix",
+              "enforcement_candidate": "lint"
+            },
+            {
+              "workspace": "salud/medico-urgencias",
+              "rule_id": "agent.missing_transition_precedence",
+              "rule": "Precedencia de transiciones no declarada",
+              "severity": "P1",
+              "spec_rule": "agent-spec-md §4.2.6",
+              "evidence": {
+                "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
+                "line": 23,
+                "snippet": "8. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-RECEPTOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3740,7 +3772,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "count": 7,
+              "count": 8,
               "workspaces": [
                 "salud/medico-urgencias"
               ],
@@ -4288,7 +4320,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 145,
+        "count": 146,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4381,7 +4413,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 145,
+        "count": 146,
         "workspaces": [
           "dev/analyst",
           "dev/coder",

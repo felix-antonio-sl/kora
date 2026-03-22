@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-09"
     source: "KORA categorical-foundations 05, KORA/Gobernanza v3.0.0, refactor del contrato de compresion y realizacion superficial"
-version: "6.1.0"
+version: "6.2.1"
 status: published
 tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad]
 lang: es
 ---
 
-# KORA/MD v6.1.0
+# KORA/MD v6.2.1
 
 ## 1. Definicion
 
@@ -74,6 +74,11 @@ Reglas:
 4. `tags` **DEBE** contener al menos 3 tags semanticos.
 5. `lang` describe el idioma del cuerpo.
 6. `source` describe la procedencia humana o documental del conocimiento.
+7. El namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `KNOWLEDGE/` donde reside el artefacto. Enforcement: lint.
+8. `status` **DEBE** seguir el lifecycle `draft -> published -> deprecated`. Las transiciones inversas son invalidas.
+9. `KNOWLEDGE/` solo acepta artefactos con `status: published` o `status: deprecated`. Artefactos con `status: draft` **DEBEN** residir en `OPERATIONS/drafts/` o `OPERATIONS/source/`. Enforcement: schema.
+10. La transicion a `status: published` **DEBE** cumplir el protocolo de auditoria (`gobernanza §10`).
+11. Cuando `source` referencia archivos del monorepo, la ruta **DEBERIA** ser resoluble desde la raiz del repo. Enforcement: manual.
 
 ### 3.2 Capa 2: Cuerpo de conocimiento
 
@@ -479,7 +484,7 @@ Proceso minimo:
    - headings recuperables
    - ausencia de labelese
    - ausencia de dumping estructural
-   - naturalidad tecnica minima
+   - naturalidad tecnica minima: la salida no incurre en ningun antipatron de `§5.4.2` (heading truncado, heading-campo, lista que reemplaza frase simple, tabla como pseudo-dump)
 6. Si `FS < 100%`, la koraficacion falla.
 7. Si `CR < 1.5`, debe reducirse redundancia restante o justificarse por alta densidad informacional.
 8. Si la calidad de superficie falla, la koraficacion falla aunque `FS=100%`.
@@ -533,3 +538,6 @@ La compresion maxima **NO DEBE** producir headings truncados, chunks primarios p
 | Headings-campo prohibidos | KB publicada no serializa campos como headings              | lint        | Reestructurar seccion                     |
 | Estructuras preservadas   | Tablas y listas no se degradan                              | manual      | Restaurar estructura                      |
 | Catalogo derivado         | El artefacto es indexable y regenerable por CLI             | lint        | Corregir manifest o indexador             |
+| Namespace-directorio      | Namespace URN coincide con subdirectorio bajo `KNOWLEDGE/`  | lint        | Migrar artefacto o corregir URN           |
+| Status por directorio     | `KNOWLEDGE/` solo contiene `published` o `deprecated`       | schema      | Mover a `OPERATIONS/drafts/` o publicar   |
+| Lifecycle status          | Transicion de status cumple protocolo auditoria             | manual      | Completar auditoria antes de publicar     |

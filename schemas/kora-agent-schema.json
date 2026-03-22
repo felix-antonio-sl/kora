@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "KORA Agent Component Schema",
-  "description": "Minimal structural validation of KORA bootstrap frontmatter aligned with agent-spec-md v8.4.0; stronger semantic invariants are enforced by scripts/kora_lib/validation.py.",
+  "description": "Minimal structural validation of KORA bootstrap frontmatter aligned with agent-spec-md v8.6.0; stronger semantic invariants are enforced by scripts/kora_lib/validation.py.",
   "type": "object",
   "required": ["_manifest"],
   "properties": {

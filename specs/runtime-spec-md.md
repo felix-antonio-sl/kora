@@ -17,7 +17,7 @@ lang: es
 
 Esta especificacion gobierna la adaptacion de un workspace KORA a un runtime concreto sin alterar la semantica del agente.
 
-`runtime-spec` no redefine al agente. Gobierna transporte, inyeccion, enforcement y equivalencia comportamental razonable entre plataformas.
+`runtime-spec` no redefine al agente. Gobierna transporte, inyeccion, enforcement y equivalencia comportamental entre plataformas. La equivalencia es funcional, no textual: mismo input **DEBE** producir misma decision de routing, mismas tools invocadas y mismas constraints aplicadas; el texto de salida **PUEDE** diferir.
 
 ### 1.1 Alcance
 
@@ -38,7 +38,7 @@ Esta especificacion gobierna:
 | Wrapper                | Artefacto derivado que adapta un workspace sin modificar sus fuentes |
 | Source Skill Bundle    | Skill extendido fuente materializado como `skills/CM-*/SKILL.md` y fibras adjuntas |
 | Activation Projection  | Proyeccion `Forget(SKILL)` que expone solo el `CM Core` en tiempo de activacion |
-| Behavioral Equivalence | Equivalencia funcional razonable del mismo agente entre plataformas  |
+| Behavioral Equivalence | Equivalencia funcional del mismo agente entre plataformas: mismo routing, mismas tools, mismas constraints |
 | Fallback Chain         | Cadena ordenada de modelos alternativos                              |
 | Budget Enforcement     | Politica server-side de costo o tokens                               |
 
@@ -169,7 +169,7 @@ Reglas:
 
 1. Toda fallback chain **DEBE** declararse en `config.json`.
 2. Fallback **PUEDE** degradar calidad, pero **NO DEBE** cambiar la estructura del agente.
-3. Toda degradacion **DEBERIA** dejar observabilidad suficiente.
+3. Toda degradacion **DEBERIA** dejar observabilidad suficiente: como minimo, registro del tier usado, razon de la degradacion y budget restante.
 
 ### 8.2 Budget enforcement
 

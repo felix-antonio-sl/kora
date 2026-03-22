@@ -10,7 +10,7 @@ lang: es
 # CM-AGENT-DESIGNER
 
 ## Proposito
-Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capas de estado, interface y security. Produce blueprint arquitectonico completo, incluyendo la materializacion de Skills degenerados o extendidos gobernados. Referencia: agent-spec-md v8.4.0.
+Modela la arquitectura de un agente nuevo: elicita dominio, define estados, capas de estado, interface y security. Produce blueprint arquitectonico completo, incluyendo la materializacion de Skills degenerados o extendidos gobernados. Referencia: agent-spec-md v8.6.0.
 
 ## Input/Output
 - **Input:** dominio: string (descripcion del dominio del agente), namespace: string, restricciones: string[] | null

@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1436,
-    "node_count": 897,
-    "edge_count": 4296
+    "scanned_files": 1448,
+    "node_count": 902,
+    "edge_count": 4313
   },
   "node_kind_counts": {
-    "artifact": 207,
+    "artifact": 209,
     "knowledge": 246,
-    "skill": 256,
+    "skill": 258,
     "spec": 7,
-    "tool": 140,
+    "tool": 141,
     "workspace": 41
   },
   "edge_kind_counts": {
     "AllowsKB": 444,
-    "AllowsTool": 217,
-    "ContainsArtifact": 206,
-    "ContainsSkill": 256,
-    "DeclaresTool": 218,
-    "InvokesSkill": 246,
+    "AllowsTool": 218,
+    "ContainsArtifact": 208,
+    "ContainsSkill": 258,
+    "DeclaresTool": 219,
+    "InvokesSkill": 248,
     "RoutesToAgent": 59,
-    "TracesTo": 47,
-    "XRef": 2603
+    "TracesTo": 48,
+    "XRef": 2611
   },
   "nodes": [
     {
@@ -313,6 +313,15 @@
       "namespace": "dev"
     },
     {
+      "id": "urn:dev:agent-bootstrap:steipete-identity:1.5.1",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:dev:agent-bootstrap:steipete-identity:1.5.1",
+      "title": "IDENTITY.md",
+      "path": "AGENTS/dev/steipete/IDENTITY.md",
+      "namespace": "dev"
+    },
+    {
       "id": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "kind": "artifact",
       "category": "Agents",
@@ -448,10 +457,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/SOUL.md",
       "namespace": "fxsl"
@@ -466,10 +475,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
       "title": "USER.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/USER.md",
       "namespace": "fxsl"
@@ -1015,46 +1024,46 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/goreologo/AGENTS.md",
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "title": "config.json",
       "path": "AGENTS/gn/goreologo/config.json",
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-soul:3.1.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-soul:3.1.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/goreologo/SOUL.md",
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "title": "TOOLS.md",
       "path": "AGENTS/gn/goreologo/TOOLS.md",
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-user:3.0.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-user:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-user:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-user:3.2.0",
       "title": "USER.md",
       "path": "AGENTS/gn/goreologo/USER.md",
       "namespace": "gn"
@@ -1884,6 +1893,15 @@
       "namespace": "salud"
     },
     {
+      "id": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "title": "Historias de Usuario — Medico Urgencia + Asistente Inteligente",
+      "path": "AGENTS/salud/medico-urgencias/USER-STORIES.md",
+      "namespace": "salud"
+    },
+    {
       "id": "urn:agengai:kb:00-fundamentos-previos",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -2410,7 +2428,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "title": "OPCloud Tutorial",
+      "title": "OPCloud Tutorial Videos",
       "path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
       "namespace": "fxsl"
     },
@@ -4638,73 +4656,73 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
       "title": "CM-ARTIFACT-GENERATOR.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-ARTIFACT-GENERATOR.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
       "title": "CM-AUDIT-ENGINE.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-AUDIT-ENGINE.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
       "title": "CM-BEHAVIOR-ENGINE.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-BEHAVIOR-ENGINE.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
       "title": "CM-DAL-ENGINE.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-DAL-ENGINE.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
       "title": "CM-INTEGRATION-ENGINE.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-INTEGRATION-ENGINE.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
       "title": "CM-MIGRATION-ENGINE.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-MIGRATION-ENGINE.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
       "title": "CM-STRUCTURE-ENGINE.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-STRUCTURE-ENGINE.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0",
+      "id": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0",
+      "urn": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "title": "CM-TENSION-EXPLORER.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-TENSION-EXPLORER.md",
       "namespace": "fxsl"
@@ -6249,6 +6267,15 @@
       "namespace": "salud"
     },
     {
+      "id": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
+      "title": "CM-NEO-LOADER.md",
+      "path": "AGENTS/salud/medico-urgencias/skills/CM-NEO-LOADER.md",
+      "namespace": "salud"
+    },
+    {
       "id": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -6273,6 +6300,15 @@
       "urn": "urn:salud:skill:salubrista-epi-vigilance:1.0.0",
       "title": "CM-EPI-VIGILANCE",
       "path": "AGENTS/salud/salubrista/skills/CM-EPI-VIGILANCE.md",
+      "namespace": "salud"
+    },
+    {
+      "id": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "title": "CM-CLARIFIER",
+      "path": "AGENTS/salud/salubrista-hah/skills/CM-CLARIFIER.md",
       "namespace": "salud"
     },
     {
@@ -6406,7 +6442,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:agent-spec-md",
-      "title": "KORA/Agent-Spec v8.4.0",
+      "title": "KORA/Agent-Spec v8.6.0",
       "path": "specs/agent-spec-md.md",
       "namespace": "kora"
     },
@@ -6415,7 +6451,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:gobernanza",
-      "title": "KORA/Gobernanza v3.2.0",
+      "title": "KORA/Gobernanza v3.3.1",
       "path": "specs/gobernanza.md",
       "namespace": "kora"
     },
@@ -6424,7 +6460,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:md-spec",
-      "title": "KORA/MD v6.1.0",
+      "title": "KORA/MD v6.2.1",
       "path": "specs/md-spec.md",
       "namespace": "kora"
     },
@@ -6442,7 +6478,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:skill-spec-md",
-      "title": "KORA/Skill-Spec v4.0.0",
+      "title": "KORA/Skill-Spec v4.1.0",
       "path": "specs/skill-spec-md.md",
       "namespace": "kora"
     },
@@ -6873,6 +6909,11 @@
       "id": "tool:lint_typecheck",
       "kind": "tool",
       "name": "lint_typecheck"
+    },
+    {
+      "id": "tool:load_neo_protocol",
+      "kind": "tool",
+      "name": "load_neo_protocol"
     },
     {
       "id": "tool:metrics_collect",
@@ -11380,6 +11421,12 @@
     {
       "kind": "AllowsTool",
       "source": "workspace:salud/medico-urgencias",
+      "target": "tool:load_neo_protocol",
+      "source_path": "AGENTS/salud/medico-urgencias/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:salud/medico-urgencias",
       "target": "tool:parse_clinical_input",
       "source_path": "AGENTS/salud/medico-urgencias/config.json"
     },
@@ -11582,6 +11629,11 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
+      "target": "urn:dev:agent-bootstrap:steipete-identity:1.5.1"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:dev/steipete",
       "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0"
     },
     {
@@ -11657,7 +11709,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11667,7 +11719,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11972,27 +12024,27 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-config:3.0.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-config:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.1.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-user:3.0.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-user:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12401,6 +12453,11 @@
     },
     {
       "kind": "ContainsArtifact",
+      "source": "workspace:salud/medico-urgencias",
+      "target": "urn:salud:medico-urgencias:user-stories:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
       "source": "workspace:salud/salubrista",
       "target": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0"
     },
@@ -12752,42 +12809,42 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0"
+      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -13647,6 +13704,11 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:salud/medico-urgencias",
+      "target": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:salud/medico-urgencias",
       "target": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0"
     },
     {
@@ -13688,6 +13750,11 @@
       "kind": "ContainsSkill",
       "source": "workspace:salud/salubrista",
       "target": "urn:salud:skill:salubrista-report-builder:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:salud/salubrista-hah",
+      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -14998,6 +15065,12 @@
     {
       "kind": "DeclaresTool",
       "source": "workspace:salud/medico-urgencias",
+      "target": "tool:load_neo_protocol",
+      "source_path": "AGENTS/salud/medico-urgencias/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salud/medico-urgencias",
       "target": "tool:parse_clinical_input",
       "source_path": "AGENTS/salud/medico-urgencias/TOOLS.md"
     },
@@ -15400,49 +15473,49 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
@@ -15765,37 +15838,37 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:gn:skill:goreologo-context-manager:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:gn:skill:goreologo-domain-analyzer:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:gn:skill:goreologo-intake:2.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:gn:skill:goreologo-kb-guidance:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:gn:skill:goreologo-specialist-router:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:gn:skill:goreologo-synthesizer:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
@@ -16414,6 +16487,12 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "target": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
+      "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
       "target": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
@@ -16464,6 +16543,12 @@
       "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
       "target": "urn:salud:skill:salubrista-report-builder:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -16883,14 +16968,14 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
@@ -17195,6 +17280,13 @@
       "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "specs/swarm-spec-md.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "target": "urn:kora:kb:cat-agent-coalgebra",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "XRef",
@@ -17627,6 +17719,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:dev:agent-bootstrap:steipete-identity:1.5.1",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18256,7 +18355,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18270,7 +18369,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18739,56 +18838,56 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19285,35 +19384,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.1.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-user:3.0.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-user:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21889,6 +21988,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -21938,6 +22044,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -21953,6 +22066,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:salubrista-epi-vigilance:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -23120,6 +23240,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:dev:agent-bootstrap:steipete-identity:1.5.1",
+      "target": "urn:dev:agent-bootstrap:steipete-identity:1.5.1",
+      "fragment": null,
+      "source_path": "AGENTS/dev/steipete/IDENTITY.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
       "fragment": null,
@@ -24142,8 +24269,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/SOUL.md"
     },
@@ -24457,8 +24584,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/USER.md"
     },
@@ -25367,57 +25494,57 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-ARTIFACT-GENERATOR.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-AUDIT-ENGINE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-BEHAVIOR-ENGINE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-DAL-ENGINE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-INTEGRATION-ENGINE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-MIGRATION-ENGINE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-STRUCTURE-ENGINE.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.0.0",
+      "source": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
+      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-TENSION-EXPLORER.md"
     },
@@ -28244,1100 +28371,1100 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:bpmn-actos-administrativos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:bpmn-cies-sitia",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:bpmn-geoespacial-ide",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:comunicaciones-oc",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:convenios-estados-fases",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:cuentas-publicas-2021-2024",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:dictamenes-cgr-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ecosistema-instituciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:erd-nuble-2024-2030",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:estrategia-gestion",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:estructura-estado-chile",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:flujos-aprobacion-documentos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:gestion-ipr",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:gestion-prpto",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:gestion-rendiciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:gore-ideal",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:guia-circular-33-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:guia-comunicaciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:guia-fril-2025-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:guia-frpd-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:guia-idi-sni-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:guia-programas-directos-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:indicadores-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:intro-gores-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:lean6-gestion-core",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:loc-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-compras-contrataciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-contabilidad",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-flota-servicios-generales",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-gestion-personas",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-induccion-gore-nuble-2026",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-inventarios-activo-fijo",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-operacional-dgi",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:manual-tesoreria",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:marco-legal-gores",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:mecanismos-matriz-decision",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:meyer-estructura-organizacional",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:modelos-actos-juridicos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:modernizacion-estado-waissbluth",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:nuble-250",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:organigrama",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:plan-potenciamiento-dgi",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-agua-saneamiento",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-cultura-deporte-turismo",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-educacion",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-energia-comunicaciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-equipamiento-social",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-genericos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-salud",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-seguridad-justicia",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-transporte",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-vialidad",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ris-vivienda-urbanismo",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:selector-ipr",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-actos-admin",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-convenios",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-dgi",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-ecosistema",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-ipr-lifecycle",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-legal",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-master",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-mecanismos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-operaciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-organica",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-presupuesto",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-relaciones-dominio",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-rendiciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-tde",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:ssot-territorio",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:transferencia-ppr",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-config:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-config:3.2.0",
       "target": "urn:gn:kb:vision-desarrollo-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-soul:3.1.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.1.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:bpmn-actos-administrativos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:bpmn-cies-sitia",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:bpmn-geoespacial-ide",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:comunicaciones-oc",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:convenios-estados-fases",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:cuentas-publicas-2021-2024",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:dictamenes-cgr-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ecosistema-instituciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:erd-nuble-2024-2030",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:estrategia-gestion",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:estructura-estado-chile",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:flujos-aprobacion-documentos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:gestion-ipr",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:gestion-prpto",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:gestion-rendiciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:gore-ideal",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:guia-circular-33-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:guia-comunicaciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:guia-fril-2025-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:guia-frpd-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:guia-idi-sni-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:guia-programas-directos-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:indicadores-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:intro-gores-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:lean6-gestion-core",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:loc-gore",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-compras-contrataciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-contabilidad",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-flota-servicios-generales",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-gestion-personas",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-induccion-gore-nuble-2026",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-inventarios-activo-fijo",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-operacional-dgi",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:manual-tesoreria",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:marco-legal-gores",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:mecanismos-matriz-decision",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:meyer-estructura-organizacional",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:modelos-actos-juridicos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:modernizacion-estado-waissbluth",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:nuble-250",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:organigrama",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:plan-potenciamiento-dgi",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-agua-saneamiento",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-cultura-deporte-turismo",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-educacion",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-energia-comunicaciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-equipamiento-social",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-genericos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-salud",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-seguridad-justicia",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-transporte",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-vialidad",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ris-vivienda-urbanismo",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:selector-ipr",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-actos-admin",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-convenios",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-dgi",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-ecosistema",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-ipr-lifecycle",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-legal",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-master",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-mecanismos",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-operaciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-organica",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-presupuesto",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-relaciones-dominio",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-rendiciones",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-tde",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:ssot-territorio",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:transferencia-ppr",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-tools:3.2.0",
       "target": "urn:gn:kb:vision-desarrollo-nuble",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-user:3.0.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-user:3.0.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-user:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-user:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/USER.md"
     },
@@ -34873,6 +35000,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "target": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/salud/medico-urgencias/USER-STORIES.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0",
       "target": "urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0",
       "fragment": null,
@@ -35027,6 +35161,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
+      "target": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/salud/medico-urgencias/skills/CM-NEO-LOADER.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0",
       "target": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0",
       "fragment": null,
@@ -35045,6 +35186,13 @@
       "target": "urn:salud:skill:salubrista-epi-vigilance:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/salud/salubrista/skills/CM-EPI-VIGILANCE.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/salud/salubrista-hah/skills/CM-CLARIFIER.md"
     },
     {
       "kind": "XRef",

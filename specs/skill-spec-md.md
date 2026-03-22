@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 02, 04, 06, 07, KORA/Agent-Spec v8.4.0, restoration of governed extended skills"
-version: "4.0.0"
+version: "4.1.0"
 status: published
 tags: [spec, skill, cm, degenerate, lazy-load]
 lang: es
 ---
 
-# KORA/Skill-Spec v4.0.0
+# KORA/Skill-Spec v4.1.0
 
 ## 1. Definicion
 
@@ -108,6 +108,8 @@ Patrones prohibidos en un Skill degenerado (definicion operativa de "control con
 | Composicion inter-componente operativa   | Wiring o routing efectivo a otros agentes o skills desde dentro del CM          | Regla 3         |
 | Logica de seguridad                      | Permisos, sandbox, filtrado de tools                                            | Regla 3         |
 | Relajacion de reglas duras               | Condicionar o reinterpretar umbrales o restricciones del bootstrap              | §6 invariante 6 |
+| Outputs que codifican destinos FSM       | `destino: S-REVIEW`, `siguiente_estado: S-ESCALATE` como parte del output      | Regla 3         |
+| Referencias nominales a reglas duras     | `if KB_FIRST`, `aplicar Modality_fit` — referenciar reglas del bootstrap por nombre literal | Regla 3 |
 
 La URN identitaria `skill` y el kind `_manifest.type = lazy_load_endofunctor` son ortogonales: la primera gobierna identidad ejecutable; la segunda gobierna la forma estructural del entrypoint del Skill, degenerado o extendido.
 
@@ -151,6 +153,7 @@ Reglas:
 4. El validator base **DEBE** juzgar conformidad sobre `skills/CM-*.md` y sobre `skills/CM-*/SKILL.md` cuando existan.
 5. Todo Skill extendido **DEBE** preservar el `CM Core` de su activacion via `Forget`.
 6. Un Skill **NO DEBE** relajar, condicionar ni reinterpretar reglas duras declaradas en `AGENTS.md` o en las specs superiores. Si un Skill necesita flexibilidad que contradice una regla dura, la regla dura **DEBE** modificarse primero en su fuente.
+7. Un Skill cuyo output es un artefacto KORA (workspace, Skill o KORA/MD) **DEBE** producir salida que satisfaga la spec gobernante del tipo de artefacto generado. En particular, artefactos KORA/MD generados **DEBEN** pasar verificacion mecanica (`md-spec §6.10`). Enforcement: eval.
 
 Traces to: formal/02 §2.3 (Unit eta) ; formal/02 §2.4 (Counit epsilon) ; formal/02 §4.3 (Promotion preserves CMCore) ; formal/04 §2.4 (Filtered Discovery) ; formal/04 §5 (Progressive Disclosure)
 
@@ -168,3 +171,5 @@ Traces to: formal/02 §2.3 (Unit eta) ; formal/02 §2.4 (Counit epsilon) ; forma
 | Monad compatibility | `requires` del Skill son compatibles con `config.json`         | runtime     | Ajustar bundle o envelope       |
 | Progressive disclosure | Discover/Activate/Execute preservan lazy-load y `CM Core`   | runtime     | Corregir adapter o activacion   |
 | No-relajacion    | Ningun CM redefine, relaja o condiciona reglas duras de AGENTS.md | manual      | Mover regla al bootstrap o spec |
+| Coupling prohibido | Outputs no codifican destinos FSM ni referencian reglas duras por nombre | lint   | Desacoplar output del routing FSM |
+| Meta-validacion  | CMs generadores producen artefactos conformes a spec gobernante          | eval        | Corregir CM o pipeline de generacion |

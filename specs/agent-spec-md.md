@@ -5,13 +5,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07"
-version: "8.4.0"
+version: "8.6.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
 ---
 
-# KORA/Agent-Spec v8.4.0
+# KORA/Agent-Spec v8.6.0
 
 ## 1. Definicion
 
@@ -62,6 +62,8 @@ Los cuatro `.md` bootstrap usan identidad URN `agent-bootstrap`. `config.json` *
 - `bootstrap_tools` para `TOOLS.md`
 - `bootstrap_config` para `config.json`
 
+Todos los componentes bootstrap de un workspace **DEBERIAN** compartir la misma version `major.minor`. Discrepancias de `patch` son tolerables. Enforcement: lint (WARN).
+
 ## 4. Segregacion
 
 ### 4.1 Gramatica canonica de `AGENTS.md`
@@ -75,6 +77,22 @@ Todo `AGENTS.md` **DEBE** incluir, en este orden logico, las siguientes seccione
 5. `## 5. Wiring`
 
 Se permiten secciones adicionales solo si no sustituyen ni mezclan esa columna vertebral.
+
+La seccion `## 4. Contexto Multi-turno` **DEBE** contener como minimo:
+
+1. Mecanismo de deteccion de desvio de dominio (puede delegar a un Skill `CM-CONTEXT-MANAGER` o declarar reglas inline).
+2. Accion ante desvio detectado: transicion a `S-DISPATCHER`, rechazo con motivo, o reclasificacion.
+3. Criterio de retencion: que invariantes o restricciones del turno previo se preservan en el turno siguiente.
+
+La seccion `## 3. Co-induccion` **DEBE** contener como minimo:
+
+1. Checklist pre-output con al menos estos tres checks obligatorios:
+   - `SCOPE_COMPLIANCE` — la salida permanece dentro del dominio declarado en Reglas Duras.
+   - `STATE_AWARENESS` — la salida es coherente con el estado FSM activo.
+   - `INTERFACE_DISCIPLINE` — solo usa tools y KBs declaradas en el workspace.
+2. Protocolo de correccion: para cada check, que accion tomar si falla (reabrir analisis, restringir output, rechazar, etc.).
+
+Checks adicionales recomendados (no obligatorios, extensibles por agente): `CONSISTENCY`, `TRAZABILIDAD`, `FACTUAL_ACCURACY`, `EXECUTION_FIDELITY`.
 
 ### 4.2 Sintaxis canonica de la FSM
 
@@ -93,6 +111,7 @@ Reglas:
 5. `ACT` **PUEDE** invocar Skills, pero **NO DEBE** mezclar tono, security ni wiring oculto.
 6. Cuando multiples condiciones de transicion son evaluables simultaneamente, el estado **DEBE** declarar precedencia explicita (orden numerico, prioridad, o exclusion mutua). La ambiguedad implicita es invalida.
 7. La FSM **DEBE** referir Skills por su identificador simbolico `CM-*`; la materializacion degenerada o extendida del Skill se resuelve fuera de `AGENTS.md`.
+8. El contenido de `ACT` **DEBE** ser una descripcion breve de la accion o invocacion de CM. **NO DEBE** reproducir el procedimiento interno del CM invocado ni contener prosa de dominio que pertenezca al Skill.
 
 Correcto:
 
@@ -118,7 +137,7 @@ Rationale: Sin precedencia explicita, si `error_critico` y `requiere_revision` c
 
 1. La FSM **DEBE** tener `S-DISPATCHER` como punto de entrada y `S-END` como cierre canonico.
 2. Toda rama declarada **DEBE** ser alcanzable desde `S-DISPATCHER`.
-3. Para un mismo estado, las ramas **NO DEBEN** introducir ambiguedad no declarada; el determinismo es el default.
+3. Para un mismo estado, las ramas **NO DEBEN** introducir ambiguedad no declarada; el determinismo es el default. Operativamente, esto se satisface cuando toda transicion con condiciones simultaneas declara precedencia explicita conforme a `§4.2` regla 6.
 4. El agente **NO DEBE** terminar sin un regimen de verificacion terminal declarado en `## 3. Co-induccion`.
 5. `AGENTS.md` **DEBE** expresar control puro: estados, acciones, transiciones, checks terminales y wiring declarado.
 
@@ -127,7 +146,7 @@ Traces to: formal/01 §3.2 (Determinism in M) ; formal/01 §3.3 (Co-induction at
 ### 4.4 Segregacion de componentes
 
 1. `AGENTS.md` **DEBE** contener FSM, reglas duras, co-induccion, contexto multi-turno y wiring.
-2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma.
+2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma. Las secciones canonicas son `## Identidad Dialectica`, `## Paradigma Cognitivo` y `## Tono`. Una seccion opcional `## Voz` es valida si el agente encarna una persona. Secciones que prescriben acciones (`## Saludo`, `## Estilo`, `## Ejemplos`, `## Comportamiento`) son behavior y **DEBEN** vivir en `AGENTS.md`.
 3. `USER.md` **DEBE** contener solo contexto del operador.
 4. `TOOLS.md` **DEBE** contener solo interfaz semantica: nombre, firma, parametros, cuando usar, cuando NO usar, notas semanticas y descripcion funcional. **NO DEBE** contener politica operativa (confirmaciones, aprobaciones, restricciones de uso) ni comportamiento condicional runtime; esas reglas viven en `config.json`.
 5. `config.json` **DEBE** contener solo constraints, runtime capabilities y politica operativa precompilada.
@@ -142,6 +161,8 @@ Traces to: formal/01 §2.2 (Fiber Independence)
 `config.json.tools.allow` **DEBE** ser exactamente el conjunto de nombres declarados en `TOOLS.md`.
 
 `config.json.runtime_capabilities` declara permisos crudos del runtime y **NO DEBE** contaminar la interfaz semantica.
+
+Las routing maps de `kb_route` en `TOOLS.md` **DEBEN** usar URNs KORA, no filesystem paths. Enforcement: lint.
 
 ## 6. Security y runtime envelope
 
@@ -163,6 +184,7 @@ Reglas:
 1. `sub_agents.max_concurrent` **PUEDE** omitirse; si existe, **DEBE** ser `>= 1`.
 2. `config.json` es inmutable desde el LLM.
 3. Discovery de Skills, degenerados o extendidos, **DEBE** filtrarse por security.
+4. Toda URN en `allowed_kb` **DEBE** resolverse contra el catalogo vigente. URNs que no resuelvan son invalidas. Enforcement: lint.
 
 Traces to: formal/01 §1.3 (M-Immutability) ; formal/04 §2.4 (Filtered Discovery)
 
@@ -177,6 +199,8 @@ conforme a `skill-spec-md`.
 
 El bootstrap del agente **NO DEBE** contener CM inline.
 
+Todo archivo en `skills/` **DEBE** estar referenciado en la FSM de `AGENTS.md`. Un Skill presente en disco pero no invocado por ningun estado es un huerfano y **DEBE** eliminarse o conectarse. Enforcement: lint.
+
 Los directorios adjuntos de un Skill extendido permanecen dentro de la fibra `skills/` y **NO** constituyen un sexto componente del workspace.
 
 ## 8. Wiring
@@ -188,17 +212,34 @@ Reglas:
 1. Toda composicion inter-agente **DEBE** declararse en `AGENTS.md`; el wiring implicito es invalido.
 2. El sub-agente **PUEDE** heredar behavior e interface solo en la medida declarada por el wiring.
 3. `SOUL.md` y `USER.md` **DEBEN** disiparse en sub-agentes salvo que una spec superior declare explicitamente otra cosa.
-4. El sistema compuesto **DEBE** ser razonable desde agentes + rutas declaradas, no desde side effects ocultos.
+4. El sistema compuesto **DEBE** ser razonable desde agentes + rutas declaradas, no desde side effects ocultos. Operativamente: un observador con acceso solo a los `AGENTS.md` y wiring declarados **DEBE** poder predecir que agente recibe cada clase de input y que outputs produce.
 5. En composiciones multi-agente (swarms), el wiring del swarm se materializa en el `AGENTS.md` del orquestador. `swarm-spec-md` gobierna la coordinacion; esta spec gobierna la topologia de cada agente participante.
 
 Traces to: formal/01 §2.3 (Dissipation) ; formal/01 §6.2 (Sub-Agent Adjunction) ; formal/01 §6.3 (Compositionality of Wiring)
 
-## 9. Validacion
+## 9. Lifecycle
+
+Todo agente KORA transita por un lifecycle con tres estados:
+
+| Estado       | Semantica                                                          |
+| ------------ | ------------------------------------------------------------------ |
+| `active`     | Workspace operativo, auditado y disponible para invocacion         |
+| `deprecated` | En desuso planificado; consumidores deben migrar                   |
+| `retired`    | Workspace eliminado o archivado; refs **DEBEN** limpiarse          |
+
+Reglas:
+
+1. Un agente nuevo **DEBE** pasar auditoria conforme a `gobernanza §10` antes de declararse `active`.
+2. La deprecacion **DEBE** notificarse a todos los agentes que lo declaren en su wiring.
+3. El retiro **DEBE** ejecutar: eliminacion del workspace, limpieza de refs en consumidores, ejecucion de `kora index`.
+4. Un agente **DEBE** re-auditarse tras: major bump de la spec gobernante, cambio en su FSM, o cambio en `tools.allow`.
+
+## 10. Validacion
 
 | Check                     | Criterio                                                                            | Enforcement | Accion si falla                          |
 | ------------------------- | ----------------------------------------------------------------------------------- | ----------- | ---------------------------------------- |
 | Gramatica de behavior     | `AGENTS.md` contiene FSM, Reglas Duras, Co-induccion, Contexto Multi-turno y Wiring | lint        | Normalizar bootstrap                     |
-| FSM canonica              | Estados `S-*`, transiciones explicitas, `S-DISPATCHER` y `S-END` presentes          | lint        | Reescribir FSM                           |
+| FSM canonica              | Estados `S-*`, transiciones explicitas, `S-DISPATCHER` y `S-END` presentes, toda rama alcanzable | lint | Reescribir FSM                           |
 | Topologia workspace       | Existen los 5 componentes base                                                      | lint        | Crear faltantes                          |
 | Segregacion               | Ningun componente invade el rol de otro                                             | manual      | Reescribir componente                    |
 | Behavior puro             | La FSM no mezcla fenomenologia ni security                                          | lint        | Extraer contenido al componente correcto |
@@ -210,3 +251,12 @@ Traces to: formal/01 §2.3 (Dissipation) ; formal/01 §6.2 (Sub-Agent Adjunction
 | Skill no relaja bootstrap | Ningun CM redefine, relaja o condiciona reglas duras de `AGENTS.md`                 | manual      | Mover regla al bootstrap o spec          |
 | Bundle no relaja bootstrap | Ningun `SKILL.md` ni bundle extendido relaja reglas duras, interfaz o envelope     | manual      | Corregir bundle o mover regla            |
 | Routing resoluble         | Toda ruta inter-agente existe                                                       | lint        | Corregir o crear destino                 |
+| allowed_kb resoluble      | Toda URN en `allowed_kb` resuelve contra catalogo                                   | lint        | Corregir URN o eliminar entrada          |
+| Contexto multi-turno      | Seccion §4 declara deteccion desvio, accion y retencion                             | manual      | Completar seccion                        |
+| Lifecycle coherente       | Agente active tiene auditoria PASS; deprecated tiene notificacion a consumidores    | manual      | Ejecutar auditoria o notificar           |
+| Skills sin huerfanos      | Todo archivo en `skills/` esta referenciado en la FSM                                | lint        | Eliminar o conectar skill                |
+| Version workspace         | Componentes bootstrap comparten `major.minor`                                        | lint (WARN) | Alinear versiones                        |
+| kb_route con URNs         | Routing maps usan URNs, no filesystem paths                                          | lint        | Reemplazar paths por URNs                |
+| Co-induccion minima       | Checklist contiene SCOPE_COMPLIANCE, STATE_AWARENESS, INTERFACE_DISCIPLINE + protocolo correccion | manual | Completar checklist                      |
+| SOUL.md canonico          | Solo contiene identidad, paradigma, tono (y opcionalmente voz); sin behavior         | manual      | Mover secciones a AGENTS.md              |
+| ACT breve                 | ACTs no reproducen procedimiento interno del CM ni prosa de dominio                  | manual      | Reducir ACT a descripcion breve          |
