@@ -5,13 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-09"
     source: "KORA categorical-foundations 05, KORA/Gobernanza v3.0.0, refactor del contrato de compresion y realizacion superficial"
-version: "6.2.1"
+version: "6.3.0"
 status: published
 tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad]
 lang: es
+extensions: {}
 ---
 
-# KORA/MD v6.2.1
+# KORA/MD v6.3.0
 
 ## 1. Definicion
 
@@ -493,7 +494,7 @@ Proceso minimo:
 
 Todo artefacto nuevo o modificado **DEBE** quedar indexable por `kora index`.
 
-## 7. Invariantes de KORA/MD
+## 7. Invariantes
 
 ### 7.1 Preservacion de idioma
 
@@ -541,3 +542,21 @@ La compresion maxima **NO DEBE** producir headings truncados, chunks primarios p
 | Namespace-directorio      | Namespace URN coincide con subdirectorio bajo `KNOWLEDGE/`  | lint        | Migrar artefacto o corregir URN           |
 | Status por directorio     | `KNOWLEDGE/` solo contiene `published` o `deprecated`       | schema      | Mover a `OPERATIONS/drafts/` o publicar   |
 | Lifecycle status          | Transicion de status cumple protocolo auditoria             | manual      | Completar auditoria antes de publicar     |
+
+## 10. Migracion
+
+Esta seccion se establece a partir de v6.3.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v6
+
+- URN conceptual tripartito, version fuera del URN (§4.1).
+- Koraficacion como functor fiel, comprimido e idempotente (§6.2).
+- Pipeline `inbox/ -> source/ -> drafts/ -> KNOWLEDGE/` (§6.1).
+- Fidelidad absoluta `FS=100%` como criterio de cierre (§7.3).
+- Compresion `CR>1.5` o justificacion explicita (§5.5).
+- Telegrafizacion con reglas T1-T7 y realizacion superficial (§5.4).
+- Familias documentales con invariantes propios (§5.6).
+- Verificacion mecanica y de fidelidad obligatorias (§6.10, §6.11).
+- Lifecycle `draft -> published -> deprecated` con auditoria para transitar (§3.1).
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

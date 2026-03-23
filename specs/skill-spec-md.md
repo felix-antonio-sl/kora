@@ -4,14 +4,15 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "KORA categorical-foundations 02, 04, 06, 07, KORA/Agent-Spec v8.4.0, restoration of governed extended skills"
-version: "4.1.0"
+    source: "KORA categorical-foundations 02, 04, 06, 07, KORA/Agent-Spec v8.7.0, restoration of governed extended skills"
+version: "4.2.0"
 status: published
 tags: [spec, skill, cm, degenerate, lazy-load]
 lang: es
+extensions: {}
 ---
 
-# KORA/Skill-Spec v4.1.0
+# KORA/Skill-Spec v4.2.0
 
 ## 1. Definicion
 
@@ -173,3 +174,17 @@ Traces to: formal/02 §2.3 (Unit eta) ; formal/02 §2.4 (Counit epsilon) ; forma
 | No-relajacion    | Ningun CM redefine, relaja o condiciona reglas duras de AGENTS.md | manual      | Mover regla al bootstrap o spec |
 | Coupling prohibido | Outputs no codifican destinos FSM ni referencian reglas duras por nombre | lint   | Desacoplar output del routing FSM |
 | Meta-validacion  | CMs generadores producen artefactos conformes a spec gobernante          | eval        | Corregir CM o pipeline de generacion |
+
+## 8. Migracion
+
+Esta seccion se establece a partir de v4.2.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v4
+
+- Dos materializaciones: degenerada (`CM-*.md`) y extendida (`CM-*/SKILL.md`).
+- CM Core obligatorio: `Proposito`, `Input/Output`, `Procedimiento`, `Signature Output`.
+- Algebra `Free/Forget/Promote` preserva CM Core.
+- Patrones prohibidos: FSM, control conversacional, security, wiring, relajacion de reglas duras.
+- Progressive disclosure: Discover/Activate/Execute.
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

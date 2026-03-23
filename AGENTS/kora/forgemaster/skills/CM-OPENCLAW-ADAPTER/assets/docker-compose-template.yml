@@ -1,0 +1,84 @@
+# Template: docker-compose.yml para agente KORA en OpenClaw
+# Fuente: urn:ops:kb:deploy-agente-kora-en-openclaw §3.4b
+# Parametrizar valores entre {llaves} antes de usar
+#
+# Caso A: agente sin sidecar (puramente conversacional)
+# Caso B: agente con sidecar (servicio externo con estado)
+# Descomentar seccion sidecar solo para Caso B
+
+services:
+  gateway:
+    image: openclaw-local:latest
+    container_name: kora-{nombre}
+    restart: unless-stopped
+    init: true                            # CRITICO: PID 1 signal handling
+    env_file: .env
+    environment:
+      HOME: /home/node
+      TERM: xterm-256color
+    ports:
+      - "127.0.0.1:{puerto_base}:{puerto_base}"
+    volumes:
+      - agent-data:/home/node/.openclaw
+      - ../workspaces/{gateway}/agents/{agent}:/home/node/.openclaw/workspace
+      - ../knowledge:/home/node/knowledge:ro
+      # Caso B: descomentar si el agente desarrolla codigo
+      # - /home/felix/projects/{proyecto}:/home/node/projects/{proyecto}
+    networks:
+      - kora-federation
+    # Caso B: descomentar si tiene sidecar
+    # depends_on:
+    #   sidecar:
+    #     condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 2G                      # Minimo 2G para skills discovery
+          cpus: "2.0"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:{puerto_base}/openclaw/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ─── CASO B: Descomentar si requires_sidecar=true ───
+  # sidecar:
+  #   image: kora-{servicio}:latest
+  #   container_name: kora-{servicio}
+  #   restart: unless-stopped
+  #   volumes:
+  #     - sidecar-data:/app/data
+  #   networks:
+  #     - kora-federation
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         memory: 128M
+  #         cpus: "0.5"
+  #   healthcheck:
+  #     test: ["CMD", "python3", "-c", "from urllib.request import urlopen; urlopen('http://localhost:8100/health')"]
+  #     interval: 15s
+  #     timeout: 5s
+  #     retries: 3
+  #     start_period: 5s
+  #   logging:
+  #     driver: json-file
+  #     options:
+  #       max-size: "5m"
+  #       max-file: "3"
+
+networks:
+  kora-federation:
+    driver: bridge
+    name: kora-federation
+
+volumes:
+  agent-data:
+  # Caso B: descomentar
+  # sidecar-data:

@@ -5,13 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 03, 04, 07, repair of orchestration contract"
-version: "2.2.0"
+version: "2.3.0"
 status: published
 tags: [spec, swarm, orchestration, golden-path, circuit-breaker, backpressure]
 lang: es
+extensions: {}
 ---
 
-# KORA/Swarm-Spec v2.2.0
+# KORA/Swarm-Spec v2.3.0
 
 ## 1. Definicion
 
@@ -197,3 +198,17 @@ Reglas:
 | Eventos tipados         | Cada evento tiene clase y path                      | lint        | Tipar evento          |
 | Security inter-agente   | Inputs se filtran y estructuran                     | runtime     | Endurecer gateway     |
 | Dissipation             | `SOUL.md` / `USER.md` no se heredan indebidamente   | runtime     | Corregir bootstrap    |
+
+## 12. Migracion
+
+Esta seccion se establece a partir de v2.3.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v2
+
+- Un orquestador unico por swarm con wiring declarado.
+- Golden paths completos: trigger, secuencia, gates, abort, exito.
+- Circuit breakers materializados: Retry, Fallback, Escalate, Abort.
+- Backpressure con politica verificable: condicion, accion, recuperacion.
+- Security inter-agente: outputs como datos estructurados, no instrucciones.
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

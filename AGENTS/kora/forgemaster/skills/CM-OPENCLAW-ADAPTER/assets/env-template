@@ -1,0 +1,13 @@
+# Template: .env para agente KORA en OpenClaw
+# Fuente: urn:ops:kb:deploy-agente-kora-en-openclaw §3.4d
+# chmod 600 despues de rellenar
+
+TELEGRAM_BOT_TOKEN={token_de_botfather}
+OPENCLAW_AUTH_TOKEN={openssl_rand_hex_32}
+NODE_ENV=production
+
+# Caso B: descomentar si el sidecar necesita variables
+# SERVICE_API=http://kora-{servicio}:8100/api
+
+# API key directa (alternativa a OAuth setup-token):
+# ANTHROPIC_API_KEY=sk-ant-...
