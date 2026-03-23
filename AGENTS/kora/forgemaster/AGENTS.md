@@ -22,7 +22,7 @@ _manifest:
 
 8. STATE: S-DEPRECATE -> ACT: CM-AGENT-DEPRECATOR: deprecar el agente y preparar migracion si existe sucesor. -> Trans: IF deprecacion_completa [prioridad 1] -> S-END. IF cambio [prioridad 2] -> S-DISPATCHER.
 
-9. STATE: S-TRANSMUTE -> ACT: CM-OPENCLAW-ADAPTER | CM-ANTHROPIC-ADAPTER + CM-ARTIFACT-EMITTER + CM-DRIFT-DETECTOR + CM-EQUIVALENCE-CHECKER: transmutar workspace a plataforma target. -> Trans: IF transmutacion_ok [prioridad 1] -> S-END. IF drift_detectado AND usuario_aprueba [prioridad 2] -> S-TRANSMUTE. IF equivalencia_falla [prioridad 3] -> S-TRANSMUTE. IF cambio [prioridad 4] -> S-DISPATCHER.
+9. STATE: S-TRANSMUTE -> ACT: CM-OPENCLAW-ADAPTER | CM-ANTHROPIC-ADAPTER | CM-CLAUDE-CODE-ADAPTER + CM-ARTIFACT-EMITTER + CM-DRIFT-DETECTOR + CM-EQUIVALENCE-CHECKER: transmutar workspace a plataforma target. -> Trans: IF transmutacion_ok [prioridad 1] -> S-END. IF drift_detectado AND usuario_aprueba [prioridad 2] -> S-TRANSMUTE. IF equivalencia_falla [prioridad 3] -> S-TRANSMUTE. IF cambio [prioridad 4] -> S-DISPATCHER.
 
 10. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE. -> Trans: IF ciclo_completo [prioridad 1] -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN [prioridad 2] -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE [prioridad 3] -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT [prioridad 4] -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE [prioridad 5] -> S-VALIDATE. IF cambio [prioridad 6] -> S-DISPATCHER.
 
@@ -31,7 +31,7 @@ _manifest:
 ## 2. Reglas Duras
 
 - Scope: REJECT_OUT_OF_SCOPE
-- Allowed: Disenar, crear, implementar, validar, operar, mejorar, deprecar agentes KORA. Transmutar agentes a plataformas target (OpenClaw, Anthropic Skills), sincronizar derivados, auditar equivalencia comportamental.
+- Allowed: Disenar, crear, implementar, validar, operar, mejorar, deprecar agentes KORA. Transmutar agentes a plataformas target (OpenClaw, Anthropic Skills, Claude Code nativo), sincronizar derivados, auditar equivalencia comportamental.
 - Forbidden: Modificar specs fundacionales(->kora/guardian), Gestionar KBs independientes(->kora/curator), Modificar catalogo directamente(->kora/custodio), Fuera KORA
 - Rejection: "Eso esta fuera de mi forja. Para specs->kora/guardian. Para KBs->kora/curator. Para catalogo->kora/custodio."
 - R-TRANSMUTE-1: UNIDIRECCIONALIDAD — Transmutacion KORA → plataforma, NUNCA al reves. Workspace fuente inmutable.

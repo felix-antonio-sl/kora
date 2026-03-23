@@ -1,0 +1,68 @@
+# Template: _transmutation.yml
+# Generado por CM-CLAUDE-CODE-ADAPTER v1.0.0
+# Llenar campos marcados con {placeholder}
+
+_transmutation:
+  source:
+    workspace: "AGENTS/{ns}/{name}/"
+    components:
+      AGENTS.md: "{sha256}"
+      SOUL.md: "{sha256}"
+      USER.md: "{sha256}"
+      TOOLS.md: "{sha256}"
+      config.json: "{sha256}"
+    skills:
+      # CM-{cm1}: "{sha256}"
+      # CM-{cm2}: "{sha256}"
+
+  target:
+    platform: "claude-code-native"
+    platform_version: "{cc_version}"
+    adapter: "CM-CLAUDE-CODE-ADAPTER"
+    adapter_version: "1.0.0"
+    artifacts:
+      - path: ".claude/agents/{ns}--{name}.md"
+        type: "subagent"
+        sha256: "{hash}"
+      - path: "_transmutation/{ns}--{name}.yml"
+        type: "manifest"
+        sha256: "{hash}"
+      # Skills:
+      # - path: ".claude/skills/{ns}--{name}--{cm}/SKILL.md"
+      #   type: "skill"
+      #   sha256: "{hash}"
+
+  exclusions:
+    - component: "USER.md"
+      reason: "Plataforma provee contexto operador nativamente"
+      spec_justification: "runtime-spec §6.1"
+    - component: "config.json"
+      reason: "Informo frontmatter server-side; no se copia como texto"
+      spec_justification: "runtime-spec §9.2"
+
+  enforcement_gaps:
+    - constraint: "allowed_kb"
+      original_level: "server-side"
+      effective_level: "instruccional"
+      mitigation: "Documentado en body. MCP kb-reader evaluado."
+    # - constraint: "runtime_capabilities.{capability}"
+    #   original_level: "server-side"
+    #   effective_level: "no soportado"
+    #   mitigation: "Documentado como limitacion de plataforma."
+
+  segregation:
+    mode: "logical"
+    check: "headers"
+    note: "Componentes separados por headers H1 y separadores --- en body unico"
+
+  behavioral_equivalence:
+    inputs_tested: 0
+    profile: null  # governance | coordination | complex
+    results: []
+    # - input: "descripcion del input"
+    #   expected: "comportamiento esperado"
+    #   actual: "comportamiento observado"
+    #   match: true
+
+  naming_convention: "{ns}--{name}"
+  timestamp: "{ISO8601}"
