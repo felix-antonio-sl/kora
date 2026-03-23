@@ -1,8 +1,8 @@
 ---
 _manifest:
-  urn: urn:kora:skill:forgemaster-openclaw-adapter:1.0.0
+  urn: urn:kora:skill:forgemaster-openclaw-adapter:1.1.0
   type: lazy_load_endofunctor
-version: 1.0.0
+version: 1.1.0
 status: published
 lang: es
 extensions:
@@ -17,80 +17,158 @@ extensions:
         - references/openclaw-platform-model.md
       assets:
         - assets/openclaw-workspace-template.md
+        - assets/openclaw-json5-template.json5
+        - assets/docker-compose-template.yml
+        - assets/env-template
+        - assets/init-volume.sh
 ---
 
 # CM-OPENCLAW-ADAPTER
 
 ## Proposito
-Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando workspace adaptado + config snippet + skills adaptados.
+
+Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando workspace adaptado + config completo + skills adaptados + deployment hints. Produce artefactos listos para CM-ARTIFACT-EMITTER y templates de deploy para el operador humano.
 
 ## Input/Output
-- **Input:** source: WorkspaceAnalysis (output de CM-WORKSPACE-ANALYZER)
-- **Output:** TransmutedArtifact[] (artefactos listos para CM-ARTIFACT-EMITTER)
+
+- **Input:** source: WorkspaceAnalysis (output de CM-WORKSPACE-ANALYZER) o workspace KORA completo via workspace_read
+- **Output:** TransmutedArtifact[] (artefactos workspace + config + manifest con deployment hints)
 
 ## Procedimiento
-1. Consultar `references/openclaw-platform-model.md` para reglas de mapeo vigentes.
-2. MAPEAR AGENTS.md:
+
+### Fase 1: Preparacion
+
+1. Consultar `references/openclaw-platform-model.md` para reglas de mapeo vigentes de la plataforma OpenClaw.
+
+2. Leer workspace fuente completo: `workspace_read(agent_path)` → obtener AGENTS.md, SOUL.md, USER.md, TOOLS.md, config.json, skills/.
+
+### Fase 2: Validar token budget
+
+3. **Medir chars de cada componente fuente** (sin frontmatter):
+   - Por cada archivo .md: contar chars del contenido operacional (post-strip).
+   - WARNING si cualquier archivo > 17K chars (margen de seguridad, limite OpenClaw: 20K).
+   - FAIL si cualquier archivo > 20K chars (truncamiento silencioso garantizado).
+   - WARNING si total bootstrap > 100K chars (limite OpenClaw: 150K).
+   - Si excede: recomendar compresion — remover notacion formal, compactar tablas, mover detalles a skills lazy-load.
+
+### Fase 3: Detectar requisitos de deployment
+
+4. **Detectar necesidad de sidecar** (principios-transmutacion P10):
+   - Analizar TOOLS.md: buscar bindings a servicios HTTP externos, APIs con estado, bases de datos.
+   - Si detecta endpoints HTTP, URLs de servicio, o referencias a DB → emitir `requires_sidecar: true` con razon.
+   - Si solo usa tools nativos de OpenClaw (filesystem, code_execution, web_search, browser) → `requires_sidecar: false`.
+
+5. **Resolver KB mounts** (principios-transmutacion P8):
+   - Leer config.json.allowed_kb.
+   - Para cada URN: resolver path via catalogo.
+   - Producir lista de mounts RO: `{urn, source_path, mount_path: "/home/node/knowledge/{ns}/{file}", mode: "ro"}`.
+   - Nota: KBs NO van en bootstrap — van como archivos montados que el agente lee on-demand.
+
+### Fase 4: Mapear componentes
+
+6. **MAPEAR AGENTS.md:**
    - Eliminar frontmatter YAML KORA.
    - Preservar FSM completa como instrucciones operativas.
    - Preservar reglas duras y co-induccion como instrucciones.
-   - Adaptar formato: OpenClaw espera Markdown plano sin `_manifest`.
-   - Limite: max 20,000 chars por archivo (constraint OpenClaw).
-3. MAPEAR SOUL.md:
+   - Formato: Markdown plano sin `_manifest`.
+   - Verificar: resultado < 17K chars (WARNING) / < 20K chars (FAIL).
+
+7. **MAPEAR SOUL.md:**
    - Eliminar frontmatter YAML KORA.
-   - Preservar identidad, paradigma, tono.
+   - Preservar identidad, paradigma, tono (secciones canonicas unicamente).
    - Extraer identidad visual → generar IDENTITY.md separado:
      ```markdown
      name: {nombre del agente}
      emoji: {emoji representativo derivado de identidad}
      theme: {tema derivado de dominio}
      ```
-4. MAPEAR USER.md:
+
+8. **MAPEAR USER.md:**
    - Eliminar frontmatter YAML KORA.
    - Preservar perfil, rutinas, preferencias.
-5. MAPEAR TOOLS.md:
+
+9. **MAPEAR TOOLS.md:**
    - Eliminar frontmatter YAML KORA.
    - Convertir a notas sobre herramientas (OpenClaw no usa TOOLS.md para control, solo como notas).
-   - Control real de tools → config-snippet.json5.
-6. MAPEAR config.json → config-snippet.json5:
-   ```json5
-   {
-     id: "{namespace}-{nombre}",
-     name: "{nombre legible}",
-     workspace: "~/.openclaw/workspace-{namespace}-{nombre}",
-     model: "anthropic/claude-sonnet-4-5",  // default, ajustable
-     identity: { name: "{nombre}", emoji: "{emoji}" },
-     sandbox: { mode: "{sandbox.mode}" },
-     tools: {
-       allow: [{tools.allow mapeados a tools OpenClaw}],
-       deny: [{tools.deny}]
-     },
-     subagents: {
-       maxSpawnDepth: {sub_agents.max_depth},
-       maxChildrenPerAgent: {sub_agents.max_concurrent}
-     }
-   }
-   ```
-7. MAPEAR Skills:
-   - Para cada CM-* KORA:
-     - Eliminar frontmatter KORA.
-     - Generar SKILL.md con frontmatter OpenClaw:
-       ```yaml
-       ---
-       name: {id-kebab-case}
-       description: {proposito del skill}
-       user-invocable: false
-       ---
-       ```
-     - Preservar CM Core (Proposito, Input/Output, Procedimiento, Signature Output).
-   - Para skills extendidos: copiar fibras adjuntas (scripts/, references/, assets/).
-8. Usar `assets/openclaw-workspace-template.md` como referencia de estructura output.
-9. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico (skill-spec §6 inv.7).
-10. Retornar lista de TransmutedArtifact[] con ruta relativa y contenido de cada artefacto.
+   - Control real de tools → config.
+
+10. **MAPEAR config.json → config-snippet.json5:**
+    ```json5
+    {
+      id: "{namespace}-{nombre}",
+      name: "{nombre legible}",
+      workspace: "/home/node/.openclaw/workspace",
+      model: { primary: "{model_routing.tier_default}" },
+      identity: { name: "{nombre}", emoji: "{emoji}", theme: "{tema}" },
+      sandbox: { mode: "{mapping de sandbox.mode}" },
+      tools: {
+        allow: [{tools.allow mapeados a tools OpenClaw}],
+        deny: [{tools.deny}]
+      },
+      subagents: {
+        maxSpawnDepth: {sub_agents.max_depth},
+        maxChildrenPerAgent: {sub_agents.max_concurrent}
+      }
+    }
+    ```
+
+11. **MAPEAR Skills:**
+    - Para cada CM-* degenerado (skills/CM-*.md):
+      - Eliminar frontmatter KORA.
+      - Generar SKILL.md con frontmatter OpenClaw:
+        ```yaml
+        ---
+        name: {id-kebab-case}
+        description: {proposito del skill}
+        user-invocable: false
+        ---
+        ```
+      - Preservar CM Core (Proposito, Input/Output, Procedimiento, Signature Output).
+    - Para cada CM-* extendido (skills/CM-*/SKILL.md):
+      - Misma adaptacion de SKILL.md.
+      - Copiar fibras adjuntas (scripts/, references/, assets/) al directorio del skill OpenClaw.
+
+### Fase 5: Generar manifest con deployment hints
+
+12. **Generar _transmutation.yml** con campos extendidos:
+    - Hashes SHA-256 de cada componente fuente.
+    - Exclusiones: config.json (informa config plataforma, no se copia).
+    - Token budget: chars medidos por archivo + total + within_limit.
+    - Deployment hints:
+      ```yaml
+      deployment_hints:
+        requires_sidecar: {boolean}
+        sidecar_reason: "{razon si true}"
+        kb_mounts:
+          - urn: "{urn}"
+            source: "{path relativo en repo KORA}"
+            mount: "/home/node/knowledge/{ns}/{file}"
+            mode: "ro"
+        estimated_bootstrap_chars: {total}
+        bootstrap_within_limit: {boolean}
+        architecture: "caso-a" | "caso-b"
+      ```
+
+### Fase 6: Emitir artefactos
+
+13. Usar `assets/openclaw-workspace-template.md` como referencia de estructura output.
+
+14. Referenciar templates de deploy en warnings del output:
+    - `assets/openclaw-json5-template.json5` → template de config completo.
+    - `assets/docker-compose-template.yml` → compose Caso A y Caso B.
+    - `assets/env-template` → variables de entorno.
+    - `assets/init-volume.sh` → script de inicializacion de volume.
+    - Nota: estos templates son para el operador humano, no se incluyen en los artefactos transmutados.
+
+15. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico.
+
+16. Retornar lista de TransmutedArtifact[] con ruta relativa y contenido de cada artefacto.
 
 ## Signature Output
+
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artifacts | TransmutedArtifact[] | Lista de artefactos: {path, content, type} |
 | mappings | MappingEntry[] | Tabla componente_kora → artefacto_openclaw |
-| warnings | string[] | Limitaciones de mapeo documentadas |
+| deployment_hints | DeploymentHints | Sidecar detection, KB mounts, token budget, architecture |
+| warnings | string[] | Limitaciones de mapeo + referencias a templates de deploy |
