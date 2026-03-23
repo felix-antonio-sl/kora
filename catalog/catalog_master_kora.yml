@@ -2187,6 +2187,10 @@ Catalog:
     title: OPM ISO/PAS 19450 — Object-Process Methodology
     file: KNOWLEDGE/fxsl/opm/opm-iso-19450.md
     status: published
+  - urn: urn:fxsl:kb:opm-opl-es
+    title: OPL-ES — Object-Process Language en Español
+    file: KNOWLEDGE/fxsl/opm/opm-opl-es.md
+    status: published
   - urn: urn:fxsl:kb:procrastination-sirois
     title: Procrastination — Sirois (2022)
     file: KNOWLEDGE/fxsl/procrastination-sirois.md
