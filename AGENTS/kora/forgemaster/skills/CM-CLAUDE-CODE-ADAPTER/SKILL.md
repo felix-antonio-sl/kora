@@ -1,15 +1,29 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:forgemaster-claude-code-adapter:1.0.0"
-  type: "lazy_load_endofunctor"
-  version: "1.0.0"
-  status: "published"
-  language: "es"
-  form: "extended"
-  allowed_tools:
-    - workspace_read
-    - artifact_write
+  urn: urn:kora:skill:forgemaster-claude-code-adapter:1.0.0
+  type: lazy_load_endofunctor
+version: 1.0.0
+status: published
+lang: es
+extensions:
+  kora:
+    skill:
+      form: extended
+      allowed_tools:
+        - workspace_read
+        - artifact_write
+      requires: []
+      references:
+        - references/cc-subagent-format.md
+        - references/cc-skill-format.md
+        - references/mapping-table.md
+      assets:
+        - assets/subagent-template.md
+        - assets/skill-template.md
+        - assets/transmutation-manifest-template.yml
 ---
+
+# CM-CLAUDE-CODE-ADAPTER
 
 ## Proposito
 

@@ -857,7 +857,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/ops/clawstack/AGENTS.md",
-            "line": 77,
+            "line": 79,
             "snippet": "- IF other fails -> REFINE_DRAFT"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",

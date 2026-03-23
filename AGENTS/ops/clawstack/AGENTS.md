@@ -74,6 +74,8 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification)
 - IF FACTUAL_ACCURACY fails -> CM-KNOWLEDGE-NAVIGATOR (consultar fuente primaria via kb_route o oc_docs_search), corregir
 - IF DEPLOY_INTEGRITY fails -> abort deploy, reportar hash mismatch
 - IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
+- IF SCOPE_COMPLIANCE fails -> rechazar output, emitir motivo de scope violation.
+- IF STATE_AWARENESS fails -> verificar estado FSM activo, reajustar salida al estado correcto.
 - IF other fails -> REFINE_DRAFT
 
 ## 4. Contexto Multi-turno

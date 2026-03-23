@@ -56,7 +56,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida agentes (incluye transmutacion)
 10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en TOOLS.md y config.json.allowed_kb
-11. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.6.0
+11. AGENT_QUALITY — Agente generado/modificado cumple agent-spec-md v8.7.0
 12. SEGREGATION_CHECK — Componentes ortogonales no mezclados
 13. TRANSMUTE_FIDELITY — Si en S-TRANSMUTE: frontmatter stripped, equivalencia funcional preservada, manifest generado
 

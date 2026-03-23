@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 1466,
     "node_count": 908,
-    "edge_count": 4366
+    "edge_count": 4367
   },
   "node_kind_counts": {
     "artifact": 209,
@@ -19,7 +19,7 @@
     "ContainsSkill": 261,
     "DeclaresTool": 219,
     "InvokesSkill": 251,
-    "RoutesToAgent": 59,
+    "RoutesToAgent": 60,
     "TracesTo": 48,
     "XRef": 2653
   },
@@ -5560,7 +5560,7 @@
       "kind": "skill",
       "category": "Skills",
       "urn": "urn:kora:skill:forgemaster-claude-code-adapter:1.0.0",
-      "title": "SKILL.md",
+      "title": "CM-CLAUDE-CODE-ADAPTER",
       "path": "AGENTS/kora/forgemaster/skills/CM-CLAUDE-CODE-ADAPTER/SKILL.md",
       "namespace": "kora"
     },
@@ -16899,6 +16899,12 @@
       "kind": "RoutesToAgent",
       "source": "workspace:kora/forgemaster",
       "target": "workspace:kora/guardian",
+      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
+    },
+    {
+      "kind": "RoutesToAgent",
+      "source": "workspace:kora/forgemaster",
+      "target": "workspace:ops/clawstack",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {

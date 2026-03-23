@@ -2,6 +2,9 @@
 _manifest:
   urn: urn:kora:skill:forgemaster-equivalence-checker:1.0.0
   type: lazy_load_endofunctor
+version: 1.0.0
+status: published
+lang: es
 ---
 
 # CM-EQUIVALENCE-CHECKER

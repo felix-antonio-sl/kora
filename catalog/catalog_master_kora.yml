@@ -1463,7 +1463,7 @@ Catalog:
     file: AGENTS/kora/forgemaster/skills/CM-ARTIFACT-EMITTER.md
     status: published
   - urn: urn:kora:skill:forgemaster-claude-code-adapter:1.0.0
-    title: SKILL.md
+    title: CM-CLAUDE-CODE-ADAPTER
     file: AGENTS/kora/forgemaster/skills/CM-CLAUDE-CODE-ADAPTER/SKILL.md
     status: published
   - urn: urn:kora:skill:forgemaster-component-builder:2.0.0

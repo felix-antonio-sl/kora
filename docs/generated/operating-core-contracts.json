@@ -107,12 +107,14 @@
         "handoff_targets": [
           "kora/curator",
           "kora/custodio",
-          "kora/guardian"
+          "kora/guardian",
+          "ops/clawstack"
         ],
         "route_targets": [
           "kora/curator",
           "kora/custodio",
-          "kora/guardian"
+          "kora/guardian",
+          "ops/clawstack"
         ],
         "sub_agents": [],
         "evidence_lines": [
@@ -818,7 +820,7 @@
     "workspaces": 13,
     "states": 98,
     "tools": 83,
-    "handoffs": 42
+    "handoffs": 43
   },
   "meta_kora": {
     "summary": {
@@ -936,12 +938,14 @@
         "handoff_targets": [
           "kora/curator",
           "kora/custodio",
-          "kora/guardian"
+          "kora/guardian",
+          "ops/clawstack"
         ],
         "route_targets": [
           "kora/curator",
           "kora/custodio",
-          "kora/guardian"
+          "kora/guardian",
+          "ops/clawstack"
         ],
         "sub_agents": [],
         "evidence_lines": [
