@@ -5,13 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07, repair of cross-platform adapter contract"
-version: "3.4.0"
+version: "3.5.0"
 status: published
 tags: [spec, runtime, deployment, adapters, wrappers, fallback]
 lang: es
+extensions: {}
 ---
 
-# KORA/Runtime-Spec v3.4.0
+# KORA/Runtime-Spec v3.5.0
 
 ## 1. Definicion
 
@@ -107,19 +108,12 @@ Reglas:
 
 ### 5.3 Discover, Activate, Execute
 
-Para Skills extendidos, el runtime **DEBE** preservar tres fases:
+El ciclo Discover/Activate/Execute para Skills extendidos se gobierna por `skill-spec-md §5`. El runtime **DEBE** preservar las tres fases y sus reglas.
 
-1. **Discover** — proyectar solo metadata minima del bundle
-2. **Activate** — inyectar `Forget(SKILL)` como `CM Core`
-3. **Execute** — montar `scripts/`, `references/` y `assets/` solo despues de la activacion
+Reglas adicionales de runtime:
 
-Reglas:
-
-1. Discover **NO DEBE** montar el bundle completo.
-2. Activate **DEBE** preservar el `CM Core` observacional del Skill.
-3. Execute **PUEDE** montar el bundle completo, pero **NO DEBE** mutar `AGENTS.md`, `TOOLS.md` ni `config.json`.
-4. Todo adapter **DEBE** documentar si opera en modo `Activate` (solo `CM Core`) o en modo `Execute` (bundle completo).
-5. La ausencia de bundle completo **NO DEBE** alterar el comportamiento del `CM Core` ya activado.
+1. Todo adapter **DEBE** documentar si opera en modo `Activate` (solo `CM Core`) o en modo `Execute` (bundle completo).
+2. La ausencia de bundle completo **NO DEBE** alterar el comportamiento del `CM Core` ya activado.
 
 ## 6. Platform equivalence
 
@@ -214,7 +208,7 @@ El workspace runtime opera como extension gobernada del workspace canonico (repo
 
 1. **PUEDE** agregar: reglas, checks, skills, memory, conocimiento.
 2. **NO PUEDE** relajar: eliminar reglas, debilitar restricciones, saltarse checks existentes.
-3. **NO PUEDE** mutar identidad: la FSM, `SOUL.md` y `TOOLS.md` son contrato identitario del agente — modificarlos requiere backport al repo y re-auditoria.
+3. **NO PUEDE** mutar identidad: `AGENTS.md` (FSM, reglas duras, co-induccion, contexto multi-turno y wiring), `SOUL.md` y `TOOLS.md` son contrato identitario del agente — modificarlos requiere backport al repo y re-auditoria.
 
 Tipos de drift y su gestion:
 
@@ -285,3 +279,21 @@ El repo KORA es fuente de verdad normativa. El workspace runtime es fuente de ve
 | config.json excluido     | `config.json` no esta presente en workspace target         | lint        | Excluir del pipeline     |
 | Drift pre-redeploy       | Re-deploy ejecuta diff antes de sobreescribir              | manual      | Ejecutar diff y evaluar  |
 | Transmutacion verificada | Pipeline §9 completado antes de deploy                     | manual      | Completar pipeline       |
+
+## 12. Migracion
+
+Esta seccion se establece a partir de v3.5.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v3
+
+- Core agnostico: 5 componentes preservados, security server-side, lazy-load (§3).
+- Adapters por plataforma: Claude, GPT, Gemini, OpenClaw (§4).
+- Wrappers derivados fuera del workspace fuente (§5).
+- D/A/E gobernado por `skill-spec-md §5` con reglas adicionales de runtime (§5.3).
+- Equivalencia funcional cross-platform, no bisimulacion textual (§6).
+- Model routing y fallback en `config.json`, no en `AGENTS.md` (§7, §8).
+- Transmutacion con pipeline canonico: strip, excluir config, generar, copiar, verificar (§9).
+- Runtime drift gobernado: agregar si, relajar no, mutar identidad no (§9.5).
+- Contrato identitario: `AGENTS.md`, `SOUL.md`, `TOOLS.md` completos (§9.5).
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

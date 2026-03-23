@@ -5,13 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "RFC 2119, KORA categorical-foundations 05, KORA/Gobernanza v3.0.0, repair of crystallization contract"
-version: "5.1.0"
+version: "5.2.0"
 status: published
 tags: [spec, prescriptivo, formato, crystallization, enforcement, traces]
 lang: es
+extensions: {}
 ---
 
-# KORA/Spec-MD v5.1.0
+# KORA/Spec-MD v5.2.0
 
 ## 1. Definicion
 
@@ -186,7 +187,7 @@ Reglas:
 2. `Rationale:` **NO DEBE** introducir obligaciones nuevas.
 3. Un ejemplo **NO DEBE** reemplazar la regla; la ancla.
 
-## 7. Invariantes de KORA/Spec-MD
+## 7. Invariantes
 
 ### 7.1 Consistencia interna
 
@@ -234,7 +235,7 @@ Rationale: La auditabilidad requiere distinguir schema, lint, runtime y manual.
 
 ## 10. Template (esqueleto minimo)
 
-Todo Spec-MD nuevo **DEBERIA** arrancar desde este esqueleto:
+Todo Spec-MD nuevo **DEBERIA** arrancar desde este esqueleto. Las sub-reglas marcadas con **DEBE** dentro del esqueleto son obligatorias independientemente del caracter recomendatorio del template:
 
 1. `## 1. Definicion`
 2. `## 2. Definiciones`
@@ -243,3 +244,19 @@ Todo Spec-MD nuevo **DEBERIA** arrancar desde este esqueleto:
 5. `## N+2. Validacion`
 6. `## N+3. Ejemplos` (opcional)
 7. `## N+4. Migracion` (**DEBE** incluirse en major bumps; opcional en minor/patch)
+
+## 11. Migracion
+
+Esta seccion se establece a partir de v5.2.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v5
+
+- Cristalizacion como proceso formal: decisiones + practicas + restricciones -> regla explicita (§1.2).
+- Trazabilidad oficial: `Traces to:` solo a Formal Layer; `Rationale:` para motivos pragmaticos (§1.3).
+- Keywords RFC 2119 obligatorias para toda obligacion (§4).
+- Gramatica estructural: profundidad maxima `####`, numeracion secuencial de `##` (§5).
+- Patron regla + ejemplo + traza para reglas complejas (§6).
+- Sobre base cerrado con `extensions.{namespace}` para metadata adicional (§3.1).
+- Template con seccion Migracion obligatoria en major bumps (§10).
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

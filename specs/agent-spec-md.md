@@ -5,13 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07"
-version: "8.6.0"
+version: "8.7.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
+extensions: {}
 ---
 
-# KORA/Agent-Spec v8.6.0
+# KORA/Agent-Spec v8.7.0
 
 ## 1. Definicion
 
@@ -260,3 +261,17 @@ Reglas:
 | Co-induccion minima       | Checklist contiene SCOPE_COMPLIANCE, STATE_AWARENESS, INTERFACE_DISCIPLINE + protocolo correccion | manual | Completar checklist                      |
 | SOUL.md canonico          | Solo contiene identidad, paradigma, tono (y opcionalmente voz); sin behavior         | manual      | Mover secciones a AGENTS.md              |
 | ACT breve                 | ACTs no reproducen procedimiento interno del CM ni prosa de dominio                  | manual      | Reducir ACT a descripcion breve          |
+
+## 11. Migracion
+
+Esta seccion se establece a partir de v8.7.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v8
+
+- Workspace de 5 componentes con segregacion estricta.
+- FSM canonica con `S-DISPATCHER`/`S-END`, transiciones explicitas y precedencia obligatoria.
+- Co-induccion minima con `SCOPE_COMPLIANCE`, `STATE_AWARENESS`, `INTERFACE_DISCIPLINE`.
+- Skills resuelven en `skills/`, sin huerfanos.
+- Lifecycle `active -> deprecated -> retired`.
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

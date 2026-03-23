@@ -5,13 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 00-07, formal restoration of governed extended skills, RFC 2119"
-version: "3.3.1"
+version: "3.4.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
+extensions: {}
 ---
 
-# KORA/Gobernanza v3.3.1
+# KORA/Gobernanza v3.4.0
 
 ## 1. Definicion
 
@@ -38,6 +39,8 @@ Traces to: formal/05 §1.2 (Bounded Lattice)
 | Formal Layer           | Capa de justificacion categorial oficial de KORA                                                                |
 | Extension de namespace | Artefacto KORA/Spec-MD que agrega restricciones sin relajar reglas base                                         |
 | Enforcement            | Nivel de verificabilidad de una regla: schema, lint, runtime, eval o manual                                     |
+| Lifecycle de artefacto | Ciclo `draft -> published -> deprecated` que gobierna artefactos conceptuales (`md-spec §3.1`)                   |
+| Lifecycle de agente    | Ciclo `active -> deprecated -> retired` que gobierna workspaces ejecutables (`agent-spec §9`)                    |
 
 ## 3. Precedencia
 
@@ -201,7 +204,11 @@ Toda auditoria de artefactos KORA (workspaces, artefactos KORA/MD, specs) **DEBE
 | MEDIUM   | Viola regla DEBERIA o afecta calidad sin romper invariante     | Debe documentarse |
 | LOW      | Observacion informativa o mejora opcional                      | Informativa       |
 
-### 10.2 Condiciones para PASS
+### 10.2 Relacion con checks de specs subordinadas
+
+Los checks de la tabla `## Validacion` de cada spec subordinada (agent-spec-md, skill-spec-md, runtime-spec-md, swarm-spec-md, md-spec, spec-md) son los checks concretos que **DEBEN** evaluarse durante la auditoria del artefacto gobernado por esa spec.
+
+### 10.3 Condiciones para PASS
 
 Un artefacto **DEBE** cumplir todas estas condiciones antes de declararse PASS:
 
@@ -210,9 +217,9 @@ Un artefacto **DEBE** cumplir todas estas condiciones antes de declararse PASS:
 3. El toolchain **DEBE** ejecutarse antes de declarar PASS: `kora health --strict` y `kora validate --profile strict`.
 4. No **DEBE** existir ningun hallazgo CRITICAL ni HIGH sin resolver.
 
-### 10.3 Condiciones para PASS de koraficacion
+### 10.4 Condiciones para PASS de koraficacion
 
-Ademas de §10.2, un artefacto koraficado **DEBE**:
+Ademas de §10.3, un artefacto koraficado **DEBE**:
 
 1. Pasar verificacion mecanica (`md-spec §6.10`).
 2. Pasar verificacion de fidelidad y calidad (`md-spec §6.11`).
@@ -220,16 +227,32 @@ Ademas de §10.2, un artefacto koraficado **DEBE**:
 4. Si `CR < 1.5`, documentar justificacion explicita en el reporte.
 5. **NO DEBE** transitar a `status: published` sin cumplir las condiciones anteriores.
 
-### 10.4 Cross-validacion
+### 10.5 Cross-validacion
 
 La verificacion de fidelidad (`FS`) **NO DEBERIA** ser auto-reportada por el mismo agente que ejecuto la transformacion. Cuando sea posible, la verificacion **DEBERIA** ejecutarse por un agente distinto o por toolchain mecanico.
 
 Rationale: Agentes de baja capacidad tienden a inflar `FS` auto-reportado (evidencia operativa: FS declarado 100% vs mecanico 86-94%).
 
-### 10.5 Convergencia
+### 10.6 Convergencia
 
 Si una auditoria requiere mas de 3 iteraciones sin alcanzar PASS, el artefacto **DEBERIA** re-evaluarse para rediseno en lugar de correccion incremental.
 
-### 10.6 Reporte de auditoria
+### 10.7 Reporte de auditoria
 
 Todo reporte de auditoria **DEBERIA** registrarse en `docs/reports/` con formato `{fecha}-{scope}-{tipo}.md`.
+
+## 11. Migracion
+
+Esta seccion se establece a partir de v3.4.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### Contrato vigente v3
+
+- Jerarquia de precedencia de 5 capas (§3).
+- Dos regimenes de identidad: conceptual y ejecutable (§4).
+- Dos lifecycles ortogonales: artefacto (`draft -> published -> deprecated`) y agente (`active -> deprecated -> retired`).
+- Formal Layer unica en `KNOWLEDGE/kora/categorical-foundations/` (§5).
+- Extensiones solo aditivas, nunca relajantes (§6).
+- Cinco niveles de enforcement con binding a toolchain (§7).
+- Protocolo de auditoria con severidades CRITICAL/HIGH/MEDIUM/LOW (§10).
+
+Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.
