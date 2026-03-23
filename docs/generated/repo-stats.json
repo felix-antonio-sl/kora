@@ -1,24 +1,26 @@
 {
   "agent_workspaces": 26,
+  "deprecated_workspaces": 14,
   "incomplete_workspaces": 0,
   "agent_bootstrap_artifacts": 131,
   "catalog_counts": {
     "Agents": 131,
     "Skills": 173,
-    "Knowledge": 275,
+    "Knowledge": 361,
     "Documents": 0,
     "Other": 1
   },
-  "total_catalog_entries": 580,
+  "total_catalog_entries": 666,
   "by_namespace": {
     "gn": 144,
     "fxsl": 120,
     "kora": 79,
+    "sii": 73,
     "salud": 62,
     "tde": 39,
     "dev": 38,
+    "legal": 35,
     "agengai": 29,
-    "legal": 22,
     "korvo": 19,
     "ops": 18,
     "pro": 10

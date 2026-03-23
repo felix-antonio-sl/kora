@@ -96,6 +96,7 @@ FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "cq_catalog": 90,
     "inventory": 200,
     "omega": 120,
+    "faq": 120,
 }
 FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
     "generic": 320,
@@ -105,6 +106,7 @@ FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
     "cq_catalog": 260,
     "inventory": 500,
     "omega": 320,
+    "faq": 800,
 }
 FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
     "generic": 10,
@@ -114,6 +116,7 @@ FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
     "cq_catalog": 10,
     "inventory": 16,
     "omega": 10,
+    "faq": 50,
 }
 
 
@@ -289,9 +292,10 @@ def resolve_document_family(frontmatter):
         kora_ext = extensions.get("kora")
         if isinstance(kora_ext, dict) and kora_ext.get("family"):
             return str(kora_ext["family"])
-        gn_ext = extensions.get("gn")
-        if isinstance(gn_ext, dict) and gn_ext.get("document_family"):
-            return str(gn_ext["document_family"])
+        # Buscar family en cualquier extension de namespace
+        for ns_key, ns_val in extensions.items():
+            if isinstance(ns_val, dict) and ns_val.get("family"):
+                return str(ns_val["family"])
     return "generic"
 
 

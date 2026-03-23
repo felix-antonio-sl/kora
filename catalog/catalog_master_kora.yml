@@ -1980,6 +1980,10 @@ Catalog:
     title: Acoso Laboral y Sexual en el Ámbito Médico
     file: KNOWLEDGE/legal/acoso_laboral.md
     status: published
+  - urn: urn:legal:kb:certificados-tramites-post-constitucion
+    title: Certificados y Tramites Post-Constitucion en el RES
+    file: KNOWLEDGE/legal/empresa-en-un-dia/certificados-tramites-post-constitucion.md
+    status: published
   - urn: urn:legal:kb:confianza-legitima
     title: Confianza Legítima en Contratas Médicas
     file: KNOWLEDGE/legal/confianza_legitima.md
@@ -1996,9 +2000,17 @@ Catalog:
     title: 'Derechos Especiales: Liberación de Guardia e Incentivo al Retiro'
     file: KNOWLEDGE/legal/derechos_especiales.md
     status: published
+  - urn: urn:legal:kb:eirl-empresa-individual
+    title: Empresa Individual de Responsabilidad Limitada (E.I.R.L.)
+    file: KNOWLEDGE/legal/empresa-en-un-dia/eirl-empresa-individual.md
+    status: published
   - urn: urn:legal:kb:feriados-permisos
     title: Feriados, Permisos y Comisiones
     file: KNOWLEDGE/legal/feriados_permisos.md
+    status: published
+  - urn: urn:legal:kb:firma-electronica-empresas
+    title: Firma Electronica Avanzada en el Registro de Empresas y Sociedades
+    file: KNOWLEDGE/legal/empresa-en-un-dia/firma-electronica-empresas.md
     status: published
   - urn: urn:legal:kb:formacion-especialistas
     title: Formación de Especialistas, PAO y Comisiones de Estudio
@@ -2033,6 +2045,10 @@ Catalog:
       de Salud'
     file: KNOWLEDGE/legal/ley_19664.md
     status: published
+  - urn: urn:legal:kb:ley-20659-regimen-simplificado
+    title: Ley 20.659 — Regimen Simplificado Constitucion Sociedades
+    file: KNOWLEDGE/legal/empresa-en-un-dia/ley-20659-regimen-simplificado.md
+    status: published
   - urn: urn:legal:kb:ley-21643
     title: 'Ley 21.643: Prevención y Sanción de Acoso y Violencia en el Trabajo'
     file: KNOWLEDGE/legal/ley_21643.md
@@ -2050,9 +2066,25 @@ Catalog:
       Cámara (Boletines 15.869-19 y 16.821-19)
     file: KNOWLEDGE/legal/ley-ia-chile-texto-aprobado-camara.md
     status: published
+  - urn: urn:legal:kb:marco-legal-sociedades-chile
+    title: Marco Legal Complementario — Sociedades en Chile
+    file: KNOWLEDGE/legal/empresa-en-un-dia/marco-legal-sociedades-chile.md
+    status: published
   - urn: urn:legal:kb:maternidad
     title: Protección a la Maternidad y Paternidad
     file: KNOWLEDGE/legal/maternidad.md
+    status: published
+  - urn: urn:legal:kb:patente-comercial-res
+    title: Patente Comercial — Modulo Tu Empresa en un Dia
+    file: KNOWLEDGE/legal/empresa-en-un-dia/patente-comercial-res.md
+    status: published
+  - urn: urn:legal:kb:registro-empresas-sociedades
+    title: Registro de Empresas y Sociedades (RES) — Guia Operativa
+    file: KNOWLEDGE/legal/empresa-en-un-dia/registro-empresas-sociedades.md
+    status: published
+  - urn: urn:legal:kb:reglamento-ley-20659
+    title: Reglamento de la Ley N° 20.659 — Decreto N° 83 (2021)
+    file: KNOWLEDGE/legal/empresa-en-un-dia/reglamento-ley-20659.md
     status: published
   - urn: urn:legal:kb:remuneraciones
     title: Remuneraciones y Asignaciones — Trabajo Médico Chile
@@ -2061,6 +2093,27 @@ Catalog:
   - urn: urn:legal:kb:responsabilidad-admin
     title: Responsabilidad Administrativa
     file: KNOWLEDGE/legal/responsabilidad_admin.md
+    status: published
+  - urn: urn:legal:kb:sociedad-anonima-cerrada
+    title: Sociedad Anonima Cerrada (S.A.) y Sociedad Anonima de Garantia Reciproca
+      (S.A.G.R.)
+    file: KNOWLEDGE/legal/empresa-en-un-dia/sociedad-anonima-cerrada.md
+    status: published
+  - urn: urn:legal:kb:sociedad-colectiva-comercial
+    title: Sociedad Colectiva Comercial
+    file: KNOWLEDGE/legal/empresa-en-un-dia/sociedad-colectiva-comercial.md
+    status: published
+  - urn: urn:legal:kb:sociedad-comandita
+    title: Sociedad en Comandita Simple y Sociedad en Comandita por Acciones
+    file: KNOWLEDGE/legal/empresa-en-un-dia/sociedad-comandita.md
+    status: published
+  - urn: urn:legal:kb:sociedad-por-acciones
+    title: Sociedad por Acciones (SpA)
+    file: KNOWLEDGE/legal/empresa-en-un-dia/sociedad-por-acciones.md
+    status: published
+  - urn: urn:legal:kb:sociedad-responsabilidad-limitada
+    title: Sociedad de Responsabilidad Limitada (Ltda.)
+    file: KNOWLEDGE/legal/empresa-en-un-dia/sociedad-responsabilidad-limitada.md
     status: published
   - urn: urn:legal:kb:terminacion
     title: Terminación de la Relación Laboral y Funcionaria
@@ -2176,6 +2229,304 @@ Catalog:
   - urn: urn:salud:kb:hodom-situacion-chile-2026
     title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
     file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026.md
+    status: published
+  - urn: urn:sii:kb:faq-activos-digitales
+    title: Activos digitales — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-activos-digitales.md
+    status: published
+  - urn: urn:sii:kb:faq-actualizacion-de-informacion
+    title: Actualización de información — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion.md
+    status: published
+  - urn: urn:sii:kb:faq-actualizacion-de-informacion-p02
+    title: Actualización de información — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-actualizacion-de-informacion-p03
+    title: Actualización de información — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia
+    title: Acuerdos Anticipados de Precios de Transferencia — Preguntas Frecuentes
+      SII
+    file: KNOWLEDGE/sii/kb/faq-acuerdos-anticipados-de-precios-de-transferencia.md
+    status: published
+  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices
+    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices.md
+    status: published
+  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02
+    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII -
+      Parte 02
+    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03
+    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII -
+      Parte 03
+    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04
+    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII -
+      Parte 04
+    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p04.md
+    status: published
+  - urn: urn:sii:kb:faq-beneficios-tributarios
+    title: Beneficios Tributarios — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-beneficios-tributarios.md
+    status: published
+  - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas
+    title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas.md
+    status: published
+  - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02
+    title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03
+    title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios
+    title: Boletas Electrónicas de Ventas y Servicios — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-boletas-electronicas-de-ventas-y-servicios.md
+    status: published
+  - urn: urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos
+    title: Clave tributaria, mandatario digital y representantes electrónicos — Preguntas
+      Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-clave-tributaria-mandatario-digital-y-representantes-electronicos.md
+    status: published
+  - urn: urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos
+    title: Clave Tributaria y Representantes electrónicos — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-clave-tributaria-y-representantes-electronicos.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta
+    title: Declaración de renta — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p02
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p03
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p04
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 04
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p04.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p05
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 05
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p05.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p06
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 06
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p06.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p07
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 07
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p07.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p08
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 08
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p08.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p09
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 09
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p09.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p10
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 10
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p10.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p11
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 11
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p11.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p12
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 12
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p12.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p13
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 13
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p13.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p14
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 14
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p14.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p15
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 15
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p15.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta-p16
+    title: Declaración de renta — Preguntas Frecuentes SII - Parte 16
+    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p16.md
+    status: published
+  - urn: urn:sii:kb:faq-declaraciones-juradas
+    title: Declaraciones juradas — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas.md
+    status: published
+  - urn: urn:sii:kb:faq-declaraciones-juradas-p02
+    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-declaraciones-juradas-p03
+    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-declaraciones-juradas-p04
+    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 04
+    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p04.md
+    status: published
+  - urn: urn:sii:kb:faq-declaraciones-juradas-p05
+    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 05
+    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p05.md
+    status: published
+  - urn: urn:sii:kb:faq-factura-electronica
+    title: Factura Electrónica — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-factura-electronica.md
+    status: published
+  - urn: urn:sii:kb:faq-factura-electronica-p02
+    title: Factura Electrónica — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-factura-electronica--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-factura-electronica-p03
+    title: Factura Electrónica — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-factura-electronica--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-factura-electronica-p04
+    title: Factura Electrónica — Preguntas Frecuentes SII - Parte 04
+    file: KNOWLEDGE/sii/kb/faq-factura-electronica--p04.md
+    status: published
+  - urn: urn:sii:kb:faq-herencias
+    title: Herencias — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-herencias.md
+    status: published
+  - urn: urn:sii:kb:faq-herencias-p02
+    title: Herencias — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-herencias--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-herencias-p03
+    title: Herencias — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-herencias--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor
+    title: Impuesto a Aviones, Helicópteros, Yates y Vehículos de alto valor — Preguntas
+      Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales
+    title: Impuestos mensuales — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p02
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p03
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p04
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 04
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p04.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p05
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 05
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p05.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p06
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 06
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p06.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p07
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 07
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p07.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p08
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 08
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p08.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p09
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 09
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p09.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p10
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 10
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p10.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p11
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 11
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p11.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales-p12
+    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 12
+    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p12.md
+    status: published
+  - urn: urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones
+    title: Infracciones, Pago de giros y Condonaciones — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-infracciones-pago-de-giros-y-condonaciones.md
+    status: published
+  - urn: urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales
+    title: IVA a los Servicios Profesionales y Culturales — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-iva-a-los-servicios-profesionales-y-culturales.md
+    status: published
+  - urn: urn:sii:kb:faq-libros-contables-electronicos
+    title: Libros contables electrónicos — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-libros-contables-electronicos.md
+    status: published
+  - urn: urn:sii:kb:faq-otros-impuestos
+    title: Otros impuestos — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-otros-impuestos.md
+    status: published
+  - urn: urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes
+    title: Peticiones Administrativas y Otras Solicitudes — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-peticiones-administrativas-y-otras-solicitudes.md
+    status: published
+  - urn: urn:sii:kb:faq-preguntas-generales
+    title: Preguntas Generales — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-preguntas-generales.md
+    status: published
+  - urn: urn:sii:kb:faq-preguntas-generales-p02
+    title: Preguntas Generales — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-preguntas-generales--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-preguntas-generales-p03
+    title: Preguntas Generales — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-preguntas-generales--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades
+    title: RUT e Inicio de actividades — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades.md
+    status: published
+  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades-p02
+    title: RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 02
+    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p02.md
+    status: published
+  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades-p03
+    title: RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 03
+    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p03.md
+    status: published
+  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades-p04
+    title: RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 04
+    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p04.md
+    status: published
+  - urn: urn:sii:kb:faq-situacion-tributaria
+    title: Situación Tributaria — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-situacion-tributaria.md
+    status: published
+  - urn: urn:sii:kb:faq-tasacion-fiscal-de-vehiculos
+    title: Tasación Fiscal de Vehículos — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-tasacion-fiscal-de-vehiculos.md
+    status: published
+  - urn: urn:sii:kb:faq-termino-de-giro
+    title: Término de giro — Preguntas Frecuentes SII
+    file: KNOWLEDGE/sii/kb/faq-termino-de-giro.md
+    status: published
+  - urn: urn:sii:kb:index-documentos-derivados
+    title: Documentos Derivados SII — Índice
+    file: KNOWLEDGE/sii/kb/index-documentos-derivados.md
     status: published
   - urn: urn:tde:kb:decreto-10-documentos-expedientes-electronicos
     title: Decreto 10 — Norma Técnica de Documentos y Expedientes Electrónicos

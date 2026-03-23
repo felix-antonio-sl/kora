@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 1305,
-    "node_count": 654,
-    "edge_count": 3329
+    "scanned_files": 1391,
+    "node_count": 740,
+    "edge_count": 3575
   },
   "node_kind_counts": {
     "artifact": 133,
-    "knowledge": 249,
+    "knowledge": 335,
     "skill": 173,
     "spec": 7,
     "tool": 66,
@@ -21,7 +21,7 @@
     "InvokesSkill": 169,
     "RoutesToAgent": 17,
     "TracesTo": 48,
-    "XRef": 2169
+    "XRef": 2415
   },
   "nodes": [
     {
@@ -2676,6 +2676,15 @@
       "namespace": "legal"
     },
     {
+      "id": "urn:legal:kb:certificados-tramites-post-constitucion",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:certificados-tramites-post-constitucion",
+      "title": "Certificados y Tramites Post-Constitucion en el RES",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/certificados-tramites-post-constitucion.md",
+      "namespace": "legal"
+    },
+    {
       "id": "urn:legal:kb:confianza-legitima",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -2712,12 +2721,30 @@
       "namespace": "legal"
     },
     {
+      "id": "urn:legal:kb:eirl-empresa-individual",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:eirl-empresa-individual",
+      "title": "Empresa Individual de Responsabilidad Limitada (E.I.R.L.)",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/eirl-empresa-individual.md",
+      "namespace": "legal"
+    },
+    {
       "id": "urn:legal:kb:feriados-permisos",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:legal:kb:feriados-permisos",
       "title": "Feriados, Permisos y Comisiones",
       "path": "KNOWLEDGE/legal/feriados_permisos.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:firma-electronica-empresas",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:firma-electronica-empresas",
+      "title": "Firma Electronica Avanzada en el Registro de Empresas y Sociedades",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/firma-electronica-empresas.md",
       "namespace": "legal"
     },
     {
@@ -2793,6 +2820,15 @@
       "namespace": "legal"
     },
     {
+      "id": "urn:legal:kb:ley-20659-regimen-simplificado",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:ley-20659-regimen-simplificado",
+      "title": "Ley 20.659 — Regimen Simplificado Constitucion Sociedades",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/ley-20659-regimen-simplificado.md",
+      "namespace": "legal"
+    },
+    {
       "id": "urn:legal:kb:ley-21643",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -2829,12 +2865,48 @@
       "namespace": "legal"
     },
     {
+      "id": "urn:legal:kb:marco-legal-sociedades-chile",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:marco-legal-sociedades-chile",
+      "title": "Marco Legal Complementario — Sociedades en Chile",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/marco-legal-sociedades-chile.md",
+      "namespace": "legal"
+    },
+    {
       "id": "urn:legal:kb:maternidad",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:legal:kb:maternidad",
       "title": "Protección a la Maternidad y Paternidad",
       "path": "KNOWLEDGE/legal/maternidad.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:patente-comercial-res",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:patente-comercial-res",
+      "title": "Patente Comercial — Modulo Tu Empresa en un Dia",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/patente-comercial-res.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:registro-empresas-sociedades",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:registro-empresas-sociedades",
+      "title": "Registro de Empresas y Sociedades (RES) — Guia Operativa",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/registro-empresas-sociedades.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:reglamento-ley-20659",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:reglamento-ley-20659",
+      "title": "Reglamento de la Ley N° 20.659 — Decreto N° 83 (2021)",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/reglamento-ley-20659.md",
       "namespace": "legal"
     },
     {
@@ -2853,6 +2925,51 @@
       "urn": "urn:legal:kb:responsabilidad-admin",
       "title": "Responsabilidad Administrativa",
       "path": "KNOWLEDGE/legal/responsabilidad_admin.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:sociedad-anonima-cerrada",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:sociedad-anonima-cerrada",
+      "title": "Sociedad Anonima Cerrada (S.A.) y Sociedad Anonima de Garantia Reciproca (S.A.G.R.)",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-anonima-cerrada.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:sociedad-colectiva-comercial",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:sociedad-colectiva-comercial",
+      "title": "Sociedad Colectiva Comercial",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-colectiva-comercial.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:sociedad-comandita",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:sociedad-comandita",
+      "title": "Sociedad en Comandita Simple y Sociedad en Comandita por Acciones",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-comandita.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:sociedad-por-acciones",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:sociedad-por-acciones",
+      "title": "Sociedad por Acciones (SpA)",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-por-acciones.md",
+      "namespace": "legal"
+    },
+    {
+      "id": "urn:legal:kb:sociedad-responsabilidad-limitada",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:legal:kb:sociedad-responsabilidad-limitada",
+      "title": "Sociedad de Responsabilidad Limitada (Ltda.)",
+      "path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-responsabilidad-limitada.md",
       "namespace": "legal"
     },
     {
@@ -3106,6 +3223,663 @@
       "title": "Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026",
       "path": "KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026.md",
       "namespace": "salud"
+    },
+    {
+      "id": "urn:sii:kb:faq-activos-digitales",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-activos-digitales",
+      "title": "Activos digitales — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-activos-digitales.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "title": "Actualización de información — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-actualizacion-de-informacion-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-actualizacion-de-informacion-p02",
+      "title": "Actualización de información — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-actualizacion-de-informacion-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-actualizacion-de-informacion-p03",
+      "title": "Actualización de información — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "title": "Acuerdos Anticipados de Precios de Transferencia — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-acuerdos-anticipados-de-precios-de-transferencia.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "title": "Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02",
+      "title": "Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03",
+      "title": "Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04",
+      "title": "Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII - Parte 04",
+      "path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p04.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-beneficios-tributarios",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-beneficios-tributarios",
+      "title": "Beneficios Tributarios — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-beneficios-tributarios.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "title": "Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02",
+      "title": "Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03",
+      "title": "Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "title": "Boletas Electrónicas de Ventas y Servicios — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-boletas-electronicas-de-ventas-y-servicios.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "title": "Clave tributaria, mandatario digital y representantes electrónicos — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-clave-tributaria-mandatario-digital-y-representantes-electronicos.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "title": "Clave Tributaria y Representantes electrónicos — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-clave-tributaria-y-representantes-electronicos.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta",
+      "title": "Declaración de renta — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p02",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p03",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p04",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p04",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 04",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p04.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p05",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p05",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 05",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p05.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p06",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p06",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 06",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p06.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p07",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p07",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 07",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p07.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p08",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p08",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 08",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p08.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p09",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p09",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 09",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p09.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p10",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p10",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 10",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p10.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p11",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p11",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 11",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p11.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p12",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p12",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 12",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p12.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p13",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p13",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 13",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p13.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p14",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p14",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 14",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p14.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p15",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p15",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 15",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p15.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaracion-de-renta-p16",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaracion-de-renta-p16",
+      "title": "Declaración de renta — Preguntas Frecuentes SII - Parte 16",
+      "path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p16.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaraciones-juradas",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaraciones-juradas",
+      "title": "Declaraciones juradas — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaraciones-juradas-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaraciones-juradas-p02",
+      "title": "Declaraciones juradas — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaraciones-juradas-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaraciones-juradas-p03",
+      "title": "Declaraciones juradas — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaraciones-juradas-p04",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaraciones-juradas-p04",
+      "title": "Declaraciones juradas — Preguntas Frecuentes SII - Parte 04",
+      "path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p04.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-declaraciones-juradas-p05",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-declaraciones-juradas-p05",
+      "title": "Declaraciones juradas — Preguntas Frecuentes SII - Parte 05",
+      "path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p05.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-factura-electronica",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-factura-electronica",
+      "title": "Factura Electrónica — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-factura-electronica.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-factura-electronica-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-factura-electronica-p02",
+      "title": "Factura Electrónica — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-factura-electronica-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-factura-electronica-p03",
+      "title": "Factura Electrónica — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-factura-electronica-p04",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-factura-electronica-p04",
+      "title": "Factura Electrónica — Preguntas Frecuentes SII - Parte 04",
+      "path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p04.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-herencias",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-herencias",
+      "title": "Herencias — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-herencias.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-herencias-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-herencias-p02",
+      "title": "Herencias — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-herencias--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-herencias-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-herencias-p03",
+      "title": "Herencias — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-herencias--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "title": "Impuesto a Aviones, Helicópteros, Yates y Vehículos de alto valor — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p02",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p03",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p04",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p04",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 04",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p04.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p05",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p05",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 05",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p05.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p06",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p06",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 06",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p06.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p07",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p07",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 07",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p07.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p08",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p08",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 08",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p08.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p09",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p09",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 09",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p09.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p10",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p10",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 10",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p10.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p11",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p11",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 11",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p11.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-impuestos-mensuales-p12",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-impuestos-mensuales-p12",
+      "title": "Impuestos mensuales — Preguntas Frecuentes SII - Parte 12",
+      "path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p12.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "title": "Infracciones, Pago de giros y Condonaciones — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-infracciones-pago-de-giros-y-condonaciones.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "title": "IVA a los Servicios Profesionales y Culturales — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-iva-a-los-servicios-profesionales-y-culturales.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-libros-contables-electronicos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-libros-contables-electronicos",
+      "title": "Libros contables electrónicos — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-libros-contables-electronicos.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-otros-impuestos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-otros-impuestos",
+      "title": "Otros impuestos — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-otros-impuestos.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "title": "Peticiones Administrativas y Otras Solicitudes — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-peticiones-administrativas-y-otras-solicitudes.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-preguntas-generales",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-preguntas-generales",
+      "title": "Preguntas Generales — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-preguntas-generales.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-preguntas-generales-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-preguntas-generales-p02",
+      "title": "Preguntas Generales — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-preguntas-generales--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-preguntas-generales-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-preguntas-generales-p03",
+      "title": "Preguntas Generales — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-preguntas-generales--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "title": "RUT e Inicio de actividades — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p02",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p02",
+      "title": "RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 02",
+      "path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p02.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p03",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p03",
+      "title": "RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 03",
+      "path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p03.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p04",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p04",
+      "title": "RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 04",
+      "path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p04.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-situacion-tributaria",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-situacion-tributaria",
+      "title": "Situación Tributaria — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-situacion-tributaria.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "title": "Tasación Fiscal de Vehículos — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-tasacion-fiscal-de-vehiculos.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:faq-termino-de-giro",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:faq-termino-de-giro",
+      "title": "Término de giro — Preguntas Frecuentes SII",
+      "path": "KNOWLEDGE/sii/kb/faq-termino-de-giro.md",
+      "namespace": "sii"
+    },
+    {
+      "id": "urn:sii:kb:index-documentos-derivados",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:sii:kb:index-documentos-derivados",
+      "title": "Documentos Derivados SII — Índice",
+      "path": "KNOWLEDGE/sii/kb/index-documentos-derivados.md",
+      "namespace": "sii"
     },
     {
       "id": "urn:tde:kb:decreto-10-documentos-expedientes-electronicos",
@@ -15323,6 +16097,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:certificados-tramites-post-constitucion",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:legal:kb:confianza-legitima",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15351,7 +16132,21 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:eirl-empresa-individual",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:legal:kb:feriados-permisos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:firma-electronica-empresas",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15414,6 +16209,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:ley-20659-regimen-simplificado",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:legal:kb:ley-21643",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15442,7 +16244,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:marco-legal-sociedades-chile",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:legal:kb:maternidad",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:patente-comercial-res",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:registro-empresas-sociedades",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:reglamento-ley-20659",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15457,6 +16287,41 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:legal:kb:responsabilidad-admin",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:sociedad-anonima-cerrada",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:sociedad-colectiva-comercial",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:sociedad-comandita",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:sociedad-por-acciones",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:legal:kb:sociedad-responsabilidad-limitada",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16094,6 +16959,517 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:salubrista-report-builder:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-activos-digitales",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-beneficios-tributarios",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p04",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p05",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p06",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p07",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p08",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p09",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p10",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p11",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p12",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p13",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p14",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p15",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p16",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p04",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p05",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-factura-electronica",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-factura-electronica-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-factura-electronica-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-factura-electronica-p04",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-herencias",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-herencias-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-herencias-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p04",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p05",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p06",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p07",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p08",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p09",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p10",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p11",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p12",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-libros-contables-electronicos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-otros-impuestos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-preguntas-generales",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-preguntas-generales-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-preguntas-generales-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p02",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p03",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p04",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-situacion-tributaria",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:faq-termino-de-giro",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:sii:kb:index-documentos-derivados",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -25248,6 +26624,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:legal:kb:certificados-tramites-post-constitucion",
+      "target": "urn:legal:kb:certificados-tramites-post-constitucion",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/certificados-tramites-post-constitucion.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:legal:kb:confianza-legitima",
       "target": "urn:legal:kb:confianza-legitima",
       "fragment": null,
@@ -25276,10 +26659,24 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:legal:kb:eirl-empresa-individual",
+      "target": "urn:legal:kb:eirl-empresa-individual",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/eirl-empresa-individual.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:legal:kb:feriados-permisos",
       "target": "urn:legal:kb:feriados-permisos",
       "fragment": null,
       "source_path": "KNOWLEDGE/legal/feriados_permisos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:firma-electronica-empresas",
+      "target": "urn:legal:kb:firma-electronica-empresas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/firma-electronica-empresas.md"
     },
     {
       "kind": "XRef",
@@ -25472,6 +26869,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:legal:kb:ley-20659-regimen-simplificado",
+      "target": "urn:legal:kb:ley-20659-regimen-simplificado",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/ley-20659-regimen-simplificado.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:legal:kb:ley-21643",
       "target": "urn:legal:kb:ley-21643",
       "fragment": null,
@@ -25500,10 +26904,45 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:legal:kb:marco-legal-sociedades-chile",
+      "target": "urn:legal:kb:marco-legal-sociedades-chile",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/marco-legal-sociedades-chile.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:legal:kb:maternidad",
       "target": "urn:legal:kb:maternidad",
       "fragment": null,
       "source_path": "KNOWLEDGE/legal/maternidad.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:patente-comercial-res",
+      "target": "urn:legal:kb:patente-comercial-res",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/patente-comercial-res.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:registro-empresas-sociedades",
+      "target": "urn:legal:kb:ley-20659-regimen-simplificado",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/registro-empresas-sociedades.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:registro-empresas-sociedades",
+      "target": "urn:legal:kb:registro-empresas-sociedades",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/registro-empresas-sociedades.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:reglamento-ley-20659",
+      "target": "urn:legal:kb:reglamento-ley-20659",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/reglamento-ley-20659.md"
     },
     {
       "kind": "XRef",
@@ -25518,6 +26957,41 @@
       "target": "urn:legal:kb:responsabilidad-admin",
       "fragment": null,
       "source_path": "KNOWLEDGE/legal/responsabilidad_admin.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:sociedad-anonima-cerrada",
+      "target": "urn:legal:kb:sociedad-anonima-cerrada",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-anonima-cerrada.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:sociedad-colectiva-comercial",
+      "target": "urn:legal:kb:sociedad-colectiva-comercial",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-colectiva-comercial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:sociedad-comandita",
+      "target": "urn:legal:kb:sociedad-comandita",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-comandita.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:sociedad-por-acciones",
+      "target": "urn:legal:kb:sociedad-por-acciones",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-por-acciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:legal:kb:sociedad-responsabilidad-limitada",
+      "target": "urn:legal:kb:sociedad-responsabilidad-limitada",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/legal/empresa-en-un-dia/sociedad-responsabilidad-limitada.md"
     },
     {
       "kind": "XRef",
@@ -27205,6 +28679,1028 @@
       "target": "urn:salud:skill:salubrista-report-builder:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/salud/salubrista/skills/CM-REPORT-BUILDER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-activos-digitales",
+      "target": "urn:sii:kb:faq-activos-digitales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-activos-digitales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-activos-digitales",
+      "target": "urn:sii:kb:faq-activos-digitales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-activos-digitales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-actualizacion-de-informacion-p02",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-actualizacion-de-informacion-p02",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-actualizacion-de-informacion-p03",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-actualizacion-de-informacion-p03",
+      "target": "urn:sii:kb:faq-actualizacion-de-informacion-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "target": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-acuerdos-anticipados-de-precios-de-transferencia.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "target": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-acuerdos-anticipados-de-precios-de-transferencia.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04",
+      "target": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-beneficios-tributarios",
+      "target": "urn:sii:kb:faq-beneficios-tributarios",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-beneficios-tributarios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-beneficios-tributarios",
+      "target": "urn:sii:kb:faq-beneficios-tributarios",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-beneficios-tributarios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03",
+      "target": "urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "target": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-electronicas-de-ventas-y-servicios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "target": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-boletas-electronicas-de-ventas-y-servicios.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "target": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-clave-tributaria-mandatario-digital-y-representantes-electronicos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "target": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-clave-tributaria-mandatario-digital-y-representantes-electronicos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "target": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-clave-tributaria-y-representantes-electronicos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "target": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-clave-tributaria-y-representantes-electronicos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p02",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p02",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p03",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p03",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p04",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p04",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p04",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p05",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p05.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p05",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p05",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p05.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p06",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p06.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p06",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p06",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p06.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p07",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p07.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p07",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p07",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p07.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p08",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p08.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p08",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p08",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p08.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p09",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p09.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p09",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p09",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p09.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p10",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p10.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p10",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p10",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p10.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p11",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p11.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p11",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p11",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p11.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p12",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p12.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p12",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p12",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p12.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p13",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p13.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p13",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p13",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p13.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p14",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p14.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p14",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p14",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p14.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p15",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p15.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p15",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p15",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p15.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p16",
+      "target": "urn:sii:kb:faq-declaracion-de-renta",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p16.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaracion-de-renta-p16",
+      "target": "urn:sii:kb:faq-declaracion-de-renta-p16",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p16.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p02",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p02",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p03",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p03",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p04",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p04",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p04",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p05",
+      "target": "urn:sii:kb:faq-declaraciones-juradas",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p05.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-declaraciones-juradas-p05",
+      "target": "urn:sii:kb:faq-declaraciones-juradas-p05",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p05.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica",
+      "target": "urn:sii:kb:faq-factura-electronica",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica",
+      "target": "urn:sii:kb:faq-factura-electronica",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica-p02",
+      "target": "urn:sii:kb:faq-factura-electronica",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica-p02",
+      "target": "urn:sii:kb:faq-factura-electronica-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica-p03",
+      "target": "urn:sii:kb:faq-factura-electronica",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica-p03",
+      "target": "urn:sii:kb:faq-factura-electronica-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica-p04",
+      "target": "urn:sii:kb:faq-factura-electronica",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-factura-electronica-p04",
+      "target": "urn:sii:kb:faq-factura-electronica-p04",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-factura-electronica--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-herencias",
+      "target": "urn:sii:kb:faq-herencias",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-herencias.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-herencias",
+      "target": "urn:sii:kb:faq-herencias",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-herencias.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-herencias-p02",
+      "target": "urn:sii:kb:faq-herencias",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-herencias--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-herencias-p02",
+      "target": "urn:sii:kb:faq-herencias-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-herencias--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-herencias-p03",
+      "target": "urn:sii:kb:faq-herencias",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-herencias--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-herencias-p03",
+      "target": "urn:sii:kb:faq-herencias-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-herencias--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "target": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "target": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p02",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p02",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p03",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p03",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p04",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p04",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p04",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p05",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p05.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p05",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p05",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p05.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p06",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p06.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p06",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p06",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p06.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p07",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p07.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p07",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p07",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p07.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p08",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p08.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p08",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p08",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p08.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p09",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p09.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p09",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p09",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p09.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p10",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p10.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p10",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p10",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p10.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p11",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p11.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p11",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p11",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p11.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p12",
+      "target": "urn:sii:kb:faq-impuestos-mensuales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p12.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-impuestos-mensuales-p12",
+      "target": "urn:sii:kb:faq-impuestos-mensuales-p12",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p12.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "target": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-infracciones-pago-de-giros-y-condonaciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "target": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-infracciones-pago-de-giros-y-condonaciones.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "target": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-iva-a-los-servicios-profesionales-y-culturales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "target": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-iva-a-los-servicios-profesionales-y-culturales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-libros-contables-electronicos",
+      "target": "urn:sii:kb:faq-libros-contables-electronicos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-libros-contables-electronicos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-libros-contables-electronicos",
+      "target": "urn:sii:kb:faq-libros-contables-electronicos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-libros-contables-electronicos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-otros-impuestos",
+      "target": "urn:sii:kb:faq-otros-impuestos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-otros-impuestos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-otros-impuestos",
+      "target": "urn:sii:kb:faq-otros-impuestos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-otros-impuestos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "target": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-peticiones-administrativas-y-otras-solicitudes.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "target": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-peticiones-administrativas-y-otras-solicitudes.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-preguntas-generales",
+      "target": "urn:sii:kb:faq-preguntas-generales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-preguntas-generales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-preguntas-generales",
+      "target": "urn:sii:kb:faq-preguntas-generales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-preguntas-generales.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-preguntas-generales-p02",
+      "target": "urn:sii:kb:faq-preguntas-generales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-preguntas-generales--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-preguntas-generales-p02",
+      "target": "urn:sii:kb:faq-preguntas-generales-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-preguntas-generales--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-preguntas-generales-p03",
+      "target": "urn:sii:kb:faq-preguntas-generales",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-preguntas-generales--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-preguntas-generales-p03",
+      "target": "urn:sii:kb:faq-preguntas-generales-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-preguntas-generales--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p02",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p02",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p02",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p03",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p03",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p03",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p03.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p04",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p04",
+      "target": "urn:sii:kb:faq-rut-e-inicio-de-actividades-p04",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p04.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-situacion-tributaria",
+      "target": "urn:sii:kb:faq-situacion-tributaria",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-situacion-tributaria.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-situacion-tributaria",
+      "target": "urn:sii:kb:faq-situacion-tributaria",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-situacion-tributaria.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "target": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-tasacion-fiscal-de-vehiculos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "target": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-tasacion-fiscal-de-vehiculos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-termino-de-giro",
+      "target": "urn:sii:kb:faq-termino-de-giro",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-termino-de-giro.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:faq-termino-de-giro",
+      "target": "urn:sii:kb:faq-termino-de-giro",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/faq-termino-de-giro.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:index-documentos-derivados",
+      "target": "urn:sii:kb:index-documentos-derivados",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/index-documentos-derivados.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:sii:kb:index-documentos-derivados",
+      "target": "urn:sii:kb:index-documentos-derivados",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/sii/kb/index-documentos-derivados.md"
     },
     {
       "kind": "XRef",
