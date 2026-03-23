@@ -21,6 +21,7 @@
         ],
         "skill_refs": [
           "CM-CONTEXT-MANAGER",
+          "CM-SPEC-AUDITOR",
           "CM-SPEC-CLASSIFIER",
           "CM-SPEC-GUARD"
         ],
@@ -36,6 +37,7 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
+          "- Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).",
           "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
         ],
         "allowed_kb_count": 7,
@@ -845,6 +847,7 @@
         ],
         "skill_refs": [
           "CM-CONTEXT-MANAGER",
+          "CM-SPEC-AUDITOR",
           "CM-SPEC-CLASSIFIER",
           "CM-SPEC-GUARD"
         ],
@@ -860,6 +863,7 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
+          "- Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).",
           "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
         ],
         "allowed_kb_count": 7,

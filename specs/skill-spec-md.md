@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "KORA categorical-foundations 02, 04, 06, 07, KORA/Agent-Spec v8.7.0, restoration of governed extended skills"
+    source: "KORA categorical-foundations 02, 04, 06, 07, KORA/Agent-Spec v8.4.0, restoration of governed extended skills"
 version: "4.2.0"
 status: published
 tags: [spec, skill, cm, degenerate, lazy-load]

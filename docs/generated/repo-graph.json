@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1461,
-    "node_count": 905,
-    "edge_count": 4343
+    "scanned_files": 1466,
+    "node_count": 908,
+    "edge_count": 4366
   },
   "node_kind_counts": {
     "artifact": 209,
-    "knowledge": 248,
-    "skill": 259,
+    "knowledge": 249,
+    "skill": 261,
     "spec": 7,
     "tool": 141,
     "workspace": 41
   },
   "edge_kind_counts": {
-    "AllowsKB": 446,
+    "AllowsKB": 449,
     "AllowsTool": 218,
     "ContainsArtifact": 208,
-    "ContainsSkill": 259,
+    "ContainsSkill": 261,
     "DeclaresTool": 219,
-    "InvokesSkill": 249,
+    "InvokesSkill": 251,
     "RoutesToAgent": 59,
     "TracesTo": 48,
-    "XRef": 2637
+    "XRef": 2653
   },
   "nodes": [
     {
@@ -1204,10 +1204,10 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "id": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "urn": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/kora/guardian/AGENTS.md",
       "namespace": "kora"
@@ -2448,6 +2448,15 @@
       "urn": "urn:fxsl:kb:opm-iso-19450",
       "title": "OPM ISO/PAS 19450 — Object-Process Methodology",
       "path": "KNOWLEDGE/fxsl/opm/opm-iso-19450.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-opl-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-opl-es",
+      "title": "OPL-ES — Object-Process Language en Español",
+      "path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md",
       "namespace": "fxsl"
     },
     {
@@ -5637,6 +5646,15 @@
       "namespace": "kora"
     },
     {
+      "id": "urn:kora:skill:guardian-spec-auditor:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:guardian-spec-auditor:1.0.0",
+      "title": "CM-SPEC-AUDITOR",
+      "path": "AGENTS/kora/guardian/skills/CM-SPEC-AUDITOR.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:skill:guardian-spec-classifier:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -5761,6 +5779,15 @@
       "title": "CM-TRIAJE.md",
       "path": "AGENTS/korvo/korax/skills/CM-TRIAJE.md",
       "namespace": "korvo"
+    },
+    {
+      "id": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "title": "CM-AGENT-DEPLOYER",
+      "path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md",
+      "namespace": "ops"
     },
     {
       "id": "urn:ops:skill:clawstack-context-manager:1.0.0",
@@ -8021,6 +8048,12 @@
     },
     {
       "kind": "AllowsKB",
+      "source": "workspace:fxsl/opm-specialist",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
+    },
+    {
+      "kind": "AllowsKB",
       "source": "workspace:fxsl/pensador-generador",
       "target": "urn:fxsl:kb:fx-tensiones",
       "source_path": "AGENTS/fxsl/pensador-generador/config.json"
@@ -9949,6 +9982,18 @@
       "kind": "AllowsKB",
       "source": "workspace:ops/clawstack",
       "target": "urn:kora:kb:gobernanza",
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:ops/clawstack",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:ops/clawstack",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
@@ -12163,7 +12208,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:kora/guardian",
-      "target": "urn:kora:agent-bootstrap:guardian-agents:1.0.0"
+      "target": "urn:kora:agent-bootstrap:guardian-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -13383,6 +13428,11 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:kora/guardian",
+      "target": "urn:kora:skill:guardian-spec-auditor:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/guardian",
       "target": "urn:kora:skill:guardian-spec-classifier:1.0.0"
     },
     {
@@ -13469,6 +13519,11 @@
       "kind": "ContainsSkill",
       "source": "workspace:legal/abogado-legislacion-medica",
       "target": "urn:salud:skill:abogado-legislacion-medica-materia-router:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:ops/clawstack",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -16128,19 +16183,25 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "target": "urn:kora:skill:guardian-context-manager:1.0.0",
       "source_path": "AGENTS/kora/guardian/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
+      "target": "urn:kora:skill:guardian-spec-auditor:1.0.0",
+      "source_path": "AGENTS/kora/guardian/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "target": "urn:kora:skill:guardian-spec-classifier:1.0.0",
       "source_path": "AGENTS/kora/guardian/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "target": "urn:kora:skill:guardian-spec-guard:1.0.0",
       "source_path": "AGENTS/kora/guardian/AGENTS.md"
     },
@@ -16215,6 +16276,12 @@
       "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
       "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -18839,6 +18906,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:procrastination-sirois",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -20337,7 +20411,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "target": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20765,6 +20839,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:skill:guardian-context-manager:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:guardian-spec-auditor:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21367,6 +21448,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -25159,6 +25247,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-soul:1.0.0",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-soul:1.0.0",
       "fragment": null,
@@ -25182,6 +25277,13 @@
       "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
       "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
+      "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
       "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
     },
@@ -25541,6 +25643,27 @@
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-iso-19450.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-es",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-es",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-es",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
     },
     {
       "kind": "XRef",
@@ -31326,8 +31449,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
-      "target": "urn:kora:agent-bootstrap:guardian-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
+      "target": "urn:kora:agent-bootstrap:guardian-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/kora/guardian/AGENTS.md"
     },
@@ -32152,6 +32275,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:skill:guardian-spec-auditor:1.0.0",
+      "target": "urn:kora:skill:guardian-spec-auditor:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/guardian/skills/CM-SPEC-AUDITOR.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:skill:guardian-spec-classifier:1.0.0",
       "target": "urn:kora:skill:guardian-spec-classifier:1.0.0",
       "fragment": null,
@@ -32915,6 +33045,20 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:ops:agent-bootstrap:clawstack-soul:1.0.0",
       "target": "urn:ops:agent-bootstrap:clawstack-soul:1.0.0",
       "fragment": null,
@@ -33120,6 +33264,20 @@
       "kind": "XRef",
       "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
       "target": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
@@ -33668,6 +33826,27 @@
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "fragment": null,
       "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
     },
     {
       "kind": "XRef",

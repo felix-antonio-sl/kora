@@ -841,7 +841,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/ops/clawstack/AGENTS.md",
-            "line": 69,
+            "line": 74,
             "snippet": "- IF FACTUAL_ACCURACY fails -> CM-KNOWLEDGE-NAVIGATOR (consultar fuente primaria via kb_route o oc_docs_search), corregir"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -857,7 +857,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/ops/clawstack/AGENTS.md",
-            "line": 70,
+            "line": 77,
             "snippet": "- IF other fails -> REFINE_DRAFT"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -890,7 +890,7 @@
           "evidence": {
             "path": "AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md",
             "line": 13,
-            "snippet": "- **Input:** fase_actual: string (PROVISION|CONFIGURE|AUDIT), entregables: PhaseDeliverable[]"
+            "snippet": "- **Input:** fase_actual: string (PROVISION|CONFIGURE|AUDIT|DEPLOY), entregables: PhaseDeliverable[]"
           },
           "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
           "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
