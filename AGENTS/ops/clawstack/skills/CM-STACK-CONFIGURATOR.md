@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:skill:clawstack-stack-configurator:1.0.0
+  urn: urn:ops:skill:clawstack-stack-configurator:1.1.0
   type: lazy_load_endofunctor
 ---
 
@@ -18,7 +18,9 @@ Configura cualquier capa del stack o cross-layer, aplicando cambios declarativos
 2. Segun scope:
    - **host**: networking (netplan), firewall (ufw), servicios (systemd units), packages (apt), SSH config.
    - **docker**: compose files, daemon.json, images, volumes, networks, cgroups limits.
-   - **openclaw**: gateway (port, auth, mode), channels (whatsapp, telegram, discord, slack, signal), agents (list, workspace, model, identity), sandbox (mode, scope, docker config), automation (heartbeats, cron, hooks), memory (flush, search, compaction), skills (entries, gating), models (providers, fallbacks, aliases).
+   - **openclaw**: gateway (port, auth, mode, bind), channels (whatsapp, telegram, discord, slack, signal), agents (list, workspace, model, identity), sandbox (mode, scope, docker config), automation (heartbeats, cron, hooks), memory (flush, search, compaction), skills (entries, gating), models (providers, fallbacks, aliases), federation (hooks token, shared mounts, directorio-agentes). Incluye dos patrones compuestos:
+     - *Patron UX Telegram* (consultar `urn:ops:kb:ux-telegram-openclaw`): chunkMode="length", markdown.tables="bullets", replyToMode="first", silentErrorReplies=true, thinkingDefault="adaptive", session.reset, session.maintenance. Aplicar via sync-config.sh + restart. Trampas: streaming "full" no existe; tools.profile "minimal" solo da session_status; group:memory no existe en v2026.3.22; config no interpola ${ENV_VAR}.
+     - *Patron Federation* (consultar `urn:ops:kb:federacion-kora-v2`): hooks.enabled=true con token literal, gateway.bind="lan" (no "loopback" para Docker bridge), shared mounts en compose, seccion derivacion en TOOLS.md del agente, entrada en directorio-agentes.md.
    - **cross-layer**: cambios que afectan multiples capas (ej: abrir puerto en UFW + configurar canal en OpenClaw).
 3. Para cada cambio: leer config actual, proponer diff, confirmar con usuario.
 4. Aplicar cambio con herramienta apropiada (host_exec | docker_exec | oc_cli).

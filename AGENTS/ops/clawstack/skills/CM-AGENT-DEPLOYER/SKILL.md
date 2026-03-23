@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:skill:clawstack-agent-deployer:1.0.0
+  urn: urn:ops:skill:clawstack-agent-deployer:1.2.0
   type: lazy_load_endofunctor
 extensions:
   ops:
@@ -23,7 +23,7 @@ extensions:
 
 ## Proposito
 
-Ejecutar el pipeline completo de 16 fases para desplegar un agente KORA transmutado a un gateway OpenClaw corriendo en Docker sobre un servidor remoto. Automatiza las fases ejecutables y guia al operador a traves de las interactivas (bot creation, auth setup, pairing, e2e verification) con checkpoints de espera y reanudacion.
+Ejecutar el pipeline completo de 19 fases para desplegar un agente KORA transmutado a un gateway OpenClaw corriendo en Docker sobre un servidor remoto. Automatiza las fases ejecutables y guia al operador a traves de las interactivas (bot creation, auth setup, pairing, e2e verification) con checkpoints de espera y reanudacion. Incluye integracion con la federacion kora (shared storage, hooks cross-gateway, panel web, UX de canal).
 
 ## Input/Output
 
@@ -31,6 +31,8 @@ Ejecutar el pipeline completo de 16 fases para desplegar un agente KORA transmut
 - **Output:** DeployReport (ver Signature Output)
 
 ## Procedimiento
+
+**Prerequisito**: `transmutation_path` apunta a un directorio de staging producido por kora/forgemaster (S-TRANSMUTE → CM-OPENCLAW-ADAPTER → CM-ARTIFACT-EMITTER). El directorio DEBE contener `_transmutation.yml` con hashes de fuente y deployment_hints. Si el directorio no existe o no tiene manifest, RECHAZAR: "No hay artefactos transmutados. Ejecutar primero la transmutacion via kora/forgemaster." Este skill NO transmuta — solo consume artefactos ya transmutados (R9: DEPLOY-FROM-TRANSMUTATION).
 
 Consultar `references/deploy-phases-checklist.md` para verificacion y `references/hetzner-audit-findings.md` para gotchas conocidos. Consultar KB via `kb_route("deploy agentes")` → `urn:ops:kb:deploy-agente-kora-en-openclaw` para procedimiento detallado. Consultar KB via `kb_route("principios transmutacion")` → `urn:ops:kb:principios-transmutacion-kora-openclaw` para marco conceptual.
 
@@ -63,11 +65,11 @@ Requiere del operador: TELEGRAM_BOT_TOKEN, TELEGRAM_USER_ID. Almacenar para P07.
 
 ### Grupo D: Checkpoint interactivo — Auth setup (guiado)
 
-**P09 — AUTH SETUP.** Emitir instrucciones al operador:
-- "Ejecutar: `cd /srv/kora/compose && docker compose run --rm --no-deps gateway openclaw models auth setup-token --provider anthropic`"
-- "Esto abre un flujo OAuth en tu browser. Completarlo y regresar aqui."
-- Alternativa: si el operador tiene API key directa, agregar ANTHROPIC_API_KEY al .env y saltar OAuth.
-Requiere confirmacion del operador.
+**P09 — AUTH SETUP.** Auth en OpenClaw es **per-agent** — cada agente almacena credenciales en `~/.openclaw/agents/{agent_id}/agent/auth-profiles.json` (no compartido entre agentes). Tres alternativas, en orden de preferencia:
+1. **OAuth setup-token** (recomendado): "Ejecutar: `cd /srv/kora/compose-{gateway} && docker compose run --rm --no-deps {service} openclaw models auth setup-token --provider anthropic --agent {agent_id}`". Esto abre un flujo OAuth en el browser. Completarlo y regresar.
+2. **Copiar auth de otro agente** (rapido, si ya hay un gateway con auth funcional): `docker exec {existing_container} cat /home/node/.openclaw/agents/{existing_agent}/agent/auth-profiles.json | docker exec -i {new_container} sh -c 'mkdir -p /home/node/.openclaw/agents/{new_agent}/agent && cat > /home/node/.openclaw/agents/{new_agent}/agent/auth-profiles.json && chmod 600 /home/node/.openclaw/agents/{new_agent}/agent/auth-profiles.json'`. Restart del gateway despues de copiar.
+3. **API key directa**: agregar ANTHROPIC_API_KEY al .env. Requiere restart.
+Verificar: enviar mensaje test al bot — si responde `No API key found for provider "anthropic"`, auth no esta configurada. Revisar logs con `docker logs {container} | grep "auth\|api.key\|anthropic"`.
 
 ### Grupo E: Validacion y deploy (automatizado)
 
@@ -89,6 +91,38 @@ Requiere confirmacion del operador.
 
 **P16 — RESYNC.** Cuando cambie el agente en el repo: re-ejecutar P02 para archivos cambiados. Si config cambio: usar sync-config.sh (hallazgo H7) o re-ejecutar P05 + copy al volume (§6.7 del tutorial). Via `docker_exec`: `docker compose restart gateway`. Verificar: containers healthy, logs limpios.
 
+### Grupo H: Integracion con la federacion (automatizado, post-deploy)
+
+Consultar KB via `kb_route("federacion kora")` → `urn:ops:kb:federacion-kora-v2` para arquitectura y protocolo. Consultar KB via `kb_route("ux telegram")` → `urn:ops:kb:ux-telegram-openclaw` para configuracion de canal verificada.
+
+**P17 — FEDERATION INTEGRATION.** Via `host_exec`:
+1. Crear directorio shared del agente: `mkdir -p /srv/kora/shared/{agent_id}`.
+2. Agregar bind mounts al docker-compose.yml del gateway: `../shared/federation:/home/node/shared/federation:ro` (siempre) y `../shared/{agent_id}:/home/node/shared/{agent_id}` (RW propio).
+3. Configurar hooks en openclaw.json5: `hooks: { enabled: true, token: "{hooks_token}" }`. Token debe ser literal (OpenClaw no interpola env vars).
+4. Configurar gateway bind: `gateway.bind: "lan"` (requerido para que otros containers en kora-federation alcancen el gateway; el port mapping Docker `127.0.0.1:{port}:{port}` sigue protegiendo del acceso externo).
+5. Agregar OPENCLAW_HOOKS_TOKEN al .env (para referencia del operador, aunque el token va literal en config).
+6. Agregar seccion `## Federacion kora — derivacion inter-agente` al TOOLS.md del workspace con: tabla de agentes, hook URLs, token, protocolo de derivacion, instrucciones de shared storage.
+7. Actualizar `/srv/kora/shared/federation/directorio-agentes.md` con la nueva entrada del agente (dominio, gateway, hook URL, Telegram bot).
+8. Verificar: `docker exec {container} cat /home/node/shared/federation/directorio-agentes.md` legible; `docker exec {container} touch /home/node/shared/{agent_id}/test` OK; hook test bidireccional con al menos un gateway existente via `curl POST /hooks/agent`.
+
+**P18 — PANEL REGISTRATION.** Si panel web kora-panel esta desplegado:
+1. Actualizar `/home/felix/projects/kora-panel/registry.json`: agregar entrada con gateway (container, host, port), compose path, config path, telegram bot, namespace, theme, emoji, shared dir.
+2. Agregar visibilidad default en la matriz (`"none"` para todos los pares).
+3. Rebuild y redeploy panel: `cd ~/projects/kora-panel && docker compose build && docker compose up -d`.
+4. Verificar: `curl https://kora.sanixai.com/api/registry` muestra el nuevo agente.
+
+**P19 — UX CHANNEL CONFIG.** Consultar KB `urn:ops:kb:ux-telegram-openclaw` para configuracion verificada. Aplicar al openclaw.json5 del gateway:
+1. `channels.telegram.chunkMode: "length"` (no "newline" — fragmenta en 10+ burbujas).
+2. `channels.telegram.markdown.tables: "bullets"` (no "code" — ilegible en movil).
+3. `channels.telegram.replyToMode: "first"` (threading visual).
+4. `channels.telegram.silentErrorReplies: true` (errores no suenan).
+5. `channels.telegram.textChunkLimit: 4000` (maximo Telegram).
+6. `channels.telegram.linkPreview: false` (evita previews distractores).
+7. `agents.defaults.thinkingDefault: "adaptive"` (v2026.3.x — ajusta thinking a complejidad).
+8. `session.reset`: segun perfil del agente — `mode: "idle", idleMinutes: 120` para agentes reactivos o `mode: "daily", atHour: 4` para agentes con sesiones de dia completo.
+9. `session.maintenance: { pruneAfter: "30d", maxEntries: 500 }` para agentes con heartbeats o sesiones largas.
+10. Via sync-config.sh + restart. Verificar: `openclaw doctor` sin errores de schema.
+
 ## Signature Output
 
 | Campo | Tipo | Descripcion |
@@ -101,4 +135,5 @@ Requiere confirmacion del operador.
 | deploy_status | enum | DEPLOYED, PARTIAL, FAILED |
 | health | object | {doctor: PASS/FAIL, containers: healthy/unhealthy, e2e: confirmed/pending} |
 | drift_summary | DriftEntry[] | Solo en P14: {file, type, recommendation} |
+| federation | object | {shared_dir_created, hooks_configured, directorio_updated, panel_registered, ux_applied} |
 | proximos_pasos | string[] | Acciones pendientes |

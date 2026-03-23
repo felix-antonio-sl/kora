@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:skill:forgemaster-openclaw-adapter:1.1.0
+  urn: urn:kora:skill:forgemaster-openclaw-adapter:1.2.0
   type: lazy_load_endofunctor
 extensions:
   kora:
@@ -24,7 +24,7 @@ extensions:
 
 ## Proposito
 
-Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando workspace adaptado + config completo + skills adaptados + deployment hints. Produce artefactos listos para CM-ARTIFACT-EMITTER y templates de deploy para el operador humano.
+Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando workspace adaptado + config completo + skills adaptados + deployment hints. Produce artefactos listos para CM-ARTIFACT-EMITTER y templates de deploy para el operador humano. Los artefactos se emiten a un directorio de staging (R-TRANSMUTE-6) — el deploy a produccion es responsabilidad exclusiva de ops/clawstack.
 
 ## Input/Output
 
@@ -160,6 +160,8 @@ Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando wor
 15. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico.
 
 16. Retornar lista de TransmutedArtifact[] con ruta relativa y contenido de cada artefacto.
+
+17. **Handoff a ops/clawstack**: Al finalizar, emitir mensaje al operador: "Transmutacion completa. Artefactos en {output_dir}. Para desplegar en produccion, encarnar ops/clawstack y ejecutar S-DEPLOY con transmutation_path={output_dir}/_transmutation.yml." No ejecutar Docker commands, no escribir a /srv/kora/, no inicializar volumes, no correr openclaw doctor. Esas operaciones son de clawstack.
 
 ## Signature Output
 

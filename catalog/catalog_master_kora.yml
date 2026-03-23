@@ -369,7 +369,7 @@ Catalog:
     title: USER.md
     file: AGENTS/kora/custodio/USER.md
     status: published
-  - urn: urn:kora:agent-bootstrap:forgemaster-agents:2.0.0
+  - urn: urn:kora:agent-bootstrap:forgemaster-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/kora/forgemaster/AGENTS.md
     status: published
@@ -970,7 +970,7 @@ Catalog:
     title: CM-ANTHROPIC-ADAPTER
     file: AGENTS/kora/forgemaster/skills/CM-ANTHROPIC-ADAPTER/SKILL.md
     status: published
-  - urn: urn:kora:skill:forgemaster-artifact-emitter:1.0.0
+  - urn: urn:kora:skill:forgemaster-artifact-emitter:1.1.0
     title: CM-ARTIFACT-EMITTER
     file: AGENTS/kora/forgemaster/skills/CM-ARTIFACT-EMITTER.md
     status: published
@@ -1002,7 +1002,7 @@ Catalog:
     title: CM-LIFECYCLE-ORCHESTRATOR
     file: AGENTS/kora/forgemaster/skills/CM-LIFECYCLE-ORCHESTRATOR.md
     status: published
-  - urn: urn:kora:skill:forgemaster-openclaw-adapter:1.1.0
+  - urn: urn:kora:skill:forgemaster-openclaw-adapter:1.2.0
     title: CM-OPENCLAW-ADAPTER
     file: AGENTS/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/SKILL.md
     status: published
@@ -1074,7 +1074,7 @@ Catalog:
     title: CM-TRIAJE.md
     file: AGENTS/korvo/korax/skills/CM-TRIAJE.md
     status: published
-  - urn: urn:ops:skill:clawstack-agent-deployer:1.0.0
+  - urn: urn:ops:skill:clawstack-agent-deployer:1.2.0
     title: CM-AGENT-DEPLOYER
     file: AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md
     status: published
@@ -1094,11 +1094,11 @@ Catalog:
     title: CM-LIFECYCLE-ORCHESTRATOR
     file: AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md
     status: published
-  - urn: urn:ops:skill:clawstack-stack-auditor:1.0.0
+  - urn: urn:ops:skill:clawstack-stack-auditor:1.1.0
     title: CM-STACK-AUDITOR
     file: AGENTS/ops/clawstack/skills/CM-STACK-AUDITOR.md
     status: published
-  - urn: urn:ops:skill:clawstack-stack-configurator:1.0.0
+  - urn: urn:ops:skill:clawstack-stack-configurator:1.1.0
     title: CM-STACK-CONFIGURATOR
     file: AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md
     status: published
@@ -1106,7 +1106,7 @@ Catalog:
     title: CM-STACK-OPTIMIZER
     file: AGENTS/ops/clawstack/skills/CM-STACK-OPTIMIZER.md
     status: published
-  - urn: urn:ops:skill:clawstack-stack-provisioner:1.0.0
+  - urn: urn:ops:skill:clawstack-stack-provisioner:1.1.0
     title: CM-STACK-PROVISIONER
     file: AGENTS/ops/clawstack/skills/CM-STACK-PROVISIONER/SKILL.md
     status: published
@@ -1114,7 +1114,7 @@ Catalog:
     title: CM-STACK-TROUBLESHOOTER
     file: AGENTS/ops/clawstack/skills/CM-STACK-TROUBLESHOOTER.md
     status: published
-  - urn: urn:ops:skill:clawstack-version-manager:1.0.0
+  - urn: urn:ops:skill:clawstack-version-manager:1.1.0
     title: CM-VERSION-MANAGER
     file: AGENTS/ops/clawstack/skills/CM-VERSION-MANAGER.md
     status: published

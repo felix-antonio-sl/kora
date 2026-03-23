@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:agent-bootstrap:clawstack-tools:1.0.0
+  urn: urn:ops:agent-bootstrap:clawstack-tools:1.1.0
   type: bootstrap_tools
 ---
 
@@ -43,6 +43,9 @@ _manifest:
 | Gobernanza KORA, precedencia | urn:kora:kb:gobernanza |
 | Deploy de agentes KORA en OpenClaw, pipeline, transmutacion | urn:ops:kb:deploy-agente-kora-en-openclaw |
 | Principios de transmutacion KORA-OpenClaw, strip, sidecar, volumes | urn:ops:kb:principios-transmutacion-kora-openclaw |
+| Arquitectura del stack kora, capas, redes, containers, storage, decisiones | urn:ops:kb:arquitectura-stack-kora |
+| Federacion kora v2, hooks cross-gateway, shared storage, panel web, derivacion inter-agente | urn:ops:kb:federacion-kora-v2 |
+| UX Telegram OpenClaw, chunkMode, tables, replyTo, streaming, session reset, trampas config | urn:ops:kb:ux-telegram-openclaw |
 
 ## oc_cli
 

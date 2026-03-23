@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:skill:clawstack-stack-auditor:1.0.0
+  urn: urn:ops:skill:clawstack-stack-auditor:1.1.0
   type: lazy_load_endofunctor
 ---
 
@@ -37,23 +37,32 @@ Auditoria full-stack en 3 capas con multiples ejes por capa. Emite reporte PASS|
 4. Config quality: modelos configurados, canales conectados, heartbeat si aplica, backup strategy.
 
 ### Cross-layer
-5. Puertos host vs puertos Docker vs gateway port: coherencia.
-6. Secrets: no hardcodeados en compose ni workspace, SecretRef cuando disponible.
-7. Networking: gateway en loopback, Docker networking no expone puertos internos.
+7. Puertos host vs puertos Docker vs gateway port: coherencia.
+8. Secrets: no hardcodeados en compose ni workspace, SecretRef cuando disponible.
+9. Networking: `gateway.bind` coherente con topologia Docker (bind="lan" para kora-federation bridge; port mapping Docker en 127.0.0.1 protege del exterior).
+
+### Federation
+10. Hooks: `hooks.enabled: true` en cada gateway, token configurado (literal, no env var), endpoint alcanzable desde otros containers.
+11. Bind: `gateway.bind: "lan"` en cada gateway (requerido para hooks cross-gateway en Docker bridge).
+12. Shared storage: `/srv/kora/shared/federation/` montado RO en todos; directorio propio (`/srv/kora/shared/{agent_id}/`) montado RW en cada container.
+13. Directorio de agentes: `/srv/kora/shared/federation/directorio-agentes.md` existe, es legible desde todos los containers, y lista todos los agentes desplegados con dominio, hook URL y canal.
+14. Hooks bidireccional: test `curl POST /hooks/agent` entre cada par de gateways exitoso (HTTP 200 + runId).
+15. Panel web: `kora-panel` container healthy, `https://kora.sanixai.com/api/health` retorna todos los gateways OK, registry.json actualizado.
+16. TOOLS.md de cada agente: contiene seccion `## Federacion kora` con tabla de agentes, protocolo de derivacion y rutas de shared.
 
 ### Drift Detection (agentes desplegados)
-8. Workspace drift: para cada agente desplegado en /srv/kora/workspaces/, diff version stripped del repo KORA vs version desplegada. Clasificar: regla emergente (backport candidate), residuo (limpiar), memory (normal), heartbeat (normal).
-9. Config drift: diff source en /srv/kora/config/{gateway}/openclaw.json5 vs config real en named volume.
-10. Image drift: comparar SHA de imagen running vs ultima imagen built.
+17. Workspace drift: para cada agente desplegado en /srv/kora/workspaces/, diff version stripped del repo KORA vs version desplegada. Clasificar: regla emergente (backport candidate), residuo (limpiar), memory (normal), heartbeat (normal).
+18. Config drift: diff source en /srv/kora/config/{gateway}/openclaw.json5 vs config real en named volume.
+19. Image drift: comparar SHA de imagen running vs ultima imagen built.
 
 ### Reporte
-8. Generar tabla por capa: eje | check | resultado | detalle | referencia.
-9. Calcular resultado global: FAIL si cualquier critical, WARN si warnings, PASS si todo ok.
+20. Generar tabla por capa: eje | check | resultado | detalle | referencia.
+21. Calcular resultado global: FAIL si cualquier critical, WARN si warnings, PASS si todo ok.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | resultado_global | enum | PASS, WARN, FAIL |
-| por_capa | {host, docker, openclaw} | Resultado y hallazgos por capa |
+| por_capa | {host, docker, openclaw, cross_layer, federation} | Resultado y hallazgos por seccion |
 | hallazgos | AuditFinding[] | Lista con severidad, capa, check, detalle, fix, referencia |
 | correcciones_prioritarias | string[] | Top 3 fixes mas urgentes |

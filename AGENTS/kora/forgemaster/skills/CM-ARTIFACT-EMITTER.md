@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:kora:skill:forgemaster-artifact-emitter:1.0.0
+  urn: urn:kora:skill:forgemaster-artifact-emitter:1.1.0
   type: lazy_load_endofunctor
 ---
 
@@ -14,7 +14,7 @@ Escribe artefactos derivados de transmutacion al directorio de output, generando
 - **Output:** EmissionReport (ver Signature Output)
 
 ## Procedimiento
-1. Validar directorio de output: crear si no existe, verificar permisos de escritura.
+1. Validar directorio de output: crear si no existe, verificar permisos de escritura. **R-TRANSMUTE-6**: output_dir DEBE ser un directorio de staging (default: `{kora_repo}/output/{namespace}-{agent}/`). Rechazar si output_dir apunta a paths de produccion (`/srv/`, containers, volumes Docker). El deploy a produccion es responsabilidad de ops/clawstack.
 2. Para cada artefacto en artifacts[]:
    - Verificar que contenido no contiene frontmatter YAML KORA residual (runtime-spec §9.2).
    - Escribir archivo en ruta especificada dentro de output_dir.

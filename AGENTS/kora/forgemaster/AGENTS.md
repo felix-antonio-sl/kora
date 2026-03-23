@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0"
+  urn: "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -39,6 +39,7 @@ _manifest:
 - R-TRANSMUTE-3: SEGREGACION_PRESERVADA — Componentes ortogonales KORA NO DEBEN mezclarse en output derivado.
 - R-TRANSMUTE-4: MANIFEST_OBLIGATORIO — Toda transmutacion DEBE generar _transmutation.yml con hashes fuente, timestamp, plataforma.
 - R-TRANSMUTE-5: ADAPTER_COMO_SKILL — Cada plataforma target es un CM-* independiente. Nueva plataforma = nuevo Skill.
+- R-TRANSMUTE-6: STAGING_NOT_PRODUCTION — Los artefactos transmutados DEBEN escribirse a un directorio de staging (default: `{kora_repo}/output/{namespace}-{agent}/`), NUNCA directamente a paths de produccion (/srv/kora/, containers, volumes). El deployment desde staging a produccion es responsabilidad exclusiva de ops/clawstack via S-DEPLOY. Forgemaster produce artefactos; clawstack los consume y despliega.
 
 ## 3. Co-induccion (Nodo Terminal)
 

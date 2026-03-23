@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:skill:clawstack-stack-provisioner:1.0.0
+  urn: urn:ops:skill:clawstack-stack-provisioner:1.1.0
   type: lazy_load_endofunctor
 extensions:
   ops:
@@ -54,6 +54,22 @@ Ejecuta provisioning full-stack desde cero: host Ubuntu hardened -> Docker con a
 4. Configurar gateway: loopback-first, auth, canales iniciales.
 5. Verificar: `openclaw status`, `openclaw doctor`.
 6. Si systemd: instalar daemon persistente con `openclaw gateway install`.
+
+### Servicios complementarios (Docker apps con Traefik)
+
+Para servicios complementarios al stack OpenClaw (panel web, bridges, dashboards), no gateways:
+
+1. El codigo fuente DEBE vivir en `~/projects/{nombre}/` (nunca en /srv/kora/).
+2. docker-compose.yml con labels Traefik para exposicion HTTPS:
+   - `traefik.http.routers.{name}.rule=Host(\`{subdominio}.sanixai.com\`)`
+   - `traefik.http.routers.{name}.entrypoints=websecure`
+   - `traefik.http.routers.{name}.tls.certresolver=myresolver`
+   - `traefik.docker.network=web`
+3. Si requiere acceso a gateways OpenClaw: agregar red `kora-federation` (external: true).
+4. Si requiere acceso a Docker: montar `/var/run/docker.sock:ro`.
+5. Auth: basic auth via middleware Traefik (`traefik.http.middlewares.{name}-auth.basicauth.users={htpasswd}`). Generar con `htpasswd -nb user password`.
+6. Verificar: `curl -s -o /dev/null -w "%{http_code}" https://{subdominio}.sanixai.com -u user:password` == 200.
+7. Let's Encrypt genera cert automaticamente via TLS-ALPN-01. No requiere restart de Traefik.
 
 ### Verificacion Final
 7. Ejecutar audit cross-layer: host (SSH+UFW) x Docker (engine+images) x OpenClaw (gateway+channels).

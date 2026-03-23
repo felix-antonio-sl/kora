@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:agent-bootstrap:clawstack-agents:1.1.0
+  urn: urn:ops:agent-bootstrap:clawstack-agents:1.2.0
   type: bootstrap_agents
 ---
 

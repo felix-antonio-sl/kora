@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+    "urn": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [
@@ -33,7 +33,10 @@
     "urn:kora:kb:agent-spec-md",
     "urn:kora:kb:gobernanza",
     "urn:ops:kb:deploy-agente-kora-en-openclaw",
-    "urn:ops:kb:principios-transmutacion-kora-openclaw"
+    "urn:ops:kb:principios-transmutacion-kora-openclaw",
+    "urn:ops:kb:arquitectura-stack-kora",
+    "urn:ops:kb:federacion-kora-v2",
+    "urn:ops:kb:ux-telegram-openclaw"
   ],
   "sandbox": {
     "mode": "permissive"

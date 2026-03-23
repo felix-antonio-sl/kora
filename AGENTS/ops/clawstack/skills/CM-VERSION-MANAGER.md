@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:skill:clawstack-version-manager:1.0.0
+  urn: urn:ops:skill:clawstack-version-manager:1.1.0
   type: lazy_load_endofunctor
 ---
 
@@ -32,9 +32,15 @@ Gestiona versiones del stack completo: host packages, Docker engine/images, Open
 4. EJECUTAR UPGRADE (con confirmacion):
    - Host: `apt update && apt upgrade` (o selectivo)
    - Docker: `apt install docker-ce` (o Docker Desktop update)
-   - OpenClaw: `openclaw update --dry-run` para preflight
-   - OpenClaw: `openclaw update` para canal actual, o `openclaw update --channel <stable|beta|dev>` / `openclaw update --tag <dist-tag|version>` si se requiere cambio de destino
-   - No usar `npm update -g openclaw` / `npm install -g openclaw@...` como path primario; el comando canonico es `openclaw update`
+   - OpenClaw (si instalado globalmente): `openclaw update --dry-run` para preflight, luego `openclaw update` para canal actual, o `openclaw update --channel <stable|beta|dev>` / `openclaw update --tag <dist-tag|version>` si se requiere cambio de destino. No usar `npm update -g openclaw` como path primario.
+   - OpenClaw (si construido desde source en Docker — caso kora-federation): procedimiento de rebuild de imagen:
+     a. Tag imagen actual para rollback: `docker tag openclaw-local:latest openclaw-local:v{old}` (y `kora-personal:latest` si es imagen separada: `docker tag kora-personal:latest kora-personal:v{old}`).
+     b. Checkout version target: `cd ~/projects/openclaw && git fetch --tags origin && git checkout v{new}`.
+     c. Rebuild imagen: `docker build --build-arg OPENCLAW_INSTALL_BROWSER=1 -t openclaw-local:latest -t openclaw-local:v{new} .` (puede tomar 5-10 min).
+     d. Si hay imagenes con nombre distinto (ej: kora-personal:latest): `docker tag openclaw-local:latest kora-personal:latest`.
+     e. Rolling restart por criticidad (menor a mayor): para cada gateway, `docker compose -f /srv/kora/compose-{gw}/docker-compose.yml up -d` (recreate con nueva imagen). Esperar healthcheck entre cada uno.
+     f. Verificar cada gateway: `docker exec {container} openclaw --version` == v{new} y `docker inspect {container} --format '{{.State.Health.Status}}'` == healthy.
+     g. Si falla: `docker tag openclaw-local:v{old} openclaw-local:latest` + rolling restart para rollback.
 5. POST-UPGRADE VERIFICATION:
    - `openclaw --version`
    - `openclaw status --deep`
