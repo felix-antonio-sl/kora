@@ -50,6 +50,7 @@ def cmd_index():
     }
 
     count = 0
+    deprecated_count = 0
     extensions = {".yaml", ".yml", ".md", ".json"}
 
     for root, dirs, files in os.walk(KORA_ROOT):
@@ -83,6 +84,7 @@ def cmd_index():
                 )
 
                 if status == "deprecated":
+                    deprecated_count += 1
                     continue
 
                 title = get_artifact_title(doc, file_path)
@@ -124,7 +126,10 @@ def cmd_index():
             default_flow_style=False,
         )
 
-    print(f"Successfully indexed {count} artifacts into {CATALOG_PATH.relative_to(KORA_ROOT)}!")
+    summary = f"Successfully indexed {count} artifacts into {CATALOG_PATH.relative_to(KORA_ROOT)}!"
+    if deprecated_count:
+        summary += f" ({deprecated_count} deprecated skipped)"
+    print(summary)
 
 
 def cmd_resolve(urn):

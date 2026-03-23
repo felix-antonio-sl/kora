@@ -30,6 +30,8 @@ class KoraCliSmokeTests(unittest.TestCase):
         payload = json.loads((GENERATED_DOCS / "repo-stats.json").read_text(encoding="utf-8"))
         markdown = (GENERATED_DOCS / "repo-stats.md").read_text(encoding="utf-8")
         self.assertGreater(payload["agent_workspaces"], 0)
+        self.assertIn("deprecated_workspaces", payload)
+        self.assertGreaterEqual(payload["deprecated_workspaces"], 0)
         self.assertGreater(payload["total_catalog_entries"], 0)
         self.assertIn("Entradas totales de catalogo", markdown)
 

@@ -1088,7 +1088,11 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
         if emit:
             print(f"[FAIL] {path} - {message}")
 
-    for workspace_dir in iter_agent_workspaces(cohort=cohort):
+    all_workspaces = iter_agent_workspaces(cohort=cohort, include_deprecated=True)
+    active_workspaces = iter_agent_workspaces(cohort=cohort)
+    deprecated_excluded = len(all_workspaces) - len(active_workspaces)
+
+    for workspace_dir in active_workspaces:
         rel_workspace = workspace_dir.relative_to(KORA_ROOT)
         workspace_ok = True
         missing_files = get_workspace_missing_files(workspace_dir, AGENT_REQUIRED_FILES)
@@ -1321,11 +1325,14 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                 global_failures += 1
 
     if emit:
-        print(
+        summary = (
             "Validation complete! "
             f"Workspaces valid: {workspace_valid}, Invalid: {workspace_invalid}, "
             f"Bootstrap files validated: {bootstrap_validated}"
         )
+        if deprecated_excluded:
+            summary += f" ({deprecated_excluded} deprecated excluded)"
+        print(summary)
         if issue_counts:
             print("Issue breakdown:")
             for issue, count in sorted(issue_counts.items()):

@@ -16,6 +16,8 @@ def compute_stats_payload():
         raise SystemExit(1)
 
     workspaces = iter_agent_workspaces()
+    deprecated_workspaces = iter_agent_workspaces(include_deprecated=True)
+    deprecated_count = len(deprecated_workspaces) - len(workspaces)
     complete_workspaces = [
         workspace
         for workspace in workspaces
@@ -41,6 +43,7 @@ def compute_stats_payload():
 
     return {
         "agent_workspaces": len(complete_workspaces),
+        "deprecated_workspaces": deprecated_count,
         "incomplete_workspaces": len(workspaces) - len(complete_workspaces),
         "agent_bootstrap_artifacts": bootstrap_count,
         "catalog_counts": category_counts,
@@ -57,7 +60,8 @@ def render_stats_markdown(payload):
         "",
         "## Resumen",
         "",
-        f"- Agent workspaces completos: {payload['agent_workspaces']}",
+        f"- Agent workspaces activos: {payload['agent_workspaces']}",
+        f"- Workspaces deprecated: {payload['deprecated_workspaces']}",
         f"- Workspaces incompletos: {payload['incomplete_workspaces']}",
         f"- Artefactos bootstrap de agente: {payload['agent_bootstrap_artifacts']}",
         f"- Entradas totales de catalogo: {payload['total_catalog_entries']}",

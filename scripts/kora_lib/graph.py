@@ -20,7 +20,12 @@ class GraphEdge:
     fragment: str = ""
 
 
+_deprecated_dirs_skipped = 0
+
+
 def iter_repository_files():
+    global _deprecated_dirs_skipped
+    _deprecated_dirs_skipped = 0
     for root, dirs, files in os.walk(KORA_ROOT):
         root_path = KORA_ROOT / os.path.relpath(root, KORA_ROOT)
         filtered = []
@@ -29,6 +34,7 @@ def iter_repository_files():
                 continue
             dir_path = root_path / directory
             if root_path.parent == AGENTS_ROOT and _is_workspace_deprecated(dir_path):
+                _deprecated_dirs_skipped += 1
                 continue
             filtered.append(directory)
         dirs[:] = filtered
@@ -38,6 +44,10 @@ def iter_repository_files():
             if file_name in IGNORED_FILES and path.parent == KORA_ROOT:
                 continue
             yield path
+
+
+def get_deprecated_dirs_skipped():
+    return _deprecated_dirs_skipped
 
 
 @lru_cache(maxsize=1)

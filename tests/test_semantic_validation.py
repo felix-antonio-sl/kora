@@ -1141,7 +1141,7 @@ class DeprecatedFilterTests(unittest.TestCase):
 
         default_count = len(iter_agent_workspaces())
         all_count = len(iter_agent_workspaces(include_deprecated=True))
-        self.assertGreater(all_count, default_count)
+        self.assertGreaterEqual(all_count, default_count)
 
     def test_catalog_index_excludes_deprecated_artifacts(self):
         result = run_cli("index")

@@ -1,6 +1,6 @@
 from .catalog import build_catalog_lookup, load_catalog
 from .config import AGENTS_ROOT, KORA_ROOT
-from .graph import build_reference_graph
+from .graph import build_reference_graph, get_deprecated_dirs_skipped
 from .workspaces import fragment_exists
 
 
@@ -48,8 +48,11 @@ def cmd_health(strict=False):
                 print(f"[BROKEN-AGENT] In {edge.source.relative_to(KORA_ROOT)}: {edge.target}")
                 broken_agent_routes += 1
 
+    deprecated_skipped = get_deprecated_dirs_skipped()
     total_broken = broken_links + broken_fragments + broken_agent_routes + invalid_config_entries
     print(f"\nHealth check complete. Scanned {scanned_files} files.")
+    if deprecated_skipped:
+        print(f"  ({deprecated_skipped} deprecated workspace(s) excluded)")
     if total_broken == 0:
         print("All URN references are healthy!")
     else:
