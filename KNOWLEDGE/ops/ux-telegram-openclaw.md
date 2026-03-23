@@ -1,0 +1,145 @@
+---
+_manifest:
+  urn: "urn:ops:kb:ux-telegram-openclaw"
+  provenance:
+    created_by: "ops/clawstack + kora/curator"
+    created_at: "2026-03-23"
+    source: "Pruebas empiricas con 3 bots Telegram OpenClaw v2026.3.22 + documentacion oficial"
+version: "1.0.0"
+status: published
+tags: [telegram, ux, configuracion, openclaw, streaming, tablas, chunking]
+lang: es
+---
+
+# Configuración UX óptima para Telegram en OpenClaw
+
+Configuraciones verificadas empíricamente para buena experiencia de usuario en bots Telegram sobre OpenClaw v2026.3.22+. Cada config fue probada, su efecto documentado, y las trampas registradas.
+
+---
+
+## Config recomendada
+
+```json5
+channels: {
+  telegram: {
+    chunkMode: "length",
+    markdown: { tables: "bullets" },
+    replyToMode: "first",
+    silentErrorReplies: true,
+    textChunkLimit: 4000,
+    linkPreview: false,
+    reactionLevel: "minimal",
+  },
+}
+```
+
+---
+
+## Detalle por config
+
+### chunkMode
+
+| Valor | Efecto | Recomendación |
+|---|---|---|
+| `"newline"` | Corta en cada línea en blanco (párrafo). Produce muchas burbujas cortas en Telegram. Fragmenta respuestas largas en 10-15 mensajes. | **NO usar** |
+| `"length"` | Corta solo al superar `textChunkLimit`. Mensajes más largos y consolidados. | **Recomendado** |
+
+### markdown.tables
+
+| Valor | Efecto | Recomendación |
+|---|---|---|
+| `"code"` (default) | Renderiza tablas como bloque `<pre>` monoespaciado. Ilegible en pantalla móvil — columnas desalineadas, scroll horizontal. | **NO usar** |
+| `"bullets"` | Convierte cada fila de tabla en lista de bullets (ej: `• Feature: X, Plataforma: Y`). Legible en cualquier pantalla. | **Recomendado** |
+| `"off"` | Envía markdown crudo sin transformar. Telegram no soporta tablas nativas — resultado impredecible. | Evitar |
+
+### replyToMode
+
+| Valor | Efecto | Recomendación |
+|---|---|---|
+| `"off"` (default) | Respuestas llegan como mensajes sueltos sin relación visual con la pregunta. | Aceptable para chat lineal |
+| `"first"` | Bot cita el mensaje del usuario al responder. Crea threading visual — claro qué respuesta va con qué pregunta. | **Recomendado** |
+| `"all"` | Cita cada mensaje. Ruidoso si hay múltiples mensajes seguidos. | Evitar |
+
+### silentErrorReplies
+
+| Valor | Efecto | Recomendación |
+|---|---|---|
+| `false` (default) | Errores (API timeout, rate limit) suenan con notificación normal. | Molesto |
+| `true` | Errores llegan silenciosos — no vibra el teléfono por un fallo. | **Recomendado** |
+
+### streaming
+
+| Valor | Efecto en Telegram |
+|---|---|
+| `"off"` | Sin preview. Espera respuesta completa, envía de una vez. Sin feedback visual. |
+| `"partial"` | Envía preview message, lo edita via `editMessageText` mientras genera. Muestra tool calls como `<read_file>` en el chat. |
+| `"progress"` | **Alias de "partial" en Telegram** — no hay diferencia. Existe para consistencia cross-canal. |
+| `"block"` | Legacy. Chunking por bloques de texto. |
+
+`"partial"` es el default y funciona bien. Si las tool calls en el preview molestan, usar `"off"`.
+
+---
+
+## Trampas documentadas
+
+### streaming: "full" no existe
+
+Opciones válidas: `off | partial | block | progress`. `"full"` genera error de schema en `openclaw doctor`. `"progress"` es alias de `"partial"` en Telegram.
+
+### tools.profile: "minimal" no incluye filesystem
+
+`"minimal"` solo provee `session_status`. No incluye `group:fs` ni `group:web`. Para agentes que leen KBs desde filesystem, no restringir tools o usar `"coding"`.
+
+| Profile | Tools incluidos |
+|---|---|
+| `"minimal"` | `session_status` solamente |
+| `"coding"` | `group:fs`, `group:runtime`, `group:sessions`, `group:memory`, `image` |
+| `"messaging"` | `group:messaging`, sessions tools |
+| `"full"` | Sin restricción |
+
+### group:memory no existe en v2026.3.22
+
+Genera warning en logs: `tools.allow contains unknown entries (group:memory)`. No bloquea el arranque pero la tool no se carga. Grupos válidos: `group:fs`, `group:web`, `group:runtime`, `group:sessions`, `group:ui`, `group:automation`, `group:messaging`, `group:nodes`, `group:openclaw`.
+
+### Auth es per-agent, no compartida
+
+`auth-profiles.json` vive en `~/.openclaw/agents/{id}/agent/`. Cada agente lee SOLO su propio archivo. Copy manual entre agentes funciona pero no se sincroniza.
+
+### Config no interpola ${ENV_VAR}
+
+`openclaw.json` no soporta interpolación de variables de entorno. Tokens y valores van literales en el JSON. La variable `${OPENCLAW_HOOKS_TOKEN}` queda como string literal.
+
+---
+
+## Config adicional verificada
+
+### thinkingDefault
+
+| Valor | Efecto |
+|---|---|
+| `"high"` | Thinking extendido siempre. Más tokens, más lento. |
+| `"adaptive"` | v2026.3.x — Claude 4.6 ajusta thinking según complejidad. Ahorra tokens en tareas simples. **Recomendado**. |
+
+### session.reset
+
+| Modo | Efecto | Caso de uso |
+|---|---|---|
+| `mode: "idle", idleMinutes: 120` | Reset tras 2h de inactividad | Agentes reactivos (copiloto on-demand) |
+| `mode: "daily", atHour: 4` | Reset diario a las 4AM | Agentes con sesiones de día completo |
+
+### session.maintenance
+
+```json5
+session: {
+  maintenance: {
+    pruneAfter: "30d",
+    maxEntries: 500,
+  },
+}
+```
+
+Previene crecimiento descontrolado del session store. Poda sesiones >30 días y limita a 500 entradas.
+
+### gateway.bind en Docker
+
+`"loopback"` (default) escucha en `127.0.0.1` dentro del container. Otros containers en la misma bridge no pueden alcanzarlo. Usar `"lan"` para que escuche en `0.0.0.0`. La seguridad del host la da el port mapping Docker (`127.0.0.1:{port}:{port}`).

@@ -2123,9 +2123,17 @@ Catalog:
     title: 'Tutorial: Desplegar un agente KORA en OpenClaw'
     file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md
     status: published
+  - urn: urn:ops:kb:federacion-kora-v2
+    title: Federación KORA v2 — Comunicación cross-gateway y storage compartido
+    file: KNOWLEDGE/ops/federacion-kora-v2.md
+    status: published
   - urn: urn:ops:kb:principios-transmutacion-kora-openclaw
     title: Principios de transmutacion KORA → OpenClaw
     file: KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md
+    status: published
+  - urn: urn:ops:kb:ux-telegram-openclaw
+    title: Configuración UX óptima para Telegram en OpenClaw
+    file: KNOWLEDGE/ops/ux-telegram-openclaw.md
     status: published
   - urn: urn:pro:kb:mba-personal-kaufman
     title: MBA Personal — Modelos Mentales de Negocios
