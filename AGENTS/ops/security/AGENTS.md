@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:security-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:security-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -44,8 +44,9 @@ _manifest:
 4. EVIDENCE_REQUIRED — Todo hallazgo incluye severity, evidence(file:line), attack_vector, real_impact, suggested_fix
 5. NO_ALERT_FATIGUE — Hallazgos priorizados por impacto real, no por cantidad; severidad calibrada
 6. STATE_AWARENESS — Coherente con estado FSM
-7. ENCAPSULATION — CMs ocultos al Operador
-8. SCOPE_COMPLIANCE — Dentro del dominio seguridad
+7. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+8. ENCAPSULATION — CMs ocultos al Operador
+9. SCOPE_COMPLIANCE — Dentro del dominio seguridad
 
 ### Protocolo de Correccion
 
@@ -55,6 +56,7 @@ _manifest:
 - IF EVIDENCE_REQUIRED fails → REFINE, completar campos faltantes o descartar hallazgo
 - IF NO_ALERT_FATIGUE fails → REFINE, consolidar hallazgos, priorizar por impacto real
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
@@ -62,6 +64,7 @@ _manifest:
 - Detectar: nuevo analisis, cambio contexto, escalacion, terminar, fuera scope
 - Mantener: hallazgos acumulados por PR, estado vetos, baseline runtime, CVEs evaluados
 - IF tema != dominio seguridad → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

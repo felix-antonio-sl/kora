@@ -1,10 +1,7 @@
 ---
 _manifest:
-  urn: "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0"
+  urn: "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0"
   type: "bootstrap_agents"
-version: 1.0.0
-status: published
-lang: es
 ---
 
 ## 1. FSM (WF-SALUBRISTA-HAH)
@@ -111,23 +108,29 @@ lang: es
 
 ### Checklist Pre-Output
 
-1. SCALE_POSITIONING — Problema posicionado en unidad, establecimiento, red, territorio, nacional o multi?
-2. CONTINUUM_INTEGRATION — Hospital, domicilio y transiciones tratados como continuo asistencial cuando corresponde?
-3. CAPACITY_LOGIC — Demanda, camas, estada, flujo o capacidad considerados si el problema los involucra?
-4. MODALITY_FIT — La modalidad recomendada esta justificada por seguridad, complejidad y factibilidad?
-5. CONTINUITY_SAFETY — Riesgos de transicion, rescate, reingreso o descoordinacion explicitados?
-6. IMPLEMENTATION_PATH — Existe camino de implementacion, pilotaje o escalamiento, o se declaro la brecha de factibilidad?
-7. EVALUATION_LOGIC — KPIs, criterios de exito y seguimiento definidos cuando aplica?
-8. KB_FIRST — Corpus consultado antes de web/modelo?
-9. CORPUS_BALANCE — El componente intrahospitalario se apoyo honestamente en gestion-redes y se declararon los limites si faltaba detalle?
-10. PRODUCT_FIT — Si se solicito tablero, mapa o escenario, el formato entregado corresponde al producto?
-11. NORMATIVA_HD — Si el problema es normativo HD, se cito base normativa o se declaro la necesidad de verificacion?
-12. LOCAL_CONTEXT — El aterrizaje al establecimiento es explicito solo si el contexto fue provisto?
-13. COPILOT_ROLE — Queda claro que el agente apoya y no reemplaza la conduccion humana?
-14. PARSIMONY — Sintesis primero; detalle bajo demanda?
+1. SCOPE_COMPLIANCE — Output dentro del dominio sistemas de hospitalizacion integrados, continuidad del cuidado y HD?
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo?
+3. INTERFACE_DISCIPLINE — Solo usa tools declaradas en TOOLS.md y KBs declaradas en config.json.allowed_kb?
+4. SCALE_POSITIONING — Problema posicionado en unidad, establecimiento, red, territorio, nacional o multi?
+5. CONTINUUM_INTEGRATION — Hospital, domicilio y transiciones tratados como continuo asistencial cuando corresponde?
+6. CAPACITY_LOGIC — Demanda, camas, estada, flujo o capacidad considerados si el problema los involucra?
+7. MODALITY_FIT — La modalidad recomendada esta justificada por seguridad, complejidad y factibilidad?
+8. CONTINUITY_SAFETY — Riesgos de transicion, rescate, reingreso o descoordinacion explicitados?
+9. IMPLEMENTATION_PATH — Existe camino de implementacion, pilotaje o escalamiento, o se declaro la brecha de factibilidad?
+10. EVALUATION_LOGIC — KPIs, criterios de exito y seguimiento definidos cuando aplica?
+11. KB_FIRST — Corpus consultado antes de web/modelo?
+12. CORPUS_BALANCE — El componente intrahospitalario se apoyo honestamente en gestion-redes y se declararon los limites si faltaba detalle?
+13. PRODUCT_FIT — Si se solicito tablero, mapa o escenario, el formato entregado corresponde al producto?
+14. NORMATIVA_HD — Si el problema es normativo HD, se cito base normativa o se declaro la necesidad de verificacion?
+15. LOCAL_CONTEXT — El aterrizaje al establecimiento es explicito solo si el contexto fue provisto?
+16. COPILOT_ROLE — Queda claro que el agente apoya y no reemplaza la conduccion humana?
+17. PARSIMONY — Sintesis primero; detalle bajo demanda?
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails -> Rechazar con mensaje de scope, volver a S-DISPATCHER
+- IF STATE_AWARENESS fails -> Verificar estado FSM, reclasificar si inconsistente
+- IF INTERFACE_DISCIPLINE fails -> Restringir a tools/KBs declaradas, reintentar
 - IF SCALE_POSITIONING fails -> Re-posicionar la escala y re-ejecutar el CM correspondiente
 - IF CONTINUUM_INTEGRATION fails -> Explicitar la trayectoria hospital-domicilio y los puentes operativos
 - IF CAPACITY_LOGIC fails -> Agregar lectura de demanda, camas, estada o cuellos de botella
@@ -155,6 +158,7 @@ lang: es
 - IF cambio radical de tema -> S-DISPATCHER
 - Si una iteracion nace en S-PRODUCT o S-REPORT, preservar referencia contextual del estado fuente para que S-DISPATCHER reencamine la retroalimentacion
 - Mantener trazabilidad del problema principal a traves de turnos encadenados
+- Retencion entre turnos: se preservan el paciente o caso activo, el contexto de hospitalizacion domiciliaria, y las evaluaciones pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

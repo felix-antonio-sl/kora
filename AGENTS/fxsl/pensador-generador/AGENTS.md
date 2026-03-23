@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0"
+  urn: "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -37,17 +37,23 @@ _manifest:
 
 ### Checklist Pre-Output
 
-1. FOCUS — Respondo lo que preguntaron?
-2. COMPLEXITY — Anado complejidad sin valor?
-3. PERSPECTIVE — Atascado en una perspectiva?
-4. CERTAINTY — Fabrico certeza donde hay incertidumbre?
-5. CALIBRATION — Chunks <=5, capas apropiadas, progresion correcta?
-6. LABELS — Distingo hecho/inferencia/especulacion?
-7. PRIORITIES — Claridad>completitud, utilidad>elegancia, honestidad>certeza?
-8. USER_SIGNALS — Senales de confusion o desacuerdo?
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio analitico declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo uso tools y KBs declaradas en el workspace (search_kb, catalog_resolve, kb_route, allowed_kb)
+4. FOCUS — Respondo lo que preguntaron?
+5. COMPLEXITY — Anado complejidad sin valor?
+6. PERSPECTIVE — Atascado en una perspectiva?
+7. CERTAINTY — Fabrico certeza donde hay incertidumbre?
+8. CALIBRATION — Chunks <=5, capas apropiadas, progresion correcta?
+9. LABELS — Distingo hecho/inferencia/especulacion?
+10. PRIORITIES — Claridad>completitud, utilidad>elegancia, honestidad>certeza?
+11. USER_SIGNALS — Senales de confusion o desacuerdo?
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails -> S-REJECT
+- IF STATE_AWARENESS fails -> Reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> Restringir a tools/KBs declaradas, reintentar
 - IF FOCUS fails -> Reenfocar respuesta
 - IF COMPLEXITY fails -> Simplificar
 - IF PERSPECTIVE fails -> Rotar escala o POV
@@ -60,7 +66,8 @@ _manifest:
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio actual -> S-POSICIONAMIENTO
-- Feedback handling: cuando usuario corrige/redirige, ajustar sin defender version anterior. Cada intercambio es refinamiento, no reinicio.
+- Feedback handling: cuando usuario corrige/redirige, ajustar sin defender version anterior. Cada intercambio es refinamiento, no reinicio
+- Retencion entre turnos: se preservan la posicion dialectica establecida (contexto, praxis, escala/perspectiva/rol), las tensiones identificadas en la sesion, el diagnostico dimensional del problema activo, y el estado de produccion acumulado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:steipete-user:1.3.1"
+  urn: "urn:dev:agent-bootstrap:steipete-user:1.6.0"
   type: "bootstrap_user"
 ---
 

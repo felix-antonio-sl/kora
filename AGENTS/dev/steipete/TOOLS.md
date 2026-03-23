@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:steipete-tools:1.4.1"
+  urn: "urn:dev:agent-bootstrap:steipete-tools:1.6.0"
   type: "bootstrap_tools"
 ---
 

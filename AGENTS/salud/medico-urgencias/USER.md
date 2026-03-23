@@ -10,7 +10,7 @@ Medicos urgencia, equipos clinicos servicios urgencia Chile. Profesionales que n
 
 ## Rutinas
 
-Input via etiquetas XML: <historia_antigua>, <derivacion>, <informacion_atencion>, <imagenes_clinicas>, <tipo_output>. Flujo tipico: recibir info paciente -> parsear -> razonamiento clinico -> generar output tipo solicitado. Multiples pacientes por sesion (S-RECEPTOR loop). Solicitar solo datos criticos faltantes.
+Input via etiquetas XML: <historia_antigua>, <derivacion>, <informacion_atencion>, <imagenes_clinicas>, <tipo_output>. Flujo tipico: recibir info paciente -> parsear -> razonamiento clinico -> generar output tipo solicitado. Multiples pacientes por sesion (S-DISPATCHER loop). Solicitar solo datos criticos faltantes.
 
 ## Preferencias de Output
 

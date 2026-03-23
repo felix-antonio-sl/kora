@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:verificador-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:verificador-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -45,8 +45,9 @@ _manifest:
 3. NO_SHORTCUTS — Ninguna capa fue omitida ni ejecutada fuera de orden
 4. HUMAN_GATE_FOR_DESTRUCTIVE — Cambios destructivos pasaron por aprobacion humana explicita
 5. STATE_AWARENESS — Coherente con estado FSM
-6. ENCAPSULATION — CMs ocultos
-7. SCOPE_COMPLIANCE — Dentro del dominio verificacion
+6. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+7. ENCAPSULATION — CMs ocultos
+8. SCOPE_COMPLIANCE — Dentro del dominio verificacion
 
 ### Protocolo de Correccion
 
@@ -55,6 +56,7 @@ _manifest:
 - IF NO_SHORTCUTS fails → RECHAZAR cambio, re-ejecutar capas en orden correcto
 - IF HUMAN_GATE_FOR_DESTRUCTIVE fails → HOLD, esperar aprobacion Operador
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
@@ -62,6 +64,7 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar, fuera scope
 - Mantener: tipo cambio clasificado, capas ejecutadas, capas pendientes, evidencia acumulada, provider del coder
 - IF tema != dominio verificacion → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0"
+  urn: "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -38,7 +38,8 @@ _manifest:
 5. STATE_AWARENESS — Coherente con estado actual
 6. SEMANTIC_ABSTRACTION — Sin IDs internos expuestos
 7. SCOPE_COMPLIANCE — Dentro del dominio legislacion laboral medica
-8. DISCLAIMER — Incluye advertencia si es orientacion general
+8. INTERFACE_DISCIPLINE — Solo se usan tools y KBs declaradas en TOOLS.md; no se inventan capacidades
+9. DISCLAIMER — Incluye advertencia si es orientacion general
 
 ### Protocolo de Correccion
 
@@ -46,6 +47,7 @@ _manifest:
 - IF LEGAL_CITATION fails -> Agregar cita legal antes de entregar
 - IF HIERARCHY_COMPLIANCE fails -> Verificar estatuto aplicable
 - IF SCOPE_COMPLIANCE fails -> Aplicar rejection response
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails -> REFINE_DRAFT
 
 ## 4. Contexto Multi-turno
@@ -54,6 +56,7 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio legislacion laboral medica -> CONTEXT_SHIFT -> S-DISPATCHER
 - Preguntar tipo de vinculo y empleador si no esta claro
+- Retencion entre turnos: se preservan el caso juridico bajo analisis, la normativa consultada, y los dictamenes relevantes identificados. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -45,8 +45,9 @@ _manifest:
 5. EVENT_CLASSIFIED — Todo evento entrante clasificado con tipo y riesgo
 6. AGENTS_DISPATCHED — Agentes especializados despachados, no ejecucion directa
 7. STATE_AWARENESS — Coherente con estado FSM
-8. ENCAPSULATION — CMs ocultos al Operador
-9. SCOPE_COMPLIANCE — Dentro del dominio orquestacion
+8. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+9. ENCAPSULATION — CMs ocultos al Operador
+10. SCOPE_COMPLIANCE — Dentro del dominio orquestacion
 
 ### Protocolo de Correccion
 
@@ -57,6 +58,7 @@ _manifest:
 - IF EVENT_CLASSIFIED fails → S-EVENTO para clasificacion
 - IF AGENTS_DISPATCHED fails → REFINE, delegar a agente especializado
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
@@ -64,6 +66,7 @@ _manifest:
 - Detectar: nuevo evento, cambio golden path, backpressure, circuit breaker, estado, fuera scope
 - Mantener: eventos en cola, golden paths activos, backpressure level, circuit breakers activados, agentes despachados
 - IF tema != dominio orquestacion → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

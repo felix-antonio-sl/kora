@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22",
+  "generated_at": "2026-03-23",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/agent-spec-md.md",
@@ -53,20 +53,162 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "dev",
-        "workspace_valid": 8,
-        "workspace_invalid": 0,
+        "workspace_valid": 0,
+        "workspace_invalid": 8,
         "bootstrap_validated": 32,
         "global_failures": 0,
-        "issue_counts": {},
-        "issues": [],
-        "ok": true
+        "issue_counts": {
+          "multiturno_minimum": 1,
+          "soul_canonical": 22
+        },
+        "issues": [
+          {
+            "path": "AGENTS/dev/analyst/SOUL.md",
+            "workspace": "AGENTS/dev/analyst",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/analyst/SOUL.md",
+            "workspace": "AGENTS/dev/analyst",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/analyst/SOUL.md",
+            "workspace": "AGENTS/dev/analyst",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/coder/AGENTS.md",
+            "workspace": "AGENTS/dev/coder",
+            "category": "multiturno_minimum",
+            "message": "Contexto Multi-turno no declara criterio de retencion entre turnos"
+          },
+          {
+            "path": "AGENTS/dev/coder/SOUL.md",
+            "workspace": "AGENTS/dev/coder",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/coder/SOUL.md",
+            "workspace": "AGENTS/dev/coder",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/coder/SOUL.md",
+            "workspace": "AGENTS/dev/coder",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/planner/SOUL.md",
+            "workspace": "AGENTS/dev/planner",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/planner/SOUL.md",
+            "workspace": "AGENTS/dev/planner",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/planner/SOUL.md",
+            "workspace": "AGENTS/dev/planner",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/refactorer/SOUL.md",
+            "workspace": "AGENTS/dev/refactorer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/refactorer/SOUL.md",
+            "workspace": "AGENTS/dev/refactorer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/refactorer/SOUL.md",
+            "workspace": "AGENTS/dev/refactorer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/reviewer/SOUL.md",
+            "workspace": "AGENTS/dev/reviewer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/reviewer/SOUL.md",
+            "workspace": "AGENTS/dev/reviewer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/reviewer/SOUL.md",
+            "workspace": "AGENTS/dev/reviewer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/sentinel/SOUL.md",
+            "workspace": "AGENTS/dev/sentinel",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/sentinel/SOUL.md",
+            "workspace": "AGENTS/dev/sentinel",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/sentinel/SOUL.md",
+            "workspace": "AGENTS/dev/sentinel",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/steipete/SOUL.md",
+            "workspace": "AGENTS/dev/steipete",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion no canonica 'Axiomas' (canonicas: Identidad Dialectica, Paradigma Cognitivo, Tono, Voz)"
+          },
+          {
+            "path": "AGENTS/dev/tester/SOUL.md",
+            "workspace": "AGENTS/dev/tester",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/tester/SOUL.md",
+            "workspace": "AGENTS/dev/tester",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/dev/tester/SOUL.md",
+            "workspace": "AGENTS/dev/tester",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          }
+        ],
+        "ok": false
       },
       "summary": {
         "findings_total": 40,
         "p1": 40,
         "p2": 0,
         "p3": 0,
-        "strict_validate_green": true
+        "strict_validate_green": false
       },
       "findings": [
         {
@@ -737,20 +879,149 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "ops",
-        "workspace_valid": 8,
-        "workspace_invalid": 0,
+        "workspace_valid": 1,
+        "workspace_invalid": 7,
         "bootstrap_validated": 32,
         "global_failures": 0,
-        "issue_counts": {},
-        "issues": [],
-        "ok": true
+        "issue_counts": {
+          "soul_canonical": 21
+        },
+        "issues": [
+          {
+            "path": "AGENTS/ops/ci-assistant/SOUL.md",
+            "workspace": "AGENTS/ops/ci-assistant",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/ci-assistant/SOUL.md",
+            "workspace": "AGENTS/ops/ci-assistant",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/ci-assistant/SOUL.md",
+            "workspace": "AGENTS/ops/ci-assistant",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/deployer/SOUL.md",
+            "workspace": "AGENTS/ops/deployer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/deployer/SOUL.md",
+            "workspace": "AGENTS/ops/deployer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/deployer/SOUL.md",
+            "workspace": "AGENTS/ops/deployer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/integrador/SOUL.md",
+            "workspace": "AGENTS/ops/integrador",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/integrador/SOUL.md",
+            "workspace": "AGENTS/ops/integrador",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/integrador/SOUL.md",
+            "workspace": "AGENTS/ops/integrador",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/observer/SOUL.md",
+            "workspace": "AGENTS/ops/observer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/observer/SOUL.md",
+            "workspace": "AGENTS/ops/observer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/observer/SOUL.md",
+            "workspace": "AGENTS/ops/observer",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
+            "workspace": "AGENTS/ops/orquestador-swarm",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
+            "workspace": "AGENTS/ops/orquestador-swarm",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
+            "workspace": "AGENTS/ops/orquestador-swarm",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/security/SOUL.md",
+            "workspace": "AGENTS/ops/security",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/security/SOUL.md",
+            "workspace": "AGENTS/ops/security",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/security/SOUL.md",
+            "workspace": "AGENTS/ops/security",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/verificador/SOUL.md",
+            "workspace": "AGENTS/ops/verificador",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/verificador/SOUL.md",
+            "workspace": "AGENTS/ops/verificador",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/ops/verificador/SOUL.md",
+            "workspace": "AGENTS/ops/verificador",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          }
+        ],
+        "ok": false
       },
       "summary": {
         "findings_total": 59,
         "p1": 58,
         "p2": 1,
         "p3": 0,
-        "strict_validate_green": true
+        "strict_validate_green": false
       },
       "findings": [
         {
@@ -1774,20 +2045,222 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "domains",
-        "workspace_valid": 20,
-        "workspace_invalid": 0,
+        "workspace_valid": 7,
+        "workspace_invalid": 13,
         "bootstrap_validated": 80,
         "global_failures": 0,
-        "issue_counts": {},
-        "issues": [],
-        "ok": true
+        "issue_counts": {
+          "multiturno_minimum": 4,
+          "soul_canonical": 29
+        },
+        "issues": [
+          {
+            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
+            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
+            "category": "multiturno_minimum",
+            "message": "Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
+            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
+            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo Respuesta' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
+            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md",
+            "workspace": "AGENTS/fxsl/arquitecto-categorico",
+            "category": "multiturno_minimum",
+            "message": "Contexto Multi-turno no declara mecanismo de deteccion de desvio"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/SOUL.md",
+            "workspace": "AGENTS/fxsl/arquitecto-sistemas-informacion",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/SOUL.md",
+            "workspace": "AGENTS/fxsl/arquitecto-sistemas-informacion",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/SOUL.md",
+            "workspace": "AGENTS/fxsl/arquitecto-sistemas-informacion",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/SOUL.md",
+            "workspace": "AGENTS/fxsl/ingeniero-sistemas-composicional",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/SOUL.md",
+            "workspace": "AGENTS/fxsl/ingeniero-sistemas-composicional",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/SOUL.md",
+            "workspace": "AGENTS/fxsl/ingeniero-sistemas-composicional",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/ontologista-gist/SOUL.md",
+            "workspace": "AGENTS/fxsl/ontologista-gist",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/ontologista-gist/SOUL.md",
+            "workspace": "AGENTS/fxsl/ontologista-gist",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/ontologista-gist/SOUL.md",
+            "workspace": "AGENTS/fxsl/ontologista-gist",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/fxsl/pensador-generador/AGENTS.md",
+            "workspace": "AGENTS/fxsl/pensador-generador",
+            "category": "multiturno_minimum",
+            "message": "Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)"
+          },
+          {
+            "path": "AGENTS/gn/ar-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/ar-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/ar-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/ar-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/ar-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/ar-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/asesor-juridico/SOUL.md",
+            "workspace": "AGENTS/gn/asesor-juridico",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/asesor-juridico/SOUL.md",
+            "workspace": "AGENTS/gn/asesor-juridico",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/asesor-juridico/SOUL.md",
+            "workspace": "AGENTS/gn/asesor-juridico",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/dgi-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/dgi-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/dgi-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/dgi-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo Respuesta' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/dgi-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/dgi-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/digitrans/AGENTS.md",
+            "workspace": "AGENTS/gn/digitrans",
+            "category": "multiturno_minimum",
+            "message": "Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)"
+          },
+          {
+            "path": "AGENTS/gn/erp-gore/SOUL.md",
+            "workspace": "AGENTS/gn/erp-gore",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/erp-gore/SOUL.md",
+            "workspace": "AGENTS/gn/erp-gore",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/erp-gore/SOUL.md",
+            "workspace": "AGENTS/gn/erp-gore",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/gestor-ipr-360/SOUL.md",
+            "workspace": "AGENTS/gn/gestor-ipr-360",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/gestor-ipr-360/SOUL.md",
+            "workspace": "AGENTS/gn/gestor-ipr-360",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo Respuesta' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/gobernador-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/gobernador-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
+          },
+          {
+            "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
+            "workspace": "AGENTS/gn/gobernador-virtual",
+            "category": "soul_canonical",
+            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
+          }
+        ],
+        "ok": false
       },
       "summary": {
-        "findings_total": 73,
-        "p1": 72,
+        "findings_total": 66,
+        "p1": 65,
         "p2": 1,
         "p3": 0,
-        "strict_validate_green": true
+        "strict_validate_green": false
       },
       "findings": [
         {
@@ -1878,7 +2351,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
-            "line": 56,
+            "line": 62,
             "snippet": "- IF ambito != estado -> CONTEXT_SHIFT -> S-DISPATCHER"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -1926,7 +2399,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
-            "line": 63,
+            "line": 65,
             "snippet": "- IF CONTEXT_SHIFT fails -> TRANSITION -> S-DISPATCHER"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -1942,7 +2415,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
-            "line": 67,
+            "line": 69,
             "snippet": "- IF other fails -> REFINE_DRAFT"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -1958,7 +2431,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
-            "line": 73,
+            "line": 75,
             "snippet": "- IF tema != dominio estado actual -> CONTEXT_SHIFT -> S-DISPATCHER"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -2214,7 +2687,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 61,
+            "line": 65,
             "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -2230,107 +2703,11 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 57,
+            "line": 63,
             "snippet": "- IF tema != dominio comunicacion estrategica -> CONTEXT_SHIFT -> S-DISPATCHER"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
           "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER -> ACT: Recibir solicitud. Clasificar: diagnostico, diseno narrativo, arquitectura mensajes, pieza tactica, consulta. Dirigir al estado apropiado. -> Trans: IF nuevo proyecto o situacion comunicacional compleja -> S-DIAGNOSTICO-ESTRATEGICO. IF necesita narrativa/posicionamiento -> S-DISENO-NARRATIVA. IF necesita definir mensajes/canales -> S-ARQUITECTURA-MENSAJES. IF necesita pieza concreta (brief, Q&A, etc.) -> S-PRODUCCION-TACTICA. IF consulta puntual sobre comunicacion -> S-CONSULTA. IF terminar -> S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-DIAGNOSTICO-ESTRATEGICO -> ACT: Analizar situacion comunicacional en 5 dimensiones: CONTEXTO (que esta pasando, situacion actual, historia, momento del ciclo), OBJETIVOS (informar, persuadir, alinear, defender, posicionar), STAKEHOLDERS (audiencias primarias, secundarias, hostiles, aliadas), GAPS (desconexion entre lo dicho y lo hecho/percibido), RIESGOS (reputacionales, de coherencia, de timing, de canal). Presentar diagnostico estructurado. -> Trans: IF diagnostico completo y necesita narrativa -> S-DISENO-NARRATIVA. IF diagnostico completo y necesita mensajes -> S-ARQUITECTURA-MENSAJES. IF falta informacion critica -> S-DIAGNOSTICO-ESTRATEGICO. IF usuario redirige -> S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-DISENO-NARRATIVA -> ACT: Construir narrativa en 5 dimensiones: PROPUESTA DE VALOR (que ofrece que otros no, en una oracion), POSICIONAMIENTO (en que categoria compite y como se diferencia), EJES NARRATIVOS (2-3 temas recurrentes que anclan toda comunicacion), MENSAJES CLAVE (3-5 afirmaciones para repetir consistentemente), PRUEBA DE COHERENCIA (la narrativa resiste contraste con realidad?). Validar coherencia narrativa-realidad. -> Trans: IF narrativa definida y necesita arquitectura -> S-ARQUITECTURA-MENSAJES. IF narrativa definida y necesita piezas -> S-PRODUCCION-TACTICA. IF narrativa requiere ajustes -> S-DISENO-NARRATIVA. IF usuario redirige -> S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-ARQUITECTURA-MENSAJES -> ACT: Disenar sistema mensajes en 5 dimensiones: SEGMENTACION (audiencias distintas requieren mensajes distintos), ADAPTACION (mismo mensaje central, diferente enfasis/profundidad por segmento), CANALES (donde esta cada audiencia, que formato espera), SECUENCIA (que se dice primero, que se reserva, que se repite), CONSISTENCIA (todos los mensajes apuntan a misma narrativa central). Establecer prioridades. -> Trans: IF arquitectura completa y necesita piezas -> S-PRODUCCION-TACTICA. IF arquitectura requiere ajustes -> S-ARQUITECTURA-MENSAJES. IF usuario redirige -> S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-PRODUCCION-TACTICA -> ACT: Generar pieza segun formato: BRIEF (objetivo, audiencia, mensaje central, tono, CTA, restricciones), LINEAS DISCURSIVAS (principales + apoyo + lo que NO decir), Q&A VOCEROS (pregunta probable -> respuesta recomendada -> puente a mensaje clave), FAQ (pregunta frecuente -> respuesta clara -> contexto), NARRATIVA CORTA (hook -> desarrollo -> cierre con CTA). Verificar: mensaje central claro en primeros 10 segundos, un solo CTA, tono consistente. Calibrar output (chunks 3-5 elementos, capas sintesis->desarrollo->detalle, progresion familiar->nuevo). -> Trans: IF pieza entregada -> S-DISPATCHER. IF otra pieza -> S-PRODUCCION-TACTICA. IF ajustes -> S-PRODUCCION-TACTICA."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-CONSULTA -> ACT: Recibir consulta puntual. Aplicar razonamiento (analisis, generacion, critica). Entregar respuesta calibrada. -> Trans: IF consulta resuelta -> S-DISPATCHER. IF consulta deriva en proyecto -> S-DIAGNOSTICO-ESTRATEGICO."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
         },
@@ -2342,7 +2719,7 @@
           "spec_rule": "agent-spec-md §4.2-§4.3",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
-            "line": 70,
+            "line": 72,
             "snippet": "- IF other fails -> REFINE_DRAFT"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -2358,24 +2735,8 @@
           "spec_rule": "agent-spec-md §4.2.6",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-RECEPTOR -> ACT: Recibir info paciente. Parsear etiquetas XML (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output). IF imagenes_clinicas presente -> skill CM-interpretador-imagenes. IF mensaje contiene \"cargar [topico]\" o \"neo [topico]\" -> S-NEO. Invocar skill CM-CONTEXT-MANAGER para determinar: nuevo paciente, continuacion, retorno clarificacion. Invocar skill CM-RAZONAMIENTO-CLINICO sobre datos parseados (RED_FLAGS/VINDICATE, INTERACTION_CHECK, PHYSIO_INTEGRATION, CONTEXT_MODULATION). -> Trans: IF cargar/neo -> S-NEO. IF sintesis -> S-SINTESIS. IF alta ambulatoria -> S-ALTA. IF hospitalizacion -> S-HOSPITALIZACION. IF interconsulta -> S-INTERCONSULTA. IF epicrisis -> S-EPICRISIS. IF terminar sesion -> S-END. IF tipo_output no reconocido o ausente -> S-CLARIFICADOR."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "salud/medico-urgencias",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 11,
-            "snippet": "2. STATE: S-SINTESIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=sintesis). Generar sintesis minima orientada a decision con RAZONAMIENTO_CLINICO integrado. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+            "snippet": "2. STATE: S-SINTESIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=sintesis). Generar sintesis minima orientada a decision con RAZONAMIENTO_CLINICO integrado. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2391,7 +2752,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 13,
-            "snippet": "3. STATE: S-ALTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=alta). Generar alta ambulatoria telegrafica con campos estructurados. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+            "snippet": "3. STATE: S-ALTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=alta). Generar alta ambulatoria telegrafica con campos estructurados. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2407,7 +2768,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 15,
-            "snippet": "4. STATE: S-HOSPITALIZACION -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=hospitalizacion). Generar ingreso hospitalario telegrafico con justificacion. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+            "snippet": "4. STATE: S-HOSPITALIZACION -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=hospitalizacion). Generar ingreso hospitalario telegrafico con justificacion. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2423,7 +2784,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 17,
-            "snippet": "5. STATE: S-INTERCONSULTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=interconsulta). Generar IC concisa con pregunta especifica. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+            "snippet": "5. STATE: S-INTERCONSULTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=interconsulta). Generar IC concisa con pregunta especifica. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2439,7 +2800,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 19,
-            "snippet": "6. STATE: S-EPICRISIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=epicrisis). Generar epicrisis egreso con campos requeridos y opcionales segun valor clinico. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+            "snippet": "6. STATE: S-EPICRISIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=epicrisis). Generar epicrisis egreso con campos requeridos y opcionales segun valor clinico. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2455,7 +2816,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 21,
-            "snippet": "7. STATE: S-NEO -> ACT: Invocar skill CM-NEO-LOADER(topico). Generar paquete conocimiento comprimido: definiciones, perlas, vocabulario especialista, guias accion, scores, red flags. Conocimiento cargado persiste en contexto sesion para uso en evaluaciones posteriores del mismo turno. -> Trans: IF completado -> S-RECEPTOR. IF topico no reconocido -> S-CLARIFICADOR (solicitar especificacion topico)."
+            "snippet": "7. STATE: S-NEO -> ACT: Invocar skill CM-NEO-LOADER(topico). Generar paquete conocimiento comprimido: definiciones, perlas, vocabulario especialista, guias accion, scores, red flags. Conocimiento cargado persiste en contexto sesion para uso en evaluaciones posteriores del mismo turno. -> Trans: IF completado -> S-DISPATCHER. IF topico no reconocido -> S-CLARIFICADOR (solicitar especificacion topico)."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2471,7 +2832,7 @@
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 23,
-            "snippet": "8. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-RECEPTOR."
+            "snippet": "8. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2964,7 +3325,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "count": 65,
+          "count": 58,
           "workspaces": [
             "fxsl/arquitecto-automatizacion-organizacional",
             "fxsl/arquitecto-sistemas-informacion",
@@ -2976,7 +3337,6 @@
             "gn/erp-gore",
             "gn/gestor-ipr-360",
             "gn/gobernador-virtual",
-            "pro/estratega-comunicacional",
             "salud/medico-urgencias"
           ],
           "closure_type": "agent_fix",
@@ -3101,7 +3461,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
-                "line": 56,
+                "line": 62,
                 "snippet": "- IF ambito != estado -> CONTEXT_SHIFT -> S-DISPATCHER"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3149,7 +3509,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
-                "line": 63,
+                "line": 65,
                 "snippet": "- IF CONTEXT_SHIFT fails -> TRANSITION -> S-DISPATCHER"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3165,7 +3525,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
-                "line": 67,
+                "line": 69,
                 "snippet": "- IF other fails -> REFINE_DRAFT"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3181,7 +3541,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
-                "line": 73,
+                "line": 75,
                 "snippet": "- IF tema != dominio estado actual -> CONTEXT_SHIFT -> S-DISPATCHER"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3437,7 +3797,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 61,
+                "line": 65,
                 "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3489,123 +3849,16 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 57,
+                "line": 63,
                 "snippet": "- IF tema != dominio comunicacion estrategica -> CONTEXT_SHIFT -> S-DISPATCHER"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
               "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
               "closure_type": "agent_fix",
               "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 9,
-                "snippet": "1. STATE: S-DISPATCHER -> ACT: Recibir solicitud. Clasificar: diagnostico, diseno narrativo, arquitectura mensajes, pieza tactica, consulta. Dirigir al estado apropiado. -> Trans: IF nuevo proyecto o situacion comunicacional compleja -> S-DIAGNOSTICO-ESTRATEGICO. IF necesita narrativa/posicionamiento -> S-DISENO-NARRATIVA. IF necesita definir mensajes/canales -> S-ARQUITECTURA-MENSAJES. IF necesita pieza concreta (brief, Q&A, etc.) -> S-PRODUCCION-TACTICA. IF consulta puntual sobre comunicacion -> S-CONSULTA. IF terminar -> S-END."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 11,
-                "snippet": "2. STATE: S-DIAGNOSTICO-ESTRATEGICO -> ACT: Analizar situacion comunicacional en 5 dimensiones: CONTEXTO (que esta pasando, situacion actual, historia, momento del ciclo), OBJETIVOS (informar, persuadir, alinear, defender, posicionar), STAKEHOLDERS (audiencias primarias, secundarias, hostiles, aliadas), GAPS (desconexion entre lo dicho y lo hecho/percibido), RIESGOS (reputacionales, de coherencia, de timing, de canal). Presentar diagnostico estructurado. -> Trans: IF diagnostico completo y necesita narrativa -> S-DISENO-NARRATIVA. IF diagnostico completo y necesita mensajes -> S-ARQUITECTURA-MENSAJES. IF falta informacion critica -> S-DIAGNOSTICO-ESTRATEGICO. IF usuario redirige -> S-DISPATCHER."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 13,
-                "snippet": "3. STATE: S-DISENO-NARRATIVA -> ACT: Construir narrativa en 5 dimensiones: PROPUESTA DE VALOR (que ofrece que otros no, en una oracion), POSICIONAMIENTO (en que categoria compite y como se diferencia), EJES NARRATIVOS (2-3 temas recurrentes que anclan toda comunicacion), MENSAJES CLAVE (3-5 afirmaciones para repetir consistentemente), PRUEBA DE COHERENCIA (la narrativa resiste contraste con realidad?). Validar coherencia narrativa-realidad. -> Trans: IF narrativa definida y necesita arquitectura -> S-ARQUITECTURA-MENSAJES. IF narrativa definida y necesita piezas -> S-PRODUCCION-TACTICA. IF narrativa requiere ajustes -> S-DISENO-NARRATIVA. IF usuario redirige -> S-DISPATCHER."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 15,
-                "snippet": "4. STATE: S-ARQUITECTURA-MENSAJES -> ACT: Disenar sistema mensajes en 5 dimensiones: SEGMENTACION (audiencias distintas requieren mensajes distintos), ADAPTACION (mismo mensaje central, diferente enfasis/profundidad por segmento), CANALES (donde esta cada audiencia, que formato espera), SECUENCIA (que se dice primero, que se reserva, que se repite), CONSISTENCIA (todos los mensajes apuntan a misma narrativa central). Establecer prioridades. -> Trans: IF arquitectura completa y necesita piezas -> S-PRODUCCION-TACTICA. IF arquitectura requiere ajustes -> S-ARQUITECTURA-MENSAJES. IF usuario redirige -> S-DISPATCHER."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 17,
-                "snippet": "5. STATE: S-PRODUCCION-TACTICA -> ACT: Generar pieza segun formato: BRIEF (objetivo, audiencia, mensaje central, tono, CTA, restricciones), LINEAS DISCURSIVAS (principales + apoyo + lo que NO decir), Q&A VOCEROS (pregunta probable -> respuesta recomendada -> puente a mensaje clave), FAQ (pregunta frecuente -> respuesta clara -> contexto), NARRATIVA CORTA (hook -> desarrollo -> cierre con CTA). Verificar: mensaje central claro en primeros 10 segundos, un solo CTA, tono consistente. Calibrar output (chunks 3-5 elementos, capas sintesis->desarrollo->detalle, progresion familiar->nuevo). -> Trans: IF pieza entregada -> S-DISPATCHER. IF otra pieza -> S-PRODUCCION-TACTICA. IF ajustes -> S-PRODUCCION-TACTICA."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 19,
-                "snippet": "6. STATE: S-CONSULTA -> ACT: Recibir consulta puntual. Aplicar razonamiento (analisis, generacion, critica). Entregar respuesta calibrada. -> Trans: IF consulta resuelta -> S-DISPATCHER. IF consulta deriva en proyecto -> S-DIAGNOSTICO-ESTRATEGICO."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
             }
           ],
           "repeated_findings": [
-            {
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "count": 6,
-              "workspaces": [
-                "pro/estratega-comunicacional"
-              ],
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
             {
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
@@ -3630,7 +3883,7 @@
               "spec_rule": "agent-spec-md §4.2-§4.3",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
-                "line": 70,
+                "line": 72,
                 "snippet": "- IF other fails -> REFINE_DRAFT"
               },
               "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -3646,24 +3899,8 @@
               "spec_rule": "agent-spec-md §4.2.6",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
-                "line": 9,
-                "snippet": "1. STATE: S-RECEPTOR -> ACT: Recibir info paciente. Parsear etiquetas XML (historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output). IF imagenes_clinicas presente -> skill CM-interpretador-imagenes. IF mensaje contiene \"cargar [topico]\" o \"neo [topico]\" -> S-NEO. Invocar skill CM-CONTEXT-MANAGER para determinar: nuevo paciente, continuacion, retorno clarificacion. Invocar skill CM-RAZONAMIENTO-CLINICO sobre datos parseados (RED_FLAGS/VINDICATE, INTERACTION_CHECK, PHYSIO_INTEGRATION, CONTEXT_MODULATION). -> Trans: IF cargar/neo -> S-NEO. IF sintesis -> S-SINTESIS. IF alta ambulatoria -> S-ALTA. IF hospitalizacion -> S-HOSPITALIZACION. IF interconsulta -> S-INTERCONSULTA. IF epicrisis -> S-EPICRISIS. IF terminar sesion -> S-END. IF tipo_output no reconocido o ausente -> S-CLARIFICADOR."
-              },
-              "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-              "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            },
-            {
-              "workspace": "salud/medico-urgencias",
-              "rule_id": "agent.missing_transition_precedence",
-              "rule": "Precedencia de transiciones no declarada",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
-              "evidence": {
-                "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 11,
-                "snippet": "2. STATE: S-SINTESIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=sintesis). Generar sintesis minima orientada a decision con RAZONAMIENTO_CLINICO integrado. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+                "snippet": "2. STATE: S-SINTESIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=sintesis). Generar sintesis minima orientada a decision con RAZONAMIENTO_CLINICO integrado. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3679,7 +3916,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 13,
-                "snippet": "3. STATE: S-ALTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=alta). Generar alta ambulatoria telegrafica con campos estructurados. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+                "snippet": "3. STATE: S-ALTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=alta). Generar alta ambulatoria telegrafica con campos estructurados. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3695,7 +3932,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 15,
-                "snippet": "4. STATE: S-HOSPITALIZACION -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=hospitalizacion). Generar ingreso hospitalario telegrafico con justificacion. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+                "snippet": "4. STATE: S-HOSPITALIZACION -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=hospitalizacion). Generar ingreso hospitalario telegrafico con justificacion. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3711,7 +3948,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 17,
-                "snippet": "5. STATE: S-INTERCONSULTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=interconsulta). Generar IC concisa con pregunta especifica. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+                "snippet": "5. STATE: S-INTERCONSULTA -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=interconsulta). Generar IC concisa con pregunta especifica. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3727,7 +3964,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 19,
-                "snippet": "6. STATE: S-EPICRISIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=epicrisis). Generar epicrisis egreso con campos requeridos y opcionales segun valor clinico. -> Trans: IF completado -> S-RECEPTOR. IF info insuficiente -> S-CLARIFICADOR."
+                "snippet": "6. STATE: S-EPICRISIS -> ACT: Invocar skill CM-GENERADOR-DOCUMENTOS(tipo_output=epicrisis). Generar epicrisis egreso con campos requeridos y opcionales segun valor clinico. -> Trans: IF completado -> S-DISPATCHER. IF info insuficiente -> S-CLARIFICADOR."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3743,7 +3980,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 21,
-                "snippet": "7. STATE: S-NEO -> ACT: Invocar skill CM-NEO-LOADER(topico). Generar paquete conocimiento comprimido: definiciones, perlas, vocabulario especialista, guias accion, scores, red flags. Conocimiento cargado persiste en contexto sesion para uso en evaluaciones posteriores del mismo turno. -> Trans: IF completado -> S-RECEPTOR. IF topico no reconocido -> S-CLARIFICADOR (solicitar especificacion topico)."
+                "snippet": "7. STATE: S-NEO -> ACT: Invocar skill CM-NEO-LOADER(topico). Generar paquete conocimiento comprimido: definiciones, perlas, vocabulario especialista, guias accion, scores, red flags. Conocimiento cargado persiste en contexto sesion para uso en evaluaciones posteriores del mismo turno. -> Trans: IF completado -> S-DISPATCHER. IF topico no reconocido -> S-CLARIFICADOR (solicitar especificacion topico)."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3759,7 +3996,7 @@
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 23,
-                "snippet": "8. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-RECEPTOR."
+                "snippet": "8. STATE: S-CLARIFICADOR -> ACT: Identificar dato clinico faltante critico. Solicitar especificamente (indicar 'responder con OMITIR si no disponible'). Registrar estado de retorno via CM-CONTEXT-MANAGER. -> Trans: IF info recibida AND origen=sintesis -> S-SINTESIS. IF info recibida AND origen=alta -> S-ALTA. IF info recibida AND origen=hospitalizacion -> S-HOSPITALIZACION. IF info recibida AND origen=interconsulta -> S-INTERCONSULTA. IF info recibida AND origen=epicrisis -> S-EPICRISIS. IF cancela -> S-DISPATCHER."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3772,7 +4009,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "count": 8,
+              "count": 7,
               "workspaces": [
                 "salud/medico-urgencias"
               ],
@@ -4320,7 +4557,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 146,
+        "count": 139,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4346,7 +4583,6 @@
           "ops/orquestador-swarm",
           "ops/security",
           "ops/verificador",
-          "pro/estratega-comunicacional",
           "salud/medico-urgencias"
         ],
         "closure_type": "agent_fix",
@@ -4413,7 +4649,7 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 146,
+        "count": 139,
         "workspaces": [
           "dev/analyst",
           "dev/coder",
@@ -4439,7 +4675,6 @@
           "ops/orquestador-swarm",
           "ops/security",
           "ops/verificador",
-          "pro/estratega-comunicacional",
           "salud/medico-urgencias"
         ],
         "closure_type": "agent_fix",

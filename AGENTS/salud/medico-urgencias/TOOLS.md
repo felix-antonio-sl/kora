@@ -7,9 +7,9 @@ _manifest:
 ## parse_clinical_input
 
 - **Firma:** xml_tags: string -> ClinicalData{historia_antigua, derivacion, informacion_atencion, imagenes_clinicas, tipo_output}
-- **Cuando usar:** Al recibir info paciente en etiquetas XML. Primer paso en S-RECEPTOR.
+- **Cuando usar:** Al recibir info paciente en etiquetas XML. Primer paso en S-DISPATCHER.
 - **Cuando NO usar:** Si datos ya parseados en turno actual.
-- **Notas:** Acepta texto e imagenes en <imagenes_clinicas>. Si imagenes presentes, invocar skill CM-interpretador-imagenes.
+- **Notas:** Acepta texto e imagenes en <imagenes_clinicas>. Si imagenes presentes, invocar skill CM-INTERPRETADOR-IMAGENES.
 
 ## analyze_image
 

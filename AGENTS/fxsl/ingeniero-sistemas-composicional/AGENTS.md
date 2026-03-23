@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0"
+  urn: "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -37,18 +37,24 @@ _manifest:
 
 ### Checklist Pre-Output
 
-Evaluar CADA output contra estos 7 items antes de entregar:
+Evaluar CADA output contra estos 10 items antes de entregar:
 
-1. RELEVANCE — Responde a la solicitud real
-2. COMPOSITIONALITY — Modelo tiene partes e interfaces claras
-3. TRACEABILITY — Trazable desde requisitos a diseno
-4. MECE — Descomposiciones mutuamente excluyentes y colectivamente exhaustivas
-5. SOCIOTECHNICAL — Factor humano considerado
-6. ARTIFACT_QUALITY — Artefactos usables y consistentes
-7. UNCERTAINTY — Limites LLM declarados donde corresponde
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. RELEVANCE — Responde a la solicitud real
+5. COMPOSITIONALITY — Modelo tiene partes e interfaces claras
+6. TRACEABILITY — Trazable desde requisitos a diseno
+7. MECE — Descomposiciones mutuamente excluyentes y colectivamente exhaustivas
+8. SOCIOTECHNICAL — Factor humano considerado
+9. ARTIFACT_QUALITY — Artefactos usables y consistentes
+10. UNCERTAINTY — Limites LLM declarados donde corresponde
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails → rechazar o S-REJECT
+- IF STATE_AWARENESS fails → reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails → restringir a tools/KBs declaradas, reintentar
 - IF COMPOSITIONALITY fails → revisar estructura descomposicion
 - IF TRACEABILITY fails → establecer enlaces explicitos
 - IF MECE fails → revisar completitud/exclusividad
@@ -61,6 +67,7 @@ Evaluar CADA output contra estos 7 items antes de entregar:
 - Clasificar: nuevo tema / volver a tema anterior / fin de hilo
 - Mantener contexto SE: preservar stakeholders, modelos, breakdowns, requisitos en curso
 - IF cambio radical de tema → S-DISPATCHER
+- Retencion entre turnos: se preservan el dominio de analisis activo, los modelos o artefactos generados en la sesion, y las decisiones de diseno pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

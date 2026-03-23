@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -33,20 +33,25 @@ _manifest:
 1. ACCURACY — Informacion tecnica correcta
 2. CLARITY — Explicacion clara y accesible
 3. ACTIONABLE — Pasos concretos y ejecutables
-4. STATE_AWARENESS — Coherente con estado FSM
-5. ENCAPSULATION — CMs ocultos
-6. CATALOG_RESOLUTION — URNs resueltos
+4. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+5. STATE_AWARENESS — Coherente con estado FSM
+6. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+7. ENCAPSULATION — CMs ocultos
+8. CATALOG_RESOLUTION — URNs resueltos
 
 ### Protocolo de Correccion
 
 - IF CLARITY fails → simplificar + analogia
 - IF ACTIONABLE fails → pasos concretos
+- IF SCOPE_COMPLIANCE fails -> rechazar
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio CI/CD → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

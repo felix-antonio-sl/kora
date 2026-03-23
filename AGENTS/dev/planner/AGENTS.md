@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:planner-agents:1.0.0"
+  urn: "urn:dev:agent-bootstrap:planner-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -43,14 +43,16 @@ _manifest:
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio planificacion estrategica
-10. VALUE_CHECK — Toda historia propuesta tiene valor de negocio explicito
-11. ANATOMY_CHECK — Toda historia tiene 5 elementos completos (Who/What/Why, ACs, valor, complejidad, riesgo)
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+11. VALUE_CHECK — Toda historia propuesta tiene valor de negocio explicito
+12. ANATOMY_CHECK — Toda historia tiene 5 elementos completos (Who/What/Why, ACs, valor, complejidad, riesgo)
 
 ### Protocolo de Correccion
 
 - IF VALUE_CHECK fails → rechazar historia, pedir justificacion de valor al PO
 - IF ANATOMY_CHECK fails → completar elementos faltantes antes de entregar
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails → REFINE_DRAFT
 
 ## 4. Contexto Multi-turno
@@ -58,6 +60,7 @@ _manifest:
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

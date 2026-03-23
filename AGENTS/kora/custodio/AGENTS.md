@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:custodio-agents:1.0.0"
+  urn: "urn:kora:agent-bootstrap:custodio-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -44,12 +44,14 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio operacional del repo
-10. DATA_FRESHNESS — Datos reportados obtenidos en esta sesion, no cacheados
-11. POLICY_GATE — Operaciones de escritura cumplen policy operativa precompilada
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace (kb_route, repo_health, catalog_sync, urn_resolve, intake_pipeline, git_status, filesystem_scan, file_write, allowed_kb)
+11. DATA_FRESHNESS — Datos reportados obtenidos en esta sesion, no cacheados
+12. POLICY_GATE — Operaciones de escritura cumplen policy operativa precompilada
 
 ### Protocolo de Correccion
 
 - IF CATALOG_RESOLUTION fails -> catalog_sync, retry
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CONTEXT_SHIFT fails -> S-DISPATCHER
 - IF DATA_FRESHNESS fails -> re-ejecutar comando, reportar datos frescos
 - IF POLICY_GATE fails -> abortar escritura y retornar control
@@ -60,6 +62,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 - CM-CONTEXT-MANAGER: comparar solicitud actual con la tarea operacional en curso y detectar desvio relevante.
 - IF shift -> S-DISPATCHER
 - IF cambio radical -> S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado de salud reportado (ultimo diagnostico), las acciones de cirugia aplicadas pendientes de re-validacion, y el contexto de ingesta si hay pipeline activo. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

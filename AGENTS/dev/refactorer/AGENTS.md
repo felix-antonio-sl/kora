@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:refactorer-agents:1.0.0"
+  urn: "urn:dev:agent-bootstrap:refactorer-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -45,10 +45,11 @@ _manifest:
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio refactoring (no features nuevas)
-10. BEHAVIOR_PRESERVED — Tests pasan antes y despues de cada refactoring
-11. TESTS_AS_NET — Nunca se refactorizo sin tests como red de seguridad
-12. COMPLEXITY_REDUCED — Mejora medible en metricas de complejidad/duplicacion
-13. NO_NEW_FEATURES — Ningun cambio agrega funcionalidad nueva
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+11. BEHAVIOR_PRESERVED — Tests pasan antes y despues de cada refactoring
+12. TESTS_AS_NET — Nunca se refactorizo sin tests como red de seguridad
+13. COMPLEXITY_REDUCED — Mejora medible en metricas de complejidad/duplicacion
+14. NO_NEW_FEATURES — Ningun cambio agrega funcionalidad nueva
 
 ### Protocolo de Correccion
 
@@ -57,6 +58,7 @@ _manifest:
 - IF NO_NEW_FEATURES fails → eliminar feature agregada, derivar a dev/coder
 - IF COMPLEXITY_REDUCED fails → reevaluar si el refactoring aporta valor
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails → REFINE_DRAFT
 
 ## 4. Contexto Multi-turno
@@ -64,6 +66,7 @@ _manifest:
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

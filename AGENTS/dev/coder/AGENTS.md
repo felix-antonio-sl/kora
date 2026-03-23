@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:coder-agents:1.0.0"
+  urn: "urn:dev:agent-bootstrap:coder-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -48,9 +48,10 @@ _manifest:
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio implementacion
-10. TDD_COMPLIANCE — Todo codigo tiene tests. Tests escritos ANTES de implementacion
-11. TYPE_SAFETY — Zero `any`. Zod/Pydantic en todo boundary
-12. SECURITY_BASELINE — Inputs validados, secrets no hardcoded, SQL parametrizado
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+11. TDD_COMPLIANCE — Todo codigo tiene tests. Tests escritos ANTES de implementacion
+12. TYPE_SAFETY — Zero `any`. Zod/Pydantic en todo boundary
+13. SECURITY_BASELINE — Inputs validados, secrets no hardcoded, SQL parametrizado
 
 ### Protocolo de Correccion
 
@@ -58,6 +59,7 @@ _manifest:
 - IF TYPE_SAFETY fails → agregar tipos/schemas faltantes
 - IF SECURITY_BASELINE fails → corregir vulnerabilidad inmediatamente
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails → REFINE_DRAFT
 
 ## 4. Contexto Multi-turno

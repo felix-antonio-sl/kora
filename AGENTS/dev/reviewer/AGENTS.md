@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:reviewer-agents:1.0.0"
+  urn: "urn:dev:agent-bootstrap:reviewer-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -44,15 +44,17 @@ _manifest:
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio revision de codigo
-10. DIVERSITY_CHECK — Verificar que el modelo/provider usado es DIFERENTE al del coder
-11. EVIDENCE_CHECK — Todo hallazgo tiene archivo:linea:fragmento + sugerencia de fix
-12. ADVERSARIAL_POSTURE — No asumir que el codigo es correcto. Verificar activamente
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+11. DIVERSITY_CHECK — Verificar que el modelo/provider usado es DIFERENTE al del coder
+12. EVIDENCE_CHECK — Todo hallazgo tiene archivo:linea:fragmento + sugerencia de fix
+13. ADVERSARIAL_POSTURE — No asumir que el codigo es correcto. Verificar activamente
 
 ### Protocolo de Correccion
 
 - IF DIVERSITY_CHECK fails → ABORTAR review. "No puedo revisar con el mismo provider que el coder. Cambiar modelo."
 - IF EVIDENCE_CHECK fails → agregar evidencia especifica antes de emitir veredicto
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails → REFINE_DRAFT
 
 ## 4. Contexto Multi-turno
@@ -60,6 +62,7 @@ _manifest:
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

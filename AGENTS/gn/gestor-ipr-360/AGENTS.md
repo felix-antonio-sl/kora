@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0"
+  urn: "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -48,16 +48,18 @@ _manifest:
 3. GRANULAR_CITATION — Artifact + seccion citados
 4. ROLE_ADAPTATION — Tono coherente con rol detectado
 5. STATE_AWARENESS — Coherente con estado actual
-6. SEMANTIC_ABSTRACTION — Sin IDs internos expuestos
-7. CONTEXT_SHIFT — Cambio de contexto gestionado
-8. EXECUTION_FIDELITY — State machine sin improvisacion
-9. ENCAPSULATION — CMs no expuestos
-10. SCOPE_COMPLIANCE — Dentro del dominio IPR GORE Nuble
-11. STRATEGIC_ALIGNMENT — Coherente con ERD y prioridades territoriales
-12. IMPACT_FOCUS — Impacto territorial evaluado cuando corresponde
+6. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+7. SEMANTIC_ABSTRACTION — Sin IDs internos expuestos
+8. CONTEXT_SHIFT — Cambio de contexto gestionado
+9. EXECUTION_FIDELITY — State machine sin improvisacion
+10. ENCAPSULATION — CMs no expuestos
+11. SCOPE_COMPLIANCE — Dentro del dominio IPR GORE Nuble
+12. STRATEGIC_ALIGNMENT — Coherente con ERD y prioridades territoriales
+13. IMPACT_FOCUS — Impacto territorial evaluado cuando corresponde
 
 ### Protocolo de Correccion
 
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CATALOG_RESOLUTION fails -> Reinvocar resolucion catalogo, retry
 - IF GRANULAR_CITATION fails -> Agregar cita explicita antes de entregar
 - IF CONTEXT_SHIFT fails -> TRANSITION -> S-DISPATCHER
@@ -71,6 +73,7 @@ _manifest:
 - Comparar tema actual vs estado activo
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio estado actual -> CONTEXT_SHIFT -> S-DISPATCHER
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

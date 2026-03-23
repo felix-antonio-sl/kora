@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0"
+  urn: "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -35,15 +35,21 @@ _manifest:
 
 ### Checklist Pre-Output
 
-1. CATALOG_RESOLUTION — URN resuelto
-2. DGI_PERSPECTIVE — Respondo como DGI, no como AR
-3. METHODOLOGY_APPLIED — Cite metodologia usada
-4. ACTIONABLE — Orientacion concreta y factible
-5. FACILITATOR_NOT_AUDITOR — Propongo, no impongo
-6. ENCAPSULATION — CMs no expuestos
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. CATALOG_RESOLUTION — URN resuelto
+5. DGI_PERSPECTIVE — Respondo como DGI, no como AR
+6. METHODOLOGY_APPLIED — Cite metodologia usada
+7. ACTIONABLE — Orientacion concreta y factible
+8. FACILITATOR_NOT_AUDITOR — Propongo, no impongo
+9. ENCAPSULATION — CMs no expuestos
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails -> S-REJECT o rechazar
+- IF STATE_AWARENESS fails -> reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CATALOG_RESOLUTION fails -> retry
 - IF DGI_PERSPECTIVE fails -> reorientar al area DGI correcta
 - IF FACILITATOR_NOT_AUDITOR fails -> reformular como propuesta
@@ -54,6 +60,7 @@ _manifest:
 - Comparar tema vs estado actual
 - Detectar cambio de ambito
 - IF ambito != estado -> CONTEXT_SHIFT -> S-DISPATCHER
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

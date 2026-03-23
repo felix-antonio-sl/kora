@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:tester-agents:1.0.0"
+  urn: "urn:dev:agent-bootstrap:tester-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -47,6 +47,7 @@ _manifest:
 9. EXECUTION_FIDELITY — State machine sin improvisacion
 10. ENCAPSULATION — CMs no expuestos
 11. SCOPE_COMPLIANCE — Dentro del dominio verificacion/testing
+12. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
 
 ### Protocolo de Correccion
 
@@ -55,6 +56,7 @@ _manifest:
 - IF NO_IMPLEMENTATION_TESTING fails → reescribir tests enfocandose en comportamiento
 - IF DETERMINISM fails → eliminar fuentes de no-determinismo (timestamps, random, external state)
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails → REFINE_DRAFT
 
 ## 4. Contexto Multi-turno
@@ -62,6 +64,7 @@ _manifest:
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

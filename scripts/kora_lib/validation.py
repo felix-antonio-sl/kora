@@ -13,14 +13,20 @@ from .config import (
     AGENTS_FORBIDDEN_PATTERNS,
     BOOTSTRAP_MANIFEST_TYPES,
     BOOTSTRAP_SCHEMA_PATH,
+    COINDUCTION_REQUIRED_CHECKS,
     CONFIG_SCHEMA_PATH,
     KB_PIPELINE_PATTERN,
     KNOWLEDGE_ROOT,
     KORA_ROOT,
     LOW_LEVEL_RUNTIME_HINTS,
+    MULTITURNO_ACTION_KEYWORDS,
+    MULTITURNO_DETECTION_KEYWORDS,
+    MULTITURNO_RETENTION_KEYWORDS,
     SEMANTIC_TOOL_DOC_MARKERS,
     SKILL_RAW_COMMAND_PATTERNS,
     SEMANTIC_TURN_CONTROL_PATTERNS,
+    SOUL_BEHAVIOR_HEADINGS,
+    SOUL_CANONICAL_HEADINGS,
     SOUL_FORBIDDEN_PATTERNS,
     TOOL_IDENTIFIER_PATTERN,
     TRACES_TO_DOC_PATTERN,
@@ -810,6 +816,72 @@ def validate_agents_canonical_structure(text):
     return failures
 
 
+def _extract_section_text(text, section_number):
+    """Extract text of a numbered ## section from AGENTS.md (e.g., section_number=3 for Co-induccion)."""
+    lines = text.splitlines()
+    in_section = False
+    section_lines = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("## "):
+            if in_section:
+                break
+            heading_lower = stripped[3:].strip().lower()
+            if heading_lower.startswith(f"{section_number}."):
+                in_section = True
+                continue
+        elif in_section:
+            section_lines.append(line)
+    return "\n".join(section_lines)
+
+
+def validate_coinduction_minimum(agents_text):
+    """Check §3 Co-induccion contains the 3 mandatory checks."""
+    failures = []
+    section = _extract_section_text(agents_text, 3)
+    if not section.strip():
+        return failures  # Missing section already caught by agents_grammar
+    for check_name in COINDUCTION_REQUIRED_CHECKS:
+        if check_name not in section:
+            failures.append(f"Co-induccion carece del check obligatorio '{check_name}'")
+    return failures
+
+
+def validate_multiturno_minimum(agents_text):
+    """Check §4 Contexto Multi-turno declares detection, action, and retention (keyword matching)."""
+    failures = []
+    section = _extract_section_text(agents_text, 4)
+    if not section.strip():
+        return failures  # Missing section already caught by agents_grammar
+    has_detection = any(p.search(section) for p in MULTITURNO_DETECTION_KEYWORDS)
+    has_action = any(p.search(section) for p in MULTITURNO_ACTION_KEYWORDS)
+    has_retention = any(p.search(section) for p in MULTITURNO_RETENTION_KEYWORDS)
+    if not has_detection:
+        failures.append("Contexto Multi-turno no declara mecanismo de deteccion de desvio")
+    if not has_action:
+        failures.append("Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)")
+    if not has_retention:
+        failures.append("Contexto Multi-turno no declara criterio de retencion entre turnos")
+    return failures
+
+
+def validate_soul_canonical(soul_text):
+    """Check SOUL.md uses only canonical headings and has no behavior sections."""
+    failures = []
+    headings = [
+        (level, heading)
+        for level, heading in iter_markdown_headings(soul_text)
+        if level == 2
+    ]
+    for _level, heading in headings:
+        normalized = normalize_heading_token(heading)
+        if normalized in SOUL_BEHAVIOR_HEADINGS:
+            failures.append(f"SOUL.md contiene seccion de behavior '{heading}' que debe vivir en AGENTS.md")
+        elif normalized not in SOUL_CANONICAL_HEADINGS:
+            failures.append(f"SOUL.md contiene seccion no canonica '{heading}' (canonicas: Identidad Dialectica, Paradigma Cognitivo, Tono, Voz)")
+    return failures
+
+
 def split_tool_sections(content):
     sections = {}
     current_heading = None
@@ -1118,10 +1190,27 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                     report_issue(agents_path.relative_to(KORA_ROOT), "agents_grammar", failure, workspace=rel_workspace)
                     issue_counts["agents_grammar"] += 1
                     workspace_ok = False
+                for failure in validate_coinduction_minimum(agents_text):
+                    report_issue(agents_path.relative_to(KORA_ROOT), "coinduction_minimum", failure, workspace=rel_workspace)
+                    issue_counts["coinduction_minimum"] += 1
+                    workspace_ok = False
+                for failure in validate_multiturno_minimum(agents_text):
+                    report_issue(agents_path.relative_to(KORA_ROOT), "multiturno_minimum", failure, workspace=rel_workspace)
+                    issue_counts["multiturno_minimum"] += 1
+                    workspace_ok = False
                 for failure in validate_traces_semantics(agents_path, agents_text):
                     report_issue(agents_path.relative_to(KORA_ROOT), "trace_semantics", failure, workspace=rel_workspace)
                     issue_counts["trace_semantics"] += 1
                     workspace_ok = False
+
+            soul_file = workspace_dir / "SOUL.md"
+            if soul_file.exists():
+                soul_text = soul_file.read_text(encoding="utf-8")
+                for failure in validate_soul_canonical(soul_text):
+                    report_issue(soul_file.relative_to(KORA_ROOT), "soul_canonical", failure, workspace=rel_workspace)
+                    issue_counts["soul_canonical"] += 1
+                    workspace_ok = False
+
             for cm_ref in sorted(extract_cm_refs(agents_path)):
                 if cm_ref not in skill_names:
                     report_issue(

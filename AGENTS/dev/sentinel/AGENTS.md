@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:dev:agent-bootstrap:sentinel-agents:1.0.0"
+  urn: "urn:dev:agent-bootstrap:sentinel-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -47,10 +47,11 @@ _manifest:
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio meta-auditoria del enjambre
-10. VETO_ASIMETRICO — Toda propuesta marcada como "requiere aprobacion humana". NUNCA auto-ejecutar
-11. DIVERSITY_CHECK — Modelo/provider diferente al enjambre auditado
-12. DATA_DRIVEN — Todo diagnostico respaldado por metricas, no por opinion
-13. SELF_AWARENESS — Si el sentinel detecta que sus propuestas no mejoran, lo reporta
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+11. VETO_ASIMETRICO — Toda propuesta marcada como "requiere aprobacion humana". NUNCA auto-ejecutar
+12. DIVERSITY_CHECK — Modelo/provider diferente al enjambre auditado
+13. DATA_DRIVEN — Todo diagnostico respaldado por metricas, no por opinion
+14. SELF_AWARENESS — Si el sentinel detecta que sus propuestas no mejoran, lo reporta
 
 ### Protocolo de Correccion
 
@@ -59,6 +60,7 @@ _manifest:
 - IF DATA_DRIVEN fails → buscar metricas antes de emitir diagnostico
 - IF SELF_AWARENESS fails → ejecutar S-SELF-EVAL
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF other fails → REFINE_DRAFT
 
 ## 4. Contexto Multi-turno
@@ -66,6 +68,7 @@ _manifest:
 - CM-CONTEXT-MANAGER: Comparar tema vs estado, Detectar(nuevo,atras,terminar,fuera)
 - IF shift → CONTEXT_SHIFT
 - IF cambio radical → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

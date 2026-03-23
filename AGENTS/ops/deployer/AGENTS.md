@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:deployer-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:deployer-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -44,8 +44,9 @@ _manifest:
 4. HUMAN_APPROVAL_FOR_DESTRUCTIVE — Cambios destructivos aprobados por operador
 5. POST_DEPLOY_VERIFIED — Metricas post-deploy comparadas contra baseline
 6. STATE_AWARENESS — Coherente con estado FSM
-7. ENCAPSULATION — CMs ocultos
-8. SCOPE_COMPLIANCE — Dentro del dominio deploy
+7. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+8. ENCAPSULATION — CMs ocultos
+9. SCOPE_COMPLIANCE — Dentro del dominio deploy
 
 ### Protocolo de Correccion
 
@@ -55,6 +56,7 @@ _manifest:
 - IF HUMAN_APPROVAL_FOR_DESTRUCTIVE fails → HOLD, esperar aprobacion
 - IF POST_DEPLOY_VERIFIED fails → S-ROLLBACK automatico
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
@@ -62,6 +64,7 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar, fuera scope
 - Mantener: clasificacion riesgo, estrategia seleccionada, estado feature flags, metricas baseline
 - IF tema != dominio deploy → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

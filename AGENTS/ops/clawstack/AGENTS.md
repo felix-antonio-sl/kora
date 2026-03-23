@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:ops:agent-bootstrap:clawstack-agents:1.0.0
+  urn: urn:ops:agent-bootstrap:clawstack-agents:1.1.0
   type: bootstrap_agents
 ---
 
@@ -84,6 +84,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification)
 - Preservar entre turnos: plataforma_host, version_openclaw, canales_activos, modelo_principal, issues_abiertos, deploy_en_curso (server, gateway, fase_actual, checkpoints_completados).
 - IF shift -> S-DISPATCHER
 - IF cambio radical -> S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring
 

@@ -1,13 +1,13 @@
 {
   "meta": {
-    "scanned_files": 1466,
-    "node_count": 908,
-    "edge_count": 4367
+    "scanned_files": 1469,
+    "node_count": 911,
+    "edge_count": 4379
   },
   "node_kind_counts": {
-    "artifact": 209,
+    "artifact": 208,
     "knowledge": 249,
-    "skill": 261,
+    "skill": 265,
     "spec": 7,
     "tool": 141,
     "workspace": 41
@@ -15,20 +15,20 @@
   "edge_kind_counts": {
     "AllowsKB": 449,
     "AllowsTool": 218,
-    "ContainsArtifact": 208,
-    "ContainsSkill": 261,
+    "ContainsArtifact": 206,
+    "ContainsSkill": 265,
     "DeclaresTool": 219,
-    "InvokesSkill": 251,
+    "InvokesSkill": 255,
     "RoutesToAgent": 60,
     "TracesTo": 48,
-    "XRef": 2653
+    "XRef": 2659
   },
   "nodes": [
     {
-      "id": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/analyst/AGENTS.md",
       "namespace": "dev"
@@ -70,10 +70,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/coder/AGENTS.md",
       "namespace": "dev"
@@ -115,10 +115,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/planner/AGENTS.md",
       "namespace": "dev"
@@ -160,10 +160,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/refactorer/AGENTS.md",
       "namespace": "dev"
@@ -205,10 +205,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/reviewer/AGENTS.md",
       "namespace": "dev"
@@ -250,10 +250,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/sentinel/AGENTS.md",
       "namespace": "dev"
@@ -295,19 +295,19 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "id": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "urn": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/steipete/AGENTS.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "id": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "urn": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "title": "config.json",
       "path": "AGENTS/dev/steipete/config.json",
       "namespace": "dev"
@@ -322,37 +322,37 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
+      "id": "urn:dev:agent-bootstrap:steipete-soul:1.6.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
-      "title": "Identidad",
+      "urn": "urn:dev:agent-bootstrap:steipete-soul:1.6.0",
+      "title": "SOUL.md",
       "path": "AGENTS/dev/steipete/SOUL.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
+      "id": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
+      "urn": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
       "title": "TOOLS.md",
       "path": "AGENTS/dev/steipete/TOOLS.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
+      "id": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
+      "urn": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
       "title": "Perfil",
       "path": "AGENTS/dev/steipete/USER.md",
       "namespace": "dev"
     },
     {
-      "id": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "id": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "urn": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/dev/tester/AGENTS.md",
       "namespace": "dev"
@@ -394,10 +394,10 @@
       "namespace": "dev"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
       "namespace": "fxsl"
@@ -412,10 +412,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
       "namespace": "fxsl"
@@ -439,10 +439,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "title": "AGENTS.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md",
       "namespace": "fxsl"
@@ -457,10 +457,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
       "title": "SOUL.md",
       "path": "AGENTS/fxsl/arquitecto-categorico/SOUL.md",
       "namespace": "fxsl"
@@ -484,10 +484,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "id": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
       "namespace": "fxsl"
@@ -529,10 +529,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "id": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
       "namespace": "fxsl"
@@ -574,10 +574,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "id": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
       "namespace": "fxsl"
@@ -664,10 +664,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "id": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/fxsl/pensador-generador/AGENTS.md",
       "namespace": "fxsl"
@@ -682,10 +682,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0",
+      "id": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0",
+      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/fxsl/pensador-generador/SOUL.md",
       "namespace": "fxsl"
@@ -709,10 +709,10 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0",
+      "id": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0",
+      "urn": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/ar-virtual/AGENTS.md",
       "namespace": "gn"
@@ -727,10 +727,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0",
+      "id": "urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0",
+      "urn": "urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/ar-virtual/SOUL.md",
       "namespace": "gn"
@@ -754,10 +754,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0",
+      "id": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0",
+      "urn": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
       "namespace": "gn"
@@ -772,10 +772,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0",
+      "id": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0",
+      "urn": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/asesor-juridico/SOUL.md",
       "namespace": "gn"
@@ -799,10 +799,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "id": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "urn": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
       "namespace": "gn"
@@ -817,10 +817,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0",
+      "id": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0",
+      "urn": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/dgi-virtual/SOUL.md",
       "namespace": "gn"
@@ -844,10 +844,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "id": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "urn": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/digitrans/AGENTS.md",
       "namespace": "gn"
@@ -862,10 +862,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:digitrans-soul:2.0.0",
+      "id": "urn:gn:agent-bootstrap:digitrans-soul:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:digitrans-soul:2.0.0",
+      "urn": "urn:gn:agent-bootstrap:digitrans-soul:2.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/digitrans/SOUL.md",
       "namespace": "gn"
@@ -889,10 +889,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0",
+      "id": "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0",
+      "urn": "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/erp-gore/AGENTS.md",
       "namespace": "gn"
@@ -907,10 +907,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:erp-gore-soul:2.0.0",
+      "id": "urn:gn:agent-bootstrap:erp-gore-soul:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:erp-gore-soul:2.0.0",
+      "urn": "urn:gn:agent-bootstrap:erp-gore-soul:2.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/erp-gore/SOUL.md",
       "namespace": "gn"
@@ -934,10 +934,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "id": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
       "namespace": "gn"
@@ -952,10 +952,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0",
+      "id": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/gestor-ipr-360/SOUL.md",
       "namespace": "gn"
@@ -979,10 +979,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "id": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
       "namespace": "gn"
@@ -997,10 +997,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0",
+      "id": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0",
+      "urn": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
       "namespace": "gn"
@@ -1024,10 +1024,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "title": "AGENTS.md",
       "path": "AGENTS/gn/goreologo/AGENTS.md",
       "namespace": "gn"
@@ -1042,10 +1042,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
+      "id": "urn:gn:agent-bootstrap:goreologo-soul:3.3.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
+      "urn": "urn:gn:agent-bootstrap:goreologo-soul:3.3.0",
       "title": "SOUL.md",
       "path": "AGENTS/gn/goreologo/SOUL.md",
       "namespace": "gn"
@@ -1069,10 +1069,10 @@
       "namespace": "gn"
     },
     {
-      "id": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "id": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "urn": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/kora/curator/AGENTS.md",
       "namespace": "kora"
@@ -1114,10 +1114,10 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "id": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "urn": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/kora/custodio/AGENTS.md",
       "namespace": "kora"
@@ -1254,10 +1254,10 @@
       "urn": "urn:kora:catalog:master:2.0.0"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "id": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "title": "AGENTS.md",
       "path": "AGENTS/korvo/korax/AGENTS.md",
       "namespace": "korvo"
@@ -1272,19 +1272,10 @@
       "namespace": "korvo"
     },
     {
-      "id": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
+      "id": "urn:korvo:agent-bootstrap:korax-soul:3.5.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
-      "title": "IDENTITY.md",
-      "path": "AGENTS/korvo/korax/IDENTITY.md",
-      "namespace": "korvo"
-    },
-    {
-      "id": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
+      "urn": "urn:korvo:agent-bootstrap:korax-soul:3.5.0",
       "title": "SOUL.md",
       "path": "AGENTS/korvo/korax/SOUL.md",
       "namespace": "korvo"
@@ -1308,10 +1299,10 @@
       "namespace": "korvo"
     },
     {
-      "id": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/ci-assistant/AGENTS.md",
       "namespace": "ops"
@@ -1326,10 +1317,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/ci-assistant/SOUL.md",
       "namespace": "ops"
@@ -1353,10 +1344,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/clawstack/AGENTS.md",
       "namespace": "ops"
@@ -1398,10 +1389,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/deployer/AGENTS.md",
       "namespace": "ops"
@@ -1416,10 +1407,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:deployer-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:deployer-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:deployer-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:deployer-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/deployer/SOUL.md",
       "namespace": "ops"
@@ -1443,10 +1434,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/integrador/AGENTS.md",
       "namespace": "ops"
@@ -1461,10 +1452,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:integrador-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:integrador-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:integrador-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:integrador-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/integrador/SOUL.md",
       "namespace": "ops"
@@ -1488,10 +1479,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/observer/AGENTS.md",
       "namespace": "ops"
@@ -1506,10 +1497,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:observer-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:observer-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:observer-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:observer-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/observer/SOUL.md",
       "namespace": "ops"
@@ -1533,10 +1524,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
       "namespace": "ops"
@@ -1551,10 +1542,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
       "namespace": "ops"
@@ -1578,10 +1569,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/security/AGENTS.md",
       "namespace": "ops"
@@ -1596,10 +1587,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:security-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:security-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:security-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:security-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/security/SOUL.md",
       "namespace": "ops"
@@ -1623,10 +1614,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "id": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/verificador/AGENTS.md",
       "namespace": "ops"
@@ -1641,10 +1632,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:verificador-soul:1.0.0",
+      "id": "urn:ops:agent-bootstrap:verificador-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:verificador-soul:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:verificador-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/ops/verificador/SOUL.md",
       "namespace": "ops"
@@ -1668,10 +1659,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0",
+      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0",
+      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
       "namespace": "pro"
@@ -1686,10 +1677,10 @@
       "namespace": "pro"
     },
     {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0",
+      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0",
+      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/pro/estratega-comunicacional/SOUL.md",
       "namespace": "pro"
@@ -1713,10 +1704,10 @@
       "namespace": "pro"
     },
     {
-      "id": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "id": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "urn": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/legal/abogado-legislacion-medica/AGENTS.md",
       "namespace": "salud"
@@ -1731,10 +1722,10 @@
       "namespace": "salud"
     },
     {
-      "id": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0",
+      "id": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0",
+      "urn": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0",
       "title": "SOUL.md",
       "path": "AGENTS/legal/abogado-legislacion-medica/SOUL.md",
       "namespace": "salud"
@@ -1758,10 +1749,10 @@
       "namespace": "salud"
     },
     {
-      "id": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "id": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "urn": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
       "namespace": "salud"
@@ -1803,10 +1794,10 @@
       "namespace": "salud"
     },
     {
-      "id": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "id": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "urn": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/salud/salubrista/AGENTS.md",
       "namespace": "salud"
@@ -1821,10 +1812,10 @@
       "namespace": "salud"
     },
     {
-      "id": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "id": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "urn": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/salud/salubrista-hah/AGENTS.md",
       "namespace": "salud"
@@ -1898,7 +1889,7 @@
       "category": "Other",
       "urn": "urn:salud:medico-urgencias:user-stories:1.0.0",
       "title": "Historias de Usuario — Medico Urgencia + Asistente Inteligente",
-      "path": "AGENTS/salud/medico-urgencias/USER-STORIES.md",
+      "path": "KNOWLEDGE/salud/medico-urgencias-user-stories.md",
       "namespace": "salud"
     },
     {
@@ -6258,6 +6249,42 @@
       "namespace": "ops"
     },
     {
+      "id": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
+      "title": "CM-ARQUITECTURA-MENSAJES.md",
+      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-ARQUITECTURA-MENSAJES.md",
+      "namespace": "pro"
+    },
+    {
+      "id": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
+      "title": "CM-DIAGNOSTICO-ESTRATEGICO.md",
+      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-DIAGNOSTICO-ESTRATEGICO.md",
+      "namespace": "pro"
+    },
+    {
+      "id": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
+      "title": "CM-DISENO-NARRATIVA.md",
+      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-DISENO-NARRATIVA.md",
+      "namespace": "pro"
+    },
+    {
+      "id": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
+      "title": "CM-PRODUCCION-TACTICA.md",
+      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-PRODUCCION-TACTICA.md",
+      "namespace": "pro"
+    },
+    {
       "id": "urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -6316,8 +6343,8 @@
       "kind": "skill",
       "category": "Skills",
       "urn": "urn:salud:skill:medico-urgencias-interpretador-imagenes:2.0.0",
-      "title": "CM-interpretador-imagenes.md",
-      "path": "AGENTS/salud/medico-urgencias/skills/CM-interpretador-imagenes.md",
+      "title": "CM-INTERPRETADOR-IMAGENES.md",
+      "path": "AGENTS/salud/medico-urgencias/skills/CM-INTERPRETADOR-IMAGENES.md",
       "namespace": "salud"
     },
     {
@@ -6496,7 +6523,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:agent-spec-md",
-      "title": "KORA/Agent-Spec v8.7.0",
+      "title": "KORA/Agent-Spec v8.8.0",
       "path": "specs/agent-spec-md.md",
       "namespace": "kora"
     },
@@ -11553,7 +11580,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/analyst",
-      "target": "urn:dev:agent-bootstrap:analyst-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:analyst-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11578,7 +11605,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/coder",
-      "target": "urn:dev:agent-bootstrap:coder-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:coder-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11603,7 +11630,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/planner",
-      "target": "urn:dev:agent-bootstrap:planner-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:planner-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11628,7 +11655,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/refactorer",
-      "target": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11653,7 +11680,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/reviewer",
-      "target": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11678,7 +11705,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/sentinel",
-      "target": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11703,12 +11730,12 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.1"
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.6.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0"
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.6.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11718,22 +11745,22 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0"
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.6.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.1"
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.6.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/steipete",
-      "target": "urn:dev:agent-bootstrap:steipete-user:1.3.1"
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.6.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:dev/tester",
-      "target": "urn:dev:agent-bootstrap:tester-agents:1.0.0"
+      "target": "urn:dev:agent-bootstrap:tester-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11758,7 +11785,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-automatizacion-organizacional",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11768,7 +11795,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-automatizacion-organizacional",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11783,7 +11810,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11793,7 +11820,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11808,7 +11835,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-sistemas-informacion",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0"
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11833,7 +11860,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/ingeniero-sistemas-composicional",
-      "target": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0"
+      "target": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11858,7 +11885,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/ontologista-gist",
-      "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0"
+      "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11908,7 +11935,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0"
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11918,7 +11945,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0"
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11933,7 +11960,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/ar-virtual",
-      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0"
+      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11943,7 +11970,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/ar-virtual",
-      "target": "urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0"
+      "target": "urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11958,7 +11985,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/asesor-juridico",
-      "target": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0"
+      "target": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11968,7 +11995,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/asesor-juridico",
-      "target": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0"
+      "target": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11983,7 +12010,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/dgi-virtual",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0"
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -11993,7 +12020,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/dgi-virtual",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0"
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12008,7 +12035,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/digitrans",
-      "target": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0"
+      "target": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12018,7 +12045,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/digitrans",
-      "target": "urn:gn:agent-bootstrap:digitrans-soul:2.0.0"
+      "target": "urn:gn:agent-bootstrap:digitrans-soul:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12033,7 +12060,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/erp-gore",
-      "target": "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0"
+      "target": "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12043,7 +12070,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/erp-gore",
-      "target": "urn:gn:agent-bootstrap:erp-gore-soul:2.0.0"
+      "target": "urn:gn:agent-bootstrap:erp-gore-soul:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12058,7 +12085,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/gestor-ipr-360",
-      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0"
+      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12068,7 +12095,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/gestor-ipr-360",
-      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0"
+      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12083,7 +12110,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/gobernador-virtual",
-      "target": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0"
+      "target": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12093,7 +12120,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/gobernador-virtual",
-      "target": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0"
+      "target": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12108,7 +12135,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12118,7 +12145,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:gn/goreologo",
-      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0"
+      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.3.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12133,7 +12160,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:kora/curator",
-      "target": "urn:kora:agent-bootstrap:curator-agents:2.0.0"
+      "target": "urn:kora:agent-bootstrap:curator-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12158,7 +12185,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:kora/custodio",
-      "target": "urn:kora:agent-bootstrap:custodio-agents:1.0.0"
+      "target": "urn:kora:agent-bootstrap:custodio-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12233,7 +12260,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.4.0"
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.5.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12243,12 +12270,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-identity:3.4.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:korvo/korax",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.4.0"
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.5.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12263,7 +12285,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:legal/abogado-legislacion-medica",
-      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0"
+      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12273,7 +12295,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:legal/abogado-legislacion-medica",
-      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0"
+      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12288,7 +12310,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/ci-assistant",
-      "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12298,7 +12320,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/ci-assistant",
-      "target": "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12313,7 +12335,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12338,7 +12360,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/deployer",
-      "target": "urn:ops:agent-bootstrap:deployer-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:deployer-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12348,7 +12370,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/deployer",
-      "target": "urn:ops:agent-bootstrap:deployer-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:deployer-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12363,7 +12385,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/integrador",
-      "target": "urn:ops:agent-bootstrap:integrador-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:integrador-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12373,7 +12395,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/integrador",
-      "target": "urn:ops:agent-bootstrap:integrador-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:integrador-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12388,7 +12410,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/observer",
-      "target": "urn:ops:agent-bootstrap:observer-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:observer-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12398,7 +12420,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/observer",
-      "target": "urn:ops:agent-bootstrap:observer-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:observer-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12413,7 +12435,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/orquestador-swarm",
-      "target": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12423,7 +12445,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/orquestador-swarm",
-      "target": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12438,7 +12460,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/security",
-      "target": "urn:ops:agent-bootstrap:security-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:security-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12448,7 +12470,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/security",
-      "target": "urn:ops:agent-bootstrap:security-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:security-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12463,7 +12485,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/verificador",
-      "target": "urn:ops:agent-bootstrap:verificador-agents:1.0.0"
+      "target": "urn:ops:agent-bootstrap:verificador-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12473,7 +12495,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/verificador",
-      "target": "urn:ops:agent-bootstrap:verificador-soul:1.0.0"
+      "target": "urn:ops:agent-bootstrap:verificador-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12488,7 +12510,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0"
+      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12498,7 +12520,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0"
+      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12513,7 +12535,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:salud/medico-urgencias",
-      "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0"
+      "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12537,13 +12559,8 @@
     },
     {
       "kind": "ContainsArtifact",
-      "source": "workspace:salud/medico-urgencias",
-      "target": "urn:salud:medico-urgencias:user-stories:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
       "source": "workspace:salud/salubrista",
-      "target": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0"
+      "target": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -12568,7 +12585,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:salud/salubrista-hah",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0"
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -13784,6 +13801,26 @@
       "kind": "ContainsSkill",
       "source": "workspace:ops/verificador",
       "target": "urn:ops:skill:verificador-verification-orchestrator:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:pro/estratega-comunicacional",
+      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:pro/estratega-comunicacional",
+      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:pro/estratega-comunicacional",
+      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:pro/estratega-comunicacional",
+      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -15211,553 +15248,553 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-backlog-health-checker:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-context-manager:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-dashboard-generator:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-metrics-collector:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-retro-reporter:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "target": "urn:dev:skill:analyst-trend-analyzer:1.0.0",
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-bug-hunter:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-context-manager:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-implementation-planner:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-pr-generator:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-story-consumer:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "target": "urn:dev:skill:coder-tdd-executor:1.0.0",
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-backlog-curator:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-context-manager:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-epic-decomposer:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-okr-strategist:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-retro-analyst:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "target": "urn:dev:skill:planner-story-refiner:1.0.0",
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "target": "urn:dev:skill:refactorer-code-analyzer:1.0.0",
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "target": "urn:dev:skill:refactorer-context-manager:1.0.0",
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "target": "urn:dev:skill:refactorer-debt-tracker:1.0.0",
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "target": "urn:dev:skill:refactorer-dependency-modernizer:1.0.0",
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "target": "urn:dev:skill:refactorer-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "target": "urn:dev:skill:refactorer-refactor-executor:1.0.0",
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "target": "urn:dev:skill:reviewer-code-reviewer:1.0.0",
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "target": "urn:dev:skill:reviewer-context-manager:1.0.0",
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "target": "urn:dev:skill:reviewer-eval-executor:1.0.0",
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "target": "urn:dev:skill:reviewer-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "target": "urn:dev:skill:reviewer-security-reviewer:1.0.0",
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "target": "urn:dev:skill:reviewer-verdict-synthesizer:1.0.0",
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-context-auditor:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-context-manager:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-eval-auditor:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-purple-card-generator:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-self-evaluator:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "target": "urn:dev:skill:sentinel-swarm-auditor:1.0.0",
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:blast-radius:1.0.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:captura-dialectica:1.1.2",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:close-the-loop:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:context-hygiene:1.1.2",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:decomposition:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:openclaw-expertise:1.1.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:parallel-dispatch:1.2.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:praxis:1.0.1",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:prompt-craft:1.1.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:skill:tooling-advisor:1.0.0",
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "target": "urn:dev:skill:tester-acceptance-test-generator:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "target": "urn:dev:skill:tester-context-manager:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "target": "urn:dev:skill:tester-coverage-reporter:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "target": "urn:dev:skill:tester-integration-test-generator:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "target": "urn:dev:skill:tester-intent-classifier:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "target": "urn:dev:skill:tester-test-executor:1.0.0",
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-automation-patterns:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-diagnostic:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-llm-engineering:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-sistemas-informacion-data-architect:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-sistemas-informacion-integration-architect:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-sistemas-informacion-is-artifact-generator:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-sistemas-informacion-is-function-designer:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-sistemas-informacion-schema-evolution-manager:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-sistemas-informacion-ws-analyzer:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-artifact-generator:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-breakdown-architect:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-context-analyzer:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-evolution-analyzer:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-opm-modeler:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-requirements-engineer:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-stakeholder-extractor:1.0.0",
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-analizador:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-auditor-gist:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-autocorrector:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-calibrador:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-critico:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-generador:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-gist-advisor:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-modelador-gist:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-navegador-tensiones:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-posicionador:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-tension-ontologica:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
@@ -15793,295 +15830,295 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "target": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0",
+      "source": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0",
       "target": "urn:gn:skill:asesor-juridico-clasificador-acto:1.0.0",
       "source_path": "AGENTS/gn/asesor-juridico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "target": "urn:gn:skill:dgi-virtual-dgi-intake:1.0.0",
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "target": "urn:gn:skill:dgi-virtual-dmaic-evaluator:1.0.0",
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "target": "urn:gn:skill:dgi-virtual-lean-thinking:1.0.0",
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "target": "urn:gn:skill:dgi-virtual-meyer-principles:1.0.0",
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "target": "urn:gn:skill:dgi-virtual-social-navigation:1.0.0",
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "target": "urn:gn:skill:dgi-virtual-structure-principles:1.0.0",
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "target": "urn:gn:skill:digitrans-cpat-analyzer:2.0.0",
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "target": "urn:gn:skill:digitrans-intake:2.0.0",
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "target": "urn:gn:skill:digitrans-normative-guide:2.0.0",
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "target": "urn:gn:skill:digitrans-platform-guidance:2.0.0",
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "target": "urn:gn:skill:digitrans-strategic-guide:2.0.0",
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "target": "urn:gn:skill:digitrans-synthesizer:2.0.0",
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "target": "urn:gn:skill:gestor-ipr-360-ipr-intake:1.0.0",
       "source_path": "AGENTS/gn/gestor-ipr-360/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "target": "urn:gn:skill:gestor-ipr-360-ipr-selector:1.0.0",
       "source_path": "AGENTS/gn/gestor-ipr-360/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "target": "urn:gn:skill:gestor-ipr-360-strategic-investment:1.0.0",
       "source_path": "AGENTS/gn/gestor-ipr-360/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "target": "urn:gn:skill:gobernador-virtual-arquitecto-erd:1.0.0",
       "source_path": "AGENTS/gn/gobernador-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "target": "urn:gn:skill:gobernador-virtual-gore-4-0:1.0.0",
       "source_path": "AGENTS/gn/gobernador-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "target": "urn:gn:skill:gobernador-virtual-palancas-exo:1.0.0",
       "source_path": "AGENTS/gn/gobernador-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "target": "urn:gn:skill:gobernador-virtual-prospectiva-territorial:1.0.0",
       "source_path": "AGENTS/gn/gobernador-virtual/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:gn:skill:goreologo-context-manager:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:gn:skill:goreologo-domain-analyzer:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:gn:skill:goreologo-intake:2.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:gn:skill:goreologo-kb-guidance:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:gn:skill:goreologo-specialist-router:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:gn:skill:goreologo-synthesizer:1.0.0",
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-deprecator:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-designer:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-editor:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-optimizer:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-surgeon:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-context-manager:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-crystallizer:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-intent-classifier:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-koraficator:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-lifecycle-orchestrator:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-catalog-steward:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-context-manager:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-estructura-auditor:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-evolucion-planner:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-health-inspector:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-ingesta-steward:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-intent-classifier:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:skill:custodio-surgeon:1.0.0",
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
@@ -16207,511 +16244,535 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-bancarrota:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-captura:1.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-catalizador:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-close:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-deteccion-abandono:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-deteccion-colapso:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-planificacion:4.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-reflexion:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-regulacion-emocional:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-rescate:1.0.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-sincronizacion:2.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "target": "urn:korvo:skill:cm-triaje:3.1.0",
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-intent-classifier:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:ops:skill:clawstack-version-manager:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "target": "urn:ops:skill:deployer-change-classifier:1.0.0",
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "target": "urn:ops:skill:deployer-context-manager:1.0.0",
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "target": "urn:ops:skill:deployer-deploy-executor:1.0.0",
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "target": "urn:ops:skill:deployer-post-deploy-verifier:1.0.0",
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "target": "urn:ops:skill:deployer-rollback-executor:1.0.0",
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "target": "urn:ops:skill:deployer-strategy-selector:1.0.0",
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "target": "urn:ops:skill:integrador-coherence-verifier:1.0.0",
       "source_path": "AGENTS/ops/integrador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "target": "urn:ops:skill:integrador-conflict-resolver:1.0.0",
       "source_path": "AGENTS/ops/integrador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "target": "urn:ops:skill:integrador-context-manager:1.0.0",
       "source_path": "AGENTS/ops/integrador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "target": "urn:ops:skill:integrador-merge-queue-manager:1.0.0",
       "source_path": "AGENTS/ops/integrador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "target": "urn:ops:skill:integrador-semantic-merger:1.0.0",
       "source_path": "AGENTS/ops/integrador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "target": "urn:ops:skill:observer-alert-manager:1.0.0",
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "target": "urn:ops:skill:observer-anomaly-detector:1.0.0",
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "target": "urn:ops:skill:observer-context-manager:1.0.0",
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "target": "urn:ops:skill:observer-correlation-engine:1.0.0",
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "target": "urn:ops:skill:observer-diagnosis-proposer:1.0.0",
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "target": "urn:ops:skill:observer-health-monitor:1.0.0",
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-backpressure-controller:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-circuit-breaker-manager:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-context-manager:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-event-classifier:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-golden-path-router:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-intent-classifier:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "target": "urn:ops:skill:orquestador-swarm-system-status:1.0.0",
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "target": "urn:ops:skill:security-adversarial-tester:1.0.0",
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "target": "urn:ops:skill:security-context-manager:1.0.0",
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "target": "urn:ops:skill:security-dependency-auditor:1.0.0",
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "target": "urn:ops:skill:security-pr-security-analyzer:1.0.0",
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "target": "urn:ops:skill:security-runtime-monitor:1.0.0",
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "target": "urn:ops:skill:security-self-auditor:1.0.0",
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-ci-layer:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-context-manager:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-diversity-layer:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-human-gate:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-regression-layer:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-security-layer:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "target": "urn:ops:skill:verificador-verification-orchestrator:1.0.0",
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
+      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
+      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
+      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
+      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
+      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
+      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
+      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
+      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "target": "urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0",
       "source_path": "AGENTS/legal/abogado-legislacion-medica/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "target": "urn:salud:skill:abogado-legislacion-medica-estatuto-selector:1.0.0",
       "source_path": "AGENTS/legal/abogado-legislacion-medica/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "target": "urn:salud:skill:abogado-legislacion-medica-materia-router:1.0.0",
       "source_path": "AGENTS/legal/abogado-legislacion-medica/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "target": "urn:salud:skill:medico-urgencias-context-manager:2.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "target": "urn:salud:skill:medico-urgencias-generador-documentos:2.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "target": "urn:salud:skill:medico-urgencias-interpretador-imagenes:2.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "target": "urn:salud:skill:medico-urgencias-neo-loader:1.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "target": "urn:salud:skill:medico-urgencias-razonamiento-clinico:2.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-epi-analyst:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-epi-vigilance:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-implementation-planner:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-intent:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-network-analyst:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-product-builder:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-quality-auditor:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-report-builder:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-report-builder:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
@@ -17077,63 +17138,63 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:kb:cat-skill-algebra",
       "fragment": null,
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
@@ -17406,7 +17467,7 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
@@ -17631,7 +17692,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17666,7 +17727,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17701,7 +17762,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17736,7 +17797,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17771,7 +17832,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17806,7 +17867,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17841,14 +17902,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17862,28 +17923,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.6.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "target": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18464,7 +18525,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18478,7 +18539,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18499,7 +18560,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18513,7 +18574,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18534,7 +18595,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18569,7 +18630,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "target": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18604,7 +18665,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18674,7 +18735,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18688,7 +18749,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0",
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19304,7 +19365,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0",
+      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19318,7 +19379,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0",
+      "target": "urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19339,7 +19400,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0",
+      "target": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19353,7 +19414,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0",
+      "target": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19374,7 +19435,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19388,7 +19449,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0",
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19409,7 +19470,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "target": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19423,7 +19484,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:digitrans-soul:2.0.0",
+      "target": "urn:gn:agent-bootstrap:digitrans-soul:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19444,7 +19505,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0",
+      "target": "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19458,7 +19519,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:erp-gore-soul:2.0.0",
+      "target": "urn:gn:agent-bootstrap:erp-gore-soul:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19479,7 +19540,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19493,7 +19554,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0",
+      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19514,7 +19575,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "target": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19528,7 +19589,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0",
+      "target": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19549,7 +19610,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19563,7 +19624,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20312,7 +20373,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "target": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20347,7 +20408,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "target": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20872,7 +20933,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20886,14 +20947,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.5.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21166,7 +21220,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21180,7 +21234,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21201,7 +21255,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21236,7 +21290,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21250,7 +21304,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:deployer-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:deployer-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21271,7 +21325,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21285,7 +21339,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:integrador-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:integrador-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21306,7 +21360,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21320,7 +21374,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:observer-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:observer-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21341,7 +21395,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21355,7 +21409,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21376,7 +21430,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21390,7 +21444,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:security-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:security-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21411,7 +21465,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "target": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21425,7 +21479,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:verificador-soul:1.0.0",
+      "target": "urn:ops:agent-bootstrap:verificador-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21831,7 +21885,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0",
+      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21845,7 +21899,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0",
+      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21873,7 +21927,35 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21887,7 +21969,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0",
+      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21908,7 +21990,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21943,7 +22025,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -21957,7 +22039,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -22845,8 +22927,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:analyst-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:analyst-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/analyst/AGENTS.md"
     },
@@ -22936,8 +23018,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:coder-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:coder-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/coder/AGENTS.md"
     },
@@ -23027,8 +23109,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:planner-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:planner-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/planner/AGENTS.md"
     },
@@ -23118,8 +23200,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:refactorer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:refactorer-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/refactorer/AGENTS.md"
     },
@@ -23209,8 +23291,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:reviewer-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:reviewer-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/reviewer/AGENTS.md"
     },
@@ -23300,8 +23382,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:sentinel-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:sentinel-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/sentinel/AGENTS.md"
     },
@@ -23391,42 +23473,42 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
-      "target": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
+      "target": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:kb:agentic-engineering-praxis",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.5.1",
+      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
-      "target": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
+      "target": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "target": "urn:dev:kb:agentic-engineering-praxis",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+      "source": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
@@ -23440,36 +23522,36 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
-      "target": "urn:dev:agent-bootstrap:steipete-soul:1.4.0",
+      "source": "urn:dev:agent-bootstrap:steipete-soul:1.6.0",
+      "target": "urn:dev:agent-bootstrap:steipete-soul:1.6.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/SOUL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
-      "target": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
+      "target": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.4.1",
+      "source": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
-      "target": "urn:dev:agent-bootstrap:steipete-user:1.3.1",
+      "source": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
+      "target": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/USER.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
-      "target": "urn:dev:agent-bootstrap:tester-agents:1.0.0",
+      "source": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
+      "target": "urn:dev:agent-bootstrap:tester-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/dev/tester/AGENTS.md"
     },
@@ -24259,8 +24341,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md"
     },
@@ -24273,8 +24355,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md"
     },
@@ -24294,8 +24376,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
@@ -24532,8 +24614,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-categorico/SOUL.md"
     },
@@ -24854,8 +24936,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
+      "target": "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md"
     },
@@ -25057,8 +25139,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
-      "target": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
+      "target": "urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md"
     },
@@ -25120,8 +25202,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
-      "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0",
+      "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
+      "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
     },
@@ -25302,8 +25384,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
@@ -25323,8 +25405,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0",
+      "source": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
+      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/pensador-generador/SOUL.md"
     },
@@ -26156,8 +26238,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0",
-      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
+      "target": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/ar-virtual/AGENTS.md"
     },
@@ -26289,8 +26371,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0",
-      "target": "urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0",
+      "source": "urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0",
+      "target": "urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/ar-virtual/SOUL.md"
     },
@@ -26429,8 +26511,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0",
-      "target": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0",
+      "source": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0",
+      "target": "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/asesor-juridico/AGENTS.md"
     },
@@ -26576,8 +26658,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0",
-      "target": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0",
+      "source": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0",
+      "target": "urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/asesor-juridico/SOUL.md"
     },
@@ -26730,8 +26812,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/dgi-virtual/AGENTS.md"
     },
@@ -26856,8 +26938,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0",
-      "target": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0",
+      "source": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0",
+      "target": "urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/dgi-virtual/SOUL.md"
     },
@@ -26996,8 +27078,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
-      "target": "urn:gn:agent-bootstrap:digitrans-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
+      "target": "urn:gn:agent-bootstrap:digitrans-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/digitrans/AGENTS.md"
     },
@@ -27283,8 +27365,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:digitrans-soul:2.0.0",
-      "target": "urn:gn:agent-bootstrap:digitrans-soul:2.0.0",
+      "source": "urn:gn:agent-bootstrap:digitrans-soul:2.1.0",
+      "target": "urn:gn:agent-bootstrap:digitrans-soul:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/digitrans/SOUL.md"
     },
@@ -27598,8 +27680,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0",
-      "target": "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0",
+      "source": "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0",
+      "target": "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/erp-gore/AGENTS.md"
     },
@@ -27738,8 +27820,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:erp-gore-soul:2.0.0",
-      "target": "urn:gn:agent-bootstrap:erp-gore-soul:2.0.0",
+      "source": "urn:gn:agent-bootstrap:erp-gore-soul:2.1.0",
+      "target": "urn:gn:agent-bootstrap:erp-gore-soul:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/erp-gore/SOUL.md"
     },
@@ -27885,8 +27967,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
-      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
+      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/gestor-ipr-360/AGENTS.md"
     },
@@ -28144,8 +28226,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0",
-      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0",
+      "target": "urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/gestor-ipr-360/SOUL.md"
     },
@@ -28410,8 +28492,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
-      "target": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
+      "target": "urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/gobernador-virtual/AGENTS.md"
     },
@@ -28550,8 +28632,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0",
-      "target": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0",
+      "source": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0",
+      "target": "urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0",
       "fragment": null,
       "source_path": "AGENTS/gn/gobernador-virtual/SOUL.md"
     },
@@ -28697,8 +28779,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/AGENTS.md"
     },
@@ -29243,8 +29325,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
-      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.2.0",
+      "source": "urn:gn:agent-bootstrap:goreologo-soul:3.3.0",
+      "target": "urn:gn:agent-bootstrap:goreologo-soul:3.3.0",
       "fragment": null,
       "source_path": "AGENTS/gn/goreologo/SOUL.md"
     },
@@ -31000,8 +31082,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
-      "target": "urn:kora:agent-bootstrap:curator-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
+      "target": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/kora/curator/AGENTS.md"
     },
@@ -31077,8 +31159,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
-      "target": "urn:kora:agent-bootstrap:custodio-agents:1.0.0",
+      "source": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
+      "target": "urn:kora:agent-bootstrap:custodio-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/kora/custodio/AGENTS.md"
     },
@@ -32302,8 +32384,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
-      "target": "urn:korvo:agent-bootstrap:korax-agents:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
+      "target": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/AGENTS.md"
     },
@@ -32330,15 +32412,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
-      "target": "urn:korvo:agent-bootstrap:korax-identity:3.4.0",
-      "fragment": null,
-      "source_path": "AGENTS/korvo/korax/IDENTITY.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
-      "target": "urn:korvo:agent-bootstrap:korax-soul:3.4.0",
+      "source": "urn:korvo:agent-bootstrap:korax-soul:3.5.0",
+      "target": "urn:korvo:agent-bootstrap:korax-soul:3.5.0",
       "fragment": null,
       "source_path": "AGENTS/korvo/korax/SOUL.md"
     },
@@ -32764,8 +32839,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/ci-assistant/AGENTS.md"
     },
@@ -32799,8 +32874,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/ci-assistant/SOUL.md"
     },
@@ -32841,8 +32916,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
@@ -33296,8 +33371,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:deployer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:deployer-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/deployer/AGENTS.md"
     },
@@ -33331,8 +33406,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:deployer-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:deployer-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:deployer-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:deployer-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/deployer/SOUL.md"
     },
@@ -33373,8 +33448,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:integrador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:integrador-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/integrador/AGENTS.md"
     },
@@ -33408,8 +33483,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:integrador-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:integrador-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:integrador-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:integrador-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/integrador/SOUL.md"
     },
@@ -33450,8 +33525,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:observer-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:observer-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/observer/AGENTS.md"
     },
@@ -33492,8 +33567,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:observer-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:observer-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:observer-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:observer-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/observer/SOUL.md"
     },
@@ -33541,8 +33616,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/orquestador-swarm/AGENTS.md"
     },
@@ -33583,8 +33658,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/orquestador-swarm/SOUL.md"
     },
@@ -33632,8 +33707,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:security-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:security-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:security-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/security/AGENTS.md"
     },
@@ -33674,8 +33749,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:security-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:security-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:security-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:security-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/security/SOUL.md"
     },
@@ -33723,8 +33798,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
-      "target": "urn:ops:agent-bootstrap:verificador-agents:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:verificador-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/verificador/AGENTS.md"
     },
@@ -33758,8 +33833,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:verificador-soul:1.0.0",
-      "target": "urn:ops:agent-bootstrap:verificador-soul:1.0.0",
+      "source": "urn:ops:agent-bootstrap:verificador-soul:1.1.0",
+      "target": "urn:ops:agent-bootstrap:verificador-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/verificador/SOUL.md"
     },
@@ -34220,8 +34295,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0",
+      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
+      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
     },
@@ -34234,8 +34309,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0",
+      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
+      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/pro/estratega-comunicacional/SOUL.md"
     },
@@ -34262,8 +34337,36 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
-      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0",
+      "source": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
+      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-ARQUITECTURA-MENSAJES.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
+      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-DIAGNOSTICO-ESTRATEGICO.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
+      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-DISENO-NARRATIVA.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
+      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-PRODUCCION-TACTICA.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
+      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/legal/abogado-legislacion-medica/AGENTS.md"
     },
@@ -34402,8 +34505,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0",
-      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0",
+      "source": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0",
+      "target": "urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/legal/abogado-legislacion-medica/SOUL.md"
     },
@@ -34549,8 +34652,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
-      "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0",
+      "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
+      "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
     },
@@ -34584,8 +34687,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
     },
@@ -34647,8 +34750,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
@@ -35420,7 +35523,7 @@
       "source": "urn:salud:medico-urgencias:user-stories:1.0.0",
       "target": "urn:salud:medico-urgencias:user-stories:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/salud/medico-urgencias/USER-STORIES.md"
+      "source_path": "KNOWLEDGE/salud/medico-urgencias-user-stories.md"
     },
     {
       "kind": "XRef",
@@ -35574,7 +35677,7 @@
       "source": "urn:salud:skill:medico-urgencias-interpretador-imagenes:2.0.0",
       "target": "urn:salud:skill:medico-urgencias-interpretador-imagenes:2.0.0",
       "fragment": null,
-      "source_path": "AGENTS/salud/medico-urgencias/skills/CM-interpretador-imagenes.md"
+      "source_path": "AGENTS/salud/medico-urgencias/skills/CM-INTERPRETADOR-IMAGENES.md"
     },
     {
       "kind": "XRef",

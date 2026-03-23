@@ -5,7 +5,7 @@ _manifest:
   description: Auto-generated Kora Monorepo Catalog
 Catalog:
   Agents:
-  - urn: urn:dev:agent-bootstrap:analyst-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:analyst-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/analyst/AGENTS.md
     status: published
@@ -25,7 +25,7 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/analyst/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:coder-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:coder-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/coder/AGENTS.md
     status: published
@@ -45,7 +45,7 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/coder/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:planner-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:planner-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/planner/AGENTS.md
     status: published
@@ -65,7 +65,7 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/planner/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:refactorer-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:refactorer-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/refactorer/AGENTS.md
     status: published
@@ -85,7 +85,7 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/refactorer/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:reviewer-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:reviewer-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/reviewer/AGENTS.md
     status: published
@@ -105,7 +105,7 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/reviewer/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:sentinel-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:sentinel-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/sentinel/AGENTS.md
     status: published
@@ -125,11 +125,11 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/sentinel/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:steipete-agents:1.5.1
+  - urn: urn:dev:agent-bootstrap:steipete-agents:1.6.0
     title: AGENTS.md
     file: AGENTS/dev/steipete/AGENTS.md
     status: published
-  - urn: urn:dev:agent-bootstrap:steipete-config:1.3.0
+  - urn: urn:dev:agent-bootstrap:steipete-config:1.6.0
     title: config.json
     file: AGENTS/dev/steipete/config.json
     status: published
@@ -137,19 +137,19 @@ Catalog:
     title: IDENTITY.md
     file: AGENTS/dev/steipete/IDENTITY.md
     status: published
-  - urn: urn:dev:agent-bootstrap:steipete-soul:1.4.0
-    title: Identidad
+  - urn: urn:dev:agent-bootstrap:steipete-soul:1.6.0
+    title: SOUL.md
     file: AGENTS/dev/steipete/SOUL.md
     status: published
-  - urn: urn:dev:agent-bootstrap:steipete-tools:1.4.1
+  - urn: urn:dev:agent-bootstrap:steipete-tools:1.6.0
     title: TOOLS.md
     file: AGENTS/dev/steipete/TOOLS.md
     status: published
-  - urn: urn:dev:agent-bootstrap:steipete-user:1.3.1
+  - urn: urn:dev:agent-bootstrap:steipete-user:1.6.0
     title: Perfil
     file: AGENTS/dev/steipete/USER.md
     status: published
-  - urn: urn:dev:agent-bootstrap:tester-agents:1.0.0
+  - urn: urn:dev:agent-bootstrap:tester-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/dev/tester/AGENTS.md
     status: published
@@ -169,7 +169,7 @@ Catalog:
     title: USER.md
     file: AGENTS/dev/tester/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md
     status: published
@@ -177,7 +177,7 @@ Catalog:
     title: config.json
     file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/config.json
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-soul:1.1.0
     title: SOUL.md
     file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md
     status: published
@@ -189,7 +189,7 @@ Catalog:
     title: USER.md
     file: AGENTS/fxsl/arquitecto-automatizacion-organizacional/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.1.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0
     title: AGENTS.md
     file: AGENTS/fxsl/arquitecto-categorico/AGENTS.md
     status: published
@@ -197,7 +197,7 @@ Catalog:
     title: config.json
     file: AGENTS/fxsl/arquitecto-categorico/config.json
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.1.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0
     title: SOUL.md
     file: AGENTS/fxsl/arquitecto-categorico/SOUL.md
     status: published
@@ -209,7 +209,7 @@ Catalog:
     title: USER.md
     file: AGENTS/fxsl/arquitecto-categorico/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0
+  - urn: urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md
     status: published
@@ -229,7 +229,7 @@ Catalog:
     title: USER.md
     file: AGENTS/fxsl/arquitecto-sistemas-informacion/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.0.0
+  - urn: urn:fxsl:agent-bootstrap:ingeniero-sistemas-composicional-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md
     status: published
@@ -249,7 +249,7 @@ Catalog:
     title: USER.md
     file: AGENTS/fxsl/ingeniero-sistemas-composicional/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0
+  - urn: urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/fxsl/ontologista-gist/AGENTS.md
     status: published
@@ -289,7 +289,7 @@ Catalog:
     title: USER.md
     file: AGENTS/fxsl/opm-specialist/USER.md
     status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-agents:2.0.0
+  - urn: urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/fxsl/pensador-generador/AGENTS.md
     status: published
@@ -297,7 +297,7 @@ Catalog:
     title: config.json
     file: AGENTS/fxsl/pensador-generador/config.json
     status: published
-  - urn: urn:fxsl:agent-bootstrap:pensador-generador-soul:2.0.0
+  - urn: urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0
     title: SOUL.md
     file: AGENTS/fxsl/pensador-generador/SOUL.md
     status: published
@@ -309,7 +309,7 @@ Catalog:
     title: USER.md
     file: AGENTS/fxsl/pensador-generador/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0
+  - urn: urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/gn/ar-virtual/AGENTS.md
     status: published
@@ -317,7 +317,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/ar-virtual/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:ar-virtual-soul:2.0.0
+  - urn: urn:gn:agent-bootstrap:ar-virtual-soul:2.1.0
     title: SOUL.md
     file: AGENTS/gn/ar-virtual/SOUL.md
     status: published
@@ -329,7 +329,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/ar-virtual/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0
     title: AGENTS.md
     file: AGENTS/gn/asesor-juridico/AGENTS.md
     status: published
@@ -337,7 +337,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/asesor-juridico/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:asesor-juridico-soul:5.0.0
+  - urn: urn:gn:agent-bootstrap:asesor-juridico-soul:5.1.0
     title: SOUL.md
     file: AGENTS/gn/asesor-juridico/SOUL.md
     status: published
@@ -349,7 +349,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/asesor-juridico/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-agents:1.0.0
+  - urn: urn:gn:agent-bootstrap:dgi-virtual-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/gn/dgi-virtual/AGENTS.md
     status: published
@@ -357,7 +357,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/dgi-virtual/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:dgi-virtual-soul:1.0.0
+  - urn: urn:gn:agent-bootstrap:dgi-virtual-soul:1.1.0
     title: SOUL.md
     file: AGENTS/gn/dgi-virtual/SOUL.md
     status: published
@@ -369,7 +369,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/dgi-virtual/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:digitrans-agents:2.0.0
+  - urn: urn:gn:agent-bootstrap:digitrans-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/gn/digitrans/AGENTS.md
     status: published
@@ -377,7 +377,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/digitrans/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:digitrans-soul:2.0.0
+  - urn: urn:gn:agent-bootstrap:digitrans-soul:2.1.0
     title: SOUL.md
     file: AGENTS/gn/digitrans/SOUL.md
     status: published
@@ -389,7 +389,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/digitrans/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:erp-gore-agents:2.0.0
+  - urn: urn:gn:agent-bootstrap:erp-gore-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/gn/erp-gore/AGENTS.md
     status: published
@@ -397,7 +397,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/erp-gore/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:erp-gore-soul:2.0.0
+  - urn: urn:gn:agent-bootstrap:erp-gore-soul:2.1.0
     title: SOUL.md
     file: AGENTS/gn/erp-gore/SOUL.md
     status: published
@@ -409,7 +409,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/erp-gore/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-agents:3.1.0
     title: AGENTS.md
     file: AGENTS/gn/gestor-ipr-360/AGENTS.md
     status: published
@@ -417,7 +417,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/gestor-ipr-360/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.0.0
+  - urn: urn:gn:agent-bootstrap:gestor-ipr-360-soul:3.1.0
     title: SOUL.md
     file: AGENTS/gn/gestor-ipr-360/SOUL.md
     status: published
@@ -429,7 +429,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/gestor-ipr-360/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-agents:3.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-agents:3.1.0
     title: AGENTS.md
     file: AGENTS/gn/gobernador-virtual/AGENTS.md
     status: published
@@ -437,7 +437,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/gobernador-virtual/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:gobernador-virtual-soul:3.0.0
+  - urn: urn:gn:agent-bootstrap:gobernador-virtual-soul:3.1.0
     title: SOUL.md
     file: AGENTS/gn/gobernador-virtual/SOUL.md
     status: published
@@ -449,7 +449,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/gobernador-virtual/USER.md
     status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-agents:3.2.0
+  - urn: urn:gn:agent-bootstrap:goreologo-agents:3.3.0
     title: AGENTS.md
     file: AGENTS/gn/goreologo/AGENTS.md
     status: published
@@ -457,7 +457,7 @@ Catalog:
     title: config.json
     file: AGENTS/gn/goreologo/config.json
     status: published
-  - urn: urn:gn:agent-bootstrap:goreologo-soul:3.2.0
+  - urn: urn:gn:agent-bootstrap:goreologo-soul:3.3.0
     title: SOUL.md
     file: AGENTS/gn/goreologo/SOUL.md
     status: published
@@ -469,7 +469,7 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/goreologo/USER.md
     status: published
-  - urn: urn:kora:agent-bootstrap:curator-agents:2.0.0
+  - urn: urn:kora:agent-bootstrap:curator-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/kora/curator/AGENTS.md
     status: published
@@ -489,7 +489,7 @@ Catalog:
     title: USER.md
     file: AGENTS/kora/curator/USER.md
     status: published
-  - urn: urn:kora:agent-bootstrap:custodio-agents:1.0.0
+  - urn: urn:kora:agent-bootstrap:custodio-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/kora/custodio/AGENTS.md
     status: published
@@ -549,7 +549,7 @@ Catalog:
     title: USER.md
     file: AGENTS/kora/guardian/USER.md
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-agents:3.4.0
+  - urn: urn:korvo:agent-bootstrap:korax-agents:3.5.0
     title: AGENTS.md
     file: AGENTS/korvo/korax/AGENTS.md
     status: published
@@ -557,11 +557,7 @@ Catalog:
     title: config.json
     file: AGENTS/korvo/korax/config.json
     status: published
-  - urn: urn:korvo:agent-bootstrap:korax-identity:3.4.0
-    title: IDENTITY.md
-    file: AGENTS/korvo/korax/IDENTITY.md
-    status: published
-  - urn: urn:korvo:agent-bootstrap:korax-soul:3.4.0
+  - urn: urn:korvo:agent-bootstrap:korax-soul:3.5.0
     title: SOUL.md
     file: AGENTS/korvo/korax/SOUL.md
     status: published
@@ -573,7 +569,7 @@ Catalog:
     title: USER.md
     file: AGENTS/korvo/korax/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:ci-assistant-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:ci-assistant-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/ci-assistant/AGENTS.md
     status: published
@@ -581,7 +577,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/ci-assistant/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:ci-assistant-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:ci-assistant-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/ci-assistant/SOUL.md
     status: published
@@ -593,7 +589,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/ci-assistant/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:clawstack-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:clawstack-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/clawstack/AGENTS.md
     status: published
@@ -613,7 +609,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/clawstack/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:deployer-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:deployer-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/deployer/AGENTS.md
     status: published
@@ -621,7 +617,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/deployer/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:deployer-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:deployer-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/deployer/SOUL.md
     status: published
@@ -633,7 +629,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/deployer/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:integrador-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:integrador-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/integrador/AGENTS.md
     status: published
@@ -641,7 +637,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/integrador/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:integrador-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:integrador-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/integrador/SOUL.md
     status: published
@@ -653,7 +649,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/integrador/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:observer-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:observer-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/observer/AGENTS.md
     status: published
@@ -661,7 +657,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/observer/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:observer-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:observer-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/observer/SOUL.md
     status: published
@@ -673,7 +669,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/observer/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:orquestador-swarm-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/orquestador-swarm/AGENTS.md
     status: published
@@ -681,7 +677,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/orquestador-swarm/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:orquestador-swarm-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:orquestador-swarm-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/orquestador-swarm/SOUL.md
     status: published
@@ -693,7 +689,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/orquestador-swarm/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:security-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:security-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/security/AGENTS.md
     status: published
@@ -701,7 +697,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/security/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:security-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:security-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/security/SOUL.md
     status: published
@@ -713,7 +709,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/security/USER.md
     status: published
-  - urn: urn:ops:agent-bootstrap:verificador-agents:1.0.0
+  - urn: urn:ops:agent-bootstrap:verificador-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/ops/verificador/AGENTS.md
     status: published
@@ -721,7 +717,7 @@ Catalog:
     title: config.json
     file: AGENTS/ops/verificador/config.json
     status: published
-  - urn: urn:ops:agent-bootstrap:verificador-soul:1.0.0
+  - urn: urn:ops:agent-bootstrap:verificador-soul:1.1.0
     title: SOUL.md
     file: AGENTS/ops/verificador/SOUL.md
     status: published
@@ -733,7 +729,7 @@ Catalog:
     title: USER.md
     file: AGENTS/ops/verificador/USER.md
     status: published
-  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/pro/estratega-comunicacional/AGENTS.md
     status: published
@@ -741,7 +737,7 @@ Catalog:
     title: config.json
     file: AGENTS/pro/estratega-comunicacional/config.json
     status: published
-  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.0.0
+  - urn: urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0
     title: SOUL.md
     file: AGENTS/pro/estratega-comunicacional/SOUL.md
     status: published
@@ -753,7 +749,7 @@ Catalog:
     title: USER.md
     file: AGENTS/pro/estratega-comunicacional/USER.md
     status: published
-  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.0.0
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/legal/abogado-legislacion-medica/AGENTS.md
     status: published
@@ -761,7 +757,7 @@ Catalog:
     title: config.json
     file: AGENTS/legal/abogado-legislacion-medica/config.json
     status: published
-  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.0.0
+  - urn: urn:salud:agent-bootstrap:abogado-legislacion-medica-soul:1.1.0
     title: SOUL.md
     file: AGENTS/legal/abogado-legislacion-medica/SOUL.md
     status: published
@@ -773,7 +769,7 @@ Catalog:
     title: USER.md
     file: AGENTS/legal/abogado-legislacion-medica/USER.md
     status: published
-  - urn: urn:salud:agent-bootstrap:medico-urgencias-agents:2.0.0
+  - urn: urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/salud/medico-urgencias/AGENTS.md
     status: published
@@ -793,7 +789,7 @@ Catalog:
     title: USER.md
     file: AGENTS/salud/medico-urgencias/USER.md
     status: published
-  - urn: urn:salud:agent-bootstrap:salubrista-agents:1.0.0
+  - urn: urn:salud:agent-bootstrap:salubrista-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/salud/salubrista/AGENTS.md
     status: published
@@ -801,7 +797,7 @@ Catalog:
     title: config.json
     file: AGENTS/salud/salubrista/config.json
     status: published
-  - urn: urn:salud:agent-bootstrap:salubrista-hah-agents:1.0.0
+  - urn: urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0
     title: AGENTS.md
     file: AGENTS/salud/salubrista-hah/AGENTS.md
     status: published
@@ -1774,6 +1770,22 @@ Catalog:
     title: CM-VERIFICATION-ORCHESTRATOR.md
     file: AGENTS/ops/verificador/skills/CM-VERIFICATION-ORCHESTRATOR.md
     status: published
+  - urn: urn:pro:skill:estratega-arquitectura-mensajes:1.0.0
+    title: CM-ARQUITECTURA-MENSAJES.md
+    file: AGENTS/pro/estratega-comunicacional/skills/CM-ARQUITECTURA-MENSAJES.md
+    status: published
+  - urn: urn:pro:skill:estratega-diagnostico-estrategico:1.0.0
+    title: CM-DIAGNOSTICO-ESTRATEGICO.md
+    file: AGENTS/pro/estratega-comunicacional/skills/CM-DIAGNOSTICO-ESTRATEGICO.md
+    status: published
+  - urn: urn:pro:skill:estratega-diseno-narrativa:1.0.0
+    title: CM-DISENO-NARRATIVA.md
+    file: AGENTS/pro/estratega-comunicacional/skills/CM-DISENO-NARRATIVA.md
+    status: published
+  - urn: urn:pro:skill:estratega-produccion-tactica:1.0.0
+    title: CM-PRODUCCION-TACTICA.md
+    file: AGENTS/pro/estratega-comunicacional/skills/CM-PRODUCCION-TACTICA.md
+    status: published
   - urn: urn:salud:skill:abogado-legislacion-medica-consulta-classifier:1.0.0
     title: CM-CONSULTA-CLASSIFIER
     file: AGENTS/legal/abogado-legislacion-medica/skills/CM-CONSULTA-CLASSIFIER.md
@@ -1799,8 +1811,8 @@ Catalog:
     file: AGENTS/salud/medico-urgencias/skills/CM-GENERADOR-DOCUMENTOS.md
     status: published
   - urn: urn:salud:skill:medico-urgencias-interpretador-imagenes:2.0.0
-    title: CM-interpretador-imagenes.md
-    file: AGENTS/salud/medico-urgencias/skills/CM-interpretador-imagenes.md
+    title: CM-INTERPRETADOR-IMAGENES.md
+    file: AGENTS/salud/medico-urgencias/skills/CM-INTERPRETADOR-IMAGENES.md
     status: published
   - urn: urn:salud:skill:medico-urgencias-neo-loader:1.0.0
     title: CM-NEO-LOADER.md
@@ -2545,7 +2557,7 @@ Catalog:
     file: KNOWLEDGE/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
     status: published
   - urn: urn:kora:kb:agent-spec-md
-    title: KORA/Agent-Spec v8.7.0
+    title: KORA/Agent-Spec v8.8.0
     file: specs/agent-spec-md.md
     status: published
   - urn: urn:kora:kb:cat-agent-coalgebra
@@ -2999,5 +3011,5 @@ Catalog:
   Other:
   - urn: urn:salud:medico-urgencias:user-stories:1.0.0
     title: Historias de Usuario — Medico Urgencia + Asistente Inteligente
-    file: AGENTS/salud/medico-urgencias/USER-STORIES.md
+    file: KNOWLEDGE/salud/medico-urgencias-user-stories.md
     status: published

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:digitrans-agents:2.0.0"
+  urn: "urn:gn:agent-bootstrap:digitrans-agents:2.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -40,12 +40,14 @@ _manifest:
 2. FIDELITY — Respuesta basada en artefactos KB
 3. CITATION — Afirmaciones citadas con fuente
 4. STATE_AWARENESS — Coherente con estado actual
-5. ENCAPSULATION — CMs no expuestos
-6. SCOPE_COMPLIANCE — Dentro del dominio TDE
-7. LABEL_DISCIPLINE — Distingo [norma vigente], [dato institucional], [interpretacion], [incertidumbre]
+5. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+6. ENCAPSULATION — CMs no expuestos
+7. SCOPE_COMPLIANCE — Dentro del dominio TDE
+8. LABEL_DISCIPLINE — Distingo [norma vigente], [dato institucional], [interpretacion], [incertidumbre]
 
 ### Protocolo de Correccion
 
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CATALOG_RESOLUTION fails -> catalog_resolve retry
 - IF CONTEXT_SHIFT detected -> S-DISPATCHER
 - IF SCOPE violation -> S-REJECT
@@ -58,6 +60,7 @@ _manifest:
 - Comparar tema actual vs foco de consulta TDE activo
 - Detectar: cambio tema, volver atras, terminar
 - IF tema != dominio TDE -> S-REJECT
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

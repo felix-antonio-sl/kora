@@ -20,7 +20,7 @@ Indicadores de nuevo paciente:
 3. Patologia sin relacion con caso actual
 4. Usuario indica explicitamente nuevo paciente
 
-Accion: archivar contexto paciente anterior, inicializar contexto nuevo paciente, resetear estado FSM a S-RECEPTOR.
+Accion: archivar contexto paciente anterior, inicializar contexto nuevo paciente, resetear estado FSM a S-DISPATCHER.
 
 ### Escenario 2: Continuacion mismo paciente
 

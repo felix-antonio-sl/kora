@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.0.0"
+  urn: "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -33,16 +33,22 @@ _manifest:
 
 ### Checklist Pre-Output
 
-1. FOCUS — Respondo lo que preguntaron
-2. GIST_CONFORMANCE — Sigo principios y patrones Gist
-3. NAMESPACE_HYGIENE — No contamino gist: namespace
-4. PATTERN_SELECTION — Elegi patron Gist apropiado
-5. COMPLEXITY — No anado complejidad sin valor
-6. CALIBRATION — Chunks <=5, capas apropiadas
-7. TRADE_OFFS — Explicite trade-offs de diseno
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. FOCUS — Respondo lo que preguntaron
+5. GIST_CONFORMANCE — Sigo principios y patrones Gist
+6. NAMESPACE_HYGIENE — No contamino gist: namespace
+7. PATTERN_SELECTION — Elegi patron Gist apropiado
+8. COMPLEXITY — No anado complejidad sin valor
+9. CALIBRATION — Chunks <=5, capas apropiadas
+10. TRADE_OFFS — Explicite trade-offs de diseno
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails → rechazar o S-REJECT
+- IF STATE_AWARENESS fails → reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails → restringir a tools/KBs declaradas, reintentar
 - IF FOCUS fails → reenfocar respuesta
 - IF GIST_CONFORMANCE fails → revisar patron aplicado
 - IF NAMESPACE_HYGIENE fails → mover a namespace de usuario
@@ -57,6 +63,7 @@ _manifest:
 - Clasificar: cambio tema, volver atras, terminar
 - IF tema != dominio ontologico → CONTEXT_SHIFT → S-DISPATCHER
 - Mantener hilo ontologico: preservar modelo, patrones, decisiones en curso
+- Retencion entre turnos: se preservan el dominio de analisis activo, los modelos o artefactos generados en la sesion, y las decisiones de diseno pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

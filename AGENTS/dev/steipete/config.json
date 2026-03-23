@@ -1,6 +1,6 @@
 {
   "_manifest": {
-    "urn": "urn:dev:agent-bootstrap:steipete-config:1.3.0",
+    "urn": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
     "type": "bootstrap_config"
   },
   "allowed_kb": [

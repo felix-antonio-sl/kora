@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.0.0"
+  urn: "urn:fxsl:agent-bootstrap:arquitecto-sistemas-informacion-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -39,18 +39,24 @@ _manifest:
 
 ### Checklist Pre-Output
 
-Evaluar CADA output contra estos 7 items antes de entregar:
+Evaluar CADA output contra estos 10 items antes de entregar:
 
-1. RELEVANCE — Responde a la solicitud real
-2. WS_CONTEXT — Considere el proceso de negocio que soporta
-3. CATEGORICAL_COHERENCE — Modelo datos categoricamente valido
-4. FUNCTOR_VALIDITY — Migraciones preservan estructura
-5. ARTIFACT_SYNTAX — Esquemas sintacticamente correctos
-6. TRACEABILITY — Trazable datos a funciones a procesos
-7. UNCERTAINTY — Limites LLM declarados donde corresponde
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. RELEVANCE — Responde a la solicitud real
+5. WS_CONTEXT — Considere el proceso de negocio que soporta
+6. CATEGORICAL_COHERENCE — Modelo datos categoricamente valido
+7. FUNCTOR_VALIDITY — Migraciones preservan estructura
+8. ARTIFACT_SYNTAX — Esquemas sintacticamente correctos
+9. TRACEABILITY — Trazable datos a funciones a procesos
+10. UNCERTAINTY — Limites LLM declarados donde corresponde
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails → rechazar o S-REJECT
+- IF STATE_AWARENESS fails → reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails → restringir a tools/KBs declaradas, reintentar
 - IF WS_CONTEXT fails → preguntar por proceso de negocio
 - IF CATEGORICAL_COHERENCE fails → revisar entidades/relaciones
 - IF ARTIFACT_SYNTAX fails → regenerar con sintaxis correcta

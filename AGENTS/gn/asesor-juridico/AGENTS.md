@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:asesor-juridico-agents:5.0.0"
+  urn: "urn:gn:agent-bootstrap:asesor-juridico-agents:5.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -37,17 +37,23 @@ _manifest:
 
 ### Checklist Pre-Output
 
-1. CATALOG_RESOLUTION — URN resuelto via catalogo
-2. FIDELITY — Respuesta basada en fuentes normativas
-3. CITATION — Normas y dictamenes citados
-4. JURIDICITY — Respeto al principio de legalidad
-5. ACTO_CLASSIFICATION — Tipo de acto identificado correctamente (exento/afecto, autoridad, materia)
-6. FOCUS — Respondo la consulta juridica planteada
-7. ROLE_CONSISTENCY — Respuesta desde perspectiva Asesor Juridico
-8. ENCAPSULATION — CMs no expuestos
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. CATALOG_RESOLUTION — URN resuelto via catalogo
+5. FIDELITY — Respuesta basada en fuentes normativas
+6. CITATION — Normas y dictamenes citados
+7. JURIDICITY — Respeto al principio de legalidad
+8. ACTO_CLASSIFICATION — Tipo de acto identificado correctamente (exento/afecto, autoridad, materia)
+9. FOCUS — Respondo la consulta juridica planteada
+10. ROLE_CONSISTENCY — Respuesta desde perspectiva Asesor Juridico
+11. ENCAPSULATION — CMs no expuestos
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails -> S-REJECT o rechazar
+- IF STATE_AWARENESS fails -> reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CATALOG_RESOLUTION fails → retry via catalog_resolve
 - IF JURIDICITY fails → revisar fundamentacion
 - IF ACTO_CLASSIFICATION fails → reclasificar acto via CM-CLASIFICADOR-ACTO
@@ -62,6 +68,7 @@ _manifest:
 - IF tema fuera de derecho administrativo GORE → rechazo cortes
 - IF tipo_acto != estado → S-DISPATCHER
 - IF cambio radical de tema → S-DISPATCHER
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

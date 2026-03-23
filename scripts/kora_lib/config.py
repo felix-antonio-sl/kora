@@ -124,6 +124,31 @@ SOUL_FORBIDDEN_PATTERNS = (
     re.compile(r"\bTrans:"),
     re.compile(r"\bIF\s+.+(?:->|→)\s+S-[A-Z][A-Z0-9_-]+\b"),
 )
+SOUL_CANONICAL_HEADINGS = {"identidad dialectica", "paradigma cognitivo", "tono", "voz"}
+SOUL_BEHAVIOR_HEADINGS = {"saludo", "estilo", "estilo respuesta", "ejemplos",
+                          "ejemplos comportamiento", "ejemplos de comportamiento",
+                          "comportamiento", "comportamiento operativo",
+                          "contrato conductual", "estilo comunicativo"}
+COINDUCTION_REQUIRED_CHECKS = ("SCOPE_COMPLIANCE", "STATE_AWARENESS", "INTERFACE_DISCIPLINE")
+MULTITURNO_DETECTION_KEYWORDS = (
+    re.compile(r"\bdesv[ií][ao]\b", re.IGNORECASE),
+    re.compile(r"\bdetec(?:tar|cion|ci[oó]n)\b", re.IGNORECASE),
+    re.compile(r"\bshift\b", re.IGNORECASE),
+    re.compile(r"\bcomparar\s+solicitud\b", re.IGNORECASE),
+)
+MULTITURNO_ACTION_KEYWORDS = (
+    re.compile(r"\bS-DISPATCHER\b"),
+    re.compile(r"\breclasificar\b", re.IGNORECASE),
+    re.compile(r"\brechaz(?:ar|o)\b", re.IGNORECASE),
+    re.compile(r"\breenrut(?:ar|e)\b", re.IGNORECASE),
+)
+MULTITURNO_RETENTION_KEYWORDS = (
+    re.compile(r"\bretenci[oó]n\b", re.IGNORECASE),
+    re.compile(r"\bpreservar?\b", re.IGNORECASE),
+    re.compile(r"\bmantener\b", re.IGNORECASE),
+    re.compile(r"\binvariant", re.IGNORECASE),
+    re.compile(r"\bturno\s+(?:previo|anterior|siguiente)\b", re.IGNORECASE),
+)
 USER_FORBIDDEN_PATTERNS = (
     re.compile(r"\ballowed_kb\b"),
     re.compile(r"\bsandbox\b"),

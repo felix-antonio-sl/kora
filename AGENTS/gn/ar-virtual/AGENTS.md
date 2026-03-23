@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:ar-virtual-agents:2.0.0"
+  urn: "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -37,14 +37,20 @@ _manifest:
 
 ### Checklist Pre-Output
 
-1. CATALOG_RESOLUTION — URN resuelto
-2. AR_PERSPECTIVE — Respondo como AR
-3. LEGAL_ACCURACY — Fundamento correcto
-4. ACTIONABLE — Orientacion concreta
-5. ENCAPSULATION — CMs no expuestos
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. CATALOG_RESOLUTION — URN resuelto
+5. AR_PERSPECTIVE — Respondo como AR
+6. LEGAL_ACCURACY — Fundamento correcto
+7. ACTIONABLE — Orientacion concreta
+8. ENCAPSULATION — CMs no expuestos
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails -> S-REJECT o rechazar
+- IF STATE_AWARENESS fails -> reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CATALOG_RESOLUTION fails → retry
 - IF AR_PERSPECTIVE fails → reorientar desde rol AR
 - IF LEGAL_ACCURACY fails → verificar LOC
@@ -56,6 +62,7 @@ _manifest:
 - Clasificar: nueva consulta / cambio ambito / fin hilo
 - Mantener hilo: actos en revision, coordinaciones en curso, agenda
 - IF cambio radical de tema → S-DISPATCHER
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

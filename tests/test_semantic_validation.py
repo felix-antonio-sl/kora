@@ -30,10 +30,13 @@ from kora_lib.validation import (
     normalize_angle_bracket_urls,
     validate_agents_canonical_structure,
     validate_agents_semantics,
+    validate_coinduction_minimum,
     validate_config_semantics,
     validate_kb_pipeline_consistency,
+    validate_multiturno_minimum,
     validate_skill_purity,
     validate_skill_tool_closure,
+    validate_soul_canonical,
     validate_soul_semantics,
     validate_tools_semantics,
     validate_traces_semantics,
@@ -158,6 +161,168 @@ class SemanticValidationTests(unittest.TestCase):
             "Texto menciona ## 1. FSM y ## 5. Wiring pero no como headings reales.\n"
         )
         self.assertIn("AGENTS.md carece de seccion canonica '## 1. FSM'", failures)
+
+    # --- Co-induccion minima ---
+
+    def test_coinduction_minimum_passes_with_all_three_checks(self):
+        text = textwrap.dedent("""\
+            ## 1. FSM
+            ## 2. Reglas Duras
+            ## 3. Co-induccion
+            ### Checklist Pre-Output
+            1. SCOPE_COMPLIANCE — dentro del dominio
+            2. STATE_AWARENESS — coherente con FSM
+            3. INTERFACE_DISCIPLINE — solo tools declaradas
+            ### Protocolo de Correccion
+            - IF SCOPE_COMPLIANCE fails -> rechazar
+            ## 4. Contexto Multi-turno
+            ## 5. Wiring
+        """)
+        failures = validate_coinduction_minimum(text)
+        self.assertEqual(failures, [])
+
+    def test_coinduction_minimum_flags_missing_scope_compliance(self):
+        text = textwrap.dedent("""\
+            ## 3. Co-induccion
+            1. STATE_AWARENESS — coherente con FSM
+            2. INTERFACE_DISCIPLINE — solo tools declaradas
+            ## 4. Contexto Multi-turno
+        """)
+        failures = validate_coinduction_minimum(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("SCOPE_COMPLIANCE", failures[0])
+
+    def test_coinduction_minimum_flags_all_three_missing(self):
+        text = textwrap.dedent("""\
+            ## 3. Co-induccion
+            1. FOCUS — respondo lo que preguntaron?
+            2. BULLSHIT_CHECK — jerga vacia?
+            ## 4. Contexto Multi-turno
+        """)
+        failures = validate_coinduction_minimum(text)
+        self.assertEqual(len(failures), 3)
+
+    def test_coinduction_minimum_skips_when_section_absent(self):
+        text = "## 1. FSM\n## 2. Reglas Duras\n"
+        failures = validate_coinduction_minimum(text)
+        self.assertEqual(failures, [])
+
+    # --- Contexto Multi-turno minimo ---
+
+    def test_multiturno_minimum_passes_with_all_keywords(self):
+        text = textwrap.dedent("""\
+            ## 4. Contexto Multi-turno
+            - Detectar desvio de dominio comparando solicitud actual
+            - IF cambio radical -> S-DISPATCHER
+            - Retencion entre turnos: preservar estado activo del FSM
+            ## 5. Wiring
+        """)
+        failures = validate_multiturno_minimum(text)
+        self.assertEqual(failures, [])
+
+    def test_multiturno_minimum_flags_missing_detection(self):
+        text = textwrap.dedent("""\
+            ## 4. Contexto Multi-turno
+            - IF cambio -> S-DISPATCHER
+            - Retencion: preservar estado
+            ## 5. Wiring
+        """)
+        failures = validate_multiturno_minimum(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("deteccion", failures[0])
+
+    def test_multiturno_minimum_flags_missing_action(self):
+        text = textwrap.dedent("""\
+            ## 4. Contexto Multi-turno
+            - Detectar desvio de dominio
+            - Retencion: preservar estado
+            ## 5. Wiring
+        """)
+        failures = validate_multiturno_minimum(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("accion", failures[0])
+
+    def test_multiturno_minimum_flags_missing_retention(self):
+        text = textwrap.dedent("""\
+            ## 4. Contexto Multi-turno
+            - Detectar desvio de dominio
+            - IF shift -> S-DISPATCHER
+            ## 5. Wiring
+        """)
+        failures = validate_multiturno_minimum(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("retencion", failures[0])
+
+    def test_multiturno_minimum_flags_all_three_missing(self):
+        text = textwrap.dedent("""\
+            ## 4. Contexto Multi-turno
+            - TODO
+            ## 5. Wiring
+        """)
+        failures = validate_multiturno_minimum(text)
+        self.assertEqual(len(failures), 3)
+
+    def test_multiturno_minimum_skips_when_section_absent(self):
+        text = "## 1. FSM\n## 2. Reglas Duras\n"
+        failures = validate_multiturno_minimum(text)
+        self.assertEqual(failures, [])
+
+    # --- SOUL.md canonico ---
+
+    def test_soul_canonical_passes_with_canonical_headings(self):
+        text = textwrap.dedent("""\
+            ## Identidad Dialectica
+            Guardian normativo.
+            ## Paradigma Cognitivo
+            Conservadurismo estructural.
+            ## Tono
+            Sobrio, preciso.
+        """)
+        failures = validate_soul_canonical(text)
+        self.assertEqual(failures, [])
+
+    def test_soul_canonical_passes_with_optional_voz(self):
+        text = "## Identidad Dialectica\n## Paradigma Cognitivo\n## Tono\n## Voz\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(failures, [])
+
+    def test_soul_canonical_flags_behavior_saludo(self):
+        text = "## Identidad Dialectica\n## Tono\n## Saludo\nHola.\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("behavior", failures[0])
+        self.assertIn("Saludo", failures[0])
+
+    def test_soul_canonical_flags_behavior_estilo(self):
+        text = "## Identidad Dialectica\n## Paradigma Cognitivo\n## Tono\n## Estilo Respuesta\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("behavior", failures[0])
+
+    def test_soul_canonical_flags_behavior_ejemplos(self):
+        text = "## Identidad Dialectica\n## Tono\n## Ejemplos Comportamiento\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("behavior", failures[0])
+
+    def test_soul_canonical_flags_noncanonical_heading(self):
+        text = "## Identidad Dialectica\n## Paradigma Cognitivo\n## Tono\n## Cosmovision\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("no canonica", failures[0])
+        self.assertIn("Cosmovision", failures[0])
+
+    def test_soul_canonical_flags_missing_paradigma_as_noncanonical(self):
+        text = "## Identidad\n## Tono\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("no canonica", failures[0])
+        self.assertIn("Identidad", failures[0])
+
+    def test_soul_canonical_ignores_h3_subheadings(self):
+        text = "## Identidad Dialectica\n### Linaje\n## Paradigma Cognitivo\n### Ejes\n## Tono\n"
+        failures = validate_soul_canonical(text)
+        self.assertEqual(failures, [])
 
     def test_find_truncated_markdown_headings_detects_ellipsis_suffix(self):
         headings = find_truncated_markdown_headings("# Demo\n\n## Glosa 03 - Texto truncado...\n")

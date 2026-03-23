@@ -12,6 +12,103 @@ GET:  curl -s $PCA_API/<endpoint>[?param=val]
 POST: curl -s -X POST $PCA_API/<endpoint> -H 'Content-Type: application/json' -d '{...}'
 ```
 
+### Modelo PCA v4.1
+
+Entidades tipadas PCA v4.1:
+
+| Entidad | Descripcion |
+| --- | --- |
+| **Candidato** | Input capturado sin procesar. Estados: `capturado \| en_triaje \| promovido \| incubado \| descartado`. Campos: id, texto, fuente (telegram\|email\|conversacion\|nota\|otro), capturado_at, destino_tipo?, destino_id? (cuando promovido, per RI-10). |
+| **UT** (Unidad de Trabajo) | Atomo ejecutable. Estados: `pendiente \| en_progreso \| bloqueada \| completada \| descartada`. Campos: id, titulo, modo (set de `FM\|SR\|MK`), timebox (`15\|30\|60\|90`), deadline?, proyecto_id? (membresia exclusiva), P (prioridad derivada), U (urgencia derivada), bloquea_a[], bloqueada_por[], contribuye_a[] (solo free-floating per RI-07), situacion_temporal?, situacion_fisica?, creado_at (ISO8601), actualizado_at (ISO8601 — ultimo cambio de estado). |
+| **Proyecto** | Contenedor de UTs con membresia exclusiva. Estados: `activo \| pausado \| completado \| descartado`. Campos: id, titulo, contribuciones[], uts[], estado, creado_at (ISO8601). FSM propio. Polo B al descartar. Se crea en planificacion, no en triaje. |
+| **Objetivo** | Coproducto de dos subtipos. Campos comunes: id, tipo (PROPOSITO\|RESULTADO), titulo, estado, creado_at (ISO8601). PROPOSITO: anti_vision?, restricciones? (limites no negociables, verificados por Korax per RI-12). RESULTADO: parent_id? (FK a PROPOSITO), contribuciones[], motivo? (texto + tipo adverso\|favorable + urgencia? + ventana_fin?). Estados: `activo \| logrado \| descartado`. |
+| **Contribucion** | Relacion tipada. Campos: id (identificador unico), fuente_tipo (Proyecto\|UT), fuente_id, resultado_id (siempre RESULTADO, nunca PROPOSITO per RI-03), tipo (`constitutiva \| instrumental \| evidencial`). |
+
+**Sub-campos opcionales de UT:** situacion_temporal (ventana_inicio, ventana_fin, dias_semana, restriccion) y situacion_fisica (lugares, herramientas, conectividad). Gestionados por PCA API.
+
+### Dimensiones del Trabajo (§5 PCA v4.1)
+
+**Dimensiones ortogonales (UT.modo):**
+
+| Codigo | Dimension | Requiere |
+| --- | --- | --- |
+| `FM` | Fisico/Material | Presencia fisica, herramientas |
+| `SR` | Social/Relacional | Disponibilidad de otros |
+| `MK` | Mental/Conocimiento | Bloque concentracion, energia alta |
+
+**Modos energeticos derivados (para bloques):**
+
+| Combinacion | Bloque | Timebox tipico |
+| --- | --- | --- |
+| `MK` solo | DEEP | 60-120 min, energia alta, cero interrupciones |
+| `FM` o `MK+FM` | SHALLOW | 15-45 min, energia media |
+| `SR` (con otros) | SOCIAL | Variable, requiere disponibilidad externa |
+
+**Computo de P (prioridad):**
+
+```
+si UT sin contribucion:
+  P = 0.2  (work-in-vacuum)
+
+si UT con contribucion:
+  P = peso(contribucion.tipo) * nivel_efectivo(resultado)
+
+  peso(constitutiva) = 1.0
+  peso(instrumental) = 0.5
+  peso(evidencial)   = 0.3
+
+  nivel_efectivo(resultado) =
+    1.0  si resultado.parent_id existe  (anclado a PROPOSITO)
+    0.7  si resultado.parent_id = null  (RESULTADO flotante)
+```
+
+**Computo de U (urgencia):**
+
+```
+U = 0.0                            si sin deadline
+U = min(1.0, 1 / dias_a_deadline)  si dias_a_deadline > 0
+U = 1.0                            si deadline pasado (overdue)
+```
+
+**Interpretacion de P:**
+
+| P | Interpretacion |
+| --- | --- |
+| >= 0.7 | Trabajo critico para objetivos primarios |
+| 0.4-0.7 | Trabajo relevante, RESULTADO sin ancla estrategica |
+| < 0.4 | Trabajo de bajo peso estrategico |
+
+**Interpretacion de U:**
+
+| U | Interpretacion |
+| --- | --- |
+| >= 0.8 | Critico: menos de ~3 dias |
+| 0.5-0.8 | Urgente: menos de ~7 dias |
+| 0.2-0.5 | Proximo: menos de ~2 semanas |
+| < 0.2 | Sin presion inmediata |
+
+**Umbral critico:** U > 0.8 activa alerta automatica del agente.
+
+**Matriz PxU -> accion del agente:**
+
+| P \ U | Baja (< 0.5) | Alta (>= 0.5) |
+| --- | --- | --- |
+| **Alta (>= 0.6)** | Programar para proximo bloque DEEP | Alerta: P alta + U alta; proponer asignacion inmediata |
+| **Baja (< 0.6)** | Diferir; no presentar en planificacion | Completar rapido; evaluar si contribucion vale |
+
+**completitud() — funcion derivada on-demand (§6.6):**
+
+```
+completitud(RESULTADO) =
+  count(constitutivas con fuente.estado = completada|completado)
+  / count(constitutivas)
+
+completitud(PROPOSITO) =
+  mean(completitud(RESULTADO_i) para RESULTADO_i con parent_id = PROPOSITO.id)
+```
+
+Condiciones: completitud=1.0 -> senalizar `logrado` (no declarar autonomamente). Sin constitutivas -> null.
+
 ## pca_init
 
 - **Firma:** pca_init() -> { status: "ok", db: string }

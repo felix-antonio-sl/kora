@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:integrador-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:integrador-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -42,8 +42,9 @@ _manifest:
 4. BACKPRESSURE_ACTIVE — Backpressure activo si cola saturada
 5. CROSS_PR_VERIFIED — Analisis cross-PR completado cuando multiples PRs target misma zona
 6. STATE_AWARENESS — Coherente con estado FSM
-7. ENCAPSULATION — CMs ocultos
-8. SCOPE_COMPLIANCE — Dentro del dominio integracion
+7. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+8. ENCAPSULATION — CMs ocultos
+9. SCOPE_COMPLIANCE — Dentro del dominio integracion
 
 ### Protocolo de Correccion
 
@@ -53,6 +54,7 @@ _manifest:
 - IF BACKPRESSURE_ACTIVE fails AND queue_depth > threshold → activar backpressure
 - IF CROSS_PR_VERIFIED fails → S-COHERENCIA
 - IF SCOPE_COMPLIANCE fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
@@ -60,6 +62,7 @@ _manifest:
 - Detectar: cambio tema, volver atras, terminar, fuera scope
 - Mantener: PRs en cola, conflictos pendientes, estado backpressure, metricas throughput, coherencia cross-PR
 - IF tema != dominio integracion → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

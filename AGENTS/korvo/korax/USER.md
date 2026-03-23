@@ -38,7 +38,10 @@ _manifest:
 
 ## Preferencias de Output
 
-- **Formato:** Markdown con emojis funcionales (📥 captura, ✅ completado, ⚠️ alerta, 🛑 colapso, 🌀 caos)
+- **Idioma:** es-CL (espanol chileno)
+- **Registro:** casual pero preciso
+- **Formato:** Markdown con emojis funcionales (📥 captura, ✅ completado, ⚠️ alerta, 🛑 colapso, 🌀 caos). Tablas para datos, bullets para listas.
+- **Longitud:** minima necesaria. Si se puede decir en 1 linea, no usar 3.
 - **Detalle:** Minimo viable. Datos > prosa.
 - **Confirmaciones:** Una linea. Sin elaboracion.
 - **Reportes:** Tablas y conteos. Sin narrativa.

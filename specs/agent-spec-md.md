@@ -5,14 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07"
-version: "8.7.0"
+version: "8.8.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
 extensions: {}
 ---
 
-# KORA/Agent-Spec v8.7.0
+# KORA/Agent-Spec v8.8.0
 
 ## 1. Definicion
 
@@ -134,6 +134,22 @@ Incorrecto:
 
 Rationale: Sin precedencia explicita, si `error_critico` y `requiere_revision` coexisten, el runtime no puede determinar cual transicion ejecutar.
 
+Ejemplo de ACT breve (regla 8):
+
+Correcto:
+
+```markdown
+2. STATE: S-ASSESS -> ACT: Invocar CM-BLAST-RADIUS. -> Trans: ...
+```
+
+Incorrecto:
+
+```markdown
+2. STATE: S-ASSESS -> ACT: Invocar CM-BLAST-RADIUS. Evaluar archivos afectados, dependencias, riesgo y reversibilidad. -> Trans: ...
+```
+
+Rationale: El procedimiento interno pertenece al CM, no al ACT. El ACT identifica que CM se invoca; el CM define como se ejecuta.
+
 ### 4.3 Invariantes de behavior
 
 1. La FSM **DEBE** tener `S-DISPATCHER` como punto de entrada y `S-END` como cierre canonico.
@@ -147,13 +163,52 @@ Traces to: formal/01 §3.2 (Determinism in M) ; formal/01 §3.3 (Co-induction at
 ### 4.4 Segregacion de componentes
 
 1. `AGENTS.md` **DEBE** contener FSM, reglas duras, co-induccion, contexto multi-turno y wiring.
-2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma. Las secciones canonicas son `## Identidad Dialectica`, `## Paradigma Cognitivo` y `## Tono`. Una seccion opcional `## Voz` es valida si el agente encarna una persona. Secciones que prescriben acciones (`## Saludo`, `## Estilo`, `## Ejemplos`, `## Comportamiento`) son behavior y **DEBEN** vivir en `AGENTS.md`.
+2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma. Las secciones **DEBEN** titularse `## Identidad Dialectica`, `## Paradigma Cognitivo` y `## Tono`. Una seccion opcional `## Voz` es valida si el agente encarna una persona. Secciones que prescriben acciones (`## Saludo`, `## Estilo`, `## Ejemplos`, `## Comportamiento`) son behavior y **DEBEN** vivir en `AGENTS.md`.
 3. `USER.md` **DEBE** contener solo contexto del operador.
 4. `TOOLS.md` **DEBE** contener solo interfaz semantica: nombre, firma, parametros, cuando usar, cuando NO usar, notas semanticas y descripcion funcional. **NO DEBE** contener politica operativa (confirmaciones, aprobaciones, restricciones de uso) ni comportamiento condicional runtime; esas reglas viven en `config.json`.
 5. `config.json` **DEBE** contener solo constraints, runtime capabilities y politica operativa precompilada.
 6. Ningun componente **DEBE** contener contenido rector de otro; en especial, la fenomenologia **NO DEBE** contaminar la FSM y la seguridad **NO DEBE** vivir en prosa de bootstrap.
 
 Traces to: formal/01 §2.2 (Fiber Independence)
+
+### 4.5 Template minimo conformante
+
+Un `AGENTS.md` minimo conformante **DEBE** incluir al menos esta estructura:
+
+```markdown
+## 1. FSM
+1. STATE: S-DISPATCHER -> ACT: Clasificar solicitud. -> Trans: IF fuera_scope [prioridad 1] -> S-END. IF tarea [prioridad 2] -> S-WORK.
+2. STATE: S-WORK -> ACT: Invocar CM-CORE. -> Trans: IF completo [prioridad 1] -> S-END. IF ajustar [prioridad 2] -> S-WORK.
+3. STATE: S-END -> ACT: Emitir resumen. -> Trans: [terminal].
+
+## 2. Reglas Duras
+- Scope: REJECT_OUT_OF_SCOPE
+- Allowed: [dominio]
+- Forbidden: [fuera de dominio]
+- Rejection: "[mensaje]"
+
+## 3. Co-induccion
+### Checklist Pre-Output
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+### Protocolo de Correccion
+- IF SCOPE_COMPLIANCE fails -> rechazar
+- IF STATE_AWARENESS fails -> S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
+
+## 4. Contexto Multi-turno
+- Deteccion: comparar solicitud actual con tarea activa
+- Accion: IF desvio -> S-DISPATCHER
+- Retencion: se preservan [invariantes del turno]; no se preservan [estados intermedios resueltos]
+
+## 5. Wiring
+- Tipo: [raiz|sub-agente]
+- Sub-agentes: [ninguno|lista]
+- Dependencias: [routing]
+```
+
+Este template es el piso minimo. Todo agente operacional lo extiende con estados, checks y wiring propios.
 
 ## 5. Interfaz
 
@@ -253,24 +308,46 @@ Reglas:
 | Bundle no relaja bootstrap | Ningun `SKILL.md` ni bundle extendido relaja reglas duras, interfaz o envelope     | manual      | Corregir bundle o mover regla            |
 | Routing resoluble         | Toda ruta inter-agente existe                                                       | lint        | Corregir o crear destino                 |
 | allowed_kb resoluble      | Toda URN en `allowed_kb` resuelve contra catalogo                                   | lint        | Corregir URN o eliminar entrada          |
-| Contexto multi-turno      | Seccion §4 declara deteccion desvio, accion y retencion                             | manual      | Completar seccion                        |
+| Contexto multi-turno      | Seccion §4 declara deteccion desvio, accion y retencion                             | lint        | Completar seccion                        |
 | Lifecycle coherente       | Agente active tiene auditoria PASS; deprecated tiene notificacion a consumidores    | manual      | Ejecutar auditoria o notificar           |
 | Skills sin huerfanos      | Todo archivo en `skills/` esta referenciado en la FSM                                | lint        | Eliminar o conectar skill                |
 | Version workspace         | Componentes bootstrap comparten `major.minor`                                        | lint (WARN) | Alinear versiones                        |
 | kb_route con URNs         | Routing maps usan URNs, no filesystem paths                                          | lint        | Reemplazar paths por URNs                |
-| Co-induccion minima       | Checklist contiene SCOPE_COMPLIANCE, STATE_AWARENESS, INTERFACE_DISCIPLINE + protocolo correccion | manual | Completar checklist                      |
-| SOUL.md canonico          | Solo contiene identidad, paradigma, tono (y opcionalmente voz); sin behavior         | manual      | Mover secciones a AGENTS.md              |
+| Co-induccion minima       | Checklist contiene SCOPE_COMPLIANCE, STATE_AWARENESS, INTERFACE_DISCIPLINE + protocolo correccion | lint   | Completar checklist                      |
+| SOUL.md canonico          | Solo contiene identidad, paradigma, tono (y opcionalmente voz); sin behavior; headings canonicos         | lint        | Mover secciones a AGENTS.md o renombrar headings              |
 | ACT breve                 | ACTs no reproducen procedimiento interno del CM ni prosa de dominio                  | manual      | Reducir ACT a descripcion breve          |
 
 ## 11. Migracion
 
 Esta seccion se establece a partir de v8.7.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
 
+### v8.8.0
+
+Cambios:
+
+1. `SOUL.md` — headings canónicos ahora son prescriptivos: **DEBEN** titularse `## Identidad Dialectica`, `## Paradigma Cognitivo`, `## Tono` (§4.4). Antes era descriptivo ("las secciones canónicas son").
+2. ACT brevity — se agrega ejemplo correcto/incorrecto en §4.2, clarificando que el ACT identifica el CM, no reproduce su procedimiento.
+3. Enforcement — "Co-induccion minima", "Contexto multi-turno" y "SOUL.md canonico" promovidos de `manual` a `lint` en §10.
+4. Template minimo — se agrega §4.5 con referencia inline de AGENTS.md conformante minimo.
+
+Migracion:
+
+- Todo agente `active` **DEBE** verificar que su `SOUL.md` usa headings canonicos exactos.
+- Todo agente `active` **DEBE** tener los 3 checks obligatorios (`SCOPE_COMPLIANCE`, `STATE_AWARENESS`, `INTERFACE_DISCIPLINE`) en §3 Co-induccion.
+- Todo agente `active` **DEBE** declarar deteccion de desvio, accion ante desvio y criterio de retencion en §4 Contexto Multi-turno.
+- ACTs que reproduzcan procedimiento del CM **DEBEN** podarse.
+
+### v8.7.0
+
+Establecimiento de la seccion §11 Migracion. Se introduce §4.1 con co-induccion minima obligatoria y contexto multi-turno minimo. No se documento migracion explicita en esta version (corregido en v8.8.0).
+
 ### Contrato vigente v8
 
 - Workspace de 5 componentes con segregacion estricta.
 - FSM canonica con `S-DISPATCHER`/`S-END`, transiciones explicitas y precedencia obligatoria.
 - Co-induccion minima con `SCOPE_COMPLIANCE`, `STATE_AWARENESS`, `INTERFACE_DISCIPLINE`.
+- `SOUL.md` con headings canonicos prescriptivos.
+- Contexto multi-turno con deteccion, accion y retencion.
 - Skills resuelven en `skills/`, sin huerfanos.
 - Lifecycle `active -> deprecated -> retired`.
 

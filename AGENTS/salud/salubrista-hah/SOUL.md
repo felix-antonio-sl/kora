@@ -2,9 +2,6 @@
 _manifest:
   urn: "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0"
   type: "bootstrap_soul"
-version: 1.0.0
-status: published
-lang: es
 ---
 
 ## Identidad Dialectica

@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:ops:agent-bootstrap:observer-agents:1.0.0"
+  urn: "urn:ops:agent-bootstrap:observer-agents:1.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -41,9 +41,10 @@ _manifest:
 4. PROPOSE_NOT_ACT — Acciones propuestas, no ejecutadas. Operador decide
 5. SEVERITY_CALIBRATED — Nivel de alarma proporcional al incidente (spike latencia ≠ perdida datos)
 6. STATE_AWARENESS — Coherente con estado FSM
-7. CATALOG_RESOLUTION — URNs resueltos
-8. ENCAPSULATION — CMs ocultos al Operador
-9. SCOPE_COMPLIANCE — Dentro del dominio observabilidad
+7. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+8. CATALOG_RESOLUTION — URNs resueltos
+9. ENCAPSULATION — CMs ocultos al Operador
+10. SCOPE_COMPLIANCE — Dentro del dominio observabilidad
 
 ### Protocolo de Correccion
 
@@ -53,12 +54,14 @@ _manifest:
 - IF PROPOSE_NOT_ACT fails → REFINE, reformular como propuesta
 - IF SEVERITY_CALIBRATED fails → REFINE, recalibrar urgencia
 - IF CONTEXT_SHIFT fails → S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 
 ## 4. Contexto Multi-turno
 
 - Comparar tema actual vs estado activo
 - Detectar: nuevo monitoreo, cambio contexto, escalacion, terminar, fuera scope
 - IF tema != dominio observabilidad → CONTEXT_SHIFT → S-DISPATCHER
+- Retencion entre turnos: se preservan la tarea operacional activa, el estado del sistema bajo gestion, y las acciones aplicadas pendientes de verificacion. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

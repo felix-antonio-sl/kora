@@ -188,7 +188,7 @@
         "sub_agents": [],
         "evidence_lines": [
           "3. STATE: S-KORAFICATE -> ACT: CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD conforme a md-spec y emitir reporte estructurado de fidelidad. -> Trans: IF artefacto_generado [prioridad 1] -> S-AUDIT. IF iterar_segmento [prioridad 2] -> S-KORAFICATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
-          "5. STATE: S-AUDIT -> ACT: CM-ARTIFACT-AUDITOR: verificar conformidad, trazabilidad y fidelidad del artefacto, emitiendo reporte PASS|FAIL con metricas, tipo y causa_principal para reenrutar sin mezclar KORA/MD con KORA/Spec-MD. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=prescriptivo [prioridad 3] -> S-CRYSTALLIZE. IF validacion_falla [prioridad 4] -> S-REPAIR. IF cambio [prioridad 5] -> S-DISPATCHER.",
+          "- Retencion entre turnos: se preservan el artefacto target (URN + path), la fase activa del ciclo de vida, los hallazgos pendientes de auditoria, el tipo de artefacto (descriptivo/prescriptivo), y las metricas FS/CR del ultimo artefacto procesado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
           "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
         ],
         "allowed_kb_count": 3,
@@ -313,7 +313,8 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
-          "7. STATE: S-RETRO → ACT: CM-RETRO-ANALYST: Recopilar metricas del Ciclo (CpH, TA, Cycle Time, % presupuesto consumido, KRs logrados). Analizar patrones de rechazo. Identificar gaps en evals. Generar reporte para Retrospectiva Analitica. Proponer ajustes para proximo Ciclo. → Trans: IF reporte_listo → S-OKR. IF cambio → S-DISPATCHER."
+          "7. STATE: S-RETRO → ACT: CM-RETRO-ANALYST: Recopilar metricas del Ciclo (CpH, TA, Cycle Time, % presupuesto consumido, KRs logrados). Analizar patrones de rechazo. Identificar gaps en evals. Generar reporte para Retrospectiva Analitica. Proponer ajustes para proximo Ciclo. → Trans: IF reporte_listo → S-OKR. IF cambio → S-DISPATCHER.",
+          "- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos"
         ],
         "allowed_kb_count": 4,
         "sources": {
@@ -436,8 +437,9 @@
           "- Todo hallazgo DEBE tener sugerencia de correccion concreta.",
           "- NUNCA rechazar sin justificacion. Cada REJECT tiene evidencia.",
           "2. FIDELITY_STANDARD — Hallazgos verificados contra codigo real del PR",
-          "11. EVIDENCE_CHECK — Todo hallazgo tiene archivo:linea:fragmento + sugerencia de fix",
+          "12. EVIDENCE_CHECK — Todo hallazgo tiene archivo:linea:fragmento + sugerencia de fix",
           "- IF EVIDENCE_CHECK fails → agregar evidencia especifica antes de emitir veredicto",
+          "- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
           "- **Firma:** {diff: string, conventions: CONVENTIONS.md} → {hallazgos: [{severidad, archivo, linea, violacion, sugerencia}]}",
           "- **Firma:** {diff: string} → {hallazgos: [{archivo, linea, tipo_problema, sugerencia}]}",
           "- **Firma:** {diff: string, architecture: ARCHITECTURE.md?} → {hallazgos: [{severidad, categoria_owasp, archivo, linea, descripcion, sugerencia}]}",
@@ -502,6 +504,7 @@
         ],
         "sub_agents": [],
         "evidence_lines": [
+          "- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
           "- **Firma:** {test_suite: string} → {resultado: PASS|FAIL, categorias_falladas: string[]}"
         ],
         "allowed_kb_count": 4,
@@ -737,6 +740,7 @@
           "S-CALIBRATE",
           "S-DISPATCHER",
           "S-END",
+          "S-REJECT",
           "S-ROUTING",
           "S-SINTESIS"
         ],
@@ -818,7 +822,7 @@
   },
   "totals": {
     "workspaces": 13,
-    "states": 98,
+    "states": 99,
     "tools": 83,
     "handoffs": 43
   },
@@ -1022,7 +1026,7 @@
         "sub_agents": [],
         "evidence_lines": [
           "3. STATE: S-KORAFICATE -> ACT: CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD conforme a md-spec y emitir reporte estructurado de fidelidad. -> Trans: IF artefacto_generado [prioridad 1] -> S-AUDIT. IF iterar_segmento [prioridad 2] -> S-KORAFICATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
-          "5. STATE: S-AUDIT -> ACT: CM-ARTIFACT-AUDITOR: verificar conformidad, trazabilidad y fidelidad del artefacto, emitiendo reporte PASS|FAIL con metricas, tipo y causa_principal para reenrutar sin mezclar KORA/MD con KORA/Spec-MD. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=prescriptivo [prioridad 3] -> S-CRYSTALLIZE. IF validacion_falla [prioridad 4] -> S-REPAIR. IF cambio [prioridad 5] -> S-DISPATCHER.",
+          "- Retencion entre turnos: se preservan el artefacto target (URN + path), la fase activa del ciclo de vida, los hallazgos pendientes de auditoria, el tipo de artefacto (descriptivo/prescriptivo), y las metricas FS/CR del ultimo artefacto procesado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
           "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
         ],
         "allowed_kb_count": 3,

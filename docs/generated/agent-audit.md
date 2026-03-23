@@ -4,7 +4,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-03-22
+- Fecha: 2026-03-23
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 5
 - Reglas aun no institucionalizadas: 5
@@ -13,7 +13,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 146 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 139 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -23,7 +23,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 146 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 139 | dev/analyst, dev/coder, dev/planner, dev/refactorer, dev/reviewer, dev/sentinel | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 11 | ops/clawstack, ops/deployer, ops/integrador, ops/orquestador-swarm, ops/security, ops/verificador | agent_fix |
 | Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 4 | ops/observer | agent_fix |
@@ -49,7 +49,7 @@ Hallazgos repetidos:
 ## Cohorte dev
 
 - Workspaces auditados: 8
-- `validate --profile strict` verde: si
+- `validate --profile strict` verde: no
 - Hallazgos manuales: 40
 - P1: 40 | P2: 0 | P3: 0
 
@@ -105,7 +105,7 @@ Hallazgos repetidos:
 ## Cohorte ops
 
 - Workspaces auditados: 8
-- `validate --profile strict` verde: si
+- `validate --profile strict` verde: no
 - Hallazgos manuales: 59
 - P1: 58 | P2: 1 | P3: 0
 
@@ -184,9 +184,9 @@ Hallazgos repetidos:
 ## Cohorte domains
 
 - Workspaces auditados: 20
-- `validate --profile strict` verde: si
-- Hallazgos manuales: 73
-- P1: 72 | P2: 1 | P3: 0
+- `validate --profile strict` verde: no
+- Hallazgos manuales: 66
+- P1: 65 | P2: 1 | P3: 0
 
 ### Subgrupo gn
 
@@ -200,12 +200,12 @@ Hallazgos repetidos:
 | gn/asesor-juridico | Precedencia de transiciones no declarada | P1 | AGENTS/gn/asesor-juridico/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/asesor-juridico | Precedencia de transiciones no declarada | P1 | AGENTS/gn/asesor-juridico/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/asesor-juridico | Precedencia de transiciones no declarada | P1 | AGENTS/gn/asesor-juridico/AGENTS.md:19 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| gn/dgi-virtual | Destino de control no declarado | P1 | AGENTS/gn/dgi-virtual/AGENTS.md:56 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| gn/dgi-virtual | Destino de control no declarado | P1 | AGENTS/gn/dgi-virtual/AGENTS.md:62 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | gn/dgi-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/dgi-virtual/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/erp-gore | Precedencia de transiciones no declarada | P1 | AGENTS/gn/erp-gore/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| gn/gestor-ipr-360 | Destino de control no declarado | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:63 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
-| gn/gestor-ipr-360 | Destino de control no declarado | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:67 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
-| gn/gestor-ipr-360 | Destino de control no declarado | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:73 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| gn/gestor-ipr-360 | Destino de control no declarado | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:65 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| gn/gestor-ipr-360 | Destino de control no declarado | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:69 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| gn/gestor-ipr-360 | Destino de control no declarado | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:75 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | gn/gestor-ipr-360 | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gestor-ipr-360 | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gestor-ipr-360 | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gestor-ipr-360/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
@@ -221,7 +221,7 @@ Hallazgos repetidos:
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:23 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:25 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | gn/gobernador-virtual | Precedencia de transiciones no declarada | P1 | AGENTS/gn/gobernador-virtual/AGENTS.md:27 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| gn/goreologo | Destino de control no declarado | P1 | AGENTS/gn/goreologo/AGENTS.md:61 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| gn/goreologo | Destino de control no declarado | P1 | AGENTS/gn/goreologo/AGENTS.md:65 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 
 Hallazgos repetidos:
 
@@ -233,34 +233,26 @@ Hallazgos repetidos:
 ### Subgrupo pro
 
 - Workspaces: 1
-- Hallazgos: 7
+- Hallazgos: 1
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
-| pro/estratega-comunicacional | Destino de control no declarado | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:57 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
-| pro/estratega-comunicacional | Precedencia de transiciones no declarada | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| pro/estratega-comunicacional | Precedencia de transiciones no declarada | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| pro/estratega-comunicacional | Precedencia de transiciones no declarada | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| pro/estratega-comunicacional | Precedencia de transiciones no declarada | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:15 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| pro/estratega-comunicacional | Precedencia de transiciones no declarada | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:17 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
-| pro/estratega-comunicacional | Precedencia de transiciones no declarada | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:19 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
+| pro/estratega-comunicacional | Destino de control no declarado | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:63 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 
 Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 6 | pro/estratega-comunicacional | agent_fix |
 | Destino de control no declarado | P1 | 1 | pro/estratega-comunicacional | agent_fix |
 
 ### Subgrupo salud
 
 - Workspaces: 3
-- Hallazgos: 9
+- Hallazgos: 8
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
-| salud/medico-urgencias | Destino de control no declarado | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:70 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
-| salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
+| salud/medico-urgencias | Destino de control no declarado | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:72 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | salud/medico-urgencias | Precedencia de transiciones no declarada | P1 | AGENTS/salud/medico-urgencias/AGENTS.md:15 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
@@ -273,7 +265,7 @@ Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Precedencia de transiciones no declarada | P1 | 8 | salud/medico-urgencias | agent_fix |
+| Precedencia de transiciones no declarada | P1 | 7 | salud/medico-urgencias | agent_fix |
 | Destino de control no declarado | P1 | 1 | salud/medico-urgencias | agent_fix |
 
 ### Subgrupo fxsl

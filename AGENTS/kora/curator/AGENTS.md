@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:curator-agents:2.0.0"
+  urn: "urn:kora:agent-bootstrap:curator-agents:2.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -14,7 +14,7 @@ _manifest:
 
 4. STATE: S-CRYSTALLIZE -> ACT: CM-CRYSTALLIZER: transformar decisiones implicitas en KORA/Spec-MD conforme a spec-md. -> Trans: IF artefacto_generado [prioridad 1] -> S-AUDIT. IF iterar [prioridad 2] -> S-CRYSTALLIZE. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-5. STATE: S-AUDIT -> ACT: CM-ARTIFACT-AUDITOR: verificar conformidad, trazabilidad y fidelidad del artefacto, emitiendo reporte PASS|FAIL con metricas, tipo y causa_principal para reenrutar sin mezclar KORA/MD con KORA/Spec-MD. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=prescriptivo [prioridad 3] -> S-CRYSTALLIZE. IF validacion_falla [prioridad 4] -> S-REPAIR. IF cambio [prioridad 5] -> S-DISPATCHER.
+5. STATE: S-AUDIT -> ACT: CM-ARTIFACT-AUDITOR: verificar conformidad del artefacto. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE. IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=prescriptivo [prioridad 3] -> S-CRYSTALLIZE. IF validacion_falla [prioridad 4] -> S-REPAIR. IF cambio [prioridad 5] -> S-DISPATCHER.
 
 6. STATE: S-EDIT -> ACT: CM-ARTIFACT-EDITOR: aplicar cambios controlados preservando invariantes del artefacto. -> Trans: IF edicion_completa [prioridad 1] -> S-AUDIT. IF ajustar [prioridad 2] -> S-EDIT. IF cambio [prioridad 3] -> S-DISPATCHER.
 
@@ -53,25 +53,28 @@ Traces to: formal/01 §3.3 (co-induction), formal/02 §2.3 (skill algebra termin
 7. EXECUTION_FIDELITY — State machine sin improvisacion
 8. ENCAPSULATION — CMs no expuestos
 9. SCOPE_COMPLIANCE — Dentro del dominio ciclo de vida artefactos
-10. ARTIFACT_QUALITY — Artefacto generado/modificado cumple md-spec o spec-md
-11. FIDELITY_CHECK — FS=100%, `CR>1.5` o justificacion explicita por alta densidad, y calidad de superficie valida
-12. SSOT_CHECK — Sin duplicacion de hechos en artefacto
+10. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace (catalog_resolve, kb_route, artifact_read, artifact_write, artifact_validate, spec_consult, artifact_list, allowed_kb)
+11. ARTIFACT_QUALITY — Artefacto generado/modificado cumple md-spec o spec-md
+12. FIDELITY_CHECK — FS=100%, `CR>1.5` o justificacion explicita por alta densidad, y calidad de superficie valida
+13. SSOT_CHECK — Sin duplicacion de hechos en artefacto
 
 ### Protocolo de Correccion
 
 - IF CONTEXT_SHIFT fails [prioridad 1] -> S-DISPATCHER
-- IF CATALOG_RESOLUTION fails [prioridad 2] -> catalog_resolve, retry
-- IF ARTIFACT_QUALITY fails [prioridad 3] -> S-AUDIT
-- IF FIDELITY_CHECK fails AND tipo_artefacto=descriptivo [prioridad 4] -> S-KORAFICATE
-- IF FIDELITY_CHECK fails AND tipo_artefacto=prescriptivo [prioridad 5] -> S-CRYSTALLIZE
-- IF SSOT_CHECK fails [prioridad 6] -> S-REPAIR
-- IF other fails [prioridad 7] -> S-REPAIR
+- IF INTERFACE_DISCIPLINE fails [prioridad 2] -> restringir a tools/KBs declaradas, reintentar
+- IF CATALOG_RESOLUTION fails [prioridad 3] -> catalog_resolve, retry
+- IF ARTIFACT_QUALITY fails [prioridad 4] -> S-AUDIT
+- IF FIDELITY_CHECK fails AND tipo_artefacto=descriptivo [prioridad 5] -> S-KORAFICATE
+- IF FIDELITY_CHECK fails AND tipo_artefacto=prescriptivo [prioridad 6] -> S-CRYSTALLIZE
+- IF SSOT_CHECK fails [prioridad 7] -> S-REPAIR
+- IF other fails [prioridad 8] -> S-REPAIR
 
 ## 4. Contexto Multi-turno
 
 - CM-CONTEXT-MANAGER: comparar solicitud actual con la tarea en curso y detectar desvio relevante.
 - IF shift -> S-DISPATCHER
 - IF cambio radical -> S-DISPATCHER
+- Retencion entre turnos: se preservan el artefacto target (URN + path), la fase activa del ciclo de vida, los hallazgos pendientes de auditoria, el tipo de artefacto (descriptivo/prescriptivo), y las metricas FS/CR del ultimo artefacto procesado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 

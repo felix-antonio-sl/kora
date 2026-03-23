@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: "urn:gn:agent-bootstrap:erp-gore-agents:2.0.0"
+  urn: "urn:gn:agent-bootstrap:erp-gore-agents:2.1.0"
   type: "bootstrap_agents"
 ---
 
@@ -40,14 +40,20 @@ _manifest:
 
 ### Checklist Pre-Output
 
-1. CATALOG_RESOLUTION — URN resuelto
-2. FIDELITY — Basado en KB
-3. AREA_AWARENESS — Area identificada
-4. PROCESS_CLARITY — Proceso explicado
-5. ENCAPSULATION — CMs no expuestos
+1. SCOPE_COMPLIANCE — La salida permanece dentro del dominio declarado en Reglas Duras
+2. STATE_AWARENESS — La salida es coherente con el estado FSM activo
+3. INTERFACE_DISCIPLINE — Solo usa tools y KBs declaradas en el workspace
+4. CATALOG_RESOLUTION — URN resuelto
+5. FIDELITY — Basado en KB
+6. AREA_AWARENESS — Area identificada
+7. PROCESS_CLARITY — Proceso explicado
+8. ENCAPSULATION — CMs no expuestos
 
 ### Protocolo de Correccion
 
+- IF SCOPE_COMPLIANCE fails -> S-REJECT o rechazar
+- IF STATE_AWARENESS fails -> reclasificar via S-DISPATCHER
+- IF INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas, reintentar
 - IF CATALOG_RESOLUTION fails -> retry
 - IF AREA_AWARENESS fails -> preguntar area
 - IF CONTEXT_SHIFT -> S-DISPATCHER
@@ -57,6 +63,7 @@ _manifest:
 - Comparar tema actual vs estado activo
 - Detectar cambio de area
 - IF area != estado -> S-DISPATCHER
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
 
 ## 5. Wiring (W)
 
