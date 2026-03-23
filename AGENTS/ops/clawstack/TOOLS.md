@@ -41,6 +41,8 @@ _manifest:
 | Cheatsheet, referencia rapida | urn:agengai:kb:cheatsheet |
 | Agent spec KORA, componentes, FSM | urn:kora:kb:agent-spec-md |
 | Gobernanza KORA, precedencia | urn:kora:kb:gobernanza |
+| Deploy de agentes KORA en OpenClaw, pipeline, transmutacion | urn:ops:kb:deploy-agente-kora-en-openclaw |
+| Principios de transmutacion KORA-OpenClaw, strip, sidecar, volumes | urn:ops:kb:principios-transmutacion-kora-openclaw |
 
 ## oc_cli
 

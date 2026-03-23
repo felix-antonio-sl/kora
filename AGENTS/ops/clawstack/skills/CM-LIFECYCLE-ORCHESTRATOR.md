@@ -7,10 +7,10 @@ _manifest:
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
-Consolida checkpoints y entregables del modo guiado PROVISION -> CONFIGURE -> AUDIT sin gobernar transiciones FSM.
+Consolida checkpoints y entregables del modo guiado (PROVISION -> CONFIGURE -> AUDIT o DEPLOY -> AUDIT) sin gobernar transiciones FSM.
 
 ## Input/Output
-- **Input:** fase_actual: string (PROVISION|CONFIGURE|AUDIT), entregables: PhaseDeliverable[]
+- **Input:** fase_actual: string (PROVISION|CONFIGURE|AUDIT|DEPLOY), entregables: PhaseDeliverable[]
 - **Output:** LifecycleSummary (ver Signature Output)
 
 ## Procedimiento
@@ -18,7 +18,7 @@ Consolida checkpoints y entregables del modo guiado PROVISION -> CONFIGURE -> AU
 2. Normalizar checkpoint: plataforma, estado visible del stack (3 capas), issues, pendientes.
 3. Consolidar checkpoints de las fases completadas en resumen acumulado.
 4. Emitir resumen estructurado para que la FSM determine siguiente fase.
-5. Al completar AUDIT (ultima fase): emitir resumen final del ciclo completo.
+5. Al completar AUDIT (ultima fase del ciclo provision o deploy): emitir resumen final del ciclo completo.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |

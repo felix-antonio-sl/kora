@@ -16,7 +16,8 @@ Clasifica la solicitud del operador detectando capacidad requerida, capas involu
 ## Procedimiento
 1. Analizar mensaje buscando indicadores de capacidad:
    - CONSULT: "como funciona", "que es", "explica", "capitulo", "segun el manual"
-   - PROVISION: "instalar", "setup", "provisionar", "nuevo servidor", "deploy"
+   - PROVISION: "instalar", "setup", "provisionar", "nuevo servidor"
+   - DEPLOY: "deploy", "desplegar", "re-sync", "sincronizar agente", "transmutacion", "pipeline deploy"
    - CONFIGURE: "configurar", "config", "cambiar", "agregar canal", "modelo"
    - AUDIT: "auditar", "revisar", "estado", "security audit", "doctor"
    - TROUBLESHOOT: "no funciona", "error", "falla", "timeout", "crashea", "diagnosticar"
@@ -35,7 +36,7 @@ Clasifica la solicitud del operador detectando capacidad requerida, capas involu
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| capacidad | enum | CONSULT, PROVISION, CONFIGURE, AUDIT, TROUBLESHOOT, OPTIMIZE, UPGRADE, GUIDED |
+| capacidad | enum | CONSULT, PROVISION, CONFIGURE, AUDIT, TROUBLESHOOT, OPTIMIZE, UPGRADE, DEPLOY, GUIDED |
 | capas | enum[] | host, docker, openclaw, cross-layer |
 | urgencia | enum | critica, normal, exploratoria |
 | confianza | enum | alta, media, baja |

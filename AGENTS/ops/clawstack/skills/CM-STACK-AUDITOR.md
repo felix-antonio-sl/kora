@@ -41,6 +41,11 @@ Auditoria full-stack en 3 capas con multiples ejes por capa. Emite reporte PASS|
 6. Secrets: no hardcodeados en compose ni workspace, SecretRef cuando disponible.
 7. Networking: gateway en loopback, Docker networking no expone puertos internos.
 
+### Drift Detection (agentes desplegados)
+8. Workspace drift: para cada agente desplegado en /srv/kora/workspaces/, diff version stripped del repo KORA vs version desplegada. Clasificar: regla emergente (backport candidate), residuo (limpiar), memory (normal), heartbeat (normal).
+9. Config drift: diff source en /srv/kora/config/{gateway}/openclaw.json5 vs config real en named volume.
+10. Image drift: comparar SHA de imagen running vs ultima imagen built.
+
 ### Reporte
 8. Generar tabla por capa: eje | check | resultado | detalle | referencia.
 9. Calcular resultado global: FAIL si cualquier critical, WARN si warnings, PASS si todo ok.

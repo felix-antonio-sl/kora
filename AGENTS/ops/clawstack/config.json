@@ -31,7 +31,9 @@
     "urn:agengai:kb:apendices",
     "urn:agengai:kb:cheatsheet",
     "urn:kora:kb:agent-spec-md",
-    "urn:kora:kb:gobernanza"
+    "urn:kora:kb:gobernanza",
+    "urn:ops:kb:deploy-agente-kora-en-openclaw",
+    "urn:ops:kb:principios-transmutacion-kora-openclaw"
   ],
   "sandbox": {
     "mode": "permissive"
@@ -60,7 +62,8 @@
     "overrides": {
       "S-TROUBLESHOOT": "opus",
       "S-PROVISION": "opus",
-      "S-UPGRADE": "opus"
+      "S-UPGRADE": "opus",
+      "S-DEPLOY": "opus"
     }
   },
   "runtime_capabilities": {
