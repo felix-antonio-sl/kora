@@ -6,3 +6,19 @@ __pycache__/
 /drafts/
 /build/
 /OPERATIONS/
+
+# Agentes deprecados (2026-03-23)
+/AGENTS/dev/coder/
+/AGENTS/dev/planner/
+/AGENTS/dev/refactorer/
+/AGENTS/dev/reviewer/
+/AGENTS/dev/sentinel/
+/AGENTS/dev/tester/
+/AGENTS/dev/analyst/
+/AGENTS/ops/deployer/
+/AGENTS/ops/integrador/
+/AGENTS/ops/observer/
+/AGENTS/ops/security/
+/AGENTS/ops/verificador/
+/AGENTS/ops/ci-assistant/
+/AGENTS/ops/orquestador-swarm/

@@ -324,6 +324,69 @@ class SemanticValidationTests(unittest.TestCase):
         failures = validate_soul_canonical(text)
         self.assertEqual(failures, [])
 
+    # --- Bootstrap frontmatter (integration via validate_workspaces) ---
+
+    def test_validate_strict_flags_bootstrap_extra_frontmatter(self):
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            workspace = temp_root / "agents" / "test" / "sample"
+            skill_dir = workspace / "skills"
+            skill_dir.mkdir(parents=True)
+            (temp_root / "specs").mkdir()
+            write_bootstrap(workspace / "AGENTS.md", "urn:test:agent-bootstrap:sample-agents:1.0.0", textwrap.dedent("""\
+                ## 1. FSM
+                1. STATE: S-DISPATCHER -> ACT: Clasificar. -> Trans: IF x [prioridad 1] -> S-END.
+                2. STATE: S-END -> ACT: Fin. -> Trans: [terminal].
+                ## 2. Reglas Duras
+                - Scope: REJECT_OUT_OF_SCOPE
+                ## 3. Co-induccion
+                ### Checklist Pre-Output
+                1. SCOPE_COMPLIANCE — ok
+                2. STATE_AWARENESS — ok
+                3. INTERFACE_DISCIPLINE — ok
+                ### Protocolo de Correccion
+                - IF SCOPE_COMPLIANCE fails -> rechazar
+                ## 4. Contexto Multi-turno
+                - Deteccion de desvio: comparar solicitud
+                - Accion: IF desvio -> S-DISPATCHER
+                - Retencion: preservar estado entre turnos
+                ## 5. Wiring
+                - Tipo: raiz
+            """))
+            write_bootstrap(workspace / "SOUL.md", "urn:test:agent-bootstrap:sample-soul:1.0.0", "## Identidad Dialectica\nx\n## Paradigma Cognitivo\nx\n## Tono\nx\n")
+            write_bootstrap(workspace / "USER.md", "urn:test:agent-bootstrap:sample-user:1.0.0", "## Perfil\nx\n")
+            write_bootstrap(workspace / "TOOLS.md", "urn:test:agent-bootstrap:sample-tools:1.0.0", "")
+            (workspace / "config.json").write_text('{"_manifest":{"urn":"x","type":"bootstrap_config"},"tools":{"allow":[]},"sandbox":{"mode":"strict"}}', encoding="utf-8")
+            with patch.object(validation_module, "KORA_ROOT", temp_root), \
+                 patch.object(validation_module, "iter_agent_workspaces", return_value=[workspace]):
+                result = validation_module.validate_workspaces(profile="strict", emit=False)
+            fm_issues = [i for i in result["issues"] if i["category"] == "bootstrap_frontmatter"]
+            self.assertTrue(len(fm_issues) >= 1, f"Expected bootstrap_frontmatter issues, got: {[i['category'] for i in result['issues']]}")
+            self.assertIn("version", fm_issues[0]["message"])
+
+    # --- Skill naming SCREAMING_CASE (integration via validate_workspaces) ---
+
+    def test_validate_strict_flags_lowercase_skill_name(self):
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            workspace = temp_root / "agents" / "test" / "sample"
+            skill_dir = workspace / "skills"
+            skill_dir.mkdir(parents=True)
+            (temp_root / "specs").mkdir()
+            (workspace / "AGENTS.md").write_text("---\n_manifest:\n  urn: x\n  type: bootstrap_agents\n---\n## 1. FSM\n1. STATE: S-DISPATCHER -> ACT: CM-my-skill. -> Trans: IF x [prioridad 1] -> S-END.\n2. STATE: S-END -> ACT: Fin. -> Trans: [terminal].\n## 2. Reglas Duras\n- Scope: REJECT_OUT_OF_SCOPE\n## 3. Co-induccion\n### Checklist Pre-Output\n1. SCOPE_COMPLIANCE — ok\n2. STATE_AWARENESS — ok\n3. INTERFACE_DISCIPLINE — ok\n### Protocolo de Correccion\n- IF SCOPE_COMPLIANCE fails -> rechazar\n## 4. Contexto Multi-turno\n- Deteccion de desvio: comparar solicitud\n- Accion: IF desvio -> S-DISPATCHER\n- Retencion: preservar estado entre turnos\n## 5. Wiring\n- Tipo: raiz\n", encoding="utf-8")
+            (workspace / "SOUL.md").write_text("---\n_manifest:\n  urn: x\n  type: bootstrap_soul\n---\n## Identidad Dialectica\nx\n## Paradigma Cognitivo\nx\n## Tono\nx\n", encoding="utf-8")
+            (workspace / "USER.md").write_text("---\n_manifest:\n  urn: x\n  type: bootstrap_user\n---\n## Perfil\nx\n", encoding="utf-8")
+            (workspace / "TOOLS.md").write_text("---\n_manifest:\n  urn: x\n  type: bootstrap_tools\n---\n", encoding="utf-8")
+            (workspace / "config.json").write_text('{"_manifest":{"urn":"x","type":"bootstrap_config"},"tools":{"allow":[]},"sandbox":{"mode":"strict"}}', encoding="utf-8")
+            (skill_dir / "CM-my-skill.md").write_text("---\n_manifest:\n  urn: x\n  type: lazy_load_endofunctor\n---\n## Proposito\nx\n## Input/Output\nx\n## Procedimiento\nx\n## Signature Output\nx\n", encoding="utf-8")
+            with patch.object(validation_module, "KORA_ROOT", temp_root), \
+                 patch.object(validation_module, "iter_agent_workspaces", return_value=[workspace]):
+                result = validation_module.validate_workspaces(profile="strict", emit=False)
+            naming_issues = [i for i in result["issues"] if i["category"] == "skill_naming"]
+            self.assertEqual(len(naming_issues), 1)
+            self.assertIn("CM-my-skill", naming_issues[0]["message"])
+            self.assertIn("CM-MY-SKILL", naming_issues[0]["message"])
+
     def test_find_truncated_markdown_headings_detects_ellipsis_suffix(self):
         headings = find_truncated_markdown_headings("# Demo\n\n## Glosa 03 - Texto truncado...\n")
         self.assertEqual(headings, ["Glosa 03 - Texto truncado..."])

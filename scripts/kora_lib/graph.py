@@ -5,9 +5,9 @@ import os
 import re
 
 from .catalog import load_catalog
-from .config import AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
+from .config import AGENTS_ROOT, AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
 from .artifacts import load_yaml_safe
-from .workspaces import extract_cm_refs, extract_declared_tool_headings, iter_agent_workspaces, iter_skill_entrypoints
+from .workspaces import _is_workspace_deprecated, extract_cm_refs, extract_declared_tool_headings, iter_agent_workspaces, iter_skill_entrypoints
 
 FORMAL_TRACE_PATTERN = re.compile(r"formal/([0-9]{2})")
 
@@ -22,7 +22,16 @@ class GraphEdge:
 
 def iter_repository_files():
     for root, dirs, files in os.walk(KORA_ROOT):
-        dirs[:] = sorted(directory for directory in dirs if directory not in IGNORED_DIRS)
+        root_path = KORA_ROOT / os.path.relpath(root, KORA_ROOT)
+        filtered = []
+        for directory in sorted(dirs):
+            if directory in IGNORED_DIRS:
+                continue
+            dir_path = root_path / directory
+            if root_path.parent == AGENTS_ROOT and _is_workspace_deprecated(dir_path):
+                continue
+            filtered.append(directory)
+        dirs[:] = filtered
         for file_name in sorted(files):
             file_path = os.path.join(root, file_name)
             path = KORA_ROOT / os.path.relpath(file_path, KORA_ROOT)

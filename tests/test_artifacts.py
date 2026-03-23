@@ -477,7 +477,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("IF ambiguo [prioridad 7] -> S-DISPATCHER", agents)
         self.assertIn("IF fuera_scope [prioridad 1] -> S-REJECT", agents)
         self.assertIn("IF ambiguo [prioridad 7] -> S-CLARIFY", agents)
-        self.assertIn("IF tema != dominio TDE -> S-REJECT", agents)
+        self.assertIn("IF tema != dominio TDE -> rechazar con motivo", agents)
 
     def test_digitrans_tools_route_docdigital_and_pisee_explicitly(self):
         tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
@@ -492,7 +492,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("REFINE_DRAFT", agents)
         self.assertNotIn("CONTEXT_SHIFT ->", agents)
         self.assertIn("IF other fails -> S-PRODUCCION", agents)
-        self.assertIn("IF tema != dominio actual -> S-POSICIONAMIENTO", agents)
+        self.assertIn("IF tema != dominio actual -> S-DISPATCHER para reclasificar", agents)
         self.assertNotIn("## Saludo", soul)
         self.assertNotIn("## Estilo", soul)
         self.assertNotIn("## Ejemplos", soul)

@@ -38,7 +38,21 @@ def workspace_in_cohort(workspace_dir, cohort=None):
     return False
 
 
-def iter_agent_workspaces(cohort=None):
+def _is_workspace_deprecated(workspace_dir):
+    config_path = workspace_dir / "config.json"
+    if not config_path.exists():
+        return False
+    try:
+        import json
+
+        with open(config_path, "r", encoding="utf-8") as handle:
+            data = json.load(handle)
+        return data.get("_manifest", {}).get("status") == "deprecated"
+    except Exception:
+        return False
+
+
+def iter_agent_workspaces(cohort=None, include_deprecated=False):
     agents_root = AGENTS_ROOT
     if not agents_root.exists():
         return []
@@ -53,6 +67,8 @@ def iter_agent_workspaces(cohort=None):
                 and not workspace_dir.name.startswith(".")
                 and workspace_in_cohort(workspace_dir, cohort=cohort)
             ):
+                if not include_deprecated and _is_workspace_deprecated(workspace_dir):
+                    continue
                 workspaces.append(workspace_dir)
     return workspaces
 

@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:gn:skill:goreologo-intake:2.0.0
   type: lazy_load_endofunctor
-version: 2.0.0
-status: published
-lang: es
 ---
 
 # CM-INTAKE

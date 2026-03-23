@@ -63,11 +63,9 @@ _manifest:
 
 ## 4. Contexto Multi-turno
 
-- Comparar tema actual vs estado activo
-- Detectar: cambio tema, volver atras, terminar
-- IF tema != dominio actual -> S-POSICIONAMIENTO
-- Feedback handling: cuando usuario corrige/redirige, ajustar sin defender version anterior. Cada intercambio es refinamiento, no reinicio
-- Retencion entre turnos: se preservan la posicion dialectica establecida (contexto, praxis, escala/perspectiva/rol), las tensiones identificadas en la sesion, el diagnostico dimensional del problema activo, y el estado de produccion acumulado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
+- **Deteccion de desvio:** Comparar tema actual vs estado activo. Detectar: cambio tema, volver atras, terminar.
+- **Accion ante desvio:** IF tema != dominio actual -> S-DISPATCHER para reclasificar. IF fuera de scope -> rechazar con motivo. Cuando usuario corrige/redirige, ajustar sin defender version anterior. Cada intercambio es refinamiento, no reinicio.
+- **Retencion entre turnos:** Se preservan la posicion dialectica establecida (contexto, praxis, escala/perspectiva/rol), las tensiones identificadas en la sesion, el diagnostico dimensional del problema activo, y el estado de produccion acumulado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos.
 
 ## 5. Wiring (W)
 

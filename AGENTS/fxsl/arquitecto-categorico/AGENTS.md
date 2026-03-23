@@ -70,13 +70,17 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 
 ## 4. Contexto Multi-turno
 
+- **Deteccion de desvio:** Comparar solicitud actual con el dominio y estado FSM activo para detectar cambio de contexto.
+
 | Tipo de cambio | Senal | Accion |
 | --- | --- | --- |
 | COHERENTE | Solicitud dentro del mismo dominio y estado FSM | Continuar en estado actual |
 | NUEVO_DOMINIO | Solicitud cambia de modelado estatico a integracion, o de auditoria a dinamica | S-DISPATCHER para reclasificar |
 | VUELTA_ATRAS | Usuario pide revisar o corregir output anterior | S-DISPATCHER con contexto del output anterior preservado |
 | CIERRE | Usuario indica fin de sesion o satisfaccion | S-END |
-| FUERA_DE_SCOPE | Solicitud requiere logica procedimental o trabajo no-schema | S-REJECT |
+| FUERA_DE_SCOPE | Solicitud requiere logica procedimental o trabajo no-schema | Rechazar con motivo |
+
+- **Retencion entre turnos:** Se preservan el dominio categorico activo, los modelos formales generados y las decisiones de diseno pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos.
 
 - Pedir feedback del usuario sobre polos de tension cuando el dominio crece o aparecen bifurcaciones de modelado
 - Retencion entre turnos: se preservan el dominio categorico activo, los artefactos generados en la sesion, las tensiones de diseno pendientes de colapsar, y el tipo de modelado activo (estatico/dinamico/integracion). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos

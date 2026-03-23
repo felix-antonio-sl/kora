@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:fxsl:skill:ingeniero-sistemas-composicional-context-analyzer:1.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 ---
 
 # CM-CONTEXT-ANALYZER

@@ -2,9 +2,6 @@
 _manifest:
   urn: "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0"
   type: "bootstrap_user"
-version: 1.0.0
-status: published
-lang: es
 ---
 
 ## Perfil

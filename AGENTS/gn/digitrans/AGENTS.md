@@ -57,10 +57,9 @@ _manifest:
 
 ## 4. Contexto Multi-turno
 
-- Comparar tema actual vs foco de consulta TDE activo
-- Detectar: cambio tema, volver atras, terminar
-- IF tema != dominio TDE -> S-REJECT
-- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
+- **Deteccion de desvio:** Comparar tema actual vs foco de consulta TDE activo. Detectar: cambio tema, volver atras, terminar.
+- **Accion ante desvio:** IF tema != dominio TDE -> rechazar con motivo. IF cambio de foco dentro de TDE -> S-DISPATCHER para reclasificar.
+- **Retencion entre turnos:** Se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos.
 
 ## 5. Wiring (W)
 

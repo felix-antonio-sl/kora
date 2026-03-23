@@ -5,14 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 02, 04, 06, 07, KORA/Agent-Spec v8.4.0, restoration of governed extended skills"
-version: "4.2.0"
+version: "4.3.0"
 status: published
 tags: [spec, skill, cm, degenerate, lazy-load]
 lang: es
 extensions: {}
 ---
 
-# KORA/Skill-Spec v4.2.0
+# KORA/Skill-Spec v4.3.0
 
 ## 1. Definicion
 
@@ -65,6 +65,7 @@ Reglas:
 2. Usa `_manifest.type = lazy_load_endofunctor`.
 3. No mezcla FSM, tono, security ni wiring.
 4. Puede ser invocado por la FSM, pero no contiene control conversacional ni transiciones.
+5. El identificador simbolico del Skill **DEBE** usar SCREAMING_CASE: `CM-NOMBRE-DESCRIPTIVO`. Enforcement: lint.
 
 ### 3.2 Skill extendido
 
@@ -174,16 +175,29 @@ Traces to: formal/02 §2.3 (Unit eta) ; formal/02 §2.4 (Counit epsilon) ; forma
 | No-relajacion    | Ningun CM redefine, relaja o condiciona reglas duras de AGENTS.md | manual      | Mover regla al bootstrap o spec |
 | Coupling prohibido | Outputs no codifican destinos FSM ni referencian reglas duras por nombre | lint   | Desacoplar output del routing FSM |
 | Meta-validacion  | CMs generadores producen artefactos conformes a spec gobernante          | eval        | Corregir CM o pipeline de generacion |
+| Naming convention | Identificador simbolico del Skill usa SCREAMING_CASE (`CM-NOMBRE-DESCRIPTIVO`) | lint    | Renombrar archivo y actualizar referencia en FSM |
 
 ## 8. Migracion
 
 Esta seccion se establece a partir de v4.2.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### v4.3.0
+
+Cambios:
+
+1. Naming convention — §3.1 regla 5: el identificador simbolico del Skill **DEBE** usar SCREAMING_CASE (`CM-NOMBRE-DESCRIPTIVO`). Enforcement: lint.
+2. Tabla §7 — se agrega check "Naming convention" (lint).
+
+Migracion:
+
+- Todo Skill con identificador en lowercase o mixed-case (e.g., `CM-interpretador-imagenes`) **DEBE** renombrarse a SCREAMING_CASE (`CM-INTERPRETADOR-IMAGENES`) y actualizar la referencia en AGENTS.md.
 
 ### Contrato vigente v4
 
 - Dos materializaciones: degenerada (`CM-*.md`) y extendida (`CM-*/SKILL.md`).
 - CM Core obligatorio: `Proposito`, `Input/Output`, `Procedimiento`, `Signature Output`.
 - Algebra `Free/Forget/Promote` preserva CM Core.
+- Naming convention: SCREAMING_CASE (`CM-NOMBRE-DESCRIPTIVO`).
 - Patrones prohibidos: FSM, control conversacional, security, wiring, relajacion de reglas duras.
 - Progressive disclosure: Discover/Activate/Execute.
 

@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:kora:skill:forgemaster-openclaw-adapter:1.1.0
   type: lazy_load_endofunctor
-version: 1.1.0
-status: published
-lang: es
 extensions:
   kora:
     skill:

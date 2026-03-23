@@ -49,1061 +49,51 @@
     },
     "dev": {
       "name": "dev",
-      "workspace_count": 8,
+      "workspace_count": 1,
       "validate_strict": {
         "profile": "strict",
         "cohort": "dev",
-        "workspace_valid": 0,
-        "workspace_invalid": 8,
-        "bootstrap_validated": 32,
+        "workspace_valid": 1,
+        "workspace_invalid": 0,
+        "bootstrap_validated": 4,
         "global_failures": 0,
-        "issue_counts": {
-          "multiturno_minimum": 1,
-          "soul_canonical": 22
-        },
-        "issues": [
-          {
-            "path": "AGENTS/dev/analyst/SOUL.md",
-            "workspace": "AGENTS/dev/analyst",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/analyst/SOUL.md",
-            "workspace": "AGENTS/dev/analyst",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/analyst/SOUL.md",
-            "workspace": "AGENTS/dev/analyst",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "workspace": "AGENTS/dev/coder",
-            "category": "multiturno_minimum",
-            "message": "Contexto Multi-turno no declara criterio de retencion entre turnos"
-          },
-          {
-            "path": "AGENTS/dev/coder/SOUL.md",
-            "workspace": "AGENTS/dev/coder",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/coder/SOUL.md",
-            "workspace": "AGENTS/dev/coder",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/coder/SOUL.md",
-            "workspace": "AGENTS/dev/coder",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/planner/SOUL.md",
-            "workspace": "AGENTS/dev/planner",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/planner/SOUL.md",
-            "workspace": "AGENTS/dev/planner",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/planner/SOUL.md",
-            "workspace": "AGENTS/dev/planner",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/refactorer/SOUL.md",
-            "workspace": "AGENTS/dev/refactorer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/refactorer/SOUL.md",
-            "workspace": "AGENTS/dev/refactorer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/refactorer/SOUL.md",
-            "workspace": "AGENTS/dev/refactorer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/reviewer/SOUL.md",
-            "workspace": "AGENTS/dev/reviewer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/reviewer/SOUL.md",
-            "workspace": "AGENTS/dev/reviewer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/reviewer/SOUL.md",
-            "workspace": "AGENTS/dev/reviewer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/sentinel/SOUL.md",
-            "workspace": "AGENTS/dev/sentinel",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/sentinel/SOUL.md",
-            "workspace": "AGENTS/dev/sentinel",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/sentinel/SOUL.md",
-            "workspace": "AGENTS/dev/sentinel",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/steipete/SOUL.md",
-            "workspace": "AGENTS/dev/steipete",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion no canonica 'Axiomas' (canonicas: Identidad Dialectica, Paradigma Cognitivo, Tono, Voz)"
-          },
-          {
-            "path": "AGENTS/dev/tester/SOUL.md",
-            "workspace": "AGENTS/dev/tester",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/tester/SOUL.md",
-            "workspace": "AGENTS/dev/tester",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/dev/tester/SOUL.md",
-            "workspace": "AGENTS/dev/tester",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          }
-        ],
-        "ok": false
+        "issue_counts": {},
+        "issues": [],
+        "ok": true
       },
       "summary": {
-        "findings_total": 40,
-        "p1": 40,
+        "findings_total": 0,
+        "p1": 0,
         "p2": 0,
         "p3": 0,
-        "strict_validate_green": false
+        "strict_validate_green": true
       },
-      "findings": [
-        {
-          "workspace": "dev/analyst",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/analyst/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(METRICAS|DASHBOARD|REPORTE|TENDENCIA|BACKLOG_HEALTH|END). → Trans: IF metricas|cph|ta|cycle_time|tokens|coste|aceptacion → S-METRICAS. IF dashboard|tablero|dimensiones|neural → S-DASHBOARD. IF reporte|retrospectiva|retro|ciclo_cerrado|okr_progreso → S-REPORTE. IF tendencia|trend|inter_ciclo|comparar|inflexion|curva → S-TENDENCIA. IF backlog|flujo|wip|bottleneck|stale|cola → S-BACKLOG-HEALTH. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/analyst",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/analyst/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-METRICAS → ACT: CM-METRICS-COLLECTOR: Recopilar datos crudos: tokens consumidos por historia, historias Done, historias Rejected, cycle times individuales, modelo utilizado por historia. Calcular: CpH (coste por historia en tokens), TA (% aceptacion primer intento), Cycle Time promedio (backlog→done), presupuesto consumido %. Presentar metricas con fuente y fecha. → Trans: IF metricas_entregadas → S-DISPATCHER. IF profundizar → S-TENDENCIA. IF generar_dashboard → S-DASHBOARD. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/analyst",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/analyst/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-DASHBOARD → ACT: CM-DASHBOARD-GENERATOR: Generar Tablero Neural. 5 dimensiones: coste(CpH, presupuesto consumido, coste por zona), calidad(TA, tasa rechazo, patrones alucinacion), velocidad(Cycle Time promedio, throughput historias/dia), modelo(distribucion tier, fallbacks, coste por tier), enjambre(carga por agente, utilizacion, cuellos de botella). Formato tabular: dimension, metrica, actual, anterior, delta, tendencia. → Trans: IF dashboard_generado → S-DISPATCHER. IF analizar_tendencia → S-TENDENCIA. IF generar_reporte → S-REPORTE. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/analyst",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/analyst/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-REPORTE → ACT: CM-RETRO-REPORTER: Generar Retrospectiva Analitica de fin de Ciclo. Secciones: progreso OKRs (KRs baseline→actual→target), analisis de costes (presupuesto asignado vs consumido por partida), patrones de calidad (rechazos recurrentes, gaps de evals), propuestas de ajuste (modelo, context engineering, topologia enjambre). Presentar reporte consolidado con tablas. → Trans: IF reporte_generado → S-DISPATCHER. IF profundizar_tendencia → S-TENDENCIA. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/analyst",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/analyst/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-TENDENCIA → ACT: CM-TREND-ANALYZER: Analizar tendencias inter-Ciclo. Comparar metricas actuales vs Ciclos anteriores. Preguntas clave: CpH decrece? (eficiencia aprendida). TA mejora? (calidad creciente). Cycle Time estable? (flujo predecible). Detectar puntos de inflexion. Comparar contra hipotesis de curva exponencial (Chapter 0 §2.3). Presentar con graficos textuales y tabla de tendencias. → Trans: IF tendencias_analizadas → S-DISPATCHER. IF generar_dashboard → S-DASHBOARD. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/analyst",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/analyst/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-BACKLOG-HEALTH → ACT: CM-BACKLOG-HEALTH-CHECKER: Analizar salud del flujo de backlog. Detectar: historias stale (>N dias sin movimiento), cuellos de botella (acumulacion en estado), violaciones WIP (zonas sobre-cargadas), profundidad de cola (backlog depth vs throughput), ratio de nutricion (historias entrando vs saliendo). Diagnosticar causa probable de anomalias. Presentar con tabla de salud. → Trans: IF diagnostico_entregado → S-DISPATCHER. IF generar_metricas → S-METRICAS. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/coder",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(PLANIFICAR|IMPLEMENTAR|INTEGRAR|REFACTORIZAR|DEPURAR|END). → Trans: IF historia|story|consumir|tarea → S-PLANIFICAR. IF implementar|codear|escribir|tdd → S-IMPLEMENTAR. IF pr|pull_request|integrar|commit → S-INTEGRAR. IF refactorizar|limpiar|deuda|verde → S-REFACTORIZAR. IF bug|fallo|error|depurar|debug → S-DEPURAR. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/coder",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-PLANIFICAR → ACT: CM-STORY-CONSUMER: Leer historia con 5 elementos. Verificar que tiene ACs testables, complejidad, riesgo. CM-IMPLEMENTATION-PLANNER: Descomponer historia en tareas tecnicas. Definir orden de ejecucion. Identificar archivos afectados. Presentar plan al Operador para aprobacion. → Trans: IF plan_aprobado → S-IMPLEMENTAR. IF historia_incompleta → RECHAZAR(\"Historia incompleta. Falta: [elementos]. Derivar a dev/planner.\"). → S-DISPATCHER. IF ajustar → S-PLANIFICAR. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/coder",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-IMPLEMENTAR → ACT: CM-TDD-EXECUTOR: Ciclo estricto por cada tarea del plan: (1) Definir tipos/interfaces. (2) Escribir tests que fallan. (3) Implementar codigo minimo para pasar tests. (4) Refactorizar preservando tests verdes. Respetar CONVENTIONS.md. Consumir SCHEMA.md para modelo de datos. Validar inputs con Zod/Pydantic. → Trans: IF todas_tareas_completas → S-INTEGRAR. IF test_falla_inesperado → S-DEPURAR. IF bloqueo → ACT: reportar al Operador. → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/coder",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-INTEGRAR → ACT: CM-PR-GENERATOR: Ejecutar lint + type check. Verificar tests pasan. Generar PR con descripcion clara: que cambia, por que, historia asociada, ACs cubiertos. Listar archivos modificados. NO desplegar — solo generar PR. → Trans: IF pr_generado → S-END. IF lint_falla|type_falla → S-IMPLEMENTAR. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/coder",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-REFACTORIZAR → ACT: CM-TDD-EXECUTOR(modo refactor): Leer codigo existente. Identificar mejora (complejidad ciclomatica, duplicacion, naming, estructura). Escribir tests de caracterizacion si no existen. Refactorizar preservando tests verdes. Generar PR de tarea verde. → Trans: IF refactor_completo → S-INTEGRAR. IF rompe_tests → S-DEPURAR. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/coder",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/coder/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-DEPURAR → ACT: CM-BUG-HUNTER: Leer error/fallo. Reproducir con test. Diagnosticar causa raiz. Aplicar fix minimo. Verificar que test pasa. Agregar test de regresion. → Trans: IF fix_aplicado → S-INTEGRAR. IF requiere_cambio_arquitectonico → reportar al Operador. → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(OKR|EPICA|HISTORIA|BACKLOG|PREDICTIVO|RETRO|END). → Trans: IF okr|objetivo|ciclo|key_result → S-OKR. IF epica|descomponer|desglosar → S-EPICA. IF historia|refinar|criterios|aceptacion|riesgo|complejidad → S-HISTORIA. IF backlog|priorizar|flujo|cola → S-BACKLOG. IF predictivo|proponer|sugerir|patron → S-PREDICTIVO. IF retro|retrospectiva|ciclo_cerrado|metricas_ciclo → S-RETRO. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-OKR → ACT: CM-OKR-STRATEGIST: Elicitar contexto de negocio. Estructurar 1-3 Objetivos cualitativos. Derivar 2-4 Key Results analogos (no binarios) por Objetivo. Estimar presupuesto de tokens por Ciclo. Derivar epicas necesarias para cada KR. Presentar OKRs al PO para aprobacion. → Trans: IF okrs_aprobados → S-EPICA. IF ajustar → S-OKR. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-EPICA → ACT: CM-EPIC-DECOMPOSER: Leer epica y KR asociado. Descomponer en historias con anatomia completa (Who/What/Why, ACs, valor, senal_complejidad, clasificacion_riesgo). Verificar que cada historia entrega valor de negocio independiente. Presentar historias al PO. → Trans: IF historias_aprobadas → S-BACKLOG. IF refinar_historia → S-HISTORIA. IF ajustar_epica → S-EPICA. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-HISTORIA → ACT: CM-STORY-REFINER: Leer historia. Verificar 5 elementos completos. Generar/refinar criterios de aceptacion testables. Clasificar complejidad(simple|estandar|complejo|critico). Clasificar riesgo(lectura|escritura|destructiva). Estimar valor de negocio. Identificar dependencias. Presentar historia refinada. → Trans: IF historia_lista → S-BACKLOG. IF otra_historia → S-HISTORIA. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-BACKLOG → ACT: CM-BACKLOG-CURATOR: Listar historias pendientes. Priorizar por formula Valor/(Coste×Riesgo). Verificar WIP limits por zona. Identificar bloqueos y dependencias. Presentar backlog priorizado. Recomendar siguiente historia para el coder. → Trans: IF backlog_curado → S-DISPATCHER. IF refinar → S-HISTORIA. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-PREDICTIVO → ACT: CM-BACKLOG-CURATOR(modo predictivo): Analizar OKRs activos, metricas de producto, patrones de uso, historias completadas. Proponer historias nuevas como borradores. Presentar al PO para curado y aprobacion. → Trans: IF propuestas_generadas → S-DISPATCHER. IF refinar_propuesta → S-HISTORIA. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/planner",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/planner/AGENTS.md",
-            "line": 21,
-            "snippet": "7. STATE: S-RETRO → ACT: CM-RETRO-ANALYST: Recopilar metricas del Ciclo (CpH, TA, Cycle Time, % presupuesto consumido, KRs logrados). Analizar patrones de rechazo. Identificar gaps en evals. Generar reporte para Retrospectiva Analitica. Proponer ajustes para proximo Ciclo. → Trans: IF reporte_listo → S-OKR. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/refactorer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/refactorer/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(ANALIZAR|REFACTORIZAR|MODERNIZAR|DEUDA|END). → Trans: IF complejidad|duplicacion|metricas|analizar|evaluar → S-ANALIZAR. IF refactorizar|extraer|renombrar|simplificar|limpiar|verde → S-REFACTORIZAR. IF dependencias|deps|actualizar|deprecado|migrar|modernizar → S-MODERNIZAR. IF deuda|debt|catalogo|tendencia|reporte → S-DEUDA. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/refactorer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/refactorer/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-ANALIZAR → ACT: CM-CODE-ANALYZER: Leer zona del codebase indicada. Calcular: complejidad ciclomatica por funcion/metodo, % duplicacion(bloques >=5 lineas), consistencia de naming(convenciones violadas), adherencia a patrones(CONVENTIONS.md, ARCHITECTURE.md). Identificar oportunidades de refactoring. Priorizar por impacto/esfuerzo (matriz 2x2). Presentar hallazgos al Operador. → Trans: IF oportunidades_identificadas → S-REFACTORIZAR. IF requiere_modernizacion → S-MODERNIZAR. IF registrar_deuda → S-DEUDA. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/refactorer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/refactorer/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-REFACTORIZAR → ACT: CM-REFACTOR-EXECUTOR: (1) Verificar tests existentes para zona afectada. Si no existen → escribir tests de caracterizacion ANTES de tocar codigo. (2) Confirmar tests verdes (baseline). (3) Aplicar refactoring atomico: extract_function, rename, simplify_conditional, remove_duplication, extract_component, improve_types, inline_temp, replace_magic_number, decompose_conditional, consolidate_duplicate_conditional. (4) Ejecutar tests → DEBEN seguir verdes. (5) Si tests rojos → revertir refactoring, diagnosticar. Repetir para cada oportunidad priorizada. → Trans: IF refactors_aplicados → S-DEUDA(registrar reduccion). IF tests_rojos_irreparables → ABORTAR(\"Tests rojos post-refactor. Revirtiendo. Diagnostico: [causa].\"). → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/refactorer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/refactorer/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-MODERNIZAR → ACT: CM-DEPENDENCY-MODERNIZER: (1) Detectar dependencias outdated (major, minor, patch). (2) Detectar patrones deprecados en codebase. (3) Clasificar riesgo de actualizacion (breaking changes, incompatibilidades). (4) Proponer plan de actualizacion al Operador. (5) Si aprobado: aplicar update con tests verdes. Un update a la vez. (6) Proponer migracion de patrones deprecados. → Trans: IF modernizacion_completa → S-DEUDA(registrar reduccion). IF breaking_change → reportar al Operador. → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/refactorer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/refactorer/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-DEUDA → ACT: CM-DEBT-TRACKER: (1) Catalogar items de deuda tecnica detectados en esta sesion. (2) Clasificar cada item: severidad(CRITICA|ALTA|MEDIA|BAJA), esfuerzo(XS|S|M|L|XL), tipo(complejidad|duplicacion|naming|dependencias|patrones|tipos). (3) Actualizar tendencia: deuda reducida vs introducida en este Cycle. (4) Generar reporte para Retrospectiva Analitica: metricas antes/despues, items resueltos, items pendientes. → Trans: IF reporte_generado → S-END. IF items_criticos_pendientes → alertar Operador. → S-END. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/reviewer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/reviewer/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(REVIEW|SEGURIDAD|EVAL|END). → Trans: IF pr|review|revisar|cambios → S-REVIEW. IF seguridad|security|vulnerabilidad|owasp → S-SEGURIDAD. IF eval|regresion|alucinacion|dataset → S-EVAL. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/reviewer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/reviewer/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-REVIEW → ACT: CM-CODE-REVIEWER: Leer PR completo (diff, descripcion, tests, archivos). Verificar contra checklist: convenciones(CONVENTIONS.md), tipos(zero any, Zod/Pydantic en boundaries), tests(cobertura ACs, TDD respetado), calidad(naming, estructura, duplicacion, complejidad). Registrar hallazgos con severidad (CRITICO|MAYOR|MENOR|NOTA). → Trans: IF hallazgos_criticos → S-SEGURIDAD(verificar seguridad). IF hallazgos_registrados → S-SEGURIDAD. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/reviewer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/reviewer/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-SEGURIDAD → ACT: CM-SECURITY-REVIEWER: Analizar cambios en contexto de ARCHITECTURE.md. Verificar: inputs validados en todo boundary, SQL parametrizado, secrets no hardcoded, outputs sanitizados, no escalada de privilegios, no exposicion de datos sensibles, no prompt injection en interfaces LLM. Clasificar superficie de ataque afectada. → Trans: IF hallazgos_seguridad → registrar + S-EVAL. IF seguro → S-EVAL. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/reviewer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/reviewer/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-EVAL → ACT: CM-EVAL-EXECUTOR: Ejecutar evals aplicables segun tipo de cambio. Eval regresion(si hay dataset). Eval alucinacion(si el PR toca logica de agentes/LLM). Eval coste(si el PR afecta consumo de tokens). Registrar resultados. → Trans: IF evals_completos → S-VEREDICTO. IF eval_falla → registrar + S-VEREDICTO. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/reviewer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/reviewer/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-VEREDICTO → ACT: CM-VERDICT-SYNTHESIZER: Consolidar hallazgos de review + seguridad + evals. Clasificar severidad global. Emitir veredicto: APPROVE(sin hallazgos criticos ni mayores), REQUEST_CHANGES(hallazgos mayores corregibles), REJECT(hallazgos criticos, violacion de principios fundamentales). Justificar veredicto con evidencia especifica. → Trans: IF veredicto_emitido → S-END. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/sentinel",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/sentinel/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(CONTEXT_HYGIENE|SWARM_AUDIT|EVAL_AUDIT|PURPLE_CARD|SELF_EVAL|END). → Trans: IF context|drift|conventions|architecture|coherencia → S-CONTEXT-HYGIENE. IF enjambre|rendimiento|metricas|agente|topologia → S-SWARM-AUDIT. IF eval|cobertura|golden|regresion|alucinacion → S-EVAL-AUDIT. IF proponer|mejora|tarjeta|purpura|optimizar → S-PURPLE-CARD. IF auto_eval|meta_eval|sentinel_health → S-SELF-EVAL. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/sentinel",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/sentinel/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-CONTEXT-HYGIENE → ACT: CM-CONTEXT-AUDITOR: Comparar estado real del codebase con context files (CONVENTIONS.md, ARCHITECTURE.md, SCHEMA.md, STACK.md). Detectar drift: convenciones no respetadas, arquitectura divergida, schema desactualizado. Generar diff propuesto para cada context file con justificacion. Presentar como PR al Operador para aprobacion. → Trans: IF diffs_generados → S-DISPATCHER. IF sin_drift → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/sentinel",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/sentinel/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-SWARM-AUDIT → ACT: CM-SWARM-AUDITOR: Analizar metricas agregadas del enjambre: tasas de aceptacion por agente, cycle time por zona, patrones de rechazo, coste por historia, frecuencia de fallback de modelo. Detectar anomalias: agente con TA <70%, zona con cycle time creciente, coste desproporcionado. Diagnosticar causa probable. Proponer ajustes. → Trans: IF anomalias_detectadas → S-PURPLE-CARD. IF enjambre_sano → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/sentinel",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/sentinel/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-EVAL-AUDIT → ACT: CM-EVAL-AUDITOR: Revisar corpus de evals: cobertura por tipo (regresion, alucinacion, tool-calling, seguridad, coste). Detectar gaps: areas sin eval, evals obsoletos, golden dataset insuficiente. Verificar que incidentes previos (bugs, rechazos, vulnerabilidades) tienen eval de regresion correspondiente. Proponer nuevos evals. → Trans: IF gaps_detectados → S-PURPLE-CARD. IF cobertura_ok → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/sentinel",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/sentinel/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-PURPLE-CARD → ACT: CM-PURPLE-CARD-GENERATOR: Formular propuesta de mejora como tarjeta purpura. Tipos: ajuste_prompt(optimizar system prompt de agente), nuevo_eval(agregar eval faltante), reconfig_topologia(cambiar tier, agregar/quitar agente), context_update(actualizar context file), model_change(cambiar modelo de agente). Cada tarjeta con: descripcion, justificacion basada en datos, impacto esperado, riesgo. Presentar al Operador. NO EJECUTAR sin aprobacion. → Trans: IF tarjeta_generada → S-DISPATCHER. IF descartar → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/sentinel",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/sentinel/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-SELF-EVAL → ACT: CM-SELF-EVALUATOR: El sentinel se evalua a si mismo. Revisar tarjetas purpura aplicadas en Ciclos anteriores: mejoraron realmente las metricas? Calcular tasa de mejora efectiva. Si tasa <50%, alertar al Operador: \"Mis propuestas no estan mejorando el enjambre. Recalibrar.\" Someterse a pruebas adversariales conocidas si disponibles. → Trans: IF self_eval_ok → S-DISPATCHER. IF degradado → alertar Operador. → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/tester",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/tester/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. CM-INTENT-CLASSIFIER: Clasificar(ACCEPTANCE|INTEGRATION|EXECUTE|COVERAGE|END). → Trans: IF aceptacion|ac|criterio|story|historia → S-ACCEPTANCE. IF integracion|boundary|api|endpoint|cross → S-INTEGRATION. IF ejecutar|run|suite|correr → S-EXECUTE. IF cobertura|coverage|gaps|reporte → S-COVERAGE. IF terminar → S-END. IF ambiguo → ACT: clarificar. → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/tester",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/tester/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-ACCEPTANCE → ACT: CM-ACCEPTANCE-TEST-GENERATOR: Leer historia y sus ACs. Derivar al menos un test por cada AC. Formato DADO/CUANDO/ENTONCES. Framework: vitest (TypeScript), pytest (Python). Presentar tests generados para revision del Operador. → Trans: IF tests_aprobados → S-EXECUTE. IF historia_sin_acs → RECHAZAR(\"Historia sin ACs. Derivar a dev/planner para refinar.\"). → S-DISPATCHER. IF ajustar → S-ACCEPTANCE. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/tester",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/tester/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-INTEGRATION → ACT: CM-INTEGRATION-TEST-GENERATOR: Identificar boundaries entre componentes. Generar tests de integracion para flujos cross-component. Cubrir: endpoints API, queries DB, llamadas a servicios externos, contratos entre modulos. Presentar tests para revision. → Trans: IF tests_aprobados → S-EXECUTE. IF boundaries_no_claros → ACT: solicitar ARCHITECTURE.md o diagrama de componentes al Operador. → S-DISPATCHER. IF ajustar → S-INTEGRATION. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/tester",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/tester/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-EXECUTE → ACT: CM-TEST-EXECUTOR: Ejecutar suite completa (aceptacion + integracion + unitarios existentes). Reportar resultados: pass/fail por test, tiempo de ejecucion, fallos con stack trace. Agrupar por tipo (unit, acceptance, integration). → Trans: IF todos_pasan → S-COVERAGE. IF fallos_detectados → ACT: reportar fallos con evidencia al Operador. Derivar fix a dev/coder si aplica. → S-DISPATCHER. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "dev/tester",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/dev/tester/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-COVERAGE → ACT: CM-COVERAGE-REPORTER: Calcular cobertura por AC (ACs con test / ACs totales). Calcular cobertura por componente. Calcular cobertura por tipo (unit, acceptance, integration). Identificar ACs sin tests. Identificar paths no cubiertos. Emitir reporte con gaps. → Trans: IF reporte_entregado → S-END. IF gaps_criticos → ACT: recomendar tests faltantes. → S-ACCEPTANCE. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        }
-      ],
-      "repeated_findings": [
-        {
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "count": 40,
-          "workspaces": [
-            "dev/analyst",
-            "dev/coder",
-            "dev/planner",
-            "dev/refactorer",
-            "dev/reviewer",
-            "dev/sentinel",
-            "dev/tester"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        }
-      ],
+      "findings": [],
+      "repeated_findings": [],
       "subgroups": null
     },
     "ops": {
       "name": "ops",
-      "workspace_count": 8,
+      "workspace_count": 1,
       "validate_strict": {
         "profile": "strict",
         "cohort": "ops",
         "workspace_valid": 1,
-        "workspace_invalid": 7,
-        "bootstrap_validated": 32,
+        "workspace_invalid": 0,
+        "bootstrap_validated": 4,
         "global_failures": 0,
-        "issue_counts": {
-          "soul_canonical": 21
-        },
-        "issues": [
-          {
-            "path": "AGENTS/ops/ci-assistant/SOUL.md",
-            "workspace": "AGENTS/ops/ci-assistant",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/ci-assistant/SOUL.md",
-            "workspace": "AGENTS/ops/ci-assistant",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/ci-assistant/SOUL.md",
-            "workspace": "AGENTS/ops/ci-assistant",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/deployer/SOUL.md",
-            "workspace": "AGENTS/ops/deployer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/deployer/SOUL.md",
-            "workspace": "AGENTS/ops/deployer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/deployer/SOUL.md",
-            "workspace": "AGENTS/ops/deployer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/integrador/SOUL.md",
-            "workspace": "AGENTS/ops/integrador",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/integrador/SOUL.md",
-            "workspace": "AGENTS/ops/integrador",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/integrador/SOUL.md",
-            "workspace": "AGENTS/ops/integrador",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/observer/SOUL.md",
-            "workspace": "AGENTS/ops/observer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/observer/SOUL.md",
-            "workspace": "AGENTS/ops/observer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/observer/SOUL.md",
-            "workspace": "AGENTS/ops/observer",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
-            "workspace": "AGENTS/ops/orquestador-swarm",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
-            "workspace": "AGENTS/ops/orquestador-swarm",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/orquestador-swarm/SOUL.md",
-            "workspace": "AGENTS/ops/orquestador-swarm",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/security/SOUL.md",
-            "workspace": "AGENTS/ops/security",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/security/SOUL.md",
-            "workspace": "AGENTS/ops/security",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/security/SOUL.md",
-            "workspace": "AGENTS/ops/security",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/verificador/SOUL.md",
-            "workspace": "AGENTS/ops/verificador",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/verificador/SOUL.md",
-            "workspace": "AGENTS/ops/verificador",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/ops/verificador/SOUL.md",
-            "workspace": "AGENTS/ops/verificador",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          }
-        ],
-        "ok": false
+        "issue_counts": {},
+        "issues": [],
+        "ok": true
       },
       "summary": {
-        "findings_total": 59,
-        "p1": 58,
-        "p2": 1,
+        "findings_total": 4,
+        "p1": 4,
+        "p2": 0,
         "p3": 0,
-        "strict_validate_green": false
+        "strict_validate_green": true
       },
       "findings": [
-        {
-          "workspace": "ops/ci-assistant",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/ci-assistant/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. Clasificar intent (EXPLAIN|DEBUG|OPTIMIZE|CREATE|END). Identificar workflow especifico y nivel experiencia. Dirigir. → Trans: IF explicar → S-EDUCATOR. IF debug → S-DEBUGGER. IF optimizar → S-OPTIMIZER. IF crear → S-CREATOR. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/ci-assistant",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/ci-assistant/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-EDUCATOR → ACT: Identificar concepto CI/CD. Explicar didacticamente con ejemplos. Conceptos: Workflow(YAML automatizacion), Trigger(evento dispara), Job(grupo steps), Step(tarea), Action(codigo reutilizable), Runner(VM), Artifact(archivo generado), Gate(check para merge). → Trans: IF explicado → S-DISPATCHER. IF practica → S-CREATOR. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/ci-assistant",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/ci-assistant/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-DEBUGGER → ACT: Recibir fallo/log. Analizar patron error. Patrones: Missing _manifest(sin manifest→agregar con URN), YAML error(sintaxis→revisar indentacion), Catalog references non-existent(archivo no existe→crear o quitar), DRIFT(LLM_Parsing diferente→copiar LEXICON canonico). Proveer causa+solucion. → Trans: IF identificado → S-DISPATCHER. IF contexto → S-EDUCATOR. IF cambio workflow → S-OPTIMIZER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/ci-assistant",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/ci-assistant/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-OPTIMIZER → ACT: Analizar workflow existente. Areas: caching dependencias, paralelizacion jobs, path filters, reutilizacion actions. Proponer mejoras. → Trans: IF propuestas → S-DISPATCHER. IF nuevo → S-CREATOR. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/ci-assistant",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/ci-assistant/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-CREATOR → ACT: Recopilar requisitos (cuando, que, outputs). Construir estructura (name, on, jobs, steps). Generar YAML valido con comentarios. → Trans: IF creado → S-DISPATCHER. IF explicar → S-EDUCATOR. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
         {
           "workspace": "ops/clawstack",
           "rule_id": "agent.fsm_pseudostate_destination",
@@ -1167,853 +157,9 @@
           "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. Clasificar intent (CLASIFICAR|ESTRATEGIA|EJECUTAR|VERIFICAR|ROLLBACK|END). Validar que DoD 9-step pipeline este completo antes de proceder. Dirigir. → Trans: IF clasificar cambio → S-CLASIFICAR. IF seleccionar estrategia → S-ESTRATEGIA. IF ejecutar deploy → S-EJECUTAR. IF verificar deploy → S-VERIFICAR. IF rollback → S-ROLLBACK. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-CLASIFICAR → ACT: skill CM-CHANGE-CLASSIFIER. Recibir PR/changeset. Clasificar riesgo: lectura(read-only, config, docs), escritura(data mutation, new features), destructiva(schema migration, data deletion, auth changes). Determinar modo deploy segun clasificacion. Registrar clasificacion. → Trans: IF clasificado → S-ESTRATEGIA. IF datos insuficientes → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-ESTRATEGIA → ACT: skill CM-STRATEGY-SELECTOR. Recibir clasificacion riesgo. Seleccionar estrategia: lectura→fast-track (deploy inmediato, flag activo). escritura→canary (5% trafico, monitoreo 15min, expansion gradual). destructiva→manual (hold para aprobacion operador, NUNCA automatico). Configurar feature flags. Validar rollback plan existe. → Trans: IF estrategia seleccionada AND rollback plan ready → S-EJECUTAR. IF destructiva AND sin aprobacion → HOLD (esperar operador). IF cambio → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-EJECUTAR → ACT: skill CM-DEPLOY-EXECUTOR. Ejecutar estrategia seleccionada. Build imagen. Push a registry. Apply a environment. Activar feature flag segun estrategia (fast-track→flag ON inmediato, canary→flag ON 5%, manual→flag OFF hasta aprobacion). Log cada accion. Batching: agrupar cambios en ventanas, periodo observacion entre batches. → Trans: IF ejecutado → S-VERIFICAR. IF fallo build/push → S-ROLLBACK. IF cambio → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-VERIFICAR → ACT: skill CM-POST-DEPLOY-VERIFIER. Verificacion post-deploy. Comparar metricas contra baseline pre-deploy: latencia (p50, p95, p99), tasa error (4xx, 5xx), uso recursos (CPU, memoria). Duracion: 15min para canary, 5min para fast-track. Correlacion canary: comparar cohorte canary vs control. → Trans: IF metricas estables AND canary → expandir (25%→50%→100%). IF metricas estables AND fast-track → S-END. IF metricas degradadas → S-ROLLBACK. IF cambio → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-ROLLBACK → ACT: skill CM-ROLLBACK-EXECUTOR. Ejecutar rollback atomico. Desactivar feature flag. Revertir a version anterior. Verificar rollback exitoso (metricas vuelven a baseline). Si batch: rollback atomico del batch completo. Alertar operador con diagnostico: que fallo, metricas afectadas, version revertida. → Trans: IF rollback exitoso → S-END. IF rollback fallido → ALERT CRITICO operador + S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/skills/CM-CONTEXT-MANAGER.md",
-            "line": 11,
-            "snippet": "- **Input:** session_history: {turns: Turn[], current_state: FSM_State, deploys: DeployResult[], rollbacks: RollbackResult[]}"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/deployer",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/deployer/skills/CM-INTENT-CLASSIFIER.md",
-            "line": 11,
-            "snippet": "- **Input:** user_message: string, current_state: FSM_State"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. Clasificar intent (MERGE|COHERENCIA|CONFLICTO|COLA|END). Dirigir. → Trans: IF merge semantico → S-MERGE. IF verificar coherencia cross-PR → S-COHERENCIA. IF resolver conflicto → S-CONFLICTO. IF gestionar cola → S-COLA. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-MERGE → ACT: skill CM-SEMANTIC-MERGER. Recibir PR incoming + estado actual de main. Verificar coherencia semantica: cambios combinados tienen sentido arquitectonico, tipos alinean, imports no conflictuan, convenciones de naming se mantienen cross-merge, contratos de interfaz preservados. Registrar resultado merge semantico. → Trans: IF semanticamente coherente AND CI verde AND evals passed → merge aprobado → S-DISPATCHER. IF incoherente → S-CONFLICTO. IF requiere cross-PR analysis → S-COHERENCIA. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-COHERENCIA → ACT: skill CM-COHERENCE-VERIFIER. Analisis cross-PR cuando multiples PRs target misma zona. Verificar: no introducen patrones contradictorios, no duplican implementacion de misma feature, no rompen asunciones mutuas, interfaces siguen consistentes, naming conventions coherentes entre PRs. Registrar resultado coherencia. → Trans: IF coherente → S-DISPATCHER. IF conflicto detectado → S-CONFLICTO. IF cola saturada → S-COLA. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-CONFLICTO → ACT: skill CM-CONFLICT-RESOLVER. Clasificar conflicto: trivial (import order, whitespace, formatting, auto-fixable) vs substantivo (logica conflictuante, implementaciones competidoras, contracts rotos). Resolver trivial autonomamente. Substantivo: HOLD para Operador con diagnostico completo. → Trans: IF trivial AND resuelto → S-MERGE. IF substantivo → HOLD (esperar Operador) → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-COLA → ACT: skill CM-MERGE-QUEUE-MANAGER. Gestionar merge queue. Priorizar por valor de negocio de historia asociada. Aplicar backpressure cuando cola saturada (>threshold configurable). Reportar queue depth, throughput, tiempo promedio en cola. IF backpressure activo → notificar orquestador para reducir tasa generacion PRs. → Trans: IF cola gestionada → S-DISPATCHER. IF PR prioritario listo → S-MERGE. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/skills/CM-CONTEXT-MANAGER.md",
-            "line": 11,
-            "snippet": "- **Input:** session_history: {turns: Turn[], current_state: FSM_State, merges: MergeResult[], conflicts: ConflictResult[], queue_state: QueueState}"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/integrador",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/integrador/skills/CM-INTENT-CLASSIFIER.md",
-            "line": 11,
-            "snippet": "- **Input:** user_message: string, current_state: FSM_State"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. Clasificar intent (MONITOR|ANOMALIA|CORRELACION|DIAGNOSTICO|ALERTA|END). Dirigir. → Trans: IF monitoreo → S-MONITOR. IF anomalia → S-ANOMALIA. IF correlacion → S-CORRELACION. IF diagnostico → S-DIAGNOSTICO. IF alerta → S-ALERTA. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-MONITOR → ACT: skill CM-HEALTH-MONITOR. Recopilar metricas clave: uptime, latencia p95, error rate 5xx, CPU/memoria, costes LLM, tasa consumo tokens. Generar tabla de estado de salud. Clasificar: HEALTHY|DEGRADED|CRITICAL. → Trans: IF anomalia detectada → S-ANOMALIA. IF reporte entregado → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-ANOMALIA → ACT: skill CM-ANOMALY-DETECTOR. Analizar metricas para anomalias estadisticas: spike latencia, incremento error rate, explosion costes, patrones trafico inusuales. Clasificar severidad: LOW|MEDIUM|HIGH|CRITICAL. Si severidad >= HIGH → auto-transicion a correlacion. → Trans: IF severidad >= HIGH → S-CORRELACION. IF severidad < HIGH y reporte entregado → S-DISPATCHER. IF alerta requerida → S-ALERTA. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-CORRELACION → ACT: skill CM-CORRELATION-ENGINE. Cruzar anomalia con eventos recientes: deploys ultimas 24h (deploy_timeline), cambios config, actualizaciones modelo, cambios trafico. Calcular confianza de correlacion (0-100%). Reportar hipotesis con nivel de confianza. → Trans: IF confianza >= 70% → S-DIAGNOSTICO. IF confianza < 70% → S-DISPATCHER (reportar incertidumbre). IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-DIAGNOSTICO → ACT: skill CM-DIAGNOSIS-PROPOSER. Basado en anomalia + correlacion, proponer top-3 hipotesis con confianza. Recomendar accion: ROLLBACK|INVESTIGATE|WAIT|ESCALATE. Si condiciones auto-rollback cumplidas (severidad CRITICAL + confianza correlacion >= 85% + aprobacion Operador), recomendar rollback con solicitud de aprobacion explicita. → Trans: IF accion propuesta → S-ALERTA. IF mas datos necesarios → S-MONITOR. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-ALERTA → ACT: skill CM-ALERT-MANAGER. Gestionar alertas. Alertas clasicas como backstop (siempre activas, independientes). Alertas inteligentes desde deteccion anomalias. Rutear a Operador via canal configurado. Aplicar reglas de escalacion. → Trans: IF alerta enviada → S-DISPATCHER. IF diagnostico requerido → S-DIAGNOSTICO. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "skill.transition_classifier_leak",
-          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3-§6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/skills/CM-CONTEXT-MANAGER.md",
-            "line": 12,
-            "snippet": "- **Output:** context_update: {context_shift: bool, recommended_state: FSM_STATE, active_context: SessionContext, stale_data: [{item, age, recommendation: REFRESH|DISCARD}]}"
-          },
-          "why_real": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
-          "minimal_fix": "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "skill.transition_classifier_leak",
-          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3-§6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/skills/CM-CONTEXT-MANAGER.md",
-            "line": 22,
-            "snippet": "- Operador pregunta por servicio diferente al contexto activo → CONTEXT_SHIFT"
-          },
-          "why_real": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
-          "minimal_fix": "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "skill.transition_classifier_leak",
-          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3-§6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/skills/CM-CONTEXT-MANAGER.md",
-            "line": 23,
-            "snippet": "- Operador cambia de anomalia a monitoreo general → CONTEXT_SHIFT"
-          },
-          "why_real": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
-          "minimal_fix": "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/observer",
-          "rule_id": "skill.transition_classifier_leak",
-          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3-§6",
-          "evidence": {
-            "path": "AGENTS/ops/observer/skills/CM-CONTEXT-MANAGER.md",
-            "line": 39,
-            "snippet": "context_shift: false"
-          },
-          "why_real": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
-          "minimal_fix": "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: skill CM-INTENT-CLASSIFIER. Clasificar intent (EVENTO|GOLDEN_PATH|BACKPRESSURE|CIRCUITO|ESTADO|END). Dirigir. → Trans: IF evento entrante → S-EVENTO. IF ejecutar golden path → S-GOLDEN-PATH. IF backpressure → S-BACKPRESSURE. IF circuit breaker → S-CIRCUITO. IF estado sistema → S-ESTADO. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-EVENTO → ACT: skill CM-EVENT-CLASSIFIER. Recibir evento (commit, PR, alerta, config_change, sentinel_proposal, eval_result, heartbeat). Clasificar tipo y riesgo: lectura|escritura|destructiva. Determinar golden path correspondiente. Registrar evento en timeline. → Trans: IF evento clasificado → S-GOLDEN-PATH. IF evento es heartbeat → S-ESTADO. IF datos insuficientes → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-GOLDEN-PATH → ACT: skill CM-GOLDEN-PATH-ROUTER. Ejecutar golden path segun clasificacion del evento. Historia estandar: PR→lint→types→tests→eval_regresion→merge→deploy_canary→expand. Historia destructiva: PR→lint→types→tests→eval_regresion→eval_seguridad→HOLD→aprobacion_Operador→deploy_canary_agresivo. Infraestructura: Intent→IaC→plan→diff_review→apply→verify→drift_monitor. Hotfix: Bug→diagnose→fix+test→eval_express→deploy_directo(con rollback auto). Despachar agentes especializados para cada paso. → Trans: IF golden path completado → S-ESTADO. IF backpressure detectada → S-BACKPRESSURE. IF fallo detectado → S-CIRCUITO. IF cambio → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-BACKPRESSURE → ACT: skill CM-BACKPRESSURE-CONTROLLER. Monitorear profundidad de cola de verificacion. IF cola excede umbral → reducir tasa generacion PRs del enjambre. Redirigir agentes a tareas no-PR (analisis, refactoring contexto, planificacion). Priorizar por valor de negocio. Monitorear drenaje de cola. IF cola bajo umbral → restaurar tasa normal. → Trans: IF backpressure resuelta → S-DISPATCHER. IF circuit breaker requerido → S-CIRCUITO. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-CIRCUITO → ACT: skill CM-CIRCUIT-BREAKER-MANAGER. Monitorear modos de fallo: cascada deploys defectuosos, saturacion pipeline por rafaga, drift infraestructura no detectado, fallo agente-observer. IF modo fallo detectado → activar circuit breaker correspondiente. Contener. Alertar Operador con diagnostico. → Trans: IF circuit breaker activado y contenido → S-ESTADO. IF requiere intervencion Operador → HOLD. IF resuelto → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-ESTADO → ACT: skill CM-SYSTEM-STATUS. Reportar estado completo del sistema: eventos en cola, golden paths activos, agentes ejecutando, nivel backpressure, circuit breakers activados, heartbeats recibidos. Generar tabla resumen. → Trans: IF reporte entregado → S-DISPATCHER. IF anomalia detectada → S-CIRCUITO. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "skill.operational_skill_composition",
-          "rule": "Skill compone otro skill operativamente",
-          "severity": "P2",
-          "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/skills/CM-CIRCUIT-BREAKER-MANAGER.md",
-            "line": 25,
-            "snippet": "- Delegar a CM-BACKPRESSURE-CONTROLLER para gestion detallada"
-          },
-          "why_real": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
-          "minimal_fix": "Eliminar la invocacion operativa a otro CM y mover la secuencia o routing a AGENTS.md; el skill solo debe usar criterios del dominio o la spec rectora.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/orquestador-swarm",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/orquestador-swarm/skills/CM-INTENT-CLASSIFIER.md",
-            "line": 11,
-            "snippet": "- **Input:** user_message: string, current_state: FSM_State"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/security/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. Clasificar intent (ANALISIS_PR|RUNTIME|DEPENDENCIAS|ADVERSARIAL|META_EVAL|END). Verificar DIVERSITY_CHECK (modelo/provider diferente al enjambre) antes de cualquier operacion; IF mismo modelo/provider → ABORT sesion. Dirigir. → Trans: IF analisis PR → S-ANALISIS-PR. IF monitoreo runtime → S-RUNTIME. IF auditoria dependencias → S-DEPENDENCIAS. IF testing adversarial → S-ADVERSARIAL. IF meta-evaluacion → S-META-EVAL. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/security/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-ANALISIS-PR → ACT: skill CM-PR-SECURITY-ANALYZER. Recibir PR diff + ARCHITECTURE.md. Clasificar superficie de ataque afectada (auth, data, external_interfaces, crypto, llm_prompt). Analizar en contexto arquitectonico: entender flujo de datos, trust boundaries, puntos de entrada. Priorizar por impacto real, no por severidad generica. Cada hallazgo con: severity(critical|high|medium|low), evidence(file:line), attack_vector, real_impact, suggested_fix. Reportar: no \"200 medium findings\" sino \"2 critical: endpoint sin auth accediendo a datos sensibles.\" → Trans: IF analisis completo → S-DISPATCHER. IF hallazgo critico requiere veto → VETO_ASIMETRICO (bloquear PR, notificar). IF datos insuficientes (sin ARCHITECTURE.md) → REJECT analisis, exigir contexto. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/security/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-RUNTIME → ACT: skill CM-RUNTIME-MONITOR. Monitorear patrones de comportamiento en produccion. Detectar: patrones de acceso anomalos (horarios, volumenes, geolocalizacion), payloads inusuales (injection patterns, encoding anomalo), intentos escalacion privilegios, prompt injection agent-to-agent (texto libre donde deberia haber estructura tipada). No es WAF — entiende que es \"normal\" para la aplicacion usando baseline comportamental. Clasificar: INFO|SUSPICIOUS|THREAT|ACTIVE_ATTACK. → Trans: IF threat o active_attack → ALERT operador + S-DISPATCHER. IF suspicious → registrar + S-DISPATCHER. IF info → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/security/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-DEPENDENCIAS → ACT: skill CM-DEPENDENCY-AUDITOR. Monitorear CVEs en dependencias. Evaluar exposicion REAL: dependencia tiene CVE AND funcion vulnerable esta expuesta a input externo. No solo \"dependencia tiene CVE\" sino \"dependencia tiene CVE Y la usamos en endpoint publico que procesa input usuario.\" Proponer mitigacion con prioridad: patch, upgrade, workaround, accept_risk. → Trans: IF exposicion critica → ALERT operador + S-DISPATCHER. IF hallazgos con mitigacion → S-DISPATCHER. IF sin CVEs expuestos → S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/security/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-ADVERSARIAL → ACT: skill CM-ADVERSARIAL-TESTER. Ejecutar tests adversariales contra el enjambre. Categorias: prompt injection (direct, indirect, agent-to-agent), validation bypass (schema, auth, input sanitization), privilege escalation (horizontal, vertical), OWASP Top 10 adaptado LLMs (prompt injection, insecure output handling, training data poisoning, model DoS, supply chain). Frecuencia: mensual o en recalibracion. Reportar: vector, resultado, severidad, reproducibilidad. → Trans: IF vulnerabilidad critica → VETO_ASIMETRICO + ALERT operador. IF hallazgos no criticos → reporte + S-DISPATCHER. IF enjambre limpio → reporte + S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/security/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-META-EVAL → ACT: skill CM-SELF-AUDITOR. Los 4 controles quis custodiet: (1) Verificar modelo/provider propio es diferente al del enjambre — IF mismo → ABORT. (2) Revisar logs propios de aprobacion/rechazo — buscar patrones: exceso bloqueos (>40% rejection rate = posible false positive), exceso aprobaciones (>95% approval = posible degradacion). (3) Calcular tasas false positive/negative contra hallazgos confirmados. (4) Generar flag si rendimiento degradado para auditoria humana externa periodica. → Trans: IF degradacion detectada → FLAG_HUMAN_AUDIT + S-DISPATCHER. IF controles OK → reporte + S-DISPATCHER. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/security/skills/CM-CONTEXT-MANAGER.md",
-            "line": 11,
-            "snippet": "- **Input:** session_history: {turns: Turn[], current_state: FSM_State, prs_analyzed: PRAnalysis[], runtime_assessments: RuntimeAssessment[], dependency_audits: DependencyAudit[], adversarial_reports: AdversarialReport[], meta_evals: MetaEval[]}"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/security",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/security/skills/CM-INTENT-CLASSIFIER.md",
-            "line": 11,
-            "snippet": "- **Input:** user_message: string, current_state: FSM_State, swarm_config: {model: string, provider: string}"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 9,
-            "snippet": "1. STATE: S-DISPATCHER → ACT: Bienvenida/reorientar. Clasificar intent (VERIFICAR|CAPA_CI|CAPA_REGRESION|CAPA_DIVERSIDAD|CAPA_SEGURIDAD|CAPA_HUMANA|END). Dirigir. → Trans: IF verificar cambio completo → S-VERIFICAR. IF capa CI → S-CAPA-CI. IF capa regresion → S-CAPA-REGRESION. IF capa diversidad → S-CAPA-DIVERSIDAD. IF capa seguridad → S-CAPA-SEGURIDAD. IF capa humana → S-CAPA-HUMANA. IF terminar → S-END."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 11,
-            "snippet": "2. STATE: S-VERIFICAR → ACT: skill CM-VERIFICATION-ORCHESTRATOR. Recibir PR/changeset. Clasificar tipo de cambio: lectura (config, docs, read-only), escritura (data mutation, new features), destructiva (schema migration, data deletion, auth changes). Determinar capas requeridas: lectura→capas 1-3, escritura→capas 1-4, destructiva→capas 1-5. Orquestar ejecucion secuencial de capas. Si alguna capa falla→rechazar inmediatamente sin ejecutar capas posteriores. → Trans: IF todas capas requeridas pasan → S-END (verdict: APROBADO). IF alguna capa falla → S-END (verdict: RECHAZADO, capa fallida, razon). IF datos insuficientes → S-DISPATCHER."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 13,
-            "snippet": "3. STATE: S-CAPA-CI → ACT: skill CM-CI-LAYER. Ejecutar lint + type check + tests unitarios. Resultado binario: pass/fail. Sin matices. Si fail→rechazar inmediatamente con detalle del fallo. → Trans: IF pass → S-DISPATCHER (capa 1 registrada). IF fail → S-END (verdict: RECHAZADO, capa: CI, detalle)."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 15,
-            "snippet": "4. STATE: S-CAPA-REGRESION → ACT: skill CM-REGRESSION-LAYER. Ejecutar dataset de regresion. Comparar outputs vs expected. Verificar no-degradacion de outputs existentes. Si golden dataset disponible, usar como anchor. Reportar delta. → Trans: IF no-degradacion → S-DISPATCHER (capa 2 registrada). IF degradacion → S-END (verdict: RECHAZADO, capa: regresion, delta). IF sin dataset → WARN + pass condicional."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 17,
-            "snippet": "5. STATE: S-CAPA-DIVERSIDAD → ACT: skill CM-DIVERSITY-LAYER. Verificar que reviewer usa provider DIFERENTE al coder. IF mismo provider → fail capa inmediatamente. Ejecutar cross-eval: reviewer evalua calidad, correctitud, adherencia a spec del cambio. Registrar provider del coder y provider del reviewer. → Trans: IF diferente provider AND eval positivo → S-DISPATCHER (capa 3 registrada). IF mismo provider → S-END (verdict: RECHAZADO, capa: diversidad, razon: mismo provider). IF eval negativo → S-END (verdict: RECHAZADO, capa: diversidad, razon: cross-eval fallido)."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 19,
-            "snippet": "6. STATE: S-CAPA-SEGURIDAD → ACT: skill CM-SECURITY-LAYER. Analisis estatico (SAST patterns). Analisis dinamico (comportamiento runtime). Check de privilegios (principio minimo privilegio). Analisis contextual con ARCHITECTURE.md. Priorizar hallazgos por impacto real, no por volumen. → Trans: IF sin hallazgos criticos → S-DISPATCHER (capa 4 registrada). IF hallazgos criticos → S-END (verdict: RECHAZADO, capa: seguridad, hallazgos)."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/AGENTS.md",
-            "line": 21,
-            "snippet": "7. STATE: S-CAPA-HUMANA → ACT: skill CM-HUMAN-GATE. Solo para cambios destructivos. Presentar resumen de todas las capas ejecutadas + recomendacion + evidencia. HOLD para aprobacion del Operador. NUNCA aprobar automaticamente. → Trans: IF operador aprueba → S-DISPATCHER (capa 5 registrada). IF operador rechaza → S-END (verdict: RECHAZADO, capa: humana, razon del operador). IF timeout → S-END (verdict: RECHAZADO, capa: humana, razon: timeout sin aprobacion)."
-          },
-          "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
-          "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/skills/CM-CONTEXT-MANAGER.md",
-            "line": 11,
-            "snippet": "- **Input:** session_history: {turns: Turn[], current_state: FSM_State, verifications: VerificationResult[]}"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/verificador",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/verificador/skills/CM-INTENT-CLASSIFIER.md",
-            "line": 11,
-            "snippet": "- **Input:** user_message: string, current_state: FSM_State"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
         }
       ],
       "repeated_findings": [
-        {
-          "rule_id": "agent.missing_transition_precedence",
-          "rule": "Precedencia de transiciones no declarada",
-          "severity": "P1",
-          "count": 41,
-          "workspaces": [
-            "ops/ci-assistant",
-            "ops/deployer",
-            "ops/integrador",
-            "ops/observer",
-            "ops/orquestador-swarm",
-            "ops/security",
-            "ops/verificador"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "count": 11,
-          "workspaces": [
-            "ops/clawstack",
-            "ops/deployer",
-            "ops/integrador",
-            "ops/orquestador-swarm",
-            "ops/security",
-            "ops/verificador"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "rule_id": "skill.transition_classifier_leak",
-          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
-          "severity": "P1",
-          "count": 4,
-          "workspaces": [
-            "ops/observer"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
         {
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
@@ -2026,12 +172,12 @@
           "enforcement_candidate": "lint"
         },
         {
-          "rule_id": "skill.operational_skill_composition",
-          "rule": "Skill compone otro skill operativamente",
-          "severity": "P2",
-          "count": 1,
+          "rule_id": "skill.state_variable_leak",
+          "rule": "Skill degenerado recibe o emite estado FSM",
+          "severity": "P1",
+          "count": 2,
           "workspaces": [
-            "ops/orquestador-swarm"
+            "ops/clawstack"
           ],
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
@@ -2045,222 +191,20 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "domains",
-        "workspace_valid": 7,
-        "workspace_invalid": 13,
+        "workspace_valid": 20,
+        "workspace_invalid": 0,
         "bootstrap_validated": 80,
         "global_failures": 0,
-        "issue_counts": {
-          "multiturno_minimum": 4,
-          "soul_canonical": 29
-        },
-        "issues": [
-          {
-            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
-            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
-            "category": "multiturno_minimum",
-            "message": "Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
-            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
-            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo Respuesta' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/SOUL.md",
-            "workspace": "AGENTS/fxsl/arquitecto-automatizacion-organizacional",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md",
-            "workspace": "AGENTS/fxsl/arquitecto-categorico",
-            "category": "multiturno_minimum",
-            "message": "Contexto Multi-turno no declara mecanismo de deteccion de desvio"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/SOUL.md",
-            "workspace": "AGENTS/fxsl/arquitecto-sistemas-informacion",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/SOUL.md",
-            "workspace": "AGENTS/fxsl/arquitecto-sistemas-informacion",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/SOUL.md",
-            "workspace": "AGENTS/fxsl/arquitecto-sistemas-informacion",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/SOUL.md",
-            "workspace": "AGENTS/fxsl/ingeniero-sistemas-composicional",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/SOUL.md",
-            "workspace": "AGENTS/fxsl/ingeniero-sistemas-composicional",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/SOUL.md",
-            "workspace": "AGENTS/fxsl/ingeniero-sistemas-composicional",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/ontologista-gist/SOUL.md",
-            "workspace": "AGENTS/fxsl/ontologista-gist",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/ontologista-gist/SOUL.md",
-            "workspace": "AGENTS/fxsl/ontologista-gist",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/ontologista-gist/SOUL.md",
-            "workspace": "AGENTS/fxsl/ontologista-gist",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/fxsl/pensador-generador/AGENTS.md",
-            "workspace": "AGENTS/fxsl/pensador-generador",
-            "category": "multiturno_minimum",
-            "message": "Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)"
-          },
-          {
-            "path": "AGENTS/gn/ar-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/ar-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/ar-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/ar-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/ar-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/ar-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/asesor-juridico/SOUL.md",
-            "workspace": "AGENTS/gn/asesor-juridico",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/asesor-juridico/SOUL.md",
-            "workspace": "AGENTS/gn/asesor-juridico",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/asesor-juridico/SOUL.md",
-            "workspace": "AGENTS/gn/asesor-juridico",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/dgi-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/dgi-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/dgi-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/dgi-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo Respuesta' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/dgi-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/dgi-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/digitrans/AGENTS.md",
-            "workspace": "AGENTS/gn/digitrans",
-            "category": "multiturno_minimum",
-            "message": "Contexto Multi-turno no declara accion ante desvio (S-DISPATCHER, rechazar, reclasificar)"
-          },
-          {
-            "path": "AGENTS/gn/erp-gore/SOUL.md",
-            "workspace": "AGENTS/gn/erp-gore",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/erp-gore/SOUL.md",
-            "workspace": "AGENTS/gn/erp-gore",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/erp-gore/SOUL.md",
-            "workspace": "AGENTS/gn/erp-gore",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/gestor-ipr-360/SOUL.md",
-            "workspace": "AGENTS/gn/gestor-ipr-360",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/gestor-ipr-360/SOUL.md",
-            "workspace": "AGENTS/gn/gestor-ipr-360",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo Respuesta' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/gobernador-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Saludo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/gobernador-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Estilo' que debe vivir en AGENTS.md"
-          },
-          {
-            "path": "AGENTS/gn/gobernador-virtual/SOUL.md",
-            "workspace": "AGENTS/gn/gobernador-virtual",
-            "category": "soul_canonical",
-            "message": "SOUL.md contiene seccion de behavior 'Ejemplos de Comportamiento' que debe vivir en AGENTS.md"
-          }
-        ],
-        "ok": false
+        "issue_counts": {},
+        "issues": [],
+        "ok": true
       },
       "summary": {
         "findings_total": 66,
         "p1": 65,
         "p2": 1,
         "p3": 0,
-        "strict_validate_green": false
+        "strict_validate_green": true
       },
       "findings": [
         {
@@ -2960,7 +904,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 11,
-            "snippet": "2. STATE: S-WS-CONTEXT → ACT: skill CM-ws-analyzer. Entender WS destino: procesos, participantes, informacion actual, tecnologias, clientes, productos/servicios. Determinar funciones IS requeridas (de 11 canonicas). Definir tipo superposicion IS<->WS. → Trans: IF contexto WS capturado → S-IS-FUNCTIONS. IF falta informacion WS → S-WS-CONTEXT. IF cambio direccion → S-DISPATCHER."
+            "snippet": "2. STATE: S-WS-CONTEXT → ACT: skill CM-WS-ANALYZER. Entender WS destino: procesos, participantes, informacion actual, tecnologias, clientes, productos/servicios. Determinar funciones IS requeridas (de 11 canonicas). Definir tipo superposicion IS<->WS. → Trans: IF contexto WS capturado → S-IS-FUNCTIONS. IF falta informacion WS → S-WS-CONTEXT. IF cambio direccion → S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2976,7 +920,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 13,
-            "snippet": "3. STATE: S-IS-FUNCTIONS → ACT: skill CM-is-function-designer. Seleccionar funciones IS relevantes para el WS. Especificar cada funcion (inputs, outputs, reglas). Establecer prioridades y dependencias entre funciones. → Trans: IF funciones especificadas → S-DATA-MODELING. IF conflictos entre funciones → S-IS-FUNCTIONS. IF cambio alcance → S-DISPATCHER."
+            "snippet": "3. STATE: S-IS-FUNCTIONS → ACT: skill CM-IS-FUNCTION-DESIGNER. Seleccionar funciones IS relevantes para el WS. Especificar cada funcion (inputs, outputs, reglas). Establecer prioridades y dependencias entre funciones. → Trans: IF funciones especificadas → S-DATA-MODELING. IF conflictos entre funciones → S-IS-FUNCTIONS. IF cambio alcance → S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -2992,7 +936,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 15,
-            "snippet": "4. STATE: S-DATA-MODELING → ACT: skill CM-data-architect. Identificar entidades y relaciones (conceptual). Formalizar como categoria (esquema categorico). Derivar modelo logico y fisico segun target. → Trans: IF modelo datos completo → S-INFORMATION-FLOWS. IF ambiguedad entidades → S-DATA-MODELING. IF ajustar modelo → S-DATA-MODELING."
+            "snippet": "4. STATE: S-DATA-MODELING → ACT: skill CM-DATA-ARCHITECT. Identificar entidades y relaciones (conceptual). Formalizar como categoria (esquema categorico). Derivar modelo logico y fisico segun target. → Trans: IF modelo datos completo → S-INFORMATION-FLOWS. IF ambiguedad entidades → S-DATA-MODELING. IF ajustar modelo → S-DATA-MODELING."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3024,7 +968,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 19,
-            "snippet": "6. STATE: S-INTEGRATION → ACT: skill CM-integration-architect. Analizar IS existentes y sus esquemas. Disenar estrategia integracion (pushout categorico). Especificar interfaces y transformaciones. → Trans: IF integracion disenada → S-ARTIFACT-GENERATION. IF conflictos esquema → S-INTEGRATION. IF cambio alcance → S-DISPATCHER."
+            "snippet": "6. STATE: S-INTEGRATION → ACT: skill CM-INTEGRATION-ARCHITECT. Analizar IS existentes y sus esquemas. Disenar estrategia integracion (pushout categorico). Especificar interfaces y transformaciones. → Trans: IF integracion disenada → S-ARTIFACT-GENERATION. IF conflictos esquema → S-INTEGRATION. IF cambio alcance → S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3040,7 +984,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 21,
-            "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-schema-evolution-manager. Analizar esquema actual vs nuevo. Disenar funtor migracion (Delta, Sigma, Pi). Generar plan migracion con scripts. → Trans: IF migracion planificada → S-ARTIFACT-GENERATION. IF perdida datos inevitable → S-EVOLUTION. IF cambio mayor → S-DATA-MODELING."
+            "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-SCHEMA-EVOLUTION-MANAGER. Analizar esquema actual vs nuevo. Disenar funtor migracion (Delta, Sigma, Pi). Generar plan migracion con scripts. → Trans: IF migracion planificada → S-ARTIFACT-GENERATION. IF perdida datos inevitable → S-EVOLUTION. IF cambio mayor → S-DATA-MODELING."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3056,7 +1000,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 23,
-            "snippet": "8. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-is-artifact-generator. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia entre artefactos. Outputs: ERD, SQL DDL, GraphQL SDL, JSON Schema, OpenAPI, Prisma, Data Flow Diagrams, WS Snapshot, Traceability Matrix, Migration Scripts. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-DATA-MODELING."
+            "snippet": "8. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-IS-ARTIFACT-GENERATOR. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia entre artefactos. Outputs: ERD, SQL DDL, GraphQL SDL, JSON Schema, OpenAPI, Prisma, Data Flow Diagrams, WS Snapshot, Traceability Matrix, Migration Scripts. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-DATA-MODELING."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3104,7 +1048,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 11,
-            "snippet": "2. STATE: S-STAKEHOLDER-ANALYSIS → ACT: skill CM-stakeholder-extractor. Identificar beneficiarios, operadores, mantenedores, reguladores, afectados. Capturar necesidades, metas, restricciones. Presentar mapa para validacion. → Trans: IF stakeholders capturados → S-SYSTEM-MODELING. IF falta informacion → S-STAKEHOLDER-ANALYSIS. IF cambio direccion → S-DISPATCHER."
+            "snippet": "2. STATE: S-STAKEHOLDER-ANALYSIS → ACT: skill CM-STAKEHOLDER-EXTRACTOR. Identificar beneficiarios, operadores, mantenedores, reguladores, afectados. Capturar necesidades, metas, restricciones. Presentar mapa para validacion. → Trans: IF stakeholders capturados → S-SYSTEM-MODELING. IF falta informacion → S-STAKEHOLDER-ANALYSIS. IF cambio direccion → S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3120,7 +1064,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 13,
-            "snippet": "3. STATE: S-SYSTEM-MODELING → ACT: skill CM-opm-modeler. Identificar objetos y procesos. Definir estados y transformaciones. Establecer enlaces estructurales y procedurales. Generar System Diagram (SD) alto nivel. → Trans: IF modelo OPM completo → S-BREAKDOWN-DESIGN. IF ambiguedad en dominio → S-SYSTEM-MODELING. IF requiere mas detalle → S-SYSTEM-MODELING."
+            "snippet": "3. STATE: S-SYSTEM-MODELING → ACT: skill CM-OPM-MODELER. Identificar objetos y procesos. Definir estados y transformaciones. Establecer enlaces estructurales y procedurales. Generar System Diagram (SD) alto nivel. → Trans: IF modelo OPM completo → S-BREAKDOWN-DESIGN. IF ambiguedad en dominio → S-SYSTEM-MODELING. IF requiere mas detalle → S-SYSTEM-MODELING."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3136,7 +1080,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 15,
-            "snippet": "4. STATE: S-BREAKDOWN-DESIGN → ACT: skill CM-breakdown-architect. Generar FBS (funcional). Derivar PBS (producto). Mapear LBS (ubicacion) si aplica. Establecer trazabilidad FBS <-> PBS <-> LBS. → Trans: IF breakdown structures completas → S-REQUIREMENTS. IF ajustar descomposicion → S-BREAKDOWN-DESIGN. IF cambio alcance → S-DISPATCHER."
+            "snippet": "4. STATE: S-BREAKDOWN-DESIGN → ACT: skill CM-BREAKDOWN-ARCHITECT. Generar FBS (funcional). Derivar PBS (producto). Mapear LBS (ubicacion) si aplica. Establecer trazabilidad FBS <-> PBS <-> LBS. → Trans: IF breakdown structures completas → S-REQUIREMENTS. IF ajustar descomposicion → S-BREAKDOWN-DESIGN. IF cambio alcance → S-DISPATCHER."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3152,7 +1096,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 17,
-            "snippet": "5. STATE: S-REQUIREMENTS → ACT: skill CM-requirements-engineer. Derivar FR desde FBS. Identificar NFR. Verificar completitud, consistencia, verificabilidad. Generar matriz trazabilidad. IF gaps detectados: analizar internamente gaps, asunciones implicitas, cambios probables, edge cases no cubiertos. → Trans: IF requisitos especificados → S-ARTIFACT-GENERATION. IF conflictos entre requisitos → S-REQUIREMENTS. IF forecasting necesario → S-REQUIREMENTS."
+            "snippet": "5. STATE: S-REQUIREMENTS → ACT: skill CM-REQUIREMENTS-ENGINEER. Derivar FR desde FBS. Identificar NFR. Verificar completitud, consistencia, verificabilidad. Generar matriz trazabilidad. IF gaps detectados: analizar internamente gaps, asunciones implicitas, cambios probables, edge cases no cubiertos. → Trans: IF requisitos especificados → S-ARTIFACT-GENERATION. IF conflictos entre requisitos → S-REQUIREMENTS. IF forecasting necesario → S-REQUIREMENTS."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3168,7 +1112,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 19,
-            "snippet": "6. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-artifact-generator. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia con modelo. Outputs posibles: OPD, FBS/PBS/LBS Trees, SRS, Traceability Matrix, Wiring Diagrams, Interface Control Docs, Work System Snapshots. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-BREAKDOWN-DESIGN."
+            "snippet": "6. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-ARTIFACT-GENERATOR. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia con modelo. Outputs posibles: OPD, FBS/PBS/LBS Trees, SRS, Traceability Matrix, Wiring Diagrams, Interface Control Docs, Work System Snapshots. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-BREAKDOWN-DESIGN."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -3184,7 +1128,7 @@
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 21,
-            "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-evolution-analyzer. Clasificar cambio: planificado (proyecto) vs adaptativo (workaround). Evaluar impacto en FBS, PBS, LBS, requisitos. Proponer estrategia evolucion. → Trans: IF cambio menor → S-DISPATCHER. IF cambio mayor → S-STAKEHOLDER-ANALYSIS. IF workaround identificado → S-REQUIREMENTS."
+            "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-EVOLUTION-ANALYZER. Clasificar cambio: planificado (proyecto) vs adaptativo (workaround). Evaluar impacto en FBS, PBS, LBS, requisitos. Proponer estrategia evolucion. → Trans: IF cambio menor → S-DISPATCHER. IF cambio mayor → S-STAKEHOLDER-ANALYSIS. IF workaround identificado → S-REQUIREMENTS."
           },
           "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
           "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4153,7 +2097,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 11,
-                "snippet": "2. STATE: S-WS-CONTEXT → ACT: skill CM-ws-analyzer. Entender WS destino: procesos, participantes, informacion actual, tecnologias, clientes, productos/servicios. Determinar funciones IS requeridas (de 11 canonicas). Definir tipo superposicion IS<->WS. → Trans: IF contexto WS capturado → S-IS-FUNCTIONS. IF falta informacion WS → S-WS-CONTEXT. IF cambio direccion → S-DISPATCHER."
+                "snippet": "2. STATE: S-WS-CONTEXT → ACT: skill CM-WS-ANALYZER. Entender WS destino: procesos, participantes, informacion actual, tecnologias, clientes, productos/servicios. Determinar funciones IS requeridas (de 11 canonicas). Definir tipo superposicion IS<->WS. → Trans: IF contexto WS capturado → S-IS-FUNCTIONS. IF falta informacion WS → S-WS-CONTEXT. IF cambio direccion → S-DISPATCHER."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4169,7 +2113,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 13,
-                "snippet": "3. STATE: S-IS-FUNCTIONS → ACT: skill CM-is-function-designer. Seleccionar funciones IS relevantes para el WS. Especificar cada funcion (inputs, outputs, reglas). Establecer prioridades y dependencias entre funciones. → Trans: IF funciones especificadas → S-DATA-MODELING. IF conflictos entre funciones → S-IS-FUNCTIONS. IF cambio alcance → S-DISPATCHER."
+                "snippet": "3. STATE: S-IS-FUNCTIONS → ACT: skill CM-IS-FUNCTION-DESIGNER. Seleccionar funciones IS relevantes para el WS. Especificar cada funcion (inputs, outputs, reglas). Establecer prioridades y dependencias entre funciones. → Trans: IF funciones especificadas → S-DATA-MODELING. IF conflictos entre funciones → S-IS-FUNCTIONS. IF cambio alcance → S-DISPATCHER."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4185,7 +2129,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 15,
-                "snippet": "4. STATE: S-DATA-MODELING → ACT: skill CM-data-architect. Identificar entidades y relaciones (conceptual). Formalizar como categoria (esquema categorico). Derivar modelo logico y fisico segun target. → Trans: IF modelo datos completo → S-INFORMATION-FLOWS. IF ambiguedad entidades → S-DATA-MODELING. IF ajustar modelo → S-DATA-MODELING."
+                "snippet": "4. STATE: S-DATA-MODELING → ACT: skill CM-DATA-ARCHITECT. Identificar entidades y relaciones (conceptual). Formalizar como categoria (esquema categorico). Derivar modelo logico y fisico segun target. → Trans: IF modelo datos completo → S-INFORMATION-FLOWS. IF ambiguedad entidades → S-DATA-MODELING. IF ajustar modelo → S-DATA-MODELING."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4217,7 +2161,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 19,
-                "snippet": "6. STATE: S-INTEGRATION → ACT: skill CM-integration-architect. Analizar IS existentes y sus esquemas. Disenar estrategia integracion (pushout categorico). Especificar interfaces y transformaciones. → Trans: IF integracion disenada → S-ARTIFACT-GENERATION. IF conflictos esquema → S-INTEGRATION. IF cambio alcance → S-DISPATCHER."
+                "snippet": "6. STATE: S-INTEGRATION → ACT: skill CM-INTEGRATION-ARCHITECT. Analizar IS existentes y sus esquemas. Disenar estrategia integracion (pushout categorico). Especificar interfaces y transformaciones. → Trans: IF integracion disenada → S-ARTIFACT-GENERATION. IF conflictos esquema → S-INTEGRATION. IF cambio alcance → S-DISPATCHER."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4233,7 +2177,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 21,
-                "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-schema-evolution-manager. Analizar esquema actual vs nuevo. Disenar funtor migracion (Delta, Sigma, Pi). Generar plan migracion con scripts. → Trans: IF migracion planificada → S-ARTIFACT-GENERATION. IF perdida datos inevitable → S-EVOLUTION. IF cambio mayor → S-DATA-MODELING."
+                "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-SCHEMA-EVOLUTION-MANAGER. Analizar esquema actual vs nuevo. Disenar funtor migracion (Delta, Sigma, Pi). Generar plan migracion con scripts. → Trans: IF migracion planificada → S-ARTIFACT-GENERATION. IF perdida datos inevitable → S-EVOLUTION. IF cambio mayor → S-DATA-MODELING."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4249,7 +2193,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 23,
-                "snippet": "8. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-is-artifact-generator. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia entre artefactos. Outputs: ERD, SQL DDL, GraphQL SDL, JSON Schema, OpenAPI, Prisma, Data Flow Diagrams, WS Snapshot, Traceability Matrix, Migration Scripts. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-DATA-MODELING."
+                "snippet": "8. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-IS-ARTIFACT-GENERATOR. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia entre artefactos. Outputs: ERD, SQL DDL, GraphQL SDL, JSON Schema, OpenAPI, Prisma, Data Flow Diagrams, WS Snapshot, Traceability Matrix, Migration Scripts. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-DATA-MODELING."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4297,7 +2241,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 11,
-                "snippet": "2. STATE: S-STAKEHOLDER-ANALYSIS → ACT: skill CM-stakeholder-extractor. Identificar beneficiarios, operadores, mantenedores, reguladores, afectados. Capturar necesidades, metas, restricciones. Presentar mapa para validacion. → Trans: IF stakeholders capturados → S-SYSTEM-MODELING. IF falta informacion → S-STAKEHOLDER-ANALYSIS. IF cambio direccion → S-DISPATCHER."
+                "snippet": "2. STATE: S-STAKEHOLDER-ANALYSIS → ACT: skill CM-STAKEHOLDER-EXTRACTOR. Identificar beneficiarios, operadores, mantenedores, reguladores, afectados. Capturar necesidades, metas, restricciones. Presentar mapa para validacion. → Trans: IF stakeholders capturados → S-SYSTEM-MODELING. IF falta informacion → S-STAKEHOLDER-ANALYSIS. IF cambio direccion → S-DISPATCHER."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4313,7 +2257,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 13,
-                "snippet": "3. STATE: S-SYSTEM-MODELING → ACT: skill CM-opm-modeler. Identificar objetos y procesos. Definir estados y transformaciones. Establecer enlaces estructurales y procedurales. Generar System Diagram (SD) alto nivel. → Trans: IF modelo OPM completo → S-BREAKDOWN-DESIGN. IF ambiguedad en dominio → S-SYSTEM-MODELING. IF requiere mas detalle → S-SYSTEM-MODELING."
+                "snippet": "3. STATE: S-SYSTEM-MODELING → ACT: skill CM-OPM-MODELER. Identificar objetos y procesos. Definir estados y transformaciones. Establecer enlaces estructurales y procedurales. Generar System Diagram (SD) alto nivel. → Trans: IF modelo OPM completo → S-BREAKDOWN-DESIGN. IF ambiguedad en dominio → S-SYSTEM-MODELING. IF requiere mas detalle → S-SYSTEM-MODELING."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4329,7 +2273,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 15,
-                "snippet": "4. STATE: S-BREAKDOWN-DESIGN → ACT: skill CM-breakdown-architect. Generar FBS (funcional). Derivar PBS (producto). Mapear LBS (ubicacion) si aplica. Establecer trazabilidad FBS <-> PBS <-> LBS. → Trans: IF breakdown structures completas → S-REQUIREMENTS. IF ajustar descomposicion → S-BREAKDOWN-DESIGN. IF cambio alcance → S-DISPATCHER."
+                "snippet": "4. STATE: S-BREAKDOWN-DESIGN → ACT: skill CM-BREAKDOWN-ARCHITECT. Generar FBS (funcional). Derivar PBS (producto). Mapear LBS (ubicacion) si aplica. Establecer trazabilidad FBS <-> PBS <-> LBS. → Trans: IF breakdown structures completas → S-REQUIREMENTS. IF ajustar descomposicion → S-BREAKDOWN-DESIGN. IF cambio alcance → S-DISPATCHER."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4345,7 +2289,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 17,
-                "snippet": "5. STATE: S-REQUIREMENTS → ACT: skill CM-requirements-engineer. Derivar FR desde FBS. Identificar NFR. Verificar completitud, consistencia, verificabilidad. Generar matriz trazabilidad. IF gaps detectados: analizar internamente gaps, asunciones implicitas, cambios probables, edge cases no cubiertos. → Trans: IF requisitos especificados → S-ARTIFACT-GENERATION. IF conflictos entre requisitos → S-REQUIREMENTS. IF forecasting necesario → S-REQUIREMENTS."
+                "snippet": "5. STATE: S-REQUIREMENTS → ACT: skill CM-REQUIREMENTS-ENGINEER. Derivar FR desde FBS. Identificar NFR. Verificar completitud, consistencia, verificabilidad. Generar matriz trazabilidad. IF gaps detectados: analizar internamente gaps, asunciones implicitas, cambios probables, edge cases no cubiertos. → Trans: IF requisitos especificados → S-ARTIFACT-GENERATION. IF conflictos entre requisitos → S-REQUIREMENTS. IF forecasting necesario → S-REQUIREMENTS."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4361,7 +2305,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 19,
-                "snippet": "6. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-artifact-generator. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia con modelo. Outputs posibles: OPD, FBS/PBS/LBS Trees, SRS, Traceability Matrix, Wiring Diagrams, Interface Control Docs, Work System Snapshots. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-BREAKDOWN-DESIGN."
+                "snippet": "6. STATE: S-ARTIFACT-GENERATION → ACT: skill CM-ARTIFACT-GENERATOR. Seleccionar formato(s). Generar artefactos concretos. Validar consistencia con modelo. Outputs posibles: OPD, FBS/PBS/LBS Trees, SRS, Traceability Matrix, Wiring Diagrams, Interface Control Docs, Work System Snapshots. → Trans: IF artefactos generados → S-DISPATCHER. IF ajustes requeridos → S-BREAKDOWN-DESIGN."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4377,7 +2321,7 @@
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 21,
-                "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-evolution-analyzer. Clasificar cambio: planificado (proyecto) vs adaptativo (workaround). Evaluar impacto en FBS, PBS, LBS, requisitos. Proponer estrategia evolucion. → Trans: IF cambio menor → S-DISPATCHER. IF cambio mayor → S-STAKEHOLDER-ANALYSIS. IF workaround identificado → S-REQUIREMENTS."
+                "snippet": "7. STATE: S-EVOLUTION → ACT: skill CM-EVOLUTION-ANALYZER. Clasificar cambio: planificado (proyecto) vs adaptativo (workaround). Evaluar impacto en FBS, PBS, LBS, requisitos. Proponer estrategia evolucion. → Trans: IF cambio menor → S-DISPATCHER. IF cambio mayor → S-STAKEHOLDER-ANALYSIS. IF workaround identificado → S-REQUIREMENTS."
               },
               "why_real": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
               "minimal_fix": "Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado.",
@@ -4557,15 +2501,8 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 139,
+        "count": 58,
         "workspaces": [
-          "dev/analyst",
-          "dev/coder",
-          "dev/planner",
-          "dev/refactorer",
-          "dev/reviewer",
-          "dev/sentinel",
-          "dev/tester",
           "fxsl/arquitecto-automatizacion-organizacional",
           "fxsl/arquitecto-sistemas-informacion",
           "fxsl/ingeniero-sistemas-composicional",
@@ -4576,30 +2513,7 @@
           "gn/erp-gore",
           "gn/gestor-ipr-360",
           "gn/gobernador-virtual",
-          "ops/ci-assistant",
-          "ops/deployer",
-          "ops/integrador",
-          "ops/observer",
-          "ops/orquestador-swarm",
-          "ops/security",
-          "ops/verificador",
           "salud/medico-urgencias"
-        ],
-        "closure_type": "agent_fix",
-        "enforcement_candidate": "lint"
-      },
-      {
-        "rule_id": "skill.state_variable_leak",
-        "rule": "Skill degenerado recibe o emite estado FSM",
-        "severity": "P1",
-        "count": 11,
-        "workspaces": [
-          "ops/clawstack",
-          "ops/deployer",
-          "ops/integrador",
-          "ops/orquestador-swarm",
-          "ops/security",
-          "ops/verificador"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -4621,12 +2535,12 @@
         "enforcement_candidate": "lint"
       },
       {
-        "rule_id": "skill.transition_classifier_leak",
-        "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+        "rule_id": "skill.state_variable_leak",
+        "rule": "Skill degenerado recibe o emite estado FSM",
         "severity": "P1",
-        "count": 4,
+        "count": 2,
         "workspaces": [
-          "ops/observer"
+          "ops/clawstack"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -4635,10 +2549,9 @@
         "rule_id": "skill.operational_skill_composition",
         "rule": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "count": 2,
+        "count": 1,
         "workspaces": [
-          "korvo/korax",
-          "ops/orquestador-swarm"
+          "korvo/korax"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -4649,15 +2562,8 @@
         "rule_id": "agent.missing_transition_precedence",
         "rule": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "count": 139,
+        "count": 58,
         "workspaces": [
-          "dev/analyst",
-          "dev/coder",
-          "dev/planner",
-          "dev/refactorer",
-          "dev/reviewer",
-          "dev/sentinel",
-          "dev/tester",
           "fxsl/arquitecto-automatizacion-organizacional",
           "fxsl/arquitecto-sistemas-informacion",
           "fxsl/ingeniero-sistemas-composicional",
@@ -4668,30 +2574,7 @@
           "gn/erp-gore",
           "gn/gestor-ipr-360",
           "gn/gobernador-virtual",
-          "ops/ci-assistant",
-          "ops/deployer",
-          "ops/integrador",
-          "ops/observer",
-          "ops/orquestador-swarm",
-          "ops/security",
-          "ops/verificador",
           "salud/medico-urgencias"
-        ],
-        "closure_type": "agent_fix",
-        "enforcement_candidate": "lint"
-      },
-      {
-        "rule_id": "skill.state_variable_leak",
-        "rule": "Skill degenerado recibe o emite estado FSM",
-        "severity": "P1",
-        "count": 11,
-        "workspaces": [
-          "ops/clawstack",
-          "ops/deployer",
-          "ops/integrador",
-          "ops/orquestador-swarm",
-          "ops/security",
-          "ops/verificador"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -4713,12 +2596,12 @@
         "enforcement_candidate": "lint"
       },
       {
-        "rule_id": "skill.transition_classifier_leak",
-        "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+        "rule_id": "skill.state_variable_leak",
+        "rule": "Skill degenerado recibe o emite estado FSM",
         "severity": "P1",
-        "count": 4,
+        "count": 2,
         "workspaces": [
-          "ops/observer"
+          "ops/clawstack"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -4727,10 +2610,9 @@
         "rule_id": "skill.operational_skill_composition",
         "rule": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "count": 2,
+        "count": 1,
         "workspaces": [
-          "korvo/korax",
-          "ops/orquestador-swarm"
+          "korvo/korax"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -4739,6 +2621,7 @@
     "rules_absorbed": [
       "tools.policy_leakage",
       "config.semantic_runtime_capability",
+      "skill.transition_classifier_leak",
       "skill.agent_phase_orchestration",
       "skill.relaxes_hard_rule",
       "skill.ad_hoc_root_metadata"
@@ -4747,7 +2630,6 @@
       "agent.fsm_pseudostate_destination",
       "agent.missing_transition_precedence",
       "skill.state_variable_leak",
-      "skill.transition_classifier_leak",
       "skill.operational_skill_composition"
     ],
     "enforcement_rollout": {
@@ -4755,7 +2637,6 @@
         "Destino de control no declarado",
         "Precedencia de transiciones no declarada",
         "Skill compone otro skill operativamente",
-        "Skill degenerado clasifica transiciones o continuidad FSM",
         "Skill degenerado recibe o emite estado FSM"
       ],
       "manual": [],

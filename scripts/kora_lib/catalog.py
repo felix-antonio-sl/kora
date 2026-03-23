@@ -75,7 +75,16 @@ def cmd_index():
                 and "_manifest" in doc
                 and "urn" in doc["_manifest"]
             ):
-                urn = doc["_manifest"]["urn"]
+                manifest = doc["_manifest"]
+                urn = manifest["urn"]
+                status = manifest.get(
+                    "status",
+                    doc.get("status", doc.get("Status", "published")),
+                )
+
+                if status == "deprecated":
+                    continue
+
                 title = get_artifact_title(doc, file_path)
                 rel_path = str(file_path.relative_to(KORA_ROOT))
 
@@ -83,7 +92,7 @@ def cmd_index():
                     "urn": urn,
                     "title": title,
                     "file": rel_path,
-                    "status": doc.get("status", doc.get("Status", "published")),
+                    "status": status,
                 }
 
                 parts = urn.split(":")

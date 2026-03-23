@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:kora:skill:custodio-health-inspector:1.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 ---
 
 # CM-HEALTH-INSPECTOR

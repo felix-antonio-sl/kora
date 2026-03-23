@@ -7,7 +7,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 - Workspaces cubiertos: 13
 - Estados declarados: 99
 - Tools semanticas declaradas: 83
-- Handoffs declarados: 43
+- Handoffs declarados: 42
 
 ## Auditoria meta-kora
 
@@ -44,7 +44,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Workspace | Estados | Tools | Handoffs |
 |-----------|---------|-------|----------|
-| ops/orquestador-swarm | 7 | 7 | 6 |
+| ops/orquestador-swarm | 7 | 7 | 5 |
 | ops/verificador | 8 | 7 | 5 |
 | ops/security | 7 | 7 | 4 |
 

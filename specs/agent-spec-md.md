@@ -5,14 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07"
-version: "8.8.0"
+version: "8.9.0"
 status: published
 tags: [spec, agentes, workspace, discovery, validation]
 lang: es
 extensions: {}
 ---
 
-# KORA/Agent-Spec v8.8.0
+# KORA/Agent-Spec v8.9.0
 
 ## 1. Definicion
 
@@ -65,6 +65,8 @@ Los cuatro `.md` bootstrap usan identidad URN `agent-bootstrap`. `config.json` *
 
 Todos los componentes bootstrap de un workspace **DEBERIAN** compartir la misma version `major.minor`. Discrepancias de `patch` son tolerables. Enforcement: lint (WARN).
 
+Los componentes bootstrap **NO DEBEN** portar campos `version`, `status` ni `lang` como campos raiz del frontmatter fuera de `_manifest`; esa metadata se expresa en la URN (version) y en las constantes del ecosistema (lang). Enforcement: lint.
+
 ## 4. Segregacion
 
 ### 4.1 Gramatica canonica de `AGENTS.md`
@@ -77,7 +79,11 @@ Todo `AGENTS.md` **DEBE** incluir, en este orden logico, las siguientes seccione
 4. `## 4. Contexto Multi-turno`
 5. `## 5. Wiring`
 
-Se permiten secciones adicionales solo si no sustituyen ni mezclan esa columna vertebral.
+Se reconoce una sexta seccion opcional:
+
+6. `## 6. Comportamiento Operativo`
+
+Esta seccion es el destino canonico para `## Saludo`, `## Estilo` y `## Ejemplos` relocados de `SOUL.md` conforme a §4.4. Si el agente no requiere estas subsecciones, §6 puede omitirse. Se permiten secciones adicionales mas alla de §6 solo si no sustituyen ni mezclan la columna vertebral §1-§5.
 
 La seccion `## 4. Contexto Multi-turno` **DEBE** contener como minimo:
 
@@ -113,6 +119,7 @@ Reglas:
 6. Cuando multiples condiciones de transicion son evaluables simultaneamente, el estado **DEBE** declarar precedencia explicita (orden numerico, prioridad, o exclusion mutua). La ambiguedad implicita es invalida.
 7. La FSM **DEBE** referir Skills por su identificador simbolico `CM-*`; la materializacion degenerada o extendida del Skill se resuelve fuera de `AGENTS.md`.
 8. El contenido de `ACT` **DEBE** ser una descripcion breve de la accion o invocacion de CM. **NO DEBE** reproducir el procedimiento interno del CM invocado ni contener prosa de dominio que pertenezca al Skill.
+9. Si un estado ejecuta logica de dominio que excede una descripcion breve, esa logica **DEBE** materializarse como Skill `CM-*`. Un ACT que describe procedimiento, metodologia o heuristica de dominio es evidencia de que un Skill falta. Enforcement: manual.
 
 Correcto:
 
@@ -162,7 +169,7 @@ Traces to: formal/01 §3.2 (Determinism in M) ; formal/01 §3.3 (Co-induction at
 
 ### 4.4 Segregacion de componentes
 
-1. `AGENTS.md` **DEBE** contener FSM, reglas duras, co-induccion, contexto multi-turno y wiring.
+1. `AGENTS.md` **DEBE** contener FSM, reglas duras, co-induccion, contexto multi-turno y wiring. **PUEDE** contener `## 6. Comportamiento Operativo` como seccion canonica opcional para saludo, estilo y ejemplos (§4.1).
 2. `SOUL.md` **DEBE** contener solo identidad, tono y paradigma. Las secciones **DEBEN** titularse `## Identidad Dialectica`, `## Paradigma Cognitivo` y `## Tono`. Una seccion opcional `## Voz` es valida si el agente encarna una persona. Secciones que prescriben acciones (`## Saludo`, `## Estilo`, `## Ejemplos`, `## Comportamiento`) son behavior y **DEBEN** vivir en `AGENTS.md`.
 3. `USER.md` **DEBE** contener solo contexto del operador.
 4. `TOOLS.md` **DEBE** contener solo interfaz semantica: nombre, firma, parametros, cuando usar, cuando NO usar, notas semanticas y descripcion funcional. **NO DEBE** contener politica operativa (confirmaciones, aprobaciones, restricciones de uso) ni comportamiento condicional runtime; esas reglas viven en `config.json`.
@@ -316,10 +323,27 @@ Reglas:
 | Co-induccion minima       | Checklist contiene SCOPE_COMPLIANCE, STATE_AWARENESS, INTERFACE_DISCIPLINE + protocolo correccion | lint   | Completar checklist                      |
 | SOUL.md canonico          | Solo contiene identidad, paradigma, tono (y opcionalmente voz); sin behavior; headings canonicos         | lint        | Mover secciones a AGENTS.md o renombrar headings              |
 | ACT breve                 | ACTs no reproducen procedimiento interno del CM ni prosa de dominio                  | manual      | Reducir ACT a descripcion breve          |
+| CM obligatorio            | Si un ACT describe procedimiento no trivial, existe un Skill CM-* correspondiente    | manual      | Extraer logica a Skill                   |
+| Frontmatter bootstrap     | Componentes bootstrap no portan `version`, `status`, `lang` fuera de `_manifest`     | lint        | Eliminar campos raiz redundantes         |
 
 ## 11. Migracion
 
 Esta seccion se establece a partir de v8.7.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### v8.9.0
+
+Cambios:
+
+1. `## 6. Comportamiento Operativo` — seccion canonica opcional reconocida en §4.1 como destino para Saludo, Estilo y Ejemplos relocados de SOUL.md.
+2. Regla 9 en §4.2 — si un ACT describe logica no trivial, esa logica **DEBE** materializarse como Skill CM-*. Enforcement: manual.
+3. Frontmatter bootstrap — §3 prohibe `version`, `status`, `lang` como campos raiz fuera de `_manifest`. Enforcement: lint.
+4. Tabla §10 — se agregan checks "CM obligatorio" (manual) y "Frontmatter bootstrap" (lint).
+
+Migracion:
+
+- Todo agente con `## Saludo`, `## Estilo` o `## Ejemplos` en AGENTS.md **DEBERIA** agruparlos bajo `## 6. Comportamiento Operativo` para conformidad con el naming canonico. No es breaking — secciones ya en AGENTS.md siguen siendo validas.
+- Todo agente con ACTs que describan procedimiento de dominio **DEBE** extraer esa logica a Skills CM-* y reducir el ACT a una invocacion breve.
+- Todo componente bootstrap con `version`, `status` o `lang` fuera de `_manifest` **DEBE** eliminar esos campos. Solo `_manifest` porta metadata identitaria.
 
 ### v8.8.0
 
@@ -348,6 +372,9 @@ Establecimiento de la seccion §11 Migracion. Se introduce §4.1 con co-induccio
 - Co-induccion minima con `SCOPE_COMPLIANCE`, `STATE_AWARENESS`, `INTERFACE_DISCIPLINE`.
 - `SOUL.md` con headings canonicos prescriptivos.
 - Contexto multi-turno con deteccion, accion y retencion.
+- `## 6. Comportamiento Operativo` como seccion canonica opcional para Saludo/Estilo/Ejemplos.
+- Logica de dominio no trivial materializada como Skill CM-*.
+- Frontmatter bootstrap sin campos raiz fuera de `_manifest`.
 - Skills resuelven en `skills/`, sin huerfanos.
 - Lifecycle `active -> deprecated -> retired`.
 

@@ -2,9 +2,6 @@
 _manifest:
   urn: "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0"
   type: "bootstrap_tools"
-version: 1.0.0
-status: published
-lang: es
 ---
 
 ## kb_route

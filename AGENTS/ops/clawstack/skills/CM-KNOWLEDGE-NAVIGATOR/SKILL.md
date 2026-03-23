@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:ops:skill:clawstack-knowledge-navigator:1.1.0
   type: lazy_load_endofunctor
-version: 1.1.0
-status: published
-lang: es
 extensions:
   ops:
     skill:

@@ -440,6 +440,11 @@
           "12. EVIDENCE_CHECK — Todo hallazgo tiene archivo:linea:fragmento + sugerencia de fix",
           "- IF EVIDENCE_CHECK fails → agregar evidencia especifica antes de emitir veredicto",
           "- Retencion entre turnos: se preservan la tarea activa, el contexto de codigo relevante, y los hallazgos pendientes. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
+          "- Hallazgos en tabla: severidad | archivo:linea | hallazgo | sugerencia",
+          "- Veredicto al final, no al principio (el lector ve la evidencia primero)",
+          "1. **PR estandar** — \"Revisa este PR de filtrado de productos\" → S-REVIEW. Leer diff completo. Verificar: tipos correctos, tests cubren ACs, CONVENTIONS respetadas, inputs validados. S-SEGURIDAD: no hay SQL injection, no hay datos expuestos. S-EVAL: regresion OK. S-VEREDICTO: APPROVE con 2 NOTAS menores.",
+          "2. **PR con vulnerabilidad** — \"Revisa este PR de autenticacion\" → S-REVIEW → S-SEGURIDAD: detecta token JWT hardcoded en codigo. CRITICO. S-VEREDICTO: REJECT. Evidencia: \"archivo auth.ts:42 — JWT_SECRET hardcoded. DEBE inyectarse via variable de entorno.\"",
+          "3. **PR sin tests** — \"Revisa este PR\" → S-REVIEW: detecta codigo nuevo sin tests. MAYOR: \"Funcion processOrder (orders.ts:15-40) sin test unitario. TDD obligatorio. Agregar test antes de merge.\" S-VEREDICTO: REQUEST_CHANGES.",
           "- **Firma:** {diff: string, conventions: CONVENTIONS.md} → {hallazgos: [{severidad, archivo, linea, violacion, sugerencia}]}",
           "- **Firma:** {diff: string} → {hallazgos: [{archivo, linea, tipo_problema, sugerencia}]}",
           "- **Firma:** {diff: string, architecture: ARCHITECTURE.md?} → {hallazgos: [{severidad, categoria_owasp, archivo, linea, descripcion, sugerencia}]}",
@@ -555,26 +560,14 @@
           "CM-SYSTEM-STATUS"
         ],
         "handoff_targets": [
-          "dev/coder",
           "ops/deployer",
           "ops/integrador",
           "ops/observer",
           "ops/security",
           "ops/verificador"
         ],
-        "route_targets": [
-          "dev/coder",
-          "ops/deployer",
-          "ops/observer",
-          "ops/verificador"
-        ],
-        "sub_agents": [
-          "ops/deployer",
-          "ops/integrador",
-          "ops/observer",
-          "ops/security",
-          "ops/verificador"
-        ],
+        "route_targets": [],
+        "sub_agents": [],
         "evidence_lines": [
           "6. STATE: S-ESTADO → ACT: skill CM-SYSTEM-STATUS. Reportar estado completo del sistema: eventos en cola, golden paths activos, agentes ejecutando, nivel backpressure, circuit breakers activados, heartbeats recibidos. Generar tabla resumen. → Trans: IF reporte entregado → S-DISPATCHER. IF anomalia detectada → S-CIRCUITO. IF terminar → S-END.",
           "- **Cuando usar:** S-ESTADO. Generar reporte completo del estado del sistema."
@@ -644,6 +637,8 @@
           "8. STATE: S-END → ACT: skill CM-CONTEXT-MANAGER. Resumen sesion: capas ejecutadas, capas pasadas, capas fallidas, verdict final (APROBADO|RECHAZADO), evidencia por capa, recomendacion. → Trans: [terminal].",
           "- Allowed: Verificacion 5 capas, CI (lint+types+tests), Regresion (dataset), Diversidad (cross-provider), Seguridad (SAST+DAST+privilegios), Gate humano (destructivos), Reportes de verificacion",
           "- Mantener: tipo cambio clasificado, capas ejecutadas, capas pendientes, evidencia acumulada, provider del coder",
+          "Soy **ops/verificador**. Escudo de 5 capas. Puedo: orquestar verificacion(5 capas adaptativas), ejecutar CI(lint+types+tests), verificar regresion(dataset), verificar diversidad(cross-provider), verificar seguridad(OWASP+contexto), gestionar gate humano(destructivos). Que verificamos?",
+          "- Markdown con status por capa y evidencia",
           "- **Notas:** Si golden dataset disponible, usar como anchor. Reportar delta con evidencia. Si no hay dataset, emitir WARN y pass condicional (no silenciar la ausencia).",
           "- **Notas:** Analisis contextual con ARCHITECTURE.md si disponible. Priorizar hallazgos por impacto real, no por volumen. Hallazgos criticos → fail. Hallazgos medium/low → pass con warnings.",
           "- **Notas:** HOLD hasta que el Operador apruebe o rechace. Timeout configurable. NUNCA aprobar automaticamente. Presentar resumen completo de todas las capas + recomendacion basada en evidencia.",
@@ -722,7 +717,13 @@
           "- IF CONTEXTUAL_ANALYSIS fails → REJECT hallazgo, exigir ARCHITECTURE.md",
           "- IF EVIDENCE_REQUIRED fails → REFINE, completar campos faltantes o descartar hallazgo",
           "- IF NO_ALERT_FATIGUE fails → REFINE, consolidar hallazgos, priorizar por impacto real",
-          "- Mantener: hallazgos acumulados por PR, estado vetos, baseline runtime, CVEs evaluados"
+          "- Mantener: hallazgos acumulados por PR, estado vetos, baseline runtime, CVEs evaluados",
+          "- Markdown con hallazgos estructurados: severity, evidence, attack_vector, real_impact, suggested_fix",
+          "- Tablas para resumen de hallazgos por PR",
+          "- Code blocks para evidencia (file:line, payload, vector)",
+          "- Status: LIMPIO | HALLAZGOS | VETO | THREAT | ABORT",
+          "1. **PR con endpoint sin auth** — \"Analizar PR #87\" → Lee ARCHITECTURE.md: servicio expuesto a internet. Lee diff: nuevo endpoint /api/v2/users sin middleware auth. Hallazgo: CRITICAL. Evidence: src/routes/users.py:42. Attack vector: acceso directo sin autenticacion a datos PII. Real impact: exfiltracion datos usuario. Fix: agregar middleware auth_required. VETO emitido.",
+          "2. **PR limpio** — \"Analizar PR #92\" → Lee ARCHITECTURE.md: servicio interno. Lee diff: refactor logging, sin cambios en trust boundaries. Hallazgo: ninguno. Reporte: LIMPIO. Sin hallazgos de seguridad. PR puede avanzar (aprobacion depende de otras capas)."
         ],
         "allowed_kb_count": 4,
         "sources": {
@@ -824,7 +825,7 @@
     "workspaces": 13,
     "states": 99,
     "tools": 83,
-    "handoffs": 43
+    "handoffs": 42
   },
   "meta_kora": {
     "summary": {

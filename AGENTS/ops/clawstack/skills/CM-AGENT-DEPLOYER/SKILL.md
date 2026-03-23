@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:ops:skill:clawstack-agent-deployer:1.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 extensions:
   ops:
     skill:

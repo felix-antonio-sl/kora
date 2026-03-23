@@ -2,9 +2,6 @@
 _manifest:
   urn: urn:gn:skill:dgi-virtual-structure-principles:1.0.0
   type: lazy_load_endofunctor
-version: 1.0.0
-status: published
-lang: es
 ---
 
 # CM-STRUCTURE-PRINCIPLES

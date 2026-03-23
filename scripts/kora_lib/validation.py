@@ -1146,6 +1146,18 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                 issue_counts["bootstrap_manifest_type"] += 1
                 workspace_ok = False
 
+            if profile != "legacy" and isinstance(agent_data, dict):
+                extra_keys = sorted(set(agent_data.keys()) - {"_manifest", "_md_body"})
+                if extra_keys:
+                    report_issue(
+                        agent_path.relative_to(KORA_ROOT),
+                        "bootstrap_frontmatter",
+                        f"bootstrap frontmatter contiene campos fuera de _manifest: {extra_keys}",
+                        workspace=rel_workspace,
+                    )
+                    issue_counts["bootstrap_frontmatter"] += 1
+                    workspace_ok = False
+
         tools_path = workspace_dir / "TOOLS.md"
         valid_tool_names = []
         if tools_path.exists():
@@ -1234,6 +1246,16 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                     workspace_ok = False
 
         if profile != "legacy" and skill_dir.exists():
+            for symbol in sorted(skill_names):
+                if symbol != symbol.upper():
+                    report_issue(
+                        skill_dir.relative_to(KORA_ROOT),
+                        "skill_naming",
+                        f"skill '{symbol}' no usa SCREAMING_CASE (esperado: '{symbol.upper()}')",
+                        workspace=rel_workspace,
+                    )
+                    issue_counts["skill_naming"] += 1
+                    workspace_ok = False
             for symbol in find_skill_materialization_conflicts(skill_dir):
                 report_issue(
                     skill_dir.relative_to(KORA_ROOT),
@@ -1250,6 +1272,18 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
                     workspace_ok = False
             for skill_path in iter_skill_entrypoints(skill_dir):
                 skill_text = skill_path.read_text(encoding="utf-8")
+                skill_data, _ = load_yaml_safe(skill_path)
+                if isinstance(skill_data, dict):
+                    extra_keys = sorted(set(skill_data.keys()) - {"_manifest", "_md_body", "extensions"})
+                    if extra_keys:
+                        report_issue(
+                            skill_path.relative_to(KORA_ROOT),
+                            "skill_frontmatter",
+                            f"skill frontmatter contiene campos fuera de _manifest/extensions: {extra_keys}",
+                            workspace=rel_workspace,
+                        )
+                        issue_counts["skill_frontmatter"] += 1
+                        workspace_ok = False
                 for failure in validate_skill_file(skill_path):
                     report_issue(skill_path.relative_to(KORA_ROOT), "skill_semantics", failure, workspace=rel_workspace)
                     issue_counts["skill_semantics"] += 1
