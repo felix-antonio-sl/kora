@@ -88,12 +88,7 @@ LOW_LEVEL_RUNTIME_HINTS = {
     "read_calendar",
     "send_message_telegram",
 }
-BROKEN_ROUTE_MAPPINGS = {
-    "fxsl/coder": "dev/coder",
-    "fxsl/dev": "dev/coder",
-    "fxsl/pm": "dev/planner",
-    "ops/tester": "ops/verificador",
-}
+BROKEN_ROUTE_MAPPINGS = {}
 KB_PIPELINE_NORMALIZATION = {
     "catalog→kb_route": "kb_route→catalog_resolve",
     "catalog -> kb_route": "kb_route -> catalog_resolve",
@@ -215,17 +210,6 @@ OPERATING_CORE_COHORTS = {
         "kora/forgemaster",
         "kora/curator",
         "kora/custodio",
-    ),
-    "dev": (
-        "dev/planner",
-        "dev/coder",
-        "dev/reviewer",
-        "dev/sentinel",
-    ),
-    "ops": (
-        "ops/orquestador-swarm",
-        "ops/verificador",
-        "ops/security",
     ),
     "domain_canary": (
         "gn/goreologo",

@@ -4,10 +4,10 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen
 
-- Workspaces cubiertos: 13
-- Estados declarados: 99
-- Tools semanticas declaradas: 83
-- Handoffs declarados: 43
+- Workspaces cubiertos: 6
+- Estados declarados: 49
+- Tools semanticas declaradas: 32
+- Handoffs declarados: 18
 
 ## Auditoria meta-kora
 
@@ -30,23 +30,6 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 | kora/forgemaster | 11 | 10 | 4 |
 | kora/curator | 11 | 7 | 2 |
 | kora/custodio | 8 | 8 | 2 |
-
-## Cohorte dev
-
-| Workspace | Estados | Tools | Handoffs |
-|-----------|---------|-------|----------|
-| dev/planner | 8 | 7 | 3 |
-| dev/coder | 7 | 8 | 2 |
-| dev/reviewer | 6 | 8 | 2 |
-| dev/sentinel | 7 | 7 | 3 |
-
-## Cohorte ops
-
-| Workspace | Estados | Tools | Handoffs |
-|-----------|---------|-------|----------|
-| ops/orquestador-swarm | 7 | 7 | 5 |
-| ops/verificador | 8 | 7 | 5 |
-| ops/security | 7 | 7 | 4 |
 
 ## Cohorte domain_canary
 

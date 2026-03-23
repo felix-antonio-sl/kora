@@ -400,41 +400,6 @@ class ArtifactFixtureTests(unittest.TestCase):
         content = (AGENTS_ROOT / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
         self.assertNotIn('"analysis"', content)
 
-    def test_dev_context_managers_drop_state_machine_control(self):
-        files = (
-            AGENTS_ROOT / "dev" / "analyst" / "skills" / "CM-CONTEXT-MANAGER.md",
-            AGENTS_ROOT / "dev" / "planner" / "skills" / "CM-CONTEXT-MANAGER.md",
-            AGENTS_ROOT / "dev" / "reviewer" / "skills" / "CM-CONTEXT-MANAGER.md",
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn("estado_actual", content)
-        self.assertNotIn("estado_destino", content)
-        self.assertNotIn("fase_actual", content)
-        self.assertNotIn("S-DISPATCHER", content)
-        self.assertIn("requiere_revision_de_foco", content)
-
-    def test_dev_runtime_capabilities_drop_semantic_faculties(self):
-        files = (
-            AGENTS_ROOT / "dev" / "analyst" / "config.json",
-            AGENTS_ROOT / "dev" / "planner" / "config.json",
-            AGENTS_ROOT / "dev" / "reviewer" / "config.json",
-            AGENTS_ROOT / "dev" / "sentinel" / "config.json",
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn('"analysis"', content)
-        self.assertNotIn('"planning"', content)
-        self.assertNotIn('"eval_execution"', content)
-        self.assertNotIn('"eval_audit"', content)
-
-    def test_dev_tools_drop_operational_policy_leakage(self):
-        files = (
-            AGENTS_ROOT / "dev" / "planner" / "TOOLS.md",
-            AGENTS_ROOT / "dev" / "sentinel" / "TOOLS.md",
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn("requiere aprobacion humana", content)
-        self.assertNotIn("NUNCA auto-ejecutar", content)
-
     def test_digitrans_uses_tde_as_primary_corpus(self):
         tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
         config = (AGENTS_ROOT / "gn" / "digitrans" / "config.json").read_text(encoding="utf-8")
@@ -630,39 +595,10 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("md-spec` §9 o `spec-md` §8", content)
         self.assertIn("agent-spec-md` v8.7.0 y `skill-spec-md` v4.2.0", content)
 
-    def test_ops_core_agents_follow_canonical_agent_sections(self):
-        files = (
-            AGENTS_ROOT / "ops" / "orquestador-swarm" / "AGENTS.md",
-            AGENTS_ROOT / "ops" / "security" / "AGENTS.md",
-            AGENTS_ROOT / "ops" / "verificador" / "AGENTS.md",
-        )
-        required_terms = (
-            "## 3. Co-induccion",
-            "## 4. Contexto Multi-turno",
-            "## 5. Wiring",
-        )
-        for path in files:
-            content = path.read_text(encoding="utf-8")
-            for term in required_terms:
-                self.assertIn(term, content)
-
     def test_all_agents_follow_canonical_section_order(self):
         for path in ROOT.glob("AGENTS/*/*/AGENTS.md"):
             content = path.read_text(encoding="utf-8")
             self.assertEqual(validate_agents_canonical_structure(content), [], path.as_posix())
-
-    def test_orquestador_swarm_drops_dead_swarm_section_refs(self):
-        files = (
-            AGENTS_ROOT / "ops" / "orquestador-swarm" / "AGENTS.md",
-            AGENTS_ROOT / "ops" / "orquestador-swarm" / "TOOLS.md",
-            AGENTS_ROOT / "ops" / "orquestador-swarm" / "skills" / "CM-CIRCUIT-BREAKER-MANAGER.md",
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn("Swarm::Ops §10", content)
-        self.assertNotIn("§10.1", content)
-        self.assertNotIn("§10.2", content)
-        self.assertNotIn("§10.3", content)
-        self.assertNotIn("§10.4", content)
 
     def test_render_stats_markdown_contains_current_categories(self):
         payload = compute_stats_payload()

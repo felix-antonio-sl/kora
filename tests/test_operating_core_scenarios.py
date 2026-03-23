@@ -93,8 +93,8 @@ class OperatingCoreScenarioTests(unittest.TestCase):
 
     def test_operating_core_payload_matches_declared_core(self):
         payload = build_operating_core_payload()
-        self.assertEqual(payload["totals"]["workspaces"], 13)
-        self.assertEqual(set(payload["cohorts"].keys()), {"kora", "dev", "ops", "domain_canary"})
+        self.assertEqual(payload["totals"]["workspaces"], 6)
+        self.assertEqual(set(payload["cohorts"].keys()), {"kora", "domain_canary"})
 
     def test_meta_kora_audit_is_materialized_with_explicit_status(self):
         payload = build_operating_core_payload()
@@ -133,7 +133,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
 
     def test_operating_core_contracts_do_not_include_noise_tokens_as_handoffs(self):
         noise_tokens = {"agentes/LLM", "modelo/provider", "formal/01", "formal/02", "pass/fail", "meat/fat"}
-        for workspace in ("kora/forgemaster", "kora/curator", "dev/reviewer", "ops/verificador", "ops/security"):
+        for workspace in ("kora/forgemaster", "kora/curator"):
             contract = load_workspace_contract(workspace)
             self.assertTrue(noise_tokens.isdisjoint(contract.handoff_targets), msg=f"noise leaked into {workspace}")
 

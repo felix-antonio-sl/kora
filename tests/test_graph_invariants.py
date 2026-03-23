@@ -99,11 +99,9 @@ class GraphInvariantTests(unittest.TestCase):
             )
 
     def test_operating_core_allowed_kb_urns_resolve(self):
-        enforced_workspaces = (
-            set(OPERATING_CORE_COHORTS["kora"])
-            | set(OPERATING_CORE_COHORTS["dev"])
-            | set(OPERATING_CORE_COHORTS["ops"])
-        )
+        enforced_workspaces = set()
+        for cohort in OPERATING_CORE_COHORTS.values():
+            enforced_workspaces.update(cohort)
         for edge in self.edges:
             if edge.kind != "AllowsKB":
                 continue
