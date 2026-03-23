@@ -5,15 +5,16 @@ _manifest:
     created_by: "ops/clawstack + kora/curator"
     created_at: "2026-03-23"
     source: "Pruebas empiricas con 3 bots Telegram OpenClaw v2026.3.22 + documentacion oficial"
-version: "1.0.0"
+    updated_at: "2026-03-23"
+version: "1.1.0"
 status: published
-tags: [telegram, ux, configuracion, openclaw, streaming, tablas, chunking]
+tags: [telegram, ux, configuracion, openclaw, streaming, tablas, chunking, modelo, browser, compaction, memoria]
 lang: es
 ---
 
-# Configuración UX óptima para Telegram en OpenClaw
+# Configuración de comportamiento de agentes OpenClaw
 
-Configuraciones verificadas empíricamente para buena experiencia de usuario en bots Telegram sobre OpenClaw v2026.3.22+. Cada config fue probada, su efecto documentado, y las trampas registradas.
+Configuraciones verificadas empíricamente para OpenClaw v2026.3.22+: canal Telegram (UX), modelo (razonamiento), browser, compaction, memoria. Cada config fue probada, su efecto documentado, y las trampas registradas.
 
 ---
 
@@ -143,3 +144,183 @@ Previene crecimiento descontrolado del session store. Poda sesiones >30 días y 
 ### gateway.bind en Docker
 
 `"loopback"` (default) escucha en `127.0.0.1` dentro del container. Otros containers en la misma bridge no pueden alcanzarlo. Usar `"lan"` para que escuche en `0.0.0.0`. La seguridad del host la da el port mapping Docker (`127.0.0.1:{port}:{port}`).
+
+---
+
+## Configuración de modelo y razonamiento
+
+### model (agents.defaults.model)
+
+```json5
+model: { primary: "anthropic/claude-opus-4-6" },
+```
+
+Formato: `{ primary: "provider/model" }`. NO string directo (`model: "anthropic/claude-opus-4-6"` es inválido en v2026.3.x). Soporta `fallbacks: ["provider/model2"]` para failover.
+
+### models (parámetros por modelo)
+
+```json5
+models: {
+  "anthropic/claude-opus-4-6": {
+    params: { cacheRetention: "long" },
+  },
+},
+```
+
+`cacheRetention`: `"none"` | duración (`"5m"`, `"1h"`, `"long"`). `"long"` maximiza cache hit en Anthropic (reduce costo en turnos consecutivos). Debe ir bajo `params:`, no en raíz del modelo.
+
+### thinkingDefault (ampliado)
+
+| Valor | Efecto | Recomendación |
+|---|---|---|
+| `"off"` | Sin razonamiento extendido. Rápido, barato. | Agentes simples |
+| `"low"` / `"medium"` / `"high"` | Nivel fijo de thinking por turno | Predecible pero desperdicia tokens en tareas simples |
+| `"adaptive"` | Claude 4.6 ajusta thinking según complejidad de la tarea | **Recomendado v2026.3.x** — ahorra tokens sin perder calidad |
+
+---
+
+## Configuración de browser
+
+```json5
+browser: {
+  headless: true,
+  noSandbox: true,
+  defaultProfile: "openclaw",
+},
+```
+
+| Key | Efecto | Recomendación |
+|---|---|---|
+| `headless: true` | Browser sin ventana. Obligatorio en containers Docker sin display. | Siempre `true` en producción |
+| `noSandbox: true` | Desactiva sandbox de Chromium. Necesario dentro de containers. | `true` en Docker |
+| `defaultProfile` | Perfil de browser. `"openclaw"` = aislado. `"user"` = perfil del host. | `"openclaw"` en producción |
+
+Sin esta config, web_fetch y browser tools pueden fallar silenciosamente — Chromium no arranca y el error queda en logs sin llegar al usuario.
+
+---
+
+## Configuración de compaction
+
+Compaction reduce el contexto cuando la sesión crece cerca del límite de la ventana del modelo.
+
+```json5
+agents: {
+  defaults: {
+    compaction: {
+      mode: "default",
+      reserveTokensFloor: 24000,
+      memoryFlush: {
+        enabled: true,
+        softThresholdTokens: 6000,
+      },
+    },
+  },
+},
+```
+
+| Key | Efecto | Recomendación |
+|---|---|---|
+| `mode` | `"default"` (compaction normal) o `"safeguard"` (más conservador) | `"default"` |
+| `reserveTokensFloor` | Tokens mínimos reservados para respuesta post-compaction | 24000 |
+| `memoryFlush.enabled` | Antes de compactar, guarda notas en memoria persistente | **`true`** para sesiones largas |
+| `memoryFlush.softThresholdTokens` | Activa flush cuando quedan menos de N tokens | 6000 |
+
+Especialmente importante para agentes con sesiones largas (steipete coordinando workers, korax acumulando contexto diario).
+
+---
+
+## Configuración de memoria
+
+### memorySearch
+
+```json5
+memorySearch: {
+  enabled: true,
+  provider: "gemini",
+},
+```
+
+| Key | Efecto |
+|---|---|
+| `enabled` | Activa búsqueda semántica en memoria persistente |
+| `provider` | Backend de embeddings: `"gemini"` (cloud), `"openai"`, `"local"`, `"voyage"` |
+
+Requiere `GEMINI_API_KEY` en `.env` cuando `provider: "gemini"`.
+
+### Hybrid search (v2026.3.x, avanzado)
+
+```json5
+memorySearch: {
+  query: {
+    hybrid: {
+      enabled: true,
+      vectorWeight: 0.7,
+      textWeight: 0.3,
+      mmr: { enabled: true, lambda: 0.7 },
+      temporalDecay: { enabled: true, halfLifeDays: 30 },
+    },
+  },
+},
+```
+
+Combina BM25 (keyword) + vector (semántico) con diversidad (MMR) y decay temporal. No habilitado en deploy actual.
+
+---
+
+## Config completa recomendada (template)
+
+Base para cualquier nuevo agente OpenClaw sobre Telegram:
+
+```json5
+{
+  agents: {
+    defaults: {
+      model: { primary: "anthropic/claude-opus-4-6" },
+      models: {
+        "anthropic/claude-opus-4-6": {
+          params: { cacheRetention: "long" },
+        },
+      },
+      memorySearch: { enabled: true, provider: "gemini" },
+      thinkingDefault: "adaptive",
+    },
+    list: [
+      {
+        id: "{agent-id}",
+        default: true,
+        identity: { name: "{Name}", emoji: "{emoji}", theme: "{theme}" },
+      },
+    ],
+  },
+  browser: { headless: true, noSandbox: true },
+  session: {
+    scope: "per-sender",
+    reset: { mode: "idle", idleMinutes: 120 },
+  },
+  hooks: { enabled: true, token: "{hooks-token}" },
+  gateway: {
+    mode: "local",
+    port: "{port}",
+    bind: "lan",
+    controlUi: { enabled: true, basePath: "/openclaw" },
+    auth: { mode: "token" },
+  },
+  channels: {
+    telegram: {
+      enabled: true,
+      dmPolicy: "allowlist",
+      allowFrom: ["{telegram-user-id}"],
+      groupPolicy: "disabled",
+      streaming: "partial",
+      chunkMode: "length",
+      markdown: { tables: "bullets" },
+      replyToMode: "first",
+      silentErrorReplies: true,
+      ackReaction: "{emoji}",
+      reactionLevel: "minimal",
+      linkPreview: false,
+      textChunkLimit: 4000,
+    },
+  },
+}
+```
