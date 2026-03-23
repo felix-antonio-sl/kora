@@ -348,7 +348,7 @@ volumes:
   gateway: {
     mode: "local",
     port: 18789,
-    bind: "loopback",                    // valores validos: "auto"|"lan"|"loopback"|"custom"|"tailnet"
+    bind: "lan",                         // "lan" obligatorio en Docker para hooks cross-gateway (P15)
     controlUi: { enabled: true, basePath: "/openclaw" },
     auth: { mode: "token" },             // doctor genera el token automaticamente
   },
@@ -359,11 +359,14 @@ volumes:
       allowFrom: [<TELEGRAM_USER_ID>],   // numerico (integer), de @userinfobot
       groupPolicy: "disabled",
       streaming: "partial",
+      chunkMode: "length",               // NO "newline" — fragmenta por párrafo (ver urn:ops:kb:ux-telegram-openclaw)
+      markdown: { tables: "bullets" },   // tablas legibles en móvil
+      replyToMode: "first",              // threading visual
+      silentErrorReplies: true,          // errores no suenan
       ackReaction: "<emoji>",
       reactionLevel: "minimal",
       linkPreview: false,
       textChunkLimit: 4000,
-      chunkMode: "newline",
     },
   },
 }
@@ -443,7 +446,7 @@ open('$dst', 'w').write(content)
 }
 
 # Reemplazar paths con los de tu agente:
-KORA_REPO=/home/felix/projects/kora
+KORA_REPO=/home/felix/kora
 SRC=$KORA_REPO/AGENTS/<namespace>/<agent>
 DST=/srv/kora/workspaces/<gateway>/agents/<agent>
 
@@ -841,7 +844,7 @@ healthcheck:
 
 **Causa:** OpenClaw deriva puertos adicionales del base: browser control = base+2, CDP = base+9..+108. Dos gateways en 18789 y 18790 tendrian browser control en 18791 y 18792 — funciona, pero CDP podria colisionar.
 
-**Fix:** Espaciar puertos base al menos 20. Ejemplo: korax=18789, steipete=18810, siguiente=18830.
+**Fix:** Espaciar puertos base al menos 20. Ejemplo: korax=18789, steipete=18810, salubrista=18830, siguiente=18850. Ver `urn:ops:kb:arquitectura-stack-kora` para el inventario completo.
 
 ---
 
@@ -874,7 +877,7 @@ korax es un exoesqueleto cognitivo de productividad y bienestar (namespace korvo
 
 ### Correcciones aplicadas durante deploy
 
-1. **openclaw.json5:** `identity` movido a `agents.list[0].identity`, `session.reset.mode` eliminado, `gateway.bind` cambiado de `"0.0.0.0"` a `"loopback"`, `memorySearch.enabled: false` agregado
+1. **openclaw.json5:** `identity` movido a `agents.list[0].identity`, `session.reset.mode` eliminado, `gateway.bind` cambiado de `"0.0.0.0"` a `"loopback"` (posteriormente actualizado a `"lan"` para federation cross-gateway — ver §11.1), `memorySearch.enabled: false` agregado
 2. **docker-compose.yml:** `init: true` agregado, config bind mount reemplazado por named volume + copy, memory limit subido de 1G a 2G, `environment: HOME, TERM` agregados
 3. **Volume init:** paso de pre-seed agregado (chown node:node, mkdir de subdirs requeridos)
 

@@ -151,9 +151,10 @@ base + 9..  → browser CDP
 Dos gateways en puertos consecutivos (18789, 18790) pueden colisionar en puertos derivados. Minimo 20 puertos de separacion entre bases.
 
 ```
-korax:     18789 (browser: 18791, CDP: 18798+)
-steipete:  18810 (browser: 18812, CDP: 18819+)
-siguiente: 18830
+korax:       18789 (browser: 18791, CDP: 18798+)
+steipete:    18810 (browser: 18812, CDP: 18819+)
+salubrista:  18830 (browser: 18832, CDP: 18839+)
+siguiente:   18850
 ```
 
 Red compartida `kora-federation` (bridge) conecta los containers del stack. El gateway que la crea la define con `driver: bridge, name: kora-federation`. Los demas la referencian con `external: true`.
@@ -279,36 +280,6 @@ docker compose logs               # ¿Gateway arrancó?
 ```
 
 Nunca hacer `docker compose up -d` sin haber pasado por `openclaw doctor` primero. Doctor detecta schema migrations, keys invalidos, permisos de filesystem, y conflictos de seguridad que un `up` convierte en crashloop silencioso.
-
----
-
-## Mapa de decisiones
-
-```
-¿El agente KORA tiene AGENTS.md + SOUL.md + TOOLS.md?
-  NO → no es un agente valido, no se puede transmutar
-  SI ↓
-
-¿Necesita servicio externo con estado persistente?
-  SI → sidecar HTTP (P10)
-  NO → gateway solo
-
-¿Las KBs caben en 150K de bootstrap?
-  SI → copiar al workspace
-  NO → mount RO separado (P8)
-
-¿El agente necesita escribir codigo?
-  SI → mount RW del proyecto target + code_execution (P4)
-  NO → mount RO de referencia o sin mount
-
-¿Necesita canal de mensajeria?
-  SI → configurar channel en openclaw.json5 + bot token
-  NO → gateway solo HTTP (para automatizacion sin humano)
-
-¿Necesita proactividad autonoma?
-  SI → heartbeat + cron jobs (P9 del tutorial)
-  NO → solo reactivo (responde cuando le hablan)
-```
 
 ---
 

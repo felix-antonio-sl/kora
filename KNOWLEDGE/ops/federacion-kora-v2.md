@@ -150,3 +150,12 @@ Node.js + Express + React (Vite). Container en redes `web` (Traefik) + `kora-fed
 7. Agregar sección federación al TOOLS.md del nuevo workspace
 8. Registrar en panel (registry.json)
 9. Opcionalmente: agregar mounts de visibilidad cruzada a composes existentes
+
+---
+
+## Referencias
+
+- Arquitectura completa del stack: `urn:ops:kb:arquitectura-stack-kora`
+- Config de comportamiento de agentes: `urn:ops:kb:ux-telegram-openclaw`
+- Tutorial de deploy paso a paso: `urn:ops:kb:deploy-agente-kora-en-openclaw`
+- Principios de transmutación (P14 federation, P15 bind=lan): `urn:ops:kb:principios-transmutacion-kora-openclaw`

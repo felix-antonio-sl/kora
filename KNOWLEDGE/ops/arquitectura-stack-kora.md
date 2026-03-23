@@ -175,3 +175,12 @@ operador edita config/*/openclaw.json5
   → sync-config.sh (merge host + runtime keys)
   → docker compose restart
 ```
+
+---
+
+## Referencias
+
+- Federación cross-gateway y hooks: `urn:ops:kb:federacion-kora-v2`
+- Config de comportamiento de agentes: `urn:ops:kb:ux-telegram-openclaw`
+- Tutorial de deploy paso a paso: `urn:ops:kb:deploy-agente-kora-en-openclaw`
+- Principios de transmutación: `urn:ops:kb:principios-transmutacion-kora-openclaw`

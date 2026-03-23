@@ -94,7 +94,7 @@ Opciones válidas: `off | partial | block | progress`. `"full"` genera error de 
 | Profile | Tools incluidos |
 |---|---|
 | `"minimal"` | `session_status` solamente |
-| `"coding"` | `group:fs`, `group:runtime`, `group:sessions`, `group:memory`, `image` |
+| `"coding"` | `group:fs`, `group:runtime`, `group:sessions`, `image` (nota: docs OpenClaw listan `group:memory` pero este grupo no existe en v2026.3.22) |
 | `"messaging"` | `group:messaging`, sessions tools |
 | `"full"` | Sin restricción |
 
@@ -324,3 +324,12 @@ Base para cualquier nuevo agente OpenClaw sobre Telegram:
   },
 }
 ```
+
+---
+
+## Referencias
+
+- Arquitectura completa del stack: `urn:ops:kb:arquitectura-stack-kora`
+- Federación cross-gateway: `urn:ops:kb:federacion-kora-v2`
+- Tutorial de deploy paso a paso: `urn:ops:kb:deploy-agente-kora-en-openclaw`
+- Principios de transmutación (P16 UX): `urn:ops:kb:principios-transmutacion-kora-openclaw`
