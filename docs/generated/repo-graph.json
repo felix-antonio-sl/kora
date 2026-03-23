@@ -2,7 +2,7 @@
   "meta": {
     "scanned_files": 1305,
     "node_count": 654,
-    "edge_count": 3330
+    "edge_count": 3329
   },
   "node_kind_counts": {
     "artifact": 133,
@@ -21,7 +21,7 @@
     "InvokesSkill": 169,
     "RoutesToAgent": 17,
     "TracesTo": 48,
-    "XRef": 2170
+    "XRef": 2169
   },
   "nodes": [
     {
@@ -12295,13 +12295,6 @@
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:.gemini/GEMINI.md",
-      "target": "urn:kora:kb:agent-spec-md",
-      "fragment": null,
-      "source_path": ".gemini/GEMINI.md"
     },
     {
       "kind": "XRef",

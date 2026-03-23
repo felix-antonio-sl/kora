@@ -34,6 +34,7 @@ IGNORED_DIRS = {
     OPERATIONS_ROOT_NAME,
     ".claude",
     ".agent",
+    ".gemini",
     ".venv",
     "__pycache__",
 }

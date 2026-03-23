@@ -1087,5 +1087,76 @@ class SemanticValidationTests(unittest.TestCase):
         self.assertIn("urn:gn:agent:ar-virtual", output.getvalue())
 
 
+class DeprecatedFilterTests(unittest.TestCase):
+    def test_is_workspace_deprecated_returns_true_for_deprecated(self):
+        from kora_lib.workspaces import _is_workspace_deprecated
+
+        with TemporaryDirectory() as tmpdir:
+            workspace = Path(tmpdir)
+            config = workspace / "config.json"
+            config.write_text(
+                '{"_manifest": {"urn": "urn:test:agent-bootstrap:x-config:1.0.0", '
+                '"type": "bootstrap_config", "status": "deprecated"}}',
+                encoding="utf-8",
+            )
+            self.assertTrue(_is_workspace_deprecated(workspace))
+
+    def test_is_workspace_deprecated_returns_false_for_active(self):
+        from kora_lib.workspaces import _is_workspace_deprecated
+
+        with TemporaryDirectory() as tmpdir:
+            workspace = Path(tmpdir)
+            config = workspace / "config.json"
+            config.write_text(
+                '{"_manifest": {"urn": "urn:test:agent-bootstrap:x-config:1.0.0", '
+                '"type": "bootstrap_config"}}',
+                encoding="utf-8",
+            )
+            self.assertFalse(_is_workspace_deprecated(workspace))
+
+    def test_is_workspace_deprecated_returns_false_for_missing_config(self):
+        from kora_lib.workspaces import _is_workspace_deprecated
+
+        with TemporaryDirectory() as tmpdir:
+            self.assertFalse(_is_workspace_deprecated(Path(tmpdir)))
+
+    def test_iter_agent_workspaces_excludes_deprecated_by_default(self):
+        from kora_lib.workspaces import iter_agent_workspaces
+
+        workspaces = iter_agent_workspaces()
+        for ws in workspaces:
+            config_path = ws / "config.json"
+            if config_path.exists():
+                import json
+
+                data = json.loads(config_path.read_text(encoding="utf-8"))
+                self.assertNotEqual(
+                    data.get("_manifest", {}).get("status"),
+                    "deprecated",
+                    msg=f"deprecated workspace {ws} should be excluded",
+                )
+
+    def test_iter_agent_workspaces_includes_deprecated_when_requested(self):
+        from kora_lib.workspaces import iter_agent_workspaces
+
+        default_count = len(iter_agent_workspaces())
+        all_count = len(iter_agent_workspaces(include_deprecated=True))
+        self.assertGreater(all_count, default_count)
+
+    def test_catalog_index_excludes_deprecated_artifacts(self):
+        result = run_cli("index")
+        self.assertIn("Successfully indexed", result.stdout)
+        from kora_lib.catalog import load_catalog
+
+        catalog = load_catalog()
+        for category, items in catalog["Catalog"].items():
+            for item in items:
+                self.assertNotEqual(
+                    item.get("status"),
+                    "deprecated",
+                    msg=f"deprecated artifact {item.get('urn')} should not be indexed",
+                )
+
+
 if __name__ == "__main__":
     unittest.main()
