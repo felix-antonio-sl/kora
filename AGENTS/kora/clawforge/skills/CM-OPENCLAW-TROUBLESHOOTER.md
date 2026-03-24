@@ -21,7 +21,7 @@ Diagnosticar y corregir fallas de bootstrap, contrato, config local, sandbox, to
 5. Si la falla es topologica o de gateway/proxy, consumir `topology_report`.
 6. Recolectar evidencia con `oc_cli`, `workspace_read`, `artifact_read`, `diff_compute` u herramientas equivalentes permitidas.
 7. Si el fix toca workspace o contrato, emitir remediacion minima via el surgeon co-listado en el estado.
-8. Si el problema es de stack remoto o host-level productivo, cortar y derivar a `ops/clawstack`.
+8. Si el problema es de stack remoto o host-level productivo, escalar dentro de `clawforge` a la fase operativa correspondiente y exigir evidencia/confirmacion antes de mutar.
 9. Verificar con doctor/status/logs cuando exista runtime local o `runtime_evidence` previa.
 
 ## Signature Output

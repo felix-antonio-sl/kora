@@ -25,7 +25,7 @@ extensions:
 
 ## Proposito
 
-Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando workspace adaptado + proyeccion nativa de config + plan de installs gestionados + hints de deployment. Produce artefactos y metadata listos para `CM-ARTIFACT-EMITTER`; el adapter no escribe a disco ni genera `_transmutation.yml`. Los artefactos finales se emiten a staging (R-TRANSMUTE-6) y el deploy a produccion sigue siendo responsabilidad exclusiva de ops/clawstack.
+Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando workspace adaptado + proyeccion nativa de config + plan de installs gestionados + hints de deployment. Produce artefactos y metadata listos para `CM-ARTIFACT-EMITTER`; el adapter no escribe a disco ni genera `_transmutation.yml`. Los artefactos finales se emiten a staging (R-TRANSMUTE-6) y el deploy a produccion sigue siendo responsabilidad exclusiva de `kora/clawforge`.
 
 ## Input/Output
 
@@ -202,7 +202,7 @@ Mapea un workspace KORA normalizado al formato nativo de OpenClaw, generando wor
 
 16. Retornar `artifacts[]`, `platform_contract` y `manifest_overrides` a `CM-ARTIFACT-EMITTER`, que sera el unico responsable de escribir a disco y generar `_transmutation.yml`.
 
-17. **Handoff a ops/clawstack**: Una vez que `CM-ARTIFACT-EMITTER` haya emitido los artefactos, comunicar al operador: "Transmutacion completa. Artefactos en {output_dir}. Para desplegar en produccion, encarnar ops/clawstack y ejecutar S-DEPLOY con transmutation_path={output_dir}/_transmutation.yml; consumir `platform_contract` como fuente autoritativa de config/deploy." No ejecutar Docker commands, no escribir a /srv/kora/, no inicializar volumes, no correr openclaw doctor. Esas operaciones son de clawstack.
+17. **Handoff a kora/clawforge**: Una vez que `CM-ARTIFACT-EMITTER` haya emitido los artefactos, comunicar al operador: "Transmutacion completa. Artefactos en {output_dir}. Para desplegar en produccion, encarnar kora/clawforge y ejecutar S-HANDOFF/S-DEPLOY con transmutation_path={output_dir}/_transmutation.yml; consumir `platform_contract` como fuente autoritativa de config/deploy." No ejecutar Docker commands, no escribir a /srv/kora/, no inicializar volumes, no correr openclaw doctor. Esas operaciones son de clawforge.
 
 ## Signature Output
 

@@ -14,7 +14,7 @@ Escribe artefactos derivados de transmutacion al directorio de output y es el un
 - **Output:** EmissionReport (ver Signature Output)
 
 ## Procedimiento
-1. Validar directorio de output: crear si no existe, verificar permisos de escritura. **R-TRANSMUTE-6**: output_dir DEBE ser un directorio de staging (default: `{kora_repo}/output/{namespace}-{agent}/`). Rechazar si output_dir apunta a paths de produccion (`/srv/`, containers, volumes Docker). El deploy a produccion es responsabilidad de ops/clawstack.
+1. Validar directorio de output: crear si no existe, verificar permisos de escritura. **R-TRANSMUTE-6**: output_dir DEBE ser un directorio de staging (default: `{kora_repo}/output/{namespace}-{agent}/`). Rechazar si output_dir apunta a paths de produccion (`/srv/`, containers, volumes Docker). El deploy a produccion es responsabilidad de `kora/clawforge`.
 2. Para cada artefacto en artifacts[]:
    - Rechazar si algun artefacto intenta materializar `_transmutation.yml`; el manifest lo emite exclusivamente este Skill.
    - Verificar que contenido no contiene frontmatter YAML KORA residual (runtime-spec §9.2).

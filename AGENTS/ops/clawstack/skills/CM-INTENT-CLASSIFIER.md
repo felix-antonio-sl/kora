@@ -7,37 +7,23 @@ _manifest:
 # CM-INTENT-CLASSIFIER
 
 ## Proposito
-Clasifica la solicitud del operador detectando capacidad requerida, capas involucradas del stack y urgencia.
+Clasificar la solicitud legacy para decidir si debe redirigirse a `kora/clawforge` o cerrarse.
 
 ## Input/Output
-- **Input:** mensaje: string, foco_actual: string | null, contexto_previo: SessionContext | null
+- **Input:** mensaje: string, foco_actual: string | null, contexto_previo: object | null
 - **Output:** IntentClassification (ver Signature Output)
 
 ## Procedimiento
-1. Analizar mensaje buscando indicadores de capacidad:
-   - CONSULT: "como funciona", "que es", "explica", "capitulo", "segun el manual"
-   - PROVISION: "instalar", "setup", "provisionar", "nuevo servidor"
-   - DEPLOY: "deploy", "desplegar", "re-sync", "sincronizar agente", "transmutacion", "pipeline deploy"
-   - CONFIGURE: "configurar", "config", "cambiar", "agregar canal", "modelo"
-   - AUDIT: "auditar", "revisar", "estado", "security audit", "doctor"
-   - TROUBLESHOOT: "no funciona", "error", "falla", "timeout", "crashea", "diagnosticar"
-   - OPTIMIZE: "optimizar", "lento", "rendimiento", "tokens", "bootstrap grande"
-   - UPGRADE: "actualizar", "upgrade", "version", "update", "breaking changes"
-   - GUIDED: "ciclo completo", "desde cero", "paso a paso", "guiado"
-   - Si GUIDED coexiste con PROVISION/CONFIGURE/AUDIT, priorizar GUIDED y dejar la fase concreta al orquestador
-2. Detectar capas involucradas:
-   - host: SSH, firewall, UFW, systemd, apt, kernel, networking, disco, memoria RAM
-   - docker: contenedor, imagen, compose, volume, cgroups, Dockerfile, registry
-   - openclaw: gateway, agente, canal, modelo, sesion, workspace, skill, heartbeat, cron
-   - cross-layer: problemas que cruzan capas o cuya capa origen es ambigua
-3. Evaluar urgencia: critica (servicio caido, seguridad comprometida), normal (operacion rutinaria), exploratoria (consulta, aprendizaje).
-4. Si ambiguo: retornar confianza=baja con candidatos posibles.
+1. Detectar si el mensaje pide cierre explicito.
+2. Si no pide cierre, clasificar la solicitud como `REDIRECT` hacia `kora/clawforge`.
+3. Inferir, cuando sea posible, la capacidad operacional original (`deploy`, `provision`, `audit`, `troubleshoot`, `upgrade`, `configure`, `consult`) para preservarla en la redireccion.
+4. Marcar confianza baja solo si el mensaje es casi vacio o no contiene ninguna pista util.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| capacidad | enum | CONSULT, PROVISION, CONFIGURE, AUDIT, TROUBLESHOOT, OPTIMIZE, UPGRADE, DEPLOY, GUIDED |
-| capas | enum[] | host, docker, openclaw, cross-layer |
-| urgencia | enum | critica, normal, exploratoria |
+| capacidad | enum | REDIRECT, END |
+| destino | string | `kora/clawforge` o `END` |
+| capacidad_inferida | string | Capacidad operacional original si pudo inferirse |
 | confianza | enum | alta, media, baja |
 | cierre_solicitado | bool | True si el mensaje indica cierre |

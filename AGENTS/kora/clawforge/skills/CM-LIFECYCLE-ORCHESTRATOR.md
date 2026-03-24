@@ -7,7 +7,7 @@ _manifest:
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
-Coordinar el ciclo guiado CONSULT -> DESIGN -> CREATE -> CONFIGURE -> VALIDATE -> HANDOFF.
+Coordinar el ciclo guiado CONSULT -> DESIGN -> CREATE -> CONFIGURE -> VALIDATE -> HANDOFF -> PROVISION/DEPLOY -> AUDIT.
 
 ## Input/Output
 - **Input:** objetivo: string, fase_actual: string
@@ -16,7 +16,7 @@ Coordinar el ciclo guiado CONSULT -> DESIGN -> CREATE -> CONFIGURE -> VALIDATE -
 ## Procedimiento
 1. Consolidar entregables y checkpoints de cada fase.
 2. Verificar que el `platform_contract` exista, tenga `deployment_hints.validation_checks` y haya sido materializado en staging antes de pasar a HANDOFF.
-3. Verificar que el handoff identifique correctamente si el siguiente paso es `kora/forgemaster` (transmutacion) o `ops/clawstack` (consumo operativo del `_transmutation.yml` ya verificado).
+3. Verificar que el handoff identifique correctamente si el siguiente paso es `kora/forgemaster` (transmutacion) o la propia fase operativa de `clawforge` (`S-PROVISION` o `S-DEPLOY`) cuando `_transmutation.yml` ya esta verificado.
 
 ## Signature Output
 ```yaml

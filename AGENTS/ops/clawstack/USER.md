@@ -6,15 +6,14 @@ _manifest:
 
 ## Perfil del Operador
 
-DevOps Engineers, SREs, AI Engineers, KORA Operators. Personas que administran instancias OpenClaw en produccion o desarrollo sobre servidores Unix, con o sin Docker, necesitando control full-stack desde host hasta agente. El provisioning inicial automatizado soportado hoy apunta a Ubuntu Server; en otras plataformas el agente opera por consulta, configuracion, auditoria, troubleshooting y upgrade.
+Operadores que todavia invocan `ops/clawstack` por costumbre, scripts legados o memoria muscular, pero cuyo destino real ya es `kora/clawforge`.
 
 ## Rutinas
 
-- **Provisioning inicial**: Servidor nuevo -> hardening host -> Docker setup -> OpenClaw deploy -> configurar canales -> auditar.
-- **Operacion diaria**: Verificar status, revisar logs, diagnosticar issues, aplicar fixes, monitorear token economy.
-- **Mantenimiento periodico**: Upgrades de stack (apt + Docker + OpenClaw), auditorias de seguridad, optimizacion de bootstrap y memoria.
-- **Troubleshooting urgente**: Agente no responde, canal desconectado, gateway caido, container crasheando. Diagnostico cross-layer.
-- **Consulta arquitectonica**: Entender como funciona un componente, evaluar opciones de diseno, decidir entre heartbeat vs cron vs hooks.
+- Redirigir solicitudes legacy de provisioning hacia `kora/clawforge`
+- Redirigir solicitudes legacy de deploy hacia `kora/clawforge`
+- Redirigir solicitudes legacy de troubleshooting hacia `kora/clawforge`
+- Redirigir solicitudes legacy de auditoria y upgrade hacia `kora/clawforge`
 
 ## Preferencias de Output
 

@@ -7,7 +7,7 @@ _manifest:
 # CM-CONTEXT-MANAGER
 
 ## Proposito
-Detecta cambios de contexto durante la conversacion multi-turno, preservando estado del stack entre turnos.
+Detecta cambios de contexto durante la conversacion multi-turno, preservando la informacion necesaria para redirigir una solicitud legacy a `kora/clawforge`.
 
 ## Input/Output
 - **Input:** mensaje_actual: string, estado_fsm: string, foco_previo: string | null
@@ -16,23 +16,20 @@ Detecta cambios de contexto durante la conversacion multi-turno, preservando est
 ## Procedimiento
 1. Comparar tema del mensaje actual con el foco previo y estado FSM activo.
 2. Clasificar:
-   - **continuar**: mismo stack, mismo tema, profundizar o ajustar.
-   - **nuevo**: cambia de capa, scope o capacidad operacional.
-   - **atras**: quiere regresar a estado anterior o rehacer paso.
-   - **terminar**: indica cierre de sesion operacional.
-   - **fuera**: tema no relacionado con operaciones de stack OpenClaw/Unix/Docker.
-3. Preservar estado entre turnos:
-   - plataforma_host (OS, version kernel)
-   - version_openclaw
-   - canales_activos y su estado
-   - modelo_principal configurado
-   - issues_abiertos de la sesion
-   - historial_acciones aplicadas
+   - **continuar**: sigue la misma redireccion pendiente.
+   - **nuevo**: cambia la solicitud legacy que debe migrarse.
+   - **terminar**: indica cierre.
+   - **fuera**: tema no relacionado con la compatibilidad OpenClaw.
+3. Preservar entre turnos solo lo necesario para la redireccion:
+   - solicitud_legacy
+   - capacidad_inferida
+   - artefactos o rutas mencionadas
+   - target_recomendado=`kora/clawforge`
 4. Emitir clasificacion con shift y detalle para consumo de la FSM.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
-| shift | enum | continuar, nuevo, atras, terminar, fuera |
+| shift | enum | continuar, nuevo, terminar, fuera |
 | detalle | string | Explicacion del cambio detectado |
-| estado_preservado | StackState | Estado del stack entre turnos |
+| estado_preservado | object | Contexto minimo para la redireccion |

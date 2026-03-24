@@ -3,55 +3,12 @@
     "urn": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
     "type": "bootstrap_config"
   },
-  "allowed_kb": [
-    "urn:agengai:kb:00-toc",
-    "urn:agengai:kb:00-fundamentos-previos",
-    "urn:agengai:kb:01-arquitectura-gateway",
-    "urn:agengai:kb:02-agente-unidad-fundamental",
-    "urn:agengai:kb:03-sesiones",
-    "urn:agengai:kb:04-modelos-failover",
-    "urn:agengai:kb:05-memoria",
-    "urn:agengai:kb:06-multi-agent-routing",
-    "urn:agengai:kb:07-aislamiento-seguridad",
-    "urn:agengai:kb:08-patrones-multitenant",
-    "urn:agengai:kb:09-sub-agentes",
-    "urn:agengai:kb:10-sub-agentes-anidados",
-    "urn:agengai:kb:11-comunicacion-inter-sesion",
-    "urn:agengai:kb:12-heartbeats",
-    "urn:agengai:kb:13-cron-jobs",
-    "urn:agengai:kb:14-cron-vs-heartbeat",
-    "urn:agengai:kb:15-hooks",
-    "urn:agengai:kb:16-webhooks",
-    "urn:agengai:kb:17-lobster",
-    "urn:agengai:kb:18-modelo-seguridad",
-    "urn:agengai:kb:19-operaciones",
-    "urn:agengai:kb:20-patrones-diseno",
-    "urn:agengai:kb:21-decisiones-arquitectura",
-    "urn:agengai:kb:22-multi-gateway-docker-federation",
-    "urn:agengai:kb:apendices",
-    "urn:agengai:kb:cheatsheet",
-    "urn:kora:kb:agent-spec-md",
-    "urn:kora:kb:gobernanza",
-    "urn:agengai:kb:openclaw-runtime-extension",
-    "urn:ops:kb:deploy-agente-kora-en-openclaw",
-    "urn:ops:kb:principios-transmutacion-kora-openclaw",
-    "urn:ops:kb:arquitectura-stack-kora",
-    "urn:ops:kb:federacion-kora-v2",
-    "urn:ops:kb:ux-telegram-openclaw"
-  ],
+  "allowed_kb": [],
   "sandbox": {
-    "mode": "permissive"
+    "mode": "strict"
   },
   "tools": {
-    "allow": [
-      "catalog_resolve",
-      "docker_exec",
-      "host_exec",
-      "kb_route",
-      "oc_cli",
-      "oc_docs_search",
-      "spec_consult"
-    ],
+    "allow": [],
     "deny": []
   },
   "limits": {
@@ -63,21 +20,10 @@
   },
   "model_routing": {
     "default": "sonnet",
-    "overrides": {
-      "S-TROUBLESHOOT": "opus",
-      "S-PROVISION": "opus",
-      "S-UPGRADE": "opus",
-      "S-DEPLOY": "opus"
-    }
+    "overrides": {}
   },
   "runtime_capabilities": {
-    "allow": [
-      "kb_read",
-      "code_execution",
-      "filesystem_read"
-    ],
-    "deny": [
-      "web_search"
-    ]
+    "allow": [],
+    "deny": []
   }
 }

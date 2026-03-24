@@ -39,7 +39,7 @@ Aplicar patches selectivos sobre config viva OpenClaw en entornos locales o no p
 5. Aplicar en orden estable y registrar resultado por operacion.
 6. Si alguna operacion toca superficie con restart requerido, ejecutar restart controlado al final del batch.
 7. Verificar con `openclaw doctor` o `status --deep` segun el area afectada.
-8. Si el target corresponde a deploy productivo remoto, abortar y derivar a `ops/clawstack`.
+8. Si el target corresponde a deploy productivo remoto, abortar el patch selectivo y escalar a `S-DEPLOY` o `S-TROUBLESHOOT` dentro de `clawforge`.
 
 ## Signature Output
 

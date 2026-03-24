@@ -1,6 +1,6 @@
 # Hallazgos Auditoria Hetzner — Referencia para CM-AGENT-DEPLOYER
 
-Fuente: Auditoria ops/clawstack 2026-03-23. Sesiones 03-17 a 03-22.
+Fuente: Auditoria heredada y absorbida por kora/clawforge 2026-03-23. Sesiones 03-17 a 03-22.
 
 ## H3 — kora-federation network asymmetry
 
