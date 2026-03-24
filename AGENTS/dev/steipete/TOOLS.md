@@ -83,3 +83,47 @@ _manifest:
 - **Cuando NO usar:** Para recursos fuera de KORA.
 - **Descripcion funcional:** Resuelve URN KORA a ruta de archivo.
 - **Notas:** Usa infraestructura `scripts/kora resolve`.
+
+
+# Federacion kora — derivacion inter-agente
+
+Este agente es miembro de la federacion kora. Puede derivar casos a otros agentes cuando un problema esta fuera de su dominio.
+
+### Directorio de la federacion
+
+Lee `/home/node/shared/federation/directorio-agentes.md` para saber que agentes existen, que hacen y como contactarlos. Este archivo esta siempre actualizado.
+
+### Como derivar a otro agente
+
+Usa `web_fetch` para enviar un hook al gateway del agente destino:
+
+```
+POST http://{gateway_host}:{port}/hooks/agent
+Authorization: Bearer 766c9b38b53702cd0c994d7361c25e0bc5e6a3c671d1ac76
+Content-Type: application/json
+
+{
+  "message": "[Derivacion de {mi-nombre}] {contexto del caso y motivo}",
+  "name": "derivacion-{mi-nombre}"
+}
+```
+
+Agentes disponibles (referencia rapida):
+
+| Agente | Gateway | Hook URL |
+|---|---|---|
+| korax | kora-personal | `http://kora-personal:18789/hooks/agent` |
+| steipete | kora-steipete | `http://kora-steipete:18810/hooks/agent` |
+| salubrista-hah | kora-salubrista | `http://kora-salubrista:18830/hooks/agent` |
+
+### Cuando derivar
+
+- Solo cuando el caso esta **fuera de tu dominio** (ver Reglas Duras en AGENTS.md)
+- Incluir contexto suficiente para que el destino no necesite preguntar de vuelta
+- Informar al usuario que estas derivando y a quien
+
+### Espacio compartido
+
+- Tu directorio propio (lectura/escritura): `/home/node/shared/{mi-id}/`
+- Directorio de la federacion (solo lectura): `/home/node/shared/federation/`
+- Puedes dejar documentos en tu directorio para que otros agentes los lean si el operador configura visibilidad cruzada

@@ -1,13 +1,13 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:clawforge-tools:1.0.0"
+  urn: "urn:kora:agent-bootstrap:clawforge-tools:2.0.0"
   type: "bootstrap_tools"
 ---
 
 ## kb_route
 
 - **Firma:** query_topic: string -> urn: string
-- **Cuando usar:** Resolver spec o base doctrinal para decisiones de ciclo de vida OpenClaw.
+- **Cuando usar:** Resolver spec o base doctrinal para decisiones de ciclo de vida OpenClaw o de operacion de stack.
 - **Cuando NO usar:** Tema ya mapeado en el turno actual.
 - **Routing Map:**
 
@@ -24,6 +24,23 @@ _manifest:
 | Arquitectura del stack kora OpenClaw | urn:ops:kb:arquitectura-stack-kora |
 | Federacion kora v2 sobre OpenClaw | urn:ops:kb:federacion-kora-v2 |
 | UX Telegram OpenClaw | urn:ops:kb:ux-telegram-openclaw |
+| Arquitectura gateway, agent loop, wire protocol | urn:agengai:kb:01-arquitectura-gateway |
+| Agente como unidad, workspace, agentDir | urn:agengai:kb:02-agente-unidad-fundamental |
+| Sesiones, compaction, persistencia | urn:agengai:kb:03-sesiones |
+| Modelos, failover, auth profiles | urn:agengai:kb:04-modelos-failover |
+| Memoria, embeddings, busqueda hibrida | urn:agengai:kb:05-memoria |
+| Multi-agent routing, bindings | urn:agengai:kb:06-multi-agent-routing |
+| Aislamiento, seguridad, sandbox, tool policy | urn:agengai:kb:07-aislamiento-seguridad |
+| Sub-agentes, sessions_spawn, concurrency | urn:agengai:kb:09-sub-agentes |
+| Heartbeats, periodic agent turns | urn:agengai:kb:12-heartbeats |
+| Cron jobs, schedule, delivery | urn:agengai:kb:13-cron-jobs |
+| Hooks, event-driven automation | urn:agengai:kb:15-hooks |
+| Webhooks, HTTP triggers | urn:agengai:kb:16-webhooks |
+| Modelo de seguridad, threat model | urn:agengai:kb:18-modelo-seguridad |
+| Operaciones, status, doctor, maintenance | urn:agengai:kb:19-operaciones |
+| Patrones de diseno, orchestrator | urn:agengai:kb:20-patrones-diseno |
+| Multi-gateway dockerizado, federacion | urn:agengai:kb:22-multi-gateway-docker-federation |
+| Cheatsheet, referencia rapida | urn:agengai:kb:cheatsheet |
 
 ## catalog_resolve
 
@@ -64,15 +81,13 @@ _manifest:
 ## artifact_write
 
 - **Firma:** {path: string, content: string} -> result: string
-- **Cuando usar:** Emitir artefactos derivados y handoffs en staging.
+- **Cuando usar:** Emitir artefactos derivados, handoffs y contratos en staging.
 - **Cuando NO usar:** Para tocar el workspace fuente KORA.
-- **Notas:** `clawforge` NO genera `_transmutation.yml`; ese manifest pertenece al pipeline de `kora/forgemaster`.
-
 
 ## diff_compute
 
 - **Firma:** {source_path: string, derived_path: string} -> DiffReport
-- **Cuando usar:** Detectar drift entre fuente, target OpenClaw y artefactos derivados.
+- **Cuando usar:** Detectar drift entre fuente KORA, target OpenClaw y artefactos derivados.
 - **Cuando NO usar:** Si no existe comparando previo.
 
 ## agent_list
@@ -84,18 +99,26 @@ _manifest:
 ## oc_cli
 
 - **Firma:** command: string -> output: string
-- **Cuando usar:** Verificar runtime OpenClaw local, config, doctor, status, skills y plugins en entornos de validacion o auditoria.
-- **Cuando NO usar:** Para comandos host, Docker o deploy productivo remoto.
-- **Notas:** Usar para `config set`, `gateway call config.patch`, `doctor`, `status --deep` y verificaciones post-cambio locales.
+- **Cuando usar:** Verificar runtime OpenClaw, config, doctor, status, skills y plugins. Tambien para operaciones post-deploy: config set, gateway call, doctor --fix.
+- **Cuando NO usar:** Para comandos host o Docker (usar host_exec o docker_exec).
+- **Notas:** Comandos frecuentes: `status`, `status --deep`, `doctor`, `doctor --fix`, `config get/set`, `health --json`, `sessions`, `pairing list/approve`.
 
 ## oc_docs_search
 
 - **Firma:** query: string -> SearchResult[]
-- **Cuando usar:** Buscar detalle puntual en la documentacion oficial OpenClaw. Es la fuente factual primaria para config, runtime, tools, sandbox, plugins, channels y troubleshooting de OpenClaw.
+- **Cuando usar:** Buscar detalle puntual en la documentacion oficial OpenClaw. Fuente factual primaria para config, runtime, tools, sandbox, plugins, channels y troubleshooting.
 - **Cuando NO usar:** Cuando la pregunta es puramente normativa KORA y ya esta gobernada por specs/KB locales.
-- **Notas:** Componentes base a consultar prioritariamente:
-  - `concepts/agent.md`, `concepts/agent-workspace.md`, `concepts/multi-agent.md`, `concepts/context.md`, `concepts/system-prompt.md`
-  - `gateway/configuration.md`, `gateway/configuration-reference.md`, `gateway/sandboxing.md`, `gateway/sandbox-vs-tool-policy-vs-elevated.md`, `gateway/multiple-gateways.md`, `gateway/doctor.md`, `gateway/remote.md`, `gateway/trusted-proxy-auth.md`
-  - `cli/config.md`, `cli/skills.md`, `cli/plugins.md`
-  - `tools/skills.md`, `tools/plugin.md`, `tools/clawhub.md`, `tools/browser.md`, `tools/subagents.md`, `tools/multi-agent-sandbox-tools.md`
-  - `channels/telegram.md`, `automation/hooks.md`, `install/migrating.md`, `help/faq.md`
+
+## host_exec
+
+- **Firma:** command: string -> output: string
+- **Cuando usar:** Ejecutar comandos en el host Unix para diagnostico, configuracion o mantenimiento del sistema operativo.
+- **Cuando NO usar:** Para operaciones OpenClaw (usar oc_cli) o Docker (usar docker_exec).
+- **Comandos frecuentes:** `systemctl`, `journalctl`, `df -h`, `free -h`, `uptime`, `ss -tlnp`, `ufw status`, `dmesg | tail`.
+
+## docker_exec
+
+- **Firma:** command: string -> output: string
+- **Cuando usar:** Ejecutar comandos Docker para gestionar contenedores, imagenes, redes y volumes.
+- **Cuando NO usar:** Para operaciones host (usar host_exec) o OpenClaw (usar oc_cli).
+- **Comandos frecuentes:** `docker ps -a`, `docker compose ps/up/restart/logs`, `docker stats`, `docker inspect`, `docker network ls/inspect`, `docker volume ls`, `docker system df`, `docker image prune`.
