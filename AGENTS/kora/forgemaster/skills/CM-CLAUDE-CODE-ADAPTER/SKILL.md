@@ -8,7 +8,6 @@ extensions:
       form: extended
       allowed_tools:
         - workspace_read
-        - artifact_write
       requires: []
       references:
         - references/cc-subagent-format.md
@@ -29,7 +28,7 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
 ## Input/Output
 
 - **Input:** workspace KORA completo (5 componentes + skills/) + namespace + nombre del agente
-- **Output:** TransmutedArtifact[] = subagent (.claude/agents/{ns}--{name}.md) + skills (.claude/skills/{ns}--{name}--{cm}/SKILL.md) + manifest (_transmutation/{ns}--{name}.yml)
+- **Output:** AdapterTransmutationReport = subagent (.claude/agents/{ns}--{name}.md) + skills (.claude/skills/{ns}--{name}--{cm}/SKILL.md) + metadata de manifest para `CM-ARTIFACT-EMITTER`
 
 ## Procedimiento
 
@@ -75,7 +74,7 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
 
      Modelo del hook: `haiku` si FSM tiene <= 8 estados; `sonnet` si FSM tiene > 8 estados (M3).
 
-5. **Absorber runtime_capabilities** (M6): Mapear `config.json.runtime_capabilities.allow` y `.deny` a `permissionMode` + `disallowedTools` segun corresponda. Capabilities sin mapping directo (e.g., deploy, filesystem_write) → documentar en `enforcement_gaps` del manifest.
+5. **Absorber runtime_capabilities** (M6): Mapear `config.json.runtime_capabilities.allow` y `.deny` a `permissionMode` + `disallowedTools` segun corresponda. Capabilities sin mapping directo (e.g., deploy, filesystem_write) → documentar en `enforcement_gaps` para que luego se propaguen al manifest emitido por `CM-ARTIFACT-EMITTER`.
 
 ### Fase 3: Compilar body del subagent
 
@@ -110,7 +109,7 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
    Para cargar un skill: invocalo como `/{ns}--{name}--{cm}` o consulta `AGENTS/{ns}/{name}/skills/CM-{CM}` directamente.
    ```
 
-10. **Excluir USER.md** (H1): No incluir en el body. El contexto operador en CC es provisto nativamente por la conversacion. Documentar en manifest campo `exclusions` con justificacion citando runtime-spec §6.1.
+10. **Excluir USER.md** (H1): No incluir en el body. El contexto operador en CC es provisto nativamente por la conversacion. Documentar esta exclusion en `manifest_overrides.exclusions` citando runtime-spec §6.1.
 
 11. **Excluir config.json del body** (runtime-spec §9.2): Su informacion ya esta en el frontmatter server-side. No copiar como texto.
 
@@ -135,23 +134,23 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
     - Copiar `scripts/`, `references/`, `assets/` como subdirectorios del skill CC si existen.
     - Verificar que CM Core preserva las 4 secciones (skill-spec §3).
 
-### Fase 6: Generar manifest y verificar
+### Fase 6: Preparar metadata para `CM-ARTIFACT-EMITTER` y verificar
 
 14. **Verificar token budget** (runtime-spec §9.4): Body del subagent < 20K chars. Si excede → mover secciones extensas (routing maps, ejemplos) a skills adicionales lazy-load.
 
-15. **Documentar enforcement_gaps** (H3): En manifest:
+15. **Documentar enforcement_gaps** (H3) para `manifest_overrides`:
     - `allowed_kb`: original=server-side, efectivo=instruccional. Mitigacion: MCP kb-reader o hook pre-tool.
     - `runtime_capabilities` sin mapping: documentar absorcion parcial (M6).
 
-16. **Generar _transmutation.yml**: Usar template de `assets/transmutation-manifest-template.yml`. Incluir:
-    - SHA-256 de cada componente fuente.
+16. **Preparar `manifest_overrides`** usando `assets/transmutation-manifest-template.yml` como referencia estructural. Incluir:
+    - `platform: claude-code`
     - Exclusiones (USER.md, config.json) con justificaciones.
     - Enforcement gaps con niveles original vs efectivo.
     - Segregation mode: logical, check: headers.
-    - Timestamp ISO 8601.
     - Adapter: CM-CLAUDE-CODE-ADAPTER v1.0.0.
+    - `CM-ARTIFACT-EMITTER` sera el unico responsable de generar `_transmutation.yml`.
 
-17. **Emitir artefactos**: `artifact_write` para cada archivo generado (subagent, skills, manifest).
+17. **Retornar artefactos compilados**: devolver subagent + skills + `manifest_overrides` a `CM-ARTIFACT-EMITTER`. Este adapter no escribe a disco.
 
 ### Fase 7: Verificacion de equivalencia (H4)
 
@@ -159,7 +158,7 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
     - **Input 1** (routing): Solicitud dentro de scope → verificar que el agente CC rutea al mismo estado que el agente KORA.
     - **Input 2** (rechazo): Solicitud fuera de scope → verificar que el rechazo se produce con el mismo mensaje.
     - **Input 3** (tool): Solicitud que activa tool → verificar que el tool esta disponible y se invoca.
-    Documentar resultados en manifest campo `behavioral_equivalence`.
+    Documentar resultados en `manifest_overrides.behavioral_equivalence`.
 
 ## Signature Output
 
@@ -167,8 +166,7 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
 {
   "artifacts": [
     {"path": ".claude/agents/{ns}--{name}.md", "type": "subagent"},
-    {"path": ".claude/skills/{ns}--{name}--{cm}/SKILL.md", "type": "skill"},
-    {"path": "_transmutation/{ns}--{name}.yml", "type": "manifest"}
+    {"path": ".claude/skills/{ns}--{name}--{cm}/SKILL.md", "type": "skill"}
   ],
   "mappings": [
     {"kora_field": "sandbox.mode", "cc_field": "permissionMode", "type": "direct"},
@@ -181,6 +179,9 @@ Mapear un workspace KORA normalizado al formato nativo Claude Code (subagent + s
   "exclusions": [
     {"component": "USER.md", "reason": "runtime-spec §6.1"}
   ],
+  "manifest_overrides": {
+    "platform": "claude-code"
+  },
   "warnings": [],
   "token_budget": {"body_chars": 0, "within_limit": true}
 }

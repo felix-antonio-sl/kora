@@ -1,4 +1,6 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 import jsonschema
 
@@ -6,7 +8,7 @@ from common import AGENTS_ROOT, FIXTURES, ROOT, load_json
 from kora_lib.artifacts import load_yaml_safe
 from kora_lib.config import AGENT_REQUIRED_FILES
 from kora_lib.reports import compute_stats_payload, render_stats_markdown
-from kora_lib.validation import validate_agents_canonical_structure
+from kora_lib.validation import validate_agents_canonical_structure, validate_workspace_semantics
 from kora_lib.workspaces import get_workspace_missing_files, iter_agent_workspaces, validate_skill_file
 
 
@@ -58,6 +60,24 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_invalid_skill_fixture_reports_missing_heading(self):
         failures = validate_skill_file(FIXTURES / "invalid-skill.md")
         self.assertTrue(any("missing required heading '## Input/Output'" in item for item in failures))
+
+    def test_validate_workspace_semantics_enforces_skill_quota(self):
+        with TemporaryDirectory() as tmpdir:
+            workspace = Path(tmpdir)
+            skills = workspace / "skills"
+            skills.mkdir()
+            for index in range(2):
+                (skills / f"CM-TEST-{index}.md").write_text(
+                    "---\n_manifest:\n  urn: urn:test:skill:sample:1.0.0\n  type: lazy_load_endofunctor\n---\n",
+                    encoding="utf-8",
+                )
+
+            failures = validate_workspace_semantics(
+                workspace,
+                {"limits": {"quotas": {"max_skills_per_agent": 1}}},
+                [],
+            )
+            self.assertTrue(any("max_skills_per_agent=1" in item for item in failures))
 
     def test_extended_skill_fixture_loads(self):
         doc, err = load_yaml_safe(FIXTURES / "extended-skill" / "SKILL.md")
@@ -395,6 +415,28 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("scripts/", content)
         self.assertIn("references/", content)
         self.assertIn("assets/", content)
+
+    def test_forgemaster_transmutation_contract_centralizes_manifest_emission(self):
+        emitter = (
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-ARTIFACT-EMITTER.md"
+        ).read_text(encoding="utf-8")
+        anthropic = (
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-ANTHROPIC-ADAPTER" / "SKILL.md"
+        ).read_text(encoding="utf-8")
+        openclaw = (
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-OPENCLAW-ADAPTER" / "SKILL.md"
+        ).read_text(encoding="utf-8")
+        claude_code = (
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-CLAUDE-CODE-ADAPTER" / "SKILL.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("manifest_overrides", emitter)
+        self.assertIn("unico responsable de generar", emitter)
+        for content in (anthropic, openclaw, claude_code):
+            self.assertIn("CM-ARTIFACT-EMITTER", content)
+            self.assertIn("manifest_overrides", content)
+            self.assertNotIn("artifact_write", content)
+            self.assertNotIn("Generar _transmutation.yml", content)
 
     def test_guardian_runtime_capabilities_drop_analysis(self):
         content = (AGENTS_ROOT / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
