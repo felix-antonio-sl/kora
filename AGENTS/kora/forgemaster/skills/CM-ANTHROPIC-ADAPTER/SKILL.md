@@ -8,7 +8,6 @@ extensions:
       form: extended
       allowed_tools:
         - workspace_read
-        - artifact_write
       requires: []
       references:
         - references/anthropic-skills-format.md
@@ -19,11 +18,11 @@ extensions:
 # CM-ANTHROPIC-ADAPTER
 
 ## Proposito
-Mapea un workspace KORA normalizado al formato Anthropic Skill (Claude Code), compilando el agente completo en un SKILL.md unico con tags `<kora_bootstrap>` estructurados y referencia lazy-load a skills del workspace fuente.
+Mapea un workspace KORA normalizado al formato Anthropic Skill, compilando el agente completo en un SKILL.md unico con tags `<kora_bootstrap>` estructurados y referencias lazy-load a los skills derivados que luego emitira `CM-ARTIFACT-EMITTER`.
 
 ## Input/Output
-- **Input:** source: WorkspaceAnalysis (output de CM-WORKSPACE-ANALYZER)
-- **Output:** TransmutedArtifact[] (artefactos listos para CM-ARTIFACT-EMITTER)
+- **Input:** workspace KORA completo via `workspace_read(agent_path)`
+- **Output:** AdapterTransmutationReport (artefactos compilados + metadata de manifest para `CM-ARTIFACT-EMITTER`)
 
 ## Procedimiento
 1. Consultar `references/anthropic-skills-format.md` para reglas de formato vigentes.
@@ -41,7 +40,7 @@ Mapea un workspace KORA normalizado al formato Anthropic Skill (Claude Code), co
 3. COMPILAR INSTRUCCIONES INICIALES:
    - Parrafo introductorio: "Al activar esta skill, adoptas la identidad y comportamiento de {namespace}/{nombre}."
    - Referencia a specs si aplica.
-   - Instruccion de lazy-load: "Los skills (CM-*.md) se encuentran en `AGENTS/{namespace}/{nombre}/skills/` y se cargan on-demand."
+   - Instruccion de lazy-load: "Los skills derivados se cargan on-demand desde el paquete Anthropic emitido para `{namespace}/{nombre}`."
 4. COMPILAR AGENTS.md → `<kora_bootstrap component="agents">`:
    - Incluir FSM completa con estados, transiciones, prioridades.
    - Incluir reglas duras.
@@ -50,26 +49,31 @@ Mapea un workspace KORA normalizado al formato Anthropic Skill (Claude Code), co
    - Incluir wiring.
    - Eliminar frontmatter KORA.
 5. COMPILAR SOUL.md → `<kora_bootstrap component="soul">`:
-   - Incluir identidad dialectica, paradigma cognitivo, tono, saludo, estilo, ejemplos.
+   - Incluir identidad dialectica, paradigma cognitivo y tono.
    - Eliminar frontmatter KORA.
 6. COMPILAR TOOLS.md → `<kora_bootstrap component="tools">`:
    - Incluir herramientas con firmas, cuando usar, routing map.
    - Eliminar frontmatter KORA.
-7. COMPILAR SECCION SKILLS:
+7. COMPILAR `AGENTS.md` §6 si existe:
+   - Extraer `Comportamiento Operativo` (saludo, estilo, ejemplos) desde `AGENTS.md`, no desde `SOUL.md`.
+   - Incluirlo como bloque operativo separado dentro del skill compilado.
+8. COMPILAR SECCION SKILLS:
    - Tabla de skills con CM, archivo, estado FSM asociado.
    - Instruccion: "Cuando entres en un estado FSM, lee el skill correspondiente para obtener el procedimiento detallado."
    - NO inlinear contenido de skills (lazy-load preservado).
-8. COMPILAR SECCION INICIO:
-   - Saludo del agente (de SOUL.md).
+9. COMPILAR SECCION INICIO:
+   - Saludo del agente (de `AGENTS.md` §6 si existe; fallback: identidad + S-DISPATCHER).
    - Estado inicial: S-DISPATCHER.
-9. Usar `assets/anthropic-skill-template.md` como esqueleto de referencia.
-10. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico (skill-spec §6 inv.7).
-11. Retornar TransmutedArtifact[] con el SKILL.md compilado.
+10. Usar `assets/anthropic-skill-template.md` como esqueleto de referencia.
+11. Preparar `manifest_overrides` para `CM-ARTIFACT-EMITTER` con `platform: anthropic`, warnings y exclusiones si aplica. El adapter NO genera `_transmutation.yml`.
+12. Verificar que artefactos generados cumplen runtime-spec §9 pipeline canonico (skill-spec §6 inv.7).
+13. Retornar AdapterTransmutationReport con el SKILL.md compilado y `manifest_overrides`.
 
 ## Signature Output
 | Campo | Tipo | Descripcion |
 |-------|------|-------------|
 | artifacts | TransmutedArtifact[] | SKILL.md compilado + fibras opcionales |
 | mappings | MappingEntry[] | Tabla componente_kora → seccion_skill |
+| manifest_overrides | object | Metadata target-specific para que `CM-ARTIFACT-EMITTER` genere `_transmutation.yml` |
 | warnings | string[] | Limitaciones de mapeo documentadas |
 | estimated_tokens | number | Estimacion de tokens del skill compilado |

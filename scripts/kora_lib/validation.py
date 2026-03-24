@@ -1020,6 +1020,26 @@ def validate_config_semantics(config_data, valid_tool_names):
     return failures
 
 
+def validate_workspace_limits(workspace_dir, config_data):
+    failures = []
+    if not isinstance(config_data, dict):
+        return failures
+
+    quotas = config_data.get("limits", {}).get("quotas", {})
+    if not isinstance(quotas, dict):
+        return failures
+
+    max_skills = quotas.get("max_skills_per_agent")
+    if isinstance(max_skills, int) and max_skills > 0:
+        declared_skills = extract_skill_symbols(workspace_dir / "skills")
+        if len(declared_skills) > max_skills:
+            failures.append(
+                f"workspace declara {len(declared_skills)} skills, excede max_skills_per_agent={max_skills}"
+            )
+
+    return failures
+
+
 def validate_workspace_semantics(workspace_dir, config_data, valid_tool_names):
     failures = []
 
@@ -1039,6 +1059,7 @@ def validate_workspace_semantics(workspace_dir, config_data, valid_tool_names):
         failures.extend((f"TOOLS: {item}" for item in validate_tools_semantics(tools_text, valid_tool_names)))
     if config_data is not None:
         failures.extend((f"CONFIG: {item}" for item in validate_config_semantics(config_data, valid_tool_names)))
+        failures.extend((f"LIMITS: {item}" for item in validate_workspace_limits(workspace_dir, config_data)))
 
     kb_texts = []
     for path in (agents_path, tools_path):

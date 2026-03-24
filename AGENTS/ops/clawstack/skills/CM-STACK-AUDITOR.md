@@ -42,13 +42,13 @@ Auditoria full-stack en 3 capas con multiples ejes por capa. Emite reporte PASS|
 9. Networking: `gateway.bind` coherente con topologia Docker (bind="lan" para kora-federation bridge; port mapping Docker en 127.0.0.1 protege del exterior).
 
 ### Federation
-10. Hooks: `hooks.enabled: true` en cada gateway, token configurado (literal, no env var), endpoint alcanzable desde otros containers.
+10. Hooks: `hooks.enabled: true` en cada gateway, token configurado en runtime segun el patron soportado, endpoint alcanzable desde otros containers y secreto nunca duplicado en bootstrap/docs del agente.
 11. Bind: `gateway.bind: "lan"` en cada gateway (requerido para hooks cross-gateway en Docker bridge).
 12. Shared storage: `/srv/kora/shared/federation/` montado RO en todos; directorio propio (`/srv/kora/shared/{agent_id}/`) montado RW en cada container.
 13. Directorio de agentes: `/srv/kora/shared/federation/directorio-agentes.md` existe, es legible desde todos los containers, y lista todos los agentes desplegados con dominio, hook URL y canal.
 14. Hooks bidireccional: test `curl POST /hooks/agent` entre cada par de gateways exitoso (HTTP 200 + runId).
 15. Panel web: `kora-panel` container healthy, `https://kora.sanixai.com/api/health` retorna todos los gateways OK, registry.json actualizado.
-16. TOOLS.md de cada agente: contiene seccion `## Federacion kora` con tabla de agentes, protocolo de derivacion y rutas de shared.
+16. TOOLS.md de cada agente: contiene seccion `## Federacion kora` con tabla de agentes, protocolo de derivacion y rutas de shared, sin tokens ni credenciales.
 
 ### Drift Detection (agentes desplegados)
 17. Workspace drift: para cada agente desplegado en /srv/kora/workspaces/, diff version stripped del repo KORA vs version desplegada. Clasificar: regla emergente (backport candidate), residuo (limpiar), memory (normal), heartbeat (normal).

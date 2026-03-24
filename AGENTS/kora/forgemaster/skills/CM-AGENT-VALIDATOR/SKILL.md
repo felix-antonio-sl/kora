@@ -31,14 +31,14 @@ Valida un workspace KORA completo contra agent-spec-md v8.7.0 §10, skill-spec-m
 ## Procedimiento
 1. Cargar el baseline normativo desde `references/validation-stack.md` para fijar spec rectora, schemas y soporte de auditoria disponibles.
 2. Si se requiere verificacion mecanica detallada del workspace, usar `scripts/validate_workspace.py` como envoltorio reproducible del stack existente en `scripts/kora_lib/`.
-3. **GRAMATICA DE BEHAVIOR (agent-spec-md §4.1):** `AGENTS.md` contiene FSM, Reglas Duras, Co-induccion, Contexto Multi-turno y Wiring en orden canonico.
+3. **GRAMATICA DE BEHAVIOR (agent-spec-md §4.1):** `AGENTS.md` contiene FSM, Reglas Duras, Co-induccion, Contexto Multi-turno y Wiring en orden canonico; `Comportamiento Operativo` solo puede aparecer como extension posterior controlada.
 4. **FSM CANONICA (agent-spec-md §4.2-§4.3):** Estados `S-*`, transiciones explicitas, determinismo declarado, `S-DISPATCHER` y `S-END` presentes.
 5. **TOPOLOGIA OBLIGATORIA (agent-spec-md §3):** Existen los 5 componentes base y el directorio `skills/`.
 6. **SEGREGACION DE COMPONENTES (agent-spec-md §4.4):** `SOUL.md`, `USER.md`, `TOOLS.md` y `config.json` conservan su rol sin contaminacion cruzada.
 7. **BEHAVIOR PURO (agent-spec-md §4.3):** `AGENTS.md` expresa control puro sin fenomenologia ni security inline.
 8. **INTERFAZ CERRADA (agent-spec-md §5):** `TOOLS.md` coincide con `config.json.tools.allow`.
 9. **RUNTIME SEGREGADO (agent-spec-md §5-§6):** `runtime_capabilities` no reintroduce interfaz semantica y el envelope no contamina la interfaz.
-10. **CONFIG VALIDO (agent-spec-md §6):** `config.json` respeta schema, envelope y limites declarados.
+10. **CONFIG VALIDO (agent-spec-md §6):** `config.json` respeta schema, envelope y limites declarados; las quotas tambien deben cumplirse en el workspace materializado.
 11. **SKILLS RESOLUBLES (agent-spec-md §7):** Todo `CM-*` referido en `AGENTS.md` resuelve a `skills/CM-*.md` o `skills/CM-*/SKILL.md`.
 12. **UNICIDAD DE MATERIALIZACION (skill-spec-md §3):** Un mismo identificador `CM-*` no coexiste como archivo degenerado y como directorio extendido.
 13. **CM CORE CANONICO (skill-spec-md §3):** Cada Skill, degenerado o extendido, conserva `Proposito`, `Input/Output`, `Procedimiento`, `Signature Output`.

@@ -30,7 +30,7 @@ Ejecuta provisioning full-stack desde cero: host Ubuntu hardened -> Docker con a
 
 0. VALIDAR ALCANCE:
    - Este skill cubre provisioning host-based sobre Ubuntu Server.
-   - Si el operador ya trae un host Docker existente o esta en macOS, emitir error: "Plataforma no soportada por este skill. Host Docker existente o macOS requiere otro path." y terminar procedimiento.
+   - Si el operador ya trae un host Docker existente o esta en otra plataforma Unix, NO improvisar provisioning. Emitir: "Provisioning inicial no soportado por este skill en esta plataforma. Continuar por path de consulta/configuracion/auditoria/troubleshooting segun corresponda." y terminar procedimiento.
 
 ### Capa Host Ubuntu
 1. Verificar acceso SSH y version OS: `cat /etc/os-release`, `uname -r`.

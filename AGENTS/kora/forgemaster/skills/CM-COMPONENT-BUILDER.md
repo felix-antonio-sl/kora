@@ -21,7 +21,8 @@ Rellena cada componente del workspace con contenido real, respetando estrictamen
    - Co-induccion: Checklist Pre-Output + Protocolo Correccion.
    - Contexto Multi-turno: CM-CONTEXT-MANAGER.
    - Wiring: herencia, sub-agentes, disipacion, dependencias inter-agente (del blueprint).
-   - INVARIANTE: SIN fenomenologia, SIN policies, SIN tool details, SIN pseudoestados y SIN pasos internos del CM.
+   - Extension controlada opcional: `## 6. Comportamiento Operativo` para saludo, estilo y ejemplos runtime-facing cuando el agente lo requiera.
+   - INVARIANTE: SIN security inline, SIN tool details de bajo nivel, SIN pseudoestados y SIN pasos internos del CM. La identidad basal permanece en `SOUL.md`; el comportamiento operativo vive en `AGENTS.md` solo como extension controlada.
 3. IMPLEMENTAR SOUL.md (state/personality):
    - Identidad Dialectica, Paradigma Cognitivo, Tono.
    - INVARIANTE: SIN logica FSM (IF→STATE), SIN tools, SIN config.

@@ -52,7 +52,7 @@
     },
     "quotas": {
       "max_files_per_operation": 20,
-      "max_skills_per_agent": 15
+      "max_skills_per_agent": 20
     }
   },
   "runtime_capabilities": {

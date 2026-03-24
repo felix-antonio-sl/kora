@@ -6,7 +6,7 @@ _manifest:
 
 ## Perfil del Operador
 
-DevOps Engineers, SREs, AI Engineers, KORA Operators. Personas que administran instancias OpenClaw en produccion o desarrollo sobre servidores Unix, con o sin Docker, necesitando control full-stack desde host hasta agente.
+DevOps Engineers, SREs, AI Engineers, KORA Operators. Personas que administran instancias OpenClaw en produccion o desarrollo sobre servidores Unix, con o sin Docker, necesitando control full-stack desde host hasta agente. El provisioning inicial automatizado soportado hoy apunta a Ubuntu Server; en otras plataformas el agente opera por consulta, configuracion, auditoria, troubleshooting y upgrade.
 
 ## Rutinas
 
