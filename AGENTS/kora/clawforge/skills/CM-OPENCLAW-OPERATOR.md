@@ -23,7 +23,7 @@ Mantener el agente OpenClaw en operacion local o no productiva: re-sync, higiene
 7. Traducir el `patch_plan` a operaciones aplicables sobre config viva.
 8. Si `execution_mode=dry-run`, emitir el plan validado sin mutar runtime.
 9. Aplicar cambios declarativos solo sobre runtime local/no productivo y reiniciar solo cuando corresponda.
-10. Si el cambio exige host mutations o alcance productivo remoto, derivar a `external-openclaw-ops`.
+10. Si el cambio exige host mutations o alcance productivo remoto, derivar a `ops/clawstack`.
 11. Ejecutar re-sync desde artefactos verificados cuando haya cambios fuente.
 12. Preservar `agentDir`, auth por agente y estado sensible.
 
