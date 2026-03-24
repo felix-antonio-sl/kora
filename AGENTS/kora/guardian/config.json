@@ -10,7 +10,8 @@
     "urn:kora:kb:agent-spec-md",
     "urn:kora:kb:skill-spec-md",
     "urn:kora:kb:runtime-spec-md",
-    "urn:kora:kb:swarm-spec-md"
+    "urn:kora:kb:swarm-spec-md",
+    "urn:agengai:kb:openclaw-runtime-extension"
   ],
   "sandbox": {
     "mode": "strict"

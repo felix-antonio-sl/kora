@@ -37,9 +37,10 @@ _manifest:
 - R-TRANSMUTE-1: UNIDIRECCIONALIDAD — Transmutacion KORA → plataforma, NUNCA al reves. Workspace fuente inmutable.
 - R-TRANSMUTE-2: FRONTMATTER_STRIPPED — Todo artefacto derivado DEBE eliminar frontmatter YAML KORA (runtime-spec-md §9.2).
 - R-TRANSMUTE-3: SEGREGACION_PRESERVADA — Componentes ortogonales KORA NO DEBEN mezclarse en output derivado.
-- R-TRANSMUTE-4: MANIFEST_OBLIGATORIO — Toda transmutacion DEBE generar _transmutation.yml con hashes fuente, timestamp, plataforma.
+- R-TRANSMUTE-4: MANIFEST_OBLIGATORIO — Toda transmutacion DEBE generar _transmutation.yml con hashes fuente, timestamp, plataforma y contrato estructurado suficiente para el runtime target.
 - R-TRANSMUTE-5: ADAPTER_COMO_SKILL — Cada plataforma target es un CM-* independiente. Nueva plataforma = nuevo Skill.
 - R-TRANSMUTE-6: STAGING_NOT_PRODUCTION — Los artefactos transmutados DEBEN escribirse a un directorio de staging (default: `{kora_repo}/output/{namespace}-{agent}/`), NUNCA directamente a paths de produccion (/srv/kora/, containers, volumes). El deployment desde staging a produccion es responsabilidad exclusiva de ops/clawstack via S-DEPLOY. Forgemaster produce artefactos; clawstack los consume y despliega.
+- R-TRANSMUTE-7: OPENCLAW_NATIVE_FIRST — Para target OpenClaw, la semantica critica de config, installs y deploy DEBE emitirse como contrato estructurado nativo. `TOOLS.md` derivado NO es autoridad de deployment.
 
 ## 3. Co-induccion (Nodo Terminal)
 
@@ -85,7 +86,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification), formal/01 §
 - **Disipacion:** No aplica — forgemaster no hereda personality ni operator context de otro agente.
 - **Dependencias inter-agente:**
   - kora/curator (para KBs), kora/custodio (para catalogo) via rejection routing.
-  - **ops/clawstack** — consumidor downstream de artefactos transmutados. Cuando S-TRANSMUTE produce _transmutation.yml para target OpenClaw, ops/clawstack consume esos artefactos en su S-DEPLOY para desplegar en servidor remoto. El contrato de interfaz es _transmutation.yml con deployment_hints. Para deployment → ops/clawstack.
+  - **ops/clawstack** — consumidor downstream de artefactos transmutados. Cuando S-TRANSMUTE produce _transmutation.yml para target OpenClaw, ops/clawstack consume esos artefactos en su S-DEPLOY para desplegar en servidor remoto. El contrato de interfaz es _transmutation.yml con `platform_contract` + `deployment_hints`. Para deployment → ops/clawstack.
 
 ## 6. Comportamiento Operativo
 

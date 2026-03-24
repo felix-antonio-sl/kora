@@ -5,14 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 01, 02, 04, 07, repair of cross-platform adapter contract"
-version: "3.5.0"
+version: "3.6.0"
 status: published
 tags: [spec, runtime, deployment, adapters, wrappers, fallback]
 lang: es
 extensions: {}
 ---
 
-# KORA/Runtime-Spec v3.5.0
+# KORA/Runtime-Spec v3.6.0
 
 ## 1. Definicion
 
@@ -42,6 +42,10 @@ Esta especificacion gobierna:
 | Behavioral Equivalence | Equivalencia funcional del mismo agente entre plataformas: mismo routing, mismas tools, mismas constraints |
 | Fallback Chain         | Cadena ordenada de modelos alternativos                              |
 | Budget Enforcement     | Politica server-side de costo o tokens                               |
+| Platform Config Projection | Proyeccion estructurada de `config.json` hacia la config nativa del runtime |
+| Managed Install Plan   | Declaracion estructurada de Skills, plugins o bundles que el runtime debe instalar por vias nativas |
+| Runtime State          | Credenciales, sesiones, pairing stores, caches, volumes y otros artefactos operativos mutables del runtime |
+| Transmutation Contract | Contrato estructurado emitido junto al wrapper para que configure y despliegue sin reinterpretacion textual del workspace |
 
 ## 3. Core agnostico de plataforma
 
@@ -85,7 +89,9 @@ Reglas:
 1. El adapter **DEBE** strippear frontmatter antes de inyectar markdown al LLM.
 2. El adapter **DEBE** mapear cada tool declarada o documentar la limitacion.
 3. El adapter **NO DEBE** mezclar `config.json` con behavior.
-4. La ausencia de equivalencia perfecta **NO DEBE** usarse para justificar drift estructural.
+4. Si la plataforma ofrece una superficie nativa y estructurada para config, policy, instalaciones gestionadas o bindings, el adapter **DEBE** preferir esa superficie a emulaciones textuales dentro del workspace.
+5. La semantica critica de deploy, config o enforcement **NO DEBE** quedar delegada a bootstrap textual si el runtime permite expresarla estructuradamente.
+6. La ausencia de equivalencia perfecta **NO DEBE** usarse para justificar drift estructural.
 
 ## 5. Wrapper generation
 
@@ -198,11 +204,28 @@ Todo proceso de transmutacion **DEBE** ejecutar esta secuencia:
 1. Para plataformas que requieren identidad publica (e.g., `IDENTITY.md` en OpenClaw), el proceso **DEBE** generar el artefacto derivando nombre y descripcion de `SOUL.md`. Este artefacto vive en el workspace target, **NO** en el workspace fuente KORA.
 2. La config de plataforma (e.g., `openclaw.json`) **DEBE** configurarse informada por `config.json` pero **NO DEBE** ser copia mecanica.
 
-### 9.4 Limites de bootstrap
+### 9.4 Contrato estructurado de transmutacion
+
+1. Toda transmutacion destinada a configuracion o deploy posterior **DEBE** emitir un `Transmutation Contract` autosuficiente junto al wrapper.
+2. El contrato **DEBE** separar al menos:
+   - workspace target
+   - `Platform Config Projection`
+   - `Managed Install Plan`
+   - hints y restricciones de topologia/deploy
+3. El paso de configuracion o deploy posterior **NO DEBE** depender de reinterpretar `TOOLS.md`, `SOUL.md` u otro bootstrap textual para datos criticos que ya sean expresables estructuradamente.
+4. El adapter **NO DEBE** colapsar dentro del workspace target informacion que pertenece a config nativa, instalaciones gestionadas o estado operativo.
+
+### 9.5 Estado operativo excluido
+
+1. `Runtime State` **NO DEBE** formar parte del wrapper ni del `Transmutation Contract` salvo como referencia abstracta a prerequisitos.
+2. Credenciales, `auth-profiles.json`, sesiones, pairing stores, caches, volumes y otros artefactos mutables **DEBEN** resolverse en runtime por vias nativas de plataforma.
+3. Un pipeline de transmutacion **NO DEBE** promover estado operativo mutable a fuente normativa.
+
+### 9.6 Limites de bootstrap
 
 Todo runtime **PUEDE** imponer limites de tamaño al bootstrap inyectado. Cuando la plataforma declare limites, el proceso de transmutacion **DEBERIA** verificar que los componentes no excedan esos limites. Si exceden, los componentes **DEBERIAN** compactarse o particionarse en skills lazy-load.
 
-### 9.5 Runtime drift
+### 9.7 Runtime drift
 
 El workspace runtime opera como extension gobernada del workspace canonico (repo KORA). Se aplica el principio de extensiones (`gobernanza §6`):
 
@@ -220,7 +243,7 @@ Tipos de drift y su gestion:
 | Violacion sustractiva   | Regla eliminada, check removido         | Prohibido           | Corregir en runtime     |
 | Mutacion identitaria    | FSM modificada, `SOUL.md` reescrito     | Prohibido           | Revertir o backportear via repo |
 
-### 9.5.1 Reconciliacion
+### 9.7.1 Reconciliacion
 
 Periodicamente, el operador **DEBE** ejecutar reconciliacion:
 
@@ -232,11 +255,11 @@ Periodicamente, el operador **DEBE** ejecutar reconciliacion:
 
 Un re-deploy **NO DEBE** copiar el workspace del repo sobre el workspace desplegado sin ejecutar `diff` previo. El drift detectado **DEBE** evaluarse antes de descartarse.
 
-### 9.5.2 Source of truth
+### 9.7.2 Source of truth
 
 El repo KORA es fuente de verdad normativa. El workspace runtime es fuente de verdad operativa. Cuando divergen, la normativa prevalece — pero la operativa puede alimentar la normativa a traves de la reconciliacion.
 
-### 9.6 Verificacion
+### 9.8 Verificacion
 
 1. Pre-deploy: `kora validate --profile strict` + toolchain de plataforma (e.g., `openclaw doctor`).
 2. Post-deploy: verificar cadena e2e.
@@ -274,6 +297,9 @@ El repo KORA es fuente de verdad normativa. El workspace runtime es fuente de ve
 | Source/wrapper segregado | `skills/CM-*/SKILL.md` fuente no se confunde con wrapper   | lint        | Corregir pipeline        |
 | Activacion por Forget    | Un Skill extendido se activa via `CM Core` antes del bundle| runtime     | Corregir adapter         |
 | Routing segregado        | Tier, fallback y budget viven en `config.json`             | lint        | Reubicar config          |
+| Native-first             | Config y enforcement usan superficies nativas cuando existen | runtime   | Corregir adapter         |
+| Contrato estructurado    | El wrapper incluye contrato autosuficiente para config/deploy | manual   | Completar contract       |
+| Estado operativo excluido | Credenciales, sesiones y caches quedan fuera del wrapper  | lint        | Excluir estado mutable   |
 | Equivalencia minima      | Inputs representativos no divergen funcionalmente          | eval        | Ajustar adapter o gating |
 | Wrapper inmutable        | La fuente del workspace no se modifica                     | lint        | Regenerar wrapper        |
 | config.json excluido     | `config.json` no esta presente en workspace target         | lint        | Excluir del pipeline     |
@@ -293,7 +319,8 @@ Esta seccion se establece a partir de v3.5.0. Los breaking changes de major bump
 - Equivalencia funcional cross-platform, no bisimulacion textual (§6).
 - Model routing y fallback en `config.json`, no en `AGENTS.md` (§7, §8).
 - Transmutacion con pipeline canonico: strip, excluir config, generar, copiar, verificar (§9).
-- Runtime drift gobernado: agregar si, relajar no, mutar identidad no (§9.5).
-- Contrato identitario: `AGENTS.md`, `SOUL.md`, `TOOLS.md` completos (§9.5).
+- Contrato estructurado obligatorio para config/deploy y estado operativo excluido (§9.4, §9.5).
+- Runtime drift gobernado: agregar si, relajar no, mutar identidad no (§9.7).
+- Contrato identitario: `AGENTS.md`, `SOUL.md`, `TOOLS.md` completos (§9.7).
 
 Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

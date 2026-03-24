@@ -32,6 +32,7 @@
     "urn:agengai:kb:cheatsheet",
     "urn:kora:kb:agent-spec-md",
     "urn:kora:kb:gobernanza",
+    "urn:agengai:kb:openclaw-runtime-extension",
     "urn:ops:kb:deploy-agente-kora-en-openclaw",
     "urn:ops:kb:principios-transmutacion-kora-openclaw",
     "urn:ops:kb:arquitectura-stack-kora",

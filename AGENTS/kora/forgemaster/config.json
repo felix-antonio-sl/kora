@@ -21,7 +21,8 @@
     "urn:kora:kb:cat-behavioral-preservation",
     "urn:kora:kb:cat-fxsl-bridge",
     "urn:agengai:kb:skills-anthropic",
-    "urn:agengai:kb:openclaw-integration"
+    "urn:agengai:kb:openclaw-integration",
+    "urn:agengai:kb:openclaw-runtime-extension"
   ],
   "sandbox": {
     "mode": "strict"

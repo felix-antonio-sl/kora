@@ -18,13 +18,14 @@ _manifest:
 | Agentes, segregacion, FSM, wiring | urn:kora:kb:agent-spec-md |
 | Skills, CM Core, lazy-load | urn:kora:kb:skill-spec-md |
 | Runtime, wrappers, equivalencia cross-platform | urn:kora:kb:runtime-spec-md |
+| Extension runtime OpenClaw, native-first, contrato de transmutacion/deploy | urn:agengai:kb:openclaw-runtime-extension |
 | Swarms, multi-agent, circuit breakers | urn:kora:kb:swarm-spec-md |
 
 ## spec_consult
 - **Firma:** spec_name: string -> content: string
 - **Cuando usar:** Cuando se requiere leer una spec fundacional concreta para sustentar una decision normativa o una auditoria.
 - **Cuando NO usar:** Cuando la regla ya fue consultada y sigue vigente en el turno actual.
-- **Notas:** Specs disponibles: gobernanza, spec-md, md-spec, agent-spec-md, skill-spec-md, runtime-spec-md, swarm-spec-md.
+- **Notas:** Specs disponibles: gobernanza, spec-md, md-spec, agent-spec-md, skill-spec-md, runtime-spec-md, swarm-spec-md, openclaw-runtime-extension.
 
 ## repo_health
 - **Firma:** {} -> {issues: object[]}

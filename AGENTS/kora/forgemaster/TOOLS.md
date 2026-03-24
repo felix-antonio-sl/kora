@@ -38,6 +38,7 @@ _manifest:
 | Formal layer puente FXSL, formal/08 | urn:kora:kb:cat-fxsl-bridge |
 | Anthropic skills, Claude Code, skill format, triggers, MCP | urn:agengai:kb:skills-anthropic |
 | OpenClaw, workspace, config, sub-agents, gating, channels | urn:agengai:kb:openclaw-integration |
+| OpenClaw native-first, contrato estructurado de transmutacion/deploy | urn:agengai:kb:openclaw-runtime-extension |
 
 ## workspace_read
 

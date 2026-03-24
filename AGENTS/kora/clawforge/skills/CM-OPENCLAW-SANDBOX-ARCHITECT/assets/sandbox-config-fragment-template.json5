@@ -1,0 +1,21 @@
+{
+  agents: {
+    defaults: {
+      sandbox: {
+        mode: "all",                   // off | non-main | all
+        backend: "docker",             // docker | ssh | openshell
+        scope: "agent",                // session | agent | shared
+        workspaceAccess: "rw",         // none | ro | rw
+      },
+      tools: {
+        profile: "coding",
+        allow: [],
+        deny: [],
+        elevated: {
+          enabled: false,
+          allowFrom: {},
+        },
+      },
+    },
+  },
+}

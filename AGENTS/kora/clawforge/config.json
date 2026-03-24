@@ -1,0 +1,58 @@
+{
+  "_manifest": {
+    "urn": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:kora:kb:gobernanza",
+    "urn:kora:kb:agent-spec-md",
+    "urn:kora:kb:skill-spec-md",
+    "urn:kora:kb:runtime-spec-md",
+    "urn:agengai:kb:openclaw-runtime-extension",
+    "urn:agengai:kb:openclaw-integration",
+    "urn:ops:kb:deploy-agente-kora-en-openclaw",
+    "urn:ops:kb:principios-transmutacion-kora-openclaw",
+    "urn:ops:kb:arquitectura-stack-kora",
+    "urn:ops:kb:federacion-kora-v2",
+    "urn:ops:kb:ux-telegram-openclaw"
+  ],
+  "sandbox": {
+    "mode": "strict"
+  },
+  "tools": {
+    "allow": [
+      "agent_list",
+      "artifact_read",
+      "artifact_write",
+      "catalog_resolve",
+      "diff_compute",
+      "health_check",
+      "kb_route",
+      "oc_cli",
+      "oc_docs_search",
+      "spec_consult",
+      "host_exec",
+      "docker_exec",
+      "workspace_read",
+      "workspace_write"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 1,
+    "max_concurrent": 3
+  },
+  "limits": {
+    "policy_flags": {
+      "require_validation_before_write": true
+    }
+  },
+  "runtime_capabilities": {
+    "allow": [
+      "deploy",
+      "filesystem_read",
+      "code_execution"
+    ],
+    "deny": []
+  }
+}

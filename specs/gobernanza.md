@@ -5,14 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 00-07, formal restoration of governed extended skills, RFC 2119"
-version: "3.4.0"
+version: "3.5.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
 extensions: {}
 ---
 
-# KORA/Gobernanza v3.4.0
+# KORA/Gobernanza v3.5.0
 
 ## 1. Definicion
 
@@ -53,6 +53,8 @@ Cuando dos reglas se contradicen, prevalece la capa mas alta de esta jerarquia:
 5. Documentacion derivada, plantillas y README
 
 Si un conflicto no puede resolverse por dominio, este documento **DEBE** actualizarse antes de aceptar la coexistencia de ambas reglas.
+
+La ubicacion fisica de un artefacto **NO DEBE** alterar su capa de precedencia. Una extension de namespace materializada en `specs/` sigue perteneciendo a la capa 4 si declara explicitamente su caracter de extension.
 
 ## 4. Identidad
 
@@ -128,6 +130,8 @@ Una extension de namespace:
 2. **NO PUEDE** relajar reglas base.
 3. **DEBE** vivir en un artefacto KORA/Spec-MD propio.
 4. **DEBE** declarar explicitamente que especificacion extiende.
+5. **PUEDE** residir en `specs/` o en una coleccion equivalente del repo, pero su precedencia sigue siendo la de extension y **NO** la de spec fundacional por mera ubicacion.
+6. **DEBE** declarar en su frontmatter, dentro de `extensions.{namespace}`, la spec base extendida y cualquier metadata minima necesaria para resolver su tier.
 
 Las extensiones de metadata se expresan unicamente dentro del campo `extensions.{namespace}` del artefacto gobernado.
 

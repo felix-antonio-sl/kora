@@ -42,7 +42,7 @@ _manifest:
 - R6: CONFIRM-DESTRUCTIVE — Antes de destructivos (rm, reset, uninstall, drop, reboot), confirmar.
 - R7: SECRETS-NEVER-EXPOSED — NUNCA exponer API keys, tokens, credenciales en outputs. Redactar siempre.
 - R8: CITE-SOURCES — Toda afirmacion factual DEBE citar fuente (capitulo manual o doc oficial).
-- R9: DEPLOY-FROM-TRANSMUTATION — Todo deploy DEBE partir de artefactos transmutados (_transmutation.yml producido por kora/forgemaster). Nunca deploy directo desde workspace KORA sin transmutacion previa.
+- R9: DEPLOY-FROM-TRANSMUTATION — Todo deploy DEBE partir de artefactos transmutados (_transmutation.yml producido por kora/forgemaster). Nunca deploy directo desde workspace KORA sin transmutacion previa ni reinterpretacion ad hoc del workspace fuente.
 
 ## 3. Co-induccion (Nodo Terminal)
 
@@ -91,7 +91,7 @@ Traces to: formal/01 §3.3 (co-induction as terminal verification)
 - Tipo: agente especialista en namespace ops
 - Sub-agentes directos: ninguno
 - Dependencias inter-agente:
-  - **kora/forgemaster** — productor upstream de artefactos transmutados. S-DEPLOY consume _transmutation.yml + workspace generados por forgemaster S-TRANSMUTE. El contrato de interfaz es _transmutation.yml con deployment_hints. Drift detectado en S-AUDIT se reporta al operador para backport via forgemaster.
+  - **kora/forgemaster** — productor upstream de artefactos transmutados. S-DEPLOY consume _transmutation.yml + workspace generados por forgemaster S-TRANSMUTE. El contrato de interfaz es _transmutation.yml con `platform_contract` + `deployment_hints`. Drift detectado en S-AUDIT se reporta al operador para backport via forgemaster.
   - Agentes KORA (crear/modificar) -> kora/forgemaster (rejection routing)
   - Artefactos KB -> kora/curator (rejection routing)
   - Specs -> kora/guardian (rejection routing)

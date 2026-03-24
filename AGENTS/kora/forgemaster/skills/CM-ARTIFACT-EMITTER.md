@@ -7,7 +7,7 @@ _manifest:
 # CM-ARTIFACT-EMITTER
 
 ## Proposito
-Escribe artefactos derivados de transmutacion al directorio de output y es el unico responsable de generar el manifest de sincronizacion `_transmutation.yml` con metadata de trazabilidad.
+Escribe artefactos derivados de transmutacion al directorio de output y es el unico responsable de generar el manifest de sincronizacion `_transmutation.yml` con metadata de trazabilidad y contrato estructurado de plataforma.
 
 ## Input/Output
 - **Input:** artifacts: TransmutedArtifact[] (artefactos generados por adapter), output_dir: string, source_analysis: WorkspaceAnalysis, manifest_overrides: object | null
@@ -36,7 +36,8 @@ Escribe artefactos derivados de transmutacion al directorio de output y es el un
      runtime_spec_version: {version de runtime-spec-md usada}
      transmutador_version: 1.0.0
    ```
-   - Campos target-specific (`deployment_hints`, `exclusions`, `enforcement_gaps`, `behavioral_equivalence`, etc.) vienen en `manifest_overrides`.
+   - Campos target-specific (`platform_contract`, `deployment_hints`, `exclusions`, `enforcement_gaps`, `behavioral_equivalence`, etc.) vienen en `manifest_overrides`.
+   - Para target OpenClaw, `platform_contract` **DEBE** existir y separar `workspace_target`, `config_projection`, `managed_installs`, `deployment_hints` y `runtime_exclusions`.
 4. Escribir `_transmutation.yml` en output_dir.
 5. Verificar que ningun artefacto emitido contiene frontmatter KORA ni _manifest residual (runtime-spec §9.2, skill-spec §6 inv.7).
 6. Presentar tabla resumen: archivo | tipo | tamano | hash.

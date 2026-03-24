@@ -1,0 +1,11 @@
+runtime_patch:
+  mode: "patch"
+  operations:
+    - target_path: "channels.telegram"
+      op: "merge"          # merge | replace | remove
+      value: {}
+      restart_required: false
+      rationale: ""
+  validation:
+    requires_contract_validation: true
+    unresolved_inputs: []

@@ -48,7 +48,7 @@ Auditoria full-stack en 3 capas con multiples ejes por capa. Emite reporte PASS|
 13. Directorio de agentes: `/srv/kora/shared/federation/directorio-agentes.md` existe, es legible desde todos los containers, y lista todos los agentes desplegados con dominio, hook URL y canal.
 14. Hooks bidireccional: test `curl POST /hooks/agent` entre cada par de gateways exitoso (HTTP 200 + runId).
 15. Panel web: `kora-panel` container healthy, `https://kora.sanixai.com/api/health` retorna todos los gateways OK, registry.json actualizado.
-16. TOOLS.md de cada agente: contiene seccion `## Federacion kora` con tabla de agentes, protocolo de derivacion y rutas de shared, sin tokens ni credenciales.
+16. Workspace docs del agente: no contienen overlays operacionales vivos ni secretos de federation; la metadata de derivacion vive en config runtime y `/srv/kora/shared/federation/directorio-agentes.md`.
 
 ### Drift Detection (agentes desplegados)
 17. Workspace drift: para cada agente desplegado en /srv/kora/workspaces/, diff version stripped del repo KORA vs version desplegada. Clasificar: regla emergente (backport candidate), residuo (limpiar), memory (normal), heartbeat (normal).

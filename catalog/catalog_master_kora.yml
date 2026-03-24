@@ -329,6 +329,26 @@ Catalog:
     title: USER.md
     file: AGENTS/gn/goreologo/USER.md
     status: published
+  - urn: urn:kora:agent-bootstrap:clawforge-agents:1.0.0
+    title: AGENTS.md
+    file: AGENTS/kora/clawforge/AGENTS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawforge-config:1.0.0
+    title: config.json
+    file: AGENTS/kora/clawforge/config.json
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawforge-soul:1.0.0
+    title: SOUL.md
+    file: AGENTS/kora/clawforge/SOUL.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawforge-tools:1.0.0
+    title: TOOLS.md
+    file: AGENTS/kora/clawforge/TOOLS.md
+    status: published
+  - urn: urn:kora:agent-bootstrap:clawforge-user:1.0.0
+    title: USER.md
+    file: AGENTS/kora/clawforge/USER.md
+    status: published
   - urn: urn:kora:agent-bootstrap:curator-agents:2.1.0
     title: AGENTS.md
     file: AGENTS/kora/curator/AGENTS.md
@@ -870,6 +890,106 @@ Catalog:
     title: CM-SYNTHESIZER
     file: AGENTS/gn/goreologo/skills/CM-SYNTHESIZER.md
     status: published
+  - urn: urn:kora:skill:clawforge-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: AGENTS/kora/clawforge/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: AGENTS/kora/clawforge/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0
+    title: CM-LIFECYCLE-ORCHESTRATOR
+    file: AGENTS/kora/clawforge/skills/CM-LIFECYCLE-ORCHESTRATOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-auditor:1.0.0
+    title: CM-OPENCLAW-AUDITOR
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-AUDITOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-builder:1.0.0
+    title: CM-OPENCLAW-BUILDER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-BUILDER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0
+    title: CM-OPENCLAW-CONTRACT-ASSEMBLER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-ASSEMBLER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0
+    title: CM-OPENCLAW-CONTRACT-EMITTER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-EMITTER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0
+    title: CM-OPENCLAW-CONTRACT-RECONCILER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-RECONCILER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0
+    title: CM-OPENCLAW-CONTRACT-VALIDATOR
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-VALIDATOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contractor:1.0.0
+    title: CM-OPENCLAW-CONTRACTOR
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACTOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-deployer:1.0.0
+    title: CM-OPENCLAW-DEPLOYER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-DEPLOYER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-designer:1.0.0
+    title: CM-OPENCLAW-DESIGNER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-DESIGNER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-evolver:1.0.0
+    title: CM-OPENCLAW-EVOLVER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-EVOLVER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-handoff:1.0.0
+    title: CM-OPENCLAW-HANDOFF
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-HANDOFF.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0
+    title: CM-OPENCLAW-KNOWLEDGE-NAVIGATOR
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-KNOWLEDGE-NAVIGATOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-operator:1.0.0
+    title: CM-OPENCLAW-OPERATOR
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-OPERATOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0
+    title: CM-OPENCLAW-PATCH-APPLIER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-APPLIER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0
+    title: CM-OPENCLAW-PATCH-PLANNER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-PLANNER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0
+    title: CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0
+    title: CM-OPENCLAW-PRODUCTION-PROMOTER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-PRODUCTION-PROMOTER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0
+    title: CM-OPENCLAW-SANDBOX-ARCHITECT
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-SANDBOX-ARCHITECT/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-surgeon:1.0.0
+    title: CM-OPENCLAW-SURGEON
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0
+    title: CM-OPENCLAW-TELEGRAM-ARCHITECT
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-TELEGRAM-ARCHITECT/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-topologist:1.0.0
+    title: CM-OPENCLAW-TOPOLOGIST
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-TOPOLOGIST/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0
+    title: CM-OPENCLAW-TROUBLESHOOTER
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-TROUBLESHOOTER.md
+    status: published
   - urn: urn:kora:skill:curator-artifact-auditor:2.0.0
     title: CM-ARTIFACT-AUDITOR
     file: AGENTS/kora/curator/skills/CM-ARTIFACT-AUDITOR/SKILL.md
@@ -1330,6 +1450,10 @@ Catalog:
   - urn: urn:agengai:kb:openclaw-integration
     title: OpenClaw Integration Guide
     file: KNOWLEDGE/agengai/openclaw-integration.md
+    status: published
+  - urn: urn:agengai:kb:openclaw-runtime-extension
+    title: AGENGAI/OpenClaw-Runtime-Extension v1.0.0
+    file: specs/openclaw-runtime-extension.md
     status: published
   - urn: urn:agengai:kb:readme
     title: Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
@@ -1929,7 +2053,7 @@ Catalog:
     file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra.md
     status: published
   - urn: urn:kora:kb:gobernanza
-    title: KORA/Gobernanza v3.4.0
+    title: KORA/Gobernanza v3.5.0
     file: specs/gobernanza.md
     status: published
   - urn: urn:kora:kb:hub-agentes
@@ -1945,7 +2069,7 @@ Catalog:
     file: KNOWLEDGE/kora/sys/pipeline-ingesta.md
     status: published
   - urn: urn:kora:kb:runtime-spec-md
-    title: KORA/Runtime-Spec v3.5.0
+    title: KORA/Runtime-Spec v3.6.0
     file: specs/runtime-spec-md.md
     status: published
   - urn: urn:kora:kb:skill-spec-md
@@ -1978,7 +2102,7 @@ Catalog:
     status: published
   - urn: urn:legal:kb:acoso-laboral
     title: Acoso Laboral y Sexual en el Ámbito Médico
-    file: KNOWLEDGE/legal/acoso_laboral.md
+    file: KNOWLEDGE/legal/trabajo-medico/acoso_laboral.md
     status: published
   - urn: urn:legal:kb:certificados-tramites-post-constitucion
     title: Certificados y Tramites Post-Constitucion en el RES
@@ -1986,19 +2110,19 @@ Catalog:
     status: published
   - urn: urn:legal:kb:confianza-legitima
     title: Confianza Legítima en Contratas Médicas
-    file: KNOWLEDGE/legal/confianza_legitima.md
+    file: KNOWLEDGE/legal/trabajo-medico/confianza_legitima.md
     status: published
   - urn: urn:legal:kb:contratacion-publica
     title: Contratación Pública de Servicios Médicos en Chile
-    file: KNOWLEDGE/legal/contratacion_publica.md
+    file: KNOWLEDGE/legal/trabajo-medico/contratacion_publica.md
     status: published
   - urn: urn:legal:kb:deberes-prohibiciones
     title: Deberes, Prohibiciones e Incompatibilidades en el Trabajo Médico
-    file: KNOWLEDGE/legal/deberes_prohibiciones.md
+    file: KNOWLEDGE/legal/trabajo-medico/deberes_prohibiciones.md
     status: published
   - urn: urn:legal:kb:derechos-especiales
     title: 'Derechos Especiales: Liberación de Guardia e Incentivo al Retiro'
-    file: KNOWLEDGE/legal/derechos_especiales.md
+    file: KNOWLEDGE/legal/trabajo-medico/derechos_especiales.md
     status: published
   - urn: urn:legal:kb:eirl-empresa-individual
     title: Empresa Individual de Responsabilidad Limitada (E.I.R.L.)
@@ -2006,7 +2130,7 @@ Catalog:
     status: published
   - urn: urn:legal:kb:feriados-permisos
     title: Feriados, Permisos y Comisiones
-    file: KNOWLEDGE/legal/feriados_permisos.md
+    file: KNOWLEDGE/legal/trabajo-medico/feriados_permisos.md
     status: published
   - urn: urn:legal:kb:firma-electronica-empresas
     title: Firma Electronica Avanzada en el Registro de Empresas y Sociedades
@@ -2014,36 +2138,36 @@ Catalog:
     status: published
   - urn: urn:legal:kb:formacion-especialistas
     title: Formación de Especialistas, PAO y Comisiones de Estudio
-    file: KNOWLEDGE/legal/formacion_especialistas.md
+    file: KNOWLEDGE/legal/trabajo-medico/formacion_especialistas.md
     status: published
   - urn: urn:legal:kb:index
     title: Índice Global - Legislación Trabajo Médico Chile
-    file: KNOWLEDGE/legal/index.md
+    file: KNOWLEDGE/legal/trabajo-medico/index.md
     status: published
   - urn: urn:legal:kb:ingreso-carrera
     title: Ingreso a la Carrera y Vida Laboral Médica
-    file: KNOWLEDGE/legal/ingreso_carrera.md
+    file: KNOWLEDGE/legal/trabajo-medico/ingreso_carrera.md
     status: published
   - urn: urn:legal:kb:intro-estatutos
     title: Introducción y Estatutos Jurídicos - Trabajo Médico Chile
-    file: KNOWLEDGE/legal/intro_estatutos.md
+    file: KNOWLEDGE/legal/trabajo-medico/intro_estatutos.md
     status: published
   - urn: urn:legal:kb:jornada-calificaciones
     title: Jornada de Trabajo y Calificaciones (Trabajo Médico)
-    file: KNOWLEDGE/legal/jornada_calificaciones.md
+    file: KNOWLEDGE/legal/trabajo-medico/jornada_calificaciones.md
     status: published
   - urn: urn:legal:kb:legislacion-ia-chile
     title: Análisis de la Legislación de Inteligencia Artificial en Chile
-    file: KNOWLEDGE/legal/legislacion_ia_chile.md
+    file: KNOWLEDGE/legal/trabajo-medico/legislacion_ia_chile.md
     status: published
   - urn: urn:legal:kb:ley-15076
     title: 'Ley 15.076: Estatuto de los Profesionales Funcionarios de la Salud'
-    file: KNOWLEDGE/legal/ley_15076.md
+    file: KNOWLEDGE/legal/trabajo-medico/ley_15076.md
     status: published
   - urn: urn:legal:kb:ley-19664
     title: 'Ley 19.664: Normas Especiales para Profesionales Funcionarios de Servicios
       de Salud'
-    file: KNOWLEDGE/legal/ley_19664.md
+    file: KNOWLEDGE/legal/trabajo-medico/ley_19664.md
     status: published
   - urn: urn:legal:kb:ley-20659-regimen-simplificado
     title: Ley 20.659 — Regimen Simplificado Constitucion Sociedades
@@ -2051,20 +2175,20 @@ Catalog:
     status: published
   - urn: urn:legal:kb:ley-21643
     title: 'Ley 21.643: Prevención y Sanción de Acoso y Violencia en el Trabajo'
-    file: KNOWLEDGE/legal/ley_21643.md
+    file: KNOWLEDGE/legal/trabajo-medico/ley_21643.md
     status: published
   - urn: urn:legal:kb:ley-21658-segdig
     title: 'Ley N° 21.658: Creación de la Secretaría de Gobierno Digital'
-    file: KNOWLEDGE/legal/ley_21658_segdig.md
+    file: KNOWLEDGE/legal/trabajo-medico/ley_21658_segdig.md
     status: published
   - urn: urn:legal:kb:ley-21719-datos-personales
     title: Ley N° 21.719 de Protección de Datos Personales
-    file: KNOWLEDGE/legal/ley_21719_datos_personales.md
+    file: KNOWLEDGE/legal/trabajo-medico/ley_21719_datos_personales.md
     status: published
   - urn: urn:legal:kb:ley-ia-chile-texto-aprobado-camara
     title: Ley que Regula los Sistemas de Inteligencia Artificial — Texto Aprobado
       Cámara (Boletines 15.869-19 y 16.821-19)
-    file: KNOWLEDGE/legal/ley-ia-chile-texto-aprobado-camara.md
+    file: KNOWLEDGE/legal/trabajo-medico/ley-ia-chile-texto-aprobado-camara.md
     status: published
   - urn: urn:legal:kb:marco-legal-sociedades-chile
     title: Marco Legal Complementario — Sociedades en Chile
@@ -2072,7 +2196,7 @@ Catalog:
     status: published
   - urn: urn:legal:kb:maternidad
     title: Protección a la Maternidad y Paternidad
-    file: KNOWLEDGE/legal/maternidad.md
+    file: KNOWLEDGE/legal/trabajo-medico/maternidad.md
     status: published
   - urn: urn:legal:kb:patente-comercial-res
     title: Patente Comercial — Modulo Tu Empresa en un Dia
@@ -2088,11 +2212,11 @@ Catalog:
     status: published
   - urn: urn:legal:kb:remuneraciones
     title: Remuneraciones y Asignaciones — Trabajo Médico Chile
-    file: KNOWLEDGE/legal/remuneraciones.md
+    file: KNOWLEDGE/legal/trabajo-medico/remuneraciones.md
     status: published
   - urn: urn:legal:kb:responsabilidad-admin
     title: Responsabilidad Administrativa
-    file: KNOWLEDGE/legal/responsabilidad_admin.md
+    file: KNOWLEDGE/legal/trabajo-medico/responsabilidad_admin.md
     status: published
   - urn: urn:legal:kb:sociedad-anonima-cerrada
     title: Sociedad Anonima Cerrada (S.A.) y Sociedad Anonima de Garantia Reciproca
@@ -2117,7 +2241,7 @@ Catalog:
     status: published
   - urn: urn:legal:kb:terminacion
     title: Terminación de la Relación Laboral y Funcionaria
-    file: KNOWLEDGE/legal/terminacion.md
+    file: KNOWLEDGE/legal/trabajo-medico/terminacion.md
     status: published
   - urn: urn:ops:kb:arquitectura-stack-kora
     title: Arquitectura del stack KORA — Estado operacional

@@ -22,7 +22,7 @@ extensions:
 
 ## Proposito
 
-Ejecutar el pipeline completo de 19 fases para desplegar un agente KORA transmutado a un gateway OpenClaw corriendo en Docker sobre un servidor remoto. Automatiza las fases ejecutables y guia al operador a traves de las interactivas (bot creation, auth setup, pairing, e2e verification) con checkpoints de espera y reanudacion. Incluye integracion con la federacion kora (shared storage, hooks cross-gateway, panel web, UX de canal).
+Ejecutar el pipeline completo para desplegar un agente KORA transmutado a OpenClaw sobre un servidor remoto, consumiendo el contrato native-first emitido por forgemaster. Automatiza las fases ejecutables y guia al operador a traves de las interactivas (bot creation, auth setup, pairing, e2e verification) con checkpoints de espera y reanudacion. Incluye integracion con la federacion kora (shared storage, hooks cross-gateway, panel web, UX de canal).
 
 ## Input/Output
 
@@ -38,25 +38,26 @@ Ejecutar el pipeline completo de 19 fases para desplegar un agente KORA transmut
    - que `target.artifacts` existe y lista artefactos emitidos por forgemaster;
    - que cada artefacto listado existe en staging;
    - que el hash real de cada artefacto coincide con el manifest;
-   - que `deployment_hints` existe.
+   - que `platform_contract` existe;
+   - que `platform_contract.config_projection`, `platform_contract.managed_installs` y `platform_contract.deployment_hints` existen.
 Si falla cualquier check, ABORTAR: "Artefactos transmutados invalidos o adulterados. Re-transmutar con kora/forgemaster." Este skill NO transmuta ni recompone bootstrap desde el workspace KORA fuente — consume artefactos ya transmutados (R9: DEPLOY-FROM-TRANSMUTATION).
 
 Consultar `references/deploy-phases-checklist.md` para verificacion y `references/hetzner-audit-findings.md` para gotchas conocidos. Consultar KB via `kb_route("deploy agentes")` → `urn:ops:kb:deploy-agente-kora-en-openclaw` para procedimiento detallado. Consultar KB via `kb_route("principios transmutacion")` → `urn:ops:kb:principios-transmutacion-kora-openclaw` para marco conceptual.
 
 ### Grupo A: Preparacion de infraestructura (automatizado)
 
-**P01 — PROVISIONING.** Via `host_exec`: crear estructura `/srv/kora/{compose-{gateway},config/{gateway},workspaces/{gateway}/agents/{agent}/{skills,memory},knowledge,scripts,backups,shared/federation,shared/{agent}}`. Ajustar ownership solo sobre los paths creados para este deploy, no sobre todo `/srv/kora`. Verificar estructura con `ls -la`.
+**P01 — PROVISIONING.** Si `platform_contract.deployment_hints.topology.recommended == "single-gateway-multi-agent"` y ya existe un gateway compatible, reutilizarlo antes de crear uno aislado. Solo provisionar gateway/compose dedicados si el contrato exige `isolated-gateway` o el operador documenta la razon. Via `host_exec`: crear estructura `/srv/kora/{compose-{gateway},config/{gateway},workspaces/{gateway}/agents/{agent}/{skills,memory},knowledge,scripts,backups,shared/federation,shared/{agent}}` solo cuando aplique. Ajustar ownership solo sobre los paths creados para este deploy, no sobre todo `/srv/kora`. Verificar estructura con `ls -la`.
 
 **P02 — COPY TRANSMUTED WORKSPACE.** Consumir el workspace ya emitido por forgemaster. Via `host_exec`:
-- localizar `workspace/` y `config-snippet.json5` en el staging dir del manifest;
+- localizar `workspace/` y los artefactos declarados por `platform_contract` en el staging dir del manifest;
 - copiar `workspace/` tal cual a `/srv/kora/workspaces/{gateway}/agents/{agent}/`;
 - preservar nombres, skills adaptados, `IDENTITY.md` y cualquier frontmatter runtime ya generado para OpenClaw;
 - NO re-strippear ni reconstruir bootstrap desde componentes KORA fuente.
 Verificar: conteo de archivos y hashes de los artefactos copiados coinciden con `target.artifacts` del manifest.
 
-**P03 — KB SYNC.** Leer `deployment_hints.kb_mounts` de _transmutation.yml. Para cada KB: resolver URN via `catalog_resolve`, strip frontmatter si la fuente lo requiere y copiar a `/srv/kora/knowledge/{ns}/{file}`. Fijar permisos read-only. KBs NO van en bootstrap — son archivos montados que el agente lee on-demand (principios P8). Verificar: conteo, rutas y tamanos aproximados coinciden.
+**P03 — KB SYNC.** Leer `platform_contract.deployment_hints.kb_mounts` de _transmutation.yml. Para cada KB: resolver URN via `catalog_resolve`, strip frontmatter si la fuente lo requiere y copiar a `/srv/kora/knowledge/{ns}/{file}`. Fijar permisos read-only. KBs NO van en bootstrap — son archivos montados que el agente lee on-demand (principios P8). Verificar: conteo, rutas y tamanos aproximados coinciden.
 
-**P04 — DOCKER BUILD.** Via `docker_exec`: desde el repo operativo de OpenClaw (`{openclaw_repo_path}` resuelto desde el contexto del host), build imagen base OpenClaw: `cd {openclaw_repo_path} && docker build -t openclaw-local:latest .`. Si `deployment_hints.requires_sidecar == true`: build imagen sidecar. Si `deployment_hints.architecture == "caso-b"`: build overlay gateway con ENV del sidecar API. Verificar: `docker images` muestra tags esperados.
+**P04 — DOCKER BUILD.** Via `docker_exec`: desde el repo operativo de OpenClaw (`{openclaw_repo_path}` resuelto desde el contexto del host), build imagen base OpenClaw: `cd {openclaw_repo_path} && docker build -t openclaw-local:latest .`. Si `platform_contract.deployment_hints.requires_sidecar == true`: build imagen sidecar. Si `platform_contract.deployment_hints.architecture == "caso-b"`: build overlay gateway con ENV del sidecar API. Verificar: `docker images` muestra tags esperados.
 
 ### Grupo B: Checkpoint interactivo — Bot creation (guiado)
 
@@ -69,11 +70,17 @@ Requiere del operador: TELEGRAM_BOT_TOKEN, TELEGRAM_USER_ID. Almacenar para P07.
 
 ### Grupo C: Configuracion de entorno y volume (automatizado)
 
-**P05 — CONFIG PARAMETRIZATION.** Leer `config-snippet.json5` del staging dir. Parametrizar openclaw.json5: agent_id, gateway_name, puerto (spacing minimo 20 entre gateways — principios P7; detectar puertos existentes via `docker ps`), modelo, identity, sandbox, channels con datos de P06. Escribir a `/srv/kora/config/{gateway}/openclaw.json5`. Para kora-federation: detectar si ya existe (`docker network ls | grep kora-federation`); si existe usar `external: true`, si no crearla con `driver: bridge` (hallazgo H3). Si agente tiene bindings a proyectos dev (detectar de TOOLS.md): agregar mounts RW (hallazgo H5). Parametrizar docker-compose.yml: imagen, container name, puerto, volumes, red. Escribir a `/srv/kora/compose-{gateway}/docker-compose.yml`. Verificar: `cd /srv/kora/compose-{gateway} && docker compose config --quiet`.
+**P05 — CONFIG PARAMETRIZATION.** Leer `platform_contract.config_projection` del staging dir o del manifest. Parametrizar openclaw.json5: agent_id, gateway_name, puerto (spacing minimo 20 entre gateways — principios P7; detectar puertos existentes via `docker ps`), modelo, identity, sandbox, channels con datos de P06 y cualquier override explicito del contrato. Escribir a `/srv/kora/config/{gateway}/openclaw.json5`. Para kora-federation: detectar si ya existe (`docker network ls | grep kora-federation`); si existe usar `external: true`, si no crearla con `driver: bridge` (hallazgo H3). Si existen mounts RW o requerimientos especiales, leerlos desde `platform_contract.deployment_hints.bind_mounts` o `manual_inputs_required`; **NO** inferirlos desde `TOOLS.md`. Parametrizar docker-compose.yml: imagen, container name, puerto, volumes, red. Escribir a `/srv/kora/compose-{gateway}/docker-compose.yml`. Verificar: `cd /srv/kora/compose-{gateway} && docker compose config --quiet`.
 
 **P07 — ENV GENERATION.** Via `host_exec`: generar OPENCLAW_AUTH_TOKEN (`openssl rand -hex 32`). Escribir `.env` con TELEGRAM_BOT_TOKEN (de P06), OPENCLAW_AUTH_TOKEN, NODE_ENV=production. Si sidecar: agregar SERVICE_API. `chmod 600 /srv/kora/compose-{gateway}/.env`. Actualizar openclaw.json5 con TELEGRAM_USER_ID (como integer) en `channels.telegram.allowFrom`. Verificar: `.env` existe con permisos correctos.
 
 **P08 — VOLUME INIT.** Via `docker_exec`: pre-seed named volume con `docker compose run --rm --user root --no-deps --entrypoint sh gateway` para crear dirs y fijar ownership uid 1000 (node). Copiar config al volume. Verificar: dirs creados, config copiado, ownership correcta.
+
+**P08.5 — MANAGED INSTALLS.** Leer `platform_contract.managed_installs`. Para cada install nativo:
+1. `skills`: ejecutar `openclaw skills install <slug> [--version <version>]` cuando `source != "workspace"`.
+2. `plugins`: ejecutar `openclaw plugins install <locator>` respetando source/version/marketplace declarados.
+3. `bundles`: instalar via `openclaw plugins install <locator>` o surface equivalente declarada por el contrato.
+Verificar con `openclaw skills list`, `openclaw plugins list` o diagnostico equivalente. Ningun install gestionado **DEBE** quedar implícito.
 
 ### Grupo D: Checkpoint interactivo — Auth setup (guiado)
 
@@ -113,7 +120,7 @@ Consultar KB via `kb_route("federacion kora")` → `urn:ops:kb:federacion-kora-v
 3. Configurar hooks en openclaw.json5: `hooks: { enabled: true, token: "{hooks_token}" }`. Token debe ser literal (OpenClaw no interpola env vars).
 4. Configurar gateway bind: `gateway.bind: "lan"` (requerido para que otros containers en kora-federation alcancen el gateway; el port mapping Docker `127.0.0.1:{port}:{port}` sigue protegiendo del acceso externo).
 5. NO duplicar el hooks token en `.env`, `TOOLS.md`, directorios compartidos ni outputs. Redactarlo siempre fuera de runtime config.
-6. Agregar seccion `## Federacion kora — derivacion inter-agente` al TOOLS.md del workspace con: tabla de agentes, hook URLs, protocolo de derivacion e instrucciones de shared storage, sin token ni otras credenciales.
+6. NO modificar `TOOLS.md` desplegado como overlay operacional. Publicar la metadata de federation en `/srv/kora/shared/federation/directorio-agentes.md` y en runtime config, sin convertir el workspace target en scratchpad operativo.
 7. Actualizar `/srv/kora/shared/federation/directorio-agentes.md` con la nueva entrada del agente (dominio, gateway, hook URL, Telegram bot).
 8. Verificar: `docker exec {container} cat /home/node/shared/federation/directorio-agentes.md` legible; `docker exec {container} touch /home/node/shared/{agent_id}/test` OK; hook test bidireccional con al menos un gateway existente via `curl POST /hooks/agent`.
 

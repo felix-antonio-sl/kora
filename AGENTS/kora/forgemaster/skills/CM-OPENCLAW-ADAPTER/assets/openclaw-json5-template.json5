@@ -36,7 +36,7 @@
   gateway: {
     mode: "local",
     port: {puerto_base},               // espaciar minimo 20 entre gateways (P7)
-    bind: "loopback",                   // "auto"|"lan"|"loopback"|"custom"|"tailnet"
+    bind: "lan",                        // En Docker bridge, loopback dentro del container deja el gateway inaccesible desde eth0
     controlUi: { enabled: true, basePath: "/openclaw" },
     auth: { mode: "token" },
   },
@@ -51,7 +51,8 @@
       reactionLevel: "minimal",
       linkPreview: false,
       textChunkLimit: 4000,
-      chunkMode: "newline",
+      chunkMode: "length",
+      // silentErrorReplies: true,     // opcional segun UX objetivo
     },
     // discord, whatsapp, etc: descomentar segun canal requerido
   },
