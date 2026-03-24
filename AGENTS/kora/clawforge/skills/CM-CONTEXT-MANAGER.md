@@ -15,7 +15,7 @@ Detectar desvio entre la fase OpenClaw activa y la solicitud actual.
 
 ## Procedimiento
 1. Comparar solicitud con la fase activa.
-2. Si la solicitud cambia de dominio relevante, reenviar a `S-DISPATCHER`.
+2. Si la solicitud cambia de dominio relevante, marcar shift detectado.
 3. Preservar `agente_target`, `topology_target`, `contract_path` y hallazgos pendientes.
 
 ## Signature Output

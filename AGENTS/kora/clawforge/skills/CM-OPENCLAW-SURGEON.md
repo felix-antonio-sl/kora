@@ -16,7 +16,7 @@ Aplicar fixes minimos sobre workspace o contrato OpenClaw-oriented, incluyendo r
 ## Procedimiento
 1. Clasificar si el problema es bootstrap, contract, topology o drift.
 2. Corregir el minimo conjunto de componentes necesarios.
-3. Revalidar el componente tocado y reenviar a `S-VALIDATE`.
+3. Recomendar revalidacion del componente tocado.
 
 ## Signature Output
 ```yaml

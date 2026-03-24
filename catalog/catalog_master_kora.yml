@@ -922,9 +922,9 @@ Catalog:
     title: CM-OPENCLAW-CONTRACT-RECONCILER
     file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-RECONCILER.md
     status: published
-  - urn: urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0
+  - urn: urn:kora:skill:clawforge-openclaw-contract-validator:1.1.0
     title: CM-OPENCLAW-CONTRACT-VALIDATOR
-    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-VALIDATOR.md
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-VALIDATOR/SKILL.md
     status: published
   - urn: urn:kora:skill:clawforge-openclaw-contractor:1.0.0
     title: CM-OPENCLAW-CONTRACTOR
@@ -938,9 +938,9 @@ Catalog:
     title: CM-OPENCLAW-EVOLVER
     file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-EVOLVER.md
     status: published
-  - urn: urn:kora:skill:clawforge-openclaw-handoff:1.0.0
+  - urn: urn:kora:skill:clawforge-openclaw-handoff:1.1.0
     title: CM-OPENCLAW-HANDOFF
-    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-HANDOFF.md
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-HANDOFF/SKILL.md
     status: published
   - urn: urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0
     title: CM-OPENCLAW-KNOWLEDGE-NAVIGATOR
@@ -950,9 +950,9 @@ Catalog:
     title: CM-OPENCLAW-OPERATOR
     file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-OPERATOR.md
     status: published
-  - urn: urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0
+  - urn: urn:kora:skill:clawforge-openclaw-patch-applier:1.1.0
     title: CM-OPENCLAW-PATCH-APPLIER
-    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-APPLIER.md
+    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-APPLIER/SKILL.md
     status: published
   - urn: urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0
     title: CM-OPENCLAW-PATCH-PLANNER
