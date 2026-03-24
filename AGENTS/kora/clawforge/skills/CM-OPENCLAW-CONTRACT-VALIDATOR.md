@@ -8,7 +8,7 @@ _manifest:
 
 ## Proposito
 
-Validar `platform_contract` antes de deploy u operacion, detectando colisiones, omisiones y contradicciones entre runtime config, topology, sandbox, channels y managed installs.
+Validar `platform_contract` antes de handoff u operacion local, detectando colisiones, omisiones y contradicciones entre runtime config, topology, sandbox, channels y managed installs.
 
 ## Input/Output
 
@@ -21,6 +21,7 @@ Validar `platform_contract` antes de deploy u operacion, detectando colisiones, 
    - `config_projection`
    - `managed_installs`
    - `deployment_hints`
+   - `provenance`
    - `runtime_exclusions`
 2. Verificar colisiones y contradicciones frecuentes:
    - `gateway.bind` vs topologia declarada
@@ -30,8 +31,8 @@ Validar `platform_contract` antes de deploy u operacion, detectando colisiones, 
    - `tools.profile` incompatible con denies/allow criticos
    - backend `openshell` sin config o modo asociado
    - installs duplicados por locator/slug
-   - `manual_inputs_required` no resueltos antes de deploy
-3. Verificar que `validation_checks` acumulados esten cubiertos o declarados pendientes.
+   - `deployment_hints.manual_inputs_required` no resueltos antes de handoff
+3. Verificar que `deployment_hints.validation_checks` acumulados esten cubiertos o declarados pendientes.
 4. Emitir PASS|WARN|FAIL con lista de colisiones y fixes concretos.
 
 ## Signature Output

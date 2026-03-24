@@ -9,6 +9,8 @@ extensions:
       allowed_tools:
         - oc_docs_search
         - spec_consult
+        - workspace_read
+        - artifact_read
         - artifact_write
       requires: []
       references:
@@ -34,12 +36,12 @@ Evaluar si un agente `OpenClaw` esta listo para promoción a producción y, si n
 1. Consultar `references/promotion-basis.md` para fijar la base normativa y factual de la promoción.
 2. Usar `assets/production-promotion-checklist.md` como checklist maestra.
 3. Evaluar el agente y su contrato contra 10 ejes:
-   - ejecución real de skills operativas
-   - `dry-run` antes de mutaciones
+   - calidad real del handoff y de las skills operativas
+   - `dry-run` antes de mutaciones locales
    - fixtures y escenarios de contrato
    - detección de colisiones
    - política de restart
-   - executor de config/runtime
+   - executor o frontera explícita de config/runtime
    - verificación post-cambio
    - perfil mínimo seguro del propio `clawforge`
    - escenarios reales end-to-end

@@ -66,6 +66,7 @@ _manifest:
 - **Firma:** {path: string, content: string} -> result: string
 - **Cuando usar:** Emitir artefactos derivados y handoffs en staging.
 - **Cuando NO usar:** Para tocar el workspace fuente KORA.
+- **Notas:** `clawforge` NO genera `_transmutation.yml`; ese manifest pertenece al pipeline de `kora/forgemaster`.
 
 
 ## diff_compute
@@ -83,9 +84,9 @@ _manifest:
 ## oc_cli
 
 - **Firma:** command: string -> output: string
-- **Cuando usar:** Operar runtime OpenClaw, config, doctor, status, skills y plugins.
-- **Cuando NO usar:** Para comandos host o Docker.
-- **Notas:** Usar para `config set`, `gateway call config.patch`, `doctor`, `status --deep` y verificaciones post-cambio.
+- **Cuando usar:** Verificar runtime OpenClaw local, config, doctor, status, skills y plugins en entornos de validacion o auditoria.
+- **Cuando NO usar:** Para comandos host, Docker o deploy productivo remoto.
+- **Notas:** Usar para `config set`, `gateway call config.patch`, `doctor`, `status --deep` y verificaciones post-cambio locales.
 
 ## oc_docs_search
 
@@ -98,15 +99,3 @@ _manifest:
   - `cli/config.md`, `cli/skills.md`, `cli/plugins.md`
   - `tools/skills.md`, `tools/plugin.md`, `tools/clawhub.md`, `tools/browser.md`, `tools/subagents.md`, `tools/multi-agent-sandbox-tools.md`
   - `channels/telegram.md`, `automation/hooks.md`, `install/migrating.md`, `help/faq.md`
-
-## host_exec
-
-- **Firma:** command: string -> output: string
-- **Cuando usar:** Ejecutar operaciones host para deploy, mantenimiento o diagnostico del stack OpenClaw.
-- **Cuando NO usar:** Para acciones semanticas propias del gateway si existe `oc_cli`.
-
-## docker_exec
-
-- **Firma:** command: string -> output: string
-- **Cuando usar:** Ejecutar build, run, inspect y compose sobre el stack containerizado OpenClaw.
-- **Cuando NO usar:** Si la accion es puramente logica dentro del gateway.

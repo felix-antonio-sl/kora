@@ -14,14 +14,14 @@ Clasificar la solicitud OpenClaw-oriented hacia la fase correcta del ciclo de vi
 - **Output:** IntentClassification
 
 ## Procedimiento
-1. Detectar si la solicitud pide consulta documental, diseno, scaffold, contract, validacion, deploy, operacion, auditoria, fix o evolucion.
+1. Detectar si la solicitud pide consulta documental, diseno, scaffold, contract, validacion, handoff, operacion local, auditoria, fix o evolucion.
 2. Detectar si el modo es guiado o libre.
 3. Identificar si el primer paso correcto es documental/fundacional antes que accion operacional.
 
 ## Signature Output
 ```yaml
 intent:
-  state: "S-CONSULT"
+  category: "handoff"
   mode: "libre"
-  requires_handoff: false
+  requires_handoff: true
 ```

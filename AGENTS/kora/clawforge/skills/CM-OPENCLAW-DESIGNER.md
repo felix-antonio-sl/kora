@@ -14,16 +14,16 @@ Disenar un agente KORA cuyo target runtime es OpenClaw, incluyendo topologia y s
 - **Output:** OpenClawBlueprint
 
 ## Procedimiento
-1. Consultar primero `CM-OPENCLAW-KNOWLEDGE-NAVIGATOR` para fijar baseline factual OpenClaw cuando la solicitud dependa de features de plataforma.
+1. Consumir el knowledge report de entrada para fijar baseline factual OpenClaw cuando la solicitud dependa de features de plataforma.
 2. Definir dominio, rol y fronteras del agente.
-3. Usar `CM-OPENCLAW-TOPOLOGIST` para decidir:
+3. Consumir el topology report de entrada para decidir:
    - `single-gateway-multi-agent`
    - `isolated-gateway`
    - `remote`
    - `trusted-proxy`
-4. Si el agente interactua por Telegram, usar `CM-OPENCLAW-TELEGRAM-ARCHITECT` para fijar ACL durable, UX y topologia de topics/cuentas.
-5. Si el agente requiere tooling sensible o aislamiento especial, usar `CM-OPENCLAW-SANDBOX-ARCHITECT`.
-6. Si el agente depende de plugins, bundles o skills externos, usar `CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER`.
+4. Si el agente interactua por Telegram, consumir el telegram architecture report de entrada para fijar ACL durable, UX y topologia de topics/cuentas.
+5. Si el agente requiere tooling sensible o aislamiento especial, consumir el sandbox architecture report de entrada.
+6. Si el agente depende de plugins, bundles o skills externos, consumir el managed installs report de entrada.
 7. Modelar explicitamente:
    - que vive en bootstrap
    - que vive en config nativa

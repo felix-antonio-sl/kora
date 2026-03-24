@@ -40,7 +40,7 @@
           "- Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).",
           "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
         ],
-        "allowed_kb_count": 7,
+        "allowed_kb_count": 8,
         "sources": {
           "agents": "AGENTS/kora/guardian/AGENTS.md",
           "tools": "AGENTS/kora/guardian/TOOLS.md",
@@ -124,7 +124,7 @@
           "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
           "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`."
         ],
-        "allowed_kb_count": 18,
+        "allowed_kb_count": 19,
         "sources": {
           "agents": "AGENTS/kora/forgemaster/AGENTS.md",
           "tools": "AGENTS/kora/forgemaster/TOOLS.md",
@@ -401,7 +401,7 @@
           "- Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).",
           "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
         ],
-        "allowed_kb_count": 7,
+        "allowed_kb_count": 8,
         "sources": {
           "agents": "AGENTS/kora/guardian/AGENTS.md",
           "tools": "AGENTS/kora/guardian/TOOLS.md",
@@ -488,7 +488,7 @@
           "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
           "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`."
         ],
-        "allowed_kb_count": 18,
+        "allowed_kb_count": 19,
         "sources": {
           "agents": "AGENTS/kora/forgemaster/AGENTS.md",
           "tools": "AGENTS/kora/forgemaster/TOOLS.md",

@@ -36,12 +36,10 @@ Definir la arquitectura de sandbox, tool policy y subagentes para un agente Open
    - `openshell`
    - `scope: session|agent|shared`
 3. Definir:
-   - `sandbox.mode`
-   - `workspaceAccess`
-   - `tools.profile`
-   - `tools.allow/deny`
-   - `tools.sandbox.tools.*`
-   - `tools.elevated.*`
+   - `config_projection.sandbox.*`
+   - `config_projection.tools.profile`
+   - `config_projection.tools.allow/deny`
+   - `config_projection.tools.elevated.*`
    - `subagents.allowAgents`
 4. Separar siempre:
    - sandbox = donde corre
@@ -64,17 +62,15 @@ Definir la arquitectura de sandbox, tool policy y subagentes para un agente Open
 sandbox:
   backend: "docker"
   config_fragment:
-    agents:
-      defaults:
-        sandbox:
-          mode: "all"
-          backend: "docker"
-          scope: "agent"
-          workspaceAccess: "rw"
-        tools:
-          profile: "coding"
-          elevated:
-            enabled: false
+    sandbox:
+      mode: "all"
+      backend: "docker"
+      scope: "agent"
+      workspaceAccess: "rw"
+    tools:
+      profile: "coding"
+      elevated:
+        enabled: false
   contract_fragment:
     deployment_hints:
       sandbox:

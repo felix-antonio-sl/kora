@@ -7,7 +7,7 @@ _manifest:
 # CM-LIFECYCLE-ORCHESTRATOR
 
 ## Proposito
-Coordinar el ciclo guiado DESIGN -> CREATE -> CONFIGURE -> VALIDATE -> DEPLOY -> AUDIT.
+Coordinar el ciclo guiado DESIGN -> CREATE -> CONFIGURE -> VALIDATE -> HANDOFF -> AUDIT.
 
 ## Input/Output
 - **Input:** objetivo: string, fase_actual: string
@@ -15,12 +15,12 @@ Coordinar el ciclo guiado DESIGN -> CREATE -> CONFIGURE -> VALIDATE -> DEPLOY ->
 
 ## Procedimiento
 1. Consolidar entregables y checkpoints de cada fase.
-2. Verificar que el `platform_contract` exista y que haya sido materializado en staging antes de pasar a DEPLOY.
-3. Verificar que deploy y audit cierren con health, runtime checks nativos, validacion de colisiones y patching aplicable cuando corresponda.
+2. Verificar que el `platform_contract` exista, tenga `deployment_hints.validation_checks` y haya sido materializado en staging antes de pasar a HANDOFF.
+3. Verificar que el handoff identifique correctamente si el siguiente paso es `kora/forgemaster` (transmutacion) u `ops/clawstack` (consumo de `_transmutation.yml` ya disponible).
 
 ## Signature Output
 ```yaml
 guided:
-  next_phase: "S-DEPLOY"
+  next_phase: "handoff"
   checkpoints_ok: true
 ```

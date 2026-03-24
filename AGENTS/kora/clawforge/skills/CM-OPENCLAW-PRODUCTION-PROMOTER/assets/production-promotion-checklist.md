@@ -2,7 +2,7 @@
 
 ## P0 — Bloqueadores
 
-- [ ] Las skills `deploy`, `operate` y `patch applier` ejecutan pasos reales, no solo playbooks declarativos.
+- [ ] Las skills `handoff`, `operate` y `patch applier` tienen fronteras reales y auditables, no solo playbooks declarativos.
 - [ ] Todo cambio runtime tiene `dry-run` o validación previa equivalente.
 - [ ] Existe validación estructural de contrato y detección de colisiones.
 - [ ] Existe verificación post-cambio (`doctor`, `status --deep`, logs o prueba funcional).

@@ -7,7 +7,7 @@ _manifest:
 # CM-OPENCLAW-SURGEON
 
 ## Proposito
-Aplicar fixes minimos sobre workspace o contrato OpenClaw-oriented, incluyendo remediaciones previas a deploy.
+Aplicar fixes minimos sobre workspace o contrato OpenClaw-oriented, incluyendo remediaciones previas a handoff o auditoria.
 
 ## Input/Output
 - **Input:** issue: object, agent_path: string

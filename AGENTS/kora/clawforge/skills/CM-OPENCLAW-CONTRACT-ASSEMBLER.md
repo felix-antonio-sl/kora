@@ -20,12 +20,14 @@ Ensamblar un `platform_contract` OpenClaw a partir de fragmentos estructurados e
 1. Partir desde el template base del contrato.
 2. Aplicar merge por dominios:
    - `config_projection.gateway`
+   - `config_projection.sandbox`
+   - `config_projection.tools`
    - `config_projection.agents.defaults`
    - `config_projection.agents.list`
    - `config_projection.channels`
-   - `config_projection.tools`
    - `managed_installs.*`
    - `deployment_hints.*`
+   - `provenance.*`
 3. Registrar proveniencia por fragmento para cada bloque materializado.
 4. Si dos fragmentos intentan fijar el mismo scalar con valores distintos, marcar colision y NO resolverla implicitamente.
 5. Devolver contrato ensamblado + lista de colisiones + trazabilidad.

@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1391,
-    "node_count": 740,
-    "edge_count": 3575
+    "scanned_files": 1440,
+    "node_count": 774,
+    "edge_count": 3796
   },
   "node_kind_counts": {
-    "artifact": 133,
-    "knowledge": 335,
-    "skill": 173,
-    "spec": 7,
+    "artifact": 138,
+    "knowledge": 338,
+    "skill": 197,
+    "spec": 8,
     "tool": 66,
-    "workspace": 26
+    "workspace": 27
   },
   "edge_kind_counts": {
-    "AllowsKB": 379,
-    "AllowsTool": 121,
-    "ContainsArtifact": 131,
-    "ContainsSkill": 173,
-    "DeclaresTool": 122,
-    "InvokesSkill": 169,
+    "AllowsKB": 396,
+    "AllowsTool": 133,
+    "ContainsArtifact": 136,
+    "ContainsSkill": 197,
+    "DeclaresTool": 134,
+    "InvokesSkill": 193,
     "RoutesToAgent": 17,
-    "TracesTo": 48,
-    "XRef": 2415
+    "TracesTo": 50,
+    "XRef": 2540
   },
   "nodes": [
     {
@@ -754,6 +754,51 @@
       "namespace": "gn"
     },
     {
+      "id": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "title": "AGENTS.md",
+      "path": "AGENTS/kora/clawforge/AGENTS.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "title": "config.json",
+      "path": "AGENTS/kora/clawforge/config.json",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:agent-bootstrap:clawforge-soul:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:kora:agent-bootstrap:clawforge-soul:1.0.0",
+      "title": "SOUL.md",
+      "path": "AGENTS/kora/clawforge/SOUL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "title": "TOOLS.md",
+      "path": "AGENTS/kora/clawforge/TOOLS.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:agent-bootstrap:clawforge-user:1.0.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:kora:agent-bootstrap:clawforge-user:1.0.0",
+      "title": "USER.md",
+      "path": "AGENTS/kora/clawforge/USER.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
@@ -844,10 +889,10 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "id": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "urn": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "title": "AGENTS.md",
       "path": "AGENTS/kora/forgemaster/AGENTS.md",
       "namespace": "kora"
@@ -984,19 +1029,19 @@
       "namespace": "korvo"
     },
     {
-      "id": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "id": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "urn": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "title": "AGENTS.md",
       "path": "AGENTS/ops/clawstack/AGENTS.md",
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "id": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "title": "config.json",
       "path": "AGENTS/ops/clawstack/config.json",
       "namespace": "ops"
@@ -1011,10 +1056,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "id": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "kind": "artifact",
       "category": "Agents",
-      "urn": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "urn": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "title": "TOOLS.md",
       "path": "AGENTS/ops/clawstack/TOOLS.md",
       "namespace": "ops"
@@ -2672,7 +2717,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:acoso-laboral",
       "title": "Acoso Laboral y Sexual en el Ámbito Médico",
-      "path": "KNOWLEDGE/legal/acoso_laboral.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/acoso_laboral.md",
       "namespace": "legal"
     },
     {
@@ -2690,7 +2735,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:confianza-legitima",
       "title": "Confianza Legítima en Contratas Médicas",
-      "path": "KNOWLEDGE/legal/confianza_legitima.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/confianza_legitima.md",
       "namespace": "legal"
     },
     {
@@ -2699,7 +2744,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:contratacion-publica",
       "title": "Contratación Pública de Servicios Médicos en Chile",
-      "path": "KNOWLEDGE/legal/contratacion_publica.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/contratacion_publica.md",
       "namespace": "legal"
     },
     {
@@ -2708,7 +2753,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:deberes-prohibiciones",
       "title": "Deberes, Prohibiciones e Incompatibilidades en el Trabajo Médico",
-      "path": "KNOWLEDGE/legal/deberes_prohibiciones.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/deberes_prohibiciones.md",
       "namespace": "legal"
     },
     {
@@ -2717,7 +2762,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:derechos-especiales",
       "title": "Derechos Especiales: Liberación de Guardia e Incentivo al Retiro",
-      "path": "KNOWLEDGE/legal/derechos_especiales.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/derechos_especiales.md",
       "namespace": "legal"
     },
     {
@@ -2735,7 +2780,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:feriados-permisos",
       "title": "Feriados, Permisos y Comisiones",
-      "path": "KNOWLEDGE/legal/feriados_permisos.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/feriados_permisos.md",
       "namespace": "legal"
     },
     {
@@ -2753,7 +2798,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:formacion-especialistas",
       "title": "Formación de Especialistas, PAO y Comisiones de Estudio",
-      "path": "KNOWLEDGE/legal/formacion_especialistas.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/formacion_especialistas.md",
       "namespace": "legal"
     },
     {
@@ -2762,7 +2807,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:index",
       "title": "Índice Global - Legislación Trabajo Médico Chile",
-      "path": "KNOWLEDGE/legal/index.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/index.md",
       "namespace": "legal"
     },
     {
@@ -2771,7 +2816,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ingreso-carrera",
       "title": "Ingreso a la Carrera y Vida Laboral Médica",
-      "path": "KNOWLEDGE/legal/ingreso_carrera.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ingreso_carrera.md",
       "namespace": "legal"
     },
     {
@@ -2780,7 +2825,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:intro-estatutos",
       "title": "Introducción y Estatutos Jurídicos - Trabajo Médico Chile",
-      "path": "KNOWLEDGE/legal/intro_estatutos.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/intro_estatutos.md",
       "namespace": "legal"
     },
     {
@@ -2789,7 +2834,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:jornada-calificaciones",
       "title": "Jornada de Trabajo y Calificaciones (Trabajo Médico)",
-      "path": "KNOWLEDGE/legal/jornada_calificaciones.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/jornada_calificaciones.md",
       "namespace": "legal"
     },
     {
@@ -2798,7 +2843,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:legislacion-ia-chile",
       "title": "Análisis de la Legislación de Inteligencia Artificial en Chile",
-      "path": "KNOWLEDGE/legal/legislacion_ia_chile.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/legislacion_ia_chile.md",
       "namespace": "legal"
     },
     {
@@ -2807,7 +2852,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ley-15076",
       "title": "Ley 15.076: Estatuto de los Profesionales Funcionarios de la Salud",
-      "path": "KNOWLEDGE/legal/ley_15076.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ley_15076.md",
       "namespace": "legal"
     },
     {
@@ -2816,7 +2861,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ley-19664",
       "title": "Ley 19.664: Normas Especiales para Profesionales Funcionarios de Servicios de Salud",
-      "path": "KNOWLEDGE/legal/ley_19664.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ley_19664.md",
       "namespace": "legal"
     },
     {
@@ -2834,7 +2879,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ley-21643",
       "title": "Ley 21.643: Prevención y Sanción de Acoso y Violencia en el Trabajo",
-      "path": "KNOWLEDGE/legal/ley_21643.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ley_21643.md",
       "namespace": "legal"
     },
     {
@@ -2843,7 +2888,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ley-21658-segdig",
       "title": "Ley N° 21.658: Creación de la Secretaría de Gobierno Digital",
-      "path": "KNOWLEDGE/legal/ley_21658_segdig.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ley_21658_segdig.md",
       "namespace": "legal"
     },
     {
@@ -2852,7 +2897,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ley-21719-datos-personales",
       "title": "Ley N° 21.719 de Protección de Datos Personales",
-      "path": "KNOWLEDGE/legal/ley_21719_datos_personales.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ley_21719_datos_personales.md",
       "namespace": "legal"
     },
     {
@@ -2861,7 +2906,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
       "title": "Ley que Regula los Sistemas de Inteligencia Artificial — Texto Aprobado Cámara (Boletines 15.869-19 y 16.821-19)",
-      "path": "KNOWLEDGE/legal/ley-ia-chile-texto-aprobado-camara.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/ley-ia-chile-texto-aprobado-camara.md",
       "namespace": "legal"
     },
     {
@@ -2879,7 +2924,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:maternidad",
       "title": "Protección a la Maternidad y Paternidad",
-      "path": "KNOWLEDGE/legal/maternidad.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/maternidad.md",
       "namespace": "legal"
     },
     {
@@ -2915,7 +2960,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:remuneraciones",
       "title": "Remuneraciones y Asignaciones — Trabajo Médico Chile",
-      "path": "KNOWLEDGE/legal/remuneraciones.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/remuneraciones.md",
       "namespace": "legal"
     },
     {
@@ -2924,7 +2969,7 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:responsabilidad-admin",
       "title": "Responsabilidad Administrativa",
-      "path": "KNOWLEDGE/legal/responsabilidad_admin.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/responsabilidad_admin.md",
       "namespace": "legal"
     },
     {
@@ -2978,8 +3023,17 @@
       "category": "Knowledge",
       "urn": "urn:legal:kb:terminacion",
       "title": "Terminación de la Relación Laboral y Funcionaria",
-      "path": "KNOWLEDGE/legal/terminacion.md",
+      "path": "KNOWLEDGE/legal/trabajo-medico/terminacion.md",
       "namespace": "legal"
+    },
+    {
+      "id": "urn:ops:kb:arquitectura-stack-kora",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:ops:kb:arquitectura-stack-kora",
+      "title": "Arquitectura del stack KORA — Estado operacional",
+      "path": "KNOWLEDGE/ops/arquitectura-stack-kora.md",
+      "namespace": "ops"
     },
     {
       "id": "urn:ops:kb:deploy-agente-kora-en-openclaw",
@@ -2991,12 +3045,30 @@
       "namespace": "ops"
     },
     {
+      "id": "urn:ops:kb:federacion-kora-v2",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:ops:kb:federacion-kora-v2",
+      "title": "Federación KORA v2 — Comunicación cross-gateway y storage compartido",
+      "path": "KNOWLEDGE/ops/federacion-kora-v2.md",
+      "namespace": "ops"
+    },
+    {
       "id": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "title": "Principios de transmutacion KORA → OpenClaw",
       "path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md",
+      "namespace": "ops"
+    },
+    {
+      "id": "urn:ops:kb:ux-telegram-openclaw",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:ops:kb:ux-telegram-openclaw",
+      "title": "Configuración de comportamiento de agentes OpenClaw",
+      "path": "KNOWLEDGE/ops/ux-telegram-openclaw.md",
       "namespace": "ops"
     },
     {
@@ -4998,6 +5070,222 @@
       "namespace": "gn"
     },
     {
+      "id": "urn:kora:skill:clawforge-context-manager:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-context-manager:1.0.0",
+      "title": "CM-CONTEXT-MANAGER",
+      "path": "AGENTS/kora/clawforge/skills/CM-CONTEXT-MANAGER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-intent-classifier:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-intent-classifier:1.0.0",
+      "title": "CM-INTENT-CLASSIFIER",
+      "path": "AGENTS/kora/clawforge/skills/CM-INTENT-CLASSIFIER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0",
+      "title": "CM-LIFECYCLE-ORCHESTRATOR",
+      "path": "AGENTS/kora/clawforge/skills/CM-LIFECYCLE-ORCHESTRATOR.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0",
+      "title": "CM-OPENCLAW-AUDITOR",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-AUDITOR.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-builder:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-builder:1.0.0",
+      "title": "CM-OPENCLAW-BUILDER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-BUILDER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0",
+      "title": "CM-OPENCLAW-CONTRACT-ASSEMBLER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-ASSEMBLER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0",
+      "title": "CM-OPENCLAW-CONTRACT-EMITTER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-EMITTER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0",
+      "title": "CM-OPENCLAW-CONTRACT-RECONCILER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-RECONCILER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0",
+      "title": "CM-OPENCLAW-CONTRACT-VALIDATOR",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-VALIDATOR.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0",
+      "title": "CM-OPENCLAW-CONTRACTOR",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACTOR/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-designer:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-designer:1.0.0",
+      "title": "CM-OPENCLAW-DESIGNER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-DESIGNER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "title": "CM-OPENCLAW-EVOLVER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-EVOLVER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0",
+      "title": "CM-OPENCLAW-HANDOFF",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-HANDOFF.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0",
+      "title": "CM-OPENCLAW-KNOWLEDGE-NAVIGATOR",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-KNOWLEDGE-NAVIGATOR/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
+      "title": "CM-OPENCLAW-OPERATOR",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-OPERATOR.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0",
+      "title": "CM-OPENCLAW-PATCH-APPLIER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-APPLIER.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0",
+      "title": "CM-OPENCLAW-PATCH-PLANNER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-PLANNER/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0",
+      "title": "CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0",
+      "title": "CM-OPENCLAW-PRODUCTION-PROMOTER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PRODUCTION-PROMOTER/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0",
+      "title": "CM-OPENCLAW-SANDBOX-ARCHITECT",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-SANDBOX-ARCHITECT/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0",
+      "title": "CM-OPENCLAW-SURGEON",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-SURGEON.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0",
+      "title": "CM-OPENCLAW-TELEGRAM-ARCHITECT",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-TELEGRAM-ARCHITECT/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0",
+      "title": "CM-OPENCLAW-TOPOLOGIST",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-TOPOLOGIST/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0",
+      "title": "CM-OPENCLAW-TROUBLESHOOTER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-TROUBLESHOOTER.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -5223,10 +5511,10 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
+      "id": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
+      "urn": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0",
       "title": "CM-ARTIFACT-EMITTER",
       "path": "AGENTS/kora/forgemaster/skills/CM-ARTIFACT-EMITTER.md",
       "namespace": "kora"
@@ -5295,10 +5583,10 @@
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0",
+      "id": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0",
+      "urn": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0",
       "title": "CM-OPENCLAW-ADAPTER",
       "path": "AGENTS/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/SKILL.md",
       "namespace": "kora"
@@ -5457,10 +5745,10 @@
       "namespace": "korvo"
     },
     {
-      "id": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "id": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "urn": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "title": "CM-AGENT-DEPLOYER",
       "path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md",
       "namespace": "ops"
@@ -5502,19 +5790,19 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
+      "id": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
+      "urn": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
       "title": "CM-STACK-AUDITOR",
       "path": "AGENTS/ops/clawstack/skills/CM-STACK-AUDITOR.md",
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
+      "id": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
+      "urn": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
       "title": "CM-STACK-CONFIGURATOR",
       "path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md",
       "namespace": "ops"
@@ -5529,10 +5817,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
+      "id": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
+      "urn": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
       "title": "CM-STACK-PROVISIONER",
       "path": "AGENTS/ops/clawstack/skills/CM-STACK-PROVISIONER/SKILL.md",
       "namespace": "ops"
@@ -5547,10 +5835,10 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:ops:skill:clawstack-version-manager:1.0.0",
+      "id": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "kind": "skill",
       "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-version-manager:1.0.0",
+      "urn": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "title": "CM-VERSION-MANAGER",
       "path": "AGENTS/ops/clawstack/skills/CM-VERSION-MANAGER.md",
       "namespace": "ops"
@@ -5790,6 +6078,15 @@
       "namespace": "salud"
     },
     {
+      "id": "urn:agengai:kb:openclaw-runtime-extension",
+      "kind": "spec",
+      "category": "Knowledge",
+      "urn": "urn:agengai:kb:openclaw-runtime-extension",
+      "title": "AGENGAI/OpenClaw-Runtime-Extension v1.0.0",
+      "path": "specs/openclaw-runtime-extension.md",
+      "namespace": "agengai"
+    },
+    {
       "id": "urn:kora:kb:agent-spec-md",
       "kind": "spec",
       "category": "Knowledge",
@@ -5803,7 +6100,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:gobernanza",
-      "title": "KORA/Gobernanza v3.4.0",
+      "title": "KORA/Gobernanza v3.5.0",
       "path": "specs/gobernanza.md",
       "namespace": "kora"
     },
@@ -5821,7 +6118,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:runtime-spec-md",
-      "title": "KORA/Runtime-Spec v3.5.0",
+      "title": "KORA/Runtime-Spec v3.6.0",
       "path": "specs/runtime-spec-md.md",
       "namespace": "kora"
     },
@@ -6293,6 +6590,13 @@
       "workspace": "gn/goreologo",
       "namespace": "gn",
       "path": "AGENTS/gn/goreologo"
+    },
+    {
+      "id": "workspace:kora/clawforge",
+      "kind": "workspace",
+      "workspace": "kora/clawforge",
+      "namespace": "kora",
+      "path": "AGENTS/kora/clawforge"
     },
     {
       "id": "workspace:kora/curator",
@@ -8138,6 +8442,72 @@
     },
     {
       "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:agengai:kb:openclaw-integration",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:kb:agent-spec-md",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:kb:gobernanza",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:kb:skill-spec-md",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsKB",
       "source": "workspace:kora/curator",
       "target": "urn:kora:kb:gobernanza",
       "source_path": "AGENTS/kora/curator/config.json"
@@ -8182,6 +8552,12 @@
       "kind": "AllowsKB",
       "source": "workspace:kora/forgemaster",
       "target": "urn:agengai:kb:openclaw-integration",
+      "source_path": "AGENTS/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/forgemaster",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
       "source_path": "AGENTS/kora/forgemaster/config.json"
     },
     {
@@ -8285,6 +8661,12 @@
       "source": "workspace:kora/forgemaster",
       "target": "urn:kora:kb:swarm-spec-md",
       "source_path": "AGENTS/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:kora/guardian",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "source_path": "AGENTS/kora/guardian/config.json"
     },
     {
       "kind": "AllowsKB",
@@ -8499,6 +8881,12 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:ops/clawstack",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:ops/clawstack",
       "target": "urn:kora:kb:agent-spec-md",
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
@@ -8511,13 +8899,31 @@
     {
       "kind": "AllowsKB",
       "source": "workspace:ops/clawstack",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:ops/clawstack",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "AllowsKB",
       "source": "workspace:ops/clawstack",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:ops/clawstack",
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:ops/clawstack",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
@@ -8921,6 +9327,78 @@
       "source": "workspace:gn/goreologo",
       "target": "tool:kb_route",
       "source_path": "AGENTS/gn/goreologo/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:agent_list",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:artifact_read",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:artifact_write",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:catalog_resolve",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:diff_compute",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:health_check",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:oc_cli",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:oc_docs_search",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:spec_consult",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:workspace_read",
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:workspace_write",
+      "source_path": "AGENTS/kora/clawforge/config.json"
     },
     {
       "kind": "AllowsTool",
@@ -9773,6 +10251,31 @@
     },
     {
       "kind": "ContainsArtifact",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:agent-bootstrap:clawforge-config:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:agent-bootstrap:clawforge-soul:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:agent-bootstrap:clawforge-user:1.0.0"
+    },
+    {
+      "kind": "ContainsArtifact",
       "source": "workspace:kora/curator",
       "target": "urn:kora:agent-bootstrap:curator-agents:2.1.0"
     },
@@ -9824,7 +10327,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:kora/forgemaster",
-      "target": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0"
+      "target": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -9899,12 +10402,12 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0"
+      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0"
     },
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:agent-bootstrap:clawstack-config:1.0.0"
+      "target": "urn:ops:agent-bootstrap:clawstack-config:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -9914,7 +10417,7 @@
     {
       "kind": "ContainsArtifact",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0"
+      "target": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -10448,6 +10951,126 @@
     },
     {
       "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-context-manager:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-intent-classifier:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-builder:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-designer:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
       "source": "workspace:kora/curator",
       "target": "urn:kora:skill:curator-artifact-auditor:2.0.0"
     },
@@ -10574,7 +11197,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:kora/forgemaster",
-      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0"
+      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -10614,7 +11237,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:kora/forgemaster",
-      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0"
+      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0"
     },
     {
       "kind": "ContainsSkill",
@@ -10704,7 +11327,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0"
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0"
     },
     {
       "kind": "ContainsSkill",
@@ -10729,12 +11352,12 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.0.0"
+      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.0.0"
+      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -10744,7 +11367,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.0.0"
+      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -10754,7 +11377,7 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-version-manager:1.0.0"
+      "target": "urn:ops:skill:clawstack-version-manager:1.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -11167,6 +11790,78 @@
       "source": "workspace:gn/goreologo",
       "target": "tool:kb_route",
       "source_path": "AGENTS/gn/goreologo/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:agent_list",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:artifact_read",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:artifact_write",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:catalog_resolve",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:diff_compute",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:health_check",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:oc_cli",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:oc_docs_search",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:spec_consult",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:workspace_read",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:kora/clawforge",
+      "target": "tool:workspace_write",
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
@@ -12106,6 +12801,150 @@
     },
     {
       "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-context-manager:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-intent-classifier:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-builder:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-designer:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
       "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "source_path": "AGENTS/kora/curator/AGENTS.md"
@@ -12220,97 +13059,97 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-agent-deprecator:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-agent-designer:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-agent-evolver:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-agent-surgeon:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-agent-validator:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-anthropic-adapter:1.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
+      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-claude-code-adapter:1.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-component-builder:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-context-manager:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-drift-detector:1.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-equivalence-checker:1.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-intent-classifier:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-lifecycle-orchestrator:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
+      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
@@ -12412,68 +13251,68 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-intent-classifier:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
+      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
+      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
+      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
-      "target": "urn:ops:skill:clawstack-version-manager:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
+      "target": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
@@ -12736,6 +13575,20 @@
     },
     {
       "kind": "TracesTo",
+      "source": "urn:agengai:kb:openclaw-runtime-extension",
+      "target": "urn:kora:kb:cat-behavioral-preservation",
+      "fragment": null,
+      "source_path": "specs/openclaw-runtime-extension.md"
+    },
+    {
+      "kind": "TracesTo",
+      "source": "urn:agengai:kb:openclaw-runtime-extension",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "specs/openclaw-runtime-extension.md"
+    },
+    {
+      "kind": "TracesTo",
       "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
@@ -12799,21 +13652,21 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
@@ -13065,7 +13918,7 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
@@ -13263,6 +14116,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:agengai:kb:openclaw-integration",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15397,6 +16257,41 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:agent-bootstrap:clawforge-soul:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:agent-bootstrap:clawforge-user:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15467,7 +16362,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "target": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15684,6 +16579,174 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-context-manager:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-intent-classifier:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-builder:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-designer:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15859,7 +16922,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
+      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15915,7 +16978,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0",
+      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16335,14 +17398,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16356,7 +17419,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16370,7 +17433,21 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:kb:federacion-kora-v2",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16384,7 +17461,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16419,14 +17503,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
+      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
+      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16440,7 +17524,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
+      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16454,7 +17538,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-version-manager:1.0.0",
+      "target": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17934,6 +19018,20 @@
       "target": "urn:agengai:kb:openclaw-integration",
       "fragment": null,
       "source_path": "KNOWLEDGE/agengai/openclaw-integration.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-runtime-extension",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "specs/openclaw-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-runtime-extension",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "specs/openclaw-runtime-extension.md"
     },
     {
       "kind": "XRef",
@@ -25147,6 +26245,195 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "target": "urn:kora:agent-bootstrap:clawforge-agents:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:agengai:kb:openclaw-integration",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:kora:kb:agent-spec-md",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:kora:kb:skill-spec-md",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-config:1.0.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-soul:1.0.0",
+      "target": "urn:kora:agent-bootstrap:clawforge-soul:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/SOUL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:agengai:kb:openclaw-integration",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:kora:kb:agent-spec-md",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:kora:kb:skill-spec-md",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-tools:1.0.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:clawforge-user:1.0.0",
+      "target": "urn:kora:agent-bootstrap:clawforge-user:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/USER.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "target": "urn:kora:agent-bootstrap:curator-agents:2.1.0",
       "fragment": null,
@@ -25315,8 +26602,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
-      "target": "urn:kora:agent-bootstrap:forgemaster-agents:2.0.0",
+      "source": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
+      "target": "urn:kora:agent-bootstrap:forgemaster-agents:2.1.0",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
@@ -25324,6 +26611,13 @@
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
       "target": "urn:agengai:kb:openclaw-integration",
+      "fragment": null,
+      "source_path": "AGENTS/kora/forgemaster/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-config:2.0.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/config.json"
     },
@@ -25470,6 +26764,13 @@
     {
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/kora/forgemaster/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:forgemaster-tools:2.0.0",
       "target": "urn:agengai:kb:skills-anthropic",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/TOOLS.md"
@@ -25610,6 +26911,13 @@
     {
       "kind": "XRef",
       "source": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/kora/guardian/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
       "target": "urn:kora:agent-bootstrap:guardian-config:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/kora/guardian/config.json"
@@ -25669,6 +26977,13 @@
       "target": "urn:kora:agent-bootstrap:guardian-soul:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/kora/guardian/SOUL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:agent-bootstrap:guardian-tools:1.0.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/kora/guardian/TOOLS.md"
     },
     {
       "kind": "XRef",
@@ -26176,6 +27491,174 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-context-manager:1.0.0",
+      "target": "urn:kora:skill:clawforge-context-manager:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-CONTEXT-MANAGER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-intent-classifier:1.0.0",
+      "target": "urn:kora:skill:clawforge-intent-classifier:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-INTENT-CLASSIFIER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0",
+      "target": "urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-LIFECYCLE-ORCHESTRATOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-auditor:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-AUDITOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-builder:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-builder:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-BUILDER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-ASSEMBLER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-EMITTER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-RECONCILER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contract-validator:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-VALIDATOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-contractor:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACTOR/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-designer:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-designer:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-DESIGNER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-EVOLVER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-handoff:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-HANDOFF.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-KNOWLEDGE-NAVIGATOR/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-OPERATOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-applier:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-APPLIER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PATCH-PLANNER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-PRODUCTION-PROMOTER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-SANDBOX-ARCHITECT/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-surgeon:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-SURGEON.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-TELEGRAM-ARCHITECT/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-topologist:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-TOPOLOGIST/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-TROUBLESHOOTER.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "target": "urn:kora:skill:curator-artifact-auditor:2.0.0",
       "fragment": null,
@@ -26351,8 +27834,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
-      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.0.0",
+      "source": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0",
+      "target": "urn:kora:skill:forgemaster-artifact-emitter:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/skills/CM-ARTIFACT-EMITTER.md"
     },
@@ -26407,8 +27890,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0",
-      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.1.0",
+      "source": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0",
+      "target": "urn:kora:skill:forgemaster-openclaw-adapter:1.2.0",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/SKILL.md"
     },
@@ -26620,7 +28103,7 @@
       "source": "urn:legal:kb:acoso-laboral",
       "target": "urn:legal:kb:acoso-laboral",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/acoso_laboral.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/acoso_laboral.md"
     },
     {
       "kind": "XRef",
@@ -26634,28 +28117,28 @@
       "source": "urn:legal:kb:confianza-legitima",
       "target": "urn:legal:kb:confianza-legitima",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/confianza_legitima.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/confianza_legitima.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:contratacion-publica",
       "target": "urn:legal:kb:contratacion-publica",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/contratacion_publica.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/contratacion_publica.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:deberes-prohibiciones",
       "target": "urn:legal:kb:deberes-prohibiciones",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/deberes_prohibiciones.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/deberes_prohibiciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:derechos-especiales",
       "target": "urn:legal:kb:derechos-especiales",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/derechos_especiales.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/derechos_especiales.md"
     },
     {
       "kind": "XRef",
@@ -26669,7 +28152,7 @@
       "source": "urn:legal:kb:feriados-permisos",
       "target": "urn:legal:kb:feriados-permisos",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/feriados_permisos.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/feriados_permisos.md"
     },
     {
       "kind": "XRef",
@@ -26683,189 +28166,189 @@
       "source": "urn:legal:kb:formacion-especialistas",
       "target": "urn:legal:kb:formacion-especialistas",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/formacion_especialistas.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/formacion_especialistas.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:acoso-laboral",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:confianza-legitima",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:contratacion-publica",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:deberes-prohibiciones",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:derechos-especiales",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:feriados-permisos",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:formacion-especialistas",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:index",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:ingreso-carrera",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:intro-estatutos",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:jornada-calificaciones",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:ley-15076",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:ley-19664",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:ley-21643",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:maternidad",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:remuneraciones",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:responsabilidad-admin",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:index",
       "target": "urn:legal:kb:terminacion",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/index.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/index.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:ingreso-carrera",
       "target": "urn:legal:kb:ingreso-carrera",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ingreso_carrera.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ingreso_carrera.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:intro-estatutos",
       "target": "urn:legal:kb:confianza-legitima",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/intro_estatutos.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/intro_estatutos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:intro-estatutos",
       "target": "urn:legal:kb:intro-estatutos",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/intro_estatutos.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/intro_estatutos.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:jornada-calificaciones",
       "target": "urn:legal:kb:jornada-calificaciones",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/jornada_calificaciones.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/jornada_calificaciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:legislacion-ia-chile",
       "target": "urn:legal:kb:legislacion-ia-chile",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/legislacion_ia_chile.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/legislacion_ia_chile.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:legislacion-ia-chile",
       "target": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/legislacion_ia_chile.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/legislacion_ia_chile.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:ley-15076",
       "target": "urn:legal:kb:ley-15076",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ley_15076.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ley_15076.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:ley-19664",
       "target": "urn:legal:kb:ley-19664",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ley_19664.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ley_19664.md"
     },
     {
       "kind": "XRef",
@@ -26879,28 +28362,28 @@
       "source": "urn:legal:kb:ley-21643",
       "target": "urn:legal:kb:ley-21643",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ley_21643.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ley_21643.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:ley-21658-segdig",
       "target": "urn:legal:kb:ley-21658-segdig",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ley_21658_segdig.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ley_21658_segdig.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:ley-21719-datos-personales",
       "target": "urn:legal:kb:ley-21719-datos-personales",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ley_21719_datos_personales.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ley_21719_datos_personales.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
       "target": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/ley-ia-chile-texto-aprobado-camara.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/ley-ia-chile-texto-aprobado-camara.md"
     },
     {
       "kind": "XRef",
@@ -26914,7 +28397,7 @@
       "source": "urn:legal:kb:maternidad",
       "target": "urn:legal:kb:maternidad",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/maternidad.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/maternidad.md"
     },
     {
       "kind": "XRef",
@@ -26949,14 +28432,14 @@
       "source": "urn:legal:kb:remuneraciones",
       "target": "urn:legal:kb:remuneraciones",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/remuneraciones.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/remuneraciones.md"
     },
     {
       "kind": "XRef",
       "source": "urn:legal:kb:responsabilidad-admin",
       "target": "urn:legal:kb:responsabilidad-admin",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/responsabilidad_admin.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/responsabilidad_admin.md"
     },
     {
       "kind": "XRef",
@@ -26998,229 +28481,257 @@
       "source": "urn:legal:kb:terminacion",
       "target": "urn:legal:kb:terminacion",
       "fragment": null,
-      "source_path": "KNOWLEDGE/legal/terminacion.md"
+      "source_path": "KNOWLEDGE/legal/trabajo-medico/terminacion.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
-      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.1.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:00-fundamentos-previos",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:00-toc",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:01-arquitectura-gateway",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:02-agente-unidad-fundamental",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:03-sesiones",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:04-modelos-failover",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:05-memoria",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:06-multi-agent-routing",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:07-aislamiento-seguridad",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:08-patrones-multitenant",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:09-sub-agentes",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:10-sub-agentes-anidados",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:12-heartbeats",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:13-cron-jobs",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:14-cron-vs-heartbeat",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:15-hooks",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:16-webhooks",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:17-lobster",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:18-modelo-seguridad",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:19-operaciones",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:20-patrones-diseno",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:21-decisiones-arquitectura",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:apendices",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:agengai:kb:cheatsheet",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:kora:kb:agent-spec-md",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:kora:kb:gobernanza",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
@@ -27233,218 +28744,246 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:00-fundamentos-previos",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:00-toc",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:01-arquitectura-gateway",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:02-agente-unidad-fundamental",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:03-sesiones",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:04-modelos-failover",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:05-memoria",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:06-multi-agent-routing",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:07-aislamiento-seguridad",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:08-patrones-multitenant",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:09-sub-agentes",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:10-sub-agentes-anidados",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:12-heartbeats",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:13-cron-jobs",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:14-cron-vs-heartbeat",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:15-hooks",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:16-webhooks",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:17-lobster",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:18-modelo-seguridad",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:19-operaciones",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:20-patrones-diseno",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:21-decisiones-arquitectura",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:apendices",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:agengai:kb:cheatsheet",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
+      "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:kora:kb:agent-spec-md",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:kora:kb:gobernanza",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
-      "target": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
+      "target": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.0.0",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
@@ -27457,10 +28996,101 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:ops:kb:arquitectura-stack-kora",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/arquitectura-stack-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:arquitectura-stack-kora",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/arquitectura-stack-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:arquitectura-stack-kora",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/arquitectura-stack-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:arquitectura-stack-kora",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/arquitectura-stack-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:arquitectura-stack-kora",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/arquitectura-stack-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:federacion-kora-v2",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/federacion-kora-v2.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:federacion-kora-v2",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/federacion-kora-v2.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:federacion-kora-v2",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/federacion-kora-v2.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:federacion-kora-v2",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/federacion-kora-v2.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:federacion-kora-v2",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/federacion-kora-v2.md"
     },
     {
       "kind": "XRef",
@@ -27486,28 +29116,112 @@
     {
       "kind": "XRef",
       "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "fragment": null,
       "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:ux-telegram-openclaw",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/ux-telegram-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:ux-telegram-openclaw",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/ux-telegram-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:ux-telegram-openclaw",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/ux-telegram-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:ux-telegram-openclaw",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/ux-telegram-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:ux-telegram-openclaw",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/ux-telegram-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.0.0",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
+      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
     },
@@ -27541,15 +29255,29 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.0.0",
+      "source": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
+      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-AUDITOR.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.0.0",
+      "source": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
+      "target": "urn:ops:kb:ux-telegram-openclaw",
+      "fragment": null,
+      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
+      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md"
     },
@@ -27562,8 +29290,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.0.0",
+      "source": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
+      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-PROVISIONER/SKILL.md"
     },
@@ -27576,8 +29304,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-version-manager:1.0.0",
-      "target": "urn:ops:skill:clawstack-version-manager:1.0.0",
+      "source": "urn:ops:skill:clawstack-version-manager:1.1.0",
+      "target": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-VERSION-MANAGER.md"
     },

@@ -18,7 +18,7 @@ Base doctrinal para promoción a producción de `kora/clawforge`.
 
 ## 3. Capacidades internas a evaluar
 
-- `CM-OPENCLAW-DEPLOYER`
+- `CM-OPENCLAW-HANDOFF`
 - `CM-OPENCLAW-OPERATOR`
 - `CM-OPENCLAW-PATCH-PLANNER`
 - `CM-OPENCLAW-PATCH-APPLIER`

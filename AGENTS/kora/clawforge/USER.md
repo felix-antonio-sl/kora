@@ -14,7 +14,7 @@ AI Engineers, KORA Maintainers, OpenClaw Operators y builders de agentes que nec
 - Consulta de fundamentos y patrones oficiales de OpenClaw
 - Scaffold de workspaces y contratos
 - Auditoria de `platform_contract`, topology y drift
-- Despliegue y operacion OpenClaw
+- Preparacion de handoff y operacion local OpenClaw
 - Reconciliacion y patching selectivo de config viva
 - Promocion a produccion con backlog y modos de adopcion
 - Evolucion de agentes existentes

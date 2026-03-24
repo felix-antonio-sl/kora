@@ -8,7 +8,7 @@ _manifest:
 
 ## Proposito
 
-Aplicar patches selectivos sobre config viva OpenClaw con semántica explícita y verificación posterior.
+Aplicar patches selectivos sobre config viva OpenClaw en entornos locales o no productivos, con semántica explícita y verificación posterior.
 
 ## Input/Output
 
@@ -25,6 +25,7 @@ Aplicar patches selectivos sobre config viva OpenClaw con semántica explícita 
 3. Aplicar en orden estable y registrar resultado por operación.
 4. Si alguna operación toca superficie con restart requerido, ejecutar restart controlado al final del batch.
 5. Verificar con `openclaw doctor` o `status --deep` según el área afectada.
+6. Si el target corresponde a deploy productivo remoto, abortar y derivar a `ops/clawstack`.
 
 ## Signature Output
 

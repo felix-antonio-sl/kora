@@ -930,10 +930,6 @@ Catalog:
     title: CM-OPENCLAW-CONTRACTOR
     file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-CONTRACTOR/SKILL.md
     status: published
-  - urn: urn:kora:skill:clawforge-openclaw-deployer:1.0.0
-    title: CM-OPENCLAW-DEPLOYER
-    file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-DEPLOYER.md
-    status: published
   - urn: urn:kora:skill:clawforge-openclaw-designer:1.0.0
     title: CM-OPENCLAW-DESIGNER
     file: AGENTS/kora/clawforge/skills/CM-OPENCLAW-DESIGNER.md

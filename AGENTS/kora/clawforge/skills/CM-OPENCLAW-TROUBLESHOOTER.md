@@ -7,7 +7,7 @@ _manifest:
 # CM-OPENCLAW-TROUBLESHOOTER
 
 ## Proposito
-Diagnosticar y corregir fallas de bootstrap, config, sandbox, tooling, gateway o topologia en agentes OpenClaw.
+Diagnosticar y corregir fallas de bootstrap, contrato, config local, sandbox, tooling, gateway o topologia en agentes OpenClaw.
 
 ## Input/Output
 - **Input:** sintoma: string, alcance: string
@@ -15,13 +15,14 @@ Diagnosticar y corregir fallas de bootstrap, config, sandbox, tooling, gateway o
 
 ## Procedimiento
 1. Clasificar la falla por capa: workspace, config, gateway, host, docker, canal o federation.
-2. Si la falla es de canal/ACL/UX Telegram, usar `CM-OPENCLAW-TELEGRAM-ARCHITECT` como mapa de verdad.
-3. Si la falla es de sandbox o tools, usar `CM-OPENCLAW-SANDBOX-ARCHITECT`.
-4. Si la falla es de install/compatibilidad, usar `CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER`.
-5. Si la falla es topologica o de gateway/proxy, usar `CM-OPENCLAW-TOPOLOGIST`.
-6. Recolectar evidencia con `oc_cli`, `host_exec`, `docker_exec`, `artifact_read`, `diff_compute` u herramientas equivalentes.
-7. Aplicar fix minimo reversible.
-8. Verificar con doctor/status/logs y reenviar a `S-AUDIT`.
+2. Si la falla es de canal/ACL/UX Telegram, consumir el telegram architecture report de entrada como mapa de verdad.
+3. Si la falla es de sandbox o tools, consumir el sandbox architecture report de entrada.
+4. Si la falla es de install/compatibilidad, consumir el managed installs report de entrada.
+5. Si la falla es topologica o de gateway/proxy, consumir el topology report de entrada.
+6. Recolectar evidencia con `oc_cli`, `workspace_read`, `artifact_read`, `diff_compute` u herramientas equivalentes permitidas.
+7. Si el fix toca workspace o contrato, emitir remediacion minima via el surgeon co-listado en el estado.
+8. Si el problema es de stack remoto o host-level, cortar y derivar a `ops/clawstack`.
+9. Verificar con doctor/status/logs cuando exista runtime local.
 
 ## Signature Output
 ```yaml

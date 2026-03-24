@@ -31,8 +31,6 @@
       "oc_cli",
       "oc_docs_search",
       "spec_consult",
-      "host_exec",
-      "docker_exec",
       "workspace_read",
       "workspace_write"
     ],
@@ -49,7 +47,6 @@
   },
   "runtime_capabilities": {
     "allow": [
-      "deploy",
       "filesystem_read",
       "code_execution"
     ],

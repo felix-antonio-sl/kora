@@ -1,11 +1,12 @@
 platform_contract:
   config_projection:
     gateway: {}
+    sandbox: {}
+    tools: {}
     agents:
       defaults: {}
       list: []
     channels: {}
-    tools: {}
   managed_installs:
     workspace_skills: []
     skills: []
@@ -19,6 +20,7 @@ platform_contract:
     kb_mounts: []
     manual_inputs_required: []
     validation_checks: []
+  provenance: {}
   runtime_exclusions:
     - "auth-profiles.json"
     - "sessions/"

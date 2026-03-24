@@ -20,11 +20,13 @@ Reconciliar un `platform_contract` existente con nuevos fragmentos o cambios des
 1. Si no existe contrato previo, devolver modo `regenerate`.
 2. Comparar por dominio:
    - `config_projection.gateway`
+   - `config_projection.sandbox.*`
    - `config_projection.agents.*`
    - `config_projection.channels.*`
    - `config_projection.tools.*`
    - `managed_installs.*`
    - `deployment_hints.*`
+   - `provenance.*`
 3. Clasificar cambios:
    - `reuse`
    - `patch`
