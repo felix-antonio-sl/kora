@@ -22,15 +22,15 @@ Derivar el `platform_contract` OpenClaw con `config_projection`, `managed_instal
 
 ## Input/Output
 
-- **Input:** workspace: object, topology_target: string
+- **Input:** workspace: object, topology_target: string, blueprint: object?, knowledge_report: object?, topology_report: object?, telegram_report: object?, sandbox_report: object?, managed_installs_report: object?
 - **Output:** PlatformContractReport
 
 ## Procedimiento
 
-1. Releer blueprint y, si hay dudas de plataforma, consumir el knowledge report de entrada.
+1. Releer `blueprint` y, si hay dudas de plataforma, consumir `knowledge_report`.
 2. Usar `assets/platform-contract-template.yml` como shape minima del contrato.
 3. Proyectar `config.json` a superficies nativas OpenClaw.
-4. Consumir explicitamente los reportes de entrada de topologia, telegram, sandbox y managed installs.
+4. Consumir explicitamente `topology_report`, `telegram_report`, `sandbox_report` y `managed_installs_report`.
 5. Ensamblar `base_contract` + fragmentos via el contract assembler co-listado en el estado.
 6. Si hay colisiones, detener el ensamblaje y devolverlas para remediacion; no resolverlas implicitamente.
 7. Separar skills locales, installs gestionados y runtime state excluido.

@@ -52,7 +52,8 @@ Evaluar si un agente `OpenClaw` esta listo para promoción a producción y, si n
    - `P1`: no bloquea `pilot`, sí bloquea `assisted-prod`
    - `P2`: endurecimiento deseable
 6. Si se entrega `target_mode`, declarar elegibilidad actual o no.
-7. Escribir el backlog usando `assets/production-backlog-template.yml` cuando se deba persistir como artefacto.
+7. Si existen validadores mecanizados del workspace, contrato o patch, incorporarlos como evidencia antes de declarar `ready`.
+8. Escribir el backlog usando `assets/production-backlog-template.yml` cuando se deba persistir como artefacto.
 
 ## Signature Output
 

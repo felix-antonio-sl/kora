@@ -1,0 +1,22 @@
+platform_contract:
+  config_projection:
+    gateway: {}
+    sandbox: {}
+    tools: {}
+    agents:
+      defaults: {}
+      list: []
+  managed_installs:
+    workspace_skills: []
+    skills: []
+    plugins: []
+    bundles: []
+  deployment_hints:
+    topology:
+      recommended: "single-gateway-multi-agent"
+    manual_inputs_required: []
+    validation_checks: []
+  provenance:
+    gateway: "CM-OPENCLAW-TOPOLOGIST"
+  runtime_exclusions:
+    - "sessions/"

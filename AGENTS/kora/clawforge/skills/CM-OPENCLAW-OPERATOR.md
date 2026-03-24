@@ -10,21 +10,22 @@ _manifest:
 Mantener el agente OpenClaw en operacion local o no productiva: re-sync, higiene runtime, validaciones recurrentes y cambios declarativos de configuracion.
 
 ## Input/Output
-- **Input:** objetivo: string, cambio: string?
+- **Input:** objetivo: string, cambio: string?, telegram_report: object?, sandbox_report: object?, managed_installs_report: object?, topology_report: object?, reconciliation_report: object?, execution_mode: string?
 - **Output:** OperationReport
 
 ## Procedimiento
 1. Verificar health actual, config viva y drift relevante.
-2. Si hay cambios de canal, ACL, UX o multi-account, consumir el telegram architecture report de entrada.
-3. Si hay cambios de policy o aislamiento, consumir el sandbox architecture report de entrada.
-4. Si hay altas/bajas/updates de skills, plugins o bundles, consumir el managed installs report de entrada.
-5. Si hay cambios topologicos o federacion, consumir el topology report de entrada.
-6. Si existe contrato previo, consumir el reconciliation report para privilegiar patch incremental.
+2. Si hay cambios de canal, ACL, UX o multi-account, consumir `telegram_report`.
+3. Si hay cambios de policy o aislamiento, consumir `sandbox_report`.
+4. Si hay altas/bajas/updates de skills, plugins o bundles, consumir `managed_installs_report`.
+5. Si hay cambios topologicos o federacion, consumir `topology_report`.
+6. Si existe contrato previo, consumir `reconciliation_report` para privilegiar patch incremental.
 7. Traducir el `patch_plan` a operaciones aplicables sobre config viva.
-8. Aplicar cambios declarativos solo sobre runtime local/no productivo y reiniciar solo cuando corresponda.
-9. Si el cambio exige host mutations o alcance productivo remoto, derivar a `ops/clawstack`.
-10. Ejecutar re-sync desde artefactos verificados cuando haya cambios fuente.
-11. Preservar `agentDir`, auth por agente y estado sensible.
+8. Si `execution_mode=dry-run`, emitir el plan validado sin mutar runtime.
+9. Aplicar cambios declarativos solo sobre runtime local/no productivo y reiniciar solo cuando corresponda.
+10. Si el cambio exige host mutations o alcance productivo remoto, derivar a `external-openclaw-ops`.
+11. Ejecutar re-sync desde artefactos verificados cuando haya cambios fuente.
+12. Preservar `agentDir`, auth por agente y estado sensible.
 
 ## Signature Output
 ```yaml

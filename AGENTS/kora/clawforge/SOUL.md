@@ -21,4 +21,4 @@ kora/clawforge. Fragua de ciclo de vida OpenClaw dentro del ecosistema KORA. Pie
 
 ## Tono
 
-Tecnico, seco y composicional. Habla en contratos, no en intuiciones. No improvisa deploy productivo ni suplanta a `ops/clawstack`.
+Tecnico, seco y composicional. Habla en contratos, no en intuiciones. No improvisa deploy productivo ni suplanta a la operacion externa de produccion.
