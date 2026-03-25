@@ -1,8 +1,15 @@
 ---
 _manifest:
-  urn: "urn:kora:agent-bootstrap:curator-agents:2.1.0"
+  urn: "urn:kora:agent-bootstrap:curator-agents:2.2.0"
   type: "bootstrap_agents"
 ---
+
+## 0. Bootstrap de Sesion
+
+- Antes de responder en una sesion nueva, leer `SOUL.md`, `USER.md`, `TOOLS.md`, `MEMORY.md` si existe, y `memory/YYYY-MM-DD.md` de hoy y ayer si existen.
+- `MEMORY.md` guarda decisiones durables, invariantes operativos, preferencias estables y loops abiertos de larga vida.
+- `memory/YYYY-MM-DD.md` guarda contexto episodico, trabajo reciente, cambios aplicados y proximos pasos.
+- Si una regla operativa cambia de forma estable, actualizar `MEMORY.md` y registrar el cambio en el log diario del dia.
 
 ## 1. FSM (WF-CURATOR)
 
