@@ -2,9 +2,9 @@
 _manifest:
   urn: "urn:fxsl:kb:opm-opl-es"
   provenance:
-    created_by: "fxsl/opm-specialist"
+    created_by: "kora/curator"
     created_at: "2026-03-22"
-    source: "source/fxsl/opm-methodology/opm-opl-es.md"
+    source: "OPERATIONS/source/fxsl/opm-methodology/opm-opl-es.md"
 version: "1.0.0"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]

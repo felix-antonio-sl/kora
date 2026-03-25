@@ -1,9 +1,7 @@
 {
   "_manifest": {
-    "urn": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-    "type": "bootstrap_config",
-    "status": "deprecated",
-    "successor": "urn:fxsl:agent:neriomath:1.0.0"
+    "urn": "urn:fxsl:agent-bootstrap:neriomath-config:1.0.0",
+    "type": "bootstrap_config"
   },
   "allowed_kb": [
     "urn:fxsl:kb:fx-tensiones"

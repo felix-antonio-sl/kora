@@ -2,6 +2,8 @@
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0"
   type: "bootstrap_user"
+  status: deprecated
+  successor: "urn:fxsl:agent:neriomath:1.0.0"
 ---
 
 ## Perfil

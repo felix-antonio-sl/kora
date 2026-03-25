@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-22"
-    source: "source/fxsl/opm-methodology/opcloud-tutorial-videos.md"
+    source: "OPERATIONS/source/fxsl/opm-methodology/opcloud-tutorial-videos.md"
 version: "2.1.0"
 status: published
 tags: [opcloud, opm, tutorial, modelado, video-course, cloud-tool, simulation]
@@ -13,6 +13,8 @@ extensions:
   kora:
     family: tutorial
     video_count: 50
+    depends_on:
+      - "urn:fxsl:kb:opm-iso-19450"
 ---
 
 # OPCloud Tutorial Videos
@@ -408,5 +410,3 @@ Vertexes: black dots on links. Click to add routing vertex; drag to merge back. 
 ## Summary
 
 Complete OPCloud workflow coverage across fundamentals, modelling, simulation, governance, analysis and operations.
-
-Compression rationale: this tutorial contains many atomic UI actions, control distinctions and click-path dependencies. More aggressive compression would reduce recoverability of operational workflows.

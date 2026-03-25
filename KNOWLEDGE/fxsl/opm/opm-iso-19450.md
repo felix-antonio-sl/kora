@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-22"
-    source: "source/fxsl/opm-methodology/opm-iso.md"
+    source: "OPERATIONS/source/fxsl/opm-methodology/opm-iso.md"
 version: "1.1.0"
 status: published
 tags: [opm, iso-19450, systems-engineering, conceptual-modeling, bimodal-representation, mbse, opcloud]

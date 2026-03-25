@@ -2,6 +2,8 @@
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0"
   type: "bootstrap_agents"
+  status: deprecated
+  successor: "urn:fxsl:agent:neriomath:1.0.0"
 ---
 
 ## 1. FSM (WF-PENSADOR)

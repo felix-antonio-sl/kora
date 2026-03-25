@@ -2,6 +2,8 @@
 _manifest:
   urn: "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0"
   type: "bootstrap_soul"
+  status: deprecated
+  successor: "urn:fxsl:agent:neriomath:1.0.0"
 ---
 
 ## Identidad Dialectica
