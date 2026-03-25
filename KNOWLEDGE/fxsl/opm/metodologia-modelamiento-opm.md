@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-25"
-    source: "synthesis:opm-iso-19450,opm-mbse-foundations,opm-applied-system-modeling,opm-sd-wizard,opm-complexity-management,opcloud-tutorial-videos,paper:katzir-2025-opm-r,paper:dori-2023-mbsa,paper:levi-soskin-2024-maxim"
-version: "3.2.0"
+    source: "synthesis:opm-iso-19450,opcloud-tutorial-videos,paper:katzir-2025-opm-r,paper:dori-2023-mbsa,paper:levi-soskin-2024-maxim"
+version: "3.3.0"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patterns, antipatterns, control-flow, error-handling, quantitative, requirements-integration, simulation, executable-modeling]
 lang: es
@@ -15,7 +15,7 @@ lang: es
 
 ## 1 Definicion
 
-Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Cubre desde la clasificacion del sistema hasta gestion de complejidad multinivel, incluyendo heuristicas de decision avanzadas, control de flujo, manejo de errores temporales y modelamiento cuantitativo. Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para fundamentos ontologicos, ver [OPM Foundations](urn:fxsl:kb:opm-mbse-foundations).
+Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Cubre desde la clasificacion del sistema hasta gestion de complejidad multinivel, incluyendo heuristicas de decision avanzadas, control de flujo, manejo de errores temporales y modelamiento cuantitativo. Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para fundamentos ontologicos, ver §3 y [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450).
 
 ## 2 Definiciones
 
@@ -43,17 +43,17 @@ Esta especificacion define la metodologia para construir modelos conceptuales de
 
 > Si un sistema puede especificarse al mismo nivel de precision y detalle con dos lenguajes de diferentes tamanos ontologicos, el lenguaje con ontologia menor es preferible, siempre que la comprensibilidad sea comparable.
 
-OPM usa exactamente tres tipos de elementos: objetos con estado, procesos, y relaciones.
+OPM usa exactamente tres tipos de elementos: objetos, procesos, y relaciones.
 
 ### 3.2 Teorema Objeto-Proceso
 
-> Objetos con estado, procesos y relaciones entre ellos constituyen una ontologia universal minima.
+> Objetos, procesos y relaciones entre ellos constituyen una ontologia universal minima.
 
-Demostrado por necesidad (especificar estructura requiere objetos; especificar comportamiento requiere procesos) y suficiencia (las cosas existen o suceden; solo se asocian mediante relaciones).
+Demostrado por necesidad (especificar estructura requiere objetos; especificar comportamiento requiere procesos) y suficiencia (las cosas existen o suceden; solo se asocian mediante relaciones). Los objetos pueden ser stateful (con estados explicitos, transformables via effect) o stateless (sin estados, solo creables/consumibles). La distincion stateful/stateless es posterior a la base ontologica.
 
 ### 3.3 Asercion Objeto-Proceso
 
-> Usando objetos con estado, procesos, relaciones, y mecanismos de refinamiento (in-zooming y unfolding), se puede modelar conceptualmente cualquier sistema en cualquier dominio y nivel de complejidad.
+> Usando objetos, procesos, relaciones, y mecanismos de refinamiento (in-zooming y unfolding), se puede modelar conceptualmente cualquier sistema en cualquier dominio y nivel de complejidad.
 
 ## 4 Principios de Modelamiento
 
@@ -107,7 +107,7 @@ Cada OPD tiene un paragrafo OPL correspondiente. La redundancia aprovecha canale
 
 ## 5 Clasificacion del Sistema
 
-Antes de construir el SD, el modelador DEBE clasificar el sistema. La clasificacion determina que componentes del SD aplican. Para la taxonomia completa con worked examples, ver [OPM Applied System Modeling](urn:fxsl:kb:opm-applied-system-modeling).
+Antes de construir el SD, el modelador DEBE clasificar el sistema. La clasificacion determina que componentes del SD aplican.
 
 Reglas prescriptivas por categoria:
 
@@ -122,7 +122,7 @@ El SD DEBE ser simple y claro, con minimos detalles tecnicos. Todos los stakehol
 
 ### 6.1 Paso 1: Identificacion del Proceso Principal
 
-El nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing").
+El nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing"). En OPL-ES, el equivalente funcional es el infinitivo (-ar, -er, -ir); ver [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1.
 
 **Correcto:** `Battery Charging`, `Airplane Flying`
 
@@ -228,7 +228,7 @@ Aplica cuando los subprocesos tienen un orden fijo y predefinido.
 | In-diagram | Refineable aparece in-zoomed en el mismo OPD (no se crea OPD nuevo) | OPD tiene espacio suficiente; pocos subprocesos |
 | New-diagram | Nuevo OPD descendiente; refineable con contour grueso en ambos OPDs | Caso prevalente; in-zooming requiere espacio sustancial |
 
-**In-zooming semantics identity:** Cuando un proceso se in-zoomea, sus subprocesos = partes (aggregation-participation + orderability positiva), y los objetos expuestos = atributos del proceso. Simetricamente, cuando un objeto se in-zoomea: objetos internos = partes, procesos internos = operaciones del objeto.
+**In-zooming semantics identity:** Cuando un proceso se in-zoomea, sus subprocesos = partes (aggregation-participation + orderability positiva), y los objetos que el proceso exhibe (via exhibition-characterization) = atributos del proceso. Objetos que ingresan al contexto por link migration mantienen su identidad independiente y NO son atributos del proceso. Simetricamente, cuando un objeto se in-zoomea: objetos internos = partes, procesos internos = operaciones del objeto.
 
 **Paralelismo implicito:** Cuando dos o mas subprocesos tienen el borde superior de sus elipses a la misma altura, DEBEN interpretarse como ejecutandose en paralelo. El siguiente subproceso inicia cuando el ultimo de los paralelos termina. OPL usa la keyword `parallel` para expresar concurrencia.
 
@@ -614,7 +614,7 @@ Un **scenario** (thread of execution) es un path especifico a traves de la jerar
 | Condition consumption | Si consumee existe, proceso lo consume; si no, skip | `Process occurs if Object exists, in which case Process consumes Object, otherwise Process is skipped` |
 | Condition effect | Si affectee existe, proceso lo afecta; si no, skip | `Process occurs if Object exists, in which case Process affects Object, otherwise Process is skipped` |
 | Condition agent | Si agent existe, proceso opera con agent; si no, skip | `Agent handles Process if Agent exists, otherwise Process is skipped` |
-| Condition instrument | Si instrument existe, proceso opera; si no, skip | `Process requires Instrument if Instrument exists, otherwise Process is skipped` |
+| Condition instrument | Si instrument existe, proceso opera; si no, skip | `Process occurs if Instrument exists, else Process is skipped` |
 
 Cada uno de estos TIENE version state-specified (proceso opera si objeto esta en estado especifico; si no, skip).
 
@@ -824,7 +824,7 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 
 | Invariante | Enforcement |
 |-----------|-------------|
-| Nombre del proceso principal termina en gerundio | lint |
+| Nombre del proceso principal termina en gerundio (EN) o infinitivo (ES) | lint |
 | Todos los nombres de things son singulares | lint |
 | Grupo beneficiario es objeto fisico | lint |
 | Atributo del beneficiario es objeto informatical | lint |

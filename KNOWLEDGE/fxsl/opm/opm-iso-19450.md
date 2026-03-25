@@ -5,17 +5,13 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-22"
     source: "OPERATIONS/source/fxsl/opm-methodology/opm-iso.md"
-version: "1.1.0"
+version: "1.2.0"
 status: published
 tags: [opm, iso-19450, systems-engineering, conceptual-modeling, bimodal-representation, mbse, opcloud]
 lang: en
 extensions:
   kora:
     family: specification
-    supplementary_sources:
-      - "source/fxsl/opm-methodology/opm_youtube.md"
-      - "source/fxsl/opm-methodology/OPM version felix.md"
-      - "source/fxsl/opm-methodology/opcloud-tutorial-videos.md"
 ---
 
 # OPM ISO/PAS 19450 — Object-Process Methodology
@@ -24,9 +20,7 @@ Compact conceptual language and methodology for modelling automation systems and
 
 OPM provides two semantically equivalent modalities: graphical (OPD set) and textual (OPL sentences in English subset). Domain experts understand OPL without technical training. OPM unifies function, structure and behaviour in a single model.
 
-OPCloud is the dedicated cloud software for OPM. It generates OPL automatically from OPDs, supports simulation, MQTT/ROS integration, CSV import, AI requirements generation, templates, sub-models, and collaborative editing. The predecessor tool OPCAT is a patented desktop software package for OPD/OPL generation, available freely.
-
-OPM is used by leading organizations worldwide: next-generation appliance design (refrigerators, dishwashers), commercial aircraft modelling, business process knowledge management, end-to-end vehicle control in automotive, robotic arms for the ISS, insurance product design, and molecular biology research.
+**Tool support:** OPCloud (cloud-based, primary implementation) generates OPL automatically from OPDs, supports simulation, MQTT/ROS integration, CSV import, AI requirements generation, templates, sub-models, and collaborative editing. Predecessor: OPCAT (desktop, freely available). **Applications:** next-generation appliance design, commercial aircraft modelling, business process knowledge management, automotive vehicle control, ISS robotic arms, insurance product design, and molecular biology research.
 
 ---
 
@@ -135,6 +129,7 @@ No normative references.
 | 3.81 | Value (attribute) | State of an attribute |
 | 3.82 | Value (functional) | Benefit derived from a system's function |
 | 3.83 | Whole | An aggregate |
+| 3.84 | OPPL | Sentence classification layer over OPL used for model informativeness grading. Categories: Definition, Structural, Procedural, Meta, Unknown |
 
 Key normative notes on glossary terms:
 
@@ -300,15 +295,6 @@ All things have three generic properties:
 | Affiliation | systemic / environmental | Systemic is default; Environmental is non-default |
 
 **Affiliation inheritance**: attributes of environmental objects are automatically environmental. Processes performed by environmental entities are environmental processes.
-
-### Graphical Symbol Combinations
-
-| Essence | Affiliation | Object | Process |
-|---------|-------------|--------|---------|
-| Physical | Systemic | shaded solid rectangle | shaded solid ellipse |
-| Physical | Environmental | shaded dashed rectangle | shaded dashed ellipse |
-| Informatical | Systemic | flat solid rectangle | flat solid ellipse |
-| Informatical | Environmental | flat dashed rectangle | flat dashed ellipse |
 
 ---
 
@@ -609,10 +595,6 @@ Range syntax: `qmin..qmax` (closed). Multiple ranges separated by comma. Arithme
 
 **Multi-constraint example** (Airplane): `Airplane consists of Body, 2 Wings, and e Engines, where e≥1, e=b+2*w.` Each Wing has **w Engines** (0≤w≤3). Body has **b Engines** (b∈{0,1}).
 
-### Attribute Value Constraints
-
-Attribute values may be integer, real, string or enumerated. OPL syntax: `Attribute of Object is value.` or `Attribute of Object ranges from X to Y.`
-
 ---
 
 ## Logical Operators: AND, XOR, OR
@@ -744,6 +726,8 @@ Two implicit invocation forms govern synchronous in-zoomed execution:
 
 This captures the substance of ISO Table 24: invocation order can be encoded without explicit invocation arrows when the in-zoom layout already fixes temporal order.
 
+---
+
 ## Link Distribution Across Context
 
 Links attached to the **outer contour** of an in-zoomed process have **distributive semantics** — they distribute to all subprocesses (analogous to algebraic parentheses).
@@ -756,6 +740,8 @@ Links attached to the **outer contour** of an in-zoomed process have **distribut
 - If a condition link causes a subprocess to be skipped and there is a next subprocess in the in-zoom context, execution control initiates that next subprocess.
 
 **Valid vs invalid distribution example**: Process P zooms into P1, P2, P3. Agent A handles P (valid: distributes to all subprocesses). Instrument D required by P (valid: distributes). But `P consumes C` — **NOT VALID** because P1 consumes C first; C doesn't exist when P2/P3 perform. And `P yields B` — **NOT VALID** because B can only be created once. Correct: P1 consumes C, P2 yields B, P3 affects B (assign to specific subprocesses). ISO illustrates the equivalence and restriction pattern explicitly in Figure 50 and Figure 51.
+
+---
 
 ## Split State-Specified Transforming Links
 
@@ -778,6 +764,8 @@ Summary of the split pair:
 This is the recoverable core of ISO Table 25. ISO Figure 52 provides the canonical underspecified middle case and the repaired split-link case.
 
 **Abstraction role shift**: an object may be an instrument at an abstract level (e.g., Dishwasher as instrument of Dish Washing in SD) and become an affectee at a detailed level (Dish Loading changes Dishwasher from empty to loaded, Dish Unloading changes back to empty in SD1). This is valid because the initial and final states are the same at the abstract level.
+
+---
 
 ## Link Precedence During Out-Zooming
 

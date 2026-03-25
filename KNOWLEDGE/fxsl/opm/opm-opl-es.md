@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-22"
     source: "OPERATIONS/source/fxsl/opm-methodology/opm-opl-es.md"
-version: "1.0.0"
+version: "1.1.0"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -724,4 +724,4 @@ OPL-ES no modifica la semántica OPM. Un modelo creado con OPL-ES es semánticam
 
 ### 18.4 Roundtrip
 
-Toda sentencia OPL-EN tiene exactamente una sentencia OPL-ES equivalente y viceversa. El roundtrip EN→ES→EN debe producir la sentencia original. Esta propiedad es verificable por la correspondencia 1:1 de las reglas de transformación (§15).
+Toda sentencia OPL-EN en forma canonica tiene exactamente una sentencia OPL-ES equivalente y viceversa. El roundtrip EN→ES→EN debe producir la sentencia original. Esta propiedad es verificable por la correspondencia 1:1 de las reglas de transformacion (§15). Las variantes aceptadas (sustantivo verbal, §1.1) son formas de entrada no canonicas que la herramienta DEBERIA normalizar a infinitivo antes de aplicar roundtrip.

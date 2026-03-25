@@ -5,9 +5,9 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-22"
     source: "OPERATIONS/source/fxsl/opm-methodology/opcloud-tutorial-videos.md"
-version: "2.1.0"
+version: "2.2.0"
 status: published
-tags: [opcloud, opm, tutorial, modelado, video-course, cloud-tool, simulation]
+tags: [opcloud, opm, tutorial, modeling, video-course, cloud-tool, simulation]
 lang: en
 extensions:
   kora:
@@ -19,7 +19,7 @@ extensions:
 
 # OPCloud Tutorial Videos
 
-OPCloud is the dedicated cloud-based software for Object-Process Methodology (OPM) modelling. It provides bimodal graphic-text editing: OPL sentences are generated automatically as OPDs are constructed. This tutorial covers the complete OPCloud workflow based on a 50-video course using the OnStar system as primary example (emergency assistance, GPS navigation, cellular communication, advisor interaction).
+OPCloud is the dedicated cloud-based software for Object-Process Methodology (OPM) modelling. It provides bimodal graphic-text editing: OPL sentences are generated automatically as OPDs are constructed.
 
 For OPM formal specification, notation and methodology, see `urn:fxsl:kb:opm-iso-19450`.
 
@@ -54,14 +54,14 @@ Main Menu: Create new model, Load model, Load examples (Global — all users; Or
 ### Model Navigation
 
 - **OPD Navigator**: left pane tree view of all diagrams
-- **Draggable Things panel**: all elements with type indicators — (i) Informational, (P) Physical, (E) Environmental, (S) Systemic. Drag elements directly to canvas.
+- **Draggable Things panel**: all elements with type indicators — (i) Informatical, (P) Physical, (E) Environmental, (S) Systemic. Drag elements directly to canvas.
 - **Connected Things**: sub-view within Draggable Things showing attributes connected to their parent elements (e.g., danger status connected to driver). Displays hierarchical attribute-exhibitor relationships, not just flat element list.
 - **Keyboard shortcuts**: Ctrl+Up → parent OPD, Ctrl+Down → child OPD
 - Zoom in/out + drag to reposition
 
 ### Model Wizard
 
-Access: Main Menu > New Model by Wizard. Implements the OPM SD construction procedure (see `urn:fxsl:kb:opm-iso-19450` § SD Construction Procedure) as a guided 12-stage interactive workflow.
+Access: Main Menu > New Model by Wizard. Implements the OPM SD construction procedure (see `urn:fxsl:kb:opm-iso-19450` § SD Construction Procedure) as a guided 12-stage interactive workflow. The wizard decomposes the conceptual 9-stage SD procedure into 12 UI stages: stages 1-5 map to conceptual stages 1-4; stages 6-12 cover system naming, instruments, I/O, environment, connections, and review.
 
 **Help features**: hover hints on UI elements, assistant tooltips on bold items. Example model: OnStar system.
 
@@ -98,13 +98,15 @@ OPDs auto-generate when using in-zoom or unfold. Naming convention: SD (top), SD
 
 Expand/collapse via right-click: expand all, collapse all, hide/show names. **Partial expansion**: models with >20 OPDs show only current level expanded by default.
 
+**OPD toolbar**: secondary toolbar > OPD management button. Features: search by name/number, hide/show names, open, cut, remove, paste, drag. Auto-arrangement: drag to reorder affects automatic tree layout.
+
 ### Searching Elements
 
 Secondary toolbar > search button. Filter: all elements, processes only, objects only. Results show Location column (OPD where element exists). Click location → navigate to OPD and focus on element. Right-click in Draggable Things panel to filter by element name.
 
 ### Objects and Processes
 
-Four essence types: Physical (tangible), Informational (abstract data), Environmental (external factors), Systemic (control systems). Change essence via secondary toolbar button.
+Two orthogonal property axes. **Essence**: Physical (tangible, shaded symbol) / Informatical (abstract, non-shaded). Default: Informatical. **Affiliation**: Systemic (solid contour) / Environmental (dashed contour). Default: Systemic. Four combinations possible. Change via secondary toolbar button.
 
 - **Description**: add text, URLs, notes via double-click
 - **URL links**: entities extension > view URL (images, videos, articles)
@@ -149,15 +151,6 @@ Shift Pane: move OPL panel to left side. Toggle numbering on/off. **Minimize Pan
 ### Touch Screen Support
 
 Long press as alternative to right-click. Gesture-based OPD navigation. See user manual for complete gesture list.
-
-### Inner and Outer Objects
-
-- **Inner Objects**: created inside in-zoom processes; exist only within process scope; deleted when parent process is deleted
-- **Outer Objects**: created at system diagram level; can be referenced across multiple OPDs
-- **Conversion Methods**: delete/recreate or copy from Draggable Things into the target context
-- **Drag Behavior**: dragging an outer object inside a process raises a warning
-- **Visual Indicator**: inner objects use inside-process notation
-- **Enveloping**: process enlargement can visually swallow an outer object, but the object reverts when moved
 
 ---
 
@@ -241,7 +234,7 @@ Access: Main Menu > User Settings OR gear icon near modeller name.
 - Profile: name, address, access level
 - Password reset via email (not available for SSO users)
 - **OPL Language**: Chinese, French, German, Korean, and more (continuously expanding)
-- Thing's Default Essence: Physical (default) or Informational as organizational default
+- Thing's Default Essence: Physical (default) or Informatical as organizational default
 - OPL Display: all sentences or only non-default essence
 - Units Display: always / hide / only when applicable
 - Alias Display: toggle visibility
@@ -277,7 +270,7 @@ Convert via halo or computation option. Value types: integer, float, string, cha
 
 ### Advanced Calculations
 
-**Stereotypes**: parameter type templates. Global (G icon, all users) vs Organizational (no icon, admin-created). Components: sub-parameters with ranges per element.
+**Stereotypes**: parameter type templates. Global (G icon, all users) vs Organizational (no icon, admin-created). Components: sub-parameters with ranges per element. Apply: select thing > entities extension > set stereotype. Removal options: **Unlink** (remove stereotype but keep components in diagram) vs **Unlink and remove** (remove stereotype AND all added components). Use Bring Connected to view stereotype components in other OPDs; Semi-Folding as alternative for internal structure view.
 
 **User-Defined Functions**: custom calculations integrated via API. OPCloud provides built-in functions accessible in the calculation dropdown.
 
@@ -322,7 +315,7 @@ Workflow:
 
 ## Requirements Modeling
 
-Add, remove and view requirements on model elements. Access: select element > OPM Requirements group > Add requirements. Actions: add, remove, create consolidated requirements view. Link types: Exhibition (presence/absence), Characterization (attributes), Aggregation Participation (part-whole). Apply requirements to elements, links, or entire diagrams.
+Add, remove and view requirements on model elements. Access: select element > OPM Requirements group > Add requirements. Actions: add, remove, create consolidated requirements view. Link types: Exhibition (presence/absence), Characterization (attributes), Aggregation Participation (part-whole). Requirement traceability uses the "satisfies" tagged structural link convention (see `urn:fxsl:kb:metodologia-modelamiento-opm` §13.3). Apply requirements to elements, links, or entire diagrams.
 
 ### Requirements Example (Door-Peephole System)
 
@@ -338,7 +331,7 @@ Visual overview of entire OPD tree as minimised icons. Access: Main Menu > Model
 
 ### Model Informativeness Grading
 
-Premium feature. Access: Settings > Analyze Model > Model Knowledge. OPPL sentences classified: Definition, Structural, Procedural, Meta, Unknown. Metrics: total informative level, weighted score, INF average, total OPPL sentence count. Identifies missing precedence links, processes without inputs/outputs. **Compare model versions over time** for improvement tracking.
+Premium feature. Access: Settings > Analyze Model > Model Knowledge. OPPL (OPM Process Language — the textual sentence classification scheme) sentences classified: Definition, Structural, Procedural, Meta, Unknown. Metrics: total informative level, weighted score, INF average, total OPPL sentence count. Identifies missing precedence links, processes without inputs/outputs. **Compare model versions over time** for improvement tracking.
 
 ### Identification of Missing Knowledge
 
@@ -372,25 +365,6 @@ Preview before import. CSV format: column-based with attribute names and values.
 
 ---
 
-## Stereotypes
-
-Pre-defined templates for common patterns (e.g., Security Level Computing). Admin creates for organisation. Apply: select thing > entities extension > set stereotype. Components include sub-components with parameter ranges. Global (G icon) vs Organizational.
-
-Removal options:
-
-- **Unlink**: remove stereotype but keep components in diagram
-- **Unlink and remove**: remove stereotype AND all added components
-
-Bring Connected to view stereotype components in other OPDs. Semi-Folding as alternative for internal structure view.
-
----
-
-## OPD3 Management
-
-Secondary toolbar > OPD management button. Features: search by name/number, hide/show names, open, cut, remove, paste, drag. Auto-arrangement: drag to reorder affects automatic tree layout.
-
----
-
 ## Workflow Tips
 
 ### Bring Connected Things
@@ -404,9 +378,3 @@ Ctrl+Click for multiple elements. Lasso: drag rectangle to select area. **Bulk O
 ### Alignment
 
 Vertexes: black dots on links. Click to add routing vertex; drag to merge back. Grid for precise alignment. Auto-Arrange via system map. Manual adjustment after auto-arrange.
-
----
-
-## Summary
-
-Complete OPCloud workflow coverage across fundamentals, modelling, simulation, governance, analysis and operations.
