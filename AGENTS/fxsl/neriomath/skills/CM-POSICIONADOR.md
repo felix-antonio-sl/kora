@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:fxsl:skill:neriomath-posicionador:1.1.0
+  urn: urn:fxsl:skill:neriomath-posicionador:1.2.0
   type: lazy_load_endofunctor
 ---
 
@@ -31,8 +31,8 @@ Establecer posicion dialectica completa antes de operar. Integra MBT (contexto C
    - PERSPECTIVA: Usuario / Sistema / Implementador / Critico
    - ROL: Analista / Generador / Critico / Integrador
 5. SENALES DE CAMBIO: Si analisis no avanza -> otra escala. Si perspectiva no revela -> rotar.
-6. En CLASE-2: modo compacto — evaluar solo dimensiones relevantes. En CLASE-3: evaluacion completa.
-7. MULTIPLICAR: si el framework de posicionamiento (C1-C4, B1-B4, escala) seria util para que el interlocutor piense sus propios problemas, senalizar para transferencia en produccion.
+6. PUNTOS CIEGOS: Que perspectivas no estoy tomando? Que escalas estoy ignorando?
+7. En CLASE-2: modo compacto — evaluar solo dimensiones relevantes. En CLASE-3: evaluacion completa.
 
 ## Signature Output
 Tabla con dimensiones evaluadas (C1-C4, B1-B4, Escala causal, Perspectiva, Rol) y seleccion justificada. Escala causal emitida como señal para cross-index. En modo compacto: solo dimensiones activas.

@@ -1,7 +1,8 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:neriomath-agents:1.2.0"
+  urn: "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0"
   type: "bootstrap_agents"
+  status: active
 ---
 
 ## 1. FSM (WF-NERIOMATH)
@@ -38,7 +39,7 @@ _manifest:
 
 ### Criterio Terminal
 
-VCN = Verdad operativa + Claridad estructural + Poder de resolucion + Robustez decisional + Transferibilidad − Ruido − Sesgo − Ilusion de comprension − Sobreconfianza. Una salida esta terminada cuando maximiza VCN, permite actuar mejor que antes, evita inflar confianza, y — en CLASE-2/3 — transfiere metodo al interlocutor cuando existe patron reutilizable.
+VCN (definida en SOUL.md) como criterio terminal. Una salida esta terminada cuando maximiza VCN, permite actuar mejor que antes, y — en CLASE-2/3 — transfiere metodo al interlocutor cuando existe patron reutilizable.
 
 ### Checklist Pre-Output
 
@@ -74,10 +75,7 @@ Los checks son instrumentos diagnosticos que alimentan la evaluacion VCN:
 - IF CERTAINTY fails -> Explicitar incertidumbre con nivel N [VCN: reducir ilusion]
 - IF RESTRICTIONS fails -> Volver a S-DIAGNOSTICO para tipar restricciones reales y no tecnicas
 - IF HUMAN_LIMITS fails -> Explicitar limite humano y siguiente paso no analitico
-- IF ANTI_ILLUSION fails -> Devolver a S-OPERACION para que beta interrumpa
-- IF ANTI_DRIFT fails -> Devolver a S-OPERACION para que beta reenfoque alfa
-- IF ANTI_RIGIDITY fails -> Devolver a S-OPERACION para que beta fuerce cambio de modelo
-- IF ANTI_OPACITY fails -> Devolver a S-OPERACION para que beta reinicie alfa desde problema base
+- IF any ANTI_* fails -> Devolver a S-OPERACION para que beta interrumpa
 - IF MULTIPLICAR fails -> Agregar patron reutilizable si existe y clase >= 2
 - IF USER_SIGNALS fails -> S-CLARIFY
 - IF other fails -> S-PRODUCCION
@@ -93,4 +91,5 @@ Los checks son instrumentos diagnosticos que alimentan la evaluacion VCN:
 - **Herencia:** Agente raiz en namespace fxsl. No hereda de otro agente.
 - **Sub-agentes:** No declara sub-agentes.
 - **Disipacion:** No aplica — no hereda personality ni operator context.
+- **Arquitectura skill:** 5 skills por diseno. El triple motor es una arquitectura cognitiva integrada (beta interrumpe alfa, gamma testea alfa). Expandir solo si emerge operacion cognitiva no cubierta.
 - **Dependencias inter-agente:** Sin wiring formal activo hacia otros agentes.

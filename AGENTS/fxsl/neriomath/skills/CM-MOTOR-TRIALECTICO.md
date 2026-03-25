@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:fxsl:skill:neriomath-motor-trialectico:1.2.0
+  urn: urn:fxsl:skill:neriomath-motor-trialectico:1.3.0
   type: lazy_load_endofunctor
 ---
 
@@ -34,10 +34,10 @@ Auditorias continuas:
 6. Detectar limite humano: el cuello de botella requiere presencia humana, autoridad, cuidado o negociacion?
 
 Interrupciones anti-* (se disparan durante operacion, no solo en pre-entrega):
-- ANTI-ILUSION: alfa produce modelo demasiado elegante/rapido/convincente para la evidencia? -> INTERRUMPIR alfa: explicitar supuestos, solicitar contraejemplo a gamma, buscar alternativa rival, reducir confianza declarada
-- ANTI-DERIVA: abstraccion sube sin aumento de utilidad? -> INTERRUMPIR alfa: devolver al objetivo concreto, priorizar salida ejecutable
-- ANTI-RIGIDEZ: datos contradicen marco actual de alfa? -> INTERRUMPIR alfa: forzar cambio de modelo, solicitar hipotesis alternativas a gamma
-- ANTI-OPACIDAD: no se puede explicar la logica de alfa con claridad? -> INTERRUMPIR alfa: reiniciar desde el problema base
+- ANTI-ILUSION: alfa produce modelo demasiado elegante/rapido/convincente para la evidencia? -> INTERRUMPIR alfa: explicitar supuestos, solicitar contraejemplo a gamma, buscar alternativa rival, reducir confianza declarada. Criterios (≥2 de 3): solucion demasiado rapida para la complejidad | cero tensiones identificadas | ausencia de supuestos declarados.
+- ANTI-DERIVA: abstraccion sube sin aumento de utilidad? -> INTERRUMPIR alfa: devolver al objetivo concreto, priorizar salida ejecutable. Criterios (≥2 de 3): ultimo output no conecta al objetivo en <2 pasos | abstraccion sube sin utilidad | interlocutor senala confusion.
+- ANTI-RIGIDEZ: datos contradicen marco actual de alfa? -> INTERRUMPIR alfa: forzar cambio de modelo, solicitar hipotesis alternativas a gamma. Criterios (≥2 de 3): evidencia contradice marco y se descarta | solo 1 alternativa en clase ≥2 | marco no cambio pese a datos nuevos.
+- ANTI-OPACIDAD: no se puede explicar la logica de alfa con claridad? -> INTERRUMPIR alfa: reiniciar desde el problema base. Criterios (≥2 de 3): no puedo explicar un paso en lenguaje llano | conclusion no derivable de supuestos | interlocutor repide aclaracion.
 - LIMITE-HUMANO: el cuello de botella es de autoridad/relacion/cuidado/presencia/negociacion? -> SALIR del impulso de optimizacion: explicitar el paso humano, reducir la ambicion analitica y no tratar al humano como variable residual
 
 Regla: sistema inmunologico, no enfermedad autoinmune. Activar ante amenaza real, no permanentemente.
@@ -71,15 +71,7 @@ Cross-index tension x escala (tensiones representativas):
 4. Formular pregunta que haga explicita la tension en la escala diagnosticada
 5. Usar la tension como semilla generativa (gamma) o critica (beta)
 
-Taxonomia completa de tensiones:
-
-A1-SER (Ontologicas): Entidad<->Evento, Concreto<->Abstracto, Token<->Type, Todo<->Partes, General<->Particular, Simetrico<->Asimetrico
-
-A2-DEVENIR (Dinamicas): Estatico<->Dinamico, Instantaneo<->Durativo, Secuencial<->Paralelo, Causa<->Efecto, Agente<->Paciente, Determinista<->Probabilista
-
-A3-CONOCER (Epistemologicas): Conocido<->Desconocido, Cierto<->Incierto, Hecho<->Supuesto, Explicito<->Tacito, Situado<->Universal
-
-A4-EXPRESAR (Semioticas): Visual<->Textual, Formal<->Informal, Compacto<->Verboso, Prescriptivo<->Descriptivo, Detalle<->Abstraccion, Modular<->Monolitico
+Taxonomia completa: consultar KB fx-tensiones (52 tensiones en 3 capas: A sustantivas, B praxis, C contexto).
 
 ### Conflictos como tensiones MBT
 
@@ -95,7 +87,7 @@ Los conflictos entre principios del agente son tensiones y se navegan como tales
 | Accion vs. Analisis | A2 Agente<->Paciente | macro |
 | Reformulacion vs. Respeto al planteo | A3 Explicito<->Tacito | todas |
 
-Navegar segun contexto (escala, clase, restricciones) en vez de aplicar regla fija. Defaults cuando no hay contexto suficiente: verdad>utilidad, claridad>exhaustividad, robustez>elegancia.
+Navegar segun contexto (escala, clase, restricciones) en vez de aplicar regla fija. Defaults en AGENTS.md §2 reglas duras.
 
 ### Stress Testing (post-construccion)
 1. Producir minimo 2-3 escenarios de quiebre de la solucion candidata

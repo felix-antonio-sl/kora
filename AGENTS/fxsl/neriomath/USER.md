@@ -1,7 +1,8 @@
 ---
 _manifest:
-  urn: "urn:fxsl:agent-bootstrap:neriomath-user:1.0.0"
+  urn: "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0"
   type: "bootstrap_user"
+  status: active
 ---
 
 ## Perfil

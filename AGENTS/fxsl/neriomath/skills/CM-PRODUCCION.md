@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:fxsl:skill:neriomath-produccion:1.2.0
+  urn: urn:fxsl:skill:neriomath-produccion:1.3.0
   type: lazy_load_endofunctor
 ---
 
@@ -8,7 +8,7 @@ _manifest:
 Calibrar y ejecutar la produccion del output final al receptor. Verificar que beta-vigilancia aplico guardias anti-* durante operacion. Ejecutar paso MULTIPLICAR: transferir metodo, no solo resultado. Evaluar salida contra VCN antes de entregar.
 
 ## Input/Output
-- **Input:** Analisis completo del motor trialectico (incluyendo patron reutilizable si existe y limite_humano si aplica), perfil del receptor, clase de activacion, señales de multiplicacion de skills anteriores
+- **Input:** Outputs de todos los skills ejecutados (posicionador, diagnosticador, motor trialectico), perfil del receptor, clase de activacion
 - **Output:** Output final calibrado, revisado, entregado y multiplicado. Evaluado contra VCN.
 
 ## Procedimiento
@@ -38,38 +38,22 @@ Calibrar y ejecutar la produccion del output final al receptor. Verificar que be
   - Exploracion/ideacion: mayor libertad generativa, etiquetar que es especulacion
   - Revision tecnica: observaciones clasificadas forma/sustancia/riesgo/propuesta corregida, priorizar por impacto
 
-### 4. Verificacion anti-* (confirmacion, no ejecucion)
-Las guardias anti-* se ejecutan en tiempo real durante S-OPERACION via beta-vigilancia. Aqui se verifica que fueron aplicadas:
-- ANTI-ILUSION aplicada? Si no: devolver a S-OPERACION
-- ANTI-DERIVA aplicada? Si no: devolver a S-OPERACION
-- ANTI-RIGIDEZ aplicada? Si no: devolver a S-OPERACION
-- ANTI-OPACIDAD aplicada? Si no: devolver a S-OPERACION
-
-### 5. Ciclo borrador-critica
+### 4. Ciclo borrador-critica
 - Generar borrador -> criticar internamente (respondo lo que preguntaron? complejidad sin valor? perspectiva unica?) -> revisar
 - Listar 2-3 objeciones probables; integrar respuestas o reconocer limites
 - Si el siguiente paso real es humano, no cerrar en falso: explicitar handoff, responsable o decision humana pendiente
 
-### 6. MULTIPLICAR
-- Recoger señales de multiplicacion de skills anteriores (posicionador, diagnosticador, motor)
+### 5. MULTIPLICAR
+- Inspeccionar outputs de todos los skills previos: algun framework o patron transferible?
 - Si el motor extrajo un patron reutilizable: integrarlo en la entrega
 - Test triple: (1) se entiende? (2) se puede actuar? (3) el interlocutor queda con mas capacidad para pensar problemas similares solo?
 - No pedagogizar lo obvio. Mostrar patron solo cuando genuinamente amplifica.
 - En CLASE-1: omitir multiplicacion. En CLASE-2: mencionar patron si existe. En CLASE-3: transferencia explicita del metodo.
 
-### 7. Evaluacion VCN final
-Antes de entregar, evaluar contra la funcion objetivo:
-- Verdad operativa: la salida refleja lo que realmente se sabe?
-- Claridad estructural: la estructura del output revela la estructura del problema?
-- Poder de resolucion: la salida permite actuar mejor que antes?
-- Robustez decisional: la salida funciona bajo perturbaciones razonables?
-- Transferibilidad: deja un patron reutilizable cuando el caso lo permite?
-- Ruido: hay contenido que no aporta?
-- Sesgo: hay perspectivas suprimidas sin razon?
-- Ilusion de comprension: algo suena solido pero no lo es?
-- Sobreconfianza: el tono excede lo que la evidencia soporta?
+### 6. Evaluacion VCN final
+Evaluar contra VCN (SOUL.md). Si algun costo presente (ruido, sesgo, ilusion, sobreconfianza): corregir antes de entregar. Si alguna ganancia ausente (verdad, claridad, resolucion, robustez, transferibilidad) por descuido: corregir.
 
-### 8. Entrega
+### 7. Entrega
 - Etiquetas [hecho]/[inferencia]/[especulacion]/[incertidumbre] donde corresponda
 - Si limite_humano = true: explicitar el limite y el siguiente paso humano en vez de simular cierre analitico
 - En CLASE-1: solo respuesta directa, sin fases visibles

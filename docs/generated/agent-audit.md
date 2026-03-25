@@ -4,28 +4,30 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-03-24
+- Fecha: 2026-03-25
 - Cohortes auditadas: meta-kora, dev, ops, domains
-- Reglas absorbidas sin hallazgos manuales: 6
-- Reglas aun no institucionalizadas: 4
+- Reglas absorbidas sin hallazgos manuales: 5
+- Reglas aun no institucionalizadas: 5
 
 ## Top 5 deudas sistemicas
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
 | Precedencia de transiciones no declarada | P1 | 58 | fxsl/arquitecto-automatizacion-organizacional, fxsl/arquitecto-sistemas-informacion, fxsl/ingeniero-sistemas-composicional, fxsl/ontologista-gist, gn/ar-virtual, gn/asesor-juridico | agent_fix |
-| Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
-| Skill degenerado recibe o emite estado FSM | P1 | 2 | ops/clawstack | agent_fix |
+| Destino de control no declarado | P1 | 7 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill compone otro skill operativamente | P2 | 1 | korvo/korax | agent_fix |
+| Skill degenerado recibe o emite estado FSM | P1 | 1 | ops/clawstack | agent_fix |
+| Skill degenerado clasifica transiciones o continuidad FSM | P1 | 1 | fxsl/neriomath | agent_fix |
 
 ## Top 5 falsos verdes del validator actual
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
 | Precedencia de transiciones no declarada | P1 | 58 | fxsl/arquitecto-automatizacion-organizacional, fxsl/arquitecto-sistemas-informacion, fxsl/ingeniero-sistemas-composicional, fxsl/ontologista-gist, gn/ar-virtual, gn/asesor-juridico | agent_fix |
-| Destino de control no declarado | P1 | 9 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, ops/clawstack, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
-| Skill degenerado recibe o emite estado FSM | P1 | 2 | ops/clawstack | agent_fix |
+| Destino de control no declarado | P1 | 7 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
 | Skill compone otro skill operativamente | P2 | 1 | korvo/korax | agent_fix |
+| Skill degenerado recibe o emite estado FSM | P1 | 1 | ops/clawstack | agent_fix |
+| Skill degenerado clasifica transiciones o continuidad FSM | P1 | 1 | fxsl/neriomath | agent_fix |
 
 ## Cohorte meta-kora
 
@@ -65,29 +67,25 @@ Hallazgos repetidos:
 
 - Workspaces auditados: 1
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 4
-- P1: 4 | P2: 0 | P3: 0
+- Hallazgos manuales: 1
+- P1: 1 | P2: 0 | P3: 0
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
-| ops/clawstack | Destino de control no declarado | P1 | AGENTS/ops/clawstack/AGENTS.md:74 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
-| ops/clawstack | Destino de control no declarado | P1 | AGENTS/ops/clawstack/AGENTS.md:79 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
 | ops/clawstack | Skill degenerado recibe o emite estado FSM | P1 | AGENTS/ops/clawstack/skills/CM-CONTEXT-MANAGER.md:13 | Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md. | agent_fix |
-| ops/clawstack | Skill degenerado recibe o emite estado FSM | P1 | AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md:13 | Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md. | agent_fix |
 
 Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Destino de control no declarado | P1 | 2 | ops/clawstack | agent_fix |
-| Skill degenerado recibe o emite estado FSM | P1 | 2 | ops/clawstack | agent_fix |
+| Skill degenerado recibe o emite estado FSM | P1 | 1 | ops/clawstack | agent_fix |
 
 ## Cohorte domains
 
 - Workspaces auditados: 20
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 66
-- P1: 65 | P2: 1 | P3: 0
+- Hallazgos manuales: 67
+- P1: 66 | P2: 1 | P3: 0
 
 ### Subgrupo gn
 
@@ -172,7 +170,7 @@ Hallazgos repetidos:
 ### Subgrupo fxsl
 
 - Workspaces: 7
-- Hallazgos: 29
+- Hallazgos: 30
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
@@ -199,6 +197,7 @@ Hallazgos repetidos:
 | fxsl/ingeniero-sistemas-composicional | Precedencia de transiciones no declarada | P1 | AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md:19 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | fxsl/ingeniero-sistemas-composicional | Precedencia de transiciones no declarada | P1 | AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md:21 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | fxsl/ingeniero-sistemas-composicional | Precedencia de transiciones no declarada | P1 | AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md:23 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
+| fxsl/neriomath | Skill degenerado clasifica transiciones o continuidad FSM | P1 | AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md:12 | Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral. | agent_fix |
 | fxsl/ontologista-gist | Precedencia de transiciones no declarada | P1 | AGENTS/fxsl/ontologista-gist/AGENTS.md:9 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | fxsl/ontologista-gist | Precedencia de transiciones no declarada | P1 | AGENTS/fxsl/ontologista-gist/AGENTS.md:11 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
 | fxsl/ontologista-gist | Precedencia de transiciones no declarada | P1 | AGENTS/fxsl/ontologista-gist/AGENTS.md:13 | Anotar `[prioridad n]` en cada rama evaluable o declarar exclusion mutua explicita entre las condiciones del estado. | agent_fix |
@@ -211,6 +210,7 @@ Hallazgos repetidos:
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
 | Precedencia de transiciones no declarada | P1 | 29 | fxsl/arquitecto-automatizacion-organizacional, fxsl/arquitecto-sistemas-informacion, fxsl/ingeniero-sistemas-composicional, fxsl/ontologista-gist | agent_fix |
+| Skill degenerado clasifica transiciones o continuidad FSM | P1 | 1 | fxsl/neriomath | agent_fix |
 
 ### Subgrupo korvo
 
@@ -229,5 +229,5 @@ Hallazgos repetidos:
 
 ## Rollout de enforcement
 
-- Pasar a lint: Destino de control no declarado, Precedencia de transiciones no declarada, Skill compone otro skill operativamente, Skill degenerado recibe o emite estado FSM
+- Pasar a lint: Destino de control no declarado, Precedencia de transiciones no declarada, Skill compone otro skill operativamente, Skill degenerado clasifica transiciones o continuidad FSM, Skill degenerado recibe o emite estado FSM
 - Mantener manual: ninguno

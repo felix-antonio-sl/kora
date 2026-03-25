@@ -1,7 +1,8 @@
 {
   "_manifest": {
-    "urn": "urn:fxsl:agent-bootstrap:neriomath-config:1.0.0",
-    "type": "bootstrap_config"
+    "urn": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+    "type": "bootstrap_config",
+    "status": "active"
   },
   "allowed_kb": [
     "urn:fxsl:kb:fx-tensiones"

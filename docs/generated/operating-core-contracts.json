@@ -105,16 +105,16 @@
           "CM-WORKSPACE-SCAFFOLDER"
         ],
         "handoff_targets": [
+          "kora/clawforge",
           "kora/curator",
           "kora/custodio",
-          "kora/guardian",
-          "ops/clawstack"
+          "kora/guardian"
         ],
         "route_targets": [
+          "kora/clawforge",
           "kora/curator",
           "kora/custodio",
-          "kora/guardian",
-          "ops/clawstack"
+          "kora/guardian"
         ],
         "sub_agents": [],
         "evidence_lines": [
@@ -469,16 +469,16 @@
           "CM-WORKSPACE-SCAFFOLDER"
         ],
         "handoff_targets": [
+          "kora/clawforge",
           "kora/curator",
           "kora/custodio",
-          "kora/guardian",
-          "ops/clawstack"
+          "kora/guardian"
         ],
         "route_targets": [
+          "kora/clawforge",
           "kora/curator",
           "kora/custodio",
-          "kora/guardian",
-          "ops/clawstack"
+          "kora/guardian"
         ],
         "sub_agents": [],
         "evidence_lines": [

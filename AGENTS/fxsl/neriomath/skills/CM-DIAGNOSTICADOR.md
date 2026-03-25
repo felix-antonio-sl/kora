@@ -1,6 +1,6 @@
 ---
 _manifest:
-  urn: urn:fxsl:skill:neriomath-diagnosticador:1.2.0
+  urn: urn:fxsl:skill:neriomath-diagnosticador:1.3.0
   type: lazy_load_endofunctor
 ---
 
@@ -29,7 +29,6 @@ Clasificar el problema en sus dimensiones de dificultad, tipar restricciones y v
 5. Reformulacion: el problema como fue planteado ES el problema real? Si no, proponer reformulacion explicita reconociendo el cambio y su razon. Reformular recursivamente si la reformulacion revela otra capa.
 6. Si el cuello de botella no es analitico sino de presencia humana, autoridad, confianza, cuidado o negociacion, marcar limite_humano = true y no sobreoptimizar.
 7. Comunicar diagnostico al usuario cuando sea relevante para alinear expectativas
-8. MULTIPLICAR: si el framework diagnostico (5 dimensiones, tipado restricciones, test de reformulacion) seria util para que el interlocutor diagnostique sus propios problemas, senalizar para transferencia en produccion.
 
 ## Signature Output
 Tabla: Dimension | Activa (si/no) | Observacion. Restricciones tipadas: [tipo] descripcion. Veredicto: falta_informacion_critica (true|false), limite_humano (true|false). Reformulacion propuesta si aplica.

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24",
+  "generated_at": "2026-03-25",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/agent-spec-md.md",
@@ -87,45 +87,13 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 4,
-        "p1": 4,
+        "findings_total": 1,
+        "p1": 1,
         "p2": 0,
         "p3": 0,
         "strict_validate_green": true
       },
       "findings": [
-        {
-          "workspace": "ops/clawstack",
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
-          "evidence": {
-            "path": "AGENTS/ops/clawstack/AGENTS.md",
-            "line": 74,
-            "snippet": "- IF FACTUAL_ACCURACY fails -> CM-KNOWLEDGE-NAVIGATOR (consultar fuente primaria via kb_route o oc_docs_search), corregir"
-          },
-          "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-          "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawstack",
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
-          "evidence": {
-            "path": "AGENTS/ops/clawstack/AGENTS.md",
-            "line": 79,
-            "snippet": "- IF other fails -> REFINE_DRAFT"
-          },
-          "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-          "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
         {
           "workspace": "ops/clawstack",
           "rule_id": "skill.state_variable_leak",
@@ -141,41 +109,14 @@
           "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "ops/clawstack",
-          "rule_id": "skill.state_variable_leak",
-          "rule": "Skill degenerado recibe o emite estado FSM",
-          "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
-          "evidence": {
-            "path": "AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md",
-            "line": 13,
-            "snippet": "- **Input:** fase_actual: string (PROVISION|CONFIGURE|AUDIT|DEPLOY), entregables: PhaseDeliverable[]"
-          },
-          "why_real": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
-          "minimal_fix": "Sustituir el estado FSM por una señal semántica del dominio del skill o mover la lógica de control a AGENTS.md.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
         }
       ],
       "repeated_findings": [
         {
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "count": 2,
-          "workspaces": [
-            "ops/clawstack"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
           "rule_id": "skill.state_variable_leak",
           "rule": "Skill degenerado recibe o emite estado FSM",
           "severity": "P1",
-          "count": 2,
+          "count": 1,
           "workspaces": [
             "ops/clawstack"
           ],
@@ -200,8 +141,8 @@
         "ok": true
       },
       "summary": {
-        "findings_total": 66,
-        "p1": 65,
+        "findings_total": 67,
+        "p1": 66,
         "p2": 1,
         "p3": 0,
         "strict_validate_green": true
@@ -1152,6 +1093,22 @@
           "enforcement_candidate": "lint"
         },
         {
+          "workspace": "fxsl/neriomath",
+          "rule_id": "skill.transition_classifier_leak",
+          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+          "severity": "P1",
+          "spec_rule": "skill-spec-md §3-§6",
+          "evidence": {
+            "path": "AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md",
+            "line": 12,
+            "snippet": "- **Output:** Clasificacion: {scope: in|out, continuidad: nueva|previa, clase: 1|2|3|4, ruta_fsm: estado_destino}"
+          },
+          "why_real": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
+          "minimal_fix": "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
+          "closure_type": "agent_fix",
+          "enforcement_candidate": "lint"
+        },
+        {
           "workspace": "fxsl/ontologista-gist",
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
@@ -1308,6 +1265,17 @@
           "count": 1,
           "workspaces": [
             "korvo/korax"
+          ],
+          "closure_type": "agent_fix",
+          "enforcement_candidate": "lint"
+        },
+        {
+          "rule_id": "skill.transition_classifier_leak",
+          "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+          "severity": "P1",
+          "count": 1,
+          "workspaces": [
+            "fxsl/neriomath"
           ],
           "closure_type": "agent_fix",
           "enforcement_candidate": "lint"
@@ -2345,6 +2313,22 @@
               "enforcement_candidate": "lint"
             },
             {
+              "workspace": "fxsl/neriomath",
+              "rule_id": "skill.transition_classifier_leak",
+              "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+              "severity": "P1",
+              "spec_rule": "skill-spec-md §3-§6",
+              "evidence": {
+                "path": "AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md",
+                "line": 12,
+                "snippet": "- **Output:** Clasificacion: {scope: in|out, continuidad: nueva|previa, clase: 1|2|3|4, ruta_fsm: estado_destino}"
+              },
+              "why_real": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
+              "minimal_fix": "Eliminar control de transición o continuidad del CM y devolver solo clasificación semántica neutral.",
+              "closure_type": "agent_fix",
+              "enforcement_candidate": "lint"
+            },
+            {
               "workspace": "fxsl/ontologista-gist",
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
@@ -2455,6 +2439,17 @@
               ],
               "closure_type": "agent_fix",
               "enforcement_candidate": "lint"
+            },
+            {
+              "rule_id": "skill.transition_classifier_leak",
+              "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+              "severity": "P1",
+              "count": 1,
+              "workspaces": [
+                "fxsl/neriomath"
+              ],
+              "closure_type": "agent_fix",
+              "enforcement_candidate": "lint"
             }
           ]
         },
@@ -2522,25 +2517,13 @@
         "rule_id": "agent.fsm_pseudostate_destination",
         "rule": "Destino de control no declarado",
         "severity": "P1",
-        "count": 9,
+        "count": 7,
         "workspaces": [
           "gn/dgi-virtual",
           "gn/gestor-ipr-360",
           "gn/goreologo",
-          "ops/clawstack",
           "pro/estratega-comunicacional",
           "salud/medico-urgencias"
-        ],
-        "closure_type": "agent_fix",
-        "enforcement_candidate": "lint"
-      },
-      {
-        "rule_id": "skill.state_variable_leak",
-        "rule": "Skill degenerado recibe o emite estado FSM",
-        "severity": "P1",
-        "count": 2,
-        "workspaces": [
-          "ops/clawstack"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -2552,6 +2535,28 @@
         "count": 1,
         "workspaces": [
           "korvo/korax"
+        ],
+        "closure_type": "agent_fix",
+        "enforcement_candidate": "lint"
+      },
+      {
+        "rule_id": "skill.state_variable_leak",
+        "rule": "Skill degenerado recibe o emite estado FSM",
+        "severity": "P1",
+        "count": 1,
+        "workspaces": [
+          "ops/clawstack"
+        ],
+        "closure_type": "agent_fix",
+        "enforcement_candidate": "lint"
+      },
+      {
+        "rule_id": "skill.transition_classifier_leak",
+        "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+        "severity": "P1",
+        "count": 1,
+        "workspaces": [
+          "fxsl/neriomath"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -2583,25 +2588,13 @@
         "rule_id": "agent.fsm_pseudostate_destination",
         "rule": "Destino de control no declarado",
         "severity": "P1",
-        "count": 9,
+        "count": 7,
         "workspaces": [
           "gn/dgi-virtual",
           "gn/gestor-ipr-360",
           "gn/goreologo",
-          "ops/clawstack",
           "pro/estratega-comunicacional",
           "salud/medico-urgencias"
-        ],
-        "closure_type": "agent_fix",
-        "enforcement_candidate": "lint"
-      },
-      {
-        "rule_id": "skill.state_variable_leak",
-        "rule": "Skill degenerado recibe o emite estado FSM",
-        "severity": "P1",
-        "count": 2,
-        "workspaces": [
-          "ops/clawstack"
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
@@ -2616,12 +2609,33 @@
         ],
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint"
+      },
+      {
+        "rule_id": "skill.state_variable_leak",
+        "rule": "Skill degenerado recibe o emite estado FSM",
+        "severity": "P1",
+        "count": 1,
+        "workspaces": [
+          "ops/clawstack"
+        ],
+        "closure_type": "agent_fix",
+        "enforcement_candidate": "lint"
+      },
+      {
+        "rule_id": "skill.transition_classifier_leak",
+        "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
+        "severity": "P1",
+        "count": 1,
+        "workspaces": [
+          "fxsl/neriomath"
+        ],
+        "closure_type": "agent_fix",
+        "enforcement_candidate": "lint"
       }
     ],
     "rules_absorbed": [
       "tools.policy_leakage",
       "config.semantic_runtime_capability",
-      "skill.transition_classifier_leak",
       "skill.agent_phase_orchestration",
       "skill.relaxes_hard_rule",
       "skill.ad_hoc_root_metadata"
@@ -2630,6 +2644,7 @@
       "agent.fsm_pseudostate_destination",
       "agent.missing_transition_precedence",
       "skill.state_variable_leak",
+      "skill.transition_classifier_leak",
       "skill.operational_skill_composition"
     ],
     "enforcement_rollout": {
@@ -2637,6 +2652,7 @@
         "Destino de control no declarado",
         "Precedencia de transiciones no declarada",
         "Skill compone otro skill operativamente",
+        "Skill degenerado clasifica transiciones o continuidad FSM",
         "Skill degenerado recibe o emite estado FSM"
       ],
       "manual": [],

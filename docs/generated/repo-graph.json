@@ -1,25 +1,25 @@
 {
   "meta": {
-    "scanned_files": 1459,
-    "node_count": 784,
-    "edge_count": 3907
+    "scanned_files": 1460,
+    "node_count": 791,
+    "edge_count": 3840
   },
   "node_kind_counts": {
     "artifact": 140,
-    "knowledge": 338,
-    "skill": 205,
+    "knowledge": 349,
+    "skill": 201,
     "spec": 8,
     "tool": 66,
     "workspace": 27
   },
   "edge_kind_counts": {
-    "AllowsKB": 413,
-    "AllowsTool": 135,
+    "AllowsKB": 379,
+    "AllowsTool": 128,
     "ContainsArtifact": 138,
-    "ContainsSkill": 205,
-    "DeclaresTool": 136,
-    "InvokesSkill": 199,
-    "RoutesToAgent": 17,
+    "ContainsSkill": 197,
+    "DeclaresTool": 129,
+    "InvokesSkill": 192,
+    "RoutesToAgent": 13,
     "TracesTo": 50,
     "XRef": 2614
   },
@@ -259,6 +259,51 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "title": "AGENTS.md",
+      "path": "AGENTS/fxsl/neriomath/AGENTS.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+      "title": "config.json",
+      "path": "AGENTS/fxsl/neriomath/config.json",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:agent-bootstrap:neriomath-soul:1.3.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:fxsl:agent-bootstrap:neriomath-soul:1.3.0",
+      "title": "SOUL.md",
+      "path": "AGENTS/fxsl/neriomath/SOUL.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0",
+      "title": "TOOLS.md",
+      "path": "AGENTS/fxsl/neriomath/TOOLS.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0",
+      "kind": "artifact",
+      "category": "Agents",
+      "urn": "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0",
+      "title": "USER.md",
+      "path": "AGENTS/fxsl/neriomath/USER.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
@@ -346,51 +391,6 @@
       "urn": "urn:fxsl:agent-bootstrap:opm-specialist-user:1.0.0",
       "title": "USER.md",
       "path": "AGENTS/fxsl/opm-specialist/USER.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "title": "AGENTS.md",
-      "path": "AGENTS/fxsl/pensador-generador/AGENTS.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-      "title": "config.json",
-      "path": "AGENTS/fxsl/pensador-generador/config.json",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
-      "title": "SOUL.md",
-      "path": "AGENTS/fxsl/pensador-generador/SOUL.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0",
-      "title": "TOOLS.md",
-      "path": "AGENTS/fxsl/pensador-generador/TOOLS.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0",
-      "title": "USER.md",
-      "path": "AGENTS/fxsl/pensador-generador/USER.md",
       "namespace": "fxsl"
     },
     {
@@ -1803,6 +1803,15 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "title": "Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas",
+      "path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:kb:multicategory-multimodel-query-processing",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -1821,6 +1830,42 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:kb:opm-applied-system-modeling",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-applied-system-modeling",
+      "title": "OPM Applied System Modeling — System Categories, SD Method, and Worked Examples",
+      "path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-canonical-example",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-canonical-example",
+      "title": "OPM Canonical Example — Autonomous Electric Vehicle Manufacturing & Operation",
+      "path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-complexity-management",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-complexity-management",
+      "title": "OPM Complexity Management — Refinement and Abstraction",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-dynamic-behavior",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-dynamic-behavior",
+      "title": "OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:kb:opm-iso-19450",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -1830,12 +1875,57 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "title": "ACR Tutorial — OPM History and Modeling the Automatic Crash Response System",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-mbse-foundations",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-mbse-foundations",
+      "title": "OPM MBSE Foundations — Conceptual Modeling with Objects and Processes",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-opl-bimodal",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-opl-bimodal",
+      "title": "OPM OPL Bimodal — Graphic-Text Equivalence and Textual Specification",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:kb:opm-opl-es",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:opm-opl-es",
       "title": "OPL-ES — Object-Process Language en Español",
       "path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-sd-wizard",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-sd-wizard",
+      "title": "OPM SD Wizard — System Diagram Construction Protocol",
+      "path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-structural-relations",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-structural-relations",
+      "title": "OPM Structural Relations — Fundamental Relations, States, and Hierarchies",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md",
       "namespace": "fxsl"
     },
     {
@@ -1881,6 +1971,15 @@
       "urn": "urn:fxsl:kb:swarm-ops-metodologia",
       "title": "SWARM::OPS v1.0",
       "path": "KNOWLEDGE/fxsl/xanpan/swarm-ops-metodologia.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "title": "SysML Foundations and Diagrams — Systems Modeling Language Overview",
+      "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md",
       "namespace": "fxsl"
     },
     {
@@ -4656,6 +4755,51 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:skill:neriomath-clasificador:1.2.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:fxsl:skill:neriomath-clasificador:1.2.0",
+      "title": "CM-CLASIFICADOR.md",
+      "path": "AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0",
+      "title": "CM-DIAGNOSTICADOR.md",
+      "path": "AGENTS/fxsl/neriomath/skills/CM-DIAGNOSTICADOR.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0",
+      "title": "CM-MOTOR-TRIALECTICO.md",
+      "path": "AGENTS/fxsl/neriomath/skills/CM-MOTOR-TRIALECTICO.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:skill:neriomath-posicionador:1.2.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:fxsl:skill:neriomath-posicionador:1.2.0",
+      "title": "CM-POSICIONADOR.md",
+      "path": "AGENTS/fxsl/neriomath/skills/CM-POSICIONADOR.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:skill:neriomath-produccion:1.3.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:fxsl:skill:neriomath-produccion:1.3.0",
+      "title": "CM-PRODUCCION.md",
+      "path": "AGENTS/fxsl/neriomath/skills/CM-PRODUCCION.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:skill:ontologista-gist-analizador:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -5835,15 +5979,6 @@
       "namespace": "korvo"
     },
     {
-      "id": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "title": "CM-AGENT-DEPLOYER",
-      "path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md",
-      "namespace": "ops"
-    },
-    {
       "id": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -5859,78 +5994,6 @@
       "urn": "urn:ops:skill:clawstack-intent-classifier:1.0.0",
       "title": "CM-INTENT-CLASSIFIER",
       "path": "AGENTS/ops/clawstack/skills/CM-INTENT-CLASSIFIER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
-      "title": "CM-KNOWLEDGE-NAVIGATOR",
-      "path": "AGENTS/ops/clawstack/skills/CM-KNOWLEDGE-NAVIGATOR/SKILL.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
-      "title": "CM-LIFECYCLE-ORCHESTRATOR",
-      "path": "AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
-      "title": "CM-STACK-AUDITOR",
-      "path": "AGENTS/ops/clawstack/skills/CM-STACK-AUDITOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "title": "CM-STACK-CONFIGURATOR",
-      "path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
-      "title": "CM-STACK-OPTIMIZER",
-      "path": "AGENTS/ops/clawstack/skills/CM-STACK-OPTIMIZER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
-      "title": "CM-STACK-PROVISIONER",
-      "path": "AGENTS/ops/clawstack/skills/CM-STACK-PROVISIONER/SKILL.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
-      "title": "CM-STACK-TROUBLESHOOTER",
-      "path": "AGENTS/ops/clawstack/skills/CM-STACK-TROUBLESHOOTER.md",
-      "namespace": "ops"
-    },
-    {
-      "id": "urn:ops:skill:clawstack-version-manager:1.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:ops:skill:clawstack-version-manager:1.1.0",
-      "title": "CM-VERSION-MANAGER",
-      "path": "AGENTS/ops/clawstack/skills/CM-VERSION-MANAGER.md",
       "namespace": "ops"
     },
     {
@@ -6605,6 +6668,13 @@
       "path": "AGENTS/fxsl/ingeniero-sistemas-composicional"
     },
     {
+      "id": "workspace:fxsl/neriomath",
+      "kind": "workspace",
+      "workspace": "fxsl/neriomath",
+      "namespace": "fxsl",
+      "path": "AGENTS/fxsl/neriomath"
+    },
+    {
       "id": "workspace:fxsl/ontologista-gist",
       "kind": "workspace",
       "workspace": "fxsl/ontologista-gist",
@@ -6617,13 +6687,6 @@
       "workspace": "fxsl/opm-specialist",
       "namespace": "fxsl",
       "path": "AGENTS/fxsl/opm-specialist"
-    },
-    {
-      "id": "workspace:fxsl/pensador-generador",
-      "kind": "workspace",
-      "workspace": "fxsl/pensador-generador",
-      "namespace": "fxsl",
-      "path": "AGENTS/fxsl/pensador-generador"
     },
     {
       "id": "workspace:gn/ar-virtual",
@@ -7050,6 +7113,12 @@
     },
     {
       "kind": "AllowsKB",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:kb:fx-tensiones",
+      "source_path": "AGENTS/fxsl/neriomath/config.json"
+    },
+    {
+      "kind": "AllowsKB",
       "source": "workspace:fxsl/ontologista-gist",
       "target": "urn:fxsl:kb:fx-address-guidance",
       "source_path": "AGENTS/fxsl/ontologista-gist/config.json"
@@ -7095,12 +7164,6 @@
       "source": "workspace:fxsl/opm-specialist",
       "target": "urn:fxsl:kb:opm-opl-es",
       "source_path": "AGENTS/fxsl/opm-specialist/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:kb:fx-tensiones",
-      "source_path": "AGENTS/fxsl/pensador-generador/config.json"
     },
     {
       "kind": "AllowsKB",
@@ -8916,210 +8979,6 @@
     },
     {
       "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:00-fundamentos-previos",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:00-toc",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:01-arquitectura-gateway",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:02-agente-unidad-fundamental",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:03-sesiones",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:04-modelos-failover",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:05-memoria",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:06-multi-agent-routing",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:07-aislamiento-seguridad",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:08-patrones-multitenant",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:09-sub-agentes",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:10-sub-agentes-anidados",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:12-heartbeats",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:13-cron-jobs",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:14-cron-vs-heartbeat",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:15-hooks",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:16-webhooks",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:17-lobster",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:18-modelo-seguridad",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:19-operaciones",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:20-patrones-diseno",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:21-decisiones-arquitectura",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:apendices",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:cheatsheet",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:agengai:kb:openclaw-runtime-extension",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:kora:kb:agent-spec-md",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:kora:kb:gobernanza",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:kb:arquitectura-stack-kora",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:kb:federacion-kora-v2",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:kb:ux-telegram-openclaw",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsKB",
       "source": "workspace:salud/salubrista",
       "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
       "source_path": "AGENTS/salud/salubrista/config.json"
@@ -9378,6 +9237,24 @@
     },
     {
       "kind": "AllowsTool",
+      "source": "workspace:fxsl/neriomath",
+      "target": "tool:catalog_resolve",
+      "source_path": "AGENTS/fxsl/neriomath/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:fxsl/neriomath",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/fxsl/neriomath/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:fxsl/neriomath",
+      "target": "tool:search_kb",
+      "source_path": "AGENTS/fxsl/neriomath/config.json"
+    },
+    {
+      "kind": "AllowsTool",
       "source": "workspace:fxsl/ontologista-gist",
       "target": "tool:catalog_resolve",
       "source_path": "AGENTS/fxsl/ontologista-gist/config.json"
@@ -9405,24 +9282,6 @@
       "source": "workspace:fxsl/opm-specialist",
       "target": "tool:kb_route",
       "source_path": "AGENTS/fxsl/opm-specialist/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/fxsl/pensador-generador/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/fxsl/pensador-generador/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:search_kb",
-      "source_path": "AGENTS/fxsl/pensador-generador/config.json"
     },
     {
       "kind": "AllowsTool",
@@ -9942,48 +9801,6 @@
     },
     {
       "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:docker_exec",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:host_exec",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:oc_cli",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:oc_docs_search",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:spec_consult",
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "AllowsTool",
       "source": "workspace:pro/estratega-comunicacional",
       "target": "tool:catalog_resolve",
       "source_path": "AGENTS/pro/estratega-comunicacional/config.json"
@@ -10180,6 +9997,31 @@
     },
     {
       "kind": "ContainsArtifact",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-soul:1.3.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0"
+    },
+    {
+      "kind": "ContainsArtifact",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0"
+    },
+    {
+      "kind": "ContainsArtifact",
       "source": "workspace:fxsl/ontologista-gist",
       "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0"
     },
@@ -10227,31 +10069,6 @@
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/opm-specialist",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-user:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -10925,6 +10742,31 @@
     },
     {
       "kind": "ContainsSkill",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:skill:neriomath-clasificador:1.2.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:skill:neriomath-posicionador:1.2.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:fxsl/neriomath",
+      "target": "urn:fxsl:skill:neriomath-produccion:1.3.0"
+    },
+    {
+      "kind": "ContainsSkill",
       "source": "workspace:fxsl/ontologista-gist",
       "target": "urn:fxsl:skill:ontologista-gist-analizador:1.0.0"
     },
@@ -11002,26 +10844,6 @@
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/opm-specialist",
       "target": "urn:fxsl:skill:opm-specialist-modeling-guide:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0"
     },
     {
       "kind": "ContainsSkill",
@@ -11581,57 +11403,12 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0"
     },
     {
       "kind": "ContainsSkill",
       "source": "workspace:ops/clawstack",
       "target": "urn:ops:skill:clawstack-intent-classifier:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-optimizer:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:ops/clawstack",
-      "target": "urn:ops:skill:clawstack-version-manager:1.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -11903,6 +11680,24 @@
     },
     {
       "kind": "DeclaresTool",
+      "source": "workspace:fxsl/neriomath",
+      "target": "tool:catalog_resolve",
+      "source_path": "AGENTS/fxsl/neriomath/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:fxsl/neriomath",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/fxsl/neriomath/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:fxsl/neriomath",
+      "target": "tool:search_kb",
+      "source_path": "AGENTS/fxsl/neriomath/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
       "source": "workspace:fxsl/ontologista-gist",
       "target": "tool:catalog_resolve",
       "source_path": "AGENTS/fxsl/ontologista-gist/TOOLS.md"
@@ -11930,24 +11725,6 @@
       "source": "workspace:fxsl/opm-specialist",
       "target": "tool:kb_route",
       "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/fxsl/pensador-generador/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/fxsl/pensador-generador/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:fxsl/pensador-generador",
-      "target": "tool:search_kb",
-      "source_path": "AGENTS/fxsl/pensador-generador/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
@@ -12467,48 +12244,6 @@
     },
     {
       "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:docker_exec",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:host_exec",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:oc_cli",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:oc_docs_search",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:ops/clawstack",
-      "target": "tool:spec_consult",
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
       "source": "workspace:pro/estratega-comunicacional",
       "target": "tool:catalog_resolve",
       "source_path": "AGENTS/pro/estratega-comunicacional/TOOLS.md"
@@ -12791,6 +12526,36 @@
     },
     {
       "kind": "InvokesSkill",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-clasificador:1.2.0",
+      "source_path": "AGENTS/fxsl/neriomath/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0",
+      "source_path": "AGENTS/fxsl/neriomath/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0",
+      "source_path": "AGENTS/fxsl/neriomath/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-posicionador:1.2.0",
+      "source_path": "AGENTS/fxsl/neriomath/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-produccion:1.3.0",
+      "source_path": "AGENTS/fxsl/neriomath/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
       "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:skill:ontologista-gist-analizador:1.0.0",
       "source_path": "AGENTS/fxsl/ontologista-gist/AGENTS.md"
@@ -12884,30 +12649,6 @@
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-agents:1.0.0",
       "target": "urn:fxsl:skill:opm-specialist-modeling-guide:1.0.0",
       "source_path": "AGENTS/fxsl/opm-specialist/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
-      "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
-      "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "target": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
-      "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
-      "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -13141,6 +12882,12 @@
       "kind": "InvokesSkill",
       "source": "urn:kora:agent-bootstrap:clawforge-agents:2.0.0",
       "target": "urn:kora:skill:clawforge-openclaw-evolver:1.0.0",
+      "source_path": "AGENTS/kora/clawforge/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:kora:agent-bootstrap:clawforge-agents:2.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-handoff:1.1.0",
       "source_path": "AGENTS/kora/clawforge/AGENTS.md"
     },
     {
@@ -13554,12 +13301,6 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
@@ -13567,54 +13308,6 @@
       "kind": "InvokesSkill",
       "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:skill:clawstack-intent-classifier:1.0.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
-      "target": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
@@ -13818,6 +13511,12 @@
     {
       "kind": "RoutesToAgent",
       "source": "workspace:kora/forgemaster",
+      "target": "workspace:kora/clawforge",
+      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
+    },
+    {
+      "kind": "RoutesToAgent",
+      "source": "workspace:kora/forgemaster",
       "target": "workspace:kora/curator",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
     },
@@ -13832,36 +13531,6 @@
       "source": "workspace:kora/forgemaster",
       "target": "workspace:kora/guardian",
       "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:kora/forgemaster",
-      "target": "workspace:ops/clawstack",
-      "source_path": "AGENTS/kora/forgemaster/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawstack",
-      "target": "workspace:kora/curator",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawstack",
-      "target": "workspace:kora/custodio",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawstack",
-      "target": "workspace:kora/forgemaster",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
-    },
-    {
-      "kind": "RoutesToAgent",
-      "source": "workspace:ops/clawstack",
-      "target": "workspace:kora/guardian",
-      "source_path": "AGENTS/ops/clawstack/AGENTS.md"
     },
     {
       "kind": "RoutesToAgent",
@@ -14851,6 +14520,41 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-soul:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -14915,41 +14619,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-user:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15138,6 +14807,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:multicategory-multimodel-query-processing",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15152,6 +14828,34 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-canonical-example",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15159,7 +14863,42 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-opl-bimodal",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-structural-relations",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15195,6 +14934,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:swarm-ops-metodologia",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:sysml-foundations-diagrams",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15405,6 +15151,41 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:skill:ingeniero-sistemas-composicional-work-system-analyzer:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:skill:neriomath-clasificador:1.2.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:skill:neriomath-posicionador:1.2.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:skill:neriomath-produccion:1.3.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17833,13 +17614,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -17848,62 +17622,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:skill:clawstack-intent-classifier:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:ops:skill:clawstack-version-manager:1.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -20737,6 +20455,55 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-agents:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-config:1.3.0",
+      "target": "urn:fxsl:kb:fx-tensiones",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-soul:1.3.0",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-soul:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/SOUL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-tools:1.3.0",
+      "target": "urn:fxsl:kb:fx-tensiones",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0",
+      "target": "urn:fxsl:agent-bootstrap:neriomath-user:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/USER.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "target": "urn:fxsl:agent-bootstrap:ontologista-gist-agents:1.1.0",
       "fragment": null,
@@ -20916,55 +20683,6 @@
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-user:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/opm-specialist/USER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-agents:2.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-config:2.0.0",
-      "target": "urn:fxsl:kb:fx-tensiones",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-soul:2.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/SOUL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-tools:2.0.0",
-      "target": "urn:fxsl:kb:fx-tensiones",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0",
-      "target": "urn:fxsl:agent-bootstrap:pensador-generador-user:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/USER.md"
     },
     {
       "kind": "XRef",
@@ -21227,6 +20945,34 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:kb:multicategory-multimodel-query-processing",
       "target": "urn:fxsl:kb:multicategory-multimodel-query-processing",
       "fragment": null,
@@ -21255,6 +21001,230 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-applied-system-modeling",
+      "target": "urn:fxsl:kb:opm-structural-relations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-canonical-example",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opm-structural-relations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:kb:opm-iso-19450",
       "target": "urn:fxsl:kb:opcloud-tutorial-videos",
       "fragment": null,
@@ -21266,6 +21236,160 @@
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-iso-19450.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-structural-relations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:opm-structural-relations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "target": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-foundations",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-foundations",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-foundations",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-foundations",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-mbse-foundations",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-bimodal",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-bimodal",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-bimodal",
+      "target": "urn:fxsl:kb:opm-opl-bimodal",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-bimodal",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-opl-bimodal",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md"
     },
     {
       "kind": "XRef",
@@ -21287,6 +21411,97 @@
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-structural-relations",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-structural-relations",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-structural-relations",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-structural-relations",
+      "target": "urn:fxsl:kb:opm-structural-relations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md"
     },
     {
       "kind": "XRef",
@@ -21371,6 +21586,41 @@
       "target": "urn:fxsl:kb:swarm-ops-metodologia",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/xanpan/swarm-ops-metodologia.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "target": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md"
     },
     {
       "kind": "XRef",
@@ -21598,6 +21848,41 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:skill:neriomath-clasificador:1.2.0",
+      "target": "urn:fxsl:skill:neriomath-clasificador:1.2.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-diagnosticador:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/skills/CM-DIAGNOSTICADOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-motor-trialectico:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/skills/CM-MOTOR-TRIALECTICO.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:skill:neriomath-posicionador:1.2.0",
+      "target": "urn:fxsl:skill:neriomath-posicionador:1.2.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/skills/CM-POSICIONADOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:skill:neriomath-produccion:1.3.0",
+      "target": "urn:fxsl:skill:neriomath-produccion:1.3.0",
+      "fragment": null,
+      "source_path": "AGENTS/fxsl/neriomath/skills/CM-PRODUCCION.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:skill:ontologista-gist-analizador:1.0.0",
       "target": "urn:fxsl:skill:ontologista-gist-analizador:1.0.0",
       "fragment": null,
@@ -21742,34 +22027,6 @@
       "target": "urn:fxsl:skill:opm-specialist-modeling-guide:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/opm-specialist/skills/CM-MODELING-GUIDE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-diagnosticador:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-DIAGNOSTICADOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-navegador-tensiones:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-NAVEGADOR-TENSIONES.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-posicionador:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-POSICIONADOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
-      "target": "urn:fxsl:skill:pensador-generador-produccion:2.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/pensador-generador/skills/CM-PRODUCCION.md"
     },
     {
       "kind": "XRef",
@@ -29215,245 +29472,7 @@
     {
       "kind": "XRef",
       "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:00-fundamentos-previos",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:00-toc",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:01-arquitectura-gateway",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:02-agente-unidad-fundamental",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:03-sesiones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:04-modelos-failover",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:05-memoria",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:06-multi-agent-routing",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:07-aislamiento-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:08-patrones-multitenant",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:09-sub-agentes",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:10-sub-agentes-anidados",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:12-heartbeats",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:13-cron-jobs",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:14-cron-vs-heartbeat",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:15-hooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:16-webhooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:17-lobster",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:18-modelo-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:19-operaciones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:20-patrones-diseno",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:21-decisiones-arquitectura",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:apendices",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:cheatsheet",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:agengai:kb:openclaw-runtime-extension",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:kora:kb:agent-spec-md",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:kora:kb:gobernanza",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
       "target": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:ops:kb:arquitectura-stack-kora",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:ops:kb:federacion-kora-v2",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-config:1.1.0",
-      "target": "urn:ops:kb:ux-telegram-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/config.json"
     },
@@ -29467,245 +29486,7 @@
     {
       "kind": "XRef",
       "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:00-fundamentos-previos",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:00-toc",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:01-arquitectura-gateway",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:02-agente-unidad-fundamental",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:03-sesiones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:04-modelos-failover",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:05-memoria",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:06-multi-agent-routing",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:07-aislamiento-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:08-patrones-multitenant",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:09-sub-agentes",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:10-sub-agentes-anidados",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:11-comunicacion-inter-sesion",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:12-heartbeats",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:13-cron-jobs",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:14-cron-vs-heartbeat",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:15-hooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:16-webhooks",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:17-lobster",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:18-modelo-seguridad",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:19-operaciones",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:20-patrones-diseno",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:21-decisiones-arquitectura",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:22-multi-gateway-docker-federation",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:apendices",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:cheatsheet",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:agengai:kb:openclaw-runtime-extension",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:kora:kb:agent-spec-md",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:kora:kb:gobernanza",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
       "target": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:ops:kb:arquitectura-stack-kora",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:ops:kb:federacion-kora-v2",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:agent-bootstrap:clawstack-tools:1.1.0",
-      "target": "urn:ops:kb:ux-telegram-openclaw",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/TOOLS.md"
     },
@@ -29907,48 +29688,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "target": "urn:ops:kb:federacion-kora-v2",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "target": "urn:ops:kb:ux-telegram-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "target": "urn:ops:kb:ux-telegram-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "target": "urn:ops:skill:clawstack-agent-deployer:1.2.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-AGENT-DEPLOYER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "target": "urn:ops:skill:clawstack-context-manager:1.0.0",
       "fragment": null,
@@ -29960,76 +29699,6 @@
       "target": "urn:ops:skill:clawstack-intent-classifier:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/ops/clawstack/skills/CM-INTENT-CLASSIFIER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
-      "target": "urn:ops:skill:clawstack-knowledge-navigator:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-KNOWLEDGE-NAVIGATOR/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
-      "target": "urn:ops:skill:clawstack-lifecycle-orchestrator:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-LIFECYCLE-ORCHESTRATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
-      "target": "urn:ops:skill:clawstack-stack-auditor:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-AUDITOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "target": "urn:ops:kb:federacion-kora-v2",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "target": "urn:ops:kb:ux-telegram-openclaw",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "target": "urn:ops:skill:clawstack-stack-configurator:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-CONFIGURATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
-      "target": "urn:ops:skill:clawstack-stack-optimizer:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-OPTIMIZER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
-      "target": "urn:ops:skill:clawstack-stack-provisioner:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-PROVISIONER/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
-      "target": "urn:ops:skill:clawstack-stack-troubleshooter:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-STACK-TROUBLESHOOTER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:ops:skill:clawstack-version-manager:1.1.0",
-      "target": "urn:ops:skill:clawstack-version-manager:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/ops/clawstack/skills/CM-VERSION-MANAGER.md"
     },
     {
       "kind": "XRef",
