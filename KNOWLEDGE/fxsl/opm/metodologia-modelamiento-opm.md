@@ -4,20 +4,11 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-25"
-    source: "synthesis:opm-iso-19450,opm-mbse-foundations,opm-applied-system-modeling,opm-sd-wizard,opm-complexity-management,opcloud-tutorial-videos"
-version: "2.3.0"
+    source: "synthesis:opm-iso-19450,opm-mbse-foundations,opm-applied-system-modeling,opm-sd-wizard,opm-complexity-management,opcloud-tutorial-videos,paper:katzir-2025-opm-r,paper:dori-2023-mbsa,paper:levi-soskin-2024-maxim"
+version: "3.2.0"
 status: published
-tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patterns, antipatterns, control-flow, error-handling, quantitative]
+tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patterns, antipatterns, control-flow, error-handling, quantitative, requirements-integration, simulation, executable-modeling]
 lang: es
-extensions:
-  kora:
-    depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:opm-mbse-foundations"
-      - "urn:fxsl:kb:opm-applied-system-modeling"
-      - "urn:fxsl:kb:opm-sd-wizard"
-      - "urn:fxsl:kb:opm-complexity-management"
-      - "urn:fxsl:kb:opcloud-tutorial-videos"
 ---
 
 # Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas
@@ -44,6 +35,7 @@ Esta especificacion define la metodologia para construir modelos conceptuales de
 | Proceso state-preserving | Proceso que mantiene el status quo de un objeto sin transformarlo |
 | Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos |
 | Semantic strength | Fuerza semantica de un link procedural que determina precedencia en conflictos |
+| Singular Name Principle | Los nombres de things en OPM DEBEN ser singulares. Colecciones humanas usan sufijo "Group"; colecciones inanimadas usan sufijo "Set" |
 
 ## 3 Fundamentos Ontologicos
 
@@ -274,7 +266,7 @@ Aplica cuando los subprocesos son independientes y PUEDEN ocurrir en cualquier o
 
 ### 7.3 Refinamiento de Objetos
 
-Los objetos se refinan via unfolding (no in-zooming — la sincronicidad es irrelevante para objetos estaticos). En object in-zooming, la posicion espacial de los constituyentes PUEDE tener significado semantico (layout fisico, orden logico).
+Los objetos se refinan via in-zooming (composicion espacial/estructural) y unfolding (taxonomias, features, instancias). In-zooming de objetos expone partes y operaciones (§7.1); unfolding expone refinees via las cuatro relaciones estructurales (§7.2). La posicion espacial de constituyentes en un object in-zooming PUEDE tener significado semantico (layout fisico, orden logico).
 
 **Inner vs Outer Object Scoping:** Un objeto creado dentro de un proceso in-zoomed (inner object) existe solo en el scope de ese proceso y se elimina si el proceso padre se elimina. Un objeto creado a nivel SD (outer object) existe independientemente y es referenciable entre multiples OPDs. El modelador DEBE decidir el scope basandose en si la existencia del objeto depende del proceso (inner) o es independiente (outer). Mover un outer object dentro de un proceso inflado NO lo convierte en inner — el objeto retorna a su scope original al reposicionarlo (enveloping visual, no semantico).
 
@@ -415,6 +407,10 @@ Tipos: process tree, object tree, allocation view, simulation-motivated view.
 
 Reduccion neta: procesos_removidos + objetos_removidos + links_removidos - 1 (el proceso interino agregado).
 
+**Depth-first traversal para documentos complejos:** Al modelar estandares, regulaciones o documentos extensos, el modelador DEBERIA seguir una estrategia depth-first: profundizar completamente en una seccion/clausula antes de avanzar a la siguiente. Esto contrasta con breadth-first y permite descubrir inconsistencias locales mas rapidamente (Dori, 2023 — MBSA).
+
+**Object-process disconnect bridging:** Documentos y estandares frecuentemente separan la descripcion de objetos (estructura) de la descripcion de procesos (comportamiento) en clausulas independientes sin integracion. El modelador DEBE conectar ambas vistas usando OPM, enlazando cada proceso con los objetos que transforma. Esta integracion revela gaps y objetos implicitos que el texto omite (Dori, 2023 — ISO 15288 case study).
+
 ### 8.6 Emergencia como Criterio de Validacion Arquitectural
 
 El modelador DEBE verificar que la arquitectura del sistema (structure + behavior) produce al menos una capacidad emergente — una funcionalidad que el sistema completo exhibe pero ninguna parte individual posee. Si no existe emergencia, la coleccion de partes no constituye un sistema en el sentido MBSE.
@@ -525,6 +521,22 @@ Cuando multiples objetos especificos del SD1 compartirían el mismo tipo de rela
 **Correcto:** Road Danger Representation (general) en SD; Vehicle-in-Front Representation, Pedestrian-in-Front Representation, Lane Set Representation (especificos) en SD1 conectados via generalization-specialization.
 
 **Incorrecto:** Las tres representaciones especificas en SD (overcrowding del diagrama top-level).
+
+### 9.14 Making Implicit Objects Explicit
+
+Al modelar sistemas a partir de texto (standards, regulaciones, especificaciones), el modelador DEBE identificar y modelar explicitamente los objetos que el texto menciona implicitamente. En documentos process-oriented, los objetos transformados por los procesos frecuentemente no se nombran. El acto de forzar la pregunta "¿que objeto transforma este proceso?" revela entidades criticas omitidas por el autor del texto (Dori, 2023 — MBSA).
+
+### 9.15 Synonym/Homonym Detection via Modelamiento Formal
+
+OPM fuerza un mapping 1:1 entre things y nombres. El modelador DEBE usar este formalismo para detectar: (a) **sinonimos** — multiples palabras para el mismo concepto (ej: "purpose" vs "stated purpose" en ISO 15288), y (b) **homonimos** — misma palabra para conceptos distintos (ej: "environment" vs "operational environment"). Cada sinonimo detectado DEBE resolverse eligiendo un termino canonico. Cada homonimo DEBE resolverse creando things separados con nombres distintos.
+
+### 9.16 Text-Diagram Inconsistency Detection
+
+El modelamiento OPM de un documento existente produce como byproduct la deteccion de inconsistencias entre el texto principal y sus diagramas. El modelador DEBERIA documentar estas inconsistencias como hallazgos de calidad. Ejemplo: en ISO 15288, boxes representan "systems" en un diagrama y "processes" en otro, sin justificacion. El modelo OPM resuelve estas ambiguedades asignando perseverance correcto (object vs process) a cada thing.
+
+### 9.17 Clause-Referenced OPD Naming
+
+Al modelar documentos normativos, el modelador DEBERIA etiquetar los OPDs con las clausulas del documento fuente (ej: `[5.2.2] System`, `[6.1] Acquisition`). Esto permite trazabilidad directa entre el modelo y el texto fuente, facilita revision por pares, y soporta validacion de cobertura.
 
 ## 10 Control de Flujo Avanzado
 
@@ -671,7 +683,7 @@ El modelador DEBERIA asignar rangos a atributos computacionales para enforcement
 Para simulacion con entrada de usuario, el modelador DEBE seguir estos 6 pasos:
 
 1. Crear usuario como objeto fisico
-2. Conectar usuario al proceso via **agent link** (requisito: solo agents pueden proveer input)
+2. Conectar usuario al proceso via **agent link** (en OPCloud, solo agents pueden proveer user input durante simulacion)
 3. Marcar proceso para recibir user input durante simulacion
 4. Crear objeto input computacional para recibir valores
 5. Conectar proceso al objeto input via **effect link** (requerido para actualizar objetos computacionales con valores de usuario)
@@ -693,11 +705,122 @@ Ejecutar un proceso con contexto in-zoomed transfiere control recursivamente al 
 
 Un objeto stateful en transicion: ha dejado su input state pero aun no ha llegado al output state (duracion positiva). Durante este periodo, el objeto es indisponible para otros procesos.
 
-### 12.8 Compound State Space y Precondiciones Compuestas
+### 12.8 Multi-Domain Integration en Single OPD (MAXIM)
+
+Un OPD PUEDE contener subprocesos de multiples dominios de ingenieria (mecanico, electrico, humano, computacional) en el mismo diagrama. El modelador DEBE clasificar cada subproceso por su dominio pero mantenerlos en un unico OPD cuando sus interacciones son criticas para el diseno. Ejemplo: SD1.1 de Aircraft Braking contiene Pedal Pressing (mecanico), Braking Force Applying (mecanico), y Decelerating() (computacional) — tres dominios integrados (Levi-Soskin et al., 2024).
+
+**Computational process notation:** Los procesos computacionales DEBEN marcarse con `()` al final del nombre (ej: `Decelerating ()`) y se representan con braces `{}` en el OPD. Cuatro tipos de computacion estan disponibles:
+
+| Tipo | Descripcion | Uso |
+|------|-------------|-----|
+| Basic arithmetic | +, -, *, / atomicos | Operaciones simples |
+| User-defined expression | Formula algebraica con aliases | Formulas (ej: V = V0 - (F/m)*t) |
+| TypeScript function | Funcion programada custom | Logica compleja |
+| External tool link | MATLAB, Simulink, Modelica | Simulacion especializada por dominio |
+
+### 12.9 Value Propagation Across OPDs
+
+Cuando un objeto computacional se actualiza en un OPD, su valor DEBE estar inmediatamente disponible en TODOS los OPDs del modelo. Esta consistencia se mantiene via la logical layer (package-independent). El modelador NO DEBE asumir que los valores son locales a un OPD — cualquier cambio computacional propaga globalmente (Levi-Soskin et al., 2024).
+
+### 12.10 Compound State Space y Precondiciones Compuestas
 
 El state space de un objeto es el producto cartesiano de los sets de estados de todos sus atributos y partes stateful. El modelador DEBE reconocer que no todos los puntos del state space son factibles; los compound states infeasibles DEBERIAN identificarse mediante process modeling. Para precondiciones compuestas que abarcan multiples atributos, el modelador DEBE usar multiple condition clause OPL sentences con clausulas X-OR numeradas conectadas por AND logico.
 
-## 13 Invariantes
+## 13 Integracion de Requirements en el Modelo (OPM-R)
+
+OPM-R (Katzir et al., 2025) extiende OPM para integrar requirements directamente en el modelo conceptual del sistema, eliminando la separacion entre modelo de requirements y modelo de arquitectura. Los requirements se modelan como OPM things (objetos y procesos) dentro del mismo OPD set que la arquitectura.
+
+### 13.1 Clasificacion de Requirements por Ontologia OPM
+
+El modelador DEBE clasificar cada requirement textual segun la ontologia OPM:
+
+| Tipo | Perseverance | Criterio | Ejemplo |
+|------|-------------|----------|---------|
+| Object requirement | Object (static) | Requirement de existencia, estructura, componente | "The driver shall have a place to sit" |
+| Process requirement | Process (dynamic) | Requirement de comportamiento, funcion, capacidad | "Driver shall be able to adjust the seat for maximum comfort" |
+
+### 13.2 Algoritmo OPM-R (6 Pasos)
+
+1. **Clasificar** los requirements textuales en categorias principales como nivel superior del arbol de requirements hierarchy
+2. **Crear el arbol visual de requirements** como OPD:
+   - (i) Usar un OPM Object como raiz del requirement set
+   - (ii) Decidir si cada requirement es object requirement o process requirement
+   - (iii) Conectar cada child requirement a su parent via aggregation-participation o exhibition-characterization
+3. **Modelar el sistema** en OPM usando things (objetos y procesos) conectados via links
+4. **Conectar things a requirements** usando tagged structural link unidireccional con tag **"satisfies"**:
+   - (i) Cada child leaf requirement DEBE tener al menos un artifact conectado via "satisfies"
+   - (ii) Los requirements de proceso y objeto en el modelo unificado DEBERIAN colorearse distinto (rojo) para distinguirlos de los artifacts de arquitectura (verde/azul)
+5. **Producir sentencias OPL** del modelo unificado y buscar la palabra "satisfies" para verificar cobertura
+6. **Generar traceability table** con columnas: Requirement ID, Text, Essence (Object/Process), Satisfied by (artifact)
+
+### 13.3 Tag "satisfies" como Convencion de Trazabilidad
+
+El tagged structural link con tag **"satisfies"** es la convencion estandar para conectar un artifact de arquitectura a un requirement que dicho artifact cumple. Se usa a todos los niveles del OPD set.
+
+**Correcto:** `Seat satisfies RQ1 Driver Seat.` (tagged structural link unidireccional, de artifact a requirement)
+
+**Incorrecto:** Conectar requirements a artifacts via procedural links (los requirements no transforman ni habilitan procesos; la relacion es estructural).
+
+### 13.4 Requirements Hierarchy como Aggregation Tree
+
+Los requirements DEBEN organizarse en un arbol jerarquico usando aggregation-participation:
+- **Raiz**: Requirement Set del sistema (ej: "Seat Adjusting Requirement Set")
+- **Ramas**: categorias (Component Requirements, Performance Requirements, etc.)
+- **Hojas**: requirements individuales (ej: "RQ1 Driver Seat", "RQ1.1 Driver Positioning")
+
+Los requirements hijos se derivan de padres via **deriveReqt** (refinement from parent to child).
+
+### 13.5 Coexistencia Visual Requirements-Architecture
+
+El modelo unificado OPM-R contiene AMBOS — el arbol de requirements Y la arquitectura del sistema — en el mismo OPD set. El modelador DEBERIA usar distincion visual (color rojo para requirements, verde/azul para arquitectura) para diferenciarlos. Los requirements aparecen a todos los niveles de detalle: requirements de alto nivel en SD, requirements detallados en OPDs descendientes.
+
+### 13.6 Verificacion de Cobertura de Requirements
+
+El modelador DEBE verificar que:
+1. Todo requirement leaf tiene al menos un artifact que lo satisface (buscar "satisfies" en OPL)
+2. No existen artifacts huerfanos sin requirement asociado (posibles over-engineering)
+3. La traceability table DEBE generarse y revisarse con stakeholders
+
+## 14 Simulacion y Ejecucion del Modelo
+
+### 14.1 Depth-First OPD Tree Traversal para Ejecucion
+
+La ejecucion animada del modelo OPM sigue un recorrido **depth-first** del OPD tree. Los tokens fluyen a lo largo de los links: al llegar a un proceso in-zoomed, el control se transfiere recursivamente al subproceso mas profundo (topmost del nivel mas bajo). El control retorna al nivel padre tras completar el ultimo subproceso.
+
+Los tokens se visualizan como valores que se pasan entre objetos y procesos: consumed (eliminado del source), instrument (read-only, permanece), resultee (creado en destination). Tokens computacionales llevan valores numericos.
+
+### 14.2 Hardware-Software Co-Model (Prototipo Evolutivo)
+
+En sistemas cyber-physical, el modelo OPM PUEDE contener tanto partes fisicas (hardware) como partes informaticales (software/computacion) coexistiendo. El patron de desarrollo evolutivo:
+
+1. Inicialmente, todas las partes hardware se modelan conceptualmente (sin computacion)
+2. Las partes software se desarrollan iterativamente dentro del modelo
+3. A medida que el software mejora, las partes hardware modeladas se reemplazan gradualmente por contrapartes fisicas
+4. El proceso continua hasta alcanzar un prototipo funcional completo
+
+Este patron permite descubrir errores de integracion tempranamente, cuando corregirlos es rapido y barato (Levi-Soskin et al., 2024 — MAXIM).
+
+### 14.3 Non-Visual Batch Execution
+
+Para sistemas complejos, el modelador PUEDE ejecutar simulaciones no-visuales (batch) que procesan multiples ejecuciones off-line con eventos, condiciones, probabilidades y transiciones de estado. Multiples ejecuciones revelan escenarios problematicos dificiles de detectar por inspeccion visual:
+
+- Escenarios pueden guardarse, replayearse y analizarse
+- Analisis estadistico de big data de multiples ejecuciones identifica bottlenecks
+- Escenarios detectados como problematicos habilitan model-checking formal y deteccion de puntos de falla
+
+### 14.4 Transition Conceptual → Computational
+
+El modelador DEBE reconocer el punto en el OPD tree donde la transicion de modelamiento conceptual puro a modelamiento computacional es necesaria. Indicadores:
+
+- Los valores numericos especificos se vuelven necesarios para decision de diseno
+- Trade-off studies requieren parametros cuantitativos
+- El proceso fisico tiene una formula matematica subyacente (ej: V = V0 - (F/m)*t)
+
+En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales (agregar `()` al nombre, usar `{}` en el OPD) y conectar objetos computacionales con sus formulas.
+
+## 15 Invariantes
+
+Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada.
 
 | Invariante | Enforcement |
 |-----------|-------------|
@@ -724,8 +847,15 @@ El state space de un objeto es el producto cartesiano de los sets de estados de 
 | Links NO DEBEN cruzar areas ocupadas por things | manual |
 | Things NO DEBEN ocultarse mutuamente (excepcion: port folding) | manual |
 | Minimizar numero de links y cruces de links en cada OPD | manual |
+| Todo requirement leaf tiene al menos un artifact que lo satisface via "satisfies" | manual |
+| Requirements colored distinto (rojo) de architecture artifacts (verde/azul) | manual |
+| Valores computacionales propagan globalmente a todos los OPDs | schema |
+| Procesos computacionales marcados con `()` en nombre y `{}` en OPD | lint |
+| Sinonimos resueltos: un thing = un nombre canonico | manual |
 
-## 14 Checklist de Validacion
+## 16 Checklist de Validacion
+
+Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabla lista checks operativos adicionales organizados por nivel.
 
 | Nivel | Check | Condicion | Severidad |
 |-------|-------|-----------|----------|
@@ -735,13 +865,8 @@ El state space de un objeto es el producto cartesiano de los sets de estados de 
 | SD | Enablers presentes | ≥1 agente o instrumento | ALTA |
 | SD | Environment identificado | ≥1 objeto environmental | MEDIA |
 | SD | Problem occurrence (si aplica) | Proceso environmental causa estado negativo | MEDIA |
-| SD | Naming compliant | Gerundio + singular + Set/Group | ALTA |
-| SD | Exhibition | Sistema exhibe proceso como operacion | ALTA |
-| SD | Agent exclusivity | Ningun no-humano con agent link | ALTA |
 | SD | Instrument reclassification | Instrumentos con desgaste relevante reclasificados a affectee | MEDIA |
 | SD1 | Refinamiento correcto | Sync → in-zooming; async → unfolding | ALTA |
-| SD1 | Links distribuidos | Consumption/result NO en outer contour | CRITICA |
-| SD1 | Subprocesos transforman | Cada subproceso ≥1 transformee | CRITICA |
 | SD1 | Sin event a no-primero | Event links no a subprocesos intermedios (o justificacion) | ALTA |
 | SD1 | Split links resueltos | Ningun effect link underspecified en in-zoom multi-subprocess | ALTA |
 | SD1 | Estados expresados | Estados relevantes visibles y conectados | ALTA |
@@ -750,20 +875,21 @@ El state space de un objeto es el producto cartesiano de los sets de estados de 
 | SD2+ | Precedencia links | Out-zooming aplica matriz de precedencia | ALTA |
 | SD2+ | OPD tree valido | Etiquetado secuencial correcto | MEDIA |
 | SD2+ | Role shift coherente | Instrument en abstract = affectee en detail solo si cambio neto = 0 | ALTA |
-| Quant | Probabilidades suman 1 | Fan XOR probabilistico = 1.0 | ALTA |
 | Quant | Operandos explicitos | Operaciones no conmutativas con roles designados | MEDIA |
+| Quant | Computational workflow | Atributos computacionales con tipo, alias y formula | MEDIA |
+| Quant | Range validation | Rangos definidos para atributos con dominio acotado | MEDIA |
 | Error | Exception handlers | Procesos con time bounds tienen overtime/undertime links | MEDIA |
 | Error | Indeterminate resolution | Affectees en transicion resueltos por exception handler | MEDIA |
-| Global | Bimodal | Todo OPD tiene OPL equivalente | ALTA |
-| Global | Completitud | Todo hecho en ≥1 OPD | ALTA |
 | Global | Claridad | Ningun OPD excede 20-25 entidades | MEDIA |
-| Global | Emergencia | Arquitectura produce ≥1 capacidad emergente | ALTA |
 | Global | Inner/outer scoping | Objetos inner solo existen en scope de su proceso padre | MEDIA |
 | Global | Name coherency | Sin nombres duplicados no resueltos | ALTA |
 | Global | Ontology enforcement | Nivel configurado para organizacion (Suggest o Enforce) | MEDIA |
 | Global | Model informativeness | Grading ejecutado; sin precedence links faltantes criticos | MEDIA |
-| Quant | Computational workflow | Atributos computacionales con tipo, alias y formula | MEDIA |
-| Quant | Range validation | Rangos definidos para atributos con dominio acotado | MEDIA |
 | Global | System map | Generado para modelos con >10 OPDs | MEDIA |
 | Global | Specification constructs | OPD + OPL + OPM spec completos en breadth-first order | MEDIA |
 | Global | Port folding | Usado donde layout fisico de componentes es relevante | BAJA |
+| Global | Implicit objects | Objetos implicitos en texto fuente identificados y modelados explicitamente | ALTA |
+| Req | No huerfanos | Sin artifacts de arquitectura sin requirement asociado | MEDIA |
+| Req | Traceability table | Generada y revisada con stakeholders | ALTA |
+| Req | Classification | Cada requirement clasificado como object o process requirement | ALTA |
+| Sim | Batch scenarios | Escenarios problematicos identificados via batch execution (modelos complejos) | MEDIA |
