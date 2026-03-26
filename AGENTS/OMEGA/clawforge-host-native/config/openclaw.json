@@ -1,0 +1,89 @@
+{
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-opus-4-6",
+        "fallbacks": ["openai-codex/gpt-5.4"]
+      },
+      "models": {
+        "anthropic/claude-opus-4-6": {
+          "params": { "cacheRetention": "long" }
+        }
+      },
+      "pdfModel": { "primary": "anthropic/claude-opus-4-6" },
+      "imageGenerationModel": { "primary": "google/gemini-3.1-flash-image-preview" },
+      "userTimezone": "America/Santiago",
+      "skipBootstrap": false,
+      "bootstrapMaxChars": 20000,
+      "bootstrapTotalMaxChars": 100000,
+      "thinkingDefault": "adaptive",
+      "memorySearch": {
+        "enabled": true,
+        "provider": "gemini"
+      },
+      "compaction": {
+        "mode": "default",
+        "reserveTokensFloor": 24000,
+        "memoryFlush": { "enabled": true, "softThresholdTokens": 6000 }
+      },
+      "heartbeat": {
+        "every": "15m",
+        "activeHours": { "start": "07:00", "end": "23:00", "timezone": "America/Santiago" },
+        "target": "last",
+        "prompt": "Read HEARTBEAT.md. Follow it strictly. If nothing needs attention, reply HEARTBEAT_OK.",
+        "lightContext": true,
+        "isolatedSession": true
+      }
+    }
+  },
+  "identity": {
+    "name": "Clawforge",
+    "emoji": "⚒️"
+  },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "reset": { "mode": "daily", "atHour": 4 },
+    "maintenance": { "pruneAfter": "30d", "maxEntries": 500 }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": { "enabled": true },
+        "session-memory": { "enabled": true }
+      }
+    }
+  },
+  "cron": { "enabled": true },
+  "browser": { "headless": true },
+  "messages": {
+    "tts": { "auto": "off" }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "allowFrom": ["__TELEGRAM_USER_ID__"],
+      "groupPolicy": "disabled",
+      "textChunkLimit": 4000,
+      "streaming": "partial",
+      "reactionLevel": "minimal",
+      "silentErrorReplies": true,
+      "ackReaction": "⚒️"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "reload": { "mode": "hybrid" },
+    "auth": {
+      "mode": "token",
+      "token": "__REPLACE_GATEWAY_TOKEN__"
+    }
+  }
+}
