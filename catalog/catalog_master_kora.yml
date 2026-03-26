@@ -1467,6 +1467,18 @@ Catalog:
     title: OpenClaw — Cheatsheet Definitivo
     file: KNOWLEDGE/agengai/openclaw/manual-openclaw/CHEATSHEET.md
     status: published
+  - urn: urn:agengai:kb:manual-ciclo-vida-agentes-openclaw
+    title: Manual de ciclo de vida de agentes OpenClaw
+    file: KNOWLEDGE/agengai/openclaw/manual-ciclo-vida-agentes-openclaw.md
+    status: published
+  - urn: urn:agengai:kb:manual-openclaw-para-agentes-ai
+    title: Manual de operacion OpenClaw para agentes AI
+    file: KNOWLEDGE/agengai/openclaw/manual-openclaw-para-agentes-ai.md
+    status: published
+  - urn: urn:agengai:kb:manual-skills-openclaw-para-agentes-ai
+    title: Manual de skills OpenClaw para agentes AI
+    file: KNOWLEDGE/agengai/openclaw/manual-skills-openclaw-para-agentes-ai.md
+    status: published
   - urn: urn:agengai:kb:openclaw-integration
     title: OpenClaw Integration Guide
     file: KNOWLEDGE/agengai/openclaw-integration.md
@@ -1688,6 +1700,11 @@ Catalog:
     title: OPCloud Tutorial Videos
     file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md
     status: published
+  - urn: urn:fxsl:kb:openclaw-agent-lifecycle-manual
+    title: 'Manual para Agentes AI Basados en LLM: Crear, Mantener, Administrar y
+      Evolucionar Agentes OpenClaw'
+    file: KNOWLEDGE/fxsl/openclaw-agent-lifecycle-manual.md
+    status: draft
   - urn: urn:fxsl:kb:opm-applied-system-modeling
     title: OPM Applied System Modeling — System Categories, SD Method, and Worked
       Examples

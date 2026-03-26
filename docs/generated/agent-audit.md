@@ -4,7 +4,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-03-25
+- Fecha: 2026-03-26
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 5
 - Reglas aun no institucionalizadas: 5
