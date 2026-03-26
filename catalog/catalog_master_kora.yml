@@ -1483,10 +1483,6 @@ Catalog:
     title: The Complete Guide to Building Skills for Claude
     file: KNOWLEDGE/agengai/skills-anthropic.md
     status: published
-  - urn: urn:dev:kb:agentic-engineering-praxis
-    title: 'Ingenieria Agéntica: Praxis de Peter Steinberger'
-    file: KNOWLEDGE/dev/agentic-engineering-praxis.md
-    status: published
   - urn: urn:dev:kb:agentic-tooling-inventory
     title: Inventario de Herramientas y Modelos para Ingenieria Agéntica
     file: KNOWLEDGE/dev/agentic-tooling-inventory/_index.md
@@ -1571,6 +1567,14 @@ Catalog:
     title: Agent SDK, Headless Mode y Automatización
     file: KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md
     status: published
+  - urn: urn:dev:kb:peter-steinberger-gemelo-digital-intelectual
+    title: 'Peter Steinberger: gemelo digital intelectual'
+    file: KNOWLEDGE/dev/peter-steinberger-gemelo-digital-intelectual.md
+    status: published
+  - urn: urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio
+    title: 'Peter Steinberger: canon operativo de ingenieria agentica'
+    file: KNOWLEDGE/dev/peter-steinberger-ingeniero-agentico-prodigio.md
+    status: published
   - urn: urn:fxsl:kb:action-primary-key
     title: Action as Primary Key
     file: KNOWLEDGE/fxsl/cat/action-primary-key.md
@@ -1582,6 +1586,14 @@ Catalog:
   - urn: urn:fxsl:kb:algebraic-model-management
     title: Algebraic Model Management
     file: KNOWLEDGE/fxsl/cat/algebraic-model-management.md
+    status: published
+  - urn: urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual
+    title: 'Allan Kelly: gemelo digital intelectual'
+    file: KNOWLEDGE/fxsl/xanpan/allan-kelly-gemelo-digital-intelectual.md
+    status: published
+  - urn: urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica
+    title: Allan Kelly nativo de la era de la ingenieria agentica
+    file: KNOWLEDGE/fxsl/xanpan/allan-kelly-gemelo-digital-intelectual-era-agentica.md
     status: published
   - urn: urn:fxsl:kb:audit-patterns
     title: Categorical Audit Patterns
@@ -2328,6 +2340,10 @@ Catalog:
   - urn: urn:ops:kb:ux-telegram-openclaw
     title: Configuración de comportamiento de agentes OpenClaw
     file: KNOWLEDGE/ops/ux-telegram-openclaw.md
+    status: published
+  - urn: urn:pro:kb:david-allen-integral-definitivo-septiembre-2026
+    title: David Allen integral definitivo - septiembre 2026
+    file: KNOWLEDGE/pro/david-allen-integral-definitivo-septiembre-2026.md
     status: published
   - urn: urn:pro:kb:mba-personal-kaufman
     title: MBA Personal — Modelos Mentales de Negocios
