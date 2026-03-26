@@ -45,11 +45,11 @@ El infinitivo español es el equivalente funcional del gerundio sustantivado ing
 | adj verb-ing | Automatic Responding | Infinitivo adverbio | Responder Automáticamente |
 | adj noun verb-ing | Automatic Crash Responding | Infinitivo complejo | Responder a Colisión Automática |
 
-Máximo 4 palabras. Cada palabra capitalizada.
+Máximo 4 palabras. Se capitalizan las palabras lexicas; articulos y preposiciones breves PUEDEN permanecer en minuscula cuando mejora la naturalidad del espanol.
 
 ### 1.2 Denominación de Objetos
 
-Sin cambio respecto a OPL-EN: sustantivo singular, cada palabra capitalizada.
+Sin cambio respecto a OPL-EN: sustantivo singular, con capitalizacion en las palabras lexicas del nombre.
 
 Plurales: sufijo "Conjunto" para inanimados (EN: "Set"), "Grupo" para humanos (EN: "Group").
 

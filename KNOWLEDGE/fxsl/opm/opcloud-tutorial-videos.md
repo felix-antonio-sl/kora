@@ -63,6 +63,8 @@ Main Menu: Create new model, Load model, Load examples (Global — all users; Or
 
 Access: Main Menu > New Model by Wizard. Implements the OPM SD construction procedure (see `urn:fxsl:kb:opm-iso-19450` § SD Construction Procedure) as a guided 12-stage interactive workflow. The wizard decomposes the conceptual 9-stage SD procedure into 12 UI stages: stages 1-5 map to conceptual stages 1-4; stages 6-12 cover system naming, instruments, I/O, environment, connections, and review.
 
+**Language scope:** prompts and examples in this section reflect the current English UI. For Spanish surface forms, naming and OPL realisation, follow `urn:fxsl:kb:opm-opl-es`; the wizard's English prompt text does not override Spanish naming conventions.
+
 **Help features**: hover hints on UI elements, assistant tooltips on bold items. Example model: OnStar system.
 
 **12 Stages:**
@@ -315,7 +317,7 @@ Workflow:
 
 ## Requirements Modeling
 
-Add, remove and view requirements on model elements. Access: select element > OPM Requirements group > Add requirements. Actions: add, remove, create consolidated requirements view. Link types: Exhibition (presence/absence), Characterization (attributes), Aggregation Participation (part-whole). Requirement traceability uses the "satisfies" tagged structural link convention (see `urn:fxsl:kb:metodologia-modelamiento-opm` §13.3). Apply requirements to elements, links, or entire diagrams.
+Add, remove and view requirements on model elements. Access: select element > OPM Requirements group > Add requirements. Actions: add, remove, create consolidated requirements view. Link types: Exhibition (presence/absence), Characterization (attributes), Aggregation Participation (part-whole). Requirement traceability in this workflow uses the "satisfies" tagged structural link convention. Apply requirements to elements, links, or entire diagrams.
 
 ### Requirements Example (Door-Peephole System)
 

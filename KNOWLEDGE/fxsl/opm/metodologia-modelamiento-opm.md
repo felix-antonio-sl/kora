@@ -4,18 +4,42 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-25"
-    source: "synthesis:opm-iso-19450,opcloud-tutorial-videos,paper:katzir-2025-opm-r,paper:dori-2023-mbsa,paper:levi-soskin-2024-maxim"
+    source: "synthesis:opm-iso-19450,opm-opl-es,opcloud-tutorial-videos"
 version: "3.3.0"
 status: published
-tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patterns, antipatterns, control-flow, error-handling, quantitative, requirements-integration, simulation, executable-modeling]
+tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patterns, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
+extensions:
+  kora:
+    family: specification
+    depends_on:
+      - "urn:fxsl:kb:opm-iso-19450"
+      - "urn:fxsl:kb:opm-opl-es"
+      - "urn:fxsl:kb:opcloud-tutorial-videos"
 ---
 
 # Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas
 
 ## 1 Definicion
 
-Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Cubre desde la clasificacion del sistema hasta gestion de complejidad multinivel, incluyendo heuristicas de decision avanzadas, control de flujo, manejo de errores temporales y modelamiento cuantitativo. Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para fundamentos ontologicos, ver §3 y [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450).
+Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Consolida reglas y workflows recuperables desde [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450), [OPL-ES](urn:fxsl:kb:opm-opl-es) y [OPCloud Tutorial Videos](urn:fxsl:kb:opcloud-tutorial-videos). Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para la realizacion textual en espanol, ver [OPL-ES](urn:fxsl:kb:opm-opl-es).
+
+### 1.1 Alcance y Precedencia del Corpus
+
+Este artefacto es una **guia derivada**. No reemplaza la base normativa del corpus.
+
+Orden de precedencia:
+
+1. **ISO 19450** gobierna semantica OPM, notacion, relaciones y procedimiento base de construccion del SD.
+2. **OPL-ES** gobierna la realizacion textual en espanol sin alterar la semantica OPM.
+3. **OPCloud Tutorial Videos** gobierna solo workflows de herramienta, UI y capacidades de implementacion de OPCloud.
+4. **Esta metodologia** integra las tres capas anteriores y explicita reglas operativas para usarlas sin conflicto.
+
+Regla de resolucion:
+
+- Si una regla de **semantica OPM** entra en conflicto con una regla de herramienta, prevalece ISO 19450.
+- Si una regla de **surface form en espanol** entra en conflicto con ejemplos en ingles del corpus, prevalece OPL-ES para artefactos en `lang: es`.
+- Las capacidades de OPCloud NO redefinen por si solas la semantica de OPM; solo operacionalizan su uso en la herramienta.
 
 ## 2 Definiciones
 
@@ -35,7 +59,7 @@ Esta especificacion define la metodologia para construir modelos conceptuales de
 | Proceso state-preserving | Proceso que mantiene el status quo de un objeto sin transformarlo |
 | Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos |
 | Semantic strength | Fuerza semantica de un link procedural que determina precedencia en conflictos |
-| Singular Name Principle | Los nombres de things en OPM DEBEN ser singulares. Colecciones humanas usan sufijo "Group"; colecciones inanimadas usan sufijo "Set" |
+| Singular Name Principle | Los nombres de things en OPM DEBEN ser singulares. En ingles, colecciones humanas usan "Group" y las inanimadas "Set". En espanol, los equivalentes son "Grupo" y "Conjunto" |
 
 ## 3 Fundamentos Ontologicos
 
@@ -122,19 +146,23 @@ El SD DEBE ser simple y claro, con minimos detalles tecnicos. Todos los stakehol
 
 ### 6.1 Paso 1: Identificacion del Proceso Principal
 
-El nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing"). En OPL-ES, el equivalente funcional es el infinitivo (-ar, -er, -ir); ver [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1.
+La forma del nombre depende del idioma de realizacion:
+
+- En artefactos y modelos en **ingles**, el nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing"), conforme a [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450).
+- En artefactos y modelos en **espanol**, el nombre del proceso DEBE usar infinitivo (-ar, -er, -ir), conforme a [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1.
 
 **Correcto:** `Battery Charging`, `Airplane Flying`
 
 **Incorrecto:** `Charge Battery`, `Fly Airplane`
 
-El nombre DEBERIA combinar el transformee seguido del verbo gerundio.
+En ingles, el nombre DEBERIA combinar el transformee seguido del verbo gerundio. En espanol, DEBERIA mantener la misma funcion nominal usando infinitivo.
 
 ### 6.2 Paso 2: Grupo Beneficiario
 
 El nombre DEBE ser singular segun el Singular Name OPM Principle:
-- Para humanos: sufijo "Group" (ej: "Passenger Group")
-- Para inanimados: sufijo "Set" (ej: "Airplane Set")
+
+- En ingles: sufijo "Group" para humanos y "Set" para inanimados
+- En espanol: sufijo "Grupo" para humanos y "Conjunto" para inanimados
 
 El grupo beneficiario DEBE representarse como objeto fisico.
 
@@ -164,7 +192,7 @@ OPL: "[Agent] handles [Main Process]."
 
 ### 6.6 Paso 6: Naming del Sistema y Exhibition
 
-El nombre default DEBERIA ser el nombre del proceso + "System". El modelador PUEDE usar un nombre aceptado en su lugar.
+El nombre default DEBERIA ser el nombre del proceso + "System" en ingles, o + "Sistema" cuando el modelo se realice completamente en espanol. El modelador PUEDE usar un nombre aceptado en su lugar.
 
 El proceso principal DEBE modelarse como operacion del sistema via exhibition-characterization.
 
@@ -407,9 +435,9 @@ Tipos: process tree, object tree, allocation view, simulation-motivated view.
 
 Reduccion neta: procesos_removidos + objetos_removidos + links_removidos - 1 (el proceso interino agregado).
 
-**Depth-first traversal para documentos complejos:** Al modelar estandares, regulaciones o documentos extensos, el modelador DEBERIA seguir una estrategia depth-first: profundizar completamente en una seccion/clausula antes de avanzar a la siguiente. Esto contrasta con breadth-first y permite descubrir inconsistencias locales mas rapidamente (Dori, 2023 — MBSA).
+**Depth-first traversal para documentos complejos:** Al modelar estandares, regulaciones o documentos extensos, el modelador DEBERIA seguir una estrategia depth-first: profundizar completamente en una seccion/clausula antes de avanzar a la siguiente. Esto contrasta con breadth-first y permite descubrir inconsistencias locales mas rapidamente.
 
-**Object-process disconnect bridging:** Documentos y estandares frecuentemente separan la descripcion de objetos (estructura) de la descripcion de procesos (comportamiento) en clausulas independientes sin integracion. El modelador DEBE conectar ambas vistas usando OPM, enlazando cada proceso con los objetos que transforma. Esta integracion revela gaps y objetos implicitos que el texto omite (Dori, 2023 — ISO 15288 case study).
+**Object-process disconnect bridging:** Documentos y estandares frecuentemente separan la descripcion de objetos (estructura) de la descripcion de procesos (comportamiento) en clausulas independientes sin integracion. El modelador DEBE conectar ambas vistas usando OPM, enlazando cada proceso con los objetos que transforma. Esta integracion revela gaps y objetos implicitos que el texto omite.
 
 ### 8.6 Emergencia como Criterio de Validacion Arquitectural
 
@@ -524,7 +552,7 @@ Cuando multiples objetos especificos del SD1 compartirían el mismo tipo de rela
 
 ### 9.14 Making Implicit Objects Explicit
 
-Al modelar sistemas a partir de texto (standards, regulaciones, especificaciones), el modelador DEBE identificar y modelar explicitamente los objetos que el texto menciona implicitamente. En documentos process-oriented, los objetos transformados por los procesos frecuentemente no se nombran. El acto de forzar la pregunta "¿que objeto transforma este proceso?" revela entidades criticas omitidas por el autor del texto (Dori, 2023 — MBSA).
+Al modelar sistemas a partir de texto (standards, regulaciones, especificaciones), el modelador DEBE identificar y modelar explicitamente los objetos que el texto menciona implicitamente. En documentos process-oriented, los objetos transformados por los procesos frecuentemente no se nombran. El acto de forzar la pregunta "¿que objeto transforma este proceso?" revela entidades criticas omitidas por el autor del texto.
 
 ### 9.15 Synonym/Homonym Detection via Modelamiento Formal
 
@@ -599,7 +627,7 @@ Esta semantica temporal es critica para simulacion y para entender la disponibil
 
 ### 10.10 Boolean Objects y Branching
 
-Un **Boolean object** es un objeto informatical dual-state generado por un proceso de decision. Sus estados forman un par Boolean (yes/no, true/false, pass/fail, approved/denied, >=x/<x). Cada estado se conecta via condition links a procesos alternativos subsiguientes, implementando control if-then-else.
+Un **Boolean object** es un objeto informatical dual-state generado por un proceso de decision. Sus estados forman un par Boolean (yes/no, true/false, pass/fail, approved/denied, `geq-x`/`lt-x`). Cada estado se conecta via condition links a procesos alternativos subsiguientes, implementando control if-then-else.
 
 **Generalizacion:** Cualquier objeto con n estados funciona como un case statement — cada estado PUEDE servir como source de condition o instrument link para un proceso subsiguiente distinto.
 
@@ -648,7 +676,7 @@ Cuando un proceso tiene Minimal Duration, el modelador DEBERIA adjuntar un under
 
 Todo affectee en transicion durante un proceso activo permanece en estado indeterminado si el proceso falla. Los exception handlers (overtime/undertime) DEBEN resolver el objeto a un estado permisible. Sin exception handling, el objeto queda indefinido y el modelo es incompleto para simulacion.
 
-## 12 Modelamiento Cuantitativo
+## 12 Modelamiento Cuantitativo y Simulacion
 
 ### 12.1 Transformation Rate
 
@@ -662,9 +690,9 @@ Cuando se modelan operaciones aritmeticas no conmutativas (Dividing, Subtracting
 
 El modelador PUEDE especificar una Duration Distribution en la propiedad Duration de un proceso, identificando una funcion de distribucion de probabilidad. En runtime, cada instancia del proceso muestrea su duracion independientemente. Sin Duration Distribution, todas las instancias ejecutan en exactamente la Expected Duration (irrealista para sistemas reales).
 
-### 12.4 Computational Object Workflow
+### 12.4 Workflow Computacional en OPCloud
 
-Para modelar calculos y simulacion cuantitativa, el modelador DEBE seguir este patron de 5 pasos:
+Cuando se implemente el modelo en OPCloud, el modelador DEBE seguir este patron de 5 pasos:
 
 1. **Definir objetos** con atributos computacionales (tipo: integer, float, string, character, boolean)
 2. **Asignar alias** a cada atributo computacional (ej: "x1", "y1") para uso en formulas
@@ -672,7 +700,7 @@ Para modelar calculos y simulacion cuantitativa, el modelador DEBE seguir este p
 4. **Definir formula** usando los aliases (ej: `slope = (y2-y1)/(x2-x1)`)
 5. **Conectar proceso** a objetos via consumption/effect links para flujo de datos
 
-**Stereotypes:** Templates de parametros reutilizables para patrones computacionales comunes (ej: Security Level Computing). Se organizan en niveles Global (todos los usuarios) y Organizational (admin). Al remover un stereotype de un thing, el modelador DEBE elegir entre unlink (conservar componentes) o unlink-and-remove (eliminar componentes agregados).
+**Stereotypes en OPCloud:** Templates de parametros reutilizables para patrones computacionales comunes. La herramienta distingue niveles Global y Organizational. Al remover un stereotype de un thing, el modelador DEBE elegir entre unlink (conservar componentes) o unlink-and-remove (eliminar componentes agregados).
 
 ### 12.5 Range Validation
 
@@ -680,10 +708,10 @@ El modelador DEBERIA asignar rangos a atributos computacionales para enforcement
 
 ### 12.6 User Input Simulation Workflow
 
-Para simulacion con entrada de usuario, el modelador DEBE seguir estos 6 pasos:
+Para simulacion con entrada de usuario en OPCloud, el modelador DEBE seguir estos 6 pasos:
 
 1. Crear usuario como objeto fisico
-2. Conectar usuario al proceso via **agent link** (en OPCloud, solo agents pueden proveer user input durante simulacion)
+2. Conectar usuario al proceso via **agent link**
 3. Marcar proceso para recibir user input durante simulacion
 4. Crear objeto input computacional para recibir valores
 5. Conectar proceso al objeto input via **effect link** (requerido para actualizar objetos computacionales con valores de usuario)
@@ -705,81 +733,39 @@ Ejecutar un proceso con contexto in-zoomed transfiere control recursivamente al 
 
 Un objeto stateful en transicion: ha dejado su input state pero aun no ha llegado al output state (duracion positiva). Durante este periodo, el objeto es indisponible para otros procesos.
 
-### 12.8 Multi-Domain Integration en Single OPD (MAXIM)
-
-Un OPD PUEDE contener subprocesos de multiples dominios de ingenieria (mecanico, electrico, humano, computacional) en el mismo diagrama. El modelador DEBE clasificar cada subproceso por su dominio pero mantenerlos en un unico OPD cuando sus interacciones son criticas para el diseno. Ejemplo: SD1.1 de Aircraft Braking contiene Pedal Pressing (mecanico), Braking Force Applying (mecanico), y Decelerating() (computacional) — tres dominios integrados (Levi-Soskin et al., 2024).
-
-**Computational process notation:** Los procesos computacionales DEBEN marcarse con `()` al final del nombre (ej: `Decelerating ()`) y se representan con braces `{}` en el OPD. Cuatro tipos de computacion estan disponibles:
-
-| Tipo | Descripcion | Uso |
-|------|-------------|-----|
-| Basic arithmetic | +, -, *, / atomicos | Operaciones simples |
-| User-defined expression | Formula algebraica con aliases | Formulas (ej: V = V0 - (F/m)*t) |
-| TypeScript function | Funcion programada custom | Logica compleja |
-| External tool link | MATLAB, Simulink, Modelica | Simulacion especializada por dominio |
-
-### 12.9 Value Propagation Across OPDs
-
-Cuando un objeto computacional se actualiza en un OPD, su valor DEBE estar inmediatamente disponible en TODOS los OPDs del modelo. Esta consistencia se mantiene via la logical layer (package-independent). El modelador NO DEBE asumir que los valores son locales a un OPD — cualquier cambio computacional propaga globalmente (Levi-Soskin et al., 2024).
-
-### 12.10 Compound State Space y Precondiciones Compuestas
+### 12.8 Compound State Space y Precondiciones Compuestas
 
 El state space de un objeto es el producto cartesiano de los sets de estados de todos sus atributos y partes stateful. El modelador DEBE reconocer que no todos los puntos del state space son factibles; los compound states infeasibles DEBERIAN identificarse mediante process modeling. Para precondiciones compuestas que abarcan multiples atributos, el modelador DEBE usar multiple condition clause OPL sentences con clausulas X-OR numeradas conectadas por AND logico.
 
-## 13 Integracion de Requirements en el Modelo (OPM-R)
+## 13 Requirements Modeling en OPCloud
 
-OPM-R (Katzir et al., 2025) extiende OPM para integrar requirements directamente en el modelo conceptual del sistema, eliminando la separacion entre modelo de requirements y modelo de arquitectura. Los requirements se modelan como OPM things (objetos y procesos) dentro del mismo OPD set que la arquitectura.
+En este corpus, el modelamiento de requirements se trata como una capacidad de OPCloud, no como una extension normativa independiente de OPM. Por lo tanto, las siguientes reglas aplican solo cuando el modelo se implementa en OPCloud.
 
-### 13.1 Clasificacion de Requirements por Ontologia OPM
+### 13.1 Operaciones Disponibles
 
-El modelador DEBE clasificar cada requirement textual segun la ontologia OPM:
+OPCloud permite agregar, remover y visualizar requirements sobre elementos, links o diagramas completos. Las relaciones recuperables en el tutorial son:
 
-| Tipo | Perseverance | Criterio | Ejemplo |
-|------|-------------|----------|---------|
-| Object requirement | Object (static) | Requirement de existencia, estructura, componente | "The driver shall have a place to sit" |
-| Process requirement | Process (dynamic) | Requirement de comportamiento, funcion, capacidad | "Driver shall be able to adjust the seat for maximum comfort" |
+- Exhibition
+- Characterization
+- Aggregation Participation
 
-### 13.2 Algoritmo OPM-R (6 Pasos)
+### 13.2 Convencion de Trazabilidad
 
-1. **Clasificar** los requirements textuales en categorias principales como nivel superior del arbol de requirements hierarchy
-2. **Crear el arbol visual de requirements** como OPD:
-   - (i) Usar un OPM Object como raiz del requirement set
-   - (ii) Decidir si cada requirement es object requirement o process requirement
-   - (iii) Conectar cada child requirement a su parent via aggregation-participation o exhibition-characterization
-3. **Modelar el sistema** en OPM usando things (objetos y procesos) conectados via links
-4. **Conectar things a requirements** usando tagged structural link unidireccional con tag **"satisfies"**:
-   - (i) Cada child leaf requirement DEBE tener al menos un artifact conectado via "satisfies"
-   - (ii) Los requirements de proceso y objeto en el modelo unificado DEBERIAN colorearse distinto (rojo) para distinguirlos de los artifacts de arquitectura (verde/azul)
-5. **Producir sentencias OPL** del modelo unificado y buscar la palabra "satisfies" para verificar cobertura
-6. **Generar traceability table** con columnas: Requirement ID, Text, Essence (Object/Process), Satisfied by (artifact)
+Cuando se use trazabilidad de requirements en OPCloud, el tagged structural link con tag **"satisfies"** DEBERIA usarse como convencion de trazabilidad entre artefacto y requirement.
 
-### 13.3 Tag "satisfies" como Convencion de Trazabilidad
-
-El tagged structural link con tag **"satisfies"** es la convencion estandar para conectar un artifact de arquitectura a un requirement que dicho artifact cumple. Se usa a todos los niveles del OPD set.
-
-**Correcto:** `Seat satisfies RQ1 Driver Seat.` (tagged structural link unidireccional, de artifact a requirement)
+**Correcto:** `Seat satisfies RQ1 Driver Seat.`
 
 **Incorrecto:** Conectar requirements a artifacts via procedural links (los requirements no transforman ni habilitan procesos; la relacion es estructural).
 
-### 13.4 Requirements Hierarchy como Aggregation Tree
+### 13.3 Ejemplo Minimo
 
-Los requirements DEBEN organizarse en un arbol jerarquico usando aggregation-participation:
-- **Raiz**: Requirement Set del sistema (ej: "Seat Adjusting Requirement Set")
-- **Ramas**: categorias (Component Requirements, Performance Requirements, etc.)
-- **Hojas**: requirements individuales (ej: "RQ1 Driver Seat", "RQ1.1 Driver Positioning")
+Ejemplo recuperable desde el tutorial:
 
-Los requirements hijos se derivan de padres via **deriveReqt** (refinement from parent to child).
-
-### 13.5 Coexistencia Visual Requirements-Architecture
-
-El modelo unificado OPM-R contiene AMBOS — el arbol de requirements Y la arquitectura del sistema — en el mismo OPD set. El modelador DEBERIA usar distincion visual (color rojo para requirements, verde/azul para arquitectura) para diferenciarlos. Los requirements aparecen a todos los niveles de detalle: requirements de alto nivel en SD, requirements detallados en OPDs descendientes.
-
-### 13.6 Verificacion de Cobertura de Requirements
-
-El modelador DEBE verificar que:
-1. Todo requirement leaf tiene al menos un artifact que lo satisface (buscar "satisfies" en OPL)
-2. No existen artifacts huerfanos sin requirement asociado (posibles over-engineering)
-3. La traceability table DEBE generarse y revisarse con stakeholders
+- Door-Peephole: peephole como parte de door
+- Restricciones dimensionales: 56-64 inches
+- Componentes: lens + sleeves
+- Componente opcional: peephole cover
+- Funcion: one-way view for seeing visitors
 
 ## 14 Simulacion y Ejecucion del Modelo
 
@@ -789,26 +775,7 @@ La ejecucion animada del modelo OPM sigue un recorrido **depth-first** del OPD t
 
 Los tokens se visualizan como valores que se pasan entre objetos y procesos: consumed (eliminado del source), instrument (read-only, permanece), resultee (creado en destination). Tokens computacionales llevan valores numericos.
 
-### 14.2 Hardware-Software Co-Model (Prototipo Evolutivo)
-
-En sistemas cyber-physical, el modelo OPM PUEDE contener tanto partes fisicas (hardware) como partes informaticales (software/computacion) coexistiendo. El patron de desarrollo evolutivo:
-
-1. Inicialmente, todas las partes hardware se modelan conceptualmente (sin computacion)
-2. Las partes software se desarrollan iterativamente dentro del modelo
-3. A medida que el software mejora, las partes hardware modeladas se reemplazan gradualmente por contrapartes fisicas
-4. El proceso continua hasta alcanzar un prototipo funcional completo
-
-Este patron permite descubrir errores de integracion tempranamente, cuando corregirlos es rapido y barato (Levi-Soskin et al., 2024 — MAXIM).
-
-### 14.3 Non-Visual Batch Execution
-
-Para sistemas complejos, el modelador PUEDE ejecutar simulaciones no-visuales (batch) que procesan multiples ejecuciones off-line con eventos, condiciones, probabilidades y transiciones de estado. Multiples ejecuciones revelan escenarios problematicos dificiles de detectar por inspeccion visual:
-
-- Escenarios pueden guardarse, replayearse y analizarse
-- Analisis estadistico de big data de multiples ejecuciones identifica bottlenecks
-- Escenarios detectados como problematicos habilitan model-checking formal y deteccion de puntos de falla
-
-### 14.4 Transition Conceptual → Computational
+### 14.2 Transition Conceptual → Computational
 
 El modelador DEBE reconocer el punto en el OPD tree donde la transicion de modelamiento conceptual puro a modelamiento computacional es necesaria. Indicadores:
 
@@ -816,7 +783,7 @@ El modelador DEBE reconocer el punto en el OPD tree donde la transicion de model
 - Trade-off studies requieren parametros cuantitativos
 - El proceso fisico tiene una formula matematica subyacente (ej: V = V0 - (F/m)*t)
 
-En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales (agregar `()` al nombre, usar `{}` en el OPD) y conectar objetos computacionales con sus formulas.
+En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales y usar la realizacion soportada por la herramienta. En OPCloud, la senal visual recuperable es el uso de `{}` en el OPD.
 
 ## 15 Invariantes
 
@@ -847,10 +814,8 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Links NO DEBEN cruzar areas ocupadas por things | manual |
 | Things NO DEBEN ocultarse mutuamente (excepcion: port folding) | manual |
 | Minimizar numero de links y cruces de links en cada OPD | manual |
-| Todo requirement leaf tiene al menos un artifact que lo satisface via "satisfies" | manual |
-| Requirements colored distinto (rojo) de architecture artifacts (verde/azul) | manual |
-| Valores computacionales propagan globalmente a todos los OPDs | schema |
-| Procesos computacionales marcados con `()` en nombre y `{}` en OPD | lint |
+| Si se usan requirements en OPCloud, la trazabilidad usa links estructurales y la convencion "satisfies" | manual |
+| En OPCloud, procesos computacionales se distinguen visualmente con `{}` en el OPD | lint |
 | Sinonimos resueltos: un thing = un nombre canonico | manual |
 
 ## 16 Checklist de Validacion
@@ -889,7 +854,4 @@ Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabl
 | Global | Specification constructs | OPD + OPL + OPM spec completos en breadth-first order | MEDIA |
 | Global | Port folding | Usado donde layout fisico de componentes es relevante | BAJA |
 | Global | Implicit objects | Objetos implicitos en texto fuente identificados y modelados explicitamente | ALTA |
-| Req | No huerfanos | Sin artifacts de arquitectura sin requirement asociado | MEDIA |
-| Req | Traceability table | Generada y revisada con stakeholders | ALTA |
-| Req | Classification | Cada requirement clasificado como object o process requirement | ALTA |
-| Sim | Batch scenarios | Escenarios problematicos identificados via batch execution (modelos complejos) | MEDIA |
+| Req | Trazabilidad estructural | Si se usan requirements en OPCloud, se ocupan links estructurales y convencion "satisfies" | MEDIA |
