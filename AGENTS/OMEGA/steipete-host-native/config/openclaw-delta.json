@@ -1,0 +1,58 @@
+{
+  "_comment": "DELTA — aplicar sobre el openclaw.json existente de clawforge. No reemplazar el archivo completo.",
+
+  "agents": {
+    "list": [
+      {
+        "_comment": "ENTRADA EXISTENTE — clawforge ya esta como agente default. Agregar explicitamente si aun no esta en agents.list",
+        "id": "clawforge",
+        "workspace": "~/.openclaw/workspace",
+        "default": true
+      },
+      {
+        "_comment": "ENTRADA NUEVA — steipete como segundo agente",
+        "id": "steipete",
+        "workspace": "~/.openclaw/workspace-steipete",
+        "default": false,
+        "model": {
+          "primary": "anthropic/claude-opus-4-6",
+          "fallbacks": ["anthropic/claude-sonnet-4-6"]
+        },
+        "timeoutSeconds": 900,
+        "bindings": [
+          {
+            "_comment": "Rutear mensajes del bot de steipete a este agente",
+            "channel": "telegram",
+            "accountId": "steipete"
+          }
+        ]
+      }
+    ]
+  },
+
+  "channels": {
+    "telegram": {
+      "_comment": "Agregar cuenta steipete. La cuenta 'default' existente sigue siendo clawforge.",
+      "accounts": {
+        "steipete": {
+          "token": "__REPLACE_TELEGRAM_BOT_TOKEN_STEIPETE__",
+          "dmPolicy": "allowlist",
+          "allowFrom": ["__TELEGRAM_USER_ID__"],
+          "groupPolicy": "disabled",
+          "textChunkLimit": 4000,
+          "streaming": "partial",
+          "reactionLevel": "minimal",
+          "silentErrorReplies": true,
+          "ackReaction": "⚡"
+        }
+      }
+    }
+  },
+
+  "skills": {
+    "load": {
+      "watch": true,
+      "watchDebounceMs": 250
+    }
+  }
+}
