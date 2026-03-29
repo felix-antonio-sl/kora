@@ -149,6 +149,40 @@ methods:
 | `api.registerService(service)`                 | Background service    |
 | `api.registerInteractiveHandler(registration)` | Interactive handler   |
 
+### CLI registration metadata
+
+`api.registerCli(registrar, opts?)` accepts two kinds of top-level metadata:
+
+- `commands`: explicit command roots owned by the registrar
+- `descriptors`: parse-time command descriptors used for root CLI help,
+  routing, and lazy plugin CLI registration
+
+If you want a plugin command to stay lazy-loaded in the normal root CLI path,
+provide `descriptors` that cover every top-level command root exposed by that
+registrar.
+
+```typescript
+api.registerCli(
+  async ({ program }) => {
+    const { registerMatrixCli } = await import("./src/cli.js");
+    registerMatrixCli({ program });
+  },
+  {
+    descriptors: [
+      {
+        name: "matrix",
+        description: "Manage Matrix accounts, verification, devices, and profile state",
+        hasSubcommands: true,
+      },
+    ],
+  },
+);
+```
+
+Use `commands` by itself only when you do not need lazy root CLI registration.
+That eager compatibility path remains supported, but it does not install
+descriptor-backed placeholders for parse-time lazy loading.
+
 ### CLI backend registration
 
 `api.registerCliBackend(...)` lets a plugin own the default config for a local
@@ -234,6 +268,13 @@ my-plugin/
   Never import your own plugin through `openclaw/plugin-sdk/<your-plugin>`
   from production code. Route internal imports through `./api.ts` or
   `./runtime-api.ts`. The SDK path is the external contract only.
+</Warning>
+
+<Warning>
+  Extension production code should also avoid `openclaw/plugin-sdk/<other-plugin>`
+  imports. If a helper is truly shared, promote it to a neutral SDK subpath
+  such as `openclaw/plugin-sdk/speech`, `.../provider-model-shared`, or another
+  capability-oriented surface instead of coupling two plugins together.
 </Warning>
 
 ## Related
