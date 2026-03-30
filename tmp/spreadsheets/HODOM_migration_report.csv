@@ -1,0 +1,16 @@
+month,source_sheet,target_sheet,days_expected,source_day1_row,source_total_row,migrated_days,complete_days,partial_days,copied_cells,conflicts_count,notes_count,status,conflict_summary,note_summary
+DICIEMBRE 2024,DICIEMBRE 2024,DICIEMBRE 2024,31,10,41,31,30,1,122,2,0,Validar,egress_total_mismatch=1; header_mismatch=1,
+ENERO 2025,ENERO2025,ENERO 2025,31,10,41,31,31,0,95,0,43,Listo,,egress_total_only=20; income_total_only=23
+FEBRERO 2025,FEBRERO 2025,FEBRERO 2025,28,10,38,28,28,0,93,1,44,Validar,header_mismatch=1,egress_total_only=20; income_total_only=24
+MARZO 2025,MARZO 2025,MARZO 2025,31,10,41,31,31,0,104,0,49,Listo,,egress_total_only=23; income_total_only=26
+ABRIL 2025,ABRIL 2025,ABRIL 2025,30,10,40,30,30,0,96,2,44,Validar,known_manual_summary_month=1; manual_summary_value=1,egress_total_only=21; income_total_only=23
+MAYO 2025,MAYO 2025,MAYO 2025,31,10,41,31,29,2,108,5,1,Validar,carry_forward_mismatch=1; daily_balance_issue=1; known_daily_balance_issue=1; known_manual_summary_month=1; manual_summary_value=1,egress_total_only=1
+JUNIO 2025,JUNIO 2025,JUNIO 2025,30,10,40,30,30,0,89,0,41,Listo,,egress_total_only=17; income_total_only=24
+JULIO 2025,JULIO 2025,JULIO 2025,31,10,41,31,30,1,108,3,45,Validar,carry_forward_mismatch=1; known_manual_summary_month=1; manual_summary_value=1,egress_total_only=22; income_total_only=23
+AGOSTO 2025,AGOSTO 2025,AGOSTO 2025,31,7,38,31,30,1,102,2,47,Validar,carry_forward_mismatch=1; legacy_structure_variant=1,egress_total_only=23; income_total_only=24
+SEPTIEMBRE 2025,SEPTIEMBRE 2025,SEPTIEMBRE 2025,30,7,37,30,28,2,97,3,45,Validar,carry_forward_mismatch=2; legacy_structure_variant=1,egress_total_only=21; income_total_only=24
+OCTUBRE 2025,OCTUBRE 2025,OCTUBRE 2025,31,7,38,31,30,1,99,4,45,Validar,carry_forward_mismatch=1; known_manual_summary_month=1; legacy_structure_variant=1; manual_summary_value=1,egress_total_only=22; income_total_only=23
+NOVIEMBRE 2025,NOVIEMBRE 2025,NOVIEMBRE 2025,30,7,37,30,28,2,97,5,43,Validar,carry_forward_mismatch=2; known_manual_summary_month=1; legacy_structure_variant=1; manual_summary_value=1,egress_total_only=23; income_total_only=20
+DICIEMBRE 2025,DICIEMBRE 2025,DICIEMBRE 2025,31,7,38,31,30,1,95,4,44,Validar,carry_forward_mismatch=1; known_manual_summary_month=1; legacy_structure_variant=1; manual_summary_value=1,egress_total_only=19; income_total_only=25
+ENERO 2026,ENERO 2026,ENERO 2026,31,7,38,31,29,2,101,5,46,Validar,carry_forward_mismatch=2; known_manual_summary_month=1; legacy_structure_variant=1; manual_summary_value=1,egress_total_only=23; income_total_only=23
+FEBRERO 2026,FEBRERO 2026,FEBRERO 2026,28,7,35,28,28,0,78,3,34,Validar,known_manual_summary_month=1; legacy_structure_variant=1; manual_summary_value=1,egress_total_only=15; income_total_only=19

@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-25"
-    source: "synthesis:opm-iso-19450,opm-opl-es,opcloud-tutorial-videos"
-version: "3.3.0"
+    source: "synthesis:opm-iso-19450,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
+version: "3.5.1"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patterns, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
@@ -15,14 +15,13 @@ extensions:
     depends_on:
       - "urn:fxsl:kb:opm-iso-19450"
       - "urn:fxsl:kb:opm-opl-es"
-      - "urn:fxsl:kb:opcloud-tutorial-videos"
 ---
 
 # Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas
 
 ## 1 Definicion
 
-Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Consolida reglas y workflows recuperables desde [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450), [OPL-ES](urn:fxsl:kb:opm-opl-es) y [OPCloud Tutorial Videos](urn:fxsl:kb:opcloud-tutorial-videos). Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para la realizacion textual en espanol, ver [OPL-ES](urn:fxsl:kb:opm-opl-es).
+Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Consolida reglas normativas desde [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450) y [OPL-ES](urn:fxsl:kb:opm-opl-es), e incorpora directamente la guia operativa de tool usage previamente dispersa en artefactos hoy deprecados. Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para la realizacion textual en espanol, ver [OPL-ES](urn:fxsl:kb:opm-opl-es).
 
 ### 1.1 Alcance y Precedencia del Corpus
 
@@ -32,14 +31,14 @@ Orden de precedencia:
 
 1. **ISO 19450** gobierna semantica OPM, notacion, relaciones y procedimiento base de construccion del SD.
 2. **OPL-ES** gobierna la realizacion textual en espanol sin alterar la semantica OPM.
-3. **OPCloud Tutorial Videos** gobierna solo workflows de herramienta, UI y capacidades de implementacion de OPCloud.
-4. **Esta metodologia** integra las tres capas anteriores y explicita reglas operativas para usarlas sin conflicto.
+3. **Esta metodologia** integra las capas normativas anteriores y explicita reglas operativas para lifecycle, simulacion, gobernanza del modelo y uso de herramienta.
 
 Regla de resolucion:
 
 - Si una regla de **semantica OPM** entra en conflicto con una regla de herramienta, prevalece ISO 19450.
-- Si una regla de **surface form en espanol** entra en conflicto con ejemplos en ingles del corpus, prevalece OPL-ES para artefactos en `lang: es`.
+- Si un artefacto en `lang: es` define **realizacion OPL en espanol** como parte de su contrato, prevalece OPL-ES. Un artefacto expositivo en `lang: es` PUEDE mantener sentencias OPL canonicas en ingles para preservar roundtrip con ISO/OPCloud, siempre que lo declare explicitamente y no presente esas sentencias como OPL-ES.
 - Las capacidades de OPCloud NO redefinen por si solas la semantica de OPM; solo operacionalizan su uso en la herramienta.
+- Los artefactos deprecados del directorio NO participan en precedencia; solo sirven como routing historico.
 
 ## 2 Definiciones
 
@@ -140,22 +139,83 @@ Reglas prescriptivas por categoria:
 - **Social**: DEBE modelarse con los 5 componentes completos. Se PUEDE usar state-specified enabling links para condiciones ambientales
 - **Socio-tecnico**: DEBE modelarse con los 5 componentes completos. Se PUEDE usar tagged structural links para relaciones no fundamentales
 
+### 5.1 Patrones de Referencia por Categoria
+
+Los siguientes patrones sintetizan ejemplos pedagogicos recurrentes que conviene tener a mano al clasificar el sistema antes de construir el SD:
+
+| Categoria | Patron de referencia | Leccion operativa |
+|-----------|----------------------|-------------------|
+| Artificial | `Airplane Flying`, `Battery Charging` | Hay purpose explicito, problem occurrence, agentes humanos y un benefit-providing object claramente identificable |
+| Natural | `Fetus Developing`, `Rain Storm Forming` | Se modela outcome en vez de purpose; el outcome puede ser beneficial o detrimental; no hay agentes humanos |
+| Social | `Conference Occurring` | Las condiciones ambientales PUEDE expresarse con state-specified enabling links, por ejemplo `good Weather` |
+| Socio-tecnico | `Online Professional Identity Managing` | Tagged structural links suelen ser necesarios para relaciones no fundamentales, por ejemplo `Profile represents User` |
+| Physical con partes informaticales | `Baggage Transporting` | Un sistema con tracking o software auxiliar SIGUE clasificandose como physical si la transformacion dominante es fisica |
+
 ## 6 Construccion del SD — Nivel 0
 
 El SD DEBE ser simple y claro, con minimos detalles tecnicos. Todos los stakeholders DEBEN poder comprender el SD sin expertise tecnico.
+
+### 6.0 Wizard Agnostico de Construccion del SD
+
+El `wizard` del SD es un **protocolo de interaccion** agnostico de herramienta. No presupone OPCloud, formularios, UI grafica ni asistente LLM. Cualquier implementacion valida DEBE guiar al modelador por una secuencia ordenada de checkpoints y producir, al final, un SD semanticamente completo.
+
+**Implementaciones validas:** entrevista guiada, formulario estructurado, checklist operativa, asistente conversacional, plugin de modelado o workflow humano moderado.
+
+**Regla central:** cada etapa del wizard DEBE cerrar con un hecho del modelo explicitado y listo para representarse en OPD/OPL. El wizard NO termina cuando el usuario "entiende" el sistema; termina cuando los facts minimos del SD quedaron decididos.
+
+**Pre-etapa obligatoria:** antes de iniciar el wizard, el modelador DEBE clasificar el sistema segun §5. La clasificacion determina si se habla de purpose u outcome y si `Problem Occurrence` aplica.
+
+| Etapa | Objetivo | Output minimo obligatorio | Mapeo metodologico |
+|-------|----------|---------------------------|--------------------|
+| 0 | Clasificar sistema | Tipo: artificial / natural / social / socio-tecnico | §5 |
+| 1 | Fijar proceso principal | Nombre canonico del main process | §6.1 |
+| 2 | Identificar stakeholder primario | Beneficiary group o affectee equivalente | §6.2 |
+| 3 | Fijar valor a transformar | Beneficiary/outcome attribute + input/output states | §6.3 |
+| 4 | Fijar funcion principal | Benefit-providing object + atributo funcional, si aplica | §6.4 |
+| 5 | Resolver agencia humana | Agent set valido o declaracion explicita de ausencia | §6.5 |
+| 6 | Delimitar el sistema | Nombre del sistema + exhibition del proceso principal | §6.6 |
+| 7 | Identificar enablers no humanos | Instrument set | §6.7 |
+| 8 | Fijar transformees y resultados | Inputs, affectees y outputs | §6.8 |
+| 9 | Delimitar contexto externo | Environment objects/processes | §6.9 |
+| 10 | Modelar problema inicial, si aplica | Problem occurrence o decision explicita de no-aplicacion | §6.10 |
+| 11 | Cerrar con gate de consistencia | Checklist SD `PASS/FAIL` | §6.11 |
+
+**Semantica de cierre por etapa:**
+
+- Si una etapa no puede cerrarse, el wizard DEBE retroceder a la etapa anterior que bloquea la decision.
+- Si el sistema es **natural**, la etapa 10 DEBE cerrarse como `NO APLICA`, no como omision silenciosa.
+- Si el sistema transforma multiples objetos, la etapa 4 DEBE dejar explicitado cual es el `Benefit-Providing Object`.
+- Si no existen agentes humanos, la etapa 5 DEBE registrar `sin agentes humanos` en vez de forzar un placeholder.
+
+**Contrato de salida del wizard:** un wizard agnostico correcto entrega, como minimo, un paquete de decisiones equivalente a:
+
+1. tipo de sistema
+2. proceso principal
+3. beneficiary/affectee
+4. atributo de valor + transicion de estados
+5. funcion principal
+6. agentes
+7. sistema + exhibition
+8. instrumentos
+9. input/output set
+10. environment
+11. problem occurrence o no-aplicacion
+12. verificacion SD
+
+Una herramienta PUEDE dividir o fusionar etapas por conveniencia UX, pero NO DEBE perder ninguno de estos outputs semanticamente necesarios.
 
 ### 6.1 Paso 1: Identificacion del Proceso Principal
 
 La forma del nombre depende del idioma de realizacion:
 
 - En artefactos y modelos en **ingles**, el nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing"), conforme a [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450).
-- En artefactos y modelos en **espanol**, el nombre del proceso DEBE usar infinitivo (-ar, -er, -ir), conforme a [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1.
+- En artefactos y modelos en **espanol**, el nombre del proceso DEBE encabezarse con infinitivo (-ar, -er, -ir) o con una nominalizacion verbal cuya primera palabra termine en `-ción`, conforme a [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1. La forma en `-miento` TAMBIEN PUEDE aceptarse cuando el dominio la exija.
 
 **Correcto:** `Battery Charging`, `Airplane Flying`
 
 **Incorrecto:** `Charge Battery`, `Fly Airplane`
 
-En ingles, el nombre DEBERIA combinar el transformee seguido del verbo gerundio. En espanol, DEBERIA mantener la misma funcion nominal usando infinitivo.
+En ingles, el nombre DEBERIA combinar el transformee seguido del verbo gerundio. En espanol, DEBERIA mantener la misma funcion nominal usando infinitivo o, cuando mejore la naturalidad terminologica del dominio, una forma encabezada por `-ción`.
 
 ### 6.2 Paso 2: Grupo Beneficiario
 
@@ -459,6 +519,17 @@ El modelador DEBE verificar que la arquitectura del sistema (structure + behavio
 
 **Name Coherency:** Ante nombres duplicados, el modelador DEBE resolver con una de tres opciones: (1) usar existing thing — crea visual instance (mismo thing, diferente vista en otro OPD), (2) renombrar con nombre unico, (3) descartar. La opcion "close" sin resolver NO DEBERIA usarse. Visual instances solo PUEDEN crearse entre elementos del mismo tipo (object→object, process→process).
 
+### 8.8 Operaciones de Gestion del Modelo en OPCloud
+
+Las siguientes capacidades son relevantes para el ciclo de vida del modelo, pero no alteran la semantica OPM:
+
+- **Persistencia:** el modelador DEBERIA tratar Save/Load como operaciones regulares de checkpoint durante sesion. Share expone el modelo a otros usuarios con permisos read o edit.
+- **Permisos:** el owner/admin PUEDE compartir con usuarios o grupos completos, pero NO entre organizaciones distintas. Read precede a write. El modelador DEBERIA verificar permisos antes de colaboracion concurrente.
+- **Exportacion:** OPL puede exportarse con o sin numeracion. Los OPDs pueden exportarse como imagen o PDF, ya sea para el OPD actual, el arbol completo o solo el SD. Los exports DEBEN tratarse como snapshots publicables, no como SSOT del modelo.
+- **Templates:** OPCloud soporta templates Private, Organizational y Global. Insertar un template crea una copia local; las actualizaciones posteriores del template fuente NO se propagan a las inserciones ya hechas.
+- **Reubicacion del modelo:** mover modelos via cut/paste conserva auto-save e historial de versiones. El modelador DEBERIA revisar versiones antes y despues de mover o fusionar trabajo.
+- **Busqueda y navegacion asistida:** operaciones como search, bring connected y filtered bring DEBERIAN usarse para inspeccion localizada de un subgrafo antes de editar, especialmente en modelos con alta densidad de links.
+
 ## 9 Heuristicas de Modelamiento Avanzado
 
 ### 9.1 State-Preserving Process → Tagged Structural Link
@@ -737,6 +808,14 @@ Un objeto stateful en transicion: ha dejado su input state pero aun no ha llegad
 
 El state space de un objeto es el producto cartesiano de los sets de estados de todos sus atributos y partes stateful. El modelador DEBE reconocer que no todos los puntos del state space son factibles; los compound states infeasibles DEBERIAN identificarse mediante process modeling. Para precondiciones compuestas que abarcan multiples atributos, el modelador DEBE usar multiple condition clause OPL sentences con clausulas X-OR numeradas conectadas por AND logico.
 
+### 12.9 Integracion Externa e Ingesta de Datos en OPCloud
+
+Cuando el modelo deja de ser solo conceptual y debe intercambiar datos con entorno externo, el modelador PUEDE usar las siguientes capacidades:
+
+- **MQTT:** adecuado para sensores/actuadores IoT con topicos publish/subscribe. Requiere configurar raw server y MQTT server. El modelador DEBERIA usarlo para acoplar variables computacionales a telemetria o comandos ligeros.
+- **ROS:** adecuado para robots y sistemas con ROS master. El workflow minimo DEBE incluir definicion de mensaje, publicacion, suscripcion y manejo del feedback loop via condiciones/iteracion.
+- **CSV Import para atributos:** util para carga masiva de instancias y valores de atributos. Restriccion: el objeto target NO DEBE ser una instancia conectada via classification-instantiation. El modelador DEBERIA previsualizar el import y decidir si ignora existentes o crea atributos faltantes.
+
 ## 13 Requirements Modeling en OPCloud
 
 En este corpus, el modelamiento de requirements se trata como una capacidad de OPCloud, no como una extension normativa independiente de OPM. Por lo tanto, las siguientes reglas aplican solo cuando el modelo se implementa en OPCloud.
@@ -767,6 +846,14 @@ Ejemplo recuperable desde el tutorial:
 - Componente opcional: peephole cover
 - Funcion: one-way view for seeing visitors
 
+### 13.4 Analisis de Gaps y Generacion Asistida
+
+OPCloud ofrece capacidades auxiliares que el modelador PUEDE usar para detectar vacios y acelerar derivacion de requirements:
+
+- **Identification of Missing Knowledge:** DEBERIA usarse como heuristica de deteccion de gaps, no como verdad del modelo. `Pistol` sirve para filtrado rapido; `RGCN`, cuando este disponible, ofrece mayor precision. El umbral de confianza DEBERIA ajustarse explicitamente antes de aceptar sugerencias.
+- **AI Requirements Generation:** toma OPPL como insumo y genera texto de requirement, verification type, acceptance criteria y model triplets. La salida DEBE revisarse manualmente antes de integrarla al corpus o al modelo.
+- **Version comparison:** el modelador DEBERIA comparar resultados del analisis entre versiones sucesivas para distinguir mejoras reales de ruido introducido por cambios de layout o renaming.
+
 ## 14 Simulacion y Ejecucion del Modelo
 
 ### 14.1 Depth-First OPD Tree Traversal para Ejecucion
@@ -785,13 +872,26 @@ El modelador DEBE reconocer el punto en el OPD tree donde la transicion de model
 
 En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales y usar la realizacion soportada por la herramienta. En OPCloud, la senal visual recuperable es el uso de `{}` en el OPD.
 
+### 14.3 Simulacion Conceptual vs Ejecucion Computacional en OPCloud
+
+El modelador DEBE distinguir entre:
+
+- **Simulacion conceptual:** animacion visual del flujo de tokens para validar orden, precondiciones y cobertura del comportamiento
+- **Ejecucion computacional:** corrida efectiva de formulas, atributos computacionales y actualizacion de valores
+
+Reglas operativas:
+
+- La velocidad de animacion DEBERIA ajustarse para hacer visibles procesos rapidos o loops
+- Si el orden observado no coincide con el esperado, el modelador DEBE revisar altura relativa de subprocesos, links de control y condiciones
+- Los tokens computacionales transportan valores; los conceptuales solo evidencian disponibilidad, consumo, creacion o cambio de estado
+
 ## 15 Invariantes
 
 Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada.
 
 | Invariante | Enforcement |
 |-----------|-------------|
-| Nombre del proceso principal termina en gerundio (EN) o infinitivo (ES) | lint |
+| Nombre del proceso principal termina en gerundio (EN) o se encabeza por infinitivo / `-ción` / `-miento` valido (ES) | lint |
 | Todos los nombres de things son singulares | lint |
 | Grupo beneficiario es objeto fisico | lint |
 | Atributo del beneficiario es objeto informatical | lint |
