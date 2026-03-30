@@ -574,11 +574,7 @@ agents: {
             enabled: true,    // default: false
             lambda: 0.7       // 0 = max diversity, 1 = max relevance
           },
-          // Recency: boost newer memories
-          temporalDecay: {
-            enabled: true,    // default: false
-            halfLifeDays: 30  // score halves every 30 days
-          }
+          // Nota: temporalDecay fue removido del schema en 2026.3.x — campo inválido
         }
       }
     }
