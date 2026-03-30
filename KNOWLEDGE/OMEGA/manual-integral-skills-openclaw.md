@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-26"
-    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial (tools/skills.md, tools/creating-skills.md, tools/skills-config.md, tools/clawhub.md, tools/slash-commands.md, cli/skills.md, platforms/mac/skills.md, tools/subagents.md, tools/exec-approvals.md, tools/loop-detection.md, tools/multi-agent-sandbox-tools.md, tools/elevated.md, gateway/sandboxing.md, gateway/secrets.md, gateway/security/index.md, security/THREAT-MODEL-ATLAS.md, concepts/agent.md, concepts/agent-workspace.md, concepts/system-prompt.md, plugins/building-plugins.md, plugins/manifest.md, help/testing.md) + fuente web externa: agentskills.io (spec overview, specification, quickstart, best-practices, optimizing-descriptions, evaluating-skills, using-scripts, client-implementation)"
-version: "2.0.0"
+    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial (tools/skills.md, tools/creating-skills.md, tools/skills-config.md, tools/clawhub.md, tools/slash-commands.md, cli/skills.md, platforms/mac/skills.md, tools/subagents.md, tools/exec-approvals.md, tools/loop-detection.md, tools/multi-agent-sandbox-tools.md, tools/elevated.md, gateway/sandboxing.md, gateway/secrets.md, gateway/security/index.md, security/THREAT-MODEL-ATLAS.md, concepts/agent.md, concepts/agent-workspace.md, concepts/system-prompt.md, plugins/building-plugins.md, plugins/manifest.md, help/testing.md; verificado contra comportamiento documentado al 2026-03-29) + fuente web externa: agentskills.io (spec overview, specification, quickstart, best-practices, optimizing-descriptions, evaluating-skills, using-scripts, client-implementation)"
+version: "2.1.0"
 status: draft
 tags: [openclaw, skills, agentes-ia, llm, manual, ciclo-de-vida, seguridad, orquestacion, agentskills, interoperabilidad]
 lang: es
@@ -893,7 +893,7 @@ La app macOS expone skills via el gateway (no parsea skills localmente):
 
 OpenClaw congela la lista de skills elegibles al iniciar sesion y la reutiliza en turns subsiguientes. Cambios en skills o config toman efecto en la siguiente sesion nueva.
 
-Excepcion: si `skills.load.watch: true`, el hot reload actualiza la lista para el siguiente agent turn dentro de la misma sesion.
+Excepcion: si `skills.load.watch: true`, el hot reload actualiza la lista para el siguiente agent turn dentro de la misma sesion, nunca en el turno actual.
 
 ### 12.2 Minimizar impacto en tokens
 
@@ -916,7 +916,7 @@ Estrategias:
 
 Si el gateway corre en Linux pero un nodo macOS esta conectado con `system.run` permitido, OpenClaw puede tratar skills macOS-only como elegibles cuando los binarios requeridos estan presentes en ese nodo. El agente ejecuta esos skills via `nodes.run`.
 
-Advertencia: si el nodo macOS se desconecta, los skills permanecen visibles pero las invocaciones fallan hasta que el nodo reconecte.
+Advertencia: si el nodo macOS se desconecta, los skills pueden permanecer visibles en el catalogo, pero las invocaciones fallan hasta que el nodo reconecte.
 
 ## 13. Interoperabilidad
 
@@ -1280,4 +1280,3 @@ Opciones de rollback:
 | `skills.load.extraDirs` | Directorios adicionales |
 | `skills.load.watch` | Hot reload |
 | `skills.install.nodeManager` | Gestor de paquetes |
-

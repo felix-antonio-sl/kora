@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-26"
-    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial/ (mirror repo oficial OpenClaw)"
-version: "1.0.0"
+    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial/ (mirror repo oficial OpenClaw; verificacion adicional en automation/hooks.md, plugins/building-plugins.md, gateway/cli-backends.md, gateway/authentication.md, gateway/local-models.md) + /Users/felixsanhueza/Developer/_workspaces/openclaw/CHANGELOG.md (releases 2026.3.24, 2026.3.28 y docs posteriores al 2026-03-29)"
+version: "1.2.0"
 status: published
 tags: [openclaw, agentes-ia, llm, gateway, manual-integral, operacion, despliegue, seguridad]
 lang: "es"
@@ -132,6 +132,8 @@ Mismo handshake + auth token aplican sobre el tunel. TLS + pinning opcional habi
 
 Semantica AND: si un binding especifica multiples campos, todos deben coincidir. Primer match en orden de config gana dentro del mismo tier.
 
+**ACP current-conversation binds** — `/acp spawn <harness> --bind here` fija la conversacion actual a una sesion ACP durable sin crear child thread/topic adicional. El chat surface se mantiene, el binding sobrevive reinicios normales del Gateway, `/acp close` lo elimina, y `--bind here` es mutuamente excluyente con `--thread ...`.
+
 **Delegate** — agente con identidad propia (email, display name, calendario) que actua "on behalf of" personas en una organizacion. Nunca suplanta humanos. Modelo analogo a asistente ejecutivo con credenciales propias.
 
 **Capability tiers**:
@@ -168,13 +170,13 @@ Semantica AND: si un binding especifica multiples campos, todos deben coincidir.
 
 **`openclaw`** -- interfaz unificada para configuracion, operacion y extension del sistema. Ejecuta sobre Node >= 22.
 
-**Flags globales**: `--dev` (estado aislado en `~/.openclaw-dev`), `--profile <name>` (estado en `~/.openclaw-<name>`), `--no-color`, `--json`, `-V`/`--version`.
+**Flags globales**: `--dev` (estado aislado en `~/.openclaw-dev`), `--profile <name>` (estado en `~/.openclaw-<name>`), `--container <name>` (ejecutar el comando dentro de un contenedor Docker/Podman OpenClaw ya corriendo), `--no-color`, `--json`, `-V`/`--version`.
 
 **Arbol de comandos**:
 
 | Grupo | Subcomandos |
 |---|---|
-| **Setup** | `setup`, `onboard`, `configure`, `config {get,set,unset,file,validate}`, `completion`, `doctor`, `reset`, `uninstall`, `update` |
+| **Setup** | `setup`, `onboard`, `configure`, `config {get,set,unset,file,schema,validate}`, `completion`, `doctor`, `reset`, `uninstall`, `update` |
 | **Agentes** | `agent`, `agents {list,add,delete}`, `acp`, `sessions`, `directory` |
 | **Mensajeria** | `message {send,broadcast}`, `channels {list,status,logs,add,remove,login,logout}`, `pairing {list,approve}`, `qr` |
 | **Gateway** | `gateway {call,health,status,probe,discover,install,uninstall,start,stop,restart,run}`, `daemon {status,install,uninstall,start,stop,restart}` |
@@ -196,6 +198,7 @@ Plugins pueden agregar comandos top-level adicionales (ejemplo: `openclaw voicec
 | Capacidad | Metodo de registro | Ejemplo |
 |---|---|---|
 | Text inference (LLM) | `api.registerProvider(...)` | `openai`, `anthropic` |
+| CLI inference backend | `api.registerCliBackend(...)` | `claude-cli`, `codex-cli`, `google-gemini-cli` |
 | Speech (TTS/STT) | `api.registerSpeechProvider(...)` | `elevenlabs` |
 | Media understanding | `api.registerMediaUnderstandingProvider(...)` | `openai`, `google` |
 | Image generation | `api.registerImageGenerationProvider(...)` | `openai`, `google` |
@@ -240,7 +243,8 @@ Plugins pueden agregar comandos top-level adicionales (ejemplo: `openclaw voicec
 
 **Hook decision semantics**:
 
-- `before_tool_call`: `{ block: true }` es terminal (detiene handlers de menor prioridad). `{ block: false }` = sin decision.
+- `before_tool_call`: `{ block: true }` es terminal (detiene handlers de menor prioridad). `{ block: false }` = sin decision. `{ requireApproval: {...} }` pausa la ejecucion y delega la resolucion a superficies nativas de aprobacion (`/approve`, overlay de exec approvals, botones/interacciones de canal).
+- `before_install`: `{ block: true }` es terminal y puede bloquear installs de skills o plugins despues del escaneo builtin. `{ block: false }` = sin decision.
 - `message_sending`: `{ cancel: true }` es terminal. `{ cancel: false }` = sin decision.
 
 **Objeto `api`** -- campos disponibles en `register(api)`: `api.id`, `api.config`, `api.pluginConfig`, `api.runtime` (helpers TTS/search/subagent), `api.logger`, `api.registrationMode` (`"full"` | `"setup-only"` | `"setup-runtime"`), `api.resolvePath(input)`.
@@ -329,6 +333,8 @@ Skills tambien pueden distribuirse dentro de plugins junto a los tools que docum
 
 **CLI**: `openclaw hooks list [--eligible] [--verbose] [--json]`, `openclaw hooks info <name>`, `openclaw hooks check`, `openclaw hooks enable|disable <name>`.
 
+**Plugin install guard (`before_install`)** — hook separado del ciclo `HOOK.md` normal, disparado despues del built-in install scan y antes de continuar con la instalacion interactiva de skills, plugin bundles, plugin packages o plugin single-file. Campos de retorno minimos: `findings`, `block`, `blockReason`. Metadata/event fields operativos: `targetType`, `targetName`, `sourcePath`, `origin`, `request`, `builtinScan`, `skill`, `plugin`.
+
 ## 3. Runtime del Agente
 
 ### 3.1 Agent loop — ciclo de vida de un run
@@ -369,7 +375,7 @@ Skills tambien pueden distribuirse dentro de plugins junto a los tools que docum
 
 - **Internal hooks (Gateway)**: `agent:bootstrap` (modifica bootstrap files pre-system prompt), command hooks (`/new`, `/reset`, `/stop`)
 - **Plugin hooks**: `before_model_resolve`, `before_prompt_build` (inyecta `prependContext`, `systemPrompt`, `prependSystemContext`, `appendSystemContext`), `agent_end`, `before_compaction`/`after_compaction`, `before_tool_call`/`after_tool_call`, `tool_result_persist`, `message_received`/`message_sending`/`message_sent`, `session_start`/`session_end`, `gateway_start`/`gateway_stop`
-- `before_tool_call`: `{ block: true }` es terminal. `message_sending`: `{ cancel: true }` es terminal. En ambos, `false` es no-op y no limpia bloqueo previo.
+- `before_tool_call`: `{ block: true }` es terminal; `{ block: false }` es no-op; `{ requireApproval: {...} }` pausa el tool call y espera aprobacion nativa del operador. `message_sending`: `{ cancel: true }` es terminal y `{ cancel: false }` es no-op.
 
 ### 3.2 Workspace y archivos bootstrap
 
@@ -658,13 +664,118 @@ Soporte por canal: Telegram (off/partial/block, progress mapea a partial), Disco
 | Kilocode Gateway | `kilocode` | `KILOCODE_API_KEY` | API key |
 | Vercel AI Gateway | `vercel-ai-gateway` | `AI_GATEWAY_API_KEY` | API key |
 | Cloudflare AI Gateway | `cloudflare-ai-gateway` | `CLOUDFLARE_AI_GATEWAY_API_KEY` | API key |
-| Qwen (OAuth) | `qwen-portal` | OAuth (device-code) | OAuth |
 | vLLM | `vllm` | opcional (`VLLM_API_KEY`) | Local |
 | SGLang | `sglang` | opcional (`SGLANG_API_KEY`) | Local |
 | LiteLLM | `litellm` | segun proxy | Proxy |
 | Deepgram | `deepgram` | `DEEPGRAM_API_KEY` | Transcripcion |
 
 **Rotacion de API keys**: soportada para proveedores seleccionados. Jerarquia: `OPENCLAW_LIVE_<PROVIDER>_KEY` (override unico) → `<PROVIDER>_API_KEYS` (lista CSV) → `<PROVIDER>_API_KEY` (primario) → `<PROVIDER>_API_KEY_*` (numerados). Reintentos solo en rate-limit (429); fallos no-rate-limit fallan inmediatamente.
+
+**Notas provider/tooling**:
+
+- xAI bundled usa la Responses API. La misma `XAI_API_KEY` puede alimentar modelos Grok, `web_search` via Grok, `x_search` y `code_execution` remoto.
+- Qwen ya no usa OAuth (`qwen-portal` fue removido). El camino soportado es Model Studio (`modelstudio`) via API key.
+- MiniMax mantiene catalogo textual recortado a `M2.7`; para generacion/edicion de imagenes expone `image-01`.
+
+#### CLI backends — fallback runtime local
+
+OpenClaw puede ejecutar CLIs locales de IA como fallback runtime conservador cuando providers API fallan, se saturan o quedan temporalmente no disponibles. Invariantes: **sin tools**, texto in -> texto out, sesiones soportadas para follow-ups coherentes, e imagenes opcionales via rutas locales si el CLI las acepta.
+
+Backends bundled documentados:
+
+- `claude-cli`
+- `codex-cli`
+- `google-gemini-cli`
+
+Auto-carga: si un CLI backend bundled se referencia explicitamente en un model ref o bajo `agents.defaults.cliBackends`, OpenClaw auto-carga el plugin bundled owner sin requerir `plugins.allow` manual.
+
+Configuracion minima:
+
+```json5
+{
+  agents: {
+    defaults: {
+      cliBackends: {
+        "claude-cli": {
+          command: "/opt/homebrew/bin/claude"
+        }
+      }
+    }
+  }
+}
+```
+
+Campos operativos clave bajo `agents.defaults.cliBackends.<id>`:
+
+| Campo | Funcion |
+|---|---|
+| `command` | Binario o path absoluto al CLI |
+| `args` | Argumentos base de primer turno |
+| `resumeArgs` | Argumentos alternativos para reusar sesion |
+| `output` | Parser de salida (`json`, `jsonl`, `text`) |
+| `modelArg` | Flag usada para pasar el modelo |
+| `sessionArg` / `sessionArgs` | Inyeccion de session id |
+| `sessionMode` | Politica de sesion (`always`, `existing`, `none`) |
+| `imageArg` | Flag para pasar imagenes por path |
+| `systemPromptArg` | Flag para system prompt custom |
+| `systemPromptWhen` | Momento de inyeccion del system prompt (`first`, etc.) |
+
+Uso tipico:
+
+- Primario local: `openclaw agent --message "hi" --model claude-cli/opus-4.6`
+- Fallback: `agents.defaults.model.fallbacks: ["claude-cli/opus-4.6"]`
+
+#### Modelos locales
+
+OpenClaw soporta modelos locales via endpoints OpenAI-compatible, pero la linea editorial oficial sigue siendo exigente: local es viable solo con hardware alto, contexto amplio y defensas fuertes contra prompt injection. Una sola GPU de 24 GB sirve para prompts mas ligeros; para uso serio, la recomendacion sube a rigs equivalentes a 2+ Mac Studios maxeados o infraestructura GPU similar.
+
+Stack recomendado: **LM Studio + `openai-responses`** sobre `http://127.0.0.1:1234/v1`, manteniendo `models.mode: "merge"` para no perder fallbacks hosted.
+
+Ejemplo minimo:
+
+```json5
+{
+  agents: {
+    defaults: {
+      model: { primary: "lmstudio/my-local-model" }
+    }
+  },
+  models: {
+    mode: "merge",
+    providers: {
+      lmstudio: {
+        baseUrl: "http://127.0.0.1:1234/v1",
+        apiKey: "lmstudio",
+        api: "openai-responses",
+        models: [{
+          id: "my-local-model",
+          reasoning: false,
+          contextWindow: 196608,
+          maxTokens: 8192,
+          cost: { input: 0, output: 0 }
+        }]
+      }
+    }
+  }
+}
+```
+
+Patron recomendado para operacion real: hosted primary + local fallback, manteniendo `models.mode: "merge"`:
+
+```json5
+{
+  agents: {
+    defaults: {
+      model: {
+        primary: "anthropic/claude-sonnet-4-6",
+        fallbacks: ["lmstudio/my-local-model", "anthropic/claude-opus-4-6"]
+      }
+    }
+  }
+}
+```
+
+Usar variantes de modelo lo menos cuantizadas posible. Modelos locales debiles degradan contexto, seguridad y resistencia a prompt injection.
 
 **Proveedores custom via `models.providers`**: cualquier endpoint OpenAI/Anthropic-compatible configurable con `baseUrl`, `apiKey`, `api` (`openai-completions` | `anthropic-messages`), `models[]`. Campos opcionales: `reasoning`, `input`, `cost`, `contextWindow`, `maxTokens` (defaults razonables si se omiten).
 
@@ -680,7 +791,9 @@ Soporte por canal: Telegram (off/partial/block, progress mapea a partial), Disco
 |---|---|---|
 | API key | Variable de entorno o `openclaw onboard` | Mayoria (Anthropic, OpenAI, Google, etc.) |
 | Setup-token | `claude setup-token` → pegar en OpenClaw | Anthropic (suscripcion) |
-| OAuth PKCE | Flujo browser con callback `127.0.0.1:1455` | OpenAI Codex, Google Gemini CLI, Qwen Portal |
+| OAuth PKCE | Flujo browser con callback `127.0.0.1:1455` | OpenAI Codex, Google Gemini CLI |
+
+**Nota**: Qwen OAuth fue removido en `v2026.3.28`; para Qwen el flujo vigente es `openclaw onboard --auth-choice modelstudio-api-key` (o variante China endpoint) sobre `modelstudio`.
 
 **Almacenamiento de credenciales**: per-agent en `~/.openclaw/agents/<agentId>/agent/auth-profiles.json`. Respeta `$OPENCLAW_STATE_DIR`. Legacy: `~/.openclaw/credentials/oauth.json` (importado automaticamente en primer uso).
 
@@ -694,6 +807,15 @@ Soporte por canal: Telegram (off/partial/block, progress mapea a partial), Disco
 **Policy notes**:
 - OpenAI Codex OAuth: explicitamente soportado para herramientas externas.
 - Anthropic setup-token: compatibilidad tecnica; Anthropic ha restringido uso fuera de Claude Code en el pasado. API key recomendado.
+
+**Claude CLI migration**: si Claude CLI ya esta instalado y autenticado en el host del Gateway, puede promoverse como backend por defecto sin borrar perfiles previos:
+
+```bash
+openclaw models auth login --provider anthropic --method cli --set-default
+openclaw onboard --auth-choice anthropic-cli
+```
+
+Esto cambia el default efectivo hacia `claude-cli/...`, pero mantiene los auth profiles existentes para rollback o uso explicito per-session.
 
 ### 4.3 Canales de mensajeria — integraciones nativas y plugin
 
@@ -1343,8 +1465,9 @@ openclaw secrets reload
 
 | Group | Tools |
 |---|---|
-| `group:runtime` | `exec`, `bash`, `process` |
+| `group:runtime` | `exec`, `bash`, `process`, `code_execution` |
 | `group:fs` | `read`, `write`, `edit`, `apply_patch` |
+| `group:web` | `web_search`, `x_search`, `web_fetch` |
 | `group:sessions` | `sessions_list`, `sessions_history`, `sessions_send`, `sessions_spawn`, `session_status` |
 | `group:memory` | `memory_search`, `memory_get` |
 | `group:ui` | `browser`, `canvas` |
@@ -1352,6 +1475,8 @@ openclaw secrets reload
 | `group:messaging` | `message` |
 
 **Elevated mode**: no otorga tools extra; solo afecta `exec`. Si sandboxed, `elevated: true` ejecuta en host. Gates: `tools.elevated.enabled` + `tools.elevated.allowFrom.<provider>`.
+
+**`apply_patch`** — subtool estructurado de `exec` para parches multi-archivo. Disponible solo para OpenAI/OpenAI Codex. Desde `v2026.3.28` viene habilitado por default (`tools.exec.applyPatch.enabled: true`); `allow: ["write"]` lo habilita implicitamente; `tools.exec.applyPatch.workspaceOnly: true` es el default y restringe escrituras/borrados al workspace.
 
 **Exec approvals**: allowlist + ask mode. Approval binds contexto exacto + best-effort operando archivo local directo. No modela semanticamente cada path interpreter/runtime loader.
 
