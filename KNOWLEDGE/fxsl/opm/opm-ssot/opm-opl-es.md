@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-22"
     source: "OPERATIONS/source/fxsl/opm-methodology/opm-opl-es.md"
-version: "1.1.0"
+version: "1.3.1"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -28,22 +28,26 @@ Referencia normativa: `urn:fxsl:kb:opm-iso-19450`.
 
 ### 1.1 Denominación de Procesos
 
-En OPL-EN los procesos usan gerundio (-ing): "Cooking", "Driving", "Data Processing". En OPL-ES los procesos usan **infinitivo** (-ar, -er, -ir): "Cocinar", "Conducir", "Procesar Datos".
+En OPL-EN los procesos usan gerundio (-ing): "Cooking", "Driving", "Data Processing". En OPL-ES los procesos pueden usar **infinitivo** (-ar, -er, -ir): "Cocinar", "Conducir", "Procesar Datos", o una **nominalización verbal** encabezada por una primera palabra terminada en `-ción`: "Ampliación", "Verificación de Datos".
 
-El infinitivo español es el equivalente funcional del gerundio sustantivado inglés: funciona como sustantivo sujeto ("Cocinar consume...") y es la forma nominal estándar del verbo en español.
+El infinitivo español es el equivalente funcional más directo del gerundio sustantivado inglés: funciona como sustantivo sujeto ("Cocinar consume..."). Sin embargo, en español técnico también es plenamente válida una forma nominal encabezada por `-ción`, cuando el dominio prefiera un nombre de acción en vez de un infinitivo.
 
-**Validación de nombre**: un nombre de proceso OPL-ES válido termina en -ar, -er o -ir (incluidos compuestos: "Procesar Datos", "Preparar Empanadas").
+**Validación de nombre**: un nombre de proceso OPL-ES válido cumple al menos una de estas condiciones:
 
-**Alternativa aceptada**: sustantivo verbal (-ción, -miento) cuando el infinitivo resulte ambiguo en el dominio. Ejemplo: "Refrigeración" en lugar de "Refrigerar". La herramienta debería aceptar ambas formas.
+1. La primera palabra está en infinitivo y termina en `-ar`, `-er` o `-ir`
+2. La primera palabra termina en `-ción`
+3. En dominios que lo justifiquen, la primera palabra termina en `-miento`
+
+Ejemplos válidos: "Procesar Datos", "Preparar Empanadas", "Ampliación de Cobertura", "Verificación de Identidad", "Mantenimiento Preventivo".
 
 **Patrones de nombre de proceso** (paralelos a EN):
 
 | Patrón EN | Ejemplo EN | Patrón ES | Ejemplo ES |
 |-----------|-----------|-----------|-----------|
-| verb-ing | Making | Infinitivo | Hacer |
-| noun verb-ing | Cake Making | Infinitivo sustantivo | Preparar Torta |
-| adj verb-ing | Automatic Responding | Infinitivo adverbio | Responder Automáticamente |
-| adj noun verb-ing | Automatic Crash Responding | Infinitivo complejo | Responder a Colisión Automática |
+| verb-ing | Making | Infinitivo o nominalización | Hacer / Fabricación |
+| noun verb-ing | Cake Making | Infinitivo sustantivo o nominalización con complemento | Preparar Torta / Preparación de Torta |
+| adj verb-ing | Automatic Responding | Infinitivo adverbio o nominalización | Responder Automáticamente / Respuesta Automática |
+| adj noun verb-ing | Automatic Crash Responding | Infinitivo complejo o nominalización encabezada por `-ción` | Responder a Colisión Automática / Atención de Colisión Automática |
 
 Máximo 4 palabras. Se capitalizan las palabras lexicas; articulos y preposiciones breves PUEDEN permanecer en minuscula cuando mejora la naturalidad del espanol.
 
@@ -670,7 +674,7 @@ process identifier = singular process name | singular process name, " process" ;
 identificador de proceso = nombre singular de proceso | nombre singular de proceso, " proceso" ;
 ```
 
-Nombre de proceso EN: frase en gerundio capitalizada (-ing). Nombre de proceso ES: frase en infinitivo capitalizada (-ar, -er, -ir).
+Nombre de proceso EN: frase en gerundio capitalizada (-ing). Nombre de proceso ES: frase capitalizada encabezada por infinitivo (`-ar`, `-er`, `-ir`) o por nominalización en `-ción`; `-miento` también se acepta cuando el dominio lo requiere.
 
 ```ebnf
 (* EN *)
@@ -718,10 +722,27 @@ Una herramienta OPM bilingüe debería:
 
 OPCloud ya soporta múltiples idiomas OPL (chino, francés, alemán, coreano). OPL-ES seguiría el mismo mecanismo de localización, agregando español como idioma disponible en: User Settings > OPL Language.
 
+A nivel de superficie textual, una implementación operativa DEBERIA además permitir:
+
+1. Elegir idioma OPL a nivel de usuario/modelo sin alterar el OPD subyacente
+2. Mostrar todas las sentencias o solo las de esencia no-default
+3. Alternar numeración, aliases y units display sin afectar la semántica
+4. Re-generar el párrafo OPL completo al cambiar idioma, manteniendo invariantes de roundtrip
+
 ### 18.3 Compatibilidad Semántica
 
 OPL-ES no modifica la semántica OPM. Un modelo creado con OPL-ES es semánticamente idéntico a su equivalente OPL-EN. La traducción es puramente léxica y sintáctica, no semántica. El modelo interno (OPD constructs, link sets, thing sets) permanece invariante.
 
 ### 18.4 Roundtrip
 
-Toda sentencia OPL-EN en forma canonica tiene exactamente una sentencia OPL-ES equivalente y viceversa. El roundtrip EN→ES→EN debe producir la sentencia original. Esta propiedad es verificable por la correspondencia 1:1 de las reglas de transformacion (§15). Las variantes aceptadas (sustantivo verbal, §1.1) son formas de entrada no canonicas que la herramienta DEBERIA normalizar a infinitivo antes de aplicar roundtrip.
+Toda sentencia OPL-EN en forma canonica tiene al menos una sentencia OPL-ES semánticamente equivalente y viceversa. El roundtrip EN→ES→EN DEBE preservar la semántica original, aunque la superficie española pueda realizarse con infinitivo o con nominalización encabezada por `-ción` (y, cuando aplique, `-miento`). La herramienta DEBERIA respetar la forma elegida por el modelo o normalizarla al registro configurado, pero NO forzar exclusivamente infinitivo.
+
+**Nota normativa sobre roundtrip y superficie:** preservar roundtrip NO significa imponer una unica forma superficial en espanol. Significa preservar el mismo hecho del modelo. Por lo tanto, si dos nombres de proceso en OPL-ES son semanticamente equivalentes y validos en el dominio, ambos PUEDEN mapear al mismo proceso interno. Ejemplo: `Verificar Identidad` y `Verificación de Identidad` PUEDEN representar el mismo proceso. Al volver de ES a EN, la herramienta DEBE recuperar un nombre ingles semanticamente equivalente, aunque la superficie espanola original no haya sido la unica posible. La normalizacion de superficie, si existe, DEBERIA ser configurable por politica editorial del modelo, no una imposicion semantica fija del lenguaje.
+
+### 18.5 Politica de Modelos Mixtos
+
+Un modelo con prosa de apoyo en español y OPL canónica en inglés es aceptable como artefacto editorial, pero una herramienta bilingüe NO DEBERIA mezclar OPL-EN y OPL-ES dentro del mismo párrafo generado salvo habilitación explícita del usuario. La política recomendada es:
+
+1. Un idioma OPL canónico por modelo activo
+2. Cambio de idioma mediante re-generación completa, no edición parcial
+3. Mezcla EN/ES solo para revisión o migración, nunca como estado estable por defecto
