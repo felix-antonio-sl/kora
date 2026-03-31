@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2026-02-24'
     source: legacy-import
-version: 1.0.0
+version: 1.1.0
 status: published
 tags:
 - category-theory
@@ -24,7 +24,7 @@ Ctx: Global schema category and unification of SQL/NoSQL/Graph models.
 Src: Multi-model Data via Category Theory.
 XRef: `urn:fxsl:kb:algebraic-databases#UBER-QUERY`, `urn:fxsl:kb:data-lakes-ct#DL-GROTHENDIECK-DEF`
 
-Notes: uber-queries from algebraic_databases enable cross-schema query composition; Grothendieck construction unifies indexed schema families. Together form theoretical basis for CM-INTEGRATION-ENGINE.
+Notes: uber-queries from algebraic_databases enable cross-schema query composition; Grothendieck construction unifies indexed schema families. Together form the theoretical basis for CM-INTEGRATION-ENGINE.
 
 ## Schema Category Global
 
@@ -39,7 +39,7 @@ Construction procedure:
 2. For each source, extract logical types as objects.
 3. Extract relations (FKs, refs, edges) as morphisms.
 4. Unify into single category using coproducts for disjoint objects.
-5. Identify semantically equivalent objects; create equivalence morphisms.
+5. Identify semantically aligned objects; add explicit mappings or mediating objects, and promote them to isomorphism/equivalence only when justified.
 6. Result = global Schema Category.
 
 ## Model Kinds
@@ -61,18 +61,18 @@ All = realizations of global Schema Category.
 
 ## Query Processing
 
-**UM-QUERY-AS-FUNCTOR** — Multi-model query = functor Q: SchemaCategory → OutputKind. Each query chooses output type (relational/document/graph/flat) as target category.
+**UM-QUERY-AS-BIMODULE** — Multi-model query = result schema R together with a query object M: R ⇸ SchemaCategory (or equivalent typed query specification over SchemaCategory). Output kind is handled after query evaluation by a renderer/materializer, not by the query object itself.
 
 Procedure:
 1. Define query in terms of global Schema Category.
 2. Choose OutputKind (relational, document, graph, flat).
-3. Construct functor Q mapping global types to output types.
-4. Execute Q over global instance I to get Q(I).
-5. Materialize result in OutputKind format.
+3. Construct result schema R and query object M selecting/relating the required paths in SchemaCategory.
+4. Evaluate the query over global instance I to obtain a result instance on R.
+5. Materialize that result instance in the chosen OutputKind format.
 
 Example: "users with their orders" over PostgreSQL + MongoDB. SchemaCategory: {User, Order, user_orders: Order→User}. OutputKind: document (JSON). Result: [{user: {...}, orders: [{...}, {...}]}].
 
-**UM-OUTPUT-KIND** — OutputKind = target category representing output format.
+**UM-OUTPUT-KIND** — OutputKind = rendering/materialization target for a result instance.
 
 | OutputKind | Use When |
 |---|---|

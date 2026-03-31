@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-08'
     source: legacy-import
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -23,20 +23,20 @@ Categorical patterns for DAL: storage, APIs, repositories, ORMs, data lakes.
 
 ## Storage and API
 
-Storage: SQL = limits (product, pullback, equalizer) → integrity, JOINs, ACID. NoSQL = colimits (coproduct, pushout) → flexible schema, polyglot. Mixed: SQL(write) ↔ Doc(read) via asymmetric lens.
+Storage: SQL-heavy designs often exploit limit-like constructions (product, pullback, equalizer) for integrity, joins, and normalized structure. NoSQL/document-oriented designs often exhibit colimit-like assembly patterns (coproduct, pushout, schema accretion) for flexible schema and polyglot aggregation. Mixed read/write architectures can be modeled with asymmetric lenses or schema mappings.
 
 APIs as functors — Domain→ResourceCat (REST), Domain→TypeCat (GraphQL, dynamic pullback), Domain→ProtoCat (gRPC, streaming). Streams: coalgebra, action = primary key. Functor check: F(id)=id; F(g∘f)=F(g)∘F(f).
 
 ## Repository, ORM, Data Lake
 
-**Repository** = coalgebra c: X → F(X). Bisimulation: R₁ ~ R₂ iff ∀ops. observe(R₁(ops)) = observe(R₂(ops)).
+**Repository** = coalgebraic interface model c: X → F(X) when the repository is treated observationally through operations and responses. Bisimulation then expresses observational equivalence between repository implementations under the shared interface.
 
-**ORM** = adjunction ORM ⊣ Reflect: DomainCat ⇆ SchemaCat. Unit η: E → Reflect(ORM(E)) ≈ id; counit ε: ORM(Reflect(T)) → T ≈ id. ORM drift = violation of η or ε.
+**ORM** = adjunction-shaped discipline, not automatically a literal theorem. A good ORM aspires to approximate a pair of translations between DomainCat and SchemaCat with controlled unit/counit drift. ORM drift = semantic mismatch introduced by the round-trip.
 
-**Data Lake** = colim(Dataset_i, Pipeline_ij). Grothendieck: ∫F where I = zones, F(z) = schema_z. Objects of ∫F: pairs (zone, entity). Audit: pipelines = morphisms; diagram must commute.
+**Data Lake** = indexed family of schemas/data products organized by zones or tenants, often integrated through Grothendieck construction ∫F and, when a synthesis artifact is needed, suitable colimits of local diagrams. Audit: declared pipelines/mappings should compose coherently and preserve stated invariants.
 
 ## Synthesis
 
 2-categorical model: objects = DAL components, 1-morphisms = transformations, 2-morphisms = migrations.
 
-Audit dimensions: STORAGE-MODEL-ALIGN (SQL/NoSQL matches limit/colimit structure), API-FUNCTOR-PRESERVE (functoriality), REPO-BISIM (bisimilar under interface), ORM-ADJ-VALID (η,ε hold), PIPELINE-COMMUTE (pipeline diagram commutes).
+Audit dimensions: STORAGE-MODEL-ALIGN (chosen storage patterns fit the intended categorical structure), API-FUNCTOR-PRESERVE (functoriality where explicitly claimed), REPO-BISIM (observational equivalence under shared interface), ORM-ROUNDTRIP-DRIFT (semantic loss across domain/schema translations), PIPELINE-COMMUTE (declared pipeline diagram commutes).

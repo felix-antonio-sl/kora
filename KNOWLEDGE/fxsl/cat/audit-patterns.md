@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-05'
     source: Category Theory / DIK Auditing & Diagnostics
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -29,7 +29,7 @@ Formal patterns for auditing, diagnosing, and improving DIK artifacts using cate
 | INFORMATION | Schema S (finitely presented category). Objects = entities/types; morphisms = relations/attributes; path equations = business constraints. | DDL SQL, JSON Schema, GraphQL Schema, KORA Markdown artifact with frontmatter |
 | KNOWLEDGE | Transformations, migrations, abstract models. Functors between categories, adjunctions (Δ/Σ/Π), Kan extensions, behaviors (coalgebras), inference rules. | Migration functor F: S → T, agent spec, KORA artifact with explicit procedure |
 
-Audit focus per level: DATA → referential integrity, completeness, schema consistency. INFORMATION → structural coherence, commutativity, completeness of relations. KNOWLEDGE → functoriality, structure preservation, validity of adjunctions, complete Procs.
+Audit focus per level: DATA → referential integrity, completeness, schema consistency. INFORMATION → structural coherence, commutativity, completeness of relations. KNOWLEDGE → functoriality, structure preservation, validity of adjunctions, and explicit operational criteria when the artifact claims executable guidance.
 
 ## Audit Dimensions
 
@@ -56,7 +56,7 @@ Audit focus per level: DATA → referential integrity, completeness, schema cons
 |-------|-------|----------|
 | CHECK-DATA-COMPLETE | Instance I defined for all objects in schema? | MEDIUM |
 | CHECK-INFO-COMPLETE | Schema has explicit objects, morphisms, and equations? | MEDIUM |
-| CHECK-KNOWLEDGE-PROC | Key concepts have operational Proc fields? | LOW |
+| CHECK-KNOWLEDGE-OPERATIONALITY | If the artifact claims executable guidance, are the operational criteria or procedures explicit? | LOW |
 
 ### Quality (AUDIT-DIM-QUALITY)
 
@@ -89,8 +89,8 @@ Audit focus per level: DATA → referential integrity, completeness, schema cons
 | PATTERN-BROKEN-DIAGRAM | Parallel paths do not commute | Add path equation or correct morphisms | Commutativity is a categorical coherence requirement |
 | PATTERN-ORPHAN-OBJECT | Object without morphisms (except identity) | Connect to graph or remove if redundant | — |
 | PATTERN-DANGLING-REFERENCE | Ref/XRef points to nonexistent | Correct reference or create target | — |
-| PATTERN-MISSING-PROC | Concept without operational procedure | Add Proc with executable steps | Knowledge without Proc is not actionable |
-| PATTERN-VERSION-MISMATCH | Version ≠ URN version | Align Version with URN | — |
+| PATTERN-MISSING-OPERATIONALITY | Artifact claims execution or auditability but omits explicit procedure/criteria | Add procedure, decision criteria, or executable checklist | Actionable knowledge requires operational closure when execution is claimed |
+| PATTERN-SEMVER-INVALID | Version missing or not valid SemVer | Declare explicit SemVer in metadata | Corpus metadata separates persistent URN identity from mutable versioning |
 | PATTERN-AD-HOC-CONSTRUCTION | Ad-hoc construction where universal exists | Use corresponding limit/colimit | — |
 | PATTERN-NON-FUNCTORIAL-MIGRATION | Migration does not preserve composition | Redefine as valid functor or use Σ/Δ/Π | — |
 | PATTERN-REDUNDANT-BISIMILAR | Bisimilar components treated as distinct | Identify via unique morphism to final coalgebra | — |

@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-05'
     source: Category Theory framework for Data Lakes
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -23,9 +23,9 @@ Categorical framework for modeling and integrating Data Lakes. Core construction
 
 ## Data Lake as Category
 
-**DL = category of high-level capabilities.** Objects: Ingest, Storage, Maintenance, Exploration. Morphisms: dependencies and data flows between capabilities. Models the DL as a system of capabilities, not merely as storage.
+**DL = category of high-level capabilities.** Objects: Ingestion, Storage, Maintenance, Exploration. Morphisms: dependencies and data flows between capabilities. Models the Data Lake as a system of capabilities, not merely as storage.
 
-**Zones as subcategories.**
+**Zones as indexing category or typed regions.**
 
 | Zone | Description |
 |------|------------|
@@ -34,7 +34,7 @@ Categorical framework for modeling and integrating Data Lakes. Core construction
 | Consumption | Data ready for dashboards/services |
 | Sandbox | Experimentation zone |
 
-**Zone functor Z: Zone → DL.** Maps each zone to DL capabilities. Requirement: surjective on morphisms — every DL operation comes from some concrete zone. Use: verify that the concrete architecture implements all capabilities of the abstract DL.
+**Zone functor Z: Zone → DL.** Maps each zone or region to the capabilities it implements. Use: verify that the concrete architecture covers the abstract capability model. Surjectivity is an implementation-level design option, not part of the abstract definition of DL itself.
 
 ## Grothendieck Construction ∫F
 
@@ -76,9 +76,9 @@ Query global: SELECT * FROM ∫F WHERE tenant = 'A'
 
 | Construct | Categorical role |
 |-----------|----------------|
-| DL | Category of capabilities (Ingest, Storage, Maintenance, Exploration) |
-| Zone | Subcategory or region of DL |
-| Zone functor Z | Maps each zone to DL capabilities; must be surjective on morphisms |
+| DL | Category of capabilities (Ingestion, Storage, Maintenance, Exploration) |
+| Zone | Indexing category or region used to organize local schemas/capabilities |
+| Zone functor Z | Maps each zone to the capabilities it implements |
 | ∫F | Global integrated space from multiple local schemas |
 | Federation | N databases unified as ∫F |
 | Schema evolution | Version history navigated via ∫F with I = temporal versions |

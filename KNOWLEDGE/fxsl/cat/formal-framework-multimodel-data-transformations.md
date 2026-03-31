@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-14'
     source: Formal Category Theoretical Framework for Multi-Model Data and Transformations
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -31,7 +31,7 @@ Polystores and multi-model databases require rigorous mathematical framework for
 
 **Definition 1 (Category)** — C: objects Obj(C), morphisms Hom(C). Each f: A → B. Composition associative; identity id_A: A → A; f ∘ id_A = f; id_A ∘ f = f.
 
-**Definition 2 (Functor)** — F: C → D. Objects: c ↦ F(c). Morphisms: f: c → d ↦ F(f): F(c) → F(d). Preserves: F(id_c) = id_{F(c)}; F(g ∘ f) = F(g) ∘ F(f). Full if every morphism in D has preimage in C.
+**Definition 2 (Functor)** — F: C → D. Objects: c ↦ F(c). Morphisms: f: c → d ↦ F(f): F(c) → F(d). Preserves: F(id_c) = id_{F(c)}; F(g ∘ f) = F(g) ∘ F(f). Full if for every pair (c,d), every morphism F(c) → F(d) in D has a preimage in Hom_C(c,d). Faithful if distinct morphisms in C remain distinct under F.
 
 **Definition 3 (Natural Transformation)** — α: F ⇒ G (F, G: C → D). Assigns each c ∈ C morphism α_c: F(c) → G(c) in D such that for every f: c → d: G(f) ∘ α_c = α_d ∘ F(f).
 
@@ -63,9 +63,9 @@ Polystores and multi-model databases require rigorous mathematical framework for
 
 **Intuition** — Transformations between instances I1: C1 → **Set** and I2: C2 → **Set** use functors + natural transformations. Functoriality ensures structure preservation.
 
-**Definition 13 (Data and Schema Transformation)** — Given instances I1: C1 → **Set**, I2: C2 → **Set**, a transformation I1 → I2 = Kan lift (Rift_{I2} I1: C1 → C2, ε: I2 ∘ Rift_{I2} I1 ⇒ I1) where Rift_{I2} I1 is a full functor.
+**Definition 13 (Data and Schema Transformation)** — Given instances I1: C1 → **Set**, I2: C2 → **Set**, a transformation from I1 to I2 is mediated by a schema functor H: C1 → C2 together with a natural transformation ε: I2 ∘ H ⇒ I1 (or the corresponding adjoint migration in the opposite direction, depending on orientation). In important special cases, H can be characterized through a Kan lift or related universal construction.
 
-Note: Full functors required — functoriality alone does not ensure meaningful transformations for practical use.
+Note: Functoriality is the minimal structural requirement. Fullness or faithfulness may be added when the intended semantics demands embedding or coverage, but they are not universal prerequisites for every practical transformation.
 
 ## Conclusions and Future Work
 

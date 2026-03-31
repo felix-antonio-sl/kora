@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-05'
     source: Knowledge Base as Category (meta-level KB structure)
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -27,7 +27,7 @@ Notes: under current KORA governance, artifact identity is derived from filesyst
 
 **KB** = category where Ob(KB) = artifacts and Hom(KB) = materially encoded relations plus explicitly normalized future relation edges.
 
-Objects: each Markdown artifact under `knowledge/fxsl/cat/` with valid front matter (`urn`, `version`, `status`, etc.). The generated catalog may be checked afterward as a derivative index, but it is not the source of truth.
+Objects: each Markdown artifact under `KNOWLEDGE/fxsl/cat/` with valid front matter (`urn`, `version`, `status`, etc.). The generated catalog may be checked afterward as a derivative index, but it is not the source of truth.
 
 Identity: each artifact has trivial self-reference morphism.
 
@@ -47,7 +47,7 @@ Composition: if A XRef→ B and B XRef→ C, path A → B → C exists. Today th
 
 **KB-INV-NO-DANGLING** (Severity: HIGH) — No dangling `XRef` references. ∀ `XRef` in artifact A: target(`XRef`) ∈ Ob(KB) ∨ target is resolvable external URN. Procedure: scan filesystem artifacts, extract `XRef`, resolve URNs via the current index/catalog or known external targets, and verify `#fragment` anchors when present.
 
-**KB-INV-FILESYSTEM-MANIFEST-COMPLETE** (Severity: MEDIUM) — ∀ artifact in `knowledge/fxsl/cat/`: valid front matter exists and the artifact is indexable. Procedure: list all Markdown artifacts in `knowledge/fxsl/cat/`, parse manifests, verify required metadata, then compare against a freshly regenerated catalog only as a derivative consistency check.
+**KB-INV-FILESYSTEM-MANIFEST-COMPLETE** (Severity: MEDIUM) — ∀ artifact in `KNOWLEDGE/fxsl/cat/`: valid front matter exists and the artifact is indexable. Procedure: list all Markdown artifacts in `KNOWLEDGE/fxsl/cat/`, parse manifests, verify required metadata, then compare against a freshly regenerated catalog only as a derivative consistency check.
 
 **KB-INV-URN-UNIQUE** (Severity: CRITICAL) — ∀ URN u: |{A ∈ KB : urn(A) = u}| = 1. Procedure: extract URNs directly from manifests in the filesystem and detect duplicates.
 
@@ -92,7 +92,7 @@ Use: identify conceptual overlap between artifacts.
 ## Global Audit Procedure
 
 Steps:
-1. Inventory: list all artifacts in `knowledge/fxsl/cat/**/*.md` directly from the filesystem and parse manifests.
+1. Inventory: list all artifacts in `KNOWLEDGE/fxsl/cat/**/*.md` directly from the filesystem and parse manifests.
 2. Verify KB-INV-FILESYSTEM-MANIFEST-COMPLETE.
 3. Verify KB-INV-URN-UNIQUE.
 4. Verify KB-INV-VERSION-DECLARED.

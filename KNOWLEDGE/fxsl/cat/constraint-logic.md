@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-05'
     source: Unified Constraint Logic for categorical artifacts
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -60,10 +60,10 @@ Unified constraint language for all KB artifacts. Fragment of regular logic expr
 
 | SQL constraint | L_CT form |
 |---------------|----------|
-| PRIMARY KEY | morphism from entity to singleton type (uniqueness) |
+| PRIMARY KEY | jointly monic identifier family from entity to key-attribute product |
 | FOREIGN KEY | morphism f: A→B with existence constraint in I(B) |
-| UNIQUE | morphism that is a monomorphism |
-| NOT_NULL | morphism with required non-empty codomain |
+| UNIQUE | monomorphism into attribute space or jointly monic attribute family |
+| NOT_NULL | total attribute into a non-null subtype / exclusion of optional null object |
 | CHECK | path equation or inclusion into subobject |
 
 Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee → Department with ∀e. WorksIn(e) ∈ I(Department).
@@ -79,8 +79,9 @@ Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee
 |-----------|------|
 | Ref_Valid | well-defined internal morphism |
 | XRef_Resolves | external morphism with target in KB |
-| Proc_Complete | existence of Proc field for operative concepts |
-| Version_Match | equation: metadata.Version = urn.version |
+| Operationality_Explicit | if artifact claims executable guidance, procedure/criteria are explicit |
+| Version_Declared | metadata.version exists and is valid SemVer |
+| URN_Persistent | URN is stable artifact identity and remains version-free |
 
 ## Constraint Preservation by Migrations
 
@@ -125,7 +126,7 @@ Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee
 ## Theory Audit
 
 **Audit that an artifact defines a consistent theory:**
-1. EXTRACTION: identify schema S; extract explicit constraints (path eq, FKs, etc.); extract implicit constraints (from KODA conventions); construct T = (S, Σ).
+1. EXTRACTION: identify schema S; extract explicit constraints (path eq, FKs, etc.); extract implicit constraints (from KORA conventions); construct T = (S, Σ).
 2. INTERNAL CONSISTENCY: verify Σ has no obvious contradictions (e.g., path₁=path₂ and path₁≠path₂ simultaneously); verify required limits exist in S.
 3. SATISFIABILITY: verify at least one model I ⊨ T exists. If T only has empty models → WARN: possibly trivial theory.
 4. COMPLETENESS: verify important constraints are declared (e.g., FKs have explicit existence constraint).

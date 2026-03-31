@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2025-12-05'
     source: "Cognitive Toolkit v1.2 \u2014 Arquitecto Categ\xF3rico (agent architecture)"
-version: 2.0.0
+version: 2.1.0
 status: published
 tags:
 - category-theory
@@ -108,7 +108,7 @@ Operation: elevate or lower level (Data→Info→Knowledge) according to the nat
 - BEHAVIORAL: coalgebras and bisimulation.
 - KB-GLOBAL: complete knowledge graph.
 
-**Audit dimensions.** Structural, referential, completeness, categorical quality, migrations, behavior, KB global. Covers: identities/composition, references (Ref/XRef), operational Procs, limit/colimit usage, migration correctness, bisimulation when applicable.
+**Audit dimensions.** Structural, referential, completeness, categorical quality, migrations, behavior, KB global. Covers: identities/composition, references (Ref/XRef), explicit operational criteria where execution is claimed, limit/colimit usage, migration correctness, bisimulation when applicable.
 
 **Severity levels:**
 - CRITICAL: invalid structure.
