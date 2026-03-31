@@ -257,7 +257,7 @@ memorySearch: {
       vectorWeight: 0.7,
       textWeight: 0.3,
       mmr: { enabled: true, lambda: 0.7 },
-      temporalDecay: { enabled: true, halfLifeDays: 30 },
+      // temporalDecay: REMOVIDO en 2026.3.x — no usar, campo inválido
     },
   },
 },

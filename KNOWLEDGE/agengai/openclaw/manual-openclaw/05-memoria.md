@@ -368,21 +368,16 @@ donde λ = ln(2) / halfLifeDays
 - Otros fuentes (e.g., transcripts de sesión) usan mtime.
 
 
-```json5
-temporalDecay: {
-  enabled: true,       // default: false
-  halfLifeDays: 30     // score se reduce a la mitad cada 30 días
-}
-```
+> **CAMPO REMOVIDO:** `temporalDecay` fue eliminado del schema en OpenClaw 2026.3.x. No incluir en `openclaw.json` — causa error de validación.
 
-### Cuándo habilitar cada uno
+### Cuándo habilitar MMR
 
-| Situación | MMR | Temporal Decay |
-|-----------|-----|---------------|
-| Pocas notas (<50 archivos) | No necesario | No necesario |
-| Muchos daily logs con contenido repetitivo | ✅ Sí | Opcional |
-| Meses de historial, info vieja outranks nueva | Opcional | ✅ Sí |
-| Daily logs abundantes + historial largo | ✅ Sí | ✅ Sí |
+| Situación | MMR |
+|-----------|-----|
+| Pocas notas (<50 archivos) | No necesario |
+| Muchos daily logs con contenido repetitivo | ✅ Sí |
+| Meses de historial, info vieja outranks nueva | Opcional |
+| Daily logs abundantes + historial largo | ✅ Sí |
 
 - ---
 
