@@ -1,10 +1,23 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 Guia operativa para agentes que trabajen dentro de este repositorio.
 
 ## Que Es Este Repo
 
 KORA es un monorepo gobernado por specs y soportado por una capa formal categorial. No es un proyecto de aplicacion tradicional: el activo principal es la consistencia entre conocimiento, specs, workspaces y toolchain.
+
+## Arquitectura: Cuatro Capas
+
+| Capa | Path | Rol |
+|------|------|-----|
+| Constitución | `specs/` | Reglas de gobernanza, precedencia, identidad, formatos |
+| Conocimiento | `KNOWLEDGE/` | Artefactos publicados por namespace (`kora/`, `fxsl/`, `OMEGA/`, etc.) |
+| Workspaces | `AGENTS/` | Workspaces agente ejecutables (`config.json` + bootstrap artifacts) |
+| Toolchain | `scripts/kora` | CLI que indexa, valida, migra y genera docs |
+
+Pipeline de artefactos: `source/` → `KNOWLEDGE/` (con `python3 scripts/kora intake` para ver estado de absorción).
 
 ## Source Of Truth
 
@@ -25,6 +38,15 @@ KORA es un monorepo gobernado por specs y soportado por una capa formal categori
 - `KNOWLEDGE/fxsl/cat/` es corpus auxiliar.
 - `Traces to:` solo puede apuntar a documentos de la Formal Layer oficial.
 - Si una idea viene de `fxsl/cat` y no ha sido absorbida formalmente, usala como `Rationale:`, no como traza oficial.
+
+## Identidad URN
+
+Dos regímenes distintos:
+
+- **Conceptual** (`urn:{ns}:kb:{id}` + campo `version`): artefactos de conocimiento publicados en `KNOWLEDGE/`.
+- **Ejecutable** (`urn:{ns}:agent-bootstrap:{id}:{version}` o `skill:{id}:{version}`): workspaces y skills en `AGENTS/`.
+
+El `kind` del manifest (`bootstrap_config`, `bootstrap_agents`, etc.) es ortogonal al URN.
 
 ## Modelo Del Workspace
 
@@ -54,9 +76,14 @@ python3 scripts/kora validate --profile strict
 python3 scripts/kora stats --json
 python3 scripts/kora graph --json
 python3 scripts/kora migrate --profile transitional
+python3 scripts/kora migrate --profile transitional --dry-run
+python3 scripts/kora lint-md
+python3 scripts/kora intake
 python3 scripts/kora sync-docs
 python3 -m unittest discover -s tests
 ```
+
+Outputs generados en `docs/generated/`: `repo-stats`, `repo-graph`, `operating-core-contracts`, `fxsl-cat-ledger`, `agent-audit` (formatos `.json` y `.md`).
 
 ## Secuencia De Trabajo
 
