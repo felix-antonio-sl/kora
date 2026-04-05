@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-26"
-    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial/ (mirror repo oficial OpenClaw; verificacion adicional en automation/hooks.md, plugins/building-plugins.md, gateway/cli-backends.md, gateway/authentication.md, gateway/local-models.md) + /Users/felixsanhueza/Developer/_workspaces/openclaw/CHANGELOG.md (releases 2026.3.24, 2026.3.28 y docs posteriores al 2026-03-29)"
-version: "1.2.0"
+    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial/ (mirror repo oficial OpenClaw, sync 2026-04-05 commit 2a39141; verificacion adicional en automation/hooks.md, automation/tasks.md, automation/taskflow.md, plugins/building-plugins.md, gateway/cli-backends.md, gateway/authentication.md, gateway/trusted-proxy-auth.md, gateway/local-models.md, concepts/dreaming.md, reference/memory-config.md) + /Users/felixsanhueza/Developer/_workspaces/openclaw/CHANGELOG.md (releases 2026.3.24, 2026.3.28 y docs posteriores al 2026-03-29)"
+version: "1.3.0"
 status: published
 tags: [openclaw, agentes-ia, llm, gateway, manual-integral, operacion, despliegue, seguridad]
 lang: "es"
@@ -183,7 +183,7 @@ Semantica AND: si un binding especifica multiples campos, todos deben coincidir.
 | **Modelos** | `models {list,status,set,set-image,aliases,fallbacks,image-fallbacks,scan,auth}` |
 | **Herramientas** | `skills {list,info,check}`, `plugins {list,inspect,install,uninstall,update,enable,disable,doctor,marketplace list}`, `browser {status,start,stop,...,pdf}` |
 | **Memoria** | `memory {status,index,search}` |
-| **Automatizacion** | `hooks {list,info,check,enable,disable,install,update}`, `webhooks {gmail setup,run}`, `cron {status,list,add,edit,rm,enable,disable,runs,run}` |
+| **Automatizacion** | `hooks {list,info,check,enable,disable,install,update}`, `webhooks {gmail setup,run}`, `cron {status,list,add,edit,rm,enable,disable,runs,run}`, `tasks {list,show,cancel,notify,audit,maintenance,flow {list,show,cancel}}` |
 | **Seguridad** | `security {audit [--deep,--fix]}`, `secrets {reload,audit,configure,apply}`, `approvals {get,set,allowlist}`, `sandbox {list,recreate,explain}` |
 | **Infra** | `status`, `health`, `logs`, `system {event,heartbeat,presence}`, `nodes`, `devices`, `node {run,status,install,uninstall,start,stop,restart}`, `dns {setup}`, `dashboard`, `backup {create,verify}`, `tui`, `docs` |
 
@@ -432,7 +432,19 @@ Skills tambien pueden distribuirse dentro de plugins junto a los tools que docum
 - Un flush por ciclo de compaction (trackeado en `sessions.json`)
 - Requiere workspace writable; skip si `workspaceAccess: "ro"` o `"none"`
 
-**Busqueda vectorial** — indice vectorial sobre `MEMORY.md` y `memory/*.md`. Busqueda hibrida BM25 + vector disponible. Providers de embedding: OpenAI, Gemini, Voyage, Mistral, Ollama, modelos GGUF locales. Backend QMD sidecar opcional. Post-procesamiento: MMR diversity re-ranking + temporal decay.
+**Busqueda vectorial** — indice vectorial sobre `MEMORY.md` y `memory/*.md`. Busqueda hibrida BM25 + vector disponible. Providers de embedding: OpenAI, Gemini, Voyage, Mistral, Ollama, modelos GGUF locales. Backend QMD sidecar opcional. Post-procesamiento: MMR diversity re-ranking + temporal decay (boost por recencia configurable via `temporalDecay.enabled` y `temporalDecay.halfLifeDays`).
+
+**Dreaming (experimental)** — subsistema de consolidacion de memoria en background. Revisa trazas de conversacion y decide que preservar como contexto durable. Opera en tres fases cooperativas, cada una con target de escritura distinto:
+
+| Fase | Funcion | Escribe en | NO escribe en |
+|---|---|---|---|
+| **Light** | Organizar: escanea trazas recientes, deduplica por Jaccard, agrupa por cluster | `memory/YYYY-MM-DD.md` (daily note) | `MEMORY.md` |
+| **Deep** | Preservar: scoring ponderado (6 senales), threshold gates, recall count, diversidad, recency decay, max age | `MEMORY.md` | — |
+| **REM** | Interpretar: identifica temas recurrentes via clustering de concept tags, escribe reflexiones | `memory/YYYY-MM-DD.md` (daily note) | `MEMORY.md` |
+
+Solo Deep puede escribir en `MEMORY.md`. Light y REM escriben exclusivamente en daily notes. Deep incluye recovery automatico cuando la salud de memoria cae bajo un threshold configurable.
+
+Habilitacion: `agents.defaults.dreaming.enabled: true`. Cada fase se configura independientemente bajo `agents.defaults.dreaming.phases.{light,deep,rem}` con `enabled`, `schedule` (cron expr) y `model` override. Los defaults de ejecucion (`execution.defaults`) se heredan por fase salvo override explicito. Chat commands: `/dreaming status|run|pause|resume`. CLI: `openclaw memory promote`.
 
 **Context engine** — componente pluggable que controla como se ensambla el contexto del modelo en cada run. Cuatro puntos de ciclo de vida: ingest (almacenar mensaje), assemble (construir contexto dentro del budget de tokens), compact (resumir historial), after turn (persistir estado). Engine legacy (built-in): pass-through + compaction por sumarizacion. Plugin engines seleccionables via `plugins.slots.contextEngine`.
 
@@ -1496,6 +1508,15 @@ openclaw secrets reload
 
 Auth **requerida por default**. Sin token/password configurado, Gateway rechaza conexiones WS (fail-closed). Onboarding genera token por default incluso para loopback.
 
+**Restricciones `trusted-proxy`**:
+
+- Rechaza requests desde loopback (`127.0.0.1`, `::1`, CIDRs loopback). Reverse proxies same-host loopback NO satisfacen trusted-proxy; usar token/password en ese caso
+- Configuracion mixta token + trusted-proxy es invalida; Gateway rechaza el arranque
+- Despliegues de Control UI non-loopback requieren `gateway.controlUi.allowedOrigins` explicito
+- Config: `gateway.trustedProxies` (IPs del proxy), `gateway.auth.trustedProxy.userHeader` (header con identidad autenticada), `.requiredHeaders` (headers obligatorios del proxy), `.allowUsers` (allowlist de identidades; vacio = todos los autenticados)
+- TLS/HSTS: aplicar en el proxy (preferido) o en Gateway (`gateway.tls`, `gateway.http.securityHeaders.strictTransportSecurity`). Iniciar con `max-age` corto y escalar
+- Setups validados: Pomerium, Caddy + OAuth, nginx + oauth2-proxy, Traefik + forward auth
+
 **Rotacion credenciales**:
 
 1. Generar/setear nuevo secreto
@@ -1732,6 +1753,85 @@ openclaw message poll --channel telegram --target 123456789 \
 ```
 
 Opciones: `--poll-multi` (multi-seleccion), `--poll-duration-hours` (Discord, default 24), `--poll-duration-seconds` (Telegram, 5-600s), `--poll-anonymous`/`--poll-public` (Telegram).
+
+### 8.5 Background tasks -- ledger de actividad
+
+**Background tasks** — ledger centralizado que trackea toda operacion detached: ACP runs, subagent spawns, cron jobs aislados y operaciones CLI. Persiste estado a traves de restarts del Gateway.
+
+**Lifecycle**:
+
+```
+queued → running → succeeded | failed | timed_out | cancelled | lost
+```
+
+Estado `lost` se asigna automaticamente cuando un run no reporta progreso dentro del timeout esperado.
+
+**Origenes** (campo `source`):
+
+| Source | Origen |
+|---|---|
+| `acp` | ACP background runs |
+| `subagent` | Subagent spawns |
+| `cron` | Cron jobs aislados |
+| `cli` | Operaciones CLI |
+
+**Delivery y notificaciones**: cada task define como entrega su resultado.
+
+| Modo delivery | Comportamiento |
+|---|---|
+| `direct` | Entrega resumen al canal target |
+| `session-queued` | Encola para proximo heartbeat |
+| `silent` | Solo interno, sin delivery |
+
+Notification policies: `done_only` (solo al terminar), `state_changes` (cada transicion), `silent`.
+
+**Task pressure** — metrica derivada de tasks activas. Se integra con el status del Gateway para dar visibilidad de carga.
+
+**Almacenamiento**: SQLite en `$OPENCLAW_STATE_DIR/tasks/runs.sqlite`. Retencion automatica: 7 dias.
+
+**CLI**:
+
+```bash
+openclaw tasks list                    # listar tasks activas
+openclaw tasks list --all              # incluir completadas
+openclaw tasks show <taskId>           # detalle de una task
+openclaw tasks cancel <taskId>         # cancelar task activa
+openclaw tasks notify <taskId>         # forzar notificacion
+openclaw tasks audit                   # auditoria de integridad
+openclaw tasks maintenance             # limpieza manual
+```
+
+**Chat**: `/tasks` muestra tablero de tasks activas en la sesion.
+
+**Relacion con otros subsistemas**:
+
+- **Cron** crea tasks cuando `target: "isolated"` o `target: "session:<id>"`
+- **Heartbeat** puede surfacear task summaries pendientes
+- **ACP** crea tasks al spawnear runs background
+- **Task Flow** coordina multiples tasks como flujo multi-paso (ver §8.6)
+
+### 8.6 Task Flow -- orquestacion multi-paso
+
+**Task Flow** — capa de orquestacion sobre background tasks para coordinar pipelines multi-paso con estado durable y tracking de revisiones.
+
+**Dos modos**:
+
+| Modo | Funcion |
+|---|---|
+| **Managed** | Task Flow controla el ciclo de vida end-to-end; crea tasks como steps del flujo |
+| **Mirrored** | Observa tasks creadas externamente; agrega visibilidad sin controlar ejecucion |
+
+**Estado durable** — el estado del flujo persiste a traves de restarts del Gateway. Si un Gateway reinicia mid-flow, el flujo retoma desde el ultimo estado conocido.
+
+**Cancel** — intent de cancelacion es sticky: persiste a traves de restarts. Cuando se cancela un flujo, todos sus steps pendientes se cancelan.
+
+**CLI**:
+
+```bash
+openclaw tasks flow list               # listar flujos activos
+openclaw tasks flow show <flowId>      # detalle con steps
+openclaw tasks flow cancel <flowId>    # cancelar flujo y steps pendientes
+```
 
 ## 9. Observabilidad
 
