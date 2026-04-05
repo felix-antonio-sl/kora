@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-03-26"
-    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial (tools/skills.md, tools/creating-skills.md, tools/skills-config.md, tools/clawhub.md, tools/slash-commands.md, cli/skills.md, platforms/mac/skills.md, tools/subagents.md, tools/exec-approvals.md, tools/loop-detection.md, tools/multi-agent-sandbox-tools.md, tools/elevated.md, gateway/sandboxing.md, gateway/secrets.md, gateway/security/index.md, security/THREAT-MODEL-ATLAS.md, concepts/agent.md, concepts/agent-workspace.md, concepts/system-prompt.md, plugins/building-plugins.md, plugins/manifest.md, help/testing.md; verificado contra comportamiento documentado al 2026-03-29) + fuente web externa: agentskills.io (spec overview, specification, quickstart, best-practices, optimizing-descriptions, evaluating-skills, using-scripts, client-implementation)"
-version: "2.1.0"
+    source: "KNOWLEDGE/agengai/openclaw/documentacion-oficial (tools/skills.md, tools/creating-skills.md, tools/skills-config.md, tools/clawhub.md, tools/slash-commands.md, cli/skills.md, platforms/mac/skills.md, tools/subagents.md, tools/exec-approvals.md, tools/loop-detection.md, tools/multi-agent-sandbox-tools.md, tools/elevated.md, gateway/sandboxing.md, gateway/secrets.md, gateway/security/index.md, security/THREAT-MODEL-ATLAS.md, concepts/agent.md, concepts/agent-workspace.md, concepts/system-prompt.md, plugins/building-plugins.md, plugins/manifest.md, help/testing.md; verificado contra mirror sync 2026-04-05 commit 2a39141) + fuente web externa: agentskills.io (spec overview, specification, quickstart, best-practices, optimizing-descriptions, evaluating-skills, using-scripts, client-implementation)"
+version: "2.2.0"
 status: draft
 tags: [openclaw, skills, agentes-ia, llm, manual, ciclo-de-vida, seguridad, orquestacion, agentskills, interoperabilidad]
 lang: es
@@ -247,32 +247,59 @@ Ejecutar el skill contra tareas reales, alimentar los resultados (todos, no solo
 
 ### 4.2 Ubicaciones y precedencia
 
+OpenClaw carga skills desde 6 raices nativas. Orden de precedencia en caso de conflicto de nombres (primera gana):
+
 | Ubicacion | Precedencia | Alcance |
 | --- | --- | --- |
 | `<workspace>/skills/` | Maxima | Per-agent |
+| `<workspace>/.agents/skills/` | Alta | Per-workspace agent (interoperable) |
+| `~/.agents/skills/` | Media | Personal agent profile (interoperable) |
 | `~/.openclaw/skills/` | Media | Compartido (todos los agentes) |
-| Bundled (distribucion OpenClaw) | Minima | Global |
+| Bundled (distribucion OpenClaw) | Baja | Global |
 | `skills.load.extraDirs` | Minima | Carpetas compartidas custom |
 
-Conflicto de nombres: workspace gana, luego managed/local, luego bundled.
+Las rutas `.agents/skills/` son raices nativas de primera clase cargadas automaticamente por OpenClaw, no solo convenciones de interoperabilidad. Skills colocados ahi por otros clientes compatibles con el estandar AgentSkills (Claude Code, Cursor, Gemini CLI, etc.) son automaticamente visibles.
 
-Convencion cross-client para interoperabilidad:
+Convenciones adicionales de interoperabilidad:
 
 | Scope | Ruta | Proposito |
 | --- | --- | --- |
-| Proyecto | `<proyecto>/.agents/skills/` | Interoperabilidad entre clientes |
-| Proyecto | `<proyecto>/.<tu-cliente>/skills/` | Ubicacion nativa del cliente |
-| Usuario | `~/.agents/skills/` | Interoperabilidad entre clientes |
-| Usuario | `~/.<tu-cliente>/skills/` | Ubicacion nativa del cliente |
-
-La convencion `.agents/skills/` ha surgido como estandar ampliamente adoptado para compartir skills entre clientes. Skills instalados por otros clientes compatibles son automaticamente visibles.
+| Proyecto | `<proyecto>/.<tu-cliente>/skills/` | Ubicacion nativa de otro cliente |
+| Usuario | `~/.<tu-cliente>/skills/` | Ubicacion nativa de otro cliente |
 
 ### 4.3 Skills per-agent vs compartidos
 
 En setups multi-agente cada agente tiene su propio workspace:
 - **Per-agent**: `<workspace>/skills/` — solo ese agente
+- **Per-workspace agent**: `<workspace>/.agents/skills/` — compartido entre clientes del workspace
+- **Personal agent**: `~/.agents/skills/` — compartido cross-workspace en la maquina
 - **Compartidos**: `~/.openclaw/skills/` — visibles para todos los agentes del nodo
 - **Carpetas compartidas**: via `skills.load.extraDirs` (precedencia minima)
+
+**Agent skill allowlists** — en setups multi-agente, las ubicaciones determinan que copia de un skill gana (precedencia), pero las allowlists controlan que skills son **visibles** para cada agente. Son controles separados e independientes.
+
+Configuracion:
+
+```json5
+{
+  agents: {
+    defaults: {
+      skills: ["github", "weather"]  // baseline compartido
+    },
+    list: [
+      { id: "writer" },                          // hereda defaults
+      { id: "docs", skills: ["docs-search"] },   // reemplaza defaults (NO hereda)
+      { id: "sandbox-agent", skills: [] },        // sin skills
+    ]
+  }
+}
+```
+
+Reglas:
+- `agents.defaults.skills` define baseline heredado por agentes sin override
+- `agents.list[].skills` **reemplaza** el baseline completo (no se mezcla con defaults)
+- Omitir `skills` en un agente = hereda defaults; `skills: []` = sin skills
+- Si el allowlist efectivo cambia para una sesion activa, OpenClaw refresca el session snapshot
 
 ### 4.4 Skills en plugins
 
@@ -434,7 +461,7 @@ Repositorio: `github.com/agentskills/agentskills/tree/main/skills-ref`.
     },
     install: {
       preferBrew: true,
-      nodeManager: "npm"
+      nodeManager: "npm"     // npm | pnpm | yarn | bun
     },
     entries: {
       "image-lab": {
@@ -446,6 +473,16 @@ Repositorio: `github.com/agentskills/agentskills/tree/main/skills-ref`.
       "peekaboo": { enabled: true },
       "sag": { enabled: false }
     }
+  },
+  agents: {
+    defaults: {
+      skills: ["github", "weather"]    // allowlist baseline (omitir = sin restriccion)
+    },
+    list: [
+      { id: "writer" },                         // hereda defaults.skills
+      { id: "docs", skills: ["docs-search"] },  // reemplaza (no hereda)
+      { id: "sandbox", skills: [] },            // sin skills
+    ]
   }
 }
 ```
@@ -728,9 +765,22 @@ Sistema de exec approvals general: ver manual integral §7.4. Cuando un skill in
 | `allowlist` | Solo comandos en la lista de aprobacion permitidos; nuevos requieren aprobacion |
 | `full` | Permite toda ejecucion sin aprobacion |
 
-Configuracion: `tools.exec.security` (gateway) o `/exec security=<nivel>` (runtime).
+Configuracion gateway: `tools.exec.security` en `openclaw.json` o `/exec security=<nivel>` en runtime.
 
-Aprobacion interactiva: `/approve <id> allow-once|allow-always|deny`.
+**Policy host-local** — ademas de la config del gateway, existe una policy local persistida en `~/.openclaw/exec-approvals.json` que puede forzar prompts de aprobacion aunque la config del gateway diga `full`. La **politica mas estricta prevalece** entre gateway config y host-local policy.
+
+Campos de la policy host-local:
+
+| Campo | Descripcion |
+| --- | --- |
+| `security` | `deny` / `allowlist` / `full` |
+| `ask` | `off` / `on-miss` / `always` — cuando solicitar aprobacion interactiva |
+| `askFallback` | `deny` / `allowlist` / `full` — fallback si no hay operador para aprobar |
+| `strictInlineEval` | Controla evaluacion de scripts inline |
+
+Allowlists per-agent: patrones glob case-insensitive en la entry del agente. Shell chains se evaluan comando por comando. Skills instalados via `skills.install` auto-registran sus CLIs en el allowlist.
+
+Aprobacion interactiva: `/approve <id> allow-once|allow-always|deny`. Aprobaciones se pueden reenviar a canales de chat.
 
 ### 8.3 Herramientas elevadas
 
@@ -817,14 +867,21 @@ Skills a nivel de proyecto provienen del repositorio siendo trabajado, que puede
 
 Cuando la sesion esta en sandbox (Docker), procesos de skills corren dentro del contenedor. El sandbox **no hereda** `process.env` del host. Binarios requeridos por `requires.bins` deben existir dentro del contenedor. Configuracion general de sandbox: ver manual integral `urn:agengai:kb:openclaw-manual-integral` §7.3.
 
-### 10.5 Controles de ejecucion
+### 10.5 Dangerous-code scanner
+
+Las instalaciones de dependencias respaldadas por el Gateway (`skills.install`, onboarding, y la UI de Skills en macOS) ejecutan el **dangerous-code scanner** antes de ejecutar metadata de instaladores. Hallazgos `critical` bloquean por defecto salvo override explicito del caller; hallazgos `suspicious` solo advierten.
+
+`openclaw skills install <slug>` (descarga desde ClawHub) es diferente: descarga la carpeta del skill al workspace y **no** usa el path de installer-metadata, por lo que no dispara el scanner.
+
+### 10.6 Controles de ejecucion
 
 - `tools.exec.security`: `deny`, `allowlist`, `full`
+- `~/.openclaw/exec-approvals.json`: policy host-local que puede ser mas estricta que la config gateway (la mas estricta prevalece)
 - `tools.elevated`: controla acceso a herramientas de shell del host
 - Exec approvals interactivas: `/approve <id> allow-once|allow-always|deny`
 - Allowlists con patrones para comandos permitidos/denegados
 
-### 10.6 Modelo de amenazas para skills
+### 10.7 Modelo de amenazas para skills
 
 Amenazas principales:
 - **Inyeccion de prompt**: skill con instrucciones maliciosas que manipulan al agente
@@ -840,7 +897,7 @@ Mitigaciones:
 - Validacion de realpath en discovery
 - Secretos inyectados solo en host, no en sandbox
 
-### 10.7 Seguridad en ClawHub
+### 10.8 Seguridad en ClawHub
 
 - Publicacion requiere cuenta GitHub con minimo una semana de antiguedad
 - Cualquier usuario puede reportar un skill
@@ -914,7 +971,7 @@ Estrategias:
 
 ### 12.4 Skills en nodos remotos macOS
 
-Si el gateway corre en Linux pero un nodo macOS esta conectado con `system.run` permitido, OpenClaw puede tratar skills macOS-only como elegibles cuando los binarios requeridos estan presentes en ese nodo. El agente ejecuta esos skills via `nodes.run`.
+Si el gateway corre en Linux pero un nodo macOS esta conectado con `system.run` permitido, OpenClaw puede tratar skills macOS-only como elegibles cuando los binarios requeridos estan presentes en ese nodo. El agente ejecuta esos skills via la herramienta `exec` con `host=node` (no `nodes.run`). Requisito: exec approvals security no puede estar en `deny`.
 
 Advertencia: si el nodo macOS se desconecta, los skills pueden permanecer visibles en el catalogo, pero las invocaciones fallan hasta que el nodo reconecte.
 
