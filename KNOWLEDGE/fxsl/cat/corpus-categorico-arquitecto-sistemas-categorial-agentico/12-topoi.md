@@ -66,11 +66,11 @@ Fong y Spivak lo explican con el topos de sheaves sobre un espacio topologico. A
 
 Para la practica de sistemas: la eventual consistency es exactamente una condicion de sheaf sobre el tiempo. Los datos locales son consistentes en cada nodo. La condicion de pegado dice: eventualmente, las vistas locales se reconcilian en una vista global. Pero "eventualmente" es un operador modal, no una garantia instantanea. La logica intuicionista captura esto: "sera verdadero" no es lo mismo que "es verdadero ahora."
 
-## Geometric morphisms: mapas entre universos
+## Morfismos geometricos: mapas entre universos
 
-Si tengo dos topoi E y E', el mapa correcto entre ellos no es un simple funtor. Es un geometric morphism: un par de funtores adjuntos f* ⊣ f_* donde f* (la "imagen inversa") preserva limites finitos. Esta condicion extra -- preservar limites finitos, no solo ser adjunto izquierdo -- es lo que garantiza que el mapa respeta la estructura logica interna.
+Si tengo dos topoi E y E', el mapa correcto entre ellos no es un simple funtor. Es un morfismo geometrico: un par de funtores adjuntos f* ⊣ f_* donde f* (la "imagen inversa") preserva limites finitos. Esta condicion extra -- preservar limites finitos, no solo ser adjunto izquierdo -- es lo que garantiza que el mapa respeta la estructura logica interna.
 
-En la practica, un geometric morphism entre topoi de configuracion es una migracion de esquema que preserva las relaciones logicas entre las configuraciones. No basta con mapear datos de un formato a otro; hay que garantizar que las restricciones de consistencia se preservan.
+En la practica, un morfismo geometrico entre topoi de configuracion es una migracion de esquema que preserva las relaciones logicas entre las configuraciones. No basta con mapear datos de un formato a otro; hay que garantizar que las restricciones de consistencia se preservan.
 
 La relacion con lo que vi en el documento 10 es directa: la sheafification -- el proceso de convertir un presheaf en el sheaf mas cercano -- es el adjunto izquierdo de la inclusion Shv(C) ↪ [C^op, Set]. Es una Kan extension izquierda a lo largo de la inclusion del site. Cada vez que tengo un presheaf (datos locales sin garantia de pegado) y quiero forzar consistencia global, sheafifico: proyecto al universo donde la condicion de sheaf se cumple automaticamente.
 
@@ -78,9 +78,9 @@ La relacion con lo que vi en el documento 10 es directa: la sheafification -- el
 
 Schultz y Spivak construyen algo que me parece esencial para la arquitectura de sistemas temporales. Definen el interval domain IR como el conjunto de intervalos cerrados acotados [d, u] en R, con el orden por refinamiento: [d', u'] ⊑ [d, u] si d ≤ d' y u' ≤ u. Un intervalo mas pequeno es una aproximacion mas precisa de un numero real. Los elementos maximales de IR son los puntos de R (intervalos de longitud cero).
 
-El topos de sheaves sobre IR, Shv(IR), da un universo donde los "tipos" son familias de conjuntos que varian continuamente sobre el tiempo. Un behavior type es un sheaf S sobre IR: para cada intervalo temporal [d, u], S([d, u]) es el conjunto de comportamientos posibles durante ese periodo. La condicion de sheaf dice que los comportamientos locales (sobre subintervalos) se pegan en comportamientos globales cuando son compatibles.
+El topos de sheaves sobre IR, Shv(IR), da un universo donde los "tipos" son familias de conjuntos que varian continuamente sobre el tiempo. Un tipo de comportamiento es un sheaf S sobre IR: para cada intervalo temporal [d, u], S([d, u]) es el conjunto de comportamientos posibles durante ese periodo. La condicion de sheaf dice que los comportamientos locales (sobre subintervalos) se pegan en comportamientos globales cuando son compatibles.
 
-Pero hay un refinamiento crucial. El topos Shv(IR) depende de la posicion absoluta en la linea temporal. Un sistema bien disenado no deberia depender de cuando lo arrancas. Schultz y Spivak resuelven esto construyendo el topos B de sheaves translation-invariant: toman el cociente de IR bajo la accion de traslacion de R, formando la categoria IR/▷, y definen B = Shv(IR/▷).
+Pero hay un refinamiento crucial. El topos Shv(IR) depende de la posicion absoluta en la linea temporal. Un sistema bien disenado no deberia depender de cuando lo arrancas. Schultz y Spivak resuelven esto pasando a un universo de sheaves invariantes por traslacion. Una forma concreta de presentarlo es tomar el cociente de IR bajo la accion de traslacion de R, formar la categoria IR/▷, y escribir B = Shv(IR/▷). En el documento 15 reutilizo la misma intuicion con una notacion de cociente por la accion; aqui me basta fijar la idea: B modela comportamientos donde importa la duracion y el orden relativo, no el origen absoluto.
 
 El clasificador de subobjetos de B no es binario. Como observan, codifica propiedades temporales: "siempre verdadero", "eventualmente verdadero", "verdadero hasta que..." -- estas no son hacks ad hoc sobre la logica clasica. Son los valores de verdad naturales de un universo donde el tiempo es parte de la estructura.
 
@@ -88,7 +88,7 @@ El clasificador de subobjetos de B no es binario. Como observan, codifica propie
 
 Quiero conectar esto con una estructura que ya conozco del documento 10. En un sistema multi-tenant, cada tenant tiene su propio "universo" de datos, esquemas y reglas de negocio. Puedo modelar esto como una fibration de topoi: un funtor p : E -> B donde B es la categoria de tenants y cada fibra p^{-1}(t) es el topos del tenant t.
 
-Los morfismos en B (migraciones de tenant, merges de cuentas) inducen geometric morphisms entre las fibras. El reindexing a lo largo de un morfismo f : t1 -> t2 tira de la configuracion de t2 hacia t1, preservando las relaciones logicas. Y el pushforward (la Kan extension izquierda) empuja datos en la otra direccion.
+Los morfismos en B (migraciones de tenant, merges de cuentas) inducen morfismos geometricos entre las fibras. El reindexing a lo largo de un morfismo f : t1 -> t2 tira de la configuracion de t2 hacia t1, preservando las relaciones logicas. Y el pushforward (la Kan extension izquierda) empuja datos en la otra direccion.
 
 Los namespaces de Kubernetes son un caso concreto: cada namespace es un "slice" del cluster. La categoria de todos los recursos del cluster, indexada por namespace, forma un topos slice E/N para cada namespace N. Los network policies entre namespaces son los morfismos entre estos slices.
 

@@ -56,18 +56,18 @@ La right Kan extension Ran_K D es un funtor F : A -> C junto con una transformac
 
 Dualmente, la left Kan extension Lan_K D es un funtor F : A -> C junto con una transformacion natural eta : D => F . K (la unit) que es universal: para cualquier F' con eta' : D => F' . K, existe una unica sigma : F => F' que factoriza eta'. Es un colimite en la categoria de funtores.
 
-Las formulas pointwise en terminos de ends y coends son:
+Las formulas pointwise, cuando C tiene powers y copowers indexados por conjuntos (en particular cuando C = Set), se escriben en terminos de ends y coends como:
 
-Ran_K D (a) = integral_i Set(A(a, Ki), Di)      -- right Kan extension
-Lan_K D (a) = integral^i A(Ki, a) x Di           -- left Kan extension
+Ran_K D (a) = integral_i D(i)^(A(a, K i))       -- right Kan extension
+Lan_K D (a) = integral^i A(K i, a) · D(i)       -- left Kan extension
 
-La right Kan extension evalua D en todos los puntos de I conectados a a, pesando por los morfismos de a a Ki. Es un "promedio ponderado" universal. La left Kan extension hace lo mismo pero con coproductos -- es una "coleccion" universal.
+Aqui `X^S` denota el power de `X` por el conjunto `S`, y `S · X` el copower correspondiente. Si trabajo en `Set`, estas formulas se reducen a las versiones mas familiares `Set(A(a, K i), D(i))` y `A(K i, a) × D(i)`. La right Kan extension evalua D en todos los puntos de I conectados a a, pesando por los morfismos de a a K i. Es un "promedio ponderado" universal. La left Kan extension hace lo mismo pero con coproductos -- es una "coleccion" universal.
 
 ## Limites y colimites como Kan extensions
 
 Si tomo A = 1 (la categoria con un solo objeto) y K : I -> 1 el unico funtor posible, la right Kan extension de D a lo largo de K es exactamente el limite de D, y la left Kan extension es el colimite. Esto justifica la frase de Mac Lane: "all concepts are Kan extensions."
 
-Ademas, las Kan extensions capturan las adjunciones. Si K : I -> A tiene right Kan extension de la identidad, Ran_K Id es el adjunto izquierdo de K. Si tiene left Kan extension de la identidad, Lan_K Id es el adjunto derecho. La cadena de adjunciones Ran_K Id -| K -| Lan_K Id generaliza la triple adjuncion Sigma -| Delta -| Pi que conozco de las data migrations del documento 06.
+Ademas, las Kan extensions estan intimamente ligadas a las adjunciones. Bajo hipotesis precisas sobre existencia y tipado, ciertos adjuntos pueden construirse como extensiones de Kan de la identidad. No quiero sobreforzar aqui esa relacion con una formula abreviada que oculte los dominios y codominios; el punto practico es que la maquinaria de extensiones de Kan y la de adjunciones no son temas separados, sino dos caras de la misma nocion de universalidad.
 
 ## Transferencia robotica como Kan extension
 
@@ -79,15 +79,15 @@ La clave es que la transferencia no es solo "renombrar." Los morfismos de la sch
 
 El paper de Jha (2024) lleva la idea un paso mas alla. Tienen un problema de planificacion en un dominio "misterioso" -- un dominio con nombres ofuscados donde los objetos se llaman "planet," "harmony," "pain" en lugar de "block," "on," "clear." El LLM (GPT-4, Claude) conjetura un funtor F del dominio misterioso al dominio canonico (Blocksworld). Ese funtor mapea objetos y acciones, preservando la estructura categorica.
 
-Lo notable es que el LLM sintetiza el funtor observando la estructura del problema: el numero de objetos, los tipos de acciones, las precondiciones y efectos. No necesita entender el significado de las palabras -- captura el isomorfismo estructural. Es un uso practico de la idea de Yoneda: un objeto esta completamente determinado por sus relaciones con los demas. El LLM, al observar las relaciones entre acciones y predicados, reconstruye la identidad del dominio.
+Lo notable es que el LLM conjetura un mapeo estructural observando el problema: el numero de objetos, los tipos de acciones, las precondiciones y efectos. No necesita entender plenamente el significado de las palabras para proponer una traduccion razonable. Es un uso practico de la intuicion relacional que Yoneda inspira, no una instancia literal del lema: el LLM explota regularidades estructurales para reconstruir una semantica de dominio plausible.
 
 ## Data lakes como Grothendieck construction
 
 El paper de Guyot (2022) formaliza los data lakes usando teoria de categorias. Su insight principal es que un data lake no es una sola categoria sino una familia de categorias parametrizada: la categoria DL tiene como objetos las funcionalidades (Ingestion, Storage, Exploration) y como morfismos los funtores entre ellas (store, explore, maintenance).
 
-Esto es esencialmente una Grothendieck construction. Dado un funtor F : B^op -> Cat que asigna a cada objeto de una base B una categoria, la Grothendieck construction integral F produce una categoria total cuyos objetos son pares (b, x) con b in B y x in F(b), y cuyos morfismos son pares (f, phi) donde f : b -> b' en B y phi : F(f)(x) -> x' en F(b').
+Esto es esencialmente una Grothendieck construction. Dado un funtor F : B^op -> Cat que asigna a cada objeto de una base B una categoria, la Grothendieck construction integral F produce una categoria total cuyos objetos son pares (b, x) con b in B y x in F(b), y cuyos morfismos son pares (f, phi) donde f : b -> b' en B y phi : x -> F(f)(x') en F(b). Si prefiero un funtor covariante B -> Cat, la direccion de phi se invierte.
 
-La Grothendieck construction "aplana" familias indexadas de categorias en una sola categoria. Para el data lake, esto significa que puedo navegar entre los niveles de abstraccion (ingesion -> storage -> exploration) y entre los objetos dentro de cada nivel (raw_data, dataset, metadata) usando una estructura categorica unificada. Los funtores surjectivos entre niveles garantizan que no se pierde informacion al cambiar de vista.
+La Grothendieck construction "aplana" familias indexadas de categorias en una sola categoria. Para el data lake, esto significa que puedo navegar entre los niveles de abstraccion (ingesion -> storage -> exploration) y entre los objetos dentro de cada nivel (raw_data, dataset, metadata) usando una estructura categorica unificada. Los mapeos entre niveles organizan el cambio de vista; las garantias concretas de preservacion dependen de como esos mapeos esten tipados y de que propiedades efectivamente preserven.
 
 ## Fibrations: familias parametrizadas
 
@@ -115,7 +115,7 @@ En la práctica de integración multi-modelo, esto aparece así. Tengo datos en 
 
 El framework de Kouprianov y colaboradores formaliza esto para transformaciones entre modelos relacionales, de grafo y jerárquicos. Los árboles se representan como functores T : T_cal → Set donde T_cal tiene un solo objeto y un morfismo "parent" con T(parent)(root) = root. Los grafos se representan como functores G : G_cal → Set donde G_cal tiene dos objetos (vértices y aristas) y dos morfismos (src, tgt). Las transformaciones entre estos modelos se caracterizan como Kan lifts cuando el funtor H tiene las propiedades universales adecuadas.
 
-La distinción con la Kan extension es operacionalmente crucial: la extension me dice "cómo expandir," el lift me dice "cómo comprimir" o "cómo factorizar." Cuando migro de un esquema rico a uno más pobre (de relacional normalizado a documento desnormalizado), necesito un lift, no una extension. El lift calcula la mejor factorización de mis datos a través del esquema target -- la que pierde menos información, por la propiedad universal. Y para que el lift preserve la semántica de la transformación, el funtor G debe ser fully faithful -- las distinciones del dominio target deben ser genuinas, no artefactos.
+La distinción con la Kan extension es operacionalmente crucial: la extension me dice "cómo expandir," el lift me dice "cómo comprimir" o "cómo factorizar." Cuando migro de un esquema rico a uno más pobre (de relacional normalizado a documento desnormalizado), necesito un lift, no una extension. El lift calcula la mejor factorización de mis datos a través del esquema target -- la que pierde menos información, por la propiedad universal. Si además G retiene fielmente las distinciones relevantes del target, la factorización resultante es semánticamente más informativa.
 
 ## El patron unificador
 

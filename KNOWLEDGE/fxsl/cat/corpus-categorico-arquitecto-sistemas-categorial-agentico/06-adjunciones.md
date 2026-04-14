@@ -52,13 +52,13 @@ f(p) ≤ q   si y solo si   p ≤ g(q)
 
 Esto es exactamente la definición de adjunción con hom-sets reemplazados por la relación de orden (en un poset, el hom-set tiene a lo sumo un elemento). Fong y Spivak lo desarrollan en detalle: f es el left adjoint, g el right adjoint, y la composición g ∘ f : P → P es un **operador clausura** -- idempotente y extensivo.
 
-Un ejemplo concreto: la función piso ⌊·⌋ : R → Z y la inclusión i : Z → R forman una conexión de Galois:
+Un ejemplo concreto: la función techo ⌈·⌉ : R → Z y la inclusión i : Z → R forman una conexión de Galois:
 
 ```
-⌊x⌋ ≤ n   si y solo si   x ≤ i(n) = n
+⌈x⌉ ≤ n   si y solo si   x ≤ i(n) = n
 ```
 
-El left adjoint (piso) es la mejor aproximación entera por debajo. El right adjoint (inclusión) preserva la estructura exacta. Este patrón aparece en cada par de niveles de abstracción que manejo: el left adjoint "comprime" o "aproxima", el right adjoint "expande" o "incluye."
+El left adjoint (techo) es la mejor aproximación entera por arriba compatible con el orden. El right adjoint (inclusión) preserva la estructura exacta. Dualmente, la inclusión es left adjoint de la función piso. Este patrón aparece en cada par de niveles de abstracción que manejo: un lado aproxima, el otro retiene estructura.
 
 El Adjoint Functor Theorem para preórdenes dice algo poderoso: si un poset tiene todos los meets y un mapa monótono los preserva, entonces ese mapa es right adjoint -- el left adjoint existe automáticamente. Esto explica por qué tantas construcciones "obvias" en la práctica resultan ser adjunciones: si preservas suficiente estructura, tu pareja óptima existe gratis.
 
@@ -81,11 +81,11 @@ foldMap :: (Monoid m) => (a -> m) -> [a] -> m
 foldMap f = mconcat . map f
 ```
 
-En la práctica, el patrón free/forgetful aparece en todas partes:
+En la práctica, el patrón free/forgetful reaparece muchas veces. En algunos casos es una adjunción exacta; en otros, una lectura estructural útil pero no literal:
 
-- **ORM ⊣ SQL**: el ORM construye "libremente" objetos con relaciones; la ejecución SQL olvida la estructura de objetos y trabaja con tablas y filas. Pero la adjunción rara vez es perfecta: la composición R ∘ L (ir al dominio, volver a SQL, volver al dominio) introduce un **ORM drift** -- un mismatch semántico donde el viaje redondo pierde relaciones que el modelo de dominio expresaba. Lazy loading que genera N+1 queries, inheritance mappings que aplastan jerarquías, y campos calculados que no sobreviven la serialización son síntomas del drift. Categóricamente, el drift es la distancia entre R ∘ L y la identidad -- la no-trivialidad de la unit η de la adjunción.
-- **AST ⊣ Source**: el parser construye un AST libre a partir del código fuente; el pretty-printer olvida la estructura arbórea y produce texto.
-- **Docker image ⊣ Dockerfile**: la imagen es la construcción libre; el Dockerfile es la especificación que genera libremente la imagen.
+- **ORM / SQL**: suele haber una tensión de tipo free/forgetful entre el modelo de dominio y la representación tabular, pero rara vez una adjunción exacta. El **ORM drift** nombra precisamente la distancia entre ambos niveles cuando el viaje de ida y vuelta no preserva bien la estructura relevante.
+- **AST / Source**: parser y pretty-printer exhiben un patrón ida-y-vuelta muy cercano al libre/olvido, aunque con detalles concretos de sintaxis, formato y comentarios que no siempre encajan en una adjunción limpia.
+- **Docker image / Dockerfile**: el Dockerfile especifica un proceso generativo y la imagen es su resultado materializado; la analogía con libre/forgetful es útil para pensar la relación, pero no debe tomarse como identificación automática.
 
 El patrón es: uno crea estructura libremente (sin imponer relaciones más allá de las leyes algebraicas mínimas), el otro olvida con gracia (retiene solo lo esencial). Cada vez que digo "X se genera a partir de Y", probablemente estoy mirando un left adjoint libre.
 
@@ -97,7 +97,7 @@ Esto no es solo un teorema elegante -- tiene consecuencias prácticas inmediatas
 
 Y el converso es casi cierto: el Adjoint Functor Theorem (que ya vimos para preórdenes) se generaliza. Si una categoría es completa y un funtor preserva todos los límites, bajo ciertas condiciones de tamaño, ese funtor es right adjoint. La preservación de estructura delata la adjunción.
 
-En la práctica esto significa: si un funtor "se porta bien" con JOINs (pullbacks), con productos cartesianos, con restricciones (ecualizadores), entonces tiene una pareja óptima esperándolo.
+En la práctica esto significa: si un funtor preserva sistemáticamente los límites relevantes y además se cumplen las hipótesis del teorema del adjunto, suele haber una pareja óptima esperándolo. La preservación de estructura es una señal fuerte; no un certificado automático por sí sola.
 
 ## Las adjunciones generan monads
 
@@ -159,16 +159,16 @@ Lo que me impresionó del CQL paper es que la garantía de corrección no es ad 
 
 La triple adjunción no solo migra datos -- transporta (o destruye) las constraints del esquema fuente. Y saber qué preserva cada operador antes de elegirlo es la diferencia entre una migración segura y una que introduce deuda técnica silenciosa.
 
-Una constraint en el esquema fuente puede ser una path equation (dos caminos producen el mismo resultado), un monomorfismo (inyectividad, como UNIQUE), un epimorfismo (surjectividad, como NOT NULL con cobertura total), o una constraint de existencia (el pullback existe, como un FOREIGN KEY). La pregunta es: si la constraint vale en el esquema fuente, ¿sigue valiendo después de migrar con Δ, Σ o Π?
+Una constraint en el esquema fuente puede ser una path equation (dos caminos producen el mismo resultado), un monomorfismo (inyectividad, como UNIQUE), una condición de existencia formulada por límites, o una condición más extensional como la sobreyectividad. La pregunta es: si la constraint vale en el esquema fuente, ¿sigue valiendo después de migrar con Δ, Σ o Π? Aquí conviene ser cuidadoso: no todas las constraints se preservan por los mismos argumentos.
 
 | Constraint | Δ_F (pullback) | Σ_F (pushforward izq.) | Π_F (pushforward der.) |
 |---|:---:|:---:|:---:|
-| Path equations | **Siempre** | No siempre | **Siempre** |
-| Monomorfismos (UNIQUE) | **Siempre** | No siempre | **Siempre** |
-| Epimorfismos (surjección) | No siempre | No siempre | **Siempre** |
-| Existencia (FK, pullback) | **Siempre** | No siempre | **Siempre** |
+| Path equations | **Sí** | No en general | **Sí** |
+| Monomorfismos / inyectividad | **Sí** por reindexación | No en general | A menudo sí, pero depende del contexto exacto |
+| Constraints expresables por límites finitos | **Sí** | No en general | **Sí** |
+| Epimorfismos / sobreyectividad | No automáticamente | No automáticamente | No automáticamente |
 
-Las razones son estructurales. Δ_F es precomposición -- no transforma datos, solo los reindexiza -- así que preserva todas las ecuaciones y propiedades locales. Π_F usa límites para construir los datos migrados, y los límites preservan monomorfismos, ecuaciones y existencia por construcción universal. Σ_F usa colímites, y los colímites pueden "colapsar" distinciones: dos elementos que eran distintos en el esquema fuente pueden identificarse en el target, destruyendo inyectividad; dos paths que eran iguales pueden divergir después del coend que computa la unión.
+Las razones son estructurales. Δ_F es precomposición -- no transforma datos, solo los reindexiza -- así que preserva ecuaciones y constraints locales expresadas en el propio esquema. Π_F usa límites para construir los datos migrados, y por eso es el operador conservador cuando la propiedad está formulada límite a límite. Σ_F usa colímites, y los colímites pueden colapsar distinciones: dos elementos que eran distintos en el esquema fuente pueden identificarse en el target, destruyendo inyectividad; dos paths que eran iguales pueden divergir después del coend que computa la unión. La sobreyectividad y otras propiedades puramente extensionales requieren un análisis aparte: no vienen garantizadas solo por ser right adjoint.
 
 La regla de decisión que uso: **si necesito garantías fuertes de integridad, Δ o Π. Si acepto pérdida controlada a cambio de generalización, Σ -- pero documento exactamente qué constraints se pierden y por qué.** Cada constraint perdida en una migración Σ es deuda técnica categórica: invisible en el momento, explosiva cuando alguien asume que la constraint sigue vigente.
 
@@ -213,13 +213,13 @@ En el mundo SQL, las migraciones se escriben en DDL, las queries en DQL, y las v
 
 Más allá de la migración de datos, las adjunciones organizan pares de operaciones que encuentro cada día:
 
-**Compilar ⊣ Interpretar.** La compilación es left adjoint: transforma código fuente en una representación eficiente, comprimiendo la información semántica en instrucciones de máquina. La interpretación es right adjoint: preserva toda la información del código, evaluándolo paso a paso sin perder contexto.
+**Compilar / Interpretar.** Muchas veces este par se deja leer con la geometría de una adjunción: un lado traduce a una forma más ejecutable o comprimida, el otro preserva semántica observable al reintroducir contexto. Pero la identificación exacta exige fijar con mucho cuidado las categorías implicadas.
 
-**Normalizar ⊣ Desnormalizar.** La normalización de bases de datos elimina redundancia (left adjoint: comprime). La desnormalización introduce redundancia estratégica para performance (right adjoint: expande). El trade-off entre ambas es exactamente la tensión de una adjunción.
+**Normalizar / Desnormalizar.** Aquí también hay una tensión típica de ida y vuelta: un movimiento elimina redundancia y el otro la reintroduce por razones operativas. La analogía con una adjunción es fértil, aunque no debe leerse como teorema sin más.
 
-**Comprimir ⊣ Expandir.** gzip ⊣ gunzip, pero a nivel profundo: la compresión es la mejor aproximación compacta (left adjoint), la expansión recupera la estructura original (right adjoint).
+**Comprimir / Expandir.** Compresión y expansión suelen comportarse como una pareja direccional muy asimétrica, útil para pensar en términos adjuntos, pero no toda pareja codec forma una adjunción categórica literal.
 
-**Abstraer ⊣ Concretar.** Subir un nivel de abstracción (interfaces, traits, protocolos) es left adjoint. Bajar a una implementación concreta es right adjoint. La interfaz captura lo mínimo necesario; la implementación rellena los detalles.
+**Abstraer / Concretar.** Subir un nivel de abstracción y bajar a una implementación concreta es otro patrón que a menudo se deja leer como adjunto: un lado minimiza estructura, el otro la rellena. De nuevo, lo valioso aquí es la disciplina de diseño que la analogía revela.
 
 **Currying como adjunción.** Anticipo aquí una estructura que el documento 07 formalizará como categoría cartesiana cerrada (CCC). Es quizás la adjunción más limpia:
 

@@ -2,7 +2,7 @@
 
 ## El momento en que todo cambia
 
-Hay un momento en el que todo cambia. Dejo de preguntar "¿qué es esto por dentro?" y empiezo a ver que una cosa ES la totalidad de sus relaciones con todo lo demás. Un servicio ES su API. Una tabla ES sus queries. Un agente ES sus interacciones. Un container ES sus puertos y volúmenes.
+Hay un momento en el que todo cambia. Dejo de preguntar "¿qué es esto por dentro?" y empiezo a ver que, para fines de observación y composición, una cosa queda determinada por un patrón suficientemente rico de relaciones con todo lo demás. Un servicio se deja estudiar por su API. Una tabla, por las operaciones que admite. Un agente, por sus interacciones. Un container, por sus puertos y volúmenes expuestos.
 
 Este giro -- de mirar adentro a mirar afuera -- es el paso más profundo que he dado en mi formación como arquitecto. Antes de este punto, entendía las cosas descomponiéndolas: abría la caja, estudiaba los mecanismos internos, clasificaba las partes. Después de este punto, entiendo las cosas situándolas: observo cómo se relacionan con todo lo demás, y esa red de relaciones me dice todo lo que necesito saber.
 
@@ -129,25 +129,25 @@ Perrone muestra un ejemplo limpio: si C = Par (la categoría con dos objetos V, 
 
 ## Lo que Yoneda cambia en mi práctica
 
-### Un servicio ES su API
+### Un servicio se deja estudiar por su API
 
-Cuando diseño microservicios, el lema de Yoneda formaliza algo que todo arquitecto experimentado intuye: no necesito ver el código fuente de un servicio para entenderlo completamente. Su API -- el conjunto de todos los endpoints que acepta, con sus tipos de request y response -- es su hom-funtor. Dos servicios con APIs isomorfas son intercambiables, independientemente de su implementación interna. El embedding de Yoneda me garantiza que si las APIs son distintas, los servicios son genuinamente distintos: el embedding es fiel.
+Cuando diseño microservicios, el lema de Yoneda formaliza algo más preciso y más modesto que el eslogan "un servicio es su API": si fijo una categoría de observables adecuada, el patrón de morfismos hacia y desde el servicio captura exactamente la información relevante para ese modo de observación. En práctica, la API suele ser la mejor aproximación externa a ese patrón. Dos servicios con APIs isomorfas son indistinguibles para cualquier cliente que solo observe a través de esa interfaz, aunque todavía pueden diferir internamente en dimensiones que la API no expone.
 
-### Una tabla ES sus queries
+### Una tabla se deja estudiar por sus queries
 
-En bases de datos, una tabla está completamente determinada por el conjunto de todas las consultas que se pueden hacer sobre ella. El `SELECT * FROM t WHERE ...` para cada condición posible, los `JOIN` con cada otra tabla, las agregaciones -- todo eso forma el hom-funtor de esa tabla. Si dos tablas admiten exactamente los mismos queries con los mismos resultados, son la misma tabla (salvo isomorfismo).
+En bases de datos, una tabla queda muy bien caracterizada por el repertorio de consultas y relaciones que soporta dentro de un esquema fijo. El `SELECT * FROM t WHERE ...` para cada condición posible, los `JOIN` con cada otra tabla, las agregaciones y restricciones forman una familia de observables muy cercana al espíritu de Yoneda. En ese marco, si dos tablas inducen exactamente las mismas observaciones relacionales, puedo tratarlas como equivalentes para ese propósito de modelado.
 
-### Un container ES sus puertos
+### Un container se deja estudiar por sus puertos
 
-Un container Docker está completamente determinado por su interfaz expuesta: puertos publicados, volúmenes montados, variables de entorno que acepta. Dos containers con la misma signatura de puertos y volúmenes son intercambiables desde el punto de vista del orquestador. La implementación interna -- el sistema operativo base, el lenguaje de la aplicación, la estructura de archivos -- es invisible y irrelevante para quien usa el container a través de su interfaz.
+Un container Docker está fuertemente determinado, para el orquestador, por su interfaz expuesta: puertos publicados, volúmenes montados, variables de entorno que acepta. Dos containers con la misma signatura de puertos y volúmenes son intercambiables desde ese punto de vista operativo. La implementación interna -- el sistema operativo base, el lenguaje de la aplicación, la estructura de archivos -- puede seguir importando para otros fines, pero no para la observación que hace el orquestador.
 
-### Un usuario ES su comportamiento
+### Un usuario se deja estudiar por su comportamiento
 
 Los motores de recomendación funcionan porque Yoneda es verdadero. No necesitan saber quién "es" un usuario por dentro -- su edad, sus pensamientos, su identidad. Lo que necesitan es el patrón de interacciones: qué compró, qué vio, qué calificó, con qué frecuencia. La identidad del usuario, para el sistema, ES la totalidad de sus interacciones. Dos usuarios con comportamiento isomorfo recibirán las mismas recomendaciones.
 
-### Un agente ES sus interacciones
+### Un agente se deja estudiar por sus interacciones
 
-En sistemas multi-agente, un agente está completamente determinado por lo que hace en todos los contextos posibles. No por su arquitectura interna (¿usa un LLM? ¿un árbol de decisión? ¿reglas hardcodeadas?) sino por su respuesta a cada posible input en cada posible estado. El hom-funtor del agente captura todas las maneras en que el agente puede responder al mundo, y eso es todo lo que necesito para componer agentes en un sistema.
+En sistemas multi-agente, un agente puede modelarse externamente por lo que hace en todos los contextos que la categoría de observación decide distinguir. No por su arquitectura interna (¿usa un LLM? ¿un árbol de decisión? ¿reglas hardcodeadas?) sino por su respuesta a cada posible input en cada posible estado observable. El hom-funtor del agente captura todas las maneras en que el agente puede responder al mundo dentro de ese marco, y eso suele ser suficiente para componer agentes en un sistema.
 
 ## Robots que se conocen a sí mismos
 
@@ -175,7 +175,7 @@ Esto permite razonar sobre el comportamiento global del enjambre a partir de obs
 
 Antes de Yoneda, miro los objetos por dentro para entenderlos. Abro la caja, saco las piezas, etiqueto los mecanismos. Es el enfoque reduccionista que me enseñaron: para entender algo, descomponerlo.
 
-Después de Yoneda, entiendo que descomponer no es necesario -- y a veces no es posible. Lo que determina completamente un objeto es la totalidad de sus relaciones: todos los morfismos que salen de él, todos los que llegan a él. Y el embedding de Yoneda garantiza que ninguna información se pierde en este cambio de perspectiva. La red de relaciones ES el objeto, fielmente.
+Después de Yoneda, entiendo que descomponer no es necesario -- y a veces no es posible. Lo que determina completamente un objeto, en el sentido del embedding de Yoneda, es la totalidad de sus relaciones categóricas. Ninguna información se pierde cuando paso de un objeto a su presheaf representable. La red de relaciones no reemplaza mágicamente toda descripción concreta del objeto, pero sí captura de manera plena y fiel la estructura que la categoría sabe distinguir.
 
 Este es el paso del reduccionismo al pensamiento relacional. No abandono la capacidad de mirar adentro cuando es útil, pero ya no la necesito como fundamento epistémico. Lo primero que miro ahora es la interfaz, el API, el contrato, el patrón de interacciones. Y sé, con la garantía del lema, que eso es suficiente.
 
@@ -185,4 +185,4 @@ Nat(Hom(−, A), F) ≅ F(A)
 
 para funtores contravariantes F : C^op → Set. Los morfismos que llegan a A son tan informativos como los que salen. En la práctica, esto es la dualidad entre "lo que un servicio ofrece" (endpoints que expone) y "lo que un servicio requiere" (dependencias que consume). Ambas perspectivas determinan al servicio completamente.
 
-Cuando este entendimiento se asienta, la forma de diseñar sistemas cambia. Ya no parto de "qué es este componente por dentro" sino de "cómo se relaciona este componente con todo lo demás." La identidad de una cosa son sus relaciones. Y eso no es metáfora: es un teorema.
+Cuando este entendimiento se asienta, la forma de diseñar sistemas cambia. Ya no parto de "qué es este componente por dentro" sino de "cómo se relaciona este componente con todo lo demás." La parte teoremática es Yoneda: el embedding pleno y fiel en la categoría de presheaves. Las lecturas sobre APIs, queries e interfaces son aplicaciones de modelado de ese resultado, no sustitutos literales de su formulación.

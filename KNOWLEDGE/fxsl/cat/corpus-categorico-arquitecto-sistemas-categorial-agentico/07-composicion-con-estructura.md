@@ -40,7 +40,7 @@ La jerarquia de categorias monoidales es una escalera que agrega estructura paso
 
 **Cartesian monoidal** -- el tensor es el producto categorico: el objeto terminal es la unidad, y hay proyecciones universales. En una categoria cartesiana monoidal, cada objeto es canonicamente un comonoid -- puedo copiar datos (comultiplicacion: diagonal A -> A x A) y descartar datos (counidad: A -> 1).
 
-**Compact closed** -- cada objeto tiene un dual, con Frobenius structure: los cables se pueden dividir y fusionar. Aqui viven los circuitos, el algebra lineal como categoria, y el signal flow.
+**Compact closed** -- cada objeto tiene un dual, con unidades y counidades (cups y caps) que permiten doblar cables. Aqui viven los circuitos, el algebra lineal como categoria, y el signal flow. Las estructuras de Frobenius suelen aparecer en este vecindario, pero no vienen incluidas por defecto solo por ser compact closed.
 
 **Cartesian closed (CCC)** -- productos + exponenciales. Es la cumbre para la computacion funcional.
 
@@ -104,7 +104,7 @@ La intuicion de Perrone es que un functor lax-monoidal captura "una nocion gener
 
 ## En la practica
 
-React es monoidal. Un componente `<Header />` y un componente `<Sidebar />` se renderizan en paralelo (tensor = layout side by side). Se componen en serie via children (composicion secuencial = nesting). El componente vacio `<Fragment />` es la unidad monoidal. El key insight es que la interchange law se satisface: renderizar Header al lado de Sidebar y luego poner Content debajo da el mismo resultado que cualquier otro orden de agrupamiento.
+React puede leerse provechosamente con intuición monoidal. Un componente `<Header />` y un componente `<Sidebar />` se renderizan lado a lado bajo una operación de composición de vistas; el nesting de `children` funciona como composición secuencial. `<Fragment />` es un buen análogo informal de unidad. Lo que me interesa aquí no es afirmar que React venga ya dado como categoría monoidal estrictamente formalizada, sino que su semántica composicional se beneficia de ese lenguaje.
 
 Kubernetes pods componen monoidalmente: multiples containers en un pod corren en paralelo compartiendo red y volumenes. El pod singleton es la unidad. La composicion secuencial es el pipeline de init containers seguido del container principal.
 
