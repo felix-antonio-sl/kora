@@ -205,7 +205,7 @@ Los valores de un atributo son estados del objeto-atributo. Pueden expresarse co
 
 **Regla V-8**: Un enlace de resultado hacia un objeto con estado inicial debe conectar al rectángulo del objeto, nunca directamente al estado inicial.
 
-**Regla V-115**: Todo proceso debe transformar (crear, consumir o afectar) al menos un objeto. Un proceso sin ningún enlace transformador es metodológicamente incompleto. Los enlaces habilitadores (agente, instrumento) no satisfacen este requisito.
+**Regla V-115**: Como regla general, todo proceso explícito DEBE transformar (crear, consumir o afectar) al menos un objeto. Los enlaces habilitadores (agente, instrumento) no satisfacen este requisito. Excepción: los procesos persistentes reconocidos por la capa ISO son válidos cuando el hecho del modelo consiste precisamente en mantener una condición o estado relevante en el tiempo.
 
 ### 3.2 Enlaces transformadores con estado especificado
 
@@ -973,7 +973,7 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 | V-112 | Cambio de rol solo aplica a in-zoom |
 | V-113 | Solo OPDs hoja son eliminables; nodos internos protegidos |
 | V-114 | View OPDs son colecciones ad-hoc que no participan en refinamiento |
-| V-115 | Todo proceso debe transformar (crear, consumir o afectar) al menos un objeto |
+| V-115 | Regla general: todo proceso explícito transforma al menos un objeto; excepción para procesos persistentes válidos |
 | V-116 | Semi-fold: partes como íconos de triángulo con nombre dentro del todo |
 | V-117 | Semi-fold parcial: per-refinador, algunos dentro y otros extraídos |
 | V-118 | Indicador numérico de semi-fold = refinadores ocultos, no total |

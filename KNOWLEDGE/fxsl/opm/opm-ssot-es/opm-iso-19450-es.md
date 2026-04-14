@@ -121,7 +121,7 @@ La ISO/PAS 19450 define 84 términos formales. A continuación se presentan en e
 | 3.44 | Árbol de objetos OPD | Árbol que muestra la elaboración de un objeto a través del refinamiento |
 | 3.45 | Árbol de procesos OPD | Árbol generado desde el SD por descomposición de procesos; principal mecanismo de navegación |
 | 3.46 | Operación | Proceso que caracteriza una cosa, es decir, lo que esa cosa hace |
-| 3.47 | Enlace de resultado | Enlace desde un proceso transformador hacia el estado de salida de un objeto |
+| 3.47 | Enlace de resultado | Enlace desde un proceso transformador hacia un objeto resultante o, cuando el estado de salida se especifica explícitamente, hacia su estado de salida |
 | 3.48 | Recomposición de objeto | Inverso de la descomposición de objeto |
 | 3.49 | Recomposición de proceso | Inverso de la descomposición de proceso |
 | 3.50 | Perseverancia | Propiedad: estática para objeto, dinámica para proceso |
@@ -255,7 +255,7 @@ Un objeto es una cosa que existe o puede existir física o informacionalmente. S
 
 Un proceso transforma uno o más objetos creándolos, afectándolos o consumiéndolos. Tiene duración positiva. Se representa con una elipse.
 
-**Procesos persistentes (§7.2.1 NOTE 2):** existen procesos persistentes cuyo efecto es mantener el estado de un objeto, no cambiarlo. La semántica de un proceso persistente es mantener al objeto en su estado actual. Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*, *Permanecer*, *Esperar*, *Prolongar*, *Extender*, *Demorar*, *Ocupar*, *Persistir*, *Continuar*, *Soportar*, *Retener*. Para objetos biológicos, *Existir* implica *Vivir*.
+**Procesos persistentes (§7.2.1 NOTE 2):** ISO/PAS 19450 también reconoce casos límite en los que un proceso explícito mantiene un estado o condición relevante en el tiempo en vez de introducir un cambio neto observable. Estos casos no invalidan la ontología general de OPM, pero tampoco convierten el mantenimiento de estado en patrón por defecto. Deben reservarse para situaciones en que la temporalidad, el esfuerzo sostenido o la condición mantenida formen parte del hecho del modelo. Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*, *Permanecer*, *Esperar*, *Prolongar*, *Extender*, *Demorar*, *Ocupar*, *Persistir*, *Continuar*, *Soportar*, *Retener*. Para objetos biológicos, *Existir* implica *Vivir*.
 
 ### Prueba Objeto-Proceso
 
