@@ -1597,6 +1597,11 @@ Catalog:
       de Sistemas
     file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md
     status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm
+    title: Metodología de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md
+    status: published
   - urn: urn:fxsl:kb:multicategory-multimodel-query-processing
     title: 'MultiCategory: Multi-Model Query Processing'
     file: KNOWLEDGE/fxsl/cat/multicategory-multimodel-query-processing.md
@@ -1615,27 +1620,7 @@ Catalog:
     status: published
   - urn: urn:fxsl:kb:opm-iso-19450-es
     title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450.md
-    status: published
-  - urn: urn:fxsl:kb:opm-iso-19450-es-p02
-    title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso - Parte 02
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450--p02.md
-    status: published
-  - urn: urn:fxsl:kb:opm-iso-19450-es-p03
-    title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso - Parte 03
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450--p03.md
-    status: published
-  - urn: urn:fxsl:kb:opm-iso-19450-es-p04
-    title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso - Parte 04
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450--p04.md
-    status: published
-  - urn: urn:fxsl:kb:opm-iso-19450-es-p05
-    title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso - Parte 05
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450--p05.md
-    status: published
-  - urn: urn:fxsl:kb:opm-iso-19450-es-p06
-    title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso - Parte 06
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450--p06.md
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md
     status: published
   - urn: urn:fxsl:kb:opm-mbse-acr-tutorial
     title: ACR Tutorial — OPM History and Modeling the Automatic Crash Response System
@@ -1660,6 +1645,10 @@ Catalog:
   - urn: urn:fxsl:kb:opm-structural-relations
     title: OPM Structural Relations — Fundamental Relations, States, and Hierarchies
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md
+    status: published
+  - urn: urn:fxsl:kb:opm-visual-es
+    title: Especificación formal de la gramática visual OPM
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md
     status: published
   - urn: urn:fxsl:kb:procrastination-sirois
     title: Procrastination — Sirois (2022)
