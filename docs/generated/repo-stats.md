@@ -5,8 +5,8 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 ## Resumen
 
 - Agent workspaces activos: 25
-- Workspaces deprecated: 1
-- Workspaces incompletos: 5
+- Workspaces deprecated: 5
+- Workspaces incompletos: 0
 - Artefactos bootstrap de agente: 134
 - Entradas totales de catalogo: 704
 

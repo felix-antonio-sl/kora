@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 2440,
-    "node_count": 791,
-    "edge_count": 3811
+    "scanned_files": 2365,
+    "node_count": 774,
+    "edge_count": 3662
   },
   "node_kind_counts": {
-    "artifact": 138,
+    "artifact": 130,
     "knowledge": 355,
     "skill": 190,
     "spec": 8,
-    "tool": 70,
-    "workspace": 30
+    "tool": 66,
+    "workspace": 25
   },
   "edge_kind_counts": {
-    "AllowsKB": 360,
-    "AllowsTool": 127,
+    "AllowsKB": 344,
+    "AllowsTool": 124,
     "ContainsArtifact": 128,
     "ContainsSkill": 186,
-    "DeclaresTool": 135,
-    "InvokesSkill": 189,
+    "DeclaresTool": 125,
+    "InvokesSkill": 180,
     "RoutesToAgent": 13,
     "TracesTo": 48,
-    "XRef": 2625
+    "XRef": 2514
   },
   "nodes": [
     {
@@ -77,21 +77,6 @@
       "title": "Perfil",
       "path": "AGENTS/dev/steipete/USER.md",
       "namespace": "dev"
-    },
-    {
-      "id": "urn:dev:kb:agentic-engineering-praxis",
-      "kind": "artifact",
-      "urn": "urn:dev:kb:agentic-engineering-praxis"
-    },
-    {
-      "id": "urn:dev:kb:agentic-tooling-inventory",
-      "kind": "artifact",
-      "urn": "urn:dev:kb:agentic-tooling-inventory"
-    },
-    {
-      "id": "urn:dev:kb:peter-steinberger-gemelo-digital-intelectual",
-      "kind": "artifact",
-      "urn": "urn:dev:kb:peter-steinberger-gemelo-digital-intelectual"
     },
     {
       "id": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
@@ -362,31 +347,6 @@
       "title": "USER.md",
       "path": "AGENTS/fxsl/opm-specialist/USER.md",
       "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "kind": "artifact",
-      "urn": "urn:fxsl:kb:opcloud-tutorial-videos"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-applied-system-modeling",
-      "kind": "artifact",
-      "urn": "urn:fxsl:kb:opm-applied-system-modeling"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-canonical-example",
-      "kind": "artifact",
-      "urn": "urn:fxsl:kb:opm-canonical-example"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-canonical-example.",
-      "kind": "artifact",
-      "urn": "urn:fxsl:kb:opm-canonical-example."
-    },
-    {
-      "id": "urn:fxsl:kb:opm-sd-wizard",
-      "kind": "artifact",
-      "urn": "urn:fxsl:kb:opm-sd-wizard"
     },
     {
       "id": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
@@ -1793,7 +1753,7 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "title": "Metodología de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas",
+      "title": "Metodología de Modelado OPM — Protocolo de Modelado Conceptual de Sistemas",
       "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md",
       "namespace": "fxsl"
     },
@@ -6208,11 +6168,6 @@
       "namespace": "kora"
     },
     {
-      "id": "tool:Disciplina",
-      "kind": "tool",
-      "name": "Disciplina"
-    },
-    {
       "id": "tool:Examples",
       "kind": "tool",
       "name": "Examples"
@@ -6363,11 +6318,6 @@
       "name": "estado"
     },
     {
-      "id": "tool:exec",
-      "kind": "tool",
-      "name": "exec"
-    },
-    {
       "id": "tool:file_write",
       "kind": "tool",
       "name": "file_write"
@@ -6416,11 +6366,6 @@
       "id": "tool:load_neo_protocol",
       "kind": "tool",
       "name": "load_neo_protocol"
-    },
-    {
-      "id": "tool:message",
-      "kind": "tool",
-      "name": "message"
     },
     {
       "id": "tool:monitor_workers",
@@ -6538,11 +6483,6 @@
       "name": "urn_resolve"
     },
     {
-      "id": "tool:web_fetch",
-      "kind": "tool",
-      "name": "web_fetch"
-    },
-    {
       "id": "tool:web_search",
       "kind": "tool",
       "name": "web_search"
@@ -6556,41 +6496,6 @@
       "id": "tool:workspace_write",
       "kind": "tool",
       "name": "workspace_write"
-    },
-    {
-      "id": "workspace:OMEGA/clawforge-host-native",
-      "kind": "workspace",
-      "workspace": "OMEGA/clawforge-host-native",
-      "namespace": "OMEGA",
-      "path": "AGENTS/OMEGA/clawforge-host-native"
-    },
-    {
-      "id": "workspace:OMEGA/mente-omega-host-native",
-      "kind": "workspace",
-      "workspace": "OMEGA/mente-omega-host-native",
-      "namespace": "OMEGA",
-      "path": "AGENTS/OMEGA/mente-omega-host-native"
-    },
-    {
-      "id": "workspace:OMEGA/salubrista-hah",
-      "kind": "workspace",
-      "workspace": "OMEGA/salubrista-hah",
-      "namespace": "OMEGA",
-      "path": "AGENTS/OMEGA/salubrista-hah"
-    },
-    {
-      "id": "workspace:OMEGA/salubrista-host-native",
-      "kind": "workspace",
-      "workspace": "OMEGA/salubrista-host-native",
-      "namespace": "OMEGA",
-      "path": "AGENTS/OMEGA/salubrista-host-native"
-    },
-    {
-      "id": "workspace:OMEGA/steipete-host-native",
-      "kind": "workspace",
-      "workspace": "OMEGA/steipete-host-native",
-      "namespace": "OMEGA",
-      "path": "AGENTS/OMEGA/steipete-host-native"
     },
     {
       "id": "workspace:dev/steipete",
@@ -6771,18 +6676,6 @@
   "edges": [
     {
       "kind": "AllowsKB",
-      "source": "workspace:dev/steipete",
-      "target": "urn:dev:kb:agentic-engineering-praxis",
-      "source_path": "AGENTS/dev/steipete/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:dev/steipete",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "source_path": "AGENTS/dev/steipete/config.json"
-    },
-    {
-      "kind": "AllowsKB",
       "source": "workspace:fxsl/arquitecto-sistemas-informacion",
       "target": "urn:fxsl:kb:algebraic-databases",
       "source_path": "AGENTS/fxsl/arquitecto-sistemas-informacion/config.json"
@@ -6900,12 +6793,6 @@
       "source": "workspace:fxsl/ontologista-gist",
       "target": "urn:fxsl:kb:fx-uom-model",
       "source_path": "AGENTS/fxsl/ontologista-gist/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/opm-specialist",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
     },
     {
       "kind": "AllowsKB",
@@ -8733,84 +8620,6 @@
     },
     {
       "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:gestion-redes-general",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:gestion-redes-herramientas",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:gestion-redes-indice",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:gestion-redes-salud-mental",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:gestion-redes-unidades",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:gestion-redes-urgencias",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:hodom-direccion-tecnica",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:references/core",
-      "target": "urn:salud:kb:hodom-situacion-chile-2026",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsKB",
       "source": "workspace:salud/salubrista",
       "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
       "source_path": "AGENTS/salud/salubrista/config.json"
@@ -9618,24 +9427,6 @@
       "source": "workspace:korvo/korax",
       "target": "tool:triaje",
       "source_path": "AGENTS/korvo/korax/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:references/core",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:references/core",
-      "target": "tool:knowledge_retrieval",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:references/core",
-      "target": "tool:web_search",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "AllowsTool",
@@ -11263,24 +11054,6 @@
     },
     {
       "kind": "DeclaresTool",
-      "source": "workspace:clawforge-host-native/workspace",
-      "target": "tool:exec",
-      "source_path": "AGENTS/OMEGA/clawforge-host-native/workspace/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:clawforge-host-native/workspace",
-      "target": "tool:message",
-      "source_path": "AGENTS/OMEGA/clawforge-host-native/workspace/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:clawforge-host-native/workspace",
-      "target": "tool:web_fetch",
-      "source_path": "AGENTS/OMEGA/clawforge-host-native/workspace/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
       "source": "workspace:dev/steipete",
       "target": "tool:cancel_worker",
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
@@ -11974,48 +11747,6 @@
       "source": "workspace:reference/templates",
       "target": "tool:Examples",
       "source_path": "KNOWLEDGE/agengai/openclaw/documentacion-oficial/reference/templates/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:references/core",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:references/core",
-      "target": "tool:knowledge_retrieval",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:references/core",
-      "target": "tool:web_search",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:salubrista-host-native/workspace",
-      "target": "tool:Disciplina",
-      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:salubrista-host-native/workspace",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:salubrista-host-native/workspace",
-      "target": "tool:knowledge_retrieval",
-      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:salubrista-host-native/workspace",
-      "target": "tool:web_search",
-      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
@@ -13100,60 +12831,6 @@
     {
       "kind": "InvokesSkill",
       "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-CLARIFIER",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-EPI-VIGILANCE",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-HAH-SPECIALIST",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-HOSPITAL-SYSTEM-ANALYST",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-IMPLEMENTATION-PLANNER",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-INTENT-HOSPITALIZATION",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-PRODUCT-BUILDER",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-QUALITY-AUDITOR",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "missing-skill:core/CM-REPORT-BUILDER",
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
@@ -13663,181 +13340,6 @@
     },
     {
       "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-canonical-example",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-canonical-example.",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-sd-wizard",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
-      "target": "urn:fxsl:kb:opm-sd-wizard",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md",
-      "target": "urn:fxsl:kb:opm-sd-wizard",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/opl-plantillas-es.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/opl-plantillas-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
-      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
-      "target": "urn:salud:kb:hodom-direccion-tecnica",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
-      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
-      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
-      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
-      "target": "urn:salud:kb:hodom-situacion-chile-2026",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
-    },
-    {
-      "kind": "XRef",
       "source": "file:AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md",
       "target": "urn:agengai:kb:openclaw-manual-integral",
       "fragment": null,
@@ -13863,111 +13365,6 @@
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/assets/docker-compose-template.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
-      "target": "urn:fxsl:kb:opm-canonical-example",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
-      "target": "urn:fxsl:kb:opm-sd-wizard",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
     },
     {
       "kind": "XRef",
@@ -19200,36 +18597,8 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
-      "target": "urn:dev:kb:agentic-engineering-praxis",
-      "fragment": null,
-      "source_path": "AGENTS/dev/steipete/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-agents:1.6.0",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "AGENTS/dev/steipete/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
       "target": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
-      "fragment": null,
-      "source_path": "AGENTS/dev/steipete/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
-      "target": "urn:dev:kb:agentic-engineering-praxis",
-      "fragment": null,
-      "source_path": "AGENTS/dev/steipete/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/config.json"
     },
@@ -19256,31 +18625,10 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:agent-bootstrap:steipete-tools:1.6.0",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "AGENTS/dev/steipete/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
       "target": "urn:dev:agent-bootstrap:steipete-user:1.6.0",
       "fragment": null,
       "source_path": "AGENTS/dev/steipete/USER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
-      "target": "urn:dev:kb:agentic-engineering-praxis",
-      "fragment": null,
-      "source_path": "AGENTS/_perfiles/peter-steinberger-ingeniero-agentico-prodigio.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
-      "target": "urn:dev:kb:peter-steinberger-gemelo-digital-intelectual",
-      "fragment": null,
-      "source_path": "AGENTS/_perfiles/peter-steinberger-ingeniero-agentico-prodigio.md"
     },
     {
       "kind": "XRef",
@@ -19831,13 +19179,6 @@
     {
       "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/opm-specialist/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:opm-specialist-config:1.0.0",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "AGENTS/fxsl/opm-specialist/config.json"
@@ -19860,13 +19201,6 @@
       "kind": "XRef",
       "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
       "target": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:opm-specialist-tools:1.0.0",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
       "fragment": null,
       "source_path": "AGENTS/fxsl/opm-specialist/TOOLS.md"
     },
@@ -20454,13 +19788,6 @@
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:opm-iso-19450",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md"
@@ -20490,13 +19817,6 @@
       "kind": "XRef",
       "source": "urn:fxsl:kb:opm-iso-19450-es",
       "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
     },
@@ -29262,13 +28582,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
     },
     {
@@ -29276,21 +28589,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -29304,21 +28603,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:gestion-redes-general",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-general",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-herramientas",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -29332,21 +28617,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:gestion-redes-indice",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-indice",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-salud-mental",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -29360,21 +28631,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:gestion-redes-unidades",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-unidades",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -29388,21 +28645,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:hodom-direccion-tecnica",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -29416,21 +28659,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-manual-alta-complejidad",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -29444,13 +28673,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
     },
     {
@@ -29458,21 +28680,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
-      "target": "urn:salud:kb:hodom-situacion-chile-2026",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/IDENTITY.md"
     },
     {
       "kind": "XRef",
@@ -29486,13 +28694,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/SOUL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/SOUL.md"
     },
     {
@@ -29500,28 +28701,7 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
     },
     {
       "kind": "XRef",
@@ -29542,20 +28722,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-general",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-general",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-general",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29570,20 +28736,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-herramientas",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-herramientas",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-herramientas",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29598,20 +28750,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-indice",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-indice",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-indice",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29626,20 +28764,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-salud-mental",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-salud-mental",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-salud-mental",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29654,20 +28778,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-unidades",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-unidades",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-unidades",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29682,20 +28792,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-urgencias",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-urgencias",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:gestion-redes-urgencias",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29710,20 +28806,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29738,20 +28820,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-direccion-tecnica",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-direccion-tecnica",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-direccion-tecnica",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29766,20 +28834,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-manual-alta-complejidad",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29794,20 +28848,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-norma-tecnica-2024",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29822,20 +28862,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29850,20 +28876,6 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-situacion-chile-2026",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
-      "target": "urn:salud:kb:hodom-situacion-chile-2026",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -29872,13 +28884,6 @@
       "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0",
-      "target": "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/USER.md"
     },
     {
       "kind": "XRef",
@@ -30403,21 +29408,7 @@
       "source": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
-      "fragment": null,
       "source_path": "KNOWLEDGE/salud/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:kb:hodom-direccion-tecnica",
-      "target": "urn:salud:kb:hodom-direccion-tecnica",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/director/01-manual-direccion-tecnica.md"
     },
     {
       "kind": "XRef",
@@ -30431,21 +29422,7 @@
       "source": "urn:salud:kb:hodom-manual-alta-complejidad",
       "target": "urn:salud:kb:hodom-manual-alta-complejidad",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/director/02-manual-alta-complejidad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
-      "fragment": null,
       "source_path": "KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/normativa/03-norma-tecnica-hodom-2024.md"
     },
     {
       "kind": "XRef",
@@ -30459,21 +29436,7 @@
       "source": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/normativa/01-reglamento-hodom-ds1-2022.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
-      "fragment": null,
       "source_path": "KNOWLEDGE/salud/hodom/normativa/01-reglamento-hodom-ds1-2022.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:kb:hodom-situacion-chile-2026",
-      "target": "urn:salud:kb:hodom-situacion-chile-2026",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/director/03-situacion-chile-2026.md"
     },
     {
       "kind": "XRef",
@@ -30536,21 +29499,7 @@
       "source": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-CLARIFIER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-CLARIFIER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-EPI-VIGILANCE.md"
     },
     {
       "kind": "XRef",
@@ -30564,21 +29513,7 @@
       "source": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-HAH-SPECIALIST.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-HAH-SPECIALIST.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-HOSPITAL-SYSTEM-ANALYST.md"
     },
     {
       "kind": "XRef",
@@ -30592,21 +29527,7 @@
       "source": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-IMPLEMENTATION-PLANNER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-IMPLEMENTATION-PLANNER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-INTENT-HOSPITALIZATION.md"
     },
     {
       "kind": "XRef",
@@ -30620,13 +29541,6 @@
       "source": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-PRODUCT-BUILDER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-PRODUCT-BUILDER.md"
     },
     {
@@ -30634,21 +29548,7 @@
       "source": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
       "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-QUALITY-AUDITOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
-      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-QUALITY-AUDITOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:salud:skill:salubrista-hah-report-builder:1.0.0",
-      "target": "urn:salud:skill:salubrista-hah-report-builder:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-REPORT-BUILDER.md"
     },
     {
       "kind": "XRef",

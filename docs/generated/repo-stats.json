@@ -1,7 +1,7 @@
 {
   "agent_workspaces": 25,
-  "deprecated_workspaces": 1,
-  "incomplete_workspaces": 5,
+  "deprecated_workspaces": 5,
+  "incomplete_workspaces": 0,
   "agent_bootstrap_artifacts": 134,
   "catalog_counts": {
     "Agents": 134,

@@ -1598,8 +1598,7 @@ Catalog:
     file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md
     status: published
   - urn: urn:fxsl:kb:metodologia-modelamiento-opm
-    title: Metodología de Modelamiento OPM — Protocolo de Modelamiento Conceptual
-      de Sistemas
+    title: Metodología de Modelado OPM — Protocolo de Modelado Conceptual de Sistemas
     file: KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md
     status: published
   - urn: urn:fxsl:kb:multicategory-multimodel-query-processing

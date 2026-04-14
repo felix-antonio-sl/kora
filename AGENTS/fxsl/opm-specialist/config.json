@@ -5,7 +5,6 @@
   },
   "allowed_kb": [
     "urn:fxsl:kb:opm-iso-19450",
-    "urn:fxsl:kb:opcloud-tutorial-videos",
     "urn:fxsl:kb:opm-opl-es"
   ],
   "sandbox": {

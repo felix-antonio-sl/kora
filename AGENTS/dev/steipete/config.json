@@ -3,10 +3,7 @@
     "urn": "urn:dev:agent-bootstrap:steipete-config:1.6.0",
     "type": "bootstrap_config"
   },
-  "allowed_kb": [
-    "urn:dev:kb:agentic-engineering-praxis",
-    "urn:dev:kb:agentic-tooling-inventory"
-  ],
+  "allowed_kb": [],
   "sandbox": {
     "mode": "permissive"
   },

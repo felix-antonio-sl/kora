@@ -1,0 +1,8 @@
+{
+  "_manifest": {
+    "urn": "urn:omega:agent-bootstrap:salubrista-hah-config:1.0.0",
+    "type": "bootstrap_config",
+    "status": "deprecated",
+    "note": "OpenClaw skill module — actual workspace is AGENTS/salud/salubrista-hah, not subject to KORA workspace validation"
+  }
+}

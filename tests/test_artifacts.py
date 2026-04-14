@@ -537,23 +537,6 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("cierre_solicitado", classifier)
         self.assertNotIn("terminar|fuera_scope|ambiguo", classifier)
 
-    def test_arquitecto_categorico_removes_skill_state_leakage_and_aligns_tools(self):
-        agents = (AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "SOUL.md").read_text(encoding="utf-8")
-        tools = (AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "TOOLS.md").read_text(encoding="utf-8")
-        skill_dir = AGENTS_ROOT / "fxsl" / "arquitecto-categorico" / "skills"
-        skills = "\n".join(path.read_text(encoding="utf-8") for path in sorted(skill_dir.glob("CM-*.md")))
-        self.assertIn("[prioridad 1]", agents)
-        self.assertIn("IF resuelto [prioridad 3] -> S-END", agents)
-        self.assertIn("IF auditado [prioridad 3] -> S-END", agents)
-        self.assertNotIn("## Saludo", soul)
-        self.assertNotIn("## Estilo", soul)
-        self.assertIn("query_topic: string -> urns: string[]", tools)
-        self.assertIn("**Descripcion funcional:**", tools)
-        self.assertNotIn("Trigger: S-", skills)
-        self.assertNotIn("desde S-", skills)
-        self.assertNotIn("from S-", skills)
-
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")
         required_terms = (

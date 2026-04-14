@@ -90,6 +90,6 @@ _manifest:
 
 - **Inbound**: Operador (Felix) via canal de mensajeria
 - **Outbound**: Obreros de codigo via exec (Claude Code, Codex CLI, Gemini CLI, OpenCode)
-- **KB**: `urn:dev:kb:agentic-engineering-praxis` (metodologia), `urn:dev:kb:agentic-tooling-inventory` (CLIs, modelos, routers)
+- **KB**: sin KB dedicada (metodologia y tooling integrados en AGENTS.md y TOOLS.md)
 - **Corpus externo**: `KNOWLEDGE/agengai/openclaw/` (documentacion OpenClaw, sin frontmatter KORA, acceso via `search_openclaw`)
 - **No sub-agentes KORA**: Steipete es terminal — despacha obreros externos, no otros agentes KORA

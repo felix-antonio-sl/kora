@@ -586,8 +586,8 @@ Su sistema de produccion de software puede comprimirse asi:
 
 | Fuente | Uso |
 | --- | --- |
-| [agentic-engineering-praxis](urn:dev:kb:agentic-engineering-praxis) | base metodologica local |
-| [peter-steinberger-gemelo-digital-intelectual](urn:dev:kb:peter-steinberger-gemelo-digital-intelectual) | rasgos generales ya sintetizados |
+| agentic-engineering-praxis (absorbido en AGENTS.md) | base metodologica local |
+| peter-steinberger-gemelo-digital-intelectual (absorbido en perfil) | rasgos generales ya sintetizados |
 | [My Current AI Dev Workflow](https://steipete.me/posts/2025/optimal-ai-development-workflow) | setup, blast radius, contexto, tooling |
 | [Just Talk To It](https://steipete.me/posts/just-talk-to-it) | codex, prompts cortos, anti-charade, steerability |
 | [Shipping at Inference-Speed](https://steipete.me/posts/2025/shipping-at-inference-speed) | multiproyecto, queueing, main, docs, config, throughput |

@@ -1312,4 +1312,3 @@ Purpose: change Business Success of Company Stakeholder Group from current to im
 - **Baggage Transportation**: main function changes baggage location from origin airport to destination airport; useful for state change and SD function framing.
 - **Conference System**: organizer and ushers are agents; facilities/equipment are instruments; weather can be environmental despite the system being social.
 
-For OPCloud tool procedures, UI workflows and feature details, see `urn:fxsl:kb:opcloud-tutorial-videos`.

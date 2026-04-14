@@ -1,9 +1,9 @@
 ---
-name: openclaw-lifecycle-manager
-description: Gestiona el ciclo de vida de agentes y skills OpenClaw dentro de ClawForge. Usar para clasificar, validar, publicar, instalar, actualizar, deprecar o retirar agentes OpenClaw y skills OpenClaw, revisando siempre primero la SSOT local de OpenClaw.
 _manifest:
   urn: urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0
   type: lazy_load_endofunctor
+  name: openclaw-lifecycle-manager
+  description: Gestiona el ciclo de vida de agentes y skills OpenClaw dentro de ClawForge. Usar para clasificar, validar, publicar, instalar, actualizar, deprecar o retirar agentes OpenClaw y skills OpenClaw, revisando siempre primero la SSOT local de OpenClaw.
 extensions:
   kora:
     skill:

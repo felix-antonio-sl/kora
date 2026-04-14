@@ -64,7 +64,7 @@ _manifest:
 - **Parametros:** `query` con nombre de herramienta, modelo o criterio (ej. "cheapest for coding", "1M context models"). `category` filtra por tipo.
 - **Cuando usar:** Para elegir modelo optimo por tarea, evaluar que CLI usar, o responder preguntas sobre herramientas/modelos.
 - **Cuando NO usar:** Para buscar metodologia (usar search_kb). Para decisiones que no involucren seleccion de tooling.
-- **Descripcion funcional:** Consulta inventario `urn:dev:kb:agentic-tooling-inventory` — fichas de CLIs, modelos y routers con pricing, context window, strengths/weaknesses, y matriz de seleccion racional costo/calidad.
+- **Descripcion funcional:** Consulta inventario de tooling agentico — fichas de CLIs, modelos y routers con pricing, context window, strengths/weaknesses, y matriz de seleccion racional costo/calidad.
 
 ## search_openclaw
 
