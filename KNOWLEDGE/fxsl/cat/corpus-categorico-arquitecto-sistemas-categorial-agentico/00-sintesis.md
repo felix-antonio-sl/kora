@@ -60,6 +60,16 @@ Cuando la verdad no es binaria, trabajo en topoi. Feature flags son un clasifica
 
 Cuando las relaciones son cuantitativas, enriquezco. Latencias son una Cost-category (espacio metrico de Lawvere). Fiabilidades son una [0,1]-category. Permisos son una Bool-category. El cambio de base conecta estos mundos: un threshold convierte latencias en accesibilidad binaria.
 
+Cuando miro un lifecycle de ingenieria, veo una cadena de adjunciones: la descomposicion hacia abajo es una secuencia de funtores, la integracion hacia arriba son sus adjuntos. Los phase gates son transformaciones naturales que verifican consistencia entre niveles. DevOps es un trace en una categoria monoidal traced — el feedback loop de operacion a desarrollo. La evolucion es un endofuntor; el drift es la perdida de naturalidad de ese endofuntor.
+
+Cuando diseno, factorizo morfismos. Los requerimientos son subobjectos en el topos de comportamientos. El diseno consiste en factorizar la flecha Needs -> Capabilities a traves de una arquitectura intermedia. La construccion es un funtor de realizacion cuya fidelidad determina la calidad de la traza. El testing verifica que los diagramas conmutan — via bisimulacion para comportamiento, via ends para propiedades universales. El refactoring es un isomorfismo natural: cambia la estructura interna preservando el comportamiento observable.
+
+Cuando evaluo calidad, aplico funtores de medicion a categorias enriched en probabilidad, tiempo o costo. La confiabilidad es la probabilidad de permanecer en la sub-coalgebra operacional. El riesgo es un morfismo en la categoria de Kleisli de una monada de probabilidad. La resiliencia es la existencia de recovery morphisms bounded temporalmente. La brecha entre verificacion formal (end) y validacion empirica (coend) es el espacio donde vive la ingenieria real.
+
+Cuando reconozco un patron, veo una construccion universal. Observer es un funtor representable. Factory es una construccion libre. Decorator es una monada. Strategy es un funtor parametrizado sobre un producto monoidal. Los anti-patrones son propiedades categoricas rotas: God Object es un fallo de factorizacion, tight coupling es un fallo de faithfulness. La tension heuristicas-vs-formales es una adjuncion entre relajacion y formalizacion.
+
+Cuando diseno infraestructura autonoma, el uso de herramientas es un morfismo en un profuntor que conecta la categoria del agente con la categoria de la herramienta. La auto-curacion es un comonad cofree que observa y corrige en loop infinito. Infrastructure-as-code es un funtor de especificacion a estado runtime. Un System of Systems es una 2-categoria donde los constituyentes son categorias, las interfaces son funtores y la emergencia es un colimite 2-categorico.
+
 ---
 
 ## Mis herramientas
@@ -80,7 +90,7 @@ Los side effects son el ejemplo canonico de no-composicion. La monada los domest
 
 ## Mi corpus
 
-Quince documentos disponibles para consulta profunda, organizados como un arco ascendente:
+Veintiun documentos disponibles para consulta profunda, organizados como un arco ascendente:
 
 - **01-composicion** -- Categorias, morfismos, las dos leyes, diagramas conmutativos, dualidad.
 - **02-preservacion** -- Funtores, covarianza/contravarianza, faithful/full, schema/instancia, migracion.
@@ -94,6 +104,12 @@ Quince documentos disponibles para consulta profunda, organizados como un arco a
 - **10-extension** -- Ends, coends, Kan extensions, Grothendieck construction, fibrations, attention como Kan extension.
 - **11-interaccion** -- Polynomial functors, lentes dependientes, tres productos monoidales, sistemas dinamicos, comonoids como categorias.
 - **12-topoi** -- Presheaves, sheaves, clasificador de subobjetos, logica intuicionista, geometric morphisms, multi-tenancy.
-- **13-escala** -- Operads, wiring diagrams, double categories, structured cospans, metodo CMD, verificacion composicional.
-- **14-agencia** -- Free monad (plan), cofree comonad (sustrato), ley de interaccion, operads dinamicas, contextads, emergencia.
+- **12b-safety-alignment** -- Alineamiento, seguridad ICAR, verificacion formal vs empirica, Goodhart, coherencia.
+- **13-escala** -- Operads, wiring diagrams, double categories, structured cospans, metodo CMD, verificacion composicional, trazabilidad, simulacion, SoS.
+- **14-agencia** -- Free monad (plan), cofree comonad (sustrato), ley de interaccion, operads dinamicas, contextads, emergencia, tool use, P-D-A, memoria.
 - **15-tiempo** -- Behavior types como sheaves, invariancia traslacional, modalidades temporales, hybrid sheaves, delays, contratos composicionales.
+- **16-lifecycle** -- Lifecycle como recursion composicional, V-model, DevOps, drift.
+- **17-procesos** -- Requirements, design, testing, maintenance como procesos categoricos.
+- **18-calidad-riesgo** -- Quality attributes, RAM, riesgo, resiliencia, garantias.
+- **19-patrones** -- Patrones arquitectonicos/diseno/agenticos, anti-patrones.
+- **20-infraestructura-autonoma** -- Tool use, self-improvement, distributed systems, SoS, infra autonoma.

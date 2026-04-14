@@ -142,6 +142,40 @@ El modelo del producto R es el colimite del diagrama. La propiedad universal dic
 
 Lo notable es que Kovalyov extiende esto al problema inverso: dada una especificacion R del producto final, encontrar las configuraciones de ensamblaje que lo producen. Esto es exactamente el problema de factorizar un colimite en sus componentes -- el dual del problema de descomposicion que uso cada vez que refactorizo un sistema monolitico en microservicios.
 
+## Trazabilidad como funtor
+
+La trazabilidad -- la capacidad de seguir un requisito desde su formulacion hasta su implementacion -- es una composicion de funtores. El funtor F1 : Requirements -> Architecture mapea cada requisito al componente arquitectonico que lo satisface, y cada relacion entre requisitos a una relacion entre componentes. El funtor F2 : Architecture -> Code mapea cada componente arquitectonico al modulo de codigo que lo implementa.
+
+La trazabilidad end-to-end es la composicion F2 . F1 : Requirements -> Code. Cada requisito se conecta, a traves de la composicion, con el codigo que lo implementa. La functorialidad garantiza que las relaciones se preservan: si dos requisitos estan relacionados (uno depende del otro), los modulos de codigo correspondientes estan relacionados (uno importa al otro).
+
+La brecha de trazabilidad ocurre cuando la composicion F2 . F1 no es faithful -- cuando pierde informacion. Si dos requisitos distintos r1 y r2 se mapean al mismo componente arquitectonico F1(r1) = F1(r2) y luego al mismo modulo de codigo, la composicion no puede distinguirlos. Desde el codigo, no se puede rastrear de vuelta a cual requisito se satisface. La brecha es el kernel del funtor compuesto: el conjunto de pares de requisitos que la composicion no distingue.
+
+El grafo de trazabilidad es la imagen del funtor compuesto -- la subcategoria de Code que esta efectivamente conectada a Requirements a traves de la composicion. Los modulos de codigo fuera de la imagen son "codigo huerfano" sin requisito trazable. Los requisitos cuya imagen es vacia son "requisitos no implementados." La trazabilidad completa es la condicion de que el funtor compuesto sea esencialmente sobreyectivo (todo codigo tiene requisito) y faithful (todo requisito se distingue).
+
+## Simulacion como ejecucion de morfismos
+
+Una simulacion ejecuta un camino especifico de morfismos en la categoria del sistema y observa el resultado. Dado un estado inicial s0 y una secuencia de transiciones f1, f2, ..., fn, la simulacion calcula fn . ... . f2 . f1 (s0) -- la composicion evaluada en el estado inicial.
+
+La simulacion Monte Carlo es el muestreo de caminos aleatorios. Cada camino es una secuencia de morfismos en la Kleisli category de una monada de probabilidad P. El morfismo Kleisli f : A -> P(B) no produce un resultado determinista sino una distribucion sobre resultados. La composicion Kleisli de n pasos produce una distribucion sobre estados finales. Muestrear K caminos y promediar los resultados es la aproximacion Monte Carlo del valor esperado -- la integral sobre la medida que la monada P define.
+
+El digital twin es un funtor de simulacion faithful. El funtor Sim : Physical -> Computational mapea la categoria del sistema fisico (estados reales, transiciones reales) a la categoria del modelo computacional (estados simulados, transiciones simuladas). La fidelidad del funtor -- que Sim sea faithful -- garantiza que transiciones distintas en el sistema fisico producen transiciones distintas en la simulacion. Un digital twin faithful no pierde informacion: todo lo que ocurre en el sistema fisico se refleja en el modelo.
+
+La calibracion del digital twin es el ajuste del funtor Sim para que se aproxime a un funtor faithful. Cada discrepancia entre el sistema fisico y la simulacion es un morfismo en el kernel de Sim -- una transicion real que la simulacion no distingue. Reducir el kernel es calibrar. Un digital twin perfecto tiene kernel trivial -- es un funtor fully faithful, un embedding de la categoria fisica en la categoria computacional.
+
+## Systems of Systems formalmente
+
+Un System of Systems (SoS) es una 2-categoria. Los objetos son los sistemas constituyentes, cada uno con su propia estructura interna. Los 1-morfismos son las interfaces entre sistemas -- funtores que conectan la categoria de un sistema con la de otro. Los 2-cells son las adaptaciones de interfaces -- transformaciones naturales que expresan como una interfaz se modifica o se sustituye por otra.
+
+Los tipos de SoS reconocidos por la ingenieria de sistemas tienen formulaciones 2-categoricas distintas.
+
+Un Acknowledged SoS tiene gobernanza central. Categoricamente, es una composicion 2-categorica fuerte: los 2-cells son transformaciones naturales genuinas, los diagramas de coherencia conmutan estrictamente, y hay un funtor de coordinacion central que supervisa la composicion. Los constituyentes aceptan la gobernanza y ajustan sus interfaces segun la coordinacion. La composicion es predecible porque la estructura 2-categorica es estricta.
+
+Un Collaborative SoS opera por negociacion entre constituyentes. Categoricamente, es una composicion debil: los 2-cells son pseudo-naturales o lax-naturales, los diagramas de coherencia conmutan solo up to isomorphism, y la composicion se ajusta dinamicamente mediante negociacion. Los constituyentes tienen autonomia para proponer y rechazar adaptaciones de interfaces. La composicion es menos predecible pero mas flexible.
+
+Un Virtual SoS es una yuxtaposicion sin coordinacion explicita. Categoricamente, es un coproducto de categorias -- los sistemas coexisten en la misma 2-categoria pero sin morfismos que los conecten activamente. No hay composicion genuina: los sistemas operan de manera independiente, y cualquier interaccion es accidental o emergente. Las propiedades del SoS virtual son simplemente la union disjunta de las propiedades de sus constituyentes -- no hay sinergia ni conflicto.
+
+El comportamiento emergente en un SoS es un colimite 2-categorico que no existe en ninguna categoria constituyente individual. La capacidad de un enjambre de drones de cubrir un area, la resiliencia de una red de microservicios ante fallos parciales, la inteligencia colectiva de un debate multi-agente -- son propiedades del colimite, no de los constituyentes. Si el colimite no existe (los constituyentes no son compatibles), la emergencia no ocurre. Si existe, la propiedad universal del colimite garantiza que es la propiedad mas general que surge de la composicion.
+
 ## Composicion a escala: la perspectiva unificada
 
 Lo que une las operads, las double categories, los structured cospans y el metodo CMD es una misma intuicion: componer a escala requiere ser explicito sobre las interfaces. En una categoria ordinaria, los morfismos son la unica dimension de estructura. Pero los sistemas reales tienen jerarquia (operads), tienen multiples dimensiones de relacion (double categories), y tienen interfaces compartidas que deben coordinarse (structured cospans y pushouts).

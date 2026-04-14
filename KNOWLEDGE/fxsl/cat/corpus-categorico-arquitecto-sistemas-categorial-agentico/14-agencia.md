@@ -114,6 +114,36 @@ Jha et al. cierran el circulo con un resultado que me parece profundamente pract
 
 Los experimentos con el dining philosophers problem son ilustrativos. Claude 3.5 Sonnet genera en una sola iteracion el codigo C, el modelo SMV, y el funtor asociativo que permite verificar propiedades temporales del codigo a traves del modelo. GPT-4o requiere cuatro iteraciones. Llama 3.1 no converge sin intervencion humana significativa. El funtor es el puente que falta en la verificacion formal tradicional: no solo genero codigo y especificacion por separado, sino que genero la garantia estructural de que ambos dicen lo mismo.
 
+## Tool use como morfismo externo
+
+Cuando un agente usa una herramienta, compone un morfismo en su propia categoria con un morfismo en la categoria de la herramienta. Pero esta composicion no ocurre dentro de ninguna de las dos categorias -- ocurre en una estructura que las conecta: un profunctor P : Agent^op x Tool -> Set.
+
+Cada elemento de P(a, t) es una interaccion valida entre el agente a y la herramienta t. Si el agente es un LLM con function-calling, las posiciones del profunctor son las firmas de las funciones disponibles, y las direcciones son los parametros validos para cada firma. El agente no necesita entender los internos de la herramienta -- por Yoneda, la herramienta ES su interfaz. El funtor representable Hom(-, t) captura todo lo que cualquier agente puede hacer con la herramienta t.
+
+La composicion de tool use es composicion de profunctores. Si P conecta agentes con herramientas de busqueda y Q conecta herramientas de busqueda con bases de datos, la composicion Q . P conecta agentes con bases de datos. La formula es la convolucion coend: (Q . P)(a, d) = integral^t Q(t, d) x P(a, t). Un agente multi-tool tiene un profunctor sobre el coproducto de categorias de herramientas: P : Agent^op x (Tool_1 + ... + Tool_n) -> Set. La eleccion de herramienta es la eleccion de componente del coproducto. La composicion de herramientas en secuencia es composicion de profunctores. La invocacion en paralelo es su producto monoidal.
+
+## Perception-Decision-Action como triple categorico
+
+El ciclo Perception-Decision-Action que estructura todo agente tiene una formulacion categorica precisa como composicion de tres estructuras distintas.
+
+La percepcion es un cofunctor -- un levantamiento hacia atras de observaciones. Dado el estado del mundo W y la interfaz de observacion del agente, la percepcion "tira hacia atras" (pulls back) los datos relevantes del entorno al espacio interno del agente. Es la operacion dual del funtor: donde un funtor empuja estructura hacia adelante, la percepcion la jala hacia atras. En la practica, es el encoder que transforma inputs crudos (pixeles, tokens, sensores) en representaciones internas.
+
+La decision es seleccion interna de morfismos. Dentro del free monad del agente, la decision elige una rama del arbol de decisiones. Dado el estado percibido, el agente selecciona un morfismo en su categoria interna -- una accion entre las disponibles. Esta seleccion es un morfismo en la Kleisli category del free monad: toma el estado actual y produce un estado+accion envuelto en la monada.
+
+La accion es un funtor -- empuja efectos hacia adelante. El funtor Act : InternalState -> WorldEffect traduce la decision interna del agente en un cambio en el mundo. La functorialidad garantiza que componer dos decisiones internas y luego actuar es lo mismo que actuar sobre cada decision y componer los efectos: Act(d2 . d1) = Act(d2) . Act(d1).
+
+El ciclo completo P-D-A es un traced morphism. La accion modifica el mundo, la percepcion observa el mundo modificado, la decision elige la siguiente accion -- y el ciclo se repite. El cable de feedback que conecta la salida de Action con la entrada de Perception es la traza en una categoria compact closed. La convergencia del ciclo -- que el agente alcance su objetivo -- es la condicion de que la traza converja a un punto fijo.
+
+## Memoria como transformacion de estado
+
+La memoria de un agente es una monada de estado donde el espacio de estados es la base de conocimiento del agente. Formalmente, la monada State K asigna a cada tipo A el tipo K -> (A, K): una computacion que lee la base de conocimiento, produce un resultado, y devuelve una base de conocimiento posiblemente modificada.
+
+El aprendizaje es composicion Kleisli en la monada State K. Cada experiencia nueva es un morfismo Kleisli e : Observation -> State K (Updated_Knowledge). La composicion de experiencias -- aprender de una secuencia de observaciones -- es la composicion Kleisli e_n >=> e_{n-1} >=> ... >=> e_1. La asociatividad de la composicion Kleisli garantiza que el orden de agrupamiento no importa: aprender (a luego b) luego c es lo mismo que aprender a luego (b luego c).
+
+El olvido es un funtor olvidadizo sobre el espacio de estados. El funtor U : Full_Knowledge -> Working_Knowledge descarta informacion, preservando solo lo relevante para la tarea actual. La composicion de aprendizaje seguida de olvido es una proyeccion: se retiene solo la traza de la experiencia en el espacio de trabajo.
+
+La memoria de trabajo es un limite finito del estado completo. Si el estado completo K es un limite de la cadena de experiencias, la memoria de trabajo es una aproximacion finita -- un cono finito que captura las ultimas N experiencias. La atencion es la seleccion del sub-diagrama sobre el que se calcula el limite: elegir a que prestar atencion es elegir que partes de la experiencia contribuyen a la memoria de trabajo actual.
+
 ## La convergencia
 
 Todos estos marcos convergen en una vision unificada de la agencia. El free monad es el plan -- finito, ramificante, terminante. El cofree comonad es el ejecutor -- infinito, persistente, reactivo. La ley de interaccion es la ejecucion -- el patron consume materia. Las operads dinamicas son la organizacion -- jerarquica, adaptiva, con accounting. Los contextads son la dependencia contextual -- parametros, efectos, relaciones, todos unificados por wreath products. El Yoneda embedding es la emergencia -- propiedades colectivas que viven en el presheaf topos con logica intuicionistica. Y los funtores de co-sintesis son la verificacion -- la garantia de que el artefacto ejecutable y el modelo formal son aspectos del mismo objeto matematico.
