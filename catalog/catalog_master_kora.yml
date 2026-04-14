@@ -1524,6 +1524,10 @@ Catalog:
     title: Knowledge Base as Category
     file: KNOWLEDGE/fxsl/cat/kb-category.md
     status: published
+  - urn: urn:fxsl:kb:manual-metodologico-opm-es
+    title: Manual metodológico de OPM
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md
+    status: published
   - urn: urn:fxsl:kb:mathematical-modelling
     title: Mathematical Modelling via Category Theory
     file: KNOWLEDGE/fxsl/cat/mathematical-modelling.md
@@ -1537,10 +1541,6 @@ Catalog:
       de Sistemas
     file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md
     status: published
-  - urn: urn:fxsl:kb:metodologia-modelamiento-opm
-    title: Metodología de Modelado OPM — Protocolo de Modelado Conceptual de Sistemas
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md
-    status: published
   - urn: urn:fxsl:kb:multicategory-multimodel-query-processing
     title: 'MultiCategory: Multi-Model Query Processing'
     file: KNOWLEDGE/fxsl/cat/multicategory-multimodel-query-processing.md
@@ -1548,6 +1548,14 @@ Catalog:
   - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations
     title: Observaciones visuales de los tutoriales OPCloud
     file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md
+    status: published
+  - urn: urn:fxsl:kb:opd-es
+    title: OPD — Gramática visual de OPM
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md
+    status: published
+  - urn: urn:fxsl:kb:opl-es
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md
     status: published
   - urn: urn:fxsl:kb:opm-complexity-management
     title: OPM Complexity Management — Refinement and Abstraction
@@ -1557,13 +1565,13 @@ Catalog:
     title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md
     status: published
+  - urn: urn:fxsl:kb:opm-es
+    title: OPM — Núcleo conceptual
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md
+    status: published
   - urn: urn:fxsl:kb:opm-iso-19450
     title: OPM ISO/PAS 19450 — Object-Process Methodology
     file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md
-    status: published
-  - urn: urn:fxsl:kb:opm-iso-19450-es
-    title: OPM ISO/PAS 19450 — Metodología Objeto‑Proceso
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md
     status: published
   - urn: urn:fxsl:kb:opm-mbse-acr-tutorial
     title: ACR Tutorial — OPM History and Modeling the Automatic Crash Response System
@@ -1577,10 +1585,6 @@ Catalog:
     title: OPM OPL Bimodal — Graphic-Text Equivalence and Textual Specification
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md
     status: published
-  - urn: urn:fxsl:kb:opm-opl-es
-    title: OPL-ES — Lenguaje Objeto-Proceso en Español
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md
-    status: published
   - urn: urn:fxsl:kb:opm-readme
     title: README — Corpus OPM
     file: KNOWLEDGE/fxsl/opm/README.md
@@ -1588,10 +1592,6 @@ Catalog:
   - urn: urn:fxsl:kb:opm-structural-relations
     title: OPM Structural Relations — Fundamental Relations, States, and Hierarchies
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md
-    status: published
-  - urn: urn:fxsl:kb:opm-visual-es
-    title: Especificación formal de la gramática visual OPM
-    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md
     status: published
   - urn: urn:fxsl:kb:procrastination-sirois
     title: Procrastination — Sirois (2022)

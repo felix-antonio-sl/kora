@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 1246,
-    "node_count": 774,
-    "edge_count": 3642
+    "scanned_files": 1273,
+    "node_count": 777,
+    "edge_count": 3644
   },
   "node_kind_counts": {
-    "artifact": 130,
-    "knowledge": 355,
+    "artifact": 132,
+    "knowledge": 356,
     "skill": 190,
     "spec": 8,
     "tool": 66,
@@ -21,7 +21,7 @@
     "InvokesSkill": 180,
     "RoutesToAgent": 13,
     "TracesTo": 48,
-    "XRef": 2494
+    "XRef": 2496
   },
   "nodes": [
     {
@@ -347,6 +347,16 @@
       "title": "USER.md",
       "path": "AGENTS/fxsl/opm-specialist/USER.md",
       "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-opl-es",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opm-opl-es"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-visual-es",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opm-visual-es"
     },
     {
       "id": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
@@ -1731,6 +1741,15 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "title": "Manual metodológico de OPM",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:kb:mathematical-modelling",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -1753,8 +1772,8 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "title": "Metodología de Modelado OPM — Protocolo de Modelado Conceptual de Sistemas",
-      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md",
+      "title": "Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md",
       "namespace": "fxsl"
     },
     {
@@ -1776,6 +1795,24 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:kb:opd-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opd-es",
+      "title": "OPD — Gramática visual de OPM",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opl-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opl-es",
+      "title": "OPL-ES — Lenguaje Objeto-Proceso en Español",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:kb:opm-complexity-management",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -1794,21 +1831,21 @@
       "namespace": "fxsl"
     },
     {
+      "id": "urn:fxsl:kb:opm-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-es",
+      "title": "OPM — Núcleo conceptual",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md",
+      "namespace": "fxsl"
+    },
+    {
       "id": "urn:fxsl:kb:opm-iso-19450",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:opm-iso-19450",
       "title": "OPM ISO/PAS 19450 — Object-Process Methodology",
       "path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-iso-19450-es",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opm-iso-19450-es",
-      "title": "OPM ISO/PAS 19450 — Metodología Objeto‑Proceso",
-      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md",
       "namespace": "fxsl"
     },
     {
@@ -1839,15 +1876,6 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:kb:opm-opl-es",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opm-opl-es",
-      "title": "OPL-ES — Lenguaje Objeto-Proceso en Español",
-      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md",
-      "namespace": "fxsl"
-    },
-    {
       "id": "urn:fxsl:kb:opm-readme",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -1863,15 +1891,6 @@
       "urn": "urn:fxsl:kb:opm-structural-relations",
       "title": "OPM Structural Relations — Fundamental Relations, States, and Hierarchies",
       "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-visual-es",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opm-visual-es",
-      "title": "Especificación formal de la gramática visual OPM",
-      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md",
       "namespace": "fxsl"
     },
     {
@@ -13369,7 +13388,28 @@
     {
       "kind": "XRef",
       "source": "file:KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md",
+      "target": "urn:fxsl:kb:opm-es",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/README.md"
     },
@@ -14125,6 +14165,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:mathematical-modelling",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -14133,13 +14180,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:mbse-consistency",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14167,6 +14207,20 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-complexity-management",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -14181,14 +14235,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-iso-19450",
+      "target": "urn:fxsl:kb:opm-es",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14216,13 +14270,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-readme",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -14231,13 +14278,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-structural-relations",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-visual-es",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19339,6 +19379,90 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:kb:mathematical-modelling",
       "target": "urn:fxsl:kb:mathematical-modelling",
       "fragment": null,
@@ -19389,13 +19513,6 @@
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
@@ -19424,27 +19541,6 @@
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
@@ -19469,62 +19565,6 @@
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
     },
     {
       "kind": "XRef",
@@ -19546,6 +19586,104 @@
       "target": "urn:fxsl:kb:opm-visual-es",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opd-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opl-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opl-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opl-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opl-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opl-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opl-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
     },
     {
       "kind": "XRef",
@@ -19640,171 +19778,171 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:manual-metodologico-opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opd-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-es",
+      "target": "urn:fxsl:kb:opm-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:kb:opm-iso-19450",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
     },
     {
       "kind": "XRef",
@@ -19962,48 +20100,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-opl-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-opl-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-opl-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-opl-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-opl-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-opl-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:fxsl:kb:opm-readme",
       "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "fragment": null,
@@ -20057,69 +20153,6 @@
       "target": "urn:fxsl:kb:opm-structural-relations",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-iso-19450-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-opl-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-visual-es",
-      "target": "urn:fxsl:kb:opm-visual-es",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
     },
     {
       "kind": "XRef",
