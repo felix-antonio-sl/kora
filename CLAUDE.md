@@ -10,18 +10,21 @@ KORA es un monorepo gobernado por specs y soportado por una capa formal categori
 
 ## Arquitectura
 
-| Capa | Path | Rol |
-|------|------|-----|
-| Constitucion | `specs/` | Reglas de gobernanza, precedencia, identidad, formatos (8 specs) |
-| Conocimiento | `KNOWLEDGE/` | Artefactos publicados por namespace (`kora/`, `fxsl/`, `OMEGA/`, `gn/`, `salud/`, etc.) |
-| Workspaces | `AGENTS/` | Workspaces agente ejecutables (`config.json` + bootstrap artifacts) |
-| Skills | `SKILLS/` | Skills reutilizables por dominio (`data-modeling/`, `ux-design/`, etc.) |
-| Perfiles | `AGENTS/_perfiles/` | Specs de personalidad/comportamiento para agentes (no son workspaces ejecutables) |
-| Toolchain | `scripts/kora` | CLI Python que indexa, valida, migra y genera docs |
-| Schemas | `schemas/` | JSON Schemas para validacion de `config.json` y bootstrap artifacts |
-| Pipeline | `OPERATIONS/` | Superficies operacionales locales (excluido de git): `inbox/`, `source/`, `drafts/`, `build/` |
+| Capa | Path | Rol | Git |
+|------|------|-----|-----|
+| Constitucion | `specs/` | Reglas de gobernanza, precedencia, identidad, formatos (8 specs) | tracked |
+| Conocimiento | `KNOWLEDGE/` | Artefactos publicados por namespace (`kora/`, `fxsl/`, `gn/`, `salud/`, etc.) | tracked |
+| Workspaces IR | `AGENTS/` | Workspaces agente ejecutables — IR canonico (5 componentes + skills/) | tracked |
+| Skills | `SKILLS/` | Libreria de skills agentskills.io-compatible (`data-modeling/`, `ux-design/`, etc.) | tracked |
+| Perfiles | `AGENTS/_perfiles/` | Specs de personalidad/comportamiento (input al IR, no workspaces) | tracked |
+| Pipeline | `OPERATIONS/` | Pipeline de conocimiento: `inbox/` y `drafts/` tracked; `source/` y `build/` gitignored | parcial |
+| Build | `BUILD/` | Outputs de transmutacion de agentes a plataformas (claude, openclaw, gemini, codex) | gitignored |
+| Toolchain | `scripts/kora` | CLI Python que indexa, valida, migra, genera docs y transmuta | tracked |
+| Schemas | `schemas/` | JSON Schemas para validacion de `config.json` y bootstrap artifacts | tracked |
 
-Pipeline de artefactos: `OPERATIONS/source/` -> `OPERATIONS/drafts/` -> `KNOWLEDGE/` (con `python3 scripts/kora intake` para ver estado de absorcion).
+Pipeline de conocimiento: `OPERATIONS/source/` (gitignored) -> `OPERATIONS/drafts/` (tracked) -> `KNOWLEDGE/` (tracked). Usar `python3 scripts/kora intake` para ver estado de absorcion.
+
+Pipeline de agentes: `AGENTS/{ns}/{name}/` (IR) -> `python3 scripts/kora transmute --target {claude,openclaw,...}` -> `BUILD/{target}/` (gitignored).
 
 ## Source Of Truth
 

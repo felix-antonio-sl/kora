@@ -1,8 +1,22 @@
+# Sistema
 .DS_Store
-*.tar.gz
-*.tar.bz2
 __pycache__/
 *.pyc
+
+# Archivos pesados
+*.tar.gz
+*.tar.bz2
+*.traineddata
+
+# BUILD — outputs de transmutacion (regenerables)
+/BUILD/
+
+# OPERATIONS — solo track inbox/ y drafts/
+/OPERATIONS/source/
+/OPERATIONS/build/
+
+# Skills upstream (referencia externa)
+/SKILLS/_sources-skills/
 
 # Agentes deprecados (2026-03-23)
 /AGENTS/dev/coder/

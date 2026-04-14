@@ -1,8 +1,0 @@
-{
-  "_manifest": {
-    "urn": "urn:omega:agent-bootstrap:salubrista-host-native-config:1.0.0",
-    "type": "bootstrap_config",
-    "status": "deprecated",
-    "note": "OpenClaw deployment blueprint — config lives in config/openclaw.json, not subject to KORA workspace validation"
-  }
-}
