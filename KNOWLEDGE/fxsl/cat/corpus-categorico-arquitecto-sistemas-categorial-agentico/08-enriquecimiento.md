@@ -81,17 +81,17 @@ Un Bool-functor es exactamente un monotone map entre preordenes. Un Cost-functor
 
 Las V-natural transformations generalizan las transformaciones naturales al contexto enriquecido, reemplazando la condicion de naturalidad puntual por una condicion global expresada con hom-objects. En el caso Bool, una Bool-natural transformation es simplemente la condicion de que la relacion se preserva. En el caso Cost, es una condicion de no-expansividad.
 
-## Cat-enrichment: las 2-categorias
+## Enriquecimiento en Cat: las 2-categorias
 
-El caso V = Cat (la categoria de categorias pequenas, con producto cartesiano como tensor) produce las 2-categorias. Una Cat-category tiene objetos, y entre cada par de objetos no un conjunto de morfismos sino una categoria de morfismos. Los objetos de esa categoria interna son los 1-morfismos (las flechas originales) y los morfismos son los 2-morfismos (las flechas entre flechas).
+El caso V = Cat (la categoria de categorias pequenas, con producto cartesiano como tensor) produce las 2-categorias. Una categoria enriquecida en Cat tiene objetos, y entre cada par de objetos no un conjunto de morfismos sino una categoria de morfismos. Los objetos de esa categoria interna son los 1-morfismos (las flechas originales) y los morfismos son los 2-morfismos (las flechas entre flechas).
 
-La composicion en una 2-category tiene dos dimensiones. La composicion vertical compone 2-morfismos dentro de un mismo hom-category: si alpha : f => g y beta : g => h son 2-morfismos entre los mismos objetos, beta . alpha : f => h es su composicion vertical. La composicion horizontal compone 2-morfismos en hom-categories adyacentes: si alpha : f => g : A -> B y beta : h => k : B -> C, entonces beta * alpha : h.f => k.g : A -> C es su composicion horizontal.
+La composicion en una 2-categoria tiene dos dimensiones. La composicion vertical compone 2-morfismos dentro de una misma hom-categoria: si alpha : f => g y beta : g => h son 2-morfismos entre los mismos objetos, beta . alpha : f => h es su composicion vertical. La composicion horizontal compone 2-morfismos en hom-categorias adyacentes: si alpha : f => g : A -> B y beta : h => k : B -> C, entonces beta * alpha : h.f => k.g : A -> C es su composicion horizontal.
 
 La interchange law dice que las dos composiciones son compatibles: (beta . beta') * (alpha . alpha') = (beta * alpha) . (beta' * alpha'), cuando las composiciones estan definidas. En string diagrams es la condicion de que cajas en cables independientes se pueden mover libremente.
 
-El ejemplo que mas uso: la arquitectura de microservicios como 2-category. Los objetos son los servicios. Los 1-morfismos son las llamadas (endpoints). Los 2-morfismos son las transformaciones entre llamadas -- refactorings de API, wrappers, adaptadores. La composicion vertical es encadenar adaptadores. La composicion horizontal es componer llamadas de servicio a servicio con sus adaptadores.
+El ejemplo que mas uso: la arquitectura de microservicios como 2-categoria. Los objetos son los servicios. Los 1-morfismos son las llamadas (endpoints). Los 2-morfismos son las transformaciones entre llamadas -- refactorings de API, wrappers, adaptadores. La composicion vertical es encadenar adaptadores. La composicion horizontal es componer llamadas de servicio a servicio con sus adaptadores.
 
-Otro ejemplo: Cat misma es una 2-category. Las categorias son 0-cells, los funtores son 1-cells, las transformaciones naturales son 2-cells. Cuando en el documento 03 defini transformaciones naturales, ya estaba trabajando dentro de una 2-category sin saberlo.
+Otro ejemplo: Cat misma es una 2-categoria. Las categorias son 0-celdas, los funtores son 1-celdas, las transformaciones naturales son 2-celdas. Cuando en el documento 03 defini transformaciones naturales, ya estaba trabajando dentro de una 2-categoria sin saberlo.
 
 ## Categorias internas
 

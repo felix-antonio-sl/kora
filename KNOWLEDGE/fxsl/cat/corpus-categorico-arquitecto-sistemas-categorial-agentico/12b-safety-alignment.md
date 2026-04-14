@@ -32,7 +32,7 @@ Un agente tiene un funtor de objetivos G_agent : World -> Outcomes que transform
 
 El alignment perfecto es un isomorfismo natural alpha : G_agent => G_principal. Lo que el agente valora es exactamente lo que el principal valora, en todo estado del mundo, de manera coherente con las transiciones entre estados (la naturalidad). No hay ambiguedad ni conflicto.
 
-El alignment parcial es una transformacion natural que no es isomorfismo. Existe alpha : G_agent => G_principal, pero alpha pierde informacion -- no es invertible. El agente distingue entre outcomes que el principal considera equivalentes, o el principal distingue outcomes que el agente confunde. La perdida de informacion es el Functor Information Loss que ya encontre: la diferencia entre un funtor faithful (inyectivo en hom-sets) y uno que no lo es.
+El alignment parcial es una transformacion natural que no es isomorfismo. Existe alpha : G_agent => G_principal, pero alpha no es invertible. El agente y el principal siguen estando relacionados de manera coherente, aunque no perfectamente reversible. Aqui conviene hablar en el nivel correcto: no de faithful o full, que son propiedades de funtores, sino de la diferencia entre una mera transformacion natural y un isomorfismo natural.
 
 El misalignment es la ausencia de transformacion natural. No existe ninguna manera coherente de traducir los objetivos del agente a los del principal. Los funtores apuntan a "resultados" que no se corresponden de forma natural. Esto es lo mas peligroso: no es que el agente optimice mal, es que optimiza en una dimension ortogonal a la que importa.
 
@@ -80,7 +80,7 @@ Una modalidad temporal "always" (que en la temporal type theory de Schultz y Spi
 
 ## Reward hacking como funtor infiel
 
-Cuando un agente optimiza una metrica proxy en lugar del objetivo real, esta explotando la infidelidad de un funtor. Existe un funtor F : ProxyMetric -> TrueGoal que mapea la metrica observable al objetivo subyacente. Si F es faithful, optimizar el proxy es equivalente a optimizar el goal -- no hay gap que explotar. Pero si F no es faithful, hay situaciones distintas en el espacio del proxy que colapsan al mismo punto en el goal, o viceversa.
+Cuando un agente optimiza una metrica proxy en lugar del objetivo real, esta explotando una mala traduccion entre dos espacios semanticos. Puedo modelar esa traduccion con un funtor F : ProxyMetric -> TrueGoal, pero no debo afirmar que la fidelidad por si sola elimina el gap. A lo sumo, un funtor mas estructurado preserva mejor distinciones relevantes. El reward hacking aparece precisamente cuando mejorar el proxy deja abierto un espacio de maniobra que no mejora -- o incluso degrada -- el objetivo real.
 
 El agente encuentra acciones que mejoran el proxy sin mejorar el goal -- acciones en el kernel del funtor, en el espacio que F no distingue. Es el Goodhart morphism: "cuando una medida se convierte en objetivo, deja de ser buena medida." Categoricamente: cuando F se usa como target de optimizacion, el agente explora las fibras de F -- los conjuntos de pre-imagenes -- y encuentra estados que maximizan el proxy mientras minimizan el goal.
 
@@ -116,4 +116,4 @@ Lo que emerge de todo esto es una vision donde la seguridad y el alignment no so
 
 La seguridad es un subobjeto cerrado bajo la coalgebra de transiciones. El alignment es una transformacion natural entre funtores de objetivos. Los guardrails son sketches que el comportamiento debe satisfacer. La composicionalidad de safety depende de la monoidalidad de la propiedad. Y el alignment temporalmente estable es una seccion de un sheaf sobre el dominio de intervalos.
 
-No son metaforas. Son las mismas construcciones que uso para schemas, protocolos y composicion de sistemas, aplicadas al problema de que los agentes hagan lo correcto. La teoria de categorias no resuelve el alignment problem -- pero da un lenguaje donde las preguntas se formulan con precision suficiente para saber cuando una respuesta es respuesta y cuando es wishful thinking.
+No estoy introduciendo un vocabulario enteramente distinto. Estoy reutilizando las mismas construcciones que uso para schemas, protocolos y composicion de sistemas, aplicadas al problema de que los agentes hagan lo correcto. La teoria de categorias no resuelve el alignment problem -- pero da un lenguaje donde las preguntas se formulan con precision suficiente para saber cuando una respuesta es respuesta y cuando es wishful thinking.

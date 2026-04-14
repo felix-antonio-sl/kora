@@ -51,7 +51,7 @@ Los morfismos en la categoria Poly componen de la manera esperada: las funciones
 
 La categoria Poly tiene una riqueza inusual de estructura monoidal. Tres productos monoidales distintos capturan tres modos fundamentales de combinar sistemas:
 
-**Producto cartesiano (x)**: posiciones se multiplican, direcciones se suman. Para p x q, una posicion es un par (i, j) y las direcciones son p[i] + q[j]. Cada sistema elige independientemente su posicion, y el exterior puede enviar input a cualquiera de los dos. Es la composicion paralela donde ambos sistemas corren independientemente y cualquiera puede recibir input. La unidad es y^0 + 1 (el sistema trivial con una posicion y ninguna direccion, mas el sistema vacio). Poly es cartesian closed con este producto -- tiene internal homs.
+**Producto cartesiano (x)**: posiciones se multiplican, direcciones se suman. Para p x q, una posicion es un par (i, j) y las direcciones son p[i] + q[j]. Cada sistema elige independientemente su posicion, y el exterior puede enviar input a cualquiera de los dos. Es la composicion paralela donde ambos sistemas corren independientemente y cualquiera puede recibir input. La unidad es el polinomio constante 1, es decir `y^0`. Con este producto, la categoria de polinomios se comporta como el entorno cartesiano natural para hablar de interfaces independientes.
 
 **Producto Dirichlet (tensor)**: posiciones se multiplican, direcciones se multiplican. Para p tensor q, una posicion es un par (i, j) y las direcciones son p[i] x q[j]. Ambos sistemas operan en paralelo y el exterior debe enviar input a ambos simultaneamente. Es la composicion paralela sincronizada. La unidad es y.
 
@@ -72,7 +72,7 @@ Donde S*y^S es el monomial con S posiciones (los estados posibles) y S direccion
 
 Es exactamente una Moore machine: el output depende solo del estado, y la transicion depende del estado y el input. Un automata determinista con estados S, alfabeto A, y estados de aceptacion F es una lente S*y^S -> 2*y^A, donde 2 = {accept, reject} y la funcion on-positions indica aceptacion.
 
-En Redux (o cualquier store de estado), el store es exactamente esta lente. El estado S es el state tree. Las posiciones p(1) son los posibles renders (lo que la UI muestra). Las direcciones p[i] son las acciones disponibles en cada estado de la UI. La funcion on-positions es el selector (state -> view). La funcion on-directions es el reducer (state, action) -> state.
+En Redux (o cualquier store de estado), el store se deja modelar muy bien con esta lente. El estado S es el state tree. Las posiciones p(1) son los posibles renders (lo que la UI muestra). Las direcciones p[i] son las acciones disponibles en cada estado de la UI. La funcion on-positions es el selector (state -> view). La funcion on-directions es el reducer (state, action) -> state.
 
 ## Comonoids en Poly son categorias
 
@@ -87,7 +87,7 @@ satisfaciendo coasociatividad y counitalidad.
 
 Cuando decodifico esto, las posiciones de p son los objetos de una categoria, las direcciones p[i] son los morfismos que salen de i, la counit selecciona la identidad en cada posicion, y la comultiplicacion descompone cada morfismo en un par composable.
 
-Este resultado es profundo porque conecta dos mundos que parecian separados: la teoria de polinomios (algebraica, combinatoria) y la teoria de categorias (composicional, abstracta). Toda categoria pequena ES un comonoid polinomial, y viceversa. Los funtores entre categorias corresponden a cierto tipo de morfismos entre comonoids.
+Este resultado es profundo porque conecta dos mundos que parecian separados: la teoria de polinomios (algebraica, combinatoria) y la teoria de categorias (composicional, abstracta). Bajo la identificacion de Ahman-Uustalu, dar una categoria pequena equivale a dar cierto comonoid polinomial, y viceversa. Los funtores entre categorias corresponden a cierto tipo de morfismos entre comonoids.
 
 Los retrofunctors -- morfismos de comonoids en Poly -- son una generalizacion de los funtores ordinarios. Un retrofunctor F : C -> D tiene una funcion on-objects F_1 que va hacia adelante, y funciones on-morphisms F^sharp que van hacia atras: dado un morfismo en D que sale de F(i), produce un morfismo en C que sale de i. Es un funtor que "levanta" morfismos del codominio al dominio, preservando identidades y composicion.
 
@@ -124,6 +124,6 @@ El hecho de que las herramientas computacionales existan y sean usables es impor
 
 La leccion central de Poly es que la interaccion no es un accidente que se agrega a la teoria de categorias -- es una estructura que emerge de la composicion de polinomios. Las posiciones son lo que muestras. Las direcciones son lo que aceptas. Las lentes son los contratos entre sistemas. Los tres productos monoidales capturan los tres modos de composicion: independiente (x), sincronizado (tensor), secuencial (triangleleft).
 
-Y el resultado de Ahman-Uustalu cierra el circulo: las categorias mismas -- la estructura fundamental de toda la teoria -- son comonoids polinomiales. La composicion de morfismos es la comultiplicacion. La identidad es la counidad. La teoria de categorias se refleja dentro de Poly como una estructura algebraica particular. No es un modelo de las categorias; las categorias SON la estructura comonoidica de los polinomios.
+Y el resultado de Ahman-Uustalu cierra el circulo: las categorias mismas -- la estructura fundamental de toda la teoria -- admiten una presentacion como comonoids polinomiales. La composicion de morfismos se refleja como comultiplicacion y la identidad como counidad. La teoria de categorias se refleja dentro de Poly como una estructura algebraica particular. No necesito venderlo como slogan ontologico; me basta con la equivalencia estructural que el resultado establece.
 
 En mi practica diaria, esto cambia como pienso sobre APIs, protocolos, y sistemas de estado. No son entidades ad hoc con contratos informales. Son polinomios con estructura monoidal precisa, y sus composiciones estan garantizadas por la teoria. Cuando compongo dos microservicios, estoy componiendo lentes. Cuando diseño un protocolo multi-fase, estoy construyendo un producto triangleleft. Y cuando verifico que un contrato preserva sus invariantes, estoy probando que una lente respeta la estructura del comonoid subyacente.

@@ -156,7 +156,7 @@ El grafo de trazabilidad es la imagen del funtor compuesto -- la subcategoria de
 
 Una simulacion ejecuta un camino especifico de morfismos en la categoria del sistema y observa el resultado. Dado un estado inicial s0 y una secuencia de transiciones f1, f2, ..., fn, la simulacion calcula fn . ... . f2 . f1 (s0) -- la composicion evaluada en el estado inicial.
 
-La simulacion Monte Carlo es el muestreo de caminos aleatorios. Cada camino es una secuencia de morfismos en la Kleisli category de una monada de probabilidad P. El morfismo Kleisli f : A -> P(B) no produce un resultado determinista sino una distribucion sobre resultados. La composicion Kleisli de n pasos produce una distribucion sobre estados finales. Muestrear K caminos y promediar los resultados es la aproximacion Monte Carlo del valor esperado -- la integral sobre la medida que la monada P define.
+La simulacion Monte Carlo es el muestreo de caminos aleatorios. Cada camino es una secuencia de morfismos en la categoria de Kleisli de una monada de probabilidad P. El morfismo Kleisli f : A -> P(B) no produce un resultado determinista sino una distribucion sobre resultados. La composicion Kleisli de n pasos produce una distribucion sobre estados finales. Muestrear K caminos y promediar los resultados es la aproximacion Monte Carlo del valor esperado -- la integral sobre la medida que la monada P define.
 
 El digital twin es un funtor de simulacion faithful. El funtor Sim : Physical -> Computational mapea la categoria del sistema fisico (estados reales, transiciones reales) a la categoria del modelo computacional (estados simulados, transiciones simuladas). La fidelidad del funtor -- que Sim sea faithful -- garantiza que transiciones distintas en el sistema fisico producen transiciones distintas en la simulacion. Un digital twin faithful no pierde informacion: todo lo que ocurre en el sistema fisico se refleja en el modelo.
 
@@ -164,7 +164,7 @@ La calibracion del digital twin es el ajuste del funtor Sim para que se aproxime
 
 ## Systems of Systems formalmente
 
-Un System of Systems (SoS) es una 2-categoria. Los objetos son los sistemas constituyentes, cada uno con su propia estructura interna. Los 1-morfismos son las interfaces entre sistemas -- funtores que conectan la categoria de un sistema con la de otro. Los 2-cells son las adaptaciones de interfaces -- transformaciones naturales que expresan como una interfaz se modifica o se sustituye por otra.
+Un System of Systems (SoS) se deja modelar de forma natural como una 2-categoria. Los objetos son los sistemas constituyentes, cada uno con su propia estructura interna. Los 1-morfismos son las interfaces entre sistemas -- funtores que conectan la categoria de un sistema con la de otro. Los 2-cells son las adaptaciones de interfaces -- transformaciones naturales que expresan como una interfaz se modifica o se sustituye por otra.
 
 Los tipos de SoS reconocidos por la ingenieria de sistemas tienen formulaciones 2-categoricas distintas.
 

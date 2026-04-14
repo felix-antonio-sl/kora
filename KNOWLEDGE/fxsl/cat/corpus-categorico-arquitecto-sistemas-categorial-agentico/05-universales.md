@@ -21,7 +21,7 @@ unit :: a -> ()
 unit _ = ()
 ```
 
-En la práctica, un objeto terminal es un endpoint que todo servicio puede alcanzar de una sola manera. Un health-check `/ready` que siempre devuelve 200 es un objeto terminal en la categoría de endpoints: desde cualquier servicio hay exactamente una forma de verificar que está vivo.
+En la práctica, un objeto terminal se parece a un endpoint que todo servicio puede alcanzar de una sola manera. Un health-check `/ready` que siempre devuelve 200 da una buena intuición de ese papel en una categoría de endpoints, aunque no conviene identificarlo literalmente sin fijar muy bien la categoría.
 
 ## Productos y coproductos: álgebra de tipos
 
@@ -136,7 +136,7 @@ Una categoría es **completa** si tiene todos los límites (basta tener producto
 
 Hay una construcción que merece atención especial. La **categoría slice** C/X tiene como objetos los morfismos f : A → X (cosas "sobre X") y como morfismos los triángulos conmutativos. Es la categoría de todas las cosas que apuntan a X.
 
-¿Por qué importa? Porque modela familias parametrizadas. Si X es un tipo base, los objetos de C/X son los tipos que dependen de X -- la base de los tipos dependientes. Si X es un esquema de base de datos, los objetos de C/X son las instancias de ese esquema. Si X es un deployment target, los objetos de C/X son todos los servicios desplegables a ese target.
+¿Por qué importa? Porque modela familias parametrizadas. Si X es un tipo base, los objetos de C/X son los tipos que dependen de X -- la base de los tipos dependientes. Si X es un deployment target, los objetos de C/X son todos los servicios o configuraciones desplegables a ese target. Si trabajo con esquemas de bases de datos, la slice ayuda a organizar objetos "sobre" un esquema fijo, pero las instancias completas del esquema X se modelan más naturalmente como funtores X → Set, no como objetos de C/X sin más.
 
 Cada vez que configuro un servicio "para un ambiente específico" estoy trabajando en una categoría slice: el ambiente es X, y mis configuraciones son objetos sobre X.
 

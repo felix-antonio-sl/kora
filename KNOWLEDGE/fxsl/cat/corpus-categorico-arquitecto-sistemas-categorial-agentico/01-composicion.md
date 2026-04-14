@@ -55,7 +55,7 @@ id . f  == f      -- identidad izquierda
 h . (g . f) == (h . g) . f  -- asociatividad
 ```
 
-En SQL, la composicion es el JOIN. Si tengo una foreign key `employee.department_id -> department.id` y otra `department.company_id -> company.id`, su composicion es el camino `employee -> department -> company`. El JOIN de tres tablas ES composicion de morfismos. Y la identidad? Es la primary key --- cada tabla se relaciona consigo misma a traves de su ID.
+En SQL, la composicion aparece en el JOIN. Si tengo una foreign key `employee.department_id -> department.id` y otra `department.company_id -> company.id`, su composicion es el camino `employee -> department -> company`. El JOIN de tres tablas puede leerse como composicion de morfismos. Y la identidad? No es la primary key, sino el morfismo identidad sobre la tabla misma: el camino vacio que deja intacta la fila de partida.
 
 ```sql
 -- morfismo: employee -> department
@@ -95,7 +95,7 @@ Spivak formaliza esta idea para bases de datos: una database schema en forma nor
 
 **Docker Compose.** Cada servicio es un objeto. Las dependencias (`depends_on`) son morfismos. La composicion de dependencias es transitiva: si web depende de api y api depende de db, entonces web depende transitivamente de db. Cuando el orden de startup falla, una ley de composicion fue violada.
 
-**git merge.** Un merge es la composicion de dos historias de desarrollo. La asociatividad del merge (merge de A con merge de B,C equivale a merge de A,B con C) es lo que hace posible que git funcione con multiples branches. Cuando un merge conflict es irresoluble, lo que ocurrio es que las dos historias violaron un invariante de composicion --- tocaron la misma estructura de formas incompatibles.
+**git merge.** Un merge sugiere una intuicion composicional: combina dos historias de desarrollo en una historia nueva. Pero no conviene presentarlo como una operacion asociativa en sentido categorial estricto; depende del estado del repositorio, de la base comun y de la estrategia de merge. Lo util de la analogia es otra cosa: cuando aparece un conflicto severo, suele haber dos cambios que dejaron de encajar composicionalmente.
 
 **Pipelines de CI/CD.** build -> test -> deploy. Cada stage toma un artefacto y produce otro. La composicion build;test;deploy es el pipeline completo. La identidad es el stage que pasa el artefacto sin modificarlo (un passthrough stage). La asociatividad garantiza que puedo agrupar stages en sub-pipelines sin alterar el resultado.
 
