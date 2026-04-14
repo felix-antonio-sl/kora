@@ -1640,7 +1640,7 @@ Catalog:
     status: published
   - urn: urn:fxsl:kb:opm-opl-es
     title: OPL-ES — Object-Process Language en Español
-    file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-opl-es.md
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md
     status: published
   - urn: urn:fxsl:kb:opm-readme
     title: README — Corpus OPM

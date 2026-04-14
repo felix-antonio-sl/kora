@@ -5,7 +5,7 @@ _manifest:
     created_by: kora/curator
     created_at: '2026-04-14'
     source: OPERATIONS/source/fxsl/opm-methodology/opm-iso.md
-version: 1.4.0-es
+version: 1.7.0-es
 status: published
 tags:
 - opm
@@ -20,8 +20,6 @@ lang: es
 extensions:
   kora:
     family: specification
-    depends_on:
-    - urn:fxsl:kb:opm-opl-es
     consolidado: true
 ---
 
@@ -36,6 +34,22 @@ OPM ofrece dos modalidades semánticamente equivalentes:
 - **textual**, mediante párrafos de OPL-ES.
 
 La meta sigue siendo la misma: permitir que las personas expertas de dominio comprendan el modelo sin perder precisión formal, unificando función, estructura y comportamiento dentro de un único formalismo.
+
+## Contrato editorial del corpus
+
+Este documento es la **capa semántica y ontológica canónica** del corpus OPM en español. Su responsabilidad es:
+
+- fijar definiciones, clases de elementos y clases de relaciones;
+- establecer principios de modelado, conformidad y criterio semántico;
+- delimitar qué hechos del modelo existen independientemente de su representación textual o gráfica.
+
+Este documento **no** es la fuente canónica de:
+
+- la realización textual en español, que pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es);
+- la gramática gráfica exhaustiva del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es);
+- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+
+Regla editorial: este documento puede nombrar esas capas para ubicar la semántica, pero no debe duplicar sus tablas canónicas ni su casuística operativa.
 
 ---
 
@@ -215,101 +229,19 @@ Los mecanismos de descomposición y despliegue de la §14 proveen las formas de 
 
 ## Especificación de la notación visual
 
-La capa gráfica de OPM usa un conjunto mínimo de formas, contornos, sombreados y marcas. Cada elemento visual tiene una especificación fija.
+La capa gráfica de OPM usa un conjunto mínimo de formas, contornos, sombreados y marcas. En la capa ISO basta distinguir tres familias:
 
-### Símbolos de entidad
+- **cosas**: objetos, procesos y estados;
+- **enlaces procedimentales**: transformadores, habilitadores y de control;
+- **enlaces estructurales**: etiquetados y fundamentales.
 
-Las entidades son formas cerradas. Las cosas y sus estados son los bloques básicos del diagrama.
+La semántica de cada familia pertenece a esta capa ISO; su geometría, decoración, composición, comportamiento visual cross-OPD e índices de reglas pertenecen a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es).
 
-| Entidad | Forma | Variantes de contorno | Variantes de sombreado | Etiqueta |
-|---|---|---|---|---|
-| Objeto | Rectángulo | sólido (sistémico), discontinuo (ambiental) | sombreado (físico), plano (informacional) | nombre del objeto, palabras con mayúscula inicial |
-| Proceso | Elipse | sólido (sistémico), discontinuo (ambiental) | sombreado (físico), plano (informacional) | nombre del proceso |
-| Estado | Rectángulo redondeado dentro del objeto | normal, grueso (inicial), doble (final), con flecha diagonal abierta (por defecto) | sin sombreado | nombre del estado, en minúscula |
+Regla editorial:
 
-Las ocho combinaciones de símbolo de cosa surgen del producto cartesiano Forma × Sombreado × Contorno:
-
-| Símbolo | Descripción | Significado |
-|---|---|---|
-| Rectángulo sólido sombreado | Objeto físico sistémico | Objeto tangible dentro del límite del sistema |
-| Rectángulo discontinuo sombreado | Objeto físico ambiental | Objeto tangible fuera del sistema |
-| Rectángulo sólido plano | Objeto informacional sistémico | Objeto de datos o información dentro del sistema |
-| Rectángulo discontinuo plano | Objeto informacional ambiental | Objeto de datos o información fuera del sistema |
-| Elipse sólida sombreada | Proceso físico sistémico | Proceso físico dentro del sistema |
-| Elipse discontinua sombreada | Proceso físico ambiental | Proceso físico fuera del sistema |
-| Elipse sólida plana | Proceso informacional sistémico | Proceso informacional dentro del sistema |
-| Elipse discontinua plana | Proceso informacional ambiental | Proceso informacional fuera del sistema |
-
-### Símbolos de enlaces procedimentales
-
-Los enlaces procedimentales conectan objetos o estados con procesos. Cada tipo tiene un símbolo propio.
-
-| Enlace | Fuente | Destino | Especificación gráfica |
-|---|---|---|---|
-| Consumo | objeto | proceso | Flecha con **punta cerrada** desde el consumido hacia el proceso |
-| Resultado | proceso | objeto | Flecha con **punta cerrada** desde el proceso creador hacia el resultante |
-| Efecto | objeto ↔ proceso | bidireccional | **Flecha bidireccional con dos puntas cerradas**, una en cada extremo |
-| Par efecto entrada-salida | estado → proceso → estado | par direccional | Flecha con punta cerrada desde el **estado de entrada** al proceso y otra desde el proceso al **estado de salida** del mismo objeto |
-| Agente | agente | proceso | Línea con **círculo negro relleno** en el extremo hacia el proceso |
-| Instrumento | instrumento | proceso | Línea con **círculo blanco vacío** en el extremo hacia el proceso |
-| Evento de consumo | objeto | proceso | Enlace de consumo con letra pequeña **`e`** cerca de la punta |
-| Evento de efecto | objeto ↔ proceso | bidireccional | Enlace de efecto con letra pequeña **`e`** cerca del extremo del proceso |
-| Evento de agente | agente | proceso | Enlace de agente con letra pequeña **`e`** cerca del proceso |
-| Evento de instrumento | instrumento | proceso | Enlace de instrumento con letra pequeña **`e`** cerca del proceso |
-| Condición de consumo | objeto | proceso | Enlace de consumo con letra pequeña **`c`** cerca de la punta |
-| Condición de efecto | objeto ↔ proceso | bidireccional | Enlace de efecto con letra pequeña **`c`** cerca del proceso |
-| Condición de agente | agente | proceso | Enlace de agente con letra pequeña **`c`** cerca del proceso |
-| Condición de instrumento | instrumento | proceso | Enlace de instrumento con letra pequeña **`c`** cerca del proceso |
-| Invocación | proceso | proceso | Línea quebrada tipo **rayo** con punta cerrada |
-| Auto-invocación | proceso | mismo proceso | **Par de enlaces de invocación** unidos cabeza con cola y cerrando sobre el mismo origen |
-| Excepción por sobretiempo | proceso | proceso de manejo | **Una barra oblicua corta** sobre la línea cerca del proceso destino |
-| Excepción por subtiempo | proceso | proceso de manejo | **Dos barras oblicuas paralelas** sobre la línea cerca del proceso destino |
-
-Las variantes con estado especificado parten de un **estado concreto** dentro del objeto y no del objeto completo. La posición de la anotación `e` o `c` se mantiene.
-
-### Símbolos de enlaces estructurales
-
-| Enlace | Especificación gráfica |
-|---|---|
-| Agregación-participación | **Triángulo negro relleno** cuyo vértice conecta con el todo y cuya base conecta con las partes |
-| Exhibición-caracterización | **Pequeño triángulo negro dentro de un triángulo vacío mayor**; el vértice del mayor conecta con el exhibidor |
-| Generalización-especialización | **Triángulo vacío**; el vértice conecta con el general |
-| Clasificación-instanciación | **Pequeño círculo negro dentro de un triángulo vacío** |
-| Indicador de colección incompleta | **Barra horizontal corta** bajo el símbolo triangular |
-| Etiquetado unidireccional | Flecha con **punta abierta** y etiqueta textual cerca del eje |
-| Etiquetado bidireccional | Línea con **puntas tipo arpón** en lados opuestos de ambos extremos |
-| Etiquetado recíproco | Igual al bidireccional, con una sola etiqueta o sin etiqueta |
-
-### Símbolos de operadores lógicos
-
-| Operador | Especificación gráfica |
-|---|---|
-| AND | Enlaces separados de la misma clase, **sin tocarse** |
-| XOR | **Arco discontinuo** sobre el abanico de enlaces, con el foco en el extremo convergente |
-| OR | **Dos arcos discontinuos concéntricos** sobre el abanico |
-| Probabilístico | Anotación **`Pr=p`** sobre cada enlace del abanico; las probabilidades suman 1 |
-
-### Símbolos de gestión de contexto
-
-| Mecanismo | Especificación gráfica |
-|---|---|
-| Indicador de supresión de estados | **Pequeño rectángulo redondeado con `...`** en la esquina inferior derecha del objeto |
-| Despliegue dentro del mismo diagrama | Refinable y refinadores en el mismo OPD, unidos por enlaces estructurales fundamentales |
-| Despliegue o descomposición en nuevo diagrama | El refinable tiene **contorno grueso** en el OPD padre y en el hijo |
-| Descomposición de proceso | La elipse del refinable **se agranda** para contener subprocesos; la línea temporal fluye de **arriba hacia abajo** |
-| Descomposición de objeto | El rectángulo del refinable **se agranda** para mostrar objetos constituyentes |
-| Invocación implícita | **No tiene símbolo explícito**; el orden vertical dentro de la descomposición fija la secuencia |
-| Invocación implícita paralela | Subprocesos con los puntos superiores a **la misma altura** empiezan al mismo tiempo |
-| Cosa duplicada | **Pequeña silueta desplazada detrás** del símbolo repetido |
-| Etiqueta de ruta | **Texto sobre el enlace procedimental**; la coincidencia entre etiquetas de entrada y salida fija la trayectoria |
-
-### Composición visual de la descomposición
-
-La descomposición de procesos crea jerarquía visual. En el SD, un proceso `P` aparece como una elipse simple enlazada a objetos. En `SD1`, la elipse de `P` se agranda y contiene sus subprocesos `P1`, `P2`, `P3` como elipses menores ordenadas verticalmente.
-
-Los objetos del SD se enlazan a los subprocesos concretos que les corresponden. Los enlaces conectados al **contorno exterior** de un proceso descompuesto se distribuyen a todos los subprocesos solo en los casos permitidos. Los enlaces de consumo y resultado **no deben** quedar en el contorno exterior porque eso rompería la lógica temporal.
-
-La descomposición de objetos funciona de forma análoga, aunque sin transferir control de ejecución.
+- este documento solo necesita afirmar que un hecho del modelo tiene representación gráfica obligatoria;
+- la tabla exhaustiva de símbolos, variantes, adornos, arcos, contornos y marcas vive exclusivamente en `opm-visual-es`;
+- la realización textual de esos mismos hechos vive exclusivamente en `opm-opl-es`.
 
 ---
 
@@ -333,10 +265,7 @@ Tres criterios distinguen proceso de objeto:
 - asociación verbal: el nombre del proceso expresa acción;
 - transformación: el proceso debe transformar al menos un objeto.
 
-En español canónico, la superficie recomendada para procesos en OPL-ES es:
-
-- infinitivo: `Procesar Datos`, `Preparar Café`;
-- o nominalización natural del dominio encabezada por `-ción`: `Verificación de Identidad`, `Preparación de Café`.
+La política léxica y sintáctica de nombrado en español no se fija en esta capa. La realización textual canónica de nombres de proceso vive exclusivamente en [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1. Esta capa ISO solo exige que el nombre denote una acción o transformación identificable del dominio.
 
 ### Propiedades genéricas
 
@@ -360,25 +289,15 @@ Un objeto con estados tiene un conjunto de estados permitidos. En cada instante,
 
 ### Representación
 
-El estado se representa como un rectángulo redondeado dentro del objeto. En OPL-ES la forma canónica es:
-
-- `**Objeto** puede estar \`estado1\`, \`estado2\` o \`estado3\`.`
-- `Estado \`estado\` de **Objeto** es inicial/final/por defecto.`
+El estado se representa como un rectángulo redondeado dentro del objeto. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §3 y §14.
 
 ### Estados iniciales, por defecto y finales
 
-| Designación | Marca gráfica | Significado |
-|---|---|---|
-| Inicial | borde grueso | estado en la creación del objeto |
-| Final | doble borde | estado en el momento de ser consumido |
-| Por defecto | indicador con flecha diagonal | estado más probable al inspeccionar aleatoriamente |
+Tres designaciones califican estados: **inicial** (estado al crearse el objeto), **final** (estado al consumirse) y **por defecto** (estado más probable al inspeccionar aleatoriamente). Un objeto puede tener cero o más estados iniciales, cero o más finales, y como máximo uno por defecto. La realización gráfica de cada designación (contorno grueso, doble borde, flecha diagonal) vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §2.2.
 
 ### Valores de atributos
 
-Un atributo es un objeto que caracteriza una cosa. Sus valores son estados del atributo. Puede especificarse unidad de medida. La sintaxis canónica OPL-ES es:
-
-- `**Atributo** de **Objeto** es valor.`
-- `**Atributo** de **Objeto** varía de X a Y.`
+Un atributo es un objeto que caracteriza una cosa. Sus valores son estados del atributo. Puede especificarse unidad de medida. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §14.
 
 ---
 
@@ -423,21 +342,17 @@ Los eventos se pierden tras la evaluación, incluso si la precondición falla.
 
 Tres tipos básicos:
 
-| Enlace | Semántica | OPL-ES canónico | Dirección |
-|---|---|---|---|
-| Consumo | El proceso destruye o elimina el objeto | `*Proceso* consume **Consumido**.` | objeto → proceso |
-| Resultado | El proceso crea o genera el objeto | `*Proceso* genera **Resultante**.` | proceso → objeto |
-| Efecto | El proceso cambia el estado del objeto | `*Proceso* afecta **Afectado**.` | objeto ↔ proceso |
+| Enlace | Semántica | Dirección abstracta |
+|---|---|---|
+| Consumo | El proceso destruye o elimina el objeto. | objeto → proceso |
+| Resultado | El proceso crea o genera el objeto. | proceso → objeto |
+| Efecto | El proceso cambia el estado del objeto. | objeto ↔ proceso |
 
 ### Enlaces transformadores con estado especificado
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Consumo con estado | `*Proceso* consume **Objeto** en \`estado\`.` |
-| Resultado con estado | `*Proceso* genera **Objeto** en \`estado\`.` |
-| Efecto entrada-salida | `*Proceso* cambia **Objeto** de \`estado-entrada\` a \`estado-salida\`.` |
-| Efecto solo entrada | `*Proceso* cambia **Objeto** de \`estado-entrada\`.` |
-| Efecto solo salida | `*Proceso* cambia **Objeto** a \`estado-salida\`.` |
+Los enlaces transformadores pueden restringirse a estados concretos del objeto: consumo con estado, resultado con estado, efecto entrada-salida, efecto solo entrada y efecto solo salida.
+
+La realización textual canónica de estas variantes vive en `opm-opl-es` §4. La realización gráfica vive en `opm-visual-es` §3.
 
 Cuando el consumo ocurre a lo largo del tiempo, puede modelarse mediante una propiedad de tasa del enlace y un atributo de cantidad del consumido. Sin esas propiedades, el consumo se interpreta como inmediato al activarse el proceso.
 
@@ -453,21 +368,18 @@ Cuando el consumo ocurre a lo largo del tiempo, puede modelarse mediante una pro
 
 Los habilitadores son necesarios para que ocurra un proceso, pero no son transformados. Hay dos clases:
 
-| Enlace | Tipo de habilitador | Símbolo OPD | OPL-ES canónico |
-|---|---|---|---|
-| Agente | Persona o grupo con toma de decisiones | círculo negro relleno | `**Agente** maneja *Proceso*.` |
-| Instrumento | Objeto inanimado sin decisión propia | círculo blanco vacío | `*Proceso* requiere **Instrumento**.` |
+| Enlace | Tipo de habilitador |
+|---|---|
+| Agente | Persona o grupo con toma de decisiones. |
+| Instrumento | Objeto inanimado sin decisión propia. |
 
 Si un habilitador deja de existir durante la ejecución, el proceso se detiene y el estado del afectado queda indeterminado.
 
 ### Enlaces habilitadores con estado especificado
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Agente con estado | `**Agente** en \`estado\` maneja *Proceso*.` |
-| Instrumento con estado | `*Proceso* requiere **Instrumento** en \`estado\`.` |
+Los habilitadores también pueden restringirse a un estado específico. El proceso ocurre si y solo si el habilitador está en el estado requerido.
 
-El proceso ocurre si y solo si el habilitador está en el estado requerido.
+La realización textual canónica de estas variantes vive en `opm-opl-es` §5. La realización gráfica vive en `opm-visual-es` §3.
 
 ---
 
@@ -477,33 +389,13 @@ Los enlaces de evento anotan un enlace transformador o habilitador con `e`. Un e
 
 ### Enlaces de evento transformadores
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Evento de consumo | `**Objeto** inicia *Proceso*, que consume **Objeto**.` |
-| Evento de efecto | `**Objeto** inicia *Proceso*, que afecta **Objeto**.` |
+Las variantes transformadoras incluyen evento de consumo y evento de efecto, con o sin estado especificado.
 
 ### Enlaces de evento habilitadores
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Evento de agente | `**Agente** inicia y maneja *Proceso*.` |
-| Evento de instrumento | `**Instrumento** inicia *Proceso*, que requiere **Instrumento**.` |
+Las variantes habilitadoras incluyen evento de agente y evento de instrumento, con o sin estado especificado.
 
-### Enlaces de evento transformadores con estado especificado
-
-| Enlace | OPL-ES canónico |
-|---|---|
-| Evento de consumo con estado | `**Objeto** en \`estado\` inicia *Proceso*, que consume **Objeto**.` |
-| Evento de efecto entrada-salida | `**Objeto** en \`estado-entrada\` inicia *Proceso*, que cambia **Objeto** de \`estado-entrada\` a \`estado-salida\`.` |
-| Evento de efecto solo entrada | `**Objeto** en \`estado-entrada\` inicia *Proceso*, que cambia **Objeto** de \`estado-entrada\`.` |
-| Evento de efecto solo salida | `**Objeto** en cualquier estado inicia *Proceso*, que cambia **Objeto** a \`estado-destino\`.` |
-
-### Enlaces de evento habilitadores con estado especificado
-
-| Enlace | OPL-ES canónico |
-|---|---|
-| Evento de agente con estado | `**Agente** en \`estado\` inicia y maneja *Proceso*.` |
-| Evento de instrumento con estado | `**Instrumento** en \`estado\` inicia *Proceso*, que requiere **Instrumento** en \`estado\`.` |
+La realización textual canónica de todos los eventos vive en `opm-opl-es` §6. La realización gráfica vive en `opm-visual-es` §4.
 
 ---
 
@@ -515,43 +407,30 @@ Los enlaces de condición anotan un enlace con `c`. Introducen un **mecanismo de
 
 ### Enlaces transformadores condicionales
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Consumo condicional | `*Proceso* ocurre si **Objeto** existe, en cuyo caso **Objeto** se consume, de lo contrario *Proceso* se omite.` |
-| Efecto condicional | `*Proceso* ocurre si **Objeto** existe, en cuyo caso *Proceso* afecta **Objeto**, de lo contrario *Proceso* se omite.` |
+Los transformadores condicionales introducen bypass: si falla la precondición, el proceso se omite en vez de esperar. Existen variantes de consumo y efecto, con y sin estado especificado.
 
 ### Enlaces habilitadores condicionales
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Agente condicional | `**Agente** maneja *Proceso* si **Agente** existe; de lo contrario *Proceso* se omite.` |
-| Instrumento condicional | `*Proceso* ocurre si **Instrumento** existe; de lo contrario *Proceso* se omite.` |
+Los habilitadores condicionales aplican el mismo patrón a agentes e instrumentos.
 
 ### Enlaces condicionales con estado especificado
 
-Seis variantes donde el bypass verifica que el objeto esté en un estado concreto:
+Las variantes state-specified heredan la misma semántica de bypass, restringida a un estado concreto.
 
-| Enlace | OPL-ES canónico |
-|---|---|
-| Consumo condicional con estado | `*Proceso* ocurre si **Objeto** está en \`estado\`, en cuyo caso **Objeto** se consume, de lo contrario *Proceso* se omite.` |
-| Efecto entrada-salida condicional | `*Proceso* ocurre si **Objeto** está en \`estado-entrada\`, en cuyo caso *Proceso* cambia **Objeto** de \`estado-entrada\` a \`estado-salida\`, de lo contrario *Proceso* se omite.` |
-| Efecto solo entrada condicional | `*Proceso* ocurre si **Objeto** está en \`estado-entrada\`, en cuyo caso *Proceso* cambia **Objeto** de \`estado-entrada\`, de lo contrario *Proceso* se omite.` |
-| Efecto solo salida condicional | `*Proceso* ocurre si **Objeto** existe, en cuyo caso *Proceso* cambia **Objeto** a \`estado-salida\`, de lo contrario *Proceso* se omite.` |
-| Agente condicional con estado | `**Agente** maneja *Proceso* si **Agente** está en \`estado\`, de lo contrario *Proceso* se omite.` |
-| Instrumento condicional con estado | `*Proceso* ocurre si **Instrumento** está en \`estado\`, de lo contrario *Proceso* se omite.` |
-
-Gráficamente, cada uno usa su símbolo base con anotación `c` cerca del proceso.
+La realización textual canónica de todas las condiciones vive en `opm-opl-es` §7. La realización gráfica vive en `opm-visual-es` §4.
 
 ### Enlaces de excepción
 
 Conectan un proceso fuente con un proceso de manejo según la duración observada.
 
-| Enlace | Disparador | Símbolo OPD | OPL-ES canónico |
-|---|---|---|---|
-| Sobretiempo | La fuente excede su duración máxima | una barra oblicua | `*Manejo* ocurre si duración de *Fuente* excede máx-duración unidades-tiempo.` |
-| Subtiempo | La fuente queda por debajo de su duración mínima | dos barras oblicuas paralelas | `*Manejo* ocurre si duración de *Fuente* es menor que mín-duración unidades-tiempo.` |
+| Enlace | Disparador |
+|---|---|
+| Sobretiempo | La fuente excede su duración máxima. |
+| Subtiempo | La fuente queda por debajo de su duración mínima. |
 
 La duración de un proceso puede especializarse en mínima, esperada y máxima. La distribución de duración determina el valor efectivo por instancia.
+
+La realización textual canónica vive en `opm-opl-es` §8.1. La realización gráfica vive en `opm-visual-es` §4.4 y §14.
 
 ---
 
@@ -559,14 +438,16 @@ La duración de un proceso puede especializarse en mínima, esperada y máxima. 
 
 La invocación modela que un proceso inicia otro. Semánticamente puede verse como la creación de un objeto intermedio transitorio consumido de inmediato por el proceso destino.
 
-| Enlace | Símbolo OPD | OPL-ES canónico |
-|---|---|---|
-| Invocación | línea quebrada tipo rayo | `*Proceso-invocador* invoca *Proceso-invocado*.` |
-| Auto-invocación | par de invocaciones cerradas sobre sí mismas | `*Proceso-invocador* se invoca a sí mismo.` |
+| Enlace | Semántica |
+|---|---|
+| Invocación | Un proceso inicia otro proceso. |
+| Auto-invocación | Un proceso se reinicia o se reitera a sí mismo. |
 
 **Invocación implícita** dentro de un proceso descompuesto: la terminación de un subproceso invoca al que se encuentra inmediatamente debajo. No hay enlace explícito; la altura relativa determina el orden. Cuando dos o más subprocesos tienen la misma altura superior, comienzan en paralelo y el último en terminar inicia al siguiente.
 
 **Invocación cíclica con bypass condicional:** los enlaces de invocación modelan comportamiento iterativo o cíclico. Después de cada ciclo, un nodo de decisión booleano evalúa si se vuelve a entrar o se continúa. En sistemas de refrigeración, por ejemplo, *Evaporar* invoca al proceso completo de refrigeración por compresión para expresar el ciclo continuo del refrigerante.
+
+La realización textual canónica vive en `opm-opl-es` §8.2. La realización gráfica vive en `opm-visual-es` §9.
 
 ---
 
@@ -576,30 +457,24 @@ La invocación modela que un proceso inicia otro. Semánticamente puede verse co
 
 La semántica la define quien modela mediante etiquetas textuales.
 
-| Variante | OPD | OPL-ES canónico |
-|---|---|---|
-| Unidireccional etiquetado | flecha abierta + etiqueta | `**Origen** etiqueta **Destino**.` |
-| Unidireccional sin etiqueta | flecha abierta, sin etiqueta | `**Origen** se relaciona con **Destino**.` |
-| Bidireccional etiquetado | arpones en ambos extremos + dos etiquetas | Dos oraciones OPL, una por cada dirección |
-| Recíproco etiquetado | arpones + una etiqueta | `**Origen** y **Destino** son etiqueta.` |
-| Recíproco sin etiqueta | arpones, sin etiqueta | `**Origen** y **Destino** se relacionan.` |
-
 ### Relaciones estructurales fundamentales
 
-| Relación | Refinable → refinador | Símbolo OPD | OPL-ES canónico |
-|---|---|---|---|
-| Agregación-participación | todo → partes | triángulo negro relleno | `**Todo** consta de **Parte1**, **Parte2** y **Parte3**.` |
-| Exhibición-caracterización | exhibidor → rasgos | triángulo negro pequeño dentro de triángulo vacío | `**Exhibidor** exhibe **Atributo1** así como *Operación1*.` |
-| Generalización-especialización | general → especializaciones | triángulo vacío | `**Especialización1** y **Especialización2** son **General**.` |
-| Clasificación-instanciación | clase → instancias | círculo negro pequeño dentro de triángulo vacío | `**Instancia** es una instancia de **Clase**.` |
+| Relación | Refinable → refinador |
+|---|---|
+| Agregación-participación | todo → partes |
+| Exhibición-caracterización | exhibidor → rasgos |
+| Generalización-especialización | general → especializaciones |
+| Clasificación-instanciación | clase → instancias |
 
-Las colecciones incompletas usan una barra horizontal bajo el triángulo y en OPL-ES se expresan con `y al menos otra parte`, `y al menos otro rasgo` o `y al menos otra especialización`.
+Las colecciones incompletas usan una barra horizontal bajo el triángulo. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §9.
 
 **Restricción de perseverancia:** salvo en exhibición-caracterización, el refinable y los refinadores deben tener la misma perseverancia.
 
 Exhibición-caracterización es el único enlace estructural que puede conectar objetos con procesos: el rasgo es atributo si es objeto y operación si es proceso.
 
 **Clasificación-instanciación:** a diferencia de las otras tres relaciones fundamentales, no distingue entre colección completa e incompleta. El número de instancias puede variar durante la operación.
+
+La realización textual canónica de enlaces estructurales y sus variantes básicas vive en `opm-opl-es` §9. La realización gráfica vive en `opm-visual-es` §8.
 
 ### Herencia
 
@@ -630,13 +505,13 @@ Estos enlaces asocian objetos especializados con valores concretos de atributos.
 
 Siete clases se agrupan en tres familias:
 
-| Grupo | Unidireccional | Bidireccional | Recíproco |
-|---|---|---|---|
-| Estado especificado en el origen | `**Origen** en \`estado\` etiqueta **Destino**.` | `**Origen** en \`estado\` etiqueta-f **Destino**.` / `**Destino** etiqueta-b **Origen** en \`estado\`.` | `**Destino** y **Origen** en \`estado\` son etiqueta.` |
-| Estado especificado en el destino | `**Origen** etiqueta **Destino** en \`estado\`.` | — | — |
-| Estado especificado en origen y destino | `**Origen** en \`sa\` etiqueta **Destino** en \`sb\`.` | `**Origen** en \`sa\` etiqueta-f **Destino** en \`sb\`.` / `**Destino** en \`sb\` etiqueta-b **Origen** en \`sa\`.` | `**Origen** en \`sa\` y **Destino** en \`sb\` son etiqueta.` |
+- estado especificado en el origen;
+- estado especificado en el destino;
+- estado especificado en origen y destino.
 
 Las variantes bidireccionales y recíprocas no existen para el caso de estado solo en el destino.
+
+La realización textual canónica de estas variantes vive en `opm-opl-es` §9.4. La realización gráfica vive en `opm-visual-es` §8.5.
 
 ---
 
@@ -646,12 +521,12 @@ Las variantes bidireccionales y recíprocas no existen para el caso de estado so
 
 La multiplicidad restringe el número de instancias de objeto asociadas a un enlace. El valor por defecto es una instancia por extremo. Aplica a enlaces etiquetados, agregación-participación y enlaces procedimentales.
 
-| Símbolo | Límites | Lectura OPL-ES |
-|---|---|---|
-| `?` | 0..1 | opcional |
-| `*` | 0..* | opcional, de cero a muchos |
-| sin símbolo | 1..1 | por defecto |
-| `+` | 1..* | al menos uno |
+| Símbolo | Límites |
+|---|---|
+| `?` | 0..1 |
+| `*` | 0..* |
+| sin símbolo | 1..1 |
+| `+` | 1..* |
 
 La sintaxis de rango es `qmín..qmáx`. Pueden usarse varios rangos separados por comas y expresiones aritméticas con `+`, `-`, `*`, `/`, `(`, `)`. Las restricciones usan `=`, `≠`, `<`, `≤`, `≥`, llaves para conjuntos y el operador `∈`.
 
@@ -659,22 +534,9 @@ La sintaxis de rango es `qmín..qmáx`. Pueden usarse varios rangos separados po
 
 **Las restricciones de participación no aplican a procesos.** La repetición secuencial de un proceso se modela con un proceso recurrente y contador de iteración; la repetición paralela, con subprocesos síncronos o asíncronos dentro de una descomposición.
 
-**Declaración de tipo:** un objeto puede declarar tipo computacional.
+**Declaración de tipo:** un objeto puede declarar tipo computacional. Los tipos comunes incluyen `boolean`, `string`, `integer`, `float`, `double`, `short`, `long` y `enumerated`.
 
-- `**Objeto** es de tipo tipo-id.`
-
-Tipos comunes: `boolean`, `string`, `integer`, `float`, `double`, `short`, `long`, `enumerated`.
-
-**Ejemplos de opcionalidad:**
-
-- `**Auto** tiene **Sunroof** opcional.`
-- `**Auto** está equipado con **Airbag** opcional.`
-- `**Auto** es dirigido por **Volante**.` (valor 1..1 por defecto)
-- `**Auto** lleva al menos un **Neumático de Repuesto**.`
-
-**Ejemplo paramétrico** (reemplazo de paletas): un **Motor a Reacción** consta de `b` **Paletas Instaladas**. `k` (`k=2..4`) **Mecánicos de Motor de Aviación** manejan *Reemplazar Paletas* usando `k` **Herramientas de Fijación de Paletas**. `1..2` **Ingenieros Aeroespaciales** también manejan *Reemplazar Paletas*. *Reemplazar Paletas* consume `i` **Paletas Inspeccionadas** y `(b-i)` **Paletas Nuevas**, y genera `b` **Paletas Desmontadas**.
-
-**Ejemplo multicondición** (avión): `**Avión** consta de **Fuselaje**, 2 **Alas** y `e` **Motores**, donde `e≥1` y `e=b+2*w`.` Cada ala tiene `w` motores (`0≤w≤3`). El fuselaje tiene `b` motores (`b∈{0,1}`).
+La realización textual canónica de multiplicidades, restricciones y tipos vive en `opm-opl-es` §12.
 
 ---
 
@@ -682,95 +544,36 @@ Tipos comunes: `boolean`, `string`, `integer`, `float`, `double`, `short`, `long
 
 ### AND
 
-AND se expresa con enlaces separados, del mismo tipo, sin tocarse entre sí. En OPL-ES suele materializarse en una sola oración con `y` o en varias oraciones independientes.
+AND se expresa con enlaces separados, del mismo tipo, sin tocarse entre sí.
 
 ### XOR
 
-Un abanico XOR usa un arco discontinuo simple. En OPL-ES se expresa con `exactamente uno de`.
+Un abanico XOR exige exclusión mutua: exactamente una ruta del abanico queda habilitada.
 
 ### OR
 
-Un abanico OR usa dos arcos discontinuos concéntricos. En OPL-ES se expresa con `al menos uno de`.
+Un abanico OR exige inclusión: al menos una ruta del abanico queda habilitada.
 
 ### Combinatoria de abanicos de enlaces
 
 XOR y OR aplican a todas las familias de enlaces procedimentales. El extremo convergente es el extremo común; el divergente no lo es.
-
-**Abanicos de consumo y resultado:**
-
-| Tipo de abanico | Visual OPD | OPL-ES para XOR | OPL-ES para OR |
-|---|---|---|---|
-| Consumo convergente (objetos → proceso) | `A`, `B`, `C` apuntan con punta cerrada a `P`; arco en el extremo de `P` | `*P* consume exactamente uno de **A**, **B** o **C**.` | `*P* consume al menos uno de **A**, **B** o **C**.` |
-| Consumo divergente (objeto → procesos) | `B` se abre hacia `P`, `Q`, `R`; arco en el extremo de `B` | `Exactamente uno de *P*, *Q* o *R* consume **B**.` | `Al menos uno de *P*, *Q* o *R* consume **B**.` |
-| Resultado convergente (procesos → objeto) | `P`, `Q`, `R` convergen a `B` | `Exactamente uno de *P*, *Q* o *R* genera **B**.` | `Al menos uno de *P*, *Q* o *R* genera **B**.` |
-| Resultado divergente (proceso → objetos) | `P` se abre hacia `A`, `B`, `C` | `*P* genera exactamente uno de **A**, **B** o **C**.` | `*P* genera al menos uno de **A**, **B** o **C**.` |
-
-**Abanicos de efecto** (bidireccionales):
-
-| Tipo de abanico | OPL-ES para XOR | OPL-ES para OR |
-|---|---|---|
-| Múltiples objetos | `*P* afecta exactamente uno de **A**, **B** o **C**.` | `*P* afecta al menos uno de **A**, **B** o **C**.` |
-| Múltiples procesos | `Exactamente uno de *P*, *Q* o *R* afecta **B**.` | `Al menos uno de *P*, *Q* o *R* afecta **B**.` |
-
-**Abanicos de habilitación**:
-
-| Tipo de abanico | OPL-ES para XOR | OPL-ES para OR |
-|---|---|---|
-| Agentes | `**B** maneja exactamente uno de *P*, *Q* o *R*.` | `**B** maneja al menos uno de *P*, *Q* o *R*.` |
-| Instrumentos | `Exactamente uno de *P*, *Q* o *R* requiere **B**.` | `Al menos uno de *P*, *Q* o *R* requiere **B**.` |
-
-**Abanicos de invocación:**
-
-| Tipo de abanico | OPL-ES para XOR | OPL-ES para OR |
-|---|---|---|
-| Divergente | `*P* invoca exactamente uno de *Q* o *R*.` | `*P* invoca al menos uno de *Q* o *R*.` |
-| Convergente | `Exactamente uno de *P* o *Q* invoca *R*.` | `Al menos uno de *P* o *Q* invoca *R*.` |
-
-### Ejemplos visuales de AND
-
-AND requiere **enlaces que no se tocan** en el contorno del proceso. Tres ejemplos canónicos:
-
-- **AND de agentes:** `**Propietario de Caja Fuerte A** maneja *Abrir Caja Fuerte*.` y `**Propietario de Caja Fuerte B** maneja *Abrir Caja Fuerte*.` Ambos deben estar presentes.
-- **AND de instrumentos:** `*Abrir Caja Fuerte* requiere **Llave A**, **Llave B** y **Llave C**.` Las tres llaves son necesarias.
-- **AND de resultados:** `*Preparar Comida* genera **Entrada**, **Plato Principal** y **Postre**.`
-- **AND de efectos entrada-salida:** `*Subir Tasa de Interés* cambia simultáneamente varios objetos desde \`bajo\` hasta \`alto\`.` 
+La realización visual de estos abanicos vive en `opm-visual-es` §5. La realización textual canónica vive en `opm-opl-es` §11.
 
 ### Abanicos de enlaces con modificadores de control
 
-Cada abanico XOR tiene variantes de evento y de condición:
-
-| Abanico base | Variante evento OPD | OPL-ES de evento | Variante condición OPD | OPL-ES de condición |
-|---|---|---|---|---|
-| Efecto (múltiples procesos) | flechas bidireccionales con `e` | `**B** inicia exactamente uno de *P*, *Q* o *R*, que afecta **B**.` | igual con `c` | `Exactamente uno de *P*, *Q* o *R* ocurre si **B** existe; de lo contrario se omite.` |
-| Consumo | flechas `B→P,Q,R` con `e` | `**B** en \`s2\` inicia exactamente uno de *P*, *Q* o *R*, que consume **B**.` | igual con `c` | `Exactamente uno de *P*, *Q* o *R* ocurre si **B** está en \`s2\`; de lo contrario se omite.` |
-| Agente | enlaces de agente con `e` | `**B** en \`s2\` inicia y maneja exactamente uno de *P*, *Q* o *R*.` | igual con `c` | `**B** maneja exactamente uno de *P*, *Q* o *R* si **B** está en \`s2\`; de lo contrario se omite.` |
-| Instrumento | enlaces de instrumento con `e` | `**B** en \`s2\` inicia exactamente uno de *P*, *Q* o *R*, que requiere **B** en \`s2\`.` | igual con `c` | `Exactamente uno de *P*, *Q* o *R* requiere **B** en \`s2\`; de lo contrario se omite.` |
-
-Toda variante XOR tiene su contraparte OR reemplazando `exactamente` por `al menos` y el arco simple por arco doble.
+Los abanicos XOR y OR pueden combinarse con modificadores de evento y condición. La semántica sigue siendo la de selección exclusiva o inclusiva, enriquecida respectivamente con iniciación o bypass.
 
 ### Abanicos probabilísticos
 
-Cada enlace del abanico se anota con `Pr=p`, y las probabilidades suman 1.
-
-**Ejemplo numérico:** un proceso `P` puede crear `B` en tres estados: `s1` (`Pr=0.32`), `s2` (`Pr=0.24`) y `s3` (`Pr=0.44`). Si no se anotan probabilidades, la probabilidad por defecto es `1/n`.
-
-**Ejemplo mixto:** `*P* genera uno de **A**, **B** o **C** en `sc1`, con una probabilidad distinta por enlace. Algunos objetos fuente pueden tener estado especificado y otros no.
+Cada enlace del abanico se anota con `Pr=p`, y las probabilidades suman 1. Si no se anotan probabilidades explícitas, la distribución por defecto es uniforme.
 
 ### Trayectorias de ejecución y etiquetas de ruta
 
 Las etiquetas de ruta resuelven ambigüedad cuando existen varias opciones de salida. La regla es: al salir de un proceso, se sigue el enlace cuya etiqueta coincide con la etiqueta de entrada.
 
-En OPL-ES:
-
-- `Por ruta etiqueta, *Proceso* consume **Objeto**.`
-- `Por ruta etiqueta, *Proceso* genera **Objeto**.`
+La realización textual canónica de etiquetas de ruta y escenarios pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §13.
 
 Un **escenario** es un conjunto de una o más etiquetas de ruta que define una variante concreta de ejecución. En sistemas complejos, los escenarios evitan crear un OPD adicional por cada variante.
-
-**Ejemplo** (*Preparar Alimento*):
-
-- por ruta `carnívoro`: `*Preparar Alimento* consume **Carne**, genera **Estofado** y **Bistec**.`
-- por ruta `herbívoro`: `*Preparar Alimento* consume **Pepino** y **Tomate**, genera **Ensalada**.`
 
 ---
 
@@ -834,41 +637,24 @@ Dos formas gobiernan la ejecución implícita en descomposición síncrona:
 
 ## Distribución de enlaces a través del contexto
 
-Los enlaces conectados al **contorno exterior** de un proceso descompuesto tienen semántica distributiva: se distribuyen a todos los subprocesos, de manera análoga a paréntesis algebraicos.
+Los enlaces conectados al **contorno exterior** de un proceso descompuesto tienen semántica distributiva. La especificación formal completa de las reglas de distribución — tipos de enlace, restricciones de frontera, distribución por posición de subproceso, excepciones para eventos ambientales y reglas de escisión — vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §11 y §12.
 
-Restricciones críticas:
+Invariantes semánticos que esta capa conserva:
 
-- los enlaces de **consumo** y **resultado** no deben conectarse al contorno exterior;
-- al descomponer un proceso, todos los consumos y resultados migran **por defecto al primer subproceso**, y luego se reasignan;
-- los enlaces de evento desde objetos o estados sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos;
-- si un enlace de condición hace que un subproceso se omita y existe un siguiente subproceso en la secuencia, el control pasa al siguiente.
-
-**Ejemplo válido e inválido:** si `P` se descompone en `P1`, `P2`, `P3`, es válido decir que `**Agente A** maneja *P*` o que `*P* requiere **Instrumento D**` porque esos enlaces se distribuyen. Pero `*P* consume **C**` o `*P* genera **B**` sobre el contorno exterior es inválido. Lo correcto es asignar `**C**` al subproceso que realmente lo consume y `**B**` al subproceso que realmente lo genera.
+- los enlaces de **consumo** y **resultado** no deben conectarse al contorno exterior de un proceso descompuesto;
+- los enlaces de agente e instrumento se distribuyen a todos los subprocesos;
+- los enlaces de evento desde objetos sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos;
+- si un enlace de condición hace que un subproceso se omita, el control pasa al siguiente.
 
 ---
 
 ## Enlaces transformadores escindidos con estado especificado
 
-Cuando un enlace de efecto entrada-salida del tipo `*P* cambia **A** de \`s1\` a \`s2\`` se descompone en varios subprocesos, el modelo puede quedar subespecificado: no se sabe qué subproceso saca a `A` de `s1` ni cuál la coloca en `s2`.
+Cuando un enlace de efecto entrada-salida se descompone en subprocesos, el modelo queda subespecificado. La escisión del enlace en un par (entrada al subproceso temprano, salida al subproceso tardío) es el único mecanismo correcto para resolver esa subespecificación.
 
-Procedimiento de resolución:
+La especificación formal de los pares escindidos, su tabla de geometría y sus restricciones vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §12.
 
-1. **Caso original:** `*P* cambia **A** de \`s1\` a \`s2\`.`
-2. **Caso ambiguo tras descomposición:** `P` se descompone en `P1` y `P2`, pero el efecto completo sigue unido a `P`.
-3. **Caso reparado:** se usa un par escindido.
-
-Par escindido:
-
-| Par | Significado | Fuente | Destino |
-|---|---|---|---|
-| Par de efecto entrada-salida escindido | El subproceso temprano saca el objeto del estado de entrada; el tardío lo coloca en el estado de salida | estado de entrada + subproceso tardío | subproceso temprano + estado de salida |
-
-En OPL-ES:
-
-- `*P1* cambia **A** de \`s1\`.`
-- `*P2* cambia **A** a \`s2\`.`
-
-Ese es el único mecanismo correcto para resolver la subespecificación de efectos en procesos descompuestos.
+La realización textual de los enlaces escindidos vive en [OPL-ES](urn:fxsl:kb:opm-opl-es) §4 y §7.
 
 **Cambio de rol con la abstracción:** un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido si a nivel abstracto sus estados inicial y final coinciden.
 
@@ -881,52 +667,20 @@ Como consecuencia de la distribución de enlaces, las siguientes restricciones s
 3. Cada instancia operacional de un **afectado** en el conjunto posterior al proceso que cambia de estado DEBE entrar en su estado de salida al completarse el subproceso más detallado que cambia al afectado.
 4. Cada instancia operacional de un **resultante** en el conjunto posterior al proceso DEBE comenzar a existir al completarse el subproceso más detallado que lo genera, y la instancia operacional no está en el conjunto previo al proceso.
 
-**Nota:** para un objeto con estados `B` cuya ejecución del proceso `P` tiene el efecto de cambiar su estado, `B` sale del estado de entrada al inicio del subproceso más detallado de `P` que cambia a `B`, y entra al estado de salida al final de ese mismo subproceso o de algún subproceso posterior. Durante la ejecución, el objeto `B` está en transición entre estados: ha dejado su estado de entrada pero aún no ha llegado a su estado de salida.
-
 ---
 
 ## Precedencia de enlaces durante la recomposición
 
-Al recomponer, los enlaces procedimentales de subprocesos migran al proceso padre. **La fuerza semántica** determina cuál prevalece cuando dos enlaces compiten por el mismo par objeto-proceso.
+Al recomponer, los enlaces procedimentales de subprocesos migran al proceso padre. La **fuerza semántica** determina cuál prevalece cuando dos enlaces compiten por el mismo par objeto-proceso.
 
-Matriz de precedencia de enlaces transformadores:
+La especificación formal de la jerarquía completa de precedencia — incluyendo la matriz de precedencia transformadora, el orden principal `consumo = resultado > efecto > agente > instrumento`, la precedencia secundaria por modificador de control y el orden completo de 12 niveles de fuerza semántica — vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13.
 
-| B↔P1 \ B↔P2 | Efecto | Resultado | Consumo |
-|---|---|---|---|
-| **Efecto** | Efecto | Resultado | Consumo |
-| **Resultado** | Resultado | Inválido | Efecto |
-| **Consumo** | Consumo | Efecto | Inválido |
+Invariantes semánticos que esta capa conserva:
 
-Resultado + consumo sobre el mismo objeto es inválido porque el objeto no puede ser creado y destruido como el mismo hecho abstracto.
-
-Orden principal de precedencia:
-
-`consumo = resultado > efecto > agente > instrumento`
-
-Los enlaces con estado especificado tienen mayor precedencia que los básicos. Dentro de cada clase, el orden secundario es:
-
-`evento > sin control > condición`
-
-### Orden completo de fuerza semántica (12 niveles)
-
-Combinando precedencia primaria y secundaria, el orden completo de fuerza semántica de los enlaces procedimentales es:
-
-| Nivel | Enlace | > que |
-|---|---|---|
-| 1 | evento de consumo | > consumo |
-| 2 | consumo | = resultado |
-| 3 | resultado | > condición de consumo |
-| 4 | condición de consumo | > evento de efecto |
-| 5 | evento de efecto | > efecto |
-| 6 | efecto | > condición de efecto |
-| 7 | condición de efecto | > evento de agente |
-| 8 | evento de agente | > agente |
-| 9 | agente | > condición de agente |
-| 10 | condición de agente | > evento de instrumento |
-| 11 | evento de instrumento | > instrumento |
-| 12 | instrumento | > condición de instrumento |
-
-Los símbolos `=` y `>` indican equivalencia y mayor fuerza respectivamente. Un enlace de evento es más fuerte que su enlace no-control correspondiente porque además de la semántica base tiene la capacidad de iniciar un proceso. Un enlace de condición es más débil porque el modificador de condición debilita los criterios de satisfacción de la precondición.
+- resultado + consumo sobre el mismo objeto es inválido (no se puede crear y destruir como el mismo hecho abstracto);
+- un enlace transformador siempre prevalece sobre un enlace habilitador al recomponer;
+- un enlace de evento es más fuerte que su enlace no-control correspondiente porque además de la semántica base tiene la capacidad de iniciar un proceso;
+- un enlace de condición es más débil porque el modificador de condición debilita los criterios de satisfacción de la precondición.
 
 ---
 
@@ -939,12 +693,9 @@ Etiquetas típicas:
 - `SD` para nivel 0;
 - `SD1`, `SD2`, etc., para niveles descendientes.
 
-**Etiquetas de aristas del árbol OPD:** cada arista del árbol de procesos usa un enlace estructural etiquetado unidireccional con una fórmula de refinamiento equivalente a `se refina por descomposición de NombreProceso en` o `se refina por despliegue de NombreCosa en`. En español canónico:
+**Etiquetas de aristas del árbol OPD:** cada arista del árbol de procesos usa un enlace estructural etiquetado unidireccional con una fórmula de refinamiento equivalente a `se refina por descomposición de NombreProceso en` o `se refina por despliegue de NombreCosa en`. La realización textual canónica de estas sentencias pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §10.
 
-- `SD se refina por descomposición de *Proceso* en SD1.`
-- `SD1 se refina por despliegue de **Cosa** en SD1.1.`
-
-**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general orden en anchura, comenzando desde `SD`.
+**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general orden en anchura, comenzando desde `SD`. El procedimiento operativo de recorrido pertenece a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 ### OPL del sistema completo
 
@@ -977,37 +728,6 @@ Núcleo recuperable del ejemplo clásico de *Sistema de Lavado de Platos*:
 
 **Simplificación de OPD:** la recomposición dentro del mismo diagrama y la descomposición en nuevo diagrama pueden simplificar un OPD sobrecargado. Restricción: un objeto no puede incorporarse al conjunto abstraído si eso crearía enlaces procedimentales directos entre procesos pares sin semántica OPM.
 
-### Tabla 26 — Especificación OPL completa del Sistema de Lavado de Platos
-
-| Especificación OPL del **Sistema de Lavado de Platos** |
-|---|
-| **SD: Sistema de Lavado de Platos** |
-| `**Usuario Doméstico** maneja *Lavar Platos*.` |
-| `*Lavar Platos* requiere **Lavavajillas**.` |
-| `*Lavar Platos* consume **Jabón**.` |
-| `*Lavar Platos* afecta **Conjunto de Platos**.` |
-| `SD se refina por descomposición de *Lavar Platos* en SD1.` |
-| **SD1: *Lavar Platos* descompuesto** |
-| `**Lavavajillas** consta de **Compartimento de Jabón** y otras partes.` |
-| `**Lavavajillas** puede estar \`vacío\` o \`cargado\`.` |
-| `  Estado \`vacío\` de **Lavavajillas** es inicial y final.` |
-| `**Compartimento de Jabón** puede estar \`vacío\` o \`cargado\`.` |
-| `  Estado \`vacío\` de **Compartimento de Jabón** es inicial.` |
-| `**Conjunto de Platos** exhibe **Limpieza**.` |
-| `  **Limpieza** de **Conjunto de Platos** puede estar \`sucio\` o \`limpio\`.` |
-| `  Estado \`sucio\` de **Limpieza** de **Conjunto de Platos** es inicial.` |
-| `  Estado \`limpio\` de **Limpieza** de **Conjunto de Platos** es final.` |
-| `**Usuario Doméstico** maneja *Lavar Platos*.` |
-| `*Lavar Platos* se descompone en *Cargar Platos*, *Insertar Detergente*, *Lavar y Secar Platos* y *Descargar Platos*, en esa secuencia.` |
-| `  *Cargar Platos* cambia **Lavavajillas** de \`vacío\` a \`cargado\`.` |
-| `  *Insertar Detergente* requiere **Jabón**.` |
-| `  *Insertar Detergente* cambia **Compartimento de Jabón** de \`vacío\` a \`cargado\`.` |
-| `  *Lavar y Secar Platos* requiere **Lavavajillas**.` |
-| `  *Lavar y Secar Platos* consume **Jabón**.` |
-| `  *Lavar y Secar Platos* cambia **Limpieza** de **Conjunto de Platos** de \`sucio\` a \`limpio\`.` |
-| `  *Descargar Platos* cambia **Lavavajillas** de \`cargado\` a \`vacío\`.` |
-| Fin de especificación OPL del **Sistema de Lavado de Platos** |
-
 ### Principio de consistencia de hechos OPM
 
 Si un hecho aparece en un OPD y contradice otro hecho del mismo modelo en otro OPD, el modelo es inconsistente y la herramienta debería detectarlo. Que un hecho sea refinamiento o abstracción de otro no constituye contradicción.
@@ -1016,109 +736,9 @@ Si un hecho aparece en un OPD y contradice otro hecho del mismo modelo en otro O
 
 ## Diagrama de sistema: procedimiento y componentes
 
-El SD es el OPD de nivel 0 y proporciona una vista de alto nivel comprensible para cualquier interesado, incluso sin especialización técnica.
+El SD es el OPD de nivel 0 y proporciona una vista de alto nivel comprensible para cualquier interesado, incluso sin especialización técnica. En la capa ISO solo interesa su función semántica: expresar la función del sistema y su contexto de máximo nivel.
 
-Cinco componentes para sistemas artificiales y sociotécnicos, y tres para sistemas naturales:
-
-### 1. Propósito
-
-Quién se beneficia y qué valor recibe. Suele expresarse como cambio de estado en un atributo del beneficiario, desde un estado problemático a uno satisfactorio. En sistemas naturales se habla más bien de **resultado** que de propósito.
-
-### 2. Función principal
-
-Combinación del proceso principal y el objeto operando. El nombre funcional puede formarse como objeto + proceso, por ejemplo `Pintar Auto`. El proceso principal transforma el operando mediante un enlace transformador.
-
-### 3. Habilitadores
-
-Objetos requeridos por el proceso pero no transformados por él.
-
-- **Agentes:** personas o grupos; en sistemas naturales no hay agentes humanos.
-- **Instrumentos:** objetos no humanos; el propio sistema suele ser el instrumento principal. El nombre por defecto del sistema es función + `Sistema`.
-
-### 4. Entorno
-
-Cosas fuera del sistema que afectan su operación. La afiliación sistémica o ambiental se determina por el atributo de afiliación.
-
-### 5. Ocurrencia del problema
-
-Imagen espejo de propósito y función. Un proceso ambiental provoca que el atributo del beneficiario se encuentre en el estado problemático. No aplica a sistemas naturales.
-
-### Procedimiento de construcción del SD
-
-Proceso guiado de nueve etapas:
-
-1. **Proceso principal:** "¿Cuál es el proceso principal del sistema?"
-2. **Beneficiario:** "¿Quién es el beneficiario?"
-3. **Atributo del beneficiario:** "¿Qué atributo expresa el valor?"
-4. **Agente:** "¿El beneficiario es también el agente?"
-5. **Nombre del sistema:** "¿Cómo se llama el sistema?"
-6. **Instrumentos:** "¿Qué instrumentos requiere?"
-7. **Entradas:** "¿Cuáles son las entradas?"
-8. **Salidas:** "¿Cuál es la salida?"
-9. **Objetos ambientales:** "¿Qué objetos ambientales se asocian?"
-
-### Jerarquía de detalle (SD1)
-
-Cuando un OPD se vuelve demasiado complejo, se crea un OPD descendiente.
-
-- **Refinamiento de proceso:** síncrono por descomposición o asíncrono por despliegue.
-- **Refinamiento de objeto:** despliegue en partes y atributos.
-- **Expresión de estados:** estados suprimidos en el SD aparecen en `SD1` enlazados a subprocesos.
-
-**Regla normativa síncrono vs asíncrono (§14.2.2.5):** dado que la relación estructural fundamental de agregación-participación no prescribe ningún "orden parcial" de ejecución de procesos, el modelado de refinamiento síncrono de procesos DEBE usar descomposición (in-zooming). El modelado de refinamiento asíncrono de procesos DEBE usar el enlace estructural fundamental de agregación-participación, ya sea por despliegue de agregación en el mismo diagrama o en nuevo diagrama.
-
----
-
-## Tipos de sistema y variaciones del SD
-
-### Sistemas artificiales
-
-Aplican los cinco componentes completos: propósito, función principal, habilitadores, entorno y ocurrencia del problema.
-
-### Sistemas naturales
-
-Aplican solo tres:
-
-- función principal;
-- instrumentos;
-- entorno.
-
-El propósito se reemplaza por **resultado**, beneficioso o perjudicial para grupos afectados. No existe "ocurrencia del problema" en sentido de diseño intencional.
-
-### Sistemas sociales
-
-Aplican los cinco componentes. Los agentes suelen ser el núcleo del modelo, y los instrumentos incluyen instalaciones y equipamiento.
-
-### Sistemas sociotécnicos
-
-Son sistemas complejos con muchos componentes que interactúan de múltiples formas y exigen coordinación entre especialistas de disciplinas distintas. OPM ofrece una especificación común que ayuda a evitar diseños desordenados, incompletos o poco claros.
-
----
-
-## Nodos de decisión y comportamiento condicional
-
-### Nodos de decisión
-
-Un **nodo de decisión** es un objeto informacional que representa un punto de elección. La mejor práctica es nombrarlo como pregunta.
-
-Un **objeto booleano** es un nodo de decisión con dos estados opuestos, típicamente `sí` y `no`.
-
-### Enlace instrumental condicional vs no condicional
-
-Diferencia crítica:
-
-- **Instrumento condicional** (`c`): si el instrumento no existe o no está en el estado requerido, el proceso se **omite** y la ejecución continúa.
-- **Instrumento no condicional**: si el instrumento falta, la ejecución **se detiene y espera**.
-
-Esto define si el sistema falla de forma elegante o queda bloqueado.
-
-### Subprocesos iterativos
-
-La iteración se modela con nodos de decisión más enlaces de invocación. Después de cada ciclo, el nodo booleano decide si se vuelve atrás o se sigue. La invocación de retorno no debe violar el orden temporal de arriba hacia abajo dentro de una descomposición.
-
-### Orden espacial en la descomposición de objetos
-
-En la descomposición de objetos, la posición espacial de los objetos constituyentes tiene significado, a diferencia de la descomposición de procesos donde lo crítico es la línea temporal vertical. El orden espacial aplica tanto a objetos físicos como a objetos informacionales.
+La construcción detallada del SD, sus variantes por tipo de sistema, la secuencia de preguntas, la jerarquía de detalle, los nodos de decisión y las reglas de praxis asociadas pertenecen a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 ---
 
@@ -1162,423 +782,16 @@ La integración virtual combina modelos conceptuales de hardware con módulos de
 
 ---
 
-## Sintaxis formal de OPL: EBNF central
+## Sintaxis formal de OPL: delegación editorial
 
-La gramática formal de referencia en ISO/PAS 19450 usa terminales ingleses. En esta edición se ofrece la forma **canónica española**, alineada con `opm-opl-es.md`. Las reglas de producción se preservan; cambian los terminales léxicos y ciertas convenciones de superficie.
+La gramática formal completa de OPL-ES deja de vivir en esta capa para eliminar solapamiento con la capa textual canónica. La EBNF española completa, incluyendo producción base, oraciones procedimentales, estructurales, condicionales y de gestión de contexto, vive ahora exclusivamente en [OPL-ES](urn:fxsl:kb:opm-opl-es), Apéndice A.
 
-### Estructura del documento
+Este documento conserva solo el contrato semántico que la gramática textual debe preservar:
 
-```ebnf
-parrafo_opl_es = oracion_opl_es, { salto_de_linea, oracion_opl_es } ;
-oracion_opl_es = oracion_formal_opl_es, "." ;
-oracion_formal_opl_es = oracion_de_descripcion_de_cosa
- | oracion_procedimental
- | oracion_estructural
- | oracion_de_gestion_de_contexto ;
-```
-
-### Declaraciones base
-
-```ebnf
-digito_no_cero = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;
-digito_decimal = '0' | digito_no_cero ;
-entero_positivo = digito_no_cero, {digito_decimal} ;
-nombre = letra, {caracter_de_cadena} ;
-palabra_capitalizada = letra_mayuscula, {caracter_de_cadena} ;
-palabra_no_capitalizada = letra_minuscula, {caracter_de_cadena} ;
-identificador_de_tipo = "boolean" | "string" | tipo_numerico | "enumerated" ;
-tipo_numerico = [prefijo], "integer" | "float" | "double" | "short" | "long" ;
-restriccion_de_participacion = singular_inferior | singular_superior | plural_inferior | plural_superior
- | ( "0" | limite_de_participacion, [ " a ", limite_de_participacion ] ) ;
-singular_inferior = "un" | "una" | "un opcional" | "una opcional" | "al menos un" | "al menos una" ;
-clausula_de_rango = " es ", nombre_de_valor | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
-```
-
-### Identificadores
-
-```ebnf
-identificador_de_objeto = nombre_singular_de_objeto, [ " en ", unidad_de_medida ], [ clausula_de_rango ] ;
-identificador_de_proceso = nombre_singular_de_proceso | nombre_singular_de_proceso, " proceso" ;
-identificador_de_cosa = identificador_de_objeto | identificador_de_proceso ;
-identificador_de_estado = palabra_no_capitalizada ;
-expresion_de_etiqueta = frase_no_capitalizada ;
-```
-
-Convenciones:
-
-- nombres de objeto: sintagmas nominales en singular, con mayúscula en palabras léxicas;
-- nombres de proceso: infinitivo o nominalización técnica canónica del dominio;
-- nombres de estado: en minúscula;
-- etiquetas: frases breves en minúscula.
-
----
-
-## Oraciones de descripción de cosas
-
-```ebnf
-oracion_de_propiedad_generica = identificador_de_cosa, " es ", [esencia], [afiliacion], [perseverancia] ;
-oracion_de_enumeracion_de_estados = identificador_de_objeto, " puede estar ", lista_de_estados | "..., y otros estados" ;
-oracion_de_estados_iniciales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es inicial" ;
-oracion_de_estados_finales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es final" ;
-oracion_de_estado_por_defecto = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es por defecto" ;
-```
-
-Esencia: `Física` o `Informacional`. Afiliación: `Sistémica` o `Ambiental`. Perseverancia: `Persistente` o `Transitoria`.
-
-## Oraciones procedimentales
-
-```ebnf
-oracion_procedimental = oracion_transformadora | oracion_habilitadora | oracion_de_control ;
-oracion_transformadora = oracion_de_consumo | oracion_de_resultado | oracion_de_efecto | oracion_de_cambio ;
-
-oracion_de_consumo = identificador_de_proceso, " consume ", objeto_con_opcion_de_estado ;
-oracion_de_resultado = identificador_de_proceso, " genera ", objeto_con_opcion_de_estado ;
-oracion_de_efecto = identificador_de_proceso, " afecta ", lista_de_objetos ;
-oracion_de_cambio = oracion_de_cambio_entrada_salida | oracion_de_cambio_solo_entrada
- | oracion_de_cambio_solo_salida ;
-
-frase_de_cambio_entrada_salida = identificador_de_objeto, " de ", estado_de_entrada, " a ", estado_de_salida ;
-frase_de_cambio_solo_entrada = identificador_de_objeto, " de ", estado_de_entrada ;
-frase_de_cambio_solo_salida = identificador_de_objeto, " a ", estado_de_salida ;
-
-oracion_habilitadora = oracion_de_agente | oracion_de_instrumento ;
-oracion_de_agente = objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso ;
-oracion_de_instrumento = identificador_de_proceso, " requiere ", objeto_con_opcion_de_estado ;
-
-oracion_de_control = oracion_de_evento | oracion_de_condicion | oracion_de_invocacion | oracion_de_excepcion ;
-oracion_de_evento_de_consumo = objeto_con_opcion_de_estado, " inicia ", identificador_de_proceso,
- ", que consume ", identificador_de_objeto ;
-oracion_de_evento_de_efecto = identificador_de_objeto, " inicia ", identificador_de_proceso,
- ", que afecta ", identificador_de_objeto ;
-oracion_de_evento_de_agente = objeto_con_opcion_de_estado, " inicia y maneja ", identificador_de_proceso ;
-oracion_de_evento_de_instrumento = objeto_con_opcion_de_estado, " inicia ", identificador_de_proceso,
- ", que requiere ", objeto_con_opcion_de_estado ;
-
-oracion_de_invocacion = identificador_de_proceso, " invoca ", lista_de_procesos
- | identificador_de_proceso, " se invoca a sí mismo" ;
-oracion_de_excepcion_por_sobretiempo = identificador_de_proceso_activo,
- " ocurre si duración de ", identificador_de_proceso, " excede ", max_duracion_unidades_tiempo ;
-oracion_de_excepcion_por_subtiempo = identificador_de_proceso_activo,
- " ocurre si duración de ", identificador_de_proceso, " es menor que ", min_duracion_unidades_tiempo ;
-```
-
-Las variantes XOR y OR usan `exactamente uno de` y `al menos uno de`. Las oraciones de condición siguen el patrón `ocurre si ... en cuyo caso ... de lo contrario ... se omite`.
-
-### Oraciones de condición (EBNF completo)
-
-```ebnf
-oracion_de_condicion = oracion_transformadora_condicional | oracion_habilitadora_condicional ;
-
-oracion_transformadora_condicional = oracion_de_consumo_condicional
- | oracion_de_consumo_condicional_con_estado
- | oracion_de_efecto_condicional ;
-
-oracion_de_consumo_condicional = ( identificador_de_proceso, " ocurre si ", identificador_de_objeto,
- " existe, en cuyo caso ", identificador_de_objeto, " se consume, de lo contrario ",
- identificador_de_proceso, " se omite" )
- | ( "Si ", identificador_de_objeto, " existe entonces ", identificador_de_proceso,
- " ocurre y consume ", identificador_de_objeto, ", de lo contrario se omite ",
- identificador_de_proceso ) ;
-
-oracion_de_consumo_condicional_con_estado = ( identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " está en ", estado_de_entrada, ", en cuyo caso ",
- identificador_de_objeto, " se consume, de lo contrario ", identificador_de_proceso, " se omite" ) ;
-
-oracion_de_efecto_condicional = oracion_de_efecto_condicional_simple
- | oracion_de_efecto_entrada_salida_condicional
- | oracion_de_efecto_entrada_condicional
- | oracion_de_efecto_salida_condicional ;
-
-oracion_de_efecto_condicional_simple = identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " existe, en cuyo caso ", identificador_de_proceso,
- " afecta ", identificador_de_objeto, ", de lo contrario ", identificador_de_proceso, " se omite" ;
-
-oracion_de_efecto_entrada_salida_condicional = identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " está en ", estado_de_entrada, ", en cuyo caso ",
- identificador_de_proceso, " cambia ", identificador_de_objeto, " de ", estado_de_entrada,
- " a ", estado_de_salida, ", de lo contrario ", identificador_de_proceso, " se omite" ;
-
-oracion_de_efecto_entrada_condicional = identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " está en ", estado_de_entrada, ", en cuyo caso ",
- identificador_de_proceso, " cambia ", identificador_de_objeto, " de ", estado_de_entrada,
- ", de lo contrario ", identificador_de_proceso, " se omite" ;
-
-oracion_de_efecto_salida_condicional = identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " existe, en cuyo caso ", identificador_de_proceso,
- " cambia ", identificador_de_objeto, " a ", estado_de_salida,
- ", de lo contrario ", identificador_de_proceso, " se omite" ;
-
-oracion_habilitadora_condicional = oracion_de_agente_condicional
- | oracion_de_instrumento_condicional ;
-
-oracion_de_agente_condicional = ( objeto_con_opcion_de_estado, " maneja ",
- identificador_de_proceso, " si ", identificador_de_objeto, " existe; de lo contrario ",
- identificador_de_proceso, " se omite" )
- | ( objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso, " si ",
- identificador_de_objeto, " está en ", identificador_de_estado, ", de lo contrario ",
- identificador_de_proceso, " se omite" ) ;
-
-oracion_de_instrumento_condicional = ( identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " existe; de lo contrario ", identificador_de_proceso, " se omite" )
- | ( identificador_de_proceso, " ocurre si ", identificador_de_objeto, " está en ",
- identificador_de_estado, ", de lo contrario ", identificador_de_proceso, " se omite" ) ;
-```
-
-### Producciones adicionales: restricciones de expresión y listas con orden
-
-```ebnf
-(* --- Restricciones de expresión para multiplicidad --- *)
-
-restriccion_de_expresion = "donde ", nombre, ( ( operacion_logica, nombre_de_valor )
- | ( inicio_conjunto, ( nombre | nombre_de_valor ),
- { ",", ( nombre | nombre_de_valor ) }, fin_conjunto ) ) ;
-
-operacion_logica = "=" | "<" | ">" | "<=" | ">=" ;
-inicio_conjunto = " en {" ;
-fin_conjunto = "}" ;
-
-(* --- Listas bifurcadas con orden --- *)
-
-conjunto_de_cosas_objeto = cosa_objeto, [ { ", ", cosa_objeto } ],
- " y ", ( cosa_objeto | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
-
-conjunto_de_cosas_proceso = cosa_proceso, [ { ", ", cosa_proceso } ],
- " y ", ( cosa_proceso | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
-
-criterio_de_orden = nombre ;
-cosa_objeto = [ restriccion_de_participacion, " " ], objeto_con_opcion_de_estado ;
-cosa_proceso = [ restriccion_de_participacion, " " ], identificador_de_proceso ;
-
-(* --- Especialización XOR y herencia múltiple --- *)
-
-oracion_de_especializacion_xor_objeto = oracion_basica_xor_objeto
- | oracion_xor_objeto_separada_por_comas ;
-oracion_basica_xor_objeto = objeto_especial, " puede ser ",
- identificador_de_objeto, " o ", identificador_de_objeto ;
-oracion_xor_objeto_separada_por_comas = objeto_especial, " puede ser uno de ",
- identificador_de_objeto, { ", ", identificador_de_objeto }, " o ", identificador_de_objeto ;
-
-oracion_de_herencia_multiple_objeto = objeto_especial, " es ",
- lista_de_objetos_generales ;
-lista_de_objetos_generales = " un ", identificador_de_objeto,
- [ { " un ", identificador_de_objeto } ], " y un ", identificador_de_objeto ;
-```
-
-## Oraciones estructurales
-
-```ebnf
-oracion_estructural = oracion_de_enlace_estructural_etiquetado | oracion_de_agregacion
- | oracion_de_caracterizacion | oracion_de_exhibicion
- | oracion_de_especializacion | oracion_de_instanciacion ;
-
-(* --- Oraciones de enlace estructural etiquetado --- *)
-
-oracion_de_enlace_estructural_etiquetado = oracion_etiquetado_unidireccional
- | oracion_etiquetado_bidireccional ;
-
-oracion_etiquetado_unidireccional = oracion_etiquetado_unidireccional_simple
- | oracion_etiquetado_bifurcada ;
-
-oracion_etiquetado_unidireccional_simple =
- oracion_etiquetado_nullTag_objeto
- | oracion_etiquetado_nullTag_proceso
- | oracion_etiquetado_nonNullTag_objeto
- | oracion_etiquetado_nonNullTag_proceso ;
-
-oracion_etiquetado_nullTag_objeto = [restriccion_participacion, " "],
- objeto_origen, etiqueta_nula_unidireccional, [restriccion_participacion, " "], objeto_destino ;
-oracion_etiquetado_nullTag_proceso = [restriccion_participacion, " "],
- proceso_origen, etiqueta_nula_unidireccional, [restriccion_participacion, " "], proceso_destino ;
-oracion_etiquetado_nonNullTag_objeto = [restriccion_participacion, " "],
- objeto_origen, " ", etiqueta_directa, " ", [restriccion_participacion, " "], objeto_destino,
- [", ", restriccion_de_expresion] ;
-oracion_etiquetado_nonNullTag_proceso = [restriccion_participacion, " "],
- proceso_origen, " ", etiqueta_directa, " ", [restriccion_participacion, " "], proceso_destino ;
-
-etiqueta_nula_unidireccional = " se relaciona con "
- | etiqueta_nula_definida_por_usuario ;
-
-(* Variantes bifurcadas: listas de refinadores con orden o secuencia *)
-oracion_etiquetado_bifurcada = oracion_bifurcada_nullTag_objeto
- | oracion_bifurcada_nullTag_proceso
- | oracion_bifurcada_nonNullTag_objeto
- | oracion_bifurcada_nonNullTag_proceso ;
-
-oracion_bifurcada_nullTag_objeto = [restriccion_participacion, " "], objeto_origen,
- etiqueta_nula_unidireccional, conjunto_de_cosas_objeto ;
-oracion_bifurcada_nullTag_proceso = [restriccion_participacion, " "], proceso_origen,
- etiqueta_nula_unidireccional, conjunto_de_cosas_proceso ;
-oracion_bifurcada_nonNullTag_objeto = [restriccion_participacion, " "], objeto_origen,
- " ", etiqueta_directa, " ", conjunto_de_cosas_objeto ;
-oracion_bifurcada_nonNullTag_proceso = [restriccion_participacion, " "], proceso_origen,
- " ", etiqueta_directa, " ", conjunto_de_cosas_proceso ;
-
-conjunto_de_cosas_objeto = objeto_con_opcion, [ { ", ", objeto_con_opcion } ], " y ", ( objeto_con_opcion | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
-conjunto_de_cosas_proceso = proceso_con_opcion, [ { ", ", proceso_con_opcion } ], " y ", ( proceso_con_opcion | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
-
-(* Variantes bidireccionales *)
-oracion_etiquetado_bidireccional = oracion_bidireccional_asimetrica_objeto
- | oracion_bidireccional_asimetrica_proceso
- | oracion_bidireccional_simetrica_objeto
- | oracion_bidireccional_simetrica_proceso ;
-
-oracion_bidireccional_asimetrica_objeto = ( [restriccion_participacion, " "],
- objeto_origen, etiqueta_directa_bidireccional, [restriccion_participacion, " "], objeto_destino,
- [", ", restriccion_de_expresion] )
- | ( [restriccion_participacion, " "], objeto_destino, etiqueta_inversa_bidireccional,
- [restriccion_participacion, " "], objeto_origen, [", ", restriccion_de_expresion] ) ;
-oracion_bidireccional_simetrica_objeto = ( [restriccion_participacion, " "],
- objeto_origen, " y ", [restriccion_participacion, " "], objeto_destino, " son ", etiqueta_simetrica )
- | ( [restriccion_participacion, " "], objeto_origen, " y ", [restriccion_participacion, " "],
- objeto_destino, " se relacionan" ) ;
-
-etiqueta_simetrica = expresion_de_etiqueta ;
-etiqueta_directa_bidireccional = expresion_de_etiqueta ;
-etiqueta_inversa_bidireccional = expresion_de_etiqueta ;
-etiqueta_nula_bidireccional = " se relacionan"
- | etiqueta_nula_definida_por_usuario ;
-
-(* --- Oraciones de estructuras fundamentales --- *)
-
-oracion_de_agregacion = oracion_de_agregacion_objeto | oracion_de_agregacion_proceso ;
-oracion_de_agregacion_objeto = objeto_todo, " consta de ", lista_de_partes_objeto ;
-oracion_de_agregacion_proceso = proceso_todo, " consta de ", lista_de_partes_proceso ;
-lista_de_partes_objeto = parte_objeto, [ { ", ", parte_objeto } ], " y ", ( parte_objeto | "al menos otra parte" ) ;
-lista_de_partes_proceso = parte_proceso, [ { ", ", parte_proceso } ], " y ", ( parte_proceso | "al menos otra parte" ) ;
-parte_objeto = [restriccion_participacion, " "], identificador_de_objeto ;
-parte_proceso = [restriccion_participacion, " "], identificador_de_proceso ;
-
-oracion_de_caracterizacion = oracion_de_caract_objeto | oracion_de_caract_proceso ;
-oracion_de_caract_objeto = identificador_de_objeto, " exhibe ",
- ( lista_de_atributos | lista_de_operadores
- | lista_de_atributos, ", así como ", lista_de_operadores ) ;
-oracion_de_caract_proceso = identificador_de_proceso, " exhibe ",
- ( lista_de_operadores | lista_de_atributos
- | lista_de_operadores, ", así como ", lista_de_atributos ) ;
-
-oracion_de_exhibicion = rasgo, " de ", identificador_de_objeto, ( clausula_de_rango | " es ", ",",
- ( ( lista_de_atributos | lista_de_operadores ) | ( lista_de_atributos, ", así como ", lista_de_operadores ) ) ) ;
-
-oracion_de_especializacion = oracion_de_especializacion_objeto | oracion_de_especializacion_proceso
- | oracion_de_especializacion_estado ;
-oracion_de_especializacion_objeto = lista_de_objetos_especiales, " son ", identificador_de_objeto ;
-oracion_de_especializacion_proceso = lista_de_procesos_especiales, " son ", identificador_de_proceso ;
-oracion_de_especializacion_estado = lista_de_objetos_con_estado, " son ", objeto_con_estado ;
-
-oracion_de_instanciacion = oracion_de_instanciacion_objeto | oracion_de_instanciacion_proceso ;
-oracion_de_instanciacion_objeto = identificador_de_objeto, " es una instancia de ", identificador_de_objeto
- | lista_de_objetos_instancia, " son instancias de ", identificador_de_objeto ;
-oracion_de_instanciacion_proceso = identificador_de_proceso, " es una instancia de ", identificador_de_proceso
- | lista_de_procesos_instancia, " son instancias de ", identificador_de_proceso ;
-
-atributo = identificador_de_objeto ;
-operador = identificador_de_proceso ;
-rasgo = atributo | operador ;
-```
-
-## Oraciones de gestión de contexto
-
-```ebnf
-oracion_de_gestion_de_contexto = oracion_de_despliegue | oracion_de_plegado
- | oracion_de_descomposicion | oracion_de_recomposicion ;
-
-(* --- Oraciones de despliegue (unfolding) --- *)
-
-oracion_de_despliegue = oracion_de_despliegue_objeto | oracion_de_despliegue_proceso ;
-
-oracion_de_despliegue_objeto = oracion_de_despliegue_objeto_inespecificado
- | oracion_de_despliegue_objeto_todo
- | oracion_de_despliegue_objeto_general
- | oracion_de_despliegue_objeto_clase
- | oracion_de_despliegue_objeto_exhibidor ;
-
-oracion_de_despliegue_objeto_inespecificado = identificador_de_objeto,
- " se despliega en ", lista_de_atributos, [", así como ", lista_de_operadores] ;
-oracion_de_despliegue_objeto_todo = objeto_todo, " desde ", opd_padre,
- " se despliega por partes en ", opd_hijo, " en ", lista_de_partes_objeto ;
-oracion_de_despliegue_objeto_general = objeto_general, " desde ", opd_padre,
- " se despliega por especialización en ", opd_hijo, " en ", lista_de_objetos_especiales ;
-oracion_de_despliegue_objeto_clase = clase_de_objeto, " desde ", opd_padre,
- " se despliega por instanciación en ", opd_hijo, " en ", lista_de_objetos_instancia ;
-oracion_de_despliegue_objeto_exhibidor = identificador_de_objeto, " desde ", opd_padre,
- " se despliega por rasgos en ", opd_hijo, " en ", lista_de_atributos, [", así como ", lista_de_operadores] ;
-
-oracion_de_despliegue_proceso = oracion_de_despliegue_proceso_inespecificado
- | oracion_de_despliegue_proceso_todo
- | oracion_de_despliegue_proceso_general
- | oracion_de_despliegue_proceso_clase
- | oracion_de_despliegue_proceso_exhibidor ;
-
-oracion_de_despliegue_proceso_inespecificado = identificador_de_proceso,
- " se despliega en ", lista_de_operadores, [", así como ", lista_de_atributos] ;
-oracion_de_despliegue_proceso_todo = proceso_todo, " desde ", opd_padre,
- " se despliega por partes en ", opd_hijo, " en ", lista_de_partes_proceso ;
-oracion_de_despliegue_proceso_general = proceso_general, " desde ", opd_padre,
- " se despliega por especialización en ", opd_hijo, " en ", lista_de_procesos_especiales ;
-oracion_de_despliegue_proceso_clase = clase_de_proceso, " desde ", opd_padre,
- " se despliega por instanciación en ", opd_hijo, " en ", lista_de_procesos_instancia ;
-oracion_de_despliegue_proceso_exhibidor = identificador_de_proceso, " desde ", opd_padre,
- " se despliega por rasgos en ", opd_hijo, " en ", lista_de_operadores, [", así como ", lista_de_atributos] ;
-
-(* --- Oraciones de plegado (folding) --- *)
-
-oracion_de_plegado = oracion_de_plegado_objeto | oracion_de_plegado_proceso ;
-oracion_de_plegado_objeto = identificador_de_objeto, " se pliega en ", opd_hijo ;
-oracion_de_plegado_proceso = identificador_de_proceso, " se pliega en ", opd_hijo ;
-
-(* --- Oraciones de descomposición (in-zooming) --- *)
-
-oracion_de_descomposicion = oracion_de_descomposicion_en_diagrama
- | oracion_de_descomposicion_en_nuevo_diagrama ;
-
-oracion_de_descomposicion_en_diagrama = ( identificador_de_proceso, " se descompone en ",
- lista_de_procesos, ", en esa secuencia", [", así como ", lista_de_objetos_en_zoom] )
- | ( identificador_de_proceso, " se descompone en paralelo ", lista_de_procesos,
- [", así como ", lista_de_objetos_en_zoom] )
- | ( identificador_de_proceso, " se descompone en ", lista_de_procesos,
- " y en paralelo ", lista_de_procesos, ", en esa secuencia",
- [", así como ", lista_de_objetos_en_zoom] ) ;
-
-oracion_de_descomposicion_en_nuevo_diagrama = ( identificador_de_proceso, " desde ", opd_padre,
- " se descompone en ", opd_hijo, " en ", lista_de_procesos, ", en esa secuencia",
- [", así como ", lista_de_objetos_en_zoom] )
- | ( identificador_de_proceso, " desde ", opd_padre,
- " se descompone en ", opd_hijo, " en paralelo ", lista_de_procesos,
- [", así como ", lista_de_objetos_en_zoom] )
- | ( identificador_de_proceso, " desde ", opd_padre,
- " se descompone en ", opd_hijo, " en ", lista_de_procesos,
- " y en paralelo ", lista_de_procesos, ", en esa secuencia",
- [", así como ", lista_de_objetos_en_zoom] ) ;
-
-oracion_de_descomposicion_objeto_en_diagrama = ( identificador_de_objeto, " se descompone en ",
- lista_de_objetos, ", en esa secuencia", [", así como ", lista_de_procesos_en_zoom] ) ;
-
-oracion_de_descomposicion_objeto_en_nuevo_diagrama = ( identificador_de_objeto, " desde ", opd_padre,
- " se descompone en ", opd_hijo, " en ", lista_de_objetos, ", en esa secuencia",
- [", así como ", lista_de_procesos_en_zoom] ) ;
-
-lista_de_objetos_en_zoom = identificador_de_objeto, [ { ", ", identificador_de_objeto } ], " y ", identificador_de_objeto,
- ", en esa secuencia" ;
-lista_de_procesos_en_zoom = identificador_de_proceso, [ { ", ", identificador_de_proceso } ] ;
-
-(* --- Oraciones de recomposición (out-zooming) --- *)
-
-oracion_de_recomposicion = oracion_de_recomposicion_proceso | oracion_de_recomposicion_objeto ;
-oracion_de_recomposicion_proceso = identificador_de_proceso, " se recompone desde ", opd_hijo ;
-oracion_de_recomposicion_objeto = identificador_de_objeto, " se recompone desde ", opd_hijo ;
-```
-
-Para subprocesos paralelos, la forma abreviada es:
-
-- `*Proceso* se descompone en paralelo *A* y *B*.`
-
-Para subprocesos mixtos (secuenciales y paralelos):
-
-- `*Proceso* se descompone en *A*, paralelo *B* y *C*, y *D*, en esa secuencia.`
+- la dualidad OPD–OPL;
+- la correspondencia entre familia semántica de enlace y plantilla textual;
+- la trazabilidad entre refinamiento del modelo y composición textual;
+- la equivalencia semántica entre la formulación inglesa de ISO/PAS 19450 y la formulación canónica española.
 
 ---
 
@@ -1750,17 +963,9 @@ Es útil para seguir transiciones a lo largo de la vida del sistema.
 
 ### Propiedades de duración de proceso
 
-| Propiedad | Descripción |
-|---|---|
-| Duración | tiempo real transcurrido en ejecución |
-| Duración mínima | tiempo mínimo permitido |
-| Duración esperada | media estadística |
-| Duración máxima | tiempo máximo permitido |
-| Distribución de duración | función probabilística: normal, uniforme, exponencial, etc. |
+Las propiedades de duración de proceso (mínima, esperada, máxima, distribución) son propiedades semánticas del proceso. Su especificación formal y representación gráfica (ubicación dentro de la elipse, formato) viven en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §14.
 
 La unidad temporal del sistema es la unidad por defecto para todos los procesos, salvo que se redefina.
-
-**Ubicación gráfica:** los valores de duración se muestran **dentro de la elipse del proceso**, bajo el nombre del proceso y la unidad temporal. La mínima a la izquierda, la esperada al centro y la máxima a la derecha.
 
 Ejemplo:
 
@@ -1782,58 +987,20 @@ Ejemplos canónicos:
 
 ---
 
-## Guía y convenciones de nombrado
+## Convenciones editoriales delegadas
 
-### Buenas prácticas de OPD
+Las siguientes materias dejan de definirse en esta capa para evitar duplicación interna del corpus:
 
-- no más de una página o pantalla por OPD;
-- máximo 20-25 cosas por OPD;
-- no debe haber oclusión entre cosas;
-- número de enlaces del mismo orden que el de cosas;
-- minimizar cruces;
-- los enlaces no deben atravesar áreas ocupadas por cosas.
+- buenas prácticas de legibilidad, densidad visual, apariencias múltiples y copias visuales: [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §15–§16;
+- política de nombrado, capitalización, unicidad nominal y patrones de superficie en español: [OPL-ES](urn:fxsl:kb:opm-opl-es) §1;
+- reglas operativas para decidir cuándo descomponer, cuándo duplicar una apariencia y cómo resolver ambigüedad durante el modelamiento: [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
-### Principio de representación de elementos
+Este documento conserva como invariantes semánticos transversales:
 
-Cualquier elemento del modelo puede aparecer en cualquier número de OPDs. Solo deben incluirse los elementos necesarios para comprender el aspecto que se quiere mostrar.
-
-### Copias múltiples de una cosa
-
-Para evitar enlaces largos y cruces, pueden aparecer símbolos duplicados de la misma cosa en un mismo OPD. Deben usarse con moderación.
-
-### Reglas de nombrado
-
-| Elemento | Convención | Ejemplos |
-|---|---|---|
-| Objeto | Sustantivo singular, capitalizado. Para plurales: `Conjunto` en inanimados y `Grupo` en humanos | `Conjunto de Ingredientes`, `Grupo de Clientes`, `Torta de Manzana` |
-| Proceso | Infinitivo o nominalización técnica clara, capitalizada. Máximo 4 palabras | `Preparar`, `Preparar Torta`, `Responder Automáticamente a Choque`, `Verificación de Identidad` |
-| Estado | Minúscula, forma descriptiva o pasiva del objeto | `pintado`, `inspeccionado`, `pre-cortado` |
-| Etiqueta de enlace | Frase en minúscula | `sirve a`, `se relaciona con` |
-
-**Patrones de nombrado de procesos.** La ISO define cuatro variantes de superficie para nombres de proceso (adaptadas a español):
-
-| Patrón | Estructura | Ejemplo en español |
-|---|---|---|
-| Verbo | infinitivo | `Preparar`, `Responder` |
-| Sustantivo-verbo | objeto + infinitivo | `Preparar Torta`, `Responder a Choque` |
-| Adjetivo-verbo | calificativo + infinitivo | `Preparar Rápidamente`, `Responder Automáticamente` |
-| Adjetivo-sustantivo-verbo | calificativo + objeto + infinitivo | `Preparar Rápidamente Torta`, `Responder Automáticamente a Choque` |
-
-El adjetivo puede calificar tanto al proceso (el gerundio subyacente) como al objeto. Se recomienda la versión sustantivo-verbo cuando hay varias opciones.
-
-**Reglas de unicidad de nombres de objetos.** Los nombres deben ser únicos dentro del modelo. Cuando un mismo concepto aparece como refinador de distintos refinables, se resuelve la ambiguedad mediante prefijo o sufijo con el nombre del refinable. Por ejemplo, si `Tamaño` es atributo de `Conjunto de Relojes` y de `Conjunto de Sombreros`, se usa `Tamaño de Conjunto de Relojes` y `Tamaño de Conjunto de Sombreros`, o bien `Tamaño del Reloj` y `Tamaño del Sombrero`.
-
-**Convención de capitalización:** las palabras léxicas de nombres de cosas van en mayúscula inicial; estados y etiquetas no.
-
-**Un estado no existe sin su objeto propietario.**
-
-**El objeto consumido desaparece al inicio del proceso**, no al final.
-
-**Unicidad de rol procedimental con doble rol de control:** un objeto puede además actuar como disparador (`e`) y/o como condicionante (`c`) sin perder su rol principal como transformado o habilitador.
-
-### Principio de importancia de las cosas
-
-La importancia relativa de una cosa suele ser proporcional al OPD más alto de la jerarquía en el que aparece.
+- un estado no existe sin su objeto propietario;
+- el objeto consumido desaparece al inicio del proceso, no al final;
+- un objeto puede además actuar como disparador (`e`) y/o como condicionante (`c`) sin perder su rol principal como transformado o habilitador;
+- la importancia relativa de una cosa suele ser proporcional al OPD más alto de la jerarquía en el que aparece.
 
 ---
 

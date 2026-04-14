@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
-version: "3.8.0"
+version: "3.9.1"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
@@ -15,111 +15,78 @@ extensions:
     depends_on:
       - "urn:fxsl:kb:opm-iso-19450-es"
       - "urn:fxsl:kb:opm-opl-es"
+      - "urn:fxsl:kb:opm-visual-es"
 ---
 
 # Metodología de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas
 
-## 1 Definición
+## 1 Alcance y contrato editorial
 
-Esta especificación define la metodología para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Consolida reglas normativas desde [OPM ISO/PAS 19450](urn:fxsl:kb:opm-iso-19450-es) y [OPL-ES](urn:fxsl:kb:opm-opl-es), e incorpora directamente la guía operativa de uso de herramienta previamente dispersa en artefactos hoy deprecados. Para la especificación formal del lenguaje OPM, ver [OPM ISO/PAS 19450](urn:fxsl:kb:opm-iso-19450-es). Para la realización textual en español, ver [OPL-ES](urn:fxsl:kb:opm-opl-es).
+Esta especificación define la **capa metodológica canónica** del corpus OPM en español. Su responsabilidad es:
 
-### 1.1 Alcance y Precedencia del Corpus
+- fijar el procedimiento para construir el SD y sus refinamientos;
+- establecer reglas de decisión para clasificar sistemas, distribuir enlaces y controlar complejidad;
+- consolidar heurísticas, patrones y prácticas de gobernanza y simulación;
+- operacionalizar el uso de herramienta sin alterar la semántica del lenguaje.
 
-Este artefacto es una **guía derivada**. No reemplaza la base normativa del corpus.
+Este documento **no** redefine:
 
-Orden de precedencia:
+- la semántica base de OPM, que pertenece a [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es);
+- la realización textual canónica, que pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es);
+- la gramática gráfica y topológica del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es).
 
-1. **ISO 19450** gobierna semántica OPM, notación, relaciones y procedimiento base de construcción del SD.
-2. **OPL-ES** gobierna la realización textual en español sin alterar la semántica OPM.
-3. **Esta metodología** integra las capas normativas anteriores y explicita reglas operativas para ciclo de vida, simulación, gobernanza del modelo y uso de herramienta.
+Orden de precedencia del corpus:
+
+1. [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es): semántica, ontología y clases de hecho del modelo.
+2. [OPL-ES](urn:fxsl:kb:opm-opl-es): superficie textual canónica en español.
+3. [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es): geometría, composición y comportamiento visual de los OPDs.
+4. Esta metodología: procedimiento de modelamiento, criterios de decisión, gobernanza y praxis editorial-operativa.
 
 Regla de resolución:
 
-- Si una regla de **semántica OPM** entra en conflicto con una regla de herramienta, prevalece ISO 19450.
-- Si un artefacto en `lang: es` define **realización OPL en español** como parte de su contrato, prevalece OPL-ES. Un artefacto expositivo en `lang: es` PUEDE mantener sentencias OPL canónicas en inglés para preservar roundtrip con ISO/OPCloud, siempre que lo declare explícitamente y no presente esas sentencias como OPL-ES.
-- Las capacidades de OPCloud NO redefinen por sí solas la semántica de OPM; solo operacionalizan su uso en la herramienta.
-- Los artefactos deprecados del directorio NO participan en precedencia; solo sirven como enrutamiento histórico.
+- si una regla metodológica contradice la semántica del lenguaje, prevalece la capa ISO;
+- si una formulación textual contradice el contrato sintáctico de OPL-ES, prevalece OPL-ES;
+- si una heurística procedimental contradice la gramática gráfica o topológica del OPD, prevalece la capa visual;
+- las capacidades de OPCloud y de otras herramientas NO redefinen por sí solas la semántica OPM; solo la operacionalizan.
 
-## 2 Definiciones
+## 2 Base heredada del corpus
+
+Esta metodología hereda y asume como ya definidos los siguientes bloques:
+
+| Bloque | Fuente canónica | Uso en este documento |
+|--------|------------------|------------------------|
+| Ontología mínima objeto-proceso | `opm-iso-19450-es` | fundamento semántico del procedimiento |
+| Glosario base de OPM | `opm-iso-19450-es` | terminología estable; no se repite aquí |
+| Principios de modelado OPM | `opm-iso-19450-es` | restricciones de alto nivel sobre toda decisión metodológica |
+| Gramática textual OPL en español | `opm-opl-es` | nombres válidos y oraciones canónicas |
+| Gramática visual y composición de OPDs | `opm-visual-es` | símbolos, distribución de enlaces, refinamiento y precedencia |
+
+Regla editorial: este documento solo reexpone una regla heredada cuando es imprescindible para tomar una decisión metodológica local. En todos los demás casos, referencia la fuente canónica correspondiente.
+
+## 3 Definiciones operativas propias
 
 | Término | Definición |
 |---------|-----------|
-| SD (Diagrama de Sistema) | OPD raíz que muestra la función del sistema y su contexto de nivel superior (§3.75) |
-| SD1 | OPD descendiente de SD donde el proceso principal se refina exponiendo subprocesos. |
-| OPD (Object-Process Diagram) | Representación gráfica OPM de un modelo o parte de un modelo (§3.41) |
-| OPL (Object-Process Language) | Representación textual de OPM; en esta edición, OPL-ES es la forma canónica (§3.42) |
-| Beneficiario | Interesado que recibe valor funcional de la operación del sistema (§3.6) |
-| Transformado | Objeto afectado por un proceso (§3.78) |
-| Afectado | Transformado cuyo estado cambia por acción de un proceso; debe ser un objeto con estados (§3.2) |
-| Consumido | Transformado que un proceso consume o elimina (§3.10) |
-| Resultante | Transformado que un proceso crea (§3.64) |
-| Agente | Habilitador que es una persona o un grupo de personas (§3.3) |
-| Instrumento | Habilitador no humano (§3.30) |
-| Función | Proceso que entrega valor funcional a un beneficiario (§3.23) |
-| Arquitectura | Combinación de estructura + comportamiento que habilita la función y produce emergencia. |
-| Emergencia | Capacidad del sistema completo que ninguna parte individual exhibe. |
-| Proceso persistente | Proceso cuyo efecto es mantener el estado de un objeto, no cambiarlo (§7.2.1 NOTE 2) |
-| Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos. |
-| Fuerza semántica | Precedencia de un enlace procedimental que determina cuál prevalece en conflictos. |
-| Principio del Nombre Singular | Los nombres de cosas en OPM DEBEN ser singulares. En inglés, colecciones humanas usan "Group" y las inanimadas "Set". En español, los equivalentes son "Grupo" y "Conjunto". |
+| SD1 | OPD descendiente de `SD` donde el proceso principal se refina exponiendo subprocesos u objetos asociados relevantes para el siguiente nivel de detalle. |
+| Objeto proveedor de beneficio | Transformado principal cuya mejora o generación materializa el valor funcional del sistema para el beneficiario. |
+| Arquitectura | Combinación de estructura y comportamiento que habilita la función y hace posible emergencia a nivel de sistema. |
+| Emergencia | Capacidad del sistema completo que ninguna parte individual exhibe aisladamente. |
+| Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos, sin papel observacional independiente. |
+| Fuerza semántica | Criterio operativo para decidir qué enlace prevalece durante recomposición o colisión de roles; la jerarquía formal vive en `opm-visual-es`. |
+| Asistente agnóstico de construcción del SD | Protocolo ordenado de interacción para cerrar las decisiones mínimas del SD sin depender de una herramienta o interfaz concreta. |
 
-## 3 Fundamentos Ontológicos
+## 4 Principio metodológico rector
 
-Los fundamentos ontológicos de OPM están formulados en el trabajo de Dori (*Model-Based Systems Engineering with OPM and SysML*) y subyacen a ISO/PAS 19450 sin que la norma los nombre individualmente como principios, teoremas o aserciones. Las formulaciones de esta sección provienen del libro de referencia, no del texto normativo de ISO/PAS 19450.
+La metodología parte de una regla rectora única:
 
-### 3.1 Principio de Ontología Mínima
+> El modelamiento DEBE comenzar por la función del sistema, continuar con la delimitación de su valor, agentes, entorno y transformados, y solo después profundizar en estructura, control, simulación y gobernanza.
 
-> Si un sistema puede especificarse al mismo nivel de precisión y detalle con dos lenguajes de diferentes tamaños ontológicos, el lenguaje con ontología menor es preferible, siempre que la comprensibilidad sea comparable.
+Consecuencias operativas:
 
-OPM usa dos clases de elementos: **cosas** (objetos y procesos) y **enlaces** (procedimentales y estructurales), que expresan relaciones entre cosas (cfr. ISO 19450 §3.16, §3.36, §3.76).
-
-### 3.2 Teorema Objeto-Proceso
-
-> Objetos, procesos y relaciones entre ellos constituyen una ontología universal mínima.
-
-Demostrado por necesidad (especificar estructura requiere objetos; especificar comportamiento requiere procesos) y suficiencia (las cosas existen o suceden; solo se asocian mediante relaciones). Los objetos pueden ser con estados (con estados explícitos, transformables vía efecto) o sin estados (solo creables/consumibles). La distinción con estados / sin estados es posterior a la base ontológica.
-
-### 3.3 Aserción Objeto-Proceso
-
-> Usando objetos, procesos, relaciones, y mecanismos de refinamiento (descomposición y despliegue), se puede modelar conceptualmente cualquier sistema en cualquier dominio y nivel de complejidad.
-
-## 4 Principios de Modelamiento
-
-ISO/PAS 19450 define seis principios de modelado OPM. Todo modelamiento DEBE respetarlos. A continuación se reproducen fielmente; después se listan reglas complementarias derivadas del estándar y del libro de Dori.
-
-### 4.1 Principios ISO/PAS 19450
-
-**Principio 1 — Actividad al servicio de un propósito.** La función del sistema y el propósito del modelado definen el alcance y el nivel de detalle. Diferentes interesados requieren diferentes vistas del mismo sistema.
-
-**Principio 2 — Unificación de función, estructura y comportamiento.** Estructura más comportamiento producen función. La estructura reúne objetos físicos e informacionales y sus relaciones estructurales. El comportamiento reúne procesos que transforman objetos a lo largo del tiempo.
-
-**Principio 3 — Identificación del valor funcional.** El proceso que entrega valor expresa la función tal como la percibe el beneficiario principal. Identificar y nombrar ese proceso es el paso crítico inicial.
-
-**Principio 4 — Función vs comportamiento.** La función es el valor para el beneficiario; el comportamiento es cómo opera el sistema. La misma función puede implementarse con estructuras y comportamientos distintos.
-
-**Principio 5 — Definición del límite del sistema.** El entorno es el conjunto de cosas fuera del sistema que pueden interactuar con él. Las cosas sistémicas tienen contorno sólido; las ambientales, contorno discontinuo.
-
-**Principio 6 — Equilibrio entre claridad y completitud.** Los sistemas reales contienen demasiado detalle para una sola vista. La comprensión requiere balancear claridad y completitud mediante una jerarquía de OPDs.
-
-### 4.2 Reglas complementarias derivadas
-
-Las siguientes reglas no son los seis principios de modelado de ISO/PAS 19450, sino restricciones derivadas de otras secciones del estándar y del libro de Dori. También DEBEN respetarse.
-
-**Función como semilla.** El modelamiento de un sistema DEBE comenzar definiendo, nombrando y representando la función del sistema, que es su proceso de nivel superior. La función es la semilla de la que evoluciona el modelo. Comenzar por la forma (objetos) en vez de la función (proceso) es un error común. (Operacionaliza los principios ISO 1 y 3.)
-
-**Importancia de Cosa.** La importancia de una cosa T en un modelo OPM es directamente proporcional al OPD más alto en la jerarquía donde T aparece. Objetos y procesos tienen igual estatus; ninguno tiene supremacía sobre el otro.
-
-**Transformación de Objeto por Proceso.** En un modelo OPM completo, cada proceso DEBE estar conectado a al menos un objeto que el proceso transforma o a un estado de ese objeto. Un proceso sin enlace transformador no tiene significado. Un proceso PUEDE tener múltiples transformados.
-
-**Unicidad de Enlace Procedimental.** A cualquier nivel de detalle, un objeto y un proceso PUEDEN estar conectados con a lo sumo un enlace procedimental, que determina unívocamente el rol del objeto respecto al proceso. *Resolución de colisión de roles:* Cuando un objeto es simultáneamente habilitador (agente o instrumento) y transformado (afectado) del mismo proceso, el enlace transformador DEBE prevalecer por mayor fuerza semántica. El modelador PUEDE agregar un símbolo de persona para preservar la identidad humana del agente desplazado. Alternativa: hacer descomposición al proceso y asignar enlace de agente a un subproceso y enlace de efecto a otro.
-
-**Representación de Hechos del Modelo.** Todo hecho del modelo DEBE aparecer en al menos un OPD del conjunto de OPDs del modelo. No todo hecho necesita repetirse en cada OPD. Suficiente con que aparezca al menos una vez.
-
-**Equivalencia Gráfico-Texto.** Todo modelo OPM DEBE expresarse en modalidades gráficas (OPD) y textuales (OPL) semánticamente equivalentes. Cada OPD tiene un párrafo OPL correspondiente. La redundancia aprovecha canales cognitivos duales (visual + verbal).
-
-**Jerarquía de Detalle.** Cuando un OPD se vuelve difícil de comprender por exceso de detalle, se DEBE crear un nuevo OPD descendiente. Heurística: un OPD NO DEBERÍA exceder 20-25 entidades ni una pantalla/página.
-
-**Compromiso Completitud-Claridad.** El detalle abrumador de sistemas reales DEBE balancearse distribuyendo la especificación completa a través del conjunto de OPDs, manteniendo cada OPD individual claro y comprensible.
+- la función es la semilla del modelo;
+- el SD precede a cualquier refinamiento;
+- la claridad local del OPD no puede lograrse violando completitud global del conjunto de OPDs;
+- toda heurística de esta metodología está subordinada a la equivalencia semántica OPD–OPL y a la unicidad del hecho del modelo dentro del corpus.
 
 ## 5 Clasificación del Sistema
 
@@ -199,16 +166,16 @@ Una herramienta PUEDE dividir o fusionar etapas por conveniencia UX, pero NO DEB
 
 ### 6.1 Paso 1: Identificación del Proceso Principal
 
-La forma del nombre depende del idioma de realización:
+El nombre del proceso principal DEBE cumplir el contrato nominal de la capa correspondiente:
 
-- En artefactos y modelos en **inglés**, el nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing"), conforme a [OPM ISO/PAS 19450](urn:fxsl:kb:opm-iso-19450-es).
-- En artefactos y modelos en **español**, el nombre del proceso DEBE encabezarse con infinitivo (-ar, -er, -ir) o con una nominalización verbal cuya primera palabra termine en `-ción`, conforme a [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1. La forma en `-miento` TAMBIÉN PUEDE aceptarse cuando el dominio la exija.
+- en inglés, la convención canónica del corpus sigue la realización gerundiva recuperada por la capa ISO;
+- en español, la forma canónica se rige por [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1.
 
-**Correcto:** `Battery Charging`, `Airplane Flying`
+Regla metodológica: antes de aceptar un nombre, el modelador DEBE validar que expresa **acción transformadora**, no clase de objeto ni etiqueta administrativa.
 
-**Incorrecto:** `Charge Battery`, `Fly Airplane`
+**Correcto:** `Battery Charging`, `Airplane Flying`, `Preparar Empanadas`, `Verificación de Identidad`
 
-En inglés, el nombre DEBERÍA combinar el transformado seguido del verbo gerundio. En español, DEBERÍA mantener la misma función nominal usando infinitivo o, cuando mejore la naturalidad terminológica del dominio, una forma encabezada por `-ción`.
+**Incorrecto:** `Charge Battery`, `Fly Airplane`, `Batería`, `Proceso Principal`
 
 ### 6.2 Paso 2: Grupo Beneficiario
 
@@ -286,7 +253,7 @@ Para sistemas naturales, la ocurrencia del problema NO DEBE modelarse.
 | Entorno identificado | ≥1 objeto ambiental | MEDIA |
 | Ocurrencia del problema (si aplica) | Proceso ambiental causa estado negativo | MEDIA |
 | OPL legible | Sentencias OPL correctas | ALTA |
-| Nombres conformes | Infinitivo/nominalización + singular + Conjunto/Grupo | ALTA |
+| Nombres conformes | Política léxica y nominal conforme a la capa textual canónica | ALTA |
 | Exhibición | Sistema exhibe proceso como operación | ALTA |
 | Agentes = humanos | Ningún instrumento con enlace de agente | ALTA |
 
@@ -484,30 +451,13 @@ Tipos: árbol de procesos, árbol de objetos, vista de asignación, vista motiva
 
 ### 8.4 Precedencia de Enlaces durante Recomposición
 
-| B↔P1 \ B↔P2 | Efecto | Resultado | Consumo |
-|-------------|--------|--------|-------------|
-| **Efecto** | Efecto | Resultado | Consumo |
-| **Resultado** | Resultado | Inválido | Efecto |
-| **Consumo** | Consumo | Efecto | Inválido |
+La precedencia formal durante recomposición pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13. Esta metodología no la re-declara para evitar duplicación.
 
-**Orden de precedencia primario:** consumo = resultado > efecto > agente > instrumento.
+Reglas metodológicas de uso:
 
-**Orden completo (12 niveles, de mayor a menor fuerza semántica):**
-
-1. consumo evento
-2. consumo = resultado (sin modificador)
-3. resultado > consumo condición
-4. consumo condición > efecto evento
-5. efecto evento > efecto (sin modificador)
-6. efecto > efecto condición
-7. efecto condición > agente evento
-8. agente evento > agente (sin modificador)
-9. agente > agente condición
-10. agente condición > instrumento evento
-11. instrumento evento > instrumento (sin modificador)
-12. instrumento > instrumento condición
-
-**Precedencia secundaria** (dentro de cada tipo): evento > sin control > condición. Los enlaces de evento llevan semántica del enlace sin modificador + iniciación de proceso. Los modificadores de condición debilitan criterios de satisfacción de precondición. Enlaces con estado especificado tienen precedencia sobre enlaces básicos del mismo tipo.
+- cuando dos enlaces compiten por el mismo par cosa-proceso durante abstracción o recomposición, el modelador DEBE resolver el conflicto usando la jerarquía formal de `opm-visual-es`;
+- si la recomposición produce una combinación marcada allí como inválida, el refinamiento DEBE corregirse en el nivel hijo antes de seguir abstrayendo;
+- la fuerza semántica solo se usa para resolver colisiones entre hechos candidatos al mismo enlace abstracto; no autoriza a fusionar hechos distintos ni a borrar evidencia semántica legítima.
 
 ## 8b Práctica de Modelamiento y Gobernanza
 
@@ -960,7 +910,7 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 
 | Invariante | Aplicación | Fuente |
 |-----------|-------------|--------|
-| Nombre del proceso principal termina en gerundio (EN) o se encabeza por infinitivo / `-ción` / `-miento` válido (ES) | lint | ISO / OPL-ES |
+| Nombre del proceso principal cumple la política léxica de la capa textual activa del corpus | lint | ISO / OPL-ES |
 | Todos los nombres de cosas son singulares | lint | ISO |
 | Grupo beneficiario es objeto físico | lint | ISO |
 | Atributo del beneficiario es objeto informacional | lint | ISO |
