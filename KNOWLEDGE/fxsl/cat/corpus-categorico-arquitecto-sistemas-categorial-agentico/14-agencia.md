@@ -104,15 +104,13 @@ Para robot swarms, esta logica no-clasica captura la realidad operativa: el enja
 
 ## Seguridad como categoria: ICAR
 
-Valence muestra que los silos de la ciberseguridad -- vulnerabilidades (CVE), debilidades (CWE), patrones de ataque (CAPEC), tecnicas (ATT&CK), activos (CPE) -- se integran como un knowledge schema categorico. ICAR es una categoria cuyos objetos son los diccionarios de seguridad, cuyos morfismos son las relaciones entre ellos (Has, isChildOf, isParentOf, accomplishesTactic), y cuyos path equivalences capturan las restricciones semanticas (isChildOf.isParentOf = id). Una instancia de ICAR es un funtor F : S -> Set que asigna a cada diccionario su conjunto de entradas y a cada relacion las funciones correspondientes.
-
-La categorical normal form que propone Valence es precisamente la condicion de integridad referencial vista desde teoria de categorias: cada tabla tiene un ID primario, toda columna refiere a una clave primaria de otra tabla, y las equivalencias de paths se declaran como igualdades de path en el schema.
+Valence muestra que los silos de la ciberseguridad -- vulnerabilidades (CVE), debilidades (CWE), patrones de ataque (CAPEC), tecnicas (ATT&CK), activos (CPE) -- se integran como un knowledge schema categorico. ICAR (Integrated CAtegorical Resource) es una categoria cuyos objetos son los diccionarios de seguridad, cuyos morfismos son las relaciones entre ellos (Has, isChildOf, isParentOf, accomplishesTactic), y cuyos path equivalences capturan las restricciones semanticas (isChildOf.isParentOf = id). Una instancia de ICAR es un funtor F : S -> Set que asigna a cada diccionario su conjunto de entradas y a cada relacion las funciones correspondientes. El documento 18 desarrolla ICAR con queries operativas, conteos concretos y su conexion con el analisis de riesgo.
 
 ## Co-sintesis: codigo y modelo formal como funtores
 
 Jha et al. cierran el circulo con un resultado que me parece profundamente practico: un LLM puede generar simultaneamente codigo ejecutable, un modelo formal verificable, y un funtor entre ambos. El funtor mapea objetos del codigo (threads, mutexes, funciones) a objetos del modelo (procesos, variables booleanas, transiciones), y la propiedad de preservar composicion asegura que la estructura del codigo se refleja fielmente en la estructura del modelo.
 
-Los experimentos con el dining philosophers problem son ilustrativos. Claude 3.5 Sonnet genera en una sola iteracion el codigo C, el modelo SMV, y el funtor asociativo que permite verificar propiedades temporales del codigo a traves del modelo. GPT-4o requiere cuatro iteraciones. Llama 3.1 no converge sin intervencion humana significativa. El funtor es el puente que falta en la verificacion formal tradicional: no solo genero codigo y especificacion por separado, sino que genero la garantia estructural de que ambos dicen lo mismo.
+Los experimentos con el dining philosophers problem son ilustrativos. Los LLMs mas capaces generan en una sola iteracion el codigo C, el modelo SMV, y el funtor asociativo que permite verificar propiedades temporales del codigo a traves del modelo. Modelos menos capaces requieren multiples iteraciones o no convergen sin intervencion humana significativa. El funtor es el puente que falta en la verificacion formal tradicional: no solo genero codigo y especificacion por separado, sino que genero la garantia estructural de que ambos dicen lo mismo.
 
 ## Tool use como morfismo externo
 

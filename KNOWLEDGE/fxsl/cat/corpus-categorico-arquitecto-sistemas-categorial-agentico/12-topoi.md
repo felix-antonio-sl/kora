@@ -44,7 +44,7 @@ La potencia de esta definicion es que un topos es simultaneamente:
 
 ## El clasificador de subobjetos como logica de permisos
 
-Volvamos a los feature flags. En Set, Omega = {true, false}. Cada predicado sobre un conjunto X es una funcion X -> {true, false}. En mi topos de configuracion, puedo definir un Omega mas rico:
+Volvamos a los feature flags. En Set, Omega = {true, false}. Cada predicado sobre un conjunto X es una funcion X -> {true, false}. En mi topos de configuracion, puedo definir un Omega mas rico (en rigor, Omega necesita estructura de algebra de Heyting para que la logica interna funcione -- lo que sigue es una ilustracion del principio, donde los valores de verdad capturan estados mas finos que true/false):
 
 ```
 Omega = {enabled, disabled, canary, percentage_10, percentage_50, rollback_pending}

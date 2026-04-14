@@ -17,7 +17,7 @@ Hay una escalera que subi sin darme cuenta, y que el libro de Fong, Myers y Spiv
 3. **Reconocer el schema.** Esos dos mapas paralelos `src, tgt: E -> V` constituyen un blueprint --- un molde que, llenado de distintas formas, genera distintos grafos. El schema ES un grafo dirigido el mismo.
 4. **Llegar a la categoria.** Cuando agrego ecuaciones de conmutatividad al schema --- cuando digo que ciertos caminos producen el mismo resultado --- ya no tengo un grafo libre sino una categoria finitamente presentada.
 
-Este ascenso es el que hago cada vez que miro un DDL de PostgreSQL. Lo que veo no son tablas y columnas. Lo que veo es una categoria finitamente presentada donde las tablas son objetos, las foreign keys son morfismos generadores, y los path equivalences son las ecuaciones de integridad.
+Este ascenso es el que hago cada vez que miro un DDL de PostgreSQL. Lo que veo no son tablas y columnas. Lo que veo es una categoria finitamente presentada donde las tablas son objetos, las foreign keys son morfismos generadores, y los path equivalences son las ecuaciones de integridad. Y los datos concretos -- las filas -- son un mapeo que traduce el schema a conjuntos y funciones, respetando las ecuaciones. Ese mapeo tiene un nombre preciso que aparecera en el proximo documento.
 
 ## Objetos, morfismos, y las dos leyes
 

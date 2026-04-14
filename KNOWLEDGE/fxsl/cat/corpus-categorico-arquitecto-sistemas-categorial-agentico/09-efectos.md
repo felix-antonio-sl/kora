@@ -25,7 +25,7 @@ mu . eta_T  = id              -- unidad izquierda
 
 Perrone lo ilustra con el power set monad P en Set. El unit sigma_X : X -> PX envuelve cada elemento en su singleton: x |-> {x}. La multiplicacion union_X : PPX -> PX aplana un conjunto de conjuntos tomando la union. Las leyes de monada son las leyes de la union: union de uniones es asociativa, y la union de singletons da el conjunto original.
 
-La conexion con adjunciones, que ya explore en el documento 06, es directa: toda adjuncion F dashv G genera una monada T = G . F con unit eta y multiplication G(epsilon_F), donde epsilon es la counit de la adjuncion. La adjuncion producto-exponencial (- x A) dashv [A, -] genera la state monad S -> (-, S). La pregunta inversa -- ¿toda monada proviene de una adjuncion? -- tiene respuesta positiva, y las dos adjunciones canonicas son la de Kleisli y la de Eilenberg-Moore.
+La conexion con adjunciones, que ya explore en el documento 06, es directa: toda adjuncion F ⊣ G genera una monada T = G . F con unit eta y multiplication G(epsilon_F), donde epsilon es la counit de la adjuncion. La adjuncion producto-exponencial (- x A) ⊣ [A, -] genera la state monad S -> (-, S). La pregunta inversa -- ¿toda monada proviene de una adjuncion? -- tiene respuesta positiva, y las dos adjunciones canonicas son la de Kleisli y la de Eilenberg-Moore.
 
 ## La categoria de Kleisli: componer funciones con efectos
 
@@ -145,7 +145,7 @@ instance Comonad Stream where
 
 Duplicate produce un stream de streams, cada uno enfocado en una posicion distinta. Extend aplica una funcion a cada posicion con todo su contexto. Es exactamente el patron de Conway's Game of Life: cada celda computa su proximo estado mirando sus vecinos.
 
-En React, los hooks se comportan como comonadas. Un componente `(props, state) -> JSX` es un co-Kleisli arrow. `useContext`, `useState`, `useEffect` proporcionan el contexto extendido. El componente extrae su render del contexto completo. El re-render es extend: "re-computa el output para cada posible estado."
+En React, los hooks exhiben una estructura analogica a las comonadas. Un componente `(props, state) -> JSX` tiene la forma de un co-Kleisli arrow. `useContext`, `useState`, `useEffect` proporcionan el contexto extendido. El componente extrae su render del contexto completo. El re-render se asemeja a extend: "re-computa el output para cada posible estado." La analogia es estructural, no una instancia formal de Comonad -- React no implementa las leyes comonadicas -- pero ilumina por que la composicion de hooks sigue los mismos patrones.
 
 ## Coalgebras: la mirada desde afuera
 

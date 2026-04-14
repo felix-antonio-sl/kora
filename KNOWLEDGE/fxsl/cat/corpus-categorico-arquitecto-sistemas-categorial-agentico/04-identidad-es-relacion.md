@@ -163,7 +163,7 @@ y : K → SET^{K^op}
 
 embebe el enjambre en su categoría de presheaves. Los presheaves representables R_a = Hom(−, a) capturan todas las computaciones que pueden llegar a un nodo a. Las regiones excitadas del enjambre -- las zonas donde la computación se activa en respuesta a estímulos externos -- se modelan como sub-presheaves.
 
-Lo notable es que la categoría de presheaves SET^{K^op} es un topos, lo que le da una lógica interna intuicionista. Krol y colegas encuentran que el comportamiento colectivo emergente del enjambre vive naturalmente en esa lógica: no es necesariamente clásico (tercero excluido), sino intuicionista. La emergencia no es mística; es la lógica interna del topos de presheaves.
+Lo notable es que la categoría de presheaves SET^{K^op} tiene propiedades extraordinariamente ricas -- limites, colimites, exponenciales, un clasificador de subobjetos -- que le dan una logica interna intuicionista (el documento 12 desarrolla esta estructura bajo el nombre de topos). Krol y colegas encuentran que el comportamiento colectivo emergente del enjambre vive naturalmente en esa lógica: no es necesariamente clásico (tercero excluido), sino intuicionista. La emergencia no es mística; es la lógica interna del topos de presheaves.
 
 El lema de Yoneda, en este contexto, establece la biyección entre las transformaciones naturales de un presheaf representable R_a a cualquier presheaf F, y el conjunto F(a):
 

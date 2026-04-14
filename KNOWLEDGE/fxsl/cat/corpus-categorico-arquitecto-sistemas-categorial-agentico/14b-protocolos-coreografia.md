@@ -57,7 +57,7 @@ retry_with_backoff : c_p
     Cons s (fmap (delay * 2) (duplicate (next_state s)))
 ```
 
-El circuit breaker es un hybrid sheaf del documento 15. Tiene dos modos continuos -- cerrado (operacion normal) y abierto (fallback activo) -- con transiciones discretas entre ellos. La transicion de cerrado a abierto ocurre cuando la tasa de errores cruza un umbral. La transicion inversa ocurre despues de un timeout. El circuit breaker vive en el tipo Hyb(C, D) donde C tiene dos componentes (cerrado, abierto) y D tiene dos transiciones (trip, reset). La condicion de sheaf garantiza que el comportamiento es consistente a traves de ventanas temporales que incluyen la transicion.
+El circuit breaker es un hybrid sheaf -- un sheaf con modos continuos conectados por transiciones discretas instantaneas. Tiene dos modos continuos -- cerrado (operacion normal) y abierto (fallback activo) -- con transiciones discretas entre ellos. La transicion de cerrado a abierto ocurre cuando la tasa de errores cruza un umbral. La transicion inversa ocurre despues de un timeout. El circuit breaker vive en un tipo Hyb(C, D) donde C tiene dos componentes (cerrado, abierto) y D tiene dos transiciones (trip, reset): el pushout de los dos modos continuos sobre los puntos de transicion, seguido de sheafificacion. La condicion de sheaf garantiza que el comportamiento es consistente a traves de ventanas temporales que incluyen la transicion. El documento 15 desarrolla la maquinaria de hybrid sheaves con precision formal.
 
 ## El saga pattern como morfismo inverso
 

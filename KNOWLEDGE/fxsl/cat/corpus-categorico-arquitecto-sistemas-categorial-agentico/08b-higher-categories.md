@@ -64,7 +64,7 @@ Antes de Joyal y Lurie, la herramienta para hacer homotopy theory en contextos a
 
 Las weak equivalences son los morfismos que "deberian ser isomorfismos" -- los que preservan toda la informacion homotopica relevante. Las fibrations y cofibrations son los morfismos "bien comportados" que permiten construir y descomponer objetos. Los axiomas aseguran que se puede factorizar cualquier morfismo en una cofibration seguida de una fibration, que las weak equivalences satisfacen el axioma de dos-de-tres, y que existen suficientes lifting properties.
 
-Toda model category presenta una (infinity,1)-categoria: su homotopy category, obtenida al invertir formalmente las weak equivalences. Una Quillen adjunction entre model categories induce una adjunction entre las (infinity,1)-categorias presentadas.
+Toda model category presenta una (infinity,1)-categoria: su localizacion infinita (la construccion de Dwyer-Kan), obtenida al invertir formalmente las weak equivalences. La homotopy category ordinaria es su sombra 1-categorica. Una Quillen adjunction entre model categories induce una adjunction entre las (infinity,1)-categorias presentadas.
 
 Para mi practica, la model category es una abstraccion de la nocion de "refactoring seguro." Los weak equivalences son los refactorings que no cambian el comportamiento observable. Los cofibrations son las extensiones -- agregar funcionalidad nueva sin modificar la existente (el open/closed principle formalizado). Las fibrations son las restricciones -- tomar un sistema y proyectarlo a un subsistema. La factorizacion dice que todo cambio se descompone en una extension seguida de una restriccion, y viceversa.
 

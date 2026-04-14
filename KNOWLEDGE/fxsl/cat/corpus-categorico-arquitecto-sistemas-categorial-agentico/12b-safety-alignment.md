@@ -70,13 +70,13 @@ La slice category captura esta estructura. Un sistema con capabilities vive en l
 
 ## Alignment a lo largo del tiempo
 
-El alignment no es un estado estatico -- puede degradarse. Un agente que empieza alineado puede driftar a medida que su contexto cambia, que los datos de entrenamiento envejecen, o que los objetivos del principal evolucionan. Usando la temporal type theory del documento 15, el alignment es una seccion de un behavior sheaf.
+El alignment no es un estado estatico -- puede degradarse. Un agente que empieza alineado puede driftar a medida que su contexto cambia, que los datos de entrenamiento envejecen, o que los objetivos del principal evolucionan. Si modelo el alignment como una seccion de un sheaf sobre ventanas temporales -- un behavior sheaf donde cada ventana tiene un valor de alignment -- la degradacion se formula con precision.
 
 Una seccion de alignment que existe sobre una ventana de 30 dias pero no se extiende a 90 dias exhibe alignment drift. La condicion de sheaf dice: si el alignment es consistente en cada sub-ventana solapada, se extiende a la ventana completa. Si no se extiende, hay una inconsistencia en algun solapamiento -- un periodo donde los objetivos del agente dejaron de corresponder con los del principal.
 
 El monitoreo de alignment es la verificacion continua de la condicion de sheaf. Los evals periodicos son muestras de secciones locales. Si las muestras son consistentes, hay evidencia de que la seccion global (alignment sostenido) existe. Si una muestra diverge, la seccion falla -- hay alignment drift en esa ventana.
 
-La modalidad temporal up (del documento 15) aplica directamente: "el agente esta always-aligned" es la proposicion up aplicada al predicado de alignment. Es una condicion fuerte -- exige que el alignment se mantenga para todo tiempo futuro. En la practica, lo que puedo verificar es una version acotada: alignment en los ultimos D dias, donde D es la ventana de evaluacion.
+Una modalidad temporal "always" (que en la temporal type theory de Schultz y Spivak se denota up) captura la condicion fuerte: "el agente esta always-aligned" exige que el alignment se mantenga para todo tiempo futuro. En la practica, lo que puedo verificar es una version acotada: alignment en los ultimos D dias, donde D es la ventana de evaluacion. El documento 15 desarrolla esta maquinaria temporal en profundidad.
 
 ## Reward hacking como funtor infiel
 
@@ -88,13 +88,7 @@ La defensa contra el reward hacking es hacer F mas faithful: agregar senales que
 
 ## Seguridad como analisis categorico de grafos de ataque
 
-El framework ICAR de Valence (documento 14) revela que las taxonomias de ciberseguridad -- CVE, CWE, CAPEC, ATT&CK, CPE -- no son silos independientes sino categorias conectadas por funtores. La estructura categorica permite formular el analisis de amenazas con precision.
-
-Las vulnerabilidades, amenazas y activos forman tres categorias interconectadas. La categoria Vuln tiene como objetos las vulnerabilidades conocidas y como morfismos las relaciones de derivacion (una vulnerabilidad habilita otra). La categoria Threat tiene como objetos las tecnicas de ataque y como morfismos las secuencias de ataque: si la tecnica t1 habilita la tecnica t2, el morfismo t1 -> t2 es un paso en el ataque. La categoria Asset tiene como objetos los activos protegidos y como morfismos las relaciones de dependencia (un activo depende de otro).
-
-Los attack paths son morfismos en la categoria Threat. Un camino t1 -> t2 -> ... -> tn es una cadena de ataque que conecta un punto de entrada con un objetivo. La composicion de pasos de ataque es el encadenamiento: el atacante ejecuta t1, luego t2, etc. La defensa es el bloqueo de morfismos: eliminar un morfismo t_i -> t_{i+1} del grafo de ataque corta todos los paths que lo atraviesan. La superficie de ataque es el conjunto de objetos iniciales de la categoria Threat -- los puntos de entrada desde los que comienzan los paths.
-
-Los funtores entre las tres categorias capturan las relaciones cruzadas. El funtor Exploits : Vuln -> Threat mapea vulnerabilidades a las tecnicas que las explotan. El funtor Targets : Threat -> Asset mapea tecnicas a los activos que amenazan. La composicion Targets . Exploits : Vuln -> Asset da la relacion directa entre vulnerabilidades y activos afectados. El analisis de riesgo es la evaluacion de esta composicion: que vulnerabilidades afectan que activos, a traves de que cadenas de ataque.
+Las taxonomias de ciberseguridad -- CVE, CWE, CAPEC, ATT&CK, CPE -- no son silos independientes sino categorias conectadas por funtores. Valence construye ICAR (Integrated CAtegorical Resource) como un knowledge schema categorico donde los diccionarios de seguridad son objetos, las relaciones entre ellos son morfismos, y las path equivalences capturan restricciones semanticas. Los attack paths son composiciones de morfismos; la defensa es la ruptura de conmutatividad en algun punto de la cadena. El documento 18 desarrolla ICAR en profundidad con queries operativas y conteos concretos; el documento 14 lo situa en el contexto de organizaciones multi-agente.
 
 ## Verificacion formal versus validacion empirica
 

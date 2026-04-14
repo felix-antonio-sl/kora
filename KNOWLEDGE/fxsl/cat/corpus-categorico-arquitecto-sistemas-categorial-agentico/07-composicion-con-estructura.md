@@ -62,7 +62,7 @@ Una CCC tiene tres ingredientes: objeto terminal, productos de cualquier par de 
 eval : [A, B] x A -> B
 ```
 
-y la propiedad universal de que para todo f : C x A -> B existe un unico curry(f) : C -> [A, B] tal que eval . (curry(f) x id_A) = f. Currying ES la adjuncion (- x A) dashv [A, -].
+y la propiedad universal de que para todo f : C x A -> B existe un unico curry(f) : C -> [A, B] tal que eval . (curry(f) x id_A) = f. Currying ES la adjuncion (- x A) ⊣ [A, -].
 
 Cada lenguaje funcional tipado es el lenguaje interno de una CCC. Los tipos son objetos. Las funciones son morfismos. Las funciones de orden superior son exponenciales. Currying es la adjuncion CCC. Apply es eval.
 

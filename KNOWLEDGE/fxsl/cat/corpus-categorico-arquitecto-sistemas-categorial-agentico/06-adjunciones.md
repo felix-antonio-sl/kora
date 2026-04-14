@@ -165,7 +165,7 @@ Más allá de la migración de datos, las adjunciones organizan pares de operaci
 
 **Abstraer ⊣ Concretar.** Subir un nivel de abstracción (interfaces, traits, protocolos) es left adjoint. Bajar a una implementación concreta es right adjoint. La interfaz captura lo mínimo necesario; la implementación rellena los detalles.
 
-**Currying como adjunción.** Esta es quizás la más limpia:
+**Currying como adjunción.** Anticipo aquí una estructura que el documento 07 formalizará como categoría cartesiana cerrada (CCC). Es quizás la adjunción más limpia:
 
 ```
 C(A × B, C) ≅ C(A, C^B)

@@ -2,7 +2,7 @@
 
 ## El problema de la bidireccionalidad
 
-En todos los documentos anteriores, los morfismos van en una direccion. Un funtor mapea de C a D. Una transformacion natural va de F a G. Una monada envuelve, una comonada desenvuelve. Pero los sistemas reales que construyo son bidireccionales. Un servidor recibe requests y envia responses. Un smart contract lee estado y lo actualiza. Un protocolo tiene turnos: yo envio, tu respondes, yo respondo a tu respuesta.
+En todos los documentos anteriores, los morfismos van en una direccion. Un funtor mapea de C a D (documento 02). Una transformacion natural va de F a G (documento 03). Una monada envuelve, una comonada desenvuelve (documento 09). Pero los sistemas reales que construyo son bidireccionales. Un servidor recibe requests y envia responses. Un smart contract lee estado y lo actualiza. Un protocolo tiene turnos: yo envio, tu respondes, yo respondo a tu respuesta.
 
 Necesito una matematica de la interaccion -- no del flujo unidireccional, sino del dialogo. Los polynomial functors de Niu y Spivak son esa matematica. Son la teoria que toma en serio el hecho de que los sistemas tienen interfaces con entradas y salidas, y que la estructura de las entradas puede depender de las salidas observadas.
 
@@ -53,7 +53,7 @@ La categoria Poly tiene una riqueza inusual de estructura monoidal. Tres product
 
 **Producto cartesiano (x)**: posiciones se multiplican, direcciones se suman. Para p x q, una posicion es un par (i, j) y las direcciones son p[i] + q[j]. Cada sistema elige independientemente su posicion, y el exterior puede enviar input a cualquiera de los dos. Es la composicion paralela donde ambos sistemas corren independientemente y cualquiera puede recibir input. La unidad es y^0 + 1 (el sistema trivial con una posicion y ninguna direccion, mas el sistema vacio). Poly es cartesian closed con este producto -- tiene internal homs.
 
-**Producto paralelo o Dirichlet (tensor)**: posiciones se multiplican, direcciones se multiplican. Para p tensor q, una posicion es un par (i, j) y las direcciones son p[i] x q[j]. Ambos sistemas operan en paralelo y el exterior debe enviar input a ambos simultaneamente. Es la composicion paralela sincronizada. La unidad es y.
+**Producto Dirichlet (tensor)**: posiciones se multiplican, direcciones se multiplican. Para p tensor q, una posicion es un par (i, j) y las direcciones son p[i] x q[j]. Ambos sistemas operan en paralelo y el exterior debe enviar input a ambos simultaneamente. Es la composicion paralela sincronizada. La unidad es y.
 
 **Producto de composicion (triangleleft)**: es la composicion de polinomios como funtores. Para p triangleleft q, las posiciones son pares de una posicion i de p y una funcion que asigna a cada direccion de p una posicion de q. Las direcciones son productos de direcciones de q. Es la composicion secuencial de protocolos: primero p muestra su posicion, el exterior elige una direccion, eso determina que instancia de q se activa, q muestra su posicion, el exterior elige una direccion de q, y asi. La unidad es y (el canal identidad).
 
