@@ -45,7 +45,7 @@ Regla de resolución:
 | Término | Definición |
 |---------|-----------|
 | SD (Diagrama de Sistema) | OPD raíz que muestra la función del sistema y su contexto de nivel superior (§3.75) |
-| SD1 | OPD descendiente de SD donde el proceso principal se refina exponiendo subprocesos. [Extensión no-ISO: convención de etiquetado derivada] |
+| SD1 | OPD descendiente de SD donde el proceso principal se refina exponiendo subprocesos. |
 | OPD (Object-Process Diagram) | Representación gráfica OPM de un modelo o parte de un modelo (§3.41) |
 | OPL (Object-Process Language) | Representación textual de OPM; en esta edición, OPL-ES es la forma canónica (§3.42) |
 | Beneficiario | Interesado que recibe valor funcional de la operación del sistema (§3.6) |
@@ -56,36 +56,36 @@ Regla de resolución:
 | Agente | Habilitador que es una persona o un grupo de personas (§3.3) |
 | Instrumento | Habilitador no humano (§3.30) |
 | Función | Proceso que entrega valor funcional a un beneficiario (§3.23) |
-| Arquitectura | Combinación de estructura + comportamiento que habilita la función y produce emergencia. [Extensión no-ISO: síntesis conceptual] |
-| Emergencia | Capacidad del sistema completo que ninguna parte individual exhibe. [Extensión no-ISO: concepto de ingeniería de sistemas] |
+| Arquitectura | Combinación de estructura + comportamiento que habilita la función y produce emergencia. |
+| Emergencia | Capacidad del sistema completo que ninguna parte individual exhibe. |
 | Proceso persistente | Proceso cuyo efecto es mantener el estado de un objeto, no cambiarlo (§7.2.1 NOTE 2) |
-| Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos. [Extensión no-ISO: conveniencia de modelado] |
-| Fuerza semántica | Precedencia de un enlace procedimental que determina cuál prevalece en conflictos. [Extensión no-ISO: derivada de la tabla de precedencia §14 de ISO 19450] |
-| Principio del Nombre Singular | Los nombres de cosas en OPM DEBEN ser singulares. En inglés, colecciones humanas usan "Group" y las inanimadas "Set". En español, los equivalentes son "Grupo" y "Conjunto". [Extensión no-ISO: nombre asignado por esta metodología a una convención de ISO 19450] |
+| Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos. |
+| Fuerza semántica | Precedencia de un enlace procedimental que determina cuál prevalece en conflictos. |
+| Principio del Nombre Singular | Los nombres de cosas en OPM DEBEN ser singulares. En inglés, colecciones humanas usan "Group" y las inanimadas "Set". En español, los equivalentes son "Grupo" y "Conjunto". |
 
 ## 3 Fundamentos Ontológicos
 
-Los fundamentos ontológicos de OPM están formulados en el trabajo de Dori (*Model-Based Systems Engineering with OPM and SysML*) y subyacen a ISO/PAS 19450 sin que la norma los nombre individualmente como principios, teoremas o aserciones. Las formulaciones de esta sección provienen del textbook de referencia, no del texto normativo de ISO/PAS 19450.
+Los fundamentos ontológicos de OPM están formulados en el trabajo de Dori (*Model-Based Systems Engineering with OPM and SysML*) y subyacen a ISO/PAS 19450 sin que la norma los nombre individualmente como principios, teoremas o aserciones. Las formulaciones de esta sección provienen del libro de referencia, no del texto normativo de ISO/PAS 19450.
 
-### 3.1 Principio de Ontología Mínima [Textbook de Dori]
+### 3.1 Principio de Ontología Mínima
 
 > Si un sistema puede especificarse al mismo nivel de precisión y detalle con dos lenguajes de diferentes tamaños ontológicos, el lenguaje con ontología menor es preferible, siempre que la comprensibilidad sea comparable.
 
 OPM usa dos clases de elementos: **cosas** (objetos y procesos) y **enlaces** (procedimentales y estructurales), que expresan relaciones entre cosas (cfr. ISO 19450 §3.16, §3.36, §3.76).
 
-### 3.2 Teorema Objeto-Proceso [Textbook de Dori]
+### 3.2 Teorema Objeto-Proceso
 
 > Objetos, procesos y relaciones entre ellos constituyen una ontología universal mínima.
 
 Demostrado por necesidad (especificar estructura requiere objetos; especificar comportamiento requiere procesos) y suficiencia (las cosas existen o suceden; solo se asocian mediante relaciones). Los objetos pueden ser con estados (con estados explícitos, transformables vía efecto) o sin estados (solo creables/consumibles). La distinción con estados / sin estados es posterior a la base ontológica.
 
-### 3.3 Aserción Objeto-Proceso [Textbook de Dori]
+### 3.3 Aserción Objeto-Proceso
 
 > Usando objetos, procesos, relaciones, y mecanismos de refinamiento (descomposición y despliegue), se puede modelar conceptualmente cualquier sistema en cualquier dominio y nivel de complejidad.
 
 ## 4 Principios de Modelamiento
 
-ISO/PAS 19450 define seis principios de modelado OPM. Todo modelamiento DEBE respetarlos. A continuación se reproducen fielmente; después se listan reglas complementarias derivadas del estándar y del textbook de Dori.
+ISO/PAS 19450 define seis principios de modelado OPM. Todo modelamiento DEBE respetarlos. A continuación se reproducen fielmente; después se listan reglas complementarias derivadas del estándar y del libro de Dori.
 
 ### 4.1 Principios ISO/PAS 19450
 
@@ -103,23 +103,23 @@ ISO/PAS 19450 define seis principios de modelado OPM. Todo modelamiento DEBE res
 
 ### 4.2 Reglas complementarias derivadas
 
-Las siguientes reglas no son los seis principios de modelado de ISO/PAS 19450, sino restricciones derivadas de otras secciones del estándar y del textbook de Dori. También DEBEN respetarse.
+Las siguientes reglas no son los seis principios de modelado de ISO/PAS 19450, sino restricciones derivadas de otras secciones del estándar y del libro de Dori. También DEBEN respetarse.
 
-**Function-as-a-Seed [Textbook de Dori].** El modelamiento de un sistema DEBE comenzar definiendo, nombrando y representando la función del sistema, que es su proceso de nivel superior. La función es la semilla de la que evoluciona el modelo. Comenzar por la forma (objetos) en vez de la función (proceso) es un error común. (Operacionaliza los principios ISO 1 y 3.)
+**Función como semilla.** El modelamiento de un sistema DEBE comenzar definiendo, nombrando y representando la función del sistema, que es su proceso de nivel superior. La función es la semilla de la que evoluciona el modelo. Comenzar por la forma (objetos) en vez de la función (proceso) es un error común. (Operacionaliza los principios ISO 1 y 3.)
 
-**Importancia de Cosa [Textbook de Dori].** La importancia de una cosa T en un modelo OPM es directamente proporcional al OPD más alto en la jerarquía donde T aparece. Objetos y procesos tienen igual estatus; ninguno tiene supremacía sobre el otro.
+**Importancia de Cosa.** La importancia de una cosa T en un modelo OPM es directamente proporcional al OPD más alto en la jerarquía donde T aparece. Objetos y procesos tienen igual estatus; ninguno tiene supremacía sobre el otro.
 
-**Transformación de Objeto por Proceso [derivada de ISO §3.58, §3.77].** En un modelo OPM completo, cada proceso DEBE estar conectado a al menos un objeto que el proceso transforma o a un estado de ese objeto. Un proceso sin enlace transformador no tiene significado. Un proceso PUEDE tener múltiples transformados.
+**Transformación de Objeto por Proceso.** En un modelo OPM completo, cada proceso DEBE estar conectado a al menos un objeto que el proceso transforma o a un estado de ese objeto. Un proceso sin enlace transformador no tiene significado. Un proceso PUEDE tener múltiples transformados.
 
-**Unicidad de Enlace Procedimental [derivada de ISO §10].** A cualquier nivel de detalle, un objeto y un proceso PUEDEN estar conectados con a lo sumo un enlace procedimental, que determina unívocamente el rol del objeto respecto al proceso. *Resolución de colisión de roles:* Cuando un objeto es simultáneamente habilitador (agente o instrumento) y transformado (afectado) del mismo proceso, el enlace transformador DEBE prevalecer por mayor fuerza semántica. El modelador PUEDE agregar un stick-figure para preservar la identidad humana del agente desplazado. Alternativa: hacer descomposición al proceso y asignar enlace de agente a un subproceso y enlace de efecto a otro.
+**Unicidad de Enlace Procedimental.** A cualquier nivel de detalle, un objeto y un proceso PUEDEN estar conectados con a lo sumo un enlace procedimental, que determina unívocamente el rol del objeto respecto al proceso. *Resolución de colisión de roles:* Cuando un objeto es simultáneamente habilitador (agente o instrumento) y transformado (afectado) del mismo proceso, el enlace transformador DEBE prevalecer por mayor fuerza semántica. El modelador PUEDE agregar un símbolo de persona para preservar la identidad humana del agente desplazado. Alternativa: hacer descomposición al proceso y asignar enlace de agente a un subproceso y enlace de efecto a otro.
 
-**Representación de Hechos del Modelo [derivada de ISO §3.38].** Todo hecho del modelo DEBE aparecer en al menos un OPD del set de OPDs del modelo. No todo hecho necesita repetirse en cada OPD. Suficiente con que aparezca al menos una vez.
+**Representación de Hechos del Modelo.** Todo hecho del modelo DEBE aparecer en al menos un OPD del conjunto de OPDs del modelo. No todo hecho necesita repetirse en cada OPD. Suficiente con que aparezca al menos una vez.
 
-**Equivalencia Gráfico-Texto [derivada de ISO §3.41, §3.42].** Todo modelo OPM DEBE expresarse en modalidades gráficas (OPD) y textuales (OPL) semánticamente equivalentes. Cada OPD tiene un párrafo OPL correspondiente. La redundancia aprovecha canales cognitivos duales (visual + verbal).
+**Equivalencia Gráfico-Texto.** Todo modelo OPM DEBE expresarse en modalidades gráficas (OPD) y textuales (OPL) semánticamente equivalentes. Cada OPD tiene un párrafo OPL correspondiente. La redundancia aprovecha canales cognitivos duales (visual + verbal).
 
-**Jerarquía de Detalle [operacionaliza Principio ISO 6].** Cuando un OPD se vuelve difícil de comprender por exceso de detalle, se DEBE crear un nuevo OPD descendiente. Heurística: un OPD NO DEBERÍA exceder 20-25 entidades ni una pantalla/página.
+**Jerarquía de Detalle.** Cuando un OPD se vuelve difícil de comprender por exceso de detalle, se DEBE crear un nuevo OPD descendiente. Heurística: un OPD NO DEBERÍA exceder 20-25 entidades ni una pantalla/página.
 
-**Trade-off Completitud-Claridad [operacionaliza Principio ISO 6].** El detalle abrumador de sistemas reales DEBE balancearse distribuyendo la especificación completa a través del set de OPDs, manteniendo cada OPD individual claro y comprensible.
+**Compromiso Completitud-Claridad.** El detalle abrumador de sistemas reales DEBE balancearse distribuyendo la especificación completa a través del conjunto de OPDs, manteniendo cada OPD individual claro y comprensible.
 
 ## 5 Clasificación del Sistema
 
@@ -132,9 +132,9 @@ Reglas prescriptivas por categoría:
 - **Social**: DEBE modelarse con los 5 componentes completos. Se PUEDE usar enlaces habilitadores con estado especificado para condiciones ambientales
 - **Socio-técnico**: DEBE modelarse con los 5 componentes completos. Se PUEDE usar enlaces estructurales etiquetados para relaciones no fundamentales
 
-### 5.1 Patrones de Referencia por Categoría [Textbook de Dori]
+### 5.1 Patrones de Referencia por Categoría
 
-Los siguientes patrones sintetizan ejemplos pedagógicos del textbook de referencia de Dori, no de ISO/PAS 19450. Son útiles para clasificar el sistema antes de construir el SD:
+Los siguientes patrones sintetizan ejemplos pedagógicos del libro de referencia de Dori, no de ISO/PAS 19450. Son útiles para clasificar el sistema antes de construir el SD:
 
 | Categoría | Patrón de referencia | Lección operativa |
 |-----------|----------------------|-------------------|
@@ -148,7 +148,7 @@ Los siguientes patrones sintetizan ejemplos pedagógicos del textbook de referen
 
 El SD DEBE ser simple y claro, con mínimos detalles técnicos. Todos los interesados DEBEN poder comprender el SD sin pericia técnica.
 
-### 6.0 Asistente Agnóstico de Construcción del SD [Extensión no-ISO]
+### 6.0 Asistente Agnóstico de Construcción del SD
 
 El asistente del SD es un **protocolo de interacción** agnóstico de herramienta. No presupone OPCloud, formularios, UI gráfica ni asistente LLM. Cualquier implementación válida DEBE guiar al modelador por una secuencia ordenada de puntos de control y producir, al final, un SD semánticamente completo. ISO/PAS 19450 define un procedimiento guiado de nueve preguntas para la construcción del SD. Este asistente extiende ese procedimiento con etapas adicionales de clasificación (etapa 0), resolución de agencia (etapa 5) y verificación formal (etapa 11).
 
@@ -175,7 +175,7 @@ El asistente del SD es un **protocolo de interacción** agnóstico de herramient
 
 **Semántica de cierre por etapa:**
 
-- Si una etapa no puede cerrarse, el wizard DEBE retroceder a la etapa anterior que bloquea la decisión.
+- Si una etapa no puede cerrarse, el asistente DEBE retroceder a la etapa anterior que bloquea la decisión.
 - Si el sistema es **natural**, la etapa 10 DEBE cerrarse como `NO APLICA`, no como omisión silenciosa.
 - Si el sistema transforma múltiples objetos, la etapa 4 DEBE dejar explicitado cuál es el `Objeto Proveedor de Beneficio`.
 - Si no existen agentes humanos, la etapa 5 DEBE registrar `sin agentes humanos` en vez de forzar un marcador de posición.
@@ -304,7 +304,7 @@ Aplica cuando los subprocesos tienen un orden fijo y predefinido.
 4. Cada subproceso DEBE estar conectado a al menos un transformado
 5. Verificar agregación-participación implícita por contención gráfica
 
-**In-diagram vs new-diagram (acercamiento en el mismo diagrama vs en diagrama nuevo):**
+**En el mismo diagrama vs en diagrama nuevo:**
 
 | Variante | Descripción | Usar cuando |
 |----------|-------------|-------------|
@@ -397,96 +397,96 @@ Los estados DEBERÍAN suprimirse en el SD cuando no están conectados a ningún 
 
 ### 7.6 Verificación de SD1
 
-| Check | Condición | Severidad |
+| Verificación | Condición | Severidad |
 |-------|-----------|----------|
 | Subprocesos transforman | Cada subproceso ≥ 1 transformado | CRÍTICA |
 | Refinamiento correcto | Síncrono → descomposición; asíncrono → despliegue | ALTA |
 | Enlaces distribuidos | Consumo/resultado NO en contorno exterior | CRÍTICA |
-| Sin event a no-primero | Enlace de eventos solo al primer subproceso (o justificacion explícita) | ALTA |
-| Enlaces escindidos resueltos | Ningún enlace de efecto underspecified en descomposición con múltiples subprocesos | ALTA |
+| Sin evento a no-primero | Enlace de eventos solo al primer subproceso (o justificación explícita) | ALTA |
+| Enlaces escindidos resueltos | Ningún enlace de efecto subespecificado en descomposición con múltiples subprocesos | ALTA |
 | Estados expresados | Estados relevantes visibles y conectados | ALTA |
 | Sin redundancia | Sin duplicación innecesaria de hechos del SD | MEDIA |
 
 ## 8 Gestión de Complejidad — Niveles 2+
 
-### 8.1 Cuatro Mecanismos de Refinamiento-Abstraccion
+### 8.1 Cuatro Mecanismos de Refinamiento-Abstracción
 
-| Mecanismo | Refinamiento | Abstraccion | Uso principal |
+| Mecanismo | Refinamiento | Abstracción | Uso principal |
 |-----------|-------------|-------------|---------------|
 | Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos sincrónicos; objetos con partes espaciales |
 | Despliegue / Plegado | Expone refinadores via relación estructural | Oculta refinadores | Procesos asincrónicos; taxonomías; rasgos |
-| State Expression / Suppression | Muestra estados | Oculta estados irrelevantes | Simplificacion contextual |
+| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual |
 | Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales |
 
-**Decisión descomposición vs despliegue para procesos sincrónicos:** Descomposición DEBERÍA preferirse porque: (a) requiere menos símbolos, (b) genera OPL más corto, (c) reemplaza event/enlaces de invocación explícitos con invocación implícita del timeline. Despliegue de procesos sincrónicos es semánticamente equivalente pero más verboso.
+**Decisión descomposición vs despliegue para procesos sincrónicos:** Descomposición DEBERÍA preferirse porque: (a) requiere menos símbolos, (b) genera OPL más corto, (c) reemplaza eventos/enlaces de invocación explícitos con invocación implícita de la línea de tiempo. Despliegue de procesos sincrónicos es semánticamente equivalente pero más verboso.
 
-**Port Plegado [OPCloud]:** Especialización de plegado donde la operación (proceso feature) se desplaza al contorno del exhibitor (objeto). Útil cuando el modelador quiere que los rectángulos de objetos representen disposición físico y tamaños relativos. OPL: keyword "as ports" al final de la sentencia de exhibición. Port plegado también aplica a atributos de procesos.
+**Plegado en puertos:** Especialización de plegado donde la operación (proceso rasgo) se desplaza al contorno del exhibidor (objeto). Útil cuando el modelador quiere que los rectángulos de objetos representen disposición física y tamaños relativos. OPL: palabra clave "as ports" al final de la sentencia de exhibición. El plegado en puertos también aplica a atributos de procesos.
 
-**Semi-Plegado [OPCloud]:** Tecnica intermedia entre fold completo y unfold completo. Muestra nombres de partes dentro del container del objeto sin crear un OPD hijo. Un indicador numerico ("2 more") senala partes ocultas. El modelador DEBERÍA usar semi-plegado para inspección rapida de estructura sin proliferación de OPDs.
+**Semi-Plegado:** Técnica intermedia entre plegado completo y despliegue completo. Muestra nombres de partes dentro del contenedor del objeto sin crear un OPD hijo. Un indicador numérico ("2 more") señala partes ocultas. El modelador DEBERÍA usar semi-plegado para inspección rápida de estructura sin proliferación de OPDs.
 
 Reglas adicionales:
 
-- Views NO DEBEN editarse; la edicion ocurre en OPDs no-view
-- El set completo de estados de un objeto es la union de estados en todos los OPDs
+- Las vistas NO DEBEN editarse; la edición ocurre en OPDs que no son vistas
+- El conjunto completo de estados de un objeto es la unión de estados en todos los OPDs
 
-### 8.2 Organización del Árbol OPD y Forest
+### 8.2 Organización del Árbol OPD y Bosque
 
-Convention de etiquetado: SD, SD1, SD1.1, SD1.2, SD2, etc. El **Mapa del Sistema** muestra todos los cosas sin enlaces, sirviendo como índice navegable.
+Convención de etiquetado: SD, SD1, SD1.1, SD1.2, SD2, etc. El **Mapa del Sistema** muestra todos los cosas sin enlaces, sirviendo como índice navegable.
 
-**Regla de integridad del arbol [OPCloud]:** Solo OPDs leaf (hojas terminales) PUEDEN eliminarse. OPDs internos estan protegidos para mantener la integridad del arbol de refinamiento. Intentar eliminar un nodo interno DEBE generar error.
+**Regla de integridad del árbol:** Solo OPDs hoja (hojas terminales) PUEDEN eliminarse. OPDs internos están protegidos para mantener la integridad del árbol de refinamiento. Intentar eliminar un nodo interno DEBE generar error.
 
 **Mapa del Sistema:** árbol OPD elaborado donde cada nodo es un icono miniaturizado del OPD, con flechas gruesas indicando refinamiento. Esencial para navegación en modelos complejos (>10 OPDs). El modelador DEBERÍA generar el mapa del sistema para cualquier modelo con más de un nivel de detalle.
 
-**OPD Último [Textbook de Dori]:** Representación flat obtenida por flattening recursivo del árbol OPD de abajo hacia arriba. No apta para consumo humano excepto en modelos muy pequenos; util para uso automatizado (gestión de conocimiento, querying).
+**OPD Último:** Representación plana obtenida por aplanamiento recursivo del árbol OPD de abajo hacia arriba. No apta para consumo humano excepto en modelos muy pequeños; útil para uso automatizado (gestión de conocimiento, consultas).
 
-**Whole System Specification [ISO]** — tres constructos complementarios:
+**Especificación Completa del Sistema** — tres constructos complementarios:
 
 | Constructo | Contenido |
 |-----------|-----------|
-| OPD model specification | Coleccion de OPDs sucesivos en orden en anchura |
-| OPL model specification | Coleccion de paragrafos OPL correspondientes, con sentencias duplicadas eliminadas |
-| OPM model specification | Presentacion side-by-side: cada OPD con su párrafo OPL a la derecha |
+| Especificación de modelo OPD | Colección de OPDs sucesivos en orden en anchura |
+| Especificación de modelo OPL | Colección de párrafos OPL correspondientes, con sentencias duplicadas eliminadas |
+| Especificación de modelo OPM | Presentación lado a lado: cada OPD con su párrafo OPL a la derecha |
 
-**Sub-Models para trabajo concurrente [OPCloud]:** Cuando múltiples modeladores trabajan en subsistemas simultáneamente, el modelador DEBERÍA separar subsistemas en sub-models. Las conexiónes entre el modelo principal y los sub-models DEBEN mantenerse mínimas para reducir acoplamiento y conflictos de edicion concurrente.
+**Sub-modelos para trabajo concurrente:** Cuando múltiples modeladores trabajan en subsistemas simultáneamente, el modelador DEBERÍA separar subsistemas en sub-modelos. Las conexiones entre el modelo principal y los sub-modelos DEBEN mantenerse mínimas para reducir acoplamiento y conflictos de edición concurrente.
 
-### 8.3 Creacion de Vistas
+### 8.3 Creación de Vistas
 
-Tipos: process tree, object tree, allocation view, simulation-motivated view.
+Tipos: árbol de procesos, árbol de objetos, vista de asignación, vista motivada por simulación.
 
 ### 8.4 Precedencia de Enlaces durante Recomposición
 
-| B↔P1 \ B↔P2 | Effect | Result | Consumption |
+| B↔P1 \ B↔P2 | Efecto | Resultado | Consumo |
 |-------------|--------|--------|-------------|
-| **Effect** | Effect | Result | Consumption |
-| **Result** | Result | Invalido | Effect |
-| **Consumption** | Consumption | Effect | Invalido |
+| **Efecto** | Efecto | Resultado | Consumo |
+| **Resultado** | Resultado | Inválido | Efecto |
+| **Consumo** | Consumo | Efecto | Inválido |
 
-**Orden de precedencia primario:** consumption = result > effect > agent > instrumento.
+**Orden de precedencia primario:** consumo = resultado > efecto > agente > instrumento.
 
 **Orden completo (12 niveles, de mayor a menor fuerza semántica):**
 
-1. consumption event
-2. consumption = result (sin modifier)
-3. result > consumption condition
-4. consumption condition > effect event
-5. effect event > effect (sin modifier)
-6. effect > effect condition
-7. effect condition > agent event
-8. agent event > agent (sin modifier)
-9. agent > agent condition
-10. agent condition > instrumento event
-11. instrumento event > instrumento (sin modifier)
-12. instrumento > instrumento condition
+1. consumo evento
+2. consumo = resultado (sin modificador)
+3. resultado > consumo condición
+4. consumo condición > efecto evento
+5. efecto evento > efecto (sin modificador)
+6. efecto > efecto condición
+7. efecto condición > agente evento
+8. agente evento > agente (sin modificador)
+9. agente > agente condición
+10. agente condición > instrumento evento
+11. instrumento evento > instrumento (sin modificador)
+12. instrumento > instrumento condición
 
-**Secondary precedence** (dentro de cada kind): event > non-control > condition. Enlace de eventos llevan semántica del enlace sin modificador + process initiation. Condition modifiers debilitan criterios de satisfacción de precondición. Enlaces con estado especificado tienen precedencia sobre enlaces básicos del mismo tipo.
+**Precedencia secundaria** (dentro de cada tipo): evento > sin control > condición. Los enlaces de evento llevan semántica del enlace sin modificador + iniciación de proceso. Los modificadores de condición debilitan criterios de satisfacción de precondición. Enlaces con estado especificado tienen precedencia sobre enlaces básicos del mismo tipo.
 
-### 8.5 Práctica Middle-Out y Simplificacion [Textbook de Dori]
+### 8.5 Práctica Desde el Nivel Medio y Simplificación
 
-Las prácticas de esta subsección provienen del textbook de referencia y de la experiencia pedagógica, no del texto normativo de ISO/PAS 19450.
+Las prácticas de esta subsección provienen del libro de referencia y de la experiencia pedagógica, no del texto normativo de ISO/PAS 19450.
 
 **Desde el nivel medio**: el modelador comienza por el nivel que mejor entiende y refina/abstrae en ambas direcciones.
 
-**Procedimiento de simplificacion de OPD sobrecargado:**
+**Procedimiento de simplificación de OPD sobrecargado:**
 
 1. Identificar conjunto TO de cosas a extraer
 2. Nombrar un nuevo proceso interino que los contenga
@@ -498,52 +498,52 @@ Reduccion neta: procesos_removidos + objetos_removidos + links_removidos - 1 (el
 
 **Depth-first traversal para documentos complejos:** Al modelar estandares, regulaciones o documentos extensos, el modelador DEBERÍA seguir una estrategia en profundidad: profundizar completamente en una seccion/clausula antes de avanzar a la siguiente. Esto contrasta con en anchura y permite descubrir inconsistencias locales más rapidamente.
 
-**Object-process disconnect bridging:** Documentos y estandares frecuentemente separan la descripción de objetos (estructura) de la descripción de procesos (comportamiento) en clausulas independientes sin integración. El modelador DEBE conectar ambas vistas usando OPM, enlazando cada proceso con los objetos que transforma. Esta integración revela gaps y objetos implícitos que el texto omite.
+**Cierre de la brecha objeto-proceso:** Documentos y estándares frecuentemente separan la descripción de objetos (estructura) de la descripción de procesos (comportamiento) en cláusulas independientes sin integración. El modelador DEBE conectar ambas vistas usando OPM, enlazando cada proceso con los objetos que transforma. Esta integración revela vacíos y objetos implícitos que el texto omite.
 
-### 8.6 Emergencia como Criterio de Validación Arquitectural [Extensión no-ISO]
+### 8.6 Emergencia como Criterio de Validación Arquitectural
 
-El concepto de emergencia proviene de la ingeniería de sistemas general, no de ISO/PAS 19450.
+El concepto de emergencia proviene de la ingeniería de sistemas en general, no de ISO/PAS 19450.
 
 El modelador DEBE verificar que la arquitectura del sistema (structure + behavior) produce al menos una capacidad emergente — una funcionalidad que el sistema completo exhibe pero ninguna parte individual posee. Si no existe emergencia, la colección de partes no constituye un sistema en el sentido MBSE.
 
-### 8.7 Gobernanza del Modelo [OPCloud / Textbook de Dori]
+### 8.7 Gobernanza del Modelo
 
-Las capacidades de gobernanza de esta subsección corresponden a funcionalidades de OPCloud y al trabajo post-ISO de Dori. OPPL no forma parte de ISO/PAS 19450:2015 (cfr. término 3.84 del glosario ISO).
+Las capacidades de gobernanza de esta subsección corresponden a funcionalidades de OPCloud y al trabajo posterior a ISO de Dori. OPPL no forma parte de ISO/PAS 19450:2015 (cfr. término 3.84 del glosario ISO).
 
-**Ontology Enforcement:** Para consistencia terminológica en equipos, el modelador DEBERÍA configurar enforcement de ontología organizacional en tres niveles:
+**Aplicación de ontología:** Para consistencia terminológica en equipos, el modelador DEBERÍA configurar aplicación de ontología organizacional en tres niveles:
 
 | Nivel | Comportamiento |
 |-------|---------------|
-| None | Sin restricción terminológica |
-| Suggest | Sugiere término estandar; el modelador puede ignorar |
-| Enforce | Impide terminos no estandarizados |
+| Ninguno | Sin restricción terminológica |
+| Sugerir | Sugiere término estándar; el modelador puede ignorar |
+| Aplicar | Impide términos no estandarizados |
 
-**Model Informativeness Grading:** Las sentencias OPPL se clasifican en: Definition, Structural, Procedural, Meta, Unknown. Métricas: nivel informativo, puntaje ponderado, INF average, total OPPL sentences. El modelador DEBERÍA ejecutar grading periódicamente para identificar enlaces de precedencia faltantes y procesos sin entradas/salidas.
+**Clasificación de informatividad del modelo:** Las sentencias OPPL se clasifican en: Definición, Estructural, Procedimental, Meta, Desconocida. Métricas: nivel informativo, puntaje ponderado, promedio INF, total de sentencias OPPL. El modelador DEBERÍA ejecutar clasificación periódicamente para identificar enlaces de precedencia faltantes y procesos sin entradas/salidas.
 
-**Version Comparison:** El modelador DEBERÍA comparar versiones del modelo para seguimiento de mejoras y detección de regresiónes. El diff entre versiones revela hechos agregados, modificados o eliminados.
+**Comparación de versiones:** El modelador DEBERÍA comparar versiones del modelo para seguimiento de mejoras y detección de regresiones. La diferencia entre versiones revela hechos agregados, modificados o eliminados.
 
-**Name Coherency:** Ante nombres duplicados, el modelador DEBE resolver con una de tres opciones: (1) usar existing cosa — crea visual instance (mismo cosa, diferente vista en otro OPD), (2) renombrar con nombre único, (3) descartar. La opcion "close" sin resolver NO DEBERÍA usarse. Visual instances solo PUEDEN crearse entre elementos del mismo tipo (object→object, process→process).
+**Coherencia de nombres:** Ante nombres duplicados, el modelador DEBE resolver con una de tres opciones: (1) usar la cosa existente — crea instancia visual (misma cosa, diferente vista en otro OPD), (2) renombrar con nombre único, (3) descartar. La opción "cerrar" sin resolver NO DEBERÍA usarse. Las instancias visuales solo PUEDEN crearse entre elementos del mismo tipo (objeto→objeto, proceso→proceso).
 
-### 8.8 Operaciones de Gestión del Modelo en OPCloud [OPCloud]
+### 8.8 Operaciones de Gestión del Modelo en OPCloud
 
 Las siguientes capacidades son relevantes para el ciclo de vida del modelo, pero no alteran la semántica OPM:
 
-- **Persistencia:** el modelador DEBERÍA tratar Save/Load como operaciones regulares de punto de control durante sesión. Share expone el modelo a otros usuarios con permisos read o edit.
-- **Permisos:** el owner/admin PUEDE compartir con usuarios o grupos completos, pero NO entre organizaciones distintas. Read precede a write. El modelador DEBERÍA verificar permisos antes de colaboración concurrente.
-- **Exportacion:** OPL puede exportarse con o sin numeracion. Los OPDs pueden exportarse como imagen o PDF, ya sea para el OPD actual, el arbol completo o solo el SD. Los exports DEBEN tratarse como snapshots publicables, no como SSOT del modelo.
-- **Templates:** OPCloud soporta templates Private, Organizational y Global. Insertar un template crea una copia local; las actualizaciones posteriores del template fuente NO se propagan a las inserciones ya hechas.
-- **Reubicacion del modelo:** mover modelos via cut/paste conserva auto-save e historial de versiones. El modelador DEBERÍA revisar versiones antes y despues de mover o fusionar trabajo.
-- **Búsqueda y navegación asistida:** operaciones como search, bring connected y filtered bring DEBERÍAN usarse para inspección localizada de un subgrafo antes de editar, especialmente en modelos con alta densidad de enlaces.
+- **Persistencia:** el modelador DEBERÍA tratar guardar/cargar como operaciones regulares de punto de control durante sesión. Compartir expone el modelo a otros usuarios con permisos de lectura o edición.
+- **Permisos:** el propietario/administrador PUEDE compartir con usuarios o grupos completos, pero NO entre organizaciones distintas. Lectura precede a escritura. El modelador DEBERÍA verificar permisos antes de colaboración concurrente.
+- **Exportación:** OPL puede exportarse con o sin numeración. Los OPDs pueden exportarse como imagen o PDF, ya sea para el OPD actual, el árbol completo o solo el SD. Las exportaciones DEBEN tratarse como instantáneas publicables, no como fuente de verdad del modelo.
+- **Plantillas:** OPCloud soporta plantillas privadas, organizacionales y globales. Insertar una plantilla crea una copia local; las actualizaciones posteriores de la plantilla fuente NO se propagan a las inserciones ya hechas.
+- **Reubicación del modelo:** mover modelos vía cortar/pegar conserva autoguardado e historial de versiones. El modelador DEBERÍA revisar versiones antes y después de mover o fusionar trabajo.
+- **Búsqueda y navegación asistida:** operaciones como buscar, traer conectados y traer filtrado DEBERÍAN usarse para inspección localizada de un subgrafo antes de editar, especialmente en modelos con alta densidad de enlaces.
 
-## 9 Heurísticas de Modelamiento Avanzado [Textbook de Dori / OPCloud]
+## 9 Heurísticas de Modelamiento Avanzado
 
-Las heurísticas de esta sección integran prácticas del textbook de referencia de Dori, experiencia pedagógica y patrones observados en OPCloud. No provienen del texto normativo de ISO/PAS 19450, pero son consistentes con su semántica.
+Las heurísticas de esta sección integran prácticas del libro de referencia de Dori, experiencia pedagógica y patrones observados en OPCloud. No provienen del texto normativo de ISO/PAS 19450, pero son consistentes con su semántica.
 
-### 9.1 Proceso Persistente → Tagged Structural Link
+### 9.1 Proceso Persistente → Enlace Estructural Etiquetado
 
-Cuando un proceso mantiene un objeto en su estado actual sin transformarlo (Supporting, Holding, Maintaining, Keeping, Storing, Containing, Connecting), el modelador DEBERÍA reemplazarlo con un enlace estructural etiquetado.
+Cuando un proceso mantiene un objeto en su estado actual sin transformarlo (*Sostener*, *Mantener*, *Almacenar*, *Contener*, *Conectar*), el modelador DEBERÍA reemplazarlo con un enlace estructural etiquetado.
 
-**Justificación:** Los procesos state-preserving violan la definición fundamental de proceso como "cosa que transforma un objeto". El enlace estructural etiquetado es más compacto y expresa la naturaleza time-invariant de la relación.
+**Justificación:** Los procesos que preservan estado violan la definición fundamental de proceso como "cosa que transforma un objeto". El enlace estructural etiquetado es más compacto y expresa la naturaleza invariante en el tiempo de la relación.
 
 **Correcto:** `Foundation supports House.` (enlace estructural etiquetado, una sentencia OPL)
 
@@ -551,9 +551,9 @@ Cuando un proceso mantiene un objeto en su estado actual sin transformarlo (Supp
 
 **Excepcion:** Si mantener el estado requiere esfuerzo no trivial (ej: helicopter hovering requiere propulsión activa), el modelador DEBE modelar el proceso explícitamente.
 
-### 9.2 Objeto Transiente → Invocation Link
+### 9.2 Objeto Transiente → Enlace de Invocación
 
-Cuando un proceso crea un objeto que el siguiente proceso consume inmediatamente sin intervencion, el modelador DEBERÍA suprimir el objeto transiente y reemplazar la creation-consumption pair con un enlace de invocación (forma de rayo).
+Cuando un proceso crea un objeto que el siguiente proceso consume inmediatamente sin intervención, el modelador DEBERÍA suprimir el objeto transiente y reemplazar el par creación-consumo con un enlace de invocación (forma de rayo).
 
 **Correcto:** `Object Detecting invokes Threat Assessing.` (enlace de invocación, Spark suprimido)
 
@@ -561,7 +561,7 @@ Cuando un proceso crea un objeto que el siguiente proceso consume inmediatamente
 
 ### 9.3 Dualidad Estructural
 
-Los patrones §9.1 y §9.2 son duales: enlaces estructurales etiquetados suprimen procesos state-preserving innecesarios; enlaces de invocación suprimen objetos transientes innecesarios. El modelador DEBE aplicar ambos consistentemente.
+Los patrones §9.1 y §9.2 son duales: enlaces estructurales etiquetados suprimen procesos que preservan estado innecesarios; enlaces de invocación suprimen objetos transientes innecesarios. El modelador DEBE aplicar ambos consistentemente.
 
 ### 9.4 Cambio de Rol entre Niveles de Detalle
 
@@ -573,44 +573,44 @@ Un objeto PUEDE ser instrumento en un nivel abstracto (ej: SD) y afectado en un 
 
 ### 9.5 Arbol de Decisión de Propiedades de Atributos
 
-Al definir un atributo, el modelador DEBERÍA clasificarlo en cuatro dimensiónes binarias:
+Al definir un atributo, el modelador DEBERÍA clasificarlo en cuatro dimensiones binarias:
 
 | Dimensión | Valores | Criterio |
 |-----------|---------|----------|
-| Explicitness | explicit (por defecto) / implicit | ¿Es un objeto separado? |
-| Mode | qualitative (por defecto) / quantitative | ¿Valores numéricos? |
-| Touch | hard (por defecto) / soft | ¿Computable desde otros atributos? |
-| Emergence | inherent (por defecto) / emergent | ¿Al menos una parte lo exhibe? |
+| Explicitud | explícito (por defecto) / implícito | ¿Es un objeto separado? |
+| Modo | cualitativo (por defecto) / cuantitativo | ¿Valores numéricos? |
+| Contacto | duro (por defecto) / blando | ¿Computable desde otros atributos? |
+| Emergencia | inherente (por defecto) / emergente | ¿Al menos una parte lo exhibe? |
 
-Atributos soft son derivables → PUEDEN no requerir seguimiento independiente. Atributos emergent existen solo a nivel del todo → definen la arquitectura del sistema.
+Atributos blandos son derivables → PUEDEN no requerir seguimiento independiente. Atributos emergentes existen solo a nivel del todo → definen la arquitectura del sistema.
 
 ### 9.6 Homogeneidad de Enlaces
 
-Enlaces estructurales DEBEN ser homogéneos (object↔object o process↔process). Enlaces procedimentales DEBEN ser non-homogeneous (object↔process). Unica excepción: exhibición-caracterización permite las 4 combinaciones de perseverance (object exhibe attribute-object, object exhibe operation-process, process exhibe attribute-object, process exhibe operation-process).
+Enlaces estructurales DEBEN ser homogéneos (objeto↔objeto o proceso↔proceso). Enlaces procedimentales DEBEN ser no homogéneos (objeto↔proceso). Única excepción: exhibición-caracterización permite las 4 combinaciones de perseverancia (objeto exhibe atributo-objeto, objeto exhibe operación-proceso, proceso exhibe atributo-objeto, proceso exhibe operación-proceso).
 
 ### 9.7 Enlaces Estructurales Etiquetados con Estado Especificado
 
-Cuando un estado de un objeto corresponde o se asocia con otro objeto, el modelador DEBERÍA usar un state-specified enlace estructural etiquetado (conectando el estado al objeto asociado) en vez de crear procesos o objetos intermedios.
+Cuando un estado de un objeto corresponde o se asocia con otro objeto, el modelador DEBERÍA usar un enlace estructural etiquetado con estado especificado (conectando el estado al objeto asociado) en vez de crear procesos o objetos intermedios.
 
 ### 9.8 Atributos Discriminantes y Caracterización con Estado Especificado
 
-Cuando las especializaciónes se distinguen por un valor de atributo, el modelador DEBERÍA usar un discriminating attribute con state-specified enlaces de caracterización. Esto produce un OPD significativamente más compacto que repetir el atributo para cada especialización.
+Cuando las especializaciones se distinguen por un valor de atributo, el modelador DEBERÍA usar un atributo discriminante con enlaces de caracterización con estado especificado. Esto produce un OPD significativamente más compacto que repetir el atributo para cada especialización.
 
 ### 9.9 Alcance de Herencia OPM
 
-Cada especialización DEBE heredar del general: (1) todas las partes (aggregation), (2) todos los rasgos (exhibición), (3) todos los enlaces estructurales etiquetados, (4) todos los enlaces procedimentales. Los estados también se heredan. Una especialización PUEDE sobreescribir estados heredados especificando estados propios.
+Cada especialización DEBE heredar del general: (1) todas las partes (agregación-participación), (2) todos los rasgos (exhibición), (3) todos los enlaces estructurales etiquetados, (4) todos los enlaces procedimentales. Los estados también se heredan. Una especialización PUEDE sobreescribir estados heredados especificando estados propios.
 
-### 9.10 Relatividad de Instancia e Instancias Visuales vs Lógicas [OPCloud]
+### 9.10 Relatividad de Instancia e Instancias Visuales vs Lógicas
 
-"Instance" es relativo al sistema de discurso. Lo que es instancia en un sistema (ej: "Taurus 2015" en comparacion de autos) PUEDE ser clase con especializaciónes en otro sistema (ej: autos individuales con VIN en un concesionario).
+"Instancia" es relativo al sistema de discurso. Lo que es instancia en un sistema (ej: "Taurus 2015" en comparación de autos) PUEDE ser clase con especializaciones en otro sistema (ej: autos individuales con VIN en un concesionario).
 
-**Visual Instance vs Logical Instance:** Una visual instance es el mismo cosa representado en diferentes OPDs (misma identidad, diferente vista). Una lógical instance es una relación clasificación-instanciación (clase → instancia). El modelador NO DEBE confundir ambas. Visual instances solo PUEDEN crearse entre elementos del mismo perseverance (object↔object, process↔process; object→process prohibido).
+**Instancia visual vs instancia lógica:** Una instancia visual es la misma cosa representada en diferentes OPDs (misma identidad, diferente vista). Una instancia lógica es una relación clasificación-instanciación (clase → instancia). El modelador NO DEBE confundir ambas. Las instancias visuales solo PUEDEN crearse entre elementos de la misma perseverancia (objeto↔objeto, proceso↔proceso; objeto→proceso prohibido).
 
-### 9.11 Clasificación de Essence para Things Mixtos
+### 9.11 Clasificación de Esencia para Cosas Mixtas
 
-Cuando un cosa tiene partes físico e informacional, el modelador DEBE clasificarlo como **físico**. La esencia dominante del componente tangible prevalece. Ejemplo: Baggage Transporting system tiene componentes informaticales (location seguimiento) pero se clasifica como físico porque el proceso involucra transporte físico.
+Cuando una cosa tiene partes física e informacional, el modelador DEBE clasificarla como **física**. La esencia dominante del componente tangible prevalece. Ejemplo: un sistema de *Transportar Equipaje* tiene componentes informacionales (seguimiento de ubicación) pero se clasifica como físico porque el proceso involucra transporte físico.
 
-### 9.12 Estados Directos vs Atributo + Valores (Simplificacion)
+### 9.12 Estados Directos vs Atributo + Valores (Simplificación)
 
 Cuando un objeto tiene un solo atributo relevante, el modelador PUEDE simplificar el modelo asignando los valores del atributo como **estados directos del objeto**, eliminando el atributo intermedio.
 
@@ -626,23 +626,23 @@ Cuando múltiples objetos específicos del SD1 compartirían el mismo tipo de re
 
 **Correcto:** Road Danger Representation (general) en SD; Vehicle-in-Front Representation, Pedestrian-in-Front Representation, Lane Set Representation (específicos) en SD1 conectados via generalización-especialización.
 
-**Incorrecto:** Las tres representaciones específicas en SD (overcrowding del diagrama top-level).
+**Incorrecto:** Las tres representaciones específicas en SD (sobrecarga del diagrama de nivel superior).
 
 ### 9.14 Hacer Explícitos los Objetos Implícitos
 
-Al modelar sistemas a partir de texto (standards, regulaciones, especificaciones), el modelador DEBE identificar y modelar explícitamente los objetos que el texto menciona implícitamente. En documentos process-oriented, los objetos transformados por los procesos frecuentemente no se nombran. El acto de forzar la pregunta "¿qué objeto transforma este proceso?" revela entidades críticas omitidas por el autor del texto.
+Al modelar sistemas a partir de texto (estándares, regulaciones, especificaciones), el modelador DEBE identificar y modelar explícitamente los objetos que el texto menciona implícitamente. En documentos orientados a procesos, los objetos transformados por los procesos frecuentemente no se nombran. El acto de forzar la pregunta "¿qué objeto transforma este proceso?" revela entidades críticas omitidas por el autor del texto.
 
 ### 9.15 Detección de Sinónimos/Homónimos mediante Modelamiento Formal
 
-OPM fuerza un mapping 1:1 entre cosas y nombres. El modelador DEBE usar este formalismo para detectar: (a) **sinonimos** — múltiples palabras para el mismo concepto (ej: "propósito" vs "stated propósito" en ISO 15288), y (b) **homonimos** — misma palabra para conceptos distintos (ej: "environment" vs "operational environment"). Cada sinonimo detectado DEBE resolverse eligiendo un término canónico. Cada homonimo DEBE resolverse creando cosas separados con nombres distintos.
+OPM fuerza una correspondencia 1:1 entre cosas y nombres. El modelador DEBE usar este formalismo para detectar: (a) **sinónimos** — múltiples palabras para el mismo concepto (ej: "propósito" vs "propósito declarado" en ISO 15288), y (b) **homónimos** — misma palabra para conceptos distintos (ej: "entorno" vs "entorno operacional"). Cada sinónimo detectado DEBE resolverse eligiendo un término canónico. Cada homónimo DEBE resolverse creando cosas separadas con nombres distintos.
 
 ### 9.16 Detección de Inconsistencias Texto-Diagrama
 
-El modelamiento OPM de un documento existente produce como subproducto la detección de inconsistencias entre el texto principal y sus diagramas. El modelador DEBERÍA documentar estas inconsistencias como hallazgos de calidad. Ejemplo: en ISO 15288, boxes representan "systems" en un diagrama y "processes" en otro, sin justificacion. El modelo OPM resuelve estas ambiguedades asignando perseverance correcto (object vs process) a cada cosa.
+El modelamiento OPM de un documento existente produce como subproducto la detección de inconsistencias entre el texto principal y sus diagramas. El modelador DEBERÍA documentar estas inconsistencias como hallazgos de calidad. Ejemplo: en ISO 15288, los recuadros representan "sistemas" en un diagrama y "procesos" en otro, sin justificación. El modelo OPM resuelve estas ambigüedades asignando perseverancia correcta (objeto vs proceso) a cada cosa.
 
 ### 9.17 Etiquetado de OPD por Cláusula de Referencia
 
-Al modelar documentos normativos, el modelador DEBERÍA etiquetar los OPDs con las clausulas del documento fuente (ej: `[5.2.2] System`, `[6.1] Acquisition`). Esto permite trazabilidad directa entre el modelo y el texto fuente, facilita revision por pares, y soporta validación de cobertura.
+Al modelar documentos normativos, el modelador DEBERÍA etiquetar los OPDs con las cláusulas del documento fuente (ej: `[5.2.2] System`, `[6.1] Acquisition`). Esto permite trazabilidad directa entre el modelo y el texto fuente, facilita revisión por pares, y soporta validación de cobertura.
 
 ## 10 Control de Flujo Avanzado
 
@@ -650,48 +650,48 @@ Al modelar documentos normativos, el modelador DEBERÍA etiquetar los OPDs con l
 
 | Tipo de enlace | Si el objeto/estado está ausente | Uso |
 |-------------|----------------------------------|-----|
-| Non-condition (sin `c`) | Proceso ESPERA indefinidamente | Proceso obligatorio — el sistema se detiene |
-| Condition (con `c`) | Proceso se SALTA | Proceso opcional — la ejecución avanza |
+| Sin condición (sin `c`) | Proceso ESPERA indefinidamente | Proceso obligatorio — el sistema se detiene |
+| Con condición (con `c`) | Proceso se SALTA | Proceso opcional — la ejecución avanza |
 
 **Regla de decisión:** Usar enlace de condición cuando el proceso es opcional; usar non-enlace de condición cuando es obligatorio. Error común: usar non-enlace de condición para un recurso que puede no aparecer → deadlock.
 
 ### 10.2 Precedencia de Omisión sobre Espera
 
-Cuando el preprocess object set contiene tanto enlaces de condición como non-enlaces de condición, omisión DEBE tener precedencia sobre espera. Si cualquier condition-linked object/estado está ausente, el proceso se salta independientemente de la satisfacción de los non-enlaces de condición.
+Cuando el conjunto de objetos previo al proceso contiene tanto enlaces de condición como enlaces sin condición, la omisión DEBE tener precedencia sobre la espera. Si cualquier objeto/estado vinculado por condición está ausente, el proceso se salta independientemente de la satisfacción de los enlaces sin condición.
 
 ### 10.3 Semántica de Enlaces de Evento (OR) vs Enlaces de Condición (AND/OR)
 
-- **Multiples enlace de eventos** al mismo proceso: semántica OR (cualquier evento individual basta para trigger)
-- **Multiples enlaces de condición** al mismo proceso: semántica AND para ejecución (todos deben cumplirse) pero semántica OR para omisión (falla de cualquiera causa omisión)
+- **Múltiples enlaces de evento** al mismo proceso: semántica OR (cualquier evento individual basta para disparar)
+- **Múltiples enlaces de condición** al mismo proceso: semántica AND para ejecución (todos deben cumplirse) pero semántica OR para omisión (falla de cualquiera causa omisión)
 
 ### 10.4 Abanicos de Enlaces XOR vs OR
 
-| Fan | Simbolo | Semántica | Uso |
+| Abanico | Símbolo | Semántica | Uso |
 |-----|---------|-----------|-----|
-| XOR | Arco dashed simple | Exactamente uno de los paths | Decisiones mutuamente excluyentes |
-| OR | Arco dashed doble | Al menos uno de los paths | Concurrencia condicional |
+| XOR | Arco discontinuo simple | Exactamente uno de las rutas | Decisiones mutuamente excluyentes |
+| OR | Arco discontinuo doble | Al menos uno de las rutas | Concurrencia condicional |
 
-Para fan size f=2: XOR usa "either...or"; para f>2: "exactly one of." OR siempre usa "at least one of."
+Para abanicos de tamaño f=2: XOR usa "exactamente uno de"; para f>2: ídem. OR siempre usa "al menos uno de".
 
-### 10.5 XOR/OR Combinatorial (m-de-f) [Textbook de Dori]
+### 10.5 XOR/OR Combinatorial (m-de-f)
 
-Para f > 2, el modelador PUEDE generalizar: "exactly m of f" (XOR combinatorial) o "at least m of f" (OR combinatorial), donde m < f. El número m se registra junto al arco en el OPD. Modela escenarios como "2 de 3 key holders deben estar presentes."
+Para f > 2, el modelador PUEDE generalizar: "exactamente m de f" (XOR combinatorial) o "al menos m de f" (OR combinatorial), donde m < f. El número m se registra junto al arco en el OPD. Modela escenarios como "2 de 3 custodios de llave deben estar presentes."
 
-### 10.6 NOT mediante Existente/No-Existente [Textbook de Dori]
+### 10.6 NOT mediante Existente/No-Existente
 
-OPM no tiene símbolo NOT dedicado. Para modelar "proceso P ejecuta solo cuando objeto S está ausente," el modelador DEBERÍA crear estados implícitos `existent` y `non-existent` para S, y conectar `non-existent` a P con enlace de instrumento o condition enlace de instrumento.
+OPM no tiene símbolo NOT dedicado. Para modelar "proceso P ejecuta solo cuando objeto S está ausente," el modelador DEBERÍA crear estados implícitos `existente` y `no-existente` para S, y conectar `no-existente` a P con enlace de instrumento o enlace de condición de instrumento.
 
 ### 10.7 Etiquetas de Ruta para Desambiguación de Escenarios
 
-Cuando un proceso tiene múltiples enlaces procedurales entrantes y salientes y se necesita especificar cuál entrada mapea a cuál salida, el modelador DEBE usar path labels. El enlace seguido a la salida es el que tiene el mismo label que el enlace de entrada. Path labels proveen memoria entre entrada y salida y eliminan el requisito AND para preprocess objects: solo objetos con el mismo label deben coexistir.
+Cuando un proceso tiene múltiples enlaces procedimentales entrantes y salientes y se necesita especificar cuál entrada mapea a cuál salida, el modelador DEBE usar etiquetas de ruta. El enlace seguido a la salida es el que tiene la misma etiqueta que el enlace de entrada. Las etiquetas de ruta proveen memoria entre entrada y salida y eliminan el requisito AND para objetos previos al proceso: solo objetos con la misma etiqueta deben coexistir.
 
 ### 10.8 Patrones de Iteración
 
-**Patrón Set-Member:** Adjuntar dos enlaces procedimentales del mismo tipo a un proceso — uno a un set de n miembros y otro a un miembro — produce iteración automatica n veces.
+**Patrón Conjunto-Miembro:** Adjuntar dos enlaces procedimentales del mismo tipo a un proceso — uno a un conjunto de n miembros y otro a un miembro — produce iteración automática n veces.
 
-**Patrón Bucle:** Un enlace de invocación desde el último subproceso hacia el proceso padre descompuesto crea un bucle. Para intervalos entre iteraciones, insertar un proceso Waiting con restricciones de tiempo.
+**Patrón Bucle:** Un enlace de invocación desde el último subproceso hacia el proceso padre descompuesto crea un bucle. Para intervalos entre iteraciones, insertar un proceso *Esperar* con restricciones de tiempo.
 
-**Patrón Decisión-Node:** Para iteración con condición de terminación, usar un boolean decisión node que evalua despues de cada ciclo; si "No," enlace de invocación loopea; si "Yes," la ejecución avanza al siguiente subproceso.
+**Patrón Nodo de Decisión:** Para iteración con condición de terminación, usar un nodo de decisión booleano que evalúa después de cada ciclo; si "No", el enlace de invocación repite el bucle; si "Sí", la ejecución avanza al siguiente subproceso.
 
 ### 10.9 Semántica Temporal de Enlaces Transformadores
 
@@ -705,13 +705,13 @@ Esta semántica temporal es crítica para simulación y para entender la disponi
 
 ### 10.10 Objetos Booleanos y Ramificación
 
-Un **Boolean object** es un objeto informacional dual-state generado por un proceso de decisión. Sus estados forman un par Boolean (yes/no, true/false, pass/fail, approved/denied, `geq-x`/`lt-x`). Cada estado se conecta via enlaces de condición a procesos alternativos subsiguientes, implementando control if-then-else.
+Un **objeto booleano** es un objeto informacional de doble estado generado por un proceso de decisión. Sus estados forman un par booleano (sí/no, verdadero/falso, aprobado/denegado, `≥x`/`<x`). Cada estado se conecta vía enlaces de condición a procesos alternativos subsiguientes, implementando control si-entonces-sino.
 
-**Generalización:** Cualquier objeto con n estados funciona como un case statement — cada estado PUEDE servir como source de condition o enlace de instrumento para un proceso subsiguiente distinto.
+**Generalización:** Cualquier objeto con n estados funciona como una selección de casos — cada estado PUEDE servir como origen de un enlace de condición o de instrumento para un proceso subsiguiente distinto.
 
 ### 10.11 Escenarios y Repertorio de Comportamiento
 
-Un **scenario** (thread of execution) es un path específico a través de la jerarquía de procesos del sistema, trazado siguiendo el estado de cada objeto. En cada branching point (Boolean object, enlaces de condición, XOR fan), exactamente un path se materializa. El conjunto completo de scenarios constituye el **behavioral repertoire** del sistema — la totalidad de comportamientos posibles.
+Un **escenario** (hilo de ejecución) es una ruta específica a través de la jerarquía de procesos del sistema, trazada siguiendo el estado de cada objeto. En cada punto de ramificación (objeto booleano, enlaces de condición, abanico XOR), exactamente una ruta se materializa. El conjunto completo de escenarios constituye el **repertorio de comportamiento** del sistema — la totalidad de comportamientos posibles.
 
 ### 10.12 Enlaces Transformadores Condicionales (Taxonomía Completa)
 
@@ -728,15 +728,15 @@ Cada uno de estos TIENE versión con estado especificado (proceso opera si objet
 
 | Enlace | Semántica |
 |--------|-----------|
-| Enlace de establecimiento de valor | Unidirectional; establece valor de atributo independiente del valor previo |
-| Value enlace de efecto | Bidirectional; cambia valor de atributo de uno no específicado a otro |
-| In-out-specified value enlace de efecto pair | Cambia valor de atributo de entrada value específico a salida value específico |
+| Enlace de establecimiento de valor | Unidireccional; establece valor de atributo independiente del valor previo |
+| Enlace de efecto de valor | Bidireccional; cambia valor de atributo de uno no especificado a otro |
+| Par de enlace de efecto de valor entrada-salida especificado | Cambia valor de atributo de valor de entrada específico a valor de salida específico |
 
-Estos enlaces aplican a **values** (estados de atributos), no a estados de objetos no-atributo.
+Estos enlaces aplican a **valores** (estados de atributos), no a estados de objetos no-atributo.
 
 ### 10.14 Abanicos Probabilísticos
 
-En un XOR diverging fan probabilistico, cada enlace DEBE anotarse con una probabilidad. La suma de todas las probabilidades DEBE ser exactamente 1. Por defecto sin fan: si un proceso crea un objeto con n estados, cada estado tiene probabilidad 1/n.
+En un abanico XOR divergente probabilístico, cada enlace DEBE anotarse con una probabilidad. La suma de todas las probabilidades DEBE ser exactamente 1. Por defecto sin abanico: si un proceso crea un objeto con n estados, cada estado tiene probabilidad 1/n.
 
 ## 11 Manejo de Errores Temporales
 
@@ -746,56 +746,56 @@ Cuando un proceso tiene Maximal Duration, el modelador DEBERÍA adjuntar un enla
 
 ### 11.2 Enlaces de Excepción por Subtiempo
 
-Cuando un proceso tiene Minimal Duration, el modelador DEBERÍA adjuntar un enlace de excepción por subtiempo. Si el proceso se completa antes del mínimo (o es omitido, duración = 0), el undertime handler se activa.
+Cuando un proceso tiene duración mínima, el modelador DEBERÍA adjuntar un enlace de excepción por subtiempo. Si el proceso se completa antes del mínimo (o es omitido, duración = 0), el manejador de subtiempo se activa.
 
 **Patrón — Undertime como detector de omisión:** Un enlace de excepción por subtiempo en un proceso con duración mínima detecta cuando el proceso no se ejecutó (duración efectiva = 0 < mínimo positivo), activando lógica de recuperación. Esto provee un mecanismo formal para "proceso no ejecutado."
 
 ### 11.3 Resolución de Estado Indeterminado
 
-Todo afectado en transición durante un proceso activo permanece en estado indeterminado si el proceso falla. Los manejador de excepcioness (overtime/undertime) DEBEN resolver el objeto a un estado permisible. Sin manejo de excepciones, el objeto queda indefinido y el modelo es incompleto para simulación.
+Todo afectado en transición durante un proceso activo permanece en estado indeterminado si el proceso falla. Los manejadores de excepciones (sobretiempo/subtiempo) DEBEN resolver el objeto a un estado permisible. Sin manejo de excepciones, el objeto queda indefinido y el modelo es incompleto para simulación.
 
-## 12 Modelamiento Cuantitativo y Simulación [Textbook de Dori / OPCloud]
+## 12 Modelamiento Cuantitativo y Simulación
 
 ISO/PAS 19450 define propiedades cuantitativas (tasa, duración, multiplicidad) pero no prescribe flujos de trabajo computacionales ni de simulación específicos. Las secciones §12.4-12.6 y §12.9 son específicas de OPCloud.
 
 ### 12.1 Tasa de Transformación
 
-Cuando consumo, creación, o cambio de estado ocurre como flujo continuo o operación multi-unidad en el tiempo, el modelador DEBERÍA asignar una propiedad Transformation Rate al enlace procedimental relevante. Tres especializaciónes: consumption rate, yield rate, effect rate.
+Cuando consumo, creación, o cambio de estado ocurre como flujo continuo o operación multi-unidad en el tiempo, el modelador DEBERÍA asignar una propiedad Transformation Rate al enlace procedimental relevante. Tres especializaciones: tasa de consumo, tasa de generación, tasa de efecto.
 
 ### 12.2 Computación con OPM — Claridad de Roles de Operandos
 
-Cuando se modelan operaciones aritméticas no conmutativas (Dividing, Subtracting), el modelador DEBE designar explícitamente los roles de operandos (Dividend vs Divisor, Minuend vs Subtrahend). OPM embebe formulas en nombres de proceso (ej: `Residue Computing (residue=il-u)`) para concisión.
+Cuando se modelan operaciones aritméticas no conmutativas (*Dividir*, *Restar*), el modelador DEBE designar explícitamente los roles de operandos (dividendo vs divisor, minuendo vs sustraendo). OPM embebe fórmulas en nombres de proceso (ej: `Residue Computing (residue=il-u)`) para concisión.
 
 ### 12.3 Distribución de Duración para Simulación Estocástica
 
-El modelador PUEDE especificar una Duration Distribution en la propiedad Duration de un proceso, identificando una función de distribución de probabilidad. En runtime, cada instancia del proceso muestrea su duración independientemente. Sin Duration Distribution, todas las instancias ejecutan en exactamente la Expected Duration (irrealista para sistemas reales).
+El modelador PUEDE especificar una distribución de duración en la propiedad de duración de un proceso, identificando una función de distribución de probabilidad. En ejecución, cada instancia del proceso muestrea su duración independientemente. Sin distribución de duración, todas las instancias ejecutan en exactamente la duración esperada (irrealista para sistemas reales).
 
-### 12.4 Flujo de Trabajo Computacional en OPCloud [OPCloud]
+### 12.4 Flujo de Trabajo Computacional en OPCloud
 
 Cuando se implemente el modelo en OPCloud, el modelador DEBE seguir este patrón de 5 pasos:
 
 1. **Definir objetos** con atributos computacionales (tipo: integer, float, string, character, boolean)
-2. **Asignar alias** a cada atributo computacional (ej: "x1", "y1") para uso en formulas
+2. **Asignar alias** a cada atributo computacional (ej: "x1", "y1") para uso en fórmulas
 3. **Crear proceso de calculo** — representado con braces `{}` en el OPD, indicando naturaleza computacional
 4. **Definir formula** usando los aliases (ej: `slope = (y2-y1)/(x2-x1)`)
-5. **Conectar proceso** a objetos via consumption/enlace de efectos para flujo de datos
+5. **Conectar proceso** a objetos vía enlace de consumo/efecto para flujo de datos
 
-**Stereotypes en OPCloud:** Templates de parámetros reutilizables para patrones computacionales comunes. La herramienta distingue niveles Global y Organizational. Al remover un stereotype de un cosa, el modelador DEBE elegir entre unlink (conservar componentes) o unlink-and-remove (eliminar componentes agregados).
+**Estereotipos en OPCloud:** Plantillas de parámetros reutilizables para patrones computacionales comunes. La herramienta distingue niveles Global y Organizacional. Al remover un estereotipo de una cosa, el modelador DEBE elegir entre desenlazar (conservar componentes) o desenlazar y eliminar (eliminar componentes agregados).
 
-### 12.5 Validación de Rangos [OPCloud]
+### 12.5 Validación de Rangos
 
-El modelador DEBERÍA asignar rangos a atributos computacionales para enforcement durante simulación. Sintaxis: `[inclusive`, `(exclusive`. Multiples rangos: `[1,10][20,30]`. El sistema válida automáticamente que los valores permanezcan en rangos validos.
+El modelador DEBERÍA asignar rangos a atributos computacionales para validación durante simulación. Sintaxis: `[inclusive`, `(exclusive`. Multiples rangos: `[1,10][20,30]`. El sistema válida automáticamente que los valores permanezcan en rangos validos.
 
-### 12.6 Flujo de Simulación con Entrada de Usuario [OPCloud]
+### 12.6 Flujo de Simulación con Entrada de Usuario
 
 Para simulación con entrada de usuario en OPCloud, el modelador DEBE seguir estos 6 pasos:
 
 1. Crear usuario como objeto físico
 2. Conectar usuario al proceso via **enlace de agente**
-3. Marcar proceso para recibir user entrada durante simulación
-4. Crear objeto entrada computacional para recibir valores
-5. Conectar proceso al objeto entrada via **enlace de efecto** (requerido para actualizar objetos computacionales con valores de usuario)
-6. En la computación, usar función **User Entrada** del API predefinido
+3. Marcar proceso para recibir entrada de usuario durante simulación
+4. Crear objeto de entrada computacional para recibir valores
+5. Conectar proceso al objeto de entrada vía **enlace de efecto** (requerido para actualizar objetos computacionales con valores de usuario)
+6. En la computación, usar función **Entrada de Usuario** de la API predefinida
 
 Sin los pasos 5-6, el objeto entrada no recibira valores durante simulación.
 
@@ -815,35 +815,34 @@ Un objeto con estados en transición: ha dejado su estado de entrada pero aún n
 
 ### 12.8 Espacio de Estados Compuesto y Precondiciones Compuestas
 
-El state space de un objeto es el producto cartesiano de los sets de estados de todos sus atributos y partes stateful. El modelador DEBE reconocer que no todos los puntos del state space son factibles; los compound states infeasibles DEBERÍAN identificarse mediante process modeling. Para precondiciones compuestas que abarcan múltiples atributos, el modelador DEBE usar multiple condition clause OPL sentences con clausulas X-OR numeradas conectadas por AND lógico.
+El espacio de estados de un objeto es el producto cartesiano de los conjuntos de estados de todos sus atributos y partes con estados. El modelador DEBE reconocer que no todos los puntos del espacio de estados son factibles; los estados compuestos infactibles DEBERÍAN identificarse mediante modelamiento de procesos. Para precondiciones compuestas que abarcan múltiples atributos, el modelador DEBE usar sentencias OPL con múltiples cláusulas de condición, con cláusulas XOR numeradas conectadas por AND lógico.
 
-### 12.9 Integración Externa e Ingesta de Datos en OPCloud [OPCloud]
+### 12.9 Integración Externa e Ingesta de Datos en OPCloud
 
 Cuando el modelo deja de ser solo conceptual y debe intercambiar datos con entorno externo, el modelador PUEDE usar las siguientes capacidades:
 
-- **MQTT:** adecuado para sensores/actuadores IoT con topicos publish/subscribe. Requiere configurar raw server y MQTT server. El modelador DEBERÍA usarlo para acoplar variables computacionales a telemetria o comandos ligeros.
-- **ROS:** adecuado para robots y sistemas con ROS master. El flujo de trabajo mínimo DEBE incluir definición de mensaje, publicacion, suscripcion y manejo del feedback bucle via condiciones/iteración.
-- **CSV Import para atributos:** util para carga masiva de instancias y valores de atributos. Restricción: el objeto target NO DEBE ser una instancia conectada via clasificación-instanciación. El modelador DEBERÍA previsualizar el import y decidir si ignora existentes o crea atributos faltantes.
+- **MQTT:** adecuado para sensores/actuadores IoT con tópicos publicación/suscripción. Requiere configurar servidor crudo y servidor MQTT. El modelador DEBERÍA usarlo para acoplar variables computacionales a telemetría o comandos ligeros.
+- **ROS:** adecuado para robots y sistemas con ROS master. El flujo de trabajo mínimo DEBE incluir definición de mensaje, publicación, suscripción y manejo del bucle de retroalimentación vía condiciones/iteración.
+- **Importación CSV para atributos:** útil para carga masiva de instancias y valores de atributos. Restricción: el objeto destino NO DEBE ser una instancia conectada vía clasificación-instanciación. El modelador DEBERÍA previsualizar la importación y decidir si ignora existentes o crea atributos faltantes.
 
-## 13 Modelamiento de Requisitos en OPCloud [OPCloud]
+## 13 Modelamiento de Requisitos en OPCloud
 
-En este corpus, el modelamiento de requirements se trata como una capacidad de OPCloud, no como una extension normativa independiente de OPM. Por lo tanto, las siguientes reglas aplican solo cuando el modelo se implementa en OPCloud.
+En este corpus, el modelamiento de requisitos se trata como una capacidad de OPCloud, no como una extensión normativa independiente de OPM. Por lo tanto, las siguientes reglas aplican solo cuando el modelo se implementa en OPCloud.
 
 ### 13.1 Operaciones Disponibles
 
-OPCloud permite agregar, remover y visualizar requirements sobre elementos, enlaces o diagramas completos. Las relaciones recuperables en el tutorial son:
+OPCloud permite agregar, remover y visualizar requisitos sobre elementos, enlaces o diagramas completos. Las relaciones recuperables en el tutorial son:
 
-- Exhibición
-- Characterization
-- Aggregation Participation
+- Exhibición-caracterización
+- Agregación-participación
 
 ### 13.2 Convención de Trazabilidad
 
-Cuando se use trazabilidad de requirements en OPCloud, el enlace estructural etiquetado con tag **"satisfies"** DEBERÍA usarse como convención de trazabilidad entre artefacto y requirement.
+Cuando se use trazabilidad de requisitos en OPCloud, el enlace estructural etiquetado con etiqueta **"satisfies"** DEBERÍA usarse como convención de trazabilidad entre artefacto y requisito.
 
 **Correcto:** `Seat satisfies RQ1 Driver Seat.`
 
-**Incorrecto:** Conectar requirements a artifacts via enlaces procedimentales (los requirements no transforman ni habilitan procesos; la relación es estructural).
+**Incorrecto:** Conectar requisitos a artefactos vía enlaces procedimentales (los requisitos no transforman ni habilitan procesos; la relación es estructural).
 
 ### 13.3 Ejemplo Mínimo
 
@@ -855,50 +854,50 @@ Ejemplo recuperable desde el tutorial:
 - Componente opcional: peephole cover
 - Función: one-way view for seeing visitors
 
-### 13.4 Analisis de Gaps y Generacion Asistida [OPCloud]
+### 13.4 Análisis de Vacíos y Generación Asistida
 
-OPCloud ofrece capacidades auxiliares que el modelador PUEDE usar para detectar vacios y acelerar derivación de requirements:
+OPCloud ofrece capacidades auxiliares que el modelador PUEDE usar para detectar vacíos y acelerar derivación de requisitos:
 
-- **Identification of Missing Knowledge:** DEBERÍA usarse como heurística de detección de gaps, no como verdad del modelo. `Pistol` sirve para filtrado rapido; `RGCN`, cuando este disponible, ofrece mayor precisión. El umbral de confianza DEBERÍA ajustarse explícitamente antes de aceptar sugerencias.
-- **AI Requirements Generation:** toma OPPL como insumo y genera texto de requirement, verification type, acceptance criteria y model triplets. La salida DEBE revisarse manualmente antes de integrarla al corpus o al modelo.
-- **Version comparison:** el modelador DEBERÍA comparar resultados del analisis entre versiones sucesivas para distinguir mejoras reales de ruido introducido por cambios de disposición o renaming.
+- **Identificación de conocimiento faltante:** DEBERÍA usarse como heurística de detección de vacíos, no como verdad del modelo. `Pistol` sirve para filtrado rápido; `RGCN`, cuando esté disponible, ofrece mayor precisión. El umbral de confianza DEBERÍA ajustarse explícitamente antes de aceptar sugerencias.
+- **Generación asistida de requisitos:** toma OPPL como insumo y genera texto de requisito, tipo de verificación, criterios de aceptación y tripletas del modelo. La salida DEBE revisarse manualmente antes de integrarla al corpus o al modelo.
+- **Comparación de versiones:** el modelador DEBERÍA comparar resultados del análisis entre versiones sucesivas para distinguir mejoras reales de ruido introducido por cambios de disposición o renombrado.
 
-## 14 Simulación y Ejecución del Modelo [Textbook de Dori / OPCloud]
+## 14 Simulación y Ejecución del Modelo
 
 ### 14.1 Recorrido en Profundidad del Árbol OPD para Ejecución
 
-La ejecución animada del modelo OPM sigue un recorrido **en profundidad** del árbol OPD. Los tokens fluyen a lo largo de los links: al llegar a un proceso descompuesto, el control se transfiere recursivamente al subproceso más profundo (superior del nivel más bajo). El control retorna al nivel padre tras completar el último subproceso.
+La ejecución animada del modelo OPM sigue un recorrido **en profundidad** del árbol OPD. Los tokens fluyen a lo largo de los enlaces: al llegar a un proceso descompuesto, el control se transfiere recursivamente al subproceso más profundo (superior del nivel más bajo). El control retorna al nivel padre tras completar el último subproceso.
 
-Los tokens se visualizan como valores que se pasan entre objetos y procesos: consumed (eliminado del source), instrumento (read-only, permanece), resultante (creado en destination). Tokens computacionales llevan valores numéricos.
+Los tokens se visualizan como valores que se pasan entre objetos y procesos: consumido (eliminado del origen), instrumento (solo lectura, permanece), resultante (creado en destino). Tokens computacionales llevan valores numéricos.
 
 ### 14.2 Transición Conceptual → Computacional
 
 El modelador DEBE reconocer el punto en el árbol OPD donde la transición de modelamiento conceptual puro a modelamiento computacional es necesaria. Indicadores:
 
-- Los valores numéricos específicos se vuelven necesarios para decisión de diseno
-- Trade-off studies requieren parámetros cuantitativos
+- Los valores numéricos específicos se vuelven necesarios para decisión de diseño
+- Los estudios de compromiso requieren parámetros cuantitativos
 - El proceso físico tiene una formula matematica subyacente (ej: V = V0 - (F/m)*t)
 
-En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales y usar la realización soportada por la herramienta. En OPCloud, la senal visual recuperable es el uso de `{}` en el OPD.
+En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales y usar la realización soportada por la herramienta. En OPCloud, la señal visual recuperable es el uso de `{}` en el OPD.
 
-### 14.3 Simulación Conceptual vs Ejecución Computacional en OPCloud [OPCloud]
+### 14.3 Simulación Conceptual vs Ejecución Computacional en OPCloud
 
 El modelador DEBE distinguir entre:
 
-- **Simulación conceptual:** animacion visual del flujo de tokens para validar orden, precondiciones y cobertura del comportamiento
-- **Ejecución computacional:** corrida efectiva de formulas, atributos computacionales y actualizacion de valores
+- **Simulación conceptual:** animación visual del flujo de tokens para validar orden, precondiciones y cobertura del comportamiento
+- **Ejecución computacional:** corrida efectiva de fórmulas, atributos computacionales y actualización de valores
 
 Reglas operativas:
 
-- La velocidad de animacion DEBERÍA ajustarse para hacer visibles procesos rapidos o loops
+- La velocidad de animación DEBERÍA ajustarse para hacer visibles procesos rápidos o bucles
 - Si el orden observado no coincide con el esperado, el modelador DEBE revisar altura relativa de subprocesos, enlaces de control y condiciones
 - Los tokens computacionales transportan valores; los conceptuales solo evidencian disponibilidad, consumo, creación o cambio de estado
 
 ## 15 Invariantes
 
-Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada. La columna **Fuente** distingue el origen de cada invariante: **ISO** para reglas directamente trazables a ISO/PAS 19450, **Dori** para reglas del textbook, **OPCloud** para reglas de herramienta, y **Ext** para extensiones de esta metodología.
+Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada. La columna **Fuente** distingue el origen de cada invariante: **ISO** para reglas directamente trazables a ISO/PAS 19450, **Dori** para reglas del libro, **OPCloud** para reglas de herramienta, y **Ext** para extensiones de esta metodología.
 
-| Invariante | Enforcement | Fuente |
+| Invariante | Aplicación | Fuente |
 |-----------|-------------|--------|
 | Nombre del proceso principal termina en gerundio (EN) o se encabeza por infinitivo / `-ción` / `-miento` válido (ES) | lint | ISO / OPL-ES |
 | Todos los nombres de cosas son singulares | lint | ISO |
@@ -910,28 +909,28 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Todo habilitador persiste sin cambio neto tras el proceso | manual | ISO |
 | Objetos ambientales tienen contorno discontinuo | lint | ISO |
 | Sistema exhibe proceso principal via exhibición-caracterización | manual | ISO |
-| Consumption/enlace de resultados NO en contorno exterior de proceso descompuesto | lint | ISO |
+| Enlace de consumo/resultado NO en contorno exterior de proceso descompuesto | lint | ISO |
 | Todo subproceso conectado a al menos un transformado | lint | ISO |
 | Modelo bimodal: todo OPD tiene párrafo OPL equivalente | schema | ISO |
 | Un hecho del modelo aparece en al menos un OPD | schema | ISO |
 | Enlaces estructurales son homogéneos (excepción: exhibición-caracterización) | lint | ISO |
 | Habilitadores y afectados pertenecen a Pre(P) ∩ Post(P); consumidos solo a Pre(P); resultantes solo a Post(P) | manual | ISO |
-| Probabilidades en fan XOR suman exactamente 1 | lint | ISO |
+| Probabilidades en abanico XOR suman exactamente 1 | lint | ISO |
 | Subprocesos paralelos tienen borde superior de elipse a la misma altura | manual | ISO |
 | Enlaces escindidos control-modified NO están permitidos | lint | Ext |
 | Arquitectura del sistema produce al menos una capacidad emergente | manual | Ext |
-| Links NO DEBEN cruzar areas ocupadas por cosas | manual | Dori |
-| Things NO DEBEN ocultarse mutuamente (excepción: port plegado) | manual | Dori |
+| Los enlaces NO DEBEN cruzar áreas ocupadas por cosas | manual | Dori |
+| Las cosas NO DEBEN ocultarse mutuamente (excepción: plegado en puertos) | manual | Dori |
 | Minimizar número de enlaces y cruces de enlaces en cada OPD | manual | Dori |
 | Si se usan requirements en OPCloud, la trazabilidad usa enlaces estructurales y la convención "satisfies" | manual | OPCloud |
 | En OPCloud, procesos computacionales se distinguen visualmente con `{}` en el OPD | lint | OPCloud |
-| Sinonimos resueltos: un cosa = un nombre canónico | manual | Dori |
+| Sinónimos resueltos: una cosa = un nombre canónico | manual | Dori |
 
 ## 16 Lista de verificación de Validación
 
-Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabla lista checks operativos adicionales organizados por nivel. La columna **Fuente** usa las mismas claves que §15: **ISO**, **Dori**, **OPCloud**, **Ext**.
+Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabla lista verificaciones operativas adicionales organizadas por nivel. La columna **Fuente** usa las mismas claves que §15: **ISO**, **Dori**, **OPCloud**, **Ext**.
 
-| Nivel | Check | Condición | Severidad | Fuente |
+| Nivel | Verificación | Condición | Severidad | Fuente |
 |-------|-------|-----------|----------|--------|
 | SD | Sistema clasificado | Tipo determinado (artificial/natural/social/socio-técnico) | CRÍTICA | ISO |
 | SD | Propósito/resultado definido | Beneficiario + atributo + transición estados | CRÍTICA | ISO |
@@ -942,7 +941,7 @@ Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabl
 | SD | Reclasificación de instrumentos | Instrumentos con desgaste relevante reclasificados a afectado | MEDIA | Dori |
 | SD1 | Refinamiento correcto | Síncrono → descomposición; asíncrono → despliegue | ALTA | ISO |
 | SD1 | Sin evento a no-primero | Enlaces de evento no a subprocesos intermedios (o justificación) | ALTA | Ext |
-| SD1 | Enlaces escindidos resueltos | Ningún enlace de efecto underspecified en descomposición multi-subprocess | ALTA | ISO |
+| SD1 | Enlaces escindidos resueltos | Ningún enlace de efecto subespecificado en descomposición con múltiples subprocesos | ALTA | ISO |
 | SD1 | Estados expresados | Estados relevantes visibles y conectados | ALTA | ISO |
 | SD1 | Tipo asíncrono correcto | Agregación para partes; generalización para tipos | ALTA | ISO |
 | SD1 | Sin redundancia | Sin duplicación innecesaria de hechos del SD | MEDIA | Dori |
@@ -955,12 +954,12 @@ Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabl
 | Error | Manejo de excepciones | Procesos con límites de tiempo tienen enlaces de excepción por sobretiempo/subtiempo | MEDIA | ISO |
 | Error | Resolución de estado indeterminado | Afectados en transición resueltos por manejador de excepciones | MEDIA | ISO |
 | Global | Claridad | Ningún OPD excede 20-25 entidades | MEDIA | Dori |
-| Global | Alcance interior/exterior | Objetos inner solo existen en alcance de su proceso padre | MEDIA | ISO |
+| Global | Alcance interior/exterior | Objetos interiores solo existen en alcance de su proceso padre | MEDIA | ISO |
 | Global | Coherencia de nombres | Sin nombres duplicados no resueltos | ALTA | Dori |
-| Global | Enforcement de ontología | Nivel configurado para organización (Suggest o Enforce) | MEDIA | OPCloud |
-| Global | Informatividad del modelo | Grading ejecutado; sin enlaces de precedencia faltantes críticos | MEDIA | OPCloud |
+| Global | Aplicación de ontología | Nivel configurado para organización (Sugerir o Aplicar) | MEDIA | OPCloud |
+| Global | Informatividad del modelo | Clasificación ejecutada; sin enlaces de precedencia faltantes críticos | MEDIA | OPCloud |
 | Global | Mapa del sistema | Generado para modelos con >10 OPDs | MEDIA | Dori |
 | Global | Constructos de especificación | OPD + OPL + OPM spec completos en orden en anchura | MEDIA | ISO |
-| Global | Port plegado | Usado donde disposición física de componentes es relevante | BAJA | OPCloud |
+| Global | Plegado en puertos | Usado donde disposición física de componentes es relevante | BAJA | OPCloud |
 | Global | Objetos implícitos | Objetos implícitos en texto fuente identificados y modelados explícitamente | ALTA | Dori |
 | Req | Trazabilidad estructural | Si se usan requirements en OPCloud, se ocupan enlaces estructurales y convención "satisfies" | MEDIA | OPCloud |
