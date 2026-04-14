@@ -3,9 +3,9 @@ _manifest:
   urn: "urn:fxsl:kb:opm-opl-es"
   provenance:
     created_by: "kora/curator"
-    created_at: "2026-03-22"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-opl-es.md"
-version: "1.5.1"
+    created_at: "2026-04-14"
+    source: "synthesis:opm-iso-19450-es,ISO/PAS-19450:2015(Annex-A)"
+version: "1.6.0"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -16,7 +16,7 @@ extensions:
       - "urn:fxsl:kb:opm-iso-19450-es"
 ---
 
-# OPL-ES — Object-Process Language en Español
+# OPL-ES — Lenguaje Objeto-Proceso en Español
 
 Especificación completa de la gramática OPL en español, complementaria a la gramática OPL en inglés definida en ISO/PAS 19450 Annex A. Diseñada para que herramientas de modelado OPM generen y parseen sentencias OPL indistintamente en inglés o español, manteniendo equivalencia semántica total.
 
@@ -220,6 +220,10 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 | D8 | State s of Object is final. | Estado `s` de **Objeto** es final. |
 | D9 | State s of Object is default. | Estado `s` de **Objeto** es por defecto. |
 | D10 | State s of Object is initial and final. | Estado `s` de **Objeto** es inicial y final. |
+
+### 3.4 Nota sobre procesos persistentes
+
+ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introducir cambio neto observable (cfr. `opm-iso-19450-es` §7.2.1 NOTE 2, `opm-visual-es` V-115). Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*. Estos procesos no generan oración transformadora estándar (T1/T2/T3) porque no consumen, generan ni afectan un objeto. En OPL-ES, un proceso persistente PUEDE expresarse mediante una oración descriptiva de propiedad genérica (D1-D4) combinada con un enlace habilitador (H2), o mediante un enlace estructural etiquetado si la temporalidad sostenida no es semántica central (cfr. `metodologia-opm-es` §9.1). OPL-ES no define una plantilla transformadora específica para procesos persistentes; esta es una limitación conocida de la superficie textual.
 
 ---
 
@@ -1039,10 +1043,7 @@ oracion_bifurcada_nonNullTag_objeto = [restriccion_de_participacion, " "], objet
 oracion_bifurcada_nonNullTag_proceso = [restriccion_de_participacion, " "], proceso_origen,
  " ", etiqueta_directa, " ", conjunto_de_cosas_proceso ;
 
-conjunto_de_cosas_objeto = objeto_con_opcion, [ { ", ", objeto_con_opcion } ], " y ", ( objeto_con_opcion | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
-conjunto_de_cosas_proceso = proceso_con_opcion, [ { ", ", proceso_con_opcion } ], " y ", ( proceso_con_opcion | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
+(* conjunto_de_cosas_objeto y conjunto_de_cosas_proceso ya definidos en A.7 — no redefinir aquí *)
 
 (* Variantes bidireccionales *)
 oracion_etiquetado_bidireccional = oracion_bidireccional_asimetrica_objeto

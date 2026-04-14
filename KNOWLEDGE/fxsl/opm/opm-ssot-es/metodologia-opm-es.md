@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
-version: "3.9.1"
+version: "3.10.0"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
@@ -74,6 +74,8 @@ Regla editorial: este documento solo reexpone una regla heredada cuando es impre
 | Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos, sin papel observacional independiente. |
 | Fuerza semántica | Criterio operativo para decidir qué enlace prevalece durante recomposición o colisión de roles; la jerarquía formal vive en `opm-visual-es`. |
 | Asistente agnóstico de construcción del SD | Protocolo ordenado de interacción para cerrar las decisiones mínimas del SD sin depender de una herramienta o interfaz concreta. |
+| Contenedor | Cosa refinada que aparece agrandada en el OPD hijo para contener sus refinadores. Sinónimo operativo de "refinable en contexto de OPD hijo" (cfr. `opm-visual-es` V-79). |
+| Proceso inflado | Elipse del proceso agrandada para contener subprocesos en una descomposición. Es la realización visual del contenedor cuando la cosa refinada es un proceso. |
 
 ## 4 Principio metodológico rector
 
@@ -340,12 +342,14 @@ Los objetos se refinan vía descomposición (composición espacial/estructural) 
 
 ### 7.4 Distribución y Migración de Enlaces
 
+La especificación formal completa de distribución de enlaces vive en `opm-visual-es` §11. Esta subsección extrae solo el resumen operativo necesario para la decisión metodológica:
+
 | Tipo de enlace | Contorno exterior | Migración por defecto |
 |-------------|---------------|-------------------|
 | Enlace de agente | PERMITIDO (distribuye a todos) | — |
 | Enlace de instrumento | PERMITIDO (distribuye a todos) | — |
-| Enlace de consumo | PROHIBIDO | Migra al primer subproceso; reasignar |
-| Enlace de resultado | PROHIBIDO | Migra al primer subproceso; reasignar |
+| Enlace de consumo | PROHIBIDO | Migra al primer subproceso (V-103); reasignar |
+| Enlace de resultado | PROHIBIDO | Migra al último subproceso (V-103); reasignar |
 | Enlace de evento sistémico | PROHIBIDO | — |
 
 **Procedimiento de migración de enlaces** (al hacer descomposición):

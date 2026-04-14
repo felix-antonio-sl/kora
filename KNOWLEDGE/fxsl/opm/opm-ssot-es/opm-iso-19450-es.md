@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-04-14'
-    source: OPERATIONS/source/fxsl/opm-methodology/opm-iso.md
-version: 1.7.0-es
+    source: synthesis:opm-iso-19450(ISO/PAS-19450:2015),opm-applied-system-modeling,opm-canonical-example
+version: 1.8.0
 status: published
 tags:
 - opm
@@ -57,12 +57,14 @@ Regla editorial: este documento puede nombrar esas capas para ubicar la semánti
 
 OPM se especifica con suficiente detalle como para que quienes modelan puedan producir modelos conceptuales con distintos niveles de profundidad y quienes construyen herramientas puedan implementar software compatible.
 
+**Convención de referencias §:** las referencias `§N` sin prefijo de documento en esta capa remiten a secciones de ISO/PAS 19450:2015. Las referencias a secciones de otros documentos del corpus siempre incluyen el nombre del documento destino (p.ej. `opm-opl-es §4`, `opm-visual-es §13`).
+
 Tres niveles de conformidad:
 
 | Nivel | Requisitos |
 |---|---|
-| Parcial (simbólico) | Uso exclusivo de símbolos OPM (§4) y de elementos (§7-12) con semántica asignada |
-| Completo | Parcial + enfoque de modelado según §6 y §14 |
+| Parcial (simbólico) | Uso exclusivo de símbolos OPM (ISO §4) y de elementos (ISO §7-12) con semántica asignada |
+| Completo | Parcial + enfoque de modelado según ISO §6 e ISO §14 |
 | Herramienta | Parcial + soporte para conformidad completa + soporte textual OPL según EBNF |
 
 No hay referencias normativas externas.
@@ -207,6 +209,22 @@ El OPD es la unidad fundamental para representar un contexto. Los mecanismos pri
 - despliegue y plegado;
 - descomposición y recomposición.
 
+#### Tabla de equivalencia terminológica (mecanismos de refinamiento)
+
+El corpus usa términos en español como forma canónica. Los términos en inglés aparecen en ISO/PAS 19450 y en literatura de referencia:
+
+| Español (canónico) | Inglés (ISO/literatura) | Mecanismo |
+|---|---|---|
+| Descomposición | In-zooming | Exponer contenido interno de una cosa en un OPD hijo |
+| Recomposición | Out-zooming | Ocultar contenido interno, restaurando el OPD padre |
+| Despliegue | Unfolding | Exponer refinadores vía relación estructural fundamental |
+| Plegado | Folding | Ocultar refinadores de un refinable desplegado |
+| Expresión de estados | State expression | Revelar un subconjunto de estados de un objeto |
+| Supresión de estados | State suppression | Ocultar un subconjunto de estados de un objeto |
+| Contenedor | Container | Cosa refinada agrandada en el OPD hijo |
+| Proceso inflado | Inflated process | Elipse del proceso agrandada para contener subprocesos |
+| Semi-plegado | Semi-fold | Compresión parcial de refinadores [extensión OPCloud] |
+
 ### Modelos conceptuales y de ejecución
 
 Los modelos conceptuales describen patrones de estructura y comportamiento. Los modelos de ejecución representan instancias operacionales durante una simulación. Un modelo con un nivel consistente de detalle es implementable como simulación capaz de activar recursos y producir valor funcional; ese es el criterio formal de completitud.
@@ -223,7 +241,7 @@ Un modelo que expresa detalle consistente es implementable como simulación capa
 
 #### Navegación de OPD y composición de OPL (§6.2.6.3)
 
-Los mecanismos de descomposición y despliegue de la §14 proveen las formas de enlazar diagramas OPD con el OPL correspondiente. La §14 no prescribe las etiquetas para identificar niveles jerárquicos sucesivos, ni la vinculación entre OPDs relacionados, ni los segmentos OPL correspondientes.
+Los mecanismos de descomposición y despliegue de ISO §14 proveen las formas de enlazar diagramas OPD con el OPL correspondiente. ISO §14 no prescribe las etiquetas para identificar niveles jerárquicos sucesivos, ni la vinculación entre OPDs relacionados, ni los segmentos OPL correspondientes.
 
 ---
 
@@ -348,6 +366,8 @@ Tres tipos básicos:
 | Resultado | El proceso crea o genera el objeto. | proceso → objeto |
 | Efecto | El proceso cambia el estado del objeto. | objeto ↔ proceso |
 
+**Restricción sobre modificadores de control del enlace de resultado:** no existen las variantes "evento de resultado" ni "condición de resultado". La razón es que el resultado no existe antes del proceso (es creado por él), por lo que no puede ser precondición (`c`) ni disparador (`e`). El consumo sí admite ambos modificadores porque el objeto consumido existe en el conjunto previo al proceso. Esta asimetría entre consumo y resultado es inherente a la ontología OPM: el consumo opera sobre el conjunto previo; el resultado opera sobre el conjunto posterior.
+
 ### Enlaces transformadores con estado especificado
 
 Los enlaces transformadores pueden restringirse a estados concretos del objeto: consumo con estado, resultado con estado, efecto entrada-salida, efecto solo entrada y efecto solo salida.
@@ -430,7 +450,7 @@ Conectan un proceso fuente con un proceso de manejo según la duración observad
 
 La duración de un proceso puede especializarse en mínima, esperada y máxima. La distribución de duración determina el valor efectivo por instancia.
 
-La realización textual canónica vive en `opm-opl-es` §8.1. La realización gráfica vive en `opm-visual-es` §4.4 y §14.
+La realización textual canónica vive en `opm-opl-es` §8.1. La realización gráfica de los enlaces de excepción vive en `opm-visual-es` §4.4; las propiedades de duración que los disparan viven en `opm-visual-es` §14.
 
 ---
 
@@ -673,7 +693,7 @@ Como consecuencia de la distribución de enlaces, las siguientes restricciones s
 
 Al recomponer, los enlaces procedimentales de subprocesos migran al proceso padre. La **fuerza semántica** determina cuál prevalece cuando dos enlaces compiten por el mismo par objeto-proceso.
 
-La especificación formal de la jerarquía completa de precedencia — incluyendo la matriz de precedencia transformadora, el orden principal `consumo = resultado > efecto > agente > instrumento`, la precedencia secundaria por modificador de control y el orden completo de 12 niveles de fuerza semántica — vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13.
+La especificación formal de la jerarquía completa de precedencia — incluyendo la matriz de precedencia transformadora, el orden principal `consumo = resultado > efecto > agente > instrumento`, la precedencia secundaria por modificador de control y el orden completo de 13 niveles de fuerza semántica — vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13.
 
 Invariantes semánticos que esta capa conserva:
 

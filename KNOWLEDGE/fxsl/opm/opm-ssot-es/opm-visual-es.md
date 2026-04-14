@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "kora/curator"
     created_at: "2026-04-14"
-    source: "urn:fxsl:kb:opm-iso-19450-es (consolidado v1.4.0-es)"
-version: "1.5.0"
+    source: "synthesis:opm-iso-19450-es,opcloud-tutorial-videos"
+version: "1.6.0"
 status: published
 tags: [opm, iso-19450, especificacion-visual, gramatica-grafica, opd]
 lang: es
@@ -52,7 +52,7 @@ La capa visual de OPM se construye con un vocabulario cerrado de formas, contorn
 |---|---|
 | Rectángulo | Objeto |
 | Elipse | Proceso |
-| Rectángulo redondeado (routableangle) | Estado (siempre contenido dentro de un objeto) |
+| Rectángulo redondeado (EN: routableangle) | Estado (siempre contenido dentro de un objeto) |
 
 ### 1.1b Esquema de colores canónico (informativo)
 
@@ -109,15 +109,15 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
 ### 1.5 Decoraciones de extremo de enlace
 
-| Decoración | Nombre | Uso |
-|---|---|---|
-| Punta de flecha cerrada | arrowhead | Enlaces transformadores (consumo, resultado, efecto) |
-| Círculo negro relleno | black lollipop | Enlace de agente (extremo proceso) |
-| Círculo blanco vacío | white lollipop | Enlace de instrumento (extremo proceso) |
-| Corchete cuadrado abierto | open bracket | Extremo origen de enlaces habilitadores (agente, instrumento) |
-| Línea en zigzag con punta | lightning bolt | Enlace de invocación |
-| Punta de flecha abierta | open arrowhead | Enlaces estructurales etiquetados unidireccionales |
-| Arpón (media punta) | harpoon | Enlaces estructurales etiquetados bidireccionales y recíprocos |
+| Decoración | Nombre (ES) | Nombre técnico (EN) | Uso |
+|---|---|---|---|
+| Punta de flecha cerrada | punta cerrada | arrowhead | Enlaces transformadores (consumo, resultado, efecto) |
+| Círculo negro relleno | piruleta negra | black lollipop | Enlace de agente (extremo proceso) |
+| Círculo blanco vacío | piruleta blanca | white lollipop | Enlace de instrumento (extremo proceso) |
+| Corchete cuadrado abierto | corchete abierto | open bracket | Extremo origen de enlaces habilitadores (agente, instrumento) |
+| Línea en zigzag con punta | rayo | lightning bolt | Enlace de invocación |
+| Punta de flecha abierta | punta abierta | open arrowhead | Enlaces estructurales etiquetados unidireccionales |
+| Arpón (media punta) | arpón | harpoon | Enlaces estructurales etiquetados bidireccionales y recíprocos |
 
 ### 1.6 Marcas textuales sobre enlaces
 
@@ -165,11 +165,11 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
 ### 2.1 Representación
 
-Los estados se representan como rectángulos redondeados (routableangles) contenidos dentro del rectángulo del objeto propietario, dispuestos horizontalmente en la zona inferior.
+Los estados se representan como rectángulos redondeados (EN: routableangles) contenidos dentro del rectángulo del objeto propietario, dispuestos horizontalmente en la zona inferior.
 
-**Regla V-4**: Un estado no existe fuera de su objeto propietario. No hay estados flotantes.
+**Regla V-4**: Un estado no existe fuera de su objeto propietario. No hay estados flotantes. [Semántica heredada de `opm-iso-19450-es` término 3.68; aquí se fija la restricción de contención visual.]
 
-**Regla V-5**: Un objeto sin estados no puede ser afectado; solo puede ser creado (resultado) o destruido (consumo).
+**Regla V-5**: Un objeto sin estados no puede ser afectado; solo puede ser creado (resultado) o destruido (consumo). [Semántica heredada de `opm-iso-19450-es` §9; aquí se fija la restricción de conectividad gráfica.]
 
 ### 2.2 Marcadores de designación de estado
 
@@ -180,7 +180,7 @@ Los estados se representan como rectángulos redondeados (routableangles) conten
 | Por defecto | Flecha diagonal abierta apuntando al estado | Estado más probable al inspeccionar aleatoriamente |
 | Normal | Borde estándar | Estado sin designación especial |
 
-**Regla V-6**: Un objeto puede tener cero o más estados iniciales, cero o más estados finales, y como máximo un estado por defecto.
+**Regla V-6**: Un objeto puede tener cero o más estados iniciales, cero o más estados finales, y como máximo un estado por defecto. [Semántica heredada de `opm-iso-19450-es` §8; aquí se fija la marca gráfica de cada designación.]
 
 ### 2.3 Valores de atributo como estados
 
@@ -201,7 +201,7 @@ Los valores de un atributo son estados del objeto-atributo. Pueden expresarse co
 | Resultado | proceso → objeto | (ninguna) | punta cerrada | El proceso crea el objeto |
 | Efecto | objeto ↔ proceso | punta cerrada | punta cerrada | El proceso cambia el estado del objeto |
 
-**Regla V-7**: Un enlace de efecto requiere que el objeto tenga al menos un estado definido.
+**Regla V-7**: Un enlace de efecto requiere que el objeto tenga al menos un estado definido. [Semántica heredada de `opm-iso-19450-es` §9; aquí se fija la restricción de conectividad gráfica.]
 
 **Regla V-8**: Un enlace de resultado hacia un objeto con estado inicial debe conectar al rectángulo del objeto, nunca directamente al estado inicial.
 
@@ -228,7 +228,7 @@ Cuando un enlace parte de o llega a un estado específico dentro del objeto:
 | Agente | agente → proceso | Círculo negro relleno (black lollipop) | Persona que habilita sin ser transformada |
 | Instrumento | instrumento → proceso | Círculo blanco vacío (white lollipop) | Objeto inanimado que habilita sin ser transformado |
 
-**Regla V-10**: Si un habilitador deja de existir durante la ejecución, el proceso se detiene y el estado del afectado queda indeterminado.
+**Regla V-10**: Si un habilitador deja de existir durante la ejecución, el proceso se detiene y el estado del afectado queda indeterminado. [Semántica heredada de `opm-iso-19450-es` §10; aquí se fija la consecuencia visual: la elipse del proceso deja de estar rellena.]
 
 ### 3.4 Enlaces habilitadores con estado especificado
 
@@ -236,7 +236,7 @@ El enlace parte del estado específico del agente/instrumento hacia el proceso. 
 
 ### 3.5 Principio de unicidad del enlace procedimental
 
-**Regla V-11**: Un objeto o estado tiene exactamente un rol respecto de un proceso enlazado: es transformado O habilitador, nunca ambos simultáneamente para el mismo enlace.
+**Regla V-11**: Un objeto o estado tiene exactamente un rol respecto de un proceso enlazado: es transformado O habilitador, nunca ambos simultáneamente para el mismo enlace. [Semántica heredada de `opm-iso-19450-es` §9/§10; aquí se fija la restricción de que un solo enlace no puede portar ambos roles gráficamente.]
 
 ---
 
@@ -412,9 +412,9 @@ La multiplicidad soporta:
 
 ### 8.3 Reglas de las relaciones fundamentales
 
-**Regla V-24**: Salvo en exhibición-caracterización, el refinable y los refinadores deben tener la misma perseverancia (ambos objetos o ambos procesos).
+**Regla V-24**: Salvo en exhibición-caracterización, el refinable y los refinadores deben tener la misma perseverancia (ambos objetos o ambos procesos). [Semántica heredada de `opm-iso-19450-es` §12; aquí se fija la restricción de validación gráfica del triángulo.]
 
-**Regla V-25**: Exhibición-caracterización es la única relación estructural que puede conectar objetos con procesos. El rasgo es atributo si es objeto y operación si es proceso.
+**Regla V-25**: Exhibición-caracterización es la única relación estructural que puede conectar objetos con procesos. El rasgo es atributo si es objeto y operación si es proceso. [Semántica heredada de `opm-iso-19450-es` §12.]
 
 **Regla V-26**: Las cuatro combinaciones exhibidor-rasgo son válidas: objeto exhibe atributo, objeto exhibe operación, proceso exhibe atributo, proceso exhibe operación.
 
@@ -585,7 +585,7 @@ Las siguientes propiedades son inmutables a través de todos los niveles de refi
 
 ### 10.12 Semi-fold (compresión parcial de estructura)
 
-El semi-fold es un mecanismo de visualización intermedio entre el plegado completo (fold) y el despliegue completo (unfold) de una relación estructural. Permite mostrar la existencia de refinadores sin expandirlos completamente.
+**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** El semi-fold es un mecanismo de visualización intermedio entre el plegado completo (fold) y el despliegue completo (unfold) de una relación estructural. Permite mostrar la existencia de refinadores sin expandirlos completamente. No existe plantilla OPL-ES canónica para el semi-fold; su expresión es exclusivamente visual.
 
 **Regla V-116**: En una relación de agregación-participación, los refinadores (partes) pueden mostrarse como íconos de triángulo con el nombre de la parte dentro del rectángulo del todo (refinable), en lugar de como entidades separadas conectadas por enlaces estructurales explícitos. Esta representación compacta es el semi-fold.
 
@@ -699,24 +699,29 @@ Dentro de cada clase de enlace:
 evento > sin control > condición
 ```
 
-### 13.5 Orden completo de fuerza semántica (12 niveles)
+### 13.5 Orden completo de fuerza semántica (13 niveles)
 
 | Nivel | Enlace |
 |---|---|
-| 1 | Evento de consumo |
-| 2 | Consumo (= Resultado) |
-| 3 | Resultado (= Consumo) |
-| 4 | Condición de consumo |
-| 5 | Evento de efecto |
-| 6 | Efecto |
-| 7 | Condición de efecto |
-| 8 | Evento de agente |
-| 9 | Agente |
-| 10 | Condición de agente |
-| 11 | Evento de instrumento |
-| 12 | Instrumento |
+| 1 | Evento de consumo / Evento de resultado |
+| 2 | Consumo = Resultado |
+| 3 | Condición de consumo / Condición de resultado |
+| 4 | Evento de efecto |
+| 5 | Efecto |
+| 6 | Condición de efecto |
+| 7 | Evento de agente |
+| 8 | Agente |
+| 9 | Condición de agente |
+| 10 | Evento de instrumento |
+| 11 | Instrumento |
+| 12 | Condición de instrumento |
 
-La condición debilita; el evento fortalece.
+Notas:
+
+- Consumo y resultado tienen la misma fuerza en cada franja de modificador (nivel 1, 2 y 3). Se listan en el mismo nivel porque §13.3 los declara iguales.
+- **Condición de instrumento** es el enlace más débil del sistema. Existe como variante válida (cfr. `opm-opl-es` §7.2 CH2, §7.3 CS6) aunque raramente aparece en modelos típicos.
+- No existen "evento de resultado" ni "condición de resultado" como enlaces independientes; las variantes de resultado se subsumen en las de consumo por equivalencia de fuerza. Si un implementador necesita distinguirlos, puede tratarlos como alias del mismo nivel.
+- La condición debilita; el evento fortalece.
 
 ---
 
@@ -784,13 +789,13 @@ En la capa visual solo aplican las siguientes reglas de rotulado:
 
 **Regla V-122**: Una cosa puede tener un **alias** (abreviatura) que se muestra entre paréntesis o llaves junto al nombre: e.g., `Turbojet Engine System (tes)`, `Pressure {p}`. El alias es un nombre corto para referencia compacta en OPL, expresiones computacionales y fórmulas de multiplicidad.
 
-**Regla V-48**: Un estado no existe sin su objeto propietario.
+**Regla V-48**: Un estado no existe sin su objeto propietario. [Semántica heredada de `opm-iso-19450-es` término 3.68; corolario visual de V-4.]
 
-**Regla V-49**: El objeto consumido desaparece al inicio del proceso, no al final.
+**Regla V-49**: El objeto consumido desaparece al inicio del proceso, no al final. [Semántica heredada de `opm-iso-19450-es` §9; aquí se fija la temporalidad de la animación visual.]
 
 ### 16.2 Límites de complejidad por OPD
 
-**Regla V-50**: La legibilidad visual de un OPD exige no más de una página o pantalla utilizable por contexto.
+**Regla V-50**: La legibilidad visual de un OPD exige no más de 20-25 cosas por contexto (aproximadamente una página o pantalla utilizable).
 
 **Regla V-51**: No debe haber oclusión entre cosas. Los enlaces no deben atravesar áreas ocupadas por cosas. Minimizar cruces.
 
