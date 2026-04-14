@@ -1,41 +1,45 @@
-# Corpus OPM ES — Mapa editorial
+# Corpus OPM ES — Arquitectura editorial
 
-Este directorio forma parte del corpus OPM en español. La propiedad editorial de cada capa queda fijada así:
+Este directorio reúne una adaptación canónica en español de OPM. La arquitectura del corpus separa con claridad el núcleo conceptual, la superficie textual OPL, la gramática visual del OPD y el manual metodológico.
 
-- `opm-iso-19450-es.md`: capa semántica y ontológica canónica. Define elementos, relaciones, principios, conformidad e invariantes de significado.
-- `opm-visual-es.md`: capa gráfica canónica. Define símbolos, composición visual, distribución de enlaces, precedencia y comportamiento representacional de los OPDs.
-- `metodologia-opm-es.md`: capa metodológica canónica. Define el procedimiento para construir y refinar modelos, criterios de decisión, heurísticas, gobernanza y operación en herramienta.
-- `opm-opl-es.md`: capa textual canónica. Define la superficie OPL-ES, plantillas de oración y reglas de equivalencia de ida y vuelta EN↔ES.
+Capas del corpus:
 
-Ubicación de referencia:
+- `opm-es.md`: núcleo conceptual de OPM. El nombre de archivo se conserva por compatibilidad, pero su función editorial es la capa base semántica del corpus.
+- `opm-opl-es.md`: capa textual canónica. Define OPL-ES, su gramática y sus plantillas de oración.
+- `opm-visual-es.md`: capa gráfica canónica. Define la gramática visual del OPD, su composición y sus restricciones.
+- `metodologia-opm-es.md`: manual metodológico. Define el procedimiento de modelado, las heurísticas, las validaciones y los patrones de operación.
 
-- La EBNF completa de OPL-ES vive en `opm-opl-es.md`, `Apéndice A`.
+Identidades canónicas:
+
+- `urn:fxsl:kb:opm-es`
+- `urn:fxsl:kb:opl-es`
+- `urn:fxsl:kb:opd-es`
+- `urn:fxsl:kb:manual-metodologico-opm-es`
 
 Regla de precedencia:
 
-1. Semántica base: `opm-iso-19450-es.md`
+1. Base semántica: `opm-es.md`
 2. Realización textual: `opm-opl-es.md`
 3. Realización gráfica: `opm-visual-es.md`
 4. Procedimiento y praxis: `metodologia-opm-es.md`
 
-Regla editorial:
+Reglas editoriales:
 
 - una regla debe vivir una sola vez en su capa propietaria;
-- los demás documentos pueden referenciarla, pero no duplicarla ni reformularla como si fuera propia;
-- se admiten índices, listas de verificación o matrices compiladas fuera de la capa propietaria solo si se presentan explícitamente como compilación operativa y cada entrada declara su fuente canónica;
-- cuando una regla visual re-expone semántica ISO, la regla V-* lleva una marca `[Semántica heredada de ...]` que indica la fuente canónica;
-- OPCloud y demás herramientas pueden añadir operación, pero no redefinir la semántica del corpus;
-- las extensiones no-ISO llevan marca explícita `[Extensión OPCloud]` o `[Extensión no-ISO]`.
+- las demás capas pueden referenciarla o resumirla, pero no redefinirla;
+- las compilaciones operativas deben identificar la capa propietaria de cada regla;
+- los patrones de herramienta pueden ampliar la operación práctica, pero no alterar la semántica base;
+- la prosa del corpus integra el conocimiento como parte del sistema documental y evita citar procedencias externas dentro del cuerpo normativo.
 
 Política terminológica:
 
 - en la prosa española del corpus se prefiere `modelado` frente a `modelamiento`;
-- para `path` se prefiere `ruta` frente a `camino`, salvo en expresiones asentadas fuera del dominio OPM como `camino crítico`;
+- para `path` se prefiere `ruta` frente a `camino`, salvo expresiones asentadas fuera del dominio OPM como `camino crítico`;
 - para `tag` se prefiere `etiqueta`;
 - se prefiere `por defecto` frente a `default`;
-- los términos ingleses se reservan para tablas de equivalencia, citas de interfaz, glosarios de mapeo o nombres oficiales;
-- el URN histórico de la metodología conserva `modelamiento` por estabilidad, pero no fija la forma preferida en la prosa del corpus.
+- los términos ingleses se reservan para tablas de equivalencia, glosarios de mapeo o nombres de interfaz cuando realmente ayudan a la interoperabilidad.
 
-Nota sobre URN de la metodología:
+Nota de compatibilidad:
 
-- El URN canónico de la metodología es `urn:fxsl:kb:metodologia-modelamiento-opm` (sin sufijo `-es`). Esto difiere de la convención de los otros tres documentos (`*-es`). Se conserva por estabilidad de referencias cruzadas. El idioma se indica en el campo `lang: es` del manifiesto.
+- los nombres de archivo históricos se preservan para no romper referencias derivadas del repositorio;
+- la identidad editorial vigente del corpus es la definida por las capas y URNs listados arriba.

@@ -1,26 +1,22 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-opl-es"
-  provenance:
-    created_by: "kora/curator"
-    created_at: "2026-04-14"
-    source: "synthesis:opm-iso-19450-es,ISO/PAS-19450:2015(Annex-A)"
-version: "1.8.0"
+  urn: "urn:fxsl:kb:opl-es"
+version: "2.0.0"
 status: published
-tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
+tags: [opm, opl, spanish, es, grammar, i18n, bimodal, localization]
 lang: es
 extensions:
   kora:
     family: specification
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450-es"
+      - "urn:fxsl:kb:opm-es"
 ---
 
 # OPL-ES — Lenguaje Objeto-Proceso en Español
 
-Especificación completa de la gramática OPL en español, complementaria a la gramática OPL en inglés definida en ISO/PAS 19450 Annex A. Diseñada para que herramientas de modelado OPM generen y analicen sentencias OPL indistintamente en inglés o español, manteniendo equivalencia semántica total.
+Especificación completa de la gramática OPL en español, diseñada para que herramientas de modelado OPM generen y analicen sentencias OPL en español manteniendo equivalencia semántica total con la forma inglesa de referencia.
 
-Referencia normativa: `urn:fxsl:kb:opm-iso-19450-es`.
+Referencia de núcleo: `urn:fxsl:kb:opm-es`.
 
 ---
 
@@ -34,9 +30,9 @@ Este documento es la **capa textual canónica** del corpus OPM en español. Su r
 
 Este documento **no** define:
 
-- la semántica base de OPM, que pertenece a [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es);
-- la gramática gráfica del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es);
-- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+- la semántica base de OPM, que pertenece a [OPM — Núcleo conceptual](urn:fxsl:kb:opm-es);
+- la gramática gráfica del OPD, que pertenece a [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es);
+- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Manual metodológico de OPM](urn:fxsl:kb:manual-metodologico-opm-es).
 
 Regla editorial: cuando este documento menciona enlaces, refinamientos, cardinalidades u operadores, lo hace **solo** para fijar su realización textual canónica en español. La semántica del hecho y su geometría visual se heredan del corpus base.
 
@@ -225,7 +221,7 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 
 ### 3.4 Nota sobre procesos persistentes
 
-ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introducir cambio neto observable (cfr. `opm-iso-19450-es` §7.2.1 NOTE 2, `opm-visual-es` V-115). Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*.
+Esta adaptación reconoce procesos que mantienen un estado o condición sin introducir cambio neto observable relevante. Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*.
 
 Para mantener cerrada la superficie canónica, OPL-ES adopta la siguiente convención textual:
 
@@ -253,10 +249,10 @@ No existe una familia verbal adicional exclusiva para procesos persistentes: la 
 | TS1 | Consumo s-s | Process consumes specified-state Object. | *Proceso* consume **Objeto** en `estado`. |
 | TS2 | Resultado s-s | Process yields specified-state Object. | *Proceso* genera **Objeto** en `estado`. |
 | TS3 | Efecto entrada-salida | Process changes Object from input-state to output-state. | *Proceso* cambia **Objeto** de `estado-entrada` a `estado-salida`. |
-| TS4 | Efecto solo entrada (input-specified effect link; enlace de entrada, ISO §3.27) | Process changes Object from input-state. | *Proceso* cambia **Objeto** de `estado-entrada`. |
-| TS5 | Efecto solo salida (output-specified effect link; enlace de salida, ISO §3.47) | Process changes Object to output-state. | *Proceso* cambia **Objeto** a `estado-salida`. |
+| TS4 | Efecto solo entrada (enlace de entrada) | Process changes Object from input-state. | *Proceso* cambia **Objeto** de `estado-entrada`. |
+| TS5 | Efecto solo salida (enlace de salida) | Process changes Object to output-state. | *Proceso* cambia **Objeto** a `estado-salida`. |
 
-Nota: TS4 y TS5 son la **realización textual del enlace escindido** (split state-specified effect link, ISO §14.2.2.4.3). Cuando un efecto entrada-salida (TS3) se distribuye a una descomposición, se escinde en un TS4 temprano (subproceso que saca del estado de entrada) y un TS5 tardío (subproceso que pone en el estado de salida). La geometría visual de esta escisión se define en `opm-visual-es` V-40.
+Nota: TS4 y TS5 son la **realización textual del enlace escindido**. Cuando un efecto entrada-salida (TS3) se distribuye a una descomposición, se escinde en un TS4 temprano (subproceso que saca del estado de entrada) y un TS5 tardío (subproceso que pone en el estado de salida). La geometría visual de esta escisión se define en `opm-visual-es` V-40.
 
 ---
 
@@ -701,9 +697,9 @@ SD se refina por descomposición de *Preparar Empanadas* en SD1.
 
 ---
 
-## 17. Diferencias con EBNF ISO 19450 Annex A
+## 17. Adaptaciones de la EBNF al español
 
-La EBNF de OPL-EN (ISO/PAS 19450 Annex A) define los terminales léxicos en inglés. Para OPL-ES se requiere una EBNF paralela con los siguientes cambios:
+La EBNF de esta capa textual define la superficie canónica de OPL en español. Frente a la formulación inglesa de referencia, requiere las siguientes adaptaciones:
 
 ### 17.1 Terminales Léxicos
 
@@ -753,7 +749,7 @@ Las reglas de producción de alto nivel no cambian. En OPL-ES se sustituyen los 
 
 ## Apéndice A. Gramática formal OPL-ES completa
 
-Este apéndice reúne la EBNF completa de OPL-ES. Se traslada aquí desde la capa ISO para eliminar solapamiento editorial: la semántica del hecho sigue perteneciendo a `opm-iso-19450-es`, pero la definición formal de su superficie textual canónica pertenece a OPL-ES.
+Este apéndice reúne la EBNF completa de OPL-ES. Se traslada aquí desde la capa base para eliminar solapamiento editorial: la semántica del hecho sigue perteneciendo a `opm-es`, pero la definición formal de su superficie textual canónica pertenece a OPL-ES.
 
 ### A.1 Estructura del documento
 
@@ -781,9 +777,8 @@ letra_mayuscula = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K
   | 'Á' | 'É' | 'Í' | 'Ó' | 'Ú' | 'Ñ' | 'Ü' ;
 letra_minuscula = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z'
   | 'á' | 'é' | 'í' | 'ó' | 'ú' | 'ñ' | 'ü' ;
-(* Extensión OPL-ES: la EBNF ISO original (Annex A §A.3.2) solo define A-Z y a-z porque
-   OPL es "a subset of English natural language" (ISO §3.42). Para OPL-ES se añaden los
-   caracteres acentuados del español, la eñe y la diéresis. *)
+(* OPL-ES amplía el alfabeto básico para cubrir caracteres propios del español:
+   vocales acentuadas, eñe y diéresis. *)
 caracter_de_cadena = letra | digito_decimal | '-' | '_' ;
 identificador_de_tipo = "boolean" | "string" | tipo_numerico | "enumerated" ;
 tipo_numerico = [prefijo], "integer" | "float" | "double" | "short" | "long" ;
@@ -1276,9 +1271,9 @@ Una herramienta OPM bilingüe debería:
 3. Mantener el modelo semántico (OPD) independiente del idioma OPL
 4. Permitir modelos mixtos solo si el usuario lo habilita explícitamente (no recomendado)
 
-### 18.2 OPCloud
+### 18.2 Soporte de herramienta
 
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** OPCloud ya soporta múltiples idiomas OPL (chino, francés, alemán, coreano). OPL-ES seguiría el mismo mecanismo de localización, agregando español como idioma disponible en `Configuración de usuario > Idioma OPL`.
+Una herramienta OPM multilingüe puede implementar OPL-ES como idioma textual alternativo del mismo modelo semántico.
 
 A nivel de superficie textual, una implementación operativa DEBERÍA además permitir:
 

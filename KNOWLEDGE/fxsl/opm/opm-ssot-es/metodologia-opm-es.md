@@ -1,24 +1,20 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:metodologia-modelamiento-opm"
-  provenance:
-    created_by: "kora/curator"
-    created_at: "2026-04-14"
-    source: "synthesis:opm-iso-19450-es,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
-version: "3.12.0"
+  urn: "urn:fxsl:kb:manual-metodologico-opm-es"
+version: "4.0.0"
 status: published
-tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
+tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling]
 lang: es
 extensions:
   kora:
     family: specification
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450-es"
-      - "urn:fxsl:kb:opm-opl-es"
-      - "urn:fxsl:kb:opm-visual-es"
+      - "urn:fxsl:kb:opm-es"
+      - "urn:fxsl:kb:opl-es"
+      - "urn:fxsl:kb:opd-es"
 ---
 
-# Metodología de Modelado OPM — Protocolo de Modelado Conceptual de Sistemas
+# Manual metodológico de OPM
 
 ## 1 Alcance y contrato editorial
 
@@ -31,23 +27,23 @@ Esta especificación define la **capa metodológica canónica** del corpus OPM e
 
 Este documento **no** redefine:
 
-- la semántica base de OPM, que pertenece a [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es);
-- la realización textual canónica, que pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es);
-- la gramática gráfica y topológica del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es).
+- la semántica base de OPM, que pertenece a [OPM — Núcleo conceptual](urn:fxsl:kb:opm-es);
+- la realización textual canónica, que pertenece a [OPL-ES](urn:fxsl:kb:opl-es);
+- la gramática gráfica y topológica del OPD, que pertenece a [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es).
 
 Orden de precedencia del corpus:
 
-1. [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es): semántica, ontología y clases de hecho del modelo.
-2. [OPL-ES](urn:fxsl:kb:opm-opl-es): superficie textual canónica en español.
-3. [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es): geometría, composición y comportamiento visual de los OPDs.
+1. [OPM — Núcleo conceptual](urn:fxsl:kb:opm-es): semántica, ontología y clases de hecho del modelo.
+2. [OPL-ES](urn:fxsl:kb:opl-es): superficie textual canónica en español.
+3. [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es): geometría, composición y comportamiento visual de los OPDs.
 4. Esta metodología: procedimiento de modelado, criterios de decisión, gobernanza y praxis editorial-operativa.
 
 Regla de resolución:
 
-- si una regla metodológica contradice la semántica del lenguaje, prevalece la capa ISO;
+- si una regla metodológica contradice la semántica del lenguaje, prevalece la capa base;
 - si una formulación textual contradice el contrato sintáctico de OPL-ES, prevalece OPL-ES;
 - si una heurística procedimental contradice la gramática gráfica o topológica del OPD, prevalece la capa visual;
-- las capacidades de OPCloud y de otras herramientas NO redefinen por sí solas la semántica OPM; solo la operacionalizan.
+- las capacidades de herramienta NO redefinen por sí solas la semántica OPM; solo la operacionalizan.
 
 ## 2 Base heredada del corpus
 
@@ -55,11 +51,11 @@ Esta metodología hereda y asume como ya definidos los siguientes bloques:
 
 | Bloque | Fuente canónica | Uso en este documento |
 |--------|------------------|------------------------|
-| Ontología mínima objeto-proceso | `opm-iso-19450-es` | fundamento semántico del procedimiento |
-| Glosario base de OPM | `opm-iso-19450-es` | terminología estable; no se repite aquí |
-| Principios de modelado OPM | `opm-iso-19450-es` | restricciones de alto nivel sobre toda decisión metodológica |
+| Ontología mínima objeto-proceso | `opm-es` | fundamento semántico del procedimiento |
+| Glosario base de OPM | `opm-es` | terminología estable; no se repite aquí |
+| Principios de modelado OPM | `opm-es` | restricciones de alto nivel sobre toda decisión metodológica |
 | Gramática textual OPL en español | `opm-opl-es` | nombres válidos y oraciones canónicas |
-| Gramática visual y composición de OPDs | `opm-visual-es` | símbolos, distribución de enlaces, refinamiento y precedencia |
+| Gramática visual y composición de OPDs | `opd-es` | símbolos, distribución de enlaces, refinamiento y precedencia |
 
 Regla editorial: este documento solo reexpone una regla heredada cuando es imprescindible para tomar una decisión metodológica local. En todos los demás casos, referencia la fuente canónica correspondiente.
 
@@ -103,7 +99,7 @@ Reglas prescriptivas por categoría:
 
 ### 5.1 Patrones de Referencia por Categoría
 
-Los siguientes patrones sintetizan ejemplos pedagógicos del libro de referencia de Dori, no de ISO/PAS 19450. Son útiles para clasificar el sistema antes de construir el SD:
+Los siguientes patrones sintetizan casos pedagógicos recurrentes. Son útiles para clasificar el sistema antes de construir el SD:
 
 | Categoría | Patrón de referencia | Lección operativa |
 |-----------|----------------------|-------------------|
@@ -119,7 +115,7 @@ El SD DEBE ser simple y claro, con mínimos detalles técnicos. Todos los intere
 
 ### 6.0 Asistente Agnóstico de Construcción del SD
 
-El asistente del SD es un **protocolo de interacción** agnóstico de herramienta. No presupone OPCloud, formularios, interfaz gráfica ni asistente basado en modelo de lenguaje. Cualquier implementación válida DEBE guiar al modelador por una secuencia ordenada de puntos de control y producir, al final, un SD semánticamente completo. ISO/PAS 19450 define un procedimiento guiado de nueve preguntas para la construcción del SD. Este asistente extiende ese procedimiento con etapas adicionales de clasificación (etapa 0), resolución de agencia (etapa 5) y verificación formal (etapa 11).
+El asistente del SD es un **protocolo de interacción** agnóstico de herramienta. No presupone formularios, interfaz gráfica ni asistente conversacional. Cualquier implementación válida DEBE guiar al modelador por una secuencia ordenada de puntos de control y producir, al final, un SD semánticamente completo. Este asistente organiza la construcción del SD con etapas explícitas de clasificación (etapa 0), resolución de agencia (etapa 5) y verificación formal (etapa 11).
 
 **Implementaciones válidas:** entrevista guiada, formulario estructurado, lista de verificación operativa, asistente conversacional, complemento de modelado o flujo de trabajo humano moderado.
 
@@ -170,8 +166,8 @@ Una herramienta PUEDE dividir o fusionar etapas por conveniencia de experiencia 
 
 El nombre del proceso principal DEBE cumplir el contrato nominal de la capa correspondiente:
 
-- en inglés, la convención canónica del corpus sigue la realización gerundiva recuperada por la capa ISO;
-- en español, la forma canónica se rige por [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1.
+- en inglés, la convención canónica del corpus sigue la realización gerundiva recuperada por la capa base;
+- en español, la forma canónica se rige por [OPL-ES](urn:fxsl:kb:opl-es) §1.1.
 
 Regla metodológica: antes de aceptar un nombre, el modelador DEBE validar que expresa **acción transformadora**, no clase de objeto ni etiqueta administrativa.
 
@@ -205,7 +201,7 @@ Cuando el proceso transforma múltiples transformados, solo el objeto proveedor 
 
 ### 6.5 Paso 5: Identificación de Agentes
 
-El término "agente" y el enlace de agente (círculo negro relleno) DEBEN usarse exclusivamente para humanos o grupos humanos [Semántica base: opm-iso-19450-es glosario 3.3]. Robots, agentes de software y sistemas IA DEBEN usar enlace de instrumento. Un robot PUEDE describirse como "agente de software embebido" en prosa, pero en el modelo DEBE usar enlace de instrumento.
+El término "agente" y el enlace de agente (círculo negro relleno) DEBEN usarse exclusivamente para humanos o grupos humanos [Semántica base: opm-es glosario 3.3]. Robots, agentes de software y sistemas IA DEBEN usar enlace de instrumento. Un robot PUEDE describirse como "agente de software embebido" en prosa, pero en el modelo DEBE usar enlace de instrumento.
 
 Cuando el beneficiario es también agente del proceso, el modelador DEBE elegir el enlace según la precedencia semántica del corpus: si el beneficiario es transformado, el enlace transformador prevalece sobre el habilitador; la identidad humana puede mantenerse en la figura y en la denominación, pero no mediante un segundo rol procedimental simultáneo para el mismo proceso.
 
@@ -352,9 +348,9 @@ La especificación formal completa de distribución de enlaces vive en `opm-visu
 | Enlace de efecto | PERMITIDO (distribuye a todos) (V-104) | — |
 | Enlace de consumo | PROHIBIDO (V-103) | Migra al primer subproceso (V-103); reasignar |
 | Enlace de resultado | PROHIBIDO (V-103) | Migra al último subproceso (V-103); reasignar |
-| Enlace de evento sistémico | PROHIBIDO (V-38) | PROHIBIDO para sistémicos; los eventos de objetos **ambientales** sí pueden cruzar el límite (ISO §14.2.2.4.2) |
+| Enlace de evento sistémico | PROHIBIDO (V-38) | PROHIBIDO para sistémicos; los eventos de objetos **ambientales** sí pueden cruzar el límite |
 
-> **Nota — excepción ambiental:** La prohibición de enlaces de evento en contorno exterior aplica solo a eventos sistémicos. Los eventos originados en objetos ambientales (contorno discontinuo) pueden legítimamente cruzar el límite del proceso descompuesto para disparar subprocesos internos, conforme a ISO §14.2.2.4.2 y V-38.
+> **Nota — excepción ambiental:** La prohibición de enlaces de evento en contorno exterior aplica solo a eventos sistémicos. Los eventos originados en objetos ambientales (contorno discontinuo) pueden legítimamente cruzar el límite del proceso descompuesto para disparar subprocesos internos, conforme a V-38.
 
 **Procedimiento de migración de enlaces** (al hacer descomposición):
 
@@ -404,18 +400,18 @@ Los estados DEBERÍAN suprimirse en el SD cuando no están conectados a ningún 
 
 ### 8.1 Cuatro Mecanismos de Refinamiento-Abstracción
 
-[Semántica heredada de opm-iso-19450-es §14. Los cuatro mecanismos constituyen la totalidad de operaciones de refinamiento-abstracción definidas por ISO/PAS 19450:2015 §14.1.]
+[Semántica heredada de opm-es §14. Los cuatro mecanismos constituyen la totalidad de operaciones de refinamiento-abstracción de la capa base.]
 
-| Mecanismo | Refinamiento | Abstracción | Uso principal | Herencia ISO |
-|-----------|-------------|-------------|---------------|--------------|
-| Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos síncronos; objetos con partes espaciales | ISO §14.1.1 |
-| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asíncronos; taxonomías; rasgos | ISO §14.1.2 |
-| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual | ISO §14.1.3 |
-| Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales | ISO §14.1.4 |
+| Mecanismo | Refinamiento | Abstracción | Uso principal | Referencia de capa base |
+|-----------|-------------|-------------|---------------|--------------------------|
+| Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos síncronos; objetos con partes espaciales | `opm-es` §14.1.1 |
+| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asíncronos; taxonomías; rasgos | `opm-es` §14.1.2 |
+| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual | `opm-es` §14.1.3 |
+| Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales | `opm-es` §14.1.4 |
 
 **Decisión descomposición vs despliegue para procesos síncronos:** Descomposición DEBERÍA preferirse porque: (a) requiere menos símbolos, (b) genera OPL más corto, (c) reemplaza eventos/enlaces de invocación explícitos con invocación implícita de la línea de tiempo. El despliegue de procesos síncronos es semánticamente equivalente pero más verboso.
 
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.] Plegado en puertos:** Especialización de plegado donde la operación (proceso rasgo) se desplaza al contorno del exhibidor (objeto). Útil cuando el modelador quiere que los rectángulos de objetos representen disposición física y tamaños relativos. OPL: palabra clave `as ports` al final de la sentencia de exhibición. El plegado en puertos también aplica a atributos de procesos.
+**Plegado en puertos:** variante de plegado donde la operación (proceso rasgo) se desplaza al contorno del exhibidor (objeto). Es útil cuando el modelador quiere que los rectángulos de objetos representen disposición física y tamaños relativos. El plegado en puertos también aplica a atributos de procesos.
 
 **Resumen operativo de semi-plegado:** la semántica y las restricciones canónicas del semi-plegado viven en `opm-visual-es` V-116 a V-120. En esta capa solo aplica la decisión de uso: el modelador DEBERÍA usar semi-plegado para inspección rápida de estructura sin proliferación de OPDs y DEBERÍA evitarlo cuando oculte relaciones necesarias para el propósito del modelo.
 
@@ -430,7 +426,7 @@ Reglas adicionales:
 
 ### 8.2 Organización del Árbol OPD y Bosque
 
-Convención de etiquetado: SD, SD1, SD1.1, SD1.2, SD2, etc. El **Mapa del Sistema** muestra todas las cosas sin enlaces, sirviendo como índice navegable.
+Convención de etiquetado: SD, SD1, SD1.1, SD1.2, SD2, etc. El **Mapa del Sistema** muestra el contenido de cada OPD, incluyendo cosas y enlaces, sirviendo como índice navegable.
 
 **Resumen operativo del árbol:** la regla canónica de integridad del árbol vive en `opm-visual-es` V-113 y V-114. Metodológicamente, quien modela DEBE tratar los OPDs hoja como única clase eliminable y DEBERÍA usar OPDs de vista solo como artefactos de navegación, no como nodos de refinamiento.
 
@@ -461,7 +457,7 @@ Tipos: árbol de procesos, árbol de objetos, vista de asignación, vista motiva
 
 ### 8.4 Precedencia de Enlaces durante Recomposición
 
-La precedencia formal durante recomposición pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13. Esta metodología no la re-declara para evitar duplicación.
+La precedencia formal durante recomposición pertenece a [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §13. Esta metodología no la re-declara para evitar duplicación.
 
 Reglas metodológicas de uso:
 
@@ -473,7 +469,7 @@ Reglas metodológicas de uso:
 
 ### 8.5 Práctica Desde el Nivel Medio y Simplificación
 
-Las prácticas de esta subsección provienen del libro de referencia y de la experiencia pedagógica, no del texto normativo de ISO/PAS 19450.
+Las prácticas de esta subsección condensan experiencia pedagógica y de modelado. Su función es operativa: ayudar a decidir cómo simplificar, recorrer y cerrar el modelo.
 
 **Desde el nivel medio**: el modelador comienza por el nivel que mejor entiende y refina/abstrae en ambas direcciones.
 
@@ -493,13 +489,13 @@ Reducción neta: `procesos_removidos + objetos_removidos + enlaces_removidos - 1
 
 ### 8.6 Emergencia como Criterio de Validación Arquitectural
 
-El concepto de emergencia proviene de la ingeniería de sistemas en general, no de ISO/PAS 19450.
+El concepto de emergencia pertenece a la ingeniería de sistemas en general y aquí se adopta como criterio de validación arquitectural.
 
 El modelador DEBE verificar que la arquitectura del sistema (estructura + comportamiento) produce al menos una capacidad emergente: una funcionalidad que el sistema completo exhibe pero ninguna parte individual posee. Si no existe emergencia, la colección de partes no constituye un sistema en el sentido de la ingeniería de sistemas basada en modelos (MBSE).
 
 ### 8.7 Gobernanza del Modelo
 
-**[Extensión no-ISO.]** Las capacidades de gobernanza de esta subsección corresponden a funcionalidades de OPCloud y al trabajo posterior a ISO de Dori. OPPL no forma parte de ISO/PAS 19450:2015 (cfr. entrada `E1` del glosario base).
+Las capacidades de gobernanza de esta subsección pertenecen al manual metodológico del corpus. OPPL se usa aquí como capa de clasificación de informatividad del modelo.
 
 **Aplicación de ontología:** Para consistencia terminológica en equipos, el modelador DEBERÍA configurar aplicación de ontología organizacional en tres niveles:
 
@@ -515,22 +511,20 @@ El modelador DEBE verificar que la arquitectura del sistema (estructura + compor
 
 **Resumen operativo de instancias visuales:** la regla canónica de identidad visual vive en `opm-visual-es` V-101 y V-102. Metodológicamente, ante nombres duplicados, el modelador DEBE decidir entre reutilizar la cosa existente como nueva apariencia visual, renombrar con nombre único o descartar la nueva cosa. La opción "cerrar" sin resolver NO DEBERÍA usarse.
 
-### 8.8 Operaciones de Gestión del Modelo en OPCloud
-
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]**
+### 8.8 Operaciones de Gestión del Modelo en Herramientas
 
 Las siguientes capacidades son relevantes para el ciclo de vida del modelo, pero no alteran la semántica OPM:
 
 - **Persistencia:** el modelador DEBERÍA tratar guardar/cargar como operaciones regulares de punto de control durante sesión. Compartir expone el modelo a otros usuarios con permisos de lectura o edición.
 - **Permisos:** el propietario/administrador PUEDE compartir con usuarios o grupos completos, pero NO entre organizaciones distintas. Lectura precede a escritura. El modelador DEBERÍA verificar permisos antes de colaboración concurrente.
 - **Exportación:** OPL puede exportarse con o sin numeración. Los OPDs pueden exportarse como imagen o PDF, ya sea para el OPD actual, el árbol completo o solo el SD. Las exportaciones DEBEN tratarse como instantáneas publicables, no como fuente de verdad del modelo.
-- **Plantillas:** OPCloud soporta plantillas privadas, organizacionales y globales. Insertar una plantilla crea una copia local; las actualizaciones posteriores de la plantilla fuente NO se propagan a las inserciones ya hechas.
+- **Plantillas:** una herramienta puede soportar plantillas privadas, organizacionales y globales. Insertar una plantilla crea una copia local; las actualizaciones posteriores de la plantilla fuente NO se propagan a las inserciones ya hechas.
 - **Reubicación del modelo:** mover modelos vía cortar/pegar conserva autoguardado e historial de versiones. El modelador DEBERÍA revisar versiones antes y después de mover o fusionar trabajo.
 - **Búsqueda y navegación asistida:** operaciones como buscar, traer conectados y traer filtrado DEBERÍAN usarse para inspección localizada de un subgrafo antes de editar, especialmente en modelos con alta densidad de enlaces.
 
 ## 9 Heurísticas de Modelado Avanzado
 
-Las heurísticas de esta sección integran prácticas del libro de referencia de Dori, experiencia pedagógica y patrones observados en OPCloud. No provienen del texto normativo de ISO/PAS 19450, pero son consistentes con su semántica.
+Las heurísticas de esta sección integran práctica pedagógica, experiencia de modelado y patrones operativos consistentes con la semántica del corpus.
 
 ### 9.1 Proceso Persistente → Enlace Estructural Etiquetado
 
@@ -629,11 +623,11 @@ Al modelar sistemas a partir de texto (estándares, regulaciones, especificacion
 
 ### 9.15 Detección de Sinónimos/Homónimos mediante Modelado Formal
 
-OPM exige una correspondencia 1:1 entre cosas y **nombres canónicos** dentro del modelo. El modelador DEBE usar este formalismo para detectar: (a) **sinónimos** — múltiples palabras para el mismo concepto (ej: "propósito" vs "propósito declarado" en ISO 15288), y (b) **homónimos** — misma palabra para conceptos distintos (ej: "entorno" vs "entorno operacional"). Cada sinónimo detectado DEBE resolverse eligiendo un término canónico. Las variantes de superficie admitidas por OPL-ES pueden coexistir editorialmente, pero DEBEN mapear al mismo nombre canónico interno. Cada homónimo DEBE resolverse creando cosas separadas con nombres distintos.
+OPM exige una correspondencia 1:1 entre cosas y **nombres canónicos** dentro del modelo. El modelador DEBE usar este formalismo para detectar: (a) **sinónimos**, es decir, múltiples palabras para el mismo concepto, y (b) **homónimos**, es decir, la misma palabra para conceptos distintos. Cada sinónimo detectado DEBE resolverse eligiendo un término canónico. Las variantes de superficie admitidas por OPL-ES pueden coexistir editorialmente, pero DEBEN mapear al mismo nombre canónico interno. Cada homónimo DEBE resolverse creando cosas separadas con nombres distintos.
 
 ### 9.16 Detección de Inconsistencias Texto-Diagrama
 
-El modelado OPM de un documento existente produce como subproducto la detección de inconsistencias entre el texto principal y sus diagramas. El modelador DEBERÍA documentar estas inconsistencias como hallazgos de calidad. Ejemplo: en ISO 15288, los recuadros representan "sistemas" en un diagrama y "procesos" en otro, sin justificación. El modelo OPM resuelve estas ambigüedades asignando perseverancia correcta (objeto vs proceso) a cada cosa.
+El modelado OPM de un documento existente produce como subproducto la detección de inconsistencias entre el texto principal y sus diagramas. El modelador DEBERÍA documentar estas inconsistencias como hallazgos de calidad. Ejemplo: un mismo recuadro puede representar "sistemas" en un diagrama y "procesos" en otro, sin justificación. El modelo OPM resuelve estas ambigüedades asignando perseverancia correcta (objeto vs proceso) a cada cosa.
 
 ### 9.17 Etiquetado de OPD por Cláusula de Referencia
 
@@ -716,7 +710,7 @@ Cuando un proceso tiene múltiples enlaces procedimentales entrantes y salientes
 
 ### 10.9 Semántica Temporal de Enlaces Transformadores
 
-La semántica temporal de los enlaces transformadores (consumo inmediato al inicio, resultado al término, efecto con transición entre estados) se define en `opm-iso-19450-es` § Instancias operacionales del conjunto de objetos involucrados (ISO §14.2.2.4.4) y en `opm-iso-19450-es` § Enlaces transformadores (ISO §9.1).
+La semántica temporal de los enlaces transformadores (consumo inmediato al inicio, resultado al término, efecto con transición entre estados) se define en `opm-es` §Instancias operacionales del conjunto de objetos involucrados y en `opm-es` §Enlaces transformadores.
 
 **Consecuencia metodológica**: esta semántica temporal es crítica para simulación y para entender la disponibilidad de objetos entre subprocesos. Al modelar, el modelador DEBE tener en cuenta que un objeto consumido NO está disponible para subprocesos posteriores, y un objeto resultante NO está disponible para subprocesos anteriores.
 
@@ -777,7 +771,7 @@ Todo afectado en transición durante un proceso activo permanece en estado indet
 
 ## 12 Modelado Cuantitativo y Simulación
 
-ISO/PAS 19450 define propiedades cuantitativas (tasa, duración, multiplicidad) pero no prescribe flujos de trabajo computacionales ni de simulación específicos. Las secciones §12.4-12.6 y §12.9 son específicas de OPCloud.
+La capa base define propiedades cuantitativas como tasa, duración y multiplicidad, pero no prescribe flujos de trabajo computacionales ni de simulación específicos. Las secciones §12.4-12.6 y §12.9 fijan la guía operativa de este manual para esos casos.
 
 ### 12.1 Tasa de Transformación
 
@@ -791,11 +785,9 @@ Cuando se modelan operaciones aritméticas no conmutativas (*Dividir*, *Restar*)
 
 El modelador PUEDE especificar una distribución de duración en la propiedad de duración de un proceso, identificando una función de distribución de probabilidad. En ejecución, cada instancia del proceso muestrea su duración independientemente. Sin distribución de duración, todas las instancias ejecutan en exactamente la duración esperada (irrealista para sistemas reales).
 
-### 12.4 Flujo de Trabajo Computacional en OPCloud
+### 12.4 Flujo de Trabajo Computacional
 
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]**
-
-Cuando se implemente el modelo en OPCloud, el modelador DEBE seguir este patrón de 5 pasos:
+Cuando se implemente el modelo en una herramienta con soporte computacional, el modelador DEBE seguir este patrón de 5 pasos:
 
 1. **Definir objetos** con atributos computacionales (tipo: `integer`, `float`, `string`, `character`, `boolean`)
 2. **Asignar alias** a cada atributo computacional (ej.: `x1`, `y1`) para uso en fórmulas
@@ -803,7 +795,7 @@ Cuando se implemente el modelo en OPCloud, el modelador DEBE seguir este patrón
 4. **Definir fórmula** usando los alias (ej.: `pendiente = (y2-y1)/(x2-x1)`)
 5. **Conectar proceso** a objetos vía enlace de consumo/efecto para flujo de datos
 
-**Estereotipos en OPCloud:** Plantillas de parámetros reutilizables para patrones computacionales comunes. La herramienta distingue niveles global y organizacional. Al remover un estereotipo de una cosa, el modelador DEBE elegir entre desenlazar (conservar componentes) o desenlazar y eliminar (eliminar componentes agregados).
+**Estereotipos computacionales:** plantillas de parámetros reutilizables para patrones computacionales comunes. La herramienta puede distinguir niveles global y organizacional. Al remover un estereotipo de una cosa, el modelador DEBE elegir entre desenlazar (conservar componentes) o desenlazar y eliminar (eliminar componentes agregados).
 
 ### 12.5 Validación de Rangos
 
@@ -811,7 +803,7 @@ El modelador DEBERÍA asignar rangos a atributos computacionales para validació
 
 ### 12.6 Flujo de Simulación con Entrada de Usuario
 
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** Para simulación con entrada de usuario en OPCloud, el modelador DEBE seguir estos 6 pasos:
+Para simulación con entrada de usuario, el modelador DEBE seguir estos 6 pasos:
 
 1. Crear usuario como objeto físico
 2. Conectar usuario al proceso vía **enlace de agente**
@@ -826,15 +818,13 @@ Sin los pasos 5-6, el objeto entrada no recibirá valores durante simulación.
 
 Ejecutar un proceso con contexto descompuesto transfiere control recursivamente al subproceso superior del nivel más profundo. El control retorna al proceso descompuesto tras terminación del último subproceso.
 
-**Transformaciones del conjunto de objetos involucrados por instancia:** la semántica temporal detallada por tipo de transformado (consumido, afectado, resultante) se define en `opm-iso-19450-es` § Instancias operacionales del conjunto de objetos involucrados (ISO §14.2.2.4.4). **Consecuencia metodológica:** un objeto con estados en transición (ha dejado su estado de entrada pero aún no ha llegado al de salida) es indisponible para otros procesos durante ese periodo.
+**Transformaciones del conjunto de objetos involucrados por instancia:** la semántica temporal detallada por tipo de transformado (consumido, afectado, resultante) se define en `opm-es` §Instancias operacionales del conjunto de objetos involucrados. **Consecuencia metodológica:** un objeto con estados en transición (ha dejado su estado de entrada pero aún no ha llegado al de salida) es indisponible para otros procesos durante ese periodo.
 
 ### 12.8 Espacio de Estados Compuesto y Precondiciones Compuestas
 
 El espacio de estados de un objeto es el producto cartesiano de los conjuntos de estados de todos sus atributos y partes con estados. El modelador DEBE reconocer que no todos los puntos del espacio de estados son factibles; los estados compuestos infactibles DEBERÍAN identificarse mediante modelado de procesos. Para precondiciones compuestas que abarcan múltiples atributos, el modelador DEBE usar sentencias OPL con múltiples cláusulas de condición, con cláusulas XOR numeradas conectadas por AND lógico.
 
-### 12.9 Integración Externa e Ingesta de Datos en OPCloud
-
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]**
+### 12.9 Integración Externa e Ingesta de Datos
 
 Cuando el modelo deja de ser solo conceptual y debe intercambiar datos con entorno externo, el modelador PUEDE usar las siguientes capacidades:
 
@@ -842,20 +832,20 @@ Cuando el modelo deja de ser solo conceptual y debe intercambiar datos con entor
 - **ROS:** adecuado para robots y sistemas con maestro ROS. El flujo de trabajo mínimo DEBE incluir definición de mensaje, publicación, suscripción y manejo del bucle de retroalimentación vía condiciones o iteración.
 - **Importación CSV para atributos:** útil para carga masiva de instancias y valores de atributos. Restricción: el objeto destino NO DEBE ser una instancia conectada vía clasificación-instanciación. El modelador DEBERÍA previsualizar la importación y decidir si ignora existentes o crea atributos faltantes.
 
-## 13 Modelado de Requisitos en OPCloud
+## 13 Modelado de Requisitos
 
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** En este corpus, el modelado de requisitos se trata como una capacidad de OPCloud, no como una extensión normativa independiente de OPM. Por lo tanto, las siguientes reglas aplican solo cuando el modelo se implementa en OPCloud.
+En este corpus, el modelado de requisitos se trata como una capacidad metodológica del entorno de modelado. Las siguientes reglas aplican cuando el modelo incorpora requisitos como artefactos trazables.
 
 ### 13.1 Operaciones Disponibles
 
-OPCloud permite agregar, remover y visualizar requisitos sobre elementos, enlaces o diagramas completos. Las relaciones recuperables en el tutorial son:
+Una herramienta compatible puede agregar, remover y visualizar requisitos sobre elementos, enlaces o diagramas completos. Las relaciones mínimas recuperables en esta guía son:
 
 - Exhibición-caracterización
 - Agregación-participación
 
 ### 13.2 Convención de Trazabilidad
 
-Cuando se use trazabilidad de requisitos en OPCloud, el enlace estructural etiquetado con etiqueta **`satisface`** DEBERÍA usarse como convención de trazabilidad entre artefacto y requisito cuando la capa textual activa sea OPL-ES. Si la capa textual activa es OPL-EN, la forma equivalente es **`satisfies`**.
+Cuando se use trazabilidad de requisitos, el enlace estructural etiquetado con etiqueta **`satisface`** DEBERÍA usarse como convención de trazabilidad entre artefacto y requisito cuando la capa textual activa sea OPL-ES. Si la capa textual activa es OPL-EN, la forma equivalente es **`satisfies`**.
 
 **Correcto (OPL-ES):** `Asiento satisface Requisito RQ1 Asiento del Conductor.`
 
@@ -873,7 +863,7 @@ Ejemplo recuperable desde el tutorial, normalizado al registro español del corp
 
 ### 13.4 Análisis de Vacíos y Generación Asistida
 
-OPCloud ofrece capacidades auxiliares que el modelador PUEDE usar para detectar vacíos y acelerar derivación de requisitos:
+El entorno de modelado puede ofrecer capacidades auxiliares que el modelador PUEDE usar para detectar vacíos y acelerar derivación de requisitos:
 
 - **Identificación de conocimiento faltante:** DEBERÍA usarse como heurística de detección de vacíos, no como verdad del modelo. `Pistol` sirve para filtrado rápido; `RGCN`, cuando esté disponible, ofrece mayor precisión. El umbral de confianza DEBERÍA ajustarse explícitamente antes de aceptar sugerencias.
 - **Generación asistida de requisitos:** toma OPPL como insumo y genera texto de requisito, tipo de verificación, criterios de aceptación y tripletas del modelo. La salida DEBE revisarse manualmente antes de integrarla al corpus o al modelo.
@@ -895,9 +885,9 @@ El modelador DEBE reconocer el punto en el árbol OPD donde la transición de mo
 - Los estudios de compromiso requieren parámetros cuantitativos
 - El proceso físico tiene una fórmula matemática subyacente (ej.: `V = V0 - (F/m)*t`)
 
-En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales y usar la realización soportada por la herramienta. En OPCloud, la señal visual recuperable es el uso de `{}` en el OPD.
+En este punto, el modelador DEBE convertir procesos conceptuales a procesos computacionales y usar la realización soportada por la herramienta. En esta adaptación, la señal visual recuperable de proceso computacional es el uso de `{}` en el OPD.
 
-### 14.3 Simulación Conceptual vs Ejecución Computacional en OPCloud
+### 14.3 Simulación Conceptual vs Ejecución Computacional
 
 El modelador DEBE distinguir entre:
 
@@ -912,80 +902,80 @@ Reglas operativas:
 
 ## 15 Invariantes
 
-Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada. Esta sección es un **índice compilado de verificación**, no una segunda fuente normativa: cada fila hereda su autoridad de la columna **Fuente**. La columna **Fuente** distingue el origen de cada invariante: **ISO** para reglas directamente trazables a ISO/PAS 19450, **Dori** para reglas del libro, **OPCloud** para reglas de herramienta, y **Ext** para extensiones de esta metodología.
+Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada. Esta sección es un **índice compilado de verificación**, no una segunda fuente normativa: cada fila hereda su autoridad de la columna **Capa propietaria**. Esa columna indica qué capa del corpus gobierna el invariante: `opm-es`, `opl-es`, `opd-es` o `manual`.
 
-| Invariante | Aplicación | Fuente |
-|-----------|-------------|--------|
-| Nombre del proceso principal cumple la política léxica de la capa textual activa del corpus | automático | ISO / OPL-ES |
-| Todos los nombres de cosas son singulares | automático | ISO |
-| Grupo beneficiario es objeto físico | automático | ISO |
-| Atributo del beneficiario es objeto informacional | automático | ISO |
-| Exactamente un proceso principal por SD | esquema | ISO |
-| Enlace de agentes solo conectan a humanos (exclusividad) | manual | ISO |
-| Enlace de instrumentos solo conectan a no humanos | manual | ISO |
-| Todo habilitador persiste sin cambio neto tras el proceso | manual | ISO |
-| Objetos ambientales tienen contorno discontinuo | automático | ISO |
-| Sistema exhibe proceso principal vía exhibición-caracterización | manual | ISO |
-| Enlace de consumo/resultado NO en contorno exterior de proceso descompuesto | automático | ISO |
-| Todo subproceso conectado a al menos un transformado | automático | ISO |
-| Modelo bimodal: todo OPD tiene párrafo OPL equivalente | esquema | ISO |
-| Un hecho del modelo aparece en al menos un OPD | esquema | ISO |
-| Enlaces estructurales son homogéneos (excepción: exhibición-caracterización) | automático | ISO |
-| Habilitadores y afectados pertenecen a Pre(P) ∩ Post(P); consumidos solo a Pre(P); resultantes solo a Post(P) | manual | ISO |
-| Probabilidades en abanico XOR suman exactamente 1 | automático | ISO |
-| Subprocesos paralelos tienen borde superior de elipse a la misma altura | manual | ISO |
-| Enlaces escindidos con modificador de control NO están permitidos | automático | ISO |
-| Arquitectura del sistema produce al menos una capacidad emergente | manual | Ext |
-| Los enlaces NO DEBEN cruzar áreas ocupadas por cosas | manual | Dori |
-| Las cosas NO DEBEN ocultarse mutuamente (excepción: plegado en puertos) | manual | Dori |
-| Minimizar número de enlaces y cruces de enlaces en cada OPD | manual | Dori |
-| Si se usan requisitos en OPCloud, la trazabilidad usa enlaces estructurales y la convención `satisface` en OPL-ES | manual | OPCloud |
-| En OPCloud, procesos computacionales se distinguen visualmente con `{}` en el OPD | automático | OPCloud |
-| Sinónimos de superficie resueltos a un nombre canónico por cosa | manual | Dori |
-| Refinamiento no trivial: descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | automático | Ext |
-| Proceso que no entrega valor funcional directo al beneficiario DEBERÍA ser ambiental | manual | Ext |
-| Interfaz de sub-modelo congelada tras creación: sin nuevas cosas compartidas, sin renombrar, sin agregar estados | manual | Ext |
-| Estado cíclico (initial+final simultáneo) es válido para objetos con ciclos cerrados | manual | Ext |
-| Salida no-determinista por defecto: sin estado especificado → probabilidad 1/n por estado | manual | ISO |
+| Invariante | Aplicación | Capa propietaria |
+|-----------|-------------|------------------|
+| Nombre del proceso principal cumple la política léxica de la capa textual activa del corpus | automático | `opl-es` |
+| Todos los nombres de cosas son singulares | automático | `opl-es` |
+| Grupo beneficiario es objeto físico | automático | `manual` |
+| Atributo del beneficiario es objeto informacional | automático | `manual` |
+| Exactamente un proceso principal por SD | esquema | `manual` |
+| Enlace de agentes solo conecta a humanos (exclusividad) | manual | `opm-es` |
+| Enlace de instrumentos solo conecta a no humanos | manual | `opm-es` |
+| Todo habilitador persiste sin cambio neto tras el proceso | manual | `opm-es` |
+| Objetos ambientales tienen contorno discontinuo | automático | `opd-es` |
+| Sistema exhibe proceso principal vía exhibición-caracterización | manual | `manual` |
+| Enlace de consumo/resultado no en contorno exterior de proceso descompuesto | automático | `opd-es` |
+| Todo subproceso conectado a al menos un transformado | automático | `manual` |
+| Modelo bimodal: todo OPD tiene párrafo OPL equivalente | esquema | `opm-es` |
+| Un hecho del modelo aparece en al menos un OPD | esquema | `opm-es` |
+| Enlaces estructurales son homogéneos (excepción: exhibición-caracterización) | automático | `opm-es` |
+| Habilitadores y afectados pertenecen a Pre(P) ∩ Post(P); consumidos solo a Pre(P); resultantes solo a Post(P) | manual | `opm-es` |
+| Probabilidades en abanico XOR suman exactamente 1 | automático | `opm-es` |
+| Subprocesos paralelos tienen borde superior de elipse a la misma altura | manual | `opd-es` |
+| Enlaces escindidos con modificador de control no están permitidos | automático | `opd-es` |
+| Arquitectura del sistema produce al menos una capacidad emergente | manual | `manual` |
+| Los enlaces no deben cruzar áreas ocupadas por cosas | manual | `opd-es` |
+| Las cosas no deben ocultarse mutuamente (excepción: plegado en puertos) | manual | `opd-es` |
+| Minimizar número de enlaces y cruces de enlaces en cada OPD | manual | `manual` |
+| Si se usan requisitos, la trazabilidad usa enlaces estructurales y la convención `satisface` en OPL-ES | manual | `manual` |
+| Los procesos computacionales se distinguen visualmente con `{}` en el OPD | automático | `manual` |
+| Sinónimos de superficie resueltos a un nombre canónico por cosa | manual | `manual` |
+| Refinamiento no trivial: descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | automático | `manual` |
+| Proceso que no entrega valor funcional directo al beneficiario DEBERÍA ser ambiental | manual | `manual` |
+| Interfaz de sub-modelo congelada tras creación: sin nuevas cosas compartidas, sin renombrar, sin agregar estados | manual | `manual` |
+| Estado cíclico (initial+final simultáneo) es válido para objetos con ciclos cerrados | manual | `manual` |
+| Salida no-determinista por defecto: sin estado especificado → probabilidad 1/n por estado | manual | `opm-es` |
 
 ## 16 Lista de verificación de Validación
 
-Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabla lista verificaciones operativas adicionales organizadas por nivel. La columna **Fuente** usa las mismas claves que §15: **ISO**, **Dori**, **OPCloud**, **Ext**.
+Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabla lista verificaciones operativas adicionales organizadas por nivel. La columna **Capa propietaria** usa las mismas claves que §15: `opm-es`, `opl-es`, `opd-es` y `manual`.
 
-| Nivel | Verificación | Condición | Severidad | Fuente |
-|-------|-------|-----------|----------|--------|
-| SD | Sistema clasificado | Tipo determinado (artificial/natural/social/socio-técnico) | CRÍTICA | ISO |
-| SD | Propósito/resultado definido | Beneficiario + atributo + transición estados | CRÍTICA | ISO |
-| SD | Función definida | Proceso principal + transformado principal | CRÍTICA | ISO |
-| SD | Habilitadores presentes | ≥1 agente o instrumento | ALTA | ISO |
-| SD | Entorno identificado | ≥1 objeto ambiental | MEDIA | ISO |
-| SD | Ocurrencia del problema (si aplica) | Proceso ambiental causa estado negativo | MEDIA | ISO |
-| SD | Reclasificación de instrumentos | Instrumentos con desgaste relevante reclasificados a afectado | MEDIA | Dori |
-| SD1 | Refinamiento correcto | Síncrono → descomposición; asíncrono → despliegue | ALTA | ISO |
-| SD1 | Sin evento a no-primero | Enlaces de evento no a subprocesos intermedios (o justificación) | ALTA | Ext |
-| SD1 | Enlaces escindidos resueltos | Ningún enlace de efecto subespecificado en descomposición con múltiples subprocesos | ALTA | ISO |
-| SD1 | Estados expresados | Estados relevantes visibles y conectados | ALTA | ISO |
-| SD1 | Tipo asíncrono correcto | Agregación para partes; generalización para tipos | ALTA | ISO |
-| SD1 | Sin redundancia | Sin duplicación innecesaria de hechos del SD | MEDIA | Dori |
-| SD2+ | Precedencia de enlaces | Recomposición aplica matriz de precedencia | ALTA | ISO |
-| SD2+ | Árbol OPD válido | Etiquetado secuencial correcto | MEDIA | ISO |
-| SD2+ | Coherencia de cambio de rol | Instrumento en abstracto = afectado en detallado solo si cambio neto = 0 | ALTA | Dori |
-| Cuant | Operandos explícitos | Operaciones no conmutativas con roles designados | MEDIA | Dori |
-| Cuant | Flujo computacional | Atributos computacionales con tipo, alias y fórmula | MEDIA | OPCloud |
-| Cuant | Validación de rangos | Rangos definidos para atributos con dominio acotado | MEDIA | OPCloud |
-| Error | Manejo de excepciones | Procesos con límites de tiempo tienen enlaces de excepción por sobretiempo/subtiempo | MEDIA | ISO |
-| Error | Resolución de estado indeterminado | Afectados en transición resueltos por manejador de excepciones | MEDIA | ISO |
-| Global | Claridad | Ningún OPD excede 20-25 entidades | MEDIA | Dori |
-| Global | Alcance interior/exterior | Objetos interiores solo existen en alcance de su proceso padre | MEDIA | ISO |
-| Global | Coherencia de nombres | Sin nombres duplicados no resueltos | ALTA | Dori |
-| Global | Aplicación de ontología | Nivel configurado para organización (Sugerir o Aplicar) | MEDIA | OPCloud |
-| Global | Informatividad del modelo | Clasificación ejecutada; sin enlaces de precedencia faltantes críticos | MEDIA | OPCloud |
-| Global | Mapa del sistema | Generado para modelos con >10 OPDs | MEDIA | Dori |
-| Global | Constructos de especificación | OPD + OPL + OPM spec completos en orden en anchura | MEDIA | ISO |
-| Global | Refinamiento no trivial | Descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | ALTA | Ext |
-| Global | Profundidad justificada | Cada nivel de refinamiento agrega ≥ 1 transformado/estado/enlace nuevo | MEDIA | Ext |
-| Global | Procesos ambientales | Procesos de ciclo de vida sin valor funcional directo son ambientales | MEDIA | Ext |
-| Global | Contrato de sub-modelo | Interfaz congelada; sin adiciones post-creación | ALTA | Ext |
-| Global | Plegado en puertos | Usado donde disposición física de componentes es relevante | BAJA | OPCloud |
-| Global | Objetos implícitos | Objetos implícitos en texto fuente identificados y modelados explícitamente | ALTA | Dori |
-| Requisitos | Trazabilidad estructural | Si se usan requisitos en OPCloud, se ocupan enlaces estructurales y la convención `satisface` en OPL-ES | MEDIA | OPCloud |
+| Nivel | Verificación | Condición | Severidad | Capa propietaria |
+|-------|-------|-----------|----------|------------------|
+| SD | Sistema clasificado | Tipo determinado (artificial/natural/social/socio-técnico) | CRÍTICA | `manual` |
+| SD | Propósito/resultado definido | Beneficiario + atributo + transición estados | CRÍTICA | `manual` |
+| SD | Función definida | Proceso principal + transformado principal | CRÍTICA | `manual` |
+| SD | Habilitadores presentes | ≥1 agente o instrumento | ALTA | `manual` |
+| SD | Entorno identificado | ≥1 objeto ambiental | MEDIA | `manual` |
+| SD | Ocurrencia del problema (si aplica) | Proceso ambiental causa estado negativo | MEDIA | `manual` |
+| SD | Reclasificación de instrumentos | Instrumentos con desgaste relevante reclasificados a afectado | MEDIA | `manual` |
+| SD1 | Refinamiento correcto | Síncrono → descomposición; asíncrono → despliegue | ALTA | `manual` |
+| SD1 | Sin evento a no-primero | Enlaces de evento no a subprocesos intermedios (o justificación) | ALTA | `manual` |
+| SD1 | Enlaces escindidos resueltos | Ningún enlace de efecto subespecificado en descomposición con múltiples subprocesos | ALTA | `opd-es` |
+| SD1 | Estados expresados | Estados relevantes visibles y conectados | ALTA | `opd-es` |
+| SD1 | Tipo asíncrono correcto | Agregación para partes; generalización para tipos | ALTA | `manual` |
+| SD1 | Sin redundancia | Sin duplicación innecesaria de hechos del SD | MEDIA | `manual` |
+| SD2+ | Precedencia de enlaces | Recomposición aplica matriz de precedencia | ALTA | `opd-es` |
+| SD2+ | Árbol OPD válido | Etiquetado secuencial correcto | MEDIA | `opd-es` |
+| SD2+ | Coherencia de cambio de rol | Instrumento en abstracto = afectado en detallado solo si cambio neto = 0 | ALTA | `manual` |
+| Cuant | Operandos explícitos | Operaciones no conmutativas con roles designados | MEDIA | `manual` |
+| Cuant | Flujo computacional | Atributos computacionales con tipo, alias y fórmula | MEDIA | `manual` |
+| Cuant | Validación de rangos | Rangos definidos para atributos con dominio acotado | MEDIA | `manual` |
+| Error | Manejo de excepciones | Procesos con límites de tiempo tienen enlaces de excepción por sobretiempo/subtiempo | MEDIA | `opm-es` |
+| Error | Resolución de estado indeterminado | Afectados en transición resueltos por manejador de excepciones | MEDIA | `opm-es` |
+| Global | Claridad | Ningún OPD excede 20-25 entidades | MEDIA | `manual` |
+| Global | Alcance interior/exterior | Objetos interiores solo existen en alcance de su proceso padre | MEDIA | `opm-es` |
+| Global | Coherencia de nombres | Sin nombres duplicados no resueltos | ALTA | `manual` |
+| Global | Aplicación de ontología | Nivel configurado para organización (Sugerir o Aplicar) | MEDIA | `manual` |
+| Global | Informatividad del modelo | Clasificación ejecutada; sin enlaces de precedencia faltantes críticos | MEDIA | `manual` |
+| Global | Mapa del sistema | Generado para modelos con >10 OPDs | MEDIA | `manual` |
+| Global | Constructos de especificación | OPD + OPL + OPM spec completos en orden en anchura | MEDIA | `manual` |
+| Global | Refinamiento no trivial | Descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | ALTA | `manual` |
+| Global | Profundidad justificada | Cada nivel de refinamiento agrega ≥ 1 transformado/estado/enlace nuevo | MEDIA | `manual` |
+| Global | Procesos ambientales | Procesos de ciclo de vida sin valor funcional directo son ambientales | MEDIA | `manual` |
+| Global | Contrato de sub-modelo | Interfaz congelada; sin adiciones post-creación | ALTA | `manual` |
+| Global | Plegado en puertos | Usado donde disposición física de componentes es relevante | BAJA | `manual` |
+| Global | Objetos implícitos | Objetos implícitos en texto fuente identificados y modelados explícitamente | ALTA | `manual` |
+| Requisitos | Trazabilidad estructural | Si se usan requisitos, se ocupan enlaces estructurales y la convención `satisface` en OPL-ES | MEDIA | `manual` |
