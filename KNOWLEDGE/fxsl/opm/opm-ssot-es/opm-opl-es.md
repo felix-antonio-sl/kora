@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,ISO/PAS-19450:2015(Annex-A)"
-version: "1.7.0"
+version: "1.8.0"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -64,8 +64,8 @@ Ejemplos válidos: "Procesar Datos", "Preparar Empanadas", "Ampliación de Cober
 |-----------|-----------|-----------|-----------|
 | verb-ing | Making | Infinitivo o nominalización | Hacer / Fabricación |
 | noun verb-ing | Cake Making | Infinitivo sustantivo o nominalización con complemento | Preparar Torta / Preparación de Torta |
-| adj verb-ing | Automatic Responding | Infinitivo adverbio o nominalización | Responder Automáticamente / Respuesta Automática |
-| adj noun verb-ing | Automatic Crash Responding | Infinitivo complejo o nominalización encabezada por `-ción` | Responder a Colisión Automática / Atención de Colisión Automática |
+| adj verb-ing | Automatic Responding | Infinitivo + adverbio o nominalización | Responder Automáticamente / Respuesta Automática |
+| adj noun verb-ing | Automatic Crash Responding | Infinitivo complejo o nominalización encabezada por `-ción` | Responder a Colisión Automáticamente / Atención Automática de Colisión |
 
 Preferentemente entre 2 y 4 palabras. Se aceptan nombres más largos cuando el dominio lo exige y no introducen ambigüedad. Se capitalizan las palabras léxicas; artículos y preposiciones breves PUEDEN permanecer en minúscula cuando mejora la naturalidad del español.
 
@@ -204,6 +204,8 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 | D2 | Thing is Informatical. | **Cosa** es informacional. |
 | D3 | Thing is Environmental. | **Cosa** es ambiental. |
 | D4 | Thing is Systemic. | **Cosa** es sistémica. |
+| D11 | Thing is Persistent. | **Cosa** es persistente. |
+| D12 | Thing is Transient. | **Cosa** es transitoria. |
 
 ### 3.2 Enumeración de Estados
 
@@ -369,7 +371,7 @@ Nota: TS4 y TS5 son la **realización textual del enlace escindido** (split stat
 | SE4 | Recíproco etiquetado | Source and Destination are tag. | **Origen** y **Destino** son etiqueta. |
 | SE5 | Recíproco sin etiqueta | Source and Destination are related. | **Origen** y **Destino** se relacionan. |
 
-Nota: en SE1, SE3 y SE4, "etiqueta" es el tag definido por el modelador en español (ej. "emplea", "pertenece a", "supervisa"). El tag actúa como verbo o predicado nominal de la oración.
+Nota: en SE1, SE3 y SE4, "etiqueta" es la forma definida por el modelador en español (ej. "emplea", "pertenece a", "supervisa"). La etiqueta actúa como verbo o predicado nominal de la oración.
 
 ### 9.2 Relaciones Estructurales Fundamentales
 
@@ -392,15 +394,15 @@ Nota: en SE1, SE3 y SE4, "etiqueta" es el tag definido por el modelador en espa�
 
 ### 9.4 Estructurales con Estado Especificado
 
-| Grupo | OPL-EN | OPL-ES |
-|-------|--------|--------|
-| Estado en origen (uni) | Specified-state Source tag Destination. | **Origen** en `estado` etiqueta **Destino**. |
-| Estado en destino (uni) | Source tag specified-state Destination. | **Origen** etiqueta **Destino** en `estado`. |
-| Estado en ambos (uni) | Sa Source tag Sb Destination. | **Origen** en `sa` etiqueta **Destino** en `sb`. |
-| Estado en origen (bidi, f-tag) | Sa Source f-tag Destination. | **Origen** en `sa` etiqueta-f **Destino**. |
-| Estado en origen (bidi, b-tag) | Destination b-tag Sa Source. | **Destino** etiqueta-b **Origen** en `sa`. |
-| Estado en ambos (recíproco) | Sa Source and Sb Dest are tag. | **Origen** en `sa` y **Destino** en `sb` son etiqueta. |
-| Estado en origen (recíproco) | Dest and Sa Source are tag. | **Destino** y **Origen** en `sa` son etiqueta. |
+| ID | Grupo | OPL-EN | OPL-ES |
+|----|-------|--------|--------|
+| SSE1 | Estado en origen (uni) | Specified-state Source tag Destination. | **Origen** en `estado` etiqueta **Destino**. |
+| SSE2 | Estado en destino (uni) | Source tag specified-state Destination. | **Origen** etiqueta **Destino** en `estado`. |
+| SSE3 | Estado en ambos (uni) | Sa Source tag Sb Destination. | **Origen** en `sa` etiqueta **Destino** en `sb`. |
+| SSE4 | Estado en origen (bidi, f-tag) | Sa Source f-tag Destination. | **Origen** en `sa` etiqueta-f **Destino**. |
+| SSE5 | Estado en origen (bidi, b-tag) | Destination b-tag Sa Source. | **Destino** etiqueta-b **Origen** en `sa`. |
+| SSE6 | Estado en ambos (recíproco) | Sa Source and Sb Dest are tag. | **Origen** en `sa` y **Destino** en `sb` son etiqueta. |
+| SSE7 | Estado en origen (recíproco) | Dest and Sa Source are tag. | **Destino** y **Origen** en `sa` son etiqueta. |
 
 ---
 
@@ -424,6 +426,15 @@ Nota: en SE1, SE3 y SE4, "etiqueta" es el tag definido por el modelador en espa�
 | ID | OPL-EN | OPL-ES |
 |----|--------|--------|
 | CX4 | SD is refined by in-zooming Process in SD1. | SD se refina por descomposición de *Proceso* en SD1. |
+
+### 10.4 Plegado y Recomposición
+
+| ID | OPL-EN | OPL-ES |
+|----|--------|--------|
+| CX5 | Process folds into parent OPD. | *Proceso* se pliega en el OPD padre. |
+| CX6 | Object folds into parent OPD. | **Objeto** se pliega en el OPD padre. |
+| CX7 | Process recomposes from diagram. | *Proceso* se recompone desde `diagrama`. |
+| CX8 | Object recomposes from diagram. | **Objeto** se recompone desde `diagrama`. |
 
 ---
 
@@ -510,9 +521,11 @@ Rango parametrizado: `qmín..qmáx`. Restricciones con =, ≠, <, ≤, ≥, ∈.
 
 Tipos: boolean, string, integer, float, double, short, long, enumerated. Sin traducción (identificadores de tipo universales).
 
+Producción formal: véase Apéndice A.4 (`oracion_de_tipo_de_dato`).
+
 ---
 
-## 13. Etiquetas de Camino
+## 13. Etiquetas de Ruta
 
 | OPL-EN | OPL-ES |
 |--------|--------|
@@ -542,10 +555,10 @@ Tipos: boolean, string, integer, float, double, short, long, enumerated. Sin tra
 **Ejemplo**:
 
 - EN: `Cleanliness of Dish Set can be dirty or clean.`
-- ES: **Limpieza** de **Conjunto de Platos** puede estar `sucio` o `limpio`.
+- ES: **Limpieza** de **Conjunto de Platos** puede estar `sucia` o `limpia`.
 
 - EN: `State dirty of Cleanliness of Dish Set is initial.`
-- ES: Estado `sucio` de **Limpieza** de **Conjunto de Platos** es inicial.
+- ES: Estado `sucia` de **Limpieza** de **Conjunto de Platos** es inicial.
 
 ---
 
@@ -570,7 +583,7 @@ Para implementadores de herramientas. Reglas aplicadas en secuencia sobre una se
 | R13 | Consecuencia | in which case | en cuyo caso |
 | R14 | Alternativa | otherwise / else | de lo contrario |
 | R15 | Pasiva refleja | is consumed / is skipped | se consume / se omite |
-| R16 | Camino | Following path | Por ruta |
+| R16 | Ruta | Following path | Por ruta |
 | R17 | Artículo en instanciación | is an instance of | es una instancia de |
 | R18 | Artículo en especialización (sg.) | is a | es un/una |
 | R19 | Secuencia | in that sequence | en esa secuencia |
@@ -847,7 +860,11 @@ oracion_de_descripcion_de_cosa = oracion_de_propiedad_generica
  | oracion_de_enumeracion_de_estados
  | oracion_de_estados_iniciales
  | oracion_de_estados_finales
- | oracion_de_estado_por_defecto ;
+ | oracion_de_estado_por_defecto
+ | oracion_de_tipo_de_dato ;
+
+oracion_de_tipo_de_dato =
+ identificador_de_objeto, " es de tipo ", identificador_de_tipo ;
 
 oracion_de_propiedad_generica = identificador_de_cosa, " es ", [esencia], [afiliacion], [perseverancia] ;
 oracion_de_enumeracion_de_estados = identificador_de_objeto, " puede estar ", lista_de_estados | "..., y otros estados" ;
@@ -902,6 +919,13 @@ oracion_de_excepcion_por_sobretiempo = identificador_de_proceso_activo,
 oracion_de_excepcion_por_subtiempo = identificador_de_proceso_activo,
  " ocurre si duración de ", identificador_de_proceso, " es menor que ", min_duracion_unidades_tiempo ;
 oracion_de_excepcion = oracion_de_excepcion_por_sobretiempo | oracion_de_excepcion_por_subtiempo ;
+
+(* Etiquetas de ruta *)
+
+oracion_de_ruta =
+ "Por ruta ", cadena_etiqueta, ", ", oracion_procedimental ;
+
+cadena_etiqueta = nombre ;
 ```
 
 Las variantes XOR y OR usan `exactamente uno de` y `al menos uno de`. Las oraciones de condición siguen el patrón `ocurre si ... en cuyo caso ... de lo contrario ... se omite`.
@@ -1012,7 +1036,8 @@ lista_de_objetos_generales = " un ", identificador_de_objeto,
 
 ```ebnf
 oracion_estructural = oracion_de_enlace_estructural_etiquetado | oracion_de_agregacion
- | oracion_de_caracterizacion | oracion_de_exhibicion
+ | oracion_de_caracterizacion
+ (* | oracion_de_exhibicion — eliminada de oracion_estructural: alias de oracion_de_caracterizacion, genera ambiguedad *)
  | oracion_de_especializacion | oracion_de_instanciacion ;
 
 (* --- Oraciones de enlace estructural etiquetado --- *)
@@ -1108,13 +1133,22 @@ oracion_de_caract_proceso = identificador_de_proceso, " exhibe ",
  ( lista_de_operadores | lista_de_atributos
  | lista_de_operadores, ", así como ", lista_de_atributos ) ;
 
+(* Alias conservado como documentacion; no referenciado desde oracion_estructural para evitar ambiguedad *)
 oracion_de_exhibicion = oracion_de_caract_objeto | oracion_de_caract_proceso ;
 
 oracion_de_especializacion = oracion_de_especializacion_objeto | oracion_de_especializacion_proceso
- | oracion_de_especializacion_estado ;
+ | oracion_de_especializacion_estado
+ | oracion_de_especializacion_individual
+ | oracion_de_especializacion_xor_objeto
+ | oracion_de_herencia_multiple_objeto ;
 oracion_de_especializacion_objeto = lista_de_objetos_especiales, " son ", identificador_de_objeto ;
 oracion_de_especializacion_proceso = lista_de_procesos_especiales, " son ", identificador_de_proceso ;
 oracion_de_especializacion_estado = lista_de_objetos_con_estado, " son ", objeto_con_estado ;
+
+oracion_de_especializacion_individual =
+ identificador_de_objeto, " es ", articulo, identificador_de_objeto ;
+
+articulo = "un " | "una " ;
 
 oracion_de_instanciacion = oracion_de_instanciacion_objeto | oracion_de_instanciacion_proceso ;
 oracion_de_instanciacion_objeto = identificador_de_objeto, " es una instancia de ", identificador_de_objeto
@@ -1180,7 +1214,9 @@ oracion_de_plegado_proceso = identificador_de_proceso, " se pliega en ", opd_hij
 (* --- Oraciones de descomposición (in-zooming) --- *)
 
 oracion_de_descomposicion = oracion_de_descomposicion_en_diagrama
- | oracion_de_descomposicion_en_nuevo_diagrama ;
+ | oracion_de_descomposicion_en_nuevo_diagrama
+ | oracion_de_descomposicion_objeto_en_diagrama
+ | oracion_de_descomposicion_objeto_en_nuevo_diagrama ;
 
 oracion_de_descomposicion_en_diagrama = ( identificador_de_proceso, " se descompone en ",
  lista_de_procesos, ", en esa secuencia", [", así como ", lista_de_objetos_en_zoom] )

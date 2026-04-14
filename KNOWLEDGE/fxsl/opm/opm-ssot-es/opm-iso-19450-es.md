@@ -5,7 +5,7 @@ _manifest:
     created_by: kora/curator
     created_at: '2026-04-14'
     source: synthesis:opm-iso-19450(ISO/PAS-19450:2015),opm-applied-system-modeling,opm-canonical-example
-version: 1.9.0
+version: 1.10.0
 status: published
 tags:
 - opm
@@ -73,17 +73,17 @@ No hay referencias normativas externas.
 
 ## Glosario
 
-La ISO/PAS 19450 define 84 términos formales. A continuación se presentan en español técnico natural, manteniendo la semántica de la norma.
+La tabla siguiente consolida el glosario operativo de esta capa. Los términos ISO conservan su numeración original; cualquier adición editorial fuera de esa numeración se marca explícitamente.
 
-| # | Término | Definición |
+| ID | Término | Definición |
 |---|---|---|
-| 3.1 | Abstracción | Disminución de detalle y completitud para mejorar la comprensión |
+| 3.1 | Abstracción | Disminución del grado de detalle y de la completitud del modelo del sistema (3.8) para mejorar la comprensión |
 | 3.2 | Afectado | Transformado cuyo estado cambia por acción de un proceso; debe ser un objeto con estados |
 | 3.3 | Agente | Habilitador que es una persona o un grupo de personas |
 | 3.4 | Atributo | Objeto que caracteriza una cosa distinta de sí mismo |
-| 3.5 | Comportamiento | Transformación de objetos durante la ejecución del modelo |
-| 3.6 | Beneficiario | Interesado que recibe valor funcional de la operación del sistema |
-| 3.7 | Clase | Colección de cosas con la misma perseverancia, esencia, afiliación, rasgos y estados |
+| 3.5 | Comportamiento | Transformación de objetos (3.39) resultante de la ejecución de un modelo OPM compuesto por una colección de cosas (3.76) y enlaces (3.36) |
+| 3.6 | Beneficiario | Interesado (3.65) que recibe valor funcional de la operación (3.46) del sistema |
+| 3.7 | Clase | Colección de cosas (3.76) con los mismos valores de perseverancia (3.50), esencia y afiliación, y el mismo conjunto de rasgos (3.21) y estados (3.69) |
 | 3.8 | Completitud | Grado en que todos los detalles del sistema están especificados |
 | 3.9 | Enlace de condición | Enlace procedimental desde objeto o estado hacia proceso que expresa una restricción procedimental |
 | 3.10 | Consumido | Transformado que un proceso consume o elimina |
@@ -93,8 +93,8 @@ La ISO/PAS 19450 define 84 términos formales. A continuación se presentan en e
 | 3.14 | Atributo discriminante | Atributo cuyos valores identifican especializaciones |
 | 3.15 | Efecto | Cambio de estado de un objeto o de un valor de atributo; solo aplica a objetos con estados |
 | 3.16 | Elemento | Cosa o enlace |
-| 3.17 | Habilitador | Objeto que permite un proceso sin ser transformado |
-| 3.18 | Evento | Instante de creación, aparición o entrada en estado de un objeto; puede iniciar evaluación de precondición |
+| 3.17 | Habilitador | 〈proceso〉 Objeto (3.39) que permite un proceso (3.58) sin ser transformado por este |
+| 3.18 | Evento | 〈OPM〉 Instante de creación (o aparición) de un objeto (3.39), o entrada de un objeto a un estado (3.68) particular, cualquiera de los cuales puede iniciar la evaluación de una precondición (3.53) del proceso |
 | 3.19 | Enlace de evento | Enlace de control que representa un evento desde objeto o estado hacia proceso |
 | 3.20 | Exhibidor | Cosa caracterizada por un rasgo mediante exhibición-caracterización |
 | 3.21 | Rasgo | Atributo u operación |
@@ -136,7 +136,7 @@ La ISO/PAS 19450 define 84 términos formales. A continuación se presentan en e
 | 3.57 | Relación procedimental | Conexión dependiente del tiempo o de condiciones entre objeto o estado y proceso |
 | 3.58 | Proceso | Transformación de uno o más objetos |
 | 3.59 | Clase de proceso | Patrón para procesos con el mismo patrón de transformación |
-| 3.60 | Propiedad | Anotación de modelado que distingue elementos: cardinalidades, etiquetas y nombres de ruta |
+| 3.60 | Propiedad | Anotación de modelado que distingue elementos: cardinalidades, etiquetas y etiquetas de ruta |
 | 3.61 | Refinable | Cosa susceptible de refinamiento: todo, exhibidor, general o clase |
 | 3.62 | Refinador | Cosa que refina a un refinable: parte, rasgo, especialización o instancia |
 | 3.63 | Refinamiento | Elaboración que incrementa detalle y completitud |
@@ -160,11 +160,11 @@ La ISO/PAS 19450 define 84 términos formales. A continuación se presentan en e
 | 3.81 | Valor de atributo | Estado de un atributo |
 | 3.82 | Valor funcional | Beneficio derivado de la función de un sistema |
 | 3.83 | Todo | Agregado |
-| 3.84 | OPPL | **[Extensión no-ISO]** Capa de clasificación de oraciones sobre OPL usada para graduar la informatividad del modelo. Este término no forma parte de ISO/PAS 19450:2015; proviene de trabajo posterior de Dori. |
+| E1 | OPPL | **[Extensión no-ISO]** Capa de clasificación de oraciones sobre OPL usada para graduar la informatividad del modelo. Este término no forma parte de ISO/PAS 19450:2015; proviene de trabajo posterior de Dori. |
 
 Notas normativas clave:
 
-- **Propiedad vs atributo (3.60):** a diferencia de un atributo, el valor de una propiedad no cambia durante la simulación ni en la implementación operacional. Cardinalidades, etiquetas y nombres de ruta son propiedades.
+- **Propiedad vs atributo (3.60):** a diferencia de un atributo, el valor de una propiedad no cambia durante la simulación ni en la implementación operacional. Cardinalidades, etiquetas y etiquetas de ruta son propiedades.
 - **No hay estados de proceso (3.68):** OPM no usa estados de proceso como "iniciado", "en proceso" o "terminado". En su lugar se modelan subprocesos como *Iniciar*, *Procesar* o *Finalizar*.
 - **Toda cosa implica instancias (3.28/3.29):** al crear una cosa en el modelo conceptual, quien modela implica que al menos una instancia operacional de esa cosa, o de una especialización suya, puede existir durante la operación del sistema.
 
@@ -273,7 +273,7 @@ Un objeto es una cosa que existe o puede existir física o informacionalmente. S
 
 Un proceso transforma uno o más objetos creándolos, afectándolos o consumiéndolos. Tiene duración positiva. Se representa con una elipse.
 
-**Procesos persistentes (§7.2.1 NOTE 2):** ISO/PAS 19450 también reconoce casos límite en los que un proceso explícito mantiene un estado o condición relevante en el tiempo en vez de introducir un cambio neto observable. Estos casos no invalidan la ontología general de OPM, pero tampoco convierten el mantenimiento de estado en patrón por defecto. Deben reservarse para situaciones en que la temporalidad, el esfuerzo sostenido o la condición mantenida formen parte del hecho del modelo. Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*, *Permanecer*, *Esperar*, *Prolongar*, *Extender*, *Demorar*, *Ocupar*, *Persistir*, *Continuar*, *Soportar*, *Retener*. Para objetos biológicos, *Existir* implica *Vivir*.
+**Procesos persistentes (§7.2.1 NOTE 2):** ISO/PAS 19450 también reconoce casos límite en los que un proceso explícito mantiene un estado o condición relevante en el tiempo en vez de introducir un cambio neto observable. [Nota editorial] Estos casos no invalidan la ontología general de OPM, pero tampoco convierten el mantenimiento de estado en patrón por defecto. Deben reservarse para situaciones en que la temporalidad, el esfuerzo sostenido o la condición mantenida formen parte del hecho del modelo. Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*, *Permanecer*, *Esperar*, *Prolongar*, *Extender*, *Demorar*, *Ocupar*, *Persistir*, *Continuar*, *Soportar*, *Retener*. Para objetos biológicos, *Existir* implica *Vivir*.
 
 ### Prueba Objeto-Proceso
 
@@ -307,7 +307,7 @@ Un objeto con estados tiene un conjunto de estados permitidos. En cada instante,
 
 ### Representación
 
-El estado se representa como un rectángulo redondeado dentro del objeto. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §3 y §14.
+El estado se representa como un rectángulo redondeado dentro del objeto. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §3.2 y §14.
 
 ### Estados iniciales, por defecto y finales
 
@@ -366,7 +366,9 @@ Tres tipos básicos:
 | Resultado | El proceso crea o genera el objeto. | proceso → objeto |
 | Efecto | El proceso cambia el estado del objeto. | objeto ↔ proceso |
 
-**Restricción sobre modificadores de control del enlace de resultado:** no existen las variantes "evento de resultado" ni "condición de resultado". La razón es que el resultado no existe antes del proceso (es creado por él), por lo que no puede ser precondición (`c`) ni disparador (`e`). El consumo sí admite ambos modificadores porque el objeto consumido existe en el conjunto previo al proceso. Esta asimetría entre consumo y resultado es inherente a la ontología OPM: el consumo opera sobre el conjunto previo; el resultado opera sobre el conjunto posterior.
+**Restricción sobre modificadores de control del enlace de resultado:** no existen las variantes "evento de resultado" ni "condición de resultado". La razón es que el resultado no existe antes del proceso (es creado por él), por lo que no puede ser precondición (`c`) ni disparador (`e`) (ISO §8.2.3 NOTE 1 formula esta restricción como propiedad del *postprocess object set*; la explicación anterior es una clarificación editorial equivalente). El consumo sí admite ambos modificadores porque el objeto consumido existe en el conjunto previo al proceso. Esta asimetría entre consumo y resultado es inherente a la ontología OPM: el consumo opera sobre el conjunto previo; el resultado opera sobre el conjunto posterior.
+
+> **Nota ISO (§8.2.3):** La norma establece formalmente que el *postprocess object set* no puede contener precondiciones, lo que prohíbe los modificadores `c` y `e` en enlaces de resultado. Esta restricción es absoluta y no admite excepciones.
 
 ### Enlaces transformadores con estado especificado
 
@@ -423,11 +425,11 @@ La realización textual canónica de todos los eventos vive en `opm-opl-es` §6.
 
 ### Enlaces de condición
 
-Los enlaces de condición anotan un enlace con `c`. Introducen un **mecanismo de bypass**: si la precondición falla, el proceso se omite en vez de esperar.
+Los enlaces de condición anotan un enlace con `c`. Introducen un **mecanismo de omisión condicional** (*bypass*): si la precondición falla, el proceso se omite en vez de esperar.
 
 ### Enlaces transformadores condicionales
 
-Los transformadores condicionales introducen bypass: si falla la precondición, el proceso se omite en vez de esperar. Existen variantes de consumo y efecto, con y sin estado especificado.
+Los transformadores condicionales introducen omisión condicional: si falla la precondición, el proceso se omite en vez de esperar. Existen variantes de consumo y efecto, con y sin estado especificado.
 
 ### Enlaces habilitadores condicionales
 
@@ -435,7 +437,7 @@ Los habilitadores condicionales aplican el mismo patrón a agentes e instrumento
 
 ### Enlaces condicionales con estado especificado
 
-Las variantes state-specified heredan la misma semántica de bypass, restringida a un estado concreto.
+Las variantes con estado especificado heredan la misma semántica de omisión condicional, restringida a un estado concreto.
 
 La realización textual canónica de todas las condiciones vive en `opm-opl-es` §7. La realización gráfica vive en `opm-visual-es` §4.
 
@@ -465,7 +467,7 @@ La invocación modela que un proceso inicia otro. Semánticamente puede verse co
 
 **Invocación implícita** dentro de un proceso descompuesto: la terminación de un subproceso invoca al que se encuentra inmediatamente debajo. No hay enlace explícito; la altura relativa determina el orden. Cuando dos o más subprocesos tienen la misma altura superior, comienzan en paralelo y el último en terminar inicia al siguiente.
 
-**Invocación cíclica con bypass condicional:** los enlaces de invocación modelan comportamiento iterativo o cíclico. Después de cada ciclo, un nodo de decisión booleano evalúa si se vuelve a entrar o se continúa. En sistemas de refrigeración, por ejemplo, *Evaporar* invoca al proceso completo de refrigeración por compresión para expresar el ciclo continuo del refrigerante.
+**Invocación cíclica con omisión condicional:** los enlaces de invocación modelan comportamiento iterativo o cíclico. Después de cada ciclo, un nodo de decisión booleano evalúa si se vuelve a entrar o se continúa. En sistemas de refrigeración, por ejemplo, *Evaporar* invoca al proceso completo de refrigeración por compresión para expresar el ciclo continuo del refrigerante.
 
 La realización textual canónica vive en `opm-opl-es` §8.2. La realización gráfica vive en `opm-visual-es` §9.
 
@@ -475,7 +477,12 @@ La realización textual canónica vive en `opm-opl-es` §8.2. La realización gr
 
 ### Enlaces estructurales etiquetados
 
-La semántica la define quien modela mediante etiquetas textuales.
+Los **enlaces estructurales etiquetados** permiten expresar relaciones semánticas definidas por quien modela, no predefinidas por la ontología OPM. Se distinguen cuatro variantes (ISO §10.2):
+
+- **Unidireccional** (ISO 10.2.1): lleva una etiqueta textual que describe la relación desde la fuente al destino.
+- **Unidireccional sin etiqueta (null-tagged)** (ISO 10.2.2): la etiqueta por defecto es `se relaciona con` (*relates to*). Se usa cuando la relación existe pero no requiere calificación explícita.
+- **Bidireccional** (ISO 10.2.3): lleva etiquetas independientes en cada dirección.
+- **Recíproco** (ISO 10.2.4): la misma semántica aplica en ambas direcciones.
 
 ### Relaciones estructurales fundamentales
 
@@ -581,7 +588,7 @@ La realización visual de estos abanicos vive en `opm-visual-es` §5. La realiza
 
 ### Abanicos de enlaces con modificadores de control
 
-Los abanicos XOR y OR pueden combinarse con modificadores de evento y condición. La semántica sigue siendo la de selección exclusiva o inclusiva, enriquecida respectivamente con iniciación o bypass.
+Los abanicos XOR y OR pueden combinarse con modificadores de evento y condición. La semántica sigue siendo la de selección exclusiva o inclusiva, enriquecida respectivamente con iniciación o omisión condicional.
 
 ### Abanicos probabilísticos
 
@@ -625,6 +632,8 @@ Hay cuatro pares de despliegue-plegado, uno por relación fundamental: agregaci�
 
 **Despliegue en nuevo diagrama:** se crea OPD hijo; el refinable aparece con contorno grueso en ambos diagramas.
 
+**Descomposición síncrona (*in-zooming*) vs asíncrona (*unfolding*):** la descomposición de un proceso (in-zooming) es síncrona — el proceso padre espera a que todos los subprocesos completen antes de devolver control. En cambio, el despliegue (unfolding) de una relación estructural es asíncrono respecto del flujo de control del proceso: revela estructura estática sin implicar secuenciación temporal. Esta distinción es relevante al decidir si un refinamiento debe modelarse como descomposición (comportamiento secuenciado) o como despliegue (estructura revelada).
+
 **Diagramas de vista (model views):** OPDs que reúnen hechos provenientes de múltiples OPDs para explicar un fenómeno o enfatizar un aspecto concreto. Las herramientas OPM deben soportar la creación de vistas que filtren por criterios específicos, como:
 
 - el camino crítico para la duración mínima de ejecución del sistema;
@@ -663,7 +672,7 @@ Invariantes semánticos que esta capa conserva:
 
 - los enlaces de **consumo** y **resultado** no deben conectarse al contorno exterior de un proceso descompuesto;
 - los enlaces de agente e instrumento se distribuyen a todos los subprocesos;
-- los enlaces de evento desde objetos sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos;
+- los enlaces de evento desde objetos sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos — **excepción:** los enlaces de evento desde objetos **ambientales** pueden cruzar este límite; en tal caso la herramienta debería guiar a quien modela para definir cómo manejar la contingencia (véase §12 de la especificación visual);
 - si un enlace de condición hace que un subproceso se omita, el control pasa al siguiente.
 
 ---
@@ -759,6 +768,8 @@ La construcción detallada del SD, sus variantes por tipo de sistema, la secuenc
 
 ## Ingeniería de sistemas basada en modelos con OPM
 
+> [Contenido informativo — ISO/PAS 19450, Annex C]
+
 ### Visión general de MBSE
 
 La Ingeniería de Sistemas Basada en Modelos (MBSE) usa modelos conceptuales para diseñar y desarrollar sistemas complejos. Los enfoques tradicionales basados en texto carecen de lenguaje estandarizado y de verificación o validación formales. OPM resuelve eso mediante especificación formal bimodal.
@@ -801,6 +812,8 @@ La integración virtual combina modelos conceptuales de hardware con módulos de
 
 La gramática formal completa de OPL-ES deja de vivir en esta capa para eliminar solapamiento con la capa textual canónica. La EBNF española completa, incluyendo producción base, oraciones procedimentales, estructurales, condicionales y de gestión de contexto, vive ahora exclusivamente en [OPL-ES](urn:fxsl:kb:opm-opl-es), Apéndice A.
 
+> **Nota:** El Apéndice A de OPL-ES corresponde al Annex A de ISO/PAS 19450, que tiene carácter **normativo** (no informativo). Las producciones EBNF definidas en él son parte vinculante de la especificación.
+
 Este documento conserva solo el contrato semántico que la gramática textual debe preservar:
 
 - la dualidad OPD–OPL;
@@ -811,6 +824,8 @@ Este documento conserva solo el contrato semántico que la gramática textual de
 ---
 
 ## Metamodelo OPM
+
+> [Contenido informativo — ISO/PAS 19450, Annex C]
 
 La estructura del modelo OPM tiene dos jerarquías paralelas:
 
@@ -935,7 +950,7 @@ Ese modelo muestra:
 
 - descomposición multinivel;
 - transiciones de estado a través de la jerarquía;
-- enlaces condicionales y bypass;
+- enlaces condicionales y omisión condicional;
 - manejo de excepciones;
 - subprocesos paralelos;
 - cambio de rol entre instrumento y afectado según el nivel de abstracción.

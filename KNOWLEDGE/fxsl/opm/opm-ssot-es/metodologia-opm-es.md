@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
-version: "3.11.0"
+version: "3.12.0"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
@@ -119,9 +119,9 @@ El SD DEBE ser simple y claro, con mínimos detalles técnicos. Todos los intere
 
 ### 6.0 Asistente Agnóstico de Construcción del SD
 
-El asistente del SD es un **protocolo de interacción** agnóstico de herramienta. No presupone OPCloud, formularios, interfaz gráfica ni asistente basado en LLM. Cualquier implementación válida DEBE guiar al modelador por una secuencia ordenada de puntos de control y producir, al final, un SD semánticamente completo. ISO/PAS 19450 define un procedimiento guiado de nueve preguntas para la construcción del SD. Este asistente extiende ese procedimiento con etapas adicionales de clasificación (etapa 0), resolución de agencia (etapa 5) y verificación formal (etapa 11).
+El asistente del SD es un **protocolo de interacción** agnóstico de herramienta. No presupone OPCloud, formularios, interfaz gráfica ni asistente basado en modelo de lenguaje. Cualquier implementación válida DEBE guiar al modelador por una secuencia ordenada de puntos de control y producir, al final, un SD semánticamente completo. ISO/PAS 19450 define un procedimiento guiado de nueve preguntas para la construcción del SD. Este asistente extiende ese procedimiento con etapas adicionales de clasificación (etapa 0), resolución de agencia (etapa 5) y verificación formal (etapa 11).
 
-**Implementaciones válidas:** entrevista guiada, formulario estructurado, lista de verificación operativa, asistente conversacional, plugin de modelado o flujo de trabajo humano moderado.
+**Implementaciones válidas:** entrevista guiada, formulario estructurado, lista de verificación operativa, asistente conversacional, complemento de modelado o flujo de trabajo humano moderado.
 
 **Regla central:** cada etapa del asistente DEBE cerrar con un hecho del modelo explicitado y listo para representarse en OPD/OPL. El asistente NO termina cuando el usuario "entiende" el sistema; termina cuando los hechos mínimos del SD quedaron decididos.
 
@@ -164,7 +164,7 @@ El asistente del SD es un **protocolo de interacción** agnóstico de herramient
 11. ocurrencia del problema o no-aplicación
 12. verificación SD
 
-Una herramienta PUEDE dividir o fusionar etapas por conveniencia UX, pero NO DEBE perder ninguna de estas salidas semánticamente necesarias.
+Una herramienta PUEDE dividir o fusionar etapas por conveniencia de experiencia de uso, pero NO DEBE perder ninguna de estas salidas semánticamente necesarias.
 
 ### 6.1 Paso 1: Identificación del Proceso Principal
 
@@ -190,12 +190,12 @@ El grupo beneficiario DEBE representarse como objeto físico.
 
 ### 6.3 Paso 3: Atributo del Beneficiario y Estados
 
-El modelador DEBE definir un atributo informacional del beneficiario con exactamente dos estados:
+El modelador DEBERÍA definir un atributo informacional del beneficiario con exactamente dos estados (dos estados representan el escenario base — problemático y mejorado —, pero el modelador puede usar más estados si la situación lo requiere):
 
 - **Estado de entrada** (actual/problemático)
 - **Estado de salida** (deseado/mejorado)
 
-OPL-ES: `*Proceso Principal* cambia **Atributo del Beneficiario** de **Grupo Beneficiario** de \`entrada\` a \`salida\`.`
+OPL-ES: `*Proceso Principal* cambia **Atributo del Beneficiario** de **Grupo Beneficiario** de \`entrada\` a \`salida\`.` (cfr. opm-opl-es TS3)
 
 ### 6.4 Paso 4: Función Principal
 
@@ -205,11 +205,11 @@ Cuando el proceso transforma múltiples transformados, solo el objeto proveedor 
 
 ### 6.5 Paso 5: Identificación de Agentes
 
-El término "agente" y el enlace de agente (círculo negro relleno) DEBEN usarse exclusivamente para humanos o grupos humanos. Robots, agentes de software y sistemas IA DEBEN usar enlace de instrumento. Un robot PUEDE describirse como "agente de software embebido" en prosa, pero en el modelo DEBE usar enlace de instrumento.
+El término "agente" y el enlace de agente (círculo negro relleno) DEBEN usarse exclusivamente para humanos o grupos humanos [Semántica base: opm-iso-19450-es glosario 3.3]. Robots, agentes de software y sistemas IA DEBEN usar enlace de instrumento. Un robot PUEDE describirse como "agente de software embebido" en prosa, pero en el modelo DEBE usar enlace de instrumento.
 
 Cuando el beneficiario es también agente del proceso, el modelador DEBE elegir el enlace según la precedencia semántica del corpus: si el beneficiario es transformado, el enlace transformador prevalece sobre el habilitador; la identidad humana puede mantenerse en la figura y en la denominación, pero no mediante un segundo rol procedimental simultáneo para el mismo proceso.
 
-OPL-ES: `**Agente** maneja *Proceso Principal*.`
+OPL-ES: `**Agente** maneja *Proceso Principal*.` (cfr. opm-opl-es H1)
 
 **Doble rol en procesos distintos:** Un objeto PUEDE ser agente de un proceso y transformado de otro proceso distinto simultáneamente. Ejemplo: Learner es agente de MOOC Learning pero también transformado (Knowledge Level cambia). Esto es distinto de la colisión agente-afectado del mismo proceso, donde prevalece el rol transformador.
 
@@ -346,18 +346,20 @@ La especificación formal completa de distribución de enlaces vive en `opm-visu
 
 | Tipo de enlace | Contorno exterior | Migración por defecto |
 |-------------|---------------|-------------------|
-| Enlace de agente | PERMITIDO (distribuye a todos) | — |
-| Enlace de instrumento | PERMITIDO (distribuye a todos) | — |
-| Enlace de consumo | PROHIBIDO | Migra al primer subproceso (V-103); reasignar |
-| Enlace de resultado | PROHIBIDO | Migra al último subproceso (V-103); reasignar |
-| Enlace de evento sistémico | PROHIBIDO | — |
+| Enlace de agente | PERMITIDO (distribuye a todos) (V-36) | — |
+| Enlace de instrumento | PERMITIDO (distribuye a todos) (V-36) | — |
+| Enlace de consumo | PROHIBIDO (V-103) | Migra al primer subproceso (V-103); reasignar |
+| Enlace de resultado | PROHIBIDO (V-103) | Migra al último subproceso (V-103); reasignar |
+| Enlace de evento sistémico | PROHIBIDO (V-38) | PROHIBIDO para sistémicos; los eventos de objetos **ambientales** sí pueden cruzar el límite (ISO §14.2.2.4.2) |
+
+> **Nota — excepción ambiental:** La prohibición de enlaces de evento en contorno exterior aplica solo a eventos sistémicos. Los eventos originados en objetos ambientales (contorno discontinuo) pueden legítimamente cruzar el límite del proceso descompuesto para disparar subprocesos internos, conforme a ISO §14.2.2.4.2 y V-38.
 
 **Procedimiento de migración de enlaces** (al hacer descomposición):
 
-1. Al dibujar el primer subproceso P1 dentro del proceso descompuesto P, la herramienta DEBE mover automáticamente todos los enlaces procedimentales y de control de P a P1
-2. Al agregar subprocesos subsiguientes, el modelador DEBE migrar enlaces transformadores de vuelta a P o al subproceso apropiado
-3. Los enlaces habilitadores DEBEN migrarse a los subprocesos específicos donde el habilitador es necesario
-4. Los enlaces que aplican a todos los subprocesos DEBEN permanecer en el contorno del proceso padre
+1. Al dibujar el primer subproceso `P1` dentro del proceso descompuesto `P`, la herramienta DEBE adjuntar provisionalmente a `P1` los enlaces de **consumo** y los enlaces de **entrada** con estado especificado, y adjuntar provisionalmente al último subproceso los enlaces de **resultado** y los enlaces de **salida** con estado especificado, según `opm-visual-es` V-103
+2. Al agregar subprocesos subsiguientes, el modelador DEBE reasignar cada enlace transformador al subproceso específico que realmente consume, produce o completa el efecto
+3. Los enlaces habilitadores DEBEN distribuirse a los subprocesos concretos donde el habilitador es necesario; si aplican a todos, pueden permanecer al nivel del contorno conforme a la capa visual
+4. Ningún resumen operativo de esta subsección sustituye la regla visual canónica: ante conflicto, prevalece `opm-visual-es` §11–§12
 
 **Enlaces de invocación implícitos** (no visibles gráficamente, implícitos por disposición vertical):
 
@@ -371,7 +373,7 @@ Cuando dos o más subprocesos tienen sus bordes superiores a la misma altura, in
 
 **Antipatrón — Evento a subproceso no-primero:** El modelador NO DEBERÍA conectar un enlace de evento a un subproceso que no sea el primero (superior) dentro de una descomposición, excepto si ha verificado que todos los subprocesos anteriores pueden omitirse sin dejar precondiciones insatisfechas. Conectar a un subproceso intermedio salta los anteriores, potencialmente dejando el sistema en estado inconsistente.
 
-**Escisión de enlaces transformadores con estado especificado:** Cuando `*P* cambia **A** de \`s1\` a \`s2\`` se descompone en P1 y P2, el modelo queda subespecificado. Resolución:
+**Escisión de enlaces transformadores con estado especificado:** Cuando `*P* cambia **A** de \`s1\` a \`s2\`` se descompone en P1 y P2, el modelo queda subespecificado. Resolución (cfr. opm-opl-es TS3):
 
 1. `*P1* cambia **A** de \`s1\`.` (escisión de entrada — saca A de s1)
 2. `*P2* cambia **A** a \`s2\`.` (escisión de salida — pone A en s2)
@@ -400,12 +402,14 @@ Los estados DEBERÍAN suprimirse en el SD cuando no están conectados a ningún 
 
 ### 8.1 Cuatro Mecanismos de Refinamiento-Abstracción
 
-| Mecanismo | Refinamiento | Abstracción | Uso principal |
-|-----------|-------------|-------------|---------------|
-| Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos síncronos; objetos con partes espaciales |
-| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asíncronos; taxonomías; rasgos |
-| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual |
-| Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales |
+[Semántica heredada de opm-iso-19450-es §14. Los cuatro mecanismos constituyen la totalidad de operaciones de refinamiento-abstracción definidas por ISO/PAS 19450:2015 §14.1.]
+
+| Mecanismo | Refinamiento | Abstracción | Uso principal | Herencia ISO |
+|-----------|-------------|-------------|---------------|--------------|
+| Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos síncronos; objetos con partes espaciales | ISO §14.1.1 |
+| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asíncronos; taxonomías; rasgos | ISO §14.1.2 |
+| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual | ISO §14.1.3 |
+| Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales | ISO §14.1.4 |
 
 **Decisión descomposición vs despliegue para procesos síncronos:** Descomposición DEBERÍA preferirse porque: (a) requiere menos símbolos, (b) genera OPL más corto, (c) reemplaza eventos/enlaces de invocación explícitos con invocación implícita de la línea de tiempo. El despliegue de procesos síncronos es semánticamente equivalente pero más verboso.
 
@@ -493,7 +497,7 @@ El modelador DEBE verificar que la arquitectura del sistema (estructura + compor
 
 ### 8.7 Gobernanza del Modelo
 
-**[Extensión no-ISO.]** Las capacidades de gobernanza de esta subsección corresponden a funcionalidades de OPCloud y al trabajo posterior a ISO de Dori. OPPL no forma parte de ISO/PAS 19450:2015 (cfr. término 3.84 del glosario ISO).
+**[Extensión no-ISO.]** Las capacidades de gobernanza de esta subsección corresponden a funcionalidades de OPCloud y al trabajo posterior a ISO de Dori. OPPL no forma parte de ISO/PAS 19450:2015 (cfr. entrada `E1` del glosario base).
 
 **Aplicación de ontología:** Para consistencia terminológica en equipos, el modelador DEBERÍA configurar aplicación de ontología organizacional en tres niveles:
 
@@ -730,10 +734,10 @@ Un **escenario** (hilo de ejecución) es una ruta específica a través de la je
 
 | Enlace | Semántica | OPL-ES |
 |--------|-----------|--------|
-| Consumo condicional | Si consumido existe, proceso lo consume; si no, se omite | `*Proceso* ocurre si **Objeto** existe, en cuyo caso **Objeto** se consume, de lo contrario *Proceso* se omite.` |
-| Efecto condicional | Si afectado existe, proceso lo afecta; si no, se omite | `*Proceso* ocurre si **Objeto** existe, en cuyo caso *Proceso* afecta **Objeto**, de lo contrario *Proceso* se omite.` |
-| Agente condicional | Si agente existe, proceso opera con agente; si no, se omite | `**Agente** maneja *Proceso* si **Agente** existe; de lo contrario *Proceso* se omite.` |
-| Instrumento condicional | Si instrumento existe, proceso opera; si no, se omite | `*Proceso* ocurre si **Instrumento** existe; de lo contrario *Proceso* se omite.` |
+| Consumo condicional | Si consumido existe, proceso lo consume; si no, se omite | `*Proceso* ocurre si **Objeto** existe, en cuyo caso **Objeto** se consume, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es TS6) |
+| Efecto condicional | Si afectado existe, proceso lo afecta; si no, se omite | `*Proceso* ocurre si **Objeto** existe, en cuyo caso *Proceso* afecta **Objeto**, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es TS6) |
+| Agente condicional | Si agente existe, proceso opera con agente; si no, se omite | `**Agente** maneja *Proceso* si **Agente** existe, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es H1) |
+| Instrumento condicional | Si instrumento existe, proceso opera; si no, se omite | `*Proceso* ocurre si **Instrumento** existe, de lo contrario *Proceso* se omite.` |
 
 Cada uno de estos TIENE versión con estado especificado (proceso opera si objeto está en estado específico; si no, se omite).
 
@@ -855,13 +859,13 @@ Cuando se use trazabilidad de requisitos en OPCloud, el enlace estructural etiqu
 
 ### 13.3 Ejemplo Mínimo
 
-Ejemplo recuperable desde el tutorial:
+Ejemplo recuperable desde el tutorial, normalizado al registro español del corpus:
 
-- Door-Peephole: peephole como parte de door
-- Restricciones dimensionales: 56-64 inches
-- Componentes: lens + sleeves
-- Componente opcional: peephole cover
-- Función: one-way view for seeing visitors
+- Mirilla de puerta: la mirilla es parte de la puerta
+- Restricciones dimensionales: 56-64 pulgadas
+- Componentes: lente y manguitos
+- Componente opcional: cubierta de mirilla
+- Función: vista unidireccional para ver visitantes
 
 ### 13.4 Análisis de Vacíos y Generación Asistida
 
@@ -904,7 +908,7 @@ Reglas operativas:
 
 ## 15 Invariantes
 
-Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada. La columna **Fuente** distingue el origen de cada invariante: **ISO** para reglas directamente trazables a ISO/PAS 19450, **Dori** para reglas del libro, **OPCloud** para reglas de herramienta, y **Ext** para extensiones de esta metodología.
+Los invariantes se verifican operativamente en §16, donde se organizan por nivel con severidad asignada. Esta sección es un **índice compilado de verificación**, no una segunda fuente normativa: cada fila hereda su autoridad de la columna **Fuente**. La columna **Fuente** distingue el origen de cada invariante: **ISO** para reglas directamente trazables a ISO/PAS 19450, **Dori** para reglas del libro, **OPCloud** para reglas de herramienta, y **Ext** para extensiones de esta metodología.
 
 | Invariante | Aplicación | Fuente |
 |-----------|-------------|--------|
@@ -926,7 +930,7 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Habilitadores y afectados pertenecen a Pre(P) ∩ Post(P); consumidos solo a Pre(P); resultantes solo a Post(P) | manual | ISO |
 | Probabilidades en abanico XOR suman exactamente 1 | automático | ISO |
 | Subprocesos paralelos tienen borde superior de elipse a la misma altura | manual | ISO |
-| Enlaces escindidos con modificador de control NO están permitidos | automático | Ext |
+| Enlaces escindidos con modificador de control NO están permitidos | automático | ISO |
 | Arquitectura del sistema produce al menos una capacidad emergente | manual | Ext |
 | Los enlaces NO DEBEN cruzar áreas ocupadas por cosas | manual | Dori |
 | Las cosas NO DEBEN ocultarse mutuamente (excepción: plegado en puertos) | manual | Dori |

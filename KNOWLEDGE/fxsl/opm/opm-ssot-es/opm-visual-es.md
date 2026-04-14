@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opcloud-tutorial-videos"
-version: "1.7.0"
+version: "1.8.0"
 status: published
 tags: [opm, iso-19450, especificacion-visual, gramatica-grafica, opd]
 lang: es
@@ -18,7 +18,7 @@ extensions:
 
 # Especificación formal de la gramática visual OPM
 
-Reglas completas para construir y evaluar cualquier OPD (Diagrama Objeto‑Proceso, Object-Process Diagram) conforme a ISO/PAS 19450. Este documento opera a nivel de **tipo**, no de instancia: define las primitivas, composiciones válidas, restricciones y reglas de precedencia que gobiernan la capa gráfica de OPM.
+Reglas completas para construir y evaluar cualquier OPD (Diagrama Objeto‑Proceso, Object-Process Diagram) conforme a ISO/PAS 19450. Este documento opera primariamente a nivel de **tipo y representación**: define las primitivas, composiciones válidas, restricciones y reglas de precedencia que gobiernan la capa gráfica de OPM, e incluye las convenciones visuales de ejecución, simulación e instanciación cuando afectan la forma visible del OPD.
 
 Fuente normativa: `urn:fxsl:kb:opm-iso-19450-es`.
 
@@ -39,6 +39,8 @@ Este documento **no** define:
 - el procedimiento de construcción del modelo, heurísticas de decisión y gobernanza, que pertenecen a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 Regla editorial: cuando una regla visual requiera mencionar nombres, plantillas OPL o secuencias de modelado, este documento solo remite a la capa propietaria de ese contenido.
+
+Salvo marca explícita `[Extensión OPCloud]` o `[Nota editorial]`, las reglas `V-*` de esta capa heredan su semántica de [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es); aquí se fija su realización gráfica, su validación visual o su comportamiento representacional entre OPDs.
 
 Convención de numeración: la numeración `V-*` es **estable por familia conceptual y por historia editorial**, no por orden lineal de aparición en el archivo. Se conserva así para no romper referencias cruzadas del corpus ni citas externas.
 
@@ -207,7 +209,7 @@ Los valores de un atributo son estados del objeto-atributo. Pueden expresarse co
 
 **Regla V-8**: Un enlace de resultado hacia un objeto con estado inicial debe conectar al rectángulo del objeto, nunca directamente al estado inicial.
 
-**Regla V-115**: Como regla general, todo proceso explícito DEBE transformar (crear, consumir o afectar) al menos un objeto. Los enlaces habilitadores (agente, instrumento) no satisfacen este requisito. Excepción: los procesos persistentes reconocidos por la capa ISO son válidos cuando el hecho del modelo consiste precisamente en mantener una condición o estado relevante en el tiempo.
+**Regla V-115**: Como regla general, todo proceso explícito DEBE transformar (crear, consumir o afectar) al menos un objeto. Los enlaces habilitadores (agente, instrumento) no satisfacen este requisito. Excepción: los procesos persistentes reconocidos por la capa ISO son válidos cuando el hecho del modelo consiste precisamente en mantener una condición o estado relevante en el tiempo. [Semántica heredada de `opm-iso-19450-es` §9; aquí se fija la restricción mínima de conectividad transformadora.]
 
 ### 3.2 Enlaces transformadores con estado especificado
 
@@ -252,8 +254,8 @@ El modificador `e` se coloca sobre cualquier enlace transformador o habilitador,
 |---|---|---|
 | Consumo | Evento de consumo | Marca `e` sobre el enlace, cerca del proceso |
 | Efecto | Evento de efecto | Marca `e` sobre el enlace bidireccional, cerca del proceso |
-| Agente | Evento de agente | Marca `e` sobre el enlace con lollipop negro |
-| Instrumento | Evento de instrumento | Marca `e` sobre el enlace con lollipop blanco |
+| Agente | Evento de agente | Marca `e` sobre el enlace con piruleta negra |
+| Instrumento | Evento de instrumento | Marca `e` sobre el enlace con piruleta blanca |
 
 **Regla V-12**: El enlace de evento es el segmento desde el objeto/estado hacia el proceso. El segmento desde el proceso hacia el objeto (consumo, efecto) NO es un enlace de evento.
 
@@ -261,14 +263,14 @@ El modificador `e` se coloca sobre cualquier enlace transformador o habilitador,
 
 ### 4.2 Condición (`c`)
 
-El modificador `c` introduce un mecanismo de bypass: si la precondición falla, el proceso se omite y el control pasa al siguiente.
+El modificador `c` introduce un mecanismo de omisión condicional (*bypass*): si la precondición falla, el proceso se omite y el control pasa al siguiente.
 
 | Enlace base | + condición = | Geometría adicional |
 |---|---|---|
 | Consumo | Consumo condicional | Marca `c` sobre el enlace |
 | Efecto | Efecto condicional | Marca `c` sobre el enlace bidireccional |
-| Agente | Agente condicional | Marca `c` sobre el enlace con lollipop negro |
-| Instrumento | Instrumento condicional | Marca `c` sobre el enlace con lollipop blanco |
+| Agente | Agente condicional | Marca `c` sobre el enlace con piruleta negra |
+| Instrumento | Instrumento condicional | Marca `c` sobre el enlace con piruleta blanca |
 
 ### 4.3 Composición: estado especificado + modificador de control
 
@@ -401,7 +403,7 @@ La multiplicidad soporta:
 | Bidireccional | Línea con arpones en ambos extremos | Dos etiquetas (ida y vuelta) |
 | Recíproco | Línea con arpones | Una sola etiqueta o sin etiqueta |
 
-**Regla V-56**: Un enlace bidireccional cuyos dos tags son idénticos es semánticamente equivalente a un enlace recíproco con ese mismo tag. Ambas representaciones son intercambiables.
+**Regla V-56**: Un enlace bidireccional cuyas dos etiquetas son idénticas es semánticamente equivalente a un enlace recíproco con esa misma etiqueta. Ambas representaciones son intercambiables.
 
 ### 8.2 Relaciones estructurales fundamentales
 
@@ -471,9 +473,9 @@ Tres familias por posición de la especificación de estado:
 
 Dentro de un proceso descompuesto, la invocación se determina por posición vertical:
 
-**Regla V-31**: La terminación de un subproceso invoca al subproceso inmediatamente inferior (cuyo punto superior de elipse está debajo). No hay enlace explícito.
+**Regla V-31**: La terminación de un subproceso invoca al subproceso inmediatamente inferior (cuyo punto superior de elipse está debajo). No hay enlace explícito. [Semántica heredada de `opm-iso-19450-es` §14; aquí se fija la regla de invocación posicional.]
 
-**Regla V-32**: Subprocesos cuyos puntos superiores de elipse están a la misma altura se ejecutan en paralelo. El último en terminar inicia al siguiente nivel.
+**Regla V-32**: Subprocesos cuyos puntos superiores de elipse están a la misma altura se ejecutan en paralelo. El último en terminar inicia al siguiente nivel. [Semántica heredada de `opm-iso-19450-es` §14; aquí se fija la regla de paralelismo posicional.]
 
 **Regla V-77**: La invocación implícita por posición vertical (V-31, V-32) solo aplica a descomposición de proceso (`process in-zooming`). En descomposición de objeto no hay orden temporal entre componentes (ISO §14 lines 513, 738-745).
 
@@ -605,7 +607,7 @@ Las siguientes propiedades son inmutables a través de todos los niveles de refi
 
 ### 11.1 Regla general
 
-**Regla V-36**: Los enlaces conectados al contorno exterior de un proceso descompuesto se distribuyen a todos los subprocesos. Los enlaces de agente e instrumento conectados al proceso padre aplican a todos los subprocesos.
+**Regla V-36**: Los enlaces conectados al contorno exterior de un proceso descompuesto se distribuyen a todos los subprocesos. Los enlaces de agente e instrumento conectados al proceso padre aplican a todos los subprocesos. [Semántica heredada de `opm-iso-19450-es` §14.2.2.4; aquí se fija la distribución gráfica de enlaces en descomposición.]
 
 ### 11.2 Distribución por tipo de enlace
 
@@ -619,9 +621,9 @@ Cuando un proceso se descompone en subprocesos, los enlaces procedimentales del 
 | Efecto (básico, sin estado especificado) | **Todos** los subprocesos | Afecta a todos; pero ver V-40 para efecto con estado especificado (enlace escindido) |
 | Estructural (agregación, etc.) | **No se distribuye** — permanece en contenedor | Invariante temporal (ISO §12) |
 
-**Regla V-103**: Los enlaces de consumo e input se distribuyen al primer subproceso en orden de posición vertical (Y mínimo). Los de resultado y output, al último subproceso (Y máximo).
+**Regla V-103**: Los enlaces de consumo e input se distribuyen al primer subproceso en orden de posición vertical (Y mínimo). Los de resultado y output, al último subproceso (Y máximo). [Semántica heredada de `opm-iso-19450-es` §14.2.2; aquí se fija la distribución posicional de enlaces transformadores.]
 
-**Regla V-104**: Los enlaces de efecto **básico** (sin estado especificado) se distribuyen a todos los subprocesos, al igual que los de agente e instrumento. Cuando el efecto tiene estado especificado (entrada-salida), la distribución se realiza mediante **enlace escindido** (split state-specified effect link, ISO §14.2.2.4.3): un subproceso temprano saca del estado de entrada y un subproceso tardío pone en el estado de salida (cfr. V-40).
+**Regla V-104**: Los enlaces de efecto **básico** (sin estado especificado) se distribuyen a todos los subprocesos, al igual que los de agente e instrumento (la distribución a todos los subprocesos es idéntica en resultado pero distinta en razón: el efecto hereda la afectación del padre, mientras que agente e instrumento aplican individualmente a cada subproceso). Cuando el efecto tiene estado especificado (entrada-salida), la distribución se realiza mediante **enlace escindido** (split state-specified effect link, ISO §14.2.2.4.3): un subproceso temprano saca del estado de entrada y un subproceso tardío pone en el estado de salida (cfr. V-40). [Semántica heredada de `opm-iso-19450-es` §14.2.2; aquí se fija la distribución gráfica de enlaces de efecto.]
 
 **Regla V-105**: Los enlaces estructurales NO se distribuyen — permanecen asociados al contenedor.
 
@@ -631,13 +633,13 @@ Cuando un proceso se descompone en subprocesos, los enlaces procedimentales del 
 
 ### 11.3 Restricciones de distribución
 
-**Regla V-37**: Los enlaces de consumo y resultado NO deben conectarse al contorno exterior de un proceso descompuesto. Deben conectarse directamente al subproceso específico que consume o produce.
+**Regla V-37**: Los enlaces de consumo y resultado NO deben conectarse al contorno exterior de un proceso descompuesto. Deben conectarse directamente al subproceso específico que consume o produce. [Semántica heredada de `opm-iso-19450-es` §14; aquí se fija la restricción de frontera para enlaces transformadores.]
 
-**Regla V-38**: Los enlaces de evento desde objetos sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos.
+**Regla V-38**: Los enlaces de evento desde objetos sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos. [Semántica heredada de `opm-iso-19450-es` §14.2.2.4.2; aquí se fija la restricción de cruce de frontera para eventos sistémicos.]
 
 **Regla V-108**: Los enlaces de evento desde objetos **ambientales** PUEDEN cruzar el límite de la descomposición si se modela contingencia explícita (ISO §14.2.2.4.2). Esta es una excepción a V-38.
 
-**Regla V-39**: Si un enlace de condición causa que un subproceso se omita, el control pasa al siguiente subproceso en la secuencia.
+**Regla V-39**: Si un enlace de condición causa que un subproceso se omita, el control pasa al siguiente subproceso en la secuencia. [Semántica heredada de `opm-iso-19450-es` §14; aquí se fija el comportamiento visual de omisión condicional.]
 
 **Regla V-109**: Las restricciones de frontera (V-37, V-38, V-39) aplican solo a descomposición, no a despliegue.
 
@@ -655,17 +657,17 @@ Cuando un enlace de efecto entrada-salida (`P cambia A de s1 a s2`) se descompon
 - El subproceso **temprano** recibe la flecha de entrada (saca al objeto de s1).
 - El subproceso **tardío** recibe la flecha de salida (coloca al objeto en s2).
 
-**Regla V-41**: No existen versiones con modificador de control de los enlaces escindidos.
+**Regla V-41**: No existen versiones con modificador de control de los enlaces escindidos. [Semántica heredada de `opm-iso-19450-es` §14; aquí se fija la restricción gráfica.]
 
 **Regla V-110**: La escisión es el **único** mecanismo para resolver la subespecificación de enlaces de efecto entrada-salida en descomposición. No hay alternativa (ISO §9 lines 762-770).
 
 ### 12.3 Cambio de rol con la abstracción
 
-**Regla V-42**: Un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido si a nivel abstracto los estados inicial y final del objeto coinciden.
+**Regla V-42**: Un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido si a nivel abstracto los estados inicial y final del objeto coinciden. [Semántica heredada de `opm-iso-19450-es` §14.2.2.4.3; aquí se fija la validación gráfica del cambio de rol entre niveles.]
 
-**Regla V-111**: En el OPD hijo (nivel detallado), el objeto con cambio de rol muestra estados intermedios que no son visibles en el OPD padre. Ejemplo canónico (ISO line 1289): `Dishwasher` es instrumento en SD (sin cambio de estado aparente) y afectado en SD1 (`empty → loaded → empty`). Es válido porque `empty = empty` entre niveles.
+**Regla V-111**: En el OPD hijo (nivel detallado), el objeto con cambio de rol muestra estados intermedios que no son visibles en el OPD padre. Ejemplo canónico (ISO line 1289): `Dishwasher` es instrumento en SD (sin cambio de estado aparente) y afectado en SD1 (`empty → loaded → empty`). Es válido porque `empty = empty` entre niveles. [Semántica heredada de `opm-iso-19450-es` §14.2.2.4.3; aquí se fija la visualización de estados intermedios en cambio de rol.]
 
-**Regla V-112**: El cambio de rol solo aplica a descomposición, no a despliegue.
+**Regla V-112**: El cambio de rol solo aplica a descomposición, no a despliegue. [Semántica heredada de `opm-iso-19450-es` §14.2.2.4.3; aquí se fija la restricción de alcance del cambio de rol.]
 
 ---
 
@@ -681,11 +683,11 @@ Al recomponer subprocesos en un proceso padre, si dos subprocesos tienen enlaces
 | **Resultado** | Resultado | **Inválido** | Efecto |
 | **Consumo** | Consumo | Efecto | **Inválido** |
 
-**Regla V-43**: Resultado + consumo sobre el mismo objeto es inválido (no se puede crear y destruir como el mismo hecho abstracto). Resultado + resultado y consumo + consumo también son inválidos.
+**Regla V-43**: Resultado + consumo sobre el mismo objeto es inválido (no se puede crear y destruir como el mismo hecho abstracto). Resultado + resultado y consumo + consumo también son inválidos. [Semántica heredada de `opm-iso-19450-es` §14.2.4; aquí se fija la restricción de validación gráfica de conflicto de enlaces.]
 
 ### 13.2 Precedencia entre transformadores y habilitadores
 
-**Regla V-44**: Un enlace transformador siempre prevalece sobre un enlace habilitador al recomponer.
+**Regla V-44**: Un enlace transformador siempre prevalece sobre un enlace habilitador al recomponer. [Semántica heredada de `opm-iso-19450-es` §14.2.4; aquí se fija la regla de precedencia gráfica.]
 
 ### 13.3 Orden principal de precedencia
 
@@ -792,7 +794,7 @@ En la capa visual solo aplican las siguientes reglas de rotulado:
 
 **Regla V-122**: Una cosa puede tener un **alias** (abreviatura) que se muestra entre paréntesis o llaves junto al nombre: p. ej., `Turbojet Engine System (tes)`, `Pressure {p}`. El alias es un nombre corto para referencia compacta en OPL, expresiones computacionales y fórmulas de multiplicidad.
 
-**Regla V-48**: [Eliminada — contenido idéntico a V-4. La restricción de contención de estados se define una sola vez en V-4.]
+**Regla V-48**: [Eliminada — contenido absorbido por V-4. Toda referencia externa a V-48 debe redirigirse a V-4.]
 
 **Regla V-49**: El objeto consumido desaparece al inicio del proceso, no al final. [Semántica heredada de `opm-iso-19450-es` §9; aquí se fija la temporalidad de la animación visual.]
 
@@ -854,7 +856,7 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 
 ### 18.6 Nota sobre Tabla 26 de ISO/PAS 19450
 
-> La Tabla 26 del estándar original no fue capturada en la extracción de imágenes disponible. Dada su posición entre la Tabla 25 (enlaces escindidos) y la Tabla 27 (precedencia de transformadores), probablemente contenía un resumen de precedencia transformador-habilitador, cuyo contenido ya está formalizado en las reglas V-43 y V-44 de la sección 13.
+> [Conjetura editorial] La Tabla 26 del estándar original no fue capturada en la extracción de imágenes disponible. Dada su posición entre la Tabla 25 (enlaces escindidos) y la Tabla 27 (precedencia de transformadores), probablemente contenía un resumen de precedencia transformador-habilitador, cuyo contenido ya está formalizado en las reglas V-43 y V-44 de la sección 13.
 
 ---
 
@@ -917,7 +919,7 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 | V-53 | Ejecución: elipse rellena en color sólido |
 | V-54 | Estado actual: resaltado |
 | V-55 | Tiempo fluye arriba → abajo en descomposición |
-| V-56 | Bidireccional con tags iguales equivale a recíproco |
+| V-56 | Bidireccional con etiquetas iguales equivale a recíproco |
 | V-57 | Partes de agregación pueden transformarse independientemente del todo |
 | V-58 | Instancias muestran valores concretos; clases muestran rangos |
 | V-59 | Activación asincrónica por eventos: subprocesos independientes |
