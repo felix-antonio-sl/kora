@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opcloud-tutorial-videos"
-version: "1.6.0"
+version: "1.7.0"
 status: published
 tags: [opm, iso-19450, especificacion-visual, gramatica-grafica, opd]
 lang: es
@@ -18,7 +18,7 @@ extensions:
 
 # Especificación formal de la gramática visual OPM
 
-Reglas completas para construir y evaluar cualquier OPD (Object-Process Diagram) conforme a ISO/PAS 19450. Este documento opera a nivel de **tipo**, no de instancia: define las primitivas, composiciones válidas, restricciones y reglas de precedencia que gobiernan la capa gráfica de OPM.
+Reglas completas para construir y evaluar cualquier OPD (Diagrama Objeto‑Proceso, Object-Process Diagram) conforme a ISO/PAS 19450. Este documento opera a nivel de **tipo**, no de instancia: define las primitivas, composiciones válidas, restricciones y reglas de precedencia que gobiernan la capa gráfica de OPM.
 
 Fuente normativa: `urn:fxsl:kb:opm-iso-19450-es`.
 
@@ -30,15 +30,17 @@ Este documento es la **capa gráfica canónica** del corpus OPM en español. Su 
 
 - fijar símbolos, contornos, decoraciones y marcas gráficas;
 - definir composición visual válida de enlaces, operadores, estados y refinamientos;
-- formalizar reglas de precedencia, distribución y comportamiento visual cross-OPD.
+- formalizar reglas de precedencia, distribución y comportamiento visual entre OPDs.
 
 Este documento **no** define:
 
 - la semántica base de OPM, que pertenece a [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es);
 - la realización textual canónica, que pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es);
-- el procedimiento de construcción del modelo, heurísticas de decisión y gobernanza, que pertenecen a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+- el procedimiento de construcción del modelo, heurísticas de decisión y gobernanza, que pertenecen a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
-Regla editorial: cuando una regla visual requiera mencionar nombres, plantillas OPL o secuencias de modelamiento, este documento solo remite a la capa propietaria de ese contenido.
+Regla editorial: cuando una regla visual requiera mencionar nombres, plantillas OPL o secuencias de modelado, este documento solo remite a la capa propietaria de ese contenido.
+
+Convención de numeración: la numeración `V-*` es **estable por familia conceptual y por historia editorial**, no por orden lineal de aparición en el archivo. Se conserva así para no romper referencias cruzadas del corpus ni citas externas.
 
 ---
 
@@ -52,7 +54,7 @@ La capa visual de OPM se construye con un vocabulario cerrado de formas, contorn
 |---|---|
 | Rectángulo | Objeto |
 | Elipse | Proceso |
-| Rectángulo redondeado (EN: routableangle) | Estado (siempre contenido dentro de un objeto) |
+| Rectángulo redondeado (EN: rountangle, ISO §7.3.5.2) | Estado (siempre contenido dentro de un objeto) |
 
 ### 1.1b Esquema de colores canónico (informativo)
 
@@ -75,9 +77,9 @@ Los colores no son normativos en ISO/PAS 19450 (la semántica se codifica por fo
 | Continuo (sólido) | Afiliación sistémica — la cosa pertenece al sistema |
 | Discontinuo (punteado) | Afiliación ambiental — la cosa pertenece al entorno |
 
-**Regla V-69**: El contorno grueso (indicador de refinamiento) aplica tanto a in-zoom como a unfold — ambos tipos de refinamiento en nuevo diagrama producen contorno grueso en el refinable (ISO §4, §14 line 262).
+**Regla V-69**: El contorno grueso (indicador de refinamiento) aplica tanto a la descomposición en nuevo diagrama (`in-zooming`) como al despliegue en nuevo diagrama (`unfolding`) — ambos tipos de refinamiento producen contorno grueso en el refinable (ISO §4, §14 line 262).
 
-**Regla V-70**: El despliegue en el mismo diagrama (in-diagram unfolding) NO produce contorno grueso, porque el refinable y los refinadores comparten OPD.
+**Regla V-70**: El despliegue en el mismo diagrama (despliegue intradiagrama) NO produce contorno grueso, porque el refinable y los refinadores comparten OPD.
 
 **Regla V-71**: El tipo de contorno (sólido o punteado) persiste en todos los niveles de refinamiento. Un objeto ambiental mantiene contorno discontinuo en el OPD padre y en todos los OPDs hijo donde aparezca como externo (ISO §4 line 155).
 
@@ -125,8 +127,8 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 |---|---|
 | `e` | Modificador de evento — el objeto inicia el proceso |
 | `c` | Modificador de condición — el proceso se omite si la precondición falla |
-| `/` | Excepción por sobretiempo (overtime) |
-| `//` | Excepción por subtiempo (undertime) |
+| `/` | Excepción por sobretiempo |
+| `//` | Excepción por subtiempo |
 | `Pr=p` | Probabilidad del enlace dentro de un abanico probabilístico |
 | Texto itálico sobre el eje | Etiqueta (tag) de enlace estructural |
 | Texto sobre enlace procedimental | Etiqueta de ruta (path label) |
@@ -153,11 +155,11 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
 ### 1.9 Estructura atómica del OPD
 
-**Regla V-60**: Todo OPD se compone de Constructos OPD. Un Constructo OPD consiste de un Conjunto de Cosas (2 o más cosas) y un Conjunto de Enlaces (1 o más enlaces). El átomo mínimo es el Constructo Básico: exactamente 1 enlace conectando exactamente 2 cosas. Un Constructo Estructural Básico conecta 2 objetos mediante 1 enlace estructural. Un Constructo Procedimental Básico conecta 1 proceso y 1 objeto mediante 1 enlace procedimental.
+**Regla V-60**: Todo OPD se compone de constructos OPD. Un constructo OPD consiste de un conjunto de cosas (2 o más cosas) y un conjunto de enlaces (1 o más enlaces). El átomo mínimo es el constructo básico: exactamente 1 enlace conectando exactamente 2 cosas. Un constructo estructural básico conecta 2 objetos mediante 1 enlace estructural. Un constructo procedimental básico conecta 1 proceso y 1 objeto mediante 1 enlace procedimental.
 
 ### 1.10 Anatomía formal de un enlace
 
-**Regla V-61**: Todo enlace consiste de tres componentes: Origen (cosa o estado de origen), Destino (cosa o estado de destino) y Conector. El Conector se compone de: Línea (la línea visible), Símbolo (decoración de extremo) y opcionalmente Etiqueta (etiqueta textual) y Etiqueta de Ruta. Origen y Destino son Cosas Enlazadas; cada una exhibe Símbolo (decoración visual) y Multiplicidad (cardinalidad).
+**Regla V-61**: Todo enlace consiste de tres componentes: origen (cosa o estado de origen), destino (cosa o estado de destino) y conector. El conector se compone de línea (la línea visible), símbolo (decoración de extremo) y, opcionalmente, etiqueta textual y etiqueta de ruta. Origen y destino son cosas enlazadas; cada una exhibe símbolo (decoración visual) y multiplicidad (cardinalidad).
 
 ---
 
@@ -165,7 +167,7 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
 ### 2.1 Representación
 
-Los estados se representan como rectángulos redondeados (EN: routableangles) contenidos dentro del rectángulo del objeto propietario, dispuestos horizontalmente en la zona inferior.
+Los estados se representan como rectángulos redondeados (EN: rountangles, ISO §7.3.5.2) contenidos dentro del rectángulo del objeto propietario, dispuestos horizontalmente en la zona inferior.
 
 **Regla V-4**: Un estado no existe fuera de su objeto propietario. No hay estados flotantes. [Semántica heredada de `opm-iso-19450-es` término 3.68; aquí se fija la restricción de contención visual.]
 
@@ -255,7 +257,7 @@ El modificador `e` se coloca sobre cualquier enlace transformador o habilitador,
 
 **Regla V-12**: El enlace de evento es el segmento desde el objeto/estado hacia el proceso. El segmento desde el proceso hacia el objeto (consumo, efecto) NO es un enlace de evento.
 
-**Regla V-13**: Un evento se pierde tras la evaluación, incluso si la precondición falla.
+**Regla V-13**: Un evento se pierde tras la evaluación, incluso si la precondición falla. [Semántica heredada de `opm-iso-19450-es` §8.2.1 (ISO §8.2.1): "the event shall cease to exist".]
 
 ### 4.2 Condición (`c`)
 
@@ -430,7 +432,7 @@ Las especializaciones heredan del general: todas las partes, todos los rasgos, t
 
 **Regla V-29**: Un atributo discriminante restringe los valores válidos de un atributo para cada especialización. Cada especialización exhibe exactamente un valor del atributo discriminante.
 
-**Regla V-72**: La herencia aplica a través de niveles de refinamiento (unfold). Cuando un general se despliega en especializaciones, cada especialización hereda automáticamente los enlaces del general en todos los OPDs donde participe (ISO §12 line 552).
+**Regla V-72**: La herencia aplica a través de niveles de refinamiento por despliegue. Cuando un general se despliega en especializaciones, cada especialización hereda automáticamente los enlaces del general en todos los OPDs donde participe (ISO §12 line 552).
 
 **Regla V-73**: Los enlaces heredados no son visibles explícitamente en el OPD, pero aplican semánticamente. No se dibujan líneas para enlaces heredados; su efecto se infiere del árbol de generalización-especialización.
 
@@ -473,9 +475,9 @@ Dentro de un proceso descompuesto, la invocación se determina por posición ver
 
 **Regla V-32**: Subprocesos cuyos puntos superiores de elipse están a la misma altura se ejecutan en paralelo. El último en terminar inicia al siguiente nivel.
 
-**Regla V-77**: La invocación implícita por posición vertical (V-31, V-32) solo aplica a descomposición de proceso (process in-zoom). En descomposición de objeto no hay orden temporal entre componentes (ISO §14 lines 513, 738-745).
+**Regla V-77**: La invocación implícita por posición vertical (V-31, V-32) solo aplica a descomposición de proceso (`process in-zooming`). En descomposición de objeto no hay orden temporal entre componentes (ISO §14 lines 513, 738-745).
 
-**Regla V-78**: En descomposición de objeto, la posición espacial de los componentes codifica layout semántico — ubicación física (componentes en un room), organización lógica (secciones de un artículo, campos de un record) — pero NO invocación temporal (ISO line 935).
+**Regla V-78**: En descomposición de objeto, la posición espacial de los componentes codifica disposición semántica — ubicación física (componentes en una sala), organización lógica (secciones de un artículo, campos de un registro) — pero NO invocación temporal (ISO line 935).
 
 ### 9.3 Activación asincrónica por eventos
 
@@ -490,34 +492,34 @@ Dentro de un proceso descompuesto, la invocación se determina por posición ver
 | Par | Refinamiento | Abstracción |
 |---|---|---|
 | Estados | Expresión de estados | Supresión de estados |
-| Estructura | Despliegue (unfolding) | Plegado (folding) |
+| Estructura | Despliegue (`unfolding`) | Plegado (`folding`) |
 | Comportamiento | Descomposición | Recomposición |
 
 ### 10.2 Despliegue en el mismo diagrama
 
 El refinable y los refinadores comparten OPD, unidos por enlaces estructurales fundamentales.
 
-### 10.3 Despliegue en nuevo diagrama (in-zooming)
+### 10.3 Descomposición en nuevo diagrama (`in-zooming`)
 
 **Regla V-33**: El refinable aparece con contorno grueso tanto en el OPD padre como en el OPD hijo.
 
-**Regla V-62**: El in-zooming se ejecuta en dos fases: (1) Mostrar Contenido — muestra el contenido interno del refinable, produciendo un OPD semidescompuesto; (2) Refinar Enlaces — refina los enlaces del OPD padre distribuyéndolos a los subprocesos, produciendo el OPD hijo (SDn+1). El out-zooming es el inverso: (1) Abstraer Enlaces — abstrae los enlaces de los subprocesos; (2) Ocultar Contenido — oculta el contenido interno, restaurando el OPD padre (SDn).
+**Regla V-62**: La descomposición en nuevo diagrama (`in-zooming`) se ejecuta en dos fases: (1) Mostrar Contenido — muestra el contenido interno del refinable, produciendo un OPD semidescompuesto; (2) Refinar Enlaces — refina los enlaces del OPD padre distribuyéndolos a los subprocesos, produciendo el OPD hijo (SDn+1). La recomposición (`out-zooming`) es el inverso: (1) Abstraer Enlaces — abstrae los enlaces de los subprocesos; (2) Ocultar Contenido — oculta el contenido interno, restaurando el OPD padre (SDn).
 
 ### 10.3b Contenedor y elementos externos
 
-Al crear un OPD hijo por in-zoom o unfold, los elementos del OPD padre se clasifican en internos y externos:
+Al crear un OPD hijo por descomposición (`in-zooming`) o despliegue (`unfolding`), los elementos del OPD padre se clasifican en internos y externos:
 
 **Regla V-79**: En el OPD hijo, la cosa refinada aparece como **contenedor** (elemento interno). En descomposición de proceso la elipse se agranda para contener subprocesos; en descomposición de objeto el rectángulo se agranda para contener componentes (ISO §14 lines 749, 835).
 
 **Regla V-80**: Las cosas conectadas al refinado vía enlaces en el OPD padre se copian como **elementos externos** en el OPD hijo. Un elemento externo mantiene sus propiedades (esencia, contorno, estados) pero su posición se recalcula.
 
-**Regla V-81**: In-zoom pullback: se copian al OPD hijo **todas** las cosas conectadas vía cualquier enlace a la cosa refinada que tengan apariencia en el OPD padre.
+**Regla V-81**: En la descomposición, se copian al OPD hijo **todas** las cosas conectadas vía cualquier enlace a la cosa refinada que tengan apariencia en el OPD padre.
 
-**Regla V-82**: Unfold pullback: se copian al OPD hijo **solo** los hijos estructurales directos (targets de agregación, exhibición).
+**Regla V-82**: En el despliegue, se copian al OPD hijo **solo** los hijos estructurales directos (destinos de agregación y exhibición).
 
 **Regla V-83**: No se puede refinar un elemento externo (apariencia con internal=false). Solo el contenedor es refinable en su propio OPD hijo.
 
-**Regla V-84**: Objetos internos — creados dentro de un in-zoom, sin apariencia en el OPD padre — se eliminan cuando el proceso padre se elimina (cascada). La eliminación de la cosa refinada elimina el OPD hijo y todos sus contenidos.
+**Regla V-84**: Objetos internos — creados dentro de una descomposición, sin apariencia en el OPD padre — se eliminan cuando el proceso padre se elimina (cascada). La eliminación de la cosa refinada elimina el OPD hijo y todos sus contenidos.
 
 **Regla V-85**: Objetos externos — creados en el SD u otro OPD superior — existen independientemente del refinamiento y son referenciables desde cualquier OPD del modelo.
 
@@ -535,23 +537,23 @@ El rectángulo del objeto refinable se agranda para mostrar objetos constituyent
 
 Para simplificar un OPD, se pueden ocultar estados no relevantes. Se indica con el símbolo de supresión (`...` en un rectángulo redondeado en la esquina inferior derecha del objeto).
 
-**Regla V-86**: Un estado `s` de una cosa T se suprime en el OPD padre cuando: existe un OPD hijo in-zoom donde T aparece como externo Y existe un enlace entre T y la cosa refinada que referencia `s` (como source_state o target_state). La supresión se computa on-demand, no se almacena (ISO §6 line 718, §9 lines 762-770).
+**Regla V-86**: Un estado `s` de una cosa T se suprime en el OPD padre cuando: existe un OPD hijo de descomposición donde T aparece como externo Y existe un enlace entre T y la cosa refinada que referencia `s` como estado de origen o de destino. La supresión se computa bajo demanda, no se almacena (ISO §6 line 718, §9 lines 762-770).
 
-**Regla V-87**: La supresión de estados solo aplica a in-zoom, no a unfold.
+**Regla V-87**: La supresión de estados solo aplica a descomposición, no a despliegue.
 
 **Regla V-88**: Estados no referenciados en enlaces a la cosa refinada NO se suprimen — permanecen visibles en el OPD padre.
 
-**Regla V-89**: Cuando existen múltiples OPDs hijo in-zoom que suprimen estados del mismo objeto, el conjunto de estados suprimidos es la unión de los estados suprimidos por cada OPD hijo.
+**Regla V-89**: Cuando existen múltiples OPDs hijo de descomposición que suprimen estados del mismo objeto, el conjunto de estados suprimidos es la unión de los estados suprimidos por cada OPD hijo.
 
 **Regla V-90**: Expresión de estados: los estados suprimidos en el OPD padre (SDn) se revelan en el OPD hijo (SDn+1) vinculados a subprocesos específicos. Este es el mecanismo inverso de la supresión (ISO line 890).
 
 ### 10.7 Simplificación de OPD
 
-Un subconjunto de subprocesos puede reagruparse en un nuevo proceso compacto mediante out-zooming, generando un OPD simplificado con menos niveles.
+Un subconjunto de subprocesos puede reagruparse en un nuevo proceso compacto mediante recomposición, generando un OPD simplificado con menos niveles.
 
 ### 10.8 Visibilidad de enlaces en OPD hijo
 
-**Regla V-91**: Los enlaces **estructurales** al contenedor son visibles en el OPD hijo — definen la estructura del unfold o in-zoom.
+**Regla V-91**: Los enlaces **estructurales** al contenedor son visibles en el OPD hijo; definen la estructura del despliegue o de la descomposición.
 
 **Regla V-92**: Los enlaces **procedimentales** al contenedor NO son visibles directamente en el OPD hijo — se distribuyen a subprocesos (§11) o se filtran.
 
@@ -559,7 +561,7 @@ Un subconjunto de subprocesos puede reagruparse en un nuevo proceso compacto med
 
 **Regla V-94**: Los enlaces que no tocan el contenedor ni ningún elemento interno del OPD hijo son invisibles en ese OPD.
 
-### 10.9 Propiedades invariantes cross-nivel
+### 10.9 Propiedades invariantes entre niveles
 
 Las siguientes propiedades son inmutables a través de todos los niveles de refinamiento:
 
@@ -577,25 +579,25 @@ Las siguientes propiedades son inmutables a través de todos los niveles de refi
 
 **Regla V-100**: No se puede refinar una cosa desde dentro de su propio árbol de refinamiento. El chequeo es **transitivo**: se verifica toda la cadena de ancestros del OPD. Esto previene loops infinitos en la jerarquía de OPDs.
 
-### 10.11 Instancias visuales cross-OPD
+### 10.11 Instancias visuales entre OPDs
 
 **Regla V-101**: Instancia visual ≠ instancia lógica. Una instancia visual es la misma entidad del modelo mostrada en un OPD diferente (misma identidad, diferente vista). Una instancia lógica es una relación de clasificación o herencia (entidad diferente).
 
 **Regla V-102**: No se puede crear una instancia visual entre tipos diferentes: un objeto no puede ser instancia visual de un proceso, ni viceversa.
 
-### 10.12 Semi-fold (compresión parcial de estructura)
+### 10.12 Semi-plegado (compresión parcial de estructura)
 
-**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** El semi-fold es un mecanismo de visualización intermedio entre el plegado completo (fold) y el despliegue completo (unfold) de una relación estructural. Permite mostrar la existencia de refinadores sin expandirlos completamente. No existe plantilla OPL-ES canónica para el semi-fold; su expresión es exclusivamente visual.
+**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** El semi-plegado es un mecanismo de visualización intermedio entre el plegado completo y el despliegue completo de una relación estructural. Permite mostrar la existencia de refinadores sin expandirlos completamente. No existe plantilla OPL-ES canónica para el semi-plegado; su expresión es exclusivamente visual.
 
-**Regla V-116**: En una relación de agregación-participación, los refinadores (partes) pueden mostrarse como íconos de triángulo con el nombre de la parte dentro del rectángulo del todo (refinable), en lugar de como entidades separadas conectadas por enlaces estructurales explícitos. Esta representación compacta es el semi-fold.
+**Regla V-116**: En una relación de agregación-participación, los refinadores (partes) pueden mostrarse como íconos de triángulo con el nombre de la parte dentro del rectángulo del todo (refinable), en lugar de como entidades separadas conectadas por enlaces estructurales explícitos. Esta representación compacta es el semi-plegado.
 
-**Regla V-117**: El semi-fold es per-refinador: algunos refinadores pueden estar semi-folded (dentro del rectángulo del todo) mientras otros permanecen extraídos (fuera, con enlace estructural explícito visible). No es necesariamente todo-o-nada.
+**Regla V-117**: El semi-plegado es por refinador: algunos refinadores pueden estar semi-plegados (dentro del rectángulo del todo) mientras otros permanecen extraídos (fuera, con enlace estructural explícito visible). No es necesariamente todo-o-nada.
 
-**Regla V-118**: Cuando hay refinadores semi-folded y otros extraídos, un indicador numérico junto al triángulo de agregación muestra cuántos refinadores permanecen **ocultos** dentro del semi-fold — no el total de refinadores.
+**Regla V-118**: Cuando hay refinadores semi-plegados y otros extraídos, un indicador numérico junto al triángulo de agregación muestra cuántos refinadores permanecen **ocultos** dentro del semi-plegado — no el total de refinadores.
 
-**Regla V-119**: El estado de semi-fold es per-apariencia (per-OPD): un objeto puede estar semi-folded en un OPD y completamente desplegado en otro. Son vistas independientes del mismo hecho estructural.
+**Regla V-119**: El estado de semi-plegado es por apariencia (por OPD): un objeto puede estar semi-plegado en un OPD y completamente desplegado en otro. Son vistas independientes del mismo hecho estructural.
 
-**Regla V-120**: Los enlaces procedimentales pueden conectarse directamente a un refinador semi-folded dentro del rectángulo del todo. Visualmente, la flecha entra al borde del rectángulo padre y apunta al nombre del refinador semi-folded.
+**Regla V-120**: Los enlaces procedimentales pueden conectarse directamente a un refinador semi-plegado dentro del rectángulo del todo. Visualmente, la flecha entra al borde del rectángulo padre y apunta al nombre del refinador semi-plegado.
 
 ---
 
@@ -607,25 +609,25 @@ Las siguientes propiedades son inmutables a través de todos los niveles de refi
 
 ### 11.2 Distribución por tipo de enlace
 
-Cuando un proceso se descompone en subprocesos (in-zoom), los enlaces procedimentales del padre se distribuyen según su tipo:
+Cuando un proceso se descompone en subprocesos, los enlaces procedimentales del padre se distribuyen según su tipo:
 
 | Tipo de enlace | Destino de distribución | Justificación |
 |---|---|---|
-| Consumo, Input | **Primer** subproceso (posición Y mínima) | El consumo ocurre al inicio (ISO §9) |
-| Resultado, Output | **Último** subproceso (posición Y máxima) | La producción ocurre al final (ISO §9) |
-| Agente, Instrumento | **Todos** los subprocesos | Habilitador distribuido (ISO §10) |
-| Efecto | **Todos** los subprocesos | Afecta a todos (ISO §9) |
+| Consumo (incluye enlace de entrada, ISO §3.27) | **Primer** subproceso (posición Y mínima) | El consumo ocurre al inicio (ISO §9) |
+| Resultado (incluye enlace de salida, ISO §3.47) | **Último** subproceso (posición Y máxima) | La producción ocurre al final (ISO §9) |
+| Agente, Instrumento | **Todos** los subprocesos | Habilitador distribuido (ISO §14.2.2.4) |
+| Efecto (básico, sin estado especificado) | **Todos** los subprocesos | Afecta a todos; pero ver V-40 para efecto con estado especificado (enlace escindido) |
 | Estructural (agregación, etc.) | **No se distribuye** — permanece en contenedor | Invariante temporal (ISO §12) |
 
 **Regla V-103**: Los enlaces de consumo e input se distribuyen al primer subproceso en orden de posición vertical (Y mínimo). Los de resultado y output, al último subproceso (Y máximo).
 
-**Regla V-104**: Los enlaces de efecto se distribuyen a todos los subprocesos, al igual que los de agente e instrumento.
+**Regla V-104**: Los enlaces de efecto **básico** (sin estado especificado) se distribuyen a todos los subprocesos, al igual que los de agente e instrumento. Cuando el efecto tiene estado especificado (entrada-salida), la distribución se realiza mediante **enlace escindido** (split state-specified effect link, ISO §14.2.2.4.3): un subproceso temprano saca del estado de entrada y un subproceso tardío pone en el estado de salida (cfr. V-40).
 
 **Regla V-105**: Los enlaces estructurales NO se distribuyen — permanecen asociados al contenedor.
 
-**Regla V-106**: Si no hay subprocesos aún dentro del in-zoom, el enlace se muestra conectado al contenedor directamente (fallback).
+**Regla V-106**: Si no hay subprocesos aún dentro de la descomposición, el enlace se muestra conectado al contenedor directamente como respaldo temporal.
 
-**Regla V-107**: La distribución de enlaces solo aplica a in-zoom. El unfold no tiene distribución de enlaces.
+**Regla V-107**: La distribución de enlaces solo aplica a descomposición. El despliegue no tiene distribución de enlaces.
 
 ### 11.3 Restricciones de distribución
 
@@ -637,7 +639,7 @@ Cuando un proceso se descompone en subprocesos (in-zoom), los enlaces procedimen
 
 **Regla V-39**: Si un enlace de condición causa que un subproceso se omita, el control pasa al siguiente subproceso en la secuencia.
 
-**Regla V-109**: Las restricciones de frontera (V-37, V-38, V-39) aplican solo a in-zoom, no a unfold.
+**Regla V-109**: Las restricciones de frontera (V-37, V-38, V-39) aplican solo a descomposición, no a despliegue.
 
 ---
 
@@ -655,15 +657,15 @@ Cuando un enlace de efecto entrada-salida (`P cambia A de s1 a s2`) se descompon
 
 **Regla V-41**: No existen versiones con modificador de control de los enlaces escindidos.
 
-**Regla V-110**: La escisión es el **único** mecanismo para resolver la subespecificación de enlaces de efecto entrada-salida en in-zoom. No hay alternativa (ISO §9 lines 762-770).
+**Regla V-110**: La escisión es el **único** mecanismo para resolver la subespecificación de enlaces de efecto entrada-salida en descomposición. No hay alternativa (ISO §9 lines 762-770).
 
 ### 12.3 Cambio de rol con la abstracción
 
 **Regla V-42**: Un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido si a nivel abstracto los estados inicial y final del objeto coinciden.
 
-**Regla V-111**: En el OPD hijo (nivel detallado), el objeto con cambio de rol muestra estados intermedios que no son visibles en el OPD padre. Ejemplo canónico (ISO line 1289): Dishwasher es instrumento en SD (sin cambio de estado aparente) y afectado en SD1 (empty → loaded → empty). Es válido porque empty = empty cross-nivel.
+**Regla V-111**: En el OPD hijo (nivel detallado), el objeto con cambio de rol muestra estados intermedios que no son visibles en el OPD padre. Ejemplo canónico (ISO line 1289): `Dishwasher` es instrumento en SD (sin cambio de estado aparente) y afectado en SD1 (`empty → loaded → empty`). Es válido porque `empty = empty` entre niveles.
 
-**Regla V-112**: El cambio de rol solo aplica a in-zoom, no a unfold.
+**Regla V-112**: El cambio de rol solo aplica a descomposición, no a despliegue.
 
 ---
 
@@ -699,13 +701,15 @@ Dentro de cada clase de enlace:
 evento > sin control > condición
 ```
 
-### 13.5 Orden completo de fuerza semántica (13 niveles)
+### 13.5 Orden completo de fuerza semántica (12 niveles)
+
+Fuente normativa: ISO/PAS 19450:2015 §14.2.4.5.
 
 | Nivel | Enlace |
 |---|---|
-| 1 | Evento de consumo / Evento de resultado |
+| 1 | Evento de consumo |
 | 2 | Consumo = Resultado |
-| 3 | Condición de consumo / Condición de resultado |
+| 3 | Condición de consumo |
 | 4 | Evento de efecto |
 | 5 | Efecto |
 | 6 | Condición de efecto |
@@ -718,9 +722,8 @@ evento > sin control > condición
 
 Notas:
 
-- Consumo y resultado tienen la misma fuerza en cada franja de modificador (nivel 1, 2 y 3). Se listan en el mismo nivel porque §13.3 los declara iguales.
-- **Condición de instrumento** es el enlace más débil del sistema. Existe como variante válida (cfr. `opm-opl-es` §7.2 CH2, §7.3 CS6) aunque raramente aparece en modelos típicos.
-- No existen "evento de resultado" ni "condición de resultado" como enlaces independientes; las variantes de resultado se subsumen en las de consumo por equivalencia de fuerza. Si un implementador necesita distinguirlos, puede tratarlos como alias del mismo nivel.
+- Consumo y resultado tienen la misma fuerza (nivel 2) porque §13.3 los declara iguales. En los niveles con modificador de control (1 y 3), solo existe la variante de consumo: **no existen "evento de resultado" ni "condición de resultado"** (ISO §8.2.3 NOTE 1). La razón es que el resultado no existe antes del proceso — es creado por él — por lo que no puede ser precondición ni disparador.
+- **Condición de instrumento** (nivel 12) es el enlace más débil del sistema. Existe como variante válida (cfr. `opm-opl-es` §7.2 CH2, §7.3 CS6) aunque raramente aparece en modelos típicos.
 - La condición debilita; el evento fortalece.
 
 ---
@@ -767,15 +770,15 @@ Raíz en un objeto. Muestra su elaboración por refinamiento (exhibición, agreg
 
 **Regla V-113**: Solo los OPDs **hoja** (sin hijos) son eliminables del árbol. Los nodos internos están protegidos para garantizar la integridad de la jerarquía de refinamiento.
 
-**Regla V-114**: Los View OPDs son colecciones ad-hoc de múltiples OPDs, **distintos** del árbol jerárquico de procesos u objetos. No participan en refinamiento y no tienen relación padre-hijo con otros OPDs del árbol (ISO line 726).
+**Regla V-114**: Los OPDs de vista son colecciones ad hoc de múltiples OPDs, **distintos** del árbol jerárquico de procesos u objetos. No participan en refinamiento y no tienen relación padre-hijo con otros OPDs del árbol (ISO line 726).
 
 ---
 
-## 16. Convenciones de nombrado y buenas prácticas
+## 16. Rotulado y buenas prácticas
 
-### 16.1 Reglas de nombrado
+### 16.1 Reglas de rotulado
 
-La política de nombrado del corpus no vive en esta capa. Los nombres canónicos de objetos, procesos, estados y etiquetas pertenecen a [OPL-ES](urn:fxsl:kb:opm-opl-es) y, cuando afectan decisiones de modelamiento, a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+La política de denominación del corpus no vive en esta capa. Los nombres canónicos de objetos, procesos, estados y etiquetas pertenecen a [OPL-ES](urn:fxsl:kb:opm-opl-es) y, cuando afectan decisiones de modelado, a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 En la capa visual solo aplican las siguientes reglas de rotulado:
 
@@ -787,9 +790,9 @@ En la capa visual solo aplican las siguientes reglas de rotulado:
 
 **Regla V-121**: La convención léxica concreta del nombre del proceso se hereda de la capa textual activa del corpus; esta capa visual no introduce una política paralela.
 
-**Regla V-122**: Una cosa puede tener un **alias** (abreviatura) que se muestra entre paréntesis o llaves junto al nombre: e.g., `Turbojet Engine System (tes)`, `Pressure {p}`. El alias es un nombre corto para referencia compacta en OPL, expresiones computacionales y fórmulas de multiplicidad.
+**Regla V-122**: Una cosa puede tener un **alias** (abreviatura) que se muestra entre paréntesis o llaves junto al nombre: p. ej., `Turbojet Engine System (tes)`, `Pressure {p}`. El alias es un nombre corto para referencia compacta en OPL, expresiones computacionales y fórmulas de multiplicidad.
 
-**Regla V-48**: Un estado no existe sin su objeto propietario. [Semántica heredada de `opm-iso-19450-es` término 3.68; corolario visual de V-4.]
+**Regla V-48**: [Eliminada — contenido idéntico a V-4. La restricción de contención de estados se define una sola vez en V-4.]
 
 **Regla V-49**: El objeto consumido desaparece al inicio del proceso, no al final. [Semántica heredada de `opm-iso-19450-es` §9; aquí se fija la temporalidad de la animación visual.]
 
@@ -831,23 +834,23 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 
 ### 18.1 Composición del modelo OPM
 
-**Regla V-64**: Un OPM Model especifica un System. Se compone de un OPD Set y un OPL Spec. El OPD Set contiene uno o más OPDs (multiplicidad 1..*). El OPL Spec contiene uno o más OPL Paragraphs (multiplicidad 1..*). OPD Set y OPL Spec son duales: el OPD Set especifica gráficamente lo que el OPL Spec especifica textualmente, y viceversa.
+**Regla V-64**: Un modelo OPM especifica un sistema. Se compone de un conjunto de OPDs y una especificación OPL. El conjunto de OPDs contiene uno o más OPDs (multiplicidad `1..*`). La especificación OPL contiene uno o más párrafos OPL (multiplicidad `1..*`). Ambos son duales: el conjunto de OPDs especifica gráficamente lo que la especificación OPL especifica textualmente, y viceversa.
 
 ### 18.2 Dualidad OPD–OPL
 
-**Regla V-65**: Cada OPD tiene su contraparte en un OPL Paragraph. Cada OPD Construct tiene su contraparte en una o más OPL Sentences. La dualidad es bidireccional: toda afirmación en un OPD debe ser reproducible como OPL, y toda oración OPL debe ser representable como OPD Construct.
+**Regla V-65**: Cada OPD tiene su contraparte en un párrafo OPL. Cada constructo OPD tiene su contraparte en una o más oraciones OPL. La dualidad es bidireccional: toda afirmación en un OPD debe ser reproducible como OPL, y toda oración OPL debe ser representable como constructo OPD.
 
 ### 18.3 Construcción del OPD Construct
 
-**Regla V-66**: La construcción de un Constructo OPD es el proceso *Conectar*, que toma un Conjunto de Cosas en estado `desconectado` y un Conjunto de Enlaces como instrumento, y produce un Conjunto de Cosas en estado `conectado`. La cardinalidad del Conjunto de Enlaces puede ser `1` (Constructo Básico) o `≥ 2` (Constructo Compuesto). La cardinalidad del Conjunto de Cosas puede ser `2` (Básico) o `≥ 3` (Compuesto).
+**Regla V-66**: La construcción de un constructo OPD es el proceso *Conectar*, que toma un conjunto de cosas en estado `desconectado` y un conjunto de enlaces como instrumento, y produce un conjunto de cosas en estado `conectado`. La cardinalidad del conjunto de enlaces puede ser `1` (constructo básico) o `≥ 2` (constructo compuesto). La cardinalidad del conjunto de cosas puede ser `2` (básico) o `≥ 3` (compuesto).
 
 ### 18.4 Objetos con y sin estados
 
-**Regla V-67**: Todo objeto exhibe un Conjunto de Estados. Si el tamaño del Conjunto de Estados es `s = 0`, el objeto es sin estados. Si `s ≥ 1`, el objeto es con estados. Un objeto con estados que tiene `s` estados deriva un Conjunto de Objetos Específicos de Estado que contiene exactamente `s` Objetos Específicos de Estado. Cada Objeto Específico de Estado refiere a exactamente un estado del objeto original.
+**Regla V-67**: Todo objeto exhibe un conjunto de estados. Si el tamaño del conjunto de estados es `s = 0`, el objeto es sin estados. Si `s ≥ 1`, el objeto es con estados. Un objeto con estados que tiene `s` estados deriva un conjunto de objetos específicos de estado que contiene exactamente `s` objetos específicos de estado. Cada objeto específico de estado refiere a exactamente un estado del objeto original.
 
 ### 18.5 Denominación de instancias específicas de estado
 
-**Regla V-68**: Un Objeto Específico de Estado se nombra concatenando el nombre del estado con el nombre del objeto original (ej.: `Producto Diseñado` para el estado `diseñado` de `Producto`). Este patrón permite referenciar un objeto restringido a un estado particular como entidad independiente en OPL y en enlaces procedimentales.
+**Regla V-68**: Un objeto específico de estado se nombra concatenando el nombre del estado con el nombre del objeto original (ej.: `Producto Diseñado` para el estado `diseñado` de `Producto`). Este patrón permite referenciar un objeto restringido a un estado particular como entidad independiente en OPL y en enlaces procedimentales.
 
 ### 18.6 Nota sobre Tabla 26 de ISO/PAS 19450
 
@@ -906,7 +909,7 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 | V-45 | Duración dentro de la elipse: {min, esp, max} |
 | V-46 | SD contiene exactamente un proceso sistémico |
 | V-47 | Nombres de objetos únicos en el modelo |
-| V-48 | Estado no existe sin su objeto |
+| V-48 | [Eliminada — ver V-4] |
 | V-49 | Consumido desaparece al inicio del proceso |
 | V-50 | Máximo 20-25 cosas por OPD |
 | V-51 | Sin oclusión, minimizar cruces |
@@ -928,29 +931,29 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 | V-67 | Sin estados (s=0) vs con estados (s≥1); con estados deriva Conjunto de Objetos Específicos de Estado |
 | V-68 | Objeto Específico de Estado: nombre = estado + nombre del objeto original |
 
-## Índice de reglas — V-69 a V-123 (cross-refinamiento, semi-fold, metodología)
+## Índice de reglas — V-69 a V-123 (refinamiento entre OPDs, semi-plegado, metodología)
 
 | Regla | Resumen |
 |---|---|
-| V-69 | Contorno grueso aplica a in-zoom Y unfold (ambos refinamientos new-diagram) |
-| V-70 | In-diagram unfolding NO produce contorno grueso |
+| V-69 | Contorno grueso aplica a descomposición y despliegue en nuevo diagrama |
+| V-70 | El despliegue intradiagrama NO produce contorno grueso |
 | V-71 | Tipo de contorno (sólido/punteado) persiste en todos los niveles de refinamiento |
-| V-72 | Herencia aplica a través de niveles de refinamiento (unfold) |
+| V-72 | Herencia aplica a través de niveles de refinamiento por despliegue |
 | V-73 | Enlaces heredados no visibles pero semánticamente activos |
 | V-74 | Herencia de afiliación: atributos de objetos ambientales son automáticamente ambientales |
 | V-75 | Sobreescritura: especialización puede reemplazar participante heredado |
 | V-76 | Migración de enlaces comunes al crear un general desde especializaciones |
 | V-77 | Invocación implícita solo aplica a descomposición de proceso, no de objeto |
-| V-78 | Descomposición de objeto: posición codifica layout semántico, no orden temporal |
+| V-78 | Descomposición de objeto: posición codifica disposición semántica, no orden temporal |
 | V-79 | Refinable aparece como contenedor en OPD hijo; cosas internas contenidas dentro |
 | V-80 | Cosas conectadas al refinado se copian como elementos externos en OPD hijo |
-| V-81 | In-zoom pullback: copia todas las cosas conectadas vía cualquier enlace |
-| V-82 | Unfold pullback: copia solo hijos estructurales (agregación, exhibición) |
+| V-81 | En descomposición se copian todas las cosas conectadas vía cualquier enlace |
+| V-82 | En despliegue se copian solo hijos estructurales (agregación, exhibición) |
 | V-83 | No se puede refinar un elemento externo |
 | V-84 | Objetos internos se eliminan al eliminar el proceso padre (cascada) |
 | V-85 | Objetos externos existen independientemente del refinamiento |
-| V-86 | Estado se suprime cuando OPD hijo in-zoom lo referencia vía enlace |
-| V-87 | Supresión de estados solo aplica a in-zoom |
+| V-86 | Estado se suprime cuando un OPD hijo de descomposición lo referencia vía enlace |
+| V-87 | Supresión de estados solo aplica a descomposición |
 | V-88 | Estados no referenciados en enlaces al refinado NO se suprimen |
 | V-89 | Supresión desde múltiples OPDs hijo = unión |
 | V-90 | Expresión de estados: suprimidos en padre se revelan en hijo vinculados a subprocesos |
@@ -969,21 +972,21 @@ Esta sección formaliza la estructura reflexiva del metamodelo OPM tal como apar
 | V-103 | Consumo/input → primer subproceso; resultado/output → último subproceso |
 | V-104 | Efecto, agente, instrumento → todos los subprocesos |
 | V-105 | Enlaces estructurales NO se distribuyen — permanecen en contenedor |
-| V-106 | Sin subprocesos, enlace al contenedor como fallback |
-| V-107 | Distribución de enlaces solo aplica a in-zoom, no a unfold |
+| V-106 | Sin subprocesos, enlace al contenedor como respaldo temporal |
+| V-107 | Distribución de enlaces solo aplica a descomposición, no a despliegue |
 | V-108 | Eventos de objetos ambientales PUEDEN cruzar límite con contingencia explícita |
-| V-109 | Restricciones de frontera solo aplican a in-zoom |
-| V-110 | Escisión es el único mecanismo para subespecificación de efecto en in-zoom |
+| V-109 | Restricciones de frontera solo aplican a descomposición |
+| V-110 | Escisión es el único mecanismo para subespecificación de efecto en descomposición |
 | V-111 | Cambio de rol: objeto muestra estados intermedios en OPD hijo |
-| V-112 | Cambio de rol solo aplica a in-zoom |
+| V-112 | Cambio de rol solo aplica a descomposición |
 | V-113 | Solo OPDs hoja son eliminables; nodos internos protegidos |
-| V-114 | View OPDs son colecciones ad-hoc que no participan en refinamiento |
+| V-114 | Los OPDs de vista son colecciones ad hoc que no participan en refinamiento |
 | V-115 | Regla general: todo proceso explícito transforma al menos un objeto; excepción para procesos persistentes válidos |
-| V-116 | Semi-fold: partes como íconos de triángulo con nombre dentro del todo |
-| V-117 | Semi-fold parcial: per-refinador, algunos dentro y otros extraídos |
-| V-118 | Indicador numérico de semi-fold = refinadores ocultos, no total |
-| V-119 | Semi-fold per-OPD: estado de fold independiente por apariencia |
-| V-120 | Enlaces procedimentales pueden apuntar a refinadores semi-folded |
+| V-116 | Semi-plegado: partes como íconos de triángulo con nombre dentro del todo |
+| V-117 | Semi-plegado parcial: por refinador, algunos dentro y otros extraídos |
+| V-118 | Indicador numérico de semi-plegado = refinadores ocultos, no total |
+| V-119 | Semi-plegado por OPD: estado independiente por apariencia |
+| V-120 | Enlaces procedimentales pueden apuntar a refinadores semi-plegados |
 | V-121 | El nombre de proceso hereda su política léxica de la capa textual activa |
 | V-122 | Alias de cosa: abreviatura entre paréntesis o llaves junto al nombre |
 | V-123 | Apariencia vs existencia: una cosa existe una vez, múltiples apariencias |

@@ -5,7 +5,7 @@ _manifest:
     created_by: kora/curator
     created_at: '2026-04-14'
     source: synthesis:opm-iso-19450(ISO/PAS-19450:2015),opm-applied-system-modeling,opm-canonical-example
-version: 1.8.0
+version: 1.9.0
 status: published
 tags:
 - opm
@@ -47,7 +47,7 @@ Este documento **no** es la fuente canónica de:
 
 - la realización textual en español, que pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es);
 - la gramática gráfica exhaustiva del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es);
-- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 Regla editorial: este documento puede nombrar esas capas para ubicar la semántica, pero no debe duplicar sus tablas canónicas ni su casuística operativa.
 
@@ -123,7 +123,7 @@ La ISO/PAS 19450 define 84 términos formales. A continuación se presentan en e
 | 3.44 | Árbol de objetos OPD | Árbol que muestra la elaboración de un objeto a través del refinamiento |
 | 3.45 | Árbol de procesos OPD | Árbol generado desde el SD por descomposición de procesos; principal mecanismo de navegación |
 | 3.46 | Operación | Proceso que caracteriza una cosa, es decir, lo que esa cosa hace |
-| 3.47 | Enlace de resultado | Enlace desde un proceso transformador hacia un objeto resultante o, cuando el estado de salida se especifica explícitamente, hacia su estado de salida |
+| 3.47 | Enlace de salida (output link) | Enlace desde un proceso transformador hacia el estado de destino (salida) de un objeto (ISO §3.47). Forma parte del par de efecto con estado especificado junto con el enlace de entrada (3.27) |
 | 3.48 | Recomposición de objeto | Inverso de la descomposición de objeto |
 | 3.49 | Recomposición de proceso | Inverso de la descomposición de proceso |
 | 3.50 | Perseverancia | Propiedad: estática para objeto, dinámica para proceso |
@@ -223,7 +223,7 @@ El corpus usa términos en español como forma canónica. Los términos en ingl�
 | Supresión de estados | State suppression | Ocultar un subconjunto de estados de un objeto |
 | Contenedor | Container | Cosa refinada agrandada en el OPD hijo |
 | Proceso inflado | Inflated process | Elipse del proceso agrandada para contener subprocesos |
-| Semi-plegado | Semi-fold | Compresión parcial de refinadores [extensión OPCloud] |
+| Semi-plegado | Semi-fold | Compresión parcial de refinadores [Extensión OPCloud] |
 
 ### Modelos conceptuales y de ejecución
 
@@ -233,7 +233,7 @@ Los modelos conceptuales describen patrones de estructura y comportamiento. Los 
 
 Quien modela debe distinguir entre el modelo conceptual y una ocurrencia operacional (en tiempo de ejecución) usada para evaluar el comportamiento del sistema. Un modelo OPM es un marco formal donde ocurrencias de objetos y procesos interactúan mediante enlaces. Quien modela puede simular el comportamiento creando instancias operacionales de cosas y siguiendo el flujo de control de ejecución definido por las conexiones y las reglas semánticas de OPM.
 
-La presencia de ocurrencias de cosas traduce el modelo conceptual abstracto en una forma concreta de ejecución. El comportamiento del sistema modelado solo ocurre cuando existen instancias operacionales. Un enlace entre dos cosas no implica comportamiento hasta que existan instancias operacionales. La palabra "runtime" está implícita en toda declaración de especificación.
+La presencia de ocurrencias de cosas traduce el modelo conceptual abstracto en una forma concreta de ejecución. El comportamiento del sistema modelado solo ocurre cuando existen instancias operacionales. Un enlace entre dos cosas no implica comportamiento hasta que existan instancias operacionales. La noción de tiempo de ejecución está implícita en toda declaración de especificación.
 
 #### Realización del modelo (§6.2.6.2)
 
@@ -253,7 +253,7 @@ La capa gráfica de OPM usa un conjunto mínimo de formas, contornos, sombreados
 - **enlaces procedimentales**: transformadores, habilitadores y de control;
 - **enlaces estructurales**: etiquetados y fundamentales.
 
-La semántica de cada familia pertenece a esta capa ISO; su geometría, decoración, composición, comportamiento visual cross-OPD e índices de reglas pertenecen a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es).
+La semántica de cada familia pertenece a esta capa ISO; su geometría, decoración, composición, comportamiento visual entre OPDs e índices de reglas pertenecen a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es).
 
 Regla editorial:
 
@@ -693,14 +693,9 @@ Como consecuencia de la distribución de enlaces, las siguientes restricciones s
 
 Al recomponer, los enlaces procedimentales de subprocesos migran al proceso padre. La **fuerza semántica** determina cuál prevalece cuando dos enlaces compiten por el mismo par objeto-proceso.
 
-La especificación formal de la jerarquía completa de precedencia — incluyendo la matriz de precedencia transformadora, el orden principal `consumo = resultado > efecto > agente > instrumento`, la precedencia secundaria por modificador de control y el orden completo de 13 niveles de fuerza semántica — vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13.
+La especificación formal de la jerarquía completa de precedencia — incluyendo la matriz de precedencia transformadora (ISO §14.2.4.2, Table 27), el orden principal `consumo = resultado > efecto > agente > instrumento` (ISO §14.2.4.3), la precedencia secundaria por modificador de control (ISO §14.2.4.4) y el orden completo de **12 niveles** de fuerza semántica (ISO §14.2.4.5) — vive en [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §13.
 
-Invariantes semánticos que esta capa conserva:
-
-- resultado + consumo sobre el mismo objeto es inválido (no se puede crear y destruir como el mismo hecho abstracto);
-- un enlace transformador siempre prevalece sobre un enlace habilitador al recomponer;
-- un enlace de evento es más fuerte que su enlace no-control correspondiente porque además de la semántica base tiene la capacidad de iniciar un proceso;
-- un enlace de condición es más débil porque el modificador de condición debilita los criterios de satisfacción de la precondición.
+Los invariantes semánticos que gobiernan la precedencia se derivan de ISO §14.2.4 y se formalizan en `opm-visual-es` §13. Esta capa no los re-enuncia para evitar duplicación con divergencia.
 
 ---
 
@@ -715,7 +710,7 @@ Etiquetas típicas:
 
 **Etiquetas de aristas del árbol OPD:** cada arista del árbol de procesos usa un enlace estructural etiquetado unidireccional con una fórmula de refinamiento equivalente a `se refina por descomposición de NombreProceso en` o `se refina por despliegue de NombreCosa en`. La realización textual canónica de estas sentencias pertenece a [OPL-ES](urn:fxsl:kb:opm-opl-es) §10.
 
-**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general orden en anchura, comenzando desde `SD`. El procedimiento operativo de recorrido pertenece a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general orden en anchura, comenzando desde `SD`. El procedimiento operativo de recorrido pertenece a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 ### OPL del sistema completo
 
@@ -758,7 +753,7 @@ Si un hecho aparece en un OPD y contradice otro hecho del mismo modelo en otro O
 
 El SD es el OPD de nivel 0 y proporciona una vista de alto nivel comprensible para cualquier interesado, incluso sin especialización técnica. En la capa ISO solo interesa su función semántica: expresar la función del sistema y su contexto de máximo nivel.
 
-La construcción detallada del SD, sus variantes por tipo de sistema, la secuencia de preguntas, la jerarquía de detalle, los nodos de decisión y las reglas de praxis asociadas pertenecen a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+La construcción detallada del SD, sus variantes por tipo de sistema, la secuencia de preguntas, la jerarquía de detalle, los nodos de decisión y las reglas de praxis asociadas pertenecen a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 ---
 
@@ -1013,7 +1008,7 @@ Las siguientes materias dejan de definirse en esta capa para evitar duplicación
 
 - buenas prácticas de legibilidad, densidad visual, apariencias múltiples y copias visuales: [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es) §15–§16;
 - política de nombrado, capitalización, unicidad nominal y patrones de superficie en español: [OPL-ES](urn:fxsl:kb:opm-opl-es) §1;
-- reglas operativas para decidir cuándo descomponer, cuándo duplicar una apariencia y cómo resolver ambigüedad durante el modelamiento: [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+- reglas operativas para decidir cuándo descomponer, cuándo duplicar una apariencia y cómo resolver ambigüedad durante el modelado: [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 Este documento conserva como invariantes semánticos transversales:
 
@@ -1136,7 +1131,7 @@ Ejemplo de SD:
 - **Transporte de Equipaje:** la función principal cambia la ubicación del equipaje del aeropuerto de origen al de destino.
 - **Sistema de Conferencia:** **Organizador** y **Acomodadores** son agentes; instalaciones y equipamiento son instrumentos; el clima puede ser ambiental.
 
-Para procedimientos específicos de OPCloud, flujos de interfaz y detalles de la herramienta, véase `urn:fxsl:kb:opcloud-tutorial-videos`.
+Para procedimientos específicos de OPCloud, flujos de interfaz y detalles de la herramienta, véase la documentación operacional de OPCloud mantenida fuera de este SSOT.
 
 ---
 

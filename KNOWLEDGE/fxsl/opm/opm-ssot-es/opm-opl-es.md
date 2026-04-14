@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,ISO/PAS-19450:2015(Annex-A)"
-version: "1.6.0"
+version: "1.7.0"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -18,7 +18,7 @@ extensions:
 
 # OPL-ES — Lenguaje Objeto-Proceso en Español
 
-Especificación completa de la gramática OPL en español, complementaria a la gramática OPL en inglés definida en ISO/PAS 19450 Annex A. Diseñada para que herramientas de modelado OPM generen y parseen sentencias OPL indistintamente en inglés o español, manteniendo equivalencia semántica total.
+Especificación completa de la gramática OPL en español, complementaria a la gramática OPL en inglés definida en ISO/PAS 19450 Annex A. Diseñada para que herramientas de modelado OPM generen y analicen sentencias OPL indistintamente en inglés o español, manteniendo equivalencia semántica total.
 
 Referencia normativa: `urn:fxsl:kb:opm-iso-19450-es`.
 
@@ -30,13 +30,13 @@ Este documento es la **capa textual canónica** del corpus OPM en español. Su r
 
 - fijar la superficie léxica y sintáctica de OPL-ES;
 - definir plantillas textuales canónicas para los hechos del modelo;
-- preservar roundtrip semántico entre OPL-EN y OPL-ES.
+- preservar equivalencia semántica de ida y vuelta entre OPL-EN y OPL-ES.
 
 Este documento **no** define:
 
 - la semántica base de OPM, que pertenece a [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es);
 - la gramática gráfica del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es);
-- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelado OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
 
 Regla editorial: cuando este documento menciona enlaces, refinamientos, cardinalidades u operadores, lo hace **solo** para fijar su realización textual canónica en español. La semántica del hecho y su geometría visual se heredan del corpus base.
 
@@ -118,9 +118,9 @@ Estas convenciones aplican a la representación textual en Markdown. Los colores
 
 ### 1.8 Orden Canónico
 
-OPL-ES preserva el orden sujeto-verbo-complemento de cada plantilla OPL-EN. No se reordena la oración. Esto garantiza correspondencia 1:1 y simplifica el parsing bidireccional.
+OPL-ES preserva el orden sujeto-verbo-complemento de cada plantilla OPL-EN. No se reordena la oración. Esto garantiza correspondencia estructural estable entre ambas superficies y simplifica el análisis sintáctico bidireccional.
 
-### 1.9 State-Specified: Posición del Estado
+### 1.9 Con Estado Especificado: Posición del Estado
 
 En OPL-EN el estado precede al objeto como modificador: "`specified-state` Object". En OPL-ES el estado sigue al objeto con la preposición "en": "**Objeto** en `estado`".
 
@@ -223,7 +223,14 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 
 ### 3.4 Nota sobre procesos persistentes
 
-ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introducir cambio neto observable (cfr. `opm-iso-19450-es` §7.2.1 NOTE 2, `opm-visual-es` V-115). Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*. Estos procesos no generan oración transformadora estándar (T1/T2/T3) porque no consumen, generan ni afectan un objeto. En OPL-ES, un proceso persistente PUEDE expresarse mediante una oración descriptiva de propiedad genérica (D1-D4) combinada con un enlace habilitador (H2), o mediante un enlace estructural etiquetado si la temporalidad sostenida no es semántica central (cfr. `metodologia-opm-es` §9.1). OPL-ES no define una plantilla transformadora específica para procesos persistentes; esta es una limitación conocida de la superficie textual.
+ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introducir cambio neto observable (cfr. `opm-iso-19450-es` §7.2.1 NOTE 2, `opm-visual-es` V-115). Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*.
+
+Para mantener cerrada la superficie canónica, OPL-ES adopta la siguiente convención textual:
+
+- cuando el proceso persistente permanece explícito en el modelo, su realización canónica es una oración de cambio con **estado de entrada = estado de salida**, por ejemplo: `*Mantener Presión* cambia **Tanque** de \`presurizado\` a \`presurizado\`.` Esta forma preserva el hecho del modelo sin introducir verbos especiales fuera de la gramática base;
+- cuando la temporalidad sostenida no es semánticamente central, el modelo PUEDE simplificarse editorialmente mediante un enlace estructural etiquetado, según la política metodológica de `metodologia-opm-es` §9.1.
+
+No existe una familia verbal adicional exclusiva para procesos persistentes: la canonicidad se obtiene reutilizando la plantilla transformadora ya existente con estado de entrada y salida coincidentes.
 
 ---
 
@@ -237,15 +244,17 @@ ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introdu
 | T2 | Resultado | Processing yields Resultee. | *Procesar* genera **Resultado**. |
 | T3 | Efecto | Processing affects Affectee. | *Procesar* afecta **Afectado**. |
 
-### 4.2 State-Specified
+### 4.2 Con Estado Especificado
 
 | ID | Tipo | OPL-EN | OPL-ES |
 |----|------|--------|--------|
 | TS1 | Consumo s-s | Process consumes specified-state Object. | *Proceso* consume **Objeto** en `estado`. |
 | TS2 | Resultado s-s | Process yields specified-state Object. | *Proceso* genera **Objeto** en `estado`. |
 | TS3 | Efecto entrada-salida | Process changes Object from input-state to output-state. | *Proceso* cambia **Objeto** de `estado-entrada` a `estado-salida`. |
-| TS4 | Efecto solo entrada | Process changes Object from input-state. | *Proceso* cambia **Objeto** de `estado-entrada`. |
-| TS5 | Efecto solo salida | Process changes Object to output-state. | *Proceso* cambia **Objeto** a `estado-salida`. |
+| TS4 | Efecto solo entrada (input-specified effect link; enlace de entrada, ISO §3.27) | Process changes Object from input-state. | *Proceso* cambia **Objeto** de `estado-entrada`. |
+| TS5 | Efecto solo salida (output-specified effect link; enlace de salida, ISO §3.47) | Process changes Object to output-state. | *Proceso* cambia **Objeto** a `estado-salida`. |
+
+Nota: TS4 y TS5 son la **realización textual del enlace escindido** (split state-specified effect link, ISO §14.2.2.4.3). Cuando un efecto entrada-salida (TS3) se distribuye a una descomposición, se escinde en un TS4 temprano (subproceso que saca del estado de entrada) y un TS5 tardío (subproceso que pone en el estado de salida). La geometría visual de esta escisión se define en `opm-visual-es` V-40.
 
 ---
 
@@ -258,7 +267,7 @@ ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introdu
 | H1 | Agente | Agent handles Processing. | **Agente** maneja *Proceso*. |
 | H2 | Instrumento | Processing requires Instrument. | *Proceso* requiere **Instrumento**. |
 
-### 5.2 State-Specified
+### 5.2 Con Estado Especificado
 
 | ID | Tipo | OPL-EN | OPL-ES |
 |----|------|--------|--------|
@@ -283,7 +292,7 @@ ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introdu
 | EH1 | Agente evento | Agent initiates and handles Process. | **Agente** inicia y maneja *Proceso*. |
 | EH2 | Instrumento evento | Instrument initiates Process, which requires Instrument. | **Instrumento** inicia *Proceso*, que requiere **Instrumento**. |
 
-### 6.3 Eventos Transformadores State-Specified
+### 6.3 Eventos Transformadores con Estado Especificado
 
 | ID | OPL-EN | OPL-ES |
 |----|--------|--------|
@@ -292,7 +301,7 @@ ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introdu
 | ETS3 | Input-state Object initiates Process, which changes Object from input-state. | **Objeto** en `estado-entrada` inicia *Proceso*, que cambia **Objeto** de `estado-entrada`. |
 | ETS4 | Object in any state initiates Process, which changes Object to destination-state. | **Objeto** en cualquier estado inicia *Proceso*, que cambia **Objeto** a `estado-destino`. |
 
-### 6.4 Eventos Habilitadores State-Specified
+### 6.4 Eventos Habilitadores con Estado Especificado
 
 | ID | OPL-EN | OPL-ES |
 |----|--------|--------|
@@ -317,7 +326,7 @@ ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introdu
 | CH1 | Agent handles Process if Agent exists, else Process is skipped. | **Agente** maneja *Proceso* si **Agente** existe, de lo contrario *Proceso* se omite. |
 | CH2 | Process occurs if Instrument exists, else Process is skipped. | *Proceso* ocurre si **Instrumento** existe, de lo contrario *Proceso* se omite. |
 
-### 7.3 Condición State-Specified
+### 7.3 Condición con Estado Especificado
 
 | ID | OPL-EN | OPL-ES |
 |----|--------|--------|
@@ -381,7 +390,7 @@ Nota: en SE1, SE3 y SE4, "etiqueta" es el tag definido por el modelador en espa�
 | …and at least one other feature. | …y al menos otro rasgo. |
 | …and at least one other specialization. | …y al menos otra especialización. |
 
-### 9.4 State-Specified Estructurales
+### 9.4 Estructurales con Estado Especificado
 
 | Grupo | OPL-EN | OPL-ES |
 |-------|--------|--------|
@@ -568,7 +577,7 @@ Para implementadores de herramientas. Reglas aplicadas en secuencia sobre una se
 | R20 | Designación de estado | is initial / is final / is default | es inicial / es final / es por defecto |
 | R21 | Nombres de entidad | (sin cambio — definidos por el modelador) | (sin cambio) |
 
-**Nota para parsers**: el verbo principal (R1) es el ancla léxica para detectar el idioma de la sentencia. Un parser puede determinar EN vs ES verificando si el primer verbo conjugado pertenece al set EN o ES.
+**Nota para analizadores**: el verbo principal (R1) es el ancla léxica para detectar el idioma de la sentencia. Un analizador puede determinar EN vs ES verificando si el primer verbo conjugado pertenece al conjunto EN o ES.
 
 ---
 
@@ -755,8 +764,13 @@ palabra_capitalizada = letra_mayuscula, {caracter_de_cadena} ;
 palabra_no_capitalizada = letra_minuscula, {caracter_de_cadena} ;
 frase_no_capitalizada = palabra_no_capitalizada, { " ", palabra_no_capitalizada } ;
 letra = letra_mayuscula | letra_minuscula ;
-letra_mayuscula = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' ;
-letra_minuscula = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' ;
+letra_mayuscula = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+  | 'Á' | 'É' | 'Í' | 'Ó' | 'Ú' | 'Ñ' | 'Ü' ;
+letra_minuscula = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z'
+  | 'á' | 'é' | 'í' | 'ó' | 'ú' | 'ñ' | 'ü' ;
+(* Extensión OPL-ES: la EBNF ISO original (Annex A §A.3.2) solo define A-Z y a-z porque
+   OPL es "a subset of English natural language" (ISO §3.42). Para OPL-ES se añaden los
+   caracteres acentuados del español, la eñe y la diéresis. *)
 caracter_de_cadena = letra | digito_decimal | '-' | '_' ;
 identificador_de_tipo = "boolean" | "string" | tipo_numerico | "enumerated" ;
 tipo_numerico = [prefijo], "integer" | "float" | "double" | "short" | "long" ;
@@ -1217,7 +1231,7 @@ Para subprocesos mixtos (secuenciales y paralelos):
 
 ## 18. Notas de Implementación
 
-### 18.1 Parsing Bidireccional
+### 18.1 Análisis Sintáctico Bidireccional
 
 Una herramienta OPM bilingüe debería:
 
@@ -1228,26 +1242,26 @@ Una herramienta OPM bilingüe debería:
 
 ### 18.2 OPCloud
 
-OPCloud ya soporta múltiples idiomas OPL (chino, francés, alemán, coreano). OPL-ES seguiría el mismo mecanismo de localización, agregando español como idioma disponible en: User Settings > OPL Language.
+**[Extensión OPCloud — no forma parte de ISO/PAS 19450:2015.]** OPCloud ya soporta múltiples idiomas OPL (chino, francés, alemán, coreano). OPL-ES seguiría el mismo mecanismo de localización, agregando español como idioma disponible en `Configuración de usuario > Idioma OPL`.
 
 A nivel de superficie textual, una implementación operativa DEBERÍA además permitir:
 
 1. Elegir idioma OPL a nivel de usuario/modelo sin alterar el OPD subyacente
-2. Mostrar todas las sentencias o solo las de esencia no-default
-3. Alternar numeración, aliases y units display sin afectar la semántica
-4. Re-generar el párrafo OPL completo al cambiar idioma, manteniendo invariantes de roundtrip
+2. Mostrar todas las sentencias o solo las de esencia no predeterminada
+3. Alternar numeración, alias y visualización de unidades sin afectar la semántica
+4. Regenerar el párrafo OPL completo al cambiar idioma, manteniendo invariantes de ida y vuelta
 
 ### 18.3 Compatibilidad Semántica
 
-OPL-ES no modifica la semántica OPM. Un modelo creado con OPL-ES es semánticamente idéntico a su equivalente OPL-EN. La traducción es puramente léxica y sintáctica, no semántica. El modelo interno (OPD constructs, link sets, thing sets) permanece invariante.
+OPL-ES no modifica la semántica OPM. Un modelo creado con OPL-ES es semánticamente idéntico a su equivalente OPL-EN. La traducción es puramente léxica y sintáctica, no semántica. El modelo interno (constructos OPD, conjuntos de enlaces, conjuntos de cosas) permanece invariante.
 
-### 18.4 Roundtrip
+### 18.4 Equivalencia de Ida y Vuelta
 
-Toda sentencia OPL-EN en forma canónica tiene al menos una sentencia OPL-ES semánticamente equivalente y viceversa. El roundtrip EN→ES→EN DEBE preservar la semántica original, aunque la superficie española pueda realizarse con infinitivo o con nominalización encabezada por `-ción` (y, cuando aplique, `-miento`). La herramienta DEBERÍA respetar la forma elegida por el modelo o normalizarla al registro configurado, pero NO forzar exclusivamente infinitivo.
+Toda sentencia OPL-EN en forma canónica tiene al menos una sentencia OPL-ES semánticamente equivalente y viceversa. La transformación EN→ES→EN DEBE preservar la semántica original, aunque la superficie española pueda realizarse con infinitivo o con nominalización encabezada por `-ción` (y, cuando aplique, `-miento`). La herramienta DEBERÍA respetar la forma elegida por el modelo o normalizarla al registro configurado, pero NO forzar exclusivamente infinitivo.
 
-**Nota normativa sobre roundtrip y superficie:** preservar roundtrip NO significa imponer una única forma superficial en español. Significa preservar el mismo hecho del modelo. Por lo tanto, si dos nombres de proceso en OPL-ES son semánticamente equivalentes y válidos en el dominio, ambos PUEDEN mapear al mismo proceso interno, siempre que el modelo conserve un nombre canónico interno por cosa. Ejemplo: `Verificar Identidad` y `Verificación de Identidad` PUEDEN representar el mismo proceso. Al volver de ES a EN, la herramienta DEBE recuperar un nombre inglés semánticamente equivalente, aunque la superficie española original no haya sido la única posible. La normalización de superficie, si existe, DEBERÍA ser configurable por política editorial del modelo, no una imposición semántica fija del lenguaje.
+**Nota normativa sobre ida y vuelta y superficie:** preservar ida y vuelta NO significa imponer una única forma superficial en español. Significa preservar el mismo hecho del modelo y la misma estructura argumental. Por lo tanto, si dos nombres de proceso en OPL-ES son semánticamente equivalentes y válidos en el dominio, ambos PUEDEN mapear al mismo proceso interno, siempre que el modelo conserve un nombre canónico interno por cosa. Ejemplo: `Verificar Identidad` y `Verificación de Identidad` PUEDEN representar el mismo proceso. Al volver de ES a EN, la herramienta DEBE recuperar un nombre inglés semánticamente equivalente, aunque la superficie española original no haya sido la única posible. La normalización de superficie, si existe, DEBERÍA ser configurable por política editorial del modelo, no una imposición semántica fija del lenguaje.
 
-### 18.5 Politica de Modelos Mixtos
+### 18.5 Política de Modelos Mixtos
 
 Un modelo con prosa de apoyo en español y OPL canónica en inglés es aceptable como artefacto editorial, pero una herramienta bilingüe NO DEBERÍA mezclar OPL-EN y OPL-ES dentro del mismo párrafo generado salvo habilitación explícita del usuario. La política recomendada es:
 
