@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-03-22"
     source: "OPERATIONS/source/fxsl/opm-methodology/opm-opl-es.md"
-version: "1.3.1"
+version: "1.5.1"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -13,14 +13,32 @@ extensions:
   kora:
     family: specification
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
+      - "urn:fxsl:kb:opm-iso-19450-es"
 ---
 
 # OPL-ES — Object-Process Language en Español
 
 Especificación completa de la gramática OPL en español, complementaria a la gramática OPL en inglés definida en ISO/PAS 19450 Annex A. Diseñada para que herramientas de modelado OPM generen y parseen sentencias OPL indistintamente en inglés o español, manteniendo equivalencia semántica total.
 
-Referencia normativa: `urn:fxsl:kb:opm-iso-19450`.
+Referencia normativa: `urn:fxsl:kb:opm-iso-19450-es`.
+
+---
+
+## 0. Alcance y contrato editorial
+
+Este documento es la **capa textual canónica** del corpus OPM en español. Su responsabilidad es:
+
+- fijar la superficie léxica y sintáctica de OPL-ES;
+- definir plantillas textuales canónicas para los hechos del modelo;
+- preservar roundtrip semántico entre OPL-EN y OPL-ES.
+
+Este documento **no** define:
+
+- la semántica base de OPM, que pertenece a [OPM ISO/PAS 19450 — Metodología Objeto‑Proceso](urn:fxsl:kb:opm-iso-19450-es);
+- la gramática gráfica del OPD, que pertenece a [Especificación formal de la gramática visual OPM](urn:fxsl:kb:opm-visual-es);
+- el procedimiento de construcción, refinamiento y gobernanza del modelo, que pertenece a [Metodología de Modelamiento OPM](urn:fxsl:kb:metodologia-modelamiento-opm).
+
+Regla editorial: cuando este documento menciona enlaces, refinamientos, cardinalidades u operadores, lo hace **solo** para fijar su realización textual canónica en español. La semántica del hecho y su geometría visual se heredan del corpus base.
 
 ---
 
@@ -96,7 +114,7 @@ Preposición "a" personal: omitida para objetos directos, ya que las entidades O
 | Proceso | *cursiva* | *Cocinar* |
 | Estado | `monoespaciado` | `crudo` |
 
-Codificación de color OPD (rendering gráfico): objetos verde, procesos azul, estados marrón dorado. Sin cambio respecto a OPL-EN.
+Estas convenciones aplican a la representación textual en Markdown. Los colores, contornos, sombreados y demás atributos del OPD pertenecen a la capa visual y no forman parte del contrato de OPL-ES.
 
 ### 1.8 Orden Canónico
 
@@ -183,7 +201,7 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 | ID | OPL-EN | OPL-ES |
 |----|--------|--------|
 | D1 | Thing is Physical. | **Cosa** es física. |
-| D2 | Thing is Informatical. | **Cosa** es informática. |
+| D2 | Thing is Informatical. | **Cosa** es informacional. |
 | D3 | Thing is Environmental. | **Cosa** es ambiental. |
 | D4 | Thing is Systemic. | **Cosa** es sistémica. |
 
@@ -563,7 +581,7 @@ Sistema doméstico de preparación de empanadas de pino (tradicionales chilenas)
 | 1. Propósito | Cambiar **Nivel de Satisfacción** de **Grupo de Comensales** de `insatisfecho` a `satisfecho` |
 | 2. Función principal | *Preparar Empanadas* (proceso principal) + **Grupo de Comensales** (operando) |
 | 3. Habilitadores | **Cocinero** (agente), **Sistema de Preparación de Empanadas** (instrumento principal), **Horno**, **Utensilios de Cocina** (instrumentos) |
-| 4. Entorno | **Receta** (informático, ambiental) |
+| 4. Entorno | **Receta** (informacional, ambiental) |
 | 5. Ocurrencia del problema | *Cocinar sin Sistema* (proceso ambiental) causa estado `insatisfecho` |
 
 ### Tabla de Elementos
@@ -572,7 +590,7 @@ Sistema doméstico de preparación de empanadas de pino (tradicionales chilenas)
 |------|--------|---------|------------|---------|
 | Proceso | *Preparar Empanadas* | Físico | Sistémico | — |
 | Objeto | **Grupo de Comensales** | Físico | Sistémico | — |
-| Objeto | **Nivel de Satisfacción** | Informático | Sistémico | `insatisfecho`, `satisfecho` |
+| Objeto | **Nivel de Satisfacción** | Informacional | Sistémico | `insatisfecho`, `satisfecho` |
 | Objeto | **Cocinero** | Físico | Sistémico | — |
 | Objeto | **Sistema de Prep. de Empanadas** | Físico | Sistémico | — |
 | Objeto | **Horno** | Físico | Sistémico | — |
@@ -580,7 +598,7 @@ Sistema doméstico de preparación de empanadas de pino (tradicionales chilenas)
 | Objeto | **Masa Cruda** | Físico | Sistémico | — |
 | Objeto | **Relleno de Pino** | Físico | Sistémico | — |
 | Objeto | **Empanada** | Físico | Sistémico | — |
-| Objeto | **Receta** | Informático | Ambiental | — |
+| Objeto | **Receta** | Informacional | Ambiental | — |
 
 ### Tabla de Enlaces
 
@@ -704,6 +722,424 @@ frase de cambio entrada-salida = identificador de objeto, " de ", estado entrada
 ### 17.5 Estructura de Producción
 
 Las reglas de producción (no terminales) no cambian. Solo se sustituyen los terminales léxicos. Esto garantiza que ambas gramáticas generan sentencias semánticamente equivalentes.
+
+---
+
+## Apéndice A. Gramática formal OPL-ES completa
+
+Este apéndice reúne la EBNF completa de OPL-ES. Se traslada aquí desde la capa ISO para eliminar solapamiento editorial: la semántica del hecho sigue perteneciendo a `opm-iso-19450-es`, pero la definición formal de su superficie textual canónica pertenece a OPL-ES.
+
+### A.1 Estructura del documento
+
+```ebnf
+parrafo_opl_es = oracion_opl_es, { salto_de_linea, oracion_opl_es } ;
+oracion_opl_es = oracion_formal_opl_es, "." ;
+oracion_formal_opl_es = oracion_de_descripcion_de_cosa
+ | oracion_procedimental
+ | oracion_estructural
+ | oracion_de_gestion_de_contexto ;
+```
+
+### A.2 Declaraciones base
+
+```ebnf
+digito_no_cero = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;
+digito_decimal = '0' | digito_no_cero ;
+entero_positivo = digito_no_cero, {digito_decimal} ;
+nombre = letra, {caracter_de_cadena} ;
+palabra_capitalizada = letra_mayuscula, {caracter_de_cadena} ;
+palabra_no_capitalizada = letra_minuscula, {caracter_de_cadena} ;
+identificador_de_tipo = "boolean" | "string" | tipo_numerico | "enumerated" ;
+tipo_numerico = [prefijo], "integer" | "float" | "double" | "short" | "long" ;
+restriccion_de_participacion = singular_inferior | singular_superior | plural_inferior | plural_superior
+ | ( "0" | limite_de_participacion, [ " a ", limite_de_participacion ] ) ;
+singular_inferior = "un" | "una" | "un opcional" | "una opcional" | "al menos un" | "al menos una" ;
+clausula_de_rango = " es ", nombre_de_valor | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
+```
+
+### A.3 Identificadores
+
+```ebnf
+identificador_de_objeto = nombre_singular_de_objeto, [ " en ", unidad_de_medida ], [ clausula_de_rango ] ;
+identificador_de_proceso = nombre_singular_de_proceso | nombre_singular_de_proceso, " proceso" ;
+identificador_de_cosa = identificador_de_objeto | identificador_de_proceso ;
+identificador_de_estado = palabra_no_capitalizada ;
+expresion_de_etiqueta = frase_no_capitalizada ;
+```
+
+Convenciones:
+
+- nombres de objeto: sintagmas nominales en singular, con mayúscula en palabras léxicas;
+- nombres de proceso: infinitivo o nominalización técnica canónica del dominio;
+- nombres de estado: en minúscula;
+- etiquetas: frases breves en minúscula.
+
+### A.4 Oraciones de descripción de cosas
+
+```ebnf
+oracion_de_propiedad_generica = identificador_de_cosa, " es ", [esencia], [afiliacion], [perseverancia] ;
+oracion_de_enumeracion_de_estados = identificador_de_objeto, " puede estar ", lista_de_estados | "..., y otros estados" ;
+oracion_de_estados_iniciales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es inicial" ;
+oracion_de_estados_finales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es final" ;
+oracion_de_estado_por_defecto = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es por defecto" ;
+```
+
+Esencia: `Física` o `Informacional`. Afiliación: `Sistémica` o `Ambiental`. Perseverancia: `Persistente` o `Transitoria`.
+
+### A.5 Oraciones procedimentales
+
+```ebnf
+oracion_procedimental = oracion_transformadora | oracion_habilitadora | oracion_de_control ;
+oracion_transformadora = oracion_de_consumo | oracion_de_resultado | oracion_de_efecto | oracion_de_cambio ;
+
+oracion_de_consumo = identificador_de_proceso, " consume ", objeto_con_opcion_de_estado ;
+oracion_de_resultado = identificador_de_proceso, " genera ", objeto_con_opcion_de_estado ;
+oracion_de_efecto = identificador_de_proceso, " afecta ", lista_de_objetos ;
+oracion_de_cambio = oracion_de_cambio_entrada_salida | oracion_de_cambio_solo_entrada
+ | oracion_de_cambio_solo_salida ;
+
+frase_de_cambio_entrada_salida = identificador_de_objeto, " de ", estado_de_entrada, " a ", estado_de_salida ;
+frase_de_cambio_solo_entrada = identificador_de_objeto, " de ", estado_de_entrada ;
+frase_de_cambio_solo_salida = identificador_de_objeto, " a ", estado_de_salida ;
+
+oracion_habilitadora = oracion_de_agente | oracion_de_instrumento ;
+oracion_de_agente = objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso ;
+oracion_de_instrumento = identificador_de_proceso, " requiere ", objeto_con_opcion_de_estado ;
+
+oracion_de_control = oracion_de_evento | oracion_de_condicion | oracion_de_invocacion | oracion_de_excepcion ;
+oracion_de_evento_de_consumo = objeto_con_opcion_de_estado, " inicia ", identificador_de_proceso,
+ ", que consume ", identificador_de_objeto ;
+oracion_de_evento_de_efecto = identificador_de_objeto, " inicia ", identificador_de_proceso,
+ ", que afecta ", identificador_de_objeto ;
+oracion_de_evento_de_agente = objeto_con_opcion_de_estado, " inicia y maneja ", identificador_de_proceso ;
+oracion_de_evento_de_instrumento = objeto_con_opcion_de_estado, " inicia ", identificador_de_proceso,
+ ", que requiere ", objeto_con_opcion_de_estado ;
+
+oracion_de_invocacion = identificador_de_proceso, " invoca ", lista_de_procesos
+ | identificador_de_proceso, " se invoca a sí mismo" ;
+oracion_de_excepcion_por_sobretiempo = identificador_de_proceso_activo,
+ " ocurre si duración de ", identificador_de_proceso, " excede ", max_duracion_unidades_tiempo ;
+oracion_de_excepcion_por_subtiempo = identificador_de_proceso_activo,
+ " ocurre si duración de ", identificador_de_proceso, " es menor que ", min_duracion_unidades_tiempo ;
+```
+
+Las variantes XOR y OR usan `exactamente uno de` y `al menos uno de`. Las oraciones de condición siguen el patrón `ocurre si ... en cuyo caso ... de lo contrario ... se omite`.
+
+### A.6 Oraciones de condición
+
+```ebnf
+oracion_de_condicion = oracion_transformadora_condicional | oracion_habilitadora_condicional ;
+
+oracion_transformadora_condicional = oracion_de_consumo_condicional
+ | oracion_de_consumo_condicional_con_estado
+ | oracion_de_efecto_condicional ;
+
+oracion_de_consumo_condicional = ( identificador_de_proceso, " ocurre si ", identificador_de_objeto,
+ " existe, en cuyo caso ", identificador_de_objeto, " se consume, de lo contrario ",
+ identificador_de_proceso, " se omite" )
+ | ( "Si ", identificador_de_objeto, " existe entonces ", identificador_de_proceso,
+ " ocurre y consume ", identificador_de_objeto, ", de lo contrario se omite ",
+ identificador_de_proceso ) ;
+
+oracion_de_consumo_condicional_con_estado = ( identificador_de_proceso, " ocurre si ",
+ identificador_de_objeto, " está en ", estado_de_entrada, ", en cuyo caso ",
+ identificador_de_objeto, " se consume, de lo contrario ", identificador_de_proceso, " se omite" ) ;
+
+oracion_de_efecto_condicional = oracion_de_efecto_condicional_simple
+ | oracion_de_efecto_entrada_salida_condicional
+ | oracion_de_efecto_entrada_condicional
+ | oracion_de_efecto_salida_condicional ;
+
+oracion_de_efecto_condicional_simple = identificador_de_proceso, " ocurre si ",
+ identificador_de_objeto, " existe, en cuyo caso ", identificador_de_proceso,
+ " afecta ", identificador_de_objeto, ", de lo contrario ", identificador_de_proceso, " se omite" ;
+
+oracion_de_efecto_entrada_salida_condicional = identificador_de_proceso, " ocurre si ",
+ identificador_de_objeto, " está en ", estado_de_entrada, ", en cuyo caso ",
+ identificador_de_proceso, " cambia ", identificador_de_objeto, " de ", estado_de_entrada,
+ " a ", estado_de_salida, ", de lo contrario ", identificador_de_proceso, " se omite" ;
+
+oracion_de_efecto_entrada_condicional = identificador_de_proceso, " ocurre si ",
+ identificador_de_objeto, " está en ", estado_de_entrada, ", en cuyo caso ",
+ identificador_de_proceso, " cambia ", identificador_de_objeto, " de ", estado_de_entrada,
+ ", de lo contrario ", identificador_de_proceso, " se omite" ;
+
+oracion_de_efecto_salida_condicional = identificador_de_proceso, " ocurre si ",
+ identificador_de_objeto, " existe, en cuyo caso ", identificador_de_proceso,
+ " cambia ", identificador_de_objeto, " a ", estado_de_salida,
+ ", de lo contrario ", identificador_de_proceso, " se omite" ;
+
+oracion_habilitadora_condicional = oracion_de_agente_condicional
+ | oracion_de_instrumento_condicional ;
+
+oracion_de_agente_condicional = ( objeto_con_opcion_de_estado, " maneja ",
+ identificador_de_proceso, " si ", identificador_de_objeto, " existe; de lo contrario ",
+ identificador_de_proceso, " se omite" )
+ | ( objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso, " si ",
+ identificador_de_objeto, " está en ", identificador_de_estado, ", de lo contrario ",
+ identificador_de_proceso, " se omite" ) ;
+
+oracion_de_instrumento_condicional = ( identificador_de_proceso, " ocurre si ",
+ identificador_de_objeto, " existe; de lo contrario ", identificador_de_proceso, " se omite" )
+ | ( identificador_de_proceso, " ocurre si ", identificador_de_objeto, " está en ",
+ identificador_de_estado, ", de lo contrario ", identificador_de_proceso, " se omite" ) ;
+```
+
+### A.7 Producciones adicionales
+
+```ebnf
+(* --- Restricciones de expresión para multiplicidad --- *)
+
+restriccion_de_expresion = "donde ", nombre, ( ( operacion_logica, nombre_de_valor )
+ | ( inicio_conjunto, ( nombre | nombre_de_valor ),
+ { ",", ( nombre | nombre_de_valor ) }, fin_conjunto ) ) ;
+
+operacion_logica = "=" | "<" | ">" | "<=" | ">=" ;
+inicio_conjunto = " en {" ;
+fin_conjunto = "}" ;
+
+(* --- Listas bifurcadas con orden --- *)
+
+conjunto_de_cosas_objeto = cosa_objeto, [ { ", ", cosa_objeto } ],
+ " y ", ( cosa_objeto | "más" ),
+ [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
+
+conjunto_de_cosas_proceso = cosa_proceso, [ { ", ", cosa_proceso } ],
+ " y ", ( cosa_proceso | "más" ),
+ [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
+
+criterio_de_orden = nombre ;
+cosa_objeto = [ restriccion_de_participacion, " " ], objeto_con_opcion_de_estado ;
+cosa_proceso = [ restriccion_de_participacion, " " ], identificador_de_proceso ;
+
+(* --- Especialización XOR y herencia múltiple --- *)
+
+oracion_de_especializacion_xor_objeto = oracion_basica_xor_objeto
+ | oracion_xor_objeto_separada_por_comas ;
+oracion_basica_xor_objeto = objeto_especial, " puede ser ",
+ identificador_de_objeto, " o ", identificador_de_objeto ;
+oracion_xor_objeto_separada_por_comas = objeto_especial, " puede ser uno de ",
+ identificador_de_objeto, { ", ", identificador_de_objeto }, " o ", identificador_de_objeto ;
+
+oracion_de_herencia_multiple_objeto = objeto_especial, " es ",
+ lista_de_objetos_generales ;
+lista_de_objetos_generales = " un ", identificador_de_objeto,
+ [ { " un ", identificador_de_objeto } ], " y un ", identificador_de_objeto ;
+```
+
+### A.8 Oraciones estructurales
+
+```ebnf
+oracion_estructural = oracion_de_enlace_estructural_etiquetado | oracion_de_agregacion
+ | oracion_de_caracterizacion | oracion_de_exhibicion
+ | oracion_de_especializacion | oracion_de_instanciacion ;
+
+(* --- Oraciones de enlace estructural etiquetado --- *)
+
+oracion_de_enlace_estructural_etiquetado = oracion_etiquetado_unidireccional
+ | oracion_etiquetado_bidireccional ;
+
+oracion_etiquetado_unidireccional = oracion_etiquetado_unidireccional_simple
+ | oracion_etiquetado_bifurcada ;
+
+oracion_etiquetado_unidireccional_simple =
+ oracion_etiquetado_nullTag_objeto
+ | oracion_etiquetado_nullTag_proceso
+ | oracion_etiquetado_nonNullTag_objeto
+ | oracion_etiquetado_nonNullTag_proceso ;
+
+oracion_etiquetado_nullTag_objeto = [restriccion_participacion, " "],
+ objeto_origen, etiqueta_nula_unidireccional, [restriccion_participacion, " "], objeto_destino ;
+oracion_etiquetado_nullTag_proceso = [restriccion_participacion, " "],
+ proceso_origen, etiqueta_nula_unidireccional, [restriccion_participacion, " "], proceso_destino ;
+oracion_etiquetado_nonNullTag_objeto = [restriccion_participacion, " "],
+ objeto_origen, " ", etiqueta_directa, " ", [restriccion_participacion, " "], objeto_destino,
+ [", ", restriccion_de_expresion] ;
+oracion_etiquetado_nonNullTag_proceso = [restriccion_participacion, " "],
+ proceso_origen, " ", etiqueta_directa, " ", [restriccion_participacion, " "], proceso_destino ;
+
+etiqueta_nula_unidireccional = " se relaciona con "
+ | etiqueta_nula_definida_por_usuario ;
+
+(* Variantes bifurcadas: listas de refinadores con orden o secuencia *)
+oracion_etiquetado_bifurcada = oracion_bifurcada_nullTag_objeto
+ | oracion_bifurcada_nullTag_proceso
+ | oracion_bifurcada_nonNullTag_objeto
+ | oracion_bifurcada_nonNullTag_proceso ;
+
+oracion_bifurcada_nullTag_objeto = [restriccion_participacion, " "], objeto_origen,
+ etiqueta_nula_unidireccional, conjunto_de_cosas_objeto ;
+oracion_bifurcada_nullTag_proceso = [restriccion_participacion, " "], proceso_origen,
+ etiqueta_nula_unidireccional, conjunto_de_cosas_proceso ;
+oracion_bifurcada_nonNullTag_objeto = [restriccion_participacion, " "], objeto_origen,
+ " ", etiqueta_directa, " ", conjunto_de_cosas_objeto ;
+oracion_bifurcada_nonNullTag_proceso = [restriccion_participacion, " "], proceso_origen,
+ " ", etiqueta_directa, " ", conjunto_de_cosas_proceso ;
+
+conjunto_de_cosas_objeto = objeto_con_opcion, [ { ", ", objeto_con_opcion } ], " y ", ( objeto_con_opcion | "más" ),
+ [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
+conjunto_de_cosas_proceso = proceso_con_opcion, [ { ", ", proceso_con_opcion } ], " y ", ( proceso_con_opcion | "más" ),
+ [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
+
+(* Variantes bidireccionales *)
+oracion_etiquetado_bidireccional = oracion_bidireccional_asimetrica_objeto
+ | oracion_bidireccional_asimetrica_proceso
+ | oracion_bidireccional_simetrica_objeto
+ | oracion_bidireccional_simetrica_proceso ;
+
+oracion_bidireccional_asimetrica_objeto = ( [restriccion_participacion, " "],
+ objeto_origen, etiqueta_directa_bidireccional, [restriccion_participacion, " "], objeto_destino,
+ [", ", restriccion_de_expresion] )
+ | ( [restriccion_participacion, " "], objeto_destino, etiqueta_inversa_bidireccional,
+ [restriccion_participacion, " "], objeto_origen, [", ", restriccion_de_expresion] ) ;
+oracion_bidireccional_simetrica_objeto = ( [restriccion_participacion, " "],
+ objeto_origen, " y ", [restriccion_participacion, " "], objeto_destino, " son ", etiqueta_simetrica )
+ | ( [restriccion_participacion, " "], objeto_origen, " y ", [restriccion_participacion, " "],
+ objeto_destino, " se relacionan" ) ;
+
+etiqueta_simetrica = expresion_de_etiqueta ;
+etiqueta_directa_bidireccional = expresion_de_etiqueta ;
+etiqueta_inversa_bidireccional = expresion_de_etiqueta ;
+etiqueta_nula_bidireccional = " se relacionan"
+ | etiqueta_nula_definida_por_usuario ;
+
+(* --- Oraciones de estructuras fundamentales --- *)
+
+oracion_de_agregacion = oracion_de_agregacion_objeto | oracion_de_agregacion_proceso ;
+oracion_de_agregacion_objeto = objeto_todo, " consta de ", lista_de_partes_objeto ;
+oracion_de_agregacion_proceso = proceso_todo, " consta de ", lista_de_partes_proceso ;
+lista_de_partes_objeto = parte_objeto, [ { ", ", parte_objeto } ], " y ", ( parte_objeto | "al menos otra parte" ) ;
+lista_de_partes_proceso = parte_proceso, [ { ", ", parte_proceso } ], " y ", ( parte_proceso | "al menos otra parte" ) ;
+parte_objeto = [restriccion_participacion, " "], identificador_de_objeto ;
+parte_proceso = [restriccion_participacion, " "], identificador_de_proceso ;
+
+oracion_de_caracterizacion = oracion_de_caract_objeto | oracion_de_caract_proceso ;
+oracion_de_caract_objeto = identificador_de_objeto, " exhibe ",
+ ( lista_de_atributos | lista_de_operadores
+ | lista_de_atributos, ", así como ", lista_de_operadores ) ;
+oracion_de_caract_proceso = identificador_de_proceso, " exhibe ",
+ ( lista_de_operadores | lista_de_atributos
+ | lista_de_operadores, ", así como ", lista_de_atributos ) ;
+
+oracion_de_exhibicion = rasgo, " de ", identificador_de_objeto, ( clausula_de_rango | " es ", ",",
+ ( ( lista_de_atributos | lista_de_operadores ) | ( lista_de_atributos, ", así como ", lista_de_operadores ) ) ) ;
+
+oracion_de_especializacion = oracion_de_especializacion_objeto | oracion_de_especializacion_proceso
+ | oracion_de_especializacion_estado ;
+oracion_de_especializacion_objeto = lista_de_objetos_especiales, " son ", identificador_de_objeto ;
+oracion_de_especializacion_proceso = lista_de_procesos_especiales, " son ", identificador_de_proceso ;
+oracion_de_especializacion_estado = lista_de_objetos_con_estado, " son ", objeto_con_estado ;
+
+oracion_de_instanciacion = oracion_de_instanciacion_objeto | oracion_de_instanciacion_proceso ;
+oracion_de_instanciacion_objeto = identificador_de_objeto, " es una instancia de ", identificador_de_objeto
+ | lista_de_objetos_instancia, " son instancias de ", identificador_de_objeto ;
+oracion_de_instanciacion_proceso = identificador_de_proceso, " es una instancia de ", identificador_de_proceso
+ | lista_de_procesos_instancia, " son instancias de ", identificador_de_proceso ;
+
+atributo = identificador_de_objeto ;
+operador = identificador_de_proceso ;
+rasgo = atributo | operador ;
+```
+
+### A.9 Oraciones de gestión de contexto
+
+```ebnf
+oracion_de_gestion_de_contexto = oracion_de_despliegue | oracion_de_plegado
+ | oracion_de_descomposicion | oracion_de_recomposicion ;
+
+(* --- Oraciones de despliegue (unfolding) --- *)
+
+oracion_de_despliegue = oracion_de_despliegue_objeto | oracion_de_despliegue_proceso ;
+
+oracion_de_despliegue_objeto = oracion_de_despliegue_objeto_inespecificado
+ | oracion_de_despliegue_objeto_todo
+ | oracion_de_despliegue_objeto_general
+ | oracion_de_despliegue_objeto_clase
+ | oracion_de_despliegue_objeto_exhibidor ;
+
+oracion_de_despliegue_objeto_inespecificado = identificador_de_objeto,
+ " se despliega en ", lista_de_atributos, [", así como ", lista_de_operadores] ;
+oracion_de_despliegue_objeto_todo = objeto_todo, " desde ", opd_padre,
+ " se despliega por partes en ", opd_hijo, " en ", lista_de_partes_objeto ;
+oracion_de_despliegue_objeto_general = objeto_general, " desde ", opd_padre,
+ " se despliega por especialización en ", opd_hijo, " en ", lista_de_objetos_especiales ;
+oracion_de_despliegue_objeto_clase = clase_de_objeto, " desde ", opd_padre,
+ " se despliega por instanciación en ", opd_hijo, " en ", lista_de_objetos_instancia ;
+oracion_de_despliegue_objeto_exhibidor = identificador_de_objeto, " desde ", opd_padre,
+ " se despliega por rasgos en ", opd_hijo, " en ", lista_de_atributos, [", así como ", lista_de_operadores] ;
+
+oracion_de_despliegue_proceso = oracion_de_despliegue_proceso_inespecificado
+ | oracion_de_despliegue_proceso_todo
+ | oracion_de_despliegue_proceso_general
+ | oracion_de_despliegue_proceso_clase
+ | oracion_de_despliegue_proceso_exhibidor ;
+
+oracion_de_despliegue_proceso_inespecificado = identificador_de_proceso,
+ " se despliega en ", lista_de_operadores, [", así como ", lista_de_atributos] ;
+oracion_de_despliegue_proceso_todo = proceso_todo, " desde ", opd_padre,
+ " se despliega por partes en ", opd_hijo, " en ", lista_de_partes_proceso ;
+oracion_de_despliegue_proceso_general = proceso_general, " desde ", opd_padre,
+ " se despliega por especialización en ", opd_hijo, " en ", lista_de_procesos_especiales ;
+oracion_de_despliegue_proceso_clase = clase_de_proceso, " desde ", opd_padre,
+ " se despliega por instanciación en ", opd_hijo, " en ", lista_de_procesos_instancia ;
+oracion_de_despliegue_proceso_exhibidor = identificador_de_proceso, " desde ", opd_padre,
+ " se despliega por rasgos en ", opd_hijo, " en ", lista_de_operadores, [", así como ", lista_de_atributos] ;
+
+(* --- Oraciones de plegado (folding) --- *)
+
+oracion_de_plegado = oracion_de_plegado_objeto | oracion_de_plegado_proceso ;
+oracion_de_plegado_objeto = identificador_de_objeto, " se pliega en ", opd_hijo ;
+oracion_de_plegado_proceso = identificador_de_proceso, " se pliega en ", opd_hijo ;
+
+(* --- Oraciones de descomposición (in-zooming) --- *)
+
+oracion_de_descomposicion = oracion_de_descomposicion_en_diagrama
+ | oracion_de_descomposicion_en_nuevo_diagrama ;
+
+oracion_de_descomposicion_en_diagrama = ( identificador_de_proceso, " se descompone en ",
+ lista_de_procesos, ", en esa secuencia", [", así como ", lista_de_objetos_en_zoom] )
+ | ( identificador_de_proceso, " se descompone en paralelo ", lista_de_procesos,
+ [", así como ", lista_de_objetos_en_zoom] )
+ | ( identificador_de_proceso, " se descompone en ", lista_de_procesos,
+ " y en paralelo ", lista_de_procesos, ", en esa secuencia",
+ [", así como ", lista_de_objetos_en_zoom] ) ;
+
+oracion_de_descomposicion_en_nuevo_diagrama = ( identificador_de_proceso, " desde ", opd_padre,
+ " se descompone en ", opd_hijo, " en ", lista_de_procesos, ", en esa secuencia",
+ [", así como ", lista_de_objetos_en_zoom] )
+ | ( identificador_de_proceso, " desde ", opd_padre,
+ " se descompone en ", opd_hijo, " en paralelo ", lista_de_procesos,
+ [", así como ", lista_de_objetos_en_zoom] )
+ | ( identificador_de_proceso, " desde ", opd_padre,
+ " se descompone en ", opd_hijo, " en ", lista_de_procesos,
+ " y en paralelo ", lista_de_procesos, ", en esa secuencia",
+ [", así como ", lista_de_objetos_en_zoom] ) ;
+
+oracion_de_descomposicion_objeto_en_diagrama = ( identificador_de_objeto, " se descompone en ",
+ lista_de_objetos, ", en esa secuencia", [", así como ", lista_de_procesos_en_zoom] ) ;
+
+oracion_de_descomposicion_objeto_en_nuevo_diagrama = ( identificador_de_objeto, " desde ", opd_padre,
+ " se descompone en ", opd_hijo, " en ", lista_de_objetos, ", en esa secuencia",
+ [", así como ", lista_de_procesos_en_zoom] ) ;
+
+lista_de_objetos_en_zoom = identificador_de_objeto, [ { ", ", identificador_de_objeto } ], " y ", identificador_de_objeto,
+ ", en esa secuencia" ;
+lista_de_procesos_en_zoom = identificador_de_proceso, [ { ", ", identificador_de_proceso } ] ;
+
+(* --- Oraciones de recomposición (out-zooming) --- *)
+
+oracion_de_recomposicion = oracion_de_recomposicion_proceso | oracion_de_recomposicion_objeto ;
+oracion_de_recomposicion_proceso = identificador_de_proceso, " se recompone desde ", opd_hijo ;
+oracion_de_recomposicion_objeto = identificador_de_objeto, " se recompone desde ", opd_hijo ;
+```
+
+Para subprocesos paralelos, la forma abreviada es:
+
+- `*Proceso* se descompone en paralelo *A* y *B*.`
+
+Para subprocesos mixtos (secuenciales y paralelos):
+
+- `*Proceso* se descompone en *A*, paralelo *B* y *C*, y *D*, en esa secuencia.`
 
 ---
 

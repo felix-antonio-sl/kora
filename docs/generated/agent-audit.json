@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26",
+  "generated_at": "2026-04-14",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/agent-spec-md.md",
@@ -128,21 +128,21 @@
     },
     "domains": {
       "name": "domains",
-      "workspace_count": 20,
+      "workspace_count": 18,
       "validate_strict": {
         "profile": "strict",
         "cohort": "domains",
-        "workspace_valid": 20,
+        "workspace_valid": 18,
         "workspace_invalid": 0,
-        "bootstrap_validated": 80,
+        "bootstrap_validated": 72,
         "global_failures": 0,
         "issue_counts": {},
         "issues": [],
         "ok": true
       },
       "summary": {
-        "findings_total": 67,
-        "p1": 66,
+        "findings_total": 66,
+        "p1": 65,
         "p2": 1,
         "p3": 0,
         "strict_validate_green": true
@@ -574,22 +574,6 @@
             "path": "AGENTS/gn/goreologo/AGENTS.md",
             "line": 65,
             "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
-          },
-          "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-          "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        },
-        {
-          "workspace": "pro/estratega-comunicacional",
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
-          "evidence": {
-            "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-            "line": 63,
-            "snippet": "- IF tema != dominio comunicacion estrategica -> CONTEXT_SHIFT -> S-DISPATCHER"
           },
           "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
           "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
@@ -1247,12 +1231,11 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "count": 7,
+          "count": 6,
           "workspaces": [
             "gn/dgi-virtual",
             "gn/gestor-ipr-360",
             "gn/goreologo",
-            "pro/estratega-comunicacional",
             "salud/medico-urgencias"
           ],
           "closure_type": "agent_fix",
@@ -1751,38 +1734,9 @@
           ]
         },
         "pro": {
-          "workspace_count": 1,
-          "findings": [
-            {
-              "workspace": "pro/estratega-comunicacional",
-              "rule_id": "agent.fsm_pseudostate_destination",
-              "rule": "Destino de control no declarado",
-              "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
-              "evidence": {
-                "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-                "line": 63,
-                "snippet": "- IF tema != dominio comunicacion estrategica -> CONTEXT_SHIFT -> S-DISPATCHER"
-              },
-              "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-              "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            }
-          ],
-          "repeated_findings": [
-            {
-              "rule_id": "agent.fsm_pseudostate_destination",
-              "rule": "Destino de control no declarado",
-              "severity": "P1",
-              "count": 1,
-              "workspaces": [
-                "pro/estratega-comunicacional"
-              ],
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            }
-          ]
+          "workspace_count": 0,
+          "findings": [],
+          "repeated_findings": []
         },
         "salud": {
           "workspace_count": 3,
@@ -1942,7 +1896,7 @@
           ]
         },
         "fxsl": {
-          "workspace_count": 7,
+          "workspace_count": 6,
           "findings": [
             {
               "workspace": "fxsl/arquitecto-automatizacion-organizacional",
@@ -2517,12 +2471,11 @@
         "rule_id": "agent.fsm_pseudostate_destination",
         "rule": "Destino de control no declarado",
         "severity": "P1",
-        "count": 7,
+        "count": 6,
         "workspaces": [
           "gn/dgi-virtual",
           "gn/gestor-ipr-360",
           "gn/goreologo",
-          "pro/estratega-comunicacional",
           "salud/medico-urgencias"
         ],
         "closure_type": "agent_fix",
@@ -2588,12 +2541,11 @@
         "rule_id": "agent.fsm_pseudostate_destination",
         "rule": "Destino de control no declarado",
         "severity": "P1",
-        "count": 7,
+        "count": 6,
         "workspaces": [
           "gn/dgi-virtual",
           "gn/gestor-ipr-360",
           "gn/goreologo",
-          "pro/estratega-comunicacional",
           "salud/medico-urgencias"
         ],
         "closure_type": "agent_fix",
