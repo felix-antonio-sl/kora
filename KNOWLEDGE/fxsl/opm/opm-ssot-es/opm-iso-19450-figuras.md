@@ -34,9 +34,9 @@ Representación puramente textual del contenido gráfico de la ISO/PAS 19450. Ca
 
 ### Símbolos de enlaces estructurales etiquetados
 
-**Enlace estructural etiquetado unidireccional**: Línea con punta de flecha abierta en el extremo destino. La etiqueta (tag) se escribe sobre la línea, con la fuente en itálica. Tiene un corchete cuadrado en el extremo origen.
+**Enlace estructural etiquetado unidireccional**: Línea con punta de flecha abierta en el extremo destino. La etiqueta (tag) se escribe sobre la línea, con la fuente en itálica. Sin decoración especial en el extremo origen.
 
-**Enlace estructural etiquetado bidireccional**: Línea con un corchete cuadrado en cada extremo. Lleva dos etiquetas: una etiqueta de ida (forward tag) y una etiqueta de vuelta (reverse tag), escritas sobre la línea en itálica.
+**Enlace estructural etiquetado bidireccional**: Línea con puntas tipo arpón (media punta de flecha) en lados opuestos de ambos extremos. Lleva dos etiquetas: una etiqueta de ida (forward tag) y una etiqueta de vuelta (reverse tag), escritas sobre la línea en itálica.
 
 ### Símbolos de enlaces procedimentales
 
@@ -46,15 +46,15 @@ Representación puramente textual del contenido gráfico de la ISO/PAS 19450. Ca
 
 **Enlace de efecto** (effect link): Línea con dos puntas de flecha cerradas (rellenas), una en cada extremo, formando una flecha bidireccional. El objeto afectado está en un extremo y el proceso en el otro.
 
-**Enlace de consumo** (consumption link): Línea con una punta de flecha cerrada (rellena) en el extremo del proceso. El objeto consumido está en el origen (con corchete cuadrado abierto).
+**Enlace de consumo** (consumption link): Línea con una punta de flecha cerrada (rellena) en el extremo del proceso. El objeto consumido está en el origen, sin decoración especial.
 
 **Enlace de resultado** (result link): Línea con una punta de flecha cerrada (rellena) en el extremo del objeto resultante. El proceso está en el origen.
 
 **Par de enlaces entrada-salida** (input-output link pair): Par de líneas paralelas o cercanas: una flecha desde el estado de entrada del objeto hacia el proceso (enlace de entrada), y otra flecha desde el proceso hacia el estado de salida del objeto (enlace de resultado con estado). Los estados de entrada y salida están explícitamente especificados.
 
-**Enlace de evento de instrumento** (instrument event link): Similar al enlace de instrumento (círculo hueco en el extremo del proceso), pero con un pequeño símbolo de rayo/relámpago (`e`) sobre la línea, indicando que el objeto inicia el proceso.
+**Enlace de evento de instrumento** (instrument event link): Similar al enlace de instrumento (círculo hueco en el extremo del proceso), pero con una letra pequeña `e` (evento) sobre la línea, indicando que el objeto inicia el proceso.
 
-**Enlace de evento de consumo** (consumption event link): Similar al enlace de consumo (flecha hacia el proceso), pero con un símbolo de rayo/relámpago (`e`) sobre la línea.
+**Enlace de evento de consumo** (consumption event link): Similar al enlace de consumo (flecha hacia el proceso), pero con una letra pequeña `e` (evento) sobre la línea.
 
 **Enlace condicional de instrumento** (instrumental condition link): Similar al enlace de instrumento, pero con una letra `c` sobre la línea, indicando condicionalidad.
 
@@ -492,10 +492,10 @@ OPL: Resource Description Framework Statement consists of Subject, Predicate and
 Diagrama OPD similar al anterior pero con solo dos partes visibles:
 
 - `Resource Description Framework Statement` (rectángulo, arriba).
-- Triángulo negro sólido de agregación, pero con un **corte diagonal** en la base del triángulo (indicando conjunto parcial).
+- Triángulo negro sólido de agregación, con una **barra horizontal corta** bajo la base del triángulo (indicando colección incompleta: existen refinadores no mostrados).
 - Solo dos partes mostradas: `Subject` y `Predicate`.
 
-El corte diagonal en el triángulo indica que hay más partes no mostradas en este diagrama.
+La barra horizontal bajo el triángulo indica que hay más partes no mostradas en este diagrama.
 
 OPL: Resource Description Framework Statement consists of Subject, Predicate and at least one other part.
 

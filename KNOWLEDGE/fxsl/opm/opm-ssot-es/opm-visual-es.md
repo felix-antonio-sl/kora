@@ -90,10 +90,10 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 | Punta de flecha cerrada | arrowhead | Enlaces transformadores (consumo, resultado, efecto) |
 | Círculo negro relleno | black lollipop | Enlace de agente (extremo proceso) |
 | Círculo blanco vacío | white lollipop | Enlace de instrumento (extremo proceso) |
-| Corchete cuadrado abierto | open bracket | Extremo origen de enlaces procedimentales (agente, instrumento, consumo) |
+| Corchete cuadrado abierto | open bracket | Extremo origen de enlaces habilitadores (agente, instrumento) |
 | Línea en zigzag con punta | lightning bolt | Enlace de invocación |
 | Punta de flecha abierta | open arrowhead | Enlaces estructurales etiquetados unidireccionales |
-| Arpón (media punta) | harpoon | Enlaces estructurales etiquetados bidireccionales |
+| Arpón (media punta) | harpoon | Enlaces estructurales etiquetados bidireccionales y recíprocos |
 
 ### 1.6 Marcas textuales sobre enlaces
 
